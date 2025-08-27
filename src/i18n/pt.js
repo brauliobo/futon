@@ -1,0 +1,37 @@
+// src/i18n/pt.js
+export const pt = {
+  translation: {
+    chooseNotebook: "Escolha um caderno",
+    start: "Começar",
+    back: "Voltar",
+    topics: "Tópicos",
+    topic_multiplication: "Multiplicação",
+    topic_division: "Divisão",
+    topic_mixed: "Misto",
+    topic_problem: "Problemas",
+    topic_evaluation: "Avaliação",
+    topic_fraction_mixed: "Frações → Números Mistos",
+    topic_fraction_add: "Soma de Frações",
+    topic_fraction_sub: "Subtração de Frações",
+    enterAnswer: "Digite sua resposta",
+    correct: "Correto",
+    wrong: "Errado",
+    correctAnswer: "Correta",
+    headerTitle: "Caderno de Multiplicação e Divisão Básicas",
+    level: "Nível",
+    previous: "Anterior",
+    next: "Próxima",
+    pageInfo: "Página {{current}} de {{total}}",
+    completedBlocks: "Blocos Completados",
+    attempts: "Tentativas",
+    lastScore: "Última Nota",
+    submitAnswers: "Enviar Respostas",
+    reviewTitle: "Revisão e Avaliação",
+    openNotebook: "Abrir Caderno",
+    closeNotebook: "Fechar Caderno",
+    finalScore: "Nota Final",
+    readOnlyMode: "Modo de Leitura",
+    // Adicione outras traduções conforme necessário
+  },
+};
+
