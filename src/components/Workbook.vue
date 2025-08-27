@@ -9,11 +9,15 @@
           <Stat :label="$t('attempts')" :value="workbook.attempts" />
           <Stat :label="$t('lastScore')" :value="`${workbook.lastScore}/${workbook.totalExercises}`" />
         </div>
-        <PrimaryButton class="mb-3" @click="toggleWorkbook">
-          {{ isOpen ? $t('closeNotebook') : $t('openNotebook') }}
-        </PrimaryButton>
-        <div v-if="isOpen" class="workbook-content">
+        <div class="mb-3 d-flex justify-content-end">
+          <button class="btn btn-outline-danger btn-sm" @click="resetWorkbook">{{ $t('reset') }}</button>
+        </div>
+        <div class="workbook-content">
+          <div class="alert alert-info" role="alert" v-if="workbook.example">
+            <strong>{{ $t('example') }}:</strong> {{ workbook.example }}
+          </div>
           <Page
+            :key="resetKey"
             :page="currentPage"
             :isSubmitted="isSubmitted"
             @update-page-status="handlePageStatus"
@@ -24,11 +28,8 @@
             <span>{{ $t('pageInfo', { current: currentPage.pageNumber, total: workbook.pages.length }) }}</span>
             <button class="btn btn-secondary" @click="nextPage" :disabled="!canGoNextPage">{{ $t('next') }}</button>
           </div>
-          <div v-if="isLastPage && !isSubmitted" class="submit-section mt-3">
-            <button class="btn btn-success" @click="submitAnswers">{{ $t('submitAnswers') }}</button>
-          </div>
           <div v-if="isSubmitted" class="final-score mt-3">
-            <h4>{{ $t('finalScore') }}: {{ calculateFinalScore() }}/{{ workbook.totalExercises }}</h4>
+            <h4>{{ $t('finalScore') }}: {{ calculateFinalScore() }}/{{ calculateAttemptedCount() }}</h4>
           </div>
         </div>
       </div>
@@ -39,28 +40,31 @@
 <script>
 import Page from "./Page.vue";
 import Stat from "./Stat.vue";
-import PrimaryButton from "./PrimaryButton.vue";
+// import PrimaryButton from "./PrimaryButton.vue";
 
 export default {
   name: "Workbook",
   components: {
     Page,
     Stat,
-    PrimaryButton,
+    // PrimaryButton,
   },
   props: {
     workbook: {
       type: Object,
       required: true,
     },
+    initialPageIndex: {
+      type: Number,
+      default: 0,
+    },
   },
   data() {
     return {
-      isOpen: false,
-      currentPageIndex: 0,
+      currentPageIndex: this.initialPageIndex,
       completedPages: [],
-      scores: Array(this.workbook.pages.length).fill(0),
       isSubmitted: false,
+      resetKey: 0,
     };
   },
   computed: {
@@ -75,11 +79,12 @@ export default {
     },
   },
   methods: {
-    toggleWorkbook() {
-      this.isOpen = !this.isOpen;
-    },
     nextPage() {
-      if (this.currentPageIndex < this.workbook.pages.length - 1) {
+      if (this.isLastPage) {
+        if (this.canGoNextPage && !this.isSubmitted) {
+          this.submitAnswers();
+        }
+      } else if (this.currentPageIndex < this.workbook.pages.length - 1) {
         this.currentPageIndex += 1;
       }
     },
@@ -89,29 +94,65 @@ export default {
       }
     },
     handlePageStatus(payload) {
-      const { pageNumber, correct } = payload;
-      if (!this.completedPages.includes(pageNumber)) {
-        this.completedPages.push(pageNumber);
-      }
-      this.scores[pageNumber - 1] = correct ? 1 : 0;
-      // Verificar se todos os exercícios da página atual estão concluídos
-      if (this.isPageCompleted(this.currentPageIndex)) {
-        // Permitir a navegação para a próxima página
+      const { pageNumber, isCompleted } = payload;
+      const idx = this.completedPages.indexOf(pageNumber);
+      if (isCompleted && idx === -1) this.completedPages.push(pageNumber);
+      if (!isCompleted && idx !== -1) this.completedPages.splice(idx, 1);
+      // auto-advance when finishing a page (not on last page and not submitted)
+      if (isCompleted && pageNumber - 1 === this.currentPageIndex && !this.isSubmitted) {
+        if (this.isLastPage) {
+          this.submitAnswers();
+        } else {
+          this.nextPage();
+        }
       }
     },
     isPageCompleted(index) {
       const page = this.workbook.pages[index];
-      return page.exercises.every((exercise, idx) => this.scores[idx] !== 0);
+      return page.exercises.every(ex => String(ex.answer || '').trim() !== '');
     },
     submitAnswers() {
       this.isSubmitted = true;
       this.calculateFinalScore();
       this.updateWorkbookData();
     },
+    resetWorkbook() {
+      this.isSubmitted = false;
+      this.currentPageIndex = 0;
+      this.completedPages = [];
+      this.workbook.pages.forEach(page => {
+        page.exercises.forEach(ex => {
+          ex.answer = "";
+        });
+      });
+      this.resetKey += 1;
+      this.updateWorkbookData();
+    },
     calculateFinalScore() {
-      const total = this.scores.reduce((acc, curr) => acc + curr, 0);
-      this.workbook.lastScore = total;
-      return total;
+      const normalize = (s) => String(s).replace(/\s+/g, '').replace(/,/, '.').toLowerCase();
+      let correctCount = 0;
+      this.workbook.pages.forEach(page => {
+        page.exercises.forEach(ex => {
+          const userAns = ex.answer ?? '';
+          if (typeof ex.correctAnswer === 'number') {
+            if (Number(userAns) === ex.correctAnswer) correctCount += 1;
+          } else if (normalize(userAns) === normalize(ex.correctAnswer)) {
+            correctCount += 1;
+          }
+        });
+      });
+      this.workbook.lastScore = correctCount;
+      return correctCount;
+    },
+    calculateAttemptedCount() {
+      let attempted = 0;
+      this.workbook.pages.forEach(page => {
+        page.exercises.forEach(ex => {
+          const userAns = ex.answer ?? '';
+          if (String(userAns).trim() !== '') attempted += 1;
+        });
+      });
+      return attempted || this.workbook.totalExercises;
     },
     updateWorkbookData() {
       // Emitir um evento para o componente pai atualizar o estado global
@@ -123,6 +164,19 @@ export default {
       });
     },
   },
+  mounted() {
+    this.$emit('page-changed', this.currentPageIndex + 1);
+  },
+  watch: {
+    currentPageIndex(newIdx) {
+      this.$emit('page-changed', newIdx + 1);
+    },
+    initialPageIndex(newVal) {
+      if (Number.isFinite(newVal) && newVal >= 0 && newVal < this.workbook.pages.length) {
+        this.currentPageIndex = newVal;
+      }
+    }
+  }
 };
 </script>
 

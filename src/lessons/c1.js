@@ -3,6 +3,8 @@
 export const c1 = {
   "title": "Caderno de Multiplicação e Divisão Básicas",
   "level": "C",
+  "subject": "math",
+  "example": "Multiplicação é adição repetida (3 x 2 = 2 + 2 + 2). Divisão é a operação inversa (6 ÷ 3 = 2).",
   "pages": [
     {
       "pageNumber": 1,

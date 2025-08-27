@@ -49,6 +49,18 @@ export default {
       showInput: true,
     };
   },
+  watch: {
+    exercise: {
+      deep: true,
+      handler(newVal, oldVal) {
+        // when parent resets exercise.answer, also reset local input state
+        if ((newVal && newVal.answer) !== (oldVal && oldVal.answer)) {
+          this.userAnswer = newVal.answer || "";
+          this.showInput = true;
+        }
+      }
+    }
+  },
   computed: {
     isCorrect() {
       if (typeof this.exercise.correctAnswer === 'number') {
@@ -65,10 +77,7 @@ export default {
     handleSubmit() {
       if (this.userAnswer.trim() !== "") {
         this.showInput = false; // Remove o input e mostra a resposta
-        this.$emit("update-answer", {
-          pageNumber: this.exercise.pageNumber,
-          correct: this.isCorrect,
-        });
+        this.$emit("update-answer", { answer: this.userAnswer });
         this.$emit("next-exercise"); // Move para o próximo exercício
       }
     },
