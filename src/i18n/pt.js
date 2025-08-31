@@ -29,7 +29,7 @@ export const pt = {
   level: "Nível",
   previous: "Anterior",
   next: "Próxima",
-  pageInfo: "Página {{current}} de {{total}}",
+  pageInfo: "Página {current} de {total}",
   completedBlocks: "Blocos Completados",
   attempts: "Tentativas",
   lastScore: "Última Nota",

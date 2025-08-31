@@ -29,7 +29,7 @@ export const en = {
   level: "Level",
   previous: "Previous",
   next: "Next",
-  pageInfo: "Page {{current}} of {{total}}",
+  pageInfo: "Page {current} of {total}",
   completedBlocks: "Completed Blocks",
   attempts: "Attempts",
   lastScore: "Last Score",
