@@ -10,11 +10,13 @@
             <h3 class="mb-0">{{ subjectLabel(subject) }}</h3>
           </div>
           <div class="card-body">
+            <!-- Removed top-level progress bars as requested; progress is shown under roadmap buttons -->
             <TopicRoadmap
               :sequence="subjectTopicSequences[subject] || []"
               :available="Object.keys(group)"
               :active="activeTopicBySubject[subject] || ''"
               :t="$t"
+              :progressByTopic="progressMap(group)"
               @select="setActiveTopic(subject, $event)"
             />
             <div class="row g-3 mt-3">
@@ -27,6 +29,12 @@
                   <div class="card-body d-flex flex-column">
                     <h5 class="card-title">{{ wb.title }}</h5>
                     <p class="mb-1">{{ $t('level') }}: {{ wb.level }}</p>
+                    <div class="mb-2">
+                      <div class="progress" role="progressbar" :aria-valuenow="workbookProgress(wb).percent" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" :style="{ width: workbookProgress(wb).percent + '%' }">{{ workbookProgress(wb).percent }}%</div>
+                      </div>
+                      <small class="text-muted">{{ workbookProgress(wb).completed }}/{{ wb.pages.length }} páginas</small>
+                    </div>
                     <p class="mb-3">{{ $t('lastScore') }}: {{ wb.lastScore }}/{{ wb.totalExercises }}</p>
                     <button class="btn btn-primary mt-auto" @click="$emit('select-workbook', wb)">{{ $t('start') }}</button>
                   </div>
@@ -81,34 +89,33 @@ export default {
       this.activeTopicBySubject[subject] = topic;
     },
     filteredByActiveTopic(subject, group) {
-      const active = this.activeTopicBySubject[subject] || '';
-      if (!active || !group[active]) {
-        return Object.values(group).flat();
-      }
-      return group[active];
+      const a = this.activeTopicBySubject[subject];
+      return a && group[a] ? group[a] : Object.values(group).flat();
     },
     subjectLabel(key) {
-      const map = { math: this.$t('subject_math'), portuguese: this.$t('subject_portuguese'), english: this.$t('subject_english') };
-      return map[key] || key;
+      const label = this.$t(`subject_${key}`);
+      return typeof label === 'string' ? label : key;
     },
     topicLabel(key) {
-      const map = {
-        multiplication: this.$t('topic_multiplication'),
-        division: this.$t('topic_division'),
-        mixed: this.$t('topic_mixed'),
-        problem: this.$t('topic_problem'),
-        evaluation: this.$t('topic_evaluation'),
-        fraction_mixed: this.$t('topic_fraction_mixed'),
-        fraction_add: this.$t('topic_fraction_add'),
-        fraction_sub: this.$t('topic_fraction_sub'),
-        addition: this.$t('topic_addition'),
-        subtraction: this.$t('topic_subtraction'),
-        reading: this.$t('topic_reading'),
-        grammar: this.$t('topic_grammar'),
-        english_vocab: this.$t('topic_english_vocab'),
-        english_phrases: this.$t('topic_english_phrases'),
-      };
-      return map[key] || key;
+      const label = this.$t(`topic_${key}`);
+      return typeof label === 'string' ? label : key;
+    },
+    progressMap(group){
+      const map = {};
+      Object.keys(group).forEach(topic => { map[topic] = this.topicProgress(group, topic); });
+      return map;
+    },
+    workbookProgress(wb) {
+      const completed = (wb.completedPages || []).length;
+      const percent = wb.pages && wb.pages.length ? Math.round((completed / wb.pages.length) * 100) : 0;
+      return { completed, percent };
+    },
+    topicProgress(group, topic) {
+      const wbs = group[topic] || [];
+      const totalPages = wbs.reduce((a, wb) => a + (wb.pages ? wb.pages.length : 0), 0);
+      const completedPages = wbs.reduce((a, wb) => a + ((wb.completedPages || []).length), 0);
+      const percent = totalPages ? Math.round((completedPages / totalPages) * 100) : 0;
+      return { completedPages, totalPages, percent };
     },
   },
   computed: {

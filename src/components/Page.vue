@@ -47,22 +47,36 @@ export default {
     },
   },
   methods: {
+    focusFirstExercise() {
+      nextTick(() => {
+        const list = this.$refs.exercises || [];
+        const first = Array.isArray(list) ? list[0] : null;
+        if (first && first.focus && !this.isReadOnly && !this.isSubmitted) first.focus();
+      });
+    },
+    initAnswers() {
+      this.answers = this.page.exercises.map(ex => {
+        const a = ex && ex.answer ? String(ex.answer) : '';
+        return a.trim() !== '' ? a : null;
+      });
+    },
     handleUpdateAnswer(index, payload) {
       this.answers.splice(index, 1, payload.answer);
       // persist answer on the exercise to survive navigation
       this.page.exercises[index].answer = payload.answer;
-      const isCompleted = this.answers.every(a => a !== null && String(a).trim() !== '');
-      this.$emit("update-page-status", { pageNumber: this.page.pageNumber, isCompleted });
+      const answeredCount = this.answers.filter(a => a !== null && String(a).trim() !== '').length;
+      const totalCount = this.page.exercises.length;
+      const isCompleted = answeredCount === totalCount;
+      this.$emit("update-page-status", { pageNumber: this.page.pageNumber, isCompleted, answeredCount, totalCount });
     },
     focusNextExercise(currentIndex) {
-      const nextIndex = this.nextIndexInTraversal(currentIndex);
-      if (nextIndex !== null) {
-        nextTick(() => {
-          const list = this.$refs.exercises || [];
-          const nextExercise = Array.isArray(list) ? list[nextIndex] : null;
-          if (nextExercise && nextExercise.focus) nextExercise.focus();
-        });
-      }
+      const idx = this.nextIndexInTraversal(currentIndex);
+      if (idx === null) return;
+      nextTick(() => {
+        const list = this.$refs.exercises || [];
+        const next = Array.isArray(list) ? list[idx] : null;
+        if (next && next.focus) next.focus();
+      });
     },
     isExerciseEnabled(index) {
       const order = this.orderIndices;
@@ -87,22 +101,35 @@ export default {
       answers: Array(this.page.exercises.length).fill(null),
     };
   },
+  mounted() {
+    this.initAnswers();
+    this.focusFirstExercise();
+    // emit initial status for progress bars
+    const answeredCount = this.answers.filter(a => a !== null && String(a).trim() !== '').length;
+    const totalCount = this.page.exercises.length;
+    const isCompleted = answeredCount === totalCount;
+    this.$emit("update-page-status", { pageNumber: this.page.pageNumber, isCompleted, answeredCount, totalCount });
+  },
+  watch: {
+    page() {
+      this.initAnswers();
+      this.focusFirstExercise();
+      const answeredCount = this.answers.filter(a => a !== null && String(a).trim() !== '').length;
+      const totalCount = this.page.exercises.length;
+      const isCompleted = answeredCount === totalCount;
+      this.$emit("update-page-status", { pageNumber: this.page.pageNumber, isCompleted, answeredCount, totalCount });
+    }
+  },
   computed: {
     exercisePairs() {
       const pairs = [];
-      for (let i = 0; i < this.page.exercises.length; i += 2) {
-        pairs.push([this.page.exercises[i], this.page.exercises[i + 1] || null]);
-      }
-      return pairs.slice(0, 5); // cap at 5 rows if there are more
+      for (let i = 0; i < this.page.exercises.length; i += 2) pairs.push([this.page.exercises[i], this.page.exercises[i + 1] || null]);
+      return pairs.slice(0, 5);
     },
     orderIndices() {
       const total = Math.min(10, this.page.exercises.length);
-      const left = [];
-      const right = [];
-      for (let i = 0; i < total; i += 2) {
-        left.push(i);
-        if (i + 1 < total) right.push(i + 1);
-      }
+      const left = [], right = [];
+      for (let i = 0; i < total; i += 2) { left.push(i); if (i + 1 < total) right.push(i + 1); }
       return left.concat(right);
     },
   },

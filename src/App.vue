@@ -61,6 +61,7 @@ import englishBasics from "./lessons/english_basics.json";
 import englishPhrases from "./lessons/english_phrases.json";
 import englishVocab2 from "./lessons/english_vocab_2.json";
 import englishPhrases2 from "./lessons/english_phrases_2.json";
+import { generateAdditionWorkbook, generateSubtractionWorkbook, generateMultiplicationWorkbook, generateDivisionWorkbook } from "./utils/generatorMath.js";
 import Home from "./components/Home.vue";
 import Workbook from "./components/Workbook.vue";
 
@@ -93,9 +94,21 @@ export default {
       };
     };
     // Sequência correta: Adição → Subtração → Multiplicação → Divisão → Frações → Mistos → Caderno C
+    const seedKey = 'futon_seed_addition';
+    const existingSeed = localStorage.getItem(seedKey) || String(Math.random()).slice(2);
+    localStorage.setItem(seedKey, existingSeed);
+    const dynamicAdditionA = withMeta(generateAdditionWorkbook({ seed: `${existingSeed}-A`, level: 'A', pages: 2 }));
+    const dynamicAdditionB = withMeta(generateAdditionWorkbook({ seed: `${existingSeed}-B`, level: 'B', pages: 2 }));
+    const dynamicSubtractionA = withMeta(generateSubtractionWorkbook({ seed: `${existingSeed}-S-A`, level: 'A', pages: 2 }));
+    const dynamicMultiplicationA = withMeta(generateMultiplicationWorkbook({ seed: `${existingSeed}-M-A`, level: 'A', pages: 2 }));
+    const dynamicDivisionA = withMeta(generateDivisionWorkbook({ seed: `${existingSeed}-D-A`, level: 'A', pages: 2 }));
     return {
       workbooks: [
         withMeta(addition), withMeta(addition2), withMeta(addition3), withMeta(addition4), withMeta(addition5),
+        dynamicAdditionA, dynamicAdditionB,
+        dynamicSubtractionA,
+        dynamicMultiplicationA,
+        dynamicDivisionA,
         withMeta(subtraction2), withMeta(subtraction3), withMeta(subtraction4), withMeta(subtraction5), withMeta(subtraction),
         withMeta(multiplication2), withMeta(multiplication3), withMeta(multiplication4), withMeta(multiplication5), withMeta(multiplication),
         withMeta(division2), withMeta(division3), withMeta(division4), withMeta(division5), withMeta(division),

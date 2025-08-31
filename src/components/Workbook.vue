@@ -13,6 +13,12 @@
           <button class="btn btn-outline-danger btn-sm" @click="resetWorkbook">{{ $t('reset') }}</button>
         </div>
         <div class="workbook-content">
+          <div class="mb-2">
+            <div class="progress" role="progressbar" :aria-valuenow="pageProgress" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" :style="{ width: pageProgress + '%' }">{{ pageProgress }}%</div>
+            </div>
+            <small class="text-muted">{{ $t('pageInfo', { current: currentPage.pageNumber, total: workbook.pages.length }) }} — {{ answeredCount }}/{{ currentPage.exercises.length }} • ⏱ {{ prettyTimer }}</small>
+          </div>
           <div class="alert alert-info" role="alert" v-if="workbook.example">
             <strong>{{ $t('example') }}:</strong> {{ workbook.example }}
           </div>
@@ -24,9 +30,14 @@
             :isReadOnly="isSubmitted"
           />
           <div class="navigation d-flex justify-content-between align-items-center">
-            <button class="btn btn-secondary" @click="prevPage" :disabled="currentPageIndex === 0">{{ $t('previous') }}</button>
-            <span>{{ $t('pageInfo', { current: currentPage.pageNumber, total: workbook.pages.length }) }}</span>
-            <button class="btn btn-secondary" @click="nextPage" :disabled="!canGoNextPage">{{ $t('next') }}</button>
+            <button class="btn btn-secondary" @click="prevPage" :disabled="currentPageIndex === 0" aria-label="Previous page">{{ $t('previous') }}</button>
+            <div class="d-flex align-items-center gap-2">
+              <span>{{ $t('pageInfo', { current: currentPage.pageNumber, total: workbook.pages.length }) }}</span>
+              <select class="form-select form-select-sm" style="width:auto" v-model.number="currentPageIndex" aria-label="Select page">
+                <option v-for="(p, idx) in workbook.pages" :key="'pgopt-'+idx" :value="idx">{{ idx + 1 }}</option>
+              </select>
+            </div>
+            <button class="btn btn-secondary" @click="nextPage" :disabled="!canGoNextPage" aria-label="Next page">{{ $t('next') }}</button>
           </div>
           <div v-if="isSubmitted" class="final-score mt-3">
             <h4>{{ $t('finalScore') }}: {{ calculateFinalScore() }}/{{ calculateAttemptedCount() }}</h4>
@@ -65,6 +76,9 @@ export default {
       completedPages: [],
       isSubmitted: false,
       resetKey: 0,
+      answeredCount: 0,
+      pageSeconds: 0,
+      intervalId: null,
     };
   },
   computed: {
@@ -77,8 +91,31 @@ export default {
     canGoNextPage() {
       return this.isPageCompleted(this.currentPageIndex);
     },
+    pageProgress() {
+      const total = this.workbook.pages.length;
+      return Math.round(((this.currentPageIndex + 1) / total) * 100);
+    },
+    prettyTimer() {
+      const m = Math.floor(this.pageSeconds / 60);
+      const s = this.pageSeconds % 60;
+      return `${m}:${s < 10 ? '0' : ''}${s}`;
+    },
   },
   methods: {
+    startTimer() {
+      if (this.intervalId) clearInterval(this.intervalId);
+      this.pageSeconds = 0;
+      this.intervalId = setInterval(() => { this.pageSeconds += 1; }, 1000);
+    },
+    onKeydown(e) {
+      if (this.isSubmitted) return;
+      if (e.key === 'ArrowRight' || (e.key.toLowerCase?.() === 'n' && !e.ctrlKey && !e.metaKey)) {
+        e.preventDefault(); if (this.canGoNextPage) this.nextPage();
+      }
+      if (e.key === 'ArrowLeft' || (e.key.toLowerCase?.() === 'p' && !e.ctrlKey && !e.metaKey)) {
+        e.preventDefault(); this.prevPage();
+      }
+    },
     nextPage() {
       if (this.isLastPage) {
         if (this.canGoNextPage && !this.isSubmitted) {
@@ -86,15 +123,18 @@ export default {
         }
       } else if (this.currentPageIndex < this.workbook.pages.length - 1) {
         this.currentPageIndex += 1;
+        this.startTimer();
       }
     },
     prevPage() {
       if (this.currentPageIndex > 0) {
         this.currentPageIndex -= 1;
+        this.startTimer();
       }
     },
     handlePageStatus(payload) {
-      const { pageNumber, isCompleted } = payload;
+      const { pageNumber, isCompleted, answeredCount } = payload;
+      this.answeredCount = answeredCount ?? this.answeredCount;
       const idx = this.completedPages.indexOf(pageNumber);
       if (isCompleted && idx === -1) this.completedPages.push(pageNumber);
       if (!isCompleted && idx !== -1) this.completedPages.splice(idx, 1);
@@ -166,6 +206,12 @@ export default {
   },
   mounted() {
     this.$emit('page-changed', this.currentPageIndex + 1);
+    window.addEventListener('keydown', this.onKeydown);
+    this.startTimer();
+  },
+  unmounted() {
+    window.removeEventListener('keydown', this.onKeydown);
+    if (this.intervalId) clearInterval(this.intervalId);
   },
   watch: {
     currentPageIndex(newIdx) {

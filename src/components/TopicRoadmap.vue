@@ -1,19 +1,19 @@
 <!-- src/components/TopicRoadmap.vue -->
 <template>
-  <div class="roadmap d-flex align-items-center overflow-auto">
-    <div v-for="(topicKey, idx) in filteredSequence" :key="topicKey" class="d-flex align-items-center">
-      <button
-        type="button"
-        class="btn btn-sm"
-        :class="['btn-outline-primary', { active: topicKey === active }]"
-        @click="$emit('select', topicKey)"
-      >
-        <span class="badge bg-primary me-2">{{ idx + 1 }}</span>{{ label(topicKey) }}
-      </button>
-      <div v-if="idx < filteredSequence.length - 1" class="connector mx-2"></div>
+  <div class="roadmap d-flex align-items-start overflow-auto">
+    <div v-for="(topicKey, idx) in filteredSequence" :key="topicKey" class="d-flex flex-column align-items-start me-2">
+      <div class="d-flex align-items-center">
+        <button type="button" class="btn btn-sm" :class="['btn-outline-primary', { active: topicKey === active }]" @click="$emit('select', topicKey)">
+          <span class="badge bg-primary me-2">{{ idx + 1 }}</span>{{ label(topicKey) }}
+        </button>
+        <div v-if="idx < filteredSequence.length - 1" class="connector mx-2"></div>
+      </div>
+      <div class="progress w-100 mt-1" style="min-width:120px" role="progressbar" :aria-valuenow="progressPercent(topicKey)" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" :style="{ width: progressPercent(topicKey) + '%' }"></div>
+      </div>
     </div>
   </div>
-</template>
+ </template>
 
 <script>
 export default {
@@ -24,6 +24,7 @@ export default {
     available: { type: Array, required: true },
     active: { type: String, default: '' },
     t: { type: Function, required: true },
+    progressByTopic: { type: Object, default: () => ({}) },
   },
   computed: {
     filteredSequence() {
@@ -32,6 +33,7 @@ export default {
     }
   },
   methods: {
+    progressPercent(key){ const p = this.progressByTopic[key]; return p && Number.isFinite(p.percent) ? p.percent : 0; },
     label(key) {
       const map = {
         multiplication: this.t('topic_multiplication'),

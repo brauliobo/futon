@@ -41,5 +41,6 @@ export const pt = {
   closeNotebook: "Fechar Caderno",
   finalScore: "Nota Final",
   readOnlyMode: "Modo de Leitura",
+  edit: "Editar",
 };
 

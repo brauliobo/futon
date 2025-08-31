@@ -6,9 +6,10 @@
       <label class="flex-grow-1 mb-0">{{ exercise.question }}</label>
     </div>
     <div v-if="!isReadOnly">
-      <input v-if="showInput" v-model="userAnswer" :type="inputType" class="form-control form-control-lg mt-2" :disabled="!isEnabled || isSubmitted" :placeholder="$t('enterAnswer')" @keydown.enter.prevent="handleSubmit" @keydown.tab.prevent="handleSubmit" ref="inputRef" />
-      <div v-else class="mt-2">
-        <span class="text-success">{{ userAnswer }}</span>
+      <input v-if="showInput" v-model="userAnswer" :type="inputType" class="form-control form-control-lg mt-2" :disabled="!isEnabled || isSubmitted" :placeholder="$t('enterAnswer')" @keydown.enter.prevent="handleSubmit" @keydown.tab.prevent="handleSubmit" @keyup.tab.prevent="handleSubmit" ref="inputRef" />
+      <div v-else class="mt-2 d-flex align-items-center gap-2">
+        <span class="text-dark">{{ userAnswer }}</span>
+        <button class="btn btn-sm btn-link" @click="editAnswer" aria-label="Editar resposta">{{ $t('edit') || 'Editar' }}</button>
       </div>
     </div>
     <div v-if="isReadOnly" class="mt-2">
@@ -78,11 +79,21 @@ export default {
       if (this.userAnswer.trim() !== "") {
         this.showInput = false; // Remove o input e mostra a resposta
         this.$emit("update-answer", { answer: this.userAnswer });
-        this.$emit("next-exercise"); // Move para o próximo exercício
+        // Move para o próximo exercício (debounced single-fire)
+        if (!this._advancedOnce) {
+          this._advancedOnce = true;
+          this.$emit("next-exercise");
+          setTimeout(() => { this._advancedOnce = false; }, 50);
+        }
       }
     },
     focus() {
       this.$refs.inputRef.focus();
+    },
+    editAnswer() {
+      if (this.isReadOnly || this.isSubmitted) return;
+      this.showInput = true;
+      this.$nextTick(() => { this.focus(); });
     },
   },
 };
