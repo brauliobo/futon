@@ -81,3 +81,17 @@ Current important fields: `attempts`, `lastScore`, `gradePercent`, `status`, `co
   - `ui: show status badge and KPIs on final screen`
   - `persistence: save/load gradePercent and status`
   - `i18n: add mastery/pass/retry/grade/speed/target`
+
+### Adding workbooks for early‑learner math (7A–4A)
+- Create JSON under the level dir: `src/lessons/math/{7A,6A,5A,4A}/level_<LEVEL>_<name>.json`.
+  - Required: `title`, `level` (e.g., "6A"), `subject: "math"`, `pages[{ pageNumber, title, description, exercises[{ type, question, correctAnswer }] }]`.
+  - Optional: `repeat` per page, `repeatAll` for whole workbook, `passCriteria`, `target`.
+- Import the new JSON in `src/App.vue` and add it to `workbooks` wrapped with `withMeta(...)`.
+- Pass criteria: omit to use defaults derived in `App.vue` for 7A–4A.
+- Exercise totals: aim 7A ≈ 40; 6A/5A/4A ≈ 60–80. Tune via `repeat`/`repeatAll`, then run:
+  ```bash
+  pnpm run targets:refresh
+  ```
+  This computes and writes `target` and validates against the schema.
+- Keep `level` uppercase and consistent so filtering/roadmap works.
+- Placeholders for unimplemented levels are auto‑generated; no action needed for other levels.

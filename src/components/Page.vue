@@ -1,26 +1,12 @@
 <!-- src/components/Page.vue -->
-<template>
-  <div class="page card shadow p-4 mb-4">
-    <h2 class="card-title">{{ page.title }}</h2>
-    <p class="card-text">{{ page.description }}</p>
-    <div class="container-fluid">
-      <div class="row" v-for="(pair, rowIndex) in exercisePairs" :key="'row-' + page.pageNumber + '-' + rowIndex">
-        <div class="col-12 col-md-6 mb-3" v-for="(exercise, colIndex) in pair" :key="'exercise-' + page.pageNumber + '-' + (rowIndex*2 + colIndex)">
-          <Exercise
-            v-if="exercise"
-            :exercise="exercise"
-            :exerciseNumber="displayNumber(rowIndex * 2 + colIndex)"
-            :isEnabled="isExerciseEnabled(rowIndex * 2 + colIndex)"
-            :isSubmitted="isSubmitted"
-            :isReadOnly="isReadOnly"
-            @update-answer="handleUpdateAnswer(rowIndex * 2 + colIndex, $event)"
-            @next-exercise="focusNextExercise(rowIndex * 2 + colIndex)"
-            ref="exercises"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  .page.card.shadow.p-4.mb-4
+    h2.card-title {{ page.title }}
+    p.card-text {{ page.description }}
+    .container-fluid
+      .row(v-for="(pair, rowIndex) in exercisePairs" :key="'row-' + page.pageNumber + '-' + rowIndex")
+        .col-12.col-md-6.mb-3(v-for="(exercise, colIndex) in pair" :key="'exercise-' + page.pageNumber + '-' + (rowIndex*2 + colIndex)")
+          Exercise(v-if="exercise" :exercise="exercise" :exerciseNumber="displayNumber(rowIndex * 2 + colIndex)" :isEnabled="isExerciseEnabled(rowIndex * 2 + colIndex)" :isSubmitted="isSubmitted" :isReadOnly="isReadOnly" @update-answer="handleUpdateAnswer(rowIndex * 2 + colIndex, $event)" @next-exercise="focusNextExercise(rowIndex * 2 + colIndex)" ref="exercises")
 </template>
 
 <script>

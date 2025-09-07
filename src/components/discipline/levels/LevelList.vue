@@ -1,12 +1,8 @@
-<template>
-  <div class="level-list">
-    <div class="row g-3 mt-3">
-      <div class="col-12 col-md-6 col-lg-4" v-for="(wb, idx) in workbooks" :key="idx">
-        <WorkbookCard :workbook="wb" @start="$emit('start', wb)" />
-      </div>
-    </div>
-  </div>
-  
+<template lang="pug">
+  .level-list
+    .row.g-3.mt-3
+      .col-12.col-md-6.col-lg-4(v-for="(wb, idx) in workbooks" :key="idx")
+        WorkbookCard(:workbook="wb" @start="$emit('start', wb)")
 </template>
 
 <script>

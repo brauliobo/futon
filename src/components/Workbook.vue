@@ -1,66 +1,47 @@
 <!-- src/components/Workbook.vue -->
-<template>
-  <div class="workbook mb-4">
-    <div class="card">
-      <div class="card-body">
-        <h3 class="card-title">{{ workbook.title }} ({{ $t('level') }}: {{ workbook.level }})</h3>
-        <div class="workbook-status mb-3">
-          <Stat :label="$t('completedBlocks')" :value="completedPages.length" />
-          <Stat :label="$t('attempts')" :value="workbook.attempts" />
-          <Stat :label="$t('lastScore')" :value="`${workbook.lastScore}/${workbook.totalExercises}`" />
-        </div>
-        <div class="mb-3 d-flex justify-content-end">
-          <button class="btn btn-outline-danger btn-sm" @click="resetWorkbook">{{ $t('reset') }}</button>
-        </div>
-        <div class="workbook-content">
-          <div class="mb-2">
-            <div class="progress" role="progressbar" :aria-valuenow="pageProgress" aria-valuemin="0" aria-valuemax="100">
-              <div class="progress-bar" :style="{ width: pageProgress + '%' }">{{ pageProgress }}%</div>
-            </div>
-            <small class="text-muted">{{ pageInfoText }} — {{ answeredCount }}/{{ currentPage.exercises.length }} • ⏱ {{ prettyTimer }}</small>
-          </div>
-          <div class="alert alert-info" role="alert" v-if="workbook.example">
-            <strong>{{ $t('example') }}:</strong> {{ workbook.example }}
-          </div>
-          <Page
-            :key="resetKey"
-            :page="currentPage"
-            :isSubmitted="isSubmitted"
-            @update-page-status="handlePageStatus"
-            :isReadOnly="isSubmitted"
-          />
-          <div class="navigation d-flex justify-content-between align-items-center">
-            <button class="btn btn-secondary" @click="prevPage" :disabled="currentPageIndex === 0" aria-label="Previous page">{{ $t('previous') }}</button>
-            <div class="d-flex align-items-center gap-2">
-              <span>{{ pageInfoText }}</span>
-              <select class="form-select form-select-sm" style="width:auto" v-model.number="currentPageIndex" aria-label="Select page">
-                <option v-for="(p, idx) in workbook.pages" :key="'pgopt-'+idx" :value="idx">{{ idx + 1 }}</option>
-              </select>
-            </div>
-            <button class="btn btn-secondary" @click="nextPage" :disabled="!canGoNextPage" aria-label="Next page">{{ $t('next') }}</button>
-          </div>
-          <div v-if="isSubmitted" class="final-score mt-3">
-            <div class="d-flex align-items-center gap-2 mb-2">
-              <span v-if="workbook.status === 'mastery'" class="badge bg-success">○ {{ $t('mastery') || 'Mastery' }}</span>
-              <span v-else-if="workbook.status === 'pass'" class="badge bg-warning text-dark">△ {{ $t('pass') || 'Pass' }}</span>
-              <span v-else class="badge bg-danger">× {{ $t('retry') || 'Retry' }}</span>
-            </div>
-            <div class="row g-2">
-              <div class="col-12 col-md-4"><Stat :label="$t('finalScore')" :value="`${calculateFinalScore()}/${calculateAttemptedCount()}`" /></div>
-              <div class="col-12 col-md-4"><Stat :label="$t('grade')" :value="`${workbook.gradePercent || 0}%`" /></div>
-              <div class="col-12 col-md-4"><Stat :label="$t('speed')" :value="`${workbook.avgSecondsPerExercise || 0}s/ex`" /></div>
-            </div>
-            <div class="mt-2">
-              <div class="progress" style="height:6px" role="progressbar" :aria-valuenow="speedGaugeWidth" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" :class="speedGaugeClass" :style="{ width: speedGaugeWidth + '%' }"></div>
-              </div>
-              <small class="text-muted">{{ $t('speed') + ':' }} {{ workbook.avgSecondsPerExercise || 0 }}s/ex — {{ $t('target') + ' ≤ ' + speedTarget + 's/ex' }}</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  .workbook.mb-4
+    .card
+      .card-body
+        h3.card-title {{ workbook.title }} ({{ $t('level') }}: {{ workbook.level }})
+        .workbook-status.mb-3
+          Stat(:label="$t('completedBlocks')" :value="completedPages.length")
+          Stat(:label="$t('attempts')" :value="workbook.attempts")
+          Stat(:label="$t('lastScore')" :value="`${workbook.lastScore}/${workbook.totalExercises}`")
+        .mb-3.d-flex.justify-content-end
+          button.btn.btn-outline-danger.btn-sm(@click="resetWorkbook") {{ $t('reset') }}
+        .workbook-content
+          .mb-2
+            .progress(role="progressbar" :aria-valuenow="pageProgress" aria-valuemin="0" aria-valuemax="100")
+              .progress-bar(:style="{ width: pageProgress + '%' }") {{ pageProgress }}%
+            small.text-muted {{ pageInfoText }} — {{ answeredCount }}/{{ currentPage.exercises.length }} • ⏱ {{ prettyTimer }}
+          .alert.alert-info(role="alert" v-if="workbook.example")
+            strong {{ $t('example') }}:
+            |  {{ workbook.example }}
+          Page(:key="resetKey" :page="currentPage" :isSubmitted="isSubmitted" @update-page-status="handlePageStatus" :isReadOnly="isSubmitted")
+          .navigation.d-flex.justify-content-between.align-items-center
+            button.btn.btn-secondary(@click="prevPage" :disabled="currentPageIndex === 0" aria-label="Previous page") {{ $t('previous') }}
+            .d-flex.align-items-center.gap-2
+              span {{ pageInfoText }}
+              select.form-select.form-select-sm(style="width:auto" v-model.number="currentPageIndex" aria-label="Select page")
+                option(v-for="(p, idx) in workbook.pages" :key="'pgopt-'+idx" :value="idx") {{ idx + 1 }}
+            button.btn.btn-secondary(@click="nextPage" :disabled="!canGoNextPage" aria-label="Next page") {{ $t('next') }}
+          .final-score.mt-3(v-if="isSubmitted")
+            .d-flex.align-items-center.gap-2.mb-2
+              span.badge.bg-success(v-if="workbook.status === 'mastery'") ○ {{ $t('mastery') || 'Mastery' }}
+              span.badge.bg-warning.text-dark(v-else-if="workbook.status === 'pass'") △ {{ $t('pass') || 'Pass' }}
+              span.badge.bg-danger(v-else) × {{ $t('retry') || 'Retry' }}
+            .row.g-2
+              .col-12.col-md-4
+                Stat(:label="$t('finalScore')" :value="`${calculateFinalScore()}/${calculateAttemptedCount()}`")
+              .col-12.col-md-4
+                Stat(:label="$t('grade')" :value="`${workbook.gradePercent || 0}%`")
+              .col-12.col-md-4
+                Stat(:label="$t('speed')" :value="`${workbook.avgSecondsPerExercise || 0}s/ex`")
+            .mt-2
+              .progress(style="height:6px" role="progressbar" :aria-valuenow="speedGaugeWidth" aria-valuemin="0" aria-valuemax="100")
+                .progress-bar(:class="speedGaugeClass" :style="{ width: speedGaugeWidth + '%' }")
+              small.text-muted {{ $t('speed') + ':' }} {{ workbook.avgSecondsPerExercise || 0 }}s/ex — {{ $t('target') + ' ≤ ' + speedTarget + 's/ex' }}
 </template>
 
 <script>

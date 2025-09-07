@@ -1,34 +1,26 @@
-<template>
-  <div class="card h-100">
-    <div class="card-body d-flex flex-column">
-      <h5 class="card-title">{{ workbook.title }}</h5>
-      <p class="mb-1">{{ $t('level') }}: {{ workbook.level }}</p>
-      <div class="mb-2 d-flex align-items-center gap-2" v-if="workbook.status">
-        <span v-if="workbook.status === 'mastery'" class="badge bg-success">○ {{ $t('mastery') || 'Mastery' }}</span>
-        <span v-else-if="workbook.status === 'pass'" class="badge bg-warning text-dark">△ {{ $t('pass') || 'Pass' }}</span>
-        <span v-else class="badge bg-danger">× {{ $t('retry') || 'Retry' }}</span>
-        <span v-if="workbook.gradePercent" class="badge bg-secondary ms-auto">{{ $t('grade') }}: {{ workbook.gradePercent }}%</span>
-      </div>
-      <div class="mb-2">
-        <div class="progress" role="progressbar" :aria-valuenow="progress.percent" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar" :style="{ width: progress.percent + '%' }">{{ progress.percent }}%</div>
-        </div>
-        <small class="text-muted">{{ progress.completed }}/{{ totalPages }} páginas</small>
-      </div>
-      <p class="mb-2">{{ $t('lastScore') }}: {{ workbook.lastScore }}/{{ workbook.totalExercises }}</p>
-      <small v-if="workbook.avgSecondsPerExercise" class="text-muted">⏱ {{ workbook.avgSecondsPerExercise }}s/ex</small>
-      <div v-if="workbook.avgSecondsPerExercise" class="mt-1">
-        <div class="progress" style="height:4px" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar" :class="speedGaugeClass" :style="{ width: speedGaugeWidth + '%' }"></div>
-        </div>
-      </div>
-      <div class="d-flex align-items-center gap-2 mt-auto">
-        <span v-if="workbook.completed" class="badge bg-success">{{ $t('completed') }}</span>
-        <span v-if="workbook.comingSoon" class="badge bg-warning text-dark">{{ $t('comingSoon') }}</span>
-        <button class="btn btn-primary ms-auto" :disabled="!canStart" :class="{ 'opacity-50': !canStart, disabled: !canStart }" @click.prevent="onStart">{{ $t('start') }}</button>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  .card.h-100
+    .card-body.d-flex.flex-column
+      h5.card-title {{ workbook.title }}
+      p.mb-1 {{ $t('level') }}: {{ workbook.level }}
+      .mb-2.d-flex.align-items-center.gap-2(v-if="workbook.status")
+        span.badge.bg-success(v-if="workbook.status === 'mastery'") ○ {{ $t('mastery') || 'Mastery' }}
+        span.badge.bg-warning.text-dark(v-else-if="workbook.status === 'pass'") △ {{ $t('pass') || 'Pass' }}
+        span.badge.bg-danger(v-else) × {{ $t('retry') || 'Retry' }}
+        span.badge.bg-secondary.ms-auto(v-if="workbook.gradePercent") {{ $t('grade') }}: {{ workbook.gradePercent }}%
+      .mb-2
+        .progress(role="progressbar" :aria-valuenow="progress.percent" aria-valuemin="0" aria-valuemax="100")
+          .progress-bar(:style="{ width: progress.percent + '%' }") {{ progress.percent }}%
+        small.text-muted {{ progress.completed }}/{{ totalPages }} páginas
+      p.mb-2 {{ $t('lastScore') }}: {{ workbook.lastScore }}/{{ workbook.totalExercises }}
+      small.text-muted(v-if="workbook.avgSecondsPerExercise") ⏱ {{ workbook.avgSecondsPerExercise }}s/ex
+      .mt-1(v-if="workbook.avgSecondsPerExercise")
+        .progress(style="height:4px" role="progressbar" aria-valuemin="0" aria-valuemax="100")
+          .progress-bar(:class="speedGaugeClass" :style="{ width: speedGaugeWidth + '%' }")
+      .d-flex.align-items-center.gap-2.mt-auto
+        span.badge.bg-success(v-if="workbook.completed") {{ $t('completed') }}
+        span.badge.bg-warning.text-dark(v-if="workbook.comingSoon") {{ $t('comingSoon') }}
+        button.btn.btn-primary.ms-auto(:disabled="!canStart" :class="{ 'opacity-50': !canStart, disabled: !canStart }" @click.prevent="onStart") {{ $t('start') }}
 </template>
 
 <script>

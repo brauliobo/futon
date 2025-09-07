@@ -1,10 +1,7 @@
 <!-- src/components/PrimaryButton.vue -->
-<template>
-  <button type="button" class="btn btn-primary" :disabled="disabled" @click="$emit('click')" v-bind="$attrs">
-    <slot />
-  </button>
-  
-  
+<template lang="pug">
+  button.btn.btn-primary(type="button" :disabled="disabled" @click="$emit('click')" v-bind="$attrs")
+    slot
 </template>
 
 <script>

@@ -1,33 +1,18 @@
 <!-- src/components/Home.vue -->
-<template>
-  <div class="home">
-    <div class="container">
-      <h2 class="mb-3">{{ $t('chooseNotebook') }}</h2>
-
-      <div v-for="(group, subject) in groupedBySubject" :key="subject" class="mb-4">
-        <div class="card">
-          <div class="card-header d-flex align-items-center justify-content-between">
-            <h3 class="mb-0">{{ subjectLabel(subject) }}</h3>
-          </div>
-          <div class="card-body">
-            <div class="mt-1">
-              <div class="mb-2"><small class="text-muted fw-semibold">{{ $t('levels') }}</small></div>
-              <LevelRoadmap
-                :sequence="levelSequenceBySubject(subject)"
-                :available="availableLevelsBySubject(subject)"
-                :active="activeLevelBySubject[subject] || ''"
-                :progressByLevel="{}"
-                :getLevelName="(id) => levelNameBySubject(subject, id)"
-                @select="val => activeLevelBySubject[subject] = val"
-              />
-            </div>
-            <LevelList :workbooks="filteredByActiveLevel(subject, group)" @start="$emit('select-workbook', $event)" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+<template lang="pug">
+  .home
+    .container
+      h2.mb-3 {{ $t('chooseNotebook') }}
+      .mb-4(v-for="(group, subject) in groupedBySubject" :key="subject")
+        .card
+          .card-header.d-flex.align-items-center.justify-content-between
+            h3.mb-0 {{ subjectLabel(subject) }}
+          .card-body
+            .mt-1
+              .mb-2
+                small.text-muted.fw-semibold {{ $t('levels') }}
+              LevelRoadmap(:sequence="levelSequenceBySubject(subject)" :available="availableLevelsBySubject(subject)" :active="activeLevelBySubject[subject] || ''" :progressByLevel="{}" :getLevelName="(id) => levelNameBySubject(subject, id)" @select="val => activeLevelBySubject[subject] = val")
+            LevelList(:workbooks="filteredByActiveLevel(subject, group)" @start="$emit('select-workbook', $event)")
 </template>
 
 <script>

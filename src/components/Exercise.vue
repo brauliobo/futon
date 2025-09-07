@@ -1,22 +1,17 @@
 <!-- src/components/Exercise.vue -->
-<template>
-  <div class="exercise mb-4">
-    <div class="d-flex align-items-center">
-      <span class="me-3 fw-bold">{{ exerciseNumber }}.</span>
-      <label class="flex-grow-1 mb-0">{{ exercise.question }}</label>
-    </div>
-    <div v-if="!isReadOnly">
-      <input v-if="showInput" v-model="userAnswer" :type="inputType" class="form-control form-control-lg mt-2" :disabled="!isEnabled || isSubmitted" :placeholder="$t('enterAnswer')" @keydown.enter.prevent="handleSubmit" @keydown.tab.prevent="handleSubmit" @keyup.tab.prevent="handleSubmit" ref="inputRef" />
-      <div v-else class="mt-2 d-flex align-items-center gap-2">
-        <span class="text-dark">{{ userAnswer }}</span>
-        <button class="btn btn-sm btn-link" @click="editAnswer" aria-label="Editar resposta">{{ $t('edit') || 'Editar' }}</button>
-      </div>
-    </div>
-    <div v-if="isReadOnly" class="mt-2">
-      <span v-if="isCorrect" class="text-success">✔️ {{ $t('correct') }}</span>
-      <span v-else class="text-danger">❌ {{ $t('wrong') }} ({{ $t('correctAnswer') }}: {{ exercise.correctAnswer }})</span>
-    </div>
-  </div>
+<template lang="pug">
+  .exercise.mb-4
+    .d-flex.align-items-center
+      span.me-3.fw-bold {{ exerciseNumber }}.
+      label.flex-grow-1.mb-0 {{ exercise.question }}
+    div(v-if="!isReadOnly")
+      input.form-control.form-control-lg.mt-2(v-if="showInput" v-model="userAnswer" :type="inputType" :disabled="!isEnabled || isSubmitted" :placeholder="$t('enterAnswer')" @keydown.enter.prevent="handleSubmit" @keydown.tab.prevent="handleSubmit" @keyup.tab.prevent="handleSubmit" ref="inputRef")
+      .mt-2.d-flex.align-items-center.gap-2(v-else)
+        span.text-dark {{ userAnswer }}
+        button.btn.btn-sm.btn-link(@click="editAnswer" aria-label="Editar resposta") {{ $t('edit') || 'Editar' }}
+    .mt-2(v-if="isReadOnly")
+      span.text-success(v-if="isCorrect") ✔️ {{ $t('correct') }}
+      span.text-danger(v-else) ❌ {{ $t('wrong') }} ({{ $t('correctAnswer') }}: {{ exercise.correctAnswer }})
 </template>
 
 <script>

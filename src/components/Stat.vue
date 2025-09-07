@@ -1,10 +1,8 @@
 <!-- src/components/Stat.vue -->
-<template>
-  <div class="stat d-flex align-items-center mb-1">
-    <span class="me-2">{{ label }}:</span>
-    <strong>{{ value }}</strong>
-  </div>
-  
+<template lang="pug">
+  .stat.d-flex.align-items-center.mb-1
+    span.me-2 {{ label }}:
+    strong {{ value }}
 </template>
 
 <script>

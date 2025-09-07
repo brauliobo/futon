@@ -1,31 +1,15 @@
 <!-- src/App.vue -->
-<template>
-  <div id="app">
-    <header class="bg-primary text-white p-4 mb-4">
-      <h1 v-if="!selectedWorkbook">{{ $t('chooseNotebook') }}</h1>
-      <h1 v-else>
-        {{ selectedWorkbook.title }} ({{ $t('level') }}: {{ selectedWorkbook.level }})
-      </h1>
-    </header>
-    <main class="container">
-      <Home
-        v-if="!selectedWorkbook"
-        :workbooks="workbooks"
-        @select-workbook="selectWorkbook"
-      />
-      <div v-else>
-        <button class="btn btn-link mb-3" @click="goHome">← {{ $t('back') }}</button>
-        <Workbook
-          :workbook="selectedWorkbook"
-          :initialPageIndex="initialPageIndex"
-          @update-workbook="updateWorkbook"
-          @page-changed="handlePageChange"
-        />
-      </div>
-    </main>
-    <footer class="text-center py-4">
-    </footer>
-  </div>
+<template lang="pug">
+  #app
+    header.bg-primary.text-white.p-4.mb-4
+      h1(v-if="!selectedWorkbook") {{ $t('chooseNotebook') }}
+      h1(v-else) {{ selectedWorkbook.title }} ({{ $t('level') }}: {{ selectedWorkbook.level }})
+    main.container
+      Home(v-if="!selectedWorkbook" :workbooks="workbooks" @select-workbook="selectWorkbook")
+      div(v-else)
+        button.btn.btn-link.mb-3(@click="goHome") ← {{ $t('back') }}
+        Workbook(:workbook="selectedWorkbook" :initialPageIndex="initialPageIndex" @update-workbook="updateWorkbook" @page-changed="handlePageChange")
+    footer.text-center.py-4
 </template>
 
 <script>
@@ -68,6 +52,8 @@ import level5ACount from "./lessons/math/5A/level_5A_count.json";
 import level5ANextPrev from "./lessons/math/5A/level_5A_nextprev.json";
 import level4ACount from "./lessons/math/4A/level_4A_count.json";
 import level4AAddition from "./lessons/math/4A/level_4A_addition.json";
+import level3AAddition from "./lessons/math/3A/level_3A_addition.json";
+import level3ANextPrev from "./lessons/math/3A/level_3A_nextprev.json";
 import { generateAdditionWorkbook, generateSubtractionWorkbook, generateMultiplicationWorkbook, generateDivisionWorkbook } from "./utils/generatorMath.js";
 import { mathLevels, getMathLevelOrder } from "./domain/levels.js";
 import { generateMathPlaceholder } from "./utils/placeholders.js";
@@ -145,7 +131,8 @@ export default {
         level7ACount, level7ANextPrev,
         level6ACount, level6ANextPrev,
         level5ACount, level5ANextPrev,
-        level4ACount, level4AAddition
+        level4ACount, level4AAddition,
+        level3AAddition, level3ANextPrev
       ].map(w => w.level)
     );
     const allMathOrder = getMathLevelOrder();
@@ -158,6 +145,7 @@ export default {
         withMeta(level6ACount), withMeta(level6ANextPrev),
         withMeta(level5ACount), withMeta(level5ANextPrev),
         withMeta(level4ACount), withMeta(level4AAddition),
+        withMeta(level3AAddition), withMeta(level3ANextPrev),
         withMeta(addition), withMeta(addition2), withMeta(addition3), withMeta(addition4), withMeta(addition5),
         dynamicAdditionA, dynamicAdditionB,
         dynamicSubtractionA,

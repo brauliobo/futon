@@ -1,17 +1,13 @@
-<template>
-  <div class="roadmap d-flex align-items-start overflow-auto">
-    <div v-for="(lvl, idx) in sequence" :key="lvl" class="d-flex flex-column align-items-start me-2">
-      <div class="d-flex align-items-center">
-        <button type="button" class="btn btn-sm" :class="buttonClass(lvl)" @click="$emit('select', lvl)">
-          <span class="badge bg-primary me-2">{{ idx + 1 }}</span>{{ lvl }} — {{ getName(lvl) }}
-        </button>
-        <div v-if="idx < sequence.length - 1" class="connector mx-2"></div>
-      </div>
-      <div class="progress w-100 mt-1" style="min-width:120px" role="progressbar" :aria-valuenow="progressPercent(lvl)" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar" :style="{ width: progressPercent(lvl) + '%' }"></div>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  .roadmap.d-flex.align-items-start.overflow-auto
+    .d-flex.flex-column.align-items-start.me-2(v-for="(lvl, idx) in sequence" :key="lvl")
+      .d-flex.align-items-center
+        button.btn.btn-sm(:class="buttonClass(lvl)" type="button" @click="$emit('select', lvl)")
+          span.badge.bg-primary.me-2 {{ idx + 1 }}
+          | {{ lvl }} — {{ getName(lvl) }}
+        .connector.mx-2(v-if="idx < sequence.length - 1")
+      .progress.w-100.mt-1(style="min-width:120px" role="progressbar" :aria-valuenow="progressPercent(lvl)" aria-valuemin="0" aria-valuemax="100")
+        .progress-bar(:style="{ width: progressPercent(lvl) + '%' }")
 </template>
 
 <script>

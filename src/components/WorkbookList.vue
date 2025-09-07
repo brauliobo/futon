@@ -1,13 +1,7 @@
 <!-- src/components/WorkbookList.vue -->
-<template>
-  <div class="workbook-list">
-    <Workbook
-      v-for="(workbook, index) in workbooks"
-      :key="index"
-      :workbook="workbook"
-      @update-workbook="handleUpdateWorkbook"
-    />
-  </div>
+<template lang="pug">
+  .workbook-list
+    Workbook(v-for="(workbook, index) in workbooks" :key="index" :workbook="workbook" @update-workbook="handleUpdateWorkbook")
 </template>
 
 <script>

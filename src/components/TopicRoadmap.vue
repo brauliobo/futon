@@ -1,19 +1,15 @@
 <!-- src/components/TopicRoadmap.vue -->
-<template>
-  <div class="roadmap d-flex align-items-start overflow-auto">
-    <div v-for="(topicKey, idx) in filteredSequence" :key="topicKey" class="d-flex flex-column align-items-start me-2">
-      <div class="d-flex align-items-center">
-        <button type="button" class="btn btn-sm" :class="['btn-outline-primary', { active: topicKey === active }]" @click="$emit('select', topicKey)">
-          <span class="badge bg-primary me-2">{{ idx + 1 }}</span>{{ label(topicKey) }}
-        </button>
-        <div v-if="idx < filteredSequence.length - 1" class="connector mx-2"></div>
-      </div>
-      <div class="progress w-100 mt-1" style="min-width:120px" role="progressbar" :aria-valuenow="progressPercent(topicKey)" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar" :style="{ width: progressPercent(topicKey) + '%' }"></div>
-      </div>
-    </div>
-  </div>
- </template>
+<template lang="pug">
+  .roadmap.d-flex.align-items-start.overflow-auto
+    .d-flex.flex-column.align-items-start.me-2(v-for="(topicKey, idx) in filteredSequence" :key="topicKey")
+      .d-flex.align-items-center
+        button.btn.btn-sm(:class="['btn-outline-primary', { active: topicKey === active }]" type="button" @click="$emit('select', topicKey)")
+          span.badge.bg-primary.me-2 {{ idx + 1 }}
+          | {{ label(topicKey) }}
+        .connector.mx-2(v-if="idx < filteredSequence.length - 1")
+      .progress.w-100.mt-1(style="min-width:120px" role="progressbar" :aria-valuenow="progressPercent(topicKey)" aria-valuemin="0" aria-valuemax="100")
+        .progress-bar(:style="{ width: progressPercent(topicKey) + '%' }")
+</template>
 
 <script>
 export default {
