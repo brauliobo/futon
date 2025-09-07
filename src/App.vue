@@ -62,6 +62,12 @@ import englishVocab2 from "./lessons/english/A/english_vocab_2.json";
 import englishPhrases2 from "./lessons/english/A/english_phrases_2.json";
 import level7ACount from "./lessons/math/7A/level_7A_count.json";
 import level7ANextPrev from "./lessons/math/7A/level_7A_nextprev.json";
+import level6ACount from "./lessons/math/6A/level_6A_count.json";
+import level6ANextPrev from "./lessons/math/6A/level_6A_nextprev.json";
+import level5ACount from "./lessons/math/5A/level_5A_count.json";
+import level5ANextPrev from "./lessons/math/5A/level_5A_nextprev.json";
+import level4ACount from "./lessons/math/4A/level_4A_count.json";
+import level4AAddition from "./lessons/math/4A/level_4A_addition.json";
 import { generateAdditionWorkbook, generateSubtractionWorkbook, generateMultiplicationWorkbook, generateDivisionWorkbook } from "./utils/generatorMath.js";
 import { mathLevels, getMathLevelOrder } from "./domain/levels.js";
 import { generateMathPlaceholder } from "./utils/placeholders.js";
@@ -76,6 +82,25 @@ export default {
   },
   data() {
     const deep = (o) => JSON.parse(JSON.stringify(o));
+    const derivePassCriteria = (wb) => {
+      const subject = String(wb.subject || '').toLowerCase();
+      const lvl = String(wb.level || '').toUpperCase();
+      if (subject === 'math') {
+        if (['7A'].includes(lvl)) return { minAccuracyPercent: 80, maxAvgSecondsPerExercise: 6 };
+        if (['6A'].includes(lvl)) return { minAccuracyPercent: 85, maxAvgSecondsPerExercise: 5 };
+        if (['5A'].includes(lvl)) return { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 5 };
+        if (['4A'].includes(lvl)) return { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 };
+        if (['3A','2A'].includes(lvl)) return { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 5 };
+        if (['A'].includes(lvl)) return { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 };
+        if (['B'].includes(lvl)) return { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4 };
+        if (['C','D'].includes(lvl)) return { minAccuracyPercent: 92, maxAvgSecondsPerExercise: 4 };
+        if (['E','F'].includes(lvl)) return { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 5.5 };
+        return { minAccuracyPercent: 85, maxAvgSecondsPerExercise: 6 };
+      }
+      if (subject === 'portuguese') return { minAccuracyPercent: 85, maxAvgSecondsPerExercise: 8 };
+      if (subject === 'english') return { minAccuracyPercent: 80, maxAvgSecondsPerExercise: 7 };
+      return { minAccuracyPercent: 85, maxAvgSecondsPerExercise: 6 };
+    };
     const expandRepetitions = (wb) => {
       const sourcePages = wb.pages.flatMap((p) => {
         const times = Number.isFinite(p.repeat) && p.repeat > 1 ? Math.floor(p.repeat) : 1;
@@ -91,8 +116,14 @@ export default {
       const expanded = expandRepetitions(wb);
       return {
         ...expanded,
+        passCriteria: expanded.passCriteria || derivePassCriteria(expanded),
         attempts: 0,
         lastScore: 0,
+        gradePercent: 0,
+        status: '',
+        completed: false,
+        durationSeconds: 0,
+        avgSecondsPerExercise: 0,
         totalExercises: expanded.pages.reduce((acc, page) => acc + page.exercises.length, 0),
       };
     };
@@ -111,7 +142,10 @@ export default {
         multiplication, multiplication2, multiplication3, multiplication4, multiplication5,
         division, division2, division3, division4, division5,
         fractions, fractionsMixed,
-        level7ACount, level7ANextPrev
+        level7ACount, level7ANextPrev,
+        level6ACount, level6ANextPrev,
+        level5ACount, level5ANextPrev,
+        level4ACount, level4AAddition
       ].map(w => w.level)
     );
     const allMathOrder = getMathLevelOrder();
@@ -121,6 +155,9 @@ export default {
     return {
       workbooks: [
         withMeta(level7ACount), withMeta(level7ANextPrev),
+        withMeta(level6ACount), withMeta(level6ANextPrev),
+        withMeta(level5ACount), withMeta(level5ANextPrev),
+        withMeta(level4ACount), withMeta(level4AAddition),
         withMeta(addition), withMeta(addition2), withMeta(addition3), withMeta(addition4), withMeta(addition5),
         dynamicAdditionA, dynamicAdditionB,
         dynamicSubtractionA,
@@ -169,7 +206,12 @@ export default {
           ...this.workbooks[index],
           completedPages: updatedWorkbook.completedPages,
           lastScore: updatedWorkbook.lastScore,
+          gradePercent: updatedWorkbook.gradePercent ?? this.workbooks[index].gradePercent,
+          status: updatedWorkbook.status ?? this.workbooks[index].status,
           attempts: updatedWorkbook.attempts,
+          completed: updatedWorkbook.completed ?? this.workbooks[index].completed,
+          durationSeconds: updatedWorkbook.durationSeconds ?? this.workbooks[index].durationSeconds,
+          avgSecondsPerExercise: updatedWorkbook.avgSecondsPerExercise ?? this.workbooks[index].avgSecondsPerExercise,
         };
         if (this.selectedWorkbook && this.selectedWorkbook.title === updatedWorkbook.title) {
           this.selectedWorkbook = this.workbooks[index];
@@ -199,6 +241,11 @@ export default {
             title: wb.title,
             attempts: wb.attempts,
             lastScore: wb.lastScore,
+            gradePercent: wb.gradePercent || 0,
+            status: wb.status || '',
+            completed: !!wb.completed,
+            durationSeconds: wb.durationSeconds || 0,
+            avgSecondsPerExercise: wb.avgSecondsPerExercise || 0,
             completedPages: wb.completedPages || [],
             pages: wb.pages.map(p => ({
               pageNumber: p.pageNumber,
@@ -233,6 +280,11 @@ export default {
             ...wb,
             attempts: match.attempts ?? wb.attempts,
             lastScore: match.lastScore ?? wb.lastScore,
+            gradePercent: match.gradePercent ?? wb.gradePercent,
+            status: match.status ?? wb.status,
+            completed: !!(match.completed ?? wb.completed),
+            durationSeconds: match.durationSeconds ?? wb.durationSeconds,
+            avgSecondsPerExercise: match.avgSecondsPerExercise ?? wb.avgSecondsPerExercise,
             completedPages: match.completedPages || [],
             pages,
           };
