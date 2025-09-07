@@ -40,7 +40,22 @@
             <button class="btn btn-secondary" @click="nextPage" :disabled="!canGoNextPage" aria-label="Next page">{{ $t('next') }}</button>
           </div>
           <div v-if="isSubmitted" class="final-score mt-3">
-            <h4>{{ $t('finalScore') }}: {{ calculateFinalScore() }}/{{ calculateAttemptedCount() }}</h4>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span v-if="workbook.status === 'mastery'" class="badge bg-success">○ {{ $t('mastery') || 'Mastery' }}</span>
+              <span v-else-if="workbook.status === 'pass'" class="badge bg-warning text-dark">△ {{ $t('pass') || 'Pass' }}</span>
+              <span v-else class="badge bg-danger">× {{ $t('retry') || 'Retry' }}</span>
+            </div>
+            <div class="row g-2">
+              <div class="col-12 col-md-4"><Stat :label="$t('finalScore')" :value="`${calculateFinalScore()}/${calculateAttemptedCount()}`" /></div>
+              <div class="col-12 col-md-4"><Stat :label="$t('grade')" :value="`${workbook.gradePercent || 0}%`" /></div>
+              <div class="col-12 col-md-4"><Stat :label="$t('speed')" :value="`${workbook.avgSecondsPerExercise || 0}s/ex`" /></div>
+            </div>
+            <div class="mt-2">
+              <div class="progress" style="height:6px" role="progressbar" :aria-valuenow="speedGaugeWidth" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" :class="speedGaugeClass" :style="{ width: speedGaugeWidth + '%' }"></div>
+              </div>
+              <small class="text-muted">{{ $t('speed') + ':' }} {{ workbook.avgSecondsPerExercise || 0 }}s/ex — {{ $t('target') + ' ≤ ' + speedTarget + 's/ex' }}</small>
+            </div>
           </div>
         </div>
       </div>
@@ -51,6 +66,7 @@
 <script>
 import Page from "./Page.vue";
 import Stat from "./Stat.vue";
+import { computeGradePercent, computeStatus } from "../domain/scoring.js";
 // import PrimaryButton from "./PrimaryButton.vue";
 
 export default {
@@ -79,6 +95,7 @@ export default {
       answeredCount: 0,
       pageSeconds: 0,
       intervalId: null,
+      startedAt: 0,
     };
   },
   computed: {
@@ -104,6 +121,24 @@ export default {
       const m = Math.floor(this.pageSeconds / 60);
       const s = this.pageSeconds % 60;
       return `${m}:${s < 10 ? '0' : ''}${s}`;
+    },
+    speedTarget() {
+      const defaults = { maxAvgSecondsPerExercise: 6 };
+      const pc = { ...defaults, ...(this.workbook.passCriteria || {}) };
+      return pc.maxAvgSecondsPerExercise;
+    },
+    speedGaugeWidth() {
+      const s = Number(this.workbook.avgSecondsPerExercise) || 0;
+      const maxS = Number(this.speedTarget) || 6;
+      const val = Math.max(0, Math.min(100, 100 * (1 - s / (maxS * 2))));
+      return Math.round(val);
+    },
+    speedGaugeClass() {
+      const s = Number(this.workbook.avgSecondsPerExercise) || 0;
+      const maxS = Number(this.speedTarget) || 6;
+      if (s <= maxS) return 'bg-success';
+      if (s <= maxS * 1.2) return 'bg-warning';
+      return 'bg-danger';
     },
   },
   methods: {
@@ -158,8 +193,21 @@ export default {
     },
     submitAnswers() {
       this.isSubmitted = true;
-      this.calculateFinalScore();
-      this.updateWorkbookData();
+      const correct = this.calculateFinalScore();
+      const attempted = this.calculateAttemptedCount();
+      const accuracyPercent = attempted ? Math.round((correct / attempted) * 100) : 0;
+      const endTs = Date.now();
+      const elapsed = this.startedAt ? Math.round((endTs - this.startedAt) / 1000) : 0;
+      const total = this.workbook.totalExercises || attempted;
+      const avgSecondsPerExercise = total ? +(elapsed / total).toFixed(2) : 0;
+      const defaults = { minAccuracyPercent: 85, maxAvgSecondsPerExercise: 6 };
+      const pc = { ...defaults, ...(this.workbook.passCriteria || {}) };
+      const meetsAccuracy = accuracyPercent >= pc.minAccuracyPercent;
+      const meetsSpeed = avgSecondsPerExercise <= pc.maxAvgSecondsPerExercise;
+      const completed = !!(meetsAccuracy && meetsSpeed);
+      const gradePercent = computeGradePercent({ accuracyPercent, avgSecondsPerExercise, maxAvgSecondsPerExercise: pc.maxAvgSecondsPerExercise });
+      const status = computeStatus({ accuracyPercent, avgSecondsPerExercise, maxAvgSecondsPerExercise: pc.maxAvgSecondsPerExercise, minAccuracyPass: 95 });
+      this.updateWorkbookData({ completed, durationSeconds: elapsed, avgSecondsPerExercise, gradePercent, status });
     },
     resetWorkbook() {
       this.isSubmitted = false;
@@ -171,7 +219,7 @@ export default {
         });
       });
       this.resetKey += 1;
-      this.updateWorkbookData();
+      this.updateWorkbookData({ gradePercent: 0, status: '' });
     },
     calculateFinalScore() {
       const normalize = (s) => String(s).replace(/\s+/g, '').replace(/,/, '.').toLowerCase();
@@ -199,13 +247,14 @@ export default {
       });
       return attempted || this.workbook.totalExercises;
     },
-    updateWorkbookData() {
+    updateWorkbookData(extra = {}) {
       // Emitir um evento para o componente pai atualizar o estado global
       this.$emit("update-workbook", {
         title: this.workbook.title,
         completedPages: this.completedPages,
         lastScore: this.workbook.lastScore,
         attempts: this.workbook.attempts + 1,
+        ...extra,
       });
     },
   },
@@ -213,6 +262,7 @@ export default {
     this.$emit('page-changed', this.currentPageIndex + 1);
     window.addEventListener('keydown', this.onKeydown);
     this.startTimer();
+    this.startedAt = Date.now();
   },
   unmounted() {
     window.removeEventListener('keydown', this.onKeydown);
