@@ -11,7 +11,6 @@
       <Home
         v-if="!selectedWorkbook"
         :workbooks="workbooks"
-        :topics="topics"
         @select-workbook="selectWorkbook"
       />
       <div v-else>
@@ -30,38 +29,42 @@
 </template>
 
 <script>
-import { c1 } from "./lessons/c1";
-import addition from "./lessons/addition.json";
-import addition2 from "./lessons/addition_2.json";
-import addition3 from "./lessons/addition_3.json";
-import addition4 from "./lessons/addition_4.json";
-import addition5 from "./lessons/addition_5.json";
-import subtraction from "./lessons/subtraction.json";
-import subtraction2 from "./lessons/subtraction_2.json";
-import subtraction3 from "./lessons/subtraction_3.json";
-import subtraction4 from "./lessons/subtraction_4.json";
-import subtraction5 from "./lessons/subtraction_5.json";
-import multiplication from "./lessons/multiplication.json";
-import multiplication2 from "./lessons/multiplication_2.json";
-import multiplication3 from "./lessons/multiplication_3.json";
-import multiplication4 from "./lessons/multiplication_4.json";
-import multiplication5 from "./lessons/multiplication_5.json";
-import division from "./lessons/division.json";
-import division2 from "./lessons/division_2.json";
-import division3 from "./lessons/division_3.json";
-import division4 from "./lessons/division_4.json";
-import division5 from "./lessons/division_5.json";
-import fractions from "./lessons/fractions.json";
-import fractionsMixed from "./lessons/fractions_mixed.json";
-import portugueseReading from "./lessons/reading_comprehension.json";
-import portugueseGrammar from "./lessons/grammar.json";
-import portugueseReading2 from "./lessons/reading_comprehension_2.json";
-import portugueseGrammar2 from "./lessons/grammar_2.json";
-import englishBasics from "./lessons/english_basics.json";
-import englishPhrases from "./lessons/english_phrases.json";
-import englishVocab2 from "./lessons/english_vocab_2.json";
-import englishPhrases2 from "./lessons/english_phrases_2.json";
+import { c1 } from "./lessons/math/C/c1.js";
+import addition from "./lessons/math/A/addition.json";
+import addition2 from "./lessons/math/A/addition_2.json";
+import addition3 from "./lessons/math/A/addition_3.json";
+import addition4 from "./lessons/math/A/addition_4.json";
+import addition5 from "./lessons/math/A/addition_5.json";
+import subtraction from "./lessons/math/B/subtraction.json";
+import subtraction2 from "./lessons/math/B/subtraction_2.json";
+import subtraction3 from "./lessons/math/B/subtraction_3.json";
+import subtraction4 from "./lessons/math/B/subtraction_4.json";
+import subtraction5 from "./lessons/math/B/subtraction_5.json";
+import multiplication from "./lessons/math/C/multiplication.json";
+import multiplication2 from "./lessons/math/C/multiplication_2.json";
+import multiplication3 from "./lessons/math/C/multiplication_3.json";
+import multiplication4 from "./lessons/math/C/multiplication_4.json";
+import multiplication5 from "./lessons/math/C/multiplication_5.json";
+import division from "./lessons/math/D/division.json";
+import division2 from "./lessons/math/D/division_2.json";
+import division3 from "./lessons/math/D/division_3.json";
+import division4 from "./lessons/math/D/division_4.json";
+import division5 from "./lessons/math/D/division_5.json";
+import fractions from "./lessons/math/C/fractions.json";
+import fractionsMixed from "./lessons/math/D/fractions_mixed.json";
+import portugueseReading from "./lessons/portuguese/A/reading_comprehension.json";
+import portugueseGrammar from "./lessons/portuguese/A/grammar.json";
+import portugueseReading2 from "./lessons/portuguese/A/reading_comprehension_2.json";
+import portugueseGrammar2 from "./lessons/portuguese/A/grammar_2.json";
+import englishBasics from "./lessons/english/A/english_basics.json";
+import englishPhrases from "./lessons/english/A/english_phrases.json";
+import englishVocab2 from "./lessons/english/A/english_vocab_2.json";
+import englishPhrases2 from "./lessons/english/A/english_phrases_2.json";
+import level7ACount from "./lessons/math/7A/level_7A_count.json";
+import level7ANextPrev from "./lessons/math/7A/level_7A_nextprev.json";
 import { generateAdditionWorkbook, generateSubtractionWorkbook, generateMultiplicationWorkbook, generateDivisionWorkbook } from "./utils/generatorMath.js";
+import { mathLevels, getMathLevelOrder } from "./domain/levels.js";
+import { generateMathPlaceholder } from "./utils/placeholders.js";
 import Home from "./components/Home.vue";
 import Workbook from "./components/Workbook.vue";
 
@@ -93,7 +96,6 @@ export default {
         totalExercises: expanded.pages.reduce((acc, page) => acc + page.exercises.length, 0),
       };
     };
-    // Sequência correta: Adição → Subtração → Multiplicação → Divisão → Frações → Mistos → Caderno C
     const seedKey = 'futon_seed_addition';
     const existingSeed = localStorage.getItem(seedKey) || String(Math.random()).slice(2);
     localStorage.setItem(seedKey, existingSeed);
@@ -102,8 +104,23 @@ export default {
     const dynamicSubtractionA = withMeta(generateSubtractionWorkbook({ seed: `${existingSeed}-S-A`, level: 'A', pages: 2 }));
     const dynamicMultiplicationA = withMeta(generateMultiplicationWorkbook({ seed: `${existingSeed}-M-A`, level: 'A', pages: 2 }));
     const dynamicDivisionA = withMeta(generateDivisionWorkbook({ seed: `${existingSeed}-D-A`, level: 'A', pages: 2 }));
+    const implementedMathLevels = new Set(
+      [
+        addition, addition2, addition3, addition4, addition5,
+        subtraction, subtraction2, subtraction3, subtraction4, subtraction5,
+        multiplication, multiplication2, multiplication3, multiplication4, multiplication5,
+        division, division2, division3, division4, division5,
+        fractions, fractionsMixed,
+        level7ACount, level7ANextPrev
+      ].map(w => w.level)
+    );
+    const allMathOrder = getMathLevelOrder();
+    const mathPlaceholders = allMathOrder
+      .filter(lvl => !implementedMathLevels.has(lvl))
+      .map(lvl => withMeta(generateMathPlaceholder(lvl)));
     return {
       workbooks: [
+        withMeta(level7ACount), withMeta(level7ANextPrev),
         withMeta(addition), withMeta(addition2), withMeta(addition3), withMeta(addition4), withMeta(addition5),
         dynamicAdditionA, dynamicAdditionB,
         dynamicSubtractionA,
@@ -112,7 +129,9 @@ export default {
         withMeta(subtraction2), withMeta(subtraction3), withMeta(subtraction4), withMeta(subtraction5), withMeta(subtraction),
         withMeta(multiplication2), withMeta(multiplication3), withMeta(multiplication4), withMeta(multiplication5), withMeta(multiplication),
         withMeta(division2), withMeta(division3), withMeta(division4), withMeta(division5), withMeta(division),
-        withMeta(fractions), withMeta(fractionsMixed), withMeta(c1),
+        withMeta(fractions), withMeta(fractionsMixed),
+        ...mathPlaceholders,
+        withMeta(c1),
         withMeta(portugueseReading), withMeta(portugueseGrammar), withMeta(portugueseReading2), withMeta(portugueseGrammar2),
         withMeta(englishBasics), withMeta(englishPhrases), withMeta(englishVocab2), withMeta(englishPhrases2)
       ],
@@ -121,11 +140,7 @@ export default {
     };
   },
   computed: {
-    topics() {
-      const set = new Set();
-      this.workbooks.forEach(wb => wb.pages.forEach(p => p.exercises.forEach(e => set.add(e.type))));
-      return Array.from(set);
-    },
+    
     routePageNumber() {
       const p = Number(this.$route.params.page || 1);
       return Number.isFinite(p) && p > 0 ? p : 1;
@@ -136,6 +151,7 @@ export default {
       return String(wb.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
     },
     selectWorkbook(wb) {
+      if (wb && wb.comingSoon) return; // lock placeholders
       this.selectedWorkbook = wb;
       this.initialPageIndex = 0;
       this.$router.push({ name: 'workbook', params: { slug: this.slugOf(wb), page: 1 } });
