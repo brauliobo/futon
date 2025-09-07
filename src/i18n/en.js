@@ -44,6 +44,14 @@ export const en = {
   finalScore: "Final Score",
   readOnlyMode: "Read-only Mode",
   comingSoon: "Coming soon",
+  // scoring & status
+  mastery: "Mastery",
+  pass: "Pass",
+  retry: "Retry",
+  grade: "Grade",
+  speed: "Speed",
+  target: "Target",
+  edit: "Edit",
   // math level names
   level_name_count_1_5: "Counting 1–5",
   level_name_count_1_10: "Counting 1–10",

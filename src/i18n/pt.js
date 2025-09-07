@@ -45,6 +45,13 @@ export const pt = {
   readOnlyMode: "Modo de Leitura",
   edit: "Editar",
   comingSoon: "Em breve",
+  // pontuação e status
+  mastery: "Domínio",
+  pass: "Aprovado",
+  retry: "Refazer",
+  grade: "Nota",
+  speed: "Velocidade",
+  target: "Meta",
   // nomes dos níveis de matemática
   level_name_count_1_5: "Contagem 1–5",
   level_name_count_1_10: "Contagem 1–10",
