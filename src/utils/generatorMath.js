@@ -67,19 +67,10 @@ export function generateAdditionWorkbook({ seed, level = 'A', pages = 1 }) {
         correctAnswer: a + b,
       });
     }
-    pagesArr.push({
-      pageNumber: p + 1,
-      title: `Adição Dinâmica - Página ${p + 1}`,
-      description: 'Gerado automaticamente a partir de uma seed.',
-      exercises,
-    });
+    pagesArr.push({ pageNumber: p + 1, title: `Adição Dinâmica - Página ${p + 1}`, description: 'Gerado automaticamente a partir de uma seed.', exercises });
   }
-  return {
-    title: `Adição Dinâmica (nível ${level})`,
-    level,
-    subject: 'math',
-    pages: pagesArr,
-  };
+  const defaultsByLevel = { A: { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 }, B: { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4 } };
+  return { title: `Adição Dinâmica (nível ${level})`, level, subject: 'math', pages: pagesArr, passCriteria: defaultsByLevel[level] || { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 } };
 }
 
 export function generateSubtractionWorkbook({ seed, level = 'A', pages = 1 }) {
@@ -91,12 +82,13 @@ export function generateSubtractionWorkbook({ seed, level = 'A', pages = 1 }) {
     for (let i = 0; i < policy.items; i += 1) {
       let a = randInt(rng, policy.min, policy.max);
       let b = randInt(rng, policy.min, policy.max);
-      if (policy.noNegative && a < b) [a, b] = [b, a];
+      if (policy.noNegative && b > a) [a, b] = [b, a];
       exercises.push({ type: 'subtraction', question: `${a} - ${b} =`, correctAnswer: a - b });
     }
     pagesArr.push({ pageNumber: p + 1, title: `Subtração Dinâmica - Página ${p + 1}`, description: 'Gerado automaticamente.', exercises });
   }
-  return { title: `Subtração Dinâmica (nível ${level})`, level, subject: 'math', pages: pagesArr };
+  const defaultsByLevel = { A: { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 }, B: { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 } };
+  return { title: `Subtração Dinâmica (nível ${level})`, level, subject: 'math', pages: pagesArr, passCriteria: defaultsByLevel[level] || { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 } };
 }
 
 export function generateMultiplicationWorkbook({ seed, level = 'A', pages = 1 }) {
@@ -112,7 +104,8 @@ export function generateMultiplicationWorkbook({ seed, level = 'A', pages = 1 })
     }
     pagesArr.push({ pageNumber: p + 1, title: `Multiplicação Dinâmica - Página ${p + 1}`, description: 'Gerado automaticamente.', exercises });
   }
-  return { title: `Multiplicação Dinâmica (nível ${level})`, level, subject: 'math', pages: pagesArr };
+  const defaultsByLevel = { A: { minAccuracyPercent: 92, maxAvgSecondsPerExercise: 4 }, B: { minAccuracyPercent: 94, maxAvgSecondsPerExercise: 3.5 } };
+  return { title: `Multiplicação Dinâmica (nível ${level})`, level, subject: 'math', pages: pagesArr, passCriteria: defaultsByLevel[level] || { minAccuracyPercent: 92, maxAvgSecondsPerExercise: 4 } };
 }
 
 export function generateDivisionWorkbook({ seed, level = 'A', pages = 1 }) {
@@ -129,7 +122,8 @@ export function generateDivisionWorkbook({ seed, level = 'A', pages = 1 }) {
     }
     pagesArr.push({ pageNumber: p + 1, title: `Divisão Dinâmica - Página ${p + 1}`, description: 'Gerado automaticamente.', exercises });
   }
-  return { title: `Divisão Dinâmica (nível ${level})`, level, subject: 'math', pages: pagesArr };
+  const defaultsByLevel = { A: { minAccuracyPercent: 92, maxAvgSecondsPerExercise: 4 }, B: { minAccuracyPercent: 94, maxAvgSecondsPerExercise: 3.5 } };
+  return { title: `Divisão Dinâmica (nível ${level})`, level, subject: 'math', pages: pagesArr, passCriteria: defaultsByLevel[level] || { minAccuracyPercent: 92, maxAvgSecondsPerExercise: 4 } };
 }
 
 
