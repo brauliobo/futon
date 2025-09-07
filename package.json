@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && cp docs/index.html docs/404.html",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate:lessons": "node ./scripts/validate-lessons.mjs",
+    "targets:set": "node ./scripts/set-targets.mjs",
+    "targets:refresh": "pnpm run targets:set && pnpm run validate:lessons"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
@@ -16,6 +19,9 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "fast-glob": "^3.3.2",
     "vite": "^5.4.1"
   }
 }
