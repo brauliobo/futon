@@ -1,0 +1,83 @@
+## Futon – Project Rules and Conventions
+
+### Tech stack and architecture
+- **Frontend**: Vue SFCs using the Options API.
+- **UI**: Bootstrap utility classes; compact KPI tiles via `Stat` component.
+- **i18n**: Simple key/value locales in `src/i18n/en.js` and `src/i18n/pt.js`.
+- **Persistence**: LocalStorage under key `futon_state_v1` (see `saveWorkbooks`/`loadWorkbooks` in `App.vue`).
+- **Domain utils**: Keep non‑UI logic in `src/domain/` (e.g., `scoring.js`).
+
+### Core data model (persisted workbook fields)
+When adding/modifying fields on a workbook, update all three places:
+- `withMeta(...)` defaults in `App.vue`.
+- `saveWorkbooks()` payload.
+- `loadWorkbooks()` merge step.
+
+Current important fields: `attempts`, `lastScore`, `gradePercent`, `status`, `completed`, `durationSeconds`, `avgSecondsPerExercise`, `completedPages`, `pages[pageNumber, exercises[answer]]`.
+
+### Scoring and approval
+- Use `src/domain/scoring.js`:
+  - `computeGradePercent({ accuracyPercent, avgSecondsPerExercise, maxAvgSecondsPerExercise })`
+  - `computeStatus({ accuracyPercent, avgSecondsPerExercise, maxAvgSecondsPerExercise, minAccuracyPass })`
+- Pass criteria live on `workbook.passCriteria` with defaults derived in `App.vue`.
+- UI expectations in `Workbook.vue` after submission:
+  - Badge: ○ Mastery (green), △ Pass (amber), × Retry (red).
+  - Show KPIs via `Stat`: Final score, Grade %, Speed (s/ex).
+  - Speed gauge: width = `100 * (1 - s / (maxS * 2))`, colors: green (≤ maxS), amber (≤ 1.2× maxS), red (> 1.2×).
+
+### UX patterns
+- Auto‑advance when a page is completed (not last page).
+- Keyboard: Right/Left or N/P for navigation when allowed.
+- Timer starts on mount and on page changes; stored as `durationSeconds` and `avgSecondsPerExercise` on submit.
+
+### Coding style
+- Indentation: match existing files (2 spaces). Do not reformat unrelated code.
+- Keep code short and DRY; prefer one‑liners if ≤ 120 columns.
+- Only add comments for non‑obvious code. Avoid inline narration in code.
+- UI text must use `$t('key')`; avoid hard‑coded strings in SFCs.
+- Place reusable/business logic in `src/domain/` and import where needed.
+ - Computed properties > methods for derived state; keep methods for actions.
+ - Avoid deep nesting; use early returns and guard clauses.
+ - Handle edge cases (null, empty arrays) gracefully and explicitly.
+ - Type/shape expectations: validate props and prefer defaults for resilience.
+
+### Emitted events and update flow
+- `Workbook.vue` emits `update-workbook` with a shallow payload. Parent (`App.vue`) merges into the selected workbook.
+- When resetting a workbook, clear transient scoring fields (`gradePercent`, `status`).
+
+### i18n – mandatory rule
+- ALWAYS add translations for new keys in ALL locales before use.
+  - Update `src/i18n/en.js` and `src/i18n/pt.js` together.
+  - Prefer `$t('key')` without fallbacks in templates. No fallbacks at commit time.
+  - Examples of common keys: `mastery`, `pass`, `retry`, `grade`, `speed`, `target`.
+
+### When adding features that touch scoring/approval
+- Add defaults in `withMeta`.
+- Wire into `submitAnswers` in `Workbook.vue` and persist via `update-workbook`.
+- Reflect status/grade in the list card (`WorkbookCard.vue`).
+- Extend i18n for any new labels.
+
+### Accessibility and semantics
+- For progress bars and gauges, set `role="progressbar"` and ARIA values (`aria-valuenow`, `aria-valuemin`, `aria-valuemax`).
+- Use accessible button labels (`aria-label`) where text is not explicit.
+
+### File/Import conventions
+- Use explicit `.js` extension for local domain imports in SFC scripts.
+- Keep relative imports short and stable; prefer `../domain/...` for domain utils.
+
+### PR checklist (before commit)
+- Lint passes and no console errors.
+- New i18n keys added to all locales (EN/PT).
+- Persistence updated (defaults + save + load) if any new workbook fields were introduced.
+- UI tested for Mastery/Pass/Retry flows and speed gauge colors.
+ - No i18n fallbacks remain in templates.
+
+### Git and commit hygiene
+- Small, focused commits per logical change (one file/concern where possible).
+- Present tense, imperative messages: "Add", "Fix", "Update".
+- Prefix scope when helpful: `i18n:`, `ui:`, `domain:`, `persistence:`.
+- Example messages:
+  - `domain: add computeStatus and wire into submission`
+  - `ui: show status badge and KPIs on final screen`
+  - `persistence: save/load gradePercent and status`
+  - `i18n: add mastery/pass/retry/grade/speed/target`
