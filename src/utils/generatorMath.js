@@ -87,7 +87,7 @@ export function generateSubtractionWorkbook({ seed, level = 'A', pages = 1 }) {
     }
     pagesArr.push({ pageNumber: p + 1, title: `Subtração Dinâmica - Página ${p + 1}`, description: 'Gerado automaticamente.', exercises });
   }
-  const defaultsByLevel = { A: { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 }, B: { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 } };
+  const defaultsByLevel = { A: { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 }, B: { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4 } };
   return { title: `Subtração Dinâmica (nível ${level})`, level, subject: 'math', pages: pagesArr, passCriteria: defaultsByLevel[level] || { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 } };
 }
 
