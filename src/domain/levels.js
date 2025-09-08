@@ -6,6 +6,7 @@ export const mathLevels = [
   { id: '4A', topic: 'count_1_50', name: 'Counting 1–50 • Simple Addition' },
   { id: '3A', topic: 'addition_basic', name: 'Single‑digit Addition' },
   { id: '2A', topic: 'subtraction_basic', name: 'Single‑digit Subtraction' },
+  { id: '1A', topic: 'add_sub_0_10', name: 'Addition & Subtraction within 10' },
   { id: 'A', topic: 'addition', name: 'Addition within 20' },
   { id: 'B', topic: 'addition_subtraction', name: 'Addition/Subtraction (2‑digit with regrouping)' },
   { id: 'C', topic: 'multiplication', name: 'Multiplication Facts' },
@@ -26,7 +27,7 @@ export const mathLevels = [
 // optional groups for UX; derive dynamically if preferred
 export const mathLevelGroups = [
   { id: 'early_learner', name: 'Early Learner', levelIds: ['7A','6A','5A','4A'] },
-  { id: 'basic_ops_foundation', name: 'Basic Ops Foundation', levelIds: ['3A','2A','A','B'] },
+  { id: 'basic_ops_foundation', name: 'Basic Ops Foundation', levelIds: ['3A','2A','1A','A','B'] },
   { id: 'mult_div', name: 'Multiplication & Division', levelIds: ['C','D'] },
   { id: 'fractions_decimals', name: 'Fractions & Decimals', levelIds: ['E','F'] },
   { id: 'pre_algebra', name: 'Pre-Algebra', levelIds: ['G','H'] },

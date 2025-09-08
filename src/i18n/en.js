@@ -51,6 +51,7 @@ export const en = {
   grade: "Grade",
   speed: "Speed",
   target: "Target",
+  neededWorkbooks: "Needed workbooks",
   edit: "Edit",
   // math level names
   level_name_count_1_5: "Counting 1–5",
@@ -59,6 +60,7 @@ export const en = {
   level_name_count_1_50: "Counting 1–50 • Simple Addition",
   level_name_addition_basic: "Single‑digit Addition",
   level_name_subtraction_basic: "Single‑digit Subtraction",
+  level_name_add_sub_0_10: "Addition & Subtraction within 10",
   level_name_addition: "Addition within 20",
   level_name_addition_subtraction: "Addition/Subtraction (2‑digit with regrouping)",
   level_name_multiplication: "Multiplication Facts",
