@@ -11,7 +11,7 @@
             .mt-1
               .mb-2
                 small.text-muted.fw-semibold {{ $t('levels') }}
-              LevelRoadmap(:sequence="levelSequenceBySubject(subject)" :available="availableLevelsBySubject(subject)" :active="activeLevelBySubject[subject] || ''" :progressByLevel="{}" :getLevelName="(id) => levelNameBySubject(subject, id)" @select="val => activeLevelBySubject[subject] = val")
+              LevelRoadmap(:sequence="levelSequenceBySubject(subject)" :available="availableLevelsBySubject(subject)" :active="activeLevelBySubject[subject] || ''" :progressByLevel="{}" :getLevelName="(id) => levelNameBySubject(subject, id)" @select="val => onLevelSelect(subject, val)")
             LevelList(:workbooks="filteredByActiveLevel(subject, group)" @start="$emit('select-workbook', $event)")
 </template>
 
@@ -40,6 +40,10 @@ export default {
     },
   },
   methods: {
+    onLevelSelect(subject, val) {
+      this.activeLevelBySubject[subject] = val;
+      try { this.$router.replace({ hash: `#${String(subject).toLowerCase()}-${String(val).toUpperCase()}` }); } catch (e) {}
+    },
     filteredByActiveLevel(subject, list) {
       const active = (this.activeLevelBySubject[subject] || '').toUpperCase();
       if (!active) return list;
