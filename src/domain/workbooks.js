@@ -19,6 +19,34 @@ export const workbookSeries = [
 ];
 
 // future many-to-many: level -> workbook(s)
-export const levelToSeries = {};
+export const levelToSeries = {
+  // use keys as `${subject}-${level}` to avoid cross-discipline collisions
+  'math-7A': ['numbers_1_120'],
+  'math-6A': ['numbers_1_120'],
+  'math-5A': ['numbers_1_120'],
+  'math-4A': ['numbers_1_120', 'addition'],
+  'math-3A': ['numbers_1_120', 'addition'],
+  'math-2A': ['subtraction', 'add_sub'],
+  'math-1A': ['add_sub', 'addition', 'subtraction'],
+  'math-A': ['addition', 'add_sub'],
+  'math-B': ['addition', 'subtraction', 'add_sub'],
+  // Kumon-style prerequisites for C (Multiplication Facts)
+  'math-C': ['numbers_1_120', 'addition', 'subtraction', 'add_sub', 'multiplication', 'division'],
+  // Kumon-style prerequisites for D (Division Facts) + fractions readiness
+  'math-D': ['multiplication', 'division', 'fractions'],
+  // Kumon-style focus for E (Fractions +/−) and adjacent practice
+  'math-E': ['fractions', 'decimals_fractions', 'word_problems', 'geometry_measure'],
+  // Focus for F (Fractions ×/÷ and Decimals operations)
+  'math-F': ['fractions', 'decimals_fractions', 'word_problems', 'geometry_measure'],
+  'math-G': ['pre_algebra', 'word_problems'],
+  'math-H': ['algebra', 'word_problems'],
+  'math-I': ['algebra', 'intro_geometry'],
+  'math-J': ['algebra', 'geometry'],
+  'math-K': ['algebra', 'geometry'],
+  'math-L': ['geometry', 'algebra'],
+  'math-M': ['geometry', 'algebra'],
+  'math-N': ['hs_ready', 'algebra'],
+  'math-O': ['hs_ready', 'geometry'],
+};
 
 
