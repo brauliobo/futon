@@ -36,6 +36,13 @@ import division4 from "./lessons/math/D/division_4.json";
 import division5 from "./lessons/math/D/division_5.json";
 import fractions from "./lessons/math/C/fractions.json";
 import fractionsMixed from "./lessons/math/D/fractions_mixed.json";
+import eFractionsSame from "./lessons/math/E/fractions_add_sub.json";
+import eFractionsUnlike1 from "./lessons/math/E/fractions_unlike_1.json";
+import eFractionsUnlike2 from "./lessons/math/E/fractions_unlike_2.json";
+import eFractionsWord from "./lessons/math/E/fractions_word_problems.json";
+import eDecimalsLink from "./lessons/math/E/decimals_link.json";
+import fFractionsMulDiv from "./lessons/math/F/fractions_mul_div.json";
+import fDecimalsOps from "./lessons/math/F/decimals_operations.json";
 import portugueseReading from "./lessons/portuguese/A/reading_comprehension.json";
 import portugueseGrammar from "./lessons/portuguese/A/grammar.json";
 import portugueseReading2 from "./lessons/portuguese/A/reading_comprehension_2.json";
@@ -54,6 +61,10 @@ import level4ACount from "./lessons/math/4A/level_4A_count.json";
 import level4AAddition from "./lessons/math/4A/level_4A_addition.json";
 import level3AAddition from "./lessons/math/3A/level_3A_addition.json";
 import level3ANextPrev from "./lessons/math/3A/level_3A_nextprev.json";
+import level1AAddSub from "./lessons/math/1A/level_1A_add_sub_0_10.json";
+import level1ANextPrev from "./lessons/math/1A/level_1A_nextprev_0_10.json";
+import level2ASubtraction from "./lessons/math/2A/level_2A_subtraction.json";
+import level2ASubtraction2 from "./lessons/math/2A/level_2A_subtraction_2.json";
 import { generateAdditionWorkbook, generateSubtractionWorkbook, generateMultiplicationWorkbook, generateDivisionWorkbook } from "./utils/generatorMath.js";
 import { mathLevels, getMathLevelOrder } from "./domain/levels.js";
 import { generateMathPlaceholder } from "./utils/placeholders.js";
@@ -76,7 +87,7 @@ export default {
         if (['6A'].includes(lvl)) return { minAccuracyPercent: 85, maxAvgSecondsPerExercise: 5 };
         if (['5A'].includes(lvl)) return { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 5 };
         if (['4A'].includes(lvl)) return { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 };
-        if (['3A','2A'].includes(lvl)) return { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 5 };
+        if (['3A','2A','1A'].includes(lvl)) return { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 5 };
         if (['A'].includes(lvl)) return { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 };
         if (['B'].includes(lvl)) return { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4 };
         if (['C','D'].includes(lvl)) return { minAccuracyPercent: 92, maxAvgSecondsPerExercise: 4 };
@@ -119,6 +130,7 @@ export default {
     const dynamicAdditionA = withMeta(generateAdditionWorkbook({ seed: `${existingSeed}-A`, level: 'A', pages: 2 }));
     const dynamicAdditionB = withMeta(generateAdditionWorkbook({ seed: `${existingSeed}-B`, level: 'B', pages: 2 }));
     const dynamicSubtractionA = withMeta(generateSubtractionWorkbook({ seed: `${existingSeed}-S-A`, level: 'A', pages: 2 }));
+    const dynamicSubtractionB = withMeta(generateSubtractionWorkbook({ seed: `${existingSeed}-S-B`, level: 'B', pages: 2 }));
     const dynamicMultiplicationA = withMeta(generateMultiplicationWorkbook({ seed: `${existingSeed}-M-A`, level: 'A', pages: 2 }));
     const dynamicDivisionA = withMeta(generateDivisionWorkbook({ seed: `${existingSeed}-D-A`, level: 'A', pages: 2 }));
     const implementedMathLevels = new Set(
@@ -128,11 +140,15 @@ export default {
         multiplication, multiplication2, multiplication3, multiplication4, multiplication5,
         division, division2, division3, division4, division5,
         fractions, fractionsMixed,
+        eFractionsSame, eFractionsUnlike1, eFractionsUnlike2, eFractionsWord, eDecimalsLink,
+        fFractionsMulDiv, fDecimalsOps,
         level7ACount, level7ANextPrev,
         level6ACount, level6ANextPrev,
         level5ACount, level5ANextPrev,
         level4ACount, level4AAddition,
-        level3AAddition, level3ANextPrev
+        level3AAddition, level3ANextPrev,
+        level1AAddSub, level1ANextPrev,
+        level2ASubtraction, level2ASubtraction2
       ].map(w => w.level)
     );
     const allMathOrder = getMathLevelOrder();
@@ -145,16 +161,18 @@ export default {
         withMeta(level6ACount), withMeta(level6ANextPrev),
         withMeta(level5ACount), withMeta(level5ANextPrev),
         withMeta(level4ACount), withMeta(level4AAddition),
-        withMeta(level3AAddition), withMeta(level3ANextPrev),
+        withMeta(level3AAddition), withMeta(level3ANextPrev), withMeta(level1AAddSub), withMeta(level1ANextPrev), withMeta(level2ASubtraction), withMeta(level2ASubtraction2),
         withMeta(addition), withMeta(addition2), withMeta(addition3), withMeta(addition4), withMeta(addition5),
         dynamicAdditionA, dynamicAdditionB,
-        dynamicSubtractionA,
+        dynamicSubtractionA, dynamicSubtractionB,
         dynamicMultiplicationA,
         dynamicDivisionA,
         withMeta(subtraction2), withMeta(subtraction3), withMeta(subtraction4), withMeta(subtraction5), withMeta(subtraction),
         withMeta(multiplication2), withMeta(multiplication3), withMeta(multiplication4), withMeta(multiplication5), withMeta(multiplication),
         withMeta(division2), withMeta(division3), withMeta(division4), withMeta(division5), withMeta(division),
         withMeta(fractions), withMeta(fractionsMixed),
+        withMeta(eFractionsSame), withMeta(eFractionsUnlike1), withMeta(eFractionsUnlike2), withMeta(eFractionsWord), withMeta(eDecimalsLink),
+        withMeta(fFractionsMulDiv), withMeta(fDecimalsOps),
         ...mathPlaceholders,
         withMeta(c1),
         withMeta(portugueseReading), withMeta(portugueseGrammar), withMeta(portugueseReading2), withMeta(portugueseGrammar2),
@@ -172,6 +190,11 @@ export default {
     },
   },
   methods: {
+    contextHash(wb) {
+      const s = String(wb?.subject || '').toLowerCase();
+      const l = String(wb?.level || '').toUpperCase();
+      return `#${s}-${l}`;
+    },
     slugOf(wb) {
       return String(wb.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
     },
@@ -209,7 +232,7 @@ export default {
     },
     handlePageChange(newPageNumber) {
       if (!this.selectedWorkbook) return;
-      this.$router.replace({ name: 'workbook', params: { slug: this.slugOf(this.selectedWorkbook), page: newPageNumber } });
+      this.$router.push({ name: 'workbook', params: { slug: this.slugOf(this.selectedWorkbook), page: newPageNumber }, hash: this.contextHash(this.selectedWorkbook) });
       this.saveWorkbooks();
     },
     selectFromRoute() {
@@ -219,6 +242,7 @@ export default {
       if (found) {
         this.selectedWorkbook = found;
         this.initialPageIndex = this.routePageNumber - 1;
+        this.$router.replace({ hash: this.contextHash(found) });
       }
     },
     saveWorkbooks() {
