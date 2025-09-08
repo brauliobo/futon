@@ -8,6 +8,10 @@
           Stat(:label="$t('completedBlocks')" :value="completedPages.length")
           Stat(:label="$t('attempts')" :value="workbook.attempts")
           Stat(:label="$t('lastScore')" :value="`${workbook.lastScore}/${workbook.totalExercises}`")
+        .mb-2(v-if="neededSeries.length")
+          small.text-muted {{ $t('neededWorkbooks') }}:
+          span.ms-2(v-for="s in neededSeries" :key="s.id")
+            span.badge.bg-info.text-dark.me-1 {{ s.title }}
         .mb-3.d-flex.justify-content-end
           button.btn.btn-outline-danger.btn-sm(@click="resetWorkbook") {{ $t('reset') }}
         .workbook-content
@@ -48,6 +52,7 @@
 import Page from "./Page.vue";
 import Stat from "./Stat.vue";
 import { computeGradePercent, computeStatus } from "../domain/scoring.js";
+import { levelToSeries, workbookSeries } from "../domain/workbooks.js";
 // import PrimaryButton from "./PrimaryButton.vue";
 
 export default {
@@ -82,6 +87,11 @@ export default {
   computed: {
     currentPage() {
       return this.workbook.pages[this.currentPageIndex];
+    },
+    neededSeries() {
+      const key = `${String(this.workbook.subject || '').toLowerCase()}-${String(this.workbook.level || '').toUpperCase()}`;
+      const ids = levelToSeries[key] || [];
+      return workbookSeries.filter(s => ids.includes(s.id));
     },
     pageInfoText() {
       const before = this.$t('pageInfo_before') || '';
