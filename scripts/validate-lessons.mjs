@@ -5,7 +5,7 @@ import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
-const schemaPath = path.join(root, 'src/schemas/lesson.math.schema.json');
+const schemaPath = path.join(root, 'src/schemas/level.math.schema.json');
 
 const ajv = new Ajv({ allErrors: true, allowUnionTypes: true });
 addFormats(ajv);
@@ -13,7 +13,7 @@ addFormats(ajv);
 const schema = JSON.parse(await readFile(schemaPath, 'utf8'));
 const validate = ajv.compile(schema);
 
-const files = await fg(['src/lessons/**/*.json'], { cwd: root, absolute: true });
+const files = await fg(['src/levels/**/*.json'], { cwd: root, absolute: true });
 let failures = 0;
 
 for (const file of files) {
@@ -34,7 +34,7 @@ if (failures) {
   console.error(`Validation failed for ${failures} file(s).`);
   process.exit(1);
 } else {
-  console.log('All math lesson JSON files are valid.');
+  console.log('All math level JSON files are valid.');
 }
 
 

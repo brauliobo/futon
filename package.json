@@ -7,9 +7,9 @@
     "dev": "vite",
     "build": "vite build && cp docs/index.html docs/404.html",
     "preview": "vite preview",
-    "validate:lessons": "node ./scripts/validate-lessons.mjs",
+    "validate:levels": "node ./scripts/validate-lessons.mjs",
     "targets:set": "node ./scripts/set-targets.mjs",
-    "targets:refresh": "pnpm run targets:set && pnpm run validate:lessons"
+    "targets:refresh": "pnpm run targets:set && pnpm run validate:levels"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",

@@ -21,7 +21,7 @@ function inferTarget(wb) {
   return expanded.reduce((sum, p) => sum + (p.exercises?.length || 0), 0);
 }
 
-const files = await fg(['src/lessons/**/*.json'], { cwd: root, absolute: true });
+const files = await fg(['src/levels/**/*.json'], { cwd: root, absolute: true });
 let changed = 0;
 for (const file of files) {
   const data = JSON.parse(await readFile(file, 'utf8'));
