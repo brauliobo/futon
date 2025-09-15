@@ -41,13 +41,13 @@ Source of truth: `src/domain/levels.js` (`mathLevels`, `getMathLevelOrder`, `por
 - E (fractions add/sub): ~200 currently; can reduce by setting repeatAll
 - Fractions mixed (improper→mixed): ~100 currently; can reduce via repeatAll
 
-Implementation: each lesson JSON (math, Portuguese, English) includes a numeric `target` equal to the number of exercises after expanding `repeat` and `repeatAll`. Targets are auto-generated via:
+Implementation: each level JSON (math, Portuguese, English) includes a numeric `target` equal to the number of exercises after expanding `repeat` and `repeatAll`. Targets are auto-generated via:
 
 ```bash
 pnpm run targets:refresh
 ```
 
-This computes targets, writes them into lesson files, and validates against the JSON Schema. Adjust totals by tuning `repeat` and `repeatAll` in the lesson JSONs.
+This computes targets, writes them into level files, and validates against the JSON Schema. Adjust totals by tuning `repeat` and `repeatAll` in the level JSONs.
 
 Current non-math targets (auto-calculated from content):
 - Portuguese reading (A): 20 (with repeatAll=2)

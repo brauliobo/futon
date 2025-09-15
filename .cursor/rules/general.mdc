@@ -65,6 +65,31 @@ Current important fields: `attempts`, `lastScore`, `gradePercent`, `status`, `co
 - Use explicit `.js` extension for local domain imports in SFC scripts.
 - Keep relative imports short and stable; prefer `../domain/...` for domain utils.
 
+### Component organization and architecture
+- **UI Components**: Store basic reusable components in `src/components/ui/` (Button, Badge, Progress, Alert, Card).
+- **Domain Components**: Group discipline-specific components in `src/components/discipline/`.
+- **Feature Components**: Group related components by feature (e.g., `src/components/workbook/` for all workbook-related components).
+- **Shared UI Components**: Create flexible components with variant props instead of hardcoded styles.
+  - Example: `Button` with `variant` prop instead of separate `PrimaryButton`, `SecondaryButton`.
+  - Support additional CSS classes via proper class merging in computed properties.
+
+### Import path management after reorganization
+- **Update all relative imports** when moving components to new directories.
+- **Domain imports**: Adjust `../domain/` to `../../domain/` when moving components deeper.
+- **UI component imports**: Update to `../ui/ComponentName.vue` from discipline/workbook components.
+- **Test import paths** after major reorganization to prevent Vite import analysis errors.
+
+### Data storage migration and backward compatibility
+- **Always handle breaking storage changes** with migration functions.
+- **Provide fallbacks** for old data formats: `savedData.newField || savedData.oldField || defaultValue`.
+- **Automatic migration**: Detect old format, migrate in-place, and save back to localStorage.
+- **Storage key versioning**: Consider updating storage keys (`futon_state_v2`) for major format changes.
+- **Migration pattern**:
+  ```javascript
+  const wasMigrated = this.migrateStorageFormat(savedData);
+  if (wasMigrated) this.save(savedData); // Persist migrated data
+  ```
+
 ### PR checklist (before commit)
 - Lint passes and no console errors.
 - New i18n keys added to all locales (EN/PT).
@@ -82,11 +107,23 @@ Current important fields: `attempts`, `lastScore`, `gradePercent`, `status`, `co
   - `persistence: save/load gradePercent and status`
   - `i18n: add mastery/pass/retry/grade/speed/target`
 
+### Terminology and naming conventions
+- **Use "level" consistently** instead of "lesson" throughout the codebase.
+- **Directory naming**: `src/levels/` for level data, `src/components/discipline/level/` for level components.
+- **Method naming**: `getLevels()`, `getCurrentLevel()`, `findCurrentLevel()` instead of lesson variants.
+- **Storage fields**: `currentLevel`, `levels` instead of `currentLesson`, `lessons`.
+
+### Removing deprecated code
+- **Delete unused components** completely rather than commenting out.
+- **Update all imports** that referenced deleted components.
+- **Remove related functionality** (e.g., TopicRoadmap and topic-based navigation).
+- **Clean up i18n keys** if no longer used, but preserve if still referenced in domain logic.
+
 ### Adding workbooks for early‑learner math (7A–4A)
-- Create JSON under the level dir: `src/lessons/math/{7A,6A,5A,4A}/level_<LEVEL>_<name>.json`.
+- Create JSON under the level dir: `src/levels/math/{7A,6A,5A,4A}/level_<LEVEL>_<name>.json`.
   - Required: `title`, `level` (e.g., "6A"), `subject: "math"`, `pages[{ pageNumber, title, description, exercises[{ type, question, correctAnswer }] }]`.
   - Optional: `repeat` per page, `repeatAll` for whole workbook, `passCriteria`, `target`.
-- Import the new JSON in `src/App.vue` and add it to `workbooks` wrapped with `withMeta(...)`.
+- Import the new JSON in discipline builders (`src/discipline/buildMath.js`) and add to workbook list.
 - Pass criteria: omit to use defaults derived in `App.vue` for 7A–4A.
 - Exercise totals: aim 7A ≈ 40; 6A/5A/4A ≈ 60–80. Tune via `repeat`/`repeatAll`, then run:
   ```bash
