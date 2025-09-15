@@ -22,7 +22,7 @@
           .alert.alert-info(role="alert" v-if="workbook.example")
             strong {{ $t('example') }}:
             |  {{ workbook.example }}
-          Page(:key="resetKey" :page="currentPage" :isSubmitted="isSubmitted" @update-page-status="handlePageStatus" :isReadOnly="isSubmitted")
+          Page(:key="'page-' + currentPageIndex + '-' + resetKey" :page="currentPage" :isSubmitted="isSubmitted" @update-page-status="handlePageStatus" :isReadOnly="isSubmitted")
           .navigation.d-flex.justify-content-between.align-items-center
             button.btn.btn-secondary(@click="prevPage" :disabled="currentPageIndex === 0" aria-label="Previous page") {{ $t('previous') }}
             .d-flex.align-items-center.gap-2
@@ -184,6 +184,7 @@ export default {
     },
     submitAnswers() {
       this.isSubmitted = true;
+      if (this.intervalId) { clearInterval(this.intervalId); this.intervalId = null; }
       const correct = this.calculateFinalScore();
       const attempted = this.calculateAttemptedCount();
       const accuracyPercent = attempted ? Math.round((correct / attempted) * 100) : 0;
