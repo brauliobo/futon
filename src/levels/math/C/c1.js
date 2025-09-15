@@ -1,4 +1,4 @@
-// src/lessons/math/C/c1.js
+// src/levels/math/C/c1.js
 
 export const c1 = {
   "title": "Caderno de Multiplicação e Divisão Básicas",
