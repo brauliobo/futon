@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import LevelRoadmap from "./LevelRoadmap.vue";
-import LevelList from "./discipline/levels/LevelList.vue";
+import LevelRoadmap from "./discipline/LevelRoadmap.vue";
+import LevelList from "./discipline/level/LevelList.vue";
 import { subjectLabelKey } from "../domain/disciplines.js";
 import { getMathLevelOrder, getMathLevelName, getMathLevelI18nKey, getPortugueseLevelOrder, getPortugueseLevelName, getEnglishLevelOrder, getEnglishLevelName } from "../domain/levels.js";
 export default {
