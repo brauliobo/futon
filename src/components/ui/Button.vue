@@ -1,6 +1,6 @@
 <!-- src/components/Button.vue -->
 <template lang="pug">
-  button.btn(:class="buttonClass" :type="type" :disabled="disabled" @click="$emit('click')" v-bind="filteredAttrs")
+  button.btn(:class="buttonClass" :type="type" :disabled="disabled" @click="$emit('click', $event)" v-bind="filteredAttrs")
     slot
 </template>
 
