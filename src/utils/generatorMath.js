@@ -24,6 +24,13 @@ function randInt(rng, min, max) {
   return min + Math.floor(rng() * (max - min + 1));
 }
 
+// Deterministic selector: no RNG state, stable across runs for same key
+const sel = (key, min, max) => {
+  const lo = Math.min(min, max); const hi = Math.max(min, max);
+  const span = hi - lo + 1; if (span <= 0) return lo;
+  return lo + (hashStringTo32Bit(String(key)) % span);
+};
+
 const additionPolicies = {
   A: { min: 0, max: 10, items: 10 },
   B: { min: 0, max: 20, items: 10 },
@@ -53,14 +60,13 @@ const basePolicies = {
 };
 
 export function generateAdditionWorkbook({ seed, level = 'A', pages = 1 }) {
-  const rng = makeRng(seed);
   const policy = additionPolicies[level] || additionPolicies.A;
   const pagesArr = [];
   for (let p = 0; p < pages; p += 1) {
     const exercises = [];
     for (let i = 0; i < policy.items; i += 1) {
-      const a = randInt(rng, policy.min, policy.max);
-      const b = randInt(rng, policy.min, policy.max);
+      const a = sel(`${seed}|add|${level}|${p}|${i}|a`, policy.min, policy.max);
+      const b = sel(`${seed}|add|${level}|${p}|${i}|b`, policy.min, policy.max);
       exercises.push({
         type: 'addition',
         question: `${a} + ${b} =`,
@@ -74,14 +80,13 @@ export function generateAdditionWorkbook({ seed, level = 'A', pages = 1 }) {
 }
 
 export function generateSubtractionWorkbook({ seed, level = 'A', pages = 1 }) {
-  const rng = makeRng(seed);
   const policy = (basePolicies.subtraction[level]) || basePolicies.subtraction.A;
   const pagesArr = [];
   for (let p = 0; p < pages; p += 1) {
     const exercises = [];
     for (let i = 0; i < policy.items; i += 1) {
-      let a = randInt(rng, policy.min, policy.max);
-      let b = randInt(rng, policy.min, policy.max);
+      let a = sel(`${seed}|sub|${level}|${p}|${i}|a`, policy.min, policy.max);
+      let b = sel(`${seed}|sub|${level}|${p}|${i}|b`, policy.min, policy.max);
       if (policy.noNegative && b > a) [a, b] = [b, a];
       exercises.push({ type: 'subtraction', question: `${a} - ${b} =`, correctAnswer: a - b });
     }
@@ -92,14 +97,13 @@ export function generateSubtractionWorkbook({ seed, level = 'A', pages = 1 }) {
 }
 
 export function generateMultiplicationWorkbook({ seed, level = 'A', pages = 1 }) {
-  const rng = makeRng(seed);
   const policy = (basePolicies.multiplication[level]) || basePolicies.multiplication.A;
   const pagesArr = [];
   for (let p = 0; p < pages; p += 1) {
     const exercises = [];
     for (let i = 0; i < policy.items; i += 1) {
-      const a = randInt(rng, policy.min, policy.max);
-      const b = randInt(rng, 2, policy.max);
+      const a = sel(`${seed}|mul|${level}|${p}|${i}|a`, policy.min, policy.max);
+      const b = sel(`${seed}|mul|${level}|${p}|${i}|b`, 2, policy.max);
       exercises.push({ type: 'multiplication', question: `${a} x ${b} =`, correctAnswer: a * b });
     }
     pagesArr.push({ pageNumber: p + 1, title: `Multiplicação Dinâmica - Página ${p + 1}`, description: 'Gerado automaticamente.', exercises });
@@ -109,14 +113,13 @@ export function generateMultiplicationWorkbook({ seed, level = 'A', pages = 1 })
 }
 
 export function generateDivisionWorkbook({ seed, level = 'A', pages = 1 }) {
-  const rng = makeRng(seed);
   const policy = (basePolicies.division[level]) || basePolicies.division.A;
   const pagesArr = [];
   for (let p = 0; p < pages; p += 1) {
     const exercises = [];
     for (let i = 0; i < policy.items; i += 1) {
-      const divisor = randInt(rng, policy.min, policy.max);
-      const quotient = randInt(rng, 2, policy.max);
+      const divisor = sel(`${seed}|div|${level}|${p}|${i}|d`, policy.min, policy.max);
+      const quotient = sel(`${seed}|div|${level}|${p}|${i}|q`, 2, policy.max);
       const dividend = divisor * quotient; // force integer result
       exercises.push({ type: 'division', question: `${dividend} ÷ ${divisor} =`, correctAnswer: quotient });
     }
@@ -126,4 +129,39 @@ export function generateDivisionWorkbook({ seed, level = 'A', pages = 1 }) {
   return { title: `Divisão Dinâmica (nível ${level})`, level, subject: 'math', pages: pagesArr, passCriteria: defaultsByLevel[level] || { minAccuracyPercent: 92, maxAvgSecondsPerExercise: 4 } };
 }
 
+// Early learner generators for 7A (deterministic, 10 pages × 10 exercises)
+export function generateCountWorkbook({ seed, level = '7A', pages = 10, sequence = 0 }) {
+  const symbols = ['★','●','▲','◆','♥','☀','♣'];
+  const makeRow = (n, sym) => Array.from({ length: n }, () => sym).join(' ');
+  const pagesArr = [];
+  for (let p = 0; p < pages; p += 1) {
+    const isLow = (p % 2) === 0; const title = isLow ? 'Contar até 5' : 'Contar 6–10';
+    const range = isLow ? [1,5] : [6,10];
+    const exercises = [];
+    for (let i = 0; i < 10; i += 1) {
+      const n = sel(`${seed}|cnt|${p}|${i}|n`, range[0], range[1]);
+      const sym = symbols[sel(`${seed}|cnt|${p}|${i}|s`, 0, symbols.length - 1)];
+      exercises.push({ type: 'count', question: makeRow(n, sym), correctAnswer: n });
+    }
+    pagesArr.push({ pageNumber: p + 1, title, description: 'Conte os símbolos.', exercises });
+  }
+  return { title: `Contar Objetos 1–10 #${sequence + 1}` , level, subject: 'math', pages: pagesArr, passCriteria: { minAccuracyPercent: 85, maxAvgSecondsPerExercise: 5 } };
+}
 
+export function generateNextPrevWorkbook({ seed, level = '7A', pages = 10, sequence = 0 }) {
+  const pagesArr = [];
+  for (let p = 0; p < pages; p += 1) {
+    const isNext = (p % 2) === 0; const type = isNext ? 'next_number' : 'previous_number';
+    const title = isNext ? 'Próximo número' : 'Número anterior';
+    const description = isNext ? 'Escreva o próximo número.' : 'Escreva o número anterior.';
+    const exercises = [];
+    for (let i = 0; i < 10; i += 1) {
+      const base = sel(`${seed}|np|${p}|${i}|b`, 0, 10);
+      const question = isNext ? `Depois de ${base} vem:` : `Antes de ${base} vem:`;
+      const correctAnswer = isNext ? Math.min(10, base + 1) : Math.max(0, base - 1);
+      exercises.push({ type, question, correctAnswer });
+    }
+    pagesArr.push({ pageNumber: p + 1, title, description, exercises });
+  }
+  return { title: `Número Anterior e Próximo #${sequence + 1}` , level, subject: 'math', pages: pagesArr, passCriteria: { minAccuracyPercent: 85, maxAvgSecondsPerExercise: 5 } };
+}
