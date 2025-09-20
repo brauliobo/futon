@@ -51,6 +51,7 @@ export const portugueseLevels = [
   { id: '4A', topic: 'literacy', name: 'Aprendendo a Ler e Escrever' },
   { id: '3A', topic: 'literacy', name: 'Aprendendo a Ler e Escrever' },
   { id: '2A', topic: 'literacy', name: 'Aprendendo a Ler e Escrever' },
+  { id: '1A', topic: 'basic_literacy', name: 'Reconhecimento de Letras e Palavras' },
   { id: 'A', topic: 'sentence_building', name: 'Construção de Frases' },
   { id: 'B', topic: 'sentence_building', name: 'Construção de Frases' },
   { id: 'C', topic: 'sentence_building', name: 'Construção de Frases' },
