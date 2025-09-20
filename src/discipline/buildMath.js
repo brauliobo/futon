@@ -279,6 +279,126 @@ import levelISet17 from "../levels/math/I/set_17.yaml";
 import levelISet18 from "../levels/math/I/set_18.yaml";
 import levelISet19 from "../levels/math/I/set_19.yaml";
 import levelISet20 from "../levels/math/I/set_20.yaml";
+import levelJSet01 from "../levels/math/J/set_01.yaml";
+import levelJSet02 from "../levels/math/J/set_02.yaml";
+import levelJSet03 from "../levels/math/J/set_03.yaml";
+import levelJSet04 from "../levels/math/J/set_04.yaml";
+import levelJSet05 from "../levels/math/J/set_05.yaml";
+import levelJSet06 from "../levels/math/J/set_06.yaml";
+import levelJSet07 from "../levels/math/J/set_07.yaml";
+import levelJSet08 from "../levels/math/J/set_08.yaml";
+import levelJSet09 from "../levels/math/J/set_09.yaml";
+import levelJSet10 from "../levels/math/J/set_10.yaml";
+import levelJSet11 from "../levels/math/J/set_11.yaml";
+import levelJSet12 from "../levels/math/J/set_12.yaml";
+import levelJSet13 from "../levels/math/J/set_13.yaml";
+import levelJSet14 from "../levels/math/J/set_14.yaml";
+import levelJSet15 from "../levels/math/J/set_15.yaml";
+import levelJSet16 from "../levels/math/J/set_16.yaml";
+import levelJSet17 from "../levels/math/J/set_17.yaml";
+import levelJSet18 from "../levels/math/J/set_18.yaml";
+import levelJSet19 from "../levels/math/J/set_19.yaml";
+import levelJSet20 from "../levels/math/J/set_20.yaml";
+import levelKSet01 from "../levels/math/K/set_01.yaml";
+import levelKSet02 from "../levels/math/K/set_02.yaml";
+import levelKSet03 from "../levels/math/K/set_03.yaml";
+import levelKSet04 from "../levels/math/K/set_04.yaml";
+import levelKSet05 from "../levels/math/K/set_05.yaml";
+import levelKSet06 from "../levels/math/K/set_06.yaml";
+import levelKSet07 from "../levels/math/K/set_07.yaml";
+import levelKSet08 from "../levels/math/K/set_08.yaml";
+import levelKSet09 from "../levels/math/K/set_09.yaml";
+import levelKSet10 from "../levels/math/K/set_10.yaml";
+import levelKSet11 from "../levels/math/K/set_11.yaml";
+import levelKSet12 from "../levels/math/K/set_12.yaml";
+import levelKSet13 from "../levels/math/K/set_13.yaml";
+import levelKSet14 from "../levels/math/K/set_14.yaml";
+import levelKSet15 from "../levels/math/K/set_15.yaml";
+import levelKSet16 from "../levels/math/K/set_16.yaml";
+import levelKSet17 from "../levels/math/K/set_17.yaml";
+import levelKSet18 from "../levels/math/K/set_18.yaml";
+import levelKSet19 from "../levels/math/K/set_19.yaml";
+import levelKSet20 from "../levels/math/K/set_20.yaml";
+import levelLSet01 from "../levels/math/L/set_01.yaml";
+import levelLSet02 from "../levels/math/L/set_02.yaml";
+import levelLSet03 from "../levels/math/L/set_03.yaml";
+import levelLSet04 from "../levels/math/L/set_04.yaml";
+import levelLSet05 from "../levels/math/L/set_05.yaml";
+import levelLSet06 from "../levels/math/L/set_06.yaml";
+import levelLSet07 from "../levels/math/L/set_07.yaml";
+import levelLSet08 from "../levels/math/L/set_08.yaml";
+import levelLSet09 from "../levels/math/L/set_09.yaml";
+import levelLSet10 from "../levels/math/L/set_10.yaml";
+import levelLSet11 from "../levels/math/L/set_11.yaml";
+import levelLSet12 from "../levels/math/L/set_12.yaml";
+import levelLSet13 from "../levels/math/L/set_13.yaml";
+import levelLSet14 from "../levels/math/L/set_14.yaml";
+import levelLSet15 from "../levels/math/L/set_15.yaml";
+import levelLSet16 from "../levels/math/L/set_16.yaml";
+import levelLSet17 from "../levels/math/L/set_17.yaml";
+import levelLSet18 from "../levels/math/L/set_18.yaml";
+import levelLSet19 from "../levels/math/L/set_19.yaml";
+import levelLSet20 from "../levels/math/L/set_20.yaml";
+import levelMSet01 from "../levels/math/M/set_01.yaml";
+import levelMSet02 from "../levels/math/M/set_02.yaml";
+import levelMSet03 from "../levels/math/M/set_03.yaml";
+import levelMSet04 from "../levels/math/M/set_04.yaml";
+import levelMSet05 from "../levels/math/M/set_05.yaml";
+import levelMSet06 from "../levels/math/M/set_06.yaml";
+import levelMSet07 from "../levels/math/M/set_07.yaml";
+import levelMSet08 from "../levels/math/M/set_08.yaml";
+import levelMSet09 from "../levels/math/M/set_09.yaml";
+import levelMSet10 from "../levels/math/M/set_10.yaml";
+import levelMSet11 from "../levels/math/M/set_11.yaml";
+import levelMSet12 from "../levels/math/M/set_12.yaml";
+import levelMSet13 from "../levels/math/M/set_13.yaml";
+import levelMSet14 from "../levels/math/M/set_14.yaml";
+import levelMSet15 from "../levels/math/M/set_15.yaml";
+import levelMSet16 from "../levels/math/M/set_16.yaml";
+import levelMSet17 from "../levels/math/M/set_17.yaml";
+import levelMSet18 from "../levels/math/M/set_18.yaml";
+import levelMSet19 from "../levels/math/M/set_19.yaml";
+import levelMSet20 from "../levels/math/M/set_20.yaml";
+import levelNSet01 from "../levels/math/N/set_01.yaml";
+import levelNSet02 from "../levels/math/N/set_02.yaml";
+import levelNSet03 from "../levels/math/N/set_03.yaml";
+import levelNSet04 from "../levels/math/N/set_04.yaml";
+import levelNSet05 from "../levels/math/N/set_05.yaml";
+import levelNSet06 from "../levels/math/N/set_06.yaml";
+import levelNSet07 from "../levels/math/N/set_07.yaml";
+import levelNSet08 from "../levels/math/N/set_08.yaml";
+import levelNSet09 from "../levels/math/N/set_09.yaml";
+import levelNSet10 from "../levels/math/N/set_10.yaml";
+import levelNSet11 from "../levels/math/N/set_11.yaml";
+import levelNSet12 from "../levels/math/N/set_12.yaml";
+import levelNSet13 from "../levels/math/N/set_13.yaml";
+import levelNSet14 from "../levels/math/N/set_14.yaml";
+import levelNSet15 from "../levels/math/N/set_15.yaml";
+import levelNSet16 from "../levels/math/N/set_16.yaml";
+import levelNSet17 from "../levels/math/N/set_17.yaml";
+import levelNSet18 from "../levels/math/N/set_18.yaml";
+import levelNSet19 from "../levels/math/N/set_19.yaml";
+import levelNSet20 from "../levels/math/N/set_20.yaml";
+import levelOSet01 from "../levels/math/O/set_01.yaml";
+import levelOSet02 from "../levels/math/O/set_02.yaml";
+import levelOSet03 from "../levels/math/O/set_03.yaml";
+import levelOSet04 from "../levels/math/O/set_04.yaml";
+import levelOSet05 from "../levels/math/O/set_05.yaml";
+import levelOSet06 from "../levels/math/O/set_06.yaml";
+import levelOSet07 from "../levels/math/O/set_07.yaml";
+import levelOSet08 from "../levels/math/O/set_08.yaml";
+import levelOSet09 from "../levels/math/O/set_09.yaml";
+import levelOSet10 from "../levels/math/O/set_10.yaml";
+import levelOSet11 from "../levels/math/O/set_11.yaml";
+import levelOSet12 from "../levels/math/O/set_12.yaml";
+import levelOSet13 from "../levels/math/O/set_13.yaml";
+import levelOSet14 from "../levels/math/O/set_14.yaml";
+import levelOSet15 from "../levels/math/O/set_15.yaml";
+import levelOSet16 from "../levels/math/O/set_16.yaml";
+import levelOSet17 from "../levels/math/O/set_17.yaml";
+import levelOSet18 from "../levels/math/O/set_18.yaml";
+import levelOSet19 from "../levels/math/O/set_19.yaml";
+import levelOSet20 from "../levels/math/O/set_20.yaml";
 import { getMathLevelOrder } from "../domain/levels.js";
 import { generateMathPlaceholder } from "../utils/placeholders.js";
 
@@ -544,6 +664,106 @@ const staticWorkbooks = [
   wb("I", levelISet18),
   wb("I", levelISet19),
   wb("I", levelISet20),
+  wb("J", levelJSet01),
+  wb("J", levelJSet02),
+  wb("J", levelJSet03),
+  wb("J", levelJSet04),
+  wb("J", levelJSet05),
+  wb("J", levelJSet06),
+  wb("J", levelJSet07),
+  wb("J", levelJSet08),
+  wb("J", levelJSet09),
+  wb("J", levelJSet10),
+  wb("J", levelJSet11),
+  wb("J", levelJSet12),
+  wb("J", levelJSet13),
+  wb("J", levelJSet14),
+  wb("J", levelJSet15),
+  wb("J", levelJSet16),
+  wb("J", levelJSet17),
+  wb("J", levelJSet18),
+  wb("J", levelJSet19),
+  wb("J", levelJSet20),
+  wb("K", levelKSet01),
+  wb("K", levelKSet02),
+  wb("K", levelKSet03),
+  wb("K", levelKSet04),
+  wb("K", levelKSet05),
+  wb("K", levelKSet06),
+  wb("K", levelKSet07),
+  wb("K", levelKSet08),
+  wb("K", levelKSet09),
+  wb("K", levelKSet10),
+  wb("K", levelKSet11),
+  wb("K", levelKSet12),
+  wb("K", levelKSet13),
+  wb("K", levelKSet14),
+  wb("K", levelKSet15),
+  wb("K", levelKSet16),
+  wb("K", levelKSet17),
+  wb("K", levelKSet18),
+  wb("K", levelKSet19),
+  wb("K", levelKSet20),
+  wb("L", levelLSet01),
+  wb("L", levelLSet02),
+  wb("L", levelLSet03),
+  wb("L", levelLSet04),
+  wb("L", levelLSet05),
+  wb("L", levelLSet06),
+  wb("L", levelLSet07),
+  wb("L", levelLSet08),
+  wb("L", levelLSet09),
+  wb("L", levelLSet10),
+  wb("L", levelLSet11),
+  wb("L", levelLSet12),
+  wb("L", levelLSet13),
+  wb("L", levelLSet14),
+  wb("L", levelLSet15),
+  wb("L", levelLSet16),
+  wb("L", levelLSet17),
+  wb("L", levelLSet18),
+  wb("L", levelLSet19),
+  wb("L", levelLSet20),
+  wb("M", levelMSet01),
+  wb("M", levelMSet02),
+  wb("M", levelMSet03),
+  wb("M", levelMSet04),
+  wb("M", levelMSet05),
+  wb("M", levelMSet06),
+  wb("M", levelMSet07),
+  wb("M", levelMSet08),
+  wb("M", levelMSet09),
+  wb("M", levelMSet10),
+  wb("M", levelMSet11),
+  wb("M", levelMSet12),
+  wb("M", levelMSet13),
+  wb("M", levelMSet14),
+  wb("M", levelMSet15),
+  wb("M", levelMSet16),
+  wb("M", levelMSet17),
+  wb("M", levelMSet18),
+  wb("M", levelMSet19),
+  wb("M", levelMSet20),
+  wb("N", levelNSet01),
+  wb("N", levelNSet02),
+  wb("N", levelNSet03),
+  wb("N", levelNSet04),
+  wb("N", levelNSet05),
+  wb("N", levelNSet06),
+  wb("N", levelNSet07),
+  wb("N", levelNSet08),
+  wb("N", levelNSet09),
+  wb("N", levelNSet10),
+  wb("N", levelNSet11),
+  wb("N", levelNSet12),
+  wb("N", levelNSet13),
+  wb("N", levelNSet14),
+  wb("N", levelNSet15),
+  wb("N", levelNSet16),
+  wb("N", levelNSet17),
+  wb("N", levelNSet18),
+  wb("N", levelNSet19),
+  wb("N", levelNSet20),
   wb("1A", level1ASet01),
   wb("1A", level1ASet02),
   wb("1A", level1ASet03),
@@ -564,6 +784,26 @@ const staticWorkbooks = [
   wb("1A", level1ASet18),
   wb("1A", level1ASet19),
   wb("1A", level1ASet20),
+  wb("O", levelOSet01),
+  wb("O", levelOSet02),
+  wb("O", levelOSet03),
+  wb("O", levelOSet04),
+  wb("O", levelOSet05),
+  wb("O", levelOSet06),
+  wb("O", levelOSet07),
+  wb("O", levelOSet08),
+  wb("O", levelOSet09),
+  wb("O", levelOSet10),
+  wb("O", levelOSet11),
+  wb("O", levelOSet12),
+  wb("O", levelOSet13),
+  wb("O", levelOSet14),
+  wb("O", levelOSet15),
+  wb("O", levelOSet16),
+  wb("O", levelOSet17),
+  wb("O", levelOSet18),
+  wb("O", levelOSet19),
+  wb("O", levelOSet20),
 ];
 
 export function buildMathWorkbooks(withMeta, generators, seed) {
