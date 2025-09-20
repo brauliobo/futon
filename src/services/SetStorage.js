@@ -11,7 +11,7 @@ export class SetStorage extends GenericStorage {
     return `${t}__${s}-${l}`;
   }
 
-  saveDisciplines(disciplineManager, selectedWorkbook = null, selectedPage = 1) {
+  saveDisciplines(disciplineManager, selectedWorkbook = null, selectedPage = 1, selectedLevelBySubject = null) {
     const disciplines = {};
     
     disciplineManager.getDisciplines().forEach(discipline => {
@@ -39,7 +39,8 @@ export class SetStorage extends GenericStorage {
         page: selectedPage,
         subject: selectedWorkbook.subject,
         level: selectedWorkbook.level
-      } : null
+      } : null,
+      selectedLevelBySubject: selectedLevelBySubject || {}
     };
 
     return this.save(payload);
