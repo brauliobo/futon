@@ -1,0 +1,202 @@
+# Futon - Educational Learning App
+
+## Project Overview
+
+**Futon** is a Vue.js-based educational learning application designed for Math, Portuguese, and English subjects. It follows a Kumon-style level progression system with systematic exercise delivery and performance tracking.
+
+## Architecture & Technology Stack
+
+- **Frontend Framework**: Vue 3 + Vue Router + Vue I18n
+- **Build System**: Vite with TypeScript support
+- **UI Framework**: Bootstrap 5.3.3
+- **Template Engine**: Pug for Vue templates
+- **Data Format**: YAML for level/exercise definitions
+- **Storage**: LocalStorage for progress persistence
+- **Deployment**: GitHub Pages (builds to `/docs` directory)
+
+## Project Structure
+
+```
+/home/braulio/Projects/futon/
+├── src/
+│   ├── App.vue                    # Main application component
+│   ├── main.js                   # Application entry point
+│   ├── components/               # Vue components
+│   │   ├── Home.vue             # Main subject/level selection
+│   │   ├── set/                 # Exercise set components
+│   │   └── ui/                  # Reusable UI components
+│   ├── discipline/              # Subject-specific logic
+│   │   ├── MathDiscipline.js    # Math workbook management
+│   │   ├── PortugueseDiscipline.js
+│   │   ├── EnglishDiscipline.js
+│   │   └── build*.js           # Workbook builders for each subject
+│   ├── domain/                 # Core business logic
+│   │   ├── levels.js           # Canonical level definitions (7A-O)
+│   │   ├── disciplines.js      # Subject registry
+│   │   ├── scoring.js          # Performance evaluation
+│   │   └── sets.js            # Exercise set utilities
+│   ├── levels/                # Exercise content (YAML files)
+│   │   ├── math/              # Math levels 7A-E (20 sets each for A-D)
+│   │   ├── portuguese/A/      # Portuguese level A (4 workbooks)
+│   │   └── english/A/         # English level A (basic content)
+│   ├── services/             # Application services
+│   │   ├── DisciplineManager.js # Central workbook coordinator
+│   │   ├── SetStorage.js      # Progress persistence
+│   │   └── GenericStorage.js  # Storage utilities
+│   ├── utils/               # Utilities & generators
+│   │   ├── generatorMath.js  # Dynamic math exercise generation
+│   │   └── placeholders.js   # Placeholder content for unimplemented levels
+│   ├── router/              # Vue Router configuration
+│   ├── i18n/                # Internationalization files
+│   └── schemas/             # JSON validation schemas
+├── scripts/                 # Build & validation scripts
+│   ├── validate-lessons.mjs  # Level content validation
+│   └── set-targets.mjs      # Exercise target calculation
+├── docs/                   # Build output (GitHub Pages)
+└── public/                 # Static assets
+```
+
+## Subject Implementation Status
+
+### Mathematics (Levels 7A–O)
+- **Fully Implemented**: A (Addition), B (Subtraction), C (Multiplication), D (Division), E (Fractions)
+- **Partially Implemented**: 7A-4A (counting levels), 3A-1A (basic operations)
+- **Placeholder Status**: F-O (advanced topics marked "Coming Soon")
+- **Exercise Count**: 200 exercises per level (standardized target)
+- **Content Source**: Mix of static YAML files and dynamic generators
+
+### Portuguese (Levels 7A–L)
+- **Implemented**: Level A with 4 workbooks
+  - Reading comprehension (2 workbooks)
+  - Grammar basics (2 workbooks)
+- **Exercise Count**: 20 exercises per workbook (with repeatAll=2)
+- **Content**: Static YAML files with text-based exercises
+
+### English (Levels 7A–L)
+- **Implemented**: Level A with basic vocabulary and phrases
+- **Exercise Count**: 12-15 exercises per workbook
+- **Content**: Static YAML files
+
+## Core Features
+
+### Level System
+- **Canonical Progression**: 7A (earliest) → 6A → 5A → 4A → 3A → 2A → 1A → A → B → C → ... → O (most advanced)
+- **Subject Alignment**: All subjects follow same level naming convention
+- **Progress Tracking**: Individual workbook completion status and performance metrics
+
+### Exercise Management
+- **Dynamic Generation**: Math exercises generated algorithmically with seeded randomization
+- **Static Content**: Language exercises from curated YAML files
+- **Repetition Control**: `repeat` (page-level) and `repeatAll` (workbook-level) multipliers
+- **Pass Criteria**: 85% accuracy + max 6 seconds per exercise average
+
+### User Experience
+- **Responsive Design**: Bootstrap-based UI works on desktop and mobile
+- **Progress Persistence**: LocalStorage maintains state across sessions
+- **Smart Recommendations**: System suggests next appropriate workbook
+- **Coming Soon Placeholders**: Consistent UX for unimplemented content
+
+### Data Validation & Targets
+- **JSON Schema**: Validates all level content structure
+- **Automatic Targets**: Script calculates exact exercise counts per level
+- **Validation Pipeline**: `pnpm run targets:refresh` ensures content integrity
+
+## Development Workflow
+
+### Content Management
+1. **Add Exercises**: Create/edit YAML files in `src/levels/[subject]/[level]/`
+2. **Validate Structure**: Run `pnpm run validate:levels`
+3. **Update Targets**: Run `pnpm run targets:set` to recalculate exercise counts
+4. **Full Refresh**: `pnpm run targets:refresh` combines validation + target updates
+
+### Build & Deployment
+- **Development**: `pnpm run dev` (Vite dev server)
+- **Production Build**: `pnpm run build` (outputs to `docs/` for GitHub Pages)
+- **Custom Domain**: Uses root base path via `CNAME` file
+
+## Technical Implementation Details
+
+### Workbook Architecture
+- **Discipline Manager**: Central coordinator managing all subjects
+- **Base Discipline**: Abstract class for common workbook operations  
+- **Subject Disciplines**: Specialized implementations for math/portuguese/english
+- **Storage Service**: Handles progress persistence and restoration
+
+### Exercise Generation
+- **Math Generators**: Algorithmic creation of arithmetic problems with controlled difficulty
+- **Seeded Randomization**: Consistent problem sets across sessions using stored seed
+- **Template System**: YAML-based static content with parameterization support
+
+### Routing & Navigation
+- **Home Route**: Subject/level selection with progress indicators
+- **Set Route**: Individual workbook exercise interface with pagination
+- **Deep Linking**: Direct access to specific workbooks and pages via URL
+- **History Tracking**: Breadcrumb navigation and back button support
+
+## Current Limitations & TODOs
+
+### Content Gaps
+- **Math**: Missing implementations for levels F-O (advanced algebra through calculus)
+- **Portuguese**: Only level A implemented, needs 7A-L full coverage  
+- **English**: Only level A implemented, needs 7A-L full coverage
+
+### Technical Debt
+- **Dynamic Content**: Math relies heavily on generators; could benefit from more static content variety
+- **Validation**: Schema validation exists but could be expanded for content quality checks
+- **Performance**: Large workbook rendering could use virtualization for mobile
+
+### Enhancement Opportunities
+- **Analytics**: Detailed performance tracking and learning analytics
+- **Adaptivity**: Dynamic difficulty adjustment based on user performance
+- **Social Features**: Progress sharing and collaborative learning
+- **Offline Support**: Service worker for offline exercise completion
+
+## Code Standards
+
+- **Backend-focused**: Minimal comments for obvious code, DRY principles
+- **One-liners**: Preferred for operations under 120 columns
+- **Functional Style**: Emphasis on pure functions and immutable data patterns
+- **Vue Composition**: Using Options API currently, could migrate to Composition API
+
+### YAML Linting Requirements
+
+**Always run linter on YAML exercise sets before build/commit:**
+
+#### Required YAML Standards
+- **Encoding**: UTF-8 only, no BOM
+- **Indentation**: 2 spaces, no tabs
+- **Line endings**: LF (Unix-style)
+- **Special characters**: Quote strings containing `|`, `>`, `:`, `#`, or leading/trailing spaces
+- **Portuguese characters**: Properly encoded (é, ã, ú, ç, °)
+
+#### Critical YAML Rules for Exercise Files
+1. **Absolute value notation**: Always quote `"|x|"` to prevent pipe character conflicts
+2. **Math expressions**: Quote complex expressions with special chars: `"2x + 1 > 9"`  
+3. **Portuguese text**: Quote strings with accents or special punctuation
+4. **Temperature symbols**: Use proper encoding for `°C` and `°F`
+5. **Fractions**: Quote fraction expressions: `"1/4 + 2/4 = 3/4"`
+
+#### Validation Pipeline
+- **Pre-build**: `npm run build` fails on YAML syntax errors
+- **Manual check**: `pnpm run validate:levels` 
+- **Auto-fix**: Use `yamllint` or equivalent for format standardization
+- **Editor integration**: Configure VS Code/Cursor YAML extension with strict rules
+
+#### Common YAML Pitfalls to Avoid
+- Unquoted strings starting with `|` or `>` (literal/folded indicators)
+- Mixed tabs and spaces for indentation
+- Inconsistent encoding causing character corruption  
+- Missing quotes around strings with colons or hashes
+- Malformed UTF-8 sequences in Portuguese content
+
+## Build Targets by Level
+
+### Math Exercise Targets
+- **All Levels**: 200 exercises per level (standardized target)
+- **Implementation varies**: Static YAML files and dynamic generators adjusted via `repeat` and `repeatAll` parameters
+
+### Language Exercise Targets  
+- **Portuguese A**: 20 exercises per workbook (with repeatAll=2)
+- **English A**: 12-15 exercises per workbook (with repeatAll=2)
+
+*All targets auto-calculated and validated via build scripts.*
