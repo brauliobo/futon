@@ -22,6 +22,7 @@ import { getMathLevelOrder, getMathLevelName, getMathLevelI18nKey, getPortuguese
 export default {
   name: "Home",
   components: { LevelRoadmap, LevelList },
+  emits: ['select-workbook', 'level-selected'],
   data() {
     return {
       activeLevelBySubject: {},
@@ -35,6 +36,10 @@ export default {
     lastSelected: {
       type: Object,
       default: null,
+    },
+    selectedLevelBySubject: {
+      type: Object,
+      default: () => ({})
     }
   },
   mounted() {
@@ -42,14 +47,18 @@ export default {
     const subjects = Object.keys(this.groupedBySubject);
     subjects.forEach(s => {
       const seq = this.levelSequenceBySubject(s);
+      const saved = this.selectedLevelBySubject[s];
       const preset = this.lastSelected && this.lastSelected.subject === s ? String(this.lastSelected.level || '').toUpperCase() : '';
-      this.activeLevelBySubject[s] = preset || seq[0] || '';
+      this.activeLevelBySubject[s] = saved || preset || seq[0] || '';
     });
   },
   created() {
     const subjects = Object.keys(this.groupedBySubject);
     subjects.forEach(s => {
-      if (this.lastSelected && this.lastSelected.subject === s) {
+      const saved = this.selectedLevelBySubject[s];
+      if (saved) {
+        this.activeLevelBySubject[s] = saved;
+      } else if (this.lastSelected && this.lastSelected.subject === s) {
         this.activeLevelBySubject[s] = String(this.lastSelected.level || '').toUpperCase();
       }
     });
@@ -57,6 +66,7 @@ export default {
   methods: {
     onLevelSelect(subject, val) {
       this.activeLevelBySubject[subject] = val;
+      this.$emit('level-selected', subject, val);
       try { this.$router.replace({ hash: `#${String(subject).toLowerCase()}-${String(val).toUpperCase()}` }); } catch (e) {}
     },
     activeSlugFor(subject) {

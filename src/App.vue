@@ -6,7 +6,7 @@
       h1(v-if="!selectedWorkbook") {{ $t('chooseNotebook') }}
       h1(v-else) {{ selectedWorkbook.title }} ({{ $t('level') }}: {{ selectedWorkbook.level }})
     main.container
-      Home(v-if="!selectedWorkbook" :workbooks="workbooks" :lastSelected="lastSelected" @select-workbook="selectWorkbook")
+      Home(v-if="!selectedWorkbook" :workbooks="workbooks" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" @select-workbook="selectWorkbook" @level-selected="onLevelSelected")
       div(v-else)
         Button(variant="link" @click="goHome").mb-3 ← {{ $t('back') }}
         Set(:workbook="selectedWorkbook" :initialPageIndex="initialPageIndex" @update-workbook="updateWorkbook" @page-changed="handlePageChange")
@@ -73,6 +73,7 @@ export default {
       initialPageIndex: 0,
       storage: new SetStorage(),
       lastSelected: null,
+      selectedLevelBySubject: {},
     };
   },
   computed: {
@@ -105,7 +106,7 @@ export default {
       if (prev) this.lastSelected = { slug: this.slugOf(prev), level: prev.level, subject: prev.subject, page };
       this.$router.push({ name: 'home' });
       // Preserve last opened workbook in storage when returning home
-      this.storage.saveDisciplines(this.disciplineManager, prev || (this.lastSelected ? this.workbooks.find(wb => this.slugOf(wb) === this.lastSelected.slug) : null), prev ? page : (this.lastSelected?.page || 1));
+      this.storage.saveDisciplines(this.disciplineManager, prev || (this.lastSelected ? this.workbooks.find(wb => this.slugOf(wb) === this.lastSelected.slug) : null), prev ? page : (this.lastSelected?.page || 1), this.selectedLevelBySubject);
     },
     updateWorkbook(updatedWorkbook) {
       const allWorkbooks = this.disciplineManager.getAllWorkbooks();
@@ -148,11 +149,16 @@ export default {
       }
     },
     saveWorkbooks() {
-      this.storage.saveDisciplines(this.disciplineManager, this.selectedWorkbook, this.selectedWorkbook ? this.routePageNumber : 1);
+      this.storage.saveDisciplines(this.disciplineManager, this.selectedWorkbook, this.selectedWorkbook ? this.routePageNumber : 1, this.selectedLevelBySubject);
     },
     loadWorkbooks() {
       const saved = this.storage.loadDisciplines();
       const selectedWorkbook = this.storage.mergeDisciplines(this.disciplineManager, saved);
+      
+      // Load selected levels
+      if (saved && saved.selectedLevelBySubject) {
+        this.selectedLevelBySubject = saved.selectedLevelBySubject;
+      }
       
       // If there's a saved selected workbook, prefer highlighting on Home without auto-opening
       if (selectedWorkbook) {
@@ -177,6 +183,10 @@ export default {
       if (recommendedWorkbook && this.$route.name === 'home') {
         this.lastSelected = { slug: this.slugOf(recommendedWorkbook), level: recommendedWorkbook.level, subject: recommendedWorkbook.subject, page: 1 };
       }
+    },
+    onLevelSelected(subject, level) {
+      this.selectedLevelBySubject[subject] = level;
+      this.saveWorkbooks();
     },
   },
   created() {

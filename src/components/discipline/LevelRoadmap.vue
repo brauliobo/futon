@@ -3,7 +3,7 @@
     .level-card.d-flex.flex-column.align-items-stretch.me-2(v-for="(lvl, idx) in sequence" :key="lvl")
       Card
         template(#body)
-          Button.w-100.text-start(variant="outline-secondary" size="sm" :class="buttonExtraClass(lvl)" @click="$emit('select', lvl)")
+          Button.w-100.text-start(variant="outline-secondary" size="sm" :class="buttonExtraClass(lvl)" @click="onLevelClick($event, lvl)")
             Badge(variant="primary").me-2 {{ idx + 1 }}
             | {{ lvl }} — {{ getName(lvl) }}
         template(#footer)
@@ -35,6 +35,16 @@ export default {
   computed: {
     availableSet() { return new Set(this.available); },
   },
+  mounted() {
+    this.$nextTick(() => this.scrollToActiveLevel());
+  },
+  watch: {
+    active(newActive, oldActive) {
+      if (newActive && newActive !== oldActive) {
+        this.$nextTick(() => this.scrollToActiveLevel());
+      }
+    }
+  },
   methods: {
     progressPercent(key){ const p = this.progressByLevel[key]; return p && Number.isFinite(p.percent) ? p.percent : 0; },
     buttonExtraClass(lvl){
@@ -42,7 +52,25 @@ export default {
         { active: lvl === this.active, 'btn-disabled': !this.availableSet.has(lvl) }
       ];
     },
-    getName(id) { return this.getLevelName(id); }
+    getName(id) { return this.getLevelName(id); },
+    onLevelClick(event, lvl) {
+      this.$emit('select', lvl);
+      // Scroll the level card to center of horizontal view
+      const levelCard = event.target.closest('.level-card');
+      if (levelCard) {
+        levelCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    },
+    scrollToActiveLevel() {
+      if (!this.active) return;
+      const activeButton = this.$el.querySelector(`.btn.active`);
+      if (activeButton) {
+        const levelCard = activeButton.closest('.level-card');
+        if (levelCard) {
+          levelCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
+    }
   }
 }
 </script>
