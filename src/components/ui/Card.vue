@@ -9,6 +9,8 @@
       slot(name="body")
     template(v-else)
       slot
+    .card-footer(v-if="hasFooterSlot")
+      slot(name="footer")
 </template>
 
 <script>
@@ -60,6 +62,9 @@ export default {
     },
     hasDefaultSlot() {
       return !!this.$slots.default;
+    },
+    hasFooterSlot() {
+      return !!this.$slots.footer;
     }
   }
 };

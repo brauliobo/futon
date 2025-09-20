@@ -1,18 +1,20 @@
 <template lang="pug">
-  .roadmap.d-flex.align-items-start.overflow-auto
-    .d-flex.flex-column.align-items-start.me-2(v-for="(lvl, idx) in sequence" :key="lvl")
-      .d-flex.align-items-center
-        Button(variant="outline-secondary" size="sm" :class="buttonExtraClass(lvl)" @click="$emit('select', lvl)")
-          Badge(variant="primary").me-2 {{ idx + 1 }}
-          | {{ lvl }} — {{ getName(lvl) }}
-        .connector.mx-2(v-if="idx < sequence.length - 1")
-      Progress.w-100.mt-1(:value="progressPercent(lvl)" style="min-width:120px")
+  .roadmap.d-flex.align-items-stretch.overflow-auto
+    .level-card.d-flex.flex-column.align-items-stretch.me-2(v-for="(lvl, idx) in sequence" :key="lvl")
+      Card
+        template(#body)
+          Button.w-100.text-start(variant="outline-secondary" size="sm" :class="buttonExtraClass(lvl)" @click="$emit('select', lvl)")
+            Badge(variant="primary").me-2 {{ idx + 1 }}
+            | {{ lvl }} — {{ getName(lvl) }}
+        template(#footer)
+          Progress.w-100(:value="progressPercent(lvl)")
 </template>
 
 <script>
 import Button from "../ui/Button.vue";
 import Badge from "../ui/Badge.vue";
 import Progress from "../ui/Progress.vue";
+import Card from "../ui/Card.vue";
 
 export default {
   name: 'LevelRoadmap',
@@ -20,6 +22,7 @@ export default {
     Button,
     Badge,
     Progress,
+    Card,
   },
   emits: ['select'],
   props: {
@@ -47,7 +50,10 @@ export default {
 <style scoped>
 .roadmap .btn.active { color: #fff; background-color: #6c757d; border-color: #6c757d; }
 .roadmap .btn.btn-disabled { opacity: .5; pointer-events: none; }
-.connector { height: 2px; width: 40px; background: #dee2e6; }
+.level-card { min-width: 170px; }
+.level-card .card { display: flex; flex-direction: column; }
+.level-card .card-body { display: flex; align-items: center; }
+.level-card .btn { height: 88px; display: flex; align-items: center; }
 </style>
 
  
