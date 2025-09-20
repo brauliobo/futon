@@ -1,6 +1,7 @@
 import { readFile, writeFile } from 'fs/promises';
 import path from 'path';
 import fg from 'fast-glob';
+import YAML from 'yaml';
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 
@@ -21,14 +22,17 @@ function inferTarget(wb) {
   return expanded.reduce((sum, p) => sum + (p.exercises?.length || 0), 0);
 }
 
-const files = await fg(['src/levels/**/*.json'], { cwd: root, absolute: true });
+const files = await fg(['src/levels/**/*.{json,yaml,yml}'], { cwd: root, absolute: true });
 let changed = 0;
 for (const file of files) {
-  const data = JSON.parse(await readFile(file, 'utf8'));
+  const text = await readFile(file, 'utf8');
+  const isYaml = /\.ya?ml$/i.test(file);
+  const data = isYaml ? YAML.parse(text) : JSON.parse(text);
   const target = inferTarget(data);
   if (data.target !== target) {
     data.target = target;
-    await writeFile(file, JSON.stringify(data, null, 2) + '\n', 'utf8');
+    const out = isYaml ? YAML.stringify(data) : JSON.stringify(data, null, 2) + '\n';
+    await writeFile(file, out, 'utf8');
     changed += 1;
     console.log(`Updated target in ${path.relative(root, file)} -> ${target}`);
   }

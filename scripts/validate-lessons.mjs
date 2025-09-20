@@ -3,6 +3,7 @@ import path from 'path';
 import fg from 'fast-glob';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
+import YAML from 'yaml';
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const schemaPath = path.join(root, 'src/schemas/level.math.schema.json');
@@ -13,11 +14,12 @@ addFormats(ajv);
 const schema = JSON.parse(await readFile(schemaPath, 'utf8'));
 const validate = ajv.compile(schema);
 
-const files = await fg(['src/levels/**/*.json'], { cwd: root, absolute: true });
+const files = await fg(['src/levels/**/*.{json,yaml,yml}'], { cwd: root, absolute: true });
 let failures = 0;
 
 for (const file of files) {
-  const data = JSON.parse(await readFile(file, 'utf8'));
+  const text = await readFile(file, 'utf8');
+  const data = /\.ya?ml$/i.test(file) ? YAML.parse(text) : JSON.parse(text);
   const ok = validate(data);
   if (!ok) {
     failures += 1;
