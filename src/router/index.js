@@ -3,7 +3,7 @@ import App from '../App.vue';
 
 const routes = [
   { path: '/', name: 'home', component: App },
-  { path: '/w/:slug/p/:page?', name: 'workbook', component: App, props: true },
+  { path: '/s/:slug/p/:page?', name: 'set', component: App, props: true },
 ];
 
 export const router = createRouter({

@@ -1,6 +1,6 @@
-// placeholder for future 100% workbook coverage mapping
+// placeholder for future 100% set coverage mapping
 // keep lean; map later by importing real catalog
-export const workbookSeries = [
+export const setSeries = [
   { id: 'numbers_1_120', title: 'My Book of Numbers 1–120', grades: 'PreK–K' },
   { id: 'addition', title: 'Addition', grades: 'G1–G4' },
   { id: 'subtraction', title: 'Subtraction', grades: 'G1–G4' },
@@ -18,7 +18,7 @@ export const workbookSeries = [
   { id: 'hs_ready', title: 'Are You Ready for High School Math?', grades: 'G8+' }
 ];
 
-// future many-to-many: level -> workbook(s)
+// future many-to-many: level -> set(s)
 export const levelToSeries = {
   // use keys as `${subject}-${level}` to avoid cross-discipline collisions
   'math-7A': ['numbers_1_120'],

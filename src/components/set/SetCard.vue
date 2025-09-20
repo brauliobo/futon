@@ -28,7 +28,7 @@ import Progress from "../ui/Progress.vue";
 import Card from "../ui/Card.vue";
 
 export default {
-  name: 'WorkbookCard',
+  name: 'SetCard',
   components: {
     Button,
     Badge,

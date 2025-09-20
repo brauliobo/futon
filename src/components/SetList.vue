@@ -1,16 +1,16 @@
-<!-- src/components/WorkbookList.vue -->
+<!-- src/components/SetList.vue -->
 <template lang="pug">
-  .workbook-list
-    Workbook(v-for="(workbook, index) in workbooks" :key="index" :workbook="workbook" @update-workbook="handleUpdateWorkbook")
+  .set-list
+    Set(v-for="(workbook, index) in workbooks" :key="index" :workbook="workbook" @update-workbook="handleUpdateWorkbook")
 </template>
 
 <script>
-import Workbook from "./Workbook.vue";
+import Set from "./set/Set.vue";
 
 export default {
-  name: "WorkbookList",
+  name: "SetList",
   components: {
-    Workbook,
+    Set,
   },
   props: {
     workbooks: {
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style scoped>
-.workbook-list {
+.set-list {
   display: flex;
   flex-direction: column;
 }

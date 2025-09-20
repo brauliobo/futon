@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import WorkbookCard from "../../workbook/WorkbookCard.vue";
+import WorkbookCard from "../../set/SetCard.vue";
 export default {
   name: 'LevelList',
   components: { WorkbookCard },

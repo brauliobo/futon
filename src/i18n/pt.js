@@ -26,7 +26,7 @@ export const pt = {
   correct: "Correto",
   wrong: "Errado",
   correctAnswer: "Correta",
-  headerTitle: "Caderno de Multiplicação e Divisão Básicas",
+  headerTitle: "Conjunto de Multiplicação e Divisão Básicas",
   level: "Nível",
   previous: "Anterior",
   next: "Próxima",

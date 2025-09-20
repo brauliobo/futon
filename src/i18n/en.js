@@ -26,7 +26,7 @@ export const en = {
   correct: "Correct",
   wrong: "Wrong",
   correctAnswer: "Correct",
-  headerTitle: "Multiplication and Division Workbook",
+  headerTitle: "Multiplication and Division Set",
   level: "Level",
   previous: "Previous",
   next: "Next",
@@ -51,7 +51,7 @@ export const en = {
   grade: "Grade",
   speed: "Speed",
   target: "Target",
-  neededWorkbooks: "Needed workbooks",
+  neededWorkbooks: "Needed sets",
   edit: "Edit",
   // math level names
   level_name_count_1_5: "Counting 1–5",

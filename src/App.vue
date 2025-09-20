@@ -9,7 +9,7 @@
       Home(v-if="!selectedWorkbook" :workbooks="workbooks" :lastSelected="lastSelected" @select-workbook="selectWorkbook")
       div(v-else)
         Button(variant="link" @click="goHome").mb-3 ← {{ $t('back') }}
-        Workbook(:workbook="selectedWorkbook" :initialPageIndex="initialPageIndex" @update-workbook="updateWorkbook" @page-changed="handlePageChange")
+        Set(:workbook="selectedWorkbook" :initialPageIndex="initialPageIndex" @update-workbook="updateWorkbook" @page-changed="handlePageChange")
     footer.text-center.py-4
 </template>
 
@@ -17,15 +17,15 @@
 import { generateAdditionWorkbook, generateSubtractionWorkbook, generateMultiplicationWorkbook, generateDivisionWorkbook, generateCountWorkbook, generateNextPrevWorkbook } from "./utils/generatorMath.js";
 import { DisciplineManager } from "./services/DisciplineManager.js";
 import Home from "./components/Home.vue";
-import Workbook from "./components/workbook/Workbook.vue";
+import Set from "./components/set/Set.vue";
 import Button from "./components/ui/Button.vue";
-import { WorkbookStorage } from "./services/WorkbookStorage.js";
+import { SetStorage } from "./services/SetStorage.js";
 
 export default {
   name: "App",
   components: {
     Home,
-    Workbook,
+    Set,
     Button,
   },
   data() {
@@ -71,7 +71,7 @@ export default {
       disciplineManager,
       selectedWorkbook: null,
       initialPageIndex: 0,
-      storage: new WorkbookStorage(),
+      storage: new SetStorage(),
       lastSelected: null,
     };
   },
@@ -96,7 +96,7 @@ export default {
       this.selectedWorkbook = wb;
       this.initialPageIndex = 0;
       this.lastSelected = { slug: this.slugOf(wb), level: wb.level, subject: wb.subject, page: 1 };
-      this.$router.push({ name: 'workbook', params: { slug: this.slugOf(wb), page: 1 } });
+      this.$router.push({ name: 'set', params: { slug: this.slugOf(wb), page: 1 } });
       this.saveWorkbooks();
     },
     goHome() {
@@ -134,7 +134,7 @@ export default {
     },
     handlePageChange(newPageNumber) {
       if (!this.selectedWorkbook) return;
-      this.$router.push({ name: 'workbook', params: { slug: this.slugOf(this.selectedWorkbook), page: newPageNumber }, hash: this.contextHash(this.selectedWorkbook) });
+      this.$router.push({ name: 'set', params: { slug: this.slugOf(this.selectedWorkbook), page: newPageNumber }, hash: this.contextHash(this.selectedWorkbook) });
       this.saveWorkbooks();
     },
     selectFromRoute() {
@@ -158,7 +158,7 @@ export default {
       if (selectedWorkbook) {
         const found = this.workbooks.find(wb => this.slugOf(wb) === selectedWorkbook.slug);
         if (found) {
-          if (this.$route.name === 'workbook') {
+          if (this.$route.name === 'set') {
             this.selectedWorkbook = found;
             this.initialPageIndex = Math.max(0, (selectedWorkbook.page || 1) - 1);
           } else {
@@ -180,7 +180,7 @@ export default {
     },
   },
   created() {
-    if (this.$route.name === 'workbook') {
+    if (this.$route.name === 'set') {
       this.selectFromRoute();
     }
     this.loadWorkbooks();
@@ -189,7 +189,7 @@ export default {
     '$route'(to) {
       if (to.name === 'home') {
         this.selectedWorkbook = null;
-      } else if (to.name === 'workbook') {
+      } else if (to.name === 'set') {
         this.selectFromRoute();
       }
     }

@@ -1,7 +1,7 @@
-// src/services/WorkbookStorage.js
+// src/services/SetStorage.js
 import { GenericStorage } from "./GenericStorage.js";
 
-export class WorkbookStorage extends GenericStorage {
+export class SetStorage extends GenericStorage {
   constructor(key = 'futon_state_v2') { super(key); }
 
   static idOf(wb) {
@@ -51,7 +51,7 @@ export class WorkbookStorage extends GenericStorage {
 
   serializeWorkbook(wb) {
     return {
-      id: WorkbookStorage.idOf(wb),
+      id: SetStorage.idOf(wb),
       title: wb.title,
       subject: wb.subject,
       level: wb.level,
@@ -93,7 +93,7 @@ export class WorkbookStorage extends GenericStorage {
         if (!savedLevel) return wb;
         
         const savedWorkbook = savedLevel.workbooks.find(s => 
-          s.id === WorkbookStorage.idOf(wb) || s.title === wb.title
+          s.id === SetStorage.idOf(wb) || s.title === wb.title
         );
         if (!savedWorkbook) return wb;
 

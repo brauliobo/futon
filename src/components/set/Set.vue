@@ -1,10 +1,10 @@
-<!-- src/components/Workbook.vue -->
+<!-- src/components/set/Set.vue -->
 <template lang="pug">
-  .workbook.mb-4
+  .set.mb-4
     .card
       .card-body
         h3.card-title {{ workbook.title }} ({{ $t('level') }}: {{ workbook.level }})
-        .workbook-status.mb-3
+        .set-status.mb-3
           Stat(:label="$t('completedBlocks')" :value="completedPages.length")
           Stat(:label="$t('attempts')" :value="workbook.attempts")
           Stat(:label="$t('lastScore')" :value="`${workbook.lastScore}/${workbook.totalExercises}`")
@@ -14,7 +14,7 @@
             Badge(variant="info" text-dark).me-1 {{ s.title }}
         .mb-3.d-flex.justify-content-end
           Button(variant="outline-danger" size="sm" @click="resetWorkbook") {{ $t('reset') }}
-        .workbook-content
+        .set-content
           .mb-2(v-if="currentPage")
             Progress(:value="pageProgress" show-value)
             small.text-muted {{ pageInfoText }} — {{ answeredCount }}/{{ (currentPage.exercises || []).length }} • ⏱ {{ prettyTimer }}
@@ -58,10 +58,10 @@ import Badge from "../ui/Badge.vue";
 import Progress from "../ui/Progress.vue";
 import Alert from "../ui/Alert.vue";
 import { computeGradePercent, computeStatus } from "../../domain/scoring.js";
-import { levelToSeries, workbookSeries } from "../../domain/workbooks.js";
+import { levelToSeries, setSeries } from "../../domain/sets.js";
 
 export default {
-  name: "Workbook",
+  name: "Set",
   components: {
     Page,
     Stat,
@@ -102,7 +102,7 @@ export default {
     neededSeries() {
       const key = `${String(this.workbook.subject || '').toLowerCase()}-${String(this.workbook.level || '').toUpperCase()}`;
       const ids = levelToSeries[key] || [];
-      return workbookSeries.filter(s => ids.includes(s.id));
+      return setSeries.filter(s => ids.includes(s.id));
     },
     pageInfoText() {
       const before = this.$t('pageInfo_before') || '';
