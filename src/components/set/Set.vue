@@ -1,23 +1,52 @@
 <!-- src/components/set/Set.vue -->
 <template lang="pug">
   .set.mb-4
-    .card
-      .card-body
-        h3.card-title {{ workbook.title }} ({{ $t('level') }}: {{ workbook.level }})
-        .set-status.mb-3
-          Stat(:label="$t('completedBlocks')" :value="completedPages.length")
-          Stat(:label="$t('attempts')" :value="workbook.attempts")
-          Stat(:label="$t('lastScore')" :value="`${workbook.lastScore}/${workbook.totalExercises}`")
-        .mb-2(v-if="neededSeries.length")
-          small.text-muted {{ $t('neededWorkbooks') }}:
-          span.ms-2(v-for="s in neededSeries" :key="s.id")
-            Badge(variant="info" text-dark).me-1 {{ s.title }}
-        .mb-3.d-flex.justify-content-end
-          Button(variant="outline-danger" size="sm" @click="resetWorkbook") {{ $t('reset') }}
+    // Enhanced Header Section
+    .card.shadow-sm
+      .card-header.bg-gradient-primary.text-white.py-3
+        .row.align-items-center
+          .col-md-8
+            h2.mb-1.fw-bold {{ workbook.title }}
+            small.text-white-75 {{ $t('level') }}: {{ workbook.level }}
+          .col-md-4.text-md-end.text-center.mt-2.mt-md-0
+            Button(variant="outline-light" size="sm" @click="resetWorkbook") 
+              | ↻ {{ $t('reset') }}
+      
+      // Stats Dashboard
+      .card-body.pb-2
+        .row.g-3.mb-4
+          .col-md-4
+            .stat-card.text-center.p-3.bg-light.rounded
+              .stat-value.h4.mb-1.text-primary {{ completedPages.length }}
+              .stat-label.text-muted.small {{ $t('completedBlocks') }}
+          .col-md-4
+            .stat-card.text-center.p-3.bg-light.rounded
+              .stat-value.h4.mb-1.text-info {{ workbook.attempts }}
+              .stat-label.text-muted.small {{ $t('attempts') }}
+          .col-md-4
+            .stat-card.text-center.p-3.bg-light.rounded
+              .stat-value.h4.mb-1.text-success {{ workbook.lastScore }}/{{ workbook.totalExercises }}
+              .stat-label.text-muted.small {{ $t('lastScore') }}
+        
+        // Required Materials Section
+        .mb-3(v-if="neededSeries.length")
+          .d-flex.align-items-center.mb-2
+            span.text-muted.me-2 📚
+            small.text-muted.fw-semibold {{ $t('neededWorkbooks') }}:
+          .d-flex.flex-wrap.gap-1
+            Badge(variant="info" v-for="s in neededSeries" :key="s.id") {{ s.title }}
+        // Progress Section
+        .progress-section.mb-4(v-if="currentPage")
+          .d-flex.justify-content-between.align-items-center.mb-2
+            .progress-info
+              span.fw-semibold.text-dark {{ pageInfoText }}
+              span.text-muted.ms-2 {{ answeredCount }}/{{ (currentPage.exercises || []).length }}
+            .timer-display.d-flex.align-items-center
+              span.text-muted.me-1 ⏱
+              span.fw-bold.text-primary {{ prettyTimer }}
+          Progress(:value="pageProgress" show-value height="8px")
+        
         .set-content
-          .mb-2(v-if="currentPage")
-            Progress(:value="pageProgress" show-value)
-            small.text-muted {{ pageInfoText }} — {{ answeredCount }}/{{ (currentPage.exercises || []).length }} • ⏱ {{ prettyTimer }}
           .mt-1(v-if="workbook.history && workbook.history.length")
             HistorySparkline(:history="workbook.history")
           Alert(variant="info" v-if="workbook.example")
@@ -292,6 +321,65 @@ export default {
 </script>
 
 <style scoped>
+/* Enhanced Header Styles */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+}
+
+.text-white-75 {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.card {
+  border: none;
+  overflow: hidden;
+}
+
+.card-header {
+  border-bottom: none;
+}
+
+/* Stats Cards */
+.stat-card {
+  background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  border: 1px solid #dee2e6;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.stat-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+  font-weight: 700 !important;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* Progress Section */
+.progress-section {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #e9ecef;
+}
+
+.progress-info span {
+  font-size: 0.9rem;
+}
+
+.timer-display {
+  font-size: 0.85rem;
+}
+
+/* Legacy styles - keeping for compatibility */
 .card-title {
   font-size: 1.75rem;
 }
@@ -306,6 +394,17 @@ export default {
 
 .workbook-content {
   margin-top: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stat-card {
+    margin-bottom: 0.5rem;
+  }
+  
+  .progress-section {
+    padding: 0.75rem;
+  }
 }
 </style>
 
