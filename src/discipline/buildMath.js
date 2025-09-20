@@ -81,6 +81,26 @@ import level2ASet17 from "../levels/math/2A/set_17.yaml";
 import level2ASet18 from "../levels/math/2A/set_18.yaml";
 import level2ASet19 from "../levels/math/2A/set_19.yaml";
 import level2ASet20 from "../levels/math/2A/set_20.yaml";
+import levelASet01 from "../levels/math/A/set_01.yaml";
+import levelASet02 from "../levels/math/A/set_02.yaml";
+import levelASet03 from "../levels/math/A/set_03.yaml";
+import levelASet04 from "../levels/math/A/set_04.yaml";
+import levelASet05 from "../levels/math/A/set_05.yaml";
+import levelASet06 from "../levels/math/A/set_06.yaml";
+import levelASet07 from "../levels/math/A/set_07.yaml";
+import levelASet08 from "../levels/math/A/set_08.yaml";
+import levelASet09 from "../levels/math/A/set_09.yaml";
+import levelASet10 from "../levels/math/A/set_10.yaml";
+import levelASet11 from "../levels/math/A/set_11.yaml";
+import levelASet12 from "../levels/math/A/set_12.yaml";
+import levelASet13 from "../levels/math/A/set_13.yaml";
+import levelASet14 from "../levels/math/A/set_14.yaml";
+import levelASet15 from "../levels/math/A/set_15.yaml";
+import levelASet16 from "../levels/math/A/set_16.yaml";
+import levelASet17 from "../levels/math/A/set_17.yaml";
+import levelASet18 from "../levels/math/A/set_18.yaml";
+import levelASet19 from "../levels/math/A/set_19.yaml";
+import levelASet20 from "../levels/math/A/set_20.yaml";
 import { getMathLevelOrder } from "../domain/levels.js";
 import { generateMathPlaceholder } from "../utils/placeholders.js";
 
@@ -166,6 +186,26 @@ const staticWorkbooks = [
   wb("2A", level2ASet18),
   wb("2A", level2ASet19),
   wb("2A", level2ASet20),
+  wb("A", levelASet01),
+  wb("A", levelASet02),
+  wb("A", levelASet03),
+  wb("A", levelASet04),
+  wb("A", levelASet05),
+  wb("A", levelASet06),
+  wb("A", levelASet07),
+  wb("A", levelASet08),
+  wb("A", levelASet09),
+  wb("A", levelASet10),
+  wb("A", levelASet11),
+  wb("A", levelASet12),
+  wb("A", levelASet13),
+  wb("A", levelASet14),
+  wb("A", levelASet15),
+  wb("A", levelASet16),
+  wb("A", levelASet17),
+  wb("A", levelASet18),
+  wb("A", levelASet19),
+  wb("A", levelASet20),
   wb("1A", level1AAddSub),
   wb("1A", level1ANextPrev),
 ];
@@ -198,9 +238,7 @@ export function buildMathWorkbooks(withMeta, generators, seed) {
   const dynamicWorkbooks = [
     ...level7AWorkbooks,
     ...level6AWorkbooks,
-    withMeta(generateAdditionWorkbook({ seed: `${seed}-A`, level: 'A', pages: 10 })),
     withMeta(generateAdditionWorkbook({ seed: `${seed}-B`, level: 'B', pages: 10 })),
-    withMeta(generateSubtractionWorkbook({ seed: `${seed}-S-A`, level: 'A', pages: 10 })),
     withMeta(generateSubtractionWorkbook({ seed: `${seed}-S-B`, level: 'B', pages: 10 })),
     withMeta(generateMultiplicationWorkbook({ seed: `${seed}-M-A`, level: 'A', pages: 10 })),
     withMeta(generateDivisionWorkbook({ seed: `${seed}-D-A`, level: 'A', pages: 10 })),
