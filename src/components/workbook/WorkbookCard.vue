@@ -1,5 +1,5 @@
 <template lang="pug">
-  Card(height="h-100")
+  Card(height="h-100" :variant="isActive ? 'primary' : ''")
     template(#body)
       h5.card-title {{ workbook.title }}
       p.mb-1 {{ $t('level') }}: {{ workbook.level }}
@@ -35,7 +35,10 @@ export default {
     Progress,
     Card,
   },
-  props: { workbook: { type: Object, required: true } },
+  props: {
+    workbook: { type: Object, required: true },
+    isActive: { type: Boolean, default: false },
+  },
   computed: {
     totalPages() { return this.workbook.pages ? this.workbook.pages.length : 0; },
     progress() {
