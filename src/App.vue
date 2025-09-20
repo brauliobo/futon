@@ -2,10 +2,11 @@
 <template lang="pug">
   #app
     header.bg-primary.text-white.p-4.mb-4
+      small.text-white-50.d-block.mb-1 Futon
       h1(v-if="!selectedWorkbook") {{ $t('chooseNotebook') }}
       h1(v-else) {{ selectedWorkbook.title }} ({{ $t('level') }}: {{ selectedWorkbook.level }})
     main.container
-      Home(v-if="!selectedWorkbook" :workbooks="workbooks" @select-workbook="selectWorkbook")
+      Home(v-if="!selectedWorkbook" :workbooks="workbooks" :lastSelected="lastSelected" @select-workbook="selectWorkbook")
       div(v-else)
         Button(variant="link" @click="goHome").mb-3 ← {{ $t('back') }}
         Workbook(:workbook="selectedWorkbook" :initialPageIndex="initialPageIndex" @update-workbook="updateWorkbook" @page-changed="handlePageChange")
@@ -13,7 +14,7 @@
 </template>
 
 <script>
-import { generateAdditionWorkbook, generateSubtractionWorkbook, generateMultiplicationWorkbook, generateDivisionWorkbook } from "./utils/generatorMath.js";
+import { generateAdditionWorkbook, generateSubtractionWorkbook, generateMultiplicationWorkbook, generateDivisionWorkbook, generateCountWorkbook, generateNextPrevWorkbook } from "./utils/generatorMath.js";
 import { DisciplineManager } from "./services/DisciplineManager.js";
 import Home from "./components/Home.vue";
 import Workbook from "./components/workbook/Workbook.vue";
@@ -62,7 +63,7 @@ export default {
     
     const disciplineManager = new DisciplineManager(
       withMeta, 
-      { generateAdditionWorkbook, generateSubtractionWorkbook, generateMultiplicationWorkbook, generateDivisionWorkbook }, 
+      { generateAdditionWorkbook, generateSubtractionWorkbook, generateMultiplicationWorkbook, generateDivisionWorkbook, generateCountWorkbook, generateNextPrevWorkbook }, 
       existingSeed
     );
     
@@ -71,6 +72,7 @@ export default {
       selectedWorkbook: null,
       initialPageIndex: 0,
       storage: new WorkbookStorage(),
+      lastSelected: null,
     };
   },
   computed: {
@@ -93,13 +95,17 @@ export default {
       if (wb && wb.comingSoon) return; // lock placeholders
       this.selectedWorkbook = wb;
       this.initialPageIndex = 0;
+      this.lastSelected = { slug: this.slugOf(wb), level: wb.level, subject: wb.subject, page: 1 };
       this.$router.push({ name: 'workbook', params: { slug: this.slugOf(wb), page: 1 } });
       this.saveWorkbooks();
     },
     goHome() {
+      const prev = this.selectedWorkbook; const page = this.routePageNumber;
       this.selectedWorkbook = null;
+      if (prev) this.lastSelected = { slug: this.slugOf(prev), level: prev.level, subject: prev.subject, page };
       this.$router.push({ name: 'home' });
-      this.saveWorkbooks();
+      // Preserve last opened workbook in storage when returning home
+      this.storage.saveDisciplines(this.disciplineManager, prev || (this.lastSelected ? this.workbooks.find(wb => this.slugOf(wb) === this.lastSelected.slug) : null), prev ? page : (this.lastSelected?.page || 1));
     },
     updateWorkbook(updatedWorkbook) {
       const allWorkbooks = this.disciplineManager.getAllWorkbooks();
@@ -148,21 +154,28 @@ export default {
       const saved = this.storage.loadDisciplines();
       const selectedWorkbook = this.storage.mergeDisciplines(this.disciplineManager, saved);
       
-      // If there's a saved selected workbook, use it
+      // If there's a saved selected workbook, prefer highlighting on Home without auto-opening
       if (selectedWorkbook) {
         const found = this.workbooks.find(wb => this.slugOf(wb) === selectedWorkbook.slug);
         if (found) {
-          this.selectedWorkbook = found;
-          this.initialPageIndex = Math.max(0, (selectedWorkbook.page || 1) - 1);
+          if (this.$route.name === 'workbook') {
+            this.selectedWorkbook = found;
+            this.initialPageIndex = Math.max(0, (selectedWorkbook.page || 1) - 1);
+          } else {
+            this.lastSelected = { slug: selectedWorkbook.slug, level: selectedWorkbook.level, subject: selectedWorkbook.subject, page: selectedWorkbook.page || 1 };
+          }
+          return;
+        } else {
+          // Fallback: still set level/subject so Home can select the level even if slug didn't match
+          this.lastSelected = { slug: selectedWorkbook.slug || '', level: selectedWorkbook.level, subject: selectedWorkbook.subject, page: selectedWorkbook.page || 1 };
           return;
         }
       }
-      
-      // Otherwise, auto-select the recommended workbook based on progress
+
+      // Otherwise, highlight recommended workbook on Home
       const recommendedWorkbook = this.disciplineManager.getRecommendedWorkbook();
       if (recommendedWorkbook && this.$route.name === 'home') {
-        this.selectedWorkbook = recommendedWorkbook;
-        this.initialPageIndex = 0;
+        this.lastSelected = { slug: this.slugOf(recommendedWorkbook), level: recommendedWorkbook.level, subject: recommendedWorkbook.subject, page: 1 };
       }
     },
   },
