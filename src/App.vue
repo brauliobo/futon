@@ -32,6 +32,18 @@ export default {
     const deep = (o) => JSON.parse(JSON.stringify(o));
     const defaultPassCriteria = { minAccuracyPercent: 85, maxAvgSecondsPerExercise: 6 };
     const expandRepetitions = (wb) => {
+      // Special handling for Portuguese A, B, C, D levels: split exercises into individual pages
+      if (wb.subject === 'portuguese' && ['A', 'B', 'C', 'D'].includes(wb.level) && wb.pages?.length === 1 && wb.pages[0]?.exercises?.length > 1) {
+        const originalPage = wb.pages[0];
+        const splitPages = originalPage.exercises.map((exercise, index) => ({
+          pageNumber: index + 1,
+          title: `${originalPage.title} - Questão ${index + 1}`,
+          description: originalPage.description,
+          exercises: [exercise]
+        }));
+        return { ...wb, pages: splitPages };
+      }
+      
       const sourcePages = wb.pages.flatMap((p) => {
         const times = Number.isFinite(p.repeat) && p.repeat > 1 ? Math.floor(p.repeat) : 1;
         return Array.from({ length: times }, () => deep({ ...p, repeat: undefined }));
