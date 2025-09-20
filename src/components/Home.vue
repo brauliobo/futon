@@ -2,7 +2,6 @@
 <template lang="pug">
   .home
     .container
-      h2.mb-3 {{ $t('chooseNotebook') }}
       .mb-4(v-for="(group, subject) in groupedBySubject" :key="subject")
         .card
           .card-header.d-flex.align-items-center.justify-content-between
@@ -12,7 +11,7 @@
               .mb-2
                 small.text-muted.fw-semibold {{ $t('levels') }}
               LevelRoadmap(:sequence="levelSequenceBySubject(subject)" :available="availableLevelsBySubject(subject)" :active="activeLevelBySubject[subject] || ''" :progressByLevel="{}" :getLevelName="(id) => levelNameBySubject(subject, id)" @select="val => onLevelSelect(subject, val)")
-            LevelList(:workbooks="filteredByActiveLevel(subject, group)" @start="$emit('select-workbook', $event)")
+            LevelList(:workbooks="filteredByActiveLevel(subject, group)" :activeSlug="activeSlugFor(subject)" @start="$emit('select-workbook', $event)")
 </template>
 
 <script>
@@ -28,22 +27,48 @@ export default {
       activeLevelBySubject: {},
     };
   },
-  mounted() {
-    // init active level per subject
-    const subjects = Object.keys(this.groupedBySubject);
-    subjects.forEach(s => { const seq = this.levelSequenceBySubject(s); this.activeLevelBySubject[s] = seq[0] || ''; });
-  },
   props: {
     workbooks: {
       type: Array,
       required: true,
     },
+    lastSelected: {
+      type: Object,
+      default: null,
+    }
+  },
+  mounted() {
+    // init active level per subject
+    const subjects = Object.keys(this.groupedBySubject);
+    subjects.forEach(s => {
+      const seq = this.levelSequenceBySubject(s);
+      const preset = this.lastSelected && this.lastSelected.subject === s ? String(this.lastSelected.level || '').toUpperCase() : '';
+      this.activeLevelBySubject[s] = preset || seq[0] || '';
+    });
+  },
+  created() {
+    const subjects = Object.keys(this.groupedBySubject);
+    subjects.forEach(s => {
+      if (this.lastSelected && this.lastSelected.subject === s) {
+        this.activeLevelBySubject[s] = String(this.lastSelected.level || '').toUpperCase();
+      }
+    });
   },
   methods: {
     onLevelSelect(subject, val) {
       this.activeLevelBySubject[subject] = val;
       try { this.$router.replace({ hash: `#${String(subject).toLowerCase()}-${String(val).toUpperCase()}` }); } catch (e) {}
     },
+    activeSlugFor(subject) {
+      if (this.lastSelected && this.lastSelected.subject === subject) {
+        // ensure the active workbook is from the active level; fallback to the first in that level
+        const list = this.filteredByActiveLevel(subject, this.groupedBySubject[subject] || []);
+        const match = list.find(wb => this.slugOf(wb) === this.lastSelected.slug);
+        return match ? this.lastSelected.slug : (list[0] ? this.slugOf(list[0]) : '');
+      }
+      return '';
+    },
+    slugOf(wb) { return String(wb?.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); },
     filteredByActiveLevel(subject, list) {
       const active = (this.activeLevelBySubject[subject] || '').toUpperCase();
       if (!active) return list;
@@ -58,6 +83,11 @@ export default {
       const percent = wb.pages && wb.pages.length ? Math.round((completed / wb.pages.length) * 100) : 0;
       return { completed, percent };
     },
+  },
+  watch: {
+    lastSelected(val) {
+      if (val && val.subject) this.activeLevelBySubject[val.subject] = String(val.level || '').toUpperCase();
+    }
   },
   computed: {
     groupedBySubject() {
