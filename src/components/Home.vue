@@ -103,15 +103,53 @@ export default {
       try { this.$router.replace({ hash: `#${String(subject).toLowerCase()}-${String(val).toUpperCase()}` }); } catch (e) {}
     },
     activeSlugFor(subject) {
+      const list = this.filteredByActiveLevel(subject, this.groupedBySubject[subject] || []);
+      
+      if (!list.length) return '';
+      
+      // Debug logging
+      console.log(`[activeSlugFor] Subject: ${subject}, Workbooks:`, list.map(wb => ({
+        title: wb.title,
+        slug: this.slugOf(wb),
+        progress: this.workbookProgress(wb)
+      })));
+      
+      // If there's a last selected workbook and it's in the current level, use it
       if (this.lastSelected && this.lastSelected.subject === subject) {
-        // ensure the active workbook is from the active level; fallback to the first in that level
-        const list = this.filteredByActiveLevel(subject, this.groupedBySubject[subject] || []);
         const match = list.find(wb => this.slugOf(wb) === this.lastSelected.slug);
-        return match ? this.lastSelected.slug : (list[0] ? this.slugOf(list[0]) : '');
+        if (match) {
+          console.log(`[activeSlugFor] Using last selected: ${this.lastSelected.slug}`);
+          return this.lastSelected.slug;
+        }
       }
-      return '';
+      
+      // Otherwise, find the first workbook that is not 100% complete
+      for (let i = 0; i < list.length; i++) {
+        const wb = list[i];
+        const progress = this.workbookProgress(wb);
+        if (progress.percent < 100) {
+          const selectedSlug = this.slugOf(wb);
+          console.log(`[activeSlugFor] Selected first incomplete: ${selectedSlug}`);
+          return selectedSlug;
+        }
+      }
+      
+      // If all workbooks are 100% complete, select the first one
+      const fallbackSlug = this.slugOf(list[0]);
+      console.log(`[activeSlugFor] All complete, using first: ${fallbackSlug}`);
+      return fallbackSlug;
     },
     slugOf(wb) { return String(wb?.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); },
+    findFirstIncompleteWorkbook(workbooks) {
+      // Find the first workbook that is not 100% complete
+      const firstIncomplete = workbooks.find(wb => {
+        const progress = this.workbookProgress(wb);
+        return progress.percent < 100; // Not fully completed
+      });
+      
+      // If all are completed or none exist, return the first workbook
+      return firstIncomplete || workbooks[0] || null;
+    },
     filteredByActiveLevel(subject, list) {
       const active = (this.activeLevelBySubject[subject] || '').toUpperCase();
       if (!active) return list;

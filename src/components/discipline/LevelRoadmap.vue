@@ -1,14 +1,19 @@
 <template lang="pug">
-  .roadmap.d-flex.align-items-stretch.overflow-auto
-    .level-card(v-for="(lvl, idx) in sequence" :key="lvl" :class="cardClass(lvl)")
-      .level-card__inner(@click="onLevelClick($event, lvl)")
-        .level-card__header
-          .level-card__number {{ idx + 1 }}
-          .level-card__level {{ lvl }}
-        .level-card__content
-          .level-card__name {{ getName(lvl) }}
-        .level-card__footer
-          Progress.level-card__progress(:value="progressPercent(lvl)" height="6px" variant="success")
+  .roadmap-container
+    button.nav-arrow.nav-arrow--left(@click="scrollLeft" :disabled="!canScrollLeft" v-show="showLeftArrow")
+      | ‹
+    .roadmap.d-flex.align-items-stretch(:style="{ transform: `translateX(-${scrollOffset}px)` }")
+      .level-card(v-for="(lvl, idx) in sequence" :key="lvl" :class="cardClass(lvl)")
+        .level-card__inner(@click="onLevelClick($event, lvl)")
+          .level-card__header
+            .level-card__number {{ idx + 1 }}
+            .level-card__level {{ lvl }}
+          .level-card__content
+            .level-card__name {{ getName(lvl) }}
+          .level-card__footer
+            Progress.level-card__progress(:value="progressPercent(lvl)" height="6px" variant="success")
+    button.nav-arrow.nav-arrow--right(@click="scrollRight" :disabled="!canScrollRight" v-show="showRightArrow")
+      | ›
 </template>
 
 <script>
@@ -33,11 +38,44 @@ export default {
     progressByLevel: { type: Object, default: () => ({}) },
     getLevelName: { type: Function, required: true },
   },
+  data() {
+    return {
+      scrollOffset: 0,
+      cardWidth: 162, // min-width + gap
+      containerWidth: 0
+    };
+  },
   computed: {
     availableSet() { return new Set(this.available); },
+    getCurrentLevelIndex() {
+      return this.sequence.indexOf(this.active);
+    },
+    maxScrollOffset() {
+      const totalWidth = this.sequence.length * this.cardWidth;
+      return Math.max(0, totalWidth - this.containerWidth);
+    },
+    canScrollLeft() {
+      return this.scrollOffset > 0;
+    },
+    canScrollRight() {
+      return this.scrollOffset < this.maxScrollOffset;
+    },
+    showLeftArrow() {
+      return this.maxScrollOffset > 0;
+    },
+    showRightArrow() {
+      return this.maxScrollOffset > 0;
+    }
   },
   mounted() {
-    this.$nextTick(() => this.scrollToActiveLevel());
+    this.$nextTick(() => {
+      this.updateContainerWidth();
+      this.scrollToActiveLevel();
+    });
+    window.addEventListener('resize', this.updateContainerWidth);
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.updateContainerWidth);
   },
   watch: {
     active(newActive, oldActive) {
@@ -49,27 +87,44 @@ export default {
   methods: {
     progressPercent(key){ const p = this.progressByLevel[key]; return p && Number.isFinite(p.percent) ? p.percent : 0; },
     cardClass(lvl){
+      const currentIndex = this.getCurrentLevelIndex;
+      const levelIndex = this.sequence.indexOf(lvl);
+      const isPast = levelIndex < currentIndex && currentIndex !== -1;
+      const isFuture = levelIndex > currentIndex && currentIndex !== -1;
+      
       return {
         'level-card--active': lvl === this.active,
         'level-card--disabled': !this.availableSet.has(lvl),
-        'level-card--available': this.availableSet.has(lvl)
+        'level-card--available': this.availableSet.has(lvl),
+        'level-card--past': isPast,
+        'level-card--future': isFuture
       };
     },
     getName(id) { return this.getLevelName(id); },
     onLevelClick(event, lvl) {
       if (!this.availableSet.has(lvl)) return;
       this.$emit('select', lvl);
-      // Scroll the level card to center of horizontal view
-      const levelCard = event.target.closest('.level-card');
-      if (levelCard) {
-        levelCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    },
+    scrollLeft() {
+      const newOffset = Math.max(0, this.scrollOffset - this.cardWidth * 2);
+      this.scrollOffset = newOffset;
+    },
+    scrollRight() {
+      const newOffset = Math.min(this.maxScrollOffset, this.scrollOffset + this.cardWidth * 2);
+      this.scrollOffset = newOffset;
+    },
+    updateContainerWidth() {
+      const container = this.$el.querySelector('.roadmap-container');
+      if (container) {
+        this.containerWidth = container.offsetWidth - 80; // Account for arrow buttons
       }
     },
     scrollToActiveLevel() {
       if (!this.active) return;
-      const activeCard = this.$el.querySelector('.level-card--active');
-      if (activeCard) {
-        activeCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      const activeIndex = this.sequence.indexOf(this.active);
+      if (activeIndex >= 0) {
+        const targetOffset = Math.max(0, (activeIndex * this.cardWidth) - (this.containerWidth / 2));
+        this.scrollOffset = Math.min(targetOffset, this.maxScrollOffset);
       }
     }
   }
@@ -77,9 +132,59 @@ export default {
 </script>
 
 <style scoped>
+.roadmap-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 8px 0;
+}
+
 .roadmap {
-  padding: 8px;
+  display: flex;
   gap: 12px;
+  transition: transform 0.3s ease;
+  padding: 0 8px;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #dee2e6;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #495057;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-arrow:hover:not(:disabled) {
+  background: #007bff;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.nav-arrow--left {
+  left: 0;
+}
+
+.nav-arrow--right {
+  right: 0;
 }
 
 .level-card {
@@ -138,6 +243,36 @@ export default {
 .level-card--disabled:hover {
   transform: none;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.level-card--past,
+.level-card--future {
+  opacity: 0.4;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #6c757d;
+}
+
+.level-card--past .level-card__name,
+.level-card--future .level-card__name {
+  color: #adb5bd;
+}
+
+.level-card--past .level-card__number,
+.level-card--future .level-card__number {
+  background: #6c757d;
+  box-shadow: none;
+}
+
+.level-card--past .level-card__level,
+.level-card--future .level-card__level {
+  background: rgba(108, 117, 125, 0.1);
+  color: #adb5bd;
+}
+
+.level-card--past:hover,
+.level-card--future:hover {
+  opacity: 0.6;
+  transform: translateY(-2px);
 }
 
 .level-card__inner {
