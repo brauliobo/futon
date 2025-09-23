@@ -1,6 +1,6 @@
 # Futon
 
-A simple learning app for Math, Portuguese, and English.
+A simple learning app for Math, Portuguese, and English with intuitive navigation and smart lesson selection.
 
 ## Disciplines
 - **math**: canonical levels 7A–O
@@ -11,6 +11,13 @@ A simple learning app for Math, Portuguese, and English.
 - 7A, 6A, 5A, 4A, 3A, 2A, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O
 
 Source of truth: `src/domain/levels.js` (`mathLevels`, `getMathLevelOrder`, `portugueseLevels`, `englishLevels`).
+
+## Navigation Features
+- **Arrow Navigation**: Left/right arrow buttons for smooth navigation through levels and lesson sets
+- **Smart Auto-Selection**: Automatically highlights the first incomplete lesson when selecting a level
+- **Visual Hierarchy**: Past/future levels and non-active sets are greyed and faded for better focus
+- **Responsive Design**: Navigation arrows adapt to different screen sizes and content width
+- **Horizontal Scrolling**: All lessons in a level are displayed with navigation controls
 
 ## Current status
 - **Implemented subjects**
@@ -26,7 +33,9 @@ Source of truth: `src/domain/levels.js` (`mathLevels`, `getMathLevelOrder`, `por
 - `src/domain/workbooks.js`: scaffold for future workbook catalog + mappings
 - `src/utils/generatorMath.js`: dynamic math workbook generators
 - `src/utils/placeholders.js`: placeholder generator for unimplemented math levels
-- `src/components/Home.vue`: lists all workbooks; shows Coming soon; groups by subject/topic
+- `src/components/Home.vue`: lists all workbooks; shows Coming soon; groups by subject/topic; handles auto-selection
+- `src/components/discipline/LevelRoadmap.vue`: level navigation with arrow controls and visual states
+- `src/components/discipline/level/LevelList.vue`: lesson set navigation with horizontal scrolling
 - `src/App.vue`: aggregates all workbooks (static + dynamic + placeholders)
 
 ## Roadmap
