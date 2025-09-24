@@ -5,14 +5,14 @@
         | ‹
       .sets-container(:style="{ transform: `translateX(-${scrollOffset}px)` }")
         .set-card(
-          v-for="(workbook, index) in workbooks" 
-          :key="workbook.id || workbook.title"
-          :class="{ 'set-card--faded': slugOf(workbook) !== activeSlug }"
+          v-for="(set, index) in sets" 
+          :key="set.id || set.title"
+          :class="{ 'set-card--faded': slugOf(set) !== activeSlug }"
         )
-          WorkbookCard(
-            :workbook="workbook"
-            :is-active="slugOf(workbook) === activeSlug"
-            :class="{ 'workbook-card--faded': slugOf(workbook) !== activeSlug }"
+          SetCard(
+            :set="set"
+            :is-active="slugOf(set) === activeSlug"
+            :class="{ 'set-card--faded': slugOf(set) !== activeSlug }"
             @start="$emit('start', $event)"
           )
       button.nav-arrow.nav-arrow--right(@click="scrollRight" :disabled="!canScrollRight" v-show="showRightArrow")
@@ -20,12 +20,12 @@
 </template>
 
 <script>
-import WorkbookCard from "../../set/SetCard.vue";
+import SetCard from "../../set/SetCard.vue";
 export default {
   name: 'LevelList',
-  components: { WorkbookCard },
+  components: { SetCard },
   props: {
-    workbooks: { type: Array, required: true },
+    sets: { type: Array, required: true },
     activeSlug: { type: String, default: '' },
   },
   data() {
@@ -36,13 +36,13 @@ export default {
     };
   },
   computed: {
-    currentWorkbookIndex() {
+    currentSetIndex() {
       if (!this.activeSlug) return 0;
-      const index = this.workbooks.findIndex(wb => this.slugOf(wb) === this.activeSlug);
+      const index = this.sets.findIndex(wb => this.slugOf(wb) === this.activeSlug);
       return index >= 0 ? index : 0;
     },
     maxScrollOffset() {
-      const totalWidth = this.workbooks.length * this.cardWidth;
+      const totalWidth = this.sets.length * this.cardWidth;
       return Math.max(0, totalWidth - this.containerWidth);
     },
     canScrollLeft() {
@@ -61,7 +61,7 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.updateContainerWidth();
-      this.scrollToActiveWorkbook();
+      this.scrollToActiveSet();
     });
     window.addEventListener('resize', this.updateContainerWidth);
   },
@@ -71,12 +71,12 @@ export default {
   watch: {
     activeSlug(newSlug, oldSlug) {
       console.log(`[LevelList] activeSlug changed from ${oldSlug} to ${newSlug}`);
-      if (this.workbooks.length) {
-        console.log('[LevelList] Workbook slugs:', this.workbooks.map(wb => this.slugOf(wb)));
-        console.log('[LevelList] Active matches:', this.workbooks.filter(wb => this.slugOf(wb) === newSlug).map(wb => wb.title));
+      if (this.sets.length) {
+        console.log('[LevelList] Set slugs:', this.sets.map(wb => this.slugOf(wb)));
+        console.log('[LevelList] Active matches:', this.sets.filter(wb => this.slugOf(wb) === newSlug).map(wb => wb.title));
       }
       if (newSlug && newSlug !== oldSlug) {
-        this.$nextTick(() => this.scrollToActiveWorkbook());
+        this.$nextTick(() => this.scrollToActiveSet());
       }
     }
   },
@@ -96,9 +96,9 @@ export default {
         this.containerWidth = container.offsetWidth - 80; // Account for arrow buttons
       }
     },
-    scrollToActiveWorkbook() {
+    scrollToActiveSet() {
       if (!this.activeSlug) return;
-      const activeIndex = this.currentWorkbookIndex;
+      const activeIndex = this.currentSetIndex;
       if (activeIndex >= 0) {
         const targetOffset = Math.max(0, (activeIndex * this.cardWidth) - (this.containerWidth / 2));
         this.scrollOffset = Math.min(targetOffset, this.maxScrollOffset);
@@ -181,20 +181,20 @@ export default {
   opacity: 0.7;
 }
 
-.workbook-card--faded {
+.set-card--faded {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
   color: #6c757d !important;
 }
 
-.workbook-card--faded * {
+.set-card--faded * {
   color: #adb5bd !important;
 }
 
-.workbook-card--faded .lesson-card__title {
+.set-card--faded .lesson-card__title {
   color: #6c757d !important;
 }
 
-.workbook-card--faded .lesson-card__button {
+.set-card--faded .lesson-card__button {
   background: #6c757d !important;
   opacity: 0.7;
 }

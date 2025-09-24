@@ -4,26 +4,26 @@
     .sets-container(v-if="visibleSets.length")
       .set-card(
         v-for="(setItem, index) in visibleSets" 
-        :key="setItem.workbook.id || setItem.workbook.title"
+        :key="setItem.set.id || setItem.set.title"
         :class="{ 'set-card--faded': setItem.type !== 'current' }"
       )
-        WorkbookCard(
-          :workbook="setItem.workbook"
-          :is-active="activeWorkbook && activeWorkbook.id === setItem.workbook.id"
-          :class="{ 'workbook-card--faded': setItem.type !== 'current' }"
-          @start="$emit('select-workbook', $event)"
+        SetCard(
+          :set="setItem.set"
+          :is-active="activeSet && activeSet.id === setItem.set.id"
+          :class="{ 'set-card--faded': setItem.type !== 'current' }"
+          @start="$emit('select-set', $event)"
         )
 </template>
 
 <script>
-import WorkbookCard from "../set/SetCard.vue";
+import SetCard from "../set/SetCard.vue";
 
 export default {
   name: "Level",
   components: {
-    WorkbookCard,
+    SetCard,
   },
-  emits: ['select-workbook'],
+  emits: ['select-set'],
   props: {
     level: {
       type: String,
@@ -33,45 +33,45 @@ export default {
       type: String,
       required: true
     },
-    workbooks: {
+    sets: {
       type: Array,
       required: true
     },
-    activeWorkbook: {
+    activeSet: {
       type: Object,
       default: null
     }
   },
   computed: {
-    currentWorkbookIndex() {
-      if (!this.activeWorkbook) return 0;
-      const index = this.workbooks.findIndex(wb => wb.id === this.activeWorkbook.id || wb.title === this.activeWorkbook.title);
+    currentSetIndex() {
+      if (!this.activeSet) return 0;
+      const index = this.sets.findIndex(wb => wb.id === this.activeSet.id || wb.title === this.activeSet.title);
       return index >= 0 ? index : 0;
     },
     visibleSets() {
-      if (!this.workbooks.length) return [];
+      if (!this.sets.length) return [];
       
-      const currentIndex = this.currentWorkbookIndex;
+      const currentIndex = this.currentSetIndex;
       const sets = [];
       
       // Add previous set if not the first one
       if (currentIndex > 0) {
         sets.push({
-          workbook: this.workbooks[currentIndex - 1],
+          set: this.sets[currentIndex - 1],
           type: 'previous'
         });
       }
       
       // Add current set (always show at least one)
       sets.push({
-        workbook: this.workbooks[currentIndex],
+        set: this.sets[currentIndex],
         type: 'current'
       });
       
       // Add next set if not the last one
-      if (currentIndex < this.workbooks.length - 1) {
+      if (currentIndex < this.sets.length - 1) {
         sets.push({
-          workbook: this.workbooks[currentIndex + 1],
+          set: this.sets[currentIndex + 1],
           type: 'next'
         });
       }
@@ -110,20 +110,20 @@ export default {
   opacity: 0.7;
 }
 
-.workbook-card--faded {
+.set-card--faded {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
   color: #6c757d !important;
 }
 
-.workbook-card--faded * {
+.set-card--faded * {
   color: #adb5bd !important;
 }
 
-.workbook-card--faded .lesson-card__title {
+.set-card--faded .lesson-card__title {
   color: #6c757d !important;
 }
 
-.workbook-card--faded .lesson-card__button {
+.set-card--faded .lesson-card__button {
   background: #6c757d !important;
   opacity: 0.7;
 }

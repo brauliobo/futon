@@ -3,19 +3,20 @@
   #app
     header.bg-primary.text-white.p-4.mb-4
       small.text-white-50.d-block.mb-1 Futon
-      h1(v-if="!selectedWorkbook") {{ $t('chooseNotebook') }}
-      h1(v-else) {{ selectedWorkbook.title }} ({{ $t('level') }}: {{ selectedWorkbook.level }})
+      h1(v-if="!selectedSet") {{ $t('chooseNotebook') }}
+      h1(v-else) {{ selectedSet.title }} ({{ $t('level') }}: {{ selectedSet.level }})
     main.container
-      Home(v-if="!selectedWorkbook" :workbooks="workbooks" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" @select-workbook="selectWorkbook" @level-selected="onLevelSelected")
+      Home(v-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" @select-set="selectSet" @level-selected="onLevelSelected")
       div(v-else)
         Button(variant="link" @click="goHome").mb-3 ← {{ $t('back') }}
-        Set(:workbook="selectedWorkbook" :initialPageIndex="initialPageIndex" @update-workbook="updateWorkbook" @page-changed="handlePageChange")
+        Set(:set="selectedSet" :initialPageIndex="initialPageIndex" @update-set="updateSet" @page-changed="handlePageChange")
     footer.text-center.py-4
 </template>
 
 <script>
-import { generateAdditionWorkbook, generateSubtractionWorkbook, generateMultiplicationWorkbook, generateDivisionWorkbook, generateCountWorkbook, generateNextPrevWorkbook } from "./utils/generatorMath.js";
+import { generateAdditionSet, generateSubtractionSet, generateMultiplicationSet, generateDivisionSet, generateCountSet, generateNextPrevSet } from "./utils/generatorMath.js";
 import { DisciplineManager } from "./services/DisciplineManager.js";
+import { SetFactory } from "./services/SetFactory.js";
 import Home from "./components/Home.vue";
 import Set from "./components/set/Set.vue";
 import Button from "./components/ui/Button.vue";
@@ -29,59 +30,21 @@ export default {
     Button,
   },
   data() {
-    const deep = (o) => JSON.parse(JSON.stringify(o));
-    const defaultPassCriteria = { minAccuracyPercent: 85, maxAvgSecondsPerExercise: 6 };
-    const expandRepetitions = (wb) => {
-      // Special handling for Portuguese A, B, C, D levels: split exercises into individual pages
-      if (wb.subject === 'portuguese' && ['A', 'B', 'C', 'D'].includes(wb.level) && wb.pages?.length === 1 && wb.pages[0]?.exercises?.length > 1) {
-        const originalPage = wb.pages[0];
-        const splitPages = originalPage.exercises.map((exercise, index) => ({
-          pageNumber: index + 1,
-          title: `${originalPage.title} - Questão ${index + 1}`,
-          description: originalPage.description,
-          exercises: [exercise]
-        }));
-        return { ...wb, pages: splitPages };
-      }
-      
-      const sourcePages = wb.pages.flatMap((p) => {
-        const times = Number.isFinite(p.repeat) && p.repeat > 1 ? Math.floor(p.repeat) : 1;
-        return Array.from({ length: times }, () => deep({ ...p, repeat: undefined }));
-      });
-      const allTimes = Number.isFinite(wb.repeatAll) && wb.repeatAll > 1 ? Math.floor(wb.repeatAll) : 1;
-      let pages = sourcePages;
-      for (let t = 1; t < allTimes; t += 1) pages = pages.concat(sourcePages.map((p) => deep(p)));
-      pages.forEach((p, i) => { p.pageNumber = i + 1; });
-      return { ...wb, pages };
-    };
-    const withMeta = (wb) => {
-      const expanded = expandRepetitions(wb);
-      return {
-        ...expanded,
-        passCriteria: expanded.passCriteria || defaultPassCriteria,
-        attempts: 0,
-        lastScore: 0,
-        gradePercent: 0,
-        status: '',
-        completed: false,
-        durationSeconds: 0,
-        avgSecondsPerExercise: 0,
-        totalExercises: expanded.pages.reduce((acc, page) => acc + page.exercises.length, 0),
-      };
-    };
+    const setFactory = new SetFactory();
+    const withMeta = (wb) => setFactory.createSet(wb);
     const seedKey = 'futon_seed_addition';
     const existingSeed = localStorage.getItem(seedKey) || String(Math.random()).slice(2);
     localStorage.setItem(seedKey, existingSeed);
     
     const disciplineManager = new DisciplineManager(
       withMeta, 
-      { generateAdditionWorkbook, generateSubtractionWorkbook, generateMultiplicationWorkbook, generateDivisionWorkbook, generateCountWorkbook, generateNextPrevWorkbook }, 
+      { generateAdditionSet, generateSubtractionSet, generateMultiplicationSet, generateDivisionSet, generateCountSet, generateNextPrevSet }, 
       existingSeed
     );
     
     return {
       disciplineManager,
-      selectedWorkbook: null,
+      selectedSet: null,
       initialPageIndex: 0,
       storage: new SetStorage(),
       lastSelected: null,
@@ -89,7 +52,7 @@ export default {
     };
   },
   computed: {
-    workbooks() { return this.disciplineManager.getAllWorkbooks(); },
+    sets() { return this.disciplineManager.getAllSets(); },
     routePageNumber() {
       const p = Number(this.$route.params.page || 1);
       return Number.isFinite(p) && p > 0 ? p : 1;
@@ -104,113 +67,113 @@ export default {
     slugOf(wb) {
       return String(wb.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
     },
-    selectWorkbook(wb) {
+    selectSet(wb) {
       if (wb && wb.comingSoon) return; // lock placeholders
-      this.selectedWorkbook = wb;
+      this.selectedSet = wb;
       this.initialPageIndex = 0;
       this.lastSelected = { slug: this.slugOf(wb), level: wb.level, subject: wb.subject, page: 1 };
       this.$router.push({ name: 'set', params: { slug: this.slugOf(wb), page: 1 } });
-      this.saveWorkbooks();
+      this.saveSets();
     },
     goHome() {
-      const prev = this.selectedWorkbook; const page = this.routePageNumber;
-      this.selectedWorkbook = null;
+      const prev = this.selectedSet; const page = this.routePageNumber;
+      this.selectedSet = null;
       if (prev) this.lastSelected = { slug: this.slugOf(prev), level: prev.level, subject: prev.subject, page };
       this.$router.push({ name: 'home' });
-      // Preserve last opened workbook in storage when returning home
-      this.storage.saveDisciplines(this.disciplineManager, prev || (this.lastSelected ? this.workbooks.find(wb => this.slugOf(wb) === this.lastSelected.slug) : null), prev ? page : (this.lastSelected?.page || 1), this.selectedLevelBySubject);
+      // Preserve last opened set in storage when returning home
+      this.storage.saveDisciplines(this.disciplineManager, prev || (this.lastSelected ? this.sets.find(wb => this.slugOf(wb) === this.lastSelected.slug) : null), prev ? page : (this.lastSelected?.page || 1), this.selectedLevelBySubject);
     },
-    updateWorkbook(updatedWorkbook) {
-      const allWorkbooks = this.disciplineManager.getAllWorkbooks();
-      const index = allWorkbooks.findIndex(workbook => workbook.title === updatedWorkbook.title);
+    updateSet(updatedSet) {
+      const allSets = this.disciplineManager.getAllSets();
+      const index = allSets.findIndex(set => set.title === updatedSet.title);
       if (index !== -1) {
-        const prev = allWorkbooks[index] || {};
+        const prev = allSets[index] || {};
         const history = Array.isArray(prev.history) ? prev.history.slice() : [];
-        if (updatedWorkbook.historyEntry) history.push(updatedWorkbook.historyEntry);
-        allWorkbooks[index] = {
-          ...allWorkbooks[index],
-          completedPages: updatedWorkbook.completedPages,
-          lastScore: updatedWorkbook.lastScore,
-          gradePercent: updatedWorkbook.gradePercent ?? allWorkbooks[index].gradePercent,
-          status: updatedWorkbook.status ?? allWorkbooks[index].status,
-          attempts: updatedWorkbook.attempts,
-          completed: updatedWorkbook.completed ?? allWorkbooks[index].completed,
-          durationSeconds: updatedWorkbook.durationSeconds ?? allWorkbooks[index].durationSeconds,
-          avgSecondsPerExercise: updatedWorkbook.avgSecondsPerExercise ?? allWorkbooks[index].avgSecondsPerExercise,
+        if (updatedSet.historyEntry) history.push(updatedSet.historyEntry);
+        allSets[index] = {
+          ...allSets[index],
+          completedPages: updatedSet.completedPages,
+          lastScore: updatedSet.lastScore,
+          gradePercent: updatedSet.gradePercent ?? allSets[index].gradePercent,
+          status: updatedSet.status ?? allSets[index].status,
+          attempts: updatedSet.attempts,
+          completed: updatedSet.completed ?? allSets[index].completed,
+          durationSeconds: updatedSet.durationSeconds ?? allSets[index].durationSeconds,
+          avgSecondsPerExercise: updatedSet.avgSecondsPerExercise ?? allSets[index].avgSecondsPerExercise,
           history,
         };
-        if (this.selectedWorkbook && this.selectedWorkbook.title === updatedWorkbook.title) {
-          this.selectedWorkbook = allWorkbooks[index];
+        if (this.selectedSet && this.selectedSet.title === updatedSet.title) {
+          this.selectedSet = allSets[index];
         }
-        this.saveWorkbooks();
+        this.saveSets();
       }
     },
     handlePageChange(newPageNumber) {
-      if (!this.selectedWorkbook) return;
-      this.$router.push({ name: 'set', params: { slug: this.slugOf(this.selectedWorkbook), page: newPageNumber }, hash: this.contextHash(this.selectedWorkbook) });
-      this.saveWorkbooks();
+      if (!this.selectedSet) return;
+      this.$router.push({ name: 'set', params: { slug: this.slugOf(this.selectedSet), page: newPageNumber }, hash: this.contextHash(this.selectedSet) });
+      this.saveSets();
     },
     selectFromRoute() {
       const slug = this.$route.params.slug;
       if (!slug) return;
-      const found = this.workbooks.find(wb => this.slugOf(wb) === slug);
+      const found = this.sets.find(wb => this.slugOf(wb) === slug);
       if (found) {
-        this.selectedWorkbook = found;
+        this.selectedSet = found;
         this.initialPageIndex = this.routePageNumber - 1;
         this.$router.replace({ hash: this.contextHash(found) });
       }
     },
-    saveWorkbooks() {
-      this.storage.saveDisciplines(this.disciplineManager, this.selectedWorkbook, this.selectedWorkbook ? this.routePageNumber : 1, this.selectedLevelBySubject);
+    saveSets() {
+      this.storage.saveDisciplines(this.disciplineManager, this.selectedSet, this.selectedSet ? this.routePageNumber : 1, this.selectedLevelBySubject);
     },
-    loadWorkbooks() {
+    loadSets() {
       const saved = this.storage.loadDisciplines();
-      const selectedWorkbook = this.storage.mergeDisciplines(this.disciplineManager, saved);
+      const selectedSet = this.storage.mergeDisciplines(this.disciplineManager, saved);
       
       // Load selected levels
       if (saved && saved.selectedLevelBySubject) {
         this.selectedLevelBySubject = saved.selectedLevelBySubject;
       }
       
-      // If there's a saved selected workbook, prefer highlighting on Home without auto-opening
-      if (selectedWorkbook) {
-        const found = this.workbooks.find(wb => this.slugOf(wb) === selectedWorkbook.slug);
+      // If there's a saved selected set, prefer highlighting on Home without auto-opening
+      if (selectedSet) {
+        const found = this.sets.find(wb => this.slugOf(wb) === selectedSet.slug);
         if (found) {
           if (this.$route.name === 'set') {
-            this.selectedWorkbook = found;
-            this.initialPageIndex = Math.max(0, (selectedWorkbook.page || 1) - 1);
+            this.selectedSet = found;
+            this.initialPageIndex = Math.max(0, (selectedSet.page || 1) - 1);
           } else {
-            this.lastSelected = { slug: selectedWorkbook.slug, level: selectedWorkbook.level, subject: selectedWorkbook.subject, page: selectedWorkbook.page || 1 };
+            this.lastSelected = { slug: selectedSet.slug, level: selectedSet.level, subject: selectedSet.subject, page: selectedSet.page || 1 };
           }
           return;
         } else {
           // Fallback: still set level/subject so Home can select the level even if slug didn't match
-          this.lastSelected = { slug: selectedWorkbook.slug || '', level: selectedWorkbook.level, subject: selectedWorkbook.subject, page: selectedWorkbook.page || 1 };
+          this.lastSelected = { slug: selectedSet.slug || '', level: selectedSet.level, subject: selectedSet.subject, page: selectedSet.page || 1 };
           return;
         }
       }
 
-      // Otherwise, highlight recommended workbook on Home
-      const recommendedWorkbook = this.disciplineManager.getRecommendedWorkbook();
-      if (recommendedWorkbook && this.$route.name === 'home') {
-        this.lastSelected = { slug: this.slugOf(recommendedWorkbook), level: recommendedWorkbook.level, subject: recommendedWorkbook.subject, page: 1 };
+      // Otherwise, highlight recommended set on Home
+      const recommendedSet = this.disciplineManager.getRecommendedSet();
+      if (recommendedSet && this.$route.name === 'home') {
+        this.lastSelected = { slug: this.slugOf(recommendedSet), level: recommendedSet.level, subject: recommendedSet.subject, page: 1 };
       }
     },
     onLevelSelected(subject, level) {
       this.selectedLevelBySubject[subject] = level;
-      this.saveWorkbooks();
+      this.saveSets();
     },
   },
   created() {
     if (this.$route.name === 'set') {
       this.selectFromRoute();
     }
-    this.loadWorkbooks();
+    this.loadSets();
   },
   watch: {
     '$route'(to) {
       if (to.name === 'home') {
-        this.selectedWorkbook = null;
+        this.selectedSet = null;
       } else if (to.name === 'set') {
         this.selectFromRoute();
       }

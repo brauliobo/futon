@@ -402,8 +402,8 @@ import levelOSet20 from "../levels/math/O/set_20.yaml";
 import { getMathLevelOrder } from "../domain/levels.js";
 import { generateMathPlaceholder } from "../utils/placeholders.js";
 
-const wb = (l, n) => ({ level: l, workbook: n });
-const staticWorkbooks = [
+const wb = (l, n) => ({ level: l, set: n });
+const staticSets = [
   wb("5A", level5ASet01),
   wb("5A", level5ASet02),
   wb("5A", level5ASet03),
@@ -806,39 +806,39 @@ const staticWorkbooks = [
   wb("O", levelOSet20),
 ];
 
-export function buildMathWorkbooks(withMeta, generators, seed) {
+export function buildMathSets(withMeta, generators, seed) {
   const {
-    generateAdditionWorkbook,
-    generateSubtractionWorkbook,
-    generateMultiplicationWorkbook,
-    generateDivisionWorkbook,
-    generateCountWorkbook,
-    generateNextPrevWorkbook,
+    generateAdditionSet,
+    generateSubtractionSet,
+    generateMultiplicationSet,
+    generateDivisionSet,
+    generateCountSet,
+    generateNextPrevSet,
   } = generators;
 
-  const level7AWorkbooks = [];
+  const level7ASets = [];
   for (let i = 0; i < 10; i += 1) {
-    level7AWorkbooks.push(withMeta(generateCountWorkbook({ seed: `${seed}-7A-C-${i}`, level: '7A', pages: 10, sequence: i })));
-    level7AWorkbooks.push(withMeta(generateNextPrevWorkbook({ seed: `${seed}-7A-NP-${i}`, level: '7A', pages: 10, sequence: i })));
+    level7ASets.push(withMeta(generateCountSet({ seed: `${seed}-7A-C-${i}`, level: '7A', pages: 10, sequence: i })));
+    level7ASets.push(withMeta(generateNextPrevSet({ seed: `${seed}-7A-NP-${i}`, level: '7A', pages: 10, sequence: i })));
   }
 
-  // 6A: enforce 20 workbooks (10 count + 10 next/prev)
-  const level6AWorkbooks = [];
+  // 6A: enforce 20 sets (10 count + 10 next/prev)
+  const level6ASets = [];
   for (let i = 0; i < 10; i += 1) {
-    const c = withMeta(generateCountWorkbook({ seed: `${seed}-6A-C-${i}`, level: '6A', pages: 10 }));
-    const np = withMeta(generateNextPrevWorkbook({ seed: `${seed}-6A-NP-${i}`, level: '6A', pages: 10 }));
-    level6AWorkbooks.push({ ...c, title: `6A • Contar Objetos 1–10 #${i + 1}` });
-    level6AWorkbooks.push({ ...np, title: `6A • Próximo/Anterior #${i + 1}` });
+    const c = withMeta(generateCountSet({ seed: `${seed}-6A-C-${i}`, level: '6A', pages: 10 }));
+    const np = withMeta(generateNextPrevSet({ seed: `${seed}-6A-NP-${i}`, level: '6A', pages: 10 }));
+    level6ASets.push({ ...c, title: `6A • Contar Objetos 1–10 #${i + 1}` });
+    level6ASets.push({ ...np, title: `6A • Próximo/Anterior #${i + 1}` });
   }
 
-  const dynamicWorkbooks = [
-    ...level7AWorkbooks,
-    ...level6AWorkbooks,
-    withMeta(generateMultiplicationWorkbook({ seed: `${seed}-M-A`, level: 'A', pages: 10 })),
-    withMeta(generateDivisionWorkbook({ seed: `${seed}-D-A`, level: 'A', pages: 10 })),
+  const dynamicSets = [
+    ...level7ASets,
+    ...level6ASets,
+    withMeta(generateMultiplicationSet({ seed: `${seed}-M-A`, level: 'A', pages: 10 })),
+    withMeta(generateDivisionSet({ seed: `${seed}-D-A`, level: 'A', pages: 10 })),
   ];
 
-  const implementedMathLevels = new Set(staticWorkbooks.map(w => w.level).concat(dynamicWorkbooks.map(w => w.level)));
+  const implementedMathLevels = new Set(staticSets.map(w => w.level).concat(dynamicSets.map(w => w.level)));
 
   const allMathOrder = getMathLevelOrder();
   const mathPlaceholders = allMathOrder
@@ -846,8 +846,8 @@ export function buildMathWorkbooks(withMeta, generators, seed) {
     .map(lvl => withMeta(generateMathPlaceholder(lvl)));
 
   return [
-    ...staticWorkbooks.map(w => withMeta(w.workbook)),
-    ...dynamicWorkbooks,
+    ...staticSets.map(w => withMeta(w.set)),
+    ...dynamicSets,
     ...mathPlaceholders,
   ];
 }

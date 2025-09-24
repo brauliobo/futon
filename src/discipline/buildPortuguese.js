@@ -242,9 +242,9 @@ import portugueseDSet18 from "../levels/portuguese/D/set_18.yaml";
 import portugueseDSet19 from "../levels/portuguese/D/set_19.yaml";
 import portugueseDSet20 from "../levels/portuguese/D/set_20.yaml";
 
-export function buildPortugueseWorkbooks(withMeta) {
+export function buildPortugueseSets(withMeta) {
   return [
-    // Level A workbooks (all 20 sets)
+    // Level A sets (all 20 sets)
     withMeta(portugueseASet01),
     withMeta(portugueseASet02),
     withMeta(portugueseASet03),
@@ -266,7 +266,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portugueseASet19),
     withMeta(portugueseASet20),
 
-    // Level 2A workbooks (all 20 sets)
+    // Level 2A sets (all 20 sets)
     withMeta(portuguese2ASet01),
     withMeta(portuguese2ASet02),
     withMeta(portuguese2ASet03),
@@ -288,7 +288,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portuguese2ASet19),
     withMeta(portuguese2ASet20),
 
-    // Level B workbooks (all 20 sets)
+    // Level B sets (all 20 sets)
     withMeta(portugueseBSet01),
     withMeta(portugueseBSet02),
     withMeta(portugueseBSet03),
@@ -310,7 +310,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portugueseBSet19),
     withMeta(portugueseBSet20),
 
-    // Level C workbooks (all 20 sets)
+    // Level C sets (all 20 sets)
     withMeta(portugueseCSet01),
     withMeta(portugueseCSet02),
     withMeta(portugueseCSet03),
@@ -332,7 +332,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portugueseCSet19),
     withMeta(portugueseCSet20),
     
-    // Level 3A workbooks (all 20 sets)
+    // Level 3A sets (all 20 sets)
     withMeta(portuguese3ASet01),
     withMeta(portuguese3ASet02),
     withMeta(portuguese3ASet03),
@@ -354,7 +354,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portuguese3ASet19),
     withMeta(portuguese3ASet20),
     
-    // Level 2A workbooks (all 20 sets)
+    // Level 2A sets (all 20 sets)
     withMeta(portuguese2ASet01),
     withMeta(portuguese2ASet02),
     withMeta(portuguese2ASet03),
@@ -376,7 +376,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portuguese2ASet19),
     withMeta(portuguese2ASet20),
     
-    // Level 1A workbooks (all 20 sets)
+    // Level 1A sets (all 20 sets)
     withMeta(portuguese1ASet01),
     withMeta(portuguese1ASet02),
     withMeta(portuguese1ASet03),
@@ -398,7 +398,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portuguese1ASet19),
     withMeta(portuguese1ASet20),
     
-    // Level 4A workbooks (all 20 sets)
+    // Level 4A sets (all 20 sets)
     withMeta(portuguese4ASet01),
     withMeta(portuguese4ASet02),
     withMeta(portuguese4ASet03),
@@ -420,7 +420,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portuguese4ASet19),
     withMeta(portuguese4ASet20),
 
-    // Level 5A workbooks (all 20 sets)
+    // Level 5A sets (all 20 sets)
     withMeta(portuguese5ASet01),
     withMeta(portuguese5ASet02),
     withMeta(portuguese5ASet03),
@@ -442,7 +442,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portuguese5ASet19),
     withMeta(portuguese5ASet20),
 
-    // Level 6A workbooks (all 20 sets)
+    // Level 6A sets (all 20 sets)
     withMeta(portuguese6ASet01),
     withMeta(portuguese6ASet02),
     withMeta(portuguese6ASet03),
@@ -464,7 +464,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portuguese6ASet19),
     withMeta(portuguese6ASet20),
 
-    // Level 7A workbooks (all 20 sets)
+    // Level 7A sets (all 20 sets)
     withMeta(portuguese7ASet01),
     withMeta(portuguese7ASet02),
     withMeta(portuguese7ASet03),
@@ -486,7 +486,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portuguese7ASet19),
     withMeta(portuguese7ASet20),
 
-    // Level B workbooks (all 20 sets)
+    // Level B sets (all 20 sets)
     withMeta(portugueseBSet01),
     withMeta(portugueseBSet02),
     withMeta(portugueseBSet03),
@@ -508,7 +508,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portugueseBSet19),
     withMeta(portugueseBSet20),
 
-    // Level C workbooks (all 20 sets)
+    // Level C sets (all 20 sets)
     withMeta(portugueseCSet01),
     withMeta(portugueseCSet02),
     withMeta(portugueseCSet03),
@@ -530,7 +530,7 @@ export function buildPortugueseWorkbooks(withMeta) {
     withMeta(portugueseCSet19),
     withMeta(portugueseCSet20),
 
-    // Level D workbooks (all 20 sets)
+    // Level D sets (all 20 sets)
     withMeta(portugueseDSet01),
     withMeta(portugueseDSet02),
     withMeta(portugueseDSet03),

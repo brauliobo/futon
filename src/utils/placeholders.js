@@ -1,4 +1,4 @@
-// minimal placeholder workbook for unimplemented levels
+// minimal placeholder set for unimplemented levels
 export const generateMathPlaceholder = (level) => ({
   title: `Matemática - Nível ${level} (Coming soon)`,
   level,

@@ -1,7 +1,7 @@
 <!-- src/components/SetList.vue -->
 <template lang="pug">
   .set-list
-    Set(v-for="(workbook, index) in workbooks" :key="index" :workbook="workbook" @update-workbook="handleUpdateWorkbook")
+    Set(v-for="(set, index) in sets" :key="index" :set="set" @update-set="handleUpdateSet")
 </template>
 
 <script>
@@ -13,15 +13,15 @@ export default {
     Set,
   },
   props: {
-    workbooks: {
+    sets: {
       type: Array,
       required: true,
     },
   },
   methods: {
-    handleUpdateWorkbook(updatedWorkbook) {
+    handleUpdateSet(updatedSet) {
       // Emitir o evento para o componente pai atualizar o estado
-      this.$emit("update-workbook", updatedWorkbook);
+      this.$emit("update-set", updatedSet);
     },
   },
 };

@@ -11,7 +11,7 @@ export class SetStorage extends GenericStorage {
     return `${t}__${s}-${l}`;
   }
 
-  saveDisciplines(disciplineManager, selectedWorkbook = null, selectedPage = 1, selectedLevelBySubject = null) {
+  saveDisciplines(disciplineManager, selectedSet = null, selectedPage = 1, selectedLevelBySubject = null) {
     const disciplines = {};
     
     disciplineManager.getDisciplines().forEach(discipline => {
@@ -19,9 +19,9 @@ export class SetStorage extends GenericStorage {
       discipline.getLevels().forEach(level => {
         levels[level.level] = {
           level: level.level,
-          workbooks: level.workbooks.map(wb => this.serializeWorkbook(wb)),
-          currentWorkbook: this.findCurrentWorkbook(level.workbooks),
-          lastCompleted: this.findLastCompleted(level.workbooks)
+          sets: level.sets.map(wb => this.serializeSet(wb)),
+          currentSet: this.findCurrentSet(level.sets),
+          lastCompleted: this.findLastCompleted(level.sets)
         };
       });
       
@@ -34,11 +34,11 @@ export class SetStorage extends GenericStorage {
 
     const payload = {
       disciplines,
-      selectedWorkbook: selectedWorkbook ? {
-        slug: this.slugOf(selectedWorkbook),
+      selectedSet: selectedSet ? {
+        slug: this.slugOf(selectedSet),
         page: selectedPage,
-        subject: selectedWorkbook.subject,
-        level: selectedWorkbook.level
+        subject: selectedSet.subject,
+        level: selectedSet.level
       } : null,
       selectedLevelBySubject: selectedLevelBySubject || {}
     };
@@ -50,7 +50,7 @@ export class SetStorage extends GenericStorage {
     return this.load();
   }
 
-  serializeWorkbook(wb) {
+  serializeSet(wb) {
     return {
       id: SetStorage.idOf(wb),
       title: wb.title,
@@ -87,29 +87,29 @@ export class SetStorage extends GenericStorage {
       const savedDiscipline = savedData.disciplines[discipline.name];
       if (!savedDiscipline) return;
 
-      discipline.workbooks = discipline.workbooks.map(wb => {
+      discipline.sets = discipline.sets.map(wb => {
         // Handle backward compatibility: check for both new 'levels' and old 'lessons' format
         const savedLevels = savedDiscipline.levels || savedDiscipline.lessons || {};
         const savedLevel = savedLevels[wb.level];
         if (!savedLevel) return wb;
         
-        const savedWorkbook = savedLevel.workbooks.find(s => 
+        const savedSet = (savedLevel.sets || savedLevel.workbooks || []).find(s => 
           s.id === SetStorage.idOf(wb) || s.title === wb.title
         );
-        if (!savedWorkbook) return wb;
+        if (!savedSet) return wb;
 
-        return this.mergeWorkbook(wb, savedWorkbook);
+        return this.mergeSet(wb, savedSet);
       });
 
-      discipline.levels = discipline.groupWorkbooksByLevel();
+      discipline.levels = discipline.groupSetsByLevel();
       // Handle backward compatibility for currentLevel/currentLesson
       discipline.currentLevel = savedDiscipline.currentLevel || savedDiscipline.currentLesson || discipline.levels[0]?.level;
     });
 
-    return savedData.selectedWorkbook;
+    return savedData.selectedSet;
   }
 
-  mergeWorkbook(currentWb, savedWb) {
+  mergeSet(currentWb, savedWb) {
     const pages = (currentWb.pages || []).map(p => {
       const sp = (savedWb.pages || []).find(x => x.pageNumber === p.pageNumber);
       if (!sp) return p;
@@ -137,11 +137,18 @@ export class SetStorage extends GenericStorage {
     };
   }
 
-  // Migration function to convert old 'lessons' format to new 'levels' format
+  // Migration function to convert old storage formats to new formats
   migrateStorageFormat(savedData) {
     if (!savedData || !savedData.disciplines) return false;
 
     let wasMigrated = false;
+
+    // Migrate selectedWorkbook to selectedSet
+    if (savedData.selectedWorkbook && !savedData.selectedSet) {
+      savedData.selectedSet = savedData.selectedWorkbook;
+      delete savedData.selectedWorkbook;
+      wasMigrated = true;
+    }
 
     Object.values(savedData.disciplines).forEach(discipline => {
       // If discipline has 'lessons' but not 'levels', migrate it
@@ -157,24 +164,43 @@ export class SetStorage extends GenericStorage {
         delete discipline.currentLesson;
         wasMigrated = true;
       }
+
+      // Migrate workbooks to sets in each level
+      if (discipline.levels) {
+        Object.values(discipline.levels).forEach(level => {
+          // If level has 'workbooks' but not 'sets', migrate it
+          if (level.workbooks && !level.sets) {
+            level.sets = level.workbooks;
+            delete level.workbooks;
+            wasMigrated = true;
+          }
+
+          // If level has 'currentWorkbook' but not 'currentSet', migrate it
+          if (level.currentWorkbook && !level.currentSet) {
+            level.currentSet = level.currentWorkbook;
+            delete level.currentWorkbook;
+            wasMigrated = true;
+          }
+        });
+      }
     });
 
     return wasMigrated;
   }
 
-  findCurrentWorkbook(workbooks) {
-    const inProgress = workbooks.find(wb => wb.attempts > 0 && !wb.completed);
+  findCurrentSet(sets) {
+    const inProgress = sets.find(wb => wb.attempts > 0 && !wb.completed);
     if (inProgress) return inProgress.title;
     
-    const lastCompleted = workbooks.filter(wb => wb.completed).sort((a, b) => 
+    const lastCompleted = sets.filter(wb => wb.completed).sort((a, b) => 
       (b.history?.slice(-1)[0]?.ts || 0) - (a.history?.slice(-1)[0]?.ts || 0)
     )[0];
     
-    return lastCompleted?.title || workbooks[0]?.title;
+    return lastCompleted?.title || sets[0]?.title;
   }
 
-  findLastCompleted(workbooks) {
-    const completed = workbooks.filter(wb => wb.completed);
+  findLastCompleted(sets) {
+    const completed = sets.filter(wb => wb.completed);
     if (!completed.length) return null;
     
     return completed.sort((a, b) => 
@@ -184,9 +210,9 @@ export class SetStorage extends GenericStorage {
 
   findCurrentLevel(levels) {
     const levelProgress = levels.map(level => {
-      const completedCount = level.workbooks.filter(wb => wb.completed).length;
-      const totalCount = level.workbooks.length;
-      const inProgressCount = level.workbooks.filter(wb => wb.attempts > 0 && !wb.completed).length;
+      const completedCount = level.sets.filter(wb => wb.completed).length;
+      const totalCount = level.sets.length;
+      const inProgressCount = level.sets.filter(wb => wb.attempts > 0 && !wb.completed).length;
       
       return {
         level: level.level,

@@ -59,7 +59,7 @@ const basePolicies = {
   }
 };
 
-export function generateAdditionWorkbook({ seed, level = 'A', pages = 1 }) {
+export function generateAdditionSet({ seed, level = 'A', pages = 1 }) {
   const policy = additionPolicies[level] || additionPolicies.A;
   const pagesArr = [];
   for (let p = 0; p < pages; p += 1) {
@@ -79,7 +79,7 @@ export function generateAdditionWorkbook({ seed, level = 'A', pages = 1 }) {
   return { title: `Adição Dinâmica (nível ${level})`, level, subject: 'math', pages: pagesArr, passCriteria: defaultsByLevel[level] || { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 } };
 }
 
-export function generateSubtractionWorkbook({ seed, level = 'A', pages = 1 }) {
+export function generateSubtractionSet({ seed, level = 'A', pages = 1 }) {
   const policy = (basePolicies.subtraction[level]) || basePolicies.subtraction.A;
   const pagesArr = [];
   for (let p = 0; p < pages; p += 1) {
@@ -96,7 +96,7 @@ export function generateSubtractionWorkbook({ seed, level = 'A', pages = 1 }) {
   return { title: `Subtração Dinâmica (nível ${level})`, level, subject: 'math', pages: pagesArr, passCriteria: defaultsByLevel[level] || { minAccuracyPercent: 90, maxAvgSecondsPerExercise: 4.5 } };
 }
 
-export function generateMultiplicationWorkbook({ seed, level = 'A', pages = 1 }) {
+export function generateMultiplicationSet({ seed, level = 'A', pages = 1 }) {
   const policy = (basePolicies.multiplication[level]) || basePolicies.multiplication.A;
   const pagesArr = [];
   for (let p = 0; p < pages; p += 1) {
@@ -112,7 +112,7 @@ export function generateMultiplicationWorkbook({ seed, level = 'A', pages = 1 })
   return { title: `Multiplicação Dinâmica (nível ${level})`, level, subject: 'math', pages: pagesArr, passCriteria: defaultsByLevel[level] || { minAccuracyPercent: 92, maxAvgSecondsPerExercise: 4 } };
 }
 
-export function generateDivisionWorkbook({ seed, level = 'A', pages = 1 }) {
+export function generateDivisionSet({ seed, level = 'A', pages = 1 }) {
   const policy = (basePolicies.division[level]) || basePolicies.division.A;
   const pagesArr = [];
   for (let p = 0; p < pages; p += 1) {
@@ -130,7 +130,7 @@ export function generateDivisionWorkbook({ seed, level = 'A', pages = 1 }) {
 }
 
 // Early learner generators for 7A (deterministic, 10 pages × 10 exercises)
-export function generateCountWorkbook({ seed, level = '7A', pages = 10, sequence = 0 }) {
+export function generateCountSet({ seed, level = '7A', pages = 10, sequence = 0 }) {
   const symbols = ['★','●','▲','◆','♥','☀','♣'];
   const makeRow = (n, sym) => Array.from({ length: n }, () => sym).join(' ');
   const pagesArr = [];
@@ -148,7 +148,7 @@ export function generateCountWorkbook({ seed, level = '7A', pages = 10, sequence
   return { title: `Contar Objetos 1–10 #${sequence + 1}` , level, subject: 'math', pages: pagesArr, passCriteria: { minAccuracyPercent: 85, maxAvgSecondsPerExercise: 5 } };
 }
 
-export function generateNextPrevWorkbook({ seed, level = '7A', pages = 10, sequence = 0 }) {
+export function generateNextPrevSet({ seed, level = '7A', pages = 10, sequence = 0 }) {
   const pagesArr = [];
   for (let p = 0; p < pages; p += 1) {
     const isNext = (p % 2) === 0; const type = isNext ? 'next_number' : 'previous_number';

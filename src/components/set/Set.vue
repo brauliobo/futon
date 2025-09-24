@@ -6,10 +6,10 @@
       .card-header.bg-gradient-primary.text-white.py-3
         .row.align-items-center
           .col-md-8
-            h2.mb-1.fw-bold {{ workbook.title }}
-            small.text-white-75 {{ $t('level') }}: {{ workbook.level }}
+            h2.mb-1.fw-bold {{ set.title }}
+            small.text-white-75 {{ $t('level') }}: {{ set.level }}
           .col-md-4.text-md-end.text-center.mt-2.mt-md-0
-            Button(variant="outline-light" size="sm" @click="resetWorkbook") 
+            Button(variant="outline-light" size="sm" @click="resetSet") 
               | ↻ {{ $t('reset') }}
       
       // Stats Dashboard
@@ -21,18 +21,18 @@
               .stat-label.text-muted.small {{ $t('completedBlocks') }}
           .col-md-4
             .stat-card.text-center.p-3.bg-light.rounded
-              .stat-value.h4.mb-1.text-info {{ workbook.attempts }}
+              .stat-value.h4.mb-1.text-info {{ set.attempts }}
               .stat-label.text-muted.small {{ $t('attempts') }}
           .col-md-4
             .stat-card.text-center.p-3.bg-light.rounded
-              .stat-value.h4.mb-1.text-success {{ workbook.lastScore }}/{{ workbook.totalExercises }}
+              .stat-value.h4.mb-1.text-success {{ set.lastScore }}/{{ set.totalExercises }}
               .stat-label.text-muted.small {{ $t('lastScore') }}
         
         // Required Materials Section
         .mb-3(v-if="neededSeries.length")
           .d-flex.align-items-center.mb-2
             span.text-muted.me-2 📚
-            small.text-muted.fw-semibold {{ $t('neededWorkbooks') }}:
+            small.text-muted.fw-semibold {{ $t('neededSets') }}:
           .d-flex.flex-wrap.gap-1
             Badge(variant="info" v-for="s in neededSeries" :key="s.id") {{ s.title }}
         // Progress Section
@@ -47,11 +47,11 @@
           Progress(:value="pageProgress" show-value height="8px")
         
         .set-content
-          .mt-1(v-if="workbook.history && workbook.history.length")
-            HistorySparkline(:history="workbook.history")
-          Alert(variant="info" v-if="workbook.example")
+          .mt-1(v-if="set.history && set.history.length")
+            HistorySparkline(:history="set.history")
+          Alert(variant="info" v-if="set.example")
             strong {{ $t('example') }}:
-            |  {{ workbook.example }}
+            |  {{ set.example }}
           Page(v-if="currentPage" :key="'page-' + currentPageIndex + '-' + resetKey" :page="currentPage" :isSubmitted="isSubmitted" @update-page-status="handlePageStatus" :isReadOnly="isSubmitted")
           .navigation.d-flex.justify-content-between.align-items-center
             Button(variant="secondary" @click="prevPage" :disabled="currentPageIndex === 0" aria-label="Previous page") {{ $t('previous') }}
@@ -62,20 +62,20 @@
             Button(variant="secondary" @click="nextPage" :disabled="!canGoNextPage" aria-label="Next page") {{ $t('next') }}
           .final-score.mt-3(v-if="isSubmitted")
             .d-flex.align-items-center.gap-2.mb-2
-              Badge(variant="success" v-if="workbook.status === 'mastery'") ○ {{ $t('mastery') || 'Mastery' }}
-              Badge(variant="warning" text-dark v-else-if="workbook.status === 'pass'") △ {{ $t('pass') || 'Pass' }}
+              Badge(variant="success" v-if="set.status === 'mastery'") ○ {{ $t('mastery') || 'Mastery' }}
+              Badge(variant="warning" text-dark v-else-if="set.status === 'pass'") △ {{ $t('pass') || 'Pass' }}
               Badge(variant="danger" v-else) × {{ $t('retry') || 'Retry' }}
             .row.g-2
               .col-12.col-md-4
                 Stat(:label="$t('finalScore')" :value="`${calculateFinalScore()}/${calculateAttemptedCount()}`")
               .col-12.col-md-4
-                Stat(:label="$t('grade')" :value="`${workbook.gradePercent || 0}%`")
+                Stat(:label="$t('grade')" :value="`${set.gradePercent || 0}%`")
               .col-12.col-md-4
-                Stat(:label="$t('speed')" :value="`${workbook.avgSecondsPerExercise || 0}s/ex`")
+                Stat(:label="$t('speed')" :value="`${set.avgSecondsPerExercise || 0}s/ex`")
             .mt-2
               .progress(style="height:6px" role="progressbar" :aria-valuenow="speedGaugeWidth" aria-valuemin="0" aria-valuemax="100")
                 .progress-bar(:class="speedGaugeClass" :style="{ width: speedGaugeWidth + '%' }")
-              small.text-muted {{ $t('speed') + ':' }} {{ workbook.avgSecondsPerExercise || 0 }}s/ex — {{ $t('target') + ' ≤ ' + speedTarget + 's/ex' }}
+              small.text-muted {{ $t('speed') + ':' }} {{ set.avgSecondsPerExercise || 0 }}s/ex — {{ $t('target') + ' ≤ ' + speedTarget + 's/ex' }}
 </template>
 
 <script>
@@ -101,7 +101,7 @@ export default {
     Alert,
   },
   props: {
-    workbook: {
+    set: {
       type: Object,
       required: true,
     },
@@ -123,13 +123,13 @@ export default {
     };
   },
   computed: {
-    pages() { return this.workbook.pages || []; },
+    pages() { return this.set.pages || []; },
     totalPages() { return this.pages.length; },
     currentPage() {
       return this.pages[this.currentPageIndex] || this.pages[0] || { pageNumber: 1, exercises: [] };
     },
     neededSeries() {
-      const key = `${String(this.workbook.subject || '').toLowerCase()}-${String(this.workbook.level || '').toUpperCase()}`;
+      const key = `${String(this.set.subject || '').toLowerCase()}-${String(this.set.level || '').toUpperCase()}`;
       const ids = levelToSeries[key] || [];
       return setSeries.filter(s => ids.includes(s.id));
     },
@@ -154,17 +154,17 @@ export default {
     },
     speedTarget() {
       const defaults = { maxAvgSecondsPerExercise: 6 };
-      const pc = { ...defaults, ...(this.workbook.passCriteria || {}) };
+      const pc = { ...defaults, ...(this.set.passCriteria || {}) };
       return pc.maxAvgSecondsPerExercise;
     },
     speedGaugeWidth() {
-      const s = Number(this.workbook.avgSecondsPerExercise) || 0;
+      const s = Number(this.set.avgSecondsPerExercise) || 0;
       const maxS = Number(this.speedTarget) || 6;
       const val = Math.max(0, Math.min(100, 100 * (1 - s / (maxS * 2))));
       return Math.round(val);
     },
     speedGaugeClass() {
-      const s = Number(this.workbook.avgSecondsPerExercise) || 0;
+      const s = Number(this.set.avgSecondsPerExercise) || 0;
       const maxS = Number(this.speedTarget) || 6;
       if (s <= maxS) return 'bg-success';
       if (s <= maxS * 1.2) return 'bg-warning';
@@ -178,7 +178,7 @@ export default {
       this.intervalId = setInterval(() => { this.pageSeconds += 1; }, 1000);
     },
     persistProgress() {
-      this.$emit("update-workbook", { title: this.workbook.title, completedPages: this.completedPages, attempts: this.workbook.attempts, lastScore: this.workbook.lastScore });
+      this.$emit("update-set", { title: this.set.title, completedPages: this.completedPages, attempts: this.set.attempts, lastScore: this.set.lastScore });
     },
     onKeydown(e) {
       if (this.isSubmitted) return;
@@ -236,19 +236,19 @@ export default {
       const accuracyPercent = attempted ? Math.round((correct / attempted) * 100) : 0;
       const endTs = Date.now();
       const elapsed = this.startedAt ? Math.round((endTs - this.startedAt) / 1000) : 0;
-      const total = this.workbook.totalExercises || attempted;
+      const total = this.set.totalExercises || attempted;
       const avgSecondsPerExercise = total ? +(elapsed / total).toFixed(2) : 0;
       const defaults = { minAccuracyPercent: 85, maxAvgSecondsPerExercise: 6 };
-      const pc = { ...defaults, ...(this.workbook.passCriteria || {}) };
+      const pc = { ...defaults, ...(this.set.passCriteria || {}) };
       const meetsAccuracy = accuracyPercent >= pc.minAccuracyPercent;
       const meetsSpeed = avgSecondsPerExercise <= pc.maxAvgSecondsPerExercise;
       const completed = !!(meetsAccuracy && meetsSpeed);
       const gradePercent = computeGradePercent({ accuracyPercent, avgSecondsPerExercise, maxAvgSecondsPerExercise: pc.maxAvgSecondsPerExercise });
       const status = computeStatus({ accuracyPercent, avgSecondsPerExercise, maxAvgSecondsPerExercise: pc.maxAvgSecondsPerExercise, minAccuracyPass: 95 });
       const historyEntry = { ts: endTs, correct, attempted, accuracyPercent, avgSecondsPerExercise, durationSeconds: elapsed, gradePercent, status, completed };
-      this.updateWorkbookData({ completed, durationSeconds: elapsed, avgSecondsPerExercise, gradePercent, status, historyEntry });
+      this.updateSetData({ completed, durationSeconds: elapsed, avgSecondsPerExercise, gradePercent, status, historyEntry });
     },
-    resetWorkbook() {
+    resetSet() {
       this.isSubmitted = false;
       this.currentPageIndex = 0;
       this.completedPages = [];
@@ -258,12 +258,12 @@ export default {
         });
       });
       this.resetKey += 1;
-      this.updateWorkbookData({ gradePercent: 0, status: '' });
+      this.updateSetData({ gradePercent: 0, status: '' });
     },
     calculateFinalScore() {
       const normalize = (s) => String(s).replace(/\s+/g, '').replace(/,/, '.').toLowerCase();
       let correctCount = 0;
-      this.workbook.pages.forEach(page => {
+      this.set.pages.forEach(page => {
         page.exercises.forEach(ex => {
           const userAns = ex.answer ?? '';
           if (typeof ex.correctAnswer === 'number') {
@@ -273,26 +273,26 @@ export default {
           }
         });
       });
-      this.workbook.lastScore = correctCount;
+      this.set.lastScore = correctCount;
       return correctCount;
     },
     calculateAttemptedCount() {
       let attempted = 0;
-      this.workbook.pages.forEach(page => {
+      this.set.pages.forEach(page => {
         page.exercises.forEach(ex => {
           const userAns = ex.answer ?? '';
           if (String(userAns).trim() !== '') attempted += 1;
         });
       });
-      return attempted || this.workbook.totalExercises;
+      return attempted || this.set.totalExercises;
     },
-    updateWorkbookData(extra = {}) {
+    updateSetData(extra = {}) {
       // Emitir um evento para o componente pai atualizar o estado global
-      this.$emit("update-workbook", {
-        title: this.workbook.title,
+      this.$emit("update-set", {
+        title: this.set.title,
         completedPages: this.completedPages,
-        lastScore: this.workbook.lastScore,
-        attempts: this.workbook.attempts + 1,
+        lastScore: this.set.lastScore,
+        attempts: this.set.attempts + 1,
         ...extra,
       });
     },
@@ -392,7 +392,7 @@ export default {
   width: 100%;
 }
 
-.workbook-content {
+.set-content {
   margin-top: 15px;
 }
 

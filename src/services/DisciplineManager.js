@@ -14,11 +14,11 @@ export class DisciplineManager {
 
   getDiscipline(name) { return this.disciplines[name]; }
   getDisciplines() { return Object.values(this.disciplines); }
-  getAllWorkbooks() { return this.getDisciplines().flatMap(d => d.getWorkbooks()); }
+  getAllSets() { return this.getDisciplines().flatMap(d => d.getSets()); }
   
-  getWorkbooksBySubject(subject) { 
+  getSetsBySubject(subject) { 
     const discipline = this.getDiscipline(subject);
-    return discipline ? discipline.getWorkbooks() : [];
+    return discipline ? discipline.getSets() : [];
   }
 
   getLevelsBySubject(subject) {
@@ -26,30 +26,30 @@ export class DisciplineManager {
     return discipline ? discipline.getLevels() : [];
   }
 
-  findWorkbook(predicate) { return this.getAllWorkbooks().find(predicate); }
-  filterWorkbooks(predicate) { return this.getAllWorkbooks().filter(predicate); }
+  findSet(predicate) { return this.getAllSets().find(predicate); }
+  filterSets(predicate) { return this.getAllSets().filter(predicate); }
   
-  getCurrentWorkbookForDiscipline(disciplineName) {
+  getCurrentSetForDiscipline(disciplineName) {
     const discipline = this.getDiscipline(disciplineName);
-    return discipline ? discipline.getCurrentWorkbook() : null;
+    return discipline ? discipline.getCurrentSet() : null;
   }
 
-  getRecommendedWorkbook() {
+  getRecommendedSet() {
     // Find the discipline with most recent activity
     const disciplinesWithActivity = this.getDisciplines()
       .map(discipline => ({
         discipline,
-        currentWorkbook: discipline.getCurrentWorkbook(),
+        currentSet: discipline.getCurrentSet(),
         lastActivity: this.getLastActivityTime(discipline)
       }))
-      .filter(item => item.currentWorkbook)
+      .filter(item => item.currentSet)
       .sort((a, b) => b.lastActivity - a.lastActivity);
 
-    return disciplinesWithActivity.length > 0 ? disciplinesWithActivity[0].currentWorkbook : null;
+    return disciplinesWithActivity.length > 0 ? disciplinesWithActivity[0].currentSet : null;
   }
 
   getLastActivityTime(discipline) {
-    const allHistory = discipline.getWorkbooks()
+    const allHistory = discipline.getSets()
       .flatMap(wb => wb.history || [])
       .map(entry => entry.ts || 0);
     

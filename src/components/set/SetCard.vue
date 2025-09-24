@@ -2,44 +2,61 @@
   .lesson-card(:class="{ 'lesson-card--active': isActive, 'lesson-card--disabled': !canStart }")
     .lesson-card__header
       .lesson-card__title-section
-        h5.lesson-card__title {{ workbook.title }}
-      .lesson-card__status(v-if="workbook.status")
+        h5.lesson-card__title {{ set.title }}
+      .lesson-card__status(v-if="set.status")
         Badge(:variant="statusVariant" :class="statusClass")
           span.lesson-card__status-icon {{ statusIcon }}
           span {{ statusText }}
     
     .lesson-card__content
-      .lesson-card__progress-section
+      // Only show progress section if set has been started (not all zeros)
+      .lesson-card__progress-section(v-if="hasProgress")
         .lesson-card__progress-header
           span.lesson-card__progress-label {{ $t('progress') || 'Progresso' }}
           span.lesson-card__progress-text {{ progress.completed }}/{{ totalPages }} páginas
         Progress(:value="progress.percent" show-value height="8px" variant="success")
       
-      .lesson-card__stats(v-if="workbook.lastScore || workbook.avgSecondsPerExercise")
-        .lesson-card__stat(v-if="workbook.lastScore")
+      // Show completion summary for completed sets
+      .lesson-card__completion-summary(v-else-if="set.completed")
+        .lesson-card__completion-header
+          span.lesson-card__completion-label {{ $t('lastResults') || 'Últimos resultados' }}
+        .lesson-card__completion-stats
+          .lesson-card__completion-stat
+            .lesson-card__stat-icon 🎯
+            .lesson-card__stat-content
+              .lesson-card__stat-label {{ $t('finalScore') }}
+              .lesson-card__stat-value {{ set.lastScore }}/{{ set.totalExercises }}
+          .lesson-card__completion-stat(v-if="set.avgSecondsPerExercise")
+            .lesson-card__stat-icon ⏱️
+            .lesson-card__stat-content
+              .lesson-card__stat-label {{ $t('speed') }}
+              .lesson-card__stat-value {{ set.avgSecondsPerExercise }}s/ex
+      
+      .lesson-card__stats(v-if="!set.completed && (set.lastScore || set.avgSecondsPerExercise)")
+        .lesson-card__stat(v-if="set.lastScore")
           .lesson-card__stat-icon 🎯
           .lesson-card__stat-content
             .lesson-card__stat-label {{ $t('lastScore') }}
-            .lesson-card__stat-value {{ workbook.lastScore }}/{{ workbook.totalExercises }}
+            .lesson-card__stat-value {{ set.lastScore }}/{{ set.totalExercises }}
         
-        .lesson-card__stat(v-if="workbook.avgSecondsPerExercise")
+        .lesson-card__stat(v-if="set.avgSecondsPerExercise")
           .lesson-card__stat-icon ⏱️
           .lesson-card__stat-content
             .lesson-card__stat-label {{ $t('avgTime') || 'Avg Time' }}
-            .lesson-card__stat-value {{ workbook.avgSecondsPerExercise }}s/ex
+            .lesson-card__stat-value {{ set.avgSecondsPerExercise }}s/ex
             .lesson-card__speed-gauge.mt-1
               Progress(:value="speedGaugeWidth" :variant="speedGaugeVariant" height="4px")
       
-      .lesson-card__grade(v-if="workbook.gradePercent")
-        .lesson-card__grade-circle(:class="`grade-${getGradeColor(workbook.gradePercent)}`")
-          span {{ workbook.gradePercent }}%
+      .lesson-card__grade(v-if="set.gradePercent")
+        .lesson-card__grade-circle(:class="`grade-${getGradeColor(set.gradePercent)}`")
+          span {{ set.gradePercent }}%
     
     .lesson-card__footer
       .lesson-card__badges
-        Badge(variant="success" v-if="workbook.completed" class="lesson-card__badge")
+        Badge(variant="success" v-if="set.completed" class="lesson-card__badge")
           CheckCircle(:size="14")
           span {{ $t('completed') }}
-        Badge(variant="warning" v-if="workbook.comingSoon" class="lesson-card__badge")
+        Badge(variant="warning" v-if="set.comingSoon" class="lesson-card__badge")
           Clock(:size="14")
           span {{ $t('comingSoon') }}
       
@@ -72,51 +89,54 @@ export default {
     Clock,
   },
   props: {
-    workbook: { type: Object, required: true },
+    set: { type: Object, required: true },
     isActive: { type: Boolean, default: false },
   },
   computed: {
-    totalPages() { return this.workbook.pages ? this.workbook.pages.length : 0; },
+    totalPages() { return this.set.pages ? this.set.pages.length : 0; },
     progress() {
-      const completed = (this.workbook.completedPages || []).length;
+      const completed = (this.set.completedPages || []).length;
       const percent = this.totalPages ? Math.round((completed / this.totalPages) * 100) : 0;
       return { completed, percent };
     },
-    canStart() { return !this.workbook.comingSoon; },
+    hasProgress() {
+      return this.progress.completed > 0 && !this.set.completed;
+    },
+    canStart() { return !this.set.comingSoon; },
     speedTarget() {
       const defaults = { maxAvgSecondsPerExercise: 6 };
-      const pc = { ...defaults, ...(this.workbook.passCriteria || {}) };
+      const pc = { ...defaults, ...(this.set.passCriteria || {}) };
       return pc.maxAvgSecondsPerExercise;
     },
     speedGaugeWidth() {
-      const s = Number(this.workbook.avgSecondsPerExercise) || 0;
+      const s = Number(this.set.avgSecondsPerExercise) || 0;
       const maxS = Number(this.speedTarget) || 6;
       const val = Math.max(0, Math.min(100, 100 * (1 - s / (maxS * 2))));
       return Math.round(val);
     },
     speedGaugeVariant() {
-      const s = Number(this.workbook.avgSecondsPerExercise) || 0;
+      const s = Number(this.set.avgSecondsPerExercise) || 0;
       const maxS = Number(this.speedTarget) || 6;
       if (s <= maxS) return 'success';
       if (s <= maxS * 1.2) return 'warning';
       return 'danger';
     },
     statusVariant() {
-      if (this.workbook.status === 'mastery') return 'success';
-      if (this.workbook.status === 'pass') return 'warning';
+      if (this.set.status === 'mastery') return 'success';
+      if (this.set.status === 'pass') return 'warning';
       return 'danger';
     },
     statusClass() {
-      return `lesson-card__status-badge lesson-card__status-badge--${this.workbook.status}`;
+      return `lesson-card__status-badge lesson-card__status-badge--${this.set.status}`;
     },
     statusIcon() {
-      if (this.workbook.status === 'mastery') return '⭐';
-      if (this.workbook.status === 'pass') return '✓';
+      if (this.set.status === 'mastery') return '⭐';
+      if (this.set.status === 'pass') return '✓';
       return '↻';
     },
     statusText() {
-      if (this.workbook.status === 'mastery') return this.$t('mastery') || 'Mastery';
-      if (this.workbook.status === 'pass') return this.$t('pass') || 'Pass';
+      if (this.set.status === 'mastery') return this.$t('mastery') || 'Mastery';
+      if (this.set.status === 'pass') return this.$t('pass') || 'Pass';
       return this.$t('retry') || 'Retry';
     },
     buttonVariant() {
@@ -129,19 +149,19 @@ export default {
     },
     buttonIcon() {
       if (!this.canStart) return 'Lock';
-      if (this.workbook.completed) return 'RotateCcw';
+      if (this.set.completed) return 'RotateCcw';
       return 'Play';
     },
     buttonText() {
       if (!this.canStart) return this.$t('comingSoon');
-      if (this.workbook.completed) return this.$t('restart') || 'Restart';
+      if (this.set.completed) return this.$t('restart') || 'Restart';
       return this.$t('start');
     },
   },
   methods: {
     onStart() {
       if (!this.canStart) return;
-      this.$emit('start', this.workbook);
+      this.$emit('start', this.set);
     },
     getGradeColor(grade) {
       if (grade >= 90) return 'excellent';
@@ -298,6 +318,39 @@ export default {
   color: #6c757d;
   font-size: 0.85rem;
   font-weight: 500;
+}
+
+/* Completion Summary */
+.lesson-card__completion-summary {
+  background: rgba(248, 249, 250, 0.8);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.lesson-card__completion-header {
+  margin-bottom: 12px;
+}
+
+.lesson-card__completion-label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.lesson-card__completion-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.lesson-card__completion-stat {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Stats */
@@ -462,6 +515,11 @@ export default {
   }
   
   .lesson-card__stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .lesson-card__completion-stats {
     flex-direction: column;
     gap: 12px;
   }

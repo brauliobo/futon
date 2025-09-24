@@ -28,9 +28,9 @@
                     @select="val => onLevelSelect(activeDiscipline, val)"
                   )
                 LevelList(
-                  :workbooks="filteredByActiveLevel(activeDiscipline, groupedBySubject[activeDiscipline] || [])" 
+                  :sets="filteredByActiveLevel(activeDiscipline, groupedBySubject[activeDiscipline] || [])" 
                   :activeSlug="activeSlugFor(activeDiscipline)" 
-                  @start="$emit('select-workbook', $event)"
+                  @start="$emit('select-set', $event)"
                 )
 </template>
 
@@ -42,7 +42,7 @@ import { getMathLevelOrder, getMathLevelName, getMathLevelI18nKey, getPortuguese
 export default {
   name: "Home",
   components: { LevelRoadmap, LevelList },
-  emits: ['select-workbook', 'level-selected'],
+  emits: ['select-set', 'level-selected'],
   data() {
     return {
       activeLevelBySubject: {},
@@ -50,7 +50,7 @@ export default {
     };
   },
   props: {
-    workbooks: {
+    sets: {
       type: Array,
       required: true,
     },
@@ -108,13 +108,13 @@ export default {
       if (!list.length) return '';
       
       // Debug logging
-      console.log(`[activeSlugFor] Subject: ${subject}, Workbooks:`, list.map(wb => ({
+      console.log(`[activeSlugFor] Subject: ${subject}, Sets:`, list.map(wb => ({
         title: wb.title,
         slug: this.slugOf(wb),
-        progress: this.workbookProgress(wb)
+        progress: this.setProgress(wb)
       })));
       
-      // If there's a last selected workbook and it's in the current level, use it
+      // If there's a last selected set and it's in the current level, use it
       if (this.lastSelected && this.lastSelected.subject === subject) {
         const match = list.find(wb => this.slugOf(wb) === this.lastSelected.slug);
         if (match) {
@@ -123,10 +123,10 @@ export default {
         }
       }
       
-      // Otherwise, find the first workbook that is not 100% complete
+      // Otherwise, find the first set that is not 100% complete
       for (let i = 0; i < list.length; i++) {
         const wb = list[i];
-        const progress = this.workbookProgress(wb);
+        const progress = this.setProgress(wb);
         if (progress.percent < 100) {
           const selectedSlug = this.slugOf(wb);
           console.log(`[activeSlugFor] Selected first incomplete: ${selectedSlug}`);
@@ -134,21 +134,21 @@ export default {
         }
       }
       
-      // If all workbooks are 100% complete, select the first one
+      // If all sets are 100% complete, select the first one
       const fallbackSlug = this.slugOf(list[0]);
       console.log(`[activeSlugFor] All complete, using first: ${fallbackSlug}`);
       return fallbackSlug;
     },
     slugOf(wb) { return String(wb?.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); },
-    findFirstIncompleteWorkbook(workbooks) {
-      // Find the first workbook that is not 100% complete
-      const firstIncomplete = workbooks.find(wb => {
-        const progress = this.workbookProgress(wb);
+    findFirstIncompleteSet(sets) {
+      // Find the first set that is not 100% complete
+      const firstIncomplete = sets.find(wb => {
+        const progress = this.setProgress(wb);
         return progress.percent < 100; // Not fully completed
       });
       
-      // If all are completed or none exist, return the first workbook
-      return firstIncomplete || workbooks[0] || null;
+      // If all are completed or none exist, return the first set
+      return firstIncomplete || sets[0] || null;
     },
     filteredByActiveLevel(subject, list) {
       const active = (this.activeLevelBySubject[subject] || '').toUpperCase();
@@ -159,7 +159,7 @@ export default {
       const label = this.$t(subjectLabelKey(key));
       return typeof label === 'string' ? label : key;
     },
-    workbookProgress(wb) {
+    setProgress(wb) {
       const completed = (wb.completedPages || []).length;
       const percent = wb.pages && wb.pages.length ? Math.round((completed / wb.pages.length) * 100) : 0;
       return { completed, percent };
@@ -176,7 +176,7 @@ export default {
     },
     groupedBySubject() {
       const groups = {};
-      this.workbooks.forEach(wb => {
+      this.sets.forEach(wb => {
         const subject = wb.subject || 'math';
         if (!groups[subject]) groups[subject] = [];
         groups[subject].push(wb);

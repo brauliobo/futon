@@ -14,9 +14,9 @@
       v-if="activeLevel"
       :level="activeLevel"
       :discipline="disciplineName"
-      :workbooks="levelWorkbooks"
-      :active-workbook="activeWorkbook"
-      @select-workbook="$emit('select-workbook', $event)"
+      :sets="levelSets"
+      :active-set="activeSet"
+      @select-set="$emit('select-set', $event)"
     )
 </template>
 
@@ -30,7 +30,7 @@ export default {
     LevelRoadmap,
     Level,
   },
-  emits: ['select-level', 'select-workbook'],
+  emits: ['select-level', 'select-set'],
   props: {
     disciplineName: {
       type: String,
@@ -56,11 +56,11 @@ export default {
       type: Function,
       required: true
     },
-    levelWorkbooks: {
+    levelSets: {
       type: Array,
       default: () => []
     },
-    activeWorkbook: {
+    activeSet: {
       type: Object,
       default: null
     }
