@@ -90,12 +90,43 @@ Current important fields: `attempts`, `lastScore`, `gradePercent`, `status`, `co
   if (wasMigrated) this.save(savedData); // Persist migrated data
   ```
 
+### Testing and integration tests
+- **Test framework**: Playwright with visible browser for debugging and validation.
+- **Test location**: `tests/integration/` for end-to-end user journey tests.
+- **Configuration**: 
+  - Uses system Chrome (`channel: 'chrome'`) to avoid installation issues.
+  - Non-headless mode (`headless: false`) for visual debugging.
+  - List reporter for clean terminal output, no HTML popup.
+- **Element identification**:
+  - **Use reliable selectors**: `getByRole()`, `getByText()`, specific text content.
+  - **Avoid complex selectors**: No label-based, aria-label, or CSS class selectors that break easily.
+  - **Prefer semantic HTML**: Target buttons, headings, textboxes by their actual roles.
+  - **Disambiguation**: Use `.first()`, `.last()`, or specific text when multiple elements match.
+- **Test patterns**:
+  - Start with basic navigation: Home → Level Selection → Set Start → Exercise Interface.
+  - Test core interactions: Answer input, page navigation, progress tracking.
+  - Verify UI state changes: Progress bars, timers, completion badges.
+  - Test full user journey: Complete exercises, verify scoring, check persistence.
+- **Running tests**:
+  ```bash
+  pnpm test              # Run all tests (visible browser)
+  pnpm test:ui          # Interactive mode with test selection
+  pnpm test:debug       # Step-by-step debugging mode
+  ```
+- **Test focus areas**:
+  - Navigation flow and URL state management
+  - Exercise interaction (answering questions, page advancement)
+  - Progress persistence and state recovery
+  - Scoring calculation and status display
+  - Reset functionality and state clearing
+
 ### PR checklist (before commit)
 - Lint passes and no console errors.
 - New i18n keys added to all locales (EN/PT).
 - Persistence updated (defaults + save + load) if any new workbook fields were introduced.
 - UI tested for Mastery/Pass/Retry flows and speed gauge colors.
- - No i18n fallbacks remain in templates.
+- Integration tests pass with core functionality verified.
+- No i18n fallbacks remain in templates.
 
 ### Git and commit hygiene
 - Small, focused commits per logical change (one file/concern where possible).
