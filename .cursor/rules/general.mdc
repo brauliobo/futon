@@ -1,165 +1,61 @@
-## Futon – Project Rules and Conventions
+# Futon – Project Rules and Conventions
 
-### Tech stack and architecture
-- **Frontend**: Vue SFCs using the Options API.
-- **UI**: Bootstrap utility classes; compact KPI tiles via `Stat` component.
-- **i18n**: Simple key/value locales in `src/i18n/en.js` and `src/i18n/pt.js`.
-- **Persistence**: LocalStorage under key `futon_state_v1` (see `saveWorkbooks`/`loadWorkbooks` in `App.vue`).
-- **Domain utils**: Keep non‑UI logic in `src/domain/` (e.g., `scoring.js`).
+## Tech Stack
+- **Frontend**: Vue 3 SFCs (Options API), Bootstrap classes
+- **i18n**: `src/i18n/{en,pt}.js` – ALWAYS add new keys to ALL locales simultaneously
+- **Storage**: LocalStorage via `SetStorage` service (`futon_state_v2` key)
+- **Data**: YAML sets in `src/levels/`, processed by `DisciplineManager`
 
-### Core data model (persisted workbook fields)
-When adding/modifying fields on a workbook, update all three places:
-- `withMeta(...)` defaults in `App.vue`.
-- `saveWorkbooks()` payload.
-- `loadWorkbooks()` merge step.
+## Architecture
+- **Services**: `src/services/` (DisciplineManager, SetStorage, SetFactory)
+- **Domain**: `src/domain/` for business logic (levels.js, disciplines.js)  
+- **Components**: 
+  - `src/components/ui/` – reusable UI (Button, Badge, etc.)
+  - `src/components/set/` – set-specific (Set, Page)
+  - `src/components/discipline/` – level navigation and display
 
-Current important fields: `attempts`, `lastScore`, `gradePercent`, `status`, `completed`, `durationSeconds`, `avgSecondsPerExercise`, `completedPages`, `pages[pageNumber, exercises[answer]]`.
+## Data Model (Set Fields)
+Core persisted fields: `attempts`, `lastScore`, `gradePercent`, `status`, `completed`, `durationSeconds`, `avgSecondsPerExercise`, `pages[{pageNumber, exercises[{answer}]}]`
 
-### Scoring and approval
-- Use `src/domain/scoring.js`:
-  - `computeGradePercent({ accuracyPercent, avgSecondsPerExercise, maxAvgSecondsPerExercise })`
-  - `computeStatus({ accuracyPercent, avgSecondsPerExercise, maxAvgSecondsPerExercise, minAccuracyPass })`
-- Pass criteria live on `workbook.passCriteria` with defaults derived in `App.vue`.
-- UI expectations in `Workbook.vue` after submission:
-  - Badge: ○ Mastery (green), △ Pass (amber), × Retry (red).
-  - Show KPIs via `Stat`: Final score, Grade %, Speed (s/ex).
-  - Speed gauge: width = `100 * (1 - s / (maxS * 2))`, colors: green (≤ maxS), amber (≤ 1.2× maxS), red (> 1.2×).
+When adding fields, update: SetFactory defaults, SetStorage serialization, and merge logic.
 
-### UX patterns
-- Auto‑advance when a page is completed (not last page).
-- Keyboard: Right/Left or N/P for navigation when allowed.
-- Timer starts on mount and on page changes; stored as `durationSeconds` and `avgSecondsPerExercise` on submit.
+## Scoring & Status
+- Use `src/domain/scoring.js`: `computeGradePercent()`, `computeStatus()`
+- UI shows: ○ Mastery (green), △ Pass (amber), × Retry (red)
+- Speed gauge: `width = 100 * (1 - s / (maxS * 2))`
 
-### Coding style
-- Indentation: match existing files (2 spaces). Do not reformat unrelated code.
-- Keep code short and DRY; prefer one‑liners if ≤ 120 columns.
-- Only add comments for non‑obvious code. Avoid inline narration in code.
-- UI text must use `$t('key')`; avoid hard‑coded strings in SFCs.
-- Place reusable/business logic in `src/domain/` and import where needed.
- - Computed properties > methods for derived state; keep methods for actions.
- - Avoid deep nesting; use early returns and guard clauses.
- - Handle edge cases (null, empty arrays) gracefully and explicitly.
- - Type/shape expectations: validate props and prefer defaults for resilience.
+## Coding Standards
+- 2-space indent, DRY code, ≤120 cols for one-liners
+- Comments only for non-obvious code
+- UI text via `$t('key')` – no hardcoded strings
+- Computed > methods for derived state, early returns over nesting
+- Explicit `.js` extensions in imports
 
-### Emitted events and update flow
-- `Workbook.vue` emits `update-workbook` with a shallow payload. Parent (`App.vue`) merges into the selected workbook.
-- When resetting a workbook, clear transient scoring fields (`gradePercent`, `status`).
+## Key UX Patterns
+- Auto-advance after page completion (except last page)
+- Arrow/N/P keyboard navigation
+- Timer tracks `durationSeconds` and `avgSecondsPerExercise`
 
-### i18n – mandatory rule
-- ALWAYS add translations for new keys in ALL locales before use.
-  - Update `src/i18n/en.js` and `src/i18n/pt.js` together.
-  - Prefer `$t('key')` without fallbacks in templates. No fallbacks at commit time.
-  - Examples of common keys: `mastery`, `pass`, `retry`, `grade`, `speed`, `target`.
+## Testing (Playwright)
+- Location: `tests/integration/`
+- Uses system Chrome, non-headless mode
+- Commands: `pnpm test`, `pnpm test:ui`, `pnpm test:debug`
+- Target semantic selectors: `getByRole()`, `getByText()`, avoid CSS classes
 
-### When adding features that touch scoring/approval
-- Add defaults in `withMeta`.
-- Wire into `submitAnswers` in `Workbook.vue` and persist via `update-workbook`.
-- Reflect status/grade in the list card (`WorkbookCard.vue`).
-- Extend i18n for any new labels.
+## Git & Commits
+- Small focused commits, imperative messages
+- Scope prefixes: `i18n:`, `ui:`, `domain:`, `storage:`
+- **Never auto-commit** – always prompt user first
 
-### Accessibility and semantics
-- For progress bars and gauges, set `role="progressbar"` and ARIA values (`aria-valuenow`, `aria-valuemin`, `aria-valuemax`).
-- Use accessible button labels (`aria-label`) where text is not explicit.
+## Adding New Sets
+1. Create YAML in `src/levels/{subject}/{level}/`  
+2. Import in discipline builder (`src/discipline/build*.js`)
+3. Add i18n keys for labels
+4. Run `pnpm run targets:refresh` to compute targets
+5. Test persistence (save/load), scoring, and navigation
 
-### File/Import conventions
-- Use explicit `.js` extension for local domain imports in SFC scripts.
-- Keep relative imports short and stable; prefer `../domain/...` for domain utils.
-
-### Component organization and architecture
-- **UI Components**: Store basic reusable components in `src/components/ui/` (Button, Badge, Progress, Alert, Card).
-- **Domain Components**: Group discipline-specific components in `src/components/discipline/`.
-- **Feature Components**: Group related components by feature (e.g., `src/components/workbook/` for all workbook-related components).
-- **Shared UI Components**: Create flexible components with variant props instead of hardcoded styles.
-  - Example: `Button` with `variant` prop instead of separate `PrimaryButton`, `SecondaryButton`.
-  - Support additional CSS classes via proper class merging in computed properties.
-
-### Import path management after reorganization
-- **Update all relative imports** when moving components to new directories.
-- **Domain imports**: Adjust `../domain/` to `../../domain/` when moving components deeper.
-- **UI component imports**: Update to `../ui/ComponentName.vue` from discipline/workbook components.
-- **Test import paths** after major reorganization to prevent Vite import analysis errors.
-
-### Data storage migration and backward compatibility
-- **Always handle breaking storage changes** with migration functions.
-- **Provide fallbacks** for old data formats: `savedData.newField || savedData.oldField || defaultValue`.
-- **Automatic migration**: Detect old format, migrate in-place, and save back to localStorage.
-- **Storage key versioning**: Consider updating storage keys (`futon_state_v2`) for major format changes.
-- **Migration pattern**:
-  ```javascript
-  const wasMigrated = this.migrateStorageFormat(savedData);
-  if (wasMigrated) this.save(savedData); // Persist migrated data
-  ```
-
-### Testing and integration tests
-- **Test framework**: Playwright with visible browser for debugging and validation.
-- **Test location**: `tests/integration/` for end-to-end user journey tests.
-- **Configuration**: 
-  - Uses system Chrome (`channel: 'chrome'`) to avoid installation issues.
-  - Non-headless mode (`headless: false`) for visual debugging.
-  - List reporter for clean terminal output, no HTML popup.
-- **Element identification**:
-  - **Use reliable selectors**: `getByRole()`, `getByText()`, specific text content.
-  - **Avoid complex selectors**: No label-based, aria-label, or CSS class selectors that break easily.
-  - **Prefer semantic HTML**: Target buttons, headings, textboxes by their actual roles.
-  - **Disambiguation**: Use `.first()`, `.last()`, or specific text when multiple elements match.
-- **Test patterns**:
-  - Start with basic navigation: Home → Level Selection → Set Start → Exercise Interface.
-  - Test core interactions: Answer input, page navigation, progress tracking.
-  - Verify UI state changes: Progress bars, timers, completion badges.
-  - Test full user journey: Complete exercises, verify scoring, check persistence.
-- **Running tests**:
-  ```bash
-  pnpm test              # Run all tests (visible browser)
-  pnpm test:ui          # Interactive mode with test selection
-  pnpm test:debug       # Step-by-step debugging mode
-  ```
-- **Test focus areas**:
-  - Navigation flow and URL state management
-  - Exercise interaction (answering questions, page advancement)
-  - Progress persistence and state recovery
-  - Scoring calculation and status display
-  - Reset functionality and state clearing
-
-### PR checklist (before commit)
-- Lint passes and no console errors.
-- New i18n keys added to all locales (EN/PT).
-- Persistence updated (defaults + save + load) if any new workbook fields were introduced.
-- UI tested for Mastery/Pass/Retry flows and speed gauge colors.
-- Integration tests pass with core functionality verified.
-- No i18n fallbacks remain in templates.
-
-### Git and commit hygiene
-- Small, focused commits per logical change (one file/concern where possible).
-- Present tense, imperative messages: "Add", "Fix", "Update".
-- Prefix scope when helpful: `i18n:`, `ui:`, `domain:`, `persistence:`.
-- Example messages:
-  - `domain: add computeStatus and wire into submission`
-  - `ui: show status badge and KPIs on final screen`
-  - `persistence: save/load gradePercent and status`
-  - `i18n: add mastery/pass/retry/grade/speed/target`
-
-### Terminology and naming conventions
-- **Use "level" consistently** instead of "lesson" throughout the codebase.
-- **Directory naming**: `src/levels/` for level data, `src/components/discipline/level/` for level components.
-- **Method naming**: `getLevels()`, `getCurrentLevel()`, `findCurrentLevel()` instead of lesson variants.
-- **Storage fields**: `currentLevel`, `levels` instead of `currentLesson`, `lessons`.
-
-### Removing deprecated code
-- **Delete unused components** completely rather than commenting out.
-- **Update all imports** that referenced deleted components.
-- **Remove related functionality** (e.g., TopicRoadmap and topic-based navigation).
-- **Clean up i18n keys** if no longer used, but preserve if still referenced in domain logic.
-
-### Adding workbooks for early‑learner math (7A–4A)
-- Create JSON under the level dir: `src/levels/math/{7A,6A,5A,4A}/level_<LEVEL>_<name>.json`.
-  - Required: `title`, `level` (e.g., "6A"), `subject: "math"`, `pages[{ pageNumber, title, description, exercises[{ type, question, correctAnswer }] }]`.
-  - Optional: `repeat` per page, `repeatAll` for whole workbook, `passCriteria`, `target`.
-- Import the new JSON in discipline builders (`src/discipline/buildMath.js`) and add to workbook list.
-- Pass criteria: omit to use defaults derived in `App.vue` for 7A–4A.
-- Exercise totals: aim 7A ≈ 40; 6A/5A/4A ≈ 60–80. Tune via `repeat`/`repeatAll`, then run:
-  ```bash
-  pnpm run targets:refresh
-  ```
-  This computes and writes `target` and validates against the schema.
-- Keep `level` uppercase and consistent so filtering/roadmap works.
-- Placeholders for unimplemented levels are auto‑generated; no action needed for other levels.
+## PR Checklist
+- Lint passes, no console errors
+- All new i18n keys added to en.js AND pt.js
+- Integration tests pass
+- No hardcoded UI strings remain

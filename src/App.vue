@@ -6,7 +6,10 @@
       h1(v-if="!selectedSet") {{ $t('chooseNotebook') }}
       h1(v-else) {{ selectedSet.title }} ({{ $t('level') }}: {{ selectedSet.level }})
     main.container
-      Home(v-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" @select-set="selectSet" @level-selected="onLevelSelected")
+      div(v-if="isLoading").text-center.py-5
+        .spinner-border.text-primary
+        p.mt-3 {{ $t('loading') || 'Loading...' }}
+      Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" @select-set="selectSet" @level-selected="onLevelSelected")
       div(v-else)
         Button(variant="link" @click="goHome").mb-3 ← {{ $t('back') }}
         Set(:set="selectedSet" :initialPageIndex="initialPageIndex" @update-set="updateSet" @page-changed="handlePageChange")
@@ -133,10 +136,23 @@ export default {
         this.$router.replace({ hash: this.contextHash(found) });
       }
     },
+    restoreFromRoute() {
+      if (this.$route.name === 'set') {
+        this.selectFromRoute();
+      }
+    },
     saveSets() {
+      if (!this.disciplineManager) {
+        console.warn('saveSets() called before disciplineManager is ready');
+        return;
+      }
       this.storage.saveDisciplines(this.disciplineManager, this.selectedSet, this.selectedSet ? this.routePageNumber : 1, this.selectedLevelBySubject);
     },
     loadSets() {
+      if (!this.disciplineManager) {
+        console.warn('loadSets() called before disciplineManager is ready');
+        return;
+      }
       const saved = this.storage.loadDisciplines();
       const selectedSet = this.storage.mergeDisciplines(this.disciplineManager, saved);
       
@@ -175,10 +191,7 @@ export default {
     },
   },
   created() {
-    if (this.$route.name === 'set') {
-      this.selectFromRoute();
-    }
-    this.loadSets();
+    // Route handling moved to restoreFromRoute() in mounted() after disciplineManager is ready
   },
   watch: {
     '$route'(to) {
