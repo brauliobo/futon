@@ -4,12 +4,17 @@ import { PortugueseDiscipline } from "../discipline/PortugueseDiscipline.js";
 import { EnglishDiscipline } from "../discipline/EnglishDiscipline.js";
 
 export class DisciplineManager {
-  constructor(withMeta, generators, seed) {
-    this.disciplines = {
-      math: new MathDiscipline(withMeta, generators, seed),
-      portuguese: new PortugueseDiscipline(withMeta),
-      english: new EnglishDiscipline(withMeta)
+  static async create(withMeta, generators, seed) {
+    const disciplines = {
+      math: await MathDiscipline.create(withMeta, generators, seed),
+      portuguese: await PortugueseDiscipline.create(withMeta),
+      english: await EnglishDiscipline.create(withMeta)
     };
+    return new DisciplineManager(disciplines);
+  }
+
+  constructor(disciplines) {
+    this.disciplines = disciplines;
   }
 
   getDiscipline(name) { return this.disciplines[name]; }

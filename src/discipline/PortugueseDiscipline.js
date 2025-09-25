@@ -3,8 +3,12 @@ import { BaseDiscipline } from "./BaseDiscipline.js";
 import { buildPortugueseSets } from "./buildPortuguese.js";
 
 export class PortugueseDiscipline extends BaseDiscipline {
-  constructor(withMeta) {
-    const sets = buildPortugueseSets(withMeta);
+  static async create(withMeta) {
+    const sets = await buildPortugueseSets(withMeta);
+    return new PortugueseDiscipline(sets);
+  }
+
+  constructor(sets) {
     super('portuguese', sets);
   }
 }

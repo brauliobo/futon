@@ -30,29 +30,39 @@ export default {
     Button,
   },
   data() {
-    const setFactory = new SetFactory();
-    const withMeta = (wb) => setFactory.createSet(wb);
-    const seedKey = 'futon_seed_addition';
-    const existingSeed = localStorage.getItem(seedKey) || String(Math.random()).slice(2);
-    localStorage.setItem(seedKey, existingSeed);
-    
-    const disciplineManager = new DisciplineManager(
-      withMeta, 
-      {}, // No generators needed - all sets are static YAML files
-      existingSeed
-    );
-    
     return {
-      disciplineManager,
+      disciplineManager: null,
       selectedSet: null,
       initialPageIndex: 0,
       storage: new SetStorage(),
       lastSelected: null,
       selectedLevelBySubject: {},
+      isLoading: true,
     };
   },
+  async mounted() {
+    try {
+      const setFactory = new SetFactory();
+      const withMeta = (wb) => setFactory.createSet(wb);
+      const seedKey = 'futon_seed_addition';
+      const existingSeed = localStorage.getItem(seedKey) || String(Math.random()).slice(2);
+      localStorage.setItem(seedKey, existingSeed);
+      
+      this.disciplineManager = await DisciplineManager.create(
+        withMeta, 
+        {}, // No generators needed - all sets are static YAML files
+        existingSeed
+      );
+      
+      this.isLoading = false;
+      this.loadSets();
+      this.restoreFromRoute();
+    } catch (error) {
+      console.error('Failed to initialize disciplines:', error);
+    }
+  },
   computed: {
-    sets() { return this.disciplineManager.getAllSets(); },
+    sets() { return this.disciplineManager ? this.disciplineManager.getAllSets() : []; },
     routePageNumber() {
       const p = Number(this.$route.params.page || 1);
       return Number.isFinite(p) && p > 0 ? p : 1;

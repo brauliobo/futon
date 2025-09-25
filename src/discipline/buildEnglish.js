@@ -1,11 +1,8 @@
 // src/discipline/buildEnglish.js
-import englishBasics from "../levels/english/A/english_basics.yaml";
-import englishPhrases from "../levels/english/A/english_phrases.yaml";
-import englishVocab2 from "../levels/english/A/english_vocab_2.yaml";
-import englishPhrases2 from "../levels/english/A/english_phrases_2.yaml";
+import { importEnglishSets } from "../utils/dynamicImports.js";
 
-export function buildEnglishSets(withMeta) {
-  return [withMeta(englishBasics), withMeta(englishPhrases), withMeta(englishVocab2), withMeta(englishPhrases2)];
+export async function buildEnglishSets(withMeta) {
+  // All sets are now loaded dynamically from standardized set_XX.yaml files
+  const staticSets = await importEnglishSets();
+  return staticSets.map(w => withMeta(w.set));
 }
-
-

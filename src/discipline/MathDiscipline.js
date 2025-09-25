@@ -3,8 +3,12 @@ import { BaseDiscipline } from "./BaseDiscipline.js";
 import { buildMathSets } from "./buildMath.js";
 
 export class MathDiscipline extends BaseDiscipline {
-  constructor(withMeta, generators, seed) {
-    const sets = buildMathSets(withMeta, generators, seed);
+  static async create(withMeta, generators, seed) {
+    const sets = await buildMathSets(withMeta, generators, seed);
+    return new MathDiscipline(sets);
+  }
+
+  constructor(sets) {
     super('math', sets);
   }
 }
