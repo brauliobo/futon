@@ -42,8 +42,9 @@ When adding fields, update: SetFactory defaults, SetStorage serialization, and m
 - Commands: `pnpm test`, `pnpm test:ui`, `pnpm test:debug`
 - Target semantic selectors: `getByRole()`, `getByText()`, avoid CSS classes
 
-## Git & Commits
-- Small focused commits, imperative messages
+## Development & Git
+- **Server**: Don't run `pnpm dev` – server already running, ask user for address
+- **Commits**: Fine-grained, focused commits with imperative messages  
 - Scope prefixes: `i18n:`, `ui:`, `domain:`, `storage:`
 - **Never auto-commit** – always prompt user first
 
