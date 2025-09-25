@@ -399,6 +399,79 @@ import levelOSet17 from "../levels/math/O/set_17.yaml";
 import levelOSet18 from "../levels/math/O/set_18.yaml";
 import levelOSet19 from "../levels/math/O/set_19.yaml";
 import levelOSet20 from "../levels/math/O/set_20.yaml";
+// Additional 6A sets
+import level6ACount01 from "../levels/math/6A/count_01.yaml";
+import level6ACount02 from "../levels/math/6A/count_02.yaml";
+import level6ACount03 from "../levels/math/6A/count_03.yaml";
+import level6ACount04 from "../levels/math/6A/count_04.yaml";
+import level6ACount05 from "../levels/math/6A/count_05.yaml";
+import level6ACount06 from "../levels/math/6A/count_06.yaml";
+import level6ACount07 from "../levels/math/6A/count_07.yaml";
+import level6ACount08 from "../levels/math/6A/count_08.yaml";
+import level6ACount09 from "../levels/math/6A/count_09.yaml";
+import level6ACount10 from "../levels/math/6A/count_10.yaml";
+import level6ANextprev01 from "../levels/math/6A/nextprev_01.yaml";
+import level6ANextprev02 from "../levels/math/6A/nextprev_02.yaml";
+import level6ANextprev03 from "../levels/math/6A/nextprev_03.yaml";
+import level6ANextprev04 from "../levels/math/6A/nextprev_04.yaml";
+import level6ANextprev05 from "../levels/math/6A/nextprev_05.yaml";
+import level6ANextprev06 from "../levels/math/6A/nextprev_06.yaml";
+import level6ANextprev07 from "../levels/math/6A/nextprev_07.yaml";
+import level6ANextprev08 from "../levels/math/6A/nextprev_08.yaml";
+import level6ANextprev09 from "../levels/math/6A/nextprev_09.yaml";
+import level6ANextprev10 from "../levels/math/6A/nextprev_10.yaml";
+// Additional 7A sets
+import level7ACount01 from "../levels/math/7A/count_01.yaml";
+import level7ACount02 from "../levels/math/7A/count_02.yaml";
+import level7ACount03 from "../levels/math/7A/count_03.yaml";
+import level7ACount04 from "../levels/math/7A/count_04.yaml";
+import level7ACount05 from "../levels/math/7A/count_05.yaml";
+import level7ACount06 from "../levels/math/7A/count_06.yaml";
+import level7ACount07 from "../levels/math/7A/count_07.yaml";
+import level7ACount08 from "../levels/math/7A/count_08.yaml";
+import level7ACount09 from "../levels/math/7A/count_09.yaml";
+import level7ACount10 from "../levels/math/7A/count_10.yaml";
+import level7ANextprev01 from "../levels/math/7A/nextprev_01.yaml";
+import level7ANextprev02 from "../levels/math/7A/nextprev_02.yaml";
+import level7ANextprev03 from "../levels/math/7A/nextprev_03.yaml";
+import level7ANextprev04 from "../levels/math/7A/nextprev_04.yaml";
+import level7ANextprev05 from "../levels/math/7A/nextprev_05.yaml";
+import level7ANextprev06 from "../levels/math/7A/nextprev_06.yaml";
+import level7ANextprev07 from "../levels/math/7A/nextprev_07.yaml";
+import level7ANextprev08 from "../levels/math/7A/nextprev_08.yaml";
+import level7ANextprev09 from "../levels/math/7A/nextprev_09.yaml";
+import level7ANextprev10 from "../levels/math/7A/nextprev_10.yaml";
+// Additional operation sets for A, B, C, D levels
+import levelAAddition21 from "../levels/math/A/addition_21.yaml";
+import levelAAddition22 from "../levels/math/A/addition_22.yaml";
+import levelASubtraction21 from "../levels/math/A/subtraction_21.yaml";
+import levelASubtraction22 from "../levels/math/A/subtraction_22.yaml";
+import levelAMultiplication21 from "../levels/math/A/multiplication_21.yaml";
+import levelAMultiplication22 from "../levels/math/A/multiplication_22.yaml";
+import levelADivision21 from "../levels/math/A/division_21.yaml";
+import levelADivision22 from "../levels/math/A/division_22.yaml";
+import levelBAddition21 from "../levels/math/B/addition_21.yaml";
+import levelBAddition22 from "../levels/math/B/addition_22.yaml";
+import levelBSubtraction21 from "../levels/math/B/subtraction_21.yaml";
+import levelBSubtraction22 from "../levels/math/B/subtraction_22.yaml";
+import levelBMultiplication21 from "../levels/math/B/multiplication_21.yaml";
+import levelBMultiplication22 from "../levels/math/B/multiplication_22.yaml";
+import levelBDivision21 from "../levels/math/B/division_21.yaml";
+import levelBDivision22 from "../levels/math/B/division_22.yaml";
+import levelCAddition21 from "../levels/math/C/addition_21.yaml";
+import levelCAddition22 from "../levels/math/C/addition_22.yaml";
+import levelCSubtraction21 from "../levels/math/C/subtraction_21.yaml";
+import levelCSubtraction22 from "../levels/math/C/subtraction_22.yaml";
+import levelCMultiplication21 from "../levels/math/C/multiplication_21.yaml";
+import levelCMultiplication22 from "../levels/math/C/multiplication_22.yaml";
+import levelCDivision21 from "../levels/math/C/division_21.yaml";
+import levelCDivision22 from "../levels/math/C/division_22.yaml";
+import levelDAddition21 from "../levels/math/D/addition_21.yaml";
+import levelDAddition22 from "../levels/math/D/addition_22.yaml";
+import levelDSubtraction21 from "../levels/math/D/subtraction_21.yaml";
+import levelDSubtraction22 from "../levels/math/D/subtraction_22.yaml";
+import levelDMultiplication21 from "../levels/math/D/multiplication_21.yaml";
+import levelDDivision21 from "../levels/math/D/division_21.yaml";
 // No longer need placeholders or level ordering - all sets are static YAML files
 
 const wb = (l, n) => ({ level: l, set: n });
@@ -803,6 +876,79 @@ const staticSets = [
   wb("O", levelOSet18),
   wb("O", levelOSet19),
   wb("O", levelOSet20),
+  // Additional 6A sets
+  wb("6A", level6ACount01),
+  wb("6A", level6ACount02),
+  wb("6A", level6ACount03),
+  wb("6A", level6ACount04),
+  wb("6A", level6ACount05),
+  wb("6A", level6ACount06),
+  wb("6A", level6ACount07),
+  wb("6A", level6ACount08),
+  wb("6A", level6ACount09),
+  wb("6A", level6ACount10),
+  wb("6A", level6ANextprev01),
+  wb("6A", level6ANextprev02),
+  wb("6A", level6ANextprev03),
+  wb("6A", level6ANextprev04),
+  wb("6A", level6ANextprev05),
+  wb("6A", level6ANextprev06),
+  wb("6A", level6ANextprev07),
+  wb("6A", level6ANextprev08),
+  wb("6A", level6ANextprev09),
+  wb("6A", level6ANextprev10),
+  // Additional 7A sets
+  wb("7A", level7ACount01),
+  wb("7A", level7ACount02),
+  wb("7A", level7ACount03),
+  wb("7A", level7ACount04),
+  wb("7A", level7ACount05),
+  wb("7A", level7ACount06),
+  wb("7A", level7ACount07),
+  wb("7A", level7ACount08),
+  wb("7A", level7ACount09),
+  wb("7A", level7ACount10),
+  wb("7A", level7ANextprev01),
+  wb("7A", level7ANextprev02),
+  wb("7A", level7ANextprev03),
+  wb("7A", level7ANextprev04),
+  wb("7A", level7ANextprev05),
+  wb("7A", level7ANextprev06),
+  wb("7A", level7ANextprev07),
+  wb("7A", level7ANextprev08),
+  wb("7A", level7ANextprev09),
+  wb("7A", level7ANextprev10),
+  // Additional operation sets for A, B, C, D levels
+  wb("A", levelAAddition21),
+  wb("A", levelAAddition22),
+  wb("A", levelASubtraction21),
+  wb("A", levelASubtraction22),
+  wb("A", levelAMultiplication21),
+  wb("A", levelAMultiplication22),
+  wb("A", levelADivision21),
+  wb("A", levelADivision22),
+  wb("B", levelBAddition21),
+  wb("B", levelBAddition22),
+  wb("B", levelBSubtraction21),
+  wb("B", levelBSubtraction22),
+  wb("B", levelBMultiplication21),
+  wb("B", levelBMultiplication22),
+  wb("B", levelBDivision21),
+  wb("B", levelBDivision22),
+  wb("C", levelCAddition21),
+  wb("C", levelCAddition22),
+  wb("C", levelCSubtraction21),
+  wb("C", levelCSubtraction22),
+  wb("C", levelCMultiplication21),
+  wb("C", levelCMultiplication22),
+  wb("C", levelCDivision21),
+  wb("C", levelCDivision22),
+  wb("D", levelDAddition21),
+  wb("D", levelDAddition22),
+  wb("D", levelDSubtraction21),
+  wb("D", levelDSubtraction22),
+  wb("D", levelDMultiplication21),
+  wb("D", levelDDivision21),
 ];
 
 export function buildMathSets(withMeta, generators, seed) {
