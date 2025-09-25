@@ -4,73 +4,172 @@ example: "Revisão final com problemas mistos. Ex.: Resolva x² = 2⁴ + √144"
 subject: math
 pages:
   - pageNumber: 1
-    title: Quadráticas • Expoentes • Radicais – Página 1
+    title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 1
     description: Problemas de revisão mistos.
     exercises:
-      - type: quadratic
+      - &a1
+        type: quadratic
         question: x² = 2⁴ + √144
-        correctAnswer: "x = ±√28"
-  - pageNumber: 2
-    title: Quadráticas • Expoentes • Radicais – Página 2
-    description: Problemas de revisão mistos.
-    exercises:
-      - type: radical
+        correctAnswer: x = ±√28
+      - &a2
+        type: radical
         question: √(2⁴ × 3²) =
         correctAnswer: "12"
-  - pageNumber: 3
-    title: Quadráticas • Expoentes • Radicais – Página 3
-    description: Problemas de revisão mistos.
-    exercises:
-      - type: exponent
+      - &a3
+        type: exponent
         question: (2³)² ÷ 2⁴ =
-        correctAnswer: "2²"
-  - pageNumber: 4
-    title: Quadráticas • Expoentes • Radicais – Página 4
-    description: Problemas de revisão mistos.
-    exercises:
-      - type: quadratic
+        correctAnswer: 2²
+      - &a4
+        type: quadratic
         question: x² - 5² = 3²
-        correctAnswer: "x = ±√34"
-  - pageNumber: 5
-    title: Quadráticas • Expoentes • Radicais – Página 5
-    description: Problemas de revisão mistos.
-    exercises:
-      - type: radical
+        correctAnswer: x = ±√34
+      - &a5
+        type: radical
         question: √18 + √32 =
-        correctAnswer: "7√2"
-  - pageNumber: 6
-    title: Quadráticas • Expoentes • Radicais – Página 6
-    description: Problemas de revisão mistos.
-    exercises:
-      - type: exponent
+        correctAnswer: 7√2
+      - &a6
+        type: exponent
         question: 3⁻² × 3⁵ =
-        correctAnswer: "3³"
-  - pageNumber: 7
-    title: Quadráticas • Expoentes • Radicais – Página 7
-    description: Problemas de revisão mistos.
-    exercises:
-      - type: quadratic
+        correctAnswer: 3³
+      - &a7
+        type: quadratic
         question: x² + 2x - 15 = 0
-        correctAnswer: "x = 3, -5"
-  - pageNumber: 8
-    title: Quadráticas • Expoentes • Radicais – Página 8
-    description: Problemas de revisão mistos.
-    exercises:
-      - type: radical
+        correctAnswer: x = 3, -5
+      - &a8
+        type: radical
         question: √75 - √12 =
-        correctAnswer: "3√3"
-  - pageNumber: 9
-    title: Quadráticas • Expoentes • Radicais – Página 9
-    description: Problemas de revisão mistos.
-    exercises:
-      - type: exponent
+        correctAnswer: 3√3
+      - &a9
+        type: exponent
         question: (5²)⁻¹ × 5³ =
-        correctAnswer: "5¹"
-  - pageNumber: 10
-    title: Quadráticas • Expoentes • Radicais – Página 10
+        correctAnswer: 5¹
+      - &a10
+        type: quadratic
+        question: x² = 6² + 8²
+        correctAnswer: x = ±10
+  - pageNumber: 2
+    title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 2
     description: Problemas de revisão mistos.
     exercises:
-      - type: quadratic
-        question: x² = 6² + 8²
-        correctAnswer: "x = ±10"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 3
+    description: Problemas de revisão mistos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 4
+    description: Problemas de revisão mistos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 5
+    description: Problemas de revisão mistos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 6
+    description: Problemas de revisão mistos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 7
+    description: Problemas de revisão mistos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 8
+    description: Problemas de revisão mistos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 9
+    description: Problemas de revisão mistos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 10
+    description: Problemas de revisão mistos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

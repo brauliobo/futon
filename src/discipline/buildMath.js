@@ -399,8 +399,7 @@ import levelOSet17 from "../levels/math/O/set_17.yaml";
 import levelOSet18 from "../levels/math/O/set_18.yaml";
 import levelOSet19 from "../levels/math/O/set_19.yaml";
 import levelOSet20 from "../levels/math/O/set_20.yaml";
-import { getMathLevelOrder } from "../domain/levels.js";
-import { generateMathPlaceholder } from "../utils/placeholders.js";
+// No longer need placeholders or level ordering - all sets are static YAML files
 
 const wb = (l, n) => ({ level: l, set: n });
 const staticSets = [
@@ -807,49 +806,8 @@ const staticSets = [
 ];
 
 export function buildMathSets(withMeta, generators, seed) {
-  const {
-    generateAdditionSet,
-    generateSubtractionSet,
-    generateMultiplicationSet,
-    generateDivisionSet,
-    generateCountSet,
-    generateNextPrevSet,
-  } = generators;
-
-  const level7ASets = [];
-  for (let i = 0; i < 10; i += 1) {
-    level7ASets.push(withMeta(generateCountSet({ seed: `${seed}-7A-C-${i}`, level: '7A', pages: 10, sequence: i })));
-    level7ASets.push(withMeta(generateNextPrevSet({ seed: `${seed}-7A-NP-${i}`, level: '7A', pages: 10, sequence: i })));
-  }
-
-  // 6A: enforce 20 sets (10 count + 10 next/prev)
-  const level6ASets = [];
-  for (let i = 0; i < 10; i += 1) {
-    const c = withMeta(generateCountSet({ seed: `${seed}-6A-C-${i}`, level: '6A', pages: 10 }));
-    const np = withMeta(generateNextPrevSet({ seed: `${seed}-6A-NP-${i}`, level: '6A', pages: 10 }));
-    level6ASets.push({ ...c, title: `6A • Contar Objetos 1–10 #${i + 1}` });
-    level6ASets.push({ ...np, title: `6A • Próximo/Anterior #${i + 1}` });
-  }
-
-  const dynamicSets = [
-    ...level7ASets,
-    ...level6ASets,
-    withMeta(generateMultiplicationSet({ seed: `${seed}-M-A`, level: 'A', pages: 10 })),
-    withMeta(generateDivisionSet({ seed: `${seed}-D-A`, level: 'A', pages: 10 })),
-  ];
-
-  const implementedMathLevels = new Set(staticSets.map(w => w.level).concat(dynamicSets.map(w => w.level)));
-
-  const allMathOrder = getMathLevelOrder();
-  const mathPlaceholders = allMathOrder
-    .filter(lvl => !implementedMathLevels.has(lvl))
-    .map(lvl => withMeta(generateMathPlaceholder(lvl)));
-
-  return [
-    ...staticSets.map(w => withMeta(w.set)),
-    ...dynamicSets,
-    ...mathPlaceholders,
-  ];
+  // All sets are now static YAML files - no dynamic generation needed
+  return staticSets.map(w => withMeta(w.set));
 }
 
 

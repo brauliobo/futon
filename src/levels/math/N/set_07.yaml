@@ -4,73 +4,172 @@ example: "Funções exponenciais e logarítmicas. Ex.: d/dx (a^x) = a^x ln a"
 subject: math
 pages:
   - pageNumber: 1
-    title: Derivadas Exponenciais e Logarítmicas – Página 1
+    title: Derivadas Exponenciais e Logarítmicas — Conjunto 7 – Página 1
     description: Calcule as derivadas das funções exponenciais e logarítmicas.
     exercises:
-      - type: reading
+      - &a1
+        type: reading
         question: d/dx (2^x) =
-        correctAnswer: "2^x ln 2"
-  - pageNumber: 2
-    title: Derivadas Exponenciais e Logarítmicas – Página 2
-    description: Calcule as derivadas das funções exponenciais e logarítmicas.
-    exercises:
-      - type: reading
+        correctAnswer: 2^x ln 2
+      - &a2
+        type: reading
         question: d/dx (3^x) =
-        correctAnswer: "3^x ln 3"
-  - pageNumber: 3
-    title: Derivadas Exponenciais e Logarítmicas – Página 3
-    description: Calcule as derivadas das funções exponenciais e logarítmicas.
-    exercises:
-      - type: reading
+        correctAnswer: 3^x ln 3
+      - &a3
+        type: reading
         question: d/dx (log₂ x) =
-        correctAnswer: "1/(x ln 2)"
-  - pageNumber: 4
-    title: Derivadas Exponenciais e Logarítmicas – Página 4
-    description: Calcule as derivadas das funções exponenciais e logarítmicas.
-    exercises:
-      - type: reading
+        correctAnswer: 1/(x ln 2)
+      - &a4
+        type: reading
         question: d/dx (log₁₀ x) =
-        correctAnswer: "1/(x ln 10)"
-  - pageNumber: 5
-    title: Derivadas Exponenciais e Logarítmicas – Página 5
-    description: Calcule as derivadas das funções exponenciais e logarítmicas.
-    exercises:
-      - type: reading
+        correctAnswer: 1/(x ln 10)
+      - &a5
+        type: reading
         question: d/dx (x^x) =
-        correctAnswer: "x^x (ln x + 1)"
-  - pageNumber: 6
-    title: Derivadas Exponenciais e Logarítmicas – Página 6
-    description: Calcule as derivadas das funções exponenciais e logarítmicas.
-    exercises:
-      - type: reading
+        correctAnswer: x^x (ln x + 1)
+      - &a6
+        type: reading
         question: d/dx (e^(x²)) =
-        correctAnswer: "2x e^(x²)"
-  - pageNumber: 7
-    title: Derivadas Exponenciais e Logarítmicas – Página 7
-    description: Calcule as derivadas das funções exponenciais e logarítmicas.
-    exercises:
-      - type: reading
+        correctAnswer: 2x e^(x²)
+      - &a7
+        type: reading
         question: d/dx (ln(x²+1)) =
-        correctAnswer: "2x/(x²+1)"
-  - pageNumber: 8
-    title: Derivadas Exponenciais e Logarítmicas – Página 8
-    description: Calcule as derivadas das funções exponenciais e logarítmicas.
-    exercises:
-      - type: reading
+        correctAnswer: 2x/(x²+1)
+      - &a8
+        type: reading
         question: d/dx ((ln x)²) =
-        correctAnswer: "2 ln x / x"
-  - pageNumber: 9
-    title: Derivadas Exponenciais e Logarítmicas – Página 9
-    description: Calcule as derivadas das funções exponenciais e logarítmicas.
-    exercises:
-      - type: reading
+        correctAnswer: 2 ln x / x
+      - &a9
+        type: reading
         question: d/dx (e^(sin x)) =
-        correctAnswer: "cos x · e^(sin x)"
-  - pageNumber: 10
-    title: Derivadas Exponenciais e Logarítmicas – Página 10
+        correctAnswer: cos x · e^(sin x)
+      - &a10
+        type: reading
+        question: d/dx (5^(2x)) =
+        correctAnswer: 2 · 5^(2x) ln 5
+  - pageNumber: 2
+    title: Derivadas Exponenciais e Logarítmicas — Conjunto 7 – Página 2
     description: Calcule as derivadas das funções exponenciais e logarítmicas.
     exercises:
-      - type: reading
-        question: d/dx (5^(2x)) =
-        correctAnswer: "2 · 5^(2x) ln 5"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Derivadas Exponenciais e Logarítmicas — Conjunto 7 – Página 3
+    description: Calcule as derivadas das funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Derivadas Exponenciais e Logarítmicas — Conjunto 7 – Página 4
+    description: Calcule as derivadas das funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Derivadas Exponenciais e Logarítmicas — Conjunto 7 – Página 5
+    description: Calcule as derivadas das funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Derivadas Exponenciais e Logarítmicas — Conjunto 7 – Página 6
+    description: Calcule as derivadas das funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Derivadas Exponenciais e Logarítmicas — Conjunto 7 – Página 7
+    description: Calcule as derivadas das funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Derivadas Exponenciais e Logarítmicas — Conjunto 7 – Página 8
+    description: Calcule as derivadas das funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Derivadas Exponenciais e Logarítmicas — Conjunto 7 – Página 9
+    description: Calcule as derivadas das funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Derivadas Exponenciais e Logarítmicas — Conjunto 7 – Página 10
+    description: Calcule as derivadas das funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

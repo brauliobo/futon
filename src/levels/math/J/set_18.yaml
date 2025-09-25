@@ -4,73 +4,172 @@ example: "Álgebra linear avançada. Ex.: autovalores e autovetores"
 subject: math
 pages:
   - pageNumber: 1
-    title: Álgebra Avançada – Página 1
+    title: Álgebra Avançada — Conjunto 18 – Página 1
     description: Vetores e espaços vetoriais.
     exercises:
-      - type: algebra
+      - &a1
+        type: algebra
         question: "Produto escalar: (1,2)·(3,4) ="
         correctAnswer: 11
-  - pageNumber: 2
-    title: Álgebra Avançada – Página 2
-    description: Vetores e espaços vetoriais.
-    exercises:
-      - type: algebra
+      - &a2
+        type: algebra
         question: "Norma do vetor (3,4):"
         correctAnswer: 5
-  - pageNumber: 3
-    title: Álgebra Avançada – Página 3
-    description: Vetores e espaços vetoriais.
-    exercises:
-      - type: algebra
+      - &a3
+        type: algebra
         question: "Vetores (1,0) e (0,1) são:"
         correctAnswer: Ortogonais
-  - pageNumber: 4
-    title: Álgebra Avançada – Página 4
-    description: Vetores e espaços vetoriais.
-    exercises:
-      - type: algebra
+      - &a4
+        type: algebra
         question: "Dimensão do R³:"
         correctAnswer: 3
-  - pageNumber: 5
-    title: Álgebra Avançada – Página 5
-    description: Vetores e espaços vetoriais.
-    exercises:
-      - type: algebra
+      - &a5
+        type: algebra
         question: "Produto vetorial: (1,0,0) × (0,1,0) ="
         correctAnswer: (0,0,1)
-  - pageNumber: 6
-    title: Álgebra Avançada – Página 6
-    description: Vetores e espaços vetoriais.
-    exercises:
-      - type: algebra
+      - &a6
+        type: algebra
         question: "Base canônica do R²:"
         correctAnswer: "{(1,0), (0,1)}"
-  - pageNumber: 7
-    title: Álgebra Avançada – Página 7
-    description: Vetores e espaços vetoriais.
-    exercises:
-      - type: algebra
+      - &a7
+        type: algebra
         question: "Combinação linear: 2(1,0) + 3(0,1) ="
         correctAnswer: (2,3)
-  - pageNumber: 8
-    title: Álgebra Avançada – Página 8
-    description: Vetores e espaços vetoriais.
-    exercises:
-      - type: algebra
+      - &a8
+        type: algebra
         question: "Os vetores (1,2) e (2,4) são:"
         correctAnswer: Dependentes
-  - pageNumber: 9
-    title: Álgebra Avançada – Página 9
-    description: Vetores e espaços vetoriais.
-    exercises:
-      - type: algebra
+      - &a9
+        type: algebra
         question: "Projeção de (3,4) sobre (1,0):"
         correctAnswer: (3,0)
-  - pageNumber: 10
-    title: Álgebra Avançada – Página 10
-    description: Vetores e espaços vetoriais.
-    exercises:
-      - type: algebra
+      - &a10
+        type: algebra
         question: "Posto da matriz [1 2; 2 4]:"
         correctAnswer: 1
-target: 10
+  - pageNumber: 2
+    title: Álgebra Avançada — Conjunto 18 – Página 2
+    description: Vetores e espaços vetoriais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Álgebra Avançada — Conjunto 18 – Página 3
+    description: Vetores e espaços vetoriais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Álgebra Avançada — Conjunto 18 – Página 4
+    description: Vetores e espaços vetoriais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Álgebra Avançada — Conjunto 18 – Página 5
+    description: Vetores e espaços vetoriais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Álgebra Avançada — Conjunto 18 – Página 6
+    description: Vetores e espaços vetoriais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Álgebra Avançada — Conjunto 18 – Página 7
+    description: Vetores e espaços vetoriais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Álgebra Avançada — Conjunto 18 – Página 8
+    description: Vetores e espaços vetoriais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Álgebra Avançada — Conjunto 18 – Página 9
+    description: Vetores e espaços vetoriais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Álgebra Avançada — Conjunto 18 – Página 10
+    description: Vetores e espaços vetoriais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

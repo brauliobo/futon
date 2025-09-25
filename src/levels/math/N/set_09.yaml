@@ -4,73 +4,172 @@ example: "Segundas derivadas e superiores. Ex.: f(x) = x³, f''(x) = 6x"
 subject: math
 pages:
   - pageNumber: 1
-    title: Derivadas de Ordem Superior – Página 1
+    title: Derivadas de Ordem Superior — Conjunto 9 – Página 1
     description: Calcule a segunda derivada das funções.
     exercises:
-      - type: reading
+      - &a1
+        type: reading
         question: f(x) = x⁴, f''(x) =
-        correctAnswer: "12x²"
-  - pageNumber: 2
-    title: Derivadas de Ordem Superior – Página 2
-    description: Calcule a segunda derivada das funções.
-    exercises:
-      - type: reading
+        correctAnswer: 12x²
+      - &a2
+        type: reading
         question: f(x) = e^x, f''(x) =
-        correctAnswer: "e^x"
-  - pageNumber: 3
-    title: Derivadas de Ordem Superior – Página 3
-    description: Calcule a segunda derivada das funções.
-    exercises:
-      - type: reading
+        correctAnswer: e^x
+      - &a3
+        type: reading
         question: f(x) = sin x, f''(x) =
-        correctAnswer: "-sin x"
-  - pageNumber: 4
-    title: Derivadas de Ordem Superior – Página 4
-    description: Calcule a segunda derivada das funções.
-    exercises:
-      - type: reading
+        correctAnswer: -sin x
+      - &a4
+        type: reading
         question: f(x) = cos x, f''(x) =
-        correctAnswer: "-cos x"
-  - pageNumber: 5
-    title: Derivadas de Ordem Superior – Página 5
-    description: Calcule a segunda derivada das funções.
-    exercises:
-      - type: reading
+        correctAnswer: -cos x
+      - &a5
+        type: reading
         question: f(x) = x⁵, f'''(x) =
-        correctAnswer: "60x²"
-  - pageNumber: 6
-    title: Derivadas de Ordem Superior – Página 6
-    description: Calcule a segunda derivada das funções.
-    exercises:
-      - type: reading
+        correctAnswer: 60x²
+      - &a6
+        type: reading
         question: f(x) = ln x, f''(x) =
-        correctAnswer: "-1/x²"
-  - pageNumber: 7
-    title: Derivadas de Ordem Superior – Página 7
-    description: Calcule a segunda derivada das funções.
-    exercises:
-      - type: reading
+        correctAnswer: -1/x²
+      - &a7
+        type: reading
         question: f(x) = x²e^x, f''(x) =
-        correctAnswer: "(x²+4x+2)e^x"
-  - pageNumber: 8
-    title: Derivadas de Ordem Superior – Página 8
-    description: Calcule a segunda derivada das funções.
-    exercises:
-      - type: reading
+        correctAnswer: (x²+4x+2)e^x
+      - &a8
+        type: reading
         question: f(x) = x sin x, f''(x) =
-        correctAnswer: "-x sin x + 2 cos x"
-  - pageNumber: 9
-    title: Derivadas de Ordem Superior – Página 9
-    description: Calcule a segunda derivada das funções.
-    exercises:
-      - type: reading
+        correctAnswer: -x sin x + 2 cos x
+      - &a9
+        type: reading
         question: f(x) = x³ - 6x² + 9x - 2, f''(x) =
-        correctAnswer: "6x - 12"
-  - pageNumber: 10
-    title: Derivadas de Ordem Superior – Página 10
+        correctAnswer: 6x - 12
+      - &a10
+        type: reading
+        question: f(x) = tan x, f''(x) =
+        correctAnswer: 2 sec²x tan x
+  - pageNumber: 2
+    title: Derivadas de Ordem Superior — Conjunto 9 – Página 2
     description: Calcule a segunda derivada das funções.
     exercises:
-      - type: reading
-        question: f(x) = tan x, f''(x) =
-        correctAnswer: "2 sec²x tan x"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Derivadas de Ordem Superior — Conjunto 9 – Página 3
+    description: Calcule a segunda derivada das funções.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Derivadas de Ordem Superior — Conjunto 9 – Página 4
+    description: Calcule a segunda derivada das funções.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Derivadas de Ordem Superior — Conjunto 9 – Página 5
+    description: Calcule a segunda derivada das funções.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Derivadas de Ordem Superior — Conjunto 9 – Página 6
+    description: Calcule a segunda derivada das funções.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Derivadas de Ordem Superior — Conjunto 9 – Página 7
+    description: Calcule a segunda derivada das funções.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Derivadas de Ordem Superior — Conjunto 9 – Página 8
+    description: Calcule a segunda derivada das funções.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Derivadas de Ordem Superior — Conjunto 9 – Página 9
+    description: Calcule a segunda derivada das funções.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Derivadas de Ordem Superior — Conjunto 9 – Página 10
+    description: Calcule a segunda derivada das funções.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

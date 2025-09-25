@@ -4,73 +4,172 @@ example: "Derivadas compostas. Ex.: d/dx (sin(x²)) = 2x cos(x²)"
 subject: math
 pages:
   - pageNumber: 1
-    title: Regra da Cadeia – Página 1
+    title: Regra da Cadeia — Conjunto 3 – Página 1
     description: Use a regra da cadeia para derivar.
     exercises:
-      - type: reading
+      - &a1
+        type: reading
         question: d/dx (sin(2x)) =
-        correctAnswer: "2cos(2x)"
-  - pageNumber: 2
-    title: Regra da Cadeia – Página 2
-    description: Use a regra da cadeia para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: 2cos(2x)
+      - &a2
+        type: reading
         question: d/dx (e^(3x)) =
-        correctAnswer: "3e^(3x)"
-  - pageNumber: 3
-    title: Regra da Cadeia – Página 3
-    description: Use a regra da cadeia para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: 3e^(3x)
+      - &a3
+        type: reading
         question: d/dx ((x² + 1)³) =
-        correctAnswer: "6x(x² + 1)²"
-  - pageNumber: 4
-    title: Regra da Cadeia – Página 4
-    description: Use a regra da cadeia para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: 6x(x² + 1)²
+      - &a4
+        type: reading
         question: d/dx (ln(x²)) =
-        correctAnswer: "2/x"
-  - pageNumber: 5
-    title: Regra da Cadeia – Página 5
-    description: Use a regra da cadeia para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: 2/x
+      - &a5
+        type: reading
         question: d/dx (cos(5x)) =
-        correctAnswer: "-5sin(5x)"
-  - pageNumber: 6
-    title: Regra da Cadeia – Página 6
-    description: Use a regra da cadeia para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: -5sin(5x)
+      - &a6
+        type: reading
         question: d/dx (√(x² + 4)) =
-        correctAnswer: "x/√(x² + 4)"
-  - pageNumber: 7
-    title: Regra da Cadeia – Página 7
-    description: Use a regra da cadeia para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: x/√(x² + 4)
+      - &a7
+        type: reading
         question: d/dx ((2x - 1)⁴) =
-        correctAnswer: "8(2x - 1)³"
-  - pageNumber: 8
-    title: Regra da Cadeia – Página 8
-    description: Use a regra da cadeia para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: 8(2x - 1)³
+      - &a8
+        type: reading
         question: d/dx (tan(x²)) =
-        correctAnswer: "2x sec²(x²)"
-  - pageNumber: 9
-    title: Regra da Cadeia – Página 9
-    description: Use a regra da cadeia para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: 2x sec²(x²)
+      - &a9
+        type: reading
         question: d/dx (e^(sin x)) =
-        correctAnswer: "cos x · e^(sin x)"
-  - pageNumber: 10
-    title: Regra da Cadeia – Página 10
+        correctAnswer: cos x · e^(sin x)
+      - &a10
+        type: reading
+        question: d/dx (ln(cos x)) =
+        correctAnswer: -tan x
+  - pageNumber: 2
+    title: Regra da Cadeia — Conjunto 3 – Página 2
     description: Use a regra da cadeia para derivar.
     exercises:
-      - type: reading
-        question: d/dx (ln(cos x)) =
-        correctAnswer: "-tan x"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Regra da Cadeia — Conjunto 3 – Página 3
+    description: Use a regra da cadeia para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Regra da Cadeia — Conjunto 3 – Página 4
+    description: Use a regra da cadeia para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Regra da Cadeia — Conjunto 3 – Página 5
+    description: Use a regra da cadeia para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Regra da Cadeia — Conjunto 3 – Página 6
+    description: Use a regra da cadeia para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Regra da Cadeia — Conjunto 3 – Página 7
+    description: Use a regra da cadeia para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Regra da Cadeia — Conjunto 3 – Página 8
+    description: Use a regra da cadeia para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Regra da Cadeia — Conjunto 3 – Página 9
+    description: Use a regra da cadeia para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Regra da Cadeia — Conjunto 3 – Página 10
+    description: Use a regra da cadeia para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

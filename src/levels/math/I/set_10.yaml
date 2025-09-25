@@ -4,73 +4,172 @@ example: "Resolva equações quadráticas expandidas. Ex.: x² + 2x + 1 = 0, x =
 subject: math
 pages:
   - pageNumber: 1
-    title: Quadráticas • Expoentes • Radicais – Página 1
+    title: Quadráticas • Expoentes • Radicais — Conjunto 10 – Página 1
     description: Resolva equações quadráticas por fatoração.
     exercises:
-      - type: quadratic
+      - &a1
+        type: quadratic
         question: x² - 5x + 6 = 0
-        correctAnswer: "x = 2, 3"
-  - pageNumber: 2
-    title: Quadráticas • Expoentes • Radicais – Página 2
-    description: Resolva equações quadráticas por fatoração.
-    exercises:
-      - type: quadratic
+        correctAnswer: x = 2, 3
+      - &a2
+        type: quadratic
         question: x² - 4x + 3 = 0
-        correctAnswer: "x = 1, 3"
-  - pageNumber: 3
-    title: Quadráticas • Expoentes • Radicais – Página 3
-    description: Resolva equações quadráticas por fatoração.
-    exercises:
-      - type: quadratic
+        correctAnswer: x = 1, 3
+      - &a3
+        type: quadratic
         question: x² - 6x + 8 = 0
-        correctAnswer: "x = 2, 4"
-  - pageNumber: 4
-    title: Quadráticas • Expoentes • Radicais – Página 4
-    description: Resolva equações quadráticas por fatoração.
-    exercises:
-      - type: quadratic
+        correctAnswer: x = 2, 4
+      - &a4
+        type: quadratic
         question: x² - 7x + 12 = 0
-        correctAnswer: "x = 3, 4"
-  - pageNumber: 5
-    title: Quadráticas • Expoentes • Radicais – Página 5
-    description: Resolva equações quadráticas por fatoração.
-    exercises:
-      - type: quadratic
+        correctAnswer: x = 3, 4
+      - &a5
+        type: quadratic
         question: x² - 8x + 15 = 0
-        correctAnswer: "x = 3, 5"
-  - pageNumber: 6
-    title: Quadráticas • Expoentes • Radicais – Página 6
-    description: Resolva equações quadráticas por fatoração.
-    exercises:
-      - type: quadratic
+        correctAnswer: x = 3, 5
+      - &a6
+        type: quadratic
         question: x² - 9x + 20 = 0
-        correctAnswer: "x = 4, 5"
-  - pageNumber: 7
-    title: Quadráticas • Expoentes • Radicais – Página 7
-    description: Resolva equações quadráticas por fatoração.
-    exercises:
-      - type: quadratic
+        correctAnswer: x = 4, 5
+      - &a7
+        type: quadratic
         question: x² - 10x + 21 = 0
-        correctAnswer: "x = 3, 7"
-  - pageNumber: 8
-    title: Quadráticas • Expoentes • Radicais – Página 8
-    description: Resolva equações quadráticas por fatoração.
-    exercises:
-      - type: quadratic
+        correctAnswer: x = 3, 7
+      - &a8
+        type: quadratic
         question: x² - 11x + 28 = 0
-        correctAnswer: "x = 4, 7"
-  - pageNumber: 9
-    title: Quadráticas • Expoentes • Radicais – Página 9
-    description: Resolva equações quadráticas por fatoração.
-    exercises:
-      - type: quadratic
+        correctAnswer: x = 4, 7
+      - &a9
+        type: quadratic
         question: x² - 12x + 35 = 0
-        correctAnswer: "x = 5, 7"
-  - pageNumber: 10
-    title: Quadráticas • Expoentes • Radicais – Página 10
+        correctAnswer: x = 5, 7
+      - &a10
+        type: quadratic
+        question: x² - 13x + 42 = 0
+        correctAnswer: x = 6, 7
+  - pageNumber: 2
+    title: Quadráticas • Expoentes • Radicais — Conjunto 10 – Página 2
     description: Resolva equações quadráticas por fatoração.
     exercises:
-      - type: quadratic
-        question: x² - 13x + 42 = 0
-        correctAnswer: "x = 6, 7"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Quadráticas • Expoentes • Radicais — Conjunto 10 – Página 3
+    description: Resolva equações quadráticas por fatoração.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Quadráticas • Expoentes • Radicais — Conjunto 10 – Página 4
+    description: Resolva equações quadráticas por fatoração.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Quadráticas • Expoentes • Radicais — Conjunto 10 – Página 5
+    description: Resolva equações quadráticas por fatoração.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Quadráticas • Expoentes • Radicais — Conjunto 10 – Página 6
+    description: Resolva equações quadráticas por fatoração.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Quadráticas • Expoentes • Radicais — Conjunto 10 – Página 7
+    description: Resolva equações quadráticas por fatoração.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Quadráticas • Expoentes • Radicais — Conjunto 10 – Página 8
+    description: Resolva equações quadráticas por fatoração.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Quadráticas • Expoentes • Radicais — Conjunto 10 – Página 9
+    description: Resolva equações quadráticas por fatoração.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Quadráticas • Expoentes • Radicais — Conjunto 10 – Página 10
+    description: Resolva equações quadráticas por fatoração.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

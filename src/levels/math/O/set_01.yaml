@@ -4,73 +4,172 @@ example: "Calcule integrais básicas. Ex.: ∫ 2x dx = x² + C"
 subject: math
 pages:
   - pageNumber: 1
-    title: Integrais Básicas – Página 1
+    title: Integrais Básicas — Conjunto 1 – Página 1
     description: Calcule integrais indefinidas básicas.
     exercises:
-      - type: quadratic
-        question: "∫ 3x dx"
-        correctAnswer: "(3/2)x² + C"
+      - &a1
+        type: quadratic
+        question: ∫ 3x dx
+        correctAnswer: (3/2)x² + C
+      - &a2
+        type: quadratic
+        question: ∫ 5x² dx
+        correctAnswer: (5/3)x³ + C
+      - &a3
+        type: quadratic
+        question: ∫ 4 dx
+        correctAnswer: 4x + C
+      - &a4
+        type: quadratic
+        question: ∫ x³ dx
+        correctAnswer: (1/4)x⁴ + C
+      - &a5
+        type: quadratic
+        question: ∫ 2x + 3 dx
+        correctAnswer: x² + 3x + C
+      - &a6
+        type: quadratic
+        question: ∫ 6x² + 4x dx
+        correctAnswer: 2x³ + 2x² + C
+      - &a7
+        type: quadratic
+        question: ∫ 1/x dx
+        correctAnswer: ln|x| + C
+      - &a8
+        type: quadratic
+        question: ∫ e^x dx
+        correctAnswer: e^x + C
+      - &a9
+        type: quadratic
+        question: ∫ sin(x) dx
+        correctAnswer: -cos(x) + C
+      - &a10
+        type: quadratic
+        question: ∫ cos(x) dx
+        correctAnswer: sin(x) + C
   - pageNumber: 2
-    title: Integrais Básicas – Página 2
+    title: Integrais Básicas — Conjunto 1 – Página 2
     description: Calcule integrais indefinidas básicas.
     exercises:
-      - type: quadratic
-        question: "∫ 5x² dx"
-        correctAnswer: "(5/3)x³ + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 3
-    title: Integrais Básicas – Página 3
+    title: Integrais Básicas — Conjunto 1 – Página 3
     description: Calcule integrais indefinidas básicas.
     exercises:
-      - type: quadratic
-        question: "∫ 4 dx"
-        correctAnswer: "4x + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 4
-    title: Integrais Básicas – Página 4
+    title: Integrais Básicas — Conjunto 1 – Página 4
     description: Calcule integrais indefinidas básicas.
     exercises:
-      - type: quadratic
-        question: "∫ x³ dx"
-        correctAnswer: "(1/4)x⁴ + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 5
-    title: Integrais Básicas – Página 5
+    title: Integrais Básicas — Conjunto 1 – Página 5
     description: Calcule integrais indefinidas básicas.
     exercises:
-      - type: quadratic
-        question: "∫ 2x + 3 dx"
-        correctAnswer: "x² + 3x + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 6
-    title: Integrais Básicas – Página 6
+    title: Integrais Básicas — Conjunto 1 – Página 6
     description: Calcule integrais indefinidas básicas.
     exercises:
-      - type: quadratic
-        question: "∫ 6x² + 4x dx"
-        correctAnswer: "2x³ + 2x² + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 7
-    title: Integrais Básicas – Página 7
+    title: Integrais Básicas — Conjunto 1 – Página 7
     description: Calcule integrais indefinidas básicas.
     exercises:
-      - type: quadratic
-        question: "∫ 1/x dx"
-        correctAnswer: "ln|x| + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 8
-    title: Integrais Básicas – Página 8
+    title: Integrais Básicas — Conjunto 1 – Página 8
     description: Calcule integrais indefinidas básicas.
     exercises:
-      - type: quadratic
-        question: "∫ e^x dx"
-        correctAnswer: "e^x + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 9
-    title: Integrais Básicas – Página 9
+    title: Integrais Básicas — Conjunto 1 – Página 9
     description: Calcule integrais indefinidas básicas.
     exercises:
-      - type: quadratic
-        question: "∫ sin(x) dx"
-        correctAnswer: "-cos(x) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 10
-    title: Integrais Básicas – Página 10
+    title: Integrais Básicas — Conjunto 1 – Página 10
     description: Calcule integrais indefinidas básicas.
     exercises:
-      - type: quadratic
-        question: "∫ cos(x) dx"
-        correctAnswer: "sin(x) + C"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

@@ -8,6 +8,7 @@
     "build": "vite build && cp docs/index.html docs/404.html",
     "preview": "vite preview",
     "validate:levels": "node ./scripts/validate-lessons.mjs",
+    "validate:sets": "node ./validate-sets.js",
     "targets:set": "node ./scripts/set-targets.mjs",
     "targets:refresh": "pnpm run targets:set && pnpm run validate:levels",
     "test": "playwright test",

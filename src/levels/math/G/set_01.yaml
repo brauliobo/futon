@@ -4,73 +4,172 @@ example: "Operações com números inteiros. Ex.: -3 + 5 = 2"
 subject: math
 pages:
   - pageNumber: 1
-    title: Números Inteiros – Página 1
+    title: Números Inteiros — Conjunto 1 – Página 1
     description: Soma de números inteiros positivos e negativos.
     exercises:
-      - type: integer_add
+      - &a1
+        type: integer_add
         question: -2 + 5 =
         correctAnswer: 3
-  - pageNumber: 2
-    title: Números Inteiros – Página 2
-    description: Soma de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_add
+      - &a2
+        type: integer_add
         question: 4 + (-3) =
         correctAnswer: 1
-  - pageNumber: 3
-    title: Números Inteiros – Página 3
-    description: Soma de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_add
+      - &a3
+        type: integer_add
         question: -7 + 2 =
         correctAnswer: -5
-  - pageNumber: 4
-    title: Números Inteiros – Página 4
-    description: Soma de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_add
+      - &a4
+        type: integer_add
         question: 6 + (-8) =
         correctAnswer: -2
-  - pageNumber: 5
-    title: Números Inteiros – Página 5
-    description: Soma de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_add
+      - &a5
+        type: integer_add
         question: -5 + (-3) =
         correctAnswer: -8
-  - pageNumber: 6
-    title: Números Inteiros – Página 6
-    description: Soma de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_add
+      - &a6
+        type: integer_add
         question: 9 + (-4) =
         correctAnswer: 5
-  - pageNumber: 7
-    title: Números Inteiros – Página 7
-    description: Soma de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_add
+      - &a7
+        type: integer_add
         question: -6 + 10 =
         correctAnswer: 4
-  - pageNumber: 8
-    title: Números Inteiros – Página 8
-    description: Soma de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_add
+      - &a8
+        type: integer_add
         question: 3 + (-7) =
         correctAnswer: -4
-  - pageNumber: 9
-    title: Números Inteiros – Página 9
-    description: Soma de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_add
+      - &a9
+        type: integer_add
         question: -4 + (-6) =
         correctAnswer: -10
-  - pageNumber: 10
-    title: Números Inteiros – Página 10
-    description: Soma de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_add
+      - &a10
+        type: integer_add
         question: 8 + (-5) =
         correctAnswer: 3
-target: 10
+  - pageNumber: 2
+    title: Números Inteiros — Conjunto 1 – Página 2
+    description: Soma de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Números Inteiros — Conjunto 1 – Página 3
+    description: Soma de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Números Inteiros — Conjunto 1 – Página 4
+    description: Soma de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Números Inteiros — Conjunto 1 – Página 5
+    description: Soma de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Números Inteiros — Conjunto 1 – Página 6
+    description: Soma de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Números Inteiros — Conjunto 1 – Página 7
+    description: Soma de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Números Inteiros — Conjunto 1 – Página 8
+    description: Soma de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Números Inteiros — Conjunto 1 – Página 9
+    description: Soma de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Números Inteiros — Conjunto 1 – Página 10
+    description: Soma de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

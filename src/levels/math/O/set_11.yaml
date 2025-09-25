@@ -4,73 +4,172 @@ example: "Trabalhe com séries de potências: ∑ aₙ(x-c)ⁿ"
 subject: math
 pages:
   - pageNumber: 1
-    title: Séries de Potências – Página 1
+    title: Séries de Potências — Conjunto 11 – Página 1
     description: Encontre raio de convergência.
     exercises:
-      - type: quadratic
-        question: "Raio de convergência de ∑ xⁿ/n!"
-        correctAnswer: "∞"
-  - pageNumber: 2
-    title: Séries de Potências – Página 2
-    description: Encontre raio de convergência.
-    exercises:
-      - type: quadratic
-        question: "Raio de convergência de ∑ xⁿ"
+      - &a1
+        type: quadratic
+        question: Raio de convergência de ∑ xⁿ/n!
+        correctAnswer: ∞
+      - &a2
+        type: quadratic
+        question: Raio de convergência de ∑ xⁿ
         correctAnswer: "1"
-  - pageNumber: 3
-    title: Séries de Potências – Página 3
-    description: Encontre raio de convergência.
-    exercises:
-      - type: quadratic
-        question: "Raio de convergência de ∑ nxⁿ"
+      - &a3
+        type: quadratic
+        question: Raio de convergência de ∑ nxⁿ
         correctAnswer: "1"
-  - pageNumber: 4
-    title: Séries de Potências – Página 4
-    description: Encontre raio de convergência.
-    exercises:
-      - type: quadratic
-        question: "Raio de convergência de ∑ xⁿ/2ⁿ"
+      - &a4
+        type: quadratic
+        question: Raio de convergência de ∑ xⁿ/2ⁿ
         correctAnswer: "2"
-  - pageNumber: 5
-    title: Séries de Potências – Página 5
-    description: Encontre raio de convergência.
-    exercises:
-      - type: quadratic
-        question: "Raio de convergência de ∑ n²xⁿ"
+      - &a5
+        type: quadratic
+        question: Raio de convergência de ∑ n²xⁿ
         correctAnswer: "1"
-  - pageNumber: 6
-    title: Séries de Potências – Página 6
-    description: Encontre raio de convergência.
-    exercises:
-      - type: quadratic
-        question: "Raio de convergência de ∑ xⁿ/n"
+      - &a6
+        type: quadratic
+        question: Raio de convergência de ∑ xⁿ/n
         correctAnswer: "1"
-  - pageNumber: 7
-    title: Séries de Potências – Página 7
-    description: Encontre raio de convergência.
-    exercises:
-      - type: quadratic
-        question: "Raio de convergência de ∑ (x/3)ⁿ"
+      - &a7
+        type: quadratic
+        question: Raio de convergência de ∑ (x/3)ⁿ
         correctAnswer: "3"
+      - &a8
+        type: quadratic
+        question: Raio de convergência de ∑ xⁿ/n²
+        correctAnswer: "1"
+      - &a9
+        type: quadratic
+        question: Raio de convergência de ∑ (2x)ⁿ/n
+        correctAnswer: 1/2
+      - &a10
+        type: quadratic
+        question: Raio de convergência de ∑ xⁿ/√n
+        correctAnswer: "1"
+  - pageNumber: 2
+    title: Séries de Potências — Conjunto 11 – Página 2
+    description: Encontre raio de convergência.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Séries de Potências — Conjunto 11 – Página 3
+    description: Encontre raio de convergência.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Séries de Potências — Conjunto 11 – Página 4
+    description: Encontre raio de convergência.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Séries de Potências — Conjunto 11 – Página 5
+    description: Encontre raio de convergência.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Séries de Potências — Conjunto 11 – Página 6
+    description: Encontre raio de convergência.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Séries de Potências — Conjunto 11 – Página 7
+    description: Encontre raio de convergência.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 8
-    title: Séries de Potências – Página 8
+    title: Séries de Potências — Conjunto 11 – Página 8
     description: Encontre raio de convergência.
     exercises:
-      - type: quadratic
-        question: "Raio de convergência de ∑ xⁿ/n²"
-        correctAnswer: "1"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 9
-    title: Séries de Potências – Página 9
+    title: Séries de Potências — Conjunto 11 – Página 9
     description: Encontre raio de convergência.
     exercises:
-      - type: quadratic
-        question: "Raio de convergência de ∑ (2x)ⁿ/n"
-        correctAnswer: "1/2"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 10
-    title: Séries de Potências – Página 10
+    title: Séries de Potências — Conjunto 11 – Página 10
     description: Encontre raio de convergência.
     exercises:
-      - type: quadratic
-        question: "Raio de convergência de ∑ xⁿ/√n"
-        correctAnswer: "1"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

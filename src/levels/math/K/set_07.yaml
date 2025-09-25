@@ -4,73 +4,172 @@ example: "Trabalhe com funções compostas. Ex.: (f ∘ g)(x) = f(g(x))"
 subject: math
 pages:
   - pageNumber: 1
-    title: Funções e Gráficos – Página 1
+    title: Funções e Gráficos — Conjunto 7 – Página 1
     description: Se f(x) = x + 1 e g(x) = 2x, calcule (f ∘ g)(1).
     exercises:
-      - type: quadratic
+      - &a1
+        type: quadratic
         question: (f ∘ g)(1) = ?
         correctAnswer: "3"
-  - pageNumber: 2
-    title: Funções e Gráficos – Página 2
-    description: Se f(x) = x + 1 e g(x) = 2x, calcule (g ∘ f)(1).
-    exercises:
-      - type: quadratic
+      - &a2
+        type: quadratic
         question: (g ∘ f)(1) = ?
         correctAnswer: "4"
-  - pageNumber: 3
-    title: Funções e Gráficos – Página 3
-    description: Se f(x) = x² e g(x) = x + 2, calcule (f ∘ g)(0).
-    exercises:
-      - type: quadratic
+      - &a3
+        type: quadratic
         question: (f ∘ g)(0) = ?
         correctAnswer: "4"
-  - pageNumber: 4
-    title: Funções e Gráficos – Página 4
-    description: Se f(x) = x² e g(x) = x + 2, calcule (g ∘ f)(2).
-    exercises:
-      - type: quadratic
+      - &a4
+        type: quadratic
         question: (g ∘ f)(2) = ?
         correctAnswer: "6"
-  - pageNumber: 5
-    title: Funções e Gráficos – Página 5
-    description: Se f(x) = 3x e g(x) = x - 1, calcule (f ∘ g)(3).
-    exercises:
-      - type: quadratic
+      - &a5
+        type: quadratic
         question: (f ∘ g)(3) = ?
         correctAnswer: "6"
-  - pageNumber: 6
-    title: Funções e Gráficos – Página 6
-    description: Se f(x) = 3x e g(x) = x - 1, calcule (g ∘ f)(2).
-    exercises:
-      - type: quadratic
+      - &a6
+        type: quadratic
         question: (g ∘ f)(2) = ?
         correctAnswer: "5"
-  - pageNumber: 7
-    title: Funções e Gráficos – Página 7
-    description: Se f(x) = x² + 1 e g(x) = x, calcule (f ∘ g)(3).
-    exercises:
-      - type: quadratic
+      - &a7
+        type: quadratic
         question: (f ∘ g)(3) = ?
         correctAnswer: "10"
-  - pageNumber: 8
-    title: Funções e Gráficos – Página 8
-    description: Se f(x) = √x e g(x) = x², calcule (f ∘ g)(2).
-    exercises:
-      - type: quadratic
+      - &a8
+        type: quadratic
         question: (f ∘ g)(2) = ?
         correctAnswer: "2"
-  - pageNumber: 9
-    title: Funções e Gráficos – Página 9
-    description: Se f(x) = 2x + 3 e g(x) = x/2, calcule (f ∘ g)(4).
-    exercises:
-      - type: quadratic
+      - &a9
+        type: quadratic
         question: (f ∘ g)(4) = ?
         correctAnswer: "7"
-  - pageNumber: 10
-    title: Funções e Gráficos – Página 10
-    description: Se f(x) = x - 2 e g(x) = x + 5, calcule (g ∘ f)(7).
-    exercises:
-      - type: quadratic
+      - &a10
+        type: quadratic
         question: (g ∘ f)(7) = ?
         correctAnswer: "10"
-target: 10
+  - pageNumber: 2
+    title: Funções e Gráficos — Conjunto 7 – Página 2
+    description: Se f(x) = x + 1 e g(x) = 2x, calcule (f ∘ g)(1).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Funções e Gráficos — Conjunto 7 – Página 3
+    description: Se f(x) = x + 1 e g(x) = 2x, calcule (f ∘ g)(1).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Funções e Gráficos — Conjunto 7 – Página 4
+    description: Se f(x) = x + 1 e g(x) = 2x, calcule (f ∘ g)(1).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Funções e Gráficos — Conjunto 7 – Página 5
+    description: Se f(x) = x + 1 e g(x) = 2x, calcule (f ∘ g)(1).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Funções e Gráficos — Conjunto 7 – Página 6
+    description: Se f(x) = x + 1 e g(x) = 2x, calcule (f ∘ g)(1).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Funções e Gráficos — Conjunto 7 – Página 7
+    description: Se f(x) = x + 1 e g(x) = 2x, calcule (f ∘ g)(1).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Funções e Gráficos — Conjunto 7 – Página 8
+    description: Se f(x) = x + 1 e g(x) = 2x, calcule (f ∘ g)(1).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Funções e Gráficos — Conjunto 7 – Página 9
+    description: Se f(x) = x + 1 e g(x) = 2x, calcule (f ∘ g)(1).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Funções e Gráficos — Conjunto 7 – Página 10
+    description: Se f(x) = x + 1 e g(x) = 2x, calcule (f ∘ g)(1).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

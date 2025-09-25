@@ -4,73 +4,172 @@ example: "Divisões por 7 e 8. Ex.: 56 ÷ 8 = 7"
 subject: math
 pages:
   - pageNumber: 1
-    title: Divisão por 7 e 8 – Página 1
+    title: Divisão por 7 e 8 — Conjunto 7 – Página 1
     description: Divisões por 7 e 8.
     exercises:
-      - type: division
+      - &a1
+        type: division
         question: 42 ÷ 7 =
         correctAnswer: 6
-  - pageNumber: 2
-    title: Divisão por 7 e 8 – Página 2
-    description: Divisões por 7 e 8.
-    exercises:
-      - type: division
+      - &a2
+        type: division
         question: 8 ÷ 8 =
         correctAnswer: 1
-  - pageNumber: 3
-    title: Divisão por 7 e 8 – Página 3
-    description: Divisões por 7 e 8.
-    exercises:
-      - type: division
+      - &a3
+        type: division
         question: 49 ÷ 7 =
         correctAnswer: 7
-  - pageNumber: 4
-    title: Divisão por 7 e 8 – Página 4
-    description: Divisões por 7 e 8.
-    exercises:
-      - type: division
+      - &a4
+        type: division
         question: 16 ÷ 8 =
         correctAnswer: 2
-  - pageNumber: 5
-    title: Divisão por 7 e 8 – Página 5
-    description: Divisões por 7 e 8.
-    exercises:
-      - type: division
+      - &a5
+        type: division
         question: 56 ÷ 7 =
         correctAnswer: 8
-  - pageNumber: 6
-    title: Divisão por 7 e 8 – Página 6
-    description: Divisões por 7 e 8.
-    exercises:
-      - type: division
+      - &a6
+        type: division
         question: 24 ÷ 8 =
         correctAnswer: 3
-  - pageNumber: 7
-    title: Divisão por 7 e 8 – Página 7
-    description: Divisões por 7 e 8.
-    exercises:
-      - type: division
+      - &a7
+        type: division
         question: 63 ÷ 7 =
         correctAnswer: 9
-  - pageNumber: 8
-    title: Divisão por 7 e 8 – Página 8
-    description: Divisões por 7 e 8.
-    exercises:
-      - type: division
+      - &a8
+        type: division
         question: 32 ÷ 8 =
         correctAnswer: 4
-  - pageNumber: 9
-    title: Divisão por 7 e 8 – Página 9
-    description: Divisões por 7 e 8.
-    exercises:
-      - type: division
+      - &a9
+        type: division
         question: 70 ÷ 7 =
         correctAnswer: 10
-  - pageNumber: 10
-    title: Divisão por 7 e 8 – Página 10
-    description: Divisões por 7 e 8.
-    exercises:
-      - type: division
+      - &a10
+        type: division
         question: 40 ÷ 8 =
         correctAnswer: 5
-target: 10
+  - pageNumber: 2
+    title: Divisão por 7 e 8 — Conjunto 7 – Página 2
+    description: Divisões por 7 e 8.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Divisão por 7 e 8 — Conjunto 7 – Página 3
+    description: Divisões por 7 e 8.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Divisão por 7 e 8 — Conjunto 7 – Página 4
+    description: Divisões por 7 e 8.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Divisão por 7 e 8 — Conjunto 7 – Página 5
+    description: Divisões por 7 e 8.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Divisão por 7 e 8 — Conjunto 7 – Página 6
+    description: Divisões por 7 e 8.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Divisão por 7 e 8 — Conjunto 7 – Página 7
+    description: Divisões por 7 e 8.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Divisão por 7 e 8 — Conjunto 7 – Página 8
+    description: Divisões por 7 e 8.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Divisão por 7 e 8 — Conjunto 7 – Página 9
+    description: Divisões por 7 e 8.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Divisão por 7 e 8 — Conjunto 7 – Página 10
+    description: Divisões por 7 e 8.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

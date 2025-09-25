@@ -4,73 +4,172 @@ example: "Trabalhe com transformações. Ex.: f(x) = x², g(x) = x² + 2 é desl
 subject: math
 pages:
   - pageNumber: 1
-    title: Funções e Gráficos – Página 1
+    title: Funções e Gráficos — Conjunto 6 – Página 1
     description: Compare f(x) = x² com g(x) = x² + 3.
     exercises:
-      - type: quadratic
+      - &a1
+        type: quadratic
         question: g(x) = x² + 3 é qual transformação de f(x) = x²?
-        correctAnswer: "deslocamento vertical para cima 3"
-  - pageNumber: 2
-    title: Funções e Gráficos – Página 2
-    description: Compare f(x) = x² com g(x) = x² - 2.
-    exercises:
-      - type: quadratic
+        correctAnswer: deslocamento vertical para cima 3
+      - &a2
+        type: quadratic
         question: g(x) = x² - 2 é qual transformação de f(x) = x²?
-        correctAnswer: "deslocamento vertical para baixo 2"
-  - pageNumber: 3
-    title: Funções e Gráficos – Página 3
-    description: Compare f(x) = x² com g(x) = (x-1)².
-    exercises:
-      - type: quadratic
+        correctAnswer: deslocamento vertical para baixo 2
+      - &a3
+        type: quadratic
         question: g(x) = (x-1)² é qual transformação de f(x) = x²?
-        correctAnswer: "deslocamento horizontal para direita 1"
-  - pageNumber: 4
-    title: Funções e Gráficos – Página 4
-    description: Compare f(x) = x² com g(x) = (x+2)².
-    exercises:
-      - type: quadratic
+        correctAnswer: deslocamento horizontal para direita 1
+      - &a4
+        type: quadratic
         question: g(x) = (x+2)² é qual transformação de f(x) = x²?
-        correctAnswer: "deslocamento horizontal para esquerda 2"
-  - pageNumber: 5
-    title: Funções e Gráficos – Página 5
-    description: Compare f(x) = x² com g(x) = 2x².
-    exercises:
-      - type: quadratic
+        correctAnswer: deslocamento horizontal para esquerda 2
+      - &a5
+        type: quadratic
         question: g(x) = 2x² é qual transformação de f(x) = x²?
-        correctAnswer: "estiramento vertical por fator 2"
-  - pageNumber: 6
-    title: Funções e Gráficos – Página 6
-    description: Compare f(x) = x² com g(x) = -x².
-    exercises:
-      - type: quadratic
+        correctAnswer: estiramento vertical por fator 2
+      - &a6
+        type: quadratic
         question: g(x) = -x² é qual transformação de f(x) = x²?
-        correctAnswer: "reflexão sobre eixo x"
-  - pageNumber: 7
-    title: Funções e Gráficos – Página 7
-    description: Compare f(x) = x com g(x) = x + 4.
-    exercises:
-      - type: quadratic
+        correctAnswer: reflexão sobre eixo x
+      - &a7
+        type: quadratic
         question: g(x) = x + 4 é qual transformação de f(x) = x?
-        correctAnswer: "deslocamento vertical para cima 4"
-  - pageNumber: 8
-    title: Funções e Gráficos – Página 8
-    description: Compare f(x) = x com g(x) = 3x.
-    exercises:
-      - type: quadratic
+        correctAnswer: deslocamento vertical para cima 4
+      - &a8
+        type: quadratic
         question: g(x) = 3x é qual transformação de f(x) = x?
-        correctAnswer: "estiramento vertical por fator 3"
-  - pageNumber: 9
-    title: Funções e Gráficos – Página 9
-    description: Compare f(x) = √x com g(x) = √(x-3).
-    exercises:
-      - type: quadratic
+        correctAnswer: estiramento vertical por fator 3
+      - &a9
+        type: quadratic
         question: g(x) = √(x-3) é qual transformação de f(x) = √x?
-        correctAnswer: "deslocamento horizontal para direita 3"
-  - pageNumber: 10
-    title: Funções e Gráficos – Página 10
-    description: Compare f(x) = |x| com g(x) = |x| - 1.
+        correctAnswer: deslocamento horizontal para direita 3
+      - &a10
+        type: quadratic
+        question: g(x) = |x| - 1 é qual transformação de f(x) = |x|?
+        correctAnswer: deslocamento vertical para baixo 1
+  - pageNumber: 2
+    title: Funções e Gráficos — Conjunto 6 – Página 2
+    description: Compare f(x) = x² com g(x) = x² + 3.
     exercises:
-      - type: quadratic
-        question: "g(x) = |x| - 1 é qual transformação de f(x) = |x|?"
-        correctAnswer: "deslocamento vertical para baixo 1"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Funções e Gráficos — Conjunto 6 – Página 3
+    description: Compare f(x) = x² com g(x) = x² + 3.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Funções e Gráficos — Conjunto 6 – Página 4
+    description: Compare f(x) = x² com g(x) = x² + 3.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Funções e Gráficos — Conjunto 6 – Página 5
+    description: Compare f(x) = x² com g(x) = x² + 3.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Funções e Gráficos — Conjunto 6 – Página 6
+    description: Compare f(x) = x² com g(x) = x² + 3.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Funções e Gráficos — Conjunto 6 – Página 7
+    description: Compare f(x) = x² com g(x) = x² + 3.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Funções e Gráficos — Conjunto 6 – Página 8
+    description: Compare f(x) = x² com g(x) = x² + 3.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Funções e Gráficos — Conjunto 6 – Página 9
+    description: Compare f(x) = x² com g(x) = x² + 3.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Funções e Gráficos — Conjunto 6 – Página 10
+    description: Compare f(x) = x² com g(x) = x² + 3.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

@@ -4,73 +4,172 @@ example: "Funções trigonométricas básicas. Ex.: tan(45°) = 1"
 subject: math
 pages:
   - pageNumber: 1
-    title: Trigonometria Básica – Página 1
+    title: Trigonometria Básica — Conjunto 3 – Página 1
     description: Calcule a tangente dos ângulos especiais.
     exercises:
-      - type: trigonometry
+      - &a1
+        type: trigonometry
         question: tan(0°) = ?
         correctAnswer: "0"
-  - pageNumber: 2
-    title: Trigonometria Básica – Página 2
-    description: Calcule a tangente dos ângulos especiais.
-    exercises:
-      - type: trigonometry
+      - &a2
+        type: trigonometry
         question: tan(30°) = ?
-        correctAnswer: "√3/3"
-  - pageNumber: 3
-    title: Trigonometria Básica – Página 3
-    description: Calcule a tangente dos ângulos especiais.
-    exercises:
-      - type: trigonometry
+        correctAnswer: √3/3
+      - &a3
+        type: trigonometry
         question: tan(45°) = ?
         correctAnswer: "1"
-  - pageNumber: 4
-    title: Trigonometria Básica – Página 4
-    description: Calcule a tangente dos ângulos especiais.
-    exercises:
-      - type: trigonometry
+      - &a4
+        type: trigonometry
         question: tan(60°) = ?
-        correctAnswer: "√3"
-  - pageNumber: 5
-    title: Trigonometria Básica – Página 5
-    description: Calcule a tangente dos ângulos especiais.
-    exercises:
-      - type: trigonometry
+        correctAnswer: √3
+      - &a5
+        type: trigonometry
         question: tan(120°) = ?
-        correctAnswer: "-√3"
-  - pageNumber: 6
-    title: Trigonometria Básica – Página 6
-    description: Calcule a tangente dos ângulos especiais.
-    exercises:
-      - type: trigonometry
+        correctAnswer: -√3
+      - &a6
+        type: trigonometry
         question: tan(135°) = ?
         correctAnswer: "-1"
-  - pageNumber: 7
-    title: Trigonometria Básica – Página 7
-    description: Calcule a tangente dos ângulos especiais.
-    exercises:
-      - type: trigonometry
+      - &a7
+        type: trigonometry
         question: tan(150°) = ?
-        correctAnswer: "-√3/3"
-  - pageNumber: 8
-    title: Trigonometria Básica – Página 8
-    description: Calcule a tangente dos ângulos especiais.
-    exercises:
-      - type: trigonometry
+        correctAnswer: -√3/3
+      - &a8
+        type: trigonometry
         question: tan(180°) = ?
         correctAnswer: "0"
-  - pageNumber: 9
-    title: Trigonometria Básica – Página 9
-    description: Calcule a tangente dos ângulos especiais.
-    exercises:
-      - type: trigonometry
+      - &a9
+        type: trigonometry
         question: tan(225°) = ?
         correctAnswer: "1"
-  - pageNumber: 10
-    title: Trigonometria Básica – Página 10
-    description: Calcule a tangente dos ângulos especiais.
-    exercises:
-      - type: trigonometry
+      - &a10
+        type: trigonometry
         question: tan(315°) = ?
         correctAnswer: "-1"
-target: 10
+  - pageNumber: 2
+    title: Trigonometria Básica — Conjunto 3 – Página 2
+    description: Calcule a tangente dos ângulos especiais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Trigonometria Básica — Conjunto 3 – Página 3
+    description: Calcule a tangente dos ângulos especiais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Trigonometria Básica — Conjunto 3 – Página 4
+    description: Calcule a tangente dos ângulos especiais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Trigonometria Básica — Conjunto 3 – Página 5
+    description: Calcule a tangente dos ângulos especiais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Trigonometria Básica — Conjunto 3 – Página 6
+    description: Calcule a tangente dos ângulos especiais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Trigonometria Básica — Conjunto 3 – Página 7
+    description: Calcule a tangente dos ângulos especiais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Trigonometria Básica — Conjunto 3 – Página 8
+    description: Calcule a tangente dos ângulos especiais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Trigonometria Básica — Conjunto 3 – Página 9
+    description: Calcule a tangente dos ângulos especiais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Trigonometria Básica — Conjunto 3 – Página 10
+    description: Calcule a tangente dos ângulos especiais.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

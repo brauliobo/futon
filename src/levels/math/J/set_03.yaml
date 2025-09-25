@@ -4,73 +4,172 @@ example: "Funções exponenciais e logarítmicas. Ex.: log₂(8) = 3"
 subject: math
 pages:
   - pageNumber: 1
-    title: Álgebra Avançada – Página 1
+    title: Álgebra Avançada — Conjunto 3 – Página 1
     description: Funções exponenciais e logarítmicas.
     exercises:
-      - type: algebra
+      - &a1
+        type: algebra
         question: "Calcule: 2³ ="
         correctAnswer: 8
-  - pageNumber: 2
-    title: Álgebra Avançada – Página 2
-    description: Funções exponenciais e logarítmicas.
-    exercises:
-      - type: algebra
+      - &a2
+        type: algebra
         question: "Calcule: log₂(16) ="
         correctAnswer: 4
-  - pageNumber: 3
-    title: Álgebra Avançada – Página 3
-    description: Funções exponenciais e logarítmicas.
-    exercises:
-      - type: algebra
+      - &a3
+        type: algebra
         question: "Resolva: 3ˣ = 27"
         correctAnswer: x = 3
-  - pageNumber: 4
-    title: Álgebra Avançada – Página 4
-    description: Funções exponenciais e logarítmicas.
-    exercises:
-      - type: algebra
+      - &a4
+        type: algebra
         question: "Calcule: log₃(1) ="
         correctAnswer: 0
-  - pageNumber: 5
-    title: Álgebra Avançada – Página 5
-    description: Funções exponenciais e logarítmicas.
-    exercises:
-      - type: algebra
+      - &a5
+        type: algebra
         question: "Simplifique: x⁵ · x³ ="
-        correctAnswer: "x⁸"
-  - pageNumber: 6
-    title: Álgebra Avançada – Página 6
-    description: Funções exponenciais e logarítmicas.
-    exercises:
-      - type: algebra
+        correctAnswer: x⁸
+      - &a6
+        type: algebra
         question: "Calcule: (2³)² ="
         correctAnswer: 64
-  - pageNumber: 7
-    title: Álgebra Avançada – Página 7
-    description: Funções exponenciais e logarítmicas.
-    exercises:
-      - type: algebra
+      - &a7
+        type: algebra
         question: "Resolva: 5ˣ⁺¹ = 125"
         correctAnswer: x = 2
-  - pageNumber: 8
-    title: Álgebra Avançada – Página 8
-    description: Funções exponenciais e logarítmicas.
-    exercises:
-      - type: algebra
+      - &a8
+        type: algebra
         question: "Calcule: log₁₀(1000) ="
         correctAnswer: 3
-  - pageNumber: 9
-    title: Álgebra Avançada – Página 9
-    description: Funções exponenciais e logarítmicas.
-    exercises:
-      - type: algebra
+      - &a9
+        type: algebra
         question: "Simplifique: (x²)⁴ ="
-        correctAnswer: "x⁸"
-  - pageNumber: 10
-    title: Álgebra Avançada – Página 10
-    description: Funções exponenciais e logarítmicas.
-    exercises:
-      - type: algebra
+        correctAnswer: x⁸
+      - &a10
+        type: algebra
         question: "Calcule: ∛27 ="
         correctAnswer: 3
-target: 10
+  - pageNumber: 2
+    title: Álgebra Avançada — Conjunto 3 – Página 2
+    description: Funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Álgebra Avançada — Conjunto 3 – Página 3
+    description: Funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Álgebra Avançada — Conjunto 3 – Página 4
+    description: Funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Álgebra Avançada — Conjunto 3 – Página 5
+    description: Funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Álgebra Avançada — Conjunto 3 – Página 6
+    description: Funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Álgebra Avançada — Conjunto 3 – Página 7
+    description: Funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Álgebra Avançada — Conjunto 3 – Página 8
+    description: Funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Álgebra Avançada — Conjunto 3 – Página 9
+    description: Funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Álgebra Avançada — Conjunto 3 – Página 10
+    description: Funções exponenciais e logarítmicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

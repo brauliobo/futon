@@ -4,73 +4,172 @@ example: "Convergência de séries. Ex.: série geométrica converge se |r| < 1"
 subject: math
 pages:
   - pageNumber: 1
-    title: Convergência – Página 1
+    title: Trigonometria Avançada e Séries — Conjunto 15 – Página 1
     description: Testes de convergência de séries.
     exercises:
-      - type: trigonometry
-        question: "A série ∑(1/n²) converge para ="
-        correctAnswer: "π²/6"
-  - pageNumber: 2
-    title: Identidades Trigonométricas – Página 2
-    description: Identidades fundamentais de trigonometria.
-    exercises:
-      - type: trigonometry
-        question: "Se sin(x) = 3/5, calcule cos(x) ="
-        correctAnswer: "4/5"
-  - pageNumber: 3
-    title: Identidades Trigonométricas – Página 3
-    description: Identidades fundamentais de trigonometria.
-    exercises:
-      - type: trigonometry
+      - &a1
+        type: trigonometry
+        question: A série ∑(1/n²) converge para =
+        correctAnswer: π²/6
+      - &a2
+        type: trigonometry
+        question: Se sin(x) = 3/5, calcule cos(x) =
+        correctAnswer: 4/5
+      - &a3
+        type: trigonometry
         question: "Simplifique: tan(x) · cot(x) ="
         correctAnswer: "1"
-  - pageNumber: 4
-    title: Identidades Trigonométricas – Página 4
-    description: Identidades fundamentais de trigonometria.
-    exercises:
-      - type: trigonometry
-        question: "Se cos(x) = 1/2, calcule sin(x) ="
-        correctAnswer: "√3/2"
-  - pageNumber: 5
-    title: Identidades Trigonométricas – Página 5
-    description: Identidades fundamentais de trigonometria.
-    exercises:
-      - type: trigonometry
+      - &a4
+        type: trigonometry
+        question: Se cos(x) = 1/2, calcule sin(x) =
+        correctAnswer: √3/2
+      - &a5
+        type: trigonometry
         question: "Simplifique: sec²(x) - tan²(x) ="
         correctAnswer: "1"
-  - pageNumber: 6
-    title: Identidades Trigonométricas – Página 6
-    description: Identidades fundamentais de trigonometria.
-    exercises:
-      - type: trigonometry
+      - &a6
+        type: trigonometry
         question: "Calcule: sin(30°) + cos(60°) ="
         correctAnswer: "1"
-  - pageNumber: 7
-    title: Identidades Trigonométricas – Página 7
-    description: Identidades fundamentais de trigonometria.
-    exercises:
-      - type: trigonometry
-        question: "Se tan(x) = 1, calcule x (0° ≤ x < 90°) ="
-        correctAnswer: "45°"
-  - pageNumber: 8
-    title: Identidades Trigonométricas – Página 8
-    description: Identidades fundamentais de trigonometria.
-    exercises:
-      - type: trigonometry
+      - &a7
+        type: trigonometry
+        question: Se tan(x) = 1, calcule x (0° ≤ x < 90°) =
+        correctAnswer: 45°
+      - &a8
+        type: trigonometry
         question: "Simplifique: csc²(x) - cot²(x) ="
         correctAnswer: "1"
-  - pageNumber: 9
-    title: Identidades Trigonométricas – Página 9
-    description: Identidades fundamentais de trigonometria.
-    exercises:
-      - type: trigonometry
+      - &a9
+        type: trigonometry
         question: "Calcule: cos(45°) · sin(45°) ="
-        correctAnswer: "1/2"
-  - pageNumber: 10
-    title: Identidades Trigonométricas – Página 10
-    description: Identidades fundamentais de trigonometria.
+        correctAnswer: 1/2
+      - &a10
+        type: trigonometry
+        question: Se sin(x) = 1/2, calcule x (0° ≤ x ≤ 90°) =
+        correctAnswer: 30°
+  - pageNumber: 2
+    title: Trigonometria Avançada e Séries — Conjunto 15 – Página 2
+    description: Testes de convergência de séries.
     exercises:
-      - type: trigonometry
-        question: "Se sin(x) = 1/2, calcule x (0° ≤ x ≤ 90°) ="
-        correctAnswer: "30°"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Trigonometria Avançada e Séries — Conjunto 15 – Página 3
+    description: Testes de convergência de séries.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Trigonometria Avançada e Séries — Conjunto 15 – Página 4
+    description: Testes de convergência de séries.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Trigonometria Avançada e Séries — Conjunto 15 – Página 5
+    description: Testes de convergência de séries.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Trigonometria Avançada e Séries — Conjunto 15 – Página 6
+    description: Testes de convergência de séries.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Trigonometria Avançada e Séries — Conjunto 15 – Página 7
+    description: Testes de convergência de séries.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Trigonometria Avançada e Séries — Conjunto 15 – Página 8
+    description: Testes de convergência de séries.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Trigonometria Avançada e Séries — Conjunto 15 – Página 9
+    description: Testes de convergência de séries.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Trigonometria Avançada e Séries — Conjunto 15 – Página 10
+    description: Testes de convergência de séries.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

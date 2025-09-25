@@ -4,73 +4,172 @@ example: "Trabalhe com vértices de parábolas. Ex.: f(x) = x² - 4x + 3, vérti
 subject: math
 pages:
   - pageNumber: 1
-    title: Funções e Gráficos – Página 1
+    title: Funções e Gráficos — Conjunto 11 – Página 1
     description: Encontre o vértice de f(x) = x² - 2x + 1.
     exercises:
-      - type: quadratic
+      - &a1
+        type: quadratic
         question: Qual é o vértice de f(x) = x² - 2x + 1?
-        correctAnswer: "(1, 0)"
-  - pageNumber: 2
-    title: Funções e Gráficos – Página 2
-    description: Encontre o vértice de f(x) = x² + 4x + 4.
-    exercises:
-      - type: quadratic
+        correctAnswer: (1, 0)
+      - &a2
+        type: quadratic
         question: Qual é o vértice de f(x) = x² + 4x + 4?
-        correctAnswer: "(-2, 0)"
-  - pageNumber: 3
-    title: Funções e Gráficos – Página 3
-    description: Encontre o vértice de f(x) = x² - 6x + 9.
-    exercises:
-      - type: quadratic
+        correctAnswer: (-2, 0)
+      - &a3
+        type: quadratic
         question: Qual é o vértice de f(x) = x² - 6x + 9?
-        correctAnswer: "(3, 0)"
-  - pageNumber: 4
-    title: Funções e Gráficos – Página 4
-    description: Encontre o vértice de f(x) = x² + 2x.
-    exercises:
-      - type: quadratic
+        correctAnswer: (3, 0)
+      - &a4
+        type: quadratic
         question: Qual é o vértice de f(x) = x² + 2x?
-        correctAnswer: "(-1, -1)"
-  - pageNumber: 5
-    title: Funções e Gráficos – Página 5
-    description: Encontre o vértice de f(x) = x² - 4x.
-    exercises:
-      - type: quadratic
+        correctAnswer: (-1, -1)
+      - &a5
+        type: quadratic
         question: Qual é o vértice de f(x) = x² - 4x?
-        correctAnswer: "(2, -4)"
-  - pageNumber: 6
-    title: Funções e Gráficos – Página 6
-    description: Encontre o vértice de f(x) = 2x² - 8x + 8.
-    exercises:
-      - type: quadratic
+        correctAnswer: (2, -4)
+      - &a6
+        type: quadratic
         question: Qual é o vértice de f(x) = 2x² - 8x + 8?
-        correctAnswer: "(2, 0)"
-  - pageNumber: 7
-    title: Funções e Gráficos – Página 7
-    description: Encontre o vértice de f(x) = -x² + 4x - 3.
-    exercises:
-      - type: quadratic
+        correctAnswer: (2, 0)
+      - &a7
+        type: quadratic
         question: Qual é o vértice de f(x) = -x² + 4x - 3?
-        correctAnswer: "(2, 1)"
-  - pageNumber: 8
-    title: Funções e Gráficos – Página 8
-    description: Encontre o vértice de f(x) = x² + 6x + 5.
-    exercises:
-      - type: quadratic
+        correctAnswer: (2, 1)
+      - &a8
+        type: quadratic
         question: Qual é o vértice de f(x) = x² + 6x + 5?
-        correctAnswer: "(-3, -4)"
-  - pageNumber: 9
-    title: Funções e Gráficos – Página 9
-    description: Encontre o vértice de f(x) = x² - 8x + 16.
-    exercises:
-      - type: quadratic
+        correctAnswer: (-3, -4)
+      - &a9
+        type: quadratic
         question: Qual é o vértice de f(x) = x² - 8x + 16?
-        correctAnswer: "(4, 0)"
-  - pageNumber: 10
-    title: Funções e Gráficos – Página 10
-    description: Encontre o vértice de f(x) = -2x² + 4x - 2.
-    exercises:
-      - type: quadratic
+        correctAnswer: (4, 0)
+      - &a10
+        type: quadratic
         question: Qual é o vértice de f(x) = -2x² + 4x - 2?
-        correctAnswer: "(1, 0)"
-target: 10
+        correctAnswer: (1, 0)
+  - pageNumber: 2
+    title: Funções e Gráficos — Conjunto 11 – Página 2
+    description: Encontre o vértice de f(x) = x² - 2x + 1.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Funções e Gráficos — Conjunto 11 – Página 3
+    description: Encontre o vértice de f(x) = x² - 2x + 1.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Funções e Gráficos — Conjunto 11 – Página 4
+    description: Encontre o vértice de f(x) = x² - 2x + 1.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Funções e Gráficos — Conjunto 11 – Página 5
+    description: Encontre o vértice de f(x) = x² - 2x + 1.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Funções e Gráficos — Conjunto 11 – Página 6
+    description: Encontre o vértice de f(x) = x² - 2x + 1.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Funções e Gráficos — Conjunto 11 – Página 7
+    description: Encontre o vértice de f(x) = x² - 2x + 1.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Funções e Gráficos — Conjunto 11 – Página 8
+    description: Encontre o vértice de f(x) = x² - 2x + 1.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Funções e Gráficos — Conjunto 11 – Página 9
+    description: Encontre o vértice de f(x) = x² - 2x + 1.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Funções e Gráficos — Conjunto 11 – Página 10
+    description: Encontre o vértice de f(x) = x² - 2x + 1.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

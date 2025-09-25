@@ -4,73 +4,172 @@ example: "Encontre domínio e contradomínio. Ex.: f(x) = √x, domínio: x ≥ 
 subject: math
 pages:
   - pageNumber: 1
-    title: Funções e Gráficos – Página 1
+    title: Funções e Gráficos — Conjunto 3 – Página 1
     description: Encontre o domínio de f(x) = √x.
     exercises:
-      - type: quadratic
+      - &a1
+        type: quadratic
         question: Qual é o domínio de f(x) = √x?
-        correctAnswer: "x ≥ 0"
-  - pageNumber: 2
-    title: Funções e Gráficos – Página 2
-    description: Encontre o domínio de f(x) = 1/x.
-    exercises:
-      - type: quadratic
+        correctAnswer: x ≥ 0
+      - &a2
+        type: quadratic
         question: Qual é o domínio de f(x) = 1/x?
-        correctAnswer: "x ≠ 0"
-  - pageNumber: 3
-    title: Funções e Gráficos – Página 3
-    description: Encontre o contradomínio de f(x) = x².
-    exercises:
-      - type: quadratic
+        correctAnswer: x ≠ 0
+      - &a3
+        type: quadratic
         question: Qual é o contradomínio de f(x) = x²?
-        correctAnswer: "y ≥ 0"
-  - pageNumber: 4
-    title: Funções e Gráficos – Página 4
-    description: Encontre o domínio de f(x) = √(x-2).
-    exercises:
-      - type: quadratic
+        correctAnswer: y ≥ 0
+      - &a4
+        type: quadratic
         question: Qual é o domínio de f(x) = √(x-2)?
-        correctAnswer: "x ≥ 2"
-  - pageNumber: 5
-    title: Funções e Gráficos – Página 5
-    description: Encontre o domínio de f(x) = 1/(x-3).
-    exercises:
-      - type: quadratic
+        correctAnswer: x ≥ 2
+      - &a5
+        type: quadratic
         question: Qual é o domínio de f(x) = 1/(x-3)?
-        correctAnswer: "x ≠ 3"
-  - pageNumber: 6
-    title: Funções e Gráficos – Página 6
-    description: Encontre o contradomínio de f(x) = -x².
-    exercises:
-      - type: quadratic
+        correctAnswer: x ≠ 3
+      - &a6
+        type: quadratic
         question: Qual é o contradomínio de f(x) = -x²?
-        correctAnswer: "y ≤ 0"
-  - pageNumber: 7
-    title: Funções e Gráficos – Página 7
-    description: Encontre o domínio de f(x) = √(4-x).
-    exercises:
-      - type: quadratic
+        correctAnswer: y ≤ 0
+      - &a7
+        type: quadratic
         question: Qual é o domínio de f(x) = √(4-x)?
-        correctAnswer: "x ≤ 4"
-  - pageNumber: 8
-    title: Funções e Gráficos – Página 8
-    description: Encontre o domínio de f(x) = 1/(x²-1).
-    exercises:
-      - type: quadratic
+        correctAnswer: x ≤ 4
+      - &a8
+        type: quadratic
         question: Qual é o domínio de f(x) = 1/(x²-1)?
-        correctAnswer: "x ≠ ±1"
-  - pageNumber: 9
-    title: Funções e Gráficos – Página 9
-    description: Encontre o contradomínio de f(x) = x² + 1.
-    exercises:
-      - type: quadratic
+        correctAnswer: x ≠ ±1
+      - &a9
+        type: quadratic
         question: Qual é o contradomínio de f(x) = x² + 1?
-        correctAnswer: "y ≥ 1"
-  - pageNumber: 10
-    title: Funções e Gráficos – Página 10
-    description: Encontre o domínio de f(x) = √(x+3).
-    exercises:
-      - type: quadratic
+        correctAnswer: y ≥ 1
+      - &a10
+        type: quadratic
         question: Qual é o domínio de f(x) = √(x+3)?
-        correctAnswer: "x ≥ -3"
-target: 10
+        correctAnswer: x ≥ -3
+  - pageNumber: 2
+    title: Funções e Gráficos — Conjunto 3 – Página 2
+    description: Encontre o domínio de f(x) = √x.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Funções e Gráficos — Conjunto 3 – Página 3
+    description: Encontre o domínio de f(x) = √x.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Funções e Gráficos — Conjunto 3 – Página 4
+    description: Encontre o domínio de f(x) = √x.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Funções e Gráficos — Conjunto 3 – Página 5
+    description: Encontre o domínio de f(x) = √x.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Funções e Gráficos — Conjunto 3 – Página 6
+    description: Encontre o domínio de f(x) = √x.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Funções e Gráficos — Conjunto 3 – Página 7
+    description: Encontre o domínio de f(x) = √x.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Funções e Gráficos — Conjunto 3 – Página 8
+    description: Encontre o domínio de f(x) = √x.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Funções e Gráficos — Conjunto 3 – Página 9
+    description: Encontre o domínio de f(x) = √x.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Funções e Gráficos — Conjunto 3 – Página 10
+    description: Encontre o domínio de f(x) = √x.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

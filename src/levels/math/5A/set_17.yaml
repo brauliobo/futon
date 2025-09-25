@@ -7,74 +7,205 @@ passCriteria:
   maxAvgSecondsPerExercise: 6
 pages:
   - pageNumber: 1
-    title: Qual Número Falta?
+    title: Completar Operações – Página 1
     description: Complete as operações.
     exercises:
-      - type: missing_number
+      - &a1
+        type: missing_number
         question: 5 + ? = 9
         correctAnswer: 4
-      - type: missing_number
+      - &a2
+        type: missing_number
         question: "? + 6 = 11"
         correctAnswer: 5
-      - type: missing_number
+      - &a3
+        type: missing_number
         question: 8 + ? = 15
         correctAnswer: 7
-      - type: missing_number
+      - &a4
+        type: missing_number
         question: "? + 9 = 18"
         correctAnswer: 9
-      - type: missing_number
+      - &a5
+        type: missing_number
         question: 12 - ? = 7
         correctAnswer: 5
-      - type: missing_number
+      - &a6
+        type: missing_number
         question: "? - 4 = 6"
         correctAnswer: 10
-      - type: missing_number
+      - &a7
+        type: missing_number
         question: 16 - ? = 9
         correctAnswer: 7
-      - type: missing_number
+      - &a8
+        type: missing_number
         question: "? - 8 = 5"
         correctAnswer: 13
-      - type: missing_number
+      - &a9
+        type: missing_number
         question: 3 + ? = 20
         correctAnswer: 17
-      - type: missing_number
+      - &a10
+        type: missing_number
         question: "? + 12 = 20"
         correctAnswer: 8
   - pageNumber: 2
-    title: Mais Números que Faltam
-    description: Continue encontrando os números.
+    title: Completar Operações – Página 2
+    description: Complete as operações.
     exercises:
-      - type: missing_number
+      - &a11
+        type: missing_number
         question: 14 + ? = 20
         correctAnswer: 6
-      - type: missing_number
+      - &a12
+        type: missing_number
         question: "? + 7 = 16"
         correctAnswer: 9
-      - type: missing_number
+      - &a13
+        type: missing_number
         question: 19 - ? = 11
         correctAnswer: 8
-      - type: missing_number
+      - &a14
+        type: missing_number
         question: "? - 6 = 12"
         correctAnswer: 18
-      - type: missing_number
+      - &a15
+        type: missing_number
         question: 9 + ? = 17
         correctAnswer: 8
-      - type: missing_number
+      - &a16
+        type: missing_number
         question: "? + 4 = 13"
         correctAnswer: 9
-      - type: missing_number
+      - &a17
+        type: missing_number
         question: 15 - ? = 8
         correctAnswer: 7
-      - type: missing_number
+      - &a18
+        type: missing_number
         question: "? - 5 = 14"
         correctAnswer: 19
-      - type: missing_number
+      - &a19
+        type: missing_number
         question: 6 + ? = 18
         correctAnswer: 12
-      - type: missing_number
+      - &a20
+        type: missing_number
         question: "? + 11 = 20"
         correctAnswer: 9
-target: 20
+  - pageNumber: 3
+    title: Completar Operações – Página 3
+    description: Complete as operações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Completar Operações – Página 4
+    description: Complete as operações.
+    exercises:
+      - *a11
+      - *a12
+      - *a13
+      - *a14
+      - *a15
+      - *a16
+      - *a17
+      - *a18
+      - *a19
+      - *a20
+  - pageNumber: 5
+    title: Completar Operações – Página 5
+    description: Complete as operações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Completar Operações – Página 6
+    description: Complete as operações.
+    exercises:
+      - *a11
+      - *a12
+      - *a13
+      - *a14
+      - *a15
+      - *a16
+      - *a17
+      - *a18
+      - *a19
+      - *a20
+  - pageNumber: 7
+    title: Completar Operações – Página 7
+    description: Complete as operações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Completar Operações – Página 8
+    description: Complete as operações.
+    exercises:
+      - *a11
+      - *a12
+      - *a13
+      - *a14
+      - *a15
+      - *a16
+      - *a17
+      - *a18
+      - *a19
+      - *a20
+  - pageNumber: 9
+    title: Completar Operações – Página 9
+    description: Complete as operações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Completar Operações – Página 10
+    description: Complete as operações.
+    exercises:
+      - *a11
+      - *a12
+      - *a13
+      - *a14
+      - *a15
+      - *a16
+      - *a17
+      - *a18
+      - *a19
+      - *a20
 progress:
   currentPage: 2
   completedPages: 1

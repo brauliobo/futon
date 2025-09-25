@@ -4,73 +4,172 @@ example: "Frações com denominadores primos. Ex.: 4/7 + 2/7 = 6/7"
 subject: math
 pages:
   - pageNumber: 1
-    title: Frações com Primos – Página 1
+    title: Frações com Denominadores Primos — Conjunto 15 – Página 1
     description: Frações com denominadores primos.
     exercises:
-      - type: fraction_add
+      - &a1
+        type: fraction_add
         question: 4/7 + 2/7 =
-        correctAnswer: "6/7"
-  - pageNumber: 2
-    title: Frações com Primos – Página 2
-    description: Frações com denominadores primos.
-    exercises:
-      - type: fraction_add
+        correctAnswer: 6/7
+      - &a2
+        type: fraction_add
         question: 6/11 + 3/11 =
-        correctAnswer: "9/11"
-  - pageNumber: 3
-    title: Frações com Primos – Página 3
-    description: Frações com denominadores primos.
-    exercises:
-      - type: fraction_add
+        correctAnswer: 9/11
+      - &a3
+        type: fraction_add
         question: 8/13 + 4/13 =
-        correctAnswer: "12/13"
-  - pageNumber: 4
-    title: Frações com Primos – Página 4
-    description: Frações com denominadores primos.
-    exercises:
-      - type: fraction_sub
+        correctAnswer: 12/13
+      - &a4
+        type: fraction_sub
         question: 15/17 - 8/17 =
-        correctAnswer: "7/17"
-  - pageNumber: 5
-    title: Frações com Primos – Página 5
-    description: Frações com denominadores primos.
-    exercises:
-      - type: fraction_sub
+        correctAnswer: 7/17
+      - &a5
+        type: fraction_sub
         question: 17/19 - 9/19 =
-        correctAnswer: "8/19"
-  - pageNumber: 6
-    title: Frações com Primos – Página 6
-    description: Frações com denominadores primos.
-    exercises:
-      - type: fraction_sub
+        correctAnswer: 8/19
+      - &a6
+        type: fraction_sub
         question: 21/23 - 12/23 =
-        correctAnswer: "9/23"
-  - pageNumber: 7
-    title: Frações com Primos – Página 7
-    description: Frações com denominadores primos.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 9/23
+      - &a7
+        type: fraction_mixed
         question: 12/29 + 15/29 =
-        correctAnswer: "27/29"
-  - pageNumber: 8
-    title: Frações com Primos – Página 8
-    description: Frações com denominadores primos.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 27/29
+      - &a8
+        type: fraction_mixed
         question: 28/31 - 16/31 =
-        correctAnswer: "12/31"
-  - pageNumber: 9
-    title: Frações com Primos – Página 9
-    description: Frações com denominadores primos.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 12/31
+      - &a9
+        type: fraction_mixed
         question: 18/37 + 21/37 =
-        correctAnswer: "39/37"
-  - pageNumber: 10
-    title: Frações com Primos – Página 10
+        correctAnswer: 39/37
+      - &a10
+        type: fraction_mixed
+        question: 35/41 - 22/41 =
+        correctAnswer: 13/41
+  - pageNumber: 2
+    title: Frações com Denominadores Primos — Conjunto 15 – Página 2
     description: Frações com denominadores primos.
     exercises:
-      - type: fraction_mixed
-        question: 35/41 - 22/41 =
-        correctAnswer: "13/41"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Frações com Denominadores Primos — Conjunto 15 – Página 3
+    description: Frações com denominadores primos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Frações com Denominadores Primos — Conjunto 15 – Página 4
+    description: Frações com denominadores primos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Frações com Denominadores Primos — Conjunto 15 – Página 5
+    description: Frações com denominadores primos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Frações com Denominadores Primos — Conjunto 15 – Página 6
+    description: Frações com denominadores primos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Frações com Denominadores Primos — Conjunto 15 – Página 7
+    description: Frações com denominadores primos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Frações com Denominadores Primos — Conjunto 15 – Página 8
+    description: Frações com denominadores primos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Frações com Denominadores Primos — Conjunto 15 – Página 9
+    description: Frações com denominadores primos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Frações com Denominadores Primos — Conjunto 15 – Página 10
+    description: Frações com denominadores primos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

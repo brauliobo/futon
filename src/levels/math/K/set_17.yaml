@@ -4,73 +4,172 @@ example: "Analise gráficos de funções. Ex.: O gráfico de f(x) = x² é uma p
 subject: math
 pages:
   - pageNumber: 1
-    title: Funções e Gráficos – Página 1
+    title: Funções e Gráficos — Conjunto 17 – Página 1
     description: Que tipo de gráfico tem f(x) = x²?
     exercises:
-      - type: quadratic
+      - &a1
+        type: quadratic
         question: Que tipo de gráfico tem f(x) = x²?
-        correctAnswer: "parábola"
-  - pageNumber: 2
-    title: Funções e Gráficos – Página 2
-    description: Que tipo de gráfico tem f(x) = x?
-    exercises:
-      - type: quadratic
+        correctAnswer: parábola
+      - &a2
+        type: quadratic
         question: Que tipo de gráfico tem f(x) = x?
-        correctAnswer: "linha reta"
-  - pageNumber: 3
-    title: Funções e Gráficos – Página 3
-    description: Que tipo de gráfico tem f(x) = 2^x?
-    exercises:
-      - type: quadratic
+        correctAnswer: linha reta
+      - &a3
+        type: quadratic
         question: Que tipo de gráfico tem f(x) = 2^x?
-        correctAnswer: "exponencial"
-  - pageNumber: 4
-    title: Funções e Gráficos – Página 4
-    description: Que tipo de gráfico tem f(x) = log(x)?
-    exercises:
-      - type: quadratic
+        correctAnswer: exponencial
+      - &a4
+        type: quadratic
         question: Que tipo de gráfico tem f(x) = log(x)?
-        correctAnswer: "logarítmico"
-  - pageNumber: 5
-    title: Funções e Gráficos – Página 5
-    description: Que tipo de gráfico tem f(x) = 1/x?
-    exercises:
-      - type: quadratic
+        correctAnswer: logarítmico
+      - &a5
+        type: quadratic
         question: Que tipo de gráfico tem f(x) = 1/x?
-        correctAnswer: "hipérbole"
-  - pageNumber: 6
-    title: Funções e Gráficos – Página 6
-    description: Que tipo de gráfico tem f(x) = √x?
-    exercises:
-      - type: quadratic
+        correctAnswer: hipérbole
+      - &a6
+        type: quadratic
         question: Que tipo de gráfico tem f(x) = √x?
-        correctAnswer: "raiz quadrada"
-  - pageNumber: 7
-    title: Funções e Gráficos – Página 7
-    description: Que tipo de gráfico tem f(x) = |x|?
-    exercises:
-      - type: quadratic
+        correctAnswer: raiz quadrada
+      - &a7
+        type: quadratic
         question: Que tipo de gráfico tem f(x) = |x|?
-        correctAnswer: "V"
-  - pageNumber: 8
-    title: Funções e Gráficos – Página 8
-    description: Que tipo de gráfico tem f(x) = x³?
-    exercises:
-      - type: quadratic
+        correctAnswer: V
+      - &a8
+        type: quadratic
         question: Que tipo de gráfico tem f(x) = x³?
-        correctAnswer: "cúbica"
-  - pageNumber: 9
-    title: Funções e Gráficos – Página 9
-    description: Que tipo de gráfico tem f(x) = sen(x)?
-    exercises:
-      - type: quadratic
+        correctAnswer: cúbica
+      - &a9
+        type: quadratic
         question: Que tipo de gráfico tem f(x) = sen(x)?
-        correctAnswer: "senoidal"
-  - pageNumber: 10
-    title: Funções e Gráficos – Página 10
-    description: Que tipo de gráfico tem f(x) = 5?
-    exercises:
-      - type: quadratic
+        correctAnswer: senoidal
+      - &a10
+        type: quadratic
         question: Que tipo de gráfico tem f(x) = 5?
-        correctAnswer: "linha horizontal"
-target: 10
+        correctAnswer: linha horizontal
+  - pageNumber: 2
+    title: Funções e Gráficos — Conjunto 17 – Página 2
+    description: Que tipo de gráfico tem f(x) = x²?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Funções e Gráficos — Conjunto 17 – Página 3
+    description: Que tipo de gráfico tem f(x) = x²?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Funções e Gráficos — Conjunto 17 – Página 4
+    description: Que tipo de gráfico tem f(x) = x²?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Funções e Gráficos — Conjunto 17 – Página 5
+    description: Que tipo de gráfico tem f(x) = x²?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Funções e Gráficos — Conjunto 17 – Página 6
+    description: Que tipo de gráfico tem f(x) = x²?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Funções e Gráficos — Conjunto 17 – Página 7
+    description: Que tipo de gráfico tem f(x) = x²?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Funções e Gráficos — Conjunto 17 – Página 8
+    description: Que tipo de gráfico tem f(x) = x²?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Funções e Gráficos — Conjunto 17 – Página 9
+    description: Que tipo de gráfico tem f(x) = x²?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Funções e Gráficos — Conjunto 17 – Página 10
+    description: Que tipo de gráfico tem f(x) = x²?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

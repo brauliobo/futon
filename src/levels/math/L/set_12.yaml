@@ -4,73 +4,172 @@ example: "Identidades de soma e diferença. Ex.: sen(A + B) = sen(A)cos(B) + cos
 subject: math
 pages:
   - pageNumber: 1
-    title: Identidades de Soma – Página 1
+    title: Identidades de Soma — Conjunto 12 – Página 1
     description: Use a identidade sen(A + B).
     exercises:
-      - type: sum_identity
-        question: "sen(30° + 45°) = ?"
-        correctAnswer: "(√6 + √2)/4"
+      - &a1
+        type: sum_identity
+        question: sen(30° + 45°) = ?
+        correctAnswer: (√6 + √2)/4
+      - &a2
+        type: sum_identity
+        question: sen(45° + 30°) = ?
+        correctAnswer: (√6 + √2)/4
+      - &a3
+        type: sum_identity
+        question: cos(30° + 45°) = ?
+        correctAnswer: (√6 - √2)/4
+      - &a4
+        type: sum_identity
+        question: cos(45° + 30°) = ?
+        correctAnswer: (√6 - √2)/4
+      - &a5
+        type: sum_identity
+        question: sen(45° - 30°) = ?
+        correctAnswer: (√6 - √2)/4
+      - &a6
+        type: sum_identity
+        question: sen(60° - 30°) = ?
+        correctAnswer: 1/2
+      - &a7
+        type: sum_identity
+        question: cos(45° - 30°) = ?
+        correctAnswer: (√6 + √2)/4
+      - &a8
+        type: sum_identity
+        question: cos(60° - 30°) = ?
+        correctAnswer: √3/2
+      - &a9
+        type: sum_identity
+        question: sen(75°) = sen(45° + 30°) = ?
+        correctAnswer: (√6 + √2)/4
+      - &a10
+        type: sum_identity
+        question: cos(15°) = cos(45° - 30°) = ?
+        correctAnswer: (√6 + √2)/4
   - pageNumber: 2
-    title: Identidades de Soma – Página 2
+    title: Identidades de Soma — Conjunto 12 – Página 2
     description: Use a identidade sen(A + B).
     exercises:
-      - type: sum_identity
-        question: "sen(45° + 30°) = ?"
-        correctAnswer: "(√6 + √2)/4"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 3
-    title: Identidades de Soma – Página 3
-    description: Use a identidade cos(A + B).
+    title: Identidades de Soma — Conjunto 12 – Página 3
+    description: Use a identidade sen(A + B).
     exercises:
-      - type: sum_identity
-        question: "cos(30° + 45°) = ?"
-        correctAnswer: "(√6 - √2)/4"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 4
-    title: Identidades de Soma – Página 4
-    description: Use a identidade cos(A + B).
+    title: Identidades de Soma — Conjunto 12 – Página 4
+    description: Use a identidade sen(A + B).
     exercises:
-      - type: sum_identity
-        question: "cos(45° + 30°) = ?"
-        correctAnswer: "(√6 - √2)/4"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 5
-    title: Identidades de Soma – Página 5
-    description: Use a identidade sen(A - B).
+    title: Identidades de Soma — Conjunto 12 – Página 5
+    description: Use a identidade sen(A + B).
     exercises:
-      - type: sum_identity
-        question: "sen(45° - 30°) = ?"
-        correctAnswer: "(√6 - √2)/4"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 6
-    title: Identidades de Soma – Página 6
-    description: Use a identidade sen(A - B).
+    title: Identidades de Soma — Conjunto 12 – Página 6
+    description: Use a identidade sen(A + B).
     exercises:
-      - type: sum_identity
-        question: "sen(60° - 30°) = ?"
-        correctAnswer: "1/2"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 7
-    title: Identidades de Soma – Página 7
-    description: Use a identidade cos(A - B).
+    title: Identidades de Soma — Conjunto 12 – Página 7
+    description: Use a identidade sen(A + B).
     exercises:
-      - type: sum_identity
-        question: "cos(45° - 30°) = ?"
-        correctAnswer: "(√6 + √2)/4"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 8
-    title: Identidades de Soma – Página 8
-    description: Use a identidade cos(A - B).
+    title: Identidades de Soma — Conjunto 12 – Página 8
+    description: Use a identidade sen(A + B).
     exercises:
-      - type: sum_identity
-        question: "cos(60° - 30°) = ?"
-        correctAnswer: "√3/2"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 9
-    title: Identidades de Soma – Página 9
-    description: Use identidades para calcular.
+    title: Identidades de Soma — Conjunto 12 – Página 9
+    description: Use a identidade sen(A + B).
     exercises:
-      - type: sum_identity
-        question: "sen(75°) = sen(45° + 30°) = ?"
-        correctAnswer: "(√6 + √2)/4"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 10
-    title: Identidades de Soma – Página 10
-    description: Use identidades para calcular.
+    title: Identidades de Soma — Conjunto 12 – Página 10
+    description: Use a identidade sen(A + B).
     exercises:
-      - type: sum_identity
-        question: "cos(15°) = cos(45° - 30°) = ?"
-        correctAnswer: "(√6 + √2)/4"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

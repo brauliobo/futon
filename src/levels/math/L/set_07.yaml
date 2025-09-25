@@ -4,73 +4,172 @@ example: "Funções trigonométricas em radianos. Ex.: tan(π/4) = 1"
 subject: math
 pages:
   - pageNumber: 1
-    title: Tangente em Radianos – Página 1
+    title: Tangente em Radianos — Conjunto 7 – Página 1
     description: Calcule a tangente em radianos.
     exercises:
-      - type: trigonometry_radians
+      - &a1
+        type: trigonometry_radians
         question: tan(0) = ?
         correctAnswer: "0"
-  - pageNumber: 2
-    title: Tangente em Radianos – Página 2
-    description: Calcule a tangente em radianos.
-    exercises:
-      - type: trigonometry_radians
+      - &a2
+        type: trigonometry_radians
         question: tan(π/6) = ?
-        correctAnswer: "√3/3"
-  - pageNumber: 3
-    title: Tangente em Radianos – Página 3
-    description: Calcule a tangente em radianos.
-    exercises:
-      - type: trigonometry_radians
+        correctAnswer: √3/3
+      - &a3
+        type: trigonometry_radians
         question: tan(π/4) = ?
         correctAnswer: "1"
-  - pageNumber: 4
-    title: Tangente em Radianos – Página 4
-    description: Calcule a tangente em radianos.
-    exercises:
-      - type: trigonometry_radians
+      - &a4
+        type: trigonometry_radians
         question: tan(π/3) = ?
-        correctAnswer: "√3"
-  - pageNumber: 5
-    title: Tangente em Radianos – Página 5
-    description: Calcule a tangente em radianos.
-    exercises:
-      - type: trigonometry_radians
+        correctAnswer: √3
+      - &a5
+        type: trigonometry_radians
         question: tan(2π/3) = ?
-        correctAnswer: "-√3"
-  - pageNumber: 6
-    title: Tangente em Radianos – Página 6
-    description: Calcule a tangente em radianos.
-    exercises:
-      - type: trigonometry_radians
+        correctAnswer: -√3
+      - &a6
+        type: trigonometry_radians
         question: tan(3π/4) = ?
         correctAnswer: "-1"
-  - pageNumber: 7
-    title: Tangente em Radianos – Página 7
-    description: Calcule a tangente em radianos.
-    exercises:
-      - type: trigonometry_radians
+      - &a7
+        type: trigonometry_radians
         question: tan(5π/6) = ?
-        correctAnswer: "-√3/3"
-  - pageNumber: 8
-    title: Tangente em Radianos – Página 8
-    description: Calcule a tangente em radianos.
-    exercises:
-      - type: trigonometry_radians
+        correctAnswer: -√3/3
+      - &a8
+        type: trigonometry_radians
         question: tan(π) = ?
         correctAnswer: "0"
-  - pageNumber: 9
-    title: Tangente em Radianos – Página 9
-    description: Calcule a tangente em radianos.
-    exercises:
-      - type: trigonometry_radians
+      - &a9
+        type: trigonometry_radians
         question: tan(5π/4) = ?
         correctAnswer: "1"
-  - pageNumber: 10
-    title: Tangente em Radianos – Página 10
-    description: Calcule a tangente em radianos.
-    exercises:
-      - type: trigonometry_radians
+      - &a10
+        type: trigonometry_radians
         question: tan(7π/4) = ?
         correctAnswer: "-1"
-target: 10
+  - pageNumber: 2
+    title: Tangente em Radianos — Conjunto 7 – Página 2
+    description: Calcule a tangente em radianos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Tangente em Radianos — Conjunto 7 – Página 3
+    description: Calcule a tangente em radianos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Tangente em Radianos — Conjunto 7 – Página 4
+    description: Calcule a tangente em radianos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Tangente em Radianos — Conjunto 7 – Página 5
+    description: Calcule a tangente em radianos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Tangente em Radianos — Conjunto 7 – Página 6
+    description: Calcule a tangente em radianos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Tangente em Radianos — Conjunto 7 – Página 7
+    description: Calcule a tangente em radianos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Tangente em Radianos — Conjunto 7 – Página 8
+    description: Calcule a tangente em radianos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Tangente em Radianos — Conjunto 7 – Página 9
+    description: Calcule a tangente em radianos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Tangente em Radianos — Conjunto 7 – Página 10
+    description: Calcule a tangente em radianos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

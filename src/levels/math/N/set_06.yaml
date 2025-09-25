@@ -4,73 +4,172 @@ example: "Derivadas de funções trigonométricas. Ex.: d/dx (csc x) = -csc x co
 subject: math
 pages:
   - pageNumber: 1
-    title: Derivadas Trigonométricas – Página 1
+    title: Derivadas Trigonométricas — Conjunto 6 – Página 1
     description: Calcule as derivadas das funções trigonométricas.
     exercises:
-      - type: reading
+      - &a1
+        type: reading
         question: d/dx (sec x) =
-        correctAnswer: "sec x tan x"
-  - pageNumber: 2
-    title: Derivadas Trigonométricas – Página 2
-    description: Calcule as derivadas das funções trigonométricas.
-    exercises:
-      - type: reading
+        correctAnswer: sec x tan x
+      - &a2
+        type: reading
         question: d/dx (csc x) =
-        correctAnswer: "-csc x cot x"
-  - pageNumber: 3
-    title: Derivadas Trigonométricas – Página 3
-    description: Calcule as derivadas das funções trigonométricas.
-    exercises:
-      - type: reading
+        correctAnswer: -csc x cot x
+      - &a3
+        type: reading
         question: d/dx (cot x) =
-        correctAnswer: "-csc²x"
-  - pageNumber: 4
-    title: Derivadas Trigonométricas – Página 4
-    description: Calcule as derivadas das funções trigonométricas.
-    exercises:
-      - type: reading
+        correctAnswer: -csc²x
+      - &a4
+        type: reading
         question: d/dx (arcsin x) =
-        correctAnswer: "1/√(1-x²)"
-  - pageNumber: 5
-    title: Derivadas Trigonométricas – Página 5
-    description: Calcule as derivadas das funções trigonométricas.
-    exercises:
-      - type: reading
+        correctAnswer: 1/√(1-x²)
+      - &a5
+        type: reading
         question: d/dx (arccos x) =
-        correctAnswer: "-1/√(1-x²)"
-  - pageNumber: 6
-    title: Derivadas Trigonométricas – Página 6
-    description: Calcule as derivadas das funções trigonométricas.
-    exercises:
-      - type: reading
+        correctAnswer: -1/√(1-x²)
+      - &a6
+        type: reading
         question: d/dx (arctan x) =
-        correctAnswer: "1/(1+x²)"
-  - pageNumber: 7
-    title: Derivadas Trigonométricas – Página 7
-    description: Calcule as derivadas das funções trigonométricas.
-    exercises:
-      - type: reading
+        correctAnswer: 1/(1+x²)
+      - &a7
+        type: reading
         question: d/dx (sin²x) =
-        correctAnswer: "sin(2x)"
-  - pageNumber: 8
-    title: Derivadas Trigonométricas – Página 8
-    description: Calcule as derivadas das funções trigonométricas.
-    exercises:
-      - type: reading
+        correctAnswer: sin(2x)
+      - &a8
+        type: reading
         question: d/dx (cos²x) =
-        correctAnswer: "-sin(2x)"
-  - pageNumber: 9
-    title: Derivadas Trigonométricas – Página 9
-    description: Calcule as derivadas das funções trigonométricas.
-    exercises:
-      - type: reading
+        correctAnswer: -sin(2x)
+      - &a9
+        type: reading
         question: d/dx (tan²x) =
-        correctAnswer: "2 tan x sec²x"
-  - pageNumber: 10
-    title: Derivadas Trigonométricas – Página 10
+        correctAnswer: 2 tan x sec²x
+      - &a10
+        type: reading
+        question: d/dx (sin(cos x)) =
+        correctAnswer: -sin x cos(cos x)
+  - pageNumber: 2
+    title: Derivadas Trigonométricas — Conjunto 6 – Página 2
     description: Calcule as derivadas das funções trigonométricas.
     exercises:
-      - type: reading
-        question: d/dx (sin(cos x)) =
-        correctAnswer: "-sin x cos(cos x)"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Derivadas Trigonométricas — Conjunto 6 – Página 3
+    description: Calcule as derivadas das funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Derivadas Trigonométricas — Conjunto 6 – Página 4
+    description: Calcule as derivadas das funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Derivadas Trigonométricas — Conjunto 6 – Página 5
+    description: Calcule as derivadas das funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Derivadas Trigonométricas — Conjunto 6 – Página 6
+    description: Calcule as derivadas das funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Derivadas Trigonométricas — Conjunto 6 – Página 7
+    description: Calcule as derivadas das funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Derivadas Trigonométricas — Conjunto 6 – Página 8
+    description: Calcule as derivadas das funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Derivadas Trigonométricas — Conjunto 6 – Página 9
+    description: Calcule as derivadas das funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Derivadas Trigonométricas — Conjunto 6 – Página 10
+    description: Calcule as derivadas das funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

@@ -4,73 +4,172 @@ example: "Frações com denominadores maiores. Ex.: 5/12 + 3/12 = 8/12"
 subject: math
 pages:
   - pageNumber: 1
-    title: Frações Próprias – Página 1
+    title: Frações Próprias Grandes — Conjunto 8 – Página 1
     description: Frações com denominadores maiores.
     exercises:
-      - type: fraction_add
+      - &a1
+        type: fraction_add
         question: 5/12 + 3/12 =
-        correctAnswer: "8/12"
-  - pageNumber: 2
-    title: Frações Próprias – Página 2
-    description: Frações com denominadores maiores.
-    exercises:
-      - type: fraction_add
+        correctAnswer: 8/12
+      - &a2
+        type: fraction_add
         question: 7/16 + 5/16 =
-        correctAnswer: "12/16"
-  - pageNumber: 3
-    title: Frações Próprias – Página 3
-    description: Frações com denominadores maiores.
-    exercises:
-      - type: fraction_add
+        correctAnswer: 12/16
+      - &a3
+        type: fraction_add
         question: 4/18 + 7/18 =
-        correctAnswer: "11/18"
-  - pageNumber: 4
-    title: Frações Próprias – Página 4
-    description: Frações com denominadores maiores.
-    exercises:
-      - type: fraction_sub
+        correctAnswer: 11/18
+      - &a4
+        type: fraction_sub
         question: 11/14 - 5/14 =
-        correctAnswer: "6/14"
-  - pageNumber: 5
-    title: Frações Próprias – Página 5
-    description: Frações com denominadores maiores.
-    exercises:
-      - type: fraction_sub
+        correctAnswer: 6/14
+      - &a5
+        type: fraction_sub
         question: 13/20 - 7/20 =
-        correctAnswer: "6/20"
-  - pageNumber: 6
-    title: Frações Próprias – Página 6
-    description: Frações com denominadores maiores.
-    exercises:
-      - type: fraction_sub
+        correctAnswer: 6/20
+      - &a6
+        type: fraction_sub
         question: 15/24 - 9/24 =
-        correctAnswer: "6/24"
-  - pageNumber: 7
-    title: Frações Próprias – Página 7
-    description: Frações com denominadores maiores.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 6/24
+      - &a7
+        type: fraction_mixed
         question: 8/15 + 4/15 =
-        correctAnswer: "12/15"
-  - pageNumber: 8
-    title: Frações Próprias – Página 8
-    description: Frações com denominadores maiores.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 12/15
+      - &a8
+        type: fraction_mixed
         question: 14/18 - 6/18 =
-        correctAnswer: "8/18"
-  - pageNumber: 9
-    title: Frações Próprias – Página 9
-    description: Frações com denominadores maiores.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 8/18
+      - &a9
+        type: fraction_mixed
         question: 9/21 + 7/21 =
-        correctAnswer: "16/21"
-  - pageNumber: 10
-    title: Frações Próprias – Página 10
+        correctAnswer: 16/21
+      - &a10
+        type: fraction_mixed
+        question: 17/25 - 8/25 =
+        correctAnswer: 9/25
+  - pageNumber: 2
+    title: Frações Próprias Grandes — Conjunto 8 – Página 2
     description: Frações com denominadores maiores.
     exercises:
-      - type: fraction_mixed
-        question: 17/25 - 8/25 =
-        correctAnswer: "9/25"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Frações Próprias Grandes — Conjunto 8 – Página 3
+    description: Frações com denominadores maiores.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Frações Próprias Grandes — Conjunto 8 – Página 4
+    description: Frações com denominadores maiores.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Frações Próprias Grandes — Conjunto 8 – Página 5
+    description: Frações com denominadores maiores.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Frações Próprias Grandes — Conjunto 8 – Página 6
+    description: Frações com denominadores maiores.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Frações Próprias Grandes — Conjunto 8 – Página 7
+    description: Frações com denominadores maiores.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Frações Próprias Grandes — Conjunto 8 – Página 8
+    description: Frações com denominadores maiores.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Frações Próprias Grandes — Conjunto 8 – Página 9
+    description: Frações com denominadores maiores.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Frações Próprias Grandes — Conjunto 8 – Página 10
+    description: Frações com denominadores maiores.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

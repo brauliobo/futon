@@ -4,73 +4,172 @@ example: "Integre em coordenadas polares: ∫∫ f(r,θ) r dr dθ"
 subject: math
 pages:
   - pageNumber: 1
-    title: Coordenadas Polares – Página 1
+    title: Coordenadas Polares — Conjunto 14 – Página 1
     description: Converta para coordenadas polares.
     exercises:
-      - type: quadratic
-        question: "Converta x² + y² = 4 para polar"
-        correctAnswer: "r = 2"
+      - &a1
+        type: quadratic
+        question: Converta x² + y² = 4 para polar
+        correctAnswer: r = 2
+      - &a2
+        type: quadratic
+        question: Converta x = 3 para polar
+        correctAnswer: r cos θ = 3
+      - &a3
+        type: quadratic
+        question: ∫∫ r² r dr dθ sobre círculo r ≤ 2
+        correctAnswer: 8π
+      - &a4
+        type: quadratic
+        question: ∫∫ r dr dθ sobre círculo r ≤ 1
+        correctAnswer: π
+      - &a5
+        type: quadratic
+        question: Área de r = sin θ
+        correctAnswer: π/4
+      - &a6
+        type: quadratic
+        question: Área de r = 1 + cos θ
+        correctAnswer: 3π/2
+      - &a7
+        type: quadratic
+        question: Área de r = 2 cos θ
+        correctAnswer: π
+      - &a8
+        type: quadratic
+        question: Comprimento de r = θ, 0 ≤ θ ≤ 2π
+        correctAnswer: π√(1 + 4π²)
+      - &a9
+        type: quadratic
+        question: Comprimento de r = 2, 0 ≤ θ ≤ π
+        correctAnswer: 2π
+      - &a10
+        type: quadratic
+        question: I em relação ao eixo z de círculo r ≤ a
+        correctAnswer: πa⁴/2
   - pageNumber: 2
-    title: Coordenadas Polares – Página 2
+    title: Coordenadas Polares — Conjunto 14 – Página 2
     description: Converta para coordenadas polares.
     exercises:
-      - type: quadratic
-        question: "Converta x = 3 para polar"
-        correctAnswer: "r cos θ = 3"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 3
-    title: Coordenadas Polares – Página 3
-    description: Calcule integrais em polares.
+    title: Coordenadas Polares — Conjunto 14 – Página 3
+    description: Converta para coordenadas polares.
     exercises:
-      - type: quadratic
-        question: "∫∫ r² r dr dθ sobre círculo r ≤ 2"
-        correctAnswer: "8π"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 4
-    title: Coordenadas Polares – Página 4
-    description: Calcule integrais em polares.
+    title: Coordenadas Polares — Conjunto 14 – Página 4
+    description: Converta para coordenadas polares.
     exercises:
-      - type: quadratic
-        question: "∫∫ r dr dθ sobre círculo r ≤ 1"
-        correctAnswer: "π"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 5
-    title: Coordenadas Polares – Página 5
-    description: Calcule área em polares.
+    title: Coordenadas Polares — Conjunto 14 – Página 5
+    description: Converta para coordenadas polares.
     exercises:
-      - type: quadratic
-        question: "Área de r = sin θ"
-        correctAnswer: "π/4"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 6
-    title: Coordenadas Polares – Página 6
-    description: Calcule área em polares.
+    title: Coordenadas Polares — Conjunto 14 – Página 6
+    description: Converta para coordenadas polares.
     exercises:
-      - type: quadratic
-        question: "Área de r = 1 + cos θ"
-        correctAnswer: "3π/2"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 7
-    title: Coordenadas Polares – Página 7
-    description: Calcule área em polares.
+    title: Coordenadas Polares — Conjunto 14 – Página 7
+    description: Converta para coordenadas polares.
     exercises:
-      - type: quadratic
-        question: "Área de r = 2 cos θ"
-        correctAnswer: "π"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 8
-    title: Coordenadas Polares – Página 8
-    description: Calcule comprimento de arco.
+    title: Coordenadas Polares — Conjunto 14 – Página 8
+    description: Converta para coordenadas polares.
     exercises:
-      - type: quadratic
-        question: "Comprimento de r = θ, 0 ≤ θ ≤ 2π"
-        correctAnswer: "π√(1 + 4π²)"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 9
-    title: Coordenadas Polares – Página 9
-    description: Calcule comprimento de arco.
+    title: Coordenadas Polares — Conjunto 14 – Página 9
+    description: Converta para coordenadas polares.
     exercises:
-      - type: quadratic
-        question: "Comprimento de r = 2, 0 ≤ θ ≤ π"
-        correctAnswer: "2π"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 10
-    title: Coordenadas Polares – Página 10
-    description: Calcule momento de inércia.
+    title: Coordenadas Polares — Conjunto 14 – Página 10
+    description: Converta para coordenadas polares.
     exercises:
-      - type: quadratic
-        question: "I em relação ao eixo z de círculo r ≤ a"
-        correctAnswer: "πa⁴/2"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

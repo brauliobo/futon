@@ -4,73 +4,172 @@ example: "Revisão geral. Ex.: aplicação de conceitos avançados"
 subject: math
 pages:
   - pageNumber: 1
-    title: Álgebra Avançada – Página 1
+    title: Álgebra Avançada — Conjunto 20 – Página 1
     description: Revisão e aplicação de conceitos.
     exercises:
-      - type: algebra
+      - &a1
+        type: algebra
         question: "Resolva o sistema: x+y=3, x-y=1"
         correctAnswer: x=2, y=1
-  - pageNumber: 2
-    title: Álgebra Avançada – Página 2
-    description: Revisão e aplicação de conceitos.
-    exercises:
-      - type: algebra
+      - &a2
+        type: algebra
         question: "Fatorize completamente: x⁴ - 16"
-        correctAnswer: "(x²-4)(x²+4) = (x-2)(x+2)(x²+4)"
-  - pageNumber: 3
-    title: Álgebra Avançada – Página 3
-    description: Revisão e aplicação de conceitos.
-    exercises:
-      - type: algebra
+        correctAnswer: (x²-4)(x²+4) = (x-2)(x+2)(x²+4)
+      - &a3
+        type: algebra
         question: "Simplifique: (x²-1)/(x+1)"
         correctAnswer: x-1
-  - pageNumber: 4
-    title: Álgebra Avançada – Página 4
-    description: Revisão e aplicação de conceitos.
-    exercises:
-      - type: algebra
+      - &a4
+        type: algebra
         question: "Calcule: log₂(8) + log₂(4)"
         correctAnswer: 5
-  - pageNumber: 5
-    title: Álgebra Avançada – Página 5
-    description: Revisão e aplicação de conceitos.
-    exercises:
-      - type: algebra
+      - &a5
+        type: algebra
         question: "Derivada de f(x) = x³ - 3x²:"
-        correctAnswer: "f'(x) = 3x² - 6x"
-  - pageNumber: 6
-    title: Álgebra Avançada – Página 6
-    description: Revisão e aplicação de conceitos.
-    exercises:
-      - type: algebra
-        question: "∫(2x + 1)dx ="
-        correctAnswer: "x² + x + C"
-  - pageNumber: 7
-    title: Álgebra Avançada – Página 7
-    description: Revisão e aplicação de conceitos.
-    exercises:
-      - type: algebra
+        correctAnswer: f'(x) = 3x² - 6x
+      - &a6
+        type: algebra
+        question: ∫(2x + 1)dx =
+        correctAnswer: x² + x + C
+      - &a7
+        type: algebra
         question: "Resolva: |2x - 3| = 5"
         correctAnswer: x = 4 ou x = -1
-  - pageNumber: 8
-    title: Álgebra Avançada – Página 8
-    description: Revisão e aplicação de conceitos.
-    exercises:
-      - type: algebra
+      - &a8
+        type: algebra
         question: "Distância entre (1,2) e (4,6):"
         correctAnswer: 5
-  - pageNumber: 9
-    title: Álgebra Avançada – Página 9
-    description: Revisão e aplicação de conceitos.
-    exercises:
-      - type: algebra
+      - &a9
+        type: algebra
         question: "Equação da parábola com vértice (0,0) e foco (0,1):"
-        correctAnswer: "x² = 4y"
-  - pageNumber: 10
-    title: Álgebra Avançada – Página 10
+        correctAnswer: x² = 4y
+      - &a10
+        type: algebra
+        question: lim(x→∞) (3x²+1)/(x²+x) =
+        correctAnswer: 3
+  - pageNumber: 2
+    title: Álgebra Avançada — Conjunto 20 – Página 2
     description: Revisão e aplicação de conceitos.
     exercises:
-      - type: algebra
-        question: "lim(x→∞) (3x²+1)/(x²+x) ="
-        correctAnswer: 3
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Álgebra Avançada — Conjunto 20 – Página 3
+    description: Revisão e aplicação de conceitos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Álgebra Avançada — Conjunto 20 – Página 4
+    description: Revisão e aplicação de conceitos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Álgebra Avançada — Conjunto 20 – Página 5
+    description: Revisão e aplicação de conceitos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Álgebra Avançada — Conjunto 20 – Página 6
+    description: Revisão e aplicação de conceitos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Álgebra Avançada — Conjunto 20 – Página 7
+    description: Revisão e aplicação de conceitos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Álgebra Avançada — Conjunto 20 – Página 8
+    description: Revisão e aplicação de conceitos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Álgebra Avançada — Conjunto 20 – Página 9
+    description: Revisão e aplicação de conceitos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Álgebra Avançada — Conjunto 20 – Página 10
+    description: Revisão e aplicação de conceitos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

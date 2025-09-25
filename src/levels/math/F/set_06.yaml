@@ -4,73 +4,172 @@ example: "Divida frações. Ex.: 1/2 ÷ 1/3 = 1/2 × 3/1 = 3/2"
 subject: math
 pages:
   - pageNumber: 1
-    title: Frações Divisão – Página 1
+    title: Frações Divisão — Conjunto 6 – Página 1
     description: Divida frações simples.
     exercises:
-      - type: fraction_divide
+      - &a1
+        type: fraction_divide
         question: 1/2 ÷ 1/3 =
-        correctAnswer: "3/2"
-  - pageNumber: 2
-    title: Frações Divisão – Página 2
-    description: Divida frações simples.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 3/2
+      - &a2
+        type: fraction_divide
         question: 1/4 ÷ 1/2 =
-        correctAnswer: "2/4"
-  - pageNumber: 3
-    title: Frações Divisão – Página 3
-    description: Divida frações simples.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 2/4
+      - &a3
+        type: fraction_divide
         question: 2/3 ÷ 1/4 =
-        correctAnswer: "8/3"
-  - pageNumber: 4
-    title: Frações Divisão – Página 4
-    description: Divida frações simples.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 8/3
+      - &a4
+        type: fraction_divide
         question: 3/4 ÷ 1/5 =
-        correctAnswer: "15/4"
-  - pageNumber: 5
-    title: Frações Divisão – Página 5
-    description: Divida frações simples.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 15/4
+      - &a5
+        type: fraction_divide
         question: 2/5 ÷ 1/3 =
-        correctAnswer: "6/5"
-  - pageNumber: 6
-    title: Frações Divisão – Página 6
-    description: Divida frações simples.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 6/5
+      - &a6
+        type: fraction_divide
         question: 3/7 ÷ 1/2 =
-        correctAnswer: "6/7"
-  - pageNumber: 7
-    title: Frações Divisão – Página 7
-    description: Divida frações simples.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 6/7
+      - &a7
+        type: fraction_divide
         question: 5/6 ÷ 2/5 =
-        correctAnswer: "25/12"
-  - pageNumber: 8
-    title: Frações Divisão – Página 8
-    description: Divida frações simples.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 25/12
+      - &a8
+        type: fraction_divide
         question: 4/9 ÷ 1/3 =
-        correctAnswer: "12/9"
-  - pageNumber: 9
-    title: Frações Divisão – Página 9
-    description: Divida frações simples.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 12/9
+      - &a9
+        type: fraction_divide
         question: 7/8 ÷ 5/6 =
-        correctAnswer: "42/40"
-  - pageNumber: 10
-    title: Frações Divisão – Página 10
+        correctAnswer: 42/40
+      - &a10
+        type: fraction_divide
+        question: 3/10 ÷ 2/7 =
+        correctAnswer: 21/20
+  - pageNumber: 2
+    title: Frações Divisão — Conjunto 6 – Página 2
     description: Divida frações simples.
     exercises:
-      - type: fraction_divide
-        question: 3/10 ÷ 2/7 =
-        correctAnswer: "21/20"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Frações Divisão — Conjunto 6 – Página 3
+    description: Divida frações simples.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Frações Divisão — Conjunto 6 – Página 4
+    description: Divida frações simples.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Frações Divisão — Conjunto 6 – Página 5
+    description: Divida frações simples.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Frações Divisão — Conjunto 6 – Página 6
+    description: Divida frações simples.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Frações Divisão — Conjunto 6 – Página 7
+    description: Divida frações simples.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Frações Divisão — Conjunto 6 – Página 8
+    description: Divida frações simples.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Frações Divisão — Conjunto 6 – Página 9
+    description: Divida frações simples.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Frações Divisão — Conjunto 6 – Página 10
+    description: Divida frações simples.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

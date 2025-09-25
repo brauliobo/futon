@@ -4,73 +4,172 @@ example: "Revisão geral de operações com frações. Ex.: 3/8 + 5/8 = 8/8"
 subject: math
 pages:
   - pageNumber: 1
-    title: Frações de Revisão – Página 1
+    title: Frações de Revisão — Conjunto 16 – Página 1
     description: Revisão geral de operações com frações.
     exercises:
-      - type: fraction_add
+      - &a1
+        type: fraction_add
         question: 3/8 + 5/8 =
-        correctAnswer: "8/8"
-  - pageNumber: 2
-    title: Frações de Revisão – Página 2
-    description: Revisão geral de operações com frações.
-    exercises:
-      - type: fraction_sub
+        correctAnswer: 8/8
+      - &a2
+        type: fraction_sub
         question: 7/9 - 4/9 =
-        correctAnswer: "3/9"
-  - pageNumber: 3
-    title: Frações de Revisão – Página 3
-    description: Revisão geral de operações com frações.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 3/9
+      - &a3
+        type: fraction_mixed
         question: 5/12 + 7/12 =
-        correctAnswer: "12/12"
-  - pageNumber: 4
-    title: Frações de Revisão – Página 4
-    description: Revisão geral de operações com frações.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 12/12
+      - &a4
+        type: fraction_mixed
         question: 11/15 - 6/15 =
-        correctAnswer: "5/15"
-  - pageNumber: 5
-    title: Frações de Revisão – Página 5
-    description: Revisão geral de operações com frações.
-    exercises:
-      - type: fraction_add
+        correctAnswer: 5/15
+      - &a5
+        type: fraction_add
         question: 8/16 + 9/16 =
-        correctAnswer: "17/16"
-  - pageNumber: 6
-    title: Frações de Revisão – Página 6
-    description: Revisão geral de operações com frações.
-    exercises:
-      - type: fraction_sub
+        correctAnswer: 17/16
+      - &a6
+        type: fraction_sub
         question: 13/18 - 8/18 =
-        correctAnswer: "5/18"
-  - pageNumber: 7
-    title: Frações de Revisão – Página 7
-    description: Revisão geral de operações com frações.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 5/18
+      - &a7
+        type: fraction_mixed
         question: 9/20 + 12/20 =
-        correctAnswer: "21/20"
-  - pageNumber: 8
-    title: Frações de Revisão – Página 8
-    description: Revisão geral de operações com frações.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 21/20
+      - &a8
+        type: fraction_mixed
         question: 15/22 - 9/22 =
-        correctAnswer: "6/22"
-  - pageNumber: 9
-    title: Frações de Revisão – Página 9
-    description: Revisão geral de operações com frações.
-    exercises:
-      - type: fraction_add
+        correctAnswer: 6/22
+      - &a9
+        type: fraction_add
         question: 11/24 + 14/24 =
-        correctAnswer: "25/24"
-  - pageNumber: 10
-    title: Frações de Revisão – Página 10
+        correctAnswer: 25/24
+      - &a10
+        type: fraction_sub
+        question: 17/26 - 11/26 =
+        correctAnswer: 6/26
+  - pageNumber: 2
+    title: Frações de Revisão — Conjunto 16 – Página 2
     description: Revisão geral de operações com frações.
     exercises:
-      - type: fraction_sub
-        question: 17/26 - 11/26 =
-        correctAnswer: "6/26"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Frações de Revisão — Conjunto 16 – Página 3
+    description: Revisão geral de operações com frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Frações de Revisão — Conjunto 16 – Página 4
+    description: Revisão geral de operações com frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Frações de Revisão — Conjunto 16 – Página 5
+    description: Revisão geral de operações com frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Frações de Revisão — Conjunto 16 – Página 6
+    description: Revisão geral de operações com frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Frações de Revisão — Conjunto 16 – Página 7
+    description: Revisão geral de operações com frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Frações de Revisão — Conjunto 16 – Página 8
+    description: Revisão geral de operações com frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Frações de Revisão — Conjunto 16 – Página 9
+    description: Revisão geral de operações com frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Frações de Revisão — Conjunto 16 – Página 10
+    description: Revisão geral de operações com frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

@@ -4,73 +4,172 @@ example: "Derivada de quocientes. Ex.: d/dx (x/sin x) = (sin x - x cos x)/sin²x
 subject: math
 pages:
   - pageNumber: 1
-    title: Regra do Quociente – Página 1
+    title: Regra do Quociente — Conjunto 5 – Página 1
     description: Use a regra do quociente para derivar.
     exercises:
-      - type: reading
+      - &a1
+        type: reading
         question: d/dx (x²/x³) =
-        correctAnswer: "-1/x²"
-  - pageNumber: 2
-    title: Regra do Quociente – Página 2
-    description: Use a regra do quociente para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: -1/x²
+      - &a2
+        type: reading
         question: d/dx (sin x/x) =
-        correctAnswer: "(x cos x - sin x)/x²"
-  - pageNumber: 3
-    title: Regra do Quociente – Página 3
-    description: Use a regra do quociente para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: (x cos x - sin x)/x²
+      - &a3
+        type: reading
         question: d/dx (e^x/x²) =
-        correctAnswer: "(x² e^x - 2x e^x)/x⁴"
-  - pageNumber: 4
-    title: Regra do Quociente – Página 4
-    description: Use a regra do quociente para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: (x² e^x - 2x e^x)/x⁴
+      - &a4
+        type: reading
         question: d/dx (x/(x² + 1)) =
-        correctAnswer: "(1 - x²)/(x² + 1)²"
-  - pageNumber: 5
-    title: Regra do Quociente – Página 5
-    description: Use a regra do quociente para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: (1 - x²)/(x² + 1)²
+      - &a5
+        type: reading
         question: d/dx (ln x/x) =
-        correctAnswer: "(1 - ln x)/x²"
-  - pageNumber: 6
-    title: Regra do Quociente – Página 6
-    description: Use a regra do quociente para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: (1 - ln x)/x²
+      - &a6
+        type: reading
         question: d/dx (x²/(x² - 1)) =
-        correctAnswer: "-2x/(x² - 1)²"
-  - pageNumber: 7
-    title: Regra do Quociente – Página 7
-    description: Use a regra do quociente para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: -2x/(x² - 1)²
+      - &a7
+        type: reading
         question: d/dx (cos x/sin x) =
-        correctAnswer: "-csc²x"
-  - pageNumber: 8
-    title: Regra do Quociente – Página 8
-    description: Use a regra do quociente para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: -csc²x
+      - &a8
+        type: reading
         question: d/dx ((x + 1)/(x - 1)) =
-        correctAnswer: "-2/(x - 1)²"
-  - pageNumber: 9
-    title: Regra do Quociente – Página 9
-    description: Use a regra do quociente para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: -2/(x - 1)²
+      - &a9
+        type: reading
         question: d/dx (x³/e^x) =
-        correctAnswer: "(3x² - x³)/e^x"
-  - pageNumber: 10
-    title: Regra do Quociente – Página 10
+        correctAnswer: (3x² - x³)/e^x
+      - &a10
+        type: reading
+        question: d/dx (tan x/x) =
+        correctAnswer: (x sec²x - tan x)/x²
+  - pageNumber: 2
+    title: Regra do Quociente — Conjunto 5 – Página 2
     description: Use a regra do quociente para derivar.
     exercises:
-      - type: reading
-        question: d/dx (tan x/x) =
-        correctAnswer: "(x sec²x - tan x)/x²"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Regra do Quociente — Conjunto 5 – Página 3
+    description: Use a regra do quociente para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Regra do Quociente — Conjunto 5 – Página 4
+    description: Use a regra do quociente para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Regra do Quociente — Conjunto 5 – Página 5
+    description: Use a regra do quociente para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Regra do Quociente — Conjunto 5 – Página 6
+    description: Use a regra do quociente para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Regra do Quociente — Conjunto 5 – Página 7
+    description: Use a regra do quociente para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Regra do Quociente — Conjunto 5 – Página 8
+    description: Use a regra do quociente para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Regra do Quociente — Conjunto 5 – Página 9
+    description: Use a regra do quociente para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Regra do Quociente — Conjunto 5 – Página 10
+    description: Use a regra do quociente para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

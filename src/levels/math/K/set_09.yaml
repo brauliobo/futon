@@ -4,73 +4,172 @@ example: "Identifique crescimento e decrescimento. Ex.: f(x) = x² é crescente 
 subject: math
 pages:
   - pageNumber: 1
-    title: Funções e Gráficos – Página 1
+    title: Funções e Gráficos — Conjunto 9 – Página 1
     description: f(x) = x é crescente ou decrescente?
     exercises:
-      - type: quadratic
+      - &a1
+        type: quadratic
         question: f(x) = x é crescente ou decrescente?
-        correctAnswer: "crescente"
-  - pageNumber: 2
-    title: Funções e Gráficos – Página 2
-    description: f(x) = -x é crescente ou decrescente?
-    exercises:
-      - type: quadratic
+        correctAnswer: crescente
+      - &a2
+        type: quadratic
         question: f(x) = -x é crescente ou decrescente?
-        correctAnswer: "decrescente"
-  - pageNumber: 3
-    title: Funções e Gráficos – Página 3
-    description: f(x) = 2x + 1 é crescente ou decrescente?
-    exercises:
-      - type: quadratic
+        correctAnswer: decrescente
+      - &a3
+        type: quadratic
         question: f(x) = 2x + 1 é crescente ou decrescente?
-        correctAnswer: "crescente"
-  - pageNumber: 4
-    title: Funções e Gráficos – Página 4
-    description: f(x) = -3x + 2 é crescente ou decrescente?
-    exercises:
-      - type: quadratic
+        correctAnswer: crescente
+      - &a4
+        type: quadratic
         question: f(x) = -3x + 2 é crescente ou decrescente?
-        correctAnswer: "decrescente"
-  - pageNumber: 5
-    title: Funções e Gráficos – Página 5
-    description: f(x) = x² é crescente para x > 0?
-    exercises:
-      - type: quadratic
+        correctAnswer: decrescente
+      - &a5
+        type: quadratic
         question: f(x) = x² é crescente para x > 0?
-        correctAnswer: "sim"
-  - pageNumber: 6
-    title: Funções e Gráficos – Página 6
-    description: f(x) = x² é crescente para x < 0?
-    exercises:
-      - type: quadratic
+        correctAnswer: sim
+      - &a6
+        type: quadratic
         question: f(x) = x² é crescente para x < 0?
-        correctAnswer: "não"
-  - pageNumber: 7
-    title: Funções e Gráficos – Página 7
-    description: f(x) = -x² + 4 é crescente para x > 0?
-    exercises:
-      - type: quadratic
+        correctAnswer: não
+      - &a7
+        type: quadratic
         question: f(x) = -x² + 4 é crescente para x > 0?
-        correctAnswer: "não"
-  - pageNumber: 8
-    title: Funções e Gráficos – Página 8
-    description: f(x) = √x é crescente?
-    exercises:
-      - type: quadratic
+        correctAnswer: não
+      - &a8
+        type: quadratic
         question: f(x) = √x é crescente?
-        correctAnswer: "sim"
-  - pageNumber: 9
-    title: Funções e Gráficos – Página 9
-    description: f(x) = 1/x é crescente para x > 0?
-    exercises:
-      - type: quadratic
+        correctAnswer: sim
+      - &a9
+        type: quadratic
         question: f(x) = 1/x é crescente para x > 0?
-        correctAnswer: "não"
-  - pageNumber: 10
-    title: Funções e Gráficos – Página 10
-    description: f(x) = 5 é crescente ou decrescente?
-    exercises:
-      - type: quadratic
+        correctAnswer: não
+      - &a10
+        type: quadratic
         question: f(x) = 5 é crescente ou decrescente?
-        correctAnswer: "constante"
-target: 10
+        correctAnswer: constante
+  - pageNumber: 2
+    title: Funções e Gráficos — Conjunto 9 – Página 2
+    description: f(x) = x é crescente ou decrescente?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Funções e Gráficos — Conjunto 9 – Página 3
+    description: f(x) = x é crescente ou decrescente?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Funções e Gráficos — Conjunto 9 – Página 4
+    description: f(x) = x é crescente ou decrescente?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Funções e Gráficos — Conjunto 9 – Página 5
+    description: f(x) = x é crescente ou decrescente?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Funções e Gráficos — Conjunto 9 – Página 6
+    description: f(x) = x é crescente ou decrescente?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Funções e Gráficos — Conjunto 9 – Página 7
+    description: f(x) = x é crescente ou decrescente?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Funções e Gráficos — Conjunto 9 – Página 8
+    description: f(x) = x é crescente ou decrescente?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Funções e Gráficos — Conjunto 9 – Página 9
+    description: f(x) = x é crescente ou decrescente?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Funções e Gráficos — Conjunto 9 – Página 10
+    description: f(x) = x é crescente ou decrescente?
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

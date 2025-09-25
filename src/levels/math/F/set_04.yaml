@@ -4,73 +4,172 @@ example: "Multiplique frações com simplificação. Ex.: 6/8 × 4/9 = 24/72 = 1
 subject: math
 pages:
   - pageNumber: 1
-    title: Frações Multiplicação – Página 1
+    title: Frações Multiplicação — Conjunto 4 – Página 1
     description: Multiplique frações e simplifique quando possível.
     exercises:
-      - type: fraction_multiply
+      - &a1
+        type: fraction_multiply
         question: 6/8 × 4/9 =
-        correctAnswer: "24/72"
-  - pageNumber: 2
-    title: Frações Multiplicação – Página 2
-    description: Multiplique frações e simplifique quando possível.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 24/72
+      - &a2
+        type: fraction_multiply
         question: 9/12 × 8/15 =
-        correctAnswer: "72/180"
-  - pageNumber: 3
-    title: Frações Multiplicação – Página 3
-    description: Multiplique frações e simplifique quando possível.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 72/180
+      - &a3
+        type: fraction_multiply
         question: 10/14 × 7/20 =
-        correctAnswer: "70/280"
-  - pageNumber: 4
-    title: Frações Multiplicação – Página 4
-    description: Multiplique frações e simplifique quando possível.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 70/280
+      - &a4
+        type: fraction_multiply
         question: 12/16 × 6/18 =
-        correctAnswer: "72/288"
-  - pageNumber: 5
-    title: Frações Multiplicação – Página 5
-    description: Multiplique frações e simplifique quando possível.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 72/288
+      - &a5
+        type: fraction_multiply
         question: 15/21 × 14/25 =
-        correctAnswer: "210/525"
-  - pageNumber: 6
-    title: Frações Multiplicação – Página 6
-    description: Multiplique frações e simplifique quando possível.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 210/525
+      - &a6
+        type: fraction_multiply
         question: 8/24 × 18/12 =
-        correctAnswer: "144/288"
-  - pageNumber: 7
-    title: Frações Multiplicação – Página 7
-    description: Multiplique frações e simplifique quando possível.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 144/288
+      - &a7
+        type: fraction_multiply
         question: 20/30 × 9/16 =
-        correctAnswer: "180/480"
-  - pageNumber: 8
-    title: Frações Multiplicação – Página 8
-    description: Multiplique frações e simplifique quando possível.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 180/480
+      - &a8
+        type: fraction_multiply
         question: 22/33 × 15/44 =
-        correctAnswer: "330/1452"
-  - pageNumber: 9
-    title: Frações Multiplicação – Página 9
-    description: Multiplique frações e simplifique quando possível.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 330/1452
+      - &a9
+        type: fraction_multiply
         question: 18/27 × 21/36 =
-        correctAnswer: "378/972"
-  - pageNumber: 10
-    title: Frações Multiplicação – Página 10
+        correctAnswer: 378/972
+      - &a10
+        type: fraction_multiply
+        question: 24/36 × 28/42 =
+        correctAnswer: 672/1512
+  - pageNumber: 2
+    title: Frações Multiplicação — Conjunto 4 – Página 2
     description: Multiplique frações e simplifique quando possível.
     exercises:
-      - type: fraction_multiply
-        question: 24/36 × 28/42 =
-        correctAnswer: "672/1512"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Frações Multiplicação — Conjunto 4 – Página 3
+    description: Multiplique frações e simplifique quando possível.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Frações Multiplicação — Conjunto 4 – Página 4
+    description: Multiplique frações e simplifique quando possível.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Frações Multiplicação — Conjunto 4 – Página 5
+    description: Multiplique frações e simplifique quando possível.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Frações Multiplicação — Conjunto 4 – Página 6
+    description: Multiplique frações e simplifique quando possível.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Frações Multiplicação — Conjunto 4 – Página 7
+    description: Multiplique frações e simplifique quando possível.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Frações Multiplicação — Conjunto 4 – Página 8
+    description: Multiplique frações e simplifique quando possível.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Frações Multiplicação — Conjunto 4 – Página 9
+    description: Multiplique frações e simplifique quando possível.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Frações Multiplicação — Conjunto 4 – Página 10
+    description: Multiplique frações e simplifique quando possível.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

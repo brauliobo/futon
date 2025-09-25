@@ -4,73 +4,172 @@ example: "Séries de Taylor. Ex.: sin(x) = x - x³/3! + x⁵/5! - ..."
 subject: math
 pages:
   - pageNumber: 1
-    title: Séries de Taylor – Página 1
+    title: Trigonometria Avançada e Séries — Conjunto 4 – Página 1
     description: Séries de Taylor para funções trigonométricas.
     exercises:
-      - type: series
+      - &a1
+        type: series
         question: "Os primeiros 3 termos da série de Taylor para sin(x) são:"
-        correctAnswer: "x - x³/6 + x⁵/120"
-  - pageNumber: 2
-    title: Séries de Taylor – Página 2
-    description: Séries de Taylor para funções trigonométricas.
-    exercises:
-      - type: series
+        correctAnswer: x - x³/6 + x⁵/120
+      - &a2
+        type: series
         question: "Os primeiros 3 termos da série de Taylor para cos(x) são:"
-        correctAnswer: "1 - x²/2 + x⁴/24"
-  - pageNumber: 3
-    title: Séries de Taylor – Página 3
-    description: Séries de Taylor para funções trigonométricas.
-    exercises:
-      - type: series
+        correctAnswer: 1 - x²/2 + x⁴/24
+      - &a3
+        type: series
         question: "Aproxime sin(0.1) usando os primeiros 2 termos da série de Taylor:"
         correctAnswer: "0.0998"
-  - pageNumber: 4
-    title: Séries de Taylor – Página 4
-    description: Séries de Taylor para funções trigonométricas.
-    exercises:
-      - type: series
+      - &a4
+        type: series
         question: "O termo geral da série de Taylor para sin(x) é:"
-        correctAnswer: "(-1)ⁿ x^(2n+1)/(2n+1)!"
-  - pageNumber: 5
-    title: Séries de Taylor – Página 5
-    description: Séries de Taylor para funções trigonométricas.
-    exercises:
-      - type: series
+        correctAnswer: (-1)ⁿ x^(2n+1)/(2n+1)!
+      - &a5
+        type: series
         question: "Aproxime cos(0.2) usando os primeiros 3 termos da série:"
         correctAnswer: "0.9801"
-  - pageNumber: 6
-    title: Séries de Taylor – Página 6
-    description: Séries de Taylor para funções trigonométricas.
-    exercises:
-      - type: series
+      - &a6
+        type: series
         question: "O termo geral da série de Taylor para cos(x) é:"
-        correctAnswer: "(-1)ⁿ x^(2n)/(2n)!"
-  - pageNumber: 7
-    title: Séries de Taylor – Página 7
-    description: Séries de Taylor para funções trigonométricas.
-    exercises:
-      - type: series
+        correctAnswer: (-1)ⁿ x^(2n)/(2n)!
+      - &a7
+        type: series
         question: "O raio de convergência da série de sin(x) é:"
-        correctAnswer: "∞"
-  - pageNumber: 8
-    title: Séries de Taylor – Página 8
-    description: Séries de Taylor para funções trigonométricas.
-    exercises:
-      - type: series
+        correctAnswer: ∞
+      - &a8
+        type: series
         question: "Aproxime sin(π/6) usando a série de Taylor (3 termos):"
         correctAnswer: "0.5"
-  - pageNumber: 9
-    title: Séries de Taylor – Página 9
-    description: Séries de Taylor para funções trigonométricas.
-    exercises:
-      - type: series
+      - &a9
+        type: series
         question: "O termo de ordem 4 na série de cos(x) é:"
-        correctAnswer: "x⁴/24"
-  - pageNumber: 10
-    title: Séries de Taylor – Página 10
+        correctAnswer: x⁴/24
+      - &a10
+        type: series
+        question: "A série de Maclaurin para e^x tem raio de convergência:"
+        correctAnswer: ∞
+  - pageNumber: 2
+    title: Trigonometria Avançada e Séries — Conjunto 4 – Página 2
     description: Séries de Taylor para funções trigonométricas.
     exercises:
-      - type: series
-        question: "A série de Maclaurin para e^x tem raio de convergência:"
-        correctAnswer: "∞"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Trigonometria Avançada e Séries — Conjunto 4 – Página 3
+    description: Séries de Taylor para funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Trigonometria Avançada e Séries — Conjunto 4 – Página 4
+    description: Séries de Taylor para funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Trigonometria Avançada e Séries — Conjunto 4 – Página 5
+    description: Séries de Taylor para funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Trigonometria Avançada e Séries — Conjunto 4 – Página 6
+    description: Séries de Taylor para funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Trigonometria Avançada e Séries — Conjunto 4 – Página 7
+    description: Séries de Taylor para funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Trigonometria Avançada e Séries — Conjunto 4 – Página 8
+    description: Séries de Taylor para funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Trigonometria Avançada e Séries — Conjunto 4 – Página 9
+    description: Séries de Taylor para funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Trigonometria Avançada e Séries — Conjunto 4 – Página 10
+    description: Séries de Taylor para funções trigonométricas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

@@ -4,73 +4,172 @@ example: "Trabalhe com notação de função. Ex.: Se f(x) = x+2, então f(a) = 
 subject: math
 pages:
   - pageNumber: 1
-    title: Funções e Gráficos – Página 1
+    title: Funções e Gráficos — Conjunto 18 – Página 1
     description: Se f(x) = x + 2, calcule f(a).
     exercises:
-      - type: quadratic
+      - &a1
+        type: quadratic
         question: f(a) = ?
-        correctAnswer: "a + 2"
-  - pageNumber: 2
-    title: Funções e Gráficos – Página 2
-    description: Se f(x) = 3x, calcule f(t).
-    exercises:
-      - type: quadratic
+        correctAnswer: a + 2
+      - &a2
+        type: quadratic
         question: f(t) = ?
-        correctAnswer: "3t"
-  - pageNumber: 3
-    title: Funções e Gráficos – Página 3
-    description: Se g(x) = x², calcule g(h).
-    exercises:
-      - type: quadratic
+        correctAnswer: 3t
+      - &a3
+        type: quadratic
         question: g(h) = ?
-        correctAnswer: "h²"
-  - pageNumber: 4
-    title: Funções e Gráficos – Página 4
-    description: Se h(x) = x - 5, calcule h(y).
-    exercises:
-      - type: quadratic
+        correctAnswer: h²
+      - &a4
+        type: quadratic
         question: h(y) = ?
-        correctAnswer: "y - 5"
-  - pageNumber: 5
-    title: Funções e Gráficos – Página 5
-    description: Se f(x) = 2x + 1, calcule f(b).
-    exercises:
-      - type: quadratic
+        correctAnswer: y - 5
+      - &a5
+        type: quadratic
         question: f(b) = ?
-        correctAnswer: "2b + 1"
-  - pageNumber: 6
-    title: Funções e Gráficos – Página 6
-    description: Se p(x) = x/2, calcule p(z).
-    exercises:
-      - type: quadratic
+        correctAnswer: 2b + 1
+      - &a6
+        type: quadratic
         question: p(z) = ?
-        correctAnswer: "z/2"
-  - pageNumber: 7
-    title: Funções e Gráficos – Página 7
-    description: Se q(x) = x² - 1, calcule q(w).
-    exercises:
-      - type: quadratic
+        correctAnswer: z/2
+      - &a7
+        type: quadratic
         question: q(w) = ?
-        correctAnswer: "w² - 1"
-  - pageNumber: 8
-    title: Funções e Gráficos – Página 8
-    description: Se r(x) = √x, calcule r(u).
-    exercises:
-      - type: quadratic
+        correctAnswer: w² - 1
+      - &a8
+        type: quadratic
         question: r(u) = ?
-        correctAnswer: "√u"
-  - pageNumber: 9
-    title: Funções e Gráficos – Página 9
-    description: Se s(x) = 1/x, calcule s(m).
-    exercises:
-      - type: quadratic
+        correctAnswer: √u
+      - &a9
+        type: quadratic
         question: s(m) = ?
-        correctAnswer: "1/m"
-  - pageNumber: 10
-    title: Funções e Gráficos – Página 10
-    description: Se f(x) = x³ + x, calcule f(n).
-    exercises:
-      - type: quadratic
+        correctAnswer: 1/m
+      - &a10
+        type: quadratic
         question: f(n) = ?
-        correctAnswer: "n³ + n"
-target: 10
+        correctAnswer: n³ + n
+  - pageNumber: 2
+    title: Funções e Gráficos — Conjunto 18 – Página 2
+    description: Se f(x) = x + 2, calcule f(a).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Funções e Gráficos — Conjunto 18 – Página 3
+    description: Se f(x) = x + 2, calcule f(a).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Funções e Gráficos — Conjunto 18 – Página 4
+    description: Se f(x) = x + 2, calcule f(a).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Funções e Gráficos — Conjunto 18 – Página 5
+    description: Se f(x) = x + 2, calcule f(a).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Funções e Gráficos — Conjunto 18 – Página 6
+    description: Se f(x) = x + 2, calcule f(a).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Funções e Gráficos — Conjunto 18 – Página 7
+    description: Se f(x) = x + 2, calcule f(a).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Funções e Gráficos — Conjunto 18 – Página 8
+    description: Se f(x) = x + 2, calcule f(a).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Funções e Gráficos — Conjunto 18 – Página 9
+    description: Se f(x) = x + 2, calcule f(a).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Funções e Gráficos — Conjunto 18 – Página 10
+    description: Se f(x) = x + 2, calcule f(a).
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

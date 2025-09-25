@@ -36,27 +36,7 @@ export class SetProcessor {
     return { ...wb, pages };
   }
 
-  static groupMathExercises(wb) {
-    // Group math pages that contain a single exercise into pages of 10 exercises
-    if (wb.subject === 'math' && wb.pages.length > 1 && wb.pages.every(p => (p.exercises || []).length === 1)) {
-      const baseTitle = String(wb.pages[0]?.title || '').replace(/\s*–\s*Página\s+\d+$/i, '');
-      const desc = wb.pages[0]?.description || '';
-      const grouped = [];
-      
-      for (let i = 0; i < wb.pages.length; i += 10) {
-        const slice = wb.pages.slice(i, i + 10);
-        grouped.push({
-          pageNumber: 0, // Will be set later
-          title: `${baseTitle} – Página ${grouped.length + 1}`,
-          description: desc,
-          exercises: slice.flatMap(p => p.exercises)
-        });
-      }
-      
-      return { ...wb, pages: grouped };
-    }
-    return wb;
-  }
+  // All YAML files now have correct structure - no processing needed
 
   static numberPages(wb) {
     wb.pages.forEach((p, i) => { p.pageNumber = i + 1; });
@@ -71,7 +51,7 @@ export class SetProcessor {
   static processSet(wb) {
     let processed = this.expandPortuguesePages(wb);
     processed = this.expandRepetitions(processed);
-    processed = this.groupMathExercises(processed);
+    // Math pages no longer need processing - all YAML files have correct structure
     processed = this.numberPages(processed);
     processed = this.calculateTotalExercises(processed);
     return processed;

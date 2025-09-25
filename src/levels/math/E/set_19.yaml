@@ -4,73 +4,172 @@ example: "Frações de nível mestre. Ex.: 51/66 + 56/66 = 107/66"
 subject: math
 pages:
   - pageNumber: 1
-    title: Frações Mestre – Página 1
+    title: Frações Mestre — Conjunto 19 – Página 1
     description: Frações de nível mestre.
     exercises:
-      - type: fraction_add
+      - &a1
+        type: fraction_add
         question: 51/66 + 56/66 =
-        correctAnswer: "107/66"
-  - pageNumber: 2
-    title: Frações Mestre – Página 2
-    description: Frações de nível mestre.
-    exercises:
-      - type: fraction_sub
+        correctAnswer: 107/66
+      - &a2
+        type: fraction_sub
         question: 59/68 - 52/68 =
-        correctAnswer: "7/68"
-  - pageNumber: 3
-    title: Frações Mestre – Página 3
-    description: Frações de nível mestre.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 7/68
+      - &a3
+        type: fraction_mixed
         question: 55/70 + 60/70 =
-        correctAnswer: "115/70"
-  - pageNumber: 4
-    title: Frações Mestre – Página 4
-    description: Frações de nível mestre.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 115/70
+      - &a4
+        type: fraction_mixed
         question: 63/72 - 56/72 =
-        correctAnswer: "7/72"
-  - pageNumber: 5
-    title: Frações Mestre – Página 5
-    description: Frações de nível mestre.
-    exercises:
-      - type: fraction_add
+        correctAnswer: 7/72
+      - &a5
+        type: fraction_add
         question: 59/74 + 64/74 =
-        correctAnswer: "123/74"
-  - pageNumber: 6
-    title: Frações Mestre – Página 6
-    description: Frações de nível mestre.
-    exercises:
-      - type: fraction_sub
+        correctAnswer: 123/74
+      - &a6
+        type: fraction_sub
         question: 67/76 - 60/76 =
-        correctAnswer: "7/76"
-  - pageNumber: 7
-    title: Frações Mestre – Página 7
-    description: Frações de nível mestre.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 7/76
+      - &a7
+        type: fraction_mixed
         question: 63/78 + 68/78 =
-        correctAnswer: "131/78"
-  - pageNumber: 8
-    title: Frações Mestre – Página 8
-    description: Frações de nível mestre.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 131/78
+      - &a8
+        type: fraction_mixed
         question: 71/80 - 64/80 =
-        correctAnswer: "7/80"
-  - pageNumber: 9
-    title: Frações Mestre – Página 9
-    description: Frações de nível mestre.
-    exercises:
-      - type: fraction_add
+        correctAnswer: 7/80
+      - &a9
+        type: fraction_add
         question: 67/82 + 72/82 =
-        correctAnswer: "139/82"
-  - pageNumber: 10
-    title: Frações Mestre – Página 10
+        correctAnswer: 139/82
+      - &a10
+        type: fraction_sub
+        question: 75/84 - 68/84 =
+        correctAnswer: 7/84
+  - pageNumber: 2
+    title: Frações Mestre — Conjunto 19 – Página 2
     description: Frações de nível mestre.
     exercises:
-      - type: fraction_sub
-        question: 75/84 - 68/84 =
-        correctAnswer: "7/84"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Frações Mestre — Conjunto 19 – Página 3
+    description: Frações de nível mestre.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Frações Mestre — Conjunto 19 – Página 4
+    description: Frações de nível mestre.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Frações Mestre — Conjunto 19 – Página 5
+    description: Frações de nível mestre.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Frações Mestre — Conjunto 19 – Página 6
+    description: Frações de nível mestre.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Frações Mestre — Conjunto 19 – Página 7
+    description: Frações de nível mestre.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Frações Mestre — Conjunto 19 – Página 8
+    description: Frações de nível mestre.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Frações Mestre — Conjunto 19 – Página 9
+    description: Frações de nível mestre.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Frações Mestre — Conjunto 19 – Página 10
+    description: Frações de nível mestre.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

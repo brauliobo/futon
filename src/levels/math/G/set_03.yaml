@@ -4,73 +4,172 @@ example: "Multiplicação de números inteiros. Ex.: -3 × 4 = -12"
 subject: math
 pages:
   - pageNumber: 1
-    title: Multiplicação de Inteiros – Página 1
+    title: Multiplicação de Inteiros — Conjunto 3 – Página 1
     description: Multiplicação de números inteiros positivos e negativos.
     exercises:
-      - type: integer_multiply
+      - &a1
+        type: integer_multiply
         question: 3 × 4 =
         correctAnswer: 12
-  - pageNumber: 2
-    title: Multiplicação de Inteiros – Página 2
-    description: Multiplicação de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_multiply
+      - &a2
+        type: integer_multiply
         question: -2 × 5 =
         correctAnswer: -10
-  - pageNumber: 3
-    title: Multiplicação de Inteiros – Página 3
-    description: Multiplicação de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_multiply
+      - &a3
+        type: integer_multiply
         question: 6 × (-3) =
         correctAnswer: -18
-  - pageNumber: 4
-    title: Multiplicação de Inteiros – Página 4
-    description: Multiplicação de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_multiply
+      - &a4
+        type: integer_multiply
         question: -4 × (-2) =
         correctAnswer: 8
-  - pageNumber: 5
-    title: Multiplicação de Inteiros – Página 5
-    description: Multiplicação de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_multiply
+      - &a5
+        type: integer_multiply
         question: 7 × (-1) =
         correctAnswer: -7
-  - pageNumber: 6
-    title: Multiplicação de Inteiros – Página 6
-    description: Multiplicação de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_multiply
+      - &a6
+        type: integer_multiply
         question: -5 × 3 =
         correctAnswer: -15
-  - pageNumber: 7
-    title: Multiplicação de Inteiros – Página 7
-    description: Multiplicação de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_multiply
+      - &a7
+        type: integer_multiply
         question: 8 × 2 =
         correctAnswer: 16
-  - pageNumber: 8
-    title: Multiplicação de Inteiros – Página 8
-    description: Multiplicação de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_multiply
+      - &a8
+        type: integer_multiply
         question: -6 × (-4) =
         correctAnswer: 24
-  - pageNumber: 9
-    title: Multiplicação de Inteiros – Página 9
-    description: Multiplicação de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_multiply
+      - &a9
+        type: integer_multiply
         question: 9 × (-2) =
         correctAnswer: -18
-  - pageNumber: 10
-    title: Multiplicação de Inteiros – Página 10
-    description: Multiplicação de números inteiros positivos e negativos.
-    exercises:
-      - type: integer_multiply
+      - &a10
+        type: integer_multiply
         question: -3 × (-5) =
         correctAnswer: 15
-target: 10
+  - pageNumber: 2
+    title: Multiplicação de Inteiros — Conjunto 3 – Página 2
+    description: Multiplicação de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Multiplicação de Inteiros — Conjunto 3 – Página 3
+    description: Multiplicação de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Multiplicação de Inteiros — Conjunto 3 – Página 4
+    description: Multiplicação de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Multiplicação de Inteiros — Conjunto 3 – Página 5
+    description: Multiplicação de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Multiplicação de Inteiros — Conjunto 3 – Página 6
+    description: Multiplicação de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Multiplicação de Inteiros — Conjunto 3 – Página 7
+    description: Multiplicação de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Multiplicação de Inteiros — Conjunto 3 – Página 8
+    description: Multiplicação de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Multiplicação de Inteiros — Conjunto 3 – Página 9
+    description: Multiplicação de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Multiplicação de Inteiros — Conjunto 3 – Página 10
+    description: Multiplicação de números inteiros positivos e negativos.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

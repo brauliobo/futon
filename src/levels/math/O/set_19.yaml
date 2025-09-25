@@ -4,73 +4,172 @@ example: "Aplique integrais em problemas de física: trabalho, centro de massa, 
 subject: math
 pages:
   - pageNumber: 1
-    title: Aplicações Físicas – Página 1
+    title: Aplicações Físicas — Conjunto 19 – Página 1
     description: Calcule trabalho.
     exercises:
-      - type: quadratic
-        question: "Trabalho para esticar mola 0.5m (k=100 N/m)"
-        correctAnswer: "12.5 J"
+      - &a1
+        type: quadratic
+        question: Trabalho para esticar mola 0.5m (k=100 N/m)
+        correctAnswer: 12.5 J
+      - &a2
+        type: quadratic
+        question: Centro de massa de y = x² entre x = 0 e x = 1
+        correctAnswer: (3/4, 3/10)
+      - &a3
+        type: quadratic
+        question: Momento de inércia de barra (L=2m, m=5kg) em relação ao centro
+        correctAnswer: 5/3 kg⋅m²
+      - &a4
+        type: quadratic
+        question: Força em parede vertical submersa (largura 4m, altura 3m)
+        correctAnswer: 180 kN
+      - &a5
+        type: quadratic
+        question: Taxa de fluxo através de seção circular (r=2m, v=3m/s)
+        correctAnswer: 12π m³/s
+      - &a6
+        type: quadratic
+        question: Energia para elevar objeto 10m (massa 50kg)
+        correctAnswer: 4905 J
+      - &a7
+        type: quadratic
+        question: Comprimento de y = x³/² entre x = 0 e x = 4
+        correctAnswer: (8/27)(10√10 - 1)
+      - &a8
+        type: quadratic
+        question: Área de y = √x rotacionada em torno do eixo x, x ∈ [1,4]
+        correctAnswer: π(17√17 - 5√5)/6
+      - &a9
+        type: quadratic
+        question: Energia para escapar da Terra (R=6.37×10⁶m, M=5.97×10²⁴kg)
+        correctAnswer: 6.25×10⁷ J/kg
+      - &a10
+        type: quadratic
+        question: Campo de fio carregado (λ=10⁻⁹ C/m, d=1m)
+        correctAnswer: 18 N/C
   - pageNumber: 2
-    title: Aplicações Físicas – Página 2
-    description: Calcule centro de massa.
+    title: Aplicações Físicas — Conjunto 19 – Página 2
+    description: Calcule trabalho.
     exercises:
-      - type: quadratic
-        question: "Centro de massa de y = x² entre x = 0 e x = 1"
-        correctAnswer: "(3/4, 3/10)"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 3
-    title: Aplicações Físicas – Página 3
-    description: Calcule momento de inércia.
+    title: Aplicações Físicas — Conjunto 19 – Página 3
+    description: Calcule trabalho.
     exercises:
-      - type: quadratic
-        question: "Momento de inércia de barra (L=2m, m=5kg) em relação ao centro"
-        correctAnswer: "5/3 kg⋅m²"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 4
-    title: Aplicações Físicas – Página 4
-    description: Calcule pressão hidrostática.
+    title: Aplicações Físicas — Conjunto 19 – Página 4
+    description: Calcule trabalho.
     exercises:
-      - type: quadratic
-        question: "Força em parede vertical submersa (largura 4m, altura 3m)"
-        correctAnswer: "180 kN"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 5
-    title: Aplicações Físicas – Página 5
-    description: Calcule fluxo de fluido.
+    title: Aplicações Físicas — Conjunto 19 – Página 5
+    description: Calcule trabalho.
     exercises:
-      - type: quadratic
-        question: "Taxa de fluxo através de seção circular (r=2m, v=3m/s)"
-        correctAnswer: "12π m³/s"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 6
-    title: Aplicações Físicas – Página 6
-    description: Calcule energia potencial.
+    title: Aplicações Físicas — Conjunto 19 – Página 6
+    description: Calcule trabalho.
     exercises:
-      - type: quadratic
-        question: "Energia para elevar objeto 10m (massa 50kg)"
-        correctAnswer: "4905 J"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 7
-    title: Aplicações Físicas – Página 7
-    description: Calcule comprimento de arco.
+    title: Aplicações Físicas — Conjunto 19 – Página 7
+    description: Calcule trabalho.
     exercises:
-      - type: quadratic
-        question: "Comprimento de y = x³/² entre x = 0 e x = 4"
-        correctAnswer: "(8/27)(10√10 - 1)"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 8
-    title: Aplicações Físicas – Página 8
-    description: Calcule superfície de revolução.
+    title: Aplicações Físicas — Conjunto 19 – Página 8
+    description: Calcule trabalho.
     exercises:
-      - type: quadratic
-        question: "Área de y = √x rotacionada em torno do eixo x, x ∈ [1,4]"
-        correctAnswer: "π(17√17 - 5√5)/6"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 9
-    title: Aplicações Físicas – Página 9
-    description: Calcule escape gravitacional.
+    title: Aplicações Físicas — Conjunto 19 – Página 9
+    description: Calcule trabalho.
     exercises:
-      - type: quadratic
-        question: "Energia para escapar da Terra (R=6.37×10⁶m, M=5.97×10²⁴kg)"
-        correctAnswer: "6.25×10⁷ J/kg"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 10
-    title: Aplicações Físicas – Página 10
-    description: Calcule campo elétrico.
+    title: Aplicações Físicas — Conjunto 19 – Página 10
+    description: Calcule trabalho.
     exercises:
-      - type: quadratic
-        question: "Campo de fio carregado (λ=10⁻⁹ C/m, d=1m)"
-        correctAnswer: "18 N/C"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

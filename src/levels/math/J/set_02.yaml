@@ -4,73 +4,172 @@ example: "Sistemas de equações. Ex.: 2x + y = 5, x - y = 1"
 subject: math
 pages:
   - pageNumber: 1
-    title: Álgebra Avançada – Página 1
+    title: Álgebra Avançada — Conjunto 2 – Página 1
     description: Sistemas de equações lineares.
     exercises:
-      - type: algebra
+      - &a1
+        type: algebra
         question: "Sistema: x + y = 5, x - y = 1. Encontre x:"
         correctAnswer: x = 3
-  - pageNumber: 2
-    title: Álgebra Avançada – Página 2
-    description: Sistemas de equações lineares.
-    exercises:
-      - type: algebra
+      - &a2
+        type: algebra
         question: "Sistema: 2x + y = 7, x + y = 4. Encontre y:"
         correctAnswer: y = 1
-  - pageNumber: 3
-    title: Álgebra Avançada – Página 3
-    description: Sistemas de equações lineares.
-    exercises:
-      - type: algebra
+      - &a3
+        type: algebra
         question: "Resolva: x² + 4x + 4 = 0"
         correctAnswer: x = -2
-  - pageNumber: 4
-    title: Álgebra Avançada – Página 4
-    description: Sistemas de equações lineares.
-    exercises:
-      - type: algebra
+      - &a4
+        type: algebra
         question: "Simplifique: (x + 3)(x - 3) ="
-        correctAnswer: "x² - 9"
-  - pageNumber: 5
-    title: Álgebra Avançada – Página 5
-    description: Sistemas de equações lineares.
-    exercises:
-      - type: algebra
+        correctAnswer: x² - 9
+      - &a5
+        type: algebra
         question: "Fatorize: x² + 6x + 9 ="
-        correctAnswer: "(x + 3)²"
-  - pageNumber: 6
-    title: Álgebra Avançada – Página 6
-    description: Sistemas de equações lineares.
-    exercises:
-      - type: algebra
+        correctAnswer: (x + 3)²
+      - &a6
+        type: algebra
         question: "Resolva: |x - 2| = 3"
         correctAnswer: x = 5 ou x = -1
-  - pageNumber: 7
-    title: Álgebra Avançada – Página 7
-    description: Sistemas de equações lineares.
-    exercises:
-      - type: algebra
+      - &a7
+        type: algebra
         question: "Simplifique: 2x³ ÷ x² ="
         correctAnswer: 2x
-  - pageNumber: 8
-    title: Álgebra Avançada – Página 8
-    description: Sistemas de equações lineares.
-    exercises:
-      - type: algebra
-        question: "Para que valor de k, x² + kx + 9 é um quadrado perfeito?"
-        correctAnswer: "k = ±6"
-  - pageNumber: 9
-    title: Álgebra Avançada – Página 9
-    description: Sistemas de equações lineares.
-    exercises:
-      - type: algebra
+      - &a8
+        type: algebra
+        question: Para que valor de k, x² + kx + 9 é um quadrado perfeito?
+        correctAnswer: k = ±6
+      - &a9
+        type: algebra
         question: "Simplifique: √(x² + 6x + 9) ="
         correctAnswer: "|x + 3|"
-  - pageNumber: 10
-    title: Álgebra Avançada – Página 10
-    description: Sistemas de equações lineares.
-    exercises:
-      - type: algebra
+      - &a10
+        type: algebra
         question: "Se f(x) = 2x + 3, encontre f(5):"
         correctAnswer: 13
-target: 10
+  - pageNumber: 2
+    title: Álgebra Avançada — Conjunto 2 – Página 2
+    description: Sistemas de equações lineares.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Álgebra Avançada — Conjunto 2 – Página 3
+    description: Sistemas de equações lineares.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Álgebra Avançada — Conjunto 2 – Página 4
+    description: Sistemas de equações lineares.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Álgebra Avançada — Conjunto 2 – Página 5
+    description: Sistemas de equações lineares.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Álgebra Avançada — Conjunto 2 – Página 6
+    description: Sistemas de equações lineares.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Álgebra Avançada — Conjunto 2 – Página 7
+    description: Sistemas de equações lineares.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Álgebra Avançada — Conjunto 2 – Página 8
+    description: Sistemas de equações lineares.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Álgebra Avançada — Conjunto 2 – Página 9
+    description: Sistemas de equações lineares.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Álgebra Avançada — Conjunto 2 – Página 10
+    description: Sistemas de equações lineares.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

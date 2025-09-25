@@ -4,73 +4,172 @@ example: "Use integração por partes: ∫ u dv = uv - ∫ v du"
 subject: math
 pages:
   - pageNumber: 1
-    title: Integrais por Partes – Página 1
+    title: Integrais por Partes — Conjunto 6 – Página 1
     description: Use integração por partes.
     exercises:
-      - type: quadratic
-        question: "∫ x·e^x dx"
-        correctAnswer: "(x-1)e^x + C"
+      - &a1
+        type: quadratic
+        question: ∫ x·e^x dx
+        correctAnswer: (x-1)e^x + C
+      - &a2
+        type: quadratic
+        question: ∫ x·sin(x) dx
+        correctAnswer: -x·cos(x) + sin(x) + C
+      - &a3
+        type: quadratic
+        question: ∫ x·cos(x) dx
+        correctAnswer: x·sin(x) + cos(x) + C
+      - &a4
+        type: quadratic
+        question: ∫ x·ln(x) dx
+        correctAnswer: (x²/2)·ln(x) - x²/4 + C
+      - &a5
+        type: quadratic
+        question: ∫ x²·e^x dx
+        correctAnswer: (x²-2x+2)e^x + C
+      - &a6
+        type: quadratic
+        question: ∫ ln(x) dx
+        correctAnswer: x·ln(x) - x + C
+      - &a7
+        type: quadratic
+        question: ∫ x·e^(-x) dx
+        correctAnswer: -(x+1)e^(-x) + C
+      - &a8
+        type: quadratic
+        question: ∫ x²·sin(x) dx
+        correctAnswer: -x²·cos(x) + 2x·sin(x) + 2cos(x) + C
+      - &a9
+        type: quadratic
+        question: ∫ e^x·sin(x) dx
+        correctAnswer: (e^x/2)(sin(x) - cos(x)) + C
+      - &a10
+        type: quadratic
+        question: ∫ x·arctan(x) dx
+        correctAnswer: (x²+1)·arctan(x)/2 - x/2 + C
   - pageNumber: 2
-    title: Integrais por Partes – Página 2
+    title: Integrais por Partes — Conjunto 6 – Página 2
     description: Use integração por partes.
     exercises:
-      - type: quadratic
-        question: "∫ x·sin(x) dx"
-        correctAnswer: "-x·cos(x) + sin(x) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 3
-    title: Integrais por Partes – Página 3
+    title: Integrais por Partes — Conjunto 6 – Página 3
     description: Use integração por partes.
     exercises:
-      - type: quadratic
-        question: "∫ x·cos(x) dx"
-        correctAnswer: "x·sin(x) + cos(x) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 4
-    title: Integrais por Partes – Página 4
+    title: Integrais por Partes — Conjunto 6 – Página 4
     description: Use integração por partes.
     exercises:
-      - type: quadratic
-        question: "∫ x·ln(x) dx"
-        correctAnswer: "(x²/2)·ln(x) - x²/4 + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 5
-    title: Integrais por Partes – Página 5
+    title: Integrais por Partes — Conjunto 6 – Página 5
     description: Use integração por partes.
     exercises:
-      - type: quadratic
-        question: "∫ x²·e^x dx"
-        correctAnswer: "(x²-2x+2)e^x + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 6
-    title: Integrais por Partes – Página 6
+    title: Integrais por Partes — Conjunto 6 – Página 6
     description: Use integração por partes.
     exercises:
-      - type: quadratic
-        question: "∫ ln(x) dx"
-        correctAnswer: "x·ln(x) - x + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 7
-    title: Integrais por Partes – Página 7
+    title: Integrais por Partes — Conjunto 6 – Página 7
     description: Use integração por partes.
     exercises:
-      - type: quadratic
-        question: "∫ x·e^(-x) dx"
-        correctAnswer: "-(x+1)e^(-x) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 8
-    title: Integrais por Partes – Página 8
+    title: Integrais por Partes — Conjunto 6 – Página 8
     description: Use integração por partes.
     exercises:
-      - type: quadratic
-        question: "∫ x²·sin(x) dx"
-        correctAnswer: "-x²·cos(x) + 2x·sin(x) + 2cos(x) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 9
-    title: Integrais por Partes – Página 9
+    title: Integrais por Partes — Conjunto 6 – Página 9
     description: Use integração por partes.
     exercises:
-      - type: quadratic
-        question: "∫ e^x·sin(x) dx"
-        correctAnswer: "(e^x/2)(sin(x) - cos(x)) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 10
-    title: Integrais por Partes – Página 10
+    title: Integrais por Partes — Conjunto 6 – Página 10
     description: Use integração por partes.
     exercises:
-      - type: quadratic
-        question: "∫ x·arctan(x) dx"
-        correctAnswer: "(x²+1)·arctan(x)/2 - x/2 + C"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

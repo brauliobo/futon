@@ -4,73 +4,172 @@ example: "Frações mais avançadas. Ex.: 14/27 + 16/27 = 30/27"
 subject: math
 pages:
   - pageNumber: 1
-    title: Frações Avançadas – Página 1
+    title: Frações Avançadas — Conjunto 17 – Página 1
     description: Frações mais avançadas.
     exercises:
-      - type: fraction_add
+      - &a1
+        type: fraction_add
         question: 14/27 + 16/27 =
-        correctAnswer: "30/27"
-  - pageNumber: 2
-    title: Frações Avançadas – Página 2
-    description: Frações mais avançadas.
-    exercises:
-      - type: fraction_sub
+        correctAnswer: 30/27
+      - &a2
+        type: fraction_sub
         question: 25/28 - 18/28 =
-        correctAnswer: "7/28"
-  - pageNumber: 3
-    title: Frações Avançadas – Página 3
-    description: Frações mais avançadas.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 7/28
+      - &a3
+        type: fraction_mixed
         question: 19/30 + 17/30 =
-        correctAnswer: "36/30"
-  - pageNumber: 4
-    title: Frações Avançadas – Página 4
-    description: Frações mais avançadas.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 36/30
+      - &a4
+        type: fraction_mixed
         question: 27/32 - 19/32 =
-        correctAnswer: "8/32"
-  - pageNumber: 5
-    title: Frações Avançadas – Página 5
-    description: Frações mais avançadas.
-    exercises:
-      - type: fraction_add
+        correctAnswer: 8/32
+      - &a5
+        type: fraction_add
         question: 21/35 + 23/35 =
-        correctAnswer: "44/35"
-  - pageNumber: 6
-    title: Frações Avançadas – Página 6
-    description: Frações mais avançadas.
-    exercises:
-      - type: fraction_sub
+        correctAnswer: 44/35
+      - &a6
+        type: fraction_sub
         question: 29/36 - 21/36 =
-        correctAnswer: "8/36"
-  - pageNumber: 7
-    title: Frações Avançadas – Página 7
-    description: Frações mais avançadas.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 8/36
+      - &a7
+        type: fraction_mixed
         question: 25/38 + 27/38 =
-        correctAnswer: "52/38"
-  - pageNumber: 8
-    title: Frações Avançadas – Página 8
-    description: Frações mais avançadas.
-    exercises:
-      - type: fraction_mixed
+        correctAnswer: 52/38
+      - &a8
+        type: fraction_mixed
         question: 31/40 - 23/40 =
-        correctAnswer: "8/40"
-  - pageNumber: 9
-    title: Frações Avançadas – Página 9
-    description: Frações mais avançadas.
-    exercises:
-      - type: fraction_add
+        correctAnswer: 8/40
+      - &a9
+        type: fraction_add
         question: 28/42 + 31/42 =
-        correctAnswer: "59/42"
-  - pageNumber: 10
-    title: Frações Avançadas – Página 10
+        correctAnswer: 59/42
+      - &a10
+        type: fraction_sub
+        question: 35/44 - 27/44 =
+        correctAnswer: 8/44
+  - pageNumber: 2
+    title: Frações Avançadas — Conjunto 17 – Página 2
     description: Frações mais avançadas.
     exercises:
-      - type: fraction_sub
-        question: 35/44 - 27/44 =
-        correctAnswer: "8/44"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Frações Avançadas — Conjunto 17 – Página 3
+    description: Frações mais avançadas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Frações Avançadas — Conjunto 17 – Página 4
+    description: Frações mais avançadas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Frações Avançadas — Conjunto 17 – Página 5
+    description: Frações mais avançadas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Frações Avançadas — Conjunto 17 – Página 6
+    description: Frações mais avançadas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Frações Avançadas — Conjunto 17 – Página 7
+    description: Frações mais avançadas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Frações Avançadas — Conjunto 17 – Página 8
+    description: Frações mais avançadas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Frações Avançadas — Conjunto 17 – Página 9
+    description: Frações mais avançadas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Frações Avançadas — Conjunto 17 – Página 10
+    description: Frações mais avançadas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

@@ -4,73 +4,172 @@ example: "Some números até 20. Ex.: 5 + 3 = 8"
 subject: math
 pages:
   - pageNumber: 1
-    title: Adição até 20 – Página 1
+    title: Adição até 20 — Conjunto 2 – Página 1
     description: Some números até 20.
     exercises:
-      - type: addition
+      - &a1
+        type: addition
         question: 3 + 2 =
         correctAnswer: 5
-  - pageNumber: 2
-    title: Adição até 20 – Página 2
-    description: Some números até 20.
-    exercises:
-      - type: addition
+      - &a2
+        type: addition
         question: 1 + 4 =
         correctAnswer: 5
-  - pageNumber: 3
-    title: Adição até 20 – Página 3
-    description: Some números até 20.
-    exercises:
-      - type: addition
+      - &a3
+        type: addition
         question: 5 + 3 =
         correctAnswer: 8
-  - pageNumber: 4
-    title: Adição até 20 – Página 4
-    description: Some números até 20.
-    exercises:
-      - type: addition
+      - &a4
+        type: addition
         question: 2 + 6 =
         correctAnswer: 8
-  - pageNumber: 5
-    title: Adição até 20 – Página 5
-    description: Some números até 20.
-    exercises:
-      - type: addition
+      - &a5
+        type: addition
         question: 4 + 4 =
         correctAnswer: 8
-  - pageNumber: 6
-    title: Adição até 20 – Página 6
-    description: Some números até 20.
-    exercises:
-      - type: addition
+      - &a6
+        type: addition
         question: 3 + 6 =
         correctAnswer: 9
-  - pageNumber: 7
-    title: Adição até 20 – Página 7
-    description: Some números até 20.
-    exercises:
-      - type: addition
+      - &a7
+        type: addition
         question: 1 + 8 =
         correctAnswer: 9
-  - pageNumber: 8
-    title: Adição até 20 – Página 8
-    description: Some números até 20.
-    exercises:
-      - type: addition
+      - &a8
+        type: addition
         question: 7 + 2 =
         correctAnswer: 9
-  - pageNumber: 9
-    title: Adição até 20 – Página 9
-    description: Some números até 20.
-    exercises:
-      - type: addition
+      - &a9
+        type: addition
         question: 5 + 5 =
         correctAnswer: 10
-  - pageNumber: 10
-    title: Adição até 20 – Página 10
-    description: Some números até 20.
-    exercises:
-      - type: addition
+      - &a10
+        type: addition
         question: 8 + 3 =
         correctAnswer: 11
-target: 10
+  - pageNumber: 2
+    title: Adição até 20 — Conjunto 2 – Página 2
+    description: Some números até 20.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Adição até 20 — Conjunto 2 – Página 3
+    description: Some números até 20.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Adição até 20 — Conjunto 2 – Página 4
+    description: Some números até 20.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Adição até 20 — Conjunto 2 – Página 5
+    description: Some números até 20.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Adição até 20 — Conjunto 2 – Página 6
+    description: Some números até 20.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Adição até 20 — Conjunto 2 – Página 7
+    description: Some números até 20.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Adição até 20 — Conjunto 2 – Página 8
+    description: Some números até 20.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Adição até 20 — Conjunto 2 – Página 9
+    description: Some números até 20.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Adição até 20 — Conjunto 2 – Página 10
+    description: Some números até 20.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

@@ -4,73 +4,172 @@ example: "Calcule volume por revolução: V = π ∫[a,b] [f(x)]² dx"
 subject: math
 pages:
   - pageNumber: 1
-    title: Volume de Sólidos – Página 1
+    title: Volume de Sólidos — Conjunto 9 – Página 1
     description: Calcule volumes de sólidos de revolução.
     exercises:
-      - type: quadratic
-        question: "Volume de y = x rotacionada em torno do eixo x, x ∈ [0,2]"
-        correctAnswer: "8π/3"
+      - &a1
+        type: quadratic
+        question: Volume de y = x rotacionada em torno do eixo x, x ∈ [0,2]
+        correctAnswer: 8π/3
+      - &a2
+        type: quadratic
+        question: Volume de y = x² rotacionada em torno do eixo x, x ∈ [0,1]
+        correctAnswer: π/5
+      - &a3
+        type: quadratic
+        question: Volume de y = √x rotacionada em torno do eixo x, x ∈ [0,4]
+        correctAnswer: 8π
+      - &a4
+        type: quadratic
+        question: Volume de y = sin(x) rotacionada em torno do eixo x, x ∈ [0,π]
+        correctAnswer: π²/2
+      - &a5
+        type: quadratic
+        question: Volume de y = e^x rotacionada em torno do eixo x, x ∈ [0,1]
+        correctAnswer: π(e² - 1)/2
+      - &a6
+        type: quadratic
+        question: Volume de y = 1/x rotacionada em torno do eixo x, x ∈ [1,2]
+        correctAnswer: π/2
+      - &a7
+        type: quadratic
+        question: Volume de y = x³ rotacionada em torno do eixo x, x ∈ [0,1]
+        correctAnswer: π/7
+      - &a8
+        type: quadratic
+        question: Volume de y = cos(x) rotacionada em torno do eixo x, x ∈ [0,π/2]
+        correctAnswer: π²/4
+      - &a9
+        type: quadratic
+        question: Volume de y = ln(x) rotacionada em torno do eixo x, x ∈ [1,e]
+        correctAnswer: π(e - 2)/2
+      - &a10
+        type: quadratic
+        question: Volume de y = 2x rotacionada em torno do eixo x, x ∈ [0,1]
+        correctAnswer: 4π/3
   - pageNumber: 2
-    title: Volume de Sólidos – Página 2
+    title: Volume de Sólidos — Conjunto 9 – Página 2
     description: Calcule volumes de sólidos de revolução.
     exercises:
-      - type: quadratic
-        question: "Volume de y = x² rotacionada em torno do eixo x, x ∈ [0,1]"
-        correctAnswer: "π/5"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 3
-    title: Volume de Sólidos – Página 3
+    title: Volume de Sólidos — Conjunto 9 – Página 3
     description: Calcule volumes de sólidos de revolução.
     exercises:
-      - type: quadratic
-        question: "Volume de y = √x rotacionada em torno do eixo x, x ∈ [0,4]"
-        correctAnswer: "8π"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 4
-    title: Volume de Sólidos – Página 4
+    title: Volume de Sólidos — Conjunto 9 – Página 4
     description: Calcule volumes de sólidos de revolução.
     exercises:
-      - type: quadratic
-        question: "Volume de y = sin(x) rotacionada em torno do eixo x, x ∈ [0,π]"
-        correctAnswer: "π²/2"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 5
-    title: Volume de Sólidos – Página 5
+    title: Volume de Sólidos — Conjunto 9 – Página 5
     description: Calcule volumes de sólidos de revolução.
     exercises:
-      - type: quadratic
-        question: "Volume de y = e^x rotacionada em torno do eixo x, x ∈ [0,1]"
-        correctAnswer: "π(e² - 1)/2"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 6
-    title: Volume de Sólidos – Página 6
+    title: Volume de Sólidos — Conjunto 9 – Página 6
     description: Calcule volumes de sólidos de revolução.
     exercises:
-      - type: quadratic
-        question: "Volume de y = 1/x rotacionada em torno do eixo x, x ∈ [1,2]"
-        correctAnswer: "π/2"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 7
-    title: Volume de Sólidos – Página 7
+    title: Volume de Sólidos — Conjunto 9 – Página 7
     description: Calcule volumes de sólidos de revolução.
     exercises:
-      - type: quadratic
-        question: "Volume de y = x³ rotacionada em torno do eixo x, x ∈ [0,1]"
-        correctAnswer: "π/7"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 8
-    title: Volume de Sólidos – Página 8
+    title: Volume de Sólidos — Conjunto 9 – Página 8
     description: Calcule volumes de sólidos de revolução.
     exercises:
-      - type: quadratic
-        question: "Volume de y = cos(x) rotacionada em torno do eixo x, x ∈ [0,π/2]"
-        correctAnswer: "π²/4"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 9
-    title: Volume de Sólidos – Página 9
+    title: Volume de Sólidos — Conjunto 9 – Página 9
     description: Calcule volumes de sólidos de revolução.
     exercises:
-      - type: quadratic
-        question: "Volume de y = ln(x) rotacionada em torno do eixo x, x ∈ [1,e]"
-        correctAnswer: "π(e - 2)/2"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 10
-    title: Volume de Sólidos – Página 10
+    title: Volume de Sólidos — Conjunto 9 – Página 10
     description: Calcule volumes de sólidos de revolução.
     exercises:
-      - type: quadratic
-        question: "Volume de y = 2x rotacionada em torno do eixo x, x ∈ [0,1]"
-        correctAnswer: "4π/3"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

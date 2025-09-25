@@ -4,73 +4,172 @@ example: "Derivada de produtos. Ex.: d/dx (x sin x) = sin x + x cos x"
 subject: math
 pages:
   - pageNumber: 1
-    title: Regra do Produto – Página 1
+    title: Regra do Produto — Conjunto 4 – Página 1
     description: Use a regra do produto para derivar.
     exercises:
-      - type: reading
+      - &a1
+        type: reading
         question: d/dx (x² sin x) =
-        correctAnswer: "2x sin x + x² cos x"
-  - pageNumber: 2
-    title: Regra do Produto – Página 2
-    description: Use a regra do produto para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: 2x sin x + x² cos x
+      - &a2
+        type: reading
         question: d/dx (x e^x) =
-        correctAnswer: "e^x + x e^x"
-  - pageNumber: 3
-    title: Regra do Produto – Página 3
-    description: Use a regra do produto para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: e^x + x e^x
+      - &a3
+        type: reading
         question: d/dx (x³ ln x) =
-        correctAnswer: "3x² ln x + x²"
-  - pageNumber: 4
-    title: Regra do Produto – Página 4
-    description: Use a regra do produto para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: 3x² ln x + x²
+      - &a4
+        type: reading
         question: d/dx (x cos x) =
-        correctAnswer: "cos x - x sin x"
-  - pageNumber: 5
-    title: Regra do Produto – Página 5
-    description: Use a regra do produto para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: cos x - x sin x
+      - &a5
+        type: reading
         question: d/dx (x² e^(2x)) =
-        correctAnswer: "2x e^(2x) + 2x² e^(2x)"
-  - pageNumber: 6
-    title: Regra do Produto – Página 6
-    description: Use a regra do produto para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: 2x e^(2x) + 2x² e^(2x)
+      - &a6
+        type: reading
         question: d/dx (sin x cos x) =
-        correctAnswer: "cos²x - sin²x"
-  - pageNumber: 7
-    title: Regra do Produto – Página 7
-    description: Use a regra do produto para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: cos²x - sin²x
+      - &a7
+        type: reading
         question: d/dx (x⁴ sin x) =
-        correctAnswer: "4x³ sin x + x⁴ cos x"
-  - pageNumber: 8
-    title: Regra do Produto – Página 8
-    description: Use a regra do produto para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: 4x³ sin x + x⁴ cos x
+      - &a8
+        type: reading
         question: d/dx (e^x ln x) =
-        correctAnswer: "e^x ln x + e^x/x"
-  - pageNumber: 9
-    title: Regra do Produto – Página 9
-    description: Use a regra do produto para derivar.
-    exercises:
-      - type: reading
+        correctAnswer: e^x ln x + e^x/x
+      - &a9
+        type: reading
         question: d/dx (x tan x) =
-        correctAnswer: "tan x + x sec²x"
-  - pageNumber: 10
-    title: Regra do Produto – Página 10
+        correctAnswer: tan x + x sec²x
+      - &a10
+        type: reading
+        question: d/dx (x√x) =
+        correctAnswer: 3x/(2√x)
+  - pageNumber: 2
+    title: Regra do Produto — Conjunto 4 – Página 2
     description: Use a regra do produto para derivar.
     exercises:
-      - type: reading
-        question: d/dx (x√x) =
-        correctAnswer: "3x/(2√x)"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Regra do Produto — Conjunto 4 – Página 3
+    description: Use a regra do produto para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Regra do Produto — Conjunto 4 – Página 4
+    description: Use a regra do produto para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Regra do Produto — Conjunto 4 – Página 5
+    description: Use a regra do produto para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Regra do Produto — Conjunto 4 – Página 6
+    description: Use a regra do produto para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Regra do Produto — Conjunto 4 – Página 7
+    description: Use a regra do produto para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Regra do Produto — Conjunto 4 – Página 8
+    description: Use a regra do produto para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Regra do Produto — Conjunto 4 – Página 9
+    description: Use a regra do produto para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Regra do Produto — Conjunto 4 – Página 10
+    description: Use a regra do produto para derivar.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

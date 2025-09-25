@@ -4,73 +4,172 @@ example: "Divisões por 8 e 9. Ex.: 72 ÷ 8 = 9"
 subject: math
 pages:
   - pageNumber: 1
-    title: Divisão por 8 e 9 – Página 1
+    title: Divisão por 8 e 9 — Conjunto 8 – Página 1
     description: Divisões por 8 e 9.
     exercises:
-      - type: division
+      - &a1
+        type: division
         question: 48 ÷ 8 =
         correctAnswer: 6
-  - pageNumber: 2
-    title: Divisão por 8 e 9 – Página 2
-    description: Divisões por 8 e 9.
-    exercises:
-      - type: division
+      - &a2
+        type: division
         question: 9 ÷ 9 =
         correctAnswer: 1
-  - pageNumber: 3
-    title: Divisão por 8 e 9 – Página 3
-    description: Divisões por 8 e 9.
-    exercises:
-      - type: division
+      - &a3
+        type: division
         question: 56 ÷ 8 =
         correctAnswer: 7
-  - pageNumber: 4
-    title: Divisão por 8 e 9 – Página 4
-    description: Divisões por 8 e 9.
-    exercises:
-      - type: division
+      - &a4
+        type: division
         question: 18 ÷ 9 =
         correctAnswer: 2
-  - pageNumber: 5
-    title: Divisão por 8 e 9 – Página 5
-    description: Divisões por 8 e 9.
-    exercises:
-      - type: division
+      - &a5
+        type: division
         question: 64 ÷ 8 =
         correctAnswer: 8
-  - pageNumber: 6
-    title: Divisão por 8 e 9 – Página 6
-    description: Divisões por 8 e 9.
-    exercises:
-      - type: division
+      - &a6
+        type: division
         question: 27 ÷ 9 =
         correctAnswer: 3
-  - pageNumber: 7
-    title: Divisão por 8 e 9 – Página 7
-    description: Divisões por 8 e 9.
-    exercises:
-      - type: division
+      - &a7
+        type: division
         question: 72 ÷ 8 =
         correctAnswer: 9
-  - pageNumber: 8
-    title: Divisão por 8 e 9 – Página 8
-    description: Divisões por 8 e 9.
-    exercises:
-      - type: division
+      - &a8
+        type: division
         question: 36 ÷ 9 =
         correctAnswer: 4
-  - pageNumber: 9
-    title: Divisão por 8 e 9 – Página 9
-    description: Divisões por 8 e 9.
-    exercises:
-      - type: division
+      - &a9
+        type: division
         question: 80 ÷ 8 =
         correctAnswer: 10
-  - pageNumber: 10
-    title: Divisão por 8 e 9 – Página 10
-    description: Divisões por 8 e 9.
-    exercises:
-      - type: division
+      - &a10
+        type: division
         question: 45 ÷ 9 =
         correctAnswer: 5
-target: 10
+  - pageNumber: 2
+    title: Divisão por 8 e 9 — Conjunto 8 – Página 2
+    description: Divisões por 8 e 9.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Divisão por 8 e 9 — Conjunto 8 – Página 3
+    description: Divisões por 8 e 9.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Divisão por 8 e 9 — Conjunto 8 – Página 4
+    description: Divisões por 8 e 9.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Divisão por 8 e 9 — Conjunto 8 – Página 5
+    description: Divisões por 8 e 9.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Divisão por 8 e 9 — Conjunto 8 – Página 6
+    description: Divisões por 8 e 9.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Divisão por 8 e 9 — Conjunto 8 – Página 7
+    description: Divisões por 8 e 9.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Divisão por 8 e 9 — Conjunto 8 – Página 8
+    description: Divisões por 8 e 9.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Divisão por 8 e 9 — Conjunto 8 – Página 9
+    description: Divisões por 8 e 9.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Divisão por 8 e 9 — Conjunto 8 – Página 10
+    description: Divisões por 8 e 9.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

@@ -4,73 +4,172 @@ example: "Multiplique números inteiros por frações. Ex.: 3 × 2/5 = 6/5"
 subject: math
 pages:
   - pageNumber: 1
-    title: Frações Multiplicação – Página 1
+    title: Frações Multiplicação — Conjunto 5 – Página 1
     description: Multiplique números inteiros por frações.
     exercises:
-      - type: fraction_multiply
+      - &a1
+        type: fraction_multiply
         question: 3 × 2/5 =
-        correctAnswer: "6/5"
-  - pageNumber: 2
-    title: Frações Multiplicação – Página 2
-    description: Multiplique números inteiros por frações.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 6/5
+      - &a2
+        type: fraction_multiply
         question: 2 × 3/7 =
-        correctAnswer: "6/7"
-  - pageNumber: 3
-    title: Frações Multiplicação – Página 3
-    description: Multiplique números inteiros por frações.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 6/7
+      - &a3
+        type: fraction_multiply
         question: 4 × 1/8 =
-        correctAnswer: "4/8"
-  - pageNumber: 4
-    title: Frações Multiplicação – Página 4
-    description: Multiplique números inteiros por frações.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 4/8
+      - &a4
+        type: fraction_multiply
         question: 5 × 3/10 =
-        correctAnswer: "15/10"
-  - pageNumber: 5
-    title: Frações Multiplicação – Página 5
-    description: Multiplique números inteiros por frações.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 15/10
+      - &a5
+        type: fraction_multiply
         question: 6 × 2/9 =
-        correctAnswer: "12/9"
-  - pageNumber: 6
-    title: Frações Multiplicação – Página 6
-    description: Multiplique números inteiros por frações.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 12/9
+      - &a6
+        type: fraction_multiply
         question: 7 × 4/11 =
-        correctAnswer: "28/11"
-  - pageNumber: 7
-    title: Frações Multiplicação – Página 7
-    description: Multiplique números inteiros por frações.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 28/11
+      - &a7
+        type: fraction_multiply
         question: 8 × 3/13 =
-        correctAnswer: "24/13"
-  - pageNumber: 8
-    title: Frações Multiplicação – Página 8
-    description: Multiplique números inteiros por frações.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 24/13
+      - &a8
+        type: fraction_multiply
         question: 9 × 5/14 =
-        correctAnswer: "45/14"
-  - pageNumber: 9
-    title: Frações Multiplicação – Página 9
-    description: Multiplique números inteiros por frações.
-    exercises:
-      - type: fraction_multiply
+        correctAnswer: 45/14
+      - &a9
+        type: fraction_multiply
         question: 10 × 2/15 =
-        correctAnswer: "20/15"
-  - pageNumber: 10
-    title: Frações Multiplicação – Página 10
+        correctAnswer: 20/15
+      - &a10
+        type: fraction_multiply
+        question: 12 × 3/16 =
+        correctAnswer: 36/16
+  - pageNumber: 2
+    title: Frações Multiplicação — Conjunto 5 – Página 2
     description: Multiplique números inteiros por frações.
     exercises:
-      - type: fraction_multiply
-        question: 12 × 3/16 =
-        correctAnswer: "36/16"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Frações Multiplicação — Conjunto 5 – Página 3
+    description: Multiplique números inteiros por frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Frações Multiplicação — Conjunto 5 – Página 4
+    description: Multiplique números inteiros por frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Frações Multiplicação — Conjunto 5 – Página 5
+    description: Multiplique números inteiros por frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Frações Multiplicação — Conjunto 5 – Página 6
+    description: Multiplique números inteiros por frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Frações Multiplicação — Conjunto 5 – Página 7
+    description: Multiplique números inteiros por frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Frações Multiplicação — Conjunto 5 – Página 8
+    description: Multiplique números inteiros por frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Frações Multiplicação — Conjunto 5 – Página 9
+    description: Multiplique números inteiros por frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Frações Multiplicação — Conjunto 5 – Página 10
+    description: Multiplique números inteiros por frações.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

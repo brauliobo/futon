@@ -4,73 +4,172 @@ example: "Use substituições trigonométricas: x = a sin θ, x = a tan θ, x = 
 subject: math
 pages:
   - pageNumber: 1
-    title: Substituições Trigonométricas – Página 1
+    title: Substituições Trigonométricas — Conjunto 18 – Página 1
     description: Use substituição trigonométrica.
     exercises:
-      - type: quadratic
-        question: "∫ 1/√(1-x²) dx"
-        correctAnswer: "arcsin(x) + C"
+      - &a1
+        type: quadratic
+        question: ∫ 1/√(1-x²) dx
+        correctAnswer: arcsin(x) + C
+      - &a2
+        type: quadratic
+        question: ∫ 1/(1+x²) dx
+        correctAnswer: arctan(x) + C
+      - &a3
+        type: quadratic
+        question: ∫ √(1-x²) dx
+        correctAnswer: (x/2)√(1-x²) + (1/2)arcsin(x) + C
+      - &a4
+        type: quadratic
+        question: ∫ x²/√(4-x²) dx
+        correctAnswer: 2arcsin(x/2) - (x/2)√(4-x²) + C
+      - &a5
+        type: quadratic
+        question: ∫ 1/(x²√(x²-1)) dx
+        correctAnswer: √(x²-1)/x + C
+      - &a6
+        type: quadratic
+        question: ∫ √(x²+1) dx
+        correctAnswer: (x/2)√(x²+1) + (1/2)ln|x + √(x²+1)| + C
+      - &a7
+        type: quadratic
+        question: ∫ 1/√(x²-4) dx
+        correctAnswer: ln|x + √(x²-4)| + C
+      - &a8
+        type: quadratic
+        question: ∫ x²√(9-x²) dx
+        correctAnswer: (x/8)(2x²-9)√(9-x²) + (81/8)arcsin(x/3) + C
+      - &a9
+        type: quadratic
+        question: ∫ 1/(x²√(x²+4)) dx
+        correctAnswer: -√(x²+4)/(4x) + C
+      - &a10
+        type: quadratic
+        question: ∫ √(x²-9)/x dx
+        correctAnswer: √(x²-9) - 3arccos(3/|x|) + C
   - pageNumber: 2
-    title: Substituições Trigonométricas – Página 2
+    title: Substituições Trigonométricas — Conjunto 18 – Página 2
     description: Use substituição trigonométrica.
     exercises:
-      - type: quadratic
-        question: "∫ 1/(1+x²) dx"
-        correctAnswer: "arctan(x) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 3
-    title: Substituições Trigonométricas – Página 3
+    title: Substituições Trigonométricas — Conjunto 18 – Página 3
     description: Use substituição trigonométrica.
     exercises:
-      - type: quadratic
-        question: "∫ √(1-x²) dx"
-        correctAnswer: "(x/2)√(1-x²) + (1/2)arcsin(x) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 4
-    title: Substituições Trigonométricas – Página 4
+    title: Substituições Trigonométricas — Conjunto 18 – Página 4
     description: Use substituição trigonométrica.
     exercises:
-      - type: quadratic
-        question: "∫ x²/√(4-x²) dx"
-        correctAnswer: "2arcsin(x/2) - (x/2)√(4-x²) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 5
-    title: Substituições Trigonométricas – Página 5
+    title: Substituições Trigonométricas — Conjunto 18 – Página 5
     description: Use substituição trigonométrica.
     exercises:
-      - type: quadratic
-        question: "∫ 1/(x²√(x²-1)) dx"
-        correctAnswer: "√(x²-1)/x + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 6
-    title: Substituições Trigonométricas – Página 6
+    title: Substituições Trigonométricas — Conjunto 18 – Página 6
     description: Use substituição trigonométrica.
     exercises:
-      - type: quadratic
-        question: "∫ √(x²+1) dx"
-        correctAnswer: "(x/2)√(x²+1) + (1/2)ln|x + √(x²+1)| + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 7
-    title: Substituições Trigonométricas – Página 7
+    title: Substituições Trigonométricas — Conjunto 18 – Página 7
     description: Use substituição trigonométrica.
     exercises:
-      - type: quadratic
-        question: "∫ 1/√(x²-4) dx"
-        correctAnswer: "ln|x + √(x²-4)| + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 8
-    title: Substituições Trigonométricas – Página 8
+    title: Substituições Trigonométricas — Conjunto 18 – Página 8
     description: Use substituição trigonométrica.
     exercises:
-      - type: quadratic
-        question: "∫ x²√(9-x²) dx"
-        correctAnswer: "(x/8)(2x²-9)√(9-x²) + (81/8)arcsin(x/3) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 9
-    title: Substituições Trigonométricas – Página 9
+    title: Substituições Trigonométricas — Conjunto 18 – Página 9
     description: Use substituição trigonométrica.
     exercises:
-      - type: quadratic
-        question: "∫ 1/(x²√(x²+4)) dx"
-        correctAnswer: "-√(x²+4)/(4x) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 10
-    title: Substituições Trigonométricas – Página 10
+    title: Substituições Trigonométricas — Conjunto 18 – Página 10
     description: Use substituição trigonométrica.
     exercises:
-      - type: quadratic
-        question: "∫ √(x²-9)/x dx"
-        correctAnswer: "√(x²-9) - 3arccos(3/|x|) + C"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

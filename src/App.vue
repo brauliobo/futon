@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { generateAdditionSet, generateSubtractionSet, generateMultiplicationSet, generateDivisionSet, generateCountSet, generateNextPrevSet } from "./utils/generatorMath.js";
+// Removed dynamic generators - all sets are now static YAML files
 import { DisciplineManager } from "./services/DisciplineManager.js";
 import { SetFactory } from "./services/SetFactory.js";
 import Home from "./components/Home.vue";
@@ -38,7 +38,7 @@ export default {
     
     const disciplineManager = new DisciplineManager(
       withMeta, 
-      { generateAdditionSet, generateSubtractionSet, generateMultiplicationSet, generateDivisionSet, generateCountSet, generateNextPrevSet }, 
+      {}, // No generators needed - all sets are static YAML files
       existingSeed
     );
     

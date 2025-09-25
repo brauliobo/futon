@@ -4,73 +4,174 @@ example: "Transformações lineares. Ex.: T(x,y) = (2x, y+x)"
 subject: math
 pages:
   - pageNumber: 1
-    title: Álgebra Avançada – Página 1
+    title: Álgebra Avançada — Conjunto 19 – Página 1
     description: Transformações lineares e matrizes.
     exercises:
-      - type: algebra
-        question: "T(x,y) = (2x, 3y). T(1,1) ="
+      - &a1
+        type: algebra
+        question: T(x,y) = (2x, 3y). T(1,1) =
         correctAnswer: (2,3)
-  - pageNumber: 2
-    title: Álgebra Avançada – Página 2
-    description: Transformações lineares e matrizes.
-    exercises:
-      - type: algebra
+      - &a2
+        type: algebra
         question: "Matriz da rotação por 90° no plano:"
         correctAnswer: "[0 -1; 1 0]"
-  - pageNumber: 3
-    title: Álgebra Avançada – Página 3
-    description: Transformações lineares e matrizes.
-    exercises:
-      - type: algebra
+      - &a3
+        type: algebra
         question: "Núcleo da transformação T(x,y) = (0,0):"
-        correctAnswer: {(0,0)}
-  - pageNumber: 4
-    title: Álgebra Avançada – Página 4
-    description: Transformações lineares e matrizes.
-    exercises:
-      - type: algebra
+        correctAnswer:
+          (0: null
+          0): null
+      - &a4
+        type: algebra
         question: "Imagem da matriz identidade 2×2:"
-        correctAnswer: "R²"
-  - pageNumber: 5
-    title: Álgebra Avançada – Página 5
-    description: Transformações lineares e matrizes.
-    exercises:
-      - type: algebra
+        correctAnswer: R²
+      - &a5
+        type: algebra
         question: "Autovalor da matriz [3 0; 0 5] (menor):"
         correctAnswer: λ = 3
-  - pageNumber: 6
-    title: Álgebra Avançada – Página 6
-    description: Transformações lineares e matrizes.
-    exercises:
-      - type: algebra
+      - &a6
+        type: algebra
         question: "Autovetor de [2 0; 0 2] para λ=2:"
         correctAnswer: Qualquer v≠0
-  - pageNumber: 7
-    title: Álgebra Avançada – Página 7
-    description: Transformações lineares e matrizes.
-    exercises:
-      - type: algebra
+      - &a7
+        type: algebra
         question: "Diagonalização: matriz diagonal similar a A tem:"
         correctAnswer: Autovalores na diagonal
-  - pageNumber: 8
-    title: Álgebra Avançada – Página 8
-    description: Transformações lineares e matrizes.
-    exercises:
-      - type: algebra
+      - &a8
+        type: algebra
         question: "Reflexão sobre o eixo x: (x,y) → ?"
         correctAnswer: (x,-y)
-  - pageNumber: 9
-    title: Álgebra Avançada – Página 9
-    description: Transformações lineares e matrizes.
-    exercises:
-      - type: algebra
+      - &a9
+        type: algebra
         question: "Escalonamento por 2: (x,y) → ?"
         correctAnswer: (2x,2y)
-  - pageNumber: 10
-    title: Álgebra Avançada – Página 10
-    description: Transformações lineares e matrizes.
-    exercises:
-      - type: algebra
+      - &a10
+        type: algebra
         question: "Cisalhamento: [1 k; 0 1](x,y) ="
         correctAnswer: (x+ky, y)
-target: 10
+  - pageNumber: 2
+    title: Álgebra Avançada — Conjunto 19 – Página 2
+    description: Transformações lineares e matrizes.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Álgebra Avançada — Conjunto 19 – Página 3
+    description: Transformações lineares e matrizes.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Álgebra Avançada — Conjunto 19 – Página 4
+    description: Transformações lineares e matrizes.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Álgebra Avançada — Conjunto 19 – Página 5
+    description: Transformações lineares e matrizes.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Álgebra Avançada — Conjunto 19 – Página 6
+    description: Transformações lineares e matrizes.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Álgebra Avançada — Conjunto 19 – Página 7
+    description: Transformações lineares e matrizes.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Álgebra Avançada — Conjunto 19 – Página 8
+    description: Transformações lineares e matrizes.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Álgebra Avançada — Conjunto 19 – Página 9
+    description: Transformações lineares e matrizes.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Álgebra Avançada — Conjunto 19 – Página 10
+    description: Transformações lineares e matrizes.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

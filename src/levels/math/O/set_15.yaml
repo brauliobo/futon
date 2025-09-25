@@ -1,76 +1,175 @@
 title: Teorema Fundamental — Conjunto 15
 level: O
-example: "Aplique o Teorema Fundamental do Cálculo"
+example: Aplique o Teorema Fundamental do Cálculo
 subject: math
 pages:
   - pageNumber: 1
-    title: Teorema Fundamental – Página 1
+    title: Teorema Fundamental — Conjunto 15 – Página 1
     description: Aplique o TFC parte I.
     exercises:
-      - type: quadratic
-        question: "d/dx ∫[0,x] t² dt"
-        correctAnswer: "x²"
-  - pageNumber: 2
-    title: Teorema Fundamental – Página 2
-    description: Aplique o TFC parte I.
-    exercises:
-      - type: quadratic
-        question: "d/dx ∫[1,x²] sin t dt"
-        correctAnswer: "2x sin(x²)"
-  - pageNumber: 3
-    title: Teorema Fundamental – Página 3
-    description: Aplique o TFC parte I.
-    exercises:
-      - type: quadratic
-        question: "d/dx ∫[x,3] e^t dt"
-        correctAnswer: "-e^x"
-  - pageNumber: 4
-    title: Teorema Fundamental – Página 4
-    description: Aplique o TFC parte II.
-    exercises:
-      - type: quadratic
-        question: "∫[0,2] 3x² dx usando TFC"
+      - &a1
+        type: quadratic
+        question: d/dx ∫[0,x] t² dt
+        correctAnswer: x²
+      - &a2
+        type: quadratic
+        question: d/dx ∫[1,x²] sin t dt
+        correctAnswer: 2x sin(x²)
+      - &a3
+        type: quadratic
+        question: d/dx ∫[x,3] e^t dt
+        correctAnswer: -e^x
+      - &a4
+        type: quadratic
+        question: ∫[0,2] 3x² dx usando TFC
         correctAnswer: "8"
-  - pageNumber: 5
-    title: Teorema Fundamental – Página 5
-    description: Aplique o TFC parte II.
-    exercises:
-      - type: quadratic
-        question: "∫[1,4] (1/√x) dx usando TFC"
+      - &a5
+        type: quadratic
+        question: ∫[1,4] (1/√x) dx usando TFC
         correctAnswer: "2"
-  - pageNumber: 6
-    title: Teorema Fundamental – Página 6
-    description: Calcule derivadas de integrais.
-    exercises:
-      - type: quadratic
-        question: "d/dx ∫[0,x³] cos t dt"
-        correctAnswer: "3x² cos(x³)"
-  - pageNumber: 7
-    title: Teorema Fundamental – Página 7
-    description: Calcule derivadas de integrais.
-    exercises:
-      - type: quadratic
-        question: "d/dx ∫[sin x,1] t³ dt"
-        correctAnswer: "-sin³(x) cos(x)"
-  - pageNumber: 8
-    title: Teorema Fundamental – Página 8
-    description: Valor médio de função.
-    exercises:
-      - type: quadratic
-        question: "Valor médio de f(x) = x² em [0,3]"
+      - &a6
+        type: quadratic
+        question: d/dx ∫[0,x³] cos t dt
+        correctAnswer: 3x² cos(x³)
+      - &a7
+        type: quadratic
+        question: d/dx ∫[sin x,1] t³ dt
+        correctAnswer: -sin³(x) cos(x)
+      - &a8
+        type: quadratic
+        question: Valor médio de f(x) = x² em [0,3]
         correctAnswer: "3"
+      - &a9
+        type: quadratic
+        question: Valor médio de f(x) = sin x em [0,π]
+        correctAnswer: 2/π
+      - &a10
+        type: quadratic
+        question: Encontre c tal que f(c) = valor médio de x³ em [0,2]
+        correctAnswer: c = √[4]{12}
+  - pageNumber: 2
+    title: Teorema Fundamental — Conjunto 15 – Página 2
+    description: Aplique o TFC parte I.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Teorema Fundamental — Conjunto 15 – Página 3
+    description: Aplique o TFC parte I.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Teorema Fundamental — Conjunto 15 – Página 4
+    description: Aplique o TFC parte I.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Teorema Fundamental — Conjunto 15 – Página 5
+    description: Aplique o TFC parte I.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Teorema Fundamental — Conjunto 15 – Página 6
+    description: Aplique o TFC parte I.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Teorema Fundamental — Conjunto 15 – Página 7
+    description: Aplique o TFC parte I.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Teorema Fundamental — Conjunto 15 – Página 8
+    description: Aplique o TFC parte I.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 9
-    title: Teorema Fundamental – Página 9
-    description: Valor médio de função.
+    title: Teorema Fundamental — Conjunto 15 – Página 9
+    description: Aplique o TFC parte I.
     exercises:
-      - type: quadratic
-        question: "Valor médio de f(x) = sin x em [0,π]"
-        correctAnswer: "2/π"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 10
-    title: Teorema Fundamental – Página 10
-    description: Teorema do valor médio para integrais.
+    title: Teorema Fundamental — Conjunto 15 – Página 10
+    description: Aplique o TFC parte I.
     exercises:
-      - type: quadratic
-        question: "Encontre c tal que f(c) = valor médio de x³ em [0,2]"
-        correctAnswer: "c = √[4]{12}"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

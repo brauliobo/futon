@@ -4,73 +4,172 @@ example: "Funções trigonométricas. Ex.: sen(30°) = 1/2"
 subject: math
 pages:
   - pageNumber: 1
-    title: Álgebra Avançada – Página 1
+    title: Álgebra Avançada — Conjunto 10 – Página 1
     description: Funções trigonométricas básicas.
     exercises:
-      - type: algebra
+      - &a1
+        type: algebra
         question: "Calcule: sen(30°) ="
         correctAnswer: 1/2
-  - pageNumber: 2
-    title: Álgebra Avançada – Página 2
-    description: Funções trigonométricas básicas.
-    exercises:
-      - type: algebra
+      - &a2
+        type: algebra
         question: "Calcule: cos(60°) ="
         correctAnswer: 1/2
-  - pageNumber: 3
-    title: Álgebra Avançada – Página 3
-    description: Funções trigonométricas básicas.
-    exercises:
-      - type: algebra
+      - &a3
+        type: algebra
         question: "Calcule: tan(45°) ="
         correctAnswer: 1
-  - pageNumber: 4
-    title: Álgebra Avançada – Página 4
-    description: Funções trigonométricas básicas.
-    exercises:
-      - type: algebra
+      - &a4
+        type: algebra
         question: "Calcule: sen(90°) ="
         correctAnswer: 1
-  - pageNumber: 5
-    title: Álgebra Avançada – Página 5
-    description: Funções trigonométricas básicas.
-    exercises:
-      - type: algebra
+      - &a5
+        type: algebra
         question: "Calcule: cos(0°) ="
         correctAnswer: 1
-  - pageNumber: 6
-    title: Álgebra Avançada – Página 6
-    description: Funções trigonométricas básicas.
-    exercises:
-      - type: algebra
+      - &a6
+        type: algebra
         question: "Identidade: sen²x + cos²x ="
         correctAnswer: 1
-  - pageNumber: 7
-    title: Álgebra Avançada – Página 7
-    description: Funções trigonométricas básicas.
-    exercises:
-      - type: algebra
+      - &a7
+        type: algebra
         question: "Período da função sen(x):"
-        correctAnswer: "2π"
-  - pageNumber: 8
-    title: Álgebra Avançada – Página 8
-    description: Funções trigonométricas básicas.
-    exercises:
-      - type: algebra
+        correctAnswer: 2π
+      - &a8
+        type: algebra
         question: "Amplitude de 3sen(x):"
         correctAnswer: 3
+      - &a9
+        type: algebra
+        question: sen(180°) =
+        correctAnswer: 0
+      - &a10
+        type: algebra
+        question: cos(90°) =
+        correctAnswer: 0
+  - pageNumber: 2
+    title: Álgebra Avançada — Conjunto 10 – Página 2
+    description: Funções trigonométricas básicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Álgebra Avançada — Conjunto 10 – Página 3
+    description: Funções trigonométricas básicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Álgebra Avançada — Conjunto 10 – Página 4
+    description: Funções trigonométricas básicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Álgebra Avançada — Conjunto 10 – Página 5
+    description: Funções trigonométricas básicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Álgebra Avançada — Conjunto 10 – Página 6
+    description: Funções trigonométricas básicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Álgebra Avançada — Conjunto 10 – Página 7
+    description: Funções trigonométricas básicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Álgebra Avançada — Conjunto 10 – Página 8
+    description: Funções trigonométricas básicas.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 9
-    title: Álgebra Avançada – Página 9
+    title: Álgebra Avançada — Conjunto 10 – Página 9
     description: Funções trigonométricas básicas.
     exercises:
-      - type: algebra
-        question: "sen(180°) ="
-        correctAnswer: 0
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 10
-    title: Álgebra Avançada – Página 10
+    title: Álgebra Avançada — Conjunto 10 – Página 10
     description: Funções trigonométricas básicas.
     exercises:
-      - type: algebra
-        question: "cos(90°) ="
-        correctAnswer: 0
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

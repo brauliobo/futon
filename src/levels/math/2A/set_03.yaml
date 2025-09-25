@@ -4,73 +4,172 @@ example: "Subtraia números de 0 a 10. Ex.: 7 - 3 = 4"
 subject: math
 pages:
   - pageNumber: 1
-    title: Subtração até 10 – Página 1
+    title: Subtração Simples 0–10 — Conjunto 3 – Página 1
     description: Subtraia números de 0 a 10.
     exercises:
-      - type: subtraction
+      - &a1
+        type: subtraction
         question: 9 - 7 =
         correctAnswer: 2
-  - pageNumber: 2
-    title: Subtração até 10 – Página 2
-    description: Subtraia números de 0 a 10.
-    exercises:
-      - type: subtraction
+      - &a2
+        type: subtraction
         question: 8 - 6 =
         correctAnswer: 2
-  - pageNumber: 3
-    title: Subtração até 10 – Página 3
-    description: Subtraia números de 0 a 10.
-    exercises:
-      - type: subtraction
+      - &a3
+        type: subtraction
         question: 7 - 5 =
         correctAnswer: 2
-  - pageNumber: 4
-    title: Subtração até 10 – Página 4
-    description: Subtraia números de 0 a 10.
-    exercises:
-      - type: subtraction
+      - &a4
+        type: subtraction
         question: 6 - 1 =
         correctAnswer: 5
-  - pageNumber: 5
-    title: Subtração até 10 – Página 5
-    description: Subtraia números de 0 a 10.
-    exercises:
-      - type: subtraction
+      - &a5
+        type: subtraction
         question: 5 - 4 =
         correctAnswer: 1
-  - pageNumber: 6
-    title: Subtração até 10 – Página 6
-    description: Subtraia números de 0 a 10.
-    exercises:
-      - type: subtraction
+      - &a6
+        type: subtraction
         question: 10 - 3 =
         correctAnswer: 7
-  - pageNumber: 7
-    title: Subtração até 10 – Página 7
-    description: Subtraia números de 0 a 10.
-    exercises:
-      - type: subtraction
+      - &a7
+        type: subtraction
         question: 8 - 2 =
         correctAnswer: 6
-  - pageNumber: 8
-    title: Subtração até 10 – Página 8
-    description: Subtraia números de 0 a 10.
-    exercises:
-      - type: subtraction
+      - &a8
+        type: subtraction
         question: 7 - 0 =
         correctAnswer: 7
-  - pageNumber: 9
-    title: Subtração até 10 – Página 9
-    description: Subtraia números de 0 a 10.
-    exercises:
-      - type: subtraction
+      - &a9
+        type: subtraction
         question: 4 - 3 =
         correctAnswer: 1
-  - pageNumber: 10
-    title: Subtração até 10 – Página 10
-    description: Subtraia números de 0 a 10.
-    exercises:
-      - type: subtraction
+      - &a10
+        type: subtraction
         question: 6 - 5 =
         correctAnswer: 1
-target: 10
+  - pageNumber: 2
+    title: Subtração Simples 0–10 — Conjunto 3 – Página 2
+    description: Subtraia números de 0 a 10.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Subtração Simples 0–10 — Conjunto 3 – Página 3
+    description: Subtraia números de 0 a 10.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Subtração Simples 0–10 — Conjunto 3 – Página 4
+    description: Subtraia números de 0 a 10.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Subtração Simples 0–10 — Conjunto 3 – Página 5
+    description: Subtraia números de 0 a 10.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Subtração Simples 0–10 — Conjunto 3 – Página 6
+    description: Subtraia números de 0 a 10.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Subtração Simples 0–10 — Conjunto 3 – Página 7
+    description: Subtraia números de 0 a 10.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Subtração Simples 0–10 — Conjunto 3 – Página 8
+    description: Subtraia números de 0 a 10.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Subtração Simples 0–10 — Conjunto 3 – Página 9
+    description: Subtraia números de 0 a 10.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Subtração Simples 0–10 — Conjunto 3 – Página 10
+    description: Subtraia números de 0 a 10.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

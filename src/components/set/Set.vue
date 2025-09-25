@@ -1,19 +1,13 @@
 <!-- src/components/set/Set.vue -->
 <template lang="pug">
   .set.mb-4
-    // Enhanced Header Section
+    // Stats Dashboard  
     .card.shadow-sm
-      .card-header.bg-gradient-primary.text-white.py-3
-        .row.align-items-center
-          .col-md-8
-            h2.mb-1.fw-bold {{ set.title }}
-            small.text-white-75 {{ $t('level') }}: {{ set.level }}
-          .col-md-4.text-md-end.text-center.mt-2.mt-md-0
-            Button(variant="outline-light" size="sm" @click="resetSet") 
-              | ↻ {{ $t('reset') }}
-      
-      // Stats Dashboard
       .card-body.pb-2
+        .d-flex.justify-content-between.align-items-center.mb-3
+          .fw-bold {{ $t('progress') || 'Progress' }}
+          Button(variant="outline-secondary" size="sm" @click="resetSet") 
+            | ↻ {{ $t('reset') }}
         .row.g-3.mb-4
           .col-md-4
             .stat-card.text-center.p-3.bg-light.rounded
@@ -39,7 +33,6 @@
         .progress-section.mb-4(v-if="currentPage")
           .d-flex.justify-content-between.align-items-center.mb-2
             .progress-info
-              span.fw-semibold.text-dark {{ pageInfoText }}
               span.text-muted.ms-2 {{ answeredCount }}/{{ (currentPage.exercises || []).length }}
             .timer-display.d-flex.align-items-center
               span.text-muted.me-1 ⏱
@@ -56,7 +49,6 @@
           .navigation.d-flex.justify-content-between.align-items-center
             Button(variant="secondary" @click="prevPage" :disabled="currentPageIndex === 0" aria-label="Previous page") {{ $t('previous') }}
             .d-flex.align-items-center.gap-2
-              span {{ pageInfoText }}
               select.form-select.form-select-sm(style="width:auto" v-model.number="currentPageIndex" :max="(totalPages || 1) - 1" aria-label="Select page")
                 option(v-for="(p, idx) in pages" :key="'pgopt-'+idx" :value="idx") {{ idx + 1 }}
             Button(variant="secondary" @click="nextPage" :disabled="!canGoNextPage" aria-label="Next page") {{ $t('next') }}

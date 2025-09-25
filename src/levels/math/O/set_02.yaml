@@ -4,73 +4,172 @@ example: "Calcule integrais de potências. Ex.: ∫ x^n dx = x^(n+1)/(n+1) + C"
 subject: math
 pages:
   - pageNumber: 1
-    title: Integrais de Potências – Página 1
+    title: Integrais de Potências — Conjunto 2 – Página 1
     description: Calcule integrais de potências.
     exercises:
-      - type: quadratic
-        question: "∫ x⁴ dx"
-        correctAnswer: "(1/5)x⁵ + C"
+      - &a1
+        type: quadratic
+        question: ∫ x⁴ dx
+        correctAnswer: (1/5)x⁵ + C
+      - &a2
+        type: quadratic
+        question: ∫ x⁵ dx
+        correctAnswer: (1/6)x⁶ + C
+      - &a3
+        type: quadratic
+        question: ∫ x^(-2) dx
+        correctAnswer: -1/x + C
+      - &a4
+        type: quadratic
+        question: ∫ √x dx
+        correctAnswer: (2/3)x^(3/2) + C
+      - &a5
+        type: quadratic
+        question: ∫ 1/√x dx
+        correctAnswer: 2√x + C
+      - &a6
+        type: quadratic
+        question: ∫ x^(1/3) dx
+        correctAnswer: (3/4)x^(4/3) + C
+      - &a7
+        type: quadratic
+        question: ∫ 3x^(-1/2) dx
+        correctAnswer: 6√x + C
+      - &a8
+        type: quadratic
+        question: ∫ x^(2/3) dx
+        correctAnswer: (3/5)x^(5/3) + C
+      - &a9
+        type: quadratic
+        question: ∫ 4x^(-3) dx
+        correctAnswer: -2/x² + C
+      - &a10
+        type: quadratic
+        question: ∫ x^(3/2) dx
+        correctAnswer: (2/5)x^(5/2) + C
   - pageNumber: 2
-    title: Integrais de Potências – Página 2
+    title: Integrais de Potências — Conjunto 2 – Página 2
     description: Calcule integrais de potências.
     exercises:
-      - type: quadratic
-        question: "∫ x⁵ dx"
-        correctAnswer: "(1/6)x⁶ + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 3
-    title: Integrais de Potências – Página 3
+    title: Integrais de Potências — Conjunto 2 – Página 3
     description: Calcule integrais de potências.
     exercises:
-      - type: quadratic
-        question: "∫ x^(-2) dx"
-        correctAnswer: "-1/x + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 4
-    title: Integrais de Potências – Página 4
+    title: Integrais de Potências — Conjunto 2 – Página 4
     description: Calcule integrais de potências.
     exercises:
-      - type: quadratic
-        question: "∫ √x dx"
-        correctAnswer: "(2/3)x^(3/2) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 5
-    title: Integrais de Potências – Página 5
+    title: Integrais de Potências — Conjunto 2 – Página 5
     description: Calcule integrais de potências.
     exercises:
-      - type: quadratic
-        question: "∫ 1/√x dx"
-        correctAnswer: "2√x + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 6
-    title: Integrais de Potências – Página 6
+    title: Integrais de Potências — Conjunto 2 – Página 6
     description: Calcule integrais de potências.
     exercises:
-      - type: quadratic
-        question: "∫ x^(1/3) dx"
-        correctAnswer: "(3/4)x^(4/3) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 7
-    title: Integrais de Potências – Página 7
+    title: Integrais de Potências — Conjunto 2 – Página 7
     description: Calcule integrais de potências.
     exercises:
-      - type: quadratic
-        question: "∫ 3x^(-1/2) dx"
-        correctAnswer: "6√x + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 8
-    title: Integrais de Potências – Página 8
+    title: Integrais de Potências — Conjunto 2 – Página 8
     description: Calcule integrais de potências.
     exercises:
-      - type: quadratic
-        question: "∫ x^(2/3) dx"
-        correctAnswer: "(3/5)x^(5/3) + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 9
-    title: Integrais de Potências – Página 9
+    title: Integrais de Potências — Conjunto 2 – Página 9
     description: Calcule integrais de potências.
     exercises:
-      - type: quadratic
-        question: "∫ 4x^(-3) dx"
-        correctAnswer: "-2/x² + C"
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
   - pageNumber: 10
-    title: Integrais de Potências – Página 10
+    title: Integrais de Potências — Conjunto 2 – Página 10
     description: Calcule integrais de potências.
     exercises:
-      - type: quadratic
-        question: "∫ x^(3/2) dx"
-        correctAnswer: "(2/5)x^(5/2) + C"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

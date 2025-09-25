@@ -4,73 +4,172 @@ example: "Divida frações por números inteiros. Ex.: 3/4 ÷ 2 = 3/4 × 1/2 = 3
 subject: math
 pages:
   - pageNumber: 1
-    title: Frações Divisão – Página 1
+    title: Frações Divisão — Conjunto 9 – Página 1
     description: Divida frações por números inteiros.
     exercises:
-      - type: fraction_divide
+      - &a1
+        type: fraction_divide
         question: 3/4 ÷ 2 =
-        correctAnswer: "3/8"
-  - pageNumber: 2
-    title: Frações Divisão – Página 2
-    description: Divida frações por números inteiros.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 3/8
+      - &a2
+        type: fraction_divide
         question: 5/6 ÷ 3 =
-        correctAnswer: "5/18"
-  - pageNumber: 3
-    title: Frações Divisão – Página 3
-    description: Divida frações por números inteiros.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 5/18
+      - &a3
+        type: fraction_divide
         question: 7/8 ÷ 4 =
-        correctAnswer: "7/32"
-  - pageNumber: 4
-    title: Frações Divisão – Página 4
-    description: Divida frações por números inteiros.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 7/32
+      - &a4
+        type: fraction_divide
         question: 2/5 ÷ 6 =
-        correctAnswer: "2/30"
-  - pageNumber: 5
-    title: Frações Divisão – Página 5
-    description: Divida frações por números inteiros.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 2/30
+      - &a5
+        type: fraction_divide
         question: 9/10 ÷ 5 =
-        correctAnswer: "9/50"
-  - pageNumber: 6
-    title: Frações Divisão – Página 6
-    description: Divida frações por números inteiros.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 9/50
+      - &a6
+        type: fraction_divide
         question: 4/7 ÷ 8 =
-        correctAnswer: "4/56"
-  - pageNumber: 7
-    title: Frações Divisão – Página 7
-    description: Divida frações por números inteiros.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 4/56
+      - &a7
+        type: fraction_divide
         question: 11/12 ÷ 7 =
-        correctAnswer: "11/84"
-  - pageNumber: 8
-    title: Frações Divisão – Página 8
-    description: Divida frações por números inteiros.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 11/84
+      - &a8
+        type: fraction_divide
         question: 6/13 ÷ 9 =
-        correctAnswer: "6/117"
-  - pageNumber: 9
-    title: Frações Divisão – Página 9
-    description: Divida frações por números inteiros.
-    exercises:
-      - type: fraction_divide
+        correctAnswer: 6/117
+      - &a9
+        type: fraction_divide
         question: 8/15 ÷ 12 =
-        correctAnswer: "8/180"
-  - pageNumber: 10
-    title: Frações Divisão – Página 10
+        correctAnswer: 8/180
+      - &a10
+        type: fraction_divide
+        question: 14/17 ÷ 11 =
+        correctAnswer: 14/187
+  - pageNumber: 2
+    title: Frações Divisão — Conjunto 9 – Página 2
     description: Divida frações por números inteiros.
     exercises:
-      - type: fraction_divide
-        question: 14/17 ÷ 11 =
-        correctAnswer: "14/187"
-target: 10
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 3
+    title: Frações Divisão — Conjunto 9 – Página 3
+    description: Divida frações por números inteiros.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Frações Divisão — Conjunto 9 – Página 4
+    description: Divida frações por números inteiros.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 5
+    title: Frações Divisão — Conjunto 9 – Página 5
+    description: Divida frações por números inteiros.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Frações Divisão — Conjunto 9 – Página 6
+    description: Divida frações por números inteiros.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 7
+    title: Frações Divisão — Conjunto 9 – Página 7
+    description: Divida frações por números inteiros.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Frações Divisão — Conjunto 9 – Página 8
+    description: Divida frações por números inteiros.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 9
+    title: Frações Divisão — Conjunto 9 – Página 9
+    description: Divida frações por números inteiros.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Frações Divisão — Conjunto 9 – Página 10
+    description: Divida frações por números inteiros.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10

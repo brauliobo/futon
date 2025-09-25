@@ -7,74 +7,205 @@ passCriteria:
   maxAvgSecondsPerExercise: 6
 pages:
   - pageNumber: 1
-    title: Revisão Completa
+    title: Revisão Geral 5A – Página 1
     description: Exercícios variados de todo o conteúdo.
     exercises:
-      - type: addition
+      - &a1
+        type: addition
         question: 8 + 7 =
         correctAnswer: 15
-      - type: subtraction
+      - &a2
+        type: subtraction
         question: 16 - 9 =
         correctAnswer: 7
-      - type: count
+      - &a3
+        type: count
         question: ★ ★ ★ ★ ★ ★
         correctAnswer: 6
-      - type: next_number
+      - &a4
+        type: next_number
         question: "Depois de 14 vem:"
         correctAnswer: 15
-      - type: comparison
+      - &a5
+        type: comparison
         question: 13 ? 10
         correctAnswer: ">"
-      - type: addition
+      - &a6
+        type: addition
         question: 9 + 9 =
         correctAnswer: 18
-      - type: subtraction
+      - &a7
+        type: subtraction
         question: 20 - 8 =
         correctAnswer: 12
-      - type: missing_number
+      - &a8
+        type: missing_number
         question: 7 + ? = 15
         correctAnswer: 8
-      - type: even_odd
+      - &a9
+        type: even_odd
         question: "O número 14 é:"
         correctAnswer: par
-      - type: decomposition
+      - &a10
+        type: decomposition
         question: 6 + ? = 10
         correctAnswer: 4
   - pageNumber: 2
-    title: Revisão Final
-    description: Últimos exercícios do nível 5A.
+    title: Revisão Geral 5A – Página 2
+    description: Exercícios variados de todo o conteúdo.
     exercises:
-      - type: skip_counting
+      - &a11
+        type: skip_counting
         question: 2, 4, 6, ?
         correctAnswer: 8
-      - type: place_value
+      - &a12
+        type: place_value
         question: Quantas unidades tem 17?
         correctAnswer: 7
-      - type: addition
+      - &a13
+        type: addition
         question: 12 + 0 =
         correctAnswer: 12
-      - type: subtraction
+      - &a14
+        type: subtraction
         question: 11 - 11 =
         correctAnswer: 0
-      - type: previous_number
+      - &a15
+        type: previous_number
         question: "Antes de 16 vem:"
         correctAnswer: 15
-      - type: addition
+      - &a16
+        type: addition
         question: 5 + 6 =
         correctAnswer: 11
-      - type: subtraction
+      - &a17
+        type: subtraction
         question: 14 - 7 =
         correctAnswer: 7
-      - type: comparison
+      - &a18
+        type: comparison
         question: 9 ? 9
         correctAnswer: =
-      - type: count
+      - &a19
+        type: count
         question: ● ● ● ● ● ● ● ●
         correctAnswer: 8
-      - type: missing_number
+      - &a20
+        type: missing_number
         question: "? - 5 = 12"
         correctAnswer: 17
-target: 20
+  - pageNumber: 3
+    title: Revisão Geral 5A – Página 3
+    description: Exercícios variados de todo o conteúdo.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 4
+    title: Revisão Geral 5A – Página 4
+    description: Exercícios variados de todo o conteúdo.
+    exercises:
+      - *a11
+      - *a12
+      - *a13
+      - *a14
+      - *a15
+      - *a16
+      - *a17
+      - *a18
+      - *a19
+      - *a20
+  - pageNumber: 5
+    title: Revisão Geral 5A – Página 5
+    description: Exercícios variados de todo o conteúdo.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 6
+    title: Revisão Geral 5A – Página 6
+    description: Exercícios variados de todo o conteúdo.
+    exercises:
+      - *a11
+      - *a12
+      - *a13
+      - *a14
+      - *a15
+      - *a16
+      - *a17
+      - *a18
+      - *a19
+      - *a20
+  - pageNumber: 7
+    title: Revisão Geral 5A – Página 7
+    description: Exercícios variados de todo o conteúdo.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 8
+    title: Revisão Geral 5A – Página 8
+    description: Exercícios variados de todo o conteúdo.
+    exercises:
+      - *a11
+      - *a12
+      - *a13
+      - *a14
+      - *a15
+      - *a16
+      - *a17
+      - *a18
+      - *a19
+      - *a20
+  - pageNumber: 9
+    title: Revisão Geral 5A – Página 9
+    description: Exercícios variados de todo o conteúdo.
+    exercises:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - *a8
+      - *a9
+      - *a10
+  - pageNumber: 10
+    title: Revisão Geral 5A – Página 10
+    description: Exercícios variados de todo o conteúdo.
+    exercises:
+      - *a11
+      - *a12
+      - *a13
+      - *a14
+      - *a15
+      - *a16
+      - *a17
+      - *a18
+      - *a19
+      - *a20
 progress:
   currentPage: 1
   completedPages: 0
