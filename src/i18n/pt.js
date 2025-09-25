@@ -80,5 +80,6 @@ export const pt = {
   level_name_trigonometry_advanced_series: "Trigonometria Avançada • Séries",
   level_name_differential_calculus: "Cálculo Diferencial",
   level_name_integral_calculus: "Cálculo Integral",
+  loading: "Carregando...",
 };
 

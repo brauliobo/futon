@@ -33,7 +33,7 @@
         .progress-section.mb-4(v-if="currentPage")
           .d-flex.justify-content-between.align-items-center.mb-2
             .progress-info
-              span.text-muted.ms-2 {{ answeredCount }}/{{ (currentPage.exercises || []).length }}
+              span.text-muted.ms-2 {{ (currentPage.pageNumber || (currentPageIndex + 1)) }}/{{ totalPages || 1 }}
             .timer-display.d-flex.align-items-center
               span.text-muted.me-1 ⏱
               span.fw-bold.text-primary {{ prettyTimer }}

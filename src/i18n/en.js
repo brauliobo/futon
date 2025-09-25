@@ -80,6 +80,7 @@ export const en = {
   level_name_trigonometry_advanced_series: "Advanced Trigonometry • Series",
   level_name_differential_calculus: "Differential Calculus",
   level_name_integral_calculus: "Integral Calculus",
+  loading: "Loading...",
 };
 
 
