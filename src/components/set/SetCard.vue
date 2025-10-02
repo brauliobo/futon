@@ -1,5 +1,5 @@
 <template lang="pug">
-  .lesson-card(:class="{ 'lesson-card--active': isActive, 'lesson-card--disabled': !canStart }")
+  .lesson-card(:class="{ 'lesson-card--active': isActive }")
     .lesson-card__header
       .lesson-card__title-section
         h5.lesson-card__title {{ set.title }}
@@ -56,13 +56,9 @@
         Badge(variant="success" v-if="set.completed" class="lesson-card__badge")
           CheckCircle(:size="14")
           span {{ $t('completed') }}
-        Badge(variant="warning" v-if="set.comingSoon" class="lesson-card__badge")
-          Clock(:size="14")
-          span {{ $t('comingSoon') }}
       
       Button(
         :variant="buttonVariant" 
-        :disabled="!canStart" 
         @click.prevent="onStart"
         :class="buttonClass"
       )
@@ -74,7 +70,7 @@
 import Button from "../ui/Button.vue";
 import Badge from "../ui/Badge.vue";
 import Progress from "../ui/Progress.vue";
-import { Play, RotateCcw, Lock, CheckCircle, Clock } from 'lucide-vue-next';
+import { Play, RotateCcw, CheckCircle } from 'lucide-vue-next';
 
 export default {
   name: 'SetCard',
@@ -84,9 +80,7 @@ export default {
     Progress,
     Play,
     RotateCcw,
-    Lock,
     CheckCircle,
-    Clock,
   },
   props: {
     set: { type: Object, required: true },
@@ -102,7 +96,7 @@ export default {
     hasProgress() {
       return this.progress.completed > 0 && !this.set.completed;
     },
-    canStart() { return !this.set.comingSoon; },
+    canStart() { return true; },
     speedTarget() {
       const defaults = { maxAvgSecondsPerExercise: 6 };
       const pc = { ...defaults, ...(this.set.passCriteria || {}) };
@@ -140,27 +134,20 @@ export default {
       return this.$t('retry') || 'Retry';
     },
     buttonVariant() {
-      if (!this.canStart) return 'secondary';
-      if (this.isActive) return 'success';
-      return 'primary';
+      return this.isActive ? 'success' : 'primary';
     },
     buttonClass() {
       return `lesson-card__button ${this.isActive ? 'lesson-card__button--active' : ''}`;
     },
     buttonIcon() {
-      if (!this.canStart) return 'Lock';
-      if (this.set.completed) return 'RotateCcw';
-      return 'Play';
+      return this.set.completed ? 'RotateCcw' : 'Play';
     },
     buttonText() {
-      if (!this.canStart) return this.$t('comingSoon');
-      if (this.set.completed) return this.$t('restart') || 'Restart';
-      return this.$t('start');
+      return this.set.completed ? this.$t('restart') || 'Restart' : this.$t('start');
     },
   },
   methods: {
     onStart() {
-      if (!this.canStart) return;
       this.$emit('start', this.set);
     },
     getGradeColor(grade) {
@@ -222,15 +209,6 @@ export default {
   background: linear-gradient(90deg, #2196f3, #1976d2);
 }
 
-.lesson-card--disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.lesson-card--disabled:hover {
-  transform: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
 
 /* Header */
 .lesson-card__header {

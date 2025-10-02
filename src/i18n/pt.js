@@ -46,7 +46,6 @@ export const pt = {
   finalScore: "Nota Final",
   readOnlyMode: "Modo de Leitura",
   edit: "Editar",
-  comingSoon: "Em breve",
   // pontuação e status
   mastery: "Domínio",
   pass: "Aprovado",

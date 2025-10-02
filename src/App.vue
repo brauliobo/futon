@@ -9,7 +9,7 @@
       div(v-if="isLoading").text-center.py-5
         .spinner-border.text-primary
         p.mt-3 {{ $t('loading') || 'Loading...' }}
-      Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" @select-set="selectSet" @level-selected="onLevelSelected")
+      Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" :isLoadingLevel="isLoadingLevel" @select-set="selectSet" @level-selected="onLevelSelected")
       div(v-else)
         Button(variant="link" @click="goHome").mb-3 ← {{ $t('back') }}
         Set(:set="selectedSet" :initialPageIndex="initialPageIndex" @update-set="updateSet" @page-changed="handlePageChange")
@@ -42,6 +42,7 @@ export default {
       selectedLevelBySubject: {},
       isLoading: true,
       loadedSetsVersion: 0,
+      isLoadingLevel: false,
     };
   },
   async mounted() {
@@ -86,9 +87,11 @@ export default {
         const d = this.disciplineManager.getDiscipline(subject);
         if (!d) return;
         const level = preferred[subject] || d.currentLevel;
-        if (level) await d.ensureLevelLoaded(level);
+        if (level) {
+          await d.ensureLevelLoaded(level);
+          this.loadedSetsVersion++;
+        }
       }));
-      this.loadedSetsVersion++;
     },
     contextHash(wb) {
       const s = String(wb?.subject || '').toLowerCase();
@@ -99,7 +102,6 @@ export default {
       return String(wb.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
     },
     selectSet(wb) {
-      if (wb && wb.comingSoon) return; // lock placeholders
       this.selectedSet = wb;
       this.initialPageIndex = 0;
       this.lastSelected = { slug: this.slugOf(wb), level: wb.level, subject: wb.subject, page: 1 };
@@ -205,8 +207,10 @@ export default {
     },
     async onLevelSelected(subject, level) {
       this.selectedLevelBySubject[subject] = level;
+      this.isLoadingLevel = true;
       await this.disciplineManager.getSetsBySubjectAsync(subject, level);
       this.loadedSetsVersion++;
+      this.isLoadingLevel = false;
       this.saveSets();
     },
   },

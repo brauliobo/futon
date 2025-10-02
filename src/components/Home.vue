@@ -28,7 +28,11 @@
                     :getLevelName="(id) => levelNameBySubject(activeDiscipline, id)" 
                     @select="val => onLevelSelect(activeDiscipline, val)"
                   )
+                .loading-container(v-if="isLoadingLevel && !filteredByActiveLevel(activeDiscipline, groupedBySubject[activeDiscipline] || []).length")
+                  .spinner-border.spinner-border-sm.text-primary
+                  span.ms-2 {{ $t('loading') || 'Loading...' }}
                 LevelList(
+                  v-else
                   :sets="filteredByActiveLevel(activeDiscipline, groupedBySubject[activeDiscipline] || [])" 
                   :activeSlug="activeSlugFor(activeDiscipline)" 
                   @start="$emit('select-set', $event)"
@@ -66,6 +70,10 @@ export default {
     disciplineManager: {
       type: Object,
       default: null
+    },
+    isLoadingLevel: {
+      type: Boolean,
+      default: false
     }
   },
   mounted() {
@@ -150,8 +158,7 @@ export default {
     },
     filteredByActiveLevel(subject, list) {
       const active = (this.activeLevelBySubject[subject] || '').toUpperCase();
-      if (!active) return list;
-      return list.filter(wb => String(wb.level || '').toUpperCase() === active);
+      return active ? list.filter(wb => String(wb.level || '').toUpperCase() === active) : list;
     },
     subjectLabel(key) {
       const label = this.$t(subjectLabelKey(key));
@@ -286,6 +293,15 @@ export default {
 
 .tab-panel .card-body {
   padding: 2rem;
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #6c757d;
+  font-size: 0.95rem;
 }
 
 /* Responsive design */

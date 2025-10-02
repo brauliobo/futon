@@ -45,7 +45,6 @@ export const en = {
   closeNotebook: "Close Notebook",
   finalScore: "Final Score",
   readOnlyMode: "Read-only Mode",
-  comingSoon: "Coming soon",
   // scoring & status
   mastery: "Mastery",
   pass: "Pass",
