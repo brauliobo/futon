@@ -233,6 +233,9 @@ export default {
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   color: #2c3e50;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header h1 {
@@ -242,6 +245,41 @@ header h1 {
 footer p {
   margin: 0;
   color: #6c757d;
+}
+
+main.container {
+  flex: 1;
+  padding-bottom: 50px;
+}
+
+/* Mobile/Tablet: ensure content is scrollable when keyboard appears */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  
+  main.container {
+    padding-bottom: 200px;
+    min-height: calc(100vh - 200px);
+  }
+  
+  /* Ensure inputs are visible when keyboard appears */
+  input:focus {
+    position: relative;
+    z-index: 1000;
+  }
+}
+
+/* Handle iOS Safari keyboard behavior */
+@supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
+  }
 }
 </style>
 

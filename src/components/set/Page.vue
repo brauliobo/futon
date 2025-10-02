@@ -5,7 +5,7 @@
     .container-fluid
       .row(v-for="(pair, rowIndex) in exercisePairs" :key="'row-' + page.pageNumber + '-' + rowIndex")
         .col-12.col-md-6.mb-3(v-for="(exercise, colIndex) in pair" :key="'exercise-' + page.pageNumber + '-' + (rowIndex*2 + colIndex)")
-          Exercise(v-if="exercise" :exercise="exercise" :exerciseNumber="displayNumber(rowIndex * 2 + colIndex)" :isEnabled="isExerciseEnabled(rowIndex * 2 + colIndex)" :isSubmitted="isSubmitted" :isReadOnly="isReadOnly" @update-answer="handleUpdateAnswer(rowIndex * 2 + colIndex, $event)" @next-exercise="focusNextExercise(rowIndex * 2 + colIndex)" ref="exercises")
+          Exercise(v-if="exercise" :exercise="exercise" :exerciseNumber="displayNumber(rowIndex * 2 + colIndex)" :isEnabled="isExerciseEnabled(rowIndex * 2 + colIndex)" :isSubmitted="isSubmitted" :isReadOnly="isReadOnly" :setInputType="setInputType" @update-answer="handleUpdateAnswer(rowIndex * 2 + colIndex, $event)" @next-exercise="focusNextExercise(rowIndex * 2 + colIndex)" ref="exercises")
 </template>
 
 <script>
@@ -31,6 +31,10 @@ export default {
     isReadOnly: {
       type: Boolean,
       default: false,
+    },
+    setInputType: {
+      type: String,
+      default: 'auto',
     },
   },
   methods: {
@@ -129,6 +133,18 @@ export default {
 }
 .card-text {
   font-size: 1.2rem;
+}
+.page {
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .page {
+    margin-bottom: 100px;
+    padding-bottom: 20px;
+  }
+  .container-fluid {
+    padding-bottom: 50px;
+  }
 }
 </style>
 

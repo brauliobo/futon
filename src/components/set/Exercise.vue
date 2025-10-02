@@ -5,7 +5,7 @@
       span.me-3.fw-bold {{ exerciseNumber }}.
       label.flex-grow-1.mb-0 {{ exercise.question }}
     div(v-if="!isReadOnly")
-      input.form-control.form-control-lg.mt-2(v-if="showInput" v-model="userAnswer" :type="inputType" :disabled="!isEnabled || isSubmitted" :placeholder="$t('enterAnswer')" @keydown.enter.prevent="handleSubmit" @keydown.tab.prevent="handleSubmit" @keyup.tab.prevent="handleSubmit" ref="inputRef")
+      input.form-control.form-control-lg.mt-2(v-if="showInput" v-model="userAnswer" :type="inputType" :inputmode="inputMode" :disabled="!isEnabled || isSubmitted" :placeholder="$t('enterAnswer')" @keydown.enter.prevent="handleSubmit" @keydown.tab.prevent="handleSubmit" @keyup.tab.prevent="handleSubmit" ref="inputRef")
       .mt-2.d-flex.align-items-center.gap-2(v-else)
         span.text-dark {{ userAnswer }}
         Button(variant="link" size="sm" @click="editAnswer" aria-label="Editar resposta") {{ $t('edit') || 'Editar' }}
@@ -43,6 +43,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    setInputType: {
+      type: String,
+      default: 'auto',
+    },
   },
   data() {
     return {
@@ -71,15 +75,19 @@ export default {
       return normalize(this.userAnswer) === normalize(this.exercise.correctAnswer);
     },
     inputType() {
-      return typeof this.exercise.correctAnswer === 'number' ? 'text' : 'text';
+      return 'text';
+    },
+    inputMode() {
+      if (this.setInputType === 'number') return 'decimal';
+      if (this.setInputType === 'auto') return typeof this.exercise.correctAnswer === 'number' ? 'decimal' : 'text';
+      return 'text';
     }
   },
   methods: {
     handleSubmit() {
       if (this.userAnswer.trim() !== "") {
-        this.showInput = false; // Remove o input e mostra a resposta
+        this.showInput = false;
         this.$emit("update-answer", { answer: this.userAnswer });
-        // Move para o próximo exercício (debounced single-fire)
         if (!this._advancedOnce) {
           this._advancedOnce = true;
           this.$emit("next-exercise");
@@ -88,7 +96,16 @@ export default {
       }
     },
     focus() {
-      this.$refs.inputRef.focus();
+      setTimeout(() => {
+        const input = this.$refs.inputRef;
+        if (input) {
+          input.focus();
+          if (typeof input.setSelectionRange === 'function') input.setSelectionRange(input.value.length, input.value.length);
+          setTimeout(() => {
+            input.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+          }, 100);
+        }
+      }, 50);
     },
     editAnswer() {
       if (this.isReadOnly || this.isSubmitted) return;
@@ -102,9 +119,15 @@ export default {
 <style scoped>
 .exercise {
   font-size: 1.5rem;
+  scroll-margin-top: 100px;
+  scroll-margin-bottom: 100px;
 }
 input::placeholder {
   color: #ccc;
+}
+input.form-control:focus {
+  scroll-margin-top: 120px;
+  scroll-margin-bottom: 120px;
 }
 </style>
 

@@ -45,7 +45,7 @@
           Alert(variant="info" v-if="set.example")
             strong {{ $t('example') }}:
             |  {{ set.example }}
-          Page(v-if="currentPage" :key="'page-' + currentPageIndex + '-' + resetKey" :page="currentPage" :isSubmitted="isSubmitted" @update-page-status="handlePageStatus" :isReadOnly="isSubmitted")
+          Page(v-if="currentPage" :key="'page-' + currentPageIndex + '-' + resetKey" :page="currentPage" :isSubmitted="isSubmitted" @update-page-status="handlePageStatus" :isReadOnly="isSubmitted" :setInputType="set.inputType || 'auto'")
           .navigation.d-flex.justify-content-between.align-items-center
             Button(variant="secondary" @click="prevPage" :disabled="currentPageIndex === 0" aria-label="Previous page") {{ $t('previous') }}
             .d-flex.align-items-center.gap-2

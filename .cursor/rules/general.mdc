@@ -17,6 +17,8 @@
 ## Data Model (Set Fields)
 Core persisted fields: `attempts`, `lastScore`, `gradePercent`, `status`, `completed`, `durationSeconds`, `avgSecondsPerExercise`, `pages[{pageNumber, exercises[{answer}]}]`
 
+YAML configuration fields: `inputType` (controls mobile keyboard: 'number', 'text', or 'auto')
+
 When adding fields, update: SetFactory defaults, SetStorage serialization, and merge logic.
 
 ## Scoring & Status
@@ -35,6 +37,12 @@ When adding fields, update: SetFactory defaults, SetStorage serialization, and m
 - Auto-advance after page completion (except last page)
 - Arrow/N/P keyboard navigation
 - Timer tracks `durationSeconds` and `avgSecondsPerExercise`
+- Mobile/Tablet optimizations:
+  - Virtual keyboard stays open during field navigation (50ms focus delay)
+  - Smooth scrolling with `scrollIntoView` centers focused input
+  - Scroll margins (100-120px) ensure input visible above keyboard
+  - Extra bottom padding (200px) prevents content hidden by keyboard
+  - iOS Safari viewport handling with `-webkit-fill-available`
 
 ## Testing (Playwright)
 - Location: `tests/integration/`
@@ -50,10 +58,11 @@ When adding fields, update: SetFactory defaults, SetStorage serialization, and m
 
 ## Adding New Sets
 1. Create YAML in `src/levels/{subject}/{level}/`  
-2. Import in discipline builder (`src/discipline/build*.js`)
-3. Add i18n keys for labels
-4. Run `pnpm run targets:refresh` to compute targets
-5. Test persistence (save/load), scoring, and navigation
+2. Set `inputType: number` for numeric answers, `text` for text answers, or `auto` to detect automatically
+3. Import in discipline builder (`src/discipline/build*.js`)
+4. Add i18n keys for labels
+5. Run `pnpm run targets:refresh` to compute targets
+6. Test persistence (save/load), scoring, and navigation
 
 ## PR Checklist
 - Lint passes, no console errors
