@@ -39,10 +39,14 @@ export default {
   },
   methods: {
     focusFirstExercise() {
-      nextTick(() => {
-        const list = this.$refs.exercises || [];
-        const first = Array.isArray(list) ? list[0] : null;
-        if (first && first.focus && !this.isReadOnly && !this.isSubmitted) first.focus();
+      requestAnimationFrame(() => {
+        nextTick(() => {
+          const list = this.$refs.exercises || [];
+          const first = Array.isArray(list) ? list[0] : null;
+          if (first && first.focus && !this.isReadOnly && !this.isSubmitted) {
+            first.focus();
+          }
+        });
       });
     },
     initAnswers() {
@@ -63,10 +67,14 @@ export default {
     focusNextExercise(currentIndex) {
       const idx = this.nextIndexInTraversal(currentIndex);
       if (idx === null) return;
-      nextTick(() => {
-        const list = this.$refs.exercises || [];
-        const next = Array.isArray(list) ? list[idx] : null;
-        if (next && next.focus) next.focus();
+      requestAnimationFrame(() => {
+        nextTick(() => {
+          const list = this.$refs.exercises || [];
+          const next = Array.isArray(list) ? list[idx] : null;
+          if (next && next.focus) {
+            next.focus();
+          }
+        });
       });
     },
     isExerciseEnabled(index) {
