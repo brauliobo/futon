@@ -5,7 +5,18 @@
       span.me-3.fw-bold {{ exerciseNumber }}.
       label.flex-grow-1.mb-0 {{ exercise.question }}
     div(v-if="!isReadOnly")
-      input.form-control.form-control-lg.mt-2(v-if="showInput" v-model="userAnswer" :type="inputType" :inputmode="inputMode" enterkeyhint="next" :disabled="!isEnabled || isSubmitted" :placeholder="$t('enterAnswer')" @keydown.enter.prevent="handleSubmit" @keydown.tab.prevent="handleSubmit" @keyup.tab.prevent="handleSubmit" ref="inputRef")
+      input.form-control.form-control-lg.mt-2(
+        v-if="showInput"
+        v-model="userAnswer"
+        :type="inputType"
+        :inputmode="inputMode"
+        enterkeyhint="next"
+        :disabled="!isEnabled || isSubmitted"
+        :placeholder="$t('enterAnswer')"
+        @keydown.enter.prevent="handleSubmit"
+        @keydown.tab.prevent="handleSubmit"
+        ref="inputRef"
+      )
       .mt-2.d-flex.align-items-center.gap-2(v-else)
         span.text-dark {{ userAnswer }}
         Button(variant="link" size="sm" @click="editAnswer" aria-label="Editar resposta") {{ $t('edit') || 'Editar' }}
@@ -56,36 +67,31 @@ export default {
     };
   },
   watch: {
-    exercise: {
-      deep: true,
-      handler(newVal, oldVal) {
-        // when parent resets exercise.answer, also reset local input state
-        if ((newVal && newVal.answer) !== (oldVal && oldVal.answer)) {
-          this.userAnswer = newVal.answer || "";
-          this.showInput = true;
-        }
-      }
+    'exercise.answer'(newAnswer) {
+      this.userAnswer = newAnswer || '';
+      this.showInput = true;
     }
   },
   computed: {
     isCorrect() {
       if (typeof this.exercise.correctAnswer === 'number') return Number(this.userAnswer) === this.exercise.correctAnswer;
-      const normalize = (s) => String(s).trim().replace(/,/, '.').toLowerCase();
+      const normalize = (s) => String(s ?? '').trim().replace(/,/, '.').toLowerCase();
       return normalize(this.userAnswer) === normalize(this.exercise.correctAnswer);
     },
     inputType: () => 'text',
     inputMode() {
-      if (this.setInputType === 'number') return 'decimal';
-      if (this.setInputType === 'auto') return typeof this.exercise.correctAnswer === 'number' ? 'decimal' : 'text';
-      return 'text';
+      return (this.setInputType === 'number' || (this.setInputType === 'auto' && typeof this.exercise.correctAnswer === 'number')) ? 'decimal' : 'text';
     }
   },
   methods: {
     handleSubmit() {
       if (this.isSubmitting || String(this.userAnswer).trim() === '') return;
+      
       this.isSubmitting = true;
       this.$emit("update-answer", { answer: this.userAnswer });
       this.$emit("next-exercise");
+      
+      // Delay hiding the input to keep the mobile keyboard open during transition.
       setTimeout(() => {
         this.showInput = false;
         this.isSubmitting = false;
@@ -95,11 +101,12 @@ export default {
       this.$nextTick(() => {
         const input = this.$refs.inputRef;
         if (!input || !this.showInput) return;
-        
+
+        // Use requestAnimationFrame to ensure the browser is ready for focus and scroll.
         requestAnimationFrame(() => {
           input.focus({ preventScroll: true });
           input.setSelectionRange(input.value.length, input.value.length);
-          setTimeout(() => input.scrollIntoView({ behavior: 'smooth', block: 'center' }), 50);
+          input.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
       });
     },

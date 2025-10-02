@@ -127,9 +127,7 @@ export default {
     },
     orderIndices() {
       const total = Math.min(10, this.page.exercises.length);
-      const left = [], right = [];
-      for (let i = 0; i < total; i += 2) { left.push(i); if (i + 1 < total) right.push(i + 1); }
-      return left.concat(right);
+      return Array.from({ length: total }, (_, i) => i);
     },
   },
 };

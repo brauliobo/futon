@@ -77,8 +77,13 @@ export default {
     }
   },
   mounted() {
+    const hashContext = this.parseHashFromRoute();
     const savedDiscipline = localStorage.getItem('futon_active_discipline');
-    if (savedDiscipline && this.availableSubjects.includes(savedDiscipline)) {
+    
+    // Prioritize hash context for active discipline
+    if (hashContext && this.availableSubjects.includes(hashContext.subject)) {
+      this.activeDiscipline = hashContext.subject;
+    } else if (savedDiscipline && this.availableSubjects.includes(savedDiscipline)) {
       this.activeDiscipline = savedDiscipline;
     } else {
       this.activeDiscipline = this.availableSubjects[0] || null;
@@ -89,8 +94,16 @@ export default {
       const seq = this.levelSequenceBySubject(s);
       const saved = this.selectedLevelBySubject[s];
       const preset = this.lastSelected && this.lastSelected.subject === s ? String(this.lastSelected.level || '').toUpperCase() : '';
-      this.activeLevelBySubject[s] = saved || preset || seq[0] || '';
+      // Prioritize hash context for the level
+      if (hashContext && hashContext.subject === s) {
+        this.activeLevelBySubject[s] = hashContext.level;
+      } else {
+        this.activeLevelBySubject[s] = saved || preset || seq[0] || '';
+      }
     });
+
+    // If hash provided, ensure its level is loaded (idempotent); also nudges App to update
+    if (hashContext) this.$emit('level-selected', hashContext.subject, hashContext.level);
   },
   created() {
     const subjects = this.availableSubjects;
@@ -104,6 +117,15 @@ export default {
     });
   },
   methods: {
+    parseHashFromRoute() {
+      const hash = this.$route?.hash;
+      if (!hash || hash.length <= 1) return null;
+      const parts = hash.slice(1).split('-');
+      if (parts.length < 2) return null;
+      const subject = parts[0].toLowerCase();
+      const level = parts.slice(1).join('-').toUpperCase();
+      return { subject, level };
+    },
     getAvailableLevels(subject) {
       const discipline = this.disciplineManager && this.disciplineManager.getDiscipline(subject);
       if (discipline?.availableLevels) return discipline.availableLevels.map(l => String(l).toUpperCase());

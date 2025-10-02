@@ -59,7 +59,7 @@ export default {
         existingSeed
       );
       
-      await this.loadInitialData();
+      await this.loadInitialDataWithHash();
       this.isLoading = false;
       this.loadSets();
       this.restoreFromRoute();
@@ -79,6 +79,32 @@ export default {
     },
   },
   methods: {
+    parseHashToContext() {
+      const hash = this.$route.hash;
+      if (!hash || hash.length <= 1) return null;
+      const parts = hash.slice(1).split('-');
+      if (parts.length < 2) return null;
+      const subject = parts[0].toLowerCase();
+      const level = parts.slice(1).join('-').toUpperCase();
+      return { subject, level };
+    },
+    async loadInitialDataWithHash() {
+      const saved = this.storage.loadDisciplines();
+      const preferred = saved?.selectedLevelBySubject || {};
+      const hashContext = this.parseHashToContext();
+      const subjects = Object.keys(this.disciplineManager.disciplines || {});
+      await Promise.all(subjects.map(async (subject) => {
+        const d = this.disciplineManager.getDiscipline(subject);
+        if (!d) return;
+        let level = preferred[subject] || d.currentLevel;
+        if (hashContext && hashContext.subject === subject) level = hashContext.level;
+        if (level) {
+          await d.ensureLevelLoaded(level);
+          this.loadedSetsVersion++;
+        }
+      }));
+      if (hashContext) this.selectedLevelBySubject[hashContext.subject] = hashContext.level;
+    },
     async loadInitialData() {
       const saved = this.storage.loadDisciplines();
       const preferred = saved?.selectedLevelBySubject || {};
@@ -149,11 +175,14 @@ export default {
     selectFromRoute() {
       const slug = this.$route.params.slug;
       if (!slug) return;
+      const hashContext = this.parseHashToContext();
       const found = this.sets.find(wb => this.slugOf(wb) === slug);
       if (found) {
         this.selectedSet = found;
         this.initialPageIndex = this.routePageNumber - 1;
-        this.$router.replace({ hash: this.contextHash(found) });
+        if (!hashContext || hashContext.subject !== found.subject || hashContext.level !== found.level) {
+          this.$router.replace({ hash: this.contextHash(found) });
+        }
       }
     },
     restoreFromRoute() {
@@ -175,10 +204,23 @@ export default {
       }
       const saved = this.storage.loadDisciplines();
       const selectedSet = this.storage.mergeDisciplines(this.disciplineManager, saved);
+      const hashContext = this.parseHashToContext();
       
-      // Load selected levels
-      if (saved && saved.selectedLevelBySubject) {
+      // Load selected levels - prioritize hash over saved state
+      if (hashContext) {
+        this.selectedLevelBySubject[hashContext.subject] = hashContext.level;
+      } else if (saved && saved.selectedLevelBySubject) {
         this.selectedLevelBySubject = saved.selectedLevelBySubject;
+      }
+      
+      // If there's a hash context, it overrides saved state
+      if (hashContext && this.$route.name !== 'set') {
+        const matchingSets = this.sets.filter(wb => wb.subject === hashContext.subject && String(wb.level).toUpperCase() === hashContext.level);
+        if (matchingSets.length > 0) {
+          const preferredSet = matchingSets.find(wb => this.slugOf(wb) === selectedSet?.slug) || matchingSets[0];
+          this.lastSelected = { slug: this.slugOf(preferredSet), level: preferredSet.level, subject: preferredSet.subject, page: 1 };
+          return;
+        }
       }
       
       // If there's a saved selected set, prefer highlighting on Home without auto-opening

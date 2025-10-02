@@ -87,7 +87,15 @@ export default {
     isActive: { type: Boolean, default: false },
   },
   computed: {
-    totalPages() { return this.set.pages ? this.set.pages.length : 0; },
+    statusDetails() {
+      const statusMap = {
+        mastery: { variant: 'success', icon: '⭐', text: this.$t('mastery') || 'Mastery' },
+        pass: { variant: 'warning', icon: '✓', text: this.$t('pass') || 'Pass' },
+        retry: { variant: 'danger', icon: '↻', text: this.$t('retry') || 'Retry' }
+      };
+      return statusMap[this.set.status] || statusMap.retry;
+    },
+    totalPages() { return this.set.pages?.length || 0; },
     progress() {
       const completed = (this.set.completedPages || []).length;
       const percent = this.totalPages ? Math.round((completed / this.totalPages) * 100) : 0;
@@ -115,24 +123,12 @@ export default {
       if (s <= maxS * 1.2) return 'warning';
       return 'danger';
     },
-    statusVariant() {
-      if (this.set.status === 'mastery') return 'success';
-      if (this.set.status === 'pass') return 'warning';
-      return 'danger';
-    },
+    statusVariant() { return this.statusDetails.variant; },
     statusClass() {
       return `lesson-card__status-badge lesson-card__status-badge--${this.set.status}`;
     },
-    statusIcon() {
-      if (this.set.status === 'mastery') return '⭐';
-      if (this.set.status === 'pass') return '✓';
-      return '↻';
-    },
-    statusText() {
-      if (this.set.status === 'mastery') return this.$t('mastery') || 'Mastery';
-      if (this.set.status === 'pass') return this.$t('pass') || 'Pass';
-      return this.$t('retry') || 'Retry';
-    },
+    statusIcon() { return this.statusDetails.icon; },
+    statusText() { return this.statusDetails.text; },
     buttonVariant() {
       return this.isActive ? 'success' : 'primary';
     },
