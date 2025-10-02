@@ -20,8 +20,9 @@
                   .mb-2
                     small.text-muted.fw-semibold {{ $t('levels') }}
                   LevelRoadmap(
+                    v-if="activeDiscipline"
                     :sequence="levelSequenceBySubject(activeDiscipline)" 
-                    :available="availableLevelsBySubject(activeDiscipline)" 
+                    :available="getAvailableLevels(activeDiscipline)" 
                     :active="activeLevelBySubject[activeDiscipline] || ''" 
                     :progressByLevel="{}" 
                     :getLevelName="(id) => levelNameBySubject(activeDiscipline, id)" 
@@ -61,10 +62,13 @@ export default {
     selectedLevelBySubject: {
       type: Object,
       default: () => ({})
+    },
+    disciplineManager: {
+      type: Object,
+      default: null
     }
   },
   mounted() {
-    // init active discipline from localStorage
     const savedDiscipline = localStorage.getItem('futon_active_discipline');
     if (savedDiscipline && this.availableSubjects.includes(savedDiscipline)) {
       this.activeDiscipline = savedDiscipline;
@@ -72,8 +76,7 @@ export default {
       this.activeDiscipline = this.availableSubjects[0] || null;
     }
 
-    // init active level per subject
-    const subjects = Object.keys(this.groupedBySubject);
+    const subjects = this.availableSubjects;
     subjects.forEach(s => {
       const seq = this.levelSequenceBySubject(s);
       const saved = this.selectedLevelBySubject[s];
@@ -82,7 +85,7 @@ export default {
     });
   },
   created() {
-    const subjects = Object.keys(this.groupedBySubject);
+    const subjects = this.availableSubjects;
     subjects.forEach(s => {
       const saved = this.selectedLevelBySubject[s];
       if (saved) {
@@ -93,9 +96,20 @@ export default {
     });
   },
   methods: {
-    selectDiscipline(subject) {
+    getAvailableLevels(subject) {
+      const discipline = this.disciplineManager && this.disciplineManager.getDiscipline(subject);
+      if (discipline?.availableLevels) return discipline.availableLevels.map(l => String(l).toUpperCase());
+      const set = new Set((this.groupedBySubject[subject] || []).map(wb => String(wb.level || '').toUpperCase()));
+      return Array.from(set);
+    },
+    async selectDiscipline(subject) {
       this.activeDiscipline = subject;
       localStorage.setItem('futon_active_discipline', subject);
+      const level = this.activeLevelBySubject[subject];
+      if (level && this.disciplineManager) {
+        const discipline = this.disciplineManager.getDiscipline(subject);
+        if (discipline) await discipline.ensureLevelLoaded(level);
+      }
     },
     onLevelSelect(subject, val) {
       this.activeLevelBySubject[subject] = val;
@@ -107,37 +121,21 @@ export default {
       
       if (!list.length) return '';
       
-      // Debug logging
-      console.log(`[activeSlugFor] Subject: ${subject}, Sets:`, list.map(wb => ({
-        title: wb.title,
-        slug: this.slugOf(wb),
-        progress: this.setProgress(wb)
-      })));
-      
       // If there's a last selected set and it's in the current level, use it
       if (this.lastSelected && this.lastSelected.subject === subject) {
         const match = list.find(wb => this.slugOf(wb) === this.lastSelected.slug);
-        if (match) {
-          console.log(`[activeSlugFor] Using last selected: ${this.lastSelected.slug}`);
-          return this.lastSelected.slug;
-        }
+        if (match) return this.lastSelected.slug;
       }
       
       // Otherwise, find the first set that is not 100% complete
       for (let i = 0; i < list.length; i++) {
         const wb = list[i];
         const progress = this.setProgress(wb);
-        if (progress.percent < 100) {
-          const selectedSlug = this.slugOf(wb);
-          console.log(`[activeSlugFor] Selected first incomplete: ${selectedSlug}`);
-          return selectedSlug;
-        }
+        if (progress.percent < 100) return this.slugOf(wb);
       }
       
       // If all sets are 100% complete, select the first one
-      const fallbackSlug = this.slugOf(list[0]);
-      console.log(`[activeSlugFor] All complete, using first: ${fallbackSlug}`);
-      return fallbackSlug;
+      return this.slugOf(list[0]);
     },
     slugOf(wb) { return String(wb?.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); },
     findFirstIncompleteSet(sets) {
@@ -172,6 +170,9 @@ export default {
   },
   computed: {
     availableSubjects() {
+      if (this.disciplineManager) {
+        return Object.keys(this.disciplineManager.disciplines);
+      }
       return Object.keys(this.groupedBySubject);
     },
     groupedBySubject() {
@@ -200,12 +201,6 @@ export default {
         return id;
       };
     },
-    availableLevelsBySubject() {
-      return (subject) => {
-        const set = new Set((this.groupedBySubject[subject] || []).map(wb => String(wb.level || '').toUpperCase()));
-        return Array.from(set);
-      };
-    }
   }
 };
 </script>

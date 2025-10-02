@@ -1,14 +1,13 @@
-// src/discipline/MathDiscipline.js
 import { BaseDiscipline } from "./BaseDiscipline.js";
-import { buildMathSets } from "./buildMath.js";
+import { getDisciplineMetadata } from "../utils/dynamicImports.js";
 
 export class MathDiscipline extends BaseDiscipline {
-  static async create(withMeta, generators, seed) {
-    const sets = await buildMathSets(withMeta, generators, seed);
-    return new MathDiscipline(sets);
+  static create(withMeta, generators, seed) {
+    const { levels } = getDisciplineMetadata('math');
+    return new MathDiscipline(levels, withMeta);
   }
 
-  constructor(sets) {
-    super('math', sets);
+  constructor(availableLevels, withMeta) {
+    super('math', availableLevels, withMeta);
   }
 }

@@ -1,14 +1,13 @@
-// src/services/DisciplineManager.js
 import { MathDiscipline } from "../discipline/MathDiscipline.js";
 import { PortugueseDiscipline } from "../discipline/PortugueseDiscipline.js";
 import { EnglishDiscipline } from "../discipline/EnglishDiscipline.js";
 
 export class DisciplineManager {
-  static async create(withMeta, generators, seed) {
+  static create(withMeta, generators, seed) {
     const disciplines = {
-      math: await MathDiscipline.create(withMeta, generators, seed),
-      portuguese: await PortugueseDiscipline.create(withMeta),
-      english: await EnglishDiscipline.create(withMeta)
+      math: MathDiscipline.create(withMeta, generators, seed),
+      portuguese: PortugueseDiscipline.create(withMeta),
+      english: EnglishDiscipline.create(withMeta)
     };
     return new DisciplineManager(disciplines);
   }
@@ -26,6 +25,11 @@ export class DisciplineManager {
     return discipline ? discipline.getSets() : [];
   }
 
+  async getSetsBySubjectAsync(subject, level) {
+    const discipline = this.getDiscipline(subject);
+    return discipline ? await discipline.getSetsByLevelAsync(level) : [];
+  }
+
   getLevelsBySubject(subject) {
     const discipline = this.getDiscipline(subject);
     return discipline ? discipline.getLevels() : [];
@@ -40,7 +44,6 @@ export class DisciplineManager {
   }
 
   getRecommendedSet() {
-    // Find the discipline with most recent activity
     const disciplinesWithActivity = this.getDisciplines()
       .map(discipline => ({
         discipline,

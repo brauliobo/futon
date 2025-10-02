@@ -9,7 +9,7 @@
       div(v-if="isLoading").text-center.py-5
         .spinner-border.text-primary
         p.mt-3 {{ $t('loading') || 'Loading...' }}
-      Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" @select-set="selectSet" @level-selected="onLevelSelected")
+      Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" @select-set="selectSet" @level-selected="onLevelSelected")
       div(v-else)
         Button(variant="link" @click="goHome").mb-3 ← {{ $t('back') }}
         Set(:set="selectedSet" :initialPageIndex="initialPageIndex" @update-set="updateSet" @page-changed="handlePageChange")
@@ -41,6 +41,7 @@ export default {
       lastSelected: null,
       selectedLevelBySubject: {},
       isLoading: true,
+      loadedSetsVersion: 0,
     };
   },
   async mounted() {
@@ -51,27 +52,44 @@ export default {
       const existingSeed = localStorage.getItem(seedKey) || String(Math.random()).slice(2);
       localStorage.setItem(seedKey, existingSeed);
       
-      this.disciplineManager = await DisciplineManager.create(
+      this.disciplineManager = DisciplineManager.create(
         withMeta, 
-        {}, // No generators needed - all sets are static YAML files
+        {},
         existingSeed
       );
       
+      await this.loadInitialData();
       this.isLoading = false;
       this.loadSets();
       this.restoreFromRoute();
     } catch (error) {
       console.error('Failed to initialize disciplines:', error);
+      this.isLoading = false;
     }
   },
   computed: {
-    sets() { return this.disciplineManager ? this.disciplineManager.getAllSets() : []; },
+    sets() { 
+      this.loadedSetsVersion;
+      return this.disciplineManager ? this.disciplineManager.getAllSets() : []; 
+    },
     routePageNumber() {
       const p = Number(this.$route.params.page || 1);
       return Number.isFinite(p) && p > 0 ? p : 1;
     },
   },
   methods: {
+    async loadInitialData() {
+      const saved = this.storage.loadDisciplines();
+      const preferred = saved?.selectedLevelBySubject || {};
+      const subjects = Object.keys(this.disciplineManager.disciplines || {});
+      await Promise.all(subjects.map(async (subject) => {
+        const d = this.disciplineManager.getDiscipline(subject);
+        if (!d) return;
+        const level = preferred[subject] || d.currentLevel;
+        if (level) await d.ensureLevelLoaded(level);
+      }));
+      this.loadedSetsVersion++;
+    },
     contextHash(wb) {
       const s = String(wb?.subject || '').toLowerCase();
       const l = String(wb?.level || '').toUpperCase();
@@ -185,8 +203,10 @@ export default {
         this.lastSelected = { slug: this.slugOf(recommendedSet), level: recommendedSet.level, subject: recommendedSet.subject, page: 1 };
       }
     },
-    onLevelSelected(subject, level) {
+    async onLevelSelected(subject, level) {
       this.selectedLevelBySubject[subject] = level;
+      await this.disciplineManager.getSetsBySubjectAsync(subject, level);
+      this.loadedSetsVersion++;
       this.saveSets();
     },
   },

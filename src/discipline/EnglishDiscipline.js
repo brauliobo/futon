@@ -1,14 +1,13 @@
-// src/discipline/EnglishDiscipline.js
 import { BaseDiscipline } from "./BaseDiscipline.js";
-import { buildEnglishSets } from "./buildEnglish.js";
+import { getDisciplineMetadata } from "../utils/dynamicImports.js";
 
 export class EnglishDiscipline extends BaseDiscipline {
-  static async create(withMeta) {
-    const sets = await buildEnglishSets(withMeta);
-    return new EnglishDiscipline(sets);
+  static create(withMeta) {
+    const { levels } = getDisciplineMetadata('english');
+    return new EnglishDiscipline(levels, withMeta);
   }
 
-  constructor(sets) {
-    super('english', sets);
+  constructor(availableLevels, withMeta) {
+    super('english', availableLevels, withMeta);
   }
 }
