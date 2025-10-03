@@ -87,23 +87,23 @@ export class SetStorage extends GenericStorage {
       const savedDiscipline = savedData.disciplines[discipline.name];
       if (!savedDiscipline) return;
 
-      discipline.sets = discipline.sets.map(wb => {
-        // Handle backward compatibility: check for both new 'levels' and old 'lessons' format
-        const savedLevels = savedDiscipline.levels || savedDiscipline.lessons || {};
-        const savedLevel = savedLevels[wb.level];
-        if (!savedLevel) return wb;
-        
-        const savedSet = (savedLevel.sets || savedLevel.workbooks || []).find(s => 
-          s.id === SetStorage.idOf(wb) || s.title === wb.title
-        );
-        if (!savedSet) return wb;
+      const savedLevels = savedDiscipline.levels || savedDiscipline.lessons || {};
+      
+      discipline.loadedLevels.forEach((sets, level) => {
+        const savedLevel = savedLevels[level];
+        if (!savedLevel) return;
 
-        return this.mergeSet(wb, savedSet);
+        const mergedSets = sets.map(wb => {
+          const savedSet = (savedLevel.sets || savedLevel.workbooks || []).find(s => 
+            s.id === SetStorage.idOf(wb) || s.title === wb.title
+          );
+          return savedSet ? this.mergeSet(wb, savedSet) : wb;
+        });
+
+        discipline.loadedLevels.set(level, mergedSets);
       });
 
-      discipline.levels = discipline.groupSetsByLevel();
-      // Handle backward compatibility for currentLevel/currentLesson
-      discipline.currentLevel = savedDiscipline.currentLevel || savedDiscipline.currentLesson || discipline.levels[0]?.level;
+      discipline.currentLevel = savedDiscipline.currentLevel || savedDiscipline.currentLesson || discipline.availableLevels[0];
     });
 
     return savedData.selectedSet;
