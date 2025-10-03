@@ -2,7 +2,7 @@
   .roadmap-container
     button.nav-arrow.nav-arrow--left(@click="scrollLeft" :disabled="!canScrollLeft" v-show="showLeftArrow")
       | ‹
-    .roadmap.d-flex.align-items-stretch(:style="{ transform: `translateX(-${scrollOffset}px)` }")
+    .roadmap.d-flex.align-items-stretch(ref="scroller")
       .level-card(v-for="(lvl, idx) in sequence" :key="lvl" :class="cardClass(lvl)")
         .level-card__inner(@click="onLevelClick($event, lvl)")
           .level-card__header
@@ -40,9 +40,9 @@ export default {
   },
   data() {
     return {
-      scrollOffset: 0,
-      cardWidth: 162, // min-width + gap
-      containerWidth: 0
+      cardWidth: 162, // min card width + gap
+      scrollPos: 0,
+      maxScroll: 0,
     };
   },
   computed: {
@@ -50,32 +50,23 @@ export default {
     getCurrentLevelIndex() {
       return this.sequence.indexOf(this.active);
     },
-    maxScrollOffset() {
-      const totalWidth = this.sequence.length * this.cardWidth;
-      return Math.max(0, totalWidth - this.containerWidth);
-    },
-    canScrollLeft() {
-      return this.scrollOffset > 0;
-    },
-    canScrollRight() {
-      return this.scrollOffset < this.maxScrollOffset;
-    },
-    showLeftArrow() {
-      return this.maxScrollOffset > 0;
-    },
-    showRightArrow() {
-      return this.maxScrollOffset > 0;
-    }
+    canScrollLeft() { return this.scrollPos > 0; },
+    canScrollRight() { return this.scrollPos < Math.max(0, this.maxScroll - 1); },
+    showLeftArrow() { return this.maxScroll > 0; },
+    showRightArrow() { return this.maxScroll > 0; }
   },
   mounted() {
     this.$nextTick(() => {
-      this.updateContainerWidth();
+      this.updateMetrics();
       this.scrollToActiveLevel();
+      const el = this.$refs.scroller;
+      if (el) el.addEventListener('scroll', this.onScroll, { passive: true });
     });
-    window.addEventListener('resize', this.updateContainerWidth);
+    window.addEventListener('resize', this.updateMetrics);
   },
   unmounted() {
-    window.removeEventListener('resize', this.updateContainerWidth);
+    window.removeEventListener('resize', this.updateMetrics);
+    const el = this.$refs.scroller; if (el) el.removeEventListener('scroll', this.onScroll);
   },
   watch: {
     active(newActive, oldActive) {
@@ -104,28 +95,19 @@ export default {
     onLevelClick(event, lvl) {
       if (!this.availableSet.has(lvl)) return;
       this.$emit('select', lvl);
+      this.$nextTick(() => this.scrollToActiveLevel());
     },
-    scrollLeft() {
-      const newOffset = Math.max(0, this.scrollOffset - this.cardWidth * 2);
-      this.scrollOffset = newOffset;
-    },
-    scrollRight() {
-      const newOffset = Math.min(this.maxScrollOffset, this.scrollOffset + this.cardWidth * 2);
-      this.scrollOffset = newOffset;
-    },
-    updateContainerWidth() {
-      const container = this.$el.querySelector('.roadmap-container');
-      if (container) {
-        this.containerWidth = container.offsetWidth - 80; // Account for arrow buttons
-      }
-    },
+    scrollLeft() { this.$refs.scroller?.scrollBy({ left: -this.cardWidth * 2, behavior: 'smooth' }); },
+    scrollRight() { this.$refs.scroller?.scrollBy({ left: this.cardWidth * 2, behavior: 'smooth' }); },
+    onScroll() { const el = this.$refs.scroller; if (!el) return; this.scrollPos = el.scrollLeft; this.maxScroll = Math.max(0, el.scrollWidth - el.clientWidth); },
+    updateMetrics() { const el = this.$refs.scroller; if (!el) return; this.maxScroll = Math.max(0, el.scrollWidth - el.clientWidth); this.scrollPos = el.scrollLeft; },
     scrollToActiveLevel() {
       if (!this.active) return;
       const activeIndex = this.sequence.indexOf(this.active);
-      if (activeIndex >= 0) {
-        const targetOffset = Math.max(0, (activeIndex * this.cardWidth) - (this.containerWidth / 2));
-        this.scrollOffset = Math.min(targetOffset, this.maxScrollOffset);
-      }
+      if (activeIndex < 0) return;
+      const cards = this.$el.querySelectorAll('.level-card');
+      const el = cards && cards[activeIndex];
+      if (el && el.scrollIntoView) el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }
   }
 }
@@ -143,9 +125,15 @@ export default {
 .roadmap {
   display: flex;
   gap: 12px;
-  transition: transform 0.3s ease;
-  padding: 0 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 48px; /* room for arrows */
+  scroll-padding-inline: 48px;
 }
+
+.roadmap::-webkit-scrollbar { display: none; }
+.roadmap { -ms-overflow-style: none; scrollbar-width: none; }
 
 .nav-arrow {
   position: absolute;
@@ -190,6 +178,8 @@ export default {
 .level-card {
   min-width: 150px;
   max-width: 180px;
+  flex: 0 0 auto;
+  scroll-snap-align: center;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border-radius: 16px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
