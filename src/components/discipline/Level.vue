@@ -95,7 +95,7 @@ export default {
 
 .set-card {
   min-width: 300px;
-  max-width: 400px;
+  max-width: min(400px, calc(100vw - 120px));
   flex: 0 0 auto;
   transition: all 0.3s ease;
 }
@@ -137,6 +137,7 @@ export default {
   
   .set-card {
     min-width: 280px;
+    max-width: min(380px, calc(100vw - 100px));
   }
 }
 
@@ -147,6 +148,7 @@ export default {
   
   .set-card {
     min-width: 250px;
+    max-width: calc(100vw - 80px);
   }
 }
 </style>

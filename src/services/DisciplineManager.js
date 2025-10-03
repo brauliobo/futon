@@ -1,9 +1,13 @@
 import { MathDiscipline } from "../discipline/MathDiscipline.js";
+import { PortugueseDiscipline } from "../discipline/PortugueseDiscipline.js";
+import { EnglishDiscipline } from "../discipline/EnglishDiscipline.js";
 
 export class DisciplineManager {
   static create(withMeta, generators, seed) {
     const disciplines = {
-      math: MathDiscipline.create(withMeta, generators, seed)
+      math: MathDiscipline.create(withMeta, generators, seed),
+      portuguese: PortugueseDiscipline.create(withMeta),
+      english: EnglishDiscipline.create(withMeta)
     };
     return new DisciplineManager(disciplines);
   }
