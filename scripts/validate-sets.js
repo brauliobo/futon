@@ -8,6 +8,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import Table from 'cli-table3';
 import { parse } from 'yaml';
 
 const RESET = '\x1b[0m';
@@ -20,6 +21,28 @@ const CYAN = '\x1b[36m';
 
 function colorize(text, color) {
   return `${color}${text}${RESET}`;
+}
+
+const tableStyle = { head: [], border: [], compact: true, "padding-left": 1, "padding-right": 1 };
+
+const normalize = value => typeof value === 'string' ? value : JSON.stringify(value);
+
+function countDuplicateExercises(set) {
+  if (!set.pages) return { duplicates: 0, randomness: null };
+  const seen = new Map();
+  let repeats = 0;
+  let total = 0;
+  set.pages.forEach(page => {
+    (page.exercises || []).forEach(exercise => {
+      total++;
+      const key = normalize(exercise);
+      if (seen.has(key)) repeats++;
+      else seen.set(key, true);
+    });
+  });
+  if (!total) return { duplicates: 0, randomness: null };
+  const randomness = +(1 - repeats / total).toFixed(3);
+  return { duplicates: repeats, randomness };
 }
 
 function validateSet(set, index) {
@@ -68,12 +91,12 @@ function validateSet(set, index) {
     }
   });
   
-  return { set, index, pages, exercises, issues, warnings };
+  const { duplicates, randomness } = set.subject === 'math' ? countDuplicateExercises(set) : { duplicates: 0, randomness: null };
+  return { set, index, pages, exercises, issues, warnings, duplicates, randomness };
 }
 
 function printSummaryTable(results) {
   console.log(colorize('\n📊 SUMMARY BY DISCIPLINE & LEVEL', BOLD + CYAN));
-  console.log(''.padEnd(80, '='));
   
   const summary = {};
   
@@ -89,7 +112,10 @@ function printSummaryTable(results) {
         totalPages: 0,
         totalExercises: 0,
         issues: 0,
-        warnings: 0
+        warnings: 0,
+        duplicates: 0,
+        randomnessSum: 0,
+        mathSets: 0
       };
     }
     
@@ -98,19 +124,24 @@ function printSummaryTable(results) {
     summary[key].totalExercises += result.exercises;
     summary[key].issues += result.issues.length;
     summary[key].warnings += result.warnings.length;
+    summary[key].duplicates += result.duplicates || 0;
+    if (result.randomness !== null) {
+      summary[key].randomnessSum += result.randomness;
+      summary[key].mathSets++;
+    }
   });
   
-  // Header
-  console.log(
-    colorize('DISCIPLINE', BOLD).padEnd(20) +
-    colorize('LEVEL', BOLD).padEnd(8) + 
-    colorize('SETS', BOLD).padEnd(6) +
-    colorize('PAGES', BOLD).padEnd(8) +
-    colorize('EXERCISES', BOLD).padEnd(12) +
-    colorize('ISSUES', BOLD).padEnd(8) +
-    colorize('WARNINGS', BOLD)
-  );
-  console.log(''.padEnd(80, '-'));
+  const summaryTable = new Table({ head: [
+    colorize('DISCIPLINE', BOLD),
+    colorize('LEVEL', BOLD),
+    colorize('SETS', BOLD),
+    colorize('PAGES', BOLD),
+    colorize('EXERCISES', BOLD),
+    colorize('ISSUES', BOLD),
+    colorize('WARNINGS', BOLD),
+    colorize('DUPES', BOLD),
+    colorize('RANDOMNESS', BOLD)
+  ], style: tableStyle });
   
   Object.values(summary)
     .sort((a, b) => {
@@ -121,37 +152,40 @@ function printSummaryTable(results) {
       const issueColor = item.issues > 0 ? RED : GREEN;
       const warningColor = item.warnings > 0 ? YELLOW : GREEN;
       const pagesColor = item.discipline === 'math' && item.totalPages % 10 !== 0 ? YELLOW : RESET;
+      const randomness = item.mathSets ? `${Math.round((item.randomnessSum / item.mathSets) * 100)}%` : '-';
+      const randomnessColor = randomness === '-' ? RESET : (randomness === '100%' ? GREEN : YELLOW);
       
-      console.log(
-        item.discipline.padEnd(20) +
-        item.level.padEnd(8) +
-        item.count.toString().padEnd(6) +
-        colorize(item.totalPages.toString(), pagesColor).padEnd(8 + (pagesColor !== RESET ? 8 : 0)) +
-        item.totalExercises.toString().padEnd(12) +
-        colorize(item.issues.toString(), issueColor).padEnd(8 + 8) +
-        colorize(item.warnings.toString(), warningColor)
-      );
+      summaryTable.push([
+        item.discipline,
+        item.level,
+        item.count,
+        colorize(item.totalPages.toString(), pagesColor),
+        item.totalExercises,
+        colorize(item.issues.toString(), issueColor),
+        colorize(item.warnings.toString(), warningColor),
+        item.duplicates,
+        colorize(randomness, randomnessColor)
+      ]);
     });
+
+  console.log(summaryTable.toString());
 }
 
 function printDetailedTable(results) {
   console.log(colorize('\n📋 DETAILED SET VALIDATION', BOLD + BLUE));
-  console.log(''.padEnd(120, '='));
-  
-  // Header
-  console.log(
-    colorize('#', BOLD).padEnd(4) +
-    colorize('DISCIPLINE', BOLD).padEnd(12) +
-    colorize('LEVEL', BOLD).padEnd(6) + 
-    colorize('SET TITLE', BOLD).padEnd(45) +
-    colorize('PAGES', BOLD).padEnd(7) +
-    colorize('EXERCISES', BOLD).padEnd(11) +
+  const detailTable = new Table({ head: [
+    colorize('#', BOLD),
+    colorize('DISCIPLINE', BOLD),
+    colorize('LEVEL', BOLD),
+    colorize('SET TITLE', BOLD),
+    colorize('PAGES', BOLD),
+    colorize('EXERCISES', BOLD),
+    colorize('RANDOM', BOLD),
     colorize('STATUS', BOLD)
-  );
-  console.log(''.padEnd(120, '-'));
+  ], style: tableStyle, wordWrap: true });
   
   results.forEach((result, i) => {
-    const { set, pages, exercises, issues, warnings } = result;
+    const { set, pages, exercises, issues, warnings, duplicates, randomness } = result;
     
     let status = '';
     let statusColor = GREEN;
@@ -170,16 +204,19 @@ function printDetailedTable(results) {
     const title = (set.title || 'Untitled').substring(0, 44);
     const pagesColor = (set.subject === 'math' && pages !== 10 && !set.comingSoon) ? YELLOW : RESET;
     const exercisesColor = (set.subject === 'math' && pages === 10 && exercises !== 100 && !set.comingSoon) ? YELLOW : RESET;
+    const randomnessColor = randomness === null ? RESET : (randomness === 1 ? GREEN : YELLOW);
+    const randomText = randomness === null ? '-' : `${Math.round(randomness * 100)}% (${duplicates})`;
     
-    console.log(
-      (i + 1).toString().padEnd(4) +
-      (set.subject || 'unknown').padEnd(12) +
-      (set.level || '?').padEnd(6) +
-      title.padEnd(45) +
-      colorize(pages.toString(), pagesColor).padEnd(7 + (pagesColor !== RESET ? 8 : 0)) +
-      colorize(exercises.toString(), exercisesColor).padEnd(11 + (exercisesColor !== RESET ? 8 : 0)) +
+    detailTable.push([
+      i + 1,
+      set.subject || 'unknown',
+      set.level || '?',
+      title,
+      colorize(pages.toString(), pagesColor),
+      colorize(exercises.toString(), exercisesColor),
+      colorize(randomText, randomnessColor),
       colorize(status, statusColor)
-    );
+    ]);
     
     // Print issues and warnings
     if (issues.length > 0) {
@@ -193,6 +230,8 @@ function printDetailedTable(results) {
       });
     }
   });
+
+  console.log(detailTable.toString());
 }
 
 function printStatistics(results) {
@@ -201,6 +240,14 @@ function printStatistics(results) {
   const totalWarnings = results.reduce((sum, r) => sum + r.warnings.length, 0);
   const totalPages = results.reduce((sum, r) => sum + r.pages, 0);
   const totalExercises = results.reduce((sum, r) => sum + r.exercises, 0);
+  const mathMetrics = results
+    .filter(r => r.set.subject === 'math')
+    .reduce((acc, r) => {
+      acc.mathSets++;
+      acc.duplicates += r.duplicates || 0;
+      if (r.randomness !== null) acc.randomness += r.randomness;
+      return acc;
+    }, { mathSets: 0, duplicates: 0, randomness: 0 });
   
   const mathSets = results.filter(r => r.set.subject === 'math').length;
   const portugueseSets = results.filter(r => r.set.subject === 'portuguese').length;
@@ -216,6 +263,11 @@ function printStatistics(results) {
   console.log(`Total Exercises:   ${colorize(totalExercises, BOLD)}`);
   console.log(`Issues:            ${colorize(totalIssues, totalIssues > 0 ? RED : GREEN)}`);
   console.log(`Warnings:          ${colorize(totalWarnings, totalWarnings > 0 ? YELLOW : GREEN)}`);
+  if (mathMetrics.mathSets) {
+    const avgRandom = Math.round((mathMetrics.randomness / mathMetrics.mathSets) * 100);
+    console.log(`Math duplicates:   ${mathMetrics.duplicates}`);
+    console.log(`Math randomness:   ${avgRandom}%`);
+  }
   
   const avgPagesPerSet = (totalPages / total).toFixed(1);
   const avgExercisesPerSet = (totalExercises / total).toFixed(1);
