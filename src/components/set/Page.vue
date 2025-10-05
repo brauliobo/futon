@@ -1,11 +1,22 @@
 <!-- src/components/Page.vue -->
 <template lang="pug">
-  Card.page.mb-4(shadow :title="page.title")
-    p.card-text {{ page.description }}
-    .container-fluid
-      .row(v-for="(pair, rowIndex) in exercisePairs" :key="'row-' + page.pageNumber + '-' + rowIndex")
-        .col-12.col-md-6.mb-3(v-for="(exercise, colIndex) in pair" :key="'exercise-' + page.pageNumber + '-' + (rowIndex*2 + colIndex)")
-          Exercise(v-if="exercise" :exercise="exercise" :exerciseNumber="displayNumber(rowIndex * 2 + colIndex)" :isEnabled="isExerciseEnabled(rowIndex * 2 + colIndex)" :isSubmitted="isSubmitted" :isReadOnly="isReadOnly" :setInputType="setInputType" @update-answer="handleUpdateAnswer(rowIndex * 2 + colIndex, $event)" @next-exercise="focusNextExercise(rowIndex * 2 + colIndex)" ref="exercises")
+  Card(:title="page.title" class="space-y-4")
+    p(class="text-base text-slate-200/90") {{ page.description }}
+    div(class="grid gap-4 md:grid-cols-2")
+      div(v-for="(pair, rowIndex) in exercisePairs" :key="'row-' + page.pageNumber + '-' + rowIndex" class="space-y-4")
+        div(v-for="(exercise, colIndex) in pair" :key="'exercise-' + page.pageNumber + '-' + (rowIndex*2 + colIndex)")
+          Exercise(
+            v-if="exercise"
+            :exercise="exercise"
+            :exerciseNumber="displayNumber(rowIndex * 2 + colIndex)"
+            :isEnabled="isExerciseEnabled(rowIndex * 2 + colIndex)"
+            :isSubmitted="isSubmitted"
+            :isReadOnly="isReadOnly"
+            :setInputType="setInputType"
+            @update-answer="handleUpdateAnswer(rowIndex * 2 + colIndex, $event)"
+            @next-exercise="focusNextExercise(rowIndex * 2 + colIndex)"
+            ref="exercises"
+          )
 </template>
 
 <script>
@@ -57,7 +68,6 @@ export default {
     },
     handleUpdateAnswer(index, payload) {
       this.answers.splice(index, 1, payload.answer);
-      // persist answer on the exercise to survive navigation
       this.page.exercises[index].answer = payload.answer;
       const answeredCount = this.answers.filter(a => a !== null && String(a).trim() !== '').length;
       const totalCount = this.page.exercises.length;
@@ -103,7 +113,6 @@ export default {
   mounted() {
     this.initAnswers();
     this.focusFirstExercise();
-    // emit initial status for progress bars
     const answeredCount = this.answers.filter(a => a !== null && String(a).trim() !== '').length;
     const totalCount = this.page.exercises.length;
     const isCompleted = answeredCount === totalCount;
@@ -133,24 +142,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.card-title {
-  font-size: 2rem;
-}
-.card-text {
-  font-size: 1.2rem;
-}
-.page {
-  margin-bottom: 2rem;
-}
-@media (max-width: 768px) {
-  .page {
-    margin-bottom: 100px;
-    padding-bottom: 20px;
-  }
-  .container-fluid {
-    padding-bottom: 50px;
-  }
-}
-</style>
 

@@ -1,7 +1,7 @@
 <!-- src/components/Progress.vue -->
 <template lang="pug">
-  .progress(:role="role" :aria-valuenow="value" :aria-valuemin="min" :aria-valuemax="max" :style="progressStyle")
-    .progress-bar(:style="{ width: percentage + '%' }" :class="barClass")
+  div(:role="role" :aria-valuenow="value" :aria-valuemin="min" :aria-valuemax="max" :class="wrapperClass")
+    div(:class="barClasses" :style="{ width: percentage + '%' }")
       slot {{ showValue ? `${percentage}%` : '' }}
 </template>
 
@@ -44,17 +44,26 @@ export default {
       const range = this.max - this.min;
       return range > 0 ? Math.round(((this.value - this.min) / range) * 100) : 0;
     },
-    progressStyle() {
-      const styles = {};
-      if (this.height) styles.height = this.height;
-      return styles;
+    wrapperClass() {
+      const base = 'relative w-full overflow-hidden rounded-full bg-white/10';
+      const h = this.height ? '' : 'h-2.5';
+      return [base, h].filter(Boolean).join(' ');
     },
-    barClass() {
-      return this.variant !== 'primary' ? `bg-${this.variant}` : '';
+    barClasses() {
+      const palette = {
+        primary: 'bg-sky-500',
+        secondary: 'bg-slate-500',
+        success: 'bg-emerald-500',
+        danger: 'bg-rose-500',
+        warning: 'bg-amber-400',
+        info: 'bg-cyan-400',
+        light: 'bg-white/80 text-slate-800',
+        dark: 'bg-slate-900'
+      };
+      const heightClass = this.height ? '' : 'h-full';
+      return ['flex items-center justify-center rounded-full text-[10px] font-semibold tracking-wide text-white transition-all', palette[this.variant] || palette.primary, heightClass].filter(Boolean).join(' ');
     }
   }
 };
 </script>
 
-<style scoped>
-</style>

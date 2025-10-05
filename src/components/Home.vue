@@ -1,42 +1,44 @@
 <!-- src/components/Home.vue -->
 <template lang="pug">
-  .home
-    .container
-      .discipline-tabs
-        .tabs-nav
-          .tab-button(
-            v-for="subject in availableSubjects" 
-            :key="subject"
-            :class="{ 'active': activeDiscipline === subject }"
-            @click="selectDiscipline(subject)"
-          )
-            | {{ subjectLabel(subject) }}
-        
-        .tab-content
-          .tab-panel(v-show="activeDiscipline" :key="activeDiscipline")
-            .card
-              .card-body
-                .mt-1
-                  .mb-2
-                    small.text-muted.fw-semibold {{ $t('levels') }}
-                  LevelRoadmap(
-                    v-if="activeDiscipline"
-                    :sequence="levelSequenceBySubject(activeDiscipline)" 
-                    :available="getAvailableLevels(activeDiscipline)" 
-                    :active="activeLevelBySubject[activeDiscipline] || ''" 
-                    :progressByLevel="{}" 
-                    :getLevelName="(id) => levelNameBySubject(activeDiscipline, id)" 
-                    @select="val => onLevelSelect(activeDiscipline, val)"
-                  )
-                .loading-container(v-if="isLoadingLevel && !filteredByActiveLevel(activeDiscipline, groupedBySubject[activeDiscipline] || []).length")
-                  .spinner-border.spinner-border-sm.text-primary
-                  span.ms-2 {{ $t('loading') || 'Loading...' }}
-                LevelList(
-                  v-else
-                  :sets="filteredByActiveLevel(activeDiscipline, groupedBySubject[activeDiscipline] || [])" 
-                  :activeSlug="activeSlugFor(activeDiscipline)" 
-                  @start="$emit('select-set', $event)"
-                )
+  div(class="space-y-8")
+    nav(class="flex flex-wrap items-center gap-2")
+      button(
+        v-for="subject in availableSubjects"
+        :key="subject"
+        :class="tabButtonClass(subject)"
+        @click="selectDiscipline(subject)"
+      )
+        span(class="text-sm font-semibold capitalize") {{ subjectLabel(subject) }}
+    section(v-if="activeDiscipline" class="rounded-3xl border border-white/5 bg-slate-900/60 p-6 backdrop-blur")
+      header(class="flex flex-wrap items-end justify-between gap-4")
+        div(class="space-y-1")
+          h2(class="text-2xl font-semibold text-slate-100") {{ subjectLabel(activeDiscipline) }}
+          span(class="text-xs font-semibold uppercase tracking-wide text-slate-400") {{ $t('levels') }}
+        div(class="text-sm text-slate-400" v-if="activeLevelBySubject[activeDiscipline]")
+          span {{ activeLevelLabel }}
+      div(class="mt-6")
+        LevelRoadmap(
+          :sequence="levelSequenceBySubject(activeDiscipline)"
+          :available="getAvailableLevels(activeDiscipline)"
+          :active="activeLevelBySubject[activeDiscipline] || ''"
+          :progressByLevel="{}"
+          :getLevelName="(id) => levelNameBySubject(activeDiscipline, id)"
+          @select="val => onLevelSelect(activeDiscipline, val)"
+        )
+      div(class="mt-8 space-y-4")
+        div(class="flex flex-wrap items-center justify-between gap-3")
+          h3(class="text-xl font-semibold text-slate-100") {{ setsHeader }}
+        div(v-if="isLoadingLevel && !filteredSets(activeDiscipline).length" class="flex items-center gap-2 rounded-xl border border-slate-700/40 bg-slate-800/50 px-4 py-3 text-sm text-slate-300")
+          svg(class="h-4 w-4 animate-spin text-sky-300" viewBox="0 0 24 24" fill="none")
+            circle(cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" class="opacity-25")
+            path(d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" fill="currentColor" class="opacity-75")
+          span {{ $t('loading') || 'Loading...' }}
+        LevelList(
+          v-else
+          :sets="filteredSets(activeDiscipline)"
+          :activeSlug="activeSlugFor(activeDiscipline)"
+          @start="$emit('select-set', $event)"
+        )
 </template>
 
 <script>
@@ -79,8 +81,6 @@ export default {
   mounted() {
     const hashContext = this.parseHashFromRoute();
     const savedDiscipline = localStorage.getItem('futon_active_discipline');
-    
-    // Prioritize hash context for active discipline
     if (hashContext && this.availableSubjects.includes(hashContext.subject)) {
       this.activeDiscipline = hashContext.subject;
     } else if (savedDiscipline && this.availableSubjects.includes(savedDiscipline)) {
@@ -88,21 +88,17 @@ export default {
     } else {
       this.activeDiscipline = this.availableSubjects[0] || null;
     }
-
     const subjects = this.availableSubjects;
     subjects.forEach(s => {
       const seq = this.levelSequenceBySubject(s);
       const saved = this.selectedLevelBySubject[s];
       const preset = this.lastSelected && this.lastSelected.subject === s ? String(this.lastSelected.level || '').toUpperCase() : '';
-      // Prioritize hash context for the level
       if (hashContext && hashContext.subject === s) {
         this.activeLevelBySubject[s] = hashContext.level;
       } else {
         this.activeLevelBySubject[s] = saved || preset || seq[0] || '';
       }
     });
-
-    // If hash provided, ensure its level is loaded (idempotent); also nudges App to update
     if (hashContext) this.$emit('level-selected', hashContext.subject, hashContext.level);
   },
   created() {
@@ -117,6 +113,13 @@ export default {
     });
   },
   methods: {
+    tabButtonClass(subject) {
+      const isActive = this.activeDiscipline === subject;
+      const base = 'rounded-full px-4 py-2 text-sm font-semibold capitalize transition border border-white/5 backdrop-blur';
+      const inactive = 'bg-transparent text-slate-300 hover:bg-slate-800/60 hover:text-white';
+      const active = 'bg-sky-500/20 text-white shadow-lg shadow-sky-900/30 ring-2 ring-sky-400/60';
+      return `${base} ${isActive ? active : inactive}`;
+    },
     parseHashFromRoute() {
       const hash = this.$route?.hash;
       if (!hash || hash.length <= 1) return null;
@@ -147,37 +150,23 @@ export default {
       try { this.$router.replace({ hash: `#${String(subject).toLowerCase()}-${String(val).toUpperCase()}` }); } catch (e) {}
     },
     activeSlugFor(subject) {
-      const list = this.filteredByActiveLevel(subject, this.groupedBySubject[subject] || []);
-      
+      const list = this.filteredSets(subject);
       if (!list.length) return '';
-      
-      // If there's a last selected set and it's in the current level, use it
       if (this.lastSelected && this.lastSelected.subject === subject) {
         const match = list.find(wb => this.slugOf(wb) === this.lastSelected.slug);
         if (match) return this.lastSelected.slug;
       }
-      
-      // Otherwise, find the first set that is not 100% complete
       for (let i = 0; i < list.length; i++) {
         const wb = list[i];
         const progress = this.setProgress(wb);
         if (progress.percent < 100) return this.slugOf(wb);
       }
-      
-      // If all sets are 100% complete, select the first one
       return this.slugOf(list[0]);
     },
-    slugOf(wb) { return String(wb?.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); },
-    findFirstIncompleteSet(sets) {
-      // Find the first set that is not 100% complete
-      const firstIncomplete = sets.find(wb => {
-        const progress = this.setProgress(wb);
-        return progress.percent < 100; // Not fully completed
-      });
-      
-      // If all are completed or none exist, return the first set
-      return firstIncomplete || sets[0] || null;
+    filteredSets(subject) {
+      return this.filteredByActiveLevel(subject, this.groupedBySubject[subject] || []);
     },
+    slugOf(wb) { return String(wb?.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); },
     filteredByActiveLevel(subject, list) {
       const active = (this.activeLevelBySubject[subject] || '').toUpperCase();
       return active ? list.filter(wb => String(wb.level || '').toUpperCase() === active) : list;
@@ -222,138 +211,25 @@ export default {
     levelNameBySubject() {
       return (subject, id) => {
         if (subject === 'math') {
-          const key = getMathLevelI18nKey(id); const t = key ? this.$t(key) : '';
-          return typeof t === 'string' && t !== key && t ? t : getMathLevelName(id);
+          const key = getMathLevelI18nKey(id); const label = key ? this.$t(key) : '';
+          return typeof label === 'string' && label !== key && label ? label : getMathLevelName(id);
         }
         if (subject === 'portuguese') return getPortugueseLevelName(id);
         if (subject === 'english') return getEnglishLevelName(id);
         return id;
       };
     },
+    activeLevelLabel() {
+      const level = this.activeLevelBySubject[this.activeDiscipline];
+      if (!level) return '';
+      return this.levelNameBySubject(this.activeDiscipline, level) || level;
+    },
+    setsHeader() {
+      if (!this.activeDiscipline) return this.$t('sets') || 'Sets';
+      return `${this.$t('sets') || 'Sets'} · ${this.activeLevelLabel}`.trim();
+    }
   }
 };
 </script>
-
-<style scoped>
-.home h2 {
-  font-size: 2rem;
-}
-
-/* Discipline Tabs Styling */
-.discipline-tabs {
-  margin-bottom: 2rem;
-}
-
-.tabs-nav {
-  display: flex;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-radius: 12px 12px 0 0;
-  padding: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  gap: 4px;
-}
-
-.tab-button {
-  flex: 1;
-  min-width: 140px;
-  padding: 16px 24px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #6c757d;
-  background: transparent;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  text-transform: capitalize;
-}
-
-.tab-button::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #007bff, #0056b3);
-  border-radius: 2px 2px 0 0;
-  transition: width 0.3s ease;
-}
-
-.tab-button:hover {
-  color: #495057;
-  background: rgba(255, 255, 255, 0.7);
-  transform: translateY(-2px);
-}
-
-.tab-button.active {
-  color: #007bff;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
-  transform: translateY(-2px);
-}
-
-.tab-button.active::before {
-  width: 60%;
-}
-
-.tab-content {
-  background: #ffffff;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.tab-panel .card {
-  border: none;
-  box-shadow: none;
-  margin: 0;
-}
-
-.tab-panel .card-body {
-  padding: 2rem;
-}
-
-.loading-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  color: #6c757d;
-  font-size: 0.95rem;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .tab-button {
-    min-width: 100px;
-    padding: 12px 16px;
-    font-size: 1rem;
-  }
-  
-  .tab-panel .card-body {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .tabs-nav {
-    padding: 4px;
-  }
-  
-  .tab-button {
-    min-width: 80px;
-    padding: 10px 12px;
-    font-size: 0.9rem;
-  }
-  
-  .tab-panel .card-body {
-    padding: 1rem;
-  }
-}
-</style>
 
 

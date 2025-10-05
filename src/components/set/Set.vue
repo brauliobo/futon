@@ -1,73 +1,61 @@
 <!-- src/components/set/Set.vue -->
 <template lang="pug">
-  .set.mb-4
-    // Stats Dashboard  
-    .card.shadow-sm
-      .card-body.pb-2
-        .d-flex.justify-content-between.align-items-center.mb-3
-          .fw-bold {{ $t('progress') || 'Progress' }}
-          Button(variant="outline-secondary" size="sm" @click="resetSet") 
-            | ↻ {{ $t('reset') }}
-        .row.g-3.mb-4
-          .col-md-4
-            .stat-card.text-center.p-3.bg-light.rounded
-              .stat-value.h4.mb-1.text-primary {{ completedPages.length }}
-              .stat-label.text-muted.small {{ $t('completedBlocks') }}
-          .col-md-4
-            .stat-card.text-center.p-3.bg-light.rounded
-              .stat-value.h4.mb-1.text-info {{ set.attempts }}
-              .stat-label.text-muted.small {{ $t('attempts') }}
-          .col-md-4
-            .stat-card.text-center.p-3.bg-light.rounded
-              .stat-value.h4.mb-1.text-success {{ set.lastScore }}/{{ set.totalExercises }}
-              .stat-label.text-muted.small {{ $t('lastScore') }}
-        
-        // Required Materials Section
-        .mb-3(v-if="neededSeries.length")
-          .d-flex.align-items-center.mb-2
-            span.text-muted.me-2 📚
-            small.text-muted.fw-semibold {{ $t('neededSets') }}:
-          .d-flex.flex-wrap.gap-1
+  div(class="set mb-4")
+    div(class="rounded-3xl border border-white/10 bg-slate-900/60 shadow-xl shadow-sky-900/20 backdrop-blur")
+      div(class="px-6 py-5")
+        div(class="mb-6 flex flex-wrap items-center justify-between gap-3")
+          span(class="text-sm font-semibold uppercase tracking-wide text-slate-300") {{ $t('progress') || 'Progress' }}
+          Button(variant="outline-secondary" size="sm" @click="resetSet" class="flex items-center gap-1 text-xs")
+            span {{ $t('reset') }}
+        div(class="mb-8 grid gap-4 md:grid-cols-3")
+          div(class="rounded-2xl border border-white/5 bg-slate-900/70 p-5 text-center")
+            span(class="text-2xl font-semibold text-sky-300") {{ completedPages.length }}
+            span(class="text-xs uppercase tracking-wide text-slate-400") {{ $t('completedBlocks') }}
+          div(class="rounded-2xl border border-white/5 bg-slate-900/70 p-5 text-center")
+            span(class="text-2xl font-semibold text-sky-200") {{ set.attempts }}
+            span(class="text-xs uppercase tracking-wide text-slate-400") {{ $t('attempts') }}
+          div(class="rounded-2xl border border-white/5 bg-slate-900/70 p-5 text-center")
+            span(class="text-2xl font-semibold text-emerald-300") {{ set.lastScore }}/{{ set.totalExercises }}
+            span(class="text-xs uppercase tracking-wide text-slate-400") {{ $t('lastScore') }}
+        div(v-if="neededSeries.length" class="space-y-4")
+          div(class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-400")
+            span 📚
+            span {{ $t('neededSets') }}:
+          div(class="flex flex-wrap gap-2")
             Badge(variant="info" v-for="s in neededSeries" :key="s.id") {{ s.title }}
-        // Progress Section
-        .progress-section.mb-4(v-if="currentPage")
-          .d-flex.justify-content-between.align-items-center.mb-2
-            .progress-info
-              span.text-muted.ms-2 {{ (currentPage.pageNumber || (currentPageIndex + 1)) }}/{{ totalPages || 1 }}
-            .timer-display.d-flex.align-items-center
-              span.text-muted.me-1 ⏱
-              span.fw-bold.text-primary {{ prettyTimer }}
+        div(v-if="currentPage" class="space-y-4")
+          div(class="flex flex-wrap items-center justify-between gap-3")
+            span(class="text-sm text-slate-300") {{ (currentPage.pageNumber || (currentPageIndex + 1)) }}/{{ totalPages || 1 }}
+            div(class="flex items-center gap-2 text-sm font-mono text-sky-200")
+              span ⏱
+              span {{ prettyTimer }}
           Progress(:value="pageProgress" show-value height="8px")
-        
-        .set-content
-          .mt-1(v-if="set.history && set.history.length")
-            HistorySparkline(:history="set.history")
-          Alert(variant="info" v-if="set.example")
-            strong {{ $t('example') }}:
-            |  {{ set.example }}
-          Page(v-if="currentPage" :key="'page-' + currentPageIndex + '-' + resetKey" :page="currentPage" :isSubmitted="isSubmitted" @update-page-status="handlePageStatus" :isReadOnly="isSubmitted" :setInputType="set.inputType || 'auto'")
-          .navigation.d-flex.justify-content-between.align-items-center
-            Button(variant="secondary" @click="prevPage" :disabled="currentPageIndex === 0" aria-label="Previous page") {{ $t('previous') }}
-            .d-flex.align-items-center.gap-2
-              select.form-select.form-select-sm(style="width:auto" v-model.number="currentPageIndex" :max="(totalPages || 1) - 1" aria-label="Select page")
-                option(v-for="(p, idx) in pages" :key="'pgopt-'+idx" :value="idx") {{ idx + 1 }}
-            Button(variant="secondary" @click="nextPage" :disabled="!canGoNextPage" aria-label="Next page") {{ $t('next') }}
-          .final-score.mt-3(v-if="isSubmitted")
-            .d-flex.align-items-center.gap-2.mb-2
-              Badge(variant="success" v-if="set.status === 'mastery'") ○ {{ $t('mastery') || 'Mastery' }}
-              Badge(variant="warning" text-dark v-else-if="set.status === 'pass'") △ {{ $t('pass') || 'Pass' }}
-              Badge(variant="danger" v-else) × {{ $t('retry') || 'Retry' }}
-            .row.g-2
-              .col-12.col-md-4
+
+          div(class="mt-6 space-y-6")
+            div(v-if="set.history && set.history.length" class="mt-1")
+              HistorySparkline(:history="set.history")
+            Alert(variant="info" v-if="set.example")
+              strong {{ $t('example') }}:
+              |  {{ set.example }}
+            Page(v-if="currentPage" :key="'page-' + currentPageIndex + '-' + resetKey" :page="currentPage" :isSubmitted="isSubmitted" @update-page-status="handlePageStatus" :isReadOnly="isSubmitted" :setInputType="set.inputType || 'auto'")
+            div(class="flex flex-wrap items-center justify-between gap-3")
+              Button(variant="secondary" @click="prevPage" :disabled="currentPageIndex === 0" aria-label="Previous page") {{ $t('previous') }}
+              div(class="flex items-center gap-2")
+                select(class="h-9 rounded-lg border border-white/10 bg-slate-900/80 px-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-500" v-model.number="currentPageIndex" :max="(totalPages || 1) - 1" aria-label="Select page")
+                  option(v-for="(p, idx) in pages" :key="'pgopt-'+idx" :value="idx") {{ idx + 1 }}
+              Button(variant="secondary" @click="nextPage" :disabled="!canGoNextPage" aria-label="Next page") {{ $t('next') }}
+            div(v-if="isSubmitted" class="space-y-4")
+              div(class="flex flex-wrap items-center gap-2")
+                Badge(variant="success" v-if="set.status === 'mastery'") ○ {{ $t('mastery') || 'Mastery' }}
+                Badge(variant="warning" text-dark v-else-if="set.status === 'pass'") △ {{ $t('pass') || 'Pass' }}
+                Badge(variant="danger" v-else) × {{ $t('retry') || 'Retry' }}
+              div(class="grid gap-3 md:grid-cols-3")
                 Stat(:label="$t('finalScore')" :value="`${calculateFinalScore()}/${calculateAttemptedCount()}`")
-              .col-12.col-md-4
                 Stat(:label="$t('grade')" :value="`${set.gradePercent || 0}%`")
-              .col-12.col-md-4
                 Stat(:label="$t('speed')" :value="`${set.avgSecondsPerExercise || 0}s/ex`")
-            .mt-2
-              .progress(style="height:6px" role="progressbar" :aria-valuenow="speedGaugeWidth" aria-valuemin="0" aria-valuemax="100")
-                .progress-bar(:class="speedGaugeClass" :style="{ width: speedGaugeWidth + '%' }")
-              small.text-muted {{ $t('speed') + ':' }} {{ set.avgSecondsPerExercise || 0 }}s/ex — {{ $t('target') + ' ≤ ' + speedTarget + 's/ex' }}
+              div
+                Progress(:value="speedGaugeWidth" :variant="speedGaugeVariant" height="6px")
+                small(class="block pt-2 text-xs text-slate-400") {{ $t('speed') + ':' }} {{ set.avgSecondsPerExercise || 0 }}s/ex — {{ $t('target') + ' ≤ ' + speedTarget + 's/ex' }}
 </template>
 
 <script>
@@ -155,12 +143,12 @@ export default {
       const val = Math.max(0, Math.min(100, 100 * (1 - s / (maxS * 2))));
       return Math.round(val);
     },
-    speedGaugeClass() {
+    speedGaugeVariant() {
       const s = Number(this.set.avgSecondsPerExercise) || 0;
       const maxS = Number(this.speedTarget) || 6;
-      if (s <= maxS) return 'bg-success';
-      if (s <= maxS * 1.2) return 'bg-warning';
-      return 'bg-danger';
+      if (s <= maxS) return 'success';
+      if (s <= maxS * 1.2) return 'warning';
+      return 'danger';
     },
   },
   methods: {
@@ -312,91 +300,4 @@ export default {
 };
 </script>
 
-<style scoped>
-/* Enhanced Header Styles */
-.bg-gradient-primary {
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
-}
-
-.text-white-75 {
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-
-.card {
-  border: none;
-  overflow: hidden;
-}
-
-.card-header {
-  border-bottom: none;
-}
-
-/* Stats Cards */
-.stat-card {
-  background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%) !important;
-  border: 1px solid #dee2e6;
-  transition: all 0.2s ease;
-  cursor: default;
-}
-
-.stat-card:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.stat-value {
-  font-weight: 700 !important;
-}
-
-.stat-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 600;
-}
-
-/* Progress Section */
-.progress-section {
-  background: #f8f9fa;
-  border-radius: 8px;
-  padding: 1rem;
-  border: 1px solid #e9ecef;
-}
-
-.progress-info span {
-  font-size: 0.9rem;
-}
-
-.timer-display {
-  font-size: 0.85rem;
-}
-
-/* Legacy styles - keeping for compatibility */
-.card-title {
-  font-size: 1.75rem;
-}
-
-.final-score h4 {
-  color: #28a745;
-}
-
-.submit-section button {
-  width: 100%;
-}
-
-.set-content {
-  margin-top: 15px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .stat-card {
-    margin-bottom: 0.5rem;
-  }
-  
-  .progress-section {
-    padding: 0.75rem;
-  }
-}
-</style>
 

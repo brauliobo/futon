@@ -3,7 +3,7 @@ export const en = {
   chooseNotebook: "Choose a notebook",
   start: "Start",
   back: "Back",
-  topics: "Topics",
+  sets: "Sets",
   levels: "Levels",
   subject_math: "Math",
   subject_portuguese: "Portuguese",

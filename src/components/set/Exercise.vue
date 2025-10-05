@@ -1,11 +1,11 @@
 <!-- src/components/Exercise.vue -->
 <template lang="pug">
-  .exercise.mb-4
-    .d-flex.align-items-center
-      span.me-3.fw-bold {{ exerciseNumber }}.
-      label.flex-grow-1.mb-0 {{ exercise.question }}
+  div(class="space-y-3 rounded-2xl border border-white/5 bg-slate-900/70 p-4 shadow-sm shadow-slate-900/30")
+    div(class="flex items-start gap-3")
+      span(class="text-sm font-bold text-sky-300") {{ exerciseNumber }}.
+      label(class="text-sm font-medium text-slate-100") {{ exercise.question }}
     div(v-if="!isReadOnly")
-      input.form-control.form-control-lg.mt-2(
+      input(
         v-if="showInput"
         v-model="userAnswer"
         :type="inputType"
@@ -16,13 +16,14 @@
         @keydown.enter.prevent="handleSubmit"
         @keydown.tab.prevent="handleSubmit"
         ref="inputRef"
+        class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/70 px-3 py-2 text-sm text-slate-100 shadow-inner shadow-slate-950/40 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500"
       )
-      .mt-2.d-flex.align-items-center.gap-2(v-else)
-        span.text-dark {{ userAnswer }}
+      div(v-else class="mt-2 flex items-center gap-3 text-sm text-slate-200")
+        span {{ userAnswer }}
         Button(variant="link" size="sm" @click="editAnswer" aria-label="Editar resposta") {{ $t('edit') || 'Editar' }}
-    .mt-2(v-if="isReadOnly")
-      span.text-success(v-if="isCorrect") ✔️ {{ $t('correct') }}
-      span.text-danger(v-else) ❌ {{ $t('wrong') }} ({{ $t('correctAnswer') }}: {{ exercise.correctAnswer }})
+    div(v-if="isReadOnly" class="mt-2 text-sm")
+      span(v-if="isCorrect" class="text-emerald-300") ✔️ {{ $t('correct') }}
+      span(v-else class="text-rose-300") ❌ {{ $t('wrong') }} ({{ $t('correctAnswer') }}: {{ exercise.correctAnswer }})
 </template>
 
 <script>
@@ -86,12 +87,9 @@ export default {
   methods: {
     handleSubmit() {
       if (this.isSubmitting || String(this.userAnswer).trim() === '') return;
-      
       this.isSubmitting = true;
       this.$emit("update-answer", { answer: this.userAnswer });
       this.$emit("next-exercise");
-      
-      // Delay hiding the input to keep the mobile keyboard open during transition.
       setTimeout(() => {
         this.showInput = false;
         this.isSubmitting = false;
@@ -101,8 +99,6 @@ export default {
       this.$nextTick(() => {
         const input = this.$refs.inputRef;
         if (!input || !this.showInput) return;
-
-        // Use requestAnimationFrame to ensure the browser is ready for focus and scroll.
         requestAnimationFrame(() => {
           input.focus({ preventScroll: true });
           input.setSelectionRange(input.value.length, input.value.length);
@@ -119,18 +115,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.exercise {
-  font-size: 1.5rem;
-  scroll-margin-top: 100px;
-  scroll-margin-bottom: 100px;
-}
-input::placeholder {
-  color: #ccc;
-}
-input.form-control:focus {
-  scroll-margin-top: 120px;
-  scroll-margin-bottom: 120px;
-}
-</style>
 

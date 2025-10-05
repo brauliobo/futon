@@ -1,19 +1,23 @@
 <!-- src/App.vue -->
 <template lang="pug">
-  #app
-    header.bg-primary.text-white.p-4.mb-4
-      small.text-white-50.d-block.mb-1 Futon
-      h1(v-if="!selectedSet") {{ $t('chooseNotebook') }}
-      h1(v-else) {{ selectedSet.title }} ({{ $t('level') }}: {{ selectedSet.level }})
-    main.container
-      div(v-if="isLoading").text-center.py-5
-        .spinner-border.text-primary
-        p.mt-3 {{ $t('loading') || 'Loading...' }}
-      Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" :isLoadingLevel="isLoadingLevel" @select-set="selectSet" @level-selected="onLevelSelected")
-      div(v-else)
-        Button(variant="link" @click="goHome").mb-3 ← {{ $t('back') }}
-        Set(:set="selectedSet" :initialPageIndex="initialPageIndex" @update-set="updateSet" @page-changed="handlePageChange")
-    footer.text-center.py-4
+  #app.flex.min-h-screen.bg-slate-950.text-slate-100
+    header(class="bg-slate-950/90 text-slate-100")
+      div(class="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-6 sm:px-6")
+        small(class="block text-xs uppercase tracking-[0.3em] text-slate-400") Futon
+        h1(v-if="selectedSet" class="text-3xl font-semibold sm:text-4xl") {{ selectedSet.title }} ({{ $t('level') }}: {{ selectedSet.level }})
+    main.flex-1
+      div(class="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-10")
+        div(v-if="isLoading" class="flex flex-col items-center justify-center gap-4 py-14")
+          svg(class="h-10 w-10 animate-spin text-sky-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24")
+            circle(class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4")
+            path(class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z")
+          p(class="text-sm text-sky-100/80") {{ $t('loading') || 'Loading...' }}
+        Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" :isLoadingLevel="isLoadingLevel" @select-set="selectSet" @level-selected="onLevelSelected" class="space-y-6")
+        div(v-else class="space-y-4")
+          Button(variant="link" @click="goHome" class="group inline-flex items-center gap-2 text-sky-200 hover:text-white transition")
+            span(class="text-lg transition-transform group-hover:-translate-x-0.5" aria-hidden="true") ←
+            span {{ $t('back') }}
+          Set(:set="selectedSet" :initialPageIndex="initialPageIndex" @update-set="updateSet" @page-changed="handlePageChange" class="space-y-6")
 </template>
 
 <script>
@@ -271,58 +275,5 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: #2c3e50;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-header h1 {
-  font-size: 2.5rem;
-}
-
-footer p {
-  margin: 0;
-  color: #6c757d;
-}
-
-main.container {
-  flex: 1;
-  padding-bottom: 50px;
-}
-
-/* Mobile/Tablet: ensure content is scrollable when keyboard appears */
-@media (max-width: 768px) {
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-  }
-  
-  main.container {
-    padding-bottom: 200px;
-    min-height: calc(100vh - 200px);
-  }
-  
-  /* Ensure inputs are visible when keyboard appears */
-  input:focus {
-    position: relative;
-    z-index: 1000;
-  }
-}
-
-/* Handle iOS Safari keyboard behavior */
-@supports (-webkit-touch-callout: none) {
-  body {
-    min-height: -webkit-fill-available;
-  }
-}
-</style>
 
 

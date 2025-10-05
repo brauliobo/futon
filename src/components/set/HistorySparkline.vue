@@ -1,8 +1,8 @@
 <!-- src/components/HistorySparkline.vue -->
 <template lang="pug">
-.history-sparkline
-  svg(:viewBox="`0 0 ${(items.length - 1 || 1) * 6} 20`" width="100%" height="20" role="img" :aria-label="($t('previousAttempts') || 'Previous attempts')")
-    polyline(:points="points", :stroke="stroke", fill="none", stroke-width="2")
+  div(class="h-5 text-slate-400")
+    svg(:viewBox="`0 0 ${(items.length - 1 || 1) * 6} 20`" width="100%" height="20" role="img" :aria-label="($t('previousAttempts') || 'Previous attempts')")
+      polyline(:points="points" :stroke="stroke" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 </template>
 
 <script>
@@ -12,13 +12,10 @@ export default {
   computed: {
     items() { return (this.history || []).slice(-24); },
     points() { return this.items.map((h,i)=>`${i*6},${20 - Math.max(0, Math.min(18, Math.round((h.accuracyPercent||0)*0.18)))}` ).join(' '); },
-    stroke() { const s = (this.history||[]).slice(-1)[0]?.status; if (s==='mastery') return '#28a745'; if (s==='pass') return '#ffc107'; return '#6c757d'; }
+    stroke() { const s = (this.history||[]).slice(-1)[0]?.status; if (s==='mastery') return '#34d399'; if (s==='pass') return '#facc15'; return '#94a3b8'; }
   }
 };
 </script>
 
-<style scoped>
-.history-sparkline { height: 20px; color: #6c757d; }
-</style>
 
 

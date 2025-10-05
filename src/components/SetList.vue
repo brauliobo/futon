@@ -1,6 +1,6 @@
 <!-- src/components/SetList.vue -->
 <template lang="pug">
-  .set-list
+  div(class="flex flex-col")
     Set(v-for="(set, index) in sets" :key="index" :set="set" @update-set="handleUpdateSet")
 </template>
 
@@ -26,11 +26,4 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.set-list {
-  display: flex;
-  flex-direction: column;
-}
-</style>
 

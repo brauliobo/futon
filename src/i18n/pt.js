@@ -3,7 +3,7 @@ export const pt = {
   chooseNotebook: "Escolha um caderno",
   start: "Começar",
   back: "Voltar",
-  topics: "Tópicos",
+  sets: "Blocos",
   levels: "Níveis",
   subject_math: "Matemática",
   subject_portuguese: "Português",

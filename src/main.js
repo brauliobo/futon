@@ -5,7 +5,7 @@ import { pt } from './i18n/pt';
 import { en } from './i18n/en';
 import { router } from './router';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 const i18n = createI18n({
   locale: 'pt',

@@ -1,16 +1,16 @@
 <!-- src/components/discipline/Level.vue -->
 <template lang="pug">
-  .level.mt-4
-    .sets-container(v-if="visibleSets.length")
-      .set-card(
-        v-for="(setItem, index) in visibleSets" 
+  div(class="mt-6")
+    div(v-if="visibleSets.length" class="flex items-stretch gap-6 overflow-x-auto px-2 py-4 scrollbar-hide sm:px-4 lg:px-6")
+      div(
+        v-for="(setItem, index) in visibleSets"
         :key="setItem.set.id || setItem.set.title"
-        :class="{ 'set-card--faded': setItem.type !== 'current' }"
+        :class="cardClass(setItem)"
       )
         SetCard(
           :set="setItem.set"
           :is-active="activeSet && activeSet.id === setItem.set.id"
-          :class="{ 'set-card--faded': setItem.type !== 'current' }"
+          :class="{ 'opacity-50 saturate-75 pointer-events-none': setItem.type !== 'current' }"
           @start="$emit('select-set', $event)"
         )
 </template>
@@ -50,105 +50,22 @@ export default {
     },
     visibleSets() {
       if (!this.sets.length) return [];
-      
       const currentIndex = this.currentSetIndex;
       const sets = [];
-      
-      // Add previous set if not the first one
-      if (currentIndex > 0) {
-        sets.push({
-          set: this.sets[currentIndex - 1],
-          type: 'previous'
-        });
-      }
-      
-      // Add current set (always show at least one)
-      sets.push({
-        set: this.sets[currentIndex],
-        type: 'current'
-      });
-      
-      // Add next set if not the last one
-      if (currentIndex < this.sets.length - 1) {
-        sets.push({
-          set: this.sets[currentIndex + 1],
-          type: 'next'
-        });
-      }
-      
+      if (currentIndex > 0) sets.push({ set: this.sets[currentIndex - 1], type: 'previous' });
+      sets.push({ set: this.sets[currentIndex], type: 'current' });
+      if (currentIndex < this.sets.length - 1) sets.push({ set: this.sets[currentIndex + 1], type: 'next' });
       return sets;
+    }
+  },
+  methods: {
+    cardClass(setItem) {
+      const base = 'flex-shrink-0 snap-center transition-transform';
+      const width = 'min-w-[280px] max-w-[360px] md:min-w-[320px] md:max-w-[400px]';
+      const faded = setItem.type !== 'current' ? 'scale-[0.97]' : '';
+      return [base, width, faded].filter(Boolean).join(' ');
     }
   }
 };
 </script>
 
-<style scoped>
-.sets-container {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  padding: 16px 0;
-  scroll-behavior: smooth;
-  justify-content: center;
-  align-items: stretch;
-}
-
-.set-card {
-  min-width: 300px;
-  max-width: min(400px, calc(100vw - 120px));
-  flex: 0 0 auto;
-  transition: all 0.3s ease;
-}
-
-.set-card--faded {
-  opacity: 0.5;
-  transform: scale(0.95);
-  pointer-events: none;
-}
-
-.set-card--faded:hover {
-  opacity: 0.7;
-}
-
-.set-card--faded {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
-  color: #6c757d !important;
-}
-
-.set-card--faded * {
-  color: #adb5bd !important;
-}
-
-.set-card--faded .lesson-card__title {
-  color: #6c757d !important;
-}
-
-.set-card--faded .lesson-card__button {
-  background: #6c757d !important;
-  opacity: 0.7;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .sets-container {
-    gap: 16px;
-    padding: 12px 0;
-  }
-  
-  .set-card {
-    min-width: 280px;
-    max-width: min(380px, calc(100vw - 100px));
-  }
-}
-
-@media (max-width: 576px) {
-  .sets-container {
-    gap: 12px;
-  }
-  
-  .set-card {
-    min-width: 250px;
-    max-width: calc(100vw - 80px);
-  }
-}
-</style>

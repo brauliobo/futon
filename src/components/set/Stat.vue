@@ -1,8 +1,8 @@
 <!-- src/components/Stat.vue -->
 <template lang="pug">
-  .stat.d-flex.align-items-center.mb-1
-    span.me-2 {{ label }}:
-    strong {{ value }}
+  div(class="flex items-center gap-2 text-sm font-medium text-slate-200")
+    span(class="text-slate-400") {{ label }}:
+    strong(class="text-slate-100") {{ value }}
 </template>
 
 <script>
@@ -21,10 +21,5 @@ export default {
 };
 </script>
 
-<style scoped>
-.stat {
-  font-size: 1.1rem;
-}
-</style>
 
 
