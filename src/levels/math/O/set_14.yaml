@@ -1,176 +1,146 @@
-title: Coordenadas Polares — Conjunto 14
+title: Revisão de Integrais — Conjunto 14
 level: O
-example: "Integre em coordenadas polares: ∫∫ f(r,θ) r dr dθ"
+example: "Calcule integrais básicas. Ex.: ∫ 2x dx = x² + C"
 subject: math
 inputType: number
 pages:
   - pageNumber: 1
-    title: Coordenadas Polares — Conjunto 14 – Página 1
-    description: Converta para coordenadas polares.
+    title: Revisão de Integrais — Conjunto 14 – Página 1
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - &a1
-        type: quadratic
-        question: Converta x² + y² = 4 para polar
-        correctAnswer: r = 2
-      - &a2
-        type: quadratic
-        question: Converta x = 3 para polar
-        correctAnswer: r cos θ = 3
-      - &a3
-        type: quadratic
-        question: ∫∫ r² r dr dθ sobre círculo r ≤ 2
-        correctAnswer: 8π
-      - &a4
-        type: quadratic
-        question: ∫∫ r dr dθ sobre círculo r ≤ 1
-        correctAnswer: π
-      - &a5
-        type: quadratic
-        question: Área de r = sin θ
-        correctAnswer: π/4
-      - &a6
-        type: quadratic
-        question: Área de r = 1 + cos θ
-        correctAnswer: 3π/2
-      - &a7
-        type: quadratic
-        question: Área de r = 2 cos θ
-        correctAnswer: π
-      - &a8
-        type: quadratic
-        question: Comprimento de r = θ, 0 ≤ θ ≤ 2π
-        correctAnswer: π√(1 + 4π²)
-      - &a9
-        type: quadratic
-        question: Comprimento de r = 2, 0 ≤ θ ≤ π
-        correctAnswer: 2π
-      - &a10
-        type: quadratic
-        question: I em relação ao eixo z de círculo r ≤ a
-        correctAnswer: πa⁴/2
+      - { type: quadratic, question: "∫₀^3 x^1 dx = ?", correctAnswer: "4.5" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^4 x^3 dx = ?", correctAnswer: "64" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
+      - { type: quadratic, question: "∫₀^3 x^0 dx = ?", correctAnswer: "3" }
+      - { type: quadratic, question: "∫₀^3 x^1 dx = ?", correctAnswer: "4.5" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
   - pageNumber: 2
-    title: Coordenadas Polares — Conjunto 14 – Página 2
-    description: Converta para coordenadas polares.
+    title: Revisão de Integrais — Conjunto 14 – Página 2
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^1 x^3 dx = ?", correctAnswer: "0.25" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^3 x^1 dx = ?", correctAnswer: "4.5" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^3 x^1 dx = ?", correctAnswer: "4.5" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
   - pageNumber: 3
-    title: Coordenadas Polares — Conjunto 14 – Página 3
-    description: Converta para coordenadas polares.
+    title: Revisão de Integrais — Conjunto 14 – Página 3
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "∫₀^3 x^1 dx = ?", correctAnswer: "4.5" }
+      - { type: quadratic, question: "∫₀^2 x^2 dx = ?", correctAnswer: "2.6666666666666665" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^1 x^3 dx = ?", correctAnswer: "0.25" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
+      - { type: quadratic, question: "∫₀^1 x^3 dx = ?", correctAnswer: "0.25" }
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
   - pageNumber: 4
-    title: Coordenadas Polares — Conjunto 14 – Página 4
-    description: Converta para coordenadas polares.
+    title: Revisão de Integrais — Conjunto 14 – Página 4
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "∫₀^4 x^0 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^3 x^1 dx = ?", correctAnswer: "4.5" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^3 x^0 dx = ?", correctAnswer: "3" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^2 x^2 dx = ?", correctAnswer: "2.6666666666666665" }
   - pageNumber: 5
-    title: Coordenadas Polares — Conjunto 14 – Página 5
-    description: Converta para coordenadas polares.
+    title: Revisão de Integrais — Conjunto 14 – Página 5
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "∫₀^4 x^3 dx = ?", correctAnswer: "64" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^3 x^1 dx = ?", correctAnswer: "4.5" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "∫₀^4 x^3 dx = ?", correctAnswer: "64" }
+      - { type: quadratic, question: "∫₀^2 x^2 dx = ?", correctAnswer: "2.6666666666666665" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
   - pageNumber: 6
-    title: Coordenadas Polares — Conjunto 14 – Página 6
-    description: Converta para coordenadas polares.
+    title: Revisão de Integrais — Conjunto 14 – Página 6
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^3 x^0 dx = ?", correctAnswer: "3" }
+      - { type: quadratic, question: "∫₀^2 x^1 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
+      - { type: quadratic, question: "∫₀^1 x^3 dx = ?", correctAnswer: "0.25" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^2 x^1 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^2 x^2 dx = ?", correctAnswer: "2.6666666666666665" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
   - pageNumber: 7
-    title: Coordenadas Polares — Conjunto 14 – Página 7
-    description: Converta para coordenadas polares.
+    title: Revisão de Integrais — Conjunto 14 – Página 7
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^4 x^3 dx = ?", correctAnswer: "64" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
+      - { type: quadratic, question: "∫₀^2 x^1 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^4 x^0 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
+      - { type: quadratic, question: "∫₀^3 x^0 dx = ?", correctAnswer: "3" }
+      - { type: quadratic, question: "∫₀^2 x^1 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^4 x^0 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
   - pageNumber: 8
-    title: Coordenadas Polares — Conjunto 14 – Página 8
-    description: Converta para coordenadas polares.
+    title: Revisão de Integrais — Conjunto 14 – Página 8
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
+      - { type: quadratic, question: "∫₀^1 x^3 dx = ?", correctAnswer: "0.25" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "∫₀^4 x^0 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "∫₀^3 x^0 dx = ?", correctAnswer: "3" }
   - pageNumber: 9
-    title: Coordenadas Polares — Conjunto 14 – Página 9
-    description: Converta para coordenadas polares.
+    title: Revisão de Integrais — Conjunto 14 – Página 9
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
+      - { type: quadratic, question: "∫₀^2 x^2 dx = ?", correctAnswer: "2.6666666666666665" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^2 x^2 dx = ?", correctAnswer: "2.6666666666666665" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^3 x^0 dx = ?", correctAnswer: "3" }
+      - { type: quadratic, question: "∫₀^3 x^1 dx = ?", correctAnswer: "4.5" }
+      - { type: quadratic, question: "∫₀^2 x^1 dx = ?", correctAnswer: "2" }
   - pageNumber: 10
-    title: Coordenadas Polares — Conjunto 14 – Página 10
-    description: Converta para coordenadas polares.
+    title: Revisão de Integrais — Conjunto 14 – Página 10
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
+      - { type: quadratic, question: "∫₀^2 x^2 dx = ?", correctAnswer: "2.6666666666666665" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^2 x^1 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }

@@ -1,176 +1,146 @@
-title: Triângulos Retângulos — Conjunto 16
+title: Trigonometria Básica — Conjunto 16
 level: L
-example: "Trigonometria em triângulos retângulos. Ex.: em um triângulo com cateto oposto = 3 e hipotenusa = 5, sen(θ) = 3/5"
+example: "Funções trigonométricas básicas. Ex.: sen(30°) = 1/2"
 subject: math
 inputType: number
 pages:
   - pageNumber: 1
-    title: Triângulos Retângulos — Conjunto 16 – Página 1
-    description: Calcule o seno no triângulo retângulo.
+    title: Trigonometria Básica — Conjunto 16 – Página 1
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - &a1
-        type: right_triangle
-        question: Cateto oposto = 3, hipotenusa = 5. sen(θ) = ?
-        correctAnswer: 3/5
-      - &a2
-        type: right_triangle
-        question: Cateto adjacente = 4, hipotenusa = 5. cos(θ) = ?
-        correctAnswer: 4/5
-      - &a3
-        type: right_triangle
-        question: Cateto oposto = 3, cateto adjacente = 4. tan(θ) = ?
-        correctAnswer: 3/4
-      - &a4
-        type: right_triangle
-        question: Hipotenusa = 10, θ = 30°. Cateto oposto = ?
-        correctAnswer: "5"
-      - &a5
-        type: right_triangle
-        question: Hipotenusa = 10, θ = 60°. Cateto adjacente = ?
-        correctAnswer: "5"
-      - &a6
-        type: right_triangle
-        question: Cateto adjacente = 8, θ = 45°. Cateto oposto = ?
-        correctAnswer: "8"
-      - &a7
-        type: right_triangle
-        question: Cateto oposto = 5, hipotenusa = 10. θ = ?
-        correctAnswer: 30°
-      - &a8
-        type: right_triangle
-        question: Cateto adjacente = 5√3, hipotenusa = 10. θ = ?
-        correctAnswer: 30°
-      - &a9
-        type: right_triangle
-        question: Cateto oposto = cateto adjacente = 7. θ = ?
-        correctAnswer: 45°
-      - &a10
-        type: right_triangle
-        question: Um lado = 6, outro lado = 8. Hipotenusa = ?
-        correctAnswer: "10"
+      - { type: trigonometry, question: "sen(120°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "arccos(1) = ?", correctAnswer: "0°" }
+      - { type: trigonometry, question: "cos(30°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "cos(120°) = ?", correctAnswer: "-1/2" }
+      - { type: trigonometry, question: "arcsen(1/2) = ?", correctAnswer: "30°" }
+      - { type: trigonometry, question: "sen(135°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "arcsen(√2/2) = ?", correctAnswer: "45°" }
+      - { type: trigonometry, question: "arcsen(√3/2) = ?", correctAnswer: "60°" }
+      - { type: trigonometry, question: "arccos(1/2) = ?", correctAnswer: "60°" }
+      - { type: trigonometry, question: "arccos(0) = ?", correctAnswer: "90°" }
   - pageNumber: 2
-    title: Triângulos Retângulos — Conjunto 16 – Página 2
-    description: Calcule o seno no triângulo retângulo.
+    title: Trigonometria Básica — Conjunto 16 – Página 2
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "cos(60°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "cos(60°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "arcsen(√3/2) = ?", correctAnswer: "60°" }
+      - { type: trigonometry, question: "arcsen(√2/2) = ?", correctAnswer: "45°" }
+      - { type: trigonometry, question: "arcsen(1) = ?", correctAnswer: "90°" }
+      - { type: trigonometry, question: "cos(30°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "arccos(√2/2) = ?", correctAnswer: "45°" }
+      - { type: trigonometry, question: "arccos(√3/2) = ?", correctAnswer: "30°" }
+      - { type: trigonometry, question: "arcsen(1) = ?", correctAnswer: "90°" }
+      - { type: trigonometry, question: "arccos(√2/2) = ?", correctAnswer: "45°" }
   - pageNumber: 3
-    title: Triângulos Retângulos — Conjunto 16 – Página 3
-    description: Calcule o seno no triângulo retângulo.
+    title: Trigonometria Básica — Conjunto 16 – Página 3
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "sen(30°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "sen(120°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "sen(150°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "arcsen(0) = ?", correctAnswer: "0°" }
+      - { type: trigonometry, question: "sen(150°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "arccos(1) = ?", correctAnswer: "0°" }
+      - { type: trigonometry, question: "arccos(0) = ?", correctAnswer: "90°" }
+      - { type: trigonometry, question: "arccos(0) = ?", correctAnswer: "90°" }
+      - { type: trigonometry, question: "sen(135°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "arcsen(√2/2) = ?", correctAnswer: "45°" }
   - pageNumber: 4
-    title: Triângulos Retângulos — Conjunto 16 – Página 4
-    description: Calcule o seno no triângulo retângulo.
+    title: Trigonometria Básica — Conjunto 16 – Página 4
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "sen(150°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "arccos(√3/2) = ?", correctAnswer: "30°" }
+      - { type: trigonometry, question: "sen(60°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "cos(150°) = ?", correctAnswer: "-√3/2" }
+      - { type: trigonometry, question: "arccos(0) = ?", correctAnswer: "90°" }
+      - { type: trigonometry, question: "cos(150°) = ?", correctAnswer: "-√3/2" }
+      - { type: trigonometry, question: "sen(30°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "cos(150°) = ?", correctAnswer: "-√3/2" }
+      - { type: trigonometry, question: "arcsen(√3/2) = ?", correctAnswer: "60°" }
+      - { type: trigonometry, question: "arccos(√3/2) = ?", correctAnswer: "30°" }
   - pageNumber: 5
-    title: Triângulos Retângulos — Conjunto 16 – Página 5
-    description: Calcule o seno no triângulo retângulo.
+    title: Trigonometria Básica — Conjunto 16 – Página 5
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "arcsen(1) = ?", correctAnswer: "90°" }
+      - { type: trigonometry, question: "arccos(1) = ?", correctAnswer: "0°" }
+      - { type: trigonometry, question: "cos(45°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "sen(30°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "cos(150°) = ?", correctAnswer: "-√3/2" }
+      - { type: trigonometry, question: "arccos(√3/2) = ?", correctAnswer: "30°" }
+      - { type: trigonometry, question: "sen(120°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "sen(45°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "sen(135°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "arcsen(√2/2) = ?", correctAnswer: "45°" }
   - pageNumber: 6
-    title: Triângulos Retângulos — Conjunto 16 – Página 6
-    description: Calcule o seno no triângulo retângulo.
+    title: Trigonometria Básica — Conjunto 16 – Página 6
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "arccos(1/2) = ?", correctAnswer: "60°" }
+      - { type: trigonometry, question: "arccos(1) = ?", correctAnswer: "0°" }
+      - { type: trigonometry, question: "sen(150°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "cos(45°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "cos(120°) = ?", correctAnswer: "-1/2" }
+      - { type: trigonometry, question: "arcsen(0) = ?", correctAnswer: "0°" }
+      - { type: trigonometry, question: "sen(60°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "arcsen(1/2) = ?", correctAnswer: "30°" }
+      - { type: trigonometry, question: "sen(30°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "cos(120°) = ?", correctAnswer: "-1/2" }
   - pageNumber: 7
-    title: Triângulos Retângulos — Conjunto 16 – Página 7
-    description: Calcule o seno no triângulo retângulo.
+    title: Trigonometria Básica — Conjunto 16 – Página 7
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "arccos(√2/2) = ?", correctAnswer: "45°" }
+      - { type: trigonometry, question: "arccos(√2/2) = ?", correctAnswer: "45°" }
+      - { type: trigonometry, question: "sen(60°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "arcsen(1) = ?", correctAnswer: "90°" }
+      - { type: trigonometry, question: "arccos(1/2) = ?", correctAnswer: "60°" }
+      - { type: trigonometry, question: "sen(120°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "sen(135°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "cos(150°) = ?", correctAnswer: "-√3/2" }
+      - { type: trigonometry, question: "sen(120°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "arccos(0) = ?", correctAnswer: "90°" }
   - pageNumber: 8
-    title: Triângulos Retângulos — Conjunto 16 – Página 8
-    description: Calcule o seno no triângulo retângulo.
+    title: Trigonometria Básica — Conjunto 16 – Página 8
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "arccos(1) = ?", correctAnswer: "0°" }
+      - { type: trigonometry, question: "cos(120°) = ?", correctAnswer: "-1/2" }
+      - { type: trigonometry, question: "cos(30°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "cos(45°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "arcsen(0) = ?", correctAnswer: "0°" }
+      - { type: trigonometry, question: "arccos(1/2) = ?", correctAnswer: "60°" }
+      - { type: trigonometry, question: "cos(60°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "sen(45°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "cos(135°) = ?", correctAnswer: "-√2/2" }
+      - { type: trigonometry, question: "arcsen(1/2) = ?", correctAnswer: "30°" }
   - pageNumber: 9
-    title: Triângulos Retângulos — Conjunto 16 – Página 9
-    description: Calcule o seno no triângulo retângulo.
+    title: Trigonometria Básica — Conjunto 16 – Página 9
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "cos(135°) = ?", correctAnswer: "-√2/2" }
+      - { type: trigonometry, question: "cos(135°) = ?", correctAnswer: "-√2/2" }
+      - { type: trigonometry, question: "arcsen(1/2) = ?", correctAnswer: "30°" }
+      - { type: trigonometry, question: "arccos(1/2) = ?", correctAnswer: "60°" }
+      - { type: trigonometry, question: "cos(30°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "arcsen(1) = ?", correctAnswer: "90°" }
+      - { type: trigonometry, question: "arcsen(√3/2) = ?", correctAnswer: "60°" }
+      - { type: trigonometry, question: "arcsen(0) = ?", correctAnswer: "0°" }
+      - { type: trigonometry, question: "cos(30°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "arccos(1/2) = ?", correctAnswer: "60°" }
   - pageNumber: 10
-    title: Triângulos Retângulos — Conjunto 16 – Página 10
-    description: Calcule o seno no triângulo retângulo.
+    title: Trigonometria Básica — Conjunto 16 – Página 10
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "arccos(√3/2) = ?", correctAnswer: "30°" }
+      - { type: trigonometry, question: "cos(120°) = ?", correctAnswer: "-1/2" }
+      - { type: trigonometry, question: "arccos(1) = ?", correctAnswer: "0°" }
+      - { type: trigonometry, question: "arcsen(1) = ?", correctAnswer: "90°" }
+      - { type: trigonometry, question: "arcsen(1/2) = ?", correctAnswer: "30°" }
+      - { type: trigonometry, question: "sen(30°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "sen(45°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "arcsen(√2/2) = ?", correctAnswer: "45°" }
+      - { type: trigonometry, question: "sen(30°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "arcsen(√2/2) = ?", correctAnswer: "45°" }

@@ -1,176 +1,146 @@
-title: Mastery e Excelência — Conjunto 20
+title: Limites Gerais — Conjunto 20
 level: N
-example: "Domínio completo do cálculo diferencial. Ex.: Aplicações integradas de todos os conceitos"
+example: "Conceitos básicos de limites. Ex.: lim(x→2) (x² - 4)/(x - 2) = 4"
 subject: math
 inputType: number
 pages:
   - pageNumber: 1
-    title: Mastery e Excelência — Conjunto 20 – Página 1
-    description: Demonstre domínio completo dos conceitos.
+    title: Limites Gerais — Conjunto 20 – Página 1
+    description: Calcule o limite das funções.
     exercises:
-      - &a1
-        type: reading
-        question: Prove que lim(h→0) [sin(x+h) - sin x]/h = cos x
-        correctAnswer: cos x
-      - &a2
-        type: reading
-        question: f(x) = x^n, f^(n)(x) =
-        correctAnswer: n!
-      - &a3
-        type: reading
-        question: Equação da reta tangente a x² + y² = 25 no ponto (3,4)
-        correctAnswer: 3x + 4y = 25
-      - &a4
-        type: reading
-        question: ∫f'(x)dx =
-        correctAnswer: f(x) + C
-      - &a5
-        type: reading
-        question: Se f'(x) = 2x e f(0) = 1, então f(x) =
-        correctAnswer: x² + 1
-      - &a6
-        type: reading
-        question: d/dx ∫[a to x] f(t)dt =
-        correctAnswer: f(x)
-      - &a7
-        type: reading
-        question: Teorema Fundamental do Cálculo relaciona
-        correctAnswer: derivada e integral
-      - &a8
-        type: reading
-        question: lim(n→∞) (1 + 1/n)^n =
-        correctAnswer: e
-      - &a9
-        type: reading
-        question: d/dx (y^x) onde y = f(x) =
-        correctAnswer: y^x (ln y · y' + y'/y)
-      - &a10
-        type: reading
-        question: Função com derivada contínua é chamada de classe
-        correctAnswer: C¹
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: quadratic, question: "lim(x→3) (x² - 64)/(x - -8) = ?", correctAnswer: "-5" }
+      - { type: linear_equation, question: "lim(x→-3) (-4x + -6) = ?", correctAnswer: "6" }
+      - { type: quadratic, question: "lim(x→-4) (x² - 1)/(x - -1) = ?", correctAnswer: "-5" }
+      - { type: linear_equation, question: "lim(x→1) (-1x + 1) = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→5) (2x + -4) = ?", correctAnswer: "6" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + -1x + 5)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→3) (-9x + -10) = ?", correctAnswer: "-37" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -6x + 5)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 4x + 0)/x² = ?", correctAnswer: "1" }
   - pageNumber: 2
-    title: Mastery e Excelência — Conjunto 20 – Página 2
-    description: Demonstre domínio completo dos conceitos.
+    title: Limites Gerais — Conjunto 20 – Página 2
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "lim(x→∞) (1x² + -2x + 3)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→1) (x² - 49)/(x - -7) = ?", correctAnswer: "-6" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 8x + 1)/x² = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→3) (3x + -2) = ?", correctAnswer: "7" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -5x + 5)/x² = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→5) (10x + 10) = ?", correctAnswer: "60" }
+      - { type: linear_equation, question: "lim(x→5) (-5x + -6) = ?", correctAnswer: "-31" }
+      - { type: linear_equation, question: "lim(x→2) (-3x + -1) = ?", correctAnswer: "-7" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 4x + 5)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + -3x + -1)/x² = ?", correctAnswer: "2" }
   - pageNumber: 3
-    title: Mastery e Excelência — Conjunto 20 – Página 3
-    description: Demonstre domínio completo dos conceitos.
+    title: Limites Gerais — Conjunto 20 – Página 3
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 3x + 4)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + -10x + -1)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→∞) (1x + 8)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→-1) (9x + -6) = ?", correctAnswer: "-15" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 6x + -3)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→-5) (4x + 9) = ?", correctAnswer: "-11" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 8x + -4)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→4) (x² - 9)/(x - 3) = ?", correctAnswer: "7" }
   - pageNumber: 4
-    title: Mastery e Excelência — Conjunto 20 – Página 4
-    description: Demonstre domínio completo dos conceitos.
+    title: Limites Gerais — Conjunto 20 – Página 4
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "lim(x→-2) (x² - 49)/(x - 7) = ?", correctAnswer: "5" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -6x + 1)/x² = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→-3) (-1x + -7) = ?", correctAnswer: "-4" }
+      - { type: linear_equation, question: "lim(x→-2) (-1x + 4) = ?", correctAnswer: "6" }
+      - { type: quadratic, question: "lim(x→1) (x² - 64)/(x - 8) = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "lim(x→1) (x² - 36)/(x - -6) = ?", correctAnswer: "-5" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 1x + -1)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -1x + -1)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→-5) (x² - 16)/(x - 4) = ?", correctAnswer: "-1" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -2x + 1)/x² = ?", correctAnswer: "1" }
   - pageNumber: 5
-    title: Mastery e Excelência — Conjunto 20 – Página 5
-    description: Demonstre domínio completo dos conceitos.
+    title: Limites Gerais — Conjunto 20 – Página 5
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "lim(x→∞) (2x² + -9x + 0)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→3) (x² - 4)/(x - 2) = ?", correctAnswer: "5" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1x + 7)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1x + -3)/x = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 0x + -5)/x² = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→-4) (-10x + 5) = ?", correctAnswer: "45" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 6x + -1)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -6x + -2)/x² = ?", correctAnswer: "1" }
   - pageNumber: 6
-    title: Mastery e Excelência — Conjunto 20 – Página 6
-    description: Demonstre domínio completo dos conceitos.
+    title: Limites Gerais — Conjunto 20 – Página 6
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→3) (-5x + 0) = ?", correctAnswer: "-15" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 10x + -2)/x² = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -8x + -4)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→1) (x² - 16)/(x - 4) = ?", correctAnswer: "5" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 4x + -2)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→-4) (x² - 9)/(x - 3) = ?", correctAnswer: "-1" }
+      - { type: linear_equation, question: "lim(x→-4) (10x + -8) = ?", correctAnswer: "-48" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 10x + 4)/x² = ?", correctAnswer: "1" }
   - pageNumber: 7
-    title: Mastery e Excelência — Conjunto 20 – Página 7
-    description: Demonstre domínio completo dos conceitos.
+    title: Limites Gerais — Conjunto 20 – Página 7
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→1) (6x + 3) = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 2x + -5)/x² = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→5) (5x + 1) = ?", correctAnswer: "26" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→-1) (6x + 7) = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (4x + 7) = ?", correctAnswer: "7" }
+      - { type: quadratic, question: "lim(x→-1) (-4x^4 + 1x^3 + 4x^2 + -2x + -1) = ?", correctAnswer: "0" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 4x + -3)/x² = ?", correctAnswer: "2" }
   - pageNumber: 8
-    title: Mastery e Excelência — Conjunto 20 – Página 8
-    description: Demonstre domínio completo dos conceitos.
+    title: Limites Gerais — Conjunto 20 – Página 8
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→3) (-2x + -5) = ?", correctAnswer: "-11" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + -2x + -1)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→∞) (2x + -8)/x = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -9x + -2)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→-4) (x² - 9)/(x - -3) = ?", correctAnswer: "-7" }
+      - { type: quadratic, question: "lim(x→-4) (x² - 100)/(x - 10) = ?", correctAnswer: "6" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: quadratic, question: "lim(x→3) (x² - 81)/(x - 9) = ?", correctAnswer: "12" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
   - pageNumber: 9
-    title: Mastery e Excelência — Conjunto 20 – Página 9
-    description: Demonstre domínio completo dos conceitos.
+    title: Limites Gerais — Conjunto 20 – Página 9
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "lim(x→∞) (2x² + 1x + 5)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→5) (-3x + -10) = ?", correctAnswer: "-25" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + -3x + 0)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→-3) (x² - 64)/(x - -8) = ?", correctAnswer: "-11" }
+      - { type: linear_equation, question: "lim(x→-3) (10x + -7) = ?", correctAnswer: "-37" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 8x + -4)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + -9x + 0)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -6x + 1)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→1) (x² - 36)/(x - -6) = ?", correctAnswer: "-5" }
+      - { type: quadratic, question: "lim(x→-3) (x² - 64)/(x - -8) = ?", correctAnswer: "-11" }
   - pageNumber: 10
-    title: Mastery e Excelência — Conjunto 20 – Página 10
-    description: Demonstre domínio completo dos conceitos.
+    title: Limites Gerais — Conjunto 20 – Página 10
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "lim(x→∞) (2x² + -3x + 0)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→∞) (1x + -3)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→3) (-2x + -5) = ?", correctAnswer: "-11" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 4x + -2)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + -1x + 5)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -8x + -4)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→-4) (x² - 9)/(x - 3) = ?", correctAnswer: "-1" }
+      - { type: linear_equation, question: "lim(x→-4) (-10x + 5) = ?", correctAnswer: "45" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 0x + -5)/x² = ?", correctAnswer: "1" }

@@ -1,176 +1,146 @@
 title: Álgebra Avançada — Conjunto 20
 level: J
-example: "Revisão geral. Ex.: aplicação de conceitos avançados"
+example: "Expressões algébricas avançadas. Ex.: (x + 2)² = x² + 4x + 4"
 subject: math
 inputType: number
 pages:
   - pageNumber: 1
     title: Álgebra Avançada — Conjunto 20 – Página 1
-    description: Revisão e aplicação de conceitos.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - &a1
-        type: algebra
-        question: "Resolva o sistema: x+y=3, x-y=1"
-        correctAnswer: x=2, y=1
-      - &a2
-        type: algebra
-        question: "Fatorize completamente: x⁴ - 16"
-        correctAnswer: (x²-4)(x²+4) = (x-2)(x+2)(x²+4)
-      - &a3
-        type: algebra
-        question: "Simplifique: (x²-1)/(x+1)"
-        correctAnswer: x-1
-      - &a4
-        type: algebra
-        question: "Calcule: log₂(8) + log₂(4)"
-        correctAnswer: 5
-      - &a5
-        type: algebra
-        question: "Derivada de f(x) = x³ - 3x²:"
-        correctAnswer: f'(x) = 3x² - 6x
-      - &a6
-        type: algebra
-        question: ∫(2x + 1)dx =
-        correctAnswer: x² + x + C
-      - &a7
-        type: algebra
-        question: "Resolva: |2x - 3| = 5"
-        correctAnswer: x = 4 ou x = -1
-      - &a8
-        type: algebra
-        question: "Distância entre (1,2) e (4,6):"
-        correctAnswer: 5
-      - &a9
-        type: algebra
-        question: "Equação da parábola com vértice (0,0) e foco (0,1):"
-        correctAnswer: x² = 4y
-      - &a10
-        type: algebra
-        question: lim(x→∞) (3x²+1)/(x²+x) =
-        correctAnswer: 3
+      - { type: factoring, question: "8x² - 10x + -25", correctAnswer: "(4x + 5)(2x + -5)" }
+      - { type: factoring, question: "8x² + 12x + 4", correctAnswer: "(2x + 1)(4x + 4)" }
+      - { type: factoring, question: "3x² - 7x + 2", correctAnswer: "(3x + -1)(1x + -2)" }
+      - { type: factoring, question: "4x² - 3x + -1", correctAnswer: "(1x + -1)(4x + 1)" }
+      - { type: algebra, question: "(x + -4)(x + 3)", correctAnswer: "x² - 1x + -12" }
+      - { type: factoring, question: "6x² - 2x + -20", correctAnswer: "(2x + -4)(3x + 5)" }
+      - { type: factoring, question: "8x² - 4x + -12", correctAnswer: "(2x + -3)(4x + 4)" }
+      - { type: factoring, question: "15x² - 4x + -3", correctAnswer: "(5x + -3)(3x + 1)" }
+      - { type: factoring, question: "12x² - 2x + -4", correctAnswer: "(3x + -2)(4x + 2)" }
+      - { type: algebra, question: "1x + 8x", correctAnswer: "9x" }
   - pageNumber: 2
     title: Álgebra Avançada — Conjunto 20 – Página 2
-    description: Revisão e aplicação de conceitos.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: factoring, question: "9x² + 6x + -3", correctAnswer: "(3x + -1)(3x + 3)" }
+      - { type: algebra, question: "(x + 9)(x + -5)", correctAnswer: "x² + 4x + -45" }
+      - { type: factoring, question: "4x² + 0x + -25", correctAnswer: "(2x + -5)(2x + 5)" }
+      - { type: factoring, question: "25x² - 10x + -3", correctAnswer: "(5x + 1)(5x + -3)" }
+      - { type: factoring, question: "3x² - 4x + -4", correctAnswer: "(3x + 2)(1x + -2)" }
+      - { type: factoring, question: "9x² - 6x + -8", correctAnswer: "(3x + 2)(3x + -4)" }
+      - { type: factoring, question: "3x² + 16x + 16", correctAnswer: "(1x + 4)(3x + 4)" }
+      - { type: factoring, question: "1x² - 8x + 15", correctAnswer: "(1x + -3)(1x + -5)" }
+      - { type: factoring, question: "5x² + 20x + -25", correctAnswer: "(1x + 5)(5x + -5)" }
+      - { type: factoring, question: "10x² + 16x + -8", correctAnswer: "(5x + -2)(2x + 4)" }
   - pageNumber: 3
     title: Álgebra Avançada — Conjunto 20 – Página 3
-    description: Revisão e aplicação de conceitos.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: factoring, question: "5x² - 14x + 8", correctAnswer: "(1x + -2)(5x + -4)" }
+      - { type: factoring, question: "3x² - 11x + 10", correctAnswer: "(1x + -2)(3x + -5)" }
+      - { type: algebra, question: "(x + 4)(x + -10)", correctAnswer: "x² - 6x + -40" }
+      - { type: factoring, question: "5x² - 18x + -8", correctAnswer: "(5x + 2)(1x + -4)" }
+      - { type: algebra, question: "-10x + 6y", correctAnswer: "-10x + 6y" }
+      - { type: algebra, question: "7x + -3y", correctAnswer: "7x + -3y" }
+      - { type: factoring, question: "6x² + 5x + -25", correctAnswer: "(2x + 5)(3x + -5)" }
+      - { type: factoring, question: "3x² - 1x + -4", correctAnswer: "(3x + -4)(1x + 1)" }
+      - { type: factoring, question: "12x² + 18x + 6", correctAnswer: "(3x + 3)(4x + 2)" }
+      - { type: factoring, question: "20x² - 9x + -20", correctAnswer: "(4x + -5)(5x + 4)" }
   - pageNumber: 4
     title: Álgebra Avançada — Conjunto 20 – Página 4
-    description: Revisão e aplicação de conceitos.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: algebra, question: "(x + 1)(x + 6)", correctAnswer: "x² + 7x + 6" }
+      - { type: algebra, question: "(x + -3)(x + -6)", correctAnswer: "x² - 9x + 18" }
+      - { type: algebra, question: "1x + -3x", correctAnswer: "-2x" }
+      - { type: factoring, question: "6x² - 10x + 4", correctAnswer: "(3x + -2)(2x + -2)" }
+      - { type: algebra, question: "(x + -7)(x + -4)", correctAnswer: "x² - 11x + 28" }
+      - { type: algebra, question: "-4x + 4x", correctAnswer: "0x" }
+      - { type: factoring, question: "4x² - 11x + -20", correctAnswer: "(1x + -4)(4x + 5)" }
+      - { type: algebra, question: "7x + -9x", correctAnswer: "-2x" }
+      - { type: algebra, question: "3x + 8y", correctAnswer: "3x + 8y" }
+      - { type: algebra, question: "5x + 5x", correctAnswer: "10x" }
   - pageNumber: 5
     title: Álgebra Avançada — Conjunto 20 – Página 5
-    description: Revisão e aplicação de conceitos.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: factoring, question: "1x² - 5x + 6", correctAnswer: "(1x + -3)(1x + -2)" }
+      - { type: factoring, question: "16x² - 20x + 4", correctAnswer: "(4x + -4)(4x + -1)" }
+      - { type: algebra, question: "3x + -2y", correctAnswer: "3x + -2y" }
+      - { type: algebra, question: "(x + 2)(x + -9)", correctAnswer: "x² - 7x + -18" }
+      - { type: factoring, question: "6x² - 1x + -15", correctAnswer: "(3x + -5)(2x + 3)" }
+      - { type: algebra, question: "(x + 4)(x + 0)", correctAnswer: "x² + 4x + 0" }
+      - { type: factoring, question: "16x² - 20x + 4", correctAnswer: "(4x + -1)(4x + -4)" }
+      - { type: algebra, question: "(x + -8)(x + -1)", correctAnswer: "x² - 9x + 8" }
+      - { type: algebra, question: "(x + -6)(x + -2)", correctAnswer: "x² - 8x + 12" }
+      - { type: factoring, question: "25x² + 0x + -25", correctAnswer: "(5x + 5)(5x + -5)" }
   - pageNumber: 6
     title: Álgebra Avançada — Conjunto 20 – Página 6
-    description: Revisão e aplicação de conceitos.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: factoring, question: "4x² + 8x + 4", correctAnswer: "(1x + 1)(4x + 4)" }
+      - { type: algebra, question: "-8x + 2x", correctAnswer: "-6x" }
+      - { type: algebra, question: "(x + 4)(x + -9)", correctAnswer: "x² - 5x + -36" }
+      - { type: factoring, question: "10x² - 16x + 6", correctAnswer: "(2x + -2)(5x + -3)" }
+      - { type: algebra, question: "4x + -10y", correctAnswer: "4x + -10y" }
+      - { type: factoring, question: "6x² - 6x + -12", correctAnswer: "(3x + 3)(2x + -4)" }
+      - { type: factoring, question: "6x² - 11x + -10", correctAnswer: "(2x + -5)(3x + 2)" }
+      - { type: factoring, question: "12x² - 14x + 4", correctAnswer: "(3x + -2)(4x + -2)" }
+      - { type: factoring, question: "10x² - 7x + 1", correctAnswer: "(5x + -1)(2x + -1)" }
+      - { type: factoring, question: "4x² + 0x + -9", correctAnswer: "(2x + 3)(2x + -3)" }
   - pageNumber: 7
     title: Álgebra Avançada — Conjunto 20 – Página 7
-    description: Revisão e aplicação de conceitos.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: factoring, question: "1x² + 2x + 1", correctAnswer: "(1x + 1)(1x + 1)" }
+      - { type: factoring, question: "8x² - 16x + -10", correctAnswer: "(2x + -5)(4x + 2)" }
+      - { type: algebra, question: "-5x + -10x", correctAnswer: "-15x" }
+      - { type: factoring, question: "4x² + 13x + 10", correctAnswer: "(1x + 2)(4x + 5)" }
+      - { type: algebra, question: "-7x + -2y", correctAnswer: "-7x + -2y" }
+      - { type: factoring, question: "8x² - 16x + -10", correctAnswer: "(4x + 2)(2x + -5)" }
+      - { type: factoring, question: "4x² + 6x + -4", correctAnswer: "(2x + 4)(2x + -1)" }
+      - { type: algebra, question: "-3x + -7y", correctAnswer: "-3x + -7y" }
+      - { type: factoring, question: "6x² - 11x + 4", correctAnswer: "(3x + -4)(2x + -1)" }
+      - { type: algebra, question: "(x + 3)²", correctAnswer: "x² + 6x + 9" }
   - pageNumber: 8
     title: Álgebra Avançada — Conjunto 20 – Página 8
-    description: Revisão e aplicação de conceitos.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: algebra, question: "1x + 0x", correctAnswer: "1x" }
+      - { type: algebra, question: "-1x + 9x", correctAnswer: "8x" }
+      - { type: algebra, question: "7x + 8x", correctAnswer: "15x" }
+      - { type: algebra, question: "(x + -6)(x + 0)", correctAnswer: "x² - 6x + 0" }
+      - { type: algebra, question: "5x + -1x", correctAnswer: "4x" }
+      - { type: factoring, question: "15x² + 17x + -4", correctAnswer: "(3x + 4)(5x + -1)" }
+      - { type: factoring, question: "1x² - 2x + -3", correctAnswer: "(1x + 1)(1x + -3)" }
+      - { type: factoring, question: "8x² + 0x + -2", correctAnswer: "(2x + 1)(4x + -2)" }
+      - { type: algebra, question: "-5x + -4x", correctAnswer: "-9x" }
+      - { type: factoring, question: "5x² + 18x + 9", correctAnswer: "(1x + 3)(5x + 3)" }
   - pageNumber: 9
     title: Álgebra Avançada — Conjunto 20 – Página 9
-    description: Revisão e aplicação de conceitos.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: algebra, question: "4x + -1x", correctAnswer: "3x" }
+      - { type: factoring, question: "12x² - 8x + -20", correctAnswer: "(4x + 4)(3x + -5)" }
+      - { type: factoring, question: "6x² - 13x + 6", correctAnswer: "(3x + -2)(2x + -3)" }
+      - { type: factoring, question: "15x² - 17x + -4", correctAnswer: "(3x + -4)(5x + 1)" }
+      - { type: factoring, question: "12x² + 7x + -10", correctAnswer: "(4x + 5)(3x + -2)" }
+      - { type: algebra, question: "-3x + -7y", correctAnswer: "-3x + -7y" }
+      - { type: factoring, question: "6x² + 5x + -25", correctAnswer: "(2x + 5)(3x + -5)" }
+      - { type: factoring, question: "4x² + 8x + 4", correctAnswer: "(1x + 1)(4x + 4)" }
+      - { type: algebra, question: "1x + -3x", correctAnswer: "-2x" }
+      - { type: algebra, question: "(x + 9)(x + -5)", correctAnswer: "x² + 4x + -45" }
   - pageNumber: 10
     title: Álgebra Avançada — Conjunto 20 – Página 10
-    description: Revisão e aplicação de conceitos.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: algebra, question: "(x + 1)(x + 6)", correctAnswer: "x² + 7x + 6" }
+      - { type: algebra, question: "(x + 2)(x + -9)", correctAnswer: "x² - 7x + -18" }
+      - { type: factoring, question: "4x² + 0x + -9", correctAnswer: "(2x + 3)(2x + -3)" }
+      - { type: factoring, question: "12x² - 2x + -4", correctAnswer: "(3x + -2)(4x + 2)" }
+      - { type: algebra, question: "(x + -3)(x + -6)", correctAnswer: "x² - 9x + 18" }
+      - { type: algebra, question: "-4x + 4x", correctAnswer: "0x" }
+      - { type: factoring, question: "12x² + 7x + -10", correctAnswer: "(4x + 5)(3x + -2)" }
+      - { type: algebra, question: "4x + -10y", correctAnswer: "4x + -10y" }
+      - { type: factoring, question: "16x² - 20x + 4", correctAnswer: "(4x + -1)(4x + -4)" }
+      - { type: algebra, question: "-10x + 6y", correctAnswer: "-10x + 6y" }

@@ -1,176 +1,146 @@
-title: Integrais Trigonométricas Avançadas — Conjunto 16
+title: Aplicações de Integrais — Conjunto 16
 level: O
-example: Resolva integrais trigonométricas complexas usando identidades
+example: "Calcule integrais básicas. Ex.: ∫ 2x dx = x² + C"
 subject: math
 inputType: number
 pages:
   - pageNumber: 1
-    title: Integrais Trigonométricas Avançadas — Conjunto 16 – Página 1
-    description: Use identidades trigonométricas.
+    title: Aplicações de Integrais — Conjunto 16 – Página 1
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - &a1
-        type: quadratic
-        question: ∫ sin³(x) dx
-        correctAnswer: -cos(x) + (1/3)cos³(x) + C
-      - &a2
-        type: quadratic
-        question: ∫ cos⁴(x) dx
-        correctAnswer: (3x/8) + (sin(2x)/4) + (sin(4x)/32) + C
-      - &a3
-        type: quadratic
-        question: ∫ sin(x)cos³(x) dx
-        correctAnswer: -(1/4)cos⁴(x) + C
-      - &a4
-        type: quadratic
-        question: ∫ sin(2x)cos(3x) dx
-        correctAnswer: -(1/2)cos(5x) - (1/10)cos(x) + C
-      - &a5
-        type: quadratic
-        question: ∫ tan³(x) dx
-        correctAnswer: (1/2)tan²(x) - ln|cos(x)| + C
-      - &a6
-        type: quadratic
-        question: ∫ sec³(x) dx
-        correctAnswer: (1/2)[sec(x)tan(x) + ln|sec(x) + tan(x)|] + C
-      - &a7
-        type: quadratic
-        question: ∫ sin²(x)cos²(x) dx
-        correctAnswer: x/8 - sin(4x)/32 + C
-      - &a8
-        type: quadratic
-        question: ∫ cot²(x) dx
-        correctAnswer: -cot(x) - x + C
-      - &a9
-        type: quadratic
-        question: ∫ sin⁵(x) dx
-        correctAnswer: -cos(x) + (2/3)cos³(x) - (1/5)cos⁵(x) + C
-      - &a10
-        type: quadratic
-        question: ∫ sec²(x)tan²(x) dx
-        correctAnswer: (1/3)tan³(x) + C
+      - { type: quadratic, question: "∫₀^3 x^0 dx = ?", correctAnswer: "3" }
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
+      - { type: quadratic, question: "∫₀^1 x^3 dx = ?", correctAnswer: "0.25" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^4 x^0 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
   - pageNumber: 2
-    title: Integrais Trigonométricas Avançadas — Conjunto 16 – Página 2
-    description: Use identidades trigonométricas.
+    title: Aplicações de Integrais — Conjunto 16 – Página 2
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
+      - { type: quadratic, question: "∫₀^2 x^1 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^2 x^2 dx = ?", correctAnswer: "2.6666666666666665" }
+      - { type: quadratic, question: "∫₀^2 x^2 dx = ?", correctAnswer: "2.6666666666666665" }
+      - { type: quadratic, question: "∫₀^4 x^0 dx = ?", correctAnswer: "4" }
   - pageNumber: 3
-    title: Integrais Trigonométricas Avançadas — Conjunto 16 – Página 3
-    description: Use identidades trigonométricas.
+    title: Aplicações de Integrais — Conjunto 16 – Página 3
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^4 x^3 dx = ?", correctAnswer: "64" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^4 x^0 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^2 x^2 dx = ?", correctAnswer: "2.6666666666666665" }
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "∫₀^3 x^1 dx = ?", correctAnswer: "4.5" }
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
+      - { type: quadratic, question: "∫₀^3 x^0 dx = ?", correctAnswer: "3" }
   - pageNumber: 4
-    title: Integrais Trigonométricas Avançadas — Conjunto 16 – Página 4
-    description: Use identidades trigonométricas.
+    title: Aplicações de Integrais — Conjunto 16 – Página 4
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "∫₀^1 x^3 dx = ?", correctAnswer: "0.25" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^2 x^1 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
+      - { type: quadratic, question: "∫₀^2 x^1 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^3 x^0 dx = ?", correctAnswer: "3" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^1 x^3 dx = ?", correctAnswer: "0.25" }
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
   - pageNumber: 5
-    title: Integrais Trigonométricas Avançadas — Conjunto 16 – Página 5
-    description: Use identidades trigonométricas.
+    title: Aplicações de Integrais — Conjunto 16 – Página 5
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^2 x^2 dx = ?", correctAnswer: "2.6666666666666665" }
+      - { type: quadratic, question: "∫₀^2 x^1 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^4 x^3 dx = ?", correctAnswer: "64" }
+      - { type: quadratic, question: "∫₀^2 x^2 dx = ?", correctAnswer: "2.6666666666666665" }
   - pageNumber: 6
-    title: Integrais Trigonométricas Avançadas — Conjunto 16 – Página 6
-    description: Use identidades trigonométricas.
+    title: Aplicações de Integrais — Conjunto 16 – Página 6
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^4 x^0 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
+      - { type: quadratic, question: "∫₀^3 x^1 dx = ?", correctAnswer: "4.5" }
   - pageNumber: 7
-    title: Integrais Trigonométricas Avançadas — Conjunto 16 – Página 7
-    description: Use identidades trigonométricas.
+    title: Aplicações de Integrais — Conjunto 16 – Página 7
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "∫₀^3 x^0 dx = ?", correctAnswer: "3" }
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
+      - { type: quadratic, question: "∫₀^2 x^1 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^4 x^3 dx = ?", correctAnswer: "64" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
   - pageNumber: 8
-    title: Integrais Trigonométricas Avançadas — Conjunto 16 – Página 8
-    description: Use identidades trigonométricas.
+    title: Aplicações de Integrais — Conjunto 16 – Página 8
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "∫₀^1 x^3 dx = ?", correctAnswer: "0.25" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }
+      - { type: quadratic, question: "∫₀^4 x^0 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^2 x^1 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^3 x^0 dx = ?", correctAnswer: "3" }
   - pageNumber: 9
-    title: Integrais Trigonométricas Avançadas — Conjunto 16 – Página 9
-    description: Use identidades trigonométricas.
+    title: Aplicações de Integrais — Conjunto 16 – Página 9
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^1 x^3 dx = ?", correctAnswer: "0.25" }
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^2 x^3 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "∫₀^1 x^3 dx = ?", correctAnswer: "0.25" }
+      - { type: quadratic, question: "∫₀^1 x^3 dx = ?", correctAnswer: "0.25" }
+      - { type: quadratic, question: "∫₀^2 x^0 dx = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "∫₀^1 x^0 dx = ?", correctAnswer: "1" }
   - pageNumber: 10
-    title: Integrais Trigonométricas Avançadas — Conjunto 16 – Página 10
-    description: Use identidades trigonométricas.
+    title: Aplicações de Integrais — Conjunto 16 – Página 10
+    description: Calcule integrais indefinidas básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "∫₀^4 x^1 dx = ?", correctAnswer: "8" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^3 x^3 dx = ?", correctAnswer: "20.25" }
+      - { type: quadratic, question: "∫₀^3 x^2 dx = ?", correctAnswer: "9" }
+      - { type: quadratic, question: "∫₀^1 x^1 dx = ?", correctAnswer: "0.5" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^1 x^2 dx = ?", correctAnswer: "0.3333333333333333" }
+      - { type: quadratic, question: "∫₀^3 x^1 dx = ?", correctAnswer: "4.5" }
+      - { type: quadratic, question: "∫₀^4 x^0 dx = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "∫₀^4 x^2 dx = ?", correctAnswer: "21.333333333333332" }

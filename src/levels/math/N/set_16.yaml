@@ -1,176 +1,146 @@
-title: Análise de Gráficos — Conjunto 16
+title: Aplicações de Limites — Conjunto 16
 level: N
-example: "Esboço de curvas usando derivadas. Ex.: f(x) = x³ - 3x² tem min local em x = 2"
+example: "Conceitos básicos de limites. Ex.: lim(x→2) (x² - 4)/(x - 2) = 4"
 subject: math
 inputType: number
 pages:
   - pageNumber: 1
-    title: Análise de Gráficos — Conjunto 16 – Página 1
-    description: Analise o comportamento das funções.
+    title: Aplicações de Limites — Conjunto 16 – Página 1
+    description: Calcule o limite das funções.
     exercises:
-      - &a1
-        type: reading
-        question: f(x) = x³ - 6x² + 9x + 1, f'(x) > 0 em
-        correctAnswer: (-∞,1) ∪ (3,∞)
-      - &a2
-        type: reading
-        question: f(x) = x³ - 6x² + 9x + 1, f'(x) < 0 em
-        correctAnswer: (1,3)
-      - &a3
-        type: reading
-        question: f(x) = 1/(x-2), assíntota vertical em x =
-        correctAnswer: "2"
-      - &a4
-        type: reading
-        question: f(x) = (2x+1)/(x-3), assíntota horizontal em y =
-        correctAnswer: "2"
-      - &a5
-        type: reading
-        question: f(x) = x² - 4x + 3, crescente em
-        correctAnswer: (2,∞)
-      - &a6
-        type: reading
-        question: f(x) = x² - 4x + 3, decrescente em
-        correctAnswer: (-∞,2)
-      - &a7
-        type: reading
-        question: f(x) = x⁴ - 4x³, número de extremos locais =
-        correctAnswer: "2"
-      - &a8
-        type: reading
-        question: f(x) = x⁴ - 4x³, número de pontos de inflexão =
-        correctAnswer: "2"
-      - &a9
-        type: reading
-        question: lim(x→∞) (x³ - 2x² + x) =
-        correctAnswer: ∞
-      - &a10
-        type: reading
-        question: lim(x→-∞) (2x⁴ + x³ - 5) =
-        correctAnswer: ∞
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
   - pageNumber: 2
-    title: Análise de Gráficos — Conjunto 16 – Página 2
-    description: Analise o comportamento das funções.
+    title: Aplicações de Limites — Conjunto 16 – Página 2
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
   - pageNumber: 3
-    title: Análise de Gráficos — Conjunto 16 – Página 3
-    description: Analise o comportamento das funções.
+    title: Aplicações de Limites — Conjunto 16 – Página 3
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
   - pageNumber: 4
-    title: Análise de Gráficos — Conjunto 16 – Página 4
-    description: Analise o comportamento das funções.
+    title: Aplicações de Limites — Conjunto 16 – Página 4
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
   - pageNumber: 5
-    title: Análise de Gráficos — Conjunto 16 – Página 5
-    description: Analise o comportamento das funções.
+    title: Aplicações de Limites — Conjunto 16 – Página 5
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
   - pageNumber: 6
-    title: Análise de Gráficos — Conjunto 16 – Página 6
-    description: Analise o comportamento das funções.
+    title: Aplicações de Limites — Conjunto 16 – Página 6
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
   - pageNumber: 7
-    title: Análise de Gráficos — Conjunto 16 – Página 7
-    description: Analise o comportamento das funções.
+    title: Aplicações de Limites — Conjunto 16 – Página 7
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
   - pageNumber: 8
-    title: Análise de Gráficos — Conjunto 16 – Página 8
-    description: Analise o comportamento das funções.
+    title: Aplicações de Limites — Conjunto 16 – Página 8
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
   - pageNumber: 9
-    title: Análise de Gráficos — Conjunto 16 – Página 9
-    description: Analise o comportamento das funções.
+    title: Aplicações de Limites — Conjunto 16 – Página 9
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
   - pageNumber: 10
-    title: Análise de Gráficos — Conjunto 16 – Página 10
-    description: Analise o comportamento das funções.
+    title: Aplicações de Limites — Conjunto 16 – Página 10
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }

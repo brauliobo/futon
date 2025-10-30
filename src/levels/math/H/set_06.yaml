@@ -1,6 +1,6 @@
 title: Inequações Lineares Básicas — Conjunto 6
 level: H
-example: "Resolva inequações lineares. Ex.: 2x + 3 > 7 → x > 2"
+example: "Resolva inequações lineares básicas."
 subject: math
 inputType: number
 pages:
@@ -8,169 +8,139 @@ pages:
     title: Inequações Lineares Básicas — Conjunto 6 – Página 1
     description: Resolva inequações lineares básicas.
     exercises:
-      - &a1
-        type: linear_inequality
-        question: x + 4 > 9
-        correctAnswer: x > 5
-      - &a2
-        type: linear_inequality
-        question: x - 2 < 8
-        correctAnswer: x < 10
-      - &a3
-        type: linear_inequality
-        question: 3x ≥ 15
-        correctAnswer: x ≥ 5
-      - &a4
-        type: linear_inequality
-        question: 2x + 1 ≤ 11
-        correctAnswer: x ≤ 5
-      - &a5
-        type: linear_inequality
-        question: 4x - 3 > 13
-        correctAnswer: x > 4
-      - &a6
-        type: linear_inequality
-        question: 5x + 2 < 22
-        correctAnswer: x < 4
-      - &a7
-        type: linear_inequality
-        question: 6x ≥ 30
-        correctAnswer: x ≥ 5
-      - &a8
-        type: linear_inequality
-        question: 3x - 4 ≤ 14
-        correctAnswer: x ≤ 6
-      - &a9
-        type: linear_inequality
-        question: 7x + 1 > 22
-        correctAnswer: x > 3
-      - &a10
-        type: linear_inequality
-        question: 2x - 5 < 9
-        correctAnswer: x < 7
+      - { type: inequality, question: "-5x + -6 > 4", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + -8 > -13", correctAnswer: "2" }
+      - { type: inequality, question: "-5x + 2 > 12", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + 0 > -5", correctAnswer: "2" }
+      - { type: inequality, question: "-5x + 3 > 18", correctAnswer: "-2" }
+      - { type: inequality, question: "-5x + -4 > 1", correctAnswer: "0" }
+      - { type: inequality, question: "-5x + -7 > 3", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + 3 > -7", correctAnswer: "3" }
+      - { type: inequality, question: "-5x + 2 > 2", correctAnswer: "1" }
+      - { type: inequality, question: "-5x + 5 > 20", correctAnswer: "-2" }
   - pageNumber: 2
     title: Inequações Lineares Básicas — Conjunto 6 – Página 2
     description: Resolva inequações lineares básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: inequality, question: "-5x + -7 > 18", correctAnswer: "-4" }
+      - { type: inequality, question: "-5x + -3 > -13", correctAnswer: "3" }
+      - { type: inequality, question: "-5x + -4 > 16", correctAnswer: "-3" }
+      - { type: inequality, question: "-5x + 3 > -12", correctAnswer: "4" }
+      - { type: inequality, question: "-5x + 3 > 3", correctAnswer: "1" }
+      - { type: inequality, question: "-5x + -7 > -7", correctAnswer: "1" }
+      - { type: inequality, question: "-5x + -4 > -9", correctAnswer: "2" }
+      - { type: inequality, question: "-5x + 0 > -15", correctAnswer: "4" }
+      - { type: inequality, question: "-5x + -3 > -3", correctAnswer: "1" }
+      - { type: inequality, question: "-5x + -2 > 3", correctAnswer: "0" }
   - pageNumber: 3
     title: Inequações Lineares Básicas — Conjunto 6 – Página 3
     description: Resolva inequações lineares básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: inequality, question: "-5x + 1 > 16", correctAnswer: "-2" }
+      - { type: inequality, question: "-5x + -6 > -16", correctAnswer: "3" }
+      - { type: inequality, question: "-5x + -2 > 18", correctAnswer: "-3" }
+      - { type: inequality, question: "-5x + -10 > -15", correctAnswer: "2" }
+      - { type: inequality, question: "-5x + 7 > 17", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + -9 > 16", correctAnswer: "-4" }
+      - { type: inequality, question: "-5x + 1 > 11", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + -3 > -8", correctAnswer: "2" }
+      - { type: inequality, question: "-5x + 4 > -1", correctAnswer: "2" }
+      - { type: inequality, question: "-5x + 1 > -4", correctAnswer: "2" }
   - pageNumber: 4
     title: Inequações Lineares Básicas — Conjunto 6 – Página 4
     description: Resolva inequações lineares básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: inequality, question: "-5x + 5 > 10", correctAnswer: "0" }
+      - { type: inequality, question: "-5x + -8 > -3", correctAnswer: "0" }
+      - { type: inequality, question: "-5x + -1 > 14", correctAnswer: "-2" }
+      - { type: inequality, question: "-5x + 7 > -3", correctAnswer: "3" }
+      - { type: inequality, question: "-5x + 5 > 5", correctAnswer: "1" }
+      - { type: inequality, question: "-5x + -10 > -5", correctAnswer: "0" }
+      - { type: inequality, question: "-5x + -10 > 10", correctAnswer: "-3" }
+      - { type: inequality, question: "-5x + -3 > 17", correctAnswer: "-3" }
+      - { type: inequality, question: "-5x + 0 > 10", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + -4 > -4", correctAnswer: "1" }
   - pageNumber: 5
     title: Inequações Lineares Básicas — Conjunto 6 – Página 5
     description: Resolva inequações lineares básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: inequality, question: "-5x + 6 > -9", correctAnswer: "4" }
+      - { type: inequality, question: "-5x + 3 > -2", correctAnswer: "2" }
+      - { type: inequality, question: "-5x + -5 > -5", correctAnswer: "1" }
+      - { type: inequality, question: "-5x + 5 > -10", correctAnswer: "4" }
+      - { type: inequality, question: "-5x + -2 > -17", correctAnswer: "4" }
+      - { type: inequality, question: "-5x + -7 > 8", correctAnswer: "-2" }
+      - { type: inequality, question: "-5x + 2 > 7", correctAnswer: "0" }
+      - { type: inequality, question: "-5x + 6 > 16", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + 7 > -18", correctAnswer: "6" }
+      - { type: inequality, question: "-5x + -3 > 2", correctAnswer: "0" }
   - pageNumber: 6
     title: Inequações Lineares Básicas — Conjunto 6 – Página 6
     description: Resolva inequações lineares básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: inequality, question: "-5x + 6 > 1", correctAnswer: "2" }
+      - { type: inequality, question: "-5x + 6 > -4", correctAnswer: "3" }
+      - { type: inequality, question: "-5x + -5 > 15", correctAnswer: "-3" }
+      - { type: inequality, question: "-5x + 1 > -9", correctAnswer: "3" }
+      - { type: inequality, question: "-5x + -9 > -9", correctAnswer: "1" }
+      - { type: inequality, question: "-5x + -5 > -20", correctAnswer: "4" }
+      - { type: inequality, question: "-5x + 4 > -6", correctAnswer: "3" }
+      - { type: inequality, question: "-5x + -3 > 7", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + 4 > -16", correctAnswer: "5" }
+      - { type: inequality, question: "-5x + -10 > 5", correctAnswer: "-2" }
   - pageNumber: 7
     title: Inequações Lineares Básicas — Conjunto 6 – Página 7
     description: Resolva inequações lineares básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: inequality, question: "-5x + -2 > -7", correctAnswer: "2" }
+      - { type: inequality, question: "-5x + -9 > 11", correctAnswer: "-3" }
+      - { type: inequality, question: "-5x + 2 > -13", correctAnswer: "4" }
+      - { type: inequality, question: "-5x + -7 > -17", correctAnswer: "3" }
+      - { type: inequality, question: "-5x + -10 > 0", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + -10 > -10", correctAnswer: "1" }
+      - { type: inequality, question: "-5x + 8 > -17", correctAnswer: "6" }
+      - { type: inequality, question: "-5x + 3 > 13", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + 0 > -20", correctAnswer: "5" }
+      - { type: inequality, question: "-5x + -10 > -20", correctAnswer: "3" }
   - pageNumber: 8
     title: Inequações Lineares Básicas — Conjunto 6 – Página 8
     description: Resolva inequações lineares básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: inequality, question: "-5x + -8 > 7", correctAnswer: "-2" }
+      - { type: inequality, question: "-5x + 4 > -11", correctAnswer: "4" }
+      - { type: inequality, question: "-5x + -9 > -4", correctAnswer: "0" }
+      - { type: inequality, question: "-5x + -4 > -19", correctAnswer: "4" }
+      - { type: inequality, question: "-5x + 0 > 5", correctAnswer: "0" }
+      - { type: inequality, question: "-5x + -8 > 17", correctAnswer: "-4" }
+      - { type: inequality, question: "-5x + 4 > 14", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + -8 > 2", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + 5 > -20", correctAnswer: "6" }
+      - { type: inequality, question: "-5x + -2 > 13", correctAnswer: "-2" }
   - pageNumber: 9
     title: Inequações Lineares Básicas — Conjunto 6 – Página 9
     description: Resolva inequações lineares básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: inequality, question: "-5x + -2 > -12", correctAnswer: "3" }
+      - { type: inequality, question: "-5x + -5 > 5", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + 7 > 7", correctAnswer: "1" }
+      - { type: inequality, question: "-5x + -2 > 8", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + -5 > 10", correctAnswer: "-2" }
+      - { type: inequality, question: "-5x + -3 > 17", correctAnswer: "-3" }
+      - { type: inequality, question: "-5x + -5 > 5", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + -5 > -20", correctAnswer: "4" }
+      - { type: inequality, question: "-5x + -8 > 7", correctAnswer: "-2" }
+      - { type: inequality, question: "-5x + -8 > -13", correctAnswer: "2" }
   - pageNumber: 10
     title: Inequações Lineares Básicas — Conjunto 6 – Página 10
     description: Resolva inequações lineares básicas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: inequality, question: "-5x + 5 > 20", correctAnswer: "-2" }
+      - { type: inequality, question: "-5x + -3 > -3", correctAnswer: "1" }
+      - { type: inequality, question: "-5x + -8 > 2", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + 4 > 14", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + 1 > 11", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + 2 > 12", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + 6 > 16", correctAnswer: "-1" }
+      - { type: inequality, question: "-5x + -5 > 10", correctAnswer: "-2" }
+      - { type: inequality, question: "-5x + -6 > -16", correctAnswer: "3" }
+      - { type: inequality, question: "-5x + -6 > 4", correctAnswer: "-1" }

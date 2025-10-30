@@ -1,176 +1,146 @@
-title: Velocidade e Aceleração — Conjunto 17
+title: Limites e Séries — Conjunto 17
 level: N
-example: "Aplicações físicas. Ex.: Se s(t) = t² + 3t, então v(t) = 2t + 3"
+example: "Conceitos básicos de limites. Ex.: lim(x→2) (x² - 4)/(x - 2) = 4"
 subject: math
 inputType: number
 pages:
   - pageNumber: 1
-    title: Velocidade e Aceleração — Conjunto 17 – Página 1
-    description: Calcule velocidade e aceleração.
+    title: Limites e Séries — Conjunto 17 – Página 1
+    description: Calcule o limite das funções.
     exercises:
-      - &a1
-        type: reading
-        question: s(t) = t³ - 6t² + 9t, v(2) =
-        correctAnswer: "-3"
-      - &a2
-        type: reading
-        question: s(t) = t³ - 6t² + 9t, a(2) =
-        correctAnswer: "-6"
-      - &a3
-        type: reading
-        question: s(t) = 16t², v(3) =
-        correctAnswer: "96"
-      - &a4
-        type: reading
-        question: s(t) = -16t² + 64t, altura máxima em t =
-        correctAnswer: "2"
-      - &a5
-        type: reading
-        question: s(t) = t³ - 3t², partícula muda direção em t =
-        correctAnswer: 0, 2
-      - &a6
-        type: reading
-        question: v(t) = t² - 4t + 3, velocidade mínima em t =
-        correctAnswer: "2"
-      - &a7
-        type: reading
-        question: v(t) = 6t - 6, deslocamento de t=0 a t=2 =
-        correctAnswer: "0"
-      - &a8
-        type: reading
-        question: s(t) = t⁴ - 8t² + 16, v(t) = 0 em t =
-        correctAnswer: 0, ±2
-      - &a9
-        type: reading
-        question: v(t) = sin t, a(π/2) =
-        correctAnswer: "-1"
-      - &a10
-        type: reading
-        question: s(t) = 4 cos(2t), período =
-        correctAnswer: π
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: linear_equation, question: "lim(x→-1) (-9x + -2) = ?", correctAnswer: "7" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 3x + -4)/x² = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→5) (-1x + 8) = ?", correctAnswer: "3" }
+      - { type: quadratic, question: "lim(x→0) (1x^2 + -5x + -3) = ?", correctAnswer: "-3" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→4) (5x + 7) = ?", correctAnswer: "27" }
+      - { type: linear_equation, question: "lim(x→-1) (4x + -8) = ?", correctAnswer: "-12" }
+      - { type: linear_equation, question: "lim(x→2) (3x + -7) = ?", correctAnswer: "-1" }
+      - { type: quadratic, question: "lim(x→-3) (x² - 81)/(x - -9) = ?", correctAnswer: "-12" }
   - pageNumber: 2
-    title: Velocidade e Aceleração — Conjunto 17 – Página 2
-    description: Calcule velocidade e aceleração.
+    title: Limites e Séries — Conjunto 17 – Página 2
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→-1) (-9x + 3) = ?", correctAnswer: "12" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 6x + 2)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→0) (x² - 81)/(x - -9) = ?", correctAnswer: "-9" }
+      - { type: linear_equation, question: "lim(x→5) (-10x + -10) = ?", correctAnswer: "-60" }
+      - { type: linear_equation, question: "lim(x→-2) (-10x + 6) = ?", correctAnswer: "26" }
+      - { type: linear_equation, question: "lim(x→∞) (2x + -5)/x = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 3x + -2)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→1) (x² - 64)/(x - -8) = ?", correctAnswer: "-7" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -5x + -5)/x² = ?", correctAnswer: "1" }
   - pageNumber: 3
-    title: Velocidade e Aceleração — Conjunto 17 – Página 3
-    description: Calcule velocidade e aceleração.
+    title: Limites e Séries — Conjunto 17 – Página 3
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→-4) (-4x + 10) = ?", correctAnswer: "26" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 0x + 1)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→-4) (-10x + 5) = ?", correctAnswer: "45" }
+      - { type: linear_equation, question: "lim(x→∞) (1x + -8)/x = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 1x + -3)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + -3x + -5)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→-4) (8x + -3) = ?", correctAnswer: "-35" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 2x + -2)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -6x + 5)/x² = ?", correctAnswer: "1" }
   - pageNumber: 4
-    title: Velocidade e Aceleração — Conjunto 17 – Página 4
-    description: Calcule velocidade e aceleração.
+    title: Limites e Séries — Conjunto 17 – Página 4
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "lim(x→∞) (1x² + 7x + 3)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→1) (x² - 25)/(x - -5) = ?", correctAnswer: "-4" }
+      - { type: quadratic, question: "lim(x→0) (x² - 36)/(x - -6) = ?", correctAnswer: "-6" }
+      - { type: quadratic, question: "lim(x→2) (x² - 36)/(x - 6) = ?", correctAnswer: "8" }
+      - { type: linear_equation, question: "lim(x→-1) (6x + 2) = ?", correctAnswer: "-4" }
+      - { type: linear_equation, question: "lim(x→5) (0x + 5) = ?", correctAnswer: "5" }
+      - { type: quadratic, question: "lim(x→-2) (x² - 36)/(x - 6) = ?", correctAnswer: "4" }
+      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→1) (-4x + 1) = ?", correctAnswer: "-3" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + -7x + -1)/x² = ?", correctAnswer: "2" }
   - pageNumber: 5
-    title: Velocidade e Aceleração — Conjunto 17 – Página 5
-    description: Calcule velocidade e aceleração.
+    title: Limites e Séries — Conjunto 17 – Página 5
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "lim(x→∞) (2x² + 1x + 0)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→-2) (0x + -7) = ?", correctAnswer: "-7" }
+      - { type: linear_equation, question: "lim(x→∞) (1x + -10)/x = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 4x + -2)/x² = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→-5) (8x + -8) = ?", correctAnswer: "-48" }
+      - { type: quadratic, question: "lim(x→4) (x² - 81)/(x - -9) = ?", correctAnswer: "-5" }
+      - { type: linear_equation, question: "lim(x→-5) (9x + 1) = ?", correctAnswer: "-44" }
+      - { type: linear_equation, question: "lim(x→-4) (-9x + 8) = ?", correctAnswer: "44" }
+      - { type: quadratic, question: "lim(x→4) (x² - 4)/(x - -2) = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→1) (-4x + 2) = ?", correctAnswer: "-2" }
   - pageNumber: 6
-    title: Velocidade e Aceleração — Conjunto 17 – Página 6
-    description: Calcule velocidade e aceleração.
+    title: Limites e Séries — Conjunto 17 – Página 6
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→1) (2x + -9) = ?", correctAnswer: "-7" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + -3x + -2)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→3) (x² - 64)/(x - -8) = ?", correctAnswer: "-5" }
+      - { type: linear_equation, question: "lim(x→-5) (10x + -10) = ?", correctAnswer: "-60" }
+      - { type: quadratic, question: "lim(x→5) (x² - 49)/(x - 7) = ?", correctAnswer: "12" }
+      - { type: linear_equation, question: "lim(x→-2) (2x + 4) = ?", correctAnswer: "0" }
+      - { type: quadratic, question: "lim(x→-2) (x² - 1)/(x - 1) = ?", correctAnswer: "-1" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 6x + -3)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 5x + -1)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→-3) (x² - 64)/(x - 8) = ?", correctAnswer: "5" }
   - pageNumber: 7
-    title: Velocidade e Aceleração — Conjunto 17 – Página 7
-    description: Calcule velocidade e aceleração.
+    title: Limites e Séries — Conjunto 17 – Página 7
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: linear_equation, question: "lim(x→-4) (5x + -4) = ?", correctAnswer: "-24" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + -9x + 4)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 6x + -4)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + -10x + -2)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 1x + -5)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 8x + 3)/x² = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→-2) (-7x + 2) = ?", correctAnswer: "16" }
+      - { type: quadratic, question: "lim(x→-1) (x² - 64)/(x - 8) = ?", correctAnswer: "7" }
   - pageNumber: 8
-    title: Velocidade e Aceleração — Conjunto 17 – Página 8
-    description: Calcule velocidade e aceleração.
+    title: Limites e Séries — Conjunto 17 – Página 8
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "lim(x→∞) (2x² + -4x + 1)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→4) (-4x + -1) = ?", correctAnswer: "-17" }
+      - { type: quadratic, question: "lim(x→1) (x² - 0)/(x - 0) = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→-5) (x² - 81)/(x - 9) = ?", correctAnswer: "4" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + -3x + -5)/x² = ?", correctAnswer: "1" }
+      - { type: quadratic, question: "lim(x→-3) (x² - 25)/(x - -5) = ?", correctAnswer: "-8" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 0x + -5)/x² = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→4) (-10x + 1) = ?", correctAnswer: "-39" }
+      - { type: quadratic, question: "lim(x→3) (x² - 1)/(x - 1) = ?", correctAnswer: "4" }
+      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
   - pageNumber: 9
-    title: Velocidade e Aceleração — Conjunto 17 – Página 9
-    description: Calcule velocidade e aceleração.
+    title: Limites e Séries — Conjunto 17 – Página 9
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "lim(x→∞) (2x² + -8x + -4)/x² = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→∞) (2x + 5)/x = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→1) (-4x + -2) = ?", correctAnswer: "-6" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 2x + -3)/x² = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
+      - { type: quadratic, question: "lim(x→∞) (2x² + 0x + 1)/x² = ?", correctAnswer: "2" }
+      - { type: quadratic, question: "lim(x→1) (x² - 0)/(x - 0) = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→∞) (2x + 5)/x = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→5) (0x + 5) = ?", correctAnswer: "5" }
+      - { type: linear_equation, question: "lim(x→-5) (9x + 1) = ?", correctAnswer: "-44" }
   - pageNumber: 10
-    title: Velocidade e Aceleração — Conjunto 17 – Página 10
-    description: Calcule velocidade e aceleração.
+    title: Limites e Séries — Conjunto 17 – Página 10
+    description: Calcule o limite das funções.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "lim(x→-2) (x² - 1)/(x - 1) = ?", correctAnswer: "-1" }
+      - { type: quadratic, question: "lim(x→4) (x² - 4)/(x - -2) = ?", correctAnswer: "2" }
+      - { type: linear_equation, question: "lim(x→-1) (6x + 2) = ?", correctAnswer: "-4" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 1x + -3)/x² = ?", correctAnswer: "1" }
+      - { type: linear_equation, question: "lim(x→5) (-10x + -10) = ?", correctAnswer: "-60" }
+      - { type: linear_equation, question: "lim(x→-5) (8x + -8) = ?", correctAnswer: "-48" }
+      - { type: quadratic, question: "lim(x→-1) (x² - 64)/(x - 8) = ?", correctAnswer: "7" }
+      - { type: linear_equation, question: "lim(x→-1) (-9x + -2) = ?", correctAnswer: "7" }
+      - { type: quadratic, question: "lim(x→3) (x² - 64)/(x - -8) = ?", correctAnswer: "-5" }
+      - { type: quadratic, question: "lim(x→∞) (1x² + 4x + -2)/x² = ?", correctAnswer: "1" }

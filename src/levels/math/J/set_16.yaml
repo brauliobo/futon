@@ -1,176 +1,146 @@
 title: Álgebra Avançada — Conjunto 16
 level: J
-example: "Equações diferenciais. Ex.: dy/dx = y, solução: y = Ce^x"
+example: "Expressões algébricas avançadas. Ex.: (x + 2)² = x² + 4x + 4"
 subject: math
 inputType: number
 pages:
   - pageNumber: 1
     title: Álgebra Avançada — Conjunto 16 – Página 1
-    description: Equações diferenciais elementares.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - &a1
-        type: algebra
-        question: "Resolva: dy/dx = 2x"
-        correctAnswer: y = x² + C
-      - &a2
-        type: algebra
-        question: "Resolva: dy/dx = y"
-        correctAnswer: y = Ce^x
-      - &a3
-        type: algebra
-        question: "Resolva: dy/dx = 0"
-        correctAnswer: y = C
-      - &a4
-        type: algebra
-        question: "Resolva: d²y/dx² = 0"
-        correctAnswer: y = Cx + D
-      - &a5
-        type: algebra
-        question: "Ordem da ED: d³y/dx³ + y = 0"
-        correctAnswer: 3
-      - &a6
-        type: algebra
-        question: "Grau da ED: (dy/dx)² + y = 0"
-        correctAnswer: 2
-      - &a7
-        type: algebra
-        question: "Resolva: dy/dx = x + 1"
-        correctAnswer: y = x²/2 + x + C
-      - &a8
-        type: algebra
-        question: "Verifique se y = x² é solução de: xy' = 2y"
-        correctAnswer: Sim
-      - &a9
-        type: algebra
-        question: "Resolva: dy/dx = sen(x)"
-        correctAnswer: y = -cos(x) + C
-      - &a10
-        type: algebra
-        question: "Condição inicial: y(0) = 1 para y = Ce^x, C = ?"
-        correctAnswer: C = 1
+      - { type: algebra, question: "(x + 0)(x + 0)", correctAnswer: "x² + 0x + 0" }
+      - { type: factoring, question: "4x² - 6x + 2", correctAnswer: "(4x + -2)(1x + -1)" }
+      - { type: factoring, question: "2x² + 7x + -4", correctAnswer: "(2x + -1)(1x + 4)" }
+      - { type: factoring, question: "1x² + 4x + 4", correctAnswer: "(1x + 2)(1x + 2)" }
+      - { type: algebra, question: "4x + 2x", correctAnswer: "6x" }
+      - { type: factoring, question: "4x² + 12x + -16", correctAnswer: "(4x + -4)(1x + 4)" }
+      - { type: factoring, question: "3x² - 6x + -9", correctAnswer: "(1x + -3)(3x + 3)" }
+      - { type: factoring, question: "8x² + 16x + -10", correctAnswer: "(4x + -2)(2x + 5)" }
+      - { type: factoring, question: "3x² + 7x + 2", correctAnswer: "(1x + 2)(3x + 1)" }
+      - { type: algebra, question: "-3x + -10y", correctAnswer: "-3x + -10y" }
   - pageNumber: 2
     title: Álgebra Avançada — Conjunto 16 – Página 2
-    description: Equações diferenciais elementares.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: algebra, question: "(x + -9)(x + 6)", correctAnswer: "x² - 3x + -54" }
+      - { type: factoring, question: "20x² - 6x + -8", correctAnswer: "(4x + 2)(5x + -4)" }
+      - { type: algebra, question: "(x + 6)(x + -10)", correctAnswer: "x² - 4x + -60" }
+      - { type: algebra, question: "2x + 2y", correctAnswer: "2x + 2y" }
+      - { type: algebra, question: "(x + -8)(x + 6)", correctAnswer: "x² - 2x + -48" }
+      - { type: factoring, question: "1x² - 1x + -2", correctAnswer: "(1x + 1)(1x + -2)" }
+      - { type: algebra, question: "6x + -9x", correctAnswer: "-3x" }
+      - { type: algebra, question: "(x + -7)(x + 8)", correctAnswer: "x² + 1x + -56" }
+      - { type: factoring, question: "4x² + 0x + -16", correctAnswer: "(2x + -4)(2x + 4)" }
+      - { type: factoring, question: "3x² + 14x + 15", correctAnswer: "(3x + 5)(1x + 3)" }
   - pageNumber: 3
     title: Álgebra Avançada — Conjunto 16 – Página 3
-    description: Equações diferenciais elementares.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: algebra, question: "-2x + 4y", correctAnswer: "-2x + 4y" }
+      - { type: factoring, question: "4x² - 13x + 10", correctAnswer: "(4x + -5)(1x + -2)" }
+      - { type: factoring, question: "4x² - 10x + -6", correctAnswer: "(1x + -3)(4x + 2)" }
+      - { type: algebra, question: "-1x + 1y", correctAnswer: "-1x + 1y" }
+      - { type: algebra, question: "-7x + -5y", correctAnswer: "-7x + -5y" }
+      - { type: factoring, question: "1x² - 4x + -5", correctAnswer: "(1x + -5)(1x + 1)" }
+      - { type: algebra, question: "(x + 7)(x + -3)", correctAnswer: "x² + 4x + -21" }
+      - { type: algebra, question: "4x + -7y", correctAnswer: "4x + -7y" }
+      - { type: algebra, question: "(x + 3)(x + -2)", correctAnswer: "x² + 1x + -6" }
+      - { type: factoring, question: "4x² + 9x + 2", correctAnswer: "(4x + 1)(1x + 2)" }
   - pageNumber: 4
     title: Álgebra Avançada — Conjunto 16 – Página 4
-    description: Equações diferenciais elementares.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: factoring, question: "12x² - 19x + 4", correctAnswer: "(3x + -4)(4x + -1)" }
+      - { type: factoring, question: "8x² + 14x + 6", correctAnswer: "(2x + 2)(4x + 3)" }
+      - { type: factoring, question: "10x² + 8x + -2", correctAnswer: "(5x + -1)(2x + 2)" }
+      - { type: factoring, question: "16x² - 8x + 1", correctAnswer: "(4x + -1)(4x + -1)" }
+      - { type: algebra, question: "(x + -4)(x + -7)", correctAnswer: "x² - 11x + 28" }
+      - { type: factoring, question: "10x² - 7x + -12", correctAnswer: "(2x + -3)(5x + 4)" }
+      - { type: algebra, question: "-6x + -9x", correctAnswer: "-15x" }
+      - { type: algebra, question: "-1x + -9x", correctAnswer: "-10x" }
+      - { type: algebra, question: "-5x + -3x", correctAnswer: "-8x" }
+      - { type: factoring, question: "20x² + 7x + -6", correctAnswer: "(5x + -2)(4x + 3)" }
   - pageNumber: 5
     title: Álgebra Avançada — Conjunto 16 – Página 5
-    description: Equações diferenciais elementares.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: factoring, question: "20x² + 13x + -15", correctAnswer: "(4x + 5)(5x + -3)" }
+      - { type: factoring, question: "9x² + 15x + 4", correctAnswer: "(3x + 4)(3x + 1)" }
+      - { type: algebra, question: "4x + -5x", correctAnswer: "-1x" }
+      - { type: factoring, question: "20x² - 9x + -20", correctAnswer: "(5x + 4)(4x + -5)" }
+      - { type: factoring, question: "1x² + 1x + -12", correctAnswer: "(1x + 4)(1x + -3)" }
+      - { type: factoring, question: "12x² - 17x + -5", correctAnswer: "(4x + 1)(3x + -5)" }
+      - { type: algebra, question: "4x + 4x", correctAnswer: "8x" }
+      - { type: algebra, question: "(x + -2)(x + -4)", correctAnswer: "x² - 6x + 8" }
+      - { type: algebra, question: "(x + 1)(x + -5)", correctAnswer: "x² - 4x + -5" }
+      - { type: factoring, question: "25x² + 15x + -4", correctAnswer: "(5x + -1)(5x + 4)" }
   - pageNumber: 6
     title: Álgebra Avançada — Conjunto 16 – Página 6
-    description: Equações diferenciais elementares.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: factoring, question: "15x² - 1x + -6", correctAnswer: "(5x + 3)(3x + -2)" }
+      - { type: algebra, question: "2x + -5y", correctAnswer: "2x + -5y" }
+      - { type: factoring, question: "6x² + 19x + 15", correctAnswer: "(2x + 3)(3x + 5)" }
+      - { type: factoring, question: "4x² + 6x + 2", correctAnswer: "(1x + 1)(4x + 2)" }
+      - { type: factoring, question: "10x² + 3x + -4", correctAnswer: "(5x + 4)(2x + -1)" }
+      - { type: factoring, question: "4x² + 8x + 3", correctAnswer: "(2x + 1)(2x + 3)" }
+      - { type: algebra, question: "(x + 7)(x + -6)", correctAnswer: "x² + 1x + -42" }
+      - { type: algebra, question: "10x + -1x", correctAnswer: "9x" }
+      - { type: algebra, question: "-3x + 3y", correctAnswer: "-3x + 3y" }
+      - { type: factoring, question: "1x² - 5x + 6", correctAnswer: "(1x + -2)(1x + -3)" }
   - pageNumber: 7
     title: Álgebra Avançada — Conjunto 16 – Página 7
-    description: Equações diferenciais elementares.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: algebra, question: "-4x + 4y", correctAnswer: "-4x + 4y" }
+      - { type: algebra, question: "(x + 9)(x + 10)", correctAnswer: "x² + 19x + 90" }
+      - { type: factoring, question: "2x² - 3x + -20", correctAnswer: "(1x + -4)(2x + 5)" }
+      - { type: factoring, question: "2x² - 1x + -3", correctAnswer: "(1x + 1)(2x + -3)" }
+      - { type: algebra, question: "-10x + -6x", correctAnswer: "-16x" }
+      - { type: algebra, question: "(x + 3)(x + -10)", correctAnswer: "x² - 7x + -30" }
+      - { type: algebra, question: "6x + 3y", correctAnswer: "6x + 3y" }
+      - { type: factoring, question: "4x² + 4x + -8", correctAnswer: "(2x + 4)(2x + -2)" }
+      - { type: algebra, question: "(x + -2)(x + 7)", correctAnswer: "x² + 5x + -14" }
+      - { type: algebra, question: "0x + 0x", correctAnswer: "0x" }
   - pageNumber: 8
     title: Álgebra Avançada — Conjunto 16 – Página 8
-    description: Equações diferenciais elementares.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: factoring, question: "4x² - 13x + 10", correctAnswer: "(1x + -2)(4x + -5)" }
+      - { type: algebra, question: "-2x + 2y", correctAnswer: "-2x + 2y" }
+      - { type: factoring, question: "20x² + 3x + -9", correctAnswer: "(5x + -3)(4x + 3)" }
+      - { type: algebra, question: "3x + 3x", correctAnswer: "6x" }
+      - { type: factoring, question: "1x² + 0x + -16", correctAnswer: "(1x + 4)(1x + -4)" }
+      - { type: algebra, question: "(x + 0)(x + -3)", correctAnswer: "x² - 3x + 0" }
+      - { type: factoring, question: "9x² + 6x + -15", correctAnswer: "(3x + -3)(3x + 5)" }
+      - { type: algebra, question: "(x + 7)(x - 7)", correctAnswer: "x² - 49" }
+      - { type: algebra, question: "-4x + 8y", correctAnswer: "-4x + 8y" }
+      - { type: factoring, question: "2x² - 1x + -1", correctAnswer: "(1x + -1)(2x + 1)" }
   - pageNumber: 9
     title: Álgebra Avançada — Conjunto 16 – Página 9
-    description: Equações diferenciais elementares.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: factoring, question: "20x² + 1x + -1", correctAnswer: "(4x + 1)(5x + -1)" }
+      - { type: algebra, question: "10x + 7x", correctAnswer: "17x" }
+      - { type: factoring, question: "1x² + 4x + 3", correctAnswer: "(1x + 1)(1x + 3)" }
+      - { type: factoring, question: "25x² - 10x + -3", correctAnswer: "(5x + -3)(5x + 1)" }
+      - { type: algebra, question: "5x + 8y", correctAnswer: "5x + 8y" }
+      - { type: factoring, question: "10x² - 7x + -12", correctAnswer: "(2x + -3)(5x + 4)" }
+      - { type: algebra, question: "(x + 7)(x + -6)", correctAnswer: "x² + 1x + -42" }
+      - { type: factoring, question: "1x² - 4x + -5", correctAnswer: "(1x + -5)(1x + 1)" }
+      - { type: factoring, question: "10x² + 3x + -4", correctAnswer: "(5x + 4)(2x + -1)" }
+      - { type: factoring, question: "9x² + 6x + -15", correctAnswer: "(3x + -3)(3x + 5)" }
   - pageNumber: 10
     title: Álgebra Avançada — Conjunto 16 – Página 10
-    description: Equações diferenciais elementares.
+    description: Simplificação de expressões algébricas.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: algebra, question: "2x + 2y", correctAnswer: "2x + 2y" }
+      - { type: factoring, question: "4x² - 13x + 10", correctAnswer: "(4x + -5)(1x + -2)" }
+      - { type: algebra, question: "(x + 7)(x + -3)", correctAnswer: "x² + 4x + -21" }
+      - { type: factoring, question: "2x² - 3x + -20", correctAnswer: "(1x + -4)(2x + 5)" }
+      - { type: factoring, question: "4x² + 6x + 2", correctAnswer: "(1x + 1)(4x + 2)" }
+      - { type: factoring, question: "25x² + 15x + -4", correctAnswer: "(5x + -1)(5x + 4)" }
+      - { type: factoring, question: "2x² + 7x + -4", correctAnswer: "(2x + -1)(1x + 4)" }
+      - { type: algebra, question: "(x + 1)(x + -5)", correctAnswer: "x² - 4x + -5" }
+      - { type: algebra, question: "(x + 3)(x + -2)", correctAnswer: "x² + 1x + -6" }
+      - { type: algebra, question: "-3x + 3y", correctAnswer: "-3x + 3y" }

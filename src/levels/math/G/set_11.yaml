@@ -1,176 +1,146 @@
 title: Equações com Parênteses — Conjunto 11
 level: G
-example: "Resolva: 2(x + 3) = 10, então x = 2"
+example: "Operações algébricas e com inteiros."
 subject: math
 inputType: number
 pages:
   - pageNumber: 1
     title: Equações com Parênteses — Conjunto 11 – Página 1
-    description: Resolva equações com parênteses.
+    description: Operações algébricas e com inteiros.
     exercises:
-      - &a1
-        type: equation_parentheses
-        question: 2(x + 1) = 8. x =
-        correctAnswer: 3
-      - &a2
-        type: equation_parentheses
-        question: 3(x - 2) = 9. x =
-        correctAnswer: 5
-      - &a3
-        type: equation_parentheses
-        question: 4(x + 2) = 16. x =
-        correctAnswer: 2
-      - &a4
-        type: equation_parentheses
-        question: 5(x - 1) = 20. x =
-        correctAnswer: 5
-      - &a5
-        type: equation_parentheses
-        question: 2(x + 4) = 14. x =
-        correctAnswer: 3
-      - &a6
-        type: equation_parentheses
-        question: 3(x - 3) = 12. x =
-        correctAnswer: 7
-      - &a7
-        type: equation_parentheses
-        question: 6(x + 1) = 24. x =
-        correctAnswer: 3
-      - &a8
-        type: equation_parentheses
-        question: 4(x - 3) = 8. x =
-        correctAnswer: 5
-      - &a9
-        type: equation_parentheses
-        question: 2(x + 5) = 18. x =
-        correctAnswer: 4
-      - &a10
-        type: equation_parentheses
-        question: 3(x - 4) = 15. x =
-        correctAnswer: 9
+      - { type: integer_add, question: "0 + -3", correctAnswer: -3 }
+      - { type: integer_add, question: "16 + 7", correctAnswer: 23 }
+      - { type: integer_subtract, question: "20 - -9", correctAnswer: 29 }
+      - { type: integer_add, question: "-3 + 8", correctAnswer: 5 }
+      - { type: integer_add, question: "16 + -1", correctAnswer: 15 }
+      - { type: integer_subtract, question: "16 - 0", correctAnswer: 16 }
+      - { type: integer_multiply, question: "13 × -5", correctAnswer: -65 }
+      - { type: integer_add, question: "9 + 16", correctAnswer: 25 }
+      - { type: integer_subtract, question: "-13 - 0", correctAnswer: -13 }
+      - { type: integer_multiply, question: "8 × 9", correctAnswer: 72 }
   - pageNumber: 2
     title: Equações com Parênteses — Conjunto 11 – Página 2
-    description: Resolva equações com parênteses.
+    description: Operações algébricas e com inteiros.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: integer_multiply, question: "-8 × -7", correctAnswer: 56 }
+      - { type: integer_multiply, question: "4 × 12", correctAnswer: 48 }
+      - { type: integer_multiply, question: "-7 × 10", correctAnswer: -70 }
+      - { type: integer_subtract, question: "-6 - -16", correctAnswer: 10 }
+      - { type: integer_divide, question: "24 ÷ -2", correctAnswer: -12 }
+      - { type: integer_subtract, question: "4 - 13", correctAnswer: -9 }
+      - { type: integer_add, question: "-9 + -16", correctAnswer: -25 }
+      - { type: integer_divide, question: "60 ÷ 2", correctAnswer: 30 }
+      - { type: integer_multiply, question: "9 × 6", correctAnswer: 54 }
+      - { type: integer_divide, question: "-99 ÷ -11", correctAnswer: 9 }
   - pageNumber: 3
     title: Equações com Parênteses — Conjunto 11 – Página 3
-    description: Resolva equações com parênteses.
+    description: Operações algébricas e com inteiros.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: integer_add, question: "14 + -13", correctAnswer: 1 }
+      - { type: integer_add, question: "8 + -15", correctAnswer: -7 }
+      - { type: integer_divide, question: "42 ÷ 3", correctAnswer: 14 }
+      - { type: integer_add, question: "-1 + 14", correctAnswer: 13 }
+      - { type: integer_divide, question: "28 ÷ -14", correctAnswer: -2 }
+      - { type: integer_subtract, question: "13 - -9", correctAnswer: 22 }
+      - { type: integer_subtract, question: "7 - 19", correctAnswer: -12 }
+      - { type: integer_add, question: "0 + 10", correctAnswer: 10 }
+      - { type: integer_add, question: "19 + -12", correctAnswer: 7 }
+      - { type: integer_multiply, question: "-5 × -9", correctAnswer: 45 }
   - pageNumber: 4
     title: Equações com Parênteses — Conjunto 11 – Página 4
-    description: Resolva equações com parênteses.
+    description: Operações algébricas e com inteiros.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: integer_subtract, question: "12 - 5", correctAnswer: 7 }
+      - { type: integer_divide, question: "59 ÷ 1", correctAnswer: 59 }
+      - { type: integer_add, question: "2 + -19", correctAnswer: -17 }
+      - { type: integer_add, question: "-17 + 14", correctAnswer: -3 }
+      - { type: integer_add, question: "-5 + 15", correctAnswer: 10 }
+      - { type: integer_multiply, question: "11 × 4", correctAnswer: 44 }
+      - { type: integer_multiply, question: "4 × 13", correctAnswer: 52 }
+      - { type: integer_subtract, question: "17 - -5", correctAnswer: 22 }
+      - { type: integer_divide, question: "-46 ÷ -1", correctAnswer: 46 }
+      - { type: integer_subtract, question: "-7 - 18", correctAnswer: -25 }
   - pageNumber: 5
     title: Equações com Parênteses — Conjunto 11 – Página 5
-    description: Resolva equações com parênteses.
+    description: Operações algébricas e com inteiros.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: integer_divide, question: "48 ÷ 4", correctAnswer: 12 }
+      - { type: integer_divide, question: "50 ÷ 10", correctAnswer: 5 }
+      - { type: integer_divide, question: "-88 ÷ 4", correctAnswer: -22 }
+      - { type: integer_subtract, question: "9 - 18", correctAnswer: -9 }
+      - { type: integer_add, question: "5 + -8", correctAnswer: -3 }
+      - { type: integer_subtract, question: "-15 - 1", correctAnswer: -16 }
+      - { type: integer_divide, question: "100 ÷ 2", correctAnswer: 50 }
+      - { type: integer_multiply, question: "-4 × -12", correctAnswer: 48 }
+      - { type: integer_divide, question: "-5 ÷ 5", correctAnswer: -1 }
+      - { type: integer_add, question: "19 + 9", correctAnswer: 28 }
   - pageNumber: 6
     title: Equações com Parênteses — Conjunto 11 – Página 6
-    description: Resolva equações com parênteses.
+    description: Operações algébricas e com inteiros.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: integer_divide, question: "-91 ÷ 13", correctAnswer: -7 }
+      - { type: integer_divide, question: "96 ÷ 6", correctAnswer: 16 }
+      - { type: integer_divide, question: "10 ÷ 2", correctAnswer: 5 }
+      - { type: integer_add, question: "3 + 15", correctAnswer: 18 }
+      - { type: integer_add, question: "20 + -9", correctAnswer: 11 }
+      - { type: integer_add, question: "7 + 8", correctAnswer: 15 }
+      - { type: integer_multiply, question: "-11 × -6", correctAnswer: 66 }
+      - { type: integer_subtract, question: "17 - 20", correctAnswer: -3 }
+      - { type: integer_subtract, question: "-18 - -13", correctAnswer: -5 }
+      - { type: integer_divide, question: "-22 ÷ -1", correctAnswer: 22 }
   - pageNumber: 7
     title: Equações com Parênteses — Conjunto 11 – Página 7
-    description: Resolva equações com parênteses.
+    description: Operações algébricas e com inteiros.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: integer_add, question: "5 + -13", correctAnswer: -8 }
+      - { type: integer_add, question: "-20 + 17", correctAnswer: -3 }
+      - { type: integer_add, question: "-1 + 20", correctAnswer: 19 }
+      - { type: integer_subtract, question: "18 - 1", correctAnswer: 17 }
+      - { type: integer_subtract, question: "-9 - 8", correctAnswer: -17 }
+      - { type: integer_divide, question: "10 ÷ -1", correctAnswer: -10 }
+      - { type: integer_subtract, question: "-11 - -8", correctAnswer: -3 }
+      - { type: integer_add, question: "-15 + 14", correctAnswer: -1 }
+      - { type: integer_subtract, question: "-20 - 15", correctAnswer: -35 }
+      - { type: integer_add, question: "4 + 10", correctAnswer: 14 }
   - pageNumber: 8
     title: Equações com Parênteses — Conjunto 11 – Página 8
-    description: Resolva equações com parênteses.
+    description: Operações algébricas e com inteiros.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: integer_subtract, question: "-18 - 9", correctAnswer: -27 }
+      - { type: integer_add, question: "19 + 5", correctAnswer: 24 }
+      - { type: integer_subtract, question: "14 - 6", correctAnswer: 8 }
+      - { type: integer_add, question: "0 + 16", correctAnswer: 16 }
+      - { type: integer_multiply, question: "6 × 8", correctAnswer: 48 }
+      - { type: integer_add, question: "14 + 20", correctAnswer: 34 }
+      - { type: integer_add, question: "-11 + 8", correctAnswer: -3 }
+      - { type: integer_multiply, question: "-2 × -11", correctAnswer: 22 }
+      - { type: integer_add, question: "1 + -14", correctAnswer: -13 }
+      - { type: integer_subtract, question: "12 - 17", correctAnswer: -5 }
   - pageNumber: 9
     title: Equações com Parênteses — Conjunto 11 – Página 9
-    description: Resolva equações com parênteses.
+    description: Operações algébricas e com inteiros.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: integer_add, question: "1 + -1", correctAnswer: 0 }
+      - { type: integer_subtract, question: "17 - -20", correctAnswer: 37 }
+      - { type: integer_divide, question: "-53 ÷ -1", correctAnswer: 53 }
+      - { type: integer_add, question: "19 + -11", correctAnswer: 8 }
+      - { type: integer_multiply, question: "-5 × 7", correctAnswer: -35 }
+      - { type: integer_divide, question: "-53 ÷ -1", correctAnswer: 53 }
+      - { type: integer_divide, question: "10 ÷ 2", correctAnswer: 5 }
+      - { type: integer_multiply, question: "-7 × 10", correctAnswer: -70 }
+      - { type: integer_add, question: "4 + 10", correctAnswer: 14 }
+      - { type: integer_divide, question: "-22 ÷ -1", correctAnswer: 22 }
   - pageNumber: 10
     title: Equações com Parênteses — Conjunto 11 – Página 10
-    description: Resolva equações com parênteses.
+    description: Operações algébricas e com inteiros.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: integer_add, question: "0 + 10", correctAnswer: 10 }
+      - { type: integer_add, question: "0 + -3", correctAnswer: -3 }
+      - { type: integer_add, question: "19 + 5", correctAnswer: 24 }
+      - { type: integer_subtract, question: "12 - 17", correctAnswer: -5 }
+      - { type: integer_divide, question: "-46 ÷ -1", correctAnswer: 46 }
+      - { type: integer_add, question: "-17 + 14", correctAnswer: -3 }
+      - { type: integer_add, question: "9 + 16", correctAnswer: 25 }
+      - { type: integer_divide, question: "48 ÷ 4", correctAnswer: 12 }
+      - { type: integer_add, question: "-9 + -16", correctAnswer: -25 }
+      - { type: integer_add, question: "16 + -1", correctAnswer: 15 }

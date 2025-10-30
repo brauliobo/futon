@@ -1,176 +1,146 @@
-title: Aplicações Práticas — Conjunto 20
+title: Trigonometria Básica — Conjunto 20
 level: L
-example: "Aplicações da trigonometria. Ex.: altura de uma torre usando ângulos de elevação"
+example: "Funções trigonométricas básicas. Ex.: sen(30°) = 1/2"
 subject: math
 inputType: number
 pages:
   - pageNumber: 1
-    title: Aplicações Práticas — Conjunto 20 – Página 1
-    description: Calcule a altura usando ângulo de elevação.
+    title: Trigonometria Básica — Conjunto 20 – Página 1
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - &a1
-        type: practical_trig
-        question: Distância = 50m, ângulo elevação = 30°. Altura = ?
-        correctAnswer: 50√3/3 m
-      - &a2
-        type: practical_trig
-        question: Distância = 100m, ângulo elevação = 45°. Altura = ?
-        correctAnswer: 100 m
-      - &a3
-        type: practical_trig
-        question: Altura = 60m, ângulo elevação = 60°. Distância = ?
-        correctAnswer: 20√3 m
-      - &a4
-        type: practical_trig
-        question: Navio navega 10 km Norte, depois 10 km a 45°NE. Distância do ponto inicial = ?
-        correctAnswer: 10√(2 + √2) km
-      - &a5
-        type: practical_trig
-        question: Dois navios partem do mesmo ponto. Um vai 30° Norte, outro 60° Norte. Após 20km cada, distância entre eles = ?
-        correctAnswer: 20 km
-      - &a6
-        type: practical_trig
-        question: Roda de raio 5m, ângulo 120°. Comprimento do arco = ?
-        correctAnswer: 10π/3 m
-      - &a7
-        type: practical_trig
-        question: Estrela com ângulo elevação 30° às 20h e 60° às 22h. A estrela se moveu quantos graus?
-        correctAnswer: 30°
-      - &a8
-        type: practical_trig
-        question: Rampa de 10m com inclinação 15°. Altura vertical = ?
-        correctAnswer: 10sen(15°) m
-      - &a9
-        type: practical_trig
-        question: Duas torres separadas por 200m. Ângulos de elevação 30° e 45°. Altura maior = ?
-        correctAnswer: 200m
-      - &a10
-        type: practical_trig
-        question: Avião a 1000m de altura vê dois pontos no solo com ângulos depressão 30° e 45°. Distância entre pontos = ?
-        correctAnswer: 1000(√3 - 1) m
+      - { type: trigonometry, question: "sen²(60°) + cos²(60°) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "cos(45°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "1/cos(300°) = ?", correctAnswer: "1/(1/2)" }
+      - { type: trigonometry, question: "sen²(135°) + cos²(135°) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "tan(π/6) = ?", correctAnswer: "√3/3" }
+      - { type: trigonometry, question: "sen(120°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "tan(315°) = ?", correctAnswer: "-1" }
+      - { type: trigonometry, question: "cos(30°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "sen²(225°) + cos²(225°) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "cos(π/2) = ?", correctAnswer: "0" }
   - pageNumber: 2
-    title: Aplicações Práticas — Conjunto 20 – Página 2
-    description: Calcule a altura usando ângulo de elevação.
+    title: Trigonometria Básica — Conjunto 20 – Página 2
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "1/cos(210°) = ?", correctAnswer: "1/(-√3/2)" }
+      - { type: trigonometry, question: "sen(5π/4) = ?", correctAnswer: "-√2/2" }
+      - { type: trigonometry, question: "1/sen(120°) = ?", correctAnswer: "1/(√3/2)" }
+      - { type: trigonometry, question: "1/sen(210°) = ?", correctAnswer: "1/(-1/2)" }
+      - { type: trigonometry, question: "cos(2π) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "cos(225°) = ?", correctAnswer: "-√2/2" }
+      - { type: trigonometry, question: "1/cos(120°) = ?", correctAnswer: "1/(-1/2)" }
+      - { type: trigonometry, question: "tan(0°) = ?", correctAnswer: "0" }
+      - { type: trigonometry, question: "1/cos(150°) = ?", correctAnswer: "1/(-√3/2)" }
+      - { type: trigonometry, question: "cos(315°) = ?", correctAnswer: "√2/2" }
   - pageNumber: 3
-    title: Aplicações Práticas — Conjunto 20 – Página 3
-    description: Calcule a altura usando ângulo de elevação.
+    title: Trigonometria Básica — Conjunto 20 – Página 3
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "tan(45°) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "sen²(180°) + cos²(180°) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "sen(240°) = ?", correctAnswer: "-√3/2" }
+      - { type: trigonometry, question: "sen(360°) = ?", correctAnswer: "0" }
+      - { type: trigonometry, question: "cos(3π/4) = ?", correctAnswer: "-√2/2" }
+      - { type: trigonometry, question: "1/sen(300°) = ?", correctAnswer: "1/(-√3/2)" }
+      - { type: trigonometry, question: "1/cos(180°) = ?", correctAnswer: "1/(-1)" }
+      - { type: trigonometry, question: "tan(210°) = ?", correctAnswer: "√3/3" }
+      - { type: trigonometry, question: "sen(135°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "cos(4π/3) = ?", correctAnswer: "-1/2" }
   - pageNumber: 4
-    title: Aplicações Práticas — Conjunto 20 – Página 4
-    description: Calcule a altura usando ângulo de elevação.
+    title: Trigonometria Básica — Conjunto 20 – Página 4
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "1/sen(60°) = ?", correctAnswer: "1/(√3/2)" }
+      - { type: trigonometry, question: "sen²(240°) + cos²(240°) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "sen²(120°) + cos²(120°) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "sen²(270°) + cos²(270°) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "sen(225°) = ?", correctAnswer: "-√2/2" }
+      - { type: trigonometry, question: "sen(150°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "cos(150°) = ?", correctAnswer: "-√3/2" }
+      - { type: trigonometry, question: "tan(60°) = ?", correctAnswer: "√3" }
+      - { type: trigonometry, question: "tan(2π) = ?", correctAnswer: "0" }
+      - { type: trigonometry, question: "sen(7π/6) = ?", correctAnswer: "-1/2" }
   - pageNumber: 5
-    title: Aplicações Práticas — Conjunto 20 – Página 5
-    description: Calcule a altura usando ângulo de elevação.
+    title: Trigonometria Básica — Conjunto 20 – Página 5
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "cos(45°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "cos(135°) = ?", correctAnswer: "-√2/2" }
+      - { type: trigonometry, question: "tan(5π/6) = ?", correctAnswer: "-√3/3" }
+      - { type: trigonometry, question: "tan(0) = ?", correctAnswer: "0" }
+      - { type: trigonometry, question: "tan(π/3) = ?", correctAnswer: "√3" }
+      - { type: trigonometry, question: "tan(300°) = ?", correctAnswer: "-√3" }
+      - { type: trigonometry, question: "tan(4π/3) = ?", correctAnswer: "√3" }
+      - { type: trigonometry, question: "arcsen(1/2) = ?", correctAnswer: "30°" }
+      - { type: trigonometry, question: "sen(135°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "cos(π) = ?", correctAnswer: "-1" }
   - pageNumber: 6
-    title: Aplicações Práticas — Conjunto 20 – Página 6
-    description: Calcule a altura usando ângulo de elevação.
+    title: Trigonometria Básica — Conjunto 20 – Página 6
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "1/cos(30°) = ?", correctAnswer: "1/(√3/2)" }
+      - { type: trigonometry, question: "tan(150°) = ?", correctAnswer: "-√3/3" }
+      - { type: trigonometry, question: "sen(30°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "cos(90°) = ?", correctAnswer: "0" }
+      - { type: trigonometry, question: "sen(30°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "1/sen(225°) = ?", correctAnswer: "1/(-√2/2)" }
+      - { type: trigonometry, question: "sen(11π/6) = ?", correctAnswer: "-1/2" }
+      - { type: trigonometry, question: "1/cos(240°) = ?", correctAnswer: "1/(-1/2)" }
+      - { type: trigonometry, question: "tan(7π/4) = ?", correctAnswer: "-1" }
+      - { type: trigonometry, question: "sen(180°) = ?", correctAnswer: "0" }
   - pageNumber: 7
-    title: Aplicações Práticas — Conjunto 20 – Página 7
-    description: Calcule a altura usando ângulo de elevação.
+    title: Trigonometria Básica — Conjunto 20 – Página 7
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "cos(5π/4) = ?", correctAnswer: "-√2/2" }
+      - { type: trigonometry, question: "arcsen(1) = ?", correctAnswer: "90°" }
+      - { type: trigonometry, question: "cos(270°) = ?", correctAnswer: "0" }
+      - { type: trigonometry, question: "1/sen(45°) = ?", correctAnswer: "1/(√2/2)" }
+      - { type: trigonometry, question: "1/sen(150°) = ?", correctAnswer: "1/(1/2)" }
+      - { type: trigonometry, question: "1/cos(225°) = ?", correctAnswer: "1/(-√2/2)" }
+      - { type: trigonometry, question: "sen(π) = ?", correctAnswer: "0" }
+      - { type: trigonometry, question: "1/sen(135°) = ?", correctAnswer: "1/(√2/2)" }
+      - { type: trigonometry, question: "cos(180°) = ?", correctAnswer: "-1" }
+      - { type: trigonometry, question: "cos(30°) = ?", correctAnswer: "√3/2" }
   - pageNumber: 8
-    title: Aplicações Práticas — Conjunto 20 – Página 8
-    description: Calcule a altura usando ângulo de elevação.
+    title: Trigonometria Básica — Conjunto 20 – Página 8
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "tan(3π/4) = ?", correctAnswer: "-1" }
+      - { type: trigonometry, question: "sen²(315°) + cos²(315°) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "arcsen(√2/2) = ?", correctAnswer: "45°" }
+      - { type: trigonometry, question: "arcsen(√3/2) = ?", correctAnswer: "60°" }
+      - { type: trigonometry, question: "cos(0°) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "cos(0) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "tan(135°) = ?", correctAnswer: "-1" }
+      - { type: trigonometry, question: "sen(60°) = ?", correctAnswer: "√3/2" }
+      - { type: trigonometry, question: "sen(90°) = ?", correctAnswer: "1" }
+      - { type: trigonometry, question: "cos(135°) = ?", correctAnswer: "-√2/2" }
   - pageNumber: 9
-    title: Aplicações Práticas — Conjunto 20 – Página 9
-    description: Calcule a altura usando ângulo de elevação.
+    title: Trigonometria Básica — Conjunto 20 – Página 9
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "tan(360°) = ?", correctAnswer: "0" }
+      - { type: trigonometry, question: "sen(π/4) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "1/cos(45°) = ?", correctAnswer: "1/(√2/2)" }
+      - { type: trigonometry, question: "1/cos(330°) = ?", correctAnswer: "1/(√3/2)" }
+      - { type: trigonometry, question: "cos(5π/3) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "1/cos(330°) = ?", correctAnswer: "1/(√3/2)" }
+      - { type: trigonometry, question: "cos(π/2) = ?", correctAnswer: "0" }
+      - { type: trigonometry, question: "cos(45°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "cos(135°) = ?", correctAnswer: "-√2/2" }
+      - { type: trigonometry, question: "sen(11π/6) = ?", correctAnswer: "-1/2" }
   - pageNumber: 10
-    title: Aplicações Práticas — Conjunto 20 – Página 10
-    description: Calcule a altura usando ângulo de elevação.
+    title: Trigonometria Básica — Conjunto 20 – Página 10
+    description: Calcule o valor da função trigonométrica.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: trigonometry, question: "1/sen(300°) = ?", correctAnswer: "1/(-√3/2)" }
+      - { type: trigonometry, question: "cos(315°) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "tan(60°) = ?", correctAnswer: "√3" }
+      - { type: trigonometry, question: "tan(2π) = ?", correctAnswer: "0" }
+      - { type: trigonometry, question: "sen(150°) = ?", correctAnswer: "1/2" }
+      - { type: trigonometry, question: "sen(π/4) = ?", correctAnswer: "√2/2" }
+      - { type: trigonometry, question: "1/sen(225°) = ?", correctAnswer: "1/(-√2/2)" }
+      - { type: trigonometry, question: "1/cos(120°) = ?", correctAnswer: "1/(-1/2)" }
+      - { type: trigonometry, question: "tan(3π/4) = ?", correctAnswer: "-1" }
+      - { type: trigonometry, question: "tan(360°) = ?", correctAnswer: "0" }

@@ -1,176 +1,146 @@
 title: Quadráticas • Expoentes • Radicais — Conjunto 2
 level: I
-example: "Simplifique expoentes. Ex.: 2³ = 8"
+example: "Resolva equações quadráticas simples. Ex.: x² = 16, x = ±4"
 subject: math
 inputType: number
 pages:
   - pageNumber: 1
     title: Quadráticas • Expoentes • Radicais — Conjunto 2 – Página 1
-    description: Simplifique expressões com expoentes.
+    description: Resolva equações quadráticas simples.
     exercises:
-      - &a1
-        type: exponent
-        question: 2³ =
-        correctAnswer: "8"
-      - &a2
-        type: exponent
-        question: 3² =
-        correctAnswer: "9"
-      - &a3
-        type: exponent
-        question: 4² =
-        correctAnswer: "16"
-      - &a4
-        type: exponent
-        question: 5² =
-        correctAnswer: "25"
-      - &a5
-        type: exponent
-        question: 2⁴ =
-        correctAnswer: "16"
-      - &a6
-        type: exponent
-        question: 3³ =
-        correctAnswer: "27"
-      - &a7
-        type: exponent
-        question: 6² =
-        correctAnswer: "36"
-      - &a8
-        type: exponent
-        question: 7² =
-        correctAnswer: "49"
-      - &a9
-        type: exponent
-        question: 8² =
-        correctAnswer: "64"
-      - &a10
-        type: exponent
-        question: 9² =
-        correctAnswer: "81"
+      - { type: quadratic, question: "x² = 16", correctAnswer: "x = 4" }
+      - { type: quadratic, question: "x² = 81", correctAnswer: "x = 9" }
+      - { type: quadratic, question: "x² = 144", correctAnswer: "x = ±12" }
+      - { type: quadratic, question: "x² = 361", correctAnswer: "x = 19" }
+      - { type: quadratic, question: "x² = 121", correctAnswer: "x = ±11" }
+      - { type: quadratic, question: "x² = 121", correctAnswer: "x = 11" }
+      - { type: quadratic, question: "x² = 144", correctAnswer: "x = 12" }
+      - { type: quadratic, question: "x² = 100", correctAnswer: "x = 10" }
+      - { type: quadratic, question: "x² = 169", correctAnswer: "x = 13" }
+      - { type: quadratic, question: "x² = 289", correctAnswer: "x = -17" }
   - pageNumber: 2
     title: Quadráticas • Expoentes • Radicais — Conjunto 2 – Página 2
-    description: Simplifique expressões com expoentes.
+    description: Resolva equações quadráticas simples.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "x² = 256", correctAnswer: "x = ±16" }
+      - { type: quadratic, question: "x² = 49", correctAnswer: "x = -7" }
+      - { type: quadratic, question: "x² = 100", correctAnswer: "x = -10" }
+      - { type: quadratic, question: "x² = 121", correctAnswer: "x = ±11" }
+      - { type: quadratic, question: "x² = 36", correctAnswer: "x = -6" }
+      - { type: quadratic, question: "x² = 1", correctAnswer: "x = ±1" }
+      - { type: quadratic, question: "x² = 64", correctAnswer: "x = -8" }
+      - { type: quadratic, question: "x² = 169", correctAnswer: "x = -13" }
+      - { type: quadratic, question: "x² = 324", correctAnswer: "x = 18" }
+      - { type: quadratic, question: "x² = 9", correctAnswer: "x = ±3" }
   - pageNumber: 3
     title: Quadráticas • Expoentes • Radicais — Conjunto 2 – Página 3
-    description: Simplifique expressões com expoentes.
+    description: Resolva equações quadráticas simples.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "x² = 9", correctAnswer: "x = ±3" }
+      - { type: quadratic, question: "x² = 1", correctAnswer: "x = -1" }
+      - { type: quadratic, question: "x² = 169", correctAnswer: "x = ±13" }
+      - { type: quadratic, question: "x² = 289", correctAnswer: "x = 17" }
+      - { type: quadratic, question: "x² = 9", correctAnswer: "x = -3" }
+      - { type: quadratic, question: "x² = 1", correctAnswer: "x = -1" }
+      - { type: quadratic, question: "x² = 49", correctAnswer: "x = 7" }
+      - { type: quadratic, question: "x² = 16", correctAnswer: "x = -4" }
+      - { type: quadratic, question: "x² = 81", correctAnswer: "x = ±9" }
+      - { type: quadratic, question: "x² = 49", correctAnswer: "x = ±7" }
   - pageNumber: 4
     title: Quadráticas • Expoentes • Radicais — Conjunto 2 – Página 4
-    description: Simplifique expressões com expoentes.
+    description: Resolva equações quadráticas simples.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "x² = 64", correctAnswer: "x = 8" }
+      - { type: quadratic, question: "x² = 324", correctAnswer: "x = -18" }
+      - { type: quadratic, question: "x² = 196", correctAnswer: "x = ±14" }
+      - { type: quadratic, question: "x² = 289", correctAnswer: "x = ±17" }
+      - { type: quadratic, question: "x² = 9", correctAnswer: "x = 3" }
+      - { type: quadratic, question: "x² = 196", correctAnswer: "x = 14" }
+      - { type: quadratic, question: "x² = 9", correctAnswer: "x = -3" }
+      - { type: quadratic, question: "x² = 144", correctAnswer: "x = -12" }
+      - { type: quadratic, question: "x² = 1", correctAnswer: "x = 1" }
+      - { type: quadratic, question: "x² = 169", correctAnswer: "x = ±13" }
   - pageNumber: 5
     title: Quadráticas • Expoentes • Radicais — Conjunto 2 – Página 5
-    description: Simplifique expressões com expoentes.
+    description: Resolva equações quadráticas simples.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "x² = 400", correctAnswer: "x = ±20" }
+      - { type: quadratic, question: "x² = 361", correctAnswer: "x = -19" }
+      - { type: quadratic, question: "x² = 36", correctAnswer: "x = -6" }
+      - { type: quadratic, question: "x² = 64", correctAnswer: "x = -8" }
+      - { type: quadratic, question: "x² = 4", correctAnswer: "x = 2" }
+      - { type: quadratic, question: "x² = 4", correctAnswer: "x = ±2" }
+      - { type: quadratic, question: "x² = 64", correctAnswer: "x = ±8" }
+      - { type: quadratic, question: "x² = 196", correctAnswer: "x = -14" }
+      - { type: quadratic, question: "x² = 196", correctAnswer: "x = 14" }
+      - { type: quadratic, question: "x² = 324", correctAnswer: "x = -18" }
   - pageNumber: 6
     title: Quadráticas • Expoentes • Radicais — Conjunto 2 – Página 6
-    description: Simplifique expressões com expoentes.
+    description: Resolva equações quadráticas simples.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "x² = 81", correctAnswer: "x = 9" }
+      - { type: quadratic, question: "x² = 9", correctAnswer: "x = 3" }
+      - { type: quadratic, question: "x² = 361", correctAnswer: "x = ±19" }
+      - { type: quadratic, question: "x² = 121", correctAnswer: "x = 11" }
+      - { type: quadratic, question: "x² = 49", correctAnswer: "x = 7" }
+      - { type: quadratic, question: "x² = 289", correctAnswer: "x = -17" }
+      - { type: quadratic, question: "x² = 400", correctAnswer: "x = -20" }
+      - { type: quadratic, question: "x² = 225", correctAnswer: "x = 15" }
+      - { type: quadratic, question: "x² = 1", correctAnswer: "x = ±1" }
+      - { type: quadratic, question: "x² = 225", correctAnswer: "x = -15" }
   - pageNumber: 7
     title: Quadráticas • Expoentes • Radicais — Conjunto 2 – Página 7
-    description: Simplifique expressões com expoentes.
+    description: Resolva equações quadráticas simples.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "x² = 25", correctAnswer: "x = 5" }
+      - { type: quadratic, question: "x² = 25", correctAnswer: "x = -5" }
+      - { type: quadratic, question: "x² = 169", correctAnswer: "x = 13" }
+      - { type: quadratic, question: "x² = 256", correctAnswer: "x = -16" }
+      - { type: quadratic, question: "x² = 169", correctAnswer: "x = -13" }
+      - { type: quadratic, question: "x² = 16", correctAnswer: "x = -4" }
+      - { type: quadratic, question: "x² = 25", correctAnswer: "x = ±5" }
+      - { type: quadratic, question: "x² = 36", correctAnswer: "x = 6" }
+      - { type: quadratic, question: "x² = 400", correctAnswer: "x = -20" }
+      - { type: quadratic, question: "x² = 4", correctAnswer: "x = ±2" }
   - pageNumber: 8
     title: Quadráticas • Expoentes • Radicais — Conjunto 2 – Página 8
-    description: Simplifique expressões com expoentes.
+    description: Resolva equações quadráticas simples.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "x² = 144", correctAnswer: "x = 12" }
+      - { type: quadratic, question: "x² = 225", correctAnswer: "x = ±15" }
+      - { type: quadratic, question: "x² = 256", correctAnswer: "x = 16" }
+      - { type: quadratic, question: "x² = 25", correctAnswer: "x = 5" }
+      - { type: quadratic, question: "x² = 289", correctAnswer: "x = 17" }
+      - { type: quadratic, question: "x² = 196", correctAnswer: "x = ±14" }
+      - { type: quadratic, question: "x² = 289", correctAnswer: "x = ±17" }
+      - { type: quadratic, question: "x² = 400", correctAnswer: "x = ±20" }
+      - { type: quadratic, question: "x² = 196", correctAnswer: "x = -14" }
+      - { type: quadratic, question: "x² = 49", correctAnswer: "x = -7" }
   - pageNumber: 9
     title: Quadráticas • Expoentes • Radicais — Conjunto 2 – Página 9
-    description: Simplifique expressões com expoentes.
+    description: Resolva equações quadráticas simples.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "x² = 81", correctAnswer: "x = -9" }
+      - { type: quadratic, question: "x² = 225", correctAnswer: "x = -15" }
+      - { type: quadratic, question: "x² = 225", correctAnswer: "x = ±15" }
+      - { type: quadratic, question: "x² = 49", correctAnswer: "x = ±7" }
+      - { type: quadratic, question: "x² = 1", correctAnswer: "x = 1" }
+      - { type: quadratic, question: "x² = 169", correctAnswer: "x = -13" }
+      - { type: quadratic, question: "x² = 16", correctAnswer: "x = -4" }
+      - { type: quadratic, question: "x² = 256", correctAnswer: "x = -16" }
+      - { type: quadratic, question: "x² = 49", correctAnswer: "x = -7" }
+      - { type: quadratic, question: "x² = 144", correctAnswer: "x = 12" }
   - pageNumber: 10
     title: Quadráticas • Expoentes • Radicais — Conjunto 2 – Página 10
-    description: Simplifique expressões com expoentes.
+    description: Resolva equações quadráticas simples.
     exercises:
-      - *a1
-      - *a2
-      - *a3
-      - *a4
-      - *a5
-      - *a6
-      - *a7
-      - *a8
-      - *a9
-      - *a10
+      - { type: quadratic, question: "x² = 36", correctAnswer: "x = -6" }
+      - { type: quadratic, question: "x² = 9", correctAnswer: "x = ±3" }
+      - { type: quadratic, question: "x² = 9", correctAnswer: "x = ±3" }
+      - { type: quadratic, question: "x² = 49", correctAnswer: "x = 7" }
+      - { type: quadratic, question: "x² = 169", correctAnswer: "x = 13" }
+      - { type: quadratic, question: "x² = 324", correctAnswer: "x = -18" }
+      - { type: quadratic, question: "x² = 196", correctAnswer: "x = 14" }
+      - { type: quadratic, question: "x² = 225", correctAnswer: "x = -15" }
+      - { type: quadratic, question: "x² = 36", correctAnswer: "x = 6" }
+      - { type: quadratic, question: "x² = 196", correctAnswer: "x = ±14" }
