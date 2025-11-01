@@ -1,23 +1,23 @@
 <!-- src/App.vue -->
 <template lang="pug">
-  #app.flex.min-h-screen.bg-slate-950.text-slate-100
-    header(class="bg-slate-950/90 text-slate-100")
-      div(class="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-6 sm:px-6")
+  #app.flex.flex-col.min-h-screen.bg-slate-950.text-slate-100
+    header(class="bg-slate-950/90 text-slate-100 w-full")
+      div(class="mx-auto flex w-full max-w-[1920px] flex-col gap-1 px-2 pt-3 pb-1 sm:px-3 sm:pt-3 sm:pb-1")
         small(class="block text-xs uppercase tracking-[0.3em] text-slate-400") Futon
-        h1(v-if="selectedSet" class="text-3xl font-semibold sm:text-4xl") {{ selectedSet.title }} ({{ $t('level') }}: {{ selectedSet.level }})
-    main.flex-1
-      div(class="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-10")
+        h1(v-if="selectedSet" class="text-xl font-semibold sm:text-2xl") {{ selectedSet.title }} ({{ $t('level') }}: {{ selectedSet.level }})
+    main.flex-1.w-full
+      div(class="mx-auto w-full max-w-[1920px] px-2 pt-6 pb-3 sm:px-3 sm:pt-10 sm:pb-4")
         div(v-if="isLoading" class="flex flex-col items-center justify-center gap-4 py-14")
           svg(class="h-10 w-10 animate-spin text-sky-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24")
             circle(class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4")
             path(class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z")
           p(class="text-sm text-sky-100/80") {{ $t('loading') || 'Loading...' }}
         Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" :isLoadingLevel="isLoadingLevel" @select-set="selectSet" @level-selected="onLevelSelected" class="space-y-6")
-        div(v-else class="space-y-4")
-          Button(variant="link" @click="goHome" class="group inline-flex items-center gap-2 text-sky-200 hover:text-white transition")
-            span(class="text-lg transition-transform group-hover:-translate-x-0.5" aria-hidden="true") ←
+        div(v-else)
+          Button(variant="link" @click="goHome" class="group inline-flex items-center gap-1 mb-3 text-sm text-sky-200 hover:text-white transition")
+            span(class="text-base transition-transform group-hover:-translate-x-0.5" aria-hidden="true") ←
             span {{ $t('back') }}
-          Set(:set="selectedSet" :initialPageIndex="initialPageIndex" @update-set="updateSet" @page-changed="handlePageChange" class="space-y-6")
+          Set(:set="selectedSet" :initialPageIndex="initialPageIndex" @update-set="updateSet" @page-changed="handlePageChange")
 </template>
 
 <script>

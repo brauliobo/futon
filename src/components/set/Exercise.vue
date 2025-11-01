@@ -4,36 +4,34 @@
     div(class="flex items-start gap-3")
       span(class="text-sm font-bold text-sky-300") {{ exerciseNumber }}.
       label(class="text-sm font-medium text-slate-100") {{ exercise.question }}
-    div(v-if="!isReadOnly")
+    div(v-if="!isReadOnly" class="relative")
       input(
-        v-if="showInput"
         v-model="userAnswer"
         :type="inputType"
         :inputmode="inputMode"
         enterkeyhint="next"
         :disabled="!isEnabled || isSubmitted"
         :placeholder="$t('enterAnswer')"
+        :class="inputClass"
         @keydown.enter.prevent="handleSubmit"
         @keydown.tab.prevent="handleSubmit"
+        @focus="isEditing = true"
+        @blur="isEditing = false"
+        @click="isEditing = true"
         ref="inputRef"
-        class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/70 px-3 py-2 text-sm text-slate-100 shadow-inner shadow-slate-950/40 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500"
       )
-      div(v-else class="mt-2 flex items-center gap-3 text-sm text-slate-200")
-        span {{ userAnswer }}
-        Button(variant="link" size="sm" @click="editAnswer" aria-label="Editar resposta") {{ $t('edit') || 'Editar' }}
+      span(
+        v-if="hasAnswer && !isEditing"
+        class="absolute right-3 top-1/2 -translate-y-1/2 text-emerald-400 text-lg"
+      ) ✓
     div(v-if="isReadOnly" class="mt-2 text-sm")
       span(v-if="isCorrect" class="text-emerald-300") ✔️ {{ $t('correct') }}
       span(v-else class="text-rose-300") ❌ {{ $t('wrong') }} ({{ $t('correctAnswer') }}: {{ exercise.correctAnswer }})
 </template>
 
 <script>
-import Button from "../ui/Button.vue";
-
 export default {
   name: "Exercise",
-  components: {
-    Button,
-  },
   props: {
     exercise: {
       type: Object,
@@ -63,17 +61,18 @@ export default {
   data() {
     return {
       userAnswer: this.exercise.answer || "",
-      showInput: true,
+      isEditing: false,
       isSubmitting: false,
     };
   },
   watch: {
     'exercise.answer'(newAnswer) {
       this.userAnswer = newAnswer || '';
-      this.showInput = true;
+      this.isEditing = false;
     }
   },
   computed: {
+    hasAnswer() { return String(this.userAnswer || '').trim() !== ''; },
     isCorrect() {
       if (typeof this.exercise.correctAnswer === 'number') return Number(this.userAnswer) === this.exercise.correctAnswer;
       const normalize = (s) => String(s ?? '').trim().replace(/,/, '.').toLowerCase();
@@ -82,7 +81,14 @@ export default {
     inputType: () => 'text',
     inputMode() {
       return (this.setInputType === 'number' || (this.setInputType === 'auto' && typeof this.exercise.correctAnswer === 'number')) ? 'decimal' : 'text';
-    }
+    },
+    inputClass() {
+      const base = "mt-2 w-full rounded-xl border border-white/10 px-3 py-2 pr-10 text-sm shadow-inner placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500";
+      if (this.hasAnswer && !this.isEditing) {
+        return base + " bg-slate-800/50 text-slate-400 shadow-slate-950/20";
+      }
+      return base + " bg-slate-950/70 text-slate-100 shadow-slate-950/40";
+    },
   },
   methods: {
     handleSubmit() {
@@ -91,25 +97,20 @@ export default {
       this.$emit("update-answer", { answer: this.userAnswer });
       this.$emit("next-exercise");
       setTimeout(() => {
-        this.showInput = false;
+        this.isEditing = false;
         this.isSubmitting = false;
       }, 150);
     },
     focus() {
       this.$nextTick(() => {
         const input = this.$refs.inputRef;
-        if (!input || !this.showInput) return;
+        if (!input) return;
         requestAnimationFrame(() => {
           input.focus({ preventScroll: true });
           input.setSelectionRange(input.value.length, input.value.length);
           input.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
       });
-    },
-    editAnswer() {
-      if (this.isReadOnly || this.isSubmitted) return;
-      this.showInput = true;
-      this.$nextTick(() => { this.focus(); });
     },
   },
 };

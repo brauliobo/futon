@@ -17,7 +17,7 @@
           SetCard(
             :set="set"
             :is-active="slugOf(set) === activeSlug"
-            :class="{ 'opacity-50 saturate-75 pointer-events-none': slugOf(set) !== activeSlug }"
+            :class="{ 'opacity-50 saturate-75 pointer-events-none': !isSetAvailable(index) }"
             @start="$emit('start', $event)"
           )
     button(
@@ -67,6 +67,18 @@ export default {
     },
     showRightArrow() {
       return this.maxScrollOffset > 0;
+    },
+    setAvailability() {
+      const availability = {};
+      this.sets.forEach((set, index) => {
+        if (index === 0) {
+          availability[index] = true;
+        } else {
+          const previousSet = this.sets[index - 1];
+          availability[index] = !!(previousSet?.completed || previousSet?.lastScore !== undefined);
+        }
+      });
+      return availability;
     }
   },
   mounted() {
@@ -122,6 +134,9 @@ export default {
       const delta = this.cardWidth + this.gap;
       const targetOffset = Math.max(0, (index * delta) - (this.containerWidth / 2) + (this.cardWidth / 2));
       this.scrollOffset = Math.min(targetOffset, this.maxScrollOffset);
+    },
+    isSetAvailable(index) {
+      return this.setAvailability[index] ?? false;
     }
   }
 };

@@ -10,7 +10,7 @@
         SetCard(
           :set="setItem.set"
           :is-active="activeSet && activeSet.id === setItem.set.id"
-          :class="{ 'opacity-50 saturate-75 pointer-events-none': setItem.type !== 'current' }"
+          :class="{ 'opacity-50 saturate-75 pointer-events-none': !isSetItemAvailable(setItem) }"
           @start="$emit('select-set', $event)"
         )
 </template>
@@ -64,6 +64,17 @@ export default {
       const width = 'min-w-[280px] max-w-[360px] md:min-w-[320px] md:max-w-[400px]';
       const faded = setItem.type !== 'current' ? 'scale-[0.97]' : '';
       return [base, width, faded].filter(Boolean).join(' ');
+    },
+    isSetItemAvailable(setItem) {
+      if (setItem.type === 'current') return true;
+      if (setItem.type === 'previous') return true;
+      if (setItem.type === 'next') {
+        const currentIndex = this.currentSetIndex;
+        if (currentIndex === 0) return true;
+        const currentSet = this.sets[currentIndex];
+        return !!(currentSet?.completed || currentSet?.lastScore !== undefined);
+      }
+      return false;
     }
   }
 };

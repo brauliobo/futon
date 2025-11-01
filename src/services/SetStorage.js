@@ -242,6 +242,25 @@ export class SetStorage extends GenericStorage {
   slugOf(wb) {
     return String(wb?.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
   }
+
+  getTimer(setTitle) {
+    const data = this.load();
+    return data?.timers?.[setTitle] || null;
+  }
+
+  setTimer(setTitle, startTime) {
+    const data = this.load() || {};
+    if (!data.timers) data.timers = {};
+    data.timers[setTitle] = startTime;
+    return this.save(data);
+  }
+
+  removeTimer(setTitle) {
+    const data = this.load();
+    if (!data?.timers) return;
+    delete data.timers[setTitle];
+    return this.save(data);
+  }
 }
 
 

@@ -28,21 +28,42 @@ const tableStyle = { head: [], border: [], compact: true, "padding-left": 1, "pa
 const normalize = value => typeof value === 'string' ? value : JSON.stringify(value);
 
 function countDuplicateExercises(set) {
-  if (!set.pages) return { duplicates: 0, randomness: null };
+  if (!set.pages) return { duplicates: 0, randomness: null, pageDuplicates: [] };
   const seen = new Map();
   let repeats = 0;
   let total = 0;
-  set.pages.forEach(page => {
-    (page.exercises || []).forEach(exercise => {
+  const pageDuplicates = [];
+  
+  set.pages.forEach((page, pageIndex) => {
+    const pageSeen = new Map();
+    let pageRepeats = 0;
+    const pageExercises = page.exercises || [];
+    
+    pageExercises.forEach(exercise => {
       total++;
       const key = normalize(exercise);
+      
+      // Check within page
+      if (pageSeen.has(key)) pageRepeats++;
+      else pageSeen.set(key, true);
+      
+      // Check across all pages
       if (seen.has(key)) repeats++;
       else seen.set(key, true);
     });
+    
+    if (pageRepeats > 0) {
+      pageDuplicates.push({
+        pageNumber: page.pageNumber || pageIndex + 1,
+        duplicates: pageRepeats,
+        totalExercises: pageExercises.length
+      });
+    }
   });
-  if (!total) return { duplicates: 0, randomness: null };
+  
+  if (!total) return { duplicates: repeats, randomness: null, pageDuplicates: [] };
   const randomness = +(1 - repeats / total).toFixed(3);
-  return { duplicates: repeats, randomness };
+  return { duplicates: repeats, randomness, pageDuplicates };
 }
 
 function validateSet(set, index) {
@@ -91,8 +112,15 @@ function validateSet(set, index) {
     }
   });
   
-  const { duplicates, randomness } = set.subject === 'math' ? countDuplicateExercises(set) : { duplicates: 0, randomness: null };
-  return { set, index, pages, exercises, issues, warnings, duplicates, randomness };
+  const { duplicates, randomness, pageDuplicates } = set.subject === 'math' ? countDuplicateExercises(set) : { duplicates: 0, randomness: null, pageDuplicates: [] };
+  
+  if (pageDuplicates.length > 0) {
+    pageDuplicates.forEach(({ pageNumber, duplicates: pageDupes }) => {
+      warnings.push(`Page ${pageNumber} has ${pageDupes} duplicate exercise(s) within the same page`);
+    });
+  }
+  
+  return { set, index, pages, exercises, issues, warnings, duplicates, randomness, pageDuplicates };
 }
 
 function printSummaryTable(results) {
@@ -115,7 +143,8 @@ function printSummaryTable(results) {
         warnings: 0,
         duplicates: 0,
         randomnessSum: 0,
-        mathSets: 0
+        mathSets: 0,
+        pageDuplicatesCount: 0
       };
     }
     
@@ -125,6 +154,7 @@ function printSummaryTable(results) {
     summary[key].issues += result.issues.length;
     summary[key].warnings += result.warnings.length;
     summary[key].duplicates += result.duplicates || 0;
+    summary[key].pageDuplicatesCount += (result.pageDuplicates || []).length;
     if (result.randomness !== null) {
       summary[key].randomnessSum += result.randomness;
       summary[key].mathSets++;
@@ -140,6 +170,7 @@ function printSummaryTable(results) {
     colorize('ISSUES', BOLD),
     colorize('WARNINGS', BOLD),
     colorize('DUPES', BOLD),
+    colorize('PAGE DUPES', BOLD),
     colorize('RANDOMNESS', BOLD)
   ], style: tableStyle });
   
@@ -155,6 +186,7 @@ function printSummaryTable(results) {
       const randomness = item.mathSets ? `${Math.round((item.randomnessSum / item.mathSets) * 100)}%` : '-';
       const randomnessColor = randomness === '-' ? RESET : (randomness === '100%' ? GREEN : YELLOW);
       
+      const pageDupesColor = item.pageDuplicatesCount > 0 ? YELLOW : RESET;
       summaryTable.push([
         item.discipline,
         item.level,
@@ -164,6 +196,7 @@ function printSummaryTable(results) {
         colorize(item.issues.toString(), issueColor),
         colorize(item.warnings.toString(), warningColor),
         item.duplicates,
+        colorize(item.pageDuplicatesCount.toString(), pageDupesColor),
         colorize(randomness, randomnessColor)
       ]);
     });
@@ -181,11 +214,12 @@ function printDetailedTable(results) {
     colorize('PAGES', BOLD),
     colorize('EXERCISES', BOLD),
     colorize('RANDOM', BOLD),
+    colorize('PAGE DUPES', BOLD),
     colorize('STATUS', BOLD)
   ], style: tableStyle, wordWrap: true });
   
   results.forEach((result, i) => {
-    const { set, pages, exercises, issues, warnings, duplicates, randomness } = result;
+    const { set, pages, exercises, issues, warnings, duplicates, randomness, pageDuplicates } = result;
     
     let status = '';
     let statusColor = GREEN;
@@ -207,6 +241,10 @@ function printDetailedTable(results) {
     const randomnessColor = randomness === null ? RESET : (randomness === 1 ? GREEN : YELLOW);
     const randomText = randomness === null ? '-' : `${Math.round(randomness * 100)}% (${duplicates})`;
     
+    const pageDupesCount = pageDuplicates.length;
+    const pageDupesColor = pageDupesCount > 0 ? YELLOW : RESET;
+    const pageDupesText = pageDupesCount > 0 ? `${pageDupesCount} page(s)` : '-';
+    
     detailTable.push([
       i + 1,
       set.subject || 'unknown',
@@ -215,6 +253,7 @@ function printDetailedTable(results) {
       colorize(pages.toString(), pagesColor),
       colorize(exercises.toString(), exercisesColor),
       colorize(randomText, randomnessColor),
+      colorize(pageDupesText, pageDupesColor),
       colorize(status, statusColor)
     ]);
     
@@ -227,6 +266,11 @@ function printDetailedTable(results) {
     if (warnings.length > 0) {
       warnings.forEach(warning => {
         console.log('      ' + colorize(`⚠️  ${warning}`, YELLOW));
+      });
+    }
+    if (pageDuplicates.length > 0) {
+      pageDuplicates.forEach(({ pageNumber, duplicates: pageDupes, totalExercises }) => {
+        console.log('      ' + colorize(`🔄 Page ${pageNumber}: ${pageDupes} duplicate(s) out of ${totalExercises} exercises`, YELLOW));
       });
     }
   });
