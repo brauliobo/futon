@@ -1,146 +1,325 @@
 title: Limites Multivariáveis — Conjunto 18
 level: N
-example: "Conceitos básicos de limites. Ex.: lim(x→2) (x² - 4)/(x - 2) = 4"
+example: 'Conceitos básicos de limites. Ex.: lim(x→2) (x² - 4)/(x - 2) = 4'
 subject: math
 inputType: number
 pages:
-  - pageNumber: 1
-    title: Limites Multivariáveis — Conjunto 18 – Página 1
-    description: Calcule o limite das funções.
-    exercises:
-      - { type: linear_equation, question: "lim(x→1) (2x + -9) = ?", correctAnswer: "-7" }
-      - { type: quadratic, question: "lim(x→∞) (2x² + 0x + 0)/x² = ?", correctAnswer: "2" }
-      - { type: quadratic, question: "lim(x→-4) (x² - 49)/(x - -7) = ?", correctAnswer: "-11" }
-      - { type: linear_equation, question: "lim(x→5) (-6x + -1) = ?", correctAnswer: "-31" }
-      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→-1) (2x + 10) = ?", correctAnswer: "8" }
-      - { type: linear_equation, question: "lim(x→5) (9x + 4) = ?", correctAnswer: "49" }
-      - { type: quadratic, question: "lim(x→∞) (1x² + -7x + 2)/x² = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
-      - { type: quadratic, question: "lim(x→1) (x² - 1)/(x - -1) = ?", correctAnswer: "0" }
-  - pageNumber: 2
-    title: Limites Multivariáveis — Conjunto 18 – Página 2
-    description: Calcule o limite das funções.
-    exercises:
-      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→5) (-10x + -10) = ?", correctAnswer: "-60" }
-      - { type: quadratic, question: "lim(x→∞) (1x² + -6x + -3)/x² = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→-2) (1x + 5) = ?", correctAnswer: "3" }
-      - { type: linear_equation, question: "lim(x→0) (-8x + -9) = ?", correctAnswer: "-9" }
-      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
-      - { type: quadratic, question: "lim(x→-4) (x² - 81)/(x - 9) = ?", correctAnswer: "5" }
-      - { type: linear_equation, question: "lim(x→∞) (1x + -2)/x = ?", correctAnswer: "1" }
-      - { type: quadratic, question: "lim(x→-2) (x² - 1)/(x - 1) = ?", correctAnswer: "-1" }
-  - pageNumber: 3
-    title: Limites Multivariáveis — Conjunto 18 – Página 3
-    description: Calcule o limite das funções.
-    exercises:
-      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
-      - { type: quadratic, question: "lim(x→5) (x² - 81)/(x - 9) = ?", correctAnswer: "14" }
-      - { type: linear_equation, question: "lim(x→1) (-7x + -6) = ?", correctAnswer: "-13" }
-      - { type: quadratic, question: "lim(x→1) (x² - 81)/(x - -9) = ?", correctAnswer: "-8" }
-      - { type: linear_equation, question: "lim(x→3) (-5x + 1) = ?", correctAnswer: "-14" }
-      - { type: quadratic, question: "lim(x→∞) (1x² + 10x + -5)/x² = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→-1) (8x + -5) = ?", correctAnswer: "-13" }
-      - { type: quadratic, question: "lim(x→5) (x² - 36)/(x - -6) = ?", correctAnswer: "-1" }
-      - { type: linear_equation, question: "lim(x→5) (-7x + 5) = ?", correctAnswer: "-30" }
-      - { type: quadratic, question: "lim(x→∞) (1x² + -4x + -5)/x² = ?", correctAnswer: "1" }
-  - pageNumber: 4
-    title: Limites Multivariáveis — Conjunto 18 – Página 4
-    description: Calcule o limite das funções.
-    exercises:
-      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
-      - { type: quadratic, question: "lim(x→0) (x² - 25)/(x - -5) = ?", correctAnswer: "-5" }
-      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
-      - { type: linear_equation, question: "lim(x→2) (-1x + 10) = ?", correctAnswer: "8" }
-      - { type: linear_equation, question: "lim(x→5) (-1x + 8) = ?", correctAnswer: "3" }
-      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
-      - { type: linear_equation, question: "lim(x→-5) (9x + 1) = ?", correctAnswer: "-44" }
-      - { type: linear_equation, question: "lim(x→-1) (9x + 5) = ?", correctAnswer: "-4" }
-      - { type: quadratic, question: "lim(x→3) (x² - 1)/(x - 1) = ?", correctAnswer: "4" }
-  - pageNumber: 5
-    title: Limites Multivariáveis — Conjunto 18 – Página 5
-    description: Calcule o limite das funções.
-    exercises:
-      - { type: linear_equation, question: "lim(x→4) (7x + 10) = ?", correctAnswer: "38" }
-      - { type: linear_equation, question: "lim(x→5) (6x + -8) = ?", correctAnswer: "22" }
-      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
-      - { type: quadratic, question: "lim(x→∞) (2x² + 6x + -1)/x² = ?", correctAnswer: "2" }
-      - { type: linear_equation, question: "lim(x→0) (1 - cos(x))/x = ?", correctAnswer: "0" }
-      - { type: linear_equation, question: "lim(x→-4) (1x + 6) = ?", correctAnswer: "2" }
-      - { type: quadratic, question: "lim(x→∞) (1x² + -1x + 0)/x² = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
-      - { type: quadratic, question: "lim(x→∞) (1x² + -9x + -5)/x² = ?", correctAnswer: "1" }
-      - { type: quadratic, question: "lim(x→∞) (2x² + -2x + -4)/x² = ?", correctAnswer: "2" }
-  - pageNumber: 6
-    title: Limites Multivariáveis — Conjunto 18 – Página 6
-    description: Calcule o limite das funções.
-    exercises:
-      - { type: quadratic, question: "lim(x→∞) (2x² + 1x + 3)/x² = ?", correctAnswer: "2" }
-      - { type: quadratic, question: "lim(x→-2) (x² - 1)/(x - -1) = ?", correctAnswer: "-3" }
-      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→-4) (8x + 0) = ?", correctAnswer: "-32" }
-      - { type: quadratic, question: "lim(x→∞) (1x² + 2x + 1)/x² = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→-4) (3x + -5) = ?", correctAnswer: "-17" }
-      - { type: quadratic, question: "lim(x→4) (x² - 81)/(x - -9) = ?", correctAnswer: "-5" }
-      - { type: quadratic, question: "lim(x→∞) (1x² + -9x + 1)/x² = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→-3) (6x + 4) = ?", correctAnswer: "-14" }
-  - pageNumber: 7
-    title: Limites Multivariáveis — Conjunto 18 – Página 7
-    description: Calcule o limite das funções.
-    exercises:
-      - { type: linear_equation, question: "lim(x→4) (-1x + 0) = ?", correctAnswer: "-4" }
-      - { type: quadratic, question: "lim(x→0) (x² - 36)/(x - -6) = ?", correctAnswer: "-6" }
-      - { type: quadratic, question: "lim(x→∞) (2x² + -1x + -2)/x² = ?", correctAnswer: "2" }
-      - { type: linear_equation, question: "lim(x→-5) (-8x + -6) = ?", correctAnswer: "34" }
-      - { type: linear_equation, question: "lim(x→-2) (3x + 6) = ?", correctAnswer: "0" }
-      - { type: linear_equation, question: "lim(x→0) sen(x)/x = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→-3) (-3x + 3) = ?", correctAnswer: "12" }
-      - { type: quadratic, question: "lim(x→5) (x² - 49)/(x - 7) = ?", correctAnswer: "12" }
-      - { type: linear_equation, question: "lim(x→3) (-2x + -5) = ?", correctAnswer: "-11" }
-      - { type: quadratic, question: "lim(x→3) (x² - 4)/(x - -2) = ?", correctAnswer: "1" }
-  - pageNumber: 8
-    title: Limites Multivariáveis — Conjunto 18 – Página 8
-    description: Calcule o limite das funções.
-    exercises:
-      - { type: quadratic, question: "lim(x→∞) (2x² + -4x + 3)/x² = ?", correctAnswer: "2" }
-      - { type: linear_equation, question: "lim(x→-4) (-9x + 10) = ?", correctAnswer: "46" }
-      - { type: quadratic, question: "lim(x→∞) (1x² + 7x + -5)/x² = ?", correctAnswer: "1" }
-      - { type: quadratic, question: "lim(x→∞) (1x² + 0x + 5)/x² = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→0) (e^x - 1)/x = ?", correctAnswer: "1" }
-      - { type: quadratic, question: "lim(x→∞) (1x² + -2x + 0)/x² = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "lim(x→-5) (-10x + -8) = ?", correctAnswer: "42" }
-      - { type: linear_equation, question: "lim(x→-1) (-1x + 5) = ?", correctAnswer: "6" }
-      - { type: linear_equation, question: "lim(x→∞) (1 + 1/x)^x = ?", correctAnswer: "e" }
-  - pageNumber: 9
-    title: Limites Multivariáveis — Conjunto 18 – Página 9
-    description: Calcule o limite das funções.
-    exercises:
-      - { type: quadratic, question: "lim(x→-3) (x² - 1)/(x - 1) = ?", correctAnswer: "-2" }
-      - { type: quadratic, question: "lim(x→∞) (2x² + 0x + -5)/x² = ?", correctAnswer: "2" }
-      - { type: linear_equation, question: "lim(x→1) (6x + 3) = ?", correctAnswer: "9" }
-      - { type: linear_equation, question: "lim(x→-2) (0x + 7) = ?", correctAnswer: "7" }
-      - { type: linear_equation, question: "lim(x→1) (4x + -9) = ?", correctAnswer: "-5" }
-      - { type: quadratic, question: "lim(x→5) (x² - 49)/(x - 7) = ?", correctAnswer: "12" }
-      - { type: quadratic, question: "lim(x→∞) (2x² + -1x + -2)/x² = ?", correctAnswer: "2" }
-      - { type: linear_equation, question: "lim(x→5) (-10x + -10) = ?", correctAnswer: "-60" }
-      - { type: linear_equation, question: "lim(x→-2) (0x + 7) = ?", correctAnswer: "7" }
-      - { type: linear_equation, question: "lim(x→-3) (-3x + 3) = ?", correctAnswer: "12" }
-  - pageNumber: 10
-    title: Limites Multivariáveis — Conjunto 18 – Página 10
-    description: Calcule o limite das funções.
-    exercises:
-      - { type: linear_equation, question: "lim(x→-1) (9x + 5) = ?", correctAnswer: "-4" }
-      - { type: quadratic, question: "lim(x→1) (x² - 1)/(x - -1) = ?", correctAnswer: "0" }
-      - { type: quadratic, question: "lim(x→-4) (x² - 49)/(x - -7) = ?", correctAnswer: "-11" }
-      - { type: linear_equation, question: "lim(x→1) (4x + -9) = ?", correctAnswer: "-5" }
-      - { type: quadratic, question: "lim(x→1) (x² - 81)/(x - -9) = ?", correctAnswer: "-8" }
-      - { type: quadratic, question: "lim(x→∞) (2x² + 0x + -5)/x² = ?", correctAnswer: "2" }
-      - { type: linear_equation, question: "lim(x→-4) (3x + -5) = ?", correctAnswer: "-17" }
-      - { type: linear_equation, question: "lim(x→3) (-2x + -5) = ?", correctAnswer: "-11" }
-      - { type: linear_equation, question: "lim(x→0) (-8x + -9) = ?", correctAnswer: "-9" }
-      - { type: quadratic, question: "lim(x→∞) (1x² + -1x + 0)/x² = ?", correctAnswer: "1" }
+- pageNumber: 1
+  title: Limites Multivariáveis — Conjunto 18 – Página 1
+  description: Calcule o limite das funções.
+  exercises:
+  - type: linear_equation
+    question: lim(x→1) (2x + -9) = ?
+    correctAnswer: '-7'
+  - type: quadratic
+    question: lim(x→∞) (2x² + 0x + 0)/x² = ?
+    correctAnswer: '2'
+  - type: quadratic
+    question: lim(x→-4) (x² - 49)/(x - -7) = ?
+    correctAnswer: '-11'
+  - type: linear_equation
+    question: lim(x→5) (-6x + -1) = ?
+    correctAnswer: '-31'
+  - type: linear_equation
+    question: lim(x→0) sen(x)/x = ?
+    correctAnswer: '1'
+  - type: linear_equation
+    question: lim(x→-1) (2x + 10) = ?
+    correctAnswer: '8'
+  - type: linear_equation
+    question: lim(x→5) (9x + 4) = ?
+    correctAnswer: '49'
+  - type: quadratic
+    question: lim(x→∞) (1x² + -7x + 2)/x² = ?
+    correctAnswer: '1'
+  - type: linear_equation
+    question: lim(x→0) (1 - cos(x))/x = ?
+    correctAnswer: '0'
+  - type: quadratic
+    question: lim(x→1) (x² - 1)/(x - -1) = ?
+    correctAnswer: '0'
+- pageNumber: 2
+  title: Limites Multivariáveis — Conjunto 18 – Página 2
+  description: Calcule o limite das funções.
+  exercises:
+  - type: linear_equation
+    question: lim(x→0) sen(x)/x = ?
+    correctAnswer: '1'
+  - type: linear_equation
+    question: lim(x→5) (-10x + -10) = ?
+    correctAnswer: '-60'
+  - type: quadratic
+    question: lim(x→∞) (1x² + -6x + -3)/x² = ?
+    correctAnswer: '1'
+  - type: linear_equation
+    question: lim(x→-2) (1x + 5) = ?
+    correctAnswer: '3'
+  - type: linear_equation
+    question: lim(x→0) (-8x + -9) = ?
+    correctAnswer: '-9'
+  - type: quadratic
+    question: lim(x→-4) (x² - 81)/(x - 9) = ?
+    correctAnswer: '5'
+  - type: linear_equation
+    question: lim(x→∞) (1x + -2)/x = ?
+    correctAnswer: '1'
+  - type: quadratic
+    question: lim(x→-2) (x² - 1)/(x - 1) = ?
+    correctAnswer: '-1'
+- pageNumber: 3
+  title: Limites Multivariáveis — Conjunto 18 – Página 3
+  description: Calcule o limite das funções.
+  exercises:
+  - type: linear_equation
+    question: lim(x→∞) (1 + 1/x)^x = ?
+    correctAnswer: e
+  - type: quadratic
+    question: lim(x→5) (x² - 81)/(x - 9) = ?
+    correctAnswer: '14'
+  - type: linear_equation
+    question: lim(x→1) (-7x + -6) = ?
+    correctAnswer: '-13'
+  - type: quadratic
+    question: lim(x→1) (x² - 81)/(x - -9) = ?
+    correctAnswer: '-8'
+  - type: linear_equation
+    question: lim(x→3) (-5x + 1) = ?
+    correctAnswer: '-14'
+  - type: quadratic
+    question: lim(x→∞) (1x² + 10x + -5)/x² = ?
+    correctAnswer: '1'
+  - type: linear_equation
+    question: lim(x→-1) (8x + -5) = ?
+    correctAnswer: '-13'
+  - type: quadratic
+    question: lim(x→5) (x² - 36)/(x - -6) = ?
+    correctAnswer: '-1'
+  - type: linear_equation
+    question: lim(x→5) (-7x + 5) = ?
+    correctAnswer: '-30'
+  - type: quadratic
+    question: lim(x→∞) (1x² + -4x + -5)/x² = ?
+    correctAnswer: '1'
+- pageNumber: 4
+  title: Limites Multivariáveis — Conjunto 18 – Página 4
+  description: Calcule o limite das funções.
+  exercises:
+  - type: linear_equation
+    question: lim(x→0) sen(x)/x = ?
+    correctAnswer: '1'
+  - type: quadratic
+    question: lim(x→0) (x² - 25)/(x - -5) = ?
+    correctAnswer: '-5'
+  - type: linear_equation
+    question: lim(x→∞) (1 + 1/x)^x = ?
+    correctAnswer: e
+  - type: linear_equation
+    question: lim(x→2) (-1x + 10) = ?
+    correctAnswer: '8'
+  - type: linear_equation
+    question: lim(x→5) (-1x + 8) = ?
+    correctAnswer: '3'
+  - type: linear_equation
+    question: lim(x→-5) (9x + 1) = ?
+    correctAnswer: '-44'
+  - type: linear_equation
+    question: lim(x→-1) (9x + 5) = ?
+    correctAnswer: '-4'
+  - type: quadratic
+    question: lim(x→3) (x² - 1)/(x - 1) = ?
+    correctAnswer: '4'
+- pageNumber: 5
+  title: Limites Multivariáveis — Conjunto 18 – Página 5
+  description: Calcule o limite das funções.
+  exercises:
+  - type: linear_equation
+    question: lim(x→4) (7x + 10) = ?
+    correctAnswer: '38'
+  - type: linear_equation
+    question: lim(x→5) (6x + -8) = ?
+    correctAnswer: '22'
+  - type: linear_equation
+    question: lim(x→∞) (1 + 1/x)^x = ?
+    correctAnswer: e
+  - type: quadratic
+    question: lim(x→∞) (2x² + 6x + -1)/x² = ?
+    correctAnswer: '2'
+  - type: linear_equation
+    question: lim(x→0) (1 - cos(x))/x = ?
+    correctAnswer: '0'
+  - type: linear_equation
+    question: lim(x→-4) (1x + 6) = ?
+    correctAnswer: '2'
+  - type: quadratic
+    question: lim(x→∞) (1x² + -1x + 0)/x² = ?
+    correctAnswer: '1'
+  - type: quadratic
+    question: lim(x→∞) (1x² + -9x + -5)/x² = ?
+    correctAnswer: '1'
+  - type: quadratic
+    question: lim(x→∞) (2x² + -2x + -4)/x² = ?
+    correctAnswer: '2'
+- pageNumber: 6
+  title: Limites Multivariáveis — Conjunto 18 – Página 6
+  description: Calcule o limite das funções.
+  exercises:
+  - type: quadratic
+    question: lim(x→∞) (2x² + 1x + 3)/x² = ?
+    correctAnswer: '2'
+  - type: quadratic
+    question: lim(x→-2) (x² - 1)/(x - -1) = ?
+    correctAnswer: '-3'
+  - type: linear_equation
+    question: lim(x→0) (e^x - 1)/x = ?
+    correctAnswer: '1'
+  - type: linear_equation
+    question: lim(x→-4) (8x + 0) = ?
+    correctAnswer: '-32'
+  - type: quadratic
+    question: lim(x→∞) (1x² + 2x + 1)/x² = ?
+    correctAnswer: '1'
+  - type: linear_equation
+    question: lim(x→0) sen(x)/x = ?
+    correctAnswer: '1'
+  - type: linear_equation
+    question: lim(x→-4) (3x + -5) = ?
+    correctAnswer: '-17'
+  - type: quadratic
+    question: lim(x→4) (x² - 81)/(x - -9) = ?
+    correctAnswer: '-5'
+  - type: quadratic
+    question: lim(x→∞) (1x² + -9x + 1)/x² = ?
+    correctAnswer: '1'
+  - type: linear_equation
+    question: lim(x→-3) (6x + 4) = ?
+    correctAnswer: '-14'
+- pageNumber: 7
+  title: Limites Multivariáveis — Conjunto 18 – Página 7
+  description: Calcule o limite das funções.
+  exercises:
+  - type: linear_equation
+    question: lim(x→4) (-1x + 0) = ?
+    correctAnswer: '-4'
+  - type: quadratic
+    question: lim(x→0) (x² - 36)/(x - -6) = ?
+    correctAnswer: '-6'
+  - type: quadratic
+    question: lim(x→∞) (2x² + -1x + -2)/x² = ?
+    correctAnswer: '2'
+  - type: linear_equation
+    question: lim(x→-5) (-8x + -6) = ?
+    correctAnswer: '34'
+  - type: linear_equation
+    question: lim(x→-2) (3x + 6) = ?
+    correctAnswer: '0'
+  - type: linear_equation
+    question: lim(x→0) sen(x)/x = ?
+    correctAnswer: '1'
+  - type: linear_equation
+    question: lim(x→-3) (-3x + 3) = ?
+    correctAnswer: '12'
+  - type: quadratic
+    question: lim(x→5) (x² - 49)/(x - 7) = ?
+    correctAnswer: '12'
+  - type: linear_equation
+    question: lim(x→3) (-2x + -5) = ?
+    correctAnswer: '-11'
+  - type: quadratic
+    question: lim(x→3) (x² - 4)/(x - -2) = ?
+    correctAnswer: '1'
+- pageNumber: 8
+  title: Limites Multivariáveis — Conjunto 18 – Página 8
+  description: Calcule o limite das funções.
+  exercises:
+  - type: quadratic
+    question: lim(x→∞) (2x² + -4x + 3)/x² = ?
+    correctAnswer: '2'
+  - type: linear_equation
+    question: lim(x→-4) (-9x + 10) = ?
+    correctAnswer: '46'
+  - type: quadratic
+    question: lim(x→∞) (1x² + 7x + -5)/x² = ?
+    correctAnswer: '1'
+  - type: quadratic
+    question: lim(x→∞) (1x² + 0x + 5)/x² = ?
+    correctAnswer: '1'
+  - type: linear_equation
+    question: lim(x→0) (e^x - 1)/x = ?
+    correctAnswer: '1'
+  - type: quadratic
+    question: lim(x→∞) (1x² + -2x + 0)/x² = ?
+    correctAnswer: '1'
+  - type: linear_equation
+    question: lim(x→-5) (-10x + -8) = ?
+    correctAnswer: '42'
+  - type: linear_equation
+    question: lim(x→-1) (-1x + 5) = ?
+    correctAnswer: '6'
+  - type: linear_equation
+    question: lim(x→∞) (1 + 1/x)^x = ?
+    correctAnswer: e
+- pageNumber: 9
+  title: Limites Multivariáveis — Conjunto 18 – Página 9
+  description: Calcule o limite das funções.
+  exercises:
+  - type: quadratic
+    question: lim(x→-3) (x² - 1)/(x - 1) = ?
+    correctAnswer: '-2'
+  - type: quadratic
+    question: lim(x→∞) (2x² + 0x + -5)/x² = ?
+    correctAnswer: '2'
+  - type: linear_equation
+    question: lim(x→1) (6x + 3) = ?
+    correctAnswer: '9'
+  - type: linear_equation
+    question: lim(x→-2) (0x + 7) = ?
+    correctAnswer: '7'
+  - type: linear_equation
+    question: lim(x→1) (4x + -9) = ?
+    correctAnswer: '-5'
+  - type: quadratic
+    question: lim(x→5) (x² - 49)/(x - 7) = ?
+    correctAnswer: '12'
+  - type: quadratic
+    question: lim(x→∞) (2x² + -1x + -2)/x² = ?
+    correctAnswer: '2'
+  - type: linear_equation
+    question: lim(x→5) (-10x + -10) = ?
+    correctAnswer: '-60'
+  - type: linear_equation
+    question: lim(x→-3) (-3x + 3) = ?
+    correctAnswer: '12'
+- pageNumber: 10
+  title: Limites Multivariáveis — Conjunto 18 – Página 10
+  description: Calcule o limite das funções.
+  exercises:
+  - type: linear_equation
+    question: lim(x→-1) (9x + 5) = ?
+    correctAnswer: '-4'
+  - type: quadratic
+    question: lim(x→1) (x² - 1)/(x - -1) = ?
+    correctAnswer: '0'
+  - type: quadratic
+    question: lim(x→-4) (x² - 49)/(x - -7) = ?
+    correctAnswer: '-11'
+  - type: linear_equation
+    question: lim(x→1) (4x + -9) = ?
+    correctAnswer: '-5'
+  - type: quadratic
+    question: lim(x→1) (x² - 81)/(x - -9) = ?
+    correctAnswer: '-8'
+  - type: quadratic
+    question: lim(x→∞) (2x² + 0x + -5)/x² = ?
+    correctAnswer: '2'
+  - type: linear_equation
+    question: lim(x→-4) (3x + -5) = ?
+    correctAnswer: '-17'
+  - type: linear_equation
+    question: lim(x→3) (-2x + -5) = ?
+    correctAnswer: '-11'
+  - type: linear_equation
+    question: lim(x→0) (-8x + -9) = ?
+    correctAnswer: '-9'
+  - type: quadratic
+    question: lim(x→∞) (1x² + -1x + 0)/x² = ?
+    correctAnswer: '1'

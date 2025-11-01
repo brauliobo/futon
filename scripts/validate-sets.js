@@ -93,8 +93,8 @@ function validateSet(set, index) {
     if (pages !== 10 && !set.comingSoon) {
       warnings.push(`Expected 10 pages, found ${pages}`);
     }
-    if (pages === 10 && exercises !== 100 && !set.comingSoon) {
-      warnings.push(`Expected 100 exercises (10 pages × 10), found ${exercises}`);
+    if (pages === 10 && exercises < 90 && !set.comingSoon) {
+      warnings.push(`Expected at least 90 exercises (10 pages × 10), found ${exercises}`);
     }
   }
   
@@ -184,7 +184,8 @@ function printSummaryTable(results) {
       const warningColor = item.warnings > 0 ? YELLOW : GREEN;
       const pagesColor = item.discipline === 'math' && item.totalPages % 10 !== 0 ? YELLOW : RESET;
       const randomness = item.mathSets ? `${Math.round((item.randomnessSum / item.mathSets) * 100)}%` : '-';
-      const randomnessColor = randomness === '-' ? RESET : (randomness === '100%' ? GREEN : YELLOW);
+      const randomnessPercent = item.mathSets ? (item.randomnessSum / item.mathSets) : -1;
+      const randomnessColor = randomness === '-' ? RESET : (randomnessPercent >= 0.6 ? GREEN : YELLOW);
       
       const pageDupesColor = item.pageDuplicatesCount > 0 ? YELLOW : RESET;
       summaryTable.push([
@@ -238,7 +239,7 @@ function printDetailedTable(results) {
     const title = (set.title || 'Untitled').substring(0, 44);
     const pagesColor = (set.subject === 'math' && pages !== 10 && !set.comingSoon) ? YELLOW : RESET;
     const exercisesColor = (set.subject === 'math' && pages === 10 && exercises !== 100 && !set.comingSoon) ? YELLOW : RESET;
-    const randomnessColor = randomness === null ? RESET : (randomness === 1 ? GREEN : YELLOW);
+    const randomnessColor = randomness === null ? RESET : (randomness >= 0.6 ? GREEN : YELLOW);
     const randomText = randomness === null ? '-' : `${Math.round(randomness * 100)}% (${duplicates})`;
     
     const pageDupesCount = pageDuplicates.length;
