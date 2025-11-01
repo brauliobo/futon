@@ -7,6 +7,10 @@
         Badge(:variant="statusVariant" :class="statusBadgeClass")
           span(class="text-sm") {{ statusIcon }}
           span(class="text-xs uppercase tracking-wide") {{ statusText }}
+      div(v-if="duplicatePercent !== null" class="relative group")
+        Info(:size="16" class="cursor-pointer text-slate-400 group-hover:text-emerald-400")
+        span(class="absolute right-0 z-10 hidden w-max -translate-y-full whitespace-nowrap rounded-md bg-slate-800 px-2 py-1 text-xs text-slate-100 shadow-md group-hover:block")
+          | {{ duplicateTooltip }}
 
     div(class="mt-5 space-y-4")
       div(v-if="hasProgress" class="rounded-2xl border border-white/5 bg-slate-900/60 p-4")
@@ -62,7 +66,8 @@
 import Button from "../ui/Button.vue";
 import Badge from "../ui/Badge.vue";
 import Progress from "../ui/Progress.vue";
-import { Play, RotateCcw, CheckCircle } from 'lucide-vue-next';
+import { Play, RotateCcw, CheckCircle, Info } from 'lucide-vue-next';
+import SetDomain from '../../domain/Set.js';
 
 export default {
   name: 'SetCard',
@@ -73,6 +78,7 @@ export default {
     Play,
     RotateCcw,
     CheckCircle,
+    Info,
   },
   props: {
     set: { type: Object, required: true },
@@ -132,6 +138,14 @@ export default {
     cardClass() {
       const base = 'flex h-full flex-col gap-4 rounded-2xl border border-white/12 bg-slate-900/70 p-6 shadow-lg transition hover:-translate-y-1 hover:border-sky-400/40 hover:shadow-sky-900/30';
       return this.isActive ? `${base} border-sky-400/50 bg-sky-500/10` : base;
+    },
+    duplicatePercent() {
+      const domain = new SetDomain(this.set);
+      return domain.duplicatePercent;
+    },
+    duplicateTooltip() {
+      if (this.duplicatePercent === null || this.duplicatePercent === undefined) return '';
+      return `${this.duplicatePercent}% de duplicação`;
     },
     statusBadgeClass() {
       return 'flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold';
