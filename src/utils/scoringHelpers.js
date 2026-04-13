@@ -60,3 +60,4 @@ export function calculateAttemptedCount(pages, fallbackTotal = 0) {
   return attempted || fallbackTotal;
 }
 
+

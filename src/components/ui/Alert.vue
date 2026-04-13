@@ -22,14 +22,14 @@ export default {
     classes() {
       const base = 'rounded-xl border px-4 py-3 text-sm';
       const palette = {
-        primary: 'border-sky-500/40 bg-sky-500/10 text-sky-100',
-        secondary: 'border-slate-600/40 bg-slate-800/50 text-slate-100',
-        success: 'border-emerald-500/40 bg-emerald-500/10 text-emerald-100',
-        danger: 'border-rose-500/40 bg-rose-500/10 text-rose-100',
-        warning: 'border-amber-400/40 bg-amber-400/10 text-amber-100',
-        info: 'border-sky-400/40 bg-sky-400/10 text-sky-100',
-        light: 'border-slate-200/40 bg-white/80 text-slate-800',
-        dark: 'border-slate-900/60 bg-slate-950 text-slate-100'
+        primary: 'border-kid-blue/30 bg-kid-blue/10 text-kid-blue',
+        secondary: 'border-black/10 bg-kid-bg text-kid-muted',
+        success: 'border-kid-green/30 bg-kid-green/10 text-kid-green',
+        danger: 'border-kid-red/30 bg-kid-red/10 text-kid-red',
+        warning: 'border-amber-400/40 bg-amber-50 text-amber-700',
+        info: 'border-kid-blue/30 bg-kid-blue/10 text-kid-blue',
+        light: 'border-black/8 bg-white text-kid-text',
+        dark: 'border-black/20 bg-kid-text text-white'
       };
       return [base, palette[this.variant] || palette.info].join(' ');
     }

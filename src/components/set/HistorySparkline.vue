@@ -1,6 +1,6 @@
 <!-- src/components/HistorySparkline.vue -->
 <template lang="pug">
-  div(class="h-5 text-slate-400")
+  div(class="h-6 rounded-xl bg-kid-bg px-2 py-1")
     svg(:viewBox="`0 0 ${(items.length - 1 || 1) * 6} 20`" width="100%" height="20" role="img" :aria-label="($t('previousAttempts') || 'Previous attempts')")
       polyline(:points="points" :stroke="stroke" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 </template>

@@ -1,22 +1,38 @@
 <!-- src/components/Home.vue -->
 <template lang="pug">
-  div(class="space-y-8")
-    nav(class="flex flex-wrap items-center gap-2")
+  div(class="space-y-6")
+    div(data-testid="daily-goal" class="flex flex-wrap items-center gap-3 rounded-3xl bg-white border border-black/5 shadow-sm px-5 py-3")
+      div(class="flex items-center gap-2")
+        span(class="text-xl") 🎯
+        span(class="text-sm font-black text-kid-text uppercase tracking-wide") {{ $t('todayGoal') || 'Today\'s Goal' }}
+      div(class="flex items-center gap-2 ml-2")
+        span(
+          v-for="i in 3"
+          :key="i"
+          :class="i <= todaySets ? 'text-kid-gold' : 'text-black/15'"
+          class="text-2xl leading-none"
+        ) ★
+      span(class="text-sm font-bold text-kid-muted ml-1") {{ todaySets }}/3
+      div(v-if="streak > 1" class="ml-auto flex items-center gap-1.5 rounded-2xl bg-orange-50 border border-orange-200 px-3 py-1 text-sm font-bold text-orange-500")
+        span 🔥
+        span {{ streak }} {{ $t('dayStreak') || 'day streak' }}
+    nav(class="flex flex-wrap items-center gap-3")
       button(
         v-for="subject in availableSubjects"
         :key="subject"
         :class="tabButtonClass(subject)"
         @click="selectDiscipline(subject)"
       )
-        span(class="text-sm font-semibold capitalize") {{ subjectLabel(subject) }}
-    section(v-if="activeDiscipline" class="rounded-3xl border border-white/5 bg-slate-900/60 p-6 backdrop-blur")
+        span(class="text-xl") {{ subjectIcon(subject) }}
+        span(class="text-base font-bold capitalize") {{ subjectLabel(subject) }}
+    section(v-if="activeDiscipline" class="rounded-3xl border border-black/5 bg-white shadow-sm p-6")
       header(class="flex flex-wrap items-end justify-between gap-4")
-        div(class="space-y-1")
-          h2(class="text-2xl font-semibold text-slate-100") {{ subjectLabel(activeDiscipline) }}
-          span(class="text-xs font-semibold uppercase tracking-wide text-slate-400") {{ $t('levels') }}
-        div(class="text-sm text-slate-400" v-if="activeLevelBySubject[activeDiscipline]")
+        div(class="space-y-0.5")
+          h2(class="text-2xl font-black" :style="{ color: subjectColor(activeDiscipline) }") {{ subjectLabel(activeDiscipline) }}
+          span(class="text-sm font-semibold text-kid-muted uppercase tracking-wide") {{ $t('levels') }}
+        div(class="text-sm font-semibold text-kid-muted" v-if="activeLevelBySubject[activeDiscipline]")
           span {{ activeLevelLabel }}
-      div(class="mt-6")
+      div(class="mt-5")
         LevelRoadmap(
           :sequence="levelSequenceBySubject(activeDiscipline)"
           :available="getAvailableLevels(activeDiscipline)"
@@ -25,11 +41,10 @@
           :getLevelName="(id) => levelNameBySubject(activeDiscipline, id)"
           @select="val => onLevelSelect(activeDiscipline, val)"
         )
-      div(class="mt-8 space-y-4")
-        div(class="flex flex-wrap items-center justify-between gap-3")
-          h3(class="text-xl font-semibold text-slate-100") {{ setsHeader }}
-        div(v-if="isLoadingLevel && !filteredSets(activeDiscipline).length" class="flex items-center gap-2 rounded-xl border border-slate-700/40 bg-slate-800/50 px-4 py-3 text-sm text-slate-300")
-          svg(class="h-4 w-4 animate-spin text-sky-300" viewBox="0 0 24 24" fill="none")
+      div(class="mt-6 space-y-3")
+        h3(class="text-lg font-bold text-kid-text") {{ setsHeader }}
+        div(v-if="isLoadingLevel && !filteredSets(activeDiscipline).length" class="flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-sm font-semibold text-kid-blue")
+          svg(class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none")
             circle(cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" class="opacity-25")
             path(d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" fill="currentColor" class="opacity-75")
           span {{ $t('loading') || 'Loading...' }}
@@ -76,6 +91,14 @@ export default {
     isLoadingLevel: {
       type: Boolean,
       default: false
+    },
+    streak: {
+      type: Number,
+      default: 0
+    },
+    todaySets: {
+      type: Number,
+      default: 0
     }
   },
   mounted() {
@@ -115,10 +138,18 @@ export default {
   methods: {
     tabButtonClass(subject) {
       const isActive = this.activeDiscipline === subject;
-      const base = 'rounded-full px-4 py-2 text-sm font-semibold capitalize transition border border-white/5 backdrop-blur';
-      const inactive = 'bg-transparent text-slate-300 hover:bg-slate-800/60 hover:text-white';
-      const active = 'bg-sky-500/20 text-white shadow-lg shadow-sky-900/30 ring-2 ring-sky-400/60';
-      return `${base} ${isActive ? active : inactive}`;
+      const base = 'flex items-center gap-2 rounded-2xl px-5 py-3 font-bold capitalize transition border-2 shadow-sm';
+      if (isActive) {
+        const colors = { math: 'bg-kid-blue text-white border-kid-blue shadow-blue-200', portuguese: 'bg-kid-green text-white border-kid-green shadow-green-200', english: 'bg-orange-400 text-white border-orange-400 shadow-orange-200' };
+        return `${base} ${colors[subject] || 'bg-kid-blue text-white border-kid-blue'}`;
+      }
+      return `${base} bg-white text-kid-muted border-black/8 hover:border-kid-blue/40 hover:text-kid-blue`;
+    },
+    subjectIcon(subject) {
+      return { math: '🔢', portuguese: '📖', english: '🌍' }[subject] || '📚';
+    },
+    subjectColor(subject) {
+      return { math: '#4A9EF5', portuguese: '#6BCB77', english: '#F97316' }[subject] || '#4A9EF5';
     },
     parseHashFromRoute() {
       const hash = this.$route?.hash;

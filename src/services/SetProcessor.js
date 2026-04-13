@@ -12,6 +12,7 @@ export class SetProcessor {
         pageNumber: index + 1,
         title: `${originalPage.title} - Questão ${index + 1}`,
         description: originalPage.description,
+        ...(originalPage.passage ? { passage: originalPage.passage } : {}),
         exercises: [exercise]
       }));
       return { ...wb, pages: splitPages };
@@ -48,10 +49,25 @@ export class SetProcessor {
     return { ...wb, totalExercises };
   }
 
+  static parseChoices(wb) {
+    const choicePattern = /\(([^)]+\/[^)]+)\)\s*$/;
+    wb.pages.forEach(page => {
+      page.exercises.forEach(ex => {
+        if (ex.choices || ex.type === 'choice') return;
+        const match = ex.question.match(choicePattern);
+        if (!match) return;
+        ex.choices = match[1].split('/').map(s => s.trim());
+        ex.question = ex.question.replace(choicePattern, '').trim();
+        ex.type = 'choice';
+      });
+    });
+    return wb;
+  }
+
   static processSet(wb) {
     let processed = this.expandPortuguesePages(wb);
     processed = this.expandRepetitions(processed);
-    // Math pages no longer need processing - all YAML files have correct structure
+    processed = this.parseChoices(processed);
     processed = this.numberPages(processed);
     processed = this.calculateTotalExercises(processed);
     return processed;

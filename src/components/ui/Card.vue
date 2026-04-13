@@ -2,14 +2,14 @@
 <template lang="pug">
   div(:class="cardClass")
     div(v-if="hasBody" :class="bodyClass")
-      h5(v-if="title" class="text-lg font-semibold text-slate-100") {{ title }}
-      h6(v-if="subtitle" class="text-sm font-medium text-slate-400") {{ subtitle }}
-      div(v-if="hasDefaultSlot" class="text-sm text-slate-200/90")
+      h5(v-if="title" class="text-lg font-bold text-kid-text") {{ title }}
+      h6(v-if="subtitle" class="text-sm font-semibold text-kid-muted") {{ subtitle }}
+      div(v-if="hasDefaultSlot" class="text-base text-kid-text")
         slot
       slot(name="body")
     template(v-else)
       slot
-    div(v-if="hasFooterSlot" class="border-t border-white/5 px-6 py-4 text-sm text-slate-300")
+    div(v-if="hasFooterSlot" class="border-t border-black/5 px-5 py-4 text-sm text-kid-muted")
       slot(name="footer")
 </template>
 
@@ -46,13 +46,13 @@ export default {
   },
   computed: {
     cardClass() {
-      const base = 'group relative flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-slate-900/60 backdrop-blur';
-      const shadows = this.shadow ? 'shadow-xl shadow-sky-900/20' : '';
-      const padding = this.hasBody ? '' : 'p-6';
+      const base = 'group relative flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white';
+      const shadows = this.shadow ? 'shadow-md' : 'shadow-sm';
+      const padding = this.hasBody ? '' : 'p-5';
       return [base, shadows, padding, this.height === 'h-100' ? 'h-full' : '', this.variantClass].filter(Boolean).join(' ');
     },
     bodyClass() {
-      return 'px-6 py-5 sm:p-6';
+      return 'px-5 py-4';
     },
     hasDefaultSlot() {
       return !!this.$slots.default;
@@ -63,14 +63,14 @@ export default {
     variantClass() {
       const palette = {
         '': '',
-        primary: 'border-sky-500/40 bg-sky-500/10',
-        secondary: 'border-slate-600/40 bg-slate-800/60',
-        success: 'border-emerald-500/40 bg-emerald-500/10',
-        danger: 'border-rose-500/40 bg-rose-500/10',
-        warning: 'border-amber-400/40 bg-amber-400/10',
-        info: 'border-cyan-400/40 bg-cyan-400/10',
-        light: 'border-white/40 bg-white/90 text-slate-800',
-        dark: 'border-slate-900/60 bg-slate-950'
+        primary: 'border-kid-blue/30 bg-kid-blue/5',
+        secondary: 'border-black/8 bg-kid-bg',
+        success: 'border-kid-green/30 bg-kid-green/5',
+        danger: 'border-kid-red/30 bg-kid-red/5',
+        warning: 'border-amber-400/40 bg-amber-50',
+        info: 'border-kid-blue/30 bg-kid-blue/5',
+        light: 'border-black/8 bg-white',
+        dark: 'border-black/20 bg-kid-text text-white'
       };
       return palette[this.variant] || '';
     }

@@ -30,6 +30,9 @@ export function calculateProgress(current, total) {
  * @returns {string} Normalized string
  */
 export function normalizeAnswer(str) {
-  return String(str || '').replace(/\s+/g, '').replace(/,/, '.').toLowerCase();
+  return String(str || '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, '').replace(/,/, '.').toLowerCase();
 }
+
 

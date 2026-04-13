@@ -31,25 +31,25 @@ export default {
   },
   computed: {
     classes() {
-      const base = 'inline-flex items-center justify-center gap-2 rounded-lg border text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-40';
+      const base = 'inline-flex items-center justify-center gap-2 rounded-2xl border-2 font-bold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-40';
       const variants = {
-        primary: 'bg-sky-500 border-sky-500 text-white hover:bg-sky-400 focus-visible:outline-sky-500',
-        secondary: 'bg-slate-800 border-slate-700 text-slate-100 hover:bg-slate-700 focus-visible:outline-slate-700',
-        success: 'bg-emerald-500 border-emerald-500 text-white hover:bg-emerald-400 focus-visible:outline-emerald-500',
-        danger: 'bg-rose-500 border-rose-500 text-white hover:bg-rose-400 focus-visible:outline-rose-500',
-        warning: 'bg-amber-400 border-amber-400 text-slate-900 hover:bg-amber-300 focus-visible:outline-amber-400',
-        info: 'bg-sky-400 border-sky-400 text-slate-900 hover:bg-sky-300 focus-visible:outline-sky-400',
-        light: 'bg-white border-white text-slate-800 hover:bg-slate-100 focus-visible:outline-slate-200',
-        dark: 'bg-slate-900 border-slate-900 text-white hover:bg-slate-800 focus-visible:outline-slate-900',
-        link: 'border-transparent bg-transparent text-sky-300 hover:text-white focus-visible:outline-sky-300',
-        'outline-primary': 'border-sky-500 text-sky-300 hover:bg-sky-500/10 focus-visible:outline-sky-500',
-        'outline-secondary': 'border-slate-600 text-slate-200 hover:bg-slate-600/20 focus-visible:outline-slate-600',
-        'outline-success': 'border-emerald-500 text-emerald-300 hover:bg-emerald-500/10 focus-visible:outline-emerald-500',
-        'outline-danger': 'border-rose-500 text-rose-300 hover:bg-rose-500/10 focus-visible:outline-rose-500',
-        'outline-warning': 'border-amber-400 text-amber-200 hover:bg-amber-400/10 focus-visible:outline-amber-400',
-        'outline-info': 'border-sky-400 text-sky-200 hover:bg-sky-400/10 focus-visible:outline-sky-400',
-        'outline-light': 'border-slate-200 text-slate-200 hover:bg-slate-200/10 focus-visible:outline-slate-200',
-        'outline-dark': 'border-slate-900 text-slate-100 hover:bg-slate-900/20 focus-visible:outline-slate-900',
+        primary:          'bg-kid-blue border-kid-blue text-white hover:opacity-90',
+        secondary:        'bg-kid-bg border-black/10 text-kid-text hover:border-kid-blue/40',
+        success:          'bg-kid-green border-kid-green text-white hover:opacity-90',
+        danger:           'bg-kid-red border-kid-red text-white hover:opacity-90',
+        warning:          'bg-amber-400 border-amber-400 text-white hover:opacity-90',
+        info:             'bg-kid-blue border-kid-blue text-white hover:opacity-90',
+        light:            'bg-white border-black/10 text-kid-text hover:border-kid-blue/40',
+        dark:             'bg-kid-text border-kid-text text-white hover:opacity-90',
+        link:             'border-transparent bg-transparent text-kid-blue hover:opacity-70',
+        'outline-primary':'border-kid-blue text-kid-blue hover:bg-kid-blue/10',
+        'outline-secondary':'border-black/15 text-kid-muted hover:border-kid-blue/40',
+        'outline-success':'border-kid-green text-kid-green hover:bg-kid-green/10',
+        'outline-danger': 'border-kid-red text-kid-red hover:bg-kid-red/10',
+        'outline-warning':'border-amber-400 text-amber-600 hover:bg-amber-50',
+        'outline-info':   'border-kid-blue text-kid-blue hover:bg-kid-blue/10',
+        'outline-light':  'border-black/10 text-kid-muted hover:bg-kid-bg',
+        'outline-dark':   'border-kid-text text-kid-text hover:bg-kid-text/10',
       };
       const sizes = {
         '': 'px-4 py-2',

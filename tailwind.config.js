@@ -41,7 +41,20 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Nunito', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        kid: ['Nunito', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        kid: {
+          bg:      '#FFFBF0',
+          surface: '#FFFFFF',
+          blue:    '#4A9EF5',
+          gold:    '#FFD93D',
+          green:   '#6BCB77',
+          red:     '#FF6B6B',
+          text:    '#2D3748',
+          muted:   '#718096',
+        },
       },
     },
   },

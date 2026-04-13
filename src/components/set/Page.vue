@@ -1,6 +1,7 @@
 <!-- src/components/Page.vue -->
 <template lang="pug">
   Card(class="space-y-4")
+    ReadingPassage(v-if="page.passage" :passage="page.passage")
     ExerciseList(
       :exercises="page.exercises"
       :answers="answers"
@@ -15,14 +16,12 @@
 <script>
 import ExerciseList from "./ExerciseList.vue";
 import Card from "../ui/Card.vue";
+import ReadingPassage from "./ReadingPassage.vue";
 import { calculatePageStatus, initAnswersFromExercises } from "../../utils/pageStatus.js";
 
 export default {
   name: "Page",
-  components: {
-    ExerciseList,
-    Card,
-  },
+  components: { ExerciseList, Card, ReadingPassage },
   props: {
     page: {
       type: Object,

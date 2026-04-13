@@ -1,7 +1,7 @@
 <template lang="pug">
   div(class="relative flex items-center overflow-hidden py-2")
     button(
-      class="absolute left-0 z-10 hidden h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-900/60 text-lg font-bold text-slate-200 shadow backdrop-blur transition hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed sm:flex"
+      class="absolute left-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-black/8 bg-white text-lg font-bold text-kid-text shadow-sm transition hover:bg-kid-bg disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollLeft"
       :disabled="!canScrollLeft"
       v-show="showLeftArrow"
@@ -23,7 +23,7 @@
             p(:class="nameClass(lvl)") {{ getName(lvl) }}
           Progress(:value="progressPercent(lvl)" height="6px" variant="success")
     button(
-      class="absolute right-0 z-10 hidden h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-900/60 text-lg font-bold text-slate-200 shadow backdrop-blur transition hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed sm:flex"
+      class="absolute right-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-black/8 bg-white text-lg font-bold text-kid-text shadow-sm transition hover:bg-kid-bg disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollRight"
       :disabled="!canScrollRight"
       v-show="showRightArrow"
@@ -86,34 +86,29 @@ export default {
   },
   methods: {
     progressPercent(key){ const p = this.progressByLevel[key]; return p && Number.isFinite(p.percent) ? p.percent : 0; },
-    cardClass(lvl){
-      const currentIndex = this.getCurrentLevelIndex;
-      const levelIndex = this.sequence.indexOf(lvl);
-      const isPast = levelIndex < currentIndex && currentIndex !== -1;
-      const isFuture = levelIndex > currentIndex && currentIndex !== -1;
-      const base = 'flex min-w-[150px] max-w-[180px] snap-center cursor-pointer rounded-2xl border border-white/10 bg-slate-900/60 shadow transition hover:-translate-y-1 hover:border-sky-400/50 hover:shadow-sky-900/40';
+    cardClass(lvl) {
+      const base = 'flex min-w-[150px] max-w-[180px] snap-center cursor-pointer rounded-2xl border-2 bg-white shadow-sm transition hover:-translate-y-1';
       const state = [];
-      if (lvl === this.active) state.push('border-sky-400/60 bg-sky-500/10 shadow-sky-900/40');
-      if (!this.availableSet.has(lvl)) state.push('cursor-not-allowed opacity-40 hover:translate-y-0 hover:border-white/10 hover:shadow-none');
-      if (isPast) state.push('opacity-60');
-      if (isFuture) state.push('opacity-80');
+      if (lvl === this.active) state.push('border-kid-blue bg-kid-blue/5 shadow-blue-100');
+      else state.push('border-black/8 hover:border-kid-blue/40');
+      if (!this.availableSet.has(lvl)) state.push('cursor-not-allowed opacity-40 hover:translate-y-0 hover:border-black/8');
       return [base, ...state].join(' ');
     },
     numberClass(lvl) {
-      const base = 'rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide shadow';
-      if (lvl === this.active) return `${base} bg-emerald-500/90 text-slate-950 shadow-emerald-500/40`;
-      return `${base} bg-sky-500/80 text-white shadow-sky-900/30`;
+      const base = 'rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide';
+      if (lvl === this.active) return `${base} bg-kid-blue text-white`;
+      return `${base} bg-kid-bg text-kid-muted`;
     },
     tagClass(lvl) {
-      const base = 'rounded-md px-2 py-1 text-xs font-semibold uppercase tracking-wide';
-      if (lvl === this.active) return `${base} bg-sky-500/20 text-sky-200`;
-      return `${base} bg-slate-800/60 text-slate-300`;
+      const base = 'rounded-lg px-2 py-1 text-xs font-black uppercase';
+      if (lvl === this.active) return `${base} bg-kid-blue/10 text-kid-blue`;
+      return `${base} bg-kid-bg text-kid-muted`;
     },
     nameClass(lvl) {
-      const base = 'text-center text-sm font-semibold text-slate-200';
-      if (lvl === this.active) return `${base} text-sky-100`;
-      if (!this.availableSet.has(lvl)) return `${base} text-slate-500`;
-      return base;
+      const base = 'text-center text-sm font-bold';
+      if (lvl === this.active) return `${base} text-kid-text`;
+      if (!this.availableSet.has(lvl)) return `${base} text-kid-muted/50`;
+      return `${base} text-kid-muted`;
     },
     getName(id) { return this.getLevelName(id); },
     onLevelClick(event, lvl) {

@@ -1,17 +1,16 @@
 <!-- src/components/set/Set.vue -->
 <template lang="pug">
-  div(class="set mb-2")
-    div(class="rounded-3xl border border-white/10 bg-slate-900/60 shadow-xl shadow-sky-900/20 backdrop-blur")
-      div(class="px-6 py-4")
-        div(v-if="currentPage && !isSubmitted" class="space-y-3")
+  div(class="set mb-2 space-y-4")
+    div(class="rounded-3xl border border-black/5 bg-white shadow-sm")
+      div(class="px-5 py-5")
+        div(v-if="currentPage && !isSubmitted" class="space-y-4")
           PageHeader(
             :page-number="currentPage.pageNumber || (currentPageIndex + 1)"
             :total-pages="totalPages || 1"
             :timer="prettyTimer"
             :progress="pageProgress"
           )
-          
-          div(class="space-y-4")
+          div(class="space-y-3")
             ExampleAlert(v-if="set.example" :example="set.example")
             PageComponent(
               v-if="currentPage"
@@ -19,17 +18,29 @@
               v-bind="pageProps"
               @update-page-status="handlePageStatus"
             )
-            
             PageNavigation(
               :can-go-prev="currentPageIndex > 0"
               :can-go-next="canGoNextPage"
+              :is-last-page="isLastPage"
               @prev="prevPage"
               @next="nextPage"
             )
-        
-        div(v-if="isSubmitted" class="space-y-6")
-          div(class="space-y-4")
-            HistorySparkline(v-if="set.history?.length" :history="set.history")
+
+        div(v-if="isSubmitted" class="space-y-5")
+          ResultsCelebration(
+            :status="set.status"
+            :correct="finalScore"
+            :total="attemptedCount"
+            :grade-percent="set.gradePercent || 0"
+            :has-next-set="hasNextSet"
+            @next-set="$emit('next-set')"
+          )
+          div(class="flex gap-3")
+            button(@click="$emit('go-home')" class="flex-1 flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold bg-white border-2 border-black/10 text-kid-text hover:border-kid-blue/40 transition") ← {{ $t('back') }}
+            button(@click="resetSet" class="flex-1 flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold bg-kid-bg border-2 border-black/10 text-kid-text hover:border-kid-blue/40 transition") ↺ {{ $t('restart') }}
+          HistorySparkline(v-if="set.history?.length" :history="set.history")
+          div(class="border-t border-black/5 pt-4 space-y-3")
+            h4(class="text-sm font-bold text-kid-muted uppercase tracking-wide") {{ $t('reviewAnswers') || 'Review Answers' }}
             ExampleAlert(v-if="set.example" :example="set.example")
             PageComponent(
               v-if="currentPage"
@@ -37,31 +48,18 @@
               v-bind="pageProps"
               @update-page-status="handlePageStatus"
             )
-          
-          div(class="border-t border-white/10 pt-4 mt-6 space-y-4")
-            ResultsHeader(:status="set.status" @reset="resetSet")
-            
-            StatsGrid(
-              :completed-pages="completedPages.length"
-              :attempts="set.attempts"
-              :last-score="set.lastScore"
-              :total-exercises="set.totalExercises"
-            )
-            
-            ScoreStats(
-              :final-score="`${finalScore}/${attemptedCount}`"
-              :grade="`${set.gradePercent || 0}%`"
-              :speed="`${set.avgSecondsPerExercise || 0}s/ex`"
-            )
-            
-            SpeedGauge(
-              :width="speedGaugeWidth"
-              :variant="speedGaugeVariant"
-              :avg-seconds="set.avgSecondsPerExercise || 0"
-              :target="speedTarget"
-            )
-            
-            NeededSeries(:series="neededSeries")
+          PageNavigation(
+            :can-go-prev="currentPageIndex > 0"
+            :can-go-next="currentPageIndex < totalPages - 1"
+            @prev="prevPage"
+            @next="goToPage(currentPageIndex + 1)"
+          )
+          SpeedGauge(
+            :width="speedGaugeWidth"
+            :variant="speedGaugeVariant"
+            :avg-seconds="set.avgSecondsPerExercise || 0"
+            :target="speedTarget"
+          )
 </template>
 
 <script>
@@ -69,17 +67,12 @@ import PageComponent from "./Page.vue";
 import HistorySparkline from "./HistorySparkline.vue";
 import PageHeader from "./PageHeader.vue";
 import PageNavigation from "./PageNavigation.vue";
-import ResultsHeader from "./ResultsHeader.vue";
-import StatsGrid from "./StatsGrid.vue";
-import ScoreStats from "./ScoreStats.vue";
+import ResultsCelebration from "./ResultsCelebration.vue";
 import SpeedGauge from "./SpeedGauge.vue";
-import NeededSeries from "./NeededSeries.vue";
 import ExampleAlert from "./ExampleAlert.vue";
 import { computeGradePercent, computeStatus } from "../../domain/scoring.js";
-import { levelToSeries, setSeries } from "../../domain/sets.js";
 import { formatTimer, calculateProgress } from "../../utils/formatting.js";
 import { calculateFinalScore as calcFinalScore, calculateAttemptedCount as calcAttemptedCount, getPassCriteria } from "../../utils/scoringHelpers.js";
-import { createLevelSeriesKey } from "../../utils/exerciseHelpers.js";
 import { SetStorage } from "../../services/SetStorage.js";
 
 export default {
@@ -89,22 +82,16 @@ export default {
     HistorySparkline,
     PageHeader,
     PageNavigation,
-    ResultsHeader,
-    StatsGrid,
-    ScoreStats,
+    ResultsCelebration,
     SpeedGauge,
-    NeededSeries,
     ExampleAlert,
   },
+  emits: ['update-set', 'page-changed', 'next-set', 'go-home'],
   props: {
-    set: {
-      type: Object,
-      required: true,
-    },
-    initialPageIndex: {
-      type: Number,
-      default: 0,
-    },
+    set: { type: Object, required: true },
+    initialPageIndex: { type: Number, default: 0 },
+    hasNextSet: { type: Boolean, default: false },
+    profileId: { type: String, default: 'default' },
   },
   data() {
     return {
@@ -116,7 +103,7 @@ export default {
       pageSeconds: 0,
       intervalId: null,
       startedAt: 0,
-      storage: new SetStorage(),
+      storage: new SetStorage(this.profileId),
     };
   },
   computed: {
@@ -156,11 +143,6 @@ export default {
     },
     attemptedCount() {
       return calcAttemptedCount(this.set.pages || [], this.set.totalExercises);
-    },
-    neededSeries() {
-      const key = createLevelSeriesKey(this.set.subject, this.set.level);
-      const ids = levelToSeries[key] || [];
-      return setSeries.filter(s => ids.includes(s.id));
     },
   },
   methods: {
@@ -245,11 +227,14 @@ export default {
     onKeydown(e) {
       if (this.isSubmitted) return;
       
-      if (e.key === 'ArrowRight' || (e.key.toLowerCase?.() === 'n' && !e.ctrlKey && !e.metaKey)) {
+      const tag = (e.target?.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || e.target?.isContentEditable) return;
+
+      if (e.key === 'ArrowRight' || e.key.toLowerCase?.() === 'n') {
         e.preventDefault();
         if (this.canGoNextPage) this.nextPage();
       }
-      if (e.key === 'ArrowLeft' || (e.key.toLowerCase?.() === 'p' && !e.ctrlKey && !e.metaKey)) {
+      if (e.key === 'ArrowLeft' || e.key.toLowerCase?.() === 'p') {
         e.preventDefault();
         this.prevPage();
       }
@@ -302,7 +287,7 @@ export default {
         accuracyPercent,
         avgSecondsPerExercise,
         maxAvgSecondsPerExercise: pc.maxAvgSecondsPerExercise,
-        minAccuracyPass: 95,
+        minAccuracyPass: pc.minAccuracyPercent,
       });
       
       const historyEntry = {
@@ -344,7 +329,14 @@ export default {
       this.pageSeconds = 0;
       
       this.resetKey += 1;
-      this.updateSetData({ gradePercent: 0, status: '' });
+      this.$emit("update-set", {
+        title: this.set.title,
+        completedPages: [],
+        lastScore: 0,
+        attempts: this.set.attempts,
+        gradePercent: 0,
+        status: '',
+      });
     },
     updateSetData(extra = {}) {
       this.$emit("update-set", {
@@ -361,6 +353,7 @@ export default {
     window.addEventListener('keydown', this.onKeydown);
     this.restoreSetTimer();
     this.startTimer();
+    window.__futonSet = this;
   },
   unmounted() {
     window.removeEventListener('keydown', this.onKeydown);

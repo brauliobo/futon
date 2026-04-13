@@ -1,20 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
 body {
-  @apply min-h-screen bg-slate-950 text-slate-100 antialiased;
+  @apply min-h-screen bg-kid-bg text-kid-text antialiased font-kid;
 }
 
 a {
-  @apply text-sky-400 underline-offset-2 transition hover:text-sky-300;
+  @apply text-kid-blue underline-offset-2 transition hover:opacity-80;
 }
 
 button, input, select, textarea {
-  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-500 focus-visible:ring-offset-slate-950;
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-kid-blue;
 }
 
+button {
+  min-height: 44px;
+}
+
+@keyframes star-pop {
+  0%   { transform: scale(0) rotate(-20deg); opacity: 0; }
+  70%  { transform: scale(1.2) rotate(5deg);  opacity: 1; }
+  100% { transform: scale(1) rotate(0deg);    opacity: 1; }
+}
+
+@keyframes bounce-in {
+  0%   { transform: scale(0.5); opacity: 0; }
+  60%  { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes confetti-fall {
+  0%   { transform: translateY(-20px) rotate(0deg);   opacity: 1; }
+  100% { transform: translateY(60px)  rotate(360deg); opacity: 0; }
+}
+
+.animate-star-pop   { animation: star-pop   0.5s ease-out forwards; }
+.animate-bounce-in  { animation: bounce-in  0.4s ease-out forwards; }
+.animate-confetti   { animation: confetti-fall 1.2s ease-in forwards; }

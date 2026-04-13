@@ -14,10 +14,15 @@
           :key="set.id || set.title"
           :class="cardClass(set)"
         )
+          div(v-if="!isSetAvailable(index)" class="relative")
+            SetCard(:set="set" :is-active="false" class="opacity-40 saturate-0 pointer-events-none")
+            div(class="absolute inset-0 flex flex-col items-center justify-center rounded-2xl bg-black/30 backdrop-blur-sm cursor-default")
+              span(class="text-4xl") 🔒
+              span(class="mt-1 text-xs font-semibold text-white text-center px-2") Complete previous set with mastery first
           SetCard(
+            v-else
             :set="set"
             :is-active="slugOf(set) === activeSlug"
-            :class="{ 'opacity-50 saturate-75 pointer-events-none': !isSetAvailable(index) }"
             @start="$emit('start', $event)"
           )
     button(
@@ -71,12 +76,7 @@ export default {
     setAvailability() {
       const availability = {};
       this.sets.forEach((set, index) => {
-        if (index === 0) {
-          availability[index] = true;
-        } else {
-          const previousSet = this.sets[index - 1];
-          availability[index] = !!(previousSet?.completed || previousSet?.lastScore !== undefined);
-        }
+        availability[index] = index === 0 || this.sets[index - 1]?.status === 'mastery';
       });
       return availability;
     }

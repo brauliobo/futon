@@ -1,29 +1,28 @@
 <!-- src/components/set/PageNavigation.vue -->
 <template lang="pug">
-  div(class="flex flex-wrap items-center justify-between gap-3 pt-2")
-    Button(variant="secondary" size="sm" @click="$emit('prev')" :disabled="!canGoPrev" aria-label="Previous page") {{ $t('previous') }}
-    Button(variant="secondary" size="sm" @click="$emit('next')" :disabled="!canGoNext" aria-label="Next page") {{ $t('next') }}
+  div(class="flex items-center justify-between gap-3 pt-2")
+    button(
+      @click="$emit('prev')"
+      :disabled="!canGoPrev"
+      class="flex items-center gap-2 rounded-2xl border-2 border-black/10 bg-white px-5 py-3 text-base font-bold text-kid-text shadow-sm transition hover:border-kid-blue/40 hover:text-kid-blue disabled:opacity-30 disabled:cursor-not-allowed"
+      aria-label="Previous page"
+    ) ← {{ $t('previous') }}
+    button(
+      @click="$emit('next')"
+      :disabled="!canGoNext"
+      class="flex items-center gap-2 rounded-2xl bg-kid-blue px-5 py-3 text-base font-bold text-white shadow-sm transition hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed"
+      aria-label="Next page"
+    ) {{ isLastPage ? $t('finish') : $t('next') + ' →' }}
 </template>
 
 <script>
-import Button from "../ui/Button.vue";
-
 export default {
   name: "PageNavigation",
-  components: {
-    Button,
-  },
   props: {
-    canGoPrev: {
-      type: Boolean,
-      default: false,
-    },
-    canGoNext: {
-      type: Boolean,
-      default: false,
-    },
+    canGoPrev: { type: Boolean, default: false },
+    canGoNext: { type: Boolean, default: false },
+    isLastPage: { type: Boolean, default: false },
   },
   emits: ['prev', 'next'],
 };
 </script>
-

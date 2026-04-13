@@ -1,8 +1,9 @@
 // src/services/SetStorage.js
 import { GenericStorage } from "./GenericStorage.js";
+import { ProfileStorage } from "./ProfileStorage.js";
 
 export class SetStorage extends GenericStorage {
-  constructor(key = 'futon_state_v2') { super(key); }
+  constructor(profileId = 'default') { super(ProfileStorage.storageKeyFor(profileId)); }
 
   static idOf(wb) {
     const t = String(wb?.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
@@ -32,7 +33,9 @@ export class SetStorage extends GenericStorage {
       };
     });
 
+    const existing = this.load() || {};
     const payload = {
+      ...existing,
       disciplines,
       selectedSet: selectedSet ? {
         slug: this.slugOf(selectedSet),

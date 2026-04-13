@@ -1,180 +1,84 @@
 <template lang="pug">
   div(:class="cardClass")
     div(class="flex items-start justify-between gap-3")
-      div(class="space-y-1")
-        h5(class="text-lg font-semibold text-slate-100") {{ set.title }}
-      div(v-if="set.status")
-        Badge(:variant="statusVariant" :class="statusBadgeClass")
-          span(class="text-sm") {{ statusIcon }}
-          span(class="text-xs uppercase tracking-wide") {{ statusText }}
-      div(v-if="duplicatePercent !== null" class="relative group")
-        Info(:size="16" class="cursor-pointer text-slate-400 group-hover:text-emerald-400")
-        span(class="absolute right-0 z-10 hidden w-max -translate-y-full whitespace-nowrap rounded-md bg-slate-800 px-2 py-1 text-xs text-slate-100 shadow-md group-hover:block")
-          | {{ duplicateTooltip }}
+      h5(class="text-lg font-extrabold text-kid-text leading-snug") {{ set.title }}
+      div(class="flex items-center gap-1 flex-shrink-0")
+        span(v-for="n in 3" :key="n" :class="starClass(n)" class="text-2xl leading-none") ★
 
-    div(class="mt-5 space-y-4")
-      div(v-if="hasProgress" class="rounded-2xl border border-white/5 bg-slate-900/60 p-4")
-        div(class="flex items-center justify-between text-sm text-slate-300")
-          span {{ $t('progress') || 'Progresso' }}
-          span(class="font-mono") {{ progress.completed }}/{{ totalPages }}
-        Progress(:value="progress.percent" show-value height="8px" variant="success" class="mt-3")
+    div(class="mt-4 space-y-3")
+      div(v-if="hasProgress" class="rounded-2xl border border-kid-blue/15 bg-kid-blue/5 p-4")
+        div(class="flex items-center justify-between text-sm font-semibold text-kid-muted mb-2")
+          span {{ $t('progress') || 'Progress' }}
+          span {{ progress.completed }}/{{ totalPages }} {{ $t('pages') || 'pages' }}
+        div(class="h-3 rounded-full bg-black/5 overflow-hidden")
+          div(class="h-full rounded-full bg-kid-blue transition-all" :style="{ width: progress.percent + '%' }")
 
-      div(v-else-if="set.completed" class="space-y-3 rounded-2xl border border-white/5 bg-slate-900/60 p-4")
-        span(class="text-xs font-semibold uppercase tracking-wide text-slate-300") {{ $t('lastResults') || 'Últimos resultados' }}
-        div(class="grid gap-3 md:grid-cols-2")
-          div(class="flex items-start gap-3 rounded-xl border border-white/5 bg-slate-900/70 p-3")
-            span(class="text-lg") 🎯
-            div(class="space-y-1 text-sm")
-              span(class="text-slate-400") {{ $t('finalScore') }}
-              span(class="font-semibold text-slate-100") {{ set.lastScore }}/{{ set.totalExercises }}
-          div(v-if="set.avgSecondsPerExercise" class="flex items-start gap-3 rounded-xl border border-white/5 bg-slate-900/70 p-3")
-            span(class="text-lg") ⏱️
-            div(class="space-y-1 text-sm")
-              span(class="text-slate-400") {{ $t('speed') }}
-              span(class="font-semibold text-slate-100") {{ set.avgSecondsPerExercise }}s/ex
+      div(v-else-if="set.attempts > 0" class="grid grid-cols-2 gap-2")
+        div(class="rounded-2xl bg-kid-bg border border-black/5 p-3 text-center")
+          div(class="text-xs font-semibold text-kid-muted mb-0.5") {{ $t('finalScore') || 'Score' }}
+          div(class="text-lg font-black text-kid-text") {{ set.lastScore }}/{{ set.totalExercises }}
+        div(v-if="set.avgSecondsPerExercise" class="rounded-2xl bg-kid-bg border border-black/5 p-3 text-center")
+          div(class="text-xs font-semibold text-kid-muted mb-0.5") {{ $t('speed') || 'Speed' }}
+          div(class="text-lg font-black" :class="speedColor") {{ set.avgSecondsPerExercise }}s
 
-      div(v-else-if="!set.completed && (set.lastScore || set.avgSecondsPerExercise)" class="grid gap-3 md:grid-cols-2")
-        div(v-if="set.lastScore" class="flex items-start gap-3 rounded-xl border border-white/5 bg-slate-900/70 p-3")
-          span(class="text-lg") 🎯
-          div(class="space-y-1 text-sm")
-            span(class="text-slate-400") {{ $t('lastScore') }}
-            span(class="font-semibold text-slate-100") {{ set.lastScore }}/{{ set.totalExercises }}
-        div(v-if="set.avgSecondsPerExercise" class="flex flex-col gap-2 rounded-xl border border-white/5 bg-slate-900/70 p-3")
-          div(class="flex items-start gap-3")
-            span(class="text-lg") ⏱️
-            div(class="space-y-1 text-sm")
-              span(class="text-slate-400") {{ $t('avgTime') || 'Avg Time' }}
-              span(class="font-semibold text-slate-100") {{ set.avgSecondsPerExercise }}s/ex
-          Progress(:value="speedGaugeWidth" :variant="speedGaugeVariant" height="4px")
-
-      div(v-if="set.gradePercent" class="flex items-center justify-center")
-        div(:class="gradeCircleClass")
-          span {{ set.gradePercent }}%
-
-    div(class="mt-auto flex items-center justify-between gap-3 pt-4")
-      div(class="flex items-center gap-2")
-        Badge(variant="success" v-if="set.completed" class="flex items-center gap-1 text-xs")
-          CheckCircle(:size="14")
-          span {{ $t('completed') }}
-
-      Button(:variant="buttonVariant" @click.prevent="onStart" :class="buttonClass")
-        component(:is="buttonIcon" :size="16")
+    div(class="mt-auto pt-4")
+      button(@click.prevent="onStart" :class="actionButtonClass")
+        span {{ buttonIcon }}
         span {{ buttonText }}
 </template>
 
 <script>
-import Button from "../ui/Button.vue";
-import Badge from "../ui/Badge.vue";
-import Progress from "../ui/Progress.vue";
-import { Play, RotateCcw, CheckCircle, Info } from 'lucide-vue-next';
-import SetDomain from '../../domain/Set.js';
-
 export default {
   name: 'SetCard',
-  components: {
-    Button,
-    Badge,
-    Progress,
-    Play,
-    RotateCcw,
-    CheckCircle,
-    Info,
-  },
   props: {
     set: { type: Object, required: true },
     isActive: { type: Boolean, default: false },
   },
   computed: {
-    statusDetails() {
-      const statusMap = {
-        mastery: { variant: 'success', icon: '⭐', text: this.$t('mastery') || 'Mastery' },
-        pass: { variant: 'warning', icon: '✓', text: this.$t('pass') || 'Pass' },
-        retry: { variant: 'danger', icon: '↻', text: this.$t('retry') || 'Retry' }
-      };
-      return statusMap[this.set.status] || statusMap.retry;
-    },
     totalPages() { return this.set.pages?.length || 0; },
     progress() {
       const completed = (this.set.completedPages || []).length;
       const percent = this.totalPages ? Math.round((completed / this.totalPages) * 100) : 0;
       return { completed, percent };
     },
-    hasProgress() {
-      return this.progress.completed > 0 && !this.set.completed;
+    hasProgress() { return this.progress.completed > 0 && this.set.status !== 'mastery' && this.set.status !== 'pass' && this.set.status !== 'retry'; },
+    starCount() {
+      if (this.set.status === 'mastery') return 3;
+      if (this.set.status === 'pass') return this.set.avgSecondsPerExercise && this.set.avgSecondsPerExercise <= (this.set.passCriteria?.maxAvgSecondsPerExercise || 8) ? 2 : 1;
+      if (this.set.status === 'retry') return 0;
+      return 0;
     },
-    speedTarget() {
-      const defaults = { maxAvgSecondsPerExercise: 6 };
-      const pc = { ...defaults, ...(this.set.passCriteria || {}) };
-      return pc.maxAvgSecondsPerExercise;
-    },
-    speedGaugeWidth() {
+    speedTarget() { return this.set.passCriteria?.maxAvgSecondsPerExercise || 8; },
+    speedColor() {
       const s = Number(this.set.avgSecondsPerExercise) || 0;
-      const maxS = Number(this.speedTarget) || 6;
-      const val = Math.max(0, Math.min(100, 100 * (1 - s / (maxS * 2))));
-      return Math.round(val);
+      if (s <= this.speedTarget) return 'text-kid-green';
+      if (s <= this.speedTarget * 1.3) return 'text-amber-500';
+      return 'text-kid-red';
     },
-    speedGaugeVariant() {
-      const s = Number(this.set.avgSecondsPerExercise) || 0;
-      const maxS = Number(this.speedTarget) || 6;
-      if (s <= maxS) return 'success';
-      if (s <= maxS * 1.2) return 'warning';
-      return 'danger';
-    },
-    statusVariant() { return this.statusDetails.variant; },
-    statusIcon() { return this.statusDetails.icon; },
-    statusText() { return this.statusDetails.text; },
-    buttonVariant() {
-      return this.isActive ? 'success' : 'primary';
-    },
-    buttonClass() {
-      return 'inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold shadow-md shadow-sky-900/40';
-    },
-    buttonIcon() {
-      return this.set.completed ? 'RotateCcw' : 'Play';
-    },
-    buttonText() {
-      return this.set.completed ? this.$t('restart') || 'Restart' : this.$t('start');
+    statusBorderColor() {
+      if (this.set.status === 'mastery') return 'border-l-kid-green';
+      if (this.set.status === 'pass') return 'border-l-amber-400';
+      if (this.set.status === 'retry') return 'border-l-kid-red';
+      return 'border-l-slate-200';
     },
     cardClass() {
-      const base = 'flex h-full flex-col gap-4 rounded-2xl border border-white/12 bg-slate-900/70 p-6 shadow-lg transition hover:-translate-y-1 hover:border-sky-400/40 hover:shadow-sky-900/30';
-      return this.isActive ? `${base} border-sky-400/50 bg-sky-500/10` : base;
+      const base = 'flex h-full flex-col gap-2 rounded-2xl border border-black/5 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md border-l-4';
+      const active = this.isActive ? ' ring-2 ring-kid-blue/40' : '';
+      const statusBorder = this.statusBorderColor;
+      return `${base} ${statusBorder}${active}`;
     },
-    duplicatePercent() {
-      const domain = new SetDomain(this.set);
-      return domain.duplicatePercent;
+    buttonText() { return this.set.attempts > 0 ? this.$t('restart') || 'Try Again' : this.$t('start') || 'Start'; },
+    buttonIcon() { return this.set.attempts > 0 ? '↺' : '▶'; },
+    actionButtonClass() {
+      const base = 'w-full flex items-center justify-center gap-2 rounded-2xl py-3 text-base font-bold transition shadow-sm';
+      if (this.set.status === 'mastery') return `${base} bg-kid-green text-white hover:opacity-90`;
+      if (this.set.attempts > 0) return `${base} bg-kid-blue text-white hover:opacity-90`;
+      return `${base} bg-kid-blue text-white hover:opacity-90`;
     },
-    duplicateTooltip() {
-      if (this.duplicatePercent === null || this.duplicatePercent === undefined) return '';
-      return `${this.duplicatePercent}% de duplicação`;
-    },
-    statusBadgeClass() {
-      return 'flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold';
-    },
-    gradeCircleClass() {
-      const base = 'flex h-16 w-16 items-center justify-center rounded-full text-sm font-bold text-white shadow-inner shadow-black/40';
-      const color = this.getGradeColor(this.set.gradePercent);
-      const palette = {
-        excellent: 'bg-emerald-500',
-        good: 'bg-sky-500',
-        average: 'bg-amber-400 text-slate-900',
-        poor: 'bg-rose-500',
-      };
-      return `${base} ${palette[color] || palette.poor}`;
-    }
   },
   methods: {
-    onStart() {
-      this.$emit('start', this.set);
-    },
-    getGradeColor(grade) {
-      if (grade >= 90) return 'excellent';
-      if (grade >= 80) return 'good';
-      if (grade >= 70) return 'average';
-      return 'poor';
-    }
+    onStart() { this.$emit('start', this.set); },
+    starClass(n) { return n <= this.starCount ? 'text-kid-gold' : 'text-slate-200'; },
   }
 };
 </script>
-
-
-
