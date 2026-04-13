@@ -13,9 +13,15 @@ Vue 3 (Options API) + Pug templates + Tailwind 3 + Vite + YAML exercises.
 - `src/components/` — Vue SFCs, all use `<template lang="pug">`
 - `src/services/` — Classes: `SetFactory`, `SetProcessor`, `SetStorage`, `ProfileStorage`, `GenericStorage`
 - `src/utils/` — Static utility classes: `Formatter`, `Scoring`, `ExerciseLayout`, `PageStatus`, `Focus`, `Streak`, `SubjectBranding`, `SpeedGauge`, `DisciplineRegistry`
-- `src/domain/` — Domain classes: `Discipline`, `Levels` (with `LevelRegistry` instances)
+- `src/domain/` — Domain classes: `Discipline`, `Levels` (with `LevelRegistry` instances), `SkillTree`
 - `src/discipline/` — `DisciplineManager`, `BaseDiscipline`, subject-specific subclasses
 - `src/levels/{subject}/{level}/set_XX.yaml` — Exercise content
+
+## Navigation modes
+
+Two modes under each subject tab:
+- **Campaign** (default): Strict sequential mastery-gated flow via `LevelRoadmap` + `LevelList`
+- **Themes**: Skill tree (`SkillTreeView`) — topics branch from prerequisites. Node unlocks when prereq topics have at least one mastery. Same YAML sets, different organization.
 
 ## Code patterns
 

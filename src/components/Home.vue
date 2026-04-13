@@ -29,48 +29,67 @@
       header(class="flex flex-wrap items-end justify-between gap-4")
         div(class="space-y-0.5")
           h2(class="text-2xl font-black" :style="{ color: subjectColor(activeDiscipline) }") {{ subjectLabel(activeDiscipline) }}
-          span(class="text-sm font-semibold text-kid-muted uppercase tracking-wide") {{ $t('levels') }}
-        div(class="text-sm font-semibold text-kid-muted" v-if="activeLevelBySubject[activeDiscipline]")
-          span {{ activeLevelLabel }}
-      div(class="mt-5")
-        LevelRoadmap(
-          :sequence="levelSequenceBySubject(activeDiscipline)"
-          :available="getAvailableLevels(activeDiscipline)"
-          :active="activeLevelBySubject[activeDiscipline] || ''"
-          :progressByLevel="{}"
-          :getLevelName="(id) => levelNameBySubject(activeDiscipline, id)"
-          @select="val => onLevelSelect(activeDiscipline, val)"
-        )
-      div(class="mt-6 space-y-3")
-        h3(class="text-lg font-bold text-kid-text") {{ setsHeader }}
-        div(v-if="isLoadingLevel && !filteredSets(activeDiscipline).length" class="flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-sm font-semibold text-kid-blue")
-          svg(class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none")
-            circle(cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" class="opacity-25")
-            path(d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" fill="currentColor" class="opacity-75")
-          span {{ $t('loading') || 'Loading...' }}
-        LevelList(
-          v-else
-          :sets="filteredSets(activeDiscipline)"
-          :activeSlug="activeSlugFor(activeDiscipline)"
-          @start="$emit('select-set', $event)"
-        )
+        div(class="flex gap-2")
+          button(:class="modeTabClass('campaign')" @click="mode = 'campaign'")
+            span 🗺
+            span {{ $t('campaign') || 'Campaign' }}
+          button(:class="modeTabClass('themes')" @click="mode = 'themes'")
+            span 🎯
+            span {{ $t('themes') || 'Themes' }}
+
+      //- Campaign mode (existing)
+      template(v-if="mode === 'campaign'")
+        div(class="mt-5")
+          LevelRoadmap(
+            :sequence="levelSequenceBySubject(activeDiscipline)"
+            :available="getAvailableLevels(activeDiscipline)"
+            :active="activeLevelBySubject[activeDiscipline] || ''"
+            :progressByLevel="{}"
+            :getLevelName="(id) => levelNameBySubject(activeDiscipline, id)"
+            @select="val => onLevelSelect(activeDiscipline, val)"
+          )
+        div(class="mt-6 space-y-3")
+          h3(class="text-lg font-bold text-kid-text") {{ setsHeader }}
+          div(v-if="isLoadingLevel && !filteredSets(activeDiscipline).length" class="flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-sm font-semibold text-kid-blue")
+            svg(class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none")
+              circle(cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" class="opacity-25")
+              path(d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" fill="currentColor" class="opacity-75")
+            span {{ $t('loading') || 'Loading...' }}
+          LevelList(
+            v-else
+            :sets="filteredSets(activeDiscipline)"
+            :activeSlug="activeSlugFor(activeDiscipline)"
+            @start="$emit('select-set', $event)"
+          )
+
+      //- Themes mode (skill tree)
+      SkillTreeView(
+        v-else
+        class="mt-5"
+        :subject="activeDiscipline"
+        :sets="allSetsForSubject(activeDiscipline)"
+        @start-set="$emit('select-set', $event)"
+        @load-levels="loadLevel"
+      )
 </template>
 
 <script>
 import LevelRoadmap from "./discipline/LevelRoadmap.vue";
 import LevelList from "./discipline/level/LevelList.vue";
+import SkillTreeView from "./discipline/SkillTreeView.vue";
 import { Discipline } from "../domain/disciplines.js";
 import { Levels } from "../domain/levels.js";
 import { SubjectBranding } from "../utils/SubjectBranding.js";
 import { Formatter } from "../utils/Formatter.js";
 export default {
   name: "Home",
-  components: { LevelRoadmap, LevelList },
+  components: { LevelRoadmap, LevelList, SkillTreeView },
   emits: ['select-set', 'level-selected'],
   data() {
     return {
       activeLevelBySubject: {},
       activeDiscipline: null,
+      mode: 'campaign',
     };
   },
   props: {
@@ -149,6 +168,17 @@ export default {
     },
     subjectIcon(s) { return SubjectBranding.icon(s); },
     subjectColor(s) { return SubjectBranding.color(s); },
+    modeTabClass(m) {
+      const base = 'flex items-center gap-1.5 rounded-2xl px-4 py-2 text-sm font-bold transition-all duration-200 border-2 active:scale-95';
+      if (this.mode === m) return `${base} border-kid-blue bg-kid-blue/10 text-kid-blue shadow-sm`;
+      return `${base} border-transparent text-kid-muted hover:text-kid-text hover:bg-kid-bg`;
+    },
+    allSetsForSubject(subject) {
+      return (this.groupedBySubject[subject] || []);
+    },
+    async loadLevel(level) {
+      this.$emit('level-selected', this.activeDiscipline, level);
+    },
     parseHashFromRoute() {
       const hash = this.$route?.hash;
       if (!hash || hash.length <= 1) return null;

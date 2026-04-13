@@ -106,6 +106,9 @@ export const en = {
   close: "Close",
   print: "Print",
   unlockHint: "Keep going to unlock!",
+  campaign: "Campaign",
+  themes: "Themes",
+  needs: "Needs",
 };
 
 

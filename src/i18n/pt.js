@@ -106,5 +106,8 @@ export const pt = {
   close: "Fechar",
   print: "Imprimir",
   unlockHint: "Continue para desbloquear!",
+  campaign: "Campanha",
+  themes: "Temas",
+  needs: "Precisa",
 };
 
