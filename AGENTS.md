@@ -2,6 +2,8 @@
 
 Mastery-based learning app for kids (ages 5-12). Math, Portuguese, English.
 
+> **Self-update rule:** After any session that changes architecture, patterns, file structure, or conventions — update this file to reflect the current state before finishing.
+
 ## Stack
 
 Vue 3 (Options API) + Pug templates + Tailwind 3 + Vite + YAML exercises.
