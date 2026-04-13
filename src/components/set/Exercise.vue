@@ -77,10 +77,10 @@ export default {
     inputClass() {
       const base = "w-full rounded-2xl border-4 px-4 py-4 text-xl font-bold placeholder:text-kid-muted/40 focus:outline-none focus:ring-0 pr-12 transition-all duration-300";
       if (this.hasAnswer && !this.isEditing) return `${base} border-kid-green bg-kid-green/5 text-kid-text shadow-md green-glow`;
-      return `${base} border-black/10 bg-white text-kid-text focus:border-kid-blue focus:shadow-lg focus:blue-glow shadow-sm`;
+      return `${base} border-black/10 bg-kid-surface text-kid-text focus:border-kid-blue focus:shadow-lg focus:blue-glow shadow-sm`;
     },
     cardClass() {
-      const base = 'space-y-2 rounded-2xl border-2 bg-white p-4 shadow-sm transition-all duration-300';
+      const base = 'space-y-2 rounded-2xl border-2 bg-kid-surface p-4 shadow-sm transition-all duration-300';
       if (this.isReadOnly) {
         return this.isCorrect ? `${base} border-kid-green/30 bg-kid-green/5` : `${base} border-kid-red/30 bg-kid-red/5`;
       }

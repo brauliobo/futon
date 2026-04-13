@@ -1,7 +1,7 @@
 <template lang="pug">
   div(class="relative py-4")
     button(
-      class="absolute left-2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-black/8 bg-white text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-kid-bg hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
+      class="absolute left-2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-black/8 bg-kid-surface text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-kid-bg hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollLeft"
       :disabled="!canScrollLeft"
       v-show="showLeftArrow"
@@ -16,7 +16,7 @@
         )
           div(v-if="!isSetAvailable(index)" class="relative")
             SetCard(:set="set" :is-active="false" class="opacity-50 pointer-events-none")
-            div(class="absolute inset-0 flex flex-col items-center justify-center rounded-2xl bg-white/60 backdrop-blur-[2px] cursor-default")
+            div(class="absolute inset-0 flex flex-col items-center justify-center rounded-2xl overlay-bg backdrop-blur-[2px] cursor-default")
               span(class="text-4xl animate-bounce-in") 🔒
               span(class="mt-1.5 text-xs font-bold text-kid-muted text-center px-3") {{ $t('unlockHint') || 'Keep going to unlock!' }}
           SetCard(
@@ -26,7 +26,7 @@
             @start="$emit('start', $event)"
           )
     button(
-      class="absolute right-2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-black/8 bg-white text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-kid-bg hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
+      class="absolute right-2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-black/8 bg-kid-surface text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-kid-bg hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollRight"
       :disabled="!canScrollRight"
       v-show="showRightArrow"

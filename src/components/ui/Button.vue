@@ -39,7 +39,7 @@ export default {
         danger:           'bg-kid-red border-kid-red text-white hover:opacity-90',
         warning:          'bg-amber-400 border-amber-400 text-white hover:opacity-90',
         info:             'bg-kid-blue border-kid-blue text-white hover:opacity-90',
-        light:            'bg-white border-black/10 text-kid-text hover:border-kid-blue/40',
+        light:            'bg-kid-surface border-black/10 text-kid-text hover:border-kid-blue/40',
         dark:             'bg-kid-text border-kid-text text-white hover:opacity-90',
         link:             'border-transparent bg-transparent text-kid-blue hover:opacity-70',
         'outline-primary':'border-kid-blue text-kid-blue hover:bg-kid-blue/10',

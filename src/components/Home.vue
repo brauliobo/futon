@@ -25,7 +25,7 @@
       )
         span(class="text-xl") {{ subjectIcon(subject) }}
         span(class="text-base font-bold capitalize") {{ subjectLabel(subject) }}
-    section(v-if="activeDiscipline" class="rounded-3xl border border-black/5 bg-white shadow-sm p-6")
+    section(v-if="activeDiscipline" class="rounded-3xl border border-black/5 bg-kid-surface shadow-sm p-6")
       header(class="flex flex-wrap items-end justify-between gap-4")
         div(class="space-y-0.5")
           h2(class="text-2xl font-black" :style="{ color: subjectColor(activeDiscipline) }") {{ subjectLabel(activeDiscipline) }}
@@ -145,7 +145,7 @@ export default {
         const colors = { math: 'bg-kid-blue text-white border-kid-blue shadow-lg shadow-kid-blue/30', portuguese: 'bg-kid-green text-white border-kid-green shadow-lg shadow-kid-green/30', english: 'bg-orange-400 text-white border-orange-400 shadow-lg shadow-orange-300/40' };
         return `${base} ${colors[subject] || 'bg-kid-blue text-white border-kid-blue shadow-lg'} scale-[1.02]`;
       }
-      return `${base} bg-white text-kid-muted border-black/8 shadow-sm hover:border-kid-blue/40 hover:text-kid-blue hover:-translate-y-0.5 hover:shadow-md`;
+      return `${base} bg-kid-surface text-kid-muted border-black/8 shadow-sm hover:border-kid-blue/40 hover:text-kid-blue hover:-translate-y-0.5 hover:shadow-md`;
     },
     subjectIcon(s) { return SubjectBranding.icon(s); },
     subjectColor(s) { return SubjectBranding.color(s); },

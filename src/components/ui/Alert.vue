@@ -28,7 +28,7 @@ export default {
         danger: 'border-kid-red/30 bg-kid-red/10 text-kid-red',
         warning: 'border-amber-400/40 bg-amber-50 text-amber-700',
         info: 'border-kid-blue/30 bg-kid-blue/10 text-kid-blue',
-        light: 'border-black/8 bg-white text-kid-text',
+        light: 'border-black/8 bg-kid-surface text-kid-text',
         dark: 'border-black/20 bg-kid-text text-white'
       };
       return [base, palette[this.variant] || palette.info].join(' ');

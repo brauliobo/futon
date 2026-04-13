@@ -21,10 +21,10 @@
         ) ★
 
       div(class="grid grid-cols-2 gap-3 mt-2")
-        div(class="rounded-2xl bg-white/80 border border-black/5 p-3 animate-slide-up" style="animation-delay:0.2s")
+        div(class="rounded-2xl bg-kid-surface border border-black/5 p-3 animate-slide-up" style="animation-delay:0.2s")
           p(class="text-xs font-semibold text-kid-muted mb-1") {{ $t('finalScore') || 'Score' }}
           p(class="text-2xl font-black text-kid-text") {{ correct }}/{{ total }}
-        div(class="rounded-2xl bg-white/80 border border-black/5 p-3 animate-slide-up" style="animation-delay:0.25s")
+        div(class="rounded-2xl bg-kid-surface border border-black/5 p-3 animate-slide-up" style="animation-delay:0.25s")
           p(class="text-xs font-semibold text-kid-muted mb-1") {{ $t('grade') || 'Grade' }}
           p(class="text-2xl font-black" :class="gradeColor") {{ gradePercent }}%
 
@@ -71,7 +71,7 @@ export default {
         mastery: 'border-kid-green/40 bg-gradient-to-b from-kid-green/10 to-kid-green/5',
         pass:    'border-amber-300/40 bg-gradient-to-b from-amber-50 to-amber-50/50',
         retry:   'border-kid-red/20 bg-gradient-to-b from-red-50 to-red-50/50',
-      }[this.status] || 'border-black/5 bg-white';
+      }[this.status] || 'border-black/5 bg-kid-surface';
     },
     titleColor() {
       return { mastery: 'text-kid-green', pass: 'text-amber-500', retry: 'text-kid-red' }[this.status] || 'text-kid-text';

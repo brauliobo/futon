@@ -1,7 +1,7 @@
 <template lang="pug">
   div(class="relative flex items-center overflow-hidden py-2")
     button(
-      class="absolute left-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-black/8 bg-white text-lg font-bold text-kid-text shadow-sm transition hover:bg-kid-bg disabled:opacity-30 disabled:cursor-not-allowed"
+      class="absolute left-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-black/8 bg-kid-surface text-lg font-bold text-kid-text shadow-sm transition hover:bg-kid-bg disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollLeft"
       :disabled="!canScrollLeft"
       v-show="showLeftArrow"
@@ -23,7 +23,7 @@
             p(:class="nameClass(lvl)") {{ getName(lvl) }}
           Progress(:value="progressPercent(lvl)" height="6px" variant="success")
     button(
-      class="absolute right-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-black/8 bg-white text-lg font-bold text-kid-text shadow-sm transition hover:bg-kid-bg disabled:opacity-30 disabled:cursor-not-allowed"
+      class="absolute right-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-black/8 bg-kid-surface text-lg font-bold text-kid-text shadow-sm transition hover:bg-kid-bg disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollRight"
       :disabled="!canScrollRight"
       v-show="showRightArrow"
@@ -87,7 +87,7 @@ export default {
   methods: {
     progressPercent(key){ const p = this.progressByLevel[key]; return p && Number.isFinite(p.percent) ? p.percent : 0; },
     cardClass(lvl) {
-      const base = 'flex min-w-[150px] max-w-[180px] snap-center cursor-pointer rounded-2xl border-2 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg';
+      const base = 'flex min-w-[150px] max-w-[180px] snap-center cursor-pointer rounded-2xl border-2 bg-kid-surface transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg';
       const state = [];
       if (lvl === this.active) state.push('border-kid-blue bg-kid-blue/5 shadow-md blue-glow');
       else state.push('border-black/8 shadow-sm hover:border-kid-blue/40');

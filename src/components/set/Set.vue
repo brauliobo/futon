@@ -1,7 +1,7 @@
 <!-- src/components/set/Set.vue -->
 <template lang="pug">
   div(class="set mb-2 space-y-4")
-    div(class="rounded-3xl border border-black/5 bg-white shadow-sm")
+    div(class="rounded-3xl border border-black/5 bg-kid-surface shadow-sm")
       div(class="px-5 py-5")
         div(v-if="currentPage && !isSubmitted" class="space-y-4")
           PageHeader(
@@ -36,7 +36,7 @@
             @next-set="$emit('next-set')"
           )
           div(class="flex gap-3")
-            button(@click="$emit('go-home')" class="flex-1 flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold bg-white border-2 border-black/10 text-kid-text hover:border-kid-blue/40 hover:shadow-sm transition-all active:scale-95") ← {{ $t('back') }}
+            button(@click="$emit('go-home')" class="flex-1 flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold bg-kid-surface border-2 border-black/10 text-kid-text hover:border-kid-blue/40 hover:shadow-sm transition-all active:scale-95") ← {{ $t('back') }}
             button(@click="resetSet" class="flex-1 flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold bg-kid-bg border-2 border-black/10 text-kid-text hover:border-kid-blue/40 hover:shadow-sm transition-all active:scale-95") ↺ {{ $t('restart') }}
           HistorySparkline(v-if="set.history?.length" :history="set.history")
           div(class="border-t border-black/5 pt-4 space-y-3")

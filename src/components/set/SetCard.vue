@@ -55,7 +55,7 @@ export default {
       return 'text-kid-red';
     },
     cardClass() {
-      const base = 'flex h-full flex-col gap-2 rounded-2xl border bg-white p-5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg border-l-[6px]';
+      const base = 'flex h-full flex-col gap-2 rounded-2xl border bg-kid-surface p-5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg border-l-[6px]';
       const borders = { mastery: 'border-l-kid-green shadow-md', pass: 'border-l-amber-400 shadow-sm', retry: 'border-l-kid-red shadow-sm' };
       const border = borders[this.set.status] || 'border-l-black/10 shadow-sm';
       const ring = this.isActive ? ' ring-2 ring-kid-blue/40 ring-offset-2' : '';

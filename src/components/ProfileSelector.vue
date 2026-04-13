@@ -10,7 +10,7 @@
           v-for="(profile, i) in profiles"
           :key="profile.id"
           @click="selectProfile(profile)"
-          class="w-full flex items-center gap-4 rounded-2xl border-2 border-black/8 bg-white p-5 shadow-sm transition-all duration-200 hover:border-kid-blue/40 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.01] active:scale-95 animate-slide-up"
+          class="w-full flex items-center gap-4 rounded-2xl border-2 border-black/8 bg-kid-surface p-5 shadow-sm transition-all duration-200 hover:border-kid-blue/40 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.01] active:scale-95 animate-slide-up"
           :style="{ animationDelay: (i * 0.08) + 's' }"
         )
           span(class="text-5xl") {{ profile.avatar }}
@@ -27,7 +27,7 @@
           input(
             v-model="newName"
             :placeholder="$t('enterName') || 'Enter name...'"
-            class="w-full rounded-2xl border-4 border-kid-blue/30 bg-white px-4 py-3.5 text-xl font-bold text-kid-text placeholder:text-kid-muted/40 focus:outline-none focus:border-kid-blue focus:shadow-lg focus:blue-glow transition-all"
+            class="w-full rounded-2xl border-4 border-kid-blue/30 bg-kid-surface px-4 py-3.5 text-xl font-bold text-kid-text placeholder:text-kid-muted/40 focus:outline-none focus:border-kid-blue focus:shadow-lg focus:blue-glow transition-all"
             @keydown.enter.prevent="createProfile"
             ref="nameInput"
             autofocus

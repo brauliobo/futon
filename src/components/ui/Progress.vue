@@ -57,7 +57,7 @@ export default {
         danger: 'bg-kid-red',
         warning: 'bg-amber-400',
         info: 'bg-kid-blue',
-        light: 'bg-white/80 text-kid-text',
+        light: 'bg-kid-surface text-kid-text',
         dark: 'bg-kid-text'
       };
       const heightClass = this.height ? '' : 'h-full';

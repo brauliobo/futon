@@ -46,7 +46,7 @@ export default {
   },
   computed: {
     cardClass() {
-      const base = 'group relative flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white';
+      const base = 'group relative flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-kid-surface';
       const shadows = this.shadow ? 'shadow-md' : 'shadow-sm';
       const padding = this.hasBody ? '' : 'p-5';
       return [base, shadows, padding, this.height === 'h-100' ? 'h-full' : '', this.variantClass].filter(Boolean).join(' ');
@@ -69,7 +69,7 @@ export default {
         danger: 'border-kid-red/30 bg-kid-red/5',
         warning: 'border-amber-400/40 bg-amber-50',
         info: 'border-kid-blue/30 bg-kid-blue/5',
-        light: 'border-black/8 bg-white',
+        light: 'border-black/8 bg-kid-surface',
         dark: 'border-black/20 bg-kid-text text-white'
       };
       return palette[this.variant] || '';

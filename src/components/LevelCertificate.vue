@@ -1,6 +1,6 @@
 <template lang="pug">
   div(data-testid="certificate-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4" @click.self="$emit('close')")
-    div(class="certificate relative w-full max-w-lg rounded-3xl bg-white border-4 border-kid-gold shadow-2xl p-8 text-center space-y-4 animate-bounce-in overflow-hidden")
+    div(class="certificate relative w-full max-w-lg rounded-3xl bg-kid-surface border-4 border-kid-gold shadow-2xl p-8 text-center space-y-4 animate-bounce-in overflow-hidden")
       //- Confetti
       div(class="absolute inset-0 pointer-events-none overflow-hidden")
         span(
