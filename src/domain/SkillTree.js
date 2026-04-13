@@ -45,6 +45,7 @@ export class SkillTree {
   }
 
   static nodeProgress(node, setsByLevel) {
+    if (!node.levels?.length) return { total: 0, mastered: 0, percent: 0 };
     let total = 0, mastered = 0;
     node.levels.forEach(lvl => {
       const sets = setsByLevel[lvl] || [];
@@ -61,14 +62,17 @@ export class SkillTree {
     });
   }
 
-  // Compute depth (distance from root) for layout
-  static depth(node, tree, memo = {}) {
+  // Compute depth (distance from root) for layout; cycle-safe via visiting set
+  static depth(node, tree, memo = {}, visiting = new Set()) {
     if (memo[node.id] !== undefined) return memo[node.id];
+    if (visiting.has(node.id)) return 0; // cycle detected — treat as root
     if (!node.prereqs.length) { memo[node.id] = 0; return 0; }
+    visiting.add(node.id);
     const d = 1 + Math.max(...node.prereqs.map(pid => {
       const p = tree.find(n => n.id === pid);
-      return p ? this.depth(p, tree, memo) : 0;
+      return p ? this.depth(p, tree, memo, visiting) : 0;
     }));
+    visiting.delete(node.id);
     memo[node.id] = d;
     return d;
   }

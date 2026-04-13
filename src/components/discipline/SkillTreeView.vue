@@ -19,17 +19,18 @@
           @select="onSelectNode"
         )
 
-    //- Set list for active node
-    div(v-if="activeNode && activeSets.length" class="mt-4 animate-slide-up")
-      h3(class="text-lg font-black text-kid-text mb-3")
-        span {{ activeNode.icon }}
-        |  {{ activeNode.name }}
-      LevelList(
-        :sets="activeSets"
-        :activeSlug="activeSlug"
-        @start="$emit('start-set', $event)"
-      )
-    div(v-else-if="activeNode && !activeSets.length" class="mt-4 flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-sm font-semibold text-kid-blue animate-slide-up")
+    //- Set list for active node — visually separated card
+    div(v-if="activeNode && activeSets.length" class="mt-6 pt-6 border-t-2 border-dashed border-black/10 animate-slide-up")
+      div(class="rounded-3xl bg-kid-blue/5 border border-kid-blue/20 p-5")
+        h3(class="text-lg font-black text-kid-text mb-3 flex items-center gap-2")
+          span(class="text-2xl") {{ activeNode.icon }}
+          span {{ activeNode.name }}
+        LevelList(
+          :sets="activeSets"
+          :activeSlug="activeSlug"
+          @start="$emit('start-set', $event)"
+        )
+    div(v-else-if="activeNode && hasLoadableLevels && !activeSets.length" class="mt-6 flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-sm font-semibold text-kid-blue animate-slide-up")
       svg(class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none")
         circle(cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" class="opacity-25")
         path(d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" fill="currentColor" class="opacity-75")
@@ -74,6 +75,7 @@ export default {
       const first = this.activeSets.find(s => s.status !== 'mastery') || this.activeSets[0];
       return first ? Formatter.slugify(first.title) : '';
     },
+    hasLoadableLevels() { return !!this.activeNode?.levels?.length; },
   },
   watch: {
     subject() { this.activeNodeId = null; },

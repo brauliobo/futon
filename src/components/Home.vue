@@ -89,7 +89,7 @@ export default {
     return {
       activeLevelBySubject: {},
       activeDiscipline: null,
-      mode: 'campaign',
+      mode: localStorage.getItem('futon_active_mode') || 'campaign',
     };
   },
   props: {
@@ -243,7 +243,8 @@ export default {
   watch: {
     lastSelected(val) {
       if (val && val.subject) this.activeLevelBySubject[val.subject] = String(val.level || '').toUpperCase();
-    }
+    },
+    mode(val) { localStorage.setItem('futon_active_mode', val); },
   },
   computed: {
     availableSubjects() {

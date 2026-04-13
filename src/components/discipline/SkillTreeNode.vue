@@ -2,7 +2,9 @@
   button(
     :class="nodeClass"
     :disabled="!isUnlocked"
-    @click="isUnlocked && $emit('select', node)"
+    :aria-label="ariaLabel"
+    :title="isUnlocked ? node.name : ($t('needs') || 'Needs') + ': ' + prereqNames"
+    @click="$emit('select', node)"
   )
     div(class="flex items-center gap-3")
       span(class="text-2xl") {{ isUnlocked ? node.icon : '🔒' }}
@@ -29,6 +31,11 @@ export default {
     prereqNames: { type: String, default: '' },
   },
   computed: {
+    ariaLabel() {
+      if (!this.isUnlocked) return `${this.node.name} (locked) — requires ${this.prereqNames}`;
+      if (this.isComplete) return `${this.node.name} — complete, ${this.progress.percent}%`;
+      return `${this.node.name} — ${this.progress.mastered} of ${this.progress.total} sets mastered`;
+    },
     starCount() {
       if (this.progress.percent === 100) return 3;
       if (this.progress.percent >= 50) return 2;
