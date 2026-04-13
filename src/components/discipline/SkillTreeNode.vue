@@ -7,12 +7,12 @@
     @click="$emit('select', node)"
   )
     div(class="flex items-center gap-3")
-      span(class="text-2xl") {{ isUnlocked ? node.icon : '🔒' }}
-      div(class="flex-1 text-left")
-        p(class="text-base font-black leading-tight") {{ node.name }}
-        p(v-if="!isUnlocked" class="text-xs font-semibold text-kid-muted mt-0.5") {{ $t('needs') || 'Needs' }}: {{ prereqNames }}
+      span(class="text-2xl flex-shrink-0") {{ isUnlocked ? node.icon : '🔒' }}
+      div(class="flex-1 text-left min-w-0")
+        p(class="text-base font-black leading-tight truncate") {{ node.name }}
+        p(v-if="!isUnlocked" class="text-xs font-semibold text-kid-muted mt-0.5 truncate") {{ $t('needs') || 'Needs' }}: {{ prereqNames }}
         p(v-else class="text-xs font-bold mt-0.5" :class="isComplete ? 'text-kid-green' : 'text-kid-muted'") {{ progress.mastered }}/{{ progress.total }} {{ $t('sets') }}
-      div(class="flex flex-col items-end gap-1")
+      div(class="flex flex-col items-end gap-1 flex-shrink-0")
         div(v-if="isUnlocked" class="flex gap-0.5")
           span(v-for="n in 3" :key="n" :class="n <= starCount ? 'text-kid-gold star-glow' : 'text-black/10'" class="text-lg leading-none") ★
         span(v-if="isUnlocked && progress.percent > 0" class="text-xs font-black" :class="isComplete ? 'text-kid-green' : 'text-kid-blue'") {{ progress.percent }}%

@@ -1,8 +1,16 @@
 <template lang="pug">
   div(data-testid="profile-selector" class="min-h-screen bg-gradient-to-b from-kid-bg to-kid-blue/5 flex flex-col items-center justify-center p-6")
-    div(class="w-full max-w-md space-y-6 animate-bounce-in")
-      div(class="text-center space-y-2")
-        h1(class="text-5xl font-black text-kid-blue animate-wiggle") ✏️ Futon
+    //- Floating decorative emojis
+    div(class="fixed inset-0 pointer-events-none overflow-hidden")
+      span(class="absolute top-[10%] left-[8%] text-5xl opacity-20 animate-wiggle") 📚
+      span(class="absolute top-[18%] right-[12%] text-5xl opacity-20 animate-wiggle" style="animation-delay:0.3s") ⭐
+      span(class="absolute bottom-[14%] left-[15%] text-5xl opacity-20 animate-wiggle" style="animation-delay:0.6s") 🎯
+      span(class="absolute bottom-[10%] right-[10%] text-5xl opacity-20 animate-wiggle" style="animation-delay:0.9s") 🚀
+
+    div(class="w-full max-w-md space-y-6 animate-bounce-in relative")
+      div(class="text-center space-y-3")
+        div(class="text-6xl") ✏️
+        h1(class="text-5xl font-black text-kid-blue") Futon
         p(class="text-lg font-semibold text-kid-muted") {{ $t('whoIsLearning') }}
 
       div(class="space-y-3")

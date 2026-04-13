@@ -1,12 +1,21 @@
 <template lang="pug">
-  div(class="space-y-3")
-    //- Tree rows
+  div(class="space-y-0")
+    //- Tree rows with branching connectors
     div(v-for="(row, rowIdx) in treeRows" :key="rowIdx" class="animate-slide-up" :style="{ animationDelay: (rowIdx * 0.05) + 's' }")
-      //- Connector line from previous row
-      div(v-if="rowIdx > 0" class="flex justify-center py-1")
-        div(class="w-0.5 h-4 bg-black/10 rounded-full")
-      //- Nodes in this row
-      div(class="grid gap-3" :class="row.length > 1 ? 'grid-cols-2' : 'grid-cols-1'")
+      //- Connector: fork line that branches from previous row
+      div(v-if="rowIdx > 0" class="relative h-6 flex items-stretch justify-center")
+        //- Vertical trunk
+        div(class="absolute left-1/2 top-0 bottom-1/2 w-1 -translate-x-1/2 rounded-full" :class="rowLineClass(rowIdx - 1)")
+        //- Horizontal branch (only if previous row has 1 node splitting to multiple)
+        div(v-if="treeRows[rowIdx - 1].length === 1 && row.length > 1" class="absolute top-1/2 h-1 rounded-full left-1/4 right-1/4" :class="rowLineClass(rowIdx - 1)")
+        //- Vertical drops into each node in this row
+        div(v-if="row.length > 1" class="absolute top-1/2 bottom-0 w-1 rounded-full" :class="rowLineClass(rowIdx)" style="left: 25%; transform: translateX(-50%);")
+        div(v-if="row.length > 1" class="absolute top-1/2 bottom-0 w-1 rounded-full" :class="rowLineClass(rowIdx)" style="left: 75%; transform: translateX(-50%);")
+        //- Single trunk continues if same width
+        div(v-if="row.length === 1 || treeRows[rowIdx - 1].length === row.length" class="absolute left-1/2 top-1/2 bottom-0 w-1 -translate-x-1/2 rounded-full" :class="rowLineClass(rowIdx)")
+
+      //- Nodes in this row — single column on mobile, side-by-side on sm+
+      div(class="grid gap-3" :class="row.length > 1 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 max-w-md mx-auto'")
         SkillTreeNode(
           v-for="node in row"
           :key="node.id"
@@ -81,6 +90,12 @@ export default {
     subject() { this.activeNodeId = null; },
   },
   methods: {
+    // Green if all nodes in that row are unlocked, gray otherwise
+    rowLineClass(rowIdx) {
+      const row = this.treeRows[rowIdx] || [];
+      const allUnlocked = row.length && row.every(n => this.isNodeUnlocked(n));
+      return allUnlocked ? 'bg-kid-green/40' : 'bg-black/10';
+    },
     isNodeUnlocked(node) { return SkillTree.isUnlocked(node, this.tree, this.setsByLevel); },
     isNodeComplete(node) { return SkillTree.isComplete(node, this.setsByLevel); },
     getNodeProgress(node) { return SkillTree.nodeProgress(node, this.setsByLevel); },

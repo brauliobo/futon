@@ -75,7 +75,7 @@ export default {
       return (this.setInputType === 'number' || (this.setInputType === 'auto' && typeof this.exercise.correctAnswer === 'number')) ? 'decimal' : 'text';
     },
     inputClass() {
-      const base = "w-full rounded-2xl border-4 px-4 py-4 text-xl font-bold placeholder:text-kid-muted/40 focus:outline-none focus:ring-0 pr-12 transition-all duration-300";
+      const base = "w-full rounded-2xl border-4 px-4 py-4 text-xl font-bold placeholder:text-sm placeholder:font-semibold placeholder:text-kid-muted/50 focus:outline-none focus:ring-0 pr-12 transition-all duration-300";
       if (this.hasAnswer && !this.isEditing) return `${base} border-kid-green bg-kid-green/5 text-kid-text shadow-md green-glow`;
       return `${base} border-black/10 bg-kid-surface text-kid-text focus:border-kid-blue focus:shadow-lg focus:blue-glow shadow-sm`;
     },
