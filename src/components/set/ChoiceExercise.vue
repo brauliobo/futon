@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { normalizeAnswer } from '../../utils/formatting.js';
+import { Formatter } from '../../utils/Formatter.js';
 export default {
   name: 'ChoiceExercise',
   emits: ['update-answer', 'next-exercise'],
@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     selected() { return this.exercise.answer || ''; },
-    isCorrect() { return normalizeAnswer(this.selected) === normalizeAnswer(this.exercise.correctAnswer); },
+    isCorrect() { return Formatter.normalizeAnswer(this.selected) === Formatter.normalizeAnswer(this.exercise.correctAnswer); },
     cardClass() {
       const base = 'space-y-2 rounded-2xl border-2 bg-white p-4 shadow-sm transition-all duration-300';
       if (this.isReadOnly) return this.isCorrect ? `${base} border-kid-green/30 bg-kid-green/5` : `${base} border-kid-red/30 bg-kid-red/5`;
@@ -63,8 +63,8 @@ export default {
     },
     reviewChoiceClass(choice) {
       const base = 'rounded-2xl border-2 px-4 py-3 text-base font-bold transition-all';
-      const isAnswer = normalizeAnswer(choice) === normalizeAnswer(this.exercise.correctAnswer);
-      const isSelected = normalizeAnswer(choice) === normalizeAnswer(this.selected);
+      const isAnswer = Formatter.normalizeAnswer(choice) === Formatter.normalizeAnswer(this.exercise.correctAnswer);
+      const isSelected = Formatter.normalizeAnswer(choice) === Formatter.normalizeAnswer(this.selected);
       if (isAnswer) return `${base} border-kid-green bg-kid-green/10 text-kid-text shadow-md`;
       if (isSelected && !isAnswer) return `${base} border-kid-red bg-kid-red/10 text-kid-red line-through`;
       return `${base} border-black/8 bg-white text-kid-muted`;

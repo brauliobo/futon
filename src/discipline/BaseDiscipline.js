@@ -1,4 +1,4 @@
-import { importSetsForLevel, getDisciplineMetadata } from "../utils/dynamicImports.js";
+import { DisciplineRegistry } from "../utils/DisciplineRegistry.js";
 
 export class BaseDiscipline {
   constructor(name, availableLevels, withMeta) {
@@ -11,7 +11,7 @@ export class BaseDiscipline {
 
   async ensureLevelLoaded(level) {
     if (this.loadedLevels.has(level)) return;
-    const rawSets = await importSetsForLevel(this.name, level);
+    const rawSets = await DisciplineRegistry.importLevel(this.name, level);
     const sets = rawSets.map(w => this.withMeta(w.set));
     this.loadedLevels.set(level, sets);
   }

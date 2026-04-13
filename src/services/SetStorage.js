@@ -1,7 +1,7 @@
 // src/services/SetStorage.js
 import { GenericStorage } from "./GenericStorage.js";
 import { ProfileStorage } from "./ProfileStorage.js";
-import { slugify } from "../utils/slugify.js";
+import { Formatter } from "../utils/Formatter.js";
 
 export class SetStorage extends GenericStorage {
   constructor(profileId = 'default') { super(ProfileStorage.storageKeyFor(profileId)); }
@@ -243,7 +243,7 @@ export class SetStorage extends GenericStorage {
     return levels[0]?.level;
   }
 
-  slugOf(wb) { return slugify(wb?.title); }
+  slugOf(wb) { return Formatter.slugify(wb?.title); }
 
   getTimer(setTitle) {
     const data = this.load();

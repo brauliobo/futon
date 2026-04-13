@@ -2,25 +2,25 @@
 <template lang="pug">
   div(class="grid gap-3 sm:gap-4 grid-cols-1 md:grid-cols-2")
     template(v-for="(pair, rowIndex) in exercisePairs" :key="'row-' + rowIndex")
-      div(v-for="(exercise, colIndex) in pair" :key="'exercise-' + getExerciseIndex(rowIndex, colIndex)" class="space-y-4")
+      div(v-for="(exercise, colIndex) in pair" :key="'exercise-' + getIndex(rowIndex, colIndex)" class="space-y-4")
         Exercise(
           v-if="exercise"
           :exercise="exercise"
-          :exerciseNumber="displayNumber(getExerciseIndex(rowIndex, colIndex))"
-          :isEnabled="isExerciseEnabled(getExerciseIndex(rowIndex, colIndex))"
+          :exerciseNumber="displayNumber(getIndex(rowIndex, colIndex))"
+          :isEnabled="isExerciseEnabled(getIndex(rowIndex, colIndex))"
           :isSubmitted="isSubmitted"
           :isReadOnly="isReadOnly"
           :setInputType="setInputType"
-          @update-answer="(payload) => handleUpdateAnswer(getExerciseIndex(rowIndex, colIndex), payload)"
-          @next-exercise="focusNextExercise(getExerciseIndex(rowIndex, colIndex))"
+          @update-answer="(payload) => handleUpdateAnswer(getIndex(rowIndex, colIndex), payload)"
+          @next-exercise="focusNextExercise(getIndex(rowIndex, colIndex))"
           ref="exercises"
         )
 </template>
 
 <script>
 import Exercise from "./Exercise.vue";
-import { createExercisePairs, getExerciseIndex, logicalIndexToRefIndex } from "../../utils/exerciseHelpers.js";
-import { safeFocus } from "../../utils/focusHelpers.js";
+import { ExerciseLayout } from "../../utils/ExerciseLayout.js";
+import { Focus } from "../../utils/Focus.js";
 
 export default {
   name: "ExerciseList",
@@ -56,13 +56,13 @@ export default {
   emits: ['update-answer', 'next-exercise'],
   computed: {
     exercisePairs() {
-      return createExercisePairs(this.exercises);
+      return ExerciseLayout.createPairs(this.exercises);
     },
   },
   methods: {
     // Index calculations
-    getExerciseIndex(rowIndex, colIndex) {
-      return getExerciseIndex(rowIndex, colIndex, this.exercises.length);
+    getIndex(rowIndex, colIndex) {
+      return ExerciseLayout.exerciseIndex(rowIndex, colIndex, this.exercises.length);
     },
     displayNumber(originalIndex) {
       const pos = this.orderIndices.indexOf(originalIndex);
@@ -95,7 +95,7 @@ export default {
         
         this.exerciseRefsMap = [];
         for (let i = 0; i < this.exercises.length; i++) {
-          const refIndex = logicalIndexToRefIndex(i, this.exercises.length);
+          const refIndex = ExerciseLayout.logicalToRef(i, this.exercises.length);
           if (refIndex < list.length) {
             this.exerciseRefsMap[i] = list[refIndex];
           }
@@ -105,7 +105,7 @@ export default {
     focusNextExercise(currentIndex) {
       const idx = this.nextIndexInTraversal(currentIndex);
       if (idx === null) return;
-      safeFocus(() => {
+      Focus.safe(() => {
         const exerciseComponent = this.exerciseRefsMap[idx];
         if (exerciseComponent?.focus) {
           exerciseComponent.focus();
@@ -113,7 +113,7 @@ export default {
       });
     },
     focusFirstUnanswered() {
-      safeFocus(() => {
+      Focus.safe(() => {
         this.updateExerciseRefsMap();
         if (this.isReadOnly || this.isSubmitted) return;
         

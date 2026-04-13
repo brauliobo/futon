@@ -10,7 +10,7 @@
 
 <script>
 import Progress from "../ui/Progress.vue";
-import { speedLabelColor } from "../../utils/speedUtils.js";
+import { SpeedGauge as SpeedCalc } from "../../utils/SpeedGauge.js";
 
 export default {
   name: "SpeedGauge",
@@ -22,7 +22,7 @@ export default {
     target: { type: Number, required: true },
   },
   computed: {
-    speedLabelColor() { return speedLabelColor(this.avgSeconds, this.target); },
+    speedLabelColor() { return SpeedCalc.labelColor(this.avgSeconds, this.target); },
   },
 };
 </script>

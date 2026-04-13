@@ -46,7 +46,7 @@
 
 <script>
 import ChoiceExercise from './ChoiceExercise.vue';
-import { normalizeAnswer } from '../../utils/formatting.js';
+import { Formatter } from '../../utils/Formatter.js';
 export default {
   name: "Exercise",
   components: { ChoiceExercise },
@@ -68,7 +68,7 @@ export default {
     hasAnswer() { return String(this.userAnswer || '').trim() !== ''; },
     isCorrect() {
       if (typeof this.exercise.correctAnswer === 'number') return Number(this.userAnswer) === this.exercise.correctAnswer;
-      return normalizeAnswer(this.userAnswer) === normalizeAnswer(this.exercise.correctAnswer);
+      return Formatter.normalizeAnswer(this.userAnswer) === Formatter.normalizeAnswer(this.exercise.correctAnswer);
     },
     inputType: () => 'text',
     inputMode() {

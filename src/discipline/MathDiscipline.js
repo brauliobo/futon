@@ -1,9 +1,9 @@
 import { BaseDiscipline } from "./BaseDiscipline.js";
-import { getDisciplineMetadata } from "../utils/dynamicImports.js";
+import { DisciplineRegistry } from "../utils/DisciplineRegistry.js";
 
 export class MathDiscipline extends BaseDiscipline {
   static create(withMeta, generators, seed) {
-    const { levels } = getDisciplineMetadata('math');
+    const { levels } = DisciplineRegistry.metadata('math');
     return new MathDiscipline(levels, withMeta);
   }
 

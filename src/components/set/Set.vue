@@ -70,10 +70,9 @@ import PageNavigation from "./PageNavigation.vue";
 import ResultsCelebration from "./ResultsCelebration.vue";
 import SpeedGauge from "./SpeedGauge.vue";
 import ExampleAlert from "./ExampleAlert.vue";
-import { computeGradePercent, computeStatus } from "../../domain/scoring.js";
-import { formatTimer, calculateProgress } from "../../utils/formatting.js";
-import { calculateFinalScore as calcFinalScore, calculateAttemptedCount as calcAttemptedCount, getPassCriteria } from "../../utils/scoringHelpers.js";
-import { speedGaugeWidth as calcSpeedWidth, speedVariant as calcSpeedVariant } from "../../utils/speedUtils.js";
+import { Formatter } from "../../utils/Formatter.js";
+import { Scoring } from "../../utils/Scoring.js";
+import { SpeedGauge as SpeedCalc } from "../../utils/SpeedGauge.js";
 import { SetStorage } from "../../services/SetStorage.js";
 
 export default {
@@ -115,7 +114,7 @@ export default {
     },
     isLastPage() { return this.currentPageIndex === this.totalPages - 1; },
     canGoNextPage() { return this.isPageCompleted(this.currentPageIndex); },
-    pageProgress() { return calculateProgress(this.currentPageIndex + 1, this.totalPages || 1); },
+    pageProgress() { return Formatter.progress(this.currentPageIndex + 1, this.totalPages || 1); },
     pageProps() {
       return {
         page: this.currentPage,
@@ -124,16 +123,16 @@ export default {
         setInputType: this.set.inputType || 'auto',
       };
     },
-    prettyTimer() { return formatTimer(this.pageSeconds); },
-    passCriteria() { return getPassCriteria(this.set.passCriteria); },
+    prettyTimer() { return Formatter.timer(this.pageSeconds); },
+    passCriteria() { return Scoring.passCriteria(this.set.passCriteria); },
     speedTarget() { return this.passCriteria.maxAvgSecondsPerExercise; },
-    speedGaugeWidth() { return calcSpeedWidth(Number(this.set.avgSecondsPerExercise) || 0, this.speedTarget); },
-    speedGaugeVariant() { return calcSpeedVariant(Number(this.set.avgSecondsPerExercise) || 0, this.speedTarget); },
+    speedGaugeWidth() { return SpeedCalc.width(Number(this.set.avgSecondsPerExercise) || 0, this.speedTarget); },
+    speedGaugeVariant() { return SpeedCalc.variant(Number(this.set.avgSecondsPerExercise) || 0, this.speedTarget); },
     finalScore() {
-      return calcFinalScore(this.set.pages || [], (score) => { this.set.lastScore = score; });
+      return Scoring.finalScore(this.set.pages || [], (score) => { this.set.lastScore = score; });
     },
     attemptedCount() {
-      return calcAttemptedCount(this.set.pages || [], this.set.totalExercises);
+      return Scoring.attemptedCount(this.set.pages || [], this.set.totalExercises);
     },
   },
   methods: {
@@ -268,13 +267,13 @@ export default {
       const meetsSpeed = avgSecondsPerExercise <= pc.maxAvgSecondsPerExercise;
       const completed = !!(meetsAccuracy && meetsSpeed);
       
-      const gradePercent = computeGradePercent({
+      const gradePercent = Scoring.gradePercent({
         accuracyPercent,
         avgSecondsPerExercise,
         maxAvgSecondsPerExercise: pc.maxAvgSecondsPerExercise,
       });
       
-      const status = computeStatus({
+      const status = Scoring.status({
         accuracyPercent,
         avgSecondsPerExercise,
         maxAvgSecondsPerExercise: pc.maxAvgSecondsPerExercise,

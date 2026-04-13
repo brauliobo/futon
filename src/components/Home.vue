@@ -59,10 +59,10 @@
 <script>
 import LevelRoadmap from "./discipline/LevelRoadmap.vue";
 import LevelList from "./discipline/level/LevelList.vue";
-import { subjectLabelKey, disciplines } from "../domain/disciplines.js";
-import { subjectColor, subjectIcon } from "../utils/subjectBranding.js";
-import { slugify } from "../utils/slugify.js";
-import { getMathLevelOrder, getMathLevelName, getMathLevelI18nKey, getPortugueseLevelOrder, getPortugueseLevelName, getEnglishLevelOrder, getEnglishLevelName } from "../domain/levels.js";
+import { Discipline } from "../domain/disciplines.js";
+import { Levels } from "../domain/levels.js";
+import { SubjectBranding } from "../utils/SubjectBranding.js";
+import { Formatter } from "../utils/Formatter.js";
 export default {
   name: "Home",
   components: { LevelRoadmap, LevelList },
@@ -147,8 +147,8 @@ export default {
       }
       return `${base} bg-white text-kid-muted border-black/8 shadow-sm hover:border-kid-blue/40 hover:text-kid-blue hover:-translate-y-0.5 hover:shadow-md`;
     },
-    subjectIcon,
-    subjectColor,
+    subjectIcon(s) { return SubjectBranding.icon(s); },
+    subjectColor(s) { return SubjectBranding.color(s); },
     parseHashFromRoute() {
       const hash = this.$route?.hash;
       if (!hash || hash.length <= 1) return null;
@@ -195,13 +195,13 @@ export default {
     filteredSets(subject) {
       return this.filteredByActiveLevel(subject, this.groupedBySubject[subject] || []);
     },
-    slugOf(wb) { return slugify(wb?.title); },
+    slugOf(wb) { return Formatter.slugify(wb?.title); },
     filteredByActiveLevel(subject, list) {
       const active = (this.activeLevelBySubject[subject] || '').toUpperCase();
       return active ? list.filter(wb => String(wb.level || '').toUpperCase() === active) : list;
     },
     subjectLabel(key) {
-      const label = this.$t(subjectLabelKey(key));
+      const label = this.$t(Discipline.labelKey(key));
       return typeof label === 'string' ? label : key;
     },
     setProgress(wb) {
@@ -232,19 +232,19 @@ export default {
       return groups;
     },
     levelSequenceBySubject() { return (subject) => {
-      if (subject === 'math') return getMathLevelOrder();
-      if (subject === 'portuguese') return getPortugueseLevelOrder();
-      if (subject === 'english') return getEnglishLevelOrder();
+      if (subject === 'math') return Levels.math.order();
+      if (subject === 'portuguese') return Levels.portuguese.order();
+      if (subject === 'english') return Levels.english.order();
       return [];
     }; },
     levelNameBySubject() {
       return (subject, id) => {
         if (subject === 'math') {
-          const key = getMathLevelI18nKey(id); const label = key ? this.$t(key) : '';
-          return typeof label === 'string' && label !== key && label ? label : getMathLevelName(id);
+          const key = Levels.math.i18nKey(id); const label = key ? this.$t(key) : '';
+          return typeof label === 'string' && label !== key && label ? label : Levels.math.name(id);
         }
-        if (subject === 'portuguese') return getPortugueseLevelName(id);
-        if (subject === 'english') return getEnglishLevelName(id);
+        if (subject === 'portuguese') return Levels.portuguese.name(id);
+        if (subject === 'english') return Levels.english.name(id);
         return id;
       };
     },

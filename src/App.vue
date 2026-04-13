@@ -35,13 +35,13 @@
 import { DisciplineManager } from "./services/DisciplineManager.js";
 import { SetFactory } from "./services/SetFactory.js";
 import { ProfileStorage } from "./services/ProfileStorage.js";
-import { recordActivity, recordMastery, calculateStreak, todayCount } from "./utils/streakUtils.js";
+import { Streak } from "./utils/Streak.js";
 import Home from "./components/Home.vue";
 import Set from "./components/set/Set.vue";
 import ProfileSelector from "./components/ProfileSelector.vue";
 import LevelCertificate from "./components/LevelCertificate.vue";
 import { SetStorage } from "./services/SetStorage.js";
-import { slugify } from "./utils/slugify.js";
+import { Formatter } from "./utils/Formatter.js";
 
 export default {
   name: "App",
@@ -85,8 +85,8 @@ export default {
       this.isLoading = false;
       this.loadSets();
       this.restoreFromRoute();
-      this.streak = calculateStreak(this.storage);
-      this.todaySets = todayCount(this.storage);
+      this.streak = Streak.calculate(this.storage);
+      this.todaySets = Streak.todayCount(this.storage);
     } catch (error) {
       console.error('Failed to initialize disciplines:', error);
       this.isLoading = false;
@@ -154,7 +154,7 @@ export default {
       const l = String(wb?.level || '').toUpperCase();
       return `#${s}-${l}`;
     },
-    slugOf(wb) { return slugify(wb?.title); },
+    slugOf(wb) { return Formatter.slugify(wb?.title); },
     selectSet(wb) {
       this.selectedSet = wb;
       this.initialPageIndex = 0;
@@ -194,10 +194,10 @@ export default {
         }
         // Track activity and streak when a submission is recorded (attempts increased)
         if (updatedSet.attempts > prev.attempts) {
-          recordActivity(this.storage);
-          if (updatedSet.status === 'mastery') recordMastery(this.storage);
-          this.streak = calculateStreak(this.storage);
-          this.todaySets = todayCount(this.storage);
+          Streak.recordActivity(this.storage);
+          if (updatedSet.status === 'mastery') Streak.recordMastery(this.storage);
+          this.streak = Streak.calculate(this.storage);
+          this.todaySets = Streak.todayCount(this.storage);
           this.checkLevelCertificate(updatedSet);
         }
         this.saveSets();
@@ -306,8 +306,8 @@ export default {
         this.isLoading = false;
         this.loadSets();
         this.restoreFromRoute();
-        this.streak = calculateStreak(this.storage);
-        this.todaySets = todayCount(this.storage);
+        this.streak = Streak.calculate(this.storage);
+        this.todaySets = Streak.todayCount(this.storage);
       } catch (e) {
         console.error('Failed to initialize disciplines:', e);
         this.isLoading = false;

@@ -1,6 +1,4 @@
-// discipline registry
-export const disciplines = ['math', 'portuguese', 'english'];
-
-export const subjectLabelKey = (subject) => `subject_${subject}`;
-
-
+export class Discipline {
+  static ALL = ['math', 'portuguese', 'english'];
+  static labelKey(subject) { return `subject_${subject}`; }
+}

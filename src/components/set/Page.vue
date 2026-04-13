@@ -17,7 +17,7 @@
 import ExerciseList from "./ExerciseList.vue";
 import Card from "../ui/Card.vue";
 import ReadingPassage from "./ReadingPassage.vue";
-import { calculatePageStatus, initAnswersFromExercises } from "../../utils/pageStatus.js";
+import { PageStatus } from "../../utils/PageStatus.js";
 
 export default {
   name: "Page",
@@ -42,10 +42,10 @@ export default {
   },
   methods: {
     initAnswers() {
-      this.answers = initAnswersFromExercises(this.page.exercises);
+      this.answers = PageStatus.initAnswers(this.page.exercises);
     },
     emitPageStatus() {
-      const status = calculatePageStatus(this.answers, this.page.exercises.length);
+      const status = PageStatus.calculate(this.answers, this.page.exercises.length);
       this.$emit("update-page-status", {
         pageNumber: this.page.pageNumber,
         ...status,

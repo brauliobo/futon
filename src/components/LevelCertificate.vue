@@ -33,7 +33,7 @@
 </style>
 
 <script>
-import { subjectColor as subjectColorFn } from '../utils/subjectBranding.js';
+import { SubjectBranding } from '../utils/SubjectBranding.js';
 export default {
   name: 'LevelCertificate',
   emits: ['close'],
@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     subjectLabel() { return this.$t(`subject_${this.subject}`) || this.subject; },
-    subjectColor() { return subjectColorFn(this.subject); },
+    subjectColor() { return SubjectBranding.color(this.subject); },
     formattedDate() { return new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }); },
   },
   methods: {

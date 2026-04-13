@@ -36,7 +36,7 @@
 
 <script>
 import SetCard from "../../set/SetCard.vue";
-import { slugify } from "../../../utils/slugify.js";
+import { Formatter } from "../../../utils/Formatter.js";
 export default {
   name: 'LevelList',
   components: { SetCard },
@@ -114,7 +114,7 @@ export default {
       const base = 'min-w-[280px] max-w-[360px] md:min-w-[320px] md:max-w-[400px] flex-shrink-0 transition-transform';
       return active ? base : `${base} scale-[0.97]`;
     },
-    slugOf(wb) { return slugify(wb?.title); },
+    slugOf(wb) { return Formatter.slugify(wb?.title); },
     scrollLeft() {
       const delta = this.cardWidth + this.gap;
       this.scrollOffset = Math.max(0, this.scrollOffset - delta);
