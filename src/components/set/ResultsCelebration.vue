@@ -85,7 +85,7 @@ export default {
   methods: {
     starClass(n) {
       if (n <= this.starCount) return 'text-5xl star-glow text-kid-gold transition-all';
-      return 'text-4xl text-slate-200/50 transition-all';
+      return 'text-4xl text-black/10 transition-all';
     },
     starStyle(n) {
       if (n > this.starCount) return { opacity: 0.3 };

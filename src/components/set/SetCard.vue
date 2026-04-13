@@ -57,7 +57,7 @@ export default {
     cardClass() {
       const base = 'flex h-full flex-col gap-2 rounded-2xl border bg-white p-5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg border-l-[6px]';
       const borders = { mastery: 'border-l-kid-green shadow-md', pass: 'border-l-amber-400 shadow-sm', retry: 'border-l-kid-red shadow-sm' };
-      const border = borders[this.set.status] || 'border-l-slate-200 shadow-sm';
+      const border = borders[this.set.status] || 'border-l-black/10 shadow-sm';
       const ring = this.isActive ? ' ring-2 ring-kid-blue/40 ring-offset-2' : '';
       return `${base} border-black/5 ${border}${ring}`;
     },
@@ -73,7 +73,7 @@ export default {
     onStart() { this.$emit('start', this.set); },
     starClass(n) {
       if (n <= this.starCount) return 'text-2xl leading-none text-kid-gold star-glow transition-all';
-      return 'text-2xl leading-none text-slate-200/40 transition-all';
+      return 'text-2xl leading-none text-black/10 transition-all';
     },
   }
 };

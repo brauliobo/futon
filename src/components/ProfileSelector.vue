@@ -27,7 +27,7 @@
           input(
             v-model="newName"
             :placeholder="$t('enterName') || 'Enter name...'"
-            class="w-full rounded-2xl border-4 border-kid-blue/30 bg-white px-4 py-3.5 text-xl font-bold text-kid-text placeholder:text-slate-300 focus:outline-none focus:border-kid-blue focus:shadow-lg focus:blue-glow transition-all"
+            class="w-full rounded-2xl border-4 border-kid-blue/30 bg-white px-4 py-3.5 text-xl font-bold text-kid-text placeholder:text-kid-muted/40 focus:outline-none focus:border-kid-blue focus:shadow-lg focus:blue-glow transition-all"
             @keydown.enter.prevent="createProfile"
             ref="nameInput"
             autofocus
