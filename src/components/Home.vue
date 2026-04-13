@@ -1,20 +1,20 @@
 <!-- src/components/Home.vue -->
 <template lang="pug">
   div(class="space-y-6")
-    div(data-testid="daily-goal" class="flex flex-wrap items-center gap-3 rounded-3xl bg-white border border-black/5 shadow-sm px-5 py-3")
+    div(data-testid="daily-goal" class="flex flex-wrap items-center gap-3 rounded-3xl bg-gradient-to-r from-white to-kid-gold/5 border border-kid-gold/20 shadow-sm px-5 py-4 animate-slide-up")
       div(class="flex items-center gap-2")
         span(class="text-xl") 🎯
         span(class="text-sm font-black text-kid-text uppercase tracking-wide") {{ $t('todayGoal') || 'Today\'s Goal' }}
-      div(class="flex items-center gap-2 ml-2")
+      div(class="flex items-center gap-1 ml-2")
         span(
           v-for="i in 3"
           :key="i"
-          :class="i <= todaySets ? 'text-kid-gold' : 'text-black/15'"
-          class="text-2xl leading-none"
+          :class="i <= todaySets ? 'text-kid-gold star-glow' : 'text-black/10'"
+          class="text-2xl leading-none transition-all duration-300"
         ) ★
       span(class="text-sm font-bold text-kid-muted ml-1") {{ todaySets }}/3
-      div(v-if="streak > 1" class="ml-auto flex items-center gap-1.5 rounded-2xl bg-orange-50 border border-orange-200 px-3 py-1 text-sm font-bold text-orange-500")
-        span 🔥
+      div(v-if="streak > 1" class="ml-auto flex items-center gap-1.5 rounded-2xl bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 px-3 py-1.5 text-sm font-bold text-orange-500 shadow-sm")
+        span(class="animate-wiggle") 🔥
         span {{ streak }} {{ $t('dayStreak') || 'day streak' }}
     nav(class="flex flex-wrap items-center gap-3")
       button(
@@ -60,6 +60,8 @@
 import LevelRoadmap from "./discipline/LevelRoadmap.vue";
 import LevelList from "./discipline/level/LevelList.vue";
 import { subjectLabelKey, disciplines } from "../domain/disciplines.js";
+import { subjectColor, subjectIcon } from "../utils/subjectBranding.js";
+import { slugify } from "../utils/slugify.js";
 import { getMathLevelOrder, getMathLevelName, getMathLevelI18nKey, getPortugueseLevelOrder, getPortugueseLevelName, getEnglishLevelOrder, getEnglishLevelName } from "../domain/levels.js";
 export default {
   name: "Home",
@@ -138,19 +140,15 @@ export default {
   methods: {
     tabButtonClass(subject) {
       const isActive = this.activeDiscipline === subject;
-      const base = 'flex items-center gap-2 rounded-2xl px-5 py-3 font-bold capitalize transition border-2 shadow-sm';
+      const base = 'flex items-center gap-2 rounded-2xl px-5 py-3.5 font-bold capitalize transition-all duration-200 border-2 active:scale-95';
       if (isActive) {
-        const colors = { math: 'bg-kid-blue text-white border-kid-blue shadow-blue-200', portuguese: 'bg-kid-green text-white border-kid-green shadow-green-200', english: 'bg-orange-400 text-white border-orange-400 shadow-orange-200' };
-        return `${base} ${colors[subject] || 'bg-kid-blue text-white border-kid-blue'}`;
+        const colors = { math: 'bg-kid-blue text-white border-kid-blue shadow-lg shadow-kid-blue/30', portuguese: 'bg-kid-green text-white border-kid-green shadow-lg shadow-kid-green/30', english: 'bg-orange-400 text-white border-orange-400 shadow-lg shadow-orange-300/40' };
+        return `${base} ${colors[subject] || 'bg-kid-blue text-white border-kid-blue shadow-lg'} scale-[1.02]`;
       }
-      return `${base} bg-white text-kid-muted border-black/8 hover:border-kid-blue/40 hover:text-kid-blue`;
+      return `${base} bg-white text-kid-muted border-black/8 shadow-sm hover:border-kid-blue/40 hover:text-kid-blue hover:-translate-y-0.5 hover:shadow-md`;
     },
-    subjectIcon(subject) {
-      return { math: '🔢', portuguese: '📖', english: '🌍' }[subject] || '📚';
-    },
-    subjectColor(subject) {
-      return { math: '#4A9EF5', portuguese: '#6BCB77', english: '#F97316' }[subject] || '#4A9EF5';
-    },
+    subjectIcon,
+    subjectColor,
     parseHashFromRoute() {
       const hash = this.$route?.hash;
       if (!hash || hash.length <= 1) return null;
@@ -197,7 +195,7 @@ export default {
     filteredSets(subject) {
       return this.filteredByActiveLevel(subject, this.groupedBySubject[subject] || []);
     },
-    slugOf(wb) { return String(wb?.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); },
+    slugOf(wb) { return slugify(wb?.title); },
     filteredByActiveLevel(subject, list) {
       const active = (this.activeLevelBySubject[subject] || '').toUpperCase();
       return active ? list.filter(wb => String(wb.level || '').toUpperCase() === active) : list;

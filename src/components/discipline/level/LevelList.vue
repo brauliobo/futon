@@ -1,7 +1,7 @@
 <template lang="pug">
   div(class="relative py-4")
     button(
-      class="absolute left-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-slate-900/80 text-lg font-bold text-slate-200 shadow backdrop-blur transition hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed"
+      class="absolute left-2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-black/8 bg-white text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-kid-bg hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollLeft"
       :disabled="!canScrollLeft"
       v-show="showLeftArrow"
@@ -15,10 +15,10 @@
           :class="cardClass(set)"
         )
           div(v-if="!isSetAvailable(index)" class="relative")
-            SetCard(:set="set" :is-active="false" class="opacity-40 saturate-0 pointer-events-none")
-            div(class="absolute inset-0 flex flex-col items-center justify-center rounded-2xl bg-black/30 backdrop-blur-sm cursor-default")
-              span(class="text-4xl") 🔒
-              span(class="mt-1 text-xs font-semibold text-white text-center px-2") Complete previous set with mastery first
+            SetCard(:set="set" :is-active="false" class="opacity-50 pointer-events-none")
+            div(class="absolute inset-0 flex flex-col items-center justify-center rounded-2xl bg-white/60 backdrop-blur-[2px] cursor-default")
+              span(class="text-4xl animate-bounce-in") 🔒
+              span(class="mt-1.5 text-xs font-bold text-kid-muted text-center px-3") {{ $t('unlockHint') || 'Keep going to unlock!' }}
           SetCard(
             v-else
             :set="set"
@@ -26,7 +26,7 @@
             @start="$emit('start', $event)"
           )
     button(
-      class="absolute right-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-slate-900/80 text-lg font-bold text-slate-200 shadow backdrop-blur transition hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed"
+      class="absolute right-2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-black/8 bg-white text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-kid-bg hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollRight"
       :disabled="!canScrollRight"
       v-show="showRightArrow"
@@ -36,6 +36,7 @@
 
 <script>
 import SetCard from "../../set/SetCard.vue";
+import { slugify } from "../../../utils/slugify.js";
 export default {
   name: 'LevelList',
   components: { SetCard },
@@ -113,7 +114,7 @@ export default {
       const base = 'min-w-[280px] max-w-[360px] md:min-w-[320px] md:max-w-[400px] flex-shrink-0 transition-transform';
       return active ? base : `${base} scale-[0.97]`;
     },
-    slugOf(wb) { return String(wb?.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); },
+    slugOf(wb) { return slugify(wb?.title); },
     scrollLeft() {
       const delta = this.cardWidth + this.gap;
       this.scrollOffset = Math.max(0, this.scrollOffset - delta);

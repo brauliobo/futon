@@ -87,11 +87,11 @@ export default {
   methods: {
     progressPercent(key){ const p = this.progressByLevel[key]; return p && Number.isFinite(p.percent) ? p.percent : 0; },
     cardClass(lvl) {
-      const base = 'flex min-w-[150px] max-w-[180px] snap-center cursor-pointer rounded-2xl border-2 bg-white shadow-sm transition hover:-translate-y-1';
+      const base = 'flex min-w-[150px] max-w-[180px] snap-center cursor-pointer rounded-2xl border-2 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg';
       const state = [];
-      if (lvl === this.active) state.push('border-kid-blue bg-kid-blue/5 shadow-blue-100');
-      else state.push('border-black/8 hover:border-kid-blue/40');
-      if (!this.availableSet.has(lvl)) state.push('cursor-not-allowed opacity-40 hover:translate-y-0 hover:border-black/8');
+      if (lvl === this.active) state.push('border-kid-blue bg-kid-blue/5 shadow-md blue-glow');
+      else state.push('border-black/8 shadow-sm hover:border-kid-blue/40');
+      if (!this.availableSet.has(lvl)) state.push('cursor-not-allowed opacity-40 hover:translate-y-0 hover:shadow-sm hover:border-black/8');
       return [base, ...state].join(' ');
     },
     numberClass(lvl) {

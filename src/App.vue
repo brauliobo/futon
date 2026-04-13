@@ -3,12 +3,12 @@
   #app.flex.flex-col.min-h-screen.bg-kid-bg.text-kid-text.font-kid
     ProfileSelector(v-if="showProfileSelector" @profile-selected="onProfileSelected")
     template(v-else)
-      header(class="bg-white/80 backdrop-blur border-b border-black/5 w-full sticky top-0 z-20")
+      header(class="bg-white/90 backdrop-blur-md border-b border-black/5 w-full sticky top-0 z-20 shadow-sm")
         div(class="mx-auto flex w-full max-w-[1920px] items-center justify-between px-4 py-3")
           div(class="flex items-center gap-2")
-            span(class="text-2xl font-black text-kid-blue tracking-tight") ✏️ Futon
+            span(class="text-2xl font-black text-kid-blue tracking-tight hover:animate-wiggle cursor-default") ✏️ Futon
           div(class="flex items-center gap-2")
-            h2(v-if="selectedSet" class="text-base font-bold text-kid-text/70 truncate max-w-xs sm:max-w-md mr-2") {{ selectedSet.title }}
+            h2(v-if="selectedSet" class="text-base font-black text-kid-text truncate max-w-xs sm:max-w-md mr-2") {{ selectedSet.title }}
             div(v-if="streak > 1" class="flex items-center gap-1 rounded-2xl bg-orange-50 border border-orange-200 px-3 py-1.5 text-sm font-bold text-orange-600")
               span 🔥
               span {{ streak }}
@@ -24,7 +24,7 @@
             p(class="text-base font-semibold text-kid-muted") {{ $t('loading') || 'Loading...' }}
           Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" :isLoadingLevel="isLoadingLevel" :streak="streak" :today-sets="todaySets" @select-set="selectSet" @level-selected="onLevelSelected" class="space-y-6")
           div(v-else)
-            button(@click="goHome" class="group inline-flex items-center gap-2 mb-4 text-base font-bold text-kid-blue hover:opacity-70 transition rounded-2xl px-5 py-3 bg-white shadow-sm border-2 border-black/5")
+            button(@click="goHome" class="group inline-flex items-center gap-2 mb-4 text-base font-bold text-kid-blue transition-all rounded-2xl px-5 py-3 bg-white shadow-sm border-2 border-black/5 hover:shadow-md hover:-translate-x-0.5 active:scale-95")
               span(class="text-base transition-transform group-hover:-translate-x-0.5" aria-hidden="true") ←
               span {{ $t('back') }}
             Set(:set="selectedSet" :initialPageIndex="initialPageIndex" :has-next-set="!!nextSet" :profile-id="activeProfile && activeProfile.id || 'default'" @update-set="updateSet" @page-changed="handlePageChange" @next-set="goToNextSet" @go-home="goHome")
@@ -41,6 +41,7 @@ import Set from "./components/set/Set.vue";
 import ProfileSelector from "./components/ProfileSelector.vue";
 import LevelCertificate from "./components/LevelCertificate.vue";
 import { SetStorage } from "./services/SetStorage.js";
+import { slugify } from "./utils/slugify.js";
 
 export default {
   name: "App",
@@ -153,9 +154,7 @@ export default {
       const l = String(wb?.level || '').toUpperCase();
       return `#${s}-${l}`;
     },
-    slugOf(wb) {
-      return String(wb.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-    },
+    slugOf(wb) { return slugify(wb?.title); },
     selectSet(wb) {
       this.selectedSet = wb;
       this.initialPageIndex = 0;

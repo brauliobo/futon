@@ -1,8 +1,9 @@
 <!-- src/components/HistorySparkline.vue -->
 <template lang="pug">
-  div(class="h-6 rounded-xl bg-kid-bg px-2 py-1")
-    svg(:viewBox="`0 0 ${(items.length - 1 || 1) * 6} 20`" width="100%" height="20" role="img" :aria-label="($t('previousAttempts') || 'Previous attempts')")
-      polyline(:points="points" :stroke="stroke" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+  div(class="h-8 rounded-xl bg-kid-bg px-3 py-1.5")
+    svg(:viewBox="`0 0 ${(items.length - 1 || 1) * 6} 20`" width="100%" height="24" role="img" :aria-label="($t('previousAttempts') || 'Previous attempts')")
+      polyline(:points="points" :stroke="stroke" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="sparkline-path")
+      circle(v-for="(h, i) in items" :key="i" :cx="i * 6" :cy="20 - Math.max(0, Math.min(18, Math.round((h.accuracyPercent||0)*0.18)))" r="2" :fill="stroke")
 </template>
 
 <script>

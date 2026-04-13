@@ -105,5 +105,6 @@ export const pt = {
   hasMastered: "dominou o nível",
   close: "Fechar",
   print: "Imprimir",
+  unlockHint: "Continue para desbloquear!",
 };
 

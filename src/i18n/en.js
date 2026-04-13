@@ -105,6 +105,7 @@ export const en = {
   hasMastered: "has mastered",
   close: "Close",
   print: "Print",
+  unlockHint: "Keep going to unlock!",
 };
 
 

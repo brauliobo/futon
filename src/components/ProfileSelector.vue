@@ -1,39 +1,40 @@
 <template lang="pug">
-  div(data-testid="profile-selector" class="min-h-screen bg-kid-bg flex flex-col items-center justify-center p-6")
-    div(class="w-full max-w-md space-y-6")
-      div(class="text-center space-y-1")
-        h1(class="text-4xl font-black text-kid-blue") ✏️ Futon
-        p(class="text-base font-semibold text-kid-muted") {{ $t('whoIsLearning') }}
+  div(data-testid="profile-selector" class="min-h-screen bg-gradient-to-b from-kid-bg to-kid-blue/5 flex flex-col items-center justify-center p-6")
+    div(class="w-full max-w-md space-y-6 animate-bounce-in")
+      div(class="text-center space-y-2")
+        h1(class="text-5xl font-black text-kid-blue animate-wiggle") ✏️ Futon
+        p(class="text-lg font-semibold text-kid-muted") {{ $t('whoIsLearning') }}
 
       div(class="space-y-3")
         button(
-          v-for="profile in profiles"
+          v-for="(profile, i) in profiles"
           :key="profile.id"
           @click="selectProfile(profile)"
-          class="w-full flex items-center gap-4 rounded-2xl border-2 border-black/8 bg-white p-4 shadow-sm hover:border-kid-blue/40 hover:shadow-md transition"
+          class="w-full flex items-center gap-4 rounded-2xl border-2 border-black/8 bg-white p-5 shadow-sm transition-all duration-200 hover:border-kid-blue/40 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.01] active:scale-95 animate-slide-up"
+          :style="{ animationDelay: (i * 0.08) + 's' }"
         )
-          span(class="text-4xl") {{ profile.avatar }}
+          span(class="text-5xl") {{ profile.avatar }}
           span(class="text-xl font-black text-kid-text") {{ profile.name }}
-          span(class="ml-auto text-kid-muted text-xl") →
+          span(class="ml-auto text-kid-blue text-2xl font-bold") →
 
       div(class="border-t border-black/8 pt-4")
         div(v-if="!showNewForm" class="text-center")
-          button(@click="showNewForm = true" class="inline-flex items-center gap-2 rounded-2xl border-2 border-dashed border-black/15 px-6 py-3 text-base font-bold text-kid-muted hover:border-kid-blue/40 hover:text-kid-blue transition")
+          button(@click="showNewForm = true" class="inline-flex items-center gap-2 rounded-2xl border-2 border-dashed border-kid-blue/30 px-6 py-3.5 text-base font-bold text-kid-blue/70 hover:border-kid-blue hover:text-kid-blue hover:bg-kid-blue/5 transition-all duration-200")
             span(class="text-xl") ＋
             span {{ $t('addLearner') }}
 
-        div(v-else class="space-y-3")
+        div(v-else class="space-y-3 animate-slide-up")
           input(
             v-model="newName"
             :placeholder="$t('enterName') || 'Enter name...'"
-            class="w-full rounded-2xl border-4 border-kid-blue/30 bg-white px-4 py-3 text-xl font-bold text-kid-text placeholder:text-slate-300 focus:outline-none focus:border-kid-blue"
+            class="w-full rounded-2xl border-4 border-kid-blue/30 bg-white px-4 py-3.5 text-xl font-bold text-kid-text placeholder:text-slate-300 focus:outline-none focus:border-kid-blue focus:shadow-lg focus:blue-glow transition-all"
             @keydown.enter.prevent="createProfile"
             ref="nameInput"
             autofocus
           )
           div(class="flex gap-3")
-            button(@click="showNewForm = false; newName = ''" class="flex-1 rounded-2xl border-2 border-black/10 py-3 font-bold text-kid-muted hover:border-kid-red/40 hover:text-kid-red transition") {{ $t('cancel') }}
-            button(@click="createProfile" :disabled="!newName.trim()" class="flex-1 rounded-2xl bg-kid-blue py-3 font-bold text-white disabled:opacity-40 hover:opacity-90 transition") {{ $t('create') }}
+            button(@click="showNewForm = false; newName = ''" class="flex-1 rounded-2xl border-2 border-black/10 py-3 font-bold text-kid-muted hover:border-kid-red/40 hover:text-kid-red transition-all active:scale-95") {{ $t('cancel') }}
+            button(@click="createProfile" :disabled="!newName.trim()" class="flex-1 rounded-2xl bg-kid-blue py-3 font-bold text-white disabled:opacity-30 hover:shadow-lg hover:bg-kid-blue/90 transition-all active:scale-95") {{ $t('create') }}
 </template>
 
 <script>
@@ -43,11 +44,7 @@ export default {
   name: 'ProfileSelector',
   emits: ['profile-selected'],
   data() {
-    return {
-      profiles: ProfileStorage.getProfiles(),
-      showNewForm: false,
-      newName: '',
-    };
+    return { profiles: ProfileStorage.getProfiles(), showNewForm: false, newName: '' };
   },
   mounted() {
     if (this.profiles.length === 0) this.showNewForm = true;

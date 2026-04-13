@@ -36,8 +36,8 @@
             @next-set="$emit('next-set')"
           )
           div(class="flex gap-3")
-            button(@click="$emit('go-home')" class="flex-1 flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold bg-white border-2 border-black/10 text-kid-text hover:border-kid-blue/40 transition") ← {{ $t('back') }}
-            button(@click="resetSet" class="flex-1 flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold bg-kid-bg border-2 border-black/10 text-kid-text hover:border-kid-blue/40 transition") ↺ {{ $t('restart') }}
+            button(@click="$emit('go-home')" class="flex-1 flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold bg-white border-2 border-black/10 text-kid-text hover:border-kid-blue/40 hover:shadow-sm transition-all active:scale-95") ← {{ $t('back') }}
+            button(@click="resetSet" class="flex-1 flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold bg-kid-bg border-2 border-black/10 text-kid-text hover:border-kid-blue/40 hover:shadow-sm transition-all active:scale-95") ↺ {{ $t('restart') }}
           HistorySparkline(v-if="set.history?.length" :history="set.history")
           div(class="border-t border-black/5 pt-4 space-y-3")
             h4(class="text-sm font-bold text-kid-muted uppercase tracking-wide") {{ $t('reviewAnswers') || 'Review Answers' }}
@@ -73,6 +73,7 @@ import ExampleAlert from "./ExampleAlert.vue";
 import { computeGradePercent, computeStatus } from "../../domain/scoring.js";
 import { formatTimer, calculateProgress } from "../../utils/formatting.js";
 import { calculateFinalScore as calcFinalScore, calculateAttemptedCount as calcAttemptedCount, getPassCriteria } from "../../utils/scoringHelpers.js";
+import { speedGaugeWidth as calcSpeedWidth, speedVariant as calcSpeedVariant } from "../../utils/speedUtils.js";
 import { SetStorage } from "../../services/SetStorage.js";
 
 export default {
@@ -126,18 +127,8 @@ export default {
     prettyTimer() { return formatTimer(this.pageSeconds); },
     passCriteria() { return getPassCriteria(this.set.passCriteria); },
     speedTarget() { return this.passCriteria.maxAvgSecondsPerExercise; },
-    speedGaugeWidth() {
-      const s = Number(this.set.avgSecondsPerExercise) || 0;
-      const maxS = this.speedTarget;
-      return Math.round(Math.max(0, Math.min(100, 100 * (1 - s / (maxS * 2)))));
-    },
-    speedGaugeVariant() {
-      const s = Number(this.set.avgSecondsPerExercise) || 0;
-      const maxS = this.speedTarget;
-      if (s <= maxS) return 'success';
-      if (s <= maxS * 1.2) return 'warning';
-      return 'danger';
-    },
+    speedGaugeWidth() { return calcSpeedWidth(Number(this.set.avgSecondsPerExercise) || 0, this.speedTarget); },
+    speedGaugeVariant() { return calcSpeedVariant(Number(this.set.avgSecondsPerExercise) || 0, this.speedTarget); },
     finalScore() {
       return calcFinalScore(this.set.pages || [], (score) => { this.set.lastScore = score; });
     },

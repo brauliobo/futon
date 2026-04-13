@@ -24,9 +24,9 @@ export default {
   },
   methods: {
     dotClass(n) {
-      const base = 'rounded-full transition-all';
-      if (n < this.pageNumber) return `${base} w-3 h-3 bg-kid-green`;
-      if (n === this.pageNumber) return `${base} w-4 h-4 bg-kid-blue`;
+      const base = 'rounded-full transition-all duration-300';
+      if (n < this.pageNumber) return `${base} w-3.5 h-3.5 bg-kid-green shadow-sm`;
+      if (n === this.pageNumber) return `${base} w-5 h-5 bg-kid-blue blue-glow animate-dot-pulse`;
       return `${base} w-3 h-3 bg-black/10`;
     },
   },
