@@ -3,7 +3,8 @@ level: C
 example: "Tabuada do 4 e 5. Ex.: 4 × 6 = 24"
 subject: math
 difficulty: 2
-objectives: [math.multiplication]
+objectives:
+  - math.multiplication
 authorNotes: Conjunto de math/C.
 inputType: number
 pages:
@@ -11,42 +12,132 @@ pages:
     title: Tabuada do 4 (ordem crescente)
     description: Memorize a tabuada do 4.
     exercises:
-      - { type: multiplication, question: "4 × 1 =", correctAnswer: 4 }
-      - { type: multiplication, question: "4 × 2 =", correctAnswer: 8 }
-      - { type: multiplication, question: "4 × 3 =", correctAnswer: 12 }
-      - { type: multiplication, question: "4 × 4 =", correctAnswer: 16 }
-      - { type: multiplication, question: "4 × 5 =", correctAnswer: 20 }
-      - { type: multiplication, question: "4 × 6 =", correctAnswer: 24 }
-      - { type: multiplication, question: "4 × 7 =", correctAnswer: 28 }
-      - { type: multiplication, question: "4 × 8 =", correctAnswer: 32 }
-      - { type: multiplication, question: "4 × 9 =", correctAnswer: 36 }
-      - { type: multiplication, question: "4 × 10 =", correctAnswer: 40 }
+      - type: multiplication
+        question: 4 × 1 =
+        correctAnswer: 4
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 2 =
+        correctAnswer: 8
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 3 =
+        correctAnswer: 12
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 4 =
+        correctAnswer: 16
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 5 =
+        correctAnswer: 20
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 6 =
+        correctAnswer: 24
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 7 =
+        correctAnswer: 28
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 8 =
+        correctAnswer: 32
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 9 =
+        correctAnswer: 36
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 10 =
+        correctAnswer: 40
+        rationale: Use a tabuada correspondente.
   - pageNumber: 2
     title: Tabuada do 5 (ordem crescente)
     description: Memorize a tabuada do 5.
     exercises:
-      - { type: multiplication, question: "5 × 1 =", correctAnswer: 5 }
-      - { type: multiplication, question: "5 × 2 =", correctAnswer: 10 }
-      - { type: multiplication, question: "5 × 3 =", correctAnswer: 15 }
-      - { type: multiplication, question: "5 × 4 =", correctAnswer: 20 }
-      - { type: multiplication, question: "5 × 5 =", correctAnswer: 25 }
-      - { type: multiplication, question: "5 × 6 =", correctAnswer: 30 }
-      - { type: multiplication, question: "5 × 7 =", correctAnswer: 35 }
-      - { type: multiplication, question: "5 × 8 =", correctAnswer: 40 }
-      - { type: multiplication, question: "5 × 9 =", correctAnswer: 45 }
-      - { type: multiplication, question: "5 × 10 =", correctAnswer: 50 }
+      - type: multiplication
+        question: 5 × 1 =
+        correctAnswer: 5
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 2 =
+        correctAnswer: 10
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 3 =
+        correctAnswer: 15
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 4 =
+        correctAnswer: 20
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 5 =
+        correctAnswer: 25
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 6 =
+        correctAnswer: 30
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 7 =
+        correctAnswer: 35
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 8 =
+        correctAnswer: 40
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 9 =
+        correctAnswer: 45
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 10 =
+        correctAnswer: 50
+        rationale: Use a tabuada correspondente.
   - pageNumber: 3
     title: Misturado 2, 3, 4, 5
     description: Combine tabuadas aprendidas.
     exercises:
-      - { type: multiplication, question: "4 × 6 =", correctAnswer: 24 }
-      - { type: multiplication, question: "5 × 8 =", correctAnswer: 40 }
-      - { type: multiplication, question: "2 × 9 =", correctAnswer: 18 }
-      - { type: multiplication, question: "3 × 7 =", correctAnswer: 21 }
-      - { type: multiplication, question: "4 × 9 =", correctAnswer: 36 }
-      - { type: multiplication, question: "5 × 6 =", correctAnswer: 30 }
-      - { type: multiplication, question: "3 × 8 =", correctAnswer: 24 }
-      - { type: multiplication, question: "4 × 7 =", correctAnswer: 28 }
-      - { type: multiplication, question: "5 × 9 =", correctAnswer: 45 }
-      - { type: multiplication, question: "2 × 8 =", correctAnswer: 16 }
+      - type: multiplication
+        question: 4 × 6 =
+        correctAnswer: 24
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 8 =
+        correctAnswer: 40
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 9 =
+        correctAnswer: 18
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 3 × 7 =
+        correctAnswer: 21
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 9 =
+        correctAnswer: 36
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 6 =
+        correctAnswer: 30
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 3 × 8 =
+        correctAnswer: 24
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 7 =
+        correctAnswer: 28
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 9 =
+        correctAnswer: 45
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 8 =
+        correctAnswer: 16
+        rationale: Use a tabuada correspondente.
 target: 30

@@ -3,7 +3,8 @@ level: C
 example: "Fatos básicos de multiplicação. Ex.: 3 × 4 = 12"
 subject: math
 difficulty: 2
-objectives: [math.multiplication]
+objectives:
+  - math.multiplication
 authorNotes: Conjunto de math/C.
 inputType: number
 pages:
@@ -11,139 +12,439 @@ pages:
     title: Fatos de Multiplicação — Conjunto 8 – Página 1
     description: Fatos básicos de multiplicação.
     exercises:
-      - { type: multiplication, question: "1 × 8 =", correctAnswer: 8 }
-      - { type: multiplication, question: "6 × 9 =", correctAnswer: 54 }
-      - { type: multiplication, question: "2 × 6 =", correctAnswer: 12 }
-      - { type: multiplication, question: "6 × 6 =", correctAnswer: 36 }
-      - { type: multiplication, question: "4 × 2 =", correctAnswer: 8 }
-      - { type: multiplication, question: "6 × 7 =", correctAnswer: 42 }
-      - { type: multiplication, question: "3 × 1 =", correctAnswer: 3 }
-      - { type: multiplication, question: "7 × 1 =", correctAnswer: 7 }
-      - { type: multiplication, question: "1 × 1 =", correctAnswer: 1 }
-      - { type: multiplication, question: "1 × 4 =", correctAnswer: 4 }
+      - type: multiplication
+        question: 1 × 8 =
+        correctAnswer: 8
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 6 × 9 =
+        correctAnswer: 54
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 6 =
+        correctAnswer: 12
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 6 × 6 =
+        correctAnswer: 36
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 2 =
+        correctAnswer: 8
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 6 × 7 =
+        correctAnswer: 42
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 3 × 1 =
+        correctAnswer: 3
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 7 × 1 =
+        correctAnswer: 7
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 1 × 1 =
+        correctAnswer: 1
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 1 × 4 =
+        correctAnswer: 4
+        rationale: Use a tabuada correspondente.
   - pageNumber: 2
     title: Fatos de Multiplicação — Conjunto 8 – Página 2
     description: Fatos básicos de multiplicação.
     exercises:
-      - { type: multiplication, question: "4 × 6 =", correctAnswer: 24 }
-      - { type: multiplication, question: "9 × 6 =", correctAnswer: 54 }
-      - { type: multiplication, question: "9 × 1 =", correctAnswer: 9 }
-      - { type: multiplication, question: "2 × 2 =", correctAnswer: 4 }
-      - { type: multiplication, question: "6 × 8 =", correctAnswer: 48 }
-      - { type: multiplication, question: "4 × 5 =", correctAnswer: 20 }
-      - { type: multiplication, question: "7 × 6 =", correctAnswer: 42 }
-      - { type: multiplication, question: "1 × 1 =", correctAnswer: 1 }
-      - { type: multiplication, question: "2 × 9 =", correctAnswer: 18 }
-      - { type: multiplication, question: "6 × 2 =", correctAnswer: 12 }
+      - type: multiplication
+        question: 4 × 6 =
+        correctAnswer: 24
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 9 × 6 =
+        correctAnswer: 54
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 9 × 1 =
+        correctAnswer: 9
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 2 =
+        correctAnswer: 4
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 6 × 8 =
+        correctAnswer: 48
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 5 =
+        correctAnswer: 20
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 7 × 6 =
+        correctAnswer: 42
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 1 × 1 =
+        correctAnswer: 1
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 9 =
+        correctAnswer: 18
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 6 × 2 =
+        correctAnswer: 12
+        rationale: Use a tabuada correspondente.
   - pageNumber: 3
     title: Fatos de Multiplicação — Conjunto 8 – Página 3
     description: Fatos básicos de multiplicação.
     exercises:
-      - { type: multiplication, question: "5 × 2 =", correctAnswer: 10 }
-      - { type: multiplication, question: "6 × 3 =", correctAnswer: 18 }
-      - { type: multiplication, question: "1 × 6 =", correctAnswer: 6 }
-      - { type: multiplication, question: "2 × 9 =", correctAnswer: 18 }
-      - { type: multiplication, question: "2 × 3 =", correctAnswer: 6 }
-      - { type: multiplication, question: "5 × 9 =", correctAnswer: 45 }
-      - { type: multiplication, question: "3 × 6 =", correctAnswer: 18 }
-      - { type: multiplication, question: "9 × 7 =", correctAnswer: 63 }
-      - { type: multiplication, question: "1 × 2 =", correctAnswer: 2 }
-      - { type: multiplication, question: "3 × 3 =", correctAnswer: 9 }
+      - type: multiplication
+        question: 5 × 2 =
+        correctAnswer: 10
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 6 × 3 =
+        correctAnswer: 18
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 1 × 6 =
+        correctAnswer: 6
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 9 =
+        correctAnswer: 18
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 3 =
+        correctAnswer: 6
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 9 =
+        correctAnswer: 45
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 3 × 6 =
+        correctAnswer: 18
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 9 × 7 =
+        correctAnswer: 63
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 1 × 2 =
+        correctAnswer: 2
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 3 × 3 =
+        correctAnswer: 9
+        rationale: Use a tabuada correspondente.
   - pageNumber: 4
     title: Fatos de Multiplicação — Conjunto 8 – Página 4
     description: Fatos básicos de multiplicação.
     exercises:
-      - { type: multiplication, question: "6 × 2 =", correctAnswer: 12 }
-      - { type: multiplication, question: "6 × 4 =", correctAnswer: 24 }
-      - { type: multiplication, question: "3 × 8 =", correctAnswer: 24 }
-      - { type: multiplication, question: "8 × 7 =", correctAnswer: 56 }
-      - { type: multiplication, question: "4 × 8 =", correctAnswer: 32 }
-      - { type: multiplication, question: "4 × 3 =", correctAnswer: 12 }
-      - { type: multiplication, question: "9 × 2 =", correctAnswer: 18 }
-      - { type: multiplication, question: "7 × 9 =", correctAnswer: 63 }
-      - { type: multiplication, question: "8 × 2 =", correctAnswer: 16 }
-      - { type: multiplication, question: "5 × 3 =", correctAnswer: 15 }
+      - type: multiplication
+        question: 6 × 2 =
+        correctAnswer: 12
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 6 × 4 =
+        correctAnswer: 24
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 3 × 8 =
+        correctAnswer: 24
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 8 × 7 =
+        correctAnswer: 56
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 8 =
+        correctAnswer: 32
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 3 =
+        correctAnswer: 12
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 9 × 2 =
+        correctAnswer: 18
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 7 × 9 =
+        correctAnswer: 63
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 8 × 2 =
+        correctAnswer: 16
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 3 =
+        correctAnswer: 15
+        rationale: Use a tabuada correspondente.
   - pageNumber: 5
     title: Fatos de Multiplicação — Conjunto 8 – Página 5
     description: Fatos básicos de multiplicação.
     exercises:
-      - { type: multiplication, question: "5 × 7 =", correctAnswer: 35 }
-      - { type: multiplication, question: "6 × 1 =", correctAnswer: 6 }
-      - { type: multiplication, question: "2 × 4 =", correctAnswer: 8 }
-      - { type: multiplication, question: "9 × 3 =", correctAnswer: 27 }
-      - { type: multiplication, question: "5 × 2 =", correctAnswer: 10 }
-      - { type: multiplication, question: "3 × 5 =", correctAnswer: 15 }
-      - { type: multiplication, question: "5 × 1 =", correctAnswer: 5 }
-      - { type: multiplication, question: "1 × 1 =", correctAnswer: 1 }
-      - { type: multiplication, question: "8 × 2 =", correctAnswer: 16 }
-      - { type: multiplication, question: "1 × 2 =", correctAnswer: 2 }
+      - type: multiplication
+        question: 5 × 7 =
+        correctAnswer: 35
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 6 × 1 =
+        correctAnswer: 6
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 4 =
+        correctAnswer: 8
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 9 × 3 =
+        correctAnswer: 27
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 2 =
+        correctAnswer: 10
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 3 × 5 =
+        correctAnswer: 15
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 1 =
+        correctAnswer: 5
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 1 × 1 =
+        correctAnswer: 1
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 8 × 2 =
+        correctAnswer: 16
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 1 × 2 =
+        correctAnswer: 2
+        rationale: Use a tabuada correspondente.
   - pageNumber: 6
     title: Fatos de Multiplicação — Conjunto 8 – Página 6
     description: Fatos básicos de multiplicação.
     exercises:
-      - { type: multiplication, question: "1 × 9 =", correctAnswer: 9 }
-      - { type: multiplication, question: "3 × 4 =", correctAnswer: 12 }
-      - { type: multiplication, question: "7 × 1 =", correctAnswer: 7 }
-      - { type: multiplication, question: "8 × 6 =", correctAnswer: 48 }
-      - { type: multiplication, question: "4 × 3 =", correctAnswer: 12 }
-      - { type: multiplication, question: "1 × 5 =", correctAnswer: 5 }
-      - { type: multiplication, question: "2 × 9 =", correctAnswer: 18 }
-      - { type: multiplication, question: "9 × 2 =", correctAnswer: 18 }
-      - { type: multiplication, question: "4 × 2 =", correctAnswer: 8 }
-      - { type: multiplication, question: "9 × 7 =", correctAnswer: 63 }
+      - type: multiplication
+        question: 1 × 9 =
+        correctAnswer: 9
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 3 × 4 =
+        correctAnswer: 12
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 7 × 1 =
+        correctAnswer: 7
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 8 × 6 =
+        correctAnswer: 48
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 3 =
+        correctAnswer: 12
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 1 × 5 =
+        correctAnswer: 5
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 9 =
+        correctAnswer: 18
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 9 × 2 =
+        correctAnswer: 18
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 2 =
+        correctAnswer: 8
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 9 × 7 =
+        correctAnswer: 63
+        rationale: Use a tabuada correspondente.
   - pageNumber: 7
     title: Fatos de Multiplicação — Conjunto 8 – Página 7
     description: Fatos básicos de multiplicação.
     exercises:
-      - { type: multiplication, question: "3 × 6 =", correctAnswer: 18 }
-      - { type: multiplication, question: "9 × 8 =", correctAnswer: 72 }
-      - { type: multiplication, question: "8 × 3 =", correctAnswer: 24 }
-      - { type: multiplication, question: "2 × 7 =", correctAnswer: 14 }
-      - { type: multiplication, question: "5 × 2 =", correctAnswer: 10 }
-      - { type: multiplication, question: "4 × 2 =", correctAnswer: 8 }
-      - { type: multiplication, question: "1 × 5 =", correctAnswer: 5 }
-      - { type: multiplication, question: "3 × 7 =", correctAnswer: 21 }
-      - { type: multiplication, question: "5 × 9 =", correctAnswer: 45 }
-      - { type: multiplication, question: "9 × 9 =", correctAnswer: 81 }
+      - type: multiplication
+        question: 3 × 6 =
+        correctAnswer: 18
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 9 × 8 =
+        correctAnswer: 72
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 8 × 3 =
+        correctAnswer: 24
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 7 =
+        correctAnswer: 14
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 2 =
+        correctAnswer: 10
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 2 =
+        correctAnswer: 8
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 1 × 5 =
+        correctAnswer: 5
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 3 × 7 =
+        correctAnswer: 21
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 9 =
+        correctAnswer: 45
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 9 × 9 =
+        correctAnswer: 81
+        rationale: Use a tabuada correspondente.
   - pageNumber: 8
     title: Fatos de Multiplicação — Conjunto 8 – Página 8
     description: Fatos básicos de multiplicação.
     exercises:
-      - { type: multiplication, question: "4 × 8 =", correctAnswer: 32 }
-      - { type: multiplication, question: "5 × 8 =", correctAnswer: 40 }
-      - { type: multiplication, question: "2 × 3 =", correctAnswer: 6 }
-      - { type: multiplication, question: "2 × 5 =", correctAnswer: 10 }
-      - { type: multiplication, question: "3 × 6 =", correctAnswer: 18 }
-      - { type: multiplication, question: "2 × 1 =", correctAnswer: 2 }
-      - { type: multiplication, question: "5 × 6 =", correctAnswer: 30 }
-      - { type: multiplication, question: "3 × 7 =", correctAnswer: 21 }
-      - { type: multiplication, question: "5 × 3 =", correctAnswer: 15 }
-      - { type: multiplication, question: "4 × 1 =", correctAnswer: 4 }
+      - type: multiplication
+        question: 4 × 8 =
+        correctAnswer: 32
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 8 =
+        correctAnswer: 40
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 3 =
+        correctAnswer: 6
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 5 =
+        correctAnswer: 10
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 3 × 6 =
+        correctAnswer: 18
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 2 × 1 =
+        correctAnswer: 2
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 6 =
+        correctAnswer: 30
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 3 × 7 =
+        correctAnswer: 21
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 3 =
+        correctAnswer: 15
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 4 × 1 =
+        correctAnswer: 4
+        rationale: Use a tabuada correspondente.
   - pageNumber: 9
     title: Fatos de Multiplicação — Conjunto 8 – Página 9
     description: Fatos básicos de multiplicação.
     exercises:
-      - { type: multiplication, question: "2 × 8 =", correctAnswer: 16 }
-      - { type: multiplication, question: "6 × 5 =", correctAnswer: 30 }
-      - { type: multiplication, question: "7 × 2 =", correctAnswer: 14 }
-      - { type: multiplication, question: "5 × 5 =", correctAnswer: 25 }
-      - { type: multiplication, question: "9 × 6 =", correctAnswer: 54 }
-      - { type: multiplication, question: "7 × 4 =", correctAnswer: 28 }
-      - { type: multiplication, question: "8 × 5 =", correctAnswer: 40 }
-      - { type: multiplication, question: "9 × 4 =", correctAnswer: 36 }
-      - { type: multiplication, question: "5 × 3 =", correctAnswer: 15 }
-      - { type: multiplication, question: "5 × 7 =", correctAnswer: 35 }
+      - type: multiplication
+        question: 2 × 8 =
+        correctAnswer: 16
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 6 × 5 =
+        correctAnswer: 30
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 7 × 2 =
+        correctAnswer: 14
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 5 =
+        correctAnswer: 25
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 9 × 6 =
+        correctAnswer: 54
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 7 × 4 =
+        correctAnswer: 28
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 8 × 5 =
+        correctAnswer: 40
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 9 × 4 =
+        correctAnswer: 36
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 3 =
+        correctAnswer: 15
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 5 × 7 =
+        correctAnswer: 35
+        rationale: Use a tabuada correspondente.
   - pageNumber: 10
     title: Fatos de Multiplicação — Conjunto 8 – Página 10
     description: Fatos básicos de multiplicação.
     exercises:
-      - { type: multiplication, question: "1 × 4 =", correctAnswer: 4 }
-      - { type: multiplication, question: "1 × 3 =", correctAnswer: 3 }
-      - { type: multiplication, question: "8 × 1 =", correctAnswer: 8 }
-      - { type: multiplication, question: "8 × 9 =", correctAnswer: 72 }
-      - { type: multiplication, question: "7 × 1 =", correctAnswer: 7 }
-      - { type: multiplication, question: "7 × 2 =", correctAnswer: 14 }
-      - { type: multiplication, question: "8 × 5 =", correctAnswer: 40 }
-      - { type: multiplication, question: "8 × 6 =", correctAnswer: 48 }
-      - { type: multiplication, question: "6 × 2 =", correctAnswer: 12 }
-      - { type: multiplication, question: "7 × 5 =", correctAnswer: 35 }
+      - type: multiplication
+        question: 1 × 4 =
+        correctAnswer: 4
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 1 × 3 =
+        correctAnswer: 3
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 8 × 1 =
+        correctAnswer: 8
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 8 × 9 =
+        correctAnswer: 72
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 7 × 1 =
+        correctAnswer: 7
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 7 × 2 =
+        correctAnswer: 14
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 8 × 5 =
+        correctAnswer: 40
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 8 × 6 =
+        correctAnswer: 48
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 6 × 2 =
+        correctAnswer: 12
+        rationale: Use a tabuada correspondente.
+      - type: multiplication
+        question: 7 × 5 =
+        correctAnswer: 35
+        rationale: Use a tabuada correspondente.

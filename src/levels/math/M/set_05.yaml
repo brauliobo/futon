@@ -3,97 +3,248 @@ level: M
 subject: math
 inputType: number
 difficulty: 5
-objectives: [trig.identities.product_sum]
-example: "sen(a)cos(b) = [sen(a+b) + sen(a-b)]/2"
+objectives:
+  - trig.identities.product_sum
+example: sen(a)cos(b) = [sen(a+b) + sen(a-b)]/2
 pages:
   - pageNumber: 1
     title: Produto sen·cos
     description: sen(a)cos(b) = [sen(a+b)+sen(a-b)]/2.
     exercises:
-      - { type: trigonometry, question: "2·sen(a)cos(b) = sen(a+b) + ?", correctAnswer: sen(a-b) }
-      - { type: trigonometry, question: "2·sen(60°)cos(30°) = sen(90°) + sen(30°) = ?", correctAnswer: 3/2 }
-      - { type: trigonometry, question: "2·sen(45°)cos(45°) = sen(90°) + sen(0°) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "2·sen(30°)cos(60°) = sen(90°) + sen(-30°) = ?", correctAnswer: 1/2 }
-      - { type: trigonometry, question: "2·sen(x)cos(x) = ?", correctAnswer: sen(2x) }
+      - type: trigonometry
+        question: 2·sen(a)cos(b) = sen(a+b) + ?
+        correctAnswer: sen(a-b)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·sen(60°)cos(30°) = sen(90°) + sen(30°) = ?
+        correctAnswer: 3/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·sen(45°)cos(45°) = sen(90°) + sen(0°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·sen(30°)cos(60°) = sen(90°) + sen(-30°) = ?
+        correctAnswer: 1/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·sen(x)cos(x) = ?
+        correctAnswer: sen(2x)
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 2
     title: Produto cos·cos
     description: cos(a)cos(b) = [cos(a+b)+cos(a-b)]/2.
     exercises:
-      - { type: trigonometry, question: "2·cos(a)cos(b) = cos(a+b) + ?", correctAnswer: cos(a-b) }
-      - { type: trigonometry, question: "2·cos(60°)cos(30°) = cos(90°) + cos(30°) = ?", correctAnswer: √3/2 }
-      - { type: trigonometry, question: "2·cos(45°)cos(45°) = cos(90°) + cos(0°) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "2·cos(x)cos(x) = ?", correctAnswer: 1+cos(2x) }
-      - { type: trigonometry, question: "2·cos(60°)cos(60°) = ?", correctAnswer: 1/2 }
+      - type: trigonometry
+        question: 2·cos(a)cos(b) = cos(a+b) + ?
+        correctAnswer: cos(a-b)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·cos(60°)cos(30°) = cos(90°) + cos(30°) = ?
+        correctAnswer: √3/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·cos(45°)cos(45°) = cos(90°) + cos(0°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·cos(x)cos(x) = ?
+        correctAnswer: 1+cos(2x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·cos(60°)cos(60°) = ?
+        correctAnswer: 1/2
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 3
     title: Produto sen·sen
     description: sen(a)sen(b) = [cos(a-b)-cos(a+b)]/2.
     exercises:
-      - { type: trigonometry, question: "2·sen(a)sen(b) = cos(a-b) - ?", correctAnswer: cos(a+b) }
-      - { type: trigonometry, question: "2·sen(60°)sen(30°) = cos(30°) - cos(90°) = ?", correctAnswer: √3/2 }
-      - { type: trigonometry, question: "2·sen(45°)sen(45°) = cos(0°) - cos(90°) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "2·sen(x)sen(x) = ?", correctAnswer: 1-cos(2x) }
-      - { type: trigonometry, question: "2·sen(30°)sen(30°) = ?", correctAnswer: 1/2 }
+      - type: trigonometry
+        question: 2·sen(a)sen(b) = cos(a-b) - ?
+        correctAnswer: cos(a+b)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·sen(60°)sen(30°) = cos(30°) - cos(90°) = ?
+        correctAnswer: √3/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·sen(45°)sen(45°) = cos(0°) - cos(90°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·sen(x)sen(x) = ?
+        correctAnswer: 1-cos(2x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·sen(30°)sen(30°) = ?
+        correctAnswer: 1/2
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 4
     title: Soma em Produto (sen + sen)
     description: sen(a)+sen(b) = 2·sen((a+b)/2)·cos((a-b)/2).
     exercises:
-      - { type: trigonometry, question: "sen(a)+sen(b) = 2·sen((a+b)/2)·cos((a-b)/?)", correctAnswer: 2 }
-      - { type: trigonometry, question: "sen(60°)+sen(30°) = 2·sen(45°)·cos(15°), valor = ?", correctAnswer: √3/2+1/2 }
-      - { type: trigonometry, question: "sen(x)+sen(x) = ?", correctAnswer: 2sen(x) }
-      - { type: trigonometry, question: "sen(x)+sen(-x) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "sen(90°)+sen(30°) = ?", correctAnswer: 3/2 }
+      - type: trigonometry
+        question: sen(a)+sen(b) = 2·sen((a+b)/2)·cos((a-b)/?)
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(60°)+sen(30°) = 2·sen(45°)·cos(15°), valor = ?
+        correctAnswer: √3/2+1/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(x)+sen(x) = ?
+        correctAnswer: 2sen(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(x)+sen(-x) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(90°)+sen(30°) = ?
+        correctAnswer: 3/2
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 5
     title: Soma em Produto (sen - sen)
     description: sen(a)-sen(b) = 2·cos((a+b)/2)·sen((a-b)/2).
     exercises:
-      - { type: trigonometry, question: "sen(a)-sen(b) = 2·cos((a+b)/2)·sen((a-b)/?)", correctAnswer: 2 }
-      - { type: trigonometry, question: "sen(60°)-sen(30°) = ?", correctAnswer: √3/2-1/2 }
-      - { type: trigonometry, question: "sen(x)-sen(x) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "sen(2x)-sen(x) em termos de cos e sen = 2·cos(?)·sen(x/2)", correctAnswer: 3x/2 }
-      - { type: trigonometry, question: "sen(90°)-sen(30°) = ?", correctAnswer: 1/2 }
+      - type: trigonometry
+        question: sen(a)-sen(b) = 2·cos((a+b)/2)·sen((a-b)/?)
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(60°)-sen(30°) = ?
+        correctAnswer: √3/2-1/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(x)-sen(x) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(2x)-sen(x) em termos de cos e sen = 2·cos(?)·sen(x/2)
+        correctAnswer: 3x/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(90°)-sen(30°) = ?
+        correctAnswer: 1/2
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 6
     title: Soma em Produto (cos + cos)
     description: cos(a)+cos(b) = 2·cos((a+b)/2)·cos((a-b)/2).
     exercises:
-      - { type: trigonometry, question: "cos(a)+cos(b) = 2·cos((a+b)/2)·cos((a-b)/?)", correctAnswer: 2 }
-      - { type: trigonometry, question: "cos(60°)+cos(30°) = ?", correctAnswer: 1/2+√3/2 }
-      - { type: trigonometry, question: "cos(x)+cos(x) = ?", correctAnswer: 2cos(x) }
-      - { type: trigonometry, question: "cos(90°)+cos(30°) = ?", correctAnswer: √3/2 }
-      - { type: trigonometry, question: "cos(x)+cos(-x) = ?", correctAnswer: 2cos(x) }
+      - type: trigonometry
+        question: cos(a)+cos(b) = 2·cos((a+b)/2)·cos((a-b)/?)
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(60°)+cos(30°) = ?
+        correctAnswer: 1/2+√3/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(x)+cos(x) = ?
+        correctAnswer: 2cos(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(90°)+cos(30°) = ?
+        correctAnswer: √3/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(x)+cos(-x) = ?
+        correctAnswer: 2cos(x)
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 7
     title: Soma em Produto (cos - cos)
     description: cos(a)-cos(b) = -2·sen((a+b)/2)·sen((a-b)/2).
     exercises:
-      - { type: trigonometry, question: "cos(a)-cos(b) = -2·sen((a+b)/2)·sen((a-b)/?)", correctAnswer: 2 }
-      - { type: trigonometry, question: "cos(60°)-cos(30°) = ?", correctAnswer: 1/2-√3/2 }
-      - { type: trigonometry, question: "cos(x)-cos(x) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "cos(0°)-cos(180°) = ?", correctAnswer: 2 }
-      - { type: trigonometry, question: "cos(x)-cos(-x) = ?", correctAnswer: 0 }
+      - type: trigonometry
+        question: cos(a)-cos(b) = -2·sen((a+b)/2)·sen((a-b)/?)
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(60°)-cos(30°) = ?
+        correctAnswer: 1/2-√3/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(x)-cos(x) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(0°)-cos(180°) = ?
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(x)-cos(-x) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 8
     title: Uso em Integrais (Redução de Potências)
     description: Utilidade em cálculo — reduzir produtos para somas.
     exercises:
-      - { type: trigonometry, question: "Ao integrar sen(3x)cos(2x), converta em soma: (sen 5x + sen ?)/2", correctAnswer: x }
-      - { type: trigonometry, question: "Ao integrar cos(5x)cos(x), converta em soma: (cos 6x + cos ?)/2", correctAnswer: 4x }
-      - { type: trigonometry, question: "Ao integrar sen(4x)sen(x): (cos ? - cos 5x)/2", correctAnswer: 3x }
-      - { type: trigonometry, question: "2·sen(a)cos(a) = ?", correctAnswer: sen(2a) }
-      - { type: trigonometry, question: "2·cos²(a) = 1 + ?", correctAnswer: cos(2a) }
+      - type: trigonometry
+        question: "Ao integrar sen(3x)cos(2x), converta em soma: (sen 5x + sen ?)/2"
+        correctAnswer: x
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Ao integrar cos(5x)cos(x), converta em soma: (cos 6x + cos ?)/2"
+        correctAnswer: 4x
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Ao integrar sen(4x)sen(x): (cos ? - cos 5x)/2"
+        correctAnswer: 3x
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·sen(a)cos(a) = ?
+        correctAnswer: sen(2a)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·cos²(a) = 1 + ?
+        correctAnswer: cos(2a)
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 9
     title: Verdadeiro ou Falso
     description: Julgue identidades.
     exercises:
-      - { type: trigonometry, question: "sen(a)sen(b) = sen(a+b) (V/F)?", correctAnswer: F }
-      - { type: trigonometry, question: "2·sen(a)cos(b) = sen(a+b)+sen(a-b) (V/F)?", correctAnswer: V }
-      - { type: trigonometry, question: "sen(a)+sen(b) = sen(a+b) (V/F)?", correctAnswer: F }
-      - { type: trigonometry, question: "cos(a)+cos(b) = 2·cos((a+b)/2)·cos((a-b)/2) (V/F)?", correctAnswer: V }
-      - { type: trigonometry, question: "sen(a)cos(b)+cos(a)sen(b) = sen(a+b) (V/F)?", correctAnswer: V }
+      - type: trigonometry
+        question: sen(a)sen(b) = sen(a+b) (V/F)?
+        correctAnswer: F
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·sen(a)cos(b) = sen(a+b)+sen(a-b) (V/F)?
+        correctAnswer: V
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(a)+sen(b) = sen(a+b) (V/F)?
+        correctAnswer: F
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(a)+cos(b) = 2·cos((a+b)/2)·cos((a-b)/2) (V/F)?
+        correctAnswer: V
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(a)cos(b)+cos(a)sen(b) = sen(a+b) (V/F)?
+        correctAnswer: V
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 10
     title: Revisão Integrada
     description: Combine produto-soma e soma-produto.
     exercises:
-      - { type: trigonometry, question: "sen(75°)+sen(15°) = 2·sen(45°)·cos(30°) = ?", correctAnswer: √6/2 }
-      - { type: trigonometry, question: "sen(75°)-sen(15°) = 2·cos(45°)·sen(30°) = ?", correctAnswer: √2/2 }
-      - { type: trigonometry, question: "cos(75°)+cos(15°) = 2·cos(45°)·cos(30°) = ?", correctAnswer: √6/2 }
-      - { type: trigonometry, question: "cos(75°)-cos(15°) = -2·sen(45°)·sen(30°) = ?", correctAnswer: -√2/2 }
-      - { type: trigonometry, question: "2·sen(45°)·cos(45°) = sen(?)", correctAnswer: 90° }
+      - type: trigonometry
+        question: sen(75°)+sen(15°) = 2·sen(45°)·cos(30°) = ?
+        correctAnswer: √6/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(75°)-sen(15°) = 2·cos(45°)·sen(30°) = ?
+        correctAnswer: √2/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(75°)+cos(15°) = 2·cos(45°)·cos(30°) = ?
+        correctAnswer: √6/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(75°)-cos(15°) = -2·sen(45°)·sen(30°) = ?
+        correctAnswer: -√2/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: 2·sen(45°)·cos(45°) = sen(?)
+        correctAnswer: 90°
+        rationale: Consulte o ciclo trigonométrico.
 target: 50

@@ -1,9 +1,10 @@
 title: Expressões Complexas — Conjunto 16
 level: G
-example: "Operações algébricas e com inteiros."
+example: Operações algébricas e com inteiros.
 subject: math
 difficulty: 3
-objectives: [math.integers_expressions]
+objectives:
+  - math.integers_expressions
 authorNotes: Conjunto de math/G.
 inputType: number
 pages:
@@ -11,139 +12,439 @@ pages:
     title: Expressões Complexas — Conjunto 16 – Página 1
     description: Operações algébricas e com inteiros.
     exercises:
-      - { type: integer_add, question: "20 + 16", correctAnswer: 36 }
-      - { type: algebraic_expression, question: "Se x = -7, então -1x + 4 =", correctAnswer: 11 }
-      - { type: algebraic_expression, question: "Se x = -9, então -3x + 6 =", correctAnswer: 33 }
-      - { type: integer_subtract, question: "6 - -13", correctAnswer: 19 }
-      - { type: integer_add, question: "12 + -3", correctAnswer: 9 }
-      - { type: algebraic_expression, question: "Se x = 3, então 2x + 9 =", correctAnswer: 15 }
-      - { type: algebraic_expression, question: "Se x = -8, então 4x + -9 =", correctAnswer: -41 }
-      - { type: algebraic_expression, question: "Se x = 3, então 5x + -4 =", correctAnswer: 11 }
-      - { type: equation, question: "-4x + 5 = -11", correctAnswer: 4 }
-      - { type: integer_subtract, question: "-5 - 16", correctAnswer: -21 }
+      - type: integer_add
+        question: 20 + 16
+        correctAnswer: 36
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: algebraic_expression
+        question: Se x = -7, então -1x + 4 =
+        correctAnswer: 11
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -9, então -3x + 6 =
+        correctAnswer: 33
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_subtract
+        question: 6 - -13
+        correctAnswer: 19
+        rationale: Transforme em soma com sinal oposto.
+      - type: integer_add
+        question: 12 + -3
+        correctAnswer: 9
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: algebraic_expression
+        question: Se x = 3, então 2x + 9 =
+        correctAnswer: 15
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -8, então 4x + -9 =
+        correctAnswer: -41
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 3, então 5x + -4 =
+        correctAnswer: 11
+        rationale: Simplifique combinando termos semelhantes.
+      - type: equation
+        question: -4x + 5 = -11
+        correctAnswer: 4
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: integer_subtract
+        question: -5 - 16
+        correctAnswer: -21
+        rationale: Transforme em soma com sinal oposto.
   - pageNumber: 2
     title: Expressões Complexas — Conjunto 16 – Página 2
     description: Operações algébricas e com inteiros.
     exercises:
-      - { type: algebraic_expression, question: "Se x = -4, então -1x + -7 =", correctAnswer: -3 }
-      - { type: algebraic_expression, question: "Se x = -2, então 5x + 9 =", correctAnswer: -1 }
-      - { type: algebraic_expression, question: "Se x = 7, então 3x + -4 =", correctAnswer: 17 }
-      - { type: algebraic_expression, question: "Se x = 2, então 5x + 4 =", correctAnswer: 14 }
-      - { type: algebraic_expression, question: "Se x = 2, então 5x + 9 =", correctAnswer: 19 }
-      - { type: equation, question: "4x + -5 = -17", correctAnswer: -3 }
-      - { type: algebraic_expression, question: "Se x = -5, então x - -2 =", correctAnswer: -3 }
-      - { type: algebraic_expression, question: "Se x = 1, então -2x + 3 =", correctAnswer: 1 }
-      - { type: integer_divide, question: "49 ÷ 7", correctAnswer: 7 }
-      - { type: equation, question: "-3x + -9 = 6", correctAnswer: -5 }
+      - type: algebraic_expression
+        question: Se x = -4, então -1x + -7 =
+        correctAnswer: -3
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -2, então 5x + 9 =
+        correctAnswer: -1
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 7, então 3x + -4 =
+        correctAnswer: 17
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 2, então 5x + 4 =
+        correctAnswer: 14
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 2, então 5x + 9 =
+        correctAnswer: 19
+        rationale: Simplifique combinando termos semelhantes.
+      - type: equation
+        question: 4x + -5 = -17
+        correctAnswer: -3
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: algebraic_expression
+        question: Se x = -5, então x - -2 =
+        correctAnswer: -3
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 1, então -2x + 3 =
+        correctAnswer: 1
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_divide
+        question: 49 ÷ 7
+        correctAnswer: 7
+        rationale: Regra de sinais aplicada à divisão.
+      - type: equation
+        question: -3x + -9 = 6
+        correctAnswer: -5
+        rationale: Aplique operações inversas para isolar a variável.
   - pageNumber: 3
     title: Expressões Complexas — Conjunto 16 – Página 3
     description: Operações algébricas e com inteiros.
     exercises:
-      - { type: integer_divide, question: "-94 ÷ -2", correctAnswer: 47 }
-      - { type: integer_divide, question: "48 ÷ 1", correctAnswer: 48 }
-      - { type: equation, question: "2x + 9 = 11", correctAnswer: 1 }
-      - { type: algebraic_expression, question: "Se x = 5, então 2x + 6 =", correctAnswer: 16 }
-      - { type: algebraic_expression, question: "Se x = 10, então 3x + 8 =", correctAnswer: 38 }
-      - { type: integer_subtract, question: "-14 - -7", correctAnswer: -7 }
-      - { type: integer_add, question: "16 + -4", correctAnswer: 12 }
-      - { type: integer_subtract, question: "12 - -1", correctAnswer: 13 }
-      - { type: equation, question: "2x + -9 = 13", correctAnswer: 11 }
-      - { type: integer_add, question: "-20 + 11", correctAnswer: -9 }
+      - type: integer_divide
+        question: -94 ÷ -2
+        correctAnswer: 47
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 48 ÷ 1
+        correctAnswer: 48
+        rationale: Regra de sinais aplicada à divisão.
+      - type: equation
+        question: 2x + 9 = 11
+        correctAnswer: 1
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: algebraic_expression
+        question: Se x = 5, então 2x + 6 =
+        correctAnswer: 16
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 10, então 3x + 8 =
+        correctAnswer: 38
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_subtract
+        question: -14 - -7
+        correctAnswer: -7
+        rationale: Transforme em soma com sinal oposto.
+      - type: integer_add
+        question: 16 + -4
+        correctAnswer: 12
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: integer_subtract
+        question: 12 - -1
+        correctAnswer: 13
+        rationale: Transforme em soma com sinal oposto.
+      - type: equation
+        question: 2x + -9 = 13
+        correctAnswer: 11
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: integer_add
+        question: -20 + 11
+        correctAnswer: -9
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
   - pageNumber: 4
     title: Expressões Complexas — Conjunto 16 – Página 4
     description: Operações algébricas e com inteiros.
     exercises:
-      - { type: integer_subtract, question: "15 - -20", correctAnswer: 35 }
-      - { type: algebraic_expression, question: "Se x = 6, então 5x + -8 =", correctAnswer: 22 }
-      - { type: integer_add, question: "-12 + -12", correctAnswer: -24 }
-      - { type: integer_add, question: "7 + 13", correctAnswer: 20 }
-      - { type: integer_divide, question: "-90 ÷ 3", correctAnswer: -30 }
-      - { type: integer_add, question: "4 + 7", correctAnswer: 11 }
-      - { type: integer_subtract, question: "-20 - -7", correctAnswer: -13 }
-      - { type: integer_divide, question: "-89 ÷ -1", correctAnswer: 89 }
-      - { type: equation, question: "-2x + -8 = 12", correctAnswer: -10 }
-      - { type: integer_multiply, question: "-12 × -6", correctAnswer: 72 }
+      - type: integer_subtract
+        question: 15 - -20
+        correctAnswer: 35
+        rationale: Transforme em soma com sinal oposto.
+      - type: algebraic_expression
+        question: Se x = 6, então 5x + -8 =
+        correctAnswer: 22
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_add
+        question: -12 + -12
+        correctAnswer: -24
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: integer_add
+        question: 7 + 13
+        correctAnswer: 20
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: integer_divide
+        question: -90 ÷ 3
+        correctAnswer: -30
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_add
+        question: 4 + 7
+        correctAnswer: 11
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: integer_subtract
+        question: -20 - -7
+        correctAnswer: -13
+        rationale: Transforme em soma com sinal oposto.
+      - type: integer_divide
+        question: -89 ÷ -1
+        correctAnswer: 89
+        rationale: Regra de sinais aplicada à divisão.
+      - type: equation
+        question: -2x + -8 = 12
+        correctAnswer: -10
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: integer_multiply
+        question: -12 × -6
+        correctAnswer: 72
+        rationale: "Regra de sinais: iguais positivo, diferentes negativo."
   - pageNumber: 5
     title: Expressões Complexas — Conjunto 16 – Página 5
     description: Operações algébricas e com inteiros.
     exercises:
-      - { type: integer_divide, question: "91 ÷ -13", correctAnswer: -7 }
-      - { type: algebraic_expression, question: "Se x = 9, então -5x + 0 =", correctAnswer: -45 }
-      - { type: algebraic_expression, question: "Se x = 1, então 2x + 6 =", correctAnswer: 8 }
-      - { type: integer_add, question: "-6 + 0", correctAnswer: -6 }
-      - { type: integer_multiply, question: "1 × -9", correctAnswer: -9 }
-      - { type: integer_add, question: "-16 + 3", correctAnswer: -13 }
-      - { type: integer_subtract, question: "-5 - -11", correctAnswer: 6 }
-      - { type: integer_subtract, question: "-9 - -14", correctAnswer: 5 }
-      - { type: equation, question: "5x + -4 = 6", correctAnswer: 2 }
-      - { type: integer_multiply, question: "-7 × 8", correctAnswer: -56 }
+      - type: integer_divide
+        question: 91 ÷ -13
+        correctAnswer: -7
+        rationale: Regra de sinais aplicada à divisão.
+      - type: algebraic_expression
+        question: Se x = 9, então -5x + 0 =
+        correctAnswer: -45
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 1, então 2x + 6 =
+        correctAnswer: 8
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_add
+        question: -6 + 0
+        correctAnswer: -6
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: integer_multiply
+        question: 1 × -9
+        correctAnswer: -9
+        rationale: "Regra de sinais: iguais positivo, diferentes negativo."
+      - type: integer_add
+        question: -16 + 3
+        correctAnswer: -13
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: integer_subtract
+        question: -5 - -11
+        correctAnswer: 6
+        rationale: Transforme em soma com sinal oposto.
+      - type: integer_subtract
+        question: -9 - -14
+        correctAnswer: 5
+        rationale: Transforme em soma com sinal oposto.
+      - type: equation
+        question: 5x + -4 = 6
+        correctAnswer: 2
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: integer_multiply
+        question: -7 × 8
+        correctAnswer: -56
+        rationale: "Regra de sinais: iguais positivo, diferentes negativo."
   - pageNumber: 6
     title: Expressões Complexas — Conjunto 16 – Página 6
     description: Operações algébricas e com inteiros.
     exercises:
-      - { type: algebraic_expression, question: "Se x = 4, então 3x + 10 =", correctAnswer: 22 }
-      - { type: algebraic_expression, question: "Se x = -10, então 4x + 4 =", correctAnswer: -36 }
-      - { type: algebraic_expression, question: "Se x = -10, então 5x + 9 =", correctAnswer: -41 }
-      - { type: integer_add, question: "-16 + 19", correctAnswer: 3 }
-      - { type: algebraic_expression, question: "Se x = -7, então -5x + -6 =", correctAnswer: 29 }
-      - { type: integer_multiply, question: "-2 × 8", correctAnswer: -16 }
-      - { type: algebraic_expression, question: "Se x = 6, então 1x + 1 =", correctAnswer: 7 }
-      - { type: equation, question: "3x + -1 = -1", correctAnswer: 0 }
-      - { type: integer_subtract, question: "-4 - 14", correctAnswer: -18 }
-      - { type: algebraic_expression, question: "Se x = 1, então 5x + 3 =", correctAnswer: 8 }
+      - type: algebraic_expression
+        question: Se x = 4, então 3x + 10 =
+        correctAnswer: 22
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -10, então 4x + 4 =
+        correctAnswer: -36
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -10, então 5x + 9 =
+        correctAnswer: -41
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_add
+        question: -16 + 19
+        correctAnswer: 3
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: algebraic_expression
+        question: Se x = -7, então -5x + -6 =
+        correctAnswer: 29
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_multiply
+        question: -2 × 8
+        correctAnswer: -16
+        rationale: "Regra de sinais: iguais positivo, diferentes negativo."
+      - type: algebraic_expression
+        question: Se x = 6, então 1x + 1 =
+        correctAnswer: 7
+        rationale: Simplifique combinando termos semelhantes.
+      - type: equation
+        question: 3x + -1 = -1
+        correctAnswer: 0
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: integer_subtract
+        question: -4 - 14
+        correctAnswer: -18
+        rationale: Transforme em soma com sinal oposto.
+      - type: algebraic_expression
+        question: Se x = 1, então 5x + 3 =
+        correctAnswer: 8
+        rationale: Simplifique combinando termos semelhantes.
   - pageNumber: 7
     title: Expressões Complexas — Conjunto 16 – Página 7
     description: Operações algébricas e com inteiros.
     exercises:
-      - { type: algebraic_expression, question: "Se x = 8, então -2x + -2 =", correctAnswer: -18 }
-      - { type: integer_divide, question: "44 ÷ -2", correctAnswer: -22 }
-      - { type: algebraic_expression, question: "Se x = -8, então 4x + -7 =", correctAnswer: -39 }
-      - { type: algebraic_expression, question: "Se x = -7, então 1x + 5 =", correctAnswer: -2 }
-      - { type: integer_add, question: "-16 + 20", correctAnswer: 4 }
-      - { type: algebraic_expression, question: "Se x = 1, então 1x + 8 =", correctAnswer: 9 }
-      - { type: integer_divide, question: "-77 ÷ -11", correctAnswer: 7 }
-      - { type: integer_add, question: "0 + -19", correctAnswer: -19 }
-      - { type: integer_add, question: "7 + -8", correctAnswer: -1 }
-      - { type: algebraic_expression, question: "Se x = -3, então -2x + 9 =", correctAnswer: 15 }
+      - type: algebraic_expression
+        question: Se x = 8, então -2x + -2 =
+        correctAnswer: -18
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_divide
+        question: 44 ÷ -2
+        correctAnswer: -22
+        rationale: Regra de sinais aplicada à divisão.
+      - type: algebraic_expression
+        question: Se x = -8, então 4x + -7 =
+        correctAnswer: -39
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -7, então 1x + 5 =
+        correctAnswer: -2
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_add
+        question: -16 + 20
+        correctAnswer: 4
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: algebraic_expression
+        question: Se x = 1, então 1x + 8 =
+        correctAnswer: 9
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_divide
+        question: -77 ÷ -11
+        correctAnswer: 7
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_add
+        question: 0 + -19
+        correctAnswer: -19
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: integer_add
+        question: 7 + -8
+        correctAnswer: -1
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: algebraic_expression
+        question: Se x = -3, então -2x + 9 =
+        correctAnswer: 15
+        rationale: Simplifique combinando termos semelhantes.
   - pageNumber: 8
     title: Expressões Complexas — Conjunto 16 – Página 8
     description: Operações algébricas e com inteiros.
     exercises:
-      - { type: algebraic_expression, question: "Se x = -4, então -3x + -7 =", correctAnswer: 5 }
-      - { type: equation, question: "-2x + 3 = -9", correctAnswer: 6 }
-      - { type: equation, question: "4x + 0 = -16", correctAnswer: -4 }
-      - { type: algebraic_expression, question: "Se x = 5, então 1x + -8 =", correctAnswer: -3 }
-      - { type: integer_subtract, question: "16 - 16", correctAnswer: 0 }
-      - { type: integer_subtract, question: "-14 - -17", correctAnswer: 3 }
-      - { type: integer_subtract, question: "-3 - -20", correctAnswer: 17 }
-      - { type: integer_subtract, question: "16 - -19", correctAnswer: 35 }
-      - { type: algebraic_expression, question: "Se x = -6, então 5x + 0 =", correctAnswer: -30 }
-      - { type: integer_add, question: "-7 + 5", correctAnswer: -2 }
+      - type: algebraic_expression
+        question: Se x = -4, então -3x + -7 =
+        correctAnswer: 5
+        rationale: Simplifique combinando termos semelhantes.
+      - type: equation
+        question: -2x + 3 = -9
+        correctAnswer: 6
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: equation
+        question: 4x + 0 = -16
+        correctAnswer: -4
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: algebraic_expression
+        question: Se x = 5, então 1x + -8 =
+        correctAnswer: -3
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_subtract
+        question: 16 - 16
+        correctAnswer: 0
+        rationale: Transforme em soma com sinal oposto.
+      - type: integer_subtract
+        question: -14 - -17
+        correctAnswer: 3
+        rationale: Transforme em soma com sinal oposto.
+      - type: integer_subtract
+        question: -3 - -20
+        correctAnswer: 17
+        rationale: Transforme em soma com sinal oposto.
+      - type: integer_subtract
+        question: 16 - -19
+        correctAnswer: 35
+        rationale: Transforme em soma com sinal oposto.
+      - type: algebraic_expression
+        question: Se x = -6, então 5x + 0 =
+        correctAnswer: -30
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_add
+        question: -7 + 5
+        correctAnswer: -2
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
   - pageNumber: 9
     title: Expressões Complexas — Conjunto 16 – Página 9
     description: Operações algébricas e com inteiros.
     exercises:
-      - { type: integer_divide, question: "91 ÷ 7", correctAnswer: 13 }
-      - { type: integer_divide, question: "70 ÷ -10", correctAnswer: -7 }
-      - { type: integer_add, question: "2 + -15", correctAnswer: -13 }
-      - { type: integer_divide, question: "57 ÷ -3", correctAnswer: -19 }
-      - { type: integer_subtract, question: "17 - 19", correctAnswer: -2 }
-      - { type: integer_divide, question: "49 ÷ 7", correctAnswer: 7 }
-      - { type: integer_add, question: "12 + -3", correctAnswer: 9 }
-      - { type: algebraic_expression, question: "Se x = -4, então -1x + -7 =", correctAnswer: -3 }
-      - { type: integer_add, question: "-12 + -12", correctAnswer: -24 }
-      - { type: integer_add, question: "4 + 7", correctAnswer: 11 }
+      - type: integer_divide
+        question: 91 ÷ 7
+        correctAnswer: 13
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 70 ÷ -10
+        correctAnswer: -7
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_add
+        question: 2 + -15
+        correctAnswer: -13
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: integer_divide
+        question: 57 ÷ -3
+        correctAnswer: -19
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_subtract
+        question: 17 - 19
+        correctAnswer: -2
+        rationale: Transforme em soma com sinal oposto.
+      - type: integer_divide
+        question: 49 ÷ 7
+        correctAnswer: 7
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_add
+        question: 12 + -3
+        correctAnswer: 9
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: algebraic_expression
+        question: Se x = -4, então -1x + -7 =
+        correctAnswer: -3
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_add
+        question: -12 + -12
+        correctAnswer: -24
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
+      - type: integer_add
+        question: 4 + 7
+        correctAnswer: 11
+        rationale: Sinais iguais somam e conservam; diferentes subtraem e assumem o maior.
   - pageNumber: 10
     title: Expressões Complexas — Conjunto 16 – Página 10
     description: Operações algébricas e com inteiros.
     exercises:
-      - { type: integer_subtract, question: "12 - -1", correctAnswer: 13 }
-      - { type: integer_subtract, question: "16 - 16", correctAnswer: 0 }
-      - { type: algebraic_expression, question: "Se x = -9, então -3x + 6 =", correctAnswer: 33 }
-      - { type: integer_subtract, question: "16 - -19", correctAnswer: 35 }
-      - { type: integer_multiply, question: "-7 × 8", correctAnswer: -56 }
-      - { type: equation, question: "2x + 9 = 11", correctAnswer: 1 }
-      - { type: integer_subtract, question: "15 - -20", correctAnswer: 35 }
-      - { type: equation, question: "2x + -9 = 13", correctAnswer: 11 }
-      - { type: algebraic_expression, question: "Se x = 1, então -2x + 3 =", correctAnswer: 1 }
-      - { type: equation, question: "-3x + -9 = 6", correctAnswer: -5 }
+      - type: integer_subtract
+        question: 12 - -1
+        correctAnswer: 13
+        rationale: Transforme em soma com sinal oposto.
+      - type: integer_subtract
+        question: 16 - 16
+        correctAnswer: 0
+        rationale: Transforme em soma com sinal oposto.
+      - type: algebraic_expression
+        question: Se x = -9, então -3x + 6 =
+        correctAnswer: 33
+        rationale: Simplifique combinando termos semelhantes.
+      - type: integer_subtract
+        question: 16 - -19
+        correctAnswer: 35
+        rationale: Transforme em soma com sinal oposto.
+      - type: integer_multiply
+        question: -7 × 8
+        correctAnswer: -56
+        rationale: "Regra de sinais: iguais positivo, diferentes negativo."
+      - type: equation
+        question: 2x + 9 = 11
+        correctAnswer: 1
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: integer_subtract
+        question: 15 - -20
+        correctAnswer: 35
+        rationale: Transforme em soma com sinal oposto.
+      - type: equation
+        question: 2x + -9 = 13
+        correctAnswer: 11
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: algebraic_expression
+        question: Se x = 1, então -2x + 3 =
+        correctAnswer: 1
+        rationale: Simplifique combinando termos semelhantes.
+      - type: equation
+        question: -3x + -9 = 6
+        correctAnswer: -5
+        rationale: Aplique operações inversas para isolar a variável.

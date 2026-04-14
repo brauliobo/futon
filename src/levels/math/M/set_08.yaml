@@ -3,97 +3,248 @@ level: M
 subject: math
 inputType: number
 difficulty: 4
-objectives: [trig.graphs]
-example: "y = sen(x) tem período 2π e amplitude 1"
+objectives:
+  - trig.graphs
+example: y = sen(x) tem período 2π e amplitude 1
 pages:
   - pageNumber: 1
     title: Características Básicas
     description: Domínio, imagem, período, amplitude.
     exercises:
-      - { type: trigonometry, question: "Domínio de sen(x) = ?", correctAnswer: ℝ }
-      - { type: trigonometry, question: "Imagem de sen(x) = ?", correctAnswer: "[-1,1]" }
-      - { type: trigonometry, question: "Período de sen(x) em graus = ?", correctAnswer: 360° }
-      - { type: trigonometry, question: "Amplitude de sen(x) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "sen(0) = ?", correctAnswer: 0 }
+      - type: trigonometry
+        question: Domínio de sen(x) = ?
+        correctAnswer: ℝ
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Imagem de sen(x) = ?
+        correctAnswer: "[-1,1]"
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Período de sen(x) em graus = ?
+        correctAnswer: 360°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Amplitude de sen(x) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(0) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 2
     title: Valores Notáveis do Seno
     description: Valores em 0°, 90°, 180°, 270°, 360°.
     exercises:
-      - { type: trigonometry, question: "sen(90°) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "sen(180°) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "sen(270°) = ?", correctAnswer: -1 }
-      - { type: trigonometry, question: "sen(360°) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "Máximo de sen(x) ocorre em: (90°/180°/0°)", correctAnswer: 90° }
+      - type: trigonometry
+        question: sen(90°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(180°) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(270°) = ?
+        correctAnswer: -1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(360°) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Máximo de sen(x) ocorre em: (90°/180°/0°)"
+        correctAnswer: 90°
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 3
     title: Cosseno — Características
     description: cos(x) — mesma amplitude e período do seno, defasado.
     exercises:
-      - { type: trigonometry, question: "Domínio de cos(x) = ?", correctAnswer: ℝ }
-      - { type: trigonometry, question: "Imagem de cos(x) = ?", correctAnswer: "[-1,1]" }
-      - { type: trigonometry, question: "Período de cos(x) em graus = ?", correctAnswer: 360° }
-      - { type: trigonometry, question: "cos(x) é: (par/ímpar)", correctAnswer: par }
-      - { type: trigonometry, question: "sen(x) é: (par/ímpar)", correctAnswer: ímpar }
+      - type: trigonometry
+        question: Domínio de cos(x) = ?
+        correctAnswer: ℝ
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Imagem de cos(x) = ?
+        correctAnswer: "[-1,1]"
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Período de cos(x) em graus = ?
+        correctAnswer: 360°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "cos(x) é: (par/ímpar)"
+        correctAnswer: par
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "sen(x) é: (par/ímpar)"
+        correctAnswer: ímpar
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 4
     title: Valores Notáveis do Cosseno
     description: Cosseno em pontos de referência.
     exercises:
-      - { type: trigonometry, question: "cos(0) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "cos(90°) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "cos(180°) = ?", correctAnswer: -1 }
-      - { type: trigonometry, question: "cos(270°) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "cos(360°) = ?", correctAnswer: 1 }
+      - type: trigonometry
+        question: cos(0) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(90°) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(180°) = ?
+        correctAnswer: -1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(270°) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(360°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 5
     title: Amplitude
     description: y = A·sen(x) altera a amplitude.
     exercises:
-      - { type: trigonometry, question: "Amplitude de y=3·sen(x) = ?", correctAnswer: 3 }
-      - { type: trigonometry, question: "Amplitude de y=-2·sen(x) = ?", correctAnswer: 2 }
-      - { type: trigonometry, question: "Amplitude de y=0.5·cos(x) = ?", correctAnswer: 0.5 }
-      - { type: trigonometry, question: "Amplitude de y=cos(x) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "Amplitude de y=4·sen(x) = ?", correctAnswer: 4 }
+      - type: trigonometry
+        question: Amplitude de y=3·sen(x) = ?
+        correctAnswer: 3
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Amplitude de y=-2·sen(x) = ?
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Amplitude de y=0.5·cos(x) = ?
+        correctAnswer: 0.5
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Amplitude de y=cos(x) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Amplitude de y=4·sen(x) = ?
+        correctAnswer: 4
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 6
     title: Período e Frequência
     description: y = sen(kx) altera o período.
     exercises:
-      - { type: trigonometry, question: "Período de y=sen(2x) = ?", correctAnswer: 180° }
-      - { type: trigonometry, question: "Período de y=sen(x/2) = ?", correctAnswer: 720° }
-      - { type: trigonometry, question: "Período de y=cos(3x) = ?", correctAnswer: 120° }
-      - { type: trigonometry, question: "Período de y=sen(πx) = ?", correctAnswer: 2 }
-      - { type: trigonometry, question: "Se período = 2π/k, k para período 90° = ?", correctAnswer: 4 }
+      - type: trigonometry
+        question: Período de y=sen(2x) = ?
+        correctAnswer: 180°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Período de y=sen(x/2) = ?
+        correctAnswer: 720°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Período de y=cos(3x) = ?
+        correctAnswer: 120°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Período de y=sen(πx) = ?
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Se período = 2π/k, k para período 90° = ?
+        correctAnswer: 4
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 7
     title: Deslocamentos Verticais
     description: y = sen(x) + c desloca verticalmente.
     exercises:
-      - { type: trigonometry, question: "Máximo de y = sen(x) + 2 = ?", correctAnswer: 3 }
-      - { type: trigonometry, question: "Mínimo de y = sen(x) + 2 = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "Máximo de y = cos(x) - 1 = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "Mínimo de y = cos(x) - 1 = ?", correctAnswer: -2 }
-      - { type: trigonometry, question: "Linha central de y=sen(x)+5 = ?", correctAnswer: 5 }
+      - type: trigonometry
+        question: Máximo de y = sen(x) + 2 = ?
+        correctAnswer: 3
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Mínimo de y = sen(x) + 2 = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Máximo de y = cos(x) - 1 = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Mínimo de y = cos(x) - 1 = ?
+        correctAnswer: -2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Linha central de y=sen(x)+5 = ?
+        correctAnswer: 5
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 8
     title: Deslocamentos Horizontais
     description: y = sen(x-φ) desloca horizontalmente.
     exercises:
-      - { type: trigonometry, question: "sen(x-90°) = ?", correctAnswer: -cos(x) }
-      - { type: trigonometry, question: "cos(x-90°) = ?", correctAnswer: sen(x) }
-      - { type: trigonometry, question: "sen(x+180°) = ?", correctAnswer: -sen(x) }
-      - { type: trigonometry, question: "cos(x+180°) = ?", correctAnswer: -cos(x) }
-      - { type: trigonometry, question: "sen e cos diferem por um deslocamento de: ?°", correctAnswer: 90 }
+      - type: trigonometry
+        question: sen(x-90°) = ?
+        correctAnswer: -cos(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(x-90°) = ?
+        correctAnswer: sen(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(x+180°) = ?
+        correctAnswer: -sen(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(x+180°) = ?
+        correctAnswer: -cos(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "sen e cos diferem por um deslocamento de: ?°"
+        correctAnswer: 90
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 9
     title: Raízes do Gráfico
     description: Zeros de sen e cos.
     exercises:
-      - { type: trigonometry, question: "Zeros de sen(x) em [0°,360°] (primeira) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "Zeros de sen(x) em [0°,360°] — segunda = ?", correctAnswer: 180° }
-      - { type: trigonometry, question: "Zeros de cos(x) em [0°,360°] — primeira = ?", correctAnswer: 90° }
-      - { type: trigonometry, question: "Zeros de cos(x) em [0°,360°] — segunda = ?", correctAnswer: 270° }
-      - { type: trigonometry, question: "Quantos zeros cos(x) tem em [0°,360°)? ", correctAnswer: 2 }
+      - type: trigonometry
+        question: Zeros de sen(x) em [0°,360°] (primeira) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Zeros de sen(x) em [0°,360°] — segunda = ?
+        correctAnswer: 180°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Zeros de cos(x) em [0°,360°] — primeira = ?
+        correctAnswer: 90°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Zeros de cos(x) em [0°,360°] — segunda = ?
+        correctAnswer: 270°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Quantos zeros cos(x) tem em [0°,360°)? "
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 10
     title: Revisão Integrada
     description: Identifique propriedades.
     exercises:
-      - { type: trigonometry, question: "Amplitude de y=2·sen(3x) + 1 = ?", correctAnswer: 2 }
-      - { type: trigonometry, question: "Período de y=sen(4x) = ?", correctAnswer: 90° }
-      - { type: trigonometry, question: "Linha central de y=2·cos(x)+5 = ?", correctAnswer: 5 }
-      - { type: trigonometry, question: "Máximo de y=3·sen(x) = ?", correctAnswer: 3 }
-      - { type: trigonometry, question: "Mínimo de y=3·sen(x) = ?", correctAnswer: -3 }
+      - type: trigonometry
+        question: Amplitude de y=2·sen(3x) + 1 = ?
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Período de y=sen(4x) = ?
+        correctAnswer: 90°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Linha central de y=2·cos(x)+5 = ?
+        correctAnswer: 5
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Máximo de y=3·sen(x) = ?
+        correctAnswer: 3
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Mínimo de y=3·sen(x) = ?
+        correctAnswer: -3
+        rationale: Consulte o ciclo trigonométrico.
 target: 50

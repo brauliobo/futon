@@ -3,7 +3,8 @@ level: K
 example: "Avalie funções e trabalhe com gráficos. Ex.: f(x) = 2x + 1, f(3) = 7"
 subject: math
 difficulty: 4
-objectives: [math.functions_graphs]
+objectives:
+  - math.functions_graphs
 authorNotes: Conjunto de math/K.
 inputType: number
 pages:
@@ -11,139 +12,439 @@ pages:
     title: Funções e Gráficos — Conjunto 14 – Página 1
     description: Avalie a função conforme indicado.
     exercises:
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 1x + -1, f(g(3)) = ?", correctAnswer: "-1" }
-      - { type: linear_equation, question: "f(x) = 1x + 0, g(x) = 1x + -2, f(g(0)) = ?", correctAnswer: "-2" }
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 2x + -4, f(g(2)) = ?", correctAnswer: "-3" }
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 3x + -1, f(g(-3)) = ?", correctAnswer: "-13" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 4x + 3, f(g(2)) = ?", correctAnswer: "9" }
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 3x + 2, f(g(3)) = ?", correctAnswer: "8" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 1x + -1, f(g(2)) = ?", correctAnswer: "-1" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 4x + -2, f(g(-1)) = ?", correctAnswer: "-11" }
-      - { type: linear_equation, question: "f(x) = 1x + 0, g(x) = 1x + 4, f(g(1)) = ?", correctAnswer: "5" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 2x + -5, f(g(-2)) = ?", correctAnswer: "-13" }
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 1x + -1, f(g(3)) = ?
+        correctAnswer: "-1"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + 0, g(x) = 1x + -2, f(g(0)) = ?
+        correctAnswer: "-2"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 2x + -4, f(g(2)) = ?
+        correctAnswer: "-3"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 3x + -1, f(g(-3)) = ?
+        correctAnswer: "-13"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 4x + 3, f(g(2)) = ?
+        correctAnswer: "9"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 3x + 2, f(g(3)) = ?
+        correctAnswer: "8"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 1x + -1, f(g(2)) = ?
+        correctAnswer: "-1"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 4x + -2, f(g(-1)) = ?
+        correctAnswer: "-11"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + 0, g(x) = 1x + 4, f(g(1)) = ?
+        correctAnswer: "5"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 2x + -5, f(g(-2)) = ?
+        correctAnswer: "-13"
+        rationale: Isole x usando operações inversas dos dois lados.
   - pageNumber: 2
     title: Funções e Gráficos — Conjunto 14 – Página 2
     description: Avalie a função conforme indicado.
     exercises:
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 3x + -4, f(g(1)) = ?", correctAnswer: "-6" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 1x + 5, f(g(2)) = ?", correctAnswer: "2" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 3x + -4, f(g(-2)) = ?", correctAnswer: "-15" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 5x + -1, f(g(-1)) = ?", correctAnswer: "-8" }
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 4x + 2, f(g(-3)) = ?", correctAnswer: "-11" }
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 1x + 1, f(g(-3)) = ?", correctAnswer: "-3" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 1x + -4, f(g(-3)) = ?", correctAnswer: "-11" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 1x + 1, f(g(-1)) = ?", correctAnswer: "-2" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 5x + 0, f(g(1)) = ?", correctAnswer: "0" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 2x + -4, f(g(-3)) = ?", correctAnswer: "-14" }
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 3x + -4, f(g(1)) = ?
+        correctAnswer: "-6"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 1x + 5, f(g(2)) = ?
+        correctAnswer: "2"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 3x + -4, f(g(-2)) = ?
+        correctAnswer: "-15"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 5x + -1, f(g(-1)) = ?
+        correctAnswer: "-8"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 4x + 2, f(g(-3)) = ?
+        correctAnswer: "-11"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 1x + 1, f(g(-3)) = ?
+        correctAnswer: "-3"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 1x + -4, f(g(-3)) = ?
+        correctAnswer: "-11"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 1x + 1, f(g(-1)) = ?
+        correctAnswer: "-2"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 5x + 0, f(g(1)) = ?
+        correctAnswer: "0"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 2x + -4, f(g(-3)) = ?
+        correctAnswer: "-14"
+        rationale: Isole x usando operações inversas dos dois lados.
   - pageNumber: 3
     title: Funções e Gráficos — Conjunto 14 – Página 3
     description: Avalie a função conforme indicado.
     exercises:
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 3x + 3, f(g(0)) = ?", correctAnswer: "0" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 4x + 1, f(g(-2)) = ?", correctAnswer: "-9" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 2x + -5, f(g(3)) = ?", correctAnswer: "-1" }
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 2x + 1, f(g(-3)) = ?", correctAnswer: "-6" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 2x + -2, f(g(-1)) = ?", correctAnswer: "-9" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 2x + 2, f(g(1)) = ?", correctAnswer: "2" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 2x + -3, f(g(3)) = ?", correctAnswer: "-1" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 5x + 5, f(g(1)) = ?", correctAnswer: "6" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 1x + 1, f(g(0)) = ?", correctAnswer: "-1" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 1x + 4, f(g(0)) = ?", correctAnswer: "2" }
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 3x + 3, f(g(0)) = ?
+        correctAnswer: "0"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 4x + 1, f(g(-2)) = ?
+        correctAnswer: "-9"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 2x + -5, f(g(3)) = ?
+        correctAnswer: "-1"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 2x + 1, f(g(-3)) = ?
+        correctAnswer: "-6"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 2x + -2, f(g(-1)) = ?
+        correctAnswer: "-9"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 2x + 2, f(g(1)) = ?
+        correctAnswer: "2"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 2x + -3, f(g(3)) = ?
+        correctAnswer: "-1"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 5x + 5, f(g(1)) = ?
+        correctAnswer: "6"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 1x + 1, f(g(0)) = ?
+        correctAnswer: "-1"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 1x + 4, f(g(0)) = ?
+        correctAnswer: "2"
+        rationale: Isole x usando operações inversas dos dois lados.
   - pageNumber: 4
     title: Funções e Gráficos — Conjunto 14 – Página 4
     description: Avalie a função conforme indicado.
     exercises:
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 4x + -3, f(g(3)) = ?", correctAnswer: "4" }
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 3x + 2, f(g(-2)) = ?", correctAnswer: "-5" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 4x + 0, f(g(-1)) = ?", correctAnswer: "-9" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 4x + 5, f(g(2)) = ?", correctAnswer: "11" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 2x + -5, f(g(3)) = ?", correctAnswer: "-3" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 4x + -3, f(g(-3)) = ?", correctAnswer: "-17" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 2x + -3, f(g(-3)) = ?", correctAnswer: "-11" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 1x + 4, f(g(3)) = ?", correctAnswer: "2" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 3x + -3, f(g(2)) = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 1x + -3, f(g(-2)) = ?", correctAnswer: "-10" }
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 4x + -3, f(g(3)) = ?
+        correctAnswer: "4"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 3x + 2, f(g(-2)) = ?
+        correctAnswer: "-5"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 4x + 0, f(g(-1)) = ?
+        correctAnswer: "-9"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 4x + 5, f(g(2)) = ?
+        correctAnswer: "11"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 2x + -5, f(g(3)) = ?
+        correctAnswer: "-3"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 4x + -3, f(g(-3)) = ?
+        correctAnswer: "-17"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 2x + -3, f(g(-3)) = ?
+        correctAnswer: "-11"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 1x + 4, f(g(3)) = ?
+        correctAnswer: "2"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 3x + -3, f(g(2)) = ?
+        correctAnswer: "1"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 1x + -3, f(g(-2)) = ?
+        correctAnswer: "-10"
+        rationale: Isole x usando operações inversas dos dois lados.
   - pageNumber: 5
     title: Funções e Gráficos — Conjunto 14 – Página 5
     description: Avalie a função conforme indicado.
     exercises:
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 2x + 3, f(g(3)) = ?", correctAnswer: "8" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 2x + 2, f(g(-3)) = ?", correctAnswer: "-8" }
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 1x + -5, f(g(2)) = ?", correctAnswer: "-4" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 3x + 3, f(g(-3)) = ?", correctAnswer: "-8" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 5x + 4, f(g(2)) = ?", correctAnswer: "10" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 4x + -4, f(g(3)) = ?", correctAnswer: "6" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 3x + 1, f(g(3)) = ?", correctAnswer: "6" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 3x + 1, f(g(-1)) = ?", correctAnswer: "-6" }
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 3x + 5, f(g(3)) = ?", correctAnswer: "13" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 1x + -4, f(g(-1)) = ?", correctAnswer: "-10" }
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 2x + 3, f(g(3)) = ?
+        correctAnswer: "8"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 2x + 2, f(g(-3)) = ?
+        correctAnswer: "-8"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 1x + -5, f(g(2)) = ?
+        correctAnswer: "-4"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 3x + 3, f(g(-3)) = ?
+        correctAnswer: "-8"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 5x + 4, f(g(2)) = ?
+        correctAnswer: "10"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 4x + -4, f(g(3)) = ?
+        correctAnswer: "6"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 3x + 1, f(g(3)) = ?
+        correctAnswer: "6"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 3x + 1, f(g(-1)) = ?
+        correctAnswer: "-6"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 3x + 5, f(g(3)) = ?
+        correctAnswer: "13"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 1x + -4, f(g(-1)) = ?
+        correctAnswer: "-10"
+        rationale: Isole x usando operações inversas dos dois lados.
   - pageNumber: 6
     title: Funções e Gráficos — Conjunto 14 – Página 6
     description: Avalie a função conforme indicado.
     exercises:
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 4x + 1, f(g(-2)) = ?", correctAnswer: "-12" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 3x + -4, f(g(-1)) = ?", correctAnswer: "-11" }
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 4x + -3, f(g(1)) = ?", correctAnswer: "-2" }
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 1x + -3, f(g(2)) = ?", correctAnswer: "-4" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 1x + -1, f(g(-2)) = ?", correctAnswer: "-8" }
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 5x + -3, f(g(-2)) = ?", correctAnswer: "-14" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 5x + 3, f(g(1)) = ?", correctAnswer: "4" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 4x + -4, f(g(2)) = ?", correctAnswer: "2" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 5x + -4, f(g(-1)) = ?", correctAnswer: "-13" }
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 1x + 2, f(g(0)) = ?", correctAnswer: "-1" }
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 4x + 1, f(g(-2)) = ?
+        correctAnswer: "-12"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 3x + -4, f(g(-1)) = ?
+        correctAnswer: "-11"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 4x + -3, f(g(1)) = ?
+        correctAnswer: "-2"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 1x + -3, f(g(2)) = ?
+        correctAnswer: "-4"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 1x + -1, f(g(-2)) = ?
+        correctAnswer: "-8"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 5x + -3, f(g(-2)) = ?
+        correctAnswer: "-14"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 5x + 3, f(g(1)) = ?
+        correctAnswer: "4"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 4x + -4, f(g(2)) = ?
+        correctAnswer: "2"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 5x + -4, f(g(-1)) = ?
+        correctAnswer: "-13"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 1x + 2, f(g(0)) = ?
+        correctAnswer: "-1"
+        rationale: Isole x usando operações inversas dos dois lados.
   - pageNumber: 7
     title: Funções e Gráficos — Conjunto 14 – Página 7
     description: Avalie a função conforme indicado.
     exercises:
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 4x + 3, f(g(3)) = ?", correctAnswer: "14" }
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 3x + 1, f(g(-3)) = ?", correctAnswer: "-11" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 4x + -1, f(g(1)) = ?", correctAnswer: "-2" }
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 2x + 4, f(g(1)) = ?", correctAnswer: "5" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 4x + 0, f(g(0)) = ?", correctAnswer: "-2" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 2x + 1, f(g(-3)) = ?", correctAnswer: "-10" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 2x + -2, f(g(-2)) = ?", correctAnswer: "-11" }
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 4x + -4, f(g(2)) = ?", correctAnswer: "3" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 4x + 2, f(g(2)) = ?", correctAnswer: "8" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 1x + -5, f(g(3)) = ?", correctAnswer: "-7" }
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 4x + 3, f(g(3)) = ?
+        correctAnswer: "14"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 3x + 1, f(g(-3)) = ?
+        correctAnswer: "-11"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 4x + -1, f(g(1)) = ?
+        correctAnswer: "-2"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 2x + 4, f(g(1)) = ?
+        correctAnswer: "5"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 4x + 0, f(g(0)) = ?
+        correctAnswer: "-2"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 2x + 1, f(g(-3)) = ?
+        correctAnswer: "-10"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 2x + -2, f(g(-2)) = ?
+        correctAnswer: "-11"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 4x + -4, f(g(2)) = ?
+        correctAnswer: "3"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 4x + 2, f(g(2)) = ?
+        correctAnswer: "8"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 1x + -5, f(g(3)) = ?
+        correctAnswer: "-7"
+        rationale: Isole x usando operações inversas dos dois lados.
   - pageNumber: 8
     title: Funções e Gráficos — Conjunto 14 – Página 8
     description: Avalie a função conforme indicado.
     exercises:
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 4x + -5, f(g(-2)) = ?", correctAnswer: "-16" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 1x + 0, f(g(-2)) = ?", correctAnswer: "-4" }
-      - { type: linear_equation, question: "f(x) = 1x + 0, g(x) = 1x + -3, f(g(0)) = ?", correctAnswer: "-3" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 4x + -3, f(g(2)) = ?", correctAnswer: "3" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 5x + -4, f(g(-3)) = ?", correctAnswer: "-24" }
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 3x + 5, f(g(3)) = ?", correctAnswer: "11" }
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 3x + -1, f(g(-2)) = ?", correctAnswer: "-8" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 5x + 0, f(g(1)) = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 3x + 0, f(g(2)) = ?", correctAnswer: "1" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 3x + 1, f(g(-1)) = ?", correctAnswer: "-4" }
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 4x + -5, f(g(-2)) = ?
+        correctAnswer: "-16"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 1x + 0, f(g(-2)) = ?
+        correctAnswer: "-4"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + 0, g(x) = 1x + -3, f(g(0)) = ?
+        correctAnswer: "-3"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 4x + -3, f(g(2)) = ?
+        correctAnswer: "3"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 5x + -4, f(g(-3)) = ?
+        correctAnswer: "-24"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 3x + 5, f(g(3)) = ?
+        correctAnswer: "11"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 3x + -1, f(g(-2)) = ?
+        correctAnswer: "-8"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 5x + 0, f(g(1)) = ?
+        correctAnswer: "1"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 3x + 0, f(g(2)) = ?
+        correctAnswer: "1"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 3x + 1, f(g(-1)) = ?
+        correctAnswer: "-4"
+        rationale: Isole x usando operações inversas dos dois lados.
   - pageNumber: 9
     title: Funções e Gráficos — Conjunto 14 – Página 9
     description: Avalie a função conforme indicado.
     exercises:
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 3x + -5, f(g(-3)) = ?", correctAnswer: "-19" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 3x + 0, f(g(-1)) = ?", correctAnswer: "-5" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 5x + 0, f(g(-3)) = ?", correctAnswer: "-20" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 3x + 5, f(g(-3)) = ?", correctAnswer: "-9" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 3x + 0, f(g(0)) = ?", correctAnswer: "-4" }
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 4x + -5, f(g(-2)) = ?", correctAnswer: "-16" }
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 2x + -4, f(g(2)) = ?", correctAnswer: "-3" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 1x + -5, f(g(3)) = ?", correctAnswer: "-7" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 4x + 5, f(g(2)) = ?", correctAnswer: "11" }
-      - { type: linear_equation, question: "f(x) = 1x + -4, g(x) = 3x + 1, f(g(-1)) = ?", correctAnswer: "-6" }
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 3x + -5, f(g(-3)) = ?
+        correctAnswer: "-19"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 3x + 0, f(g(-1)) = ?
+        correctAnswer: "-5"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 5x + 0, f(g(-3)) = ?
+        correctAnswer: "-20"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 3x + 5, f(g(-3)) = ?
+        correctAnswer: "-9"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 3x + 0, f(g(0)) = ?
+        correctAnswer: "-4"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 4x + -5, f(g(-2)) = ?
+        correctAnswer: "-16"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 2x + -4, f(g(2)) = ?
+        correctAnswer: "-3"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 1x + -5, f(g(3)) = ?
+        correctAnswer: "-7"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 4x + 5, f(g(2)) = ?
+        correctAnswer: "11"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -4, g(x) = 3x + 1, f(g(-1)) = ?
+        correctAnswer: "-6"
+        rationale: Isole x usando operações inversas dos dois lados.
   - pageNumber: 10
     title: Funções e Gráficos — Conjunto 14 – Página 10
     description: Avalie a função conforme indicado.
     exercises:
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 1x + 4, f(g(3)) = ?", correctAnswer: "2" }
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 3x + -1, f(g(-3)) = ?", correctAnswer: "-13" }
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 2x + 4, f(g(1)) = ?", correctAnswer: "5" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 1x + -3, f(g(-2)) = ?", correctAnswer: "-10" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 1x + -1, f(g(-2)) = ?", correctAnswer: "-8" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 4x + -3, f(g(3)) = ?", correctAnswer: "4" }
-      - { type: linear_equation, question: "f(x) = 1x + -3, g(x) = 1x + -3, f(g(2)) = ?", correctAnswer: "-4" }
-      - { type: linear_equation, question: "f(x) = 1x + -5, g(x) = 4x + 0, f(g(-1)) = ?", correctAnswer: "-9" }
-      - { type: linear_equation, question: "f(x) = 1x + -1, g(x) = 3x + -1, f(g(-2)) = ?", correctAnswer: "-8" }
-      - { type: linear_equation, question: "f(x) = 1x + -2, g(x) = 1x + 1, f(g(-1)) = ?", correctAnswer: "-2" }
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 1x + 4, f(g(3)) = ?
+        correctAnswer: "2"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 3x + -1, f(g(-3)) = ?
+        correctAnswer: "-13"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 2x + 4, f(g(1)) = ?
+        correctAnswer: "5"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 1x + -3, f(g(-2)) = ?
+        correctAnswer: "-10"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 1x + -1, f(g(-2)) = ?
+        correctAnswer: "-8"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 4x + -3, f(g(3)) = ?
+        correctAnswer: "4"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -3, g(x) = 1x + -3, f(g(2)) = ?
+        correctAnswer: "-4"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -5, g(x) = 4x + 0, f(g(-1)) = ?
+        correctAnswer: "-9"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -1, g(x) = 3x + -1, f(g(-2)) = ?
+        correctAnswer: "-8"
+        rationale: Isole x usando operações inversas dos dois lados.
+      - type: linear_equation
+        question: f(x) = 1x + -2, g(x) = 1x + 1, f(g(-1)) = ?
+        correctAnswer: "-2"
+        rationale: Isole x usando operações inversas dos dois lados.

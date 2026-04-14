@@ -3,7 +3,8 @@ level: F
 example: "Adicione decimais. Ex.: 0.50 + 0.25 = 0.75"
 subject: math
 difficulty: 3
-objectives: [math.fractions_decimals]
+objectives:
+  - math.fractions_decimals
 authorNotes: Conjunto de math/F.
 inputType: number
 pages:
@@ -11,139 +12,439 @@ pages:
     title: Decimais Adição — Conjunto 11 – Página 1
     description: Adicione decimais.
     exercises:
-      - { type: decimal_add, question: "0.75 + 0.91", correctAnswer: 1.66 }
-      - { type: decimal_add, question: "0.29 + 0.44", correctAnswer: 0.73 }
-      - { type: decimal_add, question: "0.90 + 0.31", correctAnswer: 1.21 }
-      - { type: decimal_add, question: "0.26 + 0.14", correctAnswer: 0.4 }
-      - { type: decimal_add, question: "0.95 + 0.08", correctAnswer: 1.03 }
-      - { type: decimal_add, question: "0.87 + 0.67", correctAnswer: 1.54 }
-      - { type: decimal_add, question: "0.25 + 0.11", correctAnswer: 0.36 }
-      - { type: decimal_add, question: "0.55 + 0.01", correctAnswer: 0.56 }
-      - { type: decimal_add, question: "0.37 + 0.43", correctAnswer: 0.8 }
-      - { type: decimal_add, question: "0.88 + 0.32", correctAnswer: 1.2 }
+      - type: decimal_add
+        question: 0.75 + 0.91
+        correctAnswer: 1.66
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.29 + 0.44
+        correctAnswer: 0.73
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.90 + 0.31
+        correctAnswer: 1.21
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.26 + 0.14
+        correctAnswer: 0.4
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.95 + 0.08
+        correctAnswer: 1.03
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.87 + 0.67
+        correctAnswer: 1.54
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.25 + 0.11
+        correctAnswer: 0.36
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.55 + 0.01
+        correctAnswer: 0.56
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.37 + 0.43
+        correctAnswer: 0.8
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.88 + 0.32
+        correctAnswer: 1.2
+        rationale: Some alinhando as casas decimais.
   - pageNumber: 2
     title: Decimais Adição — Conjunto 11 – Página 2
     description: Adicione decimais.
     exercises:
-      - { type: decimal_add, question: "0.70 + 0.51", correctAnswer: 1.21 }
-      - { type: decimal_add, question: "0.71 + 0.10", correctAnswer: 0.81 }
-      - { type: decimal_add, question: "0.83 + 0.76", correctAnswer: 1.59 }
-      - { type: decimal_add, question: "0.74 + 0.23", correctAnswer: 0.97 }
-      - { type: decimal_add, question: "0.86 + 0.40", correctAnswer: 1.26 }
-      - { type: decimal_add, question: "0.93 + 0.91", correctAnswer: 1.84 }
-      - { type: decimal_add, question: "0.15 + 0.98", correctAnswer: 1.13 }
-      - { type: decimal_add, question: "0.80 + 0.58", correctAnswer: 1.38 }
-      - { type: decimal_add, question: "0.74 + 0.49", correctAnswer: 1.23 }
-      - { type: decimal_add, question: "0.75 + 0.28", correctAnswer: 1.03 }
+      - type: decimal_add
+        question: 0.70 + 0.51
+        correctAnswer: 1.21
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.71 + 0.10
+        correctAnswer: 0.81
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.83 + 0.76
+        correctAnswer: 1.59
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.74 + 0.23
+        correctAnswer: 0.97
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.86 + 0.40
+        correctAnswer: 1.26
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.93 + 0.91
+        correctAnswer: 1.84
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.15 + 0.98
+        correctAnswer: 1.13
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.80 + 0.58
+        correctAnswer: 1.38
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.74 + 0.49
+        correctAnswer: 1.23
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.75 + 0.28
+        correctAnswer: 1.03
+        rationale: Some alinhando as casas decimais.
   - pageNumber: 3
     title: Decimais Adição — Conjunto 11 – Página 3
     description: Adicione decimais.
     exercises:
-      - { type: decimal_add, question: "0.03 + 0.94", correctAnswer: 0.97 }
-      - { type: decimal_add, question: "0.78 + 0.70", correctAnswer: 1.48 }
-      - { type: decimal_add, question: "0.94 + 0.55", correctAnswer: 1.49 }
-      - { type: decimal_add, question: "0.86 + 0.58", correctAnswer: 1.44 }
-      - { type: decimal_add, question: "0.25 + 0.28", correctAnswer: 0.53 }
-      - { type: decimal_add, question: "0.71 + 0.95", correctAnswer: 1.66 }
-      - { type: decimal_add, question: "0.13 + 0.62", correctAnswer: 0.75 }
-      - { type: decimal_add, question: "0.65 + 0.09", correctAnswer: 0.74 }
-      - { type: decimal_add, question: "0.93 + 0.85", correctAnswer: 1.78 }
-      - { type: decimal_add, question: "0.05 + 0.36", correctAnswer: 0.41 }
+      - type: decimal_add
+        question: 0.03 + 0.94
+        correctAnswer: 0.97
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.78 + 0.70
+        correctAnswer: 1.48
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.94 + 0.55
+        correctAnswer: 1.49
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.86 + 0.58
+        correctAnswer: 1.44
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.25 + 0.28
+        correctAnswer: 0.53
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.71 + 0.95
+        correctAnswer: 1.66
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.13 + 0.62
+        correctAnswer: 0.75
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.65 + 0.09
+        correctAnswer: 0.74
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.93 + 0.85
+        correctAnswer: 1.78
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.05 + 0.36
+        correctAnswer: 0.41
+        rationale: Some alinhando as casas decimais.
   - pageNumber: 4
     title: Decimais Adição — Conjunto 11 – Página 4
     description: Adicione decimais.
     exercises:
-      - { type: decimal_add, question: "0.52 + 0.28", correctAnswer: 0.8 }
-      - { type: decimal_add, question: "0.57 + 0.47", correctAnswer: 1.04 }
-      - { type: decimal_add, question: "0.19 + 0.69", correctAnswer: 0.88 }
-      - { type: decimal_add, question: "0.71 + 0.37", correctAnswer: 1.08 }
-      - { type: decimal_add, question: "0.82 + 0.12", correctAnswer: 0.94 }
-      - { type: decimal_add, question: "0.11 + 0.15", correctAnswer: 0.26 }
-      - { type: decimal_add, question: "0.45 + 0.30", correctAnswer: 0.75 }
-      - { type: decimal_add, question: "0.46 + 0.43", correctAnswer: 0.89 }
-      - { type: decimal_add, question: "0.77 + 0.13", correctAnswer: 0.9 }
-      - { type: decimal_add, question: "0.12 + 0.95", correctAnswer: 1.07 }
+      - type: decimal_add
+        question: 0.52 + 0.28
+        correctAnswer: 0.8
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.57 + 0.47
+        correctAnswer: 1.04
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.19 + 0.69
+        correctAnswer: 0.88
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.71 + 0.37
+        correctAnswer: 1.08
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.82 + 0.12
+        correctAnswer: 0.94
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.11 + 0.15
+        correctAnswer: 0.26
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.45 + 0.30
+        correctAnswer: 0.75
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.46 + 0.43
+        correctAnswer: 0.89
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.77 + 0.13
+        correctAnswer: 0.9
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.12 + 0.95
+        correctAnswer: 1.07
+        rationale: Some alinhando as casas decimais.
   - pageNumber: 5
     title: Decimais Adição — Conjunto 11 – Página 5
     description: Adicione decimais.
     exercises:
-      - { type: decimal_add, question: "0.67 + 0.34", correctAnswer: 1.01 }
-      - { type: decimal_add, question: "0.87 + 0.15", correctAnswer: 1.02 }
-      - { type: decimal_add, question: "0.57 + 0.27", correctAnswer: 0.84 }
-      - { type: decimal_add, question: "0.81 + 0.27", correctAnswer: 1.08 }
-      - { type: decimal_add, question: "0.31 + 0.74", correctAnswer: 1.05 }
-      - { type: decimal_add, question: "0.67 + 0.50", correctAnswer: 1.17 }
-      - { type: decimal_add, question: "0.03 + 0.09", correctAnswer: 0.12 }
-      - { type: decimal_add, question: "0.66 + 0.72", correctAnswer: 1.38 }
-      - { type: decimal_add, question: "0.13 + 0.51", correctAnswer: 0.64 }
-      - { type: decimal_add, question: "0.08 + 0.07", correctAnswer: 0.15 }
+      - type: decimal_add
+        question: 0.67 + 0.34
+        correctAnswer: 1.01
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.87 + 0.15
+        correctAnswer: 1.02
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.57 + 0.27
+        correctAnswer: 0.84
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.81 + 0.27
+        correctAnswer: 1.08
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.31 + 0.74
+        correctAnswer: 1.05
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.67 + 0.50
+        correctAnswer: 1.17
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.03 + 0.09
+        correctAnswer: 0.12
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.66 + 0.72
+        correctAnswer: 1.38
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.13 + 0.51
+        correctAnswer: 0.64
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.08 + 0.07
+        correctAnswer: 0.15
+        rationale: Some alinhando as casas decimais.
   - pageNumber: 6
     title: Decimais Adição — Conjunto 11 – Página 6
     description: Adicione decimais.
     exercises:
-      - { type: decimal_add, question: "0.63 + 0.65", correctAnswer: 1.28 }
-      - { type: decimal_add, question: "0.07 + 0.91", correctAnswer: 0.98 }
-      - { type: decimal_add, question: "0.03 + 0.83", correctAnswer: 0.86 }
-      - { type: decimal_add, question: "0.97 + 0.50", correctAnswer: 1.47 }
-      - { type: decimal_add, question: "0.07 + 0.71", correctAnswer: 0.78 }
-      - { type: decimal_add, question: "0.62 + 0.41", correctAnswer: 1.03 }
-      - { type: decimal_add, question: "0.55 + 0.47", correctAnswer: 1.02 }
-      - { type: decimal_add, question: "0.22 + 0.15", correctAnswer: 0.37 }
-      - { type: decimal_add, question: "0.39 + 0.96", correctAnswer: 1.35 }
-      - { type: decimal_add, question: "0.21 + 0.16", correctAnswer: 0.37 }
+      - type: decimal_add
+        question: 0.63 + 0.65
+        correctAnswer: 1.28
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.07 + 0.91
+        correctAnswer: 0.98
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.03 + 0.83
+        correctAnswer: 0.86
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.97 + 0.50
+        correctAnswer: 1.47
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.07 + 0.71
+        correctAnswer: 0.78
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.62 + 0.41
+        correctAnswer: 1.03
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.55 + 0.47
+        correctAnswer: 1.02
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.22 + 0.15
+        correctAnswer: 0.37
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.39 + 0.96
+        correctAnswer: 1.35
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.21 + 0.16
+        correctAnswer: 0.37
+        rationale: Some alinhando as casas decimais.
   - pageNumber: 7
     title: Decimais Adição — Conjunto 11 – Página 7
     description: Adicione decimais.
     exercises:
-      - { type: decimal_add, question: "0.70 + 0.58", correctAnswer: 1.28 }
-      - { type: decimal_add, question: "0.10 + 0.90", correctAnswer: 1.0 }
-      - { type: decimal_add, question: "0.93 + 0.49", correctAnswer: 1.42 }
-      - { type: decimal_add, question: "0.82 + 0.09", correctAnswer: 0.91 }
-      - { type: decimal_add, question: "0.14 + 0.72", correctAnswer: 0.86 }
-      - { type: decimal_add, question: "0.93 + 0.00", correctAnswer: 0.93 }
-      - { type: decimal_add, question: "0.81 + 0.10", correctAnswer: 0.91 }
-      - { type: decimal_add, question: "0.57 + 0.83", correctAnswer: 1.4 }
-      - { type: decimal_add, question: "0.76 + 0.40", correctAnswer: 1.16 }
-      - { type: decimal_add, question: "0.53 + 0.79", correctAnswer: 1.32 }
+      - type: decimal_add
+        question: 0.70 + 0.58
+        correctAnswer: 1.28
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.10 + 0.90
+        correctAnswer: 1
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.93 + 0.49
+        correctAnswer: 1.42
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.82 + 0.09
+        correctAnswer: 0.91
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.14 + 0.72
+        correctAnswer: 0.86
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.93 + 0.00
+        correctAnswer: 0.93
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.81 + 0.10
+        correctAnswer: 0.91
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.57 + 0.83
+        correctAnswer: 1.4
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.76 + 0.40
+        correctAnswer: 1.16
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.53 + 0.79
+        correctAnswer: 1.32
+        rationale: Some alinhando as casas decimais.
   - pageNumber: 8
     title: Decimais Adição — Conjunto 11 – Página 8
     description: Adicione decimais.
     exercises:
-      - { type: decimal_add, question: "0.92 + 0.55", correctAnswer: 1.47 }
-      - { type: decimal_add, question: "0.46 + 0.96", correctAnswer: 1.42 }
-      - { type: decimal_add, question: "0.86 + 0.21", correctAnswer: 1.07 }
-      - { type: decimal_add, question: "0.13 + 0.43", correctAnswer: 0.56 }
-      - { type: decimal_add, question: "0.00 + 0.30", correctAnswer: 0.3 }
-      - { type: decimal_add, question: "0.90 + 0.89", correctAnswer: 1.79 }
-      - { type: decimal_add, question: "0.36 + 0.56", correctAnswer: 0.92 }
-      - { type: decimal_add, question: "0.17 + 0.75", correctAnswer: 0.92 }
-      - { type: decimal_add, question: "0.91 + 0.97", correctAnswer: 1.88 }
-      - { type: decimal_add, question: "0.29 + 0.41", correctAnswer: 0.7 }
+      - type: decimal_add
+        question: 0.92 + 0.55
+        correctAnswer: 1.47
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.46 + 0.96
+        correctAnswer: 1.42
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.86 + 0.21
+        correctAnswer: 1.07
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.13 + 0.43
+        correctAnswer: 0.56
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.00 + 0.30
+        correctAnswer: 0.3
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.90 + 0.89
+        correctAnswer: 1.79
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.36 + 0.56
+        correctAnswer: 0.92
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.17 + 0.75
+        correctAnswer: 0.92
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.91 + 0.97
+        correctAnswer: 1.88
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.29 + 0.41
+        correctAnswer: 0.7
+        rationale: Some alinhando as casas decimais.
   - pageNumber: 9
     title: Decimais Adição — Conjunto 11 – Página 9
     description: Adicione decimais.
     exercises:
-      - { type: decimal_add, question: "0.98 + 0.48", correctAnswer: 1.46 }
-      - { type: decimal_add, question: "0.87 + 0.38", correctAnswer: 1.25 }
-      - { type: decimal_add, question: "0.93 + 0.93", correctAnswer: 1.86 }
-      - { type: decimal_add, question: "0.20 + 0.99", correctAnswer: 1.19 }
-      - { type: decimal_add, question: "0.87 + 0.37", correctAnswer: 1.24 }
-      - { type: decimal_add, question: "0.67 + 0.34", correctAnswer: 1.01 }
-      - { type: decimal_add, question: "0.82 + 0.09", correctAnswer: 0.91 }
-      - { type: decimal_add, question: "0.53 + 0.79", correctAnswer: 1.32 }
-      - { type: decimal_add, question: "0.93 + 0.00", correctAnswer: 0.93 }
-      - { type: decimal_add, question: "0.13 + 0.43", correctAnswer: 0.56 }
+      - type: decimal_add
+        question: 0.98 + 0.48
+        correctAnswer: 1.46
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.87 + 0.38
+        correctAnswer: 1.25
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.93 + 0.93
+        correctAnswer: 1.86
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.20 + 0.99
+        correctAnswer: 1.19
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.87 + 0.37
+        correctAnswer: 1.24
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.67 + 0.34
+        correctAnswer: 1.01
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.82 + 0.09
+        correctAnswer: 0.91
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.53 + 0.79
+        correctAnswer: 1.32
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.93 + 0.00
+        correctAnswer: 0.93
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.13 + 0.43
+        correctAnswer: 0.56
+        rationale: Some alinhando as casas decimais.
   - pageNumber: 10
     title: Decimais Adição — Conjunto 11 – Página 10
     description: Adicione decimais.
     exercises:
-      - { type: decimal_add, question: "0.08 + 0.07", correctAnswer: 0.15 }
-      - { type: decimal_add, question: "0.00 + 0.30", correctAnswer: 0.3 }
-      - { type: decimal_add, question: "0.87 + 0.67", correctAnswer: 1.54 }
-      - { type: decimal_add, question: "0.75 + 0.91", correctAnswer: 1.66 }
-      - { type: decimal_add, question: "0.81 + 0.10", correctAnswer: 0.91 }
-      - { type: decimal_add, question: "0.03 + 0.94", correctAnswer: 0.97 }
-      - { type: decimal_add, question: "0.21 + 0.16", correctAnswer: 0.37 }
-      - { type: decimal_add, question: "0.90 + 0.89", correctAnswer: 1.79 }
-      - { type: decimal_add, question: "0.13 + 0.62", correctAnswer: 0.75 }
-      - { type: decimal_add, question: "0.75 + 0.28", correctAnswer: 1.03 }
+      - type: decimal_add
+        question: 0.08 + 0.07
+        correctAnswer: 0.15
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.00 + 0.30
+        correctAnswer: 0.3
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.87 + 0.67
+        correctAnswer: 1.54
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.75 + 0.91
+        correctAnswer: 1.66
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.81 + 0.10
+        correctAnswer: 0.91
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.03 + 0.94
+        correctAnswer: 0.97
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.21 + 0.16
+        correctAnswer: 0.37
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.90 + 0.89
+        correctAnswer: 1.79
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.13 + 0.62
+        correctAnswer: 0.75
+        rationale: Some alinhando as casas decimais.
+      - type: decimal_add
+        question: 0.75 + 0.28
+        correctAnswer: 1.03
+        rationale: Some alinhando as casas decimais.

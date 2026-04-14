@@ -3,97 +3,248 @@ level: P
 subject: math
 inputType: number
 difficulty: 3
-objectives: [stats.dispersion]
-example: "Variância, desvio padrão, amplitude."
+objectives:
+  - stats.dispersion
+example: Variância, desvio padrão, amplitude.
 pages:
   - pageNumber: 1
     title: Amplitude
     description: Máximo - mínimo.
     exercises:
-      - { type: mental_math, question: "Amplitude de {2,5,9} = ?", correctAnswer: 7 }
-      - { type: mental_math, question: "Amplitude de {10,20,30,40,50} = ?", correctAnswer: 40 }
-      - { type: mental_math, question: "Amplitude de {7,7,7} = ?", correctAnswer: 0 }
-      - { type: mental_math, question: "Amplitude de {1,100} = ?", correctAnswer: 99 }
-      - { type: mental_math, question: "Amplitude de {-3, 5} = ?", correctAnswer: 8 }
+      - type: mental_math
+        question: Amplitude de {2,5,9} = ?
+        correctAnswer: 7
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Amplitude de {10,20,30,40,50} = ?
+        correctAnswer: 40
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Amplitude de {7,7,7} = ?
+        correctAnswer: 0
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Amplitude de {1,100} = ?
+        correctAnswer: 99
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Amplitude de {-3, 5} = ?
+        correctAnswer: 8
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 2
     title: Desvios em Relação à Média
     description: d_i = x_i - média.
     exercises:
-      - { type: mental_math, question: "Média de {2,4,6} = ?", correctAnswer: 4 }
-      - { type: mental_math, question: "Desvio de 2 em relação a 4 = ?", correctAnswer: -2 }
-      - { type: mental_math, question: "Desvio de 6 em relação a 4 = ?", correctAnswer: 2 }
-      - { type: mental_math, question: "Soma dos desvios de {2,4,6} em relação à média = ?", correctAnswer: 0 }
-      - { type: mental_math, question: "Soma dos desvios em relação à média é sempre: (zero/positiva/negativa)", correctAnswer: zero }
+      - type: mental_math
+        question: Média de {2,4,6} = ?
+        correctAnswer: 4
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Desvio de 2 em relação a 4 = ?
+        correctAnswer: -2
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Desvio de 6 em relação a 4 = ?
+        correctAnswer: 2
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Soma dos desvios de {2,4,6} em relação à média = ?
+        correctAnswer: 0
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Soma dos desvios em relação à média é sempre: (zero/positiva/negativa)"
+        correctAnswer: zero
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 3
     title: Variância Populacional
     description: Média dos quadrados dos desvios.
     exercises:
-      - { type: mental_math, question: "Quadrado do desvio -2 = ?", correctAnswer: 4 }
-      - { type: mental_math, question: "Quadrado do desvio 2 = ?", correctAnswer: 4 }
-      - { type: mental_math, question: "Soma dos quadrados dos desvios de {2,4,6} = ?", correctAnswer: 8 }
-      - { type: mental_math, question: "Variância de {2,4,6} (divisão por n) = ?", correctAnswer: 2.67 }
-      - { type: mental_math, question: "Variância de {5,5,5,5} = ?", correctAnswer: 0 }
+      - type: mental_math
+        question: Quadrado do desvio -2 = ?
+        correctAnswer: 4
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Quadrado do desvio 2 = ?
+        correctAnswer: 4
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Soma dos quadrados dos desvios de {2,4,6} = ?
+        correctAnswer: 8
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Variância de {2,4,6} (divisão por n) = ?
+        correctAnswer: 2.67
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Variância de {5,5,5,5} = ?
+        correctAnswer: 0
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 4
     title: Desvio Padrão
     description: Raiz quadrada da variância.
     exercises:
-      - { type: mental_math, question: "Desvio padrão de {5,5,5,5} = ?", correctAnswer: 0 }
-      - { type: mental_math, question: "Desvio padrão de {2,4,6,8,10} (aprox) = ?", correctAnswer: 2.83 }
-      - { type: mental_math, question: "Se variância = 9, desvio padrão = ?", correctAnswer: 3 }
-      - { type: mental_math, question: "Se variância = 16, desvio padrão = ?", correctAnswer: 4 }
-      - { type: mental_math, question: "Desvio padrão sempre é (positivo/negativo/nulo)", correctAnswer: positivo }
+      - type: mental_math
+        question: Desvio padrão de {5,5,5,5} = ?
+        correctAnswer: 0
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Desvio padrão de {2,4,6,8,10} (aprox) = ?
+        correctAnswer: 2.83
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Se variância = 9, desvio padrão = ?
+        correctAnswer: 3
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Se variância = 16, desvio padrão = ?
+        correctAnswer: 4
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Desvio padrão sempre é (positivo/negativo/nulo)
+        correctAnswer: positivo
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 5
     title: Comparação de Conjuntos
     description: Dispersão mede variabilidade.
     exercises:
-      - { type: mental_math, question: "{5,5,5,5} vs {1,2,3,4,5}: maior dispersão?", correctAnswer: segundo conjunto }
-      - { type: mental_math, question: "Mesma média, mas dispersões diferentes é possível? (sim/não)", correctAnswer: sim }
-      - { type: mental_math, question: "Desvio padrão menor significa dados: (mais próximos da média/mais espalhados)", correctAnswer: mais próximos da média }
-      - { type: mental_math, question: "Amplitude de {10,11,12} = ?", correctAnswer: 2 }
-      - { type: mental_math, question: "Amplitude de {1,10,20} = ?", correctAnswer: 19 }
+      - type: mental_math
+        question: "{5,5,5,5} vs {1,2,3,4,5}: maior dispersão?"
+        correctAnswer: segundo conjunto
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Mesma média, mas dispersões diferentes é possível? (sim/não)
+        correctAnswer: sim
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Desvio padrão menor significa dados: (mais próximos da média/mais espalhados)"
+        correctAnswer: mais próximos da média
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Amplitude de {10,11,12} = ?
+        correctAnswer: 2
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Amplitude de {1,10,20} = ?
+        correctAnswer: 19
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 6
     title: Coeficiente de Variação
     description: CV = desvio padrão / média.
     exercises:
-      - { type: mental_math, question: "Se σ=4 e média=10, CV = ?", correctAnswer: 0.4 }
-      - { type: mental_math, question: "CV em porcentagem para σ=4 e média=10 = ?%", correctAnswer: 40 }
-      - { type: mental_math, question: "CV=0 significa: (dados iguais/média zero)", correctAnswer: dados iguais }
-      - { type: mental_math, question: "CV alto indica: (alta variabilidade/baixa variabilidade)", correctAnswer: alta variabilidade }
-      - { type: mental_math, question: "Se σ=5 e média=25, CV = ?", correctAnswer: 0.2 }
+      - type: mental_math
+        question: Se σ=4 e média=10, CV = ?
+        correctAnswer: 0.4
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: CV em porcentagem para σ=4 e média=10 = ?%
+        correctAnswer: 40
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "CV=0 significa: (dados iguais/média zero)"
+        correctAnswer: dados iguais
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "CV alto indica: (alta variabilidade/baixa variabilidade)"
+        correctAnswer: alta variabilidade
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Se σ=5 e média=25, CV = ?
+        correctAnswer: 0.2
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 7
     title: Quartis
     description: Q1, Q2 (mediana), Q3.
     exercises:
-      - { type: mental_math, question: "Em {1,2,3,4,5,6,7,8}, mediana = ?", correctAnswer: 4.5 }
-      - { type: mental_math, question: "Em {1,2,3,4,5,6,7,8}, Q1 = ?", correctAnswer: 2.5 }
-      - { type: mental_math, question: "Em {1,2,3,4,5,6,7,8}, Q3 = ?", correctAnswer: 6.5 }
-      - { type: mental_math, question: "Intervalo interquartil (IIQ) = Q3 - Q1", correctAnswer: 4 }
-      - { type: mental_math, question: "IIQ robusto a outliers? (sim/não)", correctAnswer: sim }
+      - type: mental_math
+        question: Em {1,2,3,4,5,6,7,8}, mediana = ?
+        correctAnswer: 4.5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Em {1,2,3,4,5,6,7,8}, Q1 = ?
+        correctAnswer: 2.5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Em {1,2,3,4,5,6,7,8}, Q3 = ?
+        correctAnswer: 6.5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Intervalo interquartil (IIQ) = Q3 - Q1
+        correctAnswer: 4
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: IIQ robusto a outliers? (sim/não)
+        correctAnswer: sim
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 8
     title: Box Plot
     description: Representa quartis e outliers.
     exercises:
-      - { type: mental_math, question: "Em box plot, a caixa representa: (Q1 a Q3/Min a Max/Q1 a Q2)", correctAnswer: Q1 a Q3 }
-      - { type: mental_math, question: "Linha no meio da caixa representa: (mediana/média/moda)", correctAnswer: mediana }
-      - { type: mental_math, question: "Pontos fora das 'cercas' são: (outliers/medianas/quartis)", correctAnswer: outliers }
-      - { type: mental_math, question: "Cercas superior = Q3 + 1.5·IIQ (V/F)?", correctAnswer: V }
-      - { type: mental_math, question: "Box plot simétrico sugere: (distribuição simétrica/assimétrica)", correctAnswer: distribuição simétrica }
+      - type: mental_math
+        question: "Em box plot, a caixa representa: (Q1 a Q3/Min a Max/Q1 a Q2)"
+        correctAnswer: Q1 a Q3
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Linha no meio da caixa representa: (mediana/média/moda)"
+        correctAnswer: mediana
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Pontos fora das 'cercas' são: (outliers/medianas/quartis)"
+        correctAnswer: outliers
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Cercas superior = Q3 + 1.5·IIQ (V/F)?
+        correctAnswer: V
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Box plot simétrico sugere: (distribuição simétrica/assimétrica)"
+        correctAnswer: distribuição simétrica
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 9
     title: Amostral vs Populacional
     description: Amostral divide por n-1.
     exercises:
-      - { type: mental_math, question: "Variância populacional divide por: (n/n-1/n+1)", correctAnswer: n }
-      - { type: mental_math, question: "Variância amostral divide por: (n/n-1/n+1)", correctAnswer: n-1 }
-      - { type: mental_math, question: "Para {2,4,6} — variância populacional = ?", correctAnswer: 2.67 }
-      - { type: mental_math, question: "Para {2,4,6} — variância amostral = ?", correctAnswer: 4 }
-      - { type: mental_math, question: "Desvio padrão amostral de {2,4,6} (aprox) = ?", correctAnswer: 2 }
+      - type: mental_math
+        question: "Variância populacional divide por: (n/n-1/n+1)"
+        correctAnswer: n
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Variância amostral divide por: (n/n-1/n+1)"
+        correctAnswer: n-1
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Para {2,4,6} — variância populacional = ?
+        correctAnswer: 2.67
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Para {2,4,6} — variância amostral = ?
+        correctAnswer: 4
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Desvio padrão amostral de {2,4,6} (aprox) = ?
+        correctAnswer: 2
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 10
     title: Revisão Integrada
     description: Dispersão aplicada.
     exercises:
-      - { type: mental_math, question: "{10,10,10,10} tem desvio padrão = ?", correctAnswer: 0 }
-      - { type: mental_math, question: "{0,10,20} amplitude = ?", correctAnswer: 20 }
-      - { type: mental_math, question: "{0,10,20} média = ?", correctAnswer: 10 }
-      - { type: mental_math, question: "{0,10,20} variância populacional = ?", correctAnswer: 66.67 }
-      - { type: mental_math, question: "{0,10,20} desvio padrão (aprox) = ?", correctAnswer: 8.16 }
+      - type: mental_math
+        question: "{10,10,10,10} tem desvio padrão = ?"
+        correctAnswer: 0
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "{0,10,20} amplitude = ?"
+        correctAnswer: 20
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "{0,10,20} média = ?"
+        correctAnswer: 10
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "{0,10,20} variância populacional = ?"
+        correctAnswer: 66.67
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "{0,10,20} desvio padrão (aprox) = ?"
+        correctAnswer: 8.16
+        rationale: Calcule mentalmente usando estratégias de decomposição.
 target: 50

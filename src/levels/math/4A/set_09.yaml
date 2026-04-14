@@ -3,7 +3,8 @@ level: 4A
 example: Some e escreva o resultado.
 subject: math
 difficulty: 1
-objectives: [math.addition.basic]
+objectives:
+  - math.addition.basic
 authorNotes: Conjunto de math/4A.
 inputType: number
 passCriteria:
@@ -14,139 +15,439 @@ pages:
     title: Adição até 15 – Página 1
     description: Resolva as somas.
     exercises:
-      - { type: addition, question: "8 + 3 =", correctAnswer: 11 }
-      - { type: addition, question: "7 + 4 =", correctAnswer: 11 }
-      - { type: addition, question: "9 + 3 =", correctAnswer: 12 }
-      - { type: addition, question: "8 + 4 =", correctAnswer: 12 }
-      - { type: addition, question: "7 + 6 =", correctAnswer: 13 }
-      - { type: addition, question: "9 + 4 =", correctAnswer: 13 }
-      - { type: addition, question: "8 + 6 =", correctAnswer: 14 }
-      - { type: addition, question: "9 + 5 =", correctAnswer: 14 }
-      - { type: addition, question: "8 + 7 =", correctAnswer: 15 }
-      - { type: addition, question: "9 + 6 =", correctAnswer: 15 }
+      - type: addition
+        question: 8 + 3 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 4 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 3 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 4 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 6 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 4 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 6 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 5 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 7 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 6 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
   - pageNumber: 2
     title: Adição até 15 – Página 2
     description: Resolva as somas.
     exercises:
-      - { type: addition, question: "8 + 3 =", correctAnswer: 11 }
-      - { type: addition, question: "7 + 4 =", correctAnswer: 11 }
-      - { type: addition, question: "9 + 3 =", correctAnswer: 12 }
-      - { type: addition, question: "8 + 4 =", correctAnswer: 12 }
-      - { type: addition, question: "7 + 6 =", correctAnswer: 13 }
-      - { type: addition, question: "9 + 4 =", correctAnswer: 13 }
-      - { type: addition, question: "8 + 6 =", correctAnswer: 14 }
-      - { type: addition, question: "9 + 5 =", correctAnswer: 14 }
-      - { type: addition, question: "8 + 7 =", correctAnswer: 15 }
-      - { type: addition, question: "9 + 6 =", correctAnswer: 15 }
+      - type: addition
+        question: 8 + 3 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 4 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 3 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 4 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 6 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 4 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 6 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 5 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 7 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 6 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
   - pageNumber: 3
     title: Adição até 15 – Página 3
     description: Resolva as somas.
     exercises:
-      - { type: addition, question: "8 + 3 =", correctAnswer: 11 }
-      - { type: addition, question: "7 + 4 =", correctAnswer: 11 }
-      - { type: addition, question: "9 + 3 =", correctAnswer: 12 }
-      - { type: addition, question: "8 + 4 =", correctAnswer: 12 }
-      - { type: addition, question: "7 + 6 =", correctAnswer: 13 }
-      - { type: addition, question: "9 + 4 =", correctAnswer: 13 }
-      - { type: addition, question: "8 + 6 =", correctAnswer: 14 }
-      - { type: addition, question: "9 + 5 =", correctAnswer: 14 }
-      - { type: addition, question: "8 + 7 =", correctAnswer: 15 }
-      - { type: addition, question: "9 + 6 =", correctAnswer: 15 }
+      - type: addition
+        question: 8 + 3 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 4 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 3 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 4 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 6 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 4 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 6 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 5 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 7 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 6 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
   - pageNumber: 4
     title: Adição até 15 – Página 4
     description: Resolva as somas.
     exercises:
-      - { type: addition, question: "8 + 3 =", correctAnswer: 11 }
-      - { type: addition, question: "7 + 4 =", correctAnswer: 11 }
-      - { type: addition, question: "9 + 3 =", correctAnswer: 12 }
-      - { type: addition, question: "8 + 4 =", correctAnswer: 12 }
-      - { type: addition, question: "7 + 6 =", correctAnswer: 13 }
-      - { type: addition, question: "9 + 4 =", correctAnswer: 13 }
-      - { type: addition, question: "8 + 6 =", correctAnswer: 14 }
-      - { type: addition, question: "9 + 5 =", correctAnswer: 14 }
-      - { type: addition, question: "8 + 7 =", correctAnswer: 15 }
-      - { type: addition, question: "9 + 6 =", correctAnswer: 15 }
+      - type: addition
+        question: 8 + 3 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 4 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 3 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 4 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 6 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 4 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 6 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 5 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 7 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 6 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
   - pageNumber: 5
     title: Adição até 15 – Página 5
     description: Resolva as somas.
     exercises:
-      - { type: addition, question: "8 + 3 =", correctAnswer: 11 }
-      - { type: addition, question: "7 + 4 =", correctAnswer: 11 }
-      - { type: addition, question: "9 + 3 =", correctAnswer: 12 }
-      - { type: addition, question: "8 + 4 =", correctAnswer: 12 }
-      - { type: addition, question: "7 + 6 =", correctAnswer: 13 }
-      - { type: addition, question: "9 + 4 =", correctAnswer: 13 }
-      - { type: addition, question: "8 + 6 =", correctAnswer: 14 }
-      - { type: addition, question: "9 + 5 =", correctAnswer: 14 }
-      - { type: addition, question: "8 + 7 =", correctAnswer: 15 }
-      - { type: addition, question: "9 + 6 =", correctAnswer: 15 }
+      - type: addition
+        question: 8 + 3 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 4 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 3 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 4 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 6 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 4 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 6 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 5 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 7 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 6 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
   - pageNumber: 6
     title: Adição até 15 – Página 6
     description: Resolva as somas.
     exercises:
-      - { type: addition, question: "8 + 3 =", correctAnswer: 11 }
-      - { type: addition, question: "7 + 4 =", correctAnswer: 11 }
-      - { type: addition, question: "9 + 3 =", correctAnswer: 12 }
-      - { type: addition, question: "8 + 4 =", correctAnswer: 12 }
-      - { type: addition, question: "7 + 6 =", correctAnswer: 13 }
-      - { type: addition, question: "9 + 4 =", correctAnswer: 13 }
-      - { type: addition, question: "8 + 6 =", correctAnswer: 14 }
-      - { type: addition, question: "9 + 5 =", correctAnswer: 14 }
-      - { type: addition, question: "8 + 7 =", correctAnswer: 15 }
-      - { type: addition, question: "9 + 6 =", correctAnswer: 15 }
+      - type: addition
+        question: 8 + 3 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 4 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 3 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 4 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 6 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 4 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 6 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 5 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 7 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 6 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
   - pageNumber: 7
     title: Adição até 15 – Página 7
     description: Resolva as somas.
     exercises:
-      - { type: addition, question: "8 + 3 =", correctAnswer: 11 }
-      - { type: addition, question: "7 + 4 =", correctAnswer: 11 }
-      - { type: addition, question: "9 + 3 =", correctAnswer: 12 }
-      - { type: addition, question: "8 + 4 =", correctAnswer: 12 }
-      - { type: addition, question: "7 + 6 =", correctAnswer: 13 }
-      - { type: addition, question: "9 + 4 =", correctAnswer: 13 }
-      - { type: addition, question: "8 + 6 =", correctAnswer: 14 }
-      - { type: addition, question: "9 + 5 =", correctAnswer: 14 }
-      - { type: addition, question: "8 + 7 =", correctAnswer: 15 }
-      - { type: addition, question: "9 + 6 =", correctAnswer: 15 }
+      - type: addition
+        question: 8 + 3 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 4 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 3 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 4 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 6 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 4 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 6 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 5 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 7 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 6 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
   - pageNumber: 8
     title: Adição até 15 – Página 8
     description: Resolva as somas.
     exercises:
-      - { type: addition, question: "8 + 3 =", correctAnswer: 11 }
-      - { type: addition, question: "7 + 4 =", correctAnswer: 11 }
-      - { type: addition, question: "9 + 3 =", correctAnswer: 12 }
-      - { type: addition, question: "8 + 4 =", correctAnswer: 12 }
-      - { type: addition, question: "7 + 6 =", correctAnswer: 13 }
-      - { type: addition, question: "9 + 4 =", correctAnswer: 13 }
-      - { type: addition, question: "8 + 6 =", correctAnswer: 14 }
-      - { type: addition, question: "9 + 5 =", correctAnswer: 14 }
-      - { type: addition, question: "8 + 7 =", correctAnswer: 15 }
-      - { type: addition, question: "9 + 6 =", correctAnswer: 15 }
+      - type: addition
+        question: 8 + 3 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 4 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 3 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 4 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 6 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 4 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 6 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 5 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 7 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 6 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
   - pageNumber: 9
     title: Adição até 15 – Página 9
     description: Resolva as somas.
     exercises:
-      - { type: addition, question: "8 + 3 =", correctAnswer: 11 }
-      - { type: addition, question: "7 + 4 =", correctAnswer: 11 }
-      - { type: addition, question: "9 + 3 =", correctAnswer: 12 }
-      - { type: addition, question: "8 + 4 =", correctAnswer: 12 }
-      - { type: addition, question: "7 + 6 =", correctAnswer: 13 }
-      - { type: addition, question: "9 + 4 =", correctAnswer: 13 }
-      - { type: addition, question: "8 + 6 =", correctAnswer: 14 }
-      - { type: addition, question: "9 + 5 =", correctAnswer: 14 }
-      - { type: addition, question: "8 + 7 =", correctAnswer: 15 }
-      - { type: addition, question: "9 + 6 =", correctAnswer: 15 }
+      - type: addition
+        question: 8 + 3 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 4 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 3 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 4 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 6 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 4 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 6 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 5 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 7 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 6 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
   - pageNumber: 10
     title: Adição até 15 – Página 10
     description: Resolva as somas.
     exercises:
-      - { type: addition, question: "8 + 3 =", correctAnswer: 11 }
-      - { type: addition, question: "7 + 4 =", correctAnswer: 11 }
-      - { type: addition, question: "9 + 3 =", correctAnswer: 12 }
-      - { type: addition, question: "8 + 4 =", correctAnswer: 12 }
-      - { type: addition, question: "7 + 6 =", correctAnswer: 13 }
-      - { type: addition, question: "9 + 4 =", correctAnswer: 13 }
-      - { type: addition, question: "8 + 6 =", correctAnswer: 14 }
-      - { type: addition, question: "9 + 5 =", correctAnswer: 14 }
-      - { type: addition, question: "8 + 7 =", correctAnswer: 15 }
-      - { type: addition, question: "9 + 6 =", correctAnswer: 15 }
+      - type: addition
+        question: 8 + 3 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 4 =
+        correctAnswer: 11
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 3 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 4 =
+        correctAnswer: 12
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 7 + 6 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 4 =
+        correctAnswer: 13
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 6 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 5 =
+        correctAnswer: 14
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 8 + 7 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.
+      - type: addition
+        question: 9 + 6 =
+        correctAnswer: 15
+        rationale: Soma dos termos; alinhe unidades e dezenas.

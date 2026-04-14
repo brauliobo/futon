@@ -3,7 +3,8 @@ level: F
 example: "Multiplique frações. Ex.: 1/2 × 1/3 = 1/6"
 subject: math
 difficulty: 3
-objectives: [math.fractions_decimals]
+objectives:
+  - math.fractions_decimals
 authorNotes: Conjunto de math/F.
 inputType: number
 pages:
@@ -11,139 +12,439 @@ pages:
     title: Frações Multiplicação — Conjunto 5 – Página 1
     description: Multiplique frações simples.
     exercises:
-      - { type: fraction_multiply, question: "7/12 × 2/4", correctAnswer: "7/24" }
-      - { type: fraction_multiply, question: "10/11 × 8/11", correctAnswer: "80/121" }
-      - { type: fraction_multiply, question: "4/9 × 6/8", correctAnswer: "1/3" }
-      - { type: fraction_multiply, question: "6/8 × 3/11", correctAnswer: "9/44" }
-      - { type: fraction_multiply, question: "3/12 × 6/11", correctAnswer: "3/22" }
-      - { type: fraction_multiply, question: "3/8 × 7/12", correctAnswer: "7/32" }
-      - { type: fraction_multiply, question: "1/7 × 1/12", correctAnswer: "1/84" }
-      - { type: fraction_multiply, question: "3/6 × 5/7", correctAnswer: "5/14" }
-      - { type: fraction_multiply, question: "5/12 × 1/11", correctAnswer: "5/132" }
-      - { type: fraction_multiply, question: "3/9 × 1/10", correctAnswer: "1/30" }
+      - type: fraction_multiply
+        question: 7/12 × 2/4
+        correctAnswer: 7/24
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 10/11 × 8/11
+        correctAnswer: 80/121
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 4/9 × 6/8
+        correctAnswer: 1/3
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 6/8 × 3/11
+        correctAnswer: 9/44
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/12 × 6/11
+        correctAnswer: 3/22
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/8 × 7/12
+        correctAnswer: 7/32
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 1/7 × 1/12
+        correctAnswer: 1/84
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/6 × 5/7
+        correctAnswer: 5/14
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 5/12 × 1/11
+        correctAnswer: 5/132
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/9 × 1/10
+        correctAnswer: 1/30
+        rationale: Multiplique numeradores e denominadores separadamente.
   - pageNumber: 2
     title: Frações Multiplicação — Conjunto 5 – Página 2
     description: Multiplique frações simples.
     exercises:
-      - { type: fraction_multiply, question: "6/11 × 1/6", correctAnswer: "1/11" }
-      - { type: fraction_multiply, question: "3/11 × 2/5", correctAnswer: "6/55" }
-      - { type: fraction_multiply, question: "6/12 × 1/5", correctAnswer: "1/10" }
-      - { type: fraction_multiply, question: "2/6 × 6/9", correctAnswer: "2/9" }
-      - { type: fraction_multiply, question: "5/6 × 4/5", correctAnswer: "2/3" }
-      - { type: fraction_multiply, question: "3/11 × 3/9", correctAnswer: "1/11" }
-      - { type: fraction_multiply, question: "2/9 × 2/3", correctAnswer: "4/27" }
-      - { type: fraction_multiply, question: "4/11 × 5/8", correctAnswer: "5/22" }
-      - { type: fraction_multiply, question: "7/8 × 5/9", correctAnswer: "35/72" }
-      - { type: fraction_multiply, question: "6/8 × 3/4", correctAnswer: "9/16" }
+      - type: fraction_multiply
+        question: 6/11 × 1/6
+        correctAnswer: 1/11
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/11 × 2/5
+        correctAnswer: 6/55
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 6/12 × 1/5
+        correctAnswer: 1/10
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 2/6 × 6/9
+        correctAnswer: 2/9
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 5/6 × 4/5
+        correctAnswer: 2/3
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/11 × 3/9
+        correctAnswer: 1/11
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 2/9 × 2/3
+        correctAnswer: 4/27
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 4/11 × 5/8
+        correctAnswer: 5/22
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 7/8 × 5/9
+        correctAnswer: 35/72
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 6/8 × 3/4
+        correctAnswer: 9/16
+        rationale: Multiplique numeradores e denominadores separadamente.
   - pageNumber: 3
     title: Frações Multiplicação — Conjunto 5 – Página 3
     description: Multiplique frações simples.
     exercises:
-      - { type: fraction_multiply, question: "2/7 × 1/3", correctAnswer: "2/21" }
-      - { type: fraction_multiply, question: "4/5 × 1/10", correctAnswer: "2/25" }
-      - { type: fraction_multiply, question: "2/8 × 3/11", correctAnswer: "3/44" }
-      - { type: fraction_multiply, question: "3/4 × 2/5", correctAnswer: "3/10" }
-      - { type: fraction_multiply, question: "3/10 × 6/9", correctAnswer: "1/5" }
-      - { type: fraction_multiply, question: "7/8 × 2/5", correctAnswer: "7/20" }
-      - { type: fraction_multiply, question: "5/12 × 3/6", correctAnswer: "5/24" }
-      - { type: fraction_multiply, question: "7/10 × 2/8", correctAnswer: "7/40" }
-      - { type: fraction_multiply, question: "5/11 × 5/12", correctAnswer: "25/132" }
-      - { type: fraction_multiply, question: "4/7 × 8/11", correctAnswer: "32/77" }
+      - type: fraction_multiply
+        question: 2/7 × 1/3
+        correctAnswer: 2/21
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 4/5 × 1/10
+        correctAnswer: 2/25
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 2/8 × 3/11
+        correctAnswer: 3/44
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/4 × 2/5
+        correctAnswer: 3/10
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/10 × 6/9
+        correctAnswer: 1/5
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 7/8 × 2/5
+        correctAnswer: 7/20
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 5/12 × 3/6
+        correctAnswer: 5/24
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 7/10 × 2/8
+        correctAnswer: 7/40
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 5/11 × 5/12
+        correctAnswer: 25/132
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 4/7 × 8/11
+        correctAnswer: 32/77
+        rationale: Multiplique numeradores e denominadores separadamente.
   - pageNumber: 4
     title: Frações Multiplicação — Conjunto 5 – Página 4
     description: Multiplique frações simples.
     exercises:
-      - { type: fraction_multiply, question: "7/11 × 3/5", correctAnswer: "21/55" }
-      - { type: fraction_multiply, question: "1/8 × 10/12", correctAnswer: "5/48" }
-      - { type: fraction_multiply, question: "6/9 × 1/5", correctAnswer: "2/15" }
-      - { type: fraction_multiply, question: "4/10 × 3/4", correctAnswer: "3/10" }
-      - { type: fraction_multiply, question: "2/8 × 4/7", correctAnswer: "1/7" }
-      - { type: fraction_multiply, question: "2/9 × 2/6", correctAnswer: "2/27" }
-      - { type: fraction_multiply, question: "9/10 × 6/7", correctAnswer: "27/35" }
-      - { type: fraction_multiply, question: "1/4 × 6/7", correctAnswer: "3/14" }
-      - { type: fraction_multiply, question: "5/11 × 1/3", correctAnswer: "5/33" }
-      - { type: fraction_multiply, question: "3/7 × 2/12", correctAnswer: "1/14" }
+      - type: fraction_multiply
+        question: 7/11 × 3/5
+        correctAnswer: 21/55
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 1/8 × 10/12
+        correctAnswer: 5/48
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 6/9 × 1/5
+        correctAnswer: 2/15
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 4/10 × 3/4
+        correctAnswer: 3/10
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 2/8 × 4/7
+        correctAnswer: 1/7
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 2/9 × 2/6
+        correctAnswer: 2/27
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 9/10 × 6/7
+        correctAnswer: 27/35
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 1/4 × 6/7
+        correctAnswer: 3/14
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 5/11 × 1/3
+        correctAnswer: 5/33
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/7 × 2/12
+        correctAnswer: 1/14
+        rationale: Multiplique numeradores e denominadores separadamente.
   - pageNumber: 5
     title: Frações Multiplicação — Conjunto 5 – Página 5
     description: Multiplique frações simples.
     exercises:
-      - { type: fraction_multiply, question: "2/6 × 7/12", correctAnswer: "7/36" }
-      - { type: fraction_multiply, question: "6/7 × 2/12", correctAnswer: "1/7" }
-      - { type: fraction_multiply, question: "5/7 × 1/8", correctAnswer: "5/56" }
-      - { type: fraction_multiply, question: "1/10 × 4/11", correctAnswer: "2/55" }
-      - { type: fraction_multiply, question: "3/12 × 7/10", correctAnswer: "7/40" }
-      - { type: fraction_multiply, question: "2/8 × 10/11", correctAnswer: "5/22" }
-      - { type: fraction_multiply, question: "2/11 × 4/9", correctAnswer: "8/99" }
-      - { type: fraction_multiply, question: "3/8 × 4/7", correctAnswer: "3/14" }
-      - { type: fraction_multiply, question: "3/5 × 4/8", correctAnswer: "3/10" }
-      - { type: fraction_multiply, question: "6/11 × 3/9", correctAnswer: "2/11" }
+      - type: fraction_multiply
+        question: 2/6 × 7/12
+        correctAnswer: 7/36
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 6/7 × 2/12
+        correctAnswer: 1/7
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 5/7 × 1/8
+        correctAnswer: 5/56
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 1/10 × 4/11
+        correctAnswer: 2/55
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/12 × 7/10
+        correctAnswer: 7/40
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 2/8 × 10/11
+        correctAnswer: 5/22
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 2/11 × 4/9
+        correctAnswer: 8/99
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/8 × 4/7
+        correctAnswer: 3/14
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/5 × 4/8
+        correctAnswer: 3/10
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 6/11 × 3/9
+        correctAnswer: 2/11
+        rationale: Multiplique numeradores e denominadores separadamente.
   - pageNumber: 6
     title: Frações Multiplicação — Conjunto 5 – Página 6
     description: Multiplique frações simples.
     exercises:
-      - { type: fraction_multiply, question: "5/11 × 3/12", correctAnswer: "5/44" }
-      - { type: fraction_multiply, question: "5/9 × 2/5", correctAnswer: "2/9" }
-      - { type: fraction_multiply, question: "5/9 × 1/2", correctAnswer: "5/18" }
-      - { type: fraction_multiply, question: "8/11 × 6/7", correctAnswer: "48/77" }
-      - { type: fraction_multiply, question: "3/5 × 5/6", correctAnswer: "1/2" }
-      - { type: fraction_multiply, question: "3/10 × 2/12", correctAnswer: "1/20" }
-      - { type: fraction_multiply, question: "1/10 × 7/11", correctAnswer: "7/110" }
-      - { type: fraction_multiply, question: "3/7 × 4/8", correctAnswer: "3/14" }
-      - { type: fraction_multiply, question: "2/11 × 9/10", correctAnswer: "9/55" }
-      - { type: fraction_multiply, question: "10/12 × 2/6", correctAnswer: "5/18" }
+      - type: fraction_multiply
+        question: 5/11 × 3/12
+        correctAnswer: 5/44
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 5/9 × 2/5
+        correctAnswer: 2/9
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 5/9 × 1/2
+        correctAnswer: 5/18
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 8/11 × 6/7
+        correctAnswer: 48/77
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/5 × 5/6
+        correctAnswer: 1/2
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/10 × 2/12
+        correctAnswer: 1/20
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 1/10 × 7/11
+        correctAnswer: 7/110
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/7 × 4/8
+        correctAnswer: 3/14
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 2/11 × 9/10
+        correctAnswer: 9/55
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 10/12 × 2/6
+        correctAnswer: 5/18
+        rationale: Multiplique numeradores e denominadores separadamente.
   - pageNumber: 7
     title: Frações Multiplicação — Conjunto 5 – Página 7
     description: Multiplique frações simples.
     exercises:
-      - { type: fraction_multiply, question: "3/12 × 5/7", correctAnswer: "5/28" }
-      - { type: fraction_multiply, question: "4/8 × 6/11", correctAnswer: "3/11" }
-      - { type: fraction_multiply, question: "2/12 × 5/12", correctAnswer: "5/72" }
-      - { type: fraction_multiply, question: "4/11 × 4/12", correctAnswer: "4/33" }
-      - { type: fraction_multiply, question: "1/2 × 3/12", correctAnswer: "1/8" }
-      - { type: fraction_multiply, question: "3/4 × 3/12", correctAnswer: "3/16" }
-      - { type: fraction_multiply, question: "10/12 × 7/8", correctAnswer: "35/48" }
-      - { type: fraction_multiply, question: "7/11 × 3/4", correctAnswer: "21/44" }
-      - { type: fraction_multiply, question: "6/12 × 6/12", correctAnswer: "1/4" }
-      - { type: fraction_multiply, question: "1/6 × 2/10", correctAnswer: "1/30" }
+      - type: fraction_multiply
+        question: 3/12 × 5/7
+        correctAnswer: 5/28
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 4/8 × 6/11
+        correctAnswer: 3/11
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 2/12 × 5/12
+        correctAnswer: 5/72
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 4/11 × 4/12
+        correctAnswer: 4/33
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 1/2 × 3/12
+        correctAnswer: 1/8
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/4 × 3/12
+        correctAnswer: 3/16
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 10/12 × 7/8
+        correctAnswer: 35/48
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 7/11 × 3/4
+        correctAnswer: 21/44
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 6/12 × 6/12
+        correctAnswer: 1/4
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 1/6 × 2/10
+        correctAnswer: 1/30
+        rationale: Multiplique numeradores e denominadores separadamente.
   - pageNumber: 8
     title: Frações Multiplicação — Conjunto 5 – Página 8
     description: Multiplique frações simples.
     exercises:
-      - { type: fraction_multiply, question: "8/10 × 6/8", correctAnswer: "3/5" }
-      - { type: fraction_multiply, question: "6/8 × 2/9", correctAnswer: "1/6" }
-      - { type: fraction_multiply, question: "7/12 × 6/12", correctAnswer: "7/24" }
-      - { type: fraction_multiply, question: "1/4 × 2/11", correctAnswer: "1/22" }
-      - { type: fraction_multiply, question: "7/12 × 7/11", correctAnswer: "49/132" }
-      - { type: fraction_multiply, question: "7/12 × 4/5", correctAnswer: "7/15" }
-      - { type: fraction_multiply, question: "7/9 × 1/8", correctAnswer: "7/72" }
-      - { type: fraction_multiply, question: "3/10 × 1/12", correctAnswer: "1/40" }
-      - { type: fraction_multiply, question: "2/5 × 7/10", correctAnswer: "7/25" }
-      - { type: fraction_multiply, question: "1/12 × 1/11", correctAnswer: "1/132" }
+      - type: fraction_multiply
+        question: 8/10 × 6/8
+        correctAnswer: 3/5
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 6/8 × 2/9
+        correctAnswer: 1/6
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 7/12 × 6/12
+        correctAnswer: 7/24
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 1/4 × 2/11
+        correctAnswer: 1/22
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 7/12 × 7/11
+        correctAnswer: 49/132
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 7/12 × 4/5
+        correctAnswer: 7/15
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 7/9 × 1/8
+        correctAnswer: 7/72
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/10 × 1/12
+        correctAnswer: 1/40
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 2/5 × 7/10
+        correctAnswer: 7/25
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 1/12 × 1/11
+        correctAnswer: 1/132
+        rationale: Multiplique numeradores e denominadores separadamente.
   - pageNumber: 9
     title: Frações Multiplicação — Conjunto 5 – Página 9
     description: Multiplique frações simples.
     exercises:
-      - { type: fraction_multiply, question: "8/10 × 3/9", correctAnswer: "4/15" }
-      - { type: fraction_multiply, question: "7/8 × 3/9", correctAnswer: "7/24" }
-      - { type: fraction_multiply, question: "7/11 × 3/6", correctAnswer: "7/22" }
-      - { type: fraction_multiply, question: "8/12 × 9/11", correctAnswer: "6/11" }
-      - { type: fraction_multiply, question: "2/12 × 1/11", correctAnswer: "1/66" }
-      - { type: fraction_multiply, question: "10/12 × 2/6", correctAnswer: "5/18" }
-      - { type: fraction_multiply, question: "9/10 × 6/7", correctAnswer: "27/35" }
-      - { type: fraction_multiply, question: "3/4 × 3/12", correctAnswer: "3/16" }
-      - { type: fraction_multiply, question: "6/11 × 1/6", correctAnswer: "1/11" }
-      - { type: fraction_multiply, question: "3/9 × 1/10", correctAnswer: "1/30" }
+      - type: fraction_multiply
+        question: 8/10 × 3/9
+        correctAnswer: 4/15
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 7/8 × 3/9
+        correctAnswer: 7/24
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 7/11 × 3/6
+        correctAnswer: 7/22
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 8/12 × 9/11
+        correctAnswer: 6/11
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 2/12 × 1/11
+        correctAnswer: 1/66
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 10/12 × 2/6
+        correctAnswer: 5/18
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 9/10 × 6/7
+        correctAnswer: 27/35
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/4 × 3/12
+        correctAnswer: 3/16
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 6/11 × 1/6
+        correctAnswer: 1/11
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/9 × 1/10
+        correctAnswer: 1/30
+        rationale: Multiplique numeradores e denominadores separadamente.
   - pageNumber: 10
     title: Frações Multiplicação — Conjunto 5 – Página 10
     description: Multiplique frações simples.
     exercises:
-      - { type: fraction_multiply, question: "5/11 × 3/12", correctAnswer: "5/44" }
-      - { type: fraction_multiply, question: "5/6 × 4/5", correctAnswer: "2/3" }
-      - { type: fraction_multiply, question: "4/5 × 1/10", correctAnswer: "2/25" }
-      - { type: fraction_multiply, question: "3/6 × 5/7", correctAnswer: "5/14" }
-      - { type: fraction_multiply, question: "8/10 × 6/8", correctAnswer: "3/5" }
-      - { type: fraction_multiply, question: "3/4 × 2/5", correctAnswer: "3/10" }
-      - { type: fraction_multiply, question: "10/11 × 8/11", correctAnswer: "80/121" }
-      - { type: fraction_multiply, question: "2/12 × 1/11", correctAnswer: "1/66" }
-      - { type: fraction_multiply, question: "3/12 × 7/10", correctAnswer: "7/40" }
-      - { type: fraction_multiply, question: "1/6 × 2/10", correctAnswer: "1/30" }
+      - type: fraction_multiply
+        question: 5/11 × 3/12
+        correctAnswer: 5/44
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 5/6 × 4/5
+        correctAnswer: 2/3
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 4/5 × 1/10
+        correctAnswer: 2/25
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/6 × 5/7
+        correctAnswer: 5/14
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 8/10 × 6/8
+        correctAnswer: 3/5
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/4 × 2/5
+        correctAnswer: 3/10
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 10/11 × 8/11
+        correctAnswer: 80/121
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 2/12 × 1/11
+        correctAnswer: 1/66
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 3/12 × 7/10
+        correctAnswer: 7/40
+        rationale: Multiplique numeradores e denominadores separadamente.
+      - type: fraction_multiply
+        question: 1/6 × 2/10
+        correctAnswer: 1/30
+        rationale: Multiplique numeradores e denominadores separadamente.

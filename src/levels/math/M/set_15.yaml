@@ -3,97 +3,248 @@ level: M
 subject: math
 inputType: number
 difficulty: 4
-objectives: [algebra.binomial]
-example: "(a+b)^n = Σ C(n,k) a^(n-k) b^k"
+objectives:
+  - algebra.binomial
+example: (a+b)^n = Σ C(n,k) a^(n-k) b^k
 pages:
   - pageNumber: 1
     title: Expansão Básica
     description: Coeficientes binomiais.
     exercises:
-      - { type: algebra, question: "(a+b)² = a² + 2ab + ?", correctAnswer: b² }
-      - { type: algebra, question: "(a+b)³ = a³ + 3a²b + 3ab² + ?", correctAnswer: b³ }
-      - { type: algebra, question: "(a-b)² = a² - 2ab + ?", correctAnswer: b² }
-      - { type: algebra, question: "(a+b)⁴: coeficiente de a²b² = ?", correctAnswer: 6 }
-      - { type: algebra, question: "(a+b)⁵: coeficiente de a³b² = ?", correctAnswer: 10 }
+      - type: algebra
+        question: (a+b)² = a² + 2ab + ?
+        correctAnswer: b²
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (a+b)³ = a³ + 3a²b + 3ab² + ?
+        correctAnswer: b³
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (a-b)² = a² - 2ab + ?
+        correctAnswer: b²
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "(a+b)⁴: coeficiente de a²b² = ?"
+        correctAnswer: 6
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "(a+b)⁵: coeficiente de a³b² = ?"
+        correctAnswer: 10
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 2
     title: Coeficientes Binomiais C(n,k)
     description: C(n,k) = n!/(k!(n-k)!).
     exercises:
-      - { type: algebra, question: "C(5,2) = ?", correctAnswer: 10 }
-      - { type: algebra, question: "C(6,3) = ?", correctAnswer: 20 }
-      - { type: algebra, question: "C(4,0) = ?", correctAnswer: 1 }
-      - { type: algebra, question: "C(10,10) = ?", correctAnswer: 1 }
-      - { type: algebra, question: "C(7,1) = ?", correctAnswer: 7 }
+      - type: algebra
+        question: C(5,2) = ?
+        correctAnswer: 10
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: C(6,3) = ?
+        correctAnswer: 20
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: C(4,0) = ?
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: C(10,10) = ?
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: C(7,1) = ?
+        correctAnswer: 7
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 3
     title: Triângulo de Pascal
     description: Cada entrada é soma das duas acima.
     exercises:
-      - { type: algebra, question: "Linha 0 do Triângulo: (1/1 1)", correctAnswer: 1 }
-      - { type: algebra, question: "Linha 2: 1 2 ? ", correctAnswer: 1 }
-      - { type: algebra, question: "Linha 4: 1 4 6 4 ? ", correctAnswer: 1 }
-      - { type: algebra, question: "Terceira entrada da linha 5 (k=2) = ?", correctAnswer: 10 }
-      - { type: algebra, question: "Soma dos coeficientes da linha n = 2^?", correctAnswer: n }
+      - type: algebra
+        question: "Linha 0 do Triângulo: (1/1 1)"
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Linha 2: 1 2 ? "
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Linha 4: 1 4 6 4 ? "
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Terceira entrada da linha 5 (k=2) = ?
+        correctAnswer: 10
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Soma dos coeficientes da linha n = 2^?
+        correctAnswer: n
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 4
     title: Termo Geral
     description: Tₖ₊₁ = C(n,k) · a^(n-k) · b^k.
     exercises:
-      - { type: algebra, question: "Em (a+b)⁵, T₃ = C(5,?)·a³·b²", correctAnswer: 2 }
-      - { type: algebra, question: "Em (a+b)⁶, T₄ = C(6,3)·a³·b³ = 20·a³·b³. Coeficiente = ?", correctAnswer: 20 }
-      - { type: algebra, question: "Em (2+x)⁴, T₃ = C(4,2)·2²·x² = ? · x²", correctAnswer: 24 }
-      - { type: algebra, question: "Em (a+b)⁷, termo central (k=3) = C(7,3) = ?", correctAnswer: 35 }
-      - { type: algebra, question: "Em (x+1)^10, coeficiente de x^5 = C(10,?) = 252", correctAnswer: 5 }
+      - type: algebra
+        question: Em (a+b)⁵, T₃ = C(5,?)·a³·b²
+        correctAnswer: 2
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Em (a+b)⁶, T₄ = C(6,3)·a³·b³ = 20·a³·b³. Coeficiente = ?
+        correctAnswer: 20
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Em (2+x)⁴, T₃ = C(4,2)·2²·x² = ? · x²
+        correctAnswer: 24
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Em (a+b)⁷, termo central (k=3) = C(7,3) = ?
+        correctAnswer: 35
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Em (x+1)^10, coeficiente de x^5 = C(10,?) = 252
+        correctAnswer: 5
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 5
     title: Simetria
     description: C(n,k) = C(n, n-k).
     exercises:
-      - { type: algebra, question: "C(10,3) = C(10,?)", correctAnswer: 7 }
-      - { type: algebra, question: "C(8,2) = C(8,?)", correctAnswer: 6 }
-      - { type: algebra, question: "C(n,0) = ?", correctAnswer: 1 }
-      - { type: algebra, question: "C(n,n) = ?", correctAnswer: 1 }
-      - { type: algebra, question: "C(n,1) = ?", correctAnswer: n }
+      - type: algebra
+        question: C(10,3) = C(10,?)
+        correctAnswer: 7
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: C(8,2) = C(8,?)
+        correctAnswer: 6
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: C(n,0) = ?
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: C(n,n) = ?
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: C(n,1) = ?
+        correctAnswer: n
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 6
     title: Expansões Concretas
     description: Calcule expansões.
     exercises:
-      - { type: algebra, question: "(1+x)² expansão: 1 + 2x + ?", correctAnswer: x² }
-      - { type: algebra, question: "(2+x)³ coeficiente de x² = ?", correctAnswer: 6 }
-      - { type: algebra, question: "(1+x)⁵ coeficiente de x³ = ?", correctAnswer: 10 }
-      - { type: algebra, question: "(2+3x)² = 4 + 12x + ?x²", correctAnswer: 9 }
-      - { type: algebra, question: "(1-x)³ coeficiente de x = ?", correctAnswer: -3 }
+      - type: algebra
+        question: "(1+x)² expansão: 1 + 2x + ?"
+        correctAnswer: x²
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (2+x)³ coeficiente de x² = ?
+        correctAnswer: 6
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (1+x)⁵ coeficiente de x³ = ?
+        correctAnswer: 10
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (2+3x)² = 4 + 12x + ?x²
+        correctAnswer: 9
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (1-x)³ coeficiente de x = ?
+        correctAnswer: -3
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 7
     title: Soma de Coeficientes
     description: (1+1)^n = soma total.
     exercises:
-      - { type: algebra, question: "Soma dos coef. de (1+x)⁵ = 2⁵ = ?", correctAnswer: 32 }
-      - { type: algebra, question: "Soma dos coef. de (1+x)ⁿ = ?", correctAnswer: 2^n }
-      - { type: algebra, question: "Soma dos coef. de (1-x)ⁿ (x=1): 0 (V/F)?", correctAnswer: V }
-      - { type: algebra, question: "Soma dos coef. de (2+x)³ (fazendo x=1): 3³ = ?", correctAnswer: 27 }
-      - { type: algebra, question: "Soma alternada dos coef. de (1+x)ⁿ (x=-1) = ?", correctAnswer: 0 }
+      - type: algebra
+        question: Soma dos coef. de (1+x)⁵ = 2⁵ = ?
+        correctAnswer: 32
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Soma dos coef. de (1+x)ⁿ = ?
+        correctAnswer: 2^n
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Soma dos coef. de (1-x)ⁿ (x=1): 0 (V/F)?"
+        correctAnswer: V
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Soma dos coef. de (2+x)³ (fazendo x=1): 3³ = ?"
+        correctAnswer: 27
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Soma alternada dos coef. de (1+x)ⁿ (x=-1) = ?
+        correctAnswer: 0
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 8
     title: Aplicações
     description: Cálculos específicos.
     exercises:
-      - { type: algebra, question: "C(n,0) + C(n,1) + ... + C(n,n) = ?", correctAnswer: 2^n }
-      - { type: algebra, question: "C(10,0) + ... + C(10,10) = ?", correctAnswer: 1024 }
-      - { type: algebra, question: "Número de subconjuntos de um conjunto com n elementos = ?", correctAnswer: 2^n }
-      - { type: algebra, question: "Subconjuntos de 5 elementos = ?", correctAnswer: 32 }
-      - { type: algebra, question: "Em (x+1/x)ⁿ, termo independente = C(n, n/2) se n par (V/F)?", correctAnswer: V }
+      - type: algebra
+        question: C(n,0) + C(n,1) + ... + C(n,n) = ?
+        correctAnswer: 2^n
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: C(10,0) + ... + C(10,10) = ?
+        correctAnswer: 1024
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Número de subconjuntos de um conjunto com n elementos = ?
+        correctAnswer: 2^n
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Subconjuntos de 5 elementos = ?
+        correctAnswer: 32
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Em (x+1/x)ⁿ, termo independente = C(n, n/2) se n par (V/F)?
+        correctAnswer: V
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 9
     title: Casos Especiais
     description: Expansões com sinal.
     exercises:
-      - { type: algebra, question: "(1-x)² = 1 - 2x + ?", correctAnswer: x² }
-      - { type: algebra, question: "(1-x)⁴ = 1 - 4x + 6x² - 4x³ + ?", correctAnswer: x⁴ }
-      - { type: algebra, question: "Coeficiente de x² em (1-x)⁵ = ?", correctAnswer: 10 }
-      - { type: algebra, question: "Coeficiente de x³ em (1-x)⁵ = ?", correctAnswer: -10 }
-      - { type: algebra, question: "(a-b)^4 = a⁴ - 4a³b + 6a²b² - 4ab³ + ?", correctAnswer: b⁴ }
+      - type: algebra
+        question: (1-x)² = 1 - 2x + ?
+        correctAnswer: x²
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (1-x)⁴ = 1 - 4x + 6x² - 4x³ + ?
+        correctAnswer: x⁴
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Coeficiente de x² em (1-x)⁵ = ?
+        correctAnswer: 10
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Coeficiente de x³ em (1-x)⁵ = ?
+        correctAnswer: -10
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (a-b)^4 = a⁴ - 4a³b + 6a²b² - 4ab³ + ?
+        correctAnswer: b⁴
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 10
     title: Revisão Integrada
     description: Consolidação.
     exercises:
-      - { type: algebra, question: "C(6,2) = ?", correctAnswer: 15 }
-      - { type: algebra, question: "Soma dos coef. de (1+x)^8 = ?", correctAnswer: 256 }
-      - { type: algebra, question: "(a+b)⁴ — coeficiente de a·b³ = ?", correctAnswer: 4 }
-      - { type: algebra, question: "Termo geral de (a+b)^10 em k=5: C(10,5)·a⁵·b⁵ = ?·a⁵·b⁵", correctAnswer: 252 }
-      - { type: algebra, question: "C(n,k) = C(n-1,k-1) + C(n-1,k) (V/F)?", correctAnswer: V }
+      - type: algebra
+        question: C(6,2) = ?
+        correctAnswer: 15
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Soma dos coef. de (1+x)^8 = ?
+        correctAnswer: 256
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (a+b)⁴ — coeficiente de a·b³ = ?
+        correctAnswer: 4
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Termo geral de (a+b)^10 em k=5: C(10,5)·a⁵·b⁵ = ?·a⁵·b⁵"
+        correctAnswer: 252
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: C(n,k) = C(n-1,k-1) + C(n-1,k) (V/F)?
+        correctAnswer: V
+        rationale: Isole a incógnita usando operações inversas.
 target: 50

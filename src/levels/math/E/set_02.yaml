@@ -3,49 +3,140 @@ level: E
 example: "Subtraia frações mantendo o denominador. Ex.: 3/4 - 1/4 = 2/4"
 subject: math
 difficulty: 3
-objectives: [math.fractions.add_sub]
+objectives:
+  - math.fractions.add_sub
 authorNotes: Conjunto de math/E.
 pages:
   - pageNumber: 1
     title: Denominador 4
     description: Subtraia frações com denominador 4.
     exercises:
-      - { type: fraction_sub, question: "3/4 - 1/4 =", correctAnswer: "2/4" }
-      - { type: fraction_sub, question: "4/4 - 1/4 =", correctAnswer: "3/4" }
-      - { type: fraction_sub, question: "4/4 - 2/4 =", correctAnswer: "2/4" }
-      - { type: fraction_sub, question: "3/4 - 2/4 =", correctAnswer: "1/4" }
-      - { type: fraction_sub, question: "2/4 - 1/4 =", correctAnswer: "1/4" }
-      - { type: fraction_sub, question: "4/4 - 3/4 =", correctAnswer: "1/4" }
-      - { type: fraction_sub, question: "4/4 - 4/4 =", correctAnswer: "0/4" }
-      - { type: fraction_sub, question: "3/4 - 0/4 =", correctAnswer: "3/4" }
-      - { type: fraction_sub, question: "2/4 - 2/4 =", correctAnswer: "0/4" }
-      - { type: fraction_sub, question: "1/4 - 1/4 =", correctAnswer: "0/4" }
+      - type: fraction_sub
+        question: 3/4 - 1/4 =
+        correctAnswer: 2/4
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 4/4 - 1/4 =
+        correctAnswer: 3/4
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 4/4 - 2/4 =
+        correctAnswer: 2/4
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 3/4 - 2/4 =
+        correctAnswer: 1/4
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 2/4 - 1/4 =
+        correctAnswer: 1/4
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 4/4 - 3/4 =
+        correctAnswer: 1/4
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 4/4 - 4/4 =
+        correctAnswer: 0/4
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 3/4 - 0/4 =
+        correctAnswer: 3/4
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 2/4 - 2/4 =
+        correctAnswer: 0/4
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 1/4 - 1/4 =
+        correctAnswer: 0/4
+        rationale: Subtraia numeradores com denominadores iguais.
   - pageNumber: 2
     title: Denominador 5
     description: Subtraia frações com denominador 5.
     exercises:
-      - { type: fraction_sub, question: "4/5 - 1/5 =", correctAnswer: "3/5" }
-      - { type: fraction_sub, question: "5/5 - 2/5 =", correctAnswer: "3/5" }
-      - { type: fraction_sub, question: "3/5 - 2/5 =", correctAnswer: "1/5" }
-      - { type: fraction_sub, question: "5/5 - 4/5 =", correctAnswer: "1/5" }
-      - { type: fraction_sub, question: "4/5 - 2/5 =", correctAnswer: "2/5" }
-      - { type: fraction_sub, question: "5/5 - 3/5 =", correctAnswer: "2/5" }
-      - { type: fraction_sub, question: "5/5 - 5/5 =", correctAnswer: "0/5" }
-      - { type: fraction_sub, question: "2/5 - 1/5 =", correctAnswer: "1/5" }
-      - { type: fraction_sub, question: "4/5 - 3/5 =", correctAnswer: "1/5" }
-      - { type: fraction_sub, question: "5/5 - 1/5 =", correctAnswer: "4/5" }
+      - type: fraction_sub
+        question: 4/5 - 1/5 =
+        correctAnswer: 3/5
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 5/5 - 2/5 =
+        correctAnswer: 3/5
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 3/5 - 2/5 =
+        correctAnswer: 1/5
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 5/5 - 4/5 =
+        correctAnswer: 1/5
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 4/5 - 2/5 =
+        correctAnswer: 2/5
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 5/5 - 3/5 =
+        correctAnswer: 2/5
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 5/5 - 5/5 =
+        correctAnswer: 0/5
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 2/5 - 1/5 =
+        correctAnswer: 1/5
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 4/5 - 3/5 =
+        correctAnswer: 1/5
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 5/5 - 1/5 =
+        correctAnswer: 4/5
+        rationale: Subtraia numeradores com denominadores iguais.
   - pageNumber: 3
     title: Denominador 6
     description: Subtraia frações com denominador 6.
     exercises:
-      - { type: fraction_sub, question: "5/6 - 1/6 =", correctAnswer: "4/6" }
-      - { type: fraction_sub, question: "6/6 - 2/6 =", correctAnswer: "4/6" }
-      - { type: fraction_sub, question: "4/6 - 3/6 =", correctAnswer: "1/6" }
-      - { type: fraction_sub, question: "6/6 - 5/6 =", correctAnswer: "1/6" }
-      - { type: fraction_sub, question: "5/6 - 2/6 =", correctAnswer: "3/6" }
-      - { type: fraction_sub, question: "6/6 - 3/6 =", correctAnswer: "3/6" }
-      - { type: fraction_sub, question: "4/6 - 2/6 =", correctAnswer: "2/6" }
-      - { type: fraction_sub, question: "6/6 - 4/6 =", correctAnswer: "2/6" }
-      - { type: fraction_sub, question: "3/6 - 1/6 =", correctAnswer: "2/6" }
-      - { type: fraction_sub, question: "5/6 - 5/6 =", correctAnswer: "0/6" }
+      - type: fraction_sub
+        question: 5/6 - 1/6 =
+        correctAnswer: 4/6
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 6/6 - 2/6 =
+        correctAnswer: 4/6
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 4/6 - 3/6 =
+        correctAnswer: 1/6
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 6/6 - 5/6 =
+        correctAnswer: 1/6
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 5/6 - 2/6 =
+        correctAnswer: 3/6
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 6/6 - 3/6 =
+        correctAnswer: 3/6
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 4/6 - 2/6 =
+        correctAnswer: 2/6
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 6/6 - 4/6 =
+        correctAnswer: 2/6
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 3/6 - 1/6 =
+        correctAnswer: 2/6
+        rationale: Subtraia numeradores com denominadores iguais.
+      - type: fraction_sub
+        question: 5/6 - 5/6 =
+        correctAnswer: 0/6
+        rationale: Subtraia numeradores com denominadores iguais.
 target: 30

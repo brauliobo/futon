@@ -3,7 +3,8 @@ level: I
 example: "Potências e raízes. Ex.: 3² = 9, √16 = 4"
 subject: math
 difficulty: 4
-objectives: [math.quadratics_exponents]
+objectives:
+  - math.quadratics_exponents
 authorNotes: Conjunto de math/I.
 inputType: number
 pages:
@@ -11,56 +12,176 @@ pages:
     title: Quadrados Perfeitos
     description: Calcule o quadrado do número.
     exercises:
-      - { type: exponent, question: "1² =", correctAnswer: 1 }
-      - { type: exponent, question: "2² =", correctAnswer: 4 }
-      - { type: exponent, question: "3² =", correctAnswer: 9 }
-      - { type: exponent, question: "4² =", correctAnswer: 16 }
-      - { type: exponent, question: "5² =", correctAnswer: 25 }
-      - { type: exponent, question: "6² =", correctAnswer: 36 }
-      - { type: exponent, question: "7² =", correctAnswer: 49 }
-      - { type: exponent, question: "8² =", correctAnswer: 64 }
-      - { type: exponent, question: "9² =", correctAnswer: 81 }
-      - { type: exponent, question: "10² =", correctAnswer: 100 }
+      - type: exponent
+        question: 1² =
+        correctAnswer: 1
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 2² =
+        correctAnswer: 4
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 3² =
+        correctAnswer: 9
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 4² =
+        correctAnswer: 16
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 5² =
+        correctAnswer: 25
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 6² =
+        correctAnswer: 36
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 7² =
+        correctAnswer: 49
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 8² =
+        correctAnswer: 64
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 9² =
+        correctAnswer: 81
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 10² =
+        correctAnswer: 100
+        rationale: Use propriedades de potências.
   - pageNumber: 2
     title: Raízes Quadradas Exatas
     description: Encontre a raiz quadrada.
     exercises:
-      - { type: radical, question: "√1 =", correctAnswer: 1 }
-      - { type: radical, question: "√4 =", correctAnswer: 2 }
-      - { type: radical, question: "√9 =", correctAnswer: 3 }
-      - { type: radical, question: "√16 =", correctAnswer: 4 }
-      - { type: radical, question: "√25 =", correctAnswer: 5 }
-      - { type: radical, question: "√36 =", correctAnswer: 6 }
-      - { type: radical, question: "√49 =", correctAnswer: 7 }
-      - { type: radical, question: "√64 =", correctAnswer: 8 }
-      - { type: radical, question: "√81 =", correctAnswer: 9 }
-      - { type: radical, question: "√100 =", correctAnswer: 10 }
+      - type: radical
+        question: √1 =
+        correctAnswer: 1
+        rationale: Aplique propriedades de radicais.
+      - type: radical
+        question: √4 =
+        correctAnswer: 2
+        rationale: Aplique propriedades de radicais.
+      - type: radical
+        question: √9 =
+        correctAnswer: 3
+        rationale: Aplique propriedades de radicais.
+      - type: radical
+        question: √16 =
+        correctAnswer: 4
+        rationale: Aplique propriedades de radicais.
+      - type: radical
+        question: √25 =
+        correctAnswer: 5
+        rationale: Aplique propriedades de radicais.
+      - type: radical
+        question: √36 =
+        correctAnswer: 6
+        rationale: Aplique propriedades de radicais.
+      - type: radical
+        question: √49 =
+        correctAnswer: 7
+        rationale: Aplique propriedades de radicais.
+      - type: radical
+        question: √64 =
+        correctAnswer: 8
+        rationale: Aplique propriedades de radicais.
+      - type: radical
+        question: √81 =
+        correctAnswer: 9
+        rationale: Aplique propriedades de radicais.
+      - type: radical
+        question: √100 =
+        correctAnswer: 10
+        rationale: Aplique propriedades de radicais.
   - pageNumber: 3
     title: Cubos e Cubos
     description: Potência e raiz cúbica.
     exercises:
-      - { type: exponent, question: "1³ =", correctAnswer: 1 }
-      - { type: exponent, question: "2³ =", correctAnswer: 8 }
-      - { type: exponent, question: "3³ =", correctAnswer: 27 }
-      - { type: exponent, question: "4³ =", correctAnswer: 64 }
-      - { type: exponent, question: "5³ =", correctAnswer: 125 }
-      - { type: exponent, question: "2⁴ =", correctAnswer: 16 }
-      - { type: exponent, question: "3⁴ =", correctAnswer: 81 }
-      - { type: exponent, question: "2⁵ =", correctAnswer: 32 }
-      - { type: exponent, question: "10³ =", correctAnswer: 1000 }
-      - { type: exponent, question: "5⁰ =", correctAnswer: 1 }
+      - type: exponent
+        question: 1³ =
+        correctAnswer: 1
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 2³ =
+        correctAnswer: 8
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 3³ =
+        correctAnswer: 27
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 4³ =
+        correctAnswer: 64
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 5³ =
+        correctAnswer: 125
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 2⁴ =
+        correctAnswer: 16
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 3⁴ =
+        correctAnswer: 81
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 2⁵ =
+        correctAnswer: 32
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 10³ =
+        correctAnswer: 1000
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: 5⁰ =
+        correctAnswer: 1
+        rationale: Use propriedades de potências.
   - pageNumber: 4
     title: Equações Quadráticas Simples
     description: Resolva x² = k (resposta positiva).
     exercises:
-      - { type: equation, question: "x² = 4, x =", correctAnswer: 2 }
-      - { type: equation, question: "x² = 9, x =", correctAnswer: 3 }
-      - { type: equation, question: "x² = 16, x =", correctAnswer: 4 }
-      - { type: equation, question: "x² = 25, x =", correctAnswer: 5 }
-      - { type: equation, question: "x² = 36, x =", correctAnswer: 6 }
-      - { type: equation, question: "x² = 49, x =", correctAnswer: 7 }
-      - { type: equation, question: "x² = 64, x =", correctAnswer: 8 }
-      - { type: equation, question: "x² = 81, x =", correctAnswer: 9 }
-      - { type: equation, question: "x² = 100, x =", correctAnswer: 10 }
-      - { type: equation, question: "x² = 144, x =", correctAnswer: 12 }
+      - type: equation
+        question: x² = 4, x =
+        correctAnswer: 2
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: equation
+        question: x² = 9, x =
+        correctAnswer: 3
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: equation
+        question: x² = 16, x =
+        correctAnswer: 4
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: equation
+        question: x² = 25, x =
+        correctAnswer: 5
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: equation
+        question: x² = 36, x =
+        correctAnswer: 6
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: equation
+        question: x² = 49, x =
+        correctAnswer: 7
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: equation
+        question: x² = 64, x =
+        correctAnswer: 8
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: equation
+        question: x² = 81, x =
+        correctAnswer: 9
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: equation
+        question: x² = 100, x =
+        correctAnswer: 10
+        rationale: Aplique operações inversas para isolar a variável.
+      - type: equation
+        question: x² = 144, x =
+        correctAnswer: 12
+        rationale: Aplique operações inversas para isolar a variável.
 target: 40

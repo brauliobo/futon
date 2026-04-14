@@ -1,9 +1,10 @@
 title: Expressões com Variáveis — Conjunto 8
 level: G
-example: "Trabalhe com expressões contendo variáveis."
+example: Trabalhe com expressões contendo variáveis.
 subject: math
 difficulty: 3
-objectives: [math.integers_expressions]
+objectives:
+  - math.integers_expressions
 authorNotes: Conjunto de math/G.
 inputType: number
 pages:
@@ -11,139 +12,439 @@ pages:
     title: Expressões com Variáveis — Conjunto 8 – Página 1
     description: Trabalhe com expressões contendo variáveis.
     exercises:
-      - { type: algebraic_expression, question: "Se x = 6, então -4x + -10 =", correctAnswer: -34 }
-      - { type: algebraic_expression, question: "Se x = -10, então -5x + 4 =", correctAnswer: 54 }
-      - { type: algebraic_expression, question: "Se x = 8, então -5x + -3 =", correctAnswer: -43 }
-      - { type: algebraic_expression, question: "Se x = 8, então 5x + 7 =", correctAnswer: 47 }
-      - { type: algebraic_expression, question: "Se x = -1, então 3x + -4 =", correctAnswer: -7 }
-      - { type: algebraic_expression, question: "Se x = -4, então -3x + -10 =", correctAnswer: 2 }
-      - { type: algebraic_expression, question: "Se x = 1, então 1x + -6 =", correctAnswer: -5 }
-      - { type: algebraic_expression, question: "Se x = -2, então -3x + -9 =", correctAnswer: -3 }
-      - { type: algebraic_expression, question: "Se x = 0, então -2x + -8 =", correctAnswer: -8 }
-      - { type: algebraic_expression, question: "Se x = -3, então x - 8 =", correctAnswer: -11 }
+      - type: algebraic_expression
+        question: Se x = 6, então -4x + -10 =
+        correctAnswer: -34
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -10, então -5x + 4 =
+        correctAnswer: 54
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 8, então -5x + -3 =
+        correctAnswer: -43
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 8, então 5x + 7 =
+        correctAnswer: 47
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -1, então 3x + -4 =
+        correctAnswer: -7
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -4, então -3x + -10 =
+        correctAnswer: 2
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 1, então 1x + -6 =
+        correctAnswer: -5
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -2, então -3x + -9 =
+        correctAnswer: -3
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 0, então -2x + -8 =
+        correctAnswer: -8
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -3, então x - 8 =
+        correctAnswer: -11
+        rationale: Simplifique combinando termos semelhantes.
   - pageNumber: 2
     title: Expressões com Variáveis — Conjunto 8 – Página 2
     description: Trabalhe com expressões contendo variáveis.
     exercises:
-      - { type: algebraic_expression, question: "Se x = -9, então 5x + -5 =", correctAnswer: -50 }
-      - { type: algebraic_expression, question: "Se x = 9, então 1x + 3 =", correctAnswer: 12 }
-      - { type: algebraic_expression, question: "Se x = -9, então -5x + 3 =", correctAnswer: 48 }
-      - { type: algebraic_expression, question: "Se x = -9, então -1x + 8 =", correctAnswer: 17 }
-      - { type: algebraic_expression, question: "Se x = -4, então 5x + 8 =", correctAnswer: -12 }
-      - { type: algebraic_expression, question: "Se x = 2, então -3x + -2 =", correctAnswer: -8 }
-      - { type: algebraic_expression, question: "Se x = 5, então x - -1 =", correctAnswer: 6 }
-      - { type: algebraic_expression, question: "Se x = 8, então 5x + -2 =", correctAnswer: 38 }
-      - { type: algebraic_expression, question: "Se x = 10, então 4x + -10 =", correctAnswer: 30 }
-      - { type: algebraic_expression, question: "Se x = 6, então 3x + 1 =", correctAnswer: 19 }
+      - type: algebraic_expression
+        question: Se x = -9, então 5x + -5 =
+        correctAnswer: -50
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 9, então 1x + 3 =
+        correctAnswer: 12
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -9, então -5x + 3 =
+        correctAnswer: 48
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -9, então -1x + 8 =
+        correctAnswer: 17
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -4, então 5x + 8 =
+        correctAnswer: -12
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 2, então -3x + -2 =
+        correctAnswer: -8
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 5, então x - -1 =
+        correctAnswer: 6
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 8, então 5x + -2 =
+        correctAnswer: 38
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 10, então 4x + -10 =
+        correctAnswer: 30
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 6, então 3x + 1 =
+        correctAnswer: 19
+        rationale: Simplifique combinando termos semelhantes.
   - pageNumber: 3
     title: Expressões com Variáveis — Conjunto 8 – Página 3
     description: Trabalhe com expressões contendo variáveis.
     exercises:
-      - { type: algebraic_expression, question: "Se x = -9, então -2x + 10 =", correctAnswer: 28 }
-      - { type: algebraic_expression, question: "Se x = 1, então -1x + 10 =", correctAnswer: 9 }
-      - { type: algebraic_expression, question: "Se x = 5, então -1x + 1 =", correctAnswer: -4 }
-      - { type: algebraic_expression, question: "Se x = 0, então x - 4 =", correctAnswer: -4 }
-      - { type: algebraic_expression, question: "Se x = -10, então -5x + 7 =", correctAnswer: 57 }
-      - { type: algebraic_expression, question: "Se x = 3, então 4x + 0 =", correctAnswer: 12 }
-      - { type: algebraic_expression, question: "Se x = 3, então -5x + 10 =", correctAnswer: -5 }
-      - { type: algebraic_expression, question: "Se x = 0, então -2x + -7 =", correctAnswer: -7 }
-      - { type: algebraic_expression, question: "Se x = 3, então 4x + -6 =", correctAnswer: 6 }
-      - { type: algebraic_expression, question: "Se x = 8, então -5x + -9 =", correctAnswer: -49 }
+      - type: algebraic_expression
+        question: Se x = -9, então -2x + 10 =
+        correctAnswer: 28
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 1, então -1x + 10 =
+        correctAnswer: 9
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 5, então -1x + 1 =
+        correctAnswer: -4
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 0, então x - 4 =
+        correctAnswer: -4
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -10, então -5x + 7 =
+        correctAnswer: 57
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 3, então 4x + 0 =
+        correctAnswer: 12
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 3, então -5x + 10 =
+        correctAnswer: -5
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 0, então -2x + -7 =
+        correctAnswer: -7
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 3, então 4x + -6 =
+        correctAnswer: 6
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 8, então -5x + -9 =
+        correctAnswer: -49
+        rationale: Simplifique combinando termos semelhantes.
   - pageNumber: 4
     title: Expressões com Variáveis — Conjunto 8 – Página 4
     description: Trabalhe com expressões contendo variáveis.
     exercises:
-      - { type: algebraic_expression, question: "Se x = -4, então x - 4 =", correctAnswer: -8 }
-      - { type: algebraic_expression, question: "Se x = 9, então x - 10 =", correctAnswer: -1 }
-      - { type: algebraic_expression, question: "Se x = -1, então 5x + 6 =", correctAnswer: 1 }
-      - { type: algebraic_expression, question: "Se x = 9, então 5x + 10 =", correctAnswer: 55 }
-      - { type: algebraic_expression, question: "Se x = -4, então 4x + 1 =", correctAnswer: -15 }
-      - { type: algebraic_expression, question: "Se x = 0, então -2x + 5 =", correctAnswer: 5 }
-      - { type: algebraic_expression, question: "Se x = -4, então -1x + -1 =", correctAnswer: 3 }
-      - { type: algebraic_expression, question: "Se x = -2, então 5x + 7 =", correctAnswer: -3 }
-      - { type: algebraic_expression, question: "Se x = 7, então -1x + 1 =", correctAnswer: -6 }
-      - { type: algebraic_expression, question: "Se x = -2, então -4x + -9 =", correctAnswer: -1 }
+      - type: algebraic_expression
+        question: Se x = -4, então x - 4 =
+        correctAnswer: -8
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 9, então x - 10 =
+        correctAnswer: -1
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -1, então 5x + 6 =
+        correctAnswer: 1
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 9, então 5x + 10 =
+        correctAnswer: 55
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -4, então 4x + 1 =
+        correctAnswer: -15
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 0, então -2x + 5 =
+        correctAnswer: 5
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -4, então -1x + -1 =
+        correctAnswer: 3
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -2, então 5x + 7 =
+        correctAnswer: -3
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 7, então -1x + 1 =
+        correctAnswer: -6
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -2, então -4x + -9 =
+        correctAnswer: -1
+        rationale: Simplifique combinando termos semelhantes.
   - pageNumber: 5
     title: Expressões com Variáveis — Conjunto 8 – Página 5
     description: Trabalhe com expressões contendo variáveis.
     exercises:
-      - { type: algebraic_expression, question: "Se x = -5, então -2x + -5 =", correctAnswer: 5 }
-      - { type: algebraic_expression, question: "Se x = -10, então 3x + -1 =", correctAnswer: -31 }
-      - { type: algebraic_expression, question: "Se x = 4, então -5x + -6 =", correctAnswer: -26 }
-      - { type: algebraic_expression, question: "Se x = 7, então 5x + 10 =", correctAnswer: 45 }
-      - { type: algebraic_expression, question: "Se x = 1, então -4x + 1 =", correctAnswer: -3 }
-      - { type: algebraic_expression, question: "Se x = 1, então x - 4 =", correctAnswer: -3 }
-      - { type: algebraic_expression, question: "Se x = 6, então 1x + 7 =", correctAnswer: 13 }
-      - { type: algebraic_expression, question: "Se x = -6, então -1x + -2 =", correctAnswer: 4 }
-      - { type: algebraic_expression, question: "Se x = 8, então 3x + 0 =", correctAnswer: 24 }
-      - { type: algebraic_expression, question: "Se x = -8, então 1x + 1 =", correctAnswer: -7 }
+      - type: algebraic_expression
+        question: Se x = -5, então -2x + -5 =
+        correctAnswer: 5
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -10, então 3x + -1 =
+        correctAnswer: -31
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 4, então -5x + -6 =
+        correctAnswer: -26
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 7, então 5x + 10 =
+        correctAnswer: 45
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 1, então -4x + 1 =
+        correctAnswer: -3
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 1, então x - 4 =
+        correctAnswer: -3
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 6, então 1x + 7 =
+        correctAnswer: 13
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -6, então -1x + -2 =
+        correctAnswer: 4
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 8, então 3x + 0 =
+        correctAnswer: 24
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -8, então 1x + 1 =
+        correctAnswer: -7
+        rationale: Simplifique combinando termos semelhantes.
   - pageNumber: 6
     title: Expressões com Variáveis — Conjunto 8 – Página 6
     description: Trabalhe com expressões contendo variáveis.
     exercises:
-      - { type: algebraic_expression, question: "Se x = 0, então -3x + -3 =", correctAnswer: -3 }
-      - { type: algebraic_expression, question: "Se x = 4, então -5x + -7 =", correctAnswer: -27 }
-      - { type: algebraic_expression, question: "Se x = 5, então 1x + 8 =", correctAnswer: 13 }
-      - { type: algebraic_expression, question: "Se x = -3, então -5x + 5 =", correctAnswer: 20 }
-      - { type: algebraic_expression, question: "Se x = 6, então -1x + 0 =", correctAnswer: -6 }
-      - { type: algebraic_expression, question: "Se x = -7, então 3x + 10 =", correctAnswer: -11 }
-      - { type: algebraic_expression, question: "Se x = 8, então 3x + 1 =", correctAnswer: 25 }
-      - { type: algebraic_expression, question: "Se x = 9, então 1x + 7 =", correctAnswer: 16 }
-      - { type: algebraic_expression, question: "Se x = 10, então 1x + -2 =", correctAnswer: 8 }
-      - { type: algebraic_expression, question: "Se x = -6, então 4x + 2 =", correctAnswer: -22 }
+      - type: algebraic_expression
+        question: Se x = 0, então -3x + -3 =
+        correctAnswer: -3
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 4, então -5x + -7 =
+        correctAnswer: -27
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 5, então 1x + 8 =
+        correctAnswer: 13
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -3, então -5x + 5 =
+        correctAnswer: 20
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 6, então -1x + 0 =
+        correctAnswer: -6
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -7, então 3x + 10 =
+        correctAnswer: -11
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 8, então 3x + 1 =
+        correctAnswer: 25
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 9, então 1x + 7 =
+        correctAnswer: 16
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 10, então 1x + -2 =
+        correctAnswer: 8
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -6, então 4x + 2 =
+        correctAnswer: -22
+        rationale: Simplifique combinando termos semelhantes.
   - pageNumber: 7
     title: Expressões com Variáveis — Conjunto 8 – Página 7
     description: Trabalhe com expressões contendo variáveis.
     exercises:
-      - { type: algebraic_expression, question: "Se x = 5, então x - 2 =", correctAnswer: 3 }
-      - { type: algebraic_expression, question: "Se x = -7, então 5x + -8 =", correctAnswer: -43 }
-      - { type: algebraic_expression, question: "Se x = 6, então 2x + -2 =", correctAnswer: 10 }
-      - { type: algebraic_expression, question: "Se x = 10, então x - -4 =", correctAnswer: 14 }
-      - { type: algebraic_expression, question: "Se x = 0, então -1x + -6 =", correctAnswer: -6 }
-      - { type: algebraic_expression, question: "Se x = 4, então 2x + 0 =", correctAnswer: 8 }
-      - { type: algebraic_expression, question: "Se x = -7, então -2x + -10 =", correctAnswer: 4 }
-      - { type: algebraic_expression, question: "Se x = -4, então x - -4 =", correctAnswer: 0 }
-      - { type: algebraic_expression, question: "Se x = 9, então 3x + -7 =", correctAnswer: 20 }
-      - { type: algebraic_expression, question: "Se x = -2, então 3x + 4 =", correctAnswer: -2 }
+      - type: algebraic_expression
+        question: Se x = 5, então x - 2 =
+        correctAnswer: 3
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -7, então 5x + -8 =
+        correctAnswer: -43
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 6, então 2x + -2 =
+        correctAnswer: 10
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 10, então x - -4 =
+        correctAnswer: 14
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 0, então -1x + -6 =
+        correctAnswer: -6
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 4, então 2x + 0 =
+        correctAnswer: 8
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -7, então -2x + -10 =
+        correctAnswer: 4
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -4, então x - -4 =
+        correctAnswer: 0
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 9, então 3x + -7 =
+        correctAnswer: 20
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -2, então 3x + 4 =
+        correctAnswer: -2
+        rationale: Simplifique combinando termos semelhantes.
   - pageNumber: 8
     title: Expressões com Variáveis — Conjunto 8 – Página 8
     description: Trabalhe com expressões contendo variáveis.
     exercises:
-      - { type: algebraic_expression, question: "Se x = 1, então 2x + 0 =", correctAnswer: 2 }
-      - { type: algebraic_expression, question: "Se x = 6, então 2x + 10 =", correctAnswer: 22 }
-      - { type: algebraic_expression, question: "Se x = 2, então 2x + -3 =", correctAnswer: 1 }
-      - { type: algebraic_expression, question: "Se x = 9, então 1x + 8 =", correctAnswer: 17 }
-      - { type: algebraic_expression, question: "Se x = 4, então -3x + -6 =", correctAnswer: -18 }
-      - { type: algebraic_expression, question: "Se x = 10, então 4x + -1 =", correctAnswer: 39 }
-      - { type: algebraic_expression, question: "Se x = -4, então -5x + 10 =", correctAnswer: 30 }
-      - { type: algebraic_expression, question: "Se x = -9, então 5x + 7 =", correctAnswer: -38 }
-      - { type: algebraic_expression, question: "Se x = -10, então 4x + 6 =", correctAnswer: -34 }
-      - { type: algebraic_expression, question: "Se x = -8, então -5x + 8 =", correctAnswer: 48 }
+      - type: algebraic_expression
+        question: Se x = 1, então 2x + 0 =
+        correctAnswer: 2
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 6, então 2x + 10 =
+        correctAnswer: 22
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 2, então 2x + -3 =
+        correctAnswer: 1
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 9, então 1x + 8 =
+        correctAnswer: 17
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 4, então -3x + -6 =
+        correctAnswer: -18
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 10, então 4x + -1 =
+        correctAnswer: 39
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -4, então -5x + 10 =
+        correctAnswer: 30
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -9, então 5x + 7 =
+        correctAnswer: -38
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -10, então 4x + 6 =
+        correctAnswer: -34
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -8, então -5x + 8 =
+        correctAnswer: 48
+        rationale: Simplifique combinando termos semelhantes.
   - pageNumber: 9
     title: Expressões com Variáveis — Conjunto 8 – Página 9
     description: Trabalhe com expressões contendo variáveis.
     exercises:
-      - { type: algebraic_expression, question: "Se x = 0, então x - -4 =", correctAnswer: 4 }
-      - { type: algebraic_expression, question: "Se x = 3, então 2x + -5 =", correctAnswer: 1 }
-      - { type: algebraic_expression, question: "Se x = 5, então -3x + 2 =", correctAnswer: -13 }
-      - { type: algebraic_expression, question: "Se x = -1, então -5x + 4 =", correctAnswer: 9 }
-      - { type: algebraic_expression, question: "Se x = -3, então -1x + -7 =", correctAnswer: -4 }
-      - { type: algebraic_expression, question: "Se x = 0, então -3x + -3 =", correctAnswer: -3 }
-      - { type: algebraic_expression, question: "Se x = 8, então -5x + -3 =", correctAnswer: -43 }
-      - { type: algebraic_expression, question: "Se x = 5, então x - -1 =", correctAnswer: 6 }
-      - { type: algebraic_expression, question: "Se x = -7, então 3x + 10 =", correctAnswer: -11 }
-      - { type: algebraic_expression, question: "Se x = 4, então 2x + 0 =", correctAnswer: 8 }
+      - type: algebraic_expression
+        question: Se x = 0, então x - -4 =
+        correctAnswer: 4
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 3, então 2x + -5 =
+        correctAnswer: 1
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 5, então -3x + 2 =
+        correctAnswer: -13
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -1, então -5x + 4 =
+        correctAnswer: 9
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -3, então -1x + -7 =
+        correctAnswer: -4
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 0, então -3x + -3 =
+        correctAnswer: -3
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 8, então -5x + -3 =
+        correctAnswer: -43
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 5, então x - -1 =
+        correctAnswer: 6
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -7, então 3x + 10 =
+        correctAnswer: -11
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 4, então 2x + 0 =
+        correctAnswer: 8
+        rationale: Simplifique combinando termos semelhantes.
   - pageNumber: 10
     title: Expressões com Variáveis — Conjunto 8 – Página 10
     description: Trabalhe com expressões contendo variáveis.
     exercises:
-      - { type: algebraic_expression, question: "Se x = 9, então x - 10 =", correctAnswer: -1 }
-      - { type: algebraic_expression, question: "Se x = -6, então -1x + -2 =", correctAnswer: 4 }
-      - { type: algebraic_expression, question: "Se x = 1, então 2x + 0 =", correctAnswer: 2 }
-      - { type: algebraic_expression, question: "Se x = 9, então 3x + -7 =", correctAnswer: 20 }
-      - { type: algebraic_expression, question: "Se x = 5, então 1x + 8 =", correctAnswer: 13 }
-      - { type: algebraic_expression, question: "Se x = 8, então 3x + 0 =", correctAnswer: 24 }
-      - { type: algebraic_expression, question: "Se x = -10, então -5x + 4 =", correctAnswer: 54 }
-      - { type: algebraic_expression, question: "Se x = -9, então 5x + -5 =", correctAnswer: -50 }
-      - { type: algebraic_expression, question: "Se x = -9, então -2x + 10 =", correctAnswer: 28 }
-      - { type: algebraic_expression, question: "Se x = -4, então 5x + 8 =", correctAnswer: -12 }
+      - type: algebraic_expression
+        question: Se x = 9, então x - 10 =
+        correctAnswer: -1
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -6, então -1x + -2 =
+        correctAnswer: 4
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 1, então 2x + 0 =
+        correctAnswer: 2
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 9, então 3x + -7 =
+        correctAnswer: 20
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 5, então 1x + 8 =
+        correctAnswer: 13
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = 8, então 3x + 0 =
+        correctAnswer: 24
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -10, então -5x + 4 =
+        correctAnswer: 54
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -9, então 5x + -5 =
+        correctAnswer: -50
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -9, então -2x + 10 =
+        correctAnswer: 28
+        rationale: Simplifique combinando termos semelhantes.
+      - type: algebraic_expression
+        question: Se x = -4, então 5x + 8 =
+        correctAnswer: -12
+        rationale: Simplifique combinando termos semelhantes.

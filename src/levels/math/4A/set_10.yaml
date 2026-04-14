@@ -3,7 +3,8 @@ level: 4A
 example: Conte os objetos e escreva o número.
 subject: math
 difficulty: 1
-objectives: [math.addition.basic]
+objectives:
+  - math.addition.basic
 authorNotes: Conjunto de math/4A.
 inputType: number
 passCriteria:
@@ -14,139 +15,439 @@ pages:
     title: Contar 31–40 – Página 1
     description: Conte os símbolos.
     exercises:
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 31 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 32 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 33 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 34 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 35 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 36 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 37 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 38 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 39 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 40 }
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 31
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 32
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 33
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 34
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 35
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 36
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 37
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 38
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 39
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 40
+        rationale: Conte seguindo a sequência.
   - pageNumber: 2
     title: Contar 31–40 – Página 2
     description: Conte os símbolos.
     exercises:
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 31 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 32 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 33 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 34 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 35 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 36 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 37 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 38 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 39 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 40 }
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 31
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 32
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 33
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 34
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 35
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 36
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 37
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 38
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 39
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 40
+        rationale: Conte seguindo a sequência.
   - pageNumber: 3
     title: Contar 31–40 – Página 3
     description: Conte os símbolos.
     exercises:
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 31 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 32 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 33 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 34 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 35 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 36 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 37 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 38 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 39 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 40 }
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 31
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 32
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 33
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 34
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 35
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 36
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 37
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 38
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 39
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 40
+        rationale: Conte seguindo a sequência.
   - pageNumber: 4
     title: Contar 31–40 – Página 4
     description: Conte os símbolos.
     exercises:
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 31 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 32 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 33 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 34 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 35 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 36 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 37 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 38 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 39 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 40 }
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 31
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 32
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 33
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 34
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 35
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 36
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 37
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 38
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 39
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 40
+        rationale: Conte seguindo a sequência.
   - pageNumber: 5
     title: Contar 31–40 – Página 5
     description: Conte os símbolos.
     exercises:
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 31 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 32 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 33 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 34 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 35 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 36 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 37 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 38 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 39 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 40 }
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 31
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 32
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 33
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 34
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 35
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 36
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 37
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 38
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 39
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 40
+        rationale: Conte seguindo a sequência.
   - pageNumber: 6
     title: Contar 31–40 – Página 6
     description: Conte os símbolos.
     exercises:
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 31 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 32 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 33 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 34 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 35 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 36 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 37 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 38 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 39 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 40 }
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 31
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 32
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 33
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 34
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 35
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 36
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 37
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 38
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 39
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 40
+        rationale: Conte seguindo a sequência.
   - pageNumber: 7
     title: Contar 31–40 – Página 7
     description: Conte os símbolos.
     exercises:
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 31 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 32 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 33 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 34 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 35 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 36 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 37 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 38 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 39 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 40 }
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 31
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 32
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 33
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 34
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 35
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 36
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 37
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 38
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 39
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 40
+        rationale: Conte seguindo a sequência.
   - pageNumber: 8
     title: Contar 31–40 – Página 8
     description: Conte os símbolos.
     exercises:
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 31 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 32 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 33 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 34 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 35 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 36 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 37 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 38 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 39 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 40 }
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 31
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 32
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 33
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 34
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 35
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 36
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 37
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 38
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 39
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 40
+        rationale: Conte seguindo a sequência.
   - pageNumber: 9
     title: Contar 31–40 – Página 9
     description: Conte os símbolos.
     exercises:
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 31 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 32 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 33 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 34 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 35 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 36 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 37 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 38 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 39 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 40 }
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 31
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 32
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 33
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 34
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 35
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 36
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 37
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 38
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 39
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 40
+        rationale: Conte seguindo a sequência.
   - pageNumber: 10
     title: Contar 31–40 – Página 10
     description: Conte os símbolos.
     exercises:
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 31 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 32 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 33 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 34 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 35 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 36 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 37 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 38 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 39 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●", correctAnswer: 40 }
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 31
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 32
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 33
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 34
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 35
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 36
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 37
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 38
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 39
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 40
+        rationale: Conte seguindo a sequência.

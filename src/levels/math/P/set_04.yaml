@@ -3,97 +3,248 @@ level: P
 subject: math
 inputType: number
 difficulty: 4
-objectives: [combinatorics]
-example: "Permutações, arranjos, combinações."
+objectives:
+  - combinatorics
+example: Permutações, arranjos, combinações.
 pages:
   - pageNumber: 1
     title: Princípio Fundamental da Contagem
     description: Se A pode ocorrer de m maneiras e B de n, há m·n possibilidades.
     exercises:
-      - { type: mental_math, question: "4 camisas e 3 calças — quantos conjuntos? ", correctAnswer: 12 }
-      - { type: mental_math, question: "5 pratos e 2 bebidas — quantas combinações?", correctAnswer: 10 }
-      - { type: mental_math, question: "2 moedas — quantos resultados?", correctAnswer: 4 }
-      - { type: mental_math, question: "3 dados — quantos resultados?", correctAnswer: 216 }
-      - { type: mental_math, question: "Placa com 3 letras (26 opções) seguidas: total = 26³ = ?", correctAnswer: 17576 }
+      - type: mental_math
+        question: "4 camisas e 3 calças — quantos conjuntos? "
+        correctAnswer: 12
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: 5 pratos e 2 bebidas — quantas combinações?
+        correctAnswer: 10
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: 2 moedas — quantos resultados?
+        correctAnswer: 4
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: 3 dados — quantos resultados?
+        correctAnswer: 216
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Placa com 3 letras (26 opções) seguidas: total = 26³ = ?"
+        correctAnswer: 17576
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 2
     title: Fatorial
     description: n! = n·(n-1)·...·1.
     exercises:
-      - { type: mental_math, question: "5! = ?", correctAnswer: 120 }
-      - { type: mental_math, question: "4! = ?", correctAnswer: 24 }
-      - { type: mental_math, question: "3! = ?", correctAnswer: 6 }
-      - { type: mental_math, question: "0! = ?", correctAnswer: 1 }
-      - { type: mental_math, question: "6! = ?", correctAnswer: 720 }
+      - type: mental_math
+        question: 5! = ?
+        correctAnswer: 120
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: 4! = ?
+        correctAnswer: 24
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: 3! = ?
+        correctAnswer: 6
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: 0! = ?
+        correctAnswer: 1
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: 6! = ?
+        correctAnswer: 720
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 3
     title: Permutação Simples
     description: P(n) = n!.
     exercises:
-      - { type: mental_math, question: "Quantos anagramas de AMOR?", correctAnswer: 24 }
-      - { type: mental_math, question: "Quantos anagramas de CASA? (2 A repetidos) = 4!/2! = ?", correctAnswer: 12 }
-      - { type: mental_math, question: "Quantos anagramas de PATO?", correctAnswer: 24 }
-      - { type: mental_math, question: "P(5) = ?", correctAnswer: 120 }
-      - { type: mental_math, question: "P(3) = ?", correctAnswer: 6 }
+      - type: mental_math
+        question: Quantos anagramas de AMOR?
+        correctAnswer: 24
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Quantos anagramas de CASA? (2 A repetidos) = 4!/2! = ?
+        correctAnswer: 12
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Quantos anagramas de PATO?
+        correctAnswer: 24
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: P(5) = ?
+        correctAnswer: 120
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: P(3) = ?
+        correctAnswer: 6
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 4
     title: Arranjos
     description: A(n,k) = n!/(n-k)!.
     exercises:
-      - { type: mental_math, question: "A(5,2) = 5·4 = ?", correctAnswer: 20 }
-      - { type: mental_math, question: "A(6,3) = 6·5·4 = ?", correctAnswer: 120 }
-      - { type: mental_math, question: "A(4,2) = ?", correctAnswer: 12 }
-      - { type: mental_math, question: "A(7,2) = ?", correctAnswer: 42 }
-      - { type: mental_math, question: "A(10,1) = ?", correctAnswer: 10 }
+      - type: mental_math
+        question: A(5,2) = 5·4 = ?
+        correctAnswer: 20
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: A(6,3) = 6·5·4 = ?
+        correctAnswer: 120
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: A(4,2) = ?
+        correctAnswer: 12
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: A(7,2) = ?
+        correctAnswer: 42
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: A(10,1) = ?
+        correctAnswer: 10
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 5
     title: Combinações
     description: C(n,k) = n!/(k!(n-k)!).
     exercises:
-      - { type: mental_math, question: "C(5,2) = ?", correctAnswer: 10 }
-      - { type: mental_math, question: "C(6,3) = ?", correctAnswer: 20 }
-      - { type: mental_math, question: "C(4,2) = ?", correctAnswer: 6 }
-      - { type: mental_math, question: "C(10,2) = ?", correctAnswer: 45 }
-      - { type: mental_math, question: "C(7,0) = ?", correctAnswer: 1 }
+      - type: mental_math
+        question: C(5,2) = ?
+        correctAnswer: 10
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: C(6,3) = ?
+        correctAnswer: 20
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: C(4,2) = ?
+        correctAnswer: 6
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: C(10,2) = ?
+        correctAnswer: 45
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: C(7,0) = ?
+        correctAnswer: 1
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 6
     title: Arranjo vs Combinação
     description: Arranjo considera ordem; combinação não.
     exercises:
-      - { type: mental_math, question: "Escolher 2 de 5 sem importar ordem: (combinação/arranjo)", correctAnswer: combinação }
-      - { type: mental_math, question: "Escolher 1º e 2º colocado entre 5: (combinação/arranjo)", correctAnswer: arranjo }
-      - { type: mental_math, question: "Se importa a ordem: A(n,k); se não importa: ?(n,k)", correctAnswer: C }
-      - { type: mental_math, question: "A(5,3) = ?", correctAnswer: 60 }
-      - { type: mental_math, question: "C(5,3) = ?", correctAnswer: 10 }
+      - type: mental_math
+        question: "Escolher 2 de 5 sem importar ordem: (combinação/arranjo)"
+        correctAnswer: combinação
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Escolher 1º e 2º colocado entre 5: (combinação/arranjo)"
+        correctAnswer: arranjo
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Se importa a ordem: A(n,k); se não importa: ?(n,k)"
+        correctAnswer: C
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: A(5,3) = ?
+        correctAnswer: 60
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: C(5,3) = ?
+        correctAnswer: 10
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 7
     title: Permutação com Repetição
     description: P(n; n1,n2,...) = n!/(n1!·n2!·...).
     exercises:
-      - { type: mental_math, question: "Anagramas de OVO = 3!/2! = ?", correctAnswer: 3 }
-      - { type: mental_math, question: "Anagramas de BANANA = 6!/(3!·2!) = ?", correctAnswer: 60 }
-      - { type: mental_math, question: "Anagramas de MAMA = 4!/(2!·2!) = ?", correctAnswer: 6 }
-      - { type: mental_math, question: "Anagramas de ARARA (2A,2R,1A?)... de ARARA (3A,2R) = 5!/(3!·2!) = ?", correctAnswer: 10 }
-      - { type: mental_math, question: "Anagramas de PAPAI = 5!/(2!·2!) = ?", correctAnswer: 30 }
+      - type: mental_math
+        question: Anagramas de OVO = 3!/2! = ?
+        correctAnswer: 3
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Anagramas de BANANA = 6!/(3!·2!) = ?
+        correctAnswer: 60
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Anagramas de MAMA = 4!/(2!·2!) = ?
+        correctAnswer: 6
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Anagramas de ARARA (2A,2R,1A?)... de ARARA (3A,2R) = 5!/(3!·2!) = ?
+        correctAnswer: 10
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Anagramas de PAPAI = 5!/(2!·2!) = ?
+        correctAnswer: 30
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 8
     title: Aplicações
     description: Problemas contextuais.
     exercises:
-      - { type: mental_math, question: "Grupo de 4 pessoas em fila: quantas filas?", correctAnswer: 24 }
-      - { type: mental_math, question: "Escolher 3 de 10 alunos (sem ordem) = ?", correctAnswer: 120 }
-      - { type: mental_math, question: "Escolher presidente e vice de 10 = A(10,2) = ?", correctAnswer: 90 }
-      - { type: mental_math, question: "Comitê de 2 entre 6 = C(6,2) = ?", correctAnswer: 15 }
-      - { type: mental_math, question: "Quantos resultados ao lançar 4 moedas? 2⁴ = ?", correctAnswer: 16 }
+      - type: mental_math
+        question: "Grupo de 4 pessoas em fila: quantas filas?"
+        correctAnswer: 24
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Escolher 3 de 10 alunos (sem ordem) = ?
+        correctAnswer: 120
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Escolher presidente e vice de 10 = A(10,2) = ?
+        correctAnswer: 90
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Comitê de 2 entre 6 = C(6,2) = ?
+        correctAnswer: 15
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Quantos resultados ao lançar 4 moedas? 2⁴ = ?
+        correctAnswer: 16
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 9
     title: Probabilidade com Combinatória
     description: Use combinações no numerador e denominador.
     exercises:
-      - { type: mental_math, question: "De 10 bolas (4 vermelhas, 6 azuis), P(escolher 2 vermelhas sem reposição) = C(4,2)/C(10,2) = ?", correctAnswer: 6/45 }
-      - { type: mental_math, question: "Em uma mão de 5 cartas, probabilidade específica exige C(52,5) no denominador — qual esse valor?", correctAnswer: 2598960 }
-      - { type: mental_math, question: "De 5 pessoas, P(primeiro e segundo específicos) = 1/A(5,2) = ?", correctAnswer: 1/20 }
-      - { type: mental_math, question: "10 alunos — P(sortear grupo de 3 específicos) = 1/C(10,3) = ?", correctAnswer: 1/120 }
-      - { type: mental_math, question: "Moeda 3 vezes — P(3 caras) = 1/?", correctAnswer: 8 }
+      - type: mental_math
+        question: De 10 bolas (4 vermelhas, 6 azuis), P(escolher 2 vermelhas sem reposição) = C(4,2)/C(10,2) = ?
+        correctAnswer: 6/45
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Em uma mão de 5 cartas, probabilidade específica exige C(52,5) no denominador — qual esse valor?
+        correctAnswer: 2598960
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: De 5 pessoas, P(primeiro e segundo específicos) = 1/A(5,2) = ?
+        correctAnswer: 1/20
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: 10 alunos — P(sortear grupo de 3 específicos) = 1/C(10,3) = ?
+        correctAnswer: 1/120
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Moeda 3 vezes — P(3 caras) = 1/?
+        correctAnswer: 8
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 10
     title: Revisão Integrada
     description: Combine as ferramentas.
     exercises:
-      - { type: mental_math, question: "Senhas com 4 dígitos distintos (0-9): A(10,4) = ?", correctAnswer: 5040 }
-      - { type: mental_math, question: "Escolher 3 de 7 sem ordem: C(7,3) = ?", correctAnswer: 35 }
-      - { type: mental_math, question: "Anagramas de ROMA: P(4) = ?", correctAnswer: 24 }
-      - { type: mental_math, question: "Fatorial — 7! = ?", correctAnswer: 5040 }
-      - { type: mental_math, question: "Quantos números de 3 dígitos distintos entre 1-9? A(9,3) = ?", correctAnswer: 504 }
+      - type: mental_math
+        question: "Senhas com 4 dígitos distintos (0-9): A(10,4) = ?"
+        correctAnswer: 5040
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Escolher 3 de 7 sem ordem: C(7,3) = ?"
+        correctAnswer: 35
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Anagramas de ROMA: P(4) = ?"
+        correctAnswer: 24
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Fatorial — 7! = ?
+        correctAnswer: 5040
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Quantos números de 3 dígitos distintos entre 1-9? A(9,3) = ?
+        correctAnswer: 504
+        rationale: Calcule mentalmente usando estratégias de decomposição.
 target: 50

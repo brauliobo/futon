@@ -1,9 +1,10 @@
 title: Sistemas de Equações Simples — Conjunto 10
 level: H
-example: "Resolva sistemas de equações simples."
+example: Resolva sistemas de equações simples.
 subject: math
 difficulty: 3
-objectives: [math.linear_equations]
+objectives:
+  - math.linear_equations
 authorNotes: Conjunto de math/H.
 inputType: number
 pages:
@@ -11,139 +12,439 @@ pages:
     title: Sistemas de Equações Simples — Conjunto 10 – Página 1
     description: Resolva sistemas de equações simples.
     exercises:
-      - { type: system_equation, question: "x + y = -12, x - y = -6", correctAnswer: "(-9,-3)" }
-      - { type: system_equation, question: "x + y = 4, x - y = 10", correctAnswer: "(7,-3)" }
-      - { type: system_equation, question: "x + y = -4, x - y = -12", correctAnswer: "(-8,4)" }
-      - { type: system_equation, question: "x + y = -10, x - y = -2", correctAnswer: "(-6,-4)" }
-      - { type: system_equation, question: "x + y = 1, x - y = -3", correctAnswer: "(-1,2)" }
-      - { type: system_equation, question: "x + y = -10, x - y = -10", correctAnswer: "(-10,0)" }
-      - { type: system_equation, question: "x + y = -7, x - y = -1", correctAnswer: "(-4,-3)" }
-      - { type: system_equation, question: "x + y = -1, x - y = -3", correctAnswer: "(-2,1)" }
-      - { type: system_equation, question: "x + y = -3, x - y = -11", correctAnswer: "(-7,4)" }
-      - { type: system_equation, question: "x + y = -13, x - y = 1", correctAnswer: "(-6,-7)" }
+      - type: system_equation
+        question: x + y = -12, x - y = -6
+        correctAnswer: (-9,-3)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 4, x - y = 10
+        correctAnswer: (7,-3)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -4, x - y = -12
+        correctAnswer: (-8,4)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -10, x - y = -2
+        correctAnswer: (-6,-4)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 1, x - y = -3
+        correctAnswer: (-1,2)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -10, x - y = -10
+        correctAnswer: (-10,0)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -7, x - y = -1
+        correctAnswer: (-4,-3)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -1, x - y = -3
+        correctAnswer: (-2,1)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -3, x - y = -11
+        correctAnswer: (-7,4)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -13, x - y = 1
+        correctAnswer: (-6,-7)
+        rationale: Use substituição, adição ou matriz.
   - pageNumber: 2
     title: Sistemas de Equações Simples — Conjunto 10 – Página 2
     description: Resolva sistemas de equações simples.
     exercises:
-      - { type: system_equation, question: "x + y = -7, x - y = -11", correctAnswer: "(-9,2)" }
-      - { type: system_equation, question: "x + y = 6, x - y = 10", correctAnswer: "(8,-2)" }
-      - { type: system_equation, question: "x + y = -2, x - y = -16", correctAnswer: "(-9,7)" }
-      - { type: system_equation, question: "x + y = 11, x - y = 5", correctAnswer: "(8,3)" }
-      - { type: system_equation, question: "x + y = -14, x - y = -2", correctAnswer: "(-8,-6)" }
-      - { type: system_equation, question: "x + y = 9, x - y = -11", correctAnswer: "(-1,10)" }
-      - { type: system_equation, question: "x + y = 8, x - y = -8", correctAnswer: "(0,8)" }
-      - { type: system_equation, question: "x + y = 9, x - y = 9", correctAnswer: "(9,0)" }
-      - { type: system_equation, question: "x + y = -1, x - y = -1", correctAnswer: "(-1,0)" }
-      - { type: system_equation, question: "x + y = 4, x - y = -8", correctAnswer: "(-2,6)" }
+      - type: system_equation
+        question: x + y = -7, x - y = -11
+        correctAnswer: (-9,2)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 6, x - y = 10
+        correctAnswer: (8,-2)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -2, x - y = -16
+        correctAnswer: (-9,7)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 11, x - y = 5
+        correctAnswer: (8,3)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -14, x - y = -2
+        correctAnswer: (-8,-6)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 9, x - y = -11
+        correctAnswer: (-1,10)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 8, x - y = -8
+        correctAnswer: (0,8)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 9, x - y = 9
+        correctAnswer: (9,0)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -1, x - y = -1
+        correctAnswer: (-1,0)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 4, x - y = -8
+        correctAnswer: (-2,6)
+        rationale: Use substituição, adição ou matriz.
   - pageNumber: 3
     title: Sistemas de Equações Simples — Conjunto 10 – Página 3
     description: Resolva sistemas de equações simples.
     exercises:
-      - { type: system_equation, question: "x + y = 7, x - y = 11", correctAnswer: "(9,-2)" }
-      - { type: system_equation, question: "x + y = 1, x - y = -13", correctAnswer: "(-6,7)" }
-      - { type: system_equation, question: "x + y = 14, x - y = 2", correctAnswer: "(8,6)" }
-      - { type: system_equation, question: "x + y = -2, x - y = 0", correctAnswer: "(-1,-1)" }
-      - { type: system_equation, question: "x + y = -3, x - y = 7", correctAnswer: "(2,-5)" }
-      - { type: system_equation, question: "x + y = 0, x - y = -6", correctAnswer: "(-3,3)" }
-      - { type: system_equation, question: "x + y = -12, x - y = -4", correctAnswer: "(-8,-4)" }
-      - { type: system_equation, question: "x + y = 1, x - y = -9", correctAnswer: "(-4,5)" }
-      - { type: system_equation, question: "x + y = 0, x - y = 14", correctAnswer: "(7,-7)" }
-      - { type: system_equation, question: "x + y = 9, x - y = -9", correctAnswer: "(0,9)" }
+      - type: system_equation
+        question: x + y = 7, x - y = 11
+        correctAnswer: (9,-2)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 1, x - y = -13
+        correctAnswer: (-6,7)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 14, x - y = 2
+        correctAnswer: (8,6)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -2, x - y = 0
+        correctAnswer: (-1,-1)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -3, x - y = 7
+        correctAnswer: (2,-5)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 0, x - y = -6
+        correctAnswer: (-3,3)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -12, x - y = -4
+        correctAnswer: (-8,-4)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 1, x - y = -9
+        correctAnswer: (-4,5)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 0, x - y = 14
+        correctAnswer: (7,-7)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 9, x - y = -9
+        correctAnswer: (0,9)
+        rationale: Use substituição, adição ou matriz.
   - pageNumber: 4
     title: Sistemas de Equações Simples — Conjunto 10 – Página 4
     description: Resolva sistemas de equações simples.
     exercises:
-      - { type: system_equation, question: "x + y = -9, x - y = -5", correctAnswer: "(-7,-2)" }
-      - { type: system_equation, question: "x + y = -17, x - y = -1", correctAnswer: "(-9,-8)" }
-      - { type: system_equation, question: "x + y = -7, x - y = -5", correctAnswer: "(-6,-1)" }
-      - { type: system_equation, question: "x + y = 4, x - y = -6", correctAnswer: "(-1,5)" }
-      - { type: system_equation, question: "x + y = 5, x - y = 3", correctAnswer: "(4,1)" }
-      - { type: system_equation, question: "x + y = -6, x - y = 12", correctAnswer: "(3,-9)" }
-      - { type: system_equation, question: "x + y = -19, x - y = -1", correctAnswer: "(-10,-9)" }
-      - { type: system_equation, question: "x + y = 2, x - y = -16", correctAnswer: "(-7,9)" }
-      - { type: system_equation, question: "x + y = -4, x - y = -16", correctAnswer: "(-10,6)" }
-      - { type: system_equation, question: "x + y = 13, x - y = 5", correctAnswer: "(9,4)" }
+      - type: system_equation
+        question: x + y = -9, x - y = -5
+        correctAnswer: (-7,-2)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -17, x - y = -1
+        correctAnswer: (-9,-8)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -7, x - y = -5
+        correctAnswer: (-6,-1)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 4, x - y = -6
+        correctAnswer: (-1,5)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 5, x - y = 3
+        correctAnswer: (4,1)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -6, x - y = 12
+        correctAnswer: (3,-9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -19, x - y = -1
+        correctAnswer: (-10,-9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 2, x - y = -16
+        correctAnswer: (-7,9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -4, x - y = -16
+        correctAnswer: (-10,6)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 13, x - y = 5
+        correctAnswer: (9,4)
+        rationale: Use substituição, adição ou matriz.
   - pageNumber: 5
     title: Sistemas de Equações Simples — Conjunto 10 – Página 5
     description: Resolva sistemas de equações simples.
     exercises:
-      - { type: system_equation, question: "x + y = -14, x - y = 4", correctAnswer: "(-5,-9)" }
-      - { type: system_equation, question: "x + y = 3, x - y = 9", correctAnswer: "(6,-3)" }
-      - { type: system_equation, question: "x + y = 5, x - y = -11", correctAnswer: "(-3,8)" }
-      - { type: system_equation, question: "x + y = -9, x - y = 3", correctAnswer: "(-3,-6)" }
-      - { type: system_equation, question: "x + y = -5, x - y = -1", correctAnswer: "(-3,-2)" }
-      - { type: system_equation, question: "x + y = -11, x - y = 5", correctAnswer: "(-3,-8)" }
-      - { type: system_equation, question: "x + y = -7, x - y = -9", correctAnswer: "(-8,1)" }
-      - { type: system_equation, question: "x + y = -3, x - y = 5", correctAnswer: "(1,-4)" }
-      - { type: system_equation, question: "x + y = 6, x - y = 14", correctAnswer: "(10,-4)" }
-      - { type: system_equation, question: "x + y = -12, x - y = 0", correctAnswer: "(-6,-6)" }
+      - type: system_equation
+        question: x + y = -14, x - y = 4
+        correctAnswer: (-5,-9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 3, x - y = 9
+        correctAnswer: (6,-3)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 5, x - y = -11
+        correctAnswer: (-3,8)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -9, x - y = 3
+        correctAnswer: (-3,-6)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -5, x - y = -1
+        correctAnswer: (-3,-2)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -11, x - y = 5
+        correctAnswer: (-3,-8)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -7, x - y = -9
+        correctAnswer: (-8,1)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -3, x - y = 5
+        correctAnswer: (1,-4)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 6, x - y = 14
+        correctAnswer: (10,-4)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -12, x - y = 0
+        correctAnswer: (-6,-6)
+        rationale: Use substituição, adição ou matriz.
   - pageNumber: 6
     title: Sistemas de Equações Simples — Conjunto 10 – Página 6
     description: Resolva sistemas de equações simples.
     exercises:
-      - { type: system_equation, question: "x + y = -11, x - y = 1", correctAnswer: "(-5,-6)" }
-      - { type: system_equation, question: "x + y = -9, x - y = 9", correctAnswer: "(0,-9)" }
-      - { type: system_equation, question: "x + y = -8, x - y = 0", correctAnswer: "(-4,-4)" }
-      - { type: system_equation, question: "x + y = 7, x - y = 5", correctAnswer: "(6,1)" }
-      - { type: system_equation, question: "x + y = 6, x - y = -2", correctAnswer: "(2,4)" }
-      - { type: system_equation, question: "x + y = 4, x - y = -16", correctAnswer: "(-6,10)" }
-      - { type: system_equation, question: "x + y = -3, x - y = 9", correctAnswer: "(3,-6)" }
-      - { type: system_equation, question: "x + y = 17, x - y = -1", correctAnswer: "(8,9)" }
-      - { type: system_equation, question: "x + y = -5, x - y = -9", correctAnswer: "(-7,2)" }
-      - { type: system_equation, question: "x + y = 3, x - y = -3", correctAnswer: "(0,3)" }
+      - type: system_equation
+        question: x + y = -11, x - y = 1
+        correctAnswer: (-5,-6)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -9, x - y = 9
+        correctAnswer: (0,-9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -8, x - y = 0
+        correctAnswer: (-4,-4)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 7, x - y = 5
+        correctAnswer: (6,1)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 6, x - y = -2
+        correctAnswer: (2,4)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 4, x - y = -16
+        correctAnswer: (-6,10)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -3, x - y = 9
+        correctAnswer: (3,-6)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 17, x - y = -1
+        correctAnswer: (8,9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -5, x - y = -9
+        correctAnswer: (-7,2)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 3, x - y = -3
+        correctAnswer: (0,3)
+        rationale: Use substituição, adição ou matriz.
   - pageNumber: 7
     title: Sistemas de Equações Simples — Conjunto 10 – Página 7
     description: Resolva sistemas de equações simples.
     exercises:
-      - { type: system_equation, question: "x + y = 18, x - y = 0", correctAnswer: "(9,9)" }
-      - { type: system_equation, question: "x + y = 1, x - y = 13", correctAnswer: "(7,-6)" }
-      - { type: system_equation, question: "x + y = 1, x - y = -19", correctAnswer: "(-9,10)" }
-      - { type: system_equation, question: "x + y = 2, x - y = -12", correctAnswer: "(-5,7)" }
-      - { type: system_equation, question: "x + y = -5, x - y = -5", correctAnswer: "(-5,0)" }
-      - { type: system_equation, question: "x + y = 8, x - y = -4", correctAnswer: "(2,6)" }
-      - { type: system_equation, question: "x + y = -2, x - y = 14", correctAnswer: "(6,-8)" }
-      - { type: system_equation, question: "x + y = 0, x - y = 4", correctAnswer: "(2,-2)" }
-      - { type: system_equation, question: "x + y = 8, x - y = -2", correctAnswer: "(3,5)" }
-      - { type: system_equation, question: "x + y = 10, x - y = 6", correctAnswer: "(8,2)" }
+      - type: system_equation
+        question: x + y = 18, x - y = 0
+        correctAnswer: (9,9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 1, x - y = 13
+        correctAnswer: (7,-6)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 1, x - y = -19
+        correctAnswer: (-9,10)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 2, x - y = -12
+        correctAnswer: (-5,7)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -5, x - y = -5
+        correctAnswer: (-5,0)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 8, x - y = -4
+        correctAnswer: (2,6)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -2, x - y = 14
+        correctAnswer: (6,-8)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 0, x - y = 4
+        correctAnswer: (2,-2)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 8, x - y = -2
+        correctAnswer: (3,5)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 10, x - y = 6
+        correctAnswer: (8,2)
+        rationale: Use substituição, adição ou matriz.
   - pageNumber: 8
     title: Sistemas de Equações Simples — Conjunto 10 – Página 8
     description: Resolva sistemas de equações simples.
     exercises:
-      - { type: system_equation, question: "x + y = 17, x - y = 3", correctAnswer: "(10,7)" }
-      - { type: system_equation, question: "x + y = 0, x - y = 12", correctAnswer: "(6,-6)" }
-      - { type: system_equation, question: "x + y = 0, x - y = 6", correctAnswer: "(3,-3)" }
-      - { type: system_equation, question: "x + y = -4, x - y = -14", correctAnswer: "(-9,5)" }
-      - { type: system_equation, question: "x + y = -7, x - y = 9", correctAnswer: "(1,-8)" }
-      - { type: system_equation, question: "x + y = -4, x - y = 0", correctAnswer: "(-2,-2)" }
-      - { type: system_equation, question: "x + y = 14, x - y = 0", correctAnswer: "(7,7)" }
-      - { type: system_equation, question: "x + y = 13, x - y = -5", correctAnswer: "(4,9)" }
-      - { type: system_equation, question: "x + y = -11, x - y = 7", correctAnswer: "(-2,-9)" }
-      - { type: system_equation, question: "x + y = -1, x - y = 5", correctAnswer: "(2,-3)" }
+      - type: system_equation
+        question: x + y = 17, x - y = 3
+        correctAnswer: (10,7)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 0, x - y = 12
+        correctAnswer: (6,-6)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 0, x - y = 6
+        correctAnswer: (3,-3)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -4, x - y = -14
+        correctAnswer: (-9,5)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -7, x - y = 9
+        correctAnswer: (1,-8)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -4, x - y = 0
+        correctAnswer: (-2,-2)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 14, x - y = 0
+        correctAnswer: (7,7)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 13, x - y = -5
+        correctAnswer: (4,9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -11, x - y = 7
+        correctAnswer: (-2,-9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -1, x - y = 5
+        correctAnswer: (2,-3)
+        rationale: Use substituição, adição ou matriz.
   - pageNumber: 9
     title: Sistemas de Equações Simples — Conjunto 10 – Página 9
     description: Resolva sistemas de equações simples.
     exercises:
-      - { type: system_equation, question: "x + y = -9, x - y = -7", correctAnswer: "(-8,-1)" }
-      - { type: system_equation, question: "x + y = 11, x - y = -7", correctAnswer: "(2,9)" }
-      - { type: system_equation, question: "x + y = -4, x - y = 4", correctAnswer: "(0,-4)" }
-      - { type: system_equation, question: "x + y = -11, x - y = -1", correctAnswer: "(-6,-5)" }
-      - { type: system_equation, question: "x + y = -2, x - y = 6", correctAnswer: "(2,-4)" }
-      - { type: system_equation, question: "x + y = -10, x - y = -2", correctAnswer: "(-6,-4)" }
-      - { type: system_equation, question: "x + y = -2, x - y = 0", correctAnswer: "(-1,-1)" }
-      - { type: system_equation, question: "x + y = 0, x - y = 14", correctAnswer: "(7,-7)" }
-      - { type: system_equation, question: "x + y = 2, x - y = -16", correctAnswer: "(-7,9)" }
-      - { type: system_equation, question: "x + y = 4, x - y = -6", correctAnswer: "(-1,5)" }
+      - type: system_equation
+        question: x + y = -9, x - y = -7
+        correctAnswer: (-8,-1)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 11, x - y = -7
+        correctAnswer: (2,9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -4, x - y = 4
+        correctAnswer: (0,-4)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -11, x - y = -1
+        correctAnswer: (-6,-5)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -2, x - y = 6
+        correctAnswer: (2,-4)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -10, x - y = -2
+        correctAnswer: (-6,-4)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -2, x - y = 0
+        correctAnswer: (-1,-1)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 0, x - y = 14
+        correctAnswer: (7,-7)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 2, x - y = -16
+        correctAnswer: (-7,9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 4, x - y = -6
+        correctAnswer: (-1,5)
+        rationale: Use substituição, adição ou matriz.
   - pageNumber: 10
     title: Sistemas de Equações Simples — Conjunto 10 – Página 10
     description: Resolva sistemas de equações simples.
     exercises:
-      - { type: system_equation, question: "x + y = -11, x - y = 5", correctAnswer: "(-3,-8)" }
-      - { type: system_equation, question: "x + y = -7, x - y = -9", correctAnswer: "(-8,1)" }
-      - { type: system_equation, question: "x + y = 9, x - y = -9", correctAnswer: "(0,9)" }
-      - { type: system_equation, question: "x + y = -4, x - y = 0", correctAnswer: "(-2,-2)" }
-      - { type: system_equation, question: "x + y = 3, x - y = -3", correctAnswer: "(0,3)" }
-      - { type: system_equation, question: "x + y = 2, x - y = -12", correctAnswer: "(-5,7)" }
-      - { type: system_equation, question: "x + y = -12, x - y = 0", correctAnswer: "(-6,-6)" }
-      - { type: system_equation, question: "x + y = 13, x - y = -5", correctAnswer: "(4,9)" }
-      - { type: system_equation, question: "x + y = 14, x - y = 0", correctAnswer: "(7,7)" }
-      - { type: system_equation, question: "x + y = -6, x - y = 12", correctAnswer: "(3,-9)" }
+      - type: system_equation
+        question: x + y = -11, x - y = 5
+        correctAnswer: (-3,-8)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -7, x - y = -9
+        correctAnswer: (-8,1)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 9, x - y = -9
+        correctAnswer: (0,9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -4, x - y = 0
+        correctAnswer: (-2,-2)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 3, x - y = -3
+        correctAnswer: (0,3)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 2, x - y = -12
+        correctAnswer: (-5,7)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -12, x - y = 0
+        correctAnswer: (-6,-6)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 13, x - y = -5
+        correctAnswer: (4,9)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = 14, x - y = 0
+        correctAnswer: (7,7)
+        rationale: Use substituição, adição ou matriz.
+      - type: system_equation
+        question: x + y = -6, x - y = 12
+        correctAnswer: (3,-9)
+        rationale: Use substituição, adição ou matriz.

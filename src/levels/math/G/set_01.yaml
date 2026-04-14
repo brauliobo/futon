@@ -3,7 +3,8 @@ level: G
 example: "Some, subtraia e multiplique inteiros. Ex.: -3 + 5 = 2"
 subject: math
 difficulty: 3
-objectives: [math.integers_expressions]
+objectives:
+  - math.integers_expressions
 authorNotes: Conjunto de math/G.
 inputType: number
 pages:
@@ -11,42 +12,132 @@ pages:
     title: Adição de Inteiros
     description: Some números positivos e negativos.
     exercises:
-      - { type: integer, question: "-3 + 5 =", correctAnswer: 2 }
-      - { type: integer, question: "7 + (-4) =", correctAnswer: 3 }
-      - { type: integer, question: "-8 + 3 =", correctAnswer: -5 }
-      - { type: integer, question: "-5 + (-2) =", correctAnswer: -7 }
-      - { type: integer, question: "9 + (-9) =", correctAnswer: 0 }
-      - { type: integer, question: "-10 + 6 =", correctAnswer: -4 }
-      - { type: integer, question: "4 + (-7) =", correctAnswer: -3 }
-      - { type: integer, question: "-6 + (-4) =", correctAnswer: -10 }
-      - { type: integer, question: "12 + (-5) =", correctAnswer: 7 }
-      - { type: integer, question: "-15 + 8 =", correctAnswer: -7 }
+      - type: integer
+        question: -3 + 5 =
+        correctAnswer: 2
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: 7 + (-4) =
+        correctAnswer: 3
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: -8 + 3 =
+        correctAnswer: -5
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: -5 + (-2) =
+        correctAnswer: -7
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: 9 + (-9) =
+        correctAnswer: 0
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: -10 + 6 =
+        correctAnswer: -4
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: 4 + (-7) =
+        correctAnswer: -3
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: -6 + (-4) =
+        correctAnswer: -10
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: 12 + (-5) =
+        correctAnswer: 7
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: -15 + 8 =
+        correctAnswer: -7
+        rationale: Aplique a regra de sinais.
   - pageNumber: 2
     title: Subtração de Inteiros
     description: Subtraia inteiros (dois negativos viram positivo).
     exercises:
-      - { type: integer, question: "5 - 8 =", correctAnswer: -3 }
-      - { type: integer, question: "-3 - 4 =", correctAnswer: -7 }
-      - { type: integer, question: "6 - (-2) =", correctAnswer: 8 }
-      - { type: integer, question: "-5 - (-3) =", correctAnswer: -2 }
-      - { type: integer, question: "10 - 15 =", correctAnswer: -5 }
-      - { type: integer, question: "-7 - (-9) =", correctAnswer: 2 }
-      - { type: integer, question: "8 - 12 =", correctAnswer: -4 }
-      - { type: integer, question: "-4 - 6 =", correctAnswer: -10 }
-      - { type: integer, question: "3 - (-5) =", correctAnswer: 8 }
-      - { type: integer, question: "-10 - (-10) =", correctAnswer: 0 }
+      - type: integer
+        question: 5 - 8 =
+        correctAnswer: -3
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: -3 - 4 =
+        correctAnswer: -7
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: 6 - (-2) =
+        correctAnswer: 8
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: -5 - (-3) =
+        correctAnswer: -2
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: 10 - 15 =
+        correctAnswer: -5
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: -7 - (-9) =
+        correctAnswer: 2
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: 8 - 12 =
+        correctAnswer: -4
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: -4 - 6 =
+        correctAnswer: -10
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: 3 - (-5) =
+        correctAnswer: 8
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: -10 - (-10) =
+        correctAnswer: 0
+        rationale: Aplique a regra de sinais.
   - pageNumber: 3
     title: Multiplicação de Inteiros
     description: Sinais iguais = positivo, diferentes = negativo.
     exercises:
-      - { type: integer, question: "(-3) × 4 =", correctAnswer: -12 }
-      - { type: integer, question: "5 × (-2) =", correctAnswer: -10 }
-      - { type: integer, question: "(-6) × (-2) =", correctAnswer: 12 }
-      - { type: integer, question: "(-4) × (-5) =", correctAnswer: 20 }
-      - { type: integer, question: "7 × (-3) =", correctAnswer: -21 }
-      - { type: integer, question: "(-8) × 2 =", correctAnswer: -16 }
-      - { type: integer, question: "(-9) × (-1) =", correctAnswer: 9 }
-      - { type: integer, question: "0 × (-5) =", correctAnswer: 0 }
-      - { type: integer, question: "(-3) × (-3) =", correctAnswer: 9 }
-      - { type: integer, question: "(-10) × 4 =", correctAnswer: -40 }
+      - type: integer
+        question: (-3) × 4 =
+        correctAnswer: -12
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: 5 × (-2) =
+        correctAnswer: -10
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: (-6) × (-2) =
+        correctAnswer: 12
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: (-4) × (-5) =
+        correctAnswer: 20
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: 7 × (-3) =
+        correctAnswer: -21
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: (-8) × 2 =
+        correctAnswer: -16
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: (-9) × (-1) =
+        correctAnswer: 9
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: 0 × (-5) =
+        correctAnswer: 0
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: (-3) × (-3) =
+        correctAnswer: 9
+        rationale: Aplique a regra de sinais.
+      - type: integer
+        question: (-10) × 4 =
+        correctAnswer: -40
+        rationale: Aplique a regra de sinais.
 target: 30

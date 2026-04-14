@@ -3,97 +3,248 @@ level: P
 subject: math
 inputType: number
 difficulty: 3
-objectives: [stats.distributions]
-example: "Tabela de frequência absoluta e relativa."
+objectives:
+  - stats.distributions
+example: Tabela de frequência absoluta e relativa.
 pages:
   - pageNumber: 1
     title: Frequência Absoluta
     description: Quantas vezes cada valor aparece.
     exercises:
-      - { type: mental_math, question: "Em {1,2,2,3,3,3}, frequência de 3 = ?", correctAnswer: 3 }
-      - { type: mental_math, question: "Em {1,2,2,3,3,3}, frequência de 1 = ?", correctAnswer: 1 }
-      - { type: mental_math, question: "Em {a,a,b,c,c,c}, frequência de c = ?", correctAnswer: 3 }
-      - { type: mental_math, question: "Soma das frequências = total de dados: V/F?", correctAnswer: V }
-      - { type: mental_math, question: "Em {5,5,10,15}, frequência de 5 = ?", correctAnswer: 2 }
+      - type: mental_math
+        question: Em {1,2,2,3,3,3}, frequência de 3 = ?
+        correctAnswer: 3
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Em {1,2,2,3,3,3}, frequência de 1 = ?
+        correctAnswer: 1
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Em {a,a,b,c,c,c}, frequência de c = ?
+        correctAnswer: 3
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Soma das frequências = total de dados: V/F?"
+        correctAnswer: V
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Em {5,5,10,15}, frequência de 5 = ?
+        correctAnswer: 2
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 2
     title: Frequência Relativa
     description: fᵣ = f/n.
     exercises:
-      - { type: mental_math, question: "Em conjunto com n=10, se f=3, fᵣ = ?", correctAnswer: 0.3 }
-      - { type: mental_math, question: "Em n=20 com f=5, fᵣ = ?", correctAnswer: 0.25 }
-      - { type: mental_math, question: "Frequência relativa em % quando f=4 e n=20 = ?%", correctAnswer: 20 }
-      - { type: mental_math, question: "Se todas as categorias têm mesma frequência e são 5, fᵣ de cada = ?", correctAnswer: 0.2 }
-      - { type: mental_math, question: "A soma das frequências relativas é sempre = ?", correctAnswer: 1 }
+      - type: mental_math
+        question: Em conjunto com n=10, se f=3, fᵣ = ?
+        correctAnswer: 0.3
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Em n=20 com f=5, fᵣ = ?
+        correctAnswer: 0.25
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Frequência relativa em % quando f=4 e n=20 = ?%
+        correctAnswer: 20
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Se todas as categorias têm mesma frequência e são 5, fᵣ de cada = ?
+        correctAnswer: 0.2
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: A soma das frequências relativas é sempre = ?
+        correctAnswer: 1
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 3
     title: Frequência Acumulada
     description: Soma progressiva das frequências.
     exercises:
-      - { type: mental_math, question: "Para [1,2,3,4] com frequências [2,3,4,1], acumulada até 3 = ?", correctAnswer: 9 }
-      - { type: mental_math, question: "Com freqs. [2,3,4,1], acumulada até 4 = ?", correctAnswer: 10 }
-      - { type: mental_math, question: "Frequências [1,1,1,1], acumulada até 2 = ?", correctAnswer: 2 }
-      - { type: mental_math, question: "Frequência acumulada final = total de dados: V/F?", correctAnswer: V }
-      - { type: mental_math, question: "Ganhos relativos acumulados vão de 0 a ?", correctAnswer: 1 }
+      - type: mental_math
+        question: Para [1,2,3,4] com frequências [2,3,4,1], acumulada até 3 = ?
+        correctAnswer: 9
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Com freqs. [2,3,4,1], acumulada até 4 = ?
+        correctAnswer: 10
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Frequências [1,1,1,1], acumulada até 2 = ?
+        correctAnswer: 2
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Frequência acumulada final = total de dados: V/F?"
+        correctAnswer: V
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Ganhos relativos acumulados vão de 0 a ?
+        correctAnswer: 1
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 4
     title: Intervalos de Classe
     description: Dados agrupados em faixas.
     exercises:
-      - { type: mental_math, question: "Intervalo [10,20) inclui 20? (sim/não)", correctAnswer: não }
-      - { type: mental_math, question: "Intervalo [10,20) inclui 10? (sim/não)", correctAnswer: sim }
-      - { type: mental_math, question: "Amplitude do intervalo [20,30) = ?", correctAnswer: 10 }
-      - { type: mental_math, question: "Ponto médio de [20,30) = ?", correctAnswer: 25 }
-      - { type: mental_math, question: "Número de intervalos recomendado (regra de Sturges aproxima): 1+3.3·log(n). Para n=100, k ≈ ?", correctAnswer: 8 }
+      - type: mental_math
+        question: Intervalo [10,20) inclui 20? (sim/não)
+        correctAnswer: não
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Intervalo [10,20) inclui 10? (sim/não)
+        correctAnswer: sim
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Amplitude do intervalo [20,30) = ?
+        correctAnswer: 10
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Ponto médio de [20,30) = ?
+        correctAnswer: 25
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Número de intervalos recomendado (regra de Sturges aproxima): 1+3.3·log(n). Para n=100, k ≈ ?"
+        correctAnswer: 8
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 5
     title: Gráfico de Barras
     description: Barras separadas por categoria.
     exercises:
-      - { type: mental_math, question: "Gráfico de barras é usado para dados: (qualitativos/contínuos agrupados)", correctAnswer: qualitativos }
-      - { type: mental_math, question: "Eixo vertical no gráfico de barras geralmente mostra: (frequência/valor individual)", correctAnswer: frequência }
-      - { type: mental_math, question: "Barras podem ser: (verticais/horizontais/ambas)", correctAnswer: ambas }
-      - { type: mental_math, question: "Histograma vs barras: histograma tem barras: (coladas/separadas)", correctAnswer: coladas }
-      - { type: mental_math, question: "Histograma representa dados: (contínuos em classes/qualitativos)", correctAnswer: contínuos em classes }
+      - type: mental_math
+        question: "Gráfico de barras é usado para dados: (qualitativos/contínuos agrupados)"
+        correctAnswer: qualitativos
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Eixo vertical no gráfico de barras geralmente mostra: (frequência/valor individual)"
+        correctAnswer: frequência
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Barras podem ser: (verticais/horizontais/ambas)"
+        correctAnswer: ambas
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Histograma vs barras: histograma tem barras: (coladas/separadas)"
+        correctAnswer: coladas
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Histograma representa dados: (contínuos em classes/qualitativos)"
+        correctAnswer: contínuos em classes
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 6
     title: Histograma
     description: Representação visual de classes.
     exercises:
-      - { type: mental_math, question: "No eixo X do histograma: (classes/frequência)", correctAnswer: classes }
-      - { type: mental_math, question: "No eixo Y do histograma: (classes/frequência)", correctAnswer: frequência }
-      - { type: mental_math, question: "Histograma simétrico sugere distribuição: (simétrica/assimétrica)", correctAnswer: simétrica }
-      - { type: mental_math, question: "Cauda à direita = assimetria positiva (V/F)?", correctAnswer: V }
-      - { type: mental_math, question: "Cauda à esquerda = assimetria negativa (V/F)?", correctAnswer: V }
+      - type: mental_math
+        question: "No eixo X do histograma: (classes/frequência)"
+        correctAnswer: classes
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "No eixo Y do histograma: (classes/frequência)"
+        correctAnswer: frequência
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Histograma simétrico sugere distribuição: (simétrica/assimétrica)"
+        correctAnswer: simétrica
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Cauda à direita = assimetria positiva (V/F)?
+        correctAnswer: V
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Cauda à esquerda = assimetria negativa (V/F)?
+        correctAnswer: V
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 7
     title: Polígono de Frequência
     description: Pontos médios das classes ligados por segmentos.
     exercises:
-      - { type: mental_math, question: "Polígono usa os pontos médios das classes? (sim/não)", correctAnswer: sim }
-      - { type: mental_math, question: "Ao final do polígono, fecha-se no eixo X? (sim/não)", correctAnswer: sim }
-      - { type: mental_math, question: "Polígono de frequência relativa tem área total = ?", correctAnswer: 1 }
-      - { type: mental_math, question: "Polígono acumulado é chamado de: (ogiva/histograma/barras)", correctAnswer: ogiva }
-      - { type: mental_math, question: "Ogiva cresce monotonicamente (V/F)?", correctAnswer: V }
+      - type: mental_math
+        question: Polígono usa os pontos médios das classes? (sim/não)
+        correctAnswer: sim
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Ao final do polígono, fecha-se no eixo X? (sim/não)
+        correctAnswer: sim
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Polígono de frequência relativa tem área total = ?
+        correctAnswer: 1
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Polígono acumulado é chamado de: (ogiva/histograma/barras)"
+        correctAnswer: ogiva
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Ogiva cresce monotonicamente (V/F)?
+        correctAnswer: V
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 8
     title: Gráfico de Setores (Pizza)
     description: Áreas proporcionais à frequência relativa.
     exercises:
-      - { type: mental_math, question: "Se fᵣ=0.25, ângulo do setor = ? graus", correctAnswer: 90 }
-      - { type: mental_math, question: "Se fᵣ=0.5, ângulo do setor = ? graus", correctAnswer: 180 }
-      - { type: mental_math, question: "Se fᵣ=0.1, ângulo do setor = ?", correctAnswer: 36 }
-      - { type: mental_math, question: "Total dos ângulos no gráfico de pizza = ? graus", correctAnswer: 360 }
-      - { type: mental_math, question: "Se 4 categorias com mesma frequência, cada ângulo = ?", correctAnswer: 90 }
+      - type: mental_math
+        question: Se fᵣ=0.25, ângulo do setor = ? graus
+        correctAnswer: 90
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Se fᵣ=0.5, ângulo do setor = ? graus
+        correctAnswer: 180
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Se fᵣ=0.1, ângulo do setor = ?
+        correctAnswer: 36
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Total dos ângulos no gráfico de pizza = ? graus
+        correctAnswer: 360
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Se 4 categorias com mesma frequência, cada ângulo = ?
+        correctAnswer: 90
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 9
     title: Interpretação
     description: Lendo gráficos.
     exercises:
-      - { type: mental_math, question: "Maior barra = maior: (frequência/mediana/média)", correctAnswer: frequência }
-      - { type: mental_math, question: "Histograma com pico central é tipicamente: (normal/bimodal)", correctAnswer: normal }
-      - { type: mental_math, question: "Histograma com dois picos = (bimodal/normal)", correctAnswer: bimodal }
-      - { type: mental_math, question: "Distribuição uniforme mostra barras: (iguais/crescentes)", correctAnswer: iguais }
-      - { type: mental_math, question: "Setor com mais graus = categoria: (mais frequente/menos frequente)", correctAnswer: mais frequente }
+      - type: mental_math
+        question: "Maior barra = maior: (frequência/mediana/média)"
+        correctAnswer: frequência
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Histograma com pico central é tipicamente: (normal/bimodal)"
+        correctAnswer: normal
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Histograma com dois picos = (bimodal/normal)
+        correctAnswer: bimodal
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Distribuição uniforme mostra barras: (iguais/crescentes)"
+        correctAnswer: iguais
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Setor com mais graus = categoria: (mais frequente/menos frequente)"
+        correctAnswer: mais frequente
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 10
     title: Revisão Integrada
     description: Misture conceitos.
     exercises:
-      - { type: mental_math, question: "Em n=50, se freq=10, fᵣ = ?", correctAnswer: 0.2 }
-      - { type: mental_math, question: "Em n=50, freq acumulada até 4ª classe = 40, freq da 5ª = ?", correctAnswer: 10 }
-      - { type: mental_math, question: "fᵣ em % para f=7 e n=35 = ?%", correctAnswer: 20 }
-      - { type: mental_math, question: "Ponto médio de [0,10) = ?", correctAnswer: 5 }
-      - { type: mental_math, question: "Ângulo de setor com fᵣ=0.15 = ? graus", correctAnswer: 54 }
+      - type: mental_math
+        question: Em n=50, se freq=10, fᵣ = ?
+        correctAnswer: 0.2
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Em n=50, freq acumulada até 4ª classe = 40, freq da 5ª = ?
+        correctAnswer: 10
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: fᵣ em % para f=7 e n=35 = ?%
+        correctAnswer: 20
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Ponto médio de [0,10) = ?
+        correctAnswer: 5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Ângulo de setor com fᵣ=0.15 = ? graus
+        correctAnswer: 54
+        rationale: Calcule mentalmente usando estratégias de decomposição.
 target: 50

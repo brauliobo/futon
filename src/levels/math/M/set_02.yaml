@@ -3,97 +3,248 @@ level: M
 subject: math
 inputType: number
 difficulty: 4
-objectives: [trig.identities.sum_diff]
-example: "sen(a+b) = sen(a)cos(b) + cos(a)sen(b)"
+objectives:
+  - trig.identities.sum_diff
+example: sen(a+b) = sen(a)cos(b) + cos(a)sen(b)
 pages:
   - pageNumber: 1
     title: Seno da Soma
     description: sen(a+b) = sen(a)cos(b) + cos(a)sen(b).
     exercises:
-      - { type: trigonometry, question: "sen(a+b) = ?", correctAnswer: sen(a)cos(b)+cos(a)sen(b) }
-      - { type: trigonometry, question: "sen(30°+60°) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "sen(45°+45°) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "sen(60°+30°) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "sen(90°+0°) = ?", correctAnswer: 1 }
+      - type: trigonometry
+        question: sen(a+b) = ?
+        correctAnswer: sen(a)cos(b)+cos(a)sen(b)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(30°+60°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(45°+45°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(60°+30°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(90°+0°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 2
     title: Seno da Diferença
     description: sen(a-b) = sen(a)cos(b) - cos(a)sen(b).
     exercises:
-      - { type: trigonometry, question: "sen(a-b) = ?", correctAnswer: sen(a)cos(b)-cos(a)sen(b) }
-      - { type: trigonometry, question: "sen(60°-30°) = ?", correctAnswer: 1/2 }
-      - { type: trigonometry, question: "sen(90°-45°) = ?", correctAnswer: √2/2 }
-      - { type: trigonometry, question: "sen(45°-45°) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "sen(90°-30°) = ?", correctAnswer: √3/2 }
+      - type: trigonometry
+        question: sen(a-b) = ?
+        correctAnswer: sen(a)cos(b)-cos(a)sen(b)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(60°-30°) = ?
+        correctAnswer: 1/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(90°-45°) = ?
+        correctAnswer: √2/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(45°-45°) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(90°-30°) = ?
+        correctAnswer: √3/2
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 3
     title: Cosseno da Soma
     description: cos(a+b) = cos(a)cos(b) - sen(a)sen(b).
     exercises:
-      - { type: trigonometry, question: "cos(a+b) = ?", correctAnswer: cos(a)cos(b)-sen(a)sen(b) }
-      - { type: trigonometry, question: "cos(30°+60°) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "cos(45°+45°) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "cos(60°+30°) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "cos(180°+0°) = ?", correctAnswer: -1 }
+      - type: trigonometry
+        question: cos(a+b) = ?
+        correctAnswer: cos(a)cos(b)-sen(a)sen(b)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(30°+60°) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(45°+45°) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(60°+30°) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(180°+0°) = ?
+        correctAnswer: -1
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 4
     title: Cosseno da Diferença
     description: cos(a-b) = cos(a)cos(b) + sen(a)sen(b).
     exercises:
-      - { type: trigonometry, question: "cos(a-b) = ?", correctAnswer: cos(a)cos(b)+sen(a)sen(b) }
-      - { type: trigonometry, question: "cos(60°-30°) = ?", correctAnswer: √3/2 }
-      - { type: trigonometry, question: "cos(90°-30°) = ?", correctAnswer: 1/2 }
-      - { type: trigonometry, question: "cos(45°-45°) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "cos(90°-45°) = ?", correctAnswer: √2/2 }
+      - type: trigonometry
+        question: cos(a-b) = ?
+        correctAnswer: cos(a)cos(b)+sen(a)sen(b)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(60°-30°) = ?
+        correctAnswer: √3/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(90°-30°) = ?
+        correctAnswer: 1/2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(45°-45°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(90°-45°) = ?
+        correctAnswer: √2/2
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 5
     title: Tangente da Soma
     description: tan(a+b) = (tan a + tan b) / (1 - tan a · tan b).
     exercises:
-      - { type: trigonometry, question: "tan(a+b) numerador = ?", correctAnswer: tan(a)+tan(b) }
-      - { type: trigonometry, question: "tan(a+b) denominador = ?", correctAnswer: 1-tan(a)tan(b) }
-      - { type: trigonometry, question: "tan(45°+45°) denominador = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "tan(45°+30°) numerador = ?", correctAnswer: 1+√3/3 }
-      - { type: trigonometry, question: "tan(30°+60°) denominador = ?", correctAnswer: 0 }
+      - type: trigonometry
+        question: tan(a+b) numerador = ?
+        correctAnswer: tan(a)+tan(b)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(a+b) denominador = ?
+        correctAnswer: 1-tan(a)tan(b)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(45°+45°) denominador = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(45°+30°) numerador = ?
+        correctAnswer: 1+√3/3
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(30°+60°) denominador = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 6
     title: Tangente da Diferença
     description: tan(a-b) = (tan a - tan b) / (1 + tan a · tan b).
     exercises:
-      - { type: trigonometry, question: "tan(a-b) numerador = ?", correctAnswer: tan(a)-tan(b) }
-      - { type: trigonometry, question: "tan(a-b) denominador = ?", correctAnswer: 1+tan(a)tan(b) }
-      - { type: trigonometry, question: "tan(60°-45°) numerador = ?", correctAnswer: √3-1 }
-      - { type: trigonometry, question: "tan(60°-45°) denominador = ?", correctAnswer: 1+√3 }
-      - { type: trigonometry, question: "tan(45°-45°) = ?", correctAnswer: 0 }
+      - type: trigonometry
+        question: tan(a-b) numerador = ?
+        correctAnswer: tan(a)-tan(b)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(a-b) denominador = ?
+        correctAnswer: 1+tan(a)tan(b)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(60°-45°) numerador = ?
+        correctAnswer: √3-1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(60°-45°) denominador = ?
+        correctAnswer: 1+√3
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(45°-45°) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 7
     title: Aplicações Numéricas
     description: Calcule ângulos compostos.
     exercises:
-      - { type: trigonometry, question: "sen(75°) = sen(45°+30°) = ?", correctAnswer: (√6+√2)/4 }
-      - { type: trigonometry, question: "cos(75°) = cos(45°+30°) = ?", correctAnswer: (√6-√2)/4 }
-      - { type: trigonometry, question: "sen(15°) = sen(45°-30°) = ?", correctAnswer: (√6-√2)/4 }
-      - { type: trigonometry, question: "cos(15°) = cos(45°-30°) = ?", correctAnswer: (√6+√2)/4 }
-      - { type: trigonometry, question: "sen(105°) = sen(60°+45°) = ?", correctAnswer: (√6+√2)/4 }
+      - type: trigonometry
+        question: sen(75°) = sen(45°+30°) = ?
+        correctAnswer: (√6+√2)/4
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(75°) = cos(45°+30°) = ?
+        correctAnswer: (√6-√2)/4
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(15°) = sen(45°-30°) = ?
+        correctAnswer: (√6-√2)/4
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(15°) = cos(45°-30°) = ?
+        correctAnswer: (√6+√2)/4
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(105°) = sen(60°+45°) = ?
+        correctAnswer: (√6+√2)/4
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 8
     title: Com Valores Dados
     description: Dados sen(a) e cos(b), encontre sen(a+b).
     exercises:
-      - { type: trigonometry, question: "Se sen(a)=3/5, cos(a)=4/5, sen(b)=5/13, cos(b)=12/13: sen(a+b) = ?", correctAnswer: 56/65 }
-      - { type: trigonometry, question: "Mesma situação: cos(a+b) = ?", correctAnswer: 33/65 }
-      - { type: trigonometry, question: "Mesma situação: sen(a-b) = ?", correctAnswer: 16/65 }
-      - { type: trigonometry, question: "Mesma situação: cos(a-b) = ?", correctAnswer: 63/65 }
-      - { type: trigonometry, question: "Se sen(a)=1/2, cos(a)=√3/2, sen(b)=√3/2, cos(b)=1/2: sen(a+b) = ?", correctAnswer: 1 }
+      - type: trigonometry
+        question: "Se sen(a)=3/5, cos(a)=4/5, sen(b)=5/13, cos(b)=12/13: sen(a+b) = ?"
+        correctAnswer: 56/65
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Mesma situação: cos(a+b) = ?"
+        correctAnswer: 33/65
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Mesma situação: sen(a-b) = ?"
+        correctAnswer: 16/65
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Mesma situação: cos(a-b) = ?"
+        correctAnswer: 63/65
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Se sen(a)=1/2, cos(a)=√3/2, sen(b)=√3/2, cos(b)=1/2: sen(a+b) = ?"
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 9
     title: Identidades Derivadas
     description: Verificações comuns.
     exercises:
-      - { type: trigonometry, question: "sen(x+π) = ?", correctAnswer: -sen(x) }
-      - { type: trigonometry, question: "cos(x+π) = ?", correctAnswer: -cos(x) }
-      - { type: trigonometry, question: "sen(π/2-x) = ?", correctAnswer: cos(x) }
-      - { type: trigonometry, question: "cos(π/2-x) = ?", correctAnswer: sen(x) }
-      - { type: trigonometry, question: "sen(-x) = ?", correctAnswer: -sen(x) }
+      - type: trigonometry
+        question: sen(x+π) = ?
+        correctAnswer: -sen(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(x+π) = ?
+        correctAnswer: -cos(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(π/2-x) = ?
+        correctAnswer: cos(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(π/2-x) = ?
+        correctAnswer: sen(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(-x) = ?
+        correctAnswer: -sen(x)
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 10
     title: Revisão Integrada
     description: Aplicações variadas.
     exercises:
-      - { type: trigonometry, question: "sen(180°-x) = ?", correctAnswer: sen(x) }
-      - { type: trigonometry, question: "cos(180°-x) = ?", correctAnswer: -cos(x) }
-      - { type: trigonometry, question: "sen(90°+x) = ?", correctAnswer: cos(x) }
-      - { type: trigonometry, question: "cos(90°+x) = ?", correctAnswer: -sen(x) }
-      - { type: trigonometry, question: "tan(180°+x) = ?", correctAnswer: tan(x) }
+      - type: trigonometry
+        question: sen(180°-x) = ?
+        correctAnswer: sen(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(180°-x) = ?
+        correctAnswer: -cos(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sen(90°+x) = ?
+        correctAnswer: cos(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(90°+x) = ?
+        correctAnswer: -sen(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(180°+x) = ?
+        correctAnswer: tan(x)
+        rationale: Consulte o ciclo trigonométrico.
 target: 50

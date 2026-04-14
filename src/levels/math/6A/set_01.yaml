@@ -3,7 +3,8 @@ level: 6A
 example: "Conte os objetos. Ex.: ★ ★ ★ = 3"
 subject: math
 difficulty: 1
-objectives: [math.counting.intermediate]
+objectives:
+  - math.counting.intermediate
 authorNotes: Conjunto de math/6A.
 inputType: number
 pages:
@@ -11,42 +12,132 @@ pages:
     title: Contando até 5
     description: Conte objetos até 5.
     exercises:
-      - { type: count, question: "★", correctAnswer: 1 }
-      - { type: count, question: "★ ★", correctAnswer: 2 }
-      - { type: count, question: "★ ★ ★", correctAnswer: 3 }
-      - { type: count, question: "★ ★ ★ ★", correctAnswer: 4 }
-      - { type: count, question: "★ ★ ★ ★ ★", correctAnswer: 5 }
-      - { type: count, question: "● ●", correctAnswer: 2 }
-      - { type: count, question: "● ● ●", correctAnswer: 3 }
-      - { type: count, question: "● ● ● ●", correctAnswer: 4 }
-      - { type: count, question: "▲ ▲ ▲", correctAnswer: 3 }
-      - { type: count, question: "♦ ♦ ♦ ♦", correctAnswer: 4 }
+      - type: count
+        question: ★
+        correctAnswer: 1
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ★ ★
+        correctAnswer: 2
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ★ ★ ★
+        correctAnswer: 3
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ★ ★ ★ ★
+        correctAnswer: 4
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ★ ★ ★ ★ ★
+        correctAnswer: 5
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ●
+        correctAnswer: 2
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ●
+        correctAnswer: 3
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ●
+        correctAnswer: 4
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ▲ ▲ ▲
+        correctAnswer: 3
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ♦ ♦ ♦ ♦
+        correctAnswer: 4
+        rationale: Conte seguindo a sequência.
   - pageNumber: 2
     title: Contando 6 a 10
     description: Conte objetos de 6 a 10.
     exercises:
-      - { type: count, question: "★ ★ ★ ★ ★ ★", correctAnswer: 6 }
-      - { type: count, question: "● ● ● ● ● ● ●", correctAnswer: 7 }
-      - { type: count, question: "▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲", correctAnswer: 8 }
-      - { type: count, question: "♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥", correctAnswer: 9 }
-      - { type: count, question: "☼ ☼ ☼ ☼ ☼ ☼ ☼ ☼ ☼ ☼", correctAnswer: 10 }
-      - { type: count, question: "♦ ♦ ♦ ♦ ♦ ♦", correctAnswer: 6 }
-      - { type: count, question: "♣ ♣ ♣ ♣ ♣ ♣ ♣", correctAnswer: 7 }
-      - { type: count, question: "♫ ♫ ♫ ♫ ♫ ♫ ♫ ♫", correctAnswer: 8 }
-      - { type: count, question: "▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲", correctAnswer: 9 }
-      - { type: count, question: "● ● ● ● ● ● ● ● ● ●", correctAnswer: 10 }
+      - type: count
+        question: ★ ★ ★ ★ ★ ★
+        correctAnswer: 6
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ●
+        correctAnswer: 7
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲
+        correctAnswer: 8
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥
+        correctAnswer: 9
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ☼ ☼ ☼ ☼ ☼ ☼ ☼ ☼ ☼ ☼
+        correctAnswer: 10
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ♦ ♦ ♦ ♦ ♦ ♦
+        correctAnswer: 6
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ♣ ♣ ♣ ♣ ♣ ♣ ♣
+        correctAnswer: 7
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ♫ ♫ ♫ ♫ ♫ ♫ ♫ ♫
+        correctAnswer: 8
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲
+        correctAnswer: 9
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: ● ● ● ● ● ● ● ● ● ●
+        correctAnswer: 10
+        rationale: Conte seguindo a sequência.
   - pageNumber: 3
     title: Reconhecer Quantidades
     description: Qual tem mais ou menos?
     exercises:
-      - { type: count, question: "Qual tem mais: ★★★ ou ★★★★? (3 ou 4)", correctAnswer: 4 }
-      - { type: count, question: "Qual tem mais: ●● ou ●●●●●? (2 ou 5)", correctAnswer: 5 }
-      - { type: count, question: "Qual tem menos: ▲▲▲▲ ou ▲▲? (4 ou 2)", correctAnswer: 2 }
-      - { type: count, question: "Conte: ★★★★★★★", correctAnswer: 7 }
-      - { type: count, question: "Conte: ♦♦♦♦♦♦♦♦", correctAnswer: 8 }
-      - { type: count, question: "Igual a 5: (★★★★★/★★★)", correctAnswer: 5 }
-      - { type: count, question: "Maior que 7: (♣♣♣♣♣♣♣♣/♣♣♣♣)", correctAnswer: 8 }
-      - { type: count, question: "Menor que 5: (●●●/●●●●●●)", correctAnswer: 3 }
-      - { type: count, question: "Dois a menos de 10: ♥♥♥♥♥♥♥♥", correctAnswer: 8 }
-      - { type: count, question: "Três a mais de 5: ▲▲▲▲▲▲▲▲", correctAnswer: 8 }
+      - type: count
+        question: "Qual tem mais: ★★★ ou ★★★★? (3 ou 4)"
+        correctAnswer: 4
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: "Qual tem mais: ●● ou ●●●●●? (2 ou 5)"
+        correctAnswer: 5
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: "Qual tem menos: ▲▲▲▲ ou ▲▲? (4 ou 2)"
+        correctAnswer: 2
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: "Conte: ★★★★★★★"
+        correctAnswer: 7
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: "Conte: ♦♦♦♦♦♦♦♦"
+        correctAnswer: 8
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: "Igual a 5: (★★★★★/★★★)"
+        correctAnswer: 5
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: "Maior que 7: (♣♣♣♣♣♣♣♣/♣♣♣♣)"
+        correctAnswer: 8
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: "Menor que 5: (●●●/●●●●●●)"
+        correctAnswer: 3
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: "Dois a menos de 10: ♥♥♥♥♥♥♥♥"
+        correctAnswer: 8
+        rationale: Conte seguindo a sequência.
+      - type: count
+        question: "Três a mais de 5: ▲▲▲▲▲▲▲▲"
+        correctAnswer: 8
+        rationale: Conte seguindo a sequência.
 target: 30

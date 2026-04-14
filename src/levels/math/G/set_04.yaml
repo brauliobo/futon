@@ -3,7 +3,8 @@ level: G
 example: "Divisão de números inteiros. Ex.: -12 ÷ 3 = -4"
 subject: math
 difficulty: 3
-objectives: [math.integers_expressions]
+objectives:
+  - math.integers_expressions
 authorNotes: Conjunto de math/G.
 inputType: number
 pages:
@@ -11,139 +12,439 @@ pages:
     title: Divisão de Inteiros — Conjunto 4 – Página 1
     description: Divisão de números inteiros.
     exercises:
-      - { type: integer_divide, question: "24 ÷ -6", correctAnswer: -4 }
-      - { type: integer_divide, question: "-12 ÷ -3", correctAnswer: 4 }
-      - { type: integer_divide, question: "40 ÷ -4", correctAnswer: -10 }
-      - { type: integer_divide, question: "50 ÷ 10", correctAnswer: 5 }
-      - { type: integer_divide, question: "42 ÷ 1", correctAnswer: 42 }
-      - { type: integer_divide, question: "-39 ÷ 1", correctAnswer: -39 }
-      - { type: integer_divide, question: "-44 ÷ 2", correctAnswer: -22 }
-      - { type: integer_divide, question: "28 ÷ -1", correctAnswer: -28 }
-      - { type: integer_divide, question: "0 ÷ 5", correctAnswer: 0 }
-      - { type: integer_divide, question: "40 ÷ 10", correctAnswer: 4 }
+      - type: integer_divide
+        question: 24 ÷ -6
+        correctAnswer: -4
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -12 ÷ -3
+        correctAnswer: 4
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 40 ÷ -4
+        correctAnswer: -10
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 50 ÷ 10
+        correctAnswer: 5
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 42 ÷ 1
+        correctAnswer: 42
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -39 ÷ 1
+        correctAnswer: -39
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -44 ÷ 2
+        correctAnswer: -22
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 28 ÷ -1
+        correctAnswer: -28
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 0 ÷ 5
+        correctAnswer: 0
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 40 ÷ 10
+        correctAnswer: 4
+        rationale: Regra de sinais aplicada à divisão.
   - pageNumber: 2
     title: Divisão de Inteiros — Conjunto 4 – Página 2
     description: Divisão de números inteiros.
     exercises:
-      - { type: integer_divide, question: "48 ÷ -3", correctAnswer: -16 }
-      - { type: integer_divide, question: "22 ÷ -1", correctAnswer: -22 }
-      - { type: integer_divide, question: "-30 ÷ 6", correctAnswer: -5 }
-      - { type: integer_divide, question: "-42 ÷ -6", correctAnswer: 7 }
-      - { type: integer_divide, question: "5 ÷ -5", correctAnswer: -1 }
-      - { type: integer_divide, question: "-33 ÷ 1", correctAnswer: -33 }
-      - { type: integer_divide, question: "-15 ÷ -3", correctAnswer: 5 }
-      - { type: integer_divide, question: "-15 ÷ 5", correctAnswer: -3 }
-      - { type: integer_divide, question: "-5 ÷ -1", correctAnswer: 5 }
-      - { type: integer_divide, question: "-2 ÷ -2", correctAnswer: 1 }
+      - type: integer_divide
+        question: 48 ÷ -3
+        correctAnswer: -16
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 22 ÷ -1
+        correctAnswer: -22
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -30 ÷ 6
+        correctAnswer: -5
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -42 ÷ -6
+        correctAnswer: 7
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 5 ÷ -5
+        correctAnswer: -1
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -33 ÷ 1
+        correctAnswer: -33
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -15 ÷ -3
+        correctAnswer: 5
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -15 ÷ 5
+        correctAnswer: -3
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -5 ÷ -1
+        correctAnswer: 5
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -2 ÷ -2
+        correctAnswer: 1
+        rationale: Regra de sinais aplicada à divisão.
   - pageNumber: 3
     title: Divisão de Inteiros — Conjunto 4 – Página 3
     description: Divisão de números inteiros.
     exercises:
-      - { type: integer_divide, question: "-27 ÷ -9", correctAnswer: 3 }
-      - { type: integer_divide, question: "-30 ÷ -1", correctAnswer: 30 }
-      - { type: integer_divide, question: "27 ÷ 9", correctAnswer: 3 }
-      - { type: integer_divide, question: "-9 ÷ -3", correctAnswer: 3 }
-      - { type: integer_divide, question: "12 ÷ 6", correctAnswer: 2 }
-      - { type: integer_divide, question: "-6 ÷ -3", correctAnswer: 2 }
-      - { type: integer_divide, question: "-10 ÷ 2", correctAnswer: -5 }
-      - { type: integer_divide, question: "44 ÷ -4", correctAnswer: -11 }
-      - { type: integer_divide, question: "-11 ÷ 1", correctAnswer: -11 }
-      - { type: integer_divide, question: "2 ÷ 1", correctAnswer: 2 }
+      - type: integer_divide
+        question: -27 ÷ -9
+        correctAnswer: 3
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -30 ÷ -1
+        correctAnswer: 30
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 27 ÷ 9
+        correctAnswer: 3
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -9 ÷ -3
+        correctAnswer: 3
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 12 ÷ 6
+        correctAnswer: 2
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -6 ÷ -3
+        correctAnswer: 2
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -10 ÷ 2
+        correctAnswer: -5
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 44 ÷ -4
+        correctAnswer: -11
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -11 ÷ 1
+        correctAnswer: -11
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 2 ÷ 1
+        correctAnswer: 2
+        rationale: Regra de sinais aplicada à divisão.
   - pageNumber: 4
     title: Divisão de Inteiros — Conjunto 4 – Página 4
     description: Divisão de números inteiros.
     exercises:
-      - { type: integer_divide, question: "46 ÷ 2", correctAnswer: 23 }
-      - { type: integer_divide, question: "40 ÷ 4", correctAnswer: 10 }
-      - { type: integer_divide, question: "18 ÷ -1", correctAnswer: -18 }
-      - { type: integer_divide, question: "49 ÷ 7", correctAnswer: 7 }
-      - { type: integer_divide, question: "-49 ÷ 7", correctAnswer: -7 }
-      - { type: integer_divide, question: "2 ÷ 2", correctAnswer: 1 }
-      - { type: integer_divide, question: "-16 ÷ 1", correctAnswer: -16 }
-      - { type: integer_divide, question: "-44 ÷ 1", correctAnswer: -44 }
-      - { type: integer_divide, question: "-20 ÷ 5", correctAnswer: -4 }
-      - { type: integer_divide, question: "48 ÷ 3", correctAnswer: 16 }
+      - type: integer_divide
+        question: 46 ÷ 2
+        correctAnswer: 23
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 40 ÷ 4
+        correctAnswer: 10
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 18 ÷ -1
+        correctAnswer: -18
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 49 ÷ 7
+        correctAnswer: 7
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -49 ÷ 7
+        correctAnswer: -7
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 2 ÷ 2
+        correctAnswer: 1
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -16 ÷ 1
+        correctAnswer: -16
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -44 ÷ 1
+        correctAnswer: -44
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -20 ÷ 5
+        correctAnswer: -4
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 48 ÷ 3
+        correctAnswer: 16
+        rationale: Regra de sinais aplicada à divisão.
   - pageNumber: 5
     title: Divisão de Inteiros — Conjunto 4 – Página 5
     description: Divisão de números inteiros.
     exercises:
-      - { type: integer_divide, question: "-14 ÷ 2", correctAnswer: -7 }
-      - { type: integer_divide, question: "-22 ÷ -1", correctAnswer: 22 }
-      - { type: integer_divide, question: "36 ÷ 9", correctAnswer: 4 }
-      - { type: integer_divide, question: "20 ÷ -2", correctAnswer: -10 }
-      - { type: integer_divide, question: "18 ÷ 9", correctAnswer: 2 }
-      - { type: integer_divide, question: "21 ÷ -7", correctAnswer: -3 }
-      - { type: integer_divide, question: "36 ÷ 6", correctAnswer: 6 }
-      - { type: integer_divide, question: "18 ÷ -2", correctAnswer: -9 }
-      - { type: integer_divide, question: "-48 ÷ 1", correctAnswer: -48 }
-      - { type: integer_divide, question: "-2 ÷ 2", correctAnswer: -1 }
+      - type: integer_divide
+        question: -14 ÷ 2
+        correctAnswer: -7
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -22 ÷ -1
+        correctAnswer: 22
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 36 ÷ 9
+        correctAnswer: 4
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 20 ÷ -2
+        correctAnswer: -10
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 18 ÷ 9
+        correctAnswer: 2
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 21 ÷ -7
+        correctAnswer: -3
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 36 ÷ 6
+        correctAnswer: 6
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 18 ÷ -2
+        correctAnswer: -9
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -48 ÷ 1
+        correctAnswer: -48
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -2 ÷ 2
+        correctAnswer: -1
+        rationale: Regra de sinais aplicada à divisão.
   - pageNumber: 6
     title: Divisão de Inteiros — Conjunto 4 – Página 6
     description: Divisão de números inteiros.
     exercises:
-      - { type: integer_divide, question: "8 ÷ -8", correctAnswer: -1 }
-      - { type: integer_divide, question: "-42 ÷ -7", correctAnswer: 6 }
-      - { type: integer_divide, question: "31 ÷ -1", correctAnswer: -31 }
-      - { type: integer_divide, question: "6 ÷ -3", correctAnswer: -2 }
-      - { type: integer_divide, question: "-18 ÷ 9", correctAnswer: -2 }
-      - { type: integer_divide, question: "30 ÷ -2", correctAnswer: -15 }
-      - { type: integer_divide, question: "46 ÷ -2", correctAnswer: -23 }
-      - { type: integer_divide, question: "1 ÷ 1", correctAnswer: 1 }
-      - { type: integer_divide, question: "-35 ÷ -7", correctAnswer: 5 }
-      - { type: integer_divide, question: "18 ÷ 6", correctAnswer: 3 }
+      - type: integer_divide
+        question: 8 ÷ -8
+        correctAnswer: -1
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -42 ÷ -7
+        correctAnswer: 6
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 31 ÷ -1
+        correctAnswer: -31
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 6 ÷ -3
+        correctAnswer: -2
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -18 ÷ 9
+        correctAnswer: -2
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 30 ÷ -2
+        correctAnswer: -15
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 46 ÷ -2
+        correctAnswer: -23
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 1 ÷ 1
+        correctAnswer: 1
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -35 ÷ -7
+        correctAnswer: 5
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 18 ÷ 6
+        correctAnswer: 3
+        rationale: Regra de sinais aplicada à divisão.
   - pageNumber: 7
     title: Divisão de Inteiros — Conjunto 4 – Página 7
     description: Divisão de números inteiros.
     exercises:
-      - { type: integer_divide, question: "-43 ÷ 1", correctAnswer: -43 }
-      - { type: integer_divide, question: "42 ÷ -3", correctAnswer: -14 }
-      - { type: integer_divide, question: "-48 ÷ -8", correctAnswer: 6 }
-      - { type: integer_divide, question: "24 ÷ -4", correctAnswer: -6 }
-      - { type: integer_divide, question: "44 ÷ -2", correctAnswer: -22 }
-      - { type: integer_divide, question: "-9 ÷ -9", correctAnswer: 1 }
-      - { type: integer_divide, question: "18 ÷ -9", correctAnswer: -2 }
-      - { type: integer_divide, question: "40 ÷ 2", correctAnswer: 20 }
-      - { type: integer_divide, question: "-47 ÷ 1", correctAnswer: -47 }
-      - { type: integer_divide, question: "-42 ÷ 2", correctAnswer: -21 }
+      - type: integer_divide
+        question: -43 ÷ 1
+        correctAnswer: -43
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 42 ÷ -3
+        correctAnswer: -14
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -48 ÷ -8
+        correctAnswer: 6
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 24 ÷ -4
+        correctAnswer: -6
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 44 ÷ -2
+        correctAnswer: -22
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -9 ÷ -9
+        correctAnswer: 1
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 18 ÷ -9
+        correctAnswer: -2
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 40 ÷ 2
+        correctAnswer: 20
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -47 ÷ 1
+        correctAnswer: -47
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -42 ÷ 2
+        correctAnswer: -21
+        rationale: Regra de sinais aplicada à divisão.
   - pageNumber: 8
     title: Divisão de Inteiros — Conjunto 4 – Página 8
     description: Divisão de números inteiros.
     exercises:
-      - { type: integer_divide, question: "-36 ÷ 6", correctAnswer: -6 }
-      - { type: integer_divide, question: "10 ÷ 5", correctAnswer: 2 }
-      - { type: integer_divide, question: "-30 ÷ 1", correctAnswer: -30 }
-      - { type: integer_divide, question: "24 ÷ -2", correctAnswer: -12 }
-      - { type: integer_divide, question: "-28 ÷ -4", correctAnswer: 7 }
-      - { type: integer_divide, question: "24 ÷ 1", correctAnswer: 24 }
-      - { type: integer_divide, question: "33 ÷ -3", correctAnswer: -11 }
-      - { type: integer_divide, question: "-42 ÷ 7", correctAnswer: -6 }
-      - { type: integer_divide, question: "45 ÷ 5", correctAnswer: 9 }
-      - { type: integer_divide, question: "27 ÷ 1", correctAnswer: 27 }
+      - type: integer_divide
+        question: -36 ÷ 6
+        correctAnswer: -6
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 10 ÷ 5
+        correctAnswer: 2
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -30 ÷ 1
+        correctAnswer: -30
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 24 ÷ -2
+        correctAnswer: -12
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -28 ÷ -4
+        correctAnswer: 7
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 24 ÷ 1
+        correctAnswer: 24
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 33 ÷ -3
+        correctAnswer: -11
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -42 ÷ 7
+        correctAnswer: -6
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 45 ÷ 5
+        correctAnswer: 9
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 27 ÷ 1
+        correctAnswer: 27
+        rationale: Regra de sinais aplicada à divisão.
   - pageNumber: 9
     title: Divisão de Inteiros — Conjunto 4 – Página 9
     description: Divisão de números inteiros.
     exercises:
-      - { type: integer_divide, question: "-20 ÷ 2", correctAnswer: -10 }
-      - { type: integer_divide, question: "33 ÷ 1", correctAnswer: 33 }
-      - { type: integer_divide, question: "24 ÷ -8", correctAnswer: -3 }
-      - { type: integer_divide, question: "3 ÷ -3", correctAnswer: -1 }
-      - { type: integer_divide, question: "-45 ÷ -3", correctAnswer: 15 }
-      - { type: integer_divide, question: "18 ÷ -2", correctAnswer: -9 }
-      - { type: integer_divide, question: "18 ÷ 6", correctAnswer: 3 }
-      - { type: integer_divide, question: "-47 ÷ 1", correctAnswer: -47 }
-      - { type: integer_divide, question: "-10 ÷ 2", correctAnswer: -5 }
-      - { type: integer_divide, question: "36 ÷ 6", correctAnswer: 6 }
+      - type: integer_divide
+        question: -20 ÷ 2
+        correctAnswer: -10
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 33 ÷ 1
+        correctAnswer: 33
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 24 ÷ -8
+        correctAnswer: -3
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 3 ÷ -3
+        correctAnswer: -1
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -45 ÷ -3
+        correctAnswer: 15
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 18 ÷ -2
+        correctAnswer: -9
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 18 ÷ 6
+        correctAnswer: 3
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -47 ÷ 1
+        correctAnswer: -47
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -10 ÷ 2
+        correctAnswer: -5
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 36 ÷ 6
+        correctAnswer: 6
+        rationale: Regra de sinais aplicada à divisão.
   - pageNumber: 10
     title: Divisão de Inteiros — Conjunto 4 – Página 10
     description: Divisão de números inteiros.
     exercises:
-      - { type: integer_divide, question: "-45 ÷ -3", correctAnswer: 15 }
-      - { type: integer_divide, question: "-15 ÷ -3", correctAnswer: 5 }
-      - { type: integer_divide, question: "48 ÷ -3", correctAnswer: -16 }
-      - { type: integer_divide, question: "24 ÷ -4", correctAnswer: -6 }
-      - { type: integer_divide, question: "42 ÷ 1", correctAnswer: 42 }
-      - { type: integer_divide, question: "-44 ÷ 2", correctAnswer: -22 }
-      - { type: integer_divide, question: "-42 ÷ -7", correctAnswer: 6 }
-      - { type: integer_divide, question: "46 ÷ 2", correctAnswer: 23 }
-      - { type: integer_divide, question: "-49 ÷ 7", correctAnswer: -7 }
-      - { type: integer_divide, question: "-20 ÷ 2", correctAnswer: -10 }
+      - type: integer_divide
+        question: -45 ÷ -3
+        correctAnswer: 15
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -15 ÷ -3
+        correctAnswer: 5
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 48 ÷ -3
+        correctAnswer: -16
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 24 ÷ -4
+        correctAnswer: -6
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 42 ÷ 1
+        correctAnswer: 42
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -44 ÷ 2
+        correctAnswer: -22
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -42 ÷ -7
+        correctAnswer: 6
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: 46 ÷ 2
+        correctAnswer: 23
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -49 ÷ 7
+        correctAnswer: -7
+        rationale: Regra de sinais aplicada à divisão.
+      - type: integer_divide
+        question: -20 ÷ 2
+        correctAnswer: -10
+        rationale: Regra de sinais aplicada à divisão.

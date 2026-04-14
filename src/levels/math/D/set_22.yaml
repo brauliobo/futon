@@ -2,7 +2,8 @@ title: Divisão — Revisão (8 e 9)
 level: D
 subject: math
 difficulty: 2
-objectives: [math.division]
+objectives:
+  - math.division
 authorNotes: Revisão da tabuada de divisão por 8 e 9.
 example: "Divisão exata. Ex.: 72 ÷ 8 = 9"
 inputType: number
@@ -11,140 +12,440 @@ pages:
     title: Divisão por 8 — Parte 1
     description: Tabuada do 8.
     exercises:
-      - { type: division, question: "8 ÷ 8 = ?", correctAnswer: 1 }
-      - { type: division, question: "16 ÷ 8 = ?", correctAnswer: 2 }
-      - { type: division, question: "24 ÷ 8 = ?", correctAnswer: 3 }
-      - { type: division, question: "32 ÷ 8 = ?", correctAnswer: 4 }
-      - { type: division, question: "40 ÷ 8 = ?", correctAnswer: 5 }
-      - { type: division, question: "48 ÷ 8 = ?", correctAnswer: 6 }
-      - { type: division, question: "56 ÷ 8 = ?", correctAnswer: 7 }
-      - { type: division, question: "64 ÷ 8 = ?", correctAnswer: 8 }
-      - { type: division, question: "72 ÷ 8 = ?", correctAnswer: 9 }
-      - { type: division, question: "80 ÷ 8 = ?", correctAnswer: 10 }
+      - type: division
+        question: 8 ÷ 8 = ?
+        correctAnswer: 1
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 16 ÷ 8 = ?
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 24 ÷ 8 = ?
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 32 ÷ 8 = ?
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 40 ÷ 8 = ?
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 48 ÷ 8 = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 56 ÷ 8 = ?
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 64 ÷ 8 = ?
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 72 ÷ 8 = ?
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 80 ÷ 8 = ?
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 2
     title: Divisão por 8 — Parte 2
     description: Mais prática.
     exercises:
-      - { type: division, question: "88 ÷ 8 = ?", correctAnswer: 11 }
-      - { type: division, question: "96 ÷ 8 = ?", correctAnswer: 12 }
-      - { type: division, question: "24 ÷ 8 = ?", correctAnswer: 3 }
-      - { type: division, question: "40 ÷ 8 = ?", correctAnswer: 5 }
-      - { type: division, question: "64 ÷ 8 = ?", correctAnswer: 8 }
-      - { type: division, question: "48 ÷ 8 = ?", correctAnswer: 6 }
-      - { type: division, question: "56 ÷ 8 = ?", correctAnswer: 7 }
-      - { type: division, question: "72 ÷ 8 = ?", correctAnswer: 9 }
-      - { type: division, question: "16 ÷ 8 = ?", correctAnswer: 2 }
-      - { type: division, question: "80 ÷ 8 = ?", correctAnswer: 10 }
+      - type: division
+        question: 88 ÷ 8 = ?
+        correctAnswer: 11
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 96 ÷ 8 = ?
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 24 ÷ 8 = ?
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 40 ÷ 8 = ?
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 64 ÷ 8 = ?
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 48 ÷ 8 = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 56 ÷ 8 = ?
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 72 ÷ 8 = ?
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 16 ÷ 8 = ?
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 80 ÷ 8 = ?
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 3
     title: Divisão por 9 — Parte 1
     description: Tabuada do 9.
     exercises:
-      - { type: division, question: "9 ÷ 9 = ?", correctAnswer: 1 }
-      - { type: division, question: "18 ÷ 9 = ?", correctAnswer: 2 }
-      - { type: division, question: "27 ÷ 9 = ?", correctAnswer: 3 }
-      - { type: division, question: "36 ÷ 9 = ?", correctAnswer: 4 }
-      - { type: division, question: "45 ÷ 9 = ?", correctAnswer: 5 }
-      - { type: division, question: "54 ÷ 9 = ?", correctAnswer: 6 }
-      - { type: division, question: "63 ÷ 9 = ?", correctAnswer: 7 }
-      - { type: division, question: "72 ÷ 9 = ?", correctAnswer: 8 }
-      - { type: division, question: "81 ÷ 9 = ?", correctAnswer: 9 }
-      - { type: division, question: "90 ÷ 9 = ?", correctAnswer: 10 }
+      - type: division
+        question: 9 ÷ 9 = ?
+        correctAnswer: 1
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 18 ÷ 9 = ?
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 27 ÷ 9 = ?
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 36 ÷ 9 = ?
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 45 ÷ 9 = ?
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 54 ÷ 9 = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 63 ÷ 9 = ?
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 72 ÷ 9 = ?
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 81 ÷ 9 = ?
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 90 ÷ 9 = ?
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 4
     title: Divisão por 9 — Parte 2
     description: Mais prática.
     exercises:
-      - { type: division, question: "99 ÷ 9 = ?", correctAnswer: 11 }
-      - { type: division, question: "108 ÷ 9 = ?", correctAnswer: 12 }
-      - { type: division, question: "27 ÷ 9 = ?", correctAnswer: 3 }
-      - { type: division, question: "54 ÷ 9 = ?", correctAnswer: 6 }
-      - { type: division, question: "81 ÷ 9 = ?", correctAnswer: 9 }
-      - { type: division, question: "45 ÷ 9 = ?", correctAnswer: 5 }
-      - { type: division, question: "63 ÷ 9 = ?", correctAnswer: 7 }
-      - { type: division, question: "36 ÷ 9 = ?", correctAnswer: 4 }
-      - { type: division, question: "18 ÷ 9 = ?", correctAnswer: 2 }
-      - { type: division, question: "90 ÷ 9 = ?", correctAnswer: 10 }
+      - type: division
+        question: 99 ÷ 9 = ?
+        correctAnswer: 11
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 108 ÷ 9 = ?
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 27 ÷ 9 = ?
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 54 ÷ 9 = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 81 ÷ 9 = ?
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 45 ÷ 9 = ?
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 63 ÷ 9 = ?
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 36 ÷ 9 = ?
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 18 ÷ 9 = ?
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 90 ÷ 9 = ?
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 5
     title: Misturado 8 e 9
     description: Alterne entre divisores.
     exercises:
-      - { type: division, question: "48 ÷ 8 = ?", correctAnswer: 6 }
-      - { type: division, question: "54 ÷ 9 = ?", correctAnswer: 6 }
-      - { type: division, question: "72 ÷ 8 = ?", correctAnswer: 9 }
-      - { type: division, question: "81 ÷ 9 = ?", correctAnswer: 9 }
-      - { type: division, question: "64 ÷ 8 = ?", correctAnswer: 8 }
-      - { type: division, question: "72 ÷ 9 = ?", correctAnswer: 8 }
-      - { type: division, question: "32 ÷ 8 = ?", correctAnswer: 4 }
-      - { type: division, question: "36 ÷ 9 = ?", correctAnswer: 4 }
-      - { type: division, question: "80 ÷ 8 = ?", correctAnswer: 10 }
-      - { type: division, question: "45 ÷ 9 = ?", correctAnswer: 5 }
+      - type: division
+        question: 48 ÷ 8 = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 54 ÷ 9 = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 72 ÷ 8 = ?
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 81 ÷ 9 = ?
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 64 ÷ 8 = ?
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 72 ÷ 9 = ?
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 32 ÷ 8 = ?
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 36 ÷ 9 = ?
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 80 ÷ 8 = ?
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 45 ÷ 9 = ?
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 6
     title: Problemas Simples
     description: Contextualizados.
     exercises:
-      - { type: division, question: "72 figurinhas entre 8 álbuns = ?", correctAnswer: 9 }
-      - { type: division, question: "54 maçãs em 9 caixas = ?", correctAnswer: 6 }
-      - { type: division, question: "64 biscoitos para 8 pessoas = ?", correctAnswer: 8 }
-      - { type: division, question: "81 folhas em 9 cadernos = ?", correctAnswer: 9 }
-      - { type: division, question: "40 lápis em 8 estojos = ?", correctAnswer: 5 }
-      - { type: division, question: "36 livros em 9 prateleiras = ?", correctAnswer: 4 }
-      - { type: division, question: "48 doces entre 8 crianças = ?", correctAnswer: 6 }
-      - { type: division, question: "63 balas para 9 amigos = ?", correctAnswer: 7 }
-      - { type: division, question: "56 moedas em 8 pilhas = ?", correctAnswer: 7 }
-      - { type: division, question: "27 brinquedos em 9 caixas = ?", correctAnswer: 3 }
+      - type: division
+        question: 72 figurinhas entre 8 álbuns = ?
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 54 maçãs em 9 caixas = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 64 biscoitos para 8 pessoas = ?
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 81 folhas em 9 cadernos = ?
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 40 lápis em 8 estojos = ?
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 36 livros em 9 prateleiras = ?
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 48 doces entre 8 crianças = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 63 balas para 9 amigos = ?
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 56 moedas em 8 pilhas = ?
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 27 brinquedos em 9 caixas = ?
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 7
     title: Revisão Rápida
     description: Velocidade.
     exercises:
-      - { type: division, question: "40 ÷ 8 = ?", correctAnswer: 5 }
-      - { type: division, question: "27 ÷ 9 = ?", correctAnswer: 3 }
-      - { type: division, question: "56 ÷ 8 = ?", correctAnswer: 7 }
-      - { type: division, question: "45 ÷ 9 = ?", correctAnswer: 5 }
-      - { type: division, question: "72 ÷ 8 = ?", correctAnswer: 9 }
-      - { type: division, question: "63 ÷ 9 = ?", correctAnswer: 7 }
-      - { type: division, question: "16 ÷ 8 = ?", correctAnswer: 2 }
-      - { type: division, question: "54 ÷ 9 = ?", correctAnswer: 6 }
-      - { type: division, question: "48 ÷ 8 = ?", correctAnswer: 6 }
-      - { type: division, question: "90 ÷ 9 = ?", correctAnswer: 10 }
+      - type: division
+        question: 40 ÷ 8 = ?
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 27 ÷ 9 = ?
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 56 ÷ 8 = ?
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 45 ÷ 9 = ?
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 72 ÷ 8 = ?
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 63 ÷ 9 = ?
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 16 ÷ 8 = ?
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 54 ÷ 9 = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 48 ÷ 8 = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 90 ÷ 9 = ?
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 8
     title: Desafio — Números Maiores
     description: Além da tabuada comum.
     exercises:
-      - { type: division, question: "88 ÷ 8 = ?", correctAnswer: 11 }
-      - { type: division, question: "99 ÷ 9 = ?", correctAnswer: 11 }
-      - { type: division, question: "96 ÷ 8 = ?", correctAnswer: 12 }
-      - { type: division, question: "108 ÷ 9 = ?", correctAnswer: 12 }
-      - { type: division, question: "80 ÷ 8 = ?", correctAnswer: 10 }
-      - { type: division, question: "81 ÷ 9 = ?", correctAnswer: 9 }
-      - { type: division, question: "64 ÷ 8 = ?", correctAnswer: 8 }
-      - { type: division, question: "72 ÷ 9 = ?", correctAnswer: 8 }
-      - { type: division, question: "56 ÷ 8 = ?", correctAnswer: 7 }
-      - { type: division, question: "63 ÷ 9 = ?", correctAnswer: 7 }
+      - type: division
+        question: 88 ÷ 8 = ?
+        correctAnswer: 11
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 99 ÷ 9 = ?
+        correctAnswer: 11
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 96 ÷ 8 = ?
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 108 ÷ 9 = ?
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 80 ÷ 8 = ?
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 81 ÷ 9 = ?
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 64 ÷ 8 = ?
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 72 ÷ 9 = ?
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 56 ÷ 8 = ?
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 63 ÷ 9 = ?
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 9
     title: Divisões Exatas
     description: Revisão.
     exercises:
-      - { type: division, question: "32 ÷ 8 = ?", correctAnswer: 4 }
-      - { type: division, question: "36 ÷ 9 = ?", correctAnswer: 4 }
-      - { type: division, question: "24 ÷ 8 = ?", correctAnswer: 3 }
-      - { type: division, question: "27 ÷ 9 = ?", correctAnswer: 3 }
-      - { type: division, question: "48 ÷ 8 = ?", correctAnswer: 6 }
-      - { type: division, question: "54 ÷ 9 = ?", correctAnswer: 6 }
-      - { type: division, question: "8 ÷ 8 = ?", correctAnswer: 1 }
-      - { type: division, question: "9 ÷ 9 = ?", correctAnswer: 1 }
-      - { type: division, question: "16 ÷ 8 = ?", correctAnswer: 2 }
-      - { type: division, question: "18 ÷ 9 = ?", correctAnswer: 2 }
+      - type: division
+        question: 32 ÷ 8 = ?
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 36 ÷ 9 = ?
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 24 ÷ 8 = ?
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 27 ÷ 9 = ?
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 48 ÷ 8 = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 54 ÷ 9 = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 8 ÷ 8 = ?
+        correctAnswer: 1
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 9 ÷ 9 = ?
+        correctAnswer: 1
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 16 ÷ 8 = ?
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 18 ÷ 9 = ?
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 10
     title: Revisão Integrada
     description: Finalizando.
     exercises:
-      - { type: division, question: "56 ÷ 8 = ?", correctAnswer: 7 }
-      - { type: division, question: "63 ÷ 9 = ?", correctAnswer: 7 }
-      - { type: division, question: "72 ÷ 8 = ?", correctAnswer: 9 }
-      - { type: division, question: "81 ÷ 9 = ?", correctAnswer: 9 }
-      - { type: division, question: "40 ÷ 8 = ?", correctAnswer: 5 }
-      - { type: division, question: "45 ÷ 9 = ?", correctAnswer: 5 }
-      - { type: division, question: "64 ÷ 8 = ?", correctAnswer: 8 }
-      - { type: division, question: "72 ÷ 9 = ?", correctAnswer: 8 }
-      - { type: division, question: "48 ÷ 8 = ?", correctAnswer: 6 }
-      - { type: division, question: "54 ÷ 9 = ?", correctAnswer: 6 }
+      - type: division
+        question: 56 ÷ 8 = ?
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 63 ÷ 9 = ?
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 72 ÷ 8 = ?
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 81 ÷ 9 = ?
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 40 ÷ 8 = ?
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 45 ÷ 9 = ?
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 64 ÷ 8 = ?
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 72 ÷ 9 = ?
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 48 ÷ 8 = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 54 ÷ 9 = ?
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
 target: 100

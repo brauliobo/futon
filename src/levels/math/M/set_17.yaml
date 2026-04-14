@@ -3,97 +3,248 @@ level: M
 subject: math
 inputType: number
 difficulty: 4
-objectives: [complex.polar]
-example: "z = r(cos θ + i sen θ) = r cis θ"
+objectives:
+  - complex.polar
+example: z = r(cos θ + i sen θ) = r cis θ
 pages:
   - pageNumber: 1
     title: Módulo e Argumento
     description: r = |z|; θ = arg(z).
     exercises:
-      - { type: algebra, question: "|1+i| = ?", correctAnswer: √2 }
-      - { type: algebra, question: "arg(1+i) = ?°", correctAnswer: 45 }
-      - { type: algebra, question: "|1-i| = ?", correctAnswer: √2 }
-      - { type: algebra, question: "arg(1-i) = ?°", correctAnswer: -45 }
-      - { type: algebra, question: "arg(1) = ?°", correctAnswer: 0 }
+      - type: algebra
+        question: "|1+i| = ?"
+        correctAnswer: √2
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: arg(1+i) = ?°
+        correctAnswer: 45
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "|1-i| = ?"
+        correctAnswer: √2
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: arg(1-i) = ?°
+        correctAnswer: -45
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: arg(1) = ?°
+        correctAnswer: 0
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 2
     title: Conversão Retangular → Polar
     description: r = √(a²+b²); θ = arctan(b/a).
     exercises:
-      - { type: algebra, question: "Polar de z=1+i: (r=√2, θ=45°) V/F", correctAnswer: V }
-      - { type: algebra, question: "Polar de z=√3+i: r = ?", correctAnswer: 2 }
-      - { type: algebra, question: "Mesma z: θ = ?°", correctAnswer: 30 }
-      - { type: algebra, question: "Polar de z=-1+i: r=√2; θ = ?°", correctAnswer: 135 }
-      - { type: algebra, question: "Polar de z=i: r=1; θ = ?°", correctAnswer: 90 }
+      - type: algebra
+        question: "Polar de z=1+i: (r=√2, θ=45°) V/F"
+        correctAnswer: V
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Polar de z=√3+i: r = ?"
+        correctAnswer: 2
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Mesma z: θ = ?°"
+        correctAnswer: 30
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Polar de z=-1+i: r=√2; θ = ?°"
+        correctAnswer: 135
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Polar de z=i: r=1; θ = ?°"
+        correctAnswer: 90
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 3
     title: Conversão Polar → Retangular
     description: a = r cos θ; b = r sen θ.
     exercises:
-      - { type: algebra, question: "r=2, θ=60°: a = ?", correctAnswer: 1 }
-      - { type: algebra, question: "Mesma: b = ?", correctAnswer: √3 }
-      - { type: algebra, question: "r=5, θ=0° → z = ?", correctAnswer: 5 }
-      - { type: algebra, question: "r=√2, θ=135° → real = ?", correctAnswer: -1 }
-      - { type: algebra, question: "Mesma: imaginária = ?", correctAnswer: 1 }
+      - type: algebra
+        question: "r=2, θ=60°: a = ?"
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Mesma: b = ?"
+        correctAnswer: √3
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: r=5, θ=0° → z = ?
+        correctAnswer: 5
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: r=√2, θ=135° → real = ?
+        correctAnswer: -1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Mesma: imaginária = ?"
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 4
     title: Multiplicação Polar
     description: r₁·r₂ cis(θ₁+θ₂).
     exercises:
-      - { type: algebra, question: "Multiplicar magnitudes — soma argumentos (V/F)?", correctAnswer: V }
-      - { type: algebra, question: "cis(30°) · cis(60°) = cis(?°)", correctAnswer: 90 }
-      - { type: algebra, question: "(2·cis30°)(3·cis60°) = (?·cis90°)", correctAnswer: 6 }
-      - { type: algebra, question: "cis(45°) · cis(45°) = cis(?°)", correctAnswer: 90 }
-      - { type: algebra, question: "i · i = cis(90°)·cis(90°) = cis(?°) = ?", correctAnswer: -1 }
+      - type: algebra
+        question: Multiplicar magnitudes — soma argumentos (V/F)?
+        correctAnswer: V
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: cis(30°) · cis(60°) = cis(?°)
+        correctAnswer: 90
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (2·cis30°)(3·cis60°) = (?·cis90°)
+        correctAnswer: 6
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: cis(45°) · cis(45°) = cis(?°)
+        correctAnswer: 90
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: i · i = cis(90°)·cis(90°) = cis(?°) = ?
+        correctAnswer: -1
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 5
     title: Divisão Polar
     description: r₁/r₂ cis(θ₁-θ₂).
     exercises:
-      - { type: algebra, question: "Dividir magnitudes — subtrair argumentos (V/F)?", correctAnswer: V }
-      - { type: algebra, question: "(6·cis60°)/(2·cis30°) = ?·cis30°", correctAnswer: 3 }
-      - { type: algebra, question: "cis(90°)/cis(45°) = cis(?°)", correctAnswer: 45 }
-      - { type: algebra, question: "1/i em polar: 1/cis90° = cis(?°)", correctAnswer: -90 }
-      - { type: algebra, question: "cis(-90°) = ?", correctAnswer: -i }
+      - type: algebra
+        question: Dividir magnitudes — subtrair argumentos (V/F)?
+        correctAnswer: V
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (6·cis60°)/(2·cis30°) = ?·cis30°
+        correctAnswer: 3
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: cis(90°)/cis(45°) = cis(?°)
+        correctAnswer: 45
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "1/i em polar: 1/cis90° = cis(?°)"
+        correctAnswer: -90
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: cis(-90°) = ?
+        correctAnswer: -i
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 6
     title: Fórmula de De Moivre
     description: (r cis θ)^n = rⁿ cis(nθ).
     exercises:
-      - { type: algebra, question: "(cis 30°)² = cis ?°", correctAnswer: 60 }
-      - { type: algebra, question: "(cis 90°)⁴ = cis ?°", correctAnswer: 360 }
-      - { type: algebra, question: "i⁴ = cis 360° = ?", correctAnswer: 1 }
-      - { type: algebra, question: "(√2 cis 45°)⁴ = ? cis 180° = ?", correctAnswer: -4 }
-      - { type: algebra, question: "(1+i)⁸ via polar: |1+i|=√2, arg=45° → (√2)⁸ = ?", correctAnswer: 16 }
+      - type: algebra
+        question: (cis 30°)² = cis ?°
+        correctAnswer: 60
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (cis 90°)⁴ = cis ?°
+        correctAnswer: 360
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: i⁴ = cis 360° = ?
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: (√2 cis 45°)⁴ = ? cis 180° = ?
+        correctAnswer: -4
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "(1+i)⁸ via polar: |1+i|=√2, arg=45° → (√2)⁸ = ?"
+        correctAnswer: 16
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 7
     title: Raízes de Complexos
     description: n raízes distintas.
     exercises:
-      - { type: algebra, question: "Número de raízes n-ésimas de z: ?", correctAnswer: n }
-      - { type: algebra, question: "Raízes estão igualmente espaçadas em círculo de raio r^(1/n) (V/F)?", correctAnswer: V }
-      - { type: algebra, question: "Raízes quadradas de 1 = ±?", correctAnswer: 1 }
-      - { type: algebra, question: "Raízes cúbicas de 1 — quantas? ", correctAnswer: 3 }
-      - { type: algebra, question: "Uma raiz cúbica de 1 é 1. As outras duas estão em 120° e ?°", correctAnswer: 240 }
+      - type: algebra
+        question: "Número de raízes n-ésimas de z: ?"
+        correctAnswer: n
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Raízes estão igualmente espaçadas em círculo de raio r^(1/n) (V/F)?
+        correctAnswer: V
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Raízes quadradas de 1 = ±?
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Raízes cúbicas de 1 — quantas? "
+        correctAnswer: 3
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Uma raiz cúbica de 1 é 1. As outras duas estão em 120° e ?°
+        correctAnswer: 240
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 8
     title: Fórmula de Euler
     description: e^(iθ) = cos θ + i sen θ.
     exercises:
-      - { type: algebra, question: "e^(iπ) + 1 = ?", correctAnswer: 0 }
-      - { type: algebra, question: "e^(iπ/2) = ?", correctAnswer: i }
-      - { type: algebra, question: "e^(i·0) = ?", correctAnswer: 1 }
-      - { type: algebra, question: "e^(i·2π) = ?", correctAnswer: 1 }
-      - { type: algebra, question: "|e^(iθ)| = ?", correctAnswer: 1 }
+      - type: algebra
+        question: e^(iπ) + 1 = ?
+        correctAnswer: 0
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: e^(iπ/2) = ?
+        correctAnswer: i
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: e^(i·0) = ?
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: e^(i·2π) = ?
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "|e^(iθ)| = ?"
+        correctAnswer: 1
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 9
     title: Forma Exponencial
     description: z = r·e^(iθ).
     exercises:
-      - { type: algebra, question: "1+i em forma exponencial: √2 · e^(iπ/?)", correctAnswer: 4 }
-      - { type: algebra, question: "i em forma exponencial: 1·e^(iπ/?)", correctAnswer: 2 }
-      - { type: algebra, question: "-1 em forma exponencial: e^(i?)", correctAnswer: π }
-      - { type: algebra, question: "Multiplicação fica simples com exponencial (V/F)?", correctAnswer: V }
-      - { type: algebra, question: "e^(iα) · e^(iβ) = e^(i(α+?))", correctAnswer: β }
+      - type: algebra
+        question: "1+i em forma exponencial: √2 · e^(iπ/?)"
+        correctAnswer: 4
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "i em forma exponencial: 1·e^(iπ/?)"
+        correctAnswer: 2
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "-1 em forma exponencial: e^(i?)"
+        correctAnswer: π
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: Multiplicação fica simples com exponencial (V/F)?
+        correctAnswer: V
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: e^(iα) · e^(iβ) = e^(i(α+?))
+        correctAnswer: β
+        rationale: Isole a incógnita usando operações inversas.
   - pageNumber: 10
     title: Revisão Integrada
     description: Misture formas.
     exercises:
-      - { type: algebra, question: "(1+i)⁴ em polar: (√2 cis 45°)⁴ = 4·cis 180° = ?", correctAnswer: -4 }
-      - { type: algebra, question: "|2+2i| = ?", correctAnswer: 2√2 }
-      - { type: algebra, question: "arg(2+2i) = ?°", correctAnswer: 45 }
-      - { type: algebra, question: "cis(180°) = ?", correctAnswer: -1 }
-      - { type: algebra, question: "Raízes cúbicas de 8: uma é 2. As outras ficam em 120° e ?°", correctAnswer: 240 }
+      - type: algebra
+        question: "(1+i)⁴ em polar: (√2 cis 45°)⁴ = 4·cis 180° = ?"
+        correctAnswer: -4
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "|2+2i| = ?"
+        correctAnswer: 2√2
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: arg(2+2i) = ?°
+        correctAnswer: 45
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: cis(180°) = ?
+        correctAnswer: -1
+        rationale: Isole a incógnita usando operações inversas.
+      - type: algebra
+        question: "Raízes cúbicas de 8: uma é 2. As outras ficam em 120° e ?°"
+        correctAnswer: 240
+        rationale: Isole a incógnita usando operações inversas.
 target: 50

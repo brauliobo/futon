@@ -3,97 +3,249 @@ level: P
 subject: math
 inputType: number
 difficulty: 4
-objectives: [stats, prob]
-example: "Combina tendência central, dispersão, probabilidade."
+objectives:
+  - stats
+  - prob
+example: Combina tendência central, dispersão, probabilidade.
 pages:
   - pageNumber: 1
     title: Medidas Mistas
     description: Calcule múltiplas medidas.
     exercises:
-      - { type: mental_math, question: "{2,4,6,8,10} — média = ?", correctAnswer: 6 }
-      - { type: mental_math, question: "Mesma lista — mediana = ?", correctAnswer: 6 }
-      - { type: mental_math, question: "Mesma lista — amplitude = ?", correctAnswer: 8 }
-      - { type: mental_math, question: "Mesma lista — moda? (amodal/2/6/10)", correctAnswer: amodal }
-      - { type: mental_math, question: "Mesma lista — variância populacional (aprox) = ?", correctAnswer: 8 }
+      - type: mental_math
+        question: "{2,4,6,8,10} — média = ?"
+        correctAnswer: 6
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Mesma lista — mediana = ?
+        correctAnswer: 6
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Mesma lista — amplitude = ?
+        correctAnswer: 8
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Mesma lista — moda? (amodal/2/6/10)
+        correctAnswer: amodal
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Mesma lista — variância populacional (aprox) = ?
+        correctAnswer: 8
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 2
     title: Dados Agrupados
     description: Trabalhe com frequências.
     exercises:
-      - { type: mental_math, question: "Valores 10 (f=2) e 20 (f=3) — média = ?", correctAnswer: 16 }
-      - { type: mental_math, question: "Valores 1 (f=3) e 2 (f=1) — média = ?", correctAnswer: 1.25 }
-      - { type: mental_math, question: "Valores 3 (f=2) e 7 (f=2) — média = ?", correctAnswer: 5 }
-      - { type: mental_math, question: "Valores 5 (f=4) — média = ?", correctAnswer: 5 }
-      - { type: mental_math, question: "Média ponderada com pesos iguais é: (média simples)", correctAnswer: sim }
+      - type: mental_math
+        question: Valores 10 (f=2) e 20 (f=3) — média = ?
+        correctAnswer: 16
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Valores 1 (f=3) e 2 (f=1) — média = ?
+        correctAnswer: 1.25
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Valores 3 (f=2) e 7 (f=2) — média = ?
+        correctAnswer: 5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Valores 5 (f=4) — média = ?
+        correctAnswer: 5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Média ponderada com pesos iguais é: (média simples)"
+        correctAnswer: sim
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 3
     title: Probabilidade Básica
     description: Aplicação direta.
     exercises:
-      - { type: mental_math, question: "Dado — P(face par) = ?", correctAnswer: 1/2 }
-      - { type: mental_math, question: "Dado — P(maior que 3) = ?", correctAnswer: 1/2 }
-      - { type: mental_math, question: "Moeda lançada 3 vezes — P(3 caras) = ?", correctAnswer: 1/8 }
-      - { type: mental_math, question: "Baralho (52) — P(carta vermelha) = ?", correctAnswer: 1/2 }
-      - { type: mental_math, question: "Baralho — P(figura — valete/dama/rei) = 12/52 = ?", correctAnswer: 3/13 }
+      - type: mental_math
+        question: Dado — P(face par) = ?
+        correctAnswer: 1/2
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Dado — P(maior que 3) = ?
+        correctAnswer: 1/2
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Moeda lançada 3 vezes — P(3 caras) = ?
+        correctAnswer: 1/8
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Baralho (52) — P(carta vermelha) = ?
+        correctAnswer: 1/2
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Baralho — P(figura — valete/dama/rei) = 12/52 = ?
+        correctAnswer: 3/13
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 4
     title: Combinatória Aplicada
     description: Permutações e combinações.
     exercises:
-      - { type: mental_math, question: "Fila de 5 pessoas: permutações?", correctAnswer: 120 }
-      - { type: mental_math, question: "Escolher 2 de 6 alunos sem ordem?", correctAnswer: 15 }
-      - { type: mental_math, question: "3 dígitos distintos entre 1-5?", correctAnswer: 60 }
-      - { type: mental_math, question: "Anagramas de SOL = ?", correctAnswer: 6 }
-      - { type: mental_math, question: "Anagramas de MAMA = ?", correctAnswer: 6 }
+      - type: mental_math
+        question: "Fila de 5 pessoas: permutações?"
+        correctAnswer: 120
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Escolher 2 de 6 alunos sem ordem?
+        correctAnswer: 15
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: 3 dígitos distintos entre 1-5?
+        correctAnswer: 60
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Anagramas de SOL = ?
+        correctAnswer: 6
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Anagramas de MAMA = ?
+        correctAnswer: 6
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 5
     title: Complementar e União
     description: Misture os eventos.
     exercises:
-      - { type: mental_math, question: "P(A)=0.3 → P(Ā) = ?", correctAnswer: 0.7 }
-      - { type: mental_math, question: "P(A)=0.4, P(B)=0.5 exclusivos → P(A∪B) = ?", correctAnswer: 0.9 }
-      - { type: mental_math, question: "P(A)=0.3, P(B)=0.5, P(A∩B)=0.1 → P(A∪B) = ?", correctAnswer: 0.7 }
-      - { type: mental_math, question: "Se P(A∩B)=0, eventos são: (mutuamente exclusivos/independentes)", correctAnswer: mutuamente exclusivos }
-      - { type: mental_math, question: "P(A) + P(Ā) = ?", correctAnswer: 1 }
+      - type: mental_math
+        question: P(A)=0.3 → P(Ā) = ?
+        correctAnswer: 0.7
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: P(A)=0.4, P(B)=0.5 exclusivos → P(A∪B) = ?
+        correctAnswer: 0.9
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: P(A)=0.3, P(B)=0.5, P(A∩B)=0.1 → P(A∪B) = ?
+        correctAnswer: 0.7
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Se P(A∩B)=0, eventos são: (mutuamente exclusivos/independentes)"
+        correctAnswer: mutuamente exclusivos
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: P(A) + P(Ā) = ?
+        correctAnswer: 1
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 6
     title: Normal e Z-score
     description: Cálculos padronizados.
     exercises:
-      - { type: mental_math, question: "μ=50, σ=10 — z(60) = ?", correctAnswer: 1 }
-      - { type: mental_math, question: "μ=100, σ=20 — z(80) = ?", correctAnswer: -1 }
-      - { type: mental_math, question: "% dentro de ±2σ ≈ ?%", correctAnswer: 95 }
-      - { type: mental_math, question: "% acima de média+2σ ≈ ?%", correctAnswer: 2.5 }
-      - { type: mental_math, question: "Normal padrão — P(z>0) = ?", correctAnswer: 0.5 }
+      - type: mental_math
+        question: μ=50, σ=10 — z(60) = ?
+        correctAnswer: 1
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: μ=100, σ=20 — z(80) = ?
+        correctAnswer: -1
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "% dentro de ±2σ ≈ ?%"
+        correctAnswer: 95
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "% acima de média+2σ ≈ ?%"
+        correctAnswer: 2.5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Normal padrão — P(z>0) = ?
+        correctAnswer: 0.5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 7
     title: Box Plot e Quartis
     description: Localize medidas.
     exercises:
-      - { type: mental_math, question: "Em {1,2,3,4,5,6,7,8}, Q1 = ?", correctAnswer: 2.5 }
-      - { type: mental_math, question: "Mesma lista, Q3 = ?", correctAnswer: 6.5 }
-      - { type: mental_math, question: "IIQ = Q3 - Q1 = ?", correctAnswer: 4 }
-      - { type: mental_math, question: "Mediana da mesma lista = ?", correctAnswer: 4.5 }
-      - { type: mental_math, question: "Cerca superior = Q3 + 1.5·IIQ = ?", correctAnswer: 12.5 }
+      - type: mental_math
+        question: Em {1,2,3,4,5,6,7,8}, Q1 = ?
+        correctAnswer: 2.5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Mesma lista, Q3 = ?
+        correctAnswer: 6.5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: IIQ = Q3 - Q1 = ?
+        correctAnswer: 4
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Mediana da mesma lista = ?
+        correctAnswer: 4.5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Cerca superior = Q3 + 1.5·IIQ = ?
+        correctAnswer: 12.5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 8
     title: Outliers
     description: Detecção.
     exercises:
-      - { type: mental_math, question: "Em {1,2,3,4,50}, o outlier é: ?", correctAnswer: 50 }
-      - { type: mental_math, question: "Outlier afeta mais: (média/mediana)", correctAnswer: média }
-      - { type: mental_math, question: "Em z-score, |z|>3 é considerado: (outlier/normal)", correctAnswer: outlier }
-      - { type: mental_math, question: "Mediana é robusta a outliers (V/F)?", correctAnswer: V }
-      - { type: mental_math, question: "Desvio padrão é sensível a outliers (V/F)?", correctAnswer: V }
+      - type: mental_math
+        question: "Em {1,2,3,4,50}, o outlier é: ?"
+        correctAnswer: 50
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Outlier afeta mais: (média/mediana)"
+        correctAnswer: média
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Em z-score, |z|>3 é considerado: (outlier/normal)"
+        correctAnswer: outlier
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Mediana é robusta a outliers (V/F)?
+        correctAnswer: V
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Desvio padrão é sensível a outliers (V/F)?
+        correctAnswer: V
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 9
     title: Inferência Intuitiva
     description: Amostra e população.
     exercises:
-      - { type: mental_math, question: "Parâmetro se refere a: (população/amostra)", correctAnswer: população }
-      - { type: mental_math, question: "Estatística se refere a: (população/amostra)", correctAnswer: amostra }
-      - { type: mental_math, question: "Amostra maior = estimativa (mais precisa/menos precisa)", correctAnswer: mais precisa }
-      - { type: mental_math, question: "Erro padrão = σ/√n (V/F)?", correctAnswer: V }
-      - { type: mental_math, question: "Intervalo de confiança 95% para média = média ± ?·erro padrão", correctAnswer: 1.96 }
+      - type: mental_math
+        question: "Parâmetro se refere a: (população/amostra)"
+        correctAnswer: população
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "Estatística se refere a: (população/amostra)"
+        correctAnswer: amostra
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Amostra maior = estimativa (mais precisa/menos precisa)
+        correctAnswer: mais precisa
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Erro padrão = σ/√n (V/F)?
+        correctAnswer: V
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Intervalo de confiança 95% para média = média ± ?·erro padrão
+        correctAnswer: 1.96
+        rationale: Calcule mentalmente usando estratégias de decomposição.
   - pageNumber: 10
     title: Revisão Final
     description: Problemas integrados.
     exercises:
-      - { type: mental_math, question: "{5,10,15,20,25} — média = ?", correctAnswer: 15 }
-      - { type: mental_math, question: "{5,10,15,20,25} — σ populacional (aprox) = ?", correctAnswer: 7.07 }
-      - { type: mental_math, question: "{1,2,3,4} — mediana = ?", correctAnswer: 2.5 }
-      - { type: mental_math, question: "Dado — P(1 ou 2) = ?", correctAnswer: 1/3 }
-      - { type: mental_math, question: "2 moedas — P(pelo menos uma coroa) = ?", correctAnswer: 3/4 }
+      - type: mental_math
+        question: "{5,10,15,20,25} — média = ?"
+        correctAnswer: 15
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "{5,10,15,20,25} — σ populacional (aprox) = ?"
+        correctAnswer: 7.07
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: "{1,2,3,4} — mediana = ?"
+        correctAnswer: 2.5
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: Dado — P(1 ou 2) = ?
+        correctAnswer: 1/3
+        rationale: Calcule mentalmente usando estratégias de decomposição.
+      - type: mental_math
+        question: 2 moedas — P(pelo menos uma coroa) = ?
+        correctAnswer: 3/4
+        rationale: Calcule mentalmente usando estratégias de decomposição.
 target: 50

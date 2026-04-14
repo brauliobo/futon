@@ -3,97 +3,248 @@ level: M
 subject: math
 inputType: number
 difficulty: 4
-objectives: [trig.triangles]
-example: "c² = a² + b² - 2ab·cos(C)"
+objectives:
+  - trig.triangles
+example: c² = a² + b² - 2ab·cos(C)
 pages:
   - pageNumber: 1
     title: Enunciado
     description: Generalização de Pitágoras.
     exercises:
-      - { type: trigonometry, question: "c² = a² + b² - 2ab·cos(?)", correctAnswer: C }
-      - { type: trigonometry, question: "Se C=90°, a lei vira: (Pitágoras/lei dos senos)", correctAnswer: Pitágoras }
-      - { type: trigonometry, question: "cos(90°) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "c² = a² + b² quando C = ?°", correctAnswer: 90 }
-      - { type: trigonometry, question: "Vale em qualquer triângulo (V/F)?", correctAnswer: V }
+      - type: trigonometry
+        question: c² = a² + b² - 2ab·cos(?)
+        correctAnswer: C
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Se C=90°, a lei vira: (Pitágoras/lei dos senos)"
+        correctAnswer: Pitágoras
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cos(90°) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: c² = a² + b² quando C = ?°
+        correctAnswer: 90
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Vale em qualquer triângulo (V/F)?
+        correctAnswer: V
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 2
     title: Calculando Lado
     description: Dados dois lados e o ângulo incluído.
     exercises:
-      - { type: trigonometry, question: "a=3, b=4, C=60°: c² = 9+16-12 = ?", correctAnswer: 13 }
-      - { type: trigonometry, question: "Portanto c ≈ ?", correctAnswer: 3.6 }
-      - { type: trigonometry, question: "a=5, b=5, C=60°: c² = 50-25 = ?", correctAnswer: 25 }
-      - { type: trigonometry, question: "Portanto c = ?", correctAnswer: 5 }
-      - { type: trigonometry, question: "a=6, b=8, C=90°: c² = ?", correctAnswer: 100 }
+      - type: trigonometry
+        question: "a=3, b=4, C=60°: c² = 9+16-12 = ?"
+        correctAnswer: 13
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Portanto c ≈ ?
+        correctAnswer: 3.6
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "a=5, b=5, C=60°: c² = 50-25 = ?"
+        correctAnswer: 25
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Portanto c = ?
+        correctAnswer: 5
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "a=6, b=8, C=90°: c² = ?"
+        correctAnswer: 100
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 3
     title: Calculando Ângulo
     description: Com três lados conhecidos.
     exercises:
-      - { type: trigonometry, question: "a=3, b=4, c=5 — cos(C) = (9+16-25)/(24) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "Portanto C = ?°", correctAnswer: 90° }
-      - { type: trigonometry, question: "a=5, b=5, c=5 — cos(C) = ?", correctAnswer: 0.5 }
-      - { type: trigonometry, question: "Portanto C = ?°", correctAnswer: 60° }
-      - { type: trigonometry, question: "a=7, b=8, c=9 — cos(C) = (49+64-81)/(112) = 32/112 = ?", correctAnswer: 0.286 }
+      - type: trigonometry
+        question: a=3, b=4, c=5 — cos(C) = (9+16-25)/(24) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Portanto C = ?°
+        correctAnswer: 90°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: a=5, b=5, c=5 — cos(C) = ?
+        correctAnswer: 0.5
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Portanto C = ?°
+        correctAnswer: 60°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: a=7, b=8, c=9 — cos(C) = (49+64-81)/(112) = 32/112 = ?
+        correctAnswer: 0.286
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 4
     title: Ângulos Obtusos
     description: cos negativo ⇒ ângulo obtuso.
     exercises:
-      - { type: trigonometry, question: "Se cos(C) < 0, C é: (agudo/obtuso/reto)", correctAnswer: obtuso }
-      - { type: trigonometry, question: "Se cos(C) > 0 e ≠1, C é: (agudo)", correctAnswer: agudo }
-      - { type: trigonometry, question: "Se cos(C) = 0, C é: (reto)", correctAnswer: reto }
-      - { type: trigonometry, question: "a=3, b=5, c=7 → cos(C) = (9+25-49)/30 = -15/30 = ?", correctAnswer: -0.5 }
-      - { type: trigonometry, question: "Portanto C = ?°", correctAnswer: 120° }
+      - type: trigonometry
+        question: "Se cos(C) < 0, C é: (agudo/obtuso/reto)"
+        correctAnswer: obtuso
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Se cos(C) > 0 e ≠1, C é: (agudo)"
+        correctAnswer: agudo
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Se cos(C) = 0, C é: (reto)"
+        correctAnswer: reto
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: a=3, b=5, c=7 → cos(C) = (9+25-49)/30 = -15/30 = ?
+        correctAnswer: -0.5
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Portanto C = ?°
+        correctAnswer: 120°
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 5
     title: Área (Fórmula de Heron)
     description: Para qualquer triângulo com lados conhecidos.
     exercises:
-      - { type: trigonometry, question: "p (semiperímetro) = (a+b+c)/?", correctAnswer: 2 }
-      - { type: trigonometry, question: "Para a=3, b=4, c=5, p = ?", correctAnswer: 6 }
-      - { type: trigonometry, question: "A = √(p(p-a)(p-b)(p-c)) → √(6·3·2·1) = ?", correctAnswer: 6 }
-      - { type: trigonometry, question: "Para a=b=c=6, p = ?", correctAnswer: 9 }
-      - { type: trigonometry, question: "A equilátero lado 6 = √(9·3·3·3) = ?", correctAnswer: 9√3 }
+      - type: trigonometry
+        question: p (semiperímetro) = (a+b+c)/?
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Para a=3, b=4, c=5, p = ?
+        correctAnswer: 6
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: A = √(p(p-a)(p-b)(p-c)) → √(6·3·2·1) = ?
+        correctAnswer: 6
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Para a=b=c=6, p = ?
+        correctAnswer: 9
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: A equilátero lado 6 = √(9·3·3·3) = ?
+        correctAnswer: 9√3
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 6
     title: Aplicações
     description: Exemplos numéricos.
     exercises:
-      - { type: trigonometry, question: "a=7, b=9, C=45°: c² = 49+81-126·(√2/2) = 130 - 63√2 ≈ ?", correctAnswer: 40.89 }
-      - { type: trigonometry, question: "a=10, b=10, C=120°: c² = 100+100-200·(-0.5) = 300. c = ?", correctAnswer: 10√3 }
-      - { type: trigonometry, question: "a=4, b=6, C=30°: c² = 16+36-48·(√3/2) ≈ ?", correctAnswer: 10.43 }
-      - { type: trigonometry, question: "a=b=5, C=90° : c² = 50. c = ?", correctAnswer: 5√2 }
-      - { type: trigonometry, question: "a=3, b=4, C=120°: c² = 25-24·(-0.5) = 37. c ≈ ?", correctAnswer: 6.08 }
+      - type: trigonometry
+        question: "a=7, b=9, C=45°: c² = 49+81-126·(√2/2) = 130 - 63√2 ≈ ?"
+        correctAnswer: 40.89
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "a=10, b=10, C=120°: c² = 100+100-200·(-0.5) = 300. c = ?"
+        correctAnswer: 10√3
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "a=4, b=6, C=30°: c² = 16+36-48·(√3/2) ≈ ?"
+        correctAnswer: 10.43
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "a=b=5, C=90° : c² = 50. c = ?"
+        correctAnswer: 5√2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "a=3, b=4, C=120°: c² = 25-24·(-0.5) = 37. c ≈ ?"
+        correctAnswer: 6.08
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 7
     title: Lei Reorganizada
     description: Resolver para cos(C).
     exercises:
-      - { type: trigonometry, question: "cos(C) = (a²+b²-c²)/(2ab) (V/F)?", correctAnswer: V }
-      - { type: trigonometry, question: "Se a=5, b=5, c=√50: cos(C) = 0 → C = ?°", correctAnswer: 90° }
-      - { type: trigonometry, question: "Se triângulo tem 3 lados iguais: cos(C) = ?", correctAnswer: 0.5 }
-      - { type: trigonometry, question: "a=3, b=4, c=√7: cos(C) = (9+16-7)/24 = ?", correctAnswer: 0.75 }
-      - { type: trigonometry, question: "a=5, b=12, c=13: cos(C) = 0 (V/F)?", correctAnswer: V }
+      - type: trigonometry
+        question: cos(C) = (a²+b²-c²)/(2ab) (V/F)?
+        correctAnswer: V
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Se a=5, b=5, c=√50: cos(C) = 0 → C = ?°"
+        correctAnswer: 90°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Se triângulo tem 3 lados iguais: cos(C) = ?"
+        correctAnswer: 0.5
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "a=3, b=4, c=√7: cos(C) = (9+16-7)/24 = ?"
+        correctAnswer: 0.75
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "a=5, b=12, c=13: cos(C) = 0 (V/F)?"
+        correctAnswer: V
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 8
     title: Comparação com Lei dos Senos
     description: Quando usar cada uma.
     exercises:
-      - { type: trigonometry, question: "SSS (3 lados): usar (lei dos cossenos/senos)", correctAnswer: lei dos cossenos }
-      - { type: trigonometry, question: "SAS (dois lados e ângulo incluído): usar (lei dos cossenos/senos)", correctAnswer: lei dos cossenos }
-      - { type: trigonometry, question: "AAS (dois ângulos e um lado): usar (senos/cossenos)", correctAnswer: senos }
-      - { type: trigonometry, question: "ASA (um lado entre dois ângulos): usar (senos/cossenos)", correctAnswer: senos }
-      - { type: trigonometry, question: "SSA (ambíguo): usar (senos/cossenos)", correctAnswer: senos }
+      - type: trigonometry
+        question: "SSS (3 lados): usar (lei dos cossenos/senos)"
+        correctAnswer: lei dos cossenos
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "SAS (dois lados e ângulo incluído): usar (lei dos cossenos/senos)"
+        correctAnswer: lei dos cossenos
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "AAS (dois ângulos e um lado): usar (senos/cossenos)"
+        correctAnswer: senos
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "ASA (um lado entre dois ângulos): usar (senos/cossenos)"
+        correctAnswer: senos
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "SSA (ambíguo): usar (senos/cossenos)"
+        correctAnswer: senos
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 9
     title: Verificação
     description: Teste se lados formam triângulo.
     exercises:
-      - { type: trigonometry, question: "Desigualdade triangular: a+b > c (V/F)?", correctAnswer: V }
-      - { type: trigonometry, question: "a=2, b=3, c=6 — forma triângulo? (sim/não)", correctAnswer: não }
-      - { type: trigonometry, question: "a=3, b=4, c=5 — forma triângulo? (sim/não)", correctAnswer: sim }
-      - { type: trigonometry, question: "a=5, b=5, c=5 — área (aprox) = ?", correctAnswer: 10.83 }
-      - { type: trigonometry, question: "a=10, b=10, c=20 — forma triângulo? (sim/não)", correctAnswer: não }
+      - type: trigonometry
+        question: "Desigualdade triangular: a+b > c (V/F)?"
+        correctAnswer: V
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: a=2, b=3, c=6 — forma triângulo? (sim/não)
+        correctAnswer: não
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: a=3, b=4, c=5 — forma triângulo? (sim/não)
+        correctAnswer: sim
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: a=5, b=5, c=5 — área (aprox) = ?
+        correctAnswer: 10.83
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: a=10, b=10, c=20 — forma triângulo? (sim/não)
+        correctAnswer: não
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 10
     title: Revisão Integrada
     description: Aplicação mista.
     exercises:
-      - { type: trigonometry, question: "a=6, b=8, C=90° — c = ?", correctAnswer: 10 }
-      - { type: trigonometry, question: "Para a=b=c=4, C = ?°", correctAnswer: 60° }
-      - { type: trigonometry, question: "a=7, b=24, C=90° — c = ?", correctAnswer: 25 }
-      - { type: trigonometry, question: "Triângulo com lados 3,4,5 tem área = ?", correctAnswer: 6 }
-      - { type: trigonometry, question: "Triângulo equilátero lado 4 tem área = ?", correctAnswer: 4√3 }
+      - type: trigonometry
+        question: a=6, b=8, C=90° — c = ?
+        correctAnswer: 10
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Para a=b=c=4, C = ?°
+        correctAnswer: 60°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: a=7, b=24, C=90° — c = ?
+        correctAnswer: 25
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Triângulo com lados 3,4,5 tem área = ?
+        correctAnswer: 6
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Triângulo equilátero lado 4 tem área = ?
+        correctAnswer: 4√3
+        rationale: Consulte o ciclo trigonométrico.
 target: 50

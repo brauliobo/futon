@@ -3,7 +3,8 @@ level: D
 example: "Divisão básica. Ex.: 12 ÷ 3 = 4"
 subject: math
 difficulty: 2
-objectives: [math.division]
+objectives:
+  - math.division
 authorNotes: Conjunto de math/D.
 inputType: number
 pages:
@@ -11,139 +12,439 @@ pages:
     title: Divisão Nível D — Conjunto 21 – Página 1
     description: Divisão básica.
     exercises:
-      - { type: division, question: "7 ÷ 7 =", correctAnswer: 1 }
-      - { type: division, question: "88 ÷ 8 =", correctAnswer: 11 }
-      - { type: division, question: "12 ÷ 6 =", correctAnswer: 2 }
-      - { type: division, question: "108 ÷ 12 =", correctAnswer: 9 }
-      - { type: division, question: "4 ÷ 2 =", correctAnswer: 2 }
-      - { type: division, question: "15 ÷ 5 =", correctAnswer: 3 }
-      - { type: division, question: "10 ÷ 1 =", correctAnswer: 10 }
-      - { type: division, question: "21 ÷ 7 =", correctAnswer: 3 }
-      - { type: division, question: "24 ÷ 8 =", correctAnswer: 3 }
-      - { type: division, question: "16 ÷ 8 =", correctAnswer: 2 }
+      - type: division
+        question: 7 ÷ 7 =
+        correctAnswer: 1
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 88 ÷ 8 =
+        correctAnswer: 11
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 12 ÷ 6 =
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 108 ÷ 12 =
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 4 ÷ 2 =
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 15 ÷ 5 =
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 10 ÷ 1 =
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 21 ÷ 7 =
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 24 ÷ 8 =
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 16 ÷ 8 =
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 2
     title: Divisão Nível D — Conjunto 21 – Página 2
     description: Divisão básica.
     exercises:
-      - { type: division, question: "24 ÷ 4 =", correctAnswer: 6 }
-      - { type: division, question: "44 ÷ 11 =", correctAnswer: 4 }
-      - { type: division, question: "108 ÷ 9 =", correctAnswer: 12 }
-      - { type: division, question: "54 ÷ 6 =", correctAnswer: 9 }
-      - { type: division, question: "48 ÷ 12 =", correctAnswer: 4 }
-      - { type: division, question: "88 ÷ 11 =", correctAnswer: 8 }
-      - { type: division, question: "120 ÷ 10 =", correctAnswer: 12 }
-      - { type: division, question: "132 ÷ 12 =", correctAnswer: 11 }
-      - { type: division, question: "56 ÷ 7 =", correctAnswer: 8 }
-      - { type: division, question: "84 ÷ 7 =", correctAnswer: 12 }
+      - type: division
+        question: 24 ÷ 4 =
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 44 ÷ 11 =
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 108 ÷ 9 =
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 54 ÷ 6 =
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 48 ÷ 12 =
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 88 ÷ 11 =
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 120 ÷ 10 =
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 132 ÷ 12 =
+        correctAnswer: 11
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 56 ÷ 7 =
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 84 ÷ 7 =
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 3
     title: Divisão Nível D — Conjunto 21 – Página 3
     description: Divisão básica.
     exercises:
-      - { type: division, question: "40 ÷ 4 =", correctAnswer: 10 }
-      - { type: division, question: "110 ÷ 10 =", correctAnswer: 11 }
-      - { type: division, question: "22 ÷ 11 =", correctAnswer: 2 }
-      - { type: division, question: "21 ÷ 3 =", correctAnswer: 7 }
-      - { type: division, question: "30 ÷ 3 =", correctAnswer: 10 }
-      - { type: division, question: "42 ÷ 6 =", correctAnswer: 7 }
-      - { type: division, question: "48 ÷ 8 =", correctAnswer: 6 }
-      - { type: division, question: "10 ÷ 5 =", correctAnswer: 2 }
-      - { type: division, question: "100 ÷ 10 =", correctAnswer: 10 }
-      - { type: division, question: "90 ÷ 9 =", correctAnswer: 10 }
+      - type: division
+        question: 40 ÷ 4 =
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 110 ÷ 10 =
+        correctAnswer: 11
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 22 ÷ 11 =
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 21 ÷ 3 =
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 30 ÷ 3 =
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 42 ÷ 6 =
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 48 ÷ 8 =
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 10 ÷ 5 =
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 100 ÷ 10 =
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 90 ÷ 9 =
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 4
     title: Divisão Nível D — Conjunto 21 – Página 4
     description: Divisão básica.
     exercises:
-      - { type: division, question: "28 ÷ 7 =", correctAnswer: 4 }
-      - { type: division, question: "72 ÷ 8 =", correctAnswer: 9 }
-      - { type: division, question: "60 ÷ 12 =", correctAnswer: 5 }
-      - { type: division, question: "90 ÷ 10 =", correctAnswer: 9 }
-      - { type: division, question: "3 ÷ 3 =", correctAnswer: 1 }
-      - { type: division, question: "18 ÷ 2 =", correctAnswer: 9 }
-      - { type: division, question: "5 ÷ 1 =", correctAnswer: 5 }
-      - { type: division, question: "36 ÷ 4 =", correctAnswer: 9 }
-      - { type: division, question: "50 ÷ 10 =", correctAnswer: 5 }
-      - { type: division, question: "32 ÷ 4 =", correctAnswer: 8 }
+      - type: division
+        question: 28 ÷ 7 =
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 72 ÷ 8 =
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 60 ÷ 12 =
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 90 ÷ 10 =
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 3 ÷ 3 =
+        correctAnswer: 1
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 18 ÷ 2 =
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 5 ÷ 1 =
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 36 ÷ 4 =
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 50 ÷ 10 =
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 32 ÷ 4 =
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 5
     title: Divisão Nível D — Conjunto 21 – Página 5
     description: Divisão básica.
     exercises:
-      - { type: division, question: "84 ÷ 12 =", correctAnswer: 7 }
-      - { type: division, question: "60 ÷ 6 =", correctAnswer: 10 }
-      - { type: division, question: "24 ÷ 6 =", correctAnswer: 4 }
-      - { type: division, question: "36 ÷ 6 =", correctAnswer: 6 }
-      - { type: division, question: "48 ÷ 4 =", correctAnswer: 12 }
-      - { type: division, question: "35 ÷ 7 =", correctAnswer: 5 }
-      - { type: division, question: "2 ÷ 2 =", correctAnswer: 1 }
-      - { type: division, question: "12 ÷ 1 =", correctAnswer: 12 }
-      - { type: division, question: "72 ÷ 12 =", correctAnswer: 6 }
-      - { type: division, question: "27 ÷ 9 =", correctAnswer: 3 }
+      - type: division
+        question: 84 ÷ 12 =
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 60 ÷ 6 =
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 24 ÷ 6 =
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 36 ÷ 6 =
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 48 ÷ 4 =
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 35 ÷ 7 =
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 2 ÷ 2 =
+        correctAnswer: 1
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 12 ÷ 1 =
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 72 ÷ 12 =
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 27 ÷ 9 =
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 6
     title: Divisão Nível D — Conjunto 21 – Página 6
     description: Divisão básica.
     exercises:
-      - { type: division, question: "11 ÷ 11 =", correctAnswer: 1 }
-      - { type: division, question: "8 ÷ 2 =", correctAnswer: 4 }
-      - { type: division, question: "18 ÷ 3 =", correctAnswer: 6 }
-      - { type: division, question: "121 ÷ 11 =", correctAnswer: 11 }
-      - { type: division, question: "7 ÷ 1 =", correctAnswer: 7 }
-      - { type: division, question: "36 ÷ 3 =", correctAnswer: 12 }
-      - { type: division, question: "4 ÷ 1 =", correctAnswer: 4 }
-      - { type: division, question: "42 ÷ 7 =", correctAnswer: 6 }
-      - { type: division, question: "60 ÷ 10 =", correctAnswer: 6 }
-      - { type: division, question: "99 ÷ 9 =", correctAnswer: 11 }
+      - type: division
+        question: 11 ÷ 11 =
+        correctAnswer: 1
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 8 ÷ 2 =
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 18 ÷ 3 =
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 121 ÷ 11 =
+        correctAnswer: 11
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 7 ÷ 1 =
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 36 ÷ 3 =
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 4 ÷ 1 =
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 42 ÷ 7 =
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 60 ÷ 10 =
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 99 ÷ 9 =
+        correctAnswer: 11
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 7
     title: Divisão Nível D — Conjunto 21 – Página 7
     description: Divisão básica.
     exercises:
-      - { type: division, question: "80 ÷ 8 =", correctAnswer: 10 }
-      - { type: division, question: "6 ÷ 3 =", correctAnswer: 2 }
-      - { type: division, question: "30 ÷ 5 =", correctAnswer: 6 }
-      - { type: division, question: "66 ÷ 6 =", correctAnswer: 11 }
-      - { type: division, question: "77 ÷ 11 =", correctAnswer: 7 }
-      - { type: division, question: "55 ÷ 5 =", correctAnswer: 11 }
-      - { type: division, question: "6 ÷ 1 =", correctAnswer: 6 }
-      - { type: division, question: "5 ÷ 5 =", correctAnswer: 1 }
-      - { type: division, question: "63 ÷ 7 =", correctAnswer: 9 }
-      - { type: division, question: "70 ÷ 10 =", correctAnswer: 7 }
+      - type: division
+        question: 80 ÷ 8 =
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 6 ÷ 3 =
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 30 ÷ 5 =
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 66 ÷ 6 =
+        correctAnswer: 11
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 77 ÷ 11 =
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 55 ÷ 5 =
+        correctAnswer: 11
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 6 ÷ 1 =
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 5 ÷ 5 =
+        correctAnswer: 1
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 63 ÷ 7 =
+        correctAnswer: 9
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 70 ÷ 10 =
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 8
     title: Divisão Nível D — Conjunto 21 – Página 8
     description: Divisão básica.
     exercises:
-      - { type: division, question: "16 ÷ 2 =", correctAnswer: 8 }
-      - { type: division, question: "72 ÷ 6 =", correctAnswer: 12 }
-      - { type: division, question: "18 ÷ 6 =", correctAnswer: 3 }
-      - { type: division, question: "14 ÷ 2 =", correctAnswer: 7 }
-      - { type: division, question: "9 ÷ 3 =", correctAnswer: 3 }
-      - { type: division, question: "110 ÷ 11 =", correctAnswer: 10 }
-      - { type: division, question: "54 ÷ 9 =", correctAnswer: 6 }
-      - { type: division, question: "24 ÷ 3 =", correctAnswer: 8 }
-      - { type: division, question: "120 ÷ 12 =", correctAnswer: 10 }
-      - { type: division, question: "63 ÷ 9 =", correctAnswer: 7 }
+      - type: division
+        question: 16 ÷ 2 =
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 72 ÷ 6 =
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 18 ÷ 6 =
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 14 ÷ 2 =
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 9 ÷ 3 =
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 110 ÷ 11 =
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 54 ÷ 9 =
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 24 ÷ 3 =
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 120 ÷ 12 =
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 63 ÷ 9 =
+        correctAnswer: 7
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 9
     title: Divisão Nível D — Conjunto 21 – Página 9
     description: Divisão básica.
     exercises:
-      - { type: division, question: "96 ÷ 12 =", correctAnswer: 8 }
-      - { type: division, question: "50 ÷ 5 =", correctAnswer: 10 }
-      - { type: division, question: "12 ÷ 12 =", correctAnswer: 1 }
-      - { type: division, question: "32 ÷ 8 =", correctAnswer: 4 }
-      - { type: division, question: "24 ÷ 12 =", correctAnswer: 2 }
-      - { type: division, question: "30 ÷ 5 =", correctAnswer: 6 }
-      - { type: division, question: "36 ÷ 3 =", correctAnswer: 12 }
-      - { type: division, question: "48 ÷ 12 =", correctAnswer: 4 }
-      - { type: division, question: "21 ÷ 7 =", correctAnswer: 3 }
-      - { type: division, question: "110 ÷ 11 =", correctAnswer: 10 }
+      - type: division
+        question: 96 ÷ 12 =
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 50 ÷ 5 =
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 12 ÷ 12 =
+        correctAnswer: 1
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 32 ÷ 8 =
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 24 ÷ 12 =
+        correctAnswer: 2
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 30 ÷ 5 =
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 36 ÷ 3 =
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 48 ÷ 12 =
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 21 ÷ 7 =
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 110 ÷ 11 =
+        correctAnswer: 10
+        rationale: Divisão exata; pense na multiplicação inversa.
   - pageNumber: 10
     title: Divisão Nível D — Conjunto 21 – Página 10
     description: Divisão básica.
     exercises:
-      - { type: division, question: "72 ÷ 6 =", correctAnswer: 12 }
-      - { type: division, question: "28 ÷ 7 =", correctAnswer: 4 }
-      - { type: division, question: "24 ÷ 3 =", correctAnswer: 8 }
-      - { type: division, question: "121 ÷ 11 =", correctAnswer: 11 }
-      - { type: division, question: "54 ÷ 9 =", correctAnswer: 6 }
-      - { type: division, question: "108 ÷ 9 =", correctAnswer: 12 }
-      - { type: division, question: "24 ÷ 8 =", correctAnswer: 3 }
-      - { type: division, question: "16 ÷ 2 =", correctAnswer: 8 }
-      - { type: division, question: "5 ÷ 1 =", correctAnswer: 5 }
-      - { type: division, question: "18 ÷ 6 =", correctAnswer: 3 }
+      - type: division
+        question: 72 ÷ 6 =
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 28 ÷ 7 =
+        correctAnswer: 4
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 24 ÷ 3 =
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 121 ÷ 11 =
+        correctAnswer: 11
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 54 ÷ 9 =
+        correctAnswer: 6
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 108 ÷ 9 =
+        correctAnswer: 12
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 24 ÷ 8 =
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 16 ÷ 2 =
+        correctAnswer: 8
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 5 ÷ 1 =
+        correctAnswer: 5
+        rationale: Divisão exata; pense na multiplicação inversa.
+      - type: division
+        question: 18 ÷ 6 =
+        correctAnswer: 3
+        rationale: Divisão exata; pense na multiplicação inversa.

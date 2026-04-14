@@ -3,97 +3,248 @@ level: M
 subject: math
 inputType: number
 difficulty: 4
-objectives: [series.geometric]
-example: "aₙ = a₁ · q^(n-1)"
+objectives:
+  - series.geometric
+example: aₙ = a₁ · q^(n-1)
 pages:
   - pageNumber: 1
     title: Termo Geral
     description: aₙ = a₁ · q^(n-1).
     exercises:
-      - { type: sequence, question: "a₁=2, q=3, a₄ = ?", correctAnswer: 54 }
-      - { type: sequence, question: "a₁=1, q=2, a₁₀ = ?", correctAnswer: 512 }
-      - { type: sequence, question: "a₁=5, q=0.5, a₄ = ?", correctAnswer: 0.625 }
-      - { type: sequence, question: "a₁=3, q=1, a₁₀ = ?", correctAnswer: 3 }
-      - { type: sequence, question: "a₁=1, q=-2, a₅ = ?", correctAnswer: 16 }
+      - type: sequence
+        question: a₁=2, q=3, a₄ = ?
+        correctAnswer: 54
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: a₁=1, q=2, a₁₀ = ?
+        correctAnswer: 512
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: a₁=5, q=0.5, a₄ = ?
+        correctAnswer: 0.625
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: a₁=3, q=1, a₁₀ = ?
+        correctAnswer: 3
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: a₁=1, q=-2, a₅ = ?
+        correctAnswer: 16
+        rationale: Identifique o padrão (diferença ou razão constante).
   - pageNumber: 2
     title: Razão Geométrica
     description: q = aₙ/aₙ₋₁.
     exercises:
-      - { type: sequence, question: "PG {2,6,18,54,...} — q = ?", correctAnswer: 3 }
-      - { type: sequence, question: "PG {1,0.5,0.25,...} — q = ?", correctAnswer: 0.5 }
-      - { type: sequence, question: "PG {5,-10,20,-40,...} — q = ?", correctAnswer: -2 }
-      - { type: sequence, question: "PG com a₁=4 e a₂=12, q = ?", correctAnswer: 3 }
-      - { type: sequence, question: "PG com q=1 é: (constante/crescente)", correctAnswer: constante }
+      - type: sequence
+        question: PG {2,6,18,54,...} — q = ?
+        correctAnswer: 3
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: PG {1,0.5,0.25,...} — q = ?
+        correctAnswer: 0.5
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: PG {5,-10,20,-40,...} — q = ?
+        correctAnswer: -2
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: PG com a₁=4 e a₂=12, q = ?
+        correctAnswer: 3
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: "PG com q=1 é: (constante/crescente)"
+        correctAnswer: constante
+        rationale: Identifique o padrão (diferença ou razão constante).
   - pageNumber: 3
     title: Soma Finita
     description: Sₙ = a₁·(qⁿ-1)/(q-1), q≠1.
     exercises:
-      - { type: sequence, question: "PG 2,4,8,16 — S₄ = ?", correctAnswer: 30 }
-      - { type: sequence, question: "PG 1,3,9,27,81 — S₅ = ?", correctAnswer: 121 }
-      - { type: sequence, question: "PG 1,2,4,8,16,32 — S₆ = ?", correctAnswer: 63 }
-      - { type: sequence, question: "a₁=1, q=0.5, S₁₀ = (0.5^10 - 1)/(0.5-1) ≈ ?", correctAnswer: 1.998 }
-      - { type: sequence, question: "PG 5,5,5,5,5,5 (q=1) — soma = ?", correctAnswer: 30 }
+      - type: sequence
+        question: PG 2,4,8,16 — S₄ = ?
+        correctAnswer: 30
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: PG 1,3,9,27,81 — S₅ = ?
+        correctAnswer: 121
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: PG 1,2,4,8,16,32 — S₆ = ?
+        correctAnswer: 63
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: a₁=1, q=0.5, S₁₀ = (0.5^10 - 1)/(0.5-1) ≈ ?
+        correctAnswer: 1.998
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: PG 5,5,5,5,5,5 (q=1) — soma = ?
+        correctAnswer: 30
+        rationale: Identifique o padrão (diferença ou razão constante).
   - pageNumber: 4
     title: Soma Infinita
     description: S∞ = a₁/(1-q), |q|<1.
     exercises:
-      - { type: sequence, question: "PG 1, 1/2, 1/4,... — S∞ = ?", correctAnswer: 2 }
-      - { type: sequence, question: "PG 3, 1, 1/3,... — S∞ = ?", correctAnswer: 4.5 }
-      - { type: sequence, question: "PG 10, 5, 2.5,... — S∞ = ?", correctAnswer: 20 }
-      - { type: sequence, question: "Converge apenas se |q| < ?", correctAnswer: 1 }
-      - { type: sequence, question: "Diverge se |q| ≥ ?", correctAnswer: 1 }
+      - type: sequence
+        question: PG 1, 1/2, 1/4,... — S∞ = ?
+        correctAnswer: 2
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: PG 3, 1, 1/3,... — S∞ = ?
+        correctAnswer: 4.5
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: PG 10, 5, 2.5,... — S∞ = ?
+        correctAnswer: 20
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Converge apenas se |q| < ?
+        correctAnswer: 1
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Diverge se |q| ≥ ?
+        correctAnswer: 1
+        rationale: Identifique o padrão (diferença ou razão constante).
   - pageNumber: 5
     title: PG Crescente/Decrescente/Oscilante
     description: Classificação pela razão.
     exercises:
-      - { type: sequence, question: "q>1 e a₁>0 — PG é: (crescente)", correctAnswer: crescente }
-      - { type: sequence, question: "0<q<1 — PG é: (decrescente)", correctAnswer: decrescente }
-      - { type: sequence, question: "q<0 — PG é: (oscilante)", correctAnswer: oscilante }
-      - { type: sequence, question: "q=0 — PG é: (nula/constante)", correctAnswer: nula }
-      - { type: sequence, question: "q=1 — PG é: (constante)", correctAnswer: constante }
+      - type: sequence
+        question: "q>1 e a₁>0 — PG é: (crescente)"
+        correctAnswer: crescente
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: "0<q<1 — PG é: (decrescente)"
+        correctAnswer: decrescente
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: "q<0 — PG é: (oscilante)"
+        correctAnswer: oscilante
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: "q=0 — PG é: (nula/constante)"
+        correctAnswer: nula
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: "q=1 — PG é: (constante)"
+        correctAnswer: constante
+        rationale: Identifique o padrão (diferença ou razão constante).
   - pageNumber: 6
     title: Termo Médio
     description: Termo médio geométrico aₙ² = aₙ₋₁·aₙ₊₁.
     exercises:
-      - { type: sequence, question: "Se a, b, c formam PG, b² = a·? ", correctAnswer: c }
-      - { type: sequence, question: "Entre 2 e 8 em PG, termo médio = ?", correctAnswer: 4 }
-      - { type: sequence, question: "Entre 3 e 27 em PG, termo médio = ?", correctAnswer: 9 }
-      - { type: sequence, question: "Entre 1 e 100 em PG, termo médio = ?", correctAnswer: 10 }
-      - { type: sequence, question: "Entre 1 e 16 em PG, termo médio = ?", correctAnswer: 4 }
+      - type: sequence
+        question: "Se a, b, c formam PG, b² = a·? "
+        correctAnswer: c
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Entre 2 e 8 em PG, termo médio = ?
+        correctAnswer: 4
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Entre 3 e 27 em PG, termo médio = ?
+        correctAnswer: 9
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Entre 1 e 100 em PG, termo médio = ?
+        correctAnswer: 10
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Entre 1 e 16 em PG, termo médio = ?
+        correctAnswer: 4
+        rationale: Identifique o padrão (diferença ou razão constante).
   - pageNumber: 7
     title: Aplicações
     description: Contextos do cotidiano.
     exercises:
-      - { type: sequence, question: "Bactérias dobram a cada hora. 1 no início → após 5 h = ?", correctAnswer: 32 }
-      - { type: sequence, question: "Investimento a 10% ao ano — R$100 após 3 anos ≈ ?", correctAnswer: 133.1 }
-      - { type: sequence, question: "Metade remanescente a cada etapa: após 4 etapas de 1 inicial = ?", correctAnswer: 0.0625 }
-      - { type: sequence, question: "Dobrando um grão de arroz 64 vezes (tabuleiro de xadrez) — total = 2^64 - 1 (V/F)?", correctAnswer: V }
-      - { type: sequence, question: "Em decaimento radioativo, constante é PG com q<1 (V/F)?", correctAnswer: V }
+      - type: sequence
+        question: Bactérias dobram a cada hora. 1 no início → após 5 h = ?
+        correctAnswer: 32
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Investimento a 10% ao ano — R$100 após 3 anos ≈ ?
+        correctAnswer: 133.1
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: "Metade remanescente a cada etapa: após 4 etapas de 1 inicial = ?"
+        correctAnswer: 0.0625
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Dobrando um grão de arroz 64 vezes (tabuleiro de xadrez) — total = 2^64 - 1 (V/F)?
+        correctAnswer: V
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Em decaimento radioativo, constante é PG com q<1 (V/F)?
+        correctAnswer: V
+        rationale: Identifique o padrão (diferença ou razão constante).
   - pageNumber: 8
     title: Termos Desconhecidos
     description: Resolver para a₁ ou q.
     exercises:
-      - { type: sequence, question: "a₁=2 e a₅=162 → q = (162/2)^(1/4) = ?", correctAnswer: 3 }
-      - { type: sequence, question: "a₂=6 e a₃=18 → q = ?", correctAnswer: 3 }
-      - { type: sequence, question: "a₁=1, q=2 → qual n tem aₙ=64?", correctAnswer: 7 }
-      - { type: sequence, question: "aₙ=a₁·qⁿ⁻¹ → se aₙ/a₁ = 81 e n=5, q = ?", correctAnswer: 3 }
-      - { type: sequence, question: "a₄/a₁ = q³. Se a₄=8, a₁=1 → q = ?", correctAnswer: 2 }
+      - type: sequence
+        question: a₁=2 e a₅=162 → q = (162/2)^(1/4) = ?
+        correctAnswer: 3
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: a₂=6 e a₃=18 → q = ?
+        correctAnswer: 3
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: a₁=1, q=2 → qual n tem aₙ=64?
+        correctAnswer: 7
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: aₙ=a₁·qⁿ⁻¹ → se aₙ/a₁ = 81 e n=5, q = ?
+        correctAnswer: 3
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: a₄/a₁ = q³. Se a₄=8, a₁=1 → q = ?
+        correctAnswer: 2
+        rationale: Identifique o padrão (diferença ou razão constante).
   - pageNumber: 9
     title: Soma Comparada
     description: PA vs PG.
     exercises:
-      - { type: sequence, question: "Quem cresce mais rápido em geral? (PG/PA)", correctAnswer: PG }
-      - { type: sequence, question: "Crescimento linear é PA; crescimento exponencial é: (PG/constante)", correctAnswer: PG }
-      - { type: sequence, question: "Soma de PG infinita só faz sentido se q<? em módulo", correctAnswer: 1 }
-      - { type: sequence, question: "Soma de PA infinita diverge sempre? (sim/não)", correctAnswer: sim }
-      - { type: sequence, question: "Série geométrica com a₁=1 e q=2 diverge (V/F)?", correctAnswer: V }
+      - type: sequence
+        question: Quem cresce mais rápido em geral? (PG/PA)
+        correctAnswer: PG
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: "Crescimento linear é PA; crescimento exponencial é: (PG/constante)"
+        correctAnswer: PG
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Soma de PG infinita só faz sentido se q<? em módulo
+        correctAnswer: 1
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Soma de PA infinita diverge sempre? (sim/não)
+        correctAnswer: sim
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Série geométrica com a₁=1 e q=2 diverge (V/F)?
+        correctAnswer: V
+        rationale: Identifique o padrão (diferença ou razão constante).
   - pageNumber: 10
     title: Revisão Integrada
     description: Questões variadas.
     exercises:
-      - { type: sequence, question: "PG 3,6,12,...,3072 — n termos? 3072/3=1024=2^10 → n = ?", correctAnswer: 11 }
-      - { type: sequence, question: "Soma de 1 + 1/2 + 1/4 + ... = ?", correctAnswer: 2 }
-      - { type: sequence, question: "Soma de 1 + 1/3 + 1/9 + ... = ?", correctAnswer: 1.5 }
-      - { type: sequence, question: "Se a₁=5, q=2, S₅ = ?", correctAnswer: 155 }
-      - { type: sequence, question: "Termo médio de {4, x, 16} = ?", correctAnswer: 8 }
+      - type: sequence
+        question: PG 3,6,12,...,3072 — n termos? 3072/3=1024=2^10 → n = ?
+        correctAnswer: 11
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Soma de 1 + 1/2 + 1/4 + ... = ?
+        correctAnswer: 2
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Soma de 1 + 1/3 + 1/9 + ... = ?
+        correctAnswer: 1.5
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Se a₁=5, q=2, S₅ = ?
+        correctAnswer: 155
+        rationale: Identifique o padrão (diferença ou razão constante).
+      - type: sequence
+        question: Termo médio de {4, x, 16} = ?
+        correctAnswer: 8
+        rationale: Identifique o padrão (diferença ou razão constante).
 target: 50

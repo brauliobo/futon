@@ -3,7 +3,8 @@ level: A
 example: "Leia e responda. Ex.: Tenho 5 maçãs e ganho 3. Quantas tenho? 8"
 subject: math
 difficulty: 2
-objectives: [math.addition.within_20]
+objectives:
+  - math.addition.within_20
 authorNotes: Conjunto de math/A.
 inputType: number
 pages:
@@ -11,28 +12,88 @@ pages:
     title: Problemas com Frutas e Objetos
     description: Leia cada problema e digite a resposta.
     exercises:
-      - { type: word_problem, question: "Tenho 3 maçãs e ganho 4. Quantas tenho?", correctAnswer: 7 }
-      - { type: word_problem, question: "Havia 5 pássaros. Chegaram mais 2. Quantos ao todo?", correctAnswer: 7 }
-      - { type: word_problem, question: "Comprei 6 balas e 3 chocolates. Quantos doces?", correctAnswer: 9 }
-      - { type: word_problem, question: "Tenho 4 lápis e minha irmã tem 5. Quantos juntos?", correctAnswer: 9 }
-      - { type: word_problem, question: "Num cesto há 7 laranjas e 4 limões. Quantas frutas?", correctAnswer: 11 }
-      - { type: word_problem, question: "Vi 8 carros e depois 5 carros. Total?", correctAnswer: 13 }
-      - { type: word_problem, question: "Li 6 páginas hoje e 7 ontem. Total lido?", correctAnswer: 13 }
-      - { type: word_problem, question: "Ana tem 9 figurinhas e ganha 8. Quantas tem agora?", correctAnswer: 17 }
-      - { type: word_problem, question: "Tinha 10 balões e ganhei 6. Quantos tenho?", correctAnswer: 16 }
-      - { type: word_problem, question: "12 meninos e 7 meninas na festa. Quantas crianças?", correctAnswer: 19 }
+      - type: word_problem
+        question: Tenho 3 maçãs e ganho 4. Quantas tenho?
+        correctAnswer: 7
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: Havia 5 pássaros. Chegaram mais 2. Quantos ao todo?
+        correctAnswer: 7
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: Comprei 6 balas e 3 chocolates. Quantos doces?
+        correctAnswer: 9
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: Tenho 4 lápis e minha irmã tem 5. Quantos juntos?
+        correctAnswer: 9
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: Num cesto há 7 laranjas e 4 limões. Quantas frutas?
+        correctAnswer: 11
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: Vi 8 carros e depois 5 carros. Total?
+        correctAnswer: 13
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: Li 6 páginas hoje e 7 ontem. Total lido?
+        correctAnswer: 13
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: Ana tem 9 figurinhas e ganha 8. Quantas tem agora?
+        correctAnswer: 17
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: Tinha 10 balões e ganhei 6. Quantos tenho?
+        correctAnswer: 16
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: 12 meninos e 7 meninas na festa. Quantas crianças?
+        correctAnswer: 19
+        rationale: Identifique os dados e a operação pedida.
   - pageNumber: 2
     title: Problemas com Animais e Pessoas
     description: Leia e responda cada problema.
     exercises:
-      - { type: word_problem, question: "Na fazenda há 3 vacas e 5 cavalos. Quantos animais?", correctAnswer: 8 }
-      - { type: word_problem, question: "4 gatos e 6 cachorros no parque. Quantos ao todo?", correctAnswer: 10 }
-      - { type: word_problem, question: "Havia 7 peixes, nasceram 3. Quantos agora?", correctAnswer: 10 }
-      - { type: word_problem, question: "Na árvore 9 pássaros, chegaram 4. Quantos agora?", correctAnswer: 13 }
-      - { type: word_problem, question: "5 patos e 8 gansos no lago. Total?", correctAnswer: 13 }
-      - { type: word_problem, question: "10 ovelhas brancas e 6 pretas. Quantas ovelhas?", correctAnswer: 16 }
-      - { type: word_problem, question: "11 crianças e 8 adultos na praia. Quantas pessoas?", correctAnswer: 19 }
-      - { type: word_problem, question: "Turma tem 9 meninas e 9 meninos. Quantos alunos?", correctAnswer: 18 }
-      - { type: word_problem, question: "7 joaninhas e 6 abelhas no jardim. Total?", correctAnswer: 13 }
-      - { type: word_problem, question: "Grupo de 8 e outro de 7. Quantas pessoas juntas?", correctAnswer: 15 }
+      - type: word_problem
+        question: Na fazenda há 3 vacas e 5 cavalos. Quantos animais?
+        correctAnswer: 8
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: 4 gatos e 6 cachorros no parque. Quantos ao todo?
+        correctAnswer: 10
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: Havia 7 peixes, nasceram 3. Quantos agora?
+        correctAnswer: 10
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: Na árvore 9 pássaros, chegaram 4. Quantos agora?
+        correctAnswer: 13
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: 5 patos e 8 gansos no lago. Total?
+        correctAnswer: 13
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: 10 ovelhas brancas e 6 pretas. Quantas ovelhas?
+        correctAnswer: 16
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: 11 crianças e 8 adultos na praia. Quantas pessoas?
+        correctAnswer: 19
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: Turma tem 9 meninas e 9 meninos. Quantos alunos?
+        correctAnswer: 18
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: 7 joaninhas e 6 abelhas no jardim. Total?
+        correctAnswer: 13
+        rationale: Identifique os dados e a operação pedida.
+      - type: word_problem
+        question: Grupo de 8 e outro de 7. Quantas pessoas juntas?
+        correctAnswer: 15
+        rationale: Identifique os dados e a operação pedida.
 target: 20

@@ -3,7 +3,8 @@ level: I
 example: "Resolva equações quadráticas e simplifique expressões com expoentes. Ex.: x² = 16, x = ±4"
 subject: math
 difficulty: 4
-objectives: [math.quadratics_exponents]
+objectives:
+  - math.quadratics_exponents
 authorNotes: Conjunto de math/I.
 inputType: number
 pages:
@@ -11,139 +12,439 @@ pages:
     title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 1
     description: Resolva equações quadráticas e simplifique expressões com expoentes e radicais.
     exercises:
-      - { type: quadratic, question: "(x - -7)(x - -3) = 0", correctAnswer: "x = -7 ou x = -3" }
-      - { type: quadratic, question: "x² = 121", correctAnswer: "x = 11" }
-      - { type: quadratic, question: "(x - 5)(x - -3) = 0", correctAnswer: "x = 5 ou x = -3" }
-      - { type: quadratic, question: "(x - 5)(x - -5) = 0", correctAnswer: "x = 5 ou x = -5" }
-      - { type: quadratic, question: "3x² + 3x + 0 = 0", correctAnswer: "x = 0 ou x = -1" }
-      - { type: quadratic, question: "(x - -6)(x - -4) = 0", correctAnswer: "x = -6 ou x = -4" }
-      - { type: quadratic, question: "(x - -4)(x - -7) = 0", correctAnswer: "x = -4 ou x = -7" }
-      - { type: quadratic, question: "(x - -3)(x - -7) = 0", correctAnswer: "x = -3 ou x = -7" }
-      - { type: quadratic, question: "1x² + 6x + 8 = 0", correctAnswer: "x = -2 ou x = -4" }
-      - { type: quadratic, question: "(x - -5)(x - -9) = 0", correctAnswer: "x = -5 ou x = -9" }
+      - type: quadratic
+        question: (x - -7)(x - -3) = 0
+        correctAnswer: x = -7 ou x = -3
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: x² = 121
+        correctAnswer: x = 11
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 5)(x - -3) = 0
+        correctAnswer: x = 5 ou x = -3
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 5)(x - -5) = 0
+        correctAnswer: x = 5 ou x = -5
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 3x² + 3x + 0 = 0
+        correctAnswer: x = 0 ou x = -1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -6)(x - -4) = 0
+        correctAnswer: x = -6 ou x = -4
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -4)(x - -7) = 0
+        correctAnswer: x = -4 ou x = -7
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -3)(x - -7) = 0
+        correctAnswer: x = -3 ou x = -7
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 1x² + 6x + 8 = 0
+        correctAnswer: x = -2 ou x = -4
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -5)(x - -9) = 0
+        correctAnswer: x = -5 ou x = -9
+        rationale: Use fatoração ou a fórmula de Bhaskara.
   - pageNumber: 2
     title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 2
     description: Resolva equações quadráticas e simplifique expressões com expoentes e radicais.
     exercises:
-      - { type: quadratic, question: "(x - 7)(x - 8) = 0", correctAnswer: "x = 7 ou x = 8" }
-      - { type: quadratic, question: "(x - -4)(x - 3) = 0", correctAnswer: "x = -4 ou x = 3" }
-      - { type: quadratic, question: "(x - 10)(x - 4) = 0", correctAnswer: "x = 10 ou x = 4" }
-      - { type: quadratic, question: "x² = 400", correctAnswer: "x = -20" }
-      - { type: quadratic, question: "(x - -2)(x - 5) = 0", correctAnswer: "x = -2 ou x = 5" }
-      - { type: quadratic, question: "(x - -5)(x - -1) = 0", correctAnswer: "x = -5 ou x = -1" }
-      - { type: quadratic, question: "(x - 1)(x - 10) = 0", correctAnswer: "x = 1 ou x = 10" }
-      - { type: quadratic, question: "(x - 9)(x - -10) = 0", correctAnswer: "x = 9 ou x = -10" }
-      - { type: quadratic, question: "1x² + -8x + 0 = 0", correctAnswer: "x = 8 ou x = 0" }
-      - { type: quadratic, question: "(x - 2)(x - -7) = 0", correctAnswer: "x = 2 ou x = -7" }
+      - type: quadratic
+        question: (x - 7)(x - 8) = 0
+        correctAnswer: x = 7 ou x = 8
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -4)(x - 3) = 0
+        correctAnswer: x = -4 ou x = 3
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 10)(x - 4) = 0
+        correctAnswer: x = 10 ou x = 4
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: x² = 400
+        correctAnswer: x = -20
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -2)(x - 5) = 0
+        correctAnswer: x = -2 ou x = 5
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -5)(x - -1) = 0
+        correctAnswer: x = -5 ou x = -1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 1)(x - 10) = 0
+        correctAnswer: x = 1 ou x = 10
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 9)(x - -10) = 0
+        correctAnswer: x = 9 ou x = -10
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 1x² + -8x + 0 = 0
+        correctAnswer: x = 8 ou x = 0
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 2)(x - -7) = 0
+        correctAnswer: x = 2 ou x = -7
+        rationale: Use fatoração ou a fórmula de Bhaskara.
   - pageNumber: 3
     title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 3
     description: Resolva equações quadráticas e simplifique expressões com expoentes e radicais.
     exercises:
-      - { type: exponent, question: "5^3", correctAnswer: 125 }
-      - { type: quadratic, question: "(x - 1)(x - 8) = 0", correctAnswer: "x = 1 ou x = 8" }
-      - { type: quadratic, question: "(x - 3)(x - 1) = 0", correctAnswer: "x = 3 ou x = 1" }
-      - { type: exponent, question: "x^4 = 81", correctAnswer: 3 }
-      - { type: quadratic, question: "(x - 2)(x - -10) = 0", correctAnswer: "x = 2 ou x = -10" }
-      - { type: quadratic, question: "1x² + 3x + 2 = 0", correctAnswer: "x = -1 ou x = -2" }
-      - { type: exponent, question: "x^3 = 512", correctAnswer: 8 }
-      - { type: radical, question: "√1 + √1", correctAnswer: 2 }
-      - { type: quadratic, question: "(x - 1)(x - -7) = 0", correctAnswer: "x = 1 ou x = -7" }
-      - { type: quadratic, question: "(x - 5)(x - -9) = 0", correctAnswer: "x = 5 ou x = -9" }
+      - type: exponent
+        question: 5^3
+        correctAnswer: 125
+        rationale: Use propriedades de potências.
+      - type: quadratic
+        question: (x - 1)(x - 8) = 0
+        correctAnswer: x = 1 ou x = 8
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 3)(x - 1) = 0
+        correctAnswer: x = 3 ou x = 1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: exponent
+        question: x^4 = 81
+        correctAnswer: 3
+        rationale: Use propriedades de potências.
+      - type: quadratic
+        question: (x - 2)(x - -10) = 0
+        correctAnswer: x = 2 ou x = -10
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 1x² + 3x + 2 = 0
+        correctAnswer: x = -1 ou x = -2
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: exponent
+        question: x^3 = 512
+        correctAnswer: 8
+        rationale: Use propriedades de potências.
+      - type: radical
+        question: √1 + √1
+        correctAnswer: 2
+        rationale: Aplique propriedades de radicais.
+      - type: quadratic
+        question: (x - 1)(x - -7) = 0
+        correctAnswer: x = 1 ou x = -7
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 5)(x - -9) = 0
+        correctAnswer: x = 5 ou x = -9
+        rationale: Use fatoração ou a fórmula de Bhaskara.
   - pageNumber: 4
     title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 4
     description: Resolva equações quadráticas e simplifique expressões com expoentes e radicais.
     exercises:
-      - { type: quadratic, question: "(x - -2)(x - -4) = 0", correctAnswer: "x = -2 ou x = -4" }
-      - { type: exponent, question: "5^2", correctAnswer: 25 }
-      - { type: quadratic, question: "(x - 4)(x - 2) = 0", correctAnswer: "x = 4 ou x = 2" }
-      - { type: quadratic, question: "1x² + -8x + -9 = 0", correctAnswer: "x = 9 ou x = -1" }
-      - { type: quadratic, question: "(x - -10)(x - 7) = 0", correctAnswer: "x = -10 ou x = 7" }
-      - { type: quadratic, question: "(x - 2)(x - 8) = 0", correctAnswer: "x = 2 ou x = 8" }
-      - { type: radical, question: "√196", correctAnswer: 14 }
-      - { type: quadratic, question: "(x - 6)(x - -4) = 0", correctAnswer: "x = 6 ou x = -4" }
-      - { type: quadratic, question: "x² = 400", correctAnswer: "x = 20" }
-      - { type: quadratic, question: "1x² + 6x + 0 = 0", correctAnswer: "x = 0 ou x = -6" }
+      - type: quadratic
+        question: (x - -2)(x - -4) = 0
+        correctAnswer: x = -2 ou x = -4
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: exponent
+        question: 5^2
+        correctAnswer: 25
+        rationale: Use propriedades de potências.
+      - type: quadratic
+        question: (x - 4)(x - 2) = 0
+        correctAnswer: x = 4 ou x = 2
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 1x² + -8x + -9 = 0
+        correctAnswer: x = 9 ou x = -1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -10)(x - 7) = 0
+        correctAnswer: x = -10 ou x = 7
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 2)(x - 8) = 0
+        correctAnswer: x = 2 ou x = 8
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: radical
+        question: √196
+        correctAnswer: 14
+        rationale: Aplique propriedades de radicais.
+      - type: quadratic
+        question: (x - 6)(x - -4) = 0
+        correctAnswer: x = 6 ou x = -4
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: x² = 400
+        correctAnswer: x = 20
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 1x² + 6x + 0 = 0
+        correctAnswer: x = 0 ou x = -6
+        rationale: Use fatoração ou a fórmula de Bhaskara.
   - pageNumber: 5
     title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 5
     description: Resolva equações quadráticas e simplifique expressões com expoentes e radicais.
     exercises:
-      - { type: quadratic, question: "(x - 10)(x - -6) = 0", correctAnswer: "x = 10 ou x = -6" }
-      - { type: quadratic, question: "(x - 2)(x - -8) = 0", correctAnswer: "x = 2 ou x = -8" }
-      - { type: quadratic, question: "(x - -7)(x - -8) = 0", correctAnswer: "x = -7 ou x = -8" }
-      - { type: quadratic, question: "x² = 9", correctAnswer: "x = 3" }
-      - { type: quadratic, question: "(x - 1)(x - 6) = 0", correctAnswer: "x = 1 ou x = 6" }
-      - { type: quadratic, question: "(x - 3)(x - -1) = 0", correctAnswer: "x = 3 ou x = -1" }
-      - { type: quadratic, question: "1x² + 9x + -10 = 0", correctAnswer: "x = 1 ou x = -10" }
-      - { type: quadratic, question: "(x - 7)(x - -6) = 0", correctAnswer: "x = 7 ou x = -6" }
-      - { type: quadratic, question: "(x - -9)(x - -7) = 0", correctAnswer: "x = -9 ou x = -7" }
-      - { type: quadratic, question: "(x - 2)(x - -2) = 0", correctAnswer: "x = 2 ou x = -2" }
+      - type: quadratic
+        question: (x - 10)(x - -6) = 0
+        correctAnswer: x = 10 ou x = -6
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 2)(x - -8) = 0
+        correctAnswer: x = 2 ou x = -8
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -7)(x - -8) = 0
+        correctAnswer: x = -7 ou x = -8
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: x² = 9
+        correctAnswer: x = 3
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 1)(x - 6) = 0
+        correctAnswer: x = 1 ou x = 6
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 3)(x - -1) = 0
+        correctAnswer: x = 3 ou x = -1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 1x² + 9x + -10 = 0
+        correctAnswer: x = 1 ou x = -10
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 7)(x - -6) = 0
+        correctAnswer: x = 7 ou x = -6
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -9)(x - -7) = 0
+        correctAnswer: x = -9 ou x = -7
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 2)(x - -2) = 0
+        correctAnswer: x = 2 ou x = -2
+        rationale: Use fatoração ou a fórmula de Bhaskara.
   - pageNumber: 6
     title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 6
     description: Resolva equações quadráticas e simplifique expressões com expoentes e radicais.
     exercises:
-      - { type: quadratic, question: "5x² + 10x + 0 = 0", correctAnswer: "x = 0 ou x = -2" }
-      - { type: quadratic, question: "(x - 2)(x - -5) = 0", correctAnswer: "x = 2 ou x = -5" }
-      - { type: quadratic, question: "(x - 10)(x - 6) = 0", correctAnswer: "x = 10 ou x = 6" }
-      - { type: exponent, question: "1^1", correctAnswer: 1 }
-      - { type: quadratic, question: "(x - -6)(x - -5) = 0", correctAnswer: "x = -6 ou x = -5" }
-      - { type: quadratic, question: "2x² + 8x + 8 = 0", correctAnswer: "x = -2" }
-      - { type: quadratic, question: "(x - 7)(x - 6) = 0", correctAnswer: "x = 7 ou x = 6" }
-      - { type: quadratic, question: "x² = 361", correctAnswer: "x = ±19" }
-      - { type: quadratic, question: "(x - -6)(x - -3) = 0", correctAnswer: "x = -6 ou x = -3" }
-      - { type: quadratic, question: "1x² + -3x + 2 = 0", correctAnswer: "x = 2 ou x = 1" }
+      - type: quadratic
+        question: 5x² + 10x + 0 = 0
+        correctAnswer: x = 0 ou x = -2
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 2)(x - -5) = 0
+        correctAnswer: x = 2 ou x = -5
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 10)(x - 6) = 0
+        correctAnswer: x = 10 ou x = 6
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: exponent
+        question: 1^1
+        correctAnswer: 1
+        rationale: Use propriedades de potências.
+      - type: quadratic
+        question: (x - -6)(x - -5) = 0
+        correctAnswer: x = -6 ou x = -5
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 2x² + 8x + 8 = 0
+        correctAnswer: x = -2
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 7)(x - 6) = 0
+        correctAnswer: x = 7 ou x = 6
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: x² = 361
+        correctAnswer: x = ±19
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -6)(x - -3) = 0
+        correctAnswer: x = -6 ou x = -3
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 1x² + -3x + 2 = 0
+        correctAnswer: x = 2 ou x = 1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
   - pageNumber: 7
     title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 7
     description: Resolva equações quadráticas e simplifique expressões com expoentes e radicais.
     exercises:
-      - { type: quadratic, question: "(x - 1)(x - 9) = 0", correctAnswer: "x = 1 ou x = 9" }
-      - { type: quadratic, question: "1x² + -5x + -6 = 0", correctAnswer: "x = 6 ou x = -1" }
-      - { type: quadratic, question: "(x - 6)(x - 7) = 0", correctAnswer: "x = 6 ou x = 7" }
-      - { type: quadratic, question: "(x - -4)(x - -3) = 0", correctAnswer: "x = -4 ou x = -3" }
-      - { type: exponent, question: "x^1 = 8", correctAnswer: 8 }
-      - { type: quadratic, question: "(x - -6)(x - 2) = 0", correctAnswer: "x = -6 ou x = 2" }
-      - { type: quadratic, question: "(x - 9)(x - -2) = 0", correctAnswer: "x = 9 ou x = -2" }
-      - { type: quadratic, question: "(x - -1)(x - 4) = 0", correctAnswer: "x = -1 ou x = 4" }
-      - { type: quadratic, question: "(x - 3)(x - -6) = 0", correctAnswer: "x = 3 ou x = -6" }
-      - { type: quadratic, question: "(x - -10)(x - -3) = 0", correctAnswer: "x = -10 ou x = -3" }
+      - type: quadratic
+        question: (x - 1)(x - 9) = 0
+        correctAnswer: x = 1 ou x = 9
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 1x² + -5x + -6 = 0
+        correctAnswer: x = 6 ou x = -1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 6)(x - 7) = 0
+        correctAnswer: x = 6 ou x = 7
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -4)(x - -3) = 0
+        correctAnswer: x = -4 ou x = -3
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: exponent
+        question: x^1 = 8
+        correctAnswer: 8
+        rationale: Use propriedades de potências.
+      - type: quadratic
+        question: (x - -6)(x - 2) = 0
+        correctAnswer: x = -6 ou x = 2
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 9)(x - -2) = 0
+        correctAnswer: x = 9 ou x = -2
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -1)(x - 4) = 0
+        correctAnswer: x = -1 ou x = 4
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 3)(x - -6) = 0
+        correctAnswer: x = 3 ou x = -6
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -10)(x - -3) = 0
+        correctAnswer: x = -10 ou x = -3
+        rationale: Use fatoração ou a fórmula de Bhaskara.
   - pageNumber: 8
     title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 8
     description: Resolva equações quadráticas e simplifique expressões com expoentes e radicais.
     exercises:
-      - { type: quadratic, question: "(x - 9)(x - 2) = 0", correctAnswer: "x = 9 ou x = 2" }
-      - { type: quadratic, question: "1x² + 8x + 0 = 0", correctAnswer: "x = 0 ou x = -8" }
-      - { type: quadratic, question: "2x² + -6x + 4 = 0", correctAnswer: "x = 2 ou x = 1" }
-      - { type: quadratic, question: "x² = 225", correctAnswer: "x = -15" }
-      - { type: quadratic, question: "3x² + 6x + 0 = 0", correctAnswer: "x = 0 ou x = -2" }
-      - { type: quadratic, question: "(x - 10)(x - -7) = 0", correctAnswer: "x = 10 ou x = -7" }
-      - { type: radical, question: "√4 + √9", correctAnswer: 5 }
-      - { type: quadratic, question: "(x - 2)(x - 1) = 0", correctAnswer: "x = 2 ou x = 1" }
-      - { type: exponent, question: "x^4 = 16", correctAnswer: 2 }
-      - { type: exponent, question: "x^2 = 100", correctAnswer: 10 }
+      - type: quadratic
+        question: (x - 9)(x - 2) = 0
+        correctAnswer: x = 9 ou x = 2
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 1x² + 8x + 0 = 0
+        correctAnswer: x = 0 ou x = -8
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 2x² + -6x + 4 = 0
+        correctAnswer: x = 2 ou x = 1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: x² = 225
+        correctAnswer: x = -15
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 3x² + 6x + 0 = 0
+        correctAnswer: x = 0 ou x = -2
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 10)(x - -7) = 0
+        correctAnswer: x = 10 ou x = -7
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: radical
+        question: √4 + √9
+        correctAnswer: 5
+        rationale: Aplique propriedades de radicais.
+      - type: quadratic
+        question: (x - 2)(x - 1) = 0
+        correctAnswer: x = 2 ou x = 1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: exponent
+        question: x^4 = 16
+        correctAnswer: 2
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: x^2 = 100
+        correctAnswer: 10
+        rationale: Use propriedades de potências.
   - pageNumber: 9
     title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 9
     description: Resolva equações quadráticas e simplifique expressões com expoentes e radicais.
     exercises:
-      - { type: quadratic, question: "1x² + -7x + 6 = 0", correctAnswer: "x = 6 ou x = 1" }
-      - { type: quadratic, question: "(x - 10)(x - -9) = 0", correctAnswer: "x = 10 ou x = -9" }
-      - { type: quadratic, question: "(x - -10)(x - -1) = 0", correctAnswer: "x = -10 ou x = -1" }
-      - { type: quadratic, question: "(x - -9)(x - -8) = 0", correctAnswer: "x = -9 ou x = -8" }
-      - { type: quadratic, question: "(x - 2)(x - -6) = 0", correctAnswer: "x = 2 ou x = -6" }
-      - { type: radical, question: "√4 + √9", correctAnswer: 5 }
-      - { type: quadratic, question: "(x - -2)(x - 5) = 0", correctAnswer: "x = -2 ou x = 5" }
-      - { type: quadratic, question: "(x - -5)(x - -1) = 0", correctAnswer: "x = -5 ou x = -1" }
-      - { type: quadratic, question: "2x² + -6x + 4 = 0", correctAnswer: "x = 2 ou x = 1" }
-      - { type: quadratic, question: "(x - 2)(x - -10) = 0", correctAnswer: "x = 2 ou x = -10" }
+      - type: quadratic
+        question: 1x² + -7x + 6 = 0
+        correctAnswer: x = 6 ou x = 1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 10)(x - -9) = 0
+        correctAnswer: x = 10 ou x = -9
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -10)(x - -1) = 0
+        correctAnswer: x = -10 ou x = -1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -9)(x - -8) = 0
+        correctAnswer: x = -9 ou x = -8
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 2)(x - -6) = 0
+        correctAnswer: x = 2 ou x = -6
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: radical
+        question: √4 + √9
+        correctAnswer: 5
+        rationale: Aplique propriedades de radicais.
+      - type: quadratic
+        question: (x - -2)(x - 5) = 0
+        correctAnswer: x = -2 ou x = 5
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -5)(x - -1) = 0
+        correctAnswer: x = -5 ou x = -1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 2x² + -6x + 4 = 0
+        correctAnswer: x = 2 ou x = 1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 2)(x - -10) = 0
+        correctAnswer: x = 2 ou x = -10
+        rationale: Use fatoração ou a fórmula de Bhaskara.
   - pageNumber: 10
     title: Quadráticas • Expoentes • Radicais — Conjunto 20 – Página 10
     description: Resolva equações quadráticas e simplifique expressões com expoentes e radicais.
     exercises:
-      - { type: exponent, question: "5^2", correctAnswer: 25 }
-      - { type: exponent, question: "x^4 = 16", correctAnswer: 2 }
-      - { type: quadratic, question: "1x² + -7x + 6 = 0", correctAnswer: "x = 6 ou x = 1" }
-      - { type: quadratic, question: "1x² + -5x + -6 = 0", correctAnswer: "x = 6 ou x = -1" }
-      - { type: quadratic, question: "(x - -10)(x - 7) = 0", correctAnswer: "x = -10 ou x = 7" }
-      - { type: quadratic, question: "(x - 4)(x - 2) = 0", correctAnswer: "x = 4 ou x = 2" }
-      - { type: quadratic, question: "1x² + 9x + -10 = 0", correctAnswer: "x = 1 ou x = -10" }
-      - { type: quadratic, question: "5x² + 10x + 0 = 0", correctAnswer: "x = 0 ou x = -2" }
-      - { type: quadratic, question: "(x - 5)(x - -9) = 0", correctAnswer: "x = 5 ou x = -9" }
-      - { type: quadratic, question: "(x - 1)(x - 8) = 0", correctAnswer: "x = 1 ou x = 8" }
+      - type: exponent
+        question: 5^2
+        correctAnswer: 25
+        rationale: Use propriedades de potências.
+      - type: exponent
+        question: x^4 = 16
+        correctAnswer: 2
+        rationale: Use propriedades de potências.
+      - type: quadratic
+        question: 1x² + -7x + 6 = 0
+        correctAnswer: x = 6 ou x = 1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 1x² + -5x + -6 = 0
+        correctAnswer: x = 6 ou x = -1
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - -10)(x - 7) = 0
+        correctAnswer: x = -10 ou x = 7
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 4)(x - 2) = 0
+        correctAnswer: x = 4 ou x = 2
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 1x² + 9x + -10 = 0
+        correctAnswer: x = 1 ou x = -10
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: 5x² + 10x + 0 = 0
+        correctAnswer: x = 0 ou x = -2
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 5)(x - -9) = 0
+        correctAnswer: x = 5 ou x = -9
+        rationale: Use fatoração ou a fórmula de Bhaskara.
+      - type: quadratic
+        question: (x - 1)(x - 8) = 0
+        correctAnswer: x = 1 ou x = 8
+        rationale: Use fatoração ou a fórmula de Bhaskara.

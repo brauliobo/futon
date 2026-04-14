@@ -3,97 +3,248 @@ level: M
 subject: math
 inputType: number
 difficulty: 4
-objectives: [trig.graphs]
-example: "tan(x) tem assíntotas em x = π/2 + kπ"
+objectives:
+  - trig.graphs
+example: tan(x) tem assíntotas em x = π/2 + kπ
 pages:
   - pageNumber: 1
     title: Tangente — Período
     description: Período de tan(x) é 180°.
     exercises:
-      - { type: trigonometry, question: "Período de tan(x) em graus = ?", correctAnswer: 180° }
-      - { type: trigonometry, question: "tan(0) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "tan(45°) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "tan(135°) = ?", correctAnswer: -1 }
-      - { type: trigonometry, question: "tan(180°) = ?", correctAnswer: 0 }
+      - type: trigonometry
+        question: Período de tan(x) em graus = ?
+        correctAnswer: 180°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(0) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(45°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(135°) = ?
+        correctAnswer: -1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(180°) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 2
     title: Tangente — Assíntotas
     description: Indefinida em múltiplos ímpares de 90°.
     exercises:
-      - { type: trigonometry, question: "tan(90°) = ? (indefinida)", correctAnswer: indefinido }
-      - { type: trigonometry, question: "tan(270°) = ?", correctAnswer: indefinido }
-      - { type: trigonometry, question: "Imagem de tan(x) = ?", correctAnswer: ℝ }
-      - { type: trigonometry, question: "Próxima assíntota após 90° = ?", correctAnswer: 270° }
-      - { type: trigonometry, question: "Domínio de tan(x) exclui x = 90° + ?·k", correctAnswer: 180° }
+      - type: trigonometry
+        question: tan(90°) = ? (indefinida)
+        correctAnswer: indefinido
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: tan(270°) = ?
+        correctAnswer: indefinido
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Imagem de tan(x) = ?
+        correctAnswer: ℝ
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Próxima assíntota após 90° = ?
+        correctAnswer: 270°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Domínio de tan(x) exclui x = 90° + ?·k
+        correctAnswer: 180°
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 3
     title: Cotangente
     description: cot(x) = cos/sen.
     exercises:
-      - { type: trigonometry, question: "cot(45°) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "cot(90°) = ?", correctAnswer: 0 }
-      - { type: trigonometry, question: "cot(0°) = ?", correctAnswer: indefinido }
-      - { type: trigonometry, question: "cot(180°) = ?", correctAnswer: indefinido }
-      - { type: trigonometry, question: "Período de cot(x) = ?", correctAnswer: 180° }
+      - type: trigonometry
+        question: cot(45°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cot(90°) = ?
+        correctAnswer: 0
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cot(0°) = ?
+        correctAnswer: indefinido
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cot(180°) = ?
+        correctAnswer: indefinido
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Período de cot(x) = ?
+        correctAnswer: 180°
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 4
     title: Secante
     description: sec(x) = 1/cos(x).
     exercises:
-      - { type: trigonometry, question: "sec(0°) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "sec(60°) = ?", correctAnswer: 2 }
-      - { type: trigonometry, question: "sec(90°) = ?", correctAnswer: indefinido }
-      - { type: trigonometry, question: "Imagem de sec(x) = ?", correctAnswer: "(-∞,-1] ∪ [1,∞)" }
-      - { type: trigonometry, question: "Período de sec(x) = ?", correctAnswer: 360° }
+      - type: trigonometry
+        question: sec(0°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sec(60°) = ?
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sec(90°) = ?
+        correctAnswer: indefinido
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Imagem de sec(x) = ?
+        correctAnswer: (-∞,-1] ∪ [1,∞)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Período de sec(x) = ?
+        correctAnswer: 360°
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 5
     title: Cossecante
     description: csc(x) = 1/sen(x).
     exercises:
-      - { type: trigonometry, question: "csc(90°) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "csc(30°) = ?", correctAnswer: 2 }
-      - { type: trigonometry, question: "csc(0°) = ?", correctAnswer: indefinido }
-      - { type: trigonometry, question: "Imagem de csc(x) = ?", correctAnswer: "(-∞,-1] ∪ [1,∞)" }
-      - { type: trigonometry, question: "Período de csc(x) = ?", correctAnswer: 360° }
+      - type: trigonometry
+        question: csc(90°) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: csc(30°) = ?
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: csc(0°) = ?
+        correctAnswer: indefinido
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Imagem de csc(x) = ?
+        correctAnswer: (-∞,-1] ∪ [1,∞)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Período de csc(x) = ?
+        correctAnswer: 360°
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 6
     title: Comparações
     description: Propriedades agrupadas.
     exercises:
-      - { type: trigonometry, question: "Função com período 180°: (tan/sen/cos)", correctAnswer: tan }
-      - { type: trigonometry, question: "Função par: (cos/sen/tan)", correctAnswer: cos }
-      - { type: trigonometry, question: "Função ímpar: (sen/cos/sec)", correctAnswer: sen }
-      - { type: trigonometry, question: "sec(-x) = ?", correctAnswer: sec(x) }
-      - { type: trigonometry, question: "csc(-x) = ?", correctAnswer: -csc(x) }
+      - type: trigonometry
+        question: "Função com período 180°: (tan/sen/cos)"
+        correctAnswer: tan
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Função par: (cos/sen/tan)"
+        correctAnswer: cos
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "Função ímpar: (sen/cos/sec)"
+        correctAnswer: sen
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sec(-x) = ?
+        correctAnswer: sec(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: csc(-x) = ?
+        correctAnswer: -csc(x)
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 7
     title: Transformações
     description: y = a·tan(b·x).
     exercises:
-      - { type: trigonometry, question: "Período de y=tan(2x) = ?", correctAnswer: 90° }
-      - { type: trigonometry, question: "Período de y=tan(x/3) = ?", correctAnswer: 540° }
-      - { type: trigonometry, question: "Amplitude de y=3·tan(x) — tan tem amplitude? (sim/não)", correctAnswer: não }
-      - { type: trigonometry, question: "y=tan(x)+2 translada: (vertical/horizontal)", correctAnswer: vertical }
-      - { type: trigonometry, question: "y=tan(x-45°) translada: (vertical/horizontal)", correctAnswer: horizontal }
+      - type: trigonometry
+        question: Período de y=tan(2x) = ?
+        correctAnswer: 90°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Período de y=tan(x/3) = ?
+        correctAnswer: 540°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Amplitude de y=3·tan(x) — tan tem amplitude? (sim/não)
+        correctAnswer: não
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "y=tan(x)+2 translada: (vertical/horizontal)"
+        correctAnswer: vertical
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "y=tan(x-45°) translada: (vertical/horizontal)"
+        correctAnswer: horizontal
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 8
     title: Aplicações
     description: Avaliações práticas.
     exercises:
-      - { type: trigonometry, question: "Ângulo com tan=1 no 1º quadrante = ?", correctAnswer: 45° }
-      - { type: trigonometry, question: "Ângulo com tan=√3 no 1º quadrante = ?", correctAnswer: 60° }
-      - { type: trigonometry, question: "Ângulo com sec=2 no 1º quadrante = ?", correctAnswer: 60° }
-      - { type: trigonometry, question: "Ângulo com csc=2 no 1º quadrante = ?", correctAnswer: 30° }
-      - { type: trigonometry, question: "Ângulo com cot=√3 no 1º quadrante = ?", correctAnswer: 30° }
+      - type: trigonometry
+        question: Ângulo com tan=1 no 1º quadrante = ?
+        correctAnswer: 45°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Ângulo com tan=√3 no 1º quadrante = ?
+        correctAnswer: 60°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Ângulo com sec=2 no 1º quadrante = ?
+        correctAnswer: 60°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Ângulo com csc=2 no 1º quadrante = ?
+        correctAnswer: 30°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Ângulo com cot=√3 no 1º quadrante = ?
+        correctAnswer: 30°
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 9
     title: Identidades Recíprocas
     description: Relações fundamentais.
     exercises:
-      - { type: trigonometry, question: "sec(x) · cos(x) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "csc(x) · sen(x) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "cot(x) · tan(x) = ?", correctAnswer: 1 }
-      - { type: trigonometry, question: "tan(x) = sen(x)/? ", correctAnswer: cos(x) }
-      - { type: trigonometry, question: "cot(x) = cos(x)/?", correctAnswer: sen(x) }
+      - type: trigonometry
+        question: sec(x) · cos(x) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: csc(x) · sen(x) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cot(x) · tan(x) = ?
+        correctAnswer: 1
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: "tan(x) = sen(x)/? "
+        correctAnswer: cos(x)
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cot(x) = cos(x)/?
+        correctAnswer: sen(x)
+        rationale: Consulte o ciclo trigonométrico.
   - pageNumber: 10
     title: Revisão Integrada
     description: Mistura de funções.
     exercises:
-      - { type: trigonometry, question: "tan(x) é indefinida em 90° + 180°·k (V/F)?", correctAnswer: V }
-      - { type: trigonometry, question: "Período de cot(x) = ?", correctAnswer: 180° }
-      - { type: trigonometry, question: "sec(60°) = ?", correctAnswer: 2 }
-      - { type: trigonometry, question: "csc(30°) = ?", correctAnswer: 2 }
-      - { type: trigonometry, question: "cot(45°) + tan(45°) = ?", correctAnswer: 2 }
+      - type: trigonometry
+        question: tan(x) é indefinida em 90° + 180°·k (V/F)?
+        correctAnswer: V
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: Período de cot(x) = ?
+        correctAnswer: 180°
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: sec(60°) = ?
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: csc(30°) = ?
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
+      - type: trigonometry
+        question: cot(45°) + tan(45°) = ?
+        correctAnswer: 2
+        rationale: Consulte o ciclo trigonométrico.
 target: 50
