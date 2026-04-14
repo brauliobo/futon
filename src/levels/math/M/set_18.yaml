@@ -1,328 +1,99 @@
-title: Trigonometria Avançada e Séries — Conjunto 18
+title: Séries de Taylor — Introdução
 level: M
-example: 'Funções trigonométricas avançadas e séries. Ex.: sin(2x) = 2sin(x)cos(x)'
 subject: math
-difficulty: 5
-objectives: [math.trigonometry.advanced]
-authorNotes: Conjunto de math/M.
 inputType: number
+difficulty: 5
+objectives: [series.taylor]
+example: "e^x = 1 + x + x²/2! + x³/3! + ..."
 pages:
-- pageNumber: 1
-  title: Trigonometria Avançada e Séries — Conjunto 18 – Página 1
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=5, r=5'
-    correctAnswer: '30'
-  - type: sequence
-    question: 'Soma dos 9 primeiros termos da PA: a₁=1, d=9'
-    correctAnswer: '333'
-  - type: trigonometry
-    question: cos(2·180°) = cos²(180°) - sen²(180°) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PG: a₁=3, r=3'
-    correctAnswer: '363'
-  - type: trigonometry
-    question: sen²(x) + cos²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=3, r=3'
-    correctAnswer: '12'
-  - type: sequence
-    question: 'Soma dos 9 primeiros termos da PA: a₁=1, d=1'
-    correctAnswer: '45'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=3, r=5'
-    correctAnswer: '18'
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PG: a₁=4, r=3'
-    correctAnswer: '160'
-- pageNumber: 2
-  title: Trigonometria Avançada e Séries — Conjunto 18 – Página 2
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 7 primeiros termos da PA: a₁=1, d=3'
-    correctAnswer: '70'
-  - type: trigonometry
-    question: sec²(x) - tan²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 8 primeiros termos da PA: a₁=1, d=6'
-    correctAnswer: '176'
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PA: a₁=1, d=9'
-    correctAnswer: '141'
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PA: a₁=1, d=3'
-    correctAnswer: '12'
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PG: a₁=1, r=3'
-    correctAnswer: '13'
-  - type: trigonometry
-    question: sen²(x) + cos²(x) = ?
-    correctAnswer: '1'
-  - type: trigonometry
-    question: csc²(x) - cot²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 9 primeiros termos da PA: a₁=1, d=4'
-    correctAnswer: '153'
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PG: a₁=1, r=5'
-    correctAnswer: '31'
-- pageNumber: 3
-  title: Trigonometria Avançada e Séries — Conjunto 18 – Página 3
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: trigonometry
-    question: sen(30° - 90°) = ?
-    correctAnswer: √3/2
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=1, r=5'
-    correctAnswer: '6'
-  - type: trigonometry
-    question: Se cos(x) = 40/41, calcule sen(x) = ?
-    correctAnswer: 9/41
-  - type: trigonometry
-    question: sen²(x) + cos²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=1, r=3'
-    correctAnswer: '4'
-  - type: trigonometry
-    question: sen(2·120°) = 2·sen(120°)·cos(120°) = ?
-    correctAnswer: -√3/2
-  - type: trigonometry
-    question: tan²(x) + 1 = ?
-    correctAnswer: sec²(x)
-  - type: trigonometry
-    question: sen(0° - 60°) = ?
-    correctAnswer: √3/2
-- pageNumber: 4
-  title: Trigonometria Avançada e Séries — Conjunto 18 – Página 4
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: trigonometry
-    question: csc²(x) - cot²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PA: a₁=1, d=1'
-    correctAnswer: '3'
-  - type: trigonometry
-    question: Se sen(x) = 9/41, calcule tan(x) = ?
-    correctAnswer: 9/40
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PA: a₁=1, d=9'
-    correctAnswer: '30'
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PA: a₁=1, d=8'
-    correctAnswer: '27'
-  - type: sequence
-    question: 'Soma dos 7 primeiros termos da PA: a₁=1, d=9'
-    correctAnswer: '196'
-  - type: trigonometry
-    question: Se sen(x) = 9/41, calcule cos(x) = ?
-    correctAnswer: 40/41
-  - type: trigonometry
-    question: sec²(x) - tan²(x) = ?
-    correctAnswer: '1'
-- pageNumber: 5
-  title: Trigonometria Avançada e Séries — Conjunto 18 – Página 5
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PG: a₁=1, r=3'
-    correctAnswer: '364'
-  - type: trigonometry
-    question: sen²(x) + cos²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PG: a₁=2, r=4'
-    correctAnswer: '682'
-  - type: sequence
-    question: 'Soma dos 8 primeiros termos da PA: a₁=2, d=2'
-    correctAnswer: '72'
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PG: a₁=5, r=4'
-    correctAnswer: '6825'
-  - type: trigonometry
-    question: tan²(x) + 1 = ?
-    correctAnswer: sec²(x)
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PA: a₁=1, d=1'
-    correctAnswer: '15'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=5, r=2'
-    correctAnswer: '15'
-  - type: trigonometry
-    question: Se cos(x) = 40/41, calcule tan(x) = ?
-    correctAnswer: 9/40
-- pageNumber: 6
-  title: Trigonometria Avançada e Séries — Conjunto 18 – Página 6
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: trigonometry
-    question: sec²(x) - tan²(x) = ?
-    correctAnswer: '1'
-  - type: trigonometry
-    question: tan²(x) + 1 = ?
-    correctAnswer: sec²(x)
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PG: a₁=5, r=3'
-    correctAnswer: '200'
-  - type: trigonometry
-    question: csc²(x) - cot²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PG: a₁=4, r=2'
-    correctAnswer: '124'
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PG: a₁=3, r=2'
-    correctAnswer: '189'
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PA: a₁=2, d=2'
-    correctAnswer: '12'
-  - type: trigonometry
-    question: sen²(x) + cos²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PA: a₁=1, d=6'
-    correctAnswer: '8'
-  - type: trigonometry
-    question: cot²(x) + 1 = ?
-    correctAnswer: csc²(x)
-- pageNumber: 7
-  title: Trigonometria Avançada e Séries — Conjunto 18 – Página 7
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=6, r=2'
-    correctAnswer: '18'
-  - type: trigonometry
-    question: Se cos(x) = 60/61, calcule sen(x) = ?
-    correctAnswer: 11/61
-  - type: sequence
-    question: 'Soma dos 9 primeiros termos da PA: a₁=1, d=6'
-    correctAnswer: '225'
-  - type: trigonometry
-    question: Se cos(x) = 21/29, calcule sen(x) = ?
-    correctAnswer: 20/29
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PG: a₁=3, r=3'
-    correctAnswer: '39'
-  - type: trigonometry
-    question: sen(0° + 30°) = ?
-    correctAnswer: 1/2
-  - type: trigonometry
-    question: Se sen(x) = 8/17, calcule cos(x) = ?
-    correctAnswer: 15/17
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=3, r=4'
-    correctAnswer: '15'
-  - type: trigonometry
-    question: sen²(x) + cos²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PG: a₁=4, r=5'
-    correctAnswer: '124'
-- pageNumber: 8
-  title: Trigonometria Avançada e Séries — Conjunto 18 – Página 8
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PA: a₁=1, d=4'
-    correctAnswer: '45'
-  - type: trigonometry
-    question: sen(2·45°) = 2·sen(45°)·cos(45°) = ?
-    correctAnswer: '1'
-  - type: trigonometry
-    question: sen(2·90°) = 2·sen(90°)·cos(90°) = ?
-    correctAnswer: '0'
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PA: a₁=1, d=5'
-    correctAnswer: '34'
-  - type: trigonometry
-    question: tan²(x) + 1 = ?
-    correctAnswer: sec²(x)
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PA: a₁=1, d=6'
-    correctAnswer: '40'
-  - type: trigonometry
-    question: Se cos(x) = 12/13, calcule sen(x) = ?
-    correctAnswer: 5/13
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PA: a₁=2, d=1'
-    correctAnswer: '20'
-  - type: trigonometry
-    question: Se sen(x) = 11/61, calcule tan(x) = ?
-    correctAnswer: 11/60
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PG: a₁=1, r=5'
-    correctAnswer: '3906'
-- pageNumber: 9
-  title: Trigonometria Avançada e Séries — Conjunto 18 – Página 9
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PA: a₁=1, d=6'
-    correctAnswer: '96'
-  - type: trigonometry
-    question: sen(60° + 0°) = ?
-    correctAnswer: √3/2
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PG: a₁=1, r=5'
-    correctAnswer: '156'
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PA: a₁=1, d=8'
-    correctAnswer: '126'
-  - type: trigonometry
-    question: Se sen(x) = 20/29, calcule cos(x) = ?
-    correctAnswer: 21/29
-  - type: trigonometry
-    question: csc²(x) - cot²(x) = ?
-    correctAnswer: '1'
-  - type: trigonometry
-    question: sec²(x) - tan²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PA: a₁=1, d=1'
-    correctAnswer: '3'
-  - type: sequence
-    question: 'Soma dos 7 primeiros termos da PA: a₁=1, d=3'
-    correctAnswer: '70'
-- pageNumber: 10
-  title: Trigonometria Avançada e Séries — Conjunto 18 – Página 10
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PA: a₁=1, d=8'
-    correctAnswer: '27'
-  - type: trigonometry
-    question: sen(2·120°) = 2·sen(120°)·cos(120°) = ?
-    correctAnswer: -√3/2
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=3, r=4'
-    correctAnswer: '15'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=1, r=5'
-    correctAnswer: '6'
-  - type: trigonometry
-    question: Se cos(x) = 12/13, calcule sen(x) = ?
-    correctAnswer: 5/13
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PG: a₁=5, r=3'
-    correctAnswer: '200'
-  - type: trigonometry
-    question: tan²(x) + 1 = ?
-    correctAnswer: sec²(x)
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=6, r=2'
-    correctAnswer: '18'
-  - type: trigonometry
-    question: sen²(x) + cos²(x) = ?
-    correctAnswer: '1'
-  - type: trigonometry
-    question: cos(2·180°) = cos²(180°) - sen²(180°) = ?
-    correctAnswer: '1'
+  - pageNumber: 1
+    title: Conceito
+    description: Aproximar função por polinômio.
+    exercises:
+      - { type: calculus, question: "Série de Taylor representa função como: (soma infinita de potências/matriz)", correctAnswer: soma infinita de potências }
+      - { type: calculus, question: "Taylor em torno de x=0 também se chama: (Maclaurin/Fourier)", correctAnswer: Maclaurin }
+      - { type: calculus, question: "f(x) = f(0) + f'(0)x + f''(0)x²/2! + ... (V/F)?", correctAnswer: V }
+      - { type: calculus, question: "Aproximação linear (1º grau) de f em 0: f(0) + f'(0)·?", correctAnswer: x }
+      - { type: calculus, question: "Coeficiente do termo xⁿ na Taylor: f^(n)(0)/? ", correctAnswer: n! }
+  - pageNumber: 2
+    title: e^x
+    description: Série de Maclaurin.
+    exercises:
+      - { type: calculus, question: "e^x = 1 + x + x²/2! + ? + ...", correctAnswer: x³/3! }
+      - { type: calculus, question: "e^0 = ?", correctAnswer: 1 }
+      - { type: calculus, question: "Primeiros 3 termos de e^x em x=1: 1+1+0.5 = ?", correctAnswer: 2.5 }
+      - { type: calculus, question: "e ≈ 2.71828 (V/F)?", correctAnswer: V }
+      - { type: calculus, question: "Σ xⁿ/n! converge para todo x? (sim/não)", correctAnswer: sim }
+  - pageNumber: 3
+    title: sen(x) e cos(x)
+    description: Séries alternadas.
+    exercises:
+      - { type: calculus, question: "sen(x) = x - x³/3! + x⁵/5! - ? + ...", correctAnswer: x⁷/7! }
+      - { type: calculus, question: "cos(x) = 1 - x²/2! + x⁴/4! - ? + ...", correctAnswer: x⁶/6! }
+      - { type: calculus, question: "sen(0) pela série = ?", correctAnswer: 0 }
+      - { type: calculus, question: "cos(0) pela série = ?", correctAnswer: 1 }
+      - { type: calculus, question: "Duas primeiras parcelas de sen(0.1) = 0.1 - 0.1³/6 ≈ ?", correctAnswer: 0.0998 }
+  - pageNumber: 4
+    title: ln(1+x)
+    description: Convergente para -1 < x ≤ 1.
+    exercises:
+      - { type: calculus, question: "ln(1+x) = x - x²/2 + x³/3 - ? + ...", correctAnswer: x⁴/4 }
+      - { type: calculus, question: "ln(1) = ?", correctAnswer: 0 }
+      - { type: calculus, question: "ln(2) com 3 termos em x=1: 1 - 1/2 + 1/3 = ?", correctAnswer: 0.833 }
+      - { type: calculus, question: "Valor exato de ln(2) ≈ ?", correctAnswer: 0.693 }
+      - { type: calculus, question: "Série ln(1+x) não converge em x > ? ", correctAnswer: 1 }
+  - pageNumber: 5
+    title: 1/(1-x) (Geométrica)
+    description: 1 + x + x² + x³ + ...
+    exercises:
+      - { type: calculus, question: "1/(1-x) = 1 + x + x² + ? + ...", correctAnswer: x³ }
+      - { type: calculus, question: "Converge para |x| < ?", correctAnswer: 1 }
+      - { type: calculus, question: "1/(1-0.5) = 2; soma dos primeiros 4 termos = 1+0.5+0.25+0.125 = ?", correctAnswer: 1.875 }
+      - { type: calculus, question: "1/(1-1) é definido? (sim/não)", correctAnswer: não }
+      - { type: calculus, question: "Série diverge se |x| ≥ ?", correctAnswer: 1 }
+  - pageNumber: 6
+    title: Raio de Convergência
+    description: R = raio em que série converge.
+    exercises:
+      - { type: calculus, question: "e^x: R = ?", correctAnswer: ∞ }
+      - { type: calculus, question: "sen(x): R = ?", correctAnswer: ∞ }
+      - { type: calculus, question: "ln(1+x): R = ?", correctAnswer: 1 }
+      - { type: calculus, question: "1/(1-x): R = ?", correctAnswer: 1 }
+      - { type: calculus, question: "Série de Taylor converge ao menos dentro do raio de convergência (V/F)?", correctAnswer: V }
+  - pageNumber: 7
+    title: Aplicação — Aproximação
+    description: Use Taylor para estimar valores.
+    exercises:
+      - { type: calculus, question: "e^0.1 ≈ 1 + 0.1 + 0.01/2 + ... primeiros 3 termos = ?", correctAnswer: 1.105 }
+      - { type: calculus, question: "Valor real de e^0.1 ≈ ?", correctAnswer: 1.1052 }
+      - { type: calculus, question: "cos(0.1) ≈ 1 - 0.01/2 + ... primeiros 2 termos = ?", correctAnswer: 0.995 }
+      - { type: calculus, question: "Erro quando aumentamos termos: (diminui/aumenta)", correctAnswer: diminui }
+      - { type: calculus, question: "Maior x → preciso (mais/menos) termos", correctAnswer: mais }
+  - pageNumber: 8
+    title: Diferenciação Termo a Termo
+    description: Derivar a série como polinômio.
+    exercises:
+      - { type: calculus, question: "d/dx(e^x) série: (e^x/sen(x))", correctAnswer: e^x }
+      - { type: calculus, question: "d/dx(sen x) série: (cos x/-sen x)", correctAnswer: cos x }
+      - { type: calculus, question: "d/dx(cos x) série: (-sen x/sen x)", correctAnswer: -sen x }
+      - { type: calculus, question: "d/dx(1/(1-x)) série: (1/(1-x)²/(1-x))", correctAnswer: 1/(1-x)² }
+      - { type: calculus, question: "d/dx(ln(1+x)) série: (1/(1+x)/(1+x))", correctAnswer: 1/(1+x) }
+  - pageNumber: 9
+    title: Integração Termo a Termo
+    description: Integrar como polinômio.
+    exercises:
+      - { type: calculus, question: "∫ e^x dx = e^x + C (V/F)?", correctAnswer: V }
+      - { type: calculus, question: "∫ sen(x) dx = -cos(x) + C (V/F)?", correctAnswer: V }
+      - { type: calculus, question: "∫ 1/(1-x) dx = -ln|1-x| + C (V/F)?", correctAnswer: V }
+      - { type: calculus, question: "Integração de série é: (termo a termo dentro do raio)", correctAnswer: termo a termo dentro do raio }
+      - { type: calculus, question: "∫ cos x dx = sen x + C (V/F)?", correctAnswer: V }
+  - pageNumber: 10
+    title: Revisão Integrada
+    description: Mistura.
+    exercises:
+      - { type: calculus, question: "e^x em x=1 (primeiros 4 termos) ≈ ?", correctAnswer: 2.667 }
+      - { type: calculus, question: "e ≈ ? (valor real)", correctAnswer: 2.718 }
+      - { type: calculus, question: "sen(π) via série converge para ?", correctAnswer: 0 }
+      - { type: calculus, question: "cos(0) via série = ?", correctAnswer: 1 }
+      - { type: calculus, question: "1/(1-0.5) via série = ?", correctAnswer: 2 }
+target: 50

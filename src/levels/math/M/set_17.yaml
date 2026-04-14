@@ -1,343 +1,99 @@
-title: Trigonometria Avançada e Séries — Conjunto 17
+title: Números Complexos — Forma Polar
 level: M
-example: 'Funções trigonométricas avançadas e séries. Ex.: sin(2x) = 2sin(x)cos(x)'
 subject: math
-difficulty: 5
-objectives: [math.trigonometry.advanced]
-authorNotes: Conjunto de math/M.
 inputType: number
+difficulty: 4
+objectives: [complex.polar]
+example: "z = r(cos θ + i sen θ) = r cis θ"
 pages:
-- pageNumber: 1
-  title: Trigonometria Avançada e Séries — Conjunto 17 – Página 1
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 8 primeiros termos da PA: a₁=1, d=6'
-    correctAnswer: '176'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=4, r=4'
-    correctAnswer: '20'
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PG: a₁=2, r=5'
-    correctAnswer: '62'
-  - type: trigonometry
-    question: sen(90° + 30°) = ?
-    correctAnswer: √3/2
-  - type: sequence
-    question: 'Soma dos 7 primeiros termos da PA: a₁=1, d=9'
-    correctAnswer: '196'
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PG: a₁=5, r=2'
-    correctAnswer: '75'
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PA: a₁=1, d=3'
-    correctAnswer: '12'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PA: a₁=1, d=5'
-    correctAnswer: '7'
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PA: a₁=1, d=3'
-    correctAnswer: '35'
-  - type: trigonometry
-    question: csc²(x) - cot²(x) = ?
-    correctAnswer: '1'
-- pageNumber: 2
-  title: Trigonometria Avançada e Séries — Conjunto 17 – Página 2
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 8 primeiros termos da PA: a₁=1, d=4'
-    correctAnswer: '120'
-  - type: trigonometry
-    question: tan²(x) + 1 = ?
-    correctAnswer: sec²(x)
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=2, r=3'
-    correctAnswer: '8'
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PG: a₁=6, r=2'
-    correctAnswer: '42'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=6, r=2'
-    correctAnswer: '18'
-  - type: sequence
-    question: 'Soma dos 8 primeiros termos da PA: a₁=2, d=1'
-    correctAnswer: '44'
-  - type: trigonometry
-    question: sec²(x) - tan²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 7 primeiros termos da PA: a₁=1, d=1'
-    correctAnswer: '28'
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PA: a₁=2, d=1'
-    correctAnswer: '9'
-  - type: trigonometry
-    question: sen²(x) + cos²(x) = ?
-    correctAnswer: '1'
-- pageNumber: 3
-  title: Trigonometria Avançada e Séries — Conjunto 17 – Página 3
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PG: a₁=5, r=4'
-    correctAnswer: '1705'
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PG: a₁=3, r=2'
-    correctAnswer: '45'
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PG: a₁=2, r=5'
-    correctAnswer: '312'
-  - type: trigonometry
-    question: Se cos(x) = 60/61, calcule tan(x) = ?
-    correctAnswer: 11/60
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PA: a₁=1, d=3'
-    correctAnswer: '51'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PA: a₁=1, d=3'
-    correctAnswer: '5'
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PA: a₁=1, d=3'
-    correctAnswer: '22'
-  - type: trigonometry
-    question: cot²(x) + 1 = ?
-    correctAnswer: csc²(x)
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PG: a₁=4, r=4'
-    correctAnswer: '340'
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PG: a₁=5, r=5'
-    correctAnswer: '155'
-- pageNumber: 4
-  title: Trigonometria Avançada e Séries — Conjunto 17 – Página 4
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: trigonometry
-    question: tan²(x) + 1 = ?
-    correctAnswer: sec²(x)
-  - type: trigonometry
-    question: cos(2·180°) = cos²(180°) - sen²(180°) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PG: a₁=4, r=3'
-    correctAnswer: '484'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=2, r=5'
-    correctAnswer: '12'
-  - type: trigonometry
-    question: Se sen(x) = 7/25, calcule cos(x) = ?
-    correctAnswer: 24/25
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PG: a₁=1, r=3'
-    correctAnswer: '13'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PA: a₁=1, d=6'
-    correctAnswer: '8'
-  - type: trigonometry
-    question: Se cos(x) = 4/5, calcule sen(x) = ?
-    correctAnswer: 3/5
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PG: a₁=5, r=3'
-    correctAnswer: '200'
-  - type: trigonometry
-    question: cot²(x) + 1 = ?
-    correctAnswer: csc²(x)
-- pageNumber: 5
-  title: Trigonometria Avançada e Séries — Conjunto 17 – Página 5
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=3, r=2'
-    correctAnswer: '9'
-  - type: trigonometry
-    question: csc²(x) - cot²(x) = ?
-    correctAnswer: '1'
-  - type: trigonometry
-    question: cos(2·45°) = cos²(45°) - sen²(45°) = ?
-    correctAnswer: '0'
-  - type: trigonometry
-    question: cot²(x) + 1 = ?
-    correctAnswer: csc²(x)
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PG: a₁=2, r=3'
-    correctAnswer: '728'
-  - type: sequence
-    question: 'Soma dos 9 primeiros termos da PA: a₁=2, d=1'
-    correctAnswer: '54'
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PG: a₁=2, r=4'
-    correctAnswer: '2730'
-  - type: trigonometry
-    question: sen(2·60°) = 2·sen(60°)·cos(60°) = ?
-    correctAnswer: √3/2
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PA: a₁=1, d=5'
-    correctAnswer: '34'
-- pageNumber: 6
-  title: Trigonometria Avançada e Séries — Conjunto 17 – Página 6
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: trigonometry
-    question: Se sen(x) = 12/37, calcule tan(x) = ?
-    correctAnswer: 12/35
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PA: a₁=1, d=9'
-    correctAnswer: '58'
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PG: a₁=2, r=3'
-    correctAnswer: '242'
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PG: a₁=6, r=2'
-    correctAnswer: '90'
-  - type: trigonometry
-    question: sen(90° + 60°) = ?
-    correctAnswer: 1/2
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=3, r=5'
-    correctAnswer: '18'
-  - type: sequence
-    question: 'Soma dos 7 primeiros termos da PA: a₁=1, d=3'
-    correctAnswer: '70'
-  - type: trigonometry
-    question: cot²(x) + 1 = ?
-    correctAnswer: csc²(x)
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PG: a₁=2, r=2'
-    correctAnswer: '62'
-  - type: trigonometry
-    question: tan²(x) + 1 = ?
-    correctAnswer: sec²(x)
-- pageNumber: 7
-  title: Trigonometria Avançada e Séries — Conjunto 17 – Página 7
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PG: a₁=1, r=3'
-    correctAnswer: '364'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=1, r=3'
-    correctAnswer: '4'
-  - type: trigonometry
-    question: cos(2·135°) = cos²(135°) - sen²(135°) = ?
-    correctAnswer: '0'
-  - type: sequence
-    question: 'Soma dos 9 primeiros termos da PA: a₁=1, d=5'
-    correctAnswer: '189'
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PG: a₁=1, r=5'
-    correctAnswer: '156'
-  - type: trigonometry
-    question: Se sen(x) = 12/37, calcule cos(x) = ?
-    correctAnswer: 35/37
-  - type: trigonometry
-    question: sen²(x) + cos²(x) = ?
-    correctAnswer: '1'
-  - type: trigonometry
-    question: tan²(x) + 1 = ?
-    correctAnswer: sec²(x)
-  - type: trigonometry
-    question: csc²(x) - cot²(x) = ?
-    correctAnswer: '1'
-  - type: trigonometry
-    question: sec²(x) - tan²(x) = ?
-    correctAnswer: '1'
-- pageNumber: 8
-  title: Trigonometria Avançada e Séries — Conjunto 17 – Página 8
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: sequence
-    question: 'Soma dos 10 primeiros termos da PA: a₁=1, d=6'
-    correctAnswer: '280'
-  - type: trigonometry
-    question: Se cos(x) = 40/41, calcule sen(x) = ?
-    correctAnswer: 9/41
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PG: a₁=4, r=5'
-    correctAnswer: '3124'
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PA: a₁=1, d=8'
-    correctAnswer: '52'
-  - type: sequence
-    question: 'Soma dos 9 primeiros termos da PA: a₁=1, d=6'
-    correctAnswer: '225'
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PG: a₁=2, r=2'
-    correctAnswer: '126'
-  - type: trigonometry
-    question: Se sen(x) = 5/13, calcule cos(x) = ?
-    correctAnswer: 12/13
-  - type: sequence
-    question: 'Soma dos 3 primeiros termos da PG: a₁=5, r=4'
-    correctAnswer: '105'
-  - type: trigonometry
-    question: csc²(x) - cot²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PA: a₁=1, d=4'
-    correctAnswer: '66'
-- pageNumber: 9
-  title: Trigonometria Avançada e Séries — Conjunto 17 – Página 9
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: trigonometry
-    question: sen(45° + 0°) = ?
-    correctAnswer: √2/2
-  - type: trigonometry
-    question: csc²(x) - cot²(x) = ?
-    correctAnswer: '1'
-  - type: trigonometry
-    question: cot²(x) + 1 = ?
-    correctAnswer: csc²(x)
-  - type: trigonometry
-    question: tan²(x) + 1 = ?
-    correctAnswer: sec²(x)
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PG: a₁=1, r=2'
-    correctAnswer: '31'
-  - type: trigonometry
-    question: Se cos(x) = 4/5, calcule sen(x) = ?
-    correctAnswer: 3/5
-  - type: sequence
-    question: 'Soma dos 9 primeiros termos da PA: a₁=1, d=5'
-    correctAnswer: '189'
-  - type: sequence
-    question: 'Soma dos 7 primeiros termos da PA: a₁=1, d=9'
-    correctAnswer: '196'
-  - type: trigonometry
-    question: cos(2·45°) = cos²(45°) - sen²(45°) = ?
-    correctAnswer: '0'
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PA: a₁=1, d=9'
-    correctAnswer: '58'
-- pageNumber: 10
-  title: Trigonometria Avançada e Séries — Conjunto 17 – Página 10
-  description: Identidades fundamentais de trigonometria e séries.
-  exercises:
-  - type: trigonometry
-    question: Se sen(x) = 5/13, calcule cos(x) = ?
-    correctAnswer: 12/13
-  - type: sequence
-    question: 'Soma dos 6 primeiros termos da PG: a₁=1, r=3'
-    correctAnswer: '364'
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=6, r=2'
-    correctAnswer: '18'
-  - type: trigonometry
-    question: csc²(x) - cot²(x) = ?
-    correctAnswer: '1'
-  - type: sequence
-    question: 'Soma dos 5 primeiros termos da PG: a₁=2, r=3'
-    correctAnswer: '242'
-  - type: sequence
-    question: 'Soma dos 8 primeiros termos da PA: a₁=2, d=1'
-    correctAnswer: '44'
-  - type: trigonometry
-    question: tan²(x) + 1 = ?
-    correctAnswer: sec²(x)
-  - type: sequence
-    question: 'Soma dos 2 primeiros termos da PG: a₁=2, r=5'
-    correctAnswer: '12'
-  - type: sequence
-    question: 'Soma dos 4 primeiros termos da PG: a₁=5, r=2'
-    correctAnswer: '75'
+  - pageNumber: 1
+    title: Módulo e Argumento
+    description: r = |z|; θ = arg(z).
+    exercises:
+      - { type: algebra, question: "|1+i| = ?", correctAnswer: √2 }
+      - { type: algebra, question: "arg(1+i) = ?°", correctAnswer: 45 }
+      - { type: algebra, question: "|1-i| = ?", correctAnswer: √2 }
+      - { type: algebra, question: "arg(1-i) = ?°", correctAnswer: -45 }
+      - { type: algebra, question: "arg(1) = ?°", correctAnswer: 0 }
+  - pageNumber: 2
+    title: Conversão Retangular → Polar
+    description: r = √(a²+b²); θ = arctan(b/a).
+    exercises:
+      - { type: algebra, question: "Polar de z=1+i: (r=√2, θ=45°) V/F", correctAnswer: V }
+      - { type: algebra, question: "Polar de z=√3+i: r = ?", correctAnswer: 2 }
+      - { type: algebra, question: "Mesma z: θ = ?°", correctAnswer: 30 }
+      - { type: algebra, question: "Polar de z=-1+i: r=√2; θ = ?°", correctAnswer: 135 }
+      - { type: algebra, question: "Polar de z=i: r=1; θ = ?°", correctAnswer: 90 }
+  - pageNumber: 3
+    title: Conversão Polar → Retangular
+    description: a = r cos θ; b = r sen θ.
+    exercises:
+      - { type: algebra, question: "r=2, θ=60°: a = ?", correctAnswer: 1 }
+      - { type: algebra, question: "Mesma: b = ?", correctAnswer: √3 }
+      - { type: algebra, question: "r=5, θ=0° → z = ?", correctAnswer: 5 }
+      - { type: algebra, question: "r=√2, θ=135° → real = ?", correctAnswer: -1 }
+      - { type: algebra, question: "Mesma: imaginária = ?", correctAnswer: 1 }
+  - pageNumber: 4
+    title: Multiplicação Polar
+    description: r₁·r₂ cis(θ₁+θ₂).
+    exercises:
+      - { type: algebra, question: "Multiplicar magnitudes — soma argumentos (V/F)?", correctAnswer: V }
+      - { type: algebra, question: "cis(30°) · cis(60°) = cis(?°)", correctAnswer: 90 }
+      - { type: algebra, question: "(2·cis30°)(3·cis60°) = (?·cis90°)", correctAnswer: 6 }
+      - { type: algebra, question: "cis(45°) · cis(45°) = cis(?°)", correctAnswer: 90 }
+      - { type: algebra, question: "i · i = cis(90°)·cis(90°) = cis(?°) = ?", correctAnswer: -1 }
+  - pageNumber: 5
+    title: Divisão Polar
+    description: r₁/r₂ cis(θ₁-θ₂).
+    exercises:
+      - { type: algebra, question: "Dividir magnitudes — subtrair argumentos (V/F)?", correctAnswer: V }
+      - { type: algebra, question: "(6·cis60°)/(2·cis30°) = ?·cis30°", correctAnswer: 3 }
+      - { type: algebra, question: "cis(90°)/cis(45°) = cis(?°)", correctAnswer: 45 }
+      - { type: algebra, question: "1/i em polar: 1/cis90° = cis(?°)", correctAnswer: -90 }
+      - { type: algebra, question: "cis(-90°) = ?", correctAnswer: -i }
+  - pageNumber: 6
+    title: Fórmula de De Moivre
+    description: (r cis θ)^n = rⁿ cis(nθ).
+    exercises:
+      - { type: algebra, question: "(cis 30°)² = cis ?°", correctAnswer: 60 }
+      - { type: algebra, question: "(cis 90°)⁴ = cis ?°", correctAnswer: 360 }
+      - { type: algebra, question: "i⁴ = cis 360° = ?", correctAnswer: 1 }
+      - { type: algebra, question: "(√2 cis 45°)⁴ = ? cis 180° = ?", correctAnswer: -4 }
+      - { type: algebra, question: "(1+i)⁸ via polar: |1+i|=√2, arg=45° → (√2)⁸ = ?", correctAnswer: 16 }
+  - pageNumber: 7
+    title: Raízes de Complexos
+    description: n raízes distintas.
+    exercises:
+      - { type: algebra, question: "Número de raízes n-ésimas de z: ?", correctAnswer: n }
+      - { type: algebra, question: "Raízes estão igualmente espaçadas em círculo de raio r^(1/n) (V/F)?", correctAnswer: V }
+      - { type: algebra, question: "Raízes quadradas de 1 = ±?", correctAnswer: 1 }
+      - { type: algebra, question: "Raízes cúbicas de 1 — quantas? ", correctAnswer: 3 }
+      - { type: algebra, question: "Uma raiz cúbica de 1 é 1. As outras duas estão em 120° e ?°", correctAnswer: 240 }
+  - pageNumber: 8
+    title: Fórmula de Euler
+    description: e^(iθ) = cos θ + i sen θ.
+    exercises:
+      - { type: algebra, question: "e^(iπ) + 1 = ?", correctAnswer: 0 }
+      - { type: algebra, question: "e^(iπ/2) = ?", correctAnswer: i }
+      - { type: algebra, question: "e^(i·0) = ?", correctAnswer: 1 }
+      - { type: algebra, question: "e^(i·2π) = ?", correctAnswer: 1 }
+      - { type: algebra, question: "|e^(iθ)| = ?", correctAnswer: 1 }
+  - pageNumber: 9
+    title: Forma Exponencial
+    description: z = r·e^(iθ).
+    exercises:
+      - { type: algebra, question: "1+i em forma exponencial: √2 · e^(iπ/?)", correctAnswer: 4 }
+      - { type: algebra, question: "i em forma exponencial: 1·e^(iπ/?)", correctAnswer: 2 }
+      - { type: algebra, question: "-1 em forma exponencial: e^(i?)", correctAnswer: π }
+      - { type: algebra, question: "Multiplicação fica simples com exponencial (V/F)?", correctAnswer: V }
+      - { type: algebra, question: "e^(iα) · e^(iβ) = e^(i(α+?))", correctAnswer: β }
+  - pageNumber: 10
+    title: Revisão Integrada
+    description: Misture formas.
+    exercises:
+      - { type: algebra, question: "(1+i)⁴ em polar: (√2 cis 45°)⁴ = 4·cis 180° = ?", correctAnswer: -4 }
+      - { type: algebra, question: "|2+2i| = ?", correctAnswer: 2√2 }
+      - { type: algebra, question: "arg(2+2i) = ?°", correctAnswer: 45 }
+      - { type: algebra, question: "cis(180°) = ?", correctAnswer: -1 }
+      - { type: algebra, question: "Raízes cúbicas de 8: uma é 2. As outras ficam em 120° e ?°", correctAnswer: 240 }
+target: 50

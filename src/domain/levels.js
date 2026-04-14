@@ -45,14 +45,14 @@ export class Levels {
   ];
 
   static PORTUGUESE = [
-    { id: '7A', topic: 'pre_reading', name: 'Repetição e Recitação' },
-    { id: '6A', topic: 'pre_reading', name: 'Repetição e Recitação' },
+    { id: '7A', topic: 'early_grammar_reading', name: 'Gramática Inicial & Leitura' },
+    { id: '6A', topic: 'early_literacy', name: 'Letras, Sílabas e Palavras' },
     { id: '5A', topic: 'literacy', name: 'Aprendendo a Ler e Escrever' },
     { id: '4A', topic: 'literacy', name: 'Aprendendo a Ler e Escrever' },
     { id: '3A', topic: 'literacy', name: 'Aprendendo a Ler e Escrever' },
     { id: '2A', topic: 'literacy', name: 'Aprendendo a Ler e Escrever' },
     { id: '1A', topic: 'basic_literacy', name: 'Reconhecimento de Letras e Palavras' },
-    { id: 'A', topic: 'sentence_building', name: 'Construção de Frases' },
+    { id: 'A', topic: 'reading_grammar', name: 'Leitura & Gramática' },
     { id: 'B', topic: 'sentence_building', name: 'Construção de Frases' },
     { id: 'C', topic: 'sentence_building', name: 'Construção de Frases' },
     { id: 'D', topic: 'paragraph_building', name: 'EF — Construção de Parágrafos' },
