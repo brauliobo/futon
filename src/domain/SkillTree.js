@@ -32,6 +32,8 @@ export class SkillTree {
   static ENGLISH = [
     { id: 'vocabulary', name: 'Vocabulary', icon: '📖', levels: ['A'], prereqs: [] },
     { id: 'sentences', name: 'Sentences', icon: '💬', levels: ['B'], prereqs: ['vocabulary'] },
+    { id: 'past_tense', name: 'Past Tense', icon: '⏪', levels: ['C'], prereqs: ['sentences'] },
+    { id: 'future_compare', name: 'Future & Compare', icon: '⏩', levels: ['D'], prereqs: ['past_tense'] },
   ];
 
   static forSubject(subject) { return this[subject.toUpperCase()] || []; }

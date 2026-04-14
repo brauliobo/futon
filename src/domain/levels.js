@@ -67,6 +67,8 @@ export class Levels {
   static ENGLISH = [
     { id: 'A', topic: 'english_vocab', name: 'Basic Vocabulary' },
     { id: 'B', topic: 'english_phrases', name: 'Sentences & Phrases' },
+    { id: 'C', topic: 'english_phrases', name: 'Past Tense' },
+    { id: 'D', topic: 'english_phrases', name: 'Future & Comparatives' },
   ];
 
   static math = new LevelRegistry(Levels.MATH);
