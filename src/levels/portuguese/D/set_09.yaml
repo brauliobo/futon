@@ -1,56 +1,109 @@
 title: Coesão Textual
 level: D
 subject: portuguese
-example: Mantenha ideias bem conectadas.
+difficulty: 3
+objectives: [EF08LP06, EF09LP08]
+authorNotes: Mecanismos de coesão — referência, substituição, elipse, sinonímia e encadeamento.
+example: "Evite repetição usando pronomes, sinônimos e expressões equivalentes."
 pages:
   - pageNumber: 1
-    title: Coesão Textual - Parte 1
-    description: Pratique mantenha ideias bem conectadas.
+    title: Referência Anafórica
+    description: Pronome que retoma termo já mencionado.
     exercises:
-      - { type: paragraph, question: "Complete a frase sobre mantenha ideias bem conectadas: A ideia principal é ___", correctAnswer: clara }
+      - type: paragraph
+        question: "'Maria chegou cedo. ___ preparou a apresentação.' (Ela/Ele/Este/Aquilo)"
+        correctAnswer: Ela
+        difficulty: 1
+        rationale: "'Ela' retoma 'Maria' sem repetir o nome."
+        objectives: [EF08LP06]
   - pageNumber: 2
-    title: Coesão Textual - Parte 2
-    description: Pratique mantenha ideias bem conectadas.
+    title: Sinonímia
+    description: Substituir termo por sinônimo evita repetição.
     exercises:
-      - { type: paragraph, question: "Qual conecta melhor as ideias? (portanto/talvez/ontem/azul)", correctAnswer: portanto }
+      - type: paragraph
+        question: "Substituto adequado de 'automóvel' em 'O automóvel parou. O automóvel tem pneus furados': (veículo/bicicleta/caminhada/estrada)"
+        correctAnswer: veículo
+        difficulty: 2
+        rationale: "'Veículo' é sinônimo que preserva o sentido."
+        objectives: [EF08LP06]
   - pageNumber: 3
-    title: Coesão Textual - Parte 3
-    description: Pratique mantenha ideias bem conectadas.
+    title: Hiperônimo
+    description: Termo mais geral substitui termo específico.
     exercises:
-      - { type: paragraph, question: "Ordem lógica para Mantenha ideias bem conectadas: A)Introduz B)Desenvolve C)Conclui (A-B-C/B-A-C/C-B-A/A-C-B)", correctAnswer: A-B-C }
+      - type: paragraph
+        question: "'Comprei rosas. As ___ estavam frescas.' (flores/rosas/plantas/folhas)"
+        correctAnswer: flores
+        difficulty: 2
+        rationale: "'Flores' é hiperônimo de 'rosas'."
+        objectives: [EF08LP06]
   - pageNumber: 4
-    title: Coesão Textual - Parte 4
-    description: Pratique mantenha ideias bem conectadas.
+    title: Elipse
+    description: Omitir termo recuperável pelo contexto evita redundância.
     exercises:
-      - { type: paragraph, question: "Melhor exemplo para o tópico: (específico e claro/vago/longo/repetitivo)", correctAnswer: específico e claro }
+      - type: paragraph
+        question: "'Ana leu o livro; Pedro ___ também.' (leu/ler/lendo/lido)"
+        correctAnswer: leu
+        difficulty: 3
+        rationale: O verbo se repete em forma conjugada, com o objeto elidido.
+        objectives: [EF09LP08]
   - pageNumber: 5
-    title: Coesão Textual - Parte 5
-    description: Pratique mantenha ideias bem conectadas.
+    title: Coesão por Conectivos
+    description: Conectivos ligam ideias e marcam sua relação.
     exercises:
-      - { type: paragraph, question: "Para manter coerência: todas as frases devem (falar do mesmo assunto/ser longas/ter vírgulas/começar igual)", correctAnswer: falar do mesmo assunto }
+      - type: paragraph
+        question: "Qual conectivo aproxima mais duas ideias complementares? (além disso/mas/porém/contudo)"
+        correctAnswer: além disso
+        difficulty: 2
+        rationale: "'Além disso' acrescenta ideias; os demais opõem."
+        objectives: [EF08LP06]
   - pageNumber: 6
-    title: Coesão Textual - Parte 6
-    description: Pratique mantenha ideias bem conectadas.
+    title: Retomada por Demonstrativo
+    description: "'Este, esse, aquele' retomam termos já citados."
     exercises:
-      - { type: paragraph, question: "Palavra que liga causa e efeito: (porque/verde/sempre/talvez)", correctAnswer: porque }
+      - type: paragraph
+        question: "'Apresentou a proposta. ___ ideia surpreendeu a todos.' (Essa/Aquele/Isso/Aquilo)"
+        correctAnswer: Essa
+        difficulty: 3
+        rationale: "'Essa' retoma a proposta recém-mencionada."
+        objectives: [EF08LP06]
   - pageNumber: 7
-    title: Coesão Textual - Parte 7
-    description: Pratique mantenha ideias bem conectadas.
+    title: Repetição Controlada
+    description: Às vezes, repetir o termo intensifica a clareza.
     exercises:
-      - { type: paragraph, question: "Em parágrafo argumentativo o mais importante é: (opinião fundamentada/só opinião/só fatos/nenhuma opinião)", correctAnswer: opinião fundamentada }
+      - type: paragraph
+        question: "Em qual caso repetir é melhor que substituir? (termos técnicos ambíguos/expressões comuns/nomes próprios/verbos)"
+        correctAnswer: termos técnicos ambíguos
+        difficulty: 4
+        rationale: Sinônimos de termos técnicos podem introduzir imprecisão.
+        objectives: [EF09LP08]
   - pageNumber: 8
-    title: Coesão Textual - Parte 8
-    description: Pratique mantenha ideias bem conectadas.
+    title: Encadeamento Lógico
+    description: A ordem das frases deve seguir uma progressão lógica clara.
     exercises:
-      - { type: paragraph, question: "Para evitar repetição, use: (sinônimos/mesmas palavras/palavras difíceis/muitas vírgulas)", correctAnswer: sinônimos }
+      - type: paragraph
+        question: "Ordem lógica: A) Analisamos os dados B) Concluímos que... C) Coletamos informações D) Apresentamos resultados (C-A-B-D/A-B-C-D/D-C-B-A/B-A-C-D)"
+        correctAnswer: C-A-B-D
+        difficulty: 4
+        rationale: Coleta precede análise; análise precede conclusão; conclusão precede apresentação.
+        objectives: [EF09LP08]
   - pageNumber: 9
-    title: Coesão Textual - Parte 9
-    description: Pratique mantenha ideias bem conectadas.
+    title: Ambiguidade Referencial
+    description: Pronomes sem antecedente claro criam ambiguidade.
     exercises:
-      - { type: paragraph, question: "Transição suave entre ideias precisa de: (conectores apropriados/muitas palavras/frases longas/pontuação excessiva)", correctAnswer: conectores apropriados }
+      - type: paragraph
+        question: "'O menino viu o cachorro e ele correu.' Quem correu? (ambíguo/o menino/o cachorro/ninguém)"
+        correctAnswer: ambíguo
+        difficulty: 4
+        rationale: Sem contexto, 'ele' pode retomar qualquer dos dois sujeitos.
+        objectives: [EF09LP08]
   - pageNumber: 10
-    title: Coesão Textual - Parte 10
-    description: Pratique mantenha ideias bem conectadas.
+    title: Revisão Integrada
+    description: Identifique a melhor opção para manter coesão.
     exercises:
-      - { type: paragraph, question: "Parágrafo bem estruturado tem: (início, meio e fim claros/só início/só fim/só meio)", correctAnswer: início, meio e fim claros }
+      - type: paragraph
+        question: "'A floresta abriga diversas espécies. ___ ecossistema é essencial para o clima.' (Esse/Um/Outro/Nenhum)"
+        correctAnswer: Esse
+        difficulty: 3
+        rationale: "'Esse' retoma 'a floresta' como ecossistema, garantindo coesão."
+        objectives: [EF09LP08]
 target: 10
