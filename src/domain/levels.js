@@ -29,6 +29,8 @@ export class Levels {
     { id: 'M', topic: 'trigonometry_advanced_series', name: 'Advanced Trigonometry • Series' },
     { id: 'N', topic: 'differential_calculus', name: 'Differential Calculus' },
     { id: 'O', topic: 'integral_calculus', name: 'Integral Calculus' },
+    { id: 'P', topic: 'probability_statistics', name: 'Probability & Statistics' },
+    { id: 'Q', topic: 'geometry_linalg', name: 'Geometry & Linear Algebra' },
   ];
 
   static MATH_GROUPS = [

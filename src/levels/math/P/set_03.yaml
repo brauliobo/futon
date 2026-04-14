@@ -1,0 +1,99 @@
+title: Probabilidade Básica
+level: P
+subject: math
+inputType: number
+difficulty: 3
+objectives: [prob.basic]
+example: "P(A) = casos favoráveis / casos possíveis"
+pages:
+  - pageNumber: 1
+    title: Espaço Amostral
+    description: Conjunto de resultados possíveis.
+    exercises:
+      - { type: mental_math, question: "Lançando um dado, quantos resultados há?", correctAnswer: 6 }
+      - { type: mental_math, question: "Lançando uma moeda, quantos resultados há?", correctAnswer: 2 }
+      - { type: mental_math, question: "Tirando uma carta de baralho (52), espaço amostral = ?", correctAnswer: 52 }
+      - { type: mental_math, question: "Dois dados — quantos resultados possíveis?", correctAnswer: 36 }
+      - { type: mental_math, question: "3 moedas — quantos resultados?", correctAnswer: 8 }
+  - pageNumber: 2
+    title: Probabilidade de Evento Simples
+    description: P(A) = n(A)/n(Ω).
+    exercises:
+      - { type: mental_math, question: "P(cara em uma moeda) = ?", correctAnswer: 1/2 }
+      - { type: mental_math, question: "P(6 em um dado) = ?", correctAnswer: 1/6 }
+      - { type: mental_math, question: "P(par em um dado) = ?", correctAnswer: 1/2 }
+      - { type: mental_math, question: "P(ás em baralho de 52) = ?", correctAnswer: 1/13 }
+      - { type: mental_math, question: "P(copas em baralho) = ?", correctAnswer: 1/4 }
+  - pageNumber: 3
+    title: Intervalo de Probabilidade
+    description: 0 ≤ P(A) ≤ 1.
+    exercises:
+      - { type: mental_math, question: "Menor valor possível de P(A) = ?", correctAnswer: 0 }
+      - { type: mental_math, question: "Maior valor possível de P(A) = ?", correctAnswer: 1 }
+      - { type: mental_math, question: "P(evento certo) = ?", correctAnswer: 1 }
+      - { type: mental_math, question: "P(evento impossível) = ?", correctAnswer: 0 }
+      - { type: mental_math, question: "P(A)=0.3 e P(B)=0.6 — P(A ou B mutuamente exclusivo) = ?", correctAnswer: 0.9 }
+  - pageNumber: 4
+    title: Complementar
+    description: P(Ā) = 1 - P(A).
+    exercises:
+      - { type: mental_math, question: "Se P(chuva)=0.3, P(não chuva)=?", correctAnswer: 0.7 }
+      - { type: mental_math, question: "P(não cara) em moeda = ?", correctAnswer: 1/2 }
+      - { type: mental_math, question: "P(não 6 em dado) = ?", correctAnswer: 5/6 }
+      - { type: mental_math, question: "P(não ás em baralho) = ?", correctAnswer: 12/13 }
+      - { type: mental_math, question: "Se P(A)+P(Ā) = ?, sempre", correctAnswer: 1 }
+  - pageNumber: 5
+    title: União
+    description: P(A∪B) = P(A) + P(B) - P(A∩B).
+    exercises:
+      - { type: mental_math, question: "Se P(A)=0.4, P(B)=0.3 e P(A∩B)=0.1 → P(A∪B) = ?", correctAnswer: 0.6 }
+      - { type: mental_math, question: "Eventos mutuamente exclusivos têm P(A∩B) = ?", correctAnswer: 0 }
+      - { type: mental_math, question: "Com eventos exclusivos P(A)=0.3 e P(B)=0.5 → P(A∪B) = ?", correctAnswer: 0.8 }
+      - { type: mental_math, question: "P(par ou maior que 4) em dado = ?", correctAnswer: 4/6 }
+      - { type: mental_math, question: "P(par ou ímpar) em dado = ?", correctAnswer: 1 }
+  - pageNumber: 6
+    title: Interseção — Independentes
+    description: P(A∩B) = P(A)·P(B) quando independentes.
+    exercises:
+      - { type: mental_math, question: "2 moedas — P(2 caras) = ?", correctAnswer: 1/4 }
+      - { type: mental_math, question: "2 dados — P(6 e 6) = ?", correctAnswer: 1/36 }
+      - { type: mental_math, question: "Dado e moeda — P(6 e cara) = ?", correctAnswer: 1/12 }
+      - { type: mental_math, question: "3 moedas — P(3 coroas) = ?", correctAnswer: 1/8 }
+      - { type: mental_math, question: "Tirar 2 ás consecutivos com reposição em baralho = ?", correctAnswer: 1/169 }
+  - pageNumber: 7
+    title: Sem Reposição
+    description: O segundo evento muda com o primeiro.
+    exercises:
+      - { type: mental_math, question: "Baralho — P(dois ás sem reposição) = (4/52)·(3/?)", correctAnswer: 51 }
+      - { type: mental_math, question: "Valor numérico: (4/52)·(3/51) (aprox) = ?", correctAnswer: 0.0045 }
+      - { type: mental_math, question: "Urna com 3 bolas vermelhas e 2 azuis — P(2 vermelhas sem reposição) = (3/5)·(2/4) = ?", correctAnswer: 3/10 }
+      - { type: mental_math, question: "Mesma urna — P(vermelha e depois azul) = (3/5)·(2/4) = ?", correctAnswer: 3/10 }
+      - { type: mental_math, question: "Mesma urna — P(azul e depois azul) = (2/5)·(1/4) = ?", correctAnswer: 1/10 }
+  - pageNumber: 8
+    title: Árvore de Probabilidade
+    description: Soma dos ramos = 1.
+    exercises:
+      - { type: mental_math, question: "Em uma árvore com 2 ramos 0.3 e ?, soma = 1: valor ausente?", correctAnswer: 0.7 }
+      - { type: mental_math, question: "Árvore: P(A)=0.5 → P(B|A)=0.4 → P(A e B) = ?", correctAnswer: 0.2 }
+      - { type: mental_math, question: "P(A)=0.6 → P(B|A)=0.5 → P(A e B) = ?", correctAnswer: 0.3 }
+      - { type: mental_math, question: "P(A)=0.2, P(A e B)=0.1 → P(B|A) = ?", correctAnswer: 0.5 }
+      - { type: mental_math, question: "P(A∩B) em árvore = P(A) · P(B|?)", correctAnswer: A }
+  - pageNumber: 9
+    title: Porcentagem e Probabilidade
+    description: Probabilidade costuma ser expressa em %.
+    exercises:
+      - { type: mental_math, question: "P=0.25 em % = ?", correctAnswer: 25 }
+      - { type: mental_math, question: "P=0.5 em % = ?", correctAnswer: 50 }
+      - { type: mental_math, question: "P=1 em % = ?", correctAnswer: 100 }
+      - { type: mental_math, question: "P=1/5 em % = ?", correctAnswer: 20 }
+      - { type: mental_math, question: "P=3/8 em % (aprox) = ?", correctAnswer: 37.5 }
+  - pageNumber: 10
+    title: Revisão Integrada
+    description: Contextos variados.
+    exercises:
+      - { type: mental_math, question: "Saco com 5 bolas (3 vermelhas, 2 azuis) — P(vermelha) = ?", correctAnswer: 3/5 }
+      - { type: mental_math, question: "Dado de 6 faces — P(ímpar) = ?", correctAnswer: 1/2 }
+      - { type: mental_math, question: "2 moedas — P(pelo menos uma cara) = ?", correctAnswer: 3/4 }
+      - { type: mental_math, question: "Dado — P(maior que 4) = ?", correctAnswer: 2/6 }
+      - { type: mental_math, question: "Baralho — P(rei ou copas) = 4/52 + 13/52 - 1/52 = ?", correctAnswer: 16/52 }
+target: 50
