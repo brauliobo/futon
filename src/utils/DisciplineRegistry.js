@@ -16,7 +16,7 @@ const DISCIPLINES = {
     }
   },
   english: {
-    levels: { 'A': 4 }
+    levels: { 'A': 10, 'B': 5 }
   }
 };
 

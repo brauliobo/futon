@@ -65,24 +65,8 @@ export class Levels {
   ];
 
   static ENGLISH = [
-    { id: '7A', topic: 'pre_reading', name: 'Repeating and Reciting' },
-    { id: '6A', topic: 'pre_reading', name: 'Repeating and Reciting' },
-    { id: '5A', topic: 'literacy', name: 'Learning to Read and Write' },
-    { id: '4A', topic: 'literacy', name: 'Learning to Read and Write' },
-    { id: '3A', topic: 'literacy', name: 'Learning to Read and Write' },
-    { id: '2A', topic: 'literacy', name: 'Learning to Read and Write' },
-    { id: 'A', topic: 'sentence_building', name: 'Sentence Building' },
-    { id: 'B', topic: 'sentence_building', name: 'Sentence Building' },
-    { id: 'C', topic: 'sentence_building', name: 'Sentence Building' },
-    { id: 'D', topic: 'paragraph_building', name: 'Paragraph Building' },
-    { id: 'E', topic: 'paragraph_building', name: 'Paragraph Building' },
-    { id: 'F', topic: 'paragraph_building', name: 'Paragraph Building' },
-    { id: 'G', topic: 'summarisation', name: 'Summarisation' },
-    { id: 'H', topic: 'summarisation', name: 'Summarisation' },
-    { id: 'I', topic: 'summarisation', name: 'Summarisation' },
-    { id: 'J', topic: 'critique', name: 'Critique' },
-    { id: 'K', topic: 'critique', name: 'Critique' },
-    { id: 'L', topic: 'critique', name: 'Critique' },
+    { id: 'A', topic: 'english_vocab', name: 'Basic Vocabulary' },
+    { id: 'B', topic: 'english_phrases', name: 'Sentences & Phrases' },
   ];
 
   static math = new LevelRegistry(Levels.MATH);

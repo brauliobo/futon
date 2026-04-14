@@ -30,7 +30,8 @@ export class SkillTree {
   ];
 
   static ENGLISH = [
-    { id: 'sentences', name: 'Sentences', icon: '💬', levels: ['A'], prereqs: [] },
+    { id: 'vocabulary', name: 'Vocabulary', icon: '📖', levels: ['A'], prereqs: [] },
+    { id: 'sentences', name: 'Sentences', icon: '💬', levels: ['B'], prereqs: ['vocabulary'] },
   ];
 
   static forSubject(subject) { return this[subject.toUpperCase()] || []; }
