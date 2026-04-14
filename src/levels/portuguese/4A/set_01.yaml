@@ -1,20 +1,48 @@
 title: Alfabeto - Reconhecimento de Letras
 level: 4A
 subject: portuguese
-example: Identifique letras do alfabeto.
+example: "Reconheça letras, distinga vogais de consoantes."
 pages:
   - pageNumber: 1
-    title: Letras Maiúsculas
-    description: Escolha a letra correta.
+    title: Ordem do Alfabeto
+    description: Qual letra vem antes ou depois?
     exercises:
-      - { type: literacy, question: "Qual é a primeira letra do alfabeto? (A/B/C)", correctAnswer: A }
-      - { type: literacy, question: "Qual letra vem depois de B? (C/D/E)", correctAnswer: C }
-      - { type: literacy, question: "Qual letra vem antes de F? (D/E/G)", correctAnswer: E }
-      - { type: literacy, question: "A letra que representa o som 'mmmm' é? (M/N/L)", correctAnswer: M }
-      - { type: literacy, question: "Qual letra forma a palavra 'ovo' no início? (O/U/A)", correctAnswer: O }
-      - { type: literacy, question: "A letra que faz 'sss' é? (S/Z/C)", correctAnswer: S }
-      - { type: literacy, question: "Qual letra vem depois de T? (U/V/W)", correctAnswer: U }
-      - { type: literacy, question: "A última letra do alfabeto é? (Y/Z/X)", correctAnswer: Z }
-      - { type: literacy, question: "Qual letra está no meio de 'casa'? (A/S/C)", correctAnswer: S }
-      - { type: literacy, question: "A letra que inicia 'papai' é? (P/B/D)", correctAnswer: P }
-target: 10
+      - { type: reading, question: "Primeira letra do alfabeto? (A/B/C)", correctAnswer: "A" }
+      - { type: reading, question: "Última letra do alfabeto? (X/Y/Z)", correctAnswer: "Z" }
+      - { type: reading, question: "Depois de A vem: (B/C/D)", correctAnswer: "B" }
+      - { type: reading, question: "Depois de M vem: (N/O/L)", correctAnswer: "N" }
+      - { type: reading, question: "Antes de D vem: (C/E/F)", correctAnswer: "C" }
+      - { type: reading, question: "Antes de H vem: (G/I/J)", correctAnswer: "G" }
+      - { type: reading, question: "Entre A e C vem: (B/D/E)", correctAnswer: "B" }
+      - { type: reading, question: "Entre H e J vem: (I/K/L)", correctAnswer: "I" }
+      - { type: reading, question: "Quantas letras tem o alfabeto português? (23/26/27)", correctAnswer: "26" }
+      - { type: reading, question: "Depois de Y vem: (X/Z/W)", correctAnswer: "Z" }
+  - pageNumber: 2
+    title: Vogais e Consoantes
+    description: Distinga vogais de consoantes.
+    exercises:
+      - { type: reading, question: "A é (vogal/consoante)", correctAnswer: "vogal" }
+      - { type: reading, question: "B é (vogal/consoante)", correctAnswer: "consoante" }
+      - { type: reading, question: "E é (vogal/consoante)", correctAnswer: "vogal" }
+      - { type: reading, question: "M é (vogal/consoante)", correctAnswer: "consoante" }
+      - { type: reading, question: "I é (vogal/consoante)", correctAnswer: "vogal" }
+      - { type: reading, question: "P é (vogal/consoante)", correctAnswer: "consoante" }
+      - { type: reading, question: "O é (vogal/consoante)", correctAnswer: "vogal" }
+      - { type: reading, question: "S é (vogal/consoante)", correctAnswer: "consoante" }
+      - { type: reading, question: "U é (vogal/consoante)", correctAnswer: "vogal" }
+      - { type: reading, question: "T é (vogal/consoante)", correctAnswer: "consoante" }
+  - pageNumber: 3
+    title: Palavras e Letras
+    description: Analise letras em palavras.
+    exercises:
+      - { type: reading, question: "Primeira letra de 'árvore'? (a/r/v)", correctAnswer: "a" }
+      - { type: reading, question: "Primeira letra de 'bola'? (b/o/l)", correctAnswer: "b" }
+      - { type: reading, question: "Última letra de 'casa'? (c/s/a)", correctAnswer: "a" }
+      - { type: reading, question: "Última letra de 'sol'? (s/o/l)", correctAnswer: "l" }
+      - { type: reading, question: "Quantas letras em 'casa'? (3/4/5)", correctAnswer: "4" }
+      - { type: reading, question: "Quantas letras em 'mesa'? (3/4/5)", correctAnswer: "4" }
+      - { type: reading, question: "Quantas letras em 'pipoca'? (5/6/7)", correctAnswer: "6" }
+      - { type: reading, question: "Quantas letras em 'sol'? (2/3/4)", correctAnswer: "3" }
+      - { type: reading, question: "Começa com vogal: (amor/bola/sol)", correctAnswer: "amor" }
+      - { type: reading, question: "Começa com consoante: (uva/livro/oi)", correctAnswer: "livro" }
+target: 30
