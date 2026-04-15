@@ -15,22 +15,32 @@ pages:
         question: Catetos 3 e 4 — hipotenusa = ?
         correctAnswer: 5
         rationale: "Use a fórmula geométrica adequada à figura."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Catetos 6 e 8 — hipotenusa = ?
         correctAnswer: 10
         rationale: "Use a fórmula geométrica adequada à figura."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Catetos 5 e 12 — hipotenusa = ?
         correctAnswer: 13
         rationale: "Use a fórmula geométrica adequada à figura."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Catetos 8 e 15 — hipotenusa = ?
         correctAnswer: 17
         rationale: "Área do triângulo por determinante: ½|det|."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Catetos 9 e 12 — hipotenusa = ?
         correctAnswer: 15
         rationale: "Matriz produto: linha × coluna, soma dos produtos."
+        difficulty: 2
+        objectives: [geometry.triangles]
   - pageNumber: 2
     title: Encontrando Catetos
     description: Subtraia quadrados.
@@ -39,22 +49,32 @@ pages:
         question: Hipotenusa 5, cateto 3 — outro cateto = ?
         correctAnswer: 4
         rationale: "Matriz identidade I: A·I = A."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Hipotenusa 13, cateto 5 — outro cateto = ?
         correctAnswer: 12
         rationale: "Retângulo: A = base × altura."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Hipotenusa 10, cateto 8 — outro cateto = ?
         correctAnswer: 6
         rationale: "Triângulo: A = (base × altura)/2."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Hipotenusa 17, cateto 15 — outro cateto = ?
         correctAnswer: 8
         rationale: "Área do quadrado: lado²."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Hipotenusa 25, cateto 7 — outro cateto = ?
         correctAnswer: 24
         rationale: "Área do círculo: πr²."
+        difficulty: 2
+        objectives: [geometry.triangles]
   - pageNumber: 3
     title: Triângulos Especiais 30-60-90
     description: Lados na razão 1 — √3 — 2.
@@ -63,22 +83,32 @@ pages:
         question: Em 30-60-90, lado oposto a 30° = x; oposto a 60° = ?
         correctAnswer: x√3
         rationale: "Distância entre pontos: d = √((x₂-x₁)² + (y₂-y₁)²)."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Em 30-60-90 com x=1, hipotenusa = ?
         correctAnswer: 2
         rationale: "Ponto médio: ((x₁+x₂)/2, (y₁+y₂)/2)."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Em 30-60-90 com x=2, lado de 60° = ?
         correctAnswer: 2√3
         rationale: "Equação da reta: y - y₀ = m(x - x₀), m = Δy/Δx."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Em 30-60-90 com x=3, hipotenusa = ?
         correctAnswer: 6
         rationale: "Retas paralelas: mesmos coeficientes angulares."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: sen(30°) = ?
         correctAnswer: 1/2
         rationale: "Retas perpendiculares: m₁ · m₂ = -1."
+        difficulty: 2
+        objectives: [geometry.triangles]
   - pageNumber: 4
     title: Triângulos 45-45-90
     description: Lados na razão 1 — 1 — √2.
@@ -87,22 +117,32 @@ pages:
         question: Cateto 1, hipotenusa = ?
         correctAnswer: √2
         rationale: "Circunferência: (x - a)² + (y - b)² = r²."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Cateto 3, hipotenusa = ?
         correctAnswer: 3√2
         rationale: "Vetor: soma componente a componente; módulo √(x² + y²)."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Hipotenusa √2, catetos = ?
         correctAnswer: 1
         rationale: "Produto escalar: u·v = x₁x₂ + y₁y₂ = |u||v|cos θ."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: Diagonal do quadrado lado L = ?
         correctAnswer: L√2
         rationale: "Determinante 2×2: ad - bc."
+        difficulty: 2
+        objectives: [geometry.triangles]
       - type: geometry
         question: sen(45°) = cos(45°) = ?
         correctAnswer: √2/2
         rationale: "Área do triângulo por determinante: ½|det|."
+        difficulty: 2
+        objectives: [geometry.triangles]
   - pageNumber: 5
     title: Lei dos Cossenos
     description: c² = a² + b² - 2ab·cos(C).
@@ -111,22 +151,32 @@ pages:
         question: "Com a=3, b=4, C=90°: c = ?"
         correctAnswer: 5
         rationale: "Matriz produto: linha × coluna, soma dos produtos."
+        difficulty: 3
+        objectives: [geometry.triangles]
       - type: geometry
         question: "Com a=5, b=5, C=60°: c = ?"
         correctAnswer: 5
         rationale: "Matriz identidade I: A·I = A."
+        difficulty: 3
+        objectives: [geometry.triangles]
       - type: geometry
         question: "Se C=90°, a lei dos cossenos vira: (Pitágoras/Lei dos senos)"
         correctAnswer: Pitágoras
         rationale: "Retângulo: A = base × altura."
+        difficulty: 3
+        objectives: [geometry.triangles]
       - type: geometry
         question: "Com a=8, b=6, C=60°: c² = 64+36-48 = ?"
         correctAnswer: 52
         rationale: "Triângulo: A = (base × altura)/2."
+        difficulty: 3
+        objectives: [geometry.triangles]
       - type: geometry
         question: c² acima implica c ≈ ?
         correctAnswer: 7.21
         rationale: "Área do quadrado: lado²."
+        difficulty: 3
+        objectives: [geometry.triangles]
   - pageNumber: 6
     title: Lei dos Senos
     description: a/sen(A) = b/sen(B) = c/sen(C).
@@ -135,22 +185,32 @@ pages:
         question: Se a=5 e sen(A)=0.5, 2R = 10 (V/F)?
         correctAnswer: V
         rationale: "Área do círculo: πr²."
+        difficulty: 3
+        objectives: [geometry.triangles]
       - type: geometry
         question: Se a/sen(A)=10, b=? quando sen(B)=0.4
         correctAnswer: 4
         rationale: "Distância entre pontos: d = √((x₂-x₁)² + (y₂-y₁)²)."
+        difficulty: 3
+        objectives: [geometry.triangles]
       - type: geometry
         question: Se a=8, A=30°, B=60°, b = ?
         correctAnswer: 8√3
         rationale: "Ponto médio: ((x₁+x₂)/2, (y₁+y₂)/2)."
+        difficulty: 3
+        objectives: [geometry.triangles]
       - type: geometry
         question: Todos os lados sobre seno dos ângulos opostos são (iguais/diferentes)
         correctAnswer: iguais
         rationale: "Equação da reta: y - y₀ = m(x - x₀), m = Δy/Δx."
+        difficulty: 3
+        objectives: [geometry.triangles]
       - type: geometry
         question: A razão a/sen(A) é o diâmetro da circunferência circunscrita (V/F)?
         correctAnswer: V
         rationale: "Retas paralelas: mesmos coeficientes angulares."
+        difficulty: 3
+        objectives: [geometry.triangles]
   - pageNumber: 7
     title: Congruência vs Semelhança
     description: Congruentes — mesma forma e tamanho. Semelhantes — mesma forma.
@@ -159,22 +219,32 @@ pages:
         question: "Triângulos com lados 3,4,5 e 6,8,10 são: (semelhantes/congruentes)"
         correctAnswer: semelhantes
         rationale: "Retas perpendiculares: m₁ · m₂ = -1."
+        difficulty: 3
+        objectives: [geometry.triangles]
       - type: geometry
         question: "Em semelhança, a razão entre os lados correspondentes é: (constante/variável)"
         correctAnswer: constante
         rationale: "Circunferência: (x - a)² + (y - b)² = r²."
+        difficulty: 3
+        objectives: [geometry.triangles]
       - type: geometry
         question: Se dois triângulos são congruentes, são também semelhantes? (sim/não)
         correctAnswer: sim
         rationale: "Vetor: soma componente a componente; módulo √(x² + y²)."
+        difficulty: 3
+        objectives: [geometry.triangles]
       - type: geometry
         question: Se dois triângulos são semelhantes, são sempre congruentes? (sim/não)
         correctAnswer: não
         rationale: "Produto escalar: u·v = x₁x₂ + y₁y₂ = |u||v|cos θ."
+        difficulty: 3
+        objectives: [geometry.triangles]
       - type: geometry
         question: Razão das áreas é razão dos lados ao quadrado (V/F)?
         correctAnswer: V
         rationale: "Determinante 2×2: ad - bc."
+        difficulty: 3
+        objectives: [geometry.triangles]
   - pageNumber: 8
     title: Ângulos do Triângulo
     description: Soma dos ângulos = 180°.
@@ -183,22 +253,32 @@ pages:
         question: Em triângulo com ângulos 60° e 70°, terceiro = ?
         correctAnswer: 50°
         rationale: "Área do triângulo por determinante: ½|det|."
+        difficulty: 4
+        objectives: [geometry.triangles]
       - type: geometry
         question: Triângulo isósceles com ângulo da base 40°, ângulo do vértice = ?
         correctAnswer: 100°
         rationale: "Matriz produto: linha × coluna, soma dos produtos."
+        difficulty: 4
+        objectives: [geometry.triangles]
       - type: geometry
         question: Triângulo equilátero tem ângulos = ?
         correctAnswer: 60°
         rationale: "Matriz identidade I: A·I = A."
+        difficulty: 4
+        objectives: [geometry.triangles]
       - type: geometry
         question: Triângulo retângulo com um ângulo 30° — outros ângulos?
         correctAnswer: 60 e 90
         rationale: "Retângulo: A = base × altura."
+        difficulty: 4
+        objectives: [geometry.triangles]
       - type: geometry
         question: Soma dos ângulos de qualquer triângulo em graus = ?
         correctAnswer: 180°
         rationale: "Triângulo: A = (base × altura)/2."
+        difficulty: 4
+        objectives: [geometry.triangles]
   - pageNumber: 9
     title: Altura, Mediana, Bissetriz
     description: Elementos notáveis.
@@ -207,22 +287,32 @@ pages:
         question: "Altura relativa ao lado a parte de: (vértice oposto/lado a)"
         correctAnswer: vértice oposto
         rationale: "Área do quadrado: lado²."
+        difficulty: 4
+        objectives: [geometry.triangles]
       - type: geometry
         question: "Mediana vai do vértice ao: (ponto médio do lado oposto/ortogonal)"
         correctAnswer: ponto médio do lado oposto
         rationale: "Área do círculo: πr²."
+        difficulty: 4
+        objectives: [geometry.triangles]
       - type: geometry
         question: "Bissetriz divide o ângulo em: (duas partes iguais/três)"
         correctAnswer: duas partes iguais
         rationale: "Distância entre pontos: d = √((x₂-x₁)² + (y₂-y₁)²)."
+        difficulty: 4
+        objectives: [geometry.triangles]
       - type: geometry
         question: "Baricentro (encontro das medianas) divide cada mediana em razão: (2:1/3:1)"
         correctAnswer: 2:1
         rationale: "Ponto médio: ((x₁+x₂)/2, (y₁+y₂)/2)."
+        difficulty: 4
+        objectives: [geometry.triangles]
       - type: geometry
         question: Encontro das alturas = ?
         correctAnswer: ortocentro
         rationale: "Equação da reta: y - y₀ = m(x - x₀), m = Δy/Δx."
+        difficulty: 4
+        objectives: [geometry.triangles]
   - pageNumber: 10
     title: Revisão Integrada
     description: Problemas variados.
@@ -231,20 +321,30 @@ pages:
         question: Triângulo com catetos 9 e 12 — hipotenusa = ?
         correctAnswer: 15
         rationale: "Retas paralelas: mesmos coeficientes angulares."
+        difficulty: 4
+        objectives: [geometry.triangles]
       - type: geometry
         question: Em 30-60-90, se x=4, hipotenusa = ?
         correctAnswer: 8
         rationale: "Retas perpendiculares: m₁ · m₂ = -1."
+        difficulty: 4
+        objectives: [geometry.triangles]
       - type: geometry
         question: Em 45-45-90, cateto 5, hipotenusa = ?
         correctAnswer: 5√2
         rationale: "Circunferência: (x - a)² + (y - b)² = r²."
+        difficulty: 4
+        objectives: [geometry.triangles]
       - type: geometry
         question: Triângulo com ângulos 40° e 60°, terceiro = ?
         correctAnswer: 80°
         rationale: "Vetor: soma componente a componente; módulo √(x² + y²)."
+        difficulty: 4
+        objectives: [geometry.triangles]
       - type: geometry
         question: "Lei dos cossenos — se a=3, b=4, C=60°: c² = ?"
         correctAnswer: 13
         rationale: "Produto escalar: u·v = x₁x₂ + y₁y₂ = |u||v|cos θ."
+        difficulty: 4
+        objectives: [geometry.triangles]
 target: 50

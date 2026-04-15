@@ -15,22 +15,32 @@ pages:
         question: "Matriz 2×3 tem: (6 elementos/5 elementos)"
         correctAnswer: 6 elementos
         rationale: "Isole a incógnita usando operações inversas."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: "Matriz quadrada tem: (mesmo número de linhas e colunas/diferentes)"
         correctAnswer: mesmo número de linhas e colunas
         rationale: "Isole a incógnita usando operações inversas."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: Matriz identidade tem 1 na diagonal e 0 fora (V/F)?
         correctAnswer: V
         rationale: "Isole a incógnita usando operações inversas."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: "Matriz nula tem todos os elementos iguais a: (0/1)"
         correctAnswer: 0
         rationale: "Produto escalar: u·v = x₁x₂ + y₁y₂ = |u||v|cos θ."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: "Transposta troca linhas por: (colunas/elementos)"
         correctAnswer: colunas
         rationale: "Determinante 2×2: ad - bc."
+        difficulty: 3
+        objectives: [linalg.matrices]
   - pageNumber: 2
     title: Soma de Matrizes
     description: Soma elemento a elemento.
@@ -39,22 +49,32 @@ pages:
         question: "[1 2; 3 4] + [5 6; 7 8] — elemento (1,1) = ?"
         correctAnswer: 6
         rationale: "Área do triângulo por determinante: ½|det|."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: Mesma operação — elemento (2,2) = ?
         correctAnswer: 12
         rationale: "Matriz produto: linha × coluna, soma dos produtos."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: "Para somar, as matrizes devem ter: (mesmas dimensões/dimensões diferentes)"
         correctAnswer: mesmas dimensões
         rationale: "Matriz identidade I: A·I = A."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: A + 0 = A (V/F)?
         correctAnswer: V
         rationale: "Retângulo: A = base × altura."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: A + B = B + A (V/F)?
         correctAnswer: V
         rationale: "Triângulo: A = (base × altura)/2."
+        difficulty: 3
+        objectives: [linalg.matrices]
   - pageNumber: 3
     title: Multiplicação por Escalar
     description: Multiplica cada elemento.
@@ -63,22 +83,32 @@ pages:
         question: 2·[1 2; 3 4] — elemento (1,1) = ?
         correctAnswer: 2
         rationale: "Área do quadrado: lado²."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: 2·[1 2; 3 4] — elemento (2,2) = ?
         correctAnswer: 8
         rationale: "Área do círculo: πr²."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: 0·A = ?
         correctAnswer: 0
         rationale: "Distância entre pontos: d = √((x₂-x₁)² + (y₂-y₁)²)."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: 1·A = ?
         correctAnswer: A
         rationale: "Ponto médio: ((x₁+x₂)/2, (y₁+y₂)/2)."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: -1·A = ?
         correctAnswer: -A
         rationale: "Equação da reta: y - y₀ = m(x - x₀), m = Δy/Δx."
+        difficulty: 3
+        objectives: [linalg.matrices]
   - pageNumber: 4
     title: Multiplicação de Matrizes
     description: Produto linhas por colunas.
@@ -87,22 +117,32 @@ pages:
         question: "A (2×3) · B (3×2) resulta em matriz: (2×2/3×3)"
         correctAnswer: 2×2
         rationale: "Retas paralelas: mesmos coeficientes angulares."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: "[1 2]·[3 4]ᵀ (1×2 vezes 2×1) = ?"
         correctAnswer: 11
         rationale: "Retas perpendiculares: m₁ · m₂ = -1."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: Para multiplicar, colunas de A = linhas de B (V/F)?
         correctAnswer: V
         rationale: "Circunferência: (x - a)² + (y - b)² = r²."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: A · B = B · A em geral? (sim/não)
         correctAnswer: não
         rationale: "Vetor: soma componente a componente; módulo √(x² + y²)."
+        difficulty: 3
+        objectives: [linalg.matrices]
       - type: algebra
         question: A · I = ?
         correctAnswer: A
         rationale: "Produto escalar: u·v = x₁x₂ + y₁y₂ = |u||v|cos θ."
+        difficulty: 3
+        objectives: [linalg.matrices]
   - pageNumber: 5
     title: Determinante 2×2
     description: det([a b; c d]) = ad - bc.
@@ -111,22 +151,32 @@ pages:
         question: det([1 2; 3 4]) = ?
         correctAnswer: -2
         rationale: "Determinante 2×2: ad - bc."
+        difficulty: 4
+        objectives: [linalg.matrices]
       - type: algebra
         question: det([2 3; 4 5]) = ?
         correctAnswer: -2
         rationale: "Área do triângulo por determinante: ½|det|."
+        difficulty: 4
+        objectives: [linalg.matrices]
       - type: algebra
         question: det([1 0; 0 1]) = ?
         correctAnswer: 1
         rationale: "Matriz produto: linha × coluna, soma dos produtos."
+        difficulty: 4
+        objectives: [linalg.matrices]
       - type: algebra
         question: det([0 0; 0 0]) = ?
         correctAnswer: 0
         rationale: "Matriz identidade I: A·I = A."
+        difficulty: 4
+        objectives: [linalg.matrices]
       - type: algebra
         question: det([3 1; 2 4]) = ?
         correctAnswer: 10
         rationale: "Retângulo: A = base × altura."
+        difficulty: 4
+        objectives: [linalg.matrices]
   - pageNumber: 6
     title: Determinante 3×3 (Regra de Sarrus)
     description: Soma diagonais principais menos secundárias.
@@ -135,22 +185,32 @@ pages:
         question: det da identidade 3×3 = ?
         correctAnswer: 1
         rationale: "Triângulo: A = (base × altura)/2."
+        difficulty: 4
+        objectives: [linalg.matrices]
       - type: algebra
         question: det([1 2 3; 4 5 6; 7 8 9]) = ?
         correctAnswer: 0
         rationale: "Área do quadrado: lado²."
+        difficulty: 4
+        objectives: [linalg.matrices]
       - type: algebra
         question: det([1 0 0; 0 2 0; 0 0 3]) = ?
         correctAnswer: 6
         rationale: "Área do círculo: πr²."
+        difficulty: 4
+        objectives: [linalg.matrices]
       - type: algebra
         question: Se uma linha é zero, det = ?
         correctAnswer: 0
         rationale: "Distância entre pontos: d = √((x₂-x₁)² + (y₂-y₁)²)."
+        difficulty: 4
+        objectives: [linalg.matrices]
       - type: algebra
         question: Se duas linhas são iguais, det = ?
         correctAnswer: 0
         rationale: "Ponto médio: ((x₁+x₂)/2, (y₁+y₂)/2)."
+        difficulty: 4
+        objectives: [linalg.matrices]
   - pageNumber: 7
     title: Propriedades do Determinante
     description: Trocar linhas troca sinal.
@@ -159,22 +219,32 @@ pages:
         question: det(A·B) = det(A)·det(?)
         correctAnswer: B
         rationale: "Equação da reta: y - y₀ = m(x - x₀), m = Δy/Δx."
+        difficulty: 4
+        objectives: [linalg.matrices]
       - type: algebra
         question: det(A^T) = det(A) (V/F)?
         correctAnswer: V
         rationale: "Retas paralelas: mesmos coeficientes angulares."
+        difficulty: 4
+        objectives: [linalg.matrices]
       - type: algebra
         question: Trocar duas linhas de A muda o sinal do det (V/F)?
         correctAnswer: V
         rationale: "Retas perpendiculares: m₁ · m₂ = -1."
+        difficulty: 4
+        objectives: [linalg.matrices]
       - type: algebra
         question: "Multiplicar uma linha por k multiplica det por: (k/k²)"
         correctAnswer: k
         rationale: "Circunferência: (x - a)² + (y - b)² = r²."
+        difficulty: 4
+        objectives: [linalg.matrices]
       - type: algebra
         question: det(kA) para matriz n×n = ?·det(A)
         correctAnswer: k^n
         rationale: "Vetor: soma componente a componente; módulo √(x² + y²)."
+        difficulty: 4
+        objectives: [linalg.matrices]
   - pageNumber: 8
     title: Matriz Inversa
     description: A·A⁻¹ = I.
@@ -183,22 +253,32 @@ pages:
         question: "Para A ter inversa, det(A) ≠ ? "
         correctAnswer: 0
         rationale: "Produto escalar: u·v = x₁x₂ + y₁y₂ = |u||v|cos θ."
+        difficulty: 5
+        objectives: [linalg.matrices]
       - type: algebra
         question: "Se det=0, A é: (singular/inversível)"
         correctAnswer: singular
         rationale: "Determinante 2×2: ad - bc."
+        difficulty: 5
+        objectives: [linalg.matrices]
       - type: algebra
         question: "Inversa de 2×2 [a b; c d] tem denominador: (det/traço)"
         correctAnswer: det
         rationale: "Área do triângulo por determinante: ½|det|."
+        difficulty: 5
+        objectives: [linalg.matrices]
       - type: algebra
         question: (A⁻¹)⁻¹ = ?
         correctAnswer: A
         rationale: "Matriz produto: linha × coluna, soma dos produtos."
+        difficulty: 5
+        objectives: [linalg.matrices]
       - type: algebra
         question: (AB)⁻¹ = B⁻¹·A⁻¹ (V/F)?
         correctAnswer: V
         rationale: "Matriz identidade I: A·I = A."
+        difficulty: 5
+        objectives: [linalg.matrices]
   - pageNumber: 9
     title: Sistemas Lineares
     description: Regra de Cramer usa determinantes.
@@ -207,22 +287,32 @@ pages:
         question: "Sistema 2×2 com det da matriz dos coeficientes = 0 pode ter: (0 ou infinitas soluções/sempre única)"
         correctAnswer: 0 ou infinitas soluções
         rationale: "Retângulo: A = base × altura."
+        difficulty: 5
+        objectives: [linalg.matrices]
       - type: algebra
         question: "Sistema com det ≠ 0 tem: (única solução/infinitas)"
         correctAnswer: única solução
         rationale: "Triângulo: A = (base × altura)/2."
+        difficulty: 5
+        objectives: [linalg.matrices]
       - type: algebra
         question: "Regra de Cramer — xᵢ = det(Aᵢ)/det(A). Válida quando det(A) = ? "
         correctAnswer: ≠ 0
         rationale: "Área do quadrado: lado²."
+        difficulty: 5
+        objectives: [linalg.matrices]
       - type: algebra
         question: "Sistema homogêneo Ax=0 sempre tem solução: (trivial x=0/inexistente)"
         correctAnswer: trivial x=0
         rationale: "Área do círculo: πr²."
+        difficulty: 5
+        objectives: [linalg.matrices]
       - type: algebra
         question: Sistema homogêneo tem solução não trivial se det(A) = ?
         correctAnswer: 0
         rationale: "Distância entre pontos: d = √((x₂-x₁)² + (y₂-y₁)²)."
+        difficulty: 5
+        objectives: [linalg.matrices]
   - pageNumber: 10
     title: Revisão Integrada
     description: Misture operações.
@@ -231,20 +321,30 @@ pages:
         question: "Dimensão de A·B se A é 2×3 e B é 3×4: ?"
         correctAnswer: 2×4
         rationale: "Ponto médio: ((x₁+x₂)/2, (y₁+y₂)/2)."
+        difficulty: 5
+        objectives: [linalg.matrices]
       - type: algebra
         question: det(2·I₃) = ?
         correctAnswer: 8
         rationale: "Equação da reta: y - y₀ = m(x - x₀), m = Δy/Δx."
+        difficulty: 5
+        objectives: [linalg.matrices]
       - type: algebra
         question: Se det(A)=5, det(2A) para A 2×2 = ?
         correctAnswer: 20
         rationale: "Retas paralelas: mesmos coeficientes angulares."
+        difficulty: 5
+        objectives: [linalg.matrices]
       - type: algebra
         question: det([0 1; 1 0]) = ?
         correctAnswer: -1
         rationale: "Retas perpendiculares: m₁ · m₂ = -1."
+        difficulty: 5
+        objectives: [linalg.matrices]
       - type: algebra
         question: det([2 0 0; 0 3 0; 0 0 4]) = ?
         correctAnswer: 24
         rationale: "Circunferência: (x - a)² + (y - b)² = r²."
+        difficulty: 5
+        objectives: [linalg.matrices]
 target: 50
