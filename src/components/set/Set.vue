@@ -1,6 +1,11 @@
 <!-- src/components/set/Set.vue -->
 <template lang="pug">
-  div(class="set mb-2 space-y-4")
+  div(class="set mb-2 space-y-4 relative")
+    div(v-if="pageCompleting" class="page-complete-overlay" aria-hidden="true")
+      div(class="flex flex-col items-center gap-3")
+        div(class="page-complete-badge")
+          span ✓
+        p(class="page-complete-label") {{ $t('pageComplete') || 'Page complete!' }}
     div(class="rounded-3xl border theme-border bg-kid-surface shadow-sm")
       div(class="px-5 py-5")
         div(v-if="currentPage && !isSubmitted" class="space-y-4")
@@ -13,7 +18,7 @@
             :exercises-on-page="currentPage.exercises?.length || 0"
           )
           div(class="space-y-3")
-            ExampleAlert(v-if="set.example" :example="set.example")
+            ExampleAlert(v-if="set.example && currentPageIndex === 0" :example="set.example")
             PageComponent(
               v-if="currentPage"
               :key="'page-' + currentPageIndex + '-' + resetKey"
@@ -109,6 +114,7 @@ export default {
       pageSeconds: 0,
       intervalId: null,
       startedAt: 0,
+      pageCompleting: false,
       storage: new SetStorage(this.profileId),
     };
   },
@@ -218,14 +224,16 @@ export default {
       
       this.persistProgress();
       
-      // Auto-advance when finishing a page
+      // Auto-advance when finishing a page (last page submits immediately)
       if (isCompleted && !wasCompleted && pageNumber - 1 === this.currentPageIndex && !this.isSubmitted) {
-        if (this.isLastPage) {
-          this.submitAnswers();
-        } else {
-          this.nextPage();
-        }
+        if (this.isLastPage) { this.submitAnswers(); return; }
+        this.celebratePage();
       }
+    },
+    celebratePage() {
+      this.pageCompleting = true;
+      navigator.vibrate?.([20, 50, 20, 50, 40]);
+      setTimeout(() => { this.pageCompleting = false; this.nextPage(); }, 450);
     },
     
     // Keyboard navigation

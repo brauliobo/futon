@@ -1,155 +1,69 @@
 <!-- src/components/set/ExerciseList.vue -->
 <template lang="pug">
-  div(class="grid gap-2 md:gap-2.5 grid-cols-1 md:grid-cols-2")
-    template(v-for="(pair, rowIndex) in exercisePairs" :key="'row-' + rowIndex")
-      div(v-for="(exercise, colIndex) in pair" :key="'exercise-' + getIndex(rowIndex, colIndex)" class="space-y-4")
-        Exercise(
-          v-if="exercise"
-          :exercise="exercise"
-          :exerciseNumber="displayNumber(getIndex(rowIndex, colIndex))"
-          :isSubmitted="isSubmitted"
-          :isReadOnly="isReadOnly"
-          :setInputType="setInputType"
-          @update-answer="(payload) => handleUpdateAnswer(getIndex(rowIndex, colIndex), payload)"
-          @next-exercise="focusNextExercise(getIndex(rowIndex, colIndex))"
-          ref="exercises"
-        )
+  div(class="exercise-grid")
+    Exercise(
+      v-for="(exercise, idx) in exercises"
+      :key="'exercise-' + idx"
+      :exercise="exercise"
+      :exerciseNumber="idx + 1"
+      :isSubmitted="isSubmitted"
+      :isReadOnly="isReadOnly"
+      :setInputType="setInputType"
+      @update-answer="(payload) => $emit('update-answer', idx, payload)"
+      @next-exercise="focusNext(idx)"
+      ref="exercises"
+    )
 </template>
 
 <script>
 import Exercise from "./Exercise.vue";
-import { ExerciseLayout } from "../../utils/ExerciseLayout.js";
 import { Focus } from "../../utils/Focus.js";
 
 export default {
   name: "ExerciseList",
-  components: {
-    Exercise,
-  },
+  components: { Exercise },
   props: {
-    exercises: {
-      type: Array,
-      required: true,
-    },
-    answers: {
-      type: Array,
-      required: true,
-    },
-    isSubmitted: {
-      type: Boolean,
-      default: false,
-    },
-    isReadOnly: {
-      type: Boolean,
-      default: false,
-    },
-    setInputType: {
-      type: String,
-      default: 'auto',
-    },
-    orderIndices: {
-      type: Array,
-      required: true,
-    },
+    exercises: { type: Array, required: true },
+    answers: { type: Array, required: true },
+    isSubmitted: { type: Boolean, default: false },
+    isReadOnly: { type: Boolean, default: false },
+    setInputType: { type: String, default: 'auto' },
   },
   emits: ['update-answer', 'next-exercise'],
-  computed: {
-    exercisePairs() {
-      return ExerciseLayout.createPairs(this.exercises);
-    },
-  },
   methods: {
-    // Index calculations
-    getIndex(rowIndex, colIndex) {
-      return ExerciseLayout.exerciseIndex(rowIndex, colIndex, this.exercises.length);
+    refAt(idx) {
+      const list = this.$refs.exercises || [];
+      return Array.isArray(list) ? list[idx] : null;
     },
-    displayNumber(originalIndex) {
-      const pos = this.orderIndices.indexOf(originalIndex);
-      return pos >= 0 ? pos + 1 : originalIndex + 1;
-    },
-    nextIndexInTraversal(currentIndex) {
-      const order = this.orderIndices;
-      const pos = order.indexOf(currentIndex);
-      const nextPos = pos + 1;
-      return nextPos < order.length ? order[nextPos] : null;
-    },
-    
-    handleUpdateAnswer(index, payload) {
-      this.$emit('update-answer', index, payload);
-    },
-    
-    // Focus management
-    updateExerciseRefsMap() {
-      this.$nextTick(() => {
-        const list = this.$refs.exercises || [];
-        if (!Array.isArray(list) || list.length === 0) return;
-        
-        this.exerciseRefsMap = [];
-        for (let i = 0; i < this.exercises.length; i++) {
-          const refIndex = ExerciseLayout.logicalToRef(i, this.exercises.length);
-          if (refIndex < list.length) {
-            this.exerciseRefsMap[i] = list[refIndex];
-          }
-        }
-      });
-    },
-    focusNextExercise(currentIndex) {
-      const idx = this.nextIndexInTraversal(currentIndex);
-      if (idx === null) return;
-      Focus.safe(() => {
-        const exerciseComponent = this.exerciseRefsMap[idx];
-        if (exerciseComponent?.focus) {
-          exerciseComponent.focus();
-        }
-      });
+    focusNext(currentIndex) {
+      const next = currentIndex + 1;
+      if (next >= this.exercises.length) return;
+      Focus.safe(() => this.refAt(next)?.focus?.());
     },
     focusFirstUnanswered() {
+      if (this.isReadOnly || this.isSubmitted) return;
       Focus.safe(() => {
-        this.updateExerciseRefsMap();
-        if (this.isReadOnly || this.isSubmitted) return;
-        
-        const order = this.orderIndices;
-        for (let i = 0; i < order.length; i++) {
-          const idx = order[i];
-          const answer = this.answers[idx];
-          const exercise = this.exercises[idx];
-          const hasAnswer = (answer !== null && String(answer).trim() !== '') || 
-                           (exercise?.answer && String(exercise.answer).trim() !== '');
-          
-          if (!hasAnswer) {
-            const exerciseComponent = this.exerciseRefsMap[idx];
-            if (exerciseComponent?.focus) {
-              exerciseComponent.focus();
-              return;
-            }
-          }
-        }
-        
-        // If all answered, focus first exercise
-        const first = this.exerciseRefsMap[order[0] || 0];
-        if (first?.focus) {
-          first.focus();
-        }
+        const idx = this.exercises.findIndex((ex, i) => {
+          const a = this.answers[i] ?? ex?.answer;
+          return !a || String(a).trim() === '';
+        });
+        const target = idx >= 0 ? idx : 0;
+        this.refAt(target)?.focus?.();
       });
     },
   },
-  data() {
-    return {
-      exerciseRefsMap: [],
-    };
-  },
-  mounted() {
-    this.updateExerciseRefsMap();
-    this.focusFirstUnanswered();
-  },
+  mounted() { this.$nextTick(() => this.focusFirstUnanswered()); },
   watch: {
-    exercises() {
-      this.$nextTick(() => {
-        this.updateExerciseRefsMap();
-        this.focusFirstUnanswered();
-      });
-    },
+    exercises() { this.$nextTick(() => this.focusFirstUnanswered()); },
   },
 };
 </script>
+
+<style scoped>
+.exercise-grid { display: flex; flex-direction: column; gap: 0.5rem; }
+@media (min-width: 768px) {
+  .exercise-grid { columns: 2; column-gap: 0.625rem; display: block; }
+  .exercise-grid > * { break-inside: avoid; display: block; margin-bottom: 0.625rem; }
+}
+</style>
 

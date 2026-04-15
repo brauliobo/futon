@@ -8,7 +8,6 @@
       :is-submitted="isSubmitted"
       :is-read-only="isReadOnly"
       :set-input-type="setInputType"
-      :order-indices="orderIndices"
       @update-answer="handleUpdateAnswer"
     )
 </template>
@@ -70,11 +69,6 @@ export default {
     page() {
       this.initAnswers();
       this.emitPageStatus();
-    },
-  },
-  computed: {
-    orderIndices() {
-      return Array.from({ length: Math.min(10, this.page.exercises.length) }, (_, i) => i);
     },
   },
 };

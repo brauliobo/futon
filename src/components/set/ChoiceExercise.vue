@@ -1,9 +1,9 @@
 <template lang="pug">
   div(:class="cardClass" class="animate-slide-up" role="group" :aria-labelledby="`q-${exerciseNumber}`")
-    QuestionHeader(:number="exerciseNumber" :question="exercise.question" spacing="mb-4")
+    QuestionHeader(:number="exerciseNumber" :question="exercise.question" compact)
 
     div(v-if="!isReadOnly")
-      div(class="grid gap-3" :class="exercise.choices.length > 3 ? 'grid-cols-2' : 'grid-cols-1'" role="radiogroup" :aria-labelledby="`q-${exerciseNumber}`" @keydown="onArrowKey")
+      div(:class="gridClass" role="radiogroup" :aria-labelledby="`q-${exerciseNumber}`" @keydown="onArrowKey")
         button(
           v-for="(choice, idx) in exercise.choices"
           :key="choice"
@@ -15,19 +15,20 @@
           :aria-checked="selected === choice"
           ref="choiceBtns"
         )
-          span(class="inline-flex items-center justify-center w-6 h-6 mr-3 rounded-md bg-kid-blue/10 text-kid-blue text-xs font-black shadow-inner" aria-hidden="true") {{ idx + 1 }}
+          span(:class="badgeClass" aria-hidden="true") {{ idx + 1 }}
           span {{ choice }}
       p(v-if="showShortcutHint" class="mt-2 text-xs font-bold text-kid-muted text-center animate-slide-up") ⌨ {{ $t('hintShortcut') || 'Tip: press 1–9 to pick fast' }}
 
-    div(v-if="isReadOnly" class="mt-1 space-y-2" role="list")
-      div(
-        v-for="choice in exercise.choices"
-        :key="choice"
-        :class="reviewClass(choiceStatus(choice))"
-        role="listitem"
-      )
-        span(v-if="reviewIcon(choiceStatus(choice))" class="mr-2 font-black" aria-hidden="true") {{ reviewIcon(choiceStatus(choice)) }}
-        span {{ choice }}
+    div(v-if="isReadOnly")
+      div(:class="reviewListClass" role="list")
+        div(
+          v-for="choice in exercise.choices"
+          :key="choice"
+          :class="reviewClass(choiceStatus(choice))"
+          role="listitem"
+        )
+          span(v-if="reviewIcon(choiceStatus(choice))" class="mr-2 font-black" aria-hidden="true") {{ reviewIcon(choiceStatus(choice)) }}
+          span {{ choice }}
       HintCard(v-if="!isCorrect" class="mt-2" :message="encouragement" :answer="exercise.correctAnswer")
 </template>
 
@@ -37,12 +38,6 @@ import { Encourage } from '../../utils/Encourage.js';
 import QuestionHeader from './QuestionHeader.vue';
 import HintCard from './HintCard.vue';
 
-const REVIEW_VARIANTS = {
-  win:    'border-kid-green bg-kid-green/10 text-kid-text shadow-md',
-  answer: 'border-kid-green bg-kid-green/10 text-kid-text shadow-md',
-  miss:   'border-kid-red bg-kid-red/10 text-kid-red line-through',
-  idle:   'theme-border bg-kid-surface text-kid-muted',
-};
 const REVIEW_ICONS = { win: '✓', answer: '✓', miss: '✗' };
 export default {
   name: 'ChoiceExercise',
@@ -74,6 +69,16 @@ export default {
       return `question-card question-card--${v}`;
     },
     encouragement() { return Encourage.message(this.$t.bind(this), this.exerciseNumber); },
+    isPillMode() { return this.exercise.choices.every(c => String(c).length <= 3); },
+    gridClass() {
+      if (this.isPillMode) return 'flex flex-wrap gap-2';
+      return this.exercise.choices.length > 3 ? 'grid gap-3 grid-cols-2' : 'grid gap-3 grid-cols-1';
+    },
+    badgeClass() {
+      const base = 'inline-flex items-center justify-center rounded-md bg-kid-blue/10 text-kid-blue font-black shadow-inner';
+      return this.isPillMode ? `${base} w-4 h-4 mr-1.5 text-[9px]` : `${base} w-5 h-5 mr-2 text-[10px]`;
+    },
+    reviewListClass() { return this.isPillMode ? 'mt-1 flex flex-wrap gap-1.5' : 'mt-1 space-y-2'; },
   },
   methods: {
     selectChoice(choice) {
@@ -111,9 +116,9 @@ export default {
       });
     },
     choiceClass(choice) {
-      const base = 'w-full flex items-center rounded-2xl border-2 px-4 py-3.5 text-base font-bold text-left transition-all duration-200 active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-kid-blue/40';
-      if (this.selected === choice) return `${base} border-kid-green bg-kid-green/15 text-kid-text shadow-md scale-[1.02]`;
-      return `${base} theme-border-strong surface-2 text-kid-text hover:border-kid-blue/50 hover:bg-kid-blue/5 hover:shadow-sm hover:-translate-y-0.5`;
+      const variant = this.selected === choice ? 'choice-btn--selected' : 'choice-btn--idle';
+      const shape = this.isPillMode ? 'choice-btn--pill' : '';
+      return `choice-btn ${variant} ${shape}`.trim();
     },
     choiceStatus(choice) {
       const norm = Formatter.normalizeAnswer;
@@ -123,8 +128,8 @@ export default {
       return isPicked ? 'miss' : 'idle';
     },
     reviewClass(status) {
-      const base = 'flex items-center rounded-2xl border-2 px-4 py-3 text-base font-bold transition-all';
-      return `${base} ${REVIEW_VARIANTS[status]}`;
+      const shape = this.isPillMode ? 'review-choice--pill' : '';
+      return `review-choice review-choice--${status} ${shape}`.trim();
     },
     reviewIcon(status) { return REVIEW_ICONS[status] || ''; },
   },

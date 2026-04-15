@@ -22,7 +22,7 @@
             p(class="text-base font-semibold text-kid-muted") {{ $t('loading') || 'Loading...' }}
           Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" :isLoadingLevel="isLoadingLevel" :streak="streak" :today-sets="todaySets" @select-set="selectSet" @level-selected="onLevelSelected" class="space-y-6")
           div(v-else)
-            button(@click="goHome" class="group inline-flex items-center gap-2 mb-4 text-base font-bold text-kid-blue transition-all rounded-2xl px-5 py-3 bg-kid-surface shadow-sm border-2 theme-border hover:shadow-md hover:-translate-x-0.5 active:scale-95")
+            button(@click="goHome" class="group inline-flex items-center gap-1.5 mb-3 text-sm font-bold text-kid-muted hover:text-kid-blue transition-all rounded-xl px-2.5 py-1 active:scale-95" :aria-label="$t('back')")
               span(class="text-base transition-transform group-hover:-translate-x-0.5" aria-hidden="true") ←
               span {{ $t('back') }}
             Set(:set="selectedSet" :initialPageIndex="initialPageIndex" :has-next-set="!!nextSet" :profile-id="activeProfile && activeProfile.id || 'default'" @update-set="updateSet" @page-changed="handlePageChange" @next-set="goToNextSet" @go-home="goHome")
