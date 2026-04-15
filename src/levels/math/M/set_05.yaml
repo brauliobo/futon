@@ -2,7 +2,7 @@ title: Produto em Soma & Soma em Produto
 level: M
 subject: math
 inputType: number
-difficulty: 5
+difficulty: 3
 objectives:
   - trig.identities.product_sum
 example: sen(a)cos(b) = [sen(a+b) + sen(a-b)]/2
@@ -15,31 +15,31 @@ pages:
         question: 2·sen(a)cos(b) = sen(a+b) + ?
         correctAnswer: sen(a-b)
         rationale: "Consulte o ciclo trigonométrico."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·sen(60°)cos(30°) = sen(90°) + sen(30°) = ?
         correctAnswer: 3/2
         rationale: "Consulte o ciclo trigonométrico."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·sen(45°)cos(45°) = sen(90°) + sen(0°) = ?
         correctAnswer: 1
         rationale: "Consulte o ciclo trigonométrico."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·sen(30°)cos(60°) = sen(90°) + sen(-30°) = ?
         correctAnswer: 1/2
         rationale: "Arco duplo: cos(2a) = cos²a - sen²a = 1 - 2 sen²a."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·sen(x)cos(x) = ?
         correctAnswer: sen(2x)
         rationale: "Fórmulas de prostaférese convertem soma ↔ produto."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
   - pageNumber: 2
     title: Produto cos·cos
@@ -49,31 +49,31 @@ pages:
         question: 2·cos(a)cos(b) = cos(a+b) + ?
         correctAnswer: cos(a-b)
         rationale: "Série: soma dos n primeiros termos de uma PA/PG."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·cos(60°)cos(30°) = cos(90°) + cos(30°) = ?
         correctAnswer: √3/2
         rationale: "PA: Sₙ = n(a₁ + aₙ)/2."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·cos(45°)cos(45°) = cos(90°) + cos(0°) = ?
         correctAnswer: 1
         rationale: "PG finita: Sₙ = a₁(1 - q^n)/(1 - q), q ≠ 1."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·cos(x)cos(x) = ?
         correctAnswer: 1+cos(2x)
         rationale: "PG infinita (|q| < 1): S = a₁/(1 - q)."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·cos(60°)cos(60°) = ?
         correctAnswer: 1/2
         rationale: "lei dos senos: a/sen A = b/sen B = c/sen C = 2R."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
   - pageNumber: 3
     title: Produto sen·sen
@@ -83,31 +83,31 @@ pages:
         question: 2·sen(a)sen(b) = cos(a-b) - ?
         correctAnswer: cos(a+b)
         rationale: "lei dos cossenos: a² = b² + c² - 2bc·cos A."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·sen(60°)sen(30°) = cos(30°) - cos(90°) = ?
         correctAnswer: √3/2
         rationale: "Use identidades para reduzir expressões antes de calcular."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·sen(45°)sen(45°) = cos(0°) - cos(90°) = ?
         correctAnswer: 1
         rationale: "Domine valores exatos dos ângulos notáveis."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·sen(x)sen(x) = ?
         correctAnswer: 1-cos(2x)
         rationale: "Identidades: sen(a±b), cos(a±b), tan(a±b)."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·sen(30°)sen(30°) = ?
         correctAnswer: 1/2
         rationale: "Arco duplo: sen(2a) = 2 sen a · cos a."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
   - pageNumber: 4
     title: Soma em Produto (sen + sen)
@@ -117,31 +117,31 @@ pages:
         question: sen(a)+sen(b) = 2·sen((a+b)/2)·cos((a-b)/?)
         correctAnswer: 2
         rationale: "Arco duplo: cos(2a) = cos²a - sen²a = 1 - 2 sen²a."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: sen(60°)+sen(30°) = 2·sen(45°)·cos(15°), valor = ?
         correctAnswer: √3/2+1/2
         rationale: "Fórmulas de prostaférese convertem soma ↔ produto."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: sen(x)+sen(x) = ?
         correctAnswer: 2sen(x)
         rationale: "Série: soma dos n primeiros termos de uma PA/PG."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: sen(x)+sen(-x) = ?
         correctAnswer: 0
         rationale: "PA: Sₙ = n(a₁ + aₙ)/2."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: sen(90°)+sen(30°) = ?
         correctAnswer: 3/2
         rationale: "PG finita: Sₙ = a₁(1 - q^n)/(1 - q), q ≠ 1."
-        difficulty: 4
+        difficulty: 2
         objectives: [trig.identities.product_sum]
   - pageNumber: 5
     title: Soma em Produto (sen - sen)
@@ -151,31 +151,31 @@ pages:
         question: sen(a)-sen(b) = 2·cos((a+b)/2)·sen((a-b)/?)
         correctAnswer: 2
         rationale: "PG infinita (|q| < 1): S = a₁/(1 - q)."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: sen(60°)-sen(30°) = ?
         correctAnswer: √3/2-1/2
         rationale: "lei dos senos: a/sen A = b/sen B = c/sen C = 2R."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: sen(x)-sen(x) = ?
         correctAnswer: 0
         rationale: "lei dos cossenos: a² = b² + c² - 2bc·cos A."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: sen(2x)-sen(x) em termos de cos e sen = 2·cos(?)·sen(x/2)
         correctAnswer: 3x/2
         rationale: "Use identidades para reduzir expressões antes de calcular."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: sen(90°)-sen(30°) = ?
         correctAnswer: 1/2
         rationale: "Domine valores exatos dos ângulos notáveis."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
   - pageNumber: 6
     title: Soma em Produto (cos + cos)
@@ -185,31 +185,31 @@ pages:
         question: cos(a)+cos(b) = 2·cos((a+b)/2)·cos((a-b)/?)
         correctAnswer: 2
         rationale: "Identidades: sen(a±b), cos(a±b), tan(a±b)."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: cos(60°)+cos(30°) = ?
         correctAnswer: 1/2+√3/2
         rationale: "Arco duplo: sen(2a) = 2 sen a · cos a."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: cos(x)+cos(x) = ?
         correctAnswer: 2cos(x)
         rationale: "Arco duplo: cos(2a) = cos²a - sen²a = 1 - 2 sen²a."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: cos(90°)+cos(30°) = ?
         correctAnswer: √3/2
         rationale: "Fórmulas de prostaférese convertem soma ↔ produto."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: cos(x)+cos(-x) = ?
         correctAnswer: 2cos(x)
         rationale: "Série: soma dos n primeiros termos de uma PA/PG."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
   - pageNumber: 7
     title: Soma em Produto (cos - cos)
@@ -219,31 +219,31 @@ pages:
         question: cos(a)-cos(b) = -2·sen((a+b)/2)·sen((a-b)/?)
         correctAnswer: 2
         rationale: "PA: Sₙ = n(a₁ + aₙ)/2."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: cos(60°)-cos(30°) = ?
         correctAnswer: 1/2-√3/2
         rationale: "PG finita: Sₙ = a₁(1 - q^n)/(1 - q), q ≠ 1."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: cos(x)-cos(x) = ?
         correctAnswer: 0
         rationale: "PG infinita (|q| < 1): S = a₁/(1 - q)."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: cos(0°)-cos(180°) = ?
         correctAnswer: 2
         rationale: "lei dos senos: a/sen A = b/sen B = c/sen C = 2R."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: cos(x)-cos(-x) = ?
         correctAnswer: 0
         rationale: "lei dos cossenos: a² = b² + c² - 2bc·cos A."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
   - pageNumber: 8
     title: Uso em Integrais (Redução de Potências)
@@ -253,31 +253,31 @@ pages:
         question: "Ao integrar sen(3x)cos(2x), converta em soma: (sen 5x + sen ?)/2"
         correctAnswer: x
         rationale: "Use identidades para reduzir expressões antes de calcular."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: "Ao integrar cos(5x)cos(x), converta em soma: (cos 6x + cos ?)/2"
         correctAnswer: 4x
         rationale: "Domine valores exatos dos ângulos notáveis."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: "Ao integrar sen(4x)sen(x): (cos ? - cos 5x)/2"
         correctAnswer: 3x
         rationale: "Identidades: sen(a±b), cos(a±b), tan(a±b)."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·sen(a)cos(a) = ?
         correctAnswer: sen(2a)
         rationale: "Arco duplo: sen(2a) = 2 sen a · cos a."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·cos²(a) = 1 + ?
         correctAnswer: cos(2a)
         rationale: "Arco duplo: cos(2a) = cos²a - sen²a = 1 - 2 sen²a."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
   - pageNumber: 9
     title: Verdadeiro ou Falso
@@ -287,31 +287,31 @@ pages:
         question: sen(a)sen(b) = sen(a+b) (V/F)?
         correctAnswer: F
         rationale: "Fórmulas de prostaférese convertem soma ↔ produto."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·sen(a)cos(b) = sen(a+b)+sen(a-b) (V/F)?
         correctAnswer: V
         rationale: "Série: soma dos n primeiros termos de uma PA/PG."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: sen(a)+sen(b) = sen(a+b) (V/F)?
         correctAnswer: F
         rationale: "PA: Sₙ = n(a₁ + aₙ)/2."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: cos(a)+cos(b) = 2·cos((a+b)/2)·cos((a-b)/2) (V/F)?
         correctAnswer: V
         rationale: "PG finita: Sₙ = a₁(1 - q^n)/(1 - q), q ≠ 1."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: sen(a)cos(b)+cos(a)sen(b) = sen(a+b) (V/F)?
         correctAnswer: V
         rationale: "PG infinita (|q| < 1): S = a₁/(1 - q)."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
   - pageNumber: 10
     title: Revisão Integrada
@@ -321,30 +321,30 @@ pages:
         question: sen(75°)+sen(15°) = 2·sen(45°)·cos(30°) = ?
         correctAnswer: √6/2
         rationale: "lei dos senos: a/sen A = b/sen B = c/sen C = 2R."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: sen(75°)-sen(15°) = 2·cos(45°)·sen(30°) = ?
         correctAnswer: √2/2
         rationale: "lei dos cossenos: a² = b² + c² - 2bc·cos A."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: cos(75°)+cos(15°) = 2·cos(45°)·cos(30°) = ?
         correctAnswer: √6/2
         rationale: "Use identidades para reduzir expressões antes de calcular."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: cos(75°)-cos(15°) = -2·sen(45°)·sen(30°) = ?
         correctAnswer: -√2/2
         rationale: "Domine valores exatos dos ângulos notáveis."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
       - type: trigonometry
         question: 2·sen(45°)·cos(45°) = sen(?)
         correctAnswer: 90°
         rationale: "Identidades: sen(a±b), cos(a±b), tan(a±b)."
-        difficulty: 5
+        difficulty: 3
         objectives: [trig.identities.product_sum]
 target: 50
