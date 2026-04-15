@@ -46,15 +46,6 @@ export class SkillTree {
 
   static forSubject(subject) { return this[subject.toUpperCase()] || []; }
 
-  static isUnlocked(node, tree, setsByLevel) {
-    if (!node.prereqs.length) return true;
-    return node.prereqs.every(prereqId => {
-      const prereq = tree.find(n => n.id === prereqId);
-      if (!prereq) return true;
-      return prereq.levels.some(lvl => (setsByLevel[lvl] || []).some(s => s.status === 'mastery'));
-    });
-  }
-
   static nodeProgress(node, setsByLevel) {
     if (!node.levels?.length) return { total: 0, mastered: 0, percent: 0 };
     let total = 0, mastered = 0;

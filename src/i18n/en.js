@@ -115,7 +115,6 @@ export const en = {
   unlockHint: "Keep going to unlock!",
   campaign: "Campaign",
   themes: "Themes",
-  needs: "Needs",
 };
 
 

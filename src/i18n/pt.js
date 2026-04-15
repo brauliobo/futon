@@ -115,6 +115,5 @@ export const pt = {
   unlockHint: "Continue para desbloquear!",
   campaign: "Campanha",
   themes: "Temas",
-  needs: "Precisa",
 };
 
