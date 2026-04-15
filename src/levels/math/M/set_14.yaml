@@ -32,13 +32,13 @@ pages:
       - type: sequence
         question: H₄ (aprox) = ?
         correctAnswer: 2.083
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Série harmônica Σ 1/n diverge lentamente; somas parciais crescem sem limite."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: "Σ 1/n: (diverge/converge)"
         correctAnswer: diverge
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Σ 1/n é a série harmônica — diverge."
         difficulty: 3
         objectives: [series.partial_sums]
   - pageNumber: 2
@@ -60,7 +60,7 @@ pages:
       - type: sequence
         question: Σ 1/n converge (V/F)?
         correctAnswer: F
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Σ 1/n é a série harmônica — diverge."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
@@ -72,7 +72,7 @@ pages:
       - type: sequence
         question: Para p-série convergir, p > ?
         correctAnswer: 1
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "p-série Σ 1/nᵖ converge sse p > 1."
         difficulty: 3
         objectives: [series.partial_sums]
   - pageNumber: 3
@@ -116,13 +116,13 @@ pages:
       - type: sequence
         question: "Se aₙ → 5, Σaₙ: (diverge/converge)"
         correctAnswer: diverge
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Teste da divergência: se aₙ ↛ 0, Σaₙ diverge."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σn diverge porque aₙ → ? (∞/0)
         correctAnswer: ∞
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Condição necessária (não suficiente): aₙ → 0 para Σaₙ convergir."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
@@ -134,13 +134,13 @@ pages:
       - type: sequence
         question: Se aₙ → 0, série SEMPRE converge (V/F)?
         correctAnswer: F
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Teste da divergência: se aₙ ↛ 0, Σaₙ diverge."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: "Ex.: Σ 1/n diverge apesar de 1/n→0 (V/F)?"
         correctAnswer: V
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Σ 1/n é a série harmônica — diverge."
         difficulty: 3
         objectives: [series.partial_sums]
   - pageNumber: 5
@@ -156,25 +156,25 @@ pages:
       - type: sequence
         question: Σ 1/n! converge — fatorial cresce (mais rápido/mais devagar)?
         correctAnswer: mais rápido
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Σ 1/n é a série harmônica — diverge."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ sen²(n)/n² é dominado por 1/n², logo converge (V/F)?
         correctAnswer: V
-        rationale: "Aplique razões trigonométricas e o ciclo."
+        rationale: "Teste da comparação: |termos| ≤ 1/n² convergente ⇒ converge."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: "Σ 1/(2n+1) é similar a: (Σ 1/n)"
         correctAnswer: Σ 1/n
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Σ 1/n é a série harmônica — diverge."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: Portanto Σ 1/(2n+1) diverge (V/F)?
         correctAnswer: V
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Comparação com harmônica Σ1/n, que diverge."
         difficulty: 4
         objectives: [series.partial_sums]
   - pageNumber: 6
@@ -218,7 +218,7 @@ pages:
       - type: sequence
         question: "Se bₙ decresce para 0, série alternada: (converge)"
         correctAnswer: converge
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Critério de Leibniz: série alternada converge se bₙ↓0."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
@@ -242,7 +242,7 @@ pages:
       - type: sequence
         question: Série alternada harmônica converge (V/F)?
         correctAnswer: V
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Série harmônica Σ 1/n diverge lentamente; somas parciais crescem sem limite."
         difficulty: 4
         objectives: [series.partial_sums]
   - pageNumber: 8
@@ -264,7 +264,7 @@ pages:
       - type: sequence
         question: Convergência absoluta é mais forte que condicional (V/F)?
         correctAnswer: V
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Absoluta ⇒ convergente; recíproco nem sempre vale."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
@@ -276,7 +276,7 @@ pages:
       - type: sequence
         question: Se série converge absolutamente, converge (V/F)?
         correctAnswer: V
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Σ|aₙ| convergente implica Σaₙ convergente."
         difficulty: 5
         objectives: [series.partial_sums]
   - pageNumber: 9
@@ -292,13 +292,13 @@ pages:
       - type: sequence
         question: Σ 1/n diverge (V/F)?
         correctAnswer: V
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Σ 1/n é a série harmônica — diverge."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ 1/n! = e (V/F)?
         correctAnswer: V
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Σ 1/n é a série harmônica — diverge."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence

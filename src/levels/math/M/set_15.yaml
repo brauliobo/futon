@@ -48,31 +48,31 @@ pages:
       - type: algebra
         question: C(5,2) = ?
         correctAnswer: 10
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Coeficiente binomial: C(n,k) = n!/(k!(n−k)!)."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
         question: C(6,3) = ?
         correctAnswer: 20
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Coeficiente binomial: C(n,k) = n!/(k!(n−k)!)."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
         question: C(4,0) = ?
         correctAnswer: 1
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Coeficiente binomial: C(n,k) = n!/(k!(n−k)!)."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
         question: C(10,10) = ?
         correctAnswer: 1
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Coeficiente binomial: C(n,k) = n!/(k!(n−k)!)."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
         question: C(7,1) = ?
         correctAnswer: 7
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Coeficiente binomial: C(n,k) = n!/(k!(n−k)!)."
         difficulty: 3
         objectives: [algebra.binomial]
   - pageNumber: 3
@@ -82,25 +82,25 @@ pages:
       - type: algebra
         question: "Linha 0 do Triângulo: (1/1 1)"
         correctAnswer: 1
-        rationale: "Opere a fração conforme a regra correspondente."
+        rationale: "Linha 0 do triângulo de Pascal contém apenas 1."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
         question: "Linha 2: 1 2 ? "
         correctAnswer: 1
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Triângulo de Pascal: cada número é soma dos dois acima."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
         question: "Linha 4: 1 4 6 4 ? "
         correctAnswer: 1
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Triângulo de Pascal: cada número é soma dos dois acima."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
         question: Terceira entrada da linha 5 (k=2) = ?
         correctAnswer: 10
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Triângulo de Pascal: linha 5, k=2 → C(5,2) = 10."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
@@ -128,7 +128,7 @@ pages:
       - type: algebra
         question: Em (2+x)⁴, T₃ = C(4,2)·2²·x² = ? · x²
         correctAnswer: 24
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Termo geral: Tₖ₊₁ = C(n,k)·aⁿ⁻ᵏ·bᵏ."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
@@ -150,31 +150,31 @@ pages:
       - type: algebra
         question: C(10,3) = C(10,?)
         correctAnswer: 7
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Simetria: C(n,k) = C(n, n−k)."
         difficulty: 4
         objectives: [algebra.binomial]
       - type: algebra
         question: C(8,2) = C(8,?)
         correctAnswer: 6
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Simetria: C(n,k) = C(n, n−k)."
         difficulty: 4
         objectives: [algebra.binomial]
       - type: algebra
         question: C(n,0) = ?
         correctAnswer: 1
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "C(n,0) = C(n,n) = 1."
         difficulty: 4
         objectives: [algebra.binomial]
       - type: algebra
         question: C(n,n) = ?
         correctAnswer: 1
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "C(n,0) = C(n,n) = 1."
         difficulty: 4
         objectives: [algebra.binomial]
       - type: algebra
         question: C(n,1) = ?
         correctAnswer: n
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "C(n,1) = n."
         difficulty: 4
         objectives: [algebra.binomial]
   - pageNumber: 6
@@ -190,7 +190,7 @@ pages:
       - type: algebra
         question: (2+x)³ coeficiente de x² = ?
         correctAnswer: 6
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Coeficiente: C(3,2)·2¹ = 3·2 = 6."
         difficulty: 4
         objectives: [algebra.binomial]
       - type: algebra
@@ -224,7 +224,7 @@ pages:
       - type: algebra
         question: Soma dos coef. de (1+x)ⁿ = ?
         correctAnswer: 2^n
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Σ C(n,k) = 2ⁿ (substitua x=1 em (1+x)ⁿ)."
         difficulty: 4
         objectives: [algebra.binomial]
       - type: algebra
@@ -252,31 +252,31 @@ pages:
       - type: algebra
         question: C(n,0) + C(n,1) + ... + C(n,n) = ?
         correctAnswer: 2^n
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Σ C(n,k) = 2ⁿ (substitua x=1 em (1+x)ⁿ)."
         difficulty: 5
         objectives: [algebra.binomial]
       - type: algebra
         question: C(10,0) + ... + C(10,10) = ?
         correctAnswer: 1024
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Σ C(10,k) = 2¹⁰ = 1024."
         difficulty: 5
         objectives: [algebra.binomial]
       - type: algebra
         question: Número de subconjuntos de um conjunto com n elementos = ?
         correctAnswer: 2^n
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Conjunto com n elementos tem 2ⁿ subconjuntos."
         difficulty: 5
         objectives: [algebra.binomial]
       - type: algebra
         question: Subconjuntos de 5 elementos = ?
         correctAnswer: 32
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Conjunto com n elementos tem 2ⁿ subconjuntos."
         difficulty: 5
         objectives: [algebra.binomial]
       - type: algebra
         question: Em (x+1/x)ⁿ, termo independente = C(n, n/2) se n par (V/F)?
         correctAnswer: V
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Termo independente: expoente de x zera em k=n/2."
         difficulty: 5
         objectives: [algebra.binomial]
   - pageNumber: 9
@@ -298,7 +298,7 @@ pages:
       - type: algebra
         question: Coeficiente de x² em (1-x)⁵ = ?
         correctAnswer: 10
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Coef. de x² em (1−x)⁵: C(5,2)·(−1)² = 10."
         difficulty: 5
         objectives: [algebra.binomial]
       - type: algebra
@@ -320,7 +320,7 @@ pages:
       - type: algebra
         question: C(6,2) = ?
         correctAnswer: 15
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Coeficiente binomial: C(n,k) = n!/(k!(n−k)!)."
         difficulty: 5
         objectives: [algebra.binomial]
       - type: algebra
@@ -344,7 +344,7 @@ pages:
       - type: algebra
         question: C(n,k) = C(n-1,k-1) + C(n-1,k) (V/F)?
         correctAnswer: V
-        rationale: "Use identidades trigonométricas e o ciclo."
+        rationale: "Relação de Stifel: C(n,k) = C(n−1,k−1) + C(n−1,k)."
         difficulty: 5
         objectives: [algebra.binomial]
 target: 50
