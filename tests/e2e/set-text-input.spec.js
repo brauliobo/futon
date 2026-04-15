@@ -20,7 +20,7 @@ test.describe('Set Exercise Flow - Text Input', () => {
   test('type answer and Enter advances to next', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (!answers.length || answers[0].hasChoices) return;
-    const input = page.getByPlaceholder('Digite sua resposta').first();
+    const input = page.locator('input[inputmode]').first();
     await input.fill(answers[0].answer);
     await input.press('Enter');
     await expect(page.getByText('✓').first()).toBeVisible();
@@ -29,7 +29,7 @@ test.describe('Set Exercise Flow - Text Input', () => {
   test('all inputs enabled from start (no sequential gate)', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (answers.length < 2 || answers[0].hasChoices) return;
-    const inputs = page.getByPlaceholder('Digite sua resposta');
+    const inputs = page.locator('input[inputmode]');
     const count = await inputs.count();
     for (let i = 0; i < count; i++) {
       await expect(inputs.nth(i)).toBeEnabled();
@@ -39,7 +39,7 @@ test.describe('Set Exercise Flow - Text Input', () => {
   test('user can click directly into any exercise input', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (answers.length < 3 || answers[0].hasChoices) return;
-    const inputs = page.getByPlaceholder('Digite sua resposta');
+    const inputs = page.locator('input[inputmode]');
     await inputs.nth(2).click();
     await expect(inputs.nth(2)).toBeFocused();
     await page.keyboard.type(answers[2].answer);
@@ -49,7 +49,7 @@ test.describe('Set Exercise Flow - Text Input', () => {
   test('typing then clicking away persists the answer (blur commit)', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (answers.length < 2 || answers[0].hasChoices) return;
-    const inputs = page.getByPlaceholder('Digite sua resposta');
+    const inputs = page.locator('input[inputmode]');
     await inputs.first().click();
     await page.keyboard.type(answers[0].answer);
     await inputs.nth(1).click();
@@ -74,7 +74,7 @@ test.describe('Set Exercise Flow - Text Input', () => {
   test('Tab from text input does NOT submit (no Tab footgun)', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (!answers.length || answers[0].hasChoices) return;
-    const inputs = page.getByPlaceholder('Digite sua resposta');
+    const inputs = page.locator('input[inputmode]');
     if ((await inputs.count()) < 2) return;
     await inputs.first().click();
     await page.keyboard.type(answers[0].answer);
@@ -90,7 +90,7 @@ test.describe('Set Exercise Flow - Text Input', () => {
   test('clear button (×) appears while editing and resets the input', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (!answers.length || answers[0].hasChoices) return;
-    const input = page.getByPlaceholder('Digite sua resposta').first();
+    const input = page.locator('input[inputmode]').first();
     await input.click();
     await page.keyboard.type(answers[0].answer);
     const clearBtn = page.locator('button[aria-label="Limpar"], button[aria-label="Clear"]').first();
