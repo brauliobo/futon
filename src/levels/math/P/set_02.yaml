@@ -14,31 +14,31 @@ pages:
       - type: mental_math
         question: Amplitude de {2,5,9} = ?
         correctAnswer: 7
-        rationale: "Amplitude = máximo − mínimo."
+        rationale: "Amplitude = máx − mín = 9 − 2 = 7."
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
         question: Amplitude de {10,20,30,40,50} = ?
         correctAnswer: 40
-        rationale: "Amplitude = máximo − mínimo."
+        rationale: "Amplitude = máx − mín = 50 − 10 = 40."
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
         question: Amplitude de {7,7,7} = ?
         correctAnswer: 0
-        rationale: "Amplitude = máximo − mínimo."
+        rationale: "Amplitude = máx − mín = 7 − 7 = 0."
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
         question: Amplitude de {1,100} = ?
         correctAnswer: 99
-        rationale: "Amplitude = máximo − mínimo."
+        rationale: "Amplitude = máx − mín = 100 − 1 = 99."
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
         question: Amplitude de {-3, 5} = ?
         correctAnswer: 8
-        rationale: "Amplitude = máximo − mínimo."
+        rationale: "Amplitude = máx − mín = 5 − -3 = 8."
         difficulty: 1
         objectives: [stats.dispersion]
   - pageNumber: 2
@@ -48,25 +48,25 @@ pages:
       - type: mental_math
         question: Média de {2,4,6} = ?
         correctAnswer: 4
-        rationale: "Média aritmética = soma dos valores dividida pela quantidade."
+        rationale: "Média = soma(2+4+6) / 3 = 12/3 = 4."
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
         question: Desvio de 2 em relação a 4 = ?
         correctAnswer: -2
-        rationale: "Desvio dᵢ = xᵢ − média; soma dos desvios em relação à média = 0."
+        rationale: "Desvio = valor − média = 2 − 4 = -2."
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
         question: Desvio de 6 em relação a 4 = ?
         correctAnswer: 2
-        rationale: "Desvio dᵢ = xᵢ − média; soma dos desvios em relação à média = 0."
+        rationale: "Desvio = valor − média = 6 − 4 = 2."
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
         question: Soma dos desvios de {2,4,6} em relação à média = ?
         correctAnswer: 0
-        rationale: "Desvio dᵢ = xᵢ − média; soma dos desvios em relação à média = 0."
+        rationale: "Soma dos desvios em relação à média é sempre 0 (positivos e negativos se cancelam)."
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
@@ -100,13 +100,13 @@ pages:
       - type: mental_math
         question: Variância de {2,4,6} (divisão por n) = ?
         correctAnswer: 2.67
-        rationale: "Variância: média dos quadrados dos desvios em relação à média."
+        rationale: "Use a fórmula estatística padrão — aplique passo a passo."
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
         question: Variância de {5,5,5,5} = ?
         correctAnswer: 0
-        rationale: "Variância: média dos quadrados dos desvios em relação à média."
+        rationale: "Use a fórmula estatística padrão — aplique passo a passo."
         difficulty: 1
         objectives: [stats.dispersion]
   - pageNumber: 4
@@ -116,13 +116,13 @@ pages:
       - type: mental_math
         question: Desvio padrão de {5,5,5,5} = ?
         correctAnswer: 0
-        rationale: "Desvio padrão: σ = √variância; mede dispersão na mesma unidade dos dados."
+        rationale: "Use a fórmula estatística padrão — aplique passo a passo."
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
         question: Desvio padrão de {2,4,6,8,10} (aprox) = ?
         correctAnswer: 2.83
-        rationale: "Desvio padrão: σ = √variância; mede dispersão na mesma unidade dos dados."
+        rationale: "Use a fórmula estatística padrão — aplique passo a passo."
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
@@ -140,7 +140,7 @@ pages:
       - type: mental_math
         question: Desvio padrão sempre é (positivo/negativo/nulo)
         correctAnswer: positivo
-        rationale: "Desvio padrão: σ = √variância; mede dispersão na mesma unidade dos dados."
+        rationale: "Use a fórmula estatística padrão — aplique passo a passo."
         difficulty: 1
         objectives: [stats.dispersion]
   - pageNumber: 5
@@ -162,19 +162,19 @@ pages:
       - type: mental_math
         question: "Desvio padrão menor significa dados: (mais próximos da média/mais espalhados)"
         correctAnswer: mais próximos da média
-        rationale: "Desvio padrão: σ = √variância; mede dispersão na mesma unidade dos dados."
+        rationale: "Use a fórmula estatística padrão — aplique passo a passo."
         difficulty: 2
         objectives: [stats.dispersion]
       - type: mental_math
         question: Amplitude de {10,11,12} = ?
         correctAnswer: 2
-        rationale: "Amplitude = máximo − mínimo."
+        rationale: "Amplitude = máx − mín = 12 − 10 = 2."
         difficulty: 2
         objectives: [stats.dispersion]
       - type: mental_math
         question: Amplitude de {1,10,20} = ?
         correctAnswer: 19
-        rationale: "Amplitude = máximo − mínimo."
+        rationale: "Amplitude = máx − mín = 20 − 1 = 19."
         difficulty: 2
         objectives: [stats.dispersion]
   - pageNumber: 6
@@ -310,7 +310,7 @@ pages:
       - type: mental_math
         question: Desvio padrão amostral de {2,4,6} (aprox) = ?
         correctAnswer: 2
-        rationale: "Variância amostral: s² = Σ(xᵢ−x̄)² / (n−1)."
+        rationale: "Use a fórmula estatística padrão — aplique passo a passo."
         difficulty: 3
         objectives: [stats.dispersion]
   - pageNumber: 10
