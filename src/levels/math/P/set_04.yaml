@@ -14,31 +14,31 @@ pages:
       - type: mental_math
         question: "4 camisas e 3 calças — quantos conjuntos? "
         correctAnswer: 12
-        rationale: "Calcule mentalmente usando estratégias de decomposição."
+        rationale: "Princípio multiplicativo: multiplique as opções de cada etapa independente."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: 5 pratos e 2 bebidas — quantas combinações?
         correctAnswer: 10
-        rationale: "Calcule mentalmente usando estratégias de decomposição."
+        rationale: "Princípio multiplicativo: multiplique as opções de cada etapa independente."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: 2 moedas — quantos resultados?
         correctAnswer: 4
-        rationale: "Calcule mentalmente usando estratégias de decomposição."
+        rationale: "Cada moeda/dado é independente: 2ⁿ (moedas) ou 6ⁿ (dados) resultados."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: 3 dados — quantos resultados?
         correctAnswer: 216
-        rationale: "Mediana: valor central dos dados ordenados."
+        rationale: "Cada moeda/dado é independente: 2ⁿ (moedas) ou 6ⁿ (dados) resultados."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: "Placa com 3 letras (26 opções) seguidas: total = 26³ = ?"
         correctAnswer: 17576
-        rationale: "Moda: valor mais frequente no conjunto."
+        rationale: "Princípio multiplicativo: multiplique as opções de cada etapa independente."
         difficulty: 2
         objectives: [combinatorics]
   - pageNumber: 2
@@ -48,31 +48,31 @@ pages:
       - type: mental_math
         question: 5! = ?
         correctAnswer: 120
-        rationale: "Variância: média dos quadrados dos desvios."
+        rationale: "Fatorial: n! = n·(n−1)·…·1; por convenção 0! = 1."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: 4! = ?
         correctAnswer: 24
-        rationale: "Desvio padrão = √variância."
+        rationale: "Fatorial: n! = n·(n−1)·…·1; por convenção 0! = 1."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: 3! = ?
         correctAnswer: 6
-        rationale: "Combinação C(n,k) = n!/(k!(n-k)!) — ordem não importa."
+        rationale: "Fatorial: n! = n·(n−1)·…·1; por convenção 0! = 1."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: 0! = ?
         correctAnswer: 1
-        rationale: "Arranjo A(n,k) = n!/(n-k)! — ordem importa."
+        rationale: "Fatorial: n! = n·(n−1)·…·1; por convenção 0! = 1."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: 6! = ?
         correctAnswer: 720
-        rationale: "Permutação de n distintos: n!."
+        rationale: "Fatorial: n! = n·(n−1)·…·1; por convenção 0! = 1."
         difficulty: 2
         objectives: [combinatorics]
   - pageNumber: 3
@@ -82,31 +82,31 @@ pages:
       - type: mental_math
         question: Quantos anagramas de AMOR?
         correctAnswer: 24
-        rationale: "Princípio multiplicativo: m·n opções combinadas."
+        rationale: "Anagramas de n letras distintas: n!."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: Quantos anagramas de CASA? (2 A repetidos) = 4!/2! = ?
         correctAnswer: 12
-        rationale: "P(A) = casos favoráveis / casos totais (equiprováveis)."
+        rationale: "Anagramas com letras repetidas: n! / (n₁!·n₂!·…)."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: Quantos anagramas de PATO?
         correctAnswer: 24
-        rationale: "P(A ∪ B) = P(A) + P(B) - P(A ∩ B)."
+        rationale: "Anagramas de n letras distintas: n!."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: P(5) = ?
         correctAnswer: 120
-        rationale: "Eventos independentes: P(A ∩ B) = P(A) · P(B)."
+        rationale: "P(n) = n! (permutações de n elementos distintos)."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: P(3) = ?
         correctAnswer: 6
-        rationale: "P(A|B) = P(A ∩ B)/P(B) (probabilidade condicional)."
+        rationale: "P(n) = n! (permutações de n elementos distintos)."
         difficulty: 2
         objectives: [combinatorics]
   - pageNumber: 4
@@ -116,31 +116,31 @@ pages:
       - type: mental_math
         question: A(5,2) = 5·4 = ?
         correctAnswer: 20
-        rationale: "Média = soma dos valores / quantidade de valores."
+        rationale: "Arranjo A(n,k) = n! / (n−k)! = n·(n−1)·…·(n−k+1)."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: A(6,3) = 6·5·4 = ?
         correctAnswer: 120
-        rationale: "Mediana: valor central dos dados ordenados."
+        rationale: "Arranjo A(n,k) = n! / (n−k)! = n·(n−1)·…·(n−k+1)."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: A(4,2) = ?
         correctAnswer: 12
-        rationale: "Moda: valor mais frequente no conjunto."
+        rationale: "Arranjo A(n,k) = n! / (n−k)! = n·(n−1)·…·(n−k+1)."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: A(7,2) = ?
         correctAnswer: 42
-        rationale: "Variância: média dos quadrados dos desvios."
+        rationale: "Arranjo A(n,k) = n! / (n−k)! = n·(n−1)·…·(n−k+1)."
         difficulty: 2
         objectives: [combinatorics]
       - type: mental_math
         question: A(10,1) = ?
         correctAnswer: 10
-        rationale: "Desvio padrão = √variância."
+        rationale: "Arranjo A(n,k) = n! / (n−k)! = n·(n−1)·…·(n−k+1)."
         difficulty: 2
         objectives: [combinatorics]
   - pageNumber: 5
@@ -150,31 +150,31 @@ pages:
       - type: mental_math
         question: C(5,2) = ?
         correctAnswer: 10
-        rationale: "Combinação C(n,k) = n!/(k!(n-k)!) — ordem não importa."
+        rationale: "Combinação C(n,k) = n! / (k!(n−k)!)."
         difficulty: 3
         objectives: [combinatorics]
       - type: mental_math
         question: C(6,3) = ?
         correctAnswer: 20
-        rationale: "Arranjo A(n,k) = n!/(n-k)! — ordem importa."
+        rationale: "Combinação C(n,k) = n! / (k!(n−k)!)."
         difficulty: 3
         objectives: [combinatorics]
       - type: mental_math
         question: C(4,2) = ?
         correctAnswer: 6
-        rationale: "Permutação de n distintos: n!."
+        rationale: "Combinação C(n,k) = n! / (k!(n−k)!)."
         difficulty: 3
         objectives: [combinatorics]
       - type: mental_math
         question: C(10,2) = ?
         correctAnswer: 45
-        rationale: "Princípio multiplicativo: m·n opções combinadas."
+        rationale: "Combinação C(n,k) = n! / (k!(n−k)!)."
         difficulty: 3
         objectives: [combinatorics]
       - type: mental_math
         question: C(7,0) = ?
         correctAnswer: 1
-        rationale: "P(A) = casos favoráveis / casos totais (equiprováveis)."
+        rationale: "Combinação C(n,k) = n! / (k!(n−k)!)."
         difficulty: 3
         objectives: [combinatorics]
   - pageNumber: 6
@@ -184,31 +184,31 @@ pages:
       - type: mental_math
         question: "Escolher 2 de 5 sem importar ordem: (combinação/arranjo)"
         correctAnswer: combinação
-        rationale: "P(A ∪ B) = P(A) + P(B) - P(A ∩ B)."
+        rationale: "Ordem importa → arranjo A(n,k); não importa → combinação C(n,k)."
         difficulty: 3
         objectives: [combinatorics]
       - type: mental_math
         question: "Escolher 1º e 2º colocado entre 5: (combinação/arranjo)"
         correctAnswer: arranjo
-        rationale: "Eventos independentes: P(A ∩ B) = P(A) · P(B)."
+        rationale: "Escolher k de n: com ordem → arranjo A(n,k); sem ordem → combinação C(n,k)."
         difficulty: 3
         objectives: [combinatorics]
       - type: mental_math
         question: "Se importa a ordem: A(n,k); se não importa: ?(n,k)"
         correctAnswer: C
-        rationale: "P(A|B) = P(A ∩ B)/P(B) (probabilidade condicional)."
+        rationale: "Ordem importa → arranjo A(n,k); não importa → combinação C(n,k)."
         difficulty: 3
         objectives: [combinatorics]
       - type: mental_math
         question: A(5,3) = ?
         correctAnswer: 60
-        rationale: "Média = soma dos valores / quantidade de valores."
+        rationale: "Arranjo A(n,k) = n! / (n−k)! = n·(n−1)·…·(n−k+1)."
         difficulty: 3
         objectives: [combinatorics]
       - type: mental_math
         question: C(5,3) = ?
         correctAnswer: 10
-        rationale: "Mediana: valor central dos dados ordenados."
+        rationale: "Combinação C(n,k) = n! / (k!(n−k)!)."
         difficulty: 3
         objectives: [combinatorics]
   - pageNumber: 7
@@ -218,31 +218,31 @@ pages:
       - type: mental_math
         question: Anagramas de OVO = 3!/2! = ?
         correctAnswer: 3
-        rationale: "Moda: valor mais frequente no conjunto."
+        rationale: "Anagramas com letras repetidas: n! / (n₁!·n₂!·…)."
         difficulty: 3
         objectives: [combinatorics]
       - type: mental_math
         question: Anagramas de BANANA = 6!/(3!·2!) = ?
         correctAnswer: 60
-        rationale: "Variância: média dos quadrados dos desvios."
+        rationale: "Anagramas com letras repetidas: n! / (n₁!·n₂!·…)."
         difficulty: 3
         objectives: [combinatorics]
       - type: mental_math
         question: Anagramas de MAMA = 4!/(2!·2!) = ?
         correctAnswer: 6
-        rationale: "Desvio padrão = √variância."
+        rationale: "Anagramas com letras repetidas: n! / (n₁!·n₂!·…)."
         difficulty: 3
         objectives: [combinatorics]
       - type: mental_math
         question: Anagramas de ARARA (2A,2R,1A?)... de ARARA (3A,2R) = 5!/(3!·2!) = ?
         correctAnswer: 10
-        rationale: "Combinação C(n,k) = n!/(k!(n-k)!) — ordem não importa."
+        rationale: "Anagramas com letras repetidas: n! / (n₁!·n₂!·…)."
         difficulty: 3
         objectives: [combinatorics]
       - type: mental_math
         question: Anagramas de PAPAI = 5!/(2!·2!) = ?
         correctAnswer: 30
-        rationale: "Arranjo A(n,k) = n!/(n-k)! — ordem importa."
+        rationale: "Anagramas com letras repetidas: n! / (n₁!·n₂!·…)."
         difficulty: 3
         objectives: [combinatorics]
   - pageNumber: 8
@@ -252,31 +252,31 @@ pages:
       - type: mental_math
         question: "Grupo de 4 pessoas em fila: quantas filas?"
         correctAnswer: 24
-        rationale: "Permutação de n distintos: n!."
+        rationale: "Escolha com ordem (arranjo) ou sem ordem (combinação) conforme o contexto."
         difficulty: 4
         objectives: [combinatorics]
       - type: mental_math
         question: Escolher 3 de 10 alunos (sem ordem) = ?
         correctAnswer: 120
-        rationale: "Princípio multiplicativo: m·n opções combinadas."
+        rationale: "Ordem importa → arranjo A(n,k); não importa → combinação C(n,k)."
         difficulty: 4
         objectives: [combinatorics]
       - type: mental_math
         question: Escolher presidente e vice de 10 = A(10,2) = ?
         correctAnswer: 90
-        rationale: "P(A) = casos favoráveis / casos totais (equiprováveis)."
+        rationale: "Arranjo A(n,k) = n! / (n−k)! = n·(n−1)·…·(n−k+1)."
         difficulty: 4
         objectives: [combinatorics]
       - type: mental_math
         question: Comitê de 2 entre 6 = C(6,2) = ?
         correctAnswer: 15
-        rationale: "P(A ∪ B) = P(A) + P(B) - P(A ∩ B)."
+        rationale: "Combinação C(n,k) = n! / (k!(n−k)!)."
         difficulty: 4
         objectives: [combinatorics]
       - type: mental_math
         question: Quantos resultados ao lançar 4 moedas? 2⁴ = ?
         correctAnswer: 16
-        rationale: "Eventos independentes: P(A ∩ B) = P(A) · P(B)."
+        rationale: "Cada moeda/dado é independente: 2ⁿ (moedas) ou 6ⁿ (dados) resultados."
         difficulty: 4
         objectives: [combinatorics]
   - pageNumber: 9
@@ -286,31 +286,31 @@ pages:
       - type: mental_math
         question: De 10 bolas (4 vermelhas, 6 azuis), P(escolher 2 vermelhas sem reposição) = C(4,2)/C(10,2) = ?
         correctAnswer: 6/45
-        rationale: "P(A|B) = P(A ∩ B)/P(B) (probabilidade condicional)."
+        rationale: "Combinação C(n,k) = n! / (k!(n−k)!)."
         difficulty: 4
         objectives: [combinatorics]
       - type: mental_math
         question: Em uma mão de 5 cartas, probabilidade específica exige C(52,5) no denominador — qual esse valor?
         correctAnswer: 2598960
-        rationale: "Média = soma dos valores / quantidade de valores."
+        rationale: "Combinação C(n,k) = n! / (k!(n−k)!)."
         difficulty: 4
         objectives: [combinatorics]
       - type: mental_math
         question: De 5 pessoas, P(primeiro e segundo específicos) = 1/A(5,2) = ?
         correctAnswer: 1/20
-        rationale: "Mediana: valor central dos dados ordenados."
+        rationale: "Arranjo A(n,k) = n! / (n−k)! = n·(n−1)·…·(n−k+1)."
         difficulty: 4
         objectives: [combinatorics]
       - type: mental_math
         question: 10 alunos — P(sortear grupo de 3 específicos) = 1/C(10,3) = ?
         correctAnswer: 1/120
-        rationale: "Moda: valor mais frequente no conjunto."
+        rationale: "Combinação C(n,k) = n! / (k!(n−k)!)."
         difficulty: 4
         objectives: [combinatorics]
       - type: mental_math
         question: Moeda 3 vezes — P(3 caras) = 1/?
         correctAnswer: 8
-        rationale: "Variância: média dos quadrados dos desvios."
+        rationale: "Eventos independentes: P(A∩B) = P(A)·P(B)."
         difficulty: 4
         objectives: [combinatorics]
   - pageNumber: 10
@@ -320,31 +320,31 @@ pages:
       - type: mental_math
         question: "Senhas com 4 dígitos distintos (0-9): A(10,4) = ?"
         correctAnswer: 5040
-        rationale: "Desvio padrão = √variância."
+        rationale: "Arranjo A(n,k) = n! / (n−k)! = n·(n−1)·…·(n−k+1)."
         difficulty: 4
         objectives: [combinatorics]
       - type: mental_math
         question: "Escolher 3 de 7 sem ordem: C(7,3) = ?"
         correctAnswer: 35
-        rationale: "Combinação C(n,k) = n!/(k!(n-k)!) — ordem não importa."
+        rationale: "Combinação C(n,k) = n! / (k!(n−k)!)."
         difficulty: 4
         objectives: [combinatorics]
       - type: mental_math
         question: "Anagramas de ROMA: P(4) = ?"
         correctAnswer: 24
-        rationale: "Arranjo A(n,k) = n!/(n-k)! — ordem importa."
+        rationale: "Anagramas com letras repetidas: n! / (n₁!·n₂!·…)."
         difficulty: 4
         objectives: [combinatorics]
       - type: mental_math
         question: Fatorial — 7! = ?
         correctAnswer: 5040
-        rationale: "Permutação de n distintos: n!."
+        rationale: "Fatorial: n! = n·(n−1)·…·1; por convenção 0! = 1."
         difficulty: 4
         objectives: [combinatorics]
       - type: mental_math
         question: Quantos números de 3 dígitos distintos entre 1-9? A(9,3) = ?
         correctAnswer: 504
-        rationale: "Princípio multiplicativo: m·n opções combinadas."
+        rationale: "Arranjo A(n,k) = n! / (n−k)! = n·(n−1)·…·(n−k+1)."
         difficulty: 4
         objectives: [combinatorics]
 target: 50

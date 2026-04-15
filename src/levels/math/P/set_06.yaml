@@ -14,31 +14,31 @@ pages:
       - type: mental_math
         question: "Formato da curva normal: (sino/uniforme/triangular)"
         correctAnswer: sino
-        rationale: "Calcule mentalmente usando estratégias de decomposição."
+        rationale: "Curva normal tem formato de sino, simétrica em torno da média."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: "Pico da curva normal é em: (média/mediana/ambas)"
         correctAnswer: ambas
-        rationale: "Calcule mentalmente usando estratégias de decomposição."
+        rationale: "Pico da normal ocorre na média (que coincide com mediana e moda)."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Curva normal é simétrica? (sim/não)
         correctAnswer: sim
-        rationale: "Calcule mentalmente usando estratégias de decomposição."
+        rationale: "Curva normal é simétrica em torno da média."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Área total sob a curva normal = ?
         correctAnswer: 1
-        rationale: "Mediana: valor central dos dados ordenados."
+        rationale: "Área total sob a curva normal = 1 (toda a probabilidade)."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Na normal, média = mediana = moda? (sim/não)
         correctAnswer: sim
-        rationale: "Moda: valor mais frequente no conjunto."
+        rationale: "Na distribuição normal, média = mediana = moda."
         difficulty: 2
         objectives: [stats.normal_distribution]
   - pageNumber: 2
@@ -48,31 +48,31 @@ pages:
       - type: mental_math
         question: "% dentro de ±1σ = ?"
         correctAnswer: 68
-        rationale: "Variância: média dos quadrados dos desvios."
+        rationale: "Regra empírica: 68% dos dados ficam dentro de ±1σ."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: "% dentro de ±2σ = ?"
         correctAnswer: 95
-        rationale: "Desvio padrão = √variância."
+        rationale: "Regra empírica: 95% dos dados ficam dentro de ±2σ."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: "% dentro de ±3σ = ?"
         correctAnswer: 99.7
-        rationale: "Combinação C(n,k) = n!/(k!(n-k)!) — ordem não importa."
+        rationale: "Regra empírica: 99,7% dos dados ficam dentro de ±3σ."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: "% acima de média+1σ (aprox) = ?"
         correctAnswer: 16
-        rationale: "Arranjo A(n,k) = n!/(n-k)! — ordem importa."
+        rationale: "% acima de média+1σ ≈ 16% (metade do complemento de 68%)."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: "% abaixo da média (aprox) = ?"
         correctAnswer: 50
-        rationale: "Permutação de n distintos: n!."
+        rationale: "% abaixo da média = 50% (simetria)."
         difficulty: 2
         objectives: [stats.normal_distribution]
   - pageNumber: 3
@@ -82,31 +82,31 @@ pages:
       - type: mental_math
         question: μ=50, σ=10 — z para x=60 = ?
         correctAnswer: 1
-        rationale: "Princípio multiplicativo: m·n opções combinadas."
+        rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: μ=50, σ=10 — z para x=40 = ?
         correctAnswer: -1
-        rationale: "P(A) = casos favoráveis / casos totais (equiprováveis)."
+        rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: z para x = μ = ?
         correctAnswer: 0
-        rationale: "P(A ∪ B) = P(A) + P(B) - P(A ∩ B)."
+        rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: μ=100, σ=15 — z para x=130 = ?
         correctAnswer: 2
-        rationale: "Eventos independentes: P(A ∩ B) = P(A) · P(B)."
+        rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: μ=100, σ=15 — z para x=85 = ?
         correctAnswer: -1
-        rationale: "P(A|B) = P(A ∩ B)/P(B) (probabilidade condicional)."
+        rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 2
         objectives: [stats.normal_distribution]
   - pageNumber: 4
@@ -116,31 +116,31 @@ pages:
       - type: mental_math
         question: A normal padrão tem média = ? e σ = ?
         correctAnswer: 0 e 1
-        rationale: "Média = soma dos valores / quantidade de valores."
+        rationale: "Normal padrão Z: μ=0 e σ=1."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: μ=10, σ=2 — x=14 tem z = ?
         correctAnswer: 2
-        rationale: "Mediana: valor central dos dados ordenados."
+        rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: μ=10, σ=2 — x=6 tem z = ?
         correctAnswer: -2
-        rationale: "Moda: valor mais frequente no conjunto."
+        rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: z=0 corresponde a x = μ (V/F)?
         correctAnswer: V
-        rationale: "Variância: média dos quadrados dos desvios."
+        rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Quanto maior |z|, mais afastado da média (V/F)?
         correctAnswer: V
-        rationale: "Desvio padrão = √variância."
+        rationale: "Quanto maior |z|, mais afastado da média (em unidades de σ)."
         difficulty: 2
         objectives: [stats.normal_distribution]
   - pageNumber: 5
@@ -150,31 +150,31 @@ pages:
       - type: mental_math
         question: P(|z|<1) (aprox) = ?
         correctAnswer: 0.68
-        rationale: "Combinação C(n,k) = n!/(k!(n-k)!) — ordem não importa."
+        rationale: "P(|z|<1) ≈ 0,68 (regra empírica ±1σ)."
         difficulty: 3
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: P(|z|<2) (aprox) = ?
         correctAnswer: 0.95
-        rationale: "Arranjo A(n,k) = n!/(n-k)! — ordem importa."
+        rationale: "P(|z|<2) ≈ 0,95 (regra empírica ±2σ)."
         difficulty: 3
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: P(z>0) = ?
         correctAnswer: 0.5
-        rationale: "Permutação de n distintos: n!."
+        rationale: "Por simetria da normal padrão, P(z>0) = P(z<0) = 0,5."
         difficulty: 3
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: P(z<0) = ?
         correctAnswer: 0.5
-        rationale: "Princípio multiplicativo: m·n opções combinadas."
+        rationale: "Por simetria da normal padrão, P(z>0) = P(z<0) = 0,5."
         difficulty: 3
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: P(z>1) (aprox) = ?
         correctAnswer: 0.16
-        rationale: "P(A) = casos favoráveis / casos totais (equiprováveis)."
+        rationale: "P(z>1) ≈ 0,16 (complemento de P(z<1) ≈ 0,84)."
         difficulty: 3
         objectives: [stats.normal_distribution]
   - pageNumber: 6
@@ -184,31 +184,31 @@ pages:
       - type: mental_math
         question: QI normalizado tem μ=100 e σ=15. QI=115 tem z = ?
         correctAnswer: 1
-        rationale: "P(A ∪ B) = P(A) + P(B) - P(A ∩ B)."
+        rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 3
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: QI=85 tem z = ?
         correctAnswer: -1
-        rationale: "Eventos independentes: P(A ∩ B) = P(A) · P(B)."
+        rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 3
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: "% da população com QI entre 85 e 115 ≈ ?%"
         correctAnswer: 68
-        rationale: "P(A|B) = P(A ∩ B)/P(B) (probabilidade condicional)."
+        rationale: "Padronize com z = (x−μ)/σ e aplique a regra empírica 68-95-99,7."
         difficulty: 3
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: "% com QI acima de 130 (aprox) = ?%"
         correctAnswer: 2.5
-        rationale: "Média = soma dos valores / quantidade de valores."
+        rationale: "Padronize com z = (x−μ)/σ e aplique a regra empírica 68-95-99,7."
         difficulty: 3
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: "% com QI abaixo de 70 = ?%"
         correctAnswer: 2.5
-        rationale: "Mediana: valor central dos dados ordenados."
+        rationale: "Padronize com z = (x−μ)/σ e aplique a regra empírica 68-95-99,7."
         difficulty: 3
         objectives: [stats.normal_distribution]
   - pageNumber: 7
@@ -218,31 +218,31 @@ pages:
       - type: mental_math
         question: "Teorema Central do Limite aplica-se a: (médias de amostras/único valor)"
         correctAnswer: médias de amostras
-        rationale: "Moda: valor mais frequente no conjunto."
+        rationale: "Teorema Central do Limite: médias amostrais tendem à normal conforme n cresce."
         difficulty: 3
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: "Com amostras maiores, a distribuição das médias fica: (mais normal/mais plana)"
         correctAnswer: mais normal
-        rationale: "Variância: média dos quadrados dos desvios."
+        rationale: "Teorema Central do Limite: médias amostrais tendem à normal conforme n cresce."
         difficulty: 3
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Mesmo com população não normal, TCL ajuda? (sim/não)
         correctAnswer: sim
-        rationale: "Desvio padrão = √variância."
+        rationale: "Teorema Central do Limite: médias amostrais tendem à normal conforme n cresce."
         difficulty: 3
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: σ da média amostral = σ/√n (V/F)?
         correctAnswer: V
-        rationale: "Combinação C(n,k) = n!/(k!(n-k)!) — ordem não importa."
+        rationale: "Erro padrão da média: σₓ̄ = σ / √n."
         difficulty: 3
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Se σ=10 e n=100, σ da média = ?
         correctAnswer: 1
-        rationale: "Arranjo A(n,k) = n!/(n-k)! — ordem importa."
+        rationale: "Média aritmética = soma dos valores dividida pela quantidade."
         difficulty: 3
         objectives: [stats.normal_distribution]
   - pageNumber: 8
@@ -252,31 +252,31 @@ pages:
       - type: mental_math
         question: Se X ~ N(μ,σ²), kX tem média = ?
         correctAnswer: kμ
-        rationale: "Permutação de n distintos: n!."
+        rationale: "Transformações lineares de normal: se X~N(μ,σ²), então aX+b ~ N(aμ+b, a²σ²)."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Se X ~ N(μ,σ²), kX tem σ = ?
         correctAnswer: "|k|σ"
-        rationale: "Princípio multiplicativo: m·n opções combinadas."
+        rationale: "Transformações lineares de normal: se X~N(μ,σ²), então aX+b ~ N(aμ+b, a²σ²)."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Se X ~ N(μ,σ²), X+c tem μ = ?
         correctAnswer: μ+c
-        rationale: "P(A) = casos favoráveis / casos totais (equiprováveis)."
+        rationale: "Transformações lineares de normal: se X~N(μ,σ²), então aX+b ~ N(aμ+b, a²σ²)."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: X+c tem σ = ?
         correctAnswer: σ
-        rationale: "P(A ∪ B) = P(A) + P(B) - P(A ∩ B)."
+        rationale: "Transformações lineares de normal: se X~N(μ,σ²), então aX+b ~ N(aμ+b, a²σ²)."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Soma de duas normais independentes é normal (V/F)?
         correctAnswer: V
-        rationale: "Eventos independentes: P(A ∩ B) = P(A) · P(B)."
+        rationale: "Soma de normais independentes é normal: N(μ₁+μ₂, σ₁²+σ₂²)."
         difficulty: 4
         objectives: [stats.normal_distribution]
   - pageNumber: 9
@@ -286,31 +286,31 @@ pages:
       - type: mental_math
         question: "Em N(0,1), P(|z|>3) é: (rara/comum)"
         correctAnswer: rara
-        rationale: "P(A|B) = P(A ∩ B)/P(B) (probabilidade condicional)."
+        rationale: "P(|z|>3) ≈ 0,003; eventos muito raros na normal."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: "z=5 em N(0,1) é: (muito raro/comum)"
         correctAnswer: muito raro
-        rationale: "Média = soma dos valores / quantidade de valores."
+        rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Outlier = geralmente |z| > ?
         correctAnswer: 3
-        rationale: "Mediana: valor central dos dados ordenados."
+        rationale: "Convenção comum: outlier se |z| > 2 ou > 3."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: P(z>2) (aprox %) = ?%
         correctAnswer: 2.5
-        rationale: "Moda: valor mais frequente no conjunto."
+        rationale: "P(z>2) ≈ 0,025 (complemento de ±2σ)."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: P(z<-1) (aprox %) = ?%
         correctAnswer: 16
-        rationale: "Variância: média dos quadrados dos desvios."
+        rationale: "Por simetria: P(z<−a) = P(z>a)."
         difficulty: 4
         objectives: [stats.normal_distribution]
   - pageNumber: 10
@@ -320,31 +320,31 @@ pages:
       - type: mental_math
         question: Altura média 170cm, σ=5. Altura=180 tem z = ?
         correctAnswer: 2
-        rationale: "Desvio padrão = √variância."
+        rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Mesma situação — % acima de 180 ≈ ?%
         correctAnswer: 2.5
-        rationale: "Combinação C(n,k) = n!/(k!(n-k)!) — ordem não importa."
+        rationale: "Padronize com z = (x−μ)/σ e aplique a regra empírica 68-95-99,7."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Mesma situação — % entre 165 e 175 ≈ ?%
         correctAnswer: 68
-        rationale: "Arranjo A(n,k) = n!/(n-k)! — ordem importa."
+        rationale: "Padronize com z = (x−μ)/σ e aplique a regra empírica 68-95-99,7."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Se μ=0, σ=1, P(-1<z<1) = ?
         correctAnswer: 0.68
-        rationale: "Permutação de n distintos: n!."
+        rationale: "P(−1<z<1) ≈ 0,68 pela regra empírica em torno da média."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
         question: Se μ=0, σ=1, P(z>0) = ?
         correctAnswer: 0.5
-        rationale: "Princípio multiplicativo: m·n opções combinadas."
+        rationale: "Por simetria da normal padrão, P(z>0) = P(z<0) = 0,5."
         difficulty: 4
         objectives: [stats.normal_distribution]
 target: 50
