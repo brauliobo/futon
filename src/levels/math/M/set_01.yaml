@@ -14,31 +14,31 @@ pages:
       - type: trigonometry
         question: sen²(x) + cos²(x) = ?
         correctAnswer: 1
-        rationale: "Identidade fundamental: sen²x + cos²x = 1."
+        rationale: "Identidade pitagórica fundamental: sen²x + cos²x = 1."
         difficulty: 2
         objectives: [trig.identities.pythagorean]
       - type: trigonometry
         question: tan²(x) + 1 = ?
         correctAnswer: sec²(x)
-        rationale: "1 + tan²x = sec²x — derivada da identidade fundamental."
+        rationale: "tan²x + 1 = sec²x (derivada de sen²+cos²=1 dividindo por cos²)."
         difficulty: 2
         objectives: [trig.identities.pythagorean]
       - type: trigonometry
         question: 1 + cot²(x) = ?
         correctAnswer: csc²(x)
-        rationale: "1 + cot²x = csc²x — derivada da identidade fundamental."
+        rationale: "1 + cot²x = csc²x (dividindo sen²+cos²=1 por sen²)."
         difficulty: 2
         objectives: [trig.identities.pythagorean]
       - type: trigonometry
         question: sec²(x) - tan²(x) = ?
         correctAnswer: 1
-        rationale: "De 1 + tan²x = sec²x: sec²x − tan²x = 1."
+        rationale: "sec²x - tan²x = 1 (reorganização de tan²x + 1 = sec²x)."
         difficulty: 2
         objectives: [trig.identities.pythagorean]
       - type: trigonometry
         question: csc²(x) - cot²(x) = ?
         correctAnswer: 1
-        rationale: "De 1 + cot²x = csc²x: csc²x − cot²x = 1."
+        rationale: "csc²x - cot²x = 1 (reorganização de 1 + cot²x = csc²x)."
         difficulty: 2
         objectives: [trig.identities.pythagorean]
       - type: trigonometry
@@ -190,7 +190,7 @@ pages:
       - type: trigonometry
         question: sen²(x) + cos²(x) + 1 = ?
         correctAnswer: 2
-        rationale: "Identidade fundamental: sen²x + cos²x = 1."
+        rationale: "Identidade pitagórica fundamental: sen²x + cos²x = 1."
         difficulty: 3
         objectives: [trig.identities.pythagorean]
       - type: trigonometry
@@ -350,7 +350,7 @@ pages:
       - type: trigonometry
         question: sen²(x) + cos²(x) + tan²(x) - sec²(x) = ?
         correctAnswer: 0
-        rationale: "Identidade fundamental: sen²x + cos²x = 1."
+        rationale: "Identidade pitagórica fundamental: sen²x + cos²x = 1."
         difficulty: 4
         objectives: [trig.identities.pythagorean]
 target: 50
