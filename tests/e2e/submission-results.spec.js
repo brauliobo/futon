@@ -36,9 +36,16 @@ test.describe('Submission and Results', () => {
       await prevBtn.click();
       await page.waitForTimeout(100);
     }
-    // Check for wrong answer indicators on the first page
-    const hasWrongIndicator = await page.evaluate(() => document.body.textContent.includes('❌'));
-    expect(hasWrongIndicator).toBe(true);
+    // New empathy UX: amber hint cards instead of red ❌ for wrong answers
+    await expect(page.locator('.hint-card').first()).toBeVisible();
+  });
+
+  test('per-page review summary badge shows correct/total', async ({ page }) => {
+    await gotoHomeWithProfile(page);
+    await startFirstSet(page);
+    await completeEntireSetWithErrors(page, 1);
+    await expect(page.locator('[data-testid="results"]')).toBeVisible({ timeout: 15000 });
+    await expect(page.getByText(/✓\s*\d+\s*\/\s*\d+/).first()).toBeVisible();
   });
 
   test('Voltar returns to home', async ({ page }) => {

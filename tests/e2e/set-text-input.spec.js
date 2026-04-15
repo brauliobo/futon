@@ -63,4 +63,39 @@ test.describe('Set Exercise Flow - Text Input', () => {
     // Should show score
     await expect(page.locator('[data-testid="results"]').getByText('/')).toBeVisible();
   });
+
+  test('per-page progress bar shows answered/total', async ({ page }) => {
+    const answers = await getCurrentPageAnswers(page);
+    if (!answers.length) return;
+    await expect(page.locator('[role="progressbar"]')).toBeVisible();
+    await expect(page.getByText(`0 / ${answers.length}`)).toBeVisible();
+  });
+
+  test('Tab from text input does NOT submit (no Tab footgun)', async ({ page }) => {
+    const answers = await getCurrentPageAnswers(page);
+    if (!answers.length || answers[0].hasChoices) return;
+    const inputs = page.getByPlaceholder('Digite sua resposta');
+    if ((await inputs.count()) < 2) return;
+    await inputs.first().click();
+    await page.keyboard.type(answers[0].answer);
+    await page.keyboard.press('Tab');
+    await page.waitForTimeout(120);
+    // Tab should commit the answer (blur-style commit) without auto-advancing past page
+    const saved = await page.evaluate(() => window.__futonSet?.set?.pages?.[0]?.exercises?.[0]?.answer);
+    expect(String(saved)).toBe(answers[0].answer);
+    // The first input should still exist on the same page
+    await expect(inputs.first()).toBeVisible();
+  });
+
+  test('clear button (×) appears while editing and resets the input', async ({ page }) => {
+    const answers = await getCurrentPageAnswers(page);
+    if (!answers.length || answers[0].hasChoices) return;
+    const input = page.getByPlaceholder('Digite sua resposta').first();
+    await input.click();
+    await page.keyboard.type(answers[0].answer);
+    const clearBtn = page.locator('button[aria-label="Limpar"], button[aria-label="Clear"]').first();
+    await expect(clearBtn).toBeVisible();
+    await clearBtn.click();
+    await expect(input).toHaveValue('');
+  });
 });
