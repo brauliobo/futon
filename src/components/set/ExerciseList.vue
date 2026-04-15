@@ -7,7 +7,6 @@
           v-if="exercise"
           :exercise="exercise"
           :exerciseNumber="displayNumber(getIndex(rowIndex, colIndex))"
-          :isEnabled="isExerciseEnabled(getIndex(rowIndex, colIndex))"
           :isSubmitted="isSubmitted"
           :isReadOnly="isReadOnly"
           :setInputType="setInputType"
@@ -75,14 +74,6 @@ export default {
       return nextPos < order.length ? order[nextPos] : null;
     },
     
-    // Exercise state
-    isExerciseEnabled(index) {
-      const order = this.orderIndices;
-      const pos = order.indexOf(index);
-      if (pos <= 0) return true;
-      const prevIndex = order[pos - 1];
-      return this.answers[prevIndex] !== null;
-    },
     handleUpdateAnswer(index, payload) {
       this.$emit('update-answer', index, payload);
     },
