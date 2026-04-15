@@ -35,6 +35,8 @@ Two modes under each subject tab:
 ## Tests
 
 Playwright E2E. `pnpm test` runs 36 specs in ~25s.
+
+> **Always run specs in the background** (`run_in_background: true`) — they take ~50s and block the terminal. Poll the output file rather than waiting inline.
 - `tests/helpers/` — `storage.js`, `navigation.js`, `exercises.js`, `app.js`
 - `tests/e2e/` — 10 spec files covering all user flows
 - Fast: most tests inject Vue state via `page.evaluate`, only golden-path tests do full completion via `window.__futonSet`
