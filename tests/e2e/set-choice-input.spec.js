@@ -30,9 +30,8 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     const answers = await getCurrentPageAnswers(page);
     if (!answers.length || !answers[0].hasChoices) return;
     await page.getByRole('radio', { name: answers[0].answer, exact: true }).click();
-    await page.waitForTimeout(100);
-    // Portuguese A expands to 1 exercise/page, so clicking advances to next page
-    expect(page.url()).toMatch(/\/p\/[2-9]/);
+    // Portuguese A expands to 1 exercise/page; advance happens after 450ms page-complete celebration
+    await page.waitForURL(/\/p\/[2-9]/, { timeout: 2000 });
   });
 
   test('passage stays visible (sticky)', async ({ page }) => {
