@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(data-testid="certificate-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4" @click.self="$emit('close')")
+  div(data-testid="certificate-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" @click.self="$emit('close')")
     div(class="certificate relative w-full max-w-lg rounded-3xl bg-kid-surface border-4 border-kid-gold shadow-2xl p-8 text-center space-y-4 animate-bounce-in overflow-hidden")
       //- Confetti
       div(class="absolute inset-0 pointer-events-none overflow-hidden")
@@ -21,7 +21,7 @@
         div(class="flex items-center justify-center gap-2 text-4xl mt-3")
           span(v-for="n in 3" :key="n" class="star-glow animate-star-pop" :style="{ animationDelay: (0.3 + n * 0.2) + 's' }") ⭐
         div(class="flex gap-3 justify-center pt-3")
-          button(@click="$emit('close')" class="rounded-2xl border-2 border-black/10 px-6 py-3 font-bold text-kid-muted hover:border-kid-blue/40 hover:text-kid-blue transition-all active:scale-95") {{ $t('close') }}
+          button(@click="$emit('close')" class="rounded-2xl border-2 theme-border-strong px-6 py-3 font-bold text-kid-muted hover:border-kid-blue/40 hover:text-kid-blue transition-all active:scale-95") {{ $t('close') }}
           button(@click="print" class="rounded-2xl bg-kid-gold px-6 py-3 font-bold text-white hover:shadow-lg transition-all active:scale-95 gold-glow") 🖨️ {{ $t('print') }}
 </template>
 

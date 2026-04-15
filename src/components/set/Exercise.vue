@@ -21,13 +21,13 @@
         :type="inputType"
         :inputmode="inputMode"
         enterkeyhint="next"
-        :disabled="!isEnabled || isSubmitted"
+        :disabled="isSubmitted"
         :placeholder="$t('enterAnswer')"
         :class="inputClass"
         @keydown.enter.prevent="handleSubmit"
         @keydown.tab.prevent="handleSubmit"
         @focus="isEditing = true"
-        @blur="isEditing = false"
+        @blur="handleBlur"
         @click="isEditing = true"
         ref="inputRef"
       )
@@ -53,7 +53,6 @@ export default {
   props: {
     exercise: { type: Object, required: true },
     exerciseNumber: { type: Number, required: true },
-    isEnabled: { type: Boolean, required: true },
     isSubmitted: { type: Boolean, required: true },
     isReadOnly: { type: Boolean, default: false },
     setInputType: { type: String, default: 'auto' },
@@ -77,14 +76,14 @@ export default {
     inputClass() {
       const base = "w-full rounded-2xl border-4 px-4 py-4 text-xl font-bold placeholder:text-sm placeholder:font-semibold placeholder:text-kid-muted/50 focus:outline-none focus:ring-0 pr-12 transition-all duration-300";
       if (this.hasAnswer && !this.isEditing) return `${base} border-kid-green bg-kid-green/5 text-kid-text shadow-md green-glow`;
-      return `${base} border-black/10 bg-kid-surface text-kid-text focus:border-kid-blue focus:shadow-lg focus:blue-glow shadow-sm`;
+      return `${base} theme-border-strong bg-kid-surface text-kid-text focus:border-kid-blue focus:shadow-lg focus:blue-glow shadow-sm`;
     },
     cardClass() {
       const base = 'space-y-2 rounded-2xl border-2 bg-kid-surface p-4 shadow-sm transition-all duration-300';
       if (this.isReadOnly) {
         return this.isCorrect ? `${base} border-kid-green/30 bg-kid-green/5` : `${base} border-kid-red/30 bg-kid-red/5`;
       }
-      return this.hasAnswer ? `${base} border-kid-green/30` : `${base} border-black/5`;
+      return this.hasAnswer ? `${base} border-kid-green/30` : `${base} theme-border`;
     },
   },
   methods: {
@@ -94,6 +93,12 @@ export default {
       this.$emit("update-answer", { answer: this.userAnswer });
       this.$emit("next-exercise");
       setTimeout(() => { this.isEditing = false; this.isSubmitting = false; }, 150);
+    },
+    handleBlur() {
+      this.isEditing = false;
+      const trimmed = String(this.userAnswer || '').trim();
+      if (trimmed === String(this.exercise.answer || '').trim()) return;
+      this.$emit("update-answer", { answer: this.userAnswer });
     },
     focus() {
       if (this.$refs.choiceRef?.focus) { this.$refs.choiceRef.focus(); return; }

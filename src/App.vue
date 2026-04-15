@@ -1,18 +1,18 @@
 <!-- src/App.vue -->
 <template lang="pug">
-  #app.flex.flex-col.min-h-screen.bg-kid-bg.text-kid-text.font-kid
+  #app.flex.flex-col.min-h-screen.text-kid-text.font-kid
     ProfileSelector(v-if="showProfileSelector" @profile-selected="onProfileSelected")
     template(v-else)
-      header(class="header-bg backdrop-blur-md border-b border-black/5 w-full sticky top-0 z-20 shadow-sm")
+      header(class="header-bg backdrop-blur-md border-b theme-border w-full sticky top-0 z-20 shadow-sm")
         div(class="mx-auto flex w-full max-w-[1920px] items-center justify-between px-4 py-3")
           div(class="flex items-center gap-2")
             span(class="text-2xl font-black text-kid-blue tracking-tight hover:animate-wiggle cursor-default") ✏️ Futon
           div(class="flex items-center gap-2")
             h2(v-if="selectedSet" class="text-base font-black text-kid-text truncate max-w-xs sm:max-w-md mr-2") {{ selectedSet.title }}
-            div(v-if="streak > 1" class="flex items-center gap-1 rounded-2xl bg-orange-50 border border-orange-200 px-3 py-1.5 text-sm font-bold text-orange-600")
+            div(v-if="streak > 1" class="flex items-center gap-1 rounded-2xl streak-bg border px-3 py-1.5 text-sm font-bold" :style="{ borderColor: 'var(--streak-border)', color: 'var(--streak-text)' }")
               span 🔥
               span {{ streak }}
-            button(v-if="activeProfile" @click="showProfileSelector = true" class="flex items-center gap-1.5 rounded-2xl border border-black/8 bg-kid-surface px-3 py-1.5 text-sm font-bold text-kid-text shadow-sm hover:border-kid-blue/40 transition")
+            button(v-if="activeProfile" @click="showProfileSelector = true" class="flex items-center gap-1.5 rounded-2xl border theme-border bg-kid-surface px-3 py-1.5 text-sm font-bold text-kid-text shadow-sm hover:border-kid-blue/40 transition")
               span(class="text-lg") {{ activeProfile.avatar }}
               span {{ activeProfile.name }}
       main.flex-1.w-full
@@ -24,7 +24,7 @@
             p(class="text-base font-semibold text-kid-muted") {{ $t('loading') || 'Loading...' }}
           Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" :isLoadingLevel="isLoadingLevel" :streak="streak" :today-sets="todaySets" @select-set="selectSet" @level-selected="onLevelSelected" class="space-y-6")
           div(v-else)
-            button(@click="goHome" class="group inline-flex items-center gap-2 mb-4 text-base font-bold text-kid-blue transition-all rounded-2xl px-5 py-3 bg-kid-surface shadow-sm border-2 border-black/5 hover:shadow-md hover:-translate-x-0.5 active:scale-95")
+            button(@click="goHome" class="group inline-flex items-center gap-2 mb-4 text-base font-bold text-kid-blue transition-all rounded-2xl px-5 py-3 bg-kid-surface shadow-sm border-2 theme-border hover:shadow-md hover:-translate-x-0.5 active:scale-95")
               span(class="text-base transition-transform group-hover:-translate-x-0.5" aria-hidden="true") ←
               span {{ $t('back') }}
             Set(:set="selectedSet" :initialPageIndex="initialPageIndex" :has-next-set="!!nextSet" :profile-id="activeProfile && activeProfile.id || 'default'" @update-set="updateSet" @page-changed="handlePageChange" @next-set="goToNextSet" @go-home="goHome")

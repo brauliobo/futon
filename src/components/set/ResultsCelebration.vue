@@ -21,10 +21,10 @@
         ) ★
 
       div(class="grid grid-cols-2 gap-3 mt-2")
-        div(class="rounded-2xl bg-kid-surface border border-black/5 p-3 animate-slide-up" style="animation-delay:0.2s")
+        div(class="rounded-2xl bg-kid-surface border theme-border p-3 animate-slide-up" style="animation-delay:0.2s")
           p(class="text-xs font-semibold text-kid-muted mb-1") {{ $t('finalScore') || 'Score' }}
           p(class="text-2xl font-black text-kid-text") {{ correct }}/{{ total }}
-        div(class="rounded-2xl bg-kid-surface border border-black/5 p-3 animate-slide-up" style="animation-delay:0.25s")
+        div(class="rounded-2xl bg-kid-surface border theme-border p-3 animate-slide-up" style="animation-delay:0.25s")
           p(class="text-xs font-semibold text-kid-muted mb-1") {{ $t('grade') || 'Grade' }}
           p(class="text-2xl font-black" :class="gradeColor") {{ gradePercent }}%
 
@@ -69,9 +69,9 @@ export default {
     containerClass() {
       return {
         mastery: 'border-kid-green/40 bg-gradient-to-b from-kid-green/10 to-kid-green/5',
-        pass:    'border-amber-300/40 bg-gradient-to-b from-amber-50 to-amber-50/50',
-        retry:   'border-kid-red/20 bg-gradient-to-b from-red-50 to-red-50/50',
-      }[this.status] || 'border-black/5 bg-kid-surface';
+        pass:    'border-amber-300/40 bg-gradient-to-b from-amber-400/10 to-amber-400/5',
+        retry:   'border-kid-red/30 bg-gradient-to-b from-kid-red/10 to-kid-red/5',
+      }[this.status] || 'theme-border bg-kid-surface';
     },
     titleColor() {
       return { mastery: 'text-kid-green', pass: 'text-amber-500', retry: 'text-kid-red' }[this.status] || 'text-kid-text';
@@ -85,7 +85,7 @@ export default {
   methods: {
     starClass(n) {
       if (n <= this.starCount) return 'text-5xl star-glow text-kid-gold transition-all';
-      return 'text-4xl text-black/10 transition-all';
+      return 'text-4xl theme-star-empty transition-all';
     },
     starStyle(n) {
       if (n > this.starCount) return { opacity: 0.3 };

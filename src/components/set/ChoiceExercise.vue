@@ -41,7 +41,7 @@ export default {
     cardClass() {
       const base = 'space-y-2 rounded-2xl border-2 bg-kid-surface p-4 shadow-sm transition-all duration-300';
       if (this.isReadOnly) return this.isCorrect ? `${base} border-kid-green/30 bg-kid-green/5` : `${base} border-kid-red/30 bg-kid-red/5`;
-      return this.selected ? `${base} border-kid-green/30 green-glow` : `${base} border-black/5`;
+      return this.selected ? `${base} border-kid-green/30 green-glow` : `${base} theme-border`;
     },
   },
   methods: {
@@ -59,7 +59,7 @@ export default {
     choiceClass(choice) {
       const base = 'w-full rounded-2xl border-2 px-4 py-3.5 text-base font-bold text-left transition-all duration-200 active:scale-95';
       if (this.selected === choice) return `${base} border-kid-green bg-kid-green/15 text-kid-text shadow-md scale-[1.02]`;
-      return `${base} border-black/10 bg-kid-bg text-kid-text hover:border-kid-blue/50 hover:bg-kid-blue/5 hover:shadow-sm hover:-translate-y-0.5`;
+      return `${base} theme-border-strong surface-2 text-kid-text hover:border-kid-blue/50 hover:bg-kid-blue/5 hover:shadow-sm hover:-translate-y-0.5`;
     },
     reviewChoiceClass(choice) {
       const base = 'rounded-2xl border-2 px-4 py-3 text-base font-bold transition-all';
@@ -67,7 +67,7 @@ export default {
       const isSelected = Formatter.normalizeAnswer(choice) === Formatter.normalizeAnswer(this.selected);
       if (isAnswer) return `${base} border-kid-green bg-kid-green/10 text-kid-text shadow-md`;
       if (isSelected && !isAnswer) return `${base} border-kid-red bg-kid-red/10 text-kid-red line-through`;
-      return `${base} border-black/8 bg-kid-surface text-kid-muted`;
+      return `${base} theme-border bg-kid-surface text-kid-muted`;
     },
   },
 };

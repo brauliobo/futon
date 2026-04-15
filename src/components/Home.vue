@@ -1,7 +1,7 @@
 <!-- src/components/Home.vue -->
 <template lang="pug">
   div(class="space-y-6")
-    div(data-testid="daily-goal" class="flex flex-wrap items-center gap-3 rounded-3xl bg-gradient-to-r from-white to-kid-gold/5 border border-kid-gold/20 shadow-sm px-5 py-4 animate-slide-up")
+    div(data-testid="daily-goal" class="flex flex-wrap items-center gap-3 rounded-3xl goal-bg border shadow-sm px-5 py-4 animate-slide-up" :style="{ borderColor: 'var(--goal-border)' }")
       div(class="flex items-center gap-2")
         span(class="text-xl") 🎯
         span(class="text-sm font-black text-kid-text uppercase tracking-wide") {{ $t('todayGoal') || 'Today\'s Goal' }}
@@ -9,11 +9,11 @@
         span(
           v-for="i in 3"
           :key="i"
-          :class="i <= todaySets ? 'text-kid-gold star-glow' : 'text-black/10'"
+          :class="i <= todaySets ? 'text-kid-gold star-glow' : 'theme-star-empty'"
           class="text-2xl leading-none transition-all duration-300"
         ) ★
       span(class="text-sm font-bold text-kid-muted ml-1") {{ todaySets }}/3
-      div(v-if="streak > 1" class="ml-auto flex items-center gap-1.5 rounded-2xl bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 px-3 py-1.5 text-sm font-bold text-orange-500 shadow-sm")
+      div(v-if="streak > 1" class="ml-auto flex items-center gap-1.5 rounded-2xl streak-bg border px-3 py-1.5 text-sm font-bold shadow-sm" :style="{ borderColor: 'var(--streak-border)', color: 'var(--streak-text)' }")
         span(class="animate-wiggle") 🔥
         span {{ streak }} {{ $t('dayStreak') || 'day streak' }}
     nav(class="flex flex-wrap items-center gap-3")
@@ -25,7 +25,7 @@
       )
         span(class="text-xl") {{ subjectIcon(subject) }}
         span(class="text-base font-bold capitalize") {{ subjectLabel(subject) }}
-    section(v-if="activeDiscipline" class="rounded-3xl border border-black/5 bg-kid-surface shadow-sm p-6")
+    section(v-if="activeDiscipline" class="rounded-3xl border theme-border bg-kid-surface shadow-sm p-6")
       header(class="flex flex-wrap items-end justify-between gap-4")
         div(class="space-y-0.5")
           h2(class="text-2xl font-black" :style="{ color: subjectColor(activeDiscipline) }") {{ subjectLabel(activeDiscipline) }}
@@ -164,14 +164,14 @@ export default {
         const colors = { math: 'bg-kid-blue text-white border-kid-blue shadow-lg shadow-kid-blue/30', portuguese: 'bg-kid-green text-white border-kid-green shadow-lg shadow-kid-green/30', english: 'bg-orange-400 text-white border-orange-400 shadow-lg shadow-orange-300/40', japanese: 'bg-kid-red text-white border-kid-red shadow-lg shadow-kid-red/30' };
         return `${base} ${colors[subject] || 'bg-kid-blue text-white border-kid-blue shadow-lg'} scale-[1.02]`;
       }
-      return `${base} bg-kid-surface text-kid-muted border-black/8 shadow-sm hover:border-kid-blue/40 hover:text-kid-blue hover:-translate-y-0.5 hover:shadow-md`;
+      return `${base} bg-kid-surface text-kid-muted theme-border shadow-sm hover:border-kid-blue/40 hover:text-kid-blue hover:-translate-y-0.5 hover:shadow-md`;
     },
     subjectIcon(s) { return SubjectBranding.icon(s); },
     subjectColor(s) { return SubjectBranding.color(s); },
     modeTabClass(m) {
       const base = 'flex items-center gap-1.5 rounded-2xl px-4 py-2 text-sm font-bold transition-all duration-200 border-2 active:scale-95';
       if (this.mode === m) return `${base} border-kid-blue bg-kid-blue/10 text-kid-blue shadow-sm`;
-      return `${base} border-transparent text-kid-muted hover:text-kid-text hover:bg-kid-bg`;
+      return `${base} border-transparent text-kid-muted hover:text-kid-text hover:bg-[color:var(--kid-surface-2)]`;
     },
     allSetsForSubject(subject) {
       return (this.groupedBySubject[subject] || []);

@@ -1,21 +1,19 @@
 <template lang="pug">
   button(
     :class="nodeClass"
-    :disabled="!isUnlocked"
     :aria-label="ariaLabel"
-    :title="isUnlocked ? node.name : ($t('needs') || 'Needs') + ': ' + prereqNames"
+    :title="node.name"
     @click="$emit('select', node)"
   )
     div(class="flex items-center gap-3")
-      span(class="text-2xl flex-shrink-0") {{ isUnlocked ? node.icon : '🔒' }}
+      span(class="text-2xl flex-shrink-0") {{ node.icon }}
       div(class="flex-1 text-left min-w-0")
         p(class="text-base font-black leading-tight truncate") {{ node.name }}
-        p(v-if="!isUnlocked" class="text-xs font-semibold text-kid-muted mt-0.5 truncate") {{ $t('needs') || 'Needs' }}: {{ prereqNames }}
-        p(v-else class="text-xs font-bold mt-0.5" :class="isComplete ? 'text-kid-green' : 'text-kid-muted'") {{ progress.mastered }}/{{ progress.total }} {{ $t('sets') }}
+        p(class="text-xs font-bold mt-0.5" :class="isComplete ? 'text-kid-green' : 'text-kid-muted'") {{ progress.mastered }}/{{ progress.total }} {{ $t('sets') }}
       div(class="flex flex-col items-end gap-1 flex-shrink-0")
-        div(v-if="isUnlocked" class="flex gap-0.5")
-          span(v-for="n in 3" :key="n" :class="n <= starCount ? 'text-kid-gold star-glow' : 'text-black/10'" class="text-lg leading-none") ★
-        span(v-if="isUnlocked && progress.percent > 0" class="text-xs font-black" :class="isComplete ? 'text-kid-green' : 'text-kid-blue'") {{ progress.percent }}%
+        div(class="flex gap-0.5")
+          span(v-for="n in 3" :key="n" :class="n <= starCount ? 'text-kid-gold star-glow' : 'theme-star-empty'" class="text-lg leading-none") ★
+        span(v-if="progress.percent > 0" class="text-xs font-black" :class="isComplete ? 'text-kid-green' : 'text-kid-blue'") {{ progress.percent }}%
 </template>
 
 <script>
@@ -24,15 +22,12 @@ export default {
   emits: ['select'],
   props: {
     node: { type: Object, required: true },
-    isUnlocked: { type: Boolean, default: false },
     isComplete: { type: Boolean, default: false },
     isActive: { type: Boolean, default: false },
     progress: { type: Object, default: () => ({ total: 0, mastered: 0, percent: 0 }) },
-    prereqNames: { type: String, default: '' },
   },
   computed: {
     ariaLabel() {
-      if (!this.isUnlocked) return `${this.node.name} (locked) — requires ${this.prereqNames}`;
       if (this.isComplete) return `${this.node.name} — complete, ${this.progress.percent}%`;
       return `${this.node.name} — ${this.progress.mastered} of ${this.progress.total} sets mastered`;
     },
@@ -43,11 +38,10 @@ export default {
       return 0;
     },
     nodeClass() {
-      const base = 'w-full rounded-2xl border-2 p-4 transition-all duration-200 text-kid-text';
-      if (!this.isUnlocked) return `${base} opacity-50 border-black/10 bg-kid-surface cursor-not-allowed`;
-      if (this.isActive) return `${base} border-kid-blue bg-kid-blue/5 ring-2 ring-kid-blue/30 ring-offset-2 shadow-md blue-glow cursor-pointer`;
-      if (this.isComplete) return `${base} border-kid-green/40 bg-kid-green/5 shadow-sm hover:shadow-md hover:-translate-y-0.5 cursor-pointer`;
-      return `${base} border-black/10 bg-kid-surface shadow-sm hover:shadow-md hover:border-kid-blue/40 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer`;
+      const base = 'w-full rounded-2xl border-2 p-4 transition-all duration-200 text-kid-text cursor-pointer';
+      if (this.isActive) return `${base} border-kid-blue bg-kid-blue/10 ring-2 ring-kid-blue/40 ring-offset-2 ring-offset-theme shadow-md blue-glow`;
+      if (this.isComplete) return `${base} border-kid-green/40 bg-kid-green/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 green-glow`;
+      return `${base} theme-border bg-kid-surface shadow-sm hover:shadow-md hover:border-kid-blue/40 hover:-translate-y-0.5 active:scale-[0.98]`;
     },
   },
 };

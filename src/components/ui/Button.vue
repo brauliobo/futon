@@ -34,21 +34,21 @@ export default {
       const base = 'inline-flex items-center justify-center gap-2 rounded-2xl border-2 font-bold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-40';
       const variants = {
         primary:          'bg-kid-blue border-kid-blue text-white hover:opacity-90',
-        secondary:        'bg-kid-bg border-black/10 text-kid-text hover:border-kid-blue/40',
+        secondary:        'surface-2 theme-border text-kid-text hover:border-kid-blue/40',
         success:          'bg-kid-green border-kid-green text-white hover:opacity-90',
         danger:           'bg-kid-red border-kid-red text-white hover:opacity-90',
         warning:          'bg-amber-400 border-amber-400 text-white hover:opacity-90',
         info:             'bg-kid-blue border-kid-blue text-white hover:opacity-90',
-        light:            'bg-kid-surface border-black/10 text-kid-text hover:border-kid-blue/40',
-        dark:             'bg-kid-text border-kid-text text-white hover:opacity-90',
+        light:            'bg-kid-surface theme-border text-kid-text hover:border-kid-blue/40',
+        dark:             'bg-kid-text border-kid-text text-kid-bg hover:opacity-90',
         link:             'border-transparent bg-transparent text-kid-blue hover:opacity-70',
         'outline-primary':'border-kid-blue text-kid-blue hover:bg-kid-blue/10',
-        'outline-secondary':'border-black/15 text-kid-muted hover:border-kid-blue/40',
+        'outline-secondary':'theme-border-strong text-kid-muted hover:border-kid-blue/40',
         'outline-success':'border-kid-green text-kid-green hover:bg-kid-green/10',
         'outline-danger': 'border-kid-red text-kid-red hover:bg-kid-red/10',
-        'outline-warning':'border-amber-400 text-amber-600 hover:bg-amber-50',
+        'outline-warning':'border-amber-400 text-amber-500 hover:bg-amber-400/10',
         'outline-info':   'border-kid-blue text-kid-blue hover:bg-kid-blue/10',
-        'outline-light':  'border-black/10 text-kid-muted hover:bg-kid-bg',
+        'outline-light':  'theme-border text-kid-muted hover:bg-[color:var(--kid-surface-2)]',
         'outline-dark':   'border-kid-text text-kid-text hover:bg-kid-text/10',
       };
       const sizes = {

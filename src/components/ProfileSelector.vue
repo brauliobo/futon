@@ -18,14 +18,14 @@
           v-for="(profile, i) in profiles"
           :key="profile.id"
           @click="selectProfile(profile)"
-          class="w-full flex items-center gap-4 rounded-2xl border-2 border-black/8 bg-kid-surface p-5 shadow-sm transition-all duration-200 hover:border-kid-blue/40 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.01] active:scale-95 animate-slide-up"
+          class="w-full flex items-center gap-4 rounded-2xl border-2 theme-border-strong bg-kid-surface p-5 shadow-sm transition-all duration-200 hover:border-kid-blue/40 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.01] active:scale-95 animate-slide-up"
           :style="{ animationDelay: (i * 0.08) + 's' }"
         )
           span(class="text-5xl") {{ profile.avatar }}
           span(class="text-xl font-black text-kid-text") {{ profile.name }}
           span(class="ml-auto text-kid-blue text-2xl font-bold") →
 
-      div(class="border-t border-black/8 pt-4")
+      div(class="border-t theme-border-strong pt-4")
         div(v-if="!showNewForm" class="text-center")
           button(@click="showNewForm = true" class="inline-flex items-center gap-2 rounded-2xl border-2 border-dashed border-kid-blue/30 px-6 py-3.5 text-base font-bold text-kid-blue/70 hover:border-kid-blue hover:text-kid-blue hover:bg-kid-blue/5 transition-all duration-200")
             span(class="text-xl") ＋
@@ -41,7 +41,7 @@
             autofocus
           )
           div(class="flex gap-3")
-            button(@click="showNewForm = false; newName = ''" class="flex-1 rounded-2xl border-2 border-black/10 py-3 font-bold text-kid-muted hover:border-kid-red/40 hover:text-kid-red transition-all active:scale-95") {{ $t('cancel') }}
+            button(@click="showNewForm = false; newName = ''" class="flex-1 rounded-2xl border-2 theme-border-strong py-3 font-bold text-kid-muted hover:border-kid-red/40 hover:text-kid-red transition-all active:scale-95") {{ $t('cancel') }}
             button(@click="createProfile" :disabled="!newName.trim()" class="flex-1 rounded-2xl bg-kid-blue py-3 font-bold text-white disabled:opacity-30 hover:shadow-lg hover:bg-kid-blue/90 transition-all active:scale-95") {{ $t('create') }}
 </template>
 

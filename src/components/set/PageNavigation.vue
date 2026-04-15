@@ -4,7 +4,7 @@
     button(
       @click="$emit('prev')"
       :disabled="!canGoPrev"
-      class="flex items-center gap-2 rounded-2xl border-2 border-black/10 bg-kid-surface px-5 py-3 text-base font-bold text-kid-text shadow-sm transition-all duration-200 hover:border-kid-blue/40 hover:text-kid-blue hover:-translate-x-0.5 active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:translate-x-0"
+      class="flex items-center gap-2 rounded-2xl border-2 theme-border-strong bg-kid-surface px-5 py-3 text-base font-bold text-kid-text shadow-sm transition-all duration-200 hover:border-kid-blue/40 hover:text-kid-blue hover:-translate-x-0.5 active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:translate-x-0"
       aria-label="Previous page"
     ) ← {{ $t('previous') }}
     button(

@@ -1,6 +1,6 @@
 <!-- src/components/set/SpeedGauge.vue -->
 <template lang="pug">
-  div(data-testid="speed-gauge" class="rounded-2xl border border-black/5 bg-kid-bg p-4 space-y-2 animate-slide-up")
+  div(data-testid="speed-gauge" class="rounded-2xl border theme-border surface-2 p-4 space-y-2 animate-slide-up")
     div(class="flex items-center justify-between text-sm font-semibold text-kid-muted mb-1")
       span ⚡ {{ $t('speed') || 'Speed' }}
       span(class="font-black text-base" :class="speedLabelColor") {{ avgSeconds }}s/ex

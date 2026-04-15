@@ -9,7 +9,7 @@
       slot(name="body")
     template(v-else)
       slot
-    div(v-if="hasFooterSlot" class="border-t border-black/5 px-5 py-4 text-sm text-kid-muted")
+    div(v-if="hasFooterSlot" class="border-t theme-border px-5 py-4 text-sm text-kid-muted")
       slot(name="footer")
 </template>
 
@@ -46,7 +46,7 @@ export default {
   },
   computed: {
     cardClass() {
-      const base = 'group relative flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-kid-surface';
+      const base = 'group relative flex flex-col overflow-hidden rounded-2xl border theme-border bg-kid-surface';
       const shadows = this.shadow ? 'shadow-md' : 'shadow-sm';
       const padding = this.hasBody ? '' : 'p-5';
       return [base, shadows, padding, this.height === 'h-100' ? 'h-full' : '', this.variantClass].filter(Boolean).join(' ');
@@ -64,13 +64,13 @@ export default {
       const palette = {
         '': '',
         primary: 'border-kid-blue/30 bg-kid-blue/5',
-        secondary: 'border-black/8 bg-kid-bg',
+        secondary: 'theme-border surface-2',
         success: 'border-kid-green/30 bg-kid-green/5',
         danger: 'border-kid-red/30 bg-kid-red/5',
-        warning: 'border-amber-400/40 bg-amber-50',
+        warning: 'border-amber-400/40 bg-amber-400/10',
         info: 'border-kid-blue/30 bg-kid-blue/5',
-        light: 'border-black/8 bg-kid-surface',
-        dark: 'border-black/20 bg-kid-text text-white'
+        light: 'theme-border bg-kid-surface',
+        dark: 'theme-border-strong bg-kid-text text-kid-bg'
       };
       return palette[this.variant] || '';
     }

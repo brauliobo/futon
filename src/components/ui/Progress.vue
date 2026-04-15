@@ -45,7 +45,7 @@ export default {
       return range > 0 ? Math.round(((this.value - this.min) / range) * 100) : 0;
     },
     wrapperClass() {
-      const base = 'relative w-full overflow-hidden rounded-full bg-black/8';
+      const base = 'relative w-full overflow-hidden rounded-full theme-track';
       const h = this.height ? '' : 'h-2.5';
       return [base, h].filter(Boolean).join(' ');
     },

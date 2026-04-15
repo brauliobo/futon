@@ -8,6 +8,7 @@
   color-scheme: light;
   --kid-bg: #FFFBF0;
   --kid-surface: #FFFFFF;
+  --kid-surface-2: #F7F3E8;
   --kid-blue: #4A9EF5;
   --kid-gold: #FFD93D;
   --kid-green: #6BCB77;
@@ -15,11 +16,23 @@
   --kid-text: #2D3748;
   --kid-muted: #718096;
 
+  --kid-border: rgba(0,0,0,0.06);
+  --kid-border-strong: rgba(0,0,0,0.12);
+  --kid-track: rgba(0,0,0,0.08);
+  --kid-star-empty: rgba(0,0,0,0.10);
+  --kid-ring-offset: #FFFBF0;
+
   --card-bg: #FFFFFF;
   --card-border: rgba(0,0,0,0.05);
   --input-bg: #FFFFFF;
   --overlay-bg: rgba(255,255,255,0.6);
   --header-bg: rgba(255,255,255,0.9);
+  --streak-bg: linear-gradient(90deg, #FFF7ED, #FFEDD5);
+  --streak-border: #FED7AA;
+  --streak-text: #EA580C;
+  --goal-bg: linear-gradient(90deg, #FFFFFF, rgba(255,217,61,0.05));
+  --goal-border: rgba(255,217,61,0.2);
+  --body-bg: #FFFBF0;
   --glow-blue: rgba(74, 158, 245, 0.3);
   --glow-green: rgba(107, 203, 119, 0.3);
   --glow-gold: rgba(255, 217, 61, 0.4);
@@ -28,28 +41,47 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --kid-bg: #1A1A2E;
-    --kid-surface: #25253D;
-    --kid-blue: #5BAAFF;
+    --kid-bg: #0E0E1C;
+    --kid-surface: #1B1B30;
+    --kid-surface-2: #26263F;
+    --kid-blue: #6AB4FF;
     --kid-gold: #FFE066;
     --kid-green: #7ED88B;
-    --kid-red: #FF7B7B;
-    --kid-text: #E8E8F0;
-    --kid-muted: #9A9AB0;
+    --kid-red: #FF8A8A;
+    --kid-text: #ECECF6;
+    --kid-muted: #8E8EAC;
 
-    --card-bg: #25253D;
+    --kid-border: rgba(255,255,255,0.08);
+    --kid-border-strong: rgba(255,255,255,0.16);
+    --kid-track: rgba(255,255,255,0.08);
+    --kid-star-empty: rgba(255,255,255,0.12);
+    --kid-ring-offset: #0E0E1C;
+
+    --card-bg: #1B1B30;
     --card-border: rgba(255,255,255,0.08);
-    --input-bg: #2D2D48;
-    --overlay-bg: rgba(30,30,50,0.7);
-    --header-bg: rgba(26,26,46,0.92);
-    --glow-blue: rgba(91, 170, 255, 0.35);
-    --glow-green: rgba(126, 216, 139, 0.35);
-    --glow-gold: rgba(255, 224, 102, 0.4);
+    --input-bg: #242440;
+    --overlay-bg: rgba(14,14,28,0.72);
+    --header-bg: rgba(14,14,28,0.85);
+    --streak-bg: linear-gradient(90deg, rgba(251,146,60,0.14), rgba(251,146,60,0.22));
+    --streak-border: rgba(251,146,60,0.35);
+    --streak-text: #FDBA74;
+    --goal-bg: linear-gradient(90deg, rgba(27,27,48,0.9), rgba(255,224,102,0.08));
+    --goal-border: rgba(255,224,102,0.22);
+    --body-bg:
+      radial-gradient(1200px 700px at 15% -10%, rgba(106,180,255,0.10), transparent 60%),
+      radial-gradient(900px 600px at 100% 0%, rgba(126,216,139,0.07), transparent 55%),
+      radial-gradient(800px 500px at 50% 110%, rgba(255,224,102,0.05), transparent 60%),
+      #0E0E1C;
+    --glow-blue: rgba(106,180,255,0.45);
+    --glow-green: rgba(126,216,139,0.40);
+    --glow-gold: rgba(255,224,102,0.45);
   }
 }
 
 body {
-  @apply min-h-screen bg-kid-bg text-kid-text antialiased font-kid;
+  @apply min-h-screen text-kid-text antialiased font-kid;
+  background: var(--body-bg);
+  background-attachment: fixed;
 }
 
 a {
@@ -107,12 +139,25 @@ button { min-height: 44px; }
 
 /* Glow utilities — use CSS vars for theme-aware colors */
 .star-glow  { filter: drop-shadow(0 0 4px var(--kid-gold)); }
-.blue-glow  { box-shadow: 0 0 10px var(--glow-blue); }
-.green-glow { box-shadow: 0 0 10px var(--glow-green); }
-.gold-glow  { box-shadow: 0 0 10px var(--glow-gold); }
+.blue-glow  { box-shadow: 0 0 18px var(--glow-blue); }
+.green-glow { box-shadow: 0 0 18px var(--glow-green); }
+.gold-glow  { box-shadow: 0 0 18px var(--glow-gold); }
 
 /* Theme-aware surfaces */
-.card-bg    { background-color: var(--card-bg); border-color: var(--card-border); }
-.input-bg   { background-color: var(--input-bg); }
-.header-bg  { background-color: var(--header-bg); }
-.overlay-bg { background-color: var(--overlay-bg); }
+.card-bg     { background-color: var(--card-bg); border-color: var(--card-border); }
+.input-bg    { background-color: var(--input-bg); }
+.header-bg   { background-color: var(--header-bg); }
+.overlay-bg  { background-color: var(--overlay-bg); }
+.surface-2   { background-color: var(--kid-surface-2); }
+.goal-bg     { background: var(--goal-bg); }
+.streak-bg   { background: var(--streak-bg); }
+
+/* Theme-aware borders (replaces border-black/X which disappear in dark) */
+.theme-border        { border-color: var(--kid-border) !important; }
+.theme-border-strong { border-color: var(--kid-border-strong) !important; }
+.theme-track         { background-color: var(--kid-track); }
+.theme-star-empty    { color: var(--kid-star-empty); }
+.ring-offset-theme   { --tw-ring-offset-color: var(--kid-ring-offset); }
+
+/* Focus ring offset matches themed background */
+*:focus-visible { --tw-ring-offset-color: var(--kid-ring-offset); }

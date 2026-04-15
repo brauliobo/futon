@@ -1,7 +1,7 @@
 <template lang="pug">
   div(class="relative flex items-center overflow-hidden py-2")
     button(
-      class="absolute left-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-black/8 bg-kid-surface text-lg font-bold text-kid-text shadow-sm transition hover:bg-kid-bg disabled:opacity-30 disabled:cursor-not-allowed"
+      class="absolute left-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-sm transition hover:bg-[color:var(--kid-surface-2)] disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollLeft"
       :disabled="!canScrollLeft"
       v-show="showLeftArrow"
@@ -23,7 +23,7 @@
             p(:class="nameClass(lvl)") {{ getName(lvl) }}
           Progress(:value="progressPercent(lvl)" height="6px" variant="success")
     button(
-      class="absolute right-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-black/8 bg-kid-surface text-lg font-bold text-kid-text shadow-sm transition hover:bg-kid-bg disabled:opacity-30 disabled:cursor-not-allowed"
+      class="absolute right-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-sm transition hover:bg-[color:var(--kid-surface-2)] disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollRight"
       :disabled="!canScrollRight"
       v-show="showRightArrow"
@@ -90,19 +90,19 @@ export default {
       const base = 'flex min-w-[150px] max-w-[180px] snap-center cursor-pointer rounded-2xl border-2 bg-kid-surface transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg';
       const state = [];
       if (lvl === this.active) state.push('border-kid-blue bg-kid-blue/5 shadow-md blue-glow');
-      else state.push('border-black/8 shadow-sm hover:border-kid-blue/40');
-      if (!this.availableSet.has(lvl)) state.push('cursor-not-allowed opacity-40 hover:translate-y-0 hover:shadow-sm hover:border-black/8');
+      else state.push('theme-border shadow-sm hover:border-kid-blue/40');
+      if (!this.availableSet.has(lvl)) state.push('cursor-not-allowed opacity-40 hover:translate-y-0 hover:shadow-sm');
       return [base, ...state].join(' ');
     },
     numberClass(lvl) {
       const base = 'rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide';
       if (lvl === this.active) return `${base} bg-kid-blue text-white`;
-      return `${base} bg-kid-bg text-kid-muted`;
+      return `${base} surface-2 text-kid-muted`;
     },
     tagClass(lvl) {
       const base = 'rounded-lg px-2 py-1 text-xs font-black uppercase';
       if (lvl === this.active) return `${base} bg-kid-blue/10 text-kid-blue`;
-      return `${base} bg-kid-bg text-kid-muted`;
+      return `${base} surface-2 text-kid-muted`;
     },
     nameClass(lvl) {
       const base = 'text-center text-sm font-bold';

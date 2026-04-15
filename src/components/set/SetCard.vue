@@ -10,14 +10,14 @@
         div(class="flex items-center justify-between text-sm font-semibold text-kid-muted mb-2")
           span {{ $t('progress') || 'Progress' }}
           span {{ progress.completed }}/{{ totalPages }} {{ $t('pages') || 'pages' }}
-        div(class="h-3 rounded-full bg-black/5 overflow-hidden")
+        div(class="h-3 rounded-full theme-track overflow-hidden")
           div(class="h-full rounded-full bg-kid-blue transition-all duration-500 shadow-sm" :style="{ width: progress.percent + '%' }")
 
       div(v-else-if="set.attempts > 0" class="grid grid-cols-2 gap-2")
-        div(class="rounded-2xl bg-kid-bg border border-black/5 p-3 text-center")
+        div(class="rounded-2xl surface-2 border theme-border p-3 text-center")
           div(class="text-xs font-semibold text-kid-muted mb-0.5") {{ $t('finalScore') || 'Score' }}
           div(class="text-lg font-black text-kid-text") {{ set.lastScore }}/{{ set.totalExercises }}
-        div(v-if="set.avgSecondsPerExercise" class="rounded-2xl bg-kid-bg border border-black/5 p-3 text-center")
+        div(v-if="set.avgSecondsPerExercise" class="rounded-2xl surface-2 border theme-border p-3 text-center")
           div(class="text-xs font-semibold text-kid-muted mb-0.5") {{ $t('speed') || 'Speed' }}
           div(class="text-lg font-black" :class="speedColor") {{ set.avgSecondsPerExercise }}s
 
@@ -55,11 +55,11 @@ export default {
       return 'text-kid-red';
     },
     cardClass() {
-      const base = 'flex h-full flex-col gap-2 rounded-2xl border bg-kid-surface p-5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg border-l-[6px]';
-      const borders = { mastery: 'border-l-kid-green shadow-md', pass: 'border-l-amber-400 shadow-sm', retry: 'border-l-kid-red shadow-sm' };
-      const border = borders[this.set.status] || 'border-l-black/10 shadow-sm';
-      const ring = this.isActive ? ' ring-2 ring-kid-blue/40 ring-offset-2' : '';
-      return `${base} border-black/5 ${border}${ring}`;
+      const base = 'flex h-full flex-col gap-2 rounded-2xl border theme-border bg-kid-surface p-5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg border-l-[6px]';
+      const borders = { mastery: 'border-l-kid-green shadow-md green-glow', pass: 'border-l-amber-400 shadow-sm', retry: 'border-l-kid-red shadow-sm' };
+      const border = borders[this.set.status] || 'border-l-[color:var(--kid-border-strong)] shadow-sm';
+      const ring = this.isActive ? ' ring-2 ring-kid-blue/50 ring-offset-2 ring-offset-theme blue-glow' : '';
+      return `${base} ${border}${ring}`;
     },
     buttonText() { return this.set.attempts > 0 ? this.$t('restart') || 'Try Again' : this.$t('start') || 'Start'; },
     buttonIcon() { return this.set.attempts > 0 ? '↺' : '▶'; },
@@ -73,7 +73,7 @@ export default {
     onStart() { this.$emit('start', this.set); },
     starClass(n) {
       if (n <= this.starCount) return 'text-2xl leading-none text-kid-gold star-glow transition-all';
-      return 'text-2xl leading-none text-black/10 transition-all';
+      return 'text-2xl leading-none theme-star-empty transition-all';
     },
   }
 };

@@ -5,14 +5,14 @@
       //- Connector: fork line that branches from previous row
       div(v-if="rowIdx > 0" class="relative h-6 flex items-stretch justify-center")
         //- Vertical trunk
-        div(class="absolute left-1/2 top-0 bottom-1/2 w-1 -translate-x-1/2 rounded-full" :class="rowLineClass(rowIdx - 1)")
+        div(class="absolute left-1/2 top-0 bottom-1/2 w-1 -translate-x-1/2 rounded-full bg-kid-green/40")
         //- Horizontal branch (only if previous row has 1 node splitting to multiple)
-        div(v-if="treeRows[rowIdx - 1].length === 1 && row.length > 1" class="absolute top-1/2 h-1 rounded-full left-1/4 right-1/4" :class="rowLineClass(rowIdx - 1)")
+        div(v-if="treeRows[rowIdx - 1].length === 1 && row.length > 1" class="absolute top-1/2 h-1 rounded-full left-1/4 right-1/4 bg-kid-green/40")
         //- Vertical drops into each node in this row
-        div(v-if="row.length > 1" class="absolute top-1/2 bottom-0 w-1 rounded-full" :class="rowLineClass(rowIdx)" style="left: 25%; transform: translateX(-50%);")
-        div(v-if="row.length > 1" class="absolute top-1/2 bottom-0 w-1 rounded-full" :class="rowLineClass(rowIdx)" style="left: 75%; transform: translateX(-50%);")
+        div(v-if="row.length > 1" class="absolute top-1/2 bottom-0 w-1 rounded-full bg-kid-green/40" style="left: 25%; transform: translateX(-50%);")
+        div(v-if="row.length > 1" class="absolute top-1/2 bottom-0 w-1 rounded-full bg-kid-green/40" style="left: 75%; transform: translateX(-50%);")
         //- Single trunk continues if same width
-        div(v-if="row.length === 1 || treeRows[rowIdx - 1].length === row.length" class="absolute left-1/2 top-1/2 bottom-0 w-1 -translate-x-1/2 rounded-full" :class="rowLineClass(rowIdx)")
+        div(v-if="row.length === 1 || treeRows[rowIdx - 1].length === row.length" class="absolute left-1/2 top-1/2 bottom-0 w-1 -translate-x-1/2 rounded-full bg-kid-green/40")
 
       //- Nodes in this row — single column on mobile, side-by-side on sm+
       div(class="grid gap-3" :class="row.length > 1 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 max-w-md mx-auto'")
@@ -20,16 +20,14 @@
           v-for="node in row"
           :key="node.id"
           :node="node"
-          :is-unlocked="isNodeUnlocked(node)"
           :is-complete="isNodeComplete(node)"
           :is-active="activeNodeId === node.id"
           :progress="getNodeProgress(node)"
-          :prereq-names="getPrereqNames(node)"
           @select="onSelectNode"
         )
 
     //- Set list for active node — visually separated card
-    div(v-if="activeNode && activeSets.length" class="mt-6 pt-6 border-t-2 border-dashed border-black/10 animate-slide-up")
+    div(v-if="activeNode && activeSets.length" class="mt-6 pt-6 border-t-2 border-dashed theme-border animate-slide-up")
       div(class="rounded-3xl bg-kid-blue/5 border border-kid-blue/20 p-5")
         h3(class="text-lg font-black text-kid-text mb-3 flex items-center gap-2")
           span(class="text-2xl") {{ activeNode.icon }}
@@ -90,21 +88,10 @@ export default {
     subject() { this.activeNodeId = null; },
   },
   methods: {
-    // Green if all nodes in that row are unlocked, gray otherwise
-    rowLineClass(rowIdx) {
-      const row = this.treeRows[rowIdx] || [];
-      const allUnlocked = row.length && row.every(n => this.isNodeUnlocked(n));
-      return allUnlocked ? 'bg-kid-green/40' : 'bg-black/10';
-    },
-    isNodeUnlocked(node) { return SkillTree.isUnlocked(node, this.tree, this.setsByLevel); },
     isNodeComplete(node) { return SkillTree.isComplete(node, this.setsByLevel); },
     getNodeProgress(node) { return SkillTree.nodeProgress(node, this.setsByLevel); },
-    getPrereqNames(node) {
-      return node.prereqs.map(pid => this.tree.find(n => n.id === pid)?.name || pid).join(', ');
-    },
     async onSelectNode(node) {
       this.activeNodeId = node.id;
-      // Ensure levels are loaded
       for (const lvl of node.levels) {
         if (!this.setsByLevel[lvl]?.length) {
           this.$emit('load-levels', lvl);
