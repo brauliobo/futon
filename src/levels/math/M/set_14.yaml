@@ -14,31 +14,31 @@ pages:
       - type: sequence
         question: H₁ = 1 + 0 = ?
         correctAnswer: 1
-        rationale: "Identifique o padrão (diferença ou razão constante)."
+        rationale: "Aplique as regras de sinais em inteiros."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: H₂ = 1 + 1/2 = ?
         correctAnswer: 1.5
-        rationale: "Identifique o padrão (diferença ou razão constante)."
+        rationale: "Mesmo denominador: some numeradores; diferentes: reduza ao MMC."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: H₃ (aprox) = 1 + 1/2 + 1/3 = ?
         correctAnswer: 1.833
-        rationale: "Identifique o padrão (diferença ou razão constante)."
+        rationale: "Mesmo denominador: some numeradores; diferentes: reduza ao MMC."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: H₄ (aprox) = ?
         correctAnswer: 2.083
-        rationale: "Fórmulas de prostaférese convertem soma ↔ produto."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: "Σ 1/n: (diverge/converge)"
         correctAnswer: diverge
-        rationale: "Série: soma dos n primeiros termos de uma PA/PG."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 3
         objectives: [series.partial_sums]
   - pageNumber: 2
@@ -48,31 +48,31 @@ pages:
       - type: sequence
         question: Σ 1/n² converge (V/F)?
         correctAnswer: V
-        rationale: "PA: Sₙ = n(a₁ + aₙ)/2."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ 1/n^1.5 converge (V/F)?
         correctAnswer: V
-        rationale: "PG finita: Sₙ = a₁(1 - q^n)/(1 - q), q ≠ 1."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ 1/n converge (V/F)?
         correctAnswer: F
-        rationale: "PG infinita (|q| < 1): S = a₁/(1 - q)."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ 1/n^0.5 (ou 1/√n) converge? (sim/não)
         correctAnswer: não
-        rationale: "lei dos senos: a/sen A = b/sen B = c/sen C = 2R."
+        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Para p-série convergir, p > ?
         correctAnswer: 1
-        rationale: "lei dos cossenos: a² = b² + c² - 2bc·cos A."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 3
         objectives: [series.partial_sums]
   - pageNumber: 3
@@ -82,31 +82,31 @@ pages:
       - type: sequence
         question: Σ q^n converge se |q| < ?
         correctAnswer: 1
-        rationale: "Use identidades para reduzir expressões antes de calcular."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ (1/2)^n = 1 + 1/2 + 1/4 + ... = ?
         correctAnswer: 2
-        rationale: "Domine valores exatos dos ângulos notáveis."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ (1/3)^n do n=0 ao ∞ = ?
         correctAnswer: 1.5
-        rationale: "Identidades: sen(a±b), cos(a±b), tan(a±b)."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ 2^n diverge (V/F)?
         correctAnswer: V
-        rationale: "Arco duplo: sen(2a) = 2 sen a · cos a."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ (-1/2)^n do n=0 ao ∞ = ?
         correctAnswer: 2/3
-        rationale: "Arco duplo: cos(2a) = cos²a - sen²a = 1 - 2 sen²a."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 3
         objectives: [series.partial_sums]
   - pageNumber: 4
@@ -116,31 +116,31 @@ pages:
       - type: sequence
         question: "Se aₙ → 5, Σaₙ: (diverge/converge)"
         correctAnswer: diverge
-        rationale: "Fórmulas de prostaférese convertem soma ↔ produto."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σn diverge porque aₙ → ? (∞/0)
         correctAnswer: ∞
-        rationale: "Série: soma dos n primeiros termos de uma PA/PG."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ(-1)^n diverge porque aₙ oscila (V/F)?
         correctAnswer: V
-        rationale: "PA: Sₙ = n(a₁ + aₙ)/2."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Se aₙ → 0, série SEMPRE converge (V/F)?
         correctAnswer: F
-        rationale: "PG finita: Sₙ = a₁(1 - q^n)/(1 - q), q ≠ 1."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: "Ex.: Σ 1/n diverge apesar de 1/n→0 (V/F)?"
         correctAnswer: V
-        rationale: "PG infinita (|q| < 1): S = a₁/(1 - q)."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 3
         objectives: [series.partial_sums]
   - pageNumber: 5
@@ -150,31 +150,31 @@ pages:
       - type: sequence
         question: Σ 1/(n²+1) converge (como 1/n²) (V/F)?
         correctAnswer: V
-        rationale: "lei dos senos: a/sen A = b/sen B = c/sen C = 2R."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ 1/n! converge — fatorial cresce (mais rápido/mais devagar)?
         correctAnswer: mais rápido
-        rationale: "lei dos cossenos: a² = b² + c² - 2bc·cos A."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ sen²(n)/n² é dominado por 1/n², logo converge (V/F)?
         correctAnswer: V
-        rationale: "Use identidades para reduzir expressões antes de calcular."
+        rationale: "Aplique razões trigonométricas e o ciclo."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: "Σ 1/(2n+1) é similar a: (Σ 1/n)"
         correctAnswer: Σ 1/n
-        rationale: "Domine valores exatos dos ângulos notáveis."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: Portanto Σ 1/(2n+1) diverge (V/F)?
         correctAnswer: V
-        rationale: "Identidades: sen(a±b), cos(a±b), tan(a±b)."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 4
         objectives: [series.partial_sums]
   - pageNumber: 6
@@ -184,31 +184,31 @@ pages:
       - type: sequence
         question: "Σ 1/n!: razão (n+1)!→ (n+1). aₙ₊₁/aₙ = 1/(n+1) → 0. Converge? (sim/não)"
         correctAnswer: sim
-        rationale: "Arco duplo: sen(2a) = 2 sen a · cos a."
+        rationale: "Proporção: a/b = c/d ⇒ a·d = b·c."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: "Σ 2^n/n!: aₙ₊₁/aₙ = 2/(n+1) → 0. Converge? (sim/não)"
         correctAnswer: sim
-        rationale: "Arco duplo: cos(2a) = cos²a - sen²a = 1 - 2 sen²a."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: "Se lim aₙ₊₁/aₙ > 1, série: (diverge)"
         correctAnswer: diverge
-        rationale: "Fórmulas de prostaférese convertem soma ↔ produto."
+        rationale: "Substitua o valor — a função é contínua no ponto."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: "Se lim aₙ₊₁/aₙ = 1, teste: (inconclusivo)"
         correctAnswer: inconclusivo
-        rationale: "Série: soma dos n primeiros termos de uma PA/PG."
+        rationale: "Substitua o valor — a função é contínua no ponto."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: Teste da razão é útil para fatoriais e exponenciais (V/F)?
         correctAnswer: V
-        rationale: "PA: Sₙ = n(a₁ + aₙ)/2."
+        rationale: "Proporção: a/b = c/d ⇒ a·d = b·c."
         difficulty: 4
         objectives: [series.partial_sums]
   - pageNumber: 7
@@ -218,31 +218,31 @@ pages:
       - type: sequence
         question: "Se bₙ decresce para 0, série alternada: (converge)"
         correctAnswer: converge
-        rationale: "PG finita: Sₙ = a₁(1 - q^n)/(1 - q), q ≠ 1."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ(-1)^n/n converge? (sim/não)
         correctAnswer: sim
-        rationale: "PG infinita (|q| < 1): S = a₁/(1 - q)."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: "Σ(-1)^n · n/(n+1) — bₙ→1, então: (diverge)"
         correctAnswer: diverge
-        rationale: "lei dos senos: a/sen A = b/sen B = c/sen C = 2R."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ(-1)^n/√n converge (V/F)?
         correctAnswer: V
-        rationale: "lei dos cossenos: a² = b² + c² - 2bc·cos A."
+        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: Série alternada harmônica converge (V/F)?
         correctAnswer: V
-        rationale: "Use identidades para reduzir expressões antes de calcular."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 4
         objectives: [series.partial_sums]
   - pageNumber: 8
@@ -252,31 +252,31 @@ pages:
       - type: sequence
         question: "Σ(-1)^n/n²: Σ1/n² converge, então absolutamente convergente (V/F)?"
         correctAnswer: V
-        rationale: "Domine valores exatos dos ângulos notáveis."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: "Σ(-1)^n/n: Σ1/n diverge; é condicionalmente convergente (V/F)?"
         correctAnswer: V
-        rationale: "Identidades: sen(a±b), cos(a±b), tan(a±b)."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Convergência absoluta é mais forte que condicional (V/F)?
         correctAnswer: V
-        rationale: "Arco duplo: sen(2a) = 2 sen a · cos a."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ(-1)^n/n³ é absolutamente convergente (V/F)?
         correctAnswer: V
-        rationale: "Arco duplo: cos(2a) = cos²a - sen²a = 1 - 2 sen²a."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Se série converge absolutamente, converge (V/F)?
         correctAnswer: V
-        rationale: "Fórmulas de prostaférese convertem soma ↔ produto."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 5
         objectives: [series.partial_sums]
   - pageNumber: 9
@@ -286,31 +286,31 @@ pages:
       - type: sequence
         question: Σ 1/n² = π²/6 (V/F)?
         correctAnswer: V
-        rationale: "Série: soma dos n primeiros termos de uma PA/PG."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ 1/n diverge (V/F)?
         correctAnswer: V
-        rationale: "PA: Sₙ = n(a₁ + aₙ)/2."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ 1/n! = e (V/F)?
         correctAnswer: V
-        rationale: "PG finita: Sₙ = a₁(1 - q^n)/(1 - q), q ≠ 1."
+        rationale: "Use identidades trigonométricas e o ciclo."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ x^n/n! é a série de Taylor de e^x (V/F)?
         correctAnswer: V
-        rationale: "PG infinita (|q| < 1): S = a₁/(1 - q)."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ (-1)^(n+1)/n = ln(2) (V/F)?
         correctAnswer: V
-        rationale: "lei dos senos: a/sen A = b/sen B = c/sen C = 2R."
+        rationale: "ln é log na base e; ln(eˣ) = x."
         difficulty: 5
         objectives: [series.partial_sums]
   - pageNumber: 10
@@ -320,31 +320,31 @@ pages:
       - type: sequence
         question: Σ 1/n⁴ — converge? (sim/não)
         correctAnswer: sim
-        rationale: "lei dos cossenos: a² = b² + c² - 2bc·cos A."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ 1/√n — converge? (sim/não)
         correctAnswer: não
-        rationale: "Use identidades para reduzir expressões antes de calcular."
+        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ (1/3)^n — converge? (sim/não)
         correctAnswer: sim
-        rationale: "Domine valores exatos dos ângulos notáveis."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ (4/3)^n — converge? (sim/não)
         correctAnswer: não
-        rationale: "Identidades: sen(a±b), cos(a±b), tan(a±b)."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ (-1)^n/n² — converge? (sim/não)
         correctAnswer: sim
-        rationale: "Arco duplo: sen(2a) = 2 sen a · cos a."
+        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
         difficulty: 5
         objectives: [series.partial_sums]
 target: 50
