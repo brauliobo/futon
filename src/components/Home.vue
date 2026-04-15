@@ -161,7 +161,7 @@ export default {
       const isActive = this.activeDiscipline === subject;
       const base = 'flex items-center gap-2 rounded-2xl px-5 py-3.5 font-bold capitalize transition-all duration-200 border-2 active:scale-95';
       if (isActive) {
-        const colors = { math: 'bg-kid-blue text-white border-kid-blue shadow-lg shadow-kid-blue/30', portuguese: 'bg-kid-green text-white border-kid-green shadow-lg shadow-kid-green/30', english: 'bg-orange-400 text-white border-orange-400 shadow-lg shadow-orange-300/40' };
+        const colors = { math: 'bg-kid-blue text-white border-kid-blue shadow-lg shadow-kid-blue/30', portuguese: 'bg-kid-green text-white border-kid-green shadow-lg shadow-kid-green/30', english: 'bg-orange-400 text-white border-orange-400 shadow-lg shadow-orange-300/40', japanese: 'bg-kid-red text-white border-kid-red shadow-lg shadow-kid-red/30' };
         return `${base} ${colors[subject] || 'bg-kid-blue text-white border-kid-blue shadow-lg'} scale-[1.02]`;
       }
       return `${base} bg-kid-surface text-kid-muted border-black/8 shadow-sm hover:border-kid-blue/40 hover:text-kid-blue hover:-translate-y-0.5 hover:shadow-md`;
@@ -266,6 +266,7 @@ export default {
       if (subject === 'math') return Levels.math.order();
       if (subject === 'portuguese') return Levels.portuguese.order();
       if (subject === 'english') return Levels.english.order();
+      if (subject === 'japanese') return Levels.japanese.order();
       return [];
     }; },
     levelNameBySubject() {
@@ -276,6 +277,7 @@ export default {
         }
         if (subject === 'portuguese') return Levels.portuguese.name(id);
         if (subject === 'english') return Levels.english.name(id);
+        if (subject === 'japanese') return Levels.japanese.name(id);
         return id;
       };
     },

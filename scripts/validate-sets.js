@@ -15,7 +15,7 @@ const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', BLUE = '\x1b[34
 const c = (text, color) => `${color}${text}${RESET}`;
 const tableStyle = { head: [], border: [], compact: true, 'padding-left': 1, 'padding-right': 1 };
 
-const SUBJECTS = ['math', 'portuguese', 'english'];
+const SUBJECTS = ['math', 'portuguese', 'english', 'japanese'];
 
 function loadAll(rootDir) {
   const all = [];

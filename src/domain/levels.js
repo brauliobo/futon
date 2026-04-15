@@ -81,7 +81,17 @@ export class Levels {
     { id: 'L', topic: 'english_phrasal_reading', name: 'B2+ — Phrasal Verbs & Reading' },
   ];
 
+  static JAPANESE = [
+    { id: '4A', topic: 'japanese_hiragana_basic', name: 'Hiragana — Unvoiced' },
+    { id: '3A', topic: 'japanese_hiragana_advanced', name: 'Hiragana — Voiced & Combined' },
+    { id: '2A', topic: 'japanese_katakana', name: 'Katakana & Loan Words' },
+    { id: 'A',  topic: 'japanese_kanji_intro', name: 'N5 — First Kanji & Sentence Patterns' },
+    { id: 'B',  topic: 'japanese_particles_verbs', name: 'N5 — Particles & Verbs' },
+    { id: 'C',  topic: 'japanese_adjectives_past', name: 'N5 — Adjectives & Past Tense' },
+  ];
+
   static math = new LevelRegistry(Levels.MATH);
   static portuguese = new LevelRegistry(Levels.PORTUGUESE);
   static english = new LevelRegistry(Levels.ENGLISH);
+  static japanese = new LevelRegistry(Levels.JAPANESE);
 }

@@ -36,6 +36,14 @@ export class SkillTree {
     { id: 'future_compare', name: 'Future & Compare', icon: '⏩', levels: ['D'], prereqs: ['past_tense'] },
   ];
 
+  static JAPANESE = [
+    { id: 'hiragana', name: 'Hiragana', icon: 'あ', levels: ['4A','3A'], prereqs: [] },
+    { id: 'katakana', name: 'Katakana', icon: 'ア', levels: ['2A'], prereqs: ['hiragana'] },
+    { id: 'kanji_basic', name: 'First Kanji', icon: '漢', levels: ['A'], prereqs: ['katakana'] },
+    { id: 'particles_verbs', name: 'Particles & Verbs', icon: '〜', levels: ['B'], prereqs: ['kanji_basic'] },
+    { id: 'adjectives_past', name: 'Adjectives & Past', icon: '⏪', levels: ['C'], prereqs: ['particles_verbs'] },
+  ];
+
   static forSubject(subject) { return this[subject.toUpperCase()] || []; }
 
   static isUnlocked(node, tree, setsByLevel) {

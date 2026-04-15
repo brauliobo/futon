@@ -17,6 +17,9 @@ const DISCIPLINES = {
   },
   english: {
     levels: { 'A': 12, 'B': 10, 'C': 12, 'D': 12, 'E': 7, 'F': 7, 'G': 7, 'H': 7, 'I': 7, 'J': 7, 'K': 7, 'L': 7 }
+  },
+  japanese: {
+    levels: { '4A': 14, '3A': 12, '2A': 12, 'A': 12, 'B': 10, 'C': 10 }
   }
 };
 

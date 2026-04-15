@@ -11,7 +11,13 @@ const LEVEL_SPEED_TARGETS = {
   'math-M': 10,  'math-N': 10,  'math-O': 10,
 };
 
-const DEFAULT_SPEED_BY_SUBJECT = { math: 8, portuguese: 18, english: 18 };
+const JAPANESE_SPEED_TARGETS = {
+  'japanese-4A': 6, 'japanese-3A': 6, 'japanese-2A': 6,
+  'japanese-A':  8, 'japanese-B':  8, 'japanese-C':  8,
+};
+Object.assign(LEVEL_SPEED_TARGETS, JAPANESE_SPEED_TARGETS);
+
+const DEFAULT_SPEED_BY_SUBJECT = { math: 8, portuguese: 18, english: 18, japanese: 8 };
 
 export class SetFactory {
   constructor(defaultPassCriteria = { minAccuracyPercent: 95, maxAvgSecondsPerExercise: 8 }) {
