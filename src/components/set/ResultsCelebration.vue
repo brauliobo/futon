@@ -1,10 +1,10 @@
 <template lang="pug">
   div(data-testid="results" class="relative rounded-3xl border-2 p-6 text-center space-y-4 overflow-hidden" :class="containerClass")
-    //- Confetti burst for mastery
-    div(v-if="status === 'mastery'" class="absolute inset-0 pointer-events-none overflow-hidden")
+    //- Confetti burst for mastery — staggered over 1.5s for landed celebration
+    div(v-if="status === 'mastery'" class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true")
       span(
-        v-for="i in 18" :key="'c'+i"
-        class="absolute text-2xl animate-confetti"
+        v-for="i in 32" :key="'c'+i"
+        class="absolute animate-confetti"
         :style="confettiStyle(i)"
       ) {{ confettiEmoji(i) }}
 
@@ -31,11 +31,10 @@
       button(
         v-if="hasNextSet && (status === 'mastery' || status === 'pass')"
         @click="$emit('next-set')"
-        class="w-full mt-3 flex items-center justify-center gap-2 rounded-2xl py-4 text-lg font-black text-white shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl active:scale-95 animate-slide-up"
-        :class="status === 'mastery' ? 'bg-kid-green green-glow' : 'bg-kid-blue'"
+        :class="['mt-3 btn-block animate-slide-up text-lg font-black', status === 'mastery' ? 'btn-success' : 'btn-primary']"
         style="animation-delay:0.35s"
       )
-        span 🚀
+        span(aria-hidden="true") 🚀
         span {{ $t('nextSet') }}
 </template>
 
@@ -63,8 +62,10 @@ export default {
     statusTitle() { return this.$t(`statusTitle_${this.status}`) || ''; },
     statusMessage() { return this.$t(`statusMsg_${this.status}`) || ''; },
     emojiClass() {
-      const base = 'text-6xl animate-bounce-in';
-      return this.status === 'mastery' ? `${base} animate-wiggle` : base;
+      const base = 'inline-block animate-bounce-in';
+      if (this.status === 'mastery') return `${base} text-8xl animate-wiggle drop-shadow-lg`;
+      if (this.status === 'pass') return `${base} text-7xl`;
+      return `${base} text-6xl`;
     },
     containerClass() {
       return {
@@ -93,9 +94,10 @@ export default {
     },
     confettiStyle(i) {
       const left = ((i * 37) % 100);
-      const delay = (i * 0.08);
-      const size = 14 + (i % 3) * 6;
-      return { left: `${left}%`, top: '-10px', animationDelay: `${delay}s`, fontSize: `${size}px` };
+      const delay = i < 6 ? i * 0.04 : 0.3 + (i - 6) * 0.06;
+      const size = 16 + (i % 4) * 8;
+      const duration = 1.2 + (i % 5) * 0.25;
+      return { left: `${left}%`, top: '-20px', animationDelay: `${delay}s`, animationDuration: `${duration}s`, fontSize: `${size}px` };
     },
     confettiEmoji(i) {
       return ['🎉', '⭐', '🌟', '✨', '🎊', '💫'][i % 6];

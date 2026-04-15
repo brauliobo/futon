@@ -51,9 +51,7 @@
         div(class="mt-6 space-y-3")
           h3(class="text-lg font-bold text-kid-text") {{ setsHeader }}
           div(v-if="isLoadingLevel && !filteredSets(activeDiscipline).length" class="flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-sm font-semibold text-kid-blue")
-            svg(class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none")
-              circle(cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" class="opacity-25")
-              path(d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" fill="currentColor" class="opacity-75")
+            Spinner
             span {{ $t('loading') || 'Loading...' }}
           LevelList(
             v-else
@@ -77,13 +75,14 @@
 import LevelRoadmap from "./discipline/LevelRoadmap.vue";
 import LevelList from "./discipline/level/LevelList.vue";
 import SkillTreeView from "./discipline/SkillTreeView.vue";
+import Spinner from "./ui/Spinner.vue";
 import { Discipline } from "../domain/disciplines.js";
 import { Levels } from "../domain/levels.js";
 import { SubjectBranding } from "../utils/SubjectBranding.js";
 import { Formatter } from "../utils/Formatter.js";
 export default {
   name: "Home",
-  components: { LevelRoadmap, LevelList, SkillTreeView },
+  components: { LevelRoadmap, LevelList, SkillTreeView, Spinner },
   emits: ['select-set', 'level-selected'],
   data() {
     return {

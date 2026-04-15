@@ -9,6 +9,8 @@
             :total-pages="totalPages || 1"
             :timer="prettyTimer"
             :progress="pageProgress"
+            :answered-on-page="answeredCount"
+            :exercises-on-page="currentPage.exercises?.length || 0"
           )
           div(class="space-y-3")
             ExampleAlert(v-if="set.example" :example="set.example")
@@ -36,11 +38,15 @@
             @next-set="$emit('next-set')"
           )
           div(class="flex gap-3")
-            button(@click="$emit('go-home')" class="flex-1 flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold bg-kid-surface border-2 theme-border-strong text-kid-text hover:border-kid-blue/40 hover:shadow-sm transition-all active:scale-95") ← {{ $t('back') }}
-            button(@click="resetSet" class="flex-1 flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold surface-2 border-2 theme-border-strong text-kid-text hover:border-kid-blue/40 hover:shadow-sm transition-all active:scale-95") ↺ {{ $t('restart') }}
+            button(@click="$emit('go-home')" class="btn-ghost flex-1") ← {{ $t('back') }}
+            button(@click="resetSet" class="btn-ghost flex-1 surface-2") ↺ {{ $t('restart') }}
           HistorySparkline(v-if="set.history?.length" :history="set.history")
           div(class="border-t theme-border pt-4 space-y-3")
-            h4(class="text-sm font-bold text-kid-muted uppercase tracking-wide") {{ $t('reviewAnswers') || 'Review Answers' }}
+            div(class="flex items-center justify-between gap-3 flex-wrap")
+              h4(class="text-sm font-bold text-kid-muted uppercase tracking-wide") {{ $t('reviewAnswers') || 'Review Answers' }}
+              div(v-if="pageReviewStats.total" class="flex items-center gap-2 text-sm font-bold")
+                span(class="rounded-full px-3 py-1 bg-kid-green/10 text-kid-green") ✓ {{ pageReviewStats.correct }} / {{ pageReviewStats.total }}
+                span(v-if="pageReviewStats.bestStreak >= 3" class="rounded-full px-3 py-1 bg-amber-400/15 text-amber-600 dark:text-amber-300 animate-pop-in") 🔥 {{ pageReviewStats.bestStreak }}
             ExampleAlert(v-if="set.example" :example="set.example")
             PageComponent(
               v-if="currentPage"
@@ -133,6 +139,15 @@ export default {
     },
     attemptedCount() {
       return Scoring.attemptedCount(this.set.pages || [], this.set.totalExercises);
+    },
+    pageReviewStats() {
+      const exs = this.currentPage?.exercises || [];
+      let correct = 0, streak = 0, best = 0;
+      for (const ex of exs) {
+        const ok = Formatter.normalizeAnswer(ex.answer) === Formatter.normalizeAnswer(ex.correctAnswer);
+        if (ok) { correct++; streak++; best = Math.max(best, streak); } else { streak = 0; }
+      }
+      return { correct, total: exs.length, bestStreak: best };
     },
   },
   methods: {

@@ -95,6 +95,22 @@ button, input, select, textarea {
 input:focus { outline: none !important; }
 button { min-height: 44px; }
 
+/* Prevent iOS auto-zoom on focus by ensuring inputs are >=16px on small screens */
+@media (max-width: 640px) {
+  input, textarea, select { font-size: 16px !important; }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-dot-pulse, .animate-wiggle, .animate-confetti { animation: none !important; }
+}
+
 /* Animations */
 @keyframes star-pop {
   0%   { transform: scale(0) rotate(-20deg); opacity: 0; }
@@ -128,6 +144,10 @@ button { min-height: 44px; }
   0%, 100% { transform: scale(1); opacity: 1; }
   50%      { transform: scale(1.4); opacity: 0.7; }
 }
+@keyframes ready-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--glow-blue); }
+  50%      { box-shadow: 0 0 0 8px transparent; }
+}
 
 .animate-star-pop   { animation: star-pop   0.5s ease-out forwards; }
 .animate-bounce-in  { animation: bounce-in  0.4s ease-out forwards; }
@@ -136,6 +156,52 @@ button { min-height: 44px; }
 .animate-slide-up   { animation: slide-up  0.3s ease-out forwards; }
 .animate-wiggle     { animation: wiggle    0.6s ease-in-out; }
 .animate-dot-pulse  { animation: dot-pulse 1.5s ease-in-out infinite; }
+.animate-ready-pulse { animation: ready-pulse 1.6s ease-in-out infinite; }
+
+/* Empathy amber palette — one source for hint card + review-card backdrop */
+.amber-soft     { background: rgba(251, 191, 36, 0.05); border-color: rgba(251, 191, 36, 0.30); }
+.amber-soft-bg  { background: rgba(251, 191, 36, 0.10); border-color: rgba(251, 191, 36, 0.30); }
+
+/* Question card outer surface — variants set status border/bg */
+.question-card { @apply space-y-2 rounded-2xl border-2 bg-kid-surface p-4 shadow-sm transition-all duration-300; }
+.question-card--neutral   { border-color: var(--kid-border) !important; }
+.question-card--answered  { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); }
+.question-card--selected  { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); box-shadow: 0 0 18px var(--glow-green); }
+.question-card--correct   { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); background: color-mix(in srgb, var(--kid-green) 5%, var(--kid-surface)); }
+.question-card--incorrect { background: rgba(251, 191, 36, 0.05); border-color: rgba(251, 191, 36, 0.30); }
+
+/* Button system — base + variants. Hover opacity uses color-mix to stay theme-aware */
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-base font-bold shadow-sm transition-all duration-200; min-height: 44px; }
+.btn:active:not(:disabled) { transform: scale(0.95); }
+.btn:disabled { opacity: 0.30; cursor: not-allowed; }
+.btn-primary { @apply btn bg-kid-blue text-white; }
+.btn-success { @apply btn bg-kid-green text-white gold-glow; }
+.btn-ghost   { @apply btn bg-kid-surface text-kid-text; border: 2px solid var(--kid-border-strong); }
+.btn-primary:hover:not(:disabled), .btn-success:hover:not(:disabled) { box-shadow: 0 8px 18px rgba(0,0,0,0.10); transform: translateX(2px); }
+.btn-ghost:hover:not(:disabled) { border-color: color-mix(in srgb, var(--kid-blue) 40%, transparent); box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+.btn-block { @apply w-full; padding-block: 0.875rem; }
+
+/* Empathy hint card (used after wrong answers) */
+.hint-card {
+  @apply flex items-start gap-2 rounded-2xl px-4 py-3 shadow-sm amber-soft-bg border;
+}
+.hint-card__icon  { @apply text-xl flex-shrink-0; }
+.hint-card__msg   { @apply text-sm font-bold; color: #d97706; }
+.hint-card__answer{ @apply text-base font-black text-kid-text mt-0.5; }
+@media (prefers-color-scheme: dark) { .hint-card__msg { color: #fcd34d; } }
+
+/* Visually hidden but available to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 /* Glow utilities — use CSS vars for theme-aware colors */
 .star-glow  { filter: drop-shadow(0 0 4px var(--kid-gold)); }

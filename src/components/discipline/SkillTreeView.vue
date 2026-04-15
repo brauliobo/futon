@@ -38,9 +38,7 @@
           @start="$emit('start-set', $event)"
         )
     div(v-else-if="activeNode && hasLoadableLevels && !activeSets.length" class="mt-6 flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-sm font-semibold text-kid-blue animate-slide-up")
-      svg(class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none")
-        circle(cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" class="opacity-25")
-        path(d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" fill="currentColor" class="opacity-75")
+      Spinner
       span {{ $t('loading') || 'Loading...' }}
 </template>
 
@@ -48,11 +46,12 @@
 import { SkillTree } from '../../domain/SkillTree.js';
 import SkillTreeNode from './SkillTreeNode.vue';
 import LevelList from './level/LevelList.vue';
+import Spinner from '../ui/Spinner.vue';
 import { Formatter } from '../../utils/Formatter.js';
 
 export default {
   name: 'SkillTreeView',
-  components: { SkillTreeNode, LevelList },
+  components: { SkillTreeNode, LevelList, Spinner },
   emits: ['start-set', 'load-levels'],
   props: {
     subject: { type: String, required: true },

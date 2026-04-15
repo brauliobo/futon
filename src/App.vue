@@ -18,9 +18,7 @@
       main.flex-1.w-full
         div(class="mx-auto w-full max-w-[1920px] px-3 pt-6 pb-6 sm:px-4 sm:pt-8")
           div(v-if="isLoading" class="flex flex-col items-center justify-center gap-4 py-20")
-            svg(class="h-12 w-12 animate-spin text-kid-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24")
-              circle(class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4")
-              path(class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z")
+            Spinner(size="lg" class="text-kid-blue")
             p(class="text-base font-semibold text-kid-muted") {{ $t('loading') || 'Loading...' }}
           Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" :isLoadingLevel="isLoadingLevel" :streak="streak" :today-sets="todaySets" @select-set="selectSet" @level-selected="onLevelSelected" class="space-y-6")
           div(v-else)
@@ -40,12 +38,13 @@ import Home from "./components/Home.vue";
 import Set from "./components/set/Set.vue";
 import ProfileSelector from "./components/ProfileSelector.vue";
 import LevelCertificate from "./components/LevelCertificate.vue";
+import Spinner from "./components/ui/Spinner.vue";
 import { SetStorage } from "./services/SetStorage.js";
 import { Formatter } from "./utils/Formatter.js";
 
 export default {
   name: "App",
-  components: { Home, Set, ProfileSelector, LevelCertificate },
+  components: { Home, Set, ProfileSelector, LevelCertificate, Spinner },
   data() {
     const activeProfile = ProfileStorage.getActiveProfile();
     const profiles = ProfileStorage.getProfiles();
