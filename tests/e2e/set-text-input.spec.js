@@ -26,15 +26,35 @@ test.describe('Set Exercise Flow - Text Input', () => {
     await expect(page.getByText('✓').first()).toBeVisible();
   });
 
-  test('exercises enable sequentially', async ({ page }) => {
+  test('all inputs enabled from start (no sequential gate)', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (answers.length < 2 || answers[0].hasChoices) return;
     const inputs = page.getByPlaceholder('Digite sua resposta');
-    await expect(inputs.first()).toBeEnabled();
-    await inputs.first().fill(answers[0].answer);
-    await inputs.first().press('Enter');
-    await page.waitForTimeout(50);
-    await expect(inputs.first()).toBeEnabled();
+    const count = await inputs.count();
+    for (let i = 0; i < count; i++) {
+      await expect(inputs.nth(i)).toBeEnabled();
+    }
+  });
+
+  test('user can click directly into any exercise input', async ({ page }) => {
+    const answers = await getCurrentPageAnswers(page);
+    if (answers.length < 3 || answers[0].hasChoices) return;
+    const inputs = page.getByPlaceholder('Digite sua resposta');
+    await inputs.nth(2).click();
+    await expect(inputs.nth(2)).toBeFocused();
+    await page.keyboard.type(answers[2].answer);
+    await expect(inputs.nth(2)).toHaveValue(answers[2].answer);
+  });
+
+  test('typing then clicking away persists the answer (blur commit)', async ({ page }) => {
+    const answers = await getCurrentPageAnswers(page);
+    if (answers.length < 2 || answers[0].hasChoices) return;
+    const inputs = page.getByPlaceholder('Digite sua resposta');
+    await inputs.first().click();
+    await page.keyboard.type(answers[0].answer);
+    await inputs.nth(1).click();
+    const saved = await page.evaluate(() => window.__futonSet?.set?.pages?.[0]?.exercises?.[0]?.answer);
+    expect(String(saved)).toBe(answers[0].answer);
   });
 
   test('golden path: complete set end-to-end', { timeout: 120000 }, async ({ page }) => {

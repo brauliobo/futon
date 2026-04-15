@@ -22,7 +22,7 @@ export default defineConfig({
   use: {
     baseURL: 'http://localhost:5173',
 
-    headless: !!process.env.CI,
+    headless: true,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -32,7 +32,7 @@ export default defineConfig({
   projects: [
     {
       name: 'google-chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      use: { ...devices['Desktop Chrome'], channel: 'chrome', headless: true },
     },
   ],
 
