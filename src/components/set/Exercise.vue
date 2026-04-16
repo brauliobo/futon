@@ -33,7 +33,8 @@
           @click="isEditing = true"
           ref="inputRef"
         )
-        span(v-if="hasAnswer && !isEditing" class="absolute -right-1 -top-1 w-5 h-5 rounded-full bg-kid-green text-white text-xs font-black flex items-center justify-center shadow-md animate-pop-in" aria-hidden="true") ✓
+        span(v-if="hasAnswer && !isEditing" class="absolute -right-1 -top-1 w-5 h-5 rounded-full bg-kid-green text-white text-xs font-black flex items-center justify-center shadow-md animate-stamp" aria-hidden="true") ✓
+        span(v-if="hasAnswer && !isEditing" class="absolute inset-0 rounded-xl pointer-events-none animate-stamp-ring" aria-hidden="true")
         button(
           v-if="hasAnswer && isEditing && !isSubmitted"
           @mousedown.prevent="clearAnswer"
