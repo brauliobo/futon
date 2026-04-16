@@ -1,6 +1,6 @@
 <template lang="pug">
   div(:class="cardClass" class="animate-slide-up" role="group" :aria-labelledby="`q-${exerciseNumber}`")
-    QuestionHeader(:number="exerciseNumber" :question="exercise.question" compact)
+    QuestionHeader(:number="exerciseNumber" :question="exercise.question" compact :answered="!!selected && !isReadOnly")
 
     div(v-if="!isReadOnly")
       div(:class="gridClass" role="radiogroup" :aria-labelledby="`q-${exerciseNumber}`" @keydown="onArrowKey")

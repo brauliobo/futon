@@ -12,7 +12,7 @@
   )
   div(v-else :class="cardClass" class="animate-slide-up" role="group" :aria-labelledby="`q-${exerciseNumber}`")
     div(v-if="isNumeric && !isReadOnly" class="flex items-center gap-3")
-      QuestionHeader(:number="exerciseNumber" :question="exercise.question" compact)
+      QuestionHeader(:number="exerciseNumber" :question="exercise.question" compact :answered="hasAnswer")
       div(class="relative ml-auto")
         input(
           v-model="userAnswer"
@@ -43,7 +43,7 @@
           :aria-label="$t('clear') || 'Clear'"
         ) ×
     template(v-else)
-      QuestionHeader(:number="exerciseNumber" :question="exercise.question")
+      QuestionHeader(:number="exerciseNumber" :question="exercise.question" :answered="hasAnswer && !isReadOnly")
       div(v-if="!isReadOnly" :class="inputWrapClass")
         div(class="relative inline-block")
         input(
