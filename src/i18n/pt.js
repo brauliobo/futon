@@ -41,6 +41,7 @@ export const pt = {
   pageComplete: "Página concluída — toque em Próxima!",
   hintShortcut: "Dica: tecle 1–9 pra escolher rápido",
   clear: "Limpar",
+  remaining: "Faltam",
   headerTitle: "Conjunto de Multiplicação e Divisão Básicas",
   level: "Nível",
   previous: "Anterior",

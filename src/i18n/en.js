@@ -41,6 +41,7 @@ export const en = {
   pageComplete: "Page complete — tap Next!",
   hintShortcut: "Tip: press 1–9 to pick fast",
   clear: "Clear",
+  remaining: "Left:",
   headerTitle: "Multiplication and Division Set",
   level: "Level",
   previous: "Previous",

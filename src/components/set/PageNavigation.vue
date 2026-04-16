@@ -4,7 +4,7 @@
     button(@click="$emit('prev')" :disabled="!canGoPrev" class="btn-ghost" aria-label="Previous page")
       | ← {{ $t('previous') }}
     button(@click="$emit('next')" :disabled="!canGoNext" :class="nextClass" aria-label="Next page")
-      | {{ isLastPage ? '✨ ' + $t('finish') : $t('next') + ' →' }}
+      | {{ nextLabel }}
 </template>
 
 <script>
@@ -14,12 +14,17 @@ export default {
     canGoPrev: { type: Boolean, default: false },
     canGoNext: { type: Boolean, default: false },
     isLastPage: { type: Boolean, default: false },
+    remaining: { type: Number, default: 0 },
   },
   emits: ['prev', 'next'],
   computed: {
     nextClass() {
       const c = this.isLastPage ? 'btn-success' : 'btn-primary';
       return this.canGoNext ? `${c} animate-ready-pulse` : c;
+    },
+    nextLabel() {
+      if (!this.canGoNext && this.remaining > 0) return `${this.$t('remaining') || 'Falta'} ${this.remaining}`;
+      return this.isLastPage ? `✨ ${this.$t('finish')}` : `${this.$t('next')} →`;
     },
   },
 };

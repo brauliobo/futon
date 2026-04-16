@@ -174,6 +174,19 @@ button { min-height: 44px; }
   animation: page-complete-pop 450ms ease-out forwards;
 }
 
+/* Workbook page-turn — outgoing page peels right, incoming flips in from left */
+.page-turn-stage { perspective: 1500px; }
+.page-fwd-leave-active, .page-back-leave-active,
+.page-fwd-enter-active, .page-back-enter-active {
+  transition: transform 380ms cubic-bezier(.4,.0,.2,1), opacity 280ms ease-out;
+  transform-origin: left center;
+  backface-visibility: hidden;
+}
+.page-fwd-leave-to    { transform: rotateY(-65deg) translateX(-4%); opacity: 0; }
+.page-fwd-enter-from  { transform: rotateY(35deg)  translateX(8%);  opacity: 0; }
+.page-back-leave-to   { transform: rotateY(35deg)  translateX(8%);  opacity: 0; transform-origin: right center; }
+.page-back-enter-from { transform: rotateY(-65deg) translateX(-4%); opacity: 0; transform-origin: right center; }
+
 .animate-star-pop   { animation: star-pop   0.5s ease-out forwards; }
 .animate-bounce-in  { animation: bounce-in  0.4s ease-out forwards; }
 .animate-confetti   { animation: confetti-fall 1.5s ease-in forwards; }

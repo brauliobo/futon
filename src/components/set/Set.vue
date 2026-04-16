@@ -17,18 +17,20 @@
             :answered-on-page="answeredCount"
             :exercises-on-page="currentPage.exercises?.length || 0"
           )
-          div(class="space-y-3")
+          div(class="space-y-3 page-turn-stage")
             ExampleAlert(v-if="set.example && currentPageIndex === 0" :example="set.example")
-            PageComponent(
-              v-if="currentPage"
-              :key="'page-' + currentPageIndex + '-' + resetKey"
-              v-bind="pageProps"
-              @update-page-status="handlePageStatus"
-            )
+            transition(:name="pageDir" mode="out-in")
+              PageComponent(
+                v-if="currentPage"
+                :key="'page-' + currentPageIndex + '-' + resetKey"
+                v-bind="pageProps"
+                @update-page-status="handlePageStatus"
+              )
             PageNavigation(
               :can-go-prev="currentPageIndex > 0"
               :can-go-next="canGoNextPage"
               :is-last-page="isLastPage"
+              :remaining="Math.max(0, (currentPage.exercises?.length || 0) - answeredCount)"
               @prev="prevPage"
               @next="nextPage"
             )
@@ -115,6 +117,7 @@ export default {
       intervalId: null,
       startedAt: 0,
       pageCompleting: false,
+      pageDir: 'page-fwd',
       storage: new SetStorage(this.profileId),
     };
   },
@@ -190,6 +193,7 @@ export default {
     goToPage(idx) {
       const clamped = this.clampIndex(idx);
       if (clamped === this.currentPageIndex) return;
+      this.pageDir = clamped > this.currentPageIndex ? 'page-fwd' : 'page-back';
       this.currentPageIndex = clamped;
     },
     nextPage() {
