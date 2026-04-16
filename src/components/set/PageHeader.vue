@@ -9,9 +9,9 @@
           :class="dotClass(n)"
           aria-hidden="true"
         )
-      div(class="flex items-center gap-2 rounded-2xl surface-2 border theme-border px-3 py-1.5")
+      div(:class="timerClass")
         span(class="text-base" aria-hidden="true") ⏱
-        span(class="text-lg font-black text-kid-text tabular-nums" :aria-label="`Time elapsed ${timer}`") {{ timer }}
+        span(class="text-lg font-black tabular-nums" :aria-label="`Time elapsed ${timer}`") {{ timer }}
     div(v-if="exercisesOnPage > 0" class="space-y-1")
       div(class="flex items-center justify-between text-xs font-bold text-kid-muted")
         span {{ answeredOnPage }} / {{ exercisesOnPage }}
@@ -32,6 +32,7 @@ export default {
     progress: { type: Number, required: true },
     answeredOnPage: { type: Number, default: 0 },
     exercisesOnPage: { type: Number, default: 0 },
+    pace: { type: String, default: '' },
   },
   data() { return { liveAnnouncement: '' }; },
   computed: {
@@ -43,6 +44,11 @@ export default {
     barClass() {
       const base = 'h-full rounded-full transition-all duration-500 ease-out';
       return this.isComplete ? `${base} bg-kid-green green-glow` : `${base} bg-kid-blue`;
+    },
+    timerClass() {
+      const base = 'flex items-center gap-2 rounded-2xl border px-3 py-1.5 transition-colors duration-500 surface-2';
+      const tone = { fast: 'border-kid-green/50 text-kid-green', slow: 'border-kid-red/50 text-kid-red' }[this.pace];
+      return tone ? `${base} ${tone}` : `${base} theme-border text-kid-text`;
     },
   },
   watch: {

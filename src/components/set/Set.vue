@@ -16,6 +16,7 @@
             :progress="pageProgress"
             :answered-on-page="answeredCount"
             :exercises-on-page="currentPage.exercises?.length || 0"
+            :pace="livePace"
           )
           div(class="space-y-3 page-turn-stage")
             ExampleAlert(v-if="set.example && currentPageIndex === 0" :example="set.example")
@@ -148,6 +149,16 @@ export default {
     },
     attemptedCount() {
       return Scoring.attemptedCount(this.set.pages || [], this.set.totalExercises);
+    },
+    livePace() {
+      const ans = this.answeredCount;
+      if (ans < 2) return '';
+      const target = this.speedTarget || 0;
+      if (target <= 0) return '';
+      const avg = this.pageSeconds / ans;
+      if (avg <= target * 0.7) return 'fast';
+      if (avg > target * 1.3) return 'slow';
+      return '';
     },
     pageReviewStats() {
       const exs = this.currentPage?.exercises || [];
