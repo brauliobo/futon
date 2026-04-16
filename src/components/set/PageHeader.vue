@@ -16,8 +16,9 @@
       div(class="flex items-center justify-between text-xs font-bold text-kid-muted")
         span {{ answeredOnPage }} / {{ exercisesOnPage }}
         span(v-if="isComplete" class="text-kid-green animate-pop-in") ✓ {{ $t('done') || 'Done' }}
-      div(class="h-2 rounded-full theme-track overflow-hidden" role="progressbar" :aria-valuenow="answeredOnPage" :aria-valuemax="exercisesOnPage")
+      div(class="h-2 rounded-full theme-track overflow-hidden relative" role="progressbar" :aria-valuenow="answeredOnPage" :aria-valuemax="exercisesOnPage")
         div(:class="barClass" :style="{ width: barWidth }")
+          div(v-if="answeredOnPage > 0 && !isComplete" class="absolute inset-0 progress-shimmer" aria-hidden="true")
     span.sr-only(aria-live="assertive") {{ liveAnnouncement }}
 </template>
 

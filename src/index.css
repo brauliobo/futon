@@ -169,6 +169,22 @@ button { min-height: 44px; }
 }
 .animate-stamp-ring { animation: stamp-ring 520ms ease-out forwards; }
 
+/* Progress bar shimmer — moving highlight that wipes across the filled portion */
+@keyframes progress-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.progress-shimmer {
+  background-image: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  animation: progress-shimmer 2.4s linear infinite;
+}
+
+/* Themed caret on math/text inputs so the writing cursor matches the kid theme */
+input { caret-color: var(--kid-blue); }
+input.bg-kid-green\/5 { caret-color: var(--kid-green); }
+
 .page-complete-overlay {
   position: absolute; inset: 0; z-index: 30;
   display: flex; align-items: center; justify-content: center;
