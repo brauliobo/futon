@@ -27,14 +27,15 @@
                 v-bind="pageProps"
                 @update-page-status="handlePageStatus"
               )
-            PageNavigation(
-              :can-go-prev="currentPageIndex > 0"
-              :can-go-next="canGoNextPage"
-              :is-last-page="isLastPage"
-              :remaining="Math.max(0, (currentPage.exercises?.length || 0) - answeredCount)"
-              @prev="prevPage"
-              @next="nextPage"
-            )
+            div(class="sticky bottom-0 z-10 -mx-5 px-5 py-3 sm:static sm:mx-0 sm:px-0 sm:py-0 nav-sticky")
+              PageNavigation(
+                :can-go-prev="currentPageIndex > 0"
+                :can-go-next="canGoNextPage"
+                :is-last-page="isLastPage"
+                :remaining="Math.max(0, (currentPage.exercises?.length || 0) - answeredCount)"
+                @prev="prevPage"
+                @next="nextPage"
+              )
 
         div(v-if="isSubmitted" class="space-y-5")
           ResultsCelebration(
@@ -62,12 +63,13 @@
               v-bind="pageProps"
               @update-page-status="handlePageStatus"
             )
-          PageNavigation(
-            :can-go-prev="currentPageIndex > 0"
-            :can-go-next="currentPageIndex < totalPages - 1"
-            @prev="prevPage"
-            @next="goToPage(currentPageIndex + 1)"
-          )
+          div(class="sticky bottom-0 z-10 -mx-5 px-5 py-3 sm:static sm:mx-0 sm:px-0 sm:py-0 nav-sticky")
+            PageNavigation(
+              :can-go-prev="currentPageIndex > 0"
+              :can-go-next="currentPageIndex < totalPages - 1"
+              @prev="prevPage"
+              @next="goToPage(currentPageIndex + 1)"
+            )
           SpeedGauge(
             :width="speedGaugeWidth"
             :variant="speedGaugeVariant"
