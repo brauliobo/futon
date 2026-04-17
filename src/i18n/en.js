@@ -55,6 +55,7 @@ export const en = {
   submitAnswers: "Submit Answers",
   reset: "Reset",
   restart: "Restart",
+  confirmRestart: "Tap again to restart",
   example: "Example",
   reviewTitle: "Review and Evaluation",
   openNotebook: "Open Notebook",

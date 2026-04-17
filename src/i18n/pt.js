@@ -55,6 +55,7 @@ export const pt = {
   submitAnswers: "Enviar Respostas",
   reset: "Reiniciar",
   restart: "Reiniciar",
+  confirmRestart: "Toque de novo para reiniciar",
   example: "Exemplo",
   reviewTitle: "Revisão e Avaliação",
   openNotebook: "Abrir Caderno",

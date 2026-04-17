@@ -10,6 +10,7 @@ test.describe('Reset Flow', () => {
     await completeEntireSetCorrectly(page);
     await expect(page.locator('[data-testid="results"]')).toBeVisible({ timeout: 10000 });
     await page.getByRole('button', { name: /Reiniciar/ }).click();
+    await page.getByRole('button', { name: /restart|reiniciar/i }).click();
     await page.waitForTimeout(100);
     expect(page.url()).toMatch(/\/p\/1/);
     await expect(page.locator('[data-testid="results"]')).not.toBeVisible();
@@ -21,6 +22,7 @@ test.describe('Reset Flow', () => {
     await completeEntireSetCorrectly(page);
     await expect(page.locator('[data-testid="results"]')).toBeVisible({ timeout: 10000 });
     await page.getByRole('button', { name: /Reiniciar/ }).click();
+    await page.getByRole('button', { name: /restart|reiniciar/i }).click();
     await page.waitForTimeout(100);
     await expect(page.getByText('0:0')).toBeVisible();
   });

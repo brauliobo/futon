@@ -15,8 +15,9 @@ test.describe('Submission and Results', () => {
     await expect(results.getByText('/')).toBeVisible({ timeout: 5000 });
     await expect(page.locator('[data-testid="speed-gauge"]')).toBeVisible();
 
-    // Test Reiniciar
+    // Test Reiniciar (2-step confirmation)
     await page.getByRole('button', { name: /Reiniciar/ }).click();
+    await page.getByRole('button', { name: /restart|reiniciar/i }).click();
     await page.waitForTimeout(100);
     expect(page.url()).toMatch(/\/p\/1/);
     await expect(results).not.toBeVisible();

@@ -48,7 +48,8 @@
           )
           div(class="flex gap-3")
             button(@click="$emit('go-home')" class="btn-ghost flex-1") ← {{ $t('back') }}
-            button(@click="resetSet" class="btn-ghost flex-1 surface-2") ↺ {{ $t('restart') }}
+            button(v-if="!confirmingReset" @click="confirmingReset = true" class="btn-ghost flex-1 surface-2") ↺ {{ $t('restart') }}
+            button(v-else @click="resetSet" class="btn-ghost flex-1 bg-kid-red/10 border-kid-red/30 text-kid-red animate-pop-in") {{ $t('confirmRestart') || 'Tap again to restart' }}
           HistorySparkline(v-if="set.history?.length" :history="set.history")
           div(class="border-t theme-border pt-4 space-y-3")
             div(class="flex items-center justify-between gap-3 flex-wrap")
@@ -121,6 +122,7 @@ export default {
       startedAt: 0,
       pageCompleting: false,
       pageDir: 'page-fwd',
+      confirmingReset: false,
       storage: new SetStorage(this.profileId),
     };
   },
@@ -354,6 +356,7 @@ export default {
     },
     resetSet() {
       this.isSubmitted = false;
+      this.confirmingReset = false;
       this.currentPageIndex = 0;
       this.completedPages = [];
       
@@ -399,6 +402,9 @@ export default {
     if (this.intervalId) clearInterval(this.intervalId);
   },
   watch: {
+    confirmingReset(v) {
+      if (v) setTimeout(() => { this.confirmingReset = false; }, 3000);
+    },
     currentPageIndex(newIdx, oldIdx) {
       const clamped = this.clampIndex(newIdx);
       if (clamped !== newIdx) { this.currentPageIndex = clamped; return; }
