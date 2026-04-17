@@ -53,7 +53,7 @@
             div(class="flex items-center justify-between gap-3 flex-wrap")
               h4(class="text-sm font-bold text-kid-muted uppercase tracking-wide") {{ $t('reviewAnswers') || 'Review Answers' }}
               div(v-if="pageReviewStats.total" class="flex items-center gap-2 text-sm font-bold")
-                span(class="rounded-full px-3 py-1 bg-kid-green/10 text-kid-green") ✓ {{ pageReviewStats.correct }} / {{ pageReviewStats.total }}
+                span(:class="reviewBadgeClass") ✓ {{ pageReviewStats.correct }} / {{ pageReviewStats.total }}
                 span(v-if="pageReviewStats.bestStreak >= 3" class="rounded-full px-3 py-1 bg-amber-400/15 text-amber-600 dark:text-amber-300 animate-pop-in") 🔥 {{ pageReviewStats.bestStreak }}
             ExampleAlert(v-if="set.example" :example="set.example")
             PageComponent(
@@ -159,6 +159,14 @@ export default {
       if (avg <= target * 0.7) return 'fast';
       if (avg > target * 1.3) return 'slow';
       return '';
+    },
+    reviewBadgeClass() {
+      const { correct, total } = this.pageReviewStats;
+      const pct = total ? Math.round((correct / total) * 100) : 0;
+      const base = 'rounded-full px-3 py-1';
+      if (pct >= 80) return `${base} bg-kid-green/10 text-kid-green`;
+      if (pct >= 50) return `${base} bg-amber-400/15 text-amber-600 dark:text-amber-300`;
+      return `${base} bg-kid-red/10 text-kid-red`;
     },
     pageReviewStats() {
       const exs = this.currentPage?.exercises || [];

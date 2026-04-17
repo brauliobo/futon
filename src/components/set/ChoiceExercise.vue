@@ -22,9 +22,11 @@
     div(v-if="isReadOnly")
       div(:class="reviewListClass" role="list")
         div(
-          v-for="choice in exercise.choices"
+          v-for="(choice, idx) in exercise.choices"
           :key="choice"
           :class="reviewClass(choiceStatus(choice))"
+          :style="{ animationDelay: `${idx * 0.06}s` }"
+          class="review-stagger"
           role="listitem"
         )
           span(v-if="reviewIcon(choiceStatus(choice))" class="mr-2 font-black" aria-hidden="true") {{ reviewIcon(choiceStatus(choice)) }}

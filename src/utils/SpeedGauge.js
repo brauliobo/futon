@@ -14,4 +14,11 @@ export class SpeedGauge {
     if (avgSeconds <= target * 1.3) return 'text-amber-500';
     return 'text-kid-red';
   }
+
+  static emoji(avgSeconds, target) {
+    if (avgSeconds <= target * 0.5) return '🚀';
+    if (avgSeconds <= target) return '⚡';
+    if (avgSeconds <= target * 1.3) return '🐢';
+    return '🐌';
+  }
 }

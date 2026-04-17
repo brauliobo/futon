@@ -74,7 +74,7 @@
           :aria-label="$t('clear') || 'Clear'"
         ) ×
 
-    div(v-if="isReadOnly" class="mt-3")
+    div(v-if="isReadOnly" class="mt-3 review-stagger")
       div(v-if="isCorrect" class="flex items-center gap-2 rounded-2xl bg-kid-green/10 border border-kid-green/20 px-4 py-3 shadow-sm")
         span(class="text-xl animate-pop-in" aria-hidden="true") ✅
         span(class="text-base font-bold text-kid-green") {{ $t('correct') || 'Correct!' }}

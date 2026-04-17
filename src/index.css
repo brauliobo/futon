@@ -227,6 +227,31 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .animate-dot-pulse  { animation: dot-pulse 1.5s ease-in-out infinite; }
 .animate-ready-pulse { animation: ready-pulse 1.6s ease-in-out infinite; }
 
+/* Sparkline SVG polyline draw-in */
+@keyframes sparkline-draw {
+  from { stroke-dashoffset: var(--sparkline-len, 300); }
+  to   { stroke-dashoffset: 0; }
+}
+.sparkline-path {
+  stroke-dasharray: var(--sparkline-len, 300);
+  animation: sparkline-draw 0.8s ease-out forwards;
+}
+@keyframes sparkline-dot {
+  0%   { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.sparkline-dot { animation: sparkline-dot 0.25s ease-out forwards; }
+
+/* Hint card slide-in entrance */
+.hint-card { animation: slide-up 0.3s ease-out; }
+
+/* Staggered review item entrance */
+@keyframes review-in {
+  from { transform: translateY(8px); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}
+.review-stagger { animation: review-in 0.25s ease-out both; }
+
 /* Empathy amber palette — one source for hint card + review-card backdrop */
 .amber-soft     { background: rgba(251, 191, 36, 0.05); border-color: rgba(251, 191, 36, 0.30); }
 .amber-soft-bg  { background: rgba(251, 191, 36, 0.10); border-color: rgba(251, 191, 36, 0.30); }

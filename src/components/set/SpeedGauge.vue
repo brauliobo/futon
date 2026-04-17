@@ -2,7 +2,7 @@
 <template lang="pug">
   div(data-testid="speed-gauge" class="rounded-2xl border theme-border surface-2 p-4 space-y-2 animate-slide-up")
     div(class="flex items-center justify-between text-sm font-semibold text-kid-muted mb-1")
-      span ⚡ {{ $t('speed') || 'Speed' }}
+      span {{ speedEmoji }} {{ $t('speed') || 'Speed' }}
       span(class="font-black text-base" :class="speedLabelColor") {{ avgSeconds }}s/ex
     Progress(:value="width" :variant="variant" height="10px")
     small(class="block text-xs font-semibold text-kid-muted") {{ $t('target') || 'Target' }}: ≤ {{ target }}s/ex
@@ -23,6 +23,7 @@ export default {
   },
   computed: {
     speedLabelColor() { return SpeedCalc.labelColor(this.avgSeconds, this.target); },
+    speedEmoji() { return SpeedCalc.emoji(this.avgSeconds, this.target); },
   },
 };
 </script>
