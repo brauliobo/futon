@@ -14,6 +14,7 @@
         :class="cardClass(lvl)"
         :data-level-card="lvl"
         @click="onLevelClick($event, lvl)"
+        class="relative"
       )
         div(class="flex h-full flex-col gap-3 p-4")
           div(class="flex items-center justify-between")
@@ -22,6 +23,8 @@
           div(class="flex-1")
             p(:class="nameClass(lvl)") {{ getName(lvl) }}
           Progress(:value="progressPercent(lvl)" height="6px" variant="success")
+        div(v-if="!availableSet.has(lvl)" class="absolute inset-0 flex items-center justify-center rounded-2xl overlay-bg backdrop-blur-[1px]")
+          span(class="text-2xl") 🔒
     button(
       class="absolute right-0 z-10 flex h-12 w-12 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-sm transition hover:bg-[color:var(--kid-surface-2)] disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollRight"
@@ -91,21 +94,21 @@ export default {
       const state = [];
       if (lvl === this.active) state.push('border-kid-blue bg-kid-blue/5 shadow-md blue-glow');
       else state.push('theme-border shadow-sm hover:border-kid-blue/40');
-      if (!this.availableSet.has(lvl)) state.push('cursor-not-allowed opacity-40 hover:translate-y-0 hover:shadow-sm');
+      if (!this.availableSet.has(lvl)) state.push('cursor-not-allowed hover:translate-y-0 hover:shadow-sm');
       return [base, ...state].join(' ');
     },
     numberClass(lvl) {
-      const base = 'rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide';
+      const base = 'rounded-full px-3 py-1 text-sm font-bold uppercase tracking-wide';
       if (lvl === this.active) return `${base} bg-kid-blue text-white`;
       return `${base} surface-2 text-kid-muted`;
     },
     tagClass(lvl) {
-      const base = 'rounded-lg px-2 py-1 text-xs font-black uppercase';
+      const base = 'rounded-lg px-2 py-1 text-sm font-black uppercase';
       if (lvl === this.active) return `${base} bg-kid-blue/10 text-kid-blue`;
       return `${base} surface-2 text-kid-muted`;
     },
     nameClass(lvl) {
-      const base = 'text-center text-sm font-bold';
+      const base = 'text-center text-base font-bold';
       if (lvl === this.active) return `${base} text-kid-text`;
       if (!this.availableSet.has(lvl)) return `${base} text-kid-muted/50`;
       return `${base} text-kid-muted`;

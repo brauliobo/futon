@@ -17,7 +17,7 @@
           p(class="text-2xl font-black text-kid-text") {{ profileName || $t('learner') }}
           p(class="text-base font-semibold text-kid-muted") {{ $t('hasMastered') }}
           p(class="text-3xl font-black" :style="{ color: subjectColor }") {{ subjectLabel }} — {{ $t('level') }} {{ level }}
-          p(class="text-sm text-kid-muted mt-1") {{ formattedDate }}
+          p(class="text-base text-kid-muted mt-1") {{ formattedDate }}
         div(class="flex items-center justify-center gap-2 text-4xl mt-3")
           span(v-for="n in 3" :key="n" class="star-glow animate-star-pop" :style="{ animationDelay: (0.3 + n * 0.2) + 's' }") ⭐
         div(class="flex gap-3 justify-center pt-3")
@@ -37,6 +37,7 @@ import { SubjectBranding } from '../utils/SubjectBranding.js';
 export default {
   name: 'LevelCertificate',
   emits: ['close'],
+  mounted() { navigator.vibrate?.([40, 60, 40, 60, 80]); },
   props: {
     subject: { type: String, required: true },
     level: { type: String, required: true },
