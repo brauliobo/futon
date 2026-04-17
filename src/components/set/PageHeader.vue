@@ -9,7 +9,7 @@
           :class="dotClass(n)"
           aria-hidden="true"
         )
-      div(v-else class="flex items-center gap-1.5 text-sm font-bold" :aria-label="`Page ${pageNumber} of ${totalPages}`")
+      div(v-else class="flex items-center gap-1.5 text-base font-bold" :aria-label="`Page ${pageNumber} of ${totalPages}`")
         span(class="text-kid-blue tabular-nums") {{ pageNumber }}
         span(class="text-kid-muted") /
         span(class="text-kid-muted tabular-nums") {{ totalPages }}
@@ -17,7 +17,7 @@
         span(class="text-base" aria-hidden="true") ⏱
         span(class="text-lg font-black tabular-nums" :aria-label="`Time elapsed ${timer}`") {{ timer }}
     div(v-if="exercisesOnPage > 0" class="space-y-1")
-      div(class="flex items-center justify-between text-xs font-bold text-kid-muted")
+      div(class="flex items-center justify-between text-sm font-bold text-kid-muted")
         span {{ answeredOnPage }} / {{ exercisesOnPage }}
         span(v-if="isComplete" class="text-kid-green animate-pop-in") ✓ {{ $t('done') || 'Done' }}
       div(class="h-2 rounded-full theme-track overflow-hidden relative" role="progressbar" :aria-valuenow="answeredOnPage" :aria-valuemax="exercisesOnPage")

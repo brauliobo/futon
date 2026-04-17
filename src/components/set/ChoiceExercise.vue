@@ -17,7 +17,7 @@
         )
           span(:class="badgeClass" aria-hidden="true") {{ idx + 1 }}
           span {{ choice }}
-      p(v-if="showShortcutHint" class="mt-2 text-xs font-bold text-kid-muted text-center animate-slide-up") ⌨ {{ $t('hintShortcut') || 'Tip: press 1–9 to pick fast' }}
+      p(v-if="showShortcutHint" class="mt-2 text-sm font-bold text-kid-muted text-center animate-slide-up") ⌨ {{ $t('hintShortcut') || 'Tip: press 1–9 to pick fast' }}
 
     div(v-if="isReadOnly")
       div(:class="reviewListClass" role="list")
@@ -78,7 +78,7 @@ export default {
     },
     badgeClass() {
       const base = 'inline-flex items-center justify-center rounded-md bg-kid-blue/10 text-kid-blue font-black shadow-inner';
-      return this.isPillMode ? `${base} w-4 h-4 mr-1.5 text-[9px]` : `${base} w-5 h-5 mr-2 text-[10px]`;
+      return this.isPillMode ? `${base} w-5 h-5 mr-1.5 text-[11px]` : `${base} w-6 h-6 mr-2 text-xs`;
     },
     reviewListClass() { return this.isPillMode ? 'mt-1 flex flex-wrap gap-1.5' : 'mt-1 space-y-2'; },
   },

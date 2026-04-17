@@ -1,11 +1,11 @@
 <!-- src/components/set/SpeedGauge.vue -->
 <template lang="pug">
   div(data-testid="speed-gauge" class="rounded-2xl border theme-border surface-2 p-4 space-y-2 animate-slide-up")
-    div(class="flex items-center justify-between text-sm font-semibold text-kid-muted mb-1")
+    div(class="flex items-center justify-between text-base font-semibold text-kid-muted mb-1")
       span {{ speedEmoji }} {{ $t('speed') || 'Speed' }}
-      span(class="font-black text-base" :class="speedLabelColor") {{ avgSeconds }}s/ex
+      span(class="font-black text-lg" :class="speedLabelColor") {{ avgSeconds }}s/ex
     Progress(:value="width" :variant="variant" height="10px")
-    small(class="block text-xs font-semibold text-kid-muted") {{ $t('target') || 'Target' }}: ≤ {{ target }}s/ex
+    small(class="block text-sm font-semibold text-kid-muted") {{ $t('target') || 'Target' }}: ≤ {{ target }}s/ex
 </template>
 
 <script>
