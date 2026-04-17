@@ -100,6 +100,9 @@ button { min-height: 44px; }
 /* Prevent iOS auto-zoom on focus by ensuring inputs are >=16px on small screens */
 @media (max-width: 640px) {
   input, textarea, select { font-size: 16px !important; }
+  /* Bigger touch targets on mobile for kids */
+  .btn { min-height: 48px; padding-block: 0.75rem; }
+  .question-card { padding: 0.625rem 0.75rem; }
 }
 
 /* Respect users who prefer reduced motion */
@@ -285,9 +288,9 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .btn-block { @apply w-full; padding-block: 0.875rem; }
 
 /* Choice button — interactive ChoiceExercise grid */
-.choice-btn { @apply w-full flex items-center rounded-2xl border-2 px-4 py-2 text-base font-bold text-left transition-all duration-200 active:scale-95; }
+.choice-btn { @apply w-full flex items-center rounded-2xl border-2 px-4 py-3 text-base font-bold text-left transition-all duration-200 active:scale-95; min-height: 48px; }
 /* Pill variant for short answers (≤3 chars) — auto-width inline pill */
-.choice-btn--pill { @apply w-auto px-3 py-1.5 text-sm rounded-xl; }
+.choice-btn--pill { @apply w-auto px-3 py-2 text-sm rounded-xl; min-height: 44px; }
 .choice-btn:focus-visible { outline: none; box-shadow: 0 0 0 4px color-mix(in srgb, var(--kid-blue) 40%, transparent); }
 .choice-btn--idle { background: var(--kid-surface-2); color: var(--kid-text); border-color: var(--kid-border-strong); }
 .choice-btn--idle:hover:not(:disabled) { border-color: color-mix(in srgb, var(--kid-blue) 50%, transparent); background: color-mix(in srgb, var(--kid-blue) 5%, var(--kid-surface)); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.06); }

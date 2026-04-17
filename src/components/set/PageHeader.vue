@@ -2,7 +2,7 @@
 <template lang="pug">
   div(class="space-y-2")
     div(class="flex items-center justify-between gap-3")
-      div(v-if="totalPages <= 8" class="flex items-center gap-1.5" :aria-label="`Page ${pageNumber} of ${totalPages}`")
+      div(v-if="totalPages <= 6" class="flex items-center gap-1.5" :aria-label="`Page ${pageNumber} of ${totalPages}`")
         span(
           v-for="n in totalPages"
           :key="n"

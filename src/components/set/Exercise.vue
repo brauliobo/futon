@@ -122,7 +122,7 @@ export default {
     inputClass() {
       const base = 'rounded-xl border-2 font-black placeholder:font-bold placeholder:text-kid-muted/40 focus:outline-none focus:ring-0 transition-all duration-300';
       const size = this.isNumeric
-        ? 'w-20 h-11 text-center text-2xl placeholder:text-2xl'
+        ? 'w-24 sm:w-20 h-12 text-center text-2xl placeholder:text-2xl'
         : 'w-full px-4 py-4 text-xl placeholder:text-sm border-4';
       const tone = (this.hasAnswer && !this.isEditing)
         ? 'border-kid-green bg-kid-green/5 text-kid-text shadow-md green-glow'
