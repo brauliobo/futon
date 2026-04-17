@@ -6,7 +6,10 @@
       header(class="header-bg backdrop-blur-md border-b theme-border w-full sticky top-0 z-20 shadow-sm")
         div(class="mx-auto flex w-full max-w-[1920px] items-center justify-between px-4 py-3")
           div(class="flex items-center gap-2")
-            span(class="text-2xl font-black text-kid-blue tracking-tight hover:animate-wiggle cursor-default") ✏️ Futon
+            button(v-if="selectedSet" @click="goHome" class="flex items-center gap-1 text-base font-bold text-kid-text/70 hover:text-kid-blue transition-all active:scale-95" :aria-label="$t('back')")
+              span(class="text-lg") ←
+              span(class="hidden sm:inline") {{ $t('back') }}
+            span(v-else class="text-2xl font-black text-kid-blue tracking-tight hover:animate-wiggle cursor-default") ✏️ Futon
           div(class="flex items-center gap-2")
             h2(v-if="selectedSet" class="text-base font-black text-kid-text truncate max-w-xs sm:max-w-md mr-2") {{ selectedSet.title }}
             div(v-if="streak > 1" class="flex items-center gap-1 rounded-2xl streak-bg border px-3 py-1.5 text-sm font-bold" :style="{ borderColor: 'var(--streak-border)', color: 'var(--streak-text)' }")
@@ -22,9 +25,6 @@
             p(class="text-base font-semibold text-kid-muted") {{ $t('loading') || 'Loading...' }}
           Home(v-else-if="!selectedSet" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" :isLoadingLevel="isLoadingLevel" :streak="streak" :today-sets="todaySets" @select-set="selectSet" @level-selected="onLevelSelected" class="space-y-6")
           div(v-else)
-            button(@click="goHome" class="group inline-flex items-center gap-1.5 mb-3 text-sm font-bold text-kid-text/70 hover:text-kid-blue transition-all rounded-xl px-3 py-1.5 surface-2 border theme-border hover:border-kid-blue/40 hover:shadow-sm active:scale-95" :aria-label="$t('back')")
-              span(class="text-base transition-transform group-hover:-translate-x-0.5" aria-hidden="true") ←
-              span {{ $t('back') }}
             Set(:set="selectedSet" :initialPageIndex="initialPageIndex" :has-next-set="!!nextSet" :profile-id="activeProfile && activeProfile.id || 'default'" @update-set="updateSet" @page-changed="handlePageChange" @next-set="goToNextSet" @go-home="goHome")
       LevelCertificate(v-if="certificateLevel" :subject="certificateLevel.subject" :level="certificateLevel.level" :profile-name="activeProfile && activeProfile.name" @close="certificateLevel = null")
 </template>
