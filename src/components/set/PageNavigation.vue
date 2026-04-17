@@ -18,12 +18,14 @@ export default {
   },
   emits: ['prev', 'next'],
   computed: {
+    isRemaining() { return !this.canGoNext && this.remaining > 0; },
     nextClass() {
+      if (this.isRemaining) return 'btn-remaining';
       const c = this.isLastPage ? 'btn-success' : 'btn-primary';
       return this.canGoNext ? `${c} animate-ready-pulse` : c;
     },
     nextLabel() {
-      if (!this.canGoNext && this.remaining > 0) return `${this.$t('remaining') || 'Falta'} ${this.remaining}`;
+      if (this.isRemaining) return `✏️ ${this.$t('remaining') || 'Falta'} ${this.remaining}`;
       return this.isLastPage ? `✨ ${this.$t('finish')}` : `${this.$t('next')} →`;
     },
   },

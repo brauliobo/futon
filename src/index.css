@@ -288,6 +288,8 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .btn-primary:hover:not(:disabled), .btn-success:hover:not(:disabled) { box-shadow: 0 8px 18px rgba(0,0,0,0.10); transform: translateX(2px); }
 .btn-ghost:hover:not(:disabled) { border-color: color-mix(in srgb, var(--kid-blue) 40%, transparent); box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
 .btn-block { @apply w-full; padding-block: 0.875rem; }
+.btn-remaining { @apply btn; background: rgba(251, 191, 36, 0.18); color: var(--hint-msg); border: 2px solid rgba(251, 191, 36, 0.45); cursor: default; opacity: 1; }
+.btn-remaining:disabled { opacity: 1; }
 
 /* Choice button — interactive ChoiceExercise grid */
 .choice-btn { @apply w-full flex items-center rounded-2xl border-2 px-4 py-3 text-base font-bold text-left transition-all duration-200 active:scale-95; min-height: 48px; }
