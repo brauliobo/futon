@@ -291,6 +291,47 @@ function checkTargets(sets) {
   return issues;
 }
 
+// ── Check 6: Cross-set duplicate questions within a level ───────────────────
+// Students progress through sets within a level sequentially. If the same
+// question appears in two different sets, they'll see it twice.
+
+function checkCrossSetDuplicates(sets) {
+  const issues = [];
+  // Group sets by subject+level
+  const byLevel = {};
+  for (const set of sets) {
+    const key = `${set.subject}/${set.level}`;
+    (byLevel[key] ??= []).push(set);
+  }
+
+  for (const [level, levelSets] of Object.entries(byLevel)) {
+    // Skip math — Kumon drills are intentionally repeated across sets
+    if (level.startsWith('math/')) continue;
+
+    const seen = new Map();
+    for (const set of levelSets) {
+      for (const page of set.pages || []) {
+        for (const ex of page.exercises || []) {
+          const q = normalizeAnswer(ex.question);
+          if (q.length < 20) continue; // skip very short questions
+          const prev = seen.get(q);
+          if (prev && prev.file !== set._file) {
+            issues.push({
+              file: `${relPath(set._path)} ↔ ${prev.file}`,
+              severity: 'warn',
+              note: `duplicate across sets in ${level}`,
+              question: (ex.question || '').slice(0, 55),
+            });
+          } else if (!prev) {
+            seen.set(q, { file: set._file, question: ex.question });
+          }
+        }
+      }
+    }
+  }
+  return issues;
+}
+
 // ── Main ────────────────────────────────────────────────────────────────────
 
 const sets = loadAll();
@@ -300,6 +341,7 @@ const checks = [
   { name: 'Portuguese spelling',     fn: checkSpelling },
   { name: 'English capitalization',  fn: checkEnglishCaps },
   { name: 'Target vs exercise count', fn: checkTargets },
+  { name: 'Cross-set duplicates',    fn: checkCrossSetDuplicates },
 ];
 
 let totalErrors = 0, totalWarns = 0;
