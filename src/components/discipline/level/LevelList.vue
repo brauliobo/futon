@@ -18,7 +18,7 @@
             SetCard(:set="set" :is-active="false" class="opacity-50 pointer-events-none")
             div(class="absolute inset-0 flex flex-col items-center justify-center rounded-2xl overlay-bg backdrop-blur-[2px] cursor-default")
               span(class="text-4xl animate-bounce-in") 🔒
-              span(class="mt-1.5 text-xs font-bold text-kid-muted text-center px-3") {{ $t('unlockHint') || 'Keep going to unlock!' }}
+              span(class="mt-1.5 text-sm font-bold text-kid-muted text-center px-3") {{ $t('unlockHint') || 'Keep going to unlock!' }}
           SetCard(
             v-else
             :set="set"

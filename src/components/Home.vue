@@ -4,16 +4,17 @@
     div(data-testid="daily-goal" class="flex flex-wrap items-center gap-3 rounded-3xl goal-bg border shadow-sm px-5 py-4 animate-slide-up" :style="{ borderColor: 'var(--goal-border)' }")
       div(class="flex items-center gap-2")
         span(class="text-xl") 🎯
-        span(class="text-sm font-black text-kid-text uppercase tracking-wide") {{ $t('todayGoal') || 'Today\'s Goal' }}
+        span(class="text-base font-black text-kid-text uppercase tracking-wide") {{ $t('todayGoal') || 'Today\'s Goal' }}
       div(class="flex items-center gap-1 ml-2")
         span(
           v-for="i in 3"
           :key="i"
-          :class="i <= todaySets ? 'text-kid-gold star-glow' : 'theme-star-empty'"
+          :class="i <= todaySets ? 'text-kid-gold star-glow animate-star-pop' : 'theme-star-empty'"
+          :style="i <= todaySets ? { animationDelay: `${(i - 1) * 0.15}s` } : {}"
           class="text-2xl leading-none transition-all duration-300"
         ) ★
-      span(class="text-sm font-bold text-kid-muted ml-1") {{ todaySets }}/3
-      div(v-if="streak > 1" class="ml-auto flex items-center gap-1.5 rounded-2xl streak-bg border px-3 py-1.5 text-sm font-bold shadow-sm" :style="{ borderColor: 'var(--streak-border)', color: 'var(--streak-text)' }")
+      span(class="text-base font-bold text-kid-muted ml-1") {{ todaySets }}/3
+      div(v-if="streak > 1" class="ml-auto flex items-center gap-1.5 rounded-2xl streak-bg border px-3 py-1.5 text-base font-bold shadow-sm" :style="{ borderColor: 'var(--streak-border)', color: 'var(--streak-text)' }")
         span(class="animate-wiggle") 🔥
         span {{ streak }} {{ $t('dayStreak') || 'day streak' }}
     nav(class="flex flex-wrap items-center gap-3")
@@ -50,7 +51,7 @@
           )
         div(class="mt-6 space-y-3")
           h3(class="text-lg font-bold text-kid-text") {{ setsHeader }}
-          div(v-if="isLoadingLevel && !filteredSets(activeDiscipline).length" class="flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-sm font-semibold text-kid-blue")
+          div(v-if="isLoadingLevel && !filteredSets(activeDiscipline).length" class="flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-base font-semibold text-kid-blue")
             Spinner
             span {{ $t('loading') || 'Loading...' }}
           LevelList(

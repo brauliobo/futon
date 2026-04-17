@@ -1,13 +1,15 @@
 <template lang="pug">
   div(:class="cardClass")
     div(class="flex items-start justify-between gap-3")
-      h5(class="text-lg font-extrabold text-kid-text leading-snug") {{ set.title }}
+      div(class="flex items-center gap-2")
+        span(v-if="statusBadge" :class="statusBadge.class" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-sm font-black shadow-sm") {{ statusBadge.icon }}
+        h5(class="text-lg font-extrabold text-kid-text leading-snug") {{ set.title }}
       div(class="flex items-center gap-0.5 flex-shrink-0")
         span(v-for="n in 3" :key="n" :class="starClass(n)") ★
 
     div(class="mt-4 space-y-3")
       div(v-if="hasProgress" class="rounded-2xl border border-kid-blue/15 bg-kid-blue/5 p-4")
-        div(class="flex items-center justify-between text-sm font-semibold text-kid-muted mb-2")
+        div(class="flex items-center justify-between text-base font-semibold text-kid-muted mb-2")
           span {{ $t('progress') || 'Progress' }}
           span {{ progress.completed }}/{{ totalPages }} {{ $t('pages') || 'pages' }}
         div(class="h-3 rounded-full theme-track overflow-hidden")
@@ -15,11 +17,11 @@
 
       div(v-else-if="set.attempts > 0" class="grid grid-cols-2 gap-2")
         div(class="rounded-2xl surface-2 border theme-border p-3 text-center")
-          div(class="text-xs font-semibold text-kid-muted mb-0.5") {{ $t('finalScore') || 'Score' }}
-          div(class="text-lg font-black text-kid-text") {{ set.lastScore }}/{{ set.totalExercises }}
+          div(class="text-sm font-semibold text-kid-muted mb-0.5") {{ $t('finalScore') || 'Score' }}
+          div(class="text-xl font-black text-kid-text") {{ set.lastScore }}/{{ set.totalExercises }}
         div(v-if="set.avgSecondsPerExercise" class="rounded-2xl surface-2 border theme-border p-3 text-center")
-          div(class="text-xs font-semibold text-kid-muted mb-0.5") {{ $t('speed') || 'Speed' }}
-          div(class="text-lg font-black" :class="speedColor") {{ set.avgSecondsPerExercise }}s
+          div(class="text-sm font-semibold text-kid-muted mb-0.5") {{ $t('speed') || 'Speed' }}
+          div(class="text-xl font-black" :class="speedColor") {{ set.avgSecondsPerExercise }}s
 
     div(class="mt-auto pt-4")
       button(@click.prevent="onStart" :class="actionButtonClass")
@@ -48,6 +50,14 @@ export default {
       return 0;
     },
     speedTarget() { return this.set.passCriteria?.maxAvgSecondsPerExercise || 8; },
+    statusBadge() {
+      const badges = {
+        mastery: { icon: '✓', class: 'bg-kid-green text-white' },
+        pass: { icon: '✓', class: 'bg-amber-400 text-white' },
+        retry: { icon: '✗', class: 'bg-kid-red/20 text-kid-red' },
+      };
+      return badges[this.set.status] || null;
+    },
     speedColor() {
       const s = Number(this.set.avgSecondsPerExercise) || 0;
       if (s <= this.speedTarget) return 'text-kid-green';
