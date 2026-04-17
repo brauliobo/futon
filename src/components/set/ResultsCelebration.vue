@@ -23,10 +23,10 @@
       div(class="grid grid-cols-2 gap-3 mt-2")
         div(class="rounded-2xl bg-kid-surface border theme-border p-3 animate-slide-up" style="animation-delay:0.2s")
           p(class="text-xs font-semibold text-kid-muted mb-1") {{ $t('finalScore') || 'Score' }}
-          p(class="text-2xl font-black text-kid-text") {{ correct }}/{{ total }}
+          p(class="text-2xl font-black text-kid-text tabular-nums") {{ animScore }}/{{ total }}
         div(class="rounded-2xl bg-kid-surface border theme-border p-3 animate-slide-up" style="animation-delay:0.25s")
           p(class="text-xs font-semibold text-kid-muted mb-1") {{ $t('grade') || 'Grade' }}
-          p(class="text-2xl font-black" :class="gradeColor") {{ effectiveGrade }}%
+          p(class="text-2xl font-black tabular-nums" :class="gradeColor") {{ animGrade }}%
 
       button(
         v-if="hasNextSet && (knownStatus === 'mastery' || knownStatus === 'pass')"
@@ -42,6 +42,8 @@
 export default {
   name: 'ResultsCelebration',
   emits: ['next-set'],
+  data() { return { animScore: 0, animGrade: 0 }; },
+  mounted() { this.animateCounters(); },
   props: {
     status: { type: String, default: '' },
     correct: { type: Number, default: 0 },
@@ -113,6 +115,21 @@ export default {
     },
     confettiEmoji(i) {
       return ['🎉', '⭐', '🌟', '✨', '🎊', '💫'][i % 6];
+    },
+    animateCounters() {
+      const duration = 800;
+      const start = performance.now();
+      const targetScore = this.correct;
+      const targetGrade = this.effectiveGrade;
+      const ease = t => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      const tick = (now) => {
+        const t = Math.min(1, (now - start) / duration);
+        const p = ease(t);
+        this.animScore = Math.round(p * targetScore);
+        this.animGrade = Math.round(p * targetGrade);
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
     },
   },
 };

@@ -2,13 +2,17 @@
 <template lang="pug">
   div(class="space-y-2")
     div(class="flex items-center justify-between gap-3")
-      div(class="flex items-center gap-1.5" :aria-label="`Page ${pageNumber} of ${totalPages}`")
+      div(v-if="totalPages <= 8" class="flex items-center gap-1.5" :aria-label="`Page ${pageNumber} of ${totalPages}`")
         span(
           v-for="n in totalPages"
           :key="n"
           :class="dotClass(n)"
           aria-hidden="true"
         )
+      div(v-else class="flex items-center gap-1.5 text-sm font-bold" :aria-label="`Page ${pageNumber} of ${totalPages}`")
+        span(class="text-kid-blue tabular-nums") {{ pageNumber }}
+        span(class="text-kid-muted") /
+        span(class="text-kid-muted tabular-nums") {{ totalPages }}
       div(:class="timerClass")
         span(class="text-base" aria-hidden="true") ⏱
         span(class="text-lg font-black tabular-nums" :aria-label="`Time elapsed ${timer}`") {{ timer }}
