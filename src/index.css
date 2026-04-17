@@ -263,6 +263,12 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .question-card > * + * { margin-top: 0.5rem; }
 .question-card--neutral   { border-color: var(--kid-border) !important; }
 .question-card--answered  { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); }
+@keyframes card-pulse {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--kid-green) 40%, transparent); }
+  50%  { box-shadow: 0 0 0 8px transparent; }
+  100% { box-shadow: none; }
+}
+.question-card--answered.card-pulse { animation: card-pulse 0.5s ease-out; }
 .question-card--selected  { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); box-shadow: 0 0 18px var(--glow-green); }
 .question-card--correct   { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); background: color-mix(in srgb, var(--kid-green) 5%, var(--kid-surface)); }
 .question-card--incorrect { background: rgba(251, 191, 36, 0.05); border-color: rgba(251, 191, 36, 0.30); }

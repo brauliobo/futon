@@ -98,7 +98,7 @@ export default {
     setInputType: { type: String, default: 'auto' },
   },
   data() {
-    return { userAnswer: this.exercise.answer || "", isEditing: false, isSubmitting: false };
+    return { userAnswer: this.exercise.answer || "", isEditing: false, isSubmitting: false, pulsing: false };
   },
   watch: {
     'exercise.answer'(newAnswer) { this.userAnswer = newAnswer || ''; this.isEditing = false; }
@@ -131,7 +131,7 @@ export default {
     },
     cardClass() {
       const v = this.isReadOnly ? (this.isCorrect ? 'correct' : 'incorrect') : (this.hasAnswer ? 'answered' : 'neutral');
-      return `question-card question-card--${v}`;
+      return `question-card question-card--${v}${this.pulsing ? ' card-pulse' : ''}`;
     },
   },
   methods: {
@@ -141,7 +141,8 @@ export default {
       navigator.vibrate?.(12);
       this.$emit("update-answer", { answer: this.userAnswer });
       this.$emit("next-exercise");
-      setTimeout(() => { this.isEditing = false; this.isSubmitting = false; }, 150);
+      this.pulsing = true;
+      setTimeout(() => { this.isEditing = false; this.isSubmitting = false; this.pulsing = false; }, 500);
     },
     handleTab(e) {
       const trimmed = String(this.userAnswer || '').trim();

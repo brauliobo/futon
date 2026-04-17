@@ -214,6 +214,7 @@ export default {
       if (clamped === this.currentPageIndex) return;
       this.pageDir = clamped > this.currentPageIndex ? 'page-fwd' : 'page-back';
       this.currentPageIndex = clamped;
+      this.$nextTick(() => this.$el?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
     },
     nextPage() {
       if (this.isLastPage) {

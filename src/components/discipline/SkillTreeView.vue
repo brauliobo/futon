@@ -37,7 +37,7 @@
           :activeSlug="activeSlug"
           @start="$emit('start-set', $event)"
         )
-    div(v-else-if="activeNode && hasLoadableLevels && !activeSets.length" class="mt-6 flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-sm font-semibold text-kid-blue animate-slide-up")
+    div(v-else-if="activeNode && hasLoadableLevels && !activeSets.length" class="mt-6 flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-base font-semibold text-kid-blue animate-slide-up")
       Spinner
       span {{ $t('loading') || 'Loading...' }}
 </template>
