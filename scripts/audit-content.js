@@ -69,10 +69,14 @@ function forEachExercise(sets, fn) {
 // correctAnswer matches at least one parsed choice.
 
 // Math formulas often end with (x/2) or (a/b) — not choices.
-// Heuristic: if all "choices" are single chars/numbers and subject is math, skip.
-const MATH_FORMULA_RE = /^[a-z0-9√πn²³⁴]+$/i;
+// Heuristic: if subject is math and choices look like formula fragments, skip.
+const MATH_FORMULA_RE = /^[a-z0-9√πn²³⁴⁵⁶⁷⁸⁹⁰?∞Σ·.+\-^_₊ₙ()]+$/i;
 function looksLikeMathFormula(choices, subject) {
-  return subject === 'math' && choices.every(ch => MATH_FORMULA_RE.test(ch.trim()));
+  if (subject !== 'math') return false;
+  // If any choice contains spaces → likely real text choices (not formulas)
+  if (choices.some(ch => ch.trim().includes(' '))) return false;
+  // All short, symbol-like fragments → formula
+  return choices.every(ch => MATH_FORMULA_RE.test(ch.trim()));
 }
 
 function checkChoices(sets) {
@@ -118,9 +122,9 @@ function checkChoices(sets) {
 const PLACEHOLDER_RE = /^(Analise a frase|Aplique a regra|Releia a informa|Reveja o trecho|Resposta:)/i;
 
 const TOPIC_KEYWORDS = {
-  punctuation: /pont[ou]|interroga|exclama|vírgula|pontuação|ponto final/i,
-  verb:        /verbo|conjuga|pessoa|pretérit|presente|futuro|tempo verbal/i,
-  agreement:   /concord|gênero|número|masculin|feminin|plural|singular/i,
+  punctuation: /pontuação|ponto final|ponto de interrogação|ponto de exclamação|vírgula|dois[- ]pontos|reticências/i,
+  verb:        /\bverbo\b|conjuga[çr]|tempo verbal|pretérito|imperativo|subjuntivo|indicativo/i,
+  agreement:   /concordância|gênero e número|masculino plural|feminino plural|singular.*plural/i,
 };
 
 function detectTopic(text) {
@@ -150,16 +154,19 @@ function checkRationales(sets) {
 
     // Topic mismatch: question about punctuation, rationale about verbs
     if (set.subject !== 'portuguese') return;
-    const qTopic = detectTopic(ex.question);
-    const rTopic = detectTopic(r);
-    if (qTopic && rTopic && qTopic !== rTopic) {
+    // Only flag if question has a clear single topic AND rationale has a
+    // DIFFERENT single topic with NO overlap. Many rationales validly mention
+    // related topics (e.g., explaining concordância by referencing the verb).
+    const qTopics = Object.entries(TOPIC_KEYWORDS).filter(([, re]) => re.test(ex.question)).map(([t]) => t);
+    const rTopics = Object.entries(TOPIC_KEYWORDS).filter(([, re]) => re.test(r)).map(([t]) => t);
+    if (qTopics.length === 1 && rTopics.length === 1 && qTopics[0] !== rTopics[0]) {
       issues.push({
         file: relPath(set._path),
         page: page.pageNumber,
         question: ex.question.slice(0, 50),
         rationale: r.slice(0, 60),
         severity: 'error',
-        note: `question=${qTopic} rationale=${rTopic}`,
+        note: `question=${qTopics[0]} rationale=${rTopics[0]}`,
       });
     }
   });
@@ -313,14 +320,16 @@ for (const { name, fn } of checks) {
   console.log(`${c(name, BOLD)} — ${c(errors.length + ' errors', errors.length ? RED : GREEN)}, ${c(warns.length + ' warnings', warns.length ? YELLOW : GREEN)}`);
   console.log(c('─'.repeat(70), CYAN));
 
-  for (const i of issues.slice(0, 30)) {
+  // Show all errors first, then warnings up to 30 total
+  const sorted = [...errors, ...warns];
+  for (const i of sorted.slice(0, 50)) {
     const sev = i.severity === 'error' ? c('ERR', RED) : c('WRN', YELLOW);
     const loc = `${i.file}${i.page ? ':p' + i.page : ''}`;
     const detail = i.note || '';
     const ctx = i.answer || i.question || i.text || '';
     console.log(`  ${sev} ${loc}  ${detail}  ${ctx.slice(0, 55)}`);
   }
-  if (issues.length > 30) console.log(`  ... and ${issues.length - 30} more`);
+  if (sorted.length > 50) console.log(`  ... and ${sorted.length - 50} more`);
 }
 
 console.log(`\n${'═'.repeat(70)}`);
