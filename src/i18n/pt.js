@@ -61,7 +61,7 @@ export const pt = {
   reviewTitle: "Revisão e Avaliação",
   openNotebook: "Abrir Caderno",
   closeNotebook: "Fechar Caderno",
-  finalScore: "Nota Final",
+  finalScore: "Acertos",
   readOnlyMode: "Modo de Leitura",
   edit: "Editar",
   // pontuação e status

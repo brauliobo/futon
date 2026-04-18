@@ -22,10 +22,14 @@
 
       div(class="grid grid-cols-2 gap-3 mt-2")
         div(class="rounded-2xl bg-kid-surface border theme-border p-3 animate-slide-up" style="animation-delay:0.2s")
-          p(class="text-sm font-semibold text-kid-muted mb-1") {{ $t('finalScore') || 'Score' }}
+          p(class="text-sm font-semibold text-kid-muted mb-1")
+            span(class="mr-1" aria-hidden="true") ✅
+            span {{ $t('finalScore') || 'Correct' }}
           p(class="text-2xl font-black text-kid-text tabular-nums") {{ animScore }}/{{ total }}
         div(class="rounded-2xl bg-kid-surface border theme-border p-3 animate-slide-up" style="animation-delay:0.25s")
-          p(class="text-sm font-semibold text-kid-muted mb-1") {{ $t('grade') || 'Grade' }}
+          p(class="text-sm font-semibold text-kid-muted mb-1")
+            span(class="mr-1" aria-hidden="true") 📊
+            span {{ $t('grade') || 'Grade' }}
           p(class="text-2xl font-black tabular-nums" :class="gradeColor") {{ animGrade }}%
 
       button(

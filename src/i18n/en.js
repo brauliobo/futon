@@ -61,7 +61,7 @@ export const en = {
   reviewTitle: "Review and Evaluation",
   openNotebook: "Open Notebook",
   closeNotebook: "Close Notebook",
-  finalScore: "Final Score",
+  finalScore: "Correct",
   readOnlyMode: "Read-only Mode",
   // scoring & status
   mastery: "Mastery",
