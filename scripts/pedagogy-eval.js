@@ -77,13 +77,17 @@ function scoreExample(set) {
     : { score: 6, max: 10, issue: 'example lacks worked model (Ex.: / → / =)' };
 }
 
-// 2. Within-set difficulty gradient (20)
+// 2. Within-set difficulty gradient (20). First-page floor scales with
+// set.difficulty so that an advanced set (difficulty 4) isn't penalized
+// for starting at difficulty 3 — the gradient check is about *relative*
+// growth within the set, not absolute ease.
 function scoreGradient(set) {
   const diffs = pageDiffAvgs(set).filter(Boolean);
   if (diffs.length < 2) return { score: 10, max: 20, issue: null };
   let score = 0;
   const issues = [];
-  if (diffs[0] <= 2.4) score += 5;
+  const firstMax = Number.isFinite(set.difficulty) ? Math.max(2.4, set.difficulty - 0.5) : 2.4;
+  if (diffs[0] <= firstMax) score += 5;
   else issues.push(`first page hot-start (${diffs[0].toFixed(1)})`);
   const maxJump = Math.max(...diffs.slice(1).map((d, i) => Math.abs(d - diffs[i])));
   if (maxJump <= 1.0) score += 10;
