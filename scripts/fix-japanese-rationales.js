@@ -128,6 +128,14 @@ function generateRationale(type, question, answer) {
     return `A frase "${q}" traduz-se como "${a}". Identifique partículas e palavras-chave.`;
   }
 
+  // Japanese question + Japanese answer — typically a PT-prompt→JP
+  // translation drill where the question embeds a PT hint after →
+  // or inside quotes. Generic practice rationale.
+  const aHasJp = /[\u3040-\u30ff\u4e00-\u9faf]/.test(a);
+  if (hasJp && aHasJp && q !== a) {
+    return `Forma japonesa: "${a}". Observe partículas (は/を/が) e a terminação です/ます.`;
+  }
+
   return null;
 }
 
