@@ -1,5 +1,7 @@
 <template lang="pug">
   div(class="relative py-4")
+    div(v-show="showLeftArrow" class="pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-kid-surface via-kid-surface/90 to-transparent")
+    div(v-show="showRightArrow" class="pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-kid-surface via-kid-surface/90 to-transparent")
     button(
       class="absolute left-2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-[color:var(--kid-surface-2)] hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollLeft"
