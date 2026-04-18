@@ -92,7 +92,11 @@ function analyzeSet(set) {
     if (sum < 3) continue;
     const max = Math.max(...counts);
     const pct = max / sum;
-    if (pct > dominantPct) dominantPct = pct;
+    // Small-sample exemption: with only 4-5 exercises in a choice-count
+    // bucket, a 3/1 or 4/1 split is the arithmetic minimum for "not
+    // perfectly balanced" and not evidence of authoring bias. Only let
+    // pct contribute to the severity score when sum ≥ 6.
+    if (sum >= 6 && pct > dominantPct) dominantPct = pct;
     if (pct >= 0.5) {
       const winner = counts.indexOf(max);
       issues.push(`${k}-choice: ${Math.round(pct * 100)}% at position ${winner + 1} (${counts.join('/')})`);
