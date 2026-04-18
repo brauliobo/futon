@@ -84,13 +84,13 @@ pages:
     description: Determinado (1 solução), indeterminado (infinitas), impossível.
     exercises:
       - type: algebra
-        question: "Sistema com uma solução única: (determinado/impossível/indeterminado)"
+        question: "Sistema com uma solução única: (indeterminado/impossível/determinado)"
         correctAnswer: determinado
         rationale: "Determinado: 1 solução; impossível: 0; indeterminado: infinitas soluções."
         difficulty: 3
         objectives: [linalg.systems]
       - type: algebra
-        question: "Sistema sem solução: (impossível/determinado/indeterminado)"
+        question: "Sistema sem solução: (indeterminado/determinado/impossível)"
         correctAnswer: impossível
         rationale: "Determinado: 1 solução; impossível: 0; indeterminado: infinitas soluções."
         difficulty: 3
@@ -108,7 +108,7 @@ pages:
         difficulty: 3
         objectives: [linalg.systems]
       - type: algebra
-        question: "x+y=2 e x+y=3 é: (impossível/determinado)"
+        question: "x+y=2 e x+y=3 é: (determinado/impossível)"
         correctAnswer: impossível
         rationale: "Sistema linear: some/subtraia equações (eliminação) ou substitua para isolar variáveis."
         difficulty: 3
@@ -136,13 +136,13 @@ pages:
         difficulty: 3
         objectives: [linalg.systems]
       - type: algebra
-        question: Quantas equações são necessárias para determinar 3 variáveis? (3/2/4)
+        question: Quantas equações são necessárias para determinar 3 variáveis? (4/2/3)
         correctAnswer: 3
         rationale: "Interpretação geométrica: determinado = retas concorrentes; impossível = paralelas; indeterminado = coincidentes."
         difficulty: 3
         objectives: [linalg.systems]
       - type: algebra
-        question: "Escalonamento transforma sistema em: (triangular/identidade/nula)"
+        question: "Escalonamento transforma sistema em: (nula/triangular/identidade)"
         correctAnswer: triangular
         rationale: "Escalonamento de Gauss: triangula o sistema via operações elementares nas linhas."
         difficulty: 3
@@ -158,13 +158,13 @@ pages:
         difficulty: 4
         objectives: [linalg.systems]
       - type: algebra
-        question: "Gauss-Jordan produz: (identidade/triangular/diagonal)"
+        question: "Gauss-Jordan produz: (diagonal/triangular/identidade)"
         correctAnswer: identidade
         rationale: "Escalonamento de Gauss: triangula o sistema via operações elementares nas linhas."
         difficulty: 4
         objectives: [linalg.systems]
       - type: algebra
-        question: "Matriz aumentada tem: (coeficientes + termos independentes/só coeficientes)"
+        question: "Matriz aumentada tem: (só coeficientes/coeficientes + termos independentes)"
         correctAnswer: coeficientes + termos independentes
         rationale: "Escalonamento de Gauss: triangula o sistema via operações elementares nas linhas."
         difficulty: 4
@@ -294,13 +294,13 @@ pages:
         difficulty: 5
         objectives: [linalg.systems]
       - type: algebra
-        question: "Sistema impossível = retas: (paralelas/coincidentes)"
+        question: "Sistema impossível = retas: (coincidentes/paralelas)"
         correctAnswer: paralelas
         rationale: "Determinado: 1 solução; impossível: 0; indeterminado: infinitas soluções."
         difficulty: 5
         objectives: [linalg.systems]
       - type: algebra
-        question: "Sistema indeterminado = retas: (coincidentes/paralelas)"
+        question: "Sistema indeterminado = retas: (paralelas/coincidentes)"
         correctAnswer: coincidentes
         rationale: "Determinado: 1 solução; impossível: 0; indeterminado: infinitas soluções."
         difficulty: 5
@@ -312,7 +312,7 @@ pages:
         difficulty: 5
         objectives: [linalg.systems]
       - type: algebra
-        question: "Em 3D, planos paralelos podem: (não se encontrar/coincidir)"
+        question: "Em 3D, planos paralelos podem: (coincidir/não se encontrar)"
         correctAnswer: não se encontrar
         rationale: "Interpretação geométrica: determinado = retas concorrentes; impossível = paralelas; indeterminado = coincidentes."
         difficulty: 5
@@ -346,7 +346,7 @@ pages:
         difficulty: 5
         objectives: [linalg.systems]
       - type: algebra
-        question: "x+y=4 e 2x+2y=8 é: (indeterminado/determinado/impossível)"
+        question: "x+y=4 e 2x+2y=8 é: (determinado/indeterminado/impossível)"
         correctAnswer: indeterminado
         rationale: "Sistema linear: some/subtraia equações (eliminação) ou substitua para isolar variáveis."
         difficulty: 5

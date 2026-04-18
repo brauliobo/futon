@@ -74,7 +74,7 @@ pages:
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
-        question: "Soma dos desvios em relação à média é sempre: (zero/positiva/negativa)"
+        question: "Soma dos desvios em relação à média é sempre: (negativa/positiva/zero)"
         correctAnswer: zero
         rationale: "Desvio dᵢ = xᵢ − média; soma dos desvios em relação à média = 0."
         difficulty: 1
@@ -142,7 +142,7 @@ pages:
         difficulty: 1
         objectives: [stats.dispersion]
       - type: mental_math
-        question: Desvio padrão sempre é (positivo/negativo/nulo)
+        question: Desvio padrão sempre é (negativo/nulo/positivo)
         correctAnswer: positivo
         rationale: "Use a fórmula estatística padrão — aplique passo a passo."
         difficulty: 1
@@ -158,13 +158,13 @@ pages:
         difficulty: 2
         objectives: [stats.dispersion]
       - type: mental_math
-        question: Mesma média, mas dispersões diferentes é possível? (sim/não)
+        question: Mesma média, mas dispersões diferentes é possível? (não/sim)
         correctAnswer: sim
         rationale: "Conjuntos de mesma média podem ter dispersões diferentes (variância distinta)."
         difficulty: 2
         objectives: [stats.dispersion]
       - type: mental_math
-        question: "Desvio padrão menor significa dados: (mais próximos da média/mais espalhados)"
+        question: "Desvio padrão menor significa dados: (mais espalhados/mais próximos da média)"
         correctAnswer: mais próximos da média
         rationale: "Use a fórmula estatística padrão — aplique passo a passo."
         difficulty: 2
@@ -198,13 +198,13 @@ pages:
         difficulty: 2
         objectives: [stats.dispersion]
       - type: mental_math
-        question: "CV=0 significa: (dados iguais/média zero)"
+        question: "CV=0 significa: (média zero/dados iguais)"
         correctAnswer: dados iguais
         rationale: "Coeficiente de variação: CV = σ / média (adimensional)."
         difficulty: 2
         objectives: [stats.dispersion]
       - type: mental_math
-        question: "CV alto indica: (alta variabilidade/baixa variabilidade)"
+        question: "CV alto indica: (baixa variabilidade/alta variabilidade)"
         correctAnswer: alta variabilidade
         rationale: "Coeficiente de variação: CV = σ / média (adimensional)."
         difficulty: 2
@@ -254,13 +254,13 @@ pages:
     description: Representa quartis e outliers.
     exercises:
       - type: mental_math
-        question: "Em box plot, a caixa representa: (Q1 a Q3/Min a Max/Q1 a Q2)"
+        question: "Em box plot, a caixa representa: (Q1 a Q2/Q1 a Q3/Min a Max)"
         correctAnswer: Q1 a Q3
         rationale: "Q1: mediana da metade inferior dos dados ordenados."
         difficulty: 3
         objectives: [stats.dispersion]
       - type: mental_math
-        question: "Linha no meio da caixa representa: (mediana/média/moda)"
+        question: "Linha no meio da caixa representa: (mediana/moda/média)"
         correctAnswer: mediana
         rationale: "Box plot: caixa Q1–Q3, linha na mediana, cercas em Q±1,5·IIQ."
         difficulty: 3
@@ -278,7 +278,7 @@ pages:
         difficulty: 3
         objectives: [stats.dispersion]
       - type: mental_math
-        question: "Box plot simétrico sugere: (distribuição simétrica/assimétrica)"
+        question: "Box plot simétrico sugere: (assimétrica/distribuição simétrica)"
         correctAnswer: distribuição simétrica
         rationale: "Box plot: caixa Q1–Q3, linha na mediana, cercas em Q±1,5·IIQ."
         difficulty: 3
@@ -288,13 +288,13 @@ pages:
     description: Amostral divide por n-1.
     exercises:
       - type: mental_math
-        question: "Variância populacional divide por: (n/n-1/n+1)"
+        question: "Variância populacional divide por: (n+1/n/n-1)"
         correctAnswer: n
         rationale: "Variância populacional divide por n; amostral por n−1 (correção de Bessel)."
         difficulty: 3
         objectives: [stats.dispersion]
       - type: mental_math
-        question: "Variância amostral divide por: (n/n-1/n+1)"
+        question: "Variância amostral divide por: (n-1/n/n+1)"
         correctAnswer: n-1
         rationale: "Variância populacional divide por n; amostral por n−1 (correção de Bessel)."
         difficulty: 3

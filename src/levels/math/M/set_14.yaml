@@ -40,7 +40,7 @@ pages:
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
-        question: "Σ 1/n: (diverge/converge)"
+        question: "Σ 1/n: (converge/diverge)"
         correctAnswer: diverge
         rationale: "Σ 1/n é a série harmônica — diverge."
         difficulty: 3
@@ -68,7 +68,7 @@ pages:
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
-        question: Σ 1/n^0.5 (ou 1/√n) converge? (sim/não)
+        question: Σ 1/n^0.5 (ou 1/√n) converge? (não/sim)
         correctAnswer: não
         rationale: "p-série Σ 1/nᵖ: converge sse p > 1."
         difficulty: 3
@@ -124,7 +124,7 @@ pages:
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
-        question: Σn diverge porque aₙ → ? (∞/0)
+        question: Σn diverge porque aₙ → ? (0/∞)
         correctAnswer: ∞
         rationale: "Condição necessária (não suficiente): aₙ → 0 para Σaₙ convergir."
         difficulty: 3
@@ -226,7 +226,7 @@ pages:
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
-        question: Σ(-1)^n/n converge? (sim/não)
+        question: Σ(-1)^n/n converge? (não/sim)
         correctAnswer: sim
         rationale: "Critério de Leibniz: série alternada Σ(-1)ⁿbₙ converge se bₙ↓0."
         difficulty: 4
@@ -322,19 +322,19 @@ pages:
     description: Julgue a convergência.
     exercises:
       - type: sequence
-        question: Σ 1/n⁴ — converge? (sim/não)
+        question: Σ 1/n⁴ — converge? (não/sim)
         correctAnswer: sim
         rationale: "p-série Σ 1/nᵖ: converge sse p > 1."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
-        question: Σ 1/√n — converge? (sim/não)
+        question: Σ 1/√n — converge? (não/sim)
         correctAnswer: não
         rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
-        question: Σ (1/3)^n — converge? (sim/não)
+        question: Σ (1/3)^n — converge? (não/sim)
         correctAnswer: sim
         rationale: "Série geométrica Σ qⁿ: converge sse |q| < 1, soma = a₁/(1−q)."
         difficulty: 5
@@ -346,7 +346,7 @@ pages:
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
-        question: Σ (-1)^n/n² — converge? (sim/não)
+        question: Σ (-1)^n/n² — converge? (não/sim)
         correctAnswer: sim
         rationale: "Critério de Leibniz: série alternada Σ(-1)ⁿbₙ converge se bₙ↓0."
         difficulty: 5

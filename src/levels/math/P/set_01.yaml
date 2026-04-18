@@ -176,7 +176,7 @@ pages:
         difficulty: 2
         objectives: [stats.central_tendency]
       - type: mental_math
-        question: Moda de {1,2,3,4,5} (amodal)? (amodal/1/5/3)
+        question: Moda de {1,2,3,4,5} (amodal)? (1/5/3/amodal)
         correctAnswer: amodal
         rationale: "Moda: valor mais frequente; pode ser bimodal ou amodal."
         difficulty: 2
@@ -204,7 +204,7 @@ pages:
         difficulty: 2
         objectives: [stats.central_tendency]
       - type: mental_math
-        question: "Valor discrepante (outlier) afeta mais a: (média/mediana/moda)"
+        question: "Valor discrepante (outlier) afeta mais a: (média/moda/mediana)"
         correctAnswer: média
         rationale: "Outlier afeta a média; mediana é robusta a valores extremos."
         difficulty: 2
@@ -306,13 +306,13 @@ pages:
         difficulty: 3
         objectives: [stats.central_tendency]
       - type: mental_math
-        question: Outlier afeta mais a média? (sim/não)
+        question: Outlier afeta mais a média? (não/sim)
         correctAnswer: sim
         rationale: "Outlier afeta a média; mediana é robusta a valores extremos."
         difficulty: 3
         objectives: [stats.central_tendency]
       - type: mental_math
-        question: "Ao remover outlier, média tende a: (aproximar da mediana/divergir mais/ficar igual)"
+        question: "Ao remover outlier, média tende a: (aproximar da mediana/ficar igual/divergir mais)"
         correctAnswer: aproximar da mediana
         rationale: "Outlier afeta a média; mediana é robusta a valores extremos."
         difficulty: 3
@@ -334,7 +334,7 @@ pages:
         difficulty: 3
         objectives: [stats.central_tendency]
       - type: mental_math
-        question: Mesma lista — moda? (amodal/5/15/25)
+        question: Mesma lista — moda? (15/25/5/amodal)
         correctAnswer: amodal
         rationale: "Moda: valor mais frequente; pode ser bimodal ou amodal."
         difficulty: 3

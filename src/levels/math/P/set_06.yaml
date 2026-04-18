@@ -16,19 +16,19 @@ pages:
     description: Simétrica em torno da média, formato de sino.
     exercises:
       - type: mental_math
-        question: "Formato da curva normal: (sino/uniforme/triangular)"
+        question: "Formato da curva normal: (uniforme/triangular/sino)"
         correctAnswer: sino
         rationale: "Curva normal tem formato de sino, simétrica em torno da média."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
-        question: "Pico da curva normal é em: (média/mediana/ambas)"
+        question: "Pico da curva normal é em: (mediana/média/ambas)"
         correctAnswer: ambas
         rationale: "Pico da normal ocorre na média (que coincide com mediana e moda)."
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
-        question: Curva normal é simétrica? (sim/não)
+        question: Curva normal é simétrica? (não/sim)
         correctAnswer: sim
         rationale: "Curva normal é simétrica em torno da média."
         difficulty: 2
@@ -40,7 +40,7 @@ pages:
         difficulty: 2
         objectives: [stats.normal_distribution]
       - type: mental_math
-        question: Na normal, média = mediana = moda? (sim/não)
+        question: Na normal, média = mediana = moda? (não/sim)
         correctAnswer: sim
         rationale: "Na distribuição normal, média = mediana = moda."
         difficulty: 2
@@ -220,7 +220,7 @@ pages:
     description: Médias de amostras tendem à normal.
     exercises:
       - type: mental_math
-        question: "Teorema Central do Limite aplica-se a: (médias de amostras/único valor)"
+        question: "Teorema Central do Limite aplica-se a: (único valor/médias de amostras)"
         correctAnswer: médias de amostras
         rationale: "Teorema Central do Limite: médias amostrais tendem à normal conforme n cresce."
         difficulty: 3
@@ -288,13 +288,13 @@ pages:
     description: Reconheça se um dado é plausível sob a normal.
     exercises:
       - type: mental_math
-        question: "Em N(0,1), P(|z|>3) é: (rara/comum)"
+        question: "Em N(0,1), P(|z|>3) é: (comum/rara)"
         correctAnswer: rara
         rationale: "P(|z|>3) ≈ 0,003; eventos muito raros na normal."
         difficulty: 4
         objectives: [stats.normal_distribution]
       - type: mental_math
-        question: "z=5 em N(0,1) é: (muito raro/comum)"
+        question: "z=5 em N(0,1) é: (comum/muito raro)"
         correctAnswer: muito raro
         rationale: "Padronização: z = (x − μ) / σ."
         difficulty: 4
