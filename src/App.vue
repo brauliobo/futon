@@ -13,6 +13,7 @@
           h2(v-if="selectedSet" class="min-w-0 flex-1 truncate text-center text-base font-black text-kid-text") {{ selectedSet.title }}
           div(v-else class="flex-1")
           div(class="flex shrink-0 items-center gap-2")
+            InstallButton
             div(v-if="streak > 1" class="flex items-center gap-1 rounded-2xl streak-bg border px-3 py-1.5 text-sm font-bold" :style="{ borderColor: 'var(--streak-border)', color: 'var(--streak-text)' }")
               span 🔥
               span {{ streak }}
@@ -40,12 +41,13 @@ import Set from "./components/set/Set.vue";
 import ProfileSelector from "./components/ProfileSelector.vue";
 import LevelCertificate from "./components/LevelCertificate.vue";
 import Spinner from "./components/ui/Spinner.vue";
+import InstallButton from "./components/InstallButton.vue";
 import { SetStorage } from "./services/SetStorage.js";
 import { Formatter } from "./utils/Formatter.js";
 
 export default {
   name: "App",
-  components: { Home, Set, ProfileSelector, LevelCertificate, Spinner },
+  components: { Home, Set, ProfileSelector, LevelCertificate, Spinner, InstallButton },
   data() {
     const activeProfile = ProfileStorage.getActiveProfile();
     const profiles = ProfileStorage.getProfiles();

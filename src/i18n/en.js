@@ -1,5 +1,12 @@
 // src/i18n/en.js
 export const en = {
+  saveOffline: "Save Offline",
+  installApp: "Install",
+  downloadingLessons: "Downloading lessons…",
+  iosInstallTitle: "Install on iPhone / iPad",
+  iosInstallStep1: "Tap the Share button in Safari",
+  iosInstallStep2: "Scroll and choose 'Add to Home Screen'",
+  iosInstallStep3: "Tap 'Add' — Futon works fully offline!",
   chooseNotebook: "Choose a notebook",
   start: "Start",
   continueSet: "Continue",

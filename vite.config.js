@@ -24,12 +24,19 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,yaml,woff2}'],
+        globPatterns: ['**/*.{js,css,html,yaml,woff2,png,svg,ico,webp,jpg,jpeg}'],
+        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
+        navigateFallback: '/index.html',
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com/,
             handler: 'CacheFirst',
             options: { cacheName: 'google-fonts', expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 } },
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+            handler: 'CacheFirst',
+            options: { cacheName: 'gstatic-fonts', expiration: { maxEntries: 30, maxAgeSeconds: 60 * 60 * 24 * 365 } },
           },
         ],
       },

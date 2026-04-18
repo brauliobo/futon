@@ -1,5 +1,12 @@
 // src/i18n/pt.js
 export const pt = {
+  saveOffline: "Salvar Offline",
+  installApp: "Instalar",
+  downloadingLessons: "Baixando lições…",
+  iosInstallTitle: "Instalar no iPhone / iPad",
+  iosInstallStep1: "Toque no botão Compartilhar no Safari",
+  iosInstallStep2: "Role e escolha 'Adicionar à Tela de Início'",
+  iosInstallStep3: "Toque em 'Adicionar' — Futon funciona offline!",
   chooseNotebook: "Escolha um caderno",
   start: "Começar",
   continueSet: "Continuar",
