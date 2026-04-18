@@ -25,6 +25,7 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'centena', 'coluna', 'dígito', 'rest[ao]', 'sobr[ae]', 'vai.um',
   'm[íi]nimo', 'm[áa]ximo', 'produto', 'quociente', 'diferença', 'total',
   'acrescent[ae]m?', 'tabuada', 'subtrai', 'multiplica', 'adicion[ae]',
+  'ângulo', 'inverso', 'dom[íi]nio', 'imagem', 'valor',
   'arranjo', 'combinação', 'permutação', 'fatorial', 'anagrama',
   'padronização', 'proporção', 'progressão', 'binomial', 'identidade',
   'derivada', 'integral', 'limite', 'sistema', 'matriz', 'determinante',
