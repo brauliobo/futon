@@ -5,7 +5,7 @@
     div(v-if="!isReadOnly")
       div(:class="gridClass" role="radiogroup" :aria-labelledby="`q-${exerciseNumber}`" @keydown="onArrowKey")
         button(
-          v-for="(choice, idx) in exercise.choices"
+          v-for="(choice, idx) in shuffledChoices"
           :key="choice"
           @click="selectChoice(choice)"
           :disabled="isSubmitted"
@@ -22,7 +22,7 @@
     div(v-if="isReadOnly")
       div(:class="reviewListClass" role="list")
         div(
-          v-for="(choice, idx) in exercise.choices"
+          v-for="(choice, idx) in shuffledChoices"
           :key="choice"
           :class="reviewClass(choiceStatus(choice))"
           :style="{ animationDelay: `${idx * 0.06}s` }"
@@ -37,6 +37,7 @@
 <script>
 import { Formatter } from '../../utils/Formatter.js';
 import { Encourage } from '../../utils/Encourage.js';
+import { Shuffle } from '../../utils/Shuffle.js';
 import QuestionHeader from './QuestionHeader.vue';
 import HintCard from './HintCard.vue';
 
@@ -64,6 +65,10 @@ export default {
   },
   beforeUnmount() { window.removeEventListener('keydown', this.onKeydown); },
   computed: {
+    // Deterministic per-question shuffle: same question → same layout on
+    // retry, but the correct answer's position rotates across questions,
+    // neutralizing authored-YAML position bias.
+    shuffledChoices() { return Shuffle.withSeed(this.exercise.choices, this.exercise.question); },
     selected() { return this.exercise.answer || ''; },
     isCorrect() { return Formatter.normalizeAnswer(this.selected) === Formatter.normalizeAnswer(this.exercise.correctAnswer); },
     cardClass() {
@@ -71,10 +76,10 @@ export default {
       return `question-card question-card--${v}`;
     },
     encouragement() { return Encourage.message(this.$t.bind(this), this.exerciseNumber); },
-    isPillMode() { return this.exercise.choices.every(c => String(c).length <= 3); },
+    isPillMode() { return this.shuffledChoices.every(c => String(c).length <= 3); },
     gridClass() {
       if (this.isPillMode) return 'flex flex-wrap gap-2';
-      return this.exercise.choices.length > 3 ? 'grid gap-3 grid-cols-2' : 'grid gap-3 grid-cols-1';
+      return this.shuffledChoices.length > 3 ? 'grid gap-3 grid-cols-2' : 'grid gap-3 grid-cols-1';
     },
     badgeClass() {
       const base = 'inline-flex items-center justify-center rounded-md bg-kid-blue/10 text-kid-blue font-black shadow-inner';
@@ -93,9 +98,9 @@ export default {
       if (this.isSubmitted || this.isReadOnly) return;
       if (!this.$el?.contains?.(document.activeElement)) return;
       const n = parseInt(e.key, 10);
-      if (!Number.isFinite(n) || n < 1 || n > this.exercise.choices.length) return;
+      if (!Number.isFinite(n) || n < 1 || n > this.shuffledChoices.length) return;
       e.preventDefault();
-      this.selectChoice(this.exercise.choices[n - 1]);
+      this.selectChoice(this.shuffledChoices[n - 1]);
     },
     onArrowKey(e) {
       const arrows = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 };
@@ -107,7 +112,7 @@ export default {
       btns[next]?.focus();
     },
     tabIndexFor(idx) {
-      const selectedIdx = this.exercise.choices.indexOf(this.selected);
+      const selectedIdx = this.shuffledChoices.indexOf(this.selected);
       const focused = selectedIdx >= 0 ? selectedIdx : 0;
       return idx === focused ? 0 : -1;
     },
