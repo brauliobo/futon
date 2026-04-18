@@ -31,9 +31,14 @@ const MIN_CHOICES = parseInt(argVal('--min-choices') || '5', 10);
 const JSON_OUT = args.includes('--json');
 const SUBJECTS = SUBJECT ? [SUBJECT] : ['math', 'portuguese', 'english', 'japanese'];
 
-const CHOICE_RE = /\(([^)]+\/[^)]+)\)\s*$/;
-const norm = s => String(s || '').trim().toLowerCase()
-  .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+// Reject parens containing "?" (fill-in-the-blank math like "(3/?)") since
+// those aren't real multi-choice lists — same guard as pedagogy-eval.
+const CHOICE_RE = /\(([^)?]+\/[^)?]+)\)\s*$/;
+// Case-insensitive but accent-PRESERVING: many portuguese sets teach the
+// difference between `a`/`à` and `as`/`às`. Treating them as equal makes
+// the scanner report 100% position-1 bias on sets that are perfectly
+// balanced — the author sees "a" vs "à" as different options.
+const norm = s => String(s || '').trim().toLowerCase();
 
 function choicesOf(ex) {
   if (Array.isArray(ex.choices)) return ex.choices;
