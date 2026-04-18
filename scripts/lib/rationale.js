@@ -51,6 +51,12 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
 
 export const RESTATE_RE = /^\s*(a\s+resposta\s+(?:correta\s+)?é|resposta:|answer:|é\s+\d|is\s+\d|the\s+correct\s+answer|correct\s+answer:)/i;
 
+// Worked-computation signal: two or more '=' forming a derivation chain,
+// or an explicit substitution like f(x) = ... Signals "teaches by showing
+// the computation" without needing an imperative verb.
+const COMPUTATION_RE = /=\s*[^=]+=\s*[^=]+/;
+const SUBSTITUTION_RE = /[a-z]\([-+]?\d/i;
+
 export function categorize(rationale) {
   if (!rationale || typeof rationale !== 'string') return 'missing';
   const s = rationale.trim();
@@ -58,5 +64,6 @@ export function categorize(rationale) {
   if (s.length > 300) return 'long';
   if (RESTATE_RE.test(s)) return 'restatement';
   if (METHOD_RE.test(s)) return 'method';
+  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s)) return 'method';
   return 'generic';
 }
