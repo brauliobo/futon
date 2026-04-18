@@ -11,7 +11,7 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'tom[ea]r?', 'emprest[eao]d?o?', 'reagrup[ea]', 'peç[ao]', 'guard[ea]',
   'observ[ea]', 'veja', 'compare', 'troque', 'apliqu[ea]', 'use', 'note',
   'lembr[ea]', 'localize', 'sublinhe', 'releia', 'identifique', 'procure',
-  'marque', 'circule', 'escolha', 'escreva', 'mostr[ea]',
+  'marque', 'circule', 'escolha', 'escreva', 'mostr[ea]', 'reconhe[çc][ae]',
   'simplifique', 'desenhe', 'liste', 'separe', 'visualize', 'recuper[ea]',
   'verifique', 'explique', 'descreva', 'organize', 'agrupe',
   'fatore', 'expanda', 'iguale',
