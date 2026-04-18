@@ -8,8 +8,8 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 
 | Command | Purpose |
 |---|---|
-| `pnpm test:eval` | 84 regression tests (categorize, rubric scorers, fixers, shuffle) — gates future edits |
-| `pnpm hooks:install` | Installs a pre-commit hook that runs `test:eval` + `eval:snapshot` whenever pedagogy files are staged |
+| `pnpm test:eval` | 162 regression tests (categorize, rubric scorers, fixers, shuffle) — gates future edits |
+| `pnpm hooks:install` | Installs a pre-commit hook that runs `test:eval` + `eval:snapshot` + `eval:topic` whenever pedagogy files are staged |
 | `pnpm eval:dashboard` | One-screen health summary (global score, distribution, top weakest levels, snapshot delta) |
 | `pnpm eval:pedagogy` | Per-set rubric scoring across 7 dimensions + level progression |
 | `pnpm eval:rationales` | Per-exercise rationale categorization (method / generic / restatement / missing / short / long) |
@@ -26,7 +26,14 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm eval:answers` | Verify every multi-choice exercise's correctAnswer appears among its choices (catches authoring mismatches) |
 | `pnpm eval:topic` | Verify bucketed rationales mentioning a specific domain marker (sec², Pitágoras, arcsen, etc.) co-occur only with exercises of that topic |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
-| `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected |
+| `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected + arithmetic + alignment + relevance + answers + topic |
+| `pnpm fix:binomial:rationales [--apply]` | Rewrite (x+a)(x+b) rationales in math/J to per-exercise Soma/produto form |
+| `pnpm fix:5a:rationales [--apply]` | Rewrite generic-placeholder rationales in math/5A with question-shape-specific forms (iter 82) |
+| `pnpm fix:6a:counting [--apply]` | Normalize counting rationales in math/6A/7A to count-specific form |
+| `pnpm fix:integral:rationales [--apply]` | Fix sec²/sen/cos/e^(kx) rationales in math/O integrals |
+| `pnpm fix:power:root [--apply]` | Per-exercise N^K and K-th root rationales in math/I |
+| `pnpm fix:series:rationales [--apply]` | Dispatch p-series/geometric/Leibniz/De Moivre/Euler rationales in math/M |
+| `pnpm fix:pass-criteria [--apply]` | Backfill missing passCriteria on non-math sets with level-appropriate defaults |
 | `pnpm fix:placeholders [--apply]` | Deterministic rule-based rewriter for known-bad rationales (16 rule shapes) |
 | `pnpm fix:examples [--apply]` | Appends `Ex.: Q → A.` to example fields lacking a worked pair |
 | `pnpm fix:restatements [--apply]` | Rewrites "A resposta correta é X" into category-aware method form |
