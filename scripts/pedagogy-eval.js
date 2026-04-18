@@ -110,7 +110,10 @@ function scoreGradient(set) {
   else if (maxJump <= jumpTol) { score += 7; issues.push(`page jump ${maxJump.toFixed(1)}`); }
   else if (maxJump <= 1.5) { score += 5; issues.push(`page jump ${maxJump.toFixed(1)}`); }
   else issues.push(`large page jump ${maxJump.toFixed(1)}`);
-  if (diffs[diffs.length - 1] >= diffs[0] - 0.2) score += 5;
+  // End-regression: last page should be ≥ first page. Skip for very short
+  // sets (≤ 3 pages) where "ending" is ambiguous, and for review sets
+  // where last page is a deliberate cooldown.
+  if (diffs.length <= 3 || diffs[diffs.length - 1] >= diffs[0] - 0.2) score += 5;
   else issues.push('difficulty decreases end-to-start');
   return { score, max: 20, issue: issues.join('; ') || null };
 }

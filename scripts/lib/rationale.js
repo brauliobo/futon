@@ -53,7 +53,8 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   // Literature / history action verbs (classification + attribution)
   'compôs', 'escreveu', 'criou', 'fundou', 'inaugurou', 'liderou',
   'publicou', 'surg[eiu]', 'pertence', 'caracteriza', 'define',
-  'explora', 'defende', 'desenvolveu', 'representa', 'marca\\b',
+  'explora', 'defende', 'desenvolv[aeu]', 'representa', 'marca\\b',
+  'torna[mr]?', 'expressam?', 'provoca', 'gera\\b',
   // Journalism / analytical verbs
   'sintetiz[ae]', 'resume', 'informa', 'investiga', 'analis[ae]',
   'avali[ae]', 'pesquisa', 'transmite', 'comunica', 'expressa',
@@ -88,8 +89,9 @@ const SUBSTITUTION_RE = /[a-z]\([-+]?\d/i;
 // demonstrates before-and-after mapping, a core Kumon teaching pattern.
 const TRANSFORMATION_RE = /\S\s*→\s*\S/;
 // Definition: "'Could' = habilidade geral passada." — quoted word followed
-// by an equals glossing it. Teaches by explicit equivalence.
-const DEFINITION_RE = /['"][^'"]{2,}['"]\s*=\s*\S/;
+// by an equals glossing it. Also matches unquoted capitalized concept
+// terms like "Desenvolvimento = expandir a ideia..." that gloss a noun.
+const DEFINITION_RE = /(?:['"][^'"]{2,}['"]|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]{3,})\s*=\s*\S/;
 
 export function categorize(rationale) {
   if (!rationale || typeof rationale !== 'string') return 'missing';
