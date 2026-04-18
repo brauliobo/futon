@@ -1,6 +1,6 @@
 <template lang="pug">
   button(
-    :class="nodeClass"
+    :class="['skill-node', `skill-node--${nodeVariant}`]"
     :aria-label="ariaLabel"
     :title="localizedName"
     @click="$emit('select', node)"
@@ -44,7 +44,6 @@ export default {
       if (this.isComplete) return 'complete';
       return 'idle';
     },
-    nodeClass() { return `skill-node skill-node--${this.nodeVariant}`; },
   },
 };
 </script>

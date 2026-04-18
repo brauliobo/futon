@@ -21,7 +21,7 @@
       button(
         v-for="subject in availableSubjects"
         :key="subject"
-        :class="tabButtonClass(subject)"
+        :class="['subject-tab', `subject-tab--${subject}`, activeDiscipline === subject ? 'subject-tab--active' : 'subject-tab--idle']"
         @click="selectDiscipline(subject)"
       )
         span(class="text-xl leading-none") {{ subjectIcon(subject) }}
@@ -31,10 +31,10 @@
         div(class="space-y-0.5")
           h2(class="text-2xl font-black" :style="{ color: subjectColor(activeDiscipline) }") {{ subjectLabel(activeDiscipline) }}
         div(class="flex gap-2")
-          button(:class="modeTabClass('campaign')" @click="mode = 'campaign'")
+          button(:class="['mode-tab', { 'mode-tab--active': mode === 'campaign' }]" @click="mode = 'campaign'")
             span 🗺
             span {{ $t('campaign') || 'Campaign' }}
-          button(:class="modeTabClass('themes')" @click="mode = 'themes'")
+          button(:class="['mode-tab', { 'mode-tab--active': mode === 'themes' }]" @click="mode = 'themes'")
             span 🎯
             span {{ $t('themes') || 'Themes' }}
 
@@ -157,13 +157,8 @@ export default {
     });
   },
   methods: {
-    tabButtonClass(subject) {
-      const state = this.activeDiscipline === subject ? 'subject-tab--active' : 'subject-tab--idle';
-      return `subject-tab subject-tab--${subject} ${state}`;
-    },
     subjectIcon(s) { return SubjectBranding.icon(s); },
     subjectColor(s) { return SubjectBranding.color(s); },
-    modeTabClass(m) { return this.mode === m ? 'mode-tab mode-tab--active' : 'mode-tab'; },
     allSetsForSubject(subject) {
       return (this.groupedBySubject[subject] || []);
     },

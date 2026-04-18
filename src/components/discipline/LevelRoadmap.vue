@@ -13,17 +13,16 @@
       div(
         v-for="(lvl, idx) in sequence"
         :key="lvl"
-        :class="cardClass(lvl)"
+        :class="['level-card relative', levelState(lvl) && `level-card--${levelState(lvl)}`]"
         :data-level-card="lvl"
         @click="onLevelClick($event, lvl)"
-        class="relative"
       )
         div(class="flex h-full flex-col gap-3 p-4")
           div(class="flex items-center justify-between")
-            span(:class="numberClass(lvl)") {{ idx + 1 }}
-            span(:class="tagClass(lvl)") {{ lvl }}
+            span(:class="['level-card__number', { 'level-card__number--active': lvl === active }]") {{ idx + 1 }}
+            span(:class="['level-card__tag',    { 'level-card__tag--active':    lvl === active }]") {{ lvl }}
           div(class="flex-1")
-            p(:class="nameClass(lvl)") {{ getName(lvl) }}
+            p(:class="['level-card__name', { 'level-card__name--active': lvl === active, 'level-card__name--locked': !availableSet.has(lvl) }]") {{ getName(lvl) }}
           Progress(:value="progressPercent(lvl)" height="6px" variant="success")
         div(v-if="!availableSet.has(lvl)" class="absolute inset-0 flex items-center justify-center rounded-2xl overlay-bg backdrop-blur-[1px]")
           span(class="text-2xl") 🔒
@@ -91,16 +90,9 @@ export default {
   },
   methods: {
     progressPercent(key){ const p = this.progressByLevel[key]; return p && Number.isFinite(p.percent) ? p.percent : 0; },
-    cardClass(lvl) {
-      if (!this.availableSet.has(lvl)) return 'level-card level-card--locked';
-      return lvl === this.active ? 'level-card level-card--active' : 'level-card level-card--idle';
-    },
-    numberClass(lvl) { return lvl === this.active ? 'level-card__number level-card__number--active' : 'level-card__number'; },
-    tagClass(lvl)    { return lvl === this.active ? 'level-card__tag level-card__tag--active'       : 'level-card__tag'; },
-    nameClass(lvl) {
-      if (lvl === this.active) return 'level-card__name level-card__name--active';
-      if (!this.availableSet.has(lvl)) return 'level-card__name level-card__name--locked';
-      return 'level-card__name';
+    levelState(lvl) {
+      if (!this.availableSet.has(lvl)) return 'locked';
+      return lvl === this.active ? 'active' : 'idle';
     },
     getName(id) { return this.getLevelName(id); },
     onLevelClick(event, lvl) {

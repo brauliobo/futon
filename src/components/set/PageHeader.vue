@@ -14,7 +14,7 @@
         span(class="text-kid-blue tabular-nums") {{ pageNumber }}
         span(class="text-kid-muted") /
         span(class="text-kid-muted tabular-nums") {{ totalPages }}
-      div(:class="timerClass")
+      div(:class="['set-timer', pace && `set-timer--${pace}`]")
         span(class="text-base" aria-hidden="true") ⏱
         span(class="text-lg font-black tabular-nums" :aria-label="`Time elapsed ${timer}`") {{ timer }}
     div(v-if="exercisesOnPage > 0" class="space-y-1.5")
@@ -25,7 +25,7 @@
         span(v-if="isComplete" class="text-kid-green animate-pop-in") ✓ {{ $t('done') || 'Done' }}
         span(v-else-if="answeredOnPage > 0" class="text-kid-blue tabular-nums") {{ percentLabel }}
       div(class="h-3 rounded-full theme-track overflow-hidden relative" role="progressbar" :aria-valuenow="answeredOnPage" :aria-valuemax="exercisesOnPage")
-        div(:class="barClass" :style="{ width: barWidth }")
+        div(:class="['progress-fill', isComplete ? 'progress-fill--complete' : 'progress-fill--active']" :style="{ width: barWidth }")
           div(v-if="answeredOnPage > 0 && !isComplete" class="absolute inset-0 progress-shimmer" aria-hidden="true")
     span.sr-only(aria-live="assertive") {{ liveAnnouncement }}
 </template>
@@ -51,11 +51,6 @@ export default {
     },
     barWidth() { return `${this.percent}%`; },
     percentLabel() { return `${this.percent}%`; },
-    barClass() { return this.isComplete ? 'progress-fill progress-fill--complete' : 'progress-fill progress-fill--active'; },
-    timerClass() {
-      const mod = ['fast', 'slow'].includes(this.pace) ? ` set-timer--${this.pace}` : '';
-      return `set-timer${mod}`;
-    },
   },
   watch: {
     isComplete(v) {
