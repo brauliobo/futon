@@ -5,7 +5,7 @@
       span {{ speedEmoji }} {{ $t('speed') || 'Speed' }}
       span(class="font-black text-lg" :class="speedLabelColor") {{ avgSeconds }}s/ex
     Progress(:value="width" :variant="variant" height="10px")
-    small(class="block text-sm font-semibold text-kid-muted") {{ $t('target') || 'Target' }}: ≤ {{ target }}s/ex
+    small(class="block text-sm font-semibold text-kid-muted") {{ $t('target') || 'Target' }}: {{ $t('upTo') || 'up to' }} {{ target }}s/ex
 </template>
 
 <script>

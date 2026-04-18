@@ -71,6 +71,7 @@ export const en = {
   grade: "Grade",
   speed: "Speed",
   target: "Target",
+  upTo: "up to",
   neededSets: "Needed sets",
   progress: "Progress",
   avgTime: "Avg Time",

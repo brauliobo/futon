@@ -72,6 +72,7 @@ export const pt = {
   grade: "Nota",
   speed: "Velocidade",
   target: "Meta",
+  upTo: "até",
   neededSets: "Conjuntos necessários",
   progress: "Progresso",
   avgTime: "Tempo Médio",
