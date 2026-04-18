@@ -46,22 +46,41 @@ async function main() {
   for (const f of files) {
     let raw = readFileSync(f, 'utf8');
     const before = raw;
-    // Match every `question: "<prefix> (a/b/c/d)"` line and reorder the
-    // parenthetical. Preserve YAML quoting exactly.
+    // Match every question value in two YAML shapes:
+    //   block:  `question: "X (a/b/c/d)"` on its own line
+    //   inline: `{ …, question: "X (a/b/c/d)", … }` embedded in a brace
+    // Preserve quoting exactly.
+    const rewriteQuestion = (qValWithQuote) => {
+      const quote = qValWithQuote[0] === '"' || qValWithQuote[0] === "'" ? qValWithQuote[0] : '';
+      const body = quote ? qValWithQuote.slice(1, -1) : qValWithQuote;
+      const cm = body.match(INLINE_CHOICE_RE);
+      if (!cm) return null;
+      const parts = cm[1].split('/').map(x => x.trim());
+      if (parts.length < 2) return null;
+      // Seed on the question PREFIX (before the choice parenthetical) so
+      // re-running is idempotent — the parenthetical itself is what we're
+      // modifying, so including it in the seed would change every run.
+      const seed = body.slice(0, body.length - cm[0].length).trim();
+      const shuffled = shuffle(parts, seed);
+      if (shuffled.join('/') === parts.join('/')) return null;
+      const newBody = body.replace(INLINE_CHOICE_RE, `(${shuffled.join('/')})${cm[2]}`);
+      return `${quote}${newBody}${quote}`;
+    };
+
+    // Block form.
     raw = raw.replace(
       /^(\s*(?:- )?\s*question:\s*)(".*?"|'.*?'|[^\n]+)(\r?\n)/gm,
       (m, prefix, qVal, nl) => {
-        const quote = qVal[0] === '"' || qVal[0] === "'" ? qVal[0] : '';
-        const body = quote ? qVal.slice(1, -1) : qVal;
-        const cm = body.match(INLINE_CHOICE_RE);
-        if (!cm) return m;
-        const parts = cm[1].split('/').map(x => x.trim());
-        if (parts.length < 2) return m;
-        // Seed on the full question text → deterministic across runs.
-        const shuffled = shuffle(parts, body);
-        if (shuffled.join('/') === parts.join('/')) return m;
-        const newBody = body.replace(INLINE_CHOICE_RE, `(${shuffled.join('/')})${cm[2]}`);
-        return `${prefix}${quote}${newBody}${quote}${nl}`;
+        const rewritten = rewriteQuestion(qVal);
+        return rewritten ? `${prefix}${rewritten}${nl}` : m;
+      },
+    );
+    // Inline brace form: `question: "X"` inside `- { … }`.
+    raw = raw.replace(
+      /(\bquestion:\s*)(".*?"|'.*?')/g,
+      (m, prefix, qVal) => {
+        const rewritten = rewriteQuestion(qVal);
+        return rewritten ? `${prefix}${rewritten}` : m;
       },
     );
     if (raw === before) continue;

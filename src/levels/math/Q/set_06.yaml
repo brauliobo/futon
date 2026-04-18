@@ -90,7 +90,7 @@ pages:
         difficulty: 3
         objectives: [linalg.systems]
       - type: algebra
-        question: "Sistema sem solução: (indeterminado/determinado/impossível)"
+        question: "Sistema sem solução: (impossível/indeterminado/determinado)"
         correctAnswer: impossível
         rationale: "Determinado: 1 solução; impossível: 0; indeterminado: infinitas soluções."
         difficulty: 3
@@ -136,7 +136,7 @@ pages:
         difficulty: 3
         objectives: [linalg.systems]
       - type: algebra
-        question: Quantas equações são necessárias para determinar 3 variáveis? (4/2/3)
+        question: Quantas equações são necessárias para determinar 3 variáveis? (3/2/4)
         correctAnswer: 3
         rationale: "Interpretação geométrica: determinado = retas concorrentes; impossível = paralelas; indeterminado = coincidentes."
         difficulty: 3
@@ -152,7 +152,7 @@ pages:
     description: Elimine elementos abaixo da diagonal.
     exercises:
       - type: algebra
-        question: "Após escalonamento temos matriz: (triangular superior/inferior/nenhuma)"
+        question: "Após escalonamento temos matriz: (nenhuma/triangular superior/inferior)"
         correctAnswer: triangular superior
         rationale: "Escalonamento de Gauss: triangula o sistema via operações elementares nas linhas."
         difficulty: 4
@@ -254,7 +254,7 @@ pages:
     description: Ax = 0 sempre tem solução trivial.
     exercises:
       - type: algebra
-        question: Sistema homogêneo tem solução x=0 sempre? (sim/não)
+        question: Sistema homogêneo tem solução x=0 sempre? (não/sim)
         correctAnswer: sim
         rationale: "Sistema homogêneo Ax=0: sempre tem solução trivial; não-trivial se det(A)=0."
         difficulty: 5
