@@ -18,6 +18,7 @@ const args = process.argv.slice(2);
 const argVal = f => { const i = args.indexOf(f); return i >= 0 ? args[i + 1] : null; };
 const SUBJECT = argVal('--subject');
 const LEVEL = argVal('--level');
+const SET_FILE = argVal('--set');
 const WORST_N = parseInt(argVal('--worst') || '10', 10);
 const JSON_OUT = args.includes('--json');
 const SUBJECTS = SUBJECT ? [SUBJECT] : ['math', 'portuguese', 'english', 'japanese'];
@@ -27,6 +28,10 @@ const THRESHOLDS = { excellent: 85, acceptable: 70 };
 // ── Load ────────────────────────────────────────────────────────────────────
 
 function loadAll() {
+  if (SET_FILE) {
+    const raw = parse(fs.readFileSync(SET_FILE, 'utf8'));
+    return [{ ...raw, subject: raw.subject || 'unknown', level: raw.level || 'unknown', _file: path.basename(SET_FILE) }];
+  }
   const sets = [];
   for (const subject of SUBJECTS) {
     const dir = path.join(process.cwd(), 'src', 'levels', subject);
@@ -225,6 +230,23 @@ function main() {
   for (const r of perSet) {
     const k = `${r.set.subject}/${r.set.level}`;
     (byLevel[k] = byLevel[k] || []).push(r);
+  }
+
+  if (SET_FILE && perSet.length === 1) {
+    const r = perSet[0];
+    console.log(c(`\n📏 ${r.set.subject}/${r.set.level}/${r.set._file}`, BOLD + CYAN));
+    console.log(c(`Pedagogy score: ${r.pct}%  (${r.score}/${r.max})\n`, BOLD + colorPct(r.pct)));
+    const t = new Table({
+      head: ['DIMENSION', 'SCORE', 'ISSUE'].map(h => c(h, BOLD)),
+      style: { head: [], border: [], compact: true, 'padding-left': 1, 'padding-right': 1 },
+      colWidths: [14, 10, 90], wordWrap: true,
+    });
+    for (const p of r.parts) {
+      const pct = Math.round(100 * p.score / p.max);
+      t.push([p.name, c(`${p.score}/${p.max}`, colorPct(pct)), p.issue || '-']);
+    }
+    console.log(t.toString());
+    process.exit(r.pct >= THRESHOLDS.acceptable ? 0 : 1);
   }
 
   if (JSON_OUT) {

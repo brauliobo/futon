@@ -11,6 +11,7 @@
     "lint:content": "node ./scripts/lint-content.js",
     "audit:content": "node ./scripts/audit-content.js",
     "eval:pedagogy": "node ./scripts/pedagogy-eval.js",
+    "eval:rationales": "node ./scripts/rationale-review.js",
     "eval:all": "pnpm run validate:sets && pnpm run lint:content && pnpm run audit:content && pnpm run eval:pedagogy",
     "scaffold": "node ./scripts/scaffold-set.mjs",
     "migrate:types": "node ./scripts/migrate-exercise-types.mjs",

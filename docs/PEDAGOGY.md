@@ -29,14 +29,34 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 ## Running the evaluator
 
 ```bash
-pnpm eval:pedagogy                          # all subjects, all levels
-pnpm eval:pedagogy --subject portuguese     # one subject
-pnpm eval:pedagogy --level C --worst 20     # bottom 20 of a level
-pnpm eval:pedagogy --json > out.json        # machine-readable
-pnpm eval:all                               # pedagogy + lint + audit + validate
+pnpm eval:pedagogy                                     # all subjects, all levels
+pnpm eval:pedagogy --subject portuguese                # one subject
+pnpm eval:pedagogy --level C --worst 20                # bottom 20 of a level
+pnpm eval:pedagogy --set src/levels/math/B/set_08.yaml # single-file drill-down
+pnpm eval:pedagogy --json > out.json                   # machine-readable
+pnpm eval:all                                          # pedagogy + lint + audit + validate
 ```
 
 Exits 0 when global score ≥70%, else 1 (CI signal).
+
+## Rationale drill-down tool
+
+`pedagogy-eval.js` tells you *which sets* are weak. `rationale-review.js` tells you
+*which exercises* inside a set need rewriting, categorized by the same rubric:
+
+```bash
+pnpm eval:rationales src/levels/portuguese/A/set_01.yaml            # per-exercise table
+pnpm eval:rationales --subject portuguese --level A                  # summary across a level
+pnpm eval:rationales --subject math --level B --only restatement,missing,short
+```
+
+Categories: `method` (teaches how), `generic` (states fact, no method verb), `restatement` (repeats answer), `missing`, `short` (<10 chars), `long` (>300 chars).
+
+**Review workflow**:
+1. `pnpm eval:pedagogy --worst 20` → identifies worst sets.
+2. `pnpm eval:rationales path/to/set.yaml` → lists every exercise's rationale status.
+3. Rewrite the flagged rationales using the imperative + reason form (see playbook below).
+4. Re-run `pnpm eval:pedagogy --set path/to/set.yaml` to verify improvement.
 
 ## Manual review checklist
 
