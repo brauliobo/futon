@@ -59,6 +59,18 @@ const CASES = [
   ['method', '5-5 = 0.', 'short but has equation — valid demo'],
   ['method', '9-9 = 0.', 'short arithmetic demo'],
   ['short', 'hmm.', 'still too short, no equation'],
+
+  // --- method: trig laws + geometry concepts (iter 72) ---
+  ['method', 'Lei dos senos: b = a · sen B / sen A.', 'lei+senos'],
+  ['method', 'arcsen(√2/2) = 45° (1º quadrante).', 'arcsen+quadrante'],
+  ['method', 'Em triângulo equilátero com R=2, lado = R·√3.', 'triangulo+equilatero'],
+  ['method', 'SSA com A < B e sen B < 1 pode gerar 2 triângulos.', 'ssa+triangulo'],
+  ['method', 'Na lei dos senos, R é o raio da circunscrita.', 'raio+circunscrita'],
+
+  // --- method: kana correspondence + alphabet + conjugação ---
+  ['method', 'あ (hiragana) corresponde a ア em katakana — mesmo som.', 'hiragana+katakana+corresponde'],
+  ['method', 'No alfabeto, após A vem B.', 'alfabeto sequence'],
+  ['method', 'Tu + -as na 1ª conjugação.', 'suffix rule w/ conjugação'],
 ];
 
 let passed = 0, failed = 0;

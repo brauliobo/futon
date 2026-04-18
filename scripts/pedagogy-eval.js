@@ -103,7 +103,15 @@ function scoreGradient(set) {
   // Constant-difficulty drill sets (all pages within 0.4 of each other)
   // don't have a "hot start" concept — first page matches the rest.
   const isUniform = rangeOfDiffs < 0.5;
-  if (diffs[0] <= firstMax || isUniform) score += 5;
+  // Interleaved-drill sets: every page mixes easy and hard items (≥80% of
+  // pages span ≥2 difficulty levels). Per-page averages are shuffle noise,
+  // not a progression — skip end-regression and jump penalties.
+  const pagesMixedCount = (set.pages || []).filter(p => {
+    const ds = (p.exercises || []).map(e => e.difficulty).filter(Number.isFinite);
+    return ds.length >= 5 && (Math.max(...ds) - Math.min(...ds)) >= 2;
+  }).length;
+  const isInterleaved = set.pages && pagesMixedCount / set.pages.length >= 0.8 && diffs.length >= 5;
+  if (diffs[0] <= firstMax || isUniform || isInterleaved) score += 5;
   else if (diffs[0] <= firstMax + 0.5) { score += 3; issues.push(`first page slightly hot (${diffs[0].toFixed(1)})`); }
   else issues.push(`first page hot-start (${diffs[0].toFixed(1)})`);
   const jumps = diffs.slice(1).map((d, i) => Math.abs(d - diffs[i]));
@@ -112,7 +120,8 @@ function scoreGradient(set) {
   // Jump tolerance scales with set.difficulty: a diff-4 set where one page
   // steps up by 2 is less worrying than a diff-1 drill with the same jump.
   const jumpTol = Number.isFinite(set.difficulty) ? Math.min(2.0, 1.0 + set.difficulty / 4) : 1.0;
-  if (maxJump <= 1.0) score += 10;
+  if (isInterleaved) score += 10;
+  else if (maxJump <= 1.0) score += 10;
   else if (bigJumps === 1 && maxJump <= 2.0) {
     // Single-outlier tolerance: one page steps by up to 2; rest are gentle.
     score += 8; issues.push(`one page jump ${maxJump.toFixed(1)}`);
@@ -128,7 +137,7 @@ function scoreGradient(set) {
   // End-regression: compare first-half vs second-half averages rather than
   // first-vs-last, since 10-page sets have noisy per-page variance. Skip
   // for ≤3-page sets (ambiguous) and constant drills.
-  if (diffs.length <= 3 || isUniform) score += 5;
+  if (diffs.length <= 3 || isUniform || isInterleaved) score += 5;
   else {
     const mid = Math.floor(diffs.length / 2);
     const firstHalfAvg = diffs.slice(0, mid).reduce((a, b) => a + b, 0) / mid;

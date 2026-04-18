@@ -31,6 +31,11 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'derivada', 'integral', 'limite', 'sistema', 'matriz', 'determinante',
   'potência', 'logaritmo', 'exponencial', 'radical', 'racionalize',
   'razão', 'multiplicativo', 'independentes', 'binômio',
+  'lei\\s+d[oe]s?', 'arcsen', 'arccos', 'arctan', 'arccot',
+  'triângulo', 'equilátero', 'isósceles', 'escaleno', 'retângulo',
+  'quadrante', 'circunscrit[oa]', 'inscrit[oa]', 'raio', 'ssa\\b',
+  'obtus[oa]', 'agud[oa]', 'colinear', 'perpendicular', 'paralel[oa]',
+  'teorema', 'bissetriz', 'mediana', 'altura',
   // Grammar / reading concepts (PT)
   'termin[ao]', 'respond[ae]', 'modifica', 'liga', 'indica', 'substitui',
   'acompanha', 'determina', 'introduz', 'marca', 'função', 'sufixo',
@@ -48,6 +53,8 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'preposição', 'conjunção', 'pronome', 'artigo', 'numeral',
   'interjeição', 'reg[êe]ncia', 'crase', 'colocação', 'pronominal',
   'd[íi]grafo', 'fonema', 'encontro', 'contém', 'consiste',
+  'alfabeto', 'conjugação', 'corresponde', 'correspond[êe]ncia',
+  'hiragana', 'katakana', 'kanji',
   // Correspondence / genre structure
   'vocativo', 'destinatário', 'remetente', 'saudação', 'despedida',
   'assinatura', 'cabeçalho', 'corpo', 'circulação', 'familiar',
