@@ -4,6 +4,25 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 
 > This doc lives at repo root, not `docs/` — Vite's build clears `docs/` on every `pnpm build`.
 
+## Toolchain at a glance
+
+| Command | Purpose |
+|---|---|
+| `pnpm eval:dashboard` | One-screen health summary (global score, distribution, top weakest levels, snapshot delta) |
+| `pnpm eval:pedagogy` | Per-set rubric scoring across 7 dimensions + level progression |
+| `pnpm eval:rationales` | Per-exercise rationale categorization (method / generic / restatement / missing / short / long) |
+| `pnpm eval:disconnected` | Flags placeholder-template + disconnected-singleton rationales |
+| `pnpm eval:bias` | Answer-position bias audit (content-side, runtime shuffle also fixes this) |
+| `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
+| `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected |
+| `pnpm fix:placeholders [--apply]` | Deterministic rule-based rewriter for known-bad rationales (16 rule shapes) |
+| `pnpm fix:examples [--apply]` | Appends `Ex.: Q → A.` to example fields lacking a worked pair |
+| `pnpm fix:restatements [--apply]` | Rewrites "A resposta correta é X" into category-aware method form |
+| `pnpm fix:japanese [--apply]` | Script-classifier rationale generator for Japanese inline-YAML sets |
+| `pnpm fix:japanese:metadata [--apply]` | Adds Kumon-mapped `difficulty:` metadata to Japanese sets |
+
+All fixers are dry-run by default; pass `--apply` to write. All evaluators support `--json` for CI consumption.
+
 ## Kumon principles Futon inherits
 
 1. **Small steps.** Each exercise should be solvable from the pattern established by earlier exercises — *no explanation required*.
