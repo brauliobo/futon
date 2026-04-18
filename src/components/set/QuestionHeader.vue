@@ -17,7 +17,7 @@ export default {
   computed: {
     badgeClass() {
       const base = 'flex-shrink-0 flex items-center justify-center rounded-full font-black shadow-sm transition-colors duration-300';
-      const tone = this.answered ? 'bg-kid-green text-white' : 'bg-kid-blue/15 text-kid-blue';
+      const tone = this.answered ? 'bg-kid-blue text-white' : 'bg-kid-blue/15 text-kid-blue';
       const size = this.compact ? 'w-7 h-7 text-xs' : 'w-9 h-9 text-sm';
       return `${base} ${tone} ${size}`;
     },

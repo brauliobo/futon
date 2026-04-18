@@ -33,7 +33,7 @@
           @click="isEditing = true"
           ref="inputRef"
         )
-        span(v-if="hasAnswer && !isEditing" class="absolute -right-1 -top-1 w-5 h-5 rounded-full bg-kid-green text-white text-xs font-black flex items-center justify-center shadow-md animate-stamp" aria-hidden="true") ✓
+        span(v-if="hasAnswer && !isEditing" class="absolute -right-1 -top-1 w-5 h-5 rounded-full bg-kid-blue text-white text-xs font-black flex items-center justify-center shadow-md animate-stamp" aria-hidden="true") ✓
         span(v-if="hasAnswer && !isEditing" class="absolute inset-0 rounded-xl pointer-events-none animate-stamp-ring" aria-hidden="true")
         button(
           v-if="hasAnswer && isEditing && !isSubmitted"
@@ -65,7 +65,7 @@
           @click="isEditing = true"
           ref="inputRef"
         )
-        span(v-if="hasAnswer && !isEditing" class="absolute -right-1 -top-1 w-6 h-6 rounded-full bg-kid-green text-white text-sm font-black flex items-center justify-center shadow-md animate-pop-in" aria-hidden="true") ✓
+        span(v-if="hasAnswer && !isEditing" class="absolute -right-1 -top-1 w-6 h-6 rounded-full bg-kid-blue text-white text-sm font-black flex items-center justify-center shadow-md animate-pop-in" aria-hidden="true") ✓
         button(
           v-if="hasAnswer && isEditing && !isSubmitted"
           @mousedown.prevent="clearAnswer"
@@ -125,7 +125,7 @@ export default {
         ? 'w-24 sm:w-20 h-12 text-center text-2xl placeholder:text-2xl'
         : 'w-full px-4 py-4 text-xl placeholder:text-sm border-4';
       const tone = (this.hasAnswer && !this.isEditing)
-        ? 'border-kid-green bg-kid-green/5 text-kid-text shadow-md green-glow'
+        ? 'border-kid-blue bg-kid-blue/5 text-kid-text shadow-md blue-glow'
         : 'theme-border-strong bg-kid-surface text-kid-text focus:border-kid-blue focus:shadow-lg focus:blue-glow shadow-sm';
       return `${base} ${size} ${tone}`;
     },
