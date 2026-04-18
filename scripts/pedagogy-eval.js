@@ -60,10 +60,21 @@ const pageDiffAvgs = set => (set.pages || []).map(p => {
   return ds.length ? ds.reduce((a, b) => a + b, 0) / ds.length : 0;
 });
 
-const CHOICE_RE = /\(([^)]+\/[^)]+)\)\s*$/;
-const choicesOf = ex => ex.choices?.length ? ex.choices
-  : CHOICE_RE.test(String(ex.question || '')) ? ex.question.match(CHOICE_RE)[1].split('/').map(s => s.trim())
-  : null;
+// Match (a/b/c/d) trailing choices. Reject when the body contains "?"
+// (fill-in-the-blank math like "(iπ/?)") since those aren't real lists.
+const CHOICE_RE = /\(([^)?]+\/[^)?]+)\)\s*$/;
+const choicesOf = ex => {
+  if (ex.choices?.length) return ex.choices;
+  const q = String(ex.question || '');
+  if (!CHOICE_RE.test(q)) return null;
+  const parts = q.match(CHOICE_RE)[1].split('/').map(s => s.trim());
+  // Math-fraction false-positive guard: if the correctAnswer isn't in the
+  // parsed choices (case-insensitive), this isn't a real multi-choice —
+  // it's a fraction like "(x/2)" or "(4/52)·(3/?)" being misread.
+  const ans = String(ex.correctAnswer ?? '').trim().toLowerCase();
+  if (ans && !parts.some(p => p.toLowerCase() === ans)) return null;
+  return parts;
+};
 
 // ── Scorers (each returns {score, max, issue}) ──────────────────────────────
 

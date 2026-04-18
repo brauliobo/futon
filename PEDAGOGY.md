@@ -23,6 +23,7 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm eval:relevance` | Spot copy-paste rationale bugs: for pure `N op N` drills, rationale must reference an operand, the answer, or a decomposing digit |
 | `pnpm eval:coverage [--min=N]` | List objectives with fewer than N exercises globally (default 10) — flags under-drilled learning targets |
 | `pnpm eval:diversity [--threshold=X]` | Flag sets where the number of unique rationales is disproportionately small vs unique answers — surfaces hardcoded/copy-pasted rationales |
+| `pnpm eval:answers` | Verify every multi-choice exercise's correctAnswer appears among its choices (catches authoring mismatches) |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
 | `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected |
 | `pnpm fix:placeholders [--apply]` | Deterministic rule-based rewriter for known-bad rationales (16 rule shapes) |
