@@ -437,7 +437,9 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .mode-tab--active:hover { color: var(--kid-blue); background: var(--kid-blue-tint-10); }
 
 /* Skill tree node — SkillTreeNode.vue */
-.skill-node { @apply w-full rounded-2xl border-2 p-4 transition-all duration-200 text-kid-text cursor-pointer; }
+.skill-node { @apply w-full rounded-2xl border-2 p-3 sm:p-4 transition-all duration-200 text-kid-text cursor-pointer; }
+.skill-node__chip { @apply rounded-md px-1.5 py-0.5 text-xs font-black uppercase tracking-wide; background: var(--kid-blue-10); color: var(--kid-blue); }
+.skill-node--complete .skill-node__chip { background: var(--kid-green-10); color: var(--kid-green); }
 .skill-node--idle { @apply bg-kid-surface shadow-sm; border-color: var(--kid-border); }
 .skill-node--idle:hover { border-color: var(--kid-blue-40); transform: translateY(-2px); box-shadow: var(--shadow-md-soft); }
 .skill-node--idle:active { transform: scale(0.98); }

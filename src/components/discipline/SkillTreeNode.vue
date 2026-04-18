@@ -10,7 +10,8 @@
       div(class="flex-1 text-left min-w-0")
         p(class="text-base font-black leading-tight truncate") {{ localizedName }}
         p(v-if="progress.total > 0" class="text-sm font-bold mt-0.5" :class="isComplete ? 'text-kid-green' : 'text-kid-muted'") {{ progress.mastered }}/{{ progress.total }} {{ $t('sets') }}
-        p(v-else class="text-sm font-semibold mt-0.5 text-kid-blue/70") → {{ $t('tapToExplore') || 'Tap to explore' }}
+        div(v-else class="mt-1 flex flex-wrap gap-1")
+          span(v-for="lvl in node.levels" :key="lvl" class="skill-node__chip") {{ lvl }}
       div(v-if="progress.total > 0" class="flex flex-col items-end gap-1 flex-shrink-0")
         div(class="flex gap-0.5")
           span(v-for="n in 3" :key="n" :class="n <= starCount ? 'text-kid-gold star-glow' : 'theme-star-empty'" class="text-lg leading-none") ★
