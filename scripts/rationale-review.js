@@ -10,6 +10,7 @@ import fs from 'fs';
 import path from 'path';
 import Table from 'cli-table3';
 import { parse } from 'yaml';
+import { categorize } from './lib/rationale.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m', GRAY = '\x1b[90m';
@@ -23,22 +24,9 @@ const ONLY = (argVal('--only') || '').split(',').filter(Boolean);
 const positional = args.filter(a => !a.startsWith('--') && !['--subject', '--level', '--only'].includes(args[args.indexOf(a) - 1]));
 const SINGLE_FILE = positional[0];
 
-const METHOD_RE = /\b(faça|conte|some|subtraia|divida|multiplique|primeiro|depois|porque|então|basta|lembr[ea]|dobro|metade|veja|compare|observe|aplique|troque|use|note|fórmula|regra|first|then|because|count|add|subtract|multiply|divide|double|half|step|notice|start|rule|pattern)/i;
-const RESTATE_RE = /^\s*(a\s+resposta\s+é|resposta:|answer:|é\s+\d|is\s+\d)/i;
-
 const CAT_COLORS = {
   method: GREEN, generic: YELLOW, missing: RED, short: RED, long: YELLOW, restatement: RED,
 };
-
-function categorize(r) {
-  if (!r || typeof r !== 'string') return 'missing';
-  const s = r.trim();
-  if (s.length < 10) return 'short';
-  if (s.length > 300) return 'long';
-  if (RESTATE_RE.test(s)) return 'restatement';
-  if (METHOD_RE.test(s)) return 'method';
-  return 'generic';
-}
 
 function loadOne(file) {
   const raw = parse(fs.readFileSync(file, 'utf8'));

@@ -8,6 +8,7 @@ import fs from 'fs';
 import path from 'path';
 import Table from 'cli-table3';
 import { parse } from 'yaml';
+import { categorize as rationaleCategory } from './lib/rationale.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m';
@@ -93,25 +94,12 @@ function scoreGradient(set) {
   return { score, max: 20, issue: issues.join('; ') || null };
 }
 
-// 3. Rationale pedagogical quality (25)
-const METHOD_RE = /\b(faça|conte|some|subtraia|divida|multiplique|primeiro|depois|porque|então|basta|lembr[ea]|dobro|metade|veja|compare|observe|aplique|troque|use|note|fórmula|regra|first|then|because|count|add|subtract|multiply|divide|double|half|step|notice|start|rule|pattern)/i;
-const RESTATE_RE = /^\s*(a\s+resposta\s+é|resposta:|answer:|é\s+\d|is\s+\d)/i;
-
-function rationaleCategory(ex) {
-  const r = ex.rationale;
-  if (!r || typeof r !== 'string') return 'missing';
-  const s = r.trim();
-  if (s.length < 10) return 'short';
-  if (s.length > 300) return 'long';
-  if (RESTATE_RE.test(s)) return 'restatement';
-  if (METHOD_RE.test(s)) return 'method';
-  return 'generic';
-}
+// 3. Rationale pedagogical quality (25). Categories: see scripts/lib/rationale.js.
 function scoreRationales(set) {
   const exs = allExercises(set);
   if (!exs.length) return { score: 0, max: 25, issue: 'no exercises' };
   const counts = { method: 0, generic: 0, missing: 0, short: 0, long: 0, restatement: 0 };
-  for (const e of exs) counts[rationaleCategory(e)]++;
+  for (const e of exs) counts[rationaleCategory(e.rationale)]++;
   const n = exs.length;
   const methodPts = Math.round(15 * counts.method / n);
   const coverPts = Math.round(5 * (1 - counts.missing / n));

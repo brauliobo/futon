@@ -94,7 +94,7 @@ Rewrite in the **imperative + reason** form. Examples:
 - ❌ `A palavra correta é "casa".` → ✅ `"Casa" é feminina porque termina em -a.`
 - ❌ `Blue is the answer.` → ✅ `Three letters, silent "e". Rhymes with "true".`
 
-Trigger words that earn full credit: `faça`, `conte`, `primeiro`, `depois`, `porque`, `então`, `dobro`, `metade`, `first`, `then`, `because`, `notice`, `step`, `rule`, `pattern`.
+Trigger vocabulary lives in [scripts/lib/rationale.js](scripts/lib/rationale.js). It covers imperatives (`faça`, `conte`, `tome`, `observe`, `localize`, `releia`), reasoning connectors (`porque`, `então`, `basta`, `logo`), math concepts (`dobro`, `metade`, `dezena`, `dígito`, `reagrupe`), grammar concepts (`termina`, `modifica`, `liga`, `indica`, `substitui`), and English equivalents. Extend the list rather than rewriting rationales just to pass the regex.
 
 ### Gradient low (<70%)
 Plot `pageDiffAvgs` (via `--json`). Look for:
