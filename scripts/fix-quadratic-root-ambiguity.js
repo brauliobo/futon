@@ -29,6 +29,12 @@ function clarifierFor(answer) {
   return null;
 }
 
+// Bare "x² = N" that appears anywhere in the corpus with distinct answer
+// forms across sets causes the same ambiguity as the intra-page case.
+// Apply the clarifier universally whenever the question is a bare
+// quadratic and the answer has a recognizable root form.
+const BARE_QUADRATIC = /^x²\s*=\s*\d+$/;
+
 async function main() {
   const files = await fg('src/levels/math/I/set_*.yaml');
   let total = 0;
@@ -38,33 +44,20 @@ async function main() {
     let changed = 0;
 
     for (const p of s.pages || []) {
-      // Find questions with ≥2 occurrences and different answers
-      const byQ = new Map();
       for (const e of p.exercises || []) {
         const q = String(e.question);
-        if (!byQ.has(q)) byQ.set(q, []);
-        byQ.get(q).push(e);
-      }
-      for (const [q, exs] of byQ) {
-        if (exs.length < 2) continue;
-        const answers = new Set(exs.map(e => String(e.correctAnswer)));
-        if (answers.size < 2) continue;
-        // Disambiguate by appending clarifier to each occurrence's question
-        for (const e of exs) {
-          const clar = clarifierFor(e.correctAnswer);
-          if (!clar) continue;
-          const newQ = `${q} (${clar})`;
-          const qEsc = rx(q);
-          const ansEsc = rx(String(e.correctAnswer));
-          // Match the specific question+answer pair to avoid touching other
-          // exercises with different answers for the same question.
-          const re = new RegExp(
-            `(question:\\s*)(?:"${qEsc}"|'${qEsc}'|${qEsc})([ \\t]*\\r?\\n\\s+correctAnswer:\\s*(?:"${ansEsc}"|'${ansEsc}'|${ansEsc})\\b)`,
-          );
-          if (re.test(raw)) {
-            raw = raw.replace(re, `$1"${newQ}"$2`);
-            changed++;
-          }
+        if (!BARE_QUADRATIC.test(q)) continue;
+        const clar = clarifierFor(e.correctAnswer);
+        if (!clar) continue;
+        const newQ = `${q} (${clar})`;
+        const qEsc = rx(q);
+        const ansEsc = rx(String(e.correctAnswer));
+        const re = new RegExp(
+          `(question:\\s*)(?:"${qEsc}"|'${qEsc}'|${qEsc})([ \\t]*\\r?\\n\\s+correctAnswer:\\s*(?:"${ansEsc}"|'${ansEsc}'|${ansEsc})\\b)`,
+        );
+        if (re.test(raw)) {
+          raw = raw.replace(re, `$1"${newQ}"$2`);
+          changed++;
         }
       }
     }
