@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Pedagogy guard: runs before every commit to ensure content + rubric
+# edits don't silently regress. Install via `pnpm hooks:install`.
+
+set -e
+
+# Only run if any YAML under src/levels, any pedagogy script, or any
+# scripts/lib file is staged — otherwise this is a no-op and fast.
+STAGED=$(git diff --cached --name-only --diff-filter=ACMR)
+if ! echo "$STAGED" | grep -qE '^(src/levels/|scripts/(pedagogy-eval|fix-|find-|test-|lib/)|src/utils/Shuffle)'; then
+  exit 0
+fi
+
+echo "→ pedagogy guard: running test:eval + eval:snapshot"
+pnpm -s test:eval
+pnpm -s eval:snapshot --threshold -3 || {
+  echo ""
+  echo "❌ pedagogy regression detected. Review above or update the baseline"
+  echo "   intentionally with: pnpm eval:snapshot --save"
+  exit 1
+}

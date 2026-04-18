@@ -16,6 +16,7 @@
     "eval:bias": "node ./scripts/find-answer-bias.js",
     "eval:time": "node ./scripts/eval-time-budget.js",
     "test:eval": "node ./scripts/test-rationale.js && node ./scripts/test-eval.js && node ./scripts/test-fixers.js && node ./scripts/test-shuffle.js",
+    "hooks:install": "bash ./scripts/hooks/install.sh",
     "fix:placeholders": "node ./scripts/fix-placeholder-rationales.js",
     "fix:examples": "node ./scripts/fix-examples.js",
     "fix:japanese": "node ./scripts/fix-japanese-rationales.js",
