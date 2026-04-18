@@ -23,6 +23,13 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'acompanha', 'determina', 'introduz', 'marca', 'função', 'sufixo',
   'prefixo', 'parágrafo', 'trecho', 'pista', 'contexto', 'palavra.chave',
   'sílaba', 'acento', 'género|gênero', 'número',
+  'característic[oa]', 'sinônimo', 'antônimo', 'oposto', 'contrário',
+  'significa', 'significad[oa]', 'vogal', 'consoante', 'maiúscul[oa]',
+  'minúscul[oa]', 'masculin[oa]', 'feminin[oa]', 'singular', 'plural',
+  'tônic[oa]', 'áton[oa]', 'agud[oa]', 'grav[ea]', 'esdrúxul[oa]',
+  'pretérit[oa]', 'presente', 'futuro', 'gerúndio', 'infinitivo',
+  'particípio', 'concord[âa]ncia', 'sujeito', 'predicad[oa]', 'objeto',
+  'par\\b', 'ímpar', 'rima', 'produzem?', 'dá\\b',
   // English equivalents
   'first', 'then', 'because', 'count', 'add', 'subtract', 'multiply',
   'divide', 'double', 'half', 'step', 'notice', 'start', 'rule', 'pattern',
@@ -31,7 +38,7 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'borrow', 'carry', 'digit', 'column', 'regroup',
 ].join('|') + ')\\b', 'i');
 
-export const RESTATE_RE = /^\s*(a\s+resposta\s+é|resposta:|answer:|é\s+\d|is\s+\d)/i;
+export const RESTATE_RE = /^\s*(a\s+resposta\s+(?:correta\s+)?é|resposta:|answer:|é\s+\d|is\s+\d|the\s+correct\s+answer|correct\s+answer:)/i;
 
 export function categorize(rationale) {
   if (!rationale || typeof rationale !== 'string') return 'missing';
