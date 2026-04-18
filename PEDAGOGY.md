@@ -33,6 +33,7 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm fix:input-type [--apply]` | Switch mis-declared sets to `inputType: text` |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
 | `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected + arithmetic + alignment + relevance + answers + topic |
+| `pnpm eval:summary` | One-line-per-check status of all 22 evaluators — never fails CI, use for quick overview |
 | `pnpm fix:binomial:rationales [--apply]` | Rewrite (x+a)(x+b) rationales in math/J to per-exercise Soma/produto form |
 | `pnpm fix:5a:rationales [--apply]` | Rewrite generic-placeholder rationales in math/5A with question-shape-specific forms (iter 82) |
 | `pnpm fix:6a:counting [--apply]` | Normalize counting rationales in math/6A/7A to count-specific form |
