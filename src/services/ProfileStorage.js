@@ -2,7 +2,7 @@
 const PROFILES_KEY = 'futon_profiles';
 const ACTIVE_KEY = 'futon_active_profile';
 
-const AVATARS = ['🐶', '🐱', '🐻', '🦊', '🐼', '🐨', '🐸', '🦁', '🐯', '🐺', '🦋', '🐬'];
+export const AVATARS = ['🐶', '🐱', '🐻', '🦊', '🐼', '🐨', '🐸', '🦁', '🐯', '🐺', '🦋', '🐬'];
 
 export class ProfileStorage {
   static getProfiles() {
@@ -27,11 +27,11 @@ export class ProfileStorage {
     return this.getProfiles().find(p => p.id === id) || null;
   }
 
-  static createProfile(name) {
+  static createProfile(name, avatar = null) {
     const profiles = this.getProfiles();
     const id = `profile_${Date.now()}`;
-    const avatar = AVATARS[profiles.length % AVATARS.length];
-    const profile = { id, name: name.trim(), avatar, createdAt: Date.now() };
+    const chosen = avatar || AVATARS[profiles.length % AVATARS.length];
+    const profile = { id, name: name.trim(), avatar: chosen, createdAt: Date.now() };
     profiles.push(profile);
     this.saveProfiles(profiles);
     return profile;

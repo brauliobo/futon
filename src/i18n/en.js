@@ -115,6 +115,7 @@ export const en = {
   previousAttempts: "Previous attempts",
   enterName: "Enter name...",
   whoIsLearning: "Who's learning today?",
+  pickAvatar: "Pick your avatar",
   addLearner: "Add a learner",
   cancel: "Cancel",
   create: "Create",

@@ -115,6 +115,7 @@ export const pt = {
   previousAttempts: "Tentativas anteriores",
   enterName: "Digite o nome...",
   whoIsLearning: "Quem vai estudar hoje?",
+  pickAvatar: "Escolha seu avatar",
   addLearner: "Adicionar aluno",
   cancel: "Cancelar",
   create: "Criar",

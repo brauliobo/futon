@@ -31,7 +31,7 @@
             span(class="text-xl") ＋
             span {{ $t('addLearner') }}
 
-        div(v-else class="space-y-3 animate-slide-up")
+        div(v-else class="space-y-4 animate-slide-up")
           input(
             v-model="newName"
             :placeholder="$t('enterName') || 'Enter name...'"
@@ -40,19 +40,36 @@
             ref="nameInput"
             autofocus
           )
+          div(class="space-y-2")
+            p(class="text-sm font-bold text-kid-muted text-center") {{ $t('pickAvatar') || 'Pick your avatar' }}
+            div(class="grid grid-cols-6 gap-2")
+              button(
+                v-for="a in avatars"
+                :key="a"
+                @click="selectedAvatar = a"
+                :class="avatarBtnClass(a)"
+                type="button"
+                :aria-pressed="selectedAvatar === a"
+              ) {{ a }}
           div(class="flex gap-3")
-            button(@click="showNewForm = false; newName = ''" class="flex-1 rounded-2xl border-2 theme-border-strong py-3 font-bold text-kid-muted hover:border-kid-red/40 hover:text-kid-red transition-all active:scale-95") {{ $t('cancel') }}
+            button(@click="cancelForm" class="flex-1 rounded-2xl border-2 theme-border-strong py-3 font-bold text-kid-muted hover:border-kid-red/40 hover:text-kid-red transition-all active:scale-95") {{ $t('cancel') }}
             button(@click="createProfile" :disabled="!newName.trim()" class="flex-1 rounded-2xl bg-kid-blue py-3 font-bold text-white disabled:opacity-30 hover:shadow-lg hover:bg-kid-blue/90 transition-all active:scale-95") {{ $t('create') }}
 </template>
 
 <script>
-import { ProfileStorage } from '../services/ProfileStorage.js';
+import { ProfileStorage, AVATARS } from '../services/ProfileStorage.js';
 
 export default {
   name: 'ProfileSelector',
   emits: ['profile-selected'],
   data() {
-    return { profiles: ProfileStorage.getProfiles(), showNewForm: false, newName: '' };
+    return {
+      profiles: ProfileStorage.getProfiles(),
+      showNewForm: false,
+      newName: '',
+      avatars: AVATARS,
+      selectedAvatar: AVATARS[ProfileStorage.getProfiles().length % AVATARS.length],
+    };
   },
   mounted() {
     if (this.profiles.length === 0) this.showNewForm = true;
@@ -64,11 +81,21 @@ export default {
     },
     createProfile() {
       if (!this.newName.trim()) return;
-      const profile = ProfileStorage.createProfile(this.newName);
+      const profile = ProfileStorage.createProfile(this.newName, this.selectedAvatar);
       this.profiles = ProfileStorage.getProfiles();
+      this.cancelForm();
+      this.selectProfile(profile);
+    },
+    cancelForm() {
       this.showNewForm = false;
       this.newName = '';
-      this.selectProfile(profile);
+      this.selectedAvatar = this.avatars[this.profiles.length % this.avatars.length];
+    },
+    avatarBtnClass(a) {
+      const base = 'aspect-square rounded-2xl text-3xl flex items-center justify-center transition-all active:scale-90';
+      return a === this.selectedAvatar
+        ? `${base} bg-kid-blue/15 border-2 border-kid-blue shadow-md scale-110`
+        : `${base} bg-kid-surface border-2 theme-border hover:border-kid-blue/40 hover:-translate-y-0.5`;
     },
   },
 };
