@@ -26,7 +26,7 @@ export default {
       return this.canGoNext ? `${c} animate-ready-pulse` : c;
     },
     nextLabel() {
-      if (this.isRemaining) return `✏️ ${this.$t('remaining') || 'Falta'} ${this.remaining}`;
+      if (this.isRemaining) return `✏️ ${this.$t('remaining') || 'Falta'} ${this.remaining} →`;
       return this.isLastPage ? `✨ ${this.$t('finish')}` : `${this.$t('next')} →`;
     },
   },
