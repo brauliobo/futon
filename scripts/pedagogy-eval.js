@@ -170,7 +170,8 @@ function scoreAnswerDistribution(set) {
   return { score: Math.max(0, score), max: 10, issue: issues.slice(0, 3).join('; ') || null };
 }
 
-// 6. Choice distractor quality (10)
+// 6. Choice distractor quality (10). Duplicates are detected case-sensitively
+// because literacy exercises intentionally contrast "I" vs "i".
 function scoreDistractors(set) {
   const exs = allExercises(set);
   const choiceExs = exs.filter(e => choicesOf(e));
@@ -178,8 +179,8 @@ function scoreDistractors(set) {
   let weak = 0;
   for (const e of choiceExs) {
     const ch = choicesOf(e);
-    const norm = ch.map(s => s.toLowerCase().trim());
-    if (new Set(norm).size < ch.length) { weak++; continue; }
+    const trimmed = ch.map(s => s.trim());
+    if (new Set(trimmed).size < ch.length) { weak++; continue; }
     const lens = ch.map(s => s.length);
     if (Math.max(...lens) / Math.max(1, Math.min(...lens)) > 6) weak++;
   }
