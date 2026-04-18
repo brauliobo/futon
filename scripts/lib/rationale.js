@@ -41,6 +41,15 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'par\\b', 'ímpar', 'rima', 'produzem?', 'dá\\b',
   'fato', 'opinião', 'tese', 'argumento', 'interpretação',
   'desigualdade', 'equação', 'inequação', 'variável', 'incógnita',
+  // Literature / history action verbs (classification + attribution)
+  'compôs', 'escreveu', 'criou', 'fundou', 'inaugurou', 'liderou',
+  'publicou', 'surg[eiu]', 'pertence', 'caracteriza', 'define',
+  'explora', 'defende', 'desenvolveu', 'representa', 'marca\\b',
+  // Style / genre markers
+  'estilo', 'gênero', 'movimento', 'período', 'geração',
+  'barroco', 'romantismo', 'modernismo', 'realismo', 'quinhentismo',
+  // Period references
+  'século', 'década', 'documento', 'obra', 'autor',
   // English equivalents
   'first', 'then', 'because', 'count', 'add', 'subtract', 'multiply',
   'divide', 'double', 'half', 'step', 'notice', 'start', 'rule', 'pattern',
