@@ -111,7 +111,8 @@ function echoesQuestionAndAnswer(ex) {
   const a = String(ex.correctAnswer || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
   if (a.length < 3 || !r.includes(a)) return false;
   const q = String(ex.question || '').replace(/\([^)]+\)\s*$/, '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  const qWords = (q.match(/[a-z]{4,}/g) || []).filter(w => !['como', 'onde', 'quem', 'qual', 'para'].includes(w));
+  const qWords = (q.match(/[a-z]{3,}/g) || []).filter(w =>
+    !['como', 'onde', 'quem', 'qual', 'para', 'que', 'uma', 'com', 'dos', 'das', 'por', 'são', 'seu', 'sua', 'nem', 'foi', 'era', 'tem', 'mas', 'mais'].includes(w));
   if (qWords.some(w => r.includes(w))) return true;
   // Also accept numeric tokens (1, 42, π) from the question appearing in
   // the rationale — common in "Como se escreve o número 1?" → "1 por
