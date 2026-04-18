@@ -306,7 +306,7 @@ function main() {
   console.log('\n' + '═'.repeat(70));
   console.log(c(`Global pedagogy score: ${global}%`, BOLD + colorPct(global))
     + c(`  (excellent ≥${THRESHOLDS.excellent}, acceptable ≥${THRESHOLDS.acceptable})`, CYAN));
-  console.log(c('See docs/PEDAGOGY.md for rubric + manual-review checklist.', CYAN));
+  console.log(c('See PEDAGOGY.md for rubric + manual-review checklist.', CYAN));
   process.exit(global >= THRESHOLDS.acceptable ? 0 : 1);
 }
 
