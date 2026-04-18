@@ -385,6 +385,10 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .set-timer--fast { border-color: color-mix(in srgb, var(--kid-green) 50%, transparent); color: var(--kid-green); }
 .set-timer--slow { border-color: color-mix(in srgb, var(--kid-red) 50%, transparent); color: var(--kid-red); }
 
+/* Choice badge — numeric prefix on ChoiceExercise buttons */
+.choice-badge { @apply inline-flex items-center justify-center rounded-md text-kid-blue font-black shadow-inner w-6 h-6 mr-2 text-xs; background: color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface)); }
+.choice-badge--pill { @apply w-5 h-5 mr-1.5 text-[11px]; }
+
 /* Empathy hint card (used after wrong answers) */
 .hint-card {
   @apply flex items-start gap-2 rounded-2xl px-4 py-3 shadow-sm amber-soft-bg border;

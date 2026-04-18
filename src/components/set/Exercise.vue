@@ -10,7 +10,7 @@
     @next-exercise="$emit('next-exercise')"
     ref="choiceRef"
   )
-  div(v-else :class="cardClass" class="animate-slide-up" role="group" :aria-labelledby="`q-${exerciseNumber}`")
+  div(v-else :class="['question-card animate-slide-up', `question-card--${cardVariant}`, { 'card-pulse': pulsing }]" role="group" :aria-labelledby="`q-${exerciseNumber}`")
     div(v-if="isNumeric && !isReadOnly" class="flex items-center gap-3")
       QuestionHeader(:number="exerciseNumber" :question="exercise.question" compact :answered="hasAnswer")
       div(class="relative ml-auto")
@@ -21,7 +21,7 @@
           enterkeyhint="next"
           :disabled="isSubmitted"
           :placeholder="placeholder"
-          :class="inputClass"
+          :class="['input-answer', `input-answer--${isNumeric ? 'numeric' : 'text'}`, (hasAnswer && !isEditing) ? 'input-answer--answered' : 'input-answer--idle']"
           :aria-labelledby="`q-${exerciseNumber}`"
           autocomplete="off"
           autocorrect="off"
@@ -53,7 +53,7 @@
           enterkeyhint="next"
           :disabled="isSubmitted"
           :placeholder="placeholder"
-          :class="inputClass"
+          :class="['input-answer', `input-answer--${isNumeric ? 'numeric' : 'text'}`, (hasAnswer && !isEditing) ? 'input-answer--answered' : 'input-answer--idle']"
           :aria-labelledby="`q-${exerciseNumber}`"
           autocomplete="off"
           autocorrect="off"
@@ -119,14 +119,9 @@ export default {
       return this.isNumeric ? 'mt-1 flex justify-center' : 'mt-1';
     },
     encouragement() { return Encourage.message(this.$t.bind(this), this.exerciseNumber); },
-    inputClass() {
-      const shape = this.isNumeric ? 'input-answer--numeric' : 'input-answer--text';
-      const tone = (this.hasAnswer && !this.isEditing) ? 'input-answer--answered' : 'input-answer--idle';
-      return `input-answer ${shape} ${tone}`;
-    },
-    cardClass() {
-      const v = this.isReadOnly ? (this.isCorrect ? 'correct' : 'incorrect') : (this.hasAnswer ? 'answered' : 'neutral');
-      return `question-card question-card--${v}${this.pulsing ? ' card-pulse' : ''}`;
+    cardVariant() {
+      if (this.isReadOnly) return this.isCorrect ? 'correct' : 'incorrect';
+      return this.hasAnswer ? 'answered' : 'neutral';
     },
   },
   methods: {

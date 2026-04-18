@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(:class="cardClass" class="animate-slide-up" role="group" :aria-labelledby="`q-${exerciseNumber}`")
+  div(:class="['question-card animate-slide-up', `question-card--${cardVariant}`]" role="group" :aria-labelledby="`q-${exerciseNumber}`")
     QuestionHeader(:number="exerciseNumber" :question="exercise.question" compact :answered="!!selected && !isReadOnly")
 
     div(v-if="!isReadOnly")
@@ -15,7 +15,7 @@
           :aria-checked="selected === choice"
           ref="choiceBtns"
         )
-          span(:class="badgeClass" aria-hidden="true") {{ idx + 1 }}
+          span(:class="['choice-badge', { 'choice-badge--pill': isPillMode }]" aria-hidden="true") {{ idx + 1 }}
           span {{ choice }}
       p(v-if="showShortcutHint" class="mt-2 text-sm font-bold text-kid-muted text-center animate-slide-up") ⌨ {{ $t('hintShortcut') || 'Tip: press 1–9 to pick fast' }}
 
@@ -71,19 +71,15 @@ export default {
     shuffledChoices() { return Shuffle.withSeed(this.exercise.choices, this.exercise.question); },
     selected() { return this.exercise.answer || ''; },
     isCorrect() { return Formatter.normalizeAnswer(this.selected) === Formatter.normalizeAnswer(this.exercise.correctAnswer); },
-    cardClass() {
-      const v = this.isReadOnly ? (this.isCorrect ? 'correct' : 'incorrect') : (this.selected ? 'selected' : 'neutral');
-      return `question-card question-card--${v}`;
+    cardVariant() {
+      if (this.isReadOnly) return this.isCorrect ? 'correct' : 'incorrect';
+      return this.selected ? 'selected' : 'neutral';
     },
     encouragement() { return Encourage.message(this.$t.bind(this), this.exerciseNumber); },
     isPillMode() { return this.shuffledChoices.every(c => String(c).length <= 3); },
     gridClass() {
       if (this.isPillMode) return 'flex flex-wrap gap-2';
       return this.shuffledChoices.length > 3 ? 'grid gap-3 grid-cols-2' : 'grid gap-3 grid-cols-1';
-    },
-    badgeClass() {
-      const base = 'inline-flex items-center justify-center rounded-md bg-kid-blue/10 text-kid-blue font-black shadow-inner';
-      return this.isPillMode ? `${base} w-5 h-5 mr-1.5 text-[11px]` : `${base} w-6 h-6 mr-2 text-xs`;
     },
     reviewListClass() { return this.isPillMode ? 'mt-1 flex flex-wrap gap-1.5' : 'mt-1 space-y-2'; },
   },
