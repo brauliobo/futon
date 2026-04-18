@@ -34,11 +34,11 @@ const SUBJECTS = SUBJECT ? [SUBJECT] : ['math', 'portuguese', 'english', 'japane
 // Reject parens containing "?" (fill-in-the-blank math like "(3/?)") since
 // those aren't real multi-choice lists — same guard as pedagogy-eval.
 const CHOICE_RE = /\(([^)?]+\/[^)?]+)\)\s*$/;
-// Case-insensitive but accent-PRESERVING: many portuguese sets teach the
-// difference between `a`/`à` and `as`/`às`. Treating them as equal makes
-// the scanner report 100% position-1 bias on sets that are perfectly
-// balanced — the author sees "a" vs "à" as different options.
-const norm = s => String(s || '').trim().toLowerCase();
+// Exact match (trimmed only). Neither case-folding nor accent-stripping:
+// portuguese/1A teaches uppercase-vs-lowercase letter recognition
+// ('C' vs 'c'), and accents ('a' vs 'à'). Normalizing either collapses
+// distinct choices and produces false 100%-bias reports.
+const norm = s => String(s || '').trim();
 
 function choicesOf(ex) {
   if (Array.isArray(ex.choices)) return ex.choices;
