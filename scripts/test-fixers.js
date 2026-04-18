@@ -10,6 +10,7 @@ import { generateRationale as gen5A } from './fix-5a-rationales.js';
 import { rationaleFor as genPower } from './fix-power-root-rationales.js';
 import { rationaleFor as genBinomial } from './fix-binomial-rationales.js';
 import { rationaleFor as genIntegral } from './fix-integral-rationales.js';
+import { rationaleFor as gen6ACount } from './fix-6a-counting-rationales.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', GRAY = '\x1b[90m';
@@ -111,6 +112,15 @@ const BINOMIAL_CASES = [
   [6, 4, 'Soma: 6+4=10; produto: 6·4=24'],
 ];
 
+// fix-6a-counting-rationales: n → rationale
+const COUNT_CASES = [
+  [1, 'Um único símbolo.'],
+  [2, 'Conte apontando: 1, 2.'],
+  [3, 'Conte apontando: 1, 2, 3.'],
+  [4, 'Conte um a um, sem pular: total 4.'],
+  [7, 'Conte um a um, sem pular: total 7.'],
+];
+
 // fix-integral-rationales: question → rationale
 const INTEGRAL_CASES = [
   ['∫ 3sec²(x) dx = ?', 'sec²(x) dx = tan(x) + C'],
@@ -180,7 +190,15 @@ for (const [q, expected] of INTEGRAL_CASES) {
   else { failed++; failures.push({ label: 'integral', type: '-', q, a: '', expected, got }); }
 }
 
-const totalCases = CASES.length + JP_CASES.length + RESTATEMENT_CASES.length + FIVE_A_CASES.length + POWER_CASES.length + BINOMIAL_CASES.length + INTEGRAL_CASES.length;
+// fix-6a-counting-rationales
+for (const [n, expected] of COUNT_CASES) {
+  const got = gen6ACount(n);
+  const ok = got === expected;
+  if (ok) passed++;
+  else { failed++; failures.push({ label: '6a-count', type: '-', q: `count=${n}`, a: '', expected, got }); }
+}
+
+const totalCases = CASES.length + JP_CASES.length + RESTATEMENT_CASES.length + FIVE_A_CASES.length + POWER_CASES.length + BINOMIAL_CASES.length + INTEGRAL_CASES.length + COUNT_CASES.length;
 console.log(c('\n🧪 FIXER RULE TESTS', BOLD));
 console.log(`  ${passed} passed · ${failed} failed · ${totalCases} total\n`);
 if (failed) {
