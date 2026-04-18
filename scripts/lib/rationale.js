@@ -15,6 +15,8 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'simplifique', 'desenhe', 'liste', 'separe', 'visualize', 'recuper[ea]',
   'verifique', 'explique', 'descreva', 'organize', 'agrupe',
   'fatore', 'expanda', 'iguale',
+  'form[ae]m?', 'form[ao]u', 'junta', 'juntam', 'junt[ao]u', 'compõe',
+  'por\\s+extenso', 'em\\s+letra\\b', 'extenso',
   // Reasoning connectors (PT)
   'primeiro', 'depois', 'ent[ãa]o', 'porque', 'basta', 'logo', 'portanto',
   'assim', 'pois', 'como', 'se\\b', 'quando', 'enquanto',

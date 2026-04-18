@@ -112,7 +112,12 @@ function echoesQuestionAndAnswer(ex) {
   if (a.length < 3 || !r.includes(a)) return false;
   const q = String(ex.question || '').replace(/\([^)]+\)\s*$/, '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const qWords = (q.match(/[a-z]{4,}/g) || []).filter(w => !['como', 'onde', 'quem', 'qual', 'para'].includes(w));
-  return qWords.some(w => r.includes(w));
+  if (qWords.some(w => r.includes(w))) return true;
+  // Also accept numeric tokens (1, 42, π) from the question appearing in
+  // the rationale — common in "Como se escreve o número 1?" → "1 por
+  // extenso é 'um'" style rationales.
+  const qNums = q.match(/\b\d+\b/g) || [];
+  return qNums.some(n => new RegExp(`\\b${n}\\b`).test(r));
 }
 function scoreRationales(set) {
   const exs = allExercises(set);
