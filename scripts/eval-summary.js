@@ -34,6 +34,7 @@ const CHECKS = [
   ['eval:length-bias', 'Correct-answer length bias (advisory)'],
   ['eval:progression', 'Per-page difficulty progression (advisory)'],
   ['eval:keyword-leak', 'Answer keyword leak in prompt (advisory)'],
+  ['eval:runs', 'Consecutive-answer runs (advisory)'],
 ];
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
