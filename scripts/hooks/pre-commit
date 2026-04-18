@@ -11,7 +11,7 @@ if ! echo "$STAGED" | grep -qE '^(src/levels/|scripts/(pedagogy-eval|fix-|find-|
   exit 0
 fi
 
-echo "→ pedagogy guard: running test:eval + snapshot + topic-consistency"
+echo "→ pedagogy guard: running test:eval + snapshot + topic + intra-page + cross-set"
 pnpm -s test:eval
 pnpm -s eval:snapshot --threshold -3 || {
   echo ""
@@ -27,5 +27,21 @@ pnpm -s eval:topic || {
   echo "❌ topic-consistency: a rationale mentions a domain marker but its"
   echo "   exercise isn't on that topic. Fix the rationale or update rules"
   echo "   in scripts/eval-topic-consistency.js."
+  exit 1
+}
+# Intra-page and cross-set conflict guards — catch ambiguous duplicates
+# where the same question has different expected answers.
+pnpm -s eval:intra-page || {
+  echo ""
+  echo "❌ intra-page: two exercises with the same question text have"
+  echo "   different expected answers on the same page. Disambiguate the"
+  echo "   question (see scripts/fix-{quadratic-root,factoring,mesma-situacao}.js)."
+  exit 1
+}
+pnpm -s eval:cross-set || {
+  echo ""
+  echo "❌ cross-set: the same question appears in multiple sets of the"
+  echo "   same level with different expected answers (non-synonym)."
+  echo "   Disambiguate with a clarifier or standardize the answer."
   exit 1
 }

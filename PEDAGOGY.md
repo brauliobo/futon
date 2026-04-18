@@ -8,7 +8,7 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 
 | Command | Purpose |
 |---|---|
-| `pnpm test:eval` | 162 regression tests (categorize, rubric scorers, fixers, shuffle) — gates future edits |
+| `pnpm test:eval` | 165 regression tests (categorize, rubric scorers, fixers, shuffle) — gates future edits |
 | `pnpm hooks:install` | Installs a pre-commit hook that runs `test:eval` + `eval:snapshot` + `eval:topic` whenever pedagogy files are staged |
 | `pnpm eval:dashboard` | One-screen health summary (global score, distribution, top weakest levels, snapshot delta) |
 | `pnpm eval:pedagogy` | Per-set rubric scoring across 7 dimensions + level progression |
