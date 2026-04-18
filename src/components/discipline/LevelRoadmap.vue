@@ -95,21 +95,12 @@ export default {
       if (!this.availableSet.has(lvl)) return 'level-card level-card--locked';
       return lvl === this.active ? 'level-card level-card--active' : 'level-card level-card--idle';
     },
-    numberClass(lvl) {
-      const base = 'rounded-full px-3 py-1 text-sm font-bold uppercase tracking-wide';
-      if (lvl === this.active) return `${base} bg-kid-blue text-white`;
-      return `${base} surface-2 text-kid-muted`;
-    },
-    tagClass(lvl) {
-      const base = 'rounded-lg px-2 py-1 text-sm font-black uppercase';
-      if (lvl === this.active) return `${base} bg-kid-blue/10 text-kid-blue`;
-      return `${base} surface-2 text-kid-muted`;
-    },
+    numberClass(lvl) { return lvl === this.active ? 'level-card__number level-card__number--active' : 'level-card__number'; },
+    tagClass(lvl)    { return lvl === this.active ? 'level-card__tag level-card__tag--active'       : 'level-card__tag'; },
     nameClass(lvl) {
-      const base = 'text-center text-base font-bold';
-      if (lvl === this.active) return `${base} text-kid-text`;
-      if (!this.availableSet.has(lvl)) return `${base} text-kid-muted/50`;
-      return `${base} text-kid-muted`;
+      if (lvl === this.active) return 'level-card__name level-card__name--active';
+      if (!this.availableSet.has(lvl)) return 'level-card__name level-card__name--locked';
+      return 'level-card__name';
     },
     getName(id) { return this.getLevelName(id); },
     onLevelClick(event, lvl) {

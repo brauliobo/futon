@@ -326,6 +326,14 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .level-card--active { @apply shadow-md; border-color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 5%, var(--kid-surface)); box-shadow: 0 0 18px var(--glow-blue); }
 .level-card--locked { @apply cursor-not-allowed shadow-sm; border-color: var(--kid-border); }
 
+.level-card__number { @apply rounded-full px-3 py-1 text-sm font-bold uppercase tracking-wide surface-2 text-kid-muted; }
+.level-card__number--active { @apply bg-kid-blue text-white; background: var(--kid-blue); color: #fff; }
+.level-card__tag { @apply rounded-lg px-2 py-1 text-sm font-black uppercase surface-2 text-kid-muted; }
+.level-card__tag--active { color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface)); }
+.level-card__name { @apply text-center text-base font-bold; color: var(--kid-muted); }
+.level-card__name--active { color: var(--kid-text); }
+.level-card__name--locked { color: color-mix(in srgb, var(--kid-muted) 50%, transparent); }
+
 /* Set card — SetCard.vue set tile on Home */
 .set-card { @apply flex h-full flex-col gap-2 rounded-2xl border theme-border bg-kid-surface p-5 transition-all duration-300; border-left-width: 6px; }
 .set-card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.10); }
