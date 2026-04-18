@@ -71,6 +71,15 @@ const CASES = [
   ['method', 'あ (hiragana) corresponde a ア em katakana — mesmo som.', 'hiragana+katakana+corresponde'],
   ['method', 'No alfabeto, após A vem B.', 'alfabeto sequence'],
   ['method', 'Tu + -as na 1ª conjugação.', 'suffix rule w/ conjugação'],
+
+  // --- method: accent-initial words must match (iter 73 bugfix) ---
+  ['method', 'sen 30° = 1/2 (ângulo notável).', 'ângulo preceded by paren — \\b-ASCII bug'],
+  ['method', 'Σ 1/n é a série harmônica — diverge.', 'série at start + diverge'],
+  ['method', 'Um único símbolo.', 'counting teaching'],
+  ['method', 'PG infinita (|q|<1).', 'infinita concept'],
+  ['method', 'Em EVA, o E está no início.', 'letter position início'],
+  ['method', 'BANANA começa com B.', 'letter-recognition começa'],
+  ['method', 'A letra B completa a palavra: BOCA.', 'letra + completa'],
 ];
 
 let passed = 0, failed = 0;

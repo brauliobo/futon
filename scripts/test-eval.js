@@ -110,6 +110,32 @@ const CASES = [
     }),
     expect: r => r.score < 10,
   },
+  {
+    name: 'distractors: phrase-answer exempt from length-cue check (iter 73)',
+    run: () => scoreDistractors({
+      pages: [{
+        exercises: [{
+          choices: ['adjunto adverbial de finalidade', 'modo', 'lugar', 'tempo'],
+          correctAnswer: 'adjunto adverbial de finalidade',
+          question: 'q',
+        }],
+      }],
+    }),
+    expect: r => r.score === 10,
+  },
+  {
+    name: 'distractors: single-word answer still flagged on length-cue',
+    run: () => scoreDistractors({
+      pages: [{
+        exercises: [{
+          choices: ['superlativo', 'a', 'e', 'o'],
+          correctAnswer: 'superlativo',
+          question: 'q',
+        }],
+      }],
+    }),
+    expect: r => r.score < 10,
+  },
 ];
 
 let passed = 0, failed = 0;

@@ -273,7 +273,13 @@ function scoreDistractors(set) {
     const ch = choicesOf(e);
     const trimmed = ch.map(s => s.trim());
     if (new Set(trimmed).size < ch.length) { weak++; continue; }
-    const lens = ch.map(s => s.length);
+    // Length-cue check: exempt grammar/vocab exercises where the correct
+    // answer is a multi-word phrase (teaching multi-word concepts via
+    // phrase-vs-atom contrast is a legitimate Kumon pattern).
+    const ans = String(e.correctAnswer ?? '').trim();
+    const phraseAnswer = /\s/.test(ans);
+    if (phraseAnswer) continue;
+    const lens = trimmed.map(s => s.length);
     if (Math.max(...lens) / Math.max(1, Math.min(...lens)) > 6) weak++;
   }
   const pct = 1 - weak / choiceExs.length;

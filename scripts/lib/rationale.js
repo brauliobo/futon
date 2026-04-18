@@ -4,7 +4,10 @@
 // Method vocabulary: imperatives, reasoning connectors, and domain-specific
 // operation/concept words. A rationale earns "method" credit if it uses any
 // of these — i.e. it teaches *how* or *why*, not just restates the answer.
-export const METHOD_RE = new RegExp('\\b(?:' + [
+// Lexicon is authored with accents for readability; we strip them at build
+// time so ASCII `\b` boundaries can anchor words that begin with á/â/ã/é/ê/í
+// etc. The matching input is also stripped (see categorize()).
+const METHOD_TERMS = [
   // Imperatives (PT)
   'faça', 'conte', 'some', 'soma[rm]?', 'subtraia', 'divida', 'dividir',
   'multiplique', 'calcule', 'resolva', 'converta', 'substitua',
@@ -36,8 +39,11 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'quadrante', 'circunscrit[oa]', 'inscrit[oa]', 'raio', 'ssa\\b',
   'obtus[oa]', 'agud[oa]', 'colinear', 'perpendicular', 'paralel[oa]',
   'teorema', 'bissetriz', 'mediana', 'altura',
+  'símbolo[s]?', 'algarismo[s]?', 'série', 'diverge', 'converge',
+  'notáv[ea]l', 'harmônica', 'geométrica', 'aritmética', 'infinita',
   // Grammar / reading concepts (PT)
-  'termin[ao]', 'respond[ae]', 'modifica', 'liga', 'indica', 'substitui',
+  'termin[ao]', 'respond[ae]', 'modifica', 'liga[mnrs]?', 'ligação', 'ligad[oa]s?',
+  'indica', 'substitui',
   'acompanha', 'determina', 'introduz', 'marca', 'função', 'sufixo',
   'prefixo', 'parágrafo', 'trecho', 'pista', 'contexto', 'palavra.chave',
   'sílaba', 'acento', 'género|gênero', 'número',
@@ -55,6 +61,11 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'd[íi]grafo', 'fonema', 'encontro', 'contém', 'consiste',
   'alfabeto', 'conjugação', 'corresponde', 'correspond[êe]ncia',
   'hiragana', 'katakana', 'kanji',
+  // Letter-position / recognition (1A-level)
+  'começa[mr]?', 'inicia[mnrs]?', 'termin[aeo][mr]?', 'completa[mr]?',
+  'no\\s+início', 'no\\s+meio', 'no\\s+fim', 'início\\b', 'fim\\b',
+  'letra\\b', 'letras\\b', 'primeira\\s+letra', 'última\\s+letra',
+  'formato', 'entre\\b',
   // Correspondence / genre structure
   'vocativo', 'destinatário', 'remetente', 'saudação', 'despedida',
   'assinatura', 'cabeçalho', 'corpo', 'circulação', 'familiar',
@@ -85,7 +96,11 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'locate', 'identify', 'replace', 'means', 'indicates', 'modifies',
   'links', 'substitute', 'determines', 'ends\\s+with', 'starts\\s+with',
   'borrow', 'carry', 'digit', 'column', 'regroup',
-].join('|') + ')\\b', 'i');
+];
+export const METHOD_RE = new RegExp(
+  '\\b(?:' + METHOD_TERMS.map(t => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).join('|') + ')\\b',
+  'i'
+);
 
 export const RESTATE_RE = /^\s*(a\s+(?:resposta|grafia|forma|preposição|palavra|letra)\s+correta\s+(?:aqui\s+)?(?:é|usa)|resposta:|answer:|é\s+\d|is\s+\d|the\s+correct\s+answer|correct\s+answer:)/i;
 
@@ -106,6 +121,12 @@ const TRANSFORMATION_RE = /\S\s*→\s*\S/;
 // math formulas like "A = base × altura" or "V = πr²h".
 const DEFINITION_RE = /(?:['"][^'"]{2,}['"]|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]{3,}|[A-Z]\s+=)\s*=?\s*\S/;
 
+// Strip accents for matching: JS `\b` anchors are ASCII-only, so words that
+// *start* with accented letters (ângulo, década) never fire a word-boundary
+// match. Normalizing both sides removes that dead zone without requiring
+// complex Unicode lookarounds in every lexicon entry.
+const stripAccents = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
 export function categorize(rationale) {
   if (!rationale || typeof rationale !== 'string') return 'missing';
   const s = rationale.trim();
@@ -116,7 +137,8 @@ export function categorize(rationale) {
   if (s.length < 10 && !hasEquation) return 'short';
   if (s.length < 6) return 'short';
   if (RESTATE_RE.test(s)) return 'restatement';
-  if (METHOD_RE.test(s)) return 'method';
+  const sAscii = stripAccents(s);
+  if (METHOD_RE.test(sAscii)) return 'method';
   if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s) || ARITHMETIC_RE.test(s)) return 'method';
   return 'generic';
 }
