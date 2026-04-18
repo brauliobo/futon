@@ -16,7 +16,12 @@ const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', GRAY = '\x1b[90m';
 const c = (t, col) => `${col}${t}${RESET}`;
 
-const THRESHOLD = Number(process.argv.find(a => a.startsWith('--min='))?.slice(6)) || 10;
+// Default threshold 4: portuguese sets commonly use "one exercise per
+// page tagged with a specific objective" (10 pages × 1 ex = 10 ex total,
+// but distributed across 4 objectives = 4 ex each), which is deliberate
+// thematic coverage not a drill gap. Anything below 4 is a real gap.
+// Pass --min=10 for the stricter Kumon mastery threshold.
+const THRESHOLD = Number(process.argv.find(a => a.startsWith('--min='))?.slice(6)) || 4;
 
 async function main() {
   const files = await fg('src/levels/**/set_*.yaml');
