@@ -46,7 +46,7 @@ export function rationaleFor(q) {
 }
 
 async function main() {
-  const files = await fg('src/levels/math/O/set_{10,11,12,13}.yaml');
+  const files = await fg('src/levels/math/O/set_*.yaml');
   let total = 0;
   for (const f of files) {
     let raw = readFileSync(f, 'utf8');
