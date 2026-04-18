@@ -55,6 +55,10 @@ const CASES = [
 
   // --- regression guards (iter 59/60 bugfix) ---
   ['method', 'Anterior = conte 1 para trás: 1 → 0.', 'answer 0 / digit'],
+  // Short worked-computation rationales (iter 70)
+  ['method', '5-5 = 0.', 'short but has equation — valid demo'],
+  ['method', '9-9 = 0.', 'short arithmetic demo'],
+  ['short', 'hmm.', 'still too short, no equation'],
 ];
 
 let passed = 0, failed = 0;

@@ -86,6 +86,9 @@ export const RESTATE_RE = /^\s*(a\s+(?:resposta|grafia|forma|preposição|palavr
 // the computation" without needing an imperative verb.
 const COMPUTATION_RE = /=\s*[^=]+=\s*[^=]+/;
 const SUBSTITUTION_RE = /[a-z]\([-+]?\d/i;
+// Simple arithmetic: "5-5 = 0", "3 × 4 = 12", "-2 + 7 = 5". Short but
+// clearly teaching by demonstration.
+const ARITHMETIC_RE = /-?\d+\s*[+\-×÷*\/]\s*-?\d+\s*=\s*-?\d/;
 // Transformation arrow: "'study' → 'studied'" / "X → Y" / "2 → 4" —
 // demonstrates before-and-after mapping, a core Kumon teaching pattern.
 const TRANSFORMATION_RE = /\S\s*→\s*\S/;
@@ -98,10 +101,14 @@ const DEFINITION_RE = /(?:['"][^'"]{2,}['"]|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-zá�
 export function categorize(rationale) {
   if (!rationale || typeof rationale !== 'string') return 'missing';
   const s = rationale.trim();
-  if (s.length < 10) return 'short';
   if (s.length > 300) return 'long';
+  // Short rationales with an equation/computation (e.g. "5-5 = 0.") teach
+  // via arithmetic demonstration — don't penalize for brevity.
+  const hasEquation = /=/.test(s);
+  if (s.length < 10 && !hasEquation) return 'short';
+  if (s.length < 6) return 'short';
   if (RESTATE_RE.test(s)) return 'restatement';
   if (METHOD_RE.test(s)) return 'method';
-  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s)) return 'method';
+  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s) || ARITHMETIC_RE.test(s)) return 'method';
   return 'generic';
 }
