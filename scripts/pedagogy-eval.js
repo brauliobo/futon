@@ -188,6 +188,23 @@ function scoreAnswerDistribution(set) {
     }
   }
 
+  // Progressive-theme: each page teaches one concept, so its dominant
+  // answer differs from the next page's. If ≥3 consecutive pages skew
+  // and their dominant answers are all distinct, treat as intentional.
+  const pageDominants = (set.pages || []).map(p => {
+    const ans = (p.exercises || []).map(e => String(e.correctAnswer || '').trim().toLowerCase()).filter(Boolean);
+    if (ans.length < 4) return null;
+    const f = {};
+    for (const a of ans) f[a] = (f[a] || 0) + 1;
+    const maxF = Math.max(...Object.values(f));
+    if (maxF / ans.length <= 0.6) return null;
+    return Object.entries(f).find(([, v]) => v === maxF)[0];
+  });
+  const skewed = pageDominants.filter(Boolean);
+  if (skewed.length >= 3 && new Set(skewed).size === skewed.length) {
+    return { score: 10, max: 10, issue: null };
+  }
+
   let score = 10;
   const issues = [];
   for (const p of set.pages || []) {
