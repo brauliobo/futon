@@ -9,6 +9,7 @@
       :is-read-only="isReadOnly"
       :set-input-type="setInputType"
       @update-answer="handleUpdateAnswer"
+      ref="listRef"
     )
 </template>
 
@@ -55,6 +56,7 @@ export default {
       this.page.exercises[index].answer = payload.answer;
       this.emitPageStatus();
     },
+    focusFirstUnanswered() { this.$refs.listRef?.focusFirstUnanswered?.(); },
   },
   data() {
     return {

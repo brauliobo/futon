@@ -3,7 +3,7 @@
   div(class="flex items-center justify-between gap-3 pt-2")
     button(@click="$emit('prev')" :disabled="!canGoPrev" class="btn-ghost" aria-label="Previous page")
       | ← {{ $t('previous') }}
-    button(@click="$emit('next')" :disabled="!canGoNext" :class="nextClass" aria-label="Next page")
+    button(@click="handleNext" :disabled="isDisabled" :class="nextClass" aria-label="Next page")
       | {{ nextLabel }}
 </template>
 
@@ -16,9 +16,10 @@ export default {
     isLastPage: { type: Boolean, default: false },
     remaining: { type: Number, default: 0 },
   },
-  emits: ['prev', 'next'],
+  emits: ['prev', 'next', 'focus-remaining'],
   computed: {
     isRemaining() { return !this.canGoNext && this.remaining > 0; },
+    isDisabled() { return !this.canGoNext && !this.isRemaining; },
     nextClass() {
       if (this.isRemaining) return 'btn-remaining';
       const c = this.isLastPage ? 'btn-success' : 'btn-primary';
@@ -27,6 +28,12 @@ export default {
     nextLabel() {
       if (this.isRemaining) return `✏️ ${this.$t('remaining') || 'Falta'} ${this.remaining}`;
       return this.isLastPage ? `✨ ${this.$t('finish')}` : `${this.$t('next')} →`;
+    },
+  },
+  methods: {
+    handleNext() {
+      if (this.isRemaining) { this.$emit('focus-remaining'); return; }
+      this.$emit('next');
     },
   },
 };

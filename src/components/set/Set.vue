@@ -26,6 +26,7 @@
                 :key="'page-' + currentPageIndex + '-' + resetKey"
                 v-bind="pageProps"
                 @update-page-status="handlePageStatus"
+                ref="pageRef"
               )
             div(class="sticky bottom-0 z-10 -mx-5 px-5 py-3 sm:static sm:mx-0 sm:px-0 sm:py-0 nav-sticky")
               PageNavigation(
@@ -35,6 +36,7 @@
                 :remaining="Math.max(0, (currentPage.exercises?.length || 0) - answeredCount)"
                 @prev="prevPage"
                 @next="nextPage"
+                @focus-remaining="focusRemaining"
               )
 
         div(v-if="isSubmitted" class="space-y-5")
@@ -245,6 +247,7 @@ export default {
         this.goToPage(this.currentPageIndex - 1);
       }
     },
+    focusRemaining() { this.$refs.pageRef?.focusFirstUnanswered?.(); },
     isPageCompleted(index) {
       const page = this.pages[index] || this.pages[0] || { exercises: [] };
       return page.exercises.every(ex => String(ex.answer || '').trim() !== '');
