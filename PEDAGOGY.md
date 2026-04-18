@@ -90,9 +90,11 @@ Supported shapes today:
 | `word_problem` | `X tem N ◆. Y deu mais M ◆. Quantas?` | `Ele tinha N e ganhou M: some N + M = N+M.` |
 | `word_problem` | `X tinha N ◆. Perdeu M ◆. Quantas?` | `Começou com N e perdeu M: subtraia N - M = N-M.` |
 | `skip_counting` | `X, Y, Z, ?` (AP) | `Contagem de +d em +d: Z + d = Z+d.` |
+| `trigonometry` | `arcsen(V) = ?`, `arccos(V) = ?`, `arctan(V) = ?` | `arccos(√2/2) = 45° porque cos(45°) = √2/2.` (lookup of standard values) |
+| `trigonometry` | `1/sen(θ°) = ?`, `1/cos(θ°) = ?` | `1/sen(30°) = 2 (cossecante): calcule sen(30°) e inverta.` |
 
 Known placeholder strings (each matched literally):
-`Analise os dados e aplique a operação pedida.` · `Leia com atenção e escolha a operação adequada.` · `Responda conforme a pergunta.` · `Verifique contando de novo.` · `Organize os dados antes de operar.`
+`Analise os dados e aplique a operação pedida.` · `Leia com atenção e escolha a operação adequada.` · `Responda conforme a pergunta.` · `Verifique contando de novo.` · `Organize os dados antes de operar.` · `Aplique razões trigonométricas e o ciclo.` · `Radical: √(a·b) = √a·√b; racionalize quando preciso.` · `Opere a fração conforme a regra correspondente.`
 
 When a new placeholder/question pattern emerges, add another rule to `generateRationale()` in the script. Never widen the placeholder list with ambiguous strings — the fixer must only rewrite rationales that are *known* to be wrong.
 
