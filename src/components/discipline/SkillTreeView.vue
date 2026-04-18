@@ -27,7 +27,7 @@
         )
 
     //- Set list for active node — visually separated card
-    div(v-if="activeNode && activeSets.length" class="mt-6 pt-6 border-t-2 border-dashed theme-border animate-slide-up")
+    div(v-if="activeNode && activeSets.length" class="mt-6 pt-6 border-t-2 border-dashed theme-border animate-slide-up" ref="setListEl")
       div(class="rounded-3xl bg-kid-blue/5 border border-kid-blue/20 p-5")
         h3(class="text-lg font-black text-kid-text mb-3 flex items-center gap-2")
           span(class="text-2xl") {{ activeNode.icon }}
@@ -37,7 +37,7 @@
           :activeSlug="activeSlug"
           @start="$emit('start-set', $event)"
         )
-    div(v-else-if="activeNode && hasLoadableLevels && !activeSets.length" class="mt-6 flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-base font-semibold text-kid-blue animate-slide-up")
+    div(v-else-if="activeNode && hasLoadableLevels && !activeSets.length" class="mt-6 flex items-center gap-2 rounded-2xl border border-kid-blue/20 bg-kid-blue/5 px-4 py-3 text-base font-semibold text-kid-blue animate-slide-up" ref="setListEl")
       Spinner
       span {{ $t('loading') || 'Loading...' }}
 </template>
@@ -96,6 +96,7 @@ export default {
           this.$emit('load-levels', lvl);
         }
       }
+      this.$nextTick(() => this.$refs.setListEl?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
     },
   },
 };
