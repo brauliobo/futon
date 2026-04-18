@@ -51,7 +51,7 @@ function findCategory(question) {
 
 function stripChoices(q) { return String(q || '').replace(CHOICE_RE, '').trim(); }
 
-function generateRationale(question, answer) {
+export function generateRationale(question, answer) {
   const q = stripChoices(question);
   const a = String(answer ?? '').trim();
   if (!a) return null;
@@ -115,17 +115,19 @@ const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m', GRAY = '\x1b[90m';
 const c = (t, col) => `${col}${t}${RESET}`;
 
-let total = 0, filesChanged = 0;
-for (const f of walk()) {
-  const ch = processFile(f);
-  if (ch) {
-    filesChanged++;
-    total += ch;
-    console.log(c(`  ${f.replace(process.cwd() + '/', '')}`, CYAN), c(`${ch}`, ch > 5 ? YELLOW : GREEN));
+if (import.meta.url === `file://${process.argv[1]}`) {
+  let total = 0, filesChanged = 0;
+  for (const f of walk()) {
+    const ch = processFile(f);
+    if (ch) {
+      filesChanged++;
+      total += ch;
+      console.log(c(`  ${f.replace(process.cwd() + '/', '')}`, CYAN), c(`${ch}`, ch > 5 ? YELLOW : GREEN));
+    }
   }
+  console.log('\n' + '═'.repeat(60));
+  if (!total) { console.log(c('No restatements to rewrite.', GREEN)); process.exit(0); }
+  const verb = APPLY ? 'rewritten' : 'would rewrite';
+  console.log(c(`${verb} ${total} restatement(s) in ${filesChanged} file(s)`, BOLD + (APPLY ? GREEN : YELLOW)));
+  if (!APPLY) console.log(c('Re-run with --apply to write changes.', GRAY));
 }
-console.log('\n' + '═'.repeat(60));
-if (!total) { console.log(c('No restatements to rewrite.', GREEN)); process.exit(0); }
-const verb = APPLY ? 'rewritten' : 'would rewrite';
-console.log(c(`${verb} ${total} restatement(s) in ${filesChanged} file(s)`, BOLD + (APPLY ? GREEN : YELLOW)));
-if (!APPLY) console.log(c('Re-run with --apply to write changes.', GRAY));

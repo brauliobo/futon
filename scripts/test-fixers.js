@@ -5,6 +5,7 @@
 
 import { generateRationale } from './fix-placeholder-rationales.js';
 import { generateRationale as generateJP } from './fix-japanese-rationales.js';
+import { generateRationale as generateRestatement } from './fix-restatements.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', GRAY = '\x1b[90m';
@@ -73,6 +74,14 @@ const JP_CASES = [
   ['japanese_vocab', '???', 'mystery', null],
 ];
 
+// Restatement rewriter — takes (question, answer), returns method form.
+const RESTATEMENT_CASES = [
+  ['Qual é uma vogal? (A/B/C)', 'A', 'A, E, I, O, U são as vogais'],
+  ['Qual é uma cor? (AZUL/CASA/PAPAI)', 'AZUL', 'é um(a) cor'],
+  ['Qual é um animal? (gato/mesa/flor)', 'gato', 'é um(a) animal'],
+  ['Generic question with no category?', 'x', 'Observe as opções'],
+];
+
 let passed = 0, failed = 0;
 const failures = [];
 const run = (fn, label) => ([type, q, a, expected]) => {
@@ -84,8 +93,16 @@ const run = (fn, label) => ([type, q, a, expected]) => {
 for (const tc of CASES) run(generateRationale, 'placeholder')(tc);
 for (const tc of JP_CASES) run(generateJP, 'japanese')(tc);
 
+// Restatement generator has a different signature (q, a) — wrapper.
+for (const [q, a, expected] of RESTATEMENT_CASES) {
+  const got = generateRestatement(q, a);
+  const ok = got && got.includes(expected);
+  if (ok) passed++;
+  else { failed++; failures.push({ label: 'restatement', type: '-', q, a, expected, got }); }
+}
+
 console.log(c('\n🧪 FIXER RULE TESTS', BOLD));
-console.log(`  ${passed} passed · ${failed} failed · ${CASES.length + JP_CASES.length} total\n`);
+console.log(`  ${passed} passed · ${failed} failed · ${CASES.length + JP_CASES.length + RESTATEMENT_CASES.length} total\n`);
 if (failed) {
   console.log(c('FAILURES:', BOLD + RED));
   for (const f of failures) {
