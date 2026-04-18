@@ -21,6 +21,7 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm eval:alignment` | Flag math sets whose `example` omits an operator their exercises use |
 | `pnpm fix:examples:ops [--apply]` | Auto-append a worked example for each missing operator |
 | `pnpm eval:relevance` | Spot copy-paste rationale bugs: for pure `N op N` drills, rationale must reference an operand, the answer, or a decomposing digit |
+| `pnpm eval:coverage [--min=N]` | List objectives with fewer than N exercises globally (default 10) — flags under-drilled learning targets |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
 | `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected |
 | `pnpm fix:placeholders [--apply]` | Deterministic rule-based rewriter for known-bad rationales (16 rule shapes) |
@@ -218,6 +219,12 @@ Checks numerically-anchored operators (digit op digit) so hyphens in words don't
 Portuguese and English word-form numbers (zero/um/dois/one/two/…) map to digits for comparison. Only fires on pure arithmetic — word problems, grammar, and vocab skip this check since their rationales teach concepts without restating numbers.
 
 Verified 50,186 method-rationales; zero disconnected. Wired into `eval:all`.
+
+## Objective coverage
+
+`pnpm eval:coverage` counts how many exercises target each learning objective across the whole curriculum. Kumon doctrine: every objective needs mass-practice for mastery, so anything with fewer than ~10 exercises globally is a red flag — either expand it (add exercises), retire it (drop the tag), or merge it with a related objective.
+
+Not wired into `eval:all` because this surfaces curriculum-design decisions rather than regressions; running it blocks CI until authors triage. Treat output as a backlog for content work. First run flagged 20 under-drilled Portuguese BNCC codes (1–9 exercises each) across levels D, E, J, K, and G.
 
 **Fix options**:
 - **Content**: reshuffle `choices:` / the `(a/b/c)` order in YAML so the correct answer rotates across positions.
