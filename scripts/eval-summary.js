@@ -33,6 +33,7 @@ const CHECKS = [
   ['eval:diversity', 'Rationale diversity (advisory)'],
   ['eval:length-bias', 'Correct-answer length bias (advisory)'],
   ['eval:progression', 'Per-page difficulty progression (advisory)'],
+  ['eval:keyword-leak', 'Answer keyword leak in prompt (advisory)'],
 ];
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
