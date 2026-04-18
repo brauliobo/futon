@@ -98,6 +98,22 @@ Known placeholder strings (each matched literally):
 
 When a new placeholder/question pattern emerges, add another rule to `generateRationale()` in the script. Never widen the placeholder list with ambiguous strings — the fixer must only rewrite rationales that are *known* to be wrong.
 
+## Answer-position bias scanner
+
+`pnpm eval:bias` scans every set's choice exercises and reports the distribution of correct-answer *positions* (first, second, third…). Because choices render in YAML order with no runtime shuffle, a set whose correct answer always sits at position 1 lets students click without reading.
+
+```bash
+pnpm eval:bias                        # repo scan
+pnpm eval:bias --subject portuguese
+pnpm eval:bias --min-choices 10       # only sets with ≥10 choice exercises
+```
+
+Flags sets where any position carries ≥50% of answers (strong bias), or any position holds 0% when 3+ positions exist. Exits 1 when any set has ≥70% bias.
+
+**Fix options**:
+- **Content**: reshuffle `choices:` / the `(a/b/c)` order in YAML so the correct answer rotates across positions.
+- **App**: add a seeded runtime shuffle in `ChoiceExercise.vue` (same seed per attempt → retry consistency). Not yet implemented.
+
 ## Snapshot + delta tracker
 
 `pnpm eval:snapshot` saves the current global score + per-level averages + placeholder counts to `PEDAGOGY_SNAPSHOT.json`. Re-running without `--save` diffs against the baseline and flags regressions:
