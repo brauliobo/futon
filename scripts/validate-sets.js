@@ -105,6 +105,18 @@ function validateSet(raw) {
   if (raw.progress !== undefined) {
     issues.push(`Stale "progress" field committed (belongs in profile storage, not content YAML)`);
   }
+  // Unknown exercise fields almost always indicate a YAML-parse accident
+  // where an unquoted multi-word answer got split at the colon (e.g.
+  // `correctAnswer: (3` / `4):` → "(3" and "4)" as separate keys).
+  const KNOWN = new Set(['type','question','correctAnswer','rationale','objectives','difficulty','choices','answer']);
+  for (const p of raw.pages || []) {
+    for (const [eIdx, e] of (p.exercises || []).entries()) {
+      const unknown = Object.keys(e).filter(k => !KNOWN.has(k));
+      if (unknown.length) {
+        issues.push(`Page ${p.pageNumber ?? '?'} exercise ${eIdx + 1}: unknown field(s) ${JSON.stringify(unknown)} — likely YAML-parse accident (quote multi-word correctAnswer).`);
+      }
+    }
+  }
 
   return { raw, issues, warnings, exercises: total, pages: (raw.pages || []).length, duplicates, randomness };
 }
