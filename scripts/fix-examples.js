@@ -39,10 +39,19 @@ function buildAddition(ex) {
 }
 
 function rewriteLine(line, addition) {
-  const m = /^(\s*example:\s*)(["']?)([^"'\n]*)(\2)\s*$/.exec(line);
-  if (!m) return null;
-  const [, prefix, quote, body] = m;
+  // Match: `  example: "body"` (double-quoted, body may contain single
+  // quotes) OR `  example: body` (unquoted). Single-quoted with embedded
+  // single quotes is ambiguous and skipped.
+  let m = /^(\s*example:\s*)"(.*)"\s*$/.exec(line);
+  let body;
+  if (m) body = m[2].replace(/\\"/g, '"');
+  else {
+    m = /^(\s*example:\s*)([^"'\n].*?)\s*$/.exec(line);
+    if (!m) return null;
+    body = m[2];
+  }
   if (!body.trim() || HAS_MODEL_RE.test(body)) return null;
+  const prefix = m[1];
   const core = body.trim().replace(/\s*\.$/, '');
   const merged = `${core}. ${addition}`.replace(/"/g, '\\"');
   return `${prefix.replace(/\s*$/, ' ')}"${merged}"`;
