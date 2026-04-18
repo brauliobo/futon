@@ -307,6 +307,17 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .review-choice--miss { border-color: var(--kid-red); background: color-mix(in srgb, var(--kid-red) 10%, var(--kid-surface)); color: var(--kid-red); text-decoration: line-through; }
 .review-choice--idle { background: var(--kid-surface); color: var(--kid-muted); border-color: var(--kid-border); }
 
+/* Answer input — Exercise.vue text/numeric input */
+.input-answer { @apply rounded-xl border-2 font-black focus:outline-none focus:ring-0 transition-all duration-300; }
+.input-answer::placeholder { font-weight: 600; color: color-mix(in srgb, var(--kid-muted) 60%, transparent); }
+.input-answer--text    { @apply w-full px-4 py-4 text-xl; border-width: 4px; }
+.input-answer--text::placeholder { font-size: 1rem; }
+.input-answer--numeric { @apply w-24 sm:w-20 h-12 text-center text-2xl; }
+.input-answer--numeric::placeholder { font-size: 1.5rem; }
+.input-answer--idle    { @apply bg-kid-surface text-kid-text shadow-sm; border-color: var(--kid-border-strong); }
+.input-answer--idle:focus { border-color: var(--kid-blue); box-shadow: 0 0 18px var(--glow-blue); }
+.input-answer--answered { @apply text-kid-text shadow-md; background: color-mix(in srgb, var(--kid-blue) 5%, var(--kid-surface)); border-color: var(--kid-blue); box-shadow: 0 0 18px var(--glow-blue); }
+
 /* Empathy hint card (used after wrong answers) */
 .hint-card {
   @apply flex items-start gap-2 rounded-2xl px-4 py-3 shadow-sm amber-soft-bg border;

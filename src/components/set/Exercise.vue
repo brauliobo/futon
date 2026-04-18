@@ -120,14 +120,9 @@ export default {
     },
     encouragement() { return Encourage.message(this.$t.bind(this), this.exerciseNumber); },
     inputClass() {
-      const base = 'rounded-xl border-2 font-black placeholder:font-bold placeholder:text-kid-muted/40 focus:outline-none focus:ring-0 transition-all duration-300';
-      const size = this.isNumeric
-        ? 'w-24 sm:w-20 h-12 text-center text-2xl placeholder:text-2xl'
-        : 'w-full px-4 py-4 text-xl placeholder:text-sm border-4';
-      const tone = (this.hasAnswer && !this.isEditing)
-        ? 'border-kid-blue bg-kid-blue/5 text-kid-text shadow-md blue-glow'
-        : 'theme-border-strong bg-kid-surface text-kid-text focus:border-kid-blue focus:shadow-lg focus:blue-glow shadow-sm';
-      return `${base} ${size} ${tone}`;
+      const shape = this.isNumeric ? 'input-answer--numeric' : 'input-answer--text';
+      const tone = (this.hasAnswer && !this.isEditing) ? 'input-answer--answered' : 'input-answer--idle';
+      return `input-answer ${shape} ${tone}`;
     },
     cardClass() {
       const v = this.isReadOnly ? (this.isCorrect ? 'correct' : 'incorrect') : (this.hasAnswer ? 'answered' : 'neutral');
