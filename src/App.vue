@@ -6,7 +6,7 @@
       header(class="header-bg backdrop-blur-md border-b theme-border w-full sticky top-0 z-20 shadow-sm")
         div(class="mx-auto flex w-full max-w-[1920px] items-center gap-3 px-4 py-3")
           div(class="flex shrink-0 items-center")
-            button(v-if="selectedSet" @click="goHome" class="flex items-center gap-1 text-base font-bold text-kid-text/70 hover:text-kid-blue transition-all active:scale-95" :aria-label="$t('back')")
+            button(v-if="selectedSet" @click="goHome" class="flex items-center justify-center sm:gap-1.5 h-10 w-10 sm:w-auto sm:px-3 rounded-full sm:rounded-2xl border theme-border bg-kid-surface text-base font-bold text-kid-text/80 shadow-sm hover:border-kid-blue/40 hover:text-kid-blue transition-all active:scale-95" :aria-label="$t('back')")
               span(class="text-lg") ←
               span(class="hidden sm:inline") {{ $t('back') }}
             span(v-else class="text-2xl font-black text-kid-blue tracking-tight hover:animate-wiggle cursor-default") ✏️ Futon
