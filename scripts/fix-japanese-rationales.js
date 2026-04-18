@@ -44,7 +44,7 @@ const CHOICE_RE = /\(([^)]+\/[^)]+)\)\s*$/;
 
 function stripChoices(q) { return q.replace(CHOICE_RE, '').trim(); }
 
-function generateRationale(type, question, answer) {
+export function generateRationale(type, question, answer) {
   const q = stripChoices(String(question || ''));
   const a = String(answer ?? '').trim();
   if (!q || !a) return null;
@@ -204,21 +204,25 @@ function walk() {
   return files;
 }
 
-const RESET = '\x1b[0m', BOLD = '\x1b[1m';
-const GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m', GRAY = '\x1b[90m';
-const c = (t, col) => `${col}${t}${RESET}`;
+// Only walk+rewrite when invoked as a script; importers (tests) just get
+// the exports without triggering file I/O.
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const RESET = '\x1b[0m', BOLD = '\x1b[1m';
+  const GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m', GRAY = '\x1b[90m';
+  const c = (t, col) => `${col}${t}${RESET}`;
 
-let total = 0, filesChanged = 0;
-for (const f of walk()) {
-  const ch = processFile(f);
-  if (ch) {
-    filesChanged++;
-    total += ch;
-    console.log(c(`  ${f.replace(process.cwd() + '/', '')}`, CYAN), c(`${ch} rationale(s)`, ch > 20 ? YELLOW : GREEN));
+  let total = 0, filesChanged = 0;
+  for (const f of walk()) {
+    const ch = processFile(f);
+    if (ch) {
+      filesChanged++;
+      total += ch;
+      console.log(c(`  ${f.replace(process.cwd() + '/', '')}`, CYAN), c(`${ch} rationale(s)`, ch > 20 ? YELLOW : GREEN));
+    }
   }
+  console.log('\n' + '═'.repeat(60));
+  if (!total) { console.log(c('No Japanese rationales to add.', GREEN)); process.exit(0); }
+  const verb = APPLY ? 'added' : 'would add';
+  console.log(c(`${verb} ${total} rationale(s) in ${filesChanged} file(s)`, BOLD + (APPLY ? GREEN : YELLOW)));
+  if (!APPLY) console.log(c('Re-run with --apply to write changes.', GRAY));
 }
-console.log('\n' + '═'.repeat(60));
-if (!total) { console.log(c('No Japanese rationales to add.', GREEN)); process.exit(0); }
-const verb = APPLY ? 'added' : 'would add';
-console.log(c(`${verb} ${total} rationale(s) in ${filesChanged} file(s)`, BOLD + (APPLY ? GREEN : YELLOW)));
-if (!APPLY) console.log(c('Re-run with --apply to write changes.', GRAY));

@@ -4,6 +4,7 @@
 // Ensures future rule edits don't silently change generated output.
 
 import { generateRationale } from './fix-placeholder-rationales.js';
+import { generateRationale as generateJP } from './fix-japanese-rationales.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', GRAY = '\x1b[90m';
@@ -45,21 +46,50 @@ const CASES = [
   ['sequence', 'algo diferente', '5', null],
 ];
 
+const JP_CASES = [
+  // kanji → digit
+  ['japanese_vocab', '一', '1', 'O kanji 一 representa o número 1'],
+  // digit → kanji
+  ['japanese_vocab', '1', '一', '1 em kanji escreve-se 一'],
+  // kanji → kana reading
+  ['japanese_vocab', '一', 'いち', '一 lê-se いち'],
+  // kanji → Portuguese meaning
+  ['japanese_vocab', '犬', 'cachorro', 'O kanji 犬 significa "cachorro"'],
+  // katakana → Portuguese (loanword)
+  ['japanese_vocab', 'ブラジル', 'Brasil', 'ブラジル (katakana) significa "Brasil"'],
+  // hiragana ↔ katakana
+  ['kana_writing', 'あ', 'ア', 'あ (hiragana) corresponde a ア em katakana'],
+  // kana → romaji
+  ['kana_reading', 'あ', 'a', 'あ lê-se "a" (romaji)'],
+  // romaji → kana
+  ['kana_writing', 'a', 'あ', 'O som "a" em hiragana escreve-se あ'],
+  // kana number-reading → digit
+  ['japanese_vocab', 'いち', '1', 'いち é a leitura do número 1'],
+  // digit → kana reading
+  ['japanese_vocab', '1', 'いち', 'O número 1 lê-se "いち"'],
+  // mixed-script with kanji falls under kanji→text rule first (by design)
+  ['japanese_vocab', '学生ですか', 'Estudante?', 'significa "Estudante?"'],
+  // Unknown pair → null
+  ['japanese_vocab', '???', 'mystery', null],
+];
+
 let passed = 0, failed = 0;
 const failures = [];
-for (const [type, q, a, expected] of CASES) {
-  const got = generateRationale(type, q, a);
+const run = (fn, label) => ([type, q, a, expected]) => {
+  const got = fn(type, q, a);
   const ok = expected === null ? got === null : (got && got.includes(expected));
   if (ok) passed++;
-  else { failed++; failures.push({ type, q, a, expected, got }); }
-}
+  else { failed++; failures.push({ label, type, q, a, expected, got }); }
+};
+for (const tc of CASES) run(generateRationale, 'placeholder')(tc);
+for (const tc of JP_CASES) run(generateJP, 'japanese')(tc);
 
 console.log(c('\n🧪 FIXER RULE TESTS', BOLD));
-console.log(`  ${passed} passed · ${failed} failed · ${CASES.length} total\n`);
+console.log(`  ${passed} passed · ${failed} failed · ${CASES.length + JP_CASES.length} total\n`);
 if (failed) {
   console.log(c('FAILURES:', BOLD + RED));
   for (const f of failures) {
-    console.log(`  ${c('✗', RED)} ${f.type} "${f.q}" → ${f.a}`);
+    console.log(`  ${c('✗', RED)} [${f.label}] ${f.type} "${f.q}" → ${f.a}`);
     console.log(c(`     expected: ${f.expected}`, GRAY));
     console.log(c(`     got:      ${f.got}`, GRAY));
   }
