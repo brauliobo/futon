@@ -29,6 +29,9 @@ const global = Math.round(ped.sets.reduce((s, r) => s + r.pct, 0) / ped.sets.len
 const below70 = ped.sets.filter(r => r.pct < 70).length;
 const below85 = ped.sets.filter(r => r.pct < 85).length;
 const excellent = ped.sets.filter(r => r.pct >= 85).length;
+const top90 = ped.sets.filter(r => r.pct >= 90).length;
+const top95 = ped.sets.filter(r => r.pct >= 95).length;
+const top100 = ped.sets.filter(r => r.pct >= 100).length;
 
 const placeholderSets = disc.templates.length;
 const placeholderAffected = disc.templates.reduce((s, t) => s + t.count, 0);
@@ -62,6 +65,10 @@ console.log(`  Sets evaluated        ${c(ped.sets.length, BOLD)} across ${c(Obje
 console.log(`  Excellent (≥85%)      ${c(excellent, GREEN)}`);
 console.log(`  Acceptable (70-84%)   ${c(ped.sets.length - excellent - below70, YELLOW)}`);
 console.log(`  Needs rework (<70%)   ${c(below70, below70 ? RED : GREEN)}`);
+console.log(c('\n  Quality tiers', BOLD));
+console.log(`  Top-tier (≥95%)       ${c(top95, GREEN)}  ${c(`(${Math.round(100 * top95 / ped.sets.length)}% of sets)`, GRAY)}`);
+console.log(`  High (≥90%)           ${c(top90, GREEN)}  ${c(`(${Math.round(100 * top90 / ped.sets.length)}% of sets)`, GRAY)}`);
+console.log(`  Perfect (100%)        ${c(top100, top100 ? GREEN : GRAY)}`);
 console.log(c('\n  Content signals', BOLD));
 console.log(`  Placeholder templates ${c(placeholderSets, placeholderSets ? YELLOW : GREEN)} (affecting ${c(placeholderAffected, placeholderAffected ? YELLOW : GREEN)} exercises)`);
 console.log(`  Biased choice sets    ${c(biasedSets, biasedSets ? YELLOW : GREEN)} authored, ${c('neutralized at runtime', GRAY)}`);
