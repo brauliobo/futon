@@ -52,7 +52,7 @@
                 :aria-pressed="selectedAvatar === a"
               ) {{ a }}
           div(class="flex gap-3")
-            button(@click="cancelForm" class="flex-1 rounded-2xl border-2 theme-border-strong py-3 font-bold text-kid-muted hover:border-kid-red/40 hover:text-kid-red transition-all active:scale-95") {{ $t('cancel') }}
+            button(v-if="profiles.length > 0" @click="cancelForm" class="flex-1 rounded-2xl border-2 theme-border-strong py-3 font-bold text-kid-muted hover:border-kid-red/40 hover:text-kid-red transition-all active:scale-95") {{ $t('cancel') }}
             button(@click="createProfile" :disabled="!newName.trim()" class="flex-1 rounded-2xl bg-kid-blue py-3 font-bold text-white shadow-sm disabled:bg-kid-muted/20 disabled:text-kid-muted disabled:shadow-none disabled:cursor-not-allowed hover:shadow-lg hover:bg-kid-blue/90 transition-all active:scale-95") {{ $t('create') }}
 </template>
 
@@ -73,6 +73,10 @@ export default {
   },
   mounted() {
     if (this.profiles.length === 0) this.showNewForm = true;
+    this.$nextTick(() => this.$refs.nameInput?.focus());
+  },
+  watch: {
+    showNewForm(v) { if (v) this.$nextTick(() => this.$refs.nameInput?.focus()); },
   },
   methods: {
     selectProfile(profile) {

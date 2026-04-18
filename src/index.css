@@ -395,7 +395,7 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .level-card__number--active { @apply bg-kid-blue text-white; background: var(--kid-blue); color: #fff; }
 .level-card__tag { @apply rounded-lg px-2 py-1 text-sm font-black uppercase surface-2 text-kid-muted; }
 .level-card__tag--active { color: var(--kid-blue); background: var(--kid-blue-tint-10); }
-.level-card__name { @apply text-center text-base font-bold; color: var(--kid-muted); }
+.level-card__name { @apply text-center text-base font-bold; color: var(--kid-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .level-card__name--active { color: var(--kid-text); }
 .level-card__name--locked { color: var(--kid-muted-50); }
 
