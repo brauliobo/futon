@@ -104,6 +104,7 @@ function scoreGradient(set) {
   // don't have a "hot start" concept — first page matches the rest.
   const isUniform = rangeOfDiffs < 0.5;
   if (diffs[0] <= firstMax || isUniform) score += 5;
+  else if (diffs[0] <= firstMax + 0.5) { score += 3; issues.push(`first page slightly hot (${diffs[0].toFixed(1)})`); }
   else issues.push(`first page hot-start (${diffs[0].toFixed(1)})`);
   const jumps = diffs.slice(1).map((d, i) => Math.abs(d - diffs[i]));
   const maxJump = Math.max(...jumps);
