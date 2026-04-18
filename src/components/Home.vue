@@ -158,21 +158,12 @@ export default {
   },
   methods: {
     tabButtonClass(subject) {
-      const isActive = this.activeDiscipline === subject;
-      const base = 'flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2 rounded-2xl px-2 sm:px-5 py-2 sm:py-3.5 font-bold capitalize transition-all duration-200 border-2 active:scale-95';
-      if (isActive) {
-        const colors = { math: 'bg-kid-blue text-white border-kid-blue shadow-lg shadow-kid-blue/30', portuguese: 'bg-kid-green text-white border-kid-green shadow-lg shadow-kid-green/30', english: 'bg-orange-400 text-white border-orange-400 shadow-lg shadow-orange-300/40', japanese: 'bg-kid-red text-white border-kid-red shadow-lg shadow-kid-red/30' };
-        return `${base} ${colors[subject] || 'bg-kid-blue text-white border-kid-blue shadow-lg'} scale-[1.02]`;
-      }
-      return `${base} bg-kid-surface text-kid-muted theme-border shadow-sm hover:border-kid-blue/40 hover:text-kid-blue hover:-translate-y-0.5 hover:shadow-md`;
+      const state = this.activeDiscipline === subject ? 'subject-tab--active' : 'subject-tab--idle';
+      return `subject-tab subject-tab--${subject} ${state}`;
     },
     subjectIcon(s) { return SubjectBranding.icon(s); },
     subjectColor(s) { return SubjectBranding.color(s); },
-    modeTabClass(m) {
-      const base = 'flex items-center gap-1.5 rounded-2xl px-4 py-2 text-sm font-bold transition-all duration-200 border-2 active:scale-95';
-      if (this.mode === m) return `${base} border-kid-blue bg-kid-blue/10 text-kid-blue shadow-sm`;
-      return `${base} border-transparent text-kid-muted hover:text-kid-text hover:bg-[color:var(--kid-surface-2)]`;
-    },
+    modeTabClass(m) { return this.mode === m ? 'mode-tab mode-tab--active' : 'mode-tab'; },
     allSetsForSubject(subject) {
       return (this.groupedBySubject[subject] || []);
     },
