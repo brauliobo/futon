@@ -48,7 +48,7 @@
           )
           div(class="flex gap-3")
             button(@click="$emit('go-home')" class="btn-ghost flex-1") ← {{ $t('back') }}
-            button(v-if="!confirmingReset" @click="confirmingReset = true" class="btn-ghost flex-1 surface-2") ↺ {{ $t('restart') }}
+            button(v-if="!confirmingReset" @click="confirmingReset = true" :class="restartButtonClass") ↺ {{ $t('restart') }}
             button(v-else @click="resetSet" class="btn-ghost flex-1 bg-kid-red/10 border-kid-red/30 text-kid-red animate-pop-in") {{ $t('confirmRestart') || 'Tap again to restart' }}
           HistorySparkline(v-if="set.history?.length" :history="set.history")
           div(class="border-t theme-border pt-4 space-y-3")
@@ -171,6 +171,17 @@ export default {
       if (pct >= 80) return `${base} bg-kid-green/10 text-kid-green`;
       if (pct >= 50) return `${base} bg-amber-400/15 text-amber-600 dark:text-amber-300`;
       return `${base} bg-kid-red/10 text-kid-red`;
+    },
+    effectiveStatus() {
+      if (this.set.status) return this.set.status;
+      if (!this.isSubmitted || !this.attemptedCount) return '';
+      const acc = Math.round((this.finalScore / this.attemptedCount) * 100);
+      if (acc === 100) return 'mastery';
+      if (acc >= 85) return 'pass';
+      return 'retry';
+    },
+    restartButtonClass() {
+      return this.effectiveStatus === 'retry' ? 'btn-primary flex-1' : 'btn-ghost flex-1 surface-2';
     },
     pageReviewStats() {
       const exs = this.currentPage?.exercises || [];
