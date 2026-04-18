@@ -173,6 +173,45 @@ const CASES = [
     }),
     expect: r => r.score === 20,
   },
+  // distractors iter 89: CHOICE_RE guard against math-fraction false positives
+  {
+    name: 'distractors: math fraction "(x/2)" NOT parsed as multi-choice',
+    run: () => scoreDistractors({
+      pages: [{
+        exercises: [{
+          question: 'sen(2x) = 2·cos(?)·sen(x/2)',
+          correctAnswer: '3x/2',
+        }],
+      }],
+    }),
+    // No `choices:` + question ending in (x/2) with answer "3x/2" not in {x, 2}.
+    // Fraction-guard fallback should skip distractor check entirely.
+    expect: r => r.score === 10,
+  },
+  {
+    name: 'distractors: fill-in "(iπ/?)" NOT parsed as multi-choice',
+    run: () => scoreDistractors({
+      pages: [{
+        exercises: [{
+          question: '1+i em forma exponencial: √2 · e^(iπ/?)',
+          correctAnswer: '4',
+        }],
+      }],
+    }),
+    expect: r => r.score === 10,
+  },
+  {
+    name: 'distractors: real binary choice "(sim/não)" still parsed',
+    run: () => scoreDistractors({
+      pages: [{
+        exercises: [{
+          question: 'É letra? (sim/não)',
+          correctAnswer: 'sim',
+        }],
+      }],
+    }),
+    expect: r => r.score === 10,
+  },
   // gradient iter 76 patterns -------------------------------------------------
   {
     name: 'gradient: 3-page inverted-U (1.5→2.7→1.9) = climax, exempt',
