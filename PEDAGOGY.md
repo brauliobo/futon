@@ -22,6 +22,7 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm fix:examples:ops [--apply]` | Auto-append a worked example for each missing operator |
 | `pnpm eval:relevance` | Spot copy-paste rationale bugs: for pure `N op N` drills, rationale must reference an operand, the answer, or a decomposing digit |
 | `pnpm eval:coverage [--min=N]` | List objectives with fewer than N exercises globally (default 10) — flags under-drilled learning targets |
+| `pnpm eval:diversity [--threshold=X]` | Flag sets where the number of unique rationales is disproportionately small vs unique answers — surfaces hardcoded/copy-pasted rationales |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
 | `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected |
 | `pnpm fix:placeholders [--apply]` | Deterministic rule-based rewriter for known-bad rationales (16 rule shapes) |
@@ -225,6 +226,16 @@ Verified 50,186 method-rationales; zero disconnected. Wired into `eval:all`.
 `pnpm eval:coverage` counts how many exercises target each learning objective across the whole curriculum. Kumon doctrine: every objective needs mass-practice for mastery, so anything with fewer than ~10 exercises globally is a red flag — either expand it (add exercises), retire it (drop the tag), or merge it with a related objective.
 
 Not wired into `eval:all` because this surfaces curriculum-design decisions rather than regressions; running it blocks CI until authors triage. Treat output as a backlog for content work. First run flagged 20 under-drilled Portuguese BNCC codes (1–9 exercises each) across levels D, E, J, K, and G.
+
+## Rationale diversity
+
+`pnpm eval:diversity` catches a class of content bug the automated rubric can't see: rationales that pass the lexical categorizer (they contain method-teaching words) but are actually **hardcoded or copy-pasted** across unrelated exercises.
+
+The check uses a diversity ratio: `unique_rationales / min(unique_answers, unique_question_shapes)`. Anything below 30% (configurable via `--threshold=`) is flagged. The `min(answers, shapes)` denominator prevents false flags on legitimate single-concept drills — a 100-exercise counting set with answers 1–10 needs only ~10 rationales, not 100.
+
+**Why this matters:** iter 82 discovered 594 rationales across math/J/set_07-09 and math/5A/set_04-20 that were either fixed-to-wrong-concept ("Diferença de quadrados" on every `(x+a)(x+b)` expansion) or generic placeholders ("Responda conforme a pergunta."). The rubric scored 100% because the text contained lexicon words; the content was wrong. The diversity detector surfaces future occurrences.
+
+Advisory only (exit 0). Use output to drive manual audits and targeted fixer scripts (see `fix-binomial-rationales.js`, `fix-5a-rationales.js`, `fix-integral-rationales.js` as templates).
 
 **Fix options**:
 - **Content**: reshuffle `choices:` / the `(a/b/c)` order in YAML so the correct answer rotates across positions.
