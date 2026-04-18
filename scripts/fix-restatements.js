@@ -53,7 +53,7 @@ function stripChoices(q) { return String(q || '').replace(CHOICE_RE, '').trim();
 
 function generateRationale(question, answer) {
   const q = stripChoices(question);
-  const a = String(answer || '').trim();
+  const a = String(answer ?? '').trim();
   if (!a) return null;
   const cat = findCategory(q);
   if (cat) {

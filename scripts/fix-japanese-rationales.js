@@ -46,7 +46,7 @@ function stripChoices(q) { return q.replace(CHOICE_RE, '').trim(); }
 
 function generateRationale(type, question, answer) {
   const q = stripChoices(String(question || ''));
-  const a = String(answer || '').trim();
+  const a = String(answer ?? '').trim();
   if (!q || !a) return null;
 
   const qKind = kindOf(q);

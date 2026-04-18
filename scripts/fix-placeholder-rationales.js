@@ -64,7 +64,7 @@ const RECIP_TABLE = {
 // rationale that teaches the method, or null when we don't know a safe rule.
 function generateRationale(type, question, answer) {
   const q = String(question || '').trim();
-  const a = String(answer || '').trim();
+  const a = String(answer ?? '').trim();
 
   if (type === 'nextprev') {
     const prev = /^Anterior de (-?\d+)$/i.exec(q);

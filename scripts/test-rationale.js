@@ -52,6 +52,9 @@ const CASES = [
   ['long', 'A'.repeat(320), 'too long'],
   ['missing', '', 'empty'],
   ['missing', null, 'null'],
+
+  // --- regression guards (iter 59/60 bugfix) ---
+  ['method', 'Anterior = conte 1 para trás: 1 → 0.', 'answer 0 / digit'],
 ];
 
 let passed = 0, failed = 0;

@@ -97,7 +97,7 @@ function findDisconnected(sets) {
         if (qWords.size + aWords.size < 2) continue;
 
         const rLower = ex.rationale.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        const ansNorm = String(ex.correctAnswer || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const ansNorm = String(ex.correctAnswer ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         if (ansNorm && rLower.includes(ansNorm)) continue; // answer appears verbatim
         const rWords = contentWords(ex.rationale);
         const shared = overlap(ref, rWords);
@@ -106,7 +106,7 @@ function findDisconnected(sets) {
             file: `${set.subject}/${set.level}/${set._file}`,
             page: p.pageNumber,
             question: String(ex.question || '').slice(0, 50),
-            answer: String(ex.correctAnswer || '').slice(0, 20),
+            answer: String(ex.correctAnswer ?? '').slice(0, 20),
             rationale: ex.rationale.slice(0, 80),
             shared,
           });
@@ -151,7 +151,7 @@ function findPlaceholderTemplates(sets, threshold = 3) {
       const withWords = exercises
         .map(ex => {
           const qClean = String(ex.question || '').replace(CHOICE_RE, '');
-          const ans = String(ex.correctAnswer || '').trim();
+          const ans = String(ex.correctAnswer ?? '').trim();
           const ansNorm = ans.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
           const ref = new Set([...contentWords(qClean), ...contentWords(ex.correctAnswer)]);
           const hasSubstring = ansNorm.length >= 1 && rLower.includes(ansNorm);

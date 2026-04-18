@@ -145,7 +145,7 @@ function scoreGradient(set) {
 // cor amarelo.") qualifies as method-teaching via factual reinforcement.
 function echoesQuestionAndAnswer(ex) {
   const r = String(ex.rationale || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  const a = String(ex.correctAnswer || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+  const a = String(ex.correctAnswer ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
   if (a.length < 3 || !r.includes(a)) return false;
   const q = String(ex.question || '').replace(/\([^)]+\)\s*$/, '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const qWords = (q.match(/[a-z]{3,}/g) || []).filter(w =>

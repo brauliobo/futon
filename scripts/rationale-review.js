@@ -64,7 +64,7 @@ function auditSet(set) {
       rows.push({
         page: page.pageNumber,
         question: String(ex.question || '').slice(0, 60),
-        answer: String(ex.correctAnswer || '').slice(0, 20),
+        answer: String(ex.correctAnswer ?? '').slice(0, 20),
         rationale: String(ex.rationale || '').slice(0, 80),
         cat,
       });
