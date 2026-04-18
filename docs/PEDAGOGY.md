@@ -58,6 +58,15 @@ Categories: `method` (teaches how), `generic` (states fact, no method verb), `re
 3. Rewrite the flagged rationales using the imperative + reason form (see playbook below).
 4. Re-run `pnpm eval:pedagogy --set path/to/set.yaml` to verify improvement.
 
+## Placeholder-template scanner
+
+`pnpm eval:disconnected` catches two distinct bugs:
+
+- **Placeholder templates** — the same rationale appears ≥3× in one set and shares no content word with ≥80% of the questions it's attached to. These are almost always leftover generators like *"Responda conforme a pergunta"* or *"Analise os dados e aplique a operação pedida"*. Legitimate drill repetition (e.g. *"Somar 0 não muda o número"* across every `X + 0 =`) is excluded: the heuristic requires ≥3 word-bearing questions before evaluating, and accepts ≥20% overlap.
+- **Disconnected singletons** — individual rationales with no content-word overlap with their own question (triage list, many false positives — review manually).
+
+Exits 1 when any placeholder templates are found (CI hook). Use `--subject` / `--level` / `--min-overlap N` to scope.
+
 ## Manual review checklist
 
 For any set opened in the editor, walk this list:
