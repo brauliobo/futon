@@ -23,6 +23,10 @@
           div(class="text-sm font-semibold text-kid-muted mb-0.5") {{ $t('speed') || 'Speed' }}
           div(class="text-xl font-black" :class="speedColor") {{ set.avgSecondsPerExercise }}s
 
+      div(v-else-if="totalPages" class="flex items-center justify-center gap-2 rounded-2xl surface-2 border theme-border px-3 py-2.5 text-sm font-bold text-kid-muted")
+        span(aria-hidden="true") 📝
+        span {{ totalPages }} {{ $t('pages') || 'pages' }}
+
     div(class="mt-auto pt-4")
       button(@click.prevent="onStart" :class="actionButtonClass")
         span {{ buttonIcon }}
