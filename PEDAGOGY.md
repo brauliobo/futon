@@ -40,6 +40,13 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm fix:power:root [--apply]` | Per-exercise N^K and K-th root rationales in math/I |
 | `pnpm fix:series:rationales [--apply]` | Dispatch p-series/geometric/Leibniz/De Moivre/Euler rationales in math/M |
 | `pnpm fix:pass-criteria [--apply]` | Backfill missing passCriteria on non-math sets with level-appropriate defaults |
+| `pnpm fix:quadratic:roots [--apply]` | Disambiguate bare `x² = N` across sets — appends `(raiz positiva/negativa/ambas raízes)` |
+| `pnpm fix:abs-value:roots [--apply]` | Disambiguate `\|x + N\| = M` with `(raiz menor/maior)` when same equation has two valid solutions |
+| `pnpm fix:factoring:dupes [--apply]` | Disambiguate `(A)(B)` vs `(B)(A)` commutative-swap factorings with leading-factor clarifier |
+| `pnpm fix:mesma-situacao [--apply]` | Inline "Mesma situação" follow-ups with their prior exercise's context |
+| `pnpm fix:unquoted-tuples [--apply]` | Fix YAML parse corruption from unquoted multi-word answers (comma-split bugs) |
+| `pnpm fix:5a:counting [--apply]` | Append count-specific target to math/5A strategy rationales |
+| `pnpm fix:japanese:objectives [--apply]` | Backfill missing objectives on Japanese exercises |
 | `pnpm fix:placeholders [--apply]` | Deterministic rule-based rewriter for known-bad rationales (16 rule shapes) |
 | `pnpm fix:examples [--apply]` | Appends `Ex.: Q → A.` to example fields lacking a worked pair |
 | `pnpm fix:restatements [--apply]` | Rewrites "A resposta correta é X" into category-aware method form |
