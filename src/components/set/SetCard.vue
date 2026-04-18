@@ -67,7 +67,8 @@ export default {
     cardClass() {
       const base = 'flex h-full flex-col gap-2 rounded-2xl border theme-border bg-kid-surface p-5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg border-l-[6px]';
       const borders = { mastery: 'border-l-kid-green shadow-md green-glow', pass: 'border-l-amber-400 shadow-sm', retry: 'border-l-kid-red shadow-sm' };
-      const border = borders[this.set.status] || 'border-l-[color:var(--kid-border-strong)] shadow-sm';
+      const fallback = this.hasProgress ? 'border-l-kid-blue shadow-sm' : 'border-l-[color:var(--kid-border-strong)] shadow-sm';
+      const border = borders[this.set.status] || fallback;
       const ring = this.isActive ? ' ring-2 ring-kid-blue/50 ring-offset-2 ring-offset-theme blue-glow' : '';
       return `${base} ${border}${ring}`;
     },
