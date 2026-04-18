@@ -291,6 +291,14 @@ function scoreQuestionLength(set) {
     issue: bad ? `${bad} question(s) too short or over 250 chars` : null };
 }
 
+// Exported so scripts/test-eval.js (or any other tool) can unit-test
+// individual scorers against synthetic sets.
+export {
+  scoreExample, scoreGradient, scoreRationales, scoreObjectives,
+  scoreAnswerDistribution, scoreDistractors, scoreQuestionLength,
+  scoreLevelProgression,
+};
+
 // Per-set aggregate
 const DIMS = [
   ['example', scoreExample],
@@ -426,4 +434,5 @@ function main() {
   process.exit(global >= THRESHOLDS.acceptable ? 0 : 1);
 }
 
-main();
+// Only run main() when invoked as a script, not when imported by tests.
+if (import.meta.url === `file://${process.argv[1]}`) main();

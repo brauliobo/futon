@@ -15,7 +15,7 @@
     "eval:disconnected": "node ./scripts/find-disconnected.js",
     "eval:bias": "node ./scripts/find-answer-bias.js",
     "eval:time": "node ./scripts/eval-time-budget.js",
-    "test:eval": "node ./scripts/test-rationale.js",
+    "test:eval": "node ./scripts/test-rationale.js && node ./scripts/test-eval.js",
     "fix:placeholders": "node ./scripts/fix-placeholder-rationales.js",
     "fix:examples": "node ./scripts/fix-examples.js",
     "fix:japanese": "node ./scripts/fix-japanese-rationales.js",
