@@ -318,6 +318,14 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .input-answer--idle:focus { border-color: var(--kid-blue); box-shadow: 0 0 18px var(--glow-blue); }
 .input-answer--answered { @apply text-kid-text shadow-md; background: color-mix(in srgb, var(--kid-blue) 5%, var(--kid-surface)); border-color: var(--kid-blue); box-shadow: 0 0 18px var(--glow-blue); }
 
+/* Level card — LevelRoadmap.vue horizontal carousel */
+.level-card { @apply flex min-w-[150px] max-w-[180px] snap-center cursor-pointer rounded-2xl border-2 bg-kid-surface transition-all duration-300; }
+.level-card:hover:not(.level-card--locked) { transform: translateY(-6px); box-shadow: 0 8px 18px rgba(0,0,0,0.10); }
+.level-card--idle   { @apply shadow-sm; border-color: var(--kid-border); }
+.level-card--idle:hover { border-color: color-mix(in srgb, var(--kid-blue) 40%, transparent); }
+.level-card--active { @apply shadow-md; border-color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 5%, var(--kid-surface)); box-shadow: 0 0 18px var(--glow-blue); }
+.level-card--locked { @apply cursor-not-allowed shadow-sm; border-color: var(--kid-border); }
+
 /* Empathy hint card (used after wrong answers) */
 .hint-card {
   @apply flex items-start gap-2 rounded-2xl px-4 py-3 shadow-sm amber-soft-bg border;

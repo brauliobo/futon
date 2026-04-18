@@ -92,12 +92,8 @@ export default {
   methods: {
     progressPercent(key){ const p = this.progressByLevel[key]; return p && Number.isFinite(p.percent) ? p.percent : 0; },
     cardClass(lvl) {
-      const base = 'flex min-w-[150px] max-w-[180px] snap-center cursor-pointer rounded-2xl border-2 bg-kid-surface transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg';
-      const state = [];
-      if (lvl === this.active) state.push('border-kid-blue bg-kid-blue/5 shadow-md blue-glow');
-      else state.push('theme-border shadow-sm hover:border-kid-blue/40');
-      if (!this.availableSet.has(lvl)) state.push('cursor-not-allowed hover:translate-y-0 hover:shadow-sm');
-      return [base, ...state].join(' ');
+      if (!this.availableSet.has(lvl)) return 'level-card level-card--locked';
+      return lvl === this.active ? 'level-card level-card--active' : 'level-card level-card--idle';
     },
     numberClass(lvl) {
       const base = 'rounded-full px-3 py-1 text-sm font-bold uppercase tracking-wide';
