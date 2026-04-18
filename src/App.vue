@@ -4,20 +4,21 @@
     ProfileSelector(v-if="showProfileSelector" @profile-selected="onProfileSelected")
     template(v-else)
       header(class="header-bg backdrop-blur-md border-b theme-border w-full sticky top-0 z-20 shadow-sm")
-        div(class="mx-auto flex w-full max-w-[1920px] items-center justify-between px-4 py-3")
-          div(class="flex items-center gap-2")
+        div(class="mx-auto flex w-full max-w-[1920px] items-center gap-3 px-4 py-3")
+          div(class="flex shrink-0 items-center")
             button(v-if="selectedSet" @click="goHome" class="flex items-center gap-1 text-base font-bold text-kid-text/70 hover:text-kid-blue transition-all active:scale-95" :aria-label="$t('back')")
               span(class="text-lg") ←
               span(class="hidden sm:inline") {{ $t('back') }}
             span(v-else class="text-2xl font-black text-kid-blue tracking-tight hover:animate-wiggle cursor-default") ✏️ Futon
-          div(class="flex items-center gap-2")
-            h2(v-if="selectedSet" class="text-base font-black text-kid-text truncate max-w-xs sm:max-w-md mr-2") {{ selectedSet.title }}
+          h2(v-if="selectedSet" class="min-w-0 flex-1 truncate text-center text-base font-black text-kid-text") {{ selectedSet.title }}
+          div(v-else class="flex-1")
+          div(class="flex shrink-0 items-center gap-2")
             div(v-if="streak > 1" class="flex items-center gap-1 rounded-2xl streak-bg border px-3 py-1.5 text-sm font-bold" :style="{ borderColor: 'var(--streak-border)', color: 'var(--streak-text)' }")
               span 🔥
               span {{ streak }}
-            button(v-if="activeProfile" @click="showProfileSelector = true" class="flex items-center gap-1.5 rounded-2xl border theme-border bg-kid-surface px-3 py-1.5 text-sm font-bold text-kid-text shadow-sm hover:border-kid-blue/40 transition")
+            button(v-if="activeProfile" @click="showProfileSelector = true" class="flex items-center gap-1.5 rounded-2xl border theme-border bg-kid-surface px-3 py-1.5 text-sm font-bold text-kid-text shadow-sm hover:border-kid-blue/40 transition" :aria-label="activeProfile.name")
               span(class="text-lg") {{ activeProfile.avatar }}
-              span {{ activeProfile.name }}
+              span(class="hidden sm:inline") {{ activeProfile.name }}
       main.flex-1.w-full
         div(class="mx-auto w-full max-w-[1920px] px-3 pt-6 pb-6 sm:px-4 sm:pt-8")
           div(v-if="isLoading" class="flex flex-col items-center justify-center gap-4 py-20")
