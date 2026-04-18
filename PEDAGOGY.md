@@ -20,6 +20,7 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm eval:arithmetic` | Verify authored answers match computation for pure `N op N =` drills |
 | `pnpm eval:alignment` | Flag math sets whose `example` omits an operator their exercises use |
 | `pnpm fix:examples:ops [--apply]` | Auto-append a worked example for each missing operator |
+| `pnpm eval:relevance` | Spot copy-paste rationale bugs: for pure `N op N` drills, rationale must reference an operand, the answer, or a decomposing digit |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
 | `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected |
 | `pnpm fix:placeholders [--apply]` | Deterministic rule-based rewriter for known-bad rationales (16 rule shapes) |
@@ -209,6 +210,14 @@ Wired into `pnpm eval:all` and fails CI on any mismatch. First run verified 16,3
 `pnpm eval:alignment` catches a real pedagogy gap: math sets whose `example` only demonstrates one operation but whose exercises test multiple. A student on a mixed-ops set shouldn't meet subtraction without a model.
 
 Checks numerically-anchored operators (digit op digit) so hyphens in words don't cause false flags. When flagged, `pnpm fix:examples:ops [--apply]` appends a second worked example borrowing from the first exercise that uses each missing operator. First run caught 42 mixed-ops sets across math/1A, 5A, B, F, K, O and auto-fixed them all.
+
+## Rationale-question relevance
+
+`pnpm eval:relevance` catches copy-paste bugs where a rationale ends up attached to the wrong exercise. For pure `N op N =` arithmetic, a method-rationale must mention at least one of: an operand, the answer, or a decomposing digit (column-addition rationales like "Some unidades (1+2=3)" legitimately split operands into digits, so the check accepts that).
+
+Portuguese and English word-form numbers (zero/um/dois/one/two/…) map to digits for comparison. Only fires on pure arithmetic — word problems, grammar, and vocab skip this check since their rationales teach concepts without restating numbers.
+
+Verified 50,186 method-rationales; zero disconnected. Wired into `eval:all`.
 
 **Fix options**:
 - **Content**: reshuffle `choices:` / the `(a/b/c)` order in YAML so the correct answer rotates across positions.
