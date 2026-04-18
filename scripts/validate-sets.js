@@ -115,6 +115,13 @@ function validateSet(raw) {
       if (unknown.length) {
         issues.push(`Page ${p.pageNumber ?? '?'} exercise ${eIdx + 1}: unknown field(s) ${JSON.stringify(unknown)} — likely YAML-parse accident (quote multi-word correctAnswer).`);
       }
+      // Every exercise must carry the core pedagogy triple: rationale
+      // (teaches why), difficulty (rubric gradient input), and objectives
+      // (progress tracking). Rationale and difficulty backfilled across
+      // the corpus in iter 82-104, so this is a regression guard.
+      if (!e.rationale) issues.push(`Page ${p.pageNumber ?? '?'} exercise ${eIdx + 1}: missing rationale.`);
+      if (e.difficulty === undefined || e.difficulty === null) issues.push(`Page ${p.pageNumber ?? '?'} exercise ${eIdx + 1}: missing difficulty.`);
+      if (!Array.isArray(e.objectives) || !e.objectives.length) issues.push(`Page ${p.pageNumber ?? '?'} exercise ${eIdx + 1}: missing objectives.`);
     }
   }
 
