@@ -15,6 +15,7 @@ import fs from 'fs';
 import path from 'path';
 import Table from 'cli-table3';
 import { parse } from 'yaml';
+import { categorize } from './lib/rationale.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m', GRAY = '\x1b[90m';
@@ -95,6 +96,9 @@ function findDisconnected(sets) {
         const ref = new Set([...qWords, ...aWords]);
         if (qWords.size + aWords.size < 2) continue;
 
+        const rLower = ex.rationale.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const ansNorm = String(ex.correctAnswer || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        if (ansNorm && rLower.includes(ansNorm)) continue; // answer appears verbatim
         const rWords = contentWords(ex.rationale);
         const shared = overlap(ref, rWords);
         if (shared < MIN_OVERLAP) {
@@ -135,18 +139,28 @@ function findPlaceholderTemplates(sets, threshold = 3) {
     }
     for (const [rationale, { exercises }] of groups) {
       if (exercises.length < threshold) continue;
+      // A rationale that teaches a method is valid drill pedagogy even if
+      // repeated (e.g. "Conte cada símbolo uma vez, seguindo a ordem.").
+      if (categorize(rationale) === 'method') continue;
+      const rLower = rationale.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
       const rWords = contentWords(rationale);
-      // Only evaluate against exercises that have question-side content words.
-      // Pure digit drills (e.g. "5 + 0 =") can't overlap and shouldn't be flagged.
+      // Consider a rationale *connected* to an exercise if:
+      //   (a) it shares a 4+ char content word with the question/answer, OR
+      //   (b) it literally contains the correctAnswer substring
+      //      (covers short-answer drills like "par"/"ímpar"/single digits).
       const withWords = exercises
         .map(ex => {
           const qClean = String(ex.question || '').replace(CHOICE_RE, '');
-          return { ex, ref: new Set([...contentWords(qClean), ...contentWords(ex.correctAnswer)]) };
+          const ans = String(ex.correctAnswer || '').trim();
+          const ansNorm = ans.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          const ref = new Set([...contentWords(qClean), ...contentWords(ex.correctAnswer)]);
+          const hasSubstring = ansNorm.length >= 1 && rLower.includes(ansNorm);
+          return { ex, ref, hasSubstring };
         })
-        .filter(r => r.ref.size > 0);
-      if (withWords.length < threshold) continue; // too few word-bearing questions to judge
-      const overlapCount = withWords.filter(r => overlap(r.ref, rWords) >= 1).length;
-      if (overlapCount / withWords.length >= 0.2) continue; // ≥20% overlap → likely legit
+        .filter(r => r.ref.size > 0 || r.hasSubstring);
+      if (withWords.length < threshold) continue;
+      const overlapCount = withWords.filter(r => r.hasSubstring || overlap(r.ref, rWords) >= 1).length;
+      if (overlapCount / withWords.length >= 0.2) continue;
       hits.push({
         file: `${set.subject}/${set.level}/${set._file}`,
         count: exercises.length,
