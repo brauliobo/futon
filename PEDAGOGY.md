@@ -98,6 +98,24 @@ Known placeholder strings (each matched literally):
 
 When a new placeholder/question pattern emerges, add another rule to `generateRationale()` in the script. Never widen the placeholder list with ambiguous strings — the fixer must only rewrite rationales that are *known* to be wrong.
 
+## Dashboard (one-screen health check)
+
+`pnpm eval:dashboard` runs all evaluators and prints a compact summary — meant for daily review or CI gate:
+
+```
+🩺 FUTON PEDAGOGY DASHBOARD
+  Global score          88% (0 vs snapshot)
+  Excellent (≥85%)      608
+  Acceptable (70-84%)   229
+  Needs rework (<70%)    89
+  Placeholder templates  7 (affecting 67 exercises)
+  Biased choice sets   262 authored, neutralized at runtime
+  Top 5 levels needing work
+    japanese/3A  60%  ...
+```
+
+`--strict` exits 1 when global < 85 or any level regresses ≥3pp vs snapshot.
+
 ## Answer-position bias scanner
 
 `pnpm eval:bias` scans every set's choice exercises and reports the distribution of correct-answer *positions* (first, second, third…). Because choices render in YAML order with no runtime shuffle, a set whose correct answer always sits at position 1 lets students click without reading.
