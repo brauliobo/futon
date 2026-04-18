@@ -6,11 +6,15 @@
 // of these — i.e. it teaches *how* or *why*, not just restates the answer.
 export const METHOD_RE = new RegExp('\\b(?:' + [
   // Imperatives (PT)
-  'faça', 'conte', 'some', 'soma[rm]?', 'subtraia', 'divida', 'multiplique',
+  'faça', 'conte', 'some', 'soma[rm]?', 'subtraia', 'divida', 'dividir',
+  'multiplique', 'calcule', 'resolva', 'converta', 'substitua',
   'tom[ea]r?', 'emprest[eao]d?o?', 'reagrup[ea]', 'peç[ao]', 'guard[ea]',
   'observ[ea]', 'veja', 'compare', 'troque', 'apliqu[ea]', 'use', 'note',
   'lembr[ea]', 'localize', 'sublinhe', 'releia', 'identifique', 'procure',
   'marque', 'circule', 'escolha', 'escreva', 'mostr[ea]',
+  'simplifique', 'desenhe', 'liste', 'separe', 'visualize', 'recuper[ea]',
+  'verifique', 'explique', 'descreva', 'organize', 'agrupe',
+  'fatore', 'expanda', 'iguale',
   // Reasoning connectors (PT)
   'primeiro', 'depois', 'ent[ãa]o', 'porque', 'basta', 'logo', 'portanto',
   'assim', 'pois', 'como', 'se\\b', 'quando', 'enquanto',
@@ -18,18 +22,25 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'dobro', 'metade', 'terç[oa]', 'fórmula', 'regra', 'unidade', 'dezena',
   'centena', 'coluna', 'dígito', 'rest[ao]', 'sobr[ae]', 'vai.um',
   'm[íi]nimo', 'm[áa]ximo', 'produto', 'quociente', 'diferença', 'total',
+  'arranjo', 'combinação', 'permutação', 'fatorial', 'anagrama',
+  'padronização', 'proporção', 'progressão', 'binomial', 'identidade',
+  'derivada', 'integral', 'limite', 'sistema', 'matriz', 'determinante',
+  'potência', 'logaritmo', 'exponencial', 'radical', 'racionalize',
+  'razão', 'multiplicativo', 'independentes', 'binômio',
   // Grammar / reading concepts (PT)
   'termin[ao]', 'respond[ae]', 'modifica', 'liga', 'indica', 'substitui',
   'acompanha', 'determina', 'introduz', 'marca', 'função', 'sufixo',
   'prefixo', 'parágrafo', 'trecho', 'pista', 'contexto', 'palavra.chave',
   'sílaba', 'acento', 'género|gênero', 'número',
   'característic[oa]', 'sinônimo', 'antônimo', 'oposto', 'contrário',
-  'significa', 'significad[oa]', 'vogal', 'consoante', 'maiúscul[oa]',
+  'significa', 'significad[oa]', 'vogal', 'vogais', 'consoante', 'consoantes', 'maiúscul[oa]',
   'minúscul[oa]', 'masculin[oa]', 'feminin[oa]', 'singular', 'plural',
   'tônic[oa]', 'áton[oa]', 'agud[oa]', 'grav[ea]', 'esdrúxul[oa]',
   'pretérit[oa]', 'presente', 'futuro', 'gerúndio', 'infinitivo',
   'particípio', 'concord[âa]ncia', 'sujeito', 'predicad[oa]', 'objeto',
   'par\\b', 'ímpar', 'rima', 'produzem?', 'dá\\b',
+  'fato', 'opinião', 'tese', 'argumento', 'interpretação',
+  'desigualdade', 'equação', 'inequação', 'variável', 'incógnita',
   // English equivalents
   'first', 'then', 'because', 'count', 'add', 'subtract', 'multiply',
   'divide', 'double', 'half', 'step', 'notice', 'start', 'rule', 'pattern',
