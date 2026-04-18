@@ -32,6 +32,7 @@ const CHECKS = [
   ['eval:coverage', 'Objective drill depth (advisory)'],
   ['eval:diversity', 'Rationale diversity (advisory)'],
   ['eval:length-bias', 'Correct-answer length bias (advisory)'],
+  ['eval:progression', 'Per-page difficulty progression (advisory)'],
 ];
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';

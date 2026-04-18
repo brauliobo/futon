@@ -104,6 +104,25 @@ async function main() {
         if (ans.length === maxLen && lens.filter(z => z === maxLen).length === 1) correctLongest++;
       }
       const lengthBiasFrac = choiceQs ? correctLongest / choiceQs : 0;
+      // Per-page difficulty progression: flag if last page easier than first
+      // OR ≥3 page-to-page regressions (excluding tight interleaved-drill).
+      const pageMedians = (x.s.pages || [])
+        .filter(p => (p.exercises || []).length)
+        .map(p => {
+          const ds = p.exercises.map(e => e.difficulty || x.s.difficulty || 3).sort((a, b) => a - b);
+          const m = Math.floor(ds.length / 2);
+          return ds.length % 2 ? ds[m] : (ds[m - 1] + ds[m]) / 2;
+        });
+      const pmRange = pageMedians.length ? Math.max(...pageMedians) - Math.min(...pageMedians) : 0;
+      let pmRegCount = 0, pmAdvCount = 0;
+      for (let i = 1; i < pageMedians.length; i++) {
+        if (pageMedians[i] < pageMedians[i - 1]) pmRegCount++;
+        else if (pageMedians[i] > pageMedians[i - 1]) pmAdvCount++;
+      }
+      const pmInterleaved = pmRange <= 1.0 && Math.abs(pmRegCount - pmAdvCount) <= 1;
+      const pmRegressive = pageMedians.length >= 5 && pmRange > 0 &&
+        pageMedians[pageMedians.length - 1] - pageMedians[0] <= -1.0;
+      const pmNoisy = pageMedians.length >= 5 && pmRange > 0 && pmRegCount >= 3 && !pmInterleaved;
       out.push(`### ${x.name}`);
       out.push(`**Title:** ${x.s.title || '(untitled)'}`);
       out.push(`**Example:** ${(x.s.example || '').slice(0, 100)}`);
@@ -127,6 +146,12 @@ async function main() {
       out.push('- [ ] No unintended distractor patterns (e.g. always pick the longest / always pick "b").');
       if (choiceQs >= 4 && lengthBiasFrac > 0.4) {
         out.push(`- [ ] ⚠️ **${correctLongest}/${choiceQs} (${Math.round(lengthBiasFrac*100)}%) of choice questions: correct is THE longest option** — rewrite distractors with equivalent specificity so length isn't a tell.`);
+      }
+      if (pmRegressive) {
+        out.push(`- [ ] ⚠️ **Regressive progression** — last page median difficulty (${pageMedians[pageMedians.length-1]}) < first page (${pageMedians[0]}). Reorder pages or adjust difficulties so the set climbs.`);
+      }
+      if (pmNoisy) {
+        out.push(`- [ ] ⚠️ **Noisy progression** (${pmRegCount} page-to-page regressions) — sequence [${pageMedians.join(',')}]. Smooth so each page ≥ previous.`);
       }
       out.push('- [ ] Subject-matter accuracy — a domain expert would sign off.');
       out.push('- [ ] `passCriteria.maxAvgSecondsPerExercise` × exerciseCount lands inside the level\'s Kumon time band (see `pnpm eval:time`).');
