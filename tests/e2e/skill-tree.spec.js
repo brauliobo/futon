@@ -18,13 +18,13 @@ test.describe('Skill Tree (Themes mode)', () => {
   test('switching to themes shows skill tree nodes', async ({ page }) => {
     await page.getByRole('button', { name: /Temas|Themes/ }).click();
     await page.waitForTimeout(100);
-    await expect(page.getByText('Counting').first()).toBeVisible();
+    await expect(page.getByText(/Counting|Contagem/).first()).toBeVisible();
   });
 
   test('every node is unlocked (no gating in themes mode)', async ({ page }) => {
     await page.getByRole('button', { name: /Temas|Themes/ }).click();
     await page.waitForTimeout(100);
-    const nodeButtons = page.locator('button').filter({ hasText: /Counting|Multiplication|Division|Fractions/ });
+    const nodeButtons = page.locator('button').filter({ hasText: /Counting|Contagem|Multiplication|Multiplicação|Division|Divisão|Fractions|Frações/ });
     const count = await nodeButtons.count();
     for (let i = 0; i < count; i++) {
       await expect(nodeButtons.nth(i)).toBeEnabled();
@@ -40,14 +40,14 @@ test.describe('Skill Tree (Themes mode)', () => {
   test('downstream nodes (e.g. Multiplication) are enabled without prereqs', async ({ page }) => {
     await page.getByRole('button', { name: /Temas|Themes/ }).click();
     await page.waitForTimeout(100);
-    const multBtn = page.getByRole('button').filter({ hasText: /Multiplication/ }).first();
+    const multBtn = page.getByRole('button').filter({ hasText: /Multiplication|Multiplicação/ }).first();
     await expect(multBtn).toBeEnabled();
   });
 
   test('clicking unlocked node reveals its sets', async ({ page }) => {
     await page.getByRole('button', { name: /Temas|Themes/ }).click();
     await page.waitForTimeout(100);
-    const countingBtn = page.getByRole('button').filter({ hasText: /Counting/ }).first();
+    const countingBtn = page.getByRole('button').filter({ hasText: /Counting|Contagem/ }).first();
     await countingBtn.click();
     await page.waitForTimeout(800);
     await expect(page.getByRole('button', { name: /▶|Começar/ }).first()).toBeVisible();

@@ -31,7 +31,7 @@
       div(class="rounded-3xl bg-kid-blue/5 border border-kid-blue/20 p-5")
         h3(class="text-lg font-black text-kid-text mb-3 flex items-center gap-2")
           span(class="text-2xl") {{ activeNode.icon }}
-          span {{ activeNode.name }}
+          span {{ $t(`skill_${activeNode.id}`) || activeNode.name }}
         LevelList(
           :sets="activeSets"
           :activeSlug="activeSlug"

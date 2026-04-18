@@ -2,13 +2,13 @@
   button(
     :class="nodeClass"
     :aria-label="ariaLabel"
-    :title="node.name"
+    :title="localizedName"
     @click="$emit('select', node)"
   )
     div(class="flex items-center gap-3")
       span(class="text-2xl flex-shrink-0") {{ node.icon }}
       div(class="flex-1 text-left min-w-0")
-        p(class="text-base font-black leading-tight truncate") {{ node.name }}
+        p(class="text-base font-black leading-tight truncate") {{ localizedName }}
         p(v-if="progress.total > 0" class="text-sm font-bold mt-0.5" :class="isComplete ? 'text-kid-green' : 'text-kid-muted'") {{ progress.mastered }}/{{ progress.total }} {{ $t('sets') }}
         p(v-else class="text-sm font-semibold mt-0.5 text-kid-blue/70") → {{ $t('tapToExplore') || 'Tap to explore' }}
       div(v-if="progress.total > 0" class="flex flex-col items-end gap-1 flex-shrink-0")
@@ -28,9 +28,10 @@ export default {
     progress: { type: Object, default: () => ({ total: 0, mastered: 0, percent: 0 }) },
   },
   computed: {
+    localizedName() { return this.$t(`skill_${this.node.id}`) || this.node.name; },
     ariaLabel() {
-      if (this.isComplete) return `${this.node.name} — complete, ${this.progress.percent}%`;
-      return `${this.node.name} — ${this.progress.mastered} of ${this.progress.total} sets mastered`;
+      if (this.isComplete) return `${this.localizedName} — complete, ${this.progress.percent}%`;
+      return `${this.localizedName} — ${this.progress.mastered} of ${this.progress.total} sets mastered`;
     },
     starCount() {
       if (this.progress.percent === 100) return 3;

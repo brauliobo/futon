@@ -276,14 +276,11 @@ export default {
     }; },
     levelNameBySubject() {
       return (subject, id) => {
-        if (subject === 'math') {
-          const key = Levels.math.i18nKey(id); const label = key ? this.$t(key) : '';
-          return typeof label === 'string' && label !== key && label ? label : Levels.math.name(id);
-        }
-        if (subject === 'portuguese') return Levels.portuguese.name(id);
-        if (subject === 'english') return Levels.english.name(id);
-        if (subject === 'japanese') return Levels.japanese.name(id);
-        return id;
+        const registry = Levels[subject];
+        if (!registry) return id;
+        const key = registry.i18nKey(id);
+        const label = key ? this.$t(key) : '';
+        return typeof label === 'string' && label !== key && label ? label : registry.name(id);
       };
     },
     activeLevelLabel() {
