@@ -17,15 +17,15 @@
       div(v-if="streak > 1" class="ml-auto flex items-center gap-1.5 rounded-2xl streak-bg border px-3 py-1.5 text-base font-bold shadow-sm" :style="{ borderColor: 'var(--streak-border)', color: 'var(--streak-text)' }")
         span(class="animate-wiggle") 🔥
         span {{ streak }} {{ $t('dayStreak') || 'day streak' }}
-    nav(class="flex flex-wrap items-center gap-2 sm:gap-3")
+    nav(class="grid grid-cols-4 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-3")
       button(
         v-for="subject in availableSubjects"
         :key="subject"
         :class="tabButtonClass(subject)"
         @click="selectDiscipline(subject)"
       )
-        span(class="text-xl") {{ subjectIcon(subject) }}
-        span(class="hidden sm:inline text-base font-bold capitalize") {{ subjectLabel(subject) }}
+        span(class="text-xl leading-none") {{ subjectIcon(subject) }}
+        span(class="text-[11px] sm:text-base font-bold capitalize leading-tight text-center") {{ subjectLabel(subject) }}
     section(v-if="activeDiscipline" class="rounded-3xl border theme-border bg-kid-surface shadow-sm p-6")
       header(class="flex flex-wrap items-end justify-between gap-4")
         div(class="space-y-0.5")
@@ -159,7 +159,7 @@ export default {
   methods: {
     tabButtonClass(subject) {
       const isActive = this.activeDiscipline === subject;
-      const base = 'flex items-center gap-2 rounded-2xl px-3.5 sm:px-5 py-3 sm:py-3.5 font-bold capitalize transition-all duration-200 border-2 active:scale-95';
+      const base = 'flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2 rounded-2xl px-2 sm:px-5 py-2 sm:py-3.5 font-bold capitalize transition-all duration-200 border-2 active:scale-95';
       if (isActive) {
         const colors = { math: 'bg-kid-blue text-white border-kid-blue shadow-lg shadow-kid-blue/30', portuguese: 'bg-kid-green text-white border-kid-green shadow-lg shadow-kid-green/30', english: 'bg-orange-400 text-white border-orange-400 shadow-lg shadow-orange-300/40', japanese: 'bg-kid-red text-white border-kid-red shadow-lg shadow-kid-red/30' };
         return `${base} ${colors[subject] || 'bg-kid-blue text-white border-kid-blue shadow-lg'} scale-[1.02]`;
