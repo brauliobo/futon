@@ -16,7 +16,7 @@ import fg from 'fast-glob';
 const APPLY = process.argv.includes('--apply');
 const rx = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-function rationaleFor(q) {
+export function rationaleFor(q) {
   // Extract leading coefficient if any: "3sen(x)", "-2e^{2x}"
   const coefM = q.match(/(-?\d*(?:\.\d+)?)\s*(sec²|sen|cos|tan|e\^|1\/x)/);
   const k = coefM && coefM[1] && coefM[1] !== '-' ? coefM[1] : '';

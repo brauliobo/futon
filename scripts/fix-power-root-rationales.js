@@ -21,7 +21,7 @@ function ordinalRoot(k) {
   return `${k}-ésima`;
 }
 
-function rationaleFor(q, a) {
+export function rationaleFor(q, a) {
   let m;
   // N^K
   if ((m = q.match(/^(-?\d+)\^(-?\d+)$/))) {

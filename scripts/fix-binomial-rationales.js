@@ -16,7 +16,7 @@ import fg from 'fast-glob';
 const APPLY = process.argv.includes('--apply');
 const BINOMIAL_Q = /^\(x \+ (-?\d+)\)\(x \+ (-?\d+)\)$/;
 
-function rationaleFor(a, b) {
+export function rationaleFor(a, b) {
   const sum = a + b;
   const prod = a * b;
   // Sum and product are the defining pair for factoring; this is the exact

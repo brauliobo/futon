@@ -6,6 +6,10 @@
 import { generateRationale } from './fix-placeholder-rationales.js';
 import { generateRationale as generateJP } from './fix-japanese-rationales.js';
 import { generateRationale as generateRestatement } from './fix-restatements.js';
+import { generateRationale as gen5A } from './fix-5a-rationales.js';
+import { rationaleFor as genPower } from './fix-power-root-rationales.js';
+import { rationaleFor as genBinomial } from './fix-binomial-rationales.js';
+import { rationaleFor as genIntegral } from './fix-integral-rationales.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', GRAY = '\x1b[90m';
@@ -74,6 +78,49 @@ const JP_CASES = [
   ['japanese_vocab', '???', 'mystery', null],
 ];
 
+// fix-5a-rationales: takes {question, correctAnswer} exercise, returns rationale.
+const FIVE_A_CASES = [
+  [{ question: 'Depois de 5 vem:', correctAnswer: 6 }, 'Sucessor de 5 = 5+1 = 6'],
+  [{ question: 'Antes de 10 vem:', correctAnswer: 9 }, 'Antecessor de 10 = 10-1 = 9'],
+  [{ question: '3, 4, 5, ?', correctAnswer: 6 }, 'Sequência de +1 em +1: 5 + 1 = 6'],
+  [{ question: '2, 4, 6, 8, ?', correctAnswer: 10 }, 'Sequência de +2 em +2: 8 + 2 = 10'],
+  [{ question: '5 ? 8', correctAnswer: '<' }, '5 é menor que 8, então 5 < 8'],
+  [{ question: '7 ? 7', correctAnswer: '=' }, '7 e 7 são iguais, então 7 = 7'],
+  [{ question: '5 + ? = 9', correctAnswer: 4 }, 'Inverso da adição: 9 − 5 = 4'],
+  [{ question: '? + 6 = 11', correctAnswer: 5 }, 'Inverso da adição: 11 − 6 = 5'],
+  [{ question: '12 - ? = 7', correctAnswer: 5 }, 'Inverso da subtração: 12 − 7 = 5'],
+  [{ question: '? - 4 = 6', correctAnswer: 10 }, 'Inverso da subtração: 6 + 4 = 10'],
+  [{ question: 'Quantas unidades tem 17?', correctAnswer: 7 }, '17 tem 7 unidades'],
+  [{ question: 'unrelated', correctAnswer: 'x' }, null],
+];
+
+// fix-power-root-rationales: (question, answer) → rationale
+const POWER_CASES = [
+  ['6^3', '216', '6^3 = 6·6·6 = 216'],
+  ['3^3', '27', '3^3 = 3·3·3 = 27'],
+  ['5^2', '25', '5^2 = 5·5 = 25'],
+  ['x^3 = 1331', '11', 'Raiz cúbica de 1331 é 11'],
+  ['x^2 = 144', '12', 'Raiz quadrada de 144 é 12'],
+  ['unrelated', '0', null],
+];
+
+// fix-binomial-rationales: (a, b) → rationale
+const BINOMIAL_CASES = [
+  [7, -6, 'Soma: 7+-6=1; produto: 7·-6=-42. Logo x² + 1x + -42'],
+  [1, -2, 'Soma: 1+-2=-1; produto: 1·-2=-2'],
+  [6, 4, 'Soma: 6+4=10; produto: 6·4=24'],
+];
+
+// fix-integral-rationales: question → rationale
+const INTEGRAL_CASES = [
+  ['∫ 3sec²(x) dx = ?', 'sec²(x) dx = tan(x) + C'],
+  ['∫ 4cos(x) dx = ?', 'cos(x) dx = sen(x) + C'],
+  ['∫ 2sen(x) dx = ?', 'sen(x) dx = -cos(x) + C'],
+  ['∫ e^{2x} dx = ?', '∫ e^(2x) dx = (1/2)·e^(2x) + C'],
+  ['∫ 3e^x dx = ?', 'eˣ dx = eˣ + C'],
+  ['∫ sen(2x) dx', null], // unsupported — inner coefficient on trig
+];
+
 // Restatement rewriter — takes (question, answer), returns method form.
 const RESTATEMENT_CASES = [
   ['Qual é uma vogal? (A/B/C)', 'A', 'A, E, I, O, U são as vogais'],
@@ -101,8 +148,41 @@ for (const [q, a, expected] of RESTATEMENT_CASES) {
   else { failed++; failures.push({ label: 'restatement', type: '-', q, a, expected, got }); }
 }
 
+// fix-5a-rationales
+for (const [ex, expected] of FIVE_A_CASES) {
+  const got = gen5A(ex);
+  const ok = expected === null ? got === null : (got && got.includes(expected));
+  if (ok) passed++;
+  else { failed++; failures.push({ label: '5a', type: '-', q: ex.question, a: ex.correctAnswer, expected, got }); }
+}
+
+// fix-power-root-rationales
+for (const [q, a, expected] of POWER_CASES) {
+  const got = genPower(q, a);
+  const ok = expected === null ? got === null : (got && got.includes(expected));
+  if (ok) passed++;
+  else { failed++; failures.push({ label: 'power', type: '-', q, a, expected, got }); }
+}
+
+// fix-binomial-rationales
+for (const [a, b, expected] of BINOMIAL_CASES) {
+  const got = genBinomial(a, b);
+  const ok = got && got.includes(expected);
+  if (ok) passed++;
+  else { failed++; failures.push({ label: 'binomial', type: '-', q: `(x+${a})(x+${b})`, a: '', expected, got }); }
+}
+
+// fix-integral-rationales
+for (const [q, expected] of INTEGRAL_CASES) {
+  const got = genIntegral(q);
+  const ok = expected === null ? got === null : (got && got.includes(expected));
+  if (ok) passed++;
+  else { failed++; failures.push({ label: 'integral', type: '-', q, a: '', expected, got }); }
+}
+
+const totalCases = CASES.length + JP_CASES.length + RESTATEMENT_CASES.length + FIVE_A_CASES.length + POWER_CASES.length + BINOMIAL_CASES.length + INTEGRAL_CASES.length;
 console.log(c('\n🧪 FIXER RULE TESTS', BOLD));
-console.log(`  ${passed} passed · ${failed} failed · ${CASES.length + JP_CASES.length + RESTATEMENT_CASES.length} total\n`);
+console.log(`  ${passed} passed · ${failed} failed · ${totalCases} total\n`);
 if (failed) {
   console.log(c('FAILURES:', BOLD + RED));
   for (const f of failures) {

@@ -39,7 +39,7 @@ const MISMATCH_FOR_FILLIN = new Set([
 
 const rx = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-function generateRationale(e) {
+export function generateRationale(e) {
   const q = String(e.question || '').trim();
   const a = String(e.correctAnswer ?? '').trim();
   let m;
