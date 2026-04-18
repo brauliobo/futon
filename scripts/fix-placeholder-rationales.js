@@ -62,7 +62,7 @@ const RECIP_TABLE = {
 
 // Rule: given exercise type, question, correctAnswer — return a replacement
 // rationale that teaches the method, or null when we don't know a safe rule.
-function generateRationale(type, question, answer) {
+export function generateRationale(type, question, answer) {
   const q = String(question || '').trim();
   const a = String(answer ?? '').trim();
 
@@ -179,7 +179,7 @@ function generateRationale(type, question, answer) {
     // "X, Y, Z, ?" — detect arithmetic progression
     const m = /^(-?\d+)\s*,\s*(-?\d+)\s*,\s*(-?\d+)\s*,\s*\?\s*$/.exec(q);
     if (m) {
-      const [, x, y, z] = m.map(Number).slice(1);
+      const [, x, y, z] = m.map(Number);
       const d = y - x;
       if (z - y === d && z + d === +a) {
         return `Contagem de ${d > 0 ? '+' : ''}${d} em ${d > 0 ? '+' : ''}${d}: ${z} + ${d} = ${z + d}.`;
@@ -266,4 +266,4 @@ function main() {
   if (!APPLY) console.log(c('Re-run with --apply to write changes.', GRAY));
 }
 
-main();
+if (import.meta.url === `file://${process.argv[1]}`) main();
