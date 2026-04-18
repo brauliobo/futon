@@ -9,12 +9,12 @@
       v-show="showLeftArrow"
     )
       | ‹
-    div(class="overflow-hidden px-8" ref="wrapper")
+    div(class="overflow-hidden px-14 sm:px-8" ref="wrapper")
       div(class="flex items-stretch gap-6 transition-transform" :style="{ transform: `translateX(-${scrollOffset}px)` }" ref="track")
         div(
           v-for="(set, index) in sets"
           :key="set.id || set.title"
-          :class="cardClass(set)"
+          :class="['set-card-slot', { 'set-card-slot--inactive': slugOf(set) !== activeSlug }]"
         )
           div(v-if="!isSetAvailable(index)" class="relative")
             SetCard(:set="set" :is-active="false" class="opacity-40 pointer-events-none select-none")
@@ -50,9 +50,9 @@ export default {
   data() {
     return {
       scrollOffset: 0,
-      cardWidth: 320,
       gap: 24,
-      containerWidth: 0
+      containerWidth: 0,
+      cardWidth: 280,
     };
   },
   computed: {
@@ -112,11 +112,6 @@ export default {
     }
   },
   methods: {
-    cardClass(set) {
-      const active = this.slugOf(set) === this.activeSlug;
-      const base = 'min-w-[280px] max-w-[360px] md:min-w-[320px] md:max-w-[400px] flex-shrink-0 transition-transform';
-      return active ? base : `${base} scale-[0.97]`;
-    },
     slugOf(wb) { return Formatter.slugify(wb?.title); },
     scrollLeft() {
       const delta = this.cardWidth + this.gap;
@@ -128,9 +123,9 @@ export default {
     },
     updateContainerWidth() {
       const wrapper = this.$refs.wrapper;
-      if (wrapper) {
-        this.containerWidth = wrapper.offsetWidth;
-      }
+      if (wrapper) this.containerWidth = wrapper.offsetWidth;
+      const firstCard = this.$refs.track?.firstElementChild;
+      if (firstCard) this.cardWidth = firstCard.offsetWidth;
     },
     scrollToActiveSet() {
       if (!this.activeSlug) return;
