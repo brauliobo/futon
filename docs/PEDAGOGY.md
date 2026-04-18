@@ -67,6 +67,22 @@ Categories: `method` (teaches how), `generic` (states fact, no method verb), `re
 
 Exits 1 when any placeholder templates are found (CI hook). Use `--subject` / `--level` / `--min-overlap N` to scope.
 
+## Automatic placeholder fixer
+
+`pnpm fix:placeholders` is a **rule-based rewriter**: for every exercise whose rationale is a known placeholder (e.g. *"Responda conforme a pergunta"*) AND whose question matches a known shape (e.g. `Anterior de N`, `X, __, Z`), it generates a specific method-teaching rationale derived from the question numbers themselves. Deterministic; no LLM; no partial/wrong fixes. Dry-run by default — add `--apply` to write.
+
+Supported shapes today:
+| Exercise type | Question pattern | Generated rationale |
+|---|---|---|
+| `nextprev` | `Anterior de N` | `Anterior = conte 1 para trás: N → N-1.` |
+| `nextprev` | `Próximo de N` | `Próximo = conte 1 para frente: N → N+1.` |
+| `sequence` | `X, __, Z` | `Entre X e Z: conte +1 a partir de X → X+1.` |
+| `sequence` | `__, Y, Z` | `Antes de Y: conte -1 → Y-1.` |
+| `sequence` | `X, Y, __` | `Depois de Y: conte +1 → Y+1.` |
+| `count` | `N <noun>` | `Conte um a um: o total é N.` |
+
+When a new placeholder/question pattern emerges, add another rule to `generateRationale()` in the script. Never widen the placeholder list with ambiguous strings — the fixer must only rewrite rationales that are *known* to be wrong.
+
 ## Manual review checklist
 
 For any set opened in the editor, walk this list:

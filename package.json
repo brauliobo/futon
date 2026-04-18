@@ -13,6 +13,7 @@
     "eval:pedagogy": "node ./scripts/pedagogy-eval.js",
     "eval:rationales": "node ./scripts/rationale-review.js",
     "eval:disconnected": "node ./scripts/find-disconnected.js",
+    "fix:placeholders": "node ./scripts/fix-placeholder-rationales.js",
     "eval:all": "pnpm run validate:sets && pnpm run lint:content && pnpm run audit:content && pnpm run eval:pedagogy && pnpm run eval:disconnected",
     "scaffold": "node ./scripts/scaffold-set.mjs",
     "migrate:types": "node ./scripts/migrate-exercise-types.mjs",
