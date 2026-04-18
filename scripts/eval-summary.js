@@ -40,11 +40,19 @@ const c = (t, col) => `${col}${t}${RESET}`;
 console.log(c('\n📋 EVALUATOR SUMMARY', BOLD));
 console.log(GRAY + `  ${CHECKS.length} checks · runs in sequence · advisory = never fails CI` + RESET + '\n');
 
+let passCt = 0, failCt = 0;
+const failed = [];
 for (const [script, label] of CHECKS) {
   const out = spawnSync('pnpm', ['run', '-s', script], { encoding: 'utf8' });
   const ok = out.status === 0;
+  if (ok) passCt++;
+  else { failCt++; failed.push(script); }
   const color = ok ? GREEN : RED;
   const icon = ok ? '✓' : '✗';
   console.log(`  ${c(icon, color)} ${label.padEnd(42)} ${c(script, GRAY)}`);
 }
+console.log('');
+const barColor = failCt === 0 ? GREEN : (failCt <= 4 ? YELLOW : RED);
+console.log(c(`  ${passCt}/${CHECKS.length} passed`, barColor) +
+  (failCt ? c(` · failed: ${failed.join(', ')}`, YELLOW) : ''));
 console.log('');
