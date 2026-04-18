@@ -83,7 +83,9 @@ function scoreExample(set) {
 // growth within the set, not absolute ease.
 function scoreGradient(set) {
   const diffs = pageDiffAvgs(set).filter(Boolean);
-  if (diffs.length < 2) return { score: 10, max: 20, issue: null };
+  // Single-page sets can't have a gradient; give full credit rather than
+  // capping them at 10/20 by default.
+  if (diffs.length < 2) return { score: 20, max: 20, issue: null };
   let score = 0;
   const issues = [];
   const firstMax = Number.isFinite(set.difficulty) ? Math.max(2.4, set.difficulty - 0.5) : 2.4;
