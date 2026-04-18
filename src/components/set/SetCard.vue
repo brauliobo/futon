@@ -68,13 +68,13 @@ export default {
       if (s <= this.speedTarget * 1.3) return 'text-amber-500';
       return 'text-kid-red';
     },
+    cardVariant() {
+      if (['mastery', 'pass', 'retry'].includes(this.set.status)) return this.set.status;
+      return this.hasProgress ? 'progress' : 'fresh';
+    },
     cardClass() {
-      const base = 'flex h-full flex-col gap-2 rounded-2xl border theme-border bg-kid-surface p-5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg border-l-[6px]';
-      const borders = { mastery: 'border-l-kid-green shadow-md green-glow', pass: 'border-l-amber-400 shadow-sm', retry: 'border-l-kid-red shadow-sm' };
-      const fallback = this.hasProgress ? 'border-l-kid-blue shadow-sm' : 'border-l-[color:var(--kid-border-strong)] shadow-sm';
-      const border = borders[this.set.status] || fallback;
-      const ring = this.isActive ? ' ring-2 ring-kid-blue/50 ring-offset-2 ring-offset-theme blue-glow' : '';
-      return `${base} ${border}${ring}`;
+      const ring = this.isActive ? ' set-card--active' : '';
+      return `set-card set-card--${this.cardVariant}${ring}`;
     },
     buttonText() {
       if (this.hasProgress) return this.$t('continueSet') || 'Continue';
@@ -83,9 +83,7 @@ export default {
     },
     buttonIcon() { return this.set.attempts > 0 && !this.hasProgress ? '↺' : '▶'; },
     actionButtonClass() {
-      const base = 'w-full flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95';
-      if (this.set.status === 'mastery') return `${base} bg-kid-green text-white`;
-      return `${base} bg-kid-blue text-white`;
+      return this.set.status === 'mastery' ? 'set-card-btn set-card-btn--mastery' : 'set-card-btn set-card-btn--primary';
     },
   },
   methods: {

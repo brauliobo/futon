@@ -326,6 +326,22 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .level-card--active { @apply shadow-md; border-color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 5%, var(--kid-surface)); box-shadow: 0 0 18px var(--glow-blue); }
 .level-card--locked { @apply cursor-not-allowed shadow-sm; border-color: var(--kid-border); }
 
+/* Set card — SetCard.vue set tile on Home */
+.set-card { @apply flex h-full flex-col gap-2 rounded-2xl border theme-border bg-kid-surface p-5 transition-all duration-300; border-left-width: 6px; }
+.set-card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.10); }
+.set-card--fresh    { @apply shadow-sm; border-left-color: var(--kid-border-strong); }
+.set-card--progress { @apply shadow-sm; border-left-color: var(--kid-blue); }
+.set-card--pass     { @apply shadow-sm; border-left-color: rgb(251, 191, 36); }
+.set-card--retry    { @apply shadow-sm; border-left-color: var(--kid-red); }
+.set-card--mastery  { @apply shadow-md; border-left-color: var(--kid-green); box-shadow: 0 0 18px var(--glow-green); }
+.set-card--active   { box-shadow: 0 0 0 2px color-mix(in srgb, var(--kid-blue) 50%, transparent), 0 0 0 4px var(--kid-ring-offset), 0 0 18px var(--glow-blue); }
+
+.set-card-btn { @apply w-full flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold transition-all duration-200 shadow-sm; }
+.set-card-btn:hover { transform: scale(1.02); box-shadow: 0 4px 10px rgba(0,0,0,0.10); }
+.set-card-btn:active { transform: scale(0.95); }
+.set-card-btn--primary { @apply bg-kid-blue text-white; }
+.set-card-btn--mastery { @apply bg-kid-green text-white; }
+
 /* Empathy hint card (used after wrong answers) */
 .hint-card {
   @apply flex items-start gap-2 rounded-2xl px-4 py-3 shadow-sm amber-soft-bg border;
