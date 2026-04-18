@@ -1,9 +1,9 @@
 <template lang="pug">
   div(class="relative py-4")
-    div(v-show="showLeftArrow" class="pointer-events-none absolute inset-y-0 left-0 z-[5] w-14 bg-gradient-to-r from-kid-surface via-kid-surface/90 to-transparent")
-    div(v-show="showRightArrow" class="pointer-events-none absolute inset-y-0 right-0 z-[5] w-14 bg-gradient-to-l from-kid-surface via-kid-surface/90 to-transparent")
+    div(v-show="showLeftArrow" class="pointer-events-none absolute inset-y-0 left-0 z-[5] w-10 sm:w-14 bg-gradient-to-r from-kid-surface via-kid-surface/90 to-transparent")
+    div(v-show="showRightArrow" class="pointer-events-none absolute inset-y-0 right-0 z-[5] w-10 sm:w-14 bg-gradient-to-l from-kid-surface via-kid-surface/90 to-transparent")
     button(
-      class="absolute left-2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-[color:var(--kid-surface-2)] hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
+      class="absolute left-1 sm:left-2 top-1/2 z-10 flex h-10 w-10 sm:h-12 sm:w-12 -translate-y-1/2 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-[color:var(--kid-surface-2)] hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollLeft"
       :disabled="!canScrollLeft"
       v-show="showLeftArrow"
@@ -29,7 +29,7 @@
             @start="$emit('start', $event)"
           )
     button(
-      class="absolute right-2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-[color:var(--kid-surface-2)] hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
+      class="absolute right-1 sm:right-2 top-1/2 z-10 flex h-10 w-10 sm:h-12 sm:w-12 -translate-y-1/2 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-[color:var(--kid-surface-2)] hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
       @click="scrollRight"
       :disabled="!canScrollRight"
       v-show="showRightArrow"
