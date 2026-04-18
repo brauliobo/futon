@@ -64,16 +64,25 @@ async function main() {
     process.exit(0);
   }
 
-  let maxDensity = 0;
+  // Kumon arithmetic drill levels (1A-D math, 1A-2A basic portuguese, all
+  // japanese kana) intentionally repeat questions for automaticity — a
+  // 20% recurrence rate is THE METHOD. Language/reading subjects should
+  // have less repetition (varied practice).
+  const mathThreshold = 0.25;
+  const otherThreshold = 0.15;
+  const thresholdFor = lvl => lvl.startsWith('math/') ? mathThreshold : otherThreshold;
+
+  let worstRatio = 0; // density / its threshold
   for (const lvl of levels) {
     const dupes = levelDupes[lvl].sort((a, b) => b.count - a.count);
     const totalDupQs = dupes.length;
-    // Total question count at this level
     const totalQs = [...byQ.values()].flat().filter(o => o.level === lvl).length;
     const density = totalQs ? totalDupQs / totalQs : 0;
-    maxDensity = Math.max(maxDensity, density);
-    const color = density > 0.15 ? RED : density > 0.05 ? YELLOW : GREEN;
-    console.log(c(`\n${lvl}`, BOLD) + `  ${c(totalDupQs, color)} dup questions across ${totalQs} total (${c(Math.round(density*100)+'%', color)})`);
+    const threshold = thresholdFor(lvl);
+    const ratio = density / threshold;
+    if (ratio > worstRatio) worstRatio = ratio;
+    const color = ratio > 1.0 ? RED : ratio > 0.5 ? YELLOW : GREEN;
+    console.log(c(`\n${lvl}`, BOLD) + `  ${c(totalDupQs, color)} dup questions across ${totalQs} total (${c(Math.round(density*100)+'%', color)}, threshold ${Math.round(threshold*100)}%)`);
     for (const d of dupes.slice(0, 3)) {
       console.log(`    x${d.count} ${d.sets.slice(0, 3).join(', ')}${d.sets.length > 3 ? '…' : ''}`);
       console.log(c(`       "${d.q.slice(0, 80)}"`, '\x1b[90m'));
@@ -82,11 +91,11 @@ async function main() {
   }
 
   console.log('\n' + '─'.repeat(60));
-  if (maxDensity > 0.15) {
-    console.log(c(`⚠️  Peak duplicate density: ${Math.round(maxDensity*100)}% — review curriculum progression.`, YELLOW));
+  if (worstRatio > 1.0) {
+    console.log(c(`⚠️  Some level exceeds its duplication threshold — review curriculum progression.`, YELLOW));
     process.exit(1);
   }
-  console.log(c(`✅ Max duplicate density: ${Math.round(maxDensity*100)}% (≤15% threshold).`, GREEN));
+  console.log(c(`✅ All levels under their duplication threshold (math ≤${Math.round(mathThreshold*100)}%, other ≤${Math.round(otherThreshold*100)}%).`, GREEN));
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) main();
