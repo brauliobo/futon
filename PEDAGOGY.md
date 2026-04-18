@@ -37,7 +37,7 @@ All fixers are dry-run by default; pass `--apply` to write. All evaluators suppo
 | # | Dimension | Pts | What earns full marks |
 |---|-----------|-----|-----------------------|
 | 1 | Example | 10 | `example:` present, ≥12 chars, contains a worked pair (`Ex.:` or `→` or `=`) |
-| 2 | Gradient | 20 | First page avg ≤ max(2.4, `set.difficulty` - 0.5); page-to-page jump ≤ 1.0; ends ≥ it starts |
+| 2 | Gradient | 20 | First page avg ≤ max(2.4, `set.difficulty` - 0.5); page-to-page jump ≤ 1.0 (partial credit up to min(2.0, 1 + difficulty/4)); ends ≥ it starts |
 | 3 | Rationale | 25 | ≥95% have rationale; ≥50% teach a method (verbs like *faça/primeiro/porque*); no restatements (`Resposta: X`), no one-liners (<10 ch), no walls (>300 ch) |
 | 4 | Objectives | 5 | Every exercise has at least one `objectives:` tag |
 | 5 | Answer distribution | 10 | No page where a single answer covers >60% of items |

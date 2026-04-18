@@ -90,7 +90,11 @@ function scoreGradient(set) {
   if (diffs[0] <= firstMax) score += 5;
   else issues.push(`first page hot-start (${diffs[0].toFixed(1)})`);
   const maxJump = Math.max(...diffs.slice(1).map((d, i) => Math.abs(d - diffs[i])));
+  // Jump tolerance scales with set.difficulty: a diff-4 set where one page
+  // steps up by 2 is less worrying than a diff-1 drill with the same jump.
+  const jumpTol = Number.isFinite(set.difficulty) ? Math.min(2.0, 1.0 + set.difficulty / 4) : 1.0;
   if (maxJump <= 1.0) score += 10;
+  else if (maxJump <= jumpTol) { score += 7; issues.push(`page jump ${maxJump.toFixed(1)}`); }
   else if (maxJump <= 1.5) { score += 5; issues.push(`page jump ${maxJump.toFixed(1)}`); }
   else issues.push(`large page jump ${maxJump.toFixed(1)}`);
   if (diffs[diffs.length - 1] >= diffs[0] - 0.2) score += 5;
