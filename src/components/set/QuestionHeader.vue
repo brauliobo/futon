@@ -1,6 +1,6 @@
 <template lang="pug">
   div(class="flex items-center gap-2" :class="spacing")
-    span(:class="badgeClass" aria-hidden="true") {{ number }}
+    span(:class="['q-badge', { 'q-badge--compact': compact, 'q-badge--answered': answered }]" aria-hidden="true") {{ number }}
     p(:id="`q-${number}`" :class="textClass") {{ question }}
 </template>
 
@@ -15,12 +15,6 @@ export default {
     answered: { type: Boolean, default: false },
   },
   computed: {
-    badgeClass() {
-      const base = 'flex-shrink-0 flex items-center justify-center rounded-full font-black shadow-sm transition-colors duration-300';
-      const tone = this.answered ? 'bg-kid-blue text-white' : 'surface-2 border theme-border-strong text-kid-blue';
-      const size = this.compact ? 'w-7 h-7 text-xs' : 'w-9 h-9 text-sm';
-      return `${base} ${tone} ${size}`;
-    },
     isShort() { return this.compact && String(this.question).trim().length <= 3; },
     textClass() {
       if (this.isShort) return 'text-4xl font-black text-kid-text leading-none tracking-wide';

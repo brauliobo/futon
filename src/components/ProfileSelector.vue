@@ -47,7 +47,7 @@
                 v-for="a in avatars"
                 :key="a"
                 @click="selectedAvatar = a"
-                :class="avatarBtnClass(a)"
+                :class="['avatar-btn', { 'avatar-btn--selected': a === selectedAvatar }]"
                 type="button"
                 :aria-pressed="selectedAvatar === a"
               ) {{ a }}
@@ -90,12 +90,6 @@ export default {
       this.showNewForm = false;
       this.newName = '';
       this.selectedAvatar = this.avatars[this.profiles.length % this.avatars.length];
-    },
-    avatarBtnClass(a) {
-      const base = 'aspect-square rounded-2xl text-3xl flex items-center justify-center transition-all active:scale-90';
-      return a === this.selectedAvatar
-        ? `${base} bg-kid-blue/15 border-2 border-kid-blue shadow-md scale-110`
-        : `${base} bg-kid-surface border-2 theme-border hover:border-kid-blue/40 hover:-translate-y-0.5`;
     },
   },
 };

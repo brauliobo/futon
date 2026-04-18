@@ -10,7 +10,7 @@ test.describe('Set Exercise Flow - Text Input', () => {
 
   test('page header shows dots and timer', async ({ page }) => {
     await expect(page.getByText('⏱')).toBeVisible();
-    await expect(page.locator('span.rounded-full').first()).toBeVisible();
+    await expect(page.locator('[role="progressbar"]').first()).toBeVisible();
   });
 
   test('example alert shown', async ({ page }) => {

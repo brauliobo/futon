@@ -389,6 +389,20 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .choice-badge { @apply inline-flex items-center justify-center rounded-md text-kid-blue font-black shadow-inner w-6 h-6 mr-2 text-xs; background: color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface)); }
 .choice-badge--pill { @apply w-5 h-5 mr-1.5 text-[11px]; }
 
+/* Daily-goal widget — Home.vue top banner */
+.daily-goal { @apply flex flex-wrap items-center gap-3 rounded-3xl border-2 shadow-sm px-5 py-4 animate-slide-up transition-colors duration-500 goal-bg; }
+.daily-goal--complete { background: color-mix(in srgb, var(--kid-green) 10%, var(--kid-surface)); box-shadow: 0 0 18px var(--glow-green); }
+
+/* Avatar button — ProfileSelector.vue avatar picker grid */
+.avatar-btn { @apply aspect-square rounded-2xl text-3xl flex items-center justify-center transition-all active:scale-90 bg-kid-surface border-2; border-color: var(--kid-border); }
+.avatar-btn:hover { border-color: color-mix(in srgb, var(--kid-blue) 40%, transparent); transform: translateY(-2px); }
+.avatar-btn--selected { @apply shadow-md; background: color-mix(in srgb, var(--kid-blue) 15%, var(--kid-surface)); border-color: var(--kid-blue); transform: scale(1.10); }
+
+/* Question number badge — QuestionHeader.vue */
+.q-badge { @apply flex-shrink-0 flex items-center justify-center rounded-full font-black shadow-sm transition-colors duration-300 surface-2 border text-kid-blue w-9 h-9 text-sm; border-color: var(--kid-border-strong); }
+.q-badge--compact  { @apply w-7 h-7 text-xs; }
+.q-badge--answered { @apply bg-kid-blue text-white; border-color: var(--kid-blue); }
+
 /* Empathy hint card (used after wrong answers) */
 .hint-card {
   @apply flex items-start gap-2 rounded-2xl px-4 py-3 shadow-sm amber-soft-bg border;

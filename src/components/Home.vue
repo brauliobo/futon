@@ -1,7 +1,7 @@
 <!-- src/components/Home.vue -->
 <template lang="pug">
   div(class="space-y-6")
-    div(data-testid="daily-goal" :class="dailyGoalClass" :style="{ borderColor: goalAchieved ? 'var(--kid-green)' : 'var(--goal-border)' }")
+    div(data-testid="daily-goal" :class="['daily-goal', { 'daily-goal--complete': goalAchieved }]" :style="{ borderColor: goalAchieved ? 'var(--kid-green)' : 'var(--goal-border)' }")
       div(class="flex items-center gap-2")
         span(class="text-xl") {{ goalAchieved ? '🎉' : '🎯' }}
         span(class="text-base font-black text-kid-text uppercase tracking-wide") {{ goalAchieved ? ($t('goalComplete') || 'Goal smashed!') : ($t('todayGoal') || 'Today\'s Goal') }}
@@ -234,10 +234,6 @@ export default {
   },
   computed: {
     goalAchieved() { return this.todaySets >= 3; },
-    dailyGoalClass() {
-      const base = 'flex flex-wrap items-center gap-3 rounded-3xl border-2 shadow-sm px-5 py-4 animate-slide-up transition-colors duration-500';
-      return this.goalAchieved ? `${base} bg-kid-green/10 green-glow` : `${base} goal-bg`;
-    },
     availableSubjects() {
       if (this.disciplineManager) {
         return Object.keys(this.disciplineManager.disciplines);
