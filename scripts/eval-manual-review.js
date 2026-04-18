@@ -64,13 +64,25 @@ async function main() {
     const uniqueObjectives = new Set(
       sets.flatMap(x => x.all.flatMap(e => e.objectives || []))
     );
-    out.push(`**Level stats:** ${sets.length} sets · ${totalExs} exercises · ${uniqueObjectives.size} objectives · ${totalGeneric} generic rationales`);
+    // Rationale diversity: low unique-rationale count hints at bucket-misroute
+    // bugs (iter 82-92 found 594+ across math/J, 5A, I, O, M).
+    const totalUniqueRats = new Set(
+      sets.flatMap(x => x.all.map(e => String(e.rationale || '').trim()).filter(Boolean))
+    );
+    const diversityRatio = totalExs ? totalUniqueRats.size / totalExs : 0;
+    out.push(`**Level stats:** ${sets.length} sets · ${totalExs} exercises · ${uniqueObjectives.size} objectives · ${totalGeneric} generic rationales · ${totalUniqueRats.size} unique rationales (${Math.round(diversityRatio * 100)}%)`);
     out.push('');
     out.push('### Level-wide checks');
     out.push('- [ ] **Progression readability** — Can a new student start at set_01 and feel each set building on the prior?');
     out.push('- [ ] **Example-exercise alignment** — Does each set\'s `example` use the same operation/structure as its exercises?');
     out.push('- [ ] **Cultural fit** — Are names, places, contexts appropriate for the age group?');
     out.push('- [ ] **Objective coverage** — Are all objectives listed also reached in exercises (no dangling/orphan tags)?');
+    if (diversityRatio < 0.15) {
+      out.push(`- [ ] ⚠️ **Rationale diversity low** (${Math.round(diversityRatio*100)}%) — spot-check whether the same rationale is misapplied across unrelated exercise shapes. Run \`pnpm eval:diversity\`.`);
+    }
+    if (totalGeneric > totalExs * 0.1) {
+      out.push(`- [ ] ⚠️ **${totalGeneric} generic rationales** — check these against their exercises; they may need domain-specific rewrites (see scripts/fix-*-rationales.js templates).`);
+    }
     out.push('');
     // Per-set block
     for (const x of sets) {
@@ -83,13 +95,23 @@ async function main() {
       out.push(`**First exercise:** ${String(firstEx?.question || '').slice(0, 80)} → \`${firstEx?.correctAnswer}\``);
       out.push(`**Last exercise:** ${String(lastEx?.question || '').slice(0, 80)} → \`${lastEx?.correctAnswer}\``);
       out.push('');
+      // Per-set rationale diversity to surface bucket-misroutings
+      const setRats = new Set(x.all.map(e => String(e.rationale || '').trim()).filter(Boolean));
+      const setAns = new Set(x.all.map(e => String(e.correctAnswer ?? '').trim()).filter(Boolean));
+      const setDiversity = setAns.size ? setRats.size / Math.min(setAns.size, x.all.length) : 1;
+      out.push(`**Unique rationales / answers:** ${setRats.size} / ${setAns.size}`);
+      out.push('');
       out.push('- [ ] The example shows the METHOD, not just the answer.');
       out.push('- [ ] First exercise is clearly achievable with the example alone.');
       out.push('- [ ] Last exercise genuinely extends the skill (not just a harder instance).');
       out.push(`- [ ] Rationales teach the *why* — sample ${Math.min(3, x.all.length)} random ones and verify.`);
       if (genericCount) out.push(`- [ ] **${genericCount}** rationale(s) flagged as "generic" — spot-check they really do teach.`);
+      if (setDiversity < 0.3 && x.all.length >= 10 && setAns.size >= 5) {
+        out.push(`- [ ] ⚠️ **${Math.round(setDiversity*100)}% rationale diversity** — one rationale covers many distinct answers. Check every bucket's exercises match its rationale's topic (see iter 82 math/J binomial bug).`);
+      }
       out.push('- [ ] No unintended distractor patterns (e.g. always pick the longest / always pick "b").');
       out.push('- [ ] Subject-matter accuracy — a domain expert would sign off.');
+      out.push('- [ ] `passCriteria.maxAvgSecondsPerExercise` × exerciseCount lands inside the level\'s Kumon time band (see `pnpm eval:time`).');
       out.push('');
     }
     out.push('---');
