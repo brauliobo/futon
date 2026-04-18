@@ -34,6 +34,22 @@ function clarifierFor(a, b) {
 
 async function main() {
   const files = await fg('src/levels/math/J/set_*.yaml');
+
+  // First pass: gather every (question → Map<answer, files+exercises>) across
+  // the WHOLE math/J level. Any question with >1 distinct factored form is a
+  // cross-set ambiguity, not just intra-page.
+  const globalQ = new Map();
+  for (const f of files) {
+    const s = YAML.parse(readFileSync(f, 'utf8'));
+    for (const p of s.pages || []) {
+      for (const e of p.exercises || []) {
+        const q = String(e.question);
+        if (!globalQ.has(q)) globalQ.set(q, new Set());
+        globalQ.get(q).add(String(e.correctAnswer));
+      }
+    }
+  }
+
   let total = 0;
   for (const f of files) {
     let raw = readFileSync(f, 'utf8');
@@ -41,31 +57,27 @@ async function main() {
     let changed = 0;
 
     for (const p of s.pages || []) {
-      const byQ = new Map();
       for (const e of p.exercises || []) {
-        const k = String(e.question);
-        if (!byQ.has(k)) byQ.set(k, []);
-        byQ.get(k).push(e);
-      }
-      for (const [q, exs] of byQ) {
-        if (exs.length !== 2) continue;
-        const [a, b] = exs.map(e => String(e.correctAnswer));
-        if (a === b) continue;
-        const map = clarifierFor(a, b);
+        const q = String(e.question);
+        const ambig = globalQ.get(q);
+        if (!ambig || ambig.size < 2) continue;
+        // Derive a clarifier by comparing this answer's first factor against
+        // any other known answer for the same question.
+        const otherAns = [...ambig].find(a => a !== String(e.correctAnswer));
+        if (!otherAns) continue;
+        const map = clarifierFor(String(e.correctAnswer), otherAns);
         if (!map) continue;
-        for (const e of exs) {
-          const clar = map[String(e.correctAnswer)];
-          if (!clar) continue;
-          const newQ = `${q} (${clar})`;
-          const qEsc = rx(q);
-          const aEsc = rx(String(e.correctAnswer));
-          const re = new RegExp(
-            `(question:\\s*)(?:"${qEsc}"|'${qEsc}'|${qEsc})([ \\t]*\\r?\\n\\s+correctAnswer:\\s*(?:"${aEsc}"|'${aEsc}'|${aEsc})(?=\\r?\\n))`,
-          );
-          if (re.test(raw)) {
-            raw = raw.replace(re, `$1"${newQ}"$2`);
-            changed++;
-          }
+        const clar = map[String(e.correctAnswer)];
+        if (!clar) continue;
+        const newQ = `${q} (${clar})`;
+        const qEsc = rx(q);
+        const aEsc = rx(String(e.correctAnswer));
+        const re = new RegExp(
+          `(question:\\s*)(?:"${qEsc}"|'${qEsc}'|${qEsc})([ \\t]*\\r?\\n\\s+correctAnswer:\\s*(?:"${aEsc}"|'${aEsc}'|${aEsc})(?=\\r?\\n))`,
+        );
+        if (re.test(raw)) {
+          raw = raw.replace(re, `$1"${newQ}"$2`);
+          changed++;
         }
       }
     }
