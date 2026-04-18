@@ -29,10 +29,12 @@ function currentScores() {
   const data = JSON.parse(out);
   const perLevel = {};
   for (const [key, v] of Object.entries(data.levels)) perLevel[key] = v.avgPct;
-  // Match the evaluator's own global = average across all sets (not across levels).
+  // Per-set map keyed "subject/level/file" for diffing individual-set changes.
+  const perSet = {};
+  for (const s of data.sets) perSet[`${s.subject}/${s.level}/${s.file}`] = s.pct;
   const pctSum = data.sets.reduce((s, r) => s + r.pct, 0);
   const global = data.sets.length ? Math.round(pctSum / data.sets.length) : 0;
-  return { global, perLevel, setsCount: data.sets.length };
+  return { global, perLevel, perSet, setsCount: data.sets.length };
 }
 
 function currentPlaceholders() {
@@ -85,6 +87,30 @@ function printDelta(baseline, current) {
     for (const r of rows) {
       const delta = r.d == null ? c(`(${r.note})`, CYAN) : symbol(r.d);
       console.log(`  ${r.level.padEnd(16)} ${String(r.b).padStart(4)}% → ${String(r.n).padStart(4)}%  ${delta}`);
+    }
+  }
+
+  // Per-set diff — surfaces individual files whose score moved
+  if (baseline.scores.perSet && current.scores.perSet) {
+    const moves = [];
+    const allFiles = new Set([...Object.keys(baseline.scores.perSet), ...Object.keys(current.scores.perSet)]);
+    for (const f of allFiles) {
+      const b = baseline.scores.perSet[f];
+      const n = current.scores.perSet[f];
+      if (b != null && n != null && b !== n) moves.push({ f, d: n - b, b, n });
+    }
+    moves.sort((a, b) => a.d - b.d);
+    const regressions = moves.filter(m => m.d < 0);
+    const improvements = moves.filter(m => m.d > 0);
+    if (regressions.length) {
+      console.log(c(`\nSet regressions (${regressions.length}):`, BOLD + RED));
+      for (const m of regressions.slice(0, 8)) console.log(`  ${m.f.padEnd(40)} ${m.b}% → ${m.n}%  ${symbol(m.d)}`);
+      if (regressions.length > 8) console.log(c(`  ... and ${regressions.length - 8} more`, GRAY));
+    }
+    if (improvements.length) {
+      console.log(c(`\nSet improvements (${improvements.length}):`, BOLD + GREEN));
+      for (const m of improvements.slice(-5).reverse()) console.log(`  ${m.f.padEnd(40)} ${m.b}% → ${m.n}%  ${symbol(m.d)}`);
+      if (improvements.length > 5) console.log(c(`  ... and ${improvements.length - 5} more`, GRAY));
     }
   }
 
