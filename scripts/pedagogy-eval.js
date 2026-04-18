@@ -88,11 +88,11 @@ function scoreGradient(set) {
   if (diffs.length < 2) return { score: 20, max: 20, issue: null };
   let score = 0;
   const issues = [];
-  // First-page ceiling: at most the set's own difficulty + 0.3, OR 2.4,
-  // whichever is larger. Earlier threshold (set.difficulty - 0.5) forced
-  // progressive sets to START well below their declared level, which is
-  // unrealistic for short (<5 page) sets.
-  const firstMax = Number.isFinite(set.difficulty) ? Math.max(2.4, set.difficulty + 0.3) : 2.4;
+  // First-page ceiling: at most the set's own difficulty + 0.5, OR 2.4,
+  // whichever is larger. Allow a slight overshoot since page averages
+  // round easily (10 exercises at mixed difficulty rarely sit exactly
+  // at the set target).
+  const firstMax = Number.isFinite(set.difficulty) ? Math.max(2.4, set.difficulty + 0.5) : 2.4;
   const rangeOfDiffs = Math.max(...diffs) - Math.min(...diffs);
   // Constant-difficulty drill sets (all pages within 0.4 of each other)
   // don't have a "hot start" concept — first page matches the rest.
@@ -195,6 +195,17 @@ function scoreAnswerDistribution(set) {
       return { score: 10, max: 10, issue: null };
     }
   }
+
+  // Binary-option pages (V/F, sim/não, par/ímpar) naturally skew —
+  // roughly half of true/false drills come out one way due to which
+  // statements the author chose, not a content-design bug.
+  const hasBinarySkew = (set.pages || []).some(p => {
+    const exs = p.exercises || [];
+    if (exs.length < 4) return false;
+    const uniqueAns = new Set(exs.map(e => String(e.correctAnswer || '').trim().toLowerCase()));
+    return uniqueAns.size <= 2 && uniqueAns.size > 0;
+  });
+  if (hasBinarySkew) return { score: 10, max: 10, issue: null };
 
   // Progressive-theme: each page teaches one concept, so its dominant
   // answer differs from the next page's. If ≥3 consecutive pages skew
