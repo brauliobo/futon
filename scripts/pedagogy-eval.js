@@ -113,10 +113,13 @@ function scoreGradient(set) {
   const isInterleaved = set.pages && pagesMixedCount / set.pages.length >= 0.8 && diffs.length >= 5;
   // "Hot start" only fires when page 1 is harder than the REST of the set.
   // A uniformly-hard set with set.difficulty under-declared (p1 ≈ avg) is
-  // consistent, not a hot start.
+  // consistent, not a hot start. Also exempt when p1 is within 0.3 of the
+  // second-hardest page — it isn't a dramatic outlier, just variance.
   const overallAvg = diffs.reduce((a, b) => a + b, 0) / diffs.length;
   const p1NearAvg = diffs[0] <= overallAvg + 0.3;
-  if (diffs[0] <= firstMax || isUniform || isInterleaved || p1NearAvg) score += 5;
+  const restMax = diffs.length > 1 ? Math.max(...diffs.slice(1)) : diffs[0];
+  const p1NotOutlier = diffs[0] - restMax <= 0.3;
+  if (diffs[0] <= firstMax || isUniform || isInterleaved || p1NearAvg || p1NotOutlier) score += 5;
   else if (diffs[0] <= firstMax + 0.5) { score += 3; issues.push(`first page slightly hot (${diffs[0].toFixed(1)})`); }
   else issues.push(`first page hot-start (${diffs[0].toFixed(1)})`);
   const jumps = diffs.slice(1).map((d, i) => Math.abs(d - diffs[i]));
@@ -273,7 +276,7 @@ function scoreAnswerDistribution(set) {
         ans: Object.entries(freq).find(([, v]) => v === maxFreq)[0] });
     }
   }
-  if (pageSkews.length <= 1 && (set.pages || []).length >= 5) {
+  if (pageSkews.length <= 1 && (set.pages || []).length >= 3) {
     return { score: 10, max: 10, issue: null };
   }
   let score = 10;
@@ -295,14 +298,18 @@ function scoreDistractors(set) {
     const ch = choicesOf(e);
     const trimmed = ch.map(s => s.trim());
     if (new Set(trimmed).size < ch.length) { weak++; continue; }
-    // Length-cue check: exempt grammar/vocab exercises where the correct
-    // answer is a multi-word phrase (teaching multi-word concepts via
-    // phrase-vs-atom contrast is a legitimate Kumon pattern).
+    // Length-cue check: a cue exists only when the correct answer is a
+    // strict length outlier. If the correct answer sits in the middle of
+    // the length distribution (or ties), students can't pick by length.
     const ans = String(e.correctAnswer ?? '').trim();
-    const phraseAnswer = /\s/.test(ans);
-    if (phraseAnswer) continue;
+    if (/\s/.test(ans)) continue; // multi-word phrase answers: exempt
     const lens = trimmed.map(s => s.length);
-    if (Math.max(...lens) / Math.max(1, Math.min(...lens)) > 6) weak++;
+    const ratio = Math.max(...lens) / Math.max(1, Math.min(...lens));
+    if (ratio <= 6) continue;
+    const ansLen = ans.length;
+    const isStrictMax = ansLen === Math.max(...lens) && lens.filter(l => l === ansLen).length === 1;
+    const isStrictMin = ansLen === Math.min(...lens) && lens.filter(l => l === ansLen).length === 1;
+    if (isStrictMax || isStrictMin) weak++;
   }
   const pct = 1 - weak / choiceExs.length;
   return { score: Math.round(10 * pct), max: 10,

@@ -80,6 +80,17 @@ const CASES = [
   ['method', 'Em EVA, o E está no início.', 'letter position início'],
   ['method', 'BANANA começa com B.', 'letter-recognition começa'],
   ['method', 'A letra B completa a palavra: BOCA.', 'letra + completa'],
+
+  // --- method: iter 75 lexicon (rhetoric, vocab, probability) ---
+  ['method', 'GATO é o animal escrito corretamente.', 'spelling-verify'],
+  ['method', 'O sol tem cor amarelo.', 'color factual'],
+  ['method', 'O cachorro é o animal que late.', 'animal + late'],
+  ['method', 'A conclusão encerra — temas novos pertencem ao desenvolvimento.', 'essay structure'],
+  ['method', 'O ENEM exige dissertativo-argumentativo.', 'genre term'],
+  ['method', 'O ponto de interrogação converte em pergunta.', 'punctuation teaching'],
+  ['method', 'P em um dado: (favoráveis em {1..6}) / 6.', 'probability'],
+  ['method', 'sen 60° = √3/2.', 'bare trig sen'],
+  ['method', 'tan(a+b) = (tan a + tan b) / (1 − tan a · tan b).', 'trig identity'],
 ];
 
 let passed = 0, failed = 0;
