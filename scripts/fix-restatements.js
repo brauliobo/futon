@@ -20,9 +20,18 @@ import path from 'path';
 const APPLY = process.argv.includes('--apply');
 
 const CHOICE_RE = /\(([^)]+\/[^)]+)\)\s*$/;
-// Matches "A resposta correta é X.", "A grafia correta é X.", and
-// "A forma correta é X." — all classic restatement phrasings.
-const RESTATE_LINE_RE = /^(\s*)rationale:\s*["']A\s+(?:resposta|grafia|forma)\s+correta\s+é\s+['"]?([^"'.]+?)['"]?\.?["']\s*$/i;
+// Matches classic restatement phrasings:
+//   "A resposta correta é 'X'."
+//   "A grafia correta é 'X'."
+//   "A forma correta é 'X'."
+//   "A grafia correta usa 'X'."
+//   "'X' completa a palavra com a letra correta."
+const RESTATE_LINE_RE = new RegExp(
+  '^(\\s*)rationale:\\s*["\'](?:' +
+    'A\\s+(?:resposta|grafia|forma|preposição|palavra|letra)\\s+correta\\s+(?:é|usa|aqui\\s+é)\\s+[\'"]?[^"\'.]+?[\'"]?\\.?' +
+    '|[\'"]?[^"\'.]+?[\'"]?\\s+completa\\s+a\\s+palavra\\s+com\\s+a\\s+letra\\s+correta\\.?' +
+  ')["\']\\s*$', 'i'
+);
 
 // Tiny domain lexicon for common Kumon Portuguese categories.
 const CATEGORY_HINT = {

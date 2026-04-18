@@ -43,6 +43,8 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'par\\b', 'ímpar', 'rima', 'produzem?', 'dá\\b',
   'fato', 'opinião', 'tese', 'argumento', 'interpretação',
   'desigualdade', 'equação', 'inequação', 'variável', 'incógnita',
+  'preposição', 'conjunção', 'pronome', 'artigo', 'numeral',
+  'interjeição', 'reg[êe]ncia', 'crase', 'colocação', 'pronominal',
   // Literature / history action verbs (classification + attribution)
   'compôs', 'escreveu', 'criou', 'fundou', 'inaugurou', 'liderou',
   'publicou', 'surg[eiu]', 'pertence', 'caracteriza', 'define',
