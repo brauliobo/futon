@@ -45,6 +45,11 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'compôs', 'escreveu', 'criou', 'fundou', 'inaugurou', 'liderou',
   'publicou', 'surg[eiu]', 'pertence', 'caracteriza', 'define',
   'explora', 'defende', 'desenvolveu', 'representa', 'marca\\b',
+  // Journalism / analytical verbs
+  'sintetiz[ae]', 'resume', 'informa', 'investiga', 'analis[ae]',
+  'avali[ae]', 'pesquisa', 'transmite', 'comunica', 'expressa',
+  'objetividade', 'subjetividade', 'credibilidade', 'pluralidade',
+  'parcialidade', 'imparcialidade', 'relev[âa]ncia', 'pertin[êe]ncia',
   // Style / genre markers
   'estilo', 'gênero', 'movimento', 'período', 'geração',
   'barroco', 'romantismo', 'modernismo', 'realismo', 'quinhentismo',
