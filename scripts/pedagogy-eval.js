@@ -86,6 +86,12 @@ function scoreGradient(set) {
   // Single-page sets can't have a gradient; give full credit rather than
   // capping them at 10/20 by default.
   if (diffs.length < 2) return { score: 20, max: 20, issue: null };
+
+  // Sparse-page sets (≤2 exercises per page) have no meaningful per-page
+  // average — each "page avg" IS essentially one exercise's difficulty.
+  // Can't measure a gradient with one sample per bucket.
+  const maxPerPage = Math.max(...(set.pages || []).map(p => (p.exercises || []).length));
+  if (maxPerPage <= 2) return { score: 20, max: 20, issue: null };
   let score = 0;
   const issues = [];
   // First-page ceiling: at most the set's own difficulty + 0.5, OR 2.4,
