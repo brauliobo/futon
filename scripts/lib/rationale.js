@@ -90,8 +90,9 @@ const SUBSTITUTION_RE = /[a-z]\([-+]?\d/i;
 const TRANSFORMATION_RE = /\S\s*→\s*\S/;
 // Definition: "'Could' = habilidade geral passada." — quoted word followed
 // by an equals glossing it. Also matches unquoted capitalized concept
-// terms like "Desenvolvimento = expandir a ideia..." that gloss a noun.
-const DEFINITION_RE = /(?:['"][^'"]{2,}['"]|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]{3,})\s*=\s*\S/;
+// terms like "Desenvolvimento = expandir a ideia..." and single-variable
+// math formulas like "A = base × altura" or "V = πr²h".
+const DEFINITION_RE = /(?:['"][^'"]{2,}['"]|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]{3,}|[A-Z]\s+=)\s*=?\s*\S/;
 
 export function categorize(rationale) {
   if (!rationale || typeof rationale !== 'string') return 'missing';
