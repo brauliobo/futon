@@ -11,11 +11,21 @@ if ! echo "$STAGED" | grep -qE '^(src/levels/|scripts/(pedagogy-eval|fix-|find-|
   exit 0
 fi
 
-echo "→ pedagogy guard: running test:eval + eval:snapshot"
+echo "→ pedagogy guard: running test:eval + snapshot + topic-consistency"
 pnpm -s test:eval
 pnpm -s eval:snapshot --threshold -3 || {
   echo ""
   echo "❌ pedagogy regression detected. Review above or update the baseline"
   echo "   intentionally with: pnpm eval:snapshot --save"
+  exit 1
+}
+# Topic-consistency catches bucketed-rationale misroutings that the rubric
+# can't see (rationale mentions "sec²" but exercise is about sin/cos, etc.).
+# Cheap check — runs on the whole corpus in well under a second.
+pnpm -s eval:topic || {
+  echo ""
+  echo "❌ topic-consistency: a rationale mentions a domain marker but its"
+  echo "   exercise isn't on that topic. Fix the rationale or update rules"
+  echo "   in scripts/eval-topic-consistency.js."
   exit 1
 }

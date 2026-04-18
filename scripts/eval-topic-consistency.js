@@ -42,6 +42,15 @@ const RULES = [
   { marker: 'Potências de i', requires: ['i⁴', 'i²', 'i³', 'i^', 'iⁿ'] },
   { marker: 'Triângulo 30-60-90', requires: ['30', '60', '90'] },
   { marker: 'Razões notáveis', requires: ['30°', '45°', '60°', 'sen', 'cos', 'tan'] },
+  { marker: 'Soma dos n primeiros ímpares', requires: ['ímpar', 'ímpares', 'n²'] },
+  { marker: 'Soma de PG', requires: ['PG', 'Sₙ', 'S₁₀', 'a₁', 'q', '=0.5', 'geométrica', 'Dobrando', 'dobrando'] },
+  { marker: 'Série de Taylor', requires: ['Taylor', 'e^x', 'e^0', 'termos', 'xⁿ', 'f^(n)'] },
+  { marker: 'Raio de convergência', requires: ['convergência', 'R =', 'e^x', 'ln(1+', 'converg'] },
+  { marker: 'Potência complexa via polar', requires: ['(1+', '(1-', '+i)', '-i)', '⁴', '⁵', '⁶'] },
+  { marker: 'Módulo ao quadrado', requires: ['|', '²', '+bi', '+i', '-i'] },
+  { marker: 'Soma: ', requires: ['(x', '²', 'coeficiente', '+x', '-x'] }, // binomial
+  { marker: 'Sucessor de', requires: ['Depois', 'sucessor', 'vem', 'próximo', '+ 1', '+1'] },
+  { marker: 'Antecessor de', requires: ['Antes', 'antecessor', 'anterior', '- 1', '-1'] },
 ];
 
 async function main() {
