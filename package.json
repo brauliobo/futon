@@ -16,6 +16,7 @@
     "eval:bias": "node ./scripts/find-answer-bias.js",
     "fix:placeholders": "node ./scripts/fix-placeholder-rationales.js",
     "fix:examples": "node ./scripts/fix-examples.js",
+    "fix:japanese": "node ./scripts/fix-japanese-rationales.js",
     "eval:snapshot": "node ./scripts/pedagogy-snapshot.js",
     "eval:dashboard": "node ./scripts/pedagogy-dashboard.js",
     "eval:all": "pnpm run validate:sets && pnpm run lint:content && pnpm run audit:content && pnpm run eval:pedagogy && pnpm run eval:disconnected",

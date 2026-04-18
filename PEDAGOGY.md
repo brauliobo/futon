@@ -74,6 +74,19 @@ Exits 1 when any placeholder templates are found (CI hook). Use `--subject` / `-
 
 Every rule verifies the computed value matches the exercise's `correctAnswer` before rewriting — if the answer disagrees, the fixer skips that row so wrong content is never masked by a confident-looking rationale.
 
+For Japanese (inline-YAML style), use `pnpm fix:japanese`. It classifies question/answer by script (kanji / hiragana / katakana / romaji / digit / Portuguese text) and generates method rationales for each pair-direction:
+
+| Direction | Rationale shape |
+|---|---|
+| kanji → digit | *"O kanji 一 representa o número 1."* |
+| digit → kanji | *"1 em kanji escreve-se 一. Memorize o traço único."* |
+| kanji → kana (reading) | *"一 lê-se いち. Pratique associar o traço ao som."* |
+| kanji → Portuguese (meaning) | *"O kanji 犬 significa \"cachorro\". Observe o desenho como pista visual."* |
+| hiragana ↔ katakana | *"あ (hiragana) corresponde a ア em katakana — mesmo som, escrita diferente."* |
+| kana → romaji | *"あ lê-se \"a\" (romaji)."* |
+| romaji → kana | *"O som \"a\" em hiragana escreve-se あ."* |
+| Portuguese → kanji/kana | *"\"cachorro\" em japonês escreve-se 犬."* |
+
 Supported shapes today:
 
 | Exercise type | Question pattern | Generated rationale |
