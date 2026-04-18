@@ -99,11 +99,26 @@ function scoreGradient(set) {
 }
 
 // 3. Rationale pedagogical quality (25). Categories: see scripts/lib/rationale.js.
+// A 'generic' rationale that echoes both a question-side word and the answer
+// (e.g. question "A cor do sol é?" + answer "amarelo" + rationale "O sol tem
+// cor amarelo.") qualifies as method-teaching via factual reinforcement.
+function echoesQuestionAndAnswer(ex) {
+  const r = String(ex.rationale || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const a = String(ex.correctAnswer || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+  if (a.length < 3 || !r.includes(a)) return false;
+  const q = String(ex.question || '').replace(/\([^)]+\)\s*$/, '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const qWords = (q.match(/[a-z]{4,}/g) || []).filter(w => !['como', 'onde', 'quem', 'qual', 'para'].includes(w));
+  return qWords.some(w => r.includes(w));
+}
 function scoreRationales(set) {
   const exs = allExercises(set);
   if (!exs.length) return { score: 0, max: 25, issue: 'no exercises' };
   const counts = { method: 0, generic: 0, missing: 0, short: 0, long: 0, restatement: 0 };
-  for (const e of exs) counts[rationaleCategory(e.rationale)]++;
+  for (const e of exs) {
+    let cat = rationaleCategory(e.rationale);
+    if (cat === 'generic' && echoesQuestionAndAnswer(e)) cat = 'method';
+    counts[cat]++;
+  }
   const n = exs.length;
   const methodPts = Math.round(15 * counts.method / n);
   const coverPts = Math.round(5 * (1 - counts.missing / n));
