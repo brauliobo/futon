@@ -42,7 +42,7 @@ pages:
       - type: calculus
         question: "Coeficiente do termo xⁿ na Taylor: f^(n)(0)/?"
         correctAnswer: n!
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Série de Taylor em x=0: f(x) = Σ f⁽ⁿ⁾(0)·xⁿ/n!."
         difficulty: 3
         objectives: [series.taylor]
   - pageNumber: 2
@@ -58,13 +58,13 @@ pages:
       - type: calculus
         question: e^0 = ?
         correctAnswer: 1
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "e^0 = 1 (toda potência de expoente 0 é 1)."
         difficulty: 3
         objectives: [series.taylor]
       - type: calculus
         question: "Primeiros 3 termos de e^x em x=1: 1+1+0.5 = ?"
         correctAnswer: 2.5
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Série de Taylor em x=0: f(x) = Σ f⁽ⁿ⁾(0)·xⁿ/n!."
         difficulty: 3
         objectives: [series.taylor]
       - type: calculus
@@ -188,7 +188,7 @@ pages:
       - type: calculus
         question: "e^x: R = ?"
         correctAnswer: ∞
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Raio de convergência de eˣ é infinito (série converge para todo x real)."
         difficulty: 4
         objectives: [series.taylor]
       - type: calculus
@@ -222,13 +222,13 @@ pages:
       - type: calculus
         question: e^0.1 ≈ 1 + 0.1 + 0.01/2 + ... primeiros 3 termos = ?
         correctAnswer: 1.105
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Série de Taylor de eˣ em x=0: 1 + x + x²/2! + x³/3! + … Soma parcial aproxima eˣ."
         difficulty: 4
         objectives: [series.taylor]
       - type: calculus
         question: Valor real de e^0.1 ≈ ?
         correctAnswer: 1.1052
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Série de Taylor de eˣ em x=0: 1 + x + x²/2! + x³/3! + … Soma parcial aproxima eˣ."
         difficulty: 4
         objectives: [series.taylor]
       - type: calculus
@@ -324,7 +324,7 @@ pages:
       - type: calculus
         question: e^x em x=1 (primeiros 4 termos) ≈ ?
         correctAnswer: 2.667
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Série de Taylor de eˣ em x=0: 1 + x + x²/2! + x³/3! + … Soma parcial aproxima eˣ."
         difficulty: 4
         objectives: [series.taylor]
       - type: calculus

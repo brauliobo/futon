@@ -33,7 +33,7 @@ const RULES = [
   { marker: 'Lei dos senos', requires: ['sen', 'triângulo', 'lado', 'ângulo', '°', '2R'] },
   { marker: 'Lei dos cossenos', requires: ['cos', 'triângulo', 'lado', 'ângulo', '°', 'c =', 'c²', 'c ≈'] },
   { marker: 'Fórmula de Euler', requires: ['e^', 'e^(', 'cos', 'sen', 'i'] },
-  { marker: 'De Moivre', requires: ['cis', 'θ', '°'] },
+  { marker: 'De Moivre', requires: ['cis', 'θ', '°', '+i)', '-i)', 'bi', 'a+b'] },
   { marker: 'Critério de Leibniz', requires: ['(-1)', 'alternad'] },
   { marker: 'Série geométrica', requires: ['Σ', 'q^n', '/2)^n', '/3)^n', '2^n', '1/(1-', 'série'] },
   { marker: 'p-série', requires: ['Σ', '1/n', 'p-série', 'p > 1'] },

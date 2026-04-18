@@ -22,8 +22,32 @@ const rx = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const MISMATCH = 'Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ.';
 const RADICAL_MISMATCH = 'Radical: √(a·b) = √a·√b; racionalize quando preciso.';
 
-export function rationaleFor(q) {
+export function rationaleFor(q, a) {
   const s = String(q || '');
+  const ans = String(a ?? '');
+  // --- Lei dos cossenos (math/M/set_11) ---
+  if (/a=\d.*b=\d.*C=\d+°.*c²|a=b=\d.*C=\d+°/.test(s)) {
+    return 'Lei dos cossenos: c² = a² + b² − 2ab·cos C.';
+  }
+  // --- PA sum identity (math/M/set_12) ---
+  if (/primeiros\s+ímpares|soma dos (n|primeiros).*ímpares/i.test(s)) {
+    return 'Soma dos n primeiros ímpares = n². Ex.: 1+3+5+7 = 16 = 4².';
+  }
+  // --- PG soma / progressão geométrica (math/M/set_13) ---
+  if (/S₁?₀|S\d+|a₁=\d|formam\s+PG|PG|xadrez|dobrando/i.test(s)) {
+    return 'Soma de PG finita: Sₙ = a₁·(qⁿ−1)/(q−1); PG: b² = a·c (termo central).';
+  }
+  // --- Taylor series (math/M/set_18, 20) ---
+  if (/Taylor|f\^\(n\)\(0\)|Primeiros.*termos de e\^x|Coeficiente do termo xⁿ|primeiros.*termos.*≈|e\^0\.\d|Valor real de e\^/i.test(s)) {
+    return 'Série de Taylor de eˣ em x=0: 1 + x + x²/2! + x³/3! + … Soma parcial aproxima eˣ.';
+  }
+  if (/Raio de convergência.*e\^x|e\^x.*R\s*=/.test(s)) {
+    return 'Raio de convergência de eˣ é infinito (série converge para todo x real).';
+  }
+  // e^0 → Euler exponent
+  if (/^e\^0\s*=/.test(s)) {
+    return 'e^0 = 1 (toda potência de expoente 0 é 1).';
+  }
   // --- Series (math/M/set_14) ---
   if (/n!/.test(s) || /aₙ₊₁\/aₙ/.test(s)) {
     return 'Teste da razão: se lim |aₙ₊₁/aₙ| < 1, Σaₙ converge.';
@@ -60,8 +84,16 @@ export function rationaleFor(q) {
   if (/e\^\(?i|e\^\(?[iα]|exponencial/.test(s)) {
     return 'Fórmula de Euler: e^(iθ) = cos θ + i sen θ. Caso especial: e^(iπ) + 1 = 0.';
   }
-  if (/^i[²³⁴⁵⁶⁷⁸⁹]/.test(s)) {
-    return 'Potências de i ciclam: i¹=i, i²=-1, i³=-i, i⁴=1, depois repete.';
+  if (/^i[²³⁴⁵⁶⁷⁸⁹]|i\^(?:\d|n)/.test(s)) {
+    return 'Potências de i ciclam: i¹=i, i²=-1, i³=-i, i⁴=1, depois repete (período 4).';
+  }
+  // Complex modulus squared: |a+bi|² = a² + b²
+  if (/\|[^|]+\|²/.test(s)) {
+    return 'Módulo ao quadrado: |a+bi|² = a² + b².';
+  }
+  // (1+i)^n expansion — complex power via polar or binomial
+  if (/\(1\+i\)[⁰¹²³⁴⁵⁶⁷⁸⁹]|\(\d*[+-]\d*i\)[⁰¹²³⁴⁵⁶⁷⁸⁹]/.test(s)) {
+    return 'Potência complexa via polar: (a+bi)ⁿ = |z|ⁿ·cis(nθ) (De Moivre).';
   }
   if (/r\s*=\s*[-\d√.]+.*θ\s*=\s*\d+°?.*(?:real|imaginári)/.test(s)) {
     return 'De polar para cartesiana: a = r cos θ, b = r sen θ.';
@@ -80,7 +112,7 @@ export function rationaleFor(q) {
 }
 
 async function main() {
-  const files = await fg('src/levels/math/M/set_{14,15,17}.yaml');
+  const files = await fg('src/levels/math/M/set_*.yaml');
   let total = 0;
   for (const f of files) {
     let raw = readFileSync(f, 'utf8');
@@ -90,7 +122,7 @@ async function main() {
       for (const e of p.exercises || []) {
         const r = String(e.rationale || '').trim();
         if (r !== MISMATCH && r !== RADICAL_MISMATCH) continue;
-        const newR = rationaleFor(e.question);
+        const newR = rationaleFor(e.question, e.correctAnswer);
         if (!newR) continue;
         const qEsc = rx(String(e.question));
         const blockRe = new RegExp(
