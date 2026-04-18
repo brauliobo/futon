@@ -136,6 +136,43 @@ const CASES = [
     }),
     expect: r => r.score < 10,
   },
+  // answerDist focused-page exemption (iter 74) -------------------------------
+  {
+    name: 'answerDist: single focused page in diverse set = exempt',
+    run: () => scoreAnswerDistribution({ pages: [
+      { pageNumber: 1, exercises: [1,2,3,4,5,6,7,8,9,10].map(a => ({ correctAnswer: a })) },
+      { pageNumber: 2, exercises: [2,3,4,5,6,7,8,9,10,1].map(a => ({ correctAnswer: a })) },
+      { pageNumber: 3, exercises: [3,4,5,6,7,8,9,10,1,2].map(a => ({ correctAnswer: a })) },
+      { pageNumber: 4, exercises: [4,5,6,7,8,9,10,1,2,3].map(a => ({ correctAnswer: a })) },
+      // page 5 teaches n-n=0, 7 of 10 answers are 0
+      { pageNumber: 5, exercises: [0,0,0,0,0,0,0,1,2,3].map(a => ({ correctAnswer: a })) },
+    ]}),
+    expect: r => r.score === 10,
+  },
+  {
+    name: 'answerDist: two skewed pages still penalized',
+    run: () => scoreAnswerDistribution({ pages: [
+      { pageNumber: 1, exercises: [0,0,0,0,0,0,0,1,2,3].map(a => ({ correctAnswer: a })) },
+      { pageNumber: 2, exercises: [0,0,0,0,0,0,0,1,2,3].map(a => ({ correctAnswer: a })) },
+      { pageNumber: 3, exercises: [1,2,3,4,5,6,7,8,9,10].map(a => ({ correctAnswer: a })) },
+      { pageNumber: 4, exercises: [2,3,4,5,6,7,8,9,10,1].map(a => ({ correctAnswer: a })) },
+      { pageNumber: 5, exercises: [3,4,5,6,7,8,9,10,1,2].map(a => ({ correctAnswer: a })) },
+    ]}),
+    expect: r => r.score < 10,
+  },
+  // gradient consolidation-review exemption (iter 74) -------------------------
+  {
+    name: 'gradient: downward jump into final page = consolidation, exempt',
+    run: () => scoreGradient({
+      difficulty: 2,
+      pages: [
+        { pageNumber: 1, exercises: Array(10).fill({ difficulty: 2 }) },
+        { pageNumber: 2, exercises: Array(10).fill({ difficulty: 2 }) },
+        { pageNumber: 3, exercises: Array(10).fill({ difficulty: 1 }) },
+      ],
+    }),
+    expect: r => r.score === 20,
+  },
 ];
 
 let passed = 0, failed = 0;

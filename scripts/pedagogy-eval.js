@@ -111,16 +111,28 @@ function scoreGradient(set) {
     return ds.length >= 5 && (Math.max(...ds) - Math.min(...ds)) >= 2;
   }).length;
   const isInterleaved = set.pages && pagesMixedCount / set.pages.length >= 0.8 && diffs.length >= 5;
-  if (diffs[0] <= firstMax || isUniform || isInterleaved) score += 5;
+  // "Hot start" only fires when page 1 is harder than the REST of the set.
+  // A uniformly-hard set with set.difficulty under-declared (p1 ≈ avg) is
+  // consistent, not a hot start.
+  const overallAvg = diffs.reduce((a, b) => a + b, 0) / diffs.length;
+  const p1NearAvg = diffs[0] <= overallAvg + 0.3;
+  if (diffs[0] <= firstMax || isUniform || isInterleaved || p1NearAvg) score += 5;
   else if (diffs[0] <= firstMax + 0.5) { score += 3; issues.push(`first page slightly hot (${diffs[0].toFixed(1)})`); }
   else issues.push(`first page hot-start (${diffs[0].toFixed(1)})`);
   const jumps = diffs.slice(1).map((d, i) => Math.abs(d - diffs[i]));
+  const signedJumps = diffs.slice(1).map((d, i) => d - diffs[i]);
   const maxJump = Math.max(...jumps);
   const bigJumps = jumps.filter(j => j > 1.0).length;
+  // "Consolidation-review last page": the only big jump is a downward step
+  // INTO the final page — a legitimate Kumon cool-down / integration pattern
+  // rather than an erratic gradient.
+  const lastJumpIsOnly = bigJumps === 1 && jumps[jumps.length - 1] > 1.0;
+  const lastJumpDown = signedJumps[signedJumps.length - 1] < -0.5;
+  const isConsolidation = lastJumpIsOnly && lastJumpDown;
   // Jump tolerance scales with set.difficulty: a diff-4 set where one page
   // steps up by 2 is less worrying than a diff-1 drill with the same jump.
   const jumpTol = Number.isFinite(set.difficulty) ? Math.min(2.0, 1.0 + set.difficulty / 4) : 1.0;
-  if (isInterleaved) score += 10;
+  if (isInterleaved || isConsolidation) score += 10;
   else if (maxJump <= 1.0) score += 10;
   else if (bigJumps === 1 && maxJump <= 2.0) {
     // Single-outlier tolerance: one page steps by up to 2; rest are gentle.
@@ -246,8 +258,10 @@ function scoreAnswerDistribution(set) {
     return { score: 10, max: 10, issue: null };
   }
 
-  let score = 10;
-  const issues = [];
+  // Gather per-page skew info before scoring — a single concentrated page
+  // inside an otherwise-diverse set is intentional Kumon "focused-practice"
+  // (e.g. one page teaching n-n=0 within a diverse subtraction set).
+  const pageSkews = [];
   for (const p of set.pages || []) {
     const ans = (p.exercises || []).map(e => String(e.correctAnswer ?? '').trim().toLowerCase()).filter(Boolean);
     if (ans.length < 4) continue;
@@ -255,10 +269,18 @@ function scoreAnswerDistribution(set) {
     for (const a of ans) freq[a] = (freq[a] || 0) + 1;
     const maxFreq = Math.max(...Object.values(freq));
     if (maxFreq / ans.length > 0.6) {
-      score -= 3;
-      issues.push(`p${p.pageNumber}: ${Math.round(maxFreq/ans.length*100)}% "${Object.entries(freq).find(([,v])=>v===maxFreq)[0].slice(0,12)}"`);
+      pageSkews.push({ page: p.pageNumber, pct: maxFreq / ans.length,
+        ans: Object.entries(freq).find(([, v]) => v === maxFreq)[0] });
     }
   }
+  if (pageSkews.length <= 1 && (set.pages || []).length >= 5) {
+    return { score: 10, max: 10, issue: null };
+  }
+  let score = 10;
+  const issues = pageSkews.map(s => {
+    score -= 3;
+    return `p${s.page}: ${Math.round(s.pct*100)}% "${s.ans.slice(0,12)}"`;
+  });
   return { score: Math.max(0, score), max: 10, issue: issues.slice(0, 3).join('; ') || null };
 }
 
@@ -291,6 +313,9 @@ function scoreDistractors(set) {
 // single-token vocabulary prompts (e.g. "1" in number vocab, "犬" in
 // kanji drills) — those are legitimately short.
 const SHORT_VOCAB_RE = /^\S{1,3}$/;
+// Quoted passage ≥ 80 chars = embedded reading text. Paragraph-analysis
+// exercises legitimately carry longer prompts than drill questions.
+const EMBEDDED_PASSAGE_RE = /['"][^'"]{80,}['"]/;
 function scoreQuestionLength(set) {
   const exs = allExercises(set);
   if (!exs.length) return { score: 0, max: 10, issue: null };
@@ -298,7 +323,8 @@ function scoreQuestionLength(set) {
   for (const e of exs) {
     if (e.type === 'cloze') continue;
     const q = String(e.question || '');
-    if (q.length > 250) { bad++; continue; }
+    const maxLen = EMBEDDED_PASSAGE_RE.test(q) ? 400 : 250;
+    if (q.length > maxLen) { bad++; continue; }
     if (q.length < 3 && !SHORT_VOCAB_RE.test(q)) bad++;
   }
   const pct = 1 - bad / exs.length;
