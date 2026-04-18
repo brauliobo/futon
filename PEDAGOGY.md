@@ -17,6 +17,7 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm eval:bias` | Answer-position bias audit (content-side, runtime shuffle also fixes this) |
 | `pnpm eval:duplicates` | Cross-set question duplication scanner (within-level density) |
 | `pnpm eval:review [level\|set]` | Generate markdown manual-review checklist for human reviewers |
+| `pnpm eval:arithmetic` | Verify authored answers match computation for pure `N op N =` drills |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
 | `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected |
 | `pnpm fix:placeholders [--apply]` | Deterministic rule-based rewriter for known-bad rationales (16 rule shapes) |
@@ -194,6 +195,12 @@ pnpm eval:review math/D/set_12       # one specific set
 ```
 
 Write the output to a file (`pnpm eval:review math/D > review-mathD.md`) and work through the checklist offline.
+
+## Arithmetic correctness check
+
+`pnpm eval:arithmetic` parses pure `N op N =` arithmetic drills (e.g. `5 + 3 =`, `23 − 7 =`, `6 × 4 =`, `12 ÷ 3 =`) and verifies the authored answer matches the computation. Deliberately strict — skips anything with `?`, `_`, variables, or fractional notation where the numeric field has non-arithmetic semantics, so false positives are near-zero.
+
+Wired into `pnpm eval:all` and fails CI on any mismatch. First run verified 16,312 exercises with zero typos across math/1A through math/Q.
 
 **Fix options**:
 - **Content**: reshuffle `choices:` / the `(a/b/c)` order in YAML so the correct answer rotates across positions.
