@@ -60,12 +60,12 @@ async function main() {
         if (e.rationale === newR) continue;
         const qEsc = rx(q);
         const blockRe = new RegExp(
-          `(question:\\s*(?:"${qEsc}"|'${qEsc}'|${qEsc})[\\s\\S]*?rationale:\\s*)("[^"\\n]*"|'[^'\\n]*'|[^\\n]*)`,
+          `(question:\\s*(?:"${qEsc}"|'${qEsc}'|${qEsc})[ \\t]*\\r?\\n[\\s\\S]*?rationale:\\s*)("[^"\\n]*"|'[^'\\n]*'|[^\\n]*)`,
+          'g',
         );
-        if (blockRe.test(raw)) {
-          raw = raw.replace(blockRe, (_, prefix) => `${prefix}"${newR}"`);
-          changed++;
-        }
+        let hit = false;
+        raw = raw.replace(blockRe, (m, prefix) => { hit = true; return `${prefix}"${newR}"`; });
+        if (hit) changed++;
       }
     }
     if (changed) {

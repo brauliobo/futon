@@ -130,15 +130,17 @@ async function main() {
         if (!needsFix) continue;
         const newR = generateRationale(e);
         if (!newR) continue;
-        // Handle both quoted and unquoted YAML scalars.
+        // Anchor end-of-question with newline so "A + ? = 5" can't match
+        // inside "A + ? = 50"; use 'g' flag so ALL repeats of this
+        // question (across pages) get the same rationale.
         const q = rx(String(e.question));
         const blockRe = new RegExp(
-          `(question:\\s*(?:"${q}"|'${q}'|${q})[\\s\\S]*?rationale:\\s*)("[^"\\n]*"|'[^'\\n]*'|[^\\n]*)`,
+          `(question:\\s*(?:"${q}"|'${q}'|${q})[ \\t]*\\r?\\n[\\s\\S]*?rationale:\\s*)("[^"\\n]*"|'[^'\\n]*'|[^\\n]*)`,
+          'g',
         );
-        if (blockRe.test(raw)) {
-          raw = raw.replace(blockRe, (_, prefix) => `${prefix}"${newR}"`);
-          changed++;
-        }
+        let hit = false;
+        raw = raw.replace(blockRe, (m, prefix) => { hit = true; return `${prefix}"${newR}"`; });
+        if (hit) changed++;
       }
     }
     if (changed) {
