@@ -15,6 +15,8 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm eval:rationales` | Per-exercise rationale categorization (method / generic / restatement / missing / short / long) |
 | `pnpm eval:disconnected` | Flags placeholder-template + disconnected-singleton rationales |
 | `pnpm eval:bias` | Answer-position bias audit (content-side, runtime shuffle also fixes this) |
+| `pnpm eval:duplicates` | Cross-set question duplication scanner (within-level density) |
+| `pnpm eval:review [level\|set]` | Generate markdown manual-review checklist for human reviewers |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
 | `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected |
 | `pnpm fix:placeholders [--apply]` | Deterministic rule-based rewriter for known-bad rationales (16 rule shapes) |
@@ -174,6 +176,24 @@ pnpm eval:bias --min-choices 10       # only sets with ≥10 choice exercises
 ```
 
 Flags sets where any position carries ≥50% of answers (strong bias), or any position holds 0% when 3+ positions exist. Exits 1 when any set has ≥70% bias.
+
+## Cross-set duplication scanner
+
+`pnpm eval:duplicates` walks every set and flags questions that appear in ≥2 sets at the same level. Some recurrence is pedagogically valid (spaced review), but heavy density suggests progression weakness — new sets should teach new material, not re-run the prior set's drills.
+
+Reports per-level density (% of questions that recur elsewhere) and lists the top repeat offenders. Exits 1 when any level exceeds 15% duplication.
+
+## Manual-review checklist generator
+
+`pnpm eval:review` produces a markdown checklist a human reviewer can use to catch issues the automated rubric cannot see — pedagogical clarity, cultural fit, subject-matter accuracy, distractor design.
+
+```bash
+pnpm eval:review                     # every level, summary
+pnpm eval:review math/D              # one level, per-set checklists
+pnpm eval:review math/D/set_12       # one specific set
+```
+
+Write the output to a file (`pnpm eval:review math/D > review-mathD.md`) and work through the checklist offline.
 
 **Fix options**:
 - **Content**: reshuffle `choices:` / the `(a/b/c)` order in YAML so the correct answer rotates across positions.
