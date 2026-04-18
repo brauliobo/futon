@@ -29,6 +29,8 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm eval:cross-set` | Flag questions appearing in 2+ sets of the same level with different answers; exempts legit english/portuguese synonym translations |
 | `pnpm eval:orphan-objectives` | Flag set-level objectives never used in exercises (or vice-versa — rogue exercise tags) |
 | `pnpm eval:dup-titles` | Flag sets within a level that share identical titles — students can't tell them apart in the UI |
+| `pnpm eval:input-type` | Flag `inputType: number` sets with >30% non-numeric answers (mobile keyboard mismatch) |
+| `pnpm fix:input-type [--apply]` | Switch mis-declared sets to `inputType: text` |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
 | `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected + arithmetic + alignment + relevance + answers + topic |
 | `pnpm fix:binomial:rationales [--apply]` | Rewrite (x+a)(x+b) rationales in math/J to per-exercise Soma/produto form |
