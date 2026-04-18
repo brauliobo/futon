@@ -78,7 +78,7 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'borrow', 'carry', 'digit', 'column', 'regroup',
 ].join('|') + ')\\b', 'i');
 
-export const RESTATE_RE = /^\s*(a\s+resposta\s+(?:correta\s+)?é|a\s+grafia\s+(?:correta\s+)?é|a\s+forma\s+correta\s+é|resposta:|answer:|é\s+\d|is\s+\d|the\s+correct\s+answer|correct\s+answer:)/i;
+export const RESTATE_RE = /^\s*(a\s+(?:resposta|grafia|forma|preposição|palavra|letra)\s+correta\s+(?:aqui\s+)?(?:é|usa)|resposta:|answer:|é\s+\d|is\s+\d|the\s+correct\s+answer|correct\s+answer:)/i;
 
 // Worked-computation signal: two or more '=' forming a derivation chain,
 // or an explicit substitution like f(x) = ... Signals "teaches by showing

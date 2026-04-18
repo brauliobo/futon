@@ -8,6 +8,7 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 
 | Command | Purpose |
 |---|---|
+| `pnpm test:eval` | Regression tests for `categorize()` — gates future lexicon/regex edits |
 | `pnpm eval:dashboard` | One-screen health summary (global score, distribution, top weakest levels, snapshot delta) |
 | `pnpm eval:pedagogy` | Per-set rubric scoring across 7 dimensions + level progression |
 | `pnpm eval:rationales` | Per-exercise rationale categorization (method / generic / restatement / missing / short / long) |
