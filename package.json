@@ -15,6 +15,7 @@
     "eval:disconnected": "node ./scripts/find-disconnected.js",
     "fix:placeholders": "node ./scripts/fix-placeholder-rationales.js",
     "fix:examples": "node ./scripts/fix-examples.js",
+    "eval:snapshot": "node ./scripts/pedagogy-snapshot.js",
     "eval:all": "pnpm run validate:sets && pnpm run lint:content && pnpm run audit:content && pnpm run eval:pedagogy && pnpm run eval:disconnected",
     "scaffold": "node ./scripts/scaffold-set.mjs",
     "migrate:types": "node ./scripts/migrate-exercise-types.mjs",

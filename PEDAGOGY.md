@@ -98,6 +98,18 @@ Known placeholder strings (each matched literally):
 
 When a new placeholder/question pattern emerges, add another rule to `generateRationale()` in the script. Never widen the placeholder list with ambiguous strings — the fixer must only rewrite rationales that are *known* to be wrong.
 
+## Snapshot + delta tracker
+
+`pnpm eval:snapshot` saves the current global score + per-level averages + placeholder counts to `PEDAGOGY_SNAPSHOT.json`. Re-running without `--save` diffs against the baseline and flags regressions:
+
+```bash
+pnpm eval:snapshot --save                # first run or after a reviewed improvement
+pnpm eval:snapshot                       # diff vs baseline (for CI / pre-commit)
+pnpm eval:snapshot --threshold -2        # fail if any level drops ≥2pp
+```
+
+Default exit code is 1 when any level regresses by ≥3pp, green otherwise. Commit the snapshot alongside content changes so the diff is meaningful across PRs.
+
 ## Manual review checklist
 
 For any set opened in the editor, walk this list:
