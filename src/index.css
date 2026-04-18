@@ -264,19 +264,19 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .amber-soft-bg  { background: rgba(251, 191, 36, 0.10); border-color: rgba(251, 191, 36, 0.30); }
 
 /* Question card outer surface — variants set status border/bg */
-.question-card { @apply rounded-xl border bg-kid-surface px-3 py-1.5 shadow-sm transition-all duration-300; }
+.question-card { @apply rounded-xl border bg-kid-surface px-3 py-1.5 shadow-sm transition-all duration-300; border-left-width: 4px; border-left-color: var(--kid-border); }
 .question-card > * + * { margin-top: 0.5rem; }
-.question-card--neutral   { border-color: var(--kid-border) !important; }
-.question-card--answered  { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); }
+.question-card--neutral   { border-color: var(--kid-border) !important; border-left-color: var(--kid-border) !important; }
+.question-card--answered  { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); border-left-color: var(--kid-green); }
 @keyframes card-pulse {
   0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--kid-green) 40%, transparent); }
   50%  { box-shadow: 0 0 0 8px transparent; }
   100% { box-shadow: none; }
 }
 .question-card--answered.card-pulse { animation: card-pulse 0.5s ease-out; }
-.question-card--selected  { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); box-shadow: 0 0 18px var(--glow-green); }
-.question-card--correct   { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); background: color-mix(in srgb, var(--kid-green) 5%, var(--kid-surface)); }
-.question-card--incorrect { background: rgba(251, 191, 36, 0.05); border-color: rgba(251, 191, 36, 0.30); }
+.question-card--selected  { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); border-left-width: 6px; border-left-color: var(--kid-green); background: color-mix(in srgb, var(--kid-green) 4%, var(--kid-surface)); box-shadow: 0 0 18px var(--glow-green); }
+.question-card--correct   { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); border-left-color: var(--kid-green); background: color-mix(in srgb, var(--kid-green) 5%, var(--kid-surface)); }
+.question-card--incorrect { background: rgba(251, 191, 36, 0.05); border-color: rgba(251, 191, 36, 0.30); border-left-color: rgb(251, 191, 36); }
 
 /* Button system — base + variants. Hover opacity uses color-mix to stay theme-aware */
 .btn { @apply inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-base font-bold shadow-sm transition-all duration-200; min-height: 44px; }
