@@ -46,6 +46,10 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'preposição', 'conjunção', 'pronome', 'artigo', 'numeral',
   'interjeição', 'reg[êe]ncia', 'crase', 'colocação', 'pronominal',
   'd[íi]grafo', 'fonema', 'encontro', 'contém', 'consiste',
+  // Correspondence / genre structure
+  'vocativo', 'destinatário', 'remetente', 'saudação', 'despedida',
+  'assinatura', 'cabeçalho', 'corpo', 'circulação', 'familiar',
+  'íntimo', 'formal', 'informal', 'protocolar', 'publicação',
   // Literature / history action verbs (classification + attribution)
   'compôs', 'escreveu', 'criou', 'fundou', 'inaugurou', 'liderou',
   'publicou', 'surg[eiu]', 'pertence', 'caracteriza', 'define',
