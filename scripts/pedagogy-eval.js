@@ -188,7 +188,10 @@ function scoreDistractors(set) {
     issue: weak ? `${weak}/${choiceExs.length} weak distractors (duplicate/length-mismatch)` : null };
 }
 
-// 7. Question length sanity (10)
+// 7. Question length sanity (10). Exempts cloze (passage-based) and
+// single-token vocabulary prompts (e.g. "1" in number vocab, "犬" in
+// kanji drills) — those are legitimately short.
+const SHORT_VOCAB_RE = /^\S{1,3}$/;
 function scoreQuestionLength(set) {
   const exs = allExercises(set);
   if (!exs.length) return { score: 0, max: 10, issue: null };
@@ -196,11 +199,12 @@ function scoreQuestionLength(set) {
   for (const e of exs) {
     if (e.type === 'cloze') continue;
     const q = String(e.question || '');
-    if (q.length < 3 || q.length > 250) bad++;
+    if (q.length > 250) { bad++; continue; }
+    if (q.length < 3 && !SHORT_VOCAB_RE.test(q)) bad++;
   }
   const pct = 1 - bad / exs.length;
   return { score: Math.round(10 * pct), max: 10,
-    issue: bad ? `${bad} question(s) under 3 or over 250 chars` : null };
+    issue: bad ? `${bad} question(s) too short or over 250 chars` : null };
 }
 
 // Per-set aggregate

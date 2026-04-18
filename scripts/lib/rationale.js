@@ -87,6 +87,9 @@ const SUBSTITUTION_RE = /[a-z]\([-+]?\d/i;
 // Transformation arrow: "'study' → 'studied'" / "X → Y" / "2 → 4" —
 // demonstrates before-and-after mapping, a core Kumon teaching pattern.
 const TRANSFORMATION_RE = /\S\s*→\s*\S/;
+// Definition: "'Could' = habilidade geral passada." — quoted word followed
+// by an equals glossing it. Teaches by explicit equivalence.
+const DEFINITION_RE = /['"][^'"]{2,}['"]\s*=\s*\S/;
 
 export function categorize(rationale) {
   if (!rationale || typeof rationale !== 'string') return 'missing';
@@ -95,6 +98,6 @@ export function categorize(rationale) {
   if (s.length > 300) return 'long';
   if (RESTATE_RE.test(s)) return 'restatement';
   if (METHOD_RE.test(s)) return 'method';
-  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s)) return 'method';
+  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s)) return 'method';
   return 'generic';
 }
