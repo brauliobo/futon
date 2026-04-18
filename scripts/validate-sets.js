@@ -99,6 +99,12 @@ function validateSet(raw) {
     if (p.pageNumber && p.pageNumber !== i + 1) warnings.push(`Page ${i + 1} wrong pageNumber: ${p.pageNumber}`);
     if (!p.exercises?.length) warnings.push(`Page ${i + 1} has no exercises`);
   });
+  // Runtime/user state must not be committed in content YAML. Student
+  // progress lives in profile storage; stale `progress:` blocks here are
+  // test leakage.
+  if (raw.progress !== undefined) {
+    issues.push(`Stale "progress" field committed (belongs in profile storage, not content YAML)`);
+  }
 
   return { raw, issues, warnings, exercises: total, pages: (raw.pages || []).length, duplicates, randomness };
 }
