@@ -39,12 +39,12 @@ export default {
       if (this.progress.percent > 0) return 1;
       return 0;
     },
-    nodeClass() {
-      const base = 'w-full rounded-2xl border-2 p-4 transition-all duration-200 text-kid-text cursor-pointer';
-      if (this.isActive) return `${base} border-kid-blue bg-kid-blue/10 ring-2 ring-kid-blue/40 ring-offset-2 ring-offset-theme shadow-md blue-glow`;
-      if (this.isComplete) return `${base} border-kid-green/40 bg-kid-green/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 green-glow`;
-      return `${base} theme-border bg-kid-surface shadow-sm hover:shadow-md hover:border-kid-blue/40 hover:-translate-y-0.5 active:scale-[0.98]`;
+    nodeVariant() {
+      if (this.isActive) return 'active';
+      if (this.isComplete) return 'complete';
+      return 'idle';
     },
+    nodeClass() { return `skill-node skill-node--${this.nodeVariant}`; },
   },
 };
 </script>

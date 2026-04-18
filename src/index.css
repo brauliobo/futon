@@ -358,6 +358,15 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .mode-tab--active { @apply text-kid-blue shadow-sm; border-color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface)); }
 .mode-tab--active:hover { color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface)); }
 
+/* Skill tree node — SkillTreeNode.vue */
+.skill-node { @apply w-full rounded-2xl border-2 p-4 transition-all duration-200 text-kid-text cursor-pointer; }
+.skill-node--idle { @apply bg-kid-surface shadow-sm; border-color: var(--kid-border); }
+.skill-node--idle:hover { border-color: color-mix(in srgb, var(--kid-blue) 40%, transparent); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+.skill-node--idle:active { transform: scale(0.98); }
+.skill-node--complete { @apply shadow-sm; border-color: color-mix(in srgb, var(--kid-green) 40%, transparent); background: color-mix(in srgb, var(--kid-green) 10%, var(--kid-surface)); box-shadow: 0 0 18px var(--glow-green); }
+.skill-node--complete:hover { transform: translateY(-2px); box-shadow: 0 0 18px var(--glow-green), 0 4px 10px rgba(0,0,0,0.10); }
+.skill-node--active { @apply shadow-md; border-color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface)); box-shadow: 0 0 0 2px color-mix(in srgb, var(--kid-blue) 40%, transparent), 0 0 0 4px var(--kid-ring-offset), 0 0 18px var(--glow-blue); }
+
 /* Empathy hint card (used after wrong answers) */
 .hint-card {
   @apply flex items-start gap-2 rounded-2xl px-4 py-3 shadow-sm amber-soft-bg border;
