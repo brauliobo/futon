@@ -89,7 +89,11 @@ function scoreGradient(set) {
   let score = 0;
   const issues = [];
   const firstMax = Number.isFinite(set.difficulty) ? Math.max(2.4, set.difficulty - 0.5) : 2.4;
-  if (diffs[0] <= firstMax) score += 5;
+  const rangeOfDiffs = Math.max(...diffs) - Math.min(...diffs);
+  // Constant-difficulty drill sets (all pages within 0.4 of each other)
+  // don't have a "hot start" concept — first page matches the rest.
+  const isUniform = rangeOfDiffs < 0.5;
+  if (diffs[0] <= firstMax || isUniform) score += 5;
   else issues.push(`first page hot-start (${diffs[0].toFixed(1)})`);
   const jumps = diffs.slice(1).map((d, i) => Math.abs(d - diffs[i]));
   const maxJump = Math.max(...jumps);
