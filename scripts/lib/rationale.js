@@ -48,6 +48,11 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   // Style / genre markers
   'estilo', 'gênero', 'movimento', 'período', 'geração',
   'barroco', 'romantismo', 'modernismo', 'realismo', 'quinhentismo',
+  // Figures of speech
+  'antítese', 'paradoxo', 'ironia', 'hipérbole', 'eufemismo',
+  'metáfora', 'metonímia', 'pleonasmo', 'personificação', 'prosopopeia',
+  'sinestesia', 'aliteração', 'assonância', 'exagero', 'contradição',
+  'afirmação', 'atenua', 'intensifica', 'comparação', 'atribui',
   // Period references
   'século', 'década', 'documento', 'obra', 'autor',
   // English equivalents
@@ -58,7 +63,7 @@ export const METHOD_RE = new RegExp('\\b(?:' + [
   'borrow', 'carry', 'digit', 'column', 'regroup',
 ].join('|') + ')\\b', 'i');
 
-export const RESTATE_RE = /^\s*(a\s+resposta\s+(?:correta\s+)?é|resposta:|answer:|é\s+\d|is\s+\d|the\s+correct\s+answer|correct\s+answer:)/i;
+export const RESTATE_RE = /^\s*(a\s+resposta\s+(?:correta\s+)?é|a\s+grafia\s+(?:correta\s+)?é|a\s+forma\s+correta\s+é|resposta:|answer:|é\s+\d|is\s+\d|the\s+correct\s+answer|correct\s+answer:)/i;
 
 // Worked-computation signal: two or more '=' forming a derivation chain,
 // or an explicit substitution like f(x) = ... Signals "teaches by showing

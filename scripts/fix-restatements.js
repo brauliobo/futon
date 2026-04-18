@@ -20,7 +20,9 @@ import path from 'path';
 const APPLY = process.argv.includes('--apply');
 
 const CHOICE_RE = /\(([^)]+\/[^)]+)\)\s*$/;
-const RESTATE_LINE_RE = /^(\s*)rationale:\s*["']A\s+resposta\s+correta\s+é\s+['"]?([^"'.]+?)['"]?\.?["']\s*$/i;
+// Matches "A resposta correta é X.", "A grafia correta é X.", and
+// "A forma correta é X." — all classic restatement phrasings.
+const RESTATE_LINE_RE = /^(\s*)rationale:\s*["']A\s+(?:resposta|grafia|forma)\s+correta\s+é\s+['"]?([^"'.]+?)['"]?\.?["']\s*$/i;
 
 // Tiny domain lexicon for common Kumon Portuguese categories.
 const CATEGORY_HINT = {
