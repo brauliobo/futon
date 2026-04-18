@@ -102,6 +102,11 @@ function generateRationale(type, question, answer) {
     return `${q} é a leitura do número ${a}.`;
   }
 
+  // Digit → kana reading (e.g. 1 → "いち")
+  if (qKind === 'digit' && (aKind === 'hiragana' || aKind === 'katakana')) {
+    return `O número ${q} lê-se "${a}".`;
+  }
+
   // Romaji → Kana (e.g. "a" → "あ" or "ア")
   if (qKind === 'romaji' && (aKind === 'hiragana' || aKind === 'katakana')) {
     const script = aKind === 'hiragana' ? 'hiragana' : 'katakana';
