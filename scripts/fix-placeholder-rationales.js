@@ -29,6 +29,7 @@ const PLACEHOLDERS = new Set([
   'Leia com atenção e escolha a operação adequada.',
   'Responda conforme a pergunta.',
   'Verifique contando de novo.',
+  'Organize os dados antes de operar.',
 ]);
 
 // Rule: given exercise type, question, correctAnswer — return a replacement
@@ -71,6 +72,69 @@ function generateRationale(type, question, answer) {
   if (type === 'count') {
     const m = /^(\d+)\s+\S+/.exec(q);
     if (m && a === m[1]) return `Conte um a um: o total é ${m[1]}.`;
+  }
+
+  if (type === 'place_value') {
+    const m = /^Quantas\s+unidades\s+tem\s+o\s+n[úu]mero\s+(\d+)\s*\??$/i.exec(q);
+    if (m) {
+      const n = +m[1];
+      const unit = n % 10;
+      if (unit === +a) {
+        return n < 10
+          ? `${n} tem só um algarismo — são ${n} unidades.`
+          : `Unidade = último algarismo. ${n} → ${unit} unidades.`;
+      }
+    }
+    const md = /^Quantas\s+dezenas\s+tem\s+o\s+n[úu]mero\s+(\d+)\s*\??$/i.exec(q);
+    if (md) {
+      const n = +md[1];
+      const tens = Math.floor(n / 10);
+      if (tens === +a) return `Dezena = algarismo antes da unidade. ${n} → ${tens} dezena(s).`;
+    }
+  }
+
+  if (type === 'even_odd') {
+    const m = /^O\s+n[úu]mero\s+(-?\d+)\s+[ée]\s*:?$/i.exec(q);
+    if (m) {
+      const n = +m[1];
+      const even = n % 2 === 0;
+      const aNorm = a.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+      if ((even && aNorm === 'par') || (!even && aNorm === 'impar')) {
+        return even
+          ? `${n} é par: termina em 0, 2, 4, 6 ou 8 (divisível por 2).`
+          : `${n} é ímpar: termina em 1, 3, 5, 7 ou 9 (não divisível por 2).`;
+      }
+    }
+  }
+
+  if (type === 'word_problem') {
+    // Addition stories: "X tem N <sym>. Y deu mais M <sym>. Quantas <sym>..."
+    //                   "X viu N <sym>. Y viu mais M <sym>. Quantas <sym>..."
+    const addRe = /(-?\d+)\s+\S+\s*\.\s*\S+\s+(?:deu\s+mais|ganhou|viu\s+mais|coletou\s+\S+|trouxe\s+mais|recebeu\s+mais)\s+(-?\d+)/i;
+    const sub = addRe.exec(q);
+    if (sub) {
+      const [, n, m] = sub;
+      if (+n + +m === +a) return `Ele tinha ${n} e ganhou ${m}: some ${n} + ${m} = ${+n + +m}.`;
+    }
+    // Subtraction stories: "X tinha N <sym>. Perdeu M <sym>. Quantas..."
+    const subRe = /(-?\d+)\s+\S+\s*\.\s*(?:Perdeu|Deu|Comeu|Gastou|Saiu|Doou|Cortou)\s+(-?\d+)/i;
+    const subM = subRe.exec(q);
+    if (subM) {
+      const [, n, m] = subM;
+      if (+n - +m === +a) return `Começou com ${n} e perdeu ${m}: subtraia ${n} - ${m} = ${+n - +m}.`;
+    }
+  }
+
+  if (type === 'skip_counting') {
+    // "X, Y, Z, ?" — detect arithmetic progression
+    const m = /^(-?\d+)\s*,\s*(-?\d+)\s*,\s*(-?\d+)\s*,\s*\?\s*$/.exec(q);
+    if (m) {
+      const [, x, y, z] = m.map(Number).slice(1);
+      const d = y - x;
+      if (z - y === d && z + d === +a) {
+        return `Contagem de ${d > 0 ? '+' : ''}${d} em ${d > 0 ? '+' : ''}${d}: ${z} + ${d} = ${z + d}.`;
+      }
+    }
   }
 
   return null;
