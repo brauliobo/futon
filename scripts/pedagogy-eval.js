@@ -132,11 +132,19 @@ function scoreGradient(set) {
   const lastJumpIsOnly = bigJumps === 1 && jumps[jumps.length - 1] > 1.0;
   const lastJumpDown = signedJumps[signedJumps.length - 1] < -0.5;
   const isConsolidation = lastJumpIsOnly && lastJumpDown;
+  // "Inverted-U" (3-page bell): intro → core-drill → practice. The middle
+  // page is the hardest by design — learners meet the concept, then taper.
+  const isInvertedU = diffs.length === 3 && diffs[1] > diffs[0] && diffs[1] > diffs[2];
   // Jump tolerance scales with set.difficulty: a diff-4 set where one page
   // steps up by 2 is less worrying than a diff-1 drill with the same jump.
   const jumpTol = Number.isFinite(set.difficulty) ? Math.min(2.0, 1.0 + set.difficulty / 4) : 1.0;
-  if (isInterleaved || isConsolidation) score += 10;
+  if (isInterleaved || isConsolidation || isInvertedU) score += 10;
   else if (maxJump <= 1.0) score += 10;
+  else if (bigJumps === 1 && maxJump <= 1.5 && diffs.length >= 6) {
+    // In a long set (≥6 pages), a single small outlier (≤1.5) is statistical
+    // noise, not a design flaw — full credit.
+    score += 10;
+  }
   else if (bigJumps === 1 && maxJump <= 2.0) {
     // Single-outlier tolerance: one page steps by up to 2; rest are gentle.
     score += 8; issues.push(`one page jump ${maxJump.toFixed(1)}`);
@@ -301,8 +309,13 @@ function scoreDistractors(set) {
     // Length-cue check: a cue exists only when the correct answer is a
     // strict length outlier. If the correct answer sits in the middle of
     // the length distribution (or ties), students can't pick by length.
+    // Also exempt when ANY choice is a multi-word phrase (phrase-vs-atom
+    // contrast is Kumon-valid vocabulary teaching) or when the longest
+    // choice is a compound with structural markers (hyphen, apostrophe).
     const ans = String(e.correctAnswer ?? '').trim();
-    if (/\s/.test(ans)) continue; // multi-word phrase answers: exempt
+    if (trimmed.some(c => /\s/.test(c))) continue;
+    const hasCompound = trimmed.some(c => /[-']/.test(c));
+    if (hasCompound) continue;
     const lens = trimmed.map(s => s.length);
     const ratio = Math.max(...lens) / Math.max(1, Math.min(...lens));
     if (ratio <= 6) continue;

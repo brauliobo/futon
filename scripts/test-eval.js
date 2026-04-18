@@ -173,6 +173,40 @@ const CASES = [
     }),
     expect: r => r.score === 20,
   },
+  // gradient iter 76 patterns -------------------------------------------------
+  {
+    name: 'gradient: 3-page inverted-U (1.5→2.7→1.9) = climax, exempt',
+    run: () => scoreGradient({
+      difficulty: 2,
+      pages: [
+        { pageNumber: 1, exercises: Array(10).fill({}).map((_,i)=>({ difficulty: i<5?1:2 })) },
+        { pageNumber: 2, exercises: Array(10).fill({}).map((_,i)=>({ difficulty: i<3?2:3 })) },
+        { pageNumber: 3, exercises: Array(10).fill({}).map((_,i)=>({ difficulty: i<9?2:1 })) },
+      ],
+    }),
+    expect: r => r.score === 20,
+  },
+  {
+    name: 'gradient: long set with one small outlier (≤1.5) = full credit',
+    run: () => {
+      const mk = (difs) => ({ exercises: difs.map(d => ({ difficulty: d })) });
+      // page avgs: 2, 2, 2, 2, 2, 2, 2, 3, 1.9, 2 — single 1.1 dip (p8→p9)
+      const pages = [
+        mk(Array(10).fill(2)),
+        mk(Array(10).fill(2)),
+        mk(Array(10).fill(2)),
+        mk(Array(10).fill(2)),
+        mk(Array(10).fill(2)),
+        mk(Array(10).fill(2)),
+        mk(Array(10).fill(2)),
+        mk(Array(10).fill(3)),
+        mk([1, 2, 2, 2, 2, 2, 2, 2, 2, 2]),
+        mk(Array(10).fill(2)),
+      ].map((p, i) => ({ pageNumber: i + 1, ...p }));
+      return scoreGradient({ difficulty: 2, pages });
+    },
+    expect: r => r.score >= 19,
+  },
 ];
 
 let passed = 0, failed = 0;
