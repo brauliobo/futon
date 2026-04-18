@@ -27,6 +27,7 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm eval:topic` | Verify bucketed rationales mentioning a specific domain marker (sec², Pitágoras, arcsen, etc.) co-occur only with exercises of that topic |
 | `pnpm eval:intra-page` | Flag pages where identical questions have different expected answers — always ambiguous for students |
 | `pnpm eval:cross-set` | Flag questions appearing in 2+ sets of the same level with different answers; exempts legit english/portuguese synonym translations |
+| `pnpm eval:orphan-objectives` | Flag set-level objectives never used in exercises (or vice-versa — rogue exercise tags) |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
 | `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected + arithmetic + alignment + relevance + answers + topic |
 | `pnpm fix:binomial:rationales [--apply]` | Rewrite (x+a)(x+b) rationales in math/J to per-exercise Soma/produto form |
