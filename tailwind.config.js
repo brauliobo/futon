@@ -41,8 +41,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Nunito', 'Noto Sans JP', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        kid: ['Nunito', 'Noto Sans JP', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: 'var(--font-sans)',
+        kid: 'var(--font-sans)',
+        sans: 'var(--font-sans)',
       },
       colors: {
         kid: {

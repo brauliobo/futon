@@ -6,6 +6,8 @@
 
 :root {
   color-scheme: light;
+
+  /* --- Brand palette (base) --- */
   --kid-bg: #FFFBF0;
   --kid-surface: #FFFFFF;
   --kid-surface-2: #F7F3E8;
@@ -13,15 +15,49 @@
   --kid-gold: #FFD93D;
   --kid-green: #6BCB77;
   --kid-red: #FF6B6B;
+  --kid-orange: #fb923c;
+  --kid-amber: rgb(251, 191, 36);
   --kid-text: #2D3748;
   --kid-muted: #718096;
 
+  /* --- Surface adornments --- */
   --kid-border: rgba(0,0,0,0.06);
   --kid-border-strong: rgba(0,0,0,0.12);
   --kid-track: rgba(0,0,0,0.08);
   --kid-star-empty: rgba(45,55,72,0.22);
   --kid-ring-offset: #FFFBF0;
 
+  /* --- Alpha scales (color over transparent) --- */
+  --kid-blue-05:  color-mix(in srgb, var(--kid-blue) 5%,  transparent);
+  --kid-blue-10:  color-mix(in srgb, var(--kid-blue) 10%, transparent);
+  --kid-blue-15:  color-mix(in srgb, var(--kid-blue) 15%, transparent);
+  --kid-blue-30:  color-mix(in srgb, var(--kid-blue) 30%, transparent);
+  --kid-blue-40:  color-mix(in srgb, var(--kid-blue) 40%, transparent);
+  --kid-blue-50:  color-mix(in srgb, var(--kid-blue) 50%, transparent);
+  --kid-green-30: color-mix(in srgb, var(--kid-green) 30%, transparent);
+  --kid-green-40: color-mix(in srgb, var(--kid-green) 40%, transparent);
+  --kid-green-50: color-mix(in srgb, var(--kid-green) 50%, transparent);
+  --kid-red-30:   color-mix(in srgb, var(--kid-red) 30%, transparent);
+  --kid-red-50:   color-mix(in srgb, var(--kid-red) 50%, transparent);
+  --kid-muted-50: color-mix(in srgb, var(--kid-muted) 50%, transparent);
+  --kid-muted-60: color-mix(in srgb, var(--kid-muted) 60%, transparent);
+
+  /* --- Tints (color mixed with surface — subtle backgrounds) --- */
+  --kid-blue-tint-5:   color-mix(in srgb, var(--kid-blue) 5%,  var(--kid-surface));
+  --kid-blue-tint-10:  color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface));
+  --kid-blue-tint-15:  color-mix(in srgb, var(--kid-blue) 15%, var(--kid-surface));
+  --kid-green-tint-10: color-mix(in srgb, var(--kid-green) 10%, var(--kid-surface));
+  --kid-red-tint-10:   color-mix(in srgb, var(--kid-red) 10%, var(--kid-surface));
+
+  /* --- Amber / hint palette (shared by hint-card and incorrect review) --- */
+  --amber-bg-soft:   rgba(251, 191, 36, 0.05);
+  --amber-bg-medium: rgba(251, 191, 36, 0.10);
+  --amber-bg-strong: rgba(251, 191, 36, 0.18);
+  --amber-bg-hover:  rgba(251, 191, 36, 0.28);
+  --amber-border:    rgba(251, 191, 36, 0.30);
+  --amber-border-strong: rgba(251, 191, 36, 0.45);
+
+  /* --- Surface adornments (cont.) --- */
   --card-bg: #FFFFFF;
   --card-border: rgba(0,0,0,0.05);
   --input-bg: #FFFFFF;
@@ -33,10 +69,38 @@
   --goal-bg: linear-gradient(90deg, #FFFFFF, rgba(255,217,61,0.05));
   --goal-border: rgba(255,217,61,0.2);
   --body-bg: #FFFBF0;
+  --nav-sticky-bg: color-mix(in srgb, var(--kid-surface) 85%, transparent);
+
+  /* --- Glows --- */
   --glow-blue: rgba(74, 158, 245, 0.3);
   --glow-green: rgba(107, 203, 119, 0.3);
   --glow-gold: rgba(255, 217, 61, 0.4);
   --hint-msg: #d97706;
+
+  /* --- Shadows --- */
+  --shadow-xs:      0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm:      0 2px 6px rgba(0,0,0,0.08);
+  --shadow-md:      0 4px 10px rgba(0,0,0,0.10);
+  --shadow-md-soft: 0 4px 10px rgba(0,0,0,0.06);
+  --shadow-lg:      0 8px 18px rgba(0,0,0,0.10);
+  --shadow-xl:      0 10px 20px rgba(0,0,0,0.10);
+  --shadow-glow-blue:   0 10px 15px var(--kid-blue-30);
+  --shadow-glow-green:  0 10px 15px var(--kid-green-30);
+  --shadow-glow-red:    0 10px 15px var(--kid-red-30);
+  --shadow-glow-orange: 0 10px 15px rgba(253, 186, 116, 0.40);
+
+  /* --- Radii --- */
+  --radius-md:   0.75rem;   /* rounded-xl */
+  --radius-lg:   1rem;      /* rounded-2xl */
+  --radius-xl:   1.5rem;    /* rounded-3xl */
+  --radius-full: 9999px;
+
+  /* --- Typography --- */
+  --font-sans: 'Nunito', 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -81,7 +145,8 @@
 }
 
 body {
-  @apply min-h-screen text-kid-text antialiased font-kid;
+  @apply min-h-screen text-kid-text antialiased;
+  font-family: var(--font-sans);
   background: var(--body-bg);
   background-attachment: fixed;
 }
@@ -104,7 +169,7 @@ button { min-height: 44px; }
   .btn { min-height: 48px; padding-block: 0.75rem; }
   .question-card { padding: 0.625rem 0.75rem; }
   /* Sticky bottom nav with frosted glass effect */
-  .nav-sticky { background: color-mix(in srgb, var(--kid-surface) 85%, transparent); backdrop-filter: blur(12px); border-top: 1px solid var(--kid-border); }
+  .nav-sticky { background: var(--nav-sticky-bg); backdrop-filter: blur(12px); border-top: 1px solid var(--kid-border); }
 }
 
 /* Respect users who prefer reduced motion */
@@ -260,23 +325,23 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .review-stagger { animation: review-in 0.25s ease-out both; }
 
 /* Empathy amber palette — one source for hint card + review-card backdrop */
-.amber-soft     { background: rgba(251, 191, 36, 0.05); border-color: rgba(251, 191, 36, 0.30); }
-.amber-soft-bg  { background: rgba(251, 191, 36, 0.10); border-color: rgba(251, 191, 36, 0.30); }
+.amber-soft     { background: var(--amber-bg-soft);   border-color: var(--amber-border); }
+.amber-soft-bg  { background: var(--amber-bg-medium); border-color: var(--amber-border); }
 
 /* Question card outer surface — variants set status border/bg */
 .question-card { @apply rounded-xl border bg-kid-surface px-3 py-1.5 shadow-sm transition-all duration-300; border-left-width: 4px; border-left-color: var(--kid-border); }
 .question-card > * + * { margin-top: 0.5rem; }
 .question-card--neutral   { border-color: var(--kid-border) !important; border-left-color: var(--kid-border) !important; }
-.question-card--answered  { border-color: color-mix(in srgb, var(--kid-blue) 30%, transparent); border-left-color: var(--kid-blue); }
+.question-card--answered  { border-color: var(--kid-blue-30); border-left-color: var(--kid-blue); }
 @keyframes card-pulse {
-  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--kid-blue) 40%, transparent); }
+  0%   { box-shadow: 0 0 0 0 var(--kid-blue-40); }
   50%  { box-shadow: 0 0 0 8px transparent; }
   100% { box-shadow: none; }
 }
 .question-card--answered.card-pulse { animation: card-pulse 0.5s ease-out; }
-.question-card--selected  { border-color: color-mix(in srgb, var(--kid-blue) 30%, transparent); border-left-width: 6px; border-left-color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 4%, var(--kid-surface)); box-shadow: 0 0 18px var(--glow-blue); }
-.question-card--correct   { border-color: color-mix(in srgb, var(--kid-green) 30%, transparent); border-left-color: var(--kid-green); background: color-mix(in srgb, var(--kid-green) 5%, var(--kid-surface)); }
-.question-card--incorrect { background: rgba(251, 191, 36, 0.05); border-color: rgba(251, 191, 36, 0.30); border-left-color: rgb(251, 191, 36); }
+.question-card--selected  { border-color: var(--kid-blue-30); border-left-width: 6px; border-left-color: var(--kid-blue); background: var(--kid-blue-tint-5); box-shadow: 0 0 18px var(--glow-blue); }
+.question-card--correct   { border-color: var(--kid-green-30); border-left-color: var(--kid-green); background: var(--kid-green-tint-10); }
+.question-card--incorrect { background: var(--amber-bg-soft); border-color: var(--amber-border); border-left-color: var(--kid-amber); }
 
 /* Button system — base + variants. Hover opacity uses color-mix to stay theme-aware */
 .btn { @apply inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-base font-bold shadow-sm transition-all duration-200; min-height: 44px; }
@@ -285,67 +350,67 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .btn-primary { @apply btn bg-kid-blue text-white; }
 .btn-success { @apply btn bg-kid-green text-white gold-glow; }
 .btn-ghost   { @apply btn bg-kid-surface text-kid-text; border: 2px solid var(--kid-border-strong); }
-.btn-primary:hover:not(:disabled), .btn-success:hover:not(:disabled) { box-shadow: 0 8px 18px rgba(0,0,0,0.10); transform: translateX(2px); }
-.btn-ghost:hover:not(:disabled) { border-color: color-mix(in srgb, var(--kid-blue) 40%, transparent); box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+.btn-primary:hover:not(:disabled), .btn-success:hover:not(:disabled) { box-shadow: var(--shadow-lg); transform: translateX(2px); }
+.btn-ghost:hover:not(:disabled) { border-color: var(--kid-blue-40); box-shadow: var(--shadow-md-soft); }
 .btn-block { @apply w-full; padding-block: 0.875rem; }
-.btn-remaining { @apply btn; background: rgba(251, 191, 36, 0.18); color: var(--hint-msg); border: 2px solid rgba(251, 191, 36, 0.45); opacity: 1; }
-.btn-remaining:hover { background: rgba(251, 191, 36, 0.28); }
+.btn-remaining { @apply btn; background: var(--amber-bg-strong); color: var(--hint-msg); border: 2px solid var(--amber-border-strong); opacity: 1; }
+.btn-remaining:hover { background: var(--amber-bg-hover); }
 
 /* Choice button — interactive ChoiceExercise grid */
 .choice-btn { @apply w-full flex items-center rounded-2xl border-2 px-4 py-3 text-base font-bold text-left transition-all duration-200 active:scale-95; min-height: 48px; }
 /* Pill variant for short answers (≤3 chars) — auto-width inline pill */
 .choice-btn--pill { @apply w-auto px-3 py-2 text-sm rounded-xl; min-height: 44px; }
-.choice-btn:focus-visible { outline: none; box-shadow: 0 0 0 4px color-mix(in srgb, var(--kid-blue) 40%, transparent); }
+.choice-btn:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--kid-blue-40); }
 .choice-btn--idle { background: var(--kid-surface-2); color: var(--kid-text); border-color: var(--kid-border-strong); }
-.choice-btn--idle:hover:not(:disabled) { border-color: color-mix(in srgb, var(--kid-blue) 50%, transparent); background: color-mix(in srgb, var(--kid-blue) 5%, var(--kid-surface)); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
-.choice-btn--selected { border-color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 15%, var(--kid-surface)); color: var(--kid-text); transform: scale(1.02); box-shadow: 0 4px 10px rgba(0,0,0,0.10); }
+.choice-btn--idle:hover:not(:disabled) { border-color: var(--kid-blue-50); background: var(--kid-blue-tint-5); transform: translateY(-2px); box-shadow: var(--shadow-md-soft); }
+.choice-btn--selected { border-color: var(--kid-blue); background: var(--kid-blue-tint-15); color: var(--kid-text); transform: scale(1.02); box-shadow: var(--shadow-md); }
 
 /* Review choice row — read-only ChoiceExercise listing */
 .review-choice { @apply flex items-center rounded-2xl border-2 px-3 py-1.5 text-base font-bold transition-all; }
 .review-choice--pill { @apply rounded-xl px-2.5 py-1 text-sm; }
-.review-choice--win, .review-choice--answer { border-color: var(--kid-green); background: color-mix(in srgb, var(--kid-green) 10%, var(--kid-surface)); color: var(--kid-text); box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
-.review-choice--miss { border-color: var(--kid-red); background: color-mix(in srgb, var(--kid-red) 10%, var(--kid-surface)); color: var(--kid-red); text-decoration: line-through; }
+.review-choice--win, .review-choice--answer { border-color: var(--kid-green); background: var(--kid-green-tint-10); color: var(--kid-text); box-shadow: var(--shadow-sm); }
+.review-choice--miss { border-color: var(--kid-red); background: var(--kid-red-tint-10); color: var(--kid-red); text-decoration: line-through; }
 .review-choice--idle { background: var(--kid-surface); color: var(--kid-muted); border-color: var(--kid-border); }
 
 /* Answer input — Exercise.vue text/numeric input */
 .input-answer { @apply rounded-xl border-2 font-black focus:outline-none focus:ring-0 transition-all duration-300; }
-.input-answer::placeholder { font-weight: 600; color: color-mix(in srgb, var(--kid-muted) 60%, transparent); }
+.input-answer::placeholder { font-weight: var(--fw-semibold); color: var(--kid-muted-60); }
 .input-answer--text    { @apply w-full px-4 py-4 text-xl; border-width: 4px; }
 .input-answer--text::placeholder { font-size: 1rem; }
 .input-answer--numeric { @apply w-24 sm:w-20 h-12 text-center text-2xl; }
 .input-answer--numeric::placeholder { font-size: 1.5rem; }
 .input-answer--idle    { @apply bg-kid-surface text-kid-text shadow-sm; border-color: var(--kid-border-strong); }
 .input-answer--idle:focus { border-color: var(--kid-blue); box-shadow: 0 0 18px var(--glow-blue); }
-.input-answer--answered { @apply text-kid-text shadow-md; background: color-mix(in srgb, var(--kid-blue) 5%, var(--kid-surface)); border-color: var(--kid-blue); box-shadow: 0 0 18px var(--glow-blue); }
+.input-answer--answered { @apply text-kid-text shadow-md; background: var(--kid-blue-tint-5); border-color: var(--kid-blue); box-shadow: 0 0 18px var(--glow-blue); }
 
 /* Level card — LevelRoadmap.vue horizontal carousel */
 .level-card { @apply flex min-w-[150px] max-w-[180px] snap-center cursor-pointer rounded-2xl border-2 bg-kid-surface transition-all duration-300; }
-.level-card:hover:not(.level-card--locked) { transform: translateY(-6px); box-shadow: 0 8px 18px rgba(0,0,0,0.10); }
+.level-card:hover:not(.level-card--locked) { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .level-card--idle   { @apply shadow-sm; border-color: var(--kid-border); }
-.level-card--idle:hover { border-color: color-mix(in srgb, var(--kid-blue) 40%, transparent); }
-.level-card--active { @apply shadow-md; border-color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 5%, var(--kid-surface)); box-shadow: 0 0 18px var(--glow-blue); }
+.level-card--idle:hover { border-color: var(--kid-blue-40); }
+.level-card--active { @apply shadow-md; border-color: var(--kid-blue); background: var(--kid-blue-tint-5); box-shadow: 0 0 18px var(--glow-blue); }
 .level-card--locked { @apply cursor-not-allowed shadow-sm; border-color: var(--kid-border); }
 
 .level-card__number { @apply rounded-full px-3 py-1 text-sm font-bold uppercase tracking-wide surface-2 text-kid-muted; }
 .level-card__number--active { @apply bg-kid-blue text-white; background: var(--kid-blue); color: #fff; }
 .level-card__tag { @apply rounded-lg px-2 py-1 text-sm font-black uppercase surface-2 text-kid-muted; }
-.level-card__tag--active { color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface)); }
+.level-card__tag--active { color: var(--kid-blue); background: var(--kid-blue-tint-10); }
 .level-card__name { @apply text-center text-base font-bold; color: var(--kid-muted); }
 .level-card__name--active { color: var(--kid-text); }
-.level-card__name--locked { color: color-mix(in srgb, var(--kid-muted) 50%, transparent); }
+.level-card__name--locked { color: var(--kid-muted-50); }
 
 /* Set card — SetCard.vue set tile on Home */
 .set-card { @apply flex h-full flex-col gap-2 rounded-2xl border theme-border bg-kid-surface p-5 transition-all duration-300; border-left-width: 6px; }
-.set-card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.10); }
+.set-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
 .set-card--fresh    { @apply shadow-sm; border-left-color: var(--kid-border-strong); }
 .set-card--progress { @apply shadow-sm; border-left-color: var(--kid-blue); }
-.set-card--pass     { @apply shadow-sm; border-left-color: rgb(251, 191, 36); }
+.set-card--pass     { @apply shadow-sm; border-left-color: var(--kid-amber); }
 .set-card--retry    { @apply shadow-sm; border-left-color: var(--kid-red); }
 .set-card--mastery  { @apply shadow-md; border-left-color: var(--kid-green); box-shadow: 0 0 18px var(--glow-green); }
-.set-card--active   { box-shadow: 0 0 0 2px color-mix(in srgb, var(--kid-blue) 50%, transparent), 0 0 0 4px var(--kid-ring-offset), 0 0 18px var(--glow-blue); }
+.set-card--active   { box-shadow: 0 0 0 2px var(--kid-blue-50), 0 0 0 4px var(--kid-ring-offset), 0 0 18px var(--glow-blue); }
 
 .set-card-btn { @apply w-full flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold transition-all duration-200 shadow-sm; }
-.set-card-btn:hover { transform: scale(1.02); box-shadow: 0 4px 10px rgba(0,0,0,0.10); }
+.set-card-btn:hover { transform: scale(1.02); box-shadow: var(--shadow-md); }
 .set-card-btn:active { transform: scale(0.95); }
 .set-card-btn--primary { @apply bg-kid-blue text-white; }
 .set-card-btn--mastery { @apply bg-kid-green text-white; }
@@ -353,27 +418,27 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 /* Subject tab — Home.vue top navigation */
 .subject-tab { @apply flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2 rounded-2xl px-2 sm:px-5 py-2 sm:py-3.5 font-bold capitalize transition-all duration-200 border-2 active:scale-95; }
 .subject-tab--idle { @apply bg-kid-surface text-kid-muted shadow-sm; border-color: var(--kid-border); }
-.subject-tab--idle:hover { @apply text-kid-blue; border-color: color-mix(in srgb, var(--kid-blue) 40%, transparent); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+.subject-tab--idle:hover { @apply text-kid-blue; border-color: var(--kid-blue-40); transform: translateY(-2px); box-shadow: var(--shadow-md-soft); }
 .subject-tab--active { @apply text-white shadow-lg; transform: scale(1.02); }
-.subject-tab--math.subject-tab--active      { background: var(--kid-blue);  border-color: var(--kid-blue);  box-shadow: 0 10px 15px color-mix(in srgb, var(--kid-blue) 30%, transparent); }
-.subject-tab--portuguese.subject-tab--active { background: var(--kid-green); border-color: var(--kid-green); box-shadow: 0 10px 15px color-mix(in srgb, var(--kid-green) 30%, transparent); }
-.subject-tab--english.subject-tab--active   { background: #fb923c;           border-color: #fb923c;           box-shadow: 0 10px 15px rgba(253, 186, 116, 0.40); }
-.subject-tab--japanese.subject-tab--active  { background: var(--kid-red);   border-color: var(--kid-red);   box-shadow: 0 10px 15px color-mix(in srgb, var(--kid-red) 30%, transparent); }
+.subject-tab--math.subject-tab--active      { background: var(--kid-blue);   border-color: var(--kid-blue);   box-shadow: var(--shadow-glow-blue); }
+.subject-tab--portuguese.subject-tab--active { background: var(--kid-green);  border-color: var(--kid-green);  box-shadow: var(--shadow-glow-green); }
+.subject-tab--english.subject-tab--active   { background: var(--kid-orange); border-color: var(--kid-orange); box-shadow: var(--shadow-glow-orange); }
+.subject-tab--japanese.subject-tab--active  { background: var(--kid-red);    border-color: var(--kid-red);    box-shadow: var(--shadow-glow-red); }
 
 /* Mode tab — Home.vue Campaign / Themes toggle */
 .mode-tab { @apply flex items-center gap-1.5 rounded-2xl px-4 py-2 text-sm font-bold transition-all duration-200 border-2 border-transparent active:scale-95; color: var(--kid-muted); }
 .mode-tab:hover { color: var(--kid-text); background: var(--kid-surface-2); }
-.mode-tab--active { @apply text-kid-blue shadow-sm; border-color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface)); }
-.mode-tab--active:hover { color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface)); }
+.mode-tab--active { @apply text-kid-blue shadow-sm; border-color: var(--kid-blue); background: var(--kid-blue-tint-10); }
+.mode-tab--active:hover { color: var(--kid-blue); background: var(--kid-blue-tint-10); }
 
 /* Skill tree node — SkillTreeNode.vue */
 .skill-node { @apply w-full rounded-2xl border-2 p-4 transition-all duration-200 text-kid-text cursor-pointer; }
 .skill-node--idle { @apply bg-kid-surface shadow-sm; border-color: var(--kid-border); }
-.skill-node--idle:hover { border-color: color-mix(in srgb, var(--kid-blue) 40%, transparent); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+.skill-node--idle:hover { border-color: var(--kid-blue-40); transform: translateY(-2px); box-shadow: var(--shadow-md-soft); }
 .skill-node--idle:active { transform: scale(0.98); }
-.skill-node--complete { @apply shadow-sm; border-color: color-mix(in srgb, var(--kid-green) 40%, transparent); background: color-mix(in srgb, var(--kid-green) 10%, var(--kid-surface)); box-shadow: 0 0 18px var(--glow-green); }
-.skill-node--complete:hover { transform: translateY(-2px); box-shadow: 0 0 18px var(--glow-green), 0 4px 10px rgba(0,0,0,0.10); }
-.skill-node--active { @apply shadow-md; border-color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface)); box-shadow: 0 0 0 2px color-mix(in srgb, var(--kid-blue) 40%, transparent), 0 0 0 4px var(--kid-ring-offset), 0 0 18px var(--glow-blue); }
+.skill-node--complete { @apply shadow-sm; border-color: var(--kid-green-40); background: var(--kid-green-tint-10); box-shadow: 0 0 18px var(--glow-green); }
+.skill-node--complete:hover { transform: translateY(-2px); box-shadow: 0 0 18px var(--glow-green), var(--shadow-md); }
+.skill-node--active { @apply shadow-md; border-color: var(--kid-blue); background: var(--kid-blue-tint-10); box-shadow: 0 0 0 2px var(--kid-blue-40), 0 0 0 4px var(--kid-ring-offset), 0 0 18px var(--glow-blue); }
 
 /* Page-header progress bar fill */
 .progress-fill { @apply h-full rounded-full transition-all duration-500 ease-out; }
@@ -382,21 +447,21 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 
 /* Timer pill — PageHeader.vue */
 .set-timer { @apply flex items-center gap-2 rounded-2xl border px-3 py-1.5 transition-colors duration-500 surface-2; border-color: var(--kid-border); color: var(--kid-text); }
-.set-timer--fast { border-color: color-mix(in srgb, var(--kid-green) 50%, transparent); color: var(--kid-green); }
-.set-timer--slow { border-color: color-mix(in srgb, var(--kid-red) 50%, transparent); color: var(--kid-red); }
+.set-timer--fast { border-color: var(--kid-green-50); color: var(--kid-green); }
+.set-timer--slow { border-color: var(--kid-red-50); color: var(--kid-red); }
 
 /* Choice badge — numeric prefix on ChoiceExercise buttons */
-.choice-badge { @apply inline-flex items-center justify-center rounded-md text-kid-blue font-black shadow-inner w-6 h-6 mr-2 text-xs; background: color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface)); }
+.choice-badge { @apply inline-flex items-center justify-center rounded-md text-kid-blue font-black shadow-inner w-6 h-6 mr-2 text-xs; background: var(--kid-blue-tint-10); }
 .choice-badge--pill { @apply w-5 h-5 mr-1.5 text-[11px]; }
 
 /* Daily-goal widget — Home.vue top banner */
 .daily-goal { @apply flex flex-wrap items-center gap-3 rounded-3xl border-2 shadow-sm px-5 py-4 animate-slide-up transition-colors duration-500 goal-bg; }
-.daily-goal--complete { background: color-mix(in srgb, var(--kid-green) 10%, var(--kid-surface)); box-shadow: 0 0 18px var(--glow-green); }
+.daily-goal--complete { background: var(--kid-green-tint-10); box-shadow: 0 0 18px var(--glow-green); }
 
 /* Avatar button — ProfileSelector.vue avatar picker grid */
 .avatar-btn { @apply aspect-square rounded-2xl text-3xl flex items-center justify-center transition-all active:scale-90 bg-kid-surface border-2; border-color: var(--kid-border); }
-.avatar-btn:hover { border-color: color-mix(in srgb, var(--kid-blue) 40%, transparent); transform: translateY(-2px); }
-.avatar-btn--selected { @apply shadow-md; background: color-mix(in srgb, var(--kid-blue) 15%, var(--kid-surface)); border-color: var(--kid-blue); transform: scale(1.10); }
+.avatar-btn:hover { border-color: var(--kid-blue-40); transform: translateY(-2px); }
+.avatar-btn--selected { @apply shadow-md; background: var(--kid-blue-tint-15); border-color: var(--kid-blue); transform: scale(1.10); }
 
 /* Question number badge — QuestionHeader.vue */
 .q-badge { @apply flex-shrink-0 flex items-center justify-center rounded-full font-black shadow-sm transition-colors duration-300 surface-2 border text-kid-blue w-9 h-9 text-sm; border-color: var(--kid-border-strong); }
