@@ -125,6 +125,7 @@ export const en = {
   unlockHint: "Keep going to unlock!",
   campaign: "Campaign",
   themes: "Themes",
+  tapToExplore: "Tap to explore",
 };
 
 

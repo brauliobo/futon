@@ -125,5 +125,6 @@ export const pt = {
   unlockHint: "Continue para desbloquear!",
   campaign: "Campanha",
   themes: "Temas",
+  tapToExplore: "Toque para explorar",
 };
 
