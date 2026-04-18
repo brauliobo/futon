@@ -52,13 +52,13 @@ pages:
       - type: sequence
         question: Σ 1/n² converge (V/F)?
         correctAnswer: V
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "p-série Σ 1/nᵖ: converge sse p > 1."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ 1/n^1.5 converge (V/F)?
         correctAnswer: V
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "p-série Σ 1/nᵖ: converge sse p > 1."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
@@ -70,7 +70,7 @@ pages:
       - type: sequence
         question: Σ 1/n^0.5 (ou 1/√n) converge? (sim/não)
         correctAnswer: não
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "p-série Σ 1/nᵖ: converge sse p > 1."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
@@ -86,31 +86,31 @@ pages:
       - type: sequence
         question: Σ q^n converge se |q| < ?
         correctAnswer: 1
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Série geométrica Σ qⁿ: converge sse |q| < 1, soma = a₁/(1−q)."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ (1/2)^n = 1 + 1/2 + 1/4 + ... = ?
         correctAnswer: 2
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Série geométrica Σ qⁿ: converge sse |q| < 1, soma = a₁/(1−q)."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ (1/3)^n do n=0 ao ∞ = ?
         correctAnswer: 1.5
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Série geométrica Σ qⁿ: converge sse |q| < 1, soma = a₁/(1−q)."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ 2^n diverge (V/F)?
         correctAnswer: V
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Série geométrica Σ qⁿ: converge sse |q| < 1, soma = a₁/(1−q)."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ (-1/2)^n do n=0 ao ∞ = ?
         correctAnswer: 2/3
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Série geométrica Σ qⁿ: converge sse |q| < 1, soma = a₁/(1−q)."
         difficulty: 3
         objectives: [series.partial_sums]
   - pageNumber: 4
@@ -132,7 +132,7 @@ pages:
       - type: sequence
         question: Σ(-1)^n diverge porque aₙ oscila (V/F)?
         correctAnswer: V
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Se aₙ ↛ 0, a série diverge (teste da divergência)."
         difficulty: 3
         objectives: [series.partial_sums]
       - type: sequence
@@ -154,7 +154,7 @@ pages:
       - type: sequence
         question: Σ 1/(n²+1) converge (como 1/n²) (V/F)?
         correctAnswer: V
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "p-série Σ 1/nᵖ: converge sse p > 1."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
@@ -194,7 +194,7 @@ pages:
       - type: sequence
         question: "Σ 2^n/n!: aₙ₊₁/aₙ = 2/(n+1) → 0. Converge? (sim/não)"
         correctAnswer: sim
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Teste da razão: se lim |aₙ₊₁/aₙ| < 1, Σaₙ converge."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
@@ -228,19 +228,19 @@ pages:
       - type: sequence
         question: Σ(-1)^n/n converge? (sim/não)
         correctAnswer: sim
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Critério de Leibniz: série alternada Σ(-1)ⁿbₙ converge se bₙ↓0."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: "Σ(-1)^n · n/(n+1) — bₙ→1, então: (diverge)"
         correctAnswer: diverge
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Se aₙ ↛ 0, a série diverge (teste da divergência)."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ(-1)^n/√n converge (V/F)?
         correctAnswer: V
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "Critério de Leibniz: série alternada Σ(-1)ⁿbₙ converge se bₙ↓0."
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
@@ -256,13 +256,13 @@ pages:
       - type: sequence
         question: "Σ(-1)^n/n²: Σ1/n² converge, então absolutamente convergente (V/F)?"
         correctAnswer: V
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Critério de Leibniz: série alternada Σ(-1)ⁿbₙ converge se bₙ↓0."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: "Σ(-1)^n/n: Σ1/n diverge; é condicionalmente convergente (V/F)?"
         correctAnswer: V
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Critério de Leibniz: série alternada Σ(-1)ⁿbₙ converge se bₙ↓0."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
@@ -274,7 +274,7 @@ pages:
       - type: sequence
         question: Σ(-1)^n/n³ é absolutamente convergente (V/F)?
         correctAnswer: V
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Critério de Leibniz: série alternada Σ(-1)ⁿbₙ converge se bₙ↓0."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
@@ -290,7 +290,7 @@ pages:
       - type: sequence
         question: Σ 1/n² = π²/6 (V/F)?
         correctAnswer: V
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "p-série Σ 1/nᵖ: converge sse p > 1."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
@@ -308,7 +308,7 @@ pages:
       - type: sequence
         question: Σ x^n/n! é a série de Taylor de e^x (V/F)?
         correctAnswer: V
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Teste da razão: se lim |aₙ₊₁/aₙ| < 1, Σaₙ converge."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
@@ -324,7 +324,7 @@ pages:
       - type: sequence
         question: Σ 1/n⁴ — converge? (sim/não)
         correctAnswer: sim
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "p-série Σ 1/nᵖ: converge sse p > 1."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
@@ -336,19 +336,19 @@ pages:
       - type: sequence
         question: Σ (1/3)^n — converge? (sim/não)
         correctAnswer: sim
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Série geométrica Σ qⁿ: converge sse |q| < 1, soma = a₁/(1−q)."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ (4/3)^n — converge? (sim/não)
         correctAnswer: não
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Série geométrica Σ qⁿ: converge sse |q| < 1, soma = a₁/(1−q)."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ (-1)^n/n² — converge? (sim/não)
         correctAnswer: sim
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Critério de Leibniz: série alternada Σ(-1)ⁿbₙ converge se bₙ↓0."
         difficulty: 5
         objectives: [series.partial_sums]
 target: 50

@@ -24,7 +24,7 @@ pages:
       - type: algebra
         question: (a+b)³ = a³ + 3a²b + 3ab² + ?
         correctAnswer: b³
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Expansão binomial (a+b)ⁿ: Σ C(n,k)·aⁿ⁻ᵏ·bᵏ para k de 0 a n."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
@@ -36,13 +36,13 @@ pages:
       - type: algebra
         question: "(a+b)⁴: coeficiente de a²b² = ?"
         correctAnswer: 6
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Em (a+b)ⁿ, termo T(k+1) = C(n,k)·aⁿ⁻ᵏ·bᵏ; coeficientes vêm do triângulo de Pascal."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
         question: "(a+b)⁵: coeficiente de a³b² = ?"
         correctAnswer: 10
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Em (a+b)ⁿ, termo T(k+1) = C(n,k)·aⁿ⁻ᵏ·bᵏ; coeficientes vêm do triângulo de Pascal."
         difficulty: 3
         objectives: [algebra.binomial]
   - pageNumber: 2
@@ -110,7 +110,7 @@ pages:
       - type: algebra
         question: Soma dos coeficientes da linha n = 2^?
         correctAnswer: n
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Soma dos coeficientes de (a+b)ⁿ = 2ⁿ (faz a=b=1)."
         difficulty: 3
         objectives: [algebra.binomial]
   - pageNumber: 4
@@ -120,13 +120,13 @@ pages:
       - type: algebra
         question: Em (a+b)⁵, T₃ = C(5,?)·a³·b²
         correctAnswer: 2
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Em (a+b)ⁿ, termo T(k+1) = C(n,k)·aⁿ⁻ᵏ·bᵏ; coeficientes vêm do triângulo de Pascal."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
         question: Em (a+b)⁶, T₄ = C(6,3)·a³·b³ = 20·a³·b³. Coeficiente = ?
         correctAnswer: 20
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Em (a+b)ⁿ, termo T(k+1) = C(n,k)·aⁿ⁻ᵏ·bᵏ; coeficientes vêm do triângulo de Pascal."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
@@ -138,13 +138,13 @@ pages:
       - type: algebra
         question: Em (a+b)⁷, termo central (k=3) = C(7,3) = ?
         correctAnswer: 35
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Expansão binomial (a+b)ⁿ: Σ C(n,k)·aⁿ⁻ᵏ·bᵏ para k de 0 a n."
         difficulty: 3
         objectives: [algebra.binomial]
       - type: algebra
         question: Em (x+1)^10, coeficiente de x^5 = C(10,?) = 252
         correctAnswer: 5
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Em (a+b)ⁿ, termo T(k+1) = C(n,k)·aⁿ⁻ᵏ·bᵏ; coeficientes vêm do triângulo de Pascal."
         difficulty: 3
         objectives: [algebra.binomial]
   - pageNumber: 5
@@ -200,7 +200,7 @@ pages:
       - type: algebra
         question: (1+x)⁵ coeficiente de x³ = ?
         correctAnswer: 10
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Em (a+b)ⁿ, termo T(k+1) = C(n,k)·aⁿ⁻ᵏ·bᵏ; coeficientes vêm do triângulo de Pascal."
         difficulty: 4
         objectives: [algebra.binomial]
       - type: algebra
@@ -212,7 +212,7 @@ pages:
       - type: algebra
         question: (1-x)³ coeficiente de x = ?
         correctAnswer: -3
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Em (a+b)ⁿ, termo T(k+1) = C(n,k)·aⁿ⁻ᵏ·bᵏ; coeficientes vêm do triângulo de Pascal."
         difficulty: 4
         objectives: [algebra.binomial]
   - pageNumber: 7
@@ -222,7 +222,7 @@ pages:
       - type: algebra
         question: Soma dos coef. de (1+x)⁵ = 2⁵ = ?
         correctAnswer: 32
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Expansão binomial (a+b)ⁿ: Σ C(n,k)·aⁿ⁻ᵏ·bᵏ para k de 0 a n."
         difficulty: 4
         objectives: [algebra.binomial]
       - type: algebra
@@ -240,7 +240,7 @@ pages:
       - type: algebra
         question: "Soma dos coef. de (2+x)³ (fazendo x=1): 3³ = ?"
         correctAnswer: 27
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Expansão binomial (a+b)ⁿ: Σ C(n,k)·aⁿ⁻ᵏ·bᵏ para k de 0 a n."
         difficulty: 4
         objectives: [algebra.binomial]
       - type: algebra
@@ -308,13 +308,13 @@ pages:
       - type: algebra
         question: Coeficiente de x³ em (1-x)⁵ = ?
         correctAnswer: -10
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Em (a+b)ⁿ, termo T(k+1) = C(n,k)·aⁿ⁻ᵏ·bᵏ; coeficientes vêm do triângulo de Pascal."
         difficulty: 5
         objectives: [algebra.binomial]
       - type: algebra
         question: (a-b)^4 = a⁴ - 4a³b + 6a²b² - 4ab³ + ?
         correctAnswer: b⁴
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Expansão binomial (a+b)ⁿ: Σ C(n,k)·aⁿ⁻ᵏ·bᵏ para k de 0 a n."
         difficulty: 5
         objectives: [algebra.binomial]
   - pageNumber: 10
@@ -330,19 +330,19 @@ pages:
       - type: algebra
         question: Soma dos coef. de (1+x)^8 = ?
         correctAnswer: 256
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Expansão binomial (a+b)ⁿ: Σ C(n,k)·aⁿ⁻ᵏ·bᵏ para k de 0 a n."
         difficulty: 5
         objectives: [algebra.binomial]
       - type: algebra
         question: (a+b)⁴ — coeficiente de a·b³ = ?
         correctAnswer: 4
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Em (a+b)ⁿ, termo T(k+1) = C(n,k)·aⁿ⁻ᵏ·bᵏ; coeficientes vêm do triângulo de Pascal."
         difficulty: 5
         objectives: [algebra.binomial]
       - type: algebra
         question: "Termo geral de (a+b)^10 em k=5: C(10,5)·a⁵·b⁵ = ?·a⁵·b⁵"
         correctAnswer: 252
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Expansão binomial (a+b)ⁿ: Σ C(n,k)·aⁿ⁻ᵏ·bᵏ para k de 0 a n."
         difficulty: 5
         objectives: [algebra.binomial]
       - type: algebra

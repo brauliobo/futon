@@ -52,13 +52,13 @@ pages:
       - type: algebra
         question: "Polar de z=1+i: (r=√2, θ=45°) V/F"
         correctAnswer: V
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "Raízes n-ésimas de z: n pontos igualmente espaçados no círculo de raio ⁿ√|z|."
         difficulty: 3
         objectives: [complex.polar]
       - type: algebra
         question: "Polar de z=√3+i: r = ?"
         correctAnswer: 2
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "Raízes n-ésimas de z: n pontos igualmente espaçados no círculo de raio ⁿ√|z|."
         difficulty: 3
         objectives: [complex.polar]
       - type: algebra
@@ -70,7 +70,7 @@ pages:
       - type: algebra
         question: "Polar de z=-1+i: r=√2; θ = ?°"
         correctAnswer: 135
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "Raízes n-ésimas de z: n pontos igualmente espaçados no círculo de raio ⁿ√|z|."
         difficulty: 3
         objectives: [complex.polar]
       - type: algebra
@@ -104,7 +104,7 @@ pages:
       - type: algebra
         question: r=√2, θ=135° → real = ?
         correctAnswer: -1
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "De polar para cartesiana: a = r cos θ, b = r sen θ."
         difficulty: 3
         objectives: [complex.polar]
       - type: algebra
@@ -188,31 +188,31 @@ pages:
       - type: algebra
         question: (cis 30°)² = cis ?°
         correctAnswer: 60
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "De Moivre: (r cis θ)ⁿ = rⁿ cis(nθ)."
         difficulty: 4
         objectives: [complex.polar]
       - type: algebra
         question: (cis 90°)⁴ = cis ?°
         correctAnswer: 360
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "De Moivre: (r cis θ)ⁿ = rⁿ cis(nθ)."
         difficulty: 4
         objectives: [complex.polar]
       - type: algebra
         question: i⁴ = cis 360° = ?
         correctAnswer: 1
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Potências de i ciclam: i¹=i, i²=-1, i³=-i, i⁴=1, depois repete."
         difficulty: 4
         objectives: [complex.polar]
       - type: algebra
         question: (√2 cis 45°)⁴ = ? cis 180° = ?
         correctAnswer: -4
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "De Moivre: (r cis θ)ⁿ = rⁿ cis(nθ)."
         difficulty: 4
         objectives: [complex.polar]
       - type: algebra
         question: "(1+i)⁸ via polar: |1+i|=√2, arg=45° → (√2)⁸ = ?"
         correctAnswer: 16
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "Raízes n-ésimas de z: n pontos igualmente espaçados no círculo de raio ⁿ√|z|."
         difficulty: 4
         objectives: [complex.polar]
   - pageNumber: 7
@@ -228,7 +228,7 @@ pages:
       - type: algebra
         question: Raízes estão igualmente espaçadas em círculo de raio r^(1/n) (V/F)?
         correctAnswer: V
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "p-série Σ 1/nᵖ: converge sse p > 1."
         difficulty: 4
         objectives: [complex.polar]
       - type: algebra
@@ -246,7 +246,7 @@ pages:
       - type: algebra
         question: Uma raiz cúbica de 1 é 1. As outras duas estão em 120° e ?°
         correctAnswer: 240
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "Raízes n-ésimas de z: n pontos igualmente espaçados no círculo |z|^(1/n), separados por 360°/n."
         difficulty: 4
         objectives: [complex.polar]
   - pageNumber: 8
@@ -256,31 +256,31 @@ pages:
       - type: algebra
         question: e^(iπ) + 1 = ?
         correctAnswer: 0
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Fórmula de Euler: e^(iθ) = cos θ + i sen θ. Caso especial: e^(iπ) + 1 = 0."
         difficulty: 5
         objectives: [complex.polar]
       - type: algebra
         question: e^(iπ/2) = ?
         correctAnswer: i
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Fórmula de Euler: e^(iθ) = cos θ + i sen θ. Caso especial: e^(iπ) + 1 = 0."
         difficulty: 5
         objectives: [complex.polar]
       - type: algebra
         question: e^(i·0) = ?
         correctAnswer: 1
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Fórmula de Euler: e^(iθ) = cos θ + i sen θ. Caso especial: e^(iπ) + 1 = 0."
         difficulty: 5
         objectives: [complex.polar]
       - type: algebra
         question: e^(i·2π) = ?
         correctAnswer: 1
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Fórmula de Euler: e^(iθ) = cos θ + i sen θ. Caso especial: e^(iπ) + 1 = 0."
         difficulty: 5
         objectives: [complex.polar]
       - type: algebra
         question: "|e^(iθ)| = ?"
         correctAnswer: 1
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Fórmula de Euler: e^(iθ) = cos θ + i sen θ. Caso especial: e^(iπ) + 1 = 0."
         difficulty: 5
         objectives: [complex.polar]
   - pageNumber: 9
@@ -290,19 +290,19 @@ pages:
       - type: algebra
         question: "1+i em forma exponencial: √2 · e^(iπ/?)"
         correctAnswer: 4
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "Fórmula de Euler: e^(iθ) = cos θ + i sen θ. Caso especial: e^(iπ) + 1 = 0."
         difficulty: 5
         objectives: [complex.polar]
       - type: algebra
         question: "i em forma exponencial: 1·e^(iπ/?)"
         correctAnswer: 2
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Fórmula de Euler: e^(iθ) = cos θ + i sen θ. Caso especial: e^(iπ) + 1 = 0."
         difficulty: 5
         objectives: [complex.polar]
       - type: algebra
         question: "-1 em forma exponencial: e^(i?)"
         correctAnswer: π
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Fórmula de Euler: e^(iθ) = cos θ + i sen θ. Caso especial: e^(iπ) + 1 = 0."
         difficulty: 5
         objectives: [complex.polar]
       - type: algebra
@@ -314,7 +314,7 @@ pages:
       - type: algebra
         question: e^(iα) · e^(iβ) = e^(i(α+?))
         correctAnswer: β
-        rationale: "Potências: aᵐ·aⁿ = aᵐ⁺ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁻ⁿ = 1/aⁿ."
+        rationale: "Fórmula de Euler: e^(iθ) = cos θ + i sen θ. Caso especial: e^(iπ) + 1 = 0."
         difficulty: 5
         objectives: [complex.polar]
   - pageNumber: 10
@@ -324,7 +324,7 @@ pages:
       - type: algebra
         question: "(1+i)⁴ em polar: (√2 cis 45°)⁴ = 4·cis 180° = ?"
         correctAnswer: -4
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "Produto em polar: (r₁ cis θ₁)(r₂ cis θ₂) = (r₁r₂) cis(θ₁+θ₂)."
         difficulty: 5
         objectives: [complex.polar]
       - type: algebra

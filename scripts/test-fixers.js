@@ -11,6 +11,7 @@ import { rationaleFor as genPower } from './fix-power-root-rationales.js';
 import { rationaleFor as genBinomial } from './fix-binomial-rationales.js';
 import { rationaleFor as genIntegral } from './fix-integral-rationales.js';
 import { rationaleFor as gen6ACount } from './fix-6a-counting-rationales.js';
+import { rationaleFor as genSeries } from './fix-series-rationales.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', GRAY = '\x1b[90m';
@@ -112,6 +113,22 @@ const BINOMIAL_CASES = [
   [6, 4, 'Soma: 6+4=10; produto: 6·4=24'],
 ];
 
+// fix-series-rationales: question → rationale
+const SERIES_CASES = [
+  ['Σ 1/n² converge (V/F)?', 'p-série'],
+  ['Σ q^n converge se |q| < ?', 'geométrica'],
+  ['Σ (1/2)^n = 1 + 1/2 + 1/4 + ... = ?', 'geométrica'],
+  ['Σ(-1)^n/n converge? (sim/não)', 'Leibniz'],
+  ['Σ 2^n/n!: aₙ₊₁/aₙ = 2/(n+1) → 0. Converge? (sim/não)', 'razão'],
+  ['(a+b)³ = a³ + 3a²b + 3ab² + ?', 'a+b'],
+  ['Soma dos coef. de (2+x)³ (fazendo x=1): 3³ = ?', 'a+b'],
+  ['(cis 30°)² = cis ?°', 'De Moivre'],
+  ['i⁴ = cis 360° = ?', 'Potências de i'],
+  ['e^(iπ) + 1 = ?', 'Euler'],
+  ['Uma raiz cúbica de 1 é 1. As outras duas estão em 120° e ?°', 'Raízes n-ésimas'],
+  ['unrelated question with no signal', null],
+];
+
 // fix-6a-counting-rationales: n → rationale
 const COUNT_CASES = [
   [1, 'Um único símbolo.'],
@@ -198,7 +215,15 @@ for (const [n, expected] of COUNT_CASES) {
   else { failed++; failures.push({ label: '6a-count', type: '-', q: `count=${n}`, a: '', expected, got }); }
 }
 
-const totalCases = CASES.length + JP_CASES.length + RESTATEMENT_CASES.length + FIVE_A_CASES.length + POWER_CASES.length + BINOMIAL_CASES.length + INTEGRAL_CASES.length + COUNT_CASES.length;
+// fix-series-rationales
+for (const [q, expected] of SERIES_CASES) {
+  const got = genSeries(q);
+  const ok = expected === null ? got === null : (got && got.includes(expected));
+  if (ok) passed++;
+  else { failed++; failures.push({ label: 'series', type: '-', q, a: '', expected, got }); }
+}
+
+const totalCases = CASES.length + JP_CASES.length + RESTATEMENT_CASES.length + FIVE_A_CASES.length + POWER_CASES.length + BINOMIAL_CASES.length + INTEGRAL_CASES.length + COUNT_CASES.length + SERIES_CASES.length;
 console.log(c('\n🧪 FIXER RULE TESTS', BOLD));
 console.log(`  ${passed} passed · ${failed} failed · ${totalCases} total\n`);
 if (failed) {
