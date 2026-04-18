@@ -9,7 +9,8 @@
           :class="dotClass(n)"
           aria-hidden="true"
         )
-      div(v-else class="flex items-center gap-1.5 text-base font-bold" :aria-label="`Page ${pageNumber} of ${totalPages}`")
+      div(v-else class="inline-flex items-center gap-1.5 rounded-full border theme-border surface-2 px-3 py-1 text-sm font-bold" :aria-label="`Page ${pageNumber} of ${totalPages}`")
+        span(aria-hidden="true") 📖
         span(class="text-kid-blue tabular-nums") {{ pageNumber }}
         span(class="text-kid-muted") /
         span(class="text-kid-muted tabular-nums") {{ totalPages }}
