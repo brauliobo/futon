@@ -28,7 +28,7 @@ export function rationaleFor(a, b) {
 const rx = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 async function main() {
-  const files = await fg('src/levels/math/J/set_{07,08,09}.yaml');
+  const files = await fg('src/levels/math/J/set_*.yaml');
   let fixed = 0;
   for (const f of files) {
     let raw = readFileSync(f, 'utf8');
@@ -44,14 +44,16 @@ async function main() {
         // Narrow replace: match the block starting with this question and
         // replace the first rationale: line within it. Preserves everything
         // else (indentation, order, other fields).
-        const qLine = `question: ${e.question}`;
+        const q = rx(String(e.question));
+        // Anchor end-of-question with newline + global flag so every
+        // repeat of this binomial (across pages) gets rewritten.
         const blockRe = new RegExp(
-          `(${rx(qLine)}[\\s\\S]*?rationale:\\s*)("[^"\\n]*"|'[^'\\n]*'|[^\\n]*)`,
+          `(question:\\s*(?:"${q}"|'${q}'|${q})[ \\t]*\\r?\\n[\\s\\S]*?rationale:\\s*)("[^"\\n]*"|'[^'\\n]*'|[^\\n]*)`,
+          'g',
         );
-        if (blockRe.test(raw)) {
-          raw = raw.replace(blockRe, (_, a1) => `${a1}"${newR}"`);
-          changed++;
-        }
+        let hit = false;
+        raw = raw.replace(blockRe, (m, prefix) => { hit = true; return `${prefix}"${newR}"`; });
+        if (hit) changed++;
       }
     }
     if (changed) {
