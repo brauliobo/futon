@@ -148,6 +148,19 @@ When a new placeholder/question pattern emerges, add another rule to `generateRa
 
 `--strict` exits 1 when global < 85 or any level regresses ≥3pp vs snapshot.
 
+## Time-budget scanner
+
+`pnpm eval:time` estimates each set's total session time as `exerciseCount × passCriteria.maxAvgSecondsPerExercise` and flags those outside the Kumon 3–20 minute guideline.
+
+```bash
+pnpm eval:time                                # repo scan
+pnpm eval:time --subject math
+pnpm eval:time --min 5 --max 15               # tighter target band
+pnpm eval:time --json
+```
+
+Too-slow sets are almost always fixable by either shortening (fewer exercises per page, fewer pages) or lowering `maxAvgSecondsPerExercise`. Too-fast sets likely need more exercises for proper practice volume. Exits 1 when any sets fall outside the band.
+
 ## Answer-position bias scanner
 
 `pnpm eval:bias` scans every set's choice exercises and reports the distribution of correct-answer *positions* (first, second, third…). Because choices render in YAML order with no runtime shuffle, a set whose correct answer always sits at position 1 lets students click without reading.
