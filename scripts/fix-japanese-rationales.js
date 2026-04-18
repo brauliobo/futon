@@ -68,7 +68,10 @@ function generateRationale(type, question, answer) {
   }
 
   // Kanji → Meaning in Portuguese (e.g. question "犬", answer "cachorro")
-  if (qKind === 'kanji' && aKind === 'text') {
+  // Also catches short PT words like "ir", "vir" that kindOf labels 'romaji'
+  // because they're ≤4 Latin chars; when paired with a kanji question
+  // they're clearly Portuguese translations.
+  if (qKind === 'kanji' && (aKind === 'text' || aKind === 'romaji')) {
     return `O kanji ${q} significa "${a}". Observe o desenho como pista visual.`;
   }
 
