@@ -99,6 +99,7 @@ export const en = {
   loading: "Loading...",
   readCarefully: "Read carefully",
   todayGoal: "Today's Goal",
+  goalComplete: "Goal smashed!",
   dayStreak: "day streak",
   reviewAnswers: "Review Answers",
   statusTitle_mastery: "Mastery!",

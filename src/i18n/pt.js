@@ -99,6 +99,7 @@ export const pt = {
   loading: "Carregando...",
   readCarefully: "Leia com atenção",
   todayGoal: "Meta de Hoje",
+  goalComplete: "Meta batida!",
   dayStreak: "dias seguidos",
   reviewAnswers: "Revisar Respostas",
   statusTitle_mastery: "Domínio!",
