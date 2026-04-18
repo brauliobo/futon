@@ -72,6 +72,16 @@ function generateRationale(type, question, answer) {
     return `O kanji ${q} significa "${a}". Observe o desenho como pista visual.`;
   }
 
+  // Katakana → Portuguese (loanword/country/person name)
+  if (qKind === 'katakana' && aKind === 'text') {
+    return `${q} (katakana) significa "${a}". Katakana é usado para palavras estrangeiras.`;
+  }
+
+  // Hiragana → Portuguese (Japanese word)
+  if (qKind === 'hiragana' && aKind === 'text') {
+    return `${q} (hiragana) significa "${a}" em português.`;
+  }
+
   // Hiragana → Katakana (e.g. question "あ", answer "ア")
   if (qKind === 'hiragana' && aKind === 'katakana') {
     return `${q} (hiragana) corresponde a ${a} em katakana — mesmo som, escrita diferente.`;
@@ -87,6 +97,11 @@ function generateRationale(type, question, answer) {
     return `${q} lê-se "${a}" (romaji).`;
   }
 
+  // Kana number-reading → digit (e.g. "いち" → 1)
+  if ((qKind === 'hiragana' || qKind === 'katakana') && aKind === 'digit') {
+    return `${q} é a leitura do número ${a}.`;
+  }
+
   // Romaji → Kana (e.g. "a" → "あ" or "ア")
   if (qKind === 'romaji' && (aKind === 'hiragana' || aKind === 'katakana')) {
     const script = aKind === 'hiragana' ? 'hiragana' : 'katakana';
@@ -96,6 +111,13 @@ function generateRationale(type, question, answer) {
   // Text (Portuguese) → Kanji/Kana (translation direction)
   if (qKind === 'text' && (aKind === 'kanji' || aKind === 'hiragana' || aKind === 'katakana')) {
     return `"${q}" em japonês escreve-se ${a}.`;
+  }
+
+  // Mixed-script Japanese sentence → Portuguese translation. Falls here
+  // when the question mixes kanji+kana+punctuation so kindOf returns 'text'.
+  const hasJp = /[\u3040-\u30ff\u4e00-\u9faf]/.test(q);
+  if (hasJp && aKind === 'text') {
+    return `A frase "${q}" traduz-se como "${a}". Identifique partículas e palavras-chave.`;
   }
 
   return null;
