@@ -102,6 +102,11 @@ function scoreGradient(set) {
     // Single-outlier tolerance: one page steps by up to 2; rest are gentle.
     score += 8; issues.push(`one page jump ${maxJump.toFixed(1)}`);
   }
+  else if (bigJumps <= 2 && maxJump <= 2.0 && jumps.length >= 8) {
+    // Two-outlier tolerance: typically a dip + recovery inside a 10-page
+    // set. Less severe than a multi-jagged profile.
+    score += 6; issues.push(`${bigJumps} page jumps up to ${maxJump.toFixed(1)}`);
+  }
   else if (maxJump <= jumpTol) { score += 7; issues.push(`page jump ${maxJump.toFixed(1)}`); }
   else if (maxJump <= 1.5) { score += 5; issues.push(`page jump ${maxJump.toFixed(1)}`); }
   else issues.push(`large page jump ${maxJump.toFixed(1)}`);
