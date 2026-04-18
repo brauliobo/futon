@@ -2,6 +2,7 @@
 export const en = {
   chooseNotebook: "Choose a notebook",
   start: "Start",
+  continueSet: "Continue",
   back: "Back",
   sets: "Sets",
   levels: "Levels",

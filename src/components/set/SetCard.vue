@@ -71,8 +71,12 @@ export default {
       const ring = this.isActive ? ' ring-2 ring-kid-blue/50 ring-offset-2 ring-offset-theme blue-glow' : '';
       return `${base} ${border}${ring}`;
     },
-    buttonText() { return this.set.attempts > 0 ? this.$t('restart') || 'Try Again' : this.$t('start') || 'Start'; },
-    buttonIcon() { return this.set.attempts > 0 ? '↺' : '▶'; },
+    buttonText() {
+      if (this.hasProgress) return this.$t('continueSet') || 'Continue';
+      if (this.set.attempts > 0) return this.$t('restart') || 'Try Again';
+      return this.$t('start') || 'Start';
+    },
+    buttonIcon() { return this.set.attempts > 0 && !this.hasProgress ? '↺' : '▶'; },
     actionButtonClass() {
       const base = 'w-full flex items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95';
       if (this.set.status === 'mastery') return `${base} bg-kid-green text-white`;

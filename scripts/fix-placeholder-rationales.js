@@ -30,7 +30,35 @@ const PLACEHOLDERS = new Set([
   'Responda conforme a pergunta.',
   'Verifique contando de novo.',
   'Organize os dados antes de operar.',
+  'Aplique razões trigonométricas e o ciclo.',
+  'Radical: √(a·b) = √a·√b; racionalize quando preciso.',
+  'Opere a fração conforme a regra correspondente.',
 ]);
+
+// Standard trig values. Key: "<fn>(<normalizedExpr>)", value: expected answer.
+// Covers the arcsen / arccos / arctan quadrant-1 + symmetric negatives that
+// appear in math/L sets. Mirrors / supplementary angles handled as needed.
+const TRIG_TABLE = {
+  arcsen: {
+    '0': '0°', '1/2': '30°', '√2/2': '45°', '√3/2': '60°', '1': '90°',
+    '-1/2': '-30°', '-√2/2': '-45°', '-√3/2': '-60°', '-1': '-90°',
+  },
+  arccos: {
+    '1': '0°', '√3/2': '30°', '√2/2': '45°', '1/2': '60°', '0': '90°',
+    '-1/2': '120°', '-√2/2': '135°', '-√3/2': '150°', '-1': '180°',
+  },
+  arctan: {
+    '0': '0°', '√3/3': '30°', '1': '45°', '√3': '60°',
+    '-√3/3': '-30°', '-1': '-45°', '-√3': '-60°',
+  },
+};
+const INVERSE_FN = { arcsen: 'sen', arccos: 'cos', arctan: 'tan' };
+
+// Reciprocal (cossecante/secante) standard values: "<fn>(<θ>°)" → value.
+const RECIP_TABLE = {
+  sen: { '30': '2', '45': '√2', '60': '2√3/3', '90': '1', '150': '2', '135': '√2' },
+  cos: { '0': '1', '30': '2√3/3', '45': '√2', '60': '2', '180': '-1', '225': '-√2', '120': '-2', '135': '-√2' },
+};
 
 // Rule: given exercise type, question, correctAnswer — return a replacement
 // rationale that teaches the method, or null when we don't know a safe rule.
@@ -122,6 +150,28 @@ function generateRationale(type, question, answer) {
     if (subM) {
       const [, n, m] = subM;
       if (+n - +m === +a) return `Começou com ${n} e perdeu ${m}: subtraia ${n} - ${m} = ${+n - +m}.`;
+    }
+  }
+
+  if (type === 'trigonometry') {
+    // arcsen(V) = ?, arccos(V) = ?, arctan(V) = ?
+    const inv = /^(arcsen|arccos|arctan)\s*\(\s*(.+?)\s*\)\s*=\s*\?\s*$/i.exec(q);
+    if (inv) {
+      const [, fnRaw, v] = inv;
+      const fn = fnRaw.toLowerCase();
+      const expected = TRIG_TABLE[fn]?.[v];
+      if (expected && a === expected) {
+        return `${fnRaw}(${v}) = ${expected} porque ${INVERSE_FN[fn]}(${expected}) = ${v}.`;
+      }
+    }
+    // 1/sen(θ°) = ? or 1/cos(θ°) = ?
+    const recip = /^1\/(sen|cos)\s*\(\s*(-?\d+)°\s*\)\s*=\s*\?\s*$/i.exec(q);
+    if (recip) {
+      const [, fn, θ] = recip;
+      const expected = RECIP_TABLE[fn.toLowerCase()]?.[θ];
+      if (expected && a === expected) {
+        return `1/${fn}(${θ}°) = ${expected} (${fn === 'sen' ? 'cossecante' : 'secante'}): calcule ${fn}(${θ}°) e inverta.`;
+      }
     }
   }
 

@@ -2,6 +2,7 @@
 export const pt = {
   chooseNotebook: "Escolha um caderno",
   start: "Começar",
+  continueSet: "Continuar",
   back: "Voltar",
   sets: "Blocos",
   levels: "Níveis",
