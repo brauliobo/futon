@@ -51,14 +51,10 @@ export default {
     },
     barWidth() { return `${this.percent}%`; },
     percentLabel() { return `${this.percent}%`; },
-    barClass() {
-      const base = 'h-full rounded-full transition-all duration-500 ease-out';
-      return this.isComplete ? `${base} bg-kid-green green-glow` : `${base} bg-kid-blue`;
-    },
+    barClass() { return this.isComplete ? 'progress-fill progress-fill--complete' : 'progress-fill progress-fill--active'; },
     timerClass() {
-      const base = 'flex items-center gap-2 rounded-2xl border px-3 py-1.5 transition-colors duration-500 surface-2';
-      const tone = { fast: 'border-kid-green/50 text-kid-green', slow: 'border-kid-red/50 text-kid-red' }[this.pace];
-      return tone ? `${base} ${tone}` : `${base} theme-border text-kid-text`;
+      const mod = ['fast', 'slow'].includes(this.pace) ? ` set-timer--${this.pace}` : '';
+      return `set-timer${mod}`;
     },
   },
   watch: {

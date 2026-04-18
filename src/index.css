@@ -367,6 +367,16 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .skill-node--complete:hover { transform: translateY(-2px); box-shadow: 0 0 18px var(--glow-green), 0 4px 10px rgba(0,0,0,0.10); }
 .skill-node--active { @apply shadow-md; border-color: var(--kid-blue); background: color-mix(in srgb, var(--kid-blue) 10%, var(--kid-surface)); box-shadow: 0 0 0 2px color-mix(in srgb, var(--kid-blue) 40%, transparent), 0 0 0 4px var(--kid-ring-offset), 0 0 18px var(--glow-blue); }
 
+/* Page-header progress bar fill */
+.progress-fill { @apply h-full rounded-full transition-all duration-500 ease-out; }
+.progress-fill--active   { background: var(--kid-blue); }
+.progress-fill--complete { background: var(--kid-green); box-shadow: 0 0 18px var(--glow-green); }
+
+/* Timer pill — PageHeader.vue */
+.set-timer { @apply flex items-center gap-2 rounded-2xl border px-3 py-1.5 transition-colors duration-500 surface-2; border-color: var(--kid-border); color: var(--kid-text); }
+.set-timer--fast { border-color: color-mix(in srgb, var(--kid-green) 50%, transparent); color: var(--kid-green); }
+.set-timer--slow { border-color: color-mix(in srgb, var(--kid-red) 50%, transparent); color: var(--kid-red); }
+
 /* Empathy hint card (used after wrong answers) */
 .hint-card {
   @apply flex items-start gap-2 rounded-2xl px-4 py-3 shadow-sm amber-soft-bg border;
