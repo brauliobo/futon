@@ -89,6 +89,21 @@ async function main() {
       const firstEx = x.all[0];
       const lastEx = x.all[x.all.length - 1];
       const genericCount = x.all.filter(e => categorize(e.rationale) === 'generic').length;
+      // Inline (a/b/c/d) choice questions where correct is THE longest option
+      let choiceQs = 0, correctLongest = 0;
+      for (const e of x.all) {
+        const m = /\(([^()]*\/[^()]*)\)\s*$/.exec(String(e.question || ''));
+        if (!m) continue;
+        const parts = m[1].split('/').map(z => z.trim()).filter(Boolean);
+        if (parts.length < 3) continue;
+        const ans = String(e.correctAnswer || '').trim();
+        if (!parts.includes(ans)) continue;
+        choiceQs++;
+        const lens = parts.map(z => z.length);
+        const maxLen = Math.max(...lens);
+        if (ans.length === maxLen && lens.filter(z => z === maxLen).length === 1) correctLongest++;
+      }
+      const lengthBiasFrac = choiceQs ? correctLongest / choiceQs : 0;
       out.push(`### ${x.name}`);
       out.push(`**Title:** ${x.s.title || '(untitled)'}`);
       out.push(`**Example:** ${(x.s.example || '').slice(0, 100)}`);
@@ -110,6 +125,9 @@ async function main() {
         out.push(`- [ ] ⚠️ **${Math.round(setDiversity*100)}% rationale diversity** — one rationale covers many distinct answers. Check every bucket's exercises match its rationale's topic (see iter 82 math/J binomial bug).`);
       }
       out.push('- [ ] No unintended distractor patterns (e.g. always pick the longest / always pick "b").');
+      if (choiceQs >= 4 && lengthBiasFrac > 0.4) {
+        out.push(`- [ ] ⚠️ **${correctLongest}/${choiceQs} (${Math.round(lengthBiasFrac*100)}%) of choice questions: correct is THE longest option** — rewrite distractors with equivalent specificity so length isn't a tell.`);
+      }
       out.push('- [ ] Subject-matter accuracy — a domain expert would sign off.');
       out.push('- [ ] `passCriteria.maxAvgSecondsPerExercise` × exerciseCount lands inside the level\'s Kumon time band (see `pnpm eval:time`).');
       out.push('');

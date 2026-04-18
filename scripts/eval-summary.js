@@ -31,6 +31,7 @@ const CHECKS = [
   ['eval:duplicates', 'Cross-set duplication density (advisory)'],
   ['eval:coverage', 'Objective drill depth (advisory)'],
   ['eval:diversity', 'Rationale diversity (advisory)'],
+  ['eval:length-bias', 'Correct-answer length bias (advisory)'],
 ];
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
