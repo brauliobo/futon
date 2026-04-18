@@ -17,10 +17,13 @@
       div(:class="timerClass")
         span(class="text-base" aria-hidden="true") ⏱
         span(class="text-lg font-black tabular-nums" :aria-label="`Time elapsed ${timer}`") {{ timer }}
-    div(v-if="exercisesOnPage > 0" class="space-y-1")
-      div(class="flex items-center justify-between text-sm font-bold text-kid-muted")
-        span {{ answeredOnPage }} / {{ exercisesOnPage }}
+    div(v-if="exercisesOnPage > 0" class="space-y-1.5")
+      div(class="flex items-center justify-between text-base font-bold")
+        span
+          span(class="text-kid-text tabular-nums") {{ answeredOnPage }}
+          span(class="text-kid-muted")  / {{ exercisesOnPage }}
         span(v-if="isComplete" class="text-kid-green animate-pop-in") ✓ {{ $t('done') || 'Done' }}
+        span(v-else-if="answeredOnPage > 0" class="text-kid-blue tabular-nums") {{ percentLabel }}
       div(class="h-3 rounded-full theme-track overflow-hidden relative" role="progressbar" :aria-valuenow="answeredOnPage" :aria-valuemax="exercisesOnPage")
         div(:class="barClass" :style="{ width: barWidth }")
           div(v-if="answeredOnPage > 0 && !isComplete" class="absolute inset-0 progress-shimmer" aria-hidden="true")
@@ -42,10 +45,12 @@ export default {
   data() { return { liveAnnouncement: '' }; },
   computed: {
     isComplete() { return this.exercisesOnPage > 0 && this.answeredOnPage >= this.exercisesOnPage; },
-    barWidth() {
-      if (!this.exercisesOnPage) return '0%';
-      return `${Math.min(100, Math.round((this.answeredOnPage / this.exercisesOnPage) * 100))}%`;
+    percent() {
+      if (!this.exercisesOnPage) return 0;
+      return Math.min(100, Math.round((this.answeredOnPage / this.exercisesOnPage) * 100));
     },
+    barWidth() { return `${this.percent}%`; },
+    percentLabel() { return `${this.percent}%`; },
     barClass() {
       const base = 'h-full rounded-full transition-all duration-500 ease-out';
       return this.isComplete ? `${base} bg-kid-green green-glow` : `${base} bg-kid-blue`;
