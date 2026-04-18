@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import { createI18n } from 'vue-i18n';
-import { pt } from './i18n/pt';
-import { en } from './i18n/en';
+import pt from './i18n/pt.yaml';
+import en from './i18n/en.yaml';
 import { router } from './router';
 
 import './index.css';
