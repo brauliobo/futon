@@ -169,8 +169,25 @@ function scoreObjectives(set) {
     issue: pct < 1 ? `${exs.length - tagged}/${exs.length} untagged` : null };
 }
 
-// 5. Answer distribution skew (10)
+// 5. Answer distribution skew (10). Sets whose ENTIRE content has one
+// dominant answer (e.g. "Somas que dão 10" decomposition drills) are
+// intentional theme sets — don't penalize per-page skew on those.
 function scoreAnswerDistribution(set) {
+  const setAns = [];
+  for (const p of set.pages || []) {
+    for (const e of p.exercises || []) {
+      const a = String(e.correctAnswer || '').trim().toLowerCase();
+      if (a) setAns.push(a);
+    }
+  }
+  if (setAns.length >= 10) {
+    const setFreq = {};
+    for (const a of setAns) setFreq[a] = (setFreq[a] || 0) + 1;
+    if (Math.max(...Object.values(setFreq)) / setAns.length > 0.7) {
+      return { score: 10, max: 10, issue: null };
+    }
+  }
+
   let score = 10;
   const issues = [];
   for (const p of set.pages || []) {
