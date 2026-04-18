@@ -197,7 +197,7 @@ function scoreAnswerDistribution(set) {
   const setAns = [];
   for (const p of set.pages || []) {
     for (const e of p.exercises || []) {
-      const a = String(e.correctAnswer || '').trim().toLowerCase();
+      const a = String(e.correctAnswer ?? '').trim().toLowerCase();
       if (a) setAns.push(a);
     }
   }
@@ -215,7 +215,7 @@ function scoreAnswerDistribution(set) {
   const hasBinarySkew = (set.pages || []).some(p => {
     const exs = p.exercises || [];
     if (exs.length < 4) return false;
-    const uniqueAns = new Set(exs.map(e => String(e.correctAnswer || '').trim().toLowerCase()));
+    const uniqueAns = new Set(exs.map(e => String(e.correctAnswer ?? '').trim().toLowerCase()));
     return uniqueAns.size <= 2 && uniqueAns.size > 0;
   });
   if (hasBinarySkew) return { score: 10, max: 10, issue: null };
@@ -224,7 +224,7 @@ function scoreAnswerDistribution(set) {
   // answer differs from the next page's. If ≥3 consecutive pages skew
   // and their dominant answers are all distinct, treat as intentional.
   const pageDominants = (set.pages || []).map(p => {
-    const ans = (p.exercises || []).map(e => String(e.correctAnswer || '').trim().toLowerCase()).filter(Boolean);
+    const ans = (p.exercises || []).map(e => String(e.correctAnswer ?? '').trim().toLowerCase()).filter(Boolean);
     if (ans.length < 4) return null;
     const f = {};
     for (const a of ans) f[a] = (f[a] || 0) + 1;
@@ -240,7 +240,7 @@ function scoreAnswerDistribution(set) {
   let score = 10;
   const issues = [];
   for (const p of set.pages || []) {
-    const ans = (p.exercises || []).map(e => String(e.correctAnswer || '').trim().toLowerCase()).filter(Boolean);
+    const ans = (p.exercises || []).map(e => String(e.correctAnswer ?? '').trim().toLowerCase()).filter(Boolean);
     if (ans.length < 4) continue;
     const freq = {};
     for (const a of ans) freq[a] = (freq[a] || 0) + 1;
