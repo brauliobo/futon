@@ -151,6 +151,16 @@ Add a worked pair using `→` or `Ex.:`:
 example: "Conte de 2 em 2. Ex.: 0, 2, 4, 6, __"
 ```
 
+Or bulk-augment every set missing a worked pair by reading the first exercise:
+
+```bash
+pnpm fix:examples                           # dry-run across repo
+pnpm fix:examples --subject portuguese      # filter
+pnpm fix:examples --apply                   # write
+```
+
+It appends ` Ex.: <first-question> → <first-answer>.` to any `example:` that lacks `Ex.:` / `→` / `=` so the evaluator credits a concrete model.
+
 ### Objectives low (<100%)
 
 Every exercise must carry `objectives: [code]` using the level's objective codes (see `src/domain/schema/`). Bulk-backfill with `scripts/backfill-metadata.mjs`.
