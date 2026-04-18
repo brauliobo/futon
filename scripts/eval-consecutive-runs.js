@@ -3,12 +3,14 @@
 // share the same correctAnswer, which lets a student pattern-spot rather
 // than evaluate each exercise on its own merits.
 //
-// Filters:
-//   - Constant-drill sets (≥70% of answers are the same) are skipped —
-//     that's a legitimate Kumon pattern for automaticity recognition.
-//   - Japanese kana drills are skipped — repetition is the pedagogy.
-//   - Sets with <4 distinct answer values are skipped as constant-drill
-//     variants.
+// Filters (all legitimate Kumon patterns — skipped, not flagged):
+//   - Constant-drill sets (≥70% of answers are the same).
+//   - Japanese kana drills — repetition is the pedagogy.
+//   - Sets with <4 distinct answer values (constant-drill variants).
+//   - Drill-level math (1A-7A) — arithmetic automaticity clusters are expected.
+//   - Focused-page runs: the whole run fits inside one page AND that page is
+//     mostly (≥60%) the same answer value. That's a focused-drill page (e.g.
+//     "n - n = 0" page, "sen²+cos² = 1" page).
 //
 // Advisory only — exit 0 always.
 
@@ -22,25 +24,34 @@ const c = (t, col) => `${col}${t}${RESET}`;
 
 const RUN_CEILING = 4;
 
+const DRILL_SKIP = /\/math\/(1A|2A|3A|4A|5A|6A|7A)\//;
+
 async function main() {
   const files = await fg('src/levels/**/set_*.yaml');
   const hits = [];
   for (const f of files) {
     if (f.includes('/japanese/')) continue;
+    if (DRILL_SKIP.test(f)) continue;
     const s = YAML.parse(readFileSync(f, 'utf8'));
-    const answers = (s.pages || [])
-      .flatMap(p => (p.exercises || []).map(e => String(e.correctAnswer ?? '').trim()))
-      .filter(Boolean);
+    // Build flat answers AND page-index per answer position, to tell whether
+    // a run stays within one page (focused-drill) or crosses pages.
+    const answers = [];
+    const pageIdx = [];
+    (s.pages || []).forEach((p, pi) => {
+      (p.exercises || []).forEach(e => {
+        const a = String(e.correctAnswer ?? '').trim();
+        if (a) { answers.push(a); pageIdx.push(pi); }
+      });
+    });
     if (answers.length < 10) continue;
     const uniq = new Set(answers);
-    if (uniq.size < 4) continue; // constant-drill with few distinct values
-    // Constant-drill: one answer dominates
+    if (uniq.size < 4) continue;
     const counts = new Map();
     for (const a of answers) counts.set(a, (counts.get(a) || 0) + 1);
     const maxCount = Math.max(...counts.values());
     if (maxCount / answers.length >= 0.7) continue;
 
-    let maxRun = 1, curRun = 1, runStart = 0, runAns = answers[0];
+    let maxRun = 1, curRun = 1, runAns = answers[0];
     let bestStart = 0;
     for (let i = 1; i < answers.length; i++) {
       if (answers[i] === answers[i - 1]) {
@@ -52,9 +63,19 @@ async function main() {
         }
       } else curRun = 1;
     }
-    if (maxRun >= RUN_CEILING) {
-      hits.push({ f: f.replace('src/levels/', ''), maxRun, start: bestStart, ans: runAns, total: answers.length });
+    if (maxRun < RUN_CEILING) continue;
+
+    // Focused-page filter: run fits inside one page AND ≥60% of that page's
+    // answers match the run value → legitimate focused-drill page, skip.
+    const runEnd = bestStart + maxRun - 1;
+    if (pageIdx[bestStart] === pageIdx[runEnd]) {
+      const pi = pageIdx[bestStart];
+      const pageAnswers = answers.filter((_, i) => pageIdx[i] === pi);
+      const pageMatch = pageAnswers.filter(a => a === runAns).length;
+      if (pageMatch / pageAnswers.length >= 0.6) continue;
     }
+
+    hits.push({ f: f.replace('src/levels/', ''), maxRun, start: bestStart, ans: runAns, total: answers.length });
   }
 
   console.log(c('\n↔ CONSECUTIVE-ANSWER RUNS', BOLD));

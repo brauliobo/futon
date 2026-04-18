@@ -244,9 +244,9 @@ pages:
         difficulty: 4
         objectives: [series.partial_sums]
       - type: sequence
-        question: Série alternada harmônica converge (V/F)?
-        correctAnswer: V
-        rationale: "Série harmônica Σ 1/n diverge lentamente; somas parciais crescem sem limite."
+        question: Série alternada harmônica Σ(-1)ⁿ/n diverge (V/F)?
+        correctAnswer: F
+        rationale: "Alternada harmônica converge (Leibniz: 1/n ↓ 0), embora |Σ| = Σ1/n divirja (condicionalmente convergente)."
         difficulty: 4
         objectives: [series.partial_sums]
   - pageNumber: 8
@@ -272,9 +272,9 @@ pages:
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
-        question: Σ(-1)^n/n³ é absolutamente convergente (V/F)?
-        correctAnswer: V
-        rationale: "Critério de Leibniz: série alternada Σ(-1)ⁿbₙ converge se bₙ↓0."
+        question: Σ(-1)^n/n³ diverge (V/F)?
+        correctAnswer: F
+        rationale: "Σ|aₙ| = Σ1/n³ é p-série com p=3>1, converge; logo Σ(-1)ⁿ/n³ converge absolutamente."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
@@ -294,15 +294,15 @@ pages:
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
-        question: Σ 1/n diverge (V/F)?
-        correctAnswer: V
-        rationale: "Σ 1/n é a série harmônica — diverge."
+        question: Σ 1/n converge (V/F)?
+        correctAnswer: F
+        rationale: "Σ1/n é a série harmônica — diverge (apesar de 1/n → 0)."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
         question: Σ 1/n! = e (V/F)?
         correctAnswer: V
-        rationale: "Σ 1/n é a série harmônica — diverge."
+        rationale: "Σₙ₌₀^∞ 1/n! = e (Taylor de eˣ em x=1)."
         difficulty: 5
         objectives: [series.partial_sums]
       - type: sequence
