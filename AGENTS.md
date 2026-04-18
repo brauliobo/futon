@@ -44,7 +44,21 @@ Playwright E2E. `pnpm test` runs 36 specs in ~25s.
 ## Key commands
 
 ```bash
-pnpm dev          # dev server on :5173
-pnpm build        # build to docs/
-pnpm test         # run E2E specs
+pnpm dev             # dev server on :5173
+pnpm build           # build to docs/
+pnpm test            # run E2E specs
+pnpm eval:dashboard  # pedagogy health (global score + tier distribution)
+pnpm test:eval       # 41 regression tests for rubric scorers + categorize
 ```
+
+## Pedagogy evaluation system
+
+Full documentation in [PEDAGOGY.md](PEDAGOGY.md) at repo root. Key entry points:
+
+- **Evaluators** (JSON-capable): `eval:dashboard`, `eval:pedagogy`, `eval:rationales`, `eval:disconnected`, `eval:bias`, `eval:time`, `eval:snapshot`.
+- **Fixers** (dry-run by default, `--apply` to write): `fix:placeholders`, `fix:examples`, `fix:restatements`, `fix:japanese`, `fix:japanese:metadata`, `fix:japanese:objectives`.
+- **Regression tests**: `test:eval` runs `scripts/test-rationale.js` (30 cases for `categorize()`) + `scripts/test-eval.js` (11 cases for rubric scorers).
+- **Runtime**: `src/utils/Shuffle.js` seeds per-question choice order so authored YAML order can't bias answers.
+- **Snapshot**: `PEDAGOGY_SNAPSHOT.json` tracks per-set + per-level scores for CI regression checks. `eval:snapshot --save` updates it.
+
+The rubric is calibrated to recognize 6 Kumon design patterns (progressive, constant-drill, theme-answer, progressive-theme, binary-option, sparse-page) rather than reflexively penalizing deviations from a textbook linear progression.
