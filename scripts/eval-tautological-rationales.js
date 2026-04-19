@@ -38,15 +38,27 @@ const PATTERNS = [
   { name: 'belongs-to-category', re: /pertence à categoria:/ },
 ];
 
-// Echo pattern: rationale ends with quoted answer identical to correctAnswer.
+// Echo pattern: rationale ends with quoted answer identical to correctAnswer,
+// AND the preceding stem is generic filler (not substantive teaching).
+// Substantive rationales that END with the answer as a punchline (e.g.
+// "Adjetivos longos usam 'more', não -er: 'more beautiful'.") are NOT
+// tautologies — they teach the rule and cite the answer as the example.
 function isEcho(rationale, answer) {
   const r = String(rationale || '').trim();
   const a = String(answer || '').trim();
   if (!r || !a) return false;
-  // Rationale of shape: "...: 'X'." where X equals the answer
   const m = /:\s*['"“”‘’]([^'"“”‘’]+)['"“”‘’]\.?$/.exec(r);
-  if (m && m[1].trim().toLowerCase() === a.toLowerCase()) return true;
-  return false;
+  if (!m || m[1].trim().toLowerCase() !== a.toLowerCase()) return false;
+  const stem = r.slice(0, m.index).trim();
+  // Known generic-filler stems that misapply a claim to the answer.
+  const FILLER = [
+    /^O verbo concorda com o sujeito$/,
+    /^O miolo da palavra é escrito em min[uú]sculas$/,
+    /^Observe as opções e escolha/,
+    /^Resposta$/i,
+    /^A resposta (é|correta é)$/i,
+  ];
+  return FILLER.some(rx => rx.test(stem));
 }
 
 async function main() {
