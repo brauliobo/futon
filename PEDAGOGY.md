@@ -196,6 +196,17 @@ When fixing tautological rationales by hand, choose the shape that matches the q
 
 Avoid: simply echoing the answer, pointing at "as opções", or restating the question.
 
+## Example-spoiler scanner
+
+`pnpm eval:example-spoiler` flags sets where the set-level `example:` field has a Q→A that matches the set's **first exercise verbatim**. The student sees the example, then trivially answers exercise #1 by recall instead of method. Skips drill levels (1A-7A, A-B) and Japanese — there concrete demonstration *is* the pedagogy.
+
+### Fix options
+
+- Pick a DIFFERENT instance that still demonstrates the method, e.g. `Ex.: Verde → green` when exercises use red, blue, yellow.
+- Keep the first question but expand the example to show **reasoning**, not just the answer:
+  - Before: `Ex.: 5+3 = → 8`
+  - After:  `Ex.: 5+3 = 5,6,7,8 (conte 3 para frente) → 8`
+
 ## Dashboard (one-screen health check)
 
 `pnpm eval:dashboard` runs all evaluators and prints a compact summary — meant for daily review or CI gate:

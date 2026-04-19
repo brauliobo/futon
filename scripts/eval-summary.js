@@ -37,6 +37,7 @@ const CHECKS = [
   ['eval:runs', 'Consecutive-answer runs (advisory)'],
   ['eval:pt-category', 'PT rationale-category mismatch (advisory)'],
   ['eval:tautological', 'Tautological rationales (advisory)'],
+  ['eval:example-spoiler', 'Example = exercise #1 spoiler (advisory)'],
 ];
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
