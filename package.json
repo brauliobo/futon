@@ -60,6 +60,7 @@
     "fix:power:root": "node ./scripts/fix-power-root-rationales.js",
     "fix:series:rationales": "node ./scripts/fix-series-rationales.js",
     "fix:pass-criteria": "node ./scripts/fix-pass-criteria.js",
+    "fix:example-spoiler": "node ./scripts/fix-example-spoiler.js",
     "eval:snapshot": "node ./scripts/pedagogy-snapshot.js",
     "eval:dashboard": "node ./scripts/pedagogy-dashboard.js",
     "eval:all": "pnpm run test:eval && pnpm run validate:sets && pnpm run lint:content && pnpm run audit:content && pnpm run eval:pedagogy && pnpm run eval:disconnected && pnpm run eval:arithmetic && pnpm run eval:alignment && pnpm run eval:relevance && pnpm run eval:answers && pnpm run eval:topic && pnpm run eval:intra-page && pnpm run eval:cross-set && pnpm run eval:orphan-objectives && pnpm run eval:dup-titles && pnpm run eval:input-type",
