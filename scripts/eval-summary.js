@@ -36,6 +36,7 @@ const CHECKS = [
   ['eval:keyword-leak', 'Answer keyword leak in prompt (advisory)'],
   ['eval:runs', 'Consecutive-answer runs (advisory)'],
   ['eval:pt-category', 'PT rationale-category mismatch (advisory)'],
+  ['eval:tautological', 'Tautological rationales (advisory)'],
 ];
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
