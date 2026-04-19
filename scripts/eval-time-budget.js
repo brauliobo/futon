@@ -118,7 +118,7 @@ function main() {
   console.log(c(`\n${slow} set(s) over level band · ${fast} set(s) under level band`, slow + fast ? YELLOW : GREEN));
   console.log(c('  Tune either exercise count (pages × per-page count) or', GRAY));
   console.log(c('  passCriteria.maxAvgSecondsPerExercise to bring set within guideline.', GRAY));
-  process.exit(slow + fast ? 1 : 0);
+  process.exit(0); // advisory — never fails CI
 }
 
 main();

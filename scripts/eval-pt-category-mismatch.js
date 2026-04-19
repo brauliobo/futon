@@ -26,12 +26,17 @@ const POSSESSIVE_PRONOUNS = new Set([
   'seu', 'sua', 'seus', 'suas', 'nosso', 'nossa', 'nossos', 'nossas',
 ]);
 const PREPOSITIONS = new Set(['de', 'da', 'do', 'das', 'dos', 'em', 'na', 'no', 'nas', 'nos', 'à', 'às', 'ao', 'aos', 'por', 'com', 'para', 'entre']);
+const DEMONSTRATIVE_PRONOUNS = new Set([
+  'este', 'esta', 'estes', 'estas', 'esse', 'essa', 'esses', 'essas',
+  'aquele', 'aquela', 'aqueles', 'aquelas', 'isto', 'isso', 'aquilo',
+]);
 
 function classify(ans) {
   const a = String(ans || '').trim().toLowerCase();
   if (!a) return null;
   if (PERSONAL_PRONOUNS.has(a)) return 'pronome pessoal';
   if (POSSESSIVE_PRONOUNS.has(a)) return 'pronome possessivo';
+  if (DEMONSTRATIVE_PRONOUNS.has(a)) return 'pronome demonstrativo';
   if (ARTICLES.has(a)) return 'artigo';
   if (PREPOSITIONS.has(a)) return 'preposição';
   if (/mente$/.test(a) && a.length > 4) return 'advérbio';
@@ -41,20 +46,29 @@ function classify(ans) {
 // Rationale → claimed-category detector. Only matches when the rationale
 // PRIMARILY explains using that category (assertive phrasing).
 const RATIONALE_RULES = [
-  { cat: 'pronome pessoal',     re: /pronome pessoal/i },
-  { cat: 'pronome possessivo',  re: /pronome possessivo/i },
-  { cat: 'artigo',              re: /^[Aa]rtigo (definido|indefinido|concord)|artigo (definido|indefinido) \(/ },
-  { cat: 'advérbio',            re: /^[Aa]dvérbio (modifica|indica)/ },
-  { cat: 'substantivo',         re: /^[Ss]ubstantivo (nomeia|é|designa)/ },
+  { cat: 'pronome pessoal',       re: /pronome pessoal|[Pp]essoais indicam pessoa do discurso/ },
+  { cat: 'pronome possessivo',    re: /pronome possessivo|[Pp]ossessivos? indicam posse/ },
+  { cat: 'pronome demonstrativo', re: /pronome demonstrativo|[Dd]emonstrativos? situam|[Dd]emonstrativos? indicam/ },
+  { cat: 'pronome indefinido',    re: /[Ii]ndefinidos? referem-se de modo vago/ },
+  { cat: 'pronome relativo',      re: /[Rr]elativos? retomam termo anterior/ },
+  { cat: 'pronome interrogativo', re: /[Ii]nterrogativos? introduzem pergunta/ },
+  { cat: 'artigo',                re: /^[Aa]rtigo (definido|indefinido|concord)|artigo (definido|indefinido) \(/ },
+  { cat: 'advérbio',              re: /^[Aa]dvérbio (modifica|indica)/ },
+  { cat: 'substantivo',           re: /^[Ss]ubstantivo (nomeia|é|designa)/ },
 ];
 
-// Compatible pairs — a rationale may invoke multiple categories without
-// contradicting the answer's category.
+// Compatibility matrix — answer-category vs. rationale-category. Any pair
+// NOT listed here is treated as incompatible (a mismatch).
+const COMPATIBLE = new Set([
+  'pronome pessoal|pronome pessoal',
+  'pronome possessivo|pronome possessivo',
+  'pronome demonstrativo|pronome demonstrativo',
+  'artigo|artigo',
+  'preposição|preposição',
+  'advérbio|advérbio',
+]);
 function compatible(answerCat, rationaleCat) {
-  if (answerCat === rationaleCat) return true;
-  if (answerCat === 'pronome pessoal' && rationaleCat === 'pronome possessivo') return false;
-  if (answerCat === 'pronome possessivo' && rationaleCat === 'pronome pessoal') return false;
-  return false;
+  return COMPATIBLE.has(`${answerCat}|${rationaleCat}`);
 }
 
 async function main() {
