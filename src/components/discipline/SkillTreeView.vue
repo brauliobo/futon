@@ -28,8 +28,8 @@
 
     //- Set list for active node — visually separated card
     div(v-if="activeNode && activeSets.length" class="mt-6 pt-6 border-t-2 border-dashed theme-border animate-slide-up" ref="setListEl")
-      div(class="rounded-3xl bg-kid-blue/5 border border-kid-blue/20 p-5")
-        h3(class="text-lg font-black text-kid-text mb-3 flex items-center gap-2")
+      div(class="rounded-3xl bg-kid-blue/5 border border-kid-blue/20 p-2 sm:p-5")
+        h3(class="text-lg font-black text-kid-text mb-3 px-3 pt-2 sm:px-0 sm:pt-0 flex items-center gap-2")
           span(class="text-2xl") {{ activeNode.icon }}
           span {{ $t(`skill_${activeNode.id}`) || activeNode.name }}
         LevelList(

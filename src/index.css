@@ -416,9 +416,29 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .set-card-btn--mastery { @apply bg-kid-green text-white; }
 
 /* Set card slot — LevelList carousel item sizing (responsive) */
-.set-card-slot { @apply flex-shrink-0 transition-transform; min-width: 260px; max-width: 280px; }
+.set-card-slot { @apply flex-shrink-0 transition-transform; width: 100%; }
 .set-card-slot--inactive { transform: scale(0.97); }
-@media (min-width: 768px) { .set-card-slot { min-width: 320px; max-width: 400px; } }
+@media (min-width: 768px) { .set-card-slot { width: auto; min-width: 320px; max-width: 400px; } }
+
+/* Carousel — LevelList layout primitives */
+.carousel { @apply relative py-4; }
+.carousel-viewport { @apply overflow-hidden px-2 sm:px-8; }
+.carousel-track { @apply flex items-stretch gap-6 transition-transform; }
+.carousel-fade { @apply pointer-events-none absolute inset-y-0 z-[5] w-6 sm:w-14; }
+.carousel-fade--left { @apply left-0 bg-gradient-to-r from-kid-surface to-transparent; }
+.carousel-fade--right { @apply right-0 bg-gradient-to-l from-kid-surface to-transparent; }
+.carousel-arrow { @apply absolute top-1/2 z-10 flex h-9 w-9 sm:h-12 sm:w-12 -translate-y-1/2 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all; }
+.carousel-arrow:hover { @apply shadow-lg; background: var(--kid-surface-2); }
+.carousel-arrow:active { transform: translateY(-50%) scale(0.95); }
+.carousel-arrow:disabled { @apply opacity-30 cursor-not-allowed; }
+.carousel-arrow--left { @apply -left-2 sm:left-2; }
+.carousel-arrow--right { @apply -right-2 sm:right-2; }
+
+/* Locked set — overlay on carousel slot */
+.set-card--locked { @apply opacity-40 pointer-events-none select-none; }
+.set-lock-overlay { @apply absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-2xl overlay-bg backdrop-blur-[3px] cursor-default; }
+.set-lock-icon { @apply flex h-16 w-16 items-center justify-center rounded-full bg-kid-surface shadow-md border theme-border; }
+.set-lock-hint { @apply px-4 text-center text-sm font-black text-kid-text; }
 
 /* Subject tab — Home.vue top navigation */
 .subject-tab { @apply flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2 rounded-2xl px-2 sm:px-5 py-2 sm:py-3.5 font-bold capitalize transition-all duration-200 border-2 active:scale-95; }

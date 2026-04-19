@@ -1,40 +1,23 @@
 <template lang="pug">
-  div(class="relative py-4")
-    div(v-show="showLeftArrow" class="pointer-events-none absolute inset-y-0 left-0 z-[5] w-10 sm:w-14 bg-gradient-to-r from-kid-surface via-kid-surface/90 to-transparent")
-    div(v-show="showRightArrow" class="pointer-events-none absolute inset-y-0 right-0 z-[5] w-10 sm:w-14 bg-gradient-to-l from-kid-surface via-kid-surface/90 to-transparent")
-    button(
-      class="absolute left-1 sm:left-2 top-1/2 z-10 flex h-10 w-10 sm:h-12 sm:w-12 -translate-y-1/2 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-[color:var(--kid-surface-2)] hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
-      @click="scrollLeft"
-      :disabled="!canScrollLeft"
-      v-show="showLeftArrow"
-    )
-      | ‹
-    div(class="overflow-hidden px-14 sm:px-8" ref="wrapper")
-      div(class="flex items-stretch gap-6 transition-transform" :style="{ transform: `translateX(-${scrollOffset}px)` }" ref="track")
+  div(class="carousel")
+    div(v-show="showLeftArrow" class="carousel-fade carousel-fade--left")
+    div(v-show="showRightArrow" class="carousel-fade carousel-fade--right")
+    button(class="carousel-arrow carousel-arrow--left" @click="scrollLeft" :disabled="!canScrollLeft" v-show="showLeftArrow") ‹
+    div(class="carousel-viewport" ref="wrapper")
+      div(class="carousel-track" :style="{ transform: `translateX(-${scrollOffset}px)` }" ref="track")
         div(
           v-for="(set, index) in sets"
           :key="set.id || set.title"
           :class="['set-card-slot', { 'set-card-slot--inactive': slugOf(set) !== activeSlug }]"
         )
           div(v-if="!isSetAvailable(index)" class="relative")
-            SetCard(:set="set" :is-active="false" class="opacity-40 pointer-events-none select-none")
-            div(class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-2xl overlay-bg backdrop-blur-[3px] cursor-default")
-              div(class="flex h-16 w-16 items-center justify-center rounded-full bg-kid-surface shadow-md border theme-border")
+            SetCard(:set="set" :is-active="false" class="set-card--locked")
+            div(class="set-lock-overlay")
+              div(class="set-lock-icon")
                 span(class="text-3xl animate-bounce-in") 🔒
-              span(class="px-4 text-center text-sm font-black text-kid-text") {{ $t('unlockHint') || 'Keep going to unlock!' }}
-          SetCard(
-            v-else
-            :set="set"
-            :is-active="slugOf(set) === activeSlug"
-            @start="$emit('start', $event)"
-          )
-    button(
-      class="absolute right-1 sm:right-2 top-1/2 z-10 flex h-10 w-10 sm:h-12 sm:w-12 -translate-y-1/2 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-md backdrop-blur transition-all hover:bg-[color:var(--kid-surface-2)] hover:shadow-lg active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
-      @click="scrollRight"
-      :disabled="!canScrollRight"
-      v-show="showRightArrow"
-    )
-      | ›
+              span(class="set-lock-hint") {{ $t('unlockHint') || 'Keep going to unlock!' }}
+          SetCard(v-else :set="set" :is-active="slugOf(set) === activeSlug" @start="$emit('start', $event)")
+    button(class="carousel-arrow carousel-arrow--right" @click="scrollRight" :disabled="!canScrollRight" v-show="showRightArrow") ›
 </template>
 
 <script>
