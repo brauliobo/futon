@@ -89,6 +89,20 @@ async function main() {
       const firstEx = x.all[0];
       const lastEx = x.all[x.all.length - 1];
       const genericCount = x.all.filter(e => categorize(e.rationale) === 'generic').length;
+      // Tautological rationales: patterns that echo the answer without teaching
+      const tautPats = [
+        /^Observe as opções e escolha/,
+        /^(A resposta [eé]|Resposta:)/i,
+        /pertence à categoria:/,
+      ];
+      const tautCount = x.all.filter(e => {
+        const r = String(e.rationale || '');
+        if (!r) return false;
+        if (tautPats.some(p => p.test(r))) return true;
+        const a = String(e.correctAnswer || '').trim();
+        const m = /:\s*['"“”‘’]([^'"“”‘’]+)['"“”‘’]\.?$/.exec(r);
+        return m && a && m[1].trim().toLowerCase() === a.toLowerCase();
+      }).length;
       // Inline (a/b/c/d) choice questions where correct is THE longest option
       let choiceQs = 0, correctLongest = 0;
       for (const e of x.all) {
@@ -140,6 +154,7 @@ async function main() {
       out.push('- [ ] Last exercise genuinely extends the skill (not just a harder instance).');
       out.push(`- [ ] Rationales teach the *why* — sample ${Math.min(3, x.all.length)} random ones and verify.`);
       if (genericCount) out.push(`- [ ] **${genericCount}** rationale(s) flagged as "generic" — spot-check they really do teach.`);
+      if (tautCount >= 3) out.push(`- [ ] ⚠️ **${tautCount} tautological rationale(s)** — echo answer without teaching. Rewrite per PEDAGOGY.md "Manual rewrite guide" (story-ref / property-contrast / ordering / grammar-category).`);
       if (setDiversity < 0.3 && x.all.length >= 10 && setAns.size >= 5) {
         out.push(`- [ ] ⚠️ **${Math.round(setDiversity*100)}% rationale diversity** — one rationale covers many distinct answers. Check every bucket's exercises match its rationale's topic (see iter 82 math/J binomial bug).`);
       }
