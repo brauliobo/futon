@@ -13,7 +13,7 @@ passCriteria:
   maxAvgSecondsPerExercise: 25
 pages:
   - pageNumber: 1
-    title: Definição
+    title: Definição — prática 1
     description: i² = -1; z = a + bi.
     exercises:
       - type: algebra
@@ -52,360 +52,7 @@ pages:
         objectives:
           - complex.algebraic
   - pageNumber: 2
-    title: Soma
-    description: (a+bi) + (c+di) = (a+c) + (b+d)i.
-    exercises:
-      - type: algebra
-        question: (2+3i) + (1+4i) = ? + 7i
-        correctAnswer: 3
-        rationale: "Soma de complexos: some partes reais e imaginárias separadamente."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (5-2i) + (3+5i) = 8 + ?i
-        correctAnswer: 3
-        rationale: "Soma de complexos: some partes reais e imaginárias separadamente."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (7+i) + (-7-i) = ?
-        correctAnswer: 0
-        rationale: "Soma de complexos: some partes reais e imaginárias separadamente."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (a+bi) + 0 = ?
-        correctAnswer: a+bi
-        rationale: Zero é elemento neutro da soma.
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (1+i) + (1-i) = ?
-        correctAnswer: 2
-        rationale: "Soma de complexos: some partes reais e imaginárias separadamente."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-  - pageNumber: 3
-    title: Subtração
-    description: Mesmo que soma com sinal invertido.
-    exercises:
-      - type: algebra
-        question: (5+3i) - (2+i) = ? + 2i
-        correctAnswer: 3
-        rationale: "Subtração: subtraia partes reais e imaginárias separadamente."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (4-i) - (1-3i) = 3 + ?i
-        correctAnswer: 2
-        rationale: "Subtração: subtraia partes reais e imaginárias separadamente."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (1+i) - (1+i) = ?
-        correctAnswer: 0
-        rationale: "Subtração: subtraia partes reais e imaginárias separadamente."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (0-i) - (0-i) = ?
-        correctAnswer: 0
-        rationale: "Subtração: subtraia partes reais e imaginárias separadamente."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (7+2i) - (3+5i) = ? + ?i
-        correctAnswer: 4 - 3i
-        rationale: "Subtração: subtraia partes reais e imaginárias separadamente."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-  - pageNumber: 4
-    title: Multiplicação
-    description: (a+bi)(c+di) = (ac-bd) + (ad+bc)i.
-    exercises:
-      - type: algebra
-        question: (1+i)(1-i) = ?
-        correctAnswer: 2
-        rationale: "Diferença de quadrados: a² - b² = (a+b)(a-b)."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (2+i)(3+2i) = ? + 7i
-        correctAnswer: 4
-        rationale: "Produto: distribua e use i² = −1."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (1+i)² = ?
-        correctAnswer: 2i
-        rationale: "Produto notável: (a+b)² = a² + 2ab + b²."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (1-i)² = ?
-        correctAnswer: -2i
-        rationale: "Produto notável: (a-b)² = a² - 2ab + b²."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: i · i = ?
-        correctAnswer: -1
-        rationale: "Unidade imaginária: i² = −1."
-        difficulty: 3
-        objectives:
-          - complex.algebraic
-  - pageNumber: 5
-    title: Conjugado
-    description: conjugado de a+bi é a-bi.
-    exercises:
-      - type: algebra
-        question: Conjugado de 3+4i = ?
-        correctAnswer: 3-4i
-        rationale: Conjugado de a + bi é a − bi (reflete no eixo real).
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: Conjugado de -2-i = ?
-        correctAnswer: -2+i
-        rationale: "Soma de complexos: some partes reais e imaginárias separadamente."
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: Conjugado de 5 = ?
-        correctAnswer: 5
-        rationale: Conjugado de a + bi é a − bi (reflete no eixo real).
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: Conjugado de 2i = ?
-        correctAnswer: -2i
-        rationale: Conjugado de a + bi é a − bi (reflete no eixo real).
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: z · z̄ = ?
-        correctAnswer: a² + b²
-        rationale: Conjugado de a + bi é a − bi (reflete no eixo real).
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-  - pageNumber: 6
-    title: Módulo
-    description: Módulo — raiz de (a² + b²).
-    exercises:
-      - type: algebra
-        question: "|3+4i| = ?"
-        correctAnswer: 5
-        rationale: "Módulo: |3+4i| = √(9+16) = 5."
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: "|1+i| = ?"
-        correctAnswer: √2
-        rationale: "Módulo: |1±i| = √2."
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: "|5| = ?"
-        correctAnswer: 5
-        rationale: "Módulo de real a: |a| = |a|."
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: "|2i| = ?"
-        correctAnswer: 2
-        rationale: "Módulo: |bi| = |b|, logo |2i| = 2."
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: "|6+8i| = ?"
-        correctAnswer: 10
-        rationale: "Módulo: √(36+64) = 10."
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-  - pageNumber: 7
-    title: Divisão
-    description: Multiplique pelo conjugado do denominador.
-    exercises:
-      - type: algebra
-        question: (1+i)/(1-i) · (1+i)/(1+i) = (1+i)²/2 = ?
-        correctAnswer: i
-        rationale: "Produto notável: (a+b)² = a² + 2ab + b²."
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (3+4i)/(3-4i) — módulo = ?
-        correctAnswer: 1
-        rationale: "|z/w| = |z|/|w|; |z|=|z̄| aqui, logo módulo = 1."
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: 1/i = ?
-        correctAnswer: -i
-        rationale: 1/i = i/(i·i) = i/(−1) = −i.
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: 1/(1+i) — multiplicamos por (1-i)/(1-i) → (1-i)/2. Real = ?
-        correctAnswer: 1/2
-        rationale: "Racionalize multiplicando pelo conjugado: |1+i|² = 2."
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: Imaginária da divisão acima = ?
-        correctAnswer: -1/2
-        rationale: Parte imaginária vem do termo em i após racionalização.
-        difficulty: 4
-        objectives:
-          - complex.algebraic
-  - pageNumber: 8
-    title: Potências de i
-    description: Cíclico a cada 4.
-    exercises:
-      - type: algebra
-        question: i¹ = ?
-        correctAnswer: i
-        rationale: "Trivial: i¹ = i."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: i² = ?
-        correctAnswer: -1
-        rationale: "Potências de i ciclam: i¹=i, i²=-1, i³=-i, i⁴=1, depois repete."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: i³ = ?
-        correctAnswer: -i
-        rationale: "Potências de i ciclam: i¹=i, i²=-1, i³=-i, i⁴=1, depois repete."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: i⁴ = ?
-        correctAnswer: 1
-        rationale: "Potências de i ciclam: i¹=i, i²=-1, i³=-i, i⁴=1, depois repete."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: i^n com n = 10 mod 4 = 2 → i^10 = ?
-        correctAnswer: -1
-        rationale: "Potências de i ciclam: i¹=i, i²=-1, i³=-i, i⁴=1, depois repete
-          (período 4)."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-  - pageNumber: 9
-    title: Equações Quadráticas
-    description: Raízes complexas.
-    exercises:
-      - type: algebra
-        question: x² + 1 = 0 → x = ?
-        correctAnswer: ±i
-        rationale: "Bhaskara: x = (-b ± √Δ)/(2a), Δ = b² - 4ac."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: x² + 4 = 0 → x = ?
-        correctAnswer: ±2i
-        rationale: "Bhaskara: x = (-b ± √Δ)/(2a), Δ = b² - 4ac."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: x² - 2x + 5 = 0 tem discriminante = (4-20) = ?
-        correctAnswer: -16
-        rationale: "Bhaskara: x = (-b ± √Δ)/(2a), Δ = b² - 4ac."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: Então raízes = 1 ± ?i
-        correctAnswer: 2
-        rationale: Raízes n-ésimas de z dividem o argumento em n ângulos igualmente
-          espaçados.
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: Raízes complexas aparecem em pares conjugados (V/F)?
-        correctAnswer: V
-        rationale: Conjugado de a + bi é a − bi (reflete no eixo real).
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-  - pageNumber: 10
-    title: Revisão Integrada
-    description: Misture operações.
-    exercises:
-      - type: algebra
-        question: (2+3i)(2-3i) = ?
-        correctAnswer: 13
-        rationale: "Diferença de quadrados: a² - b² = (a+b)(a-b)."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: "|2+3i|² = ?"
-        correctAnswer: 13
-        rationale: "Módulo ao quadrado: |a+bi|² = a² + b²."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: (1+i)⁴ = ?
-        correctAnswer: -4
-        rationale: "Potência complexa via polar: (a+bi)ⁿ = |z|ⁿ·cis(nθ) (De Moivre)."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: 1/(2+i) em forma a+bi — real = ?
-        correctAnswer: 2/5
-        rationale: "Multiplique por (2−i)/(2−i): |2+i|²=5 ⇒ (2−i)/5."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-      - type: algebra
-        question: Mesma — imaginária = ?
-        correctAnswer: -1/5
-        rationale: "Continuação do cálculo anterior: parte imaginária."
-        difficulty: 5
-        objectives:
-          - complex.algebraic
-  - pageNumber: 11
-    title: Definição
+    title: Definição — prática 2
     description: i² = -1; z = a + bi.
     exercises:
       - type: algebra
@@ -443,8 +90,8 @@ pages:
         difficulty: 3
         objectives:
           - complex.algebraic
-  - pageNumber: 12
-    title: Soma
+  - pageNumber: 3
+    title: Soma — prática 1
     description: (a+bi) + (c+di) = (a+c) + (b+d)i.
     exercises:
       - type: algebra
@@ -482,8 +129,47 @@ pages:
         difficulty: 3
         objectives:
           - complex.algebraic
-  - pageNumber: 13
-    title: Subtração
+  - pageNumber: 4
+    title: Soma — prática 2
+    description: (a+bi) + (c+di) = (a+c) + (b+d)i.
+    exercises:
+      - type: algebra
+        question: (2+3i) + (1+4i) = ? + 7i
+        correctAnswer: 3
+        rationale: "Soma de complexos: some partes reais e imaginárias separadamente."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (5-2i) + (3+5i) = 8 + ?i
+        correctAnswer: 3
+        rationale: "Soma de complexos: some partes reais e imaginárias separadamente."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (7+i) + (-7-i) = ?
+        correctAnswer: 0
+        rationale: "Soma de complexos: some partes reais e imaginárias separadamente."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (a+bi) + 0 = ?
+        correctAnswer: a+bi
+        rationale: Zero é elemento neutro da soma.
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (1+i) + (1-i) = ?
+        correctAnswer: 2
+        rationale: "Soma de complexos: some partes reais e imaginárias separadamente."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+  - pageNumber: 5
+    title: Subtração — prática 1
     description: Mesmo que soma com sinal invertido.
     exercises:
       - type: algebra
@@ -521,8 +207,47 @@ pages:
         difficulty: 3
         objectives:
           - complex.algebraic
-  - pageNumber: 14
-    title: Multiplicação
+  - pageNumber: 6
+    title: Subtração — prática 2
+    description: Mesmo que soma com sinal invertido.
+    exercises:
+      - type: algebra
+        question: (5+3i) - (2+i) = ? + 2i
+        correctAnswer: 3
+        rationale: "Subtração: subtraia partes reais e imaginárias separadamente."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (4-i) - (1-3i) = 3 + ?i
+        correctAnswer: 2
+        rationale: "Subtração: subtraia partes reais e imaginárias separadamente."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (1+i) - (1+i) = ?
+        correctAnswer: 0
+        rationale: "Subtração: subtraia partes reais e imaginárias separadamente."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (0-i) - (0-i) = ?
+        correctAnswer: 0
+        rationale: "Subtração: subtraia partes reais e imaginárias separadamente."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (7+2i) - (3+5i) = ? + ?i
+        correctAnswer: 4 - 3i
+        rationale: "Subtração: subtraia partes reais e imaginárias separadamente."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+  - pageNumber: 7
+    title: Multiplicação — prática 1
     description: (a+bi)(c+di) = (ac-bd) + (ad+bc)i.
     exercises:
       - type: algebra
@@ -560,8 +285,47 @@ pages:
         difficulty: 3
         objectives:
           - complex.algebraic
-  - pageNumber: 15
-    title: Conjugado
+  - pageNumber: 8
+    title: Multiplicação — prática 2
+    description: (a+bi)(c+di) = (ac-bd) + (ad+bc)i.
+    exercises:
+      - type: algebra
+        question: (1+i)(1-i) = ?
+        correctAnswer: 2
+        rationale: "Diferença de quadrados: a² - b² = (a+b)(a-b)."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (2+i)(3+2i) = ? + 7i
+        correctAnswer: 4
+        rationale: "Produto: distribua e use i² = −1."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (1+i)² = ?
+        correctAnswer: 2i
+        rationale: "Produto notável: (a+b)² = a² + 2ab + b²."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (1-i)² = ?
+        correctAnswer: -2i
+        rationale: "Produto notável: (a-b)² = a² - 2ab + b²."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: i · i = ?
+        correctAnswer: -1
+        rationale: "Unidade imaginária: i² = −1."
+        difficulty: 3
+        objectives:
+          - complex.algebraic
+  - pageNumber: 9
+    title: Conjugado — prática 1
     description: conjugado de a+bi é a-bi.
     exercises:
       - type: algebra
@@ -599,8 +363,47 @@ pages:
         difficulty: 4
         objectives:
           - complex.algebraic
-  - pageNumber: 16
-    title: Módulo
+  - pageNumber: 10
+    title: Conjugado — prática 2
+    description: conjugado de a+bi é a-bi.
+    exercises:
+      - type: algebra
+        question: Conjugado de 3+4i = ?
+        correctAnswer: 3-4i
+        rationale: Conjugado de a + bi é a − bi (reflete no eixo real).
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: Conjugado de -2-i = ?
+        correctAnswer: -2+i
+        rationale: "Soma de complexos: some partes reais e imaginárias separadamente."
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: Conjugado de 5 = ?
+        correctAnswer: 5
+        rationale: Conjugado de a + bi é a − bi (reflete no eixo real).
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: Conjugado de 2i = ?
+        correctAnswer: -2i
+        rationale: Conjugado de a + bi é a − bi (reflete no eixo real).
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: z · z̄ = ?
+        correctAnswer: a² + b²
+        rationale: Conjugado de a + bi é a − bi (reflete no eixo real).
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+  - pageNumber: 11
+    title: Módulo — prática 1
     description: Módulo — raiz de (a² + b²).
     exercises:
       - type: algebra
@@ -638,8 +441,47 @@ pages:
         difficulty: 4
         objectives:
           - complex.algebraic
-  - pageNumber: 17
-    title: Divisão
+  - pageNumber: 12
+    title: Módulo — prática 2
+    description: Módulo — raiz de (a² + b²).
+    exercises:
+      - type: algebra
+        question: "|3+4i| = ?"
+        correctAnswer: 5
+        rationale: "Módulo: |3+4i| = √(9+16) = 5."
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: "|1+i| = ?"
+        correctAnswer: √2
+        rationale: "Módulo: |1±i| = √2."
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: "|5| = ?"
+        correctAnswer: 5
+        rationale: "Módulo de real a: |a| = |a|."
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: "|2i| = ?"
+        correctAnswer: 2
+        rationale: "Módulo: |bi| = |b|, logo |2i| = 2."
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: "|6+8i| = ?"
+        correctAnswer: 10
+        rationale: "Módulo: √(36+64) = 10."
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+  - pageNumber: 13
+    title: Divisão — prática 1
     description: Multiplique pelo conjugado do denominador.
     exercises:
       - type: algebra
@@ -677,8 +519,47 @@ pages:
         difficulty: 4
         objectives:
           - complex.algebraic
-  - pageNumber: 18
-    title: Potências de i
+  - pageNumber: 14
+    title: Divisão — prática 2
+    description: Multiplique pelo conjugado do denominador.
+    exercises:
+      - type: algebra
+        question: (1+i)/(1-i) · (1+i)/(1+i) = (1+i)²/2 = ?
+        correctAnswer: i
+        rationale: "Produto notável: (a+b)² = a² + 2ab + b²."
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (3+4i)/(3-4i) — módulo = ?
+        correctAnswer: 1
+        rationale: "|z/w| = |z|/|w|; |z|=|z̄| aqui, logo módulo = 1."
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: 1/i = ?
+        correctAnswer: -i
+        rationale: 1/i = i/(i·i) = i/(−1) = −i.
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: 1/(1+i) — multiplicamos por (1-i)/(1-i) → (1-i)/2. Real = ?
+        correctAnswer: 1/2
+        rationale: "Racionalize multiplicando pelo conjugado: |1+i|² = 2."
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: Imaginária da divisão acima = ?
+        correctAnswer: -1/2
+        rationale: Parte imaginária vem do termo em i após racionalização.
+        difficulty: 4
+        objectives:
+          - complex.algebraic
+  - pageNumber: 15
+    title: Potências de i — prática 1
     description: Cíclico a cada 4.
     exercises:
       - type: algebra
@@ -717,8 +598,48 @@ pages:
         difficulty: 5
         objectives:
           - complex.algebraic
-  - pageNumber: 19
-    title: Equações Quadráticas
+  - pageNumber: 16
+    title: Potências de i — prática 2
+    description: Cíclico a cada 4.
+    exercises:
+      - type: algebra
+        question: i¹ = ?
+        correctAnswer: i
+        rationale: "Trivial: i¹ = i."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: i² = ?
+        correctAnswer: -1
+        rationale: "Potências de i ciclam: i¹=i, i²=-1, i³=-i, i⁴=1, depois repete."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: i³ = ?
+        correctAnswer: -i
+        rationale: "Potências de i ciclam: i¹=i, i²=-1, i³=-i, i⁴=1, depois repete."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: i⁴ = ?
+        correctAnswer: 1
+        rationale: "Potências de i ciclam: i¹=i, i²=-1, i³=-i, i⁴=1, depois repete."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: i^n com n = 10 mod 4 = 2 → i^10 = ?
+        correctAnswer: -1
+        rationale: "Potências de i ciclam: i¹=i, i²=-1, i³=-i, i⁴=1, depois repete
+          (período 4)."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+  - pageNumber: 17
+    title: Equações Quadráticas — prática 1
     description: Raízes complexas.
     exercises:
       - type: algebra
@@ -757,8 +678,87 @@ pages:
         difficulty: 5
         objectives:
           - complex.algebraic
+  - pageNumber: 18
+    title: Equações Quadráticas — prática 2
+    description: Raízes complexas.
+    exercises:
+      - type: algebra
+        question: x² + 1 = 0 → x = ?
+        correctAnswer: ±i
+        rationale: "Bhaskara: x = (-b ± √Δ)/(2a), Δ = b² - 4ac."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: x² + 4 = 0 → x = ?
+        correctAnswer: ±2i
+        rationale: "Bhaskara: x = (-b ± √Δ)/(2a), Δ = b² - 4ac."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: x² - 2x + 5 = 0 tem discriminante = (4-20) = ?
+        correctAnswer: -16
+        rationale: "Bhaskara: x = (-b ± √Δ)/(2a), Δ = b² - 4ac."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: Então raízes = 1 ± ?i
+        correctAnswer: 2
+        rationale: Raízes n-ésimas de z dividem o argumento em n ângulos igualmente
+          espaçados.
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: Raízes complexas aparecem em pares conjugados (V/F)?
+        correctAnswer: V
+        rationale: Conjugado de a + bi é a − bi (reflete no eixo real).
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+  - pageNumber: 19
+    title: Revisão Integrada — prática 1
+    description: Misture operações.
+    exercises:
+      - type: algebra
+        question: (2+3i)(2-3i) = ?
+        correctAnswer: 13
+        rationale: "Diferença de quadrados: a² - b² = (a+b)(a-b)."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: "|2+3i|² = ?"
+        correctAnswer: 13
+        rationale: "Módulo ao quadrado: |a+bi|² = a² + b²."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: (1+i)⁴ = ?
+        correctAnswer: -4
+        rationale: "Potência complexa via polar: (a+bi)ⁿ = |z|ⁿ·cis(nθ) (De Moivre)."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: 1/(2+i) em forma a+bi — real = ?
+        correctAnswer: 2/5
+        rationale: "Multiplique por (2−i)/(2−i): |2+i|²=5 ⇒ (2−i)/5."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
+      - type: algebra
+        question: Mesma — imaginária = ?
+        correctAnswer: -1/5
+        rationale: "Continuação do cálculo anterior: parte imaginária."
+        difficulty: 5
+        objectives:
+          - complex.algebraic
   - pageNumber: 20
-    title: Revisão Integrada
+    title: Revisão Integrada — prática 2
     description: Misture operações.
     exercises:
       - type: algebra
