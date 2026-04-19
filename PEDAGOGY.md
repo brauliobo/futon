@@ -163,6 +163,38 @@ Known placeholder strings (each matched literally):
 
 When a new placeholder/question pattern emerges, add another rule to `generateRationale()` in the script. Never widen the placeholder list with ambiguous strings — the fixer must only rewrite rationales that are *known* to be wrong.
 
+## Tautological-rationale scanner
+
+`pnpm eval:tautological` surfaces rationales that *reveal* the answer without *teaching* it. Three patterns:
+
+| Pattern | Example | Fix strategy |
+|---|---|---|
+| `look-at-options` | `Observe as opções e escolha a que responde "X?": 'Y'.` | Rewrite to explain WHY Y is correct |
+| `answer-is-X` | `A resposta é Y.` / `Resposta: Y.` | Same — add reasoning, not restate |
+| `echo-answer` | Rationale ends with `…: 'Y'.` where Y = correctAnswer | Replace the echo with a method or property |
+
+Advisory — exits 0 regardless of hits. Top offenders are concentrated in PT pre-reader levels (1A, 4A-7A).
+
+### Manual rewrite guide
+
+When fixing tautological rationales by hand, choose the shape that matches the question's pedagogical intent:
+
+**1. Reading-comprehension sets (story-based)** — the set asks about characters/events in an implied story. Before rewriting rationales:
+- Put the story text into the page `description` so the student can actually read it.
+- Rewrite each rationale to quote the relevant story span: *"O texto: 'família viajou de avião'."*
+
+**2. Vocabulary/world-knowledge sets** — the set asks about properties of objects/places. Rewrite rationales to name the defining property and contrast with a distractor:
+- *"Escrevemos em cadernos (folhas com pauta); não na parede nem no chão."*
+- *"O professor é quem ensina; o médico cuida."*
+
+**3. Ordering/counting sets** — the set asks about sequence position. Rewrite to cite the ordering rule:
+- *"Na ordem A-E-I-O-U, a vogal antes de I é E."*
+- *"Em BICICLETA, as vogais são I, I, E, A → 4."*
+
+**4. Grammar-category sets** — ensure the rationale invokes the correct grammatical category (matches `eval:pt-category`). A pronoun-fill question should not have an "artigo concorda..." rationale.
+
+Avoid: simply echoing the answer, pointing at "as opções", or restating the question.
+
 ## Dashboard (one-screen health check)
 
 `pnpm eval:dashboard` runs all evaluators and prints a compact summary — meant for daily review or CI gate:
