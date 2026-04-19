@@ -172,6 +172,7 @@ When a new placeholder/question pattern emerges, add another rule to `generateRa
 | `look-at-options` | `Observe as opções e escolha a que responde "X?": 'Y'.` | Rewrite to explain WHY Y is correct |
 | `answer-is-X` | `A resposta é Y.` / `Resposta: Y.` | Same — add reasoning, not restate |
 | `echo-answer` | Rationale ends with `…: 'Y'.` where Y = correctAnswer | Replace the echo with a method or property |
+| `belongs-to-category` | `'Y' pertence à categoria: X.` (X lifted from question) | Contrast Y against the distractors ("Pássaros voam; peixe nada, cobra rasteja") |
 
 Advisory — exits 0 regardless of hits. Top offenders are concentrated in PT pre-reader levels (1A, 4A-7A).
 

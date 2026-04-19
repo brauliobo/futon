@@ -35,6 +35,7 @@ const PATTERNS = [
   { name: 'look-at-options', re: /^Observe as opções e escolha/ },
   { name: 'answer-is-X',     re: /^(A resposta [eé]|Resposta:)/i },
   { name: 'pick-the-correct', re: /^Escolha a (opção|alternativa) correta$/ },
+  { name: 'belongs-to-category', re: /pertence à categoria:/ },
 ];
 
 // Echo pattern: rationale ends with quoted answer identical to correctAnswer.
