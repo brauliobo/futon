@@ -159,6 +159,9 @@ button, input, select, textarea {
   @apply outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-kid-blue;
 }
 
+html { -webkit-tap-highlight-color: transparent; }
+button, a, [role="button"], [role="radio"] { touch-action: manipulation; }
+
 input:focus { outline: none !important; }
 button { min-height: 44px; }
 
@@ -440,7 +443,7 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 /* Carousel — LevelList / LevelRoadmap layout primitives */
 .carousel { @apply relative py-4; }
 .carousel--flex { @apply flex items-center overflow-hidden py-2; }
-.carousel-scroller { @apply flex snap-x snap-mandatory items-stretch gap-6 overflow-x-auto px-2 sm:px-8 scrollbar-hide scroll-smooth; }
+.carousel-scroller { @apply flex snap-x snap-mandatory items-stretch gap-6 overflow-x-auto px-2 sm:px-8 scrollbar-hide scroll-smooth; overscroll-behavior-x: contain; }
 .carousel-fade { @apply pointer-events-none absolute inset-y-0 z-[5] w-6 sm:w-14; }
 .carousel-fade--left { @apply left-0 bg-gradient-to-r from-kid-surface to-transparent; }
 .carousel-fade--right { @apply right-0 bg-gradient-to-l from-kid-surface to-transparent; }
