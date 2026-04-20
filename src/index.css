@@ -420,8 +420,9 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .set-card-slot--inactive { transform: scale(0.97); }
 @media (min-width: 768px) { .set-card-slot { width: auto; min-width: 320px; max-width: 400px; } }
 
-/* Carousel — LevelList layout primitives */
+/* Carousel — LevelList / LevelRoadmap layout primitives */
 .carousel { @apply relative py-4; }
+.carousel--flex { @apply flex items-center overflow-hidden py-2; }
 .carousel-viewport { @apply overflow-hidden px-2 sm:px-8; }
 .carousel-track { @apply flex items-stretch gap-6 transition-transform; }
 .carousel-fade { @apply pointer-events-none absolute inset-y-0 z-[5] w-6 sm:w-14; }

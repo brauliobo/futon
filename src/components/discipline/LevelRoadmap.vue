@@ -1,15 +1,9 @@
 <template lang="pug">
-  div(class="relative flex items-center overflow-hidden py-2")
-    div(v-show="showLeftArrow" class="pointer-events-none absolute inset-y-0 left-0 z-[5] w-10 sm:w-14 bg-gradient-to-r from-kid-surface via-kid-surface/90 to-transparent")
-    div(v-show="showRightArrow" class="pointer-events-none absolute inset-y-0 right-0 z-[5] w-10 sm:w-14 bg-gradient-to-l from-kid-surface via-kid-surface/90 to-transparent")
-    button(
-      class="absolute left-0 z-10 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-sm transition hover:bg-[color:var(--kid-surface-2)] disabled:opacity-30 disabled:cursor-not-allowed"
-      @click="scrollLeft"
-      :disabled="!canScrollLeft"
-      v-show="showLeftArrow"
-    )
-      | ‹
-    div(ref="scroller" class="flex snap-x snap-mandatory gap-3 overflow-x-auto px-12 py-1 scrollbar-hide")
+  div(class="carousel carousel--flex")
+    div(v-show="showLeftArrow" class="carousel-fade carousel-fade--left")
+    div(v-show="showRightArrow" class="carousel-fade carousel-fade--right")
+    button(class="carousel-arrow carousel-arrow--left" @click="scrollLeft" :disabled="!canScrollLeft" v-show="showLeftArrow") ‹
+    div(ref="scroller" class="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 sm:px-12 py-1 scrollbar-hide")
       div(
         v-for="(lvl, idx) in sequence"
         :key="lvl"
@@ -26,13 +20,7 @@
           Progress(:value="progressPercent(lvl)" height="6px" variant="success")
         div(v-if="!availableSet.has(lvl)" class="absolute inset-0 flex items-center justify-center rounded-2xl overlay-bg backdrop-blur-[1px]")
           span(class="text-2xl") 🔒
-    button(
-      class="absolute right-0 z-10 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border theme-border bg-kid-surface text-lg font-bold text-kid-text shadow-sm transition hover:bg-[color:var(--kid-surface-2)] disabled:opacity-30 disabled:cursor-not-allowed"
-      @click="scrollRight"
-      :disabled="!canScrollRight"
-      v-show="showRightArrow"
-    )
-      | ›
+    button(class="carousel-arrow carousel-arrow--right" @click="scrollRight" :disabled="!canScrollRight" v-show="showRightArrow") ›
 </template>
 
 <script>
