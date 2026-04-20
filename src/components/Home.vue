@@ -27,10 +27,10 @@
         span(class="text-xl leading-none") {{ subjectIcon(subject) }}
         span(class="text-[11px] sm:text-base font-bold capitalize leading-tight text-center") {{ subjectLabel(subject) }}
     section(v-if="activeDiscipline" class="rounded-3xl border theme-border bg-kid-surface shadow-sm p-3 sm:p-6")
-      header(class="flex flex-wrap items-end justify-between gap-3 sm:gap-4 px-2 sm:px-0")
+      header(class="flex flex-col sm:flex-row sm:flex-wrap sm:items-end sm:justify-between gap-3 sm:gap-4 px-2 sm:px-0")
         div(class="space-y-0.5")
           h2(class="text-xl sm:text-2xl font-black" :style="{ color: subjectColor(activeDiscipline) }") {{ subjectLabel(activeDiscipline) }}
-        div(class="flex gap-2")
+        div(class="mode-switch")
           button(:class="['mode-tab', { 'mode-tab--active': mode === 'campaign' }]" @click="mode = 'campaign'")
             span 🗺
             span {{ $t('campaign') || 'Campaign' }}
