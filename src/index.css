@@ -169,7 +169,7 @@ button { min-height: 44px; }
   .btn { min-height: 48px; padding-block: 0.75rem; }
   .question-card { padding: 0.625rem 0.75rem; }
   /* Sticky bottom nav with frosted glass effect */
-  .nav-sticky { background: var(--nav-sticky-bg); backdrop-filter: blur(12px); border-top: 1px solid var(--kid-border); }
+  .nav-sticky { background: var(--nav-sticky-bg); backdrop-filter: blur(12px); border-top: 1px solid var(--kid-border); padding-bottom: calc(env(safe-area-inset-bottom) + 0.75rem); }
 }
 
 /* Respect users who prefer reduced motion */
@@ -545,7 +545,7 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 /* Theme-aware surfaces */
 .card-bg     { background-color: var(--card-bg); border-color: var(--card-border); }
 .input-bg    { background-color: var(--input-bg); }
-.header-bg   { background-color: var(--header-bg); }
+.header-bg   { background-color: var(--header-bg); padding-top: env(safe-area-inset-top); padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
 .overlay-bg  { background-color: var(--overlay-bg); }
 .surface-2   { background-color: var(--kid-surface-2); }
 .goal-bg     { background: var(--goal-bg); }
