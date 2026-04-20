@@ -7,8 +7,8 @@
           span ✓
         p(class="page-complete-label") {{ $t('pageComplete') || 'Page complete!' }}
     div(class="rounded-3xl border theme-border bg-kid-surface shadow-sm")
-      div(class="px-5 py-5")
-        div(v-if="currentPage && !isSubmitted" class="space-y-4")
+      div(class="px-3 py-4 sm:px-5 sm:py-5")
+        div(v-if="currentPage && !isSubmitted" class="space-y-3 sm:space-y-4")
           PageHeader(
             :page-number="currentPage.pageNumber || (currentPageIndex + 1)"
             :total-pages="totalPages || 1"
@@ -28,7 +28,7 @@
                 @update-page-status="handlePageStatus"
                 ref="pageRef"
               )
-            div(class="sticky bottom-0 z-10 -mx-5 px-5 py-3 sm:static sm:mx-0 sm:px-0 sm:py-0 nav-sticky")
+            div(class="sticky bottom-0 z-10 -mx-3 px-3 py-3 sm:static sm:mx-0 sm:px-0 sm:py-0 nav-sticky")
               PageNavigation(
                 :can-go-prev="currentPageIndex > 0"
                 :can-go-next="canGoNextPage"
