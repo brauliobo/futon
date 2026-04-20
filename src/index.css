@@ -290,6 +290,22 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .page-back-leave-to   { transform: rotateY(35deg)  translateX(8%);  opacity: 0; transform-origin: right center; }
 .page-back-enter-from { transform: rotateY(-65deg) translateX(-4%); opacity: 0; transform-origin: right center; }
 
+/* Screen-level nav transitions (Home ↔ Set) — slide + fade */
+.nav-forward-enter-active, .nav-forward-leave-active,
+.nav-back-enter-active, .nav-back-leave-active {
+  transition: transform 260ms cubic-bezier(.4,.0,.2,1), opacity 180ms ease-out;
+}
+.nav-forward-enter-from { transform: translateX(18%); opacity: 0; }
+.nav-forward-leave-to   { transform: translateX(-10%); opacity: 0; }
+.nav-back-enter-from    { transform: translateX(-18%); opacity: 0; }
+.nav-back-leave-to      { transform: translateX(10%); opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .nav-forward-enter-active, .nav-forward-leave-active,
+  .nav-back-enter-active, .nav-back-leave-active { transition: opacity 120ms ease-out; }
+  .nav-forward-enter-from, .nav-forward-leave-to,
+  .nav-back-enter-from, .nav-back-leave-to { transform: none; }
+}
+
 .animate-star-pop   { animation: star-pop   0.5s ease-out forwards; }
 .animate-bounce-in  { animation: bounce-in  0.4s ease-out forwards; }
 .animate-confetti   { animation: confetti-fall 1.5s ease-in forwards; }
