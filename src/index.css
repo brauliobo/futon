@@ -400,7 +400,8 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .level-card__name--locked { color: var(--kid-muted-50); }
 
 /* Set card — SetCard.vue set tile on Home */
-.set-card { @apply flex h-full flex-col gap-2 rounded-2xl border theme-border bg-kid-surface p-5 transition-all duration-300; border-left-width: 6px; }
+.set-card { @apply flex h-full flex-col gap-2 rounded-2xl border theme-border bg-kid-surface p-5 transition-all duration-300 cursor-pointer; border-left-width: 6px; }
+.set-card:active { transform: scale(0.98); }
 .set-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
 .set-card--fresh    { @apply shadow-sm; border-left-color: var(--kid-border-strong); }
 .set-card--progress { @apply shadow-sm; border-left-color: var(--kid-blue); }
