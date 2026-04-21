@@ -48,7 +48,9 @@ pnpm dev             # dev server on :5173
 pnpm build           # build to docs/
 pnpm test            # run E2E specs
 pnpm eval:dashboard  # pedagogy health (global score + tier distribution)
-pnpm test:eval       # 41 regression tests for rubric scorers + categorize
+pnpm test:eval       # regression tests for rubric scorers + categorize
+pnpm eval:summary    # one-line status of all 29 evaluators
+pnpm eval:all        # hard-fail gate (includes 3 zero-state tripwires)
 ```
 
 ## Pedagogy evaluation system
@@ -56,7 +58,8 @@ pnpm test:eval       # 41 regression tests for rubric scorers + categorize
 Full documentation in [PEDAGOGY.md](PEDAGOGY.md) at repo root. Key entry points:
 
 - **Evaluators** (JSON-capable): `eval:dashboard`, `eval:pedagogy`, `eval:rationales`, `eval:disconnected`, `eval:bias`, `eval:time`, `eval:snapshot`.
-- **Fixers** (dry-run by default, `--apply` to write): `fix:placeholders`, `fix:examples`, `fix:restatements`, `fix:japanese`, `fix:japanese:metadata`, `fix:japanese:objectives`.
+- **Zero-state hard-fail gates** (block commit on regression): `eval:tautological`, `eval:pt-category`, `eval:example-spoiler` — see PEDAGOGY.md "Quality status".
+- **Fixers** (dry-run by default, `--apply` to write): `fix:placeholders`, `fix:examples`, `fix:restatements`, `fix:example-spoiler`, `fix:japanese`, `fix:japanese:metadata`, `fix:japanese:objectives`.
 - **Regression tests**: `test:eval` runs `scripts/test-rationale.js` (30 cases for `categorize()`) + `scripts/test-eval.js` (11 cases for rubric scorers).
 - **Runtime**: `src/utils/Shuffle.js` seeds per-question choice order so authored YAML order can't bias answers.
 - **Snapshot**: `PEDAGOGY_SNAPSHOT.json` tracks per-set + per-level scores for CI regression checks. `eval:snapshot --save` updates it.
