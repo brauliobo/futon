@@ -31,13 +31,28 @@ const args = process.argv.slice(2);
 const argVal = f => { const i = args.indexOf(f); return i >= 0 ? args[i + 1] : null; };
 const FILTER_SUBJECT = argVal('--subject');
 
-const SKIP = [
+export const SKIP = [
   /\/japanese\//,
   /\/math\/(1A|2A|3A|4A|5A|6A|7A|A|B)\//,
   /\/portuguese\/(1A|2A|3A|4A|5A|6A|7A)\//,
 ];
 
-function normalize(s) {
+// Extract the Q→A portion of an `example:` string. Returns {exQ, exA} or null.
+export function parseExample(ex) {
+  const m = String(ex || '').match(/Ex\.:\s*(.+?)\s*→\s*(.+?)\.?$/);
+  if (!m) return null;
+  return { exQ: normalize(m[1]), exA: normalize(m[2]).replace(/\.$/, '') };
+}
+
+// Does example match first exercise? Returns true when both Q and A normalize
+// to identical strings (the spoiler condition).
+export function isSpoiler(example, firstQ, firstA) {
+  const parsed = parseExample(example);
+  if (!parsed) return false;
+  return parsed.exQ === normalize(firstQ) && parsed.exA === normalize(firstA);
+}
+
+export function normalize(s) {
   return String(s || '')
     .toLowerCase()
     .replace(/\([^()]+\)\s*$/, '')
@@ -56,17 +71,13 @@ async function main() {
     if (SKIP.some(rx => rx.test(f))) continue;
     const s = YAML.parse(readFileSync(f, 'utf8'));
     const ex = String(s.example || '');
-    if (!ex) continue;
-    const m = ex.match(/Ex\.:\s*(.+?)\s*→\s*(.+?)\.?$/);
-    if (!m) continue;
+    const parsed = parseExample(ex);
+    if (!parsed) continue;
     checked++;
-    const exQ = normalize(m[1]);
-    const exA = normalize(m[2]).replace(/\.$/, '');
     const firstEx = s.pages?.[0]?.exercises?.[0];
     if (!firstEx) continue;
-    const q = normalize(firstEx.question);
-    const a = normalize(firstEx.correctAnswer);
-    if (q === exQ && a === exA) {
+    if (isSpoiler(ex, firstEx.question, firstEx.correctAnswer)) {
+      const m = ex.match(/Ex\.:\s*(.+?)\s*→\s*(.+?)\.?$/);
       hits.push({
         f: f.replace('src/levels/', ''),
         exQ: m[1].slice(0, 55),

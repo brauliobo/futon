@@ -7,6 +7,7 @@
 
 import { PATTERNS, isEcho } from './eval-tautological-rationales.js';
 import { classify, RATIONALE_RULES, compatible } from './eval-pt-category-mismatch.js';
+import { normalize, parseExample, isSpoiler, SKIP } from './eval-example-spoiler.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', GRAY = '\x1b[90m';
@@ -124,6 +125,53 @@ expect('compat: artigo ↔ pronome pessoal = FALSE',
   compatible('artigo', 'pronome pessoal'), false);
 expect('compat: pronome demonstrativo ↔ pronome indefinido = FALSE',
   compatible('pronome demonstrativo', 'pronome indefinido'), false);
+
+// --- eval:example-spoiler ---
+expect('normalize strips inline (a/b) choices',
+  normalize('Vou para ___ festa. (da/na/para)'),
+  'vou para ___ festa.');
+expect('normalize lowercases + collapses whitespace',
+  normalize('  HELLO   World  '),
+  'hello world');
+
+expect('parseExample extracts only Q → A portion (ignores preamble)',
+  JSON.stringify(parseExample('Vocab. Ex.: Vermelho → red.')),
+  JSON.stringify({ exQ: 'vermelho', exA: 'red' }));
+const parsed = parseExample('Type the English word. Ex.: Verde → green');
+expect('parseExample exQ', parsed?.exQ, 'verde');
+expect('parseExample exA', parsed?.exA, 'green');
+expect('parseExample returns null for empty', parseExample(''), null);
+expect('parseExample returns null without Ex.:', parseExample('Just a description, no example.'), null);
+
+expect('isSpoiler: same Q and A = true',
+  isSpoiler('Color. Ex.: Verde → green', 'Verde', 'green'),
+  true);
+expect('isSpoiler: different Q = false',
+  isSpoiler('Color. Ex.: Verde → green', 'Vermelho', 'red'),
+  false);
+expect('isSpoiler: same Q different A = false',
+  isSpoiler('Color. Ex.: Verde → green', 'Verde', 'verd'),
+  false);
+expect('isSpoiler: inline choices stripped for comparison',
+  isSpoiler('Ex.: Verde → green', 'Verde (options/are/stripped)', 'green'),
+  true);
+
+// --- SKIP patterns: drill levels and japanese ---
+expect('SKIP: math/1A matches',
+  SKIP.some(rx => rx.test('src/levels/math/1A/set_01.yaml')),
+  true);
+expect('SKIP: math/H does NOT match',
+  SKIP.some(rx => rx.test('src/levels/math/H/set_01.yaml')),
+  false);
+expect('SKIP: portuguese/4A matches',
+  SKIP.some(rx => rx.test('src/levels/portuguese/4A/set_01.yaml')),
+  true);
+expect('SKIP: portuguese/C does NOT match',
+  SKIP.some(rx => rx.test('src/levels/portuguese/C/set_01.yaml')),
+  false);
+expect('SKIP: japanese matches',
+  SKIP.some(rx => rx.test('src/levels/japanese/4A/set_01.yaml')),
+  true);
 
 // --- Report ---
 console.log(c(`\n🧪 ZERO-STATE DETECTOR TESTS`, BOLD));
