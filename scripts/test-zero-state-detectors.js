@@ -9,6 +9,7 @@ import { PATTERNS, isEcho } from './eval-tautological-rationales.js';
 import { classify, RATIONALE_RULES, compatible } from './eval-pt-category-mismatch.js';
 import { normalize, parseExample, isSpoiler, SKIP } from './eval-example-spoiler.js';
 import { detectBadPlurals } from './eval-pt-pluralization.js';
+import { detect as detectMetaQ } from './eval-meta-question.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', GRAY = '\x1b[90m';
@@ -193,6 +194,20 @@ expect('whitelist: pais',
   detectBadPlurals("os pais cuidam").length, 0);
 expect('whitelist: mais',
   detectBadPlurals("mais de três").length, 0);
+
+// --- eval:meta-question ---
+expect('meta-Q: complete-sobre canonical',
+  detectMetaQ('Complete a frase sobre transmita informações de forma organizada: A ideia principal é ___'),
+  'complete-sobre');
+expect('meta-Q: complete-sobre short topic',
+  detectMetaQ('Complete a frase sobre ABCD: resposta ___'),
+  'complete-sobre');
+expect('meta-Q: legitimate fill-in NOT flagged',
+  detectMetaQ("'Os alunos ___ à biblioteca todas as quartas.' (vão/ia/vai/iriam)"),
+  null);
+expect('meta-Q: legitimate open-Q NOT flagged',
+  detectMetaQ("Qual é a função principal de um parágrafo informativo?"),
+  null);
 
 // --- Report ---
 console.log(c(`\n🧪 ZERO-STATE DETECTOR TESTS`, BOLD));

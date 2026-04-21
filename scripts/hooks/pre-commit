@@ -75,3 +75,9 @@ pnpm -s eval:pt-pluralization || {
   echo "   animal→animais, lição→lições, coração→corações, fácil→fáceis."
   exit 1
 }
+pnpm -s eval:meta-question || {
+  echo ""
+  echo "❌ meta-question: template-shell question with no teaching content."
+  echo "   Rewrite with a real prompt about the set's topic (see PT D/11-20)."
+  exit 1
+}
