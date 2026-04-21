@@ -49,7 +49,7 @@ function currentPlaceholders() {
 // Zero-state gate status: exit code 0 = clean, 1 = regression. Captured so
 // snapshot diff can show "3 zero-state gates held" vs "gate X regressed".
 function currentGates() {
-  const gates = ['eval:tautological', 'eval:pt-category', 'eval:example-spoiler'];
+  const gates = ['eval:tautological', 'eval:pt-category', 'eval:example-spoiler', 'eval:pt-pluralization'];
   const result = {};
   for (const gate of gates) {
     try {
@@ -91,9 +91,9 @@ function printDelta(baseline, current) {
     const bGates = baseline.gates || {};
     const newlyRegressed = regressed.filter(([k]) => bGates[k] === 'clean');
     if (regressed.length === 0) {
-      console.log(c(`Zero-state gates: 3/3 held clean (tautological / pt-category / example-spoiler)\n`, GREEN));
+      console.log(c(`Zero-state gates: 4/4 held clean (tautological / pt-category / example-spoiler / pt-pluralization)\n`, GREEN));
     } else {
-      console.log(c(`Zero-state gates: ${3 - regressed.length}/3 held · ${regressed.length} regressed:`, BOLD + RED));
+      console.log(c(`Zero-state gates: ${4 - regressed.length}/4 held · ${regressed.length} regressed:`, BOLD + RED));
       for (const [k, v] of regressed) {
         const marker = newlyRegressed.find(([nk]) => nk === k) ? ' [NEW]' : '';
         console.log(c(`  ✗ ${k}${marker}`, RED));

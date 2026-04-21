@@ -68,3 +68,10 @@ pnpm -s eval:example-spoiler || {
   echo "   donor instance manually."
   exit 1
 }
+pnpm -s eval:pt-pluralization || {
+  echo ""
+  echo "❌ PT pluralization: English-style -s plural on a Portuguese"
+  echo "   -ção/-al/-el/-il noun. Use the proper plural:"
+  echo "   animal→animais, lição→lições, coração→corações, fácil→fáceis."
+  exit 1
+}

@@ -28,6 +28,7 @@ const CHECKS = [
   ['eval:tautological', 'Tautological rationales'],
   ['eval:pt-category', 'PT rationale-category mismatch'],
   ['eval:example-spoiler', 'Example = exercise #1 spoiler'],
+  ['eval:pt-pluralization', 'PT -ção/-al plural as -s (English-style)'],
   // advisory (not in eval:all)
   ['eval:rationales', 'Rationale categorizer (advisory)'],
   ['eval:bias', 'Answer-position bias (advisory)'],

@@ -33,11 +33,12 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm fix:input-type [--apply]` | Switch mis-declared sets to `inputType: text` |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
 | `pnpm eval:all` | Validate + lint + audit + pedagogy + 15 others incl. the 3 zero-state tripwires |
-| `pnpm eval:summary` | One-line-per-check status of all 29 evaluators (parallel, ~35s) — never fails CI, use for quick overview |
-| `pnpm eval:gates` | Run just the 3 zero-state gates (~7s) — fast iteration while editing content |
+| `pnpm eval:summary` | One-line-per-check status of all 30 evaluators (parallel, ~35s) — never fails CI, use for quick overview |
+| `pnpm eval:gates` | Run the 4 zero-state gates + 47 detector tests (~7s) — fast iteration while editing content |
 | `pnpm eval:tautological` | Hard-fail: flags `Observe as opções…` / echo-answer / belongs-to-category / answer-is-X patterns |
 | `pnpm eval:pt-category` | Hard-fail: flags PT rationales naming a grammar category that contradicts the answer's category |
 | `pnpm eval:example-spoiler` | Hard-fail: flags sets where `example:` duplicates exercise #1 verbatim |
+| `pnpm eval:pt-pluralization` | Hard-fail: flags English-style `-s` plural on PT `-ção/-al/-el/-il` nouns |
 | `pnpm fix:example-spoiler [--apply]` | Swap in a middle-of-set donor exercise as example |
 | `pnpm fix:binomial:rationales [--apply]` | Rewrite (x+a)(x+b) rationales in math/J to per-exercise Soma/produto form |
 | `pnpm fix:5a:rationales [--apply]` | Rewrite generic-placeholder rationales in math/5A with question-shape-specific forms (iter 82) |
@@ -63,13 +64,14 @@ All fixers are dry-run by default; pass `--apply` to write. All evaluators suppo
 
 ## Quality status (zero-state gates)
 
-Three pattern families have been burned down to zero across the full 96 752-exercise corpus and are now gated at commit time by [scripts/hooks/pre-commit](scripts/hooks/pre-commit):
+Four pattern families have been burned down to zero across the full 96 752-exercise corpus and are now gated at commit time by [scripts/hooks/pre-commit](scripts/hooks/pre-commit):
 
 | Gate | Was | Now | Strategy used to clear |
 |---|---|---|---|
 | `eval:tautological` | 476 | **0** | Passage-synthesis / sentence-cite / property-contrast / ordering (see guide below) |
 | `eval:pt-category` | 18 | **0** | Hand-rewrote 18 mismatches + expanded detector to 7 PT grammar categories |
 | `eval:example-spoiler` | 174 | **0** | `fix:example-spoiler` auto-swapped 164; 9 hand-fixes; 1 detector refinement |
+| `eval:pt-pluralization` | 13 | **0** | Hand-rewrote `-ção/-al/-el/-il` nouns using PT plurals: `interjeição→interjeições`, `animal→animais`, `lição→lições`, `fácil→fáceis` |
 
 If any of these regress, the pre-commit hook blocks with a pointer to this guide's "Manual rewrite guide" section.
 
