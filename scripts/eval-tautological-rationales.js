@@ -34,7 +34,7 @@ const argVal = f => { const i = args.indexOf(f); return i >= 0 ? args[i + 1] : n
 const FILTER_SUBJECT = argVal('--subject');
 const FILTER_LEVEL = argVal('--level');
 
-const PATTERNS = [
+export const PATTERNS = [
   { name: 'look-at-options', re: /^Observe as opções e escolha/ },
   { name: 'answer-is-X',     re: /^(A resposta [eé]|Resposta:)/i },
   { name: 'pick-the-correct', re: /^Escolha a (opção|alternativa) correta$/ },
@@ -46,7 +46,7 @@ const PATTERNS = [
 // Substantive rationales that END with the answer as a punchline (e.g.
 // "Adjetivos longos usam 'more', não -er: 'more beautiful'.") are NOT
 // tautologies — they teach the rule and cite the answer as the example.
-function isEcho(rationale, answer) {
+export function isEcho(rationale, answer) {
   const r = String(rationale || '').trim();
   const a = String(answer || '').trim();
   if (!r || !a) return false;
