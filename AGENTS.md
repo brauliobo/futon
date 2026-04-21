@@ -58,9 +58,9 @@ pnpm eval:all        # hard-fail gate (includes 3 zero-state tripwires)
 Full documentation in [PEDAGOGY.md](PEDAGOGY.md) at repo root. Key entry points:
 
 - **Evaluators** (JSON-capable): `eval:dashboard`, `eval:pedagogy`, `eval:rationales`, `eval:disconnected`, `eval:bias`, `eval:time`, `eval:snapshot`.
-- **Zero-state hard-fail gates** (block commit on regression): `eval:tautological`, `eval:pt-category`, `eval:example-spoiler` — see PEDAGOGY.md "Quality status".
+- **Zero-state hard-fail gates** (block commit on regression): `eval:tautological`, `eval:pt-category`, `eval:example-spoiler`, `eval:pt-pluralization` — see PEDAGOGY.md "Quality status". Run all 4 with `pnpm eval:gates` (~7s).
 - **Fixers** (dry-run by default, `--apply` to write): `fix:placeholders`, `fix:examples`, `fix:restatements`, `fix:example-spoiler`, `fix:japanese`, `fix:japanese:metadata`, `fix:japanese:objectives`.
-- **Regression tests**: `test:eval` runs `scripts/test-rationale.js` (30 cases for `categorize()`) + `scripts/test-eval.js` (11 cases for rubric scorers).
+- **Regression tests**: `test:eval` runs `scripts/test-rationale.js` + `scripts/test-eval.js` + `scripts/test-fixers.js` + `scripts/test-shuffle.js` + `scripts/test-zero-state-detectors.js` (47 detector unit tests).
 - **Runtime**: `src/utils/Shuffle.js` seeds per-question choice order so authored YAML order can't bias answers.
 - **Snapshot**: `PEDAGOGY_SNAPSHOT.json` tracks per-set + per-level scores for CI regression checks. `eval:snapshot --save` updates it.
 
