@@ -52,10 +52,14 @@ export function isSpoiler(example, firstQ, firstA) {
   return parsed.exQ === normalize(firstQ) && parsed.exA === normalize(firstA);
 }
 
+// Strip trailing parens ONLY when they look like an inline-choice list
+// (contain "/" as separator). Content parens like "Ponto (3,5)" or
+// "sen²(x) + cos²(x)" are kept so distinct exercises normalize to
+// distinct strings (iter 150 TODO carried over to iter 196).
 export function normalize(s) {
   return String(s || '')
     .toLowerCase()
-    .replace(/\([^()]+\)\s*$/, '')
+    .replace(/\(([^()]*\/[^()]*)\)\s*$/, '')
     .replace(/\s+/g, ' ')
     .trim();
 }

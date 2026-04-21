@@ -32,10 +32,14 @@ const SKIP = [
   /\/portuguese\/(1A|2A|3A|4A|5A|6A|7A)\//,
 ];
 
+// Strip trailing parens ONLY when they look like an inline-choice list
+// (contain "/" as separator). Content parens like "Ponto (3,5)" or
+// "sen²(x) + cos²(x)" are kept so the fixer can distinguish exercises
+// by their actual content (iter 150 TODO).
 function normalize(s) {
   return String(s || '')
     .toLowerCase()
-    .replace(/\([^()]+\)\s*$/, '')
+    .replace(/\(([^()]*\/[^()]*)\)\s*$/, '')
     .replace(/\s+/g, ' ')
     .trim();
 }
