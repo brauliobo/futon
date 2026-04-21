@@ -125,8 +125,7 @@ async function main() {
   console.log('\n' + '─'.repeat(60));
   console.log(c('Fix options:', YELLOW));
   console.log(`  - Rewrite rationale to describe the answer's actual category`);
-  console.log(`  - Advisory: exit 0 regardless.`);
-  process.exit(0);
+  process.exit(1);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) main();

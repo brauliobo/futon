@@ -45,3 +45,26 @@ pnpm -s eval:cross-set || {
   echo "   Disambiguate with a clarifier or standardize the answer."
   exit 1
 }
+# Zero-state tripwires promoted to hard-fail (iter 187): these three
+# detectors reported 0 hits across the corpus and are now gated at
+# commit time to prevent regression.
+pnpm -s eval:tautological || {
+  echo ""
+  echo "❌ tautological-rationale re-introduced. See PEDAGOGY.md"
+  echo "   \"Manual rewrite guide\" for the 4 rewrite strategies."
+  exit 1
+}
+pnpm -s eval:pt-category || {
+  echo ""
+  echo "❌ PT category-mismatch: a rationale names a grammar category"
+  echo "   that doesn't match the correctAnswer's category. Rewrite"
+  echo "   to describe the answer's actual category."
+  exit 1
+}
+pnpm -s eval:example-spoiler || {
+  echo ""
+  echo "❌ example-spoiler: set-level example duplicates exercise #1."
+  echo "   Run pnpm fix:example-spoiler --apply, or pick a different"
+  echo "   donor instance manually."
+  exit 1
+}

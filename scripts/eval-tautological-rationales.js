@@ -11,7 +11,10 @@
 //   3. Pure answer-quotation: rationale IS just the answer or its negation
 //      (e.g. "Resposta: X." or "A resposta é X.").
 //
-// Advisory — exit 0 always.
+// Hard-fail: exits 1 on any hit. The corpus is at zero tautologies as of
+// iter 187; this guards against regression. Promote back to advisory by
+// swapping the final `process.exit(hits.length ? 1 : 0)` to `exit(0)` if
+// a legitimate new pattern needs temporary tolerance.
 //
 // Usage:
 //   pnpm eval:tautological                  # full report
@@ -127,8 +130,8 @@ async function main() {
   console.log(`    not just WHAT the answer is.`);
   console.log(`  - Pre-reader (1A-5A) rationales can be simple but should`);
   console.log(`    reference a property ("gato mia", "A é primeira antes de B").`);
-  console.log(`  - Advisory: exit 0 regardless.`);
-  process.exit(0);
+  console.log(`  - See PEDAGOGY.md "Manual rewrite guide" for 4 strategies.`);
+  process.exit(1);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) main();

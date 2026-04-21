@@ -95,8 +95,8 @@ async function main() {
   console.log(`  - Or keep Q but expand example to show the reasoning step:`);
   console.log(c(`      Before: Ex.: 5+3 = → 8`, GRAY));
   console.log(c(`      After:  Ex.: 5+3 = 5,6,7,8 (conte 3 para frente) → 8`, GRAY));
-  console.log(`  - Advisory: exit 0 regardless.`);
-  process.exit(0);
+  console.log(`  - Or run pnpm fix:example-spoiler --apply for auto-fix.`);
+  process.exit(1);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) main();

@@ -24,6 +24,10 @@ const CHECKS = [
   ['eval:orphan-objectives', 'Objective scope (orphan/rogue)'],
   ['eval:dup-titles', 'Duplicate set titles per level'],
   ['eval:input-type', 'inputType mobile-keyboard match'],
+  // Zero-state tripwires (promoted iter 187 from advisory to hard-fail)
+  ['eval:tautological', 'Tautological rationales'],
+  ['eval:pt-category', 'PT rationale-category mismatch'],
+  ['eval:example-spoiler', 'Example = exercise #1 spoiler'],
   // advisory (not in eval:all)
   ['eval:rationales', 'Rationale categorizer (advisory)'],
   ['eval:bias', 'Answer-position bias (advisory)'],
@@ -35,9 +39,6 @@ const CHECKS = [
   ['eval:progression', 'Per-page difficulty progression (advisory)'],
   ['eval:keyword-leak', 'Answer keyword leak in prompt (advisory)'],
   ['eval:runs', 'Consecutive-answer runs (advisory)'],
-  ['eval:pt-category', 'PT rationale-category mismatch (advisory)'],
-  ['eval:tautological', 'Tautological rationales (advisory)'],
-  ['eval:example-spoiler', 'Example = exercise #1 spoiler (advisory)'],
 ];
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
