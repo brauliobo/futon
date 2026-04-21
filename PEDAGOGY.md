@@ -32,8 +32,12 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm eval:input-type` | Flag `inputType: number` sets with >30% non-numeric answers (mobile keyboard mismatch) |
 | `pnpm fix:input-type [--apply]` | Switch mis-declared sets to `inputType: text` |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
-| `pnpm eval:all` | Validate + lint + audit + pedagogy + disconnected + arithmetic + alignment + relevance + answers + topic |
-| `pnpm eval:summary` | One-line-per-check status of all 22 evaluators — never fails CI, use for quick overview |
+| `pnpm eval:all` | Validate + lint + audit + pedagogy + 15 others incl. the 3 zero-state tripwires |
+| `pnpm eval:summary` | One-line-per-check status of all 29 evaluators — never fails CI, use for quick overview |
+| `pnpm eval:tautological` | Hard-fail: flags `Observe as opções…` / echo-answer / belongs-to-category / answer-is-X patterns |
+| `pnpm eval:pt-category` | Hard-fail: flags PT rationales naming a grammar category that contradicts the answer's category |
+| `pnpm eval:example-spoiler` | Hard-fail: flags sets where `example:` duplicates exercise #1 verbatim |
+| `pnpm fix:example-spoiler [--apply]` | Swap in a middle-of-set donor exercise as example |
 | `pnpm fix:binomial:rationales [--apply]` | Rewrite (x+a)(x+b) rationales in math/J to per-exercise Soma/produto form |
 | `pnpm fix:5a:rationales [--apply]` | Rewrite generic-placeholder rationales in math/5A with question-shape-specific forms (iter 82) |
 | `pnpm fix:6a:counting [--apply]` | Normalize counting rationales in math/6A/7A to count-specific form |
@@ -55,6 +59,20 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm fix:japanese:metadata [--apply]` | Adds Kumon-mapped `difficulty:` metadata to Japanese sets |
 
 All fixers are dry-run by default; pass `--apply` to write. All evaluators support `--json` for CI consumption.
+
+## Quality status (zero-state gates)
+
+Three pattern families have been burned down to zero across the full 96 752-exercise corpus and are now gated at commit time by [scripts/hooks/pre-commit](scripts/hooks/pre-commit):
+
+| Gate | Was | Now | Strategy used to clear |
+|---|---|---|---|
+| `eval:tautological` | 476 | **0** | Passage-synthesis / sentence-cite / property-contrast / ordering (see guide below) |
+| `eval:pt-category` | 18 | **0** | Hand-rewrote 18 mismatches + expanded detector to 7 PT grammar categories |
+| `eval:example-spoiler` | 174 | **0** | `fix:example-spoiler` auto-swapped 164; 9 hand-fixes; 1 detector refinement |
+
+If any of these regress, the pre-commit hook blocks with a pointer to this guide's "Manual rewrite guide" section.
+
+Dashboard (`pnpm eval:dashboard`) shows global pedagogy score **100%** — 908 of 926 sets at perfect 100, none below 97.
 
 ## Kumon principles Futon inherits
 
