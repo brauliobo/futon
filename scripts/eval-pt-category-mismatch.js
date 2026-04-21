@@ -31,7 +31,7 @@ const DEMONSTRATIVE_PRONOUNS = new Set([
   'aquele', 'aquela', 'aqueles', 'aquelas', 'isto', 'isso', 'aquilo',
 ]);
 
-function classify(ans) {
+export function classify(ans) {
   const a = String(ans || '').trim().toLowerCase();
   if (!a) return null;
   if (PERSONAL_PRONOUNS.has(a)) return 'pronome pessoal';
@@ -45,16 +45,16 @@ function classify(ans) {
 
 // Rationale → claimed-category detector. Only matches when the rationale
 // PRIMARILY explains using that category (assertive phrasing).
-const RATIONALE_RULES = [
-  { cat: 'pronome pessoal',       re: /pronome pessoal|[Pp]essoais indicam pessoa do discurso/ },
-  { cat: 'pronome possessivo',    re: /pronome possessivo|[Pp]ossessivos? indicam posse/ },
-  { cat: 'pronome demonstrativo', re: /pronome demonstrativo|[Dd]emonstrativos? situam|[Dd]emonstrativos? indicam/ },
-  { cat: 'pronome indefinido',    re: /[Ii]ndefinidos? referem-se de modo vago/ },
-  { cat: 'pronome relativo',      re: /[Rr]elativos? retomam termo anterior/ },
-  { cat: 'pronome interrogativo', re: /[Ii]nterrogativos? introduzem pergunta/ },
-  { cat: 'artigo',                re: /^[Aa]rtigo (definido|indefinido|concord)|artigo (definido|indefinido) \(/ },
-  { cat: 'advérbio',              re: /^[Aa]dvérbio (modifica|indica)/ },
-  { cat: 'substantivo',           re: /^[Ss]ubstantivo (nomeia|é|designa)/ },
+export const RATIONALE_RULES = [
+  { cat: 'pronome pessoal',       re: /pronome pessoal|pessoais indicam pessoa do discurso/i },
+  { cat: 'pronome possessivo',    re: /pronome possessivo|possessivos? indicam posse/i },
+  { cat: 'pronome demonstrativo', re: /pronome demonstrativo|demonstrativos? situam|demonstrativos? indicam/i },
+  { cat: 'pronome indefinido',    re: /indefinidos? referem-se de modo vago/i },
+  { cat: 'pronome relativo',      re: /relativos? retomam termo anterior/i },
+  { cat: 'pronome interrogativo', re: /interrogativos? introduzem pergunta/i },
+  { cat: 'artigo',                re: /^artigo (definido|indefinido|concord)|artigo (definido|indefinido) \(/i },
+  { cat: 'advérbio',              re: /^advérbio (modifica|indica)/i },
+  { cat: 'substantivo',           re: /^substantivo (nomeia|é|designa)/i },
 ];
 
 // Compatibility matrix — answer-category vs. rationale-category. Any pair
@@ -67,7 +67,7 @@ const COMPATIBLE = new Set([
   'preposição|preposição',
   'advérbio|advérbio',
 ]);
-function compatible(answerCat, rationaleCat) {
+export function compatible(answerCat, rationaleCat) {
   return COMPATIBLE.has(`${answerCat}|${rationaleCat}`);
 }
 

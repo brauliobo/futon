@@ -6,6 +6,7 @@
 // Runs under pnpm test:eval.
 
 import { PATTERNS, isEcho } from './eval-tautological-rationales.js';
+import { classify, RATIONALE_RULES, compatible } from './eval-pt-category-mismatch.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', GRAY = '\x1b[90m';
@@ -86,6 +87,43 @@ expect('echo: answer mismatch NOT flagged',
 expect('echo: no quoted tail NOT flagged',
   isEcho('Some os operandos e obtenha 12.', '12'),
   false);
+
+// --- eval:pt-category classify() ---
+expect('classify Eu → pronome pessoal', classify('Eu'), 'pronome pessoal');
+expect('classify O → artigo', classify('O'), 'artigo');
+expect('classify Meu → pronome possessivo', classify('Meu'), 'pronome possessivo');
+expect('classify Este → pronome demonstrativo', classify('Este'), 'pronome demonstrativo');
+expect('classify De → preposição', classify('de'), 'preposição');
+expect('classify rapidamente → advérbio', classify('rapidamente'), 'advérbio');
+expect('classify casa → null (substantivo out of scope)', classify('casa'), null);
+expect('classify empty → null', classify(''), null);
+
+// --- RATIONALE_RULES detection ---
+function detectRationaleCat(r) {
+  for (const rule of RATIONALE_RULES) {
+    if (rule.re.test(r)) return rule.cat;
+  }
+  return null;
+}
+expect('rationale rule: pronome pessoal',
+  detectRationaleCat('Pronome pessoal reto concorda em pessoa com o verbo.'),
+  'pronome pessoal');
+expect('rationale rule: artigo',
+  detectRationaleCat('Artigo concorda em gênero e número com o substantivo.'),
+  'artigo');
+expect('rationale rule: demonstrativo',
+  detectRationaleCat('Demonstrativos situam no tempo/espaço.'),
+  'pronome demonstrativo');
+
+// --- compatible() incompatibility detection (the whole point of the evaluator) ---
+expect('compat: pronome pessoal ↔ artigo = FALSE',
+  compatible('pronome pessoal', 'artigo'), false);
+expect('compat: pronome pessoal ↔ pronome pessoal = TRUE',
+  compatible('pronome pessoal', 'pronome pessoal'), true);
+expect('compat: artigo ↔ pronome pessoal = FALSE',
+  compatible('artigo', 'pronome pessoal'), false);
+expect('compat: pronome demonstrativo ↔ pronome indefinido = FALSE',
+  compatible('pronome demonstrativo', 'pronome indefinido'), false);
 
 // --- Report ---
 console.log(c(`\n🧪 ZERO-STATE DETECTOR TESTS`, BOLD));
