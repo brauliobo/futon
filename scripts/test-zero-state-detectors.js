@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Unit tests for the three zero-state hard-fail detectors.
+// Unit tests for the four zero-state hard-fail detectors.
 // Guards against detector-side regression (regex changes that accidentally
 // stop catching known bad patterns, or start flagging legitimate teaching).
 //
@@ -8,6 +8,7 @@
 import { PATTERNS, isEcho } from './eval-tautological-rationales.js';
 import { classify, RATIONALE_RULES, compatible } from './eval-pt-category-mismatch.js';
 import { normalize, parseExample, isSpoiler, SKIP } from './eval-example-spoiler.js';
+import { detectBadPlurals } from './eval-pt-pluralization.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', GRAY = '\x1b[90m';
@@ -172,6 +173,26 @@ expect('SKIP: portuguese/C does NOT match',
 expect('SKIP: japanese matches',
   SKIP.some(rx => rx.test('src/levels/japanese/4A/set_01.yaml')),
   true);
+
+// --- eval:pt-pluralization ---
+expect('flags interjeiçãos',
+  detectBadPlurals("classe dos interjeiçãos.").length, 1);
+expect('flags numerals',
+  detectBadPlurals("classe dos numerals.").length, 1);
+expect('flags animals',
+  detectBadPlurals("os animals são...").length, 1);
+expect('flags fácils',
+  detectBadPlurals("problemas fácils").length, 1);
+expect('does NOT flag proper plural interjeições',
+  detectBadPlurals("classe das interjeições.").length, 0);
+expect('does NOT flag proper plural animais',
+  detectBadPlurals("os animais são...").length, 0);
+expect('whitelist: mas',
+  detectBadPlurals("vermelho, mas também azul").length, 0);
+expect('whitelist: pais',
+  detectBadPlurals("os pais cuidam").length, 0);
+expect('whitelist: mais',
+  detectBadPlurals("mais de três").length, 0);
 
 // --- Report ---
 console.log(c(`\n🧪 ZERO-STATE DETECTOR TESTS`, BOLD));
