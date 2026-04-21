@@ -46,11 +46,26 @@ function currentPlaceholders() {
   };
 }
 
+// Zero-state gate status: exit code 0 = clean, 1 = regression. Captured so
+// snapshot diff can show "3 zero-state gates held" vs "gate X regressed".
+function currentGates() {
+  const gates = ['eval:tautological', 'eval:pt-category', 'eval:example-spoiler'];
+  const result = {};
+  for (const gate of gates) {
+    try {
+      execSync(`pnpm -s ${gate}`, { stdio: 'ignore' });
+      result[gate] = 'clean';
+    } catch { result[gate] = 'regressed'; }
+  }
+  return result;
+}
+
 function snapshotNow() {
   return {
     timestamp: new Date().toISOString(),
     scores: currentScores(),
     placeholders: currentPlaceholders(),
+    gates: currentGates(),
   };
 }
 
@@ -68,7 +83,24 @@ function printDelta(baseline, current) {
   console.log(c(`Global pedagogy: ${baseline.scores.global}% → ${current.scores.global}%  (${symbol(gDelta)})`, BOLD));
 
   const pDelta = baseline.placeholders.affected - current.placeholders.affected;
-  console.log(c(`Placeholder-affected exercises: ${baseline.placeholders.affected} → ${current.placeholders.affected}  (${symbol(pDelta)} fewer)\n`, BOLD));
+  console.log(c(`Placeholder-affected exercises: ${baseline.placeholders.affected} → ${current.placeholders.affected}  (${symbol(pDelta)} fewer)`, BOLD));
+
+  // Zero-state gate status diff
+  if (current.gates) {
+    const regressed = Object.entries(current.gates).filter(([, v]) => v !== 'clean');
+    const bGates = baseline.gates || {};
+    const newlyRegressed = regressed.filter(([k]) => bGates[k] === 'clean');
+    if (regressed.length === 0) {
+      console.log(c(`Zero-state gates: 3/3 held clean (tautological / pt-category / example-spoiler)\n`, GREEN));
+    } else {
+      console.log(c(`Zero-state gates: ${3 - regressed.length}/3 held · ${regressed.length} regressed:`, BOLD + RED));
+      for (const [k, v] of regressed) {
+        const marker = newlyRegressed.find(([nk]) => nk === k) ? ' [NEW]' : '';
+        console.log(c(`  ✗ ${k}${marker}`, RED));
+      }
+      console.log('');
+    }
+  }
 
   const levels = new Set([...Object.keys(baseline.scores.perLevel), ...Object.keys(current.scores.perLevel)]);
   const rows = [];
@@ -115,8 +147,16 @@ function printDelta(baseline, current) {
   }
 
   const regressions = rows.filter(r => r.d != null && r.d <= DROP_THRESHOLD);
-  if (regressions.length) {
-    console.log(c(`\n❌ ${regressions.length} level(s) dropped ≥${-DROP_THRESHOLD}pp (threshold exceeded)`, BOLD + RED));
+  const gatesRegressed = current.gates
+    ? Object.values(current.gates).filter(v => v !== 'clean').length
+    : 0;
+  if (regressions.length || gatesRegressed > 0) {
+    if (regressions.length) {
+      console.log(c(`\n❌ ${regressions.length} level(s) dropped ≥${-DROP_THRESHOLD}pp (threshold exceeded)`, BOLD + RED));
+    }
+    if (gatesRegressed > 0) {
+      console.log(c(`❌ ${gatesRegressed} zero-state gate(s) regressed — see above`, BOLD + RED));
+    }
     return 1;
   }
   return 0;
