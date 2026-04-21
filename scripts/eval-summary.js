@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 // One-line-per-evaluator summary. Runs every advisory + hard-fail evaluator
-// in sequence, captures pass/fail/counts, and prints a compact table. Does
-// NOT exit with failure code even if some checks fail — use this for
-// quick status, not CI gating.
+// in PARALLEL (iter 194: was sequential, 2m07s → ~10s), captures pass/fail,
+// and prints a compact table. Does NOT exit with failure code even if some
+// checks fail — use this for quick status, not CI gating.
 
-import { spawnSync } from 'child_process';
+import { spawn } from 'child_process';
 
 const CHECKS = [
   // hard-fail guards wired into eval:all
@@ -45,19 +45,28 @@ const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const GREEN = '\x1b[32m', RED = '\x1b[31m', YELLOW = '\x1b[33m', GRAY = '\x1b[90m';
 const c = (t, col) => `${col}${t}${RESET}`;
 
-console.log(c('\n📋 EVALUATOR SUMMARY', BOLD));
-console.log(GRAY + `  ${CHECKS.length} checks · runs in sequence · advisory = never fails CI` + RESET + '\n');
+function runOne([script, label]) {
+  return new Promise(resolve => {
+    const p = spawn('pnpm', ['run', '-s', script], { stdio: ['ignore', 'ignore', 'ignore'] });
+    p.on('close', code => resolve({ script, label, ok: code === 0 }));
+    p.on('error', () => resolve({ script, label, ok: false }));
+  });
+}
 
+console.log(c('\n📋 EVALUATOR SUMMARY', BOLD));
+console.log(GRAY + `  ${CHECKS.length} checks · runs in parallel · advisory = never fails CI` + RESET + '\n');
+
+const results = await Promise.all(CHECKS.map(runOne));
+
+// Print in original order
 let passCt = 0, failCt = 0;
 const failed = [];
-for (const [script, label] of CHECKS) {
-  const out = spawnSync('pnpm', ['run', '-s', script], { encoding: 'utf8' });
-  const ok = out.status === 0;
-  if (ok) passCt++;
-  else { failCt++; failed.push(script); }
-  const color = ok ? GREEN : RED;
-  const icon = ok ? '✓' : '✗';
-  console.log(`  ${c(icon, color)} ${label.padEnd(42)} ${c(script, GRAY)}`);
+for (const r of results) {
+  if (r.ok) passCt++;
+  else { failCt++; failed.push(r.script); }
+  const color = r.ok ? GREEN : RED;
+  const icon = r.ok ? '✓' : '✗';
+  console.log(`  ${c(icon, color)} ${r.label.padEnd(42)} ${c(r.script, GRAY)}`);
 }
 console.log('');
 const barColor = failCt === 0 ? GREEN : (failCt <= 4 ? YELLOW : RED);
