@@ -73,6 +73,15 @@ Four pattern families have been burned down to zero across the full 96 752-exerc
 | `eval:example-spoiler` | 174 | **0** | `fix:example-spoiler` auto-swapped 164; 9 hand-fixes; 1 detector refinement |
 | `eval:pt-pluralization` | 13 | **0** | Hand-rewrote `-ção/-al/-el/-il` nouns using PT plurals: `interjeição→interjeições`, `animal→animais`, `lição→lições`, `fácil→fáceis` |
 
+### Uncaught patterns to audit manually
+
+Detectors can't cover all rationale-content mismatches. Iter 204 found a pattern that slipped through every automated check: rationales on acentuação-teaching sets citing the **wrong word-classification** (e.g., `médico` rationale claiming "oxítona" when it's actually "proparoxítona"). When adding rationales that reference linguistic categories (`proparoxítona`, `paroxítona`, `oxítona`, `transitivo direto`, `ditongo`, etc.), verify the claim matches the word being analyzed.
+
+Heuristic checklist for category-naming rationales:
+- **Proparoxítona** (always accented): stress 3rd from end — `mé-di-co`, `mú-si-ca`, `rá-pi-do`, `lâm-pa-da`.
+- **Paroxítona** (accented when ending in -l/-n/-r/-x/-i/-um/-ão): stress penultimate — `fá-cil`, `ál-bum`, `a-çú-car`.
+- **Oxítona** (accented ending in -a/-e/-o/-em/-ens): stress final — `ca-fé`, `so-fá`, `vo-cê`, `tam-bém`.
+
 If any of these regress, the pre-commit hook blocks with a pointer to this guide's "Manual rewrite guide" section.
 
 Dashboard (`pnpm eval:dashboard`) shows global pedagogy score **100%** — 908 of 926 sets at perfect 100, none below 97.
