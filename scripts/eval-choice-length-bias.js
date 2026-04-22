@@ -62,7 +62,11 @@ async function main() {
           correctLongest++;
         }
         const avgOther = others.reduce((a, b) => a + b.length, 0) / others.length;
-        if (avgOther > 0 && ans.length >= 1.5 * avgOther) correctStretched++;
+        // Stretch bias only matters when students could game by picking the
+        // longer option. If another wrong is >=2 chars longer than correct,
+        // pattern-spotting fails — skip.
+        const stretchable = ans.length >= maxOther - 2;
+        if (stretchable && avgOther > 0 && ans.length >= 1.5 * avgOther) correctStretched++;
       }
     }
     if (choiceQs < 4) continue; // too small to judge
