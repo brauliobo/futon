@@ -38,6 +38,7 @@
     "eval:example-spoiler": "node ./scripts/eval-example-spoiler.js",
     "eval:pt-pluralization": "node ./scripts/eval-pt-pluralization.js",
     "eval:meta-question": "node ./scripts/eval-meta-question.js",
+    "eval:choice-format": "node ./scripts/eval-choice-format.js",
     "eval:summary": "node ./scripts/eval-summary.js",
     "eval:gates": "node ./scripts/test-zero-state-detectors.js && pnpm run -s eval:tautological && pnpm run -s eval:pt-category && pnpm run -s eval:example-spoiler && pnpm run -s eval:pt-pluralization && pnpm run -s eval:meta-question && echo '✅ All 5 zero-state gates clean (content + detector logic).'",
     "fix:input-type": "node ./scripts/fix-input-type.js",
