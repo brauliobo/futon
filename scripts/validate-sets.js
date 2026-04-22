@@ -100,7 +100,9 @@ function validateSet(raw) {
     // the pedagogy. For post-drill levels (E+), expect more variety.
     const level = String(raw.level || '');
     const isDrillLevel = /^[1-7]A$/.test(level) || /^[A-D]$/.test(level);
-    const minRand = isDrillLevel ? 0.03 : (pages === 20 ? 0.3 : 0.6);
+    // 20-page tiled sets commonly run 15-25% with fact-drill repetition across
+    // the tile; only flag below 10% as potential authoring issue.
+    const minRand = isDrillLevel ? 0.03 : (pages === 20 ? 0.1 : 0.6);
     if (randomness !== null && randomness < minRand) warnings.push(`Randomness ${Math.round(randomness * 100)}% < ${Math.round(minRand * 100)}%`);
   }
   if (['portuguese', 'english'].includes(raw.subject) && randomness !== null && randomness < 0.5) {
