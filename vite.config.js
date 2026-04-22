@@ -27,6 +27,9 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,yaml,woff2,png,svg,ico,webp,jpg,jpeg}'],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
         navigateFallback: '/index.html',
+        skipWaiting: true,
+        clientsClaim: true,
+        cleanupOutdatedCaches: true,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com/,

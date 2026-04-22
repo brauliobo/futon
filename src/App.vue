@@ -30,6 +30,7 @@
             div(v-else key="set")
               Set(:set="selectedSet" :initialPageIndex="initialPageIndex" :has-next-set="!!nextSet" :profile-id="activeProfile && activeProfile.id || 'default'" @update-set="updateSet" @page-changed="handlePageChange" @next-set="goToNextSet" @go-home="goHome")
       LevelCertificate(v-if="certificateLevel" :subject="certificateLevel.subject" :level="certificateLevel.level" :profile-name="activeProfile && activeProfile.name" @close="certificateLevel = null")
+    UpdatePrompt
 </template>
 
 <script>
@@ -43,12 +44,13 @@ import ProfileSelector from "./components/ProfileSelector.vue";
 import LevelCertificate from "./components/LevelCertificate.vue";
 import Spinner from "./components/ui/Spinner.vue";
 import InstallButton from "./components/InstallButton.vue";
+import UpdatePrompt from "./components/UpdatePrompt.vue";
 import { SetStorage } from "./services/SetStorage.js";
 import { Formatter } from "./utils/Formatter.js";
 
 export default {
   name: "App",
-  components: { Home, Set, ProfileSelector, LevelCertificate, Spinner, InstallButton },
+  components: { Home, Set, ProfileSelector, LevelCertificate, Spinner, InstallButton, UpdatePrompt },
   data() {
     const activeProfile = ProfileStorage.getActiveProfile();
     const profiles = ProfileStorage.getProfiles();
