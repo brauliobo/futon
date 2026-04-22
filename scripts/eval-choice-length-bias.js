@@ -51,10 +51,16 @@ async function main() {
         choiceQs++;
         const lens = choices.map(x => x.length);
         const maxLen = Math.max(...lens);
-        if (ans.length === maxLen && lens.filter(x => x === maxLen).length === 1) {
+        const others = choices.filter(x => x !== ans);
+        // Margin over the next-longest wrong (not the average) — a 1-char
+        // plural difference in 'bonitas/bonita/bonito' is not gameable,
+        // so require a meaningful gap before counting as biased.
+        const maxOther = others.length ? Math.max(...others.map(x => x.length)) : 0;
+        const margin = ans.length - maxOther;
+        const isUniqueLongest = ans.length === maxLen && lens.filter(x => x === maxLen).length === 1;
+        if (isUniqueLongest && margin >= 3 && ans.length >= maxOther * 1.15) {
           correctLongest++;
         }
-        const others = choices.filter(x => x !== ans);
         const avgOther = others.reduce((a, b) => a + b.length, 0) / others.length;
         if (avgOther > 0 && ans.length >= 1.5 * avgOther) correctStretched++;
       }
