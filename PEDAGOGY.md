@@ -95,7 +95,7 @@ If any of these regress, the pre-commit hook blocks with a pointer to this guide
 
 **Watch:** changing a choice's surface form changes `correctAnswer` too — both must stay in sync or `eval:answers` hard-fails.
 
-Dashboard (`pnpm eval:dashboard`) shows global pedagogy score **100%** across 936 sets. All 30 evaluators (5 zero-state hard-fail gates + 25 advisory) pass; no set below 97.
+Dashboard (`pnpm eval:dashboard`) shows global pedagogy score **100%** across 1021 sets (math/portuguese/english/japanese/spanish). All 32 evaluators (5 zero-state hard-fail gates + 27 advisory) pass; every set at 100% method rationales.
 
 ## Kumon principles Futon inherits
 
