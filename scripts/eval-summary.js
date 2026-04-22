@@ -29,7 +29,9 @@ const CHECKS = [
   ['eval:pt-category', 'PT rationale-category mismatch'],
   ['eval:example-spoiler', 'Example = exercise #1 spoiler'],
   ['eval:pt-pluralization', 'PT -ção/-al plural as -s (English-style)'],
+  ['eval:meta-question', 'Meta-template shell questions'],
   // advisory (not in eval:all)
+  ['eval:choice-format', 'Inline-choice format (advisory)'],
   ['eval:rationales', 'Rationale categorizer (advisory)'],
   ['eval:bias', 'Answer-position bias (advisory)'],
   ['eval:time', 'Session time budget (advisory)'],
