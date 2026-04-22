@@ -46,7 +46,10 @@
             :total="attemptedCount"
             :grade-percent="set.gradePercent || 0"
             :has-next-set="hasNextSet"
+            :avg-seconds="Number(set.avgSecondsPerExercise) || 0"
+            :pass-criteria="passCriteria"
             @next-set="$emit('next-set')"
+            @retry-set="resetSet"
           )
           div(class="flex gap-3")
             button(@click="$emit('go-home')" class="btn-ghost flex-1") ← {{ $t('back') }}

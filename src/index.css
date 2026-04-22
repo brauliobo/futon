@@ -260,6 +260,23 @@ button { min-height: 44px; }
 input { caret-color: var(--kid-blue); }
 input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 
+.gate-panel {
+  border-radius: 1rem;
+  border: 2px solid var(--kid-border);
+  padding: 0.75rem 1rem;
+  background: var(--kid-surface);
+  text-align: left;
+}
+.gate-panel-ok    { border-color: color-mix(in srgb, var(--kid-green) 45%, transparent); background: color-mix(in srgb, var(--kid-green) 6%, var(--kid-surface)); }
+.gate-panel-retry { border-color: color-mix(in srgb, var(--kid-red) 45%, transparent);   background: color-mix(in srgb, var(--kid-red) 6%, var(--kid-surface)); }
+.gate-panel-title { font-size: 0.875rem; font-weight: 800; color: var(--kid-text); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.gate-row { display: flex; align-items: baseline; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.95rem; }
+.gate-row-icon  { font-size: 1.1rem; line-height: 1; flex: 0 0 auto; }
+.gate-row-label { flex: 1 1 auto; font-weight: 700; color: var(--kid-text); }
+.gate-row-actual{ font-weight: 900; font-size: 1.05rem; }
+.gate-row-req   { font-size: 0.8rem; }
+.gate-hint { font-size: 0.875rem; font-weight: 700; margin-top: 0.5rem; text-align: center; }
+
 .page-complete-overlay {
   position: absolute; inset: 0; z-index: 30;
   display: flex; align-items: center; justify-content: center;

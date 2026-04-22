@@ -32,6 +32,23 @@
             span {{ $t('grade') || 'Grade' }}
           p(class="text-2xl font-black tabular-nums" :class="gradeColor") {{ animGrade }}%
 
+      div(class="gate-panel mt-3 animate-slide-up" :class="gatePanelClass" style="animation-delay:0.3s")
+        p(class="gate-panel-title")
+          span(class="mr-1" aria-hidden="true") 🎯
+          span {{ $t('gateTitle') }}
+        div(class="gate-row")
+          span(class="gate-row-icon" aria-hidden="true") {{ accuracyPass ? '✅' : '❌' }}
+          span(class="gate-row-label") {{ $t('gateAccuracy') }}
+          span(class="gate-row-actual tabular-nums" :class="accuracyPass ? 'text-kid-green' : 'text-kid-red'") {{ accuracyPct }}%
+          span(class="gate-row-req tabular-nums text-kid-muted") ({{ $t('gateNeedMin') }} {{ accuracyMin }}%)
+        div(class="gate-row")
+          span(class="gate-row-icon" aria-hidden="true") {{ speedPass ? '✅' : '❌' }}
+          span(class="gate-row-label") {{ $t('gateSpeed') }}
+          span(class="gate-row-actual tabular-nums" :class="speedPass ? 'text-kid-green' : 'text-kid-red'") {{ avgSecondsRounded }}s
+          span(class="gate-row-req tabular-nums text-kid-muted") ({{ $t('gateNeedMax') }} {{ speedMax }}s)
+        p(class="gate-hint" :class="gateHintClass")
+          | {{ gateHint }}
+
       button(
         v-if="hasNextSet && (knownStatus === 'mastery' || knownStatus === 'pass')"
         @click="$emit('next-set')"
@@ -40,12 +57,21 @@
       )
         span(aria-hidden="true") 🚀
         span {{ $t('nextSet') }}
+      button(
+        v-if="knownStatus === 'retry'"
+        @click="$emit('retry-set')"
+        class="mt-3 btn-block btn-primary animate-slide-up text-lg font-black"
+        style="animation-delay:0.35s"
+        data-testid="retry-set"
+      )
+        span(aria-hidden="true") 🔁
+        span {{ $t('retryAgain') }}
 </template>
 
 <script>
 export default {
   name: 'ResultsCelebration',
-  emits: ['next-set'],
+  emits: ['next-set', 'retry-set'],
   data() { return { animScore: 0, animGrade: 0 }; },
   mounted() { this.animateCounters(); },
   props: {
@@ -54,6 +80,8 @@ export default {
     total: { type: Number, default: 0 },
     gradePercent: { type: Number, default: 0 },
     hasNextSet: { type: Boolean, default: false },
+    avgSeconds: { type: Number, default: 0 },
+    passCriteria: { type: Object, default: () => ({ minAccuracyPercent: 85, maxAvgSecondsPerExercise: 6 }) },
   },
   computed: {
     accuracy() { return this.total > 0 ? Math.round((this.correct / this.total) * 100) : 0; },
@@ -99,6 +127,17 @@ export default {
       if (this.effectiveGrade >= 90) return 'text-kid-green';
       if (this.effectiveGrade >= 70) return 'text-amber-500';
       return 'text-kid-red';
+    },
+    accuracyPct() { return this.accuracy; },
+    accuracyMin() { return this.passCriteria?.minAccuracyPercent ?? 85; },
+    speedMax() { return this.passCriteria?.maxAvgSecondsPerExercise ?? 6; },
+    avgSecondsRounded() { return Math.round((Number(this.avgSeconds) || 0) * 10) / 10; },
+    accuracyPass() { return this.accuracyPct >= this.accuracyMin; },
+    speedPass() { return this.avgSecondsRounded > 0 && this.avgSecondsRounded <= this.speedMax; },
+    gatePanelClass() { return this.knownStatus === 'retry' ? 'gate-panel-retry' : 'gate-panel-ok'; },
+    gateHintClass() { return this.knownStatus === 'retry' ? 'text-kid-red' : 'text-kid-green'; },
+    gateHint() {
+      return this.knownStatus === 'retry' ? this.$t('gateRetryHint') : this.$t('gatePassHint');
     },
   },
   methods: {
