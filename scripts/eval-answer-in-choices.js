@@ -40,8 +40,11 @@ async function main() {
         const pool = choices.map(c => String(c).trim().toLowerCase());
         // For inline-parsed choices, mismatch is ambiguous — could be a
         // math fraction like (x/2) rather than real choices. We only
-        // report when the `choices:` field is explicit.
-        if (!pool.includes(ans) && !explicit) continue;
+        // report when the `choices:` field is explicit — UNLESS the set
+        // is non-numeric subject (portuguese/english/japanese) where
+        // inline choices are always real.
+        const isProse = !explicit && s.subject && s.subject !== 'math';
+        if (!pool.includes(ans) && !explicit && !isProse) continue;
         checked++;
         if (!pool.includes(ans)) {
           mismatches.push({
