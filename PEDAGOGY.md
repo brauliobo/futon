@@ -84,6 +84,17 @@ Heuristic checklist for category-naming rationales:
 
 If any of these regress, the pre-commit hook blocks with a pointer to this guide's "Manual rewrite guide" section.
 
+### Length-bias padding strategy (iters 216–232)
+
+`eval:length-bias` flags sets where the correct answer is systematically longer than distractors (position bias at display time). Two proven strategies:
+
+- **Parallel labeling (best for grammar taxonomies).** When answer is "adjunto adverbial de lugar" and distractors are "de tempo / de modo / de causa", fully label each: "adjunto adverbial de tempo / ... / ... / ... de lugar". Fixes 80%+→clean in one pass. Used on G/02 (OD/OI), G/03 (adjuntos), G/04 (predicativos).
+- **Parallel specificity (best for argumentative content).** When answer is "defende um ponto de vista com argumentos" and distractors are "narra/descreve/transmite dados", expand each distractor to match in specificity: "narra fatos em sequência temporal / descreve um cenário com detalhes sensoriais / transmite dados objetivos sem opinião". Fixes 70%+→30% typically. Used on D/04, D/05, D/13, D/16, D/17, D/19, D/20, J/02, J/03, J/04, J/06, L/04, K/03.
+
+**Watch:** padding distractors can push questions past the 250-char qLength limit. After bulk padding, run `pnpm eval:rationales` and `pedagogy-eval.js` to catch qLength overflow; trim surrounding prose (the opening passage, not the choices) to stay under.
+
+**Watch:** changing a choice's surface form changes `correctAnswer` too — both must stay in sync or `eval:answers` hard-fails.
+
 Dashboard (`pnpm eval:dashboard`) shows global pedagogy score **100%** across 936 sets. All 30 evaluators (5 zero-state hard-fail gates + 25 advisory) pass; no set below 97.
 
 ## Kumon principles Futon inherits
