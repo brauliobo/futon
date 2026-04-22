@@ -2,6 +2,7 @@ import { MathDiscipline } from "../discipline/MathDiscipline.js";
 import { PortugueseDiscipline } from "../discipline/PortugueseDiscipline.js";
 import { EnglishDiscipline } from "../discipline/EnglishDiscipline.js";
 import { JapaneseDiscipline } from "../discipline/JapaneseDiscipline.js";
+import { SpanishDiscipline } from "../discipline/SpanishDiscipline.js";
 
 export class DisciplineManager {
   static create(withMeta, generators, seed) {
@@ -9,7 +10,8 @@ export class DisciplineManager {
       math: MathDiscipline.create(withMeta, generators, seed),
       portuguese: PortugueseDiscipline.create(withMeta),
       english: EnglishDiscipline.create(withMeta),
-      japanese: JapaneseDiscipline.create(withMeta)
+      japanese: JapaneseDiscipline.create(withMeta),
+      spanish: SpanishDiscipline.create(withMeta)
     };
     return new DisciplineManager(disciplines);
   }

@@ -19,7 +19,8 @@ const LEVEL_ORDER = {
   math:       ['5A','4A','3A','2A','1A','6A','7A','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q'],
   portuguese: ['7A','6A','5A','4A','3A','2A','1A','A','B','C','D','E','F','G','H','I','J','K','L'],
   english:    ['A','B','C','D','E','F','G','H','I','J','K','L'],
-  japanese:   ['4A','3A','2A','A','B','C']
+  japanese:   ['4A','3A','2A','A','B','C'],
+  spanish:    ['7A','6A','5A','4A','3A','2A','1A','A','B','C','D','E','F','G','H','I','J','K','L']
 };
 
 export class DisciplineRegistry {
