@@ -84,7 +84,7 @@ Heuristic checklist for category-naming rationales:
 
 If any of these regress, the pre-commit hook blocks with a pointer to this guide's "Manual rewrite guide" section.
 
-Dashboard (`pnpm eval:dashboard`) shows global pedagogy score **100%** — 908 of 926 sets at perfect 100, none below 97.
+Dashboard (`pnpm eval:dashboard`) shows global pedagogy score **100%** across 936 sets. All 30 evaluators (5 zero-state hard-fail gates + 25 advisory) pass; no set below 97.
 
 ## Kumon principles Futon inherits
 
