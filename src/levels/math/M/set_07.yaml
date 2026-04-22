@@ -19,21 +19,21 @@ pages:
       - type: trigonometry
         question: Quantas soluções tem sen(x) = 1/2 em [0°, 360°)?
         correctAnswer: 2
-        rationale: sen x = 1 ⇒ x = π/2 + 2kπ.
+        rationale: "sen x = 1/2 ⇒ x = 30° ou 150° em [0°, 360°) — 2 soluções."
         difficulty: 2
         objectives:
           - trig.equations
       - type: trigonometry
         question: "Soluções menores de sen(x) = 1/2 em [0°, 360°): (primeira)"
         correctAnswer: 30°
-        rationale: sen x = 1 ⇒ x = π/2 + 2kπ.
+        rationale: "sen x = 1/2 tem x = 30° como primeira solução em [0°, 360°)."
         difficulty: 2
         objectives:
           - trig.equations
       - type: trigonometry
         question: "Segunda solução: sen(x) = 1/2 em [0°, 360°)"
         correctAnswer: 150°
-        rationale: sen x = 1 ⇒ x = π/2 + 2kπ.
+        rationale: "sen x = 1/2 tem x = 150° como segunda solução (π − 30°)."
         difficulty: 2
         objectives:
           - trig.equations
@@ -58,14 +58,14 @@ pages:
       - type: trigonometry
         question: Primeira solução de cos(x) = 1/2 em [0°, 360°)?
         correctAnswer: 60°
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "cos x = 1/2 tem x = 60° como primeira solução em [0°, 360°)."
         difficulty: 2
         objectives:
           - trig.equations
       - type: trigonometry
         question: "Segunda solução: cos(x) = 1/2 em [0°, 360°)"
         correctAnswer: 300°
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "cos x = 1/2 tem x = 300° como segunda solução (360° − 60°)."
         difficulty: 2
         objectives:
           - trig.equations
@@ -86,7 +86,7 @@ pages:
       - type: trigonometry
         question: Número de soluções de cos(x) = 1/2 em [0°, 360°)?
         correctAnswer: 2
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "cos x = 1/2 em [0°, 360°) ocorre em 60° e 300° — 2 soluções."
         difficulty: 2
         objectives:
           - trig.equations
@@ -136,14 +136,14 @@ pages:
       - type: trigonometry
         question: "Solução geral de sen(x) = 1/2 em ℝ: 30° + 360°k e ? + 360°k"
         correctAnswer: 150°
-        rationale: sen x = 1 ⇒ x = π/2 + 2kπ.
+        rationale: "sen x = 1/2 em ℝ: x = 30° + 360°k e x = 150° + 360°k."
         difficulty: 2
         objectives:
           - trig.equations
       - type: trigonometry
         question: "Solução geral de cos(x) = 1/2: ±? + 360°k"
         correctAnswer: 60°
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "cos x = 1/2 em ℝ: x = ±60° + 360°k."
         difficulty: 2
         objectives:
           - trig.equations
@@ -214,7 +214,7 @@ pages:
       - type: trigonometry
         question: sen²(x) + sen(x) = 0 → sen(x)(sen(x)+1)=0 → sen(x)=0 ou sen(x)=?
         correctAnswer: -1
-        rationale: sen x = 0 ⇒ x = kπ, k ∈ ℤ.
+        rationale: "Fator (sen x + 1) = 0 ⇒ sen x = -1 (segunda raiz do produto)."
         difficulty: 3
         objectives:
           - trig.equations
@@ -235,7 +235,7 @@ pages:
       - type: trigonometry
         question: 2cos²(x) + cos(x) - 1 = 0 → cos(x) = 1/2 ou cos(x) = ?
         correctAnswer: -1
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "Fatore (2cos x − 1)(cos x + 1) = 0 ⇒ cos x = 1/2 ou cos x = -1."
         difficulty: 3
         objectives:
           - trig.equations
@@ -306,21 +306,21 @@ pages:
       - type: trigonometry
         question: sen(x) + cos(x) = 1 (primeira positiva)?
         correctAnswer: 0
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "Em x = 0°: sen 0° + cos 0° = 0 + 1 = 1 ✓. Primeira positiva = 0°."
         difficulty: 3
         objectives:
           - trig.equations
       - type: trigonometry
         question: sen(x) - cos(x) = 0 → tan(x) = ?
         correctAnswer: 1
-        rationale: cos x = 0 ⇒ x = π/2 + kπ, k ∈ ℤ.
+        rationale: "Divide por cos x: sen x/cos x = 1 ⇒ tan x = 1."
         difficulty: 3
         objectives:
           - trig.equations
       - type: trigonometry
         question: Menor positiva de sen(x)-cos(x)=0?
         correctAnswer: 45°
-        rationale: cos x = 0 ⇒ x = π/2 + kπ, k ∈ ℤ.
+        rationale: "sen x = cos x ⇒ tan x = 1 ⇒ x = 45° (menor positiva)."
         difficulty: 3
         objectives:
           - trig.equations
@@ -331,14 +331,14 @@ pages:
       - type: trigonometry
         question: "Em [0°, 180°], soluções de sen(x) = 1/2: (30° e ?)"
         correctAnswer: 150°
-        rationale: sen x = 1 ⇒ x = π/2 + 2kπ.
+        rationale: "sen x = 1/2 em [0°, 180°]: x = 30° e x = 150° (ambas no intervalo)."
         difficulty: 3
         objectives:
           - trig.equations
       - type: trigonometry
         question: "Em [0°, 180°], soluções de cos(x) = 1/2: (60° e ?)"
         correctAnswer: 60°
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "cos x = 1/2 em [0°, 180°]: única solução x = 60° (a 300° cai fora)."
         difficulty: 3
         objectives:
           - trig.equations
@@ -377,7 +377,7 @@ pages:
       - type: trigonometry
         question: Menor positiva de 2sen(x) = √3?
         correctAnswer: 60°
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "Isole: sen x = √3/2 ⇒ x = 60° (menor positiva)."
         difficulty: 3
         objectives:
           - trig.equations
@@ -409,21 +409,21 @@ pages:
       - type: trigonometry
         question: Quantas soluções tem sen(x) = 1/2 em [0°, 360°)?
         correctAnswer: 2
-        rationale: sen x = 1 ⇒ x = π/2 + 2kπ.
+        rationale: "sen x = 1/2 ⇒ x = 30° ou 150° em [0°, 360°) — 2 soluções."
         difficulty: 2
         objectives:
           - trig.equations
       - type: trigonometry
         question: "Soluções menores de sen(x) = 1/2 em [0°, 360°): (primeira)"
         correctAnswer: 30°
-        rationale: sen x = 1 ⇒ x = π/2 + 2kπ.
+        rationale: "sen x = 1/2 tem x = 30° como primeira solução em [0°, 360°)."
         difficulty: 2
         objectives:
           - trig.equations
       - type: trigonometry
         question: "Segunda solução: sen(x) = 1/2 em [0°, 360°)"
         correctAnswer: 150°
-        rationale: sen x = 1 ⇒ x = π/2 + 2kπ.
+        rationale: "sen x = 1/2 tem x = 150° como segunda solução (π − 30°)."
         difficulty: 2
         objectives:
           - trig.equations
@@ -448,14 +448,14 @@ pages:
       - type: trigonometry
         question: Primeira solução de cos(x) = 1/2 em [0°, 360°)?
         correctAnswer: 60°
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "cos x = 1/2 tem x = 60° como primeira solução em [0°, 360°)."
         difficulty: 2
         objectives:
           - trig.equations
       - type: trigonometry
         question: "Segunda solução: cos(x) = 1/2 em [0°, 360°)"
         correctAnswer: 300°
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "cos x = 1/2 tem x = 300° como segunda solução (360° − 60°)."
         difficulty: 2
         objectives:
           - trig.equations
@@ -476,7 +476,7 @@ pages:
       - type: trigonometry
         question: Número de soluções de cos(x) = 1/2 em [0°, 360°)?
         correctAnswer: 2
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "cos x = 1/2 em [0°, 360°) ocorre em 60° e 300° — 2 soluções."
         difficulty: 2
         objectives:
           - trig.equations
@@ -526,14 +526,14 @@ pages:
       - type: trigonometry
         question: "Solução geral de sen(x) = 1/2 em ℝ: 30° + 360°k e ? + 360°k"
         correctAnswer: 150°
-        rationale: sen x = 1 ⇒ x = π/2 + 2kπ.
+        rationale: "sen x = 1/2 em ℝ: x = 30° + 360°k e x = 150° + 360°k."
         difficulty: 2
         objectives:
           - trig.equations
       - type: trigonometry
         question: "Solução geral de cos(x) = 1/2: ±? + 360°k"
         correctAnswer: 60°
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "cos x = 1/2 em ℝ: x = ±60° + 360°k."
         difficulty: 2
         objectives:
           - trig.equations
@@ -604,7 +604,7 @@ pages:
       - type: trigonometry
         question: sen²(x) + sen(x) = 0 → sen(x)(sen(x)+1)=0 → sen(x)=0 ou sen(x)=?
         correctAnswer: -1
-        rationale: sen x = 0 ⇒ x = kπ, k ∈ ℤ.
+        rationale: "Fator (sen x + 1) = 0 ⇒ sen x = -1 (segunda raiz do produto)."
         difficulty: 3
         objectives:
           - trig.equations
@@ -625,7 +625,7 @@ pages:
       - type: trigonometry
         question: 2cos²(x) + cos(x) - 1 = 0 → cos(x) = 1/2 ou cos(x) = ?
         correctAnswer: -1
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "Fatore (2cos x − 1)(cos x + 1) = 0 ⇒ cos x = 1/2 ou cos x = -1."
         difficulty: 3
         objectives:
           - trig.equations
@@ -696,21 +696,21 @@ pages:
       - type: trigonometry
         question: sen(x) + cos(x) = 1 (primeira positiva)?
         correctAnswer: 0
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "Em x = 0°: sen 0° + cos 0° = 0 + 1 = 1 ✓. Primeira positiva = 0°."
         difficulty: 3
         objectives:
           - trig.equations
       - type: trigonometry
         question: sen(x) - cos(x) = 0 → tan(x) = ?
         correctAnswer: 1
-        rationale: cos x = 0 ⇒ x = π/2 + kπ, k ∈ ℤ.
+        rationale: "Divide por cos x: sen x/cos x = 1 ⇒ tan x = 1."
         difficulty: 3
         objectives:
           - trig.equations
       - type: trigonometry
         question: Menor positiva de sen(x)-cos(x)=0?
         correctAnswer: 45°
-        rationale: cos x = 0 ⇒ x = π/2 + kπ, k ∈ ℤ.
+        rationale: "sen x = cos x ⇒ tan x = 1 ⇒ x = 45° (menor positiva)."
         difficulty: 3
         objectives:
           - trig.equations
@@ -721,14 +721,14 @@ pages:
       - type: trigonometry
         question: "Em [0°, 180°], soluções de sen(x) = 1/2: (30° e ?)"
         correctAnswer: 150°
-        rationale: sen x = 1 ⇒ x = π/2 + 2kπ.
+        rationale: "sen x = 1/2 em [0°, 180°]: x = 30° e x = 150° (ambas no intervalo)."
         difficulty: 3
         objectives:
           - trig.equations
       - type: trigonometry
         question: "Em [0°, 180°], soluções de cos(x) = 1/2: (60° e ?)"
         correctAnswer: 60°
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "cos x = 1/2 em [0°, 180°]: única solução x = 60° (a 300° cai fora)."
         difficulty: 3
         objectives:
           - trig.equations
@@ -767,7 +767,7 @@ pages:
       - type: trigonometry
         question: Menor positiva de 2sen(x) = √3?
         correctAnswer: 60°
-        rationale: "Radical: √(a·b) = √a·√b; racionalize quando preciso."
+        rationale: "Isole: sen x = √3/2 ⇒ x = 60° (menor positiva)."
         difficulty: 3
         objectives:
           - trig.equations
