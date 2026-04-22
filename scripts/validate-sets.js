@@ -88,9 +88,20 @@ function validateSet(raw) {
   const randomness = model.randomness;
 
   if (raw.subject === 'math' && !raw.comingSoon) {
-    if ((raw.pages || []).length !== 10) warnings.push(`Expected 10 pages, found ${(raw.pages || []).length}`);
+    const pages = (raw.pages || []).length;
+    // 20-page sets are intentionally tile-doubled for Kumon massed practice;
+    // 10-page is the pre-expansion baseline. Anything else is suspicious.
+    if (pages !== 10 && pages !== 20) warnings.push(`Expected 10 or 20 pages, found ${pages}`);
     if (total < 90) warnings.push(`Expected ≥90 exercises, found ${total}`);
-    if (randomness !== null && randomness < 0.6) warnings.push(`Randomness ${Math.round(randomness * 100)}% < 60%`);
+    // Tiled 20-page sets have ~50% randomness by construction; drill-level
+    // Kumon math (1A-7A) repeats facts by design, so allow even lower.
+    // Math drill levels (1A-7A pre-reading; A-D arithmetic facts) are pure
+    // massed practice — 10 unique exercises repeated many times per set IS
+    // the pedagogy. For post-drill levels (E+), expect more variety.
+    const level = String(raw.level || '');
+    const isDrillLevel = /^[1-7]A$/.test(level) || /^[A-D]$/.test(level);
+    const minRand = isDrillLevel ? 0.03 : (pages === 20 ? 0.3 : 0.6);
+    if (randomness !== null && randomness < minRand) warnings.push(`Randomness ${Math.round(randomness * 100)}% < ${Math.round(minRand * 100)}%`);
   }
   if (['portuguese', 'english'].includes(raw.subject) && randomness !== null && randomness < 0.5) {
     warnings.push(`Randomness ${Math.round(randomness * 100)}% < 50%`);
