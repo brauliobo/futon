@@ -36,14 +36,14 @@ pages:
       - type: calculus
         question: f(x) = f(0) + f'(0)x + f''(0)x²/2! + ... (V/F)?
         correctAnswer: V
-        rationale: "Regra do quociente: (f/g)' = (f'g - fg')/g²."
+        rationale: "Definição de Maclaurin: f(x) = Σ f⁽ⁿ⁾(0)·xⁿ/n!."
         difficulty: 3
         objectives:
           - series.taylor
       - type: calculus
         question: "Aproximação linear (1º grau) de f em 0: f(0) + f'(0)·?"
         correctAnswer: x
-        rationale: "Regra do produto: (fg)' = f'g + fg'."
+        rationale: "Taylor/Maclaurin 1ª ordem em 0: f(x) ≈ f(0) + f'(0)·x."
         difficulty: 3
         objectives:
           - series.taylor
@@ -61,7 +61,7 @@ pages:
       - type: calculus
         question: e^x = 1 + x + x²/2! + ? + ...
         correctAnswer: x³/3!
-        rationale: "Equação linear: isole x aplicando operações inversas."
+        rationale: "Maclaurin de e^x: termo n é xⁿ/n!; próximo após x²/2! é x³/3!."
         difficulty: 3
         objectives:
           - series.taylor
@@ -89,7 +89,7 @@ pages:
       - type: calculus
         question: Σ xⁿ/n! converge para todo x? (não/sim)
         correctAnswer: sim
-        rationale: Avalie o limite da soma parcial Sₙ.
+        rationale: "Série de e^x: raio de convergência infinito (teste da razão dá 0)."
         difficulty: 3
         objectives:
           - series.taylor
@@ -107,7 +107,7 @@ pages:
       - type: calculus
         question: cos(x) = 1 - x²/2! + x⁴/4! - ? + ...
         correctAnswer: x⁶/6!
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "Maclaurin de cos x: sinais alternam, potências pares; próximo após x⁴/4! é x⁶/6!."
         difficulty: 3
         objectives:
           - series.taylor
@@ -436,14 +436,14 @@ pages:
       - type: calculus
         question: f(x) = f(0) + f'(0)x + f''(0)x²/2! + ... (V/F)?
         correctAnswer: V
-        rationale: "Regra do quociente: (f/g)' = (f'g - fg')/g²."
+        rationale: "Definição de Maclaurin: f(x) = Σ f⁽ⁿ⁾(0)·xⁿ/n!."
         difficulty: 3
         objectives:
           - series.taylor
       - type: calculus
         question: "Aproximação linear (1º grau) de f em 0: f(0) + f'(0)·?"
         correctAnswer: x
-        rationale: "Regra do produto: (fg)' = f'g + fg'."
+        rationale: "Taylor/Maclaurin 1ª ordem em 0: f(x) ≈ f(0) + f'(0)·x."
         difficulty: 3
         objectives:
           - series.taylor
@@ -461,7 +461,7 @@ pages:
       - type: calculus
         question: e^x = 1 + x + x²/2! + ? + ...
         correctAnswer: x³/3!
-        rationale: "Equação linear: isole x aplicando operações inversas."
+        rationale: "Maclaurin de e^x: termo n é xⁿ/n!; próximo após x²/2! é x³/3!."
         difficulty: 3
         objectives:
           - series.taylor
@@ -489,7 +489,7 @@ pages:
       - type: calculus
         question: Σ xⁿ/n! converge para todo x? (não/sim)
         correctAnswer: sim
-        rationale: Avalie o limite da soma parcial Sₙ.
+        rationale: "Série de e^x: raio de convergência infinito (teste da razão dá 0)."
         difficulty: 3
         objectives:
           - series.taylor
@@ -507,7 +507,7 @@ pages:
       - type: calculus
         question: cos(x) = 1 - x²/2! + x⁴/4! - ? + ...
         correctAnswer: x⁶/6!
-        rationale: cos x = 1 ⇒ x = 2kπ.
+        rationale: "Maclaurin de cos x: sinais alternam, potências pares; próximo após x⁴/4! é x⁶/6!."
         difficulty: 3
         objectives:
           - series.taylor
