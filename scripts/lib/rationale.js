@@ -148,7 +148,7 @@ const COMPUTATION_RE = /=\s*[^=]+=\s*[^=]+/;
 const SUBSTITUTION_RE = /[a-z]\([-+]?\d/i;
 // Simple arithmetic: "5-5 = 0", "3 × 4 = 12", "-2 + 7 = 5". Short but
 // clearly teaching by demonstration.
-const ARITHMETIC_RE = /-?\d+\s*[+\-×÷*\/]\s*-?\d+\s*=\s*-?\d/;
+const ARITHMETIC_RE = /-?\d+\s*[+\-−×÷*\/]\s*-?\d+\s*=\s*-?\d/;
 // Transformation arrow: "'study' → 'studied'" / "X → Y" / "2 → 4" —
 // demonstrates before-and-after mapping, a core Kumon teaching pattern.
 const TRANSFORMATION_RE = /\S\s*→\s*\S/;
