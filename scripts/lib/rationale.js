@@ -98,6 +98,9 @@ const METHOD_TERMS = [
   'muestra[nm]?', 'establece[n]?', 'estableci[oó]\\b', 'evidencia[nm]?',
   'describe[n]?', 'influy[oó]\\b', 'redujo\\b', 'promovi[oó]\\b',
   'enriqueci[oó]\\b', 'perdieron?\\b', 'surgi[oó]\\b', 'fij[oó]\\b',
+  'añade[nm]?', 'contrasta[nm]?', 'concede[n]?', 'une[n]?\\b',
+  'conecta[nm]?', 'almacena[nm]?', 'prepara[nm]?', 'clasifica[nm]?',
+  'protege[n]?', 'permite[n]?', 'impide[n]?', 'relaciona[nm]?',
   // Letter-position / recognition (1A-level)
   'começa[mr]?', 'inicia[mnrs]?', 'termin[aeo][mr]?', 'completa[mr]?',
   'no\\s+início', 'no\\s+meio', 'no\\s+fim', 'início\\b', 'fim\\b',

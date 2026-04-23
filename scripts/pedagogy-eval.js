@@ -189,7 +189,10 @@ function scoreGradient(set) {
 function echoesQuestionAndAnswer(ex) {
   const r = String(ex.rationale || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const a = String(ex.correctAnswer ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
-  if (a.length < 3 || !r.includes(a)) return false;
+  // Also match via stem: "blanca"/"blanco"/"blancas"/"blancos" all share "blanc".
+  // Handles gender/number inflection in Spanish/Portuguese vocabulary sets.
+  const stem = a.length >= 5 ? a.slice(0, -1) : a;
+  if (a.length < 3 || (!r.includes(a) && (stem.length < 3 || !r.includes(stem)))) return false;
   const q = String(ex.question || '').replace(/\([^)]+\)\s*$/, '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const qWords = (q.match(/[a-z]{3,}/g) || []).filter(w =>
     !['como', 'onde', 'quem', 'qual', 'para', 'que', 'uma', 'com', 'dos', 'das', 'por', 'são', 'seu', 'sua', 'nem', 'foi', 'era', 'tem', 'mas', 'mais'].includes(w));
