@@ -1,0 +1,142 @@
+title: Gramática - Análisis Sintáctico Completo
+level: D
+subject: spanish
+difficulty: 5
+objectives:
+  - es.pre_reading
+authorNotes: "Análisis de la oración: SN sujeto (Det + N + CN/adj.) + SV predicado (V + CD + CI + Atr + CC + CRP). Predicado nominal (verbo copulativo ser/estar/parecer + atributo). Predicado verbal (verbo predicativo + complementos). Complemento predicativo: complemento que acompaña al verbo y describe al sujeto o al objeto (llegaron cansados / la veo triste). Complemento de régimen preposicional (CRP): complemento con preposición exigida por el verbo (confiar en, hablar de, depender de). Aposición: sustantivo que complementa a otro sustantivo (Madrid, la capital, es enorme)."
+example: "Madrid [SN-S] es enorme [SV pred. nominal]. Los niños [S] comieron [V] la sopa [CD] con prisa [CC modo]. Confío [V] en ti [CRP]. Llegaron [V] cansados [C. pred.]."
+repeatAll: 2
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 20
+pages:
+  - pageNumber: 1
+    title: Tipos de Predicado y Complementos
+    description: Identifica la función sintáctica.
+    exercises:
+      - type: grammar
+        question: "'La niña está contenta.' ¿Tipo de predicado? (verbal/nominal/mixto)"
+        correctAnswer: nominal
+        rationale: "Estar + atributo (contenta) → predicado nominal."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'La niña corre rápido.' ¿Tipo de predicado? (verbal/nominal/copulativo)"
+        correctAnswer: verbal
+        rationale: "Verbo predicativo (corre) con complemento → predicado verbal."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'Confío en sus palabras.' ¿Función de 'en sus palabras'? (CD/CI/CRP)"
+        correctAnswer: CRP
+        rationale: "'Confiar en' exige la preposición 'en' → CRP."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'Vi a María triste.' ¿Función de 'triste'? (atributo/complemento predicativo/adverbio)"
+        correctAnswer: complemento predicativo
+        rationale: "'Triste' describe a 'María' (objeto) mientras se realiza la acción → complemento predicativo."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'Madrid, la capital de España, tiene mucho tráfico.' ¿Función de 'la capital de España'? (CD/aposición/atributo)"
+        correctAnswer: aposición
+        rationale: "Un sustantivo que explica a otro sustantivo en aposición → aposición explicativa."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'Le entregaron el premio a la ganadora.' ¿Función de 'a la ganadora'? (CD/CI/CC)"
+        correctAnswer: CI
+        rationale: "¿A quién entregaron? A la ganadora → CI."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'Llegaron exhaustos.' ¿Función de 'exhaustos'? (atributo de predicado nominal/complemento predicativo del sujeto/adverbio)"
+        correctAnswer: complemento predicativo del sujeto
+        rationale: "'Exhaustos' describe al sujeto en el momento de llegar → complemento predicativo del sujeto."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'Dependo de tu apoyo.' ¿Función de 'de tu apoyo'? (CC de causa/CI/CRP)"
+        correctAnswer: CRP
+        rationale: "'Depender de' exige 'de' → complemento de régimen preposicional."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Cómo identificar el CRP? (preguntando ¿qué?/sustituyendo por 'ello' tras la preposición exigida/preguntando ¿a quién?)"
+        correctAnswer: sustituyendo por 'ello' tras la preposición exigida
+        rationale: "CRP: Confío en ello (no 'lo confío' → no es CD)."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'El informe fue redactado con esmero.' ¿Función de 'con esmero'? (CD/CI/CC de modo)"
+        correctAnswer: CC de modo
+        rationale: "¿Cómo fue redactado? Con esmero → CC de modo."
+        difficulty: 5
+        objectives: [es.pre_reading]
+  - pageNumber: 2
+    title: Análisis Oracional Completo
+    description: Analiza las funciones sintácticas en las oraciones.
+    exercises:
+      - type: grammar
+        question: "'La profesora explicó la gramática a los alumnos.' ¿Cuál es el CD? (la profesora/la gramática/a los alumnos)"
+        correctAnswer: la gramática
+        rationale: "¿Qué explicó? La gramática → CD."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "En la misma oración, ¿cuál es el CI? (la profesora/la gramática/a los alumnos)"
+        correctAnswer: a los alumnos
+        rationale: "¿A quién explicó? A los alumnos → CI."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'Parece cansada.' ¿Es 'cansada' atributo o complemento predicativo? (atributo/complemento predicativo/adverbio)"
+        correctAnswer: atributo
+        rationale: "'Parecer' es verbo semicopulativo → atributo: cansada."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'El gato duerme en el sofá.' ¿Función de 'en el sofá'? (CD/CI/CC de lugar)"
+        correctAnswer: CC de lugar
+        rationale: "¿Dónde duerme? En el sofá → CC de lugar."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué distingue el atributo del complemento predicativo? (el atributo va con copulativo, el c. pred. con predicativo/son idénticos/el atributo modifica al objeto)"
+        correctAnswer: el atributo va con copulativo, el c. pred. con predicativo
+        rationale: "Atributo: ser/estar/parecer. C. predicativo: verb. predicativo + descripción del suj. u obj."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'Habló de política durante horas.' ¿Función de 'de política'? (CD/CRP/CC de tema)"
+        correctAnswer: CRP
+        rationale: "'Hablar de' exige 'de' → CRP."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'Lo encontré dormido en el sillón.' ¿Función de 'dormido'? (atributo/c. predicativo del CD/CC)"
+        correctAnswer: c. predicativo del CD
+        rationale: "'Dormido' describe al CD ('lo') durante la acción → complemento predicativo del objeto."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Cuál es el núcleo del predicado en 'Los estudiantes aprobaron el examen con nota'? (Los estudiantes/aprobaron/el examen)"
+        correctAnswer: aprobaron
+        rationale: "El núcleo del predicado es siempre el verbo conjugado: aprobaron."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "'La reunión, que duró horas, fue agotadora.' ¿Función de 'que duró horas'? (CD/subordinada adjetiva/aposición)"
+        correctAnswer: subordinada adjetiva
+        rationale: "Cláusula relativa que modifica al antecedente 'la reunión' → subordinada adjetiva/relativa."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué elemento puede suprimirse sin que la oración pierda gramaticalidad? (el sujeto/el verbo/los complementos circunstanciales)"
+        correctAnswer: los complementos circunstanciales
+        rationale: "Los CC son opcionales; sujeto y verbo son obligatorios para la gramaticalidad básica."
+        difficulty: 5
+        objectives: [es.pre_reading]
+target: 20
