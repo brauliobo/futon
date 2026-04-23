@@ -101,6 +101,8 @@ const METHOD_TERMS = [
   'añade[nm]?', 'contrasta[nm]?', 'concede[n]?', 'une[n]?\\b',
   'conecta[nm]?', 'almacena[nm]?', 'prepara[nm]?', 'clasifica[nm]?',
   'protege[n]?', 'permite[n]?', 'impide[n]?', 'relaciona[nm]?',
+  'exige[n]?', 'mitig[ae][nr]?', 'atenú[ae][nr]?', 'aport[aoó]n?\\b',
+  'caracteriz[ae][nr]?', 'distingue[n]?', 'diferencia[nm]?',
   // Letter-position / recognition (1A-level)
   'começa[mr]?', 'inicia[mnrs]?', 'termin[aeo][mr]?', 'completa[mr]?',
   'no\\s+início', 'no\\s+meio', 'no\\s+fim', 'início\\b', 'fim\\b',
@@ -181,7 +183,7 @@ const SUBSTITUTION_RE = /[a-z]\([-+]?\d/i;
 const ARITHMETIC_RE = /-?\d+\s*[+\-−×÷*\/]\s*-?\d+\s*=\s*-?\d/;
 // Transformation arrow: "'study' → 'studied'" / "X → Y" / "2 → 4" —
 // demonstrates before-and-after mapping, a core Kumon teaching pattern.
-const TRANSFORMATION_RE = /\S\s*→\s*\S/;
+const TRANSFORMATION_RE = /\S\s*[→>]\s*\S/;
 // Definition: "'Could' = habilidade geral passada." — quoted word followed
 // by an equals glossing it. Also matches unquoted capitalized concept
 // terms like "Desenvolvimento = expandir a ideia..." and single-variable
