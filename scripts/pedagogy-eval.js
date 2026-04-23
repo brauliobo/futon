@@ -354,7 +354,7 @@ function scoreQuestionLength(set) {
   for (const e of exs) {
     if (e.type === 'cloze') continue;
     const q = String(e.question || '');
-    const maxLen = EMBEDDED_PASSAGE_RE.test(q) ? 400 : 250;
+    const maxLen = (e.difficulty >= 5) ? 900 : (EMBEDDED_PASSAGE_RE.test(q) ? 400 : 250);
     if (q.length > maxLen) { bad++; continue; }
     if (q.length < 3 && !SHORT_VOCAB_RE.test(q)) bad++;
   }
