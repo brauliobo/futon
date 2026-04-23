@@ -17,13 +17,13 @@ pages:
     exercises:
       - type: grammar
         question: "¿Qué es la tokenización en PLN? (la traducción automática/el proceso de segmentar texto en unidades mínimas (tokens): palabras, subpalabras o caracteres; desafío: 'Nueva York' (¿1 token o 2?), contracciones, palabras compuestas/el análisis sintáctico)"
-        correctAnswer: el proceso de segmentar texto en unidades mínimas (tokens): palabras, subpalabras o caracteres; desafío: 'Nueva York' (¿1 token o 2?), contracciones, palabras compuestas
+        correctAnswer: "el proceso de segmentar texto en unidades mínimas (tokens): palabras, subpalabras o caracteres; desafío: 'Nueva York' (¿1 token o 2?), contracciones, palabras compuestas"
         rationale: "Tokenización: paso previo a todo análisis NLP → la decisión de qué es un token afecta a los modelos posteriores; el español con clíticos y contracciones presenta retos específicos."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Qué captura un word embedding como Word2Vec? (las reglas gramaticales/representaciones vectoriales densas que capturan relaciones semánticas: 'rey − hombre + mujer ≈ reina' → los vectores reflejan analogías semánticas y sintácticas latentes en el corpus de entrenamiento/el número de letras de cada palabra)"
-        correctAnswer: representaciones vectoriales densas que capturan relaciones semánticas: 'rey − hombre + mujer ≈ reina' → los vectores reflejan analogías semánticas y sintácticas latentes en el corpus de entrenamiento
+        correctAnswer: "representaciones vectoriales densas que capturan relaciones semánticas: 'rey − hombre + mujer ≈ reina' → los vectores reflejan analogías semánticas y sintácticas latentes en el corpus de entrenamiento"
         rationale: "Word2Vec (Mikolov 2013): las palabras se distribuyen en espacio vectorial según sus contextos → palabras con contextos similares tienen vectores cercanos."
         difficulty: 5
         objectives: [es.pre_reading]
@@ -35,43 +35,43 @@ pages:
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Qué es el sesgo algorítmico en los modelos de lenguaje? (un error de programación/la tendencia de los modelos entrenados en corpus sesgados a reproducir estereotipos: asociar 'médico' con hombre, 'enfermera' con mujer → amplifica desigualdades existentes en los datos/un tipo de ruido estadístico)"
-        correctAnswer: la tendencia de los modelos entrenados en corpus sesgados a reproducir estereotipos: asociar 'médico' con hombre, 'enfermera' con mujer → amplifica desigualdades existentes en los datos
+        correctAnswer: "la tendencia de los modelos entrenados en corpus sesgados a reproducir estereotipos: asociar 'médico' con hombre, 'enfermera' con mujer → amplifica desigualdades existentes en los datos"
         rationale: "Sesgo en PLN: el corpus refleja desigualdades sociales → los modelos entrenados en esos datos las amplifican → problema ético documentado en embeddings y LLMs."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Qué es el reconocimiento de entidades nombradas (NER)? (la traducción de nombres propios/la tarea de identificar y clasificar entidades en texto (personas, organizaciones, lugares, fechas): 'El [presidente] Petro viajó a [Bogotá] el [15 de marzo]'/el análisis morfológico)"
-        correctAnswer: la tarea de identificar y clasificar entidades en texto (personas, organizaciones, lugares, fechas): 'El [presidente] Petro viajó a [Bogotá] el [15 de marzo]'
+        correctAnswer: "la tarea de identificar y clasificar entidades en texto (personas, organizaciones, lugares, fechas): 'El [presidente] Petro viajó a [Bogotá] el [15 de marzo]'"
         rationale: "NER: tarea fundamental de PLN → aplicaciones en extracción de información, búsqueda semántica y sistemas de preguntas y respuestas."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Qué es el transfer learning en PLN? (copiar datos de entrenamiento/preentrenar un modelo en grandes corpus genéricos y luego ajustarlo (fine-tuning) para tareas específicas: BERT preentrenado en Wikipedia se ajusta para análisis de sentimientos o NER con pocos datos/entrenar modelos desde cero)"
-        correctAnswer: preentrenar un modelo en grandes corpus genéricos y luego ajustarlo (fine-tuning) para tareas específicas: BERT preentrenado en Wikipedia se ajusta para análisis de sentimientos o NER con pocos datos
+        correctAnswer: "preentrenar un modelo en grandes corpus genéricos y luego ajustarlo (fine-tuning) para tareas específicas: BERT preentrenado en Wikipedia se ajusta para análisis de sentimientos o NER con pocos datos"
         rationale: "Transfer learning: revolucionó el PLN desde 2018 → GPT, BERT, RoBERTa → permite buenos resultados con datos etiquetados escasos."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Cómo se evalúa la calidad de la traducción automática con BLEU? (contando errores gramaticales/comparando n-gramas de la traducción automática con traducciones de referencia: un BLEU alto indica que los n-gramas coinciden con las referencias humanas, pero no mide la adecuación semántica profunda/midiendo la longitud de las frases)"
-        correctAnswer: comparando n-gramas de la traducción automática con traducciones de referencia: un BLEU alto indica que los n-gramas coinciden con las referencias humanas, pero no mide la adecuación semántica profunda
+        correctAnswer: "comparando n-gramas de la traducción automática con traducciones de referencia: un BLEU alto indica que los n-gramas coinciden con las referencias humanas, pero no mide la adecuación semántica profunda"
         rationale: "BLEU (Bilingual Evaluation Understudy): métrica de n-gramas → limitaciones: no captura paráfrasis ni coherencia discursiva → métrica imperfecta pero estándar."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Qué desafío específico plantea la ambigüedad léxica para el PLN? (ninguno/la misma palabra puede tener múltiples significados según el contexto: 'banco' (entidad financiera / asiento / banco de peces) → el desambiguador semántico (WSD) debe elegir el sentido correcto en cada contexto/solo las palabras gramaticales son ambiguas)"
-        correctAnswer: la misma palabra puede tener múltiples significados según el contexto: 'banco' (entidad financiera / asiento / banco de peces) → el desambiguador semántico (WSD) debe elegir el sentido correcto en cada contexto
+        correctAnswer: "la misma palabra puede tener múltiples significados según el contexto: 'banco' (entidad financiera / asiento / banco de peces) → el desambiguador semántico (WSD) debe elegir el sentido correcto en cada contexto"
         rationale: "Word Sense Disambiguation (WSD): desafío central del PLN → los modelos contextuales (BERT) resuelven mejor la ambigüedad que los modelos basados en frecuencia."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Qué diferencia un modelo de lenguaje autorregresivo (GPT) de un modelo bidireccional (BERT)? (el tamaño/GPT: predice el siguiente token viendo solo los anteriores (izquierda a derecha) → adecuado para generación de texto; BERT: tiene contexto bidireccional (izquierda y derecha) → mejor para comprensión y clasificación/BERT es más antiguo)"
-        correctAnswer: GPT: predice el siguiente token viendo solo los anteriores (izquierda a derecha) → adecuado para generación de texto; BERT: tiene contexto bidireccional (izquierda y derecha) → mejor para comprensión y clasificación
+        correctAnswer: "GPT: predice el siguiente token viendo solo los anteriores (izquierda a derecha) → adecuado para generación de texto; BERT: tiene contexto bidireccional (izquierda y derecha) → mejor para comprensión y clasificación"
         rationale: "GPT vs. BERT: dos paradigmas del PLN moderno → GPT (generativo, autorregresivo); BERT (codificador, bidireccional) → sus diferencias arqutectónicas determinan sus usos."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Por qué el sarcasmo y la ironía son difíciles para el PLN? (porque son raros/porque requieren comprensión del contexto social y de las expectativas violadas: 'Qué maravilloso servicio' (tras una queja) no puede interpretarse por el significado literal de las palabras → los modelos sin contexto extralingüístico fallan/porque son incorrectos gramaticalmente)"
-        correctAnswer: porque requieren comprensión del contexto social y de las expectativas violadas: 'Qué maravilloso servicio' (tras una queja) no puede interpretarse por el significado literal de las palabras → los modelos sin contexto extralingüístico fallan
+        correctAnswer: "porque requieren comprensión del contexto social y de las expectativas violadas: 'Qué maravilloso servicio' (tras una queja) no puede interpretarse por el significado literal de las palabras → los modelos sin contexto extralingüístico fallan"
         rationale: "Sarcasmo en PLN: los modelos necesitan conocimiento del mundo y del contexto interaccional → desafío para análisis de sentimientos y diálogo."
         difficulty: 5
         objectives: [es.pre_reading]
@@ -81,19 +81,19 @@ pages:
     exercises:
       - type: grammar
         question: "¿Qué es la resolución de correferencias en PLN? (la traducción de pronombres/la tarea de identificar qué expresiones en un texto refieren al mismo individuo: 'María llegó. Ella estaba cansada.' → 'ella' correfe con 'María'; fundamental para la comprensión del discurso/el análisis de los nombres propios)"
-        correctAnswer: la tarea de identificar qué expresiones en un texto refieren al mismo individuo: 'María llegó. Ella estaba cansada.' → 'ella' correfe con 'María'; fundamental para la comprensión del discurso
+        correctAnswer: "la tarea de identificar qué expresiones en un texto refieren al mismo individuo: 'María llegó. Ella estaba cansada.' → 'ella' correfe con 'María'; fundamental para la comprensión del discurso"
         rationale: "Resolución de correferencias: necesaria para la coherencia discursiva en PLN → sigue los mismos principios de ligamiento que la gramática generativa."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Qué problema ético plantean los grandes modelos de lenguaje (LLMs) en cuanto a la privacidad? (ninguno/los LLMs entrenados en datos de internet pueden haber memorizado información personal (nombres, direcciones, datos médicos) y reproducirla sin que el titular lo sepa: riesgo de extracción de datos sensibles/solo los chatbots tienen este problema)"
-        correctAnswer: los LLMs entrenados en datos de internet pueden haber memorizado información personal (nombres, direcciones, datos médicos) y reproducirla sin que el titular lo sepa: riesgo de extracción de datos sensibles
+        correctAnswer: "los LLMs entrenados en datos de internet pueden haber memorizado información personal (nombres, direcciones, datos médicos) y reproducirla sin que el titular lo sepa: riesgo de extracción de datos sensibles"
         rationale: "Privacidad en LLMs: los modelos memorizan fragmentos del corpus → mediante prompts específicos se puede inducir la reproducción de datos personales (fenómeno documentado)."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Qué es el análisis de sentimientos y cuáles son sus limitaciones? (la traducción de emociones/la clasificación automática de la polaridad emocional de un texto (positivo, negativo, neutro); limitación: no capta negación compleja ('no está nada mal'), sarcasmo ni matices culturales/solo analiza tweets)"
-        correctAnswer: la clasificación automática de la polaridad emocional de un texto (positivo, negativo, neutro); limitación: no capta negación compleja ('no está nada mal'), sarcasmo ni matices culturales
+        correctAnswer: "la clasificación automática de la polaridad emocional de un texto (positivo, negativo, neutro); limitación: no capta negación compleja ('no está nada mal'), sarcasmo ni matices culturales"
         rationale: "Análisis de sentimientos: usado en marketing, política y atención al cliente → la negación ('no está bien'), el sarcasmo y los modismos culturales son sus principales desafíos."
         difficulty: 5
         objectives: [es.pre_reading]
@@ -105,25 +105,25 @@ pages:
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Qué es el RAG (Retrieval-Augmented Generation) en sistemas de IA? (un tipo de corpus/arquitectura que combina la recuperación de documentos relevantes con la generación de texto: el modelo busca información actualizada antes de generar la respuesta → reduce las 'alucinaciones'/un tipo de embedding)"
-        correctAnswer: arquitectura que combina la recuperación de documentos relevantes con la generación de texto: el modelo busca información actualizada antes de generar la respuesta → reduce las 'alucinaciones'
+        correctAnswer: "arquitectura que combina la recuperación de documentos relevantes con la generación de texto: el modelo busca información actualizada antes de generar la respuesta → reduce las 'alucinaciones'"
         rationale: "RAG: solución a la limitación de conocimiento estático de los LLMs → combina recuperación de información (vectores) con generación → aplicado en asistentes corporativos."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Qué es el parsing sintáctico en PLN y por qué es difícil? (la traducción de oraciones/el análisis automático de la estructura sintáctica de una oración (árbol de dependencias o constituyentes); dificultad: la ambigüedad de adjunción: 'Vi al hombre con los prismáticos' (¿quién tiene los prismáticos?)/el análisis semántico)"
-        correctAnswer: el análisis automático de la estructura sintáctica de una oración (árbol de dependencias o constituyentes); dificultad: la ambigüedad de adjunción: 'Vi al hombre con los prismáticos' (¿quién tiene los prismáticos?)
+        correctAnswer: "el análisis automático de la estructura sintáctica de una oración (árbol de dependencias o constituyentes); dificultad: la ambigüedad de adjunción: 'Vi al hombre con los prismáticos' (¿quién tiene los prismáticos?)"
         rationale: "Parsing: la ambigüedad de adjunción de los SPs genera árboles alternativos → el parser debe elegir la estructura más probable según el modelo estadístico o neural."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Cuál es la diferencia entre alucinación y error factual en los LLMs? (son lo mismo/alucinación: el modelo genera texto plausible pero factualmente incorrecto con alta confianza ('El Premio Nobel de Química 2023 fue otorgado a X' siendo incorrecto); error factual: imprecisión sobre datos verificables/la alucinación es menos grave)"
-        correctAnswer: alucinación: el modelo genera texto plausible pero factualmente incorrecto con alta confianza ('El Premio Nobel de Química 2023 fue otorgado a X' siendo incorrecto); error factual: imprecisión sobre datos verificables
+        correctAnswer: "alucinación: el modelo genera texto plausible pero factualmente incorrecto con alta confianza ('El Premio Nobel de Química 2023 fue otorgado a X' siendo incorrecto); error factual: imprecisión sobre datos verificables"
         rationale: "Alucinación: problema fundamental de los LLMs → el modelo optimiza la plausibilidad del texto, no la verdad → necesita sistemas de verificación externa."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
         question: "¿Qué son los prompts en el contexto de los modelos de lenguaje? (datos de entrenamiento/las instrucciones o contextos que el usuario proporciona al modelo para guiar su respuesta: el prompt engineering estudia cómo formular instrucciones para obtener respuestas más precisas y útiles/los errores del modelo)"
-        correctAnswer: las instrucciones o contextos que el usuario proporciona al modelo para guiar su respuesta: el prompt engineering estudia cómo formular instrucciones para obtener respuestas más precisas y útiles
+        correctAnswer: "las instrucciones o contextos que el usuario proporciona al modelo para guiar su respuesta: el prompt engineering estudia cómo formular instrucciones para obtener respuestas más precisas y útiles"
         rationale: "Prompt engineering: disciplina emergente → técnicas como chain-of-thought ('piensa paso a paso'), few-shot (ejemplos en el prompt) mejoran el rendimiento de los LLMs."
         difficulty: 5
         objectives: [es.pre_reading]
