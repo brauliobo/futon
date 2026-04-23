@@ -1,0 +1,112 @@
+title: 📝 Período Composto - Análise Avançada
+level: G
+subject: portuguese
+difficulty: 4
+objectives: [EF08LP06, EF09LP05]
+authorNotes: Análise de períodos compostos — classificar todas as orações (principal, coordenadas, subordinadas por tipo).
+example: "Leia o período e classifique cada oração. Ex.: 'Sei que vieste' → principal: 'sei'; subordinada subst. OD: 'que vieste'."
+passCriteria:
+  minAccuracyPercent: 75
+  maxAvgSecondsPerExercise: 50
+pages:
+  - pageNumber: 1
+    title: Identificar Orações
+    description: Contar orações pelo número de verbos.
+    exercises:
+      - type: paragraph
+        question: "Quantas orações há em 'Quando cheguei, ela saiu e foi embora'? (duas/três/quatro/uma)"
+        correctAnswer: três
+        difficulty: 2
+        rationale: Três verbos (cheguei, saiu, foi) = três orações no período.
+        objectives: [EF08LP06]
+  - pageNumber: 2
+    title: Oração Principal vs Subordinada
+    description: Identificar qual oração depende de outra.
+    exercises:
+      - type: paragraph
+        question: "Em 'Espero que venhas', qual é a oração principal? (que venhas/espero/venhas/que)"
+        correctAnswer: espero
+        difficulty: 1
+        rationale: 'Espero' é a oração principal; 'que venhas' é a subordinada objetiva direta.
+        objectives: [EF08LP06]
+  - pageNumber: 3
+    title: Coordenadas Sindéticas vs Assindéticas
+    description: Sindéticas têm conjunção; assindéticas não.
+    exercises:
+      - type: paragraph
+        question: "Em 'Cheguei, vi, venci', as orações são: (sindéticas aditivas/assindéticas justapostas/subordinadas adverbiais/sindéticas adversativas)"
+        correctAnswer: assindéticas justapostas
+        difficulty: 2
+        rationale: Sem conjunção, separadas por vírgulas = orações assindéticas (justapostas).
+        objectives: [EF09LP05]
+  - pageNumber: 4
+    title: Subordinada Adjetiva
+    description: Identificar e classificar.
+    exercises:
+      - type: paragraph
+        question: "Em 'O menino que chegou cedo ganhou prêmio', a oração adjetiva é: (restritiva/explicativa/subjetiva/objetiva)"
+        correctAnswer: restritiva
+        difficulty: 2
+        rationale: Sem vírgulas, a adjetiva restringe o sentido de 'menino' — só aquele que chegou cedo.
+        objectives: [EF09LP05]
+  - pageNumber: 5
+    title: Subordinada Substantiva - Tipo
+    description: Classificar OSS.
+    exercises:
+      - type: paragraph
+        question: "Em 'Duvido que ele saiba', a OSS é: (subjetiva/objetiva direta/objetiva indireta/predicativa)"
+        correctAnswer: objetiva indireta
+        difficulty: 3
+        rationale: 'Duvido de quê?' → 'de que ele saiba' (OI); conjunção integrante 'que'.
+        objectives: [EF09LP05]
+  - pageNumber: 6
+    title: Subordinada Adverbial - Tipo
+    description: Identificar tipo pela conjunção.
+    exercises:
+      - type: paragraph
+        question: "Em 'Logo que chegar, me avise', a OSAdv é: (causal/temporal/concessiva/condicional)"
+        correctAnswer: temporal
+        difficulty: 2
+        rationale: 'Logo que' é conjunção temporal — indica o momento da ação.
+        objectives: [EF09LP05]
+  - pageNumber: 7
+    title: Análise Completa
+    description: Classificar cada oração de um período.
+    exercises:
+      - type: paragraph
+        question: "Em 'Sei que Pedro, que estudou muito, passou', quantas orações há? (duas/três/quatro/cinco)"
+        correctAnswer: três
+        difficulty: 3
+        rationale: Sei (principal) / que Pedro ... passou (OSS OD) / que estudou muito (OSAdj relativa).
+        objectives: [EF09LP05]
+  - pageNumber: 8
+    title: Reduzidas vs Desenvolvidas
+    description: Formas reduzidas usam infinitivo, gerúndio ou particípio.
+    exercises:
+      - type: paragraph
+        question: "Qual é a forma desenvolvida de 'Ao sair, desligue a luz'? (Antes de sair/Quando sair/Embora saia/Se sair)"
+        correctAnswer: Quando sair
+        difficulty: 3
+        rationale: 'Ao sair' = oração reduzida de infinitivo temporal; forma desenvolvida: 'quando sair'.
+        objectives: [EF09LP05]
+  - pageNumber: 9
+    title: Conjunção e Sentido
+    description: Identificar sentido pela conjunção.
+    exercises:
+      - type: paragraph
+        question: "Em 'Conquanto seja difícil, é possível', a relação é: (causa/concessão/condição/consequência)"
+        correctAnswer: concessão
+        difficulty: 3
+        rationale: 'Conquanto' = embora — conjunção concessiva; admite obstáculo sem impedir a ação.
+        objectives: [EF09LP05]
+  - pageNumber: 10
+    title: Revisão Integrada
+    description: Análise completa de período composto.
+    exercises:
+      - type: paragraph
+        question: "Em 'Embora chovesse, saímos porque tínhamos compromisso', há: (duas orações/três orações/uma oração/quatro orações)"
+        correctAnswer: três orações
+        difficulty: 3
+        rationale: Três verbos (chovesse, saímos, tínhamos) = três orações: OAdv concessiva + principal + OAdv causal.
+        objectives: [EF09LP05]
+target: 10
