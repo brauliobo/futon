@@ -103,6 +103,11 @@ const METHOD_TERMS = [
   'protege[n]?', 'permite[n]?', 'impide[n]?', 'relaciona[nm]?',
   'exige[n]?', 'mitig[ae][nr]?', 'atenú[ae][nr]?', 'aport[aoó]n?\\b',
   'caracteriz[ae][nr]?', 'distingue[n]?', 'diferencia[nm]?',
+  'presenta[nm]?', 'distorsiona[nm]?', 'ilustra[nm]?', 'mide[n]?\\b',
+  'conclusion[es]?', 'estructura[nm]?\\b', 'argumento[s]?', 'tesis\\b',
+  'cuida[nm]?', 'trabaja[nm]?', 'compone[n]?', 'transporta[nm]?', 'impulsa[nm]?',
+  'recibe[n]?', 'percibe[n]?', 'toman?\\b', 'moja[nm]?', 'conserva[nm]?',
+  'dejaron\\b', 'perdi[oó]\\b', 'sustituye[nm]?', 'sustituy[oó]\\b',
   // Letter-position / recognition (1A-level)
   'começa[mr]?', 'inicia[mnrs]?', 'termin[aeo][mr]?', 'completa[mr]?',
   'no\\s+início', 'no\\s+meio', 'no\\s+fim', 'início\\b', 'fim\\b',
@@ -176,7 +181,8 @@ export const RESTATE_RE = /^\s*(a\s+(?:resposta|grafia|forma|preposição|palavr
 // Worked-computation signal: two or more '=' forming a derivation chain,
 // or an explicit substitution like f(x) = ... Signals "teaches by showing
 // the computation" without needing an imperative verb.
-const COMPUTATION_RE = /=\s*[^=]+=\s*[^=]+/;
+// Two-equals derivation chain OR single-equals between two substantive tokens (≥4 chars)
+const COMPUTATION_RE = /=\s*[^=]+=\s*[^=]+|[A-Za-záéíóúâêôãõ]{4,}\s*=\s*[A-Za-záéíóúâêôãõ]{4,}/;
 const SUBSTITUTION_RE = /[a-z]\([-+]?\d/i;
 // Simple arithmetic: "5-5 = 0", "3 × 4 = 12", "-2 + 7 = 5". Short but
 // clearly teaching by demonstration.
