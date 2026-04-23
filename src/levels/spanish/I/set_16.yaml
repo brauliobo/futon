@@ -1,0 +1,142 @@
+title: Gramática - Semántica Formal y Lógica del Lenguaje
+level: I
+subject: spanish
+difficulty: 5
+objectives:
+  - es.pre_reading
+authorNotes: "Semántica de condiciones de verdad (Tarski, Davidson). Semántica de mundos posibles (Kripke). Cuantificadores (todos, algún, ningún). Alcance cuantificacional y ambigüedad. Descripciones definidas (Russell). Nombres propios y designadores rígidos (Kripke). Presuposición existencial. Anáfora y correferencia. Teoría de la referencia. Opacidad referencial. Extensión vs. intensión. Sentido y referencia (Frege): Hesperus/Phosphorus."
+example: "condiciones de verdad → 'La nieve es blanca' es verdadera sii la nieve es blanca. descripción definida → 'El rey de Francia es calvo' presupone que hay un rey de Francia (Russell: análisis eliminativo). designador rígido → 'Aristóteles' designa al mismo individuo en todos los mundos posibles donde existe; 'el maestro de Alejandro' no es rígido (en otro mundo posible sería otra persona). opacidad referencial → 'Pedro cree que Cicerón escribió eso' no implica 'Pedro cree que Tulio escribió eso' aunque Cicerón = Tulio → en contextos de actitud proposicional la sustitución falla. cuantificadores → 'Todos los estudiantes aprobaron algún examen' → ambigüedad de alcance: ∀x∃y vs. ∃y∀x."
+repeatAll: 2
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 20
+pages:
+  - pageNumber: 1
+    title: Semántica Formal y Referencia
+    description: Identifica los conceptos fundamentales de la semántica formal y la teoría de la referencia.
+    exercises:
+      - type: grammar
+        question: "¿Qué son las condiciones de verdad de una oración en semántica formal? (la gramática de la oración/las circunstancias bajo las cuales la oración es verdadera: 'La nieve es blanca' es verdadera si y solo si la nieve es blanca → el significado de una oración = sus condiciones de verdad/la pronunciación de la oración)"
+        correctAnswer: las circunstancias bajo las cuales la oración es verdadera: 'La nieve es blanca' es verdadera si y solo si la nieve es blanca → el significado de una oración = sus condiciones de verdad
+        rationale: "Tarski/Davidson: semántica veritativo-condicional → saber el significado de una oración = saber qué mundo la haría verdadera."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Cuál es la distinción fregeana entre sentido y referencia? (no hay distinción/sentido (Sinn): el modo de presentación del referente; referencia (Bedeutung): el objeto al que apunta → 'Hesperus' y 'Phosphorus' tienen la misma referencia (Venus) pero distinto sentido: esto explica la informatividad de 'Hesperus = Phosphorus'/son sinónimos)"
+        correctAnswer: sentido (Sinn): el modo de presentación del referente; referencia (Bedeutung): el objeto al que apunta → 'Hesperus' y 'Phosphorus' tienen la misma referencia (Venus) pero distinto sentido: esto explica la informatividad de 'Hesperus = Phosphorus'
+        rationale: "Frege: si sentido = referencia, 'Hesperus = Phosphorus' sería analítica → pero es un descubrimiento astronómico → el sentido aporta información más allá de la referencia."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es un designador rígido en la semántica de Kripke? (un nombre con significado claro/una expresión que designa el mismo individuo en todos los mundos posibles donde existe: 'Aristóteles' es rígido; 'el maestro de Alejandro' no lo es (otro individuo podría haber sido su maestro)/un nombre propio frecuente)"
+        correctAnswer: una expresión que designa el mismo individuo en todos los mundos posibles donde existe: 'Aristóteles' es rígido; 'el maestro de Alejandro' no lo es (otro individuo podría haber sido su maestro)
+        rationale: "Kripke: los nombres propios son designadores rígidos; las descripciones definidas, no → 'el actual presidente' varía entre mundos; 'Obama' no."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué propone Russell sobre las descripciones definidas ('el rey de Francia')? (que se refieren a una persona real/un análisis eliminativo: 'El rey de Francia es calvo' = 'Hay exactamente un rey de Francia y ese individuo es calvo' → si no hay tal rey, la oración es falsa (no carece de valor de verdad)/que son siempre verdaderas)"
+        correctAnswer: un análisis eliminativo: 'El rey de Francia es calvo' = 'Hay exactamente un rey de Francia y ese individuo es calvo' → si no hay tal rey, la oración es falsa (no carece de valor de verdad)
+        rationale: "Russell: eliminar la descripción definida con cuantificadores → evita entidades ficticias → contrasta con Frege, quien consideraba que carecía de valor de verdad."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es la opacidad referencial? (claridad del significado/la propiedad de algunos contextos (actitudes proposicionales) en que la sustitución de co-referenciales puede cambiar el valor de verdad: 'Pedro cree que Cicerón escribió eso' ≠ 'Pedro cree que Tulio escribió eso' aunque Cicerón = Tulio/la ambigüedad léxica)"
+        correctAnswer: la propiedad de algunos contextos (actitudes proposicionales) en que la sustitución de co-referenciales puede cambiar el valor de verdad: 'Pedro cree que Cicerón escribió eso' ≠ 'Pedro cree que Tulio escribió eso' aunque Cicerón = Tulio
+        rationale: "Opacidad referencial: en contextos de creer, desear, saber → la sustitución de términos co-referenciales falla → posición opaca vs. transparente."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Cómo genera ambigüedad el alcance cuantificacional? (los cuantificadores no generan ambigüedad/el orden de los cuantificadores crea lecturas distintas: 'Todos los estudiantes aprobaron algún examen' → lectura 1: ∀x∃y (cada uno aprobó alguno); lectura 2: ∃y∀x (hay un examen que todos aprobaron)/solo en inglés)"
+        correctAnswer: el orden de los cuantificadores crea lecturas distintas: 'Todos los estudiantes aprobaron algún examen' → lectura 1: ∀x∃y (cada uno aprobó alguno); lectura 2: ∃y∀x (hay un examen que todos aprobaron)
+        rationale: "Alcance cuantificacional: la forma lógica puede diferir del orden superficial → la ambigüedad es estructural, no léxica."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué diferencia la extensión de la intensión en semántica? (son lo mismo/extensión: el conjunto de entidades a que refiere una expresión en el mundo actual; intensión: la función que asigna extensiones en cada mundo posible ('gato' tiene una extensión en el mundo actual y una intensión que incluye todos los mundos posibles)/la extensión es semántica y la intensión es pragmática)"
+        correctAnswer: extensión: el conjunto de entidades a que refiere una expresión en el mundo actual; intensión: la función que asigna extensiones en cada mundo posible ('gato' tiene una extensión en el mundo actual y una intensión que incluye todos los mundos posibles)
+        rationale: "Intensión/extensión (Carnap/Montague): los operadores modales (necesariamente, posiblemente) operan sobre intensiones, no extensiones."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es la presuposición existencial y cómo difiere de la aserción? (son equivalentes/la presuposición existencial es la asunción implícita de que el referente de una descripción definida existe: 'El unicornio escapó' presupone que hay un unicornio → la presuposición no es lo que se afirma sino lo que se da por sentado/la presuposición es más débil)"
+        correctAnswer: la presuposición existencial es la asunción implícita de que el referente de una descripción definida existe: 'El unicornio escapó' presupone que hay un unicornio → la presuposición no es lo que se afirma sino lo que se da por sentado
+        rationale: "Presuposición existencial: propiedad de las descripciones definidas y de los nombres propios → la oración no puede ser verdadera ni falsa sin ella."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué son los mundos posibles en semántica modal? (lugares físicos reales/situaciones contrafactuales o hipotéticas que permiten analizar la necesidad y la posibilidad: 'Necesariamente P' = P es verdadero en todos los mundos posibles; 'Posiblemente P' = P es verdadero en algún mundo posible/los universos paralelos de la física)"
+        correctAnswer: situaciones contrafactuales o hipotéticas que permiten analizar la necesidad y la posibilidad: 'Necesariamente P' = P es verdadero en todos los mundos posibles; 'Posiblemente P' = P es verdadero en algún mundo posible
+        rationale: "Kripke: los mundos posibles son abstracciones formales, no lugares reales → herramienta para dar semántica a los operadores modales."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Por qué 'ningún estudiante aprobó' no es equivalente a 'no todos los estudiantes aprobaron'? (son equivalentes en español/tienen cuantificadores distintos: 'ninguno' = ∀x¬P(x) (para todo x, no P); 'no todos' = ¬∀x P(x) = ∃x¬P(x) (existe alguno que no P) → la diferencia es la distribución del cuantificador y la negación/son sinónimos coloquiales)"
+        correctAnswer: tienen cuantificadores distintos: 'ninguno' = ∀x¬P(x) (para todo x, no P); 'no todos' = ¬∀x P(x) = ∃x¬P(x) (existe alguno que no P) → la diferencia es la distribución del cuantificador y la negación
+        rationale: "Ninguno = cuantificador universal negativo: afirma que para todo individuo del dominio, la propiedad no se cumple. 'No todos' solo afirma que la universalidad falla."
+        difficulty: 5
+        objectives: [es.pre_reading]
+  - pageNumber: 2
+    title: Aplicación de la Semántica Formal
+    description: Aplica los conceptos de semántica formal al análisis de expresiones lingüísticas.
+    exercises:
+      - type: grammar
+        question: "¿Por qué 'El detective descubrió que el mayordomo era el asesino' presupone más que afirma? (no presupone nada/presupone que hay un detective y un mayordomo (presuposición existencial) y que el mayordomo era efectivamente el asesino (presuposición factiva) → solo afirma el acto del descubrimiento/la presuposición y la aserción son iguales)"
+        correctAnswer: presupone que hay un detective y un mayordomo (presuposición existencial) y que el mayordomo era efectivamente el asesino (presuposición factiva) → solo afirma el acto del descubrimiento
+        rationale: "Verbos factivos (descubrir, saber, lamentar): presuponen la verdad de su complemento → 'descubrió que P' presupone P."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Cómo analiza Kripke la identidad 'Agua = H₂O'? (como analítica/como necesaria a posteriori: es necesaria (en todos los mundos posibles, el agua es H₂O) pero conocida empíricamente, no por análisis conceptual → los términos naturales son designadores rígidos/como contingente)"
+        correctAnswer: como necesaria a posteriori: es necesaria (en todos los mundos posibles, el agua es H₂O) pero conocida empíricamente, no por análisis conceptual → los términos naturales son designadores rígidos
+        rationale: "Kripke: frente a Kant (necesario = a priori) → hay verdades necesarias descubiertas empíricamente: 'agua = H₂O', 'calor = energía cinética'."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué problema plantea la referencia vacía para la semántica formal? (ninguno/expresiones como 'Pegaso' o 'el rey de Francia' carecen de referente real → si el significado = la referencia (Mill), las expresiones vacías serían sin sentido → Russell resuelve esto con el análisis de descripciones/el problema desaparece en contextos ficticios)"
+        correctAnswer: expresiones como 'Pegaso' o 'el rey de Francia' carecen de referente real → si el significado = la referencia (Mill), las expresiones vacías serían sin sentido → Russell resuelve esto con el análisis de descripciones
+        rationale: "Referencia vacía: problema central de la filosofía del lenguaje → Frege postula el sentido; Russell elimina las descripciones; Kripke los trata como nombres propios especiales."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Por qué 'El filósofo que escribió la Crítica de la razón pura' y 'Kant' no son semánticamente equivalentes? (porque Kant es más famoso/porque son expresiones de distinto tipo: 'Kant' es un designador rígido (mismo individuo en todos los mundos); la descripción no es rígida (en otro mundo podría ser otro filósofo quien la escribiera)/porque tienen distinta longitud)"
+        correctAnswer: porque son expresiones de distinto tipo: 'Kant' es un designador rígido (mismo individuo en todos los mundos); la descripción no es rígida (en otro mundo podría ser otro filósofo quien la escribiera)
+        rationale: "Kripke: aunque co-extensivos en el mundo actual, nombre y descripción difieren en los contrafactuales → 'En el mundo W, Kant no escribió la Crítica' es coherente."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es la anáfora en semántica formal y cómo se resuelve? (un tipo de metáfora/la relación por la que una expresión (pronombre, proforma) recibe su interpretación de un antecedente previo: 'Pedro llegó y él saludó' → 'él' es correferente con 'Pedro' → la resolución sigue principios de ligamiento/un tipo de deixis)"
+        correctAnswer: la relación por la que una expresión (pronombre, proforma) recibe su interpretación de un antecedente previo: 'Pedro llegó y él saludó' → 'él' es correferente con 'Pedro' → la resolución sigue principios de ligamiento
+        rationale: "Anáfora: el pronombre hereda el índice referencial del antecedente → la resolución anafórica es computacional: sigue la teoría del ligamiento y la jerarquía de accesibilidad."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Por qué las oraciones con 'saber' son fácticas y las de 'creer' no? (no hay diferencia/los verbos factivos (saber, lamentar, descubrir) presuponen la verdad del complemento; los no factivos (creer, pensar, suponer) no → 'Sé que P' presupone P; 'Creo que P' no presupone P/porque saber es más formal)"
+        correctAnswer: los verbos factivos (saber, lamentar, descubrir) presuponen la verdad del complemento; los no factivos (creer, pensar, suponer) no → 'Sé que P' presupone P; 'Creo que P' no presupone P
+        rationale: "Verbos factivos (Kiparsky y Kiparsky): la presuposición de verdad del complemento es una propiedad léxica del verbo → relevante para el análisis semántico-pragmático."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es la semántica de eventos de Davidson? (el estudio de los eventos históricos/la propuesta de que las oraciones de acción contienen una variable de evento cuantificada existencialmente: 'Juan corrió rápidamente' = ∃e [correr(Juan, e) ∧ rápidamente(e)] → permite explicar las inferencias entre modificadores/solo se aplica al inglés)"
+        correctAnswer: la propuesta de que las oraciones de acción contienen una variable de evento cuantificada existencialmente: 'Juan corrió rápidamente' = ∃e [correr(Juan, e) ∧ rápidamente(e)] → permite explicar las inferencias entre modificadores
+        rationale: "Davidson: 'Juan corrió rápidamente' implica 'Juan corrió' → la variable de evento explica la inferencia: el evento existe con o sin el modificador de modo."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué problema plantea la paradoja de Russell ('el conjunto de todos los conjuntos que no se contienen a sí mismos') para la semántica formal? (ninguno/demuestra que la lógica de primer orden necesita restricciones para evitar paradojas autoreferenciales: influyó en Tarski → las semánticas formales del lenguaje natural requieren teorías de tipos o jerarquías/es solo un problema matemático)"
+        correctAnswer: demuestra que la lógica de primer orden necesita restricciones para evitar paradojas autoreferenciales: influyó en Tarski → las semánticas formales del lenguaje natural requieren teorías de tipos o jerarquías
+        rationale: "Paradoja de Russell → Tarski: la semántica de un lenguaje debe hacerse en un metalenguaje para evitar la autorreferencia → la jerarquía de lenguajes y metalenguajes."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué diferencia las proposiciones de re de las de dicto? (no hay diferencia/de re: el cuantificador tiene alcance amplio sobre el verbo de actitud ('Hay alguien a quien Pedro quiere ver' → hay un individuo específico); de dicto: el cuantificador está dentro del alcance ('Pedro quiere ver a alguien' → cualquier persona)/es solo una distinción gramatical)"
+        correctAnswer: de re: el cuantificador tiene alcance amplio sobre el verbo de actitud ('Hay alguien a quien Pedro quiere ver' → hay un individuo específico); de dicto: el cuantificador está dentro del alcance ('Pedro quiere ver a alguien' → cualquier persona)
+        rationale: "De re / de dicto: distinción modal crucial → 'Pedro busca a una secretaria' (de dicto: no importa quién) vs. 'Pedro busca a la secretaria de Martínez' (de re: individuo específico)."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Por qué la verifuncionalidad falla con los verbos de actitud proposicional? (no falla nunca/porque en 'Pedro cree que la Tierra es plana', aunque la Tierra no es plana (F), el valor de verdad de toda la oración no puede calcularse solo por el valor de la subordinada → la actitud crea un contexto intensional no verifuncional/porque Pedro miente)"
+        correctAnswer: porque en 'Pedro cree que la Tierra es plana', aunque la Tierra no es plana (F), el valor de verdad de toda la oración no puede calcularse solo por el valor de la subordinada → la actitud crea un contexto intensional no verifuncional
+        rationale: "Contextos intensionales: los verbos de actitud crean mundos privados del agente → la sustitución de co-referenciales y la verifuncionalidad fallan."
+        difficulty: 5
+        objectives: [es.pre_reading]
+target: 20
