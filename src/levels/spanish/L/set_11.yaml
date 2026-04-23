@@ -1,0 +1,140 @@
+title: Gramática - Fonología Avanzada y Teoría de la Optimidad
+level: L
+subject: spanish
+difficulty: 5
+objectives:
+  - es.pre_reading
+authorNotes: "Fonología avanzada: Teoría de la Optimidad (Prince/Smolensky): restricciones FAITHFULNESS vs. MARKEDNESS, jerarquía violable, tableaux de evaluación, candidatos, forma de input/output; restricciones de fidelidad (MAX, DEP, IDENT); restricciones de marcación (NOCODA, ONSET, *COMPLEX); la fonología no lineal: geometría de rasgos (Clements), autosegmentos (Goldsmith), fonología métrica (Hayes); sílaba en español (onset, núcleo, coda), síncope vocálica, metátesis, diptongación; lenición y sonorización intervocálica; la entonación como unidad fonológica (ToBI, AM theory); alternancia tonal en el español y entonación dialectal."
+example: "En OT → la jerarquía MARKEDNESS >> FAITHFULNESS explica la sonorización de obstruyentes → el candidato que viola menos las restricciones más altas gana el torneo de evaluación."
+repeatAll: 2
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 20
+pages:
+  - pageNumber: 1
+    title: Teoría de la Optimidad y Fonología del Español
+    exercises:
+      - type: grammar
+        question: "¿Cuál es la diferencia fundamental entre la Teoría de la Optimidad y las teorías fonológicas basadas en reglas ordenadas? (que son equivalentes/las teorías de reglas (SPE, Chomsky/Halle): las reglas fonológicas ordenadas transforman representaciones subyacentes en superficiales; la OT (Prince/Smolensky): no hay reglas sino restricciones violables jerárquicamente ordenadas → el candidato óptimo es el que viola las restricciones más bajas en la jerarquía; las restricciones son universales, el orden varía entre lenguas/que la OT no tiene restricciones de marcación)"
+        correctAnswer: las teorías de reglas transforman representaciones mediante reglas ordenadas; la OT tiene restricciones violables jerárquicamente ordenadas → el candidato óptimo viola las restricciones más bajas posibles; las restricciones son universales pero el orden varía entre lenguas
+        rationale: "Prince/Smolensky (1993): la OT reemplaza las reglas derivacionales por un sistema de evaluación paralela de candidatos; las restricciones son violables (no absolutas) y el output óptimo es el menos mal candidato dado el ranking."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué son las restricciones FAITHFULNESS y MARKEDNESS en OT y cuál es la tensión entre ellas? (que son dos tipos de reglas fonológicas/FAITHFULNESS (fidelidad): exige que el output sea idéntico al input (MAX: no elimines segmentos; DEP: no añadas segmentos; IDENT: preserva los rasgos); MARKEDNESS (marcación): exige que el output tenga buena forma fonológica (NOCODA: no hay coda; ONSET: toda sílaba tiene onset) → la tensión: la fidelidad puede producir formas marcadas; la marcación puede forzar cambios que alteran el input/que solo existen restricciones de fidelidad)"
+        correctAnswer: FAITHFULNESS exige que el output sea idéntico al input (MAX: no eliminar segmentos; DEP: no añadir; IDENT: preservar rasgos); MARKEDNESS exige buena forma fonológica (NOCODA: no coda; ONSET: toda sílaba tiene onset) → la tensión entre ellas genera los procesos fonológicos de las lenguas
+        rationale: "La tensión FAITHFULNESS vs. MARKEDNESS es el eje de la OT: cuando MARKEDNESS supera a FAITHFULNESS, el sistema acepta diferencias entre input y output para producir formas mejor formadas; cuando FAITHFULNESS gana, las formas marcadas del input se preservan."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Cómo explica la OT la sonorización de oclusivas sordas entre vocales en el español medieval (p→b, t→d, k→g en 'lupo → lobo')? (que no se puede explicar con OT/la restricción de LENICIÓN/VOICING en posición intervocálica supera a IDENT[voz] en la jerarquía del español medieval → el candidato que preserve la obstruyente sorda viola VOICING-IN-VTV (restricción más alta); el candidato con la sonorizada viola solo IDENT[voz] (restricción más baja) → gana el sonorizado/que la sonorización no tiene análisis en OT)"
+        correctAnswer: la restricción VOICING-IN-VTV (sonorice las obstruyentes en posición intervocálica) supera a IDENT[voz] (preserva el rasgo [voz] del input) → el candidato sonorizado viola solo IDENT[voz] (restricción más baja); el sordo viola VOICING-IN-VTV (más alta) → gana el sonorizado
+        rationale: "La sonorización intervocálica del español medieval es el ejemplo canónico de lenición en OT: LENITION >> IDENT[voice] hace que los candidatos con obstruyentes sonorizadas ganen el torneo de evaluación."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es la geometría de rasgos de Clements y qué ventajas ofrece sobre el modelo matricial (SPE)? (que la geometría de rasgos es lo mismo que la fonología SPE/los rasgos se organizan jerárquicamente en nodos: el nodo raíz domina los nodos laríngeo, cavidad oral y nasal; los rasgos de lugar se agrupan bajo el nodo de cavidad oral → permite representar la asimilación como extensión de nodos (spreading): la nasalización se extiende del nodo nasal al segmento adyacente/que la geometría de rasgos solo aplica a las vocales)"
+        correctAnswer: los rasgos se organizan jerárquicamente en nodos (nodo raíz → laríngeo, cavidad oral, nasal; el lugar está bajo cavidad oral) → permite representar la asimilación como extensión de nodos (spreading): la nasalización extiende el nodo nasal al segmento adyacente sin especificar todos los rasgos
+        rationale: "Clements (1985)/Sagey (1986): la geometría de rasgos explica las asimilaciones naturales (las clases naturales son los nodos) y las restricciones de los segmentos complejos; el SPE no puede representar la extensión de un único rasgo sin reglas ad hoc."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué son los autosegmentos en la fonología autosegmental (Goldsmith) y qué fenómenos explican? (que son segmentos autónomos sin relación con otros/los autosegmentos son unidades fonológicas en un nivel de representación independiente del segmental, ligados a los segmentos por líneas de asociación → permiten representar el tono como autosegmento (nivel tonal separado del segmental), la nasalización vocálica, la longitud vocálica (un núcleo ligado a dos posiciones del esqueleto CV) → explican la independencia de ciertos rasgos respecto al segmento/que los autosegmentos son solo tonos)"
+        correctAnswer: los autosegmentos son unidades en un nivel de representación independiente del segmental, ligados por líneas de asociación → permiten representar el tono, la nasalización y la longitud como rasgos autónomos que se extienden independientemente del segmento
+        rationale: "Goldsmith (1976): la fonología autosegmental propuso que ciertos rasgos (especialmente el tono y la nasalización) se organizan en niveles (tiers) independientes del segmental, conectados mediante líneas de asociación."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Cómo analiza la fonología métrica la estructura del acento en español y qué restricciones regulan la posición del acento? (que el acento en español es libre y sin restricciones/el acento en español sigue la 'ventana de los tres últimos segmentos' (strong late effect): el acento recae en la última, penúltima o antepenúltima sílaba; el acento en la penúltima es el default (paroxítono) → las restricciones métricas prohíben el acento anterior a la antepenúltima → en OT: PARSE-ΣPIED, ALIGN-R, WSP regulan el acento/que en español el acento puede ser en cualquier posición)"
+        correctAnswer: el acento en español recae en la última, penúltima o antepenúltima sílaba (ventana de tres); la penúltima es el default (paroxítono) → restricciones OT (PARSE-Σ, ALIGN-R, WSP) regulan que el acento no pueda aparecer antes de la antepenúltima
+        rationale: "La fonología métrica del acento español (Harris 1983; Roca 1986; en OT: Cohn/McCarthy): la ventana de tres sílabas y el default paroxítono emergen de la jerarquía de restricciones métricas de la OT."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Cuáles son las condiciones de buena formación silábica en español y cómo se analiza el ataque complejo? (que las sílabas españolas no tienen restricciones/la coda del español está muy restringida (solo sonorants y /s/ en posición final interna); el ataque complejo (obstruyente + líquida: 'bra-', 'fla-') está permitido; la sílaba española sigue la Ley del Umbral Sonoro: el sonority sequencing principle → en OT: SONORITY-SEQ, ONSET, NOCODA, *COMPLEX-CODA/que el español permite todas las codas)"
+        correctAnswer: la coda del español está restringida (sonorantes y /s/ en posición interna); el ataque complejo (obstruyente + líquida: 'bra-', 'fla-') está permitido; la silabificación sigue el Principio de Secuencia de Sonoridad → en OT: ONSET, NOCODA, *COMPLEX-CODA
+        rationale: "El español tiene restricciones de coda (NOCODA domina para posición interna); el ataque obstruyente + líquida es el máximo ataque complejo permitido; las codas complejas solo en posición final o con /s/ más obstruyente."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es la teoría AM (Autosegmental-Metrical) de la entonación y cómo se aplica al español? (que la entonación es solo variación melódica libre/la teoría AM (Pierrehumbert, Ladd): la entonación se representa como una secuencia de tonos altos (H) y bajos (L) que se alinean con las sílabas acentuadas (pitch accents: H*, L*, L+H*, H+L*) y con los límites de las frases (boundary tones: L%, H%) → el sistema ToBI transcribe la entonación; el español tiene un inventario de acentos de pitch y tonos de frontera dialectalmente variables/que la entonación en español no tiene análisis formal)"
+        correctAnswer: la teoría AM representa la entonación como secuencia de tonos altos (H) y bajos (L) que se alinean con sílabas acentuadas (acentos de pitch: H*, L*, L+H*) y con límites de frases (tonos de frontera: L%, H%) → el sistema Sp_ToBI transcribe la entonación española, con variación dialectal
+        rationale: "La teoría AM (Pierrehumbert 1980, Ladd 1996): la entonación es representación lingüística, no continua; el Sp_ToBI (Face/Prieto) adapta el sistema de transcripción al español con sus dialectos intonacionales."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es el ranking paradox en la OT y cómo se resuelve? (que todos los rankings funcionan sin paradojas/el ranking paradox ocurre cuando dos formas del output parecen exigir rankings contradictorios para las mismas restricciones → la solución es descomponer una de las restricciones: lo que parecía una sola restricción son dos restricciones distintas con diferentes sensibilidades contextuales → motivó el desarrollo de restricciones condicionales y locales (sympathy theory, stratal OT)/que la OT no puede tener paradojas)"
+        correctAnswer: el ranking paradox ocurre cuando dos outputs parecen exigir rankings contradictorios → la solución es descomponer la restricción en dos más específicas con diferente sensibilidad contextual → motivó la Sympathy Theory y la Stratal OT para derivaciones por fases
+        rationale: "El ranking paradox es una de las críticas a la OT paralela clásica que motivó variantes como la OT ordenada (McCarthy 2007) o la OT estratal (Kiparsky): cuando dos procesos parecen requerir rankings opuestos, la solución es o descomponer las restricciones o introducir ciclicidad."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Cómo se analiza la alternancia entre oclusivas y aproximantes en español ('vado': [b] inicial vs. [β] intervocálica) en la OT? (que es una alternancia libre sin análisis/la restricción *STOP/V_V (prohíbe obstruyentes oclusivas en posición intervocálica) supera a IDENT[continua] (preserva el rasgo [continuo] del input) → el candidato con aproximante [β] viola IDENT[continua] (restricción baja) pero satisface *STOP/V_V (restricción alta) → gana la aproximante/que las aproximantes son alófonos libres)"
+        correctAnswer: *STOP/V_V (prohíbe oclusivas en posición intervocálica) supera a IDENT[continua] (preserva el rasgo [continuo] del input) → el candidato con aproximante [β] viola IDENT[continua] (más baja) pero satisface *STOP/V_V (más alta) → gana la aproximante
+        rationale: "La alternancia oclusiva/aproximante española (Hualde 2005) es el análisis OT más canónico para el español: la lenición intervocálica como LENITION >> IDENT[continuant]."
+        difficulty: 5
+        objectives: [es.pre_reading]
+  - pageNumber: 2
+    title: Procesos Fonológicos y Variación Dialectal
+    exercises:
+      - type: grammar
+        question: "¿Qué es la 'juntura' (linking) fonológica y cómo afecta a la silabificación en el español hablado? (que la juntura no existe en español/en el habla continua, la última consonante de una palabra se puede silabificar como ataque de la sílaba siguiente ('las_alas' → [la.sa.las]) → resylabification: los límites de palabra son transparentes en ciertos contextos → en la fonología léxica: la silabificación opera primero en el interior de la palabra y luego en el dominio fonológico postléxico/que la juntura fonológica es solo un fenómeno ortográfico)"
+        correctAnswer: en el habla continua la última consonante de una palabra puede resilabificarse como ataque de la sílaba siguiente ('las alas' → [la.sa.las]) → la resylabification opera en el dominio fonológico postléxico, después de la silabificación léxica intrapalabra
+        rationale: "La resilabificación (resylabification) en el dominio postléxico del español es un proceso que crea sílabas bien formadas cruzando límites de palabra; en la OT, opera en una etapa postléxica donde las restricciones son más débiles."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué diferencia hay entre el yeísmo y el lleísmo en español y qué implica para el sistema fonológico? (que son variantes de la misma consonante/el lleísmo (distinción ll/y): mantiene la oposición entre la lateral palatal /ʎ/ ('calle') y la fricativa/aproximante palatal /j/ ('caye') → dos fonemas; el yeísmo (neutralización): la lateral palatal se fusiona con la fricativa palatal → un solo fonema, distinción perdida → el yeísmo es la variante mayoritaria en el español contemporáneo; el lleísmo persiste en algunas variedades andinas y rioplatenses/que son solo variaciones de pronunciación sin consecuencias fonológicas)"
+        correctAnswer: lleísmo: mantiene la oposición /ʎ/ vs. /j/ (dos fonemas); yeísmo: neutraliza la distinción → un solo fonema /j/ → el yeísmo es mayoritario en el español contemporáneo; el lleísmo persiste en variedades andinas y algunas rioplatenses
+        rationale: "El yeísmo es una neutralización fonológica: la pérdida del contraste /ʎ/ vs. /j/ reduce el inventario fonológico; en OT se analiza como UNIFORMITY >> IDENT[lateral, palatal] en las variedades yeístas."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Cómo se analiza la aspiración de /s/ en posición de coda en el español atlántico ('los niños' → [loh.ˈni.ɲos])? (que es solo una pronunciación relajada sin análisis fonológico/la aspiración de /s/ coda es un proceso de lenición: CODA-COND (restringe las consonantes en coda) supera a MAX[s] (preserva /s/) → el candidato con [h] viola MAX[s] pero satisface CODA-COND con una obstruyente de menor especificación → en última instancia: elisión total en posición final de palabra → proceso progresivo desde aspiración hasta cero/que la aspiración no afecta al sistema fonológico)"
+        correctAnswer: la aspiración de /s/ coda es un proceso de lenición: CODA-COND (restringe consonantes en coda) supera a MAX[s] (preserva /s/) → el candidato con [h] satisface CODA-COND con menor especificación segmental → puede avanzar a elisión total; proceso gradual
+        rationale: "La aspiración y elisión de /s/ coda en el español atlántico (andaluz, caribeño, rioplatense) es el proceso de lenición más estudiado del español; en OT se analiza como WEAKENING/CODA-COND >> MAX[s]."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es el truncamiento y qué restricciones OT regulan las formas truncadas en español? (que el truncamiento es solo un fenómeno coloquial/el truncamiento hipocorístico ('María → Mari') o profesional ('motocicleta → moto') reduce la forma plena a un pie métrico mínimo → en OT: la restricción TROCHEE o FT-BIN (el pie binario) puede superar a MAX (preservar todos los segmentos) → el output es el pie más prominente de la forma plena, generalmente la cabeza del acento/que el truncamiento no tiene análisis formal)"
+        correctAnswer: el truncamiento hipocorístico ('María → Mari') reduce la forma a un pie métrico mínimo → en OT: FT-BIN (pie binario) y ALIGN-FT superar a MAX (preservar segmentos) → el output es el pie más prominente de la forma plena (generalmente el pie acentuado)
+        rationale: "El truncamiento hipocorístico (Piñeros 2000) es un proceso morfológico-prosódico que en OT se analiza como la selección del pie trocaico mínimo de la palabra plena, con restricciones prosódicas dominantes sobre la fidelidad de los segmentos."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es la vocales epentéticas y qué restricciones OT las generan? (que las vocales epentéticas son errores/cuando la forma subyacente tiene grupos consonánticos no permitidos en la lengua meta, la epenteisis vocálica los deshace → en el español de hablantes de berbere o árabe, se inserta una vocal antes de /s+C/ inicial ('España' → 'Esteban' históricamente) → en OT: DEP (no insertes segmentos) pierde frente a *COMPLEX-ONSET (no hay ataques complejos) → el candidato con vocal epentética gana/que la epenteisis vocálica no existe en español)"
+        correctAnswer: la epenteisis vocálica deshace grupos consonánticos no permitidos → en español, el prefijo vocálico ante /s+C/ inicial ('es-tabla', 'es-cuela') refleja que *COMPLEX-ONSET supera a DEP (no insertes segmentos) → el candidato con vocal epentética satisface *COMPLEX-ONSET a costa de DEP
+        rationale: "La vocal epentética ante /sC/ inicial en español ('España', 'estudiante', 'escuela') es una herencia del latín tardío y del árabe; en OT: *COMPLEX-ONSET >> DEP produce la inserción vocálica."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es la nasal velar ante velar ('banco' → [baŋ.ko]) y cómo se analiza en la geometría de rasgos? (que la nasal es una articulación libre/es asimilación del lugar de articulación: la nasal /n/ asimila el nodo de lugar [dorsal] de la oclusiva velar siguiente → en la geometría de rasgos: el nodo PLACE de /k/ se extiende al nodo PLACE de /n/ mediante spreading, reemplazando el nodo [coronal] → la asimilación es spreading del nodo PLACE/que la nasal velar es un segmento separado del inventario)"
+        correctAnswer: la nasal ante velar asimila el lugar de articulación: el nodo PLACE [dorsal] de /k/ se extiende al nodo PLACE de /n/ mediante spreading (reemplaza [coronal]) → en OT: AGREE[place] supera a IDENT[place] → el candidato con [ŋ] gana el torneo de evaluación
+        rationale: "La asimilación del lugar de la nasal es el ejemplo más enseñado de spreading en la geometría de rasgos: el nodo PLACE de la obstruyente siguiente se extiende a la nasal precedente, borrando el nodo PLACE original."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué diferencia existe entre el sistema entonativo del español peninsular centro-norte y el español caribeño? (que todos los dialectos tienen la misma entonación/el español peninsular estándar tiene accent de pitch L+H* en los enunciados declarativos neutros y el tono de frontera L% (entonación descendente); el español caribeño (cubano, puertorriqueño, venezolano) tiene frecuentemente tonos H+L* o circunflejos y tonos de frontera H% (entonación ascendente en declarativos) → diferencias de alineamiento tonal y de tonos de frontera/que el español no tiene dialectos entonativos)"
+        correctAnswer: el español peninsular estándar tiene accent de pitch L+H* y tono de frontera L% (declarativos descendentes); el español caribeño tiene con frecuencia H+L* y tono de frontera H% (declarativos ascendentes) → la variación dialectal en la entonación se representa con el sistema Sp_ToBI
+        rationale: "La variación dialectal entonativa del español (Prieto/Roseano 2010, Atlas Multimedia de la Prosodia del Espacio Románico): el Sp_ToBI documenta las diferencias sistemáticas en acentos de pitch y tonos de frontera entre variedades."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es la 'restricción de morfema mínimo' (minimal word) y cómo se manifiesta en el español? (que no existe en español/la restricción de morfema mínimo exige que toda palabra fonológica contenga al menos un pie mínimo (mínimo bisilábico en español) → explica la epenteisis en palabras demasiado cortas y la forma mínima de los préstamos: los monosílabos cerrados (CVC) en español son fonológicamente posibles pero la mayoría de las palabras léxicas son bisilábicas → en OT: FTBIN y LEXMIN interactúan para definir el mínimo léxico/que el español acepta monosílabos sin restricción)"
+        correctAnswer: la restricción de morfema mínimo exige que toda palabra fonológica contenga al menos un pie mínimo → explica por qué los préstamos monosilábicos suelen adaptarse como bisilábicos y por qué el español léxico es predominantemente bisilábico; en OT: FTBIN y LEXMIN
+        rationale: "El mínimo léxico del español (McCarthy/Prince 1993): la mayoría de palabras léxicas españolas son bisilábicas o más largas; la restricción de palabra mínima (un pie trocaico) se impone sobre préstamos y truncamientos."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Cómo se analiza la metátesis en la formación de palabras del español antiguo y dialectal ('milagro < miraculo', 'cocodrilo/crocodilo')? (que la metátesis es solo un error/la metátesis es un proceso fonológico que reordena segmentos → en el español antiguo, la metátesis de consonantes en posición de coda y ataque ('miracul- → milagro') puede analizarse como reparación de una restricción de sílaba: la consonante que viola la CODA-COND se reordena para aparecer en posición de ataque → en OT: una combinación de LINEARITY (preserve el orden) y CODA-COND explica la metátesis/que la metátesis no tiene análisis formal)"
+        correctAnswer: la metátesis reordena segmentos como reparación fonológica → en OT: CODA-COND (restricción de marcación) puede superar a LINEARITY (preserve el orden de los segmentos) → el reordenamiento que produce una estructura silábica mejor formada gana el torneo
+        rationale: "La metátesis en OT (Hume 2001): la metátesis como proceso que viola LINEARITY (fidelidad del orden) pero satisface restricciones de marcación prosódica; en el español antiguo, la metátesis de 'miraculo→milagro' reorganiza los segmentos para mejorar la estructura silábica."
+        difficulty: 5
+        objectives: [es.pre_reading]
+      - type: grammar
+        question: "¿Qué es la fonología de la interfaz y por qué los procesos postléxicos difieren de los léxicos en la OT estratal? (que todos los procesos fonológicos son idénticos/la fonología léxica opera dentro de los morfemas y antes de la composición sintáctica → sus restricciones son más estrictas (más fidelidad, menos marcación suprimida); la fonología postléxica opera en el dominio fonológico mayor (frase, enunciado) → sus restricciones de marcación pueden superar a las de fidelidad → los procesos postléxicos (resilabificación, sandhi) aplican a dominios mayores que los léxicos/que no hay diferencia entre fonología léxica y postléxica)"
+        correctAnswer: la fonología léxica opera dentro de morfemas con restricciones más estrictas de fidelidad; la fonología postléxica opera en el dominio de la frase fonológica → permite procesos de sandhi y resilabificación que cruzan límites de palabra porque las restricciones de fidelidad son más débiles en el dominio mayor
+        rationale: "La OT estratal (Kiparsky 2000; Bermúdez-Otero 2012): los dominios léxico y postléxico tienen jerarquías de restricciones distintas (el dominio mayor permite más marcación suprimida), explicando por qué ciertos procesos solo aplican postléxicamente."
+        difficulty: 5
+        objectives: [es.pre_reading]
+target: 20
