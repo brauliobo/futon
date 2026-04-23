@@ -1,0 +1,112 @@
+title: 🔬 Análise Sintática - Sujeito e Predicado
+level: E
+subject: portuguese
+difficulty: 3
+objectives: [EF07LP08, EF08LP06]
+authorNotes: Identificação de sujeito simples, composto, indeterminado e oração sem sujeito; predicado verbal e nominal.
+example: "Sujeito é de quem se fala; predicado é o que se diz. Ex.: 'O gato dorme' — sujeito: o gato."
+passCriteria:
+  minAccuracyPercent: 75
+  maxAvgSecondsPerExercise: 50
+pages:
+  - pageNumber: 1
+    title: Sujeito Simples
+    description: Um único núcleo no sujeito.
+    exercises:
+      - type: paragraph
+        question: "Em 'A menina cantou', qual é o sujeito? (cantou/a menina/menina/a)"
+        correctAnswer: a menina
+        difficulty: 1
+        rationale: Sujeito inclui artigo e substantivo — a menina é o sujeito simples.
+        objectives: [EF07LP08]
+  - pageNumber: 2
+    title: Núcleo do Sujeito
+    description: O substantivo (ou pronome) principal do sujeito.
+    exercises:
+      - type: paragraph
+        question: "Em 'Os alunos chegaram', o núcleo do sujeito é: (os/alunos/chegaram/os alunos)"
+        correctAnswer: alunos
+        difficulty: 2
+        rationale: Núcleo é o substantivo principal; artigos são adjuntos do sujeito.
+        objectives: [EF07LP08]
+  - pageNumber: 3
+    title: Sujeito Composto
+    description: Dois ou mais núcleos.
+    exercises:
+      - type: paragraph
+        question: "Em 'Pedro e Maria viajaram', o sujeito é: (simples/composto/oculto/indeterminado)"
+        correctAnswer: composto
+        difficulty: 2
+        rationale: Dois núcleos (Pedro e Maria) formam sujeito composto.
+        objectives: [EF07LP08]
+  - pageNumber: 4
+    title: Sujeito Oculto
+    description: Sujeito não aparece, mas é identificável pela desinência verbal.
+    exercises:
+      - type: paragraph
+        question: "Em 'Chegamos cedo', o sujeito é: (chegamos/nós/oculto/indeterminado)"
+        correctAnswer: oculto
+        difficulty: 2
+        rationale: Nós está implícito na desinência -mos; não aparece mas é identificável.
+        objectives: [EF07LP08]
+  - pageNumber: 5
+    title: Sujeito Indeterminado
+    description: Não se pode ou não se quer identificar o agente.
+    exercises:
+      - type: paragraph
+        question: "Em 'Falaram mal de você', o sujeito é: (oculto/eles/indeterminado/inexistente)"
+        correctAnswer: indeterminado
+        difficulty: 3
+        rationale: Verbo na 3ª plural sem referente claro no contexto = sujeito indeterminado.
+        objectives: [EF08LP06]
+  - pageNumber: 6
+    title: Oração sem Sujeito
+    description: Verbos impessoais não têm sujeito.
+    exercises:
+      - type: paragraph
+        question: "Em 'Choveu muito ontem', o sujeito é: (choveu/a chuva/inexistente/indeterminado)"
+        correctAnswer: inexistente
+        difficulty: 3
+        rationale: Verbos meteorológicos (chover, nevar, trovejar) são impessoais — sem sujeito.
+        objectives: [EF08LP06]
+  - pageNumber: 7
+    title: Predicado Verbal
+    description: Núcleo é um verbo de ação.
+    exercises:
+      - type: paragraph
+        question: "Em 'O cachorro latiu muito', o predicado é: (o cachorro/latiu muito/latiu/cachorro latiu)"
+        correctAnswer: latiu muito
+        difficulty: 2
+        rationale: Predicado é tudo que se diz do sujeito; latiu muito é predicado verbal.
+        objectives: [EF07LP08]
+  - pageNumber: 8
+    title: Predicado Nominal
+    description: Verbo de ligação + predicativo do sujeito.
+    exercises:
+      - type: paragraph
+        question: "Em 'O céu está azul', o predicado é: (está azul/o céu/azul/está)"
+        correctAnswer: está azul
+        difficulty: 2
+        rationale: Está é verbo de ligação; azul é predicativo; juntos formam o predicado nominal.
+        objectives: [EF07LP08]
+  - pageNumber: 9
+    title: Verbo de Ligação
+    description: Liga sujeito ao predicativo (ser, estar, ficar, parecer...).
+    exercises:
+      - type: paragraph
+        question: "Qual é verbo de ligação? (correr/cantar/ser/comprar)"
+        correctAnswer: ser
+        difficulty: 2
+        rationale: Ser é verbo de ligação clássico; os outros são verbos de ação.
+        objectives: [EF07LP08]
+  - pageNumber: 10
+    title: Revisão Integrada
+    description: Análise sintática completa.
+    exercises:
+      - type: paragraph
+        question: "Em 'Minha irmã ficou feliz', o sujeito e o predicado são: (minha irmã / ficou feliz/minha / irmã ficou feliz/irmã / ficou/minha irmã / ficou)"
+        correctAnswer: minha irmã / ficou feliz
+        difficulty: 3
+        rationale: Minha irmã é sujeito simples; ficou feliz é predicado nominal (ficou = VL, feliz = predicativo).
+        objectives: [EF08LP06]
+target: 10
