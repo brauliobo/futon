@@ -24,7 +24,7 @@ export const setSchema = {
   properties: {
     title: { type: 'string', minLength: 1 },
     level: { type: 'string', minLength: 1 },
-    subject: { type: 'string', enum: ['math', 'portuguese', 'english', 'japanese'] },
+    subject: { type: 'string', enum: ['math', 'portuguese', 'english', 'japanese', 'spanish'] },
     example: { type: 'string' },
     inputType: { type: 'string' },
     repeatAll: { type: 'integer', minimum: 1 },

@@ -9,13 +9,22 @@ import { parse } from 'yaml';
 import { validate as validateSchema } from '../src/domain/schema/setSchema.js';
 import { familyOf } from '../src/domain/schema/exerciseTypes.js';
 import SetModel from '../src/domain/Set.js';
+import { SkillTree } from '../src/domain/SkillTree.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', BLUE = '\x1b[34m', CYAN = '\x1b[36m';
 const c = (text, color) => `${color}${text}${RESET}`;
 const tableStyle = { head: [], border: [], compact: true, 'padding-left': 1, 'padding-right': 1 };
 
-const SUBJECTS = ['math', 'portuguese', 'english', 'japanese'];
+const SUBJECTS = ['math', 'portuguese', 'english', 'japanese', 'spanish'];
+
+// Build level→theme map per subject for coverage checks
+const themeIndex = Object.fromEntries(SUBJECTS.map(s => {
+  const nodes = SkillTree.forSubject(s);
+  const map = {};
+  nodes.forEach(n => n.levels.forEach(lvl => { map[lvl] = n.id; }));
+  return [s, map];
+}));
 
 function loadAll(rootDir) {
   const all = [];
@@ -115,6 +124,9 @@ function validateSet(raw) {
   // Runtime/user state must not be committed in content YAML. Student
   // progress lives in profile storage; stale `progress:` blocks here are
   // test leakage.
+  const theme = themeIndex[raw.subject]?.[raw.level];
+  if (!theme) issues.push(`No SkillTree theme covers ${raw.subject}/${raw.level} — add a node in SkillTree.js`);
+
   if (raw.progress !== undefined) {
     issues.push(`Stale "progress" field committed (belongs in profile storage, not content YAML)`);
   }
