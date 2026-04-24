@@ -36,7 +36,7 @@
 <script>
 import { DisciplineManager } from "./services/DisciplineManager.js";
 import { SetFactory } from "./services/SetFactory.js";
-import { ProfileStorage } from "./services/ProfileStorage.js";
+import { useProfileStore } from "./stores/profileStore.js";
 import { Streak } from "./utils/Streak.js";
 import Home from "./components/Home.vue";
 import Set from "./components/set/Set.vue";
@@ -47,6 +47,7 @@ import InstallButton from "./components/InstallButton.vue";
 import UpdatePrompt from "./components/UpdatePrompt.vue";
 import { SetStorage } from "./services/SetStorage.js";
 import { Formatter } from "./utils/Formatter.js";
+import { migrateToIDB } from "./services/StorageMigration.js";
 
 export default {
   name: "App",
@@ -86,6 +87,7 @@ export default {
         existingSeed
       );
       
+      await migrateToIDB(this.activeProfile?.id || 'default');
       await this.loadInitialDataWithHash();
       this.isLoading = false;
       this.loadSets();
@@ -307,6 +309,7 @@ export default {
         const existingSeed = localStorage.getItem('futon_seed_addition') || String(Math.random()).slice(2);
         localStorage.setItem('futon_seed_addition', existingSeed);
         this.disciplineManager = DisciplineManager.create(wb => setFactory.createSet(wb), {}, existingSeed);
+        await migrateToIDB(profile.id);
         await this.loadInitialDataWithHash();
         this.isLoading = false;
         this.loadSets();
