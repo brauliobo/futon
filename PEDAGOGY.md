@@ -106,6 +106,23 @@ Dashboard (`pnpm eval:dashboard`) shows global pedagogy score **100%** across 10
 5. **Progressive difficulty.** Within a set: flat or rising. Between sets: monotonic, step ≤ 1.
 6. **Daily-doable volume.** 90–100 exercises = ~15 min of focused practice. Short questions (<250 chars).
 
+## Standard set structure
+
+All disciplines use **10 pages × 10 exercises = 100 exercises per set** (`target: 100`). This is the Kumon-grade unit of daily practice.
+
+| Discipline | Pages/set | Exercises/page | Target | Notes |
+|---|---|---|---|---|
+| math | 10 | 10 | 100 | Numeric input; `type: count`/`arithmetic`/etc. |
+| portuguese | 10 | 1 | 10 | `type: paragraph`; each page = one rich question |
+| spanish | 10 | 1 | 10 | Same as portuguese |
+| english (A) | 2 | 10 | 20 | `type: english_vocab`; `repeatAll: 2` doubles repetitions |
+| english (B–L) | 2 | 10 | 20 | `type: english_phrases`; `repeatAll: 2` |
+| japanese | 2 | 10 | 20 | `type: japanese_vocab`; compact inline YAML |
+
+Portuguese/Spanish use 1 exercise per page because each question is a full paragraph with rich multiple-choice options and a detailed rationale — equivalent in depth to 5–10 math exercises.
+
+English and Japanese use 2 pages with `repeatAll: 2`, making the effective exercise count 40 through repetition, which matches the daily-practice target.
+
 ## Scoring rubric (100 pts per set)
 
 | # | Dimension | Pts | What earns full marks |
