@@ -1,0 +1,404 @@
+title: Transformações Lineares
+level: Q
+subject: math
+authorNotes: Transformações Lineares. Foque no conceito central do conjunto e nos erros comuns.
+inputType: number
+difficulty: 4
+objectives:
+  - linalg.linear_transformations
+example: "T linear ↔ T(u+v)=T(u)+T(v) e T(cv)=cT(v). Matriz de T nas bases."
+passCriteria:
+  minAccuracyPercent: 70
+  maxAvgSecondsPerExercise: 25
+pages:
+  - pageNumber: 1
+    title: Linearidade — prática 1
+    description: "T linear: T(0)=0; T(au+bv)=aT(u)+bT(v)."
+    exercises:
+      - type: geometry
+        question: "T linear → T(0) = ?"
+        correctAnswer: 0
+        rationale: "T(0) = T(0·v) = 0·T(v) = 0."
+        difficulty: 2
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(2x,3y): T(1,0) = (2,?)"
+        correctAnswer: 0
+        rationale: "T(1,0) = (2·1, 3·0) = (2,0)."
+        difficulty: 2
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(2x,3y): T(0,1) = (0,?)"
+        correctAnswer: 3
+        rationale: "T(0,1) = (0, 3·1) = (0,3)."
+        difficulty: 2
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(2x,3y): T(4,5) — x-comp = ?"
+        correctAnswer: 8
+        rationale: "T(4,5) = (8,15)."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(x+y, x-y): T(3,1) — x-comp = ?"
+        correctAnswer: 4
+        rationale: "x-comp = 3+1 = 4."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+  - pageNumber: 2
+    title: Linearidade — prática 2
+    description: "T linear: T(0)=0; T(au+bv)=aT(u)+bT(v)."
+    exercises:
+      - type: geometry
+        question: "T linear → T(0) = ?"
+        correctAnswer: 0
+        rationale: "T(0) = T(0·v) = 0·T(v) = 0."
+        difficulty: 2
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(2x,3y): T(1,0) = (2,?)"
+        correctAnswer: 0
+        rationale: "T(1,0) = (2·1, 3·0) = (2,0)."
+        difficulty: 2
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(2x,3y): T(0,1) = (0,?)"
+        correctAnswer: 3
+        rationale: "T(0,1) = (0, 3·1) = (0,3)."
+        difficulty: 2
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(2x,3y): T(4,5) — x-comp = ?"
+        correctAnswer: 8
+        rationale: "T(4,5) = (8,15)."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(x+y, x-y): T(3,1) — x-comp = ?"
+        correctAnswer: 4
+        rationale: "x-comp = 3+1 = 4."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+  - pageNumber: 3
+    title: Matriz de Transformação — prática 1
+    description: "[T] = [T(e₁) | T(e₂)] como colunas."
+    exercises:
+      - type: geometry
+        question: "T(x,y)=(3x,5y): [T][1,1] (linha1,col1) = ?"
+        correctAnswer: 3
+        rationale: "T(e₁)=(3,0); primeira coluna: [3,0]."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(3x,5y): [T][2,2] = ?"
+        correctAnswer: 5
+        rationale: "T(e₂)=(0,5); segunda coluna: [0,5]; elem(2,2)=5."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T de rotação 90°: [T] = [-0 -1; 1 0]. T(1,0) = (0,?)"
+        correctAnswer: 1
+        rationale: "T(1,0) = (-0, 1) = (0,1)."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T de reflexão em eixo x: T(0,1) = (0,?)"
+        correctAnswer: -1
+        rationale: "Reflexão eixo x: (x,y)→(x,-y); T(0,1)=(0,-1)."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T de homotetia k=4: T(2,3) — x-comp = ?"
+        correctAnswer: 8
+        rationale: "T(2,3) = (8,12)."
+        difficulty: 2
+        objectives:
+          - linalg.linear_transformations
+  - pageNumber: 4
+    title: Matriz de Transformação — prática 2
+    description: "[T] = [T(e₁) | T(e₂)] como colunas."
+    exercises:
+      - type: geometry
+        question: "T(x,y)=(3x,5y): [T][1,1] (linha1,col1) = ?"
+        correctAnswer: 3
+        rationale: "T(e₁)=(3,0); primeira coluna: [3,0]."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(3x,5y): [T][2,2] = ?"
+        correctAnswer: 5
+        rationale: "T(e₂)=(0,5); segunda coluna: [0,5]; elem(2,2)=5."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T de rotação 90°: [T] = [-0 -1; 1 0]. T(1,0) = (0,?)"
+        correctAnswer: 1
+        rationale: "T(1,0) = (-0, 1) = (0,1)."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T de reflexão em eixo x: T(0,1) = (0,?)"
+        correctAnswer: -1
+        rationale: "Reflexão eixo x: (x,y)→(x,-y); T(0,1)=(0,-1)."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T de homotetia k=4: T(2,3) — x-comp = ?"
+        correctAnswer: 8
+        rationale: "T(2,3) = (8,12)."
+        difficulty: 2
+        objectives:
+          - linalg.linear_transformations
+  - pageNumber: 5
+    title: Núcleo e Imagem — prática 1
+    description: "ker(T)={v: T(v)=0}; Im(T)=T(espaço)."
+    exercises:
+      - type: geometry
+        question: "T(x,y)=(x,0): ker contém (0,c)? (1=sim)"
+        correctAnswer: 1
+        rationale: "T(0,c)=(0,0) → (0,c) ∈ ker."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(x,0): dim ker = ?"
+        correctAnswer: 1
+        rationale: "ker = {(0,y)}: reta → dim 1."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(x,0): dim Im = ?"
+        correctAnswer: 1
+        rationale: "Im = {(x,0)}: eixo x → dim 1."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "Teorema rank-nulidade: dim ker + dim Im = dim domínio; T: R² → R²: dim ker + dim Im = ?"
+        correctAnswer: 2
+        rationale: "dim ker + rank = 2."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T injetiva ↔ dim ker = ?"
+        correctAnswer: 0
+        rationale: "T injetiva ↔ ker = {0} ↔ dim ker = 0."
+        difficulty: 4
+        objectives:
+          - linalg.linear_transformations
+  - pageNumber: 6
+    title: Núcleo e Imagem — prática 2
+    description: "ker(T)={v: T(v)=0}; Im(T)=T(espaço)."
+    exercises:
+      - type: geometry
+        question: "T(x,y)=(x,0): ker contém (0,c)? (1=sim)"
+        correctAnswer: 1
+        rationale: "T(0,c)=(0,0) → (0,c) ∈ ker."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(x,0): dim ker = ?"
+        correctAnswer: 1
+        rationale: "ker = {(0,y)}: reta → dim 1."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(x,0): dim Im = ?"
+        correctAnswer: 1
+        rationale: "Im = {(x,0)}: eixo x → dim 1."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "Teorema rank-nulidade: dim ker + dim Im = dim domínio; T: R² → R²: dim ker + dim Im = ?"
+        correctAnswer: 2
+        rationale: "dim ker + rank = 2."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T injetiva ↔ dim ker = ?"
+        correctAnswer: 0
+        rationale: "T injetiva ↔ ker = {0} ↔ dim ker = 0."
+        difficulty: 4
+        objectives:
+          - linalg.linear_transformations
+  - pageNumber: 7
+    title: Composição de Transformações — prática 1
+    description: "(S∘T)(v) = S(T(v)); [S∘T] = [S]·[T]."
+    exercises:
+      - type: geometry
+        question: "T(x,y)=(2x,y); S(x,y)=(x,3y): (S∘T)(1,1) — x = ?"
+        correctAnswer: 2
+        rationale: "T(1,1)=(2,1); S(2,1)=(2,3); x=2."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(2x,y); S(x,y)=(x,3y): (S∘T)(1,1) — y = ?"
+        correctAnswer: 3
+        rationale: "S(2,1)=(2,3); y=3."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T∘T⁻¹ = ? (1=identidade)"
+        correctAnswer: 1
+        rationale: "Composição com inversa = identidade."
+        difficulty: 2
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "[S∘T] = [S]·[T]; det([S∘T]) = det([S])·det([T]); detS=2, detT=3: det(S∘T) = ?"
+        correctAnswer: 6
+        rationale: "det(ST) = 2·3 = 6."
+        difficulty: 4
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "Rotação 180° = R90°∘R90°: T(1,0) = (-1, ?)"
+        correctAnswer: 0
+        rationale: "R90°(1,0)=(0,1); R90°(0,1)=(-1,0)."
+        difficulty: 4
+        objectives:
+          - linalg.linear_transformations
+  - pageNumber: 8
+    title: Composição de Transformações — prática 2
+    description: "(S∘T)(v) = S(T(v)); [S∘T] = [S]·[T]."
+    exercises:
+      - type: geometry
+        question: "T(x,y)=(2x,y); S(x,y)=(x,3y): (S∘T)(1,1) — x = ?"
+        correctAnswer: 2
+        rationale: "T(1,1)=(2,1); S(2,1)=(2,3); x=2."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(2x,y); S(x,y)=(x,3y): (S∘T)(1,1) — y = ?"
+        correctAnswer: 3
+        rationale: "S(2,1)=(2,3); y=3."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T∘T⁻¹ = ? (1=identidade)"
+        correctAnswer: 1
+        rationale: "Composição com inversa = identidade."
+        difficulty: 2
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "[S∘T] = [S]·[T]; det([S∘T]) = det([S])·det([T]); detS=2, detT=3: det(S∘T) = ?"
+        correctAnswer: 6
+        rationale: "det(ST) = 2·3 = 6."
+        difficulty: 4
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "Rotação 180° = R90°∘R90°: T(1,0) = (-1, ?)"
+        correctAnswer: 0
+        rationale: "R90°(1,0)=(0,1); R90°(0,1)=(-1,0)."
+        difficulty: 4
+        objectives:
+          - linalg.linear_transformations
+  - pageNumber: 9
+    title: Isomorfismo — prática 1
+    description: "T isomorfismo ↔ bijetiva ↔ det≠0."
+    exercises:
+      - type: geometry
+        question: "T(x,y)=(2x,3y): det([T]) = ?"
+        correctAnswer: 6
+        rationale: "det = 2·3-0·0 = 6 ≠ 0 → isomorfismo."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T isomorfismo ↔ det([T]) = ?"
+        correctAnswer: 0
+        rationale: "Isomorfismo ↔ det ≠ 0; pergunta: se det=0 → não isomorfismo."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(x+y, x+y): det([T]) = ?"
+        correctAnswer: 0
+        rationale: "det([1 1; 1 1]) = 1-1 = 0 → não injetiva."
+        difficulty: 4
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "Rotação por qualquer ângulo é isomorfismo? det = ?"
+        correctAnswer: 1
+        rationale: "det de rotação = cos²θ+sen²θ = 1 ≠ 0."
+        difficulty: 4
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "Reflexão em eixo x: det = ?"
+        correctAnswer: -1
+        rationale: "det([1 0; 0 -1]) = -1; isomorfismo (det≠0)."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+  - pageNumber: 10
+    title: Isomorfismo — prática 2
+    description: "T isomorfismo ↔ bijetiva ↔ det≠0."
+    exercises:
+      - type: geometry
+        question: "T(x,y)=(2x,3y): det([T]) = ?"
+        correctAnswer: 6
+        rationale: "det = 2·3-0·0 = 6 ≠ 0 → isomorfismo."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T isomorfismo ↔ det([T]) = ?"
+        correctAnswer: 0
+        rationale: "Isomorfismo ↔ det ≠ 0; pergunta: se det=0 → não isomorfismo."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "T(x,y)=(x+y, x+y): det([T]) = ?"
+        correctAnswer: 0
+        rationale: "det([1 1; 1 1]) = 1-1 = 0 → não injetiva."
+        difficulty: 4
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "Rotação por qualquer ângulo é isomorfismo? det = ?"
+        correctAnswer: 1
+        rationale: "det de rotação = cos²θ+sen²θ = 1 ≠ 0."
+        difficulty: 4
+        objectives:
+          - linalg.linear_transformations
+      - type: geometry
+        question: "Reflexão em eixo x: det = ?"
+        correctAnswer: -1
+        rationale: "det([1 0; 0 -1]) = -1; isomorfismo (det≠0)."
+        difficulty: 3
+        objectives:
+          - linalg.linear_transformations
+target: 100

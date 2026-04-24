@@ -1,0 +1,405 @@
+title: Estatística & Probabilidade — Revisão Final
+level: P
+subject: math
+authorNotes: Estatística & Probabilidade — Revisão Final. Foque no conceito central do conjunto e nos erros comuns.
+inputType: text
+difficulty: 5
+objectives:
+  - stats
+  - prob
+example: "Revisão integrada: de E[X]=np a IC=x̄±z·σ/√n. Ex.: Bin(10,0.4) → E[X]=4, Var=2.4."
+passCriteria:
+  minAccuracyPercent: 75
+  maxAvgSecondsPerExercise: 20
+pages:
+  - pageNumber: 1
+    title: Probabilidade Básica — revisão 1
+    description: Regras fundamentais.
+    exercises:
+      - type: mental_math
+        question: P(A) = 0.4, P(Ā) = ?
+        correctAnswer: 0.6
+        rationale: P(Ā) = 1 - P(A).
+        difficulty: 2
+        objectives:
+          - prob
+      - type: mental_math
+        question: P(A)=0.3, P(B)=0.5, mutuamente exclusivos → P(A∪B) = ?
+        correctAnswer: 0.8
+        rationale: P(A∪B) = P(A)+P(B) quando P(A∩B)=0.
+        difficulty: 3
+        objectives:
+          - prob
+      - type: mental_math
+        question: P(A)=0.4, P(B)=0.3, P(A∩B)=0.1 → P(A∪B) = ?
+        correctAnswer: 0.6
+        rationale: P(A∪B) = 0.4+0.3-0.1 = 0.6.
+        difficulty: 3
+        objectives:
+          - prob
+      - type: mental_math
+        question: P(A|B) = P(A∩B)/P(B); P(A∩B)=0.2, P(B)=0.4 → P(A|B) = ?
+        correctAnswer: 0.5
+        rationale: P(A|B) = 0.2/0.4 = 0.5.
+        difficulty: 3
+        objectives:
+          - prob
+      - type: mental_math
+        question: A e B independentes com P(A)=0.3, P(B)=0.5 → P(A∩B) = ?
+        correctAnswer: 0.15
+        rationale: Independência → P(A∩B) = P(A)·P(B) = 0.15.
+        difficulty: 3
+        objectives:
+          - prob
+  - pageNumber: 2
+    title: Probabilidade Básica — revisão 2
+    description: Regras fundamentais.
+    exercises:
+      - type: mental_math
+        question: P(A) = 0.4, P(Ā) = ?
+        correctAnswer: 0.6
+        rationale: P(Ā) = 1 - P(A).
+        difficulty: 2
+        objectives:
+          - prob
+      - type: mental_math
+        question: P(A)=0.3, P(B)=0.5, mutuamente exclusivos → P(A∪B) = ?
+        correctAnswer: 0.8
+        rationale: P(A∪B) = P(A)+P(B) quando P(A∩B)=0.
+        difficulty: 3
+        objectives:
+          - prob
+      - type: mental_math
+        question: P(A)=0.4, P(B)=0.3, P(A∩B)=0.1 → P(A∪B) = ?
+        correctAnswer: 0.6
+        rationale: P(A∪B) = 0.4+0.3-0.1 = 0.6.
+        difficulty: 3
+        objectives:
+          - prob
+      - type: mental_math
+        question: P(A|B) = P(A∩B)/P(B); P(A∩B)=0.2, P(B)=0.4 → P(A|B) = ?
+        correctAnswer: 0.5
+        rationale: P(A|B) = 0.2/0.4 = 0.5.
+        difficulty: 3
+        objectives:
+          - prob
+      - type: mental_math
+        question: A e B independentes com P(A)=0.3, P(B)=0.5 → P(A∩B) = ?
+        correctAnswer: 0.15
+        rationale: Independência → P(A∩B) = P(A)·P(B) = 0.15.
+        difficulty: 3
+        objectives:
+          - prob
+  - pageNumber: 3
+    title: Combinatória — revisão 1
+    description: Permutações, arranjos e combinações.
+    exercises:
+      - type: mental_math
+        question: C(6,2) = ?
+        correctAnswer: 15
+        rationale: C(6,2) = 6×5/2 = 15.
+        difficulty: 3
+        objectives:
+          - prob
+      - type: mental_math
+        question: A(5,3) = ?
+        correctAnswer: 60
+        rationale: A(5,3) = 5×4×3 = 60.
+        difficulty: 3
+        objectives:
+          - prob
+      - type: mental_math
+        question: Anagramas de CASA (C,A,S,A) = ?
+        correctAnswer: 12
+        rationale: 4!/2! = 24/2 = 12.
+        difficulty: 3
+        objectives:
+          - prob
+      - type: mental_math
+        question: Mesa circular de 5 pessoas = ?
+        correctAnswer: 24
+        rationale: (5-1)! = 4! = 24.
+        difficulty: 4
+        objectives:
+          - prob
+      - type: mental_math
+        question: Coeficiente de x² em (1+x)^5 = ?
+        correctAnswer: 10
+        rationale: C(5,2) = 10.
+        difficulty: 3
+        objectives:
+          - prob
+  - pageNumber: 4
+    title: Combinatória — revisão 2
+    description: Permutações, arranjos e combinações.
+    exercises:
+      - type: mental_math
+        question: C(6,2) = ?
+        correctAnswer: 15
+        rationale: C(6,2) = 6×5/2 = 15.
+        difficulty: 3
+        objectives:
+          - prob
+      - type: mental_math
+        question: A(5,3) = ?
+        correctAnswer: 60
+        rationale: A(5,3) = 5×4×3 = 60.
+        difficulty: 3
+        objectives:
+          - prob
+      - type: mental_math
+        question: Anagramas de CASA (C,A,S,A) = ?
+        correctAnswer: 12
+        rationale: 4!/2! = 24/2 = 12.
+        difficulty: 3
+        objectives:
+          - prob
+      - type: mental_math
+        question: Mesa circular de 5 pessoas = ?
+        correctAnswer: 24
+        rationale: (5-1)! = 4! = 24.
+        difficulty: 4
+        objectives:
+          - prob
+      - type: mental_math
+        question: Coeficiente de x² em (1+x)^5 = ?
+        correctAnswer: 10
+        rationale: C(5,2) = 10.
+        difficulty: 3
+        objectives:
+          - prob
+  - pageNumber: 5
+    title: Variáveis Aleatórias e Esperança — revisão 1
+    description: E[X], Var(X) e distribuição.
+    exercises:
+      - type: mental_math
+        question: X={1,2,3} uniforme → E[X] = ?
+        correctAnswer: 2
+        rationale: E[X] = (1+2+3)/3 = 2.
+        difficulty: 2
+        objectives:
+          - stats
+      - type: mental_math
+        question: Bernoulli(0.6) → E[X] = ?
+        correctAnswer: 0.6
+        rationale: E[X] = p = 0.6.
+        difficulty: 2
+        objectives:
+          - stats
+      - type: mental_math
+        question: Bin(10, 0.4) → E[X] = ?
+        correctAnswer: 4
+        rationale: E[X] = n·p = 10×0.4 = 4.
+        difficulty: 2
+        objectives:
+          - stats
+      - type: mental_math
+        question: Bin(10, 0.4) → Var(X) = n·p·q = ?
+        correctAnswer: 2.4
+        rationale: Var = 10×0.4×0.6 = 2.4.
+        difficulty: 3
+        objectives:
+          - stats
+      - type: mental_math
+        question: E[X]=3, Var(X)=4 → E[2X+1] = ?
+        correctAnswer: 7
+        rationale: E[2X+1] = 2×3+1 = 7.
+        difficulty: 3
+        objectives:
+          - stats
+  - pageNumber: 6
+    title: Variáveis Aleatórias e Esperança — revisão 2
+    description: E[X], Var(X) e distribuição.
+    exercises:
+      - type: mental_math
+        question: X={1,2,3} uniforme → E[X] = ?
+        correctAnswer: 2
+        rationale: E[X] = (1+2+3)/3 = 2.
+        difficulty: 2
+        objectives:
+          - stats
+      - type: mental_math
+        question: Bernoulli(0.6) → E[X] = ?
+        correctAnswer: 0.6
+        rationale: E[X] = p = 0.6.
+        difficulty: 2
+        objectives:
+          - stats
+      - type: mental_math
+        question: Bin(10, 0.4) → E[X] = ?
+        correctAnswer: 4
+        rationale: E[X] = n·p = 10×0.4 = 4.
+        difficulty: 2
+        objectives:
+          - stats
+      - type: mental_math
+        question: Bin(10, 0.4) → Var(X) = n·p·q = ?
+        correctAnswer: 2.4
+        rationale: Var = 10×0.4×0.6 = 2.4.
+        difficulty: 3
+        objectives:
+          - stats
+      - type: mental_math
+        question: E[X]=3, Var(X)=4 → E[2X+1] = ?
+        correctAnswer: 7
+        rationale: E[2X+1] = 2×3+1 = 7.
+        difficulty: 3
+        objectives:
+          - stats
+  - pageNumber: 7
+    title: Estatística Descritiva — revisão 1
+    description: Medidas de posição e dispersão.
+    exercises:
+      - type: mental_math
+        question: "{3,7,2,9,4} — média = ?"
+        correctAnswer: 5
+        rationale: (3+7+2+9+4)/5 = 25/5 = 5.
+        difficulty: 3
+        objectives:
+          - stats
+      - type: mental_math
+        question: "{2,3,4,7,9} — mediana = ?"
+        correctAnswer: 4
+        rationale: Ordenado; valor central (3º de 5) = 4.
+        difficulty: 2
+        objectives:
+          - stats
+      - type: mental_math
+        question: "{2,3,4,7,9} — amplitude = ?"
+        correctAnswer: 7
+        rationale: Amplitude = max - min = 9-2 = 7.
+        difficulty: 2
+        objectives:
+          - stats
+      - type: mental_math
+        question: s=2, x̄=10 → CV (%) = ?
+        correctAnswer: 20
+        rationale: CV = (s/x̄)×100 = 20%.
+        difficulty: 3
+        objectives:
+          - stats
+      - type: mental_math
+        question: r=0.9 → R² = ?
+        correctAnswer: 0.81
+        rationale: R² = r² = 0.81.
+        difficulty: 2
+        objectives:
+          - stats
+  - pageNumber: 8
+    title: Estatística Descritiva — revisão 2
+    description: Medidas de posição e dispersão.
+    exercises:
+      - type: mental_math
+        question: "{3,7,2,9,4} — média = ?"
+        correctAnswer: 5
+        rationale: (3+7+2+9+4)/5 = 25/5 = 5.
+        difficulty: 3
+        objectives:
+          - stats
+      - type: mental_math
+        question: "{2,3,4,7,9} — mediana = ?"
+        correctAnswer: 4
+        rationale: Ordenado; valor central (3º de 5) = 4.
+        difficulty: 2
+        objectives:
+          - stats
+      - type: mental_math
+        question: "{2,3,4,7,9} — amplitude = ?"
+        correctAnswer: 7
+        rationale: Amplitude = max - min = 9-2 = 7.
+        difficulty: 2
+        objectives:
+          - stats
+      - type: mental_math
+        question: s=2, x̄=10 → CV (%) = ?
+        correctAnswer: 20
+        rationale: CV = (s/x̄)×100 = 20%.
+        difficulty: 3
+        objectives:
+          - stats
+      - type: mental_math
+        question: r=0.9 → R² = ?
+        correctAnswer: 0.81
+        rationale: R² = r² = 0.81.
+        difficulty: 2
+        objectives:
+          - stats
+  - pageNumber: 9
+    title: Inferência e Hipóteses — revisão 1
+    description: IC, erro padrão e testes.
+    exercises:
+      - type: mental_math
+        question: σ=10, n=100 → SE = σ/√n = ?
+        correctAnswer: 1
+        rationale: SE = 10/10 = 1.
+        difficulty: 3
+        objectives:
+          - stats
+      - type: mental_math
+        question: x̄=50, SE=2 → IC 95% superior = ?
+        correctAnswer: 53.92
+        rationale: 50 + 1.96×2 = 50+3.92 = 53.92.
+        difficulty: 4
+        objectives:
+          - stats
+      - type: mental_math
+        question: p=0.02, α=0.05 → decisão? (rejeitar/não rejeitar H₀)
+        correctAnswer: rejeitar
+        rationale: p < α → rejeitar H₀.
+        difficulty: 3
+        objectives:
+          - stats
+      - type: mental_math
+        question: β=0.15 → poder do teste = ?
+        correctAnswer: 0.85
+        rationale: Poder = 1-β = 0.85.
+        difficulty: 3
+        objectives:
+          - stats
+      - type: mental_math
+        question: Q1=15, Q3=25 → IQR = ?
+        correctAnswer: 10
+        rationale: IQR = Q3-Q1 = 10.
+        difficulty: 2
+        objectives:
+          - stats
+  - pageNumber: 10
+    title: Inferência e Hipóteses — revisão 2
+    description: IC, erro padrão e testes.
+    exercises:
+      - type: mental_math
+        question: σ=10, n=100 → SE = σ/√n = ?
+        correctAnswer: 1
+        rationale: SE = 10/10 = 1.
+        difficulty: 3
+        objectives:
+          - stats
+      - type: mental_math
+        question: x̄=50, SE=2 → IC 95% superior = ?
+        correctAnswer: 53.92
+        rationale: 50 + 1.96×2 = 50+3.92 = 53.92.
+        difficulty: 4
+        objectives:
+          - stats
+      - type: mental_math
+        question: p=0.02, α=0.05 → decisão? (rejeitar/não rejeitar H₀)
+        correctAnswer: rejeitar
+        rationale: p < α → rejeitar H₀.
+        difficulty: 3
+        objectives:
+          - stats
+      - type: mental_math
+        question: β=0.15 → poder do teste = ?
+        correctAnswer: 0.85
+        rationale: Poder = 1-β = 0.85.
+        difficulty: 3
+        objectives:
+          - stats
+      - type: mental_math
+        question: Q1=15, Q3=25 → IQR = ?
+        correctAnswer: 10
+        rationale: IQR = Q3-Q1 = 10.
+        difficulty: 2
+        objectives:
+          - stats
+target: 100

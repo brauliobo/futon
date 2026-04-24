@@ -1,0 +1,404 @@
+title: Lei dos Senos e Cossenos
+level: Q
+subject: math
+authorNotes: Lei dos Senos e Cossenos. Foque no conceito central do conjunto e nos erros comuns.
+inputType: number
+difficulty: 4
+objectives:
+  - geometry.trig.laws
+example: "Lei dos Senos: a/senA = b/senB. Lei dos Cossenos: c²=a²+b²-2ab·cosC."
+passCriteria:
+  minAccuracyPercent: 70
+  maxAvgSecondsPerExercise: 25
+pages:
+  - pageNumber: 1
+    title: Lei dos Senos — prática 1
+    description: "a/senA = b/senB = c/senC."
+    exercises:
+      - type: geometry
+        question: "a=10, A=30°, B=90° — b = ?"
+        correctAnswer: 20
+        rationale: "b/senB = a/senA → b = a·senB/senA = 10·1/0.5 = 20."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=8, senA=0.5, senB=1 — b = ?"
+        correctAnswer: 16
+        rationale: "b = a·senB/senA = 8·1/0.5 = 16."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=6, A=60°, B=60° — b = ?"
+        correctAnswer: 6
+        rationale: "Triângulo equilátero; A=B → a=b = 6."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=5, A=30°, b=5 — B = ?°"
+        correctAnswer: 30
+        rationale: "senB = b·senA/a = 5·0.5/5 = 0.5 → B = 30°."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "Em triângulo equilátero a=7: a/senA = ?/sen60° (valor numérico simplificado)"
+        correctAnswer: 14√3
+        rationale: "a/senA = 7/(√3/2) = 14/√3 = 14√3/3."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+  - pageNumber: 2
+    title: Lei dos Senos — prática 2
+    description: "a/senA = b/senB = c/senC."
+    exercises:
+      - type: geometry
+        question: "a=10, A=30°, B=90° — b = ?"
+        correctAnswer: 20
+        rationale: "b/senB = a/senA → b = a·senB/senA = 10·1/0.5 = 20."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=8, senA=0.5, senB=1 — b = ?"
+        correctAnswer: 16
+        rationale: "b = a·senB/senA = 8·1/0.5 = 16."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=6, A=60°, B=60° — b = ?"
+        correctAnswer: 6
+        rationale: "Triângulo equilátero; A=B → a=b = 6."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=5, A=30°, b=5 — B = ?°"
+        correctAnswer: 30
+        rationale: "senB = b·senA/a = 5·0.5/5 = 0.5 → B = 30°."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "Em triângulo equilátero a=7: a/senA = ?/sen60° (valor numérico simplificado)"
+        correctAnswer: 14√3
+        rationale: "a/senA = 7/(√3/2) = 14/√3 = 14√3/3."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+  - pageNumber: 3
+    title: Lei dos Cossenos — Lado — prática 1
+    description: "c² = a² + b² - 2ab·cosC."
+    exercises:
+      - type: geometry
+        question: "a=3, b=4, C=90° — c = ?"
+        correctAnswer: 5
+        rationale: "c² = 9+16-2·3·4·cos90° = 25-0 = 25 → c=5."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=5, b=5, C=60° — c = ?"
+        correctAnswer: 5
+        rationale: "c² = 25+25-2·25·0.5 = 50-25 = 25 → c=5."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=6, b=8, C=60° — c² = ?"
+        correctAnswer: 52
+        rationale: "c² = 36+64-2·6·8·0.5 = 100-48 = 52."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=10, b=10, C=120° — c² = ?"
+        correctAnswer: 300
+        rationale: "c² = 100+100-2·100·(-0.5) = 200+100 = 300."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=b=c (equilátero, a=4): c² = ?"
+        correctAnswer: 16
+        rationale: "c² = 16+16-2·16·0.5 = 32-16 = 16 → c=4."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+  - pageNumber: 4
+    title: Lei dos Cossenos — Lado — prática 2
+    description: "c² = a² + b² - 2ab·cosC."
+    exercises:
+      - type: geometry
+        question: "a=3, b=4, C=90° — c = ?"
+        correctAnswer: 5
+        rationale: "c² = 9+16-2·3·4·cos90° = 25-0 = 25 → c=5."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=5, b=5, C=60° — c = ?"
+        correctAnswer: 5
+        rationale: "c² = 25+25-2·25·0.5 = 50-25 = 25 → c=5."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=6, b=8, C=60° — c² = ?"
+        correctAnswer: 52
+        rationale: "c² = 36+64-2·6·8·0.5 = 100-48 = 52."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=10, b=10, C=120° — c² = ?"
+        correctAnswer: 300
+        rationale: "c² = 100+100-2·100·(-0.5) = 200+100 = 300."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=b=c (equilátero, a=4): c² = ?"
+        correctAnswer: 16
+        rationale: "c² = 16+16-2·16·0.5 = 32-16 = 16 → c=4."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+  - pageNumber: 5
+    title: Lei dos Cossenos — Ângulo — prática 1
+    description: "cosC = (a²+b²-c²)/(2ab)."
+    exercises:
+      - type: geometry
+        question: "a=3, b=4, c=5 — cosC = ?"
+        correctAnswer: 0
+        rationale: "cosC = (9+16-25)/(2·12) = 0/24 = 0 → C=90°."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=5, b=5, c=5 — cosC = ?"
+        correctAnswer: 0.5
+        rationale: "cosC = (25+25-25)/(2·25) = 25/50 = 0.5 → C=60°."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=b=c=5 — C = ?°"
+        correctAnswer: 60
+        rationale: "Triângulo equilátero: todos ângulos = 60°."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=1, b=1, c=√2 — C = ?°"
+        correctAnswer: 90
+        rationale: "cosC = (1+1-2)/(2) = 0 → C = 90°."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=2, b=3, c=4 — numerador de cosC = a²+b²-c² = ?"
+        correctAnswer: -3
+        rationale: "a²+b²-c² = 4+9-16 = -3."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+  - pageNumber: 6
+    title: Lei dos Cossenos — Ângulo — prática 2
+    description: "cosC = (a²+b²-c²)/(2ab)."
+    exercises:
+      - type: geometry
+        question: "a=3, b=4, c=5 — cosC = ?"
+        correctAnswer: 0
+        rationale: "cosC = (9+16-25)/(2·12) = 0/24 = 0 → C=90°."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=5, b=5, c=5 — cosC = ?"
+        correctAnswer: 0.5
+        rationale: "cosC = (25+25-25)/(2·25) = 25/50 = 0.5 → C=60°."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=b=c=5 — C = ?°"
+        correctAnswer: 60
+        rationale: "Triângulo equilátero: todos ângulos = 60°."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=1, b=1, c=√2 — C = ?°"
+        correctAnswer: 90
+        rationale: "cosC = (1+1-2)/(2) = 0 → C = 90°."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=2, b=3, c=4 — numerador de cosC = a²+b²-c² = ?"
+        correctAnswer: -3
+        rationale: "a²+b²-c² = 4+9-16 = -3."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+  - pageNumber: 7
+    title: Área pelo Seno — prática 1
+    description: "A = (1/2)·a·b·senC."
+    exercises:
+      - type: geometry
+        question: "a=6, b=8, C=30° — área = ?"
+        correctAnswer: 12
+        rationale: "A = (1/2)·6·8·sen30° = 24·0.5 = 12."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=10, b=10, C=60° — área = ?√3"
+        correctAnswer: 25
+        rationale: "A = (1/2)·10·10·sen60° = 50·√3/2 = 25√3."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=4, b=6, C=90° — área = ?"
+        correctAnswer: 12
+        rationale: "A = (1/2)·4·6·1 = 12."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "Triângulo equilátero lado=4 — área = ?√3"
+        correctAnswer: 4
+        rationale: "A = (1/2)·4·4·sen60° = 8·√3/2 = 4√3."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=5, b=8, C=45° — área = ?√2"
+        correctAnswer: 10
+        rationale: "A = (1/2)·5·8·sen45° = 20·√2/2 = 10√2."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+  - pageNumber: 8
+    title: Área pelo Seno — prática 2
+    description: "A = (1/2)·a·b·senC."
+    exercises:
+      - type: geometry
+        question: "a=6, b=8, C=30° — área = ?"
+        correctAnswer: 12
+        rationale: "A = (1/2)·6·8·sen30° = 24·0.5 = 12."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=10, b=10, C=60° — área = ?√3"
+        correctAnswer: 25
+        rationale: "A = (1/2)·10·10·sen60° = 50·√3/2 = 25√3."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=4, b=6, C=90° — área = ?"
+        correctAnswer: 12
+        rationale: "A = (1/2)·4·6·1 = 12."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "Triângulo equilátero lado=4 — área = ?√3"
+        correctAnswer: 4
+        rationale: "A = (1/2)·4·4·sen60° = 8·√3/2 = 4√3."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=5, b=8, C=45° — área = ?√2"
+        correctAnswer: 10
+        rationale: "A = (1/2)·5·8·sen45° = 20·√2/2 = 10√2."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+  - pageNumber: 9
+    title: Problemas Mistos — prática 1
+    description: "Combine lei dos senos e cossenos."
+    exercises:
+      - type: geometry
+        question: "Triângulo com A=45°, B=60°, C=? °"
+        correctAnswer: 75
+        rationale: "C = 180-45-60 = 75°."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=7, A=30°, B=30° — b = ?"
+        correctAnswer: 7
+        rationale: "A=B → a=b = 7."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=12, b=12, C=120° — c² = ?"
+        correctAnswer: 432
+        rationale: "c² = 144+144-2·144·(-0.5) = 288+144 = 432."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=5, b=12, C=90° — c = ?"
+        correctAnswer: 13
+        rationale: "c² = 25+144 = 169 → c=13."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=8, b=6, c=10 — cosA = ?"
+        correctAnswer: 0.75
+        rationale: "cosA = (64+36-100)/(2·8·6) = 0/96 = 0. Espera: cosA=(b²+c²-a²)/(2bc) = (36+100-64)/120 = 72/96 = 0.75."
+        difficulty: 5
+        objectives:
+          - geometry.trig.laws
+  - pageNumber: 10
+    title: Problemas Mistos — prática 2
+    description: "Combine lei dos senos e cossenos."
+    exercises:
+      - type: geometry
+        question: "Triângulo com A=45°, B=60°, C=? °"
+        correctAnswer: 75
+        rationale: "C = 180-45-60 = 75°."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=7, A=30°, B=30° — b = ?"
+        correctAnswer: 7
+        rationale: "A=B → a=b = 7."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=12, b=12, C=120° — c² = ?"
+        correctAnswer: 432
+        rationale: "c² = 144+144-2·144·(-0.5) = 288+144 = 432."
+        difficulty: 4
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=5, b=12, C=90° — c = ?"
+        correctAnswer: 13
+        rationale: "c² = 25+144 = 169 → c=13."
+        difficulty: 3
+        objectives:
+          - geometry.trig.laws
+      - type: geometry
+        question: "a=8, b=6, c=10 — cosA = ?"
+        correctAnswer: 0.75
+        rationale: "cosA = (b²+c²-a²)/(2bc) = (36+100-64)/120 = 72/96 = 0.75."
+        difficulty: 5
+        objectives:
+          - geometry.trig.laws
+target: 100
