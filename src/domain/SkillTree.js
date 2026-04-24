@@ -17,6 +17,8 @@ export class SkillTree {
     { id: 'trig_adv', name: 'Adv Trigonometry', icon: '🌀', levels: ['M'], prereqs: ['trig'] },
     { id: 'diff_calc', name: 'Differential Calc', icon: '∫', levels: ['N'], prereqs: ['functions','trig_adv'] },
     { id: 'int_calc', name: 'Integral Calc', icon: '∮', levels: ['O'], prereqs: ['functions','trig_adv'] },
+    { id: 'probability', name: 'Probability & Stats', icon: '🎲', levels: ['P'], prereqs: ['int_calc'] },
+    { id: 'geometry_linear', name: 'Geometry & LinAlg', icon: '📐', levels: ['Q'], prereqs: ['int_calc'] },
   ];
 
   static PORTUGUESE = [
@@ -34,6 +36,14 @@ export class SkillTree {
     { id: 'sentences', name: 'Sentences', icon: '💬', levels: ['B'], prereqs: ['vocabulary'] },
     { id: 'past_tense', name: 'Past Tense', icon: '⏪', levels: ['C'], prereqs: ['sentences'] },
     { id: 'future_compare', name: 'Future & Compare', icon: '⏩', levels: ['D'], prereqs: ['past_tense'] },
+    { id: 'present_continuous', name: 'Present Continuous', icon: '🔄', levels: ['E'], prereqs: ['future_compare'] },
+    { id: 'articles_pronouns', name: 'Articles & Pronouns', icon: '📝', levels: ['F'], prereqs: ['future_compare'] },
+    { id: 'perfect_tenses', name: 'Perfect Tenses', icon: '🔁', levels: ['G'], prereqs: ['present_continuous', 'articles_pronouns'] },
+    { id: 'modals', name: 'Modal Verbs', icon: '🎛️', levels: ['H'], prereqs: ['perfect_tenses'] },
+    { id: 'conditionals', name: 'Conditionals', icon: '🔀', levels: ['I'], prereqs: ['modals'] },
+    { id: 'passive', name: 'Passive Voice', icon: '🔃', levels: ['J'], prereqs: ['conditionals'] },
+    { id: 'reported_speech', name: 'Reported Speech', icon: '💭', levels: ['K'], prereqs: ['passive'] },
+    { id: 'phrasal_reading', name: 'Phrasal Verbs', icon: '📚', levels: ['L'], prereqs: ['reported_speech'] },
   ];
 
   static JAPANESE = [
