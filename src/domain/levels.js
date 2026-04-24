@@ -90,8 +90,31 @@ export class Levels {
     { id: 'C',  topic: 'japanese_adjectives_past', name: 'N5 — Adjectives & Past Tense' },
   ];
 
+  static SPANISH = [
+    { id: '7A', topic: 'spanish_word_classes', name: 'Clases de Palabras' },
+    { id: '6A', topic: 'spanish_pre_reading', name: 'Lectura Inicial' },
+    { id: '5A', topic: 'spanish_pre_reading', name: 'Lectura Inicial' },
+    { id: '4A', topic: 'spanish_pre_reading', name: 'Lectura Inicial' },
+    { id: '3A', topic: 'spanish_pre_reading', name: 'Lectura Inicial' },
+    { id: '2A', topic: 'spanish_pre_reading', name: 'Lectura Inicial' },
+    { id: '1A', topic: 'spanish_verb_tenses', name: 'Tiempos Verbales Básicos' },
+    { id: 'A',  topic: 'spanish_reading', name: 'Comprensión Lectora' },
+    { id: 'B',  topic: 'spanish_sentences', name: 'Construcción de Oraciones' },
+    { id: 'C',  topic: 'spanish_sentences', name: 'Construcción de Oraciones' },
+    { id: 'D',  topic: 'spanish_argumentation', name: 'Texto Argumentativo' },
+    { id: 'E',  topic: 'spanish_siglo_oro', name: 'Literatura — Siglo de Oro' },
+    { id: 'F',  topic: 'spanish_grammar_adv', name: 'Gramática Avanzada' },
+    { id: 'G',  topic: 'spanish_grammar_adv', name: 'Gramática Avanzada' },
+    { id: 'H',  topic: 'spanish_linguistics', name: 'Teoría Lingüística' },
+    { id: 'I',  topic: 'spanish_linguistics', name: 'Teoría Lingüística' },
+    { id: 'J',  topic: 'spanish_linguistics', name: 'Teoría Lingüística' },
+    { id: 'K',  topic: 'spanish_writing', name: 'Redacción y Composición' },
+    { id: 'L',  topic: 'spanish_writing', name: 'Redacción y Composición' },
+  ];
+
   static math = new LevelRegistry(Levels.MATH);
   static portuguese = new LevelRegistry(Levels.PORTUGUESE);
   static english = new LevelRegistry(Levels.ENGLISH);
   static japanese = new LevelRegistry(Levels.JAPANESE);
+  static spanish = new LevelRegistry(Levels.SPANISH);
 }

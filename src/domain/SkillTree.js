@@ -54,6 +54,16 @@ export class SkillTree {
     { id: 'adjectives_past', name: 'Adjectives & Past', icon: '⏪', levels: ['C'], prereqs: ['particles_verbs'] },
   ];
 
+  static SPANISH = [
+    { id: 'es_pre_reading', name: 'Pre-lectura', icon: '🗣', levels: ['7A','6A','5A','4A','3A','2A'], prereqs: [] },
+    { id: 'es_letters', name: 'Verbos y Letras', icon: '✏️', levels: ['1A'], prereqs: ['es_pre_reading'] },
+    { id: 'es_reading', name: 'Lectura', icon: '📖', levels: ['A'], prereqs: ['es_letters'] },
+    { id: 'es_sentences', name: 'Oraciones', icon: '💬', levels: ['B','C'], prereqs: ['es_reading'] },
+    { id: 'es_paragraphs', name: 'Párrafos y Gramática', icon: '📝', levels: ['D','E','F','G'], prereqs: ['es_sentences'] },
+    { id: 'es_linguistics', name: 'Lingüística', icon: '🎓', levels: ['H','I','J'], prereqs: ['es_paragraphs'] },
+    { id: 'es_writing', name: 'Redacción', icon: '🖊️', levels: ['K','L'], prereqs: ['es_linguistics'] },
+  ];
+
   static forSubject(subject) { return this[subject.toUpperCase()] || []; }
 
   static nodeProgress(node, setsByLevel) {
