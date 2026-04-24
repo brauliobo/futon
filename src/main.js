@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 import App from './App.vue';
 import { createI18n } from 'vue-i18n';
 import pt from './i18n/pt.yaml';
@@ -16,5 +17,5 @@ const i18n = createI18n({
   },
 });
 
-createApp(App).use(i18n).use(router).mount('#app');
+createApp(App).use(createPinia()).use(i18n).use(router).mount('#app');
 

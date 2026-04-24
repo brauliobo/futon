@@ -30,6 +30,7 @@
             div(v-else key="set")
               Set(:set="selectedSet" :initialPageIndex="initialPageIndex" :has-next-set="!!nextSet" :profile-id="activeProfile && activeProfile.id || 'default'" @update-set="updateSet" @page-changed="handlePageChange" @next-set="goToNextSet" @go-home="goHome")
       LevelCertificate(v-if="certificateLevel" :subject="certificateLevel.subject" :level="certificateLevel.level" :profile-name="activeProfile && activeProfile.name" @close="certificateLevel = null")
+    AchievementToast(v-if="newAchievements.length" :achievements="newAchievements" @dismissed="newAchievements = []")
     UpdatePrompt
 </template>
 
@@ -48,20 +49,23 @@ import UpdatePrompt from "./components/UpdatePrompt.vue";
 import { SetStorage } from "./services/SetStorage.js";
 import { Formatter } from "./utils/Formatter.js";
 import { migrateToIDB } from "./services/StorageMigration.js";
+import { AchievementService } from "./services/AchievementService.js";
+import AchievementToast from "./components/AchievementToast.vue";
 
 export default {
   name: "App",
-  components: { Home, Set, ProfileSelector, LevelCertificate, Spinner, InstallButton, UpdatePrompt },
+  components: { Home, Set, ProfileSelector, LevelCertificate, Spinner, InstallButton, UpdatePrompt, AchievementToast },
   data() {
-    const activeProfile = ProfileStorage.getActiveProfile();
-    const profiles = ProfileStorage.getProfiles();
+    const profileStore = useProfileStore();
+    const activeProfile = profileStore.activeProfile();
     return {
+      profileStore,
       disciplineManager: null,
       selectedSet: null,
       initialPageIndex: 0,
       storage: new SetStorage(activeProfile?.id || 'default'),
       activeProfile,
-      showProfileSelector: profiles.length === 0 || !activeProfile,
+      showProfileSelector: profileStore.profiles.length === 0 || !activeProfile,
       lastSelected: null,
       selectedLevelBySubject: {},
       isLoading: true,
@@ -70,6 +74,7 @@ export default {
       streak: 0,
       todaySets: 0,
       certificateLevel: null,
+      newAchievements: [],
     };
   },
   async mounted() {
@@ -206,9 +211,26 @@ export default {
           this.streak = Streak.calculate(this.storage);
           this.todaySets = Streak.todayCount(this.storage);
           this.checkLevelCertificate(updatedSet);
+          this.checkAchievements(updatedSet);
         }
         this.saveSets();
       }
+    },
+    checkAchievements(updatedSet) {
+      const profileId = this.activeProfile?.id || 'default';
+      const allSets = this.disciplineManager.getAllSets();
+      const masteredCount = allSets.filter(wb => wb.status === 'mastery').length;
+      const totalCompleted = allSets.filter(wb => wb.completed).length;
+      const same = allSets.filter(wb => wb.subject === updatedSet.subject && String(wb.level).toUpperCase() === String(updatedSet.level).toUpperCase());
+      const levelCompleted = same.length > 0 && same.every(wb => wb.title === updatedSet.title ? updatedSet.status === 'mastery' : wb.status === 'mastery');
+      const unlocked = AchievementService.check(profileId, {
+        masteredCount,
+        totalCompleted,
+        streak: this.streak,
+        accuracy: updatedSet.historyEntry?.accuracyPercent ?? 0,
+        levelCompleted,
+      });
+      if (unlocked.length) this.newAchievements = unlocked;
     },
     checkLevelCertificate(updatedSet) {
       const same = this.sets.filter(wb => wb.subject === updatedSet.subject && String(wb.level).toUpperCase() === String(updatedSet.level).toUpperCase());
@@ -297,6 +319,7 @@ export default {
       }
     },
     async onProfileSelected(profile) {
+      this.profileStore.setActive(profile.id);
       this.activeProfile = profile;
       this.showProfileSelector = false;
       this.storage = new SetStorage(profile.id);

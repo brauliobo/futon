@@ -57,19 +57,24 @@
 </template>
 
 <script>
-import { ProfileStorage, AVATARS } from '../services/ProfileStorage.js';
+import { AVATARS } from '../services/ProfileStorage.js';
+import { useProfileStore } from '../stores/profileStore.js';
 
 export default {
   name: 'ProfileSelector',
   emits: ['profile-selected'],
   data() {
+    const profileStore = useProfileStore();
     return {
-      profiles: ProfileStorage.getProfiles(),
+      profileStore,
       showNewForm: false,
       newName: '',
       avatars: AVATARS,
-      selectedAvatar: AVATARS[ProfileStorage.getProfiles().length % AVATARS.length],
+      selectedAvatar: AVATARS[profileStore.profiles.length % AVATARS.length],
     };
+  },
+  computed: {
+    profiles() { return this.profileStore.profiles; },
   },
   mounted() {
     if (this.profiles.length === 0) this.showNewForm = true;
@@ -80,13 +85,11 @@ export default {
   },
   methods: {
     selectProfile(profile) {
-      ProfileStorage.setActiveProfileId(profile.id);
       this.$emit('profile-selected', profile);
     },
     createProfile() {
       if (!this.newName.trim()) return;
-      const profile = ProfileStorage.createProfile(this.newName, this.selectedAvatar);
-      this.profiles = ProfileStorage.getProfiles();
+      const profile = this.profileStore.createProfile(this.newName, this.selectedAvatar);
       this.cancelForm();
       this.selectProfile(profile);
     },
