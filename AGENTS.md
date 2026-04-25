@@ -29,6 +29,7 @@ Two modes under each subject tab:
 - **Class with instance methods** for stateful services (`SetStorage`, `SetFactory`)
 - **File names match class names** (e.g., `Formatter.js` exports `Formatter`)
 - **No standalone function exports** — everything is a class method
+- Mastery scoring is centralized in `Scoring`: `pass` means the set met the accuracy floor, while `mastery` requires perfect/explicit mastery accuracy plus the per-subject/per-level timing target. Campaign unlocks remain mastery-gated.
 - Kid-friendly Tailwind theme: `kid-bg`, `kid-blue`, `kid-green`, `kid-gold`, `kid-red`, `kid-text`, `kid-muted`
 - Font: Nunito. Rounded corners (`rounded-2xl`), animations defined in `index.css`
 
@@ -49,8 +50,9 @@ pnpm build           # build to docs/
 pnpm test            # run E2E specs
 pnpm eval:dashboard  # pedagogy health (global score + tier distribution)
 pnpm test:eval       # regression tests for rubric scorers + categorize
-pnpm eval:summary    # one-line status of all 29 evaluators
-pnpm eval:all        # hard-fail gate (includes 3 zero-state tripwires)
+pnpm eval:summary    # one-line status of all 32 evaluators
+pnpm eval:all        # hard-fail gate (includes zero-state tripwires)
+pnpm eval:review:sample # deterministic 12-set manual-review sample
 ```
 
 ## Pedagogy evaluation system
@@ -58,7 +60,8 @@ pnpm eval:all        # hard-fail gate (includes 3 zero-state tripwires)
 Full documentation in [PEDAGOGY.md](PEDAGOGY.md) at repo root. Key entry points:
 
 - **Evaluators** (JSON-capable): `eval:dashboard`, `eval:pedagogy`, `eval:rationales`, `eval:disconnected`, `eval:bias`, `eval:time`, `eval:snapshot`.
-- **Zero-state hard-fail gates** (block commit on regression): `eval:tautological`, `eval:pt-category`, `eval:example-spoiler`, `eval:pt-pluralization` — see PEDAGOGY.md "Quality status". Run all 4 with `pnpm eval:gates` (~7s).
+- **Manual review**: `eval:review:sample` generates a deterministic cross-corpus checklist for human spot checks that automation cannot judge reliably (age fit, cultural tone, subject nuance).
+- **Zero-state hard-fail gates** (block commit on regression): `eval:tautological`, `eval:pt-category`, `eval:example-spoiler`, `eval:pt-pluralization`, `eval:meta-question` — see PEDAGOGY.md "Quality status". Run with `pnpm eval:gates` (~7s).
 - **Fixers** (dry-run by default, `--apply` to write): `fix:placeholders`, `fix:examples`, `fix:restatements`, `fix:example-spoiler`, `fix:japanese`, `fix:japanese:metadata`, `fix:japanese:objectives`.
 - **Regression tests**: `test:eval` runs `scripts/test-rationale.js` + `scripts/test-eval.js` + `scripts/test-fixers.js` + `scripts/test-shuffle.js` + `scripts/test-zero-state-detectors.js` (47 detector unit tests).
 - **Runtime**: `src/utils/Shuffle.js` seeds per-question choice order so authored YAML order can't bias answers.

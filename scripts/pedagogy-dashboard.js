@@ -9,21 +9,52 @@
 //                                                # regression vs snapshot
 
 import fs from 'fs';
+import os from 'os';
 import path from 'path';
-import { execSync } from 'child_process';
+import { spawn } from 'child_process';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m', GRAY = '\x1b[90m';
 const c = (t, col) => `${col}${t}${RESET}`;
 const STRICT = process.argv.includes('--strict');
 
-function runJson(cmd) {
-  return JSON.parse(execSync(cmd, { encoding: 'utf8' }));
+async function runJson(script, args = []) {
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'futon-eval-'));
+  const stdoutPath = path.join(tmpDir, 'stdout.json');
+  const stderrPath = path.join(tmpDir, 'stderr.log');
+  const stdoutFd = fs.openSync(stdoutPath, 'w');
+  const stderrFd = fs.openSync(stderrPath, 'w');
+
+  const code = await new Promise((resolve, reject) => {
+    const child = spawn(process.execPath, [script, ...args], {
+      shell: false,
+      stdio: ['ignore', stdoutFd, stderrFd],
+    });
+    child.on('close', resolve);
+    child.on('error', reject);
+  });
+
+  fs.closeSync(stdoutFd);
+  fs.closeSync(stderrFd);
+
+  try {
+    const stdout = fs.readFileSync(stdoutPath, 'utf8');
+    const stderr = fs.readFileSync(stderrPath, 'utf8');
+    if (code !== 0) {
+      throw new Error(`${script} exited with ${code}${stderr ? `:\n${stderr}` : ''}`);
+    }
+    if (!stdout.trim()) throw new Error(`${script} produced no JSON output`);
+    return JSON.parse(stdout);
+  } finally {
+    fs.rmSync(tmpDir, { recursive: true, force: true });
+  }
 }
 
-const ped = runJson('node scripts/pedagogy-eval.js --json');
-const disc = runJson('node scripts/find-disconnected.js --json');
-const bias = runJson('node scripts/find-answer-bias.js --json');
+const [ped, disc, bias] = await Promise.all([
+  runJson('scripts/pedagogy-eval.js', ['--json']),
+  runJson('scripts/find-disconnected.js', ['--json']),
+  runJson('scripts/find-answer-bias.js', ['--json']),
+]);
 
 const global = Math.round(ped.sets.reduce((s, r) => s + r.pct, 0) / ped.sets.length);
 const below70 = ped.sets.filter(r => r.pct < 70).length;

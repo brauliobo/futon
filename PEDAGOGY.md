@@ -17,6 +17,7 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm eval:bias` | Answer-position bias audit (content-side, runtime shuffle also fixes this) |
 | `pnpm eval:duplicates` | Cross-set question duplication scanner (within-level density) |
 | `pnpm eval:review [level\|set]` | Generate markdown manual-review checklist for human reviewers |
+| `pnpm eval:review:sample` | Generate a deterministic 12-set human-review sample across the whole corpus |
 | `pnpm eval:arithmetic` | Verify authored answers match computation for pure `N op N =` drills |
 | `pnpm eval:alignment` | Flag math sets whose `example` omits an operator their exercises use |
 | `pnpm fix:examples:ops [--apply]` | Auto-append a worked example for each missing operator |
@@ -33,8 +34,8 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm fix:input-type [--apply]` | Switch mis-declared sets to `inputType: text` |
 | `pnpm eval:snapshot [--save] [--threshold N]` | Save/diff a baseline for CI regression checks |
 | `pnpm eval:all` | Validate + lint + audit + pedagogy + 15 others incl. the 3 zero-state tripwires |
-| `pnpm eval:summary` | One-line-per-check status of all 30 evaluators (parallel, ~35s) — never fails CI, use for quick overview |
-| `pnpm eval:gates` | Run the 4 zero-state gates + 47 detector tests (~7s) — fast iteration while editing content |
+| `pnpm eval:summary` | One-line-per-check status of all 32 evaluators (bounded parallelism) — never fails CI, use for quick overview |
+| `pnpm eval:gates` | Run the zero-state gates + detector tests (~7s) — fast iteration while editing content |
 | `pnpm eval:tautological` | Hard-fail: flags `Observe as opções…` / echo-answer / belongs-to-category / answer-is-X patterns |
 | `pnpm eval:pt-category` | Hard-fail: flags PT rationales naming a grammar category that contradicts the answer's category |
 | `pnpm eval:example-spoiler` | Hard-fail: flags sets where `example:` duplicates exercise #1 verbatim |
@@ -319,12 +320,14 @@ Reports per-level density (% of questions that recur elsewhere) and lists the to
 `pnpm eval:review` produces a markdown checklist a human reviewer can use to catch issues the automated rubric cannot see — pedagogical clarity, cultural fit, subject-matter accuracy, distractor design.
 
 ```bash
-pnpm eval:review                     # every level, summary
+pnpm eval:review:sample              # deterministic 12-set whole-corpus sample
+pnpm eval:review --sample 20         # deterministic 20-set whole-corpus sample
+pnpm eval:review                     # every set
 pnpm eval:review math/D              # one level, per-set checklists
 pnpm eval:review math/D/set_12       # one specific set
 ```
 
-Write the output to a file (`pnpm eval:review math/D > review-mathD.md`) and work through the checklist offline.
+Write the output to a file (`pnpm eval:review:sample > review-sample.md`) and work through the checklist offline. Use the sample mode specifically to spot-check sets that automated scoring rates highly, since the rubric cannot judge age fit, cultural tone, or subject-matter nuance with human reliability.
 
 ## Arithmetic correctness check
 

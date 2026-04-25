@@ -11,14 +11,32 @@
 //
 // Usage:  pnpm eval:review math/D
 //         pnpm eval:review math/D/set_12
-//         pnpm eval:review         # all levels, summary only
+//         pnpm eval:review --sample 12  # deterministic whole-corpus sample
+//         pnpm eval:review              # every set
 
 import { readFileSync } from 'fs';
 import YAML from 'yaml';
 import fg from 'fast-glob';
 import { categorize } from './lib/rationale.js';
 
-const target = process.argv[2] || '';
+const args = process.argv.slice(2);
+const argVal = flag => {
+  const i = args.indexOf(flag);
+  return i >= 0 ? args[i + 1] : null;
+};
+const sampleSize = Math.max(0, parseInt(argVal('--sample') || '0', 10));
+const target = args.find(a => !a.startsWith('--') && !args.includes('--sample', args.indexOf(a) - 1)) || '';
+
+function deterministicSample(items, size) {
+  if (!size || items.length <= size) return items;
+  const sorted = items.slice().sort();
+  const picked = new Set();
+  const step = sorted.length / size;
+  for (let i = 0; i < size; i++) {
+    picked.add(sorted[Math.min(sorted.length - 1, Math.floor(i * step))]);
+  }
+  return Array.from(picked).sort();
+}
 
 async function main() {
   const pattern = target.includes('/set_')
@@ -26,14 +44,15 @@ async function main() {
     : target
       ? `src/levels/${target}/set_*.yaml`
       : 'src/levels/**/set_*.yaml';
-  const files = await fg(pattern);
+  let files = await fg(pattern);
   if (!files.length) {
     console.error(`No sets matched "${target}". Try: math/D or math/D/set_12`);
     process.exit(1);
   }
+  files = deterministicSample(files, sampleSize);
 
   const out = [];
-  out.push(`# Manual Pedagogy Review — ${target || 'all levels'}`);
+  out.push(`# Manual Pedagogy Review — ${target || (sampleSize ? `sample ${sampleSize}` : 'all levels')}`);
   out.push('');
   out.push(`Generated from ${files.length} set(s). Walk through each checklist`);
   out.push(`to catch issues the automated rubric can't see.`);
