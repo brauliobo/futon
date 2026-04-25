@@ -24,13 +24,22 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,yaml,woff2,png,svg,ico,webp,jpg,jpeg}'],
+        globPatterns: ['**/*.{js,css,html,woff2,png,svg,ico,webp,jpg,jpeg}'],
+        globIgnores: ['**/assets/set_*.js'],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
         navigateFallback: '/index.html',
         skipWaiting: true,
         clientsClaim: true,
         cleanupOutdatedCaches: true,
         runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.origin === self.location.origin && /^\/assets\/set_\d{2}-.*\.js$/.test(url.pathname),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'lesson-set-chunks',
+              expiration: { maxEntries: 120, maxAgeSeconds: 60 * 60 * 24 * 180 },
+            },
+          },
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com/,
             handler: 'CacheFirst',
