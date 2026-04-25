@@ -42,33 +42,35 @@
           span(class="gate-row-actual tabular-nums" :class="accuracyPass ? 'text-kid-green' : 'text-kid-red'") {{ accuracyPct }}%
           span(class="gate-row-req tabular-nums text-kid-muted") ({{ $t('gateNeedMin') }} {{ accuracyMin }}%)
         div(class="gate-row")
-          span(class="gate-row-icon" aria-hidden="true") {{ speedPass ? '✅' : '❌' }}
-          span(class="gate-row-label") {{ $t('gateSpeed') }}
-          span(class="gate-row-actual tabular-nums" :class="speedPass ? 'text-kid-green' : 'text-kid-red'") {{ avgSecondsRounded }}s
-          span(class="gate-row-req tabular-nums text-kid-muted") ({{ $t('gateNeedMax') }} {{ speedMax }}s)
+          span(class="gate-row-icon" aria-hidden="true") {{ masterySpeedPass ? '✅' : '❌' }}
+          span(class="gate-row-label") {{ $t('gateMasterySpeed') || $t('gateSpeed') }}
+          span(class="gate-row-actual tabular-nums" :class="masterySpeedPass ? 'text-kid-green' : 'text-kid-red'") {{ avgSecondsRounded }}s
+          span(class="gate-row-req tabular-nums text-kid-muted") ({{ $t('gateNeedMax') }} {{ masterySpeedMax }}s)
         p(class="gate-hint" :class="gateHintClass")
           | {{ gateHint }}
 
       button(
-        v-if="hasNextSet && (knownStatus === 'mastery' || knownStatus === 'pass')"
+        v-if="hasNextSet && knownStatus === 'mastery'"
         @click="$emit('next-set')"
-        :class="['mt-3 btn-block animate-slide-up text-lg font-black', knownStatus === 'mastery' ? 'btn-success' : 'btn-primary']"
+        class="mt-3 btn-block animate-slide-up text-lg font-black btn-success"
         style="animation-delay:0.35s"
       )
         span(aria-hidden="true") 🚀
         span {{ $t('nextSet') }}
       button(
-        v-if="knownStatus === 'retry'"
+        v-if="knownStatus === 'retry' || knownStatus === 'pass'"
         @click="$emit('retry-set')"
         class="mt-3 btn-block btn-primary animate-slide-up text-lg font-black"
         style="animation-delay:0.35s"
         data-testid="retry-set"
       )
-        span(aria-hidden="true") 🔁
-        span {{ $t('retryAgain') }}
+        span(aria-hidden="true") {{ knownStatus === 'pass' ? '⭐' : '🔁' }}
+        span {{ knownStatus === 'pass' ? ($t('retryForMastery') || $t('retryAgain')) : $t('retryAgain') }}
 </template>
 
 <script>
+import { Scoring } from '../../utils/Scoring.js';
+
 export default {
   name: 'ResultsCelebration',
   emits: ['next-set', 'retry-set'],
@@ -81,16 +83,22 @@ export default {
     gradePercent: { type: Number, default: 0 },
     hasNextSet: { type: Boolean, default: false },
     avgSeconds: { type: Number, default: 0 },
-    passCriteria: { type: Object, default: () => ({ minAccuracyPercent: 85, maxAvgSecondsPerExercise: 6 }) },
+    passCriteria: { type: Object, default: () => ({ minAccuracyPercent: 85, maxAvgSecondsPerExercise: 8 }) },
   },
   computed: {
     accuracy() { return this.total > 0 ? Math.round((this.correct / this.total) * 100) : 0; },
+    effectiveCriteria() { return Scoring.passCriteria(this.passCriteria); },
     knownStatus() {
       if (['mastery', 'pass', 'retry'].includes(this.status)) return this.status;
       if (this.total <= 0) return '';
-      if (this.accuracy === 100) return 'mastery';
-      if (this.accuracy >= 85) return 'pass';
-      return 'retry';
+      return Scoring.status({
+        accuracyPercent: this.accuracy,
+        avgSecondsPerExercise: this.avgSecondsRounded,
+        maxAvgSecondsPerExercise: this.effectiveCriteria.maxAvgSecondsPerExercise,
+        masteryMaxAvgSecondsPerExercise: this.effectiveCriteria.masteryMaxAvgSecondsPerExercise,
+        minAccuracyPass: this.effectiveCriteria.minAccuracyPercent,
+        masteryAccuracyPercent: this.effectiveCriteria.masteryAccuracyPercent,
+      });
     },
     effectiveGrade() { return this.gradePercent || this.accuracy; },
     starCount() { return { mastery: 3, pass: 2, retry: 1 }[this.knownStatus] || 0; },
@@ -129,15 +137,29 @@ export default {
       return 'text-kid-red';
     },
     accuracyPct() { return this.accuracy; },
-    accuracyMin() { return this.passCriteria?.minAccuracyPercent ?? 85; },
-    speedMax() { return this.passCriteria?.maxAvgSecondsPerExercise ?? 6; },
+    accuracyMin() { return this.effectiveCriteria.minAccuracyPercent; },
+    masteryAccuracyMin() { return this.effectiveCriteria.masteryAccuracyPercent; },
+    speedMax() { return this.effectiveCriteria.maxAvgSecondsPerExercise; },
+    masterySpeedMax() { return this.effectiveCriteria.masteryMaxAvgSecondsPerExercise; },
     avgSecondsRounded() { return Math.round((Number(this.avgSeconds) || 0) * 10) / 10; },
     accuracyPass() { return this.accuracyPct >= this.accuracyMin; },
-    speedPass() { return this.avgSecondsRounded > 0 && this.avgSecondsRounded <= this.speedMax; },
-    gatePanelClass() { return this.knownStatus === 'retry' ? 'gate-panel-retry' : 'gate-panel-ok'; },
-    gateHintClass() { return this.knownStatus === 'retry' ? 'text-kid-red' : 'text-kid-green'; },
+    masteryAccuracyPass() { return this.accuracyPct >= this.masteryAccuracyMin; },
+    speedPass() { return this.avgSecondsRounded <= this.speedMax; },
+    masterySpeedPass() { return this.avgSecondsRounded <= this.masterySpeedMax; },
+    gatePanelClass() {
+      if (this.knownStatus === 'mastery') return 'gate-panel-ok';
+      if (this.knownStatus === 'pass') return 'gate-panel-pass';
+      return 'gate-panel-retry';
+    },
+    gateHintClass() {
+      if (this.knownStatus === 'mastery') return 'text-kid-green';
+      if (this.knownStatus === 'pass') return 'text-amber-600 dark:text-amber-300';
+      return 'text-kid-red';
+    },
     gateHint() {
-      return this.knownStatus === 'retry' ? this.$t('gateRetryHint') : this.$t('gatePassHint');
+      if (this.knownStatus === 'mastery') return this.$t('gateMasteryHint') || this.$t('gatePassHint');
+      if (this.knownStatus === 'pass') return this.$t('gatePassHint');
+      return this.$t('gateRetryHint');
     },
   },
   methods: {

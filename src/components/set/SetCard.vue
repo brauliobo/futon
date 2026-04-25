@@ -50,10 +50,10 @@ export default {
     hasProgress() { return this.progress.completed > 0 && !['mastery', 'pass', 'retry'].includes(this.set.status); },
     starCount() {
       if (this.set.status === 'mastery') return 3;
-      if (this.set.status === 'pass') return this.set.avgSecondsPerExercise && this.set.avgSecondsPerExercise <= (this.set.passCriteria?.maxAvgSecondsPerExercise || 8) ? 2 : 1;
+      if (this.set.status === 'pass') return 2;
       return 0;
     },
-    speedTarget() { return this.set.passCriteria?.maxAvgSecondsPerExercise || 8; },
+    speedTarget() { return this.set.passCriteria?.masteryMaxAvgSecondsPerExercise || this.set.passCriteria?.maxAvgSecondsPerExercise || 8; },
     statusBadge() {
       const badges = {
         mastery: { icon: '✓', class: 'bg-kid-green text-white' },

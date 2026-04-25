@@ -5,20 +5,33 @@ import { completeEntireSetCorrectly, completeEntireSetWithErrors } from '../help
 test.describe('Kumon Gate UX', () => {
   test.setTimeout(120000);
 
-  test('pass: shows gate with both ✅ rows and Próximo Bloco', async ({ page }) => {
+  test('mastery: shows gate with both ✅ rows and Próximo Bloco', async ({ page }) => {
     await gotoHomeWithProfile(page);
     await startFirstSet(page);
     await completeEntireSetCorrectly(page);
 
     const results = page.locator('[data-testid="results"]');
     await expect(results).toBeVisible({ timeout: 15000 });
-    await expect(results.getByText('Para avançar')).toBeVisible();
-    // Gate rows appear: Acertos, Tempo (scoped to gate panel)
+    await expect(results.getByText('Meta do bloco')).toBeVisible();
+    // Gate rows appear: Acertos, Tempo de domínio (scoped to gate panel)
     const gateRows = results.locator('.gate-row-label');
     await expect(gateRows.filter({ hasText: 'Acertos' })).toBeVisible();
-    await expect(gateRows.filter({ hasText: 'Tempo' })).toBeVisible();
-    // On pass/mastery, Próximo Bloco shows; Refazer does not
+    await expect(gateRows.filter({ hasText: 'Tempo de domínio' })).toBeVisible();
+    // On mastery, Próximo Bloco shows; Refazer does not
     await expect(page.locator('[data-testid="retry-set"]')).toHaveCount(0);
+  });
+
+  test('pass: accuracy is accepted but next block stays locked until mastery', async ({ page }) => {
+    await gotoHomeWithProfile(page);
+    await startFirstSet(page);
+    await completeEntireSetWithErrors(page, 1);
+
+    const results = page.locator('[data-testid="results"]');
+    await expect(results).toBeVisible({ timeout: 15000 });
+    await expect(results.getByText('Aprovado!')).toBeVisible();
+    await expect(results.getByText('Aprovado por acertos. Para avançar, busque domínio.')).toBeVisible();
+    await expect(page.getByText('Próximo Bloco')).toHaveCount(0);
+    await expect(page.locator('[data-testid="retry-set"]')).toContainText('Refazer para domínio');
   });
 
   test('retry: shows ❌ row, no Próximo Bloco, has Refazer button', async ({ page }) => {
@@ -30,7 +43,7 @@ test.describe('Kumon Gate UX', () => {
 
     const results = page.locator('[data-testid="results"]');
     await expect(results).toBeVisible({ timeout: 15000 });
-    await expect(results.getByText('Para avançar')).toBeVisible();
+    await expect(results.getByText('Meta do bloco')).toBeVisible();
     await expect(results.getByText(/Refaça este conjunto/)).toBeVisible();
     // Retry button visible
     await expect(page.locator('[data-testid="retry-set"]')).toBeVisible();

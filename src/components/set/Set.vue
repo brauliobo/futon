@@ -149,8 +149,8 @@ export default {
       };
     },
     prettyTimer() { return Formatter.timer(this.pageSeconds); },
-    passCriteria() { return Scoring.passCriteria(this.set.passCriteria); },
-    speedTarget() { return this.passCriteria.maxAvgSecondsPerExercise; },
+    passCriteria() { return Scoring.passCriteria(this.set.passCriteria, this.set); },
+    speedTarget() { return this.passCriteria.masteryMaxAvgSecondsPerExercise; },
     speedGaugeWidth() { return SpeedCalc.width(Number(this.set.avgSecondsPerExercise) || 0, this.speedTarget); },
     speedGaugeVariant() { return SpeedCalc.variant(Number(this.set.avgSecondsPerExercise) || 0, this.speedTarget); },
     finalScore() {
@@ -181,9 +181,14 @@ export default {
       if (this.set.status) return this.set.status;
       if (!this.isSubmitted || !this.attemptedCount) return '';
       const acc = Math.round((this.finalScore / this.attemptedCount) * 100);
-      if (acc === 100) return 'mastery';
-      if (acc >= 85) return 'pass';
-      return 'retry';
+      return Scoring.status({
+        accuracyPercent: acc,
+        avgSecondsPerExercise: Number(this.set.avgSecondsPerExercise) || 0,
+        maxAvgSecondsPerExercise: this.passCriteria.maxAvgSecondsPerExercise,
+        masteryMaxAvgSecondsPerExercise: this.passCriteria.masteryMaxAvgSecondsPerExercise,
+        minAccuracyPass: this.passCriteria.minAccuracyPercent,
+        masteryAccuracyPercent: this.passCriteria.masteryAccuracyPercent,
+      });
     },
     restartButtonClass() {
       return this.effectiveStatus === 'retry' ? 'btn-primary flex-1' : 'btn-ghost flex-1 surface-2';
@@ -331,22 +336,22 @@ export default {
       const avgSecondsPerExercise = total ? +(elapsed / total).toFixed(2) : 0;
       const pc = this.passCriteria;
       
-      const meetsAccuracy = accuracyPercent >= pc.minAccuracyPercent;
-      const meetsSpeed = avgSecondsPerExercise <= pc.maxAvgSecondsPerExercise;
-      const completed = !!(meetsAccuracy && meetsSpeed);
-      
       const gradePercent = Scoring.gradePercent({
         accuracyPercent,
         avgSecondsPerExercise,
         maxAvgSecondsPerExercise: pc.maxAvgSecondsPerExercise,
+        masteryMaxAvgSecondsPerExercise: pc.masteryMaxAvgSecondsPerExercise,
       });
       
       const status = Scoring.status({
         accuracyPercent,
         avgSecondsPerExercise,
         maxAvgSecondsPerExercise: pc.maxAvgSecondsPerExercise,
+        masteryMaxAvgSecondsPerExercise: pc.masteryMaxAvgSecondsPerExercise,
         minAccuracyPass: pc.minAccuracyPercent,
+        masteryAccuracyPercent: pc.masteryAccuracyPercent,
       });
+      const completed = status === 'mastery' || status === 'pass';
       
       const historyEntry = {
         ts: endTs,
@@ -433,5 +438,4 @@ export default {
   }
 };
 </script>
-
 
