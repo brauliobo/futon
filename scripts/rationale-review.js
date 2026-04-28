@@ -11,6 +11,7 @@ import path from 'path';
 import Table from 'cli-table3';
 import { parse } from 'yaml';
 import { categorize } from './lib/rationale.js';
+import { localize } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m', GRAY = '\x1b[90m';
@@ -29,13 +30,13 @@ const CAT_COLORS = {
 };
 
 function loadOne(file) {
-  const raw = parse(fs.readFileSync(file, 'utf8'));
+  const raw = localize(parse(fs.readFileSync(file, 'utf8')));
   return { ...raw, _file: path.basename(file), _path: file };
 }
 
 function loadDir() {
   const root = process.cwd();
-  const subjects = SUBJECT ? [SUBJECT] : ['math', 'portuguese', 'english', 'japanese'];
+  const subjects = SUBJECT ? [SUBJECT] : ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'];
   const sets = [];
   for (const subject of subjects) {
     const dir = path.join(root, 'src', 'levels', subject);

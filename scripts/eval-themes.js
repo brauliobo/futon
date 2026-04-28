@@ -11,7 +11,7 @@ const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m';
 const c = (t, col) => `${col}${t}${RESET}`;
 
-const SUBJECTS = ['math', 'portuguese', 'english', 'japanese', 'spanish'];
+const SUBJECTS = ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'];
 
 const en = parse(readFileSync('src/i18n/en.yaml', 'utf8'));
 const pt = parse(readFileSync('src/i18n/pt.yaml', 'utf8'));

@@ -9,6 +9,7 @@ import path from 'path';
 import Table from 'cli-table3';
 import { parse } from 'yaml';
 import { categorize as rationaleCategory } from './lib/rationale.js';
+import { localize } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m';
@@ -22,7 +23,7 @@ const LEVEL = argVal('--level');
 const SET_FILE = argVal('--set');
 const WORST_N = parseInt(argVal('--worst') || '10', 10);
 const JSON_OUT = args.includes('--json');
-const SUBJECTS = SUBJECT ? [SUBJECT] : ['math', 'portuguese', 'english', 'japanese', 'spanish'];
+const SUBJECTS = SUBJECT ? [SUBJECT] : ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'];
 
 const THRESHOLDS = { excellent: 85, acceptable: 70 };
 
@@ -30,7 +31,7 @@ const THRESHOLDS = { excellent: 85, acceptable: 70 };
 
 function loadAll() {
   if (SET_FILE) {
-    const raw = parse(fs.readFileSync(SET_FILE, 'utf8'));
+    const raw = localize(parse(fs.readFileSync(SET_FILE, 'utf8')));
     return [{ ...raw, subject: raw.subject || 'unknown', level: raw.level || 'unknown', _file: path.basename(SET_FILE) }];
   }
   const sets = [];
@@ -43,7 +44,7 @@ function loadAll() {
       if (!fs.statSync(ld).isDirectory()) continue;
       for (const file of fs.readdirSync(ld).filter(f => /\.ya?ml$/.test(f)).sort()) {
         try {
-          const raw = parse(fs.readFileSync(path.join(ld, file), 'utf8'));
+          const raw = localize(parse(fs.readFileSync(path.join(ld, file), 'utf8')));
           sets.push({ ...raw, subject, level, _file: file });
         } catch { /* validate-sets reports parse errors */ }
       }
