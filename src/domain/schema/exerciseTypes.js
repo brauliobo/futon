@@ -46,6 +46,20 @@ export function familyOf(type) {
   return TYPE_TO_FAMILY[type] || null;
 }
 
+// Localizable text: plain string OR {pt, en} object. Resolved to a string
+// at load time by utils/i18nText.js#localizeSet.
+export const localizable = {
+  oneOf: [
+    { type: 'string', minLength: 1 },
+    {
+      type: 'object',
+      properties: { pt: { type: 'string' }, en: { type: 'string' } },
+      additionalProperties: false,
+      anyOf: [{ required: ['pt'] }, { required: ['en'] }],
+    },
+  ],
+};
+
 // JSON Schema fragment per family. Each describes the exercise shape.
 // Shared base: type, question, correctAnswer.
 const base = {
@@ -53,10 +67,10 @@ const base = {
   required: ['type', 'question', 'correctAnswer'],
   properties: {
     type: { type: 'string' },
-    question: { type: 'string', minLength: 1 },
-    correctAnswer: {}, // string | number | array | object depending on family
+    question: localizable,
+    correctAnswer: {}, // string | number | array | object | localizable depending on family
     difficulty: { type: 'integer', minimum: 1, maximum: 5 },
-    rationale: { type: 'string' },
+    rationale: localizable,
     objectives: { type: 'array', items: { type: 'string' } },
   },
 };
@@ -68,7 +82,7 @@ export const EXERCISE_SCHEMAS = {
     required: [...base.required, 'choices'],
     properties: {
       ...base.properties,
-      choices: { type: 'array', minItems: 2, items: { type: 'string' } },
+      choices: { type: 'array', minItems: 2, items: localizable },
     },
   },
   translation: { ...base },

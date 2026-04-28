@@ -20,7 +20,8 @@ const LEVEL_ORDER = {
   portuguese: ['7A','6A','5A','4A','3A','2A','1A','A','B','C','D','E','F','G','H','I','J','K','L'],
   english:    ['7A','6A','5A','4A','3A','2A','1A','A','B','C','D','E','F','G','H','I','J','K','L'],
   japanese:   ['4A','3A','2A','1A','A','B','C','D','E','F','G','H','I','J','K','L'],
-  spanish:    ['7A','6A','5A','4A','3A','2A','1A','A','B','C','D','E','F','G','H','I','J','K','L']
+  spanish:    ['7A','6A','5A','4A','3A','2A','1A','A','B','C','D','E','F','G','H','I','J','K','L'],
+  biology:    ['7A','6A','5A','4A','3A','2A','1A','A','B','C','D','E','F','G','H','I','J','K','L']
 };
 
 export class DisciplineRegistry {

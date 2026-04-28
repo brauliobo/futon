@@ -1,14 +1,14 @@
 import Ajv from 'ajv';
-import { EXERCISE_SCHEMAS, familyOf } from './exerciseTypes.js';
+import { EXERCISE_SCHEMAS, familyOf, localizable } from './exerciseTypes.js';
 
 const pageSchema = {
   type: 'object',
   required: ['exercises'],
   properties: {
     pageNumber: { type: 'integer', minimum: 1 },
-    title: { type: 'string' },
-    description: { type: 'string' },
-    passage: { type: 'string' },
+    title: localizable,
+    description: localizable,
+    passage: localizable,
     repeat: { type: 'integer', minimum: 1 },
     exercises: {
       type: 'array',
@@ -22,10 +22,10 @@ export const setSchema = {
   type: 'object',
   required: ['title', 'level', 'subject', 'pages'],
   properties: {
-    title: { type: 'string', minLength: 1 },
+    title: localizable,
     level: { type: 'string', minLength: 1 },
-    subject: { type: 'string', enum: ['math', 'portuguese', 'english', 'japanese', 'spanish'] },
-    example: { type: 'string' },
+    subject: { type: 'string', enum: ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'] },
+    example: localizable,
     inputType: { type: 'string' },
     repeatAll: { type: 'integer', minimum: 1 },
     target: { type: 'integer', minimum: 1 },
