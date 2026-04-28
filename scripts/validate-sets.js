@@ -52,19 +52,32 @@ function normalizeQuestion(q) {
   return String(q || '').toLowerCase().replace(/\s+/g, ' ').trim();
 }
 
-function levenshtein(a, b) {
+// Bounded Ukkonen levenshtein: returns Infinity once distance exceeds `max`.
+// Skips comparison entirely when length difference already exceeds the cap.
+function boundedLevenshtein(a, b, max) {
   if (a === b) return 0;
-  if (!a.length || !b.length) return Math.max(a.length, b.length);
-  const dp = Array.from({ length: a.length + 1 }, (_, i) => [i, ...new Array(b.length).fill(0)]);
-  for (let j = 0; j <= b.length; j++) dp[0][j] = j;
-  for (let i = 1; i <= a.length; i++) {
-    for (let j = 1; j <= b.length; j++) {
-      dp[i][j] = a[i - 1] === b[j - 1]
-        ? dp[i - 1][j - 1]
-        : 1 + Math.min(dp[i - 1][j - 1], dp[i - 1][j], dp[i][j - 1]);
+  const la = a.length, lb = b.length;
+  if (Math.abs(la - lb) > max) return Infinity;
+  if (!la || !lb) return Math.max(la, lb);
+  let prev = new Array(lb + 1);
+  for (let j = 0; j <= lb; j++) prev[j] = j;
+  for (let i = 1; i <= la; i++) {
+    const cur = new Array(lb + 1);
+    cur[0] = i;
+    const lo = Math.max(1, i - max), hi = Math.min(lb, i + max);
+    let rowMin = cur[0];
+    for (let j = 1; j < lo; j++) cur[j] = Infinity;
+    for (let j = lo; j <= hi; j++) {
+      cur[j] = a[i - 1] === b[j - 1]
+        ? prev[j - 1]
+        : 1 + Math.min(prev[j - 1], prev[j], cur[j - 1]);
+      if (cur[j] < rowMin) rowMin = cur[j];
     }
+    for (let j = hi + 1; j <= lb; j++) cur[j] = Infinity;
+    if (rowMin > max) return Infinity;
+    prev = cur;
   }
-  return dp[a.length][b.length];
+  return prev[lb];
 }
 
 function nearDupRatio(sets) {
@@ -76,12 +89,30 @@ function nearDupRatio(sets) {
   }))));
   const relevant = pairs.filter(p => p.family && p.family !== 'drill');
   if (relevant.length < 2) return 0;
+  // Index by question length so we only compare strings within ±max chars.
+  // This drops the O(n²) cost to ~O(n × bucket_size) for typical content.
+  const exact = new Set();
+  const byLen = new Map(); // len → string[]
   let dup = 0;
-  const seen = [];
   for (const { question: q } of relevant) {
     if (!q) continue;
-    const hit = seen.some(s => s === q || (q.length > 8 && levenshtein(q, s) <= Math.min(3, Math.floor(q.length * 0.15))));
-    if (hit) dup++; else seen.push(q);
+    if (exact.has(q)) { dup++; continue; }
+    if (q.length <= 8) { exact.add(q); continue; }
+    const max = Math.min(3, Math.floor(q.length * 0.15));
+    let hit = false;
+    for (let l = q.length - max; l <= q.length + max && !hit; l++) {
+      const bucket = byLen.get(l);
+      if (!bucket) continue;
+      for (const s of bucket) {
+        if (boundedLevenshtein(q, s, max) <= max) { hit = true; break; }
+      }
+    }
+    if (hit) dup++;
+    else {
+      exact.add(q);
+      const arr = byLen.get(q.length);
+      if (arr) arr.push(q); else byLen.set(q.length, [q]);
+    }
   }
   return +(dup / relevant.length).toFixed(3);
 }
