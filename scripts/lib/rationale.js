@@ -234,6 +234,16 @@ const DEFINITION_RE = /(?:['"][^'"]{2,}['"]|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-zá�
 // E.g. "電車で (de trem) + 駅まで (até a estação) + 行きます (vou)."
 // This is a teaching method — chunked translation with grammatical reading.
 const JP_DECOMP_RE = /[぀-ヿ一-鿿].*\([^)]+\)\s*\+/;
+// Vocabulary enumeration with parenthetical translations or numeric values:
+// ≥2 entries of `term (gloss)` separated by commas/slashes/spaces. Teaches
+// by lexical mapping — common in early-grade vocab and number sets.
+// e.g. "kitchen (cozinha), bedroom (quarto), bathroom (banheiro)"
+//      "eleven (11), twelve (12), thirteen (13)"
+const VOCAB_ENUM_RE = /[\wáéíóúâêôãõç-]+\s*\([^)]+\)[\s,;/]+[\wáéíóúâêôãõç-]+\s*\([^)]+\)/i;
+// Word-family enumeration: "família -X" or "família X-" introducing a
+// list of words sharing a phonetic pattern. Specific to phonics/literacy
+// lessons in early-grade language sets.
+const WORD_FAMILY_RE = /família\s+-?[a-z]+-?\s*[:.]\s*\w+/i;
 
 // Strip accents for matching: JS `\b` anchors are ASCII-only, so words that
 // *start* with accented letters (ângulo, década) never fire a word-boundary
@@ -258,6 +268,6 @@ export function categorize(rationale) {
   if (RESTATE_RE.test(s)) return 'restatement';
   const sAscii = stripAccents(s);
   if (METHOD_RE.test(sAscii)) return 'method';
-  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s) || ARITHMETIC_RE.test(s) || JP_DECOMP_RE.test(s)) return 'method';
+  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s) || ARITHMETIC_RE.test(s) || JP_DECOMP_RE.test(s) || VOCAB_ENUM_RE.test(s) || WORD_FAMILY_RE.test(s)) return 'method';
   return 'generic';
 }
