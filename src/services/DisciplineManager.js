@@ -1,18 +1,11 @@
-import { MathDiscipline } from "../discipline/MathDiscipline.js";
-import { PortugueseDiscipline } from "../discipline/PortugueseDiscipline.js";
-import { EnglishDiscipline } from "../discipline/EnglishDiscipline.js";
-import { JapaneseDiscipline } from "../discipline/JapaneseDiscipline.js";
-import { SpanishDiscipline } from "../discipline/SpanishDiscipline.js";
+import { BaseDiscipline } from "../discipline/BaseDiscipline.js";
+import { Discipline } from "../domain/disciplines.js";
 
 export class DisciplineManager {
-  static create(withMeta, generators, seed) {
-    const disciplines = {
-      math: MathDiscipline.create(withMeta, generators, seed),
-      portuguese: PortugueseDiscipline.create(withMeta),
-      english: EnglishDiscipline.create(withMeta),
-      japanese: JapaneseDiscipline.create(withMeta),
-      spanish: SpanishDiscipline.create(withMeta)
-    };
+  static create(withMeta) {
+    const disciplines = Object.fromEntries(
+      Discipline.ALL.map(name => [name, BaseDiscipline.create(name, withMeta)])
+    );
     return new DisciplineManager(disciplines);
   }
 
@@ -23,48 +16,36 @@ export class DisciplineManager {
   getDiscipline(name) { return this.disciplines[name]; }
   getDisciplines() { return Object.values(this.disciplines); }
   getAllSets() { return this.getDisciplines().flatMap(d => d.getSets()); }
-  
-  getSetsBySubject(subject) { 
-    const discipline = this.getDiscipline(subject);
-    return discipline ? discipline.getSets() : [];
+
+  getSetsBySubject(subject) {
+    return this.getDiscipline(subject)?.getSets() || [];
   }
 
   async getSetsBySubjectAsync(subject, level) {
-    const discipline = this.getDiscipline(subject);
-    return discipline ? await discipline.getSetsByLevelAsync(level) : [];
+    return await this.getDiscipline(subject)?.getSetsByLevelAsync(level) || [];
   }
 
   getLevelsBySubject(subject) {
-    const discipline = this.getDiscipline(subject);
-    return discipline ? discipline.getLevels() : [];
+    return this.getDiscipline(subject)?.getLevels() || [];
   }
 
   findSet(predicate) { return this.getAllSets().find(predicate); }
   filterSets(predicate) { return this.getAllSets().filter(predicate); }
-  
-  getCurrentSetForDiscipline(disciplineName) {
-    const discipline = this.getDiscipline(disciplineName);
-    return discipline ? discipline.getCurrentSet() : null;
+
+  getCurrentSetForDiscipline(name) {
+    return this.getDiscipline(name)?.getCurrentSet() || null;
   }
 
   getRecommendedSet() {
-    const disciplinesWithActivity = this.getDisciplines()
-      .map(discipline => ({
-        discipline,
-        currentSet: discipline.getCurrentSet(),
-        lastActivity: this.getLastActivityTime(discipline)
-      }))
+    const ranked = this.getDisciplines()
+      .map(d => ({ currentSet: d.getCurrentSet(), lastActivity: this.getLastActivityTime(d) }))
       .filter(item => item.currentSet)
       .sort((a, b) => b.lastActivity - a.lastActivity);
-
-    return disciplinesWithActivity.length > 0 ? disciplinesWithActivity[0].currentSet : null;
+    return ranked[0]?.currentSet || null;
   }
 
   getLastActivityTime(discipline) {
-    const allHistory = discipline.getSets()
-      .flatMap(wb => wb.history || [])
-      .map(entry => entry.ts || 0);
-    
-    return allHistory.length > 0 ? Math.max(...allHistory) : 0;
+    const stamps = discipline.getSets().flatMap(wb => (wb.history || []).map(e => e.ts || 0));
+    return stamps.length ? Math.max(...stamps) : 0;
   }
 }

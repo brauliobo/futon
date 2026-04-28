@@ -81,16 +81,7 @@ export default {
     if (this.showProfileSelector) return;
     try {
       const setFactory = new SetFactory();
-      const withMeta = (wb) => setFactory.createSet(wb);
-      const seedKey = 'futon_seed_addition';
-      const existingSeed = localStorage.getItem(seedKey) || String(Math.random()).slice(2);
-      localStorage.setItem(seedKey, existingSeed);
-      
-      this.disciplineManager = DisciplineManager.create(
-        withMeta, 
-        {},
-        existingSeed
-      );
+      this.disciplineManager = DisciplineManager.create(wb => setFactory.createSet(wb));
       
       await migrateToIDB(this.activeProfile?.id || 'default');
       await this.loadInitialDataWithHash();
@@ -329,9 +320,7 @@ export default {
       this.loadedSetsVersion = 0;
       try {
         const setFactory = new SetFactory();
-        const existingSeed = localStorage.getItem('futon_seed_addition') || String(Math.random()).slice(2);
-        localStorage.setItem('futon_seed_addition', existingSeed);
-        this.disciplineManager = DisciplineManager.create(wb => setFactory.createSet(wb), {}, existingSeed);
+        this.disciplineManager = DisciplineManager.create(wb => setFactory.createSet(wb));
         await migrateToIDB(profile.id);
         await this.loadInitialDataWithHash();
         this.isLoading = false;

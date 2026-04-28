@@ -1,6 +1,13 @@
 import { DisciplineRegistry } from "../utils/DisciplineRegistry.js";
+import { localizeSet } from "../utils/i18nText.js";
+import { currentLocale } from "../i18n/index.js";
 
 export class BaseDiscipline {
+  static create(name, withMeta) {
+    const { levels } = DisciplineRegistry.metadata(name);
+    return new BaseDiscipline(name, levels, withMeta);
+  }
+
   constructor(name, availableLevels, withMeta) {
     this.name = name;
     this.withMeta = withMeta;
@@ -12,7 +19,8 @@ export class BaseDiscipline {
   async ensureLevelLoaded(level) {
     if (this.loadedLevels.has(level)) return;
     const rawSets = await DisciplineRegistry.importLevel(this.name, level);
-    const sets = rawSets.map(w => this.withMeta(w.set));
+    const locale = currentLocale();
+    const sets = rawSets.map(w => this.withMeta(localizeSet(w.set, locale)));
     this.loadedLevels.set(level, sets);
   }
 
