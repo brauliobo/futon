@@ -10,15 +10,45 @@ import { registerSW } from 'virtual:pwa-register';
 
 export default {
   name: 'UpdatePrompt',
-  data() { return { needRefresh: false, updateSW: null }; },
+  data() {
+    return {
+      needRefresh: false,
+      updateSW: null,
+      updateCheckInterval: null,
+    };
+  },
   mounted() {
     this.updateSW = registerSW({
+      immediate: true,
       onNeedRefresh: () => { this.needRefresh = true; },
       onOfflineReady: () => {},
+      onRegisteredSW: (swUrl, registration) => {
+        this.checkForLatestVersion(swUrl, registration);
+        this.updateCheckInterval = window.setInterval(() => {
+          this.checkForLatestVersion(swUrl, registration);
+        }, 60 * 60 * 1000);
+      },
     });
+  },
+  beforeUnmount() {
+    if (this.updateCheckInterval) window.clearInterval(this.updateCheckInterval);
   },
   methods: {
     applyUpdate() { this.updateSW?.(true); },
+    async checkForLatestVersion(swUrl, registration) {
+      if (!registration || !navigator.onLine) return;
+
+      try {
+        const response = await fetch(swUrl, {
+          cache: 'no-store',
+          headers: { 'cache-control': 'no-cache' },
+        });
+
+        if (response.ok) await registration.update();
+      } catch (error) {
+        console.debug('Service worker update check failed:', error);
+      }
+    },
   },
 };
 </script>
