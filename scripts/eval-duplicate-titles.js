@@ -20,7 +20,8 @@ async function main() {
     const s = YAML.parse(readFileSync(f, 'utf8'));
     const m = f.match(/src\/levels\/([^/]+)\/([^/]+)\//);
     const lvl = `${m[1]}/${m[2]}`;
-    const key = `${lvl}|${s.title || '(untitled)'}`;
+    const title = typeof s.title === 'object' && s.title ? (s.title.pt ?? s.title.en) : s.title;
+    const key = `${lvl}|${title || '(untitled)'}`;
     if (!byLvlTitle.has(key)) byLvlTitle.set(key, []);
     byLvlTitle.get(key).push(f.split('/').pop());
   }
