@@ -256,6 +256,16 @@ const DEFINITION_RE = /(?:['"][^'"]{2,}['"]|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-zá�
 // E.g. "電車で (de trem) + 駅まで (até a estação) + 行きます (vou)."
 // This is a teaching method — chunked translation with grammatical reading.
 const JP_DECOMP_RE = /[぀-ヿ一-鿿].*\([^)]+\)\s*\+/;
+// Generic chunk-by-chunk decomposition: ≥2 occurrences of ' + ' joining
+// substantive tokens. Teaches by sentence chunking — common in JP, EN, PT
+// grammar drills. e.g. "この決定 + をめぐって + 議論が起きた"
+//                       "at + hora + in the evening"
+//                       "De + o = do"
+const PLUS_DECOMP_RE = /\S+\s+\+\s+\S+\s+\+\s+\S/;
+// Non-numeric equation: variable/word `=` value with operators. Catches
+// "C(n,1) = n", "De + o = do", "x! = x*(x-1)*…", "a + b = c".
+// Distinct from COMPUTATION_RE (which requires ≥4-char tokens both sides).
+const ALPHA_EQ_RE = /\S\s*[+\-×÷*]\s*\S+\s*=\s*\S/;
 // Vocabulary enumeration with parenthetical translations or numeric values:
 // ≥2 entries of `term (gloss)` separated by commas/slashes/spaces. Teaches
 // by lexical mapping — common in early-grade vocab and number sets.
@@ -267,9 +277,10 @@ const VOCAB_ENUM_RE = /[\wáéíóúâêôãõç-]+\s*\([^)]+\)[\s,;/]+[\wáéí
 // lessons in early-grade language sets.
 const WORD_FAMILY_RE = /família\s+-?[a-z]+-?\b[^:]*:\s*\w/i;
 // "Phrase: list" enumeration — ≥3 comma-separated terms after a colon.
+// Terms may be multi-word ("a cat", "in the evening").
 // e.g. "As 4 estações: spring, summer, autumn, winter."
-//      "As cores básicas: red, blue, green, yellow, black, white."
-const COLON_LIST_RE = /:\s*\w[\wáéíóúâêôãõç-]*(?:\s*,\s*\w[\wáéíóúâêôãõç-]*){2,}/i;
+//      "'a' antes de sons consonantais: a cat, a dog, a house."
+const COLON_LIST_RE = /:\s*[\wáéíóúâêôãõç'-][^,]*?(?:\s*,\s*[\wáéíóúâêôãõç'-][^,]*?){2,}[.\s]*$/im;
 // Numeric/word equation: "1 = one", "10 = ten" — digit equating to a
 // word definition (early-grade vocabulary).
 const NUM_DEF_RE = /\b\d+\s*=\s*[A-Za-zÁÉÍÓÚÂÊÔÃÕÇáéíóúâêôãõç]/;
@@ -309,6 +320,6 @@ export function categorize(rationale) {
   if (RESTATE_RE.test(s)) return 'restatement';
   const sAscii = stripAccents(s);
   if (METHOD_RE.test(sAscii)) return 'method';
-  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s) || ARITHMETIC_RE.test(s) || JP_DECOMP_RE.test(s) || VOCAB_ENUM_RE.test(s) || WORD_FAMILY_RE.test(s) || ENUM_LIST_RE.test(s) || MATH_SHORTHAND_RE.test(s) || JP_GRAMMAR_RE.test(s) || COLON_LIST_RE.test(s) || NUM_DEF_RE.test(s)) return 'method';
+  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s) || ARITHMETIC_RE.test(s) || JP_DECOMP_RE.test(s) || VOCAB_ENUM_RE.test(s) || WORD_FAMILY_RE.test(s) || ENUM_LIST_RE.test(s) || MATH_SHORTHAND_RE.test(s) || JP_GRAMMAR_RE.test(s) || COLON_LIST_RE.test(s) || NUM_DEF_RE.test(s) || PLUS_DECOMP_RE.test(s) || ALPHA_EQ_RE.test(s)) return 'method';
   return 'generic';
 }
