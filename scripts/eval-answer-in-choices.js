@@ -19,6 +19,11 @@ const RED = '\x1b[31m', GREEN = '\x1b[32m', GRAY = '\x1b[90m';
 const c = (t, col) => `${col}${t}${RESET}`;
 
 const CHOICE_RE = /\(([^)?]+\/[^)?]+)\)\s*$/;
+// Real choice prompts read as `Q: (a/b/c)` or `Q — (a/b/c)`. Without that
+// punctuation lead, the inline parens are usually L1 translation hints,
+// pronunciation marks (/æ/), or sequence/ordering glosses — not real choices.
+const REAL_CHOICE_RE = /[:—]\s*\([^)?]+\/[^)?]+\)\s*$/;
+const norm = s => String(s).trim().replace(/^[‘’“”'"`*]+|[‘’“”'"`*.]+$/g, '').trim().toLowerCase();
 
 async function main() {
   const files = await fg('src/levels/**/set_*.yaml');
@@ -33,16 +38,12 @@ async function main() {
         if (!choices) {
           const q = String(e.question || '');
           if (!CHOICE_RE.test(q)) continue;
+          if (!REAL_CHOICE_RE.test(q)) continue;
           choices = q.match(CHOICE_RE)[1].split('/').map(s => s.trim());
         }
-        const ans = String(e.correctAnswer ?? '').trim().toLowerCase();
+        const ans = norm(e.correctAnswer ?? '');
         if (!ans) continue;
-        const pool = choices.map(c => String(c).trim().toLowerCase());
-        // For inline-parsed choices, mismatch is ambiguous — could be a
-        // math fraction like (x/2) rather than real choices. We only
-        // report when the `choices:` field is explicit — UNLESS the set
-        // is non-numeric subject (portuguese/english/japanese) where
-        // inline choices are always real.
+        const pool = choices.map(norm);
         const isProse = !explicit && s.subject && s.subject !== 'math';
         if (!pool.includes(ans) && !explicit && !isProse) continue;
         checked++;
