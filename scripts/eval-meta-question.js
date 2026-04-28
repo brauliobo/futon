@@ -20,9 +20,17 @@ export const PATTERNS = [
   { name: 'pratique-topic', re: /^pratique [a-záéíóúâêôãõç\s,]{5,}\.?\s*$/i },
 ];
 
+function asText(q) {
+  if (q == null) return '';
+  if (typeof q === 'string') return q;
+  if (typeof q === 'object') return q.pt ?? q.en ?? '';
+  return String(q);
+}
+
 export function detect(question) {
-  if (!question) return null;
-  for (const p of PATTERNS) if (p.re.test(question.trim())) return p.name;
+  const text = asText(question);
+  if (!text) return null;
+  for (const p of PATTERNS) if (p.re.test(text.trim())) return p.name;
   return null;
 }
 

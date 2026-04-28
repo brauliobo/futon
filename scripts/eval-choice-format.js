@@ -22,9 +22,17 @@ const LEVELS = path.join(ROOT, 'src', 'levels');
 
 const CHOICE_TAIL = /\(([^()]*)\)\s*$/;
 
+function asText(q) {
+  if (q == null) return '';
+  if (typeof q === 'string') return q;
+  if (typeof q === 'object') return q.pt ?? q.en ?? '';
+  return String(q);
+}
+
 export function inspectChoices(question) {
-  if (!question) return null;
-  const m = CHOICE_TAIL.exec(question.trim());
+  const text = asText(question);
+  if (!text) return null;
+  const m = CHOICE_TAIL.exec(text.trim());
   if (!m) return null;
   const body = m[1];
   if (!body.includes('/')) return null;
