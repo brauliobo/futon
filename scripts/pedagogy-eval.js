@@ -349,14 +349,18 @@ function scoreDistractors(set) {
 const SHORT_VOCAB_RE = /^\S{1,3}$/;
 // Quoted passage ≥ 80 chars = embedded reading text. Paragraph-analysis
 // exercises legitimately carry longer prompts than drill questions.
+// Length is measured on the question stem only — the inline (a/b/c/d)
+// option list at the end is auxiliary and doesn't add cognitive load
+// the way the stem does.
 const EMBEDDED_PASSAGE_RE = /['"][^'"]{80,}['"]/;
+const INLINE_OPTIONS_RE = /\s*\([^)]+(?:\/|\s›\s|\s\|\s)[^)]+\)\s*$/;
 function scoreQuestionLength(set) {
   const exs = allExercises(set);
   if (!exs.length) return { score: 0, max: 10, issue: null };
   let bad = 0;
   for (const e of exs) {
     if (e.type === 'cloze') continue;
-    const q = String(e.question || '');
+    const q = String(e.question || '').replace(INLINE_OPTIONS_RE, '');
     const maxLen = (e.difficulty >= 5) ? 900 : (EMBEDDED_PASSAGE_RE.test(q) ? 400 : 250);
     if (q.length > maxLen) { bad++; continue; }
     if (q.length < 3 && !SHORT_VOCAB_RE.test(q)) bad++;
