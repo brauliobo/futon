@@ -22,7 +22,7 @@ export const FAMILIES = {
   // Multiple-choice (sugar: "(a/b/c)" suffix in question).
   choice: ['choice'],
   // Translation / vocabulary.
-  translation: ['english_vocab', 'english_phrases', 'translation', 'japanese_vocab', 'kana_reading', 'kana_writing'],
+  translation: ['english_vocab', 'english_phrases', 'translation', 'japanese_vocab', 'kana_reading', 'kana_writing', 'spanish_vocab'],
   // Passage-based comprehension.
   reading: ['reading', 'reading_comprehension'],
   // Literacy & grammar short-answer.

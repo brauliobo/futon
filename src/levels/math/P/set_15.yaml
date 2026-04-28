@@ -6,7 +6,7 @@ inputType: number
 difficulty: 4
 objectives:
   - prob.binomial
-example: "P(X=k) = C(n,k)·p^k·(1-p)^(n-k). Ex.: n=3, p=0.5, k=2 → C(3,2)×0.25×0.5 = 0.375."
+example: "P(X=k) = C(n,k)·p^k·(1-p)^(n-k); soma das probabilidades = 1. Ex.: n=3, p=0.5, k=2 → C(3,2)=3; 3 × 0.25 × 0.5 = 0.375; complemento P(k≠2) = 1 - 0.375 = 0 + 0.625."
 passCriteria:
   minAccuracyPercent: 75
   maxAvgSecondsPerExercise: 20
@@ -401,4 +401,4 @@ pages:
         difficulty: 2
         objectives:
           - prob.binomial
-target: 100
+target: 50

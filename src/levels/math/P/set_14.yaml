@@ -6,7 +6,7 @@ inputType: number
 difficulty: 4
 objectives:
   - stats.variance
-example: "s² = Σ(xᵢ-x̄)² / (n-1). Ex.: {2,4,6} → x̄=4; s²=(4+0+4)/2=4; s=2."
+example: "s² = Σ(xᵢ-x̄)² / (n-1). Ex.: {2,4,6} → x̄=4; (2-4)² + (4-4)² + (6-4)² = 4+0+4 = 8; s²=8/2=4; s=2."
 passCriteria:
   minAccuracyPercent: 75
   maxAvgSecondsPerExercise: 20
@@ -401,4 +401,4 @@ pages:
         difficulty: 2
         objectives:
           - stats.variance
-target: 100
+target: 50

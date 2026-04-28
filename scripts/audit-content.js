@@ -23,12 +23,18 @@ const SUBJECTS = SUBJECT_FILTER
 function normalizeAnswer(str) {
   return String(str || '')
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/^[\u2018\u2019\u201c\u201d'"`*]+|[\u2018\u2019\u201c\u201d'"`*.]+$/g, '')
     .replace(/\s+/g, '').replace(/,/, '.').toLowerCase();
 }
 
 const CHOICE_RE = /\(([^)]+\/[^)]+)\)\s*$/;
+// Inline parens act as real choices only when introduced by `:` or `—`.
+// Without that lead they are L1-translation hints, IPA marks, or sequence
+// glosses — see scripts/eval-answer-in-choices.js for rationale.
+const REAL_CHOICE_RE = /[:—]\s*\([^)]+\/[^)]+\)\s*$/;
 
 function parseChoices(question) {
+  if (!REAL_CHOICE_RE.test(question)) return null;
   const m = question.match(CHOICE_RE);
   if (!m) return null;
   return m[1].split('/').map(s => s.trim());

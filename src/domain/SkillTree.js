@@ -32,7 +32,10 @@ export class SkillTree {
   ];
 
   static ENGLISH = [
-    { id: 'vocabulary', name: 'Vocabulary', icon: '📖', levels: ['A'], prereqs: [] },
+    { id: 'pre_listening', name: 'Pre-listening', icon: '👂', levels: ['7A','6A','5A'], prereqs: [] },
+    { id: 'first_words', name: 'First Words', icon: '🗣', levels: ['4A','3A'], prereqs: ['pre_listening'] },
+    { id: 'simple_phrases', name: 'Simple Phrases', icon: '💬', levels: ['2A','1A'], prereqs: ['first_words'] },
+    { id: 'vocabulary', name: 'Vocabulary', icon: '📖', levels: ['A'], prereqs: ['simple_phrases'] },
     { id: 'sentences', name: 'Sentences', icon: '💬', levels: ['B'], prereqs: ['vocabulary'] },
     { id: 'past_tense', name: 'Past Tense', icon: '⏪', levels: ['C'], prereqs: ['sentences'] },
     { id: 'future_compare', name: 'Future & Compare', icon: '⏩', levels: ['D'], prereqs: ['past_tense'] },
@@ -52,6 +55,15 @@ export class SkillTree {
     { id: 'kanji_basic', name: 'First Kanji', icon: '漢', levels: ['A'], prereqs: ['katakana'] },
     { id: 'particles_verbs', name: 'Particles & Verbs', icon: '〜', levels: ['B'], prereqs: ['kanji_basic'] },
     { id: 'adjectives_past', name: 'Adjectives & Past', icon: '⏪', levels: ['C'], prereqs: ['particles_verbs'] },
+    { id: 'connectors', name: 'Connectors & Reasons', icon: '🔗', levels: ['D'], prereqs: ['adjectives_past'] },
+    { id: 'plain_form', name: 'Plain Form & Quotes', icon: '📜', levels: ['E'], prereqs: ['connectors'] },
+    { id: 'modifiers', name: 'Modifiers & Conditions', icon: '🔀', levels: ['F'], prereqs: ['plain_form'] },
+    { id: 'discourse', name: 'Discourse & Function', icon: '💬', levels: ['G'], prereqs: ['modifiers'] },
+    { id: 'advanced_grammar', name: 'Advanced Grammar', icon: '🎓', levels: ['H'], prereqs: ['discourse'] },
+    { id: 'jlpt_n3', name: 'JLPT N3', icon: '📘', levels: ['I'], prereqs: ['advanced_grammar'] },
+    { id: 'jlpt_n2', name: 'JLPT N2', icon: '📗', levels: ['J'], prereqs: ['jlpt_n3'] },
+    { id: 'jlpt_n1', name: 'JLPT N1', icon: '📕', levels: ['K'], prereqs: ['jlpt_n2'] },
+    { id: 'native_polish', name: 'Native Polish', icon: '🌸', levels: ['L'], prereqs: ['jlpt_n1'] },
   ];
 
   static SPANISH = [
