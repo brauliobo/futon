@@ -18,6 +18,10 @@ const METHOD_TERMS = [
   'simplifique', 'desenhe', 'liste', 'separe', 'visualize', 'recuper[ea]',
   'verifique', 'explique', 'descreva', 'organize', 'agrupe',
   'fatore', 'expanda', 'iguale',
+  // Linear algebra / vectors
+  'componente[s]?', 'subespaço[s]?', 'subespaco[s]?', 'vetor[ea]s?',
+  'dimensão', 'dimensões', 'origem\\b', 'colinear', 'linearmente',
+  'L\\.D\\.', 'L\\.I\\.', 'base\\b', 'gerador[ea]s?',
   'form[ae]m?', 'form[ao]u', 'junta', 'juntam', 'junt[ao]u', 'compõe',
   'por\\s+extenso', 'em\\s+letra\\b', 'extenso',
   // Reasoning connectors (PT)
@@ -85,6 +89,12 @@ const METHOD_TERMS = [
   'ya\\s+que', 'dado\\s+que', 'por\\s+tanto', 'por\\s+ello', 'es\\s+decir',
   'porque\\b', 'sino\\b', 'aunque\\b',
   // Spanish copula+definition (teaching by classification)
+  'es\\s+tu[s]?\\s+\\w', 'son\\s+tu[s]?\\s+\\w',
+  'comparte[ns]?', 'parentesco', 'progenit[oó]r[ea]s?',
+  'padre[s]?\\b', 'madre[s]?\\b', 'hijo[s]?\\b', 'hija[s]?\\b',
+  'hermano[s]?', 'hermana[s]?', 'tí[oa]s?', 'prim[oa]s?\\b',
+  'sobrin[oa]s?', 'niet[oa]s?', 'nuer[oa]', 'yerno', 'suegr[oa]s?',
+  'cuñad[oa]s?', 'esposo[s]?', 'esposa[s]?', 'pareja',
   'suele[nm]?\\b', 'sole[nm]?os?\\b', 'pertenece[n]?\\b', 'contiene[n]?\\b',
   'deja[nm]?\\s+pasar', 'empieza\\s+(?:el|en|la)', 'comienza\\s+(?:el|en|la)',
   'es\\s+(?:la|el|una|uno)\\s+\\w', 'es\\s+un[ao]?\\s+\\w',
@@ -298,9 +308,10 @@ const NUM_DEF_RE = /\b\d+\s*=\s*[A-Za-zÁÉÍÓÚÂÊÔÃÕÇáéíóúâêôã�
 // short descriptor. e.g. "shirt, pants, dress, shoes, hat — 5 roupas básicas."
 // or "I, you, he, she, it, we, they — os sete pronomes pessoais."
 const ENUM_LIST_RE = /(?:[\wáéíóúâêôãõç-]+\s*,\s*){2,}[\wáéíóúâêôãõç/-]+\s*[—–-]\s*\S/i;
-// Math shorthand: factorials, exponents, combinations, and approximations.
-// e.g. "4! = 24.", "5! = 120 maneiras.", "2^3 = 8", "C(n,1) = n", "1/6 ≈ 0.167"
-const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|C\(\s*[a-z\d]|[\d\w/]+\s*≈\s*[\d.]+|C\([a-z],[a-z\d]\)\s*=/i;
+// Math shorthand: factorials, exponents, combinations, approximations,
+// variable assignments, and middle-dot products.
+// e.g. "4! = 24.", "C(n,1) = n", "1/6 ≈ 0.167", "a = 4", "(2,4)=2·(1,2)"
+const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|C\(\s*[a-z\d]|[\d\w/]+\s*≈\s*[\d.]+|C\([a-z],[a-z\d]\)\s*=|\b[a-z]\s*=\s*-?\d|\d\s*[·]\s*[(\d]/i;
 // Japanese script with grammatical enumeration: kanji/kana followed by a
 // colon, comma list, or " : " with at least one paired term.
 // e.g. "どころか: 親切どころか、上手どころか、謝るどころか."
