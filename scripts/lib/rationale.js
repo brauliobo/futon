@@ -84,6 +84,16 @@ const METHOD_TERMS = [
   'pirámide', 'entradilla', 'reportaje', 'editorial', 'crónica',
   'ya\\s+que', 'dado\\s+que', 'por\\s+tanto', 'por\\s+ello', 'es\\s+decir',
   'porque\\b', 'sino\\b', 'aunque\\b',
+  // Spanish copula+definition (teaching by classification)
+  'suele[nm]?\\b', 'sole[nm]?os?\\b', 'pertenece[n]?\\b', 'contiene[n]?\\b',
+  'deja[nm]?\\s+pasar', 'empieza\\s+(?:el|en|la)', 'comienza\\s+(?:el|en|la)',
+  'es\\s+(?:la|el|una|uno)\\s+\\w', 'es\\s+un[ao]?\\s+\\w',
+  'son\\s+(?:los|las)\\s+\\w', 'tras\\s+\\w', 'antes\\s+de',
+  'arriba\\b', 'abajo\\b', 'encima\\b', 'debajo\\b',
+  'lado[s]?\\b', 'lateral[es]?', 'parte\\s+(?:superior|inferior)',
+  'cubierta', 'subterráneo', 'exterior\\b', 'interior\\b',
+  'estación', 'habitación', 'temporada',
+  'frí[ao]', 'caluros[ao]', 'cálid[ao]',
   // Spanish action verbs (teaching-by-function pattern)
   'anuncia[nm]?', 'introduce[n]?', 'separa[nm]?', 'delimita[nm]?',
   'encierra[nm]?', 'cierra[nm]?', 'abr[eo][nm]?',
@@ -288,9 +298,9 @@ const NUM_DEF_RE = /\b\d+\s*=\s*[A-Za-zÁÉÍÓÚÂÊÔÃÕÇáéíóúâêôã�
 // short descriptor. e.g. "shirt, pants, dress, shoes, hat — 5 roupas básicas."
 // or "I, you, he, she, it, we, they — os sete pronomes pessoais."
 const ENUM_LIST_RE = /(?:[\wáéíóúâêôãõç-]+\s*,\s*){2,}[\wáéíóúâêôãõç/-]+\s*[—–-]\s*\S/i;
-// Math shorthand: factorials and exponents with their value.
-// e.g. "4! = 24.", "5! = 120 maneiras.", "2^3 = 8", "n! = n × (n-1) × …"
-const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*[\^]\s*\d+\s*=|C\(\s*\d/;
+// Math shorthand: factorials, exponents, combinations, and approximations.
+// e.g. "4! = 24.", "5! = 120 maneiras.", "2^3 = 8", "C(n,1) = n", "1/6 ≈ 0.167"
+const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|C\(\s*[a-z\d]|[\d\w/]+\s*≈\s*[\d.]+|C\([a-z],[a-z\d]\)\s*=/i;
 // Japanese script with grammatical enumeration: kanji/kana followed by a
 // colon, comma list, or " : " with at least one paired term.
 // e.g. "どころか: 親切どころか、上手どころか、謝るどころか."
