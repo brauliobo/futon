@@ -90,240 +90,6 @@ pages:
         objectives:
           - stats.inference
   - pageNumber: 3
-    title: Erro Padrão da Média — prática 1
-    description: "SE = σ/√n ou s/√n."
-    exercises:
-      - type: mental_math
-        question: σ=10, n=100 → SE = σ/√n = ?
-        correctAnswer: 1
-        rationale: SE = 10/√100 = 10/10 = 1.
-        difficulty: 3
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: σ=6, n=9 → SE = ?
-        correctAnswer: 2
-        rationale: SE = 6/√9 = 6/3 = 2.
-        difficulty: 3
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: σ=4, n=4 → SE = ?
-        correctAnswer: 2
-        rationale: SE = 4/2 = 2.
-        difficulty: 2
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: σ=5, n=25 → SE = ?
-        correctAnswer: 1
-        rationale: SE = 5/5 = 1.
-        difficulty: 3
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: Quadruplicar n → SE muda por fator = ?
-        correctAnswer: 0.5
-        rationale: SE ∝ 1/√n; √4=2 → SE/2, fator = 0.5.
-        difficulty: 4
-        objectives:
-          - stats.inference
-  - pageNumber: 4
-    title: Erro Padrão da Média — prática 2
-    description: "SE = σ/√n ou s/√n."
-    exercises:
-      - type: mental_math
-        question: σ=10, n=100 → SE = σ/√n = ?
-        correctAnswer: 1
-        rationale: SE = 10/√100 = 10/10 = 1.
-        difficulty: 3
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: σ=6, n=9 → SE = ?
-        correctAnswer: 2
-        rationale: SE = 6/√9 = 6/3 = 2.
-        difficulty: 3
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: σ=4, n=4 → SE = ?
-        correctAnswer: 2
-        rationale: SE = 4/2 = 2.
-        difficulty: 2
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: σ=5, n=25 → SE = ?
-        correctAnswer: 1
-        rationale: SE = 5/5 = 1.
-        difficulty: 3
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: Quadruplicar n → SE muda por fator = ?
-        correctAnswer: 0.5
-        rationale: SE ∝ 1/√n; √4=2 → SE/2, fator = 0.5.
-        difficulty: 4
-        objectives:
-          - stats.inference
-  - pageNumber: 5
-    title: Intervalo de Confiança 95% — prática 1
-    description: "IC 95%: x̄ ± 1.96·SE."
-    exercises:
-      - type: mental_math
-        question: x̄=50, SE=1 → limite superior do IC 95% = x̄ + 1.96 ≈ ?
-        correctAnswer: 51.96
-        rationale: 50 + 1.96×1 = 51.96.
-        difficulty: 3
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: x̄=50, SE=1 → limite inferior do IC 95% = ?
-        correctAnswer: 48.04
-        rationale: 50 - 1.96 = 48.04.
-        difficulty: 3
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: Margem de erro do IC 95% com SE=2 ≈ ?
-        correctAnswer: 3.92
-        rationale: ME = 1.96×SE = 1.96×2 = 3.92.
-        difficulty: 3
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: x̄=100, σ=10, n=100 → SE = 1; IC 95% inferior ≈ ?
-        correctAnswer: 98.04
-        rationale: 100 - 1.96×1 = 98.04.
-        difficulty: 4
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: Para IC 99% usa-se z ≈ ? (1.96/2.58/3.0)
-        correctAnswer: 2.58
-        rationale: z₀.₀₀₅ = 2.576 ≈ 2.58 para IC 99%.
-        difficulty: 3
-        objectives:
-          - stats.inference
-  - pageNumber: 6
-    title: Intervalo de Confiança 95% — prática 2
-    description: "IC 95%: x̄ ± 1.96·SE."
-    exercises:
-      - type: mental_math
-        question: x̄=50, SE=1 → limite superior do IC 95% = x̄ + 1.96 ≈ ?
-        correctAnswer: 51.96
-        rationale: 50 + 1.96×1 = 51.96.
-        difficulty: 3
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: x̄=50, SE=1 → limite inferior do IC 95% = ?
-        correctAnswer: 48.04
-        rationale: 50 - 1.96 = 48.04.
-        difficulty: 3
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: Margem de erro do IC 95% com SE=2 ≈ ?
-        correctAnswer: 3.92
-        rationale: ME = 1.96×SE = 1.96×2 = 3.92.
-        difficulty: 3
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: x̄=100, σ=10, n=100 → SE = 1; IC 95% inferior ≈ ?
-        correctAnswer: 98.04
-        rationale: 100 - 1.96×1 = 98.04.
-        difficulty: 4
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: Para IC 99% usa-se z ≈ ? (1.96/2.58/3.0)
-        correctAnswer: 2.58
-        rationale: z₀.₀₀₅ = 2.576 ≈ 2.58 para IC 99%.
-        difficulty: 3
-        objectives:
-          - stats.inference
-  - pageNumber: 7
-    title: Tamanho de Amostra — prática 1
-    description: "n = (z·σ/ME)²."
-    exercises:
-      - type: mental_math
-        question: σ=10, ME=2, z=2 → n = (2×10/2)² = ?
-        correctAnswer: 100
-        rationale: n = (20/2)² = 10² = 100.
-        difficulty: 4
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: σ=5, ME=1, z=2 → n = ?
-        correctAnswer: 100
-        rationale: n = (2×5/1)² = 10² = 100.
-        difficulty: 4
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: σ=20, ME=4, z=2 → n = ?
-        correctAnswer: 100
-        rationale: n = (2×20/4)² = 10² = 100.
-        difficulty: 4
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: Dobrar ME → n muda por fator = ?
-        correctAnswer: 0.25
-        rationale: n ∝ 1/ME²; dobrar ME → n × 1/4 = 0.25.
-        difficulty: 5
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: σ=10, ME=5, z=2 → n = ?
-        correctAnswer: 16
-        rationale: n = (2×10/5)² = 4² = 16.
-        difficulty: 4
-        objectives:
-          - stats.inference
-  - pageNumber: 8
-    title: Tamanho de Amostra — prática 2
-    description: "n = (z·σ/ME)²."
-    exercises:
-      - type: mental_math
-        question: σ=10, ME=2, z=2 → n = (2×10/2)² = ?
-        correctAnswer: 100
-        rationale: n = (20/2)² = 10² = 100.
-        difficulty: 4
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: σ=5, ME=1, z=2 → n = ?
-        correctAnswer: 100
-        rationale: n = (2×5/1)² = 10² = 100.
-        difficulty: 4
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: σ=20, ME=4, z=2 → n = ?
-        correctAnswer: 100
-        rationale: n = (2×20/4)² = 10² = 100.
-        difficulty: 4
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: Dobrar ME → n muda por fator = ?
-        correctAnswer: 0.25
-        rationale: n ∝ 1/ME²; dobrar ME → n × 1/4 = 0.25.
-        difficulty: 5
-        objectives:
-          - stats.inference
-      - type: mental_math
-        question: σ=10, ME=5, z=2 → n = ?
-        correctAnswer: 16
-        rationale: n = (2×10/5)² = 4² = 16.
-        difficulty: 4
-        objectives:
-          - stats.inference
-  - pageNumber: 9
     title: Interpretação do IC — prática 1
     description: Significado do nível de confiança.
     exercises:
@@ -362,7 +128,7 @@ pages:
         difficulty: 2
         objectives:
           - stats.inference
-  - pageNumber: 10
+  - pageNumber: 4
     title: Interpretação do IC — prática 2
     description: Significado do nível de confiança.
     exercises:
@@ -399,6 +165,240 @@ pages:
         correctAnswer: 20
         rationale: x̄ = (14+26)/2 = 20.
         difficulty: 2
+        objectives:
+          - stats.inference
+  - pageNumber: 5
+    title: Erro Padrão da Média — prática 1
+    description: SE = σ/√n ou s/√n.
+    exercises:
+      - type: mental_math
+        question: σ=10, n=100 → SE = σ/√n = ?
+        correctAnswer: 1
+        rationale: SE = 10/√100 = 10/10 = 1.
+        difficulty: 3
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: σ=6, n=9 → SE = ?
+        correctAnswer: 2
+        rationale: SE = 6/√9 = 6/3 = 2.
+        difficulty: 3
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: σ=4, n=4 → SE = ?
+        correctAnswer: 2
+        rationale: SE = 4/2 = 2.
+        difficulty: 2
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: σ=5, n=25 → SE = ?
+        correctAnswer: 1
+        rationale: SE = 5/5 = 1.
+        difficulty: 3
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: Quadruplicar n → SE muda por fator = ?
+        correctAnswer: 0.5
+        rationale: SE ∝ 1/√n; √4=2 → SE/2, fator = 0.5.
+        difficulty: 4
+        objectives:
+          - stats.inference
+  - pageNumber: 6
+    title: Erro Padrão da Média — prática 2
+    description: SE = σ/√n ou s/√n.
+    exercises:
+      - type: mental_math
+        question: σ=10, n=100 → SE = σ/√n = ?
+        correctAnswer: 1
+        rationale: SE = 10/√100 = 10/10 = 1.
+        difficulty: 3
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: σ=6, n=9 → SE = ?
+        correctAnswer: 2
+        rationale: SE = 6/√9 = 6/3 = 2.
+        difficulty: 3
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: σ=4, n=4 → SE = ?
+        correctAnswer: 2
+        rationale: SE = 4/2 = 2.
+        difficulty: 2
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: σ=5, n=25 → SE = ?
+        correctAnswer: 1
+        rationale: SE = 5/5 = 1.
+        difficulty: 3
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: Quadruplicar n → SE muda por fator = ?
+        correctAnswer: 0.5
+        rationale: SE ∝ 1/√n; √4=2 → SE/2, fator = 0.5.
+        difficulty: 4
+        objectives:
+          - stats.inference
+  - pageNumber: 7
+    title: Intervalo de Confiança 95% — prática 1
+    description: "IC 95%: x̄ ± 1.96·SE."
+    exercises:
+      - type: mental_math
+        question: x̄=50, SE=1 → limite superior do IC 95% = x̄ + 1.96 ≈ ?
+        correctAnswer: 51.96
+        rationale: 50 + 1.96×1 = 51.96.
+        difficulty: 3
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: x̄=50, SE=1 → limite inferior do IC 95% = ?
+        correctAnswer: 48.04
+        rationale: 50 - 1.96 = 48.04.
+        difficulty: 3
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: Margem de erro do IC 95% com SE=2 ≈ ?
+        correctAnswer: 3.92
+        rationale: ME = 1.96×SE = 1.96×2 = 3.92.
+        difficulty: 3
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: x̄=100, σ=10, n=100 → SE = 1; IC 95% inferior ≈ ?
+        correctAnswer: 98.04
+        rationale: 100 - 1.96×1 = 98.04.
+        difficulty: 4
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: Para IC 99% usa-se z ≈ ? (1.96/2.58/3.0)
+        correctAnswer: 2.58
+        rationale: z₀.₀₀₅ = 2.576 ≈ 2.58 para IC 99%.
+        difficulty: 3
+        objectives:
+          - stats.inference
+  - pageNumber: 8
+    title: Intervalo de Confiança 95% — prática 2
+    description: "IC 95%: x̄ ± 1.96·SE."
+    exercises:
+      - type: mental_math
+        question: x̄=50, SE=1 → limite superior do IC 95% = x̄ + 1.96 ≈ ?
+        correctAnswer: 51.96
+        rationale: 50 + 1.96×1 = 51.96.
+        difficulty: 3
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: x̄=50, SE=1 → limite inferior do IC 95% = ?
+        correctAnswer: 48.04
+        rationale: 50 - 1.96 = 48.04.
+        difficulty: 3
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: Margem de erro do IC 95% com SE=2 ≈ ?
+        correctAnswer: 3.92
+        rationale: ME = 1.96×SE = 1.96×2 = 3.92.
+        difficulty: 3
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: x̄=100, σ=10, n=100 → SE = 1; IC 95% inferior ≈ ?
+        correctAnswer: 98.04
+        rationale: 100 - 1.96×1 = 98.04.
+        difficulty: 4
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: Para IC 99% usa-se z ≈ ? (1.96/2.58/3.0)
+        correctAnswer: 2.58
+        rationale: z₀.₀₀₅ = 2.576 ≈ 2.58 para IC 99%.
+        difficulty: 3
+        objectives:
+          - stats.inference
+  - pageNumber: 9
+    title: Tamanho de Amostra — prática 1
+    description: n = (z·σ/ME)².
+    exercises:
+      - type: mental_math
+        question: σ=10, ME=2, z=2 → n = (2×10/2)² = ?
+        correctAnswer: 100
+        rationale: n = (20/2)² = 10² = 100.
+        difficulty: 4
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: σ=5, ME=1, z=2 → n = ?
+        correctAnswer: 100
+        rationale: n = (2×5/1)² = 10² = 100.
+        difficulty: 4
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: σ=20, ME=4, z=2 → n = ?
+        correctAnswer: 100
+        rationale: n = (2×20/4)² = 10² = 100.
+        difficulty: 4
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: Dobrar ME → n muda por fator = ?
+        correctAnswer: 0.25
+        rationale: n ∝ 1/ME²; dobrar ME → n × 1/4 = 0.25.
+        difficulty: 5
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: σ=10, ME=5, z=2 → n = ?
+        correctAnswer: 16
+        rationale: n = (2×10/5)² = 4² = 16.
+        difficulty: 4
+        objectives:
+          - stats.inference
+  - pageNumber: 10
+    title: Tamanho de Amostra — prática 2
+    description: n = (z·σ/ME)².
+    exercises:
+      - type: mental_math
+        question: σ=10, ME=2, z=2 → n = (2×10/2)² = ?
+        correctAnswer: 100
+        rationale: n = (20/2)² = 10² = 100.
+        difficulty: 4
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: σ=5, ME=1, z=2 → n = ?
+        correctAnswer: 100
+        rationale: n = (2×5/1)² = 10² = 100.
+        difficulty: 4
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: σ=20, ME=4, z=2 → n = ?
+        correctAnswer: 100
+        rationale: n = (2×20/4)² = 10² = 100.
+        difficulty: 4
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: Dobrar ME → n muda por fator = ?
+        correctAnswer: 0.25
+        rationale: n ∝ 1/ME²; dobrar ME → n × 1/4 = 0.25.
+        difficulty: 5
+        objectives:
+          - stats.inference
+      - type: mental_math
+        question: σ=10, ME=5, z=2 → n = ?
+        correctAnswer: 16
+        rationale: n = (2×10/5)² = 4² = 16.
+        difficulty: 4
         objectives:
           - stats.inference
 target: 50

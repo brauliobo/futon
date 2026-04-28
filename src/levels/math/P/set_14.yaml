@@ -12,47 +12,86 @@ passCriteria:
   maxAvgSecondsPerExercise: 20
 pages:
   - pageNumber: 1
-    title: Variância Populacional — prática 1
-    description: "σ² = Σ(xᵢ-μ)² / n."
+    title: Desvio Padrão — prática 1
+    description: s = √s² ou σ = √σ².
     exercises:
       - type: mental_math
-        question: "{2,4,6} — μ=4; σ² = [(2-4)²+(4-4)²+(6-4)²]/3 = ?"
-        correctAnswer: 2.667
-        rationale: (4+0+4)/3 = 8/3 ≈ 2.667.
-        difficulty: 3
-        objectives:
-          - stats.variance
-      - type: mental_math
-        question: "{1,1,1} — σ² = ?"
-        correctAnswer: 0
-        rationale: Todos iguais → desvios = 0 → σ² = 0.
+        question: σ² = 9 → σ = ?
+        correctAnswer: 3
+        rationale: σ = √9 = 3.
         difficulty: 1
         objectives:
           - stats.variance
       - type: mental_math
-        question: "{0,10} — μ=5; σ² = [(0-5)²+(10-5)²]/2 = ?"
-        correctAnswer: 25
-        rationale: (25+25)/2 = 25.
-        difficulty: 3
+        question: s² = 4 → s = ?
+        correctAnswer: 2
+        rationale: s = √4 = 2.
+        difficulty: 1
         objectives:
           - stats.variance
       - type: mental_math
-        question: "{2,2,8,8} — μ=5; σ² = [(9+9+9+9)]/4 = ?"
-        correctAnswer: 9
-        rationale: Cada desvio = ±3; (9+9+9+9)/4 = 36/4 = 9.
-        difficulty: 3
+        question: s² = 25 → s = ?
+        correctAnswer: 5
+        rationale: s = √25 = 5.
+        difficulty: 1
         objectives:
           - stats.variance
       - type: mental_math
-        question: "{5,5,5,5,5} — σ² = ?"
+        question: "{2,4,6} — s² = 4 → s = ?"
+        correctAnswer: 2
+        rationale: s = √4 = 2.
+        difficulty: 2
+        objectives:
+          - stats.variance
+      - type: mental_math
+        question: s² = 0 → s = ?
         correctAnswer: 0
-        rationale: Sem variação → σ² = 0.
+        rationale: s = √0 = 0; dados sem variação.
         difficulty: 1
         objectives:
           - stats.variance
   - pageNumber: 2
-    title: Variância Populacional — prática 2
-    description: "σ² = Σ(xᵢ-μ)² / n."
+    title: Desvio Padrão — prática 2
+    description: s = √s² ou σ = √σ².
+    exercises:
+      - type: mental_math
+        question: σ² = 9 → σ = ?
+        correctAnswer: 3
+        rationale: σ = √9 = 3.
+        difficulty: 1
+        objectives:
+          - stats.variance
+      - type: mental_math
+        question: s² = 4 → s = ?
+        correctAnswer: 2
+        rationale: s = √4 = 2.
+        difficulty: 1
+        objectives:
+          - stats.variance
+      - type: mental_math
+        question: s² = 25 → s = ?
+        correctAnswer: 5
+        rationale: s = √25 = 5.
+        difficulty: 1
+        objectives:
+          - stats.variance
+      - type: mental_math
+        question: "{2,4,6} — s² = 4 → s = ?"
+        correctAnswer: 2
+        rationale: s = √4 = 2.
+        difficulty: 2
+        objectives:
+          - stats.variance
+      - type: mental_math
+        question: s² = 0 → s = ?
+        correctAnswer: 0
+        rationale: s = √0 = 0; dados sem variação.
+        difficulty: 1
+        objectives:
+          - stats.variance
+  - pageNumber: 3
+    title: Variância Populacional — prática 1
+    description: σ² = Σ(xᵢ-μ)² / n.
     exercises:
       - type: mental_math
         question: "{2,4,6} — μ=4; σ² = [(2-4)²+(4-4)²+(6-4)²]/3 = ?"
@@ -89,165 +128,126 @@ pages:
         difficulty: 1
         objectives:
           - stats.variance
-  - pageNumber: 3
-    title: Variância Amostral — prática 1
-    description: "s² = Σ(xᵢ-x̄)² / (n-1) — denominador menor para não subestimar."
-    exercises:
-      - type: mental_math
-        question: "{2,4,6} — x̄=4; s² = [(4+0+4)]/(3-1) = ?"
-        correctAnswer: 4
-        rationale: 8/2 = 4.
-        difficulty: 3
-        objectives:
-          - stats.variance
-      - type: mental_math
-        question: "{1,3} — x̄=2; s² = [(1+1)]/(2-1) = ?"
-        correctAnswer: 2
-        rationale: 2/1 = 2.
-        difficulty: 3
-        objectives:
-          - stats.variance
-      - type: mental_math
-        question: "{0,2,4} — x̄=2; s² = [(4+0+4)]/2 = ?"
-        correctAnswer: 4
-        rationale: 8/2 = 4.
-        difficulty: 3
-        objectives:
-          - stats.variance
-      - type: mental_math
-        question: "{3,5,7,9} — x̄=6; s² = [(9+1+1+9)]/3 = ?"
-        correctAnswer: 6.667
-        rationale: 20/3 ≈ 6.667.
-        difficulty: 4
-        objectives:
-          - stats.variance
-      - type: mental_math
-        question: Por que dividir por n-1 em vez de n na amostra? (para / evitar)
-        correctAnswer: evitar
-        rationale: Divide por n-1 para evitar subestimação da variância da população.
-        difficulty: 3
-        objectives:
-          - stats.variance
   - pageNumber: 4
-    title: Variância Amostral — prática 2
-    description: "s² = Σ(xᵢ-x̄)² / (n-1) — denominador menor para não subestimar."
+    title: Variância Populacional — prática 2
+    description: σ² = Σ(xᵢ-μ)² / n.
     exercises:
       - type: mental_math
-        question: "{2,4,6} — x̄=4; s² = [(4+0+4)]/(3-1) = ?"
-        correctAnswer: 4
-        rationale: 8/2 = 4.
+        question: "{2,4,6} — μ=4; σ² = [(2-4)²+(4-4)²+(6-4)²]/3 = ?"
+        correctAnswer: 2.667
+        rationale: (4+0+4)/3 = 8/3 ≈ 2.667.
         difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: "{1,3} — x̄=2; s² = [(1+1)]/(2-1) = ?"
-        correctAnswer: 2
-        rationale: 2/1 = 2.
+        question: "{1,1,1} — σ² = ?"
+        correctAnswer: 0
+        rationale: Todos iguais → desvios = 0 → σ² = 0.
+        difficulty: 1
+        objectives:
+          - stats.variance
+      - type: mental_math
+        question: "{0,10} — μ=5; σ² = [(0-5)²+(10-5)²]/2 = ?"
+        correctAnswer: 25
+        rationale: (25+25)/2 = 25.
         difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: "{0,2,4} — x̄=2; s² = [(4+0+4)]/2 = ?"
-        correctAnswer: 4
-        rationale: 8/2 = 4.
+        question: "{2,2,8,8} — μ=5; σ² = [(9+9+9+9)]/4 = ?"
+        correctAnswer: 9
+        rationale: Cada desvio = ±3; (9+9+9+9)/4 = 36/4 = 9.
         difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: "{3,5,7,9} — x̄=6; s² = [(9+1+1+9)]/3 = ?"
-        correctAnswer: 6.667
-        rationale: 20/3 ≈ 6.667.
-        difficulty: 4
-        objectives:
-          - stats.variance
-      - type: mental_math
-        question: Por que dividir por n-1 em vez de n na amostra? (para / evitar)
-        correctAnswer: evitar
-        rationale: Divide por n-1 para evitar subestimação da variância da população.
-        difficulty: 3
+        question: "{5,5,5,5,5} — σ² = ?"
+        correctAnswer: 0
+        rationale: Sem variação → σ² = 0.
+        difficulty: 1
         objectives:
           - stats.variance
   - pageNumber: 5
-    title: Desvio Padrão — prática 1
-    description: "s = √s² ou σ = √σ²."
+    title: Coeficiente de Variação — prática 1
+    description: CV = (s / x̄) × 100%.
     exercises:
       - type: mental_math
-        question: σ² = 9 → σ = ?
-        correctAnswer: 3
-        rationale: σ = √9 = 3.
-        difficulty: 1
+        question: s=2, x̄=10 → CV (%) = ?
+        correctAnswer: 20
+        rationale: CV = (2/10)×100 = 20%.
+        difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: s² = 4 → s = ?
-        correctAnswer: 2
-        rationale: s = √4 = 2.
-        difficulty: 1
+        question: s=5, x̄=25 → CV (%) = ?
+        correctAnswer: 20
+        rationale: CV = (5/25)×100 = 20%.
+        difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: s² = 25 → s = ?
-        correctAnswer: 5
-        rationale: s = √25 = 5.
-        difficulty: 1
+        question: s=1, x̄=4 → CV (%) = ?
+        correctAnswer: 25
+        rationale: CV = (1/4)×100 = 25%.
+        difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: "{2,4,6} — s² = 4 → s = ?"
-        correctAnswer: 2
-        rationale: s = √4 = 2.
-        difficulty: 2
-        objectives:
-          - stats.variance
-      - type: mental_math
-        question: s² = 0 → s = ?
+        question: s=0, x̄=10 → CV (%) = ?
         correctAnswer: 0
-        rationale: s = √0 = 0; dados sem variação.
+        rationale: s=0 → CV = 0%; sem variação.
         difficulty: 1
+        objectives:
+          - stats.variance
+      - type: mental_math
+        question: CV maior indica (mais/menos) dispersão relativa?
+        correctAnswer: mais
+        rationale: CV alto indica maior dispersão em relação à média.
+        difficulty: 2
         objectives:
           - stats.variance
   - pageNumber: 6
-    title: Desvio Padrão — prática 2
-    description: "s = √s² ou σ = √σ²."
+    title: Coeficiente de Variação — prática 2
+    description: CV = (s / x̄) × 100%.
     exercises:
       - type: mental_math
-        question: σ² = 9 → σ = ?
-        correctAnswer: 3
-        rationale: σ = √9 = 3.
-        difficulty: 1
+        question: s=2, x̄=10 → CV (%) = ?
+        correctAnswer: 20
+        rationale: CV = (2/10)×100 = 20%.
+        difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: s² = 4 → s = ?
-        correctAnswer: 2
-        rationale: s = √4 = 2.
-        difficulty: 1
+        question: s=5, x̄=25 → CV (%) = ?
+        correctAnswer: 20
+        rationale: CV = (5/25)×100 = 20%.
+        difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: s² = 25 → s = ?
-        correctAnswer: 5
-        rationale: s = √25 = 5.
-        difficulty: 1
+        question: s=1, x̄=4 → CV (%) = ?
+        correctAnswer: 25
+        rationale: CV = (1/4)×100 = 25%.
+        difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: "{2,4,6} — s² = 4 → s = ?"
-        correctAnswer: 2
-        rationale: s = √4 = 2.
-        difficulty: 2
-        objectives:
-          - stats.variance
-      - type: mental_math
-        question: s² = 0 → s = ?
+        question: s=0, x̄=10 → CV (%) = ?
         correctAnswer: 0
-        rationale: s = √0 = 0; dados sem variação.
+        rationale: s=0 → CV = 0%; sem variação.
         difficulty: 1
+        objectives:
+          - stats.variance
+      - type: mental_math
+        question: CV maior indica (mais/menos) dispersão relativa?
+        correctAnswer: mais
+        rationale: CV alto indica maior dispersão em relação à média.
+        difficulty: 2
         objectives:
           - stats.variance
   - pageNumber: 7
     title: Propriedades da Variância — prática 1
-    description: "Var(aX+b) = a²·Var(X)."
+    description: Var(aX+b) = a²·Var(X).
     exercises:
       - type: mental_math
         question: Var(X)=4 → Var(2X) = ?
@@ -286,7 +286,7 @@ pages:
           - stats.variance
   - pageNumber: 8
     title: Propriedades da Variância — prática 2
-    description: "Var(aX+b) = a²·Var(X)."
+    description: Var(aX+b) = a²·Var(X).
     exercises:
       - type: mental_math
         question: Var(X)=4 → Var(2X) = ?
@@ -324,81 +324,81 @@ pages:
         objectives:
           - stats.variance
   - pageNumber: 9
-    title: Coeficiente de Variação — prática 1
-    description: "CV = (s / x̄) × 100%."
+    title: Variância Amostral — prática 1
+    description: s² = Σ(xᵢ-x̄)² / (n-1) — denominador menor para não subestimar.
     exercises:
       - type: mental_math
-        question: s=2, x̄=10 → CV (%) = ?
-        correctAnswer: 20
-        rationale: CV = (2/10)×100 = 20%.
+        question: "{2,4,6} — x̄=4; s² = [(4+0+4)]/(3-1) = ?"
+        correctAnswer: 4
+        rationale: 8/2 = 4.
         difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: s=5, x̄=25 → CV (%) = ?
-        correctAnswer: 20
-        rationale: CV = (5/25)×100 = 20%.
+        question: "{1,3} — x̄=2; s² = [(1+1)]/(2-1) = ?"
+        correctAnswer: 2
+        rationale: 2/1 = 2.
         difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: s=1, x̄=4 → CV (%) = ?
-        correctAnswer: 25
-        rationale: CV = (1/4)×100 = 25%.
+        question: "{0,2,4} — x̄=2; s² = [(4+0+4)]/2 = ?"
+        correctAnswer: 4
+        rationale: 8/2 = 4.
         difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: s=0, x̄=10 → CV (%) = ?
-        correctAnswer: 0
-        rationale: s=0 → CV = 0%; sem variação.
-        difficulty: 1
+        question: "{3,5,7,9} — x̄=6; s² = [(9+1+1+9)]/3 = ?"
+        correctAnswer: 6.667
+        rationale: 20/3 ≈ 6.667.
+        difficulty: 4
         objectives:
           - stats.variance
       - type: mental_math
-        question: CV maior indica (mais/menos) dispersão relativa?
-        correctAnswer: mais
-        rationale: CV alto indica maior dispersão em relação à média.
-        difficulty: 2
+        question: Por que dividir por n-1 em vez de n na amostra? (para / evitar)
+        correctAnswer: evitar
+        rationale: Divide por n-1 para evitar subestimação da variância da população.
+        difficulty: 3
         objectives:
           - stats.variance
   - pageNumber: 10
-    title: Coeficiente de Variação — prática 2
-    description: "CV = (s / x̄) × 100%."
+    title: Variância Amostral — prática 2
+    description: s² = Σ(xᵢ-x̄)² / (n-1) — denominador menor para não subestimar.
     exercises:
       - type: mental_math
-        question: s=2, x̄=10 → CV (%) = ?
-        correctAnswer: 20
-        rationale: CV = (2/10)×100 = 20%.
+        question: "{2,4,6} — x̄=4; s² = [(4+0+4)]/(3-1) = ?"
+        correctAnswer: 4
+        rationale: 8/2 = 4.
         difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: s=5, x̄=25 → CV (%) = ?
-        correctAnswer: 20
-        rationale: CV = (5/25)×100 = 20%.
+        question: "{1,3} — x̄=2; s² = [(1+1)]/(2-1) = ?"
+        correctAnswer: 2
+        rationale: 2/1 = 2.
         difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: s=1, x̄=4 → CV (%) = ?
-        correctAnswer: 25
-        rationale: CV = (1/4)×100 = 25%.
+        question: "{0,2,4} — x̄=2; s² = [(4+0+4)]/2 = ?"
+        correctAnswer: 4
+        rationale: 8/2 = 4.
         difficulty: 3
         objectives:
           - stats.variance
       - type: mental_math
-        question: s=0, x̄=10 → CV (%) = ?
-        correctAnswer: 0
-        rationale: s=0 → CV = 0%; sem variação.
-        difficulty: 1
+        question: "{3,5,7,9} — x̄=6; s² = [(9+1+1+9)]/3 = ?"
+        correctAnswer: 6.667
+        rationale: 20/3 ≈ 6.667.
+        difficulty: 4
         objectives:
           - stats.variance
       - type: mental_math
-        question: CV maior indica (mais/menos) dispersão relativa?
-        correctAnswer: mais
-        rationale: CV alto indica maior dispersão em relação à média.
-        difficulty: 2
+        question: Por que dividir por n-1 em vez de n na amostra? (para / evitar)
+        correctAnswer: evitar
+        rationale: Divide por n-1 para evitar subestimação da variância da população.
+        difficulty: 3
         objectives:
           - stats.variance
 target: 50

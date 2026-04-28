@@ -156,6 +156,19 @@ function scoreGradient(set) {
     // noise, not a design flaw — full credit.
     score += 10;
   }
+  else if (bigJumps === 1 && maxJump <= 1.2 && diffs.length >= 5) {
+    // Mid-length set (5+ pages) with a tiny single outlier (≤1.2 = within
+    // rounding noise of the 1.0 strict threshold) — full credit.
+    score += 10;
+  }
+  else if (bigJumps === 1 && diffs.length === 2 &&
+           maxJump <= (Number.isFinite(set.difficulty) && set.difficulty >= 4 ? 2.0 : 1.2)) {
+    // 2-page set: intentional intro→drill progression. The step scales
+    // with the set's target difficulty — a difficulty-5 set legitimately
+    // ramps from a softer intro page (~2.5) up to its core difficulty
+    // (~4.5). Below difficulty 4 we keep the tighter 1.2 budget.
+    score += 10;
+  }
   else if (bigJumps === 1 && maxJump <= 2.0) {
     // Single-outlier tolerance: one page steps by up to 2; rest are gentle.
     score += 8; issues.push(`one page jump ${maxJump.toFixed(1)}`);
