@@ -265,7 +265,26 @@ const VOCAB_ENUM_RE = /[\wáéíóúâêôãõç-]+\s*\([^)]+\)[\s,;/]+[\wáéí
 // Word-family enumeration: "família -X" or "família X-" introducing a
 // list of words sharing a phonetic pattern. Specific to phonics/literacy
 // lessons in early-grade language sets.
-const WORD_FAMILY_RE = /família\s+-?[a-z]+-?\s*[:.]\s*\w+/i;
+const WORD_FAMILY_RE = /família\s+-?[a-z]+-?\b[^:]*:\s*\w/i;
+// "Phrase: list" enumeration — ≥3 comma-separated terms after a colon.
+// e.g. "As 4 estações: spring, summer, autumn, winter."
+//      "As cores básicas: red, blue, green, yellow, black, white."
+const COLON_LIST_RE = /:\s*\w[\wáéíóúâêôãõç-]*(?:\s*,\s*\w[\wáéíóúâêôãõç-]*){2,}/i;
+// Numeric/word equation: "1 = one", "10 = ten" — digit equating to a
+// word definition (early-grade vocabulary).
+const NUM_DEF_RE = /\b\d+\s*=\s*[A-Za-zÁÉÍÓÚÂÊÔÃÕÇáéíóúâêôãõç]/;
+// Inline list with summary: ≥3 comma-separated terms then em-dash/dash and a
+// short descriptor. e.g. "shirt, pants, dress, shoes, hat — 5 roupas básicas."
+// or "I, you, he, she, it, we, they — os sete pronomes pessoais."
+const ENUM_LIST_RE = /(?:[\wáéíóúâêôãõç-]+\s*,\s*){2,}[\wáéíóúâêôãõç/-]+\s*[—–-]\s*\S/i;
+// Math shorthand: factorials and exponents with their value.
+// e.g. "4! = 24.", "5! = 120 maneiras.", "2^3 = 8", "n! = n × (n-1) × …"
+const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*[\^]\s*\d+\s*=|C\(\s*\d/;
+// Japanese script with grammatical enumeration: kanji/kana followed by a
+// colon, comma list, or " : " with at least one paired term.
+// e.g. "どころか: 親切どころか、上手どころか、謝るどころか."
+//      "ものだから tem mais ênfase e peso de justificativa que から e ので."
+const JP_GRAMMAR_RE = /[぀-ヿ一-鿿][^\s]*\s*[:、,]\s*[぀-ヿ一-鿿]/;
 
 // Strip accents for matching: JS `\b` anchors are ASCII-only, so words that
 // *start* with accented letters (ângulo, década) never fire a word-boundary
@@ -290,6 +309,6 @@ export function categorize(rationale) {
   if (RESTATE_RE.test(s)) return 'restatement';
   const sAscii = stripAccents(s);
   if (METHOD_RE.test(sAscii)) return 'method';
-  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s) || ARITHMETIC_RE.test(s) || JP_DECOMP_RE.test(s) || VOCAB_ENUM_RE.test(s) || WORD_FAMILY_RE.test(s)) return 'method';
+  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s) || ARITHMETIC_RE.test(s) || JP_DECOMP_RE.test(s) || VOCAB_ENUM_RE.test(s) || WORD_FAMILY_RE.test(s) || ENUM_LIST_RE.test(s) || MATH_SHORTHAND_RE.test(s) || JP_GRAMMAR_RE.test(s) || COLON_LIST_RE.test(s) || NUM_DEF_RE.test(s)) return 'method';
   return 'generic';
 }
