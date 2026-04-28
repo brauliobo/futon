@@ -52,7 +52,8 @@ export class SkillTree {
   static JAPANESE = [
     { id: 'hiragana', name: 'Hiragana', icon: 'あ', levels: ['4A','3A'], prereqs: [] },
     { id: 'katakana', name: 'Katakana', icon: 'ア', levels: ['2A'], prereqs: ['hiragana'] },
-    { id: 'kanji_basic', name: 'First Kanji', icon: '漢', levels: ['A'], prereqs: ['katakana'] },
+    { id: 'kana_review', name: 'Kana Review', icon: 'き', levels: ['1A'], prereqs: ['katakana'] },
+    { id: 'kanji_basic', name: 'First Kanji', icon: '漢', levels: ['A'], prereqs: ['kana_review'] },
     { id: 'particles_verbs', name: 'Particles & Verbs', icon: '〜', levels: ['B'], prereqs: ['kanji_basic'] },
     { id: 'adjectives_past', name: 'Adjectives & Past', icon: '⏪', levels: ['C'], prereqs: ['particles_verbs'] },
     { id: 'connectors', name: 'Connectors & Reasons', icon: '🔗', levels: ['D'], prereqs: ['adjectives_past'] },

@@ -26,7 +26,7 @@ export const FAMILIES = {
   // Passage-based comprehension.
   reading: ['reading', 'reading_comprehension'],
   // Literacy & grammar short-answer.
-  language: ['literacy', 'grammar', 'paragraph', 'sentence_building'],
+  language: ['literacy', 'grammar', 'paragraph', 'sentence_building', 'spelling'],
   // New structured types introduced by Phase 0.
   fill_blank: ['fill_blank'],
   cloze: ['cloze'],
