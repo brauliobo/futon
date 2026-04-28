@@ -170,6 +170,19 @@ const METHOD_TERMS = [
   'locate', 'identify', 'replace', 'means', 'indicates', 'modifies',
   'links', 'substitute', 'determines', 'ends\\s+with', 'starts\\s+with',
   'borrow', 'carry', 'digit', 'column', 'regroup',
+  // Japanese-grammar pedagogical markers (PT explanations of JP patterns)
+  'nega[mr]?\\b', 'negar?\\b', 'afirma[mr]?', 'afirmar?\\b',
+  'partícula', 'sufixo', 'prefixo', 'auxiliar', 'auxiliares',
+  'indicar?\\b', 'expressar?\\b', 'expressa[mr]?', 'expressam?',
+  'denota[rm]?\\b', 'sinaliza[rm]?', 'marca[rm]?\\b',
+  'forma\\s+(?:て|た|る|ない|polida|coloquial|negativ[ao]|imperativ[ao])',
+  'generalizaç[ãa]o', 'generaliza[mr]?', 'simplificação', 'pressupost[oa]',
+  'tópico', 'contexto', 'propósito', 'condi[çc][ãa]o', 'condicional',
+  'sequenc[ia]al', 'sequência\\b', 'simultaneidade', 'consequência',
+  'conjunção', 'conector', 'desinência', 'flexão', 'conjuga[çc][ãa]o',
+  'transitiv[oa]s?', 'intransitiv[oa]s?', 'reflex[ivo]+s?',
+  'objeto\\s+(?:direto|indireto)', 'sujeito', 'predicativo',
+  'plano\\b', 'programa', 'habitual', 'volitiv[oa]', 'desid[ée]ri[oa]', 'intenção',
   // Biology / life-sciences (PT)
   'metabolismo', 'metabólic[oa]s?', 'homeostase', 'hom[eé]ostas[ei]',
   'reprodu[çc][ãa]o', 'reproduzem?', 'reproduz[aei][mr]?',
@@ -216,6 +229,11 @@ const TRANSFORMATION_RE = /\S\s*[→>]\s*\S/;
 // terms like "Desenvolvimento = expandir a ideia..." and single-variable
 // math formulas like "A = base × altura" or "V = πr²h".
 const DEFINITION_RE = /(?:['"][^'"]{2,}['"]|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]{3,}|[A-Z]\s+=)\s*=?\s*\S/;
+// Bilingual sentence-decomposition: a Japanese script chunk followed by
+// its parenthetical translation, joined by " + " into the next chunk.
+// E.g. "電車で (de trem) + 駅まで (até a estação) + 行きます (vou)."
+// This is a teaching method — chunked translation with grammatical reading.
+const JP_DECOMP_RE = /[぀-ヿ一-鿿].*\([^)]+\)\s*\+/;
 
 // Strip accents for matching: JS `\b` anchors are ASCII-only, so words that
 // *start* with accented letters (ângulo, década) never fire a word-boundary
@@ -240,6 +258,6 @@ export function categorize(rationale) {
   if (RESTATE_RE.test(s)) return 'restatement';
   const sAscii = stripAccents(s);
   if (METHOD_RE.test(sAscii)) return 'method';
-  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s) || ARITHMETIC_RE.test(s)) return 'method';
+  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s) || ARITHMETIC_RE.test(s) || JP_DECOMP_RE.test(s)) return 'method';
   return 'generic';
 }
