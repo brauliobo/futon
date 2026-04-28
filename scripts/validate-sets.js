@@ -16,7 +16,7 @@ const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', BLUE = '\x1b[34
 const c = (text, color) => `${color}${text}${RESET}`;
 const tableStyle = { head: [], border: [], compact: true, 'padding-left': 1, 'padding-right': 1 };
 
-const SUBJECTS = ['math', 'portuguese', 'english', 'japanese', 'spanish'];
+const SUBJECTS = ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'];
 
 // Build level→theme map per subject for coverage checks
 const themeIndex = Object.fromEntries(SUBJECTS.map(s => {
@@ -48,8 +48,17 @@ function loadAll(rootDir) {
   return all;
 }
 
+// Bilingual fields are stored as plain string OR {pt, en}. Reduce to a
+// canonical string for analysis/display.
+function asText(v) {
+  if (v == null) return '';
+  if (typeof v === 'string') return v;
+  if (typeof v === 'object') return v.pt ?? v.en ?? '';
+  return String(v);
+}
+
 function normalizeQuestion(q) {
-  return String(q || '').toLowerCase().replace(/\s+/g, ' ').trim();
+  return asText(q).toLowerCase().replace(/\s+/g, ' ').trim();
 }
 
 // Bounded Ukkonen levenshtein: returns Infinity once distance exceeds `max`.
@@ -230,7 +239,7 @@ function printDetail(results) {
     if (r.issues.length) { status = `❌ ${r.issues.length} errors`; color = RED; }
     else if (r.warnings.length) { status = `⚠️  ${r.warnings.length} warn`; color = YELLOW; }
     const rand = r.randomness === null ? '-' : `${Math.round(r.randomness * 100)}%`;
-    t.push([i + 1, r.raw.subject, r.raw.level, (r.raw.title || '-').slice(0, 44), r.pages, r.exercises, rand, c(status, color)]);
+    t.push([i + 1, r.raw.subject, r.raw.level, (asText(r.raw.title) || '-').slice(0, 44), r.pages, r.exercises, rand, c(status, color)]);
     for (const issue of r.issues) console.log('      ' + c(`❌ ${r.raw.sourceFile}: ${issue}`, RED));
     for (const warn of r.warnings) console.log('      ' + c(`⚠️  ${r.raw.sourceFile}: ${warn}`, YELLOW));
   });

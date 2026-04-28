@@ -77,6 +77,11 @@ export class SkillTree {
     { id: 'es_writing', name: 'Redacción', icon: '🖊️', levels: ['K','L'], prereqs: ['es_linguistics'] },
   ];
 
+  static BIOLOGY = [
+    { id: 'bio_life', name: 'Life & Cells', icon: '🧬', levels: ['7A'], prereqs: [] },
+    { id: 'bio_systems', name: 'Body Systems', icon: '🫀', levels: ['6A','5A','4A','3A','2A','1A','A','B','C','D','E','F','G','H','I','J','K','L'], prereqs: ['bio_life'] },
+  ];
+
   static forSubject(subject) { return this[subject.toUpperCase()] || []; }
 
   static nodeProgress(node, setsByLevel) {
