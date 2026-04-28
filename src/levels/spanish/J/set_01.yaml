@@ -22,19 +22,19 @@ pages:
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
-        question: "¿Qué captura un word embedding como Word2Vec? (las reglas gramaticales/representaciones vectoriales densas que capturan relaciones semánticas: 'rey − hombre + mujer ≈ reina' → los vectores reflejan analogías semánticas y sintácticas latentes en el corpus de entrenamiento/el número de letras de cada palabra)"
+        question: "¿Qué captura un word embedding como Word2Vec? (el número de letras de cada palabra/las reglas gramaticales/representaciones vectoriales densas que capturan relaciones semánticas: 'rey − hombre + mujer ≈ reina' → los vectores reflejan analogías semánticas y sintácticas latentes en el corpus de entrenamiento)"
         correctAnswer: "representaciones vectoriales densas que capturan relaciones semánticas: 'rey − hombre + mujer ≈ reina' → los vectores reflejan analogías semánticas y sintácticas latentes en el corpus de entrenamiento"
         rationale: "Word2Vec (Mikolov 2013): las palabras se distribuyen en espacio vectorial según sus contextos → palabras con contextos similares tienen vectores cercanos."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
-        question: "¿Qué innovación aporta el mecanismo de atención en los modelos transformer? (velocidad de entrenamiento/que cada token puede relacionarse directamente con todos los demás tokens de la secuencia, sin necesidad de procesamiento secuencial → captura dependencias de largo alcance mejor que las LSTM/que solo usan datos de texto)"
+        question: "¿Qué innovación aporta el mecanismo de atención en los modelos transformer? (que solo usan datos de texto/velocidad de entrenamiento/que cada token puede relacionarse directamente con todos los demás tokens de la secuencia, sin necesidad de procesamiento secuencial → captura dependencias de largo alcance mejor que las LSTM)"
         correctAnswer: que cada token puede relacionarse directamente con todos los demás tokens de la secuencia, sin necesidad de procesamiento secuencial → captura dependencias de largo alcance mejor que las LSTM
         rationale: "Atención (Vaswani 2017, 'Attention is all you need'): la atención multi-head permite al modelo ponderar la relevancia de cada token para cada otro → base de BERT y GPT."
         difficulty: 5
         objectives: [es.pre_reading]
       - type: grammar
-        question: "¿Qué es el sesgo algorítmico en los modelos de lenguaje? (un error de programación/la tendencia de los modelos entrenados en corpus sesgados a reproducir estereotipos: asociar 'médico' con hombre, 'enfermera' con mujer → amplifica desigualdades existentes en los datos/un tipo de ruido estadístico)"
+        question: "¿Qué es el sesgo algorítmico en los modelos de lenguaje? (un tipo de ruido estadístico/un error de programación/la tendencia de los modelos entrenados en corpus sesgados a reproducir estereotipos: asociar 'médico' con hombre, 'enfermera' con mujer → amplifica desigualdades existentes en los datos)"
         correctAnswer: "la tendencia de los modelos entrenados en corpus sesgados a reproducir estereotipos: asociar 'médico' con hombre, 'enfermera' con mujer → amplifica desigualdades existentes en los datos"
         rationale: "Sesgo en PLN: el corpus refleja desigualdades sociales → los modelos entrenados en esos datos las amplifican → problema ético documentado en embeddings y LLMs."
         difficulty: 5
