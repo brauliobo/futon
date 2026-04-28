@@ -170,6 +170,27 @@ const METHOD_TERMS = [
   'locate', 'identify', 'replace', 'means', 'indicates', 'modifies',
   'links', 'substitute', 'determines', 'ends\\s+with', 'starts\\s+with',
   'borrow', 'carry', 'digit', 'column', 'regroup',
+  // Biology / life-sciences (PT)
+  'metabolismo', 'metabólic[oa]s?', 'homeostase', 'hom[eé]ostas[ei]',
+  'reprodu[çc][ãa]o', 'reproduzem?', 'reproduz[aei][mr]?',
+  'respirar?', 'respira[mr]?', 'respira[çc][ãa]o', 'respirat[óo]ri[oa]',
+  'célul[ao]s?', 'celular', 'tecid[oa]s?', 'órgão[s]?', 'organism[oa]s?',
+  'gamet[ao]s?', 'gen[ée]tic[oa]', 'cromossom[oa]s?', 'DNA',
+  'evolu[çc][ãa]o', 'evolutiv[oa]s?', 'sele[çc][ãa]o', 'adaptaç[ãa]o', 'adapta[mr]?',
+  'fotossíntese', 'cloroplasto[s]?', 'mitoc[ôo]ndria[s]?',
+  'gametas?', 'pólen', 'flor[ea]s?', 'fruto[s]?', 'sement[ea]s?',
+  'sazon[ai]l', 'sazonal', 'migra[çc][ãa]o', 'migrat[óo]ri[oa]',
+  'esp[ée]cie[s]?', 'gen[ée]ric[oa]', 'predador[ea]s?', 'pres[ae]s?\\b',
+  'ecossistema[s]?', 'biom[ae]', 'cadeia\\s+alimentar', 'nicho',
+  'autotrof[oa]s?', 'heterotrof[oa]s?', 'decompositor[ea]s?',
+  'temperatura\\s+corporal', 'equil[íi]brio', 'regul[ae]', 'regulam?',
+  'enzim[ao]s?', 'horm[ôo]ni[oa]s?', 'sangue', 'circulação',
+  'digest[ãa]o', 'sistema\\s+(?:nervoso|digest|circulat|respirat|imun)',
+  'estímulo[s]?', 'resposta\\b', 'percep[çc][ãa]o', 'sinal\\b',
+  // English equivalents (biology)
+  'metabolism', 'homeostasis', 'reproduce[ds]?', 'respiration', 'cell[s]?\\b',
+  'organism[s]?', 'species', 'evolution', 'photosynthesis', 'gamete[s]?',
+  'ecosystem[s]?', 'predator[s]?', 'adapt[s]?', 'regulate[s]?', 'enzyme[s]?',
 ];
 export const METHOD_RE = new RegExp(
   '\\b(?:' + METHOD_TERMS.map(t => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).join('|') + ')\\b',
@@ -203,8 +224,13 @@ const DEFINITION_RE = /(?:['"][^'"]{2,}['"]|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-zá�
 const stripAccents = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
 export function categorize(rationale) {
-  if (!rationale || typeof rationale !== 'string') return 'missing';
-  const s = rationale.trim();
+  if (rationale == null) return 'missing';
+  // Bilingual rationales are stored as {pt, en}; categorize on the pt
+  // surface (lexicon is PT-tuned) and fall back to en.
+  let raw = rationale;
+  if (typeof raw === 'object') raw = raw.pt ?? raw.en ?? '';
+  if (typeof raw !== 'string' || !raw) return 'missing';
+  const s = raw.trim();
   if (s.length > 300) return 'long';
   // Short rationales with an equation/computation (e.g. "5-5 = 0.") teach
   // via arithmetic demonstration — don't penalize for brevity.
