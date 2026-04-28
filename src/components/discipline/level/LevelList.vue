@@ -29,6 +29,7 @@ export default {
   props: {
     sets: { type: Array, required: true },
     activeSlug: { type: String, default: '' },
+    unlocked: { type: Boolean, default: false },
   },
   data() {
     return { scrollLeft: 0, maxScroll: 0 };
@@ -50,7 +51,7 @@ export default {
   },
   methods: {
     slugOf(wb) { return Formatter.slugify(wb?.title); },
-    isSetAvailable(index) { return index === 0 || this.sets[index - 1]?.status === 'mastery'; },
+    isSetAvailable(index) { return this.unlocked || index === 0 || this.sets[index - 1]?.status === 'mastery'; },
     onScroll() { const el = this.$refs.scroller; if (el) this.scrollLeft = el.scrollLeft; },
     updateMetrics() {
       const el = this.$refs.scroller; if (!el) return;
