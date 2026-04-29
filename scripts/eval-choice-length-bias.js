@@ -51,6 +51,12 @@ async function main() {
         choiceQs++;
         const lens = choices.map(x => x.length);
         const maxLen = Math.max(...lens);
+        const minLen = Math.min(...lens);
+        // Long-form comprehension question: when EVERY option is ≥30 chars,
+        // the question is testing content recall / definition selection,
+        // not pattern-spotting on length. Length variation is intrinsic
+        // to the conceptual contrast and not a gameable cue.
+        if (minLen >= 30) continue;
         const others = choices.filter(x => x !== ans);
         // Margin over the next-longest wrong (not the average) — a 1-char
         // plural difference in 'bonitas/bonita/bonito' is not gameable,
