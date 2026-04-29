@@ -1,0 +1,244 @@
+title:
+  pt: "🧬 Epigenética e epigenoma"
+  en: "🧬 Epigenetics and epigenome"
+level: '2A'
+subject: biology
+objectives: [biology.epigenetics]
+difficulty: 5
+authorNotes: "Modificações epigenéticas, metilação do DNA, código de histonas, herança epigenética, plasticidade."
+example:
+  pt: "Ex.: estresse → metilação de DNA → expressão gênica alterada → fenótipo herdado por gerações."
+  en: "Ex.: stress → DNA methylation → altered gene expression → phenotype inherited across generations."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Modificações epigenéticas", en: "Epigenetic modifications"}
+    description: {pt: "Marcas químicas que regulam o genoma sem alterar a sequência.", en: "Chemical marks that regulate the genome without altering sequence."}
+    exercises:
+      - type: choice
+        question: {pt: "Epigenética estuda:", en: "Epigenetics studies:"}
+        choices:
+          - {pt: "Mudanças hereditárias na expressão sem alterar a sequência de DNA", en: "Heritable changes in expression without altering DNA sequence"}
+          - {pt: "Apenas mutações", en: "Only mutations"}
+          - {pt: "Apenas tradução", en: "Only translation"}
+          - {pt: "Apenas RNA", en: "Only RNA"}
+        correctAnswer: {pt: "Mudanças hereditárias na expressão sem alterar a sequência de DNA", en: "Heritable changes in expression without altering DNA sequence"}
+        rationale: {pt: "Como modificações químicas modulam acesso ao DNA, então fenótipos mudam sem mutação subjacente.", en: "Because chemical modifications modulate DNA access, phenotypes change without underlying mutation."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Metilação de DNA ocorre tipicamente em:", en: "DNA methylation typically occurs at:"}
+        choices:
+          - {pt: "Citosinas em ilhas CpG", en: "Cytosines in CpG islands"}
+          - {pt: "Apenas adenina", en: "Only adenine"}
+          - {pt: "Apenas timina", en: "Only thymine"}
+          - {pt: "Apenas uracila", en: "Only uracil"}
+        correctAnswer: {pt: "Citosinas em ilhas CpG", en: "Cytosines in CpG islands"}
+        rationale: {pt: "Quando CpGs em promotores são metilados, então gene fica silenciado de forma estável.", en: "When CpGs at promoters are methylated, the gene is stably silenced."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hipermetilação de promotor de gene supressor de tumor causa:", en: "Hypermethylation of tumor suppressor promoter causes:"}
+        choices:
+          - {pt: "Silenciamento → contribui para câncer", en: "Silencing → contributes to cancer"}
+          - {pt: "Ativação extra", en: "Extra activation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem efeito", en: "No effect"}
+        correctAnswer: {pt: "Silenciamento → contribui para câncer", en: "Silencing → contributes to cancer"}
+        rationale: {pt: "Como o gene protetor é desligado epigeneticamente, então célula perde freios sem precisar de mutação.", en: "Because the protective gene is epigenetically turned off, the cell loses brakes without needing mutation."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Acetilação de histonas (HAT) tipicamente:", en: "Histone acetylation (HAT) typically:"}
+        choices:
+          - {pt: "Abre cromatina e ativa transcrição", en: "Opens chromatin and activates transcription"}
+          - {pt: "Compacta cromatina", en: "Compacts chromatin"}
+          - {pt: "Apenas degrada DNA", en: "Just degrades DNA"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Abre cromatina e ativa transcrição", en: "Opens chromatin and activates transcription"}
+        rationale: {pt: "Quando carga positiva da histona é neutralizada, então DNA se solta e fica acessível a fatores.", en: "When histone positive charge is neutralized, DNA loosens and becomes accessible to factors."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Desacetilação de histonas (HDAC):", en: "Histone deacetylation (HDAC):"}
+        choices:
+          - {pt: "Compacta cromatina e silencia genes", en: "Compacts chromatin and silences genes"}
+          - {pt: "Apenas ativa", en: "Only activates"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem função", en: "No function"}
+        correctAnswer: {pt: "Compacta cromatina e silencia genes", en: "Compacts chromatin and silences genes"}
+        rationale: {pt: "Como remove acetil e restaura carga positiva, então cromatina fecha e silencia transcrição.", en: "Because it removes acetyl and restores positive charge, chromatin closes and silences transcription."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Metilação de H3K4me3 sinaliza:", en: "H3K4me3 methylation signals:"}
+        choices:
+          - {pt: "Promotores ativos", en: "Active promoters"}
+          - {pt: "Apenas heterocromatina", en: "Only heterochromatin"}
+          - {pt: "Apenas erro", en: "Only error"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Promotores ativos", en: "Active promoters"}
+        rationale: {pt: "Quando lemos a marca em ChIP-seq, então mapeamos genes em transcrição ativa.", en: "When we read the mark in ChIP-seq, we map genes in active transcription."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Metilação de H3K27me3 (PRC2) marca:", en: "H3K27me3 methylation (PRC2) marks:"}
+        choices:
+          - {pt: "Genes silenciados de forma reversível (Polycomb)", en: "Reversibly silenced genes (Polycomb)"}
+          - {pt: "Apenas ativos", en: "Only active"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem alvo", en: "No target"}
+        correctAnswer: {pt: "Genes silenciados de forma reversível (Polycomb)", en: "Reversibly silenced genes (Polycomb)"}
+        rationale: {pt: "Como Polycomb fecha cromatina temporariamente, então células-tronco mantêm potencial latente.", en: "Because Polycomb closes chromatin temporarily, stem cells maintain latent potential."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Código de histonas refere-se a:", en: "Histone code refers to:"}
+        choices:
+          - {pt: "Combinações de modificações pós-traducionais que sinalizam função cromatínica", en: "Combinations of post-translational modifications that signal chromatin function"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas RNA", en: "Just RNA"}
+          - {pt: "Apenas proteínas livres", en: "Just free proteins"}
+        correctAnswer: {pt: "Combinações de modificações pós-traducionais que sinalizam função cromatínica", en: "Combinations of post-translational modifications that signal chromatin function"}
+        rationale: {pt: "Quando combinamos múltiplas marcas, então cromatina é lida como linguagem regulatória rica.", en: "When we combine multiple marks, chromatin is read as a rich regulatory language."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ilhas CpG localizadas em promotores normalmente são:", en: "CpG islands at promoters are normally:"}
+        choices:
+          - {pt: "Não-metiladas em genes housekeeping ativos", en: "Unmethylated at active housekeeping genes"}
+          - {pt: "Sempre metiladas", en: "Always methylated"}
+          - {pt: "Sempre deletadas", en: "Always deleted"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Não-metiladas em genes housekeeping ativos", en: "Unmethylated at active housekeeping genes"}
+        rationale: {pt: "Como genes essenciais devem permanecer acessíveis, então proteção contra metilação é regra.", en: "Because essential genes must remain accessible, protection against methylation is the rule."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DNMTs (DNA metiltransferases) catalisam:", en: "DNMTs (DNA methyltransferases) catalyze:"}
+        choices:
+          - {pt: "Adição de grupos metil em citosinas", en: "Addition of methyl groups to cytosines"}
+          - {pt: "Apenas remoção", en: "Only removal"}
+          - {pt: "Apenas RNA", en: "Just RNA"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Adição de grupos metil em citosinas", en: "Addition of methyl groups to cytosines"}
+        rationale: {pt: "Quando DNMTs atuam, então padrões de metilação se estabelecem e propagam por divisões.", en: "When DNMTs act, methylation patterns are established and propagated through divisions."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Herança e plasticidade epigenética", en: "Epigenetic inheritance and plasticity"}
+    description: {pt: "Como ambiente molda expressão gênica.", en: "How environment shapes gene expression."}
+    exercises:
+      - type: choice
+        question: {pt: "Imprinting genômico significa:", en: "Genomic imprinting means:"}
+        choices:
+          - {pt: "Expressão dependente da origem parental do alelo", en: "Expression depends on parental origin of allele"}
+          - {pt: "Apenas materno sempre", en: "Only maternal always"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas mutação", en: "Just mutation"}
+        correctAnswer: {pt: "Expressão dependente da origem parental do alelo", en: "Expression depends on parental origin of allele"}
+        rationale: {pt: "Quando metilação marca origem parental, então só um alelo é expresso (ex.: IGF2, H19).", en: "When methylation marks parental origin, only one allele is expressed (e.g., IGF2, H19)."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inativação do X em mamíferas envolve:", en: "X-inactivation in mammals involves:"}
+        choices:
+          - {pt: "Silenciamento aleatório de um X via XIST e cromatina compacta (corpo de Barr)", en: "Random silencing of one X via XIST and compact chromatin (Barr body)"}
+          - {pt: "Apenas deleção do X", en: "Just X deletion"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas tradução extra", en: "Just extra translation"}
+        correctAnswer: {pt: "Silenciamento aleatório de um X via XIST e cromatina compacta (corpo de Barr)", en: "Random silencing of one X via XIST and compact chromatin (Barr body)"}
+        rationale: {pt: "Como dosagem precisa equilibrar XX/XY, então um X é compactado em cada célula somática feminina.", en: "Because dosage must balance XX/XY, one X is compacted in each female somatic cell."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Reprogramação epigenética ocorre em:", en: "Epigenetic reprogramming occurs in:"}
+        choices:
+          - {pt: "Embrião precoce e linhagem germinativa (apaga e reestabelece marcas)", en: "Early embryo and germline (erases and resets marks)"}
+          - {pt: "Apenas células musculares adultas", en: "Just adult muscle cells"}
+          - {pt: "Apenas vírus", en: "Just viruses"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Embrião precoce e linhagem germinativa (apaga e reestabelece marcas)", en: "Early embryo and germline (erases and resets marks)"}
+        rationale: {pt: "Quando totipotência é restaurada, então cada nova geração começa com 'lousa limpa' epigenética.", en: "When totipotency is restored, each new generation starts with an epigenetic 'clean slate'."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Herança transgeracional epigenética:", en: "Transgenerational epigenetic inheritance:"}
+        choices:
+          - {pt: "Marcas do ambiente parental que persistem em descendentes (controvertido em humanos)", en: "Parental environment marks persisting in descendants (controversial in humans)"}
+          - {pt: "Sempre apagada totalmente", en: "Always fully erased"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas mutação", en: "Just mutation"}
+        correctAnswer: {pt: "Marcas do ambiente parental que persistem em descendentes (controvertido em humanos)", en: "Parental environment marks persisting in descendants (controversial in humans)"}
+        rationale: {pt: "Como reprogramação não é 100% eficiente, então algumas marcas escapam — exceção, não regra.", en: "Because reprogramming isn't 100% efficient, some marks escape — exception, not rule."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Estudos com agouti (camundongo) mostraram que dieta materna:", en: "Agouti (mouse) studies showed maternal diet:"}
+        choices:
+          - {pt: "Altera metilação fetal e pelagem da prole sem mudar DNA", en: "Alters fetal methylation and offspring fur without changing DNA"}
+          - {pt: "Não tem efeito", en: "Has no effect"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas mutações", en: "Only mutations"}
+        correctAnswer: {pt: "Altera metilação fetal e pelagem da prole sem mudar DNA", en: "Alters fetal methylation and offspring fur without changing DNA"}
+        rationale: {pt: "Quando mães recebem doadores de metil, então prole expressa fenótipo agouti diferente.", en: "When mothers receive methyl donors, offspring expresses different agouti phenotype."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Relógio epigenético (Horvath clock) estima:", en: "Epigenetic clock (Horvath clock) estimates:"}
+        choices:
+          - {pt: "Idade biológica via padrões de metilação em CpGs específicos", en: "Biological age via methylation patterns at specific CpGs"}
+          - {pt: "Apenas idade cronológica trivial", en: "Only trivial chronological age"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas peso", en: "Just weight"}
+        correctAnswer: {pt: "Idade biológica via padrões de metilação em CpGs específicos", en: "Biological age via methylation patterns at specific CpGs"}
+        rationale: {pt: "Como metilação muda com envelhecimento, então CpGs servem de cronômetro biológico preciso.", en: "Because methylation changes with aging, CpGs serve as a precise biological chronometer."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ncRNAs longos (lncRNAs) podem:", en: "Long ncRNAs (lncRNAs) can:"}
+        choices:
+          - {pt: "Recrutar complexos de modificação cromatínica para loci específicos", en: "Recruit chromatin-modifying complexes to specific loci"}
+          - {pt: "Apenas degradar", en: "Just degrade"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas tradução direta", en: "Just direct translation"}
+        correctAnswer: {pt: "Recrutar complexos de modificação cromatínica para loci específicos", en: "Recruit chromatin-modifying complexes to specific loci"}
+        rationale: {pt: "Quando lncRNA atua como guia, então marca epigenética é depositada com precisão genômica.", en: "When lncRNA acts as guide, the epigenetic mark is deposited with genomic precision."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fármacos epigenéticos (ex.: azacitidina) atuam:", en: "Epigenetic drugs (e.g., azacitidine) act by:"}
+        choices:
+          - {pt: "Inibindo DNMTs e reativando genes silenciados em câncer", en: "Inhibiting DNMTs and reactivating silenced genes in cancer"}
+          - {pt: "Apenas matando célula", en: "Just killing cell"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+        correctAnswer: {pt: "Inibindo DNMTs e reativando genes silenciados em câncer", en: "Inhibiting DNMTs and reactivating silenced genes in cancer"}
+        rationale: {pt: "Como remove metilação aberrante, então gene supressor volta a ser expresso terapeuticamente.", en: "Because it removes aberrant methylation, tumor suppressor regains expression therapeutically."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ChIP-seq mapeia:", en: "ChIP-seq maps:"}
+        choices:
+          - {pt: "Locais de ligação de proteínas/marcas em todo o genoma", en: "Protein/mark binding sites genome-wide"}
+          - {pt: "Apenas RNA", en: "Just RNA"}
+          - {pt: "Apenas estrutura 3D", en: "Just 3D structure"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Locais de ligação de proteínas/marcas em todo o genoma", en: "Protein/mark binding sites genome-wide"}
+        rationale: {pt: "Quando imunoprecipitamos cromatina e sequenciamos, então localizamos onde fatores e marcas atuam.", en: "When we immunoprecipitate chromatin and sequence, we locate where factors and marks act."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ATAC-seq detecta:", en: "ATAC-seq detects:"}
+        choices:
+          - {pt: "Regiões de cromatina aberta acessíveis a transposase", en: "Open chromatin regions accessible to transposase"}
+          - {pt: "Apenas DNA fechado", en: "Just closed DNA"}
+          - {pt: "Apenas RNA", en: "Just RNA"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Regiões de cromatina aberta acessíveis a transposase", en: "Open chromatin regions accessible to transposase"}
+        rationale: {pt: "Como cromatina aberta é regulatória ativa, então ATAC-seq revela landscape epigenético funcional.", en: "Because open chromatin is actively regulatory, ATAC-seq reveals functional epigenetic landscape."}
+        objectives: [biology.epigenetics]
+        difficulty: 5
+target: 20

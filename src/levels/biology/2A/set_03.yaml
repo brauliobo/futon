@@ -1,0 +1,244 @@
+title:
+  pt: "💊 Terapia gênica e celular"
+  en: "💊 Gene and cell therapy"
+level: '2A'
+subject: biology
+objectives: [biology.gene_therapy]
+difficulty: 5
+authorNotes: "Vetores virais, AAV, lentivírus, terapia ex vivo/in vivo, CAR-T, mRNA vacinas, sucessos clínicos."
+example:
+  pt: "Ex.: doença monogênica → vetor AAV com gene corrigido → infusão → expressão estável → cura potencial."
+  en: "Ex.: monogenic disease → AAV vector with corrected gene → infusion → stable expression → potential cure."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Vetores e estratégias", en: "Vectors and strategies"}
+    description: {pt: "Como entregar genes terapêuticos.", en: "How to deliver therapeutic genes."}
+    exercises:
+      - type: choice
+        question: {pt: "Terapia gênica visa:", en: "Gene therapy aims to:"}
+        choices:
+          - {pt: "Tratar doenças introduzindo, removendo ou corrigindo material genético", en: "Treat diseases by introducing, removing or correcting genetic material"}
+          - {pt: "Apenas pequenas moléculas", en: "Just small molecules"}
+          - {pt: "Apenas dieta", en: "Just diet"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Tratar doenças introduzindo, removendo ou corrigindo material genético", en: "Treat diseases by introducing, removing or correcting genetic material"}
+        rationale: {pt: "Como ataca causa genética raiz, então oferece cura potencial onde fármacos só tratam sintomas.", en: "Because it attacks root genetic cause, it offers potential cure where drugs only treat symptoms."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AAV (vírus adeno-associado) é popular como vetor porque:", en: "AAV (adeno-associated virus) is popular as vector because:"}
+        choices:
+          - {pt: "Baixa imunogenicidade, expressão duradoura, tropismo por tecidos diversos", en: "Low immunogenicity, long expression, tropism for diverse tissues"}
+          - {pt: "Apenas alta toxicidade", en: "Just high toxicity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas para bactéria", en: "Only for bacteria"}
+        correctAnswer: {pt: "Baixa imunogenicidade, expressão duradoura, tropismo por tecidos diversos", en: "Low immunogenicity, long expression, tropism for diverse tissues"}
+        rationale: {pt: "Quando AAV mantém episoma estável, então gene se expressa por anos sem integração arriscada.", en: "When AAV maintains stable episome, gene expresses for years without risky integration."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lentivírus integra:", en: "Lentivirus integrates:"}
+        choices:
+          - {pt: "DNA no genoma do hospedeiro — útil em células em divisão e em repouso", en: "DNA into host genome — useful in dividing and resting cells"}
+          - {pt: "Apenas RNA temporário", en: "Just temporary RNA"}
+          - {pt: "Apenas em bactérias", en: "Only in bacteria"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "DNA no genoma do hospedeiro — útil em células em divisão e em repouso", en: "DNA into host genome — useful in dividing and resting cells"}
+        rationale: {pt: "Como integração é estável, então transgene persiste em todas as células-filhas.", en: "Because integration is stable, transgene persists in all daughter cells."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Risco de mutagênese insercional ocorre quando:", en: "Insertional mutagenesis risk occurs when:"}
+        choices:
+          - {pt: "Vetor integra perto de oncogene e ativa proliferação descontrolada", en: "Vector integrates near oncogene and triggers uncontrolled proliferation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Vetor é ineficaz", en: "Vector is ineffective"}
+          - {pt: "Apenas RNA", en: "Just RNA"}
+        correctAnswer: {pt: "Vetor integra perto de oncogene e ativa proliferação descontrolada", en: "Vector integrates near oncogene and triggers uncontrolled proliferation"}
+        rationale: {pt: "Quando integração é semi-aleatória, então design de vetor SIN reduz risco oncogênico.", en: "When integration is semi-random, SIN vector design reduces oncogenic risk."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Terapia gênica ex vivo:", en: "Ex vivo gene therapy:"}
+        choices:
+          - {pt: "Modifica células fora do corpo e reinfunde no paciente", en: "Modifies cells outside the body and reinfuses into patient"}
+          - {pt: "Apenas pílula oral", en: "Just oral pill"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas dieta", en: "Just diet"}
+        correctAnswer: {pt: "Modifica células fora do corpo e reinfunde no paciente", en: "Modifies cells outside the body and reinfuses into patient"}
+        rationale: {pt: "Como controle laboratorial é maior, então podemos selecionar células bem editadas antes de infundir.", en: "Because lab control is greater, we can select well-edited cells before infusing."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Terapia gênica in vivo:", en: "In vivo gene therapy:"}
+        choices:
+          - {pt: "Vetor é entregue diretamente ao paciente (IV, intramuscular, intraocular)", en: "Vector is delivered directly to patient (IV, intramuscular, intraocular)"}
+          - {pt: "Apenas in vitro", en: "Just in vitro"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas pó tópico", en: "Just topical powder"}
+        correctAnswer: {pt: "Vetor é entregue diretamente ao paciente (IV, intramuscular, intraocular)", en: "Vector is delivered directly to patient (IV, intramuscular, intraocular)"}
+        rationale: {pt: "Quando alvo é tecido inacessível ex vivo, então administração in vivo torna-se única via.", en: "When target is tissue inaccessible ex vivo, in vivo administration becomes the only route."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Luxturna foi a primeira terapia gênica aprovada para:", en: "Luxturna was the first gene therapy approved for:"}
+        choices:
+          - {pt: "Distrofia retiniana hereditária (RPE65) — restaura visão parcialmente", en: "Hereditary retinal dystrophy (RPE65) — partially restores vision"}
+          - {pt: "Apenas câncer terminal", en: "Just terminal cancer"}
+          - {pt: "Apenas resfriado", en: "Just common cold"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Distrofia retiniana hereditária (RPE65) — restaura visão parcialmente", en: "Hereditary retinal dystrophy (RPE65) — partially restores vision"}
+        rationale: {pt: "Como olho é imunoprivilegiado e pequeno, então AAV subretiniano entrega gene com sucesso.", en: "Because eye is immune-privileged and small, subretinal AAV delivers gene successfully."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Zolgensma trata:", en: "Zolgensma treats:"}
+        choices:
+          - {pt: "Atrofia muscular espinhal (SMA) entregando SMN1 via AAV9", en: "Spinal muscular atrophy (SMA) delivering SMN1 via AAV9"}
+          - {pt: "Apenas pele seca", en: "Just dry skin"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas resfriado", en: "Just common cold"}
+        correctAnswer: {pt: "Atrofia muscular espinhal (SMA) entregando SMN1 via AAV9", en: "Spinal muscular atrophy (SMA) delivering SMN1 via AAV9"}
+        rationale: {pt: "Quando AAV9 atravessa barreira hematoencefálica, então neurônios motores recebem SMN1 funcional.", en: "When AAV9 crosses blood-brain barrier, motor neurons receive functional SMN1."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Limitação principal de AAV é:", en: "AAV main limitation is:"}
+        choices:
+          - {pt: "Imunidade pré-existente em parte da população reduz eficácia", en: "Pre-existing immunity in part of population reduces efficacy"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre 100% eficaz", en: "Always 100% effective"}
+          - {pt: "Sem limite", en: "No limit"}
+        correctAnswer: {pt: "Imunidade pré-existente em parte da população reduz eficácia", en: "Pre-existing immunity in part of population reduces efficacy"}
+        rationale: {pt: "Como anticorpos neutralizam vetor, então pacientes seropositivos são excluídos ou pré-tratados.", en: "Because antibodies neutralize vector, seropositive patients are excluded or pre-treated."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Terapia gênica antisense (ASO) atua:", en: "Antisense (ASO) gene therapy acts by:"}
+        choices:
+          - {pt: "Oligonucleotídeo que se liga a mRNA-alvo modulando splicing ou degradando-o", en: "Oligo binding target mRNA modulating splicing or degrading it"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas proteína externa", en: "Just external protein"}
+        correctAnswer: {pt: "Oligonucleotídeo que se liga a mRNA-alvo modulando splicing ou degradando-o", en: "Oligo binding target mRNA modulating splicing or degrading it"}
+        rationale: {pt: "Quando ASO altera processamento (Spinraza), então proteína funcional é restaurada sem mexer no DNA.", en: "When ASO alters processing (Spinraza), functional protein is restored without touching DNA."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Terapia celular e mRNA", en: "Cell therapy and mRNA"}
+    description: {pt: "Células e mensageiros como medicamentos.", en: "Cells and messengers as medicines."}
+    exercises:
+      - type: choice
+        question: {pt: "CAR-T é:", en: "CAR-T is:"}
+        choices:
+          - {pt: "Linfócito T do paciente engenheirado para expressar receptor antigênico quimérico", en: "Patient T cell engineered to express chimeric antigen receptor"}
+          - {pt: "Apenas comprimido", en: "Just pill"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas vacina antiga", en: "Just old vaccine"}
+        correctAnswer: {pt: "Linfócito T do paciente engenheirado para expressar receptor antigênico quimérico", en: "Patient T cell engineered to express chimeric antigen receptor"}
+        rationale: {pt: "Como CAR direciona T contra antígeno tumoral (CD19), então linfócitos viram drogas vivas.", en: "Because CAR directs T against tumor antigen (CD19), lymphocytes become living drugs."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síndrome de liberação de citocinas (CRS) em CAR-T é:", en: "Cytokine release syndrome (CRS) in CAR-T is:"}
+        choices:
+          - {pt: "Resposta inflamatória sistêmica intensa que requer manejo (tocilizumabe)", en: "Intense systemic inflammatory response requiring management (tocilizumab)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas resfriado leve", en: "Just mild cold"}
+          - {pt: "Sempre inofensiva", en: "Always harmless"}
+        correctAnswer: {pt: "Resposta inflamatória sistêmica intensa que requer manejo (tocilizumabe)", en: "Intense systemic inflammatory response requiring management (tocilizumab)"}
+        rationale: {pt: "Quando CAR-T destrói tumor massivo, então citocinas explodem — bloqueio de IL-6 controla.", en: "When CAR-T destroys massive tumor, cytokines spike — IL-6 blockade controls it."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TCR engineering difere de CAR porque:", en: "TCR engineering differs from CAR because:"}
+        choices:
+          - {pt: "Reconhece peptídeos via MHC, mira antígenos intracelulares", en: "Recognizes peptides via MHC, targets intracellular antigens"}
+          - {pt: "Apenas extracelular", en: "Just extracellular"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Idêntico a CAR", en: "Identical to CAR"}
+        correctAnswer: {pt: "Reconhece peptídeos via MHC, mira antígenos intracelulares", en: "Recognizes peptides via MHC, targets intracellular antigens"}
+        rationale: {pt: "Como MHC apresenta peptídeos internos, então TCR amplia repertório de alvos para tumores sólidos.", en: "Because MHC presents internal peptides, TCR expands target repertoire for solid tumors."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacinas de mRNA funcionam por:", en: "mRNA vaccines work by:"}
+        choices:
+          - {pt: "Entregar mRNA codificando antígeno → célula traduz → resposta imune", en: "Deliver mRNA encoding antigen → cell translates → immune response"}
+          - {pt: "Apenas DNA injetado", en: "Just injected DNA"}
+          - {pt: "Apenas vírus vivo", en: "Only live virus"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Entregar mRNA codificando antígeno → célula traduz → resposta imune", en: "Deliver mRNA encoding antigen → cell translates → immune response"}
+        rationale: {pt: "Como célula faz a proteína, então sistema imune treina contra antígeno autêntico sem patógeno vivo.", en: "Because the cell makes the protein, immune system trains against authentic antigen without live pathogen."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pseudouridina modificada em mRNA terapêutico:", en: "Modified pseudouridine in therapeutic mRNA:"}
+        choices:
+          - {pt: "Reduz imunogenicidade inata e aumenta tradução", en: "Reduces innate immunogenicity and boosts translation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas degrada mais", en: "Just degrades more"}
+          - {pt: "Sem efeito", en: "No effect"}
+        correctAnswer: {pt: "Reduz imunogenicidade inata e aumenta tradução", en: "Reduces innate immunogenicity and boosts translation"}
+        rationale: {pt: "Quando bases modificadas escapam de TLRs, então mRNA persiste e produz mais antígeno.", en: "When modified bases escape TLRs, mRNA persists and produces more antigen."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Células iPS (pluripotentes induzidas) abriram terapia:", en: "iPS (induced pluripotent) cells enabled therapy:"}
+        choices:
+          - {pt: "Personalizada — derivar tecidos do próprio paciente sem rejeição", en: "Personalized — derive tissues from patient with no rejection"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em camundongos", en: "Only in mice"}
+          - {pt: "Apenas embrionária", en: "Only embryonic"}
+        correctAnswer: {pt: "Personalizada — derivar tecidos do próprio paciente sem rejeição", en: "Personalized — derive tissues from patient with no rejection"}
+        rationale: {pt: "Como Yamanaka mostrou reprogramação por 4 fatores, então pacientes são fonte de células autólogas.", en: "Because Yamanaka showed reprogramming by 4 factors, patients are source of autologous cells."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Edição de base ex vivo + transplante autólogo curou:", en: "Ex vivo base editing + autologous transplant cured:"}
+        choices:
+          - {pt: "Anemia falciforme em ensaios clínicos (Casgevy aprovada)", en: "Sickle cell disease in clinical trials (Casgevy approved)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas câncer cerebral", en: "Just brain cancer"}
+          - {pt: "Apenas resfriado", en: "Just common cold"}
+        correctAnswer: {pt: "Anemia falciforme em ensaios clínicos (Casgevy aprovada)", en: "Sickle cell disease in clinical trials (Casgevy approved)"}
+        rationale: {pt: "Quando reativamos hemoglobina fetal, então hemácias contornam mutação adulta defeituosa.", en: "When we reactivate fetal hemoglobin, red cells bypass defective adult mutation."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Custo de terapias gênicas é:", en: "Gene therapy cost is:"}
+        choices:
+          - {pt: "Frequentemente milhões por dose — desafio de acesso", en: "Often millions per dose — access challenge"}
+          - {pt: "Sempre barato", en: "Always cheap"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre gratuito", en: "Always free"}
+        correctAnswer: {pt: "Frequentemente milhões por dose — desafio de acesso", en: "Often millions per dose — access challenge"}
+        rationale: {pt: "Como manufatura é complexa e dose-única, então preço alto pressiona sistemas de saúde.", en: "Because manufacturing is complex and single-dose, high price pressures health systems."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imunossupressão pode ser necessária em:", en: "Immunosuppression may be needed in:"}
+        choices:
+          - {pt: "Terapias com vetores virais para evitar resposta anti-capsídeo", en: "Viral vector therapies to prevent anti-capsid response"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas pó oral", en: "Just oral powder"}
+          - {pt: "Sempre desnecessária", en: "Always unnecessary"}
+        correctAnswer: {pt: "Terapias com vetores virais para evitar resposta anti-capsídeo", en: "Viral vector therapies to prevent anti-capsid response"}
+        rationale: {pt: "Quando imune ataca vetor, então tratamento falha — esteróides preventivos preservam expressão.", en: "When immunity attacks vector, treatment fails — preventive steroids preserve expression."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próxima fronteira é editar:", en: "Next frontier is to edit:"}
+        choices:
+          - {pt: "In vivo no fígado, sistema nervoso e tecidos hematopoiéticos sem ex vivo", en: "In vivo in liver, nervous system and hematopoietic tissues without ex vivo"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em laboratório", en: "Just in lab"}
+          - {pt: "Apenas em bactéria", en: "Only in bacteria"}
+        correctAnswer: {pt: "In vivo no fígado, sistema nervoso e tecidos hematopoiéticos sem ex vivo", en: "In vivo in liver, nervous system and hematopoietic tissues without ex vivo"}
+        rationale: {pt: "Como elimina manufatura individual, então edição in vivo escalável democratiza acesso.", en: "Because it eliminates individual manufacturing, scalable in vivo editing democratizes access."}
+        objectives: [biology.gene_therapy]
+        difficulty: 5
+target: 20
