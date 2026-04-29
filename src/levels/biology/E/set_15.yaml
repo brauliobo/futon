@@ -1,0 +1,244 @@
+title:
+  pt: "🌑 Proteoma escuro e ORFs crípticos"
+  en: "🌑 Dark proteome and cryptic ORFs"
+level: 'E'
+subject: biology
+objectives: [biology.dark_proteome]
+difficulty: 5
+authorNotes: "smORFs, lncRNAs codificantes, micropeptídeos, IDR-rich proteins, ribo-seq."
+example:
+  pt: "Ex.: ribo-seq → ORF curta inédita → micropeptídeo → função biológica."
+  en: "Ex.: ribo-seq → novel short ORF → micropeptide → biological function."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Descobrindo o proteoma oculto", en: "Discovering hidden proteome"}
+    description: {pt: "Além dos genes anotados.", en: "Beyond annotated genes."}
+    exercises:
+      - type: choice
+        question: {pt: "smORFs:", en: "smORFs:"}
+        choices:
+          - {pt: "Open reading frames pequenos (<100 aa) codificam micropeptídeos com funções específicas", en: "Small open reading frames (<100 aa) encode micropeptides with specific functions"}
+          - {pt: "Apenas curiosidade molecular", en: "Just molecular curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Open reading frames pequenos (<100 aa) codificam micropeptídeos com funções específicas", en: "Small open reading frames (<100 aa) encode micropeptides with specific functions"}
+        rationale: {pt: "Quando smORFs são reconhecidos, então proteoma se expande significativamente.", en: "When smORFs are recognized, proteome significantly expands."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ribo-seq:", en: "Ribo-seq:"}
+        choices:
+          - {pt: "Sequenciamento de fragmentos protegidos por ribossomos identifica regiões traduzidas reais", en: "Ribosome-protected fragment sequencing identifies actually translated regions"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sequenciamento de fragmentos protegidos por ribossomos identifica regiões traduzidas reais", en: "Ribosome-protected fragment sequencing identifies actually translated regions"}
+        rationale: {pt: "Quando tradução é mapeada, então proteoma real é revelado.", en: "When translation is mapped, real proteome is revealed."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "lncRNAs codificantes:", en: "Coding lncRNAs:"}
+        choices:
+          - {pt: "Long non-coding RNAs anotados podem codificar peptídeos funcionais previamente perdidos", en: "Annotated long non-coding RNAs may encode previously missed functional peptides"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Long non-coding RNAs anotados podem codificar peptídeos funcionais previamente perdidos", en: "Annotated long non-coding RNAs may encode previously missed functional peptides"}
+        rationale: {pt: "Quando lncRNAs são reanalisados, então fronteira de codificação se desloca.", en: "When lncRNAs are reanalyzed, coding boundary shifts."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "uORFs:", en: "uORFs:"}
+        choices:
+          - {pt: "Upstream ORFs em 5'UTRs regulam tradução do CDS principal e codificam peptídeos", en: "5'UTR upstream ORFs regulate main CDS translation and encode peptides"}
+          - {pt: "Apenas detalhe regulatório", en: "Just regulatory detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Upstream ORFs em 5'UTRs regulam tradução do CDS principal e codificam peptídeos", en: "5'UTR upstream ORFs regulate main CDS translation and encode peptides"}
+        rationale: {pt: "Quando uORFs atuam, então expressão é finamente controlada.", en: "When uORFs act, expression is finely controlled."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Proteínas IDR-ricas:", en: "IDR-rich proteins:"}
+        choices:
+          - {pt: "Regiões intrinsecamente desordenadas formam condensados e regulam interações multivalentes", en: "Intrinsically disordered regions form condensates and regulate multivalent interactions"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Regiões intrinsecamente desordenadas formam condensados e regulam interações multivalentes", en: "Intrinsically disordered regions form condensates and regulate multivalent interactions"}
+        rationale: {pt: "Quando IDRs são caracterizadas, então biologia ganha novo eixo regulatório.", en: "When IDRs are characterized, biology gains new regulatory axis."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mass spec discovery:", en: "Mass spec discovery:"}
+        choices:
+          - {pt: "MS de novo confirma micropeptídeos preditos por ribo-seq como produtos genuínos", en: "De novo MS confirms ribo-seq-predicted micropeptides as genuine products"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "MS de novo confirma micropeptídeos preditos por ribo-seq como produtos genuínos", en: "De novo MS confirms ribo-seq-predicted micropeptides as genuine products"}
+        rationale: {pt: "Quando MS confirma, então existência é validada experimentalmente.", en: "When MS confirms, existence is experimentally validated."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Micropeptídeos em desenvolvimento:", en: "Developmental micropeptides:"}
+        choices:
+          - {pt: "Tarsal-less em Drosophila e SPAR em mamíferos regulam padrões corporais e metabolismo", en: "Drosophila tarsal-less and mammalian SPAR regulate body patterns and metabolism"}
+          - {pt: "Apenas curiosidade desenvolvimentista", en: "Just developmental curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tarsal-less em Drosophila e SPAR em mamíferos regulam padrões corporais e metabolismo", en: "Drosophila tarsal-less and mammalian SPAR regulate body patterns and metabolism"}
+        rationale: {pt: "Quando micropeptídeos atuam, então biologia ganha reguladores antes ignorados.", en: "When micropeptides act, biology gains previously-ignored regulators."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mitochondrial micropeptides:", en: "Mitochondrial micropeptides:"}
+        choices:
+          - {pt: "MOTS-c, humanin e SHLPs derivam de mtDNA e regulam metabolismo e estresse", en: "MOTS-c, humanin and SHLPs derive from mtDNA regulating metabolism and stress"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "MOTS-c, humanin e SHLPs derivam de mtDNA e regulam metabolismo e estresse", en: "MOTS-c, humanin and SHLPs derive from mtDNA regulating metabolism and stress"}
+        rationale: {pt: "Quando mtDNA é reanalisado, então biologia ganha novos hormônios celulares.", en: "When mtDNA is reanalyzed, biology gains new cellular hormones."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imunopeptidoma:", en: "Immunopeptidome:"}
+        choices:
+          - {pt: "Peptídeos apresentados por MHC frequentemente derivam de regiões antes não-codantes", en: "MHC-presented peptides often derive from previously non-coding regions"}
+          - {pt: "Apenas curiosidade imunológica", en: "Just immunological curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Peptídeos apresentados por MHC frequentemente derivam de regiões antes não-codantes", en: "MHC-presented peptides often derive from previously non-coding regions"}
+        rationale: {pt: "Quando imunopeptidoma é mapeado, então neoantígenos não-canônicos são alvos.", en: "When immunopeptidome is mapped, non-canonical neoantigens are targets."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Conservação de smORFs:", en: "smORF conservation:"}
+        choices:
+          - {pt: "Análises evolutivas identificam smORFs preservados sob seleção purificadora", en: "Evolutionary analyses identify smORFs preserved under purifying selection"}
+          - {pt: "Apenas curiosidade evolutiva", en: "Just evolutionary curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Análises evolutivas identificam smORFs preservados sob seleção purificadora", en: "Evolutionary analyses identify smORFs preserved under purifying selection"}
+        rationale: {pt: "Quando conservação é alta, então função biológica é provável.", en: "When conservation is high, biological function is likely."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações", en: "Applications"}
+    description: {pt: "Proteoma escuro na clínica.", en: "Dark proteome in clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "Câncer e neoantígenos crípticos:", en: "Cancer and cryptic neoantigens:"}
+        choices:
+          - {pt: "ORFs aberrantes geram peptídeos imunogênicos exclusivos a tumor — alvos vacinais", en: "Aberrant ORFs generate tumor-exclusive immunogenic peptides — vaccine targets"}
+          - {pt: "Apenas curiosidade oncológica", en: "Just oncological curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ORFs aberrantes geram peptídeos imunogênicos exclusivos a tumor — alvos vacinais", en: "Aberrant ORFs generate tumor-exclusive immunogenic peptides — vaccine targets"}
+        rationale: {pt: "Quando alvos crípticos surgem, então imunoterapia ganha precisão.", en: "When cryptic targets emerge, immunotherapy gains precision."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Doenças metabólicas:", en: "Metabolic diseases:"}
+        choices:
+          - {pt: "Micropeptídeos como myoregulina afetam metabolismo de Ca²⁺ em músculo cardíaco", en: "Micropeptides like myoregulin affect Ca²⁺ metabolism in cardiac muscle"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Micropeptídeos como myoregulina afetam metabolismo de Ca²⁺ em músculo cardíaco", en: "Micropeptides like myoregulin affect Ca²⁺ metabolism in cardiac muscle"}
+        rationale: {pt: "Quando alvos surgem, então insuficiência cardíaca tem novos tratamentos.", en: "When targets emerge, heart failure gets new treatments."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Doenças neurodegenerativas:", en: "Neurodegenerative diseases:"}
+        choices:
+          - {pt: "Tradução não-canônica em expansões repetitivas (RAN) gera proteínas tóxicas em ELA/Huntington", en: "Non-canonical translation in repeat expansions (RAN) generates toxic proteins in ALS/Huntington"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tradução não-canônica em expansões repetitivas (RAN) gera proteínas tóxicas em ELA/Huntington", en: "Non-canonical translation in repeat expansions (RAN) generates toxic proteins in ALS/Huntington"}
+        rationale: {pt: "Quando RAN é mapeada, então estratégias terapêuticas surgem.", en: "When RAN is mapped, therapeutic strategies emerge."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacinas e antígenos não-canônicos:", en: "Vaccines and non-canonical antigens:"}
+        choices:
+          - {pt: "Imunoterapia personalizada inclui peptídeos oriundos de regiões antes ignoradas", en: "Personalized immunotherapy includes peptides from previously-ignored regions"}
+          - {pt: "Apenas curiosidade vacinal", en: "Just vaccine curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Imunoterapia personalizada inclui peptídeos oriundos de regiões antes ignoradas", en: "Personalized immunotherapy includes peptides from previously-ignored regions"}
+        rationale: {pt: "Quando vocabulário expande, então neoantígenos personalizados crescem.", en: "When vocabulary expands, personalized neoantigens grow."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Drug discovery em IDRs:", en: "IDR drug discovery:"}
+        choices:
+          - {pt: "Pequenas moléculas que estabilizam ou dissolvem condensados emergem como nova classe", en: "Small molecules stabilizing or dissolving condensates emerge as a new class"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Pequenas moléculas que estabilizam ou dissolvem condensados emergem como nova classe", en: "Small molecules stabilizing or dissolving condensates emerge as a new class"}
+        rationale: {pt: "Quando alvos são novos, então oncologia e neuro ganham terapias inéditas.", en: "When targets are new, oncology and neuro gain novel therapies."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anotação genômica:", en: "Genome annotation:"}
+        choices:
+          - {pt: "Updates em GENCODE e RefSeq incorporam smORFs validados em referências genômicas", en: "Updates in GENCODE and RefSeq incorporate validated smORFs into genomic references"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Updates em GENCODE e RefSeq incorporam smORFs validados em referências genômicas", en: "Updates in GENCODE and RefSeq incorporate validated smORFs into genomic references"}
+        rationale: {pt: "Quando referências atualizam, então clínica ganha catálogo completo.", en: "When references update, clinic gains complete catalog."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Antimicrobianos derivados de smORFs:", en: "smORF-derived antimicrobials:"}
+        choices:
+          - {pt: "Peptídeos antimicrobianos descobertos em ribossome profiling expandem armas contra MDR", en: "Antimicrobial peptides discovered via ribosome profiling expand MDR arsenal"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Peptídeos antimicrobianos descobertos em ribossome profiling expandem armas contra MDR", en: "Antimicrobial peptides discovered via ribosome profiling expand MDR arsenal"}
+        rationale: {pt: "Quando peptídeos são descobertos, então antimicrobianos ganham diversidade.", en: "When peptides are discovered, antimicrobials gain diversity."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single-cell ribo-seq:", en: "Single-cell ribo-seq:"}
+        choices:
+          - {pt: "Tradução em células individuais revela heterogeneidade do proteoma escuro entre células", en: "Translation in individual cells reveals dark-proteome heterogeneity between cells"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tradução em células individuais revela heterogeneidade do proteoma escuro entre células", en: "Translation in individual cells reveals dark-proteome heterogeneity between cells"}
+        rationale: {pt: "Quando single-cell mede tradução, então biologia ganha resolução nova.", en: "When single-cell measures translation, biology gains new resolution."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AlphaFold no proteoma escuro:", en: "AlphaFold in dark proteome:"}
+        choices:
+          - {pt: "Predição estrutural de smORFs e IDRs revela funções e domínios antes ocultos", en: "Structural prediction of smORFs and IDRs reveals previously-hidden functions and domains"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Predição estrutural de smORFs e IDRs revela funções e domínios antes ocultos", en: "Structural prediction of smORFs and IDRs reveals previously-hidden functions and domains"}
+        rationale: {pt: "Quando estrutura é prevista, então função emerge mais facilmente.", en: "When structure is predicted, function emerges more readily."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em proteoma escuro:", en: "Next dark proteome frontiers:"}
+        choices:
+          - {pt: "Multi-omics integradas, AI predição funcional e drogas miravam smORFs/IDRs em escala", en: "Integrated multi-omics, AI functional prediction and drugs targeting smORFs/IDRs at scale"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Multi-omics integradas, AI predição funcional e drogas miravam smORFs/IDRs em escala", en: "Integrated multi-omics, AI functional prediction and drugs targeting smORFs/IDRs at scale"}
+        rationale: {pt: "Quando ferramentas convergem, então biologia ganha terceiro genoma funcional.", en: "When tools converge, biology gains a third functional genome."}
+        objectives: [biology.dark_proteome]
+        difficulty: 5
+target: 20

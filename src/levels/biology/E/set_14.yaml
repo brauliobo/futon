@@ -1,0 +1,244 @@
+title:
+  pt: "🧠 Emulação de cérebro inteiro"
+  en: "🧠 Whole-brain emulation"
+level: 'E'
+subject: biology
+objectives: [biology.brain_emulation]
+difficulty: 5
+authorNotes: "Simulação celular, princípios neuromórficos, OpenWorm, projetos como Blue Brain."
+example:
+  pt: "Ex.: conectoma + biofísica → simulação → atividade emergente → comportamento simulado."
+  en: "Ex.: connectome + biophysics → simulation → emergent activity → simulated behavior."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Princípios e projetos", en: "Principles and projects"}
+    description: {pt: "Como simulamos cérebros.", en: "How we simulate brains."}
+    exercises:
+      - type: choice
+        question: {pt: "Hodgkin-Huxley:", en: "Hodgkin-Huxley:"}
+        choices:
+          - {pt: "Equações biofísicas reproduzem potencial de ação com precisão experimental", en: "Biophysical equations reproduce action potential with experimental precision"}
+          - {pt: "Apenas curiosidade matemática", en: "Just mathematical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Equações biofísicas reproduzem potencial de ação com precisão experimental", en: "Biophysical equations reproduce action potential with experimental precision"}
+        rationale: {pt: "Quando HH descreve, então simulação biofísica é base.", en: "When HH describes, biophysical simulation is foundation."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Blue Brain:", en: "Blue Brain:"}
+        choices:
+          - {pt: "EPFL simula coluna cortical de rato com biofísica e morfologia detalhadas", en: "EPFL simulates rat cortical column with detailed biophysics and morphology"}
+          - {pt: "Apenas curiosidade institucional", en: "Just institutional curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "EPFL simula coluna cortical de rato com biofísica e morfologia detalhadas", en: "EPFL simulates rat cortical column with detailed biophysics and morphology"}
+        rationale: {pt: "Quando coluna é simulada, então propriedades emergentes são testadas in silico.", en: "When column is simulated, emergent properties are tested in silico."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "OpenWorm:", en: "OpenWorm:"}
+        choices:
+          - {pt: "Projeto open-source simula C. elegans com conectoma completo e modelo muscular", en: "Open-source project simulates C. elegans with full connectome and muscle model"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Projeto open-source simula C. elegans com conectoma completo e modelo muscular", en: "Open-source project simulates C. elegans with full connectome and muscle model"}
+        rationale: {pt: "Quando worm é completo, então emulação serve de modelo aprendizado.", en: "When worm is complete, emulation serves as learning model."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spiking neural networks (SNN):", en: "Spiking neural networks (SNN):"}
+        choices:
+          - {pt: "Modelo de neurônios que comunicam via spikes — base de chips neuromórficos", en: "Spike-communicating neuron model — foundation of neuromorphic chips"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe trivial", en: "Just trivial detail"}
+        correctAnswer: {pt: "Modelo de neurônios que comunicam via spikes — base de chips neuromórficos", en: "Spike-communicating neuron model — foundation of neuromorphic chips"}
+        rationale: {pt: "Quando SNN executa, então cérebros artificiais ganham eficiência energética.", en: "When SNN runs, artificial brains gain energy efficiency."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Neuromorphic hardware:", en: "Neuromorphic hardware:"}
+        choices:
+          - {pt: "Loihi (Intel), TrueNorth (IBM) e SpiNNaker simulam SNNs em hardware dedicado eficiente", en: "Loihi (Intel), TrueNorth (IBM) and SpiNNaker run SNNs on efficient dedicated hardware"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Loihi (Intel), TrueNorth (IBM) e SpiNNaker simulam SNNs em hardware dedicado eficiente", en: "Loihi (Intel), TrueNorth (IBM) and SpiNNaker run SNNs on efficient dedicated hardware"}
+        rationale: {pt: "Quando hardware é dedicado, então simulação escala em watts.", en: "When hardware is dedicated, simulation scales in watts."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "NEST e Brian:", en: "NEST and Brian:"}
+        choices:
+          - {pt: "Plataformas open-source para simular redes neurais em escala em CPU e GPU", en: "Open-source platforms to simulate neural networks at scale on CPU and GPU"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Plataformas open-source para simular redes neurais em escala em CPU e GPU", en: "Open-source platforms to simulate neural networks at scale on CPU and GPU"}
+        rationale: {pt: "Quando ferramentas existem, então pesquisa de circuitos escala.", en: "When tools exist, circuit research scales."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Multi-compartment models:", en: "Multi-compartment models:"}
+        choices:
+          - {pt: "NEURON simula árvore dendrítica com canais distribuídos para fidelidade celular", en: "NEURON simulates dendritic tree with distributed channels for cellular fidelity"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "NEURON simula árvore dendrítica com canais distribuídos para fidelidade celular", en: "NEURON simulates dendritic tree with distributed channels for cellular fidelity"}
+        rationale: {pt: "Quando dendritos são modelados, então neurônios reais são reproduzidos.", en: "When dendrites are modeled, real neurons are reproduced."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Connectome-constrained simulation:", en: "Connectome-constrained simulation:"}
+        choices:
+          - {pt: "Conexões medidas restringem topologia e parâmetros para reduzir espaço livre", en: "Measured connections constrain topology and parameters to reduce free space"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Conexões medidas restringem topologia e parâmetros para reduzir espaço livre", en: "Measured connections constrain topology and parameters to reduce free space"}
+        rationale: {pt: "Quando conectoma restringe, então simulação ganha realismo biológico.", en: "When connectome constrains, simulation gains biological realism."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Limites computacionais:", en: "Computational limits:"}
+        choices:
+          - {pt: "Cérebro humano completo em escala biofísica excede atuais supercomputadores em ordens", en: "Whole-human brain at biophysical scale exceeds current supercomputers by orders"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cérebro humano completo em escala biofísica excede atuais supercomputadores em ordens", en: "Whole-human brain at biophysical scale exceeds current supercomputers by orders"}
+        rationale: {pt: "Quando limites são reconhecidos, então abstrações apropriadas são escolhidas.", en: "When limits are recognized, appropriate abstractions are chosen."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Teorias da consciência:", en: "Theories of consciousness:"}
+        choices:
+          - {pt: "IIT, GWT e modelos preditivos guiam debate sobre o que precisa ser simulado", en: "IIT, GWT and predictive models guide debate about what needs to be simulated"}
+          - {pt: "Apenas curiosidade filosófica", en: "Just philosophical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "IIT, GWT e modelos preditivos guiam debate sobre o que precisa ser simulado", en: "IIT, GWT and predictive models guide debate about what needs to be simulated"}
+        rationale: {pt: "Quando teorias guiam, então simulações têm critério de sucesso.", en: "When theories guide, simulations have success criteria."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações e ética", en: "Applications and ethics"}
+    description: {pt: "Implicações de cérebros simulados.", en: "Implications of simulated brains."}
+    exercises:
+      - type: choice
+        question: {pt: "Drug discovery em cérebro simulado:", en: "Drug discovery in simulated brain:"}
+        choices:
+          - {pt: "Modelos podem testar fármacos em circuitos completos predizendo efeitos adversos sistêmicos", en: "Models can test drugs in complete circuits predicting systemic adverse effects"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe trivial", en: "Just trivial detail"}
+          - {pt: "Apenas variação experimental", en: "Just experimental variation"}
+        correctAnswer: {pt: "Modelos podem testar fármacos em circuitos completos predizendo efeitos adversos sistêmicos", en: "Models can test drugs in complete circuits predicting systemic adverse effects"}
+        rationale: {pt: "Quando simulação prediz, então pré-clínica reduz testes animais.", en: "When simulation predicts, preclinical reduces animal testing."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelos de doença simulados:", en: "Simulated disease models:"}
+        choices:
+          - {pt: "Mutações de canalopatias, alterações de mielina e autismo são testadas em redes virtuais", en: "Channelopathies, myelin alterations and autism are tested in virtual networks"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mutações de canalopatias, alterações de mielina e autismo são testadas em redes virtuais", en: "Channelopathies, myelin alterations and autism are tested in virtual networks"}
+        rationale: {pt: "Quando doenças são simuladas, então hipóteses mecanísticas são geradas.", en: "When diseases are simulated, mechanistic hypotheses are generated."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AI inspirada por cérebros:", en: "Brain-inspired AI:"}
+        choices:
+          - {pt: "Princípios biológicos (esparsidade, plasticidade) inspiram arquiteturas eficientes", en: "Biological principles (sparsity, plasticity) inspire efficient architectures"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Princípios biológicos (esparsidade, plasticidade) inspiram arquiteturas eficientes", en: "Biological principles (sparsity, plasticity) inspire efficient architectures"}
+        rationale: {pt: "Quando bio inspira, então AI ganha eficiência.", en: "When bio inspires, AI gains efficiency."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Substrato vs algoritmo:", en: "Substrate vs algorithm:"}
+        choices:
+          - {pt: "Debate filosófico sobre se mente requer substrato biológico ou pode rodar em silício", en: "Philosophical debate over whether mind requires biological substrate or can run on silicon"}
+          - {pt: "Apenas curiosidade filosófica", en: "Just philosophical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Debate filosófico sobre se mente requer substrato biológico ou pode rodar em silício", en: "Philosophical debate over whether mind requires biological substrate or can run on silicon"}
+        rationale: {pt: "Quando debate é claro, então pesquisa progride com objetivos definidos.", en: "When debate is clear, research progresses with defined goals."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bem-estar animal simulado:", en: "Simulated animal welfare:"}
+        choices:
+          - {pt: "Simulações reduzem necessidade de animais em pesquisa neuro — alvo da regra 3R", en: "Simulations reduce need for animals in neuro research — 3R rule target"}
+          - {pt: "Apenas curiosidade ética", en: "Just ethical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Simulações reduzem necessidade de animais em pesquisa neuro — alvo da regra 3R", en: "Simulations reduce need for animals in neuro research — 3R rule target"}
+        rationale: {pt: "Quando simulação substitui, então ética animal melhora.", en: "When simulation substitutes, animal ethics improves."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Whole brain emulation (Bostrom/Sandberg):", en: "Whole brain emulation (Bostrom/Sandberg):"}
+        choices:
+          - {pt: "Roadmap discute requisitos técnicos e éticos para emular um cérebro humano completo", en: "Roadmap discusses technical and ethical requirements to emulate a complete human brain"}
+          - {pt: "Apenas curiosidade especulativa", en: "Just speculative curiosity"}
+          - {pt: "Apenas filme de ficção", en: "Just fiction film"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Roadmap discute requisitos técnicos e éticos para emular um cérebro humano completo", en: "Roadmap discusses technical and ethical requirements to emulate a complete human brain"}
+        rationale: {pt: "Quando roadmap existe, então debate público pode ser informado.", en: "When roadmap exists, public debate can be informed."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Memória uploaded:", en: "Memory upload:"}
+        choices:
+          - {pt: "Especulação sobre transferência de memórias requer entendimento real de codificação sináptica", en: "Memory transfer speculation requires real understanding of synaptic encoding"}
+          - {pt: "Apenas ficção científica", en: "Just science fiction"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Especulação sobre transferência de memórias requer entendimento real de codificação sináptica", en: "Memory transfer speculation requires real understanding of synaptic encoding"}
+        rationale: {pt: "Quando ciência avança, então fronteira fica viável décadas depois.", en: "When science advances, frontier becomes viable decades later."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Brain organoids simulados:", en: "Simulated brain organoids:"}
+        choices:
+          - {pt: "Modelos integrados de organoides reais com simulação geram híbridos biocomputacionais", en: "Integrated models of real organoids with simulation yield biocomputational hybrids"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modelos integrados de organoides reais com simulação geram híbridos biocomputacionais", en: "Integrated models of real organoids with simulation yield biocomputational hybrids"}
+        rationale: {pt: "Quando híbridos existem, então biologia se conecta a computação.", en: "When hybrids exist, biology connects to computation."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Direitos de cérebros simulados:", en: "Rights of simulated brains:"}
+        choices:
+          - {pt: "Discussão emergente sobre status moral de simulações conscientes — neurodireitos", en: "Emerging discussion about moral status of conscious simulations — neurorights"}
+          - {pt: "Apenas curiosidade legal", en: "Just legal curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Discussão emergente sobre status moral de simulações conscientes — neurodireitos", en: "Emerging discussion about moral status of conscious simulations — neurorights"}
+        rationale: {pt: "Quando ética se desenvolve, então tecnologia avança responsavelmente.", en: "When ethics develops, technology advances responsibly."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em emulação cerebral:", en: "Next brain emulation frontiers:"}
+        choices:
+          - {pt: "Hardware neuromórfico em escala, integração com conectomas reais e ética robusta", en: "Scalable neuromorphic hardware, real connectome integration and robust ethics"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Hardware neuromórfico em escala, integração com conectomas reais e ética robusta", en: "Scalable neuromorphic hardware, real connectome integration and robust ethics"}
+        rationale: {pt: "Quando ferramentas convergem, então emulação vira plataforma de pesquisa.", en: "When tools converge, emulation becomes research platform."}
+        objectives: [biology.brain_emulation]
+        difficulty: 5
+target: 20
