@@ -195,6 +195,10 @@ const METHOD_TERMS = [
   // Period references
   'século', 'década', 'documento', 'obra', 'autor',
   // Literary analysis (D-L PT)
+  'mantemos\\b', 'mant[ée]m\\b', 'eliminamos\\b', 'elimina[mr]?',
+  'destruição', 'criação', 'destruir', 'cria[mr]?',
+  'madur[oa]', 'comprometid[oa]', 'irreverent[ea]',
+  'múltipl[oa][s]?', 'univocidade', 'ambíguo',
   'narrador', 'personagem', 'protagonista', 'antagonista', 'narrad[oa]',
   'discurso', 'enunciação', 'enunciador', 'foco\\s+narrativo',
   'onisciência', 'onisciente', 'oniscient[ea]', 'onipotente',
@@ -223,6 +227,12 @@ const METHOD_TERMS = [
   'links', 'substitute', 'determines', 'ends\\s+with', 'starts\\s+with',
   'borrow', 'carry', 'digit', 'column', 'regroup',
   // Japanese-grammar pedagogical markers (PT explanations of JP patterns)
+  'implica[mr]?\\b', 'implicar?\\b', 'antecede[mr]?', 'antecedem?',
+  'destaca[mr]?\\b', 'destac[ae][rs]?', 'intercambiáv[ea][il]s?',
+  'neutr[oa]\\b', 'optativ[oa]', 'opcional', 'versátil', 'versáteis',
+  'justificativa', 'ênfase', 'enfátic[oa]', 'coloquial', 'formal',
+  'concessiv[oa][s]?', 'admirativ[oa]', 'simultâne[oa]',
+  'reforça[mr]?', 'reforço', 'matiz[ea]', 'nuanc[ea]',
   'nega[mr]?\\b', 'negar?\\b', 'afirma[mr]?', 'afirmar?\\b',
   'partícula', 'sufixo', 'prefixo', 'auxiliar', 'auxiliares',
   'indicar?\\b', 'expressar?\\b', 'expressa[mr]?', 'expressam?',
@@ -297,11 +307,12 @@ const PLUS_DECOMP_RE = /\S+\s+\+\s+\S+\s+\+\s+\S/;
 // Distinct from COMPUTATION_RE (which requires ≥4-char tokens both sides).
 const ALPHA_EQ_RE = /\S\s*[+\-×÷*]\s*\S+\s*=\s*\S/;
 // Vocabulary enumeration with parenthetical translations or numeric values:
-// ≥2 entries of `term (gloss)` separated by commas/slashes/spaces. Teaches
-// by lexical mapping — common in early-grade vocab and number sets.
+// ≥2 entries of `term (gloss)` separated by commas/slashes/spaces or by
+// the conjunction 'e'/'and'/'y'/'ou'. Teaches by lexical mapping — common
+// in early-grade vocab and number sets.
 // e.g. "kitchen (cozinha), bedroom (quarto), bathroom (banheiro)"
-//      "eleven (11), twelve (12), thirteen (13)"
-const VOCAB_ENUM_RE = /[\wáéíóúâêôãõç-]+\s*\([^)]+\)[\s,;/]+[\wáéíóúâêôãõç-]+\s*\([^)]+\)/i;
+//      "Cat (gato) e dog (cachorro) são animais domésticos."
+const VOCAB_ENUM_RE = /[\wáéíóúâêôãõç-]+\s*\([^)]+\)\s*(?:[,;/]|\s+(?:e|y|and|ou)\s+)\s*[\wáéíóúâêôãõç-]+\s*\([^)]+\)/i;
 // Word-family enumeration: "família -X" or "família X-" introducing a
 // list of words sharing a phonetic pattern. Specific to phonics/literacy
 // lessons in early-grade language sets.
