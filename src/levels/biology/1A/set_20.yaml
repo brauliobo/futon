@@ -1,0 +1,263 @@
+title:
+  pt: "🎓 Revisão geral — nível 1A"
+  en: "🎓 General review — level 1A"
+level: '1A'
+subject: biology
+objectives:
+  - biology.ai_biology
+  - biology.pandemic_prep
+  - biology.amr
+  - biology.precision_medicine
+  - biology.mycology
+  - biology.plant_immunity
+  - biology.marine_biology
+  - biology.animal_cognition
+  - biology.multicellularity
+  - biology.spatial_omics
+  - biology.microbiome_therapy
+  - biology.virome
+  - biology.immunometabolism
+  - biology.evo_devo
+  - biology.edna_biomonitoring
+  - biology.phylogenomics
+  - biology.hominin_evolution
+  - biology.climate_health
+  - biology.evolution_of_sex
+difficulty: 5
+authorNotes: "Revisão cumulativa do nível 1A — IA, pandemias, AMR, precisão, micologia, plantas, marinha, cognição, multicelularidade, espacial, microbioma, viroma, imunometabolismo, evo-devo, eDNA, filogenômica, evolução humana, clima-saúde, sexo."
+example:
+  pt: "Ex.: tópico do 1A → conceito-chave → aplicação → consolidação cumulativa."
+  en: "Ex.: 1A topic → key concept → application → cumulative consolidation."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Revisão — primeira metade", en: "Review — first half"}
+    description: {pt: "Sets 1-10 do 1A.", en: "Sets 1-10 of 1A."}
+    exercises:
+      - type: choice
+        question: {pt: "AlphaFold revolucionou:", en: "AlphaFold revolutionized:"}
+        choices:
+          - {pt: "Predição de estruturas 3D de proteínas com alta precisão", en: "3D protein structure prediction with high accuracy"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+          - {pt: "Apenas síntese química", en: "Just chemical synthesis"}
+          - {pt: "Apenas datação radiométrica", en: "Just radiometric dating"}
+        correctAnswer: {pt: "Predição de estruturas 3D de proteínas com alta precisão", en: "3D protein structure prediction with high accuracy"}
+        rationale: {pt: "Quando IA aprende dobramento, então estruturas viram acessíveis em escala global.", en: "When AI learns folding, structures become globally accessible."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spillover zoonótico envolve:", en: "Zoonotic spillover involves:"}
+        choices:
+          - {pt: "Salto de patógeno de hospedeiro reservatório para humanos", en: "Pathogen jump from reservoir host to humans"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas humanos isolados", en: "Just isolated humans"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Salto de patógeno de hospedeiro reservatório para humanos", en: "Pathogen jump from reservoir host to humans"}
+        rationale: {pt: "Quando contato aumenta, então probabilidade de transmissão entre espécies sobe.", en: "When contact increases, cross-species transmission probability rises."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Plasmídeos espalham resistência antibiótica via:", en: "Plasmids spread antibiotic resistance via:"}
+        choices:
+          - {pt: "Conjugação bacteriana entre células e espécies diferentes", en: "Bacterial conjugation between different cells and species"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas radiação solar", en: "Just solar radiation"}
+          - {pt: "Apenas mutação espontânea isolada", en: "Just isolated spontaneous mutation"}
+        correctAnswer: {pt: "Conjugação bacteriana entre células e espécies diferentes", en: "Bacterial conjugation between different cells and species"}
+        rationale: {pt: "Quando elementos móveis cruzam barreiras taxonômicas, então AMR se dissemina horizontalmente.", en: "When mobile elements cross taxonomic barriers, AMR spreads horizontally."}
+        objectives: [biology.amr]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Trastuzumabe atua em:", en: "Trastuzumab acts on:"}
+        choices:
+          - {pt: "Câncer de mama com superexpressão de HER2", en: "Breast cancer with HER2 overexpression"}
+          - {pt: "Apenas resfriado", en: "Just common cold"}
+          - {pt: "Apenas alergia", en: "Just allergy"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Câncer de mama com superexpressão de HER2", en: "Breast cancer with HER2 overexpression"}
+        rationale: {pt: "Quando biomarcador é positivo, então anticorpo direcionado bloqueia receptor amplificado.", en: "When biomarker is positive, targeted antibody blocks amplified receptor."}
+        objectives: [biology.precision_medicine]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Micorriza arbuscular:", en: "Arbuscular mycorrhiza:"}
+        choices:
+          - {pt: "Fungo Glomeromycota troca P/N por C com raízes — sustenta ~90% das plantas terrestres", en: "Glomeromycota fungus trades P/N for C with roots — sustains ~90% of land plants"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas patógeno", en: "Just pathogen"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Fungo Glomeromycota troca P/N por C com raízes — sustenta ~90% das plantas terrestres", en: "Glomeromycota fungus trades P/N for C with roots — sustains ~90% of land plants"}
+        rationale: {pt: "Quando interface arbuscular se forma, então transferência de nutrientes é eficiente e mútua.", en: "When arbuscular interface forms, nutrient transfer is efficient and mutual."}
+        objectives: [biology.mycology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imunidade vegetal PTI é disparada por:", en: "Plant PTI immunity is triggered by:"}
+        choices:
+          - {pt: "Reconhecimento de PAMPs por PRRs na membrana", en: "PAMP recognition by membrane PRRs"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas anticorpo circulante", en: "Just circulating antibody"}
+          - {pt: "Apenas dieta", en: "Just diet"}
+        correctAnswer: {pt: "Reconhecimento de PAMPs por PRRs na membrana", en: "PAMP recognition by membrane PRRs"}
+        rationale: {pt: "Quando padrão microbiano é detectado, então primeira linha imune ativa em minutos.", en: "When microbial pattern is detected, first immune line activates in minutes."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fontes hidrotermais oceânicas hospedam:", en: "Ocean hydrothermal vents host:"}
+        choices:
+          - {pt: "Comunidades quimiossintéticas usando H₂S e CH₄ sem luz", en: "Chemosynthetic communities using H₂S and CH₄ without light"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas plâncton fotossintético", en: "Just photosynthetic plankton"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Comunidades quimiossintéticas usando H₂S e CH₄ sem luz", en: "Chemosynthetic communities using H₂S and CH₄ without light"}
+        rationale: {pt: "Quando luz não chega, então energia química suporta tubeworms e simbiontes microbianos.", en: "When light doesn't reach, chemical energy supports tubeworms and microbial symbionts."}
+        objectives: [biology.marine_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Auto-reconhecimento no espelho sugere:", en: "Mirror self-recognition suggests:"}
+        choices:
+          - {pt: "Autoconsciência em primatas, golfinhos, elefantes e algumas aves", en: "Self-awareness in primates, dolphins, elephants and some birds"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em humanos", en: "Just in humans"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Autoconsciência em primatas, golfinhos, elefantes e algumas aves", en: "Self-awareness in primates, dolphins, elephants and some birds"}
+        rationale: {pt: "Quando animal investiga marca em si, então representação do 'eu' está presente.", en: "When animal investigates a mark on itself, self-representation is present."}
+        objectives: [biology.animal_cognition]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Multicelularidade evoluiu:", en: "Multicellularity evolved:"}
+        choices:
+          - {pt: "Independentemente em ao menos 25 linhagens", en: "Independently in at least 25 lineages"}
+          - {pt: "Apenas em animais", en: "Just in animals"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Independentemente em ao menos 25 linhagens", en: "Independently in at least 25 lineages"}
+        rationale: {pt: "Quando vários clados a desenvolveram, então transição é repetível, não única.", en: "When several clades developed it, transition is repeatable, not unique."}
+        objectives: [biology.multicellularity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Visium em transcriptômica espacial usa:", en: "Visium in spatial transcriptomics uses:"}
+        choices:
+          - {pt: "Lâmina com spots barcoded que capturam mRNA preservando localização", en: "Slide with barcoded spots capturing mRNA while preserving location"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia simples", en: "Just simple microscopy"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Lâmina com spots barcoded que capturam mRNA preservando localização", en: "Slide with barcoded spots capturing mRNA while preserving location"}
+        rationale: {pt: "Quando posição é mantida, então mapa transcricional do tecido é gerado.", en: "When position is kept, tissue transcriptional map is generated."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Revisão — segunda metade", en: "Review — second half"}
+    description: {pt: "Sets 11-19 do 1A.", en: "Sets 11-19 of 1A."}
+    exercises:
+      - type: choice
+        question: {pt: "FMT trata principalmente:", en: "FMT mainly treats:"}
+        choices:
+          - {pt: "Infecção recorrente por Clostridioides difficile", en: "Recurrent Clostridioides difficile infection"}
+          - {pt: "Apenas resfriado", en: "Just common cold"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Infecção recorrente por Clostridioides difficile", en: "Recurrent Clostridioides difficile infection"}
+        rationale: {pt: "Quando microbiota é restaurada, então C. difficile perde nicho e cura excede 80%.", en: "When microbiota is restored, C. difficile loses niche and cure exceeds 80%."}
+        objectives: [biology.microbiome_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bacteriófagos no oceano:", en: "Ocean bacteriophages:"}
+        choices:
+          - {pt: "Matam ~20% dos micróbios marinhos por dia regulando ciclos C/N", en: "Kill ~20% of marine microbes daily regulating C/N cycles"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Matam ~20% dos micróbios marinhos por dia regulando ciclos C/N", en: "Kill ~20% of marine microbes daily regulating C/N cycles"}
+        rationale: {pt: "Quando lise ocorre, então shunt viral libera nutrientes para outros micróbios.", en: "When lysis occurs, viral shunt releases nutrients for other microbes."}
+        objectives: [biology.virome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Macrófagos M1 inflamatórios usam:", en: "Inflammatory M1 macrophages use:"}
+        choices:
+          - {pt: "Glicólise aeróbica e via das pentoses (Warburg-like)", en: "Aerobic glycolysis and pentose phosphate pathway (Warburg-like)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas oxidação lenta", en: "Just slow oxidation"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Glicólise aeróbica e via das pentoses (Warburg-like)", en: "Aerobic glycolysis and pentose phosphate pathway (Warburg-like)"}
+        rationale: {pt: "Quando ATP rápido é necessário, então glicólise supera OXPHOS lento.", en: "When fast ATP is needed, glycolysis beats slow OXPHOS."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genes Hox codificam:", en: "Hox genes encode:"}
+        choices:
+          - {pt: "Fatores de transcrição com homeodomínio que definem identidade segmental", en: "Homeodomain transcription factors defining segmental identity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas enzima metabólica", en: "Just metabolic enzyme"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Fatores de transcrição com homeodomínio que definem identidade segmental", en: "Homeodomain transcription factors defining segmental identity"}
+        rationale: {pt: "Quando ligam DNA via homeodomínio, então padronização do corpo é estabelecida.", en: "When they bind DNA via homeodomain, body patterning is established."}
+        objectives: [biology.evo_devo]
+        difficulty: 5
+      - type: choice
+        question: {pt: "eDNA permite:", en: "eDNA allows:"}
+        choices:
+          - {pt: "Detectar espécies a partir de água/solo sem captura física", en: "Detect species from water/soil without physical capture"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas captura invasiva", en: "Just invasive capture"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Detectar espécies a partir de água/solo sem captura física", en: "Detect species from water/soil without physical capture"}
+        rationale: {pt: "Quando DNA solto é amostrado, então biodiversidade é mapeada não-invasivamente.", en: "When shed DNA is sampled, biodiversity is mapped noninvasively."}
+        objectives: [biology.edna_biomonitoring]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Filogenômica usa:", en: "Phylogenomics uses:"}
+        choices:
+          - {pt: "Múltiplos genes/genomas para árvores evolutivas robustas", en: "Multiple genes/genomes for robust evolutionary trees"}
+          - {pt: "Apenas um gene", en: "Just one gene"}
+          - {pt: "Apenas morfologia", en: "Just morphology"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Múltiplos genes/genomas para árvores evolutivas robustas", en: "Multiple genes/genomes for robust evolutionary trees"}
+        rationale: {pt: "Quando muitos loci convergem, então sinal verdadeiro emerge sobre ruído.", en: "When many loci converge, true signal emerges over noise."}
+        objectives: [biology.phylogenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Humanos não-africanos modernos carregam:", en: "Modern non-African humans carry:"}
+        choices:
+          - {pt: "1-4% DNA neandertal por hibridização durante migrações", en: "1-4% Neanderthal DNA via admixture during migrations"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA recente", en: "Just recent DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "1-4% DNA neandertal por hibridização durante migrações", en: "1-4% Neanderthal DNA via admixture during migrations"}
+        rationale: {pt: "Quando paleogenoma é comparado, então introgressão antiga é precisamente detectada.", en: "When paleogenome is compared, ancient introgression is precisely detected."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Aedes aegypti expande área por:", en: "Aedes aegypti expands range via:"}
+        choices:
+          - {pt: "Aumento de temperatura permitindo reprodução em altitudes/latitudes maiores", en: "Temperature rise enabling reproduction at higher altitudes/latitudes"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Aumento de temperatura permitindo reprodução em altitudes/latitudes maiores", en: "Temperature rise enabling reproduction at higher altitudes/latitudes"}
+        rationale: {pt: "Quando ovos sobrevivem invernos, então surtos surgem onde nunca houve.", en: "When eggs survive winters, outbreaks appear where they never had."}
+        objectives: [biology.climate_health]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hipótese da Rainha Vermelha:", en: "Red Queen hypothesis:"}
+        choices:
+          - {pt: "Coevolução com parasitas favorece sexo por gerar variação", en: "Coevolution with parasites favors sex by generating variation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Coevolução com parasitas favorece sexo por gerar variação", en: "Coevolution with parasites favors sex by generating variation"}
+        rationale: {pt: "Quando parasitas seguem genótipos comuns, então prole rara escapa.", en: "When parasites track common genotypes, rare offspring escape."}
+        objectives: [biology.evolution_of_sex]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fio condutor do nível 1A:", en: "1A level guiding thread:"}
+        choices:
+          - {pt: "Fronteiras da biologia integrando moléculas, organismos, sistemas e planeta", en: "Frontier biology integrating molecules, organisms, systems and planet"}
+          - {pt: "Apenas memorização", en: "Just memorization"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem coesão", en: "No cohesion"}
+        correctAnswer: {pt: "Fronteiras da biologia integrando moléculas, organismos, sistemas e planeta", en: "Frontier biology integrating molecules, organisms, systems and planet"}
+        rationale: {pt: "Quando integramos escalas e disciplinas, então biologia revela-se ciência abrangente.", en: "When we integrate scales and disciplines, biology reveals itself as encompassing science."}
+        objectives: [biology.systems_biology]
+        difficulty: 5
+target: 20
