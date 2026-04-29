@@ -1,0 +1,244 @@
+title:
+  pt: "🧫 Biologia sintética"
+  en: "🧫 Synthetic biology"
+level: '3A'
+subject: biology
+objectives: [biology.synthetic_biology]
+difficulty: 4
+authorNotes: "Engenharia de circuitos genéticos, genoma sintético, biologia design-build-test."
+example:
+  pt: "Ex.: redesenhar células para produzir insulina, biocombustíveis, vacinas — programar a vida como software."
+  en: "Ex.: redesign cells to produce insulin, biofuels, vaccines — programming life like software."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Princípios e ferramentas", en: "Principles and tools"}
+    description: {pt: "Engenharia genética como design.", en: "Genetic engineering as design."}
+    exercises:
+      - type: choice
+        question: {pt: "Biologia sintética é:", en: "Synthetic biology is:"}
+        choices:
+          - {pt: "Design e construção de novos sistemas biológicos com funções específicas", en: "Design and construction of new biological systems with specific functions"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Design e construção de novos sistemas biológicos com funções específicas", en: "Design and construction of new biological systems with specific functions"}
+        rationale: {pt: "Como aplica princípios de engenharia (modularidade, padronização) à biologia, então difere da biotecnologia tradicional.", en: "Because it applies engineering principles (modularity, standardization) to biology, it differs from traditional biotechnology."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Ciclo design-build-test-learn:", en: "Design-build-test-learn cycle:"}
+        choices:
+          - {pt: "Iteração rápida: projetar circuito → construir → testar → aprender → refinar", en: "Fast iteration: design circuit → build → test → learn → refine"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre falha", en: "Always fails"}
+          - {pt: "Sem propósito", en: "No purpose"}
+        correctAnswer: {pt: "Iteração rápida: projetar circuito → construir → testar → aprender → refinar", en: "Fast iteration: design circuit → build → test → learn → refine"}
+        rationale: {pt: "Como engenharia de software adotou ciclo similar, então biologia sintética importou métodos para acelerar progresso.", en: "Because software engineering adopted a similar cycle, synthetic biology imported methods to accelerate progress."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "BioBricks:", en: "BioBricks:"}
+        choices:
+          - {pt: "Padrão de partes genéticas modulares e intercambiáveis (iGEM)", en: "Standard for modular interchangeable genetic parts (iGEM)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Padrão de partes genéticas modulares e intercambiáveis (iGEM)", en: "Standard for modular interchangeable genetic parts (iGEM)"}
+        rationale: {pt: "Como Lego molecular, então estudantes/cientistas combinam partes pré-definidas em circuitos novos — democratiza biologia.", en: "Because they're molecular Lego, students/scientists combine predefined parts into new circuits — democratizes biology."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Síntese de DNA artificial:", en: "Artificial DNA synthesis:"}
+        choices:
+          - {pt: "Construir sequências de DNA do zero — empresas (Twist, IDT) entregam por encomenda", en: "Build DNA sequences from scratch — companies (Twist, IDT) deliver on demand"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Construir sequências de DNA do zero — empresas (Twist, IDT) entregam por encomenda", en: "Build DNA sequences from scratch — companies (Twist, IDT) deliver on demand"}
+        rationale: {pt: "Como custos caíram drasticamente (~$0.10/base), então projetos antes inviáveis tornam-se rotineiros.", en: "Because costs dropped drastically (~$0.10/base), formerly impossible projects become routine."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Genoma mínimo (Mycoplasma mycoides JCVI-syn3.0):", en: "Minimal genome (Mycoplasma mycoides JCVI-syn3.0):"}
+        choices:
+          - {pt: "Bactéria com genoma reduzido a ~473 genes — primeira célula sintética em 2010", en: "Bacterium with genome reduced to ~473 genes — first synthetic cell in 2010"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Bactéria com genoma reduzido a ~473 genes — primeira célula sintética em 2010", en: "Bacterium with genome reduced to ~473 genes — first synthetic cell in 2010"}
+        rationale: {pt: "Como Craig Venter sintetizou genoma e transplantou para célula vazia, então criou \"vida sintética\" — marco histórico.", en: "Because Craig Venter synthesized genome and transplanted to empty cell, he created \"synthetic life\" — historic milestone."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Circuito genético oscilatório (\"repressilator\"):", en: "Oscillatory genetic circuit (\"repressilator\"):"}
+        choices:
+          - {pt: "Três genes que se reprimem em ciclo — gera oscilações periódicas (Elowitz & Leibler, 2000)", en: "Three genes repressing each other in cycle — generates periodic oscillations (Elowitz & Leibler, 2000)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Três genes que se reprimem em ciclo — gera oscilações periódicas (Elowitz & Leibler, 2000)", en: "Three genes repressing each other in cycle — generates periodic oscillations (Elowitz & Leibler, 2000)"}
+        rationale: {pt: "Como demonstrou que circuitos podem ser projetados, então abriu campo da biologia sintética como engenharia.", en: "Because it showed circuits can be designed, it opened the field of synthetic biology as engineering."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Toggle switch (interruptor):", en: "Toggle switch:"}
+        choices:
+          - {pt: "Circuito biestável — escolhe entre dois estados estáveis (memória celular)", en: "Bistable circuit — chooses between two stable states (cellular memory)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre instável", en: "Always unstable"}
+          - {pt: "Sem propósito", en: "No purpose"}
+        correctAnswer: {pt: "Circuito biestável — escolhe entre dois estados estáveis (memória celular)", en: "Bistable circuit — chooses between two stable states (cellular memory)"}
+        rationale: {pt: "Como biologia natural usa biestabilidade (ex.: lac/lambda), então sintetizar versão controlada permite \"memória\" engenharia.", en: "Because natural biology uses bistability (e.g., lac/lambda), synthesizing controlled version enables engineered \"memory\"."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Regulação por luz (optogenética):", en: "Light-based regulation (optogenetics):"}
+        choices:
+          - {pt: "Proteínas sensíveis à luz controlam atividade celular — neurociência revolucionária", en: "Light-sensitive proteins control cellular activity — revolutionary neuroscience"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Proteínas sensíveis à luz controlam atividade celular — neurociência revolucionária", en: "Light-sensitive proteins control cellular activity — revolutionary neuroscience"}
+        rationale: {pt: "Como permite ativar neurônios específicos com laser, então optogenética revolucionou pesquisa cerebral em 2010s.", en: "Because it allows activating specific neurons with laser, optogenetics revolutionized brain research in 2010s."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Engenharia metabólica:", en: "Metabolic engineering:"}
+        choices:
+          - {pt: "Modificar vias bioquímicas para produzir compostos desejados em escala industrial", en: "Modify biochemical pathways to produce desired compounds at industrial scale"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Modificar vias bioquímicas para produzir compostos desejados em escala industrial", en: "Modify biochemical pathways to produce desired compounds at industrial scale"}
+        rationale: {pt: "Como leveduras geneticamente modificadas produzem artemisinina (anti-malária), então biologia sintética substitui síntese química.", en: "Because genetically modified yeast produce artemisinin (antimalarial), synthetic biology replaces chemical synthesis."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "iGEM (International Genetically Engineered Machine):", en: "iGEM (International Genetically Engineered Machine):"}
+        choices:
+          - {pt: "Competição estudantil mundial — equipes projetam organismos sintéticos para problemas reais", en: "Worldwide student competition — teams design synthetic organisms for real problems"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem propósito", en: "No purpose"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Competição estudantil mundial — equipes projetam organismos sintéticos para problemas reais", en: "Worldwide student competition — teams design synthetic organisms for real problems"}
+        rationale: {pt: "Como reúne ~5000 estudantes/ano, então alimenta nova geração de bioengenheiros — formato Lego molecular.", en: "Because it gathers ~5000 students/year, it feeds new generation of bioengineers — molecular Lego format."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Aplicações reais", en: "Real applications"}
+    description: {pt: "Industrial, ambiental, médico.", en: "Industrial, environmental, medical."}
+    exercises:
+      - type: choice
+        question: {pt: "Insulina humana recombinante:", en: "Recombinant human insulin:"}
+        choices:
+          - {pt: "Primeiro produto biotecnológico aprovado (1982) — bactérias produzem insulina humana", en: "First approved biotech product (1982) — bacteria produce human insulin"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Primeiro produto biotecnológico aprovado (1982) — bactérias produzem insulina humana", en: "First approved biotech product (1982) — bacteria produce human insulin"}
+        rationale: {pt: "Como antes vinha de pâncreas suíno (alérgenos), então insulina humana via E. coli salva milhões de diabéticos.", en: "Because previously from pig pancreas (allergens), human insulin via E. coli saves millions of diabetics."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Biocombustíveis sintéticos:", en: "Synthetic biofuels:"}
+        choices:
+          - {pt: "Microrganismos modificados produzem etanol, butanol, biodiesel a partir de biomassa", en: "Modified microorganisms produce ethanol, butanol, biodiesel from biomass"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Microrganismos modificados produzem etanol, butanol, biodiesel a partir de biomassa", en: "Modified microorganisms produce ethanol, butanol, biodiesel from biomass"}
+        rationale: {pt: "Como reduzem dependência de petróleo, então biocombustíveis avançam contra mudanças climáticas — ainda em desenvolvimento.", en: "Because they reduce oil dependence, biofuels advance against climate change — still developing."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Carne cultivada (lab-grown):", en: "Lab-grown meat:"}
+        choices:
+          - {pt: "Tecido muscular cultivado de células-tronco animais — sem abate", en: "Muscle tissue cultured from animal stem cells — no slaughter"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Tecido muscular cultivado de células-tronco animais — sem abate", en: "Muscle tissue cultured from animal stem cells — no slaughter"}
+        rationale: {pt: "Como pode reduzir impacto ambiental e ético, então alguns países (Singapura, EUA) já aprovaram comercialização.", en: "Because it can reduce environmental and ethical impact, some countries (Singapore, US) approved commercial sale."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Bioplásticos:", en: "Bioplastics:"}
+        choices:
+          - {pt: "Plásticos biodegradáveis produzidos por microrganismos (PLA, PHA) — alternativa sustentável", en: "Biodegradable plastics produced by microorganisms (PLA, PHA) — sustainable alternative"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Plásticos biodegradáveis produzidos por microrganismos (PLA, PHA) — alternativa sustentável", en: "Biodegradable plastics produced by microorganisms (PLA, PHA) — sustainable alternative"}
+        rationale: {pt: "Como reduzem poluição plástica, então bioplásticos crescem em mercado — desafio é custo competitivo.", en: "Because they reduce plastic pollution, bioplastics grow in market — challenge is competitive cost."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Biossensores:", en: "Biosensors:"}
+        choices:
+          - {pt: "Células ou enzimas modificadas detectam analitos (glicose, toxinas, patógenos)", en: "Modified cells or enzymes detect analytes (glucose, toxins, pathogens)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Células ou enzimas modificadas detectam analitos (glicose, toxinas, patógenos)", en: "Modified cells or enzymes detect analytes (glucose, toxins, pathogens)"}
+        rationale: {pt: "Como medidor de glicose para diabetes é exemplo, então biossensores integram biologia + eletrônica em diagnóstico.", en: "Because glucose meter for diabetes is an example, biosensors integrate biology + electronics in diagnostics."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "CAR-T (terapia celular):", en: "CAR-T (cell therapy):"}
+        choices:
+          - {pt: "T do paciente engenheiradas para reconhecer câncer — exemplo de biologia sintética terapêutica", en: "Patient T cells engineered to recognize cancer — example of therapeutic synthetic biology"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "T do paciente engenheiradas para reconhecer câncer — exemplo de biologia sintética terapêutica", en: "Patient T cells engineered to recognize cancer — example of therapeutic synthetic biology"}
+        rationale: {pt: "Como células recebem receptor sintético (CAR), então atacam câncer — primeira terapia celular aprovada FDA 2017.", en: "Because cells receive synthetic receptor (CAR), they attack cancer — first FDA-approved cell therapy in 2017."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Bactérias engenheiradas no microbioma:", en: "Engineered microbiome bacteria:"}
+        choices:
+          - {pt: "Probióticos modificados para tratar doenças (ex.: fenilcetonúria)", en: "Modified probiotics to treat diseases (e.g., phenylketonuria)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Probióticos modificados para tratar doenças (ex.: fenilcetonúria)", en: "Modified probiotics to treat diseases (e.g., phenylketonuria)"}
+        rationale: {pt: "Como microbioma é segundo \"genoma\", então engenheirar bactérias no intestino abre nova classe terapêutica.", en: "Because microbiome is a second \"genome\", engineering gut bacteria opens new therapeutic class."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Bioremediação:", en: "Bioremediation:"}
+        choices:
+          - {pt: "Microrganismos degradam poluentes (petróleo, metais, plástico) em ambientes contaminados", en: "Microorganisms degrade pollutants (oil, metals, plastic) in contaminated environments"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Microrganismos degradam poluentes (petróleo, metais, plástico) em ambientes contaminados", en: "Microorganisms degrade pollutants (oil, metals, plastic) in contaminated environments"}
+        rationale: {pt: "Como Pseudomonas pode metabolizar diversos poluentes, então biorremediação combina ecologia e engenharia genética.", en: "Because Pseudomonas can metabolize diverse pollutants, bioremediation combines ecology and genetic engineering."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Riscos da biologia sintética:", en: "Synthetic biology risks:"}
+        choices:
+          - {pt: "Escape de organismos modificados, dual-use (bioarmas), efeitos imprevistos", en: "Modified organism escape, dual-use (bioweapons), unforeseen effects"}
+          - {pt: "Sem riscos", en: "No risks"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre seguro", en: "Always safe"}
+        correctAnswer: {pt: "Escape de organismos modificados, dual-use (bioarmas), efeitos imprevistos", en: "Modified organism escape, dual-use (bioweapons), unforeseen effects"}
+        rationale: {pt: "Como tecnologia poderosa exige cuidado, então biocontenção (\"kill switches\") e regulação são necessárias.", en: "Because powerful tech requires care, biocontainment (\"kill switches\") and regulation are necessary."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: biologia sintética:", en: "Summary: synthetic biology:"}
+        choices:
+          - {pt: "Aplica engenharia à biologia para criar organismos com novas funções — fronteira do século 21", en: "Applies engineering to biology to create organisms with new functions — 21st century frontier"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+          - {pt: "Sem aplicação", en: "No application"}
+        correctAnswer: {pt: "Aplica engenharia à biologia para criar organismos com novas funções — fronteira do século 21", en: "Applies engineering to biology to create organisms with new functions — 21st century frontier"}
+        rationale: {pt: "Como combina genética, química, computação, então biologia sintética é uma das tecnologias mais transformadoras emergentes.", en: "Because it combines genetics, chemistry, computing, synthetic biology is one of the most transformative emerging technologies."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 4
+target: 20

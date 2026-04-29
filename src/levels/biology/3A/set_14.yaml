@@ -1,0 +1,244 @@
+title:
+  pt: "🔬 Biologia estrutural"
+  en: "🔬 Structural biology"
+level: '3A'
+subject: biology
+objectives: [biology.structural_biology]
+difficulty: 4
+authorNotes: "Cristalografia, crio-ME, NMR, AlphaFold; estrutura → função."
+example:
+  pt: "Ex.: cristalografia de raios X revelou dupla hélice (1953); crio-ME revoluciona em 2010s; AlphaFold prediz em 2021."
+  en: "Ex.: X-ray crystallography revealed double helix (1953); cryo-EM revolutionizes 2010s; AlphaFold predicts 2021."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Métodos clássicos", en: "Classical methods"}
+    description: {pt: "Como vemos átomos.", en: "How we see atoms."}
+    exercises:
+      - type: choice
+        question: {pt: "Estrutura → função:", en: "Structure → function:"}
+        choices:
+          - {pt: "Forma 3D de uma biomolécula determina o que ela faz — princípio central", en: "3D shape of a biomolecule determines what it does — central principle"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem relação", en: "Unrelated"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Forma 3D de uma biomolécula determina o que ela faz — princípio central", en: "3D shape of a biomolecule determines what it does — central principle"}
+        rationale: {pt: "Como sítio ativo de enzima encaixa substrato específico, então conhecer estrutura permite entender e modificar função.", en: "Because enzyme active site fits specific substrate, knowing structure allows understanding and modifying function."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Cristalografia de raios X:", en: "X-ray crystallography:"}
+        choices:
+          - {pt: "Difrata raios X em cristal de proteína — calcula estrutura atômica a partir do padrão", en: "Diffracts X-rays through protein crystal — calculates atomic structure from pattern"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Difrata raios X em cristal de proteína — calcula estrutura atômica a partir do padrão", en: "Diffracts X-rays through protein crystal — calculates atomic structure from pattern"}
+        rationale: {pt: "Como Watson, Crick e Franklin usaram para resolver DNA, então é técnica fundadora da biologia molecular estrutural.", en: "Because Watson, Crick, and Franklin used it to solve DNA, it's a founding technique of molecular structural biology."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Cristalização de proteínas:", en: "Protein crystallization:"}
+        choices:
+          - {pt: "Etapa-gargalo — proteínas devem formar cristais ordenados, processo difícil e empírico", en: "Bottleneck step — proteins must form ordered crystals, difficult and empirical process"}
+          - {pt: "Sempre fácil", en: "Always easy"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "Etapa-gargalo — proteínas devem formar cristais ordenados, processo difícil e empírico", en: "Bottleneck step — proteins must form ordered crystals, difficult and empirical process"}
+        rationale: {pt: "Como muitas proteínas (ex.: membranares) resistem, então é frequentemente o passo mais lento e custoso.", en: "Because many proteins (e.g., membrane) resist, it's often the slowest and most costly step."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resolução em estrutura:", en: "Resolution in structure:"}
+        choices:
+          - {pt: "Em angstroms (Å) — quanto menor o número, melhor o detalhe (1.5 Å é ótimo)", en: "In angstroms (Å) — lower number = better detail (1.5 Å is great)"}
+          - {pt: "Sempre 100", en: "Always 100"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem efeito", en: "No effect"}
+        correctAnswer: {pt: "Em angstroms (Å) — quanto menor o número, melhor o detalhe (1.5 Å é ótimo)", en: "In angstroms (Å) — lower number = better detail (1.5 Å is great)"}
+        rationale: {pt: "Como 1 Å = 0.1 nm, então estruturas atômicas exigem ~1-2 Å — limitada por qualidade do cristal.", en: "Because 1 Å = 0.1 nm, atomic structures require ~1-2 Å — limited by crystal quality."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Espectroscopia de RMN (NMR):", en: "NMR spectroscopy:"}
+        choices:
+          - {pt: "Estrutura de proteínas em solução — limitada a moléculas pequenas-médias", en: "Protein structure in solution — limited to small-medium molecules"}
+          - {pt: "Apenas para açúcares", en: "Just for sugars"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Estrutura de proteínas em solução — limitada a moléculas pequenas-médias", en: "Protein structure in solution — limited to small-medium molecules"}
+        rationale: {pt: "Como permite ver dinâmica em solução fisiológica, então complementa cristalografia (estática).", en: "Because it shows dynamics in physiological solution, it complements (static) crystallography."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Crio-microscopia eletrônica (cryo-EM):", en: "Cryo-electron microscopy (cryo-EM):"}
+        choices:
+          - {pt: "Congela amostras vitrificadas — revolução estrutural dos anos 2010 (Nobel 2017)", en: "Vitrified frozen samples — 2010s structural revolution (2017 Nobel)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Congela amostras vitrificadas — revolução estrutural dos anos 2010 (Nobel 2017)", en: "Vitrified frozen samples — 2010s structural revolution (2017 Nobel)"}
+        rationale: {pt: "Como elimina necessidade de cristalização, então grandes complexos (ribossomo, vírus) tornaram-se acessíveis.", en: "Because it eliminates crystallization need, large complexes (ribosome, viruses) became accessible."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "AlphaFold (DeepMind, 2021):", en: "AlphaFold (DeepMind, 2021):"}
+        choices:
+          - {pt: "IA prediz estrutura 3D a partir da sequência — Nobel Química 2024", en: "AI predicts 3D structure from sequence — 2024 Chemistry Nobel"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "IA prediz estrutura 3D a partir da sequência — Nobel Química 2024", en: "AI predicts 3D structure from sequence — 2024 Chemistry Nobel"}
+        rationale: {pt: "Como resolveu \"problema de dobramento\" de Anfinsen, então mais de 200 milhões de proteínas têm estrutura preditas.", en: "Because it solved Anfinsen's \"folding problem\", over 200 million proteins now have predicted structures."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Banco de dados PDB:", en: "PDB database:"}
+        choices:
+          - {pt: "Protein Data Bank — repositório aberto de >200 mil estruturas resolvidas", en: "Protein Data Bank — open repository of >200k solved structures"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas pago", en: "Only paid"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Protein Data Bank — repositório aberto de >200 mil estruturas resolvidas", en: "Protein Data Bank — open repository of >200k solved structures"}
+        rationale: {pt: "Como compartilhamento global é a norma, então PDB é recurso essencial para pesquisa estrutural mundial.", en: "Because global sharing is the norm, PDB is an essential resource for global structural research."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Estrutura primária de proteína:", en: "Primary protein structure:"}
+        choices:
+          - {pt: "Sequência de aminoácidos (linear)", en: "Amino acid sequence (linear)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Forma 3D", en: "3D shape"}
+          - {pt: "Apenas hélice", en: "Just helix"}
+        correctAnswer: {pt: "Sequência de aminoácidos (linear)", en: "Amino acid sequence (linear)"}
+        rationale: {pt: "Como determinada pelo gene, então primária é a base — secundária/terciária/quaternária emergem dela.", en: "Because gene-determined, primary is the base — secondary/tertiary/quaternary emerge from it."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Estrutura secundária:", en: "Secondary structure:"}
+        choices:
+          - {pt: "Padrões locais — α-hélice e folhas-β estabilizados por pontes de H", en: "Local patterns — α-helix and β-sheets stabilized by H-bonds"}
+          - {pt: "Sequência linear", en: "Linear sequence"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "Padrões locais — α-hélice e folhas-β estabilizados por pontes de H", en: "Local patterns — α-helix and β-sheets stabilized by H-bonds"}
+        rationale: {pt: "Como Pauling previu antes de evidência cristalográfica, então é dedução teórica brilhante baseada em química.", en: "Because Pauling predicted them before crystallographic evidence, it's brilliant theoretical deduction from chemistry."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Aplicações", en: "Applications"}
+    description: {pt: "Da estrutura ao remédio.", en: "From structure to medicine."}
+    exercises:
+      - type: choice
+        question: {pt: "Modelagem por homologia:", en: "Homology modeling:"}
+        choices:
+          - {pt: "Predizer estrutura usando homólogo já resolvido como molde", en: "Predict structure using already-solved homolog as template"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Predizer estrutura usando homólogo já resolvido como molde", en: "Predict structure using already-solved homolog as template"}
+        rationale: {pt: "Como sequências similares têm estruturas similares, então homologia oferece atalho — precisão depende de similaridade.", en: "Because similar sequences have similar structures, homology offers a shortcut — accuracy depends on similarity."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Docking molecular:", en: "Molecular docking:"}
+        choices:
+          - {pt: "Computa como ligante encaixa em sítio de uma proteína — usado em descoberta de fármacos", en: "Computes how ligand fits in a protein site — used in drug discovery"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Computa como ligante encaixa em sítio de uma proteína — usado em descoberta de fármacos", en: "Computes how ligand fits in a protein site — used in drug discovery"}
+        rationale: {pt: "Como triagem virtual em milhões de moléculas, então economiza HTS experimental — virtual antes do real.", en: "Because it screens millions of molecules virtually, it saves experimental HTS — virtual before real."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Dinâmica molecular (MD):", en: "Molecular dynamics (MD):"}
+        choices:
+          - {pt: "Simulação computacional do movimento atômico ao longo do tempo", en: "Computational simulation of atomic motion over time"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre estática", en: "Always static"}
+          - {pt: "Sem propósito", en: "No purpose"}
+        correctAnswer: {pt: "Simulação computacional do movimento atômico ao longo do tempo", en: "Computational simulation of atomic motion over time"}
+        rationale: {pt: "Como cristal é estático, então MD revela dinâmica — abre/fecha de canais, dobramento, transições conformacionais.", en: "Because crystals are static, MD reveals dynamics — channel open/close, folding, conformational transitions."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Doenças por dobramento errado:", en: "Misfolding diseases:"}
+        choices:
+          - {pt: "Alzheimer (Aβ), Parkinson (α-sinucleína), príon (CJD), fibrose cística (CFTR)", en: "Alzheimer's (Aβ), Parkinson's (α-synuclein), prion (CJD), cystic fibrosis (CFTR)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem mecanismo", en: "No mechanism"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Alzheimer (Aβ), Parkinson (α-sinucleína), príon (CJD), fibrose cística (CFTR)", en: "Alzheimer's (Aβ), Parkinson's (α-synuclein), prion (CJD), cystic fibrosis (CFTR)"}
+        rationale: {pt: "Como agregados mal dobrados acumulam, então estruturas detalhadas guiam terapias para evitar/dissolver agregados.", en: "Because misfolded aggregates accumulate, detailed structures guide therapies to avoid/dissolve aggregates."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Príons:", en: "Prions:"}
+        choices:
+          - {pt: "Proteínas mal dobradas que induzem dobramento errado em outras — patógenos sem ácido nucleico", en: "Misfolded proteins inducing misfolding in others — pathogens without nucleic acid"}
+          - {pt: "Apenas vírus", en: "Just viruses"}
+          - {pt: "Sem mecanismo", en: "No mechanism"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Proteínas mal dobradas que induzem dobramento errado em outras — patógenos sem ácido nucleico", en: "Misfolded proteins inducing misfolding in others — pathogens without nucleic acid"}
+        rationale: {pt: "Como vaca louca (BSE) e Creutzfeldt-Jakob mostram, então príons desafiam dogma de patógenos baseados em ácidos nucleicos.", en: "Because mad cow (BSE) and Creutzfeldt-Jakob show, prions challenge nucleic-acid-based pathogen dogma."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Engenharia de proteínas:", en: "Protein engineering:"}
+        choices:
+          - {pt: "Modificar proteínas para melhorar propriedades — David Baker (Nobel 2024)", en: "Modify proteins to improve properties — David Baker (2024 Nobel)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Modificar proteínas para melhorar propriedades — David Baker (Nobel 2024)", en: "Modify proteins to improve properties — David Baker (2024 Nobel)"}
+        rationale: {pt: "Como permite criar enzimas industriais, vacinas, terapias, então engenharia de proteínas tem aplicações vastas.", en: "Because it allows creating industrial enzymes, vaccines, therapies, protein engineering has vast applications."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Inibidores enzimáticos baseados em estrutura:", en: "Structure-based enzyme inhibitors:"}
+        choices:
+          - {pt: "Imatinibe (BCR-ABL), oseltamivir (gripe), remdesivir (vírus) — design racional", en: "Imatinib (BCR-ABL), oseltamivir (flu), remdesivir (viruses) — rational design"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre por acaso", en: "Always by accident"}
+          - {pt: "Sem aplicação", en: "No application"}
+        correctAnswer: {pt: "Imatinibe (BCR-ABL), oseltamivir (gripe), remdesivir (vírus) — design racional", en: "Imatinib (BCR-ABL), oseltamivir (flu), remdesivir (viruses) — rational design"}
+        rationale: {pt: "Como exemplos de sucesso, então estrutura-guia transformou descoberta de fármacos em ciência precisa.", en: "Because examples of success, structure-guide transformed drug discovery into precise science."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Estrutura do ribossomo:", en: "Ribosome structure:"}
+        choices:
+          - {pt: "Resolvida por cristalografia em 2000 — Nobel Química 2009 (Ramakrishnan, Steitz, Yonath)", en: "Solved by crystallography in 2000 — 2009 Chemistry Nobel (Ramakrishnan, Steitz, Yonath)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Não foi resolvida", en: "Not solved"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Resolvida por cristalografia em 2000 — Nobel Química 2009 (Ramakrishnan, Steitz, Yonath)", en: "Solved by crystallography in 2000 — 2009 Chemistry Nobel (Ramakrishnan, Steitz, Yonath)"}
+        rationale: {pt: "Como mostrou que a atividade catalítica é do RNA (ribozima), então sustentou hipótese do mundo de RNA.", en: "Because it showed catalytic activity is RNA's (ribozyme), it supported the RNA-world hypothesis."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Vacinas baseadas em estrutura:", en: "Structure-based vaccines:"}
+        choices:
+          - {pt: "Imobilizar proteína spike em conformação pré-fusão (COVID, RSV) — design molecular guiado", en: "Lock spike protein in pre-fusion conformation (COVID, RSV) — guided molecular design"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Imobilizar proteína spike em conformação pré-fusão (COVID, RSV) — design molecular guiado", en: "Lock spike protein in pre-fusion conformation (COVID, RSV) — guided molecular design"}
+        rationale: {pt: "Como anticorpos pré-fusão são mais protetores, então estrutura guia design vacinal — Barney Graham, Jason McLellan.", en: "Because pre-fusion antibodies are more protective, structure guides vaccine design — Barney Graham, Jason McLellan."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: biologia estrutural:", en: "Summary: structural biology:"}
+        choices:
+          - {pt: "Determina estrutura 3D de biomoléculas — base para entender e manipular vida em escala atômica", en: "Determines 3D biomolecule structure — basis to understand and manipulate life at atomic scale"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "Determina estrutura 3D de biomoléculas — base para entender e manipular vida em escala atômica", en: "Determines 3D biomolecule structure — basis to understand and manipulate life at atomic scale"}
+        rationale: {pt: "Como integra física, química, biologia e computação, então é fronteira interdisciplinar central da ciência da vida.", en: "Because it integrates physics, chemistry, biology, and computing, it's a central interdisciplinary frontier of life science."}
+        objectives: [biology.structural_biology]
+        difficulty: 4
+target: 20
