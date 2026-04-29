@@ -1,0 +1,244 @@
+title:
+  pt: "🧬 Genômica de doenças raras"
+  en: "🧬 Rare disease genomics"
+level: 'E'
+subject: biology
+objectives: [biology.rare_disease]
+difficulty: 5
+authorNotes: "Diagnóstico WES/WGS, n=1, terapias gênicas personalizadas, ASOs."
+example:
+  pt: "Ex.: criança com fenótipo único → trio WGS → variante candidata → função → terapia n=1."
+  en: "Ex.: child with unique phenotype → trio WGS → candidate variant → function → n=1 therapy."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Diagnóstico", en: "Diagnosis"}
+    description: {pt: "Como identificamos doenças raras.", en: "How we identify rare diseases."}
+    exercises:
+      - type: choice
+        question: {pt: "Trio WES/WGS:", en: "Trio WES/WGS:"}
+        choices:
+          - {pt: "Sequencia paciente + ambos pais para identificar variantes de novo causadoras", en: "Sequences patient + both parents to identify causative de novo variants"}
+          - {pt: "Apenas sequenciamento solo", en: "Just solo sequencing"}
+          - {pt: "Apenas exame imagem", en: "Just imaging exam"}
+          - {pt: "Apenas anamnese", en: "Just anamnesis"}
+        correctAnswer: {pt: "Sequencia paciente + ambos pais para identificar variantes de novo causadoras", en: "Sequences patient + both parents to identify causative de novo variants"}
+        rationale: {pt: "Quando trio é amostrado, então diagnóstico aumenta significativamente.", en: "When trio is sampled, diagnostic yield significantly rises."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ACMG classification:", en: "ACMG classification:"}
+        choices:
+          - {pt: "Variantes classificadas (P, LP, VUS, LB, B) por evidências combinadas — padrão clínico", en: "Variants classified (P, LP, VUS, LB, B) by combined evidence — clinical standard"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe administrativo", en: "Just administrative detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Variantes classificadas (P, LP, VUS, LB, B) por evidências combinadas — padrão clínico", en: "Variants classified (P, LP, VUS, LB, B) by combined evidence — clinical standard"}
+        rationale: {pt: "Quando classificação é rigorosa, então decisões clínicas são informadas.", en: "When classification is rigorous, clinical decisions are informed."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fenotipagem profunda (HPO):", en: "Deep phenotyping (HPO):"}
+        choices:
+          - {pt: "Termos padronizados de Human Phenotype Ontology guiam priorização de variantes", en: "Standardized Human Phenotype Ontology terms guide variant prioritization"}
+          - {pt: "Apenas anamnese tradicional", en: "Just traditional anamnesis"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Termos padronizados de Human Phenotype Ontology guiam priorização de variantes", en: "Standardized Human Phenotype Ontology terms guide variant prioritization"}
+        rationale: {pt: "Quando fenótipos são padronizados, então diagnóstico ganha precisão.", en: "When phenotypes are standardized, diagnosis gains precision."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Matchmaker exchange:", en: "Matchmaker exchange:"}
+        choices:
+          - {pt: "Plataforma global conecta clínicos para identificar pacientes com variantes similares", en: "Global platform connects clinicians to identify patients with similar variants"}
+          - {pt: "Apenas curiosidade institucional", en: "Just institutional curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Plataforma global conecta clínicos para identificar pacientes com variantes similares", en: "Global platform connects clinicians to identify patients with similar variants"}
+        rationale: {pt: "Quando casos se conectam, então nova doença é definida geneticamente.", en: "When cases connect, new disease is genetically defined."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RNA sequencing como diagnóstico:", en: "RNA sequencing as diagnostic:"}
+        choices:
+          - {pt: "Detecta splicing aberrante e expressão alterada que WGS sozinho perde", en: "Detects aberrant splicing and altered expression that WGS alone misses"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas observação", en: "Just observation"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Detecta splicing aberrante e expressão alterada que WGS sozinho perde", en: "Detects aberrant splicing and altered expression that WGS alone misses"}
+        rationale: {pt: "Quando RNA é sequenciado, então variantes não-codantes ganham significado.", en: "When RNA is sequenced, non-coding variants gain meaning."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Variantes estruturais (SVs):", en: "Structural variants (SVs):"}
+        choices:
+          - {pt: "Long-read e optical mapping detectam inversões, translocações e expansões repetitivas", en: "Long-read and optical mapping detect inversions, translocations and repeat expansions"}
+          - {pt: "Apenas SNVs", en: "Just SNVs"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Long-read e optical mapping detectam inversões, translocações e expansões repetitivas", en: "Long-read and optical mapping detect inversions, translocations and repeat expansions"}
+        rationale: {pt: "Quando SVs são detectadas, então diagnóstico se completa.", en: "When SVs are detected, diagnosis is complete."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mosaicismo somático:", en: "Somatic mosaicism:"}
+        choices:
+          - {pt: "Variantes presentes em fração de células complicam diagnóstico — deep sequencing necessário", en: "Variants in cell fractions complicate diagnosis — deep sequencing needed"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Variantes presentes em fração de células complicam diagnóstico — deep sequencing necessário", en: "Variants in cell fractions complicate diagnosis — deep sequencing needed"}
+        rationale: {pt: "Quando mosaicismo é detectável, então casos antes-órfãos ganham diagnóstico.", en: "When mosaicism is detectable, previously-orphan cases gain diagnosis."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Newborn screening genômica:", en: "Genomic newborn screening:"}
+        choices:
+          - {pt: "Sequenciamento ampliado em recém-nascidos detecta doenças tratáveis precocemente", en: "Expanded newborn sequencing detects early treatable diseases"}
+          - {pt: "Apenas curiosidade pediátrica", en: "Just pediatric curiosity"}
+          - {pt: "Apenas exame físico", en: "Just physical exam"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sequenciamento ampliado em recém-nascidos detecta doenças tratáveis precocemente", en: "Expanded newborn sequencing detects early treatable diseases"}
+        rationale: {pt: "Quando triagem é ampla, então tratamento precoce salva vidas.", en: "When screening is broad, early treatment saves lives."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Funcionalização de VUS:", en: "VUS functionalization:"}
+        choices:
+          - {pt: "Modelos celulares e organoides classificam variantes de significância incerta funcionalmente", en: "Cell models and organoids functionally classify variants of uncertain significance"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modelos celulares e organoides classificam variantes de significância incerta funcionalmente", en: "Cell models and organoids functionally classify variants of uncertain significance"}
+        rationale: {pt: "Quando função é testada, então VUS migra para causal ou benigna.", en: "When function is tested, VUS migrates to causal or benign."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Diagnostic odyssey:", en: "Diagnostic odyssey:"}
+        choices:
+          - {pt: "Famílias passam anos em busca de diagnóstico — sequenciamento abrevia jornada de incertezas", en: "Families spend years searching for diagnosis — sequencing shortens uncertainty journey"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas tradição", en: "Just tradition"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Famílias passam anos em busca de diagnóstico — sequenciamento abrevia jornada de incertezas", en: "Families spend years searching for diagnosis — sequencing shortens uncertainty journey"}
+        rationale: {pt: "Quando diagnóstico chega cedo, então cuidado e suporte familiar começam.", en: "When diagnosis arrives early, care and family support begin."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Tratamento", en: "Treatment"}
+    description: {pt: "Terapias gênicas e personalizadas.", en: "Gene and personalized therapies."}
+    exercises:
+      - type: choice
+        question: {pt: "ASOs em n=1 (Milasen):", en: "n=1 ASOs (Milasen):"}
+        choices:
+          - {pt: "Antisense customizada para Mila com Batten — ASO terapêutico em meses", en: "Customized antisense for Mila with Batten — ASO therapy in months"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Apenas tradição médica", en: "Just medical tradition"}
+        correctAnswer: {pt: "Antisense customizada para Mila com Batten — ASO terapêutico em meses", en: "Customized antisense for Mila with Batten — ASO therapy in months"}
+        rationale: {pt: "Quando n=1 é viável, então ultrarraras ganham tratamento personalizado.", en: "When n=1 is viable, ultrarare diseases gain personalized treatment."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Terapia gênica AAV:", en: "AAV gene therapy:"}
+        choices:
+          - {pt: "Zolgensma para SMA, Luxturna para distrofia retinal — corrige defeito monogênico", en: "Zolgensma for SMA, Luxturna for retinal dystrophy — corrects monogenic defect"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas vitamina", en: "Just vitamin"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Zolgensma para SMA, Luxturna para distrofia retinal — corrige defeito monogênico", en: "Zolgensma for SMA, Luxturna for retinal dystrophy — corrects monogenic defect"}
+        rationale: {pt: "Quando AAV entrega gene, então fenótipo é potencialmente revertido.", en: "When AAV delivers gene, phenotype is potentially reverted."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CRISPR base editing em hemoglobinopatias:", en: "CRISPR base editing in hemoglobinopathies:"}
+        choices:
+          - {pt: "Casgevy edita BCL11A reativando HbF em sickle cell e talassemia — primeira CRISPR aprovada", en: "Casgevy edits BCL11A reactivating HbF in sickle cell and thalassemia — first approved CRISPR"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Casgevy edita BCL11A reativando HbF em sickle cell e talassemia — primeira CRISPR aprovada", en: "Casgevy edits BCL11A reactivating HbF in sickle cell and thalassemia — first approved CRISPR"}
+        rationale: {pt: "Quando edição funciona, então doenças clássicas são tratadas curativamente.", en: "When editing works, classical diseases are curatively treated."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Reposição enzimática (ERT):", en: "Enzyme replacement therapy (ERT):"}
+        choices:
+          - {pt: "Doenças lisossomais (Gaucher, Pompe, Fabry) recebem enzimas recombinantes intravenosas", en: "Lysosomal diseases (Gaucher, Pompe, Fabry) receive recombinant IV enzymes"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas dieta", en: "Just diet"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+        correctAnswer: {pt: "Doenças lisossomais (Gaucher, Pompe, Fabry) recebem enzimas recombinantes intravenosas", en: "Lysosomal diseases (Gaucher, Pompe, Fabry) receive recombinant IV enzymes"}
+        rationale: {pt: "Quando ERT atua, então acúmulo tóxico é reduzido.", en: "When ERT acts, toxic accumulation is reduced."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Substrato reduction:", en: "Substrate reduction:"}
+        choices:
+          - {pt: "Inibidores como miglustat reduzem síntese de substrato em doenças de armazenamento", en: "Inhibitors like miglustat reduce substrate synthesis in storage diseases"}
+          - {pt: "Apenas dieta", en: "Just diet"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+        correctAnswer: {pt: "Inibidores como miglustat reduzem síntese de substrato em doenças de armazenamento", en: "Inhibitors like miglustat reduce substrate synthesis in storage diseases"}
+        rationale: {pt: "Quando substrato cai, então acúmulo lisossomal diminui.", en: "When substrate drops, lysosomal accumulation declines."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Repurposing:", en: "Drug repurposing:"}
+        choices:
+          - {pt: "Drogas existentes encontram nova aplicação em raras via screening computacional", en: "Existing drugs find new use in rare diseases via computational screening"}
+          - {pt: "Apenas curiosidade econômica", en: "Just economic curiosity"}
+          - {pt: "Apenas tradição farmacêutica", en: "Just pharmaceutical tradition"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Drogas existentes encontram nova aplicação em raras via screening computacional", en: "Existing drugs find new use in rare diseases via computational screening"}
+        rationale: {pt: "Quando repurposing acelera, então tratamentos chegam mais rápido.", en: "When repurposing accelerates, treatments arrive faster."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelos animais personalizados:", en: "Personalized animal models:"}
+        choices:
+          - {pt: "Camundongos com mutação do paciente acelerados por CRISPR testam terapias rapidamente", en: "Patient-mutation mice generated quickly via CRISPR rapidly test therapies"}
+          - {pt: "Apenas modelo padrão", en: "Just standard model"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Camundongos com mutação do paciente acelerados por CRISPR testam terapias rapidamente", en: "Patient-mutation mice generated quickly via CRISPR rapidly test therapies"}
+        rationale: {pt: "Quando modelos são personalizados, então tradução clínica é direta.", en: "When models are personalized, clinical translation is direct."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Regulação para n=1:", en: "Regulation for n=1:"}
+        choices:
+          - {pt: "FDA estabelece pathways acelerados para terapias ultrarraras com riscos balanceados", en: "FDA establishes accelerated pathways for ultrarare therapies with balanced risks"}
+          - {pt: "Apenas tradição administrativa", en: "Just administrative tradition"}
+          - {pt: "Apenas curiosidade legal", en: "Just legal curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "FDA estabelece pathways acelerados para terapias ultrarraras com riscos balanceados", en: "FDA establishes accelerated pathways for ultrarare therapies with balanced risks"}
+        rationale: {pt: "Quando regulação é flexível, então pacientes ultrarraros têm chance.", en: "When regulation is flexible, ultrarare patients have a chance."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pacient-driven research:", en: "Patient-driven research:"}
+        choices:
+          - {pt: "Famílias e ONGs financiam pesquisa, recrutam pacientes e aceleram ensaios em raras", en: "Families and NGOs fund research, recruit patients and accelerate rare disease trials"}
+          - {pt: "Apenas curiosidade institucional", en: "Just institutional curiosity"}
+          - {pt: "Apenas tradição filantrópica", en: "Just philanthropic tradition"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Famílias e ONGs financiam pesquisa, recrutam pacientes e aceleram ensaios em raras", en: "Families and NGOs fund research, recruit patients and accelerate rare disease trials"}
+        rationale: {pt: "Quando pacientes lideram, então prioridades de pesquisa se alinham.", en: "When patients lead, research priorities align."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em raras:", en: "Next rare disease frontiers:"}
+        choices:
+          - {pt: "Plataformas n=1 padronizadas, edição in vivo e foundation models genômicos diagnósticos", en: "Standardized n=1 platforms, in vivo editing and diagnostic genomic foundation models"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas observação", en: "Just observation"}
+        correctAnswer: {pt: "Plataformas n=1 padronizadas, edição in vivo e foundation models genômicos diagnósticos", en: "Standardized n=1 platforms, in vivo editing and diagnostic genomic foundation models"}
+        rationale: {pt: "Quando ferramentas convergem, então raras saem da invisibilidade.", en: "When tools converge, rare diseases leave invisibility."}
+        objectives: [biology.rare_disease]
+        difficulty: 5
+target: 20
