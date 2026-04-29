@@ -353,7 +353,7 @@ const ENUM_LIST_RE = /(?:[\wáéíóúâêôãõç-]+\s*,\s*){2,}[\wáéíóúâ
 // e.g. "4! = 24.", "C(n,1) = n", "1/6 ≈ 0.167", "a = 4", "(2,4)=2·(1,2)",
 //      "(0.5)^2 = 0.25", "Q1 = 25º percentil", "α=0.05", "L.D. ↔ det = 0",
 //      "T: (3,3)", "R90°(5,0)=(0,5)", "A⁻¹[1,2] = -1", "(90/360)·π·64 = 16π"
-const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|\([\d.]+\)\^\d|C\(\s*[a-z\d]|[\d\w/]+\s*≈\s*[\d.]+|C\([a-z],[a-z\d]\)\s*=|\b[a-z]\s*=\s*-?\d|·\s*[(\dπ]|[QHα-ω][₀-₉0-9]?\s*=|↔|°\s*\(|[A-Z][⁻¹⁰¹²³⁴⁵⁶⁷⁸⁹]{0,2}\[\d/i;
+const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|\([\d.]+\)\^\d|C\(\s*[a-z\d]|[\d\w/]+\s*≈\s*[\d.]+|C\([a-z],[a-z\d]\)\s*=|\b[a-z]\s*=\s*[\d(\-]|·\s*[(\dπ]|[QHα-ω][₀-₉0-9]?\s*=|↔|°\s*\(|[A-Z][⁻¹⁰¹²³⁴⁵⁶⁷⁸⁹]{0,2}\[\d|\|[^|]+\|\s*=/i;
 // Japanese script with grammatical enumeration: kanji/kana followed by a
 // colon, comma list, or " : " with at least one paired term.
 // e.g. "どころか: 親切どころか、上手どころか、謝るどころか."
