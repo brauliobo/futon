@@ -1,0 +1,244 @@
+title:
+  pt: "🔥 Imunometabolismo"
+  en: "🔥 Immunometabolism"
+level: '1A'
+subject: biology
+objectives: [biology.immunometabolism]
+difficulty: 5
+authorNotes: "Reprogramação metabólica de células imunes, glicólise vs OXPHOS, polarização de macrófagos, terapias."
+example:
+  pt: "Ex.: macrófago em repouso → estímulo LPS → glicólise aumentada → fenótipo M1 inflamatório → resposta imune."
+  en: "Ex.: resting macrophage → LPS stimulus → glycolysis up → M1 inflammatory phenotype → immune response."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Metabolismo dirige imunidade", en: "Metabolism drives immunity"}
+    description: {pt: "Como combustível celular molda função imune.", en: "How cellular fuel shapes immune function."}
+    exercises:
+      - type: choice
+        question: {pt: "Imunometabolismo estuda:", en: "Immunometabolism studies:"}
+        choices:
+          - {pt: "Como vias metabólicas influenciam função e identidade de células imunes", en: "How metabolic pathways shape immune cell function and identity"}
+          - {pt: "Apenas dieta humana", en: "Just human diet"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+        correctAnswer: {pt: "Como vias metabólicas influenciam função e identidade de células imunes", en: "How metabolic pathways shape immune cell function and identity"}
+        rationale: {pt: "Quando glicólise sobe e OXPHOS muda, então linfócito muda função em horas.", en: "When glycolysis rises and OXPHOS shifts, lymphocyte changes function within hours."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Macrófagos M1 inflamatórios dependem de:", en: "Inflammatory M1 macrophages depend on:"}
+        choices:
+          - {pt: "Glicólise aeróbica e via das pentoses-fosfato (efeito Warburg-like)", en: "Aerobic glycolysis and pentose phosphate pathway (Warburg-like)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas oxidação de ácidos graxos lenta", en: "Just slow fatty acid oxidation"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Glicólise aeróbica e via das pentoses-fosfato (efeito Warburg-like)", en: "Aerobic glycolysis and pentose phosphate pathway (Warburg-like)"}
+        rationale: {pt: "Quando rápida produção de ATP e biossíntese é necessária, então glicólise rápida supera OXPHOS lento.", en: "When fast ATP and biosynthesis are needed, fast glycolysis beats slow OXPHOS."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Macrófagos M2 (resolução/reparo) usam:", en: "M2 (resolution/repair) macrophages use:"}
+        choices:
+          - {pt: "Fosforilação oxidativa e oxidação de ácidos graxos", en: "Oxidative phosphorylation and fatty acid oxidation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas glicólise pura", en: "Just pure glycolysis"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Fosforilação oxidativa e oxidação de ácidos graxos", en: "Oxidative phosphorylation and fatty acid oxidation"}
+        rationale: {pt: "Quando função é sustentada e duradoura, então metabolismo lento e eficiente domina.", en: "When function is sustained and prolonged, slow efficient metabolism dominates."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Linfócitos T efetores ativados aumentam:", en: "Activated effector T lymphocytes upregulate:"}
+        choices:
+          - {pt: "Glicólise e glutaminólise para suportar proliferação rápida", en: "Glycolysis and glutaminolysis to support rapid proliferation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas oxidação lenta", en: "Just slow oxidation"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Glicólise e glutaminólise para suportar proliferação rápida", en: "Glycolysis and glutaminolysis to support rapid proliferation"}
+        rationale: {pt: "Quando T se expande, então biomassa nova exige carbono e nitrogênio em volume.", en: "When T expands, new biomass demands carbon and nitrogen at scale."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Linfócitos T memória usam preferencialmente:", en: "Memory T lymphocytes preferentially use:"}
+        choices:
+          - {pt: "Oxidação de ácidos graxos e respiração mitocondrial", en: "Fatty acid oxidation and mitochondrial respiration"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas glicólise rápida", en: "Just fast glycolysis"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Oxidação de ácidos graxos e respiração mitocondrial", en: "Fatty acid oxidation and mitochondrial respiration"}
+        rationale: {pt: "Quando longevidade é necessária, então metabolismo eficiente preserva células ao longo do tempo.", en: "When longevity is required, efficient metabolism preserves cells over time."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "T regulatórios (Treg) preferem:", en: "Regulatory T cells (Treg) prefer:"}
+        choices:
+          - {pt: "Oxidação lipídica e OXPHOS — fenótipo supressor estável", en: "Lipid oxidation and OXPHOS — stable suppressor phenotype"}
+          - {pt: "Apenas glicólise", en: "Just glycolysis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Oxidação lipídica e OXPHOS — fenótipo supressor estável", en: "Lipid oxidation and OXPHOS — stable suppressor phenotype"}
+        rationale: {pt: "Quando estabilidade é prioridade, então metabolismo conservador sustenta supressão imune crônica.", en: "When stability is the priority, conservative metabolism sustains chronic immune suppression."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "HIF-1α em células imunes:", en: "HIF-1α in immune cells:"}
+        choices:
+          - {pt: "Reprograma para glicólise sob hipóxia ou inflamação aguda", en: "Reprograms to glycolysis under hypoxia or acute inflammation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em plantas", en: "Just in plants"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Reprograma para glicólise sob hipóxia ou inflamação aguda", en: "Reprograms to glycolysis under hypoxia or acute inflammation"}
+        rationale: {pt: "Quando O₂ falta ou demanda explode, então HIF-1α ativa enzimas glicolíticas em massa.", en: "When O₂ runs low or demand explodes, HIF-1α activates glycolytic enzymes en masse."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "mTORC1 em linfócitos:", en: "mTORC1 in lymphocytes:"}
+        choices:
+          - {pt: "Promove crescimento, biossíntese e diferenciação efetora", en: "Promotes growth, biosynthesis and effector differentiation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas degradação", en: "Just degradation"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Promove crescimento, biossíntese e diferenciação efetora", en: "Promotes growth, biosynthesis and effector differentiation"}
+        rationale: {pt: "Quando nutrientes e sinais convergem, então mTORC1 dispara programa anabólico imune.", en: "When nutrients and signals converge, mTORC1 triggers anabolic immune program."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AMPK em células imunes favorece:", en: "AMPK in immune cells favors:"}
+        choices:
+          - {pt: "Memória, longevidade e oxidação — opõe-se a mTOR", en: "Memory, longevity and oxidation — opposes mTOR"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas crescimento descontrolado", en: "Just uncontrolled growth"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Memória, longevidade e oxidação — opõe-se a mTOR", en: "Memory, longevity and oxidation — opposes mTOR"}
+        rationale: {pt: "Quando energia é baixa, então AMPK preserva e prepara célula para função duradoura.", en: "When energy is low, AMPK preserves and primes cell for lasting function."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Itaconato em macrófagos:", en: "Itaconate in macrophages:"}
+        choices:
+          - {pt: "Metabólito imunomodulador anti-inflamatório derivado do ciclo TCA", en: "Anti-inflammatory immunomodulatory metabolite from TCA cycle"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas pró-inflamatório puro", en: "Just purely proinflammatory"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Metabólito imunomodulador anti-inflamatório derivado do ciclo TCA", en: "Anti-inflammatory immunomodulatory metabolite from TCA cycle"}
+        rationale: {pt: "Quando inflamação ameaça tecido, então itaconato controla ROS e citocinas excessivas.", en: "When inflammation threatens tissue, itaconate controls ROS and excessive cytokines."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Doença e terapêutica metabólica", en: "Disease and metabolic therapy"}
+    description: {pt: "Alvos imunometabólicos clínicos.", en: "Clinical immunometabolic targets."}
+    exercises:
+      - type: choice
+        question: {pt: "Tumor e células T no microambiente competem por:", en: "Tumor and T cells in microenvironment compete for:"}
+        choices:
+          - {pt: "Glicose e aminoácidos — depleção debilita resposta antitumoral", en: "Glucose and amino acids — depletion weakens antitumor response"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas oxigênio puro", en: "Just pure oxygen"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Glicose e aminoácidos — depleção debilita resposta antitumoral", en: "Glucose and amino acids — depletion weakens antitumor response"}
+        rationale: {pt: "Quando tumor 'rouba' nutrientes, então T fica anérgica e imunoterapia falha.", en: "When tumor 'steals' nutrients, T becomes anergic and immunotherapy fails."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "IDO (indoleamina 2,3-dioxigenase) em câncer:", en: "IDO (indoleamine 2,3-dioxygenase) in cancer:"}
+        choices:
+          - {pt: "Consome triptofano e produz quinurenina, suprimindo células T", en: "Consumes tryptophan and produces kynurenine, suppressing T cells"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estimulante", en: "Just stimulatory"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Consome triptofano e produz quinurenina, suprimindo células T", en: "Consumes tryptophan and produces kynurenine, suppressing T cells"}
+        rationale: {pt: "Quando aminoácido essencial falta, então T perde função e tumor escapa.", en: "When essential amino acid is lacking, T loses function and tumor escapes."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lactato no microambiente tumoral:", en: "Lactate in tumor microenvironment:"}
+        choices:
+          - {pt: "Acidifica ambiente e suprime função imune efetora", en: "Acidifies environment and suppresses effector immune function"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas neutro", en: "Just neutral"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Acidifica ambiente e suprime função imune efetora", en: "Acidifies environment and suppresses effector immune function"}
+        rationale: {pt: "Quando pH cai, então enzimas e receptores T ficam comprometidos.", en: "When pH drops, T enzymes and receptors are compromised."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Obesidade altera imunidade por:", en: "Obesity alters immunity via:"}
+        choices:
+          - {pt: "Inflamação crônica de baixo grau e disfunção metabólica em macrófagos do tecido adiposo", en: "Chronic low-grade inflammation and metabolic dysfunction in adipose macrophages"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Inflamação crônica de baixo grau e disfunção metabólica em macrófagos do tecido adiposo", en: "Chronic low-grade inflammation and metabolic dysfunction in adipose macrophages"}
+        rationale: {pt: "Quando lipídios e citocinas mudam, então imunidade vira pró-inflamatória crônica.", en: "When lipids and cytokines shift, immunity becomes chronically pro-inflammatory."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Doenças autoimunes e imunometabolismo:", en: "Autoimmune diseases and immunometabolism:"}
+        choices:
+          - {pt: "Reprogramação metabólica é alvo terapêutico emergente (lúpus, EM, AR)", en: "Metabolic reprogramming is emerging therapeutic target (lupus, MS, RA)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Reprogramação metabólica é alvo terapêutico emergente (lúpus, EM, AR)", en: "Metabolic reprogramming is emerging therapeutic target (lupus, MS, RA)"}
+        rationale: {pt: "Quando linfócitos autorreativos dependem de glicólise, então bloqueá-la atenua doença.", en: "When autoreactive lymphocytes depend on glycolysis, blocking it eases disease."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Treinamento imune (trained immunity) envolve:", en: "Trained immunity involves:"}
+        choices:
+          - {pt: "Memória inata baseada em reprogramação epigenética e metabólica", en: "Innate memory based on epigenetic and metabolic reprogramming"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas linfócitos T", en: "Just T lymphocytes"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Memória inata baseada em reprogramação epigenética e metabólica", en: "Innate memory based on epigenetic and metabolic reprogramming"}
+        rationale: {pt: "Quando macrófagos 'aprendem', então respondem mais forte a desafios subsequentes.", en: "When macrophages 'learn', they respond stronger to subsequent challenges."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Engenharia metabólica de CAR-T busca:", en: "Metabolic engineering of CAR-T seeks:"}
+        choices:
+          - {pt: "Aumentar persistência e atividade modificando vias mitocondriais", en: "Increase persistence and activity by modifying mitochondrial pathways"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Aumentar persistência e atividade modificando vias mitocondriais", en: "Increase persistence and activity by modifying mitochondrial pathways"}
+        rationale: {pt: "Quando T mantém OXPHOS robusto, então sobrevive mais tempo no tumor sólido.", en: "When T maintains robust OXPHOS, it lasts longer in solid tumor."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Metformina como modulador imune:", en: "Metformin as immune modulator:"}
+        choices:
+          - {pt: "Ativa AMPK em células imunes, com potencial efeito antitumoral e antienvelhecimento", en: "Activates AMPK in immune cells, with potential antitumor and anti-aging effect"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Ativa AMPK em células imunes, com potencial efeito antitumoral e antienvelhecimento", en: "Activates AMPK in immune cells, with potential antitumor and anti-aging effect"}
+        rationale: {pt: "Quando metabolismo é redirecionado, então fenótipos imunes ganham eficiência energética.", en: "When metabolism is redirected, immune phenotypes gain energy efficiency."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inibidores de PI3K/mTOR em imunoterapia:", en: "PI3K/mTOR inhibitors in immunotherapy:"}
+        choices:
+          - {pt: "Modulam diferenciação e persistência de linfócitos T efetores e memória", en: "Modulate effector and memory T cell differentiation and persistence"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Modulam diferenciação e persistência de linfócitos T efetores e memória", en: "Modulate effector and memory T cell differentiation and persistence"}
+        rationale: {pt: "Quando timing é certo, então favorecemos memória sobre exaustão em transferências adotivas.", en: "When timing is right, we favor memory over exhaustion in adoptive transfers."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em imunometabolismo:", en: "Next frontiers in immunometabolism:"}
+        choices:
+          - {pt: "Drogas seletivas, biomarcadores metabólicos e single-cell metabolômica", en: "Selective drugs, metabolic biomarkers and single-cell metabolomics"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Drogas seletivas, biomarcadores metabólicos e single-cell metabolômica", en: "Selective drugs, metabolic biomarkers and single-cell metabolomics"}
+        rationale: {pt: "Quando ferramentas amadurecem, então personalizar via metabólica de cada paciente fica viável.", en: "When tools mature, personalizing each patient's metabolic pathway becomes feasible."}
+        objectives: [biology.immunometabolism]
+        difficulty: 5
+target: 20
