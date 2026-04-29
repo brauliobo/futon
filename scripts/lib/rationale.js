@@ -22,6 +22,16 @@ const METHOD_TERMS = [
   'componente[s]?', 'subespaço[s]?', 'subespaco[s]?', 'vetor[ea]s?',
   'dimensão', 'dimensões', 'origem\\b', 'colinear', 'linearmente',
   'L\\.D\\.', 'L\\.I\\.', 'base\\b', 'gerador[ea]s?',
+  // Statistics & probability
+  'estima[mr]?\\b', 'estimador[ea]s?', 'estimação',
+  'percentil', 'quartil', 'quartis',
+  'hipótese[s]?', 'hipotético[s]?', 'nul[oa]', 'alternativ[oa]',
+  'mínimos\\s+quadrados', 'regressão', 'correlação',
+  'desvio\\s+padrão', 'variância', 'covariância',
+  'média\\s+amostral', 'amostr[ae]', 'amostral',
+  'rejeit[ae][mr]?\\b', 'aceit[ae][mr]?\\b',
+  'reflexão', 'rotação', 'translação', 'transformação',
+  'eixo[s]?\\b',
   'form[ae]m?', 'form[ao]u', 'junta', 'juntam', 'junt[ao]u', 'compõe',
   'por\\s+extenso', 'em\\s+letra\\b', 'extenso',
   // Reasoning connectors (PT)
@@ -309,9 +319,11 @@ const NUM_DEF_RE = /\b\d+\s*=\s*[A-Za-zÁÉÍÓÚÂÊÔÃÕÇáéíóúâêôã�
 // or "I, you, he, she, it, we, they — os sete pronomes pessoais."
 const ENUM_LIST_RE = /(?:[\wáéíóúâêôãõç-]+\s*,\s*){2,}[\wáéíóúâêôãõç/-]+\s*[—–-]\s*\S/i;
 // Math shorthand: factorials, exponents, combinations, approximations,
-// variable assignments, and middle-dot products.
-// e.g. "4! = 24.", "C(n,1) = n", "1/6 ≈ 0.167", "a = 4", "(2,4)=2·(1,2)"
-const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|C\(\s*[a-z\d]|[\d\w/]+\s*≈\s*[\d.]+|C\([a-z],[a-z\d]\)\s*=|\b[a-z]\s*=\s*-?\d|\d\s*[·]\s*[(\d]/i;
+// variable assignments, middle-dot products, statistical symbols.
+// e.g. "4! = 24.", "C(n,1) = n", "1/6 ≈ 0.167", "a = 4", "(2,4)=2·(1,2)",
+//      "(0.5)^2 = 0.25", "Q1 = 25º percentil", "α=0.05", "L.D. ↔ det = 0",
+//      "T: (3,3)", "R90°(5,0)=(0,5)"
+const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|\([\d.]+\)\^\d|C\(\s*[a-z\d]|[\d\w/]+\s*≈\s*[\d.]+|C\([a-z],[a-z\d]\)\s*=|\b[a-z]\s*=\s*-?\d|\d\s*·\s*[(\d]|[QHα-ω][₀-₉0-9]?\s*=|↔|°\s*\(/i;
 // Japanese script with grammatical enumeration: kanji/kana followed by a
 // colon, comma list, or " : " with at least one paired term.
 // e.g. "どころか: 親切どころか、上手どころか、謝るどころか."
