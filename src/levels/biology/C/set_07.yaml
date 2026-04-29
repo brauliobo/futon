@@ -1,0 +1,244 @@
+title:
+  pt: "🔥 Biologia da dor"
+  en: "🔥 Pain biology"
+level: 'C'
+subject: biology
+objectives: [biology.pain]
+difficulty: 5
+authorNotes: "Nociceptores, sensibilização central, modulação descendente, dor crônica, opioides."
+example:
+  pt: "Ex.: lesão tecidual → mediadores → nociceptor TRPV1 → corno dorsal → tálamo → córtex."
+  en: "Ex.: tissue injury → mediators → TRPV1 nociceptor → dorsal horn → thalamus → cortex."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Nocicepção e sensibilização", en: "Nociception and sensitization"}
+    description: {pt: "Como a dor se origina.", en: "How pain originates."}
+    exercises:
+      - type: choice
+        question: {pt: "Nociceptor:", en: "Nociceptor:"}
+        choices:
+          - {pt: "Neurônio sensorial primário com terminais livres que detecta estímulos lesivos", en: "Primary sensory neuron with free endings detecting noxious stimuli"}
+          - {pt: "Apenas sensor de pressão", en: "Just pressure sensor"}
+          - {pt: "Apenas receptor de luz", en: "Just light receptor"}
+          - {pt: "Apenas mecânico de equilíbrio", en: "Just balance mechanic"}
+        correctAnswer: {pt: "Neurônio sensorial primário com terminais livres que detecta estímulos lesivos", en: "Primary sensory neuron with free endings detecting noxious stimuli"}
+        rationale: {pt: "Quando dano ameaça tecido, então nociceptor sinaliza alerta protetivo.", en: "When tissue is threatened, nociceptor signals protective alert."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TRPV1:", en: "TRPV1:"}
+        choices:
+          - {pt: "Canal ativado por capsaicina, calor (>43°C) e prótons — alvo analgésico", en: "Channel activated by capsaicin, heat (>43°C) and protons — analgesic target"}
+          - {pt: "Apenas receptor olfatório", en: "Just olfactory receptor"}
+          - {pt: "Apenas via gustativa", en: "Just gustatory pathway"}
+          - {pt: "Apenas canal cardíaco", en: "Just cardiac channel"}
+        correctAnswer: {pt: "Canal ativado por capsaicina, calor (>43°C) e prótons — alvo analgésico", en: "Channel activated by capsaicin, heat (>43°C) and protons — analgesic target"}
+        rationale: {pt: "Quando TRPV1 abre, então íons fluem despolarizando neurônio sensorial.", en: "When TRPV1 opens, ions flow depolarizing sensory neuron."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fibras Aδ vs C:", en: "Aδ vs C fibers:"}
+        choices:
+          - {pt: "Aδ rápida (mielina) dor aguda; C lenta (amielínica) dor surda persistente", en: "Aδ fast (myelinated) sharp pain; C slow (unmyelinated) dull persistent pain"}
+          - {pt: "Apenas tipos de músculo", en: "Just muscle types"}
+          - {pt: "Apenas vasos linfáticos", en: "Just lymphatic vessels"}
+          - {pt: "Apenas tipos de osso", en: "Just bone types"}
+        correctAnswer: {pt: "Aδ rápida (mielina) dor aguda; C lenta (amielínica) dor surda persistente", en: "Aδ fast (myelinated) sharp pain; C slow (unmyelinated) dull persistent pain"}
+        rationale: {pt: "Quando dois sistemas atuam, então primeira dor protege e segunda imobiliza.", en: "When two systems act, first pain protects and second immobilizes."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sensibilização periférica:", en: "Peripheral sensitization:"}
+        choices:
+          - {pt: "Mediadores inflamatórios (PGE2, bradicinina) reduzem limiar — hiperalgesia", en: "Inflammatory mediators (PGE2, bradykinin) lower threshold — hyperalgesia"}
+          - {pt: "Apenas dessensibilização rápida", en: "Just quick desensitization"}
+          - {pt: "Apenas dormência", en: "Just numbness"}
+          - {pt: "Apenas paralisia", en: "Just paralysis"}
+        correctAnswer: {pt: "Mediadores inflamatórios (PGE2, bradicinina) reduzem limiar — hiperalgesia", en: "Inflammatory mediators (PGE2, bradykinin) lower threshold — hyperalgesia"}
+        rationale: {pt: "Quando \"sopa inflamatória\" age, então toques normais doem (alodinia/hiperalgesia).", en: "When \"inflammatory soup\" acts, normal touches hurt (allodynia/hyperalgesia)."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sensibilização central:", en: "Central sensitization:"}
+        choices:
+          - {pt: "Aumento de excitabilidade no corno dorsal via NMDA — dor neuropática crônica", en: "Increased dorsal horn excitability via NMDA — chronic neuropathic pain"}
+          - {pt: "Apenas reforço motor", en: "Just motor reinforcement"}
+          - {pt: "Apenas reflexo cutâneo", en: "Just cutaneous reflex"}
+          - {pt: "Apenas memória explícita", en: "Just explicit memory"}
+        correctAnswer: {pt: "Aumento de excitabilidade no corno dorsal via NMDA — dor neuropática crônica", en: "Increased dorsal horn excitability via NMDA — chronic neuropathic pain"}
+        rationale: {pt: "Quando plasticidade central se estabelece, então dor persiste sem estímulo lesivo.", en: "When central plasticity sets in, pain persists without noxious input."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Teoria do portão (Melzack-Wall):", en: "Gate control theory (Melzack-Wall):"}
+        choices:
+          - {pt: "Aferentes táteis Aβ inibem transmissão de dor no corno dorsal — base de TENS", en: "Aβ tactile afferents inhibit pain transmission in dorsal horn — basis of TENS"}
+          - {pt: "Apenas anestesia geral", en: "Just general anesthesia"}
+          - {pt: "Apenas crioterapia", en: "Just cryotherapy"}
+          - {pt: "Apenas placebo difuso", en: "Just diffuse placebo"}
+        correctAnswer: {pt: "Aferentes táteis Aβ inibem transmissão de dor no corno dorsal — base de TENS", en: "Aβ tactile afferents inhibit pain transmission in dorsal horn — basis of TENS"}
+        rationale: {pt: "Quando esfregamos local doloroso, então portão se fecha parcialmente.", en: "When we rub a painful spot, the gate partially closes."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modulação descendente:", en: "Descending modulation:"}
+        choices:
+          - {pt: "PAG-RVM via opioides endógenos, serotonina, noradrenalina inibe corno dorsal", en: "PAG-RVM via endogenous opioids, serotonin, noradrenaline inhibits dorsal horn"}
+          - {pt: "Apenas via simpática isolada", en: "Just isolated sympathetic"}
+          - {pt: "Apenas reflexos espinhais", en: "Just spinal reflexes"}
+          - {pt: "Apenas controle parasimpático", en: "Just parasympathetic control"}
+        correctAnswer: {pt: "PAG-RVM via opioides endógenos, serotonina, noradrenalina inibe corno dorsal", en: "PAG-RVM via endogenous opioids, serotonin, noradrenaline inhibits dorsal horn"}
+        rationale: {pt: "Quando contexto requer ação, então dor é suprimida temporariamente top-down.", en: "When context demands action, pain is temporarily suppressed top-down."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Receptores opioides:", en: "Opioid receptors:"}
+        choices:
+          - {pt: "μ, δ, κ — μ media analgesia mas também depressão respiratória e tolerância", en: "μ, δ, κ — μ mediates analgesia but also respiratory depression and tolerance"}
+          - {pt: "Apenas receptor genérico", en: "Just generic receptor"}
+          - {pt: "Apenas hormônio sexual", en: "Just sex hormone"}
+          - {pt: "Apenas via metabólica", en: "Just metabolic pathway"}
+        correctAnswer: {pt: "μ, δ, κ — μ media analgesia mas também depressão respiratória e tolerância", en: "μ, δ, κ — μ mediates analgesia but also respiratory depression and tolerance"}
+        rationale: {pt: "Quando ativamos μ, então alívio vem com riscos significativos.", en: "When we activate μ, relief comes with significant risks."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Crise de opioides:", en: "Opioid crisis:"}
+        choices:
+          - {pt: "Sobreprescrição → tolerância → heroína/fentanil → mortes; alvo: alternativas seguras", en: "Over-prescription → tolerance → heroin/fentanyl → deaths; target: safer alternatives"}
+          - {pt: "Apenas problema cultural", en: "Just cultural issue"}
+          - {pt: "Apenas marketing isolado", en: "Just isolated marketing"}
+          - {pt: "Apenas estatística antiga", en: "Just old statistic"}
+        correctAnswer: {pt: "Sobreprescrição → tolerância → heroína/fentanil → mortes; alvo: alternativas seguras", en: "Over-prescription → tolerance → heroin/fentanyl → deaths; target: safer alternatives"}
+        rationale: {pt: "Quando dependência se instala, então saúde pública demanda múltiplas intervenções.", en: "When dependence sets in, public health requires multi-pronged response."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Nav1.7 e SCN9A:", en: "Nav1.7 and SCN9A:"}
+        choices:
+          - {pt: "Canal de Na⁺ essencial à dor — perda total causa indolência congênita", en: "Na⁺ channel essential for pain — complete loss causes congenital painlessness"}
+          - {pt: "Apenas canal cardíaco", en: "Just cardiac channel"}
+          - {pt: "Apenas via olfatória", en: "Just olfactory pathway"}
+          - {pt: "Apenas hormônio renal", en: "Just renal hormone"}
+        correctAnswer: {pt: "Canal de Na⁺ essencial à dor — perda total causa indolência congênita", en: "Na⁺ channel essential for pain — complete loss causes congenital painlessness"}
+        rationale: {pt: "Quando bloqueio é seletivo, então analgésico sem efeitos centrais é possível.", en: "When blockade is selective, analgesic without central side effects becomes possible."}
+        objectives: [biology.pain]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Dor crônica e tratamento", en: "Chronic pain and treatment"}
+    description: {pt: "Da fisiopatologia à terapia.", en: "From pathophysiology to therapy."}
+    exercises:
+      - type: choice
+        question: {pt: "Dor neuropática:", en: "Neuropathic pain:"}
+        choices:
+          - {pt: "Lesão de SN com gabapentinoides, antidepressivos tricíclicos e duloxetina", en: "Nervous system lesion treated with gabapentinoids, tricyclics and duloxetine"}
+          - {pt: "Apenas relaxante muscular", en: "Just muscle relaxant"}
+          - {pt: "Apenas vitamina B12", en: "Just vitamin B12"}
+          - {pt: "Apenas anti-histamínico", en: "Just antihistamine"}
+        correctAnswer: {pt: "Lesão de SN com gabapentinoides, antidepressivos tricíclicos e duloxetina", en: "Nervous system lesion treated with gabapentinoids, tricyclics and duloxetine"}
+        rationale: {pt: "Quando o nervo está machucado, então drogas que modulam neurotransmissão são primeira linha.", en: "When the nerve is injured, neurotransmission-modulating drugs are first line."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fibromialgia:", en: "Fibromyalgia:"}
+        choices:
+          - {pt: "Síndrome de dor difusa com sensibilização central, fadiga e sono não reparador", en: "Widespread pain syndrome with central sensitization, fatigue and non-restorative sleep"}
+          - {pt: "Apenas problema reumatológico estrutural", en: "Just structural rheumatologic problem"}
+          - {pt: "Apenas distúrbio psicossomático puro", en: "Just pure psychosomatic disorder"}
+          - {pt: "Apenas variação normal", en: "Just normal variation"}
+        correctAnswer: {pt: "Síndrome de dor difusa com sensibilização central, fadiga e sono não reparador", en: "Widespread pain syndrome with central sensitization, fatigue and non-restorative sleep"}
+        rationale: {pt: "Quando central amplifica, então abordagem multimodal funciona melhor.", en: "When central amplifies, multimodal approach works best."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cefaleia tipo enxaqueca:", en: "Migraine headache:"}
+        choices:
+          - {pt: "Hiperexcitabilidade trigêmino-vascular com CGRP — alvo de anti-CGRP modernos", en: "Trigemino-vascular hyperexcitability with CGRP — target of modern anti-CGRP agents"}
+          - {pt: "Apenas estresse banal", en: "Just trivial stress"}
+          - {pt: "Apenas má postura", en: "Just bad posture"}
+          - {pt: "Apenas tensão muscular periférica", en: "Just peripheral muscle tension"}
+        correctAnswer: {pt: "Hiperexcitabilidade trigêmino-vascular com CGRP — alvo de anti-CGRP modernos", en: "Trigemino-vascular hyperexcitability with CGRP — target of modern anti-CGRP agents"}
+        rationale: {pt: "Quando neuropeptídeos vasodilatam, então drogas anti-CGRP previnem ataques.", en: "When neuropeptides vasodilate, anti-CGRP drugs prevent attacks."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dor visceral:", en: "Visceral pain:"}
+        choices:
+          - {pt: "Difusa, mal localizada, referida — vias splânchnicas e parasimpáticas distintas", en: "Diffuse, poorly localized, referred — distinct splanchnic and parasympathetic pathways"}
+          - {pt: "Apenas dor superficial", en: "Just superficial pain"}
+          - {pt: "Apenas dor cutânea", en: "Just cutaneous pain"}
+          - {pt: "Apenas mialgia", en: "Just myalgia"}
+        correctAnswer: {pt: "Difusa, mal localizada, referida — vias splânchnicas e parasimpáticas distintas", en: "Diffuse, poorly localized, referred — distinct splanchnic and parasympathetic pathways"}
+        rationale: {pt: "Quando órgão dói, então cérebro projeta sensação em derme inervada por mesmo segmento.", en: "When organ hurts, brain projects sensation onto skin innervated by same segment."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Placebo e dor:", en: "Placebo and pain:"}
+        choices:
+          - {pt: "Expectativa ativa modulação descendente real via opioides endógenos e dopamina", en: "Expectation activates real descending modulation via endogenous opioids and dopamine"}
+          - {pt: "Apenas truque enganoso", en: "Just deceptive trick"}
+          - {pt: "Apenas erro de medida", en: "Just measurement error"}
+          - {pt: "Apenas viés de relato", en: "Just reporting bias"}
+        correctAnswer: {pt: "Expectativa ativa modulação descendente real via opioides endógenos e dopamina", en: "Expectation activates real descending modulation via endogenous opioids and dopamine"}
+        rationale: {pt: "Quando contexto sinaliza alívio, então circuitos neurais entregam analgesia mensurável.", en: "When context signals relief, neural circuits deliver measurable analgesia."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Canabinoides em dor:", en: "Cannabinoids in pain:"}
+        choices:
+          - {pt: "CB1/CB2 modulam dor neuropática e visceral; THC/CBD com evidência crescente seletiva", en: "CB1/CB2 modulate neuropathic and visceral pain; THC/CBD with growing selective evidence"}
+          - {pt: "Apenas uso recreativo", en: "Just recreational use"}
+          - {pt: "Apenas fitoterapia genérica", en: "Just generic phytotherapy"}
+          - {pt: "Apenas suplemento alimentar", en: "Just dietary supplement"}
+        correctAnswer: {pt: "CB1/CB2 modulam dor neuropática e visceral; THC/CBD com evidência crescente seletiva", en: "CB1/CB2 modulate neuropathic and visceral pain; THC/CBD with growing selective evidence"}
+        rationale: {pt: "Quando endocanabinoides agem, então dor crônica responde em subgrupos.", en: "When endocannabinoids act, chronic pain responds in subgroups."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Estimulação medular:", en: "Spinal cord stimulation:"}
+        choices:
+          - {pt: "Eletrodo epidural ativa fibras Aβ inibindo dor refratária via teoria do portão", en: "Epidural electrode activates Aβ fibers inhibiting refractory pain via gate theory"}
+          - {pt: "Apenas placebo cirúrgico", en: "Just surgical placebo"}
+          - {pt: "Apenas marcapasso cardíaco", en: "Just cardiac pacemaker"}
+          - {pt: "Apenas implante cosmético", en: "Just cosmetic implant"}
+        correctAnswer: {pt: "Eletrodo epidural ativa fibras Aβ inibindo dor refratária via teoria do portão", en: "Epidural electrode activates Aβ fibers inhibiting refractory pain via gate theory"}
+        rationale: {pt: "Quando fármacos falham, então neuromodulação oferece controle não opioide.", en: "When drugs fail, neuromodulation offers non-opioid control."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dor e gênero/idade:", en: "Pain and gender/age:"}
+        choices:
+          - {pt: "Mulheres relatam mais dor crônica; idosos têm percepção e tratamento subótimos", en: "Women report more chronic pain; elderly have suboptimal perception and treatment"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+          - {pt: "Apenas estatística sem mecanismo", en: "Just statistics without mechanism"}
+          - {pt: "Apenas viés cultural", en: "Just cultural bias"}
+        correctAnswer: {pt: "Mulheres relatam mais dor crônica; idosos têm percepção e tratamento subótimos", en: "Women report more chronic pain; elderly have suboptimal perception and treatment"}
+        rationale: {pt: "Quando epidemiologia mostra disparidades, então pesquisa precisa diversificar amostras.", en: "When epidemiology shows disparities, research must diversify samples."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tolerância e hiperalgesia opioide:", en: "Opioid tolerance and hyperalgesia:"}
+        choices:
+          - {pt: "Uso prolongado reduz analgesia e paradoxalmente sensibiliza dor — risco mecanístico", en: "Prolonged use reduces analgesia and paradoxically sensitizes pain — mechanistic risk"}
+          - {pt: "Apenas adaptação benigna", en: "Just benign adaptation"}
+          - {pt: "Apenas sintoma psicológico", en: "Just psychological symptom"}
+          - {pt: "Apenas mito clínico", en: "Just clinical myth"}
+        correctAnswer: {pt: "Uso prolongado reduz analgesia e paradoxalmente sensibiliza dor — risco mecanístico", en: "Prolonged use reduces analgesia and paradoxically sensitizes pain — mechanistic risk"}
+        rationale: {pt: "Quando opioide cronifica, então protocolo de retirada e alternativas tornam-se essenciais.", en: "When opioid chronifies, tapering protocols and alternatives become essential."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em dor:", en: "Next pain frontiers:"}
+        choices:
+          - {pt: "Bloqueadores Nav1.7/1.8 seletivos, terapias gênicas e neuromodulação fechada", en: "Selective Nav1.7/1.8 blockers, gene therapies and closed-loop neuromodulation"}
+          - {pt: "Apenas remédios herbais", en: "Just herbal remedies"}
+          - {pt: "Apenas yoga isolada", en: "Just isolated yoga"}
+          - {pt: "Apenas dieta restritiva", en: "Just restrictive diet"}
+        correctAnswer: {pt: "Bloqueadores Nav1.7/1.8 seletivos, terapias gênicas e neuromodulação fechada", en: "Selective Nav1.7/1.8 blockers, gene therapies and closed-loop neuromodulation"}
+        rationale: {pt: "Quando alvos moleculares se afinam, então dor crônica ganha terapias eficazes não opioides.", en: "When molecular targets sharpen, chronic pain gains effective non-opioid therapies."}
+        objectives: [biology.pain]
+        difficulty: 5
+target: 20

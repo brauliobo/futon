@@ -1,0 +1,244 @@
+title:
+  pt: "💀 Vias de morte celular"
+  en: "💀 Cell death pathways"
+level: 'C'
+subject: biology
+objectives: [biology.cell_death]
+difficulty: 5
+authorNotes: "Apoptose, necroptose, piroptose, ferroptose, autofagia, NETose; sinalizadores e relevância clínica."
+example:
+  pt: "Ex.: dano mitocondrial → citocromo c → apoptossomo → caspase-9/3 → apoptose."
+  en: "Ex.: mitochondrial damage → cytochrome c → apoptosome → caspase-9/3 → apoptosis."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Vias canônicas", en: "Canonical pathways"}
+    description: {pt: "Apoptose intrínseca e extrínseca.", en: "Intrinsic and extrinsic apoptosis."}
+    exercises:
+      - type: choice
+        question: {pt: "Apoptose intrínseca:", en: "Intrinsic apoptosis:"}
+        choices:
+          - {pt: "Estresse mitocondrial libera citocromo c que ativa caspase-9 via Apaf-1", en: "Mitochondrial stress releases cytochrome c activating caspase-9 via Apaf-1"}
+          - {pt: "Apenas inflamação descontrolada", en: "Just uncontrolled inflammation"}
+          - {pt: "Apenas dano físico", en: "Just physical damage"}
+          - {pt: "Apenas infecção viral", en: "Just viral infection"}
+        correctAnswer: {pt: "Estresse mitocondrial libera citocromo c que ativa caspase-9 via Apaf-1", en: "Mitochondrial stress releases cytochrome c activating caspase-9 via Apaf-1"}
+        rationale: {pt: "Quando MOMP ocorre, então cascata de caspases executa morte ordenada.", en: "When MOMP occurs, caspase cascade executes ordered death."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Apoptose extrínseca:", en: "Extrinsic apoptosis:"}
+        choices:
+          - {pt: "Receptores de morte (Fas, TNFR) recrutam FADD e ativam caspase-8", en: "Death receptors (Fas, TNFR) recruit FADD and activate caspase-8"}
+          - {pt: "Apenas radicais livres aleatórios", en: "Just random free radicals"}
+          - {pt: "Apenas envelhecimento celular", en: "Just cellular aging"}
+          - {pt: "Apenas dano de DNA", en: "Just DNA damage"}
+        correctAnswer: {pt: "Receptores de morte (Fas, TNFR) recrutam FADD e ativam caspase-8", en: "Death receptors (Fas, TNFR) recruit FADD and activate caspase-8"}
+        rationale: {pt: "Quando ligante encontra receptor, então DISC se monta e morte é desencadeada de fora.", en: "When ligand meets receptor, DISC assembles and death is triggered externally."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BCL-2 família:", en: "BCL-2 family:"}
+        choices:
+          - {pt: "Pró- (BAX/BAK) e anti-apoptóticos (BCL-2/BCL-xL) controlam permeabilização mitocondrial", en: "Pro- (BAX/BAK) and anti-apoptotic (BCL-2/BCL-xL) members control mitochondrial permeabilization"}
+          - {pt: "Apenas reguladores genéricos", en: "Just generic regulators"}
+          - {pt: "Apenas marcadores de superfície", en: "Just surface markers"}
+          - {pt: "Apenas chaperones", en: "Just chaperones"}
+        correctAnswer: {pt: "Pró- (BAX/BAK) e anti-apoptóticos (BCL-2/BCL-xL) controlam permeabilização mitocondrial", en: "Pro- (BAX/BAK) and anti-apoptotic (BCL-2/BCL-xL) members control mitochondrial permeabilization"}
+        rationale: {pt: "Quando equilíbrio se rompe, então decisão de morte/sobrevivência é tomada.", en: "When balance breaks, life/death decision is made."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Necroptose:", en: "Necroptosis:"}
+        choices:
+          - {pt: "Morte programada lítica via RIPK1/RIPK3/MLKL — pró-inflamatória", en: "Lytic programmed death via RIPK1/RIPK3/MLKL — pro-inflammatory"}
+          - {pt: "Apenas necrose acidental", en: "Just accidental necrosis"}
+          - {pt: "Apenas síntese proteica", en: "Just protein synthesis"}
+          - {pt: "Apenas absorção de nutrientes", en: "Just nutrient absorption"}
+        correctAnswer: {pt: "Morte programada lítica via RIPK1/RIPK3/MLKL — pró-inflamatória", en: "Lytic programmed death via RIPK1/RIPK3/MLKL — pro-inflammatory"}
+        rationale: {pt: "Quando caspase-8 é bloqueada, então necroptose substitui apoptose com inflamação.", en: "When caspase-8 is blocked, necroptosis replaces apoptosis with inflammation."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Piroptose:", en: "Pyroptosis:"}
+        choices:
+          - {pt: "Inflamassoma ativa caspase-1, cliva gasdermina-D que forma poros lytic", en: "Inflammasome activates caspase-1, cleaves gasdermin-D forming lytic pores"}
+          - {pt: "Apenas digestão intracelular", en: "Just intracellular digestion"}
+          - {pt: "Apenas mitose interrompida", en: "Just interrupted mitosis"}
+          - {pt: "Apenas ribossomo livre", en: "Just free ribosome"}
+        correctAnswer: {pt: "Inflamassoma ativa caspase-1, cliva gasdermina-D que forma poros lytic", en: "Inflammasome activates caspase-1, cleaves gasdermin-D forming lytic pores"}
+        rationale: {pt: "Quando patógeno é detectado, então piroptose libera IL-1β alertando sistema imune.", en: "When pathogen is detected, pyroptosis releases IL-1β alerting immune system."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ferroptose:", en: "Ferroptosis:"}
+        choices:
+          - {pt: "Morte por peroxidação lipídica dependente de ferro — GPX4 é guardiã", en: "Death by iron-dependent lipid peroxidation — GPX4 is guardian"}
+          - {pt: "Apenas falta de glicose", en: "Just glucose starvation"}
+          - {pt: "Apenas hipóxia", en: "Just hypoxia"}
+          - {pt: "Apenas radiação", en: "Just radiation"}
+        correctAnswer: {pt: "Morte por peroxidação lipídica dependente de ferro — GPX4 é guardiã", en: "Death by iron-dependent lipid peroxidation — GPX4 is guardian"}
+        rationale: {pt: "Quando GPX4/sistema xCT falha, então PUFAs oxidam e membranas se rompem.", en: "When GPX4/xCT system fails, PUFAs oxidize and membranes rupture."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "NETose:", en: "NETosis:"}
+        choices:
+          - {pt: "Neutrófilos ejetam cromatina + grânulos antimicrobianos formando NETs", en: "Neutrophils eject chromatin + antimicrobial granules forming NETs"}
+          - {pt: "Apenas fagocitose simples", en: "Just simple phagocytosis"}
+          - {pt: "Apenas anticorpos circulantes", en: "Just circulating antibodies"}
+          - {pt: "Apenas resposta T citotóxica", en: "Just cytotoxic T response"}
+        correctAnswer: {pt: "Neutrófilos ejetam cromatina + grânulos antimicrobianos formando NETs", en: "Neutrophils eject chromatin + antimicrobial granules forming NETs"}
+        rationale: {pt: "Quando patógenos grandes invadem, então NETs aprisionam mas excesso causa autoimunidade.", en: "When large pathogens invade, NETs trap them but excess causes autoimmunity."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anoikis:", en: "Anoikis:"}
+        choices:
+          - {pt: "Apoptose por perda de adesão à ECM — barreira contra metástase", en: "Apoptosis from loss of ECM adhesion — metastasis barrier"}
+          - {pt: "Apenas senescência clássica", en: "Just classical senescence"}
+          - {pt: "Apenas mitose acelerada", en: "Just accelerated mitosis"}
+          - {pt: "Apenas autofagia basal", en: "Just basal autophagy"}
+        correctAnswer: {pt: "Apoptose por perda de adesão à ECM — barreira contra metástase", en: "Apoptosis from loss of ECM adhesion — metastasis barrier"}
+        rationale: {pt: "Quando célula desprende, então morre — tumores aprendem a resistir para metastatizar.", en: "When cell detaches, it dies — tumors learn to resist to metastasize."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Autofagia mediada de morte:", en: "Autophagy-mediated death:"}
+        choices:
+          - {pt: "Excesso de autofagia digere componentes essenciais — distinto de morte autofágica clássica", en: "Excess autophagy digests essential components — distinct from classical autophagic death"}
+          - {pt: "Apenas reciclagem rotineira", en: "Just routine recycling"}
+          - {pt: "Apenas resposta imune", en: "Just immune response"}
+          - {pt: "Apenas síntese de RNA", en: "Just RNA synthesis"}
+        correctAnswer: {pt: "Excesso de autofagia digere componentes essenciais — distinto de morte autofágica clássica", en: "Excess autophagy digests essential components — distinct from classical autophagic death"}
+        rationale: {pt: "Quando autofagia escapa controle, então célula se autodestrói por canibalismo.", en: "When autophagy escapes control, cell self-destructs by self-eating."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cuproptose:", en: "Cuproptosis:"}
+        choices:
+          - {pt: "Morte por agregação proteica induzida por cobre via FDX1 e ciclo TCA", en: "Death by copper-induced protein aggregation via FDX1 and TCA cycle"}
+          - {pt: "Apenas oxidação clássica", en: "Just classical oxidation"}
+          - {pt: "Apenas fusão membranar", en: "Just membrane fusion"}
+          - {pt: "Apenas tradução cap", en: "Just cap translation"}
+        correctAnswer: {pt: "Morte por agregação proteica induzida por cobre via FDX1 e ciclo TCA", en: "Death by copper-induced protein aggregation via FDX1 and TCA cycle"}
+        rationale: {pt: "Quando Cu²⁺ se acumula, então proteínas lipoiladas agregam matando a célula.", en: "When Cu²⁺ accumulates, lipoylated proteins aggregate killing the cell."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações terapêuticas", en: "Therapeutic applications"}
+    description: {pt: "Modulando morte para tratar doenças.", en: "Modulating death to treat disease."}
+    exercises:
+      - type: choice
+        question: {pt: "Venetoclax em leucemia:", en: "Venetoclax in leukemia:"}
+        choices:
+          - {pt: "Inibe BCL-2 restaurando apoptose em CLL e AML", en: "Inhibits BCL-2 restoring apoptosis in CLL and AML"}
+          - {pt: "Apenas anti-inflamatório", en: "Just anti-inflammatory"}
+          - {pt: "Apenas antibiótico", en: "Just antibiotic"}
+          - {pt: "Apenas vasoconstritor", en: "Just vasoconstrictor"}
+        correctAnswer: {pt: "Inibe BCL-2 restaurando apoptose em CLL e AML", en: "Inhibits BCL-2 restoring apoptosis in CLL and AML"}
+        rationale: {pt: "Quando BCL-2 é bloqueada, então células malignas viciadas em sobrevivência morrem.", en: "When BCL-2 is blocked, malignant cells addicted to survival die."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Indutores de ferroptose como antitumorais:", en: "Ferroptosis inducers as antitumorals:"}
+        choices:
+          - {pt: "Erastina, RSL3 visam tumores resistentes a apoptose, especialmente mesenquimais", en: "Erastin, RSL3 target apoptosis-resistant tumors, especially mesenchymal"}
+          - {pt: "Apenas analgésicos", en: "Just analgesics"}
+          - {pt: "Apenas antitérmicos", en: "Just antipyretics"}
+          - {pt: "Apenas antieméticos", en: "Just antiemetics"}
+        correctAnswer: {pt: "Erastina, RSL3 visam tumores resistentes a apoptose, especialmente mesenquimais", en: "Erastin, RSL3 target apoptosis-resistant tumors, especially mesenchymal"}
+        rationale: {pt: "Quando apoptose falha, então ferroptose oferece rota alternativa de morte.", en: "When apoptosis fails, ferroptosis offers alternative death route."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inibidores de necroptose em isquemia:", en: "Necroptosis inhibitors in ischemia:"}
+        choices:
+          - {pt: "Necrostatinas (RIPK1) protegem em IAM, AVC e doenças neurodegenerativas em modelos", en: "Necrostatins (RIPK1) protect in MI, stroke and neurodegeneration in models"}
+          - {pt: "Apenas tratam dores musculares", en: "Just treat muscle aches"}
+          - {pt: "Apenas reposição vitamínica", en: "Just vitamin replacement"}
+          - {pt: "Apenas hidratação", en: "Just hydration"}
+        correctAnswer: {pt: "Necrostatinas (RIPK1) protegem em IAM, AVC e doenças neurodegenerativas em modelos", en: "Necrostatins (RIPK1) protect in MI, stroke and neurodegeneration in models"}
+        rationale: {pt: "Quando RIPK1 é silenciada, então morte inflamatória secundária a isquemia é prevenida.", en: "When RIPK1 is silenced, ischemia-secondary inflammatory death is prevented."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inflamassoma NLRP3 em doenças:", en: "NLRP3 inflammasome in disease:"}
+        choices:
+          - {pt: "Hiperativação leva a gota, Alzheimer, aterosclerose — alvos como MCC950", en: "Hyperactivation drives gout, Alzheimer, atherosclerosis — targets like MCC950"}
+          - {pt: "Apenas reguladores hepáticos", en: "Just hepatic regulators"}
+          - {pt: "Apenas órgão sensorial", en: "Just sensory organ"}
+          - {pt: "Apenas via metabólica", en: "Just metabolic pathway"}
+        correctAnswer: {pt: "Hiperativação leva a gota, Alzheimer, aterosclerose — alvos como MCC950", en: "Hyperactivation drives gout, Alzheimer, atherosclerosis — targets like MCC950"}
+        rationale: {pt: "Quando inflamassoma cronifica, então doença degenerativa progride.", en: "When inflammasome chronifies, degenerative disease progresses."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Morte imunogênica (ICD) em câncer:", en: "Immunogenic cell death (ICD) in cancer:"}
+        choices:
+          - {pt: "Calreticulina, HMGB1, ATP exibidos pós-quimio recrutam DCs e ativam imunidade antitumoral", en: "Calreticulin, HMGB1, ATP displayed post-chemo recruit DCs and prime antitumor immunity"}
+          - {pt: "Apenas digestão", en: "Just digestion"}
+          - {pt: "Apenas oxigenação", en: "Just oxygenation"}
+          - {pt: "Apenas eletrolítico", en: "Just electrolytic"}
+        correctAnswer: {pt: "Calreticulina, HMGB1, ATP exibidos pós-quimio recrutam DCs e ativam imunidade antitumoral", en: "Calreticulin, HMGB1, ATP displayed post-chemo recruit DCs and prime antitumor immunity"}
+        rationale: {pt: "Quando morte é \"vista\", então sistema imune aprende a matar tumor remanescente.", en: "When death is \"seen,\" immune system learns to kill remaining tumor."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Senolíticos e morte de senescentes:", en: "Senolytics and senescent death:"}
+        choices:
+          - {pt: "Dasatinibe + quercetina, navitoclax matam células senescentes prolongando saúde", en: "Dasatinib + quercetin, navitoclax kill senescent cells extending healthspan"}
+          - {pt: "Apenas suplementos genéricos", en: "Just generic supplements"}
+          - {pt: "Apenas hormônios", en: "Just hormones"}
+          - {pt: "Apenas antioxidantes", en: "Just antioxidants"}
+        correctAnswer: {pt: "Dasatinibe + quercetina, navitoclax matam células senescentes prolongando saúde", en: "Dasatinib + quercetin, navitoclax kill senescent cells extending healthspan"}
+        rationale: {pt: "Quando senescentes são removidas, então tecido envelhecido recupera função.", en: "When senescent cells are cleared, aged tissue recovers function."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PROTACs e degradação seletiva:", en: "PROTACs and targeted degradation:"}
+        choices:
+          - {pt: "Bivalentes recrutam E3 ligase para degradar alvo via proteassoma — mata por remoção", en: "Bivalent molecules recruit E3 ligase to degrade target via proteasome — kills by removal"}
+          - {pt: "Apenas vacinas convencionais", en: "Just conventional vaccines"}
+          - {pt: "Apenas suplementos minerais", en: "Just mineral supplements"}
+          - {pt: "Apenas peptídeos", en: "Just peptides"}
+        correctAnswer: {pt: "Bivalentes recrutam E3 ligase para degradar alvo via proteassoma — mata por remoção", en: "Bivalent molecules recruit E3 ligase to degrade target via proteasome — kills by removal"}
+        rationale: {pt: "Quando proteína é degradada, então célula dependente morre por privação funcional.", en: "When protein is degraded, dependent cell dies by functional deprivation."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resistência a apoptose em câncer:", en: "Apoptosis resistance in cancer:"}
+        choices:
+          - {pt: "Hiperexpressão de BCL-2, mutação TP53 e perda de PUMA limitam morte induzida", en: "BCL-2 overexpression, TP53 mutation and PUMA loss limit induced death"}
+          - {pt: "Apenas crescimento normal", en: "Just normal growth"}
+          - {pt: "Apenas reparo de tecidos", en: "Just tissue repair"}
+          - {pt: "Apenas hemostasia", en: "Just hemostasis"}
+        correctAnswer: {pt: "Hiperexpressão de BCL-2, mutação TP53 e perda de PUMA limitam morte induzida", en: "BCL-2 overexpression, TP53 mutation and PUMA loss limit induced death"}
+        rationale: {pt: "Quando barreiras se acumulam, então quimioterapia clássica perde eficácia.", en: "When barriers accumulate, classical chemotherapy loses efficacy."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Morte e neurodegeneração:", en: "Death in neurodegeneration:"}
+        choices:
+          - {pt: "Necroptose, ferroptose e piroptose contribuem para perda neuronal em ALS, Parkinson, Alzheimer", en: "Necroptosis, ferroptosis and pyroptosis contribute to neuronal loss in ALS, Parkinson, Alzheimer"}
+          - {pt: "Apenas epilepsia idiopática", en: "Just idiopathic epilepsy"}
+          - {pt: "Apenas TDAH", en: "Just ADHD"}
+          - {pt: "Apenas dor crônica", en: "Just chronic pain"}
+        correctAnswer: {pt: "Necroptose, ferroptose e piroptose contribuem para perda neuronal em ALS, Parkinson, Alzheimer", en: "Necroptosis, ferroptosis and pyroptosis contribute to neuronal loss in ALS, Parkinson, Alzheimer"}
+        rationale: {pt: "Quando vias de morte se ativam cronicamente, então neurônios morrem em décadas.", en: "When death pathways chronically activate, neurons die over decades."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em morte celular:", en: "Next frontiers in cell death:"}
+        choices:
+          - {pt: "Disulfidoptose, alkalitose e novas vias programadas com terapias modulantes precisas", en: "Disulfidptosis, alkaliptosis and new programmed pathways with precise modulating therapies"}
+          - {pt: "Apenas fitoterapia", en: "Just phytotherapy"}
+          - {pt: "Apenas aromaterapia", en: "Just aromatherapy"}
+          - {pt: "Apenas musicoterapia", en: "Just music therapy"}
+        correctAnswer: {pt: "Disulfidoptose, alkalitose e novas vias programadas com terapias modulantes precisas", en: "Disulfidptosis, alkaliptosis and new programmed pathways with precise modulating therapies"}
+        rationale: {pt: "Quando catálogo expande, então terapias direcionadas para cada via emergem.", en: "When catalog expands, pathway-specific targeted therapies emerge."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+target: 20

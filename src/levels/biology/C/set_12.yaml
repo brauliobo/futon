@@ -1,0 +1,244 @@
+title:
+  pt: "💧 Separação de fases biomolecular"
+  en: "💧 Biomolecular phase separation"
+level: 'C'
+subject: biology
+objectives: [biology.condensates]
+difficulty: 5
+authorNotes: "Condensados, IDR, multivalência, P-bodies, stress granules, papel em câncer e neurodegeneração."
+example:
+  pt: "Ex.: estresse → mRNAs + proteínas IDR multivalentes → condensam → granúlulos de estresse."
+  en: "Ex.: stress → mRNAs + multivalent IDR proteins → condense → stress granules."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Princípios físicos", en: "Physical principles"}
+    description: {pt: "Como condensados emergem.", en: "How condensates emerge."}
+    exercises:
+      - type: choice
+        question: {pt: "Separação líquido-líquido (LLPS):", en: "Liquid-liquid phase separation (LLPS):"}
+        choices:
+          - {pt: "Demixagem em fase densa e diluída sem membrana, gerando \"gotículas\" funcionais", en: "Demixing into dense and dilute phases without membrane, forming functional \"droplets\""}
+          - {pt: "Apenas precipitação irreversível", en: "Just irreversible precipitation"}
+          - {pt: "Apenas cristal sólido", en: "Just solid crystal"}
+          - {pt: "Apenas turbidez aleatória", en: "Just random turbidity"}
+        correctAnswer: {pt: "Demixagem em fase densa e diluída sem membrana, gerando \"gotículas\" funcionais", en: "Demixing into dense and dilute phases without membrane, forming functional \"droplets\""}
+        rationale: {pt: "Quando concentração ultrapassa limiar, então gotículas reversíveis emergem espontaneamente.", en: "When concentration crosses threshold, reversible droplets emerge spontaneously."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Regiões intrinsecamente desordenadas (IDRs):", en: "Intrinsically disordered regions (IDRs):"}
+        choices:
+          - {pt: "Sequências flexíveis com motivos de baixa complexidade favorecendo interações multivalentes", en: "Flexible sequences with low-complexity motifs favoring multivalent interactions"}
+          - {pt: "Apenas falhas estruturais", en: "Just structural failures"}
+          - {pt: "Apenas dobras α-helicoidais rígidas", en: "Just rigid α-helical folds"}
+          - {pt: "Apenas resíduos hidrofílicos isolados", en: "Just isolated hydrophilic residues"}
+        correctAnswer: {pt: "Sequências flexíveis com motivos de baixa complexidade favorecendo interações multivalentes", en: "Flexible sequences with low-complexity motifs favoring multivalent interactions"}
+        rationale: {pt: "Quando IDRs interagem, então dezenas de contatos fracos somam para condensar.", en: "When IDRs interact, dozens of weak contacts sum to condense."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Multivalência:", en: "Multivalency:"}
+        choices:
+          - {pt: "Múltiplos sítios de ligação por molécula promovem rede percolada com transição de fase", en: "Multiple binding sites per molecule promote percolated network with phase transition"}
+          - {pt: "Apenas ligação 1:1 simples", en: "Just simple 1:1 binding"}
+          - {pt: "Apenas afinidade alta única", en: "Just single high affinity"}
+          - {pt: "Apenas reconhecimento estérico", en: "Just steric recognition"}
+        correctAnswer: {pt: "Múltiplos sítios de ligação por molécula promovem rede percolada com transição de fase", en: "Multiple binding sites per molecule promote percolated network with phase transition"}
+        rationale: {pt: "Quando rede percola, então fase rica emerge com propriedades emergentes.", en: "When network percolates, rich phase emerges with emergent properties."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Nucléolo:", en: "Nucleolus:"}
+        choices:
+          - {pt: "Condensado clássico para biogênese de ribossomos com fases concêntricas (FC, DFC, GC)", en: "Classical condensate for ribosome biogenesis with concentric phases (FC, DFC, GC)"}
+          - {pt: "Apenas mancha de pigmento", en: "Just pigment spot"}
+          - {pt: "Apenas inclusão lipídica", en: "Just lipid inclusion"}
+          - {pt: "Apenas reserva calórica", en: "Just caloric reserve"}
+        correctAnswer: {pt: "Condensado clássico para biogênese de ribossomos com fases concêntricas (FC, DFC, GC)", en: "Classical condensate for ribosome biogenesis with concentric phases (FC, DFC, GC)"}
+        rationale: {pt: "Quando subfases existem, então etapas sequenciais de montagem são compartimentalizadas.", en: "When subphases exist, sequential assembly steps are compartmentalized."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "P-bodies:", en: "P-bodies:"}
+        choices:
+          - {pt: "Condensados citoplasmáticos com mRNA reprimido e maquinário de degradação/silenciamento", en: "Cytoplasmic condensates with repressed mRNA and degradation/silencing machinery"}
+          - {pt: "Apenas vesículas digestivas", en: "Just digestive vesicles"}
+          - {pt: "Apenas inclusão proteica", en: "Just protein inclusion"}
+          - {pt: "Apenas resíduo glicogênio", en: "Just glycogen residue"}
+        correctAnswer: {pt: "Condensados citoplasmáticos com mRNA reprimido e maquinário de degradação/silenciamento", en: "Cytoplasmic condensates with repressed mRNA and degradation/silencing machinery"}
+        rationale: {pt: "Quando mRNA é estocado, então tradução é regulada espacialmente.", en: "When mRNA is stored, translation is spatially regulated."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Granúlos de estresse (SGs):", en: "Stress granules (SGs):"}
+        choices:
+          - {pt: "Condensados citoplasmáticos com mRNAs estancados em estresse — TIA-1, G3BP1 marcadores", en: "Cytoplasmic condensates with stalled mRNAs under stress — TIA-1, G3BP1 markers"}
+          - {pt: "Apenas restos celulares", en: "Just cellular debris"}
+          - {pt: "Apenas pigmento estresse", en: "Just stress pigment"}
+          - {pt: "Apenas vacúolo grande", en: "Just large vacuole"}
+        correctAnswer: {pt: "Condensados citoplasmáticos com mRNAs estancados em estresse — TIA-1, G3BP1 marcadores", en: "Cytoplasmic condensates with stalled mRNAs under stress — TIA-1, G3BP1 markers"}
+        rationale: {pt: "Quando estresse cessa, então SGs dissolvem e tradução retoma.", en: "When stress ends, SGs dissolve and translation resumes."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Maturação patológica:", en: "Pathological maturation:"}
+        choices:
+          - {pt: "Líquido → gel → fibras amiloides — TDP-43/FUS em ALS por persistência de SGs", en: "Liquid → gel → amyloid fibers — TDP-43/FUS in ALS via SG persistence"}
+          - {pt: "Apenas processo benéfico simples", en: "Just simple beneficial process"}
+          - {pt: "Apenas reciclagem rotineira", en: "Just routine recycling"}
+          - {pt: "Apenas sinalização passageira", en: "Just transient signaling"}
+        correctAnswer: {pt: "Líquido → gel → fibras amiloides — TDP-43/FUS em ALS por persistência de SGs", en: "Liquid → gel → amyloid fibers — TDP-43/FUS in ALS via SG persistence"}
+        rationale: {pt: "Quando dinâmica trava, então condensado funcional vira agregado tóxico.", en: "When dynamics stall, functional condensate turns toxic aggregate."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cromatina e LLPS:", en: "Chromatin and LLPS:"}
+        choices:
+          - {pt: "HP1, MED1 e fatores de transcrição condensam cromatina, formando \"super-enhancers\"", en: "HP1, MED1 and transcription factors condense chromatin, forming \"super-enhancers\""}
+          - {pt: "Apenas estática estrutural", en: "Just static structure"}
+          - {pt: "Apenas evento mecânico", en: "Just mechanical event"}
+          - {pt: "Apenas energia genérica", en: "Just generic energy"}
+        correctAnswer: {pt: "HP1, MED1 e fatores de transcrição condensam cromatina, formando \"super-enhancers\"", en: "HP1, MED1 and transcription factors condense chromatin, forming \"super-enhancers\""}
+        rationale: {pt: "Quando condensados surgem em DNA, então transcrição é amplificada localmente.", en: "When condensates form on DNA, transcription is locally amplified."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sinalização T por LLPS:", en: "T-cell signaling via LLPS:"}
+        choices:
+          - {pt: "LAT, Grb2, SOS condensam após estímulo de TCR amplificando sinal downstream", en: "LAT, Grb2, SOS condense after TCR stimulation amplifying downstream signal"}
+          - {pt: "Apenas via metabólica isolada", en: "Just isolated metabolic pathway"}
+          - {pt: "Apenas adesão estrutural", en: "Just structural adhesion"}
+          - {pt: "Apenas consumo energético", en: "Just energy consumption"}
+        correctAnswer: {pt: "LAT, Grb2, SOS condensam após estímulo de TCR amplificando sinal downstream", en: "LAT, Grb2, SOS condense after TCR stimulation amplifying downstream signal"}
+        rationale: {pt: "Quando condensados se formam, então cascatas de sinalização ganham eficiência.", en: "When condensates form, signaling cascades gain efficiency."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hexanediol e dissolução:", en: "Hexanediol and dissolution:"}
+        choices:
+          - {pt: "1,6-hexanediol dissolve condensados ricos em interações fracas — ferramenta funcional", en: "1,6-hexanediol dissolves condensates rich in weak interactions — functional tool"}
+          - {pt: "Apenas anestésico clínico", en: "Just clinical anesthetic"}
+          - {pt: "Apenas solvente trivial", en: "Just trivial solvent"}
+          - {pt: "Apenas conservante alimentar", en: "Just food preservative"}
+        correctAnswer: {pt: "1,6-hexanediol dissolve condensados ricos em interações fracas — ferramenta funcional", en: "1,6-hexanediol dissolves condensates rich in weak interactions — functional tool"}
+        rationale: {pt: "Quando condensados desaparecem, então sua função é demonstrada experimentalmente.", en: "When condensates vanish, their function is experimentally demonstrated."}
+        objectives: [biology.condensates]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Doenças e terapias", en: "Disease and therapy"}
+    description: {pt: "Quando condensados desregulam.", en: "When condensates dysregulate."}
+    exercises:
+      - type: choice
+        question: {pt: "Câncer e condensados:", en: "Cancer and condensates:"}
+        choices:
+          - {pt: "Fusões tipo NUP98, EWS-FLI1 dirigem transcrição condensando promotores oncogênicos", en: "NUP98, EWS-FLI1 fusions drive transcription by condensing oncogenic promoters"}
+          - {pt: "Apenas mutações pontuais", en: "Just point mutations"}
+          - {pt: "Apenas exposição a tóxicos", en: "Just toxin exposure"}
+          - {pt: "Apenas crescimento aleatório", en: "Just random growth"}
+        correctAnswer: {pt: "Fusões tipo NUP98, EWS-FLI1 dirigem transcrição condensando promotores oncogênicos", en: "NUP98, EWS-FLI1 fusions drive transcription by condensing oncogenic promoters"}
+        rationale: {pt: "Quando condensação se altera, então oncogenes ganham vantagem expressiva.", en: "When condensation alters, oncogenes gain expression advantage."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Neurodegeneração e condensados:", en: "Neurodegeneration and condensates:"}
+        choices:
+          - {pt: "TDP-43, FUS, tau perdem dinâmica e formam agregados em ALS, FTD, Alzheimer", en: "TDP-43, FUS, tau lose dynamics and form aggregates in ALS, FTD, Alzheimer"}
+          - {pt: "Apenas neurose normal", en: "Just normal neurosis"}
+          - {pt: "Apenas envelhecimento simples", en: "Just simple aging"}
+          - {pt: "Apenas dieta urbana", en: "Just urban diet"}
+        correctAnswer: {pt: "TDP-43, FUS, tau perdem dinâmica e formam agregados em ALS, FTD, Alzheimer", en: "TDP-43, FUS, tau lose dynamics and form aggregates in ALS, FTD, Alzheimer"}
+        rationale: {pt: "Quando condensados maturam, então biologia normal se converte em patologia.", en: "When condensates mature, normal biology becomes pathology."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Condensados em vírus:", en: "Condensates in viruses:"}
+        choices:
+          - {pt: "Vírus (SARS-CoV-2, sincicial respiratório) formam fábricas virais por LLPS", en: "Viruses (SARS-CoV-2, respiratory syncytial) form viral factories via LLPS"}
+          - {pt: "Apenas réplicas extracelulares", en: "Just extracellular replicas"}
+          - {pt: "Apenas particulação aleatória", en: "Just random particulation"}
+          - {pt: "Apenas envelopamento simples", en: "Just simple envelopment"}
+        correctAnswer: {pt: "Vírus (SARS-CoV-2, sincicial respiratório) formam fábricas virais por LLPS", en: "Viruses (SARS-CoV-2, respiratory syncytial) form viral factories via LLPS"}
+        rationale: {pt: "Quando vírus condensa, então replicação ganha eficiência intracelular.", en: "When virus condenses, replication gains intracellular efficiency."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Condensate-modulating drugs:", en: "Condensate-modulating drugs:"}
+        choices:
+          - {pt: "Pequenas moléculas que dissolvem ou estabilizam condensados — nova classe terapêutica emergente", en: "Small molecules dissolving or stabilizing condensates — emerging new therapeutic class"}
+          - {pt: "Apenas anti-inflamatórios", en: "Just anti-inflammatories"}
+          - {pt: "Apenas antibióticos", en: "Just antibiotics"}
+          - {pt: "Apenas analgésicos", en: "Just analgesics"}
+        correctAnswer: {pt: "Pequenas moléculas que dissolvem ou estabilizam condensados — nova classe terapêutica emergente", en: "Small molecules dissolving or stabilizing condensates — emerging new therapeutic class"}
+        rationale: {pt: "Quando condensados são alvos diretos, então biologia patológica é precisamente modulada.", en: "When condensates are direct targets, pathological biology is precisely modulated."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Optogenética e condensados:", en: "Optogenetics and condensates:"}
+        choices:
+          - {pt: "Cry2-IDR fusões formam condensados sob luz azul — ferramenta para causalidade celular", en: "Cry2-IDR fusions form condensates under blue light — tool for cellular causality"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas microscopia básica", en: "Just basic microscopy"}
+          - {pt: "Apenas lâmpada experimental", en: "Just experimental lamp"}
+        correctAnswer: {pt: "Cry2-IDR fusões formam condensados sob luz azul — ferramenta para causalidade celular", en: "Cry2-IDR fusions form condensates under blue light — tool for cellular causality"}
+        rationale: {pt: "Quando luz controla, então causalidade entre condensação e função é provada.", en: "When light controls, causality between condensation and function is proven."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Núcleo viral e LLPS:", en: "Viral nucleocapsid and LLPS:"}
+        choices:
+          - {pt: "Proteína N de SARS-CoV-2 condensa RNA viral promovendo empacotamento eficiente", en: "SARS-CoV-2 N protein condenses viral RNA promoting efficient packaging"}
+          - {pt: "Apenas estrutura mecânica", en: "Just mechanical structure"}
+          - {pt: "Apenas barreira lipídica", en: "Just lipid barrier"}
+          - {pt: "Apenas envelopamento aleatório", en: "Just random envelopment"}
+        correctAnswer: {pt: "Proteína N de SARS-CoV-2 condensa RNA viral promovendo empacotamento eficiente", en: "SARS-CoV-2 N protein condenses viral RNA promoting efficient packaging"}
+        rationale: {pt: "Quando proteína N orquestra, então genoma viral compacta-se para virion.", en: "When N protein orchestrates, viral genome compacts into virion."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Centrossomo e LLPS:", en: "Centrosome and LLPS:"}
+        choices:
+          - {pt: "PCM funciona como condensado, organizando microtúbulos por concentração local", en: "PCM functions as condensate, organizing microtubules via local concentration"}
+          - {pt: "Apenas estrutura sólida estável", en: "Just stable solid structure"}
+          - {pt: "Apenas pigmento celular", en: "Just cell pigment"}
+          - {pt: "Apenas membrana isolada", en: "Just isolated membrane"}
+        correctAnswer: {pt: "PCM funciona como condensado, organizando microtúbulos por concentração local", en: "PCM functions as condensate, organizing microtubules via local concentration"}
+        rationale: {pt: "Quando condensado nucleia, então fuso bipolar se monta corretamente.", en: "When condensate nucleates, bipolar spindle assembles correctly."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Energia ATP-dependente:", en: "ATP-dependent energy:"}
+        choices:
+          - {pt: "Helicases (DDX) e ATPases mantêm dinâmica e dissolvem condensados maturados", en: "Helicases (DDX) and ATPases maintain dynamics and dissolve matured condensates"}
+          - {pt: "Apenas síntese ribossomal isolada", en: "Just isolated ribosomal synthesis"}
+          - {pt: "Apenas absorção de nutriente", en: "Just nutrient absorption"}
+          - {pt: "Apenas fonte calórica", en: "Just caloric source"}
+        correctAnswer: {pt: "Helicases (DDX) e ATPases mantêm dinâmica e dissolvem condensados maturados", en: "Helicases (DDX) and ATPases maintain dynamics and dissolve matured condensates"}
+        rationale: {pt: "Quando ATP é gasto, então fase líquida persiste e patologia é evitada.", en: "When ATP is spent, liquid phase persists and pathology is avoided."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Métodos de detecção:", en: "Detection methods:"}
+        choices:
+          - {pt: "FRAP, super-resolução e turbidez ensaios revelam dinâmica e composição", en: "FRAP, super-resolution and turbidity assays reveal dynamics and composition"}
+          - {pt: "Apenas microscopia óptica simples", en: "Just simple optical microscopy"}
+          - {pt: "Apenas pesagem em balança", en: "Just weighing on balance"}
+          - {pt: "Apenas observação visual direta", en: "Just direct visual observation"}
+        correctAnswer: {pt: "FRAP, super-resolução e turbidez ensaios revelam dinâmica e composição", en: "FRAP, super-resolution and turbidity assays reveal dynamics and composition"}
+        rationale: {pt: "Quando técnicas combinam, então condensados são caracterizados quantitativamente.", en: "When techniques combine, condensates are quantitatively characterized."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em condensados:", en: "Next condensate frontiers:"}
+        choices:
+          - {pt: "Drogas anti-condensado, biologia sintética e condensados terapêuticos engenheirados", en: "Anti-condensate drugs, synthetic biology and engineered therapeutic condensates"}
+          - {pt: "Apenas teoria abstrata", en: "Just abstract theory"}
+          - {pt: "Apenas observação descritiva", en: "Just descriptive observation"}
+          - {pt: "Apenas catálogo histórico", en: "Just historical catalog"}
+        correctAnswer: {pt: "Drogas anti-condensado, biologia sintética e condensados terapêuticos engenheirados", en: "Anti-condensate drugs, synthetic biology and engineered therapeutic condensates"}
+        rationale: {pt: "Quando entendimento amadurece, então engenharia de fases vira terapêutica.", en: "When understanding matures, phase engineering becomes therapeutic."}
+        objectives: [biology.condensates]
+        difficulty: 5
+target: 20

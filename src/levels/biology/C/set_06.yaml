@@ -1,0 +1,244 @@
+title:
+  pt: "🧬 Genética comportamental"
+  en: "🧬 Behavioral genetics"
+level: 'C'
+subject: biology
+objectives: [biology.behavioral_genetics]
+difficulty: 5
+authorNotes: "Estudos com gêmeos, GWAS, escores poligênicos, herdabilidade, gene-ambiente."
+example:
+  pt: "Ex.: traço → estudo com gêmeos → herdabilidade → GWAS → escore poligênico → predição."
+  en: "Ex.: trait → twin study → heritability → GWAS → polygenic score → prediction."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Bases conceituais", en: "Conceptual foundations"}
+    description: {pt: "Como medimos genética do comportamento.", en: "How we measure behavioral genetics."}
+    exercises:
+      - type: choice
+        question: {pt: "Herdabilidade (h²):", en: "Heritability (h²):"}
+        choices:
+          - {pt: "Proporção da variância fenotípica atribuível a variância genética em uma população", en: "Proportion of phenotypic variance attributable to genetic variance in a population"}
+          - {pt: "Apenas determinação direta do destino", en: "Just direct fate determination"}
+          - {pt: "Apenas mediação ambiental", en: "Just environmental mediation"}
+          - {pt: "Apenas medida individual fixa", en: "Just fixed individual measure"}
+        correctAnswer: {pt: "Proporção da variância fenotípica atribuível a variância genética em uma população", en: "Proportion of phenotypic variance attributable to genetic variance in a population"}
+        rationale: {pt: "Quando ambiente muda, então herdabilidade pode mudar — é populacional, não individual.", en: "When environment shifts, heritability can shift — it's population-level, not individual."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Estudos com gêmeos:", en: "Twin studies:"}
+        choices:
+          - {pt: "Comparam MZ vs DZ para estimar h²; assumem ambiente compartilhado equivalente", en: "Compare MZ vs DZ to estimate h²; assume equal shared environment"}
+          - {pt: "Apenas estudos de família simples", en: "Just simple family studies"}
+          - {pt: "Apenas amostragem aleatória", en: "Just random sampling"}
+          - {pt: "Apenas observação clínica", en: "Just clinical observation"}
+        correctAnswer: {pt: "Comparam MZ vs DZ para estimar h²; assumem ambiente compartilhado equivalente", en: "Compare MZ vs DZ to estimate h²; assume equal shared environment"}
+        rationale: {pt: "Quando MZ correlacionam mais que DZ, então genética explica diferença — ressalvado o ambiente.", en: "When MZ correlate higher than DZ, genetics explains the gap — pending environmental caveats."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GWAS (estudo associação genômica ampla):", en: "GWAS (genome-wide association study):"}
+        choices:
+          - {pt: "Mede SNPs em milhões de pessoas associando variantes a traços com correção múltipla", en: "Tests SNPs across millions of people associating variants with traits with multiple-testing correction"}
+          - {pt: "Apenas sequenciamento Sanger isolado", en: "Just isolated Sanger sequencing"}
+          - {pt: "Apenas western blot", en: "Just western blot"}
+          - {pt: "Apenas microscopia eletrônica", en: "Just electron microscopy"}
+        correctAnswer: {pt: "Mede SNPs em milhões de pessoas associando variantes a traços com correção múltipla", en: "Tests SNPs across millions of people associating variants with traits with multiple-testing correction"}
+        rationale: {pt: "Quando coortes crescem, então sinais poligênicos sutis ficam estatisticamente claros.", en: "When cohorts grow, subtle polygenic signals become statistically clear."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Escore poligênico (PGS):", en: "Polygenic score (PGS):"}
+        choices:
+          - {pt: "Soma ponderada de variantes-efeito; estima risco/predisposição de traço por indivíduo", en: "Weighted sum of effect variants; estimates trait risk/predisposition per individual"}
+          - {pt: "Apenas teste único de gene", en: "Just single gene test"}
+          - {pt: "Apenas exame imagem", en: "Just imaging exam"}
+          - {pt: "Apenas anamnese", en: "Just anamnesis"}
+        correctAnswer: {pt: "Soma ponderada de variantes-efeito; estima risco/predisposição de traço por indivíduo", en: "Weighted sum of effect variants; estimates trait risk/predisposition per individual"}
+        rationale: {pt: "Quando muitas variantes contribuem, então PGS captura risco mesmo sem causa única.", en: "When many variants contribute, PGS captures risk even without single cause."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Interação gene-ambiente (GxE):", en: "Gene-environment interaction (GxE):"}
+        choices:
+          - {pt: "Efeitos genéticos dependem de exposições — herdabilidade muda com contexto", en: "Genetic effects depend on exposures — heritability changes with context"}
+          - {pt: "Apenas determinismo genético puro", en: "Just pure genetic determinism"}
+          - {pt: "Apenas ambiente puro", en: "Just pure environment"}
+          - {pt: "Apenas covariação trivial", en: "Just trivial covariation"}
+        correctAnswer: {pt: "Efeitos genéticos dependem de exposições — herdabilidade muda com contexto", en: "Genetic effects depend on exposures — heritability changes with context"}
+        rationale: {pt: "Quando contexto varia, então mesmos genes geram fenótipos distintos.", en: "When context varies, same genes produce distinct phenotypes."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Correlação gene-ambiente (rGE):", en: "Gene-environment correlation (rGE):"}
+        choices:
+          - {pt: "Genótipos selecionam ou criam ambientes — passiva, evocativa, ativa", en: "Genotypes select or create environments — passive, evocative, active"}
+          - {pt: "Apenas confusão causal", en: "Just causal confound"}
+          - {pt: "Apenas erro de medida", en: "Just measurement error"}
+          - {pt: "Apenas ruído estatístico", en: "Just statistical noise"}
+        correctAnswer: {pt: "Genótipos selecionam ou criam ambientes — passiva, evocativa, ativa", en: "Genotypes select or create environments — passive, evocative, active"}
+        rationale: {pt: "Quando crianças com tendência verbal escolhem livros, então rGE amplifica efeitos genéticos.", en: "When verbally-inclined children pick books, rGE amplifies genetic effects."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Endofenótipos:", en: "Endophenotypes:"}
+        choices:
+          - {pt: "Traços biológicos intermediários (EEG, neuroimagem) entre gene e comportamento clínico", en: "Intermediate biological traits (EEG, neuroimaging) between gene and clinical behavior"}
+          - {pt: "Apenas sintomas explícitos", en: "Just explicit symptoms"}
+          - {pt: "Apenas testes psicométricos isolados", en: "Just isolated psychometric tests"}
+          - {pt: "Apenas autoavaliação", en: "Just self-report"}
+        correctAnswer: {pt: "Traços biológicos intermediários (EEG, neuroimagem) entre gene e comportamento clínico", en: "Intermediate biological traits (EEG, neuroimaging) between gene and clinical behavior"}
+        rationale: {pt: "Quando endofenótipos são medidos, então mecanismo entre DNA e comportamento aparece.", en: "When endophenotypes are measured, mechanism between DNA and behavior surfaces."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Missing heritability:", en: "Missing heritability:"}
+        choices:
+          - {pt: "GWAS captura fração da herdabilidade — restante em variantes raras, estrutural, GxE", en: "GWAS captures fraction of heritability — remainder in rare variants, structural, GxE"}
+          - {pt: "Apenas erro experimental", en: "Just experimental error"}
+          - {pt: "Apenas má amostragem", en: "Just bad sampling"}
+          - {pt: "Apenas falta de poder", en: "Just lack of power"}
+        correctAnswer: {pt: "GWAS captura fração da herdabilidade — restante em variantes raras, estrutural, GxE", en: "GWAS captures fraction of heritability — remainder in rare variants, structural, GxE"}
+        rationale: {pt: "Quando arquitetura é distribuída, então diferentes técnicas capturam camadas diversas.", en: "When architecture is distributed, different techniques capture different layers."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pleiotropia:", en: "Pleiotropy:"}
+        choices:
+          - {pt: "Mesmo gene afeta múltiplos traços — base de comorbidades genéticas", en: "Same gene affects multiple traits — basis of genetic comorbidity"}
+          - {pt: "Apenas mutação trivial", en: "Just trivial mutation"}
+          - {pt: "Apenas linhagem ancestral", en: "Just ancestral lineage"}
+          - {pt: "Apenas marcador neutro", en: "Just neutral marker"}
+        correctAnswer: {pt: "Mesmo gene afeta múltiplos traços — base de comorbidades genéticas", en: "Same gene affects multiple traits — basis of genetic comorbidity"}
+        rationale: {pt: "Quando pleiotropia age, então depressão e ansiedade podem compartilhar variantes.", en: "When pleiotropy operates, depression and anxiety can share variants."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mendelian randomization:", en: "Mendelian randomization:"}
+        choices:
+          - {pt: "Usa variantes genéticas como instrumentos para inferir causalidade observacional", en: "Uses genetic variants as instruments to infer observational causality"}
+          - {pt: "Apenas RCT clássico", en: "Just classic RCT"}
+          - {pt: "Apenas estudo descritivo", en: "Just descriptive study"}
+          - {pt: "Apenas opinião especialista", en: "Just expert opinion"}
+        correctAnswer: {pt: "Usa variantes genéticas como instrumentos para inferir causalidade observacional", en: "Uses genetic variants as instruments to infer observational causality"}
+        rationale: {pt: "Quando alelos são aleatórios, então confundidores se distribuem como em RCT natural.", en: "When alleles are random, confounders distribute as in a natural RCT."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações e ética", en: "Applications and ethics"}
+    description: {pt: "PGS na clínica e questões sociais.", en: "PGS in clinic and social questions."}
+    exercises:
+      - type: choice
+        question: {pt: "Inteligência e genética:", en: "Intelligence and genetics:"}
+        choices:
+          - {pt: "h² alta em adultos (~50–80%) com arquitetura altamente poligênica", en: "High adult h² (~50–80%) with highly polygenic architecture"}
+          - {pt: "Apenas determinação por um gene", en: "Just single-gene determination"}
+          - {pt: "Apenas determinação ambiental absoluta", en: "Just absolute environmental determination"}
+          - {pt: "Apenas medida arbitrária", en: "Just arbitrary measure"}
+        correctAnswer: {pt: "h² alta em adultos (~50–80%) com arquitetura altamente poligênica", en: "High adult h² (~50–80%) with highly polygenic architecture"}
+        rationale: {pt: "Quando muitos efeitos pequenos somam, então PGS prediz frações relevantes da variação.", en: "When many small effects sum, PGS predicts meaningful variance."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Esquizofrenia genética:", en: "Schizophrenia genetics:"}
+        choices:
+          - {pt: "PGS + CNVs (22q11) + variantes raras explicam parte do risco poligênico complexo", en: "PGS + CNVs (22q11) + rare variants explain part of complex polygenic risk"}
+          - {pt: "Apenas evento traumático", en: "Just traumatic event"}
+          - {pt: "Apenas educação familiar", en: "Just family education"}
+          - {pt: "Apenas dieta", en: "Just diet"}
+        correctAnswer: {pt: "PGS + CNVs (22q11) + variantes raras explicam parte do risco poligênico complexo", en: "PGS + CNVs (22q11) + rare variants explain part of complex polygenic risk"}
+        rationale: {pt: "Quando arquitetura mista atua, então abordagens combinadas capturam risco real.", en: "When mixed architecture acts, combined approaches capture real risk."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Embrião com PGS (uso atual):", en: "Embryo PGS (current use):"}
+        choices:
+          - {pt: "Empresas oferecem seleção controversa por risco poligênico em FIV — eficácia limitada", en: "Companies offer controversial polygenic-risk embryo selection in IVF — limited efficacy"}
+          - {pt: "Apenas medicina clássica", en: "Just classical medicine"}
+          - {pt: "Apenas screening pré-natal padrão", en: "Just standard prenatal screening"}
+          - {pt: "Apenas exame ultrassom", en: "Just ultrasound exam"}
+        correctAnswer: {pt: "Empresas oferecem seleção controversa por risco poligênico em FIV — eficácia limitada", en: "Companies offer controversial polygenic-risk embryo selection in IVF — limited efficacy"}
+        rationale: {pt: "Quando PGS é aplicado a embriões, então debate ético e ganho real são limitados.", en: "When PGS is applied to embryos, ethics debate and real gain are constrained."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Viés de ancestralidade em PGS:", en: "Ancestry bias in PGS:"}
+        choices:
+          - {pt: "Treinados em populações europeias têm performance reduzida em outras — equidade ameaçada", en: "Trained on European populations, perform worse on others — equity threatened"}
+          - {pt: "Apenas problema técnico irrelevante", en: "Just irrelevant technical issue"}
+          - {pt: "Apenas falta de orçamento", en: "Just budget shortage"}
+          - {pt: "Apenas desafio computacional", en: "Just computational challenge"}
+        correctAnswer: {pt: "Treinados em populações europeias têm performance reduzida em outras — equidade ameaçada", en: "Trained on European populations, perform worse on others — equity threatened"}
+        rationale: {pt: "Quando dados não diversificam, então benefícios genômicos se concentram inequitativamente.", en: "When data lacks diversity, genomic benefits concentrate inequitably."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Comportamento aditivo (uso de substância):", en: "Addictive behavior (substance use):"}
+        choices:
+          - {pt: "Variantes em CHRNA5, ALDH2 modulam vulnerabilidade a tabaco e álcool", en: "CHRNA5, ALDH2 variants modulate vulnerability to tobacco and alcohol"}
+          - {pt: "Apenas falha moral", en: "Just moral failure"}
+          - {pt: "Apenas mau ambiente", en: "Just bad environment"}
+          - {pt: "Apenas hábito banal", en: "Just trivial habit"}
+        correctAnswer: {pt: "Variantes em CHRNA5, ALDH2 modulam vulnerabilidade a tabaco e álcool", en: "CHRNA5, ALDH2 variants modulate vulnerability to tobacco and alcohol"}
+        rationale: {pt: "Quando metabolismo difere, então riscos de dependência variam biologicamente.", en: "When metabolism differs, addiction risks vary biologically."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Determinismo vs probabilismo:", en: "Determinism vs probabilism:"}
+        choices:
+          - {pt: "PGS é probabilístico — risco populacional, não destino individual fixo", en: "PGS is probabilistic — population risk, not fixed individual fate"}
+          - {pt: "Apenas verdade absoluta", en: "Just absolute truth"}
+          - {pt: "Apenas predição binária", en: "Just binary prediction"}
+          - {pt: "Apenas certeza diagnóstica", en: "Just diagnostic certainty"}
+        correctAnswer: {pt: "PGS é probabilístico — risco populacional, não destino individual fixo", en: "PGS is probabilistic — population risk, not fixed individual fate"}
+        rationale: {pt: "Quando comunicação é clara, então uso clínico ético se torna possível.", en: "When communication is clear, ethical clinical use becomes possible."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Discriminação genética:", en: "Genetic discrimination:"}
+        choices:
+          - {pt: "Leis (GINA nos EUA) protegem contra uso indevido por seguradoras e empregadores", en: "Laws (GINA in US) protect against insurer/employer misuse"}
+          - {pt: "Apenas problema histórico", en: "Just historical issue"}
+          - {pt: "Apenas detalhe administrativo", en: "Just administrative detail"}
+          - {pt: "Apenas tema cultural", en: "Just cultural theme"}
+        correctAnswer: {pt: "Leis (GINA nos EUA) protegem contra uso indevido por seguradoras e empregadores", en: "Laws (GINA in US) protect against insurer/employer misuse"}
+        rationale: {pt: "Quando dados são protegidos, então pesquisa avança sem prejuízo a participantes.", en: "When data is protected, research advances without harming participants."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Epigenética e comportamento:", en: "Epigenetics and behavior:"}
+        choices:
+          - {pt: "Estresse, dieta, parental influenciam metilação ligada a humor e cognição", en: "Stress, diet, parenting influence methylation tied to mood and cognition"}
+          - {pt: "Apenas DNA imutável", en: "Just immutable DNA"}
+          - {pt: "Apenas hereditariedade dura", en: "Just hard heritability"}
+          - {pt: "Apenas neurotransmissão simples", en: "Just simple neurotransmission"}
+        correctAnswer: {pt: "Estresse, dieta, parental influenciam metilação ligada a humor e cognição", en: "Stress, diet, parenting influence methylation tied to mood and cognition"}
+        rationale: {pt: "Quando experiências marcam epigenoma, então biologia codifica história ambiental.", en: "When experiences mark epigenome, biology encodes environmental history."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Direct-to-consumer (23andMe):", en: "Direct-to-consumer (23andMe):"}
+        choices:
+          - {pt: "Acesso popular a dados genéticos com riscos de interpretação errônea sem aconselhamento", en: "Popular access to genetic data with misinterpretation risks without counseling"}
+          - {pt: "Apenas curiosidade vazia", en: "Just empty curiosity"}
+          - {pt: "Apenas teste validado clínico", en: "Just validated clinical test"}
+          - {pt: "Apenas substituto de exame médico", en: "Just substitute for medical exam"}
+        correctAnswer: {pt: "Acesso popular a dados genéticos com riscos de interpretação errônea sem aconselhamento", en: "Popular access to genetic data with misinterpretation risks without counseling"}
+        rationale: {pt: "Quando consumidor recebe dados crus, então erros de interpretação podem causar dano.", en: "When consumers get raw data, interpretation mistakes can cause harm."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em genética comportamental:", en: "Next behavioral genetics frontiers:"}
+        choices:
+          - {pt: "PGS multi-traço, integração com biomarcadores e ensaios randomizados informados por genoma", en: "Multi-trait PGS, biomarker integration and genome-informed randomized trials"}
+          - {pt: "Apenas teorias antigas", en: "Just old theories"}
+          - {pt: "Apenas filosofia abstrata", en: "Just abstract philosophy"}
+          - {pt: "Apenas observação anedótica", en: "Just anecdotal observation"}
+        correctAnswer: {pt: "PGS multi-traço, integração com biomarcadores e ensaios randomizados informados por genoma", en: "Multi-trait PGS, biomarker integration and genome-informed randomized trials"}
+        rationale: {pt: "Quando dados convergem, então medicina personalizada comportamental amadurece.", en: "When data converges, personalized behavioral medicine matures."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+target: 20

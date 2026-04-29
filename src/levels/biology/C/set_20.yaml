@@ -1,0 +1,244 @@
+title:
+  pt: "🎓 Revisão cumulativa C"
+  en: "🎓 Cumulative review C"
+level: 'C'
+subject: biology
+objectives: [biology.cumulative_C]
+difficulty: 5
+authorNotes: "Revisão dos 19 tópicos do nível C: single-molecule, quantitativa, mecano, morte, sono, comportamental, dor, reprodução, citoesqueleto, membranas, proteostase, condensados, sinalização, cálcio, tráfego, polaridade, morfogênese, regeneração, longevidade."
+example:
+  pt: "Ex.: revisar conceito-chave → reconhecer mecanismo → conectar com aplicação → consolidar."
+  en: "Ex.: review key concept → recognize mechanism → link with application → consolidate."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Conceitos integrados I", en: "Integrated concepts I"}
+    description: {pt: "Revisão de tópicos 01-10.", en: "Review of topics 01-10."}
+    exercises:
+      - type: choice
+        question: {pt: "Single-molecule (smFRET):", en: "Single-molecule (smFRET):"}
+        choices:
+          - {pt: "Mede distâncias intramoleculares por transferência de energia entre fluoróforos", en: "Measures intramolecular distances via energy transfer between fluorophores"}
+          - {pt: "Apenas microscopia óptica clássica", en: "Just classical light microscopy"}
+          - {pt: "Apenas western blot", en: "Just western blot"}
+          - {pt: "Apenas histologia", en: "Just histology"}
+        correctAnswer: {pt: "Mede distâncias intramoleculares por transferência de energia entre fluoróforos", en: "Measures intramolecular distances via energy transfer between fluorophores"}
+        rationale: {pt: "Quando smFRET registra, então conformações dinâmicas são vistas em tempo real.", en: "When smFRET records, dynamic conformations are seen in real time."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Network motifs:", en: "Network motifs:"}
+        choices:
+          - {pt: "Padrões recorrentes (FFL, autorregulação) que executam funções dinâmicas em redes biológicas", en: "Recurring patterns (FFL, autoregulation) executing dynamic functions in biological networks"}
+          - {pt: "Apenas decoração de gráfico", en: "Just graph decoration"}
+          - {pt: "Apenas aleatoriedade", en: "Just randomness"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+        correctAnswer: {pt: "Padrões recorrentes (FFL, autorregulação) que executam funções dinâmicas em redes biológicas", en: "Recurring patterns (FFL, autoregulation) executing dynamic functions in biological networks"}
+        rationale: {pt: "Quando motivos repetem, então robustez e filtragem temporal emergem.", en: "When motifs recur, robustness and temporal filtering emerge."}
+        objectives: [biology.quantitative]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mecanotransdução:", en: "Mechanotransduction:"}
+        choices:
+          - {pt: "Conversão de força em sinal molecular via Piezo, integrinas, YAP/TAZ", en: "Force-to-molecular-signal conversion via Piezo, integrins, YAP/TAZ"}
+          - {pt: "Apenas pressão genérica", en: "Just generic pressure"}
+          - {pt: "Apenas elasticidade passiva", en: "Just passive elasticity"}
+          - {pt: "Apenas barreira mecânica", en: "Just mechanical barrier"}
+        correctAnswer: {pt: "Conversão de força em sinal molecular via Piezo, integrinas, YAP/TAZ", en: "Force-to-molecular-signal conversion via Piezo, integrins, YAP/TAZ"}
+        rationale: {pt: "Quando célula sente, então responde com expressão e migração apropriadas.", en: "When cell senses, it responds with appropriate expression and migration."}
+        objectives: [biology.mechanobiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ferroptose:", en: "Ferroptosis:"}
+        choices:
+          - {pt: "Morte por peroxidação lipídica dependente de ferro — alvo em câncer resistente", en: "Iron-dependent lipid-peroxidation death — target in resistant cancer"}
+          - {pt: "Apenas envelhecimento celular", en: "Just cellular aging"}
+          - {pt: "Apenas apoptose comum", en: "Just common apoptosis"}
+          - {pt: "Apenas necrose acidental", en: "Just accidental necrosis"}
+        correctAnswer: {pt: "Morte por peroxidação lipídica dependente de ferro — alvo em câncer resistente", en: "Iron-dependent lipid-peroxidation death — target in resistant cancer"}
+        rationale: {pt: "Quando GPX4 falha, então PUFAs oxidam matando células sem caspase.", en: "When GPX4 fails, PUFAs oxidize killing cells without caspase."}
+        objectives: [biology.cell_death]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sistema glinfático:", en: "Glymphatic system:"}
+        choices:
+          - {pt: "Limpeza cerebral via aquaporina-4 ampliada durante NREM profundo", en: "Brain clearance via aquaporin-4 amplified during deep NREM"}
+          - {pt: "Apenas drenagem renal", en: "Just renal drainage"}
+          - {pt: "Apenas circulação periférica", en: "Just peripheral circulation"}
+          - {pt: "Apenas absorção lipídica", en: "Just lipid absorption"}
+        correctAnswer: {pt: "Limpeza cerebral via aquaporina-4 ampliada durante NREM profundo", en: "Brain clearance via aquaporin-4 amplified during deep NREM"}
+        rationale: {pt: "Quando dormimos profundo, então amiloide e tau são eliminados.", en: "When we sleep deep, amyloid and tau are cleared."}
+        objectives: [biology.sleep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Escore poligênico (PGS):", en: "Polygenic score (PGS):"}
+        choices:
+          - {pt: "Soma ponderada de variantes-efeito que estima risco populacional", en: "Weighted sum of effect variants estimating population risk"}
+          - {pt: "Apenas teste único de gene", en: "Just single gene test"}
+          - {pt: "Apenas exame imagem", en: "Just imaging exam"}
+          - {pt: "Apenas anamnese", en: "Just anamnesis"}
+        correctAnswer: {pt: "Soma ponderada de variantes-efeito que estima risco populacional", en: "Weighted sum of effect variants estimating population risk"}
+        rationale: {pt: "Quando muitas variantes contribuem, então PGS captura risco genético complexo.", en: "When many variants contribute, PGS captures complex genetic risk."}
+        objectives: [biology.behavioral_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sensibilização central:", en: "Central sensitization:"}
+        choices:
+          - {pt: "Aumento de excitabilidade no corno dorsal via NMDA — base de dor neuropática crônica", en: "Increased dorsal horn excitability via NMDA — basis of chronic neuropathic pain"}
+          - {pt: "Apenas reflexo cutâneo", en: "Just cutaneous reflex"}
+          - {pt: "Apenas dor passageira", en: "Just transient pain"}
+          - {pt: "Apenas memória auditiva", en: "Just auditory memory"}
+        correctAnswer: {pt: "Aumento de excitabilidade no corno dorsal via NMDA — base de dor neuropática crônica", en: "Increased dorsal horn excitability via NMDA — basis of chronic neuropathic pain"}
+        rationale: {pt: "Quando plasticidade central se instala, então dor persiste sem estímulo.", en: "When central plasticity sets in, pain persists without stimulus."}
+        objectives: [biology.pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PGT-A em FIV:", en: "PGT-A in IVF:"}
+        choices:
+          - {pt: "Teste pré-implantacional para aneuploidia aumenta sucesso e reduz aborto", en: "Pre-implantation aneuploidy test raises success and reduces miscarriage"}
+          - {pt: "Apenas exame ginecológico", en: "Just gynecologic exam"}
+          - {pt: "Apenas ultrassom", en: "Just ultrasound"}
+          - {pt: "Apenas cariótipo pós-natal", en: "Just postnatal karyotype"}
+        correctAnswer: {pt: "Teste pré-implantacional para aneuploidia aumenta sucesso e reduz aborto", en: "Pre-implantation aneuploidy test raises success and reduces miscarriage"}
+        rationale: {pt: "Quando seleção é informada, então transferência aumenta sucesso clínico.", en: "When selection is informed, transfer raises clinical success."}
+        objectives: [biology.reproduction_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cinesinas vs dineínas:", en: "Kinesins vs dyneins:"}
+        choices:
+          - {pt: "Cinesinas vão ao + (anterógrado); dineínas ao − (retrógrado) em microtúbulos", en: "Kinesins move toward + (anterograde); dyneins toward − (retrograde) on microtubules"}
+          - {pt: "Apenas direções idênticas", en: "Just identical directions"}
+          - {pt: "Apenas marcadores genéricos", en: "Just generic markers"}
+          - {pt: "Apenas via metabólica", en: "Just metabolic pathway"}
+        correctAnswer: {pt: "Cinesinas vão ao + (anterógrado); dineínas ao − (retrógrado) em microtúbulos", en: "Kinesins move toward + (anterograde); dyneins toward − (retrograde) on microtubules"}
+        rationale: {pt: "Quando direções são opostas, então tráfego intracelular é bidirecional.", en: "When directions oppose, intracellular trafficking is bidirectional."}
+        objectives: [biology.cytoskeleton]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipid rafts:", en: "Lipid rafts:"}
+        choices:
+          - {pt: "Microdomínios ricos em colesterol/esfingolipídios concentrando proteínas de sinalização", en: "Cholesterol/sphingolipid-rich microdomains concentrating signaling proteins"}
+          - {pt: "Apenas defeito membranar", en: "Just membrane defect"}
+          - {pt: "Apenas vacúolo grande", en: "Just large vacuole"}
+          - {pt: "Apenas inclusão lipídica", en: "Just lipid inclusion"}
+        correctAnswer: {pt: "Microdomínios ricos em colesterol/esfingolipídios concentrando proteínas de sinalização", en: "Cholesterol/sphingolipid-rich microdomains concentrating signaling proteins"}
+        rationale: {pt: "Quando rafts se formam, então sinalização localizada e seletiva ocorre.", en: "When rafts form, localized and selective signaling occurs."}
+        objectives: [biology.membranes]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Conceitos integrados II", en: "Integrated concepts II"}
+    description: {pt: "Revisão de tópicos 11-19.", en: "Review of topics 11-19."}
+    exercises:
+      - type: choice
+        question: {pt: "UPS (sistema ubiquitina-proteassoma):", en: "UPS (ubiquitin-proteasome):"}
+        choices:
+          - {pt: "E1-E2-E3 marca substratos com K48 e proteassoma 26S degrada seletivamente", en: "E1-E2-E3 tags substrates with K48 and 26S proteasome selectively degrades"}
+          - {pt: "Apenas reciclagem aleatória", en: "Just random recycling"}
+          - {pt: "Apenas exportação extracelular", en: "Just extracellular export"}
+          - {pt: "Apenas armazenamento eterno", en: "Just eternal storage"}
+        correctAnswer: {pt: "E1-E2-E3 marca substratos com K48 e proteassoma 26S degrada seletivamente", en: "E1-E2-E3 tags substrates with K48 and 26S proteasome selectively degrades"}
+        rationale: {pt: "Quando UPS funciona, então proteínas anormais são removidas com precisão.", en: "When UPS works, abnormal proteins are removed with precision."}
+        objectives: [biology.protein_quality]
+        difficulty: 5
+      - type: choice
+        question: {pt: "LLPS:", en: "LLPS:"}
+        choices:
+          - {pt: "Demixagem em fase densa e diluída sem membrana via IDRs e multivalência", en: "Demixing into dense and dilute phases without membrane via IDRs and multivalency"}
+          - {pt: "Apenas cristal sólido", en: "Just solid crystal"}
+          - {pt: "Apenas precipitação irreversível", en: "Just irreversible precipitation"}
+          - {pt: "Apenas turbidez aleatória", en: "Just random turbidity"}
+        correctAnswer: {pt: "Demixagem em fase densa e diluída sem membrana via IDRs e multivalência", en: "Demixing into dense and dilute phases without membrane via IDRs and multivalency"}
+        rationale: {pt: "Quando concentração ultrapassa limiar, então gotículas funcionais emergem.", en: "When concentration crosses threshold, functional droplets emerge."}
+        objectives: [biology.condensates]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cascata MAPK:", en: "MAPK cascade:"}
+        choices:
+          - {pt: "Ras → Raf → MEK → ERK fosforila TFs regulando proliferação", en: "Ras → Raf → MEK → ERK phosphorylates TFs regulating proliferation"}
+          - {pt: "Apenas via metabólica", en: "Just metabolic pathway"}
+          - {pt: "Apenas reciclagem proteica", en: "Just protein recycling"}
+          - {pt: "Apenas absorção iônica", en: "Just ion absorption"}
+        correctAnswer: {pt: "Ras → Raf → MEK → ERK fosforila TFs regulando proliferação", en: "Ras → Raf → MEK → ERK phosphorylates TFs regulating proliferation"}
+        rationale: {pt: "Quando cascata amplifica, então sinal pequeno gera resposta gênica grande.", en: "When cascade amplifies, small signal yields large gene response."}
+        objectives: [biology.signaling]
+        difficulty: 5
+      - type: choice
+        question: {pt: "IP3R:", en: "IP3R:"}
+        choices:
+          - {pt: "Receptor de IP3 no RE libera Ca²⁺ após PLC ativada por GPCRs/RTKs", en: "ER IP3 receptor releases Ca²⁺ after PLC activated by GPCRs/RTKs"}
+          - {pt: "Apenas adesão genérica", en: "Just generic adhesion"}
+          - {pt: "Apenas hormônio", en: "Just hormone"}
+          - {pt: "Apenas pigmento", en: "Just pigment"}
+        correctAnswer: {pt: "Receptor de IP3 no RE libera Ca²⁺ após PLC ativada por GPCRs/RTKs", en: "ER IP3 receptor releases Ca²⁺ after PLC activated by GPCRs/RTKs"}
+        rationale: {pt: "Quando IP3 sobe, então Ca²⁺ é mobilizado de estoques rapidamente.", en: "When IP3 rises, Ca²⁺ is rapidly mobilized from stores."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "COPII:", en: "COPII:"}
+        choices:
+          - {pt: "Coat para vesículas RE→Golgi com Sar1, Sec23/24, Sec13/31", en: "Coat for ER→Golgi vesicles with Sar1, Sec23/24, Sec13/31"}
+          - {pt: "Apenas chaperone genérico", en: "Just generic chaperone"}
+          - {pt: "Apenas hormônio passivo", en: "Just passive hormone"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Coat para vesículas RE→Golgi com Sar1, Sec23/24, Sec13/31", en: "Coat for ER→Golgi vesicles with Sar1, Sec23/24, Sec13/31"}
+        rationale: {pt: "Quando COPII forma, então cargas saem do RE em direção ao Golgi.", en: "When COPII forms, cargo exits ER toward Golgi."}
+        objectives: [biology.trafficking]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Polaridade planar (PCP):", en: "Planar cell polarity (PCP):"}
+        choices:
+          - {pt: "Frizzled/Vangl orientam pelos de pele e cílios cocleares", en: "Frizzled/Vangl orient skin hairs and cochlear cilia"}
+          - {pt: "Apenas resposta imune", en: "Just immune response"}
+          - {pt: "Apenas pigmentação difusa", en: "Just diffuse pigmentation"}
+          - {pt: "Apenas digestão luminal", en: "Just luminal digestion"}
+        correctAnswer: {pt: "Frizzled/Vangl orientam pelos de pele e cílios cocleares", en: "Frizzled/Vangl orient skin hairs and cochlear cilia"}
+        rationale: {pt: "Quando PCP funciona, então tecidos têm direção coletiva consistente.", en: "When PCP works, tissues have consistent collective direction."}
+        objectives: [biology.polarity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Morfógeno:", en: "Morphogen:"}
+        choices:
+          - {pt: "Substância difusora cuja concentração local especifica destinos por gradiente", en: "Diffusible substance whose local concentration specifies fates by gradient"}
+          - {pt: "Apenas decoração estrutural", en: "Just structural decoration"}
+          - {pt: "Apenas via metabólica", en: "Just metabolic pathway"}
+          - {pt: "Apenas pigmento", en: "Just pigment"}
+        correctAnswer: {pt: "Substância difusora cuja concentração local especifica destinos por gradiente", en: "Diffusible substance whose local concentration specifies fates by gradient"}
+        rationale: {pt: "Quando gradiente forma, então células leem posição informacionalmente.", en: "When gradient forms, cells read positional information."}
+        objectives: [biology.morphogenesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Blastema:", en: "Blastema:"}
+        choices:
+          - {pt: "Massa de células progenitoras desdiferenciadas que recapitula desenvolvimento", en: "Mass of dedifferentiated progenitor cells recapitulating development"}
+          - {pt: "Apenas tecido cicatricial", en: "Just scar tissue"}
+          - {pt: "Apenas inflamação", en: "Just inflammation"}
+          - {pt: "Apenas necrose", en: "Just necrosis"}
+        correctAnswer: {pt: "Massa de células progenitoras desdiferenciadas que recapitula desenvolvimento", en: "Mass of dedifferentiated progenitor cells recapitulating development"}
+        rationale: {pt: "Quando blastema forma, então tecidos faltantes são reconstruídos com padrão correto.", en: "When blastema forms, missing tissues are rebuilt with correct pattern."}
+        objectives: [biology.regeneration]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Senolíticos:", en: "Senolytics:"}
+        choices:
+          - {pt: "Dasatinibe + quercetina, navitoclax matam células senescentes melhorando função", en: "Dasatinib + quercetin, navitoclax kill senescent cells improving function"}
+          - {pt: "Apenas suplementos", en: "Just supplements"}
+          - {pt: "Apenas vitaminas", en: "Just vitamins"}
+          - {pt: "Apenas chá", en: "Just tea"}
+        correctAnswer: {pt: "Dasatinibe + quercetina, navitoclax matam células senescentes melhorando função", en: "Dasatinib + quercetin, navitoclax kill senescent cells improving function"}
+        rationale: {pt: "Quando senolíticos atuam, então tecidos envelhecidos recuperam capacidade.", en: "When senolytics act, aged tissues regain capacity."}
+        objectives: [biology.aging_interventions]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese geral do nível C:", en: "Level C overall synthesis:"}
+        choices:
+          - {pt: "Biologia moderna integra molecular, mecânico, computacional e clínico em escala multi-omic", en: "Modern biology integrates molecular, mechanical, computational and clinical at multi-omic scale"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Biologia moderna integra molecular, mecânico, computacional e clínico em escala multi-omic", en: "Modern biology integrates molecular, mechanical, computational and clinical at multi-omic scale"}
+        rationale: {pt: "Quando disciplinas convergem, então biologia gera medicina precisa em todas frontes.", en: "When disciplines converge, biology yields precise medicine on all fronts."}
+        objectives: [biology.cumulative_C]
+        difficulty: 5
+target: 20

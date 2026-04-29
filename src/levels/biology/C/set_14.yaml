@@ -1,0 +1,244 @@
+title:
+  pt: "🪣 Sinalização de cálcio"
+  en: "🪣 Calcium signaling"
+level: 'C'
+subject: biology
+objectives: [biology.calcium]
+difficulty: 5
+authorNotes: "Canais Ca²⁺, IP3R, RyR, mitocondrial, calmodulina, oscilações, papel em contração e morte."
+example:
+  pt: "Ex.: GPCR-Gq → PLC → IP3 → libera Ca²⁺ do RE → calmodulina → resposta celular."
+  en: "Ex.: GPCR-Gq → PLC → IP3 → ER Ca²⁺ release → calmodulin → cellular response."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Canais e fontes", en: "Channels and sources"}
+    description: {pt: "Origens do sinal de Ca²⁺.", en: "Sources of Ca²⁺ signal."}
+    exercises:
+      - type: choice
+        question: {pt: "Gradiente de Ca²⁺:", en: "Ca²⁺ gradient:"}
+        choices:
+          - {pt: "Citosol mantém ~100 nM enquanto extracelular e RE estocam ~10 mM e ~mM respectivamente", en: "Cytosol holds ~100 nM while extracellular and ER store ~10 mM and ~mM respectively"}
+          - {pt: "Apenas distribuição uniforme", en: "Just uniform distribution"}
+          - {pt: "Apenas equilíbrio simples", en: "Just simple equilibrium"}
+          - {pt: "Apenas reserva inerte", en: "Just inert reserve"}
+        correctAnswer: {pt: "Citosol mantém ~100 nM enquanto extracelular e RE estocam ~10 mM e ~mM respectivamente", en: "Cytosol holds ~100 nM while extracellular and ER store ~10 mM and ~mM respectively"}
+        rationale: {pt: "Quando gradiente íngreme existe, então pulsos de Ca²⁺ funcionam como sinal rápido.", en: "When steep gradient exists, Ca²⁺ pulses act as fast signal."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "IP3R:", en: "IP3R:"}
+        choices:
+          - {pt: "Receptor de IP3 no RE libera Ca²⁺ após ativação de PLC por GPCRs/RTKs", en: "ER IP3 receptor releases Ca²⁺ after PLC activation by GPCRs/RTKs"}
+          - {pt: "Apenas adesão genérica", en: "Just generic adhesion"}
+          - {pt: "Apenas hormônio circulante", en: "Just circulating hormone"}
+          - {pt: "Apenas pigmento celular", en: "Just cell pigment"}
+        correctAnswer: {pt: "Receptor de IP3 no RE libera Ca²⁺ após ativação de PLC por GPCRs/RTKs", en: "ER IP3 receptor releases Ca²⁺ after PLC activation by GPCRs/RTKs"}
+        rationale: {pt: "Quando IP3 sobe, então Ca²⁺ é mobilizado de estoques internos rapidamente.", en: "When IP3 rises, Ca²⁺ is rapidly mobilized from internal stores."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RyR:", en: "RyR:"}
+        choices:
+          - {pt: "Canal liberador no SR muscular ativado por Ca²⁺ ou despolarização (CICR/EC coupling)", en: "Releasing channel in muscle SR activated by Ca²⁺ or depolarization (CICR/EC coupling)"}
+          - {pt: "Apenas canal Cl⁻", en: "Just Cl⁻ channel"}
+          - {pt: "Apenas via metabólica", en: "Just metabolic pathway"}
+          - {pt: "Apenas hormônio anabólico", en: "Just anabolic hormone"}
+        correctAnswer: {pt: "Canal liberador no SR muscular ativado por Ca²⁺ ou despolarização (CICR/EC coupling)", en: "Releasing channel in muscle SR activated by Ca²⁺ or depolarization (CICR/EC coupling)"}
+        rationale: {pt: "Quando RyR abre, então contração muscular acontece em milissegundos.", en: "When RyR opens, muscle contraction happens in milliseconds."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Canais voltagem-dependentes Cav:", en: "Voltage-gated Cav channels:"}
+        choices:
+          - {pt: "L-type, P/Q-type ativam-se na despolarização permitindo entrada de Ca²⁺ extracelular", en: "L-type, P/Q-type activate on depolarization allowing extracellular Ca²⁺ entry"}
+          - {pt: "Apenas adesão glandular", en: "Just glandular adhesion"}
+          - {pt: "Apenas receptores nucleares", en: "Just nuclear receptors"}
+          - {pt: "Apenas microscopia eletrônica", en: "Just electron microscopy"}
+        correctAnswer: {pt: "L-type, P/Q-type ativam-se na despolarização permitindo entrada de Ca²⁺ extracelular", en: "L-type, P/Q-type activate on depolarization allowing extracellular Ca²⁺ entry"}
+        rationale: {pt: "Quando potencial muda, então cálcio entra disparando exocitose ou contração.", en: "When potential shifts, calcium enters triggering exocytosis or contraction."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SERCA e PMCA:", en: "SERCA and PMCA:"}
+        choices:
+          - {pt: "Bombas que devolvem Ca²⁺ ao RE (SERCA) ou exterior (PMCA) restaurando concentrações basais", en: "Pumps returning Ca²⁺ to ER (SERCA) or outside (PMCA) restoring basal concentrations"}
+          - {pt: "Apenas via metabólica", en: "Just metabolic pathway"}
+          - {pt: "Apenas hormônio passivo", en: "Just passive hormone"}
+          - {pt: "Apenas chaperone", en: "Just chaperone"}
+        correctAnswer: {pt: "Bombas que devolvem Ca²⁺ ao RE (SERCA) ou exterior (PMCA) restaurando concentrações basais", en: "Pumps returning Ca²⁺ to ER (SERCA) or outside (PMCA) restoring basal concentrations"}
+        rationale: {pt: "Quando bombas funcionam, então sinal termina permitindo nova ativação.", en: "When pumps work, signal terminates allowing new activation."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MCU:", en: "MCU:"}
+        choices:
+          - {pt: "Uniporter mitocondrial captura Ca²⁺ acoplando metabolismo e morte celular", en: "Mitochondrial uniporter captures Ca²⁺ coupling metabolism and cell death"}
+          - {pt: "Apenas reciclagem proteica", en: "Just protein recycling"}
+          - {pt: "Apenas adesão genérica", en: "Just generic adhesion"}
+          - {pt: "Apenas pigmento", en: "Just pigment"}
+        correctAnswer: {pt: "Uniporter mitocondrial captura Ca²⁺ acoplando metabolismo e morte celular", en: "Mitochondrial uniporter captures Ca²⁺ coupling metabolism and cell death"}
+        rationale: {pt: "Quando MCU sobrecarrega, então MOMP é disparada levando à apoptose.", en: "When MCU overloads, MOMP fires leading to apoptosis."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Calmodulina (CaM):", en: "Calmodulin (CaM):"}
+        choices:
+          - {pt: "Sensor universal — liga 4 Ca²⁺ e ativa centenas de alvos como CaMKII, calcineurina", en: "Universal sensor — binds 4 Ca²⁺ and activates hundreds of targets like CaMKII, calcineurin"}
+          - {pt: "Apenas hormônio único", en: "Just single hormone"}
+          - {pt: "Apenas receptor olfativo", en: "Just olfactory receptor"}
+          - {pt: "Apenas adesão estrutural", en: "Just structural adhesion"}
+        correctAnswer: {pt: "Sensor universal — liga 4 Ca²⁺ e ativa centenas de alvos como CaMKII, calcineurina", en: "Universal sensor — binds 4 Ca²⁺ and activates hundreds of targets like CaMKII, calcineurin"}
+        rationale: {pt: "Quando CaM se ativa, então sinalização ramifica para múltiplas vias.", en: "When CaM activates, signaling branches into multiple pathways."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Calcineurina:", en: "Calcineurin:"}
+        choices:
+          - {pt: "Fosfatase Ca-CaM dependente que defosforila NFAT permitindo entrada nuclear (T cells)", en: "Ca-CaM dependent phosphatase that dephosphorylates NFAT enabling nuclear import (T cells)"}
+          - {pt: "Apenas via energética", en: "Just energy pathway"}
+          - {pt: "Apenas adesão genérica", en: "Just generic adhesion"}
+          - {pt: "Apenas hormônio sexual", en: "Just sex hormone"}
+        correctAnswer: {pt: "Fosfatase Ca-CaM dependente que defosforila NFAT permitindo entrada nuclear (T cells)", en: "Ca-CaM dependent phosphatase that dephosphorylates NFAT enabling nuclear import (T cells)"}
+        rationale: {pt: "Quando NFAT entra no núcleo, então resposta imune T se ativa — alvo de ciclosporina.", en: "When NFAT enters nucleus, T immune response activates — cyclosporine target."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Oscilações de Ca²⁺:", en: "Ca²⁺ oscillations:"}
+        choices:
+          - {pt: "Frequência codifica especificidade — diferentes ritmos ativam diferentes genes", en: "Frequency encodes specificity — different rhythms activate different genes"}
+          - {pt: "Apenas ruído estático", en: "Just static noise"}
+          - {pt: "Apenas evento único", en: "Just single event"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Frequência codifica especificidade — diferentes ritmos ativam diferentes genes", en: "Frequency encodes specificity — different rhythms activate different genes"}
+        rationale: {pt: "Quando oscilações variam, então célula multiplexa informações via mesmo segundo mensageiro.", en: "When oscillations vary, cell multiplexes information via same second messenger."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tampões de Ca²⁺:", en: "Ca²⁺ buffers:"}
+        choices:
+          - {pt: "Calbindina, parvalbumina, calretinina sequestram Ca²⁺ moldando dinâmica espacial", en: "Calbindin, parvalbumin, calretinin sequester Ca²⁺ shaping spatial dynamics"}
+          - {pt: "Apenas pigmentos benignos", en: "Just benign pigments"}
+          - {pt: "Apenas marcadores estruturais", en: "Just structural markers"}
+          - {pt: "Apenas reservas energéticas", en: "Just energy reserves"}
+        correctAnswer: {pt: "Calbindina, parvalbumina, calretinina sequestram Ca²⁺ moldando dinâmica espacial", en: "Calbindin, parvalbumin, calretinin sequester Ca²⁺ shaping spatial dynamics"}
+        rationale: {pt: "Quando tampões agem, então microdomínios de Ca²⁺ formam-se com precisão.", en: "When buffers act, Ca²⁺ microdomains form with precision."}
+        objectives: [biology.calcium]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Funções e doenças", en: "Functions and disease"}
+    description: {pt: "Da contração à patologia.", en: "From contraction to pathology."}
+    exercises:
+      - type: choice
+        question: {pt: "Acoplamento E-C cardíaco:", en: "Cardiac E-C coupling:"}
+        choices:
+          - {pt: "Despolarização → L-type → CICR via RyR2 → contração; SERCA recapta para relaxamento", en: "Depolarization → L-type → CICR via RyR2 → contraction; SERCA reuptakes for relaxation"}
+          - {pt: "Apenas reflexo nervoso", en: "Just nervous reflex"}
+          - {pt: "Apenas ritmo respiratório", en: "Just respiratory rhythm"}
+          - {pt: "Apenas adesão estrutural", en: "Just structural adhesion"}
+        correctAnswer: {pt: "Despolarização → L-type → CICR via RyR2 → contração; SERCA recapta para relaxamento", en: "Depolarization → L-type → CICR via RyR2 → contraction; SERCA reuptakes for relaxation"}
+        rationale: {pt: "Quando ciclo Ca²⁺ falha, então arritmias e insuficiência cardíaca emergem.", en: "When Ca²⁺ cycle fails, arrhythmias and heart failure emerge."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hipertermia maligna:", en: "Malignant hyperthermia:"}
+        choices:
+          - {pt: "Mutação RyR1 leva a liberação descontrolada de Ca²⁺ por anestésicos halogenados", en: "RyR1 mutation leads to uncontrolled Ca²⁺ release by halogenated anesthetics"}
+          - {pt: "Apenas alergia simples", en: "Just simple allergy"}
+          - {pt: "Apenas reação psicológica", en: "Just psychological reaction"}
+          - {pt: "Apenas erro cirúrgico", en: "Just surgical error"}
+        correctAnswer: {pt: "Mutação RyR1 leva a liberação descontrolada de Ca²⁺ por anestésicos halogenados", en: "RyR1 mutation leads to uncontrolled Ca²⁺ release by halogenated anesthetics"}
+        rationale: {pt: "Quando dantroleno bloqueia RyR1, então crise é controlada salvando vida.", en: "When dantrolene blocks RyR1, crisis is controlled saving life."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bloqueadores de canal Ca²⁺:", en: "Ca²⁺ channel blockers:"}
+        choices:
+          - {pt: "Diidropiridinas (anlodipino) e não-DHP (verapamil) tratam HAS, angina e arritmias", en: "Dihydropyridines (amlodipine) and non-DHP (verapamil) treat HTN, angina and arrhythmias"}
+          - {pt: "Apenas analgésico simples", en: "Just simple analgesic"}
+          - {pt: "Apenas anti-inflamatório", en: "Just anti-inflammatory"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+        correctAnswer: {pt: "Diidropiridinas (anlodipino) e não-DHP (verapamil) tratam HAS, angina e arritmias", en: "Dihydropyridines (amlodipine) and non-DHP (verapamil) treat HTN, angina and arrhythmias"}
+        rationale: {pt: "Quando Cav L-type é bloqueado, então músculo liso vasodilata e cardíaco relaxa.", en: "When L-type Cav is blocked, smooth muscle vasodilates and cardiac relaxes."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Memória sináptica e Ca²⁺:", en: "Synaptic memory and Ca²⁺:"}
+        choices:
+          - {pt: "NMDAR permite Ca²⁺ que ativa CaMKII e induz LTP — base celular do aprendizado", en: "NMDAR admits Ca²⁺ activating CaMKII and inducing LTP — cellular basis of learning"}
+          - {pt: "Apenas fluxo motor", en: "Just motor flow"}
+          - {pt: "Apenas reflexo simples", en: "Just simple reflex"}
+          - {pt: "Apenas resposta hormonal", en: "Just hormonal response"}
+        correctAnswer: {pt: "NMDAR permite Ca²⁺ que ativa CaMKII e induz LTP — base celular do aprendizado", en: "NMDAR admits Ca²⁺ activating CaMKII and inducing LTP — cellular basis of learning"}
+        rationale: {pt: "Quando LTP se forma, então sinapses fortalecem permanentemente memórias.", en: "When LTP forms, synapses permanently strengthen memories."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Neurônios e Ca²⁺ em apoptose:", en: "Neurons and Ca²⁺ in apoptosis:"}
+        choices:
+          - {pt: "Excitotoxicidade glutamatérgica eleva Ca²⁺ → calpaínas → MOMP → morte (AVC)", en: "Glutamatergic excitotoxicity raises Ca²⁺ → calpains → MOMP → death (stroke)"}
+          - {pt: "Apenas envelhecimento celular", en: "Just cellular aging"}
+          - {pt: "Apenas cansaço metabólico", en: "Just metabolic fatigue"}
+          - {pt: "Apenas hibernação", en: "Just hibernation"}
+        correctAnswer: {pt: "Excitotoxicidade glutamatérgica eleva Ca²⁺ → calpaínas → MOMP → morte (AVC)", en: "Glutamatergic excitotoxicity raises Ca²⁺ → calpains → MOMP → death (stroke)"}
+        rationale: {pt: "Quando Ca²⁺ explode, então cascata destrutiva mata neurônios em isquemia.", en: "When Ca²⁺ explodes, destructive cascade kills neurons in ischemia."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ca²⁺ em fertilização:", en: "Ca²⁺ in fertilization:"}
+        choices:
+          - {pt: "Onda de Ca²⁺ no oócito ativa metabolismo e bloqueia poliesperma", en: "Ca²⁺ wave in oocyte activates metabolism and blocks polyspermy"}
+          - {pt: "Apenas ruído molecular", en: "Just molecular noise"}
+          - {pt: "Apenas evento mecânico", en: "Just mechanical event"}
+          - {pt: "Apenas reação imune", en: "Just immune reaction"}
+        correctAnswer: {pt: "Onda de Ca²⁺ no oócito ativa metabolismo e bloqueia poliesperma", en: "Ca²⁺ wave in oocyte activates metabolism and blocks polyspermy"}
+        rationale: {pt: "Quando onda atravessa, então desenvolvimento embrionário inicia.", en: "When wave crosses, embryonic development starts."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "STIM-Orai e SOCE:", en: "STIM-Orai and SOCE:"}
+        choices:
+          - {pt: "Esvaziamento do RE faz STIM detectar e abrir Orai — entrada operada por estoque", en: "ER depletion makes STIM sense and open Orai — store-operated entry"}
+          - {pt: "Apenas defeito raro", en: "Just rare defect"}
+          - {pt: "Apenas hormônio sexual", en: "Just sex hormone"}
+          - {pt: "Apenas via metabólica", en: "Just metabolic pathway"}
+        correctAnswer: {pt: "Esvaziamento do RE faz STIM detectar e abrir Orai — entrada operada por estoque", en: "ER depletion makes STIM sense and open Orai — store-operated entry"}
+        rationale: {pt: "Quando SOCE atua, então sinalização sustentada ocorre em linfócitos e outras células.", en: "When SOCE acts, sustained signaling happens in lymphocytes and other cells."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imageamento de Ca²⁺:", en: "Ca²⁺ imaging:"}
+        choices:
+          - {pt: "GCaMPs e Fura-2 visualizam dinâmica intracelular em vivo com resolução temporal", en: "GCaMPs and Fura-2 visualize intracellular dynamics in vivo with temporal resolution"}
+          - {pt: "Apenas microscopia genérica", en: "Just generic microscopy"}
+          - {pt: "Apenas histologia rotineira", en: "Just routine histology"}
+          - {pt: "Apenas ultrassom", en: "Just ultrasound"}
+        correctAnswer: {pt: "GCaMPs e Fura-2 visualizam dinâmica intracelular em vivo com resolução temporal", en: "GCaMPs and Fura-2 visualize intracellular dynamics in vivo with temporal resolution"}
+        rationale: {pt: "Quando dinâmica é vista, então mecanismos de sinalização são deciframento.", en: "When dynamics is seen, signaling mechanisms are deciphered."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ca²⁺ e secreção:", en: "Ca²⁺ and secretion:"}
+        choices:
+          - {pt: "Ilhotas pancreáticas oscilam Ca²⁺ liberando insulina; SUR1/Kir6.2 regula entrada", en: "Pancreatic islets oscillate Ca²⁺ releasing insulin; SUR1/Kir6.2 regulates entry"}
+          - {pt: "Apenas digestão simples", en: "Just simple digestion"}
+          - {pt: "Apenas reflexo neural", en: "Just neural reflex"}
+          - {pt: "Apenas estresse comum", en: "Just common stress"}
+        correctAnswer: {pt: "Ilhotas pancreáticas oscilam Ca²⁺ liberando insulina; SUR1/Kir6.2 regula entrada", en: "Pancreatic islets oscillate Ca²⁺ releasing insulin; SUR1/Kir6.2 regulates entry"}
+        rationale: {pt: "Quando glicose entra, então despolarização → Ca²⁺ → exocitose de grânulos.", en: "When glucose enters, depolarization → Ca²⁺ → granule exocytosis."}
+        objectives: [biology.calcium]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em Ca²⁺:", en: "Next Ca²⁺ frontiers:"}
+        choices:
+          - {pt: "Sondas geneticamente codificadas, optogenética e drogas com controle temporal preciso", en: "Genetically encoded probes, optogenetics and drugs with precise temporal control"}
+          - {pt: "Apenas microscopia básica", en: "Just basic microscopy"}
+          - {pt: "Apenas terapia clássica", en: "Just classical therapy"}
+          - {pt: "Apenas fitoterapia", en: "Just phytotherapy"}
+        correctAnswer: {pt: "Sondas geneticamente codificadas, optogenética e drogas com controle temporal preciso", en: "Genetically encoded probes, optogenetics and drugs with precise temporal control"}
+        rationale: {pt: "Quando ferramentas finam, então terapias intervindo em sinais de Ca²⁺ amadurecem.", en: "When tools sharpen, therapies intervening in Ca²⁺ signals mature."}
+        objectives: [biology.calcium]
+        difficulty: 5
+target: 20
