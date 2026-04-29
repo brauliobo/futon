@@ -1,0 +1,244 @@
+title:
+  pt: "🔬 Biologia de molécula única"
+  en: "🔬 Single-molecule biology"
+level: 'C'
+subject: biology
+objectives: [biology.single_molecule]
+difficulty: 5
+authorNotes: "Pinças ópticas, AFM, FRET single-molecule, espectroscopia, dinâmica molecular individual."
+example:
+  pt: "Ex.: motor molecular único → pinça óptica aplica força → passo a passo medido → mecânica revelada."
+  en: "Ex.: single molecular motor → optical tweezers apply force → step-by-step measured → mechanics revealed."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Manipulação molecular", en: "Molecular manipulation"}
+    description: {pt: "Como capturamos uma molécula por vez.", en: "How we capture one molecule at a time."}
+    exercises:
+      - type: choice
+        question: {pt: "Pinças ópticas usam:", en: "Optical tweezers use:"}
+        choices:
+          - {pt: "Lasers focalizados para aprisionar microesferas e medir forças piconewton", en: "Focused lasers to trap microbeads and measure piconewton forces"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Lasers focalizados para aprisionar microesferas e medir forças piconewton", en: "Focused lasers to trap microbeads and measure piconewton forces"}
+        rationale: {pt: "Quando feixe gradiente prende conta, então DNA ou motor preso pode ser puxado quantitativamente.", en: "When gradient beam traps bead, attached DNA or motor can be pulled quantitatively."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pinças magnéticas:", en: "Magnetic tweezers:"}
+        choices:
+          - {pt: "Aplicam força e torque em moléculas, ideais para topologia de DNA (topoisomerases)", en: "Apply force and torque on molecules, ideal for DNA topology (topoisomerases)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Aplicam força e torque em moléculas, ideais para topologia de DNA (topoisomerases)", en: "Apply force and torque on molecules, ideal for DNA topology (topoisomerases)"}
+        rationale: {pt: "Quando rotação é controlada, então estudamos enzimas que mudam supercoiling do DNA.", en: "When rotation is controlled, we study enzymes that alter DNA supercoiling."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microscopia de força atômica (AFM):", en: "Atomic force microscopy (AFM):"}
+        choices:
+          - {pt: "Imagem nanométrica de superfícies + mecânica de moléculas individuais via cantilever", en: "Nanometer surface imaging + single-molecule mechanics via cantilever"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia óptica", en: "Just optical microscopy"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Imagem nanométrica de superfícies + mecânica de moléculas individuais via cantilever", en: "Nanometer surface imaging + single-molecule mechanics via cantilever"}
+        rationale: {pt: "Quando ponta varre amostra, então topografia e mecânica celular ficam mapeáveis.", en: "When tip scans sample, topography and cellular mechanics become mappable."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single-molecule FRET (smFRET):", en: "Single-molecule FRET (smFRET):"}
+        choices:
+          - {pt: "Distância entre fluoróforos ~2-10 nm em molécula individual revela conformações dinâmicas", en: "Fluorophore distance ~2-10 nm in individual molecule reveals dynamic conformations"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Distância entre fluoróforos ~2-10 nm em molécula individual revela conformações dinâmicas", en: "Fluorophore distance ~2-10 nm in individual molecule reveals dynamic conformations"}
+        rationale: {pt: "Quando média populacional esconde, então smFRET revela transições conformacionais.", en: "When population average hides, smFRET reveals conformational transitions."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Nanoporo (Oxford Nanopore) é tecnologia:", en: "Nanopore (Oxford Nanopore) technology:"}
+        choices:
+          - {pt: "Single-molecule de sequenciamento de DNA/RNA via corrente iônica passando por poro proteico", en: "Single-molecule DNA/RNA sequencing via ionic current through protein pore"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Single-molecule de sequenciamento de DNA/RNA via corrente iônica passando por poro proteico", en: "Single-molecule DNA/RNA sequencing via ionic current through protein pore"}
+        rationale: {pt: "Quando bases passam, então perturbações elétricas distinguem letras genéticas.", en: "When bases pass, electrical perturbations distinguish genetic letters."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tracking single-molecule em células vivas:", en: "Single-molecule tracking in live cells:"}
+        choices:
+          - {pt: "Acompanha proteínas/RNAs individuais com fluoróforos brilhantes em tempo real", en: "Tracks individual proteins/RNAs with bright fluorophores in real time"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Acompanha proteínas/RNAs individuais com fluoróforos brilhantes em tempo real", en: "Tracks individual proteins/RNAs with bright fluorophores in real time"}
+        rationale: {pt: "Quando média celular esconde dinâmica, então rastreamento revela movimento heterogêneo.", en: "When cellular average hides dynamics, tracking reveals heterogeneous movement."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microscopia de super-resolução (PALM, STORM):", en: "Super-resolution microscopy (PALM, STORM):"}
+        choices:
+          - {pt: "Localização precisa de moléculas individuais excede limite de difração óptica", en: "Precise individual molecule localization exceeds optical diffraction limit"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Localização precisa de moléculas individuais excede limite de difração óptica", en: "Precise individual molecule localization exceeds optical diffraction limit"}
+        rationale: {pt: "Quando emissores piscam, então centros são localizados com precisão nanométrica.", en: "When emitters blink, centers are localized with nanometer precision."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Motores moleculares medidos:", en: "Molecular motors measured:"}
+        choices:
+          - {pt: "Cinesina/miosina dão passos de ~8 nm consumindo 1 ATP por passo", en: "Kinesin/myosin take ~8 nm steps consuming 1 ATP per step"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Cinesina/miosina dão passos de ~8 nm consumindo 1 ATP por passo", en: "Kinesin/myosin take ~8 nm steps consuming 1 ATP per step"}
+        rationale: {pt: "Quando força e velocidade são medidas, então mecânica química é decodificada.", en: "When force and velocity are measured, chemomechanical mechanics is decoded."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DNA elasticidade (worm-like chain):", en: "DNA elasticity (worm-like chain):"}
+        choices:
+          - {pt: "Modelo polimérico com persistência ~50 nm que descreve resposta a forças baixas", en: "Polymer model with ~50 nm persistence describing response to low forces"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Modelo polimérico com persistência ~50 nm que descreve resposta a forças baixas", en: "Polymer model with ~50 nm persistence describing response to low forces"}
+        rationale: {pt: "Quando puxamos DNA, então comportamento mecânico ajusta-se à teoria com precisão.", en: "When DNA is pulled, mechanical behavior fits theory precisely."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TIRF (total internal reflection):", en: "TIRF (total internal reflection):"}
+        choices:
+          - {pt: "Onda evanescente excita só ~100 nm da superfície — perfeita para single-molecule", en: "Evanescent wave excites only ~100 nm from surface — perfect for single-molecule"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Onda evanescente excita só ~100 nm da superfície — perfeita para single-molecule", en: "Evanescent wave excites only ~100 nm from surface — perfect for single-molecule"}
+        rationale: {pt: "Quando ruído fora de foco é eliminado, então sinais únicos brilham com alto contraste.", en: "When out-of-focus noise is eliminated, single signals shine with high contrast."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações e fronteiras", en: "Applications and frontiers"}
+    description: {pt: "Da bancada à clínica.", en: "From bench to clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "Sequenciamento de leitura longa Nanopore aplica-se a:", en: "Long-read Nanopore sequencing applies to:"}
+        choices:
+          - {pt: "Detecção em tempo real, modificações de bases (m6A, 5mC) e genomas estruturalmente complexos", en: "Real-time detection, base modifications (m6A, 5mC) and structurally complex genomes"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Detecção em tempo real, modificações de bases (m6A, 5mC) e genomas estruturalmente complexos", en: "Real-time detection, base modifications (m6A, 5mC) and structurally complex genomes"}
+        rationale: {pt: "Quando leituras são longas, então repetições e haplótipos são resolvidos diretamente.", en: "When reads are long, repeats and haplotypes are directly resolved."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single-molecule biofísica de proteínas revela:", en: "Single-molecule protein biophysics reveals:"}
+        choices:
+          - {pt: "Caminhos de dobramento, intermediários e desdobramento sob força", en: "Folding paths, intermediates and unfolding under force"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Caminhos de dobramento, intermediários e desdobramento sob força", en: "Folding paths, intermediates and unfolding under force"}
+        rationale: {pt: "Quando puxamos titina, então domínios desdobram um a um revelando arquitetura mecânica.", en: "When titin is pulled, domains unfold one by one revealing mechanical architecture."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Rastreio de ribossomos individuais:", en: "Single-ribosome tracking:"}
+        choices:
+          - {pt: "Cinética de tradução é resolvida códon-a-códon com smFRET ou pinças ópticas", en: "Translation kinetics resolved codon-by-codon with smFRET or optical tweezers"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Cinética de tradução é resolvida códon-a-códon com smFRET ou pinças ópticas", en: "Translation kinetics resolved codon-by-codon with smFRET or optical tweezers"}
+        rationale: {pt: "Quando passos de tradução são vistos, então fidelidade e regulação ficam mensuráveis.", en: "When translation steps are seen, fidelity and regulation become measurable."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Polimerases unimoleculares mostram:", en: "Single-molecule polymerases show:"}
+        choices:
+          - {pt: "Pausas, retornos e fidelidade sob diferentes condições — alvos de fármacos antivirais", en: "Pauses, backtracking and fidelity under different conditions — antiviral drug targets"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Pausas, retornos e fidelidade sob diferentes condições — alvos de fármacos antivirais", en: "Pauses, backtracking and fidelity under different conditions — antiviral drug targets"}
+        rationale: {pt: "Quando enzima é observada em ação, então mecanismo é dissecado em detalhe.", en: "When enzyme is observed in action, mechanism is dissected in detail."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Eventos catalíticos individuais:", en: "Individual catalytic events:"}
+        choices:
+          - {pt: "Distribuições de tempo de turnover revelam heterogeneidade molecular oculta na média", en: "Turnover time distributions reveal molecular heterogeneity hidden in averages"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Distribuições de tempo de turnover revelam heterogeneidade molecular oculta na média", en: "Turnover time distributions reveal molecular heterogeneity hidden in averages"}
+        rationale: {pt: "Quando moléculas são distintas, então enzimas mostram 'memória dinâmica'.", en: "When molecules are distinct, enzymes show 'dynamic memory'."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Diagnóstico de molécula única (Quanterix Simoa):", en: "Single-molecule diagnostics (Quanterix Simoa):"}
+        choices:
+          - {pt: "Detecta proteínas em concentrações femtomolares — biomarcadores raros viram acessíveis", en: "Detects proteins at femtomolar concentrations — rare biomarkers become accessible"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Detecta proteínas em concentrações femtomolares — biomarcadores raros viram acessíveis", en: "Detects proteins at femtomolar concentrations — rare biomarkers become accessible"}
+        rationale: {pt: "Quando sensibilidade é absoluta, então proteínas neurais (NfL, p-tau) tornam-se exames clínicos.", en: "When sensitivity is absolute, neural proteins (NfL, p-tau) become clinical assays."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ABF (atomic force biology) e células:", en: "AFM-based cell biology:"}
+        choices:
+          - {pt: "Mapas de rigidez celular distinguem células sadias de cancerosas com sensibilidade nanométrica", en: "Cell stiffness maps distinguish healthy from cancerous cells with nanometer sensitivity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Mapas de rigidez celular distinguem células sadias de cancerosas com sensibilidade nanométrica", en: "Cell stiffness maps distinguish healthy from cancerous cells with nanometer sensitivity"}
+        rationale: {pt: "Quando rigidez muda, então marcadores mecânicos complementam diagnóstico molecular.", en: "When stiffness shifts, mechanical markers complement molecular diagnosis."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pinças acústicas:", en: "Acoustic tweezers:"}
+        choices:
+          - {pt: "Manipulam células e organoides com ondas acústicas sem dano térmico", en: "Manipulate cells and organoids with acoustic waves without thermal damage"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Manipulam células e organoides com ondas acústicas sem dano térmico", en: "Manipulate cells and organoids with acoustic waves without thermal damage"}
+        rationale: {pt: "Quando frequência é controlada, então biomateriais vivos são posicionados sem dano.", en: "When frequency is controlled, living biomaterials are positioned without harm."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single-molecule genomics in vivo:", en: "In vivo single-molecule genomics:"}
+        choices:
+          - {pt: "Imageamento direto de loci e fatores em núcleo vivo via CRISPR-marcação fluorescente", en: "Direct imaging of loci and factors in living nucleus via fluorescent CRISPR labeling"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Imageamento direto de loci e fatores em núcleo vivo via CRISPR-marcação fluorescente", en: "Direct imaging of loci and factors in living nucleus via fluorescent CRISPR labeling"}
+        rationale: {pt: "Quando cromatina é vista, então organização e regulação 3D são compreendidas.", en: "When chromatin is seen, 3D organization and regulation become understood."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em single-molecule:", en: "Next single-molecule frontiers:"}
+        choices:
+          - {pt: "Resolução combinada com função fisiológica em sistema vivo, IA para classificação de eventos raros", en: "Combined resolution with physiological function in living systems, AI for rare event classification"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Resolução combinada com função fisiológica em sistema vivo, IA para classificação de eventos raros", en: "Combined resolution with physiological function in living systems, AI for rare event classification"}
+        rationale: {pt: "Quando ferramentas convergem, então biologia molecular vira ciência quantitativa preditiva.", en: "When tools converge, molecular biology becomes a predictive quantitative science."}
+        objectives: [biology.single_molecule]
+        difficulty: 5
+target: 20

@@ -1,0 +1,244 @@
+title:
+  pt: "📐 Biologia celular quantitativa"
+  en: "📐 Quantitative cell biology"
+level: 'C'
+subject: biology
+objectives: [biology.quantitative_cell]
+difficulty: 5
+authorNotes: "Modelagem matemática, ODEs/PDEs, oscilações biológicas, decisão celular, ruído estocástico, biologia de redes."
+example:
+  pt: "Ex.: rede gênica → modelo ODE → simulação → predição de oscilação → validação experimental."
+  en: "Ex.: gene network → ODE model → simulation → oscillation prediction → experimental validation."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Modelagem matemática", en: "Mathematical modeling"}
+    description: {pt: "Equações que capturam vida celular.", en: "Equations capturing cellular life."}
+    exercises:
+      - type: choice
+        question: {pt: "ODE (equação diferencial ordinária) modela:", en: "ODE (ordinary differential equation) models:"}
+        choices:
+          - {pt: "Mudança de concentrações ao longo do tempo (cinética química)", en: "Concentration changes over time (chemical kinetics)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Mudança de concentrações ao longo do tempo (cinética química)", en: "Concentration changes over time (chemical kinetics)"}
+        rationale: {pt: "Quando descrevemos taxas, então ODEs preveem dinâmica de sinalização e metabolismo.", en: "When describing rates, ODEs predict signaling and metabolism dynamics."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PDE (equação diferencial parcial) inclui:", en: "PDE (partial differential equation) includes:"}
+        choices:
+          - {pt: "Variação espacial + temporal — útil para difusão e padronização morfogenética", en: "Spatial + temporal variation — useful for diffusion and morphogenetic patterning"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Variação espacial + temporal — útil para difusão e padronização morfogenética", en: "Spatial + temporal variation — useful for diffusion and morphogenetic patterning"}
+        rationale: {pt: "Quando posição importa, então gradientes de morfógenos definem destino celular.", en: "When position matters, morphogen gradients define cell fate."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelo Lotka-Volterra:", en: "Lotka-Volterra model:"}
+        choices:
+          - {pt: "Equações acopladas para predador-presa que geram oscilações populacionais clássicas", en: "Coupled predator-prey equations generating classic population oscillations"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Equações acopladas para predador-presa que geram oscilações populacionais clássicas", en: "Coupled predator-prey equations generating classic population oscillations"}
+        rationale: {pt: "Quando feedback negativo existe, então oscilações emergem espontaneamente em sistemas ecológicos.", en: "When negative feedback exists, oscillations spontaneously emerge in ecological systems."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Equação de Hill descreve:", en: "Hill equation describes:"}
+        choices:
+          - {pt: "Cooperatividade de ligação ligante-receptor com sigmoide ajustável", en: "Cooperative ligand-receptor binding with tunable sigmoid"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Cooperatividade de ligação ligante-receptor com sigmoide ajustável", en: "Cooperative ligand-receptor binding with tunable sigmoid"}
+        rationale: {pt: "Quando hill > 1, então resposta liga-desliga emerge para sinalização robusta.", en: "When Hill > 1, on-off response emerges for robust signaling."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelo Michaelis-Menten:", en: "Michaelis-Menten model:"}
+        choices:
+          - {pt: "Cinética enzimática com Vmax e Km — base da farmacologia clássica", en: "Enzyme kinetics with Vmax and Km — foundation of classic pharmacology"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Cinética enzimática com Vmax e Km — base da farmacologia clássica", en: "Enzyme kinetics with Vmax and Km — foundation of classic pharmacology"}
+        rationale: {pt: "Quando substrato é limitante, então velocidade depende linearmente da concentração.", en: "When substrate is limiting, velocity depends linearly on concentration."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Oscilações genéticas (relógio circadiano):", en: "Genetic oscillations (circadian clock):"}
+        choices:
+          - {pt: "Loop de feedback negativo PER/CRY-CLOCK/BMAL1 com atraso explícito gera ritmo ~24 h", en: "PER/CRY-CLOCK/BMAL1 negative feedback loop with explicit delay generates ~24 h rhythm"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Loop de feedback negativo PER/CRY-CLOCK/BMAL1 com atraso explícito gera ritmo ~24 h", en: "PER/CRY-CLOCK/BMAL1 negative feedback loop with explicit delay generates ~24 h rhythm"}
+        rationale: {pt: "Quando elementos atrasam, então oscilação molecular auto-regulada emerge.", en: "When elements delay, self-regulated molecular oscillation emerges."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ruído estocástico em expressão gênica:", en: "Stochastic noise in gene expression:"}
+        choices:
+          - {pt: "Variabilidade célula-a-célula gerada por baixo número de moléculas — bursts transcricionais", en: "Cell-to-cell variability from low molecule numbers — transcriptional bursts"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Variabilidade célula-a-célula gerada por baixo número de moléculas — bursts transcricionais", en: "Cell-to-cell variability from low molecule numbers — transcriptional bursts"}
+        rationale: {pt: "Quando moléculas são poucas, então flutuações são grandes e funcionalmente relevantes.", en: "When molecules are few, fluctuations are large and functionally relevant."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelo de Gillespie (SSA):", en: "Gillespie model (SSA):"}
+        choices:
+          - {pt: "Algoritmo estocástico para reações químicas discretas em pequenos volumes (intracelulares)", en: "Stochastic algorithm for discrete chemical reactions in small volumes (intracellular)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Algoritmo estocástico para reações químicas discretas em pequenos volumes (intracelulares)", en: "Stochastic algorithm for discrete chemical reactions in small volumes (intracellular)"}
+        rationale: {pt: "Quando contagens são baixas, então simulação discreta supera ODE determinística.", en: "When counts are low, discrete simulation beats deterministic ODE."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelo Boolean em redes regulatórias:", en: "Boolean model in regulatory networks:"}
+        choices:
+          - {pt: "Cada nó ON/OFF com regras lógicas — útil para grandes redes sem cinética detalhada", en: "Each node ON/OFF with logical rules — useful for large networks without detailed kinetics"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Cada nó ON/OFF com regras lógicas — útil para grandes redes sem cinética detalhada", en: "Each node ON/OFF with logical rules — useful for large networks without detailed kinetics"}
+        rationale: {pt: "Quando parâmetros faltam, então abstração lógica preserva topologia funcional.", en: "When parameters are missing, logical abstraction preserves functional topology."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelo agente-baseado (ABM):", en: "Agent-based model (ABM):"}
+        choices:
+          - {pt: "Cada célula é agente com regras locais — comportamentos emergentes em larga escala", en: "Each cell is agent with local rules — emergent large-scale behaviors"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Cada célula é agente com regras locais — comportamentos emergentes em larga escala", en: "Each cell is agent with local rules — emergent large-scale behaviors"}
+        rationale: {pt: "Quando interações são heterogêneas, então ABM captura padrões que ODE perde.", en: "When interactions are heterogeneous, ABM captures patterns ODE misses."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Decisões celulares e redes", en: "Cellular decisions and networks"}
+    description: {pt: "Como células computam destino e função.", en: "How cells compute fate and function."}
+    exercises:
+      - type: choice
+        question: {pt: "Bistabilidade em circuitos genéticos:", en: "Bistability in genetic circuits:"}
+        choices:
+          - {pt: "Dois estados estáveis emergentes de feedback positivo — base de decisões binárias celulares", en: "Two stable states emerging from positive feedback — basis of binary cell decisions"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Dois estados estáveis emergentes de feedback positivo — base de decisões binárias celulares", en: "Two stable states emerging from positive feedback — basis of binary cell decisions"}
+        rationale: {pt: "Quando autorregulação supera limiar, então célula 'liga' permanentemente novo programa.", en: "When self-regulation exceeds threshold, cell permanently 'switches' to new program."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Decisão de destino com ruído:", en: "Fate decision with noise:"}
+        choices:
+          - {pt: "Heterogeneidade pré-existente entre células permite escolha estocástica de destino", en: "Pre-existing cell heterogeneity allows stochastic fate choice"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Heterogeneidade pré-existente entre células permite escolha estocástica de destino", en: "Pre-existing cell heterogeneity allows stochastic fate choice"}
+        rationale: {pt: "Quando ruído é amplificado, então diferenciação populacional vira robusta com diversidade.", en: "When noise is amplified, population differentiation becomes robust with diversity."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Network motifs (Alon):", en: "Network motifs (Alon):"}
+        choices:
+          - {pt: "Padrões pequenos recorrentes (FFL, NFL) com funções específicas em redes regulatórias", en: "Small recurrent patterns (FFL, NFL) with specific functions in regulatory networks"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Padrões pequenos recorrentes (FFL, NFL) com funções específicas em redes regulatórias", en: "Small recurrent patterns (FFL, NFL) with specific functions in regulatory networks"}
+        rationale: {pt: "Quando motivos atuam, então comportamentos como filtragem, atraso e adaptação emergem.", en: "When motifs act, behaviors like filtering, delay and adaptation emerge."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Adaptação perfeita exige:", en: "Perfect adaptation requires:"}
+        choices:
+          - {pt: "Topologia de rede com integral feedback que retorna saída ao baseline mesmo com input", en: "Network topology with integral feedback returning output to baseline despite input"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Topologia de rede com integral feedback que retorna saída ao baseline mesmo com input", en: "Network topology with integral feedback returning output to baseline despite input"}
+        rationale: {pt: "Quando integrador existe, então célula 'esquece' estímulo e retorna ao estado homeostático.", en: "When integrator exists, cell 'forgets' stimulus and returns to homeostasis."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Robustez biológica vem de:", en: "Biological robustness comes from:"}
+        choices:
+          - {pt: "Redundância, feedback e topologia que mantém função sob perturbação", en: "Redundancy, feedback and topology maintaining function under perturbation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Redundância, feedback e topologia que mantém função sob perturbação", en: "Redundancy, feedback and topology maintaining function under perturbation"}
+        rationale: {pt: "Quando rede é robusta, então mutações ou ruído raramente quebram função essencial.", en: "When network is robust, mutations or noise rarely break essential function."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ciclo celular: modelo Tyson:", en: "Cell cycle: Tyson model:"}
+        choices:
+          - {pt: "Sistema de ODEs acoplado de ciclinas e CDKs preve transições G1/S/G2/M", en: "Coupled cyclin-CDK ODE system predicts G1/S/G2/M transitions"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Sistema de ODEs acoplado de ciclinas e CDKs preve transições G1/S/G2/M", en: "Coupled cyclin-CDK ODE system predicts G1/S/G2/M transitions"}
+        rationale: {pt: "Quando ciclinas oscilam, então CDKs se ativam em sequência regulada e ciclo progride.", en: "When cyclins oscillate, CDKs activate in regulated sequence and cycle progresses."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelo de Turing (reação-difusão):", en: "Turing model (reaction-diffusion):"}
+        choices:
+          - {pt: "Ativador difusível lento + inibidor rápido geram padrões espaciais espontaneamente", en: "Slowly diffusing activator + fast inhibitor spontaneously generate spatial patterns"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Ativador difusível lento + inibidor rápido geram padrões espaciais espontaneamente", en: "Slowly diffusing activator + fast inhibitor spontaneously generate spatial patterns"}
+        rationale: {pt: "Quando difusões diferem, então listras, manchas e padrões emergem matematicamente.", en: "When diffusions differ, stripes, spots and patterns emerge mathematically."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ajuste de parâmetros via dados experimentais:", en: "Parameter fitting via experimental data:"}
+        choices:
+          - {pt: "Usa otimização (mínimos quadrados, MCMC, ML) para casar modelo com observação", en: "Uses optimization (least squares, MCMC, ML) to match model with observation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Usa otimização (mínimos quadrados, MCMC, ML) para casar modelo com observação", en: "Uses optimization (least squares, MCMC, ML) to match model with observation"}
+        rationale: {pt: "Quando ajuste é robusto, então previsões fora dos dados de treino ganham confiança.", en: "When fit is robust, out-of-training predictions gain confidence."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelos de inferência de redes (GENIE3, GRNBoost):", en: "Network inference models (GENIE3, GRNBoost):"}
+        choices:
+          - {pt: "Aprendem regulações gene-gene a partir de dados de expressão (single-cell)", en: "Learn gene-gene regulations from expression data (single-cell)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Aprendem regulações gene-gene a partir de dados de expressão (single-cell)", en: "Learn gene-gene regulations from expression data (single-cell)"}
+        rationale: {pt: "Quando dados são massivos, então redes inferidas guiam novos experimentos perturbativos.", en: "When data is massive, inferred networks guide new perturbation experiments."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em biologia quantitativa:", en: "Next quantitative biology frontiers:"}
+        choices:
+          - {pt: "Modelos digital twins celulares, IA generativa e integração multi-escala", en: "Digital twin cell models, generative AI and multi-scale integration"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Modelos digital twins celulares, IA generativa e integração multi-escala", en: "Digital twin cell models, generative AI and multi-scale integration"}
+        rationale: {pt: "Quando ferramentas convergem, então biologia computacional vira engenharia preditiva.", en: "When tools converge, computational biology becomes predictive engineering."}
+        objectives: [biology.quantitative_cell]
+        difficulty: 5
+target: 20
