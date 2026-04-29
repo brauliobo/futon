@@ -1,0 +1,244 @@
+title:
+  pt: "🔋 Dinâmica mitocondrial"
+  en: "🔋 Mitochondrial dynamics"
+level: 'F'
+subject: biology
+objectives: [biology.mito_dynamics]
+difficulty: 5
+authorNotes: "Fissão/fusão, mitofagia, mtDNA herança, mitocôndria-RE contatos, transferência mitocondrial."
+example:
+  pt: "Ex.: dano mitocondrial → DRP1 fissão → seleção PINK1/Parkin → mitofagia → renovação."
+  en: "Ex.: mito damage → DRP1 fission → PINK1/Parkin selection → mitophagy → renewal."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Mecanismos centrais", en: "Core mechanisms"}
+    description: {pt: "Como mitocôndrias mudam.", en: "How mitochondria change."}
+    exercises:
+      - type: choice
+        question: {pt: "DRP1 fission:", en: "DRP1 fission:"}
+        choices:
+          - {pt: "GTPase recrutada por ER-mito contatos forma anel constritor cortando mitocôndrias", en: "GTPase recruited by ER-mito contacts forms constriction ring cutting mitochondria"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "GTPase recrutada por ER-mito contatos forma anel constritor cortando mitocôndrias", en: "GTPase recruited by ER-mito contacts forms constriction ring cutting mitochondria"}
+        rationale: {pt: "Quando DRP1 age, então fissão segrega componentes danificados.", en: "When DRP1 acts, fission segregates damaged components."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MFN1/2 e OPA1 fusion:", en: "MFN1/2 and OPA1 fusion:"}
+        choices:
+          - {pt: "Mitofusinas fundem membrana externa; OPA1 funde interna mantendo rede mitocondrial", en: "Mitofusins fuse outer membrane; OPA1 fuses inner maintaining mitochondrial network"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mitofusinas fundem membrana externa; OPA1 funde interna mantendo rede mitocondrial", en: "Mitofusins fuse outer membrane; OPA1 fuses inner maintaining mitochondrial network"}
+        rationale: {pt: "Quando fusão mantém rede, então conteúdo é compartilhado.", en: "When fusion maintains network, content is shared."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PINK1/Parkin mitofagia:", en: "PINK1/Parkin mitophagy:"}
+        choices:
+          - {pt: "PINK1 acumula em mito despolarizada e recruta Parkin para ubiquitinação e remoção", en: "PINK1 accumulates on depolarized mito recruiting Parkin for ubiquitination and clearance"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "PINK1 acumula em mito despolarizada e recruta Parkin para ubiquitinação e remoção", en: "PINK1 accumulates on depolarized mito recruiting Parkin for ubiquitination and clearance"}
+        rationale: {pt: "Quando mitofagia age, então mitocôndrias ruins são removidas seletivamente.", en: "When mitophagy acts, bad mitochondria are selectively cleared."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ER-mito contacts (MAMs):", en: "ER-mito contacts (MAMs):"}
+        choices:
+          - {pt: "Sítios de transferência de Ca²⁺, lipídios e sinalização — chave em apoptose e metabolismo", en: "Sites of Ca²⁺, lipid and signaling transfer — key in apoptosis and metabolism"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sítios de transferência de Ca²⁺, lipídios e sinalização — chave em apoptose e metabolismo", en: "Sites of Ca²⁺, lipid and signaling transfer — key in apoptosis and metabolism"}
+        rationale: {pt: "Quando MAMs funcionam, então comunicação organelar é integrada.", en: "When MAMs function, organelle communication is integrated."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "mtDNA heteroplasmia:", en: "mtDNA heteroplasmy:"}
+        choices:
+          - {pt: "Mistura de moléculas mtDNA wild-type e mutantes em mesma célula com efeito limiar", en: "Mix of wild-type and mutant mtDNA molecules in same cell with threshold effect"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mistura de moléculas mtDNA wild-type e mutantes em mesma célula com efeito limiar", en: "Mix of wild-type and mutant mtDNA molecules in same cell with threshold effect"}
+        rationale: {pt: "Quando heteroplasmia ultrapassa limiar, então doença mitocondrial manifesta.", en: "When heteroplasmy crosses threshold, mitochondrial disease manifests."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "mtDNA herança:", en: "mtDNA inheritance:"}
+        choices:
+          - {pt: "Estrita herança maternal — gargalo bottleneck oogênico amplifica frequências raras", en: "Strict maternal inheritance — oogenic bottleneck amplifies rare frequencies"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Estrita herança maternal — gargalo bottleneck oogênico amplifica frequências raras", en: "Strict maternal inheritance — oogenic bottleneck amplifies rare frequencies"}
+        rationale: {pt: "Quando bottleneck atua, então variantes podem fixar rapidamente.", en: "When bottleneck acts, variants can rapidly fix."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mitochondrial replacement therapy (MRT):", en: "Mitochondrial replacement therapy (MRT):"}
+        choices:
+          - {pt: "Substitui mtDNA defeituoso materno por doadora — três pais, regulamentada UK e Holanda", en: "Replaces defective maternal mtDNA with donor — three parents, regulated in UK and Netherlands"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Substitui mtDNA defeituoso materno por doadora — três pais, regulamentada UK e Holanda", en: "Replaces defective maternal mtDNA with donor — three parents, regulated in UK and Netherlands"}
+        rationale: {pt: "Quando doenças mtDNA são severas, então MRT previne transmissão.", en: "When mtDNA diseases are severe, MRT prevents transmission."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mitochondrial unfolded protein response (mtUPR):", en: "Mitochondrial unfolded protein response (mtUPR):"}
+        choices:
+          - {pt: "ATF5 ativa chaperones mitocondriais em estresse mantendo proteostase organelar", en: "ATF5 activates mitochondrial chaperones under stress maintaining organelle proteostasis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ATF5 ativa chaperones mitocondriais em estresse mantendo proteostase organelar", en: "ATF5 activates mitochondrial chaperones under stress maintaining organelle proteostasis"}
+        rationale: {pt: "Quando mtUPR atua, então saúde mitocondrial é restaurada.", en: "When mtUPR acts, mitochondrial health is restored."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cardiolipin:", en: "Cardiolipin:"}
+        choices:
+          - {pt: "Lipídio único da membrana interna sustenta supercomplexes respiratórios e cristas", en: "Unique inner-membrane lipid sustains respiratory supercomplexes and cristae"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Lipídio único da membrana interna sustenta supercomplexes respiratórios e cristas", en: "Unique inner-membrane lipid sustains respiratory supercomplexes and cristae"}
+        rationale: {pt: "Quando cardiolipina funciona, então respiração é eficiente.", en: "When cardiolipin functions, respiration is efficient."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mito transferência intercelular:", en: "Intercellular mito transfer:"}
+        choices:
+          - {pt: "Mitocôndrias passam entre células via tunneling nanotubes em saúde e câncer", en: "Mitochondria pass between cells via tunneling nanotubes in health and cancer"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mitocôndrias passam entre células via tunneling nanotubes em saúde e câncer", en: "Mitochondria pass between cells via tunneling nanotubes in health and cancer"}
+        rationale: {pt: "Quando transferência ocorre, então células doam suporte energético a vizinhas.", en: "When transfer occurs, cells donate energy support to neighbors."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações", en: "Applications"}
+    description: {pt: "Mitocôndria em saúde e doença.", en: "Mitochondria in health and disease."}
+    exercises:
+      - type: choice
+        question: {pt: "MELAS e MERRF:", en: "MELAS and MERRF:"}
+        choices:
+          - {pt: "Mutações em tRNAs mitocondriais causam encefalomiopatia com lactacidose e ataque", en: "Mitochondrial tRNA mutations cause encephalomyopathy with lactic acidosis and attack"}
+          - {pt: "Apenas curiosidade rara", en: "Just rare curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mutações em tRNAs mitocondriais causam encefalomiopatia com lactacidose e ataque", en: "Mitochondrial tRNA mutations cause encephalomyopathy with lactic acidosis and attack"}
+        rationale: {pt: "Quando tradução mt falha, então tecidos com alta demanda energética sofrem.", en: "When mt translation fails, high-energy-demand tissues suffer."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Parkinson e mitocôndria:", en: "Parkinson and mitochondria:"}
+        choices:
+          - {pt: "Mutações em PINK1, Parkin causam falha de mitofagia em neurônios dopaminérgicos", en: "PINK1, Parkin mutations cause mitophagy failure in dopaminergic neurons"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mutações em PINK1, Parkin causam falha de mitofagia em neurônios dopaminérgicos", en: "PINK1, Parkin mutations cause mitophagy failure in dopaminergic neurons"}
+        rationale: {pt: "Quando mitofagia falha, então neurônios degeneram.", en: "When mitophagy fails, neurons degenerate."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Câncer e Warburg:", en: "Cancer and Warburg:"}
+        choices:
+          - {pt: "Reprogramação metabólica para glicólise mantém ATP mesmo com mitocôndrias parcialmente disfuncionais", en: "Metabolic reprogramming to glycolysis maintains ATP even with partially dysfunctional mitochondria"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Reprogramação metabólica para glicólise mantém ATP mesmo com mitocôndrias parcialmente disfuncionais", en: "Metabolic reprogramming to glycolysis maintains ATP even with partially dysfunctional mitochondria"}
+        rationale: {pt: "Quando Warburg atua, então tumor sobrevive em hipóxia.", en: "When Warburg acts, tumor survives in hypoxia."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Aging e mitocôndria:", en: "Aging and mitochondria:"}
+        choices:
+          - {pt: "Acúmulo de mutações mtDNA, declínio mitofagia e falha bioenergética caracterizam senescência", en: "mtDNA mutation accumulation, mitophagy decline and bioenergetic failure characterize senescence"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Acúmulo de mutações mtDNA, declínio mitofagia e falha bioenergética caracterizam senescência", en: "mtDNA mutation accumulation, mitophagy decline and bioenergetic failure characterize senescence"}
+        rationale: {pt: "Quando mitocôndrias envelhecem, então tecidos perdem função.", en: "When mitochondria age, tissues lose function."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Urolithin A:", en: "Urolithin A:"}
+        choices:
+          - {pt: "Metabólito microbiano induz mitofagia em humanos melhorando função muscular em ensaios", en: "Microbial metabolite induces mitophagy in humans improving muscle function in trials"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Metabólito microbiano induz mitofagia em humanos melhorando função muscular em ensaios", en: "Microbial metabolite induces mitophagy in humans improving muscle function in trials"}
+        rationale: {pt: "Quando mitofagia é induzida, então sarcopenia é potencialmente revertida.", en: "When mitophagy is induced, sarcopenia is potentially reversed."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mitochondrial transplant:", en: "Mitochondrial transplant:"}
+        choices:
+          - {pt: "Injeção de mitocôndrias autólogas em coração isquêmico restaura função em ensaios precoces", en: "Autologous mitochondria injection into ischemic heart restores function in early trials"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Injeção de mitocôndrias autólogas em coração isquêmico restaura função em ensaios precoces", en: "Autologous mitochondria injection into ischemic heart restores function in early trials"}
+        rationale: {pt: "Quando mitocôndrias frescas chegam, então tecido isquêmico recupera energia.", en: "When fresh mitochondria arrive, ischemic tissue recovers energy."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Optic atrophy (LHON, OPA1):", en: "Optic atrophy (LHON, OPA1):"}
+        choices:
+          - {pt: "Mutações em mtDNA ND4 ou OPA1 nuclear causam atrofia óptica hereditária com cegueira", en: "ND4 mtDNA or nuclear OPA1 mutations cause hereditary optic atrophy with blindness"}
+          - {pt: "Apenas curiosidade rara", en: "Just rare curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mutações em mtDNA ND4 ou OPA1 nuclear causam atrofia óptica hereditária com cegueira", en: "ND4 mtDNA or nuclear OPA1 mutations cause hereditary optic atrophy with blindness"}
+        rationale: {pt: "Quando RGCs falham, então visão é progressivamente perdida.", en: "When RGCs fail, vision is progressively lost."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tafazzin e Barth:", en: "Tafazzin and Barth:"}
+        choices:
+          - {pt: "Mutações em TAZ alteram cardiolipina causando cardiomiopatia e neutropenia em meninos", en: "TAZ mutations alter cardiolipin causing cardiomyopathy and neutropenia in boys"}
+          - {pt: "Apenas curiosidade rara", en: "Just rare curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mutações em TAZ alteram cardiolipina causando cardiomiopatia e neutropenia em meninos", en: "TAZ mutations alter cardiolipin causing cardiomyopathy and neutropenia in boys"}
+        rationale: {pt: "Quando lipídio é alterado, então tecidos energéticos sofrem.", en: "When lipid is altered, energetic tissues suffer."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Brown fat e UCP1:", en: "Brown fat and UCP1:"}
+        choices:
+          - {pt: "UCP1 desacopla cadeia respiratória gerando calor — alvo terapêutico em obesidade", en: "UCP1 uncouples respiratory chain generating heat — therapeutic target in obesity"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "UCP1 desacopla cadeia respiratória gerando calor — alvo terapêutico em obesidade", en: "UCP1 uncouples respiratory chain generating heat — therapeutic target in obesity"}
+        rationale: {pt: "Quando UCP1 ativa, então energia é dissipada como calor.", en: "When UCP1 activates, energy dissipates as heat."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em mitocôndria:", en: "Next mitochondrial frontiers:"}
+        choices:
+          - {pt: "mtDNA editing (DdCBE), mitofagia farmacológica e transplante mitocondrial em larga escala", en: "mtDNA editing (DdCBE), pharmacological mitophagy and large-scale mitochondrial transplant"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "mtDNA editing (DdCBE), mitofagia farmacológica e transplante mitocondrial em larga escala", en: "mtDNA editing (DdCBE), pharmacological mitophagy and large-scale mitochondrial transplant"}
+        rationale: {pt: "Quando ferramentas convergem, então biologia mitocondrial vira terapêutica.", en: "When tools converge, mitochondrial biology becomes therapeutic."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+target: 20
