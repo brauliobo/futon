@@ -269,7 +269,10 @@ function checkEnglishCaps(sets) {
         answer: ans.slice(0, 50), severity: 'warn', note: 'starts lowercase',
       });
     }
-    // Pronoun "i" not capitalized
+    // Pronoun "i" not capitalized. Skip when 'i' refers to the letter
+    // (phonics rationales mention IPA /ɪ/ /aɪ/, 'long i', 'short i',
+    // 'silent e', 'I i' pairing, or 'letter i' / 'letra i').
+    if (/\/[ɪaɪɛoʊuʊɔɑæə]/.test(ans) || /\b(?:long|short|silent|letra|letter)\s+i\b/i.test(ans) || /\bi\s+(?:long|short)\b/i.test(ans) || /\bI\s+i\b/.test(ans)) return;
     if (/\bi\b/.test(ans) && !/\bi\b/.test(ans.replace(/\bI\b/g, ''))) return; // already uppercase
     if (/\bi[' ]/.test(ans) || / i /.test(ans) || / i$/.test(ans)) {
       issues.push({
@@ -324,8 +327,16 @@ function checkCrossSetDuplicates(sets) {
     // Skip math — Kumon drills are intentionally repeated across sets
     if (level.startsWith('math/')) continue;
 
+    // Revision/review sets (typically set_19/set_20 with 'Revisão'/'Review'
+    // in the title) are designed to re-test earlier content — duplication
+    // is the feature, not a bug.
+    const isRevisionSet = (set) => {
+      const title = typeof set.title === 'object' ? (set.title?.pt ?? set.title?.en ?? '') : String(set.title || '');
+      return /revis(ão|ao|ão geral|ion|iew|ón)|review|mixed|cumulative/i.test(title);
+    };
     const seen = new Map();
     for (const set of levelSets) {
+      if (isRevisionSet(set)) continue;
       for (const page of set.pages || []) {
         for (const ex of page.exercises || []) {
           const q = normalizeAnswer(ex.question);
