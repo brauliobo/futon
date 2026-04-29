@@ -1,0 +1,244 @@
+title:
+  pt: "🔍 Proteômica por espectrometria de massas"
+  en: "🔍 Mass spectrometry proteomics"
+level: 'A'
+subject: biology
+objectives: [biology.proteomics_advanced]
+difficulty: 5
+authorNotes: "MS bottom-up e top-down, marcação isobárica, DIA, PTMs, proteômica clínica."
+example:
+  pt: "Ex.: amostra → digestão tríptica → LC-MS/MS → identificação de peptídeos → quantificação → biologia."
+  en: "Ex.: sample → tryptic digestion → LC-MS/MS → peptide ID → quantification → biology."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Métodos clássicos e modernos", en: "Classic and modern methods"}
+    description: {pt: "Como pesamos proteínas em escala.", en: "How we weigh proteins at scale."}
+    exercises:
+      - type: choice
+        question: {pt: "Proteômica bottom-up usa:", en: "Bottom-up proteomics uses:"}
+        choices:
+          - {pt: "Digestão proteolítica e identificação de peptídeos por LC-MS/MS", en: "Proteolytic digestion and peptide ID by LC-MS/MS"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Digestão proteolítica e identificação de peptídeos por LC-MS/MS", en: "Proteolytic digestion and peptide ID by LC-MS/MS"}
+        rationale: {pt: "Quando peptídeos são pequenos, então fragmentação é eficiente e identificação confiável.", en: "When peptides are small, fragmentation is efficient and identification reliable."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Proteômica top-down analisa:", en: "Top-down proteomics analyzes:"}
+        choices:
+          - {pt: "Proteínas intactas, preservando proteoformas e modificações combinatórias", en: "Intact proteins, preserving proteoforms and combinatorial modifications"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Proteínas intactas, preservando proteoformas e modificações combinatórias", en: "Intact proteins, preserving proteoforms and combinatorial modifications"}
+        rationale: {pt: "Quando proteína inteira é vista, então variantes e PTMs combinadas ficam visíveis.", en: "When the whole protein is seen, variants and combined PTMs become visible."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tripsina é protease padrão porque:", en: "Trypsin is standard protease because:"}
+        choices:
+          - {pt: "Cliva específica e eficientemente após Lys/Arg, gerando peptídeos com massa adequada", en: "Cleaves specifically and efficiently after Lys/Arg, yielding suitably sized peptides"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas degrada", en: "Just degrades"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Cliva específica e eficientemente após Lys/Arg, gerando peptídeos com massa adequada", en: "Cleaves specifically and efficiently after Lys/Arg, yielding suitably sized peptides"}
+        rationale: {pt: "Quando peptídeos têm carga positiva no C-terminal, então ionização e fragmentação ficam previsíveis.", en: "When peptides have C-terminal positive charge, ionization and fragmentation are predictable."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Quantificação por marcação isobárica (TMT, iTRAQ):", en: "Isobaric tag quantification (TMT, iTRAQ):"}
+        choices:
+          - {pt: "Multiplex 10-18 amostras com íons reporters distintos no MS/MS", en: "Multiplex 10-18 samples with distinct reporter ions in MS/MS"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+        correctAnswer: {pt: "Multiplex 10-18 amostras com íons reporters distintos no MS/MS", en: "Multiplex 10-18 samples with distinct reporter ions in MS/MS"}
+        rationale: {pt: "Quando rótulos têm mesma massa total, então multiplexagem otimiza tempo de máquina.", en: "When tags share total mass, multiplexing optimizes instrument time."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Quantificação livre de marca (LFQ):", en: "Label-free quantification (LFQ):"}
+        choices:
+          - {pt: "Compara intensidades de pico ou contagens espectrais entre amostras separadas", en: "Compares peak intensities or spectral counts across separately analyzed samples"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Compara intensidades de pico ou contagens espectrais entre amostras separadas", en: "Compares peak intensities or spectral counts across separately analyzed samples"}
+        rationale: {pt: "Quando recursos são limitados, então LFQ economiza reagentes ao custo de mais variabilidade.", en: "When resources are limited, LFQ saves reagents at the cost of more variability."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DIA (Data-Independent Acquisition):", en: "DIA (Data-Independent Acquisition):"}
+        choices:
+          - {pt: "Fragmenta janelas amplas de m/z em paralelo, gerando dados completos e reprodutíveis", en: "Fragments wide m/z windows in parallel, yielding complete reproducible data"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DDA estrita", en: "Just strict DDA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Fragmenta janelas amplas de m/z em paralelo, gerando dados completos e reprodutíveis", en: "Fragments wide m/z windows in parallel, yielding complete reproducible data"}
+        rationale: {pt: "Quando todos íons são fragmentados, então quantificação é mais reprodutível entre amostras.", en: "When all ions are fragmented, quantification is more reproducible across samples."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PRM (Parallel Reaction Monitoring):", en: "PRM (Parallel Reaction Monitoring):"}
+        choices:
+          - {pt: "MS targetada de alta resolução para validação clínica e quantificação precisa", en: "Targeted high-resolution MS for clinical validation and precise quantification"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas exploratório", en: "Just exploratory"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "MS targetada de alta resolução para validação clínica e quantificação precisa", en: "Targeted high-resolution MS for clinical validation and precise quantification"}
+        rationale: {pt: "Quando confiabilidade é crítica, então PRM combina sensibilidade e especificidade altas.", en: "When reliability is critical, PRM combines high sensitivity and specificity."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modificações pós-traducionais (PTMs) detectadas por MS incluem:", en: "Post-translational modifications (PTMs) detected by MS include:"}
+        choices:
+          - {pt: "Fosforilação, ubiquitinação, glicosilação, acetilação e metilação", en: "Phosphorylation, ubiquitination, glycosylation, acetylation and methylation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Fosforilação, ubiquitinação, glicosilação, acetilação e metilação", en: "Phosphorylation, ubiquitination, glycosylation, acetylation and methylation"}
+        rationale: {pt: "Quando massa específica é detectada, então PTM é localizada no peptídeo correspondente.", en: "When specific mass is detected, PTM is localized to the corresponding peptide."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fosfoproteômica usa enriquecimento por:", en: "Phosphoproteomics enriches via:"}
+        choices:
+          - {pt: "TiO₂ ou IMAC para concentrar peptídeos fosforilados antes de MS", en: "TiO₂ or IMAC to concentrate phosphopeptides before MS"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "TiO₂ ou IMAC para concentrar peptídeos fosforilados antes de MS", en: "TiO₂ or IMAC to concentrate phosphopeptides before MS"}
+        rationale: {pt: "Quando fosfopeptídeos são enriquecidos, então cobertura sinalizadora aumenta drasticamente.", en: "When phosphopeptides are enriched, signaling coverage rises dramatically."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cross-linking MS (XL-MS) revela:", en: "Cross-linking MS (XL-MS) reveals:"}
+        choices:
+          - {pt: "Distâncias entre resíduos próximos em complexos proteicos para modelagem estrutural", en: "Distances between proximal residues in protein complexes for structural modeling"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Distâncias entre resíduos próximos em complexos proteicos para modelagem estrutural", en: "Distances between proximal residues in protein complexes for structural modeling"}
+        rationale: {pt: "Quando ligadores são identificados, então restrições espaciais alimentam modelo integrativo.", en: "When linkers are identified, spatial constraints feed integrative model."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações e clínica", en: "Applications and clinic"}
+    description: {pt: "Da pesquisa ao paciente.", en: "From research to patient."}
+    exercises:
+      - type: choice
+        question: {pt: "Proteoma plasmático humano:", en: "Human plasma proteome:"}
+        choices:
+          - {pt: "Cobre faixa dinâmica de 10¹⁰ — exige depleção e enriquecimento para sensibilidade", en: "Spans 10¹⁰ dynamic range — requires depletion and enrichment for sensitivity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Cobre faixa dinâmica de 10¹⁰ — exige depleção e enriquecimento para sensibilidade", en: "Spans 10¹⁰ dynamic range — requires depletion and enrichment for sensitivity"}
+        rationale: {pt: "Quando albumina e IgG dominam, então depleção é essencial para ver biomarcadores raros.", en: "When albumin and IgG dominate, depletion is essential to see rare biomarkers."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MS clínica diagnóstica é usada em:", en: "Clinical diagnostic MS is used in:"}
+        choices:
+          - {pt: "Triagem neonatal, microbiologia (MALDI-TOF), terapêutica e endocrinologia", en: "Newborn screening, microbiology (MALDI-TOF), therapeutic drug monitoring and endocrinology"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Triagem neonatal, microbiologia (MALDI-TOF), terapêutica e endocrinologia", en: "Newborn screening, microbiology (MALDI-TOF), therapeutic drug monitoring and endocrinology"}
+        rationale: {pt: "Quando MS substitui imunoensaio, então especificidade molecular sobe e interferências caem.", en: "When MS replaces immunoassay, molecular specificity rises and interferences drop."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MALDI-TOF em microbiologia:", en: "MALDI-TOF in microbiology:"}
+        choices:
+          - {pt: "Identifica bactérias/fungos por perfil proteico em minutos a partir de colônias", en: "Identifies bacteria/fungi by protein profile in minutes from colonies"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Identifica bactérias/fungos por perfil proteico em minutos a partir de colônias", en: "Identifies bacteria/fungi by protein profile in minutes from colonies"}
+        rationale: {pt: "Quando assinatura espectral combina com banco, então diagnóstico microbiológico acelera radicalmente.", en: "When spectral signature matches database, microbiological diagnosis accelerates radically."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Proteoforma é:", en: "Proteoform is:"}
+        choices:
+          - {pt: "Variante específica de uma proteína incluindo isoforma, PTM e variante de sequência", en: "Specific protein variant including isoform, PTM and sequence variant"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Variante específica de uma proteína incluindo isoforma, PTM e variante de sequência", en: "Specific protein variant including isoform, PTM and sequence variant"}
+        rationale: {pt: "Quando proteoformas são distinguidas, então uma 'proteína' revela-se família funcional.", en: "When proteoforms are distinguished, one 'protein' reveals itself as a functional family."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Projeto Human Proteome (HPP):", en: "Human Proteome Project (HPP):"}
+        choices:
+          - {pt: "Catalogar evidência proteica para cada gene codificador humano", en: "Catalog protein evidence for each human coding gene"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Catalogar evidência proteica para cada gene codificador humano", en: "Catalog protein evidence for each human coding gene"}
+        rationale: {pt: "Quando completude é meta, então 'missing proteins' viram alvo central da comunidade.", en: "When completeness is the goal, 'missing proteins' become central community target."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Proteômica espacial integra:", en: "Spatial proteomics integrates:"}
+        choices:
+          - {pt: "Localização subcelular ou tecidual (LOPIT, IMC) com identificação por MS", en: "Subcellular or tissue localization (LOPIT, IMC) with MS-based identification"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Localização subcelular ou tecidual (LOPIT, IMC) com identificação por MS", en: "Subcellular or tissue localization (LOPIT, IMC) with MS-based identification"}
+        rationale: {pt: "Quando posição importa, então 'onde' uma proteína age é tão crucial quanto 'qual'.", en: "When position matters, 'where' a protein acts is as crucial as 'which'."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single-cell proteomics busca:", en: "Single-cell proteomics seeks:"}
+        choices:
+          - {pt: "Quantificar milhares de proteínas em células individuais para heterogeneidade", en: "Quantify thousands of proteins in individual cells for heterogeneity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas média populacional", en: "Just population average"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Quantificar milhares de proteínas em células individuais para heterogeneidade", en: "Quantify thousands of proteins in individual cells for heterogeneity"}
+        rationale: {pt: "Quando MS é sensível o bastante, então fenótipo proteico de célula única emerge.", en: "When MS is sensitive enough, single-cell protein phenotype emerges."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Proteômica em câncer revela:", en: "Cancer proteomics reveals:"}
+        choices:
+          - {pt: "Subtipos moleculares e alvos de combinação não óbvios em DNA/RNA", en: "Molecular subtypes and combination targets not obvious in DNA/RNA"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Subtipos moleculares e alvos de combinação não óbvios em DNA/RNA", en: "Molecular subtypes and combination targets not obvious in DNA/RNA"}
+        rationale: {pt: "Quando proteínas são quantificadas, então camada efetora final é vista — orientando fármacos.", en: "When proteins are quantified, final effector layer is seen — guiding drugs."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Repositórios de proteômica (PRIDE, MassIVE):", en: "Proteomics repositories (PRIDE, MassIVE):"}
+        choices:
+          - {pt: "Compartilham dados brutos e processados com a comunidade global", en: "Share raw and processed data with the global community"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Compartilham dados brutos e processados com a comunidade global", en: "Share raw and processed data with the global community"}
+        rationale: {pt: "Quando dados são públicos, então reanálise gera novas descobertas anos depois.", en: "When data is public, reanalysis generates new discoveries years later."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em proteômica MS:", en: "Next frontiers in MS proteomics:"}
+        choices:
+          - {pt: "Single-cell em rotina, top-down em escala e modelos de IA para identificação", en: "Routine single-cell, scale top-down and AI models for identification"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Single-cell em rotina, top-down em escala e modelos de IA para identificação", en: "Routine single-cell, scale top-down and AI models for identification"}
+        rationale: {pt: "Quando ferramentas convergem, então proteômica vira tão acessível quanto sequenciamento.", en: "When tools converge, proteomics becomes as accessible as sequencing."}
+        objectives: [biology.proteomics_advanced]
+        difficulty: 5
+target: 20

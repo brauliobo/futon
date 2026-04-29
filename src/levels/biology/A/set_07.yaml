@@ -1,0 +1,244 @@
+title:
+  pt: "🧴 Lipidômica"
+  en: "🧴 Lipidomics"
+level: 'A'
+subject: biology
+objectives: [biology.lipidomics]
+difficulty: 5
+authorNotes: "Classes lipídicas, vias de síntese, sinalização lipídica, lipidômica em larga escala, doenças metabólicas."
+example:
+  pt: "Ex.: tecido → extração de lipídios → LC-MS → identificação por massa exata → perfil lipídico → biomarcadores."
+  en: "Ex.: tissue → lipid extraction → LC-MS → mass-accurate ID → lipid profile → biomarkers."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Classes lipídicas e funções", en: "Lipid classes and functions"}
+    description: {pt: "Diversidade molecular dos lipídios.", en: "Molecular diversity of lipids."}
+    exercises:
+      - type: choice
+        question: {pt: "Lipidoma humano contém:", en: "Human lipidome contains:"}
+        choices:
+          - {pt: "Milhares de espécies em classes diversas (glicerolipídeos, esfingolipídeos, esteróis)", en: "Thousands of species in diverse classes (glycerolipids, sphingolipids, sterols)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas colesterol", en: "Just cholesterol"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Milhares de espécies em classes diversas (glicerolipídeos, esfingolipídeos, esteróis)", en: "Thousands of species in diverse classes (glycerolipids, sphingolipids, sterols)"}
+        rationale: {pt: "Quando consideramos todas as combinações, então diversidade lipídica supera a do proteoma em alguns aspectos.", en: "When we consider all combinations, lipid diversity exceeds the proteome in some aspects."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Glicerofosfolipídios formam:", en: "Glycerophospholipids form:"}
+        choices:
+          - {pt: "Bicamada lipídica de membranas celulares com cabeças polares e caudas hidrofóbicas", en: "Cellular membrane bilayer with polar heads and hydrophobic tails"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Bicamada lipídica de membranas celulares com cabeças polares e caudas hidrofóbicas", en: "Cellular membrane bilayer with polar heads and hydrophobic tails"}
+        rationale: {pt: "Quando anfifilicidade existe, então bicamada se auto-organiza espontaneamente em água.", en: "When amphiphilicity exists, bilayer self-assembles spontaneously in water."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Esfingolipídeos são particularmente importantes em:", en: "Sphingolipids are especially important in:"}
+        choices:
+          - {pt: "Sinalização (ceramida, S1P), bainha de mielina e jangadas lipídicas", en: "Signaling (ceramide, S1P), myelin sheath and lipid rafts"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Sinalização (ceramida, S1P), bainha de mielina e jangadas lipídicas", en: "Signaling (ceramide, S1P), myelin sheath and lipid rafts"}
+        rationale: {pt: "Quando ceramida acumula, então apoptose pode ser induzida em vias específicas.", en: "When ceramide accumulates, apoptosis can be induced via specific pathways."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Esteróis (colesterol, ergosterol):", en: "Sterols (cholesterol, ergosterol):"}
+        choices:
+          - {pt: "Modulam fluidez de membranas e são precursores de hormônios e vitaminas", en: "Modulate membrane fluidity and are precursors of hormones and vitamins"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Modulam fluidez de membranas e são precursores de hormônios e vitaminas", en: "Modulate membrane fluidity and are precursors of hormones and vitaminas"}
+        rationale: {pt: "Quando colesterol entra na bicamada, então rigidez seletiva e jangadas lipídicas emergem.", en: "When cholesterol enters bilayer, selective rigidity and lipid rafts emerge."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Triacilgliceróis em adipócitos servem como:", en: "Triacylglycerols in adipocytes serve as:"}
+        choices:
+          - {pt: "Estoque energético principal — densidade calórica alta e mobilizável", en: "Main energy store — high caloric density and mobilizable"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Estoque energético principal — densidade calórica alta e mobilizável", en: "Main energy store — high caloric density and mobilizable"}
+        rationale: {pt: "Quando jejum chega, então lipase mobiliza ácidos graxos para β-oxidação.", en: "When fasting hits, lipase mobilizes fatty acids for β-oxidation."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Eicosanoides (prostaglandinas, leucotrienos) derivam de:", en: "Eicosanoids (prostaglandins, leukotrienes) derive from:"}
+        choices:
+          - {pt: "Ácido araquidônico via COX/LOX — sinalização inflamatória local", en: "Arachidonic acid via COX/LOX — local inflammatory signaling"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Ácido araquidônico via COX/LOX — sinalização inflamatória local", en: "Arachidonic acid via COX/LOX — local inflammatory signaling"}
+        rationale: {pt: "Quando AINEs inibem COX, então síntese de prostaglandinas pró-inflamatórias é bloqueada.", en: "When NSAIDs inhibit COX, pro-inflammatory prostaglandin synthesis is blocked."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mediadores especializados pró-resolução (SPMs):", en: "Specialized pro-resolving mediators (SPMs):"}
+        choices:
+          - {pt: "Resolvinas e protectinas terminam ativamente a inflamação aguda", en: "Resolvins and protectins actively terminate acute inflammation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas pró-inflamatório", en: "Just proinflammatory"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Resolvinas e protectinas terminam ativamente a inflamação aguda", en: "Resolvins and protectins actively terminate acute inflammation"}
+        rationale: {pt: "Quando ômega-3 vira SPMs, então inflamação resolve sem cronificar.", en: "When omega-3 becomes SPMs, inflammation resolves without becoming chronic."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Endocanabinoides (anandamida, 2-AG):", en: "Endocannabinoids (anandamide, 2-AG):"}
+        choices:
+          - {pt: "Lipídios sinalizadores que ativam receptores CB1/CB2 modulando dor e humor", en: "Signaling lipids activating CB1/CB2 receptors modulating pain and mood"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Lipídios sinalizadores que ativam receptores CB1/CB2 modulando dor e humor", en: "Signaling lipids activating CB1/CB2 receptors modulating pain and mood"}
+        rationale: {pt: "Quando endocanabinoides são liberados, então sistema retrógrado modula transmissão sináptica.", en: "When endocannabinoids release, retrograde system modulates synaptic transmission."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PIP2/PIP3 em sinalização:", en: "PIP2/PIP3 in signaling:"}
+        choices:
+          - {pt: "Fosfoinositídeos de membrana com papéis em sinalização e tráfego intracelular", en: "Membrane phosphoinositides with roles in signaling and intracellular trafficking"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Fosfoinositídeos de membrana com papéis em sinalização e tráfego intracelular", en: "Membrane phosphoinositides with roles in signaling and intracellular trafficking"}
+        rationale: {pt: "Quando PI3K converte PIP2 em PIP3, então AKT é ativada e crescimento prossegue.", en: "When PI3K converts PIP2 to PIP3, AKT activates and growth proceeds."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cardiolipina é abundante em:", en: "Cardiolipin is abundant in:"}
+        choices:
+          - {pt: "Membrana mitocondrial interna, essencial para função respiratória", en: "Inner mitochondrial membrane, essential for respiratory function"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas membrana plasmática", en: "Just plasma membrane"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Membrana mitocondrial interna, essencial para função respiratória", en: "Inner mitochondrial membrane, essential for respiratory function"}
+        rationale: {pt: "Quando cardiolipina é oxidada, então cadeia respiratória falha e apoptose pode iniciar.", en: "When cardiolipin is oxidized, respiratory chain fails and apoptosis may start."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Métodos e doenças", en: "Methods and diseases"}
+    description: {pt: "Como medimos e o que isso revela.", en: "How we measure and what it reveals."}
+    exercises:
+      - type: choice
+        question: {pt: "LC-MS é central em lipidômica porque:", en: "LC-MS is central in lipidomics because:"}
+        choices:
+          - {pt: "Separa e identifica lipídios em vasta gama dinâmica com massa exata", en: "Separates and identifies lipids over wide dynamic range with mass accuracy"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia óptica", en: "Just optical microscopy"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Separa e identifica lipídios em vasta gama dinâmica com massa exata", en: "Separates and identifies lipids over wide dynamic range with mass accuracy"}
+        rationale: {pt: "Quando ionização é otimizada, então classes pouco abundantes ainda são detectadas.", en: "When ionization is optimized, low-abundance classes are still detected."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Shotgun lipidomics injeta:", en: "Shotgun lipidomics injects:"}
+        choices:
+          - {pt: "Extrato direto sem cromatografia para análise rápida em alta resolução", en: "Direct extract without chromatography for fast high-resolution analysis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Extrato direto sem cromatografia para análise rápida em alta resolução", en: "Direct extract without chromatography for fast high-resolution analysis"}
+        rationale: {pt: "Quando triagem é prioridade, então rapidez supera separação cromatográfica completa.", en: "When throughput is priority, speed beats full chromatographic separation."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imageamento lipídico (MALDI-MSI):", en: "Lipid imaging (MALDI-MSI):"}
+        choices:
+          - {pt: "Mapeia distribuição espacial de lipídios em cortes de tecido", en: "Maps spatial distribution of lipids in tissue sections"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia escolar", en: "Just school microscopy"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Mapeia distribuição espacial de lipídios em cortes de tecido", en: "Maps spatial distribution of lipids in tissue sections"}
+        rationale: {pt: "Quando posição importa, então MSI complementa lipidômica em larga escala.", en: "When position matters, MSI complements bulk lipidomics."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dislipidemia é caracterizada por:", en: "Dyslipidemia is characterized by:"}
+        choices:
+          - {pt: "Alteração nas concentrações de LDL, HDL e triglicerídeos plasmáticos", en: "Altered plasma LDL, HDL and triglyceride concentrations"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Alteração nas concentrações de LDL, HDL e triglicerídeos plasmáticos", en: "Altered plasma LDL, HDL and triglyceride concentrations"}
+        rationale: {pt: "Quando LDL é alto e HDL é baixo, então risco cardiovascular cresce significativamente.", en: "When LDL is high and HDL is low, cardiovascular risk significantly grows."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Estatinas atuam:", en: "Statins act by:"}
+        choices:
+          - {pt: "Inibindo HMG-CoA redutase, reduzindo síntese hepática de colesterol", en: "Inhibiting HMG-CoA reductase, reducing hepatic cholesterol synthesis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Inibindo HMG-CoA redutase, reduzindo síntese hepática de colesterol", en: "Inhibiting HMG-CoA reductase, reducing hepatic cholesterol synthesis"}
+        rationale: {pt: "Quando hepatócito sintetiza menos colesterol, então LDLR sobe e LDL plasmático cai.", en: "When hepatocyte synthesizes less cholesterol, LDLR rises and plasma LDL drops."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PCSK9 e seu inibidor:", en: "PCSK9 and its inhibitor:"}
+        choices:
+          - {pt: "Anticorpo anti-PCSK9 preserva LDLR hepático e reduz LDL drasticamente", en: "Anti-PCSK9 antibody preserves hepatic LDLR and dramatically lowers LDL"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Anticorpo anti-PCSK9 preserva LDLR hepático e reduz LDL drasticamente", en: "Anti-PCSK9 antibody preserves hepatic LDLR and dramatically lowers LDL"}
+        rationale: {pt: "Quando degradação do receptor é prevenida, então captação hepática de LDL é maximizada.", en: "When receptor degradation is prevented, hepatic LDL uptake is maximized."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Esteatose hepática (NAFLD/MASLD):", en: "Hepatic steatosis (NAFLD/MASLD):"}
+        choices:
+          - {pt: "Acúmulo intracelular de triglicerídeos no fígado, ligado a síndrome metabólica", en: "Intracellular triglyceride accumulation in liver, linked to metabolic syndrome"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas hepatite viral", en: "Just viral hepatitis"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Acúmulo intracelular de triglicerídeos no fígado, ligado a síndrome metabólica", en: "Intracellular triglyceride accumulation in liver, linked to metabolic syndrome"}
+        rationale: {pt: "Quando influxo excede oxidação, então gota lipídica cresce no hepatócito.", en: "When influx exceeds oxidation, lipid droplet grows in hepatocyte."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipidômica clínica busca:", en: "Clinical lipidomics seeks:"}
+        choices:
+          - {pt: "Biomarcadores plasmáticos para risco cardiovascular, neurológico e metabólico", en: "Plasma biomarkers for cardiovascular, neurological and metabolic risk"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Biomarcadores plasmáticos para risco cardiovascular, neurológico e metabólico", en: "Plasma biomarkers for cardiovascular, neurological and metabolic risk"}
+        rationale: {pt: "Quando perfil lipídico é detalhado, então estratificação de risco supera colesterol total.", en: "When lipid profile is detailed, risk stratification surpasses total cholesterol."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ferroptose é morte celular dependente de:", en: "Ferroptosis is cell death dependent on:"}
+        choices:
+          - {pt: "Peroxidação lipídica catalisada por ferro, distinta de apoptose e necrose", en: "Iron-catalyzed lipid peroxidation, distinct from apoptosis and necrosis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Peroxidação lipídica catalisada por ferro, distinta de apoptose e necrose", en: "Iron-catalyzed lipid peroxidation, distinct from apoptosis and necrosis"}
+        rationale: {pt: "Quando GPX4 falha, então PUFAs oxidam, membrana se rompe e célula morre.", en: "When GPX4 fails, PUFAs oxidize, membrane ruptures and cell dies."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipidômica em neurodegeneração:", en: "Lipidomics in neurodegeneration:"}
+        choices:
+          - {pt: "Alterações em ceramidas, esfingomielinas e gangliosídeos correlacionam com Alzheimer/Parkinson", en: "Changes in ceramides, sphingomyelins and gangliosides correlate with Alzheimer/Parkinson"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Alterações em ceramidas, esfingomielinas e gangliosídeos correlacionam com Alzheimer/Parkinson", en: "Changes in ceramides, sphingomyelins and gangliosides correlate with Alzheimer/Parkinson"}
+        rationale: {pt: "Quando lipidoma cerebral muda, então sinapses e mielina ficam comprometidas progressivamente.", en: "When brain lipidome shifts, synapses and myelin progressively fail."}
+        objectives: [biology.lipidomics]
+        difficulty: 5
+target: 20

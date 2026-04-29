@@ -1,0 +1,244 @@
+title:
+  pt: "🧪 Metabolômica"
+  en: "🧪 Metabolomics"
+level: 'A'
+subject: biology
+objectives: [biology.metabolomics]
+difficulty: 5
+authorNotes: "Métodos analíticos, vias metabólicas, fluxômica, biomarcadores, fenotipagem metabólica."
+example:
+  pt: "Ex.: amostra de soro → MS/NMR → centenas de metabólitos → comparação caso-controle → biomarcador identificado."
+  en: "Ex.: serum sample → MS/NMR → hundreds of metabolites → case-control comparison → biomarker identified."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Métodos e cobertura", en: "Methods and coverage"}
+    description: {pt: "Como medimos pequenas moléculas.", en: "How we measure small molecules."}
+    exercises:
+      - type: choice
+        question: {pt: "Metabolômica estuda:", en: "Metabolomics studies:"}
+        choices:
+          - {pt: "Conjunto de pequenas moléculas (metabólitos) em sistema biológico", en: "Set of small molecules (metabolites) in biological system"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Conjunto de pequenas moléculas (metabólitos) em sistema biológico", en: "Set of small molecules (metabolites) in biological system"}
+        rationale: {pt: "Quando metabólitos são quantificados, então fenótipo bioquímico imediato emerge.", en: "When metabolites are quantified, immediate biochemical phenotype emerges."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Metaboloma é proxy de:", en: "Metabolome is a proxy for:"}
+        choices:
+          - {pt: "Estado fisiológico atual — integra genômica, ambiente e dieta", en: "Current physiological state — integrates genomics, environment and diet"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Estado fisiológico atual — integra genômica, ambiente e dieta", en: "Current physiological state — integrates genomics, environment and diet"}
+        rationale: {pt: "Quando metabolitos refletem todas as camadas, então metaboloma é resumo funcional do organismo.", en: "When metabolites reflect all layers, metabolome is a functional summary of the organism."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "NMR em metabolômica oferece:", en: "NMR in metabolomics offers:"}
+        choices:
+          - {pt: "Quantificação reprodutível e sem dano à amostra, com cobertura limitada", en: "Reproducible non-destructive quantification with limited coverage"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Quantificação reprodutível e sem dano à amostra, com cobertura limitada", en: "Reproducible non-destructive quantification with limited coverage"}
+        rationale: {pt: "Quando reprodutibilidade é prioridade, então NMR é robusto entre laboratórios.", en: "When reproducibility is priority, NMR is robust across laboratories."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "LC-MS em metabolômica:", en: "LC-MS in metabolomics:"}
+        choices:
+          - {pt: "Cobertura ampla com alta sensibilidade, exigindo identificação cuidadosa", en: "Broad coverage with high sensitivity, requiring careful identification"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Cobertura ampla com alta sensibilidade, exigindo identificação cuidadosa", en: "Broad coverage with high sensitivity, requiring careful identification"}
+        rationale: {pt: "Quando massa exata + tempo de retenção combinam, então identificação fica robusta.", en: "When accurate mass + retention time combine, identification becomes robust."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Untargeted vs targeted metabolomics:", en: "Untargeted vs targeted metabolomics:"}
+        choices:
+          - {pt: "Untargeted explora ampla; targeted quantifica conjunto definido com precisão", en: "Untargeted explores broadly; targeted precisely quantifies defined set"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas idênticos", en: "Just identical"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Untargeted explora ampla; targeted quantifica conjunto definido com precisão", en: "Untargeted explores broadly; targeted precisely quantifies defined set"}
+        rationale: {pt: "Quando descoberta é o objetivo, então untargeted abre espaço; quando precisão é necessária, então targeted ganha.", en: "When discovery is the goal, untargeted opens space; when precision is needed, targeted wins."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Identificação de metabólitos depende de:", en: "Metabolite identification depends on:"}
+        choices:
+          - {pt: "Massa exata, fragmentação MS/MS, padrões e bancos de dados (HMDB, METLIN)", en: "Accurate mass, MS/MS fragmentation, standards and databases (HMDB, METLIN)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Massa exata, fragmentação MS/MS, padrões e bancos de dados (HMDB, METLIN)", en: "Accurate mass, MS/MS fragmentation, standards and databases (HMDB, METLIN)"}
+        rationale: {pt: "Quando múltiplas linhas convergem, então confiança na identificação cresce a níveis publicáveis.", en: "When multiple lines converge, ID confidence rises to publishable levels."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fluxômica (¹³C-flux) mede:", en: "Fluxomics (¹³C-flux) measures:"}
+        choices:
+          - {pt: "Taxas de fluxo metabólico via traçadores isotópicos e modelagem", en: "Metabolic flux rates via isotopic tracers and modeling"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Taxas de fluxo metabólico via traçadores isotópicos e modelagem", en: "Metabolic flux rates via isotopic tracers and modeling"}
+        rationale: {pt: "Quando isótopos pesados marcam carbono, então caminhos de uso são reconstruídos quantitativamente.", en: "When heavy isotopes label carbon, usage pathways are quantitatively reconstructed."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Análise de balanço de fluxo (FBA):", en: "Flux balance analysis (FBA):"}
+        choices:
+          - {pt: "Modelo estequiométrico restrito que prediz fluxos otimizando objetivo", en: "Constrained stoichiometric model predicting fluxes by optimizing objective"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+        correctAnswer: {pt: "Modelo estequiométrico restrito que prediz fluxos otimizando objetivo", en: "Constrained stoichiometric model predicting fluxes by optimizing objective"}
+        rationale: {pt: "Quando rede é descrita matematicamente, então cenários in silico explicam crescimento e produção.", en: "When network is described mathematically, in silico scenarios explain growth and production."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pré-processamento metabolômico inclui:", en: "Metabolomic preprocessing includes:"}
+        choices:
+          - {pt: "Alinhamento de picos, normalização, imputação e correção de batch", en: "Peak alignment, normalization, imputation and batch correction"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Alinhamento de picos, normalização, imputação e correção de batch", en: "Peak alignment, normalization, imputation and batch correction"}
+        rationale: {pt: "Quando dados são limpos, então sinais biológicos emergem sobre ruído técnico.", en: "When data is clean, biological signals emerge over technical noise."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Estatística metabolômica usa frequentemente:", en: "Metabolomic statistics often uses:"}
+        choices:
+          - {pt: "PCA, OPLS-DA e análise de enriquecimento de vias", en: "PCA, OPLS-DA and pathway enrichment analysis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "PCA, OPLS-DA e análise de enriquecimento de vias", en: "PCA, OPLS-DA and pathway enrichment analysis"}
+        rationale: {pt: "Quando dimensionalidade é reduzida, então padrões biológicos ficam visíveis.", en: "When dimensionality is reduced, biological patterns become visible."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações clínicas e biotec", en: "Clinical and biotech applications"}
+    description: {pt: "Da bancada à clínica e indústria.", en: "From bench to clinic and industry."}
+    exercises:
+      - type: choice
+        question: {pt: "Triagem neonatal por MS/MS detecta:", en: "Newborn MS/MS screening detects:"}
+        choices:
+          - {pt: "Erros inatos do metabolismo (PKU, MCAD) por padrões de acilcarnitinas e aminoácidos", en: "Inborn errors of metabolism (PKU, MCAD) via acylcarnitine and amino acid patterns"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Erros inatos do metabolismo (PKU, MCAD) por padrões de acilcarnitinas e aminoácidos", en: "Inborn errors of metabolism (PKU, MCAD) via acylcarnitine and amino acid patterns"}
+        rationale: {pt: "Quando bebê é triado, então intervenção dietética/farmacológica precoce evita dano permanente.", en: "When newborn is screened, early dietary/pharmacologic intervention prevents permanent harm."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Metabolômica em câncer revela:", en: "Cancer metabolomics reveals:"}
+        choices:
+          - {pt: "Reprogramação de Warburg, glutaminólise e dependências metabólicas alvo", en: "Warburg reprogramming, glutaminolysis and targetable metabolic dependencies"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Reprogramação de Warburg, glutaminólise e dependências metabólicas alvo", en: "Warburg reprogramming, glutaminolysis and targetable metabolic dependencies"}
+        rationale: {pt: "Quando tumor depende de via, então inibir essa via causa morte seletiva.", en: "When tumor depends on a pathway, inhibiting it causes selective death."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TMAO em risco cardiovascular:", en: "TMAO in cardiovascular risk:"}
+        choices:
+          - {pt: "Metabólito derivado da microbiota intestinal associado a aterosclerose", en: "Gut microbiota-derived metabolite associated with atherosclerosis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Metabólito derivado da microbiota intestinal associado a aterosclerose", en: "Gut microbiota-derived metabolite associated with atherosclerosis"}
+        rationale: {pt: "Quando microbiota processa colina, então TMAO sobe e endotélio sofre cronicamente.", en: "When microbiota processes choline, TMAO rises and endothelium chronically suffers."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Diabetes tipo 2 e metabolômica:", en: "Type 2 diabetes and metabolomics:"}
+        choices:
+          - {pt: "Aminoácidos de cadeia ramificada (BCAAs) elevados predizem risco anos antes", en: "Elevated branched-chain amino acids (BCAAs) predict risk years ahead"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Aminoácidos de cadeia ramificada (BCAAs) elevados predizem risco anos antes", en: "Elevated branched-chain amino acids (BCAAs) predict risk years ahead"}
+        rationale: {pt: "Quando metabolismo de BCAAs falha, então resistência insulínica precede hiperglicemia clínica.", en: "When BCAA metabolism fails, insulin resistance precedes clinical hyperglycemia."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Metabolômica em doenças neurodegenerativas:", en: "Metabolomics in neurodegenerative diseases:"}
+        choices:
+          - {pt: "Liquor e plasma revelam alterações em ácidos biliares, lipídios e neuro-hormônios", en: "CSF and plasma show changes in bile acids, lipids and neurohormones"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Liquor e plasma revelam alterações em ácidos biliares, lipídios e neuro-hormônios", en: "CSF and plasma show changes in bile acids, lipids and neurohormones"}
+        rationale: {pt: "Quando assinatura metabólica é estabelecida, então diagnóstico precoce torna-se factível.", en: "When metabolic signature is established, early diagnosis becomes feasible."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Exposômica complementa metabolômica por:", en: "Exposomics complements metabolomics by:"}
+        choices:
+          - {pt: "Capturar exposições químicas ambientais cumulativas via biofluidos", en: "Capturing cumulative environmental chemical exposures via biofluids"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Capturar exposições químicas ambientais cumulativas via biofluidos", en: "Capturing cumulative environmental chemical exposures via biofluids"}
+        rationale: {pt: "Quando ambiente é mapeado quimicamente, então 'environmental burden' é quantificado por pessoa.", en: "When environment is chemically mapped, 'environmental burden' is per-person quantified."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Metabolômica em farmacologia:", en: "Metabolomics in pharmacology:"}
+        choices:
+          - {pt: "Identifica metabólitos de fármacos e biomarcadores de resposta/toxicidade", en: "Identifies drug metabolites and response/toxicity biomarkers"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Identifica metabólitos de fármacos e biomarcadores de resposta/toxicidade", en: "Identifies drug metabolites and response/toxicity biomarkers"}
+        rationale: {pt: "Quando metabolização varia, então dose individual pode ser ajustada antes de lesão.", en: "When metabolism varies, individual dose can be adjusted before harm."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Metabolômica vegetal e agricultura:", en: "Plant metabolomics and agriculture:"}
+        choices:
+          - {pt: "Identifica metabólitos de defesa, sabor e nutrição em culturas", en: "Identifies defense, flavor and nutrition metabolites in crops"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Identifica metabólitos de defesa, sabor e nutrição em culturas", en: "Identifies defense, flavor and nutrition metabolites in crops"}
+        rationale: {pt: "Quando metabolitos são selecionados, então melhoramento entrega culturas mais resistentes e saborosas.", en: "When metabolites are selected, breeding delivers more resistant and tasty crops."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Metabolômica microbiana:", en: "Microbial metabolomics:"}
+        choices:
+          - {pt: "Mapeia metabolitos secundários de potencial farmacológico (antibióticos, anticâncer)", en: "Maps secondary metabolites with pharmacological potential (antibiotics, anticancer)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Mapeia metabolitos secundários de potencial farmacológico (antibióticos, anticâncer)", en: "Maps secondary metabolites with pharmacological potential (antibiotics, anticancer)"}
+        rationale: {pt: "Quando bibliotecas naturais são prospectadas, então novos princípios ativos surgem.", en: "When natural libraries are mined, new active principles emerge."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em metabolômica:", en: "Next frontiers in metabolomics:"}
+        choices:
+          - {pt: "Single-cell, in vivo real-time e modelos de IA para identificação de metabólitos", en: "Single-cell, in vivo real-time and AI models for metabolite ID"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Single-cell, in vivo real-time e modelos de IA para identificação de metabólitos", en: "Single-cell, in vivo real-time and AI models for metabolite ID"}
+        rationale: {pt: "Quando resolução cresce, então metabolitos são lidos como fenótipos individuais em tempo real.", en: "When resolution grows, metabolites are read as individual phenotypes in real time."}
+        objectives: [biology.metabolomics]
+        difficulty: 5
+target: 20
