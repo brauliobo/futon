@@ -1,0 +1,244 @@
+title:
+  pt: "🦠 Terapia com fagos"
+  en: "🦠 Phage therapy"
+level: 'D'
+subject: biology
+objectives: [biology.phage]
+difficulty: 5
+authorNotes: "Bacteriófagos terapêuticos, coquetéis personalizados, resistência, regulação."
+example:
+  pt: "Ex.: infecção MDR → biópsia → caracterizar bactéria → coquetel de fagos → administração → cura."
+  en: "Ex.: MDR infection → biopsy → characterize bacterium → phage cocktail → administration → cure."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Biologia dos fagos", en: "Phage biology"}
+    description: {pt: "Como funcionam terapeuticamente.", en: "How they work therapeutically."}
+    exercises:
+      - type: choice
+        question: {pt: "Fago lítico vs lisogênico:", en: "Lytic vs lysogenic phage:"}
+        choices:
+          - {pt: "Líticos matam o hospedeiro liberando progênie; lisogênicos integram-se inativamente", en: "Lytic kills host releasing progeny; lysogenic integrates inactively"}
+          - {pt: "Apenas dois tipos idênticos", en: "Just two identical types"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+          - {pt: "Apenas detalhe taxonômico", en: "Just taxonomic detail"}
+        correctAnswer: {pt: "Líticos matam o hospedeiro liberando progênie; lisogênicos integram-se inativamente", en: "Lytic kills host releasing progeny; lysogenic integrates inactively"}
+        rationale: {pt: "Quando líticos são selecionados, então terapia mata bactéria diretamente.", en: "When lytic are selected, therapy kills bacterium directly."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Receptores de fagos:", en: "Phage receptors:"}
+        choices:
+          - {pt: "Reconhecem proteínas, LPS ou pilis bacterianos com alta especificidade de cepa", en: "Recognize bacterial proteins, LPS or pili with high strain specificity"}
+          - {pt: "Apenas adesão genérica", en: "Just generic adhesion"}
+          - {pt: "Apenas reação química", en: "Just chemical reaction"}
+          - {pt: "Apenas escolha aleatória", en: "Just random choice"}
+        correctAnswer: {pt: "Reconhecem proteínas, LPS ou pilis bacterianos com alta especificidade de cepa", en: "Recognize bacterial proteins, LPS or pili with high strain specificity"}
+        rationale: {pt: "Quando especificidade é alta, então bactérias úteis são preservadas.", en: "When specificity is high, beneficial bacteria are spared."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Coquetel de fagos:", en: "Phage cocktail:"}
+        choices:
+          - {pt: "Mistura de múltiplos fagos amplia hospedeiros e reduz risco de resistência rápida", en: "Mix of multiple phages broadens host range and reduces rapid resistance risk"}
+          - {pt: "Apenas fago único", en: "Just single phage"}
+          - {pt: "Apenas combinação aleatória", en: "Just random combination"}
+          - {pt: "Apenas variação cultural", en: "Just cultural variation"}
+        correctAnswer: {pt: "Mistura de múltiplos fagos amplia hospedeiros e reduz risco de resistência rápida", en: "Mix of multiple phages broadens host range and reduces rapid resistance risk"}
+        rationale: {pt: "Quando coquetel é diverso, então bactérias têm rotas de escape limitadas.", en: "When cocktail is diverse, bacteria have limited escape routes."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resistência bacteriana a fagos:", en: "Bacterial resistance to phages:"}
+        choices:
+          - {pt: "Mutações em receptores, sistemas CRISPR e R-M reduzem suscetibilidade — coevolução", en: "Receptor mutations, CRISPR and R-M systems reduce susceptibility — coevolution"}
+          - {pt: "Apenas detalhe trivial", en: "Just trivial detail"}
+          - {pt: "Apenas evento aleatório", en: "Just random event"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "Mutações em receptores, sistemas CRISPR e R-M reduzem suscetibilidade — coevolução", en: "Receptor mutations, CRISPR and R-M systems reduce susceptibility — coevolution"}
+        rationale: {pt: "Quando resistência surge, então fitness bacteriano frequentemente cai.", en: "When resistance arises, bacterial fitness often falls."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Compassionate use:", en: "Compassionate use:"}
+        choices:
+          - {pt: "Fagos personalizados em casos terminais (Patterson, Strathdee, 2016) abriram caminho", en: "Personalized phages in terminal cases (Patterson, Strathdee, 2016) paved the way"}
+          - {pt: "Apenas tratamento padrão", en: "Just standard treatment"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+        correctAnswer: {pt: "Fagos personalizados em casos terminais (Patterson, Strathdee, 2016) abriram caminho", en: "Personalized phages in terminal cases (Patterson, Strathdee, 2016) paved the way"}
+        rationale: {pt: "Quando casos heroicos sucedem, então estudos formais avançam.", en: "When heroic cases succeed, formal studies advance."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tradição soviética:", en: "Soviet tradition:"}
+        choices:
+          - {pt: "Geórgia (Eliava) e Polônia mantiveram terapia com fagos durante era de antibióticos", en: "Georgia (Eliava) and Poland kept phage therapy alive during antibiotic era"}
+          - {pt: "Apenas curiosidade histórica", en: "Just historical curiosity"}
+          - {pt: "Apenas tradição cultural", en: "Just cultural tradition"}
+          - {pt: "Apenas mito ocidental", en: "Just Western myth"}
+        correctAnswer: {pt: "Geórgia (Eliava) e Polônia mantiveram terapia com fagos durante era de antibióticos", en: "Georgia (Eliava) and Poland kept phage therapy alive during antibiotic era"}
+        rationale: {pt: "Quando tradição preserva, então conhecimento ressurge quando necessário.", en: "When tradition preserves, knowledge resurfaces when needed."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mycobacterium tuberculosis:", en: "Mycobacterium tuberculosis:"}
+        choices:
+          - {pt: "Fagos de micobactérias (BPs, ZoeJ) tratam infecções abscessivas em pacientes seleccionados", en: "Mycobacterial phages (BPs, ZoeJ) treat abscess infections in selected patients"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição", en: "Just tradition"}
+          - {pt: "Apenas tentativa empírica", en: "Just empirical attempt"}
+        correctAnswer: {pt: "Fagos de micobactérias (BPs, ZoeJ) tratam infecções abscessivas em pacientes seleccionados", en: "Mycobacterial phages (BPs, ZoeJ) treat abscess infections in selected patients"}
+        rationale: {pt: "Quando coquetel é projetado, então casos refratários respondem.", en: "When cocktail is designed, refractory cases respond."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Endolisinas:", en: "Endolysins:"}
+        choices:
+          - {pt: "Enzimas líticas de fagos lisam bactérias diretamente — alternativa à terapia viva", en: "Phage lytic enzymes directly lyse bacteria — alternative to live therapy"}
+          - {pt: "Apenas curiosidade enzimática", en: "Just enzymatic curiosity"}
+          - {pt: "Apenas químico clássico", en: "Just classical chemical"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+        correctAnswer: {pt: "Enzimas líticas de fagos lisam bactérias diretamente — alternativa à terapia viva", en: "Phage lytic enzymes directly lyse bacteria — alternative to live therapy"}
+        rationale: {pt: "Quando enzimas são puras, então perfil regulatório é mais simples.", en: "When enzymes are pure, regulatory profile is simpler."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Engenharia de host range:", en: "Host range engineering:"}
+        choices:
+          - {pt: "Modificar caudas e fibras expande espectro contra Pseudomonas, Klebsiella e mais", en: "Tail and fiber engineering expands spectrum against Pseudomonas, Klebsiella and more"}
+          - {pt: "Apenas seleção natural", en: "Just natural selection"}
+          - {pt: "Apenas diversificação aleatória", en: "Just random diversification"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+        correctAnswer: {pt: "Modificar caudas e fibras expande espectro contra Pseudomonas, Klebsiella e mais", en: "Tail and fiber engineering expands spectrum against Pseudomonas, Klebsiella and more"}
+        rationale: {pt: "Quando host range é ajustável, então cobertura clínica aumenta.", en: "When host range is tunable, clinical coverage rises."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CRISPR-fagos:", en: "CRISPR-phages:"}
+        choices:
+          - {pt: "Fagos carregam Cas9 com gRNA contra bactérias resistentes — antimicrobiano programável", en: "Phages carry Cas9 with gRNA against resistant bacteria — programmable antimicrobial"}
+          - {pt: "Apenas vacina viral", en: "Just viral vaccine"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+        correctAnswer: {pt: "Fagos carregam Cas9 com gRNA contra bactérias resistentes — antimicrobiano programável", en: "Phages carry Cas9 with gRNA against resistant bacteria — programmable antimicrobial"}
+        rationale: {pt: "Quando CRISPR-fago atua, então alvos de resistência são removidos seletivamente.", en: "When CRISPR-phage acts, resistance targets are selectively removed."}
+        objectives: [biology.phage]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações e regulação", en: "Applications and regulation"}
+    description: {pt: "Da teoria à clínica.", en: "From theory to clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "MDR e fagos:", en: "MDR and phages:"}
+        choices:
+          - {pt: "Bactérias multirresistentes a antibióticos respondem a fagos via mecanismo independente", en: "Multidrug-resistant bacteria respond to phages via independent mechanism"}
+          - {pt: "Apenas alternativa supersticiosa", en: "Just superstitious alternative"}
+          - {pt: "Apenas medicamento popular", en: "Just popular medication"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+        correctAnswer: {pt: "Bactérias multirresistentes a antibióticos respondem a fagos via mecanismo independente", en: "Multidrug-resistant bacteria respond to phages via independent mechanism"}
+        rationale: {pt: "Quando antibióticos falham, então fagos oferecem rota alternativa.", en: "When antibiotics fail, phages offer alternative route."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Phage steering:", en: "Phage steering:"}
+        choices:
+          - {pt: "Fagos pressionam evolução bacteriana para perda de virulência ou ressensibilização", en: "Phages press bacterial evolution toward virulence loss or resensitization"}
+          - {pt: "Apenas curiosidade evolutiva", en: "Just evolutionary curiosity"}
+          - {pt: "Apenas observação ecológica", en: "Just ecological observation"}
+          - {pt: "Apenas detalhe teórico", en: "Just theoretical detail"}
+        correctAnswer: {pt: "Fagos pressionam evolução bacteriana para perda de virulência ou ressensibilização", en: "Phages press bacterial evolution toward virulence loss or resensitization"}
+        rationale: {pt: "Quando steering é usado, então combinações fago-antibiótico potencializam tratamento.", en: "When steering is used, phage-antibiotic combos boost treatment."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sinergia fago-antibiótico:", en: "Phage-antibiotic synergy:"}
+        choices:
+          - {pt: "Tratamento combinado supera resistência via mecanismos complementares", en: "Combined treatment overcomes resistance via complementary mechanisms"}
+          - {pt: "Apenas dose maior", en: "Just larger dose"}
+          - {pt: "Apenas via injetável", en: "Just injectable route"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Tratamento combinado supera resistência via mecanismos complementares", en: "Combined treatment overcomes resistance via complementary mechanisms"}
+        rationale: {pt: "Quando ambos atuam, então bactérias enfrentam dilema evolutivo.", en: "When both act, bacteria face evolutionary dilemma."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Banco de fagos:", en: "Phage bank:"}
+        choices:
+          - {pt: "Coleções caracterizadas (Yale, IPATH) permitem montagem rápida de coquetéis personalizados", en: "Characterized collections (Yale, IPATH) enable rapid personalized cocktail assembly"}
+          - {pt: "Apenas curiosidade institucional", en: "Just institutional curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas reserva acadêmica", en: "Just academic reserve"}
+        correctAnswer: {pt: "Coleções caracterizadas (Yale, IPATH) permitem montagem rápida de coquetéis personalizados", en: "Characterized collections (Yale, IPATH) enable rapid personalized cocktail assembly"}
+        rationale: {pt: "Quando bancos crescem, então tempo terapêutico encurta.", en: "When banks grow, therapeutic time shortens."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Regulação:", en: "Regulation:"}
+        choices:
+          - {pt: "FDA e EMA elaboram estruturas de fagos personalizados — desafios em padrões de produção", en: "FDA and EMA develop personalized phage frameworks — production-standard challenges"}
+          - {pt: "Apenas tradição local", en: "Just local tradition"}
+          - {pt: "Apenas burocracia", en: "Just bureaucracy"}
+          - {pt: "Apenas regulamento genérico", en: "Just generic regulation"}
+        correctAnswer: {pt: "FDA e EMA elaboram estruturas de fagos personalizados — desafios em padrões de produção", en: "FDA and EMA develop personalized phage frameworks — production-standard challenges"}
+        rationale: {pt: "Quando regulação amadurece, então acesso clínico amplia globalmente.", en: "When regulation matures, clinical access broadens globally."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cistic fibrosis e Pseudomonas:", en: "Cystic fibrosis and Pseudomonas:"}
+        choices:
+          - {pt: "Infecções pulmonares crônicas em CF respondem a fagos em casos compassionate use", en: "Chronic lung infections in CF respond to phages in compassionate-use cases"}
+          - {pt: "Apenas tratamento sintomático", en: "Just symptomatic treatment"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas fisioterapia", en: "Just physiotherapy"}
+        correctAnswer: {pt: "Infecções pulmonares crônicas em CF respondem a fagos em casos compassionate use", en: "Chronic lung infections in CF respond to phages in compassionate-use cases"}
+        rationale: {pt: "Quando antibióticos falham, então fagos oferecem esperança em CF.", en: "When antibiotics fail, phages offer hope in CF."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fagos em alimentos:", en: "Phages in food:"}
+        choices:
+          - {pt: "Aprovados para reduzir Listeria e Salmonella em carnes — biopreservação prática", en: "Approved to reduce Listeria and Salmonella in meats — practical biopreservation"}
+          - {pt: "Apenas conservante químico", en: "Just chemical preservative"}
+          - {pt: "Apenas refrigeração", en: "Just refrigeration"}
+          - {pt: "Apenas curiosidade industrial", en: "Just industrial curiosity"}
+        correctAnswer: {pt: "Aprovados para reduzir Listeria e Salmonella em carnes — biopreservação prática", en: "Approved to reduce Listeria and Salmonella in meats — practical biopreservation"}
+        rationale: {pt: "Quando fagos são seguros e específicos, então alimentos ficam mais protegidos.", en: "When phages are safe and specific, foods become better protected."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resposta imune anti-fago:", en: "Anti-phage immune response:"}
+        choices:
+          - {pt: "Anticorpos neutralizantes podem reduzir eficácia em tratamentos repetidos", en: "Neutralizing antibodies may reduce efficacy in repeated treatments"}
+          - {pt: "Apenas detalhe imune", en: "Just immune detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Anticorpos neutralizantes podem reduzir eficácia em tratamentos repetidos", en: "Neutralizing antibodies may reduce efficacy in repeated treatments"}
+        rationale: {pt: "Quando imunidade limita, então rotação de fagos contorna o problema.", en: "When immunity limits, phage rotation works around it."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Diagnóstico por fagos:", en: "Phage-based diagnostics:"}
+        choices:
+          - {pt: "Fagos com repórteres detectam patógenos vivos rapidamente em amostras clínicas", en: "Reporter-bearing phages quickly detect viable pathogens in clinical samples"}
+          - {pt: "Apenas cultura tradicional", en: "Just traditional culture"}
+          - {pt: "Apenas PCR padrão", en: "Just standard PCR"}
+          - {pt: "Apenas observação visual", en: "Just visual observation"}
+        correctAnswer: {pt: "Fagos com repórteres detectam patógenos vivos rapidamente em amostras clínicas", en: "Reporter-bearing phages quickly detect viable pathogens in clinical samples"}
+        rationale: {pt: "Quando fagos diagnosticam, então decisão terapêutica acelera.", en: "When phages diagnose, therapeutic decision accelerates."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em fagos:", en: "Next phage frontiers:"}
+        choices:
+          - {pt: "Coquetéis padronizados, foundries de fago e ensaios randomizados em larga escala", en: "Standardized cocktails, phage foundries and large-scale randomized trials"}
+          - {pt: "Apenas tradição compassional", en: "Just compassionate tradition"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas mito histórico", en: "Just historical myth"}
+        correctAnswer: {pt: "Coquetéis padronizados, foundries de fago e ensaios randomizados em larga escala", en: "Standardized cocktails, phage foundries and large-scale randomized trials"}
+        rationale: {pt: "Quando ferramentas amadurecem, então fagos viram terapia mainstream para MDR.", en: "When tools mature, phages become mainstream MDR therapy."}
+        objectives: [biology.phage]
+        difficulty: 5
+target: 20
