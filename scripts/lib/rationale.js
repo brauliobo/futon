@@ -297,7 +297,7 @@ const TRANSFORMATION_RE = /\S\s*[→>]\s*\S/;
 // (3) ≥3-word noun-led classification ("Obras ambientadas na Bahia.").
 // Pure-imperative or 2-word fragments like "Pense bem." or "Resposta
 // correta!" don't qualify — they aren't classifying anything.
-const DEFINITION_RE = /(?:['"][^'"]{2,}['"]\s*=?\s*\S|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]{3,}[\s,;:]*(?:=\s*\S|\sé\s|\ssão\s|\ses\s|\sson\s|\sis\s|\sare\s|(?:[\s,;:]+\S+){3,})|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+[\s,;:]+\S+[\s,;:]+(?:é|são|es|son|is|are)\s+\S|\b[A-Z]\s*=\s*\S)/;
+const DEFINITION_RE = /(?:['"][^'"]{2,}['"]\s*=?\s*\S|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]{3,}[\s,;:]*(?:=\s*\S|\sé\s|\ssão\s|\ses\s|\sson\s|\sis\s|\sare\s|(?:[\s,;:]+\S+){3,})|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+(?:\s+\S+){1,8}?\s+(?:é|são|es|son|is|are)\s+\S|\b[A-Z]\s*=\s*\S)/;
 // Bilingual sentence-decomposition: a Japanese script chunk followed by
 // its parenthetical translation, joined by " + " into the next chunk.
 // Or: PT term '=' japanese script with parenthetical reading.
