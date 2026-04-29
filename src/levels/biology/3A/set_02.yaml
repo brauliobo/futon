@@ -1,0 +1,244 @@
+title:
+  pt: "🛡️ Imunologia avançada"
+  en: "🛡️ Advanced immunology"
+level: '3A'
+subject: biology
+objectives: [biology.immune_advanced]
+difficulty: 4
+authorNotes: "Linfócitos T/B, MHC, citocinas, imunoterapia, doenças autoimunes."
+example:
+  pt: "Ex.: APC apresenta antígeno via MHC II → ativa T CD4 → ajuda B → anticorpos + memória."
+  en: "Ex.: APC presents antigen via MHC II → activates CD4 T → helps B → antibodies + memory."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Imunidade adaptativa", en: "Adaptive immunity"}
+    description: {pt: "Como linfócitos coordenam defesa.", en: "How lymphocytes coordinate defense."}
+    exercises:
+      - type: choice
+        question: {pt: "Linfócitos T CD4 (auxiliares) servem para:", en: "CD4 T helper lymphocytes serve to:"}
+        choices:
+          - {pt: "Coordenar resposta imune (ativam B, T citotóxicos, macrófagos)", en: "Coordinate immune response (activate B, cytotoxic T, macrophages)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas hemácias", en: "Just red cells"}
+          - {pt: "Sem função", en: "No function"}
+        correctAnswer: {pt: "Coordenar resposta imune (ativam B, T citotóxicos, macrófagos)", en: "Coordinate immune response (activate B, cytotoxic T, macrophages)"}
+        rationale: {pt: "Como são \"maestros\" do sistema imune, então sua perda (HIV) compromete toda imunidade adaptativa.", en: "Because they're immune \"conductors\", their loss (HIV) compromises all adaptive immunity."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Linfócitos T CD8 (citotóxicos):", en: "CD8 cytotoxic T lymphocytes:"}
+        choices:
+          - {pt: "Matam células infectadas por vírus ou tumorais (perforina + granzimas)", en: "Kill virus-infected or tumor cells (perforin + granzymes)"}
+          - {pt: "Apenas anticorpos", en: "Just antibodies"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem função", en: "No function"}
+        correctAnswer: {pt: "Matam células infectadas por vírus ou tumorais (perforina + granzimas)", en: "Kill virus-infected or tumor cells (perforin + granzymes)"}
+        rationale: {pt: "Como reconhecem antígenos via MHC I, então eliminam células doentes preservando saudáveis.", en: "Because they recognize antigens via MHC I, they eliminate sick cells while sparing healthy ones."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Linfócitos B produzem:", en: "B lymphocytes produce:"}
+        choices:
+          - {pt: "Anticorpos (imunoglobulinas) específicos para antígenos", en: "Antigen-specific antibodies (immunoglobulins)"}
+          - {pt: "Apenas hormônios", en: "Just hormones"}
+          - {pt: "Apenas calor", en: "Just heat"}
+          - {pt: "Sem função", en: "No function"}
+        correctAnswer: {pt: "Anticorpos (imunoglobulinas) específicos para antígenos", en: "Antigen-specific antibodies (immunoglobulins)"}
+        rationale: {pt: "Como cada B produz anticorpo único, então repertório é vasto — recombinação V(D)J gera diversidade.", en: "Because each B makes a unique antibody, repertoire is vast — V(D)J recombination generates diversity."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "MHC (complexo principal de histocompatibilidade) classe I:", en: "MHC class I (major histocompatibility complex):"}
+        choices:
+          - {pt: "Em quase todas as células — apresenta antígenos intracelulares a CD8", en: "On nearly all cells — presents intracellular antigens to CD8"}
+          - {pt: "Apenas hemácias", en: "Just red cells"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+          - {pt: "Sem função", en: "No function"}
+        correctAnswer: {pt: "Em quase todas as células — apresenta antígenos intracelulares a CD8", en: "On nearly all cells — presents intracellular antigens to CD8"}
+        rationale: {pt: "Como toda célula nucleada exibe MHC I, então CD8 monitora interior celular para detectar vírus/tumores.", en: "Because every nucleated cell shows MHC I, CD8 monitors cell interior for viruses/tumors."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "MHC classe II:", en: "MHC class II:"}
+        choices:
+          - {pt: "Em APCs (células apresentadoras) — apresenta antígenos extracelulares a CD4", en: "On APCs (presenting cells) — presents extracellular antigens to CD4"}
+          - {pt: "Em todas as células", en: "On all cells"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem função", en: "No function"}
+        correctAnswer: {pt: "Em APCs (células apresentadoras) — apresenta antígenos extracelulares a CD4", en: "On APCs (presenting cells) — presents extracellular antigens to CD4"}
+        rationale: {pt: "Como dendríticas, macrófagos e B são APCs, então elas iniciam resposta imune adaptativa.", en: "Because dendritic cells, macrophages, and B are APCs, they initiate the adaptive immune response."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Células dendríticas:", en: "Dendritic cells:"}
+        choices:
+          - {pt: "APCs profissionais — capturam antígenos e ativam linfócitos T virgens", en: "Professional APCs — capture antigens and activate naive T cells"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em pele", en: "Only in skin"}
+          - {pt: "Sem função", en: "No function"}
+        correctAnswer: {pt: "APCs profissionais — capturam antígenos e ativam linfócitos T virgens", en: "Professional APCs — capture antigens and activate naive T cells"}
+        rationale: {pt: "Como ponte entre imunidade inata e adaptativa, então sua eficiência define magnitude da resposta.", en: "Because they bridge innate and adaptive immunity, their efficiency defines response magnitude."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Citocinas são:", en: "Cytokines are:"}
+        choices:
+          - {pt: "Pequenas proteínas que coordenam respostas imunes (interleucinas, interferons)", en: "Small proteins coordinating immune responses (interleukins, interferons)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Tipos de açúcar", en: "Types of sugar"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+        correctAnswer: {pt: "Pequenas proteínas que coordenam respostas imunes (interleucinas, interferons)", en: "Small proteins coordinating immune responses (interleukins, interferons)"}
+        rationale: {pt: "Como atuam como mensageiros, então sinalizam recrutamento, diferenciação e ativação de células imunes.", en: "Because they act as messengers, they signal recruitment, differentiation, and activation of immune cells."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Tempestade de citocinas:", en: "Cytokine storm:"}
+        choices:
+          - {pt: "Liberação descontrolada de citocinas → dano tecidual sistêmico", en: "Uncontrolled cytokine release → systemic tissue damage"}
+          - {pt: "Sempre boa", en: "Always good"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+        correctAnswer: {pt: "Liberação descontrolada de citocinas → dano tecidual sistêmico", en: "Uncontrolled cytokine release → systemic tissue damage"}
+        rationale: {pt: "Como observada em sepse e COVID grave, então a hiperativação imune pode ser tão letal quanto a infecção.", en: "Because observed in sepsis and severe COVID, immune over-activation can be as deadly as infection."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Anticorpos têm estrutura em forma de:", en: "Antibodies have shape of:"}
+        choices:
+          - {pt: "Y — duas cadeias pesadas + duas leves; sítios variáveis nas pontas", en: "Y — two heavy + two light chains; variable sites at tips"}
+          - {pt: "Linha reta", en: "Straight line"}
+          - {pt: "Esfera", en: "Sphere"}
+          - {pt: "Cubo", en: "Cube"}
+        correctAnswer: {pt: "Y — duas cadeias pesadas + duas leves; sítios variáveis nas pontas", en: "Y — two heavy + two light chains; variable sites at tips"}
+        rationale: {pt: "Como a região variável reconhece antígeno e a constante recruta efetores, então estrutura segue função.", en: "Because the variable region recognizes antigen and the constant recruits effectors, structure follows function."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Classes de imunoglobulinas (Ig):", en: "Immunoglobulin (Ig) classes:"}
+        choices:
+          - {pt: "IgG (sangue), IgA (mucosas/leite), IgM (primário), IgE (alergia), IgD (B virgem)", en: "IgG (blood), IgA (mucosa/milk), IgM (primary), IgE (allergy), IgD (naive B)"}
+          - {pt: "Apenas IgG", en: "Just IgG"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Não existem", en: "Don't exist"}
+        correctAnswer: {pt: "IgG (sangue), IgA (mucosas/leite), IgM (primário), IgE (alergia), IgD (B virgem)", en: "IgG (blood), IgA (mucosa/milk), IgM (primary), IgE (allergy), IgD (naive B)"}
+        rationale: {pt: "Como cada classe tem função especializada, então a switching de classe permite resposta sob medida.", en: "Because each class has specialized function, class switching enables tailored response."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Patologias e imunoterapia", en: "Pathology and immunotherapy"}
+    description: {pt: "Quando a imunidade falha ou é direcionada.", en: "When immunity fails or is directed."}
+    exercises:
+      - type: choice
+        question: {pt: "Doença autoimune:", en: "Autoimmune disease:"}
+        choices:
+          - {pt: "Sistema imune ataca tecidos próprios (lúpus, artrite reumatoide, diabetes 1, EM)", en: "Immune system attacks self tissues (lupus, RA, type 1 diabetes, MS)"}
+          - {pt: "Apenas externos", en: "Only external"}
+          - {pt: "Sem causa", en: "Causeless"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Sistema imune ataca tecidos próprios (lúpus, artrite reumatoide, diabetes 1, EM)", en: "Immune system attacks self tissues (lupus, RA, type 1 diabetes, MS)"}
+        rationale: {pt: "Como tolerância falha, então linfócitos auto-reativos atacam — terapias suprimem imunidade seletivamente.", en: "Because tolerance fails, self-reactive lymphocytes attack — therapies selectively suppress immunity."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Hipersensibilidade tipo I (alergia):", en: "Type I hypersensitivity (allergy):"}
+        choices:
+          - {pt: "IgE liga alérgeno → mastócitos liberam histamina → coceira/inchaço", en: "IgE binds allergen → mast cells release histamine → itching/swelling"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem mecanismo", en: "No mechanism"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+        correctAnswer: {pt: "IgE liga alérgeno → mastócitos liberam histamina → coceira/inchaço", en: "IgE binds allergen → mast cells release histamine → itching/swelling"}
+        rationale: {pt: "Como anafilaxia pode matar, então adrenalina (epinefrina) é tratamento de emergência — reverte broncoconstrição.", en: "Because anaphylaxis can kill, adrenaline (epinephrine) is emergency treatment — reverses bronchoconstriction."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "HIV destrói principalmente:", en: "HIV mainly destroys:"}
+        choices:
+          - {pt: "Linfócitos T CD4 — colapso da imunidade adaptativa (AIDS)", en: "CD4 T cells — collapse of adaptive immunity (AIDS)"}
+          - {pt: "Hemácias", en: "Red cells"}
+          - {pt: "Neurônios apenas", en: "Just neurons"}
+          - {pt: "Sem alvo", en: "No target"}
+        correctAnswer: {pt: "Linfócitos T CD4 — colapso da imunidade adaptativa (AIDS)", en: "CD4 T cells — collapse of adaptive immunity (AIDS)"}
+        rationale: {pt: "Como CD4 coordena toda imunidade, então sua perda abre caminho para infecções oportunistas e cânceres.", en: "Because CD4 coordinates all immunity, its loss opens way for opportunistic infections and cancers."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Anticorpos monoclonais:", en: "Monoclonal antibodies:"}
+        choices:
+          - {pt: "Anticorpos idênticos produzidos por célula B clonada — usados em terapia (câncer, autoimune)", en: "Identical antibodies from cloned B cell — used in therapy (cancer, autoimmune)"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Anticorpos idênticos produzidos por célula B clonada — usados em terapia (câncer, autoimune)", en: "Identical antibodies from cloned B cell — used in therapy (cancer, autoimmune)"}
+        rationale: {pt: "Como ligam-se a alvos específicos, então biológicos como adalimumabe e trastuzumabe revolucionaram medicina.", en: "Because they bind specific targets, biologics like adalimumab and trastuzumab revolutionized medicine."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Imunoterapia contra câncer (checkpoint inhibitors):", en: "Cancer immunotherapy (checkpoint inhibitors):"}
+        choices:
+          - {pt: "Bloqueia \"freios\" imunes (PD-1, CTLA-4) — sistema imune ataca tumor", en: "Block immune \"brakes\" (PD-1, CTLA-4) — immune system attacks tumor"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Bloqueia \"freios\" imunes (PD-1, CTLA-4) — sistema imune ataca tumor", en: "Block immune \"brakes\" (PD-1, CTLA-4) — immune system attacks tumor"}
+        rationale: {pt: "Como tumores cooptam mecanismos de auto-tolerância, então liberar os freios reativa imunidade — Nobel 2018.", en: "Because tumors hijack self-tolerance, releasing brakes reactivates immunity — 2018 Nobel."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "CAR-T:", en: "CAR-T:"}
+        choices:
+          - {pt: "T do paciente são modificados ex vivo para reconhecer antígeno tumoral", en: "Patient's T cells are engineered ex vivo to recognize tumor antigen"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Sem mecanismo", en: "No mechanism"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "T do paciente são modificados ex vivo para reconhecer antígeno tumoral", en: "Patient's T cells are engineered ex vivo to recognize tumor antigen"}
+        rationale: {pt: "Como CD19 em leucemias é alvo, então CAR-T anti-CD19 produz remissões completas em pacientes refratários.", en: "Because CD19 in leukemias is a target, anti-CD19 CAR-T yields complete remissions in refractory patients."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Imunidade passiva é:", en: "Passive immunity is:"}
+        choices:
+          - {pt: "Anticorpos prontos transferidos (IgG transplacentária, IgA do leite, soros)", en: "Pre-formed antibodies transferred (transplacental IgG, milk IgA, serums)"}
+          - {pt: "Sempre ativa", en: "Always active"}
+          - {pt: "Sem proteção", en: "No protection"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+        correctAnswer: {pt: "Anticorpos prontos transferidos (IgG transplacentária, IgA do leite, soros)", en: "Pre-formed antibodies transferred (transplacental IgG, milk IgA, serums)"}
+        rationale: {pt: "Como protege rapidamente mas é temporária, então recém-nascidos ganham imunidade materna por meses.", en: "Because it protects fast but is temporary, newborns gain maternal immunity for months."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Vacinação ativa gera:", en: "Active vaccination generates:"}
+        choices:
+          - {pt: "Memória imunológica duradoura (anos a vida toda)", en: "Long-lasting immune memory (years to lifetime)"}
+          - {pt: "Apenas dor temporária", en: "Just temporary pain"}
+          - {pt: "Sem proteção", en: "No protection"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+        correctAnswer: {pt: "Memória imunológica duradoura (anos a vida toda)", en: "Long-lasting immune memory (years to lifetime)"}
+        rationale: {pt: "Como células B/T de memória persistem, então proteção persiste muito após a vacinação inicial.", en: "Because B/T memory cells persist, protection lasts long after initial vaccination."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Imunodeficiências primárias (genéticas):", en: "Primary (genetic) immunodeficiencies:"}
+        choices:
+          - {pt: "Defeitos hereditários no sistema imune (ex.: SCID, criança-bolha)", en: "Hereditary immune defects (e.g., SCID, bubble boy)"}
+          - {pt: "Sempre adquiridas", en: "Always acquired"}
+          - {pt: "Sem causa", en: "Causeless"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Defeitos hereditários no sistema imune (ex.: SCID, criança-bolha)", en: "Hereditary immune defects (e.g., SCID, bubble boy)"}
+        rationale: {pt: "Como crianças sem imunidade morrem cedo, então transplante de medula ou terapia gênica pode salvar.", en: "Because children without immunity die early, marrow transplant or gene therapy can save."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: imunologia avançada:", en: "Summary: advanced immunology:"}
+        choices:
+          - {pt: "Sistema sofisticado de células e moléculas que distingue próprio/estranho e adapta-se", en: "Sophisticated system of cells and molecules that distinguishes self/non-self and adapts"}
+          - {pt: "Apenas barreiras", en: "Just barriers"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "Sistema sofisticado de células e moléculas que distingue próprio/estranho e adapta-se", en: "Sophisticated system of cells and molecules that distinguishes self/non-self and adapts"}
+        rationale: {pt: "Como integra múltiplas camadas (inata + adaptativa, humoral + celular), então é alvo central da medicina moderna.", en: "Because it integrates multiple layers (innate + adaptive, humoral + cellular), it's a central target of modern medicine."}
+        objectives: [biology.immune_advanced]
+        difficulty: 4
+target: 20

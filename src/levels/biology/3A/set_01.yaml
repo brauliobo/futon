@@ -1,0 +1,244 @@
+title:
+  pt: "🦠 Virologia"
+  en: "🦠 Virology"
+level: '3A'
+subject: biology
+objectives: [biology.virology]
+difficulty: 4
+authorNotes: "Estrutura viral, ciclos lítico/lisogênico, vírus de RNA/DNA, retrovírus."
+example:
+  pt: "Ex.: vírus = capa proteica + ácido nucleico (DNA ou RNA); replica apenas dentro de células hospedeiras."
+  en: "Ex.: virus = protein coat + nucleic acid (DNA or RNA); replicates only inside host cells."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Estrutura e replicação", en: "Structure and replication"}
+    description: {pt: "O que vírus são e como se multiplicam.", en: "What viruses are and how they multiply."}
+    exercises:
+      - type: choice
+        question: {pt: "Vírus são considerados:", en: "Viruses are considered:"}
+        choices:
+          - {pt: "Entidades não-celulares na fronteira do vivo/não-vivo", en: "Non-cellular entities at the border of living/non-living"}
+          - {pt: "Bactérias pequenas", en: "Small bacteria"}
+          - {pt: "Tipos de fungo", en: "Types of fungus"}
+          - {pt: "Tipos de proteína", en: "Types of protein"}
+        correctAnswer: {pt: "Entidades não-celulares na fronteira do vivo/não-vivo", en: "Non-cellular entities at the border of living/non-living"}
+        rationale: {pt: "Como não têm metabolismo nem replicam-se sozinhos, então requerem hospedeiro — debate clássico em biologia.", en: "Because they lack metabolism and don't replicate alone, they require a host — a classic biological debate."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Estrutura básica de um vírus:", en: "Basic virus structure:"}
+        choices:
+          - {pt: "Material genético (DNA ou RNA) + capsídeo proteico (± envelope lipídico)", en: "Genetic material (DNA or RNA) + protein capsid (± lipid envelope)"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas proteína", en: "Just protein"}
+          - {pt: "Apenas lipídio", en: "Just lipid"}
+        correctAnswer: {pt: "Material genético (DNA ou RNA) + capsídeo proteico (± envelope lipídico)", en: "Genetic material (DNA or RNA) + protein capsid (± lipid envelope)"}
+        rationale: {pt: "Como envelope vem da membrana do hospedeiro, então tem alvo terapêutico — sabão dissolve envelope, inativa vírus.", en: "Because envelope comes from host membrane, it's a therapeutic target — soap dissolves envelope, inactivating virus."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Capsídeo é:", en: "Capsid is:"}
+        choices:
+          - {pt: "Camada proteica que envolve o ácido nucleico viral", en: "Protein coat surrounding viral nucleic acid"}
+          - {pt: "Tipo de açúcar", en: "Type of sugar"}
+          - {pt: "Tipo de organela", en: "Type of organelle"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Camada proteica que envolve o ácido nucleico viral", en: "Protein coat surrounding viral nucleic acid"}
+        rationale: {pt: "Como protege o genoma e media entrada na célula, então estrutura icosaédrica/helicoidal define formato do vírus.", en: "Because it protects the genome and mediates cell entry, icosahedral/helical structure defines virus shape."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Vírus envelopados:", en: "Enveloped viruses:"}
+        choices:
+          - {pt: "Têm camada lipídica externa (HIV, gripe, COVID, herpes)", en: "Have outer lipid layer (HIV, flu, COVID, herpes)"}
+          - {pt: "Sem envelope", en: "No envelope"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+          - {pt: "Não existem", en: "Don't exist"}
+        correctAnswer: {pt: "Têm camada lipídica externa (HIV, gripe, COVID, herpes)", en: "Have outer lipid layer (HIV, flu, COVID, herpes)"}
+        rationale: {pt: "Como envelope é frágil (sabão dissolve), então higiene das mãos é eficaz — explica fragilidade térmica também.", en: "Because envelope is fragile (soap dissolves), hand hygiene is effective — also explains thermal fragility."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Ciclo lítico:", en: "Lytic cycle:"}
+        choices:
+          - {pt: "Vírus replica rapidamente, lisa célula e libera novos vírions", en: "Virus replicates rapidly, lyses cell, releases new virions"}
+          - {pt: "Apenas integra DNA", en: "Just integrates DNA"}
+          - {pt: "Sem replicação", en: "No replication"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Vírus replica rapidamente, lisa célula e libera novos vírions", en: "Virus replicates rapidly, lyses cell, releases new virions"}
+        rationale: {pt: "Como produz progênie em massa e mata o hospedeiro, então provoca sintomas agudos — gripe, sarampo, varíola.", en: "Because it mass-produces progeny and kills the host, it causes acute symptoms — flu, measles, smallpox."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Ciclo lisogênico:", en: "Lysogenic cycle:"}
+        choices:
+          - {pt: "Genoma viral integra-se ao DNA hospedeiro (latente, sem destruir célula)", en: "Viral genome integrates into host DNA (latent, doesn't destroy cell)"}
+          - {pt: "Sempre destrói a célula", en: "Always destroys cell"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "Genoma viral integra-se ao DNA hospedeiro (latente, sem destruir célula)", en: "Viral genome integrates into host DNA (latent, doesn't destroy cell)"}
+        rationale: {pt: "Como pode reativar mais tarde (estresse), então herpes-zoster permanece latente nos gânglios e ressurge décadas depois.", en: "Because it can reactivate later (stress), herpes-zoster stays latent in ganglia and resurges decades later."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Vírus de RNA fita simples positiva:", en: "Positive single-stranded RNA viruses:"}
+        choices:
+          - {pt: "RNA pode ser traduzido diretamente como mRNA (ex.: SARS-CoV-2)", en: "RNA can be directly translated as mRNA (e.g., SARS-CoV-2)"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Não infectam", en: "Don't infect"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "RNA pode ser traduzido diretamente como mRNA (ex.: SARS-CoV-2)", en: "RNA can be directly translated as mRNA (e.g., SARS-CoV-2)"}
+        rationale: {pt: "Como o RNA viral usa ribossomos hospedeiros direto, então a infecção começa rápido — também base de vacinas mRNA.", en: "Because viral RNA uses host ribosomes directly, infection starts fast — also basis of mRNA vaccines."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Retrovírus (ex.: HIV):", en: "Retroviruses (e.g., HIV):"}
+        choices:
+          - {pt: "RNA viral é convertido em DNA pela transcriptase reversa, integra-se ao genoma", en: "Viral RNA is converted to DNA by reverse transcriptase, integrates into genome"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Não existem", en: "Don't exist"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "RNA viral é convertido em DNA pela transcriptase reversa, integra-se ao genoma", en: "Viral RNA is converted to DNA by reverse transcriptase, integrates into genome"}
+        rationale: {pt: "Como invertem o dogma central (RNA→DNA), então retrovírus precisam de transcriptase reversa — alvo de antivirais (zidovudina).", en: "Because they reverse the central dogma (RNA→DNA), retroviruses need reverse transcriptase — antiviral target (AZT)."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Bacteriófagos são:", en: "Bacteriophages are:"}
+        choices:
+          - {pt: "Vírus que infectam bactérias (\"comedores de bactérias\")", en: "Viruses that infect bacteria (\"bacteria eaters\")"}
+          - {pt: "Apenas em humanos", en: "Only in humans"}
+          - {pt: "Tipo de bactéria", en: "Type of bacterium"}
+          - {pt: "Não existem", en: "Don't exist"}
+        correctAnswer: {pt: "Vírus que infectam bactérias (\"comedores de bactérias\")", en: "Viruses that infect bacteria (\"bacteria eaters\")"}
+        rationale: {pt: "Como mais abundantes na biosfera (~10³¹), então fagos moldam ecologia bacteriana e são usados em terapia (fagoterapia).", en: "Because most abundant in biosphere (~10³¹), phages shape bacterial ecology and are used in therapy (phage therapy)."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Tropismo viral é:", en: "Viral tropism is:"}
+        choices:
+          - {pt: "Especificidade pelo tipo celular/órgão (ex.: HIV → linfócitos T CD4)", en: "Specificity for cell type/organ (e.g., HIV → CD4 T cells)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem padrão", en: "No pattern"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+        correctAnswer: {pt: "Especificidade pelo tipo celular/órgão (ex.: HIV → linfócitos T CD4)", en: "Specificity for cell type/organ (e.g., HIV → CD4 T cells)"}
+        rationale: {pt: "Como receptores de superfície determinam entrada, então vírus infectam células com proteínas-alvo específicas.", en: "Because surface receptors determine entry, viruses infect cells with specific target proteins."}
+        objectives: [biology.virology]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Defesa, vacinas, antivirais", en: "Defense, vaccines, antivirals"}
+    description: {pt: "Como combater vírus.", en: "How to combat viruses."}
+    exercises:
+      - type: choice
+        question: {pt: "Antibióticos NÃO funcionam contra vírus porque:", en: "Antibiotics DON'T work against viruses because:"}
+        choices:
+          - {pt: "Vírus não têm parede celular nem ribossomos próprios", en: "Viruses lack cell walls and ribosomes"}
+          - {pt: "Apenas mito", en: "Just a myth"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Vírus não têm parede celular nem ribossomos próprios", en: "Viruses lack cell walls and ribosomes"}
+        rationale: {pt: "Como antibióticos atacam estruturas bacterianas, então não têm alvo em vírus — uso desnecessário gera resistência.", en: "Because antibiotics target bacterial structures, they have no viral target — needless use breeds resistance."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Vacinas atuam ao:", en: "Vaccines work by:"}
+        choices:
+          - {pt: "Treinar sistema imune com antígenos seguros (memória)", en: "Training immune system with safe antigens (memory)"}
+          - {pt: "Apenas matar vírus", en: "Just killing viruses"}
+          - {pt: "Apenas dar dor", en: "Just causing pain"}
+          - {pt: "Sem efeito", en: "No effect"}
+        correctAnswer: {pt: "Treinar sistema imune com antígenos seguros (memória)", en: "Training immune system with safe antigens (memory)"}
+        rationale: {pt: "Como linfócitos B/T criam memória, então reinfecções são neutralizadas rapidamente — proteção duradoura.", en: "Because B/T lymphocytes create memory, re-infections are neutralized fast — lasting protection."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Mutação rápida em vírus de RNA:", en: "Fast mutation in RNA viruses:"}
+        choices:
+          - {pt: "Polimerases de RNA não têm revisão — geram variantes rapidamente", en: "RNA polymerases lack proofreading — generate variants quickly"}
+          - {pt: "Sempre estáveis", en: "Always stable"}
+          - {pt: "Sem mutação", en: "No mutation"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "Polimerases de RNA não têm revisão — geram variantes rapidamente", en: "RNA polymerases lack proofreading — generate variants quickly"}
+        rationale: {pt: "Como gripe muda rápido, então vacina anual é necessária — variantes da COVID demonstraram o mesmo princípio.", en: "Because flu mutates fast, annual vaccine is needed — COVID variants demonstrated the same principle."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Antivirais alvejam:", en: "Antivirals target:"}
+        choices:
+          - {pt: "Etapas do ciclo viral (entrada, replicação, montagem, liberação)", en: "Viral cycle steps (entry, replication, assembly, release)"}
+          - {pt: "Apenas células humanas", en: "Just human cells"}
+          - {pt: "Sem alvo", en: "No target"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Etapas do ciclo viral (entrada, replicação, montagem, liberação)", en: "Viral cycle steps (entry, replication, assembly, release)"}
+        rationale: {pt: "Como cada classe ataca um passo distinto, então combinação de antivirais (ART para HIV) é mais eficaz.", en: "Because each class attacks a different step, antiviral combination (ART for HIV) is more effective."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Vacinas de mRNA (Pfizer, Moderna):", en: "mRNA vaccines (Pfizer, Moderna):"}
+        choices:
+          - {pt: "Entregam mRNA codificando antígeno; células produzem proteína viral; sistema imune treina", en: "Deliver mRNA encoding antigen; cells produce viral protein; immune system trains"}
+          - {pt: "Vírus inteiro", en: "Whole virus"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Sem mecanismo", en: "No mechanism"}
+        correctAnswer: {pt: "Entregam mRNA codificando antígeno; células produzem proteína viral; sistema imune treina", en: "Deliver mRNA encoding antigen; cells produce viral protein; immune system trains"}
+        rationale: {pt: "Como mRNA não entra no núcleo nem altera DNA, então é seguro e rapidamente fabricável — revolução em pandemia.", en: "Because mRNA doesn't enter nucleus or alter DNA, it's safe and fast to manufacture — pandemic revolution."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Pandemia é:", en: "Pandemic is:"}
+        choices:
+          - {pt: "Epidemia em escala global, atravessando fronteiras", en: "Epidemic on global scale, crossing borders"}
+          - {pt: "Apenas em uma cidade", en: "Just one city"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Epidemia em escala global, atravessando fronteiras", en: "Epidemic on global scale, crossing borders"}
+        rationale: {pt: "Como vírus aproveitam viagens internacionais, então pandemias modernas (gripe espanhola, COVID) espalham-se em meses.", en: "Because viruses exploit international travel, modern pandemics (Spanish flu, COVID) spread in months."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Spillover (transbordamento) zoonótico:", en: "Zoonotic spillover:"}
+        choices:
+          - {pt: "Vírus salta de animais para humanos (ex.: HIV de macacos, SARS de morcegos)", en: "Virus jumps from animals to humans (e.g., HIV from monkeys, SARS from bats)"}
+          - {pt: "Apenas em humanos", en: "Just in humans"}
+          - {pt: "Sem origem animal", en: "No animal origin"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Vírus salta de animais para humanos (ex.: HIV de macacos, SARS de morcegos)", en: "Virus jumps from animals to humans (e.g., HIV from monkeys, SARS from bats)"}
+        rationale: {pt: "Como contato com fauna selvagem facilita, então desmatamento e mercados de animais aumentam risco.", en: "Because wildlife contact facilitates, deforestation and animal markets increase risk."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Imunidade de rebanho:", en: "Herd immunity:"}
+        choices:
+          - {pt: "Quando alta proporção é imune, transmissão para — protege os não-imunes", en: "When high proportion is immune, transmission stops — protects non-immune"}
+          - {pt: "Apenas em rebanho de gado", en: "Only in cattle herd"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Quando alta proporção é imune, transmissão para — protege os não-imunes", en: "When high proportion is immune, transmission stops — protects non-immune"}
+        rationale: {pt: "Como sarampo precisa ~95% imunidade para parar, então campanhas de vacinação massivas são essenciais.", en: "Because measles needs ~95% immunity to stop, mass vaccination campaigns are essential."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Erradicação viral só foi alcançada para:", en: "Viral eradication has been achieved for:"}
+        choices:
+          - {pt: "Varíola (1980) — único vírus humano erradicado globalmente", en: "Smallpox (1980) — only human virus globally eradicated"}
+          - {pt: "Todos os vírus", en: "All viruses"}
+          - {pt: "Nenhum", en: "None"}
+          - {pt: "Apenas gripe", en: "Just flu"}
+        correctAnswer: {pt: "Varíola (1980) — único vírus humano erradicado globalmente", en: "Smallpox (1980) — only human virus globally eradicated"}
+        rationale: {pt: "Como vacinação em massa + sem reservatório animal + diagnóstico claro tornaram possível, então é marco da saúde pública.", en: "Because mass vaccination + no animal reservoir + clear diagnosis made it possible, it's a public health landmark."}
+        objectives: [biology.virology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: vírus são:", en: "Summary: viruses are:"}
+        choices:
+          - {pt: "Parasitas obrigatórios — combatidos com vacinas, antivirais e medidas de saúde pública", en: "Obligate parasites — fought with vaccines, antivirals, and public health measures"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre inofensivos", en: "Always harmless"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "Parasitas obrigatórios — combatidos com vacinas, antivirais e medidas de saúde pública", en: "Obligate parasites — fought with vaccines, antivirals, and public health measures"}
+        rationale: {pt: "Como exploram maquinaria celular, então estratégias terapêuticas devem ser específicas e multifacetadas.", en: "Because they exploit cellular machinery, therapeutic strategies must be specific and multifaceted."}
+        objectives: [biology.virology]
+        difficulty: 4
+target: 20
