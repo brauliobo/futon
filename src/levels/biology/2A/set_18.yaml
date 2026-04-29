@@ -1,0 +1,244 @@
+title:
+  pt: "🧪 Genômica sintética e xenobiologia"
+  en: "🧪 Synthetic genomics and xenobiology"
+level: '2A'
+subject: biology
+objectives: [biology.synthetic_genomics]
+difficulty: 5
+authorNotes: "Síntese de genomas, organismos mínimos, código genético expandido, XNA, biologia sintética avançada."
+example:
+  pt: "Ex.: design no computador → síntese química de DNA → transplante em célula vazia → organismo sintético funcional."
+  en: "Ex.: computer design → chemical DNA synthesis → transplant into empty cell → functional synthetic organism."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Construindo genomas", en: "Building genomes"}
+    description: {pt: "Síntese e transplante de DNA em escala genômica.", en: "Genome-scale DNA synthesis and transplant."}
+    exercises:
+      - type: choice
+        question: {pt: "Genômica sintética estuda:", en: "Synthetic genomics studies:"}
+        choices:
+          - {pt: "Síntese química de DNA em escala de genoma para criar/redesenhar organismos", en: "Genome-scale chemical DNA synthesis to create/redesign organisms"}
+          - {pt: "Apenas observação passiva", en: "Just passive observation"}
+          - {pt: "Apenas catálogo museu", en: "Just museum catalog"}
+          - {pt: "Apenas teoria sem prática", en: "Just theory without practice"}
+        correctAnswer: {pt: "Síntese química de DNA em escala de genoma para criar/redesenhar organismos", en: "Genome-scale chemical DNA synthesis to create/redesign organisms"}
+        rationale: {pt: "Quando podemos escrever genomas, então biologia se torna engenharia em escala industrial.", en: "When we can write genomes, biology becomes industrial-scale engineering."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "JCVI-syn3.0 (Venter) é:", en: "JCVI-syn3.0 (Venter) is:"}
+        choices:
+          - {pt: "Bactéria com genoma mínimo (~473 genes) capaz de viver e replicar", en: "Bacterium with minimal genome (~473 genes) capable of living and replicating"}
+          - {pt: "Apenas vírus", en: "Just virus"}
+          - {pt: "Apenas eucarionte", en: "Just eukaryote"}
+          - {pt: "Apenas organismo morto", en: "Just dead organism"}
+        correctAnswer: {pt: "Bactéria com genoma mínimo (~473 genes) capaz de viver e replicar", en: "Bacterium with minimal genome (~473 genes) capable of living and replicating"}
+        rationale: {pt: "Quando podamos genes não-essenciais, então identificamos núcleo molecular da vida celular.", en: "When we prune non-essential genes, we identify cellular life's molecular core."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sc2.0 é projeto que:", en: "Sc2.0 is a project that:"}
+        choices:
+          - {pt: "Sintetiza genoma redesenhado de Saccharomyces cerevisiae cromossomo a cromossomo", en: "Synthesizes redesigned Saccharomyces cerevisiae genome chromosome by chromosome"}
+          - {pt: "Apenas humano", en: "Just human"}
+          - {pt: "Apenas viral", en: "Just viral"}
+          - {pt: "Apenas planta", en: "Just plant"}
+        correctAnswer: {pt: "Sintetiza genoma redesenhado de Saccharomyces cerevisiae cromossomo a cromossomo", en: "Synthesizes redesigned Saccharomyces cerevisiae genome chromosome by chromosome"}
+        rationale: {pt: "Quando ciclo Design-Build-Test-Learn é aplicado, então levedura vira plataforma industrial flexível.", en: "When Design-Build-Test-Learn cycle is applied, yeast becomes a flexible industrial platform."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Códons recodificados em E. coli (rE.coli) liberam:", en: "Recoded codons in E. coli (rE.coli) free:"}
+        choices:
+          - {pt: "Códons para incorporar aminoácidos não-naturais sem ambiguidade", en: "Codons to incorporate non-natural amino acids unambiguously"}
+          - {pt: "Apenas códons sem função", en: "Just functionless codons"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+        correctAnswer: {pt: "Códons para incorporar aminoácidos não-naturais sem ambiguidade", en: "Codons to incorporate non-natural amino acids unambiguously"}
+        rationale: {pt: "Como código genético é redundante, então remover sinônimos abre vagas para química nova.", en: "Because genetic code is redundant, removing synonyms opens slots for new chemistry."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Gibson Assembly permite:", en: "Gibson Assembly allows:"}
+        choices:
+          - {pt: "Juntar múltiplos fragmentos de DNA em um só passo enzimático", en: "Joining multiple DNA fragments in a single enzymatic step"}
+          - {pt: "Apenas cortar DNA", en: "Just cut DNA"}
+          - {pt: "Apenas degradar RNA", en: "Just degrade RNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Juntar múltiplos fragmentos de DNA em um só passo enzimático", en: "Joining multiple DNA fragments in a single enzimático step"}
+        rationale: {pt: "Quando exonuclease, polimerase e ligase trabalham juntas, então construções grandes ficam práticas.", en: "When exonuclease, polymerase and ligase work together, large constructs become practical."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese química de DNA hoje:", en: "Chemical DNA synthesis today:"}
+        choices:
+          - {pt: "Atinge dezenas de kb por encomenda comercial — fronteira ainda em escala de genoma", en: "Reaches tens of kb commercially — frontier still at genome scale"}
+          - {pt: "Apenas 10 bp", en: "Just 10 bp"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas teórica", en: "Just theoretical"}
+        correctAnswer: {pt: "Atinge dezenas de kb por encomenda comercial — fronteira ainda em escala de genoma", en: "Reaches tens of kb commercially — frontier still at genome scale"}
+        rationale: {pt: "Como custos caem rapidamente, então projetos genômicos sintéticos viram realidade nesta década.", en: "Because costs drop rapidly, synthetic genome projects become reality this decade."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DNA storage usa biologia para:", en: "DNA storage uses biology to:"}
+        choices:
+          - {pt: "Armazenar dados digitais codificados em sequências de DNA — densidade altíssima", en: "Store digital data encoded as DNA sequences — extremely high density"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas papel", en: "Just paper"}
+          - {pt: "Apenas vinil", en: "Just vinyl"}
+        correctAnswer: {pt: "Armazenar dados digitais codificados em sequências de DNA — densidade altíssima", en: "Store digital data encoded as DNA sequences — extremely high density"}
+        rationale: {pt: "Quando 1 g pode guardar exabytes, então DNA promete arquivos durando milhares de anos.", en: "When 1 g can hold exabytes, DNA promises archives lasting thousands of years."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Módulo genético padronizado (BioBrick) facilita:", en: "Standardized genetic module (BioBrick) facilitates:"}
+        choices:
+          - {pt: "Combinar partes de DNA com interfaces fixas — biologia 'como Lego'", en: "Combining DNA parts with fixed interfaces — 'Lego-like' biology"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA bruto", en: "Just raw DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Combinar partes de DNA com interfaces fixas — biologia 'como Lego'", en: "Combining DNA parts with fixed interfaces — 'Lego-like' biology"}
+        rationale: {pt: "Como interfaces são previsíveis, então engenharia genética escala como software.", en: "Because interfaces are predictable, genetic engineering scales like software."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "iGEM é competição internacional que:", en: "iGEM is an international competition that:"}
+        choices:
+          - {pt: "Reúne equipes universitárias para projetar organismos com biobricks", en: "Brings university teams to design organisms with biobricks"}
+          - {pt: "Apenas para pesquisadores PhD", en: "Just for PhD researchers"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em laboratório fechado", en: "Just in closed lab"}
+        correctAnswer: {pt: "Reúne equipes universitárias para projetar organismos com biobricks", en: "Brings university teams to design organisms with biobricks"}
+        rationale: {pt: "Quando estudantes inovam abertamente, então campo cresce com criatividade global compartilhada.", en: "When students innovate openly, field grows with shared global creativity."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bioprodução por engenharia metabólica permite:", en: "Metabolic engineering bioproduction allows:"}
+        choices:
+          - {pt: "Microrganismos produzindo fármacos, biocombustíveis, materiais (artemisinina, insulina)", en: "Microbes producing drugs, biofuels, materials (artemisinin, insulin)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas extração natural", en: "Just natural extraction"}
+          - {pt: "Apenas síntese química tradicional", en: "Just traditional chemical synthesis"}
+        correctAnswer: {pt: "Microrganismos produzindo fármacos, biocombustíveis, materiais (artemisinina, insulina)", en: "Microbes producing drugs, biofuels, materials (artemisinin, insulin)"}
+        rationale: {pt: "Quando vias metabólicas são reescritas, então fábricas vivas substituem petroquímica em parte.", en: "When metabolic pathways are rewritten, living factories partly replace petrochemicals."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Xenobiologia e bioética", en: "Xenobiology and bioethics"}
+    description: {pt: "Vida com química alternativa.", en: "Life with alternative chemistry."}
+    exercises:
+      - type: choice
+        question: {pt: "Xenobiologia explora:", en: "Xenobiology explores:"}
+        choices:
+          - {pt: "Sistemas vivos com bioquímica alternativa (XNA, novos aminoácidos, código expandido)", en: "Living systems with alternative biochemistry (XNA, new amino acids, expanded code)"}
+          - {pt: "Apenas vida natural", en: "Just natural life"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Sistemas vivos com bioquímica alternativa (XNA, novos aminoácidos, código expandido)", en: "Living systems with alternative biochemistry (XNA, new amino acids, expanded code)"}
+        rationale: {pt: "Como exploramos espaço químico não-natural, então criamos vida ortogonal e mais segura.", en: "Because we explore non-natural chemical space, we create orthogonal and safer life."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "XNA refere-se a:", en: "XNA refers to:"}
+        choices:
+          - {pt: "Análogos sintéticos de DNA/RNA com açúcares ou bases não-naturais", en: "Synthetic DNA/RNA analogs with non-natural sugars or bases"}
+          - {pt: "Apenas DNA puro", en: "Just pure DNA"}
+          - {pt: "Apenas RNA viral", en: "Just viral RNA"}
+          - {pt: "Apenas proteína", en: "Just protein"}
+        correctAnswer: {pt: "Análogos sintéticos de DNA/RNA com açúcares ou bases não-naturais", en: "Synthetic DNA/RNA analogs with non-natural sugars or bases"}
+        rationale: {pt: "Quando substituímos ribose ou bases, então XNAs guardam informação imune a nucleases naturais.", en: "When we replace ribose or bases, XNAs store info immune to natural nucleases."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Aminoácidos não-naturais (ncAAs) incorporados em proteínas:", en: "Non-natural amino acids (ncAAs) incorporated into proteins:"}
+        choices:
+          - {pt: "Adicionam grupos funcionais novos (clique, fluorescentes, fotorreativos)", en: "Add new functional groups (click, fluorescent, photoreactive)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas reduz proteína", en: "Just reduces protein"}
+          - {pt: "Apenas degrada", en: "Just degrades"}
+        correctAnswer: {pt: "Adicionam grupos funcionais novos (clique, fluorescentes, fotorreativos)", en: "Add new functional groups (click, fluorescent, photoreactive)"}
+        rationale: {pt: "Como expandimos repertório químico, então engenheiramos proteínas com funções inéditas.", en: "Because we expand chemical repertoire, we engineer proteins with unprecedented functions."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pares de bases extras (Hachimoji DNA) demonstram:", en: "Extra base pairs (Hachimoji DNA) demonstrate:"}
+        choices:
+          - {pt: "Possibilidade de 8 letras genéticas — armazenando mais informação por sequência", en: "Possibility of 8 genetic letters — storing more info per sequence"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Possibilidade de 8 letras genéticas — armazenando mais informação por sequência", en: "Possibility of 8 genetic letters — storing more info per sequence"}
+        rationale: {pt: "Quando duas bases extras pareiam, então química prova que código de 4 não é única solução.", en: "When two extra bases pair, chemistry proves the 4-letter code isn't the only solution."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biocontenção via xenobiologia visa:", en: "Biocontainment via xenobiology aims to:"}
+        choices:
+          - {pt: "Garantir que organismos sintéticos não escapem ou troquem genes na natureza", en: "Ensure synthetic organisms don't escape or exchange genes in nature"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Garantir que organismos sintéticos não escapem ou troquem genes na natureza", en: "Ensure synthetic organisms don't escape or exchange genes in nature"}
+        rationale: {pt: "Como dependência de XNA isola, então organismo morre fora do laboratório se não tem suprimento.", en: "Because XNA dependence isolates, organism dies outside lab without supply."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacas/plantas transgênicas vs organismos sintéticos diferem em:", en: "Transgenic animals/plants vs synthetic organisms differ in:"}
+        choices:
+          - {pt: "Grau de redesenho — sintéticos podem ser totalmente projetados, transgênicos só inserem genes", en: "Degree of redesign — synthetics can be fully engineered, transgenics just insert genes"}
+          - {pt: "Apenas tamanho", en: "Just size"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Grau de redesenho — sintéticos podem ser totalmente projetados, transgênicos só inserem genes", en: "Degree of redesign — synthetics can be fully engineered, transgenics just insert genes"}
+        rationale: {pt: "Quando reescrevemos genoma todo, então capacidades vão além de simples adição de funções.", en: "When we rewrite the whole genome, capabilities exceed simple function addition."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bioética de organismos sintéticos exige:", en: "Synthetic organism bioethics requires:"}
+        choices:
+          - {pt: "Análise de risco, biossegurança e governança internacional", en: "Risk analysis, biosafety and international governance"}
+          - {pt: "Apenas inovação livre", en: "Just unrestricted innovation"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Análise de risco, biossegurança e governança internacional", en: "Risk analysis, biosafety and international governance"}
+        rationale: {pt: "Como impactos são potencialmente globais, então autoridade compartilhada protege bens comuns.", en: "Because impacts may be global, shared authority protects the commons."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dual-use research em genômica sintética é:", en: "Dual-use research in synthetic genomics is:"}
+        choices:
+          - {pt: "Pesquisa que pode beneficiar e prejudicar — exige supervisão (ex.: vírus)", en: "Research that may benefit and harm — requires oversight (e.g., viruses)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas inovação positiva", en: "Just positive innovation"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Pesquisa que pode beneficiar e prejudicar — exige supervisão (ex.: vírus)", en: "Research that may benefit and harm — requires oversight (e.g., viruses)"}
+        rationale: {pt: "Quando síntese permite reconstruir patógenos, então normas restringem publicação e materiais.", en: "When synthesis enables pathogen reconstruction, norms restrict publication and materials."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Triagem de DNA em fornecedores comerciais:", en: "DNA screening at commercial vendors:"}
+        choices:
+          - {pt: "Verifica encomendas contra sequências perigosas conhecidas (mitigando risco)", en: "Checks orders against known hazardous sequences (mitigating risk)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas opcional", en: "Just optional"}
+        correctAnswer: {pt: "Verifica encomendas contra sequências perigosas conhecidas (mitigando risco)", en: "Checks orders against known hazardous sequences (mitigating risk)"}
+        rationale: {pt: "Quando fornecedores cooperam, então primeira barreira global contra abuso fica em pé.", en: "When vendors cooperate, first global barrier against misuse stands."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Visão de longo prazo em genômica sintética:", en: "Long-term vision in synthetic genomics:"}
+        choices:
+          - {pt: "Engenharia de organismos sob medida para saúde, alimentos e materiais sustentáveis", en: "Custom-engineered organisms for health, food and sustainable materials"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Engenharia de organismos sob medida para saúde, alimentos e materiais sustentáveis", en: "Custom-engineered organisms for health, food and sustainable materials"}
+        rationale: {pt: "Como demanda global cresce, então biofabricação programável complementa indústria atual.", en: "Because global demand grows, programmable biomanufacturing complements current industry."}
+        objectives: [biology.synthetic_genomics]
+        difficulty: 5
+target: 20
