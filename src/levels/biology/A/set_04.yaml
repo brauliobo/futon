@@ -1,0 +1,244 @@
+title:
+  pt: "💉 Vacinologia avançada"
+  en: "💉 Advanced vaccinology"
+level: 'A'
+subject: biology
+objectives: [biology.vaccinology_advanced]
+difficulty: 5
+authorNotes: "Plataformas vacinais modernas, adjuvantes, design de antígenos, vacinas terapêuticas, vacinologia reversa."
+example:
+  pt: "Ex.: genoma do patógeno → predição de antígenos → expressão recombinante → adjuvante → vacina testada."
+  en: "Ex.: pathogen genome → antigen prediction → recombinant expression → adjuvant → tested vaccine."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas e mecanismos", en: "Platforms and mechanisms"}
+    description: {pt: "Como vacinas modernas geram imunidade.", en: "How modern vaccines generate immunity."}
+    exercises:
+      - type: choice
+        question: {pt: "Vacina viva atenuada (ex.: tríplice viral) gera:", en: "Live-attenuated vaccine (e.g., MMR) generates:"}
+        choices:
+          - {pt: "Imunidade duradoura via replicação limitada do patógeno enfraquecido", en: "Lasting immunity via limited replication of weakened pathogen"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas anticorpo de vida curta", en: "Just short-lived antibody"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Imunidade duradoura via replicação limitada do patógeno enfraquecido", en: "Lasting immunity via limited replication of weakened pathogen"}
+        rationale: {pt: "Quando antígenos diversos são apresentados naturalmente, então memória robusta é formada.", en: "When diverse antigens are presented naturally, robust memory forms."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacina inativada (ex.: hepatite A):", en: "Inactivated vaccine (e.g., hepatitis A):"}
+        choices:
+          - {pt: "Patógeno morto não replica, exigindo doses de reforço periódicas", en: "Killed pathogen does not replicate, requiring periodic boosters"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas RNA puro", en: "Just pure RNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Patógeno morto não replica, exigindo doses de reforço periódicas", en: "Killed pathogen does not replicate, requiring periodic boosters"}
+        rationale: {pt: "Quando estímulo é estático, então imunidade pode decair e exige reforços.", en: "When stimulus is static, immunity may wane and requires boosters."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacina de subunidade proteica (ex.: HPV, hepatite B):", en: "Protein subunit vaccine (e.g., HPV, hepatitis B):"}
+        choices:
+          - {pt: "Antígeno purificado + adjuvante — segura, mas exige adjuvância eficaz", en: "Purified antigen + adjuvant — safe, but requires effective adjuvanticity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas vírus vivo", en: "Just live virus"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Antígeno purificado + adjuvante — segura, mas exige adjuvância eficaz", en: "Purified antigen + adjuvant — safe, but requires effective adjuvanticity"}
+        rationale: {pt: "Quando antígeno isolado é frágil imunogenicamente, então adjuvante é essencial para resposta.", en: "When isolated antigen is weakly immunogenic, adjuvant is essential for response."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacinas conjugadas (ex.: pneumococo, Hib):", en: "Conjugate vaccines (e.g., pneumococcus, Hib):"}
+        choices:
+          - {pt: "Polissacarídeo ligado a proteína carreadora ativa T-dependente em crianças", en: "Polysaccharide linked to carrier protein activates T-dependent response in children"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas RNA livre", en: "Just free RNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Polissacarídeo ligado a proteína carreadora ativa T-dependente em crianças", en: "Polysaccharide linked to carrier protein activates T-dependent response in children"}
+        rationale: {pt: "Quando T-helper são engajadas, então memória se forma mesmo em <2 anos onde polissacarídeo só falha.", en: "When T-helpers are engaged, memory forms even in <2y where polysaccharide alone fails."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacinas de mRNA (ex.: SARS-CoV-2):", en: "mRNA vaccines (e.g., SARS-CoV-2):"}
+        choices:
+          - {pt: "mRNA encapsulado em LNP é traduzido nas células do paciente, gerando antígeno endógeno", en: "LNP-encapsulated mRNA is translated in patient cells, producing endogenous antigen"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA injetado", en: "Just injected DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "mRNA encapsulado em LNP é traduzido nas células do paciente, gerando antígeno endógeno", en: "LNP-encapsulated mRNA is translated in patient cells, producing endogenous antigen"}
+        rationale: {pt: "Quando célula faz a proteína, então MHC-I e MHC-II apresentam — resposta T e B robustas.", en: "When the cell makes the protein, MHC-I and MHC-II present — robust T and B responses."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vetores virais (adenovírus, AAV) em vacinas:", en: "Viral vectors (adenovirus, AAV) in vaccines:"}
+        choices:
+          - {pt: "Entregam gene do antígeno; vetor pode induzir imunidade anti-vetor limitando reusos", en: "Deliver antigen gene; vector may induce anti-vector immunity limiting reuse"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas RNA puro", en: "Just pure RNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Entregam gene do antígeno; vetor pode induzir imunidade anti-vetor limitando reusos", en: "Deliver antigen gene; vector may induce anti-vector immunity limiting reuse"}
+        rationale: {pt: "Quando rebatimento heterólogo é usado, então diferentes vetores contornam imunidade prévia.", en: "When heterologous prime-boost is used, different vectors bypass prior immunity."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Adjuvantes em vacinas servem para:", en: "Adjuvants in vaccines serve to:"}
+        choices:
+          - {pt: "Potencializar e modular resposta imune (Th1/Th2/Th17, memória)", en: "Boost and modulate immune response (Th1/Th2/Th17, memory)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas conservar vacina", en: "Just preserve vaccine"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Potencializar e modular resposta imune (Th1/Th2/Th17, memória)", en: "Boost and modulate immune response (Th1/Th2/Th17, memory)"}
+        rationale: {pt: "Quando alume, AS01 ou MF59 ativam padrões inatos, então T-CD4 são engajadas com memória durável.", en: "When alum, AS01 or MF59 activate innate patterns, CD4 T are engaged with durable memory."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Estabilização de antígeno por design estrutural (ex.: proline-2P):", en: "Structural design antigen stabilization (e.g., 2P proline):"}
+        choices:
+          - {pt: "Trava conformação pré-fusão da spike, expondo epítopos neutralizantes", en: "Locks spike pre-fusion conformation, exposing neutralizing epitopes"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Trava conformação pré-fusão da spike, expondo epítopos neutralizantes", en: "Locks spike pre-fusion conformation, exposing neutralizing epitopes"}
+        rationale: {pt: "Quando antígeno é estável, então anticorpos neutralizantes são gerados em alta proporção.", en: "When antigen is stable, neutralizing antibodies are generated at high proportion."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacinas baseadas em VLP (virus-like particles):", en: "VLP-based vaccines (virus-like particles):"}
+        choices:
+          - {pt: "Imitam vírus sem material genético — alto imunogênico (ex.: HPV)", en: "Mimic viruses without genetic material — highly immunogenic (e.g., HPV)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas vírus vivo", en: "Just live virus"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Imitam vírus sem material genético — alto imunogênico (ex.: HPV)", en: "Mimic viruses without genetic material — highly immunogenic (e.g., HPV)"}
+        rationale: {pt: "Quando arranjo repetitivo é apresentado, então B cells são ativadas potentemente sem risco infeccioso.", en: "When repetitive array is presented, B cells are potently activated without infectious risk."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacinologia reversa parte de:", en: "Reverse vaccinology starts from:"}
+        choices:
+          - {pt: "Genoma do patógeno → in silico → candidatos antigênicos validados", en: "Pathogen genome → in silico → validated antigen candidates"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Genoma do patógeno → in silico → candidatos antigênicos validados", en: "Pathogen genome → in silico → validated antigen candidates"}
+        rationale: {pt: "Quando genoma guia, então cobertura antigênica é otimizada antes mesmo de cultivar patógeno.", en: "When genome guides, antigenic coverage is optimized before even culturing pathogen."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Vacinas terapêuticas e fronteiras", en: "Therapeutic vaccines and frontiers"}
+    description: {pt: "Aplicações além da prevenção infecciosa.", en: "Applications beyond infectious prevention."}
+    exercises:
+      - type: choice
+        question: {pt: "Vacinas terapêuticas oncológicas:", en: "Cancer therapeutic vaccines:"}
+        choices:
+          - {pt: "Treinam imunidade contra antígenos tumorais já estabelecidos no paciente", en: "Train immunity against tumor antigens already established in the patient"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas profiláticas", en: "Just prophylactic"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Treinam imunidade contra antígenos tumorais já estabelecidos no paciente", en: "Train immunity against tumor antigens already established in the patient"}
+        rationale: {pt: "Quando neoantígenos pessoais são alvo, então vacina personalizada complementa imunoterapia.", en: "When personal neoantigens are targeted, personalized vaccine complements immunotherapy."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sipuleucel-T (Provenge) é:", en: "Sipuleucel-T (Provenge) is:"}
+        choices:
+          - {pt: "Vacina celular autóloga aprovada para câncer de próstata avançado", en: "Approved autologous cellular vaccine for advanced prostate cancer"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas pílula oral", en: "Just oral pill"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Vacina celular autóloga aprovada para câncer de próstata avançado", en: "Approved autologous cellular vaccine for advanced prostate cancer"}
+        rationale: {pt: "Quando APCs do paciente são pulsadas com antígeno, então T-CD8 são treinadas ex vivo e devolvidas.", en: "When patient APCs are pulsed with antigen, CD8 T are trained ex vivo and returned."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imunidade de mucosa requer:", en: "Mucosal immunity requires:"}
+        choices:
+          - {pt: "Indução de IgA secretora local via vacinas intranasais ou orais", en: "Induction of local secretory IgA via intranasal or oral vaccines"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas IgG sistêmica", en: "Just systemic IgG"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Indução de IgA secretora local via vacinas intranasais ou orais", en: "Induction of local secretory IgA via intranasal or oral vaccines"}
+        rationale: {pt: "Quando porta de entrada é selada, então transmissão e infecção primária são bloqueadas.", en: "When entry portal is sealed, transmission and primary infection are blocked."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacinas universais contra influenza visam:", en: "Universal flu vaccines target:"}
+        choices:
+          - {pt: "Epítopos conservados (haste da HA, M2e) para proteção ampla entre subtipos", en: "Conserved epitopes (HA stalk, M2e) for broad protection across subtypes"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas uma cepa", en: "Just one strain"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Epítopos conservados (haste da HA, M2e) para proteção ampla entre subtipos", en: "Conserved epitopes (HA stalk, M2e) for broad protection across subtypes"}
+        rationale: {pt: "Quando regiões pouco mutáveis são alvo, então reformulações anuais ficam dispensáveis.", en: "When low-mutability regions are targeted, yearly reformulations become unnecessary."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Adjuvantes modernos (AS01, CpG):", en: "Modern adjuvants (AS01, CpG):"}
+        choices:
+          - {pt: "Ativam TLRs específicos para resposta robusta com perfil de citocinas controlado", en: "Activate specific TLRs for robust response with controlled cytokine profile"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas alume genérico", en: "Just generic alum"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Ativam TLRs específicos para resposta robusta com perfil de citocinas controlado", en: "Activate specific TLRs for robust response with controlled cytokine profile"}
+        rationale: {pt: "Quando inato é direcionado, então adjuvante molda Th1, Th2 ou Th17 conforme necessidade.", en: "When innate is directed, adjuvant shapes Th1, Th2 or Th17 as needed."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacinas de mRNA personalizadas em câncer:", en: "Personalized mRNA cancer vaccines:"}
+        choices:
+          - {pt: "Codificam neoantígenos específicos do paciente em poucos meses após biópsia", en: "Encode patient-specific neoantigens within months of biopsy"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Codificam neoantígenos específicos do paciente em poucos meses após biópsia", en: "Encode patient-specific neoantigens within months of biopsy"}
+        rationale: {pt: "Quando plataforma é programável, então tratamento individual passa de fantasia a realidade industrial.", en: "When platform is programmable, individual treatment moves from fantasy to industrial reality."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cadeia fria das vacinas:", en: "Vaccine cold chain:"}
+        choices:
+          - {pt: "Refrigeração contínua para preservar potência — desafio logístico em regiões remotas", en: "Continuous refrigeration to preserve potency — logistic challenge in remote regions"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Refrigeração contínua para preservar potência — desafio logístico em regiões remotas", en: "Continuous refrigeration to preserve potency — logistic challenge in remote regions"}
+        rationale: {pt: "Quando temperatura excede limite, então proteínas se desnaturam e mRNA degrada rapidamente.", en: "When temperature exceeds limit, proteins denature and mRNA degrades rapidly."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacinas termoestáveis e em adesivo (microagulhas):", en: "Thermostable and microneedle patch vaccines:"}
+        choices:
+          - {pt: "Eliminam refrigeração e exigência de profissionais para administração", en: "Eliminate refrigeration and professional administration requirement"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Eliminam refrigeração e exigência de profissionais para administração", en: "Eliminate refrigeration and professional administration requirement"}
+        rationale: {pt: "Quando logística simplifica, então cobertura vacinal global cresce em populações marginalizadas.", en: "When logistics simplify, global vaccination coverage rises in marginalized populations."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hesitação vacinal é abordada por:", en: "Vaccine hesitancy is addressed by:"}
+        choices:
+          - {pt: "Comunicação clara, confiança em profissionais e remoção de barreiras de acesso", en: "Clear communication, trust in professionals and removal of access barriers"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas obrigação legal", en: "Just legal mandate"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Comunicação clara, confiança em profissionais e remoção de barreiras de acesso", en: "Clear communication, trust in professionals and removal of access barriers"}
+        rationale: {pt: "Quando confiança é construída, então adesão sobe sustentavelmente sem coerção.", en: "When trust is built, adherence rises sustainably without coercion."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em vacinologia:", en: "Next frontiers in vaccinology:"}
+        choices:
+          - {pt: "Pancorona, autoamplificáveis (saRNA), nanopartículas multivalentes e IA em design", en: "Pan-coronavirus, self-amplifying (saRNA), multivalent nanoparticles and AI in design"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Pancorona, autoamplificáveis (saRNA), nanopartículas multivalentes e IA em design", en: "Pan-coronavirus, self-amplifying (saRNA), multivalent nanoparticles and AI in design"}
+        rationale: {pt: "Quando ferramentas convergem, então preparação para pandemias futuras avança em saltos.", en: "When tools converge, future pandemic preparedness advances in leaps."}
+        objectives: [biology.vaccinology_advanced]
+        difficulty: 5
+target: 20
