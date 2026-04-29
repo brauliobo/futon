@@ -1,0 +1,244 @@
+title:
+  pt: "🤧 Imunologia de alergia e asma"
+  en: "🤧 Allergy and asthma immunology"
+level: 'B'
+subject: biology
+objectives: [biology.allergy_asthma]
+difficulty: 5
+authorNotes: "IgE, mastócitos, Th2, alarminas, anafilaxia, asma, biológicos modernos."
+example:
+  pt: "Ex.: alérgeno → IgE em mastócitos → degranulação → histamina → coceira/broncoespasmo → resposta Th2 amplificada."
+  en: "Ex.: allergen → IgE on mast cells → degranulation → histamine → itch/bronchospasm → amplified Th2 response."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Resposta alérgica clássica", en: "Classic allergic response"}
+    description: {pt: "Como o sistema imune erra alvo.", en: "How the immune system mistargets."}
+    exercises:
+      - type: choice
+        question: {pt: "Hipersensibilidade tipo I é mediada por:", en: "Type I hypersensitivity is mediated by:"}
+        choices:
+          - {pt: "IgE ligada a FcεRI em mastócitos e basófilos", en: "IgE bound to FcεRI on mast cells and basophils"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "IgE ligada a FcεRI em mastócitos e basófilos", en: "IgE bound to FcεRI on mast cells and basophils"}
+        rationale: {pt: "Quando alérgeno cruza IgE, então degranulação imediata libera histamina e mediadores.", en: "When allergen crosslinks IgE, immediate degranulation releases histamine and mediators."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sensibilização inicial requer:", en: "Initial sensitization requires:"}
+        choices:
+          - {pt: "Apresentação por DCs + Th2 + IL-4 induzindo switch para IgE em B", en: "DC presentation + Th2 + IL-4 inducing class switch to IgE in B cells"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Apresentação por DCs + Th2 + IL-4 induzindo switch para IgE em B", en: "DC presentation + Th2 + IL-4 inducing class switch to IgE in B cells"}
+        rationale: {pt: "Quando IgE específica é produzida, então segunda exposição dispara reação alérgica.", en: "When specific IgE is produced, second exposure triggers allergic reaction."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Histamina causa:", en: "Histamine causes:"}
+        choices:
+          - {pt: "Vasodilatação, permeabilidade vascular, prurido e broncoconstrição", en: "Vasodilation, vascular permeability, pruritus and bronchoconstriction"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Vasodilatação, permeabilidade vascular, prurido e broncoconstrição", en: "Vasodilation, vascular permeability, pruritus and bronchoconstriction"}
+        rationale: {pt: "Quando H1 é ativado, então sintomas clássicos surgem em minutos.", en: "When H1 is activated, classic symptoms emerge within minutes."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anti-histamínicos atuam:", en: "Antihistamines act:"}
+        choices:
+          - {pt: "Bloqueando receptores H1 para reduzir prurido, rinite e urticária", en: "Blocking H1 receptors to reduce pruritus, rhinitis and urticaria"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Bloqueando receptores H1 para reduzir prurido, rinite e urticária", en: "Blocking H1 receptors to reduce pruritus, rhinitis and urticaria"}
+        rationale: {pt: "Quando H1 é antagonizado, então sintomas alérgicos diários ficam controlados.", en: "When H1 is antagonized, daily allergic symptoms are controlled."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anafilaxia é:", en: "Anaphylaxis is:"}
+        choices:
+          - {pt: "Reação sistêmica grave com hipotensão, broncoespasmo e edema — emergência médica", en: "Severe systemic reaction with hypotension, bronchospasm and edema — medical emergency"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Reação sistêmica grave com hipotensão, broncoespasmo e edema — emergência médica", en: "Severe systemic reaction with hypotension, bronchospasm and edema — medical emergency"}
+        rationale: {pt: "Quando epinefrina IM é dada, então vasoconstrição e broncodilatação revertem rapidamente.", en: "When IM epinephrine is given, vasoconstriction and bronchodilation rapidly reverse."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Asma alérgica caracteriza-se por:", en: "Allergic asthma is characterized by:"}
+        choices:
+          - {pt: "Inflamação Th2 das vias aéreas com eosinófilos, IgE e remodelação brônquica", en: "Airway Th2 inflammation with eosinophils, IgE and bronchial remodeling"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Inflamação Th2 das vias aéreas com eosinófilos, IgE e remodelação brônquica", en: "Airway Th2 inflammation with eosinophils, IgE and bronchial remodeling"}
+        rationale: {pt: "Quando IL-4/5/13 dominam, então mucosa hiperreativa gera obstrução episódica.", en: "When IL-4/5/13 dominate, hyperreactive mucosa produces episodic obstruction."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Alarminas (TSLP, IL-25, IL-33):", en: "Alarmins (TSLP, IL-25, IL-33):"}
+        choices:
+          - {pt: "Citocinas epiteliais que iniciam resposta Th2/ILC2 frente a danos e alérgenos", en: "Epithelial cytokines initiating Th2/ILC2 response against damage and allergens"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Citocinas epiteliais que iniciam resposta Th2/ILC2 frente a danos e alérgenos", en: "Epithelial cytokines initiating Th2/ILC2 response against damage and allergens"}
+        rationale: {pt: "Quando epitélio é estressado, então alarminas reorganizam imunidade local rapidamente.", en: "When epithelium is stressed, alarmins rapidly reorganize local immunity."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tezepelumabe é anti:", en: "Tezepelumab is anti-:"}
+        choices:
+          - {pt: "TSLP — bloqueia inflamação a montante em asma grave incluindo não-Th2", en: "TSLP — blocks upstream inflammation in severe asthma including non-Th2"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "TSLP — bloqueia inflamação a montante em asma grave incluindo não-Th2", en: "TSLP — blocks upstream inflammation in severe asthma including non-Th2"}
+        rationale: {pt: "Quando alarmina é neutralizada, então cascatas múltiplas a jusante são interrompidas.", en: "When alarmin is neutralized, multiple downstream cascades are halted."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Marcha atópica:", en: "Atopic march:"}
+        choices:
+          - {pt: "Progressão típica de eczema → alergia alimentar → rinite → asma na infância", en: "Typical progression eczema → food allergy → rhinitis → asthma in childhood"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Progressão típica de eczema → alergia alimentar → rinite → asma na infância", en: "Typical progression eczema → food allergy → rhinitis → asthma in childhood"}
+        rationale: {pt: "Quando barreira cutânea falha precocemente, então sensibilizações sucessivas surgem.", en: "When skin barrier fails early, successive sensitizations emerge."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Teste cutâneo (prick test):", en: "Skin prick test:"}
+        choices:
+          - {pt: "Identifica sensibilização IgE-mediada por reação local em minutos", en: "Identifies IgE-mediated sensitization via local reaction in minutes"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Identifica sensibilização IgE-mediada por reação local em minutos", en: "Identifies IgE-mediated sensitization via local reaction in minutes"}
+        rationale: {pt: "Quando alérgeno gera pápula, então tratamento e evitação são individualizados.", en: "When allergen produces wheal, treatment and avoidance are individualized."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Tratamentos modernos e fronteiras", en: "Modern treatments and frontiers"}
+    description: {pt: "Biológicos e imunoterapia.", en: "Biologics and immunotherapy."}
+    exercises:
+      - type: choice
+        question: {pt: "Omalizumabe é anti:", en: "Omalizumab is anti-:"}
+        choices:
+          - {pt: "IgE livre — usado em asma alérgica grave e urticária crônica refratária", en: "Free IgE — used in severe allergic asthma and refractory chronic urticaria"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "IgE livre — usado em asma alérgica grave e urticária crônica refratária", en: "Free IgE — used in severe allergic asthma and refractory chronic urticaria"}
+        rationale: {pt: "Quando IgE livre é sequestrada, então mastócitos ficam sem gatilho.", en: "When free IgE is sequestered, mast cells lose trigger."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mepolizumabe e benralizumabe atuam em:", en: "Mepolizumab and benralizumab act on:"}
+        choices:
+          - {pt: "IL-5 / receptor IL-5α reduzindo eosinófilos em asma eosinofílica grave", en: "IL-5 / IL-5Rα reducing eosinophils in severe eosinophilic asthma"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "IL-5 / receptor IL-5α reduzindo eosinófilos em asma eosinofílica grave", en: "IL-5 / IL-5Rα reducing eosinophils in severe eosinophilic asthma"}
+        rationale: {pt: "Quando eosinófilos caem, então exacerbações reduzem e corticoide pode ser reduzido.", en: "When eosinophils drop, exacerbations decrease and steroid can be tapered."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dupilumabe bloqueia:", en: "Dupilumab blocks:"}
+        choices:
+          - {pt: "IL-4Rα interrompendo IL-4/IL-13 em dermatite atópica, asma, EoE e CRSwNP", en: "IL-4Rα interrupting IL-4/IL-13 in atopic dermatitis, asthma, EoE and CRSwNP"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "IL-4Rα interrompendo IL-4/IL-13 em dermatite atópica, asma, EoE e CRSwNP", en: "IL-4Rα interrupting IL-4/IL-13 in atopic dermatitis, asthma, EoE and CRSwNP"}
+        rationale: {pt: "Quando dois citocinas-chave são bloqueadas, então múltiplas doenças Th2 melhoram simultaneamente.", en: "When two key cytokines are blocked, multiple Th2 diseases simultaneously improve."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imunoterapia alergeno-específica (AIT):", en: "Allergen-specific immunotherapy (AIT):"}
+        choices:
+          - {pt: "Doses crescentes induzem Tregs e IgG bloqueadora — modifica curso da doença", en: "Escalating doses induce Tregs and blocking IgG — modifies disease course"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Doses crescentes induzem Tregs e IgG bloqueadora — modifica curso da doença", en: "Escalating doses induce Tregs and blocking IgG — modifies disease course"}
+        rationale: {pt: "Quando dessensibilização é gradual, então tolerância imunológica é induzida.", en: "When desensitization is gradual, immunological tolerance is induced."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AIT sublingual (SLIT):", en: "Sublingual AIT (SLIT):"}
+        choices:
+          - {pt: "Comprimidos diários para gramíneas, ácaros e pólen reduzem rinite alérgica", en: "Daily tablets for grasses, mites and pollens reduce allergic rhinitis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Comprimidos diários para gramíneas, ácaros e pólen reduzem rinite alérgica", en: "Daily tablets for grasses, mites and pollens reduce allergic rhinitis"}
+        rationale: {pt: "Quando entrega é oral, então adesão melhora versus injeções subcutâneas semanais.", en: "When delivery is oral, adherence improves versus weekly subcutaneous injections."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imunoterapia oral em alergia alimentar:", en: "Oral immunotherapy in food allergy:"}
+        choices:
+          - {pt: "Indução gradual de tolerância (Palforzia em amendoim) reduz reações graves", en: "Gradual tolerance induction (Palforzia in peanut) reduces severe reactions"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Indução gradual de tolerância (Palforzia em amendoim) reduz reações graves", en: "Gradual tolerance induction (Palforzia in peanut) reduces severe reactions"}
+        rationale: {pt: "Quando paciente tolera dose, então acidentes não viram emergências.", en: "When patient tolerates dose, accidents don't become emergencies."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Asma neutrofílica (não-Th2):", en: "Neutrophilic (non-Th2) asthma:"}
+        choices:
+          - {pt: "Subfenótipo grave menos responsivo a corticoides; alvos como TSLP e Th17 estudados", en: "Severe subphenotype less responsive to steroids; targets like TSLP and Th17 studied"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Subfenótipo grave menos responsivo a corticoides; alvos como TSLP e Th17 estudados", en: "Severe subphenotype less responsive to steroids; targets like TSLP and Th17 studied"}
+        rationale: {pt: "Quando fenótipo é distinto, então tratamento personalizado supera abordagem única.", en: "When phenotype is distinct, personalized treatment beats one-size-fits-all."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbioma e desenvolvimento de alergia:", en: "Microbiome and allergy development:"}
+        choices:
+          - {pt: "Diversidade microbiana precoce protege contra alergias e asma (hipótese da higiene)", en: "Early microbial diversity protects against allergies and asthma (hygiene hypothesis)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Diversidade microbiana precoce protege contra alergias e asma (hipótese da higiene)", en: "Early microbial diversity protects against allergies and asthma (hygiene hypothesis)"}
+        rationale: {pt: "Quando exposição variada ocorre cedo, então tolerância é estabelecida e Th2 é equilibrada.", en: "When varied exposure happens early, tolerance is established and Th2 is balanced."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Eczema atópico em pediatria:", en: "Pediatric atopic eczema:"}
+        choices:
+          - {pt: "Combinação de barreira (filagrina) + Th2 + microbiota disbiótica", en: "Combination of barrier (filaggrin) + Th2 + dysbiotic microbiota"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Combinação de barreira (filagrina) + Th2 + microbiota disbiótica", en: "Combination of barrier (filaggrin) + Th2 + dysbiotic microbiota"}
+        rationale: {pt: "Quando hidratação tópica + dupilumab são adotados, então qualidade de vida sobe muito.", en: "When topical hydration + dupilumab are adopted, quality of life greatly improves."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em alergia/asma:", en: "Next allergy/asthma frontiers:"}
+        choices:
+          - {pt: "Biológicos contra alarminas, terapias preventivas em lactentes e medicina de precisão", en: "Biologics against alarmins, preventive infant therapies and precision medicine"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Biológicos contra alarminas, terapias preventivas em lactentes e medicina de precisão", en: "Biologics against alarmins, preventive infant therapies and precision medicine"}
+        rationale: {pt: "Quando ferramentas convergem, então alergia perde caráter crônico universal.", en: "When tools converge, allergy loses universal chronic character."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+target: 20

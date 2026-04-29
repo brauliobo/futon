@@ -1,0 +1,263 @@
+title:
+  pt: "🎓 Revisão geral — nível B"
+  en: "🎓 General review — level B"
+level: 'B'
+subject: biology
+objectives:
+  - biology.bci
+  - biology.cellular_reprogramming
+  - biology.drug_discovery
+  - biology.cancer_metabolism
+  - biology.tumor_microenvironment
+  - biology.crispr_screens
+  - biology.epigenetic_editing
+  - biology.neuropharmacology
+  - biology.cardiovascular_advanced
+  - biology.stem_cell_niches
+  - biology.immune_tolerance
+  - biology.plant_synbio
+  - biology.nutritional_biology
+  - biology.ocean_ecology
+  - biology.conservation_genomics
+  - biology.skin_biology
+  - biology.viral_oncology
+  - biology.planetary_health
+  - biology.allergy_asthma
+difficulty: 5
+authorNotes: "Revisão cumulativa do nível B — BCIs, reprogramação, descoberta de fármacos, oncologia (metabolismo/TME/CRISPR), edição epigenética, neurofarmacologia, cardiovascular, nichos, tolerância, plantas, nutrição, oceano, conservação, pele, viral oncology, saúde planetária, alergia."
+example:
+  pt: "Ex.: tópico do nível B → conceito-chave → aplicação → consolidação cumulativa."
+  en: "Ex.: B-level topic → key concept → application → cumulative consolidation."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Revisão — primeira metade", en: "Review — first half"}
+    description: {pt: "Sets 1-10 do nível B.", en: "Sets 1-10 of level B."}
+    exercises:
+      - type: choice
+        question: {pt: "BCIs invasivas com Utah array captam:", en: "Invasive BCIs with Utah array capture:"}
+        choices:
+          - {pt: "Spikes de neurônios individuais para decodificação fina", en: "Single-neuron spikes for fine decoding"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+          - {pt: "Apenas estática", en: "Just static"}
+        correctAnswer: {pt: "Spikes de neurônios individuais para decodificação fina", en: "Single-neuron spikes for fine decoding"}
+        rationale: {pt: "Quando alta resolução é alcançada, então cursor/voz são controlados precisamente.", en: "When high resolution is reached, cursor/voice are precisely controlled."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fatores Yamanaka (OSKM) reprogramam:", en: "Yamanaka factors (OSKM) reprogram:"}
+        choices:
+          - {pt: "Células somáticas em iPSC pluripotentes", en: "Somatic cells into pluripotent iPSCs"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Células somáticas em iPSC pluripotentes", en: "Somatic cells into pluripotent iPSCs"}
+        rationale: {pt: "Quando os 4 fatores reativam pluripotência, então identidade é apagada e plástica.", en: "When the 4 factors reactivate pluripotency, identity is erased and plastic."}
+        objectives: [biology.cellular_reprogramming]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Repurposing de fármacos:", en: "Drug repurposing:"}
+        choices:
+          - {pt: "Achar nova indicação para fármaco já aprovado, encurtando desenvolvimento", en: "Find new indication for already-approved drug, shortening development"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Achar nova indicação para fármaco já aprovado, encurtando desenvolvimento", en: "Find new indication for already-approved drug, shortening development"}
+        rationale: {pt: "Quando segurança já é conhecida, então pacientes recebem benefício mais cedo.", en: "When safety is known, patients benefit sooner."}
+        objectives: [biology.drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Efeito Warburg:", en: "Warburg effect:"}
+        choices:
+          - {pt: "Glicólise aeróbica em tumores com lactato alto mesmo em presença de O₂", en: "Aerobic glycolysis in tumors with high lactate even with O₂"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Glicólise aeróbica em tumores com lactato alto mesmo em presença de O₂", en: "Aerobic glycolysis in tumors with high lactate even with O₂"}
+        rationale: {pt: "Quando proliferação demanda biossíntese, então glicólise rápida supera OXPHOS.", en: "When proliferation demands biosynthesis, fast glycolysis beats OXPHOS."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tumores 'frios' têm:", en: "'Cold' tumors have:"}
+        choices:
+          - {pt: "Pouco infiltrado linfocitário e baixa resposta a checkpoint sozinho", en: "Sparse lymphocyte infiltrate and low checkpoint response alone"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Pouco infiltrado linfocitário e baixa resposta a checkpoint sozinho", en: "Sparse lymphocyte infiltrate and low checkpoint response alone"}
+        rationale: {pt: "Quando T não está no tumor, então combinações são necessárias para 'aquecer' resposta.", en: "When T is absent, combinations are needed to 'warm up' response."}
+        objectives: [biology.tumor_microenvironment]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CRISPRi (interferência) usa:", en: "CRISPRi (interference) uses:"}
+        choices:
+          - {pt: "dCas9-KRAB para silenciar gene-alvo reversivelmente", en: "dCas9-KRAB to reversibly silence target gene"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "dCas9-KRAB para silenciar gene-alvo reversivelmente", en: "dCas9-KRAB to reversibly silence target gene"}
+        rationale: {pt: "Quando KRAB induz heterocromatina, então silenciamento dura enquanto efetor está presente.", en: "When KRAB induces heterochromatin, silencing lasts while effector is present."}
+        objectives: [biology.crispr_screens]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CRISPRoff combina:", en: "CRISPRoff combines:"}
+        choices:
+          - {pt: "KRAB + DNMT3A/L para silenciamento durável após pulso curto", en: "KRAB + DNMT3A/L for durable silencing after short pulse"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "KRAB + DNMT3A/L para silenciamento durável após pulso curto", en: "KRAB + DNMT3A/L for durable silencing after short pulse"}
+        rationale: {pt: "Quando memória epigenética é instalada, então gene fica silenciado herdavelmente.", en: "When epigenetic memory is installed, gene stays heritably silenced."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cetamina em depressão refratária:", en: "Ketamine in refractory depression:"}
+        choices:
+          - {pt: "Antagonista NMDA com efeito antidepressivo rápido via mTOR/sinaptogênese", en: "NMDA antagonist with rapid antidepressant effect via mTOR/synaptogenesis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Antagonista NMDA com efeito antidepressivo rápido via mTOR/sinaptogênese", en: "NMDA antagonist with rapid antidepressant effect via mTOR/synaptogenesis"}
+        rationale: {pt: "Quando glutamato é desinibido, então sinapses se formam em horas — diferente de ISRS.", en: "When glutamate is disinhibited, synapses form within hours — unlike SSRIs."}
+        objectives: [biology.neuropharmacology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Estudo CANTOS demonstrou:", en: "CANTOS trial showed:"}
+        choices:
+          - {pt: "Bloqueio de IL-1β reduz eventos cardiovasculares maiores em pacientes inflamados", en: "IL-1β blockade reduces major cardiovascular events in inflamed patients"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Bloqueio de IL-1β reduz eventos cardiovasculares maiores em pacientes inflamados", en: "IL-1β blockade reduces major cardiovascular events in inflamed patients"}
+        rationale: {pt: "Quando inflamação residual é tratada, então benefício somou ao redução lipídica clássica.", en: "When residual inflammation is treated, benefit added to classic lipid reduction."}
+        objectives: [biology.cardiovascular_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Nicho hematopoiético contém:", en: "Hematopoietic niche contains:"}
+        choices:
+          - {pt: "Endotélio sinusoidal, MSCs perivasculares e osteoblastos", en: "Sinusoidal endothelium, perivascular MSCs and osteoblasts"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Endotélio sinusoidal, MSCs perivasculares e osteoblastos", en: "Sinusoidal endothelium, perivascular MSCs and osteoblasts"}
+        rationale: {pt: "Quando HSCs estão ancoradas, então hematopoese mantém-se equilibrada.", en: "When HSCs are anchored, hematopoiesis stays balanced."}
+        objectives: [biology.stem_cell_niches]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Revisão — segunda metade", en: "Review — second half"}
+    description: {pt: "Sets 11-19 do nível B.", en: "Sets 11-19 of level B."}
+    exercises:
+      - type: choice
+        question: {pt: "AIRE no timo:", en: "AIRE in thymus:"}
+        choices:
+          - {pt: "Permite expressão ectópica de antígenos teciduais para selecionar contra autorreativas", en: "Enables ectopic tissue antigen expression to select against autoreactives"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Permite expressão ectópica de antígenos teciduais para selecionar contra autorreativas", en: "Enables ectopic tissue antigen expression to select against autoreactives"}
+        rationale: {pt: "Quando AIRE falha (APECED), então autoimunidade multissistêmica grave aparece.", en: "When AIRE fails (APECED), severe multisystem autoimmunity appears."}
+        objectives: [biology.immune_tolerance]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Plantas Bt expressam:", en: "Bt plants express:"}
+        choices:
+          - {pt: "Toxinas Cry de Bacillus thuringiensis matando insetos-praga seletivamente", en: "Bacillus thuringiensis Cry toxins killing insect pests selectively"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Toxinas Cry de Bacillus thuringiensis matando insetos-praga seletivamente", en: "Bacillus thuringiensis Cry toxins killing insect pests selectively"}
+        rationale: {pt: "Quando Cry rompe intestino do inseto, então defesa não exige inseticida externo.", en: "When Cry disrupts insect gut, defense doesn't need external insecticide."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dieta mediterrânea associa-se com:", en: "Mediterranean diet associates with:"}
+        choices:
+          - {pt: "Menor risco cardiovascular e neurodegenerativo em estudos longitudinais", en: "Lower cardiovascular and neurodegenerative risk in longitudinal studies"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Menor risco cardiovascular e neurodegenerativo em estudos longitudinais", en: "Lower cardiovascular and neurodegenerative risk in longitudinal studies"}
+        rationale: {pt: "Quando azeite, peixe e vegetais dominam, então marcadores inflamatórios caem.", en: "When olive oil, fish and vegetables dominate, inflammatory markers drop."}
+        objectives: [biology.nutritional_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bomba biológica de carbono no oceano:", en: "Biological carbon pump in ocean:"}
+        choices:
+          - {pt: "Plâncton fixa CO₂ e exporta C para profundidades, regulando clima global", en: "Plankton fixes CO₂ and exports C to depths, regulating global climate"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Plâncton fixa CO₂ e exporta C para profundidades, regulando clima global", en: "Plankton fixes CO₂ and exports C to depths, regulating global climate"}
+        rationale: {pt: "Quando organismos morrem e afundam, então oceano sequestra C em escala milenar.", en: "When organisms die and sink, ocean sequesters C at millennial scale."}
+        objectives: [biology.ocean_ecology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resgate genético em conservação:", en: "Genetic rescue in conservation:"}
+        choices:
+          - {pt: "Introdução de indivíduos de outra população restaura diversidade e fitness", en: "Introducing individuals from another population restores diversity and fitness"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Introdução de indivíduos de outra população restaura diversidade e fitness", en: "Introducing individuals from another population restores diversity and fitness"}
+        rationale: {pt: "Quando fluxo gênico volta, então depressão por endogamia diminui rapidamente.", en: "When gene flow returns, inbreeding depression eases rapidly."}
+        objectives: [biology.conservation_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Filagrina é proteína-chave em:", en: "Filaggrin is a key protein in:"}
+        choices:
+          - {pt: "Barreira cutânea — mutações causam ictiose vulgar e dermatite atópica", en: "Skin barrier — mutations cause ichthyosis vulgaris and atopic dermatitis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Barreira cutânea — mutações causam ictiose vulgar e dermatite atópica", en: "Skin barrier — mutations cause ichthyosis vulgaris and atopic dermatitis"}
+        rationale: {pt: "Quando barreira é fraca, então alérgenos penetram e marcha atópica progride.", en: "When barrier is weak, allergens penetrate and atopic march progresses."}
+        objectives: [biology.skin_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "HPV oncogênico via E6/E7:", en: "Oncogenic HPV via E6/E7:"}
+        choices:
+          - {pt: "Degrada p53/Rb causando câncer cervical e outros — preventível por vacina", en: "Degrades p53/Rb causing cervical and other cancers — vaccine-preventable"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Degrada p53/Rb causando câncer cervical e outros — preventível por vacina", en: "Degrades p53/Rb causing cervical and other cancers — vaccine-preventable"}
+        rationale: {pt: "Quando vacinação é precoce, então câncer cervical pode ser eliminado em décadas.", en: "When vaccination is early, cervical cancer can be eliminated within decades."}
+        objectives: [biology.viral_oncology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "One Health integra:", en: "One Health integrates:"}
+        choices:
+          - {pt: "Saúde humana, animal e ambiental como sistema único interdependente", en: "Human, animal and environmental health as single interdependent system"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Saúde humana, animal e ambiental como sistema único interdependente", en: "Human, animal and environmental health as single interdependent system"}
+        rationale: {pt: "Quando ecossistemas saudáveis são protegidos, então spillover e doenças crônicas caem.", en: "When healthy ecosystems are protected, spillover and chronic disease drop."}
+        objectives: [biology.planetary_health]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dupilumabe bloqueia:", en: "Dupilumab blocks:"}
+        choices:
+          - {pt: "IL-4Rα interrompendo IL-4/IL-13 em dermatite atópica, asma, EoE e CRSwNP", en: "IL-4Rα interrupting IL-4/IL-13 in atopic dermatitis, asthma, EoE and CRSwNP"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "IL-4Rα interrompendo IL-4/IL-13 em dermatite atópica, asma, EoE e CRSwNP", en: "IL-4Rα interrupting IL-4/IL-13 in atopic dermatitis, asthma, EoE and CRSwNP"}
+        rationale: {pt: "Quando duas citocinas-chave são bloqueadas, então múltiplas doenças Th2 melhoram.", en: "When two key cytokines are blocked, multiple Th2 diseases improve."}
+        objectives: [biology.allergy_asthma]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fio condutor do nível B:", en: "Level B guiding thread:"}
+        choices:
+          - {pt: "Biologia profissional avançada conectando moléculas, sistemas, doenças e planeta", en: "Advanced professional biology connecting molecules, systems, diseases and planet"}
+          - {pt: "Apenas memorização", en: "Just memorization"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem coesão", en: "No cohesion"}
+        correctAnswer: {pt: "Biologia profissional avançada conectando moléculas, sistemas, doenças e planeta", en: "Advanced professional biology connecting molecules, systems, diseases and planet"}
+        rationale: {pt: "Quando ferramentas convergem, então biologia se torna plataforma transformadora completa.", en: "When tools converge, biology becomes a complete transformative platform."}
+        objectives: [biology.systems_biology]
+        difficulty: 5
+target: 20
