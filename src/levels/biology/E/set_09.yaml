@@ -1,0 +1,244 @@
+title:
+  pt: "🧈 Lipidômica avançada"
+  en: "🧈 Advanced lipidomics"
+level: 'E'
+subject: biology
+objectives: [biology.lipidomics_adv]
+difficulty: 5
+authorNotes: "Sphingolipidos, lipidomas espaciais, ferroptose e lipídios bioativos, drug discovery."
+example:
+  pt: "Ex.: tecido → MS imaging → mapas lipídicos espaciais → biomarcadores → diagnóstico."
+  en: "Ex.: tissue → MS imaging → spatial lipid maps → biomarkers → diagnosis."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Classes lipídicas e funções", en: "Lipid classes and functions"}
+    description: {pt: "A diversidade lipídica.", en: "Lipid diversity."}
+    exercises:
+      - type: choice
+        question: {pt: "Sphingolipidos:", en: "Sphingolipids:"}
+        choices:
+          - {pt: "Esfingosina-base com ceramidas, gangliosídeos e S1P regulam apoptose, sinalização e mielina", en: "Sphingosine-based with ceramides, gangliosides and S1P regulate apoptosis, signaling and myelin"}
+          - {pt: "Apenas curiosidade lipídica", en: "Just lipid curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Esfingosina-base com ceramidas, gangliosídeos e S1P regulam apoptose, sinalização e mielina", en: "Sphingosine-based with ceramides, gangliosides and S1P regulate apoptosis, signaling and myelin"}
+        rationale: {pt: "Quando esfingolípidos atuam, então sinalização tecidual é refinada.", en: "When sphingolipids act, tissue signaling is refined."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Eicosanoides:", en: "Eicosanoids:"}
+        choices:
+          - {pt: "Prostaglandinas, leucotrienos e tromboxanos derivam de PUFAs e medeiam inflamação e dor", en: "Prostaglandins, leukotrienes and thromboxanes derive from PUFAs mediating inflammation and pain"}
+          - {pt: "Apenas detalhe químico", en: "Just chemical detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Prostaglandinas, leucotrienos e tromboxanos derivam de PUFAs e medeiam inflamação e dor", en: "Prostaglandins, leukotrienes and thromboxanes derive from PUFAs mediating inflammation and pain"}
+        rationale: {pt: "Quando eicosanoides agem, então AINEs e leucotriene-mods atuam clinicamente.", en: "When eicosanoids act, NSAIDs and leukotriene-mods work clinically."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Endocanabinoides:", en: "Endocannabinoids:"}
+        choices:
+          - {pt: "Anandamida e 2-AG ativam CB1/CB2 modulando dor, humor, apetite e inflamação", en: "Anandamide and 2-AG activate CB1/CB2 modulating pain, mood, appetite and inflammation"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Anandamida e 2-AG ativam CB1/CB2 modulando dor, humor, apetite e inflamação", en: "Anandamide and 2-AG activate CB1/CB2 modulating pain, mood, appetite and inflammation"}
+        rationale: {pt: "Quando endocanabinoides agem, então fisiologia humana ganha modulação fina.", en: "When endocannabinoids act, human physiology gains fine modulation."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipidômica espacial (MALDI-IMS):", en: "Spatial lipidomics (MALDI-IMS):"}
+        choices:
+          - {pt: "Espectrometria em tecidos cria mapas de lipídios revelando heterogeneidade tumoral", en: "Tissue spectrometry creates lipid maps revealing tumor heterogeneity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe administrativo", en: "Just administrative detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Espectrometria em tecidos cria mapas de lipídios revelando heterogeneidade tumoral", en: "Tissue spectrometry creates lipid maps revealing tumor heterogeneity"}
+        rationale: {pt: "Quando lipídios são mapeados, então diagnóstico ganha resolução espacial.", en: "When lipids are mapped, diagnosis gains spatial resolution."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ferroptose lipídica:", en: "Lipid ferroptosis:"}
+        choices:
+          - {pt: "Peroxidação de PUFAs em membranas inicia morte ferroptótica — alvo em câncer resistente", en: "Membrane PUFA peroxidation triggers ferroptotic death — target in resistant cancer"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Peroxidação de PUFAs em membranas inicia morte ferroptótica — alvo em câncer resistente", en: "Membrane PUFA peroxidation triggers ferroptotic death — target in resistant cancer"}
+        rationale: {pt: "Quando lipídios oxidam, então células morrem por mecanismo distinto de apoptose.", en: "When lipids oxidize, cells die by mechanism distinct from apoptosis."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipid rafts:", en: "Lipid rafts:"}
+        choices:
+          - {pt: "Microdomínios ricos em colesterol e esfingolipídios concentram receptores de sinalização", en: "Cholesterol/sphingolipid-rich microdomains concentrate signaling receptors"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Microdomínios ricos em colesterol e esfingolipídios concentram receptores de sinalização", en: "Cholesterol/sphingolipid-rich microdomains concentrate signaling receptors"}
+        rationale: {pt: "Quando rafts existem, então sinalização localizada e seletiva ocorre.", en: "When rafts exist, localized selective signaling occurs."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bile acids como sinalizadores:", en: "Bile acids as signaling:"}
+        choices:
+          - {pt: "Atuam em FXR e TGR5 regulando metabolismo, microbiota e inflamação intestinal", en: "Act on FXR and TGR5 regulating metabolism, microbiota and intestinal inflammation"}
+          - {pt: "Apenas digestão simples", en: "Just simple digestion"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Atuam em FXR e TGR5 regulando metabolismo, microbiota e inflamação intestinal", en: "Act on FXR and TGR5 regulating metabolism, microbiota and intestinal inflammation"}
+        rationale: {pt: "Quando bile acids sinalizam, então fisiologia digestiva integra com sistema imune.", en: "When bile acids signal, digestive physiology integrates with immune system."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Esteróis vegetais:", en: "Plant sterols:"}
+        choices:
+          - {pt: "β-sitosterol e estigmasterol competem por absorção de colesterol — alvo de fitoesteróis", en: "β-sitosterol and stigmasterol compete with cholesterol absorption — phytosterol target"}
+          - {pt: "Apenas suplemento natural", en: "Just natural supplement"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "β-sitosterol e estigmasterol competem por absorção de colesterol — alvo de fitoesteróis", en: "β-sitosterol and stigmasterol compete with cholesterol absorption — phytosterol target"}
+        rationale: {pt: "Quando fitoesteróis competem, então colesterolemia diminui.", en: "When phytosterols compete, cholesterolemia decreases."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Surfactante pulmonar:", en: "Pulmonary surfactant:"}
+        choices:
+          - {pt: "Mistura de fosfolipídios (DPPC) + proteínas reduz tensão alveolar — chave em prematuros", en: "Phospholipid mix (DPPC) + proteins reduces alveolar tension — key in preemies"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mistura de fosfolipídios (DPPC) + proteínas reduz tensão alveolar — chave em prematuros", en: "Phospholipid mix (DPPC) + proteins reduces alveolar tension — key in preemies"}
+        rationale: {pt: "Quando surfactante atua, então respiração neonatal é viável.", en: "When surfactant acts, neonatal breathing is viable."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipoproteínas:", en: "Lipoproteins:"}
+        choices:
+          - {pt: "VLDL, LDL, HDL transportam lipídios — apolipoproteínas guiam metabolismo cardiovascular", en: "VLDL, LDL, HDL transport lipids — apolipoproteins guide cardiovascular metabolism"}
+          - {pt: "Apenas detalhe clínico", en: "Just clinical detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "VLDL, LDL, HDL transportam lipídios — apolipoproteínas guiam metabolismo cardiovascular", en: "VLDL, LDL, HDL transport lipids — apolipoproteins guide cardiovascular metabolism"}
+        rationale: {pt: "Quando lipoproteínas são caracterizadas, então risco cardiovascular é monitorado.", en: "When lipoproteins are characterized, cardiovascular risk is monitored."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações lipidômicas", en: "Lipidomic applications"}
+    description: {pt: "Lipídios na clínica.", en: "Lipids in clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "Diabetes e ceramidas:", en: "Diabetes and ceramides:"}
+        choices:
+          - {pt: "Acúmulo de ceramidas em músculo/fígado contribui para resistência à insulina", en: "Ceramide accumulation in muscle/liver contributes to insulin resistance"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Acúmulo de ceramidas em músculo/fígado contribui para resistência à insulina", en: "Ceramide accumulation in muscle/liver contributes to insulin resistance"}
+        rationale: {pt: "Quando ceramidas são alvo, então DM2 ganha tratamento mecanístico.", en: "When ceramides are targeted, T2D gains mechanistic treatment."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Alzheimer e lipídios:", en: "Alzheimer and lipids:"}
+        choices:
+          - {pt: "Plasmalogenios reduzidos, ceramidas elevadas e ApoE4 conectam lipidoma à doença", en: "Reduced plasmalogens, elevated ceramides and ApoE4 connect lipidome to disease"}
+          - {pt: "Apenas curiosidade neurológica", en: "Just neurological curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Plasmalogenios reduzidos, ceramidas elevadas e ApoE4 conectam lipidoma à doença", en: "Reduced plasmalogens, elevated ceramides and ApoE4 connect lipidome to disease"}
+        rationale: {pt: "Quando lipídios são biomarcadores, então diagnóstico precoce é possível.", en: "When lipids are biomarkers, early diagnosis is possible."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "S1P e MS:", en: "S1P and MS:"}
+        choices:
+          - {pt: "Fingolimod modula receptores S1P sequestrando linfócitos — tratamento em esclerose múltipla", en: "Fingolimod modulates S1P receptors sequestering lymphocytes — multiple sclerosis treatment"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fingolimod modula receptores S1P sequestrando linfócitos — tratamento em esclerose múltipla", en: "Fingolimod modulates S1P receptors sequestering lymphocytes — multiple sclerosis treatment"}
+        rationale: {pt: "Quando lipídio bioativo é alvo, então autoimunidade é tratada.", en: "When bioactive lipid is targeted, autoimmunity is treated."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PCSK9 e LDL:", en: "PCSK9 and LDL:"}
+        choices:
+          - {pt: "Inibidores monoclonais e siRNA elevam recpetores LDL e reduzem colesterol drasticamente", en: "Monoclonal inhibitors and siRNA elevate LDL receptors dramatically lowering cholesterol"}
+          - {pt: "Apenas estatina padrão", en: "Just standard statin"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Inibidores monoclonais e siRNA elevam recpetores LDL e reduzem colesterol drasticamente", en: "Monoclonal inhibitors and siRNA elevate LDL receptors dramatically lowering cholesterol"}
+        rationale: {pt: "Quando PCSK9 é silenciado, então prevenção cardiovascular é potencializada.", en: "When PCSK9 is silenced, cardiovascular prevention is boosted."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipid nanoparticles (LNP):", en: "Lipid nanoparticles (LNP):"}
+        choices:
+          - {pt: "Veículos para mRNA com lipídios ionizáveis foram chave em vacinas COVID-19 e siRNAs", en: "Ionizable lipid vehicles for mRNA were key in COVID-19 vaccines and siRNAs"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Veículos para mRNA com lipídios ionizáveis foram chave em vacinas COVID-19 e siRNAs", en: "Ionizable lipid vehicles for mRNA were key in COVID-19 vaccines and siRNAs"}
+        rationale: {pt: "Quando LNPs entregam, então RNA terapêutico se torna prático.", en: "When LNPs deliver, therapeutic RNA becomes practical."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fitness lipídico (cardiolipina):", en: "Lipid fitness (cardiolipin):"}
+        choices:
+          - {pt: "Cardiolipina mitocondrial sustenta supercomplexos e função respiratória — defeitos em Barth", en: "Mitochondrial cardiolipin sustains supercomplexes and respiratory function — Barth defects"}
+          - {pt: "Apenas curiosidade rara", en: "Just rare curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cardiolipina mitocondrial sustenta supercomplexos e função respiratória — defeitos em Barth", en: "Mitochondrial cardiolipin sustains supercomplexes and respiratory function — Barth defects"}
+        rationale: {pt: "Quando cardiolipina é íntegra, então respiração celular funciona.", en: "When cardiolipin is intact, cellular respiration works."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ômega-3 vs ômega-6:", en: "Omega-3 vs omega-6:"}
+        choices:
+          - {pt: "Razão modula eicosanoides anti vs pró-inflamatórios — relevante em saúde cardiovascular", en: "Ratio modulates anti vs pro-inflammatory eicosanoids — relevant in cardiovascular health"}
+          - {pt: "Apenas suplemento popular", en: "Just popular supplement"}
+          - {pt: "Apenas dieta da moda", en: "Just trendy diet"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "Razão modula eicosanoides anti vs pró-inflamatórios — relevante em saúde cardiovascular", en: "Ratio modulates anti vs pro-inflammatory eicosanoids — relevant in cardiovascular health"}
+        rationale: {pt: "Quando razão é equilibrada, então inflamação crônica diminui.", en: "When ratio is balanced, chronic inflammation decreases."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipídios e ferroptose terapêutica:", en: "Lipids and therapeutic ferroptosis:"}
+        choices:
+          - {pt: "Indução de peroxidação lipídica seleciona tumores com baixa GPX4 — RSL3 em ensaios", en: "Lipid peroxidation induction selects low-GPX4 tumors — RSL3 in trials"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Indução de peroxidação lipídica seleciona tumores com baixa GPX4 — RSL3 em ensaios", en: "Lipid peroxidation induction selects low-GPX4 tumors — RSL3 in trials"}
+        rationale: {pt: "Quando ferroptose é induzida, então tumores resistentes morrem.", en: "When ferroptosis is induced, resistant tumors die."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imageamento lipídico:", en: "Lipid imaging:"}
+        choices:
+          - {pt: "Sondas SR e biossensores GFP-fused visualizam dinâmica lipídica em tempo real", en: "SR probes and GFP-fused biosensors visualize lipid dynamics in real time"}
+          - {pt: "Apenas microscopia clássica", en: "Just classical microscopy"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sondas SR e biossensores GFP-fused visualizam dinâmica lipídica em tempo real", en: "SR probes and GFP-fused biosensors visualize lipid dynamics in real time"}
+        rationale: {pt: "Quando lipídios são vistos, então mecanismos celulares são deciframento.", en: "When lipids are seen, cellular mechanisms are deciphered."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em lipidômica:", en: "Next lipidomics frontiers:"}
+        choices:
+          - {pt: "Single-cell lipidomics, mapas espaciais e drogas anti-ferroptose ou pró-ferroptose seletivas", en: "Single-cell lipidomics, spatial maps and selective anti- or pro-ferroptosis drugs"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Single-cell lipidomics, mapas espaciais e drogas anti-ferroptose ou pró-ferroptose seletivas", en: "Single-cell lipidomics, spatial maps and selective anti- or pro-ferroptosis drugs"}
+        rationale: {pt: "Quando ferramentas convergem, então lipidômica vira plataforma terapêutica.", en: "When tools converge, lipidomics becomes therapeutic platform."}
+        objectives: [biology.lipidomics_adv]
+        difficulty: 5
+target: 20
