@@ -1,0 +1,244 @@
+title:
+  pt: "🌋 Origem da vida"
+  en: "🌋 Origin of life"
+level: 'D'
+subject: biology
+objectives: [biology.origin_life]
+difficulty: 5
+authorNotes: "Sopa primordial, mundo de RNA, fontes hidrotermais, química prebiótica, LUCA."
+example:
+  pt: "Ex.: prebiótico simples → polimerização → ribozimas → autorreplicação → célula primitiva."
+  en: "Ex.: simple prebiotic → polymerization → ribozymes → self-replication → primitive cell."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Química prebiótica", en: "Prebiotic chemistry"}
+    description: {pt: "Da química à biologia.", en: "From chemistry to biology."}
+    exercises:
+      - type: choice
+        question: {pt: "Experimento Miller-Urey:", en: "Miller-Urey experiment:"}
+        choices:
+          - {pt: "Mistura de gases simulando atmosfera primitiva + faíscas gera aminoácidos espontaneamente", en: "Gas mix simulating early atmosphere + sparks spontaneously yields amino acids"}
+          - {pt: "Apenas curiosidade histórica", en: "Just historical curiosity"}
+          - {pt: "Apenas experimento desatualizado", en: "Just outdated experiment"}
+          - {pt: "Apenas demonstração escolar", en: "Just school demonstration"}
+        correctAnswer: {pt: "Mistura de gases simulando atmosfera primitiva + faíscas gera aminoácidos espontaneamente", en: "Gas mix simulating early atmosphere + sparks spontaneously yields amino acids"}
+        rationale: {pt: "Quando blocos surgem facilmente, então química prebiótica é plausível.", en: "When building blocks form easily, prebiotic chemistry is plausible."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mundo de RNA:", en: "RNA world:"}
+        choices:
+          - {pt: "Hipótese de RNA armazenando informação e catalisando — antes de DNA e proteínas", en: "Hypothesis of RNA storing info and catalyzing — before DNA and proteins"}
+          - {pt: "Apenas reciclagem genérica", en: "Just generic recycling"}
+          - {pt: "Apenas estrutura passiva", en: "Just passive structure"}
+          - {pt: "Apenas curiosidade molecular", en: "Just molecular curiosity"}
+        correctAnswer: {pt: "Hipótese de RNA armazenando informação e catalisando — antes de DNA e proteínas", en: "Hypothesis of RNA storing info and catalyzing — before DNA and proteins"}
+        rationale: {pt: "Quando ribozimas existem, então molécula única pode ser sistema mínimo.", en: "When ribozymes exist, single molecule can be minimal system."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ribozima:", en: "Ribozyme:"}
+        choices:
+          - {pt: "RNA com atividade catalítica — ribossomo é o exemplo mais central preservado", en: "RNA with catalytic activity — ribosome is the central preserved example"}
+          - {pt: "Apenas RNA decorativo", en: "Just decorative RNA"}
+          - {pt: "Apenas marcador histórico", en: "Just historical marker"}
+          - {pt: "Apenas curiosidade biológica", en: "Just biological curiosity"}
+        correctAnswer: {pt: "RNA com atividade catalítica — ribossomo é o exemplo mais central preservado", en: "RNA with catalytic activity — ribosome is the central preserved example"}
+        rationale: {pt: "Quando ribozimas atuam, então RNA pode catalisar tradução em eras primordiais.", en: "When ribozymes act, RNA can catalyze translation in primordial eras."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fontes hidrotermais alcalinas:", en: "Alkaline hydrothermal vents:"}
+        choices:
+          - {pt: "Chaminés porosas com gradientes pH/H2 podem ter alimentado o metabolismo primitivo", en: "Porous chimneys with pH/H2 gradients may have powered early metabolism"}
+          - {pt: "Apenas curiosidade geológica", en: "Just geological curiosity"}
+          - {pt: "Apenas reserva mineral", en: "Just mineral reserve"}
+          - {pt: "Apenas fenômeno volcânico", en: "Just volcanic phenomenon"}
+        correctAnswer: {pt: "Chaminés porosas com gradientes pH/H2 podem ter alimentado o metabolismo primitivo", en: "Porous chimneys with pH/H2 gradients may have powered early metabolism"}
+        rationale: {pt: "Quando gradientes existem, então quimiosmose pode preceder células.", en: "When gradients exist, chemiosmosis can precede cells."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hipótese black smokers:", en: "Black smokers hypothesis:"}
+        choices:
+          - {pt: "Fontes ácidas com sulfetos suportam quimiossíntese — ambiente alternativo para origem", en: "Acidic sulfide vents support chemosynthesis — alternative origin environment"}
+          - {pt: "Apenas curiosidade marinha", en: "Just marine curiosity"}
+          - {pt: "Apenas fenômeno turístico", en: "Just touristic phenomenon"}
+          - {pt: "Apenas mineração", en: "Just mining"}
+        correctAnswer: {pt: "Fontes ácidas com sulfetos suportam quimiossíntese — ambiente alternativo para origem", en: "Acidic sulfide vents support chemosynthesis — alternative origin environment"}
+        rationale: {pt: "Quando alternativas existem, então origem pode ser multifoco.", en: "When alternatives exist, origin may be multi-locus."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipídios e protocélulas:", en: "Lipids and protocells:"}
+        choices:
+          - {pt: "Ácidos graxos formam vesículas espontaneamente — compartimento mínimo para vida", en: "Fatty acids spontaneously form vesicles — minimal compartment for life"}
+          - {pt: "Apenas decoração química", en: "Just chemical decoration"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas reserva calórica", en: "Just caloric reserve"}
+        correctAnswer: {pt: "Ácidos graxos formam vesículas espontaneamente — compartimento mínimo para vida", en: "Fatty acids spontaneously form vesicles — minimal compartment for life"}
+        rationale: {pt: "Quando vesículas se formam, então química se concentra para catálise.", en: "When vesicles form, chemistry concentrates for catalysis."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese de nucleobases:", en: "Nucleobase synthesis:"}
+        choices:
+          - {pt: "Adenina forma-se a partir de HCN; síntese prebiótica de pirimidinas demonstrada (Sutherland)", en: "Adenine forms from HCN; prebiotic pyrimidine synthesis demonstrated (Sutherland)"}
+          - {pt: "Apenas síntese moderna", en: "Just modern synthesis"}
+          - {pt: "Apenas extração biológica", en: "Just biological extraction"}
+          - {pt: "Apenas catálogo histórico", en: "Just historical catalog"}
+        correctAnswer: {pt: "Adenina forma-se a partir de HCN; síntese prebiótica de pirimidinas demonstrada (Sutherland)", en: "Adenine forms from HCN; prebiotic pyrimidine synthesis demonstrated (Sutherland)"}
+        rationale: {pt: "Quando nucleotídeos surgem, então polimerização vira plausível.", en: "When nucleotides arise, polymerization becomes plausible."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mineralogia argilosa:", en: "Clay mineralogy:"}
+        choices:
+          - {pt: "Argilas catalisam polimerização de RNA e organizam moléculas em superfícies (Cairns-Smith)", en: "Clays catalyze RNA polymerization and organize molecules on surfaces (Cairns-Smith)"}
+          - {pt: "Apenas decoração geológica", en: "Just geological decoration"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas reserva industrial", en: "Just industrial reserve"}
+        correctAnswer: {pt: "Argilas catalisam polimerização de RNA e organizam moléculas em superfícies (Cairns-Smith)", en: "Clays catalyze RNA polymerization and organize molecules on surfaces (Cairns-Smith)"}
+        rationale: {pt: "Quando superfícies catalisam, então química prebiótica acelera.", en: "When surfaces catalyze, prebiotic chemistry accelerates."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Quirilidade homoquiral:", en: "Homochirality:"}
+        choices:
+          - {pt: "Vida usa L-aminoácidos e D-açúcares — origem do viés é mistério ativo", en: "Life uses L-amino acids and D-sugars — origin of bias is active mystery"}
+          - {pt: "Apenas detalhe químico", en: "Just chemical detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+        correctAnswer: {pt: "Vida usa L-aminoácidos e D-açúcares — origem do viés é mistério ativo", en: "Life uses L-amino acids and D-sugars — origin of bias is active mystery"}
+        rationale: {pt: "Quando quiralidade é uniforme, então catálise eficiente é possível.", en: "When chirality is uniform, efficient catalysis is possible."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "LUCA:", en: "LUCA:"}
+        choices:
+          - {pt: "Last Universal Common Ancestor — inferido por filogenias e provavelmente termófilo anaeróbio", en: "Last Universal Common Ancestor — inferred from phylogenies and likely thermophilic anaerobe"}
+          - {pt: "Apenas espécie moderna", en: "Just modern species"}
+          - {pt: "Apenas mito ancestral", en: "Just ancestral myth"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "Last Universal Common Ancestor — inferido por filogenias e provavelmente termófilo anaeróbio", en: "Last Universal Common Ancestor — inferred from phylogenies and likely thermophilic anaerobe"}
+        rationale: {pt: "Quando filogenia converge, então LUCA tem propriedades estimáveis.", en: "When phylogeny converges, LUCA has estimable properties."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Modelos e fronteiras", en: "Models and frontiers"}
+    description: {pt: "Construindo vida em laboratório.", en: "Building life in lab."}
+    exercises:
+      - type: choice
+        question: {pt: "Origem do código genético:", en: "Genetic code origin:"}
+        choices:
+          - {pt: "Códigos podem refletir interações stereo entre RNAs e aminoácidos primordiais", en: "Codes may reflect stereo interactions between primordial RNAs and amino acids"}
+          - {pt: "Apenas escolha aleatória", en: "Just random choice"}
+          - {pt: "Apenas convenção", en: "Just convention"}
+          - {pt: "Apenas erro histórico", en: "Just historical error"}
+        correctAnswer: {pt: "Códigos podem refletir interações stereo entre RNAs e aminoácidos primordiais", en: "Codes may reflect stereo interactions between primordial RNAs and amino acids"}
+        rationale: {pt: "Quando código emerge, então biologia ganha unidade compartilhada.", en: "When code emerges, biology gains shared unity."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hipótese metabolismo-primeiro:", en: "Metabolism-first hypothesis:"}
+        choices:
+          - {pt: "Redes auto-catalíticas de pequenas moléculas precedem ácidos nucleicos (Wächtershäuser)", en: "Autocatalytic small-molecule networks precede nucleic acids (Wächtershäuser)"}
+          - {pt: "Apenas evento aleatório", en: "Just random event"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas observação geológica", en: "Just geological observation"}
+        correctAnswer: {pt: "Redes auto-catalíticas de pequenas moléculas precedem ácidos nucleicos (Wächtershäuser)", en: "Autocatalytic small-molecule networks precede nucleic acids (Wächtershäuser)"}
+        rationale: {pt: "Quando metabolismo emerge primeiro, então hereditariedade segue depois.", en: "When metabolism emerges first, heredity follows later."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Replicadores in vitro:", en: "In vitro replicators:"}
+        choices:
+          - {pt: "Sistemas RNA auto-replicantes em laboratório modelam mundo de RNA primitivo", en: "Self-replicating RNA systems in lab model primitive RNA world"}
+          - {pt: "Apenas demonstração escolar", en: "Just school demonstration"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas erro técnico", en: "Just technical error"}
+        correctAnswer: {pt: "Sistemas RNA auto-replicantes em laboratório modelam mundo de RNA primitivo", en: "Self-replicating RNA systems in lab model primitive RNA world"}
+        rationale: {pt: "Quando in vitro funciona, então origem é experimentalmente acessível.", en: "When in vitro works, origin becomes experimentally tractable."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Datação da vida:", en: "Dating of life:"}
+        choices:
+          - {pt: "Microfósseis e isótopos sugerem vida há ≥3.5 bilhões de anos, talvez 4.0", en: "Microfossils and isotopes suggest life ≥3.5 billion years ago, maybe 4.0"}
+          - {pt: "Apenas estimativa especulativa", en: "Just speculative estimate"}
+          - {pt: "Apenas folclore", en: "Just folklore"}
+          - {pt: "Apenas curiosidade pessoal", en: "Just personal curiosity"}
+        correctAnswer: {pt: "Microfósseis e isótopos sugerem vida há ≥3.5 bilhões de anos, talvez 4.0", en: "Microfossils and isotopes suggest life ≥3.5 billion years ago, maybe 4.0"}
+        rationale: {pt: "Quando vida surge cedo, então origem é processo relativamente rápido.", en: "When life arises early, origin is relatively fast process."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Charneco prebiótico:", en: "Warm little pond:"}
+        choices:
+          - {pt: "Hipótese de Darwin e atual estudo de poças intermitentes em ambiente vulcânico", en: "Darwin's hypothesis and current study of intermittent ponds in volcanic settings"}
+          - {pt: "Apenas mito antigo", en: "Just ancient myth"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas folclore", en: "Just folklore"}
+        correctAnswer: {pt: "Hipótese de Darwin e atual estudo de poças intermitentes em ambiente vulcânico", en: "Darwin's hypothesis and current study of intermittent ponds in volcanic settings"}
+        rationale: {pt: "Quando ciclos secagem-hidratação ocorrem, então polimerização é favorecida.", en: "When wet-dry cycles occur, polymerization is favored."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ATP e poder energético:", en: "ATP and energy currency:"}
+        choices:
+          - {pt: "ATP universal sugere herança ancestral; gradientes geoquímicos podem precedê-lo", en: "Universal ATP suggests ancestral inheritance; geochemical gradients may predate it"}
+          - {pt: "Apenas convenção bioquímica", en: "Just biochemical convention"}
+          - {pt: "Apenas curiosidade molecular", en: "Just molecular curiosity"}
+          - {pt: "Apenas estrutura química", en: "Just chemical structure"}
+        correctAnswer: {pt: "ATP universal sugere herança ancestral; gradientes geoquímicos podem precedê-lo", en: "Universal ATP suggests ancestral inheritance; geochemical gradients may predate it"}
+        rationale: {pt: "Quando ATP é universal, então sua origem é fixada cedo na evolução.", en: "When ATP is universal, its origin is fixed early in evolution."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bottom-up vs top-down:", en: "Bottom-up vs top-down:"}
+        choices:
+          - {pt: "Construir vida do zero (bottom-up) vs minimizar célula existente (top-down) — abordagens complementares", en: "Build life from scratch (bottom-up) vs minimize existing cell (top-down) — complementary approaches"}
+          - {pt: "Apenas debate filosófico", en: "Just philosophical debate"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas escolha histórica", en: "Just historical choice"}
+        correctAnswer: {pt: "Construir vida do zero (bottom-up) vs minimizar célula existente (top-down) — abordagens complementares", en: "Build life from scratch (bottom-up) vs minimize existing cell (top-down) — complementary approaches"}
+        rationale: {pt: "Quando ambas abordagens convergem, então origem ganha precisão experimental.", en: "When both approaches converge, origin gains experimental precision."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Nucleotídeos não-canônicos:", en: "Non-canonical nucleotides:"}
+        choices:
+          - {pt: "TNA, PNA, GNA são alternativas estudadas como predecessoras possíveis ao RNA", en: "TNA, PNA, GNA are alternatives studied as possible predecessors to RNA"}
+          - {pt: "Apenas curiosidade química", en: "Just chemical curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação estrutural", en: "Just structural variation"}
+        correctAnswer: {pt: "TNA, PNA, GNA são alternativas estudadas como predecessoras possíveis ao RNA", en: "TNA, PNA, GNA are alternatives studied as possible predecessors to RNA"}
+        rationale: {pt: "Quando alternativas existem, então RNA pode não ter sido o primeiro polímero.", en: "When alternatives exist, RNA may not have been the first polymer."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Evolução dirigida primordial:", en: "Primordial directed evolution:"}
+        choices:
+          - {pt: "Bibliotecas de RNA selecionadas em laboratório recriam etapas hipotéticas de origem", en: "Lab-selected RNA libraries recreate hypothetical origin steps"}
+          - {pt: "Apenas mutação espontânea", en: "Just spontaneous mutation"}
+          - {pt: "Apenas seleção natural", en: "Just natural selection"}
+          - {pt: "Apenas observação histórica", en: "Just historical observation"}
+        correctAnswer: {pt: "Bibliotecas de RNA selecionadas em laboratório recriam etapas hipotéticas de origem", en: "Lab-selected RNA libraries recreate hypothetical origin steps"}
+        rationale: {pt: "Quando experimentos seguem hipóteses, então etapas plausíveis emergem.", en: "When experiments follow hypotheses, plausible steps emerge."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras na origem da vida:", en: "Next origin-of-life frontiers:"}
+        choices:
+          - {pt: "Protocélulas com hereditariedade, química prebiótica multidimensional e biossignaturas comparativas", en: "Heritable protocells, multidimensional prebiotic chemistry and comparative biosignatures"}
+          - {pt: "Apenas debate filosófico", en: "Just philosophical debate"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição", en: "Just tradition"}
+        correctAnswer: {pt: "Protocélulas com hereditariedade, química prebiótica multidimensional e biossignaturas comparativas", en: "Heritable protocells, multidimensional prebiotic chemistry and comparative biosignatures"}
+        rationale: {pt: "Quando ciência converge, então origem da vida vira disciplina experimental robusta.", en: "When science converges, origin of life becomes a robust experimental discipline."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+target: 20
