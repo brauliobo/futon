@@ -1,0 +1,244 @@
+title:
+  pt: "🕸️ Biologia de sistemas"
+  en: "🕸️ Systems biology"
+level: 'E'
+subject: biology
+objectives: [biology.systems_bio]
+difficulty: 5
+authorNotes: "Modelagem whole-cell, redes, dinâmica, robustez, ômicas integrativas."
+example:
+  pt: "Ex.: ômicas integradas → modelo de rede → simulação dinâmica → predição testável."
+  en: "Ex.: integrated omics → network model → dynamic simulation → testable prediction."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Conceitos e ferramentas", en: "Concepts and tools"}
+    description: {pt: "Como modelar células e organismos.", en: "How to model cells and organisms."}
+    exercises:
+      - type: choice
+        question: {pt: "Modelo whole-cell (Karr 2012):", en: "Whole-cell model (Karr 2012):"}
+        choices:
+          - {pt: "Mycoplasma genitalium simulado em todos os processos celulares conhecidos", en: "Mycoplasma genitalium simulated across all known cellular processes"}
+          - {pt: "Apenas curiosidade computacional", en: "Just computational curiosity"}
+          - {pt: "Apenas modelo abstrato", en: "Just abstract model"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+        correctAnswer: {pt: "Mycoplasma genitalium simulado em todos os processos celulares conhecidos", en: "Mycoplasma genitalium simulated across all known cellular processes"}
+        rationale: {pt: "Quando célula inteira é simulada, então biologia ganha laboratório virtual.", en: "When whole cell is simulated, biology gains virtual laboratory."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Network motifs (Alon):", en: "Network motifs (Alon):"}
+        choices:
+          - {pt: "FFL e autorregulação são padrões recorrentes que executam funções dinâmicas", en: "FFL and autoregulation are recurring patterns executing dynamic functions"}
+          - {pt: "Apenas decoração de gráfico", en: "Just graph decoration"}
+          - {pt: "Apenas detalhe trivial", en: "Just trivial detail"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+        correctAnswer: {pt: "FFL e autorregulação são padrões recorrentes que executam funções dinâmicas", en: "FFL and autoregulation are recurring patterns executing dynamic functions"}
+        rationale: {pt: "Quando motivos repetem, então robustez e filtragem temporal emergem.", en: "When motifs recur, robustness and temporal filtering emerge."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Robustez biológica:", en: "Biological robustness:"}
+        choices:
+          - {pt: "Redes com redundância e feedback resistem a perturbações genéticas e ambientais", en: "Networks with redundancy and feedback resist genetic and environmental perturbations"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Redes com redundância e feedback resistem a perturbações genéticas e ambientais", en: "Networks with redundancy and feedback resist genetic and environmental perturbations"}
+        rationale: {pt: "Quando robustez existe, então sistemas vivos toleram variação.", en: "When robustness exists, living systems tolerate variation."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bistabilidade:", en: "Bistability:"}
+        choices:
+          - {pt: "Feedback positivo gera dois estados estáveis — base de decisões celulares irreversíveis", en: "Positive feedback yields two stable states — basis of irreversible cell decisions"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe matemático", en: "Just mathematical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Feedback positivo gera dois estados estáveis — base de decisões celulares irreversíveis", en: "Positive feedback yields two stable states — basis of irreversible cell decisions"}
+        rationale: {pt: "Quando bistabilidade existe, então diferenciação ganha mecanismo molecular.", en: "When bistability exists, differentiation gains molecular mechanism."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Oscilações biológicas:", en: "Biological oscillations:"}
+        choices:
+          - {pt: "Negative feedback com delay gera ritmos circadianos e ondas de NF-κB e p53", en: "Delayed negative feedback yields circadian rhythms and NF-κB/p53 waves"}
+          - {pt: "Apenas decoração temporal", en: "Just temporal decoration"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Negative feedback com delay gera ritmos circadianos e ondas de NF-κB e p53", en: "Delayed negative feedback yields circadian rhythms and NF-κB/p53 waves"}
+        rationale: {pt: "Quando oscilações existem, então biologia mede tempo e codifica informação.", en: "When oscillations exist, biology measures time and encodes information."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Flux balance analysis (FBA):", en: "Flux balance analysis (FBA):"}
+        choices:
+          - {pt: "Otimização linear sob steady-state prediz fluxos metabólicos em redes genome-scale", en: "Linear optimization under steady-state predicts metabolic fluxes in genome-scale networks"}
+          - {pt: "Apenas cálculo abstrato", en: "Just abstract calculation"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Otimização linear sob steady-state prediz fluxos metabólicos em redes genome-scale", en: "Linear optimization under steady-state predicts metabolic fluxes in genome-scale networks"}
+        rationale: {pt: "Quando FBA é usado, então metabolismo é predito sem cinéticas detalhadas.", en: "When FBA is used, metabolism is predicted without detailed kinetics."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ODE-based modeling:", en: "ODE-based modeling:"}
+        choices:
+          - {pt: "Equações diferenciais capturam dinâmica de concentrações em vias de sinalização", en: "Differential equations capture concentration dynamics in signaling pathways"}
+          - {pt: "Apenas matemática trivial", en: "Just trivial math"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+        correctAnswer: {pt: "Equações diferenciais capturam dinâmica de concentrações em vias de sinalização", en: "Differential equations capture concentration dynamics in signaling pathways"}
+        rationale: {pt: "Quando ODEs encaixam dados, então mecanismos quantitativos são validados.", en: "When ODEs fit data, quantitative mechanisms are validated."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Stochastic gene expression:", en: "Stochastic gene expression:"}
+        choices:
+          - {pt: "Baixos números de moléculas geram ruído transcripcional medido em single-cell", en: "Low molecule numbers yield transcriptional noise measured in single-cell"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe trivial", en: "Just trivial detail"}
+        correctAnswer: {pt: "Baixos números de moléculas geram ruído transcripcional medido em single-cell", en: "Low molecule numbers yield transcriptional noise measured in single-cell"}
+        rationale: {pt: "Quando ruído existe, então células irmãs divergem fenotipicamente.", en: "When noise exists, sister cells phenotypically diverge."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Multi-omics integration:", en: "Multi-omics integration:"}
+        choices:
+          - {pt: "Genômica + transcriptômica + proteômica + metabolômica revelam estado celular completo", en: "Genomics + transcriptomics + proteomics + metabolomics reveal complete cellular state"}
+          - {pt: "Apenas dado isolado", en: "Just isolated data"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Genômica + transcriptômica + proteômica + metabolômica revelam estado celular completo", en: "Genomics + transcriptomics + proteomics + metabolomics reveal complete cellular state"}
+        rationale: {pt: "Quando dados convergem, então biologia ganha visão holística.", en: "When data converges, biology gains holistic view."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Causal inference:", en: "Causal inference:"}
+        choices:
+          - {pt: "Perturbações sistemáticas + métodos contrafactuais distinguem correlação de causalidade", en: "Systematic perturbations + counterfactual methods distinguish correlation from causality"}
+          - {pt: "Apenas observação", en: "Just observation"}
+          - {pt: "Apenas estatística simples", en: "Just simple statistics"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+        correctAnswer: {pt: "Perturbações sistemáticas + métodos contrafactuais distinguem correlação de causalidade", en: "Systematic perturbations + counterfactual methods distinguish correlation from causality"}
+        rationale: {pt: "Quando causalidade é testada, então redes ganham significado mecanístico.", en: "When causality is tested, networks gain mechanistic meaning."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações em sistemas biológicos", en: "Applications in biological systems"}
+    description: {pt: "Modelos transformando ciência.", en: "Models transforming science."}
+    exercises:
+      - type: choice
+        question: {pt: "Cancer systems biology:", en: "Cancer systems biology:"}
+        choices:
+          - {pt: "Modelos integram mutações driver, epigenética e ambiente para prever progressão e resposta", en: "Models integrate driver mutations, epigenetics and environment to predict progression and response"}
+          - {pt: "Apenas observação patológica", en: "Just pathological observation"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modelos integram mutações driver, epigenética e ambiente para prever progressão e resposta", en: "Models integrate driver mutations, epigenetics and environment to predict progression and response"}
+        rationale: {pt: "Quando câncer é modelado, então tratamento de precisão escala.", en: "When cancer is modeled, precision treatment scales."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imune sistemas:", en: "Immune systems:"}
+        choices:
+          - {pt: "Modelagem de TCR repertoire e dinâmica B/T fornece insights em vacinação e autoimunidade", en: "TCR repertoire modeling and B/T dynamics provide vaccination and autoimmunity insights"}
+          - {pt: "Apenas catálogo imune", en: "Just immune catalog"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas observação clínica", en: "Just clinical observation"}
+        correctAnswer: {pt: "Modelagem de TCR repertoire e dinâmica B/T fornece insights em vacinação e autoimunidade", en: "TCR repertoire modeling and B/T dynamics provide vaccination and autoimmunity insights"}
+        rationale: {pt: "Quando imunidade é modelada, então vacinas e terapias são otimizadas.", en: "When immunity is modeled, vaccines and therapies are optimized."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Circadian biology:", en: "Circadian biology:"}
+        choices:
+          - {pt: "Modelos quantitativos de loops BMAL1-PER-CRY explicam fisiologia ritmada e doenças", en: "Quantitative BMAL1-PER-CRY loop models explain rhythmic physiology and disease"}
+          - {pt: "Apenas curiosidade biológica", en: "Just biological curiosity"}
+          - {pt: "Apenas observação fisiológica", en: "Just physiological observation"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+        correctAnswer: {pt: "Modelos quantitativos de loops BMAL1-PER-CRY explicam fisiologia ritmada e doenças", en: "Quantitative BMAL1-PER-CRY loop models explain rhythmic physiology and disease"}
+        rationale: {pt: "Quando relógio é modelado, então cronoterapia é mecanística.", en: "When clock is modeled, chronotherapy becomes mechanistic."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelos de doenças metabólicas:", en: "Metabolic disease models:"}
+        choices:
+          - {pt: "FBA + ômicas integradas preveem alvos terapêuticos em DM2 e síndrome metabólica", en: "FBA + integrated omics predict therapeutic targets in T2D and metabolic syndrome"}
+          - {pt: "Apenas dieta clínica", en: "Just clinical diet"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "FBA + ômicas integradas preveem alvos terapêuticos em DM2 e síndrome metabólica", en: "FBA + integrated omics predict therapeutic targets in T2D and metabolic syndrome"}
+        rationale: {pt: "Quando metabolismo é modelado, então intervenções precisas emergem.", en: "When metabolism is modeled, precise interventions emerge."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbioma como sistema:", en: "Microbiome as system:"}
+        choices:
+          - {pt: "Modelos de comunidade microbianas preveem composição, função e resposta a perturbação", en: "Microbial community models predict composition, function and perturbation response"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modelos de comunidade microbianas preveem composição, função e resposta a perturbação", en: "Microbial community models predict composition, function and perturbation response"}
+        rationale: {pt: "Quando microbiomas são modelados, então terapias modulares emergem.", en: "When microbiomes are modeled, modular therapies emerge."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Neuro circuitos:", en: "Neural circuits:"}
+        choices:
+          - {pt: "Modelos quantitativos de redes neuronais preveem comportamento e doença psiquiátrica", en: "Quantitative neural network models predict behavior and psychiatric disease"}
+          - {pt: "Apenas curiosidade neurológica", en: "Just neurological curiosity"}
+          - {pt: "Apenas observação cognitiva", en: "Just cognitive observation"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+        correctAnswer: {pt: "Modelos quantitativos de redes neuronais preveem comportamento e doença psiquiátrica", en: "Quantitative neural network models predict behavior and psychiatric disease"}
+        rationale: {pt: "Quando circuitos são modelados, então neurologia ganha base mecanística.", en: "When circuits are modeled, neurology gains mechanistic foundation."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Drug response prediction:", en: "Drug response prediction:"}
+        choices:
+          - {pt: "Modelos integram genoma e transcriptoma para prever sensibilidade a drogas em câncer", en: "Models integrate genome and transcriptome to predict drug sensitivity in cancer"}
+          - {pt: "Apenas teste empírico", en: "Just empirical testing"}
+          - {pt: "Apenas observação clínica", en: "Just clinical observation"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "Modelos integram genoma e transcriptoma para prever sensibilidade a drogas em câncer", en: "Models integrate genome and transcriptome to predict drug sensitivity in cancer"}
+        rationale: {pt: "Quando predição é precisa, então tratamento personalizado escala.", en: "When prediction is precise, personalized treatment scales."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Identifiability e overfitting:", en: "Identifiability and overfitting:"}
+        choices:
+          - {pt: "Limites de inferência paramétrica devem ser respeitados — regularização e validação cruzada", en: "Parametric inference limits must be respected — regularization and cross-validation"}
+          - {pt: "Apenas detalhe estatístico", en: "Just statistical detail"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Limites de inferência paramétrica devem ser respeitados — regularização e validação cruzada", en: "Parametric inference limits must be respected — regularization and cross-validation"}
+        rationale: {pt: "Quando limites são respeitados, então modelos generalizam bem.", en: "When limits are respected, models generalize well."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Digital twins biológicos:", en: "Biological digital twins:"}
+        choices:
+          - {pt: "Réplicas computacionais de pacientes integram dados pessoais para guiar tratamento", en: "Computational patient replicas integrate personal data to guide treatment"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas marketing médico", en: "Just medical marketing"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Réplicas computacionais de pacientes integram dados pessoais para guiar tratamento", en: "Computational patient replicas integrate personal data to guide treatment"}
+        rationale: {pt: "Quando twins amadurecem, então decisões clínicas são simuladas antes.", en: "When twins mature, clinical decisions are simulated beforehand."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em biologia de sistemas:", en: "Next systems biology frontiers:"}
+        choices:
+          - {pt: "Whole-body models, twins clínicos validados e simulação multi-escala em tempo real", en: "Whole-body models, validated clinical twins and multi-scale real-time simulation"}
+          - {pt: "Apenas modelos abstratos", en: "Just abstract models"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas marketing", en: "Just marketing"}
+        correctAnswer: {pt: "Whole-body models, twins clínicos validados e simulação multi-escala em tempo real", en: "Whole-body models, validated clinical twins and multi-scale real-time simulation"}
+        rationale: {pt: "Quando ferramentas convergem, então biologia preditiva escala personalização.", en: "When tools converge, predictive biology scales personalization."}
+        objectives: [biology.systems_bio]
+        difficulty: 5
+target: 20
