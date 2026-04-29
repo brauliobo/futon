@@ -1,0 +1,244 @@
+title:
+  pt: "🔋 Bioenergética e ATP"
+  en: "🔋 Bioenergetics and ATP"
+level: '4A'
+subject: biology
+objectives: [biology.metabolism]
+difficulty: 4
+authorNotes: "Energia livre, ΔG, anabolismo vs catabolismo, papel central do ATP."
+example:
+  pt: "Ex.: ATP → ADP + Pi libera ~30 kJ/mol; reações endergônicas acoplam-se à hidrólise para serem possíveis."
+  en: "Ex.: ATP → ADP + Pi releases ~30 kJ/mol; endergonic reactions couple to hydrolysis to proceed."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Termodinâmica biológica", en: "Biological thermodynamics"}
+    description: {pt: "Energia livre e direção de reações.", en: "Free energy and reaction direction."}
+    exercises:
+      - type: choice
+        question: {pt: "Reação exergônica:", en: "Exergonic reaction:"}
+        choices:
+          - {pt: "Libera energia (ΔG < 0), espontânea", en: "Releases energy (ΔG < 0), spontaneous"}
+          - {pt: "Absorve energia", en: "Absorbs energy"}
+          - {pt: "Não acontece", en: "Doesn't happen"}
+          - {pt: "Apenas em frio", en: "Only in cold"}
+        correctAnswer: {pt: "Libera energia (ΔG < 0), espontânea", en: "Releases energy (ΔG < 0), spontaneous"}
+        rationale: {pt: "Como produtos têm menos energia livre que reagentes, então a reação tende a acontecer naturalmente.", en: "Because products have less free energy than reactants, the reaction tends to proceed spontaneously."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Reação endergônica:", en: "Endergonic reaction:"}
+        choices:
+          - {pt: "Requer energia (ΔG > 0), não-espontânea", en: "Requires energy (ΔG > 0), non-spontaneous"}
+          - {pt: "Sempre rápida", en: "Always fast"}
+          - {pt: "Acontece sem ATP", en: "Happens without ATP"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Requer energia (ΔG > 0), não-espontânea", en: "Requires energy (ΔG > 0), non-spontaneous"}
+        rationale: {pt: "Como precisa input de energia, então células acoplam-na à hidrólise de ATP para viabilizar processos.", en: "Because it needs energy input, cells couple it to ATP hydrolysis to make processes feasible."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Acoplamento energético:", en: "Energy coupling:"}
+        choices:
+          - {pt: "Reação exergônica (ATP) impulsiona uma endergônica (síntese)", en: "Exergonic reaction (ATP) drives an endergonic one (synthesis)"}
+          - {pt: "Sempre falha", en: "Always fails"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+          - {pt: "Apenas teórico", en: "Only theoretical"}
+        correctAnswer: {pt: "Reação exergônica (ATP) impulsiona uma endergônica (síntese)", en: "Exergonic reaction (ATP) drives an endergonic one (synthesis)"}
+        rationale: {pt: "Como soma de ΔG fica negativa, então o conjunto é espontâneo — princípio central do metabolismo.", en: "Because the sum ΔG becomes negative, the combo is spontaneous — central metabolism principle."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "ATP é \"moeda\" energética porque:", en: "ATP is the \"energy currency\" because:"}
+        choices:
+          - {pt: "Hidrólise libera energia útil para reações em todas as células", en: "Hydrolysis releases useful energy for reactions in every cell"}
+          - {pt: "É colorido", en: "It's colored"}
+          - {pt: "É o maior", en: "It's largest"}
+          - {pt: "É grátis", en: "It's free"}
+        correctAnswer: {pt: "Hidrólise libera energia útil para reações em todas as células", en: "Hydrolysis releases useful energy for reactions in every cell"}
+        rationale: {pt: "Como ATP → ADP + Pi libera ~30 kJ/mol, então reações de síntese, transporte e movimento podem ser pagas com isso.", en: "Because ATP → ADP + Pi releases ~30 kJ/mol, synthesis, transport, and movement reactions can be paid with this."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Estrutura do ATP:", en: "ATP structure:"}
+        choices:
+          - {pt: "Adenina + ribose + 3 fosfatos", en: "Adenine + ribose + 3 phosphates"}
+          - {pt: "Apenas glicose", en: "Just glucose"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas lipídio", en: "Just lipid"}
+        correctAnswer: {pt: "Adenina + ribose + 3 fosfatos", en: "Adenine + ribose + 3 phosphates"}
+        rationale: {pt: "Como ligações entre fosfatos armazenam energia, então quebrar a última libera-a — \"alta energia de hidrólise\".", en: "Because phosphate-phosphate bonds store energy, breaking the last one releases it — \"high hydrolysis energy\"."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Taxa de turnover do ATP num adulto humano:", en: "ATP turnover rate in an adult human:"}
+        choices:
+          - {pt: "Cada molécula é reciclada milhares de vezes ao dia (massa total ~corpo)", en: "Each molecule recycles thousands of times daily (total mass ~body weight)"}
+          - {pt: "Apenas uma vez", en: "Just once"}
+          - {pt: "Nunca", en: "Never"}
+          - {pt: "Apenas durante exercício", en: "Only during exercise"}
+        correctAnswer: {pt: "Cada molécula é reciclada milhares de vezes ao dia (massa total ~corpo)", en: "Each molecule recycles thousands of times daily (total mass ~body weight)"}
+        rationale: {pt: "Como demanda é altíssima, então sintetizamos/quebramos cerca de 50 kg de ATP por dia — em ciclos rápidos.", en: "Because demand is enormous, we synthesize/break ~50 kg of ATP per day — in fast cycles."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Anabolismo é:", en: "Anabolism is:"}
+        choices:
+          - {pt: "Vias de síntese (constroem moléculas complexas, gastam ATP)", en: "Synthesis pathways (build complex molecules, spend ATP)"}
+          - {pt: "Apenas degradação", en: "Just breakdown"}
+          - {pt: "Apenas digestão", en: "Just digestion"}
+          - {pt: "Sem energia", en: "No energy"}
+        correctAnswer: {pt: "Vias de síntese (constroem moléculas complexas, gastam ATP)", en: "Synthesis pathways (build complex molecules, spend ATP)"}
+        rationale: {pt: "Como construir é endergônico, então célula investe ATP/NADPH para crescer e renovar componentes.", en: "Because building is endergonic, the cell invests ATP/NADPH to grow and renew components."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Catabolismo é:", en: "Catabolism is:"}
+        choices:
+          - {pt: "Vias de quebra (geram ATP a partir de moléculas complexas)", en: "Breakdown pathways (generate ATP from complex molecules)"}
+          - {pt: "Apenas síntese", en: "Just synthesis"}
+          - {pt: "Sem ATP", en: "No ATP"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Vias de quebra (geram ATP a partir de moléculas complexas)", en: "Breakdown pathways (generate ATP from complex molecules)"}
+        rationale: {pt: "Como quebrar libera energia, então a célula captura parte como ATP para usar no anabolismo.", en: "Because breaking down releases energy, the cell captures some as ATP for use in anabolism."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Metabolismo basal é:", en: "Basal metabolism is:"}
+        choices:
+          - {pt: "Energia mínima para manter vida em repouso (~70% do gasto diário)", en: "Minimum energy to maintain life at rest (~70% of daily expenditure)"}
+          - {pt: "Apenas durante exercício", en: "Only during exercise"}
+          - {pt: "Apenas digestão", en: "Just digestion"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "Energia mínima para manter vida em repouso (~70% do gasto diário)", en: "Minimum energy to maintain life at rest (~70% of daily expenditure)"}
+        rationale: {pt: "Como bombear sangue, respirar e manter gradientes consumem ATP, então mesmo em repouso há gasto contínuo.", en: "Because pumping blood, breathing, and maintaining gradients consume ATP, even at rest there's continuous expenditure."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Outras moléculas \"de alta energia\":", en: "Other \"high-energy\" molecules:"}
+        choices:
+          - {pt: "GTP, NADH, NADPH, FADH₂, fosfocreatina", en: "GTP, NADH, NADPH, FADH₂, phosphocreatine"}
+          - {pt: "Apenas ATP", en: "Just ATP"}
+          - {pt: "Apenas glicose", en: "Just glucose"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+        correctAnswer: {pt: "GTP, NADH, NADPH, FADH₂, fosfocreatina", en: "GTP, NADH, NADPH, FADH₂, phosphocreatine"}
+        rationale: {pt: "Como cada uma carrega energia em forma diferente, então redes metabólicas têm múltiplas \"moedas\" especializadas.", en: "Because each carries energy differently, metabolic networks have multiple specialized \"currencies\"."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Aplicações", en: "Applications"}
+    description: {pt: "Bioenergética no cotidiano.", en: "Bioenergetics in daily life."}
+    exercises:
+      - type: choice
+        question: {pt: "Caloria nutricional (kcal) corresponde a:", en: "Food calorie (kcal) corresponds to:"}
+        choices:
+          - {pt: "1000 cal — calor para elevar 1 kg de água em 1 °C", en: "1000 cal — heat to raise 1 kg of water by 1 °C"}
+          - {pt: "Apenas joule", en: "Just joule"}
+          - {pt: "Apenas tempo", en: "Just time"}
+          - {pt: "Sem unidade", en: "No unit"}
+        correctAnswer: {pt: "1000 cal — calor para elevar 1 kg de água em 1 °C", en: "1000 cal — heat to raise 1 kg of water by 1 °C"}
+        rationale: {pt: "Como rótulos usam kcal (Cal com C maiúsculo), então 100 \"calorias\" alimentares = 100.000 cal físicas.", en: "Because labels use kcal (capital-C Calorie), 100 food \"calories\" = 100,000 physical cal."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "1 g de carboidrato fornece ~:", en: "1 g of carbs provides ~:"}
+        choices:
+          - {pt: "4 kcal", en: "4 kcal"}
+          - {pt: "9 kcal", en: "9 kcal"}
+          - {pt: "0 kcal", en: "0 kcal"}
+          - {pt: "100 kcal", en: "100 kcal"}
+        correctAnswer: {pt: "4 kcal", en: "4 kcal"}
+        rationale: {pt: "Como já têm O ligado, então a energia oxidável é menor que a de gorduras (~9 kcal/g).", en: "Because they already have bound O, oxidizable energy is less than fats (~9 kcal/g)."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "1 g de gordura fornece ~:", en: "1 g of fat provides ~:"}
+        choices:
+          - {pt: "9 kcal", en: "9 kcal"}
+          - {pt: "4 kcal", en: "4 kcal"}
+          - {pt: "0 kcal", en: "0 kcal"}
+          - {pt: "100 kcal", en: "100 kcal"}
+        correctAnswer: {pt: "9 kcal", en: "9 kcal"}
+        rationale: {pt: "Como C–H abundantes liberam mais energia ao oxidar, então gordura é a reserva mais densa do corpo.", en: "Because abundant C–H bonds release more energy on oxidation, fat is the body's densest reserve."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Calorimetria mede:", en: "Calorimetry measures:"}
+        choices:
+          - {pt: "Energia liberada como calor numa reação ou metabolismo", en: "Energy released as heat in a reaction or metabolism"}
+          - {pt: "Apenas peso", en: "Just weight"}
+          - {pt: "Apenas idade", en: "Just age"}
+          - {pt: "Apenas cor", en: "Just color"}
+        correctAnswer: {pt: "Energia liberada como calor numa reação ou metabolismo", en: "Energy released as heat in a reaction or metabolism"}
+        rationale: {pt: "Como tudo que respira gera calor, então medir calor estima o gasto energético total.", en: "Because everything that respires generates heat, measuring heat estimates total energy expenditure."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Por que sentimos fome?", en: "Why do we feel hungry?"}
+        choices:
+          - {pt: "Sinais hormonais (grelina) e neurais quando reservas/glicemia baixam", en: "Hormonal (ghrelin) and neural signals when reserves/glycemia drop"}
+          - {pt: "Apenas hábito", en: "Just habit"}
+          - {pt: "Apenas tédio", en: "Just boredom"}
+          - {pt: "Sem motivo", en: "No reason"}
+        correctAnswer: {pt: "Sinais hormonais (grelina) e neurais quando reservas/glicemia baixam", en: "Hormonal (ghrelin) and neural signals when reserves/glycemia drop"}
+        rationale: {pt: "Como o corpo monitora reservas energéticas, então o hipotálamo dispara fome para repor combustíveis.", en: "Because the body monitors energy reserves, the hypothalamus triggers hunger to restore fuel."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Saciedade é regulada por:", en: "Satiety is regulated by:"}
+        choices:
+          - {pt: "Hormônios como leptina, distensão estomacal, glicemia alta", en: "Hormones like leptin, stomach distension, high glycemia"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem mecanismo", en: "No mechanism"}
+          - {pt: "Apenas aleatório", en: "Just random"}
+        correctAnswer: {pt: "Hormônios como leptina, distensão estomacal, glicemia alta", en: "Hormones like leptin, stomach distension, high glycemia"}
+        rationale: {pt: "Como múltiplos sinais convergem no hipotálamo, então sinaliza \"parar de comer\" quando suficiente.", en: "Because multiple signals converge in the hypothalamus, it signals \"stop eating\" when enough."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Termogênese induzida pela dieta:", en: "Diet-induced thermogenesis:"}
+        choices:
+          - {pt: "Calor gerado ao digerir e metabolizar alimentos (~10% do consumo)", en: "Heat generated digesting and metabolizing food (~10% of intake)"}
+          - {pt: "Apenas durante exercício", en: "Only during exercise"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas em hibernação", en: "Only in hibernation"}
+        correctAnswer: {pt: "Calor gerado ao digerir e metabolizar alimentos (~10% do consumo)", en: "Heat generated digesting and metabolizing food (~10% of intake)"}
+        rationale: {pt: "Como digestão e absorção custam energia, então parte das calorias ingeridas vira calor — não é \"absorção 100%\".", en: "Because digestion and absorption cost energy, part of ingested calories becomes heat — it's not \"100% absorption\"."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Reservas energéticas em humanos (adulto típico):", en: "Energy reserves in humans (typical adult):"}
+        choices:
+          - {pt: "Glicogênio (~1 dia), gordura (~semanas a meses)", en: "Glycogen (~1 day), fat (~weeks to months)"}
+          - {pt: "Apenas glicose no sangue", en: "Just blood glucose"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Sem reservas", en: "No reserves"}
+        correctAnswer: {pt: "Glicogênio (~1 dia), gordura (~semanas a meses)", en: "Glycogen (~1 day), fat (~weeks to months)"}
+        rationale: {pt: "Como triglicerídeos armazenam mais por massa, então humanos sobrevivem semanas em jejum — base evolutiva da resistência.", en: "Because triglycerides store more per mass, humans survive weeks in fasting — evolutionary basis of endurance."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Atividade física aumenta gasto energético via:", en: "Physical activity raises energy expenditure via:"}
+        choices:
+          - {pt: "Maior consumo de ATP nos músculos (e calor produzido)", en: "Higher muscle ATP consumption (and heat produced)"}
+          - {pt: "Apenas tédio", en: "Just boredom"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas no inverno", en: "Only in winter"}
+        correctAnswer: {pt: "Maior consumo de ATP nos músculos (e calor produzido)", en: "Higher muscle ATP consumption (and heat produced)"}
+        rationale: {pt: "Como contração custa ATP, então mais movimento = mais glicólise/respiração = mais calor (suor) e mais calorias queimadas.", en: "Because contraction costs ATP, more movement = more glycolysis/respiration = more heat (sweat) and calories burned."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: bioenergética:", en: "Summary: bioenergetics:"}
+        choices:
+          - {pt: "Estuda fluxo de energia em sistemas vivos: capturar, armazenar e usar via ATP", en: "Studies energy flow in living systems: capture, store, and use via ATP"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "Estuda fluxo de energia em sistemas vivos: capturar, armazenar e usar via ATP", en: "Studies energy flow in living systems: capture, store, and use via ATP"}
+        rationale: {pt: "Como vida vai contra a entropia, então organismos canalizam energia continuamente para manter ordem biológica.", en: "Because life goes against entropy, organisms continuously channel energy to maintain biological order."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+target: 20

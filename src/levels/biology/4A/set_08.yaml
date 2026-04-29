@@ -1,0 +1,244 @@
+title:
+  pt: "🌾 Fotossíntese — ciclo de Calvin"
+  en: "🌾 Photosynthesis — Calvin cycle"
+level: '4A'
+subject: biology
+objectives: [biology.metabolism]
+difficulty: 4
+authorNotes: "Fixação do CO₂ em glicose; usa ATP/NADPH; ocorre no estroma."
+example:
+  pt: "Ex.: 3 CO₂ + 9 ATP + 6 NADPH → G3P (precursor de glicose). Etapas: fixação → redução → regeneração."
+  en: "Ex.: 3 CO₂ + 9 ATP + 6 NADPH → G3P (glucose precursor). Steps: fixation → reduction → regeneration."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Fixando carbono", en: "Fixing carbon"}
+    description: {pt: "De CO₂ a açúcar.", en: "From CO₂ to sugar."}
+    exercises:
+      - type: choice
+        question: {pt: "Ciclo de Calvin ocorre no:", en: "Calvin cycle occurs in the:"}
+        choices:
+          - {pt: "Estroma do cloroplasto", en: "Chloroplast stroma"}
+          - {pt: "Tilacoides", en: "Thylakoids"}
+          - {pt: "Citoplasma", en: "Cytoplasm"}
+          - {pt: "Mitocôndria", en: "Mitochondrion"}
+        correctAnswer: {pt: "Estroma do cloroplasto", en: "Chloroplast stroma"}
+        rationale: {pt: "Como enzimas do Calvin flutuam na matriz aquosa do cloroplasto, então o estroma é o local da fixação.", en: "Because Calvin enzymes float in the chloroplast aqueous matrix, the stroma is where fixation occurs."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Ciclo de Calvin precisa de luz?", en: "Does Calvin cycle need light?"}
+        choices:
+          - {pt: "Indiretamente — usa ATP/NADPH gerados na fase clara", en: "Indirectly — uses ATP/NADPH from light reactions"}
+          - {pt: "Sim, diretamente", en: "Yes, directly"}
+          - {pt: "Apenas à noite", en: "Only at night"}
+          - {pt: "Não, sem ATP", en: "No, without ATP"}
+        correctAnswer: {pt: "Indiretamente — usa ATP/NADPH gerados na fase clara", en: "Indirectly — uses ATP/NADPH from light reactions"}
+        rationale: {pt: "Como depende dos produtos da fase luminosa, então funciona enquanto há ATP/NADPH disponíveis.", en: "Because it depends on light-phase products, it runs while ATP/NADPH are available."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Enzima da fixação do CO₂:", en: "CO₂ fixation enzyme:"}
+        choices:
+          - {pt: "RuBisCO (a proteína mais abundante do planeta)", en: "RuBisCO (the most abundant protein on Earth)"}
+          - {pt: "DNA polimerase", en: "DNA polymerase"}
+          - {pt: "Hexoquinase", en: "Hexokinase"}
+          - {pt: "Lipase", en: "Lipase"}
+        correctAnswer: {pt: "RuBisCO (a proteína mais abundante do planeta)", en: "RuBisCO (the most abundant protein on Earth)"}
+        rationale: {pt: "Como toda planta precisa fixar carbono, então RuBisCO acumula em quantidades enormes — mas é relativamente lenta.", en: "Because every plant must fix carbon, RuBisCO accumulates massively — yet it's relatively slow."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "RuBisCO catalisa:", en: "RuBisCO catalyzes:"}
+        choices:
+          - {pt: "CO₂ + RuBP (5C) → 2 × 3-PGA (3C cada)", en: "CO₂ + RuBP (5C) → 2 × 3-PGA (3C each)"}
+          - {pt: "Glicose → CO₂", en: "Glucose → CO₂"}
+          - {pt: "DNA → RNA", en: "DNA → RNA"}
+          - {pt: "ATP → ADP", en: "ATP → ADP"}
+        correctAnswer: {pt: "CO₂ + RuBP (5C) → 2 × 3-PGA (3C cada)", en: "CO₂ + RuBP (5C) → 2 × 3-PGA (3C each)"}
+        rationale: {pt: "Como liga CO₂ a um açúcar de 5C, então o intermediário 6C imediatamente quebra em duas trioses.", en: "Because it joins CO₂ to a 5C sugar, the 6C intermediate immediately splits into two trioses."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Etapas do Calvin (em ordem):", en: "Calvin steps (in order):"}
+        choices:
+          - {pt: "Fixação → redução → regeneração", en: "Fixation → reduction → regeneration"}
+          - {pt: "Apenas redução", en: "Just reduction"}
+          - {pt: "Apenas fixação", en: "Just fixation"}
+          - {pt: "Sem ordem", en: "No order"}
+        correctAnswer: {pt: "Fixação → redução → regeneração", en: "Fixation → reduction → regeneration"}
+        rationale: {pt: "Como cada fase tem propósito (incorporar C, formar açúcar, recriar substrato), então as três se sucedem.", en: "Because each phase has a purpose (incorporate C, form sugar, recreate substrate), three follow in sequence."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Fase de redução usa:", en: "Reduction phase uses:"}
+        choices:
+          - {pt: "ATP e NADPH para converter 3-PGA em G3P", en: "ATP and NADPH to convert 3-PGA into G3P"}
+          - {pt: "Apenas O₂", en: "Just O₂"}
+          - {pt: "Apenas calor", en: "Just heat"}
+          - {pt: "Glicose pronta", en: "Ready glucose"}
+        correctAnswer: {pt: "ATP e NADPH para converter 3-PGA em G3P", en: "ATP and NADPH to convert 3-PGA into G3P"}
+        rationale: {pt: "Como reduzir 3-PGA exige energia + elétrons, então ATP e NADPH são consumidos — daí a luz é importante.", en: "Because reducing 3-PGA requires energy + electrons, ATP and NADPH are consumed — hence light matters."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Para sintetizar 1 G3P (gliceraldeído-3P), quantos CO₂ são fixados?", en: "To synthesize 1 G3P, how many CO₂ are fixed?"}
+        choices:
+          - {pt: "3 CO₂", en: "3 CO₂"}
+          - {pt: "1 CO₂", en: "1 CO₂"}
+          - {pt: "10 CO₂", en: "10 CO₂"}
+          - {pt: "Sem CO₂", en: "No CO₂"}
+        correctAnswer: {pt: "3 CO₂", en: "3 CO₂"}
+        rationale: {pt: "Como cada CO₂ contribui 1 carbono e G3P tem 3C, então 3 voltas do ciclo geram 1 G3P líquido (após regenerar RuBP).", en: "Because each CO₂ adds 1 carbon and G3P has 3C, 3 cycle turns make 1 net G3P (after regenerating RuBP)."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Regeneração de RuBP requer:", en: "RuBP regeneration requires:"}
+        choices:
+          - {pt: "ATP adicional, sem NADPH extra", en: "Extra ATP, no extra NADPH"}
+          - {pt: "Apenas O₂", en: "Just O₂"}
+          - {pt: "Apenas glicose", en: "Just glucose"}
+          - {pt: "DNA", en: "DNA"}
+        correctAnswer: {pt: "ATP adicional, sem NADPH extra", en: "Extra ATP, no extra NADPH"}
+        rationale: {pt: "Como o ciclo precisa repor o aceptor (RuBP), então ATP é gasto para reverter rearranjos sem mais elétrons.", en: "Because the cycle must replace the acceptor (RuBP), ATP is spent to drive rearrangements without more electrons."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Custo total para 1 G3P:", en: "Total cost for 1 G3P:"}
+        choices:
+          - {pt: "9 ATP + 6 NADPH (3 voltas)", en: "9 ATP + 6 NADPH (3 turns)"}
+          - {pt: "1 ATP", en: "1 ATP"}
+          - {pt: "Sem custo", en: "No cost"}
+          - {pt: "100 ATP", en: "100 ATP"}
+        correctAnswer: {pt: "9 ATP + 6 NADPH (3 voltas)", en: "9 ATP + 6 NADPH (3 turns)"}
+        rationale: {pt: "Como cada volta usa 3 ATP + 2 NADPH, então 3 voltas para 1 G3P custam 9 ATP + 6 NADPH.", en: "Because each turn uses 3 ATP + 2 NADPH, 3 turns for 1 G3P cost 9 ATP + 6 NADPH."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Para 1 glicose (6C):", en: "For 1 glucose (6C):"}
+        choices:
+          - {pt: "2 G3P combinam → 6 voltas → 18 ATP + 12 NADPH", en: "2 G3P combine → 6 turns → 18 ATP + 12 NADPH"}
+          - {pt: "Apenas 1 ATP", en: "Just 1 ATP"}
+          - {pt: "Sem custo", en: "Free"}
+          - {pt: "Apenas O₂", en: "Just O₂"}
+        correctAnswer: {pt: "2 G3P combinam → 6 voltas → 18 ATP + 12 NADPH", en: "2 G3P combine → 6 turns → 18 ATP + 12 NADPH"}
+        rationale: {pt: "Como 2 G3P (3C cada) formam 1 glicose (6C), então o custo dobra — base do gasto energético da fotossíntese.", en: "Because 2 G3P (3C each) form 1 glucose (6C), the cost doubles — basis of photosynthesis's energy cost."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Após Calvin", en: "After Calvin"}
+    description: {pt: "O destino do G3P.", en: "The fate of G3P."}
+    exercises:
+      - type: choice
+        question: {pt: "G3P pode ser usado para:", en: "G3P can be used to:"}
+        choices:
+          - {pt: "Sintetizar glicose, sacarose, amido, lipídios e aminoácidos", en: "Make glucose, sucrose, starch, lipids, and amino acids"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Sem uso", en: "No use"}
+        correctAnswer: {pt: "Sintetizar glicose, sacarose, amido, lipídios e aminoácidos", en: "Make glucose, sucrose, starch, lipids, and amino acids"}
+        rationale: {pt: "Como G3P é um intermediário central, então a planta o canaliza para diversos produtos conforme a demanda.", en: "Because G3P is a central intermediate, the plant routes it to various products based on demand."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Sacarose é:", en: "Sucrose is:"}
+        choices:
+          - {pt: "Açúcar de transporte das folhas para outras partes da planta", en: "Transport sugar from leaves to other plant parts"}
+          - {pt: "Apenas armazenamento", en: "Just storage"}
+          - {pt: "Apenas em raízes", en: "Only in roots"}
+          - {pt: "Não existe em plantas", en: "Doesn't exist in plants"}
+        correctAnswer: {pt: "Açúcar de transporte das folhas para outras partes da planta", en: "Transport sugar from leaves to other plant parts"}
+        rationale: {pt: "Como o floema move sacarose, então energia das folhas chega a raízes, frutos e tecidos em crescimento.", en: "Because phloem moves sucrose, leaf energy reaches roots, fruits, and growing tissues."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Amido é:", en: "Starch is:"}
+        choices:
+          - {pt: "Polissacarídeo de reserva (em folhas e órgãos de armazenamento)", en: "Storage polysaccharide (in leaves and storage organs)"}
+          - {pt: "Açúcar simples", en: "Simple sugar"}
+          - {pt: "Lipídio", en: "Lipid"}
+          - {pt: "Proteína", en: "Protein"}
+        correctAnswer: {pt: "Polissacarídeo de reserva (em folhas e órgãos de armazenamento)", en: "Storage polysaccharide (in leaves and storage organs)"}
+        rationale: {pt: "Como a planta acumula açúcar excedente, então amido em batatas, sementes e folhas é \"banco\" de carbono.", en: "Because plants accumulate excess sugar, starch in potatoes, seeds, and leaves is a carbon \"bank\"."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Fotossíntese alimenta a maior parte das cadeias alimentares porque:", en: "Photosynthesis feeds most food chains because:"}
+        choices:
+          - {pt: "Produtores convertem energia solar em matéria orgânica que sustenta consumidores", en: "Producers convert solar energy into organic matter sustaining consumers"}
+          - {pt: "Sem motivo", en: "No reason"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas para humanos", en: "Just for humans"}
+        correctAnswer: {pt: "Produtores convertem energia solar em matéria orgânica que sustenta consumidores", en: "Producers convert solar energy into organic matter sustaining consumers"}
+        rationale: {pt: "Como cada nível trófico depende do anterior, então plantas/algas formam a base da pirâmide energética.", en: "Because each trophic level depends on the previous, plants/algae form the energy pyramid's base."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Plantas C3 (como trigo, arroz):", en: "C3 plants (like wheat, rice):"}
+        choices:
+          - {pt: "Fixam CO₂ diretamente em 3-PGA via RuBisCO (clima moderado)", en: "Fix CO₂ directly into 3-PGA via RuBisCO (moderate climate)"}
+          - {pt: "Não usam Calvin", en: "Don't use Calvin"}
+          - {pt: "Sempre em deserto", en: "Always in desert"}
+          - {pt: "Não fazem fotossíntese", en: "Don't photosynthesize"}
+        correctAnswer: {pt: "Fixam CO₂ diretamente em 3-PGA via RuBisCO (clima moderado)", en: "Fix CO₂ directly into 3-PGA via RuBisCO (moderate climate)"}
+        rationale: {pt: "Como funcionam bem em CO₂ atmosférico moderado, então a maioria das plantas é C3 — mas perde com calor/seca.", en: "Because they work well at moderate atmospheric CO₂, most plants are C3 — but lose under heat/drought."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Fotorrespiração ocorre quando:", en: "Photorespiration occurs when:"}
+        choices:
+          - {pt: "RuBisCO fixa O₂ em vez de CO₂ (especialmente em calor seco)", en: "RuBisCO fixes O₂ instead of CO₂ (especially in dry heat)"}
+          - {pt: "Sempre", en: "Always"}
+          - {pt: "Nunca", en: "Never"}
+          - {pt: "Apenas à noite", en: "Only at night"}
+        correctAnswer: {pt: "RuBisCO fixa O₂ em vez de CO₂ (especialmente em calor seco)", en: "RuBisCO fixes O₂ instead of CO₂ (especially in dry heat)"}
+        rationale: {pt: "Como a enzima é antiga e ambígua, então em alta razão O₂/CO₂ ela \"erra\" — gasta energia sem produzir açúcar.", en: "Because the enzyme is ancient and ambiguous, at high O₂/CO₂ ratios it \"errs\" — wastes energy without producing sugar."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Plantas C4 (milho, cana):", en: "C4 plants (corn, sugarcane):"}
+        choices:
+          - {pt: "Concentram CO₂ em células bainhas via PEP-carboxilase, evitando fotorrespiração", en: "Concentrate CO₂ in bundle-sheath cells via PEP carboxylase, avoiding photorespiration"}
+          - {pt: "Não fazem fotossíntese", en: "Don't photosynthesize"}
+          - {pt: "Apenas em deserto", en: "Only in desert"}
+          - {pt: "Sempre falham", en: "Always fail"}
+        correctAnswer: {pt: "Concentram CO₂ em células bainhas via PEP-carboxilase, evitando fotorrespiração", en: "Concentrate CO₂ in bundle-sheath cells via PEP carboxylase, avoiding photorespiration"}
+        rationale: {pt: "Como separam fixação inicial e Calvin em compartimentos, então mantêm RuBisCO em alta CO₂ — adaptação ao calor.", en: "Because they separate initial fixation and Calvin into compartments, they keep RuBisCO at high CO₂ — heat adaptation."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Plantas CAM (cactos, abacaxi):", en: "CAM plants (cacti, pineapple):"}
+        choices:
+          - {pt: "Abrem estômatos à noite (fixam CO₂ em malato), Calvin de dia", en: "Open stomata at night (fix CO₂ as malate), Calvin by day"}
+          - {pt: "Apenas durante chuva", en: "Only when raining"}
+          - {pt: "Não fazem fotossíntese", en: "Don't photosynthesize"}
+          - {pt: "Apenas em florestas", en: "Only in forests"}
+        correctAnswer: {pt: "Abrem estômatos à noite (fixam CO₂ em malato), Calvin de dia", en: "Open stomata at night (fix CO₂ as malate), Calvin by day"}
+        rationale: {pt: "Como economia de água é crucial, então separam fixação (noite) e Calvin (dia) temporalmente.", en: "Because water saving is crucial, they separate fixation (night) and Calvin (day) temporally."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Aumento de CO₂ atmosférico tende a:", en: "Rising atmospheric CO₂ tends to:"}
+        choices:
+          - {pt: "Estimular fotossíntese (até certo ponto), mas pode reduzir nutrientes em culturas", en: "Boost photosynthesis (up to a point), but may reduce crop nutrients"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas matar plantas", en: "Just kill plants"}
+          - {pt: "Apenas resfriar Terra", en: "Just cool Earth"}
+        correctAnswer: {pt: "Estimular fotossíntese (até certo ponto), mas pode reduzir nutrientes em culturas", en: "Boost photosynthesis (up to a point), but may reduce crop nutrients"}
+        rationale: {pt: "Como CO₂ é substrato, então mais pode acelerar — mas estresse climático e diluição de minerais limitam ganhos.", en: "Because CO₂ is the substrate, more can speed it up — but climate stress and mineral dilution limit gains."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: ciclo de Calvin:", en: "Summary: Calvin cycle:"}
+        choices:
+          - {pt: "Fixa CO₂ em açúcar usando ATP/NADPH no estroma — independente direto de luz", en: "Fixes CO₂ into sugar using ATP/NADPH in stroma — not direct light-dependent"}
+          - {pt: "Apenas em mitocôndria", en: "Only in mitochondria"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "Fixa CO₂ em açúcar usando ATP/NADPH no estroma — independente direto de luz", en: "Fixes CO₂ into sugar using ATP/NADPH in stroma — not direct light-dependent"}
+        rationale: {pt: "Como funciona enquanto há ATP/NADPH, então é a fase \"escura\" mas ainda dependente da fase clara prévia.", en: "Because it runs as long as ATP/NADPH last, it's the \"dark\" phase but still depends on prior light phase."}
+        objectives: [biology.metabolism]
+        difficulty: 4
+target: 20
