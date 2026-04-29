@@ -1,0 +1,244 @@
+title:
+  pt: "🦴 Evolução humana"
+  en: "🦴 Human evolution"
+level: '1A'
+subject: biology
+objectives: [biology.hominin_evolution]
+difficulty: 5
+authorNotes: "Hominíneos, fósseis-chave, expansões fora da África, cultura material, paleogenômica humana."
+example:
+  pt: "Ex.: Lucy (3,2 Ma) → bipedalismo → cérebro maior → ferramentas → linguagem → expansão global."
+  en: "Ex.: Lucy (3.2 Mya) → bipedalism → larger brain → tools → language → global expansion."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Hominíneos e fósseis-chave", en: "Hominins and key fossils"}
+    description: {pt: "Os marcos da nossa linhagem.", en: "Milestones of our lineage."}
+    exercises:
+      - type: choice
+        question: {pt: "Hominíneos divergiram do clado dos chimpanzés há ~:", en: "Hominins diverged from chimpanzee clade ~:"}
+        choices:
+          - {pt: "6-7 milhões de anos na África", en: "6-7 million years ago in Africa"}
+          - {pt: "Apenas 100 mil anos", en: "Just 100 thousand years"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em museu", en: "Just in museum"}
+        correctAnswer: {pt: "6-7 milhões de anos na África", en: "6-7 million years ago in Africa"}
+        rationale: {pt: "Quando datação molecular e fósseis convergem, então origem africana fica robustamente estabelecida.", en: "When molecular dating and fossils converge, African origin is robustly established."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sahelanthropus tchadensis é:", en: "Sahelanthropus tchadensis is:"}
+        choices:
+          - {pt: "Hominíneo precoce (~7 Ma) com forame magno indicando bipedalismo possível", en: "Early hominin (~7 Mya) with foramen magnum suggesting possible bipedalism"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas dinossauro", en: "Just dinosaur"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Hominíneo precoce (~7 Ma) com forame magno indicando bipedalismo possível", en: "Early hominin (~7 Mya) with foramen magnum suggesting possible bipedalism"}
+        rationale: {pt: "Quando crânio tem forame frontal, então cabeça apoia coluna vertical — pista postural.", en: "When skull has anterior foramen, head sits over vertical spine — postural clue."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Australopithecus afarensis (Lucy) é destacado por:", en: "Australopithecus afarensis (Lucy) is notable for:"}
+        choices:
+          - {pt: "Bipedalismo claro (~3,2 Ma) com cérebro ainda pequeno", en: "Clear bipedalism (~3.2 Mya) with still small brain"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas humano moderno", en: "Just modern human"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Bipedalismo claro (~3,2 Ma) com cérebro ainda pequeno", en: "Clear bipedalism (~3.2 Mya) with still small brain"}
+        rationale: {pt: "Quando pelve mostra mecânica bípede, então andar ereto precedeu encefalização — sequência clara.", en: "When pelvis shows bipedal mechanics, upright walking preceded encephalization — clear sequence."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pegadas de Laetoli:", en: "Laetoli footprints:"}
+        choices:
+          - {pt: "Documentam bipedalismo de hominíneos há ~3,7 milhões de anos em cinza vulcânica", en: "Document hominin bipedalism ~3.7 Mya in volcanic ash"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em laboratório", en: "Just in lab"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Documentam bipedalismo de hominíneos há ~3,7 milhões de anos em cinza vulcânica", en: "Document hominin bipedalism ~3.7 Mya in volcanic ash"}
+        rationale: {pt: "Quando pegadas são preservadas, então locomoção é evidenciada diretamente, não inferida apenas do osso.", en: "When footprints are preserved, locomotion is shown directly, not inferred from bone alone."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Homo habilis está associado a:", en: "Homo habilis is associated with:"}
+        choices:
+          - {pt: "Ferramentas líticas Olduvaienses (~2,5 Ma) e cérebro maior que australopitecos", en: "Oldowan stone tools (~2.5 Mya) and brain larger than australopithecines"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas humano moderno", en: "Just modern human"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Ferramentas líticas Olduvaienses (~2,5 Ma) e cérebro maior que australopitecos", en: "Oldowan stone tools (~2.5 Mya) and brain larger than australopithecines"}
+        rationale: {pt: "Quando ferramentas surgem associadas a fósseis, então cognição manipulativa é inferida.", en: "When tools appear with fossils, manipulative cognition is inferred."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Homo erectus se destaca por:", en: "Homo erectus stands out for:"}
+        choices:
+          - {pt: "Primeira saída da África, controle do fogo e ferramentas Acheulense", en: "First out-of-Africa, fire control and Acheulean tools"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Primeira saída da África, controle do fogo e ferramentas Acheulense", en: "First out-of-Africa, fire control and Acheulean tools"}
+        rationale: {pt: "Quando fogo é dominado, então cocção, defesa e expansão a climas frios tornam-se possíveis.", en: "When fire is mastered, cooking, defense and cold-climate expansion become possible."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Homo neanderthalensis viveu em:", en: "Homo neanderthalensis lived in:"}
+        choices:
+          - {pt: "Eurásia (~400-40 mil anos) com cultura material complexa e enterros", en: "Eurasia (~400-40 thousand years) with complex material culture and burials"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas África", en: "Just Africa"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Eurásia (~400-40 mil anos) com cultura material complexa e enterros", en: "Eurasia (~400-40 thousand years) with complex material culture and burials"}
+        rationale: {pt: "Quando enterros e símbolos aparecem, então cognição neandertal mostra profundidade cultural.", en: "When burials and symbols appear, neanderthal cognition shows cultural depth."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Denisovanos foram descobertos por:", en: "Denisovans were discovered via:"}
+        choices:
+          - {pt: "Sequenciamento de DNA antigo de fragmento ósseo na Sibéria", en: "Ancient DNA sequencing from a bone fragment in Siberia"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas museu europeu", en: "Just European museum"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Sequenciamento de DNA antigo de fragmento ósseo na Sibéria", en: "Ancient DNA sequencing from a bone fragment in Siberia"}
+        rationale: {pt: "Quando paleogenômica supera morfologia, então táxons antes desconhecidos são descritos por DNA.", en: "When paleogenomics surpasses morphology, previously unknown taxa are described by DNA."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Homo sapiens surgiu na África há ~:", en: "Homo sapiens arose in Africa ~:"}
+        choices:
+          - {pt: "300 mil anos (Jebel Irhoud) com origem pan-africana plausível", en: "300 thousand years ago (Jebel Irhoud) with plausible pan-African origin"}
+          - {pt: "Apenas 10 mil anos", en: "Just 10 thousand years"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "300 mil anos (Jebel Irhoud) com origem pan-africana plausível", en: "300 thousand years ago (Jebel Irhoud) with plausible pan-African origin"}
+        rationale: {pt: "Quando fósseis novos antecedem datas anteriores, então quadro continental se aprofunda no tempo.", en: "When new fossils predate earlier dates, continental picture deepens in time."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Saída do Homo sapiens da África:", en: "Homo sapiens out-of-Africa:"}
+        choices:
+          - {pt: "Múltiplas dispersões — principal ~60-70 mil anos atrás", en: "Multiple dispersals — main one ~60-70 thousand years ago"}
+          - {pt: "Apenas uma vez recente", en: "Just once recently"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Múltiplas dispersões — principal ~60-70 mil anos atrás", en: "Multiple dispersals — main one ~60-70 thousand years ago"}
+        rationale: {pt: "Quando combinamos fósseis, genética e clima, então quadro complexo de migrações emerge.", en: "When we combine fossils, genetics and climate, complex migration picture emerges."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Genômica e cultura humana", en: "Human genomics and culture"}
+    description: {pt: "DNA antigo, hibridização e adaptação.", en: "Ancient DNA, admixture and adaptation."}
+    exercises:
+      - type: choice
+        question: {pt: "Humanos não-africanos modernos carregam:", en: "Modern non-African humans carry:"}
+        choices:
+          - {pt: "1-4% DNA neandertal por hibridização durante migrações", en: "1-4% Neanderthal DNA via admixture during migrations"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA puro recente", en: "Just pure recent DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "1-4% DNA neandertal por hibridização durante migrações", en: "1-4% Neanderthal DNA via admixture during migrations"}
+        rationale: {pt: "Quando paleogenoma é comparado com vivos, então introgressão antiga é detectada com precisão.", en: "When paleogenome is compared with living, ancient introgression is detected precisely."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Populações da Oceania apresentam:", en: "Oceanian populations show:"}
+        choices:
+          - {pt: "Maior contribuição denisovana (até ~5%) por hibridização específica", en: "Higher Denisovan contribution (up to ~5%) via specific admixture"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Maior contribuição denisovana (até ~5%) por hibridização específica", en: "Higher Denisovan contribution (up to ~5%) via specific admixture"}
+        rationale: {pt: "Quando rota migratória passou por arquipélagos, então sinal denisovano persiste especialmente em Papua e aborígenes.", en: "When migration route went through archipelagos, Denisovan signal persists especially in Papua and aboriginals."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Adaptação à altitude no Tibete envolve:", en: "Tibetan altitude adaptation involves:"}
+        choices:
+          - {pt: "Variante EPAS1 herdada de denisovanos via introgressão adaptativa", en: "EPAS1 variant inherited from Denisovans via adaptive introgression"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas dieta moderna", en: "Just modern diet"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Variante EPAS1 herdada de denisovanos via introgressão adaptativa", en: "EPAS1 variant inherited from Denisovans via adaptive introgression"}
+        rationale: {pt: "Quando alelo arcaico beneficia hipóxia, então seleção positiva o fixou em populações tibetanas.", en: "When archaic allele benefits hypoxia, positive selection fixed it in Tibetan populations."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Persistência da lactase em adultos:", en: "Adult lactase persistence:"}
+        choices:
+          - {pt: "Surgiu independentemente em populações pastoris após domesticação de gado", en: "Arose independently in pastoral populations after cattle domestication"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Surgiu independentemente em populações pastoris após domesticação de gado", en: "Arose independently in pastoral populations after cattle domestication"}
+        rationale: {pt: "Quando dieta inclui leite, então mutação cis-regulatória vira vantagem energética selecionada.", en: "When diet includes milk, cis-regulatory mutation becomes selected energy advantage."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pele clara em populações de altas latitudes:", en: "Light skin in high-latitude populations:"}
+        choices:
+          - {pt: "Resulta de seleção por síntese de vitamina D em ambientes com pouca UV", en: "Results from selection for vitamin D synthesis in low-UV environments"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas dieta", en: "Just diet"}
+        correctAnswer: {pt: "Resulta de seleção por síntese de vitamina D em ambientes com pouca UV", en: "Results from selection for vitamin D synthesis in low-UV environments"}
+        rationale: {pt: "Quando UV é fraco, então pele clara permite produção suficiente de vitamina D essencial.", en: "When UV is weak, light skin enables sufficient essential vitamin D production."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Linguagem em humanos é associada a:", en: "Human language is associated with:"}
+        choices:
+          - {pt: "FOXP2 e circuitos corticais frontotemporais especializados", en: "FOXP2 and specialized frontotemporal cortical circuits"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas dieta", en: "Just diet"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "FOXP2 e circuitos corticais frontotemporais especializados", en: "FOXP2 and specialized frontotemporal cortical circuits"}
+        rationale: {pt: "Quando FOXP2 é mutado, então déficits de fala revelam papel deste fator de transcrição.", en: "When FOXP2 is mutated, speech deficits reveal the role of this transcription factor."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Arte rupestre paleolítica:", en: "Paleolithic cave art:"}
+        choices:
+          - {pt: "Documenta cognição simbólica e cultura há mais de 40 mil anos", en: "Documents symbolic cognition and culture from over 40,000 years ago"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas em museus modernos", en: "Just in modern museums"}
+        correctAnswer: {pt: "Documenta cognição simbólica e cultura há mais de 40 mil anos", en: "Documents symbolic cognition and culture from over 40,000 years ago"}
+        rationale: {pt: "Quando símbolos persistem, então abstração e representação mental tornam-se evidências arqueológicas.", en: "When symbols persist, abstraction and mental representation become archaeological evidence."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Domesticação animal e vegetal iniciou:", en: "Animal and plant domestication began:"}
+        choices:
+          - {pt: "Há ~10-12 mil anos no início do Holoceno em vários centros independentes", en: "~10-12 thousand years ago in early Holocene at several independent centers"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas no século XX", en: "Just in 20th century"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Há ~10-12 mil anos no início do Holoceno em vários centros independentes", en: "~10-12 thousand years ago in early Holocene at several independent centers"}
+        rationale: {pt: "Quando agricultura emerge, então populações crescem e civilizações se formam.", en: "When agriculture emerges, populations grow and civilizations form."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Estudos de DNA antigo (aDNA) revelaram:", en: "Ancient DNA (aDNA) studies revealed:"}
+        choices:
+          - {pt: "Múltiplas migrações pré-históricas e substituições populacionais na Europa", en: "Multiple prehistoric migrations and population replacements in Europe"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Múltiplas migrações pré-históricas e substituições populacionais na Europa", en: "Multiple prehistoric migrations and population replacements in Europe"}
+        rationale: {pt: "Quando aDNA é comparado, então história demográfica humana é riquíssima e dinâmica, não estática.", en: "When aDNA is compared, human demographic history is rich and dynamic, not static."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Diversidade humana atual reflete:", en: "Current human diversity reflects:"}
+        choices:
+          - {pt: "Origem africana com perda gradual de diversidade nas dispersões pós-saída", en: "African origin with gradual diversity loss in post-exit dispersals"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas mistura uniforme", en: "Just uniform mixing"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Origem africana com perda gradual de diversidade nas dispersões pós-saída", en: "African origin with gradual diversity loss in post-exit dispersals"}
+        rationale: {pt: "Quando gargalos sucessivos ocorreram, então populações fora da África guardam subset da diversidade ancestral.", en: "When successive bottlenecks occurred, non-African populations hold a subset of ancestral diversity."}
+        objectives: [biology.hominin_evolution]
+        difficulty: 5
+target: 20
