@@ -1,0 +1,244 @@
+title:
+  pt: "🔬 Genômica comparativa"
+  en: "🔬 Comparative genomics"
+level: 'D'
+subject: biology
+objectives: [biology.compgenomics]
+difficulty: 5
+authorNotes: "Sintenia, conservação, paralogia, pangenomas, evolução de genomas."
+example:
+  pt: "Ex.: alinhar dois genomas → blocos sintênicos → conservação → função inferida."
+  en: "Ex.: align two genomes → syntenic blocks → conservation → inferred function."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Conceitos fundamentais", en: "Fundamental concepts"}
+    description: {pt: "Como comparar genomas.", en: "How to compare genomes."}
+    exercises:
+      - type: choice
+        question: {pt: "Ortólogos vs parálogos:", en: "Orthologs vs paralogs:"}
+        choices:
+          - {pt: "Ortólogos divergem por especiação; parálogos por duplicação dentro do genoma", en: "Orthologs diverge by speciation; paralogs by duplication within genome"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+          - {pt: "Apenas categoria descritiva", en: "Just descriptive category"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Ortólogos divergem por especiação; parálogos por duplicação dentro do genoma", en: "Orthologs diverge by speciation; paralogs by duplication within genome"}
+        rationale: {pt: "Quando relação é correta, então função pode ser inferida com confiança.", en: "When relationship is correct, function can be inferred with confidence."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sintenia:", en: "Synteny:"}
+        choices:
+          - {pt: "Conservação da ordem gênica entre espécies — pista de história evolutiva e regulação", en: "Conservation of gene order between species — evolutionary history and regulation clue"}
+          - {pt: "Apenas detalhe estrutural", en: "Just structural detail"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Conservação da ordem gênica entre espécies — pista de história evolutiva e regulação", en: "Conservation of gene order between species — evolutionary history and regulation clue"}
+        rationale: {pt: "Quando ordem é mantida, então pressões seletivas atuam em arranjo.", en: "When order is maintained, selective pressures act on arrangement."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Conservação de sequência:", en: "Sequence conservation:"}
+        choices:
+          - {pt: "Regiões altamente conservadas em humanos e peixes sinalizam função regulatória ou codificante", en: "Highly conserved regions across human and fish signal regulatory or coding function"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+          - {pt: "Apenas detalhe trivial", en: "Just trivial detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "Regiões altamente conservadas em humanos e peixes sinalizam função regulatória ou codificante", en: "Highly conserved regions across human and fish signal regulatory or coding function"}
+        rationale: {pt: "Quando conservação é alta, então remoção evolutiva é negativa.", en: "When conservation is high, evolutionary removal is negative."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pangenoma:", en: "Pangenome:"}
+        choices:
+          - {pt: "Soma de genes core + acessórios em uma espécie — captura diversidade real além da referência", en: "Sum of core + accessory genes in a species — captures real diversity beyond reference"}
+          - {pt: "Apenas referência única", en: "Just single reference"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Soma de genes core + acessórios em uma espécie — captura diversidade real além da referência", en: "Sum of core + accessory genes in a species — captures real diversity beyond reference"}
+        rationale: {pt: "Quando pangenoma é completo, então variação populacional é refletida.", en: "When pangenome is complete, population variation is reflected."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Duplicação genômica completa (WGD):", en: "Whole-genome duplication (WGD):"}
+        choices:
+          - {pt: "Tetraploides ancestrais em vertebrados e plantas amplificaram repertório gênico", en: "Ancestral tetraploids in vertebrates and plants amplified gene repertoire"}
+          - {pt: "Apenas curiosidade evolutiva", en: "Just evolutionary curiosity"}
+          - {pt: "Apenas mutação trivial", en: "Just trivial mutation"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+        correctAnswer: {pt: "Tetraploides ancestrais em vertebrados e plantas amplificaram repertório gênico", en: "Ancestral tetraploids in vertebrates and plants amplified gene repertoire"}
+        rationale: {pt: "Quando WGD ocorre, então sub/neofuncionalização gera complexidade.", en: "When WGD occurs, sub/neofunctionalization generates complexity."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Transferência horizontal de genes (HGT):", en: "Horizontal gene transfer (HGT):"}
+        choices:
+          - {pt: "Bactérias trocam DNA via plasmídeos, transposons e fagos — fonte de resistência rápida", en: "Bacteria exchange DNA via plasmids, transposons and phages — source of rapid resistance"}
+          - {pt: "Apenas herança vertical", en: "Just vertical inheritance"}
+          - {pt: "Apenas mutação espontânea", en: "Just spontaneous mutation"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+        correctAnswer: {pt: "Bactérias trocam DNA via plasmídeos, transposons e fagos — fonte de resistência rápida", en: "Bacteria exchange DNA via plasmids, transposons and phages — source of rapid resistance"}
+        rationale: {pt: "Quando HGT atua, então evolução escapa das árvores tradicionais.", en: "When HGT acts, evolution escapes traditional trees."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Elementos transponíveis (TEs):", en: "Transposable elements (TEs):"}
+        choices:
+          - {pt: "Sequências móveis ocupam grande fração de genomas e influenciam evolução regulatória", en: "Mobile sequences occupy large genome fractions influencing regulatory evolution"}
+          - {pt: "Apenas DNA lixo", en: "Just junk DNA"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sequências móveis ocupam grande fração de genomas e influenciam evolução regulatória", en: "Mobile sequences occupy large genome fractions influencing regulatory evolution"}
+        rationale: {pt: "Quando TEs movem, então evolução regulatória ganha matéria-prima.", en: "When TEs move, regulatory evolution gains raw material."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "dN/dS:", en: "dN/dS:"}
+        choices:
+          - {pt: "Razão de substituições não-sinônimas/sinônimas indica seleção purificadora ou positiva", en: "Ratio of non-synonymous/synonymous substitutions indicates purifying or positive selection"}
+          - {pt: "Apenas estatística trivial", en: "Just trivial statistic"}
+          - {pt: "Apenas curiosidade matemática", en: "Just mathematical curiosity"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+        correctAnswer: {pt: "Razão de substituições não-sinônimas/sinônimas indica seleção purificadora ou positiva", en: "Ratio of non-synonymous/synonymous substitutions indicates purifying or positive selection"}
+        rationale: {pt: "Quando dN/dS é avaliado, então pressão seletiva é quantificada.", en: "When dN/dS is evaluated, selective pressure is quantified."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Filogenia molecular:", en: "Molecular phylogeny:"}
+        choices:
+          - {pt: "Construção de árvores via máxima verossimilhança, NJ ou Bayesianos com substituição modelada", en: "Tree construction via maximum likelihood, NJ or Bayesian with modeled substitution"}
+          - {pt: "Apenas observação morfológica", en: "Just morphological observation"}
+          - {pt: "Apenas tradição taxonômica", en: "Just taxonomic tradition"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "Construção de árvores via máxima verossimilhança, NJ ou Bayesianos com substituição modelada", en: "Tree construction via maximum likelihood, NJ or Bayesian with modeled substitution"}
+        rationale: {pt: "Quando árvore é robusta, então história evolutiva é confiável.", en: "When tree is robust, evolutionary history is reliable."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genômica de organelas:", en: "Organelle genomics:"}
+        choices:
+          - {pt: "mtDNA e cpDNA refletem origem endossimbiótica com herança maternal e diversidade reduzida", en: "mtDNA and cpDNA reflect endosymbiotic origin with maternal inheritance and reduced diversity"}
+          - {pt: "Apenas curiosidade celular", en: "Just cellular curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "mtDNA e cpDNA refletem origem endossimbiótica com herança maternal e diversidade reduzida", en: "mtDNA and cpDNA reflect endosymbiotic origin with maternal inheritance and reduced diversity"}
+        rationale: {pt: "Quando organelas são lidas, então biologia evolutiva ganha pistas materna-específicas.", en: "When organelles are read, evolutionary biology gains maternal-specific clues."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações", en: "Applications"}
+    description: {pt: "Genômica comparativa em ação.", en: "Comparative genomics in action."}
+    exercises:
+      - type: choice
+        question: {pt: "Genoma humano vs chimpanzé:", en: "Human vs chimpanzee genome:"}
+        choices:
+          - {pt: "98–99% similaridade base; diferenças em regulação cerebral e crescimento explicam fenótipos", en: "98–99% base similarity; differences in brain regulation and growth explain phenotypes"}
+          - {pt: "Apenas curiosidade evolutiva", en: "Just evolutionary curiosity"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+        correctAnswer: {pt: "98–99% similaridade base; diferenças em regulação cerebral e crescimento explicam fenótipos", en: "98–99% base similarity; differences in brain regulation and growth explain phenotypes"}
+        rationale: {pt: "Quando comparação é precisa, então origem do humano emerge geneticamente.", en: "When comparison is precise, human origin emerges genetically."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Origem dos vertebrados:", en: "Vertebrate origin:"}
+        choices:
+          - {pt: "Duas WGDs ancestrais (2R) em vertebrados explicam expansão de famílias gênicas", en: "Two ancestral WGDs (2R) in vertebrates explain gene family expansion"}
+          - {pt: "Apenas curiosidade evolutiva", en: "Just evolutionary curiosity"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+          - {pt: "Apenas observação fóssil", en: "Just fossil observation"}
+        correctAnswer: {pt: "Duas WGDs ancestrais (2R) em vertebrados explicam expansão de famílias gênicas", en: "Two ancestral WGDs (2R) in vertebrates explain gene family expansion"}
+        rationale: {pt: "Quando WGDs são identificadas, então complexidade vertebrada é mecanística.", en: "When WGDs are identified, vertebrate complexity becomes mechanistic."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resistência a antibióticos:", en: "Antibiotic resistance:"}
+        choices:
+          - {pt: "Genomas comparativos rastreiam disseminação global de plasmídeos e clusters de resistência", en: "Comparative genomes track global spread of resistance plasmids and clusters"}
+          - {pt: "Apenas observação clínica", en: "Just clinical observation"}
+          - {pt: "Apenas detalhe microbiano", en: "Just microbial detail"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+        correctAnswer: {pt: "Genomas comparativos rastreiam disseminação global de plasmídeos e clusters de resistência", en: "Comparative genomes track global spread of resistance plasmids and clusters"}
+        rationale: {pt: "Quando vigilância é genômica, então saúde pública responde antes do surto.", en: "When surveillance is genomic, public health responds before outbreak."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Evolução de SARS-CoV-2:", en: "SARS-CoV-2 evolution:"}
+        choices:
+          - {pt: "Filogenia em tempo real (Nextstrain) caracteriza variantes Alpha, Delta, Omicron globalmente", en: "Real-time phylogeny (Nextstrain) characterizes Alpha, Delta, Omicron globally"}
+          - {pt: "Apenas curiosidade epidemiológica", en: "Just epidemiological curiosity"}
+          - {pt: "Apenas observação", en: "Just observation"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Filogenia em tempo real (Nextstrain) caracteriza variantes Alpha, Delta, Omicron globalmente", en: "Real-time phylogeny (Nextstrain) characterizes Alpha, Delta, Omicron globally"}
+        rationale: {pt: "Quando variantes são rastreadas, então respostas vacinais são informadas.", en: "When variants are tracked, vaccine responses are informed."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Plantas e domesticação:", en: "Plants and domestication:"}
+        choices:
+          - {pt: "Genomas comparativos identificam genes selecionados para tamanho, sabor e resistência", en: "Comparative genomes identify genes selected for size, flavor and resistance"}
+          - {pt: "Apenas tradição agrícola", en: "Just agricultural tradition"}
+          - {pt: "Apenas variação cultural", en: "Just cultural variation"}
+          - {pt: "Apenas observação botânica", en: "Just botanical observation"}
+        correctAnswer: {pt: "Genomas comparativos identificam genes selecionados para tamanho, sabor e resistência", en: "Comparative genomes identify genes selected for size, flavor and resistance"}
+        rationale: {pt: "Quando seleção é mapeada, então melhoramento é baseado em mecanismo.", en: "When selection is mapped, breeding is mechanism-based."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Gene tree vs species tree:", en: "Gene tree vs species tree:"}
+        choices:
+          - {pt: "ILS, HGT e duplicação geram árvores gênicas distintas da árvore de espécies", en: "ILS, HGT and duplication yield gene trees distinct from species tree"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe filogenético", en: "Just phylogenetic detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ILS, HGT e duplicação geram árvores gênicas distintas da árvore de espécies", en: "ILS, HGT and duplication yield gene trees distinct from species tree"}
+        rationale: {pt: "Quando inconsistências surgem, então biologia revela complexidade.", en: "When inconsistencies emerge, biology reveals complexity."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genômica do câncer:", en: "Cancer genomics:"}
+        choices:
+          - {pt: "TCGA e ICGC mapeiam pan-cancer com mutações driver, assinaturas e drugability", en: "TCGA and ICGC map pan-cancer with driver mutations, signatures and druggability"}
+          - {pt: "Apenas observação patológica", en: "Just pathological observation"}
+          - {pt: "Apenas tradição oncológica", en: "Just oncological tradition"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "TCGA e ICGC mapeiam pan-cancer com mutações driver, assinaturas e drugability", en: "TCGA and ICGC map pan-cancer with driver mutations, signatures and druggability"}
+        rationale: {pt: "Quando dados são coletivos, então tratamento de precisão escala.", en: "When data is collective, precision treatment scales."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Telômero a telômero (T2T):", en: "Telomere to telomere (T2T):"}
+        choices:
+          - {pt: "Primeira sequência humana totalmente completa em 2022 inclui regiões antes inacessíveis", en: "First fully complete human sequence in 2022 includes previously inaccessible regions"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Primeira sequência humana totalmente completa em 2022 inclui regiões antes inacessíveis", en: "First fully complete human sequence in 2022 includes previously inaccessible regions"}
+        rationale: {pt: "Quando referência é completa, então biologia humana é mais precisa.", en: "When reference is complete, human biology is more precise."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Conservação não-codificante:", en: "Non-coding conservation:"}
+        choices:
+          - {pt: "ENCODE e Roadmap Epigenome catalogam elementos regulatórios conservados em humanos", en: "ENCODE and Roadmap Epigenome catalog conserved regulatory elements in humans"}
+          - {pt: "Apenas DNA lixo", en: "Just junk DNA"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+        correctAnswer: {pt: "ENCODE e Roadmap Epigenome catalogam elementos regulatórios conservados em humanos", en: "ENCODE and Roadmap Epigenome catalog conserved regulatory elements in humans"}
+        rationale: {pt: "Quando reguladores são mapeados, então variantes não-codantes são interpretáveis.", en: "When regulators are mapped, non-coding variants become interpretable."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em genômica comparativa:", en: "Next comparative genomics frontiers:"}
+        choices:
+          - {pt: "Pangenomas espécie-amplos, alinhamento multi-espécie completo e modelagem por IA", en: "Species-wide pangenomes, complete multi-species alignment and AI-based modeling"}
+          - {pt: "Apenas referência única", en: "Just single reference"}
+          - {pt: "Apenas observação", en: "Just observation"}
+          - {pt: "Apenas tradição taxonômica", en: "Just taxonomic tradition"}
+        correctAnswer: {pt: "Pangenomas espécie-amplos, alinhamento multi-espécie completo e modelagem por IA", en: "Species-wide pangenomes, complete multi-species alignment and AI-based modeling"}
+        rationale: {pt: "Quando ferramentas convergem, então evolução vira ciência preditiva.", en: "When tools converge, evolution becomes predictive science."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+target: 20

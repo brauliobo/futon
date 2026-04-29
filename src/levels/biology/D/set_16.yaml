@@ -1,0 +1,244 @@
+title:
+  pt: "📡 Biossensores e nanopore"
+  en: "📡 Biosensors and nanopore"
+level: 'D'
+subject: biology
+objectives: [biology.biosensors]
+difficulty: 5
+authorNotes: "CRISPR-Cas12/13, nanopore, GCaMP, glucose CGM, biossensores baseados em DNA."
+example:
+  pt: "Ex.: amostra → reconhecimento molecular → sinal elétrico/óptico → leitura quantitativa."
+  en: "Ex.: sample → molecular recognition → electric/optical signal → quantitative readout."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas de biossensoriamento", en: "Biosensing platforms"}
+    description: {pt: "Tecnologias para detectar moléculas.", en: "Technologies for molecular detection."}
+    exercises:
+      - type: choice
+        question: {pt: "Sequenciamento por nanopore:", en: "Nanopore sequencing:"}
+        choices:
+          - {pt: "DNA passa por poro detectando mudanças de corrente — leituras longas em tempo real", en: "DNA passes through pore detecting current changes — long real-time reads"}
+          - {pt: "Apenas Sanger clássico", en: "Just classical Sanger"}
+          - {pt: "Apenas microscopia óptica", en: "Just light microscopy"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+        correctAnswer: {pt: "DNA passa por poro detectando mudanças de corrente — leituras longas em tempo real", en: "DNA passes through pore detecting current changes — long real-time reads"}
+        rationale: {pt: "Quando reads são longas, então estruturas complexas são montadas integralmente.", en: "When reads are long, complex structures are integrally assembled."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SHERLOCK e DETECTR:", en: "SHERLOCK and DETECTR:"}
+        choices:
+          - {pt: "CRISPR-Cas13/Cas12 com colaterais detectam ácidos nucleicos com alta sensibilidade", en: "CRISPR-Cas13/Cas12 collateral activity detects nucleic acids with high sensitivity"}
+          - {pt: "Apenas PCR convencional", en: "Just conventional PCR"}
+          - {pt: "Apenas teste rápido genérico", en: "Just generic rapid test"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+        correctAnswer: {pt: "CRISPR-Cas13/Cas12 com colaterais detectam ácidos nucleicos com alta sensibilidade", en: "CRISPR-Cas13/Cas12 collateral activity detects nucleic acids with high sensitivity"}
+        rationale: {pt: "Quando CRISPR detecta, então diagnósticos campo-deployable se tornam possíveis.", en: "When CRISPR detects, field-deployable diagnostics become feasible."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GCaMP:", en: "GCaMP:"}
+        choices:
+          - {pt: "Sonda fluorescente geneticamente codificada que reporta Ca²⁺ em neurônios em tempo real", en: "Genetically encoded fluorescent probe reporting Ca²⁺ in neurons in real time"}
+          - {pt: "Apenas pigmento celular", en: "Just cell pigment"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas fotoproteína inerte", en: "Just inert photoprotein"}
+        correctAnswer: {pt: "Sonda fluorescente geneticamente codificada que reporta Ca²⁺ em neurônios em tempo real", en: "Genetically encoded fluorescent probe reporting Ca²⁺ in neurons in real time"}
+        rationale: {pt: "Quando GCaMP é expressa, então atividade neuronal é vista in vivo.", en: "When GCaMP is expressed, neuronal activity is seen in vivo."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Glucose CGM:", en: "Continuous glucose monitoring (CGM):"}
+        choices:
+          - {pt: "Sensores subcutâneos com glucose oxidase reportam glicemia em tempo real para diabéticos", en: "Subcutaneous glucose oxidase sensors report glycemia in real time for diabetics"}
+          - {pt: "Apenas tira reagente", en: "Just reagent strip"}
+          - {pt: "Apenas exame eventual", en: "Just occasional exam"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+        correctAnswer: {pt: "Sensores subcutâneos com glucose oxidase reportam glicemia em tempo real para diabéticos", en: "Subcutaneous glucose oxidase sensors report glycemia in real time for diabetics"}
+        rationale: {pt: "Quando dados são contínuos, então controle glicêmico melhora dramaticamente.", en: "When data is continuous, glycemic control dramatically improves."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ELISA:", en: "ELISA:"}
+        choices:
+          - {pt: "Anticorpos imobilizados detectam antígenos com sinal enzimático colorimétrico", en: "Immobilized antibodies detect antigens with colorimetric enzymatic signal"}
+          - {pt: "Apenas western blot", en: "Just western blot"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "Anticorpos imobilizados detectam antígenos com sinal enzimático colorimétrico", en: "Immobilized antibodies detect antigens with colorimetric enzymatic signal"}
+        rationale: {pt: "Quando ELISA é robusto, então diagnósticos rotineiros funcionam globalmente.", en: "When ELISA is robust, routine diagnostics work globally."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Aptâmeros:", en: "Aptamers:"}
+        choices:
+          - {pt: "Oligonucleotídeos selecionados por SELEX reconhecem alvos com especificidade tipo anticorpo", en: "SELEX-selected oligonucleotides recognize targets with antibody-like specificity"}
+          - {pt: "Apenas curiosidade molecular", en: "Just molecular curiosity"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+        correctAnswer: {pt: "Oligonucleotídeos selecionados por SELEX reconhecem alvos com especificidade tipo anticorpo", en: "SELEX-selected oligonucleotides recognize targets with antibody-like specificity"}
+        rationale: {pt: "Quando aptâmeros agem, então alternativa não-imune a anticorpos surge.", en: "When aptamers act, non-immune alternative to antibodies emerges."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DNA origami sensors:", en: "DNA origami sensors:"}
+        choices:
+          - {pt: "Estruturas de DNA programadas reconhecem moléculas e mudam conformação detectável", en: "Programmed DNA structures recognize molecules and change detectable conformation"}
+          - {pt: "Apenas curiosidade nanotecnológica", en: "Just nanotechnology curiosity"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+          - {pt: "Apenas modelo descritivo", en: "Just descriptive model"}
+        correctAnswer: {pt: "Estruturas de DNA programadas reconhecem moléculas e mudam conformação detectável", en: "Programmed DNA structures recognize molecules and change detectable conformation"}
+        rationale: {pt: "Quando DNA é programado, então sensores são desenhados sob demanda.", en: "When DNA is programmed, sensors are designed on demand."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "FRET sensors:", en: "FRET sensors:"}
+        choices:
+          - {pt: "Pares fluoróforos reportam interações ou distâncias intramoleculares em escala nm", en: "Fluorophore pairs report intramolecular interactions or distances at nm scale"}
+          - {pt: "Apenas microscopia simples", en: "Just simple microscopy"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas observação visual", en: "Just visual observation"}
+        correctAnswer: {pt: "Pares fluoróforos reportam interações ou distâncias intramoleculares em escala nm", en: "Fluorophore pairs report intramolecular interactions or distances at nm scale"}
+        rationale: {pt: "Quando FRET é usado, então mudanças conformacionais são vistas em vivo.", en: "When FRET is used, conformational changes are seen in vivo."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Wearable sweat sensors:", en: "Wearable sweat sensors:"}
+        choices:
+          - {pt: "Patches detectam lactato, eletrólitos, cortisol e drogas via análise contínua de suor", en: "Patches detect lactate, electrolytes, cortisol and drugs via continuous sweat analysis"}
+          - {pt: "Apenas relógio comum", en: "Just common watch"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição esportiva", en: "Just sport tradition"}
+        correctAnswer: {pt: "Patches detectam lactato, eletrólitos, cortisol e drogas via análise contínua de suor", en: "Patches detect lactate, electrolytes, cortisol and drugs via continuous sweat analysis"}
+        rationale: {pt: "Quando wearables medem, então fisiologia em tempo real é monitorada.", en: "When wearables measure, real-time physiology is monitored."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ressonância plasmônica de superfície (SPR):", en: "Surface plasmon resonance (SPR):"}
+        choices:
+          - {pt: "Detecta interações biomoleculares em tempo real sem marcação fluorescente", en: "Detects biomolecular interactions in real time without fluorescent labels"}
+          - {pt: "Apenas microscopia óptica", en: "Just light microscopy"}
+          - {pt: "Apenas curiosidade física", en: "Just physical curiosity"}
+          - {pt: "Apenas observação visual", en: "Just visual observation"}
+        correctAnswer: {pt: "Detecta interações biomoleculares em tempo real sem marcação fluorescente", en: "Detects biomolecular interactions in real time without fluorescent labels"}
+        rationale: {pt: "Quando SPR é usada, então cinética de drogas é medida diretamente.", en: "When SPR is used, drug kinetics are directly measured."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações", en: "Applications"}
+    description: {pt: "Biossensoriamento na clínica e no campo.", en: "Biosensing in clinic and field."}
+    exercises:
+      - type: choice
+        question: {pt: "Diagnóstico point-of-care:", en: "Point-of-care diagnostics:"}
+        choices:
+          - {pt: "Lateral flow + isotermal LAMP/SHERLOCK trazem PCR para campo em minutos", en: "Lateral flow + isothermal LAMP/SHERLOCK bring PCR-grade testing to field in minutes"}
+          - {pt: "Apenas exame laboratorial central", en: "Just central laboratory exam"}
+          - {pt: "Apenas tira indicadora", en: "Just indicator strip"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Lateral flow + isotermal LAMP/SHERLOCK trazem PCR para campo em minutos", en: "Lateral flow + isothermal LAMP/SHERLOCK bring PCR-grade testing to field in minutes"}
+        rationale: {pt: "Quando POC é eficaz, então acesso global a diagnósticos amplia.", en: "When POC is effective, global diagnostic access expands."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sequenciamento clínico portátil:", en: "Portable clinical sequencing:"}
+        choices:
+          - {pt: "MinION (Oxford Nanopore) sequencia em campo, identificando surtos em horas", en: "MinION (Oxford Nanopore) sequences in field, identifying outbreaks within hours"}
+          - {pt: "Apenas máquina centralizada", en: "Just centralized machine"}
+          - {pt: "Apenas tradição laboratorial", en: "Just lab tradition"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+        correctAnswer: {pt: "MinION (Oxford Nanopore) sequencia em campo, identificando surtos em horas", en: "MinION (Oxford Nanopore) sequences in field, identifying outbreaks within hours"}
+        rationale: {pt: "Quando sequenciamento é portátil, então vigilância epidemiológica acelera.", en: "When sequencing is portable, epidemiological surveillance accelerates."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Detecção de patógenos via wastewater:", en: "Pathogen detection via wastewater:"}
+        choices:
+          - {pt: "Esgotos amostrados detectam SARS-CoV-2, polio e antibióticos resistentes em comunidades", en: "Sampled sewage detects SARS-CoV-2, polio and resistant antibiotics in communities"}
+          - {pt: "Apenas curiosidade epidemiológica", en: "Just epidemiological curiosity"}
+          - {pt: "Apenas exame individual", en: "Just individual exam"}
+          - {pt: "Apenas tradição sanitária", en: "Just sanitary tradition"}
+        correctAnswer: {pt: "Esgotos amostrados detectam SARS-CoV-2, polio e antibióticos resistentes em comunidades", en: "Sampled sewage detects SARS-CoV-2, polio and resistant antibiotics in communities"}
+        rationale: {pt: "Quando esgoto fala, então saúde pública monitora populações inteiras barato.", en: "When sewage speaks, public health monitors whole populations cheaply."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Liquid biopsy:", en: "Liquid biopsy:"}
+        choices:
+          - {pt: "ctDNA e CTCs detectam câncer cedo, monitoram resposta e identificam recidiva precoce", en: "ctDNA and CTCs detect early cancer, monitor response and identify early relapse"}
+          - {pt: "Apenas biópsia tecidual", en: "Just tissue biopsy"}
+          - {pt: "Apenas exame imagem", en: "Just imaging exam"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "ctDNA e CTCs detectam câncer cedo, monitoram resposta e identificam recidiva precoce", en: "ctDNA and CTCs detect early cancer, monitor response and identify early relapse"}
+        rationale: {pt: "Quando sangue revela tumor, então oncologia ganha precisão temporal.", en: "When blood reveals tumor, oncology gains temporal precision."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Multiplex PCR:", en: "Multiplex PCR:"}
+        choices:
+          - {pt: "Detecta dezenas de patógenos respiratórios ou gastrointestinais em uma reação", en: "Detects dozens of respiratory or gastrointestinal pathogens in a single reaction"}
+          - {pt: "Apenas teste único", en: "Just single test"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+          - {pt: "Apenas observação", en: "Just observation"}
+        correctAnswer: {pt: "Detecta dezenas de patógenos respiratórios ou gastrointestinais em uma reação", en: "Detects dozens of respiratory or gastrointestinal pathogens in a single reaction"}
+        rationale: {pt: "Quando multiplex roda, então tratamento empírico é guiado por dados.", en: "When multiplex runs, empirical treatment is data-guided."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Espectrometria de massa em diagnóstico:", en: "Mass spec in diagnostics:"}
+        choices:
+          - {pt: "MALDI-TOF identifica bactérias e fungos clinicamente em minutos com alta precisão", en: "MALDI-TOF identifies bacteria and fungi clinically in minutes with high precision"}
+          - {pt: "Apenas cultura tradicional", en: "Just traditional culture"}
+          - {pt: "Apenas observação morfológica", en: "Just morphological observation"}
+          - {pt: "Apenas tradição microbiológica", en: "Just microbiological tradition"}
+        correctAnswer: {pt: "MALDI-TOF identifica bactérias e fungos clinicamente em minutos com alta precisão", en: "MALDI-TOF identifies bacteria and fungi clinically in minutes with high precision"}
+        rationale: {pt: "Quando MS identifica, então decisão antimicrobiana é otimizada.", en: "When MS identifies, antimicrobial decision is optimized."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biossensores baseados em células:", en: "Cell-based biosensors:"}
+        choices:
+          - {pt: "Bactérias engenheiradas reportam toxinas, hormônios e doenças via genes-repórter", en: "Engineered bacteria report toxins, hormones and diseases via reporter genes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas decoração biológica", en: "Just biological decoration"}
+          - {pt: "Apenas variação experimental", en: "Just experimental variation"}
+        correctAnswer: {pt: "Bactérias engenheiradas reportam toxinas, hormônios e doenças via genes-repórter", en: "Engineered bacteria report toxins, hormones and diseases via reporter genes"}
+        rationale: {pt: "Quando células detectam, então biossensoriamento vivo é específico e renovável.", en: "When cells detect, living biosensing is specific and renewable."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Multi-omics em diagnóstico:", en: "Multi-omics in diagnostics:"}
+        choices:
+          - {pt: "Genômica + proteômica + metabolômica integradas viabilizam diagnósticos complexos precisos", en: "Integrated genomics + proteomics + metabolomics enable precise complex diagnostics"}
+          - {pt: "Apenas exame único", en: "Just single test"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+        correctAnswer: {pt: "Genômica + proteômica + metabolômica integradas viabilizam diagnósticos complexos precisos", en: "Integrated genomics + proteomics + metabolomics enable precise complex diagnostics"}
+        rationale: {pt: "Quando dados convergem, então doenças complexas são desvendadas.", en: "When data converges, complex diseases are unraveled."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Privacidade e biossensores:", en: "Privacy and biosensors:"}
+        choices:
+          - {pt: "Dados contínuos de saúde demandam consentimento e segurança rigorosos", en: "Continuous health data demands rigorous consent and security"}
+          - {pt: "Apenas regulação genérica", en: "Just generic regulation"}
+          - {pt: "Apenas curiosidade legal", en: "Just legal curiosity"}
+          - {pt: "Apenas tradição administrativa", en: "Just administrative tradition"}
+        correctAnswer: {pt: "Dados contínuos de saúde demandam consentimento e segurança rigorosos", en: "Continuous health data demands rigorous consent and security"}
+        rationale: {pt: "Quando proteção é robusta, então confiança em wearables cresce.", en: "When protection is robust, wearable trust grows."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em biossensores:", en: "Next biosensor frontiers:"}
+        choices:
+          - {pt: "Implantáveis com decadência programada, AI-guided diagnostic e detecção single-cell", en: "Programmable-decay implantables, AI-guided diagnostics and single-cell detection"}
+          - {pt: "Apenas teste rotineiro", en: "Just routine test"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Implantáveis com decadência programada, AI-guided diagnostic e detecção single-cell", en: "Programmable-decay implantables, AI-guided diagnostics and single-cell detection"}
+        rationale: {pt: "Quando ferramentas convergem, então biossensores transformam saúde preventiva.", en: "When tools converge, biosensors transform preventive health."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+target: 20
