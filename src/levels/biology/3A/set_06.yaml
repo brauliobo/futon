@@ -1,0 +1,244 @@
+title:
+  pt: "🧬 Genômica e bioinformática"
+  en: "🧬 Genomics and bioinformatics"
+level: '3A'
+subject: biology
+objectives: [biology.genomics]
+difficulty: 4
+authorNotes: "Sequenciamento de próxima geração, alinhamento, GWAS, microbioma."
+example:
+  pt: "Ex.: NGS sequencia bilhões de bases em horas; algoritmos alinham reads ao genoma de referência; SNPs revelam variantes."
+  en: "Ex.: NGS sequences billions of bases in hours; algorithms align reads to reference genome; SNPs reveal variants."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Tecnologias de sequenciamento", en: "Sequencing technologies"}
+    description: {pt: "Como lemos DNA em escala.", en: "How we read DNA at scale."}
+    exercises:
+      - type: choice
+        question: {pt: "Genoma humano completo tem:", en: "Complete human genome has:"}
+        choices:
+          - {pt: "~3 bilhões de pares de bases (~20.000 genes)", en: "~3 billion base pairs (~20,000 genes)"}
+          - {pt: "Apenas mil bases", en: "Just a thousand bases"}
+          - {pt: "1 trilhão de bases", en: "1 trillion bases"}
+          - {pt: "Sem DNA", en: "No DNA"}
+        correctAnswer: {pt: "~3 bilhões de pares de bases (~20.000 genes)", en: "~3 billion base pairs (~20,000 genes)"}
+        rationale: {pt: "Como apenas ~2% codifica proteínas, então maior parte é regulatória, repetitiva ou função desconhecida.", en: "Because only ~2% codes for proteins, most is regulatory, repetitive, or of unknown function."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Projeto Genoma Humano (1990-2003):", en: "Human Genome Project (1990-2003):"}
+        choices:
+          - {pt: "Primeiro sequenciamento completo do genoma humano — custo ~$3 bilhões", en: "First complete human genome sequencing — cost ~$3 billion"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+          - {pt: "Sem importância", en: "No importance"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Primeiro sequenciamento completo do genoma humano — custo ~$3 bilhões", en: "First complete human genome sequencing — cost ~$3 billion"}
+        rationale: {pt: "Como abriu era genômica, então hoje custa ~$200 e leva horas — base para medicina personalizada.", en: "Because it opened genomic era, today costs ~$200 and takes hours — basis for personalized medicine."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "NGS (next-generation sequencing):", en: "NGS (next-generation sequencing):"}
+        choices:
+          - {pt: "Sequenciamento massivo paralelo — milhões de reads simultâneas", en: "Massively parallel sequencing — millions of simultaneous reads"}
+          - {pt: "Apenas Sanger", en: "Just Sanger"}
+          - {pt: "Sequenciamento manual", en: "Manual sequencing"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Sequenciamento massivo paralelo — milhões de reads simultâneas", en: "Massively parallel sequencing — millions of simultaneous reads"}
+        rationale: {pt: "Como derruba custos exponencialmente (Lei de Moore para DNA), então genômica clínica torna-se viável.", en: "Because it slashes costs exponentially (Moore's Law for DNA), clinical genomics becomes viable."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Read em sequenciamento é:", en: "A read in sequencing is:"}
+        choices:
+          - {pt: "Pequena sequência (~150 bp) lida pelo sequenciador", en: "Small sequence (~150 bp) read by the sequencer"}
+          - {pt: "Genoma inteiro", en: "Whole genome"}
+          - {pt: "Apenas um nucleotídeo", en: "Just one nucleotide"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Pequena sequência (~150 bp) lida pelo sequenciador", en: "Small sequence (~150 bp) read by the sequencer"}
+        rationale: {pt: "Como reads precisam ser \"montadas\", então alinhamento ao genoma de referência é etapa-chave de bioinformática.", en: "Because reads must be \"assembled\", alignment to reference genome is a key bioinformatics step."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Alinhamento de sequências:", en: "Sequence alignment:"}
+        choices:
+          - {pt: "Comparar sequências para encontrar similaridades — algoritmos como BLAST", en: "Compare sequences to find similarities — algorithms like BLAST"}
+          - {pt: "Apenas matemática", en: "Just math"}
+          - {pt: "Sem propósito", en: "No purpose"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Comparar sequências para encontrar similaridades — algoritmos como BLAST", en: "Compare sequences to find similarities — algorithms like BLAST"}
+        rationale: {pt: "Como evolução conserva sequências funcionais, então BLAST identifica genes relacionados em diferentes espécies.", en: "Because evolution conserves functional sequences, BLAST identifies related genes across species."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "SNP (polimorfismo de nucleotídeo único):", en: "SNP (single nucleotide polymorphism):"}
+        choices:
+          - {pt: "Variação de uma base entre indivíduos — milhões em humanos", en: "Single-base variation between individuals — millions in humans"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem variação", en: "No variation"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+        correctAnswer: {pt: "Variação de uma base entre indivíduos — milhões em humanos", en: "Single-base variation between individuals — millions in humans"}
+        rationale: {pt: "Como cada SNP marca herança regional, então testes genéticos comerciais usam-os para genealogia e risco de doença.", en: "Because each SNP marks regional inheritance, commercial genetic tests use them for genealogy and disease risk."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "GWAS (genome-wide association study):", en: "GWAS (genome-wide association study):"}
+        choices:
+          - {pt: "Compara SNPs entre pessoas com/sem doença para achar variantes associadas", en: "Compares SNPs between people with/without disease to find associated variants"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Compara SNPs entre pessoas com/sem doença para achar variantes associadas", en: "Compares SNPs between people with/without disease to find associated variants"}
+        rationale: {pt: "Como descobre fatores de risco genéticos, então GWAS revolucionou compreensão de diabetes, esquizofrenia, autismo.", en: "Because it discovers genetic risk factors, GWAS revolutionized understanding of diabetes, schizophrenia, autism."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Transcriptoma é:", en: "Transcriptome is:"}
+        choices:
+          - {pt: "Conjunto completo de RNAs em uma célula/tecido em determinado momento", en: "Complete set of RNAs in a cell/tissue at a given time"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Sem importância", en: "No importance"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Conjunto completo de RNAs em uma célula/tecido em determinado momento", en: "Complete set of RNAs in a cell/tissue at a given time"}
+        rationale: {pt: "Como RNA-seq mede expressão gênica, então identificamos quais genes estão ativos em câncer, desenvolvimento, etc.", en: "Because RNA-seq measures gene expression, we identify active genes in cancer, development, etc."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Proteoma é:", en: "Proteome is:"}
+        choices:
+          - {pt: "Conjunto completo de proteínas — mais complexo que genoma (splicing, modificações)", en: "Complete set of proteins — more complex than genome (splicing, modifications)"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Sem variedade", en: "No variety"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Conjunto completo de proteínas — mais complexo que genoma (splicing, modificações)", en: "Complete set of proteins — more complex than genome (splicing, modifications)"}
+        rationale: {pt: "Como cada gene pode produzir múltiplas proteínas, então humanos têm ~20k genes mas centenas de milhares de proteínas.", en: "Because each gene can produce multiple proteins, humans have ~20k genes but hundreds of thousands of proteins."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Microbioma humano:", en: "Human microbiome:"}
+        choices:
+          - {pt: "Trilhões de microrganismos em/no corpo — pele, intestino, boca, etc.", en: "Trillions of microorganisms in/on body — skin, gut, mouth, etc."}
+          - {pt: "Apenas patógenos", en: "Just pathogens"}
+          - {pt: "Sem importância", en: "No importance"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Trilhões de microrganismos em/no corpo — pele, intestino, boca, etc.", en: "Trillions of microorganisms in/on body — skin, gut, mouth, etc."}
+        rationale: {pt: "Como bactérias intestinais influenciam digestão, imunidade, humor, então saúde depende de equilíbrio microbiano.", en: "Because gut bacteria influence digestion, immunity, mood, health depends on microbial balance."}
+        objectives: [biology.genomics]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Aplicações genômicas", en: "Genomic applications"}
+    description: {pt: "Medicina, evolução, sociedade.", en: "Medicine, evolution, society."}
+    exercises:
+      - type: choice
+        question: {pt: "Medicina personalizada (precisão):", en: "Personalized (precision) medicine:"}
+        choices:
+          - {pt: "Tratamento baseado no perfil genético do paciente — ex.: oncologia molecular", en: "Treatment based on patient's genetic profile — e.g., molecular oncology"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Sempre genérica", en: "Always generic"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Tratamento baseado no perfil genético do paciente — ex.: oncologia molecular", en: "Treatment based on patient's genetic profile — e.g., molecular oncology"}
+        rationale: {pt: "Como tumores diferem geneticamente, então sequenciá-los guia escolha de fármacos-alvo específicos.", en: "Because tumors differ genetically, sequencing them guides choice of specific targeted drugs."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Farmacogenômica:", en: "Pharmacogenomics:"}
+        choices:
+          - {pt: "Como variantes genéticas afetam resposta a medicamentos (ex.: warfarina, codeína)", en: "How genetic variants affect drug response (e.g., warfarin, codeine)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Como variantes genéticas afetam resposta a medicamentos (ex.: warfarina, codeína)", en: "How genetic variants affect drug response (e.g., warfarin, codeine)"}
+        rationale: {pt: "Como CYP450 metaboliza muitos fármacos, então variantes \"metabolizadores rápidos/lentos\" afetam dosagem.", en: "Because CYP450 metabolizes many drugs, \"fast/slow metabolizer\" variants affect dosing."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Filogenia molecular:", en: "Molecular phylogenetics:"}
+        choices:
+          - {pt: "Construir árvores evolutivas a partir de comparações de DNA/proteínas", en: "Build evolutionary trees from DNA/protein comparisons"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Construir árvores evolutivas a partir de comparações de DNA/proteínas", en: "Build evolutionary trees from DNA/protein comparisons"}
+        rationale: {pt: "Como mutações acumulam-se em taxa relativamente constante, então DNA é \"relógio molecular\" para datar divergências.", en: "Because mutations accumulate at relatively constant rate, DNA is a \"molecular clock\" for dating divergences."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "DNA antigo (aDNA):", en: "Ancient DNA (aDNA):"}
+        choices:
+          - {pt: "Sequenciamento de fósseis e restos arqueológicos — Neandertais, mamutes", en: "Sequencing of fossils and archaeological remains — Neanderthals, mammoths"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Sequenciamento de fósseis e restos arqueológicos — Neandertais, mamutes", en: "Sequencing of fossils and archaeological remains — Neanderthals, mammoths"}
+        rationale: {pt: "Como ~1-4% do genoma de humanos não-africanos é neandertal, então cruzamentos antigos deixaram marcas.", en: "Because ~1-4% of non-African human genome is Neanderthal, ancient interbreeding left marks."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Bioinformática usa:", en: "Bioinformatics uses:"}
+        choices:
+          - {pt: "Algoritmos, estatística e bancos de dados para analisar dados biológicos massivos", en: "Algorithms, statistics, and databases to analyze massive biological data"}
+          - {pt: "Apenas microscópios", en: "Just microscopes"}
+          - {pt: "Sem ferramentas", en: "No tools"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Algoritmos, estatística e bancos de dados para analisar dados biológicos massivos", en: "Algorithms, statistics, and databases to analyze massive biological data"}
+        rationale: {pt: "Como NGS gera terabytes de dados, então sem bioinformática não há descoberta — é fronteira da biologia moderna.", en: "Because NGS generates terabytes, without bioinformatics there's no discovery — it's a modern biology frontier."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Bancos de dados públicos importantes:", en: "Important public databases:"}
+        choices:
+          - {pt: "GenBank, UniProt, PDB, Ensembl — disponíveis gratuitamente", en: "GenBank, UniProt, PDB, Ensembl — freely available"}
+          - {pt: "Apenas pagos", en: "Only paid"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Não existem", en: "Don't exist"}
+        correctAnswer: {pt: "GenBank, UniProt, PDB, Ensembl — disponíveis gratuitamente", en: "GenBank, UniProt, PDB, Ensembl — freely available"}
+        rationale: {pt: "Como abertos à comunidade global, então pesquisadores compartilham dados acelerando descobertas.", en: "Because open to global community, researchers share data accelerating discoveries."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "ENCODE (Encyclopedia of DNA Elements):", en: "ENCODE (Encyclopedia of DNA Elements):"}
+        choices:
+          - {pt: "Mapeia elementos funcionais do genoma humano (regulatórios, ncRNAs, etc.)", en: "Maps functional elements of human genome (regulatory, ncRNAs, etc.)"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+          - {pt: "Sem propósito", en: "No purpose"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Mapeia elementos funcionais do genoma humano (regulatórios, ncRNAs, etc.)", en: "Maps functional elements of human genome (regulatory, ncRNAs, etc.)"}
+        rationale: {pt: "Como muito do \"DNA-lixo\" é funcional, então ENCODE mostra que ~80% do genoma tem alguma atividade.", en: "Because much \"junk DNA\" is functional, ENCODE shows ~80% of genome has some activity."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "AlphaFold (DeepMind):", en: "AlphaFold (DeepMind):"}
+        choices:
+          - {pt: "IA que prediz estrutura 3D de proteínas a partir da sequência — revolução em 2021", en: "AI predicting 3D protein structure from sequence — 2021 revolution"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem importância", en: "No importance"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "IA que prediz estrutura 3D de proteínas a partir da sequência — revolução em 2021", en: "AI predicting 3D protein structure from sequence — 2021 revolution"}
+        rationale: {pt: "Como cobre ~200 milhões de proteínas, então acelera pesquisa biomédica drasticamente — Nobel Química 2024.", en: "Because it covers ~200 million proteins, it dramatically accelerates biomedical research — 2024 Chemistry Nobel."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Privacidade genética:", en: "Genetic privacy:"}
+        choices:
+          - {pt: "DNA contém informações sensíveis — risco de discriminação genética/seguros", en: "DNA contains sensitive info — risk of genetic discrimination/insurance"}
+          - {pt: "Sem risco", en: "No risk"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "DNA contém informações sensíveis — risco de discriminação genética/seguros", en: "DNA contains sensitive info — risk of genetic discrimination/insurance"}
+        rationale: {pt: "Como DNA não muda, então vazamento é permanente — leis (GINA nos EUA) protegem contra discriminação.", en: "Because DNA doesn't change, leaks are permanent — laws (GINA in US) protect against discrimination."}
+        objectives: [biology.genomics]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: genômica e bioinformática:", en: "Summary: genomics and bioinformatics:"}
+        choices:
+          - {pt: "Combinam sequenciamento massivo + computação para entender vida em escala molecular", en: "Combine massive sequencing + computing to understand life at molecular scale"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem aplicação", en: "No application"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Combinam sequenciamento massivo + computação para entender vida em escala molecular", en: "Combine massive sequencing + computing to understand life at molecular scale"}
+        rationale: {pt: "Como atravessa medicina, ecologia e evolução, então é fronteira interdisciplinar central da biologia 21.", en: "Because it crosses medicine, ecology, and evolution, it's a central interdisciplinary frontier of 21st-century biology."}
+        objectives: [biology.genomics]
+        difficulty: 4
+target: 20
