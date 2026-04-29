@@ -1,0 +1,244 @@
+title:
+  pt: "📝 Edição epigenética dirigida"
+  en: "📝 Targeted epigenetic editing"
+level: 'B'
+subject: biology
+objectives: [biology.epigenetic_editing]
+difficulty: 5
+authorNotes: "dCas9-efetores, edição de marcas (metilação, acetilação), CRISPRi/a, reprogramação focal, terapias."
+example:
+  pt: "Ex.: dCas9-DNMT3A → guia para promotor → metilação CpG → silenciamento estável → fenótipo modulado."
+  en: "Ex.: dCas9-DNMT3A → guide to promoter → CpG methylation → stable silencing → modulated phenotype."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas de edição epigenética", en: "Epigenetic editing platforms"}
+    description: {pt: "Modificar marcas sem mexer na sequência.", en: "Modify marks without altering sequence."}
+    exercises:
+      - type: choice
+        question: {pt: "Edição epigenética visa:", en: "Epigenetic editing aims to:"}
+        choices:
+          - {pt: "Alterar marcas químicas (metilação, acetilação) sem mudar sequência de DNA", en: "Alter chemical marks (methylation, acetylation) without changing DNA sequence"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Alterar marcas químicas (metilação, acetilação) sem mudar sequência de DNA", en: "Alter chemical marks (methylation, acetylation) without changing DNA sequence"}
+        rationale: {pt: "Quando reversibilidade é possível, então abordagem é mais segura que edição genômica.", en: "When reversibility is possible, approach is safer than genomic editing."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "dCas9 (dead Cas9) serve para:", en: "dCas9 (dead Cas9) serves to:"}
+        choices:
+          - {pt: "Direcionar efetores epigenéticos a loci específicos sem cortar DNA", en: "Direct epigenetic effectors to specific loci without cutting DNA"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Direcionar efetores epigenéticos a loci específicos sem cortar DNA", en: "Direct epigenetic effectors to specific loci without cutting DNA"}
+        rationale: {pt: "Quando atividade nuclease é removida, então sgRNA + dCas9 vira plataforma modular.", en: "When nuclease activity is removed, sgRNA + dCas9 becomes modular platform."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "dCas9-DNMT3A induz:", en: "dCas9-DNMT3A induces:"}
+        choices:
+          - {pt: "Metilação de CpGs em locus-alvo, silenciando gene se em promotor", en: "CpG methylation at target locus, silencing gene if at promoter"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Metilação de CpGs em locus-alvo, silenciando gene se em promotor", en: "CpG methylation at target locus, silencing gene if at promoter"}
+        rationale: {pt: "Quando metilação é direcionada, então silenciamento herdável estável é estabelecido.", en: "When methylation is directed, stable heritable silencing is established."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "dCas9-TET1 induz:", en: "dCas9-TET1 induces:"}
+        choices:
+          - {pt: "Demetilação de CpGs, reativando genes silenciados em locus específico", en: "CpG demethylation, reactivating silenced genes at specific locus"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Demetilação de CpGs, reativando genes silenciados em locus específico", en: "CpG demethylation, reactivating silenced genes at specific locus"}
+        rationale: {pt: "Quando 5mC é convertido em 5hmC e depois removido, então transcrição é restaurada.", en: "When 5mC is converted to 5hmC and removed, transcription is restored."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CRISPRi clássico usa:", en: "Classic CRISPRi uses:"}
+        choices:
+          - {pt: "dCas9-KRAB recrutando complexos repressivos para silenciar gene reversivelmente", en: "dCas9-KRAB recruiting repressive complexes to reversibly silence gene"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "dCas9-KRAB recrutando complexos repressivos para silenciar gene reversivelmente", en: "dCas9-KRAB recruiting repressive complexes to reversibly silence gene"}
+        rationale: {pt: "Quando KRAB induz heterocromatina, então silenciamento dura enquanto efetor estiver presente.", en: "When KRAB induces heterochromatin, silencing lasts while effector is present."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CRISPRoff (silenciamento durável):", en: "CRISPRoff (durable silencing):"}
+        choices:
+          - {pt: "Combina KRAB + DNMT3A/L para silenciamento herdável após pulso curto", en: "Combines KRAB + DNMT3A/L for heritable silencing after short pulse"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Combina KRAB + DNMT3A/L para silenciamento herdável após pulso curto", en: "Combines KRAB + DNMT3A/L for heritable silencing after short pulse"}
+        rationale: {pt: "Quando pulso é breve, então célula 'memoriza' silenciamento sem expressão contínua de efetor.", en: "When pulse is brief, cell 'memorizes' silencing without continuous effector expression."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CRISPRa (ativação) atua via:", en: "CRISPRa (activation) acts via:"}
+        choices:
+          - {pt: "dCas9-VP64/SAM/SunTag recrutando complexos transcricionais ativadores", en: "dCas9-VP64/SAM/SunTag recruiting activating transcriptional complexes"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "dCas9-VP64/SAM/SunTag recrutando complexos transcricionais ativadores", en: "dCas9-VP64/SAM/SunTag recruiting activating transcriptional complexes"}
+        rationale: {pt: "Quando ativadores convergem no promotor, então expressão sobe sem alterar gene endógeno.", en: "When activators converge on promoter, expression rises without altering endogenous gene."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modificação de histonas dirigida via:", en: "Targeted histone modification via:"}
+        choices:
+          - {pt: "dCas9-p300 (acetilação) ou dCas9-LSD1 (demetilação H3K4me)", en: "dCas9-p300 (acetylation) or dCas9-LSD1 (H3K4me demethylation)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "dCas9-p300 (acetilação) ou dCas9-LSD1 (demetilação H3K4me)", en: "dCas9-p300 (acetylation) or dCas9-LSD1 (H3K4me demethylation)"}
+        rationale: {pt: "Quando enzimas histônicas são direcionadas, então estado cromatínico local é reescrito.", en: "When histone enzymes are directed, local chromatin state is rewritten."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Edição de RNA m6A dirigida:", en: "Targeted m6A RNA editing:"}
+        choices:
+          - {pt: "dCas13-METTL3 ou FTO modulam metilação m6A em mRNAs específicos", en: "dCas13-METTL3 or FTO modulate m6A methylation on specific mRNAs"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "dCas13-METTL3 ou FTO modulam metilação m6A em mRNAs específicos", en: "dCas13-METTL3 or FTO modulate m6A methylation on specific mRNAs"}
+        rationale: {pt: "Quando epitranscriptoma é editado, então estabilidade e tradução de mRNA mudam dirigidamente.", en: "When epitranscriptome is edited, mRNA stability and translation change in a directed way."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Edição epigenética vs CRISPR-Cas9 clássico:", en: "Epigenetic editing vs classic CRISPR-Cas9:"}
+        choices:
+          - {pt: "Reversível, sem alterar sequência, mas pode ser perdida após divisões celulares", en: "Reversible, no sequence change, but may be lost after cell divisions"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Reversível, sem alterar sequência, mas pode ser perdida após divisões celulares", en: "Reversible, no sequence change, but may be lost after cell divisions"}
+        rationale: {pt: "Quando segurança é prioridade, então edição epigenética é mais conservadora que cortes.", en: "When safety is priority, epigenetic editing is more conservative than cuts."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações terapêuticas e fronteiras", en: "Therapeutic applications and frontiers"}
+    description: {pt: "Doenças via reescrita epigenética.", en: "Diseases via epigenetic rewriting."}
+    exercises:
+      - type: choice
+        question: {pt: "Reativação de HbF em hemoglobinopatias:", en: "HbF reactivation in hemoglobinopathies:"}
+        choices:
+          - {pt: "Edição epigenética do enhancer BCL11A reativa hemoglobina fetal protetora", en: "Epigenetic editing of BCL11A enhancer reactivates protective fetal hemoglobin"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Edição epigenética do enhancer BCL11A reativa hemoglobina fetal protetora", en: "Epigenetic editing of BCL11A enhancer reactivates protective fetal hemoglobin"}
+        rationale: {pt: "Quando regulador correto é alvejado, então anemia falciforme/β-talassemia podem ser tratadas.", en: "When correct regulator is targeted, sickle cell/β-thalassemia can be treated."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Silenciamento de PCSK9 epigeneticamente:", en: "Epigenetic PCSK9 silencing:"}
+        choices:
+          - {pt: "Reduz LDL plasmático sem alterar sequência genômica do paciente", en: "Reduces plasma LDL without altering patient's genomic sequence"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Reduz LDL plasmático sem alterar sequência genômica do paciente", en: "Reduces plasma LDL without altering patient's genomic sequence"}
+        rationale: {pt: "Quando PCSK9 é silenciado epigeneticamente, então LDLR aumenta e LDL cai durável.", en: "When PCSK9 is epigenetically silenced, LDLR rises and LDL drops durably."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Reescrita epigenética em Fragile X:", en: "Epigenetic rewriting in Fragile X:"}
+        choices:
+          - {pt: "Demetilação dirigida em FMR1 reativa expressão silenciada do gene", en: "Targeted demethylation at FMR1 reactivates silenced gene expression"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Demetilação dirigida em FMR1 reativa expressão silenciada do gene", en: "Targeted demethylation at FMR1 reactivates silenced gene expression"}
+        rationale: {pt: "Quando FMR1 volta a expressar, então sintomas neurológicos podem regredir.", en: "When FMR1 expresses again, neurological symptoms may regress."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Reprogramação parcial via edição epigenética:", en: "Partial reprogramming via epigenetic editing:"}
+        choices:
+          - {pt: "Modificação de marcas envelhecidas em CpGs específicos para rejuvenescimento focal", en: "Modification of aged marks at specific CpGs for focal rejuvenation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Modificação de marcas envelhecidas em CpGs específicos para rejuvenescimento focal", en: "Modification of aged marks at specific CpGs for focal rejuvenation"}
+        rationale: {pt: "Quando edição é precisa, então rejuvenescimento ocorre sem reprogramar célula inteira.", en: "When editing is precise, rejuvenation occurs without reprogramming the whole cell."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Edição em câncer (silenciar oncogene):", en: "Editing in cancer (silencing oncogene):"}
+        choices:
+          - {pt: "CRISPRoff em MYC ou KRAS pode reduzir crescimento tumoral em modelos", en: "CRISPRoff on MYC or KRAS may reduce tumor growth in models"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "CRISPRoff em MYC ou KRAS pode reduzir crescimento tumoral em modelos", en: "CRISPRoff on MYC or KRAS may reduce tumor growth in models"}
+        rationale: {pt: "Quando oncogenes são silenciados sem corte, então toxicidade e mutação adicional são minimizadas.", en: "When oncogenes are silenced without cuts, toxicity and added mutation are minimized."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Edição de imprinting em síndromes:", en: "Imprinting editing in syndromes:"}
+        choices:
+          - {pt: "Reativar alelo silenciado em Prader-Willi/Angelman é estratégia terapêutica em estudo", en: "Reactivating silenced allele in Prader-Willi/Angelman is a therapeutic strategy under study"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Reativar alelo silenciado em Prader-Willi/Angelman é estratégia terapêutica em estudo", en: "Reactivating silenced allele in Prader-Willi/Angelman is a therapeutic strategy under study"}
+        rationale: {pt: "Quando alelo paterno/materno restante é ativado, então proteína falta é compensada.", en: "When remaining paternal/maternal allele is activated, missing protein is compensated."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Off-targets em edição epigenética:", en: "Off-targets in epigenetic editing:"}
+        choices:
+          - {pt: "Atividade fora do alvo pode espalhar marcas erradas — design cuidadoso de sgRNA", en: "Off-target activity may spread wrong marks — careful sgRNA design"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Atividade fora do alvo pode espalhar marcas erradas — design cuidadoso de sgRNA", en: "Off-target activity may spread wrong marks — careful sgRNA design"}
+        rationale: {pt: "Quando guia não é específico, então loci não-alvo recebem edição indesejada.", en: "When guide is not specific, non-target loci receive unwanted editing."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Entrega de edição epigenética via:", en: "Epigenetic editing delivery via:"}
+        choices:
+          - {pt: "AAV, LNP-mRNA ou edição ex vivo em células-tronco com retransplante", en: "AAV, LNP-mRNA or ex vivo editing in stem cells with re-transplantation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "AAV, LNP-mRNA ou edição ex vivo em células-tronco com retransplante", en: "AAV, LNP-mRNA or ex vivo editing in stem cells with re-transplantation"}
+        rationale: {pt: "Quando entrega é apropriada, então só pulso transitório é necessário para silenciamento durável.", en: "When delivery is suitable, only a transient pulse is needed for durable silencing."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Combinação CRISPRi + CRISPRa em screens:", en: "CRISPRi + CRISPRa combination in screens:"}
+        choices:
+          - {pt: "Mapeia perda e ganho de função no mesmo experimento — visão epigenômica completa", en: "Maps loss and gain of function in same experiment — complete epigenomic view"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Mapeia perda e ganho de função no mesmo experimento — visão epigenômica completa", en: "Maps loss and gain of function in same experiment — complete epigenomic view"}
+        rationale: {pt: "Quando dois sentidos são explorados, então resposta funcional fica simétrica.", en: "When both directions are explored, functional response is symmetric."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em edição epigenética:", en: "Next frontiers in epigenetic editing:"}
+        choices:
+          - {pt: "Edição de cromatina 3D, especificidade tecidual e edição combinada multi-locus", en: "3D chromatin editing, tissue specificity and combined multi-locus editing"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Edição de cromatina 3D, especificidade tecidual e edição combinada multi-locus", en: "3D chromatin editing, tissue specificity and combined multi-locus editing"}
+        rationale: {pt: "Quando ferramentas amadurecem, então 'reescrita' epigenômica multidimensional fica viável.", en: "When tools mature, multidimensional epigenomic 'rewriting' becomes feasible."}
+        objectives: [biology.epigenetic_editing]
+        difficulty: 5
+target: 20
