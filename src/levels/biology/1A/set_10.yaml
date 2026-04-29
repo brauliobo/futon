@@ -1,0 +1,244 @@
+title:
+  pt: "🗺️ Ômicas espaciais"
+  en: "🗺️ Spatial omics"
+level: '1A'
+subject: biology
+objectives: [biology.spatial_omics]
+difficulty: 5
+authorNotes: "Transcriptômica espacial, proteômica espacial, mapas de tecidos, atlas celulares com posição."
+example:
+  pt: "Ex.: corte de tecido → captura espacial de RNA → mapeamento de células → padrão revelado → função inferida."
+  en: "Ex.: tissue section → spatial RNA capture → cell mapping → pattern revealed → function inferred."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Tecnologias de espacialidade molecular", en: "Spatial molecular technologies"}
+    description: {pt: "Onde a expressão acontece importa.", en: "Where expression happens matters."}
+    exercises:
+      - type: choice
+        question: {pt: "Transcriptômica espacial estuda:", en: "Spatial transcriptomics studies:"}
+        choices:
+          - {pt: "Expressão gênica preservando localização no tecido", en: "Gene expression preserving tissue location"}
+          - {pt: "Apenas média populacional sem posição", en: "Just population average without position"}
+          - {pt: "Apenas DNA isolado", en: "Just isolated DNA"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Expressão gênica preservando localização no tecido", en: "Gene expression preserving tissue location"}
+        rationale: {pt: "Quando localização é mantida, então arquitetura tecidual e função emergem juntas.", en: "When location is kept, tissue architecture and function emerge together."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Visium (10x Genomics) usa:", en: "Visium (10x Genomics) uses:"}
+        choices:
+          - {pt: "Lâmina com spots barcoded que capturam mRNA do tecido sobreposto", en: "Slide with barcoded spots capturing mRNA from overlaid tissue"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas microscopia óptica simples", en: "Just simple optical microscopy"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Lâmina com spots barcoded que capturam mRNA do tecido sobreposto", en: "Slide with barcoded spots capturing mRNA from overlaid tissue"}
+        rationale: {pt: "Quando barcodes registram coordenadas, então sequenciamento revela mapa transcricional do tecido.", en: "When barcodes record coordinates, sequencing reveals tissue transcriptional map."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MERFISH/seqFISH detectam:", en: "MERFISH/seqFISH detect:"}
+        choices:
+          - {pt: "Centenas a milhares de mRNAs em escala subcelular via FISH multiplex", en: "Hundreds to thousands of mRNAs at subcellular resolution via multiplex FISH"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA cromossômico", en: "Just chromosomal DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Centenas a milhares de mRNAs em escala subcelular via FISH multiplex", en: "Hundreds to thousands of mRNAs at subcellular resolution via multiplex FISH"}
+        rationale: {pt: "Quando códigos combinatórios são lidos, então transcriptoma é mapeado com precisão de organelas.", en: "When combinatorial codes are read, transcriptome is mapped at organelle precision."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Slide-seq atinge:", en: "Slide-seq achieves:"}
+        choices:
+          - {pt: "Resolução próxima a célula única em larga área de tecido via beads barcoded", en: "Near single-cell resolution over large tissue area via barcoded beads"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas suspensão dissociada", en: "Just dissociated suspension"}
+          - {pt: "Apenas estática", en: "Just static"}
+        correctAnswer: {pt: "Resolução próxima a célula única em larga área de tecido via beads barcoded", en: "Near single-cell resolution over large tissue area via barcoded beads"}
+        rationale: {pt: "Quando beads cobrem lâmina, então cada bead é um pixel transcricional fino.", en: "When beads tile the slide, each bead is a fine transcriptional pixel."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imageamento por massa (IMC, MIBI) mede:", en: "Mass cytometry imaging (IMC, MIBI) measures:"}
+        choices:
+          - {pt: "Dezenas de proteínas marcadas com isótopos em corte de tecido", en: "Dozens of isotope-tagged proteins in tissue section"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Dezenas de proteínas marcadas com isótopos em corte de tecido", en: "Dozens of isotope-tagged proteins in tissue section"}
+        rationale: {pt: "Quando espectrometria escaneia o tecido, então proteoma in situ é quantificado simultaneamente.", en: "When spectrometry scans tissue, in situ proteome is quantified simultaneously."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CODEX/PhenoCycler usa:", en: "CODEX/PhenoCycler uses:"}
+        choices:
+          - {pt: "Anticorpos marcados com oligonucleotídeos detectados ciclicamente por fluorescência", en: "DNA-tagged antibodies detected cyclically by fluorescence"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA bruto", en: "Just raw DNA"}
+          - {pt: "Apenas microscopia simples", en: "Just simple microscopy"}
+        correctAnswer: {pt: "Anticorpos marcados com oligonucleotídeos detectados ciclicamente por fluorescência", en: "DNA-tagged antibodies detected cyclically by fluorescence"}
+        rationale: {pt: "Quando ciclos revelam um marcador por vez, então 50+ proteínas são imaginadas no mesmo corte.", en: "When cycles reveal one marker at a time, 50+ proteins are imaged in the same section."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imageamento por MS (MALDI imaging) mapeia:", en: "MS imaging (MALDI imaging) maps:"}
+        choices:
+          - {pt: "Distribuição espacial de metabólitos, lipídios e fármacos no tecido", en: "Spatial distribution of metabolites, lipids and drugs in tissue"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Distribuição espacial de metabólitos, lipídios e fármacos no tecido", en: "Spatial distribution of metabolites, lipids and drugs in tissue"}
+        rationale: {pt: "Quando lasers ionizam molécula a molécula, então metabolomas locais são revelados.", en: "When lasers ionize molecule by molecule, local metabolomes are revealed."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single-cell + spatial juntos permitem:", en: "Single-cell + spatial together allow:"}
+        choices:
+          - {pt: "Identificar tipos celulares e localizá-los nos tecidos com contexto", en: "Identify cell types and place them in tissues with context"}
+          - {pt: "Apenas média celular", en: "Just cell average"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Identificar tipos celulares e localizá-los nos tecidos com contexto", en: "Identify cell types and place them in tissues with context"}
+        rationale: {pt: "Quando deconvolução combina ambas as técnicas, então arquitetura celular emerge integralmente.", en: "When deconvolution combines both techniques, cellular architecture emerges fully."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vizinhança celular (cellular neighborhoods):", en: "Cellular neighborhoods:"}
+        choices:
+          - {pt: "Padrões recorrentes de tipos celulares co-localizados que predizem função/desfecho", en: "Recurrent patterns of co-localized cell types predicting function/outcome"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Padrões recorrentes de tipos celulares co-localizados que predizem função/desfecho", en: "Recurrent patterns of co-localized cell types predicting function/outcome"}
+        rationale: {pt: "Quando vizinhanças correlacionam com prognóstico, então biópsia espacial guia oncologia.", en: "When neighborhoods correlate with prognosis, spatial biopsy guides oncology."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resolução subcelular em ômicas espaciais permite:", en: "Subcellular resolution in spatial omics allows:"}
+        choices:
+          - {pt: "Localizar mRNAs em compartimentos específicos (núcleo, axônio, sinapse)", en: "Localize mRNAs in specific compartments (nucleus, axon, synapse)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas DNA fora", en: "Just DNA outside"}
+        correctAnswer: {pt: "Localizar mRNAs em compartimentos específicos (núcleo, axônio, sinapse)", en: "Localize mRNAs in specific compartments (nucleus, axon, synapse)"}
+        rationale: {pt: "Quando RNA local é resolvido, então tradução em sinapses revela neurociência molecular fina.", en: "When local RNA is resolved, synaptic translation reveals fine molecular neuroscience."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações e atlas", en: "Applications and atlases"}
+    description: {pt: "Da bancada à clínica e ao atlas global.", en: "From bench to clinic and the global atlas."}
+    exercises:
+      - type: choice
+        question: {pt: "Atlas de tecidos espaciais (HCA Spatial) servem para:", en: "Spatial tissue atlases (HCA Spatial) serve to:"}
+        choices:
+          - {pt: "Referência de organização normal contra a qual comparar doença", en: "Reference of normal organization against which to compare disease"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Referência de organização normal contra a qual comparar doença", en: "Reference of normal organization against which to compare disease"}
+        rationale: {pt: "Quando comparamos com atlas, então alterações patológicas saltam visualmente.", en: "When we compare with the atlas, pathological alterations stand out visually."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microambiente tumoral espacial revela:", en: "Spatial tumor microenvironment reveals:"}
+        choices:
+          - {pt: "Como linfócitos infiltram, onde imunossupressão atua e quais zonas resistem", en: "How lymphocytes infiltrate, where immunosuppression acts and which zones resist"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Como linfócitos infiltram, onde imunossupressão atua e quais zonas resistem", en: "How lymphocytes infiltrate, where immunosuppression acts and which zones resist"}
+        rationale: {pt: "Quando posição importa, então imunoterapia personalizada se beneficia de mapa espacial.", en: "When position matters, personalized immunotherapy benefits from spatial map."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Em neurociência, espacial revela:", en: "In neuroscience, spatial reveals:"}
+        choices:
+          - {pt: "Camadas corticais, regiões hipocampais e gradientes moleculares discretos", en: "Cortical layers, hippocampal regions and discrete molecular gradients"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Camadas corticais, regiões hipocampais e gradientes moleculares discretos", en: "Cortical layers, hippocampal regions and discrete molecular gradients"}
+        rationale: {pt: "Quando expressão segue padrões anatômicos, então arquitetura cerebral é molecular e topológica.", en: "When expression follows anatomical patterns, brain architecture is molecular and topological."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Em desenvolvimento, espacial revela:", en: "In development, spatial reveals:"}
+        choices:
+          - {pt: "Padronização e gradientes morfogenéticos em tempo real e em 3D", en: "Patterning and morphogenetic gradients in real time and 3D"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+        correctAnswer: {pt: "Padronização e gradientes morfogenéticos em tempo real e em 3D", en: "Patterning and morphogenetic gradients in real time and 3D"}
+        rationale: {pt: "Quando seguimos posição-célula-tempo, então embriologia se alinha com biologia molecular.", en: "When we track position-cell-time, embryology aligns with molecular biology."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Comunicação célula-célula é inferida em ômicas espaciais por:", en: "Cell-cell communication is inferred in spatial omics by:"}
+        choices:
+          - {pt: "Pares ligante-receptor expressos em células vizinhas", en: "Ligand-receptor pairs expressed in neighboring cells"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Pares ligante-receptor expressos em células vizinhas", en: "Ligand-receptor pairs expressed in neighboring cells"}
+        rationale: {pt: "Quando proximidade é considerada, então sinalização parácrina é mapeada com confiança.", en: "When proximity is considered, paracrine signaling is mapped with confidence."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Custos limitam ômicas espaciais por:", en: "Cost limits spatial omics due to:"}
+        choices:
+          - {pt: "Reagentes especiais, instrumentação e bioinformática intensiva", en: "Special reagents, instrumentation and heavy bioinformatics"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Reagentes especiais, instrumentação e bioinformática intensiva", en: "Special reagents, instrumentation and heavy bioinformatics"}
+        rationale: {pt: "Quando preço cair, então acessibilidade global cresce e clínica adota tecnologia.", en: "When price drops, global accessibility grows and clinic adopts the technology."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Análise espacial usa estatísticas como:", en: "Spatial analysis uses statistics like:"}
+        choices:
+          - {pt: "Autocorrelação espacial (Moran's I), nicho-encontro e clusterização espacial", en: "Spatial autocorrelation (Moran's I), niche encounter and spatial clustering"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas média global", en: "Just global average"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Autocorrelação espacial (Moran's I), nicho-encontro e clusterização espacial", en: "Spatial autocorrelation (Moran's I), niche encounter and spatial clustering"}
+        rationale: {pt: "Quando espacialidade é quantificada, então padrões emergem além do olho humano.", en: "When spatiality is quantified, patterns emerge beyond the human eye."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Espacial em hematologia (medula óssea):", en: "Spatial in hematology (bone marrow):"}
+        choices:
+          - {pt: "Mapeia nichos de células-tronco e arquitetura de leucemias", en: "Maps stem cell niches and leukemia architecture"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Mapeia nichos de células-tronco e arquitetura de leucemias", en: "Maps stem cell niches and leukemia architecture"}
+        rationale: {pt: "Quando interações nicho-tumor são vistas, então alvos terapêuticos novos surgem.", en: "When niche-tumor interactions are seen, novel therapeutic targets emerge."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inteligência artificial em ômicas espaciais:", en: "AI in spatial omics:"}
+        choices:
+          - {pt: "Aprende padrões espaciais e prediz desfechos a partir de imagens multiplexadas", en: "Learns spatial patterns and predicts outcomes from multiplexed images"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+        correctAnswer: {pt: "Aprende padrões espaciais e prediz desfechos a partir de imagens multiplexadas", en: "Learns spatial patterns and predicts outcomes from multiplexed images"}
+        rationale: {pt: "Quando deep learning escala, então sinais sutis viram biomarcadores robustos.", en: "When deep learning scales, subtle signals become robust biomarkers."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em ômicas espaciais:", en: "Next frontiers in spatial omics:"}
+        choices:
+          - {pt: "3D, dinâmica temporal, multi-ômica integrada e in vivo em tempo real", en: "3D, temporal dynamics, integrated multi-omics and real-time in vivo"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "3D, dinâmica temporal, multi-ômica integrada e in vivo em tempo real", en: "3D, temporal dynamics, integrated multi-omics and real-time in vivo"}
+        rationale: {pt: "Quando dimensões somam, então tecidos vivos serão lidos como filmes moleculares.", en: "When dimensions add up, living tissues will be read as molecular movies."}
+        objectives: [biology.spatial_omics]
+        difficulty: 5
+target: 20
