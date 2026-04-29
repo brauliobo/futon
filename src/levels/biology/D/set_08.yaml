@@ -1,0 +1,244 @@
+title:
+  pt: "👥 Genômica populacional"
+  en: "👥 Population genomics"
+level: 'D'
+subject: biology
+objectives: [biology.popgen]
+difficulty: 5
+authorNotes: "Drift, seleção, estrutura populacional, varredura seletiva, Fst, demografia."
+example:
+  pt: "Ex.: alelo vantajoso → frequência sobe → varredura → diversidade local cai → assinatura detectável."
+  en: "Ex.: advantageous allele → frequency rises → sweep → local diversity drops → detectable signature."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Forças evolutivas", en: "Evolutionary forces"}
+    description: {pt: "Mutação, seleção, drift, fluxo gênico.", en: "Mutation, selection, drift, gene flow."}
+    exercises:
+      - type: choice
+        question: {pt: "Drift genético:", en: "Genetic drift:"}
+        choices:
+          - {pt: "Mudança estocástica de frequências por amostragem aleatória — domina em populações pequenas", en: "Stochastic frequency change from random sampling — dominates in small populations"}
+          - {pt: "Apenas seleção natural pura", en: "Just pure natural selection"}
+          - {pt: "Apenas mutação aleatória", en: "Just random mutation"}
+          - {pt: "Apenas migração", en: "Just migration"}
+        correctAnswer: {pt: "Mudança estocástica de frequências por amostragem aleatória — domina em populações pequenas", en: "Stochastic frequency change from random sampling — dominates in small populations"}
+        rationale: {pt: "Quando N é pequeno, então drift supera seleção fraca.", en: "When N is small, drift overcomes weak selection."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fst:", en: "Fst:"}
+        choices:
+          - {pt: "Mede diferenciação populacional pela proporção da variância entre populações", en: "Measures population differentiation by between-population variance proportion"}
+          - {pt: "Apenas distância geográfica", en: "Just geographic distance"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+          - {pt: "Apenas curiosidade estatística", en: "Just statistical curiosity"}
+        correctAnswer: {pt: "Mede diferenciação populacional pela proporção da variância entre populações", en: "Measures population differentiation by between-population variance proportion"}
+        rationale: {pt: "Quando Fst alto, então populações divergiram muito por drift ou seleção.", en: "When Fst is high, populations diverged much via drift or selection."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Coalescente:", en: "Coalescent:"}
+        choices:
+          - {pt: "Modelo retrospectivo de linhagens convergindo a ancestrais comuns — base de inferência demográfica", en: "Retrospective model of lineages coalescing to common ancestors — basis of demographic inference"}
+          - {pt: "Apenas curiosidade matemática", en: "Just mathematical curiosity"}
+          - {pt: "Apenas cálculo prospectivo", en: "Just prospective calculation"}
+          - {pt: "Apenas observação empírica", en: "Just empirical observation"}
+        correctAnswer: {pt: "Modelo retrospectivo de linhagens convergindo a ancestrais comuns — base de inferência demográfica", en: "Retrospective model of lineages coalescing to common ancestors — basis of demographic inference"}
+        rationale: {pt: "Quando coalescente é usado, então história populacional é reconstruída.", en: "When coalescent is used, population history is reconstructed."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Varredura seletiva:", en: "Selective sweep:"}
+        choices:
+          - {pt: "Alelo vantajoso fixa-se rapidamente reduzindo diversidade em região ligada (hitchhiking)", en: "Advantageous allele fixes rapidly reducing diversity in linked region (hitchhiking)"}
+          - {pt: "Apenas mutação rara", en: "Just rare mutation"}
+          - {pt: "Apenas drift trivial", en: "Just trivial drift"}
+          - {pt: "Apenas migração ocasional", en: "Just occasional migration"}
+        correctAnswer: {pt: "Alelo vantajoso fixa-se rapidamente reduzindo diversidade em região ligada (hitchhiking)", en: "Advantageous allele fixes rapidly reducing diversity in linked region (hitchhiking)"}
+        rationale: {pt: "Quando varredura ocorre, então adaptação deixa assinatura genômica detectável.", en: "When sweep occurs, adaptation leaves detectable genomic signature."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Seleção balanceadora:", en: "Balancing selection:"}
+        choices:
+          - {pt: "Mantém múltiplos alelos (HLA, anemia falciforme em portadores) por vantagem do heterozigoto", en: "Maintains multiple alleles (HLA, sickle cell carriers) by heterozygote advantage"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+          - {pt: "Apenas mutação trivial", en: "Just trivial mutation"}
+          - {pt: "Apenas drift histórico", en: "Just historical drift"}
+        correctAnswer: {pt: "Mantém múltiplos alelos (HLA, anemia falciforme em portadores) por vantagem do heterozigoto", en: "Maintains multiple alleles (HLA, sickle cell carriers) by heterozygote advantage"}
+        rationale: {pt: "Quando heterozigoto é favorecido, então diversidade é mantida ativamente.", en: "When heterozygote is favored, diversity is actively maintained."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bottleneck:", en: "Bottleneck:"}
+        choices:
+          - {pt: "Redução drástica de N gera perda de diversidade — chita, foca cinzenta, populações fundadoras", en: "Drastic N reduction yields diversity loss — cheetah, gray seal, founder populations"}
+          - {pt: "Apenas curiosidade demográfica", en: "Just demographic curiosity"}
+          - {pt: "Apenas evento ambiental", en: "Just environmental event"}
+          - {pt: "Apenas migração", en: "Just migration"}
+        correctAnswer: {pt: "Redução drástica de N gera perda de diversidade — chita, foca cinzenta, populações fundadoras", en: "Drastic N reduction yields diversity loss — cheetah, gray seal, founder populations"}
+        rationale: {pt: "Quando bottleneck ocorre, então saúde futura da população é limitada.", en: "When bottleneck occurs, future population health is limited."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fluxo gênico:", en: "Gene flow:"}
+        choices:
+          - {pt: "Migração e cruzamento entre populações homogeneizam frequências, contrabalanceando drift", en: "Migration and interbreeding between populations homogenize frequencies, countering drift"}
+          - {pt: "Apenas curiosidade migratória", en: "Just migratory curiosity"}
+          - {pt: "Apenas dispersão geográfica", en: "Just geographic dispersal"}
+          - {pt: "Apenas mistura aleatória", en: "Just random mixing"}
+        correctAnswer: {pt: "Migração e cruzamento entre populações homogeneizam frequências, contrabalanceando drift", en: "Migration and interbreeding between populations homogenize frequencies, countering drift"}
+        rationale: {pt: "Quando fluxo é alto, então populações ficam geneticamente conectadas.", en: "When flow is high, populations remain genetically connected."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Equilíbrio Hardy-Weinberg:", en: "Hardy-Weinberg equilibrium:"}
+        choices:
+          - {pt: "Frequências alélicas constantes sob ausência de mutação, seleção, drift, migração e acasalamento aleatório", en: "Constant allele frequencies under no mutation, selection, drift, migration and random mating"}
+          - {pt: "Apenas curiosidade teórica", en: "Just theoretical curiosity"}
+          - {pt: "Apenas modelo abstrato", en: "Just abstract model"}
+          - {pt: "Apenas cálculo escolar", en: "Just school calculation"}
+        correctAnswer: {pt: "Frequências alélicas constantes sob ausência de mutação, seleção, drift, migração e acasalamento aleatório", en: "Constant allele frequencies under no mutation, selection, drift, migration and random mating"}
+        rationale: {pt: "Quando HW é referência, então desvios sinalizam força evolutiva atuante.", en: "When HW is reference, deviations signal acting evolutionary force."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Estrutura populacional:", en: "Population structure:"}
+        choices:
+          - {pt: "PCA e ADMIXTURE inferem estratificação genética e fração de ancestralidade", en: "PCA and ADMIXTURE infer genetic stratification and ancestry fractions"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas observação visual", en: "Just visual observation"}
+          - {pt: "Apenas categoria informal", en: "Just informal category"}
+        correctAnswer: {pt: "PCA e ADMIXTURE inferem estratificação genética e fração de ancestralidade", en: "PCA and ADMIXTURE infer genetic stratification and ancestry fractions"}
+        rationale: {pt: "Quando estrutura é mapeada, então estudos de associação corrigem confundimento.", en: "When structure is mapped, association studies correct for confounding."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inferência demográfica (PSMC, SMC++):", en: "Demographic inference (PSMC, SMC++):"}
+        choices:
+          - {pt: "Métodos coalescentes inferem tamanho efetivo populacional ao longo do tempo a partir de genomas", en: "Coalescent methods infer effective population size over time from genomes"}
+          - {pt: "Apenas registros históricos", en: "Just historical records"}
+          - {pt: "Apenas observação demográfica", en: "Just demographic observation"}
+          - {pt: "Apenas censo direto", en: "Just direct census"}
+        correctAnswer: {pt: "Métodos coalescentes inferem tamanho efetivo populacional ao longo do tempo a partir de genomas", en: "Coalescent methods infer effective population size over time from genomes"}
+        rationale: {pt: "Quando inferência funciona, então história demográfica milenar é reconstruída.", en: "When inference works, millennia-long demographic history is reconstructed."}
+        objectives: [biology.popgen]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações", en: "Applications"}
+    description: {pt: "Pop-gen na clínica e conservação.", en: "Pop-gen in clinic and conservation."}
+    exercises:
+      - type: choice
+        question: {pt: "Adaptação humana:", en: "Human adaptation:"}
+        choices:
+          - {pt: "Lactase, EPAS1 (tibetanos) e SLC24A5 mostram seleção positiva recente em humanos", en: "Lactase, EPAS1 (Tibetans) and SLC24A5 show recent positive selection in humans"}
+          - {pt: "Apenas curiosidade racial", en: "Just racial curiosity"}
+          - {pt: "Apenas observação cultural", en: "Just cultural observation"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Lactase, EPAS1 (tibetanos) e SLC24A5 mostram seleção positiva recente em humanos", en: "Lactase, EPAS1 (Tibetans) and SLC24A5 show recent positive selection in humans"}
+        rationale: {pt: "Quando seleção é detectável, então biologia humana é dinâmica recente.", en: "When selection is detectable, human biology is recently dynamic."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mendelian randomization:", en: "Mendelian randomization:"}
+        choices:
+          - {pt: "Variantes genéticas como instrumentos para inferir causalidade observacional", en: "Genetic variants as instruments to infer observational causality"}
+          - {pt: "Apenas estudo descritivo", en: "Just descriptive study"}
+          - {pt: "Apenas opinião especialista", en: "Just expert opinion"}
+          - {pt: "Apenas observação clínica", en: "Just clinical observation"}
+        correctAnswer: {pt: "Variantes genéticas como instrumentos para inferir causalidade observacional", en: "Genetic variants as instruments to infer observational causality"}
+        rationale: {pt: "Quando alelos são aleatórios, então confundidores se distribuem como em RCT natural.", en: "When alleles are random, confounders distribute as in a natural RCT."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GWAS multi-ancestrais:", en: "Multi-ancestry GWAS:"}
+        choices:
+          - {pt: "Coortes diversas reduzem viés europeu e melhoram transferibilidade de PGS", en: "Diverse cohorts reduce European bias and improve PGS transferability"}
+          - {pt: "Apenas detalhe estatístico", en: "Just statistical detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+        correctAnswer: {pt: "Coortes diversas reduzem viés europeu e melhoram transferibilidade de PGS", en: "Diverse cohorts reduce European bias and improve PGS transferability"}
+        rationale: {pt: "Quando dados diversificam, então benefícios genômicos chegam a todos.", en: "When data diversifies, genomic benefits reach everyone."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Conservação:", en: "Conservation:"}
+        choices:
+          - {pt: "Diversidade genética prediz vulnerabilidade — ESUs e resgate genético orientam manejo", en: "Genetic diversity predicts vulnerability — ESUs and genetic rescue guide management"}
+          - {pt: "Apenas curiosidade ecológica", en: "Just ecological curiosity"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas observação naturalista", en: "Just naturalist observation"}
+        correctAnswer: {pt: "Diversidade genética prediz vulnerabilidade — ESUs e resgate genético orientam manejo", en: "Genetic diversity predicts vulnerability — ESUs and genetic rescue guide management"}
+        rationale: {pt: "Quando dados informam, então conservação ganha precisão genética.", en: "When data informs, conservation gains genetic precision."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Detecção de seleção (iHS, XP-EHH):", en: "Selection detection (iHS, XP-EHH):"}
+        choices:
+          - {pt: "Estatísticas baseadas em haplótipos detectam adaptações recentes em escala genômica", en: "Haplotype-based statistics detect recent adaptations at genomic scale"}
+          - {pt: "Apenas observação anedótica", en: "Just anecdotal observation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+        correctAnswer: {pt: "Estatísticas baseadas em haplótipos detectam adaptações recentes em escala genômica", en: "Haplotype-based statistics detect recent adaptations at genomic scale"}
+        rationale: {pt: "Quando estatísticas são robustas, então sinal evolutivo é separado de drift.", en: "When statistics are robust, evolutionary signal is separated from drift."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "eDNA populacional:", en: "Population eDNA:"}
+        choices:
+          - {pt: "DNA ambiental amostrado em água ou solo monitora abundância e estrutura de populações", en: "Environmental DNA from water or soil monitors abundance and population structure"}
+          - {pt: "Apenas observação visual", en: "Just visual observation"}
+          - {pt: "Apenas captura física", en: "Just physical capture"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "DNA ambiental amostrado em água ou solo monitora abundância e estrutura de populações", en: "Environmental DNA from water or soil monitors abundance and population structure"}
+        rationale: {pt: "Quando eDNA é coletado, então biodiversidade é monitorada não-invasivamente.", en: "When eDNA is collected, biodiversity is monitored non-invasively."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mistura arcaica humana:", en: "Human archaic admixture:"}
+        choices:
+          - {pt: "Neanderthais e denisovanos contribuíram ~1-6% para populações não-africanas modernas", en: "Neanderthals and Denisovans contributed ~1-6% to modern non-African populations"}
+          - {pt: "Apenas curiosidade pré-histórica", en: "Just prehistoric curiosity"}
+          - {pt: "Apenas observação fóssil", en: "Just fossil observation"}
+          - {pt: "Apenas mito popular", en: "Just popular myth"}
+        correctAnswer: {pt: "Neanderthais e denisovanos contribuíram ~1-6% para populações não-africanas modernas", en: "Neanderthals and Denisovans contributed ~1-6% to modern non-African populations"}
+        rationale: {pt: "Quando mistura é detectada, então história humana é mais entrelaçada do que se pensava.", en: "When admixture is detected, human history is more interwoven than thought."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Carga mutacional:", en: "Mutational load:"}
+        choices:
+          - {pt: "Acúmulo de variantes deletérias afeta saúde — relevante em populações pequenas e bottlenecks", en: "Deleterious variant accumulation affects health — relevant in small populations and bottlenecks"}
+          - {pt: "Apenas curiosidade médica", en: "Just medical curiosity"}
+          - {pt: "Apenas observação genética", en: "Just genetic observation"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Acúmulo de variantes deletérias afeta saúde — relevante em populações pequenas e bottlenecks", en: "Deleterious variant accumulation affects health — relevant in small populations and bottlenecks"}
+        rationale: {pt: "Quando carga é alta, então saúde populacional declina ao longo de gerações.", en: "When load is high, population health declines over generations."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genômica forense:", en: "Forensic genomics:"}
+        choices:
+          - {pt: "Genealogia genética identifica suspeitos via bases de dados — caso Golden State Killer", en: "Genetic genealogy identifies suspects via databases — Golden State Killer case"}
+          - {pt: "Apenas DNA mitocondrial", en: "Just mitochondrial DNA"}
+          - {pt: "Apenas amostra de saliva", en: "Just saliva sample"}
+          - {pt: "Apenas comparação direta", en: "Just direct comparison"}
+        correctAnswer: {pt: "Genealogia genética identifica suspeitos via bases de dados — caso Golden State Killer", en: "Genetic genealogy identifies suspects via databases — Golden State Killer case"}
+        rationale: {pt: "Quando dados crescem, então justiça e privacidade entram em tensão.", en: "When data grows, justice and privacy enter tension."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em genômica populacional:", en: "Next pop-genomics frontiers:"}
+        choices:
+          - {pt: "Pangenomas, biobancos diversos e modelos integrativos com fenótipos complexos", en: "Pangenomes, diverse biobanks and integrative models with complex phenotypes"}
+          - {pt: "Apenas referência única", en: "Just single reference"}
+          - {pt: "Apenas observação clínica", en: "Just clinical observation"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+        correctAnswer: {pt: "Pangenomas, biobancos diversos e modelos integrativos com fenótipos complexos", en: "Pangenomes, diverse biobanks and integrative models with complex phenotypes"}
+        rationale: {pt: "Quando recursos amadurecem, então medicina genômica equitativa torna-se viável.", en: "When resources mature, equitable genomic medicine becomes viable."}
+        objectives: [biology.popgen]
+        difficulty: 5
+target: 20
