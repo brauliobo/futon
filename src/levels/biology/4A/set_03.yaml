@@ -1,0 +1,244 @@
+title:
+  pt: "🧪 Biotecnologia — introdução"
+  en: "🧪 Biotechnology — introduction"
+level: '4A'
+subject: biology
+objectives: [biology.biotech]
+difficulty: 4
+authorNotes: "PCR, eletroforese, clonagem, transgênicos, CRISPR — visão geral."
+example:
+  pt: "Ex.: PCR amplifica DNA; eletroforese separa por tamanho; CRISPR edita sequências; transgênicos inserem genes."
+  en: "Ex.: PCR amplifies DNA; electrophoresis separates by size; CRISPR edits sequences; transgenics insert genes."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Ferramentas básicas", en: "Basic tools"}
+    description: {pt: "Como manipular DNA em laboratório.", en: "How to manipulate DNA in the lab."}
+    exercises:
+      - type: choice
+        question: {pt: "PCR (reação em cadeia da polimerase) serve para:", en: "PCR (polymerase chain reaction) serves to:"}
+        choices:
+          - {pt: "Amplificar (copiar) regiões específicas de DNA milhões de vezes", en: "Amplify (copy) specific DNA regions millions of times"}
+          - {pt: "Quebrar DNA", en: "Break DNA"}
+          - {pt: "Bombear sangue", en: "Pump blood"}
+          - {pt: "Ver células", en: "View cells"}
+        correctAnswer: {pt: "Amplificar (copiar) regiões específicas de DNA milhões de vezes", en: "Amplify (copy) specific DNA regions millions of times"}
+        rationale: {pt: "Como ciclos de aquecimento/resfriamento separam fitas e replicam, então microgramas viram visíveis em horas.", en: "Because heating/cooling cycles separate strands and replicate, micrograms become visible in hours."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Taq polimerase é usada em PCR porque:", en: "Taq polymerase is used in PCR because:"}
+        choices:
+          - {pt: "É termo-resistente (de bactéria de fonte termal)", en: "It's heat-stable (from a hot-spring bacterium)"}
+          - {pt: "É colorida", en: "It's colored"}
+          - {pt: "É barata só", en: "Just cheap"}
+          - {pt: "Sem motivo especial", en: "No special reason"}
+        correctAnswer: {pt: "É termo-resistente (de bactéria de fonte termal)", en: "It's heat-stable (from a hot-spring bacterium)"}
+        rationale: {pt: "Como PCR aquece a ~95 °C, então enzimas humanas desnaturariam — Taq sobrevive aos ciclos.", en: "Because PCR heats to ~95 °C, human enzymes would denature — Taq survives the cycles."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Eletroforese em gel separa fragmentos de DNA por:", en: "Gel electrophoresis separates DNA fragments by:"}
+        choices:
+          - {pt: "Tamanho (campo elétrico move DNA, fragmentos pequenos vão mais longe)", en: "Size (electric field moves DNA, smaller fragments travel farther)"}
+          - {pt: "Cor", en: "Color"}
+          - {pt: "Peso atômico", en: "Atomic weight"}
+          - {pt: "Aleatoriamente", en: "Randomly"}
+        correctAnswer: {pt: "Tamanho (campo elétrico move DNA, fragmentos pequenos vão mais longe)", en: "Size (electric field moves DNA, smaller fragments travel farther)"}
+        rationale: {pt: "Como DNA tem carga negativa pelo fosfato, então migra ao polo positivo — gel atua como peneira.", en: "Because DNA is negatively charged via phosphate, it migrates to the positive pole — gel acts as a sieve."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Enzimas de restrição (endonucleases) são:", en: "Restriction enzymes (endonucleases) are:"}
+        choices:
+          - {pt: "Tesouras moleculares que cortam DNA em sequências específicas", en: "Molecular scissors cutting DNA at specific sequences"}
+          - {pt: "Apenas tipos de proteína", en: "Just types of protein"}
+          - {pt: "Apenas em humanos", en: "Only in humans"}
+          - {pt: "Não fazem nada", en: "Don't do anything"}
+        correctAnswer: {pt: "Tesouras moleculares que cortam DNA em sequências específicas", en: "Molecular scissors cutting DNA at specific sequences"}
+        rationale: {pt: "Como bactérias usam-nas para defesa contra vírus, então cientistas as adotaram para clonagem molecular.", en: "Because bacteria use them as virus defense, scientists adopted them for molecular cloning."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "DNA ligase é a enzima que:", en: "DNA ligase is the enzyme that:"}
+        choices:
+          - {pt: "Une fragmentos de DNA (cola molecular)", en: "Joins DNA fragments (molecular glue)"}
+          - {pt: "Quebra DNA", en: "Breaks DNA"}
+          - {pt: "Apenas digere proteínas", en: "Only digests proteins"}
+          - {pt: "Bombeia sangue", en: "Pumps blood"}
+        correctAnswer: {pt: "Une fragmentos de DNA (cola molecular)", en: "Joins DNA fragments (molecular glue)"}
+        rationale: {pt: "Como restrição corta e ligase une, então combinam-se para criar DNA recombinante.", en: "Because restriction cuts and ligase joins, they combine to create recombinant DNA."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Plasmídeo é:", en: "A plasmid is:"}
+        choices:
+          - {pt: "DNA circular pequeno em bactérias, usado como vetor de clonagem", en: "Small circular DNA in bacteria, used as cloning vector"}
+          - {pt: "Tipo de proteína", en: "Type of protein"}
+          - {pt: "Tipo de açúcar", en: "Type of sugar"}
+          - {pt: "Tipo de organela", en: "Type of organelle"}
+        correctAnswer: {pt: "DNA circular pequeno em bactérias, usado como vetor de clonagem", en: "Small circular DNA in bacteria, used as cloning vector"}
+        rationale: {pt: "Como pode ser inserido um gene de interesse, então bactérias passam a produzir a proteína desejada.", en: "Because a gene of interest can be inserted, bacteria start producing the desired protein."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Insulina humana atualmente é produzida por:", en: "Human insulin is now produced by:"}
+        choices:
+          - {pt: "Bactérias geneticamente modificadas com o gene da insulina humana", en: "Genetically modified bacteria with the human insulin gene"}
+          - {pt: "Extrato de pâncreas suíno apenas", en: "Just pig pancreas extract"}
+          - {pt: "Síntese química", en: "Chemical synthesis"}
+          - {pt: "Não é produzida", en: "Not produced"}
+        correctAnswer: {pt: "Bactérias geneticamente modificadas com o gene da insulina humana", en: "Genetically modified bacteria with the human insulin gene"}
+        rationale: {pt: "Como E. coli pode expressar o gene humano, então insulina humana é produzida em larga escala — desde 1982.", en: "Because E. coli can express the human gene, human insulin is mass-produced — since 1982."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Sequenciamento de DNA determina:", en: "DNA sequencing determines:"}
+        choices:
+          - {pt: "A ordem exata das bases (A, T, C, G) num fragmento", en: "Exact order of bases (A, T, C, G) in a fragment"}
+          - {pt: "Apenas o tamanho", en: "Just the size"}
+          - {pt: "Apenas a cor", en: "Just the color"}
+          - {pt: "Apenas o peso", en: "Just the weight"}
+        correctAnswer: {pt: "A ordem exata das bases (A, T, C, G) num fragmento", en: "Exact order of bases (A, T, C, G) in a fragment"}
+        rationale: {pt: "Como a sequência codifica tudo, então sequenciar é \"ler\" o livro genético — base de medicina genômica.", en: "Because the sequence encodes everything, sequencing is \"reading\" the genetic book — basis of genomic medicine."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Projeto Genoma Humano (concluído em 2003):", en: "Human Genome Project (completed in 2003):"}
+        choices:
+          - {pt: "Sequenciou pela primeira vez todo o genoma humano (~3 bi pares de bases)", en: "First sequenced the entire human genome (~3 billion bp)"}
+          - {pt: "Apenas estudou plantas", en: "Just studied plants"}
+          - {pt: "Apenas vírus", en: "Just viruses"}
+          - {pt: "Não foi concluído", en: "Wasn't completed"}
+        correctAnswer: {pt: "Sequenciou pela primeira vez todo o genoma humano (~3 bi pares de bases)", en: "First sequenced the entire human genome (~3 billion bp)"}
+        rationale: {pt: "Como abriu a era genômica, então hoje sequenciar um genoma custa horas e centenas de dólares.", en: "Because it opened the genomic era, today sequencing a genome costs hours and hundreds of dollars."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Clonagem reprodutiva (ex.: ovelha Dolly):", en: "Reproductive cloning (e.g., Dolly the sheep):"}
+        choices:
+          - {pt: "Núcleo de célula somática transferido para óvulo enucleado", en: "Somatic cell nucleus transferred to enucleated egg"}
+          - {pt: "Apenas mitose", en: "Just mitosis"}
+          - {pt: "Apenas mutação", en: "Just mutation"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Núcleo de célula somática transferido para óvulo enucleado", en: "Somatic cell nucleus transferred to enucleated egg"}
+        rationale: {pt: "Como o óvulo reprograma o núcleo, então o embrião desenvolve-se idêntico ao doador — Dolly em 1996.", en: "Because the egg reprograms the nucleus, the embryo develops identical to the donor — Dolly in 1996."}
+        objectives: [biology.biotech]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Aplicações modernas", en: "Modern applications"}
+    description: {pt: "Transgênicos, CRISPR, terapias.", en: "Transgenics, CRISPR, therapies."}
+    exercises:
+      - type: choice
+        question: {pt: "Organismo transgênico:", en: "Transgenic organism:"}
+        choices:
+          - {pt: "Recebeu gene de outra espécie em seu genoma", en: "Received a gene from another species in its genome"}
+          - {pt: "Apenas com mutação", en: "Just mutated"}
+          - {pt: "Sem genes", en: "Without genes"}
+          - {pt: "Apenas selvagem", en: "Just wild-type"}
+        correctAnswer: {pt: "Recebeu gene de outra espécie em seu genoma", en: "Received a gene from another species in its genome"}
+        rationale: {pt: "Como soja resistente a herbicida ou bactéria com insulina humana, então transgênicos têm aplicações agrícolas e médicas.", en: "Because herbicide-resistant soy or insulin-producing bacteria, transgenics have agricultural and medical uses."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "CRISPR-Cas9 permite:", en: "CRISPR-Cas9 enables:"}
+        choices:
+          - {pt: "Edição precisa de sequências específicas do DNA", en: "Precise editing of specific DNA sequences"}
+          - {pt: "Apenas amplificação", en: "Just amplification"}
+          - {pt: "Apenas separação", en: "Just separation"}
+          - {pt: "Apenas leitura", en: "Just reading"}
+        correctAnswer: {pt: "Edição precisa de sequências específicas do DNA", en: "Precise editing of specific DNA sequences"}
+        rationale: {pt: "Como guia de RNA + nuclease cortam local exato, então CRISPR revolucionou genética em ~2012 (Nobel 2020).", en: "Because guide RNA + nuclease cut at exact location, CRISPR revolutionized genetics in ~2012 (Nobel 2020)."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Terapia gênica visa:", en: "Gene therapy aims to:"}
+        choices:
+          - {pt: "Tratar doenças genéticas inserindo/corrigindo genes", en: "Treat genetic diseases by inserting/correcting genes"}
+          - {pt: "Apenas dar dor de cabeça", en: "Just give headaches"}
+          - {pt: "Apenas mudar cor da pele", en: "Just change skin color"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Tratar doenças genéticas inserindo/corrigindo genes", en: "Treat genetic diseases by inserting/correcting genes"}
+        rationale: {pt: "Como vetores virais ou edição genética entregam o gene correto, então doenças hereditárias podem ser tratadas na origem.", en: "Because viral vectors or gene editing deliver the correct gene, hereditary diseases can be treated at the source."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Vacinas de mRNA (ex.: COVID-19):", en: "mRNA vaccines (e.g., COVID-19):"}
+        choices:
+          - {pt: "Entregam mRNA codificando proteína viral; células produzem o antígeno", en: "Deliver mRNA encoding viral protein; cells produce the antigen"}
+          - {pt: "Contêm o vírus inteiro", en: "Contain whole virus"}
+          - {pt: "Não funcionam", en: "Don't work"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+        correctAnswer: {pt: "Entregam mRNA codificando proteína viral; células produzem o antígeno", en: "Deliver mRNA encoding viral protein; cells produce the antigen"}
+        rationale: {pt: "Como o sistema imune treina-se contra a proteína, então memória se forma sem exposição ao patógeno.", en: "Because the immune system trains against the protein, memory forms without pathogen exposure."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Teste de paternidade por DNA usa:", en: "DNA paternity testing uses:"}
+        choices:
+          - {pt: "Comparação de marcadores genéticos (microssatélites/STR)", en: "Comparison of genetic markers (microsatellites/STR)"}
+          - {pt: "Cor dos olhos apenas", en: "Just eye color"}
+          - {pt: "Tipo sanguíneo apenas", en: "Just blood type"}
+          - {pt: "Não é confiável", en: "Not reliable"}
+        correctAnswer: {pt: "Comparação de marcadores genéticos (microssatélites/STR)", en: "Comparison of genetic markers (microsatellites/STR)"}
+        rationale: {pt: "Como crianças herdam metade do DNA de cada genitor, então marcadores múltiplos identificam paternidade com >99%.", en: "Because children inherit half DNA from each parent, multiple markers identify paternity with >99%."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Bioinformática é:", en: "Bioinformatics is:"}
+        choices:
+          - {pt: "Uso de computação para analisar dados biológicos (sequências, genomas)", en: "Using computing to analyze biological data (sequences, genomes)"}
+          - {pt: "Tipo de microscopia", en: "Type of microscopy"}
+          - {pt: "Apenas robôs em hospitais", en: "Just hospital robots"}
+          - {pt: "Sem ligação com biologia", en: "Unrelated to biology"}
+        correctAnswer: {pt: "Uso de computação para analisar dados biológicos (sequências, genomas)", en: "Using computing to analyze biological data (sequences, genomes)"}
+        rationale: {pt: "Como genomas têm bilhões de bases, então algoritmos são essenciais para encontrar padrões e variantes.", en: "Because genomes have billions of bases, algorithms are essential to find patterns and variants."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Células-tronco embrionárias são:", en: "Embryonic stem cells are:"}
+        choices:
+          - {pt: "Pluripotentes — podem se diferenciar em quase qualquer tipo celular", en: "Pluripotent — can differentiate into almost any cell type"}
+          - {pt: "Apenas neurônios", en: "Just neurons"}
+          - {pt: "Apenas hemácias", en: "Just red cells"}
+          - {pt: "Não se dividem", en: "Don't divide"}
+        correctAnswer: {pt: "Pluripotentes — podem se diferenciar em quase qualquer tipo celular", en: "Pluripotent — can differentiate into almost any cell type"}
+        rationale: {pt: "Como mantêm potencial amplo, então têm aplicações em medicina regenerativa — alvo de pesquisa intensa.", en: "Because they keep broad potential, they have regenerative medicine applications — intense research target."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "iPSCs (células-tronco pluripotentes induzidas) são:", en: "iPSCs (induced pluripotent stem cells) are:"}
+        choices:
+          - {pt: "Células adultas reprogramadas a estado pluripotente (Yamanaka, 2006)", en: "Adult cells reprogrammed to pluripotent state (Yamanaka, 2006)"}
+          - {pt: "Apenas embrionárias", en: "Just embryonic"}
+          - {pt: "Não existem", en: "Don't exist"}
+          - {pt: "Apenas em animais", en: "Only in animals"}
+        correctAnswer: {pt: "Células adultas reprogramadas a estado pluripotente (Yamanaka, 2006)", en: "Adult cells reprogrammed to pluripotent state (Yamanaka, 2006)"}
+        rationale: {pt: "Como evitam questões éticas de embrião, então abriram caminho para terapias personalizadas.", en: "Because they avoid embryo ethical issues, they opened paths to personalized therapies."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Bioética estuda:", en: "Bioethics studies:"}
+        choices:
+          - {pt: "Implicações morais de avanços biotecnológicos", en: "Moral implications of biotech advances"}
+          - {pt: "Apenas leis civis", en: "Just civil law"}
+          - {pt: "Apenas economia", en: "Just economics"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Implicações morais de avanços biotecnológicos", en: "Moral implications of biotech advances"}
+        rationale: {pt: "Como edição germinativa, clonagem e dados genéticos levantam questões, então bioética orienta políticas e pesquisa.", en: "Because germline editing, cloning, and genetic data raise questions, bioethics guides policy and research."}
+        objectives: [biology.biotech]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: biotecnologia moderna:", en: "Summary: modern biotechnology:"}
+        choices:
+          - {pt: "Combina ferramentas moleculares (PCR, CRISPR) com computação para entender e manipular a vida", en: "Combines molecular tools (PCR, CRISPR) with computing to understand and manipulate life"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em laboratórios secretos", en: "Just in secret labs"}
+          - {pt: "Não tem aplicação", en: "No application"}
+        correctAnswer: {pt: "Combina ferramentas moleculares (PCR, CRISPR) com computação para entender e manipular a vida", en: "Combines molecular tools (PCR, CRISPR) with computing to understand and manipulate life"}
+        rationale: {pt: "Como medicina, agricultura e indústria são impactadas, então a biotecnologia molda o século 21.", en: "Because medicine, agriculture, and industry are impacted, biotechnology shapes the 21st century."}
+        objectives: [biology.biotech]
+        difficulty: 4
+target: 20

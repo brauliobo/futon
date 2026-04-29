@@ -1,0 +1,244 @@
+title:
+  pt: "🎛️ Regulação da expressão gênica"
+  en: "🎛️ Gene expression regulation"
+level: '4A'
+subject: biology
+objectives: [biology.gene_expression]
+difficulty: 4
+authorNotes: "Como células ligam/desligam genes; promotores, fatores de transcrição, óperons, epigenética."
+example:
+  pt: "Ex.: lac óperon bacteriano: lactose presente → repressor inativo → genes de lactose ligados."
+  en: "Ex.: bacterial lac operon: lactose present → repressor inactive → lactose genes turned on."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Controle transcricional", en: "Transcriptional control"}
+    description: {pt: "Quem decide quais genes são expressos.", en: "Who decides which genes are expressed."}
+    exercises:
+      - type: choice
+        question: {pt: "Por que células diferenciadas (ex.: neurônio, músculo) têm o mesmo DNA, mas funções distintas?", en: "Why do differentiated cells (e.g., neuron, muscle) share DNA but have distinct functions?"}
+        choices:
+          - {pt: "Cada tipo expressa subconjunto distinto de genes", en: "Each type expresses a distinct gene subset"}
+          - {pt: "Têm DNAs diferentes", en: "They have different DNAs"}
+          - {pt: "Não compartilham genes", en: "Don't share genes"}
+          - {pt: "Aleatoriedade", en: "Randomness"}
+        correctAnswer: {pt: "Cada tipo expressa subconjunto distinto de genes", en: "Each type expresses a distinct gene subset"}
+        rationale: {pt: "Como o genoma é universal mas a expressão é seletiva, então a regulação gera diversidade celular a partir de instruções comuns.", en: "Because the genome is universal but expression is selective, regulation generates cellular diversity from common instructions."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Promotor é:", en: "A promoter is:"}
+        choices:
+          - {pt: "Sequência de DNA onde a RNA polimerase se liga", en: "DNA sequence where RNA polymerase binds"}
+          - {pt: "Tipo de proteína estrutural", en: "Type of structural protein"}
+          - {pt: "Tipo de açúcar", en: "Type of sugar"}
+          - {pt: "Tipo de vitamina", en: "Type of vitamin"}
+        correctAnswer: {pt: "Sequência de DNA onde a RNA polimerase se liga", en: "DNA sequence where RNA polymerase binds"}
+        rationale: {pt: "Como sinaliza onde começar a transcrição, então o promotor é a \"chave\" que controla o início.", en: "Because it signals where to start transcription, the promoter is the \"key\" controlling initiation."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Fatores de transcrição são:", en: "Transcription factors are:"}
+        choices:
+          - {pt: "Proteínas que ativam ou reprimem a transcrição ao ligar DNA", en: "Proteins that activate or repress transcription by binding DNA"}
+          - {pt: "Apenas hormônios", en: "Just hormones"}
+          - {pt: "Tipos de RNA", en: "Types of RNA"}
+          - {pt: "Tipos de açúcar", en: "Types of sugar"}
+        correctAnswer: {pt: "Proteínas que ativam ou reprimem a transcrição ao ligar DNA", en: "Proteins that activate or repress transcription by binding DNA"}
+        rationale: {pt: "Como cada gene tem regiões reguladoras específicas, então TFs combinam sinais e decidem quando transcrever.", en: "Because each gene has specific regulatory regions, TFs combine signals and decide when to transcribe."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Óperon é:", en: "An operon is:"}
+        choices:
+          - {pt: "Conjunto de genes co-regulados em procariontes (mesmo promotor)", en: "Cluster of co-regulated genes in prokaryotes (single promoter)"}
+          - {pt: "Apenas um gene", en: "Just one gene"}
+          - {pt: "Apenas em eucariontes", en: "Only in eukaryotes"}
+          - {pt: "Tipo de ribossomo", en: "Type of ribosome"}
+        correctAnswer: {pt: "Conjunto de genes co-regulados em procariontes (mesmo promotor)", en: "Cluster of co-regulated genes in prokaryotes (single promoter)"}
+        rationale: {pt: "Como bactérias precisam responder rápido ao ambiente, então agrupar genes relacionados otimiza a regulação.", en: "Because bacteria must respond quickly to environment, clustering related genes optimizes regulation."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "lac óperon é ativado quando:", en: "The lac operon is turned on when:"}
+        choices:
+          - {pt: "Lactose está presente (e glicose ausente)", en: "Lactose is present (and glucose absent)"}
+          - {pt: "Sempre", en: "Always"}
+          - {pt: "Apenas com glicose", en: "Only with glucose"}
+          - {pt: "Nunca", en: "Never"}
+        correctAnswer: {pt: "Lactose está presente (e glicose ausente)", en: "Lactose is present (and glucose absent)"}
+        rationale: {pt: "Como a célula prefere glicose, então só usa lactose quando a primeira acaba — economia metabólica.", en: "Because cells prefer glucose, they only use lactose when glucose runs out — metabolic economy."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Regulação em eucariontes é mais complexa porque:", en: "Eukaryotic regulation is more complex because:"}
+        choices:
+          - {pt: "Tem cromatina, splicing, múltiplos enhancers, transporte ao citoplasma", en: "Has chromatin, splicing, multiple enhancers, cytoplasm export"}
+          - {pt: "Tem menos genes", en: "Has fewer genes"}
+          - {pt: "Não tem regulação", en: "Has no regulation"}
+          - {pt: "É idêntica a procariontes", en: "Is identical to prokaryotes"}
+        correctAnswer: {pt: "Tem cromatina, splicing, múltiplos enhancers, transporte ao citoplasma", en: "Has chromatin, splicing, multiple enhancers, cytoplasm export"}
+        rationale: {pt: "Como múltiplas camadas adicionam controle fino, então a regulação emerge ao longo do caminho gene → proteína.", en: "Because multiple layers add fine control, regulation emerges along the gene → protein path."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Cromatina mais condensada (heterocromatina) é geralmente:", en: "More condensed chromatin (heterochromatin) is usually:"}
+        choices:
+          - {pt: "Transcricionalmente silenciada", en: "Transcriptionally silenced"}
+          - {pt: "Mais expressa", en: "More expressed"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Sempre destruída", en: "Always destroyed"}
+        correctAnswer: {pt: "Transcricionalmente silenciada", en: "Transcriptionally silenced"}
+        rationale: {pt: "Como RNA polimerase não acessa o DNA empacotado, então genes em heterocromatina são desligados.", en: "Because RNA polymerase can't access packed DNA, heterochromatin genes are off."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Acetilação de histonas geralmente:", en: "Histone acetylation generally:"}
+        choices:
+          - {pt: "Afrouxa cromatina e ATIVA transcrição", en: "Loosens chromatin and ACTIVATES transcription"}
+          - {pt: "Compacta e silencia", en: "Compacts and silences"}
+          - {pt: "Não tem efeito", en: "No effect"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "Afrouxa cromatina e ATIVA transcrição", en: "Loosens chromatin and ACTIVATES transcription"}
+        rationale: {pt: "Como cargas positivas das histonas são neutralizadas, então a interação com DNA enfraquece — DNA fica acessível.", en: "Because positive histone charges are neutralized, DNA interaction weakens — DNA becomes accessible."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Metilação de DNA (em CpG) geralmente:", en: "DNA methylation (at CpG) generally:"}
+        choices:
+          - {pt: "Silencia genes (recruta cromatina condensada)", en: "Silences genes (recruits condensed chromatin)"}
+          - {pt: "Sempre ativa", en: "Always activates"}
+          - {pt: "Não tem efeito", en: "No effect"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "Silencia genes (recruta cromatina condensada)", en: "Silences genes (recruits condensed chromatin)"}
+        rationale: {pt: "Como metilação é marca epigenética repressora, então genes metilados ficam transcricionalmente inativos.", en: "Because methylation is a repressive epigenetic mark, methylated genes stay transcriptionally inactive."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Epigenética estuda:", en: "Epigenetics studies:"}
+        choices:
+          - {pt: "Mudanças hereditárias na expressão SEM alterar a sequência do DNA", en: "Heritable changes in expression WITHOUT altering DNA sequence"}
+          - {pt: "Mutações de DNA apenas", en: "Only DNA mutations"}
+          - {pt: "Apenas anatomia", en: "Just anatomy"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Mudanças hereditárias na expressão SEM alterar a sequência do DNA", en: "Heritable changes in expression WITHOUT altering DNA sequence"}
+        rationale: {pt: "Como modificações químicas em DNA/histonas regulam genes, então o ambiente pode influenciar fenótipos hereditariamente.", en: "Because chemical modifications on DNA/histones regulate genes, environment can influence phenotypes heritably."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Outros níveis de regulação", en: "Other regulation levels"}
+    description: {pt: "Pós-transcricional, traducional.", en: "Post-transcriptional, translational."}
+    exercises:
+      - type: choice
+        question: {pt: "Splicing alternativo permite:", en: "Alternative splicing allows:"}
+        choices:
+          - {pt: "Um gene produzir múltiplas proteínas distintas", en: "One gene to produce multiple distinct proteins"}
+          - {pt: "Apenas uma proteína por gene", en: "Only one protein per gene"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+          - {pt: "Apenas em bactérias", en: "Only in bacteria"}
+        correctAnswer: {pt: "Um gene produzir múltiplas proteínas distintas", en: "One gene to produce multiple distinct proteins"}
+        rationale: {pt: "Como diferentes éxons podem ser combinados, então humanos têm ~20.000 genes mas centenas de milhares de proteínas.", en: "Because different exons can be combined, humans have ~20,000 genes but hundreds of thousands of proteins."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Íntrons são:", en: "Introns are:"}
+        choices:
+          - {pt: "Regiões não-codificantes removidas do pré-mRNA", en: "Non-coding regions removed from pre-mRNA"}
+          - {pt: "Sempre traduzidos", en: "Always translated"}
+          - {pt: "Apenas em bactérias", en: "Only in bacteria"}
+          - {pt: "Tipo de proteína", en: "Type of protein"}
+        correctAnswer: {pt: "Regiões não-codificantes removidas do pré-mRNA", en: "Non-coding regions removed from pre-mRNA"}
+        rationale: {pt: "Como o spliceossomo remove íntrons, então só éxons codificantes ficam no mRNA maduro.", en: "Because the spliceosome removes introns, only coding exons stay in mature mRNA."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Éxons são:", en: "Exons are:"}
+        choices:
+          - {pt: "Regiões codificantes que permanecem no mRNA maduro", en: "Coding regions that stay in mature mRNA"}
+          - {pt: "Removidos", en: "Removed"}
+          - {pt: "Tipos de organelas", en: "Types of organelles"}
+          - {pt: "Tipo de DNA não-funcional", en: "Type of non-functional DNA"}
+        correctAnswer: {pt: "Regiões codificantes que permanecem no mRNA maduro", en: "Coding regions that stay in mature mRNA"}
+        rationale: {pt: "Como éxons sobrevivem ao splicing, então são traduzidos em proteína — \"ex\" de \"expressed\".", en: "Because exons survive splicing, they're translated to protein — \"ex\" from \"expressed\"."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "miRNAs (micro-RNAs):", en: "miRNAs (microRNAs):"}
+        choices:
+          - {pt: "Regulam expressão pós-transcricionalmente bloqueando ou degradando mRNAs", en: "Regulate post-transcriptionally by blocking or degrading mRNAs"}
+          - {pt: "Sempre ativam", en: "Always activate"}
+          - {pt: "Não existem", en: "Don't exist"}
+          - {pt: "Apenas em vírus", en: "Only in viruses"}
+        correctAnswer: {pt: "Regulam expressão pós-transcricionalmente bloqueando ou degradando mRNAs", en: "Regulate post-transcriptionally by blocking or degrading mRNAs"}
+        rationale: {pt: "Como pequenos RNAs reconhecem mRNAs por complementaridade, então afinam expressão sem mexer no DNA.", en: "Because small RNAs recognize mRNAs by complementarity, they fine-tune expression without touching DNA."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Hormônios esteroides regulam genes ao:", en: "Steroid hormones regulate genes by:"}
+        choices:
+          - {pt: "Atravessar a membrana e ligar receptores nucleares (TFs)", en: "Crossing the membrane and binding nuclear receptors (TFs)"}
+          - {pt: "Apenas via membrana", en: "Just via the membrane"}
+          - {pt: "Apenas digerindo proteínas", en: "Just digesting proteins"}
+          - {pt: "Sem efeito gênico", en: "No gene effect"}
+        correctAnswer: {pt: "Atravessar a membrana e ligar receptores nucleares (TFs)", en: "Crossing the membrane and binding nuclear receptors (TFs)"}
+        rationale: {pt: "Como esteroides são lipossolúveis, então alcançam o núcleo e regulam transcrição diretamente.", en: "Because steroids are lipid-soluble, they reach the nucleus and regulate transcription directly."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Diferenciação celular é:", en: "Cell differentiation is:"}
+        choices:
+          - {pt: "Processo pelo qual células-tronco assumem identidade especializada via expressão seletiva de genes", en: "Process by which stem cells take on specialized identity via selective gene expression"}
+          - {pt: "Mitose comum", en: "Just mitosis"}
+          - {pt: "Apoptose", en: "Apoptosis"}
+          - {pt: "Crescimento de osso", en: "Bone growth"}
+        correctAnswer: {pt: "Processo pelo qual células-tronco assumem identidade especializada via expressão seletiva de genes", en: "Process by which stem cells take on specialized identity via selective gene expression"}
+        rationale: {pt: "Como genes específicos ativam-se em cada linhagem, então uma célula-tronco gera neurônios, hepatócitos, etc.", en: "Because specific genes activate in each lineage, a stem cell gives rise to neurons, hepatocytes, etc."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Genes housekeeping são:", en: "Housekeeping genes are:"}
+        choices:
+          - {pt: "Expressos constitutivamente em quase todas as células (funções básicas)", en: "Expressed constitutively in almost all cells (basic functions)"}
+          - {pt: "Apenas em alguns tecidos", en: "Only in some tissues"}
+          - {pt: "Nunca expressos", en: "Never expressed"}
+          - {pt: "Apenas durante doença", en: "Only during disease"}
+        correctAnswer: {pt: "Expressos constitutivamente em quase todas as células (funções básicas)", en: "Expressed constitutively in almost all cells (basic functions)"}
+        rationale: {pt: "Como toda célula precisa metabolismo básico, então housekeeping cobrem glicólise, replicação, ribossomos.", en: "Because every cell needs basic metabolism, housekeeping covers glycolysis, replication, ribosomes."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Indução gênica significa:", en: "Gene induction means:"}
+        choices:
+          - {pt: "Aumentar expressão de um gene em resposta a um sinal", en: "Increasing gene expression in response to a signal"}
+          - {pt: "Diminuir expressão", en: "Decreasing expression"}
+          - {pt: "Apagar o gene", en: "Deleting the gene"}
+          - {pt: "Ignorar o sinal", en: "Ignoring the signal"}
+        correctAnswer: {pt: "Aumentar expressão de um gene em resposta a um sinal", en: "Increasing gene expression in response to a signal"}
+        rationale: {pt: "Como ativadores se ligam a enhancers, então a transcrição é amplificada — célula adapta-se ao ambiente.", en: "Because activators bind enhancers, transcription is amplified — cell adapts to environment."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Repressão gênica significa:", en: "Gene repression means:"}
+        choices:
+          - {pt: "Diminuir/desligar a expressão de um gene", en: "Reducing/turning off gene expression"}
+          - {pt: "Aumentar sempre", en: "Always increasing"}
+          - {pt: "Apagar o gene", en: "Deleting the gene"}
+          - {pt: "Mover o gene", en: "Moving the gene"}
+        correctAnswer: {pt: "Diminuir/desligar a expressão de um gene", en: "Reducing/turning off gene expression"}
+        rationale: {pt: "Como repressores ligam-se a operadores ou silenciadores, então o DNA fica menos acessível à RNA polimerase.", en: "Because repressors bind operators or silencers, DNA becomes less accessible to RNA polymerase."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: regulação gênica:", en: "Summary: gene regulation:"}
+        choices:
+          - {pt: "Permite que o mesmo genoma gere células e respostas diversas no tempo certo", en: "Lets the same genome generate diverse cells and responses at the right time"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em embriões", en: "Only in embryos"}
+          - {pt: "Não importa", en: "Doesn't matter"}
+        correctAnswer: {pt: "Permite que o mesmo genoma gere células e respostas diversas no tempo certo", en: "Lets the same genome generate diverse cells and responses at the right time"}
+        rationale: {pt: "Como células interpretam contexto via TFs e epigenética, então organismos complexos emergem de genoma comum.", en: "Because cells interpret context via TFs and epigenetics, complex organisms arise from a shared genome."}
+        objectives: [biology.gene_expression]
+        difficulty: 4
+target: 20
