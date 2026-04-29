@@ -266,7 +266,7 @@ const METHOD_TERMS = [
   'temperatura\\s+corporal', 'equil[íi]brio', 'regul[ae]', 'regulam?',
   'enzim[ao]s?', 'horm[ôo]ni[oa]s?', 'sangue', 'circulação',
   'digest[ãa]o', 'sistema\\s+(?:nervoso|digest|circulat|respirat|imun)',
-  'estímulo[s]?', 'resposta\\b', 'percep[çc][ãa]o', 'sinal\\b',
+  'estímulo[s]?', 'percep[çc][ãa]o', 'sinal\\b',
   // English equivalents (biology)
   'metabolism', 'homeostasis', 'reproduce[ds]?', 'respiration', 'cell[s]?\\b',
   'organism[s]?', 'species', 'evolution', 'photosynthesis', 'gamete[s]?',
@@ -293,9 +293,11 @@ const ARITHMETIC_RE = /-?\d+\s*[+\-−×÷*\/]\s*-?\d+\s*=\s*-?\d/;
 const TRANSFORMATION_RE = /\S\s*[→>]\s*\S/;
 // Definition: "'Could' = habilidade geral passada." — quoted word followed
 // by an equals glossing it. Also matches unquoted capitalized concept
-// terms like "Desenvolvimento = expandir a ideia..." and single-variable
-// math formulas like "A = base × altura" or "V = πr²h".
-const DEFINITION_RE = /(?:['"][^'"]{2,}['"]|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]{3,}|[A-Z]\s+=)\s*=?\s*\S/;
+// terms in three patterns: (1) explicit `=`, (2) PT copula `é/são`,
+// (3) ≥3-word noun-led classification ("Obras ambientadas na Bahia.").
+// Pure-imperative or 2-word fragments like "Pense bem." or "Resposta
+// correta!" don't qualify — they aren't classifying anything.
+const DEFINITION_RE = /(?:['"][^'"]{2,}['"]\s*=?\s*\S|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]{3,}\s*(?:=\s*\S|\sé\s|\ssão\s|\ses\s|\sson\s|\sis\s|\sare\s|(?:\s+\S+){3,})|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+\s+\S+\s+(?:é|são|es|son|is|are)\s+\S|\b[A-Z]\s*=\s*\S)/;
 // Bilingual sentence-decomposition: a Japanese script chunk followed by
 // its parenthetical translation, joined by " + " into the next chunk.
 // Or: PT term '=' japanese script with parenthetical reading.
