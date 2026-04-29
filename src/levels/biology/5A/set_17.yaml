@@ -1,0 +1,244 @@
+title:
+  pt: "🌱 Genética de Mendel"
+  en: "🌱 Mendelian genetics"
+level: '5A'
+subject: biology
+objectives: [biology.genetics]
+difficulty: 3
+authorNotes: "Leis de Mendel, alelos dominantes/recessivos, fenótipo/genótipo."
+example:
+  pt: "Ex.: Aa × Aa → 1 AA : 2 Aa : 1 aa (genótipo); 3 dominante : 1 recessivo (fenótipo)."
+  en: "Ex.: Aa × Aa → 1 AA : 2 Aa : 1 aa (genotype); 3 dominant : 1 recessive (phenotype)."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Termos e leis", en: "Terms and laws"}
+    description: {pt: "O fundamento da hereditariedade.", en: "The foundation of heredity."}
+    exercises:
+      - type: choice
+        question: {pt: "Quem foi Gregor Mendel?", en: "Who was Gregor Mendel?"}
+        choices:
+          - {pt: "Monge austríaco que descobriu as leis básicas da herança (séc. 19)", en: "Austrian monk who discovered basic heredity laws (19th c.)"}
+          - {pt: "Físico inglês", en: "English physicist"}
+          - {pt: "Astrônomo grego", en: "Greek astronomer"}
+          - {pt: "Médico medieval", en: "Medieval doctor"}
+        correctAnswer: {pt: "Monge austríaco que descobriu as leis básicas da herança (séc. 19)", en: "Austrian monk who discovered basic heredity laws (19th c.)"}
+        rationale: {pt: "Como cruzou ervilhas em experimentos cuidadosos, então deduziu padrões matemáticos da herança antes mesmo de conhecer DNA.", en: "Because he crossed pea plants in careful experiments, he deduced mathematical patterns of heredity even before DNA was known."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Gene é:", en: "A gene is:"}
+        choices:
+          - {pt: "Sequência de DNA que codifica um traço/proteína", en: "DNA sequence coding for a trait/protein"}
+          - {pt: "Tipo de açúcar", en: "Type of sugar"}
+          - {pt: "Tipo de proteína", en: "Type of protein"}
+          - {pt: "Tipo de organela", en: "Type of organelle"}
+        correctAnswer: {pt: "Sequência de DNA que codifica um traço/proteína", en: "DNA sequence coding for a trait/protein"}
+        rationale: {pt: "Como cada gene tem versões (alelos), então variantes geram diversidade dentro da espécie.", en: "Because each gene has versions (alleles), variants generate diversity within the species."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Alelo é:", en: "An allele is:"}
+        choices:
+          - {pt: "Versão (variante) de um gene", en: "Version (variant) of a gene"}
+          - {pt: "Cromossomo inteiro", en: "Whole chromosome"}
+          - {pt: "Tipo de organela", en: "Type of organelle"}
+          - {pt: "Hormônio", en: "Hormone"}
+        correctAnswer: {pt: "Versão (variante) de um gene", en: "Version (variant) of a gene"}
+        rationale: {pt: "Como alelos podem diferir em poucas bases, então as proteínas resultantes têm variantes — base de polimorfismos.", en: "Because alleles may differ in a few bases, resulting proteins have variants — basis of polymorphisms."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Genótipo é:", en: "Genotype is:"}
+        choices:
+          - {pt: "Conjunto de alelos do indivíduo (ex.: AA, Aa, aa)", en: "Individual's allele set (e.g., AA, Aa, aa)"}
+          - {pt: "Aparência física", en: "Physical appearance"}
+          - {pt: "Tipo sanguíneo apenas", en: "Just blood type"}
+          - {pt: "Idade", en: "Age"}
+        correctAnswer: {pt: "Conjunto de alelos do indivíduo (ex.: AA, Aa, aa)", en: "Individual's allele set (e.g., AA, Aa, aa)"}
+        rationale: {pt: "Como cada gene tem dois alelos em diploides, então a notação descreve a constituição genética para um traço.", en: "Because each gene has two alleles in diploids, notation describes genetic makeup for a trait."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Fenótipo é:", en: "Phenotype is:"}
+        choices:
+          - {pt: "Característica observável (resultado da expressão do genótipo)", en: "Observable trait (result of genotype expression)"}
+          - {pt: "Conjunto de alelos", en: "Allele set"}
+          - {pt: "Cromossomo inteiro", en: "Whole chromosome"}
+          - {pt: "Tipo de DNA", en: "Type of DNA"}
+        correctAnswer: {pt: "Característica observável (resultado da expressão do genótipo)", en: "Observable trait (result of genotype expression)"}
+        rationale: {pt: "Como o genótipo + ambiente produzem o fenótipo, então traços medem-se concretamente.", en: "Because genotype + environment produce phenotype, traits are concretely measurable."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Homozigoto:", en: "Homozygous:"}
+        choices:
+          - {pt: "Indivíduo com dois alelos iguais (AA ou aa)", en: "Individual with two identical alleles (AA or aa)"}
+          - {pt: "Com alelos diferentes", en: "With different alleles"}
+          - {pt: "Com cinco alelos", en: "With five alleles"}
+          - {pt: "Sem alelos", en: "Without alleles"}
+        correctAnswer: {pt: "Indivíduo com dois alelos iguais (AA ou aa)", en: "Individual with two identical alleles (AA or aa)"}
+        rationale: {pt: "Como ambos os alelos são iguais, então o indivíduo transmite sempre o mesmo aos descendentes.", en: "Because both alleles match, the individual always passes the same one to descendants."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Heterozigoto:", en: "Heterozygous:"}
+        choices:
+          - {pt: "Indivíduo com dois alelos diferentes (Aa)", en: "Individual with two different alleles (Aa)"}
+          - {pt: "Com alelos iguais", en: "With identical alleles"}
+          - {pt: "Sem alelos", en: "Without alleles"}
+          - {pt: "Com gene quebrado", en: "With broken gene"}
+        correctAnswer: {pt: "Indivíduo com dois alelos diferentes (Aa)", en: "Individual with two different alleles (Aa)"}
+        rationale: {pt: "Como pode transmitir A ou a a cada gameta, então a prole tem variabilidade — fonte da herança \"misturada\".", en: "Because it can pass A or a to each gamete, offspring vary — source of \"blended\" heredity."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Alelo dominante:", en: "Dominant allele:"}
+        choices:
+          - {pt: "Manifesta-se mesmo com uma só cópia (AA ou Aa)", en: "Expressed with even one copy (AA or Aa)"}
+          - {pt: "Manifesta-se só com duas cópias", en: "Expressed only with two copies"}
+          - {pt: "Nunca se manifesta", en: "Never expressed"}
+          - {pt: "Apenas em animais", en: "Only in animals"}
+        correctAnswer: {pt: "Manifesta-se mesmo com uma só cópia (AA ou Aa)", en: "Expressed with even one copy (AA or Aa)"}
+        rationale: {pt: "Como sua proteína funcional mascara a recessiva, então o fenótipo dominante aparece em heterozigotos.", en: "Because its functional protein masks the recessive, the dominant phenotype shows in heterozygotes."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Alelo recessivo:", en: "Recessive allele:"}
+        choices:
+          - {pt: "Só se manifesta em homozigose (aa)", en: "Only expressed when homozygous (aa)"}
+          - {pt: "Sempre dominante", en: "Always dominant"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+          - {pt: "Aparece com uma cópia", en: "Appears with one copy"}
+        correctAnswer: {pt: "Só se manifesta em homozigose (aa)", en: "Only expressed when homozygous (aa)"}
+        rationale: {pt: "Como precisa duas cópias para escapar do mascaramento, então traços recessivos podem \"pular\" gerações.", en: "Because it needs two copies to escape masking, recessive traits can \"skip\" generations."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "1ª lei de Mendel (segregação) afirma:", en: "Mendel's 1st law (segregation) states:"}
+        choices:
+          - {pt: "Pares de alelos se separam na formação dos gametas", en: "Allele pairs separate during gamete formation"}
+          - {pt: "Alelos sempre fundem-se", en: "Alleles always fuse"}
+          - {pt: "Genes são iguais em todos", en: "Genes are equal in everyone"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Pares de alelos se separam na formação dos gametas", en: "Allele pairs separate during gamete formation"}
+        rationale: {pt: "Como meiose explica a separação, então cada gameta carrega apenas um alelo de cada gene.", en: "Because meiosis explains the separation, each gamete carries only one allele per gene."}
+        objectives: [biology.genetics]
+        difficulty: 3
+  - pageNumber: 2
+    title: {pt: "2ª lei e exemplos", en: "2nd law and examples"}
+    description: {pt: "Segregação independente.", en: "Independent assortment."}
+    exercises:
+      - type: choice
+        question: {pt: "2ª lei de Mendel (segregação independente):", en: "Mendel's 2nd law (independent assortment):"}
+        choices:
+          - {pt: "Genes em cromossomos diferentes segregam-se independentemente", en: "Genes on different chromosomes assort independently"}
+          - {pt: "Apenas um gene segrega", en: "Only one gene segregates"}
+          - {pt: "Todos os genes ficam juntos", en: "All genes stay together"}
+          - {pt: "Não há leis", en: "No laws"}
+        correctAnswer: {pt: "Genes em cromossomos diferentes segregam-se independentemente", en: "Genes on different chromosomes assort independently"}
+        rationale: {pt: "Como pares homólogos se alinham aleatoriamente em metáfase I, então combinações são múltiplas.", en: "Because homologous pairs align randomly in metaphase I, combinations are multiple."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Cruzamento Aa × Aa produz fenótipos na proporção:", en: "Aa × Aa cross produces phenotype ratio:"}
+        choices:
+          - {pt: "3:1 (dominante : recessivo)", en: "3:1 (dominant : recessive)"}
+          - {pt: "1:1", en: "1:1"}
+          - {pt: "9:3:3:1", en: "9:3:3:1"}
+          - {pt: "Todos iguais", en: "All equal"}
+        correctAnswer: {pt: "3:1 (dominante : recessivo)", en: "3:1 (dominant : recessive)"}
+        rationale: {pt: "Como AA, Aa e Aa expressam o dominante (3) e aa expressa o recessivo (1), então 3:1 emerge naturalmente.", en: "Because AA, Aa, and Aa express the dominant (3) and aa expresses the recessive (1), 3:1 emerges naturally."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Cruzamento Aa × Aa produz genótipos na proporção:", en: "Aa × Aa cross produces genotype ratio:"}
+        choices:
+          - {pt: "1 AA : 2 Aa : 1 aa", en: "1 AA : 2 Aa : 1 aa"}
+          - {pt: "1:1:1", en: "1:1:1"}
+          - {pt: "3:1", en: "3:1"}
+          - {pt: "Todos iguais", en: "All equal"}
+        correctAnswer: {pt: "1 AA : 2 Aa : 1 aa", en: "1 AA : 2 Aa : 1 aa"}
+        rationale: {pt: "Como cada gameta tem 50% A e 50% a, então as combinações geram a proporção clássica 1:2:1.", en: "Because each gamete is 50% A and 50% a, combinations yield the classic 1:2:1 ratio."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Cruzamento di-híbrido (AaBb × AaBb) produz fenótipos:", en: "Dihybrid cross (AaBb × AaBb) produces phenotypes:"}
+        choices:
+          - {pt: "Na proporção 9:3:3:1", en: "In 9:3:3:1 ratio"}
+          - {pt: "Na proporção 3:1", en: "In 3:1 ratio"}
+          - {pt: "Apenas um fenótipo", en: "Only one phenotype"}
+          - {pt: "Sem padrão", en: "No pattern"}
+        correctAnswer: {pt: "Na proporção 9:3:3:1", en: "In 9:3:3:1 ratio"}
+        rationale: {pt: "Como dois genes independentes combinam suas razões 3:1 × 3:1, então emerge 9:3:3:1 — chave da 2ª lei.", en: "Because two independent genes combine their 3:1 × 3:1 ratios, 9:3:3:1 emerges — key to the 2nd law."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Por que Mendel escolheu ervilhas?", en: "Why did Mendel choose pea plants?"}
+        choices:
+          - {pt: "Geração curta, traços discretos, fácil de cruzar", en: "Short generation, discrete traits, easy to cross"}
+          - {pt: "Por bonitas", en: "For their beauty"}
+          - {pt: "Por aleatoriedade", en: "By chance"}
+          - {pt: "Por ser comestíveis", en: "Because edible"}
+        correctAnswer: {pt: "Geração curta, traços discretos, fácil de cruzar", en: "Short generation, discrete traits, easy to cross"}
+        rationale: {pt: "Como traços como cor de semente eram dicotômicos, então proporções eram facilmente analisáveis matematicamente.", en: "Because traits like seed color were dichotomous, ratios were easy to analyze mathematically."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Em humanos, sangue tipo O é resultado de:", en: "In humans, blood type O results from:"}
+        choices:
+          - {pt: "Genótipo recessivo (ii)", en: "Recessive genotype (ii)"}
+          - {pt: "Genótipo dominante", en: "Dominant genotype"}
+          - {pt: "Mistura de A e B", en: "A and B mix"}
+          - {pt: "Falta de DNA", en: "DNA absence"}
+        correctAnswer: {pt: "Genótipo recessivo (ii)", en: "Recessive genotype (ii)"}
+        rationale: {pt: "Como i não produz antígeno A nem B, então tipo O exige duas cópias do alelo recessivo.", en: "Because i produces neither A nor B antigen, type O requires two copies of the recessive allele."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Codominância significa:", en: "Codominance means:"}
+        choices:
+          - {pt: "Ambos alelos expressam-se igualmente (ex.: tipo AB)", en: "Both alleles express equally (e.g., type AB)"}
+          - {pt: "Um inibe o outro", en: "One inhibits the other"}
+          - {pt: "Não há expressão", en: "No expression"}
+          - {pt: "Um é misturado", en: "One blends in"}
+        correctAnswer: {pt: "Ambos alelos expressam-se igualmente (ex.: tipo AB)", en: "Both alleles express equally (e.g., type AB)"}
+        rationale: {pt: "Como AB tem antígenos A e B simultaneamente, então não há mistura — ambos manifestam-se claramente.", en: "Because AB has both A and B antigens simultaneously, there's no blending — both manifest clearly."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Dominância incompleta:", en: "Incomplete dominance:"}
+        choices:
+          - {pt: "Heterozigoto tem fenótipo intermediário (ex.: rosa = vermelho + branco)", en: "Heterozygote has intermediate phenotype (e.g., pink = red + white)"}
+          - {pt: "Apenas um alelo expressa", en: "Only one allele expresses"}
+          - {pt: "Ambos expressam separadamente", en: "Both express separately"}
+          - {pt: "Não há herança", en: "No heredity"}
+        correctAnswer: {pt: "Heterozigoto tem fenótipo intermediário (ex.: rosa = vermelho + branco)", en: "Heterozygote has intermediate phenotype (e.g., pink = red + white)"}
+        rationale: {pt: "Como nenhum alelo mascara totalmente, então o resultado é mistura visível — comum em pigmentos vegetais.", en: "Because no allele fully masks, the result is visible blending — common in plant pigments."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Herança poligênica:", en: "Polygenic inheritance:"}
+        choices:
+          - {pt: "Vários genes influenciam um traço (ex.: altura, cor da pele)", en: "Multiple genes influence one trait (e.g., height, skin color)"}
+          - {pt: "Apenas um gene", en: "Just one gene"}
+          - {pt: "Sem genes", en: "No genes"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "Vários genes influenciam um traço (ex.: altura, cor da pele)", en: "Multiple genes influence one trait (e.g., height, skin color)"}
+        rationale: {pt: "Como contribuições aditivas de muitos genes geram variação contínua, então fenótipos seguem distribuição normal.", en: "Because additive contributions of many genes generate continuous variation, phenotypes follow normal distribution."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Resumo: Mendel descobriu que:", en: "Summary: Mendel discovered that:"}
+        choices:
+          - {pt: "Herança segue padrões matemáticos via fatores discretos (alelos)", en: "Heredity follows mathematical patterns via discrete factors (alleles)"}
+          - {pt: "Tudo é misturado", en: "Everything blends"}
+          - {pt: "Não há herança", en: "There's no heredity"}
+          - {pt: "Apenas plantas têm herança", en: "Only plants have heredity"}
+        correctAnswer: {pt: "Herança segue padrões matemáticos via fatores discretos (alelos)", en: "Heredity follows mathematical patterns via discrete factors (alleles)"}
+        rationale: {pt: "Como fundou genética antes do DNA, então suas leis foram redescobertas no séc. 20 e hoje têm base molecular.", en: "Because he founded genetics before DNA, his laws were rediscovered in the 20th c. and now have a molecular basis."}
+        objectives: [biology.genetics]
+        difficulty: 3
+target: 20

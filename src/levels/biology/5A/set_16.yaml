@@ -1,0 +1,244 @@
+title:
+  pt: "🧬 Meiose"
+  en: "🧬 Meiosis"
+level: '5A'
+subject: biology
+objectives: [biology.cell_cycle]
+difficulty: 3
+authorNotes: "Divisão reducional, duas etapas, recombinação, gametas haploides."
+example:
+  pt: "Ex.: 1 célula diploide (2n) → meiose I (reduz) → meiose II (separa) → 4 células haploides (n) geneticamente distintas."
+  en: "Ex.: 1 diploid cell (2n) → meiosis I (reduces) → meiosis II (separates) → 4 distinct haploid cells (n)."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Etapas e diferenças", en: "Steps and differences"}
+    description: {pt: "Como meiose difere da mitose.", en: "How meiosis differs from mitosis."}
+    exercises:
+      - type: choice
+        question: {pt: "Meiose produz:", en: "Meiosis produces:"}
+        choices:
+          - {pt: "Quatro células haploides geneticamente distintas", en: "Four genetically distinct haploid cells"}
+          - {pt: "Duas células idênticas à mãe", en: "Two cells identical to mother"}
+          - {pt: "Uma célula só", en: "Just one cell"}
+          - {pt: "Cem células", en: "A hundred cells"}
+        correctAnswer: {pt: "Quatro células haploides geneticamente distintas", en: "Four genetically distinct haploid cells"}
+        rationale: {pt: "Como duas divisões sucessivas reduzem cromossomos pela metade, então cada gameta carrega n cromossomos.", en: "Because two successive divisions halve chromosomes, each gamete carries n chromosomes."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Função da meiose:", en: "Function of meiosis:"}
+        choices:
+          - {pt: "Produzir gametas (haploides) para reprodução sexuada", en: "Produce gametes (haploid) for sexual reproduction"}
+          - {pt: "Crescer tecidos", en: "Grow tissues"}
+          - {pt: "Cicatrizar feridas", en: "Heal wounds"}
+          - {pt: "Substituir células de pele", en: "Replace skin cells"}
+        correctAnswer: {pt: "Produzir gametas (haploides) para reprodução sexuada", en: "Produce gametes (haploid) for sexual reproduction"}
+        rationale: {pt: "Como a fusão de gametas haploides restaura o número 2n, então a meiose mantém o cariótipo da espécie.", en: "Because fusion of haploid gametes restores 2n, meiosis preserves species' karyotype."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Diploide (2n) significa:", en: "Diploid (2n) means:"}
+        choices:
+          - {pt: "Duas cópias de cada cromossomo (par homólogo)", en: "Two copies of each chromosome (homologous pair)"}
+          - {pt: "Apenas uma cópia", en: "Just one copy"}
+          - {pt: "Quatro cópias", en: "Four copies"}
+          - {pt: "Sem cópias", en: "No copies"}
+        correctAnswer: {pt: "Duas cópias de cada cromossomo (par homólogo)", en: "Two copies of each chromosome (homologous pair)"}
+        rationale: {pt: "Como humanos têm 23 pares (2n=46), então células somáticas são diploides.", en: "Because humans have 23 pairs (2n=46), somatic cells are diploid."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Haploide (n) significa:", en: "Haploid (n) means:"}
+        choices:
+          - {pt: "Uma cópia de cada cromossomo (em humanos: 23)", en: "One copy of each chromosome (in humans: 23)"}
+          - {pt: "Duas cópias", en: "Two copies"}
+          - {pt: "Sem cromossomos", en: "No chromosomes"}
+          - {pt: "Quatro cópias", en: "Four copies"}
+        correctAnswer: {pt: "Uma cópia de cada cromossomo (em humanos: 23)", en: "One copy of each chromosome (in humans: 23)"}
+        rationale: {pt: "Como cada gameta humano tem 23 cromossomos, então fertilização restaura 46 ao zigoto.", en: "Because each human gamete has 23 chromosomes, fertilization restores 46 in the zygote."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Meiose I é \"reducional\" porque:", en: "Meiosis I is \"reductional\" because:"}
+        choices:
+          - {pt: "Separa pares de cromossomos homólogos (2n → n)", en: "Separates homologous chromosome pairs (2n → n)"}
+          - {pt: "Apenas duplica DNA", en: "Just duplicates DNA"}
+          - {pt: "Mantém número 2n", en: "Keeps 2n"}
+          - {pt: "Apenas separa cromátides-irmãs", en: "Only separates sister chromatids"}
+        correctAnswer: {pt: "Separa pares de cromossomos homólogos (2n → n)", en: "Separates homologous chromosome pairs (2n → n)"}
+        rationale: {pt: "Como cada par homólogo vai para um polo diferente, então o número diminui pela metade nesta divisão.", en: "Because each homologous pair goes to a different pole, the count halves in this division."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Meiose II é \"equacional\" porque:", en: "Meiosis II is \"equational\" because:"}
+        choices:
+          - {pt: "Separa cromátides-irmãs (semelhante à mitose, mas em haploides)", en: "Separates sister chromatids (similar to mitosis, but in haploids)"}
+          - {pt: "Reduz cromossomos novamente", en: "Reduces chromosomes again"}
+          - {pt: "Não acontece", en: "Doesn't happen"}
+          - {pt: "Junta cromossomos", en: "Joins chromosomes"}
+        correctAnswer: {pt: "Separa cromátides-irmãs (semelhante à mitose, mas em haploides)", en: "Separates sister chromatids (similar to mitosis, but in haploids)"}
+        rationale: {pt: "Como já estamos em n após meiose I, então separar cromátides mantém o número — apenas finaliza a divisão.", en: "Because we're already n after meiosis I, separating chromatids keeps the count — just finishes the division."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Crossing-over (recombinação) ocorre em:", en: "Crossing-over (recombination) occurs in:"}
+        choices:
+          - {pt: "Prófase I (entre cromossomos homólogos)", en: "Prophase I (between homologous chromosomes)"}
+          - {pt: "Anáfase II", en: "Anaphase II"}
+          - {pt: "Mitose apenas", en: "Only mitosis"}
+          - {pt: "Citocinese", en: "Cytokinesis"}
+        correctAnswer: {pt: "Prófase I (entre cromossomos homólogos)", en: "Prophase I (between homologous chromosomes)"}
+        rationale: {pt: "Como segmentos são trocados entre homólogos, então cada gameta carrega combinações novas — gera variabilidade.", en: "Because segments swap between homologs, each gamete carries new combinations — generating variability."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Por que crossing-over é importante?", en: "Why is crossing-over important?"}
+        choices:
+          - {pt: "Aumenta variabilidade genética dos descendentes", en: "Increases offspring genetic variability"}
+          - {pt: "Reduz cromossomos", en: "Reduces chromosomes"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Não tem efeito", en: "No effect"}
+        correctAnswer: {pt: "Aumenta variabilidade genética dos descendentes", en: "Increases offspring genetic variability"}
+        rationale: {pt: "Como recombinação cria alelos em arranjos novos, então a evolução tem mais matéria-prima para a seleção natural.", en: "Because recombination creates new allele arrangements, evolution has more raw material for natural selection."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Segregação independente ocorre quando:", en: "Independent assortment happens when:"}
+        choices:
+          - {pt: "Pares homólogos se alinham aleatoriamente em metáfase I", en: "Homologous pairs align randomly at metaphase I"}
+          - {pt: "Cromátides separam-se", en: "Chromatids separate"}
+          - {pt: "Apenas em mitose", en: "Only in mitosis"}
+          - {pt: "Nunca acontece", en: "Never happens"}
+        correctAnswer: {pt: "Pares homólogos se alinham aleatoriamente em metáfase I", en: "Homologous pairs align randomly at metaphase I"}
+        rationale: {pt: "Como cada par é independente do outro, então combinações são astronômicas — para humanos, ~2²³ por indivíduo.", en: "Because each pair is independent, combinations are astronomical — for humans, ~2²³ per individual."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Variabilidade genética em meiose vem de:", en: "Genetic variability in meiosis comes from:"}
+        choices:
+          - {pt: "Crossing-over + segregação independente + fertilização aleatória", en: "Crossing-over + independent assortment + random fertilization"}
+          - {pt: "Apenas mutações", en: "Only mutations"}
+          - {pt: "Apenas alimentação", en: "Only diet"}
+          - {pt: "Apenas ambiente", en: "Only environment"}
+        correctAnswer: {pt: "Crossing-over + segregação independente + fertilização aleatória", en: "Crossing-over + independent assortment + random fertilization"}
+        rationale: {pt: "Como três mecanismos se combinam, então cada filho é praticamente único — base genética da diversidade individual.", en: "Because three mechanisms combine, each child is practically unique — genetic basis of individual diversity."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+  - pageNumber: 2
+    title: {pt: "Aplicações e comparação", en: "Applications and comparison"}
+    description: {pt: "Mitose vs meiose, gametas, doenças.", en: "Mitosis vs meiosis, gametes, diseases."}
+    exercises:
+      - type: choice
+        question: {pt: "Comparação central mitose vs meiose:", en: "Central mitosis vs meiosis comparison:"}
+        choices:
+          - {pt: "Mitose: 2 idênticas (2n); meiose: 4 distintas (n)", en: "Mitosis: 2 identical (2n); meiosis: 4 distinct (n)"}
+          - {pt: "Ambas iguais", en: "Both equal"}
+          - {pt: "Mitose: 4 distintas; meiose: 2 idênticas", en: "Mitosis: 4 distinct; meiosis: 2 identical"}
+          - {pt: "Não há diferença", en: "No difference"}
+        correctAnswer: {pt: "Mitose: 2 idênticas (2n); meiose: 4 distintas (n)", en: "Mitosis: 2 identical (2n); meiosis: 4 distinct (n)"}
+        rationale: {pt: "Como o propósito difere (crescimento vs reprodução sexual), então o processo evoluiu para fins distintos.", en: "Because the purpose differs (growth vs sexual reproduction), the process evolved for distinct goals."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Espermatogênese produz:", en: "Spermatogenesis produces:"}
+        choices:
+          - {pt: "Quatro espermatozoides funcionais por meiose", en: "Four functional sperm per meiosis"}
+          - {pt: "Um óvulo apenas", en: "Just one egg"}
+          - {pt: "Mil células", en: "A thousand cells"}
+          - {pt: "Nenhum gameta", en: "No gametes"}
+        correctAnswer: {pt: "Quatro espermatozoides funcionais por meiose", en: "Four functional sperm per meiosis"}
+        rationale: {pt: "Como em homens todos os produtos são funcionais, então a produção é massiva — milhões por dia.", en: "Because in men all products are functional, production is massive — millions per day."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Oogênese produz:", en: "Oogenesis produces:"}
+        choices:
+          - {pt: "Um óvulo grande + corpos polares (resíduos)", en: "One large egg + polar bodies (waste)"}
+          - {pt: "Quatro óvulos iguais", en: "Four equal eggs"}
+          - {pt: "Espermatozoides", en: "Sperm"}
+          - {pt: "Nada", en: "Nothing"}
+        correctAnswer: {pt: "Um óvulo grande + corpos polares (resíduos)", en: "One large egg + polar bodies (waste)"}
+        rationale: {pt: "Como o óvulo precisa muito citoplasma para nutrir o embrião, então toda a massa concentra-se em uma só célula.", en: "Because the egg needs lots of cytoplasm to nourish the embryo, all mass concentrates in a single cell."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Fertilização restaura:", en: "Fertilization restores:"}
+        choices:
+          - {pt: "Diploidia (n + n = 2n)", en: "Diploidy (n + n = 2n)"}
+          - {pt: "Triploidia", en: "Triploidy"}
+          - {pt: "Haploidia", en: "Haploidy"}
+          - {pt: "Sem efeito no número", en: "No effect on count"}
+        correctAnswer: {pt: "Diploidia (n + n = 2n)", en: "Diploidy (n + n = 2n)"}
+        rationale: {pt: "Como espermatozoide (n) + óvulo (n) = zigoto (2n), então o número cromossômico é mantido entre gerações.", en: "Because sperm (n) + egg (n) = zygote (2n), chromosome number is kept across generations."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Por que meiose é chamada de \"divisão reducional\"?", en: "Why is meiosis called \"reductional division\"?"}
+        choices:
+          - {pt: "Reduz o número de cromossomos pela metade", en: "Halves the chromosome number"}
+          - {pt: "Reduz tamanho da célula", en: "Reduces cell size"}
+          - {pt: "Não reduz nada", en: "Doesn't reduce anything"}
+          - {pt: "Apenas reduz energia", en: "Just reduces energy"}
+        correctAnswer: {pt: "Reduz o número de cromossomos pela metade", en: "Halves the chromosome number"}
+        rationale: {pt: "Como gametas precisam ter n para fertilização, então a redução é necessária para evitar duplicação a cada geração.", en: "Because gametes must be n for fertilization, reduction is needed to avoid doubling every generation."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Cromossomos sexuais humanos são:", en: "Human sex chromosomes are:"}
+        choices:
+          - {pt: "X e Y (XX = feminino; XY = masculino)", en: "X and Y (XX = female; XY = male)"}
+          - {pt: "A e B", en: "A and B"}
+          - {pt: "Apenas X", en: "Only X"}
+          - {pt: "Apenas Y", en: "Only Y"}
+        correctAnswer: {pt: "X e Y (XX = feminino; XY = masculino)", en: "X and Y (XX = female; XY = male)"}
+        rationale: {pt: "Como espermatozoides carregam X ou Y, então o sexo do bebê é determinado pelo pai biológico.", en: "Because sperm carries X or Y, baby's sex is determined by the biological father."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Erros na meiose podem causar:", en: "Errors in meiosis can cause:"}
+        choices:
+          - {pt: "Aneuploidias (síndrome de Down, Turner, Klinefelter)", en: "Aneuploidies (Down, Turner, Klinefelter syndromes)"}
+          - {pt: "Apenas câncer", en: "Only cancer"}
+          - {pt: "Apenas crescimento ósseo", en: "Only bone growth"}
+          - {pt: "Sem consequências", en: "No consequences"}
+        correctAnswer: {pt: "Aneuploidias (síndrome de Down, Turner, Klinefelter)", en: "Aneuploidies (Down, Turner, Klinefelter syndromes)"}
+        rationale: {pt: "Como número anormal de cromossomos altera dosagem gênica, então o desenvolvimento embrionário é afetado.", en: "Because abnormal chromosome number alters gene dosage, embryonic development is affected."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Em humanos, meiose nas mulheres começa quando?", en: "In humans, when does meiosis begin in women?"}
+        choices:
+          - {pt: "Na vida fetal — pausa em prófase I até a puberdade/ovulação", en: "In fetal life — pauses at prophase I until puberty/ovulation"}
+          - {pt: "Após o nascimento", en: "After birth"}
+          - {pt: "Na velhice", en: "In old age"}
+          - {pt: "Apenas na puberdade", en: "Only at puberty"}
+        correctAnswer: {pt: "Na vida fetal — pausa em prófase I até a puberdade/ovulação", en: "In fetal life — pauses at prophase I until puberty/ovulation"}
+        rationale: {pt: "Como ovócitos primários são produzidos antes do nascimento, então a longa pausa explica risco aumentado em gravidez tardia.", en: "Because primary oocytes are made before birth, the long pause explains higher risk in late pregnancy."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Em humanos, espermatogênese:", en: "In humans, spermatogenesis:"}
+        choices:
+          - {pt: "Começa na puberdade e continua durante a vida adulta", en: "Starts at puberty and continues through adult life"}
+          - {pt: "Só ocorre uma vez", en: "Happens only once"}
+          - {pt: "Antes do nascimento apenas", en: "Only before birth"}
+          - {pt: "Não acontece em humanos", en: "Doesn't happen in humans"}
+        correctAnswer: {pt: "Começa na puberdade e continua durante a vida adulta", en: "Starts at puberty and continues through adult life"}
+        rationale: {pt: "Como espermatogônias se renovam continuamente, então a produção de espermatozoides é constante após a puberdade.", en: "Because spermatogonia renew continuously, sperm production is constant after puberty."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Resumo: meiose é o processo que:", en: "Summary: meiosis is the process that:"}
+        choices:
+          - {pt: "Gera gametas haploides geneticamente diversos para reprodução sexuada", en: "Generates haploid genetically diverse gametes for sexual reproduction"}
+          - {pt: "Apenas substitui células de pele", en: "Just replaces skin cells"}
+          - {pt: "Apenas faz crescer ossos", en: "Just grows bones"}
+          - {pt: "Apenas digere alimentos", en: "Just digests food"}
+        correctAnswer: {pt: "Gera gametas haploides geneticamente diversos para reprodução sexuada", en: "Generates haploid genetically diverse gametes for sexual reproduction"}
+        rationale: {pt: "Como combina redução cromossômica + recombinação + segregação, então cria a base genética da reprodução sexuada.", en: "Because it combines chromosome reduction + recombination + assortment, it creates the genetic basis of sexual reproduction."}
+        objectives: [biology.cell_cycle]
+        difficulty: 3
+target: 20

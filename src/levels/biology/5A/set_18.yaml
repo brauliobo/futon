@@ -1,0 +1,244 @@
+title:
+  pt: "🟦 Quadrado de Punnett"
+  en: "🟦 Punnett squares"
+level: '5A'
+subject: biology
+objectives: [biology.genetics]
+difficulty: 3
+authorNotes: "Como prever resultados de cruzamentos genéticos."
+example:
+  pt: "Ex.: Aa × Aa → quadrado: AA, Aa, Aa, aa → 1:2:1 (genótipo) → 3:1 (fenótipo)."
+  en: "Ex.: Aa × Aa → square: AA, Aa, Aa, aa → 1:2:1 (genotype) → 3:1 (phenotype)."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Construindo o quadrado", en: "Building the square"}
+    description: {pt: "Cruzamentos monoíbridos.", en: "Monohybrid crosses."}
+    exercises:
+      - type: choice
+        question: {pt: "Quadrado de Punnett serve para:", en: "Punnett square is used to:"}
+        choices:
+          - {pt: "Prever proporções genotípicas e fenotípicas dos descendentes", en: "Predict genotype and phenotype ratios of offspring"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Bombear sangue", en: "Pumping blood"}
+          - {pt: "Apenas mostrar a célula", en: "Just showing the cell"}
+        correctAnswer: {pt: "Prever proporções genotípicas e fenotípicas dos descendentes", en: "Predict genotype and phenotype ratios of offspring"}
+        rationale: {pt: "Como combina gametas dos pais nos eixos da grade, então cada célula representa uma possibilidade de zigoto.", en: "Because it combines parental gametes on grid axes, each cell represents a possible zygote."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Cruzamento AA × aa produz F1 com:", en: "AA × aa cross produces F1 with:"}
+        choices:
+          - {pt: "100% Aa (todos heterozigotos)", en: "100% Aa (all heterozygous)"}
+          - {pt: "50% AA, 50% aa", en: "50% AA, 50% aa"}
+          - {pt: "Apenas aa", en: "Only aa"}
+          - {pt: "Apenas AA", en: "Only AA"}
+        correctAnswer: {pt: "100% Aa (todos heterozigotos)", en: "100% Aa (all heterozygous)"}
+        rationale: {pt: "Como AA só dá A e aa só dá a, então todos descendentes são Aa — fenótipo dominante uniforme.", en: "Because AA only gives A and aa only gives a, all descendants are Aa — uniform dominant phenotype."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Aa × Aa produz proporção genotípica:", en: "Aa × Aa produces genotype ratio:"}
+        choices:
+          - {pt: "1 AA : 2 Aa : 1 aa", en: "1 AA : 2 Aa : 1 aa"}
+          - {pt: "1:1", en: "1:1"}
+          - {pt: "9:3:3:1", en: "9:3:3:1"}
+          - {pt: "Tudo igual", en: "All equal"}
+        correctAnswer: {pt: "1 AA : 2 Aa : 1 aa", en: "1 AA : 2 Aa : 1 aa"}
+        rationale: {pt: "Como cada pai gera 50% A e 50% a, então o cruzamento produz a clássica proporção 1:2:1.", en: "Because each parent makes 50% A and 50% a, the cross yields the classic 1:2:1 ratio."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Aa × Aa produz proporção fenotípica:", en: "Aa × Aa produces phenotype ratio:"}
+        choices:
+          - {pt: "3 dominante : 1 recessivo", en: "3 dominant : 1 recessive"}
+          - {pt: "1:1", en: "1:1"}
+          - {pt: "Apenas dominante", en: "Only dominant"}
+          - {pt: "Apenas recessivo", en: "Only recessive"}
+        correctAnswer: {pt: "3 dominante : 1 recessivo", en: "3 dominant : 1 recessive"}
+        rationale: {pt: "Como AA, Aa e Aa expressam o dominante (3) e aa expressa o recessivo (1), então a proporção fenotípica é 3:1.", en: "Because AA, Aa, and Aa express the dominant (3) and aa expresses the recessive (1), the phenotypic ratio is 3:1."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Aa × aa (cruzamento-teste) produz:", en: "Aa × aa (test cross) produces:"}
+        choices:
+          - {pt: "50% Aa : 50% aa (1:1)", en: "50% Aa : 50% aa (1:1)"}
+          - {pt: "100% Aa", en: "100% Aa"}
+          - {pt: "100% aa", en: "100% aa"}
+          - {pt: "3:1", en: "3:1"}
+        correctAnswer: {pt: "50% Aa : 50% aa (1:1)", en: "50% Aa : 50% aa (1:1)"}
+        rationale: {pt: "Como aa só passa a, então o gene desconhecido revela-se direto na prole — usado para testar genótipo.", en: "Because aa only passes a, the unknown gene shows up directly in offspring — used to test genotype."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Cruzamento-teste serve para:", en: "Test cross serves to:"}
+        choices:
+          - {pt: "Determinar se um indivíduo dominante é AA ou Aa", en: "Determine if a dominant individual is AA or Aa"}
+          - {pt: "Determinar idade", en: "Determine age"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Determinar peso", en: "Determine weight"}
+        correctAnswer: {pt: "Determinar se um indivíduo dominante é AA ou Aa", en: "Determine if a dominant individual is AA or Aa"}
+        rationale: {pt: "Como cruzar com aa expõe o alelo escondido, então a prole revela o genótipo do parceiro.", en: "Because crossing with aa exposes the hidden allele, offspring reveal the partner's genotype."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Cruzamento de pais Aa × Aa: probabilidade de filho aa:", en: "Aa × Aa cross: probability of aa child:"}
+        choices:
+          - {pt: "25% (1/4)", en: "25% (1/4)"}
+          - {pt: "50%", en: "50%"}
+          - {pt: "75%", en: "75%"}
+          - {pt: "100%", en: "100%"}
+        correctAnswer: {pt: "25% (1/4)", en: "25% (1/4)"}
+        rationale: {pt: "Como apenas 1 das 4 células do quadrado é aa, então a probabilidade é 1/4.", en: "Because only 1 of 4 cells in the square is aa, probability is 1/4."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Cruzamento Aa × Aa: probabilidade de filho com fenótipo dominante:", en: "Aa × Aa cross: probability of child with dominant phenotype:"}
+        choices:
+          - {pt: "75% (3/4)", en: "75% (3/4)"}
+          - {pt: "25%", en: "25%"}
+          - {pt: "50%", en: "50%"}
+          - {pt: "100%", en: "100%"}
+        correctAnswer: {pt: "75% (3/4)", en: "75% (3/4)"}
+        rationale: {pt: "Como 3 das 4 combinações têm pelo menos um A, então a probabilidade do dominante é 3/4.", en: "Because 3 of 4 combinations have at least one A, probability of dominant is 3/4."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Cruzamento AA × Aa: probabilidade de filho aa:", en: "AA × Aa cross: probability of aa child:"}
+        choices:
+          - {pt: "0% (impossível — pai AA não tem alelo a)", en: "0% (impossible — AA parent has no a allele)"}
+          - {pt: "25%", en: "25%"}
+          - {pt: "50%", en: "50%"}
+          - {pt: "100%", en: "100%"}
+        correctAnswer: {pt: "0% (impossível — pai AA não tem alelo a)", en: "0% (impossible — AA parent has no a allele)"}
+        rationale: {pt: "Como AA só fornece A, então nenhum filho será aa — todos terão pelo menos um A.", en: "Because AA only provides A, no child will be aa — all will have at least one A."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "F1 de AA × aa (todos Aa) cruzados entre si geram F2 com:", en: "F1 of AA × aa (all Aa) crossed produces F2 with:"}
+        choices:
+          - {pt: "Proporção 3:1 (dominante : recessivo)", en: "Ratio 3:1 (dominant : recessive)"}
+          - {pt: "1:1", en: "1:1"}
+          - {pt: "9:3:3:1", en: "9:3:3:1"}
+          - {pt: "100% dominante", en: "100% dominant"}
+        correctAnswer: {pt: "Proporção 3:1 (dominante : recessivo)", en: "Ratio 3:1 (dominant : recessive)"}
+        rationale: {pt: "Como F2 é Aa × Aa, então a proporção fenotípica clássica reaparece — daí 3:1.", en: "Because F2 is Aa × Aa, the classic phenotypic ratio reappears — hence 3:1."}
+        objectives: [biology.genetics]
+        difficulty: 3
+  - pageNumber: 2
+    title: {pt: "Casos especiais", en: "Special cases"}
+    description: {pt: "Aplicações práticas.", en: "Practical applications."}
+    exercises:
+      - type: choice
+        question: {pt: "Pais Aa × Aa tendo 4 filhos: quantos serão aa?", en: "Aa × Aa parents having 4 children: how many will be aa?"}
+        choices:
+          - {pt: "Em média 1, mas o número real varia (probabilidade independe)", en: "On average 1, but actual number varies (probability is independent)"}
+          - {pt: "Sempre exatamente 1", en: "Always exactly 1"}
+          - {pt: "Sempre 0", en: "Always 0"}
+          - {pt: "Sempre 4", en: "Always 4"}
+        correctAnswer: {pt: "Em média 1, mas o número real varia (probabilidade independe)", en: "On average 1, but actual number varies (probability is independent)"}
+        rationale: {pt: "Como cada gestação é evento independente com 25%, então a média de 4 filhos é 1, mas pode ser 0, 2, etc.", en: "Because each pregnancy is independent with 25%, average of 4 children is 1, but could be 0, 2, etc."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Heredograma representa:", en: "A pedigree represents:"}
+        choices:
+          - {pt: "Árvore genealógica para rastrear herança em famílias", en: "Family tree to track heredity"}
+          - {pt: "Quadrado de Punnett", en: "Punnett square"}
+          - {pt: "Tipo de gráfico de barras", en: "Type of bar chart"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Árvore genealógica para rastrear herança em famílias", en: "Family tree to track heredity"}
+        rationale: {pt: "Como mostra padrões através de gerações, então identifica heranças autossômicas, recessivas, ligadas ao X.", en: "Because it shows patterns across generations, it identifies autosomal, recessive, X-linked inheritance."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Cruzamento di-híbrido AaBb × AaBb produz fenótipos:", en: "Dihybrid cross AaBb × AaBb produces phenotypes:"}
+        choices:
+          - {pt: "Proporção 9:3:3:1", en: "9:3:3:1 ratio"}
+          - {pt: "3:1", en: "3:1"}
+          - {pt: "Apenas um", en: "Just one"}
+          - {pt: "Não tem padrão", en: "No pattern"}
+        correctAnswer: {pt: "Proporção 9:3:3:1", en: "9:3:3:1 ratio"}
+        rationale: {pt: "Como (3:1) × (3:1) = 9:3:3:1, então a 2ª lei de Mendel emerge da segregação independente.", en: "Because (3:1) × (3:1) = 9:3:3:1, Mendel's 2nd law emerges from independent assortment."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Pais com sangue Aa × bb (di-híbrido teste): proporção fenotípica:", en: "Aa × bb parents (dihybrid test): phenotypic ratio:"}
+        choices:
+          - {pt: "1:1 (Ab : ab)", en: "1:1 (Ab : ab)"}
+          - {pt: "9:3:3:1", en: "9:3:3:1"}
+          - {pt: "3:1", en: "3:1"}
+          - {pt: "100% recessivo", en: "100% recessive"}
+        correctAnswer: {pt: "1:1 (Ab : ab)", en: "1:1 (Ab : ab)"}
+        rationale: {pt: "Como bb só passa b, então o segundo gene não varia na prole — apenas o primeiro segrega 1:1.", en: "Because bb only passes b, the second gene doesn't vary in offspring — only the first segregates 1:1."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Em cruzamento Aa × Aa, qual a chance de pelo menos um filho recessivo se tiverem 2?", en: "In Aa × Aa cross, chance of at least one recessive child if they have 2?"}
+        choices:
+          - {pt: "1 - (3/4)² = 7/16 ≈ 44%", en: "1 - (3/4)² = 7/16 ≈ 44%"}
+          - {pt: "100%", en: "100%"}
+          - {pt: "Apenas 25%", en: "Only 25%"}
+          - {pt: "0%", en: "0%"}
+        correctAnswer: {pt: "1 - (3/4)² = 7/16 ≈ 44%", en: "1 - (3/4)² = 7/16 ≈ 44%"}
+        rationale: {pt: "Como cada filho é independente, então prob(nenhum recessivo) = (3/4)² e prob(pelo menos um) é o complemento.", en: "Because each child is independent, prob(none recessive) = (3/4)² and prob(at least one) is the complement."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Fibrose cística é doença autossômica recessiva. Pais Aa × Aa: probabilidade do filho ter:", en: "Cystic fibrosis is autosomal recessive. Aa × Aa parents: probability child is affected:"}
+        choices:
+          - {pt: "25%", en: "25%"}
+          - {pt: "50%", en: "50%"}
+          - {pt: "75%", en: "75%"}
+          - {pt: "100%", en: "100%"}
+        correctAnswer: {pt: "25%", en: "25%"}
+        rationale: {pt: "Como precisa duas cópias do alelo recessivo, então só 1/4 dos filhos será afetado — mesma proporção 3:1.", en: "Because two recessive copies are needed, only 1/4 of children are affected — same 3:1 ratio."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Mãe AB × pai O: filhos podem ter sangue:", en: "AB mother × O father: children can have blood type:"}
+        choices:
+          - {pt: "A ou B (nenhum AB ou O)", en: "A or B (no AB or O)"}
+          - {pt: "Apenas O", en: "Only O"}
+          - {pt: "Apenas AB", en: "Only AB"}
+          - {pt: "Todos os tipos", en: "All types"}
+        correctAnswer: {pt: "A ou B (nenhum AB ou O)", en: "A or B (no AB or O)"}
+        rationale: {pt: "Como AB dá A ou B e O (ii) dá i, então filhos são Ai (sangue A) ou Bi (sangue B).", en: "Because AB gives A or B and O (ii) gives i, children are Ai (type A) or Bi (type B)."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Probabilidade combinada de Aa × Aa terem dois filhos AA seguidos:", en: "Probability Aa × Aa have two AA children in a row:"}
+        choices:
+          - {pt: "(1/4)² = 1/16 ≈ 6%", en: "(1/4)² = 1/16 ≈ 6%"}
+          - {pt: "1/4", en: "1/4"}
+          - {pt: "1/2", en: "1/2"}
+          - {pt: "100%", en: "100%"}
+        correctAnswer: {pt: "(1/4)² = 1/16 ≈ 6%", en: "(1/4)² = 1/16 ≈ 6%"}
+        rationale: {pt: "Como eventos são independentes, então probabilidades multiplicam-se — daí o produto.", en: "Because events are independent, probabilities multiply — hence the product."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Vantagem do quadrado de Punnett:", en: "Advantage of Punnett square:"}
+        choices:
+          - {pt: "Visualiza claramente combinações de alelos e suas probabilidades", en: "Clearly visualizes allele combinations and probabilities"}
+          - {pt: "Apenas dá cor", en: "Just gives color"}
+          - {pt: "É decorativo", en: "Is decorative"}
+          - {pt: "Apenas para crianças", en: "Just for children"}
+        correctAnswer: {pt: "Visualiza claramente combinações de alelos e suas probabilidades", en: "Clearly visualizes allele combinations and probabilities"}
+        rationale: {pt: "Como cada célula da grade representa uma combinação igualmente provável, então proporções saem direto da contagem.", en: "Because each grid cell is an equally likely combination, ratios come straight from counting."}
+        objectives: [biology.genetics]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Resumo: o quadrado de Punnett:", en: "Summary: the Punnett square:"}
+        choices:
+          - {pt: "É ferramenta visual para prever resultados de cruzamentos genéticos", en: "Is a visual tool for predicting genetic cross outcomes"}
+          - {pt: "É um tipo de gráfico de pizza", en: "Is a type of pie chart"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Mede temperatura", en: "Measures temperature"}
+        correctAnswer: {pt: "É ferramenta visual para prever resultados de cruzamentos genéticos", en: "Is a visual tool for predicting genetic cross outcomes"}
+        rationale: {pt: "Como combina probabilidade com biologia, então prevê traços de descendentes mesmo antes de nascerem.", en: "Because it combines probability with biology, it predicts offspring traits even before birth."}
+        objectives: [biology.genetics]
+        difficulty: 3
+target: 20
