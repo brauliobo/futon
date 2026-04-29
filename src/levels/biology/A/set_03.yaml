@@ -1,0 +1,244 @@
+title:
+  pt: "🛡️ Engenharia de anticorpos"
+  en: "🛡️ Antibody engineering"
+level: 'A'
+subject: biology
+objectives: [biology.antibody_engineering]
+difficulty: 5
+authorNotes: "Estrutura de Ig, humanização, anticorpos biespecíficos, ADCs, terapias de anticorpo, descoberta."
+example:
+  pt: "Ex.: imunizar animal → hibridoma → anticorpo monoclonal → humanização → terapia clínica."
+  en: "Ex.: immunize animal → hybridoma → monoclonal antibody → humanization → clinical therapy."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Anticorpos como fármacos", en: "Antibodies as drugs"}
+    description: {pt: "De imunoglobulinas a terapias.", en: "From immunoglobulins to therapies."}
+    exercises:
+      - type: choice
+        question: {pt: "Anticorpo IgG é composto por:", en: "IgG antibody is composed of:"}
+        choices:
+          - {pt: "Duas cadeias pesadas e duas leves com regiões variáveis e constantes", en: "Two heavy and two light chains with variable and constant regions"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas RNA", en: "Just RNA"}
+        correctAnswer: {pt: "Duas cadeias pesadas e duas leves com regiões variáveis e constantes", en: "Two heavy and two light chains with variable and constant regions"}
+        rationale: {pt: "Quando arquitetura Y é montada, então paratopo (V) reconhece e Fc (C) recruta efetores.", en: "When Y architecture is assembled, paratope (V) recognizes and Fc (C) recruits effectors."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CDRs (regiões determinantes de complementaridade):", en: "CDRs (complementarity-determining regions):"}
+        choices:
+          - {pt: "Loops hipervariáveis das cadeias V que formam o sítio de ligação ao antígeno", en: "Hypervariable loops of V chains forming antigen binding site"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas constantes", en: "Just constant"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Loops hipervariáveis das cadeias V que formam o sítio de ligação ao antígeno", en: "Hypervariable loops of V chains forming antigen binding site"}
+        rationale: {pt: "Quando recombinação V(D)J e hipermutação atuam, então CDR3 atinge diversidade enorme.", en: "When V(D)J recombination and hypermutation act, CDR3 reaches enormous diversity."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anticorpos monoclonais (mAbs) são produzidos por:", en: "Monoclonal antibodies (mAbs) are produced by:"}
+        choices:
+          - {pt: "Hibridomas — fusão de linfócitos B com mieloma para imortalização", en: "Hybridomas — B cell fusion with myeloma for immortalization"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas síntese química", en: "Just chemical synthesis"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Hibridomas — fusão de linfócitos B com mieloma para imortalização", en: "Hybridomas — B cell fusion with myeloma for immortalization"}
+        rationale: {pt: "Quando linhagem é imortalizada, então clone produz mesmo anticorpo indefinidamente.", en: "When lineage is immortalized, clone produces same antibody indefinitely."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Humanização de anticorpos murinos:", en: "Humanization of murine antibodies:"}
+        choices:
+          - {pt: "Substitui regiões framework por humanas mantendo CDRs originais", en: "Replaces framework regions with human ones while keeping original CDRs"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas mantém murino integral", en: "Just keeps fully murine"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Substitui regiões framework por humanas mantendo CDRs originais", en: "Replaces framework regions with human ones while keeping original CDRs"}
+        rationale: {pt: "Quando estrutura suporte é humana, então imunogenicidade cai e anticorpo serve uso clínico longo.", en: "When framework is human, immunogenicity drops and antibody fits long clinical use."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anticorpos totalmente humanos provêm de:", en: "Fully human antibodies come from:"}
+        choices:
+          - {pt: "Bibliotecas de phage display ou camundongos transgênicos com loci humanos", en: "Phage display libraries or transgenic mice with human loci"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas hibridoma murino", en: "Just murine hybridoma"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Bibliotecas de phage display ou camundongos transgênicos com loci humanos", en: "Phage display libraries or transgenic mice with human loci"}
+        rationale: {pt: "Quando origem é humana desde início, então perfil clínico é seguro e durável.", en: "When origin is human from the start, clinical profile is safe and durable."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fc engineering modifica:", en: "Fc engineering modifies:"}
+        choices:
+          - {pt: "Função efetora (ADCC, CDC) e meia-vida via interações com FcγR/FcRn", en: "Effector function (ADCC, CDC) and half-life via FcγR/FcRn interactions"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas CDR", en: "Just CDR"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Função efetora (ADCC, CDC) e meia-vida via interações com FcγR/FcRn", en: "Effector function (ADCC, CDC) and half-life via FcγR/FcRn interactions"}
+        rationale: {pt: "Quando ajustamos Fc, então mAb ganha mais potência tumoral ou meia-vida estendida.", en: "When we tune Fc, mAb gains more tumor potency or extended half-life."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ADCs (anticorpos conjugados a fármacos):", en: "ADCs (antibody-drug conjugates):"}
+        choices:
+          - {pt: "Anticorpo entrega quimioterápico potente diretamente ao tumor via linker controlado", en: "Antibody delivers potent chemotherapy directly to tumor via controlled linker"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas anticorpo nu", en: "Just naked antibody"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Anticorpo entrega quimioterápico potente diretamente ao tumor via linker controlado", en: "Antibody delivers potent chemotherapy directly to tumor via controlled linker"}
+        rationale: {pt: "Quando carga é liberada no alvo, então toxina concentrada poupa tecidos sadios.", en: "When payload releases at target, concentrated toxin spares healthy tissue."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anticorpos biespecíficos (BiTE, DART, T-cell engagers):", en: "Bispecific antibodies (BiTE, DART, T-cell engagers):"}
+        choices:
+          - {pt: "Ligam dois alvos simultaneamente — frequentemente CD3 + antígeno tumoral", en: "Bind two targets simultaneously — often CD3 + tumor antigen"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas único alvo", en: "Just single target"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Ligam dois alvos simultaneamente — frequentemente CD3 + antígeno tumoral", en: "Bind two targets simultaneously — often CD3 + tumor antigen"}
+        rationale: {pt: "Quando célula T é trazida ao tumor, então sinapse imune lítica forma sem ativação prévia.", en: "When T cell is brought to tumor, lytic immune synapse forms without prior activation."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Nanocorpos (VHH) são:", en: "Nanobodies (VHH) are:"}
+        choices:
+          - {pt: "Domínio variável único de anticorpos de camelídeos — pequenos e estáveis", en: "Single variable domain of camelid antibodies — small and stable"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas vacina", en: "Just vaccine"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Domínio variável único de anticorpos de camelídeos — pequenos e estáveis", en: "Single variable domain of camelid antibodies — small and stable"}
+        rationale: {pt: "Quando tamanho é menor, então penetração tecidual e expressão recombinante melhoram.", en: "When size is smaller, tissue penetration and recombinant expression improve."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Maturação de afinidade in vitro:", en: "In vitro affinity maturation:"}
+        choices:
+          - {pt: "Aplica mutagênese e seleção iterativa para aumentar afinidade ao antígeno", en: "Applies mutagenesis and iterative selection to increase antigen affinity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Aplica mutagênese e seleção iterativa para aumentar afinidade ao antígeno", en: "Applies mutagenesis and iterative selection to increase antigen affinity"}
+        rationale: {pt: "Quando rounds aumentam estringência, então variantes com KD na ordem picomolar emergem.", en: "When rounds raise stringency, variants with picomolar KD emerge."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações clínicas e fronteira", en: "Clinical applications and frontier"}
+    description: {pt: "Anticorpos terapêuticos e de diagnóstico.", en: "Therapeutic and diagnostic antibodies."}
+    exercises:
+      - type: choice
+        question: {pt: "Inibidores de checkpoint imune (anti-PD-1, anti-CTLA-4):", en: "Immune checkpoint inhibitors (anti-PD-1, anti-CTLA-4):"}
+        choices:
+          - {pt: "Bloqueiam freios da resposta T contra tumor — categoria clínica revolucionária", en: "Block T response brakes against tumor — revolutionary clinical category"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas anti-bacteriano", en: "Just antibacterial"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Bloqueiam freios da resposta T contra tumor — categoria clínica revolucionária", en: "Block T response brakes against tumor — revolutionary clinical category"}
+        rationale: {pt: "Quando freio é solto, então remissões duráveis ocorrem em câncer antes refratário.", en: "When the brake is released, durable remissions occur in previously refractory cancer."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Trastuzumabe é mAb anti:", en: "Trastuzumab is anti-:"}
+        choices:
+          - {pt: "HER2 — usado em câncer de mama HER2+", en: "HER2 — used in HER2+ breast cancer"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas vírus", en: "Just virus"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "HER2 — usado em câncer de mama HER2+", en: "HER2 — used in HER2+ breast cancer"}
+        rationale: {pt: "Quando receptor amplificado é bloqueado, então sobrevida em HER2+ subiu drasticamente.", en: "When amplified receptor is blocked, HER2+ survival rose dramatically."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Rituximabe atinge:", en: "Rituximab targets:"}
+        choices:
+          - {pt: "CD20 em linfomas e leucemias B, com efeito também em autoimunidade", en: "CD20 in B-cell lymphomas/leukemias, with effect in autoimmunity too"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas vírus", en: "Just virus"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "CD20 em linfomas e leucemias B, com efeito também em autoimunidade", en: "CD20 in B-cell lymphomas/leukemias, with effect in autoimmunity too"}
+        rationale: {pt: "Quando B-CD20+ são depletadas, então tumores e doenças autoimunes B-mediadas regridem.", en: "When B-CD20+ are depleted, tumors and B-mediated autoimmune diseases regress."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anticorpos monoclonais anti-amiloide (Alzheimer):", en: "Anti-amyloid mAbs (Alzheimer's):"}
+        choices:
+          - {pt: "Lecanemab/donanemab reduzem placas e modificam progressão clinicamente modesta", en: "Lecanemab/donanemab reduce plaques and modify clinically modest progression"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas vacina pediátrica", en: "Just pediatric vaccine"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Lecanemab/donanemab reduzem placas e modificam progressão clinicamente modesta", en: "Lecanemab/donanemab reduce plaques and modify clinically modest progression"}
+        rationale: {pt: "Quando β-amiloide é removido, então sintomas melhoram modestamente — primeira modificação de doença.", en: "When β-amyloid is cleared, symptoms improve modestly — first disease modification."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anticorpos anti-RSV (nirsevimab) protegem:", en: "Anti-RSV antibodies (nirsevimab) protect:"}
+        choices:
+          - {pt: "Bebês de bronquiolite grave em uma única dose com longa meia-vida", en: "Infants from severe bronchiolitis with single long-half-life dose"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas idosos", en: "Just elderly"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Bebês de bronquiolite grave em uma única dose com longa meia-vida", en: "Infants from severe bronchiolitis with single long-half-life dose"}
+        rationale: {pt: "Quando Fc é otimizado para FcRn, então proteção dura toda a temporada de RSV.", en: "When Fc is optimized for FcRn, protection lasts the whole RSV season."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anticorpos catalíticos (abzimas):", en: "Catalytic antibodies (abzymes):"}
+        choices:
+          - {pt: "Aceleram reações químicas estabilizando estados de transição", en: "Accelerate chemical reactions by stabilizing transition states"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas decorativos", en: "Just decorative"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Aceleram reações químicas estabilizando estados de transição", en: "Accelerate chemical reactions by stabilizing transition states"}
+        rationale: {pt: "Quando paratopo é selecionado contra TS-análogo, então atividade enzimática emerge da imunoglobulina.", en: "When paratope is selected against TS analog, enzymatic activity emerges from the immunoglobulin."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anticorpos para diagnóstico (POC, ELISA, lateral flow):", en: "Diagnostic antibodies (POC, ELISA, lateral flow):"}
+        choices:
+          - {pt: "Detectam antígenos com alta sensibilidade e especificidade", en: "Detect antigens with high sensitivity and specificity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Detectam antígenos com alta sensibilidade e especificidade", en: "Detect antigens with high sensitivity and specificity"}
+        rationale: {pt: "Quando dois anticorpos formam sanduíche, então sinal cresce com estabilidade adequada para uso real.", en: "When two antibodies form sandwich, signal grows with stability suitable for real use."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anticorpos amplamente neutralizantes (bnAbs) anti-HIV:", en: "Broadly neutralizing antibodies (bnAbs) anti-HIV:"}
+        choices:
+          - {pt: "Reconhecem epítopos conservados da Env e neutralizam variantes diversas", en: "Recognize conserved Env epitopes and neutralize diverse variants"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Reconhecem epítopos conservados da Env e neutralizam variantes diversas", en: "Recognize conserved Env epitopes and neutralize diverse variants"}
+        rationale: {pt: "Quando alvo é conservado, então neutralização cobre vasta diversidade viral global.", en: "When target is conserved, neutralization covers vast global viral diversity."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Engenharia de glicanos (afucosilação) em mAbs:", en: "Glycan engineering (afucosylation) in mAbs:"}
+        choices:
+          - {pt: "Aumenta ADCC ao fortalecer ligação Fc-FcγRIIIa", en: "Boosts ADCC by strengthening Fc-FcγRIIIa binding"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas reduz potência", en: "Just reduces potency"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Aumenta ADCC ao fortalecer ligação Fc-FcγRIIIa", en: "Boosts ADCC by strengthening Fc-FcγRIIIa binding"}
+        rationale: {pt: "Quando fucose é removida, então NK mata tumor com mais eficiência.", en: "When fucose is removed, NK kills tumor more efficiently."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em mAbs incluem:", en: "Next frontiers in mAbs include:"}
+        choices:
+          - {pt: "Anticorpos pH-dependentes, multiespecíficos, conjugados de RNA e design generativo", en: "pH-dependent, multispecific antibodies, RNA-ADCs and generative design"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Anticorpos pH-dependentes, multiespecíficos, conjugados de RNA e design generativo", en: "pH-dependent, multispecific antibodies, RNA-ADCs and generative design"}
+        rationale: {pt: "Quando inovações se acumulam, então classe segue como motor central da indústria farmacêutica.", en: "When innovations stack, the class remains a central engine of the pharmaceutical industry."}
+        objectives: [biology.antibody_engineering]
+        difficulty: 5
+target: 20
