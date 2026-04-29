@@ -1,0 +1,244 @@
+title:
+  pt: "💧 Osmose e tonicidade"
+  en: "💧 Osmosis and tonicity"
+level: '5A'
+subject: biology
+objectives: [biology.membrane]
+difficulty: 3
+authorNotes: "Movimento de água, soluções iso/hipo/hipertônicas, plasmólise/lise."
+example:
+  pt: "Ex.: hipertônica → célula encolhe; isotônica → estável; hipotônica → célula incha (animal lisa, planta turge)."
+  en: "Ex.: hypertonic → cell shrinks; isotonic → stable; hypotonic → cell swells (animal lyses, plant turgid)."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Movimento da água", en: "Water movement"}
+    description: {pt: "Como a água atravessa membranas.", en: "How water crosses membranes."}
+    exercises:
+      - type: choice
+        question: {pt: "Osmose é:", en: "Osmosis is:"}
+        choices:
+          - {pt: "Difusão de água através de membrana semipermeável", en: "Water diffusion across a semipermeable membrane"}
+          - {pt: "Difusão de íons", en: "Ion diffusion"}
+          - {pt: "Transporte ativo", en: "Active transport"}
+          - {pt: "Endocitose", en: "Endocytosis"}
+        correctAnswer: {pt: "Difusão de água através de membrana semipermeável", en: "Water diffusion across a semipermeable membrane"}
+        rationale: {pt: "Como solutos não atravessam mas a água sim, então o gradiente osmótico move H₂O para equilibrar concentrações.", en: "Because solutes can't cross but water can, the osmotic gradient moves H₂O to equalize concentrations."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Água move-se de onde está:", en: "Water moves from where it is:"}
+        choices:
+          - {pt: "Mais concentrada (menos soluto) para menos concentrada (mais soluto)", en: "More concentrated (less solute) to less concentrated (more solute)"}
+          - {pt: "Sempre para fora da célula", en: "Always out of the cell"}
+          - {pt: "Sempre para dentro", en: "Always into the cell"}
+          - {pt: "Sem padrão", en: "No pattern"}
+        correctAnswer: {pt: "Mais concentrada (menos soluto) para menos concentrada (mais soluto)", en: "More concentrated (less solute) to less concentrated (more solute)"}
+        rationale: {pt: "Como a água busca equilíbrio osmótico, então flui em direção ao lado com mais soluto — diluindo-o.", en: "Because water seeks osmotic balance, it flows toward the side with more solute — diluting it."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Solução isotônica em relação à célula:", en: "An isotonic solution relative to the cell:"}
+        choices:
+          - {pt: "Tem a mesma concentração de solutos — fluxo líquido = 0", en: "Has the same solute concentration — net flow = 0"}
+          - {pt: "Tem mais solutos", en: "Has more solutes"}
+          - {pt: "Tem menos solutos", en: "Has fewer solutes"}
+          - {pt: "Não tem água", en: "Has no water"}
+        correctAnswer: {pt: "Tem a mesma concentração de solutos — fluxo líquido = 0", en: "Has the same solute concentration — net flow = 0"}
+        rationale: {pt: "Como água entra e sai com mesma taxa, então a célula mantém o tamanho — soro isotônico em medicina.", en: "Because water enters and exits at the same rate, the cell keeps its size — isotonic saline in medicine."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Solução hipertônica:", en: "A hypertonic solution:"}
+        choices:
+          - {pt: "Tem mais solutos que a célula — água SAI da célula", en: "Has more solutes than the cell — water LEAVES the cell"}
+          - {pt: "Tem menos solutos", en: "Has fewer solutes"}
+          - {pt: "Tem solutos iguais", en: "Equal solutes"}
+          - {pt: "Não afeta", en: "Doesn't affect"}
+        correctAnswer: {pt: "Tem mais solutos que a célula — água SAI da célula", en: "Has more solutes than the cell — water LEAVES the cell"}
+        rationale: {pt: "Como a água tenta diluir o exterior, então a célula encolhe (crenação em hemácias).", en: "Because water tries to dilute the outside, the cell shrinks (crenation in red cells)."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Solução hipotônica:", en: "A hypotonic solution:"}
+        choices:
+          - {pt: "Tem menos solutos que a célula — água ENTRA na célula", en: "Has fewer solutes than the cell — water ENTERS the cell"}
+          - {pt: "Tem mais solutos", en: "Has more solutes"}
+          - {pt: "Tem solutos iguais", en: "Equal solutes"}
+          - {pt: "Não afeta", en: "Doesn't affect"}
+        correctAnswer: {pt: "Tem menos solutos que a célula — água ENTRA na célula", en: "Has fewer solutes than the cell — water ENTERS the cell"}
+        rationale: {pt: "Como a água diluir o interior, então a célula incha — hemácias podem hemolisar; vegetais ficam túrgidos.", en: "Because water dilutes the interior, the cell swells — red cells may lyse; plant cells become turgid."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Hemácia em água pura:", en: "Red blood cell in pure water:"}
+        choices:
+          - {pt: "Hemolisa (estoura) — água entra demais", en: "Hemolyzes (bursts) — too much water enters"}
+          - {pt: "Encolhe", en: "Shrinks"}
+          - {pt: "Fica igual", en: "Stays the same"}
+          - {pt: "Cresce indefinidamente sem estourar", en: "Grows indefinitely without bursting"}
+        correctAnswer: {pt: "Hemolisa (estoura) — água entra demais", en: "Hemolyzes (bursts) — too much water enters"}
+        rationale: {pt: "Como animais não têm parede celular, então a membrana cede com pressão osmótica excessiva.", en: "Because animals lack cell walls, the membrane fails under excessive osmotic pressure."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Hemácia em solução muito salgada (hipertônica):", en: "Red cell in very salty (hypertonic) solution:"}
+        choices:
+          - {pt: "Crena (encolhe e enruga)", en: "Crenates (shrinks and wrinkles)"}
+          - {pt: "Hemolisa", en: "Hemolyzes"}
+          - {pt: "Fica igual", en: "Stays the same"}
+          - {pt: "Vira branca", en: "Turns white"}
+        correctAnswer: {pt: "Crena (encolhe e enruga)", en: "Crenates (shrinks and wrinkles)"}
+        rationale: {pt: "Como água sai por osmose, então a hemácia perde volume e fica espinhosa.", en: "Because water exits by osmosis, the red cell loses volume and becomes spiky."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Célula vegetal em meio hipotônico:", en: "Plant cell in hypotonic medium:"}
+        choices:
+          - {pt: "Fica túrgida (parede celular impede lise)", en: "Becomes turgid (cell wall prevents lysis)"}
+          - {pt: "Estoura", en: "Bursts"}
+          - {pt: "Encolhe", en: "Shrinks"}
+          - {pt: "Vira animal", en: "Becomes animal"}
+        correctAnswer: {pt: "Fica túrgida (parede celular impede lise)", en: "Becomes turgid (cell wall prevents lysis)"}
+        rationale: {pt: "Como a parede resiste à pressão, então surge pressão de turgor — sustenta caule e folhas.", en: "Because the wall resists pressure, turgor pressure builds — supporting stems and leaves."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Célula vegetal em meio hipertônico sofre:", en: "Plant cell in hypertonic medium undergoes:"}
+        choices:
+          - {pt: "Plasmólise (membrana se afasta da parede)", en: "Plasmolysis (membrane pulls away from wall)"}
+          - {pt: "Crescimento extra", en: "Extra growth"}
+          - {pt: "Mitose", en: "Mitosis"}
+          - {pt: "Sem efeito", en: "No effect"}
+        correctAnswer: {pt: "Plasmólise (membrana se afasta da parede)", en: "Plasmolysis (membrane pulls away from wall)"}
+        rationale: {pt: "Como o vacúolo perde água, então o protoplasto se contrai — daí a planta murcha.", en: "Because the vacuole loses water, the protoplast contracts — hence the plant wilts."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Pressão osmótica é a pressão necessária para:", en: "Osmotic pressure is the pressure needed to:"}
+        choices:
+          - {pt: "Impedir o fluxo de água por osmose", en: "Stop water flow by osmosis"}
+          - {pt: "Aumentar a osmose", en: "Increase osmosis"}
+          - {pt: "Quebrar a membrana", en: "Break the membrane"}
+          - {pt: "Aquecer a água", en: "Heat the water"}
+        correctAnswer: {pt: "Impedir o fluxo de água por osmose", en: "Stop water flow by osmosis"}
+        rationale: {pt: "Como mais soluto exerce mais \"sucção\" osmótica, então a pressão necessária para parar a água é proporcional à concentração.", en: "Because more solute exerts more osmotic \"suction\", the pressure needed to stop water flow scales with concentration."}
+        objectives: [biology.membrane]
+        difficulty: 3
+  - pageNumber: 2
+    title: {pt: "Aplicações", en: "Applications"}
+    description: {pt: "Osmose no cotidiano.", en: "Osmosis in daily life."}
+    exercises:
+      - type: choice
+        question: {pt: "Soro fisiológico (0.9% NaCl) é:", en: "Physiological saline (0.9% NaCl) is:"}
+        choices:
+          - {pt: "Isotônico ao sangue humano", en: "Isotonic to human blood"}
+          - {pt: "Hipertônico", en: "Hypertonic"}
+          - {pt: "Hipotônico", en: "Hypotonic"}
+          - {pt: "Sem soluto", en: "No solute"}
+        correctAnswer: {pt: "Isotônico ao sangue humano", en: "Isotonic to human blood"}
+        rationale: {pt: "Como tem mesma concentração efetiva de solutos, então pode ser injetado sem danificar células.", en: "Because it has the same effective solute concentration, it can be injected without harming cells."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Por que conservamos alimentos com sal ou açúcar?", en: "Why do we preserve foods with salt or sugar?"}
+        choices:
+          - {pt: "Cria meio hipertônico que desidrata bactérias", en: "Creates hypertonic medium that dehydrates bacteria"}
+          - {pt: "Apenas dá sabor", en: "Just for flavor"}
+          - {pt: "Apenas para cor", en: "Just for color"}
+          - {pt: "Sem motivo", en: "No reason"}
+        correctAnswer: {pt: "Cria meio hipertônico que desidrata bactérias", en: "Creates hypertonic medium that dehydrates bacteria"}
+        rationale: {pt: "Como bactérias perdem água por osmose, então não conseguem crescer — daí a conservação tradicional.", en: "Because bacteria lose water by osmosis, they can't grow — hence traditional preservation."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Por que beber água do mar não hidrata?", en: "Why doesn't drinking seawater hydrate us?"}
+        choices:
+          - {pt: "É hipertônica — eliminamos mais água que ganhamos", en: "It's hypertonic — we lose more water than we gain"}
+          - {pt: "Não tem sal", en: "Has no salt"}
+          - {pt: "É filtrada", en: "Is filtered"}
+          - {pt: "Não é água", en: "Isn't water"}
+        correctAnswer: {pt: "É hipertônica — eliminamos mais água que ganhamos", en: "It's hypertonic — we lose more water than we gain"}
+        rationale: {pt: "Como rins precisam excretar o sal extra, então gastam mais água do que veio na bebida — desidratação.", en: "Because kidneys must excrete the extra salt, they use more water than came in the drink — dehydration."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Plantas sem rega:", en: "Unwatered plants:"}
+        choices:
+          - {pt: "Murcham por perda de turgor (plasmólise)", en: "Wilt due to loss of turgor (plasmolysis)"}
+          - {pt: "Crescem mais", en: "Grow more"}
+          - {pt: "Mudam de cor sem motivo", en: "Change color randomly"}
+          - {pt: "Reproduzem-se mais", en: "Reproduce more"}
+        correctAnswer: {pt: "Murcham por perda de turgor (plasmólise)", en: "Wilt due to loss of turgor (plasmolysis)"}
+        rationale: {pt: "Como vacúolos esvaziam, então a sustentação cai — folhas e caules pendem.", en: "Because vacuoles empty, support drops — leaves and stems droop."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Nos rins, a osmose é importante para:", en: "In kidneys, osmosis is important for:"}
+        choices:
+          - {pt: "Reabsorver água do filtrado e concentrar urina", en: "Reabsorbing water from the filtrate and concentrating urine"}
+          - {pt: "Bombear sangue", en: "Pumping blood"}
+          - {pt: "Trocar gases", en: "Exchanging gases"}
+          - {pt: "Mover ossos", en: "Moving bones"}
+        correctAnswer: {pt: "Reabsorver água do filtrado e concentrar urina", en: "Reabsorbing water from the filtrate and concentrating urine"}
+        rationale: {pt: "Como os néfrons criam gradientes osmóticos, então a água segue o gradiente e a urina pode ser concentrada.", en: "Because nephrons create osmotic gradients, water follows them and urine can be concentrated."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Diálise (em insuficiência renal) usa princípio de:", en: "Dialysis (in kidney failure) uses the principle of:"}
+        choices:
+          - {pt: "Difusão e osmose através de membrana semipermeável", en: "Diffusion and osmosis through semipermeable membrane"}
+          - {pt: "Apenas filtração mecânica", en: "Only mechanical filtration"}
+          - {pt: "Apenas centrifugação", en: "Only centrifugation"}
+          - {pt: "Apenas cor", en: "Only color"}
+        correctAnswer: {pt: "Difusão e osmose através de membrana semipermeável", en: "Diffusion and osmosis through semipermeable membrane"}
+        rationale: {pt: "Como ureia difunde do sangue para o dialisato, então toxinas saem mantendo eletrólitos equilibrados.", en: "Because urea diffuses from blood to dialysate, toxins leave while electrolytes stay balanced."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "ADH (hormônio antidiurético) age aumentando:", en: "ADH (antidiuretic hormone) acts by increasing:"}
+        choices:
+          - {pt: "Aquaporinas no túbulo renal — mais água reabsorvida", en: "Aquaporins in the renal tubule — more water reabsorbed"}
+          - {pt: "Bombear sangue", en: "Pumping blood"}
+          - {pt: "Trocar gases", en: "Exchanging gases"}
+          - {pt: "Mover ossos", en: "Moving bones"}
+        correctAnswer: {pt: "Aquaporinas no túbulo renal — mais água reabsorvida", en: "Aquaporins in the renal tubule — more water reabsorbed"}
+        rationale: {pt: "Como mais canais de água permitem mais osmose, então a urina sai mais concentrada — economia de água.", en: "Because more water channels enable more osmosis, urine becomes more concentrated — water conservation."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Em água do mar, peixes ósseos:", en: "In seawater, bony fish:"}
+        choices:
+          - {pt: "Tendem a perder água — bebem muito e excretam sal pelas brânquias", en: "Tend to lose water — drink lots and excrete salt via gills"}
+          - {pt: "Ganham água passivamente", en: "Gain water passively"}
+          - {pt: "Não fazem nada", en: "Do nothing"}
+          - {pt: "Apenas comem sal", en: "Just eat salt"}
+        correctAnswer: {pt: "Tendem a perder água — bebem muito e excretam sal pelas brânquias", en: "Tend to lose water — drink lots and excrete salt via gills"}
+        rationale: {pt: "Como o mar é hipertônico ao corpo, então o peixe combate desidratação ativa — bombeando sal para fora.", en: "Because the sea is hypertonic to the body, fish actively fight dehydration — pumping salt out."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Em água doce, peixes ósseos:", en: "In freshwater, bony fish:"}
+        choices:
+          - {pt: "Ganham água — urinam muito e absorvem sal pelas brânquias", en: "Gain water — urinate a lot and absorb salt via gills"}
+          - {pt: "Perdem água", en: "Lose water"}
+          - {pt: "Não fazem nada", en: "Do nothing"}
+          - {pt: "Crescem demais", en: "Grow too much"}
+        correctAnswer: {pt: "Ganham água — urinam muito e absorvem sal pelas brânquias", en: "Gain water — urinate a lot and absorb salt via gills"}
+        rationale: {pt: "Como a água doce é hipotônica ao peixe, então sobra água e falta sal — daí a estratégia oposta à marinha.", en: "Because freshwater is hypotonic to the fish, water is excess and salt is scarce — opposite strategy to marine."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Resumo: osmose move:", en: "Summary: osmosis moves:"}
+        choices:
+          - {pt: "Água através de membranas seguindo gradientes de soluto", en: "Water across membranes following solute gradients"}
+          - {pt: "Apenas íons", en: "Only ions"}
+          - {pt: "Apenas DNA", en: "Only DNA"}
+          - {pt: "Apenas vesículas", en: "Only vesicles"}
+        correctAnswer: {pt: "Água através de membranas seguindo gradientes de soluto", en: "Water across membranes following solute gradients"}
+        rationale: {pt: "Como define o volume celular, então osmose é fundamental — animais usam isotonicidade; plantas, turgor.", en: "Because it defines cell volume, osmosis is fundamental — animals use isotonicity; plants, turgor."}
+        objectives: [biology.membrane]
+        difficulty: 3
+target: 20

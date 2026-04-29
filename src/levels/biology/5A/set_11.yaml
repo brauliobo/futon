@@ -1,0 +1,244 @@
+title:
+  pt: "🔋 Transporte ativo"
+  en: "🔋 Active transport"
+level: '5A'
+subject: biology
+objectives: [biology.membrane]
+difficulty: 3
+authorNotes: "Bombas, gradiente eletroquímico, ATP, cotransporte."
+example:
+  pt: "Ex.: bomba Na⁺/K⁺ usa ATP para mover 3 Na⁺ para fora e 2 K⁺ para dentro — contra o gradiente."
+  en: "Ex.: Na⁺/K⁺ pump uses ATP to move 3 Na⁺ out and 2 K⁺ in — against the gradient."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Bombas e gradientes", en: "Pumps and gradients"}
+    description: {pt: "Movimento contra o gradiente.", en: "Movement against the gradient."}
+    exercises:
+      - type: choice
+        question: {pt: "Transporte ativo caracteriza-se por:", en: "Active transport is characterized by:"}
+        choices:
+          - {pt: "Movimento contra o gradiente, gastando ATP", en: "Movement against the gradient, using ATP"}
+          - {pt: "Movimento a favor do gradiente, sem ATP", en: "Movement down the gradient, no ATP"}
+          - {pt: "Apenas em vesículas", en: "Only in vesicles"}
+          - {pt: "Independente de proteínas", en: "Independent of proteins"}
+        correctAnswer: {pt: "Movimento contra o gradiente, gastando ATP", en: "Movement against the gradient, using ATP"}
+        rationale: {pt: "Como ir contra a entropia exige energia, então ATP é hidrolisado para fornecer força motriz.", en: "Because going against entropy requires energy, ATP is hydrolyzed to provide driving force."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Bomba Na⁺/K⁺ move:", en: "The Na⁺/K⁺ pump moves:"}
+        choices:
+          - {pt: "3 Na⁺ para fora e 2 K⁺ para dentro por ATP", en: "3 Na⁺ out and 2 K⁺ in per ATP"}
+          - {pt: "1 Na⁺ apenas", en: "Just 1 Na⁺"}
+          - {pt: "Apenas glicose", en: "Only glucose"}
+          - {pt: "Apenas água", en: "Only water"}
+        correctAnswer: {pt: "3 Na⁺ para fora e 2 K⁺ para dentro por ATP", en: "3 Na⁺ out and 2 K⁺ in per ATP"}
+        rationale: {pt: "Como o resultado é gradiente de Na⁺ alto fora e K⁺ alto dentro, então a célula mantém potencial de membrana negativo.", en: "Because the result is high Na⁺ outside and high K⁺ inside, the cell maintains a negative membrane potential."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Por que neurônios precisam da bomba Na⁺/K⁺?", en: "Why do neurons need the Na⁺/K⁺ pump?"}
+        choices:
+          - {pt: "Para manter o potencial de membrana e permitir disparos", en: "To maintain membrane potential and allow firing"}
+          - {pt: "Apenas para crescer", en: "Just to grow"}
+          - {pt: "Sem motivo", en: "No reason"}
+          - {pt: "Para mudar de cor", en: "To change color"}
+        correctAnswer: {pt: "Para manter o potencial de membrana e permitir disparos", en: "To maintain membrane potential and allow firing"}
+        rationale: {pt: "Como potenciais de ação dependem do gradiente, então sem a bomba o neurônio não funcionaria.", en: "Because action potentials depend on the gradient, without the pump the neuron wouldn't work."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Bomba de cálcio (Ca²⁺-ATPase):", en: "Calcium pump (Ca²⁺-ATPase):"}
+        choices:
+          - {pt: "Mantém Ca²⁺ baixo no citoplasma (alto no RE/extracelular)", en: "Keeps cytoplasmic Ca²⁺ low (high in ER/outside)"}
+          - {pt: "Sempre deixa Ca²⁺ alto dentro", en: "Always keeps Ca²⁺ high inside"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "Mantém Ca²⁺ baixo no citoplasma (alto no RE/extracelular)", en: "Keeps cytoplasmic Ca²⁺ low (high in ER/outside)"}
+        rationale: {pt: "Como Ca²⁺ é mensageiro intracelular potente, então deve ficar baixo para o sinal ser \"limpo\" quando subir.", en: "Because Ca²⁺ is a potent intracellular messenger, it must be kept low so a signal is \"clean\" when it rises."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Bomba de prótons (H⁺-ATPase):", en: "Proton pump (H⁺-ATPase):"}
+        choices:
+          - {pt: "Bombea H⁺ contra o gradiente (acidifica compartimentos)", en: "Pumps H⁺ against the gradient (acidifies compartments)"}
+          - {pt: "Bombea apenas O₂", en: "Pumps only O₂"}
+          - {pt: "Apenas em vesículas", en: "Only in vesicles"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Bombea H⁺ contra o gradiente (acidifica compartimentos)", en: "Pumps H⁺ against the gradient (acidifies compartments)"}
+        rationale: {pt: "Como lisossomos precisam pH ácido para digestão e mitocôndrias geram gradiente para ATP, então essas bombas são vitais.", en: "Because lysosomes need acidic pH for digestion and mitochondria generate gradient for ATP, these pumps are vital."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Transporte ativo primário usa:", en: "Primary active transport uses:"}
+        choices:
+          - {pt: "ATP diretamente para mover solutos", en: "ATP directly to move solutes"}
+          - {pt: "Apenas calor", en: "Only heat"}
+          - {pt: "Apenas pressão", en: "Only pressure"}
+          - {pt: "Apenas luz", en: "Only light"}
+        correctAnswer: {pt: "ATP diretamente para mover solutos", en: "ATP directly to move solutes"}
+        rationale: {pt: "Como ATP é hidrolisado in situ, então a energia liberada faz a bomba mudar de forma e mover o íon.", en: "Because ATP is hydrolyzed on site, released energy changes the pump's shape and moves the ion."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Transporte ativo secundário usa:", en: "Secondary active transport uses:"}
+        choices:
+          - {pt: "Gradiente já criado por outra bomba (energia indireta)", en: "Gradient already created by another pump (indirect energy)"}
+          - {pt: "ATP diretamente", en: "ATP directly"}
+          - {pt: "Calor apenas", en: "Just heat"}
+          - {pt: "Luz", en: "Light"}
+        correctAnswer: {pt: "Gradiente já criado por outra bomba (energia indireta)", en: "Gradient already created by another pump (indirect energy)"}
+        rationale: {pt: "Como o gradiente armazena energia, então transportadores aproveitam o fluxo de Na⁺ para arrastar outros solutos.", en: "Because the gradient stores energy, transporters harness Na⁺ flow to drag other solutes."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Cotransporte (simporte) significa:", en: "Symport (cotransport) means:"}
+        choices:
+          - {pt: "Dois solutos atravessam no MESMO sentido", en: "Two solutes cross in the SAME direction"}
+          - {pt: "Dois em direções opostas", en: "Two in opposite directions"}
+          - {pt: "Apenas um soluto", en: "Only one solute"}
+          - {pt: "Sem soluto", en: "No solutes"}
+        correctAnswer: {pt: "Dois solutos atravessam no MESMO sentido", en: "Two solutes cross in the SAME direction"}
+        rationale: {pt: "Como Na⁺/glicose entra junto no intestino, então o gradiente de Na⁺ paga a entrada da glicose contra o seu próprio gradiente.", en: "Because Na⁺/glucose enter together in the gut, the Na⁺ gradient pays for glucose entry against its own gradient."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Antiporte (contratransporte):", en: "Antiport (countertransport):"}
+        choices:
+          - {pt: "Dois solutos atravessam em direções OPOSTAS", en: "Two solutes cross in OPPOSITE directions"}
+          - {pt: "Mesmo sentido", en: "Same direction"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+          - {pt: "Sem soluto", en: "No solutes"}
+        correctAnswer: {pt: "Dois solutos atravessam em direções OPOSTAS", en: "Two solutes cross in OPPOSITE directions"}
+        rationale: {pt: "Como o trocador Na⁺/Ca²⁺ usa Na⁺ entrando para expulsar Ca²⁺, então um gradiente alimenta outro.", en: "Because the Na⁺/Ca²⁺ exchanger uses incoming Na⁺ to expel Ca²⁺, one gradient fuels another."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "ATP fornece energia para bombas porque:", en: "ATP provides energy to pumps because:"}
+        choices:
+          - {pt: "Sua hidrólise libera energia para mudar a forma da bomba", en: "Its hydrolysis releases energy to change pump shape"}
+          - {pt: "É açúcar", en: "It's sugar"}
+          - {pt: "É colorido", en: "It's colored"}
+          - {pt: "É grande", en: "It's big"}
+        correctAnswer: {pt: "Sua hidrólise libera energia para mudar a forma da bomba", en: "Its hydrolysis releases energy to change pump shape"}
+        rationale: {pt: "Como a quebra do fosfato terminal libera ~30 kJ/mol, então a energia é \"capturada\" como mudança conformacional.", en: "Because terminal phosphate cleavage releases ~30 kJ/mol, the energy is \"captured\" as conformational change."}
+        objectives: [biology.membrane]
+        difficulty: 3
+  - pageNumber: 2
+    title: {pt: "Endo/exocitose e aplicações", en: "Endo/exocytosis and applications"}
+    description: {pt: "Transporte de massa.", en: "Bulk transport."}
+    exercises:
+      - type: choice
+        question: {pt: "Endocitose envolve:", en: "Endocytosis involves:"}
+        choices:
+          - {pt: "Membrana invagina e forma vesícula trazendo material para dentro", en: "Membrane invaginates, forming vesicle bringing material inside"}
+          - {pt: "Apenas difusão", en: "Just diffusion"}
+          - {pt: "Apenas saída de material", en: "Only material exit"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Membrana invagina e forma vesícula trazendo material para dentro", en: "Membrane invaginates, forming vesicle bringing material inside"}
+        rationale: {pt: "Como gasta ATP para deformar a membrana, então é uma forma ativa de transporte de partículas grandes.", en: "Because it uses ATP to deform the membrane, it's an active form of large-particle transport."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Fagocitose é tipo de endocitose para:", en: "Phagocytosis is endocytosis for:"}
+        choices:
+          - {pt: "Partículas sólidas grandes (bactérias, detritos)", en: "Large solid particles (bacteria, debris)"}
+          - {pt: "Apenas líquidos", en: "Only liquids"}
+          - {pt: "Apenas íons", en: "Only ions"}
+          - {pt: "Apenas DNA", en: "Only DNA"}
+        correctAnswer: {pt: "Partículas sólidas grandes (bactérias, detritos)", en: "Large solid particles (bacteria, debris)"}
+        rationale: {pt: "Como macrófagos engolfam patógenos, então a fagocitose é parte central da imunidade inata.", en: "Because macrophages engulf pathogens, phagocytosis is central to innate immunity."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Pinocitose é endocitose de:", en: "Pinocytosis is endocytosis of:"}
+        choices:
+          - {pt: "Líquidos e solutos dissolvidos", en: "Fluids and dissolved solutes"}
+          - {pt: "Apenas bactérias", en: "Only bacteria"}
+          - {pt: "Apenas DNA", en: "Only DNA"}
+          - {pt: "Apenas íons grandes", en: "Only large ions"}
+        correctAnswer: {pt: "Líquidos e solutos dissolvidos", en: "Fluids and dissolved solutes"}
+        rationale: {pt: "Como células absorvem água e nutrientes diluídos, então pinocitose é um \"beber\" celular.", en: "Because cells absorb water and dilute nutrients, pinocytosis is cellular \"drinking\"."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Endocitose mediada por receptor:", en: "Receptor-mediated endocytosis:"}
+        choices:
+          - {pt: "Internaliza moléculas específicas via receptores", en: "Internalizes specific molecules via receptors"}
+          - {pt: "Internaliza tudo igualmente", en: "Internalizes everything equally"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "Internaliza moléculas específicas via receptores", en: "Internalizes specific molecules via receptors"}
+        rationale: {pt: "Como a célula seleciona o que entra (ex.: LDL/colesterol), então o processo é eficiente e específico.", en: "Because the cell selects what enters (e.g., LDL/cholesterol), the process is efficient and specific."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Exocitose é importante para:", en: "Exocytosis is important for:"}
+        choices:
+          - {pt: "Secreção de hormônios, neurotransmissores e enzimas", en: "Secretion of hormones, neurotransmitters, and enzymes"}
+          - {pt: "Apenas captação de comida", en: "Only food intake"}
+          - {pt: "Apenas filtração de urina", en: "Only urine filtration"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+        correctAnswer: {pt: "Secreção de hormônios, neurotransmissores e enzimas", en: "Secretion of hormones, neurotransmitters, and enzymes"}
+        rationale: {pt: "Como vesículas se fundem à membrana e despejam conteúdo, então a célula exporta produtos para o exterior.", en: "Because vesicles fuse with the membrane and release content, the cell exports products outside."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Quanta energia (% do ATP basal) a bomba Na⁺/K⁺ consome em humanos?", en: "How much energy (% of basal ATP) does the Na⁺/K⁺ pump consume in humans?"}
+        choices:
+          - {pt: "Cerca de 20–25%", en: "About 20–25%"}
+          - {pt: "0%", en: "0%"}
+          - {pt: "100%", en: "100%"}
+          - {pt: "Apenas 0.001%", en: "Only 0.001%"}
+        correctAnswer: {pt: "Cerca de 20–25%", en: "About 20–25%"}
+        rationale: {pt: "Como manter o gradiente é trabalho constante em todas as células, então é responsável por grande fração do gasto energético.", en: "Because maintaining the gradient is constant work in every cell, it's responsible for a large fraction of energy use."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Quando a célula morre, gradientes:", en: "When a cell dies, gradients:"}
+        choices:
+          - {pt: "Dissipam-se (sem ATP, bombas param)", en: "Dissipate (without ATP, pumps stop)"}
+          - {pt: "Aumentam para sempre", en: "Increase forever"}
+          - {pt: "Não mudam", en: "Don't change"}
+          - {pt: "Tornam-se hormônios", en: "Become hormones"}
+        correctAnswer: {pt: "Dissipam-se (sem ATP, bombas param)", en: "Dissipate (without ATP, pumps stop)"}
+        rationale: {pt: "Como gradientes são mantidos ativamente, então cessar o metabolismo leva ao equilíbrio osmótico — célula incha e lisa.", en: "Because gradients are actively maintained, stopping metabolism leads to osmotic equilibrium — the cell swells and lyses."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Glicose intestinal entra nas células do epitélio por:", en: "Intestinal glucose enters epithelial cells by:"}
+        choices:
+          - {pt: "Cotransporte com Na⁺ (secundário)", en: "Cotransport with Na⁺ (secondary)"}
+          - {pt: "Apenas difusão simples", en: "Only simple diffusion"}
+          - {pt: "Apenas endocitose", en: "Only endocytosis"}
+          - {pt: "Não entra", en: "Doesn't enter"}
+        correctAnswer: {pt: "Cotransporte com Na⁺ (secundário)", en: "Cotransport with Na⁺ (secondary)"}
+        rationale: {pt: "Como a glicose intestinal pode estar baixa, então o gradiente de Na⁺ \"puxa\" glicose contra seu próprio gradiente.", en: "Because intestinal glucose may be low, the Na⁺ gradient \"pulls\" glucose against its own gradient."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Por que toxinas (ex.: ouabaína) que bloqueiam a Na⁺/K⁺ ATPase são perigosas?", en: "Why are toxins (e.g., ouabain) that block Na⁺/K⁺ ATPase dangerous?"}
+        choices:
+          - {pt: "Sem o gradiente, células nervosas e cardíacas falham", en: "Without the gradient, nerve and cardiac cells fail"}
+          - {pt: "Apenas dão dor de cabeça", en: "Just cause headaches"}
+          - {pt: "Mudam cor da pele", en: "Change skin color"}
+          - {pt: "Sem efeito", en: "No effect"}
+        correctAnswer: {pt: "Sem o gradiente, células nervosas e cardíacas falham", en: "Without the gradient, nerve and cardiac cells fail"}
+        rationale: {pt: "Como cardiomiócitos dependem do gradiente para contrair, então venenos cardiotônicos podem ser letais.", en: "Because cardiomyocytes depend on the gradient to contract, cardiotoxic poisons can be lethal."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Resumo: transporte ativo:", en: "Summary: active transport:"}
+        choices:
+          - {pt: "Move solutos contra o gradiente usando ATP (direta ou indiretamente)", en: "Moves solutes against the gradient using ATP (directly or indirectly)"}
+          - {pt: "Move sempre a favor do gradiente", en: "Always moves down the gradient"}
+          - {pt: "Não usa proteínas", en: "Doesn't use proteins"}
+          - {pt: "Não acontece em células", en: "Doesn't happen in cells"}
+        correctAnswer: {pt: "Move solutos contra o gradiente usando ATP (direta ou indiretamente)", en: "Moves solutes against the gradient using ATP (directly or indirectly)"}
+        rationale: {pt: "Energia química → gradiente → função celular. É como a célula constrói e mantém compartimentos especializados.", en: "Chemical energy → gradient → cellular function. It's how the cell builds and maintains specialized compartments."}
+        objectives: [biology.membrane]
+        difficulty: 3
+target: 20

@@ -1,0 +1,244 @@
+title:
+  pt: "💨 Transporte passivo"
+  en: "💨 Passive transport"
+level: '5A'
+subject: biology
+objectives: [biology.membrane]
+difficulty: 3
+authorNotes: "Difusão simples, difusão facilitada, sem gasto de ATP."
+example:
+  pt: "Ex.: O₂ atravessa direto (simples); glicose usa transportador (facilitada); ambos descem o gradiente."
+  en: "Ex.: O₂ crosses directly (simple); glucose uses a carrier (facilitated); both go down the gradient."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Difusão simples", en: "Simple diffusion"}
+    description: {pt: "Movimento espontâneo de moléculas.", en: "Spontaneous molecule movement."}
+    exercises:
+      - type: choice
+        question: {pt: "Transporte passivo caracteriza-se por:", en: "Passive transport is characterized by:"}
+        choices:
+          - {pt: "Movimento a favor do gradiente, sem gasto de ATP", en: "Movement down the gradient, without ATP"}
+          - {pt: "Movimento contra o gradiente com ATP", en: "Movement against gradient with ATP"}
+          - {pt: "Apenas em vesículas", en: "Only in vesicles"}
+          - {pt: "Sempre exige proteínas", en: "Always requires proteins"}
+        correctAnswer: {pt: "Movimento a favor do gradiente, sem gasto de ATP", en: "Movement down the gradient, without ATP"}
+        rationale: {pt: "Como segue o gradiente, então a entropia favorece — daí ATP não é necessário.", en: "Because it follows the gradient, entropy favors it — hence ATP is not required."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Difusão simples atravessa:", en: "Simple diffusion crosses:"}
+        choices:
+          - {pt: "A bicamada lipídica diretamente (gases pequenos, moléculas apolares)", en: "The lipid bilayer directly (small gases, nonpolar molecules)"}
+          - {pt: "Apenas via proteínas", en: "Only via proteins"}
+          - {pt: "Apenas via vesículas", en: "Only via vesicles"}
+          - {pt: "Não atravessa", en: "Doesn't cross"}
+        correctAnswer: {pt: "A bicamada lipídica diretamente (gases pequenos, moléculas apolares)", en: "The lipid bilayer directly (small gases, nonpolar molecules)"}
+        rationale: {pt: "Como O₂, CO₂ e moléculas apolares dissolvem-se no miolo lipídico, então passam sem auxiliares.", en: "Because O₂, CO₂, and nonpolar molecules dissolve in the lipid core, they pass without helpers."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "O₂ entra nas células por:", en: "O₂ enters cells by:"}
+        choices:
+          - {pt: "Difusão simples", en: "Simple diffusion"}
+          - {pt: "Transporte ativo", en: "Active transport"}
+          - {pt: "Endocitose", en: "Endocytosis"}
+          - {pt: "Apenas por vesículas", en: "Only by vesicles"}
+        correctAnswer: {pt: "Difusão simples", en: "Simple diffusion"}
+        rationale: {pt: "Como O₂ é pequeno e apolar, então atravessa rapidamente — gradiente sangue→célula garante fluxo.", en: "Because O₂ is small and nonpolar, it crosses rapidly — the blood→cell gradient ensures flow."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "CO₂ sai das células por:", en: "CO₂ leaves cells by:"}
+        choices:
+          - {pt: "Difusão simples (gradiente célula→sangue)", en: "Simple diffusion (cell→blood gradient)"}
+          - {pt: "Transporte ativo", en: "Active transport"}
+          - {pt: "Endocitose", en: "Endocytosis"}
+          - {pt: "Apenas em vesículas", en: "Only in vesicles"}
+        correctAnswer: {pt: "Difusão simples (gradiente célula→sangue)", en: "Simple diffusion (cell→blood gradient)"}
+        rationale: {pt: "Como respiração celular gera CO₂, então a concentração intracelular fica alta e o gás sai por difusão.", en: "Because cellular respiration produces CO₂, intracellular concentration is high and gas exits by diffusion."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Velocidade de difusão depende de:", en: "Diffusion rate depends on:"}
+        choices:
+          - {pt: "Gradiente de concentração, temperatura, área e tamanho da molécula", en: "Concentration gradient, temperature, area, and molecule size"}
+          - {pt: "Apenas cor da molécula", en: "Only molecule color"}
+          - {pt: "Apenas idade da célula", en: "Only cell age"}
+          - {pt: "Apenas peso", en: "Only weight"}
+        correctAnswer: {pt: "Gradiente de concentração, temperatura, área e tamanho da molécula", en: "Concentration gradient, temperature, area, and molecule size"}
+        rationale: {pt: "Como a lei de Fick combina esses fatores, então otimizá-los acelera o transporte — alvéolos têm grande área, por exemplo.", en: "Because Fick's law combines these factors, optimizing them accelerates transport — alveoli have large area, for example."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Difusão facilitada usa:", en: "Facilitated diffusion uses:"}
+        choices:
+          - {pt: "Proteínas-canal ou transportadoras (sem ATP)", en: "Channel or carrier proteins (no ATP)"}
+          - {pt: "Apenas ATP", en: "Only ATP"}
+          - {pt: "Apenas calor", en: "Only heat"}
+          - {pt: "Não usa nada", en: "Uses nothing"}
+        correctAnswer: {pt: "Proteínas-canal ou transportadoras (sem ATP)", en: "Channel or carrier proteins (no ATP)"}
+        rationale: {pt: "Como íons e moléculas polares não atravessam o miolo apolar, então proteínas oferecem caminho hidrofílico.", en: "Because ions and polar molecules can't cross the nonpolar core, proteins offer a hydrophilic path."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Glicose entra nas células musculares por:", en: "Glucose enters muscle cells by:"}
+        choices:
+          - {pt: "Difusão facilitada via transportadores GLUT", en: "Facilitated diffusion via GLUT transporters"}
+          - {pt: "Difusão simples", en: "Simple diffusion"}
+          - {pt: "Apenas endocitose", en: "Only endocytosis"}
+          - {pt: "Não entra", en: "Doesn't enter"}
+        correctAnswer: {pt: "Difusão facilitada via transportadores GLUT", en: "Facilitated diffusion via GLUT transporters"}
+        rationale: {pt: "Como glicose é polar, então não atravessa direto — GLUT4 (em músculo) é ativado por insulina para acelerar entrada.", en: "Because glucose is polar, it doesn't cross directly — GLUT4 (in muscle) is activated by insulin to speed entry."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Canais iônicos:", en: "Ion channels:"}
+        choices:
+          - {pt: "Permitem fluxo seletivo de íons (Na⁺, K⁺, Ca²⁺)", en: "Allow selective ion flow (Na⁺, K⁺, Ca²⁺)"}
+          - {pt: "Apenas para água", en: "Only for water"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+          - {pt: "Não existem", en: "Don't exist"}
+        correctAnswer: {pt: "Permitem fluxo seletivo de íons (Na⁺, K⁺, Ca²⁺)", en: "Allow selective ion flow (Na⁺, K⁺, Ca²⁺)"}
+        rationale: {pt: "Como cada canal tem filtro de seletividade, então só íons compatíveis passam — base de potenciais de ação.", en: "Because each channel has a selectivity filter, only compatible ions pass — basis of action potentials."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Aquaporinas são:", en: "Aquaporins are:"}
+        choices:
+          - {pt: "Canais específicos para água", en: "Channels specific for water"}
+          - {pt: "Tipos de hormônio", en: "Types of hormone"}
+          - {pt: "Tipos de DNA", en: "Types of DNA"}
+          - {pt: "Açúcares", en: "Sugars"}
+        correctAnswer: {pt: "Canais específicos para água", en: "Channels specific for water"}
+        rationale: {pt: "Como água atravessa lentamente a bicamada, então aquaporinas aceleram o fluxo onde é vital (rins, plantas).", en: "Because water slowly crosses the bilayer, aquaporins speed flow where it's vital (kidneys, plants)."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Transportadores (carriers) diferem dos canais por:", en: "Carriers differ from channels by:"}
+        choices:
+          - {pt: "Mudar de forma para mover o substrato (mais lentos, mais específicos)", en: "Changing shape to move substrate (slower, more specific)"}
+          - {pt: "Não fazer nada", en: "Doing nothing"}
+          - {pt: "Serem todos canais", en: "All being channels"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "Mudar de forma para mover o substrato (mais lentos, mais específicos)", en: "Changing shape to move substrate (slower, more specific)"}
+        rationale: {pt: "Como o transportador alterna conformações \"aberto-fora\" e \"aberto-dentro\", então move o soluto em ciclos.", en: "Because the carrier alternates \"outward-open\" and \"inward-open\" conformations, it moves the solute in cycles."}
+        objectives: [biology.membrane]
+        difficulty: 3
+  - pageNumber: 2
+    title: {pt: "Difusão e equilíbrio", en: "Diffusion and equilibrium"}
+    description: {pt: "Quando o transporte passivo cessa.", en: "When passive transport stops."}
+    exercises:
+      - type: choice
+        question: {pt: "Difusão atinge equilíbrio quando:", en: "Diffusion reaches equilibrium when:"}
+        choices:
+          - {pt: "Concentrações se igualam dos dois lados", en: "Concentrations are equal on both sides"}
+          - {pt: "Toda molécula vai para um lado", en: "All molecules go to one side"}
+          - {pt: "Não há mais membrana", en: "There's no more membrane"}
+          - {pt: "ATP acaba", en: "ATP runs out"}
+        correctAnswer: {pt: "Concentrações se igualam dos dois lados", en: "Concentrations are equal on both sides"}
+        rationale: {pt: "Como o gradiente desaparece, então o fluxo líquido cessa — embora moléculas continuem a se mover.", en: "Because the gradient vanishes, net flow stops — though molecules keep moving."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Em equilíbrio dinâmico:", en: "At dynamic equilibrium:"}
+        choices:
+          - {pt: "Moléculas se movem nos dois sentidos com taxa igual (fluxo líquido = 0)", en: "Molecules move in both directions at equal rate (net flow = 0)"}
+          - {pt: "Não há movimento", en: "No movement"}
+          - {pt: "Apenas em uma direção", en: "Only one direction"}
+          - {pt: "Com ATP gasto", en: "With ATP use"}
+        correctAnswer: {pt: "Moléculas se movem nos dois sentidos com taxa igual (fluxo líquido = 0)", en: "Molecules move in both directions at equal rate (net flow = 0)"}
+        rationale: {pt: "Como movimento térmico não para, então o equilíbrio é dinâmico — cada saída é compensada por uma entrada.", en: "Because thermal motion doesn't stop, equilibrium is dynamic — each exit is balanced by an entry."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Difusão é mais rápida em:", en: "Diffusion is faster at:"}
+        choices:
+          - {pt: "Temperaturas mais altas", en: "Higher temperatures"}
+          - {pt: "Temperaturas mais baixas", en: "Lower temperatures"}
+          - {pt: "Independente da temperatura", en: "Independent of temperature"}
+          - {pt: "Apenas em frio", en: "Only in cold"}
+        correctAnswer: {pt: "Temperaturas mais altas", en: "Higher temperatures"}
+        rationale: {pt: "Como mais calor = mais energia cinética, então moléculas se movem mais rápido — daí maior taxa de difusão.", en: "Because more heat = more kinetic energy, molecules move faster — hence greater diffusion rate."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Difusão facilitada satura quando:", en: "Facilitated diffusion saturates when:"}
+        choices:
+          - {pt: "Todos os transportadores estão ocupados (Vmax)", en: "All carriers are occupied (Vmax)"}
+          - {pt: "Não há substrato", en: "No substrate"}
+          - {pt: "ATP acaba", en: "ATP runs out"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "Todos os transportadores estão ocupados (Vmax)", en: "All carriers are occupied (Vmax)"}
+        rationale: {pt: "Como o número de proteínas é finito, então acima de certa concentração todos estão ocupados — semelhante a enzimas.", en: "Because the number of proteins is finite, above some concentration all are occupied — similar to enzymes."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Difusão SIMPLES NÃO satura porque:", en: "Simple diffusion does NOT saturate because:"}
+        choices:
+          - {pt: "Não depende de proteínas com número limitado", en: "Doesn't depend on a limited number of proteins"}
+          - {pt: "Sempre é lenta", en: "Always slow"}
+          - {pt: "Não funciona", en: "Doesn't work"}
+          - {pt: "Apenas em vesículas", en: "Only in vesicles"}
+        correctAnswer: {pt: "Não depende de proteínas com número limitado", en: "Doesn't depend on a limited number of proteins"}
+        rationale: {pt: "Como qualquer ponto da membrana serve de passagem, então a taxa cresce linearmente com o gradiente.", en: "Because any membrane spot can be a passage, rate grows linearly with the gradient."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Pequenas moléculas apolares atravessam:", en: "Small nonpolar molecules cross:"}
+        choices:
+          - {pt: "Diretamente a bicamada (sem proteína)", en: "Directly through the bilayer (no protein)"}
+          - {pt: "Apenas por canais", en: "Only through channels"}
+          - {pt: "Apenas com ATP", en: "Only with ATP"}
+          - {pt: "Não atravessam", en: "Don't cross"}
+        correctAnswer: {pt: "Diretamente a bicamada (sem proteína)", en: "Directly through the bilayer (no protein)"}
+        rationale: {pt: "Como compatibilizam com o miolo apolar, então gases e esteroides passam livremente.", en: "Because they're compatible with the nonpolar core, gases and steroids pass freely."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Hormônios esteroides entram nas células por:", en: "Steroid hormones enter cells by:"}
+        choices:
+          - {pt: "Difusão simples (são lipossolúveis)", en: "Simple diffusion (lipid-soluble)"}
+          - {pt: "Difusão facilitada apenas", en: "Only facilitated diffusion"}
+          - {pt: "Endocitose obrigatória", en: "Mandatory endocytosis"}
+          - {pt: "Não entram", en: "Don't enter"}
+        correctAnswer: {pt: "Difusão simples (são lipossolúveis)", en: "Simple diffusion (lipid-soluble)"}
+        rationale: {pt: "Como atravessam a bicamada sozinhos, então atuam em receptores citoplasmáticos ou nucleares.", en: "Because they cross the bilayer alone, they act on cytoplasmic or nuclear receptors."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Por que íons NÃO atravessam diretamente a bicamada?", en: "Why do ions NOT cross the bilayer directly?"}
+        choices:
+          - {pt: "São carregados eletricamente — incompatíveis com miolo apolar", en: "They're electrically charged — incompatible with nonpolar core"}
+          - {pt: "São muito pequenos", en: "They're too small"}
+          - {pt: "Não importam", en: "They don't matter"}
+          - {pt: "Sempre estão fora", en: "Always outside"}
+        correctAnswer: {pt: "São carregados eletricamente — incompatíveis com miolo apolar", en: "They're electrically charged — incompatible with nonpolar core"}
+        rationale: {pt: "Como cargas precisam ser \"acompanhadas\" por água, então atravessar o miolo seco é energeticamente proibitivo.", en: "Because charges need to be \"accompanied\" by water, crossing the dry core is energetically prohibitive."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Difusão é exemplo de:", en: "Diffusion is an example of:"}
+        choices:
+          - {pt: "Aumento de entropia (sistema → desordem)", en: "Entropy increase (system → disorder)"}
+          - {pt: "Diminuição de entropia", en: "Entropy decrease"}
+          - {pt: "Ganho de informação", en: "Information gain"}
+          - {pt: "Cura espontânea", en: "Spontaneous cure"}
+        correctAnswer: {pt: "Aumento de entropia (sistema → desordem)", en: "Entropy increase (system → disorder)"}
+        rationale: {pt: "Como concentrar tudo em um lado é improvável estatisticamente, então a 2ª lei da termodinâmica favorece dispersão.", en: "Because gathering everything on one side is statistically unlikely, the 2nd law of thermodynamics favors dispersion."}
+        objectives: [biology.membrane]
+        difficulty: 3
+      - type: choice
+        question: {pt: "Resumo: transporte passivo:", en: "Summary: passive transport:"}
+        choices:
+          - {pt: "Move solutos a favor do gradiente sem ATP (simples ou facilitado)", en: "Moves solutes down the gradient without ATP (simple or facilitated)"}
+          - {pt: "Sempre exige ATP", en: "Always requires ATP"}
+          - {pt: "Vai contra o gradiente", en: "Goes against the gradient"}
+          - {pt: "Não acontece em células", en: "Doesn't happen in cells"}
+        correctAnswer: {pt: "Move solutos a favor do gradiente sem ATP (simples ou facilitado)", en: "Moves solutes down the gradient without ATP (simple or facilitated)"}
+        rationale: {pt: "Energia já está no gradiente — então a célula apenas controla a velocidade via proteínas, sem custo metabólico extra.", en: "Energy is already in the gradient — the cell only controls speed via proteins, with no extra metabolic cost."}
+        objectives: [biology.membrane]
+        difficulty: 3
+target: 20
