@@ -58,7 +58,12 @@ async function main() {
     // has ~10 rationales (one per count).
     const expected = Math.min(questionShapes.size, Math.max(answers.size, 1));
     const ratio = rationales.size / expected;
-    if (ratio < THRESHOLD) {
+    // Categorical rule-grouping: ≥3 distinct rationales each covering
+    // ≤8 exercises is a legitimate spelling/grammar/conjugation drill
+    // where one rule explains many surface forms (e.g. plurals split
+    // into vocal-átona / consonante / z→c rule groups).
+    const isRuleGrouped = rationales.size >= 3 && all.length / rationales.size <= 8;
+    if (ratio < THRESHOLD && !isRuleGrouped) {
       suspicious.push({
         file: f.replace('src/levels/', ''),
         questionShapes: questionShapes.size,
