@@ -1,0 +1,244 @@
+title:
+  pt: "🌐 Atlas celulares"
+  en: "🌐 Cell atlases"
+level: 'E'
+subject: biology
+objectives: [biology.cell_atlases]
+difficulty: 5
+authorNotes: "Human Cell Atlas, Tabula Sapiens, BICCN, organ-specific atlases."
+example:
+  pt: "Ex.: tecidos diversos → scRNA-seq → integração → mapa célula a célula → referência aberta."
+  en: "Ex.: diverse tissues → scRNA-seq → integration → cell-by-cell map → open reference."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Iniciativas e métodos", en: "Initiatives and methods"}
+    description: {pt: "Mapeando todas as células humanas.", en: "Mapping all human cells."}
+    exercises:
+      - type: choice
+        question: {pt: "Human Cell Atlas (HCA):", en: "Human Cell Atlas (HCA):"}
+        choices:
+          - {pt: "Iniciativa global para descrever todos os tipos celulares humanos com scRNA e espacial", en: "Global initiative to describe all human cell types with scRNA and spatial"}
+          - {pt: "Apenas curiosidade institucional", en: "Just institutional curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Iniciativa global para descrever todos os tipos celulares humanos com scRNA e espacial", en: "Global initiative to describe all human cell types with scRNA and spatial"}
+        rationale: {pt: "Quando HCA mapeia, então biologia humana ganha referência completa.", en: "When HCA maps, human biology gains complete reference."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tabula Sapiens:", en: "Tabula Sapiens:"}
+        choices:
+          - {pt: "Atlas multi-órgão de doadores únicos com scRNA-seq cobrindo 24 tecidos vivos", en: "Multi-organ atlas of single donors with scRNA-seq covering 24 live tissues"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Atlas multi-órgão de doadores únicos com scRNA-seq cobrindo 24 tecidos vivos", en: "Multi-organ atlas of single donors with scRNA-seq covering 24 live tissues"}
+        rationale: {pt: "Quando órgãos são integrados, então variação intra-individuo é capturada.", en: "When organs integrate, intra-individual variation is captured."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BICCN:", en: "BICCN:"}
+        choices:
+          - {pt: "BRAIN Initiative Cell Census Network mapeia tipos celulares neurais em humanos e camundongos", en: "BRAIN Initiative Cell Census Network maps neural cell types in human and mouse"}
+          - {pt: "Apenas curiosidade neurocientífica", en: "Just neuroscience curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "BRAIN Initiative Cell Census Network mapeia tipos celulares neurais em humanos e camundongos", en: "BRAIN Initiative Cell Census Network maps neural cell types in human and mouse"}
+        rationale: {pt: "Quando atlas neural cresce, então circuitos são compreendidos celularmente.", en: "When neural atlas grows, circuits are understood cellularly."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tabula Muris:", en: "Tabula Muris:"}
+        choices:
+          - {pt: "Atlas comparativo de camundongo informa modelos pré-clínicos com referência celular", en: "Comparative mouse atlas informs preclinical models with cellular reference"}
+          - {pt: "Apenas curiosidade veterinária", en: "Just veterinary curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Atlas comparativo de camundongo informa modelos pré-clínicos com referência celular", en: "Comparative mouse atlas informs preclinical models with cellular reference"}
+        rationale: {pt: "Quando camundongo é mapeado, então tradução clínica ganha rigor.", en: "When mouse is mapped, clinical translation gains rigor."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "HuBMAP:", en: "HuBMAP:"}
+        choices:
+          - {pt: "Mapeia órgãos humanos com técnicas espaciais multimodais para função e arquitetura", en: "Maps human organs with multimodal spatial techniques for function and architecture"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mapeia órgãos humanos com técnicas espaciais multimodais para função e arquitetura", en: "Maps human organs with multimodal spatial techniques for function and architecture"}
+        rationale: {pt: "Quando HuBMAP cresce, então biologia ganha contexto integrado.", en: "When HuBMAP grows, biology gains integrated context."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell ontology:", en: "Cell ontology:"}
+        choices:
+          - {pt: "Vocabulário controlado padroniza nomenclatura de tipos celulares para integração de dados", en: "Controlled vocabulary standardizes cell type nomenclature for data integration"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Vocabulário controlado padroniza nomenclatura de tipos celulares para integração de dados", en: "Controlled vocabulary standardizes cell type nomenclature for data integration"}
+        rationale: {pt: "Quando padrões existem, então atlases são interoperáveis.", en: "When standards exist, atlases are interoperable."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Atlas de envelhecimento:", en: "Aging atlas:"}
+        choices:
+          - {pt: "Tabula Muris Senis e similares mapeiam mudanças celulares em órgãos com idade", en: "Tabula Muris Senis and similar map age-related cell changes in organs"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tabula Muris Senis e similares mapeiam mudanças celulares em órgãos com idade", en: "Tabula Muris Senis and similar map age-related cell changes in organs"}
+        rationale: {pt: "Quando envelhecimento é mapeado, então geroterapias têm alvos celulares.", en: "When aging is mapped, gerotherapies have cellular targets."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Atlas fetal humano:", en: "Human fetal atlas:"}
+        choices:
+          - {pt: "Atlas em desenvolvimento humano caracterizam tipos celulares emergentes em vários órgãos", en: "Developmental human atlases characterize emerging cell types across organs"}
+          - {pt: "Apenas curiosidade desenvolvimentista", en: "Just developmental curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Atlas em desenvolvimento humano caracterizam tipos celulares emergentes em vários órgãos", en: "Developmental human atlases characterize emerging cell types across organs"}
+        rationale: {pt: "Quando desenvolvimento é mapeado, então origem de doenças é rastreada.", en: "When development is mapped, disease origin is traced."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imunogenômica integrada:", en: "Integrated immunogenomics:"}
+        choices:
+          - {pt: "Atlas imunes mapeiam diversidade T/B repertoire e tipos raros em saúde e doença", en: "Immune atlases map T/B repertoire diversity and rare types in health and disease"}
+          - {pt: "Apenas curiosidade imunológica", en: "Just immunological curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Atlas imunes mapeiam diversidade T/B repertoire e tipos raros em saúde e doença", en: "Immune atlases map T/B repertoire diversity and rare types in health and disease"}
+        rationale: {pt: "Quando imunidade é catalogada, então vacinas e terapias são desenhadas.", en: "When immunity is cataloged, vaccines and therapies are designed."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cross-species atlases:", en: "Cross-species atlases:"}
+        choices:
+          - {pt: "Comparações entre humanos, primatas e camundongos identificam features evolutivas conservadas", en: "Comparisons between humans, primates and mice identify conserved evolutionary features"}
+          - {pt: "Apenas curiosidade evolutiva", en: "Just evolutionary curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Comparações entre humanos, primatas e camundongos identificam features evolutivas conservadas", en: "Comparisons between humans, primates and mice identify conserved evolutionary features"}
+        rationale: {pt: "Quando espécies convergem, então conservação é definida celularmente.", en: "When species converge, conservation is cellularly defined."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações", en: "Applications"}
+    description: {pt: "Atlases na clínica.", en: "Atlases in clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "Diagnóstico por similaridade:", en: "Similarity-based diagnosis:"}
+        choices:
+          - {pt: "Mapeamento de amostras de paciente em atlas referência ajuda classificação de doença", en: "Mapping patient samples to reference atlases helps disease classification"}
+          - {pt: "Apenas observação clínica", en: "Just clinical observation"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mapeamento de amostras de paciente em atlas referência ajuda classificação de doença", en: "Mapping patient samples to reference atlases helps disease classification"}
+        rationale: {pt: "Quando paciente é referenciado, então diagnóstico ganha base celular.", en: "When patient is referenced, diagnosis gains cellular foundation."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Drug target prioritization:", en: "Drug target prioritization:"}
+        choices:
+          - {pt: "Expressão célula-tipo guia escolha de alvos com mínima toxicidade off-target", en: "Cell-type expression guides target choice with minimal off-target toxicity"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Expressão célula-tipo guia escolha de alvos com mínima toxicidade off-target", en: "Cell-type expression guides target choice with minimal off-target toxicity"}
+        rationale: {pt: "Quando expressão é específica, então drogas são mais seguras.", en: "When expression is specific, drugs are safer."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Identificação de tipos raros:", en: "Rare cell type identification:"}
+        choices:
+          - {pt: "Subtipos raros (ionocytes, NMSCs) descobertos por scRNA têm relevância clínica", en: "Rare subtypes (ionocytes, NMSCs) found by scRNA have clinical relevance"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Subtipos raros (ionocytes, NMSCs) descobertos por scRNA têm relevância clínica", en: "Rare subtypes (ionocytes, NMSCs) found by scRNA have clinical relevance"}
+        rationale: {pt: "Quando raros são reconhecidos, então fisiopatologia ganha resolução.", en: "When rare types are recognized, pathophysiology gains resolution."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Embriologia e regeneração:", en: "Embryology and regeneration:"}
+        choices:
+          - {pt: "Atlases revelam progenitores em órgãos adultos com potencial regenerativo após dano", en: "Atlases reveal adult-organ progenitors with regenerative potential after injury"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Atlases revelam progenitores em órgãos adultos com potencial regenerativo após dano", en: "Atlases reveal adult-organ progenitors with regenerative potential after injury"}
+        rationale: {pt: "Quando progenitores são mapeados, então regeneração ganha alvos diretos.", en: "When progenitors are mapped, regeneration gains direct targets."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Equity and diversity:", en: "Equity and diversity:"}
+        choices:
+          - {pt: "Atlases buscam representar populações globais para benefícios biomédicos equitativos", en: "Atlases seek to represent global populations for equitable biomedical benefit"}
+          - {pt: "Apenas detalhe administrativo", en: "Just administrative detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Atlases buscam representar populações globais para benefícios biomédicos equitativos", en: "Atlases seek to represent global populations for equitable biomedical benefit"}
+        rationale: {pt: "Quando dados diversificam, então biomedicina alcança todos.", en: "When data diversifies, biomedicine reaches everyone."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single-cell em câncer:", en: "Single-cell in cancer:"}
+        choices:
+          - {pt: "Atlases tumorais identificam clones, fenótipos resistentes e nichos imunes para terapia", en: "Tumor atlases identify clones, resistant phenotypes and immune niches for therapy"}
+          - {pt: "Apenas curiosidade oncológica", en: "Just oncological curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Atlases tumorais identificam clones, fenótipos resistentes e nichos imunes para terapia", en: "Tumor atlases identify clones, resistant phenotypes and immune niches for therapy"}
+        rationale: {pt: "Quando tumor é resolvido, então terapia personalizada escala.", en: "When tumor is resolved, personalized therapy scales."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Foundation models para single-cell:", en: "Single-cell foundation models:"}
+        choices:
+          - {pt: "scGPT, Geneformer aprendem representações universais para tarefas downstream multi-tecido", en: "scGPT, Geneformer learn universal representations for multi-tissue downstream tasks"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "scGPT, Geneformer aprendem representações universais para tarefas downstream multi-tecido", en: "scGPT, Geneformer learn universal representations for multi-tissue downstream tasks"}
+        rationale: {pt: "Quando modelos generalizam, então atlases viram base preditiva.", en: "When models generalize, atlases become predictive foundation."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Disponibilidade aberta:", en: "Open availability:"}
+        choices:
+          - {pt: "Atlases compartilhados via cellxgene aceleram descoberta global e democratizam dados", en: "Atlases shared via cellxgene accelerate global discovery and democratize data"}
+          - {pt: "Apenas curiosidade institucional", en: "Just institutional curiosity"}
+          - {pt: "Apenas detalhe regulatório", en: "Just regulatory detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Atlases compartilhados via cellxgene aceleram descoberta global e democratizam dados", en: "Atlases shared via cellxgene accelerate global discovery and democratize data"}
+        rationale: {pt: "Quando dados são abertos, então pesquisa acelera globalmente.", en: "When data is open, research accelerates globally."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Privacidade em atlases:", en: "Privacy in atlases:"}
+        choices:
+          - {pt: "Consentimento, anonimização e governança protegem participantes em compartilhamento global", en: "Consent, anonymization and governance protect participants in global sharing"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição administrativa", en: "Just administrative tradition"}
+        correctAnswer: {pt: "Consentimento, anonimização e governança protegem participantes em compartilhamento global", en: "Consent, anonymization and governance protect participants in global sharing"}
+        rationale: {pt: "Quando proteção é robusta, então confiança em ciência aberta cresce.", en: "When protection is robust, trust in open science grows."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em atlases:", en: "Next atlas frontiers:"}
+        choices:
+          - {pt: "Atlases dinâmicos com perturbações, multi-omic completo e integração com fenótipos clínicos", en: "Dynamic perturbation atlases, complete multi-omic and clinical phenotype integration"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Atlases dinâmicos com perturbações, multi-omic completo e integração com fenótipos clínicos", en: "Dynamic perturbation atlases, complete multi-omic and clinical phenotype integration"}
+        rationale: {pt: "Quando ferramentas convergem, então atlases viram referência clínica padrão.", en: "When tools converge, atlases become standard clinical reference."}
+        objectives: [biology.cell_atlases]
+        difficulty: 5
+target: 20

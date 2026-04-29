@@ -1,0 +1,244 @@
+title:
+  pt: "🗺️ Transcriptômica espacial"
+  en: "🗺️ Spatial transcriptomics"
+level: 'E'
+subject: biology
+objectives: [biology.spatial_tx]
+difficulty: 5
+authorNotes: "Visium, MERFISH, Slide-seq, Stereo-seq, integração com scRNA-seq."
+example:
+  pt: "Ex.: tecido → captura espacial → sequenciamento → mapas transcriptômicos → biologia tecidual."
+  en: "Ex.: tissue → spatial capture → sequencing → transcriptomic maps → tissue biology."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas e técnicas", en: "Platforms and techniques"}
+    description: {pt: "Como medimos expressão no espaço.", en: "How we measure spatial expression."}
+    exercises:
+      - type: choice
+        question: {pt: "Visium (10x):", en: "Visium (10x):"}
+        choices:
+          - {pt: "Lâmina com spots oligonucleotídicos captura mRNA preservando coordenadas teciduais", en: "Slide with oligonucleotide spots captures mRNA preserving tissue coordinates"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Lâmina com spots oligonucleotídicos captura mRNA preservando coordenadas teciduais", en: "Slide with oligonucleotide spots captures mRNA preserving tissue coordinates"}
+        rationale: {pt: "Quando localização é preservada, então biologia tecidual é quantitativa.", en: "When location is preserved, tissue biology is quantitative."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MERFISH:", en: "MERFISH:"}
+        choices:
+          - {pt: "Hibridização sequencial com códigos detectáveis por imagem mede milhares de genes em células", en: "Sequential hybridization with image-detectable codes measures thousands of genes per cell"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Hibridização sequencial com códigos detectáveis por imagem mede milhares de genes em células", en: "Sequential hybridization with image-detectable codes measures thousands of genes per cell"}
+        rationale: {pt: "Quando MERFISH mapeia, então tipos celulares ficam definidos espacialmente.", en: "When MERFISH maps, cell types are spatially defined."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Slide-seq:", en: "Slide-seq:"}
+        choices:
+          - {pt: "Beads de ~10 µm em tapete capturam transcriptoma com resolução quase-celular", en: "~10 µm beads in carpet capture transcriptome at near-cellular resolution"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Beads de ~10 µm em tapete capturam transcriptoma com resolução quase-celular", en: "~10 µm beads in carpet capture transcriptome at near-cellular resolution"}
+        rationale: {pt: "Quando resolução é alta, então arquitetura celular é resolvida.", en: "When resolution is high, cellular architecture is resolved."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Stereo-seq:", en: "Stereo-seq:"}
+        choices:
+          - {pt: "DNA nanoball arrays sub-celulares mapeiam expressão em tecidos inteiros com alta densidade", en: "Subcellular DNA nanoball arrays map expression in whole tissues with high density"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DNA nanoball arrays sub-celulares mapeiam expressão em tecidos inteiros com alta densidade", en: "Subcellular DNA nanoball arrays map expression in whole tissues with high density"}
+        rationale: {pt: "Quando densidade é máxima, então biologia espacial atinge limite resolutivo.", en: "When density is maximal, spatial biology reaches resolution limit."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Xenium e CosMx:", en: "Xenium and CosMx:"}
+        choices:
+          - {pt: "Sondas direcionadas com decodificação fluorescente medem painéis de centenas de genes em situ", en: "Targeted probes with fluorescent decoding measure hundreds of genes in situ"}
+          - {pt: "Apenas curiosidade comercial", en: "Just commercial curiosity"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+          - {pt: "Apenas detalhe trivial", en: "Just trivial detail"}
+        correctAnswer: {pt: "Sondas direcionadas com decodificação fluorescente medem painéis de centenas de genes em situ", en: "Targeted probes with fluorescent decoding measure hundreds of genes in situ"}
+        rationale: {pt: "Quando painéis são definidos, então diagnóstico spatial é prático.", en: "When panels are defined, spatial diagnostics is practical."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GeoMx (NanoString):", en: "GeoMx (NanoString):"}
+        choices:
+          - {pt: "Análise por região de interesse aborda morfologia primeiro, depois molecular", en: "Region-of-interest analysis tackles morphology first, then molecular"}
+          - {pt: "Apenas curiosidade comercial", en: "Just commercial curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Análise por região de interesse aborda morfologia primeiro, depois molecular", en: "Region-of-interest analysis tackles morphology first, then molecular"}
+        rationale: {pt: "Quando ROI é definida, então análise molecular ganha contexto.", en: "When ROI is defined, molecular analysis gains context."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Integração com scRNA-seq:", en: "Integration with scRNA-seq:"}
+        choices:
+          - {pt: "Deconvolução com referência scRNA mapeia tipos celulares dentro de spots espaciais", en: "scRNA-referenced deconvolution maps cell types within spatial spots"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Deconvolução com referência scRNA mapeia tipos celulares dentro de spots espaciais", en: "scRNA-referenced deconvolution maps cell types within spatial spots"}
+        rationale: {pt: "Quando integração ocorre, então biologia ganha resolução plus contexto.", en: "When integration happens, biology gains resolution plus context."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spatial proteomics:", en: "Spatial proteomics:"}
+        choices:
+          - {pt: "CODEX e IMC medem >40 proteínas em tecidos preservando arquitetura", en: "CODEX and IMC measure >40 proteins in tissues preserving architecture"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "CODEX e IMC medem >40 proteínas em tecidos preservando arquitetura", en: "CODEX and IMC measure >40 proteins in tissues preserving architecture"}
+        rationale: {pt: "Quando proteoma é espacial, então biologia tecidual é multimodal.", en: "When proteome is spatial, tissue biology is multimodal."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Multimodal espacial:", en: "Multimodal spatial:"}
+        choices:
+          - {pt: "RNA + proteína + epigenética em mesma seção integram visão multi-omic completa", en: "RNA + protein + epigenetics on same section integrate complete multi-omic view"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "RNA + proteína + epigenética em mesma seção integram visão multi-omic completa", en: "RNA + protein + epigenetics on same section integrate complete multi-omic view"}
+        rationale: {pt: "Quando modalidades convergem, então biologia ganha visão holística in situ.", en: "When modalities converge, biology gains holistic in-situ view."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Análise estatística espacial:", en: "Spatial statistical analysis:"}
+        choices:
+          - {pt: "Métodos como Moran's I e cell-cell communication mapeam interações no tecido", en: "Methods like Moran's I and cell-cell communication map tissue interactions"}
+          - {pt: "Apenas curiosidade estatística", en: "Just statistical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Métodos como Moran's I e cell-cell communication mapeam interações no tecido", en: "Methods like Moran's I and cell-cell communication map tissue interactions"}
+        rationale: {pt: "Quando estatística é espacial, então padrões teciduais são quantificáveis.", en: "When statistics is spatial, tissue patterns are quantifiable."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações", en: "Applications"}
+    description: {pt: "Espacial em oncologia e neurologia.", en: "Spatial in oncology and neurology."}
+    exercises:
+      - type: choice
+        question: {pt: "Tumor microenvironment:", en: "Tumor microenvironment:"}
+        choices:
+          - {pt: "Espacial mapeia infiltração imune, nichos angiogênicos e fibroblastos próximos a tumor", en: "Spatial maps immune infiltration, angiogenic niches and fibroblasts near tumor"}
+          - {pt: "Apenas curiosidade oncológica", en: "Just oncological curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Espacial mapeia infiltração imune, nichos angiogênicos e fibroblastos próximos a tumor", en: "Spatial maps immune infiltration, angiogenic niches and fibroblasts near tumor"}
+        rationale: {pt: "Quando TME é mapeada, então imunoterapia é otimizada.", en: "When TME is mapped, immunotherapy is optimized."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Atlas cerebrais:", en: "Brain atlases:"}
+        choices:
+          - {pt: "BICCN combina espacial + scRNA mapeando tipos celulares e circuitos em córtex e tálamo", en: "BICCN combines spatial + scRNA mapping cell types and circuits in cortex and thalamus"}
+          - {pt: "Apenas curiosidade neurológica", en: "Just neurological curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "BICCN combina espacial + scRNA mapeando tipos celulares e circuitos em córtex e tálamo", en: "BICCN combines spatial + scRNA mapping cell types and circuits in cortex and thalamus"}
+        rationale: {pt: "Quando cérebro é mapeado, então neurociência ganha base celular.", en: "When brain is mapped, neuroscience gains cellular foundation."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inflamação intestinal:", en: "Intestinal inflammation:"}
+        choices:
+          - {pt: "Spatial revela compartimentos imunes e estromais em IBD além da histologia clássica", en: "Spatial reveals immune and stromal compartments in IBD beyond classical histology"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Spatial revela compartimentos imunes e estromais em IBD além da histologia clássica", en: "Spatial reveals immune and stromal compartments in IBD beyond classical histology"}
+        rationale: {pt: "Quando estrutura é resolvida, então tratamento é estratificado.", en: "When structure is resolved, treatment is stratified."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Desenvolvimento embrionário:", en: "Embryonic development:"}
+        choices:
+          - {pt: "Mapas Stereo-seq de embriões revelam padrões de gradientes morfogênicos in situ", en: "Embryonic Stereo-seq maps reveal morphogen gradient patterns in situ"}
+          - {pt: "Apenas curiosidade desenvolvimentista", en: "Just developmental curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mapas Stereo-seq de embriões revelam padrões de gradientes morfogênicos in situ", en: "Embryonic Stereo-seq maps reveal morphogen gradient patterns in situ"}
+        rationale: {pt: "Quando embrião é mapeado, então biologia do desenvolvimento ganha base molecular completa.", en: "When embryo is mapped, developmental biology gains complete molecular foundation."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Neurodegeneração:", en: "Neurodegeneration:"}
+        choices:
+          - {pt: "Spatial em Alzheimer e ALS revela microglia reativa próxima a placas e neurônios em risco", en: "Spatial in Alzheimer and ALS reveals reactive microglia near plaques and at-risk neurons"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Spatial em Alzheimer e ALS revela microglia reativa próxima a placas e neurônios em risco", en: "Spatial in Alzheimer and ALS reveals reactive microglia near plaques and at-risk neurons"}
+        rationale: {pt: "Quando ambiente é capturado, então mecanismos locais são deciframento.", en: "When environment is captured, local mechanisms are deciphered."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Transplantes e rejeição:", en: "Transplants and rejection:"}
+        choices:
+          - {pt: "Spatial caracteriza infiltração imune em biópsias renais e cardíacas pré- e pós-rejeição", en: "Spatial characterizes immune infiltration in pre- and post-rejection kidney and heart biopsies"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Spatial caracteriza infiltração imune em biópsias renais e cardíacas pré- e pós-rejeição", en: "Spatial characterizes immune infiltration in pre- and post-rejection kidney and heart biopsies"}
+        rationale: {pt: "Quando rejeição é caracterizada, então imunossupressão é otimizada.", en: "When rejection is characterized, immunosuppression is optimized."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbioma espacial:", en: "Spatial microbiome:"}
+        choices:
+          - {pt: "Sondas para 16S rRNA bacteriano em tecido revelam microorganismos em arquitetura tecidual", en: "Bacterial 16S rRNA probes in tissue reveal microorganisms in tissue architecture"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe trivial", en: "Just trivial detail"}
+          - {pt: "Apenas variação experimental", en: "Just experimental variation"}
+        correctAnswer: {pt: "Sondas para 16S rRNA bacteriano em tecido revelam microorganismos em arquitetura tecidual", en: "Bacterial 16S rRNA probes in tissue reveal microorganisms in tissue architecture"}
+        rationale: {pt: "Quando bactérias são mapeadas, então hospedeiro-micróbio é resolvido in situ.", en: "When bacteria are mapped, host-microbe is resolved in situ."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Drug response espacial:", en: "Spatial drug response:"}
+        choices:
+          - {pt: "Heterogeneidade tumoral em resposta é mapeada, identificando regiões resistentes a terapia", en: "Tumor response heterogeneity is mapped, identifying therapy-resistant regions"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Heterogeneidade tumoral em resposta é mapeada, identificando regiões resistentes a terapia", en: "Tumor response heterogeneity is mapped, identifying therapy-resistant regions"}
+        rationale: {pt: "Quando resistência é localizada, então terapia combinada é planejada.", en: "When resistance is localized, combination therapy is planned."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Histologia computacional:", en: "Computational histology:"}
+        choices:
+          - {pt: "AI integra histologia clássica com transcripto espacial gerando previsões de prognóstico", en: "AI integrates classical histology with spatial transcript generating prognosis predictions"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "AI integra histologia clássica com transcripto espacial gerando previsões de prognóstico", en: "AI integrates classical histology with spatial transcript generating prognosis predictions"}
+        rationale: {pt: "Quando AI integra, então diagnóstico ganha precisão clínica.", en: "When AI integrates, diagnosis gains clinical precision."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em transcriptômica espacial:", en: "Next spatial transcriptomics frontiers:"}
+        choices:
+          - {pt: "Resolução sub-celular, multiomicas integradas e clínica de rotina em hospitais terciários", en: "Subcellular resolution, integrated multi-omics and routine clinical use in tertiary hospitals"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Resolução sub-celular, multiomicas integradas e clínica de rotina em hospitais terciários", en: "Subcellular resolution, integrated multi-omics and routine clinical use in tertiary hospitals"}
+        rationale: {pt: "Quando ferramentas convergem, então biologia espacial vira diagnóstico padrão.", en: "When tools converge, spatial biology becomes standard diagnostic."}
+        objectives: [biology.spatial_tx]
+        difficulty: 5
+target: 20
