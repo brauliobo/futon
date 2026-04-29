@@ -199,6 +199,11 @@ const METHOD_TERMS = [
   'destruição', 'criação', 'destruir', 'cria[mr]?',
   'madur[oa]', 'comprometid[oa]', 'irreverent[ea]',
   'múltipl[oa][s]?', 'univocidade', 'ambíguo',
+  'contempor[âa]ne[oa]s?', 'opost[oa]s?', 'concepção', 'concep[çc][ãa]o',
+  'competência[s]?', 'avaliad[oa]s?', 'avaliam?', 'avaliar?\\b',
+  'domin[ae][rs]?\\b', 'domin[ao]u', 'objetivo[s]?\\b',
+  'diversidade', 'tradição', 'tradições', 'diálogo[s]?',
+  'questionamento', 'perspectiva[s]?', 'gênero[s]?', 'forma[s]?\\b',
   'narrador', 'personagem', 'protagonista', 'antagonista', 'narrad[oa]',
   'discurso', 'enunciação', 'enunciador', 'foco\\s+narrativo',
   'onisciência', 'onisciente', 'oniscient[ea]', 'onipotente',
@@ -293,9 +298,11 @@ const TRANSFORMATION_RE = /\S\s*[→>]\s*\S/;
 const DEFINITION_RE = /(?:['"][^'"]{2,}['"]|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]{3,}|[A-Z]\s+=)\s*=?\s*\S/;
 // Bilingual sentence-decomposition: a Japanese script chunk followed by
 // its parenthetical translation, joined by " + " into the next chunk.
+// Or: PT term '=' japanese script with parenthetical reading.
 // E.g. "電車で (de trem) + 駅まで (até a estação) + 行きます (vou)."
-// This is a teaching method — chunked translation with grammatical reading.
-const JP_DECOMP_RE = /[぀-ヿ一-鿿].*\([^)]+\)\s*\+/;
+//      "leste = 東 (ひがし)."
+// Both are teaching methods — chunked or definitional bilingual mapping.
+const JP_DECOMP_RE = /[぀-ヿ一-鿿].*\([^)]+\)\s*\+|=\s*[一-鿿぀-ヿ][^\s]*\s*\(/;
 // Generic chunk-by-chunk decomposition: ≥2 occurrences of ' + ' joining
 // substantive tokens. Teaches by sentence chunking — common in JP, EN, PT
 // grammar drills. e.g. "この決定 + をめぐって + 議論が起きた"
@@ -317,11 +324,12 @@ const VOCAB_ENUM_RE = /[\wáéíóúâêôãõç-]+\s*\([^)]+\)\s*(?:[,;/]|\s+(?
 // list of words sharing a phonetic pattern. Specific to phonics/literacy
 // lessons in early-grade language sets.
 const WORD_FAMILY_RE = /família\s+-?[a-z]+-?\b[^:]*:\s*\w/i;
-// "Phrase: list" enumeration — ≥3 comma-separated terms after a colon.
-// Terms may be multi-word ("a cat", "in the evening").
+// "Phrase: list" enumeration — ≥3 comma- or slash-separated terms after a
+// colon. Terms may be multi-word ("a cat", "in the evening").
 // e.g. "As 4 estações: spring, summer, autumn, winter."
+//      "eat: I/you/we/they eat, he/she/it eats."
 //      "'a' antes de sons consonantais: a cat, a dog, a house."
-const COLON_LIST_RE = /:\s*[\wáéíóúâêôãõç'-][^,]*?(?:\s*,\s*[\wáéíóúâêôãõç'-][^,]*?){2,}[.\s]*$/im;
+const COLON_LIST_RE = /:\s*[\wáéíóúâêôãõç'-][^,/]*?(?:\s*[,/]\s*[\wáéíóúâêôãõç'-][^,/]*?){2,}[.\s]*$/im;
 // Numeric/word equation: "1 = one", "10 = ten" — digit equating to a
 // word definition (early-grade vocabulary).
 const NUM_DEF_RE = /\b\d+\s*=\s*[A-Za-zÁÉÍÓÚÂÊÔÃÕÇáéíóúâêôãõç]/;
@@ -343,13 +351,13 @@ const ENUM_LIST_RE = /(?:[\wáéíóúâêôãõç-]+\s*,\s*){2,}[\wáéíóúâ
 // e.g. "4! = 24.", "C(n,1) = n", "1/6 ≈ 0.167", "a = 4", "(2,4)=2·(1,2)",
 //      "(0.5)^2 = 0.25", "Q1 = 25º percentil", "α=0.05", "L.D. ↔ det = 0",
 //      "T: (3,3)", "R90°(5,0)=(0,5)", "A⁻¹[1,2] = -1", "(90/360)·π·64 = 16π"
-const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|\([\d.]+\)\^\d|C\(\s*[a-z\d]|[\d\w/]+\s*≈\s*[\d.]+|C\([a-z],[a-z\d]\)\s*=|\b[a-z]\s*=\s*-?\d|·\s*[(\dπ]|[QHα-ω][₀-₉0-9]?\s*=|↔|°\s*\(|[A-Z][⁻¹⁰¹²³⁴⁵⁶⁷⁸⁹]?\[\d/i;
+const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|\([\d.]+\)\^\d|C\(\s*[a-z\d]|[\d\w/]+\s*≈\s*[\d.]+|C\([a-z],[a-z\d]\)\s*=|\b[a-z]\s*=\s*-?\d|·\s*[(\dπ]|[QHα-ω][₀-₉0-9]?\s*=|↔|°\s*\(|[A-Z][⁻¹⁰¹²³⁴⁵⁶⁷⁸⁹]{0,2}\[\d/i;
 // Japanese script with grammatical enumeration: kanji/kana followed by a
 // colon, comma list, or " : " with at least one paired term.
 // e.g. "どころか: 親切どころか、上手どころか、謝るどころか."
 //      "ものだから tem mais ênfase e peso de justificativa que から e ので."
 //      "Nだけあって、Vただけあって — Latin lead is ok if JP-comma follows."
-const JP_GRAMMAR_RE = /[\w一-鿿぀-ヿ]+[一-鿿぀-ヿ][^\s]*\s*[:、,]\s*[\w一-鿿぀-ヿ]*[一-鿿぀-ヿ]/;
+const JP_GRAMMAR_RE = /[\w一-鿿぀-ヿ][\w\s一-鿿぀-ヿ]*[一-鿿぀-ヿ][^\s]*\s*[:、,]\s*[\w\s一-鿿぀-ヿ]*[一-鿿぀-ヿ]/;
 // Pattern-explanation structure: starts with a JP-script grammar pattern
 // then PT/EN explanation copula (é/são/pode/serve/segue/aceita/significa/
 // usa-se/funciona/equivale). Note JS \b is ASCII-only so we anchor on
