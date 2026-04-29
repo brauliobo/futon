@@ -1,0 +1,244 @@
+title:
+  pt: "🔥 Metabolismo do câncer"
+  en: "🔥 Cancer metabolism"
+level: 'B'
+subject: biology
+objectives: [biology.cancer_metabolism]
+difficulty: 5
+authorNotes: "Efeito Warburg, glutaminólise, oncometabólitos, dependências metabólicas, alvos terapêuticos."
+example:
+  pt: "Ex.: tumor → glicólise aeróbica (Warburg) → produção de lactato → microambiente ácido → escape imune."
+  en: "Ex.: tumor → aerobic glycolysis (Warburg) → lactate production → acidic microenvironment → immune escape."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Reprogramação metabólica tumoral", en: "Tumor metabolic reprogramming"}
+    description: {pt: "Como tumores comem diferente.", en: "How tumors eat differently."}
+    exercises:
+      - type: choice
+        question: {pt: "Efeito Warburg refere-se a:", en: "Warburg effect refers to:"}
+        choices:
+          - {pt: "Glicólise aeróbica em células tumorais com produção elevada de lactato mesmo com O₂", en: "Aerobic glycolysis in tumor cells with high lactate production even with O₂"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas OXPHOS lento", en: "Just slow OXPHOS"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Glicólise aeróbica em células tumorais com produção elevada de lactato mesmo com O₂", en: "Aerobic glycolysis in tumor cells with high lactate production even with O₂"}
+        rationale: {pt: "Quando proliferação rápida é necessária, então biossíntese supera produção de ATP eficiente.", en: "When rapid proliferation is needed, biosynthesis trumps efficient ATP production."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PET-FDG explora Warburg porque:", en: "PET-FDG exploits Warburg because:"}
+        choices:
+          - {pt: "Tumores captam mais glicose marcada (¹⁸F-FDG) que tecidos sadios", en: "Tumors uptake more labeled glucose (¹⁸F-FDG) than healthy tissue"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Tumores captam mais glicose marcada (¹⁸F-FDG) que tecidos sadios", en: "Tumors uptake more labeled glucose (¹⁸F-FDG) than healthy tissue"}
+        rationale: {pt: "Quando captação é elevada, então PET visualiza lesões com sensibilidade clínica.", en: "When uptake is elevated, PET visualizes lesions with clinical sensitivity."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Glutaminólise em tumores:", en: "Glutaminolysis in tumors:"}
+        choices:
+          - {pt: "Glutamina alimenta TCA via α-cetoglutarato e provê N para biossíntese", en: "Glutamine fuels TCA via α-ketoglutarate and provides N for biosynthesis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Glutamina alimenta TCA via α-cetoglutarato e provê N para biossíntese", en: "Glutamine fuels TCA via α-ketoglutarate and provides N for biosynthesis"}
+        rationale: {pt: "Quando glutamina é viciada, então tumores tornam-se vulneráveis a inibidores de glutaminase.", en: "When glutamine is addictive, tumors become vulnerable to glutaminase inhibitors."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Oncometabólitos como 2-HG:", en: "Oncometabolites like 2-HG:"}
+        choices:
+          - {pt: "Produzido por mutações em IDH1/2 — inibe demetilases e sustenta tumores", en: "Produced by IDH1/2 mutations — inhibits demethylases and sustains tumors"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Produzido por mutações em IDH1/2 — inibe demetilases e sustenta tumores", en: "Produced by IDH1/2 mutations — inhibits demethylases and sustains tumors"}
+        rationale: {pt: "Quando 2-HG acumula, então epigenoma fica reescrito favorecendo proliferação.", en: "When 2-HG accumulates, epigenome is rewritten favoring proliferation."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PI3K/AKT/mTOR e câncer:", en: "PI3K/AKT/mTOR and cancer:"}
+        choices:
+          - {pt: "Via central que estimula crescimento, biossíntese e captação de nutrientes em tumores", en: "Central pathway stimulating growth, biosynthesis and nutrient uptake in tumors"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Via central que estimula crescimento, biossíntese e captação de nutrientes em tumores", en: "Central pathway stimulating growth, biosynthesis and nutrient uptake in tumors"}
+        rationale: {pt: "Quando via é hiperativa, então tumor escala metabolismo desproporcionalmente.", en: "When pathway is hyperactive, tumor disproportionately scales metabolism."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MYC reprograma metabolismo:", en: "MYC reprograms metabolism:"}
+        choices:
+          - {pt: "Aumenta glicólise, glutaminólise, biogênese ribossomal e síntese de nucleotídeos", en: "Increases glycolysis, glutaminolysis, ribosome biogenesis and nucleotide synthesis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Aumenta glicólise, glutaminólise, biogênese ribossomal e síntese de nucleotídeos", en: "Increases glycolysis, glutaminolysis, ribosome biogenesis and nucleotide synthesis"}
+        rationale: {pt: "Quando MYC é desregulado, então metabolismo entra em modo proliferativo de massa.", en: "When MYC is dysregulated, metabolism shifts to mass proliferation mode."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dependência de aminoácido em tumores (asparaginase em LLA):", en: "Amino acid dependence in tumors (asparaginase in ALL):"}
+        choices:
+          - {pt: "Leucemias dependem de asparagina extracelular — depleção causa morte tumoral seletiva", en: "Leukemias depend on extracellular asparagine — depletion causes selective tumor death"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Leucemias dependem de asparagina extracelular — depleção causa morte tumoral seletiva", en: "Leukemias depend on extracellular asparagine — depletion causes selective tumor death"}
+        rationale: {pt: "Quando síntese própria é insuficiente, então depleção sistêmica é estratégia eficaz.", en: "When own synthesis is insufficient, systemic depletion is an effective strategy."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese de nucleotídeos como alvo (metotrexato, 5-FU):", en: "Nucleotide synthesis as target (methotrexate, 5-FU):"}
+        choices:
+          - {pt: "Inibem enzimas-chave bloqueando proliferação tumoral por escassez de DNA", en: "Inhibit key enzymes blocking tumor proliferation via DNA scarcity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Inibem enzimas-chave bloqueando proliferação tumoral por escassez de DNA", en: "Inhibit key enzymes blocking tumor proliferation via DNA scarcity"}
+        rationale: {pt: "Quando dNTPs faltam, então células com alta proliferação morrem antes das normais.", en: "When dNTPs are lacking, highly proliferative cells die before normal ones."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipogênese tumoral envolve:", en: "Tumor lipogenesis involves:"}
+        choices:
+          - {pt: "FASN e ACC ativados para sintetizar lipídios necessários a membranas e sinalização", en: "FASN and ACC activated to synthesize lipids needed for membranes and signaling"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "FASN e ACC ativados para sintetizar lipídios necessários a membranas e sinalização", en: "FASN and ACC activated to synthesize lipids needed for membranes and signaling"}
+        rationale: {pt: "Quando demanda lipídica explode, então enzimas anabólicas tornam-se alvos terapêuticos.", en: "When lipid demand explodes, anabolic enzymes become therapeutic targets."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mitochondrial reprogramming em tumores inclui:", en: "Mitochondrial reprogramming in tumors includes:"}
+        choices:
+          - {pt: "OXPHOS preservado em alguns tumores; reciclagem de NADH/NADPH otimizada", en: "OXPHOS preserved in some tumors; NADH/NADPH recycling optimized"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "OXPHOS preservado em alguns tumores; reciclagem de NADH/NADPH otimizada", en: "OXPHOS preserved in some tumors; NADH/NADPH recycling optimized"}
+        rationale: {pt: "Quando OXPHOS é mantido, então tumor escapa quando glicólise sozinha não basta.", en: "When OXPHOS is kept, tumor escapes when glycolysis alone is insufficient."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Microambiente metabólico e terapia", en: "Metabolic microenvironment and therapy"}
+    description: {pt: "Onde tumor encontra hospedeiro.", en: "Where tumor meets host."}
+    exercises:
+      - type: choice
+        question: {pt: "Acidose tumoral favorece:", en: "Tumor acidosis favors:"}
+        choices:
+          - {pt: "Invasão, supressão imune e resistência a quimio/radioterapia", en: "Invasion, immune suppression and chemo/radiotherapy resistance"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Invasão, supressão imune e resistência a quimio/radioterapia", en: "Invasion, immune suppression and chemo/radiotherapy resistance"}
+        rationale: {pt: "Quando pH cai, então T efetoras falham e enzimas degradativas extracelulares ativam.", en: "When pH drops, effector T fails and extracellular degradative enzymes activate."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hipóxia tumoral ativa:", en: "Tumor hypoxia activates:"}
+        choices:
+          - {pt: "HIF-1α aumentando glicólise, angiogênese e resistência a apoptose", en: "HIF-1α increasing glycolysis, angiogenesis and apoptosis resistance"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "HIF-1α aumentando glicólise, angiogênese e resistência a apoptose", en: "HIF-1α increasing glycolysis, angiogenesis and apoptosis resistance"}
+        rationale: {pt: "Quando O₂ falta, então HIF reprograma metabolismo e estimula vasos novos.", en: "When O₂ is lacking, HIF reprograms metabolism and stimulates new vessels."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lactato no microambiente tumoral:", en: "Lactate in tumor microenvironment:"}
+        choices:
+          - {pt: "Sinaliza imunossupressão e pode ser combustível para outras células tumorais", en: "Signals immunosuppression and can fuel other tumor cells"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Sinaliza imunossupressão e pode ser combustível para outras células tumorais", en: "Signals immunosuppression and can fuel other tumor cells"}
+        rationale: {pt: "Quando lactato é exportado, então 'cooperação' metabólica entre subclones se estabelece.", en: "When lactate is exported, metabolic 'cooperation' between subclones is established."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inibidores de IDH (ivosidenibe, enasidenibe):", en: "IDH inhibitors (ivosidenib, enasidenib):"}
+        choices:
+          - {pt: "Tratam AML/colangiocarcinoma com mutação IDH bloqueando produção de 2-HG", en: "Treat IDH-mutant AML/cholangiocarcinoma blocking 2-HG production"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Tratam AML/colangiocarcinoma com mutação IDH bloqueando produção de 2-HG", en: "Treat IDH-mutant AML/cholangiocarcinoma blocking 2-HG production"}
+        rationale: {pt: "Quando oncometabólito desaparece, então diferenciação retorna e tumor regride.", en: "When oncometabolite disappears, differentiation returns and tumor regresses."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hexokinase 2 e tumor:", en: "Hexokinase 2 and tumor:"}
+        choices:
+          - {pt: "Frequentemente superexpressa, aprisionando glicose como G6P para glicólise sustentada", en: "Often overexpressed, trapping glucose as G6P for sustained glycolysis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Frequentemente superexpressa, aprisionando glicose como G6P para glicólise sustentada", en: "Often overexpressed, trapping glucose as G6P for sustained glycolysis"}
+        rationale: {pt: "Quando HK2 é alta, então tumor 'enclausura' glicose em alta velocidade.", en: "When HK2 is high, tumor 'cages' glucose at high speed."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imunometabolismo no microambiente tumoral:", en: "Immunometabolism in tumor microenvironment:"}
+        choices:
+          - {pt: "Tumor 'rouba' nutrientes (glicose, aminoácidos) deixando T sem combustível efetor", en: "Tumor 'steals' nutrients (glucose, amino acids) leaving T without effector fuel"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Tumor 'rouba' nutrientes (glicose, aminoácidos) deixando T sem combustível efetor", en: "Tumor 'steals' nutrients (glucose, amino acids) leaving T without effector fuel"}
+        rationale: {pt: "Quando T anérgicas surgem, então imunoterapia falha mesmo com checkpoint bloqueado.", en: "When anergic T emerge, immunotherapy fails even with checkpoint blocked."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Metabolismo de células-tronco tumorais (CSCs):", en: "Cancer stem cell (CSC) metabolism:"}
+        choices:
+          - {pt: "Frequentemente OXPHOS-dependentes; sensíveis a inibidores mitocondriais", en: "Often OXPHOS-dependent; sensitive to mitochondrial inhibitors"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Frequentemente OXPHOS-dependentes; sensíveis a inibidores mitocondriais", en: "Often OXPHOS-dependent; sensitive to mitochondrial inhibitors"}
+        rationale: {pt: "Quando CSCs sustentam tumor, então atacar OXPHOS pode prevenir recidiva.", en: "When CSCs sustain tumor, attacking OXPHOS may prevent relapse."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Restrição calórica/cetose em câncer:", en: "Caloric restriction/ketosis in cancer:"}
+        choices:
+          - {pt: "Pode sensibilizar tumores Warburg-dependentes a quimioterapia em estudos pré-clínicos", en: "May sensitize Warburg-dependent tumors to chemotherapy in preclinical studies"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Pode sensibilizar tumores Warburg-dependentes a quimioterapia em estudos pré-clínicos", en: "May sensitize Warburg-dependent tumors to chemotherapy in preclinical studies"}
+        rationale: {pt: "Quando glicose é limitada, então tumores Warburg-viciados sofrem antes das células normais.", en: "When glucose is limited, Warburg-addicted tumors suffer before normal cells."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Heterogeneidade metabólica tumoral:", en: "Tumor metabolic heterogeneity:"}
+        choices:
+          - {pt: "Subpopulações usam diferentes combustíveis; complica monoterapia metabólica", en: "Subpopulations use different fuels; complicates single metabolic therapy"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Subpopulações usam diferentes combustíveis; complica monoterapia metabólica", en: "Subpopulations use different fuels; complicates single metabolic therapy"}
+        rationale: {pt: "Quando flexibilidade metabólica existe, então combinações racionais são necessárias.", en: "When metabolic flexibility exists, rational combinations are necessary."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em metabolismo de câncer:", en: "Next frontiers in cancer metabolism:"}
+        choices:
+          - {pt: "Inibidores de glutaminase, MCT, FAS e exploração da letalidade metabólica sintética", en: "Glutaminase, MCT, FAS inhibitors and synthetic metabolic lethality exploration"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Inibidores de glutaminase, MCT, FAS e exploração da letalidade metabólica sintética", en: "Glutaminase, MCT, FAS inhibitors and synthetic metabolic lethality exploration"}
+        rationale: {pt: "Quando dependências são mapeadas, então fármacos seletivos exploram fraquezas tumorais.", en: "When dependencies are mapped, selective drugs exploit tumor weaknesses."}
+        objectives: [biology.cancer_metabolism]
+        difficulty: 5
+target: 20
