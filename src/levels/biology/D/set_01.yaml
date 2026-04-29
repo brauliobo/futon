@@ -1,0 +1,255 @@
+title:
+  pt: "🧮 Biologia estrutural computacional"
+  en: "🧮 Computational structural biology"
+level: 'D'
+subject: biology
+objectives: [biology.compstruct]
+difficulty: 5
+authorNotes: "AlphaFold, RoseTTAFold, design de novo, docking, MD, crio-EM integrativa."
+example:
+  pt: "Ex.: sequência → AlphaFold → estrutura prevista → docking → drogas candidatas."
+  en: "Ex.: sequence → AlphaFold → predicted structure → docking → candidate drugs."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Predição e modelagem", en: "Prediction and modeling"}
+    description: {pt: "Como estruturas são preditas.", en: "How structures are predicted."}
+    exercises:
+      - type: choice
+        question: {pt: "AlphaFold2:", en: "AlphaFold2:"}
+        choices:
+          - {pt: "Rede neural treinada em PDB que prediz estruturas com acurácia near-experimental", en: "Neural network trained on PDB predicting structures with near-experimental accuracy"}
+          - {pt: "Apenas docking molecular", en: "Just molecular docking"}
+          - {pt: "Apenas microscopia eletrônica", en: "Just electron microscopy"}
+          - {pt: "Apenas western blot", en: "Just western blot"}
+        correctAnswer: {pt: "Rede neural treinada em PDB que prediz estruturas com acurácia near-experimental", en: "Neural network trained on PDB predicting structures with near-experimental accuracy"}
+        rationale: {pt: "Quando AlphaFold prediz, então proteoma de várias espécies fica mapeado em silico.", en: "When AlphaFold predicts, proteomes from many species are mapped in silico."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RoseTTAFold:", en: "RoseTTAFold:"}
+        choices:
+          - {pt: "Three-track network do Baker Lab que prediz estruturas e complexos com pesos abertos", en: "Baker Lab three-track network predicting structures and complexes with open weights"}
+          - {pt: "Apenas microscópio confocal", en: "Just confocal microscope"}
+          - {pt: "Apenas western blot", en: "Just western blot"}
+          - {pt: "Apenas centrifugação", en: "Just centrifugation"}
+        correctAnswer: {pt: "Three-track network do Baker Lab que prediz estruturas e complexos com pesos abertos", en: "Baker Lab three-track network predicting structures and complexes with open weights"}
+        rationale: {pt: "Quando código é aberto, então comunidade adapta e melhora rapidamente.", en: "When code is open, community adapts and improves rapidly."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ESMFold:", en: "ESMFold:"}
+        choices:
+          - {pt: "Modelo de linguagem proteica que prediz estrutura sem MSA explícito — rápido", en: "Protein language model predicting structure without explicit MSA — fast"}
+          - {pt: "Apenas técnica de cristalografia", en: "Just crystallography technique"}
+          - {pt: "Apenas RNA-seq", en: "Just RNA-seq"}
+          - {pt: "Apenas FACS", en: "Just FACS"}
+        correctAnswer: {pt: "Modelo de linguagem proteica que prediz estrutura sem MSA explícito — rápido", en: "Protein language model predicting structure without explicit MSA — fast"}
+        rationale: {pt: "Quando MSA não é necessário, então proteínas raras ou de novo são modeláveis.", en: "When MSA is not needed, rare or de novo proteins become modelable."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Design de novo:", en: "De novo design:"}
+        choices:
+          - {pt: "RFdiffusion + ProteinMPNN geram backbones e sequências para funções inéditas", en: "RFdiffusion + ProteinMPNN generate backbones and sequences for novel functions"}
+          - {pt: "Apenas cópia de proteínas naturais", en: "Just copying natural proteins"}
+          - {pt: "Apenas mutações pontuais aleatórias", en: "Just random point mutations"}
+          - {pt: "Apenas extração tecidual", en: "Just tissue extraction"}
+        correctAnswer: {pt: "RFdiffusion + ProteinMPNN geram backbones e sequências para funções inéditas", en: "RFdiffusion + ProteinMPNN generate backbones and sequences for novel functions"}
+        rationale: {pt: "Quando IA generativa atua, então proteínas com função desejada são desenhadas do zero.", en: "When generative AI acts, proteins with desired function are designed from scratch."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Docking molecular:", en: "Molecular docking:"}
+        choices:
+          - {pt: "Prediz pose e afinidade ligante-receptor — base de virtual screening de drogas", en: "Predicts ligand-receptor pose and affinity — basis of drug virtual screening"}
+          - {pt: "Apenas sequenciamento", en: "Just sequencing"}
+          - {pt: "Apenas cristalização", en: "Just crystallization"}
+          - {pt: "Apenas bioquímica clássica", en: "Just classical biochemistry"}
+        correctAnswer: {pt: "Prediz pose e afinidade ligante-receptor — base de virtual screening de drogas", en: "Predicts ligand-receptor pose and affinity — basis of drug virtual screening"}
+        rationale: {pt: "Quando docking funciona, então bibliotecas enormes podem ser triadas computacionalmente.", en: "When docking works, huge libraries can be computationally screened."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dinâmica molecular (MD):", en: "Molecular dynamics (MD):"}
+        choices:
+          - {pt: "Simula movimento atômico em escalas ns-µs revelando flexibilidade e conformações", en: "Simulates atomic motion at ns-µs scales revealing flexibility and conformations"}
+          - {pt: "Apenas estrutura estática", en: "Just static structure"}
+          - {pt: "Apenas termodinâmica clássica", en: "Just classical thermodynamics"}
+          - {pt: "Apenas observação visual", en: "Just visual observation"}
+        correctAnswer: {pt: "Simula movimento atômico em escalas ns-µs revelando flexibilidade e conformações", en: "Simulates atomic motion at ns-µs scales revealing flexibility and conformations"}
+        rationale: {pt: "Quando MD roda, então mecanismos dinâmicos são acessíveis sem experimento.", en: "When MD runs, dynamic mechanisms are accessible without experiment."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Crio-EM single-particle:", en: "Cryo-EM single-particle:"}
+        choices:
+          - {pt: "Imagens de partículas vitrificadas combinadas computacionalmente em estrutura 3D atômica", en: "Vitrified particle images computationally combined into atomic 3D structure"}
+          - {pt: "Apenas microscopia óptica", en: "Just light microscopy"}
+          - {pt: "Apenas RX", en: "Just X-ray"}
+          - {pt: "Apenas RMN", en: "Just NMR"}
+        correctAnswer: {pt: "Imagens de partículas vitrificadas combinadas computacionalmente em estrutura 3D atômica", en: "Vitrified particle images computationally combined into atomic 3D structure"}
+        rationale: {pt: "Quando crio-EM resolve, então complexos grandes ficam acessíveis sem cristalização.", en: "When cryo-EM resolves, large complexes are accessible without crystallization."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Crio-tomografia (cryo-ET):", en: "Cryo-tomography (cryo-ET):"}
+        choices:
+          - {pt: "Reconstrói células inteiras em 3D em resolução nanométrica revelando contexto in situ", en: "Reconstructs whole cells in 3D at nanometer resolution revealing in situ context"}
+          - {pt: "Apenas radiografia simples", en: "Just simple X-ray"}
+          - {pt: "Apenas histologia", en: "Just histology"}
+          - {pt: "Apenas western", en: "Just western"}
+        correctAnswer: {pt: "Reconstrói células inteiras em 3D em resolução nanométrica revelando contexto in situ", en: "Reconstructs whole cells in 3D at nanometer resolution revealing in situ context"}
+        rationale: {pt: "Quando cryo-ET vê dentro da célula, então arquitetura nativa é descoberta.", en: "When cryo-ET sees inside the cell, native architecture is revealed."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Crosslinking-MS (XL-MS):", en: "Crosslinking-MS (XL-MS):"}
+        choices:
+          - {pt: "Amarras químicas + espectrometria de massa identificam contatos proteína-proteína", en: "Chemical tethers + mass spec identify protein-protein contacts"}
+          - {pt: "Apenas microscopia confocal", en: "Just confocal microscopy"}
+          - {pt: "Apenas eletroforese", en: "Just electrophoresis"}
+          - {pt: "Apenas FACS", en: "Just FACS"}
+        correctAnswer: {pt: "Amarras químicas + espectrometria de massa identificam contatos proteína-proteína", en: "Chemical tethers + mass spec identify protein-protein contacts"}
+        rationale: {pt: "Quando contatos são mapeados, então arquitetura de complexos é deduzida.", en: "When contacts are mapped, complex architecture is deduced."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AlphaFold-Multimer:", en: "AlphaFold-Multimer:"}
+        choices:
+          - {pt: "Prediz interfaces e estequiometria de complexos proteína-proteína com bom desempenho", en: "Predicts interfaces and stoichiometry of protein-protein complexes with good performance"}
+          - {pt: "Apenas modelagem de DNA", en: "Just DNA modeling"}
+          - {pt: "Apenas predição lipídica", en: "Just lipid prediction"}
+          - {pt: "Apenas docking iônico", en: "Just ion docking"}
+        correctAnswer: {pt: "Prediz interfaces e estequiometria de complexos proteína-proteína com bom desempenho", en: "Predicts interfaces and stoichiometry of protein-protein complexes with good performance"}
+        rationale: {pt: "Quando complexos são preditos, então biologia de redes ganha estrutura.", en: "When complexes are predicted, network biology gains structure."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações em terapêutica", en: "Therapeutic applications"}
+    description: {pt: "Da estrutura à droga.", en: "From structure to drug."}
+    exercises:
+      - type: choice
+        question: {pt: "Structure-based drug design (SBDD):", en: "Structure-based drug design (SBDD):"}
+        choices:
+          - {pt: "Estruturas alvo guiam otimização de ligantes — caso de inibidores de protease HIV", en: "Target structures guide ligand optimization — HIV protease inhibitor case"}
+          - {pt: "Apenas teste empírico cego", en: "Just blind empirical testing"}
+          - {pt: "Apenas alquimia tradicional", en: "Just traditional alchemy"}
+          - {pt: "Apenas observação clínica", en: "Just clinical observation"}
+        correctAnswer: {pt: "Estruturas alvo guiam otimização de ligantes — caso de inibidores de protease HIV", en: "Target structures guide ligand optimization — HIV protease inhibitor case"}
+        rationale: {pt: "Quando SBDD é aplicado, então drogas potentes saem mais rápido.", en: "When SBDD is applied, potent drugs emerge faster."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fragment-based drug discovery:", en: "Fragment-based drug discovery:"}
+        choices:
+          - {pt: "Triagem de fragmentos pequenos por crio-EM/RMN/SPR e linkagem para drogas potentes", en: "Small fragment screening by cryo-EM/NMR/SPR and linking to potent drugs"}
+          - {pt: "Apenas screen de bibliotecas grandes", en: "Just large-library screening"}
+          - {pt: "Apenas exposição in vivo", en: "Just in vivo exposure"}
+          - {pt: "Apenas biópsia tecidual", en: "Just tissue biopsy"}
+        correctAnswer: {pt: "Triagem de fragmentos pequenos por crio-EM/RMN/SPR e linkagem para drogas potentes", en: "Small fragment screening by cryo-EM/NMR/SPR and linking to potent drugs"}
+        rationale: {pt: "Quando fragmentos ligam, então otimização passo-a-passo cria moléculas finais.", en: "When fragments bind, stepwise optimization yields final molecules."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Protein design para vacinas:", en: "Protein design for vaccines:"}
+        choices:
+          - {pt: "Imunógenos estabilizados (spike pré-fusão SARS-CoV-2) elevam neutralização vacinal", en: "Stabilized immunogens (pre-fusion SARS-CoV-2 spike) raise vaccine neutralization"}
+          - {pt: "Apenas extrato de patógeno cru", en: "Just crude pathogen extract"}
+          - {pt: "Apenas fitoterapia tradicional", en: "Just traditional phytotherapy"}
+          - {pt: "Apenas extrato de glândulas", en: "Just gland extract"}
+        correctAnswer: {pt: "Imunógenos estabilizados (spike pré-fusão SARS-CoV-2) elevam neutralização vacinal", en: "Stabilized immunogens (pre-fusion SARS-CoV-2 spike) raise vaccine neutralization"}
+        rationale: {pt: "Quando antígeno é otimizado, então anticorpos potentes são gerados.", en: "When antigen is optimized, potent antibodies are generated."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mini-binders desenhados:", en: "Designed mini-binders:"}
+        choices:
+          - {pt: "Pequenas proteínas computadas com alta afinidade — antivirais e diagnósticos", en: "Small computed proteins with high affinity — antivirals and diagnostics"}
+          - {pt: "Apenas anticorpos clássicos", en: "Just classical antibodies"}
+          - {pt: "Apenas peptídeos curtos", en: "Just short peptides"}
+          - {pt: "Apenas extratos vegetais", en: "Just plant extracts"}
+        correctAnswer: {pt: "Pequenas proteínas computadas com alta afinidade — antivirais e diagnósticos", en: "Small computed proteins with high affinity — antivirals and diagnostics"}
+        rationale: {pt: "Quando design é preciso, então alternativas a anticorpos surgem.", en: "When design is precise, alternatives to antibodies emerge."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Enzimas de novo:", en: "De novo enzymes:"}
+        choices:
+          - {pt: "Engenharia computacional cria catalisadores para reações industriais e terapêuticas", en: "Computational engineering creates catalysts for industrial and therapeutic reactions"}
+          - {pt: "Apenas isolamento natural", en: "Just natural isolation"}
+          - {pt: "Apenas extração tecidual", en: "Just tissue extraction"}
+          - {pt: "Apenas catálise química clássica", en: "Just classical chemical catalysis"}
+        correctAnswer: {pt: "Engenharia computacional cria catalisadores para reações industriais e terapêuticas", en: "Computational engineering creates catalysts for industrial and therapeutic reactions"}
+        rationale: {pt: "Quando enzimas são desenhadas, então química verde escala economicamente.", en: "When enzymes are designed, green chemistry scales economically."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Free-energy calculations (FEP):", en: "Free-energy calculations (FEP):"}
+        choices:
+          - {pt: "Calcula ΔΔG de mutações ou ligantes para priorizar candidatos antes de síntese", en: "Computes ΔΔG of mutations or ligands to prioritize candidates before synthesis"}
+          - {pt: "Apenas observação clínica", en: "Just clinical observation"}
+          - {pt: "Apenas teste empírico cego", en: "Just blind empirical test"}
+          - {pt: "Apenas predição estrutural simples", en: "Just simple structural prediction"}
+        correctAnswer: {pt: "Calcula ΔΔG de mutações ou ligantes para priorizar candidatos antes de síntese", en: "Computes ΔΔG of mutations or ligands to prioritize candidates before synthesis"}
+        rationale: {pt: "Quando FEP guia, então rounds experimentais reduzem-se drasticamente.", en: "When FEP guides, experimental rounds reduce drastically."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Allostery em SBDD:", en: "Allostery in SBDD:"}
+        choices:
+          - {pt: "Sítios alostéricos identificados estruturalmente expandem druggability", en: "Structurally identified allosteric sites expand druggability"}
+          - {pt: "Apenas sítio ortostérico único", en: "Just single orthosteric site"}
+          - {pt: "Apenas seleção aleatória", en: "Just random selection"}
+          - {pt: "Apenas modelagem estática", en: "Just static modeling"}
+        correctAnswer: {pt: "Sítios alostéricos identificados estruturalmente expandem druggability", en: "Structurally identified allosteric sites expand druggability"}
+        rationale: {pt: "Quando alvos alostéricos são acessados, então drogas mais seletivas emergem.", en: "When allosteric targets are accessed, more selective drugs emerge."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cryo-EM em desenvolvimento de drogas:", en: "Cryo-EM in drug development:"}
+        choices:
+          - {pt: "Resolve complexos GPCR-ligante e canais iônicos guiando otimização medicinal", en: "Resolves GPCR-ligand complexes and ion channels guiding medicinal optimization"}
+          - {pt: "Apenas microscopia óptica", en: "Just light microscopy"}
+          - {pt: "Apenas RX 2D", en: "Just 2D X-ray"}
+          - {pt: "Apenas histologia", en: "Just histology"}
+        correctAnswer: {pt: "Resolve complexos GPCR-ligante e canais iônicos guiando otimização medicinal", en: "Resolves GPCR-ligand complexes and ion channels guiding medicinal optimization"}
+        rationale: {pt: "Quando alvos difíceis são vistos, então famílias inteiras viram drogáveis.", en: "When hard targets are seen, whole families become druggable."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PROTACs guiados por estrutura:", en: "Structure-guided PROTACs:"}
+        choices:
+          - {pt: "Otimização da geometria do ternário alvo-PROTAC-E3 maximiza degradação seletiva", en: "Target-PROTAC-E3 ternary geometry optimization maximizes selective degradation"}
+          - {pt: "Apenas adesão genérica", en: "Just generic adhesion"}
+          - {pt: "Apenas marketing farmacêutico", en: "Just pharma marketing"}
+          - {pt: "Apenas suplementos", en: "Just supplements"}
+        correctAnswer: {pt: "Otimização da geometria do ternário alvo-PROTAC-E3 maximiza degradação seletiva", en: "Target-PROTAC-E3 ternary geometry optimization maximizes selective degradation"}
+        rationale: {pt: "Quando ternário é estável, então degradação por proteassoma é eficiente.", en: "When ternary is stable, proteasomal degradation is efficient."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AI foundation models em biologia:", en: "AI foundation models in biology:"}
+        choices:
+          - {pt: "ESM, AlphaFold-3 generalizam predição estrutural e funcional em escalas amplas", en: "ESM, AlphaFold-3 generalize structural and functional prediction at wide scales"}
+          - {pt: "Apenas regressão linear simples", en: "Just simple linear regression"}
+          - {pt: "Apenas observação anotada", en: "Just annotated observation"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+        correctAnswer: {pt: "ESM, AlphaFold-3 generalizam predição estrutural e funcional em escalas amplas", en: "ESM, AlphaFold-3 generalize structural and functional prediction at wide scales"}
+        rationale: {pt: "Quando modelos generalizam, então biologia preditiva escala dramaticamente.", en: "When models generalize, predictive biology scales dramatically."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras estruturais:", en: "Next structural frontiers:"}
+        choices:
+          - {pt: "Predição RNA, complexos com cofatores, design dinâmico e simulação celular completa", en: "RNA prediction, cofactor complexes, dynamic design and whole-cell simulation"}
+          - {pt: "Apenas fotografia clínica", en: "Just clinical photography"}
+          - {pt: "Apenas dissecção", en: "Just dissection"}
+          - {pt: "Apenas observação visual", en: "Just visual observation"}
+        correctAnswer: {pt: "Predição RNA, complexos com cofatores, design dinâmico e simulação celular completa", en: "RNA prediction, cofactor complexes, dynamic design and whole-cell simulation"}
+        rationale: {pt: "Quando ferramentas convergem, então biologia computacional vira motor de descoberta primária.", en: "When tools converge, computational biology becomes the primary discovery engine."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+target: 20
