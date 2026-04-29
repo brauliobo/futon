@@ -325,6 +325,14 @@ const COLON_LIST_RE = /:\s*[\wáéíóúâêôãõç'-][^,]*?(?:\s*,\s*[\wáéí
 // Numeric/word equation: "1 = one", "10 = ten" — digit equating to a
 // word definition (early-grade vocabulary).
 const NUM_DEF_RE = /\b\d+\s*=\s*[A-Za-zÁÉÍÓÚÂÊÔÃÕÇáéíóúâêôãõç]/;
+// Phrase-equation: "term-or-phrase = explanation". Catches grammar-rule
+// definitions like "Has to (3ª pessoa) = obrigação externa.",
+// "Don't have to = não é necessário."
+const PHRASE_EQ_RE = /[A-Za-záéíóúâêôãõç'][\w'\s()ª°-]{1,30}\s*=\s*[A-Za-záéíóúâêôãõç]/;
+// Numbered-list teaching pattern: "1) X 2) Y 3) Z 4) W" enumerates
+// criteria/steps. Used in math criteria lists, PT essay structure, etc.
+//  e.g. "1) n fixo 2) independência 3) apenas 2 resultados 4) p constante."
+const NUMBERED_LIST_RE = /\b1\)\s*\S+.*\b2\)\s*\S+.*\b3\)/;
 // Inline list with summary: ≥3 comma-separated terms then em-dash/dash and a
 // short descriptor. e.g. "shirt, pants, dress, shoes, hat — 5 roupas básicas."
 // or "I, you, he, she, it, we, they — os sete pronomes pessoais."
@@ -339,7 +347,13 @@ const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|\([\d.]+\)\^\d|C\(\s*[a
 // colon, comma list, or " : " with at least one paired term.
 // e.g. "どころか: 親切どころか、上手どころか、謝るどころか."
 //      "ものだから tem mais ênfase e peso de justificativa que から e ので."
-const JP_GRAMMAR_RE = /[぀-ヿ一-鿿][^\s]*\s*[:、,]\s*[぀-ヿ一-鿿]/;
+//      "Nだけあって、Vただけあって — Latin lead is ok if JP-comma follows."
+const JP_GRAMMAR_RE = /[\w一-鿿぀-ヿ]+[一-鿿぀-ヿ][^\s]*\s*[:、,]\s*[\w一-鿿぀-ヿ]*[一-鿿぀-ヿ]/;
+// Pattern-explanation structure: starts with a JP-script grammar pattern
+// then " é/são/significa/indica/usa..." in PT.
+//  e.g. "ないことはない é uma aceitação hesitante"
+//       "を踏まえた上で é a estrutura ideal..."
+const JP_PATTERN_DESC_RE = /[一-鿿぀-ヿ][^\s]*\s+(?:é|são|significa|indica|usa|representa|expressa|denota|funciona|equivale|aceita|conecta|exige|contém)\b/i;
 
 // Strip accents for matching: JS `\b` anchors are ASCII-only, so words that
 // *start* with accented letters (ângulo, década) never fire a word-boundary
@@ -364,6 +378,6 @@ export function categorize(rationale) {
   if (RESTATE_RE.test(s)) return 'restatement';
   const sAscii = stripAccents(s);
   if (METHOD_RE.test(sAscii)) return 'method';
-  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s) || ARITHMETIC_RE.test(s) || JP_DECOMP_RE.test(s) || VOCAB_ENUM_RE.test(s) || WORD_FAMILY_RE.test(s) || ENUM_LIST_RE.test(s) || MATH_SHORTHAND_RE.test(s) || JP_GRAMMAR_RE.test(s) || COLON_LIST_RE.test(s) || NUM_DEF_RE.test(s) || PLUS_DECOMP_RE.test(s) || ALPHA_EQ_RE.test(s)) return 'method';
+  if (COMPUTATION_RE.test(s) || SUBSTITUTION_RE.test(s) || TRANSFORMATION_RE.test(s) || DEFINITION_RE.test(s) || ARITHMETIC_RE.test(s) || JP_DECOMP_RE.test(s) || VOCAB_ENUM_RE.test(s) || WORD_FAMILY_RE.test(s) || ENUM_LIST_RE.test(s) || MATH_SHORTHAND_RE.test(s) || JP_GRAMMAR_RE.test(s) || COLON_LIST_RE.test(s) || NUM_DEF_RE.test(s) || PLUS_DECOMP_RE.test(s) || ALPHA_EQ_RE.test(s) || JP_PATTERN_DESC_RE.test(s) || PHRASE_EQ_RE.test(s) || NUMBERED_LIST_RE.test(s)) return 'method';
   return 'generic';
 }
