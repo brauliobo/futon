@@ -106,9 +106,16 @@ function checkChoices(sets) {
       });
     }
 
-    // Check duplicate choices (all normalize to same value)
+    // Check duplicate choices (all normalize to same value). normalizeAnswer
+    // strips accents, so accent-distinction drills like (medicô/médico/medico)
+    // legitimately collapse — that's the whole point of the exercise. Skip
+    // when the *raw* choices are distinct (the drill is testing punctuation
+    // or accent rather than spelling).
+    const rawDistinct = new Set(choices.map(c => c.trim())).size;
     const unique = new Set(choices.map(normalizeAnswer));
-    if (unique.size < choices.length && unique.size === 1) {
+    if (unique.size < choices.length && unique.size === 1 && rawDistinct === choices.length) {
+      // raw-distinct + accent-normalized collapse → accent drill, skip
+    } else if (unique.size < choices.length && unique.size === 1) {
       issues.push({
         file: relPath(set._path),
         page: page.pageNumber,
@@ -252,8 +259,11 @@ function checkEnglishCaps(sets) {
     const ans = String(ex.correctAnswer);
     if (!ans.includes(' ')) return; // single word, skip
 
-    // Sentence starting lowercase
-    if (/^[a-z]/.test(ans)) {
+    // Sentence starting lowercase. Only flag when the answer is a
+    // proper sentence (terminal . ? !) — grammar-fragment answers
+    // like 'before consonant sounds' or 'a big cat' legitimately
+    // start lowercase.
+    if (/^[a-z]/.test(ans) && /[.?!]\s*$/.test(ans)) {
       issues.push({
         file: relPath(set._path), page: page.pageNumber,
         answer: ans.slice(0, 50), severity: 'warn', note: 'starts lowercase',
