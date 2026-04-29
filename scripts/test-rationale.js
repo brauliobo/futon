@@ -81,6 +81,19 @@ const CASES = [
   ['method', 'BANANA começa com B.', 'letter-recognition começa'],
   ['method', 'A letra B completa a palavra: BOCA.', 'letra + completa'],
 
+  // --- generic: tautology guards (iter 35) ---
+  // These read like rationale but contain no method signal — they just
+  // assert the answer is correct. Must stay generic to avoid false-method
+  // credit on copy-paste 'this is right' explanations.
+  ['generic', 'Pense bem.', 'pure imperative, no domain'],
+  ['generic', 'Pratique muito.', 'pure imperative, no domain'],
+  ['generic', 'Resposta correta!', 'tautological exclamation'],
+  ['generic', 'Bom trabalho!', 'praise, no teaching'],
+  ['generic', 'É isso mesmo.', 'affirm without method'],
+  ['generic', 'Sim, é isso.', 'affirm without method'],
+  ['generic', 'A resposta é certa.', 'tautology'],
+  ['generic', 'É correto.', 'tautology'],
+
   // --- method: iter 75 lexicon (rhetoric, vocab, probability) ---
   ['method', 'GATO é o animal escrito corretamente.', 'spelling-verify'],
   ['method', 'O sol tem cor amarelo.', 'color factual'],
