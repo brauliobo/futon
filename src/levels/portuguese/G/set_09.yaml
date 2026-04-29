@@ -2,7 +2,9 @@ title: 📝 Concordância Nominal
 level: G
 subject: portuguese
 difficulty: 3
-objectives: [EF07LP08, EF08LP06]
+objectives:
+  - EF07LP08
+  - EF08LP06
 authorNotes: Concordância nominal — artigo, adjetivo, pronome e numeral concordam em gênero e número com o substantivo.
 example: "Adjetivo concorda com o substantivo. Ex.: 'Casas bonitas' (feminino plural). Com dois subst.: vai ao plural."
 passCriteria:
@@ -18,8 +20,20 @@ pages:
         correctAnswer: inteligentes
         difficulty: 1
         rationale: "Alunas (feminino plural) → adjetivo no plural: inteligentes."
-        objectives: [EF07LP08]
+        objectives:
+          - EF07LP08
   - pageNumber: 2
+    title: Numerais
+    description: Numerais concordam com o substantivo.
+    exercises:
+      - type: paragraph
+        question: "Complete: 'Comprei ___ cadernos.' (um/dois/duas/uma)"
+        correctAnswer: dois
+        difficulty: 1
+        rationale: "Cadernos é masculino plural → numeral masculino: dois."
+        objectives:
+          - EF07LP08
+  - pageNumber: 3
     title: Adjetivo com Dois Substantivos
     description: Adjetivo posposto a dois substantivos vai ao plural.
     exercises:
@@ -28,17 +42,8 @@ pages:
         correctAnswer: usados
         difficulty: 2
         rationale: "Dois substantivos (livros + revistas) → adjetivo no masculino plural: usados."
-        objectives: [EF08LP06]
-  - pageNumber: 3
-    title: Adjetivo Antes de Dois Substantivos
-    description: Anteposto, o adjetivo concorda com o mais próximo.
-    exercises:
-      - type: paragraph
-        question: "Complete: 'Preciso de ___ dedicação e esforço.' (grande/grandes/enormes/imensos)"
-        correctAnswer: grande
-        difficulty: 3
-        rationale: "Adjetivo anteposto a dois substantivos pode concordar com o mais próximo: grande dedicação."
-        objectives: [EF08LP06]
+        objectives:
+          - EF08LP06
   - pageNumber: 4
     title: Predicativo
     description: Predicativo do sujeito concorda com o sujeito.
@@ -48,7 +53,8 @@ pages:
         correctAnswer: cansadas
         difficulty: 2
         rationale: Predicativo concorda com o sujeito 'elas' (feminino plural) → cansadas.
-        objectives: [EF07LP08]
+        objectives:
+          - EF07LP08
   - pageNumber: 5
     title: Pronomes Possessivos
     description: Possessivo concorda com o substantivo que acompanha.
@@ -58,28 +64,9 @@ pages:
         correctAnswer: meus
         difficulty: 2
         rationale: "'Meus' (masculino plural) concorda com 'livros'; aplica-se a lista de masculinos e femininos."
-        objectives: [EF07LP08]
+        objectives:
+          - EF07LP08
   - pageNumber: 6
-    title: Numerais
-    description: Numerais concordam com o substantivo.
-    exercises:
-      - type: paragraph
-        question: "Complete: 'Comprei ___ cadernos.' (um/dois/duas/uma)"
-        correctAnswer: dois
-        difficulty: 1
-        rationale: "Cadernos é masculino plural → numeral masculino: dois."
-        objectives: [EF07LP08]
-  - pageNumber: 7
-    title: Adjetivo Invariável
-    description: Alguns adjetivos não variam (marrom, bege, rosa, grã).
-    exercises:
-      - type: paragraph
-        question: "Complete: 'As paredes são ___.' (marrons/marrom/marrome/marrôns)"
-        correctAnswer: marrons
-        difficulty: 3
-        rationale: "Marrom faz plural marrons (plural de palavras terminadas em -m: acrescenta -ns)."
-        objectives: [EF08LP06]
-  - pageNumber: 8
     title: Concordância com 'menos'
     description: "'Menos' é sempre invariável."
     exercises:
@@ -88,18 +75,9 @@ pages:
         correctAnswer: menos
         difficulty: 2
         rationale: "'Menos' é palavra invariável (não varia em gênero/número) — menos alunos."
-        objectives: [EF08LP06]
-  - pageNumber: 9
-    title: Concordância com 'mesmo'
-    description: "'Mesmo' como advérbio é invariável; como pronome/adjetivo, varia."
-    exercises:
-      - type: paragraph
-        question: "Em 'Elas mesmas fizeram', 'mesmas' é: (adjetivo variável/advérbio invariável/conjunção/interjeição)"
-        correctAnswer: adjetivo variável
-        difficulty: 3
-        rationale: "'Mesmas' modifica 'elas' e concorda em gênero e número — é pronome/adjetivo variável."
-        objectives: [EF08LP06]
-  - pageNumber: 10
+        objectives:
+          - EF08LP06
+  - pageNumber: 7
     title: Revisão Integrada
     description: Concordância nominal em contexto.
     exercises:
@@ -108,5 +86,39 @@ pages:
         correctAnswer: cansadas/entediadas
         difficulty: 2
         rationale: Predicativos 'cansadas' e 'entediadas' concordam com 'crianças' (feminino plural).
-        objectives: [EF07LP08]
+        objectives:
+          - EF07LP08
+  - pageNumber: 8
+    title: Adjetivo Antes de Dois Substantivos
+    description: Anteposto, o adjetivo concorda com o mais próximo.
+    exercises:
+      - type: paragraph
+        question: "Complete: 'Preciso de ___ dedicação e esforço.' (grande/grandes/enormes/imensos)"
+        correctAnswer: grande
+        difficulty: 3
+        rationale: "Adjetivo anteposto a dois substantivos pode concordar com o mais próximo: grande dedicação."
+        objectives:
+          - EF08LP06
+  - pageNumber: 9
+    title: Adjetivo Invariável
+    description: Alguns adjetivos não variam (marrom, bege, rosa, grã).
+    exercises:
+      - type: paragraph
+        question: "Complete: 'As paredes são ___.' (marrons/marrom/marrome/marrôns)"
+        correctAnswer: marrons
+        difficulty: 3
+        rationale: "Marrom faz plural marrons (plural de palavras terminadas em -m: acrescenta -ns)."
+        objectives:
+          - EF08LP06
+  - pageNumber: 10
+    title: Concordância com 'mesmo'
+    description: "'Mesmo' como advérbio é invariável; como pronome/adjetivo, varia."
+    exercises:
+      - type: paragraph
+        question: "Em 'Elas mesmas fizeram', 'mesmas' é: (adjetivo variável/advérbio invariável/conjunção/interjeição)"
+        correctAnswer: adjetivo variável
+        difficulty: 3
+        rationale: "'Mesmas' modifica 'elas' e concorda em gênero e número — é pronome/adjetivo variável."
+        objectives:
+          - EF08LP06
 target: 10

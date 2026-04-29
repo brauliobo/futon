@@ -2,7 +2,9 @@ title: ✍️ Redação - Texto Dissertativo Completo
 level: F
 subject: portuguese
 difficulty: 4
-objectives: [EF08LP10, EF09LP10]
+objectives:
+  - EF08LP10
+  - EF09LP10
 authorNotes: Prática de redação dissertativa completa — do tema à revisão; análise de redação modelo e identificação de erros.
 example: "Leia uma redação, avalie tese, argumentos e coesão. Ex.: identifique qual parágrafo é a introdução."
 passCriteria:
@@ -10,58 +12,52 @@ passCriteria:
   maxAvgSecondsPerExercise: 50
 pages:
   - pageNumber: 1
+    title: Coesão - Conectivos Usados
+    description: Identificar os conectivos do texto.
+    exercises:
+      - type: paragraph
+        question: Qual conectivo inicia a conclusão na redação modelo? (Isso ocorre/Além disso/Portanto/Porque)
+        correctAnswer: Portanto
+        difficulty: 1
+        rationale: "'Portanto' é conectivo conclusivo — introduz a conclusão que decorre dos argumentos anteriores."
+        objectives:
+          - EF09LP10
+  - pageNumber: 2
     title: Leitura de Tema
     description: |
       Redação modelo — leia e responda:
       "A violência escolar tem aumentado nos últimos anos. Isso ocorre, em parte, porque as escolas carecem de infraestrutura adequada e os estudantes enfrentam pressão social intensa. Além disso, a falta de atividades extracurriculares deixa os jovens sem alternativas. Portanto, investir em educação integral é fundamental para reduzir esse fenômeno."
     exercises:
       - type: paragraph
-        question: "Qual é a tese desta redação? (violência escolar aumentou/investir em educação integral reduz a violência escolar/escolas têm problemas/jovens sem alternativas)"
+        question: Qual é a tese desta redação? (violência escolar aumentou/investir em educação integral reduz a violência escolar/escolas têm problemas/jovens sem alternativas)
         correctAnswer: investir em educação integral reduz a violência escolar
         difficulty: 2
         rationale: A tese aparece na conclusão — 'portanto, investir em educação integral é fundamental'.
-        objectives: [EF08LP10]
-  - pageNumber: 2
+        objectives:
+          - EF08LP10
+  - pageNumber: 3
     title: Identificar Argumentos
     description: Encontrar os argumentos que sustentam a tese.
     exercises:
       - type: paragraph
-        question: "Quantos argumentos aparecem na redação modelo? (um/dois/três/quatro)"
+        question: Quantos argumentos aparecem na redação modelo? (um/dois/três/quatro)
         correctAnswer: dois
         difficulty: 2
         rationale: "Dois argumentos: (1) falta de infraestrutura + pressão social; (2) falta de atividades extracurriculares."
-        objectives: [EF09LP10]
-  - pageNumber: 3
-    title: Coesão - Conectivos Usados
-    description: Identificar os conectivos do texto.
-    exercises:
-      - type: paragraph
-        question: "Qual conectivo inicia a conclusão na redação modelo? (Isso ocorre/Além disso/Portanto/Porque)"
-        correctAnswer: Portanto
-        difficulty: 1
-        rationale: "'Portanto' é conectivo conclusivo — introduz a conclusão que decorre dos argumentos anteriores."
-        objectives: [EF09LP10]
+        objectives:
+          - EF09LP10
   - pageNumber: 4
     title: Parágrafos da Dissertação
     description: Quantos parágrafos tem a redação modelo.
     exercises:
       - type: paragraph
-        question: "A redação modelo tem estrutura de quantos parágrafos? (um/dois/três/quatro)"
+        question: A redação modelo tem estrutura de quantos parágrafos? (um/dois/três/quatro)
         correctAnswer: um
         difficulty: 2
         rationale: O modelo está em um único parágrafo; na prática, uma dissertação usa 3-4 parágrafos separados.
-        objectives: [EF08LP10]
+        objectives:
+          - EF08LP10
   - pageNumber: 5
-    title: Introdução de uma Dissertação
-    description: Como abrir uma dissertação com qualidade.
-    exercises:
-      - type: paragraph
-        question: "Qual é o melhor início para uma dissertação sobre tecnologia e saúde? (A tecnologia existe./A tecnologia, ao transformar hábitos de vida, gera tanto benefícios quanto riscos para a saúde./Vou falar sobre tecnologia./Tecnologia é boa ou ruim.)"
-        correctAnswer: A tecnologia, ao transformar hábitos de vida, gera tanto benefícios quanto riscos para a saúde.
-        difficulty: 3
-        rationale: Boa introdução contextualiza e apresenta a tensão temática — não é trivial nem vaga.
-        objectives: [EF08LP10]
-  - pageNumber: 6
     title: Parágrafo de Desenvolvimento
     description: "Deve conter: tópico frasal + argumento + exemplo."
     exercises:
@@ -70,8 +66,42 @@ pages:
         correctAnswer: afirma algo genérico sem exemplos ou dados
         difficulty: 2
         rationale: Argumentação fraca = generalização sem sustentação empírica (dados, exemplos, citações).
-        objectives: [EF09LP10]
+        objectives:
+          - EF09LP10
+  - pageNumber: 6
+    title: Revisão Gramatical
+    description: Identificar erro na dissertação.
+    exercises:
+      - type: paragraph
+        question: Qual frase tem problema de concordância? (Os alunos chegaram cedo/A turma estão estudando/Ele veio com eles/As aulas foram ótimas)
+        correctAnswer: A turma estão estudando
+        difficulty: 2
+        rationale: "Turma é coletivo no singular — a concordância exige verbo no singular: 'a turma está estudando'."
+        objectives:
+          - EF08LP10
   - pageNumber: 7
+    title: Pontuação na Dissertação
+    description: Uso correto da vírgula no texto dissertativo.
+    exercises:
+      - type: paragraph
+        question: Qual frase usa vírgula corretamente? (Portanto, devemos agir/Portanto devemos agir,/Devemos, agir portanto/Agir, portanto devemos)
+        correctAnswer: Portanto, devemos agir
+        difficulty: 2
+        rationale: Advérbio ou conectivo deslocado ao início da oração é seguido de vírgula.
+        objectives:
+          - EF08LP10
+  - pageNumber: 8
+    title: Introdução de uma Dissertação
+    description: Como abrir uma dissertação com qualidade.
+    exercises:
+      - type: paragraph
+        question: Qual é o melhor início para uma dissertação sobre tecnologia e saúde? (A tecnologia existe./A tecnologia, ao transformar hábitos de vida, gera tanto benefícios quanto riscos para a saúde./Vou falar sobre tecnologia./Tecnologia é boa ou ruim.)
+        correctAnswer: A tecnologia, ao transformar hábitos de vida, gera tanto benefícios quanto riscos para a saúde.
+        difficulty: 3
+        rationale: Boa introdução contextualiza e apresenta a tensão temática — não é trivial nem vaga.
+        objectives:
+          - EF08LP10
+  - pageNumber: 9
     title: Proposta de Intervenção
     description: Em redações do ENEM, a conclusão inclui proposta de solução.
     exercises:
@@ -80,27 +110,8 @@ pages:
         correctAnswer: específica, com agente, ação e finalidade
         difficulty: 3
         rationale: "Proposta completa: quem faz (agente) + o quê (ação) + para quê (finalidade) — evita vagas soluções."
-        objectives: [EF09LP10]
-  - pageNumber: 8
-    title: Revisão Gramatical
-    description: Identificar erro na dissertação.
-    exercises:
-      - type: paragraph
-        question: "Qual frase tem problema de concordância? (Os alunos chegaram cedo/A turma estão estudando/Ele veio com eles/As aulas foram ótimas)"
-        correctAnswer: A turma estão estudando
-        difficulty: 2
-        rationale: "Turma é coletivo no singular — a concordância exige verbo no singular: 'a turma está estudando'."
-        objectives: [EF08LP10]
-  - pageNumber: 9
-    title: Pontuação na Dissertação
-    description: Uso correto da vírgula no texto dissertativo.
-    exercises:
-      - type: paragraph
-        question: "Qual frase usa vírgula corretamente? (Portanto, devemos agir/Portanto devemos agir,/Devemos, agir portanto/Agir, portanto devemos)"
-        correctAnswer: Portanto, devemos agir
-        difficulty: 2
-        rationale: Advérbio ou conectivo deslocado ao início da oração é seguido de vírgula.
-        objectives: [EF08LP10]
+        objectives:
+          - EF09LP10
   - pageNumber: 10
     title: Revisão Integrada
     description: Avaliação global de qualidade dissertativa.
@@ -110,5 +121,6 @@ pages:
         correctAnswer: tese clara, argumentos variados, coesão e proposta
         difficulty: 3
         rationale: Excelência dissertativa = clareza da tese + diversidade argumentativa + coesão + proposta concreta.
-        objectives: [EF09LP10]
+        objectives:
+          - EF09LP10
 target: 10
