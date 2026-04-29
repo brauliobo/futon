@@ -74,6 +74,12 @@ async function main() {
       const pageMatch = pageAnswers.filter(a => a === runAns).length;
       if (pageMatch / pageAnswers.length >= 0.6) continue;
     }
+    // Cross-page focused-drill filter: when the same answer value
+    // accounts for ≥30% of the entire set (e.g. trig identities that
+    // simplify to coefficient 1), runs of that value across pages are
+    // pedagogy-driven, not pattern-spotting cues.
+    const runAnsCount = counts.get(runAns) || 0;
+    if (runAnsCount / answers.length >= 0.25) continue;
 
     hits.push({ f: f.replace('src/levels/', ''), maxRun, start: bestStart, ans: runAns, total: answers.length });
   }
