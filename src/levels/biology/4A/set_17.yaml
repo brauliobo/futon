@@ -1,0 +1,244 @@
+title:
+  pt: "🔬 Microscopia e técnicas de laboratório"
+  en: "🔬 Microscopy and lab techniques"
+level: '4A'
+subject: biology
+objectives: [biology.lab_techniques]
+difficulty: 4
+authorNotes: "Microscópios óptico/eletrônico, coloração, centrifugação, espectrofotometria."
+example:
+  pt: "Ex.: óptico (até ~1500×, células vivas), TEM (estruturas internas), SEM (superfícies 3D), fluorescência (marcadores)."
+  en: "Ex.: light (up to ~1500×, live cells), TEM (internal structures), SEM (3D surfaces), fluorescence (markers)."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Tipos de microscopia", en: "Microscopy types"}
+    description: {pt: "Como vemos o invisível.", en: "How we see the invisible."}
+    exercises:
+      - type: choice
+        question: {pt: "Microscópio óptico (luz):", en: "Light microscope:"}
+        choices:
+          - {pt: "Usa luz visível, amplia até ~1500×, vê células vivas", en: "Uses visible light, magnifies up to ~1500×, sees living cells"}
+          - {pt: "Usa elétrons", en: "Uses electrons"}
+          - {pt: "Usa raios X", en: "Uses X-rays"}
+          - {pt: "Sem ampliação", en: "No magnification"}
+        correctAnswer: {pt: "Usa luz visível, amplia até ~1500×, vê células vivas", en: "Uses visible light, magnifies up to ~1500×, sees living cells"}
+        rationale: {pt: "Como limite de difração da luz visível é ~200 nm, então organelas pequenas (ribossomos) não aparecem bem.", en: "Because visible light diffraction limit is ~200 nm, small organelles (ribosomes) don't show well."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Microscópio eletrônico de transmissão (TEM):", en: "Transmission electron microscope (TEM):"}
+        choices:
+          - {pt: "Usa feixe de elétrons; resolução muito maior; vê interior de cortes finos", en: "Uses electron beam; much higher resolution; sees thin section interiors"}
+          - {pt: "Usa luz", en: "Uses light"}
+          - {pt: "Vê apenas superfícies", en: "Only sees surfaces"}
+          - {pt: "Sem ampliação", en: "No magnification"}
+        correctAnswer: {pt: "Usa feixe de elétrons; resolução muito maior; vê interior de cortes finos", en: "Uses electron beam; much higher resolution; sees thin section interiors"}
+        rationale: {pt: "Como elétrons têm comprimento de onda muito menor, então TEM revela ribossomos, vírus, membranas — só amostras mortas/fixadas.", en: "Because electrons have much smaller wavelength, TEM reveals ribosomes, viruses, membranes — only dead/fixed samples."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Microscópio eletrônico de varredura (SEM):", en: "Scanning electron microscope (SEM):"}
+        choices:
+          - {pt: "Mostra topografia 3D de superfícies (revestimento metálico)", en: "Shows 3D surface topography (metallic coating)"}
+          - {pt: "Vê interior", en: "Sees interior"}
+          - {pt: "Apenas em cor real", en: "Only real color"}
+          - {pt: "Sem detalhe", en: "No detail"}
+        correctAnswer: {pt: "Mostra topografia 3D de superfícies (revestimento metálico)", en: "Shows 3D surface topography (metallic coating)"}
+        rationale: {pt: "Como elétrons varrem a superfície e geram secundários, então a imagem 3D revela estruturas como olhos de inseto.", en: "Because electrons scan the surface generating secondaries, the 3D image reveals structures like insect eyes."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Microscopia de fluorescência:", en: "Fluorescence microscopy:"}
+        choices:
+          - {pt: "Usa fluoróforos que emitem luz ao serem excitados — marca alvos específicos", en: "Uses fluorophores emitting light when excited — labels specific targets"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Usa raios X", en: "Uses X-rays"}
+          - {pt: "Não funciona", en: "Doesn't work"}
+        correctAnswer: {pt: "Usa fluoróforos que emitem luz ao serem excitados — marca alvos específicos", en: "Uses fluorophores emitting light when excited — labels specific targets"}
+        rationale: {pt: "Como anticorpos com fluoróforos ligam proteínas-alvo, então a localização subcelular fica visível em cores vivas.", en: "Because fluorophore-tagged antibodies bind target proteins, subcellular localization shows in vivid colors."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resolução vs ampliação:", en: "Resolution vs magnification:"}
+        choices:
+          - {pt: "Resolução = capacidade de distinguir pontos próximos; ampliação só aumenta tamanho", en: "Resolution = ability to distinguish close points; magnification only enlarges size"}
+          - {pt: "São iguais", en: "Equal"}
+          - {pt: "Resolução não importa", en: "Resolution doesn't matter"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Resolução = capacidade de distinguir pontos próximos; ampliação só aumenta tamanho", en: "Resolution = ability to distinguish close points; magnification only enlarges size"}
+        rationale: {pt: "Como ampliação sem resolução só borra mais a imagem, então melhor lente = melhor resolução = imagem útil.", en: "Because magnification without resolution just blurs more, better lens = better resolution = useful image."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Coloração de células:", en: "Cell staining:"}
+        choices:
+          - {pt: "Aumenta contraste de estruturas (ex.: Gram para bactérias, hematoxilina/eosina)", en: "Increases structure contrast (e.g., Gram for bacteria, hematoxylin/eosin)"}
+          - {pt: "Apenas para arte", en: "Just for art"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "Aumenta contraste de estruturas (ex.: Gram para bactérias, hematoxilina/eosina)", en: "Increases structure contrast (e.g., Gram for bacteria, hematoxylin/eosin)"}
+        rationale: {pt: "Como células são quase transparentes, então corantes específicos revelam organelas e tipos celulares.", en: "Because cells are nearly transparent, specific stains reveal organelles and cell types."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Centrifugação separa:", en: "Centrifugation separates:"}
+        choices:
+          - {pt: "Componentes por densidade ou tamanho via força centrífuga", en: "Components by density or size via centrifugal force"}
+          - {pt: "Apenas por cor", en: "Just by color"}
+          - {pt: "Apenas por idade", en: "Just by age"}
+          - {pt: "Não funciona", en: "Doesn't work"}
+        correctAnswer: {pt: "Componentes por densidade ou tamanho via força centrífuga", en: "Components by density or size via centrifugal force"}
+        rationale: {pt: "Como rotação rápida acelera sedimentação, então separar plasma de células ou organelas torna-se eficiente.", en: "Because fast rotation accelerates sedimentation, separating plasma from cells or organelles becomes efficient."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Espectrofotômetro mede:", en: "Spectrophotometer measures:"}
+        choices:
+          - {pt: "Absorbância de luz por uma solução em comprimentos de onda específicos", en: "Light absorbance by a solution at specific wavelengths"}
+          - {pt: "Apenas peso", en: "Just weight"}
+          - {pt: "Apenas tamanho", en: "Just size"}
+          - {pt: "Apenas pH", en: "Just pH"}
+        correctAnswer: {pt: "Absorbância de luz por uma solução em comprimentos de onda específicos", en: "Light absorbance by a solution at specific wavelengths"}
+        rationale: {pt: "Como concentração relaciona-se à absorbância (Lei de Beer-Lambert), então quantificamos DNA, proteínas, pigmentos.", en: "Because concentration relates to absorbance (Beer-Lambert law), we quantify DNA, proteins, pigments."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Cultura celular permite:", en: "Cell culture allows:"}
+        choices:
+          - {pt: "Cultivar células fora do organismo em meios definidos", en: "Grow cells outside the organism in defined media"}
+          - {pt: "Apenas em laboratório", en: "Just in lab"}
+          - {pt: "Não funciona", en: "Doesn't work"}
+          - {pt: "Apenas para vírus", en: "Only for viruses"}
+        correctAnswer: {pt: "Cultivar células fora do organismo em meios definidos", en: "Grow cells outside the organism in defined media"}
+        rationale: {pt: "Como permite estudar células sob condições controladas, então é ferramenta-chave em pesquisa biomédica.", en: "Because it lets us study cells under controlled conditions, it's a key tool in biomedical research."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Estéril em laboratório significa:", en: "Sterile in the lab means:"}
+        choices:
+          - {pt: "Sem microrganismos contaminantes (autoclave, fluxo laminar)", en: "Without contaminating microorganisms (autoclave, laminar flow)"}
+          - {pt: "Apenas limpo", en: "Just clean"}
+          - {pt: "Sem importância", en: "No importance"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Sem microrganismos contaminantes (autoclave, fluxo laminar)", en: "Without contaminating microorganisms (autoclave, laminar flow)"}
+        rationale: {pt: "Como contaminação invalida experimentos, então técnicas assépticas são fundamentais — desde Pasteur.", en: "Because contamination invalidates experiments, aseptic technique is fundamental — since Pasteur."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Mais técnicas modernas", en: "More modern techniques"}
+    description: {pt: "Cromatografia, ELISA, microscopia avançada.", en: "Chromatography, ELISA, advanced microscopy."}
+    exercises:
+      - type: choice
+        question: {pt: "Cromatografia separa:", en: "Chromatography separates:"}
+        choices:
+          - {pt: "Misturas pelas afinidades diferentes a fase móvel/estacionária", en: "Mixtures by differential affinities to mobile/stationary phases"}
+          - {pt: "Apenas cor", en: "Just color"}
+          - {pt: "Apenas peso", en: "Just weight"}
+          - {pt: "Apenas tamanho", en: "Just size"}
+        correctAnswer: {pt: "Misturas pelas afinidades diferentes a fase móvel/estacionária", en: "Mixtures by differential affinities to mobile/stationary phases"}
+        rationale: {pt: "Como cada componente tem velocidade própria, então separação ocorre — usado para pigmentos, proteínas, drogas.", en: "Because each component has its own velocity, separation occurs — used for pigments, proteins, drugs."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "ELISA é teste para:", en: "ELISA is a test for:"}
+        choices:
+          - {pt: "Detectar/quantificar proteínas/anticorpos via reação enzimática colorimétrica", en: "Detect/quantify proteins/antibodies via enzyme colorimetric reaction"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas células", en: "Just cells"}
+          - {pt: "Sem propósito", en: "No purpose"}
+        correctAnswer: {pt: "Detectar/quantificar proteínas/anticorpos via reação enzimática colorimétrica", en: "Detect/quantify proteins/antibodies via enzyme colorimetric reaction"}
+        rationale: {pt: "Como anticorpos ligam alvo e enzima produz cor, então testes COVID, HIV e gravidez usam variantes do princípio.", en: "Because antibodies bind target and enzyme makes color, COVID, HIV, and pregnancy tests use variants of the principle."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Western blot identifica:", en: "Western blot identifies:"}
+        choices:
+          - {pt: "Proteína específica em mistura via gel + transferência + anticorpo", en: "Specific protein in mixture via gel + transfer + antibody"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+          - {pt: "Apenas RNA", en: "Just RNA"}
+          - {pt: "Apenas células", en: "Just cells"}
+        correctAnswer: {pt: "Proteína específica em mistura via gel + transferência + anticorpo", en: "Specific protein in mixture via gel + transfer + antibody"}
+        rationale: {pt: "Como combina separação por tamanho com detecção específica, então confirma presença/ausência de proteína-alvo.", en: "Because it combines size separation with specific detection, it confirms presence/absence of target protein."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "PCR vs sequenciamento:", en: "PCR vs sequencing:"}
+        choices:
+          - {pt: "PCR amplifica; sequenciamento determina ordem das bases", en: "PCR amplifies; sequencing determines base order"}
+          - {pt: "São idênticos", en: "Identical"}
+          - {pt: "PCR é melhor sempre", en: "PCR is always better"}
+          - {pt: "Não existem", en: "Don't exist"}
+        correctAnswer: {pt: "PCR amplifica; sequenciamento determina ordem das bases", en: "PCR amplifies; sequencing determines base order"}
+        rationale: {pt: "Como ferramentas complementares, então geralmente combinam-se: amplificar antes de sequenciar.", en: "Because they're complementary tools, they're often combined: amplify before sequencing."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Microscopia confocal:", en: "Confocal microscopy:"}
+        choices:
+          - {pt: "Foco em plano único — gera imagem nítida 3D quando empilhada", en: "Focus on a single plane — generates sharp 3D image when stacked"}
+          - {pt: "Apenas 2D", en: "Just 2D"}
+          - {pt: "Sem foco", en: "No focus"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Foco em plano único — gera imagem nítida 3D quando empilhada", en: "Focus on a single plane — generates sharp 3D image when stacked"}
+        rationale: {pt: "Como elimina luz fora do foco, então estruturas tridimensionais ficam claras — vital em neurociência.", en: "Because it eliminates out-of-focus light, 3D structures become clear — vital in neuroscience."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Citometria de fluxo:", en: "Flow cytometry:"}
+        choices:
+          - {pt: "Mede características de células individuais em fluxo (tamanho, marcadores)", en: "Measures individual cell features in flow (size, markers)"}
+          - {pt: "Apenas mede líquidos", en: "Just measures liquids"}
+          - {pt: "Sem células", en: "Without cells"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Mede características de células individuais em fluxo (tamanho, marcadores)", en: "Measures individual cell features in flow (size, markers)"}
+        rationale: {pt: "Como milhares de células passam por laser por segundo, então diagnóstico imunológico (CD4 em HIV) torna-se rápido.", en: "Because thousands of cells pass laser per second, immune diagnostics (CD4 in HIV) become fast."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Microarrays de DNA:", en: "DNA microarrays:"}
+        choices:
+          - {pt: "Medem expressão de milhares de genes simultaneamente", en: "Measure expression of thousands of genes simultaneously"}
+          - {pt: "Apenas um gene", en: "Just one gene"}
+          - {pt: "Sem propósito", en: "No purpose"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Medem expressão de milhares de genes simultaneamente", en: "Measure expression of thousands of genes simultaneously"}
+        rationale: {pt: "Como cada \"ponto\" do chip contém um gene-sonda, então o perfil global de expressão é capturado.", en: "Because each \"spot\" on the chip contains a gene probe, the global expression profile is captured."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Eletroforese 2D:", en: "2D electrophoresis:"}
+        choices:
+          - {pt: "Separa proteínas por carga (pH) e tamanho — usada em proteômica", en: "Separates proteins by charge (pH) and size — used in proteomics"}
+          - {pt: "Apenas em DNA", en: "Only DNA"}
+          - {pt: "Sem separação", en: "No separation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Separa proteínas por carga (pH) e tamanho — usada em proteômica", en: "Separates proteins by charge (pH) and size — used in proteomics"}
+        rationale: {pt: "Como duas dimensões resolvem misturas complexas, então milhares de proteínas podem aparecer como pontos individuais.", en: "Because two dimensions resolve complex mixtures, thousands of proteins can appear as individual spots."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Espectrometria de massa identifica:", en: "Mass spectrometry identifies:"}
+        choices:
+          - {pt: "Moléculas pela razão massa/carga — confirma identidade de proteínas/metabolitos", en: "Molecules by mass/charge ratio — confirms protein/metabolite identity"}
+          - {pt: "Apenas peso", en: "Just weight"}
+          - {pt: "Apenas cor", en: "Just color"}
+          - {pt: "Apenas tamanho", en: "Just size"}
+        correctAnswer: {pt: "Moléculas pela razão massa/carga — confirma identidade de proteínas/metabolitos", en: "Molecules by mass/charge ratio — confirms protein/metabolite identity"}
+        rationale: {pt: "Como a precisão é alta, então identificação inequívoca apoia descobertas em proteômica e metabolômica.", en: "Because precision is high, unambiguous identification supports proteomics and metabolomics discoveries."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: técnicas modernas:", en: "Summary: modern techniques:"}
+        choices:
+          - {pt: "Combinam óptica, química e computação para revelar estrutura/função celular em escala", en: "Combine optics, chemistry, and computing to reveal cellular structure/function at scale"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem propósito", en: "No purpose"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+        correctAnswer: {pt: "Combinam óptica, química e computação para revelar estrutura/função celular em escala", en: "Combine optics, chemistry, and computing to reveal cellular structure/function at scale"}
+        rationale: {pt: "Como avanços tecnológicos abrem novas perguntas, então biologia moderna depende de instrumentação sofisticada.", en: "Because tech advances open new questions, modern biology depends on sophisticated instrumentation."}
+        objectives: [biology.lab_techniques]
+        difficulty: 4
+target: 20

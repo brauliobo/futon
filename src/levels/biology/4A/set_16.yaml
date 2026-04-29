@@ -1,0 +1,244 @@
+title:
+  pt: "🔬 Método científico"
+  en: "🔬 Scientific method"
+level: '4A'
+subject: biology
+objectives: [biology.scientific_method]
+difficulty: 4
+authorNotes: "Hipóteses, experimento controlado, variáveis, replicação, peer review."
+example:
+  pt: "Ex.: observação → hipótese → predição → experimento (controle/tratamento) → análise → conclusão → repetir."
+  en: "Ex.: observation → hypothesis → prediction → experiment (control/treatment) → analysis → conclusion → repeat."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Etapas e desenho experimental", en: "Steps and experimental design"}
+    description: {pt: "Como ciência funciona.", en: "How science works."}
+    exercises:
+      - type: choice
+        question: {pt: "Hipótese científica é:", en: "Scientific hypothesis is:"}
+        choices:
+          - {pt: "Explicação testável e falseável para uma observação", en: "Testable, falsifiable explanation for an observation"}
+          - {pt: "Apenas opinião", en: "Just an opinion"}
+          - {pt: "Sempre verdadeira", en: "Always true"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "Explicação testável e falseável para uma observação", en: "Testable, falsifiable explanation for an observation"}
+        rationale: {pt: "Como uma hipótese precisa poder ser refutada por evidência, então a falseabilidade (Popper) distingue ciência de pseudociência.", en: "Because a hypothesis must be refutable by evidence, falsifiability (Popper) distinguishes science from pseudoscience."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Variável independente é:", en: "Independent variable is:"}
+        choices:
+          - {pt: "A que o pesquisador manipula", en: "The one the researcher manipulates"}
+          - {pt: "A que é medida", en: "The one being measured"}
+          - {pt: "A que não muda", en: "The one that doesn't change"}
+          - {pt: "Apenas aleatória", en: "Just random"}
+        correctAnswer: {pt: "A que o pesquisador manipula", en: "The one the researcher manipulates"}
+        rationale: {pt: "Como o experimento testa efeito de mudanças, então a IV é o input controlado pelo cientista.", en: "Because the experiment tests effects of changes, the IV is the input controlled by the scientist."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Variável dependente é:", en: "Dependent variable is:"}
+        choices:
+          - {pt: "A que se mede como resposta à IV", en: "The one measured as response to IV"}
+          - {pt: "A que se manipula", en: "The one manipulated"}
+          - {pt: "A que não muda", en: "Unchanging one"}
+          - {pt: "Apenas aleatória", en: "Just random"}
+        correctAnswer: {pt: "A que se mede como resposta à IV", en: "The one measured as response to IV"}
+        rationale: {pt: "Como a DV depende da IV, então a relação causal é testada observando como mudanças na IV afetam a DV.", en: "Because DV depends on IV, the causal relation is tested by observing how IV changes affect DV."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Variáveis controladas:", en: "Controlled variables:"}
+        choices:
+          - {pt: "Mantidas constantes para isolar efeito da IV", en: "Kept constant to isolate IV effect"}
+          - {pt: "Mudam aleatoriamente", en: "Change randomly"}
+          - {pt: "Não importam", en: "Don't matter"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Mantidas constantes para isolar efeito da IV", en: "Kept constant to isolate IV effect"}
+        rationale: {pt: "Como sem controle a interpretação fica ambígua, então confounding factors precisam ser eliminados ou medidos.", en: "Because without control, interpretation is ambiguous, confounding factors must be eliminated or measured."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Grupo controle serve para:", en: "Control group serves to:"}
+        choices:
+          - {pt: "Comparar com grupo tratado — isolar efeito real do tratamento", en: "Compare with treated group — isolate real treatment effect"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem propósito", en: "No purpose"}
+          - {pt: "Apenas para ter mais sujeitos", en: "Just to have more subjects"}
+        correctAnswer: {pt: "Comparar com grupo tratado — isolar efeito real do tratamento", en: "Compare with treated group — isolate real treatment effect"}
+        rationale: {pt: "Como mudanças podem ocorrer por acaso ou efeito placebo, então o controle estabelece linha de base.", en: "Because changes can happen by chance or placebo, the control establishes a baseline."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Replicação é importante porque:", en: "Replication is important because:"}
+        choices:
+          - {pt: "Resultados únicos podem ser acaso; replicar confirma confiabilidade", en: "Single results may be chance; replication confirms reliability"}
+          - {pt: "Apenas custa dinheiro", en: "Just costs money"}
+          - {pt: "Sem propósito", en: "No purpose"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Resultados únicos podem ser acaso; replicar confirma confiabilidade", en: "Single results may be chance; replication confirms reliability"}
+        rationale: {pt: "Como reprodutibilidade é critério-chave, então estudos não-replicáveis perdem credibilidade — \"crise de replicação\".", en: "Because reproducibility is key, non-replicable studies lose credibility — \"replication crisis\"."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Estudo duplo-cego:", en: "Double-blind study:"}
+        choices:
+          - {pt: "Nem pesquisador nem participante sabem quem recebe tratamento — minimiza viés", en: "Neither researcher nor participant knows who got treatment — minimizes bias"}
+          - {pt: "Apenas participante sabe", en: "Just participant knows"}
+          - {pt: "Apenas pesquisador sabe", en: "Just researcher knows"}
+          - {pt: "Todos sabem", en: "Everyone knows"}
+        correctAnswer: {pt: "Nem pesquisador nem participante sabem quem recebe tratamento — minimiza viés", en: "Neither researcher nor participant knows who got treatment — minimizes bias"}
+        rationale: {pt: "Como expectativas afetam resultados, então cegamento é padrão-ouro em ensaios clínicos.", en: "Because expectations affect results, blinding is the gold standard in clinical trials."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Placebo:", en: "Placebo:"}
+        choices:
+          - {pt: "Substância inerte usada no controle para imitar tratamento", en: "Inert substance used in control to mimic treatment"}
+          - {pt: "Sempre eficaz", en: "Always effective"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "Substância inerte usada no controle para imitar tratamento", en: "Inert substance used in control to mimic treatment"}
+        rationale: {pt: "Como o efeito placebo é real (psicológico), então comparar tratamento vs placebo isola eficácia farmacológica.", en: "Because the placebo effect is real (psychological), comparing treatment vs placebo isolates pharmacological efficacy."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Correlação NÃO implica:", en: "Correlation does NOT imply:"}
+        choices:
+          - {pt: "Causalidade — pode haver fator confundente ou coincidência", en: "Causation — could be confounding factor or coincidence"}
+          - {pt: "Correlação", en: "Correlation"}
+          - {pt: "Erro de medida", en: "Measurement error"}
+          - {pt: "Variação", en: "Variation"}
+        correctAnswer: {pt: "Causalidade — pode haver fator confundente ou coincidência", en: "Causation — could be confounding factor or coincidence"}
+        rationale: {pt: "Como duas variáveis podem co-variar por terceira causa, então só experimentos controlados estabelecem causa.", en: "Because two variables can co-vary due to a third cause, only controlled experiments establish causation."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Teoria científica é:", en: "A scientific theory is:"}
+        choices:
+          - {pt: "Explicação ampla apoiada por extensa evidência (não \"palpite\")", en: "Broad explanation backed by extensive evidence (not a \"guess\")"}
+          - {pt: "Apenas opinião", en: "Just an opinion"}
+          - {pt: "Suposição não testada", en: "Untested guess"}
+          - {pt: "Igual a hipótese", en: "Same as hypothesis"}
+        correctAnswer: {pt: "Explicação ampla apoiada por extensa evidência (não \"palpite\")", en: "Broad explanation backed by extensive evidence (not a \"guess\")"}
+        rationale: {pt: "Como teoria evolutiva e celular são robustas, então o termo científico difere do uso coloquial.", en: "Because evolutionary and cell theories are robust, the scientific term differs from colloquial use."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Validade, ética e comunicação", en: "Validity, ethics, and communication"}
+    description: {pt: "Como ciência se desenvolve responsavelmente.", en: "How science develops responsibly."}
+    exercises:
+      - type: choice
+        question: {pt: "Peer review (revisão por pares):", en: "Peer review:"}
+        choices:
+          - {pt: "Especialistas avaliam manuscrito antes da publicação", en: "Experts evaluate manuscript before publication"}
+          - {pt: "Sem importância", en: "No importance"}
+          - {pt: "Apenas amigos avaliam", en: "Just friends evaluate"}
+          - {pt: "Não acontece", en: "Doesn't happen"}
+        correctAnswer: {pt: "Especialistas avaliam manuscrito antes da publicação", en: "Experts evaluate manuscript before publication"}
+        rationale: {pt: "Como filtra erros e fraudes, então a publicação científica ganha credibilidade — não é perfeito, mas é o melhor sistema.", en: "Because it filters errors and fraud, scientific publication gains credibility — imperfect, but the best system."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Tamanho amostral importa porque:", en: "Sample size matters because:"}
+        choices:
+          - {pt: "Amostras maiores reduzem efeito do acaso e aumentam poder estatístico", en: "Larger samples reduce chance and increase statistical power"}
+          - {pt: "Apenas custa mais", en: "Just costs more"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Amostras maiores reduzem efeito do acaso e aumentam poder estatístico", en: "Larger samples reduce chance and increase statistical power"}
+        rationale: {pt: "Como variação aleatória é proporcional a 1/√n, então estudos pequenos exigem efeitos grandes para detectar.", en: "Because random variation scales as 1/√n, small studies need large effects to detect."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "P-valor (p < 0.05) significa:", en: "P-value (p < 0.05) means:"}
+        choices:
+          - {pt: "Probabilidade <5% de obter resultado por puro acaso (não prova causalidade)", en: "Probability <5% of getting result by chance alone (not proof of causation)"}
+          - {pt: "100% verdade", en: "100% truth"}
+          - {pt: "Sempre significativo na vida real", en: "Always meaningful in real life"}
+          - {pt: "Sem informação", en: "No information"}
+        correctAnswer: {pt: "Probabilidade <5% de obter resultado por puro acaso (não prova causalidade)", en: "Probability <5% of getting result by chance alone (not proof of causation)"}
+        rationale: {pt: "Como p ≠ tamanho do efeito, então significância estatística e relevância prática são distintas.", en: "Because p ≠ effect size, statistical significance and practical relevance are distinct."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Viés de confirmação:", en: "Confirmation bias:"}
+        choices:
+          - {pt: "Tendência de buscar/aceitar evidências que confirmam crenças prévias", en: "Tendency to seek/accept evidence confirming prior beliefs"}
+          - {pt: "Sempre objetivo", en: "Always objective"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas em política", en: "Only in politics"}
+        correctAnswer: {pt: "Tendência de buscar/aceitar evidências que confirmam crenças prévias", en: "Tendency to seek/accept evidence confirming prior beliefs"}
+        rationale: {pt: "Como cientistas também são humanos, então rigor metodológico (cegamento, pré-registro) ajuda a contornar.", en: "Because scientists are also human, methodological rigor (blinding, pre-registration) helps counteract."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Estudo observacional vs experimental:", en: "Observational vs experimental study:"}
+        choices:
+          - {pt: "Observacional não manipula variáveis; experimental sim (mais forte para causa)", en: "Observational doesn't manipulate variables; experimental does (stronger for causation)"}
+          - {pt: "São idênticos", en: "Identical"}
+          - {pt: "Observacional é melhor", en: "Observational is better"}
+          - {pt: "Experimental não existe", en: "Experimental doesn't exist"}
+        correctAnswer: {pt: "Observacional não manipula variáveis; experimental sim (mais forte para causa)", en: "Observational doesn't manipulate variables; experimental does (stronger for causation)"}
+        rationale: {pt: "Como observacional pode ter confundentes ocultos, então experimentos randomizados são padrão-ouro causal.", en: "Because observational can have hidden confounders, randomized experiments are the causal gold standard."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Meta-análise:", en: "Meta-analysis:"}
+        choices:
+          - {pt: "Combina resultados de muitos estudos para conclusão mais robusta", en: "Combines results from many studies for a more robust conclusion"}
+          - {pt: "Apenas um único estudo grande", en: "Just one big study"}
+          - {pt: "Sem valor", en: "Worthless"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+        correctAnswer: {pt: "Combina resultados de muitos estudos para conclusão mais robusta", en: "Combines results from many studies for a more robust conclusion"}
+        rationale: {pt: "Como aumenta poder estatístico e reduz viés de estudos individuais, então é alto na hierarquia de evidência.", en: "Because it boosts statistical power and reduces individual-study bias, it ranks high in evidence hierarchy."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Princípio da parcimônia (Navalha de Ockham):", en: "Parsimony principle (Occam's Razor):"}
+        choices:
+          - {pt: "Entre explicações concorrentes, prefira a mais simples", en: "Among competing explanations, prefer the simplest"}
+          - {pt: "Sempre escolha a mais complexa", en: "Always choose the most complex"}
+          - {pt: "Não escolha", en: "Don't choose"}
+          - {pt: "Aleatório", en: "Random"}
+        correctAnswer: {pt: "Entre explicações concorrentes, prefira a mais simples", en: "Among competing explanations, prefer the simplest"}
+        rationale: {pt: "Como explicações com menos suposições são menos prováveis de estarem erradas, então simplicidade é heurística útil.", en: "Because explanations with fewer assumptions are less likely wrong, simplicity is a useful heuristic."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Ética em pesquisa exige:", en: "Research ethics requires:"}
+        choices:
+          - {pt: "Consentimento informado, minimizar dano, transparência, comitês de ética", en: "Informed consent, minimize harm, transparency, ethics committees"}
+          - {pt: "Apenas resultados", en: "Just results"}
+          - {pt: "Sem regras", en: "No rules"}
+          - {pt: "Apenas em humanos", en: "Only in humans"}
+        correctAnswer: {pt: "Consentimento informado, minimizar dano, transparência, comitês de ética", en: "Informed consent, minimize harm, transparency, ethics committees"}
+        rationale: {pt: "Como estudos do passado abusaram (Tuskegee, etc.), então normas modernas (Helsinki) protegem participantes.", en: "Because past studies abused (Tuskegee, etc.), modern norms (Helsinki) protect participants."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Pré-registro de estudo:", en: "Study pre-registration:"}
+        choices:
+          - {pt: "Declarar hipótese e plano antes da coleta — reduz p-hacking", en: "Declare hypothesis and plan before data collection — reduces p-hacking"}
+          - {pt: "Apenas burocracia", en: "Just bureaucracy"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Declarar hipótese e plano antes da coleta — reduz p-hacking", en: "Declare hypothesis and plan before data collection — reduces p-hacking"}
+        rationale: {pt: "Como impede mudar hipótese após ver dados, então transparência pré-registrada melhora confiabilidade.", en: "Because it prevents changing hypothesis after seeing data, pre-registered transparency improves reliability."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: método científico:", en: "Summary: scientific method:"}
+        choices:
+          - {pt: "Iterativo, autocorretivo, baseado em evidência testável e replicável", en: "Iterative, self-correcting, based on testable replicable evidence"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre certo", en: "Always right"}
+          - {pt: "Sem regras", en: "No rules"}
+        correctAnswer: {pt: "Iterativo, autocorretivo, baseado em evidência testável e replicável", en: "Iterative, self-correcting, based on testable replicable evidence"}
+        rationale: {pt: "Como teorias se refinam com novas evidências, então a ciência é processo dinâmico, não corpo fixo de \"verdades\".", en: "Because theories refine with new evidence, science is a dynamic process, not a fixed body of \"truths\"."}
+        objectives: [biology.scientific_method]
+        difficulty: 4
+target: 20
