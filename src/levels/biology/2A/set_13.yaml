@@ -1,0 +1,244 @@
+title:
+  pt: "🧬 Genética da conservação e gene drives"
+  en: "🧬 Conservation genetics and gene drives"
+level: '2A'
+subject: biology
+objectives: [biology.conservation_genetics]
+difficulty: 5
+authorNotes: "Diversidade genética em populações pequenas, endogamia, gargalos, fluxo gênico, gene drives, de-extinção."
+example:
+  pt: "Ex.: população pequena → endogamia → menor diversidade → vulnerabilidade → extinção potencial."
+  en: "Ex.: small population → inbreeding → less diversity → vulnerability → potential extinction."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Genética de populações em conservação", en: "Conservation population genetics"}
+    description: {pt: "Diversidade genética como recurso para sobrevivência.", en: "Genetic diversity as a survival resource."}
+    exercises:
+      - type: choice
+        question: {pt: "Genética da conservação estuda:", en: "Conservation genetics studies:"}
+        choices:
+          - {pt: "Variação genética em populações ameaçadas e estratégias para mantê-la", en: "Genetic variation in threatened populations and strategies to maintain it"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas dieta", en: "Just diet"}
+          - {pt: "Apenas estética visual", en: "Just visual aesthetics"}
+        correctAnswer: {pt: "Variação genética em populações ameaçadas e estratégias para mantê-la", en: "Genetic variation in threatened populations and strategies to maintain it"}
+        rationale: {pt: "Como diversidade fornece matéria-prima para adaptação, então sua perda compromete sobrevivência futura.", en: "Because diversity provides raw material for adaptation, its loss jeopardizes future survival."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tamanho efetivo da população (Ne):", en: "Effective population size (Ne):"}
+        choices:
+          - {pt: "Número de indivíduos reprodutores que efetivamente contribuem para gerações futuras", en: "Number of breeders effectively contributing to future generations"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas censo total bruto", en: "Just raw total census"}
+          - {pt: "Apenas filhotes", en: "Just offspring"}
+        correctAnswer: {pt: "Número de indivíduos reprodutores que efetivamente contribuem para gerações futuras", en: "Number of breeders effectively contributing to future generations"}
+        rationale: {pt: "Quando Ne é menor que censo, então deriva genética age mais forte do que aparenta.", en: "When Ne is smaller than census, genetic drift acts stronger than appears."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Deriva genética é mais intensa em:", en: "Genetic drift is most intense in:"}
+        choices:
+          - {pt: "Populações pequenas — alelos podem fixar-se ou desaparecer ao acaso", en: "Small populations — alleles may fix or vanish by chance"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas populações enormes", en: "Just huge populations"}
+          - {pt: "Apenas vírus", en: "Just viruses"}
+        correctAnswer: {pt: "Populações pequenas — alelos podem fixar-se ou desaparecer ao acaso", en: "Small populations — alleles may fix or vanish by chance"}
+        rationale: {pt: "Como amostragem aleatória amplifica em N pequeno, então diversidade erode rapidamente.", en: "Because random sampling amplifies at small N, diversity erodes rapidly."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Endogamia (inbreeding) tende a:", en: "Inbreeding tends to:"}
+        choices:
+          - {pt: "Expor alelos recessivos deletérios e reduzir aptidão (depressão por endogamia)", en: "Expose deleterious recessive alleles and reduce fitness (inbreeding depression)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre aumentar fitness", en: "Always increase fitness"}
+          - {pt: "Apenas mistura", en: "Just mixing"}
+        correctAnswer: {pt: "Expor alelos recessivos deletérios e reduzir aptidão (depressão por endogamia)", en: "Expose deleterious recessive alleles and reduce fitness (inbreeding depression)"}
+        rationale: {pt: "Quando heterozigose cai, então combinações homozigotas raras se manifestam clinicamente.", en: "When heterozygosity drops, rare homozygous combinations manifest clinically."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Gargalo populacional (bottleneck) reduz:", en: "Population bottleneck reduces:"}
+        choices:
+          - {pt: "Diversidade alélica drasticamente, mesmo após recuperação demográfica", en: "Allelic diversity drastically, even after demographic recovery"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre aumenta diversidade", en: "Always increases diversity"}
+          - {pt: "Apenas tamanho corporal", en: "Just body size"}
+        correctAnswer: {pt: "Diversidade alélica drasticamente, mesmo após recuperação demográfica", en: "Allelic diversity drastically, even after demographic recovery"}
+        rationale: {pt: "Como números poucos amostram poucos alelos, então retomada acontece com base genética estreita.", en: "Because few numbers sample few alleles, recovery happens with narrow genetic base."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resgate genético consiste em:", en: "Genetic rescue consists of:"}
+        choices:
+          - {pt: "Introduzir indivíduos de outras populações para aumentar diversidade", en: "Introducing individuals from other populations to boost diversity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas isolar mais", en: "Just isolate more"}
+          - {pt: "Apenas captura", en: "Just capture"}
+        correctAnswer: {pt: "Introduzir indivíduos de outras populações para aumentar diversidade", en: "Introducing individuals from other populations to boost diversity"}
+        rationale: {pt: "Quando fluxo gênico é restaurado, então fitness sobe e depressão por endogamia diminui.", en: "When gene flow is restored, fitness rises and inbreeding depression eases."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Heterozigose esperada (He) mede:", en: "Expected heterozygosity (He) measures:"}
+        choices:
+          - {pt: "Diversidade genética média sob equilíbrio Hardy-Weinberg", en: "Average genetic diversity under Hardy-Weinberg equilibrium"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas tamanho corporal", en: "Just body size"}
+          - {pt: "Apenas idade", en: "Just age"}
+        correctAnswer: {pt: "Diversidade genética média sob equilíbrio Hardy-Weinberg", en: "Average genetic diversity under Hardy-Weinberg equilibrium"}
+        rationale: {pt: "Como He resume frequências alélicas, então é métrica padrão da saúde genética.", en: "Because He summarizes allele frequencies, it is the standard genetic health metric."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ESU (unidade evolutiva significativa):", en: "ESU (evolutionarily significant unit):"}
+        choices:
+          - {pt: "Subgrupo populacional com história evolutiva distinta — alvo de conservação", en: "Population subgroup with distinct evolutionary history — conservation target"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas indivíduo único", en: "Just single individual"}
+          - {pt: "Apenas registro histórico", en: "Just historical record"}
+        correctAnswer: {pt: "Subgrupo populacional com história evolutiva distinta — alvo de conservação", en: "Population subgroup with distinct evolutionary history — conservation target"}
+        rationale: {pt: "Quando preservamos ESUs, então mantemos potencial adaptativo da espécie em diferentes contextos.", en: "When we preserve ESUs, we maintain species' adaptive potential in different contexts."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genética forense em conservação rastreia:", en: "Forensic conservation genetics tracks:"}
+        choices:
+          - {pt: "Origem de marfim, peles, madeira ilegais via DNA", en: "Origin of illegal ivory, pelts, timber via DNA"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+          - {pt: "Apenas plantação legal", en: "Just legal plantation"}
+        correctAnswer: {pt: "Origem de marfim, peles, madeira ilegais via DNA", en: "Origin of illegal ivory, pelts, timber via DNA"}
+        rationale: {pt: "Quando rastreamos via marcadores moleculares, então redes criminosas podem ser desbaratadas.", en: "When we trace via molecular markers, criminal networks can be dismantled."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "eDNA (DNA ambiental) detecta espécies via:", en: "eDNA (environmental DNA) detects species via:"}
+        choices:
+          - {pt: "DNA derramado em água/solo, sem necessidade de captura direta", en: "DNA shed into water/soil, with no need for direct capture"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas observação visual", en: "Just visual observation"}
+          - {pt: "Apenas escuta", en: "Just listening"}
+        correctAnswer: {pt: "DNA derramado em água/solo, sem necessidade de captura direta", en: "DNA shed into water/soil, with no need for direct capture"}
+        rationale: {pt: "Como amostra revela espécies presentes mesmo elusivas, então monitoramento fica não-invasivo e sensível.", en: "Because sample reveals present species even elusive, monitoring becomes noninvasive and sensitive."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Gene drives e de-extinção", en: "Gene drives and de-extinction"}
+    description: {pt: "Ferramentas de manipulação ecológica.", en: "Tools for ecological manipulation."}
+    exercises:
+      - type: choice
+        question: {pt: "Gene drive força herança de:", en: "Gene drive forces inheritance of:"}
+        choices:
+          - {pt: "Um alelo a quase 100% das gerações seguintes em populações sexuadas", en: "An allele to nearly 100% of following generations in sexual populations"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas 50% Mendel", en: "Just 50% Mendel"}
+          - {pt: "Apenas em bactéria", en: "Just in bacteria"}
+        correctAnswer: {pt: "Um alelo a quase 100% das gerações seguintes em populações sexuadas", en: "An allele to nearly 100% of following generations in sexual populations"}
+        rationale: {pt: "Como CRISPR-drive autocopia em meiose, então alelo se fixa ainda que reduza aptidão.", en: "Because CRISPR-drive self-copies in meiosis, allele fixes even if it reduces fitness."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Aplicação proposta de gene drive:", en: "Proposed gene drive application:"}
+        choices:
+          - {pt: "Suprimir vetores de doença (mosquitos da malária) ou invasoras (roedores em ilhas)", en: "Suppress disease vectors (malaria mosquitoes) or invasives (rodents on islands)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas decoração estética", en: "Just aesthetics"}
+          - {pt: "Apenas em museu", en: "Just in museum"}
+        correctAnswer: {pt: "Suprimir vetores de doença (mosquitos da malária) ou invasoras (roedores em ilhas)", en: "Suppress disease vectors (malaria mosquitoes) or invasives (rodents on islands)"}
+        rationale: {pt: "Quando alvo é localizado, então drive promete benefício alto — desde que controle seja garantido.", en: "When target is localized, drive promises high benefit — provided control is assured."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Risco principal de gene drive é:", en: "Main risk of gene drive is:"}
+        choices:
+          - {pt: "Espalhamento descontrolado e efeitos ecológicos imprevisíveis", en: "Uncontrolled spread and unpredictable ecological effects"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre seguro", en: "Always safe"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+        correctAnswer: {pt: "Espalhamento descontrolado e efeitos ecológicos imprevisíveis", en: "Uncontrolled spread and unpredictable ecological effects"}
+        rationale: {pt: "Como ecossistemas estão interligados, então liberação requer governança rigorosa.", en: "Because ecosystems are interconnected, release requires rigorous governance."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Daisy-chain drives são desenhados para:", en: "Daisy-chain drives are designed to:"}
+        choices:
+          - {pt: "Auto-limitar o espalhamento por gerações antes de extinguir", en: "Self-limit spread over generations before going extinct"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas espalhar para sempre", en: "Just spread forever"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+        correctAnswer: {pt: "Auto-limitar o espalhamento por gerações antes de extinguir", en: "Self-limit spread over generations before going extinct"}
+        rationale: {pt: "Quando elementos dependentes esgotam, então drive perde força e estabiliza populações alvo.", en: "When dependent elements deplete, drive loses force and stabilizes target populations."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "De-extinção tenta:", en: "De-extinction attempts to:"}
+        choices:
+          - {pt: "Recriar espécies extintas via clonagem, edição ou retrocruzamento (mamute, pomba-passageira)", en: "Recreate extinct species via cloning, editing or backcrossing (mammoth, passenger pigeon)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas observação", en: "Just observation"}
+          - {pt: "Apenas museu", en: "Just museum"}
+        correctAnswer: {pt: "Recriar espécies extintas via clonagem, edição ou retrocruzamento (mamute, pomba-passageira)", en: "Recreate extinct species via cloning, editing or backcrossing (mammoth, passenger pigeon)"}
+        rationale: {pt: "Quando aDNA permite, então edição CRISPR em parente próximo pode reaproximar fenótipo perdido.", en: "When aDNA allows, CRISPR editing in close relative can approximate lost phenotype."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Críticas à de-extinção incluem:", en: "Critiques of de-extinction include:"}
+        choices:
+          - {pt: "Custo, distração de conservação atual, risco ecológico, bem-estar animal", en: "Cost, distraction from current conservation, ecological risk, animal welfare"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Sem objeção válida", en: "No valid objection"}
+        correctAnswer: {pt: "Custo, distração de conservação atual, risco ecológico, bem-estar animal", en: "Cost, distraction from current conservation, ecological risk, animal welfare"}
+        rationale: {pt: "Como recursos são finitos, então prevenir extinção atual costuma ser priorizado.", en: "Because resources are finite, preventing current extinction is usually prioritized."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bancos de germoplasma armazenam:", en: "Germplasm banks store:"}
+        choices:
+          - {pt: "Sementes, esporos, sêmen e embriões para preservar diversidade", en: "Seeds, spores, semen and embryos to preserve diversity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas dinheiro", en: "Just money"}
+          - {pt: "Apenas plantas vivas", en: "Just living plants"}
+        correctAnswer: {pt: "Sementes, esporos, sêmen e embriões para preservar diversidade", en: "Seeds, spores, semen and embryos to preserve diversity"}
+        rationale: {pt: "Quando ex situ complementa in situ, então diversidade fica salva mesmo se habitat colapsa.", en: "When ex situ complements in situ, diversity is saved even if habitat collapses."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Reprodução assistida em conservação inclui:", en: "Assisted reproduction in conservation includes:"}
+        choices:
+          - {pt: "Inseminação artificial, fertilização in vitro e clonagem em espécies ameaçadas", en: "Artificial insemination, IVF and cloning in threatened species"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+          - {pt: "Apenas folclore", en: "Just folklore"}
+        correctAnswer: {pt: "Inseminação artificial, fertilização in vitro e clonagem em espécies ameaçadas", en: "Artificial insemination, IVF and cloning in threatened species"}
+        rationale: {pt: "Como reprodução natural pode falhar com poucos indivíduos, então técnicas auxiliam recuperação.", en: "Because natural reproduction may fail with few individuals, techniques aid recovery."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Corredores ecológicos auxiliam:", en: "Ecological corridors help:"}
+        choices:
+          - {pt: "Fluxo gênico entre populações fragmentadas", en: "Gene flow between fragmented populations"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Fluxo gênico entre populações fragmentadas", en: "Gene flow between fragmented populations"}
+        rationale: {pt: "Quando conectividade aumenta, então populações isoladas voltam a trocar genes e mantêm diversidade.", en: "When connectivity rises, isolated populations resume gene exchange and maintain diversity."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genômica em conservação ajuda a:", en: "Genomics in conservation helps to:"}
+        choices:
+          - {pt: "Detectar adaptação local, doenças e priorizar populações", en: "Detect local adaptation, diseases and prioritize populations"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Sem aplicação", en: "No application"}
+        correctAnswer: {pt: "Detectar adaptação local, doenças e priorizar populações", en: "Detect local adaptation, diseases and prioritize populations"}
+        rationale: {pt: "Quando dados genômicos guiam decisões, então recursos são alocados onde geram maior impacto.", en: "When genomic data guides decisions, resources go where they produce highest impact."}
+        objectives: [biology.conservation_genetics]
+        difficulty: 5
+target: 20
