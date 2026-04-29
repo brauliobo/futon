@@ -1,0 +1,244 @@
+title:
+  pt: "🧭 Especiação e macroevolução"
+  en: "🧭 Speciation and macroevolution"
+level: '4A'
+subject: biology
+objectives: [biology.evolution_advanced]
+difficulty: 4
+authorNotes: "Conceitos de espécie, modos de especiação, padrões macroevolutivos, filogenética."
+example:
+  pt: "Ex.: especiação alopátrica (barreira geográfica) → divergência → isolamento reprodutivo → novas espécies."
+  en: "Ex.: allopatric speciation (geographic barrier) → divergence → reproductive isolation → new species."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Conceitos e modos", en: "Concepts and modes"}
+    description: {pt: "Como surgem espécies.", en: "How species arise."}
+    exercises:
+      - type: choice
+        question: {pt: "Conceito biológico de espécie:", en: "Biological species concept:"}
+        choices:
+          - {pt: "Grupos que cruzam entre si e geram descendentes férteis", en: "Groups that interbreed and produce fertile offspring"}
+          - {pt: "Apenas aparência similar", en: "Just similar appearance"}
+          - {pt: "Apenas mesmo habitat", en: "Just same habitat"}
+          - {pt: "Sem definição", en: "No definition"}
+        correctAnswer: {pt: "Grupos que cruzam entre si e geram descendentes férteis", en: "Groups that interbreed and produce fertile offspring"}
+        rationale: {pt: "Como mula (cavalo+jumento) é estéril, então definem-se cavalo e jumento como espécies separadas.", en: "Because mule (horse+donkey) is sterile, horses and donkeys are defined as separate species."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Especiação alopátrica:", en: "Allopatric speciation:"}
+        choices:
+          - {pt: "Barreira geográfica isola populações que divergem com tempo", en: "Geographic barrier isolates populations that diverge over time"}
+          - {pt: "Sem barreira", en: "No barrier"}
+          - {pt: "Apenas em laboratório", en: "Only in lab"}
+          - {pt: "Sempre rápida", en: "Always fast"}
+        correctAnswer: {pt: "Barreira geográfica isola populações que divergem com tempo", en: "Geographic barrier isolates populations that diverge over time"}
+        rationale: {pt: "Como sem fluxo gênico, então deriva e seleção atuam separadamente — exemplo clássico: tentilhões de Galápagos.", en: "Because no gene flow, drift and selection act separately — classic example: Galápagos finches."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Especiação simpátrica:", en: "Sympatric speciation:"}
+        choices:
+          - {pt: "Novas espécies surgem na mesma área (ex.: poliploidia em plantas)", en: "New species arise in the same area (e.g., polyploidy in plants)"}
+          - {pt: "Sempre separação geográfica", en: "Always geographic separation"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+          - {pt: "Apenas em animais", en: "Only in animals"}
+        correctAnswer: {pt: "Novas espécies surgem na mesma área (ex.: poliploidia em plantas)", en: "New species arise in the same area (e.g., polyploidy in plants)"}
+        rationale: {pt: "Como poliploides instantaneamente isolam-se reprodutivamente, então plantas frequentemente sofrem especiação simpátrica.", en: "Because polyploids instantly self-isolate reproductively, plants often undergo sympatric speciation."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Mecanismos de isolamento reprodutivo pré-zigóticos:", en: "Pre-zygotic reproductive isolation mechanisms:"}
+        choices:
+          - {pt: "Habitat, temporal, comportamental, mecânico, gamético — impedem fecundação", en: "Habitat, temporal, behavioral, mechanical, gametic — prevent fertilization"}
+          - {pt: "Apenas geográfico", en: "Just geographic"}
+          - {pt: "Sem mecanismo", en: "No mechanism"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Habitat, temporal, comportamental, mecânico, gamético — impedem fecundação", en: "Habitat, temporal, behavioral, mechanical, gametic — prevent fertilization"}
+        rationale: {pt: "Como atuam antes do zigoto, então economia evolutiva: não desperdiça gametas em cruzamentos inviáveis.", en: "Because they act before the zygote, evolutionary economy: doesn't waste gametes on unviable crosses."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Mecanismos pós-zigóticos:", en: "Post-zygotic mechanisms:"}
+        choices:
+          - {pt: "Inviabilidade do híbrido, esterilidade, colapso de F2", en: "Hybrid inviability, sterility, F2 breakdown"}
+          - {pt: "Apenas pré-zigóticos", en: "Only pre-zygotic"}
+          - {pt: "Sem isolamento", en: "No isolation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Inviabilidade do híbrido, esterilidade, colapso de F2", en: "Hybrid inviability, sterility, F2 breakdown"}
+        rationale: {pt: "Como agem após fecundação, então o zigoto morre, vira adulto estéril ou produz F2 fraca — barreira pós-fecundação.", en: "Because they act after fertilization, the zygote dies, becomes sterile adult, or produces weak F2 — post-fertilization barrier."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Radiação adaptativa:", en: "Adaptive radiation:"}
+        choices:
+          - {pt: "Diversificação rápida em muitas espécies a partir de ancestral comum", en: "Rapid diversification into many species from a common ancestor"}
+          - {pt: "Apenas extinção", en: "Just extinction"}
+          - {pt: "Sem mudança", en: "No change"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Diversificação rápida em muitas espécies a partir de ancestral comum", en: "Rapid diversification into many species from a common ancestor"}
+        rationale: {pt: "Como tentilhões de Darwin ocuparam nichos vazios, então uma espécie ancestral gerou ~14 hoje — modelo evolutivo central.", en: "Because Darwin's finches filled empty niches, one ancestral species generated ~14 today — central evolutionary model."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Equilíbrio pontuado (Eldredge & Gould):", en: "Punctuated equilibrium (Eldredge & Gould):"}
+        choices:
+          - {pt: "Longos períodos estáveis interrompidos por curtas explosões de mudança", en: "Long stable periods punctuated by short bursts of change"}
+          - {pt: "Sempre gradual", en: "Always gradual"}
+          - {pt: "Sem mudança", en: "No change"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Longos períodos estáveis interrompidos por curtas explosões de mudança", en: "Long stable periods punctuated by short bursts of change"}
+        rationale: {pt: "Como observado em fósseis, então alternativa ao gradualismo darwiniano clássico — visões complementares.", en: "Because observed in fossils, it's an alternative to classical Darwinian gradualism — complementary views."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Convergência evolutiva:", en: "Convergent evolution:"}
+        choices:
+          - {pt: "Linhagens distintas evoluem traços similares (ex.: asa de pássaro/morcego)", en: "Distinct lineages evolve similar traits (e.g., bird/bat wing)"}
+          - {pt: "Sempre divergência", en: "Always divergence"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem padrão", en: "No pattern"}
+        correctAnswer: {pt: "Linhagens distintas evoluem traços similares (ex.: asa de pássaro/morcego)", en: "Distinct lineages evolve similar traits (e.g., bird/bat wing)"}
+        rationale: {pt: "Como mesma pressão seletiva, então soluções similares emergem independentemente — analogia funcional.", en: "Because of the same selective pressure, similar solutions emerge independently — functional analogy."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Coevolução:", en: "Coevolution:"}
+        choices:
+          - {pt: "Duas espécies evoluem em resposta uma à outra (predador-presa, planta-polinizador)", en: "Two species evolve in response to each other (predator-prey, plant-pollinator)"}
+          - {pt: "Sempre separadamente", en: "Always separately"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Duas espécies evoluem em resposta uma à outra (predador-presa, planta-polinizador)", en: "Two species evolve in response to each other (predator-prey, plant-pollinator)"}
+        rationale: {pt: "Como cada lado responde ao outro, então corrida armamentista coevolutiva produz adaptações refinadas.", en: "Because each side responds to the other, coevolutionary arms race produces refined adaptations."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Filogenia é:", en: "Phylogeny is:"}
+        choices:
+          - {pt: "História evolutiva e relações de ancestralidade entre espécies (árvore filogenética)", en: "Evolutionary history and ancestry relations among species (phylogenetic tree)"}
+          - {pt: "Apenas geografia", en: "Just geography"}
+          - {pt: "Apenas anatomia", en: "Just anatomy"}
+          - {pt: "Sem propósito", en: "No purpose"}
+        correctAnswer: {pt: "História evolutiva e relações de ancestralidade entre espécies (árvore filogenética)", en: "Evolutionary history and ancestry relations among species (phylogenetic tree)"}
+        rationale: {pt: "Como reconstruída por morfologia, fósseis e DNA, então filogenia mapeia parentesco — base da taxonomia moderna.", en: "Because reconstructed via morphology, fossils, and DNA, phylogeny maps kinship — basis of modern taxonomy."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Macroevolução e história da vida", en: "Macroevolution and life's history"}
+    description: {pt: "Padrões em larga escala.", en: "Large-scale patterns."}
+    exercises:
+      - type: choice
+        question: {pt: "Macroevolução vs microevolução:", en: "Macro vs microevolution:"}
+        choices:
+          - {pt: "Macro: padrões acima da espécie (acumulação de microevolução em longo prazo)", en: "Macro: patterns above species (microevolution accumulated over long time)"}
+          - {pt: "São iguais", en: "Identical"}
+          - {pt: "Sem diferença", en: "No difference"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Macro: padrões acima da espécie (acumulação de microevolução em longo prazo)", en: "Macro: patterns above species (microevolution accumulated over long time)"}
+        rationale: {pt: "Como mesmo mecanismo (seleção, deriva), então a diferença é de escala temporal e taxonômica.", en: "Because same mechanism (selection, drift), the difference is in temporal and taxonomic scale."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Quantas extinções em massa principais houve?", en: "How many major mass extinctions have there been?"}
+        choices:
+          - {pt: "Cinco principais (Big Five) + 6ª em curso (Antropoceno)", en: "Five major (Big Five) + 6th ongoing (Anthropocene)"}
+          - {pt: "Apenas uma", en: "Just one"}
+          - {pt: "Cem", en: "A hundred"}
+          - {pt: "Nenhuma", en: "None"}
+        correctAnswer: {pt: "Cinco principais (Big Five) + 6ª em curso (Antropoceno)", en: "Five major (Big Five) + 6th ongoing (Anthropocene)"}
+        rationale: {pt: "Como cada uma redefiniu vida na Terra, então extinção do Permiano (-95%) e do K-Pg (dinossauros) moldaram trajetórias evolutivas.", en: "Because each redefined life on Earth, Permian (-95%) and K-Pg (dinosaurs) shaped evolutionary trajectories."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Extinção K-Pg (66 milhões de anos):", en: "K-Pg extinction (66 mya):"}
+        choices:
+          - {pt: "Asteroide eliminou dinossauros não-avianos — abriu espaço para mamíferos", en: "Asteroid wiped out non-avian dinosaurs — opened space for mammals"}
+          - {pt: "Apenas vulcões", en: "Just volcanoes"}
+          - {pt: "Apenas humanos", en: "Just humans"}
+          - {pt: "Não aconteceu", en: "Didn't happen"}
+        correctAnswer: {pt: "Asteroide eliminou dinossauros não-avianos — abriu espaço para mamíferos", en: "Asteroid wiped out non-avian dinosaurs — opened space for mammals"}
+        rationale: {pt: "Como cratera de Chicxulub no México evidencia impacto, então a era dos mamíferos seguiu-se à liberação de nichos.", en: "Because Chicxulub crater in Mexico evidences impact, the mammal era followed niche liberation."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Origem da vida (~3.8 bi anos):", en: "Origin of life (~3.8 bya):"}
+        choices:
+          - {pt: "Procariontes em oceanos primitivos — primeiros fósseis (estromatólitos)", en: "Prokaryotes in primitive oceans — earliest fossils (stromatolites)"}
+          - {pt: "Apenas humanos", en: "Just humans"}
+          - {pt: "Apenas plantas", en: "Just plants"}
+          - {pt: "Não houve origem", en: "No origin"}
+        correctAnswer: {pt: "Procariontes em oceanos primitivos — primeiros fósseis (estromatólitos)", en: "Prokaryotes in primitive oceans — earliest fossils (stromatolites)"}
+        rationale: {pt: "Como precisaram emergir antes de eucariontes (~2 bi), então procariontes têm 2 bi anos de domínio solitário do planeta.", en: "Because they emerged before eukaryotes (~2 bya), prokaryotes had 2 by of solo planetary dominance."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Grande Evento de Oxigenação (~2.4 bi):", en: "Great Oxygenation Event (~2.4 bya):"}
+        choices:
+          - {pt: "Cianobactérias produziram O₂ — atmosfera mudou; vida aeróbia evoluiu", en: "Cyanobacteria produced O₂ — atmosphere changed; aerobic life evolved"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Não aconteceu", en: "Didn't happen"}
+        correctAnswer: {pt: "Cianobactérias produziram O₂ — atmosfera mudou; vida aeróbia evoluiu", en: "Cyanobacteria produced O₂ — atmosphere changed; aerobic life evolved"}
+        rationale: {pt: "Como O₂ era inicialmente tóxico para vida anaeróbia, então a maior \"poluição\" da história causou extinção e nova era.", en: "Because O₂ was initially toxic to anaerobic life, the largest \"pollution\" in history caused extinction and a new era."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Explosão Cambriana (~540 milhões):", en: "Cambrian explosion (~540 mya):"}
+        choices:
+          - {pt: "Diversificação rápida de filos animais — surgem maiorias atuais", en: "Rapid diversification of animal phyla — most modern groups appear"}
+          - {pt: "Não aconteceu", en: "Didn't happen"}
+          - {pt: "Apenas plantas", en: "Just plants"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Diversificação rápida de filos animais — surgem maiorias atuais", en: "Rapid diversification of animal phyla — most modern groups appear"}
+        rationale: {pt: "Como ~30 milhões de anos viu surgir todos os planos corporais animais, então é evento singular na história da vida.", en: "Because ~30 million years saw all animal body plans emerge, it's a singular event in life's history."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Evolução humana — gênero Homo:", en: "Human evolution — genus Homo:"}
+        choices:
+          - {pt: "Surge na África ~2-3 milhões de anos (Homo habilis), H. sapiens ~300 mil anos", en: "Arises in Africa ~2-3 mya (Homo habilis), H. sapiens ~300 kya"}
+          - {pt: "Apenas no presente", en: "Just present-day"}
+          - {pt: "Sem evolução", en: "No evolution"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Surge na África ~2-3 milhões de anos (Homo habilis), H. sapiens ~300 mil anos", en: "Arises in Africa ~2-3 mya (Homo habilis), H. sapiens ~300 kya"}
+        rationale: {pt: "Como fósseis e DNA convergem, então evidências confirmam saída africana e dispersão global recente.", en: "Because fossils and DNA converge, evidence confirms African origin and recent global dispersal."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "DNA mostra que humanos e chimpanzés:", en: "DNA shows humans and chimpanzees:"}
+        choices:
+          - {pt: "Compartilham ~98% do DNA, divergiram ~6 milhões de anos atrás", en: "Share ~98% DNA, diverged ~6 mya"}
+          - {pt: "Não relacionados", en: "Unrelated"}
+          - {pt: "Mesma espécie", en: "Same species"}
+          - {pt: "Sem DNA", en: "No DNA"}
+        correctAnswer: {pt: "Compartilham ~98% do DNA, divergiram ~6 milhões de anos atrás", en: "Share ~98% DNA, diverged ~6 mya"}
+        rationale: {pt: "Como genética molecular mede tempo de divergência, então parentesco com primatas é robustamente comprovado.", en: "Because molecular genetics measures divergence time, primate kinship is robustly proven."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Vestígios evolutivos em humanos:", en: "Human evolutionary vestiges:"}
+        choices:
+          - {pt: "Apêndice, dente do siso, cóccix, músculos auriculares — heranças sem função atual", en: "Appendix, wisdom tooth, coccyx, ear muscles — inherited with no current function"}
+          - {pt: "Sem vestígios", en: "No vestiges"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em animais", en: "Only in animals"}
+        correctAnswer: {pt: "Apêndice, dente do siso, cóccix, músculos auriculares — heranças sem função atual", en: "Appendix, wisdom tooth, coccyx, ear muscles — inherited with no current function"}
+        rationale: {pt: "Como evidência de ancestrais com diferentes nichos, então órgãos vestigiais reforçam a evolução por descendência comum.", en: "Because evidence of ancestors with different niches, vestigial organs reinforce evolution by common descent."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: macroevolução:", en: "Summary: macroevolution:"}
+        choices:
+          - {pt: "Padrões emergentes da evolução em milhões de anos: especiação, radiações, extinções", en: "Emergent evolutionary patterns over millions of years: speciation, radiations, extinctions"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas teoria", en: "Just theory"}
+          - {pt: "Sem evidência", en: "No evidence"}
+        correctAnswer: {pt: "Padrões emergentes da evolução em milhões de anos: especiação, radiações, extinções", en: "Emergent evolutionary patterns over millions of years: speciation, radiations, extinctions"}
+        rationale: {pt: "Como integra fósseis, geologia, genética e biogeografia, então traça história épica de 3.8 bi anos.", en: "Because it integrates fossils, geology, genetics, and biogeography, it traces an epic 3.8 by history."}
+        objectives: [biology.evolution_advanced]
+        difficulty: 4
+target: 20
