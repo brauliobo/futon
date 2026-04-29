@@ -1,0 +1,244 @@
+title:
+  pt: "🌱 Biologia sintética vegetal"
+  en: "🌱 Plant synthetic biology"
+level: 'B'
+subject: biology
+objectives: [biology.plant_synbio]
+difficulty: 5
+authorNotes: "Engenharia de plantas, fixação de N, fotossíntese melhorada, biofábricas vegetais, edição CRISPR em culturas."
+example:
+  pt: "Ex.: cultura sintetiza fármaco → expressão regulada → produção em chassi → colheita → purificação → terapia."
+  en: "Ex.: plant chassis synthesizes drug → regulated expression → harvest → purification → therapy."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Engenharia genética em plantas", en: "Plant genetic engineering"}
+    description: {pt: "Como reprogramar a fisiologia vegetal.", en: "How to reprogram plant physiology."}
+    exercises:
+      - type: choice
+        question: {pt: "Agrobacterium tumefaciens é usada para:", en: "Agrobacterium tumefaciens is used to:"}
+        choices:
+          - {pt: "Transformação de plantas via transferência natural de T-DNA ao genoma", en: "Plant transformation via natural T-DNA transfer to genome"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Transformação de plantas via transferência natural de T-DNA ao genoma", en: "Plant transformation via natural T-DNA transfer to genome"}
+        rationale: {pt: "Quando bactéria é desarmada, então T-DNA modificado entrega transgenes desejados.", en: "When bacterium is disarmed, modified T-DNA delivers desired transgenes."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biolística (gene gun):", en: "Biolistic (gene gun):"}
+        choices:
+          - {pt: "Bombardeia partículas de ouro/tungstênio cobertas com DNA em células vegetais", en: "Bombards DNA-coated gold/tungsten particles into plant cells"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Bombardeia partículas de ouro/tungstênio cobertas com DNA em células vegetais", en: "Bombards DNA-coated gold/tungsten particles into plant cells"}
+        rationale: {pt: "Quando Agrobacterium não funciona, então biolística é alternativa para cereais difíceis.", en: "When Agrobacterium fails, biolistic is alternative for difficult cereals."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CRISPR em plantas permite:", en: "Plant CRISPR enables:"}
+        choices:
+          - {pt: "Edições precisas, KO de genes de suscetibilidade e KI por HDR limitado", en: "Precise edits, susceptibility gene KO and limited HDR KI"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Edições precisas, KO de genes de suscetibilidade e KI por HDR limitado", en: "Precise edits, susceptibility gene KO and limited HDR KI"}
+        rationale: {pt: "Quando edição é mínima, então variedades CRISPR escapam de regulação transgênica em alguns países.", en: "When edits are minimal, CRISPR varieties escape transgenic regulation in some countries."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Plantas Bt expressam:", en: "Bt plants express:"}
+        choices:
+          - {pt: "Toxinas Cry de Bacillus thuringiensis matando insetos-praga seletivamente", en: "Cry toxins from Bacillus thuringiensis selectively killing insect pests"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Toxinas Cry de Bacillus thuringiensis matando insetos-praga seletivamente", en: "Cry toxins from Bacillus thuringiensis selectively killing insect pests"}
+        rationale: {pt: "Quando Cry rompe intestino do inseto, então defesa não exige inseticida externo.", en: "When Cry disrupts insect gut, defense doesn't need external insecticide."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Plantas tolerantes a glifosato:", en: "Glyphosate-tolerant plants:"}
+        choices:
+          - {pt: "Expressam EPSPS resistente — herbicida mata ervas mas não cultura", en: "Express resistant EPSPS — herbicide kills weeds but not crop"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Expressam EPSPS resistente — herbicida mata ervas mas não cultura", en: "Express resistant EPSPS — herbicide kills weeds but not crop"}
+        rationale: {pt: "Quando enzima alvo é insensível, então cultura sobrevive enquanto ervas sucumbem.", en: "When target enzyme is insensitive, crop survives while weeds succumb."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Arroz dourado (Golden Rice):", en: "Golden Rice:"}
+        choices:
+          - {pt: "Engenheirado para produzir β-caroteno (vitamina A) endossérmico contra avitaminose", en: "Engineered to produce endosperm β-carotene (vitamin A) against avitaminosis"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Engenheirado para produzir β-caroteno (vitamina A) endossérmico contra avitaminose", en: "Engineered to produce endosperm β-carotene (vitamin A) against avitaminosis"}
+        rationale: {pt: "Quando vias da via de carotenoides são introduzidas, então biofortificação combate cegueira.", en: "When carotenoid pathway is introduced, biofortification fights blindness."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Promotores constitutivos vs induzidos:", en: "Constitutive vs inducible promoters:"}
+        choices:
+          - {pt: "CaMV 35S é constitutivo; promotores estresse/luz/órgão-específicos permitem controle preciso", en: "CaMV 35S is constitutive; stress/light/organ-specific promoters enable precise control"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "CaMV 35S é constitutivo; promotores estresse/luz/órgão-específicos permitem controle preciso", en: "CaMV 35S is constitutive; stress/light/organ-specific promoters enable precise control"}
+        rationale: {pt: "Quando expressão é dirigida, então custo metabólico é otimizado e fenótipo focalizado.", en: "When expression is targeted, metabolic cost is optimized and phenotype focused."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biofábricas vegetais (molecular farming):", en: "Plant biofactories (molecular farming):"}
+        choices:
+          - {pt: "Plantas produzem proteínas terapêuticas, vacinas e enzimas em escala industrial", en: "Plants produce therapeutic proteins, vaccines and enzymes at industrial scale"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Plantas produzem proteínas terapêuticas, vacinas e enzimas em escala industrial", en: "Plants produce therapeutic proteins, vaccines and enzymes at industrial scale"}
+        rationale: {pt: "Quando custo é baixo e escala é alta, então biofarmácia vegetal complementa fermentadores.", en: "When cost is low and scale is high, plant biopharma complements fermenters."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cultivos sem suspensão (vertical farming) integram:", en: "Vertical farming integrates:"}
+        choices:
+          - {pt: "LED espectrais, hidroponia, IoT e variedades editadas para urbanidade controlada", en: "Spectral LEDs, hydroponics, IoT and edited varieties for controlled urbanity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "LED espectrais, hidroponia, IoT e variedades editadas para urbanidade controlada", en: "Spectral LEDs, hydroponics, IoT and edited varieties for controlled urbanity"}
+        rationale: {pt: "Quando produção é vertical, então cidades cultivam alimentos com baixa pegada hídrica.", en: "When production is vertical, cities grow food with low water footprint."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Engenharia de cloroplasto:", en: "Chloroplast engineering:"}
+        choices:
+          - {pt: "Transformação cloroplástica produz alta expressão sem fluxo gênico via pólen (em geral)", en: "Plastid transformation yields high expression with reduced pollen-mediated gene flow (usually)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Transformação cloroplástica produz alta expressão sem fluxo gênico via pólen (em geral)", en: "Plastid transformation yields high expression with reduced pollen-mediated gene flow (usually)"}
+        rationale: {pt: "Quando transgene fica no plastídio, então herança materna minimiza dispersão.", en: "When transgene resides in plastid, maternal inheritance minimizes dispersal."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Fronteiras agrícolas e ecológicas", en: "Agricultural and ecological frontiers"}
+    description: {pt: "Plantas para sustentabilidade global.", en: "Plants for global sustainability."}
+    exercises:
+      - type: choice
+        question: {pt: "Fixação biológica de nitrogênio em culturas:", en: "Biological nitrogen fixation in crops:"}
+        choices:
+          - {pt: "Engenharia de simbiose Rhizobium-tipo em cereais é meta de longo prazo", en: "Rhizobium-like symbiosis engineering in cereals is long-term goal"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Engenharia de simbiose Rhizobium-tipo em cereais é meta de longo prazo", en: "Rhizobium-like symbiosis engineering in cereals is long-term goal"}
+        rationale: {pt: "Quando cereais fixam N, então fertilizantes sintéticos são reduzidos drasticamente.", en: "When cereals fix N, synthetic fertilizers are drastically reduced."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Engenharia de fotossíntese (RIPE):", en: "Photosynthesis engineering (RIPE):"}
+        choices:
+          - {pt: "Otimização de NPQ, RuBisCO e via C4-em-C3 visa elevar produtividade", en: "NPQ, RuBisCO optimization and C4-into-C3 pathways aim to boost productivity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Otimização de NPQ, RuBisCO e via C4-em-C3 visa elevar produtividade", en: "NPQ, RuBisCO optimization and C4-into-C3 pathways aim to boost productivity"}
+        rationale: {pt: "Quando fotossíntese é eficiente, então mesma área alimenta mais população.", en: "When photosynthesis is efficient, same area feeds more people."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tolerância à seca e salinidade via CRISPR:", en: "Drought and salinity tolerance via CRISPR:"}
+        choices:
+          - {pt: "Edição de DREB, NHX e SOS aumenta resiliência sob estresse abiótico", en: "Editing DREB, NHX and SOS increases resilience under abiotic stress"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Edição de DREB, NHX e SOS aumenta resiliência sob estresse abiótico", en: "Editing DREB, NHX and SOS increases resilience under abiotic stress"}
+        rationale: {pt: "Quando clima muda, então variedades resilientes salvam segurança alimentar.", en: "When climate shifts, resilient varieties save food security."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbioma vegetal engenheirado:", en: "Engineered plant microbiome:"}
+        choices:
+          - {pt: "Inoculantes de rizobactérias e fungos micorrízicos melhoram nutrição e defesa", en: "Rhizobacteria and mycorrhizal fungi inoculants improve nutrition and defense"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Inoculantes de rizobactérias e fungos micorrízicos melhoram nutrição e defesa", en: "Rhizobacteria and mycorrhizal fungi inoculants improve nutrition and defense"}
+        rationale: {pt: "Quando microbiota é manejada, então cultura cresce melhor com menos químicos.", en: "When microbiota is managed, crop grows better with fewer chemicals."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RNAi tópico contra pragas:", en: "Topical RNAi against pests:"}
+        choices:
+          - {pt: "Spray de dsRNA silencia genes essenciais em insetos sem transgene na planta", en: "dsRNA spray silences essential insect genes without plant transgene"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Spray de dsRNA silencia genes essenciais em insetos sem transgene na planta", en: "dsRNA spray silences essential insect genes without plant transgene"}
+        rationale: {pt: "Quando inseto ingere dsRNA, então sua via essencial colapsa especificamente.", en: "When insect ingests dsRNA, its essential pathway collapses specifically."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Reguladores florais via PHE/FT:", en: "Floral regulators via PHE/FT:"}
+        choices:
+          - {pt: "Edição de tempo de florescimento adapta cultura a fotoperíodos diversos", en: "Flowering time editing adapts crop to diverse photoperiods"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Edição de tempo de florescimento adapta cultura a fotoperíodos diversos", en: "Flowering time editing adapts crop to diverse photoperiods"}
+        rationale: {pt: "Quando florescimento se ajusta, então cultivo expande para latitudes novas.", en: "When flowering adjusts, cultivation expands to new latitudes."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biofortificação genética alvo:", en: "Genetic biofortification targets:"}
+        choices:
+          - {pt: "Aumentar Fe, Zn, vitaminas e ácido fólico em cereais e leguminosas", en: "Increase Fe, Zn, vitamins and folate in cereals and legumes"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Aumentar Fe, Zn, vitaminas e ácido fólico em cereais e leguminosas", en: "Increase Fe, Zn, vitamins and folate in cereals and legumes"}
+        rationale: {pt: "Quando dieta básica é fortificada, então deficiências em larga escala são prevenidas.", en: "When staple diet is fortified, large-scale deficiencies are prevented."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Carbon farming / sequestro:", en: "Carbon farming / sequestration:"}
+        choices:
+          - {pt: "Plantas com raízes profundas + lignina aumentada estocam mais C no solo (Salk Harnessing Plants)", en: "Deep roots + increased lignin store more soil C (Salk Harnessing Plants)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Plantas com raízes profundas + lignina aumentada estocam mais C no solo (Salk Harnessing Plants)", en: "Deep roots + increased lignin store more soil C (Salk Harnessing Plants)"}
+        rationale: {pt: "Quando raízes persistem, então CO₂ atmosférico é capturado biologicamente em larga escala.", en: "When roots persist, atmospheric CO₂ is biologically captured at scale."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Regulação de OGMs vs editados:", en: "GMO vs gene-edited regulation:"}
+        choices:
+          - {pt: "Plantas editadas sem DNA estranho são tratadas diferente em vários países (EUA, Brasil, Argentina)", en: "Edited plants without foreign DNA are treated differently in various countries (US, Brazil, Argentina)"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Plantas editadas sem DNA estranho são tratadas diferente em vários países (EUA, Brasil, Argentina)", en: "Edited plants without foreign DNA are treated differently in various countries (US, Brazil, Argentina)"}
+        rationale: {pt: "Quando regulação acompanha ciência, então adoção tecnológica acelera.", en: "When regulation tracks science, technology adoption accelerates."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em plantas sintéticas:", en: "Next plant synthetic biology frontiers:"}
+        choices:
+          - {pt: "Domesticação de novo, vias metabólicas heterólogas e cultivos resilientes ao clima", en: "De novo domestication, heterologous metabolic pathways and climate-resilient crops"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estática", en: "Just static"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Domesticação de novo, vias metabólicas heterólogas e cultivos resilientes ao clima", en: "De novo domestication, heterologous metabolic pathways and climate-resilient crops"}
+        rationale: {pt: "Quando ferramentas convergem, então agricultura ganha velocidade evolutiva inédita.", en: "When tools converge, agriculture gains unprecedented evolutionary speed."}
+        objectives: [biology.plant_synbio]
+        difficulty: 5
+target: 20
