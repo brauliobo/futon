@@ -1,0 +1,244 @@
+title:
+  pt: "🎓 Revisão cumulativa D"
+  en: "🎓 Cumulative review D"
+level: 'D'
+subject: biology
+objectives: [biology.cumulative_D]
+difficulty: 5
+authorNotes: "Revisão dos 19 tópicos de D: comp struct, prot eng, synth genomics, gene drives, astrobio, origem, evo-devo, popgen, aDNA, microbiome, fagos, anticorpos, CAR-T, tissue, bioeletrônica, biossensores, metagenômica, comp genomics, IA."
+example:
+  pt: "Ex.: revisar tópico → reconhecer mecanismo → conectar à aplicação → consolidar."
+  en: "Ex.: review topic → recognize mechanism → link to application → consolidate."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Conceitos-chave I", en: "Key concepts I"}
+    description: {pt: "Tópicos 01-10 do nível D.", en: "Level D topics 01-10."}
+    exercises:
+      - type: choice
+        question: {pt: "AlphaFold:", en: "AlphaFold:"}
+        choices:
+          - {pt: "Rede neural que prediz estruturas proteicas com acurácia near-experimental", en: "Neural network predicting protein structures with near-experimental accuracy"}
+          - {pt: "Apenas microscopia eletrônica", en: "Just electron microscopy"}
+          - {pt: "Apenas western blot", en: "Just western blot"}
+          - {pt: "Apenas docking simples", en: "Just simple docking"}
+        correctAnswer: {pt: "Rede neural que prediz estruturas proteicas com acurácia near-experimental", en: "Neural network predicting protein structures with near-experimental accuracy"}
+        rationale: {pt: "Quando AlphaFold prediz, então proteomas inteiros ficam mapeados.", en: "When AlphaFold predicts, whole proteomes are mapped."}
+        objectives: [biology.compstruct]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Evolução dirigida:", en: "Directed evolution:"}
+        choices:
+          - {pt: "Mutagênese aleatória + seleção iterativa otimiza enzimas — Nobel 2018", en: "Random mutagenesis + iterative selection optimizes enzymes — 2018 Nobel"}
+          - {pt: "Apenas síntese química", en: "Just chemical synthesis"}
+          - {pt: "Apenas extração natural", en: "Just natural extraction"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+        correctAnswer: {pt: "Mutagênese aleatória + seleção iterativa otimiza enzimas — Nobel 2018", en: "Random mutagenesis + iterative selection optimizes enzymes — 2018 Nobel"}
+        rationale: {pt: "Quando rounds iteram, então fitness sobe sem precisar conhecer estrutura.", en: "When rounds iterate, fitness rises without needing structure knowledge."}
+        objectives: [biology.protein_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genoma mínimo (JCVI-syn3.0):", en: "Minimal genome (JCVI-syn3.0):"}
+        choices:
+          - {pt: "473 genes essenciais — define vida autônoma cultivada mais simples conhecida", en: "473 essential genes — defines simplest known autonomous cultivated life"}
+          - {pt: "Apenas curiosidade evolutiva", en: "Just evolutionary curiosity"}
+          - {pt: "Apenas plasmídeo bacteriano", en: "Just bacterial plasmid"}
+          - {pt: "Apenas vetor de clonagem", en: "Just cloning vector"}
+        correctAnswer: {pt: "473 genes essenciais — define vida autônoma cultivada mais simples conhecida", en: "473 essential genes — defines simplest known autonomous cultivated life"}
+        rationale: {pt: "Quando genoma é minimizado, então funções fundamentais são reveladas.", en: "When genome is minimized, fundamental functions are revealed."}
+        objectives: [biology.synth_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Gene drive CRISPR:", en: "CRISPR gene drive:"}
+        choices:
+          - {pt: "Cas9+gRNA copia-se em ambos cromossomos garantindo herança super-mendeliana", en: "Cas9+gRNA copies to both chromosomes ensuring super-Mendelian inheritance"}
+          - {pt: "Apenas mutação espontânea", en: "Just spontaneous mutation"}
+          - {pt: "Apenas seleção natural", en: "Just natural selection"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cas9+gRNA copia-se em ambos cromossomos garantindo herança super-mendeliana", en: "Cas9+gRNA copies to both chromosomes ensuring super-Mendelian inheritance"}
+        rationale: {pt: "Quando drive age, então alelo se espalha rapidamente em populações.", en: "When drive acts, allele rapidly spreads in populations."}
+        objectives: [biology.gene_drive]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biossignaturas:", en: "Biosignatures:"}
+        choices:
+          - {pt: "Combinações desequilibradas (O₂+CH₄) ou DMS sugerem processos biológicos atmosféricos", en: "Disequilibrium combinations (O₂+CH₄) or DMS suggest biological atmospheric processes"}
+          - {pt: "Apenas brilho estelar", en: "Just stellar brightness"}
+          - {pt: "Apenas curiosidade espectral", en: "Just spectral curiosity"}
+          - {pt: "Apenas observação", en: "Just observation"}
+        correctAnswer: {pt: "Combinações desequilibradas (O₂+CH₄) ou DMS sugerem processos biológicos atmosféricos", en: "Disequilibrium combinations (O₂+CH₄) or DMS suggest biological atmospheric processes"}
+        rationale: {pt: "Quando assinaturas robustas aparecem, então hipótese biológica ganha peso.", en: "When robust signatures appear, biological hypothesis gains weight."}
+        objectives: [biology.astrobio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mundo de RNA:", en: "RNA world:"}
+        choices:
+          - {pt: "RNA armazenando informação e catalisando preceder DNA e proteínas é hipótese central", en: "RNA storing info and catalyzing before DNA and proteins is central hypothesis"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas estrutura passiva", en: "Just passive structure"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "RNA armazenando informação e catalisando preceder DNA e proteínas é hipótese central", en: "RNA storing info and catalyzing before DNA and proteins is central hypothesis"}
+        rationale: {pt: "Quando ribozimas existem, então molécula única pode ser sistema mínimo.", en: "When ribozymes exist, single molecule can be minimal system."}
+        objectives: [biology.origin_life]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hox genes:", en: "Hox genes:"}
+        choices:
+          - {pt: "Cluster colinear conservado define identidade ântero-posterior em vertebrados e invertebrados", en: "Conserved colinear cluster defines anterior-posterior identity in vertebrates and invertebrates"}
+          - {pt: "Apenas curiosidade evolutiva", en: "Just evolutionary curiosity"}
+          - {pt: "Apenas decoração genômica", en: "Just genomic decoration"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+        correctAnswer: {pt: "Cluster colinear conservado define identidade ântero-posterior em vertebrados e invertebrados", en: "Conserved colinear cluster defines anterior-posterior identity in vertebrates and invertebrates"}
+        rationale: {pt: "Quando Hox é compartilhado, então identidade segmentar segue regras universais.", en: "When Hox is shared, segmental identity follows universal rules."}
+        objectives: [biology.evodevo]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fst:", en: "Fst:"}
+        choices:
+          - {pt: "Mede diferenciação populacional pela proporção de variância entre populações", en: "Measures population differentiation by between-population variance proportion"}
+          - {pt: "Apenas distância geográfica", en: "Just geographic distance"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+          - {pt: "Apenas curiosidade estatística", en: "Just statistical curiosity"}
+        correctAnswer: {pt: "Mede diferenciação populacional pela proporção de variância entre populações", en: "Measures population differentiation by between-population variance proportion"}
+        rationale: {pt: "Quando Fst alto, então populações divergiram muito por drift ou seleção.", en: "When Fst is high, populations diverged much via drift or selection."}
+        objectives: [biology.popgen]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DNA antigo:", en: "Ancient DNA:"}
+        choices:
+          - {pt: "Fragmentos curtos com deaminação C→T autenticam idade — Pääbo Nobel 2022", en: "Short fragments with C→T deamination authenticate age — Pääbo Nobel 2022"}
+          - {pt: "Apenas RNA fresco", en: "Just fresh RNA"}
+          - {pt: "Apenas amostra clínica", en: "Just clinical sample"}
+          - {pt: "Apenas curiosidade arqueológica", en: "Just archaeological curiosity"}
+        correctAnswer: {pt: "Fragmentos curtos com deaminação C→T autenticam idade — Pääbo Nobel 2022", en: "Short fragments with C→T deamination authenticate age — Pääbo Nobel 2022"}
+        rationale: {pt: "Quando aDNA é típico, então padrões químicos confirmam autenticidade.", en: "When aDNA is typical, chemical patterns confirm authenticity."}
+        objectives: [biology.adna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "FMT (transplante fecal):", en: "FMT (fecal transplant):"}
+        choices:
+          - {pt: "Transferência de microbiota saudável trata C. difficile recorrente com >90% sucesso", en: "Healthy microbiota transfer treats recurrent C. difficile with >90% success"}
+          - {pt: "Apenas dieta restritiva", en: "Just restrictive diet"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas antibiótico clássico", en: "Just classical antibiotic"}
+        correctAnswer: {pt: "Transferência de microbiota saudável trata C. difficile recorrente com >90% sucesso", en: "Healthy microbiota transfer treats recurrent C. difficile with >90% success"}
+        rationale: {pt: "Quando flora se restaura, então patógeno perde nicho competitivo.", en: "When flora restores, pathogen loses competitive niche."}
+        objectives: [biology.microbiome_eng]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Conceitos-chave II", en: "Key concepts II"}
+    description: {pt: "Tópicos 11-19 do nível D.", en: "Level D topics 11-19."}
+    exercises:
+      - type: choice
+        question: {pt: "Coquetel de fagos:", en: "Phage cocktail:"}
+        choices:
+          - {pt: "Mistura de fagos amplia hospedeiros e reduz risco de resistência rápida", en: "Phage mix broadens host range and reduces rapid resistance risk"}
+          - {pt: "Apenas fago único", en: "Just single phage"}
+          - {pt: "Apenas tradição", en: "Just tradition"}
+          - {pt: "Apenas combinação aleatória", en: "Just random combination"}
+        correctAnswer: {pt: "Mistura de fagos amplia hospedeiros e reduz risco de resistência rápida", en: "Phage mix broadens host range and reduces rapid resistance risk"}
+        rationale: {pt: "Quando coquetel é diverso, então bactérias têm rotas de escape limitadas.", en: "When cocktail is diverse, bacteria have limited escape routes."}
+        objectives: [biology.phage]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anticorpo biespecífico:", en: "Bispecific antibody:"}
+        choices:
+          - {pt: "Reconhece dois alvos simultaneamente — blinatumomab redireciona T cells contra leucemia", en: "Recognizes two targets at once — blinatumomab redirects T cells to leukemia"}
+          - {pt: "Apenas anticorpo simples", en: "Just simple antibody"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "Reconhece dois alvos simultaneamente — blinatumomab redireciona T cells contra leucemia", en: "Recognizes two targets at once — blinatumomab redirects T cells to leukemia"}
+        rationale: {pt: "Quando biespecíficos atuam, então funções imunes são programáveis.", en: "When bispecifics act, immune functions are programmable."}
+        objectives: [biology.antibody_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CAR-T:", en: "CAR-T:"}
+        choices:
+          - {pt: "Receptor sintético em T cells reconhece tumor sem MHC — CD19 e BCMA aprovados", en: "Synthetic T-cell receptor recognizes tumor without MHC — CD19 and BCMA approved"}
+          - {pt: "Apenas TCR clássico", en: "Just classical TCR"}
+          - {pt: "Apenas anticorpo", en: "Just antibody"}
+          - {pt: "Apenas vacina", en: "Just vaccine"}
+        correctAnswer: {pt: "Receptor sintético em T cells reconhece tumor sem MHC — CD19 e BCMA aprovados", en: "Synthetic T-cell receptor recognizes tumor without MHC — CD19 and BCMA approved"}
+        rationale: {pt: "Quando CAR é montado, então T cells reconhecem alvo independente de MHC.", en: "When CAR is assembled, T cells recognize target independent of MHC."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bioimpressão 3D:", en: "3D bioprinting:"}
+        choices:
+          - {pt: "Bioink com células deposita-se em camadas para criar estruturas com geometria precisa", en: "Cell-laden bioink deposits in layers creating structures with precise geometry"}
+          - {pt: "Apenas impressão plástica", en: "Just plastic printing"}
+          - {pt: "Apenas modelagem manual", en: "Just manual modeling"}
+          - {pt: "Apenas técnica industrial", en: "Just industrial technique"}
+        correctAnswer: {pt: "Bioink com células deposita-se em camadas para criar estruturas com geometria precisa", en: "Cell-laden bioink deposits in layers creating structures with precise geometry"}
+        rationale: {pt: "Quando geometria é precisa, então tecidos complexos são construíveis.", en: "When geometry is precise, complex tissues are buildable."}
+        objectives: [biology.tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Estimulação do nervo vago (VNS):", en: "Vagus nerve stimulation (VNS):"}
+        choices:
+          - {pt: "Modula reflexo anti-inflamatório com aplicação em AR, Crohn e epilepsia", en: "Modulates anti-inflammatory reflex with applications in RA, Crohn and epilepsy"}
+          - {pt: "Apenas curiosidade neurológica", en: "Just neurological curiosity"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Apenas tradição empírica", en: "Just empirical tradition"}
+        correctAnswer: {pt: "Modula reflexo anti-inflamatório com aplicação em AR, Crohn e epilepsia", en: "Modulates anti-inflammatory reflex with applications in RA, Crohn and epilepsy"}
+        rationale: {pt: "Quando vago é estimulado, então inflamação sistêmica reduz neurogenicamente.", en: "When vagus is stimulated, systemic inflammation reduces neurogenically."}
+        objectives: [biology.bioelectronic]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SHERLOCK/DETECTR:", en: "SHERLOCK/DETECTR:"}
+        choices:
+          - {pt: "CRISPR-Cas13/Cas12 detectam ácidos nucleicos com alta sensibilidade em campo", en: "CRISPR-Cas13/Cas12 detect nucleic acids with high sensitivity in field"}
+          - {pt: "Apenas PCR convencional", en: "Just conventional PCR"}
+          - {pt: "Apenas teste rápido genérico", en: "Just generic rapid test"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+        correctAnswer: {pt: "CRISPR-Cas13/Cas12 detectam ácidos nucleicos com alta sensibilidade em campo", en: "CRISPR-Cas13/Cas12 detect nucleic acids with high sensitivity in field"}
+        rationale: {pt: "Quando CRISPR detecta, então diagnósticos campo-deployable se tornam possíveis.", en: "When CRISPR detects, field-deployable diagnostics become feasible."}
+        objectives: [biology.biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Shotgun metagenomics:", en: "Shotgun metagenomics:"}
+        choices:
+          - {pt: "Sequenciamento total de DNA ambiental sem cultivo prévio — composição e função", en: "Total environmental DNA sequencing without prior culture — composition and function"}
+          - {pt: "Apenas cultura tradicional", en: "Just traditional culture"}
+          - {pt: "Apenas microscopia", en: "Just microscopy"}
+          - {pt: "Apenas amplicon 16S", en: "Just 16S amplicon"}
+        correctAnswer: {pt: "Sequenciamento total de DNA ambiental sem cultivo prévio — composição e função", en: "Total environmental DNA sequencing without prior culture — composition and function"}
+        rationale: {pt: "Quando shotgun é usado, então comunidades não-cultiváveis são caracterizadas.", en: "When shotgun is used, non-culturable communities are characterized."}
+        objectives: [biology.metagenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pangenoma:", en: "Pangenome:"}
+        choices:
+          - {pt: "Soma de genes core + acessórios em uma espécie — captura diversidade real", en: "Sum of core + accessory genes in a species — captures real diversity"}
+          - {pt: "Apenas referência única", en: "Just single reference"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Soma de genes core + acessórios em uma espécie — captura diversidade real", en: "Sum of core + accessory genes in a species — captures real diversity"}
+        rationale: {pt: "Quando pangenoma é completo, então variação populacional é refletida.", en: "When pangenome is complete, population variation is reflected."}
+        objectives: [biology.compgenomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AlphaFold-3:", en: "AlphaFold-3:"}
+        choices:
+          - {pt: "Prediz complexos com proteínas, ácidos nucleicos, ligantes e íons em alta acurácia", en: "Predicts complexes with proteins, nucleic acids, ligands and ions at high accuracy"}
+          - {pt: "Apenas estrutura proteica isolada", en: "Just isolated protein structure"}
+          - {pt: "Apenas docking simples", en: "Just simple docking"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+        correctAnswer: {pt: "Prediz complexos com proteínas, ácidos nucleicos, ligantes e íons em alta acurácia", en: "Predicts complexes with proteins, nucleic acids, ligands and ions at high accuracy"}
+        rationale: {pt: "Quando complexos são preditos, então biologia molecular ganha base estrutural ampla.", en: "When complexes are predicted, molecular biology gains broad structural foundation."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese geral do nível D:", en: "Level D overall synthesis:"}
+        choices:
+          - {pt: "Biologia avançada integra computação, engenharia, ética e escala global em fronteiras translacionais", en: "Advanced biology integrates computation, engineering, ethics and global scale at translational frontiers"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Biologia avançada integra computação, engenharia, ética e escala global em fronteiras translacionais", en: "Advanced biology integrates computation, engineering, ethics and global scale at translational frontiers"}
+        rationale: {pt: "Quando disciplinas convergem, então biologia gera medicina precisa em todas frontes.", en: "When disciplines converge, biology yields precise medicine on all fronts."}
+        objectives: [biology.cumulative_D]
+        difficulty: 5
+target: 20

@@ -1,0 +1,244 @@
+title:
+  pt: "🤖 IA em biologia"
+  en: "🤖 AI in biology"
+level: 'D'
+subject: biology
+objectives: [biology.ai_biology]
+difficulty: 5
+authorNotes: "Foundation models, predição estrutural, drug discovery, single-cell ML, biossegurança."
+example:
+  pt: "Ex.: dados omics → embedding → modelo predita → ranking de candidatos → validação experimental."
+  en: "Ex.: omics data → embedding → predictive model → candidate ranking → experimental validation."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Modelos e capacidades", en: "Models and capabilities"}
+    description: {pt: "Como IA transforma biologia.", en: "How AI transforms biology."}
+    exercises:
+      - type: choice
+        question: {pt: "AlphaFold-3:", en: "AlphaFold-3:"}
+        choices:
+          - {pt: "Prediz complexos com proteínas, ácidos nucleicos, ligantes e íons em alta acurácia", en: "Predicts complexes with proteins, nucleic acids, ligands and ions at high accuracy"}
+          - {pt: "Apenas estrutura proteica isolada", en: "Just isolated protein structure"}
+          - {pt: "Apenas docking simples", en: "Just simple docking"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+        correctAnswer: {pt: "Prediz complexos com proteínas, ácidos nucleicos, ligantes e íons em alta acurácia", en: "Predicts complexes with proteins, nucleic acids, ligands and ions at high accuracy"}
+        rationale: {pt: "Quando complexos são preditos, então biologia molecular ganha base estrutural ampla.", en: "When complexes are predicted, molecular biology gains broad structural foundation."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ESM (Evolutionary Scale Models):", en: "ESM (Evolutionary Scale Models):"}
+        choices:
+          - {pt: "Foundation model proteico que aprende representações de sequência via objectivos de linguagem", en: "Protein foundation model learning sequence representations via language objectives"}
+          - {pt: "Apenas microscopia computadorizada", en: "Just computerized microscopy"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+        correctAnswer: {pt: "Foundation model proteico que aprende representações de sequência via objectivos de linguagem", en: "Protein foundation model learning sequence representations via language objectives"}
+        rationale: {pt: "Quando ESM aprende, então tarefas downstream herdam embeddings ricos.", en: "When ESM learns, downstream tasks inherit rich embeddings."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Geometric deep learning:", en: "Geometric deep learning:"}
+        choices:
+          - {pt: "Redes equivariantes a rotação processam moléculas como grafos 3D — base de muitos models", en: "Rotation-equivariant networks process molecules as 3D graphs — foundation of many models"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas convolucional padrão", en: "Just standard convolutional"}
+          - {pt: "Apenas observação visual", en: "Just visual observation"}
+        correctAnswer: {pt: "Redes equivariantes a rotação processam moléculas como grafos 3D — base de muitos models", en: "Rotation-equivariant networks process molecules as 3D graphs — foundation of many models"}
+        rationale: {pt: "Quando geometria é respeitada, então generalização molecular melhora.", en: "When geometry is respected, molecular generalization improves."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RFdiffusion:", en: "RFdiffusion:"}
+        choices:
+          - {pt: "Modelo de difusão gera backbones proteicos novos com restrições funcionais especificadas", en: "Diffusion model generates novel protein backbones with specified functional constraints"}
+          - {pt: "Apenas mutação aleatória", en: "Just random mutation"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+        correctAnswer: {pt: "Modelo de difusão gera backbones proteicos novos com restrições funcionais especificadas", en: "Diffusion model generates novel protein backbones with specified functional constraints"}
+        rationale: {pt: "Quando difusão age, então proteínas são desenhadas para tarefas específicas.", en: "When diffusion acts, proteins are designed for specific tasks."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single-cell foundation models:", en: "Single-cell foundation models:"}
+        choices:
+          - {pt: "scGPT, Geneformer aprendem representações de tipos celulares em milhões de scRNA-seq", en: "scGPT, Geneformer learn cell-type representations from millions of scRNA-seq"}
+          - {pt: "Apenas PCA simples", en: "Just simple PCA"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas observação visual", en: "Just visual observation"}
+        correctAnswer: {pt: "scGPT, Geneformer aprendem representações de tipos celulares em milhões de scRNA-seq", en: "scGPT, Geneformer learn cell-type representations from millions of scRNA-seq"}
+        rationale: {pt: "Quando dados escalam, então modelos transferem conhecimento entre tarefas.", en: "When data scales, models transfer knowledge across tasks."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AI em drug discovery:", en: "AI in drug discovery:"}
+        choices:
+          - {pt: "ML acelera screening virtual, prioriza candidatos e prediz toxicidade reduzindo custo e tempo", en: "ML accelerates virtual screening, prioritizes candidates and predicts toxicity cutting cost and time"}
+          - {pt: "Apenas tradição farmacêutica", en: "Just pharmaceutical tradition"}
+          - {pt: "Apenas teste empírico", en: "Just empirical testing"}
+          - {pt: "Apenas observação clínica", en: "Just clinical observation"}
+        correctAnswer: {pt: "ML acelera screening virtual, prioriza candidatos e prediz toxicidade reduzindo custo e tempo", en: "ML accelerates virtual screening, prioritizes candidates and predicts toxicity cutting cost and time"}
+        rationale: {pt: "Quando ML guia, então pipelines de drug discovery aceleram dramaticamente.", en: "When ML guides, drug discovery pipelines dramatically accelerate."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imagem médica com IA:", en: "Medical imaging with AI:"}
+        choices:
+          - {pt: "Modelos detectam câncer, retinopatia e mais com performance comparável a especialistas", en: "Models detect cancer, retinopathy and more with specialist-comparable performance"}
+          - {pt: "Apenas observação radiológica", en: "Just radiological observation"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+          - {pt: "Apenas exame manual", en: "Just manual exam"}
+        correctAnswer: {pt: "Modelos detectam câncer, retinopatia e mais com performance comparável a especialistas", en: "Models detect cancer, retinopathy and more with specialist-comparable performance"}
+        rationale: {pt: "Quando AI lê imagem, então diagnóstico escala globalmente.", en: "When AI reads imaging, diagnosis scales globally."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Generative chemistry:", en: "Generative chemistry:"}
+        choices:
+          - {pt: "Modelos geram moléculas com propriedades desejadas (afinidade, ADMET) inéditas no espaço químico", en: "Models generate molecules with desired properties (affinity, ADMET) novel in chemical space"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas extração natural", en: "Just natural extraction"}
+          - {pt: "Apenas variação aleatória", en: "Just random variation"}
+        correctAnswer: {pt: "Modelos geram moléculas com propriedades desejadas (afinidade, ADMET) inéditas no espaço químico", en: "Models generate molecules with desired properties (affinity, ADMET) novel in chemical space"}
+        rationale: {pt: "Quando geração é dirigida, então química expande sob demanda.", en: "When generation is directed, chemistry expands on demand."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AI em diagnóstico patológico:", en: "AI in pathology diagnostics:"}
+        choices:
+          - {pt: "ML em lâminas histológicas digitalizadas classifica tumores e prevê resposta a tratamento", en: "ML on digitized histology slides classifies tumors and predicts treatment response"}
+          - {pt: "Apenas microscopia clássica", en: "Just classical microscopy"}
+          - {pt: "Apenas observação visual", en: "Just visual observation"}
+          - {pt: "Apenas tradição patológica", en: "Just pathology tradition"}
+        correctAnswer: {pt: "ML em lâminas histológicas digitalizadas classifica tumores e prevê resposta a tratamento", en: "ML on digitized histology slides classifies tumors and predicts treatment response"}
+        rationale: {pt: "Quando AI lê lâminas, então patologia ganha throughput e consistência.", en: "When AI reads slides, pathology gains throughput and consistency."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AI em vigilância genômica:", en: "AI in genomic surveillance:"}
+        choices:
+          - {pt: "ML rastreia variantes virais, prevê escape vacinal e prioriza alvos para combate global", en: "ML tracks viral variants, predicts vaccine escape and prioritizes targets for global response"}
+          - {pt: "Apenas observação epidemiológica", en: "Just epidemiological observation"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "ML rastreia variantes virais, prevê escape vacinal e prioriza alvos para combate global", en: "ML tracks viral variants, predicts vaccine escape and prioritizes targets for global response"}
+        rationale: {pt: "Quando AI antecipa, então respostas pandêmicas aceleram.", en: "When AI anticipates, pandemic responses accelerate."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Limitações e biossegurança", en: "Limitations and biosafety"}
+    description: {pt: "Riscos, vieses e fronteiras.", en: "Risks, biases and frontiers."}
+    exercises:
+      - type: choice
+        question: {pt: "Viés em datasets:", en: "Dataset bias:"}
+        choices:
+          - {pt: "Treinamento dominado por populações europeias reduz generalização para outras ancestralidades", en: "Training dominated by European populations reduces generalization to other ancestries"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Treinamento dominado por populações europeias reduz generalização para outras ancestralidades", en: "Training dominated by European populations reduces generalization to other ancestries"}
+        rationale: {pt: "Quando vieses são abordados, então benefícios da AI alcançam todos.", en: "When biases are addressed, AI benefits reach everyone."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Interpretabilidade:", en: "Interpretability:"}
+        choices:
+          - {pt: "Saliency maps, attention e mecanismos contrafactuais expõem decisões internas dos modelos", en: "Saliency maps, attention and counterfactual mechanisms expose internal model decisions"}
+          - {pt: "Apenas caixa-preta opaca", en: "Just opaque black box"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação experimental", en: "Just experimental variation"}
+        correctAnswer: {pt: "Saliency maps, attention e mecanismos contrafactuais expõem decisões internas dos modelos", en: "Saliency maps, attention and counterfactual mechanisms expose internal model decisions"}
+        rationale: {pt: "Quando modelos são interpretáveis, então confiança clínica cresce.", en: "When models are interpretable, clinical trust grows."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Validação experimental:", en: "Experimental validation:"}
+        choices:
+          - {pt: "Predições requerem teste em laboratório antes de aplicação clínica ou industrial", en: "Predictions require lab testing before clinical or industrial application"}
+          - {pt: "Apenas confiança cega", en: "Just blind trust"}
+          - {pt: "Apenas observação computacional", en: "Just computational observation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+        correctAnswer: {pt: "Predições requerem teste em laboratório antes de aplicação clínica ou industrial", en: "Predictions require lab testing before clinical or industrial application"}
+        rationale: {pt: "Quando validação fecha o loop, então AI permanece ancorada na realidade.", en: "When validation closes the loop, AI remains anchored to reality."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biossegurança e dual-use:", en: "Biosafety and dual-use:"}
+        choices:
+          - {pt: "Modelos biológicos podem ser mal usados — governança, screening e auditorias mitigam", en: "Biological models can be misused — governance, screening and audits mitigate"}
+          - {pt: "Apenas curiosidade ética", en: "Just ethical curiosity"}
+          - {pt: "Apenas regulamento genérico", en: "Just generic regulation"}
+          - {pt: "Apenas tradição administrativa", en: "Just administrative tradition"}
+        correctAnswer: {pt: "Modelos biológicos podem ser mal usados — governança, screening e auditorias mitigam", en: "Biological models can be misused — governance, screening and audits mitigate"}
+        rationale: {pt: "Quando salvaguardas existem, então benefícios superam riscos.", en: "When safeguards exist, benefits outweigh risks."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AI em vacinas:", en: "AI in vaccines:"}
+        choices:
+          - {pt: "Predição de epitopos imunogênicos, design de mRNA e modelagem de variantes acelera respostas", en: "Immunogenic epitope prediction, mRNA design and variant modeling accelerate responses"}
+          - {pt: "Apenas tradição imunológica", en: "Just immunological tradition"}
+          - {pt: "Apenas observação clínica", en: "Just clinical observation"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+        correctAnswer: {pt: "Predição de epitopos imunogênicos, design de mRNA e modelagem de variantes acelera respostas", en: "Immunogenic epitope prediction, mRNA design and variant modeling accelerate responses"}
+        rationale: {pt: "Quando AI desenha vacinas, então pandemias são respondidas em semanas.", en: "When AI designs vaccines, pandemics are answered in weeks."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Generative biology:", en: "Generative biology:"}
+        choices:
+          - {pt: "Foundation models criam proteínas, RNAs e células sintéticas com função programável", en: "Foundation models create proteins, RNAs and synthetic cells with programmable function"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas extração biológica", en: "Just biological extraction"}
+        correctAnswer: {pt: "Foundation models criam proteínas, RNAs e células sintéticas com função programável", en: "Foundation models create proteins, RNAs and synthetic cells with programmable function"}
+        rationale: {pt: "Quando geração é dirigida, então biologia se torna design space programável.", en: "When generation is directed, biology becomes programmable design space."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Climate-biology models:", en: "Climate-biology models:"}
+        choices:
+          - {pt: "Modelos preveem migração de espécies, surtos vetoriais e ciclos biogeoquímicos sob aquecimento", en: "Models predict species migration, vector outbreaks and biogeochemical cycles under warming"}
+          - {pt: "Apenas curiosidade ambiental", en: "Just environmental curiosity"}
+          - {pt: "Apenas observação meteorológica", en: "Just meteorological observation"}
+          - {pt: "Apenas tradição naturalista", en: "Just naturalist tradition"}
+        correctAnswer: {pt: "Modelos preveem migração de espécies, surtos vetoriais e ciclos biogeoquímicos sob aquecimento", en: "Models predict species migration, vector outbreaks and biogeochemical cycles under warming"}
+        rationale: {pt: "Quando ecologia é modelada, então adaptação humana é informada.", en: "When ecology is modeled, human adaptation is informed."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Robôs de laboratório (self-driving labs):", en: "Self-driving labs:"}
+        choices:
+          - {pt: "Robótica + ML executam ciclos design-build-test-learn autonomamente em escala", en: "Robotics + ML autonomously execute design-build-test-learn cycles at scale"}
+          - {pt: "Apenas trabalho manual", en: "Just manual work"}
+          - {pt: "Apenas tradição experimental", en: "Just experimental tradition"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+        correctAnswer: {pt: "Robótica + ML executam ciclos design-build-test-learn autonomamente em escala", en: "Robotics + ML autonomously execute design-build-test-learn cycles at scale"}
+        rationale: {pt: "Quando labs se autonomizam, então pesquisa avança em ordens de magnitude.", en: "When labs become autonomous, research advances by orders of magnitude."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AI em saúde global:", en: "AI in global health:"}
+        choices:
+          - {pt: "Diagnósticos por celular trazem rastreio em larga escala para regiões sub-atendidas", en: "Phone-based diagnostics bring large-scale screening to underserved regions"}
+          - {pt: "Apenas tradição local", en: "Just local tradition"}
+          - {pt: "Apenas observação clínica", en: "Just clinical observation"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+        correctAnswer: {pt: "Diagnósticos por celular trazem rastreio em larga escala para regiões sub-atendidas", en: "Phone-based diagnostics bring large-scale screening to underserved regions"}
+        rationale: {pt: "Quando AI é móvel, então saúde global ganha alcance equitativo.", en: "When AI is mobile, global health gains equitable reach."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em IA biológica:", en: "Next biological AI frontiers:"}
+        choices:
+          - {pt: "Multi-modal foundation models, simulação celular completa e closed-loop autônomo experimental", en: "Multi-modal foundation models, whole-cell simulation and autonomous closed-loop experimentation"}
+          - {pt: "Apenas modelos clássicos", en: "Just classical models"}
+          - {pt: "Apenas observação descritiva", en: "Just descriptive observation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+        correctAnswer: {pt: "Multi-modal foundation models, simulação celular completa e closed-loop autônomo experimental", en: "Multi-modal foundation models, whole-cell simulation and autonomous closed-loop experimentation"}
+        rationale: {pt: "Quando IA convergir com biologia, então pesquisa entra em era pós-Lebniziana.", en: "When AI converges with biology, research enters a post-Leibnizian era."}
+        objectives: [biology.ai_biology]
+        difficulty: 5
+target: 20
