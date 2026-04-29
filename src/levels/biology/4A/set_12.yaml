@@ -1,0 +1,244 @@
+title:
+  pt: "🌡️ Homeostase animal"
+  en: "🌡️ Animal homeostasis"
+level: '4A'
+subject: biology
+objectives: [biology.animal_physiology]
+difficulty: 4
+authorNotes: "Termorregulação, osmorregulação, glicemia — feedback negativo."
+example:
+  pt: "Ex.: temperatura sobe → suor evapora → resfria → volta ao set point. Feedback negativo clássico."
+  en: "Ex.: temperature rises → sweat evaporates → cools → returns to set point. Classic negative feedback."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Princípios", en: "Principles"}
+    description: {pt: "Como o corpo mantém estabilidade.", en: "How the body keeps stability."}
+    exercises:
+      - type: choice
+        question: {pt: "Homeostase é:", en: "Homeostasis is:"}
+        choices:
+          - {pt: "Manutenção de condições internas estáveis apesar de variações externas", en: "Maintenance of stable internal conditions despite external variations"}
+          - {pt: "Apenas crescimento", en: "Just growth"}
+          - {pt: "Apenas reprodução", en: "Just reproduction"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "Manutenção de condições internas estáveis apesar de variações externas", en: "Maintenance of stable internal conditions despite external variations"}
+        rationale: {pt: "Como enzimas operam em faixas estreitas, então o corpo regula temperatura, pH, glicose, água, etc.", en: "Because enzymes work in narrow ranges, the body regulates temperature, pH, glucose, water, etc."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Componentes de um sistema homeostático:", en: "Components of a homeostatic system:"}
+        choices:
+          - {pt: "Sensor + centro integrador + efetor + alça de feedback", en: "Sensor + integrating center + effector + feedback loop"}
+          - {pt: "Apenas sensor", en: "Just sensor"}
+          - {pt: "Apenas efetor", en: "Just effector"}
+          - {pt: "Sem componentes", en: "No components"}
+        correctAnswer: {pt: "Sensor + centro integrador + efetor + alça de feedback", en: "Sensor + integrating center + effector + feedback loop"}
+        rationale: {pt: "Como detectar, decidir e agir são etapas distintas, então o ciclo se fecha com retroação que ajusta o sistema.", en: "Because detect, decide, and act are distinct steps, the cycle closes with feedback that adjusts the system."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Feedback negativo:", en: "Negative feedback:"}
+        choices:
+          - {pt: "Resposta reduz/anula o estímulo (estabilização)", en: "Response reduces/cancels the stimulus (stabilization)"}
+          - {pt: "Sempre amplifica", en: "Always amplifies"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+          - {pt: "Apenas em humanos", en: "Only in humans"}
+        correctAnswer: {pt: "Resposta reduz/anula o estímulo (estabilização)", en: "Response reduces/cancels the stimulus (stabilization)"}
+        rationale: {pt: "Como retorna a variável ao valor de referência, então a maioria dos circuitos homeostáticos usa feedback negativo.", en: "Because it returns the variable to set point, most homeostatic circuits use negative feedback."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Feedback positivo:", en: "Positive feedback:"}
+        choices:
+          - {pt: "Amplifica o estímulo (ex.: parto, coagulação, potencial de ação)", en: "Amplifies the stimulus (e.g., labor, clotting, action potential)"}
+          - {pt: "Sempre estabiliza", en: "Always stabilizes"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "Amplifica o estímulo (ex.: parto, coagulação, potencial de ação)", en: "Amplifies the stimulus (e.g., labor, clotting, action potential)"}
+        rationale: {pt: "Como precisa parar antes de explodir, então geralmente é transitório e termina com fim do estímulo.", en: "Because it must stop before exploding, it's usually transient and ends when the stimulus does."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Termorregulação em humanos: hipotálamo é:", en: "Thermoregulation in humans: hypothalamus is:"}
+        choices:
+          - {pt: "Termostato corporal — ajusta vasodilatação, suor, tremor", en: "Body thermostat — adjusts vasodilation, sweat, shivering"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Não existe", en: "Doesn't exist"}
+          - {pt: "Apenas em frio", en: "Only in cold"}
+        correctAnswer: {pt: "Termostato corporal — ajusta vasodilatação, suor, tremor", en: "Body thermostat — adjusts vasodilation, sweat, shivering"}
+        rationale: {pt: "Como integra inputs sensoriais e dispara respostas, então mantém ~37 °C apesar de variações ambientais.", en: "Because it integrates sensory inputs and triggers responses, it maintains ~37 °C despite environmental swings."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Quando frio: corpo responde com:", en: "When cold: body responds with:"}
+        choices:
+          - {pt: "Vasoconstrição cutânea, tremor, piloereção, termogênese", en: "Skin vasoconstriction, shivering, piloerection, thermogenesis"}
+          - {pt: "Apenas suor", en: "Just sweat"}
+          - {pt: "Apenas dormir", en: "Just sleep"}
+          - {pt: "Sem resposta", en: "No response"}
+        correctAnswer: {pt: "Vasoconstrição cutânea, tremor, piloereção, termogênese", en: "Skin vasoconstriction, shivering, piloerection, thermogenesis"}
+        rationale: {pt: "Como precisa preservar calor, então reduz fluxo à pele e gera calor por contração muscular involuntária.", en: "Because it must preserve heat, blood flow to skin drops and shivering generates heat."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Quando calor: corpo responde com:", en: "When hot: body responds with:"}
+        choices:
+          - {pt: "Vasodilatação cutânea, sudorese, redução de atividade", en: "Skin vasodilation, sweating, reduced activity"}
+          - {pt: "Tremer", en: "Shivering"}
+          - {pt: "Aumentar atividade muscular", en: "Increasing muscle activity"}
+          - {pt: "Sem resposta", en: "No response"}
+        correctAnswer: {pt: "Vasodilatação cutânea, sudorese, redução de atividade", en: "Skin vasodilation, sweating, reduced activity"}
+        rationale: {pt: "Como suor evapora absorvendo calor, então a pele resfria — mecanismo central da termorregulação humana.", en: "Because sweat evaporates absorbing heat, the skin cools — central human thermoregulation mechanism."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Glicemia é regulada por:", en: "Glycemia is regulated by:"}
+        choices:
+          - {pt: "Insulina (baixa) e glucagon (sobe), do pâncreas", en: "Insulin (lowers) and glucagon (raises), from pancreas"}
+          - {pt: "Apenas hipotálamo", en: "Just hypothalamus"}
+          - {pt: "Apenas tireoide", en: "Just thyroid"}
+          - {pt: "Sem regulação", en: "No regulation"}
+        correctAnswer: {pt: "Insulina (baixa) e glucagon (sobe), do pâncreas", en: "Insulin (lowers) and glucagon (raises), from pancreas"}
+        rationale: {pt: "Como hormônios opostos respondem a níveis altos/baixos, então glicemia oscila em faixa estreita.", en: "Because opposite hormones respond to high/low levels, glycemia oscillates in a narrow range."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "pH sanguíneo normal:", en: "Normal blood pH:"}
+        choices:
+          - {pt: "~7,35-7,45 (ligeiramente básico)", en: "~7.35-7.45 (slightly basic)"}
+          - {pt: "1.0", en: "1.0"}
+          - {pt: "14", en: "14"}
+          - {pt: "0", en: "0"}
+        correctAnswer: {pt: "~7,35-7,45 (ligeiramente básico)", en: "~7.35-7.45 (slightly basic)"}
+        rationale: {pt: "Como enzimas exigem essa faixa, então buffers (bicarbonato), pulmões (CO₂) e rins (H⁺) ajustam continuamente.", en: "Because enzymes require this range, buffers (bicarbonate), lungs (CO₂), and kidneys (H⁺) continuously adjust."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Acidose metabólica é:", en: "Metabolic acidosis is:"}
+        choices:
+          - {pt: "Queda de pH sanguíneo (ex.: cetoacidose diabética, lactato em exercício)", en: "Drop in blood pH (e.g., diabetic ketoacidosis, exercise lactate)"}
+          - {pt: "Apenas pH alto", en: "Just high pH"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas em plantas", en: "Only in plants"}
+        correctAnswer: {pt: "Queda de pH sanguíneo (ex.: cetoacidose diabética, lactato em exercício)", en: "Drop in blood pH (e.g., diabetic ketoacidosis, exercise lactate)"}
+        rationale: {pt: "Como enzimas falham em pH muito baixo, então respostas compensatórias rápidas são necessárias — pulmão hiperventila.", en: "Because enzymes fail at very low pH, fast compensatory responses are needed — lungs hyperventilate."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+  - pageNumber: 2
+    title: {pt: "Osmorregulação e excreção", en: "Osmoregulation and excretion"}
+    description: {pt: "Manter equilíbrio de água e sais.", en: "Maintain water and salt balance."}
+    exercises:
+      - type: choice
+        question: {pt: "Osmorregulação é:", en: "Osmoregulation is:"}
+        choices:
+          - {pt: "Manutenção de água e solutos no corpo (rins + ADH + sede)", en: "Maintenance of body water and solutes (kidneys + ADH + thirst)"}
+          - {pt: "Apenas digestão", en: "Just digestion"}
+          - {pt: "Apenas respiração", en: "Just respiration"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Manutenção de água e solutos no corpo (rins + ADH + sede)", en: "Maintenance of body water and solutes (kidneys + ADH + thirst)"}
+        rationale: {pt: "Como células dependem de osmolaridade adequada, então múltiplos sistemas mantêm equilíbrio hídrico-iônico.", en: "Because cells depend on proper osmolarity, multiple systems maintain water-ion balance."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Quando desidratado:", en: "When dehydrated:"}
+        choices:
+          - {pt: "ADH ↑ → rins reabsorvem mais água; sede sobe", en: "ADH ↑ → kidneys reabsorb more water; thirst rises"}
+          - {pt: "ADH cai", en: "ADH drops"}
+          - {pt: "Sem resposta", en: "No response"}
+          - {pt: "Urinamos mais", en: "We urinate more"}
+        correctAnswer: {pt: "ADH ↑ → rins reabsorvem mais água; sede sobe", en: "ADH ↑ → kidneys reabsorb more water; thirst rises"}
+        rationale: {pt: "Como osmorreceptores detectam aumento de osmolaridade, então hipotálamo libera ADH e induz busca por água.", en: "Because osmoreceptors detect rising osmolarity, the hypothalamus releases ADH and induces water seeking."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Excretas nitrogenadas variam por organismo:", en: "Nitrogenous excretes vary by organism:"}
+        choices:
+          - {pt: "Amônia (peixes), ureia (mamíferos), ácido úrico (aves/répteis)", en: "Ammonia (fish), urea (mammals), uric acid (birds/reptiles)"}
+          - {pt: "Apenas amônia", en: "Just ammonia"}
+          - {pt: "Apenas ureia", en: "Just urea"}
+          - {pt: "Apenas ácido úrico", en: "Just uric acid"}
+        correctAnswer: {pt: "Amônia (peixes), ureia (mamíferos), ácido úrico (aves/répteis)", en: "Ammonia (fish), urea (mammals), uric acid (birds/reptiles)"}
+        rationale: {pt: "Como custo de água diferente para cada forma, então estilo de vida determina excreta — aves voam, leves; peixes têm água ilimitada.", en: "Because each form has different water cost, lifestyle determines excrete — birds fly light; fish have unlimited water."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Aldosterona regula:", en: "Aldosterone regulates:"}
+        choices:
+          - {pt: "Reabsorção de sódio nos rins (e secreção de potássio)", en: "Sodium reabsorption in kidneys (and potassium secretion)"}
+          - {pt: "Apenas glicose", en: "Just glucose"}
+          - {pt: "Apenas calor", en: "Just heat"}
+          - {pt: "Apenas DNA", en: "Just DNA"}
+        correctAnswer: {pt: "Reabsorção de sódio nos rins (e secreção de potássio)", en: "Sodium reabsorption in kidneys (and potassium secretion)"}
+        rationale: {pt: "Como Na⁺ atrai água, então aldosterona afeta volume/pressão sanguínea — alvo de medicamentos anti-hipertensivos.", en: "Because Na⁺ pulls water, aldosterone affects blood volume/pressure — target of antihypertensives."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Hipotermia é:", en: "Hypothermia is:"}
+        choices:
+          - {pt: "Temperatura corporal abaixo de ~35 °C — risco de morte", en: "Body temperature below ~35 °C — life-threatening"}
+          - {pt: "Apenas frio leve", en: "Just mild cold"}
+          - {pt: "Sempre tratável", en: "Always treatable"}
+          - {pt: "Sem efeito", en: "No effect"}
+        correctAnswer: {pt: "Temperatura corporal abaixo de ~35 °C — risco de morte", en: "Body temperature below ~35 °C — life-threatening"}
+        rationale: {pt: "Como enzimas lentificam dramaticamente, então funções vitais (cardíaca, neural) podem falhar.", en: "Because enzymes dramatically slow, vital functions (cardiac, neural) can fail."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Hipertermia/insolação:", en: "Hyperthermia/heat stroke:"}
+        choices:
+          - {pt: "Temperatura > 40 °C — desnatura proteínas, falha de órgãos", en: "Temperature > 40 °C — denatures proteins, organ failure"}
+          - {pt: "Apenas calor leve", en: "Just mild heat"}
+          - {pt: "Sem perigo", en: "No danger"}
+          - {pt: "Apenas em deserto", en: "Only in desert"}
+        correctAnswer: {pt: "Temperatura > 40 °C — desnatura proteínas, falha de órgãos", en: "Temperature > 40 °C — denatures proteins, organ failure"}
+        rationale: {pt: "Como enzimas perdem forma, então metabolismo desorganiza-se rapidamente — emergência médica.", en: "Because enzymes lose shape, metabolism rapidly disorganizes — medical emergency."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Adaptações de animais ao frio extremo:", en: "Adaptations to extreme cold:"}
+        choices:
+          - {pt: "Pele isolante, gordura subcutânea, contracorrente vascular, hibernação", en: "Insulating fur, subcutaneous fat, vascular countercurrent, hibernation"}
+          - {pt: "Apenas pelos", en: "Just hair"}
+          - {pt: "Apenas migrar", en: "Just migrate"}
+          - {pt: "Sem adaptação", en: "No adaptation"}
+        correctAnswer: {pt: "Pele isolante, gordura subcutânea, contracorrente vascular, hibernação", en: "Insulating fur, subcutaneous fat, vascular countercurrent, hibernation"}
+        rationale: {pt: "Como evolução otimizou múltiplos mecanismos, então animais polares sobrevivem em condições letais para a maioria.", en: "Because evolution optimized multiple mechanisms, polar animals survive in conditions lethal to most."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Adaptações ao calor extremo (deserto):", en: "Adaptations to extreme heat (desert):"}
+        choices:
+          - {pt: "Atividade noturna, urina concentrada, suor reduzido, perda de calor por radiação", en: "Nocturnal activity, concentrated urine, reduced sweat, heat loss by radiation"}
+          - {pt: "Apenas suar mais", en: "Just sweat more"}
+          - {pt: "Apenas correr", en: "Just run"}
+          - {pt: "Sem adaptação", en: "No adaptation"}
+        correctAnswer: {pt: "Atividade noturna, urina concentrada, suor reduzido, perda de calor por radiação", en: "Nocturnal activity, concentrated urine, reduced sweat, heat loss by radiation"}
+        rationale: {pt: "Como água é escassa, então economizá-la é prioridade — camelos podem perder >25% massa em água sem morrer.", en: "Because water is scarce, conserving it is priority — camels can lose >25% body mass as water without dying."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Estresse crônico afeta homeostase via:", en: "Chronic stress affects homeostasis via:"}
+        choices:
+          - {pt: "Cortisol elevado: imunidade ↓, glicose ↑, pressão ↑, sono ↓", en: "Elevated cortisol: immunity ↓, glucose ↑, BP ↑, sleep ↓"}
+          - {pt: "Apenas humor", en: "Just mood"}
+          - {pt: "Sem efeito", en: "No effect"}
+          - {pt: "Apenas curto prazo", en: "Just short-term"}
+        correctAnswer: {pt: "Cortisol elevado: imunidade ↓, glicose ↑, pressão ↑, sono ↓", en: "Elevated cortisol: immunity ↓, glucose ↑, BP ↑, sleep ↓"}
+        rationale: {pt: "Como cortisol mobiliza recursos para emergências, então estresse prolongado dispersa danos sistêmicos.", en: "Because cortisol mobilizes resources for emergencies, prolonged stress causes systemic damage."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+      - type: choice
+        question: {pt: "Resumo: homeostase:", en: "Summary: homeostasis:"}
+        choices:
+          - {pt: "Equilíbrio dinâmico mantido por sensores, integradores e efetores em alças de feedback", en: "Dynamic balance maintained by sensors, integrators, and effectors in feedback loops"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em jovens", en: "Only in young"}
+          - {pt: "Sem importância", en: "No importance"}
+        correctAnswer: {pt: "Equilíbrio dinâmico mantido por sensores, integradores e efetores em alças de feedback", en: "Dynamic balance maintained by sensors, integrators, and effectors in feedback loops"}
+        rationale: {pt: "Como sem ela enzimas falhariam, então homeostase é a essência da vida fisiológica — definir é viver.", en: "Because without it enzymes would fail, homeostasis is the essence of physiological life — to define is to live."}
+        objectives: [biology.animal_physiology]
+        difficulty: 4
+target: 20
