@@ -334,11 +334,24 @@ function checkCrossSetDuplicates(sets) {
       const title = typeof set.title === 'object' ? (set.title?.pt ?? set.title?.en ?? '') : String(set.title || '');
       return /revis(ão|ao|ão geral|ion|iew|ón)|review|mixed|cumulative/i.test(title);
     };
+    // Vocabulary-drill prompts ('Como se diz X em inglês?', 'Quantas
+    // sílabas tem X?', letter-recognition) are basic recall drills
+    // expected to appear across topic-mixed and topic-themed sets.
+    // Sentence-level translation/grammar prompts must be unique.
+    const isVocabDrill = (q) => /^como se diz [^?]+ em (?:inglês|português|espanhol|japonês)\?/i.test(q.trim())
+      || /^quantas sílabas (?:tem|há) /i.test(q.trim())
+      || /^qual é a primeira letra/i.test(q.trim())
+      || /^qual é o [a-z] (?:pequeno|grande|maiúsculo|minúsculo)/i.test(q.trim())
+      || /^[a-z](?:,\s*[a-z])* (?:e|ou) [a-z] são (?:vogais|consoantes)/i.test(q.trim())
+      || /^em (?:inglês|português|espanhol), a letra [a-z] é/i.test(q.trim())
+      || /^[A-Z](?:,\s*[A-Z])* são (?:vogais|consoantes)/.test(q.trim());
     const seen = new Map();
     for (const set of levelSets) {
       if (isRevisionSet(set)) continue;
       for (const page of set.pages || []) {
         for (const ex of page.exercises || []) {
+          const qRaw = typeof ex.question === 'object' ? (ex.question?.pt ?? ex.question?.en ?? '') : (ex.question || '');
+          if (isVocabDrill(qRaw)) continue;
           const q = normalizeAnswer(ex.question);
           if (q.length < 20) continue; // skip very short questions
           const prev = seen.get(q);
