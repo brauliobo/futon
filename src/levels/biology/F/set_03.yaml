@@ -1,0 +1,244 @@
+title:
+  pt: "🧬 Arquitetura 3D do genoma"
+  en: "🧬 3D genome architecture"
+level: 'F'
+subject: biology
+objectives: [biology.genome3d]
+difficulty: 5
+authorNotes: "Hi-C, TADs, loops, A/B compartments, cohesin, CTCF, single-cell Hi-C."
+example:
+  pt: "Ex.: cromatina 3D → CTCF + cohesina → loops → enhancer-promotor → expressão gênica."
+  en: "Ex.: 3D chromatin → CTCF + cohesin → loops → enhancer-promoter → gene expression."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Métodos e princípios", en: "Methods and principles"}
+    description: {pt: "Como organizamos o DNA em 3D.", en: "How we organize DNA in 3D."}
+    exercises:
+      - type: choice
+        question: {pt: "Hi-C:", en: "Hi-C:"}
+        choices:
+          - {pt: "Crosslink + ligação proximidade + sequenciamento mapeia contatos genômicos em escala", en: "Crosslink + proximity ligation + sequencing maps genomic contacts at scale"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Crosslink + ligação proximidade + sequenciamento mapeia contatos genômicos em escala", en: "Crosslink + proximity ligation + sequencing maps genomic contacts at scale"}
+        rationale: {pt: "Quando Hi-C funciona, então arquitetura nuclear é mapeada globalmente.", en: "When Hi-C works, nuclear architecture is globally mapped."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TADs (topologically associating domains):", en: "TADs (topologically associating domains):"}
+        choices:
+          - {pt: "Domínios de ~Mb com contatos internos altos delimitados por CTCF/cohesin", en: "~Mb domains with high internal contacts bordered by CTCF/cohesin"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Domínios de ~Mb com contatos internos altos delimitados por CTCF/cohesin", en: "~Mb domains with high internal contacts bordered by CTCF/cohesin"}
+        rationale: {pt: "Quando TADs existem, então enhancer-promotor é compartimentalizado.", en: "When TADs exist, enhancer-promoter is compartmentalized."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Loop extrusion model:", en: "Loop extrusion model:"}
+        choices:
+          - {pt: "Cohesin extruda loops até bloqueio em CTCF — modelo dinâmico de TADs e loops", en: "Cohesin extrudes loops until blocked by CTCF — dynamic TAD/loop model"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cohesin extruda loops até bloqueio em CTCF — modelo dinâmico de TADs e loops", en: "Cohesin extrudes loops until blocked by CTCF — dynamic TAD/loop model"}
+        rationale: {pt: "Quando extrusão age, então arquitetura é mantida dinamicamente.", en: "When extrusion acts, architecture is dynamically maintained."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "A/B compartments:", en: "A/B compartments:"}
+        choices:
+          - {pt: "A é eucromatina ativa central, B é heterocromatina periférica e silenciada", en: "A is active central euchromatin, B is peripheral silenced heterochromatin"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "A é eucromatina ativa central, B é heterocromatina periférica e silenciada", en: "A is active central euchromatin, B is peripheral silenced heterochromatin"}
+        rationale: {pt: "Quando compartimentos diferem, então atividade transcripcional é organizada.", en: "When compartments differ, transcriptional activity is organized."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single-cell Hi-C:", en: "Single-cell Hi-C:"}
+        choices:
+          - {pt: "Hi-C aplicado a células individuais revela variação estocástica de arquitetura genômica", en: "Hi-C applied to individual cells reveals stochastic genomic architecture variation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Hi-C aplicado a células individuais revela variação estocástica de arquitetura genômica", en: "Hi-C applied to individual cells reveals stochastic genomic architecture variation"}
+        rationale: {pt: "Quando arquitetura é por célula, então biologia ganha resolução.", en: "When architecture is per cell, biology gains resolution."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Micro-C:", en: "Micro-C:"}
+        choices:
+          - {pt: "MNase em vez de restrição cria mapa Hi-C com resolução de nucleossomo (~150 bp)", en: "MNase instead of restriction creates Hi-C map at nucleosome resolution (~150 bp)"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "MNase em vez de restrição cria mapa Hi-C com resolução de nucleossomo (~150 bp)", en: "MNase instead of restriction creates Hi-C map at nucleosome resolution (~150 bp)"}
+        rationale: {pt: "Quando resolução é alta, então enhancers-promoter contatos são precisos.", en: "When resolution is high, enhancer-promoter contacts are precise."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Capture-C / promoter capture:", en: "Capture-C / promoter capture:"}
+        choices:
+          - {pt: "Enriquecimento direcionado de promotores aumenta resolução em loci específicos", en: "Targeted promoter enrichment increases resolution at specific loci"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Enriquecimento direcionado de promotores aumenta resolução em loci específicos", en: "Targeted promoter enrichment increases resolution at specific loci"}
+        rationale: {pt: "Quando captura é específica, então loci de doença ganham detalhe.", en: "When capture is specific, disease loci gain detail."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DNA-FISH:", en: "DNA-FISH:"}
+        choices:
+          - {pt: "Sondas marcadas localizam regiões em núcleo intacto complementando dados Hi-C", en: "Labeled probes localize regions in intact nuclei complementing Hi-C data"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sondas marcadas localizam regiões em núcleo intacto complementando dados Hi-C", en: "Labeled probes localize regions in intact nuclei complementing Hi-C data"}
+        rationale: {pt: "Quando FISH valida, então mapas Hi-C ganham confirmação espacial.", en: "When FISH validates, Hi-C maps gain spatial confirmation."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lamin-associated domains (LADs):", en: "Lamin-associated domains (LADs):"}
+        choices:
+          - {pt: "Regiões em contato com lâmina nuclear são reprimidas e ricas em sequências repetitivas", en: "Regions contacting nuclear lamina are repressed and rich in repetitive sequences"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Regiões em contato com lâmina nuclear são reprimidas e ricas em sequências repetitivas", en: "Regions contacting nuclear lamina are repressed and rich in repetitive sequences"}
+        rationale: {pt: "Quando LADs são identificados, então repressão por arquitetura é caracterizada.", en: "When LADs are identified, architecture-mediated repression is characterized."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Phase separation em cromatina:", en: "Phase separation in chromatin:"}
+        choices:
+          - {pt: "HP1, MED1 condensam regiões formando domínios de heterocromatina e super-enhancers", en: "HP1, MED1 condense regions forming heterochromatin and super-enhancer domains"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "HP1, MED1 condensam regiões formando domínios de heterocromatina e super-enhancers", en: "HP1, MED1 condense regions forming heterochromatin and super-enhancer domains"}
+        rationale: {pt: "Quando condensados formam, então transcrição é amplificada localmente.", en: "When condensates form, transcription is locally amplified."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações", en: "Applications"}
+    description: {pt: "Arquitetura genômica em saúde e doença.", en: "Genomic architecture in health and disease."}
+    exercises:
+      - type: choice
+        question: {pt: "Câncer e ruptura de TADs:", en: "Cancer and TAD disruption:"}
+        choices:
+          - {pt: "Translocações em cromossoma rompem TADs ativando oncogenes via enhancers vizinhos", en: "Chromosomal translocations disrupt TADs activating oncogenes via neighboring enhancers"}
+          - {pt: "Apenas curiosidade oncológica", en: "Just oncological curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Translocações em cromossoma rompem TADs ativando oncogenes via enhancers vizinhos", en: "Chromosomal translocations disrupt TADs activating oncogenes via neighboring enhancers"}
+        rationale: {pt: "Quando TADs falham, então oncogenes ganham expressão aberrante.", en: "When TADs fail, oncogenes gain aberrant expression."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Doenças do desenvolvimento:", en: "Developmental disease:"}
+        choices:
+          - {pt: "Variantes estruturais alteram boundaries TAD causando malformações limb e craniofaciais", en: "Structural variants alter TAD boundaries causing limb and craniofacial malformations"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Variantes estruturais alteram boundaries TAD causando malformações limb e craniofaciais", en: "Structural variants alter TAD boundaries causing limb and craniofacial malformations"}
+        rationale: {pt: "Quando boundaries falham, então enhancer hijacking causa doença.", en: "When boundaries fail, enhancer hijacking causes disease."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inativação de X:", en: "X-inactivation:"}
+        choices:
+          - {pt: "Xist coats X-cromossomo recrutando complexos repressores e remodelando arquitetura", en: "Xist coats X chromosome recruiting repressor complexes and remodeling architecture"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Xist coats X-cromossomo recrutando complexos repressores e remodelando arquitetura", en: "Xist coats X chromosome recruiting repressor complexes and remodeling architecture"}
+        rationale: {pt: "Quando Xist atua, então dosagem de X é equalizada em fêmeas.", en: "When Xist acts, X dosage is equalized in females."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Senescência e arquitetura:", en: "Senescence and architecture:"}
+        choices:
+          - {pt: "SAHF (senescence-associated heterochromatin foci) reorganizam genoma em células senescentes", en: "SAHF (senescence-associated heterochromatin foci) reorganize genome in senescent cells"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "SAHF (senescence-associated heterochromatin foci) reorganizam genoma em células senescentes", en: "SAHF (senescence-associated heterochromatin foci) reorganize genome in senescent cells"}
+        rationale: {pt: "Quando arquitetura muda, então fenótipo senescente se estabiliza.", en: "When architecture changes, senescent phenotype stabilizes."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mitotic chromosome condensation:", en: "Mitotic chromosome condensation:"}
+        choices:
+          - {pt: "Condensina I e II reorganizam genoma em mitose para segregação fiel — sem TADs", en: "Condensin I and II reorganize genome in mitosis for faithful segregation — without TADs"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Condensina I e II reorganizam genoma em mitose para segregação fiel — sem TADs", en: "Condensin I and II reorganize genome in mitosis for faithful segregation — without TADs"}
+        rationale: {pt: "Quando mitose ocorre, então arquitetura interfase é desmontada.", en: "When mitosis occurs, interphase architecture is dismantled."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imprinting e arquitetura:", en: "Imprinting and architecture:"}
+        choices:
+          - {pt: "Loci como Igf2/H19 dependem de loops parental-específicos para expressão monoalélica", en: "Loci like Igf2/H19 depend on parent-specific loops for monoallelic expression"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Loci como Igf2/H19 dependem de loops parental-específicos para expressão monoalélica", en: "Loci like Igf2/H19 depend on parent-specific loops for monoallelic expression"}
+        rationale: {pt: "Quando arquitetura é diferencial, então imprinting é mantido.", en: "When architecture is differential, imprinting is maintained."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Chromatin compaction em vírus:", en: "Viral chromatin compaction:"}
+        choices:
+          - {pt: "EBV, HPV manipulam arquitetura host-genome para latência e expressão controlada", en: "EBV, HPV manipulate host-genome architecture for latency and controlled expression"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "EBV, HPV manipulam arquitetura host-genome para latência e expressão controlada", en: "EBV, HPV manipulate host-genome architecture for latency and controlled expression"}
+        rationale: {pt: "Quando vírus reorganiza, então persistência viral é favorecida.", en: "When virus reorganizes, viral persistence is favored."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Auxin-degron acute depletion:", en: "Auxin-degron acute depletion:"}
+        choices:
+          - {pt: "Degradação rápida de cohesin/CTCF revela função imediata de boundaries em vivo", en: "Rapid cohesin/CTCF degradation reveals immediate boundary function in vivo"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Degradação rápida de cohesin/CTCF revela função imediata de boundaries em vivo", en: "Rapid cohesin/CTCF degradation reveals immediate boundary function in vivo"}
+        rationale: {pt: "Quando função é testada agudamente, então arquitetura é mecanística.", en: "When function is acutely tested, architecture becomes mechanistic."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Live-cell imaging de loci:", en: "Live-cell loci imaging:"}
+        choices:
+          - {pt: "CRISPR-dCas9 com fluorescência rastreia movimento de loci em tempo real", en: "CRISPR-dCas9 with fluorescence tracks loci movement in real time"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "CRISPR-dCas9 com fluorescência rastreia movimento de loci em tempo real", en: "CRISPR-dCas9 with fluorescence tracks loci movement in real time"}
+        rationale: {pt: "Quando loci são vivos, então dinâmica genômica é vista diretamente.", en: "When loci are live, genomic dynamics is directly seen."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em arquitetura 3D:", en: "Next 3D architecture frontiers:"}
+        choices:
+          - {pt: "sc Hi-C em alta resolução, integração com transcriptoma e modelos polímeros preditivos", en: "High-resolution sc Hi-C, transcriptome integration and predictive polymer models"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "sc Hi-C em alta resolução, integração com transcriptoma e modelos polímeros preditivos", en: "High-resolution sc Hi-C, transcriptome integration and predictive polymer models"}
+        rationale: {pt: "Quando ferramentas convergem, então biologia 3D vira plataforma preditiva.", en: "When tools converge, 3D biology becomes predictive platform."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+target: 20
