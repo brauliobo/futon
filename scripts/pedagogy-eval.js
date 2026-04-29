@@ -344,6 +344,17 @@ function scoreDistractors(set) {
     if (trimmed.some(c => /\s/.test(c))) continue;
     const hasCompound = trimmed.some(c => /[-']/.test(c));
     if (hasCompound) continue;
+    // Formal/complete vs casual/sketch contrast — common in JP discourse
+    // markers and PT/ES register pairs. The wave-dash 〜 marks a slot in
+    // a formal template (e.g. "なぜなら～からである"); a comma signals a
+    // multi-clause connective. Either is intentional length variation.
+    if (trimmed.some(c => /[〜～,,、]/.test(c))) continue;
+    // Part-of-speech identification: when the question asks "which is the
+    // X" (numeral / advérbio / verbo / partícula / padrão / preposição /
+    // adjetivo / substantivo / artigo), distractors come from different
+    // grammatical classes by design — natural length variation isn't a cue.
+    const qText = String(typeof e.question === 'object' ? (e.question?.pt ?? e.question?.en ?? '') : (e.question ?? '')).toLowerCase();
+    if (/\b(?:numeral|advérbio|adverbio|adverb|verbo|verb|partícula|particle|padrão|patrón|pattern|preposição|preposición|preposition|adjetivo|substantivo|sustantivo|noun|artigo|articulo)\b/.test(qText)) continue;
     const lens = trimmed.map(s => s.length);
     const ratio = Math.max(...lens) / Math.max(1, Math.min(...lens));
     if (ratio <= 6) continue;
