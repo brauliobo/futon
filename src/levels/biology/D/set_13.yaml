@@ -1,0 +1,244 @@
+title:
+  pt: "🛡️ CAR-T avançado e terapias celulares"
+  en: "🛡️ Advanced CAR-T and cell therapies"
+level: 'D'
+subject: biology
+objectives: [biology.cart_adv]
+difficulty: 5
+authorNotes: "CAR-T próxima geração, allogênicos, sólidos, NK-CAR, TCR, CAR-Tregs."
+example:
+  pt: "Ex.: T cell autóloga → engenharia CAR → expansão → infusão → tumor reduzido."
+  en: "Ex.: autologous T cell → CAR engineering → expansion → infusion → tumor reduced."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas e mecanismos", en: "Platforms and mechanisms"}
+    description: {pt: "Como células engenheiradas matam.", en: "How engineered cells kill."}
+    exercises:
+      - type: choice
+        question: {pt: "CAR clássico:", en: "Classical CAR:"}
+        choices:
+          - {pt: "scFv + transmembrana + CD3ζ + co-estimulação (CD28/4-1BB) — receptor sintético", en: "scFv + transmembrane + CD3ζ + costimulation (CD28/4-1BB) — synthetic receptor"}
+          - {pt: "Apenas TCR clássico", en: "Just classical TCR"}
+          - {pt: "Apenas anticorpo simples", en: "Just simple antibody"}
+          - {pt: "Apenas vacina", en: "Just vaccine"}
+        correctAnswer: {pt: "scFv + transmembrana + CD3ζ + co-estimulação (CD28/4-1BB) — receptor sintético", en: "scFv + transmembrane + CD3ζ + costimulation (CD28/4-1BB) — synthetic receptor"}
+        rationale: {pt: "Quando CAR é montado, então T cells reconhecem alvo sem MHC.", en: "When CAR is assembled, T cells recognize target without MHC."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CD19 CAR-T:", en: "CD19 CAR-T:"}
+        choices:
+          - {pt: "Tisagenlecleucel e axicabtagene tratam leucemias e linfomas refratários com remissões duradouras", en: "Tisagenlecleucel and axicabtagene treat refractory leukemias and lymphomas with durable remissions"}
+          - {pt: "Apenas quimioterapia padrão", en: "Just standard chemo"}
+          - {pt: "Apenas radioterapia", en: "Just radiotherapy"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+        correctAnswer: {pt: "Tisagenlecleucel e axicabtagene tratam leucemias e linfomas refratários com remissões duradouras", en: "Tisagenlecleucel and axicabtagene treat refractory leukemias and lymphomas with durable remissions"}
+        rationale: {pt: "Quando CD19 é alvo, então leucemia B refratária responde.", en: "When CD19 is targeted, refractory B leukemia responds."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síndrome da liberação de citocinas (CRS):", en: "Cytokine release syndrome (CRS):"}
+        choices:
+          - {pt: "Hiperativação imune com IL-6 elevada — tratada com tocilizumab e suporte", en: "Immune hyperactivation with elevated IL-6 — treated with tocilizumab and support"}
+          - {pt: "Apenas alergia simples", en: "Just simple allergy"}
+          - {pt: "Apenas reação trivial", en: "Just trivial reaction"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+        correctAnswer: {pt: "Hiperativação imune com IL-6 elevada — tratada com tocilizumab e suporte", en: "Immune hyperactivation with elevated IL-6 — treated with tocilizumab and support"}
+        rationale: {pt: "Quando CRS é controlada, então CAR-T mantém eficácia com segurança.", en: "When CRS is controlled, CAR-T retains efficacy with safety."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ICANS:", en: "ICANS:"}
+        choices:
+          - {pt: "Neurotoxicidade pós-CAR-T com confusão e convulsões — manejo com corticoide e suporte", en: "Post-CAR-T neurotoxicity with confusion and seizures — managed with steroids and support"}
+          - {pt: "Apenas ansiedade pós-tratamento", en: "Just post-treatment anxiety"}
+          - {pt: "Apenas curiosidade neurológica", en: "Just neurological curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Neurotoxicidade pós-CAR-T com confusão e convulsões — manejo com corticoide e suporte", en: "Post-CAR-T neurotoxicity with confusion and seizures — managed with steroids and support"}
+        rationale: {pt: "Quando ICANS é tratada cedo, então sequelas são minimizadas.", en: "When ICANS is treated early, sequelae are minimized."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BCMA CAR-T:", en: "BCMA CAR-T:"}
+        choices:
+          - {pt: "Idecabtagene e ciltacabtagene tratam mieloma múltiplo refratário com altas respostas", en: "Idecabtagene and ciltacabtagene treat refractory multiple myeloma with high response rates"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas vitamina", en: "Just vitamin"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Idecabtagene e ciltacabtagene tratam mieloma múltiplo refratário com altas respostas", en: "Idecabtagene and ciltacabtagene treat refractory multiple myeloma with high response rates"}
+        rationale: {pt: "Quando BCMA é alvo, então plasmócitos malignos são eliminados.", en: "When BCMA is targeted, malignant plasma cells are eliminated."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CAR-T allogênico:", en: "Allogeneic CAR-T:"}
+        choices:
+          - {pt: "Células de doador editadas (TRAC, B2M) reduzem rejeição e GvHD — produto pronto", en: "Donor cells edited (TRAC, B2M) reduce rejection and GvHD — off-the-shelf product"}
+          - {pt: "Apenas autólogo simples", en: "Just simple autologous"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+        correctAnswer: {pt: "Células de doador editadas (TRAC, B2M) reduzem rejeição e GvHD — produto pronto", en: "Donor cells edited (TRAC, B2M) reduce rejection and GvHD — off-the-shelf product"}
+        rationale: {pt: "Quando allogênico funciona, então custo e tempo de tratamento caem.", en: "When allogeneic works, cost and treatment time fall."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Logic-gated CAR:", en: "Logic-gated CAR:"}
+        choices:
+          - {pt: "AND/NOT entre alvos aumenta especificidade reduzindo on-target off-tumor toxicidade", en: "AND/NOT among targets boosts specificity reducing on-target off-tumor toxicity"}
+          - {pt: "Apenas CAR clássico", en: "Just classical CAR"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "AND/NOT entre alvos aumenta especificidade reduzindo on-target off-tumor toxicidade", en: "AND/NOT among targets boosts specificity reducing on-target off-tumor toxicity"}
+        rationale: {pt: "Quando lógica filtra, então tecidos saudáveis são poupados.", en: "When logic filters, healthy tissues are spared."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TCR-T:", en: "TCR-T:"}
+        choices:
+          - {pt: "Receptores T contra peptídeos intracelulares apresentados por MHC — alvo de neoantígenos", en: "T receptors against intracellular peptides presented by MHC — neoantigen target"}
+          - {pt: "Apenas anticorpo simples", en: "Just simple antibody"}
+          - {pt: "Apenas vacina genérica", en: "Just generic vaccine"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+        correctAnswer: {pt: "Receptores T contra peptídeos intracelulares apresentados por MHC — alvo de neoantígenos", en: "T receptors against intracellular peptides presented by MHC — neoantigen target"}
+        rationale: {pt: "Quando TCR-T atua, então alvos intracelulares ficam acessíveis.", en: "When TCR-T acts, intracellular targets become accessible."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CAR-NK:", en: "CAR-NK:"}
+        choices:
+          - {pt: "Células NK engenheiradas têm menor risco de GvHD e rápido turnover — alternativa allogênica", en: "Engineered NK cells have lower GvHD risk and rapid turnover — allogeneic alternative"}
+          - {pt: "Apenas curiosidade celular", en: "Just cellular curiosity"}
+          - {pt: "Apenas extensão técnica", en: "Just technical extension"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Células NK engenheiradas têm menor risco de GvHD e rápido turnover — alternativa allogênica", en: "Engineered NK cells have lower GvHD risk and rapid turnover — allogeneic alternative"}
+        rationale: {pt: "Quando NK é usada, então toxicidade pode ser reduzida.", en: "When NK is used, toxicity can be reduced."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Switches de segurança:", en: "Safety switches:"}
+        choices:
+          - {pt: "Caspase-9 induzível ou tags eliminam células CAR-T se toxicidade emergir", en: "Inducible caspase-9 or tags eliminate CAR-T cells if toxicity emerges"}
+          - {pt: "Apenas confiança cega", en: "Just blind trust"}
+          - {pt: "Apenas observação passiva", en: "Just passive observation"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+        correctAnswer: {pt: "Caspase-9 induzível ou tags eliminam células CAR-T se toxicidade emergir", en: "Inducible caspase-9 or tags eliminate CAR-T cells if toxicity emerges"}
+        rationale: {pt: "Quando switch existe, então segurança é controlável reativamente.", en: "When switch exists, safety is reactively controllable."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Tumores sólidos e além", en: "Solid tumors and beyond"}
+    description: {pt: "Próximas fronteiras de terapia celular.", en: "Next cell therapy frontiers."}
+    exercises:
+      - type: choice
+        question: {pt: "Desafio em sólidos:", en: "Solid tumor challenge:"}
+        choices:
+          - {pt: "Heterogeneidade, microambiente imunossupressor e barreiras de tráfego limitam CAR-T", en: "Heterogeneity, immunosuppressive microenvironment and trafficking barriers limit CAR-T"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas variação técnica", en: "Just technical variation"}
+          - {pt: "Apenas detalhe trivial", en: "Just trivial detail"}
+        correctAnswer: {pt: "Heterogeneidade, microambiente imunossupressor e barreiras de tráfego limitam CAR-T", en: "Heterogeneity, immunosuppressive microenvironment and trafficking barriers limit CAR-T"}
+        rationale: {pt: "Quando barreiras existem, então engenharia adicional é necessária.", en: "When barriers exist, additional engineering is needed."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Armored CAR:", en: "Armored CAR:"}
+        choices:
+          - {pt: "CAR-T com IL-12 ou IL-18 secretados resistem ao TME e amplificam resposta", en: "CAR-T secreting IL-12 or IL-18 resist TME and amplify response"}
+          - {pt: "Apenas dose maior", en: "Just larger dose"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação experimental", en: "Just experimental variation"}
+        correctAnswer: {pt: "CAR-T com IL-12 ou IL-18 secretados resistem ao TME e amplificam resposta", en: "CAR-T secreting IL-12 or IL-18 resist TME and amplify response"}
+        rationale: {pt: "Quando CAR carrega armas, então tumor resistente é vulnerável.", en: "When CAR carries arms, resistant tumor is vulnerable."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GD2 em neuroblastoma:", en: "GD2 in neuroblastoma:"}
+        choices:
+          - {pt: "CAR contra GD2 demonstra eficácia em pediatria com regimes intensos de modulação", en: "Anti-GD2 CAR shows pediatric efficacy with intensive modulation regimens"}
+          - {pt: "Apenas vacina", en: "Just vaccine"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas tradição cirúrgica", en: "Just surgical tradition"}
+        correctAnswer: {pt: "CAR contra GD2 demonstra eficácia em pediatria com regimes intensos de modulação", en: "Anti-GD2 CAR shows pediatric efficacy with intensive modulation regimens"}
+        rationale: {pt: "Quando alvo é específico, então tumores pediátricos respondem.", en: "When target is specific, pediatric tumors respond."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CAR-T em autoimunidade:", en: "CAR-T in autoimmunity:"}
+        choices:
+          - {pt: "Anti-CD19 induz remissão profunda em lúpus refratário com depleção de B autorreativos", en: "Anti-CD19 induces deep remission in refractory lupus by depleting autoreactive B cells"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas tradição reumatológica", en: "Just rheumatological tradition"}
+        correctAnswer: {pt: "Anti-CD19 induz remissão profunda em lúpus refratário com depleção de B autorreativos", en: "Anti-CD19 induces deep remission in refractory lupus by depleting autoreactive B cells"}
+        rationale: {pt: "Quando reset imune ocorre, então autoimunidade pode ser revertida.", en: "When immune reset occurs, autoimmunity can be reversed."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CAR-Tregs:", en: "CAR-Tregs:"}
+        choices:
+          - {pt: "Tregs engenheiradas suprimem inflamação local em transplantes e doenças autoimunes", en: "Engineered Tregs suppress local inflammation in transplants and autoimmune disease"}
+          - {pt: "Apenas imunossupressor genérico", en: "Just generic immunosuppressant"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas tradição", en: "Just tradition"}
+        correctAnswer: {pt: "Tregs engenheiradas suprimem inflamação local em transplantes e doenças autoimunes", en: "Engineered Tregs suppress local inflammation in transplants and autoimmune disease"}
+        rationale: {pt: "Quando Tregs atuam localmente, então imunossupressão sistêmica é evitada.", en: "When Tregs act locally, systemic immunosuppression is avoided."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "In-vivo CAR:", en: "In-vivo CAR:"}
+        choices:
+          - {pt: "Lipossomas com mRNA codificando CAR transformam T cells diretamente no paciente", en: "mRNA-CAR lipid nanoparticles transform T cells directly inside the patient"}
+          - {pt: "Apenas vacina padrão", en: "Just standard vaccine"}
+          - {pt: "Apenas tradição infusional", en: "Just infusion tradition"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+        correctAnswer: {pt: "Lipossomas com mRNA codificando CAR transformam T cells diretamente no paciente", en: "mRNA-CAR lipid nanoparticles transform T cells directly inside the patient"}
+        rationale: {pt: "Quando in vivo funciona, então fabrico ex vivo é dispensado.", en: "When in vivo works, ex vivo manufacturing is bypassed."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TIL terapia:", en: "TIL therapy:"}
+        choices:
+          - {pt: "Linfócitos infiltrantes de tumor expandidos ex vivo — lifileucel aprovado para melanoma", en: "Tumor-infiltrating lymphocytes expanded ex vivo — lifileucel approved for melanoma"}
+          - {pt: "Apenas quimioterapia padrão", en: "Just standard chemo"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas tradição cirúrgica", en: "Just surgical tradition"}
+        correctAnswer: {pt: "Linfócitos infiltrantes de tumor expandidos ex vivo — lifileucel aprovado para melanoma", en: "Tumor-infiltrating lymphocytes expanded ex vivo — lifileucel approved for melanoma"}
+        rationale: {pt: "Quando TILs são expandidos, então repertório natural antitumoral é amplificado.", en: "When TILs are expanded, natural antitumor repertoire is amplified."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacinas de neoantígeno:", en: "Neoantigen vaccines:"}
+        choices:
+          - {pt: "mRNA personalizado contra mutações tumorais sinaliza T cells expandidos efetivos", en: "Personalized mRNA against tumor mutations cues effective expanded T cells"}
+          - {pt: "Apenas vacina genérica", en: "Just generic vaccine"}
+          - {pt: "Apenas suplemento", en: "Just supplement"}
+          - {pt: "Apenas tradição imunológica", en: "Just immunological tradition"}
+        correctAnswer: {pt: "mRNA personalizado contra mutações tumorais sinaliza T cells expandidos efetivos", en: "Personalized mRNA against tumor mutations cues effective expanded T cells"}
+        rationale: {pt: "Quando neoantígenos são alvos, então tumor é atacado especificamente.", en: "When neoantigens are targeted, tumor is specifically attacked."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Custo e acesso:", en: "Cost and access:"}
+        choices:
+          - {pt: "Terapias celulares custam centenas de milhares — abordagens automatizadas e allogênicas reduzem", en: "Cell therapies cost hundreds of thousands — automation and allogeneic approaches reduce cost"}
+          - {pt: "Apenas detalhe econômico", en: "Just economic detail"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Terapias celulares custam centenas de milhares — abordagens automatizadas e allogênicas reduzem", en: "Cell therapies cost hundreds of thousands — automation and allogeneic approaches reduce cost"}
+        rationale: {pt: "Quando manufatura escala, então acesso amplia em sistemas de saúde.", en: "When manufacturing scales, access broadens in health systems."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em terapia celular:", en: "Next cell therapy frontiers:"}
+        choices:
+          - {pt: "CAR-T in vivo, alvos múltiplos lógicos e plataformas allogênicas universais", en: "In vivo CAR-T, multi-target logic and universal allogeneic platforms"}
+          - {pt: "Apenas tradição autóloga", en: "Just autologous tradition"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+        correctAnswer: {pt: "CAR-T in vivo, alvos múltiplos lógicos e plataformas allogênicas universais", en: "In vivo CAR-T, multi-target logic and universal allogeneic platforms"}
+        rationale: {pt: "Quando convergência ocorre, então terapia celular vira tratamento amplo.", en: "When convergence happens, cell therapy becomes broad treatment."}
+        objectives: [biology.cart_adv]
+        difficulty: 5
+target: 20
