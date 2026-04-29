@@ -1,0 +1,244 @@
+title:
+  pt: "🦠 Doenças emergentes e preparação para pandemias"
+  en: "🦠 Emerging diseases and pandemic preparedness"
+level: '1A'
+subject: biology
+objectives: [biology.pandemic_prep]
+difficulty: 5
+authorNotes: "Zoonoses, spillover, vigilância, vacinas rápidas, genômica viral, One Health."
+example:
+  pt: "Ex.: vírus em morcego → spillover via animal intermediário → infecção humana → epidemia → pandemia."
+  en: "Ex.: virus in bat → spillover via intermediate host → human infection → epidemic → pandemic."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Origem e disseminação de pandemias", en: "Origin and spread of pandemics"}
+    description: {pt: "Como surgem doenças globais.", en: "How global diseases emerge."}
+    exercises:
+      - type: choice
+        question: {pt: "Zoonose é doença que:", en: "Zoonosis is a disease that:"}
+        choices:
+          - {pt: "Tem reservatório animal e pode infectar humanos", en: "Has animal reservoir and can infect humans"}
+          - {pt: "Apenas humana exclusiva", en: "Just human-only"}
+          - {pt: "Apenas em laboratório", en: "Just in laboratory"}
+          - {pt: "Apenas hereditária", en: "Just hereditary"}
+        correctAnswer: {pt: "Tem reservatório animal e pode infectar humanos", en: "Has animal reservoir and can infect humans"}
+        rationale: {pt: "Como ~75% das doenças emergentes são zoonóticas, então vigilância animal é essencial à saúde humana.", en: "Because ~75% of emerging diseases are zoonotic, animal surveillance is essential for human health."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spillover refere-se a:", en: "Spillover refers to:"}
+        choices:
+          - {pt: "Salto de patógeno de um hospedeiro reservatório para humanos", en: "Pathogen jump from reservoir host to humans"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas vazamento de líquido", en: "Just liquid spill"}
+          - {pt: "Apenas erro de digitação", en: "Just typing error"}
+        correctAnswer: {pt: "Salto de patógeno de um hospedeiro reservatório para humanos", en: "Pathogen jump from reservoir host to humans"}
+        rationale: {pt: "Quando contato aumenta (desmatamento, mercados úmidos), então probabilidade de spillover sobe.", en: "When contact increases (deforestation, wet markets), spillover probability rises."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "R₀ (número básico de reprodução) representa:", en: "R₀ (basic reproduction number) represents:"}
+        choices:
+          - {pt: "Casos secundários médios gerados por um caso em população suscetível", en: "Average secondary cases from one case in susceptible population"}
+          - {pt: "Apenas idade do paciente", en: "Just patient age"}
+          - {pt: "Apenas custo do tratamento", en: "Just treatment cost"}
+          - {pt: "Apenas latitude geográfica", en: "Just geographic latitude"}
+        correctAnswer: {pt: "Casos secundários médios gerados por um caso em população suscetível", en: "Average secondary cases from one case in susceptible population"}
+        rationale: {pt: "Quando R₀ > 1, então surto cresce; medidas de controle visam reduzi-lo abaixo de 1.", en: "When R₀ > 1, outbreak grows; control measures aim to push it below 1."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imunidade de rebanho ocorre quando:", en: "Herd immunity occurs when:"}
+        choices:
+          - {pt: "Fração suficiente da população é imune, interrompendo transmissão sustentada", en: "Sufficient population fraction is immune, halting sustained transmission"}
+          - {pt: "Apenas um indivíduo está imune", en: "Just one person is immune"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em zoológicos", en: "Just in zoos"}
+        correctAnswer: {pt: "Fração suficiente da população é imune, interrompendo transmissão sustentada", en: "Sufficient population fraction is immune, halting sustained transmission"}
+        rationale: {pt: "Como cadeias de transmissão quebram, então até suscetíveis ficam protegidos indiretamente.", en: "Because transmission chains break, even susceptibles are indirectly protected."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Influenza pandêmica decorre de:", en: "Pandemic influenza arises from:"}
+        choices:
+          - {pt: "Reagrupamento ('shift') antigênico entre cepas humanas e animais", en: "Antigenic shift (reassortment) between human and animal strains"}
+          - {pt: "Apenas mutação pontual lenta", en: "Just slow point mutation"}
+          - {pt: "Apenas dieta", en: "Just diet"}
+          - {pt: "Apenas estresse", en: "Just stress"}
+        correctAnswer: {pt: "Reagrupamento ('shift') antigênico entre cepas humanas e animais", en: "Antigenic shift (reassortment) between human and animal strains"}
+        rationale: {pt: "Quando segmentos genômicos misturam, então surgem variantes para as quais imunidade prévia falha.", en: "When genomic segments mix, variants emerge for which prior immunity fails."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Coronavírus emergentes recentes (SARS, MERS, SARS-CoV-2):", en: "Recent emerging coronaviruses (SARS, MERS, SARS-CoV-2):"}
+        choices:
+          - {pt: "Têm origem em morcegos com possível hospedeiro intermediário", en: "Originate in bats with possible intermediate host"}
+          - {pt: "Apenas em laboratório fechado", en: "Just in closed lab"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em peixes", en: "Just in fish"}
+        correctAnswer: {pt: "Têm origem em morcegos com possível hospedeiro intermediário", en: "Originate in bats with possible intermediate host"}
+        rationale: {pt: "Como morcegos abrigam diversidade viral alta, então monitorá-los é peça-chave da prevenção.", en: "Because bats harbor high viral diversity, monitoring them is key to prevention."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "One Health (Saúde Única) integra:", en: "One Health integrates:"}
+        choices:
+          - {pt: "Saúde humana, animal e ambiental como sistema único interdependente", en: "Human, animal and environmental health as single interdependent system"}
+          - {pt: "Apenas medicina humana", en: "Just human medicine"}
+          - {pt: "Apenas veterinária", en: "Just veterinary"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Saúde humana, animal e ambiental como sistema único interdependente", en: "Human, animal and environmental health as single interdependent system"}
+        rationale: {pt: "Quando ecossistemas saudáveis são protegidos, então risco de spillover diminui.", en: "When healthy ecosystems are protected, spillover risk decreases."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vigilância genômica de patógenos permite:", en: "Pathogen genomic surveillance allows:"}
+        choices:
+          - {pt: "Rastrear variantes em tempo real e orientar resposta de saúde pública", en: "Track variants in real time and guide public health response"}
+          - {pt: "Apenas estatística retrospectiva", en: "Just retrospective statistics"}
+          - {pt: "Apenas observação visual", en: "Just visual observation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Rastrear variantes em tempo real e orientar resposta de saúde pública", en: "Track variants in real time and guide public health response"}
+        rationale: {pt: "Quando sequenciamos amostras rapidamente, então mutações de preocupação são detectadas precocemente.", en: "When we sequence samples rapidly, mutations of concern are detected early."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vigilância de esgoto (wastewater) detecta:", en: "Wastewater surveillance detects:"}
+        choices:
+          - {pt: "Circulação comunitária de patógenos antes de surtos clínicos visíveis", en: "Community pathogen circulation before visible clinical outbreaks"}
+          - {pt: "Apenas qualidade da água potável", en: "Just drinking water quality"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas chuva", en: "Just rainfall"}
+        correctAnswer: {pt: "Circulação comunitária de patógenos antes de surtos clínicos visíveis", en: "Community pathogen circulation before visible clinical outbreaks"}
+        rationale: {pt: "Como pessoas excretam vírus antes do diagnóstico, então esgoto sinaliza tendência epidêmica precocemente.", en: "Because people shed viruses before diagnosis, wastewater signals epidemic trend early."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Variantes de preocupação (VOCs) são definidas por:", en: "Variants of concern (VOCs) are defined by:"}
+        choices:
+          - {pt: "Maior transmissibilidade, virulência ou escape imune comprovados", en: "Demonstrated higher transmissibility, virulence or immune escape"}
+          - {pt: "Apenas mutação aleatória", en: "Just random mutation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas mídia", en: "Just media"}
+        correctAnswer: {pt: "Maior transmissibilidade, virulência ou escape imune comprovados", en: "Demonstrated higher transmissibility, virulence or immune escape"}
+        rationale: {pt: "Como propriedades epidemiológicas mudam, então VOCs disparam reavaliação de medidas e vacinas.", en: "Because epidemiological properties shift, VOCs trigger reassessment of measures and vaccines."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Vacinas e respostas rápidas", en: "Vaccines and rapid responses"}
+    description: {pt: "Como nos defendemos em escala global.", en: "How we defend globally."}
+    exercises:
+      - type: choice
+        question: {pt: "Vacinas de mRNA podem ser desenvolvidas em meses porque:", en: "mRNA vaccines can be developed in months because:"}
+        choices:
+          - {pt: "Plataforma é programável — basta trocar sequência codificadora do antígeno", en: "Platform is programmable — just swap antigen-coding sequence"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas usam vírus vivo atenuado clássico", en: "Just use classic live-attenuated virus"}
+          - {pt: "Apenas tradição farmacêutica", en: "Just pharmaceutical tradition"}
+        correctAnswer: {pt: "Plataforma é programável — basta trocar sequência codificadora do antígeno", en: "Platform is programmable — just swap antigen-coding sequence"}
+        rationale: {pt: "Quando estrutura LNP-mRNA é fixa, então adaptação à nova ameaça vira engenharia rápida.", en: "When LNP-mRNA structure is fixed, adaptation to new threat becomes rapid engineering."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Plataformas vacinais incluem:", en: "Vaccine platforms include:"}
+        choices:
+          - {pt: "mRNA, vetor viral, subunidade proteica, inativada e atenuada", en: "mRNA, viral vector, protein subunit, inactivated and attenuated"}
+          - {pt: "Apenas mRNA", en: "Just mRNA"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas atenuada", en: "Just attenuated"}
+        correctAnswer: {pt: "mRNA, vetor viral, subunidade proteica, inativada e atenuada", en: "mRNA, viral vector, protein subunit, inactivated and attenuated"}
+        rationale: {pt: "Como plataformas têm forças complementares, então portfólio diverso aumenta resiliência global.", en: "Because platforms have complementary strengths, diverse portfolio boosts global resilience."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "100 Days Mission da CEPI propõe:", en: "CEPI's 100 Days Mission proposes:"}
+        choices:
+          - {pt: "Ter vacina pronta em 100 dias após identificação de patógeno X", en: "Have a vaccine ready within 100 days of identifying pathogen X"}
+          - {pt: "Apenas declaração estética", en: "Just aesthetic declaration"}
+          - {pt: "Apenas reduzir orçamento", en: "Just cut budget"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Ter vacina pronta em 100 dias após identificação de patógeno X", en: "Have a vaccine ready within 100 days of identifying pathogen X"}
+        rationale: {pt: "Quando preparação é prévia (protótipos, ensaios adaptáveis), então tempo até dose despenca.", en: "When preparation is prior (prototypes, adaptive trials), time-to-dose plummets."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacina universal contra influenza visa:", en: "Universal flu vaccine aims for:"}
+        choices:
+          - {pt: "Proteção ampla contra múltiplas cepas via epítopos conservados", en: "Broad protection against multiple strains via conserved epitopes"}
+          - {pt: "Apenas uma cepa por temporada", en: "Just one strain per season"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+        correctAnswer: {pt: "Proteção ampla contra múltiplas cepas via epítopos conservados", en: "Broad protection against multiple strains via conserved epitopes"}
+        rationale: {pt: "Quando atacamos regiões pouco mutáveis, então variabilidade sazonal deixa de exigir reformulação anual.", en: "When we target low-mutability regions, seasonal variability no longer requires yearly reformulation."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelagem epidemiológica SIR descreve:", en: "Epidemiological SIR modeling describes:"}
+        choices:
+          - {pt: "Dinâmica entre Suscetíveis, Infectados e Removidos ao longo do tempo", en: "Dynamics among Susceptible, Infected and Removed over time"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas matemática pura sem biologia", en: "Just pure math without biology"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Dinâmica entre Suscetíveis, Infectados e Removidos ao longo do tempo", en: "Dynamics among Susceptible, Infected and Removed over time"}
+        rationale: {pt: "Quando ajustamos parâmetros a dados, então projeções guiam decisões de saúde pública.", en: "When we fit parameters to data, projections guide public health decisions."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Equidade vacinal global é desafio porque:", en: "Global vaccine equity is a challenge because:"}
+        choices:
+          - {pt: "Países de baixa renda enfrentam acesso desigual a doses e tecnologia", en: "Low-income countries face unequal access to doses and technology"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas turismo", en: "Just tourism"}
+        correctAnswer: {pt: "Países de baixa renda enfrentam acesso desigual a doses e tecnologia", en: "Low-income countries face unequal access to doses and technology"}
+        rationale: {pt: "Como vírus circulam globalmente, então proteger todos é estratégia de saúde global.", en: "Because viruses circulate globally, protecting everyone is a global health strategy."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ensaios clínicos adaptativos permitem:", en: "Adaptive clinical trials allow:"}
+        choices:
+          - {pt: "Ajustar braços, doses ou alocação durante o estudo conforme evidência", en: "Adjust arms, doses or allocation during the trial as evidence emerges"}
+          - {pt: "Apenas plano fixo até o fim", en: "Just fixed plan to the end"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas observação retrospectiva", en: "Just retrospective observation"}
+        correctAnswer: {pt: "Ajustar braços, doses ou alocação durante o estudo conforme evidência", en: "Adjust arms, doses or allocation during the trial as evidence emerges"}
+        rationale: {pt: "Quando aprendemos cedo, então alocação migra para braços promissores e poupa pacientes.", en: "When we learn early, allocation moves to promising arms and saves patients."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anticorpos monoclonais terapêuticos contra patógenos:", en: "Therapeutic monoclonal antibodies against pathogens:"}
+        choices:
+          - {pt: "Neutralizam direto e podem ser usados profilática ou terapeuticamente", en: "Directly neutralize and can be used prophylactically or therapeutically"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Neutralizam direto e podem ser usados profilática ou terapeuticamente", en: "Directly neutralize and can be used prophylactically or therapeutically"}
+        rationale: {pt: "Como atuam imediatamente, então preenchem lacuna até vacina induzir imunidade ativa.", en: "Because they act immediately, they fill the gap until vaccine elicits active immunity."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Comunicação de risco em pandemias deve ser:", en: "Risk communication in pandemics must be:"}
+        choices:
+          - {pt: "Clara, transparente, atualizada com a ciência e adaptada às audiências", en: "Clear, transparent, updated with science and tailored to audiences"}
+          - {pt: "Apenas técnica jargonizada", en: "Just jargon-heavy technical"}
+          - {pt: "Apenas memes", en: "Just memes"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Clara, transparente, atualizada com a ciência e adaptada às audiências", en: "Clear, transparent, updated with science and tailored to audiences"}
+        rationale: {pt: "Quando confiança é construída, então adesão a medidas e vacinação aumenta.", en: "When trust is built, adherence to measures and vaccination rises."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Disease X é nome para:", en: "Disease X stands for:"}
+        choices:
+          - {pt: "Patógeno desconhecido com potencial pandêmico — placeholder de preparação", en: "Unknown pathogen with pandemic potential — preparedness placeholder"}
+          - {pt: "Apenas mito", en: "Just myth"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+        correctAnswer: {pt: "Patógeno desconhecido com potencial pandêmico — placeholder de preparação", en: "Unknown pathogen with pandemic potential — preparedness placeholder"}
+        rationale: {pt: "Quando preparamos plataformas para o desconhecido, então surpresa custa menos vidas.", en: "When we prepare platforms for the unknown, surprise costs fewer lives."}
+        objectives: [biology.pandemic_prep]
+        difficulty: 5
+target: 20
