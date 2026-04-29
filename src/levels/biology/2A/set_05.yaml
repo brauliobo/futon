@@ -1,0 +1,244 @@
+title:
+  pt: "🎯 Imunoterapia oncológica"
+  en: "🎯 Cancer immunotherapy"
+level: '2A'
+subject: biology
+objectives: [biology.cancer_immunotherapy]
+difficulty: 5
+authorNotes: "Inibidores de checkpoint, CAR-T, vacinas de tumor, oncolíticos, imunidade contra câncer."
+example:
+  pt: "Ex.: tumor escapa imunidade via PD-L1 → anti-PD-1 bloqueia → linfócito T reconhece → tumor regride."
+  en: "Ex.: tumor escapes immunity via PD-L1 → anti-PD-1 blocks → T cell recognizes → tumor regresses."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Imunidade contra câncer e checkpoint", en: "Cancer immunity and checkpoints"}
+    description: {pt: "Como o corpo combate tumores e como tumores escapam.", en: "How the body fights tumors and how tumors escape."}
+    exercises:
+      - type: choice
+        question: {pt: "Imunoedição do câncer tem fases:", en: "Cancer immunoediting phases:"}
+        choices:
+          - {pt: "Eliminação, equilíbrio e escape", en: "Elimination, equilibrium and escape"}
+          - {pt: "Apenas eliminação", en: "Just elimination"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas escape", en: "Just escape"}
+        correctAnswer: {pt: "Eliminação, equilíbrio e escape", en: "Elimination, equilibrium and escape"}
+        rationale: {pt: "Quando tumor evolui sob pressão imune, então variantes que escapam dominam clinicamente.", en: "When tumor evolves under immune pressure, escape variants come to dominate clinically."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Linfócitos T CD8+ matam tumor reconhecendo:", en: "CD8+ T cells kill tumor by recognizing:"}
+        choices:
+          - {pt: "Peptídeos tumorais apresentados em MHC-I", en: "Tumor peptides presented on MHC-I"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA livre", en: "Just free DNA"}
+          - {pt: "Apenas RNA viral", en: "Just viral RNA"}
+        correctAnswer: {pt: "Peptídeos tumorais apresentados em MHC-I", en: "Tumor peptides presented on MHC-I"}
+        rationale: {pt: "Como antígenos tumorais distinguem célula doente, então T citotóxica induz apoptose direcionada.", en: "Because tumor antigens distinguish sick cell, cytotoxic T induces targeted apoptosis."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Neoantígenos surgem de:", en: "Neoantigens arise from:"}
+        choices:
+          - {pt: "Mutações somáticas tumorais que geram peptídeos não-self", en: "Somatic tumor mutations generating non-self peptides"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas vírus", en: "Just viruses"}
+          - {pt: "Apenas RNA", en: "Just RNA"}
+        correctAnswer: {pt: "Mutações somáticas tumorais que geram peptídeos não-self", en: "Somatic tumor mutations generating non-self peptides"}
+        rationale: {pt: "Quando mutação cria peptídeo novo, então sistema imune o reconhece como estranho.", en: "When mutation creates new peptide, immune system recognizes it as foreign."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PD-1 é checkpoint expresso em:", en: "PD-1 is checkpoint expressed on:"}
+        choices:
+          - {pt: "Linfócitos T ativados; ligante PD-L1 inibe a célula T", en: "Activated T lymphocytes; ligand PD-L1 inhibits the T cell"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em hemácias", en: "Just on red cells"}
+          - {pt: "Apenas vírus", en: "Just viruses"}
+        correctAnswer: {pt: "Linfócitos T ativados; ligante PD-L1 inibe a célula T", en: "Activated T lymphocytes; ligand PD-L1 inhibits the T cell"}
+        rationale: {pt: "Como PD-1 normalmente limita autoimunidade, então tumores explorando PD-L1 escapam ataque.", en: "Because PD-1 normally limits autoimmunity, tumors exploiting PD-L1 escape attack."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anti-PD-1 (pembrolizumabe, nivolumabe) atua:", en: "Anti-PD-1 (pembrolizumab, nivolumab) acts by:"}
+        choices:
+          - {pt: "Bloqueando inibição → restaura atividade T contra tumor", en: "Blocking inhibition → restores T activity against tumor"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas matando T", en: "Just killing T"}
+          - {pt: "Apenas vacina", en: "Just vaccine"}
+        correctAnswer: {pt: "Bloqueando inibição → restaura atividade T contra tumor", en: "Blocking inhibition → restores T activity against tumor"}
+        rationale: {pt: "Quando freio é solto, então T reativada elimina tumor — efeito durável em respondedores.", en: "When brake is released, reactivated T eliminates tumor — durable effect in responders."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CTLA-4 é checkpoint que atua:", en: "CTLA-4 is checkpoint acting:"}
+        choices:
+          - {pt: "Mais cedo (ativação inicial T) competindo com CD28 por B7", en: "Earlier (initial T activation) competing with CD28 for B7"}
+          - {pt: "Apenas tarde", en: "Only late"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Idêntico a PD-1", en: "Identical to PD-1"}
+        correctAnswer: {pt: "Mais cedo (ativação inicial T) competindo com CD28 por B7", en: "Earlier (initial T activation) competing with CD28 for B7"}
+        rationale: {pt: "Como atua em fase priming, então ipilimumabe (anti-CTLA-4) amplia repertório T tumoral.", en: "Because it acts in priming phase, ipilimumab (anti-CTLA-4) broadens tumor T repertoire."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Combinar anti-PD-1 + anti-CTLA-4:", en: "Combining anti-PD-1 + anti-CTLA-4:"}
+        choices:
+          - {pt: "Aumenta resposta mas eleva toxicidade autoimune", en: "Increases response but raises autoimmune toxicity"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre seguro", en: "Always safe"}
+          - {pt: "Sem benefício", en: "No benefit"}
+        correctAnswer: {pt: "Aumenta resposta mas eleva toxicidade autoimune", en: "Increases response but raises autoimmune toxicity"}
+        rationale: {pt: "Quando dois freios são tirados, então tumor é mais atacado — e tecidos sadios também.", en: "When two brakes are removed, tumor is more attacked — and healthy tissues too."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tumores 'quentes' têm:", en: "'Hot' tumors have:"}
+        choices:
+          - {pt: "Infiltrado linfocitário e maior chance de resposta a ICIs", en: "Lymphocytic infiltrate and higher chance of response to ICIs"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas frio total", en: "Just total cold"}
+          - {pt: "Sem T", en: "No T cells"}
+        correctAnswer: {pt: "Infiltrado linfocitário e maior chance de resposta a ICIs", en: "Lymphocytic infiltrate and higher chance of response to ICIs"}
+        rationale: {pt: "Como T já está no tumor, então só falta soltar freio para resposta clínica.", en: "Because T is already in tumor, only releasing brake is needed for clinical response."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Carga mutacional tumoral (TMB) alta correlaciona com:", en: "High tumor mutational burden (TMB) correlates with:"}
+        choices:
+          - {pt: "Mais neoantígenos → melhor resposta a checkpoint", en: "More neoantigens → better checkpoint response"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Resposta pior sempre", en: "Always worse response"}
+          - {pt: "Sem correlação", en: "No correlation"}
+        correctAnswer: {pt: "Mais neoantígenos → melhor resposta a checkpoint", en: "More neoantigens → better checkpoint response"}
+        rationale: {pt: "Quando tumor exibe muitos peptídeos novos, então T encontra alvos abundantes.", en: "When tumor displays many new peptides, T finds abundant targets."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tumores deficientes em mismatch repair (MSI-H):", en: "Mismatch repair deficient tumors (MSI-H):"}
+        choices:
+          - {pt: "Acumulam mutações, alta TMB, ótima resposta a anti-PD-1", en: "Accumulate mutations, high TMB, excellent response to anti-PD-1"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre sem mutação", en: "Always mutation-free"}
+          - {pt: "Sem resposta", en: "No response"}
+        correctAnswer: {pt: "Acumulam mutações, alta TMB, ótima resposta a anti-PD-1", en: "Accumulate mutations, high TMB, excellent response to anti-PD-1"}
+        rationale: {pt: "Como reparo falha, então neoantígenos são abundantes — tumor agressivo, mas imunogênico.", en: "Because repair fails, neoantigens are abundant — tumor aggressive yet immunogenic."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "CAR-T, vacinas e oncolíticos", en: "CAR-T, vaccines and oncolytics"}
+    description: {pt: "Outras estratégias imunoterápicas.", en: "Other immunotherapy strategies."}
+    exercises:
+      - type: choice
+        question: {pt: "CAR-T anti-CD19 trata especialmente:", en: "Anti-CD19 CAR-T especially treats:"}
+        choices:
+          - {pt: "Leucemia linfoblástica aguda B (LLA-B) e linfomas B refratários", en: "B-cell acute lymphoblastic leukemia (B-ALL) and refractory B lymphomas"}
+          - {pt: "Apenas câncer cerebral", en: "Just brain cancer"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas pele", en: "Just skin"}
+        correctAnswer: {pt: "Leucemia linfoblástica aguda B (LLA-B) e linfomas B refratários", en: "B-cell acute lymphoblastic leukemia (B-ALL) and refractory B lymphomas"}
+        rationale: {pt: "Como CD19 é universal em B, então CAR-T elimina tumores e B normais (efeito tolerável).", en: "Because CD19 is universal on B cells, CAR-T eliminates tumors and normal B (tolerable effect)."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tumores sólidos resistem mais a CAR-T por:", en: "Solid tumors resist CAR-T more due to:"}
+        choices:
+          - {pt: "Microambiente imunossupressor, antígenos heterogêneos, infiltração limitada", en: "Immunosuppressive microenvironment, heterogeneous antigens, limited infiltration"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre fáceis", en: "Always easy"}
+          - {pt: "Sem barreiras", en: "No barriers"}
+        correctAnswer: {pt: "Microambiente imunossupressor, antígenos heterogêneos, infiltração limitada", en: "Immunosuppressive microenvironment, heterogeneous antigens, limited infiltration"}
+        rationale: {pt: "Quando tumor cria 'fortaleza' supressora, então CAR-T precisa ajuda extra para penetrar.", en: "When tumor builds suppressive 'fortress', CAR-T needs extra help to penetrate."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacina terapêutica de tumor visa:", en: "Therapeutic tumor vaccine aims to:"}
+        choices:
+          - {pt: "Treinar imunidade contra antígenos tumorais (pessoais ou compartilhados)", en: "Train immunity against tumor antigens (personal or shared)"}
+          - {pt: "Apenas prevenir gripe", en: "Just prevent flu"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas hidratação", en: "Just hydration"}
+        correctAnswer: {pt: "Treinar imunidade contra antígenos tumorais (pessoais ou compartilhados)", en: "Train immunity against tumor antigens (personal or shared)"}
+        rationale: {pt: "Como mRNA pode codificar neoantígenos individualizados, então vacinas personalizadas são viáveis.", en: "Because mRNA can encode individualized neoantigens, personalized vaccines are feasible."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BCG intravesical (vacina de tuberculose) é usado em:", en: "Intravesical BCG (TB vaccine) is used in:"}
+        choices:
+          - {pt: "Câncer de bexiga superficial — imunoestimulação local", en: "Superficial bladder cancer — local immunostimulation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas pulmão", en: "Just lung"}
+          - {pt: "Apenas resfriado", en: "Just common cold"}
+        correctAnswer: {pt: "Câncer de bexiga superficial — imunoestimulação local", en: "Superficial bladder cancer — local immunostimulation"}
+        rationale: {pt: "Quando BCG ativa imune dentro da bexiga, então tumores residuais são atacados.", en: "When BCG activates immunity inside bladder, residual tumors are attacked."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vírus oncolíticos (T-VEC):", en: "Oncolytic viruses (T-VEC):"}
+        choices:
+          - {pt: "Replicam preferencialmente em células tumorais e induzem morte imunogênica", en: "Replicate preferentially in tumor cells and induce immunogenic death"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em laboratório", en: "Just in lab"}
+          - {pt: "Apenas matam saudável", en: "Just kill healthy"}
+        correctAnswer: {pt: "Replicam preferencialmente em células tumorais e induzem morte imunogênica", en: "Replicate preferentially in tumor cells and induce immunogenic death"}
+        rationale: {pt: "Como tumor lisado libera antígenos, então oncolítico atua como vacina in situ.", en: "Because lysed tumor releases antigens, oncolytic acts as in situ vaccine."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anticorpos biespecíficos (BiTE) ligam:", en: "Bispecific antibodies (BiTE) link:"}
+        choices:
+          - {pt: "Linfócito T (CD3) e antígeno tumoral simultaneamente", en: "T cell (CD3) and tumor antigen simultaneously"}
+          - {pt: "Apenas tumor", en: "Just tumor"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas hemácias", en: "Just red cells"}
+        correctAnswer: {pt: "Linfócito T (CD3) e antígeno tumoral simultaneamente", en: "T cell (CD3) and tumor antigen simultaneously"}
+        rationale: {pt: "Quando T é trazida ao tumor, então sinapse imunológica forma e mata sem precisar de TCR.", en: "When T is brought to tumor, immune synapse forms and kills without needing TCR."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ADC (anticorpo conjugado a fármaco):", en: "ADC (antibody-drug conjugate):"}
+        choices:
+          - {pt: "Anticorpo dirige quimioterápico potente diretamente ao tumor", en: "Antibody directs potent chemotherapy directly to tumor"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas no tubo digestivo", en: "Just in digestive tube"}
+          - {pt: "Apenas em laboratório", en: "Just in lab"}
+        correctAnswer: {pt: "Anticorpo dirige quimioterápico potente diretamente ao tumor", en: "Antibody directs potent chemotherapy directly to tumor"}
+        rationale: {pt: "Como entrega é direcionada, então toxina ataca tumor poupando tecidos sadios.", en: "Because delivery is targeted, toxin attacks tumor sparing healthy tissue."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TILs (linfócitos infiltrantes de tumor) terapia:", en: "TIL (tumor-infiltrating lymphocyte) therapy:"}
+        choices:
+          - {pt: "Expande T do tumor do paciente ex vivo e reinfunde", en: "Expands patient tumor T cells ex vivo and reinfuses"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas vírus", en: "Just virus"}
+          - {pt: "Apenas anticorpo", en: "Just antibody"}
+        correctAnswer: {pt: "Expande T do tumor do paciente ex vivo e reinfunde", en: "Expands patient tumor T cells ex vivo and reinfuses"}
+        rationale: {pt: "Como T tumorais já reconhecem neoantígenos, então amplificá-las gera ataque potente.", en: "Because tumor T already recognize neoantigens, amplifying them generates potent attack."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síndrome de pseudoprogressão em ICI:", en: "Pseudoprogression in ICI:"}
+        choices:
+          - {pt: "Tumor parece crescer inicialmente devido a infiltrado imune, depois regride", en: "Tumor seems to grow initially due to immune infiltrate, then regresses"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre falha", en: "Always failure"}
+          - {pt: "Sem causa", en: "No cause"}
+        correctAnswer: {pt: "Tumor parece crescer inicialmente devido a infiltrado imune, depois regride", en: "Tumor seems to grow initially due to immune infiltrate, then regresses"}
+        rationale: {pt: "Quando avaliação por imagem confunde infiltrado com tumor, então critérios iRECIST diferenciam.", en: "When imaging confuses infiltrate with tumor, iRECIST criteria differentiate."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras da imunoterapia incluem:", en: "Next immunotherapy frontiers include:"}
+        choices:
+          - {pt: "Vacinas de neoantígenos personalizadas, alotransplantes alogênicos prontos, TCR-T", en: "Personalized neoantigen vaccines, off-the-shelf allogeneic, TCR-T"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Sem inovação", en: "No innovation"}
+        correctAnswer: {pt: "Vacinas de neoantígenos personalizadas, alotransplantes alogênicos prontos, TCR-T", en: "Personalized neoantigen vaccines, off-the-shelf allogeneic, TCR-T"}
+        rationale: {pt: "Quando manufatura escala, então tratamentos individualizados ficam acessíveis e rápidos.", en: "When manufacturing scales, individualized treatments become accessible and fast."}
+        objectives: [biology.cancer_immunotherapy]
+        difficulty: 5
+target: 20

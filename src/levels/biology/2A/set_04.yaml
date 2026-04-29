@@ -1,0 +1,244 @@
+title:
+  pt: "🦠 Microbioma e holobionte"
+  en: "🦠 Microbiome and holobiont"
+level: '2A'
+subject: biology
+objectives: [biology.microbiome]
+difficulty: 5
+authorNotes: "Microbiota, eixo intestino-cérebro, disbiose, transplante fecal, holobionte, ecologia microbiana."
+example:
+  pt: "Ex.: dieta rica em fibras → fermentação por Bacteroidetes → ácidos graxos curtos → modulação imune → saúde."
+  en: "Ex.: fiber-rich diet → Bacteroidetes fermentation → short-chain fatty acids → immune modulation → health."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "O microbioma humano", en: "The human microbiome"}
+    description: {pt: "Comunidades microbianas que nos habitam.", en: "Microbial communities that inhabit us."}
+    exercises:
+      - type: choice
+        question: {pt: "Microbiota humana é:", en: "Human microbiota is:"}
+        choices:
+          - {pt: "Conjunto de microrganismos que habitam o corpo (intestino, pele, boca, etc.)", en: "Set of microorganisms inhabiting the body (gut, skin, mouth, etc.)"}
+          - {pt: "Apenas patógenos", en: "Just pathogens"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas células humanas", en: "Just human cells"}
+        correctAnswer: {pt: "Conjunto de microrganismos que habitam o corpo (intestino, pele, boca, etc.)", en: "Set of microorganisms inhabiting the body (gut, skin, mouth, etc.)"}
+        rationale: {pt: "Como bactérias humanas chegam a ~10¹³, então elas igualam ou superam células próprias em número.", en: "Because human bacteria reach ~10¹³, they equal or exceed our own cells in number."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbioma refere-se a:", en: "Microbiome refers to:"}
+        choices:
+          - {pt: "Coleção de genomas microbianos de uma comunidade", en: "Collection of microbial genomes in a community"}
+          - {pt: "Apenas um vírus", en: "Just one virus"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas DNA humano", en: "Just human DNA"}
+        correctAnswer: {pt: "Coleção de genomas microbianos de uma comunidade", en: "Collection of microbial genomes in a community"}
+        rationale: {pt: "Quando sequenciamos coletivamente, então acessamos potencial metabólico total da comunidade.", en: "When we sequence collectively, we access the community's total metabolic potential."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "16S rRNA sequencing identifica:", en: "16S rRNA sequencing identifies:"}
+        choices:
+          - {pt: "Tipos bacterianos via gene conservado com regiões variáveis", en: "Bacterial types via conserved gene with variable regions"}
+          - {pt: "Apenas genes humanos", en: "Just human genes"}
+          - {pt: "Apenas RNA temporário", en: "Just temporary RNA"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Tipos bacterianos via gene conservado com regiões variáveis", en: "Bacterial types via conserved gene with variable regions"}
+        rationale: {pt: "Como regiões variáveis distinguem espécies, então 16S é código de barras taxonômico padrão.", en: "Because variable regions distinguish species, 16S is standard taxonomic barcode."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Filos dominantes do intestino humano são:", en: "Dominant phyla of human gut are:"}
+        choices:
+          - {pt: "Bacteroidetes e Firmicutes", en: "Bacteroidetes and Firmicutes"}
+          - {pt: "Apenas Cyanobacteria", en: "Just Cyanobacteria"}
+          - {pt: "Apenas Archaea", en: "Just Archaea"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+        correctAnswer: {pt: "Bacteroidetes e Firmicutes", en: "Bacteroidetes and Firmicutes"}
+        rationale: {pt: "Quando dieta varia, então razão Firmicutes/Bacteroidetes muda — biomarcador metabólico.", en: "When diet varies, Firmicutes/Bacteroidetes ratio changes — metabolic biomarker."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ácidos graxos de cadeia curta (SCFAs) são produzidos por:", en: "Short-chain fatty acids (SCFAs) are produced by:"}
+        choices:
+          - {pt: "Fermentação bacteriana de fibras alimentares no cólon", en: "Bacterial fermentation of dietary fiber in colon"}
+          - {pt: "Apenas estômago humano", en: "Just human stomach"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas pulmão", en: "Just lung"}
+        correctAnswer: {pt: "Fermentação bacteriana de fibras alimentares no cólon", en: "Bacterial fermentation of dietary fiber in colon"}
+        rationale: {pt: "Como butirato nutre colonócitos, então SCFAs mantêm barreira intestinal saudável.", en: "Because butyrate nourishes colonocytes, SCFAs maintain healthy gut barrier."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Disbiose significa:", en: "Dysbiosis means:"}
+        choices:
+          - {pt: "Desequilíbrio da comunidade microbiana associado a doenças", en: "Microbial community imbalance associated with diseases"}
+          - {pt: "Apenas saúde perfeita", en: "Just perfect health"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem efeito", en: "No effect"}
+        correctAnswer: {pt: "Desequilíbrio da comunidade microbiana associado a doenças", en: "Microbial community imbalance associated with diseases"}
+        rationale: {pt: "Quando diversidade colapsa e patobiontes crescem, então inflamação e doença aparecem.", en: "When diversity collapses and pathobionts grow, inflammation and disease appear."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Eixo intestino-cérebro envolve:", en: "Gut-brain axis involves:"}
+        choices:
+          - {pt: "Sinalização bidirecional via nervo vago, hormônios e metabólitos microbianos", en: "Bidirectional signaling via vagus nerve, hormones and microbial metabolites"}
+          - {pt: "Apenas reflexo", en: "Just reflex"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem conexão", en: "No connection"}
+        correctAnswer: {pt: "Sinalização bidirecional via nervo vago, hormônios e metabólitos microbianos", en: "Bidirectional signaling via vagus nerve, hormones and microbial metabolites"}
+        rationale: {pt: "Como microbiota produz neurotransmissores, então afeta humor, ansiedade e cognição.", en: "Because microbiota produces neurotransmitters, it affects mood, anxiety and cognition."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Probióticos são:", en: "Probiotics are:"}
+        choices:
+          - {pt: "Microrganismos vivos com benefício à saúde quando administrados em quantidade adequada", en: "Live microorganisms with health benefit when administered in adequate amount"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Sempre mortos", en: "Always dead"}
+        correctAnswer: {pt: "Microrganismos vivos com benefício à saúde quando administrados em quantidade adequada", en: "Live microorganisms with health benefit when administered in adequate amount"}
+        rationale: {pt: "Quando cepa específica coloniza ou modula imunidade, então benefício clínico pode ser real.", en: "When specific strain colonizes or modulates immunity, clinical benefit may be real."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Prebióticos são:", en: "Prebiotics are:"}
+        choices:
+          - {pt: "Substratos que estimulam seletivamente microrganismos benéficos (ex.: inulina)", en: "Substrates selectively stimulating beneficial microbes (e.g., inulin)"}
+          - {pt: "Apenas antibióticos", en: "Just antibiotics"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas vírus", en: "Just viruses"}
+        correctAnswer: {pt: "Substratos que estimulam seletivamente microrganismos benéficos (ex.: inulina)", en: "Substrates selectively stimulating beneficial microbes (e.g., inulin)"}
+        rationale: {pt: "Como microbiota fermenta fibras específicas, então prebiótico molda comunidade indiretamente.", en: "Because microbiota ferments specific fibers, prebiotic shapes community indirectly."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Antibióticos podem causar:", en: "Antibiotics may cause:"}
+        choices:
+          - {pt: "Disbiose duradoura e infecção oportunista (ex.: C. difficile)", en: "Lasting dysbiosis and opportunistic infection (e.g., C. difficile)"}
+          - {pt: "Apenas saúde", en: "Just health"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem efeito", en: "No effect"}
+        correctAnswer: {pt: "Disbiose duradoura e infecção oportunista (ex.: C. difficile)", en: "Lasting dysbiosis and opportunistic infection (e.g., C. difficile)"}
+        rationale: {pt: "Quando antibiótico devasta comensais, então nichos abrem para patógenos resistentes.", en: "When antibiotic devastates commensals, niches open for resistant pathogens."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Holobionte e ecologia microbiana", en: "Holobiont and microbial ecology"}
+    description: {pt: "Hospedeiro e microbiota como unidade integrada.", en: "Host and microbiota as integrated unit."}
+    exercises:
+      - type: choice
+        question: {pt: "Holobionte é:", en: "Holobiont is:"}
+        choices:
+          - {pt: "Hospedeiro + microrganismos associados como unidade ecoevolutiva", en: "Host + associated microbes as ecoevolutionary unit"}
+          - {pt: "Apenas hospedeiro isolado", en: "Just isolated host"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas vírus", en: "Just viruses"}
+        correctAnswer: {pt: "Hospedeiro + microrganismos associados como unidade ecoevolutiva", en: "Host + associated microbes as ecoevolutionary unit"}
+        rationale: {pt: "Como funções emergem da parceria, então seleção atua sobre conjunto integrado.", en: "Because functions emerge from partnership, selection acts on integrated whole."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Transplante fecal de microbiota (FMT) trata:", en: "Fecal microbiota transplant (FMT) treats:"}
+        choices:
+          - {pt: "Infecção recorrente por C. difficile com alta eficácia", en: "Recurrent C. difficile infection with high efficacy"}
+          - {pt: "Apenas resfriado", en: "Just cold"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas tumor cerebral", en: "Just brain tumor"}
+        correctAnswer: {pt: "Infecção recorrente por C. difficile com alta eficácia", en: "Recurrent C. difficile infection with high efficacy"}
+        rationale: {pt: "Quando microbiota saudável é restaurada, então C. difficile perde nicho e infecção resolve.", en: "When healthy microbiota is restored, C. difficile loses niche and infection resolves."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbioma intestinal afeta resposta a imunoterapias oncológicas:", en: "Gut microbiome affects response to cancer immunotherapy:"}
+        choices:
+          - {pt: "Sim — composição modula eficácia anti-PD-1", en: "Yes — composition modulates anti-PD-1 efficacy"}
+          - {pt: "Apenas placebo", en: "Just placebo"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem influência", en: "No influence"}
+        correctAnswer: {pt: "Sim — composição modula eficácia anti-PD-1", en: "Yes — composition modulates anti-PD-1 efficacy"}
+        rationale: {pt: "Como certos comensais ativam células imunes, então microbiota é fator preditivo de resposta.", en: "Because certain commensals activate immune cells, microbiota is predictor of response."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbioma materno influencia o bebê via:", en: "Maternal microbiome influences baby via:"}
+        choices:
+          - {pt: "Parto vaginal, amamentação, contato pele a pele", en: "Vaginal birth, breastfeeding, skin-to-skin contact"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas dieta exclusiva", en: "Just exclusive diet"}
+          - {pt: "Sem transferência", en: "No transfer"}
+        correctAnswer: {pt: "Parto vaginal, amamentação, contato pele a pele", en: "Vaginal birth, breastfeeding, skin-to-skin contact"}
+        rationale: {pt: "Quando criança é colonizada cedo, então microbiota molda imunidade pelo resto da vida.", en: "When child is colonized early, microbiota shapes immunity for the rest of life."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hipótese da higiene propõe:", en: "Hygiene hypothesis proposes:"}
+        choices:
+          - {pt: "Falta de exposição microbiana cedo associa-se a alergias e autoimunidade", en: "Lack of early microbial exposure links to allergies and autoimmunity"}
+          - {pt: "Apenas pó tóxico", en: "Just toxic dust"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre falsa", en: "Always false"}
+        correctAnswer: {pt: "Falta de exposição microbiana cedo associa-se a alergias e autoimunidade", en: "Lack of early microbial exposure links to allergies and autoimmunity"}
+        rationale: {pt: "Como sistema imune precisa treinar com microrganismos, então super-higiene desbalanceia tolerância.", en: "Because immune system needs microbial training, over-hygiene unbalances tolerance."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbiota da pele varia conforme:", en: "Skin microbiota varies with:"}
+        choices:
+          - {pt: "Sítio (sebáceo, úmido, seco), idade, sexo, ambiente", en: "Site (sebaceous, moist, dry), age, sex, environment"}
+          - {pt: "Apenas idade", en: "Just age"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sempre idêntica", en: "Always identical"}
+        correctAnswer: {pt: "Sítio (sebáceo, úmido, seco), idade, sexo, ambiente", en: "Site (sebaceous, moist, dry), age, sex, environment"}
+        rationale: {pt: "Quando microambiente muda, então comunidades distintas se especializam em cada nicho cutâneo.", en: "When microenvironment changes, distinct communities specialize at each skin niche."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resistência antibiótica espalha-se em microbiomas via:", en: "Antibiotic resistance spreads in microbiomes via:"}
+        choices:
+          - {pt: "Transferência horizontal de plasmídeos entre espécies", en: "Horizontal plasmid transfer between species"}
+          - {pt: "Apenas mutação isolada", en: "Just isolated mutation"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem transferência", en: "No transfer"}
+        correctAnswer: {pt: "Transferência horizontal de plasmídeos entre espécies", en: "Horizontal plasmid transfer between species"}
+        rationale: {pt: "Como plasmídeos cruzam barreiras taxonômicas, então resistência se dissemina rápido em comunidades.", en: "Because plasmids cross taxonomic barriers, resistance spreads fast through communities."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Quorum sensing é:", en: "Quorum sensing is:"}
+        choices:
+          - {pt: "Comunicação química bacteriana dependente de densidade populacional", en: "Density-dependent bacterial chemical communication"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Apenas em humanos", en: "Just in humans"}
+          - {pt: "Sem propósito", en: "No purpose"}
+        correctAnswer: {pt: "Comunicação química bacteriana dependente de densidade populacional", en: "Density-dependent bacterial chemical communication"}
+        rationale: {pt: "Quando densidade alcança limiar, então comportamentos coletivos (biofilme, virulência) são ativados.", en: "When density reaches threshold, collective behaviors (biofilm, virulence) are activated."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biofilme bacteriano caracteriza-se por:", en: "Bacterial biofilm is characterized by:"}
+        choices:
+          - {pt: "Comunidade aderida com matriz extracelular protetora", en: "Adhered community with protective extracellular matrix"}
+          - {pt: "Apenas células planctônicas", en: "Just planktonic cells"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem matriz", en: "No matrix"}
+        correctAnswer: {pt: "Comunidade aderida com matriz extracelular protetora", en: "Adhered community with protective extracellular matrix"}
+        rationale: {pt: "Como matriz dificulta penetração antibiótica, então biofilmes são clinicamente recalcitrantes.", en: "Because matrix hampers antibiotic penetration, biofilms are clinically recalcitrant."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbioma ambiental influencia:", en: "Environmental microbiome influences:"}
+        choices:
+          - {pt: "Ciclos biogeoquímicos globais (C, N, S) e clima", en: "Global biogeochemical cycles (C, N, S) and climate"}
+          - {pt: "Apenas estética", en: "Just aesthetics"}
+          - {pt: "Apenas decoração", en: "Just decoration"}
+          - {pt: "Sem influência global", en: "No global influence"}
+        correctAnswer: {pt: "Ciclos biogeoquímicos globais (C, N, S) e clima", en: "Global biogeochemical cycles (C, N, S) and climate"}
+        rationale: {pt: "Quando micróbios fixam ou liberam C/N/S, então regulam atmosfera e produtividade primária.", en: "When microbes fix or release C/N/S, they regulate atmosphere and primary productivity."}
+        objectives: [biology.microbiome]
+        difficulty: 5
+target: 20
