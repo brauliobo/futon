@@ -1,0 +1,244 @@
+title:
+  pt: "🌌 Sensoriamento quântico em biologia"
+  en: "🌌 Quantum sensing in biology"
+level: 'E'
+subject: biology
+objectives: [biology.quantum_sensing]
+difficulty: 5
+authorNotes: "NV centers, hyperpolarized MRI, quantum dots, magnetic detection."
+example:
+  pt: "Ex.: célula → sensor NV → campo magnético sub-nT → mapa molecular detalhado."
+  en: "Ex.: cell → NV sensor → sub-nT magnetic field → detailed molecular map."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Tecnologias de sensores quânticos", en: "Quantum sensor technologies"}
+    description: {pt: "Como medimos com precisão quântica.", en: "How we measure with quantum precision."}
+    exercises:
+      - type: choice
+        question: {pt: "NV centers:", en: "NV centers:"}
+        choices:
+          - {pt: "Defeitos de nitrogênio-vacância em diamante medem campos magnéticos com sensibilidade nT", en: "Nitrogen-vacancy defects in diamond measure magnetic fields with nT sensitivity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Defeitos de nitrogênio-vacância em diamante medem campos magnéticos com sensibilidade nT", en: "Nitrogen-vacancy defects in diamond measure magnetic fields with nT sensitivity"}
+        rationale: {pt: "Quando NV operam, então sensoriamento quântico em ambiente celular é viável.", en: "When NVs operate, quantum sensing in cellular environment is viable."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hyperpolarized MRI:", en: "Hyperpolarized MRI:"}
+        choices:
+          - {pt: "Carbon-13 hiperpolarizado eleva sinal em 10000x para imageamento metabólico em vivo", en: "Hyperpolarized 13C raises signal 10000-fold for in-vivo metabolic imaging"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Carbon-13 hiperpolarizado eleva sinal em 10000x para imageamento metabólico em vivo", en: "Hyperpolarized 13C raises signal 10000-fold for in-vivo metabolic imaging"}
+        rationale: {pt: "Quando sinal é amplificado, então metabolismo é visto em tempo real.", en: "When signal is amplified, metabolism is seen in real time."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Quantum dots biológicos:", en: "Biological quantum dots:"}
+        choices:
+          - {pt: "Nanocristais semicondutores com brilho e fotoestabilidade superiores marcam células e moléculas", en: "Semiconductor nanocrystals with superior brightness and photostability label cells and molecules"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Nanocristais semicondutores com brilho e fotoestabilidade superiores marcam células e moléculas", en: "Semiconductor nanocrystals with superior brightness and photostability label cells and molecules"}
+        rationale: {pt: "Quando QDs marcam, então imageamento de longo prazo é possível.", en: "When QDs label, long-term imaging is possible."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Magnetorelaxometria:", en: "Magnetorelaxometry:"}
+        choices:
+          - {pt: "Detecta nanopartículas magnéticas em tecidos para diagnóstico molecular sensível", en: "Detects magnetic nanoparticles in tissues for sensitive molecular diagnosis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Detecta nanopartículas magnéticas em tecidos para diagnóstico molecular sensível", en: "Detects magnetic nanoparticles in tissues for sensitive molecular diagnosis"}
+        rationale: {pt: "Quando MR detecta, então diagnóstico molecular escala.", en: "When MR detects, molecular diagnosis scales."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SQUIDs:", en: "SQUIDs:"}
+        choices:
+          - {pt: "Superconducting quantum interference detectam campos biológicos em MEG/MCG", en: "Superconducting quantum interference detects biological fields in MEG/MCG"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Superconducting quantum interference detectam campos biológicos em MEG/MCG", en: "Superconducting quantum interference detects biological fields in MEG/MCG"}
+        rationale: {pt: "Quando SQUIDs operam, então biomagnetismo é mensurável.", en: "When SQUIDs operate, biomagnetism is measurable."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "OPM (optically pumped magnetometers):", en: "OPM (optically pumped magnetometers):"}
+        choices:
+          - {pt: "Sensores OPM permitem MEG sem criogenia, com wearable mapeando atividade cerebral", en: "OPM sensors enable cryogen-free MEG, with wearable mapping brain activity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sensores OPM permitem MEG sem criogenia, com wearable mapeando atividade cerebral", en: "OPM sensors enable cryogen-free MEG, with wearable mapping brain activity"}
+        rationale: {pt: "Quando OPM é wearable, então neurociência sai do laboratório.", en: "When OPM is wearable, neuroscience leaves the lab."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single-molecule fluorescence:", en: "Single-molecule fluorescence:"}
+        choices:
+          - {pt: "Sondas com photon counting medem dinâmica conformacional individual em tempo real", en: "Photon-counting probes measure individual conformational dynamics in real time"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sondas com photon counting medem dinâmica conformacional individual em tempo real", en: "Photon-counting probes measure individual conformational dynamics in real time"}
+        rationale: {pt: "Quando fótons são contados, então biologia de moléculas únicas é precisa.", en: "When photons are counted, single-molecule biology is precise."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Quantum-enhanced microscopy:", en: "Quantum-enhanced microscopy:"}
+        choices:
+          - {pt: "Estados comprimidos de luz superam limite shot-noise reduzindo dose em amostras vivas", en: "Squeezed light states beat shot-noise limit reducing dose in live samples"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Estados comprimidos de luz superam limite shot-noise reduzindo dose em amostras vivas", en: "Squeezed light states beat shot-noise limit reducing dose in live samples"}
+        rationale: {pt: "Quando luz é quântica, então amostras vivas são imageadas com menor dano.", en: "When light is quantum, live samples are imaged with less damage."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sensor temperature NV:", en: "NV temperature sensor:"}
+        choices:
+          - {pt: "NVs em diamante medem temperatura intracelular com precisão milikelvin", en: "Diamond NVs measure intracellular temperature with millikelvin precision"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "NVs em diamante medem temperatura intracelular com precisão milikelvin", en: "Diamond NVs measure intracellular temperature with millikelvin precision"}
+        rationale: {pt: "Quando temperatura é medida, então metabolismo local é caracterizado.", en: "When temperature is measured, local metabolism is characterized."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spin imaging:", en: "Spin imaging:"}
+        choices:
+          - {pt: "Spin-detection NVs imageiam single-protein NMR e dinâmica em escala nm", en: "Spin-detection NVs image single-protein NMR and dynamics at nm scale"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Spin-detection NVs imageiam single-protein NMR e dinâmica em escala nm", en: "Spin-detection NVs image single-protein NMR and dynamics at nm scale"}
+        rationale: {pt: "Quando spin é detectado, então biologia ganha resolução estrutural in situ.", en: "When spin is detected, biology gains in-situ structural resolution."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações", en: "Applications"}
+    description: {pt: "Sensoriamento quântico na clínica.", en: "Quantum sensing in clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "Diagnóstico cardíaco:", en: "Cardiac diagnostics:"}
+        choices:
+          - {pt: "MCG com OPM detecta arritmias subclínicas e isquemia silenciosa precoce", en: "MCG with OPM detects subclinical arrhythmias and silent early ischemia"}
+          - {pt: "Apenas exame ECG padrão", en: "Just standard ECG"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "MCG com OPM detecta arritmias subclínicas e isquemia silenciosa precoce", en: "MCG with OPM detects subclinical arrhythmias and silent early ischemia"}
+        rationale: {pt: "Quando MCG é prático, então cardiologia ganha biomarcadores precoces.", en: "When MCG is practical, cardiology gains early biomarkers."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fetal MEG:", en: "Fetal MEG:"}
+        choices:
+          - {pt: "Detecta atividade cerebral fetal com sensibilidade impossível em EEG transabdominal", en: "Detects fetal brain activity with sensitivity impossible in transabdominal EEG"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Detecta atividade cerebral fetal com sensibilidade impossível em EEG transabdominal", en: "Detects fetal brain activity with sensitivity impossible in transabdominal EEG"}
+        rationale: {pt: "Quando fetal MEG funciona, então neurodesenvolvimento é monitorado.", en: "When fetal MEG works, neurodevelopment is monitored."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imageamento metabólico:", en: "Metabolic imaging:"}
+        choices:
+          - {pt: "Hyperpolarized 13C-piruvato visualiza Warburg em câncer e perfusão miocárdica", en: "Hyperpolarized 13C-pyruvate visualizes cancer Warburg and myocardial perfusion"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Hyperpolarized 13C-piruvato visualiza Warburg em câncer e perfusão miocárdica", en: "Hyperpolarized 13C-pyruvate visualizes cancer Warburg and myocardial perfusion"}
+        rationale: {pt: "Quando metabolismo é visto, então decisão clínica é informada cedo.", en: "When metabolism is seen, clinical decision is informed early."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Diagnóstico precoce de Alzheimer:", en: "Early Alzheimer diagnosis:"}
+        choices:
+          - {pt: "MEG com OPM detecta alterações conectivas anos antes de sintomas clínicos", en: "OPM-MEG detects connectivity changes years before clinical symptoms"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "MEG com OPM detecta alterações conectivas anos antes de sintomas clínicos", en: "OPM-MEG detects connectivity changes years before clinical symptoms"}
+        rationale: {pt: "Quando rede é monitorada, então prevenção é direcionada.", en: "When network is monitored, prevention is directed."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BCI quânticos:", en: "Quantum BCIs:"}
+        choices:
+          - {pt: "OPM em capacete permite BCI não-invasivo com resolução superior a EEG clássico", en: "Helmet OPM enables non-invasive BCI with superior resolution to classical EEG"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "OPM em capacete permite BCI não-invasivo com resolução superior a EEG clássico", en: "Helmet OPM enables non-invasive BCI with superior resolution to classical EEG"}
+        rationale: {pt: "Quando OPM é wearable, então BCI escala em ambientes naturais.", en: "When OPM is wearable, BCI scales in natural environments."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Quantum-enhanced PET:", en: "Quantum-enhanced PET:"}
+        choices:
+          - {pt: "Coincidências quânticas reduzem ruído permitindo doses radioativas menores em pacientes", en: "Quantum coincidences reduce noise enabling lower radioactive doses in patients"}
+          - {pt: "Apenas exame padrão", en: "Just standard exam"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+        correctAnswer: {pt: "Coincidências quânticas reduzem ruído permitindo doses radioativas menores em pacientes", en: "Quantum coincidences reduce noise enabling lower radioactive doses in patients"}
+        rationale: {pt: "Quando dose cai, então segurança e acesso melhoram.", en: "When dose drops, safety and access improve."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Magnetic biopsy:", en: "Magnetic biopsy:"}
+        choices:
+          - {pt: "Nanopartículas funcionalizadas detectam células tumorais raras em sangue por sensoriamento magnético", en: "Functionalized nanoparticles detect rare tumor cells in blood via magnetic sensing"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Nanopartículas funcionalizadas detectam células tumorais raras em sangue por sensoriamento magnético", en: "Functionalized nanoparticles detect rare tumor cells in blood via magnetic sensing"}
+        rationale: {pt: "Quando CTCs são caçadas magneticamente, então biópsia líquida ganha sensibilidade.", en: "When CTCs are magnetically caught, liquid biopsy gains sensitivity."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Radiofarmacêuticos quânticos:", en: "Quantum radiopharmaceuticals:"}
+        choices:
+          - {pt: "Combinação de PET com sondas hyperpolarized direcionadas amplia diagnóstico oncológico", en: "PET combined with targeted hyperpolarized probes broadens oncological diagnostics"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Combinação de PET com sondas hyperpolarized direcionadas amplia diagnóstico oncológico", en: "PET combined with targeted hyperpolarized probes broadens oncological diagnostics"}
+        rationale: {pt: "Quando modalidades convergem, então diagnóstico é rico em informação.", en: "When modalities converge, diagnostic is information-rich."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Quantum cryptography em saúde:", en: "Quantum cryptography in health:"}
+        choices:
+          - {pt: "Distribuição de chave quântica protege dados clínicos e genômicos com segurança fundamental", en: "Quantum key distribution protects clinical and genomic data with fundamental security"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Distribuição de chave quântica protege dados clínicos e genômicos com segurança fundamental", en: "Quantum key distribution protects clinical and genomic data with fundamental security"}
+        rationale: {pt: "Quando segurança é quântica, então confiança digital cresce.", en: "When security is quantum, digital trust grows."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em sensoriamento quântico:", en: "Next quantum sensing frontiers:"}
+        choices:
+          - {pt: "OPM clínico amplo, NV in vivo e MR hyperpolarized rotineiro em diagnóstico oncológico", en: "Broad clinical OPM, in-vivo NV and routine hyperpolarized MR in oncological diagnostics"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "OPM clínico amplo, NV in vivo e MR hyperpolarized rotineiro em diagnóstico oncológico", en: "Broad clinical OPM, in-vivo NV and routine hyperpolarized MR in oncological diagnostics"}
+        rationale: {pt: "Quando ferramentas quânticas escalam, então clínica ganha resolução nova.", en: "When quantum tools scale, clinic gains new resolution."}
+        objectives: [biology.quantum_sensing]
+        difficulty: 5
+target: 20
