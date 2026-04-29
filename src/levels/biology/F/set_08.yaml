@@ -1,0 +1,244 @@
+title:
+  pt: "🌿 Imunidade vegetal"
+  en: "🌿 Plant immunity"
+level: 'F'
+subject: biology
+objectives: [biology.plant_immunity]
+difficulty: 5
+authorNotes: "PTI, ETI, NLRs, salicylato, sistemic acquired resistance, induced systemic resistance."
+example:
+  pt: "Ex.: PAMP → PRR → PTI → efetor → NLR → ETI → resposta hipersensível."
+  en: "Ex.: PAMP → PRR → PTI → effector → NLR → ETI → hypersensitive response."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Mecanismos de defesa", en: "Defense mechanisms"}
+    description: {pt: "Como plantas se protegem.", en: "How plants protect themselves."}
+    exercises:
+      - type: choice
+        question: {pt: "PTI (PAMP-triggered immunity):", en: "PTI (PAMP-triggered immunity):"}
+        choices:
+          - {pt: "PRRs como FLS2 reconhecem PAMPs (flg22) ativando respostas defensivas iniciais", en: "PRRs like FLS2 recognize PAMPs (flg22) activating initial defense responses"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "PRRs como FLS2 reconhecem PAMPs (flg22) ativando respostas defensivas iniciais", en: "PRRs like FLS2 recognize PAMPs (flg22) activating initial defense responses"}
+        rationale: {pt: "Quando PRRs detectam, então primeira linha imune ativa.", en: "When PRRs detect, first immune line activates."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ETI (effector-triggered immunity):", en: "ETI (effector-triggered immunity):"}
+        choices:
+          - {pt: "NLRs intracelulares reconhecem efetores patógenos disparando resposta hipersensível forte", en: "Intracellular NLRs recognize pathogen effectors triggering strong hypersensitive response"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "NLRs intracelulares reconhecem efetores patógenos disparando resposta hipersensível forte", en: "Intracellular NLRs recognize pathogen effectors triggering strong hypersensitive response"}
+        rationale: {pt: "Quando NLRs reconhecem, então morte celular localizada barra patógeno.", en: "When NLRs recognize, localized cell death blocks pathogen."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "NLR receptors:", en: "NLR receptors:"}
+        choices:
+          - {pt: "TIR-NLR e CC-NLR são duas classes principais em Arabidopsis com múltiplos efetores reconhecidos", en: "TIR-NLR and CC-NLR are two main classes in Arabidopsis with multiple recognized effectors"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "TIR-NLR e CC-NLR são duas classes principais em Arabidopsis com múltiplos efetores reconhecidos", en: "TIR-NLR and CC-NLR are two main classes in Arabidopsis with multiple recognized effectors"}
+        rationale: {pt: "Quando NLR diversos atuam, então pathogenes são reconhecidos amplamente.", en: "When diverse NLRs act, pathogens are broadly recognized."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Salicylato e SAR:", en: "Salicylate and SAR:"}
+        choices:
+          - {pt: "Salicylato sistêmico induz SAR (resistência adquirida) protegendo tecidos distais", en: "Systemic salicylate induces SAR (acquired resistance) protecting distal tissues"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Salicylato sistêmico induz SAR (resistência adquirida) protegendo tecidos distais", en: "Systemic salicylate induces SAR (acquired resistance) protecting distal tissues"}
+        rationale: {pt: "Quando SAR atua, então toda a planta fica resistente após primeiro ataque.", en: "When SAR acts, whole plant becomes resistant after first attack."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "JA/ET pathway:", en: "JA/ET pathway:"}
+        choices:
+          - {pt: "Jasmonato/etileno coordenam defesa contra herbívoros e necrotrofos via MYC2 e ERF1", en: "Jasmonate/ethylene coordinate defense against herbivores and necrotrophs via MYC2 and ERF1"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Jasmonato/etileno coordenam defesa contra herbívoros e necrotrofos via MYC2 e ERF1", en: "Jasmonate/ethylene coordinate defense against herbivores and necrotrophs via MYC2 and ERF1"}
+        rationale: {pt: "Quando JA/ET atua, então defesa contra ameaças biotróficas é montada.", en: "When JA/ET acts, defense against biotrophic threats is mounted."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RPS5 e gene-for-gene:", en: "RPS5 and gene-for-gene:"}
+        choices:
+          - {pt: "Modelo Flor: NLR planta reconhece avirulence pathogen — base coevolutiva de imunidade", en: "Flor model: plant NLR recognizes pathogen avirulence — coevolutionary basis of immunity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modelo Flor: NLR planta reconhece avirulence pathogen — base coevolutiva de imunidade", en: "Flor model: plant NLR recognizes pathogen avirulence — coevolutionary basis of immunity"}
+        rationale: {pt: "Quando coevolução acontece, então diversidade NLR/Avr é mantida.", en: "When coevolution happens, NLR/Avr diversity is maintained."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RPW8/HR e morte celular:", en: "RPW8/HR and cell death:"}
+        choices:
+          - {pt: "Resposta hipersensível mata célula infectada limitando spread biotrófico em planta", en: "Hypersensitive response kills infected cell limiting biotrophic spread in plant"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Resposta hipersensível mata célula infectada limitando spread biotrófico em planta", en: "Hypersensitive response kills infected cell limiting biotrophic spread in plant"}
+        rationale: {pt: "Quando HR atua, então patógeno fica isolado em focos pequenos.", en: "When HR acts, pathogen is contained in small foci."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ROS burst:", en: "ROS burst:"}
+        choices:
+          - {pt: "Burst de ROS via RBOHD/F é sinal precoce e ativa cross-linking parede + defesas", en: "ROS burst via RBOHD/F is early signal and activates wall cross-linking + defenses"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Burst de ROS via RBOHD/F é sinal precoce e ativa cross-linking parede + defesas", en: "ROS burst via RBOHD/F is early signal and activates wall cross-linking + defenses"}
+        rationale: {pt: "Quando ROS sobe, então pathogen tem barreira química.", en: "When ROS rises, pathogen faces chemical barrier."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RNA silencing antiviral:", en: "Antiviral RNA silencing:"}
+        choices:
+          - {pt: "DCL/AGO geram siRNAs contra dsRNA viral em defesa específica e adaptativa primária", en: "DCL/AGO generate siRNAs against viral dsRNA in specific adaptive primary defense"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DCL/AGO geram siRNAs contra dsRNA viral em defesa específica e adaptativa primária", en: "DCL/AGO generate siRNAs against viral dsRNA in specific adaptive primary defense"}
+        rationale: {pt: "Quando RNA silencing atua, então vírus é silenciado especificamente.", en: "When RNA silencing acts, virus is specifically silenced."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbiomas e imunidade:", en: "Microbiome and immunity:"}
+        choices:
+          - {pt: "Microbiota da rizosfera induz ISR (induced systemic resistance) priming planta sistemicamente", en: "Rhizosphere microbiota induces ISR (induced systemic resistance) priming plant systemically"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Microbiota da rizosfera induz ISR (induced systemic resistance) priming planta sistemicamente", en: "Rhizosphere microbiota induces ISR (induced systemic resistance) priming plant systemically"}
+        rationale: {pt: "Quando microbiota apoia, então defesa é potenciada.", en: "When microbiota supports, defense is boosted."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações agrícolas", en: "Agricultural applications"}
+    description: {pt: "Imunidade vegetal em culturas.", en: "Plant immunity in crops."}
+    exercises:
+      - type: choice
+        question: {pt: "NLR engineering:", en: "NLR engineering:"}
+        choices:
+          - {pt: "Transferir NLRs entre espécies amplia espectro de resistência em culturas", en: "Transferring NLRs across species expands resistance spectrum in crops"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Transferir NLRs entre espécies amplia espectro de resistência em culturas", en: "Transferring NLRs across species expands resistance spectrum in crops"}
+        rationale: {pt: "Quando NLR é transferido, então culturas ganham resistência durável.", en: "When NLR is transferred, crops gain durable resistance."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bacterial blight em arroz:", en: "Rice bacterial blight:"}
+        choices:
+          - {pt: "Edição CRISPR de promotores SWEET protege arroz de Xanthomonas oryzae globalmente", en: "CRISPR editing of SWEET promoters protects rice from Xanthomonas oryzae globally"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Edição CRISPR de promotores SWEET protege arroz de Xanthomonas oryzae globalmente", en: "CRISPR editing of SWEET promoters protects rice from Xanthomonas oryzae globally"}
+        rationale: {pt: "Quando promotores são editados, então segurança alimentar avança.", en: "When promoters are edited, food security advances."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resistência fungicida:", en: "Fungicide resistance:"}
+        choices:
+          - {pt: "Engenharia de hosts resistance genes substitui sprays químicos com sustentabilidade ampliada", en: "Engineering host resistance genes replaces chemical sprays with broader sustainability"}
+          - {pt: "Apenas curiosidade industrial", en: "Just industrial curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Engenharia de hosts resistance genes substitui sprays químicos com sustentabilidade ampliada", en: "Engineering host resistance genes replaces chemical sprays with broader sustainability"}
+        rationale: {pt: "Quando resistência é genética, então pesticidas reduzem.", en: "When resistance is genetic, pesticides reduce."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Wheat rust:", en: "Wheat rust:"}
+        choices:
+          - {pt: "Sr genes (Sr31, Sr35) e stack de NLRs combatem ferrugem cepa Ug99 globalmente devastadora", en: "Sr genes (Sr31, Sr35) and NLR stacks combat globally-devastating Ug99 rust strain"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sr genes (Sr31, Sr35) e stack de NLRs combatem ferrugem cepa Ug99 globalmente devastadora", en: "Sr genes (Sr31, Sr35) and NLR stacks combat globally-devastating Ug99 rust strain"}
+        rationale: {pt: "Quando NLRs combinam, então resistência fica durável.", en: "When NLRs stack, resistance is durable."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Drought + immunity tradeoff:", en: "Drought + immunity tradeoff:"}
+        choices:
+          - {pt: "Cross-talk hormonal entre ABA e SA gera trade-off gerenciado por engenharia molecular", en: "Hormonal cross-talk between ABA and SA generates trade-off managed by molecular engineering"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cross-talk hormonal entre ABA e SA gera trade-off gerenciado por engenharia molecular", en: "Hormonal cross-talk between ABA and SA generates trade-off managed by molecular engineering"}
+        rationale: {pt: "Quando trade-off é resolvido, então culturas resistem stress combinado.", en: "When trade-off is resolved, crops resist combined stress."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacina vegetal:", en: "Plant vaccine:"}
+        choices:
+          - {pt: "Tratamento com BABA ou indutores gera priming sistêmico — vacina química para plantas", en: "BABA or inducer treatment generates systemic priming — chemical vaccine for plants"}
+          - {pt: "Apenas curiosidade industrial", en: "Just industrial curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tratamento com BABA ou indutores gera priming sistêmico — vacina química para plantas", en: "BABA or inducer treatment generates systemic priming — chemical vaccine for plants"}
+        rationale: {pt: "Quando priming é induzido, então plantas reagem mais rápido a ataques.", en: "When priming is induced, plants react faster to attacks."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Insetos e plant immunity:", en: "Insects and plant immunity:"}
+        choices:
+          - {pt: "Damage-associated molecular patterns (DAMPs) liberados ativam JA priming contra herbívoros", en: "Damage-associated molecular patterns (DAMPs) released activate JA priming against herbivores"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Damage-associated molecular patterns (DAMPs) liberados ativam JA priming contra herbívoros", en: "Damage-associated molecular patterns (DAMPs) released activate JA priming against herbivores"}
+        rationale: {pt: "Quando DAMPs alertam, então defesa contra insetos é montada.", en: "When DAMPs alert, defense against insects is mounted."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "VIGS e plant antiviral:", en: "VIGS and plant antiviral:"}
+        choices:
+          - {pt: "Virus-induced gene silencing utiliza maquinaria de RNAi planta para alvos terapêuticos", en: "Virus-induced gene silencing uses plant RNAi machinery for therapeutic targets"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Virus-induced gene silencing utiliza maquinaria de RNAi planta para alvos terapêuticos", en: "Virus-induced gene silencing uses plant RNAi machinery for therapeutic targets"}
+        rationale: {pt: "Quando VIGS funciona, então drug targets vegetais são validados rapidamente.", en: "When VIGS works, plant drug targets are rapidly validated."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Climate change e patógenos:", en: "Climate change and pathogens:"}
+        choices:
+          - {pt: "Aquecimento expande habitat de patógenos requerendo culturas com imunidade adaptada", en: "Warming expands pathogen habitats requiring crops with adapted immunity"}
+          - {pt: "Apenas curiosidade ambiental", en: "Just environmental curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Aquecimento expande habitat de patógenos requerendo culturas com imunidade adaptada", en: "Warming expands pathogen habitats requiring crops with adapted immunity"}
+        rationale: {pt: "Quando clima muda, então biologia agrícola precisa se adaptar.", en: "When climate shifts, agricultural biology must adapt."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em imunidade vegetal:", en: "Next plant immunity frontiers:"}
+        choices:
+          - {pt: "NLR design por AI, edição CRISPR multiplex e culturas com imunidade durável e ampla", en: "AI-designed NLRs, multiplex CRISPR editing and crops with durable broad immunity"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição agrícola", en: "Just agricultural tradition"}
+        correctAnswer: {pt: "NLR design por AI, edição CRISPR multiplex e culturas com imunidade durável e ampla", en: "AI-designed NLRs, multiplex CRISPR editing and crops with durable broad immunity"}
+        rationale: {pt: "Quando ferramentas convergem, então segurança alimentar global é fortalecida.", en: "When tools converge, global food security is strengthened."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+target: 20
