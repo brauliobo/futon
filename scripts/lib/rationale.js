@@ -338,11 +338,12 @@ const NUMBERED_LIST_RE = /\b1\)\s*\S+.*\b2\)\s*\S+.*\b3\)/;
 // or "I, you, he, she, it, we, they — os sete pronomes pessoais."
 const ENUM_LIST_RE = /(?:[\wáéíóúâêôãõç-]+\s*,\s*){2,}[\wáéíóúâêôãõç/-]+\s*[—–-]\s*\S/i;
 // Math shorthand: factorials, exponents, combinations, approximations,
-// variable assignments, middle-dot products, statistical symbols.
+// variable assignments, middle-dot products, statistical symbols, matrix
+// entries.
 // e.g. "4! = 24.", "C(n,1) = n", "1/6 ≈ 0.167", "a = 4", "(2,4)=2·(1,2)",
 //      "(0.5)^2 = 0.25", "Q1 = 25º percentil", "α=0.05", "L.D. ↔ det = 0",
-//      "T: (3,3)", "R90°(5,0)=(0,5)"
-const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|\([\d.]+\)\^\d|C\(\s*[a-z\d]|[\d\w/]+\s*≈\s*[\d.]+|C\([a-z],[a-z\d]\)\s*=|\b[a-z]\s*=\s*-?\d|\d\s*·\s*[(\d]|[QHα-ω][₀-₉0-9]?\s*=|↔|°\s*\(/i;
+//      "T: (3,3)", "R90°(5,0)=(0,5)", "A⁻¹[1,2] = -1", "(90/360)·π·64 = 16π"
+const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|\([\d.]+\)\^\d|C\(\s*[a-z\d]|[\d\w/]+\s*≈\s*[\d.]+|C\([a-z],[a-z\d]\)\s*=|\b[a-z]\s*=\s*-?\d|·\s*[(\dπ]|[QHα-ω][₀-₉0-9]?\s*=|↔|°\s*\(|[A-Z][⁻¹⁰¹²³⁴⁵⁶⁷⁸⁹]?\[\d/i;
 // Japanese script with grammatical enumeration: kanji/kana followed by a
 // colon, comma list, or " : " with at least one paired term.
 // e.g. "どころか: 親切どころか、上手どころか、謝るどころか."
@@ -350,10 +351,14 @@ const MATH_SHORTHAND_RE = /\b\d+!\s*=|\d+\s*\^\s*\d+\s*=|\([\d.]+\)\^\d|C\(\s*[a
 //      "Nだけあって、Vただけあって — Latin lead is ok if JP-comma follows."
 const JP_GRAMMAR_RE = /[\w一-鿿぀-ヿ]+[一-鿿぀-ヿ][^\s]*\s*[:、,]\s*[\w一-鿿぀-ヿ]*[一-鿿぀-ヿ]/;
 // Pattern-explanation structure: starts with a JP-script grammar pattern
-// then " é/são/significa/indica/usa..." in PT.
+// then PT/EN explanation copula (é/são/pode/serve/segue/aceita/significa/
+// usa-se/funciona/equivale). Note JS \b is ASCII-only so we anchor on
+// trailing whitespace or punctuation rather than \b.
 //  e.g. "ないことはない é uma aceitação hesitante"
 //       "を踏まえた上で é a estrutura ideal..."
-const JP_PATTERN_DESC_RE = /[一-鿿぀-ヿ][^\s]*\s+(?:é|são|significa|indica|usa|representa|expressa|denota|funciona|equivale|aceita|conecta|exige|contém)\b/i;
+//       "ならでは pode seguir: 日本ならでは"
+//       "に則して ≒ に基づいて, mas..."
+const JP_PATTERN_DESC_RE = /[一-鿿぀-ヿ][^\s]*\s+(?:é|são|pode|poder|serve|segue|aceita|significa|indica|usa(?:-se)?|representa|expressa|denota|funciona|equivale|conecta|exige|contém|tem|ter|≒|≈|=)[\s\W]/i;
 
 // Strip accents for matching: JS `\b` anchors are ASCII-only, so words that
 // *start* with accented letters (ângulo, década) never fire a word-boundary
