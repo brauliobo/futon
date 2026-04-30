@@ -1,0 +1,244 @@
+title:
+  pt: "📜 Epigenética tumoral"
+  en: "📜 Tumor epigenetics"
+level: 'K'
+subject: biology
+objectives: [biology.cancer_epigenetics]
+difficulty: 5
+authorNotes: "DNMT, EZH2/PRC2, BET inhibitors, IDH mutations, hypermethylator phenotype, KMT2D, EP300, decitabine, vorinostat."
+example:
+  pt: "Ex.: tumor com DNMT3A R882 → hypermethylation → silenciamento supressor → DNMT inhibitor → desreprime."
+  en: "Ex.: tumor with DNMT3A R882 → hypermethylation → suppressor silencing → DNMT inhibitor → derepresses."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Mecanismos epigenéticos", en: "Epigenetic mechanisms"}
+    description: {pt: "Como tumor reescreve o epigenoma.", en: "How tumor rewrites the epigenome."}
+    exercises:
+      - type: choice
+        question: {pt: "DNMT3A R882:", en: "DNMT3A R882:"}
+        choices:
+          - {pt: "Mutação dominant-negative em AML reduz metilação local fora de CGIs alterando hematopoiese e dirigindo CHIP", en: "Dominant-negative mutation in AML cuts non-CGI methylation altering hematopoiesis and driving CHIP"}
+          - {pt: "Ganho-de-função catalítico que hipermetila CpG islands de oncogenes silenciando MYC e RAS em hematopoiese saudável", en: "Catalytic gain-of-function hypermethylating oncogene CpG islands silencing MYC and RAS in healthy hematopoiesis"}
+          - {pt: "Mutação que abole metilação de novo apenas em células embrionárias sem efeito em hematopoiese adulta ou em CHIP", en: "Mutation abolishing de novo methylation only in embryonic cells with no effect on adult hematopoiesis or CHIP"}
+          - {pt: "Variante de splicing que troca DNMT3A por DNMT1 mantendo padrão global e induzindo apenas envelhecimento clonal benigno", en: "Splice variant swapping DNMT3A for DNMT1 keeping global pattern and inducing only benign clonal aging"}
+        correctAnswer: {pt: "Mutação dominant-negative em AML reduz metilação local fora de CGIs alterando hematopoiese e dirigindo CHIP", en: "Dominant-negative mutation in AML cuts non-CGI methylation altering hematopoiesis and driving CHIP"}
+        rationale: {pt: "Quando DNMT3A muta, então hematopoiese fica clonal.", en: "When DNMT3A mutates, hematopoiesis becomes clonal."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "EZH2 e linfoma:", en: "EZH2 and lymphoma:"}
+        choices:
+          - {pt: "Y641 ganho-de-função aumenta H3K27me3 silenciando supressores em linfoma — tazemetostat aprovado para EZH2-mut FL", en: "Y641 gain-of-function raises H3K27me3 silencing suppressors in lymphoma — tazemetostat approved for EZH2-mut FL"}
+          - {pt: "Perda-de-função EZH2 elimina H3K27me3 ativando oncogenes em DLBCL respondendo a HDAC inhibitors em primeira linha", en: "EZH2 loss-of-function erases H3K27me3 activating oncogenes in DLBCL responding to first-line HDAC inhibitors"}
+          - {pt: "EZH2 acetila H3K27 em centros germinativos induzindo super-enhancers BCL6 sensíveis apenas a BET inhibitors", en: "EZH2 acetylates H3K27 in germinal centers inducing BCL6 super-enhancers sensitive only to BET inhibitors"}
+          - {pt: "Y641 desestabiliza PRC2 reduzindo metilação em CpG islands e cura linfoma folicular sem fármaco direcionado", en: "Y641 destabilizes PRC2 reducing CpG-island methylation and cures follicular lymphoma without targeted drug"}
+        correctAnswer: {pt: "Y641 ganho-de-função aumenta H3K27me3 silenciando supressores em linfoma — tazemetostat aprovado para EZH2-mut FL", en: "Y641 gain-of-function raises H3K27me3 silencing suppressors in lymphoma — tazemetostat approved for EZH2-mut FL"}
+        rationale: {pt: "Quando EZH2 hipermetila, então supressores calam.", en: "When EZH2 hypermethylates, suppressors silence."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BAF/SWI-SNF:", en: "BAF/SWI-SNF:"}
+        choices:
+          - {pt: "Mutações ARID1A, SMARCA4 e SMARCB1 desativam complexo BAF — alvos sintético-letais EZH2 e BRD9 emergem", en: "ARID1A, SMARCA4 and SMARCB1 mutations inactivate BAF complex — synthetic-lethal EZH2 and BRD9 targets emerge"}
+          - {pt: "ARID1A e SMARCA4 ganham função abrindo cromatina globalmente em ovário e pulmão sem dependências sintético-letais", en: "ARID1A and SMARCA4 gain function opening chromatin globally in ovary and lung with no synthetic-lethal dependencies"}
+          - {pt: "BAF é redundante com PRC2 em tumores; mutações são passenger sem implicação terapêutica em câncer pediátrico", en: "BAF is redundant with PRC2 in tumors; mutations are passengers with no therapeutic implication in pediatric cancer"}
+          - {pt: "SMARCB1 perda induz hiperacetilação H3K27 que apenas DNMT inhibitors revertem em rabdoid tumor infantil", en: "SMARCB1 loss induces H3K27 hyperacetylation that only DNMT inhibitors reverse in pediatric rhabdoid tumor"}
+        correctAnswer: {pt: "Mutações ARID1A, SMARCA4 e SMARCB1 desativam complexo BAF — alvos sintético-letais EZH2 e BRD9 emergem", en: "ARID1A, SMARCA4 and SMARCB1 mutations inactivate BAF complex — synthetic-lethal EZH2 and BRD9 targets emerge"}
+        rationale: {pt: "Quando BAF cai, então cromatina perde dinamismo.", en: "When BAF falls, chromatin loses dynamism."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BET (BRD4):", en: "BET (BRD4):"}
+        choices:
+          - {pt: "BRD4 lê H3K27ac em super-enhancers concentrando MYC e oncogenes — JQ1 e ABBV-744 fragmentam condensados oncogênicos", en: "BRD4 reads H3K27ac at super-enhancers concentrating MYC and oncogenes — JQ1 and ABBV-744 fragment oncogenic condensates"}
+          - {pt: "BRD4 escreve metilação H3K9 em heterocromatina pericêntrica e JQ1 estabiliza condensados de MYC em vez de fragmentá-los", en: "BRD4 writes H3K9 methylation in pericentric heterochromatin and JQ1 stabilizes MYC condensates instead of fragmenting them"}
+          - {pt: "BRD4 atua como ubiquitin ligase de p53 e BET inhibitors funcionam apenas em tumores com PRC2 selvagem e MYC baixo", en: "BRD4 acts as p53 ubiquitin ligase and BET inhibitors work only in PRC2-wildtype, MYC-low tumors"}
+          - {pt: "BRD4 desliga super-enhancers em condições basais e BET inhibitors são quimicamente equivalentes a DNMT inhibitors", en: "BRD4 turns off super-enhancers at baseline and BET inhibitors are chemically equivalent to DNMT inhibitors"}
+        correctAnswer: {pt: "BRD4 lê H3K27ac em super-enhancers concentrando MYC e oncogenes — JQ1 e ABBV-744 fragmentam condensados oncogênicos", en: "BRD4 reads H3K27ac at super-enhancers concentrating MYC and oncogenes — JQ1 and ABBV-744 fragment oncogenic condensates"}
+        rationale: {pt: "Quando BRD4 sai, então MYC silencia.", en: "When BRD4 leaves, MYC silences."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "IDH1/2 e 2-HG:", en: "IDH1/2 and 2-HG:"}
+        choices:
+          - {pt: "Mutantes IDH produzem 2-HG inibindo TET/JMJ — ivosidenib/enasidenib desbloqueam diferenciação em AML/glioma", en: "Mutant IDH produces 2-HG inhibiting TET/JMJ — ivosidenib/enasidenib unblock differentiation in AML/glioma"}
+          - {pt: "IDH mutante perde função produzindo menos α-KG e aumentando hidroximetilação genômica em glioma de baixo grau", en: "Mutant IDH loses function producing less α-KG and raising genomic hydroxymethylation in low-grade glioma"}
+          - {pt: "2-HG ativa diretamente PRC2 sem afetar TET ou demetilases JMJ, e ivosidenib é apenas um suporte sintomático em AML", en: "2-HG directly activates PRC2 without affecting TET or JMJ demethylases, and ivosidenib is mere symptomatic support in AML"}
+          - {pt: "Mutação IDH é silenciosa em metabolismo e apenas marca prognóstico, sem inibidor aprovado para diferenciação tumoral", en: "IDH mutation is metabolically silent and only marks prognosis, with no approved differentiation-inducing inhibitor"}
+        correctAnswer: {pt: "Mutantes IDH produzem 2-HG inibindo TET/JMJ — ivosidenib/enasidenib desbloqueam diferenciação em AML/glioma", en: "Mutant IDH produces 2-HG inhibiting TET/JMJ — ivosidenib/enasidenib unblock differentiation in AML/glioma"}
+        rationale: {pt: "Quando 2-HG é bloqueado, então diferenciação retorna.", en: "When 2-HG is blocked, differentiation returns."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hypermethylator phenotype:", en: "Hypermethylator phenotype:"}
+        choices:
+          - {pt: "CIMP em CRC e G-CIMP em glioma silenciam dezenas de supressores via DNMT3 — sensibilizam a inibidores DNMT", en: "CIMP in CRC and G-CIMP in glioma silence dozens of suppressors via DNMT3 — sensitize to DNMT inhibitors"}
+          - {pt: "CIMP é hipometilação global em CRC ativando oncogenes e tornando tumor refratário a qualquer terapia epigenética", en: "CIMP is global hypomethylation in CRC activating oncogenes and rendering tumor refractory to any epigenetic therapy"}
+          - {pt: "G-CIMP só ocorre em glioblastoma IDH-selvagem e identifica casos de pior prognóstico sem alvo molecular acionável", en: "G-CIMP only occurs in IDH-wildtype glioblastoma and identifies worse-prognosis cases with no actionable molecular target"}
+          - {pt: "Fenótipo hipermetilador é restrito a melanomas pediátricos e correlaciona com perda completa de DNMT1 funcional", en: "Hypermethylator phenotype is restricted to pediatric melanomas and correlates with complete loss of functional DNMT1"}
+        correctAnswer: {pt: "CIMP em CRC e G-CIMP em glioma silenciam dezenas de supressores via DNMT3 — sensibilizam a inibidores DNMT", en: "CIMP in CRC and G-CIMP in glioma silence dozens of suppressors via DNMT3 — sensitize to DNMT inhibitors"}
+        rationale: {pt: "Quando CIMP forma, então DNMTi atinge ponto fraco.", en: "When CIMP forms, DNMTi hits weak point."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TET2:", en: "TET2:"}
+        choices:
+          - {pt: "TET2 LoF em CHIP e MDS/AML reduz hidroximetilação alterando autorenovação HSC e impulsionando inflammaging cardíaco", en: "TET2 LoF in CHIP and MDS/AML cuts hydroxymethylation altering HSC self-renewal and driving cardiac inflammaging"}
+          - {pt: "TET2 ganho-de-função expande HSCs em CHIP elevando hidroximetilação genômica e protegendo contra aterosclerose", en: "TET2 gain-of-function expands HSCs in CHIP raising genomic hydroxymethylation and protecting against atherosclerosis"}
+          - {pt: "TET2 atua apenas em embriogênese e mutações em adultos não influenciam hematopoiese clonal nem doença cardiovascular", en: "TET2 acts only in embryogenesis and adult mutations do not influence clonal hematopoiesis nor cardiovascular disease"}
+          - {pt: "Perda TET2 corrige fenótipo CHIP via redundância DNMT3A e bloqueia inflammasome NLRP3 em macrófagos teciduais", en: "TET2 loss corrects CHIP phenotype via DNMT3A redundancy and blocks NLRP3 inflammasome in tissue macrophages"}
+        correctAnswer: {pt: "TET2 LoF em CHIP e MDS/AML reduz hidroximetilação alterando autorenovação HSC e impulsionando inflammaging cardíaco", en: "TET2 LoF in CHIP and MDS/AML cuts hydroxymethylation altering HSC self-renewal and driving cardiac inflammaging"}
+        rationale: {pt: "Quando TET2 falta, então HSCs viram clonais agressivas.", en: "When TET2 lacks, HSCs become clonally aggressive."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "KMT2D/MLL2:", en: "KMT2D/MLL2:"}
+        choices:
+          - {pt: "Mutações LoF KMT2D reduzem H3K4me1 em enhancers em DLBCL e BC — alvos sintético-letais EP300 e CARM1 emergem", en: "KMT2D LoF mutations cut enhancer H3K4me1 in DLBCL and BC — synthetic-lethal EP300 and CARM1 targets emerge"}
+          - {pt: "KMT2D fosforila H3 em promotores ativos e mutações em DLBCL aumentam H3K27ac sensibilizando a HDAC inhibitors apenas", en: "KMT2D phosphorylates H3 at active promoters and DLBCL mutations raise H3K27ac sensitizing only to HDAC inhibitors"}
+          - {pt: "KMT2D escreve H3K9me3 em heterocromatina e ganho-de-função em mama causa ativação global de oncogenes BCL2 e MYC", en: "KMT2D writes H3K9me3 in heterochromatin and breast gain-of-function causes global activation of BCL2 and MYC oncogenes"}
+          - {pt: "Perda KMT2D é compensada por KMT2A em todos os tecidos e não cria vulnerabilidades sintético-letais terapêuticas", en: "KMT2D loss is compensated by KMT2A across all tissues and creates no therapeutic synthetic-lethal vulnerabilities"}
+        correctAnswer: {pt: "Mutações LoF KMT2D reduzem H3K4me1 em enhancers em DLBCL e BC — alvos sintético-letais EP300 e CARM1 emergem", en: "KMT2D LoF mutations cut enhancer H3K4me1 in DLBCL and BC — synthetic-lethal EP300 and CARM1 targets emerge"}
+        rationale: {pt: "Quando KMT2D cai, então enhancers calam.", en: "When KMT2D falls, enhancers silence."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Histone H3 mutações:", en: "Histone H3 mutations:"}
+        choices:
+          - {pt: "H3K27M em DIPG inibe PRC2 globalmente paradoxalmente — mutação onco-histona define glioma pediátrico de alto grau", en: "H3K27M in DIPG paradoxically inhibits PRC2 globally — onco-histone mutation defines pediatric high-grade glioma"}
+          - {pt: "H3K27M ativa PRC2 hipermetilando todos os promotores em DIPG e responde rapidamente a EZH2 inhibitors em monoterapia", en: "H3K27M activates PRC2 hypermethylating all promoters in DIPG and responds rapidly to EZH2 inhibitors in monotherapy"}
+          - {pt: "Mutações de histona H3 são exclusivas a sarcomas adultos e marcam tumores de baixo grau com prognóstico favorável", en: "H3 histone mutations are exclusive to adult sarcomas and mark low-grade tumors with favorable prognosis"}
+          - {pt: "H3K36M em condrossarcoma estabiliza H3K36me3 em corpos de gene aumentando reparo de DNA e quimioresistência intrínseca", en: "H3K36M in chondrosarcoma stabilizes gene-body H3K36me3 raising DNA repair and intrinsic chemoresistance"}
+        correctAnswer: {pt: "H3K27M em DIPG inibe PRC2 globalmente paradoxalmente — mutação onco-histona define glioma pediátrico de alto grau", en: "H3K27M in DIPG paradoxically inhibits PRC2 globally — onco-histone mutation defines pediatric high-grade glioma"}
+        rationale: {pt: "Quando histona muta, então PRC2 perde alvo.", en: "When histone mutates, PRC2 loses target."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MGMT em glioma:", en: "MGMT in glioma:"}
+        choices:
+          - {pt: "Hipermetilação MGMT silencia reparo de O6-metilguanina sensibilizando GBM a temozolomida em pacientes específicos", en: "MGMT hypermethylation silences O6-methylguanine repair sensitizing GBM to temozolomide in specific patients"}
+          - {pt: "Hipometilação MGMT é o biomarcador clássico de resposta a temozolomida em GBM por restaurar reparo direto de adutos", en: "MGMT hypomethylation is the classic biomarker of temozolomide response in GBM by restoring direct adduct repair"}
+          - {pt: "MGMT codifica DNA glicosilase de uracila e sua metilação não tem valor preditivo em terapia de gliomas adultos", en: "MGMT encodes uracil DNA glycosylase and its methylation has no predictive value in adult glioma therapy"}
+          - {pt: "Status de metilação MGMT prediz apenas resposta a radioterapia, sendo independente de quimiossensibilidade a alquilantes", en: "MGMT methylation status predicts only radiotherapy response, being independent of alkylator chemosensitivity"}
+        correctAnswer: {pt: "Hipermetilação MGMT silencia reparo de O6-metilguanina sensibilizando GBM a temozolomida em pacientes específicos", en: "MGMT hypermethylation silences O6-methylguanine repair sensitizing GBM to temozolomide in specific patients"}
+        rationale: {pt: "Quando MGMT cala, então TMZ funciona melhor.", en: "When MGMT silences, TMZ works better."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Drogas e fronteiras", en: "Drugs and frontiers"}
+    description: {pt: "Inibidores epigenéticos clínicos.", en: "Clinical epigenetic inhibitors."}
+    exercises:
+      - type: choice
+        question: {pt: "Decitabine/azacitidine:", en: "Decitabine/azacitidine:"}
+        choices:
+          - {pt: "DNMT inhibitors hipometilam genoma reativando supressores e antígenos tumorais — base do MDS/AML standard of care", en: "DNMT inhibitors hypomethylate genome reactivating suppressors and tumor antigens — basis of MDS/AML standard of care"}
+          - {pt: "Análogos de citidina que hipermetilam promotores supressores e são usados em primeira linha de carcinoma renal metastático", en: "Cytidine analogs that hypermethylate suppressor promoters used as first line in metastatic renal carcinoma"}
+          - {pt: "Inibidores de HDAC1/2 que aumentam acetilação H3 e substituem transplante alogênico em LMA de alto risco em idosos", en: "HDAC1/2 inhibitors raising H3 acetylation that replace allogeneic transplant in high-risk AML elderly"}
+          - {pt: "Pró-fármacos de antraciclina ativados por DNMT3A em medula óssea sem efeito em padrão de metilação tumoral", en: "Anthracycline prodrugs activated by DNMT3A in bone marrow with no effect on tumor methylation pattern"}
+        correctAnswer: {pt: "DNMT inhibitors hipometilam genoma reativando supressores e antígenos tumorais — base do MDS/AML standard of care", en: "DNMT inhibitors hypomethylate genome reactivating suppressors and tumor antigens — basis of MDS/AML standard of care"}
+        rationale: {pt: "Quando metila baixa, então supressores voltam.", en: "When methyl falls, suppressors return."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "HDAC inhibitors:", en: "HDAC inhibitors:"}
+        choices:
+          - {pt: "Vorinostat, romidepsin e belinostat tratam CTCL e PTCL aumentando acetilação de H3/H4 e induzindo morte celular tumoral", en: "Vorinostat, romidepsin and belinostat treat CTCL and PTCL raising H3/H4 acetylation and inducing tumor cell death"}
+          - {pt: "Vorinostat é DNMT inhibitor que reativa promotores hipermetilados e é primeira linha em mieloma múltiplo refratário", en: "Vorinostat is a DNMT inhibitor reactivating hypermethylated promoters and is first-line in refractory multiple myeloma"}
+          - {pt: "Romidepsin metila H3K27 globalmente induzindo apoptose em LMA e está aprovado para câncer de mama HER2+ avançado", en: "Romidepsin globally methylates H3K27 inducing apoptosis in AML and is approved for advanced HER2+ breast cancer"}
+          - {pt: "Belinostat fosforila histonas H1 levando a quebra de cromatina mitótica em sarcomas pediátricos com SMARCB1 wildtype", en: "Belinostat phosphorylates H1 histones causing mitotic chromatin breakage in SMARCB1-wildtype pediatric sarcomas"}
+        correctAnswer: {pt: "Vorinostat, romidepsin e belinostat tratam CTCL e PTCL aumentando acetilação de H3/H4 e induzindo morte celular tumoral", en: "Vorinostat, romidepsin and belinostat treat CTCL and PTCL raising H3/H4 acetylation and inducing tumor cell death"}
+        rationale: {pt: "Quando HDAC bloqueia, então acetilação reaparece.", en: "When HDAC blocks, acetylation reappears."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tazemetostat:", en: "Tazemetostat:"}
+        choices:
+          - {pt: "EZH2 inhibitor aprovado para sarcoma epitelioide INI-deficiente e FL EZH2-mut atuando em câncer com cromatina dependente", en: "EZH2 inhibitor approved for INI-deficient epithelioid sarcoma and EZH2-mut FL acting on chromatin-dependent cancer"}
+          - {pt: "BET inhibitor que degrada BRD4 em sarcoma sinovial e linfoma de Hodgkin via mecanismo PROTAC heterobifuncional", en: "BET inhibitor degrading BRD4 in synovial sarcoma and Hodgkin lymphoma via heterobifunctional PROTAC mechanism"}
+          - {pt: "DNMT inhibitor de segunda geração indicado para SMD pediátrica e melanoma cutâneo BRAF-selvagem em monoterapia", en: "Second-generation DNMT inhibitor indicated for pediatric MDS and BRAF-wildtype cutaneous melanoma as monotherapy"}
+          - {pt: "Inibidor de IDH2 mutante com aprovação ampla em tumores sólidos sem precisar de biomarcador molecular específico", en: "Mutant IDH2 inhibitor broadly approved in solid tumors without need for specific molecular biomarker"}
+        correctAnswer: {pt: "EZH2 inhibitor aprovado para sarcoma epitelioide INI-deficiente e FL EZH2-mut atuando em câncer com cromatina dependente", en: "EZH2 inhibitor approved for INI-deficient epithelioid sarcoma and EZH2-mut FL acting on chromatin-dependent cancer"}
+        rationale: {pt: "Quando EZH2 baixa, então supressores reativam.", en: "When EZH2 drops, suppressors reactivate."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Menin-MLL inhibitors:", en: "Menin-MLL inhibitors:"}
+        choices:
+          - {pt: "Revumenib (SNDX-5613) bloqueia menin-MLL fusion em AML KMT2A-rearranjado e NPM1-mut induzindo diferenciação", en: "Revumenib (SNDX-5613) blocks menin-MLL fusion in KMT2A-rearranged and NPM1-mut AML inducing differentiation"}
+          - {pt: "Revumenib estabiliza interação menin-MLL ampliando expressão HOXA9 em AML KMT2A-wt e induzindo remissão profunda durável", en: "Revumenib stabilizes menin-MLL interaction expanding HOXA9 expression in KMT2A-wt AML inducing deep durable remission"}
+          - {pt: "Inibidores menin-MLL são DNMT inhibitors classe II ativos apenas em sarcomas pediátricos com fusão EWS-FLI1", en: "Menin-MLL inhibitors are class II DNMT inhibitors active only in EWS-FLI1-fused pediatric sarcomas"}
+          - {pt: "Bloqueio menin-MLL induz proliferação clonal em hematopoiese saudável sem efeito em AML rearranjada", en: "Menin-MLL block induces clonal proliferation in healthy hematopoiesis without effect on rearranged AML"}
+        correctAnswer: {pt: "Revumenib (SNDX-5613) bloqueia menin-MLL fusion em AML KMT2A-rearranjado e NPM1-mut induzindo diferenciação", en: "Revumenib (SNDX-5613) blocks menin-MLL fusion in KMT2A-rearranged and NPM1-mut AML inducing differentiation"}
+        rationale: {pt: "Quando menin separa, então diferenciação retoma.", en: "When menin parts, differentiation resumes."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PROTAC degrader:", en: "PROTAC degrader:"}
+        choices:
+          - {pt: "ARV-825 (BRD4-PROTAC) e ARV-471 (ER-PROTAC) degradam alvo via E3 ubiquitin ligase superando inibidores reversíveis", en: "ARV-825 (BRD4-PROTAC) and ARV-471 (ER-PROTAC) degrade target via E3 ubiquitin ligase outperforming reversible inhibitors"}
+          - {pt: "PROTACs estabilizam alvo no proteoma evitando degradação por ubiquitina e prolongando sinalização oncogênica BRD4 e ER", en: "PROTACs stabilize target in proteome avoiding ubiquitin degradation and prolonging BRD4 and ER oncogenic signaling"}
+          - {pt: "PROTACs são oligonucleotídeos antisense que silenciam mRNA de BRD4 e ER sem usar maquinaria do ubiquitina-proteassomo", en: "PROTACs are antisense oligonucleotides silencing BRD4 and ER mRNA without engaging ubiquitin-proteasome machinery"}
+          - {pt: "ARV-825 e ARV-471 são CAR-T direcionados a BRD4 e ER em superfície celular com mecanismo citolítico imunológico", en: "ARV-825 and ARV-471 are CAR-T cells targeting surface BRD4 and ER via immune cytolytic mechanism"}
+        correctAnswer: {pt: "ARV-825 (BRD4-PROTAC) e ARV-471 (ER-PROTAC) degradam alvo via E3 ubiquitin ligase superando inibidores reversíveis", en: "ARV-825 (BRD4-PROTAC) and ARV-471 (ER-PROTAC) degrade target via E3 ubiquitin ligase outperforming reversible inhibitors"}
+        rationale: {pt: "Quando alvo é degradado, então sinalização cessa permanentemente.", en: "When target is degraded, signaling permanently ends."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Combo + checkpoint:", en: "Combo + checkpoint:"}
+        choices:
+          - {pt: "DNMTi/HDACi + anti-PD-1 expõe antígenos endogenous retroviruses (HERVs) sensibilizando tumores frios a imunoterapia", en: "DNMTi/HDACi + anti-PD-1 exposes endogenous retrovirus (HERV) antigens sensitizing cold tumors to immunotherapy"}
+          - {pt: "DNMTi/HDACi silencia HERVs e reduz neoantígenos tornando tumores frios refratários a anti-PD-1 em combinação", en: "DNMTi/HDACi silences HERVs and reduces neoantigens making cold tumors refractory to anti-PD-1 in combination"}
+          - {pt: "Combinação DNMTi + anti-PD-1 induz hiperprogressão em todos os tumores sólidos e está contraindicada na clínica", en: "DNMTi + anti-PD-1 combination induces hyperprogression in all solid tumors and is clinically contraindicated"}
+          - {pt: "HDAC inhibitors degradam PD-L1 em tumor e dispensam anti-PD-1 ao restaurar imunovigilância só por reativação enhancer", en: "HDAC inhibitors degrade tumor PD-L1 and obviate anti-PD-1 by restoring immune surveillance via enhancer reactivation alone"}
+        correctAnswer: {pt: "DNMTi/HDACi + anti-PD-1 expõe antígenos endogenous retroviruses (HERVs) sensibilizando tumores frios a imunoterapia", en: "DNMTi/HDACi + anti-PD-1 exposes endogenous retrovirus (HERV) antigens sensitizing cold tumors to immunotherapy"}
+        rationale: {pt: "Quando HERVs aparecem, então tumor frio aquece.", en: "When HERVs appear, cold tumor warms."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Methylation liquid biopsy:", en: "Methylation liquid biopsy:"}
+        choices:
+          - {pt: "Padrão de metilação tecido-específico em cfDNA identifica origem do tumor mesmo em fração subliminar (Galleri MCED)", en: "Tissue-specific methylation in cfDNA identifies tumor origin even at sub-threshold fraction (Galleri MCED)"}
+          - {pt: "cfDNA de tumor não carrega assinatura de metilação tecidual estável e exige sempre biópsia tecidual confirmatória", en: "Tumor cfDNA carries no stable tissue methylation signature and always demands confirmatory tissue biopsy"}
+          - {pt: "Galleri MCED detecta apenas mutações pontuais em KRAS e TP53 sem informar tecido de origem do tumor primário", en: "Galleri MCED detects only KRAS and TP53 point mutations without informing tissue of origin of primary tumor"}
+          - {pt: "Metilação em cfDNA reflete só envelhecimento clonal hematopoiético sendo cega para tumores epiteliais sólidos", en: "cfDNA methylation reflects only hematopoietic clonal aging being blind to solid epithelial tumors"}
+        correctAnswer: {pt: "Padrão de metilação tecido-específico em cfDNA identifica origem do tumor mesmo em fração subliminar (Galleri MCED)", en: "Tissue-specific methylation in cfDNA identifies tumor origin even at sub-threshold fraction (Galleri MCED)"}
+        rationale: {pt: "Quando metilação fala, então tumor é localizado sem imagem.", en: "When methylation speaks, tumor is localized without imaging."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Epigenetic editing:", en: "Epigenetic editing:"}
+        choices:
+          - {pt: "dCas9-DNMT3A/TET1 silenciam ou ativam genes alvo permanentemente sem alterar sequência — hereditário em divisões celulares", en: "dCas9-DNMT3A/TET1 permanently silence or activate target genes without altering sequence — heritable across divisions"}
+          - {pt: "dCas9-DNMT3A introduz quebras de fita dupla em locus alvo dependendo de reparo HR para silenciar gene supressor", en: "dCas9-DNMT3A introduces double-strand breaks at target locus relying on HR repair to silence suppressor gene"}
+          - {pt: "Edição epigenética é transitória e sempre apagada após uma divisão celular sem efeito hereditário em descendentes", en: "Epigenetic editing is transient and always erased after one cell division with no heritable effect in progeny"}
+          - {pt: "TET1 fundido a Cas9 ativo cliva mRNA do alvo silenciando expressão por degradação RNA dependente de Argonauta", en: "Cas9-active TET1 fusion cleaves target mRNA silencing expression via Argonaute-dependent RNA degradation"}
+        correctAnswer: {pt: "dCas9-DNMT3A/TET1 silenciam ou ativam genes alvo permanentemente sem alterar sequência — hereditário em divisões celulares", en: "dCas9-DNMT3A/TET1 permanently silence or activate target genes without altering sequence — heritable across divisions"}
+        rationale: {pt: "Quando epigenoma é escrito, então expressão é regulada herdavelmente.", en: "When epigenome is written, expression is heritably regulated."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resistência epigenética:", en: "Epigenetic resistance:"}
+        choices:
+          - {pt: "Persisters tumorais ativam BRD4, KDM5 e EZH2 escapando terapia — combo epigenético com targeted reverte resistência", en: "Tumor persisters activate BRD4, KDM5 and EZH2 escaping therapy — epigenetic + targeted combo reverses resistance"}
+          - {pt: "Resistência tumoral é puramente genética via mutações em BRAF e EGFR sem componente epigenético reversível em persisters", en: "Tumor resistance is purely genetic via BRAF and EGFR mutations with no reversible epigenetic component in persisters"}
+          - {pt: "Persisters silenciam BRD4 e KDM5 entrando em senescência irreversível incurável por qualquer combinação terapêutica", en: "Persisters silence BRD4 and KDM5 entering irreversible senescence incurable by any therapeutic combination"}
+          - {pt: "Combo epigenético + targeted induz resistência cruzada universal tornando tumor refratário a todas as classes de droga", en: "Epigenetic + targeted combo induces universal cross-resistance making tumor refractory to all drug classes"}
+        correctAnswer: {pt: "Persisters tumorais ativam BRD4, KDM5 e EZH2 escapando terapia — combo epigenético com targeted reverte resistência", en: "Tumor persisters activate BRD4, KDM5 and EZH2 escaping therapy — epigenetic + targeted combo reverses resistance"}
+        rationale: {pt: "Quando resistência epigenética age, então combo alvo+epi atinge.", en: "When epigenetic resistance acts, target+epi combo hits."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese epigenética tumoral:", en: "Tumor epigenetics synthesis:"}
+        choices:
+          - {pt: "Mutações DNMT/EZH2/IDH/BAF/H3 reescrevem cromatina tumoral — DNMTi, HDACi, EZH2i, BETi e edição epigenética abrem precisão clínica", en: "DNMT/EZH2/IDH/BAF/H3 mutations rewrite tumor chromatin — DNMTi, HDACi, EZH2i, BETi and epigenetic editing open clinical precision"}
+          - {pt: "Cromatina tumoral é estável e idêntica à somática saudável tornando intervenções epigenéticas clinicamente irrelevantes", en: "Tumor chromatin is stable and identical to healthy somatic cells making epigenetic interventions clinically irrelevant"}
+          - {pt: "DNMTi e HDACi atuam apenas em câncer pediátrico de baixo grau sem aplicação em hematológicos adultos ou tumores sólidos", en: "DNMTi and HDACi act only in low-grade pediatric cancer with no application in adult hematologic or solid tumors"}
+          - {pt: "Edição epigenética foi abandonada clinicamente por inviabilidade técnica deixando apenas DNMTi como ferramenta epigenômica", en: "Epigenetic editing was clinically abandoned for technical infeasibility leaving only DNMTi as epigenomic tool"}
+        correctAnswer: {pt: "Mutações DNMT/EZH2/IDH/BAF/H3 reescrevem cromatina tumoral — DNMTi, HDACi, EZH2i, BETi e edição epigenética abrem precisão clínica", en: "DNMT/EZH2/IDH/BAF/H3 mutations rewrite tumor chromatin — DNMTi, HDACi, EZH2i, BETi and epigenetic editing open clinical precision"}
+        rationale: {pt: "Quando epigenoma é alvo, então oncologia ganha dimensão regulatória.", en: "When epigenome is target, oncology gains regulatory dimension."}
+        objectives: [biology.cancer_epigenetics]
+        difficulty: 5
+target: 20
