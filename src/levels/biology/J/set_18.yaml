@@ -1,0 +1,244 @@
+title:
+  pt: "🚀 Entrega de fármacos avançada"
+  en: "🚀 Advanced drug delivery"
+level: 'J'
+subject: biology
+objectives: [biology.drug_delivery]
+difficulty: 5
+authorNotes: "LNP avançado, polymer nanoparticles, BBB shuttles, GalNAc, antibody conjugates, cell-membrane camuflagem, mRNA delivery."
+example:
+  pt: "Ex.: nanopartícula com tropismo → escapa endossomo → entrega cargo → expressão local → terapia direcionada."
+  en: "Ex.: nanoparticle with tropism → endosomal escape → cargo delivery → local expression → targeted therapy."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas de entrega", en: "Delivery platforms"}
+    description: {pt: "Como nanopartículas atingem alvo.", en: "How nanoparticles hit target."}
+    exercises:
+      - type: choice
+        question: {pt: "Ionizable LNPs:", en: "Ionizable LNPs:"}
+        choices:
+          - {pt: "Lipídios protonáveis em pH endossomal disrupt membrana liberando mRNA — composição direciona fígado por padrão", en: "pH-protonatable lipids disrupt endosomal membrane releasing mRNA — composition default-targets liver"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Lipídios protonáveis em pH endossomal disrupt membrana liberando mRNA — composição direciona fígado por padrão", en: "pH-protonatable lipids disrupt endosomal membrane releasing mRNA — composition default-targets liver"}
+        rationale: {pt: "Quando pH ativa, então cargo escapa endossomo.", en: "When pH activates, cargo escapes endosome."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SORT lipid:", en: "SORT lipid:"}
+        choices:
+          - {pt: "Composição da LNP (SORT lipid) direciona entrega para fígado, baço ou pulmão sem ligante específico (Cheng 2020)", en: "LNP composition (SORT lipid) targets delivery to liver, spleen or lung without specific ligand (Cheng 2020)"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Composição da LNP (SORT lipid) direciona entrega para fígado, baço ou pulmão sem ligante específico (Cheng 2020)", en: "LNP composition (SORT lipid) targets delivery to liver, spleen or lung without specific ligand (Cheng 2020)"}
+        rationale: {pt: "Quando lipídio direciona, então tecido é escolhido por design.", en: "When lipid directs, tissue is chosen by design."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GalNAc-siRNA:", en: "GalNAc-siRNA:"}
+        choices:
+          - {pt: "Trímero GalNAc liga ASGPR hepatocitário com afinidade nM entregando siRNA — base de inclisiran e patisiran avançados", en: "GalNAc trimer binds hepatocyte ASGPR at nM affinity delivering siRNA — basis of advanced inclisiran and patisiran"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Trímero GalNAc liga ASGPR hepatocitário com afinidade nM entregando siRNA — base de inclisiran e patisiran avançados", en: "GalNAc trimer binds hepatocyte ASGPR at nM affinity delivering siRNA — basis of advanced inclisiran and patisiran"}
+        rationale: {pt: "Quando ASGPR liga, então siRNA chega ao hepatócito.", en: "When ASGPR binds, siRNA reaches hepatocyte."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell membrane camouflage:", en: "Cell membrane camouflage:"}
+        choices:
+          - {pt: "Nanopartículas vestidas com membrana de eritrócito ou plaqueta evitam clearance imune e atingem alvos específicos", en: "Nanoparticles cloaked with RBC or platelet membrane evade immune clearance and reach specific targets"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Nanopartículas vestidas com membrana de eritrócito ou plaqueta evitam clearance imune e atingem alvos específicos", en: "Nanoparticles cloaked with RBC or platelet membrane evade immune clearance and reach specific targets"}
+        rationale: {pt: "Quando camufla, então sistema imune não vê.", en: "When camouflaged, immune system does not see."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BBB shuttle (Trontinemab):", en: "BBB shuttle (Trontinemab):"}
+        choices:
+          - {pt: "Brain-shuttle Roche fund anti-Aβ a TfR-binding domain elevando concentração cerebral 20-50x sobre IgG convencional", en: "Roche brain-shuttle fuses anti-Aβ to TfR-binding domain raising brain concentration 20-50x over conventional IgG"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Brain-shuttle Roche fund anti-Aβ a TfR-binding domain elevando concentração cerebral 20-50x sobre IgG convencional", en: "Roche brain-shuttle fuses anti-Aβ to TfR-binding domain raising brain concentration 20-50x over conventional IgG"}
+        rationale: {pt: "Quando shuttle entrega, então cérebro recebe medicamento.", en: "When shuttle delivers, brain receives medication."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AAV capsid engineering:", en: "AAV capsid engineering:"}
+        choices:
+          - {pt: "Directed evolution gera AAV9.HR/PHP.eB com tropismo cerebral pós-IV em camundongo facilitando terapia gênica do SNC", en: "Directed evolution yields AAV9.HR/PHP.eB with brain tropism post-IV in mouse easing CNS gene therapy"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Directed evolution gera AAV9.HR/PHP.eB com tropismo cerebral pós-IV em camundongo facilitando terapia gênica do SNC", en: "Directed evolution yields AAV9.HR/PHP.eB with brain tropism post-IV in mouse easing CNS gene therapy"}
+        rationale: {pt: "Quando capsid evolui, então CNS recebe terapia.", en: "When capsid evolves, CNS receives therapy."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ADC linker:", en: "ADC linker:"}
+        choices:
+          - {pt: "Linkers Val-Cit (cathepsin), tetrapeptide e disulfide controlam release intracelular e bystander killing em ADCs modernos", en: "Val-Cit (cathepsin), tetrapeptide and disulfide linkers control intracellular release and bystander killing in modern ADCs"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Linkers Val-Cit (cathepsin), tetrapeptide e disulfide controlam release intracelular e bystander killing em ADCs modernos", en: "Val-Cit (cathepsin), tetrapeptide and disulfide linkers control intracellular release and bystander killing in modern ADCs"}
+        rationale: {pt: "Quando linker é fino, então payload age só no alvo.", en: "When linker is fine, payload acts only on target."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microneedle patch:", en: "Microneedle patch:"}
+        choices:
+          - {pt: "Adesivos auto-aplicáveis com microagulhas atingem APCs dérmicas elevando imunogenicidade e dispensando cadeia fria", en: "Self-applied microneedle patches reach dermal APCs raising immunogenicity and bypassing cold chain"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Adesivos auto-aplicáveis com microagulhas atingem APCs dérmicas elevando imunogenicidade e dispensando cadeia fria", en: "Self-applied microneedle patches reach dermal APCs raising immunogenicity and bypassing cold chain"}
+        rationale: {pt: "Quando patch substitui, então acesso global expande.", en: "When patch substitutes, global access expands."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ultrasound BBB opening:", en: "Ultrasound BBB opening:"}
+        choices:
+          - {pt: "FUS + microbolhas abre BBB transientemente permitindo entrega local de mAbs e quimio em GBM e AD", en: "FUS + microbubbles transiently opens BBB allowing local mAb and chemo delivery in GBM and AD"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "FUS + microbolhas abre BBB transientemente permitindo entrega local de mAbs e quimio em GBM e AD", en: "FUS + microbubbles transiently opens BBB allowing local mAb and chemo delivery in GBM and AD"}
+        rationale: {pt: "Quando BBB abre, então droga grande passa.", en: "When BBB opens, large drug passes."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Polymeric nanoparticles (PLGA):", en: "Polymeric nanoparticles (PLGA):"}
+        choices:
+          - {pt: "Nanopartículas PLGA biodegradáveis liberam droga em ritmo controlado servindo vacina, oncologia e implantes oculares", en: "Biodegradable PLGA nanoparticles release drug at controlled rate serving vaccines, oncology and ocular implants"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Nanopartículas PLGA biodegradáveis liberam droga em ritmo controlado servindo vacina, oncologia e implantes oculares", en: "Biodegradable PLGA nanoparticles release drug at controlled rate serving vaccines, oncology and ocular implants"}
+        rationale: {pt: "Quando polímero degrada, então droga sai gradualmente.", en: "When polymer degrades, drug exits gradually."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações terapêuticas", en: "Therapeutic applications"}
+    description: {pt: "Plataformas em uso clínico.", en: "Platforms in clinical use."}
+    exercises:
+      - type: choice
+        question: {pt: "Onpattro (patisiran):", en: "Onpattro (patisiran):"}
+        choices:
+          - {pt: "LNP entrega siRNA contra TTR em hATTR — primeira terapia siRNA aprovada (2018) reduziu progressão neuropatia", en: "LNP delivers siRNA vs TTR in hATTR — first approved siRNA therapy (2018) cutting neuropathy progression"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "LNP entrega siRNA contra TTR em hATTR — primeira terapia siRNA aprovada (2018) reduziu progressão neuropatia", en: "LNP delivers siRNA vs TTR in hATTR — first approved siRNA therapy (2018) cutting neuropathy progression"}
+        rationale: {pt: "Quando siRNA atua, então amiloidose hereditária recua.", en: "When siRNA acts, hereditary amyloidosis recedes."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inclisiran semestral:", en: "Biannual inclisiran:"}
+        choices:
+          - {pt: "GalNAc-conjugado siRNA silencia PCSK9 hepático com 2 doses/ano mantendo LDL reduzido em adesão simples", en: "GalNAc-conjugated siRNA silences hepatic PCSK9 with 2 doses/year keeping LDL low with simple adherence"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "GalNAc-conjugado siRNA silencia PCSK9 hepático com 2 doses/ano mantendo LDL reduzido em adesão simples", en: "GalNAc-conjugated siRNA silences hepatic PCSK9 with 2 doses/year keeping LDL low with simple adherence"}
+        rationale: {pt: "Quando dose é rara, então adesão sobe.", en: "When dosing is rare, adherence rises."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Antibody-mRNA combo:", en: "Antibody-mRNA combo:"}
+        choices:
+          - {pt: "Engineered LNP CD5-targeted entrega CAR mRNA a T cells in situ gerando CAR transitório seguro sem leucaférese", en: "CD5-targeted engineered LNP delivers CAR mRNA to T cells in situ creating safe transient CAR without leukapheresis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Engineered LNP CD5-targeted entrega CAR mRNA a T cells in situ gerando CAR transitório seguro sem leucaférese", en: "CD5-targeted engineered LNP delivers CAR mRNA to T cells in situ creating safe transient CAR without leukapheresis"}
+        rationale: {pt: "Quando in vivo CAR funciona, então acesso CAR-T cresce.", en: "When in vivo CAR works, CAR-T access grows."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "EVs (exosomas) drug delivery:", en: "EVs (exosome) drug delivery:"}
+        choices:
+          - {pt: "Engineered EVs com Lamp2b-RVG direcionam SNC e EVs CD9-fusões alvo tumor evitando imunogenicidade LNP em uso crônico", en: "Engineered EVs with Lamp2b-RVG target CNS and CD9-fusion EVs target tumor avoiding LNP immunogenicity in chronic use"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Engineered EVs com Lamp2b-RVG direcionam SNC e EVs CD9-fusões alvo tumor evitando imunogenicidade LNP em uso crônico", en: "Engineered EVs with Lamp2b-RVG target CNS and CD9-fusion EVs target tumor avoiding LNP immunogenicity in chronic use"}
+        rationale: {pt: "Quando EV substitui, então uso crônico fica seguro.", en: "When EV substitutes, chronic use stays safe."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hydrogel sustained release:", en: "Hydrogel sustained release:"}
+        choices:
+          - {pt: "Hidrogéis injetáveis com depot extracelular liberam fármacos por semanas — uso em VEGF-trap ocular e oncologia local", en: "Injectable hydrogels with extracellular depot release drugs for weeks — used in ocular VEGF-trap and local oncology"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Hidrogéis injetáveis com depot extracelular liberam fármacos por semanas — uso em VEGF-trap ocular e oncologia local", en: "Injectable hydrogels with extracellular depot release drugs for weeks — used in ocular VEGF-trap and local oncology"}
+        rationale: {pt: "Quando hidrogel libera, então doses se espaçam.", en: "When hydrogel releases, doses space."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Implantable osmotic pump:", en: "Implantable osmotic pump:"}
+        choices:
+          - {pt: "DUROS-like dispositivos liberam fármaco em ritmo zero-ordem por meses para hipoacusia, gigantismo e endocrinologia geral", en: "DUROS-like devices release drug at zero-order rate over months for hearing loss, gigantism and general endocrinology"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DUROS-like dispositivos liberam fármaco em ritmo zero-ordem por meses para hipoacusia, gigantismo e endocrinologia geral", en: "DUROS-like devices release drug at zero-order rate over months for hearing loss, gigantism and general endocrinology"}
+        rationale: {pt: "Quando bomba mantém, então adesão é dispensada.", en: "When pump maintains, adherence is bypassed."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Nanowarming organ:", en: "Nanowarming organ:"}
+        choices:
+          - {pt: "Magnetic nanoparticles com aquecimento por RF reaquecem órgãos vitrificados uniformemente evitando devitrificação destrutiva", en: "Magnetic nanoparticles with RF heating uniformly rewarm vitrified organs avoiding destructive devitrification"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Magnetic nanoparticles com aquecimento por RF reaquecem órgãos vitrificados uniformemente evitando devitrificação destrutiva", en: "Magnetic nanoparticles with RF heating uniformly rewarm vitrified organs avoiding destructive devitrification"}
+        rationale: {pt: "Quando aquecimento é uniforme, então banking real fica próximo.", en: "When warming is uniform, real banking nears."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inhaled mRNA:", en: "Inhaled mRNA:"}
+        choices:
+          - {pt: "Aerossóis LNP entregam mRNA a epitélio brônquico em CF e fibrose — alternativa a injeção sistêmica para doenças respiratórias", en: "LNP aerosols deliver mRNA to bronchial epithelium in CF and fibrosis — alternative to systemic injection for respiratory disease"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Aerossóis LNP entregam mRNA a epitélio brônquico em CF e fibrose — alternativa a injeção sistêmica para doenças respiratórias", en: "LNP aerosols deliver mRNA to bronchial epithelium in CF and fibrosis — alternative to systemic injection for respiratory disease"}
+        rationale: {pt: "Quando inhalado entrega, então via aérea responde diretamente.", en: "When inhaled delivers, airway responds directly."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Intratumoral immunotherapy:", en: "Intratumoral immunotherapy:"}
+        choices:
+          - {pt: "Injeções diretas IL-12 mRNA, agonistas STING e oncolytic virus convertem TME frio em hot evitando exposição sistêmica", en: "Direct IL-12 mRNA, STING agonist and oncolytic virus injections convert cold TME to hot avoiding systemic exposure"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Injeções diretas IL-12 mRNA, agonistas STING e oncolytic virus convertem TME frio em hot evitando exposição sistêmica", en: "Direct IL-12 mRNA, STING agonist and oncolytic virus injections convert cold TME to hot avoiding systemic exposure"}
+        rationale: {pt: "Quando local entrega, então tumor é palco.", en: "When local delivers, tumor is the stage."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese da entrega:", en: "Delivery synthesis:"}
+        choices:
+          - {pt: "Plataformas LNP, AAV, ADC, EV, hidrogéis e shuttles combinam tropismo + escape endossomal + cinética controlada para entregar precisão molecular", en: "LNP, AAV, ADC, EV, hydrogel and shuttle platforms combine tropism + endosomal escape + controlled kinetics to deliver molecular precision"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Plataformas LNP, AAV, ADC, EV, hidrogéis e shuttles combinam tropismo + escape endossomal + cinética controlada para entregar precisão molecular", en: "LNP, AAV, ADC, EV, hydrogel and shuttle platforms combine tropism + endosomal escape + controlled kinetics to deliver molecular precision"}
+        rationale: {pt: "Quando entrega é certa, então fármaco realiza promessa.", en: "When delivery is right, drug fulfills promise."}
+        objectives: [biology.drug_delivery]
+        difficulty: 5
+target: 20

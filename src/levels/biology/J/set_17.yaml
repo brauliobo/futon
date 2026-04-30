@@ -1,0 +1,244 @@
+title:
+  pt: "⏰ Relógios biológicos da idade"
+  en: "⏰ Biological aging clocks"
+level: 'J'
+subject: biology
+objectives: [biology.aging_clocks]
+difficulty: 5
+authorNotes: "Horvath, Hannum, GrimAge, PhenoAge, DunedinPACE, principal-component clocks, telomere length, omics clocks."
+example:
+  pt: "Ex.: DNAm 353 sítios → idade biológica → comparada à cronológica → biological age acceleration."
+  en: "Ex.: DNAm 353 sites → biological age → compared to chronological → biological age acceleration."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Métricas de idade biológica", en: "Biological age metrics"}
+    description: {pt: "Como medir tempo no corpo.", en: "How to measure time in the body."}
+    exercises:
+      - type: choice
+        question: {pt: "Horvath clock:", en: "Horvath clock:"}
+        choices:
+          - {pt: "353 sítios CpG com regressão prevê idade cronológica humana com erro <4 anos em qualquer tecido (2013)", en: "353 CpG sites with regression predicts human chronological age with <4 year error in any tissue (2013)"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "353 sítios CpG com regressão prevê idade cronológica humana com erro <4 anos em qualquer tecido (2013)", en: "353 CpG sites with regression predicts human chronological age with <4 year error in any tissue (2013)"}
+        rationale: {pt: "Quando relógio prevê, então biologia ganha métrica de envelhecimento.", en: "When clock predicts, biology gains aging metric."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hannum clock:", en: "Hannum clock:"}
+        choices:
+          - {pt: "Relógio de 71 CpGs em sangue com erro ~3 anos correlaciona com mortalidade cardiovascular específica de tecido sanguíneo", en: "71-CpG blood clock with ~3 year error correlates with blood-specific cardiovascular mortality"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Relógio de 71 CpGs em sangue com erro ~3 anos correlaciona com mortalidade cardiovascular específica de tecido sanguíneo", en: "71-CpG blood clock with ~3 year error correlates with blood-specific cardiovascular mortality"}
+        rationale: {pt: "Quando Hannum mede, então sangue revela idade biológica.", en: "When Hannum measures, blood reveals biological age."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PhenoAge:", en: "PhenoAge:"}
+        choices:
+          - {pt: "Levine 2018 combina 9 biomarcadores clínicos + DNAm prevendo morbidade e mortalidade superior a Horvath puro", en: "Levine 2018 combines 9 clinical biomarkers + DNAm predicting morbidity and mortality better than Horvath alone"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Levine 2018 combina 9 biomarcadores clínicos + DNAm prevendo morbidade e mortalidade superior a Horvath puro", en: "Levine 2018 combines 9 clinical biomarkers + DNAm predicting morbidity and mortality better than Horvath alone"}
+        rationale: {pt: "Quando fenótipo entra, então morbidade prediz-se melhor.", en: "When phenotype enters, morbidity is better predicted."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GrimAge:", en: "GrimAge:"}
+        choices:
+          - {pt: "Lu 2019 prediz tempo até morte combinando smoking, plasma proteomes e DNAm — clock de mortalidade superior", en: "Lu 2019 predicts time-to-death combining smoking, plasma proteomes and DNAm — superior mortality clock"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Lu 2019 prediz tempo até morte combinando smoking, plasma proteomes e DNAm — clock de mortalidade superior", en: "Lu 2019 predicts time-to-death combining smoking, plasma proteomes and DNAm — superior mortality clock"}
+        rationale: {pt: "Quando GrimAge mede, então mortalidade é antecipada.", en: "When GrimAge measures, mortality is anticipated."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DunedinPACE:", en: "DunedinPACE:"}
+        choices:
+          - {pt: "Mede ritmo do envelhecimento biológico em pacing per ano via DNAm em coorte longitudinal Dunedin (Belsky 2022)", en: "Measures pace of biological aging per year via DNAm in longitudinal Dunedin cohort (Belsky 2022)"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mede ritmo do envelhecimento biológico em pacing per ano via DNAm em coorte longitudinal Dunedin (Belsky 2022)", en: "Measures pace of biological aging per year via DNAm in longitudinal Dunedin cohort (Belsky 2022)"}
+        rationale: {pt: "Quando ritmo é medido, então intervenção é avaliada rapidamente.", en: "When pace is measured, intervention is rapidly assessed."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PC clocks (PCH):", en: "PC clocks (PCH):"}
+        choices:
+          - {pt: "Higgins-Chen 2022 reduz noise técnico via PCA estendendo poder de relógios DNAm em ensaios de intervenção", en: "Higgins-Chen 2022 cuts technical noise via PCA extending DNAm clock power in intervention trials"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Higgins-Chen 2022 reduz noise técnico via PCA estendendo poder de relógios DNAm em ensaios de intervenção", en: "Higgins-Chen 2022 cuts technical noise via PCA extending DNAm clock power in intervention trials"}
+        rationale: {pt: "Quando ruído cai, então sinal sobressai.", en: "When noise drops, signal stands out."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Telomere length:", en: "Telomere length:"}
+        choices:
+          - {pt: "Encurta-se ~50-100 bp/divisão; medida por qPCR ou STELA correlaciona com mortalidade mas é heterogênea por tecido", en: "Shortens ~50-100 bp/division; measured by qPCR or STELA correlates with mortality but heterogeneous across tissues"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Encurta-se ~50-100 bp/divisão; medida por qPCR ou STELA correlaciona com mortalidade mas é heterogênea por tecido", en: "Shortens ~50-100 bp/division; measured by qPCR or STELA correlates with mortality but heterogeneous across tissues"}
+        rationale: {pt: "Quando telômeros encurtam, então senescência aproxima.", en: "When telomeres shorten, senescence nears."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Plasma proteomic age:", en: "Plasma proteomic age:"}
+        choices:
+          - {pt: "Lehallier 2019 perfila ~3000 proteínas plasmáticas em ondas etárias (~34, 60, 78 anos) revelando saltos não-lineares", en: "Lehallier 2019 profiles ~3000 plasma proteins in age waves (~34, 60, 78 years) revealing non-linear jumps"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Lehallier 2019 perfila ~3000 proteínas plasmáticas em ondas etárias (~34, 60, 78 anos) revelando saltos não-lineares", en: "Lehallier 2019 profiles ~3000 plasma proteins in age waves (~34, 60, 78 years) revealing non-linear jumps"}
+        rationale: {pt: "Quando proteínas refletem, então biologia salta em fases.", en: "When proteins reflect, biology jumps in phases."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Glycan age:", en: "Glycan age:"}
+        choices:
+          - {pt: "IgG glycans (galactose, sialic acid) mudam com idade — GlycanAge mede inflammaging e biological age via glicobiologia", en: "IgG glycans (galactose, sialic acid) change with age — GlycanAge measures inflammaging and biological age via glycobiology"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "IgG glycans (galactose, sialic acid) mudam com idade — GlycanAge mede inflammaging e biological age via glicobiologia", en: "IgG glycans (galactose, sialic acid) change with age — GlycanAge measures inflammaging and biological age via glycobiology"}
+        rationale: {pt: "Quando glicanos mudam, então inflammaging fica visível.", en: "When glycans shift, inflammaging becomes visible."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Frailty index:", en: "Frailty index:"}
+        choices:
+          - {pt: "Soma de 30-70 deficits clínicos prediz morbidade complementando relógios moleculares na avaliação geriátrica", en: "Sum of 30-70 clinical deficits predicts morbidity complementing molecular clocks in geriatric assessment"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Soma de 30-70 deficits clínicos prediz morbidade complementando relógios moleculares na avaliação geriátrica", en: "Sum of 30-70 clinical deficits predicts morbidity complementing molecular clocks in geriatric assessment"}
+        rationale: {pt: "Quando fragilidade soma, então clínica antecipa intervenção.", en: "When frailty sums, clinic anticipates intervention."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações em geroterapia", en: "Applications in geroscience"}
+    description: {pt: "Como relógios guiam pesquisa.", en: "How clocks guide research."}
+    exercises:
+      - type: choice
+        question: {pt: "Trial endpoint:", en: "Trial endpoint:"}
+        choices:
+          - {pt: "DunedinPACE e GrimAge servem como endpoints surrogados em ensaios geroterápicos curtos antes de eventos clínicos", en: "DunedinPACE and GrimAge serve as surrogate endpoints in short geroprotective trials before clinical events"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DunedinPACE e GrimAge servem como endpoints surrogados em ensaios geroterápicos curtos antes de eventos clínicos", en: "DunedinPACE and GrimAge serve as surrogate endpoints in short geroprotective trials before clinical events"}
+        rationale: {pt: "Quando surrogate mede, então ensaio acelera.", en: "When surrogate measures, trial accelerates."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TRIIM trial:", en: "TRIIM trial:"}
+        choices:
+          - {pt: "GH + DHEA + metformina reduziu Horvath ~2.5 anos em 9 homens em 1 ano — primeira reversão demonstrável humana", en: "GH + DHEA + metformin reduced Horvath ~2.5 years in 9 men over 1 year — first demonstrable human reversal"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "GH + DHEA + metformina reduziu Horvath ~2.5 anos em 9 homens em 1 ano — primeira reversão demonstrável humana", en: "GH + DHEA + metformin reduced Horvath ~2.5 years in 9 men over 1 year — first demonstrable human reversal"}
+        rationale: {pt: "Quando reversão é mostrada, então geroterapia avança.", en: "When reversal is shown, geroscience advances."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CALERIE caloric restriction:", en: "CALERIE caloric restriction:"}
+        choices:
+          - {pt: "CR ~25% por 2 anos retardou DunedinPACE em humanos sem perda muscular significativa — primeiro RCT antiaging clássico", en: "CR ~25% for 2 years slowed DunedinPACE in humans without significant muscle loss — first classical antiaging RCT"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "CR ~25% por 2 anos retardou DunedinPACE em humanos sem perda muscular significativa — primeiro RCT antiaging clássico", en: "CR ~25% for 2 years slowed DunedinPACE in humans without significant muscle loss — first classical antiaging RCT"}
+        rationale: {pt: "Quando CR diminui ritmo, então biologia confirma rota.", en: "When CR slows pace, biology confirms route."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Senolytics e clock:", en: "Senolytics and clock:"}
+        choices:
+          - {pt: "Dasatinib + quercetina em humanos reduzem SASP e p16 mas efeito em DNAm clocks ainda em validação", en: "Dasatinib + quercetin in humans cut SASP and p16 but DNAm clock effect still under validation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Dasatinib + quercetina em humanos reduzem SASP e p16 mas efeito em DNAm clocks ainda em validação", en: "Dasatinib + quercetin in humans cut SASP and p16 but DNAm clock effect still under validation"}
+        rationale: {pt: "Quando senolíticos limpam, então clocks podem responder.", en: "When senolytics clear, clocks may respond."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Intervention paradox:", en: "Intervention paradox:"}
+        choices:
+          - {pt: "Algumas intervenções aceleram clock no curto prazo mas reduzem mortalidade — relógios precisam validação multicoorte", en: "Some interventions speed clock short-term but cut mortality — clocks need multi-cohort validation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Algumas intervenções aceleram clock no curto prazo mas reduzem mortalidade — relógios precisam validação multicoorte", en: "Some interventions speed clock short-term but cut mortality — clocks need multi-cohort validation"}
+        rationale: {pt: "Quando paradoxo aparece, então interpretação fica cuidadosa.", en: "When paradox appears, interpretation grows careful."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tissue-specific clocks:", en: "Tissue-specific clocks:"}
+        choices:
+          - {pt: "Skin-blood, cortical e hepatic clocks ajustam-se a metilação tecidual revelando órgão-específico aging acceleration", en: "Skin-blood, cortical and hepatic clocks tune to tissue methylation revealing organ-specific aging acceleration"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Skin-blood, cortical e hepatic clocks ajustam-se a metilação tecidual revelando órgão-específico aging acceleration", en: "Skin-blood, cortical and hepatic clocks tune to tissue methylation revealing organ-specific aging acceleration"}
+        rationale: {pt: "Quando órgão é alvo, então prevenção tecidual molda-se.", en: "When organ is target, tissue prevention shapes."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Causal vs descritivo:", en: "Causal vs descriptive:"}
+        choices:
+          - {pt: "Relógios são correlativos — Mendelian randomization e edição experimental são chave para definir causalidade molecular", en: "Clocks are correlative — Mendelian randomization and experimental editing are key to define molecular causality"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Relógios são correlativos — Mendelian randomization e edição experimental são chave para definir causalidade molecular", en: "Clocks are correlative — Mendelian randomization and experimental editing are key to define molecular causality"}
+        rationale: {pt: "Quando causalidade é provada, então alvo terapêutico é firme.", en: "When causality is proven, therapeutic target is firm."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Brain-MRI age:", en: "Brain-MRI age:"}
+        choices:
+          - {pt: "Deep learning em MRI estima idade cerebral biológica com erro <5 anos predizendo declínio cognitivo e demência", en: "Deep learning on MRI estimates biological brain age with <5 year error predicting cognitive decline and dementia"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Deep learning em MRI estima idade cerebral biológica com erro <5 anos predizendo declínio cognitivo e demência", en: "Deep learning on MRI estimates biological brain age with <5 year error predicting cognitive decline and dementia"}
+        rationale: {pt: "Quando MRI envelhece, então cérebro recebe métrica.", en: "When MRI ages, brain gains metric."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbiome age:", en: "Microbiome age:"}
+        choices:
+          - {pt: "Composição microbiana fecal cobre signature etária — disbiose típica predizem fragilidade e mortalidade em idosos", en: "Fecal microbial composition reflects age signature — typical dysbiosis predicts frailty and mortality in elderly"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Composição microbiana fecal cobre signature etária — disbiose típica predizem fragilidade e mortalidade em idosos", en: "Fecal microbial composition reflects age signature — typical dysbiosis predicts frailty and mortality in elderly"}
+        rationale: {pt: "Quando microbioma envelhece, então prognóstico modela-se.", en: "When microbiome ages, prognosis models."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese de relógios:", en: "Clock synthesis:"}
+        choices:
+          - {pt: "Relógios DNAm, proteômicos e fenotípicos transformaram envelhecimento em métrica acionável guiando prevenção e geroterapia clínica", en: "DNAm, proteomic and phenotypic clocks turned aging into actionable metric guiding prevention and clinical geroscience"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Relógios DNAm, proteômicos e fenotípicos transformaram envelhecimento em métrica acionável guiando prevenção e geroterapia clínica", en: "DNAm, proteomic and phenotypic clocks turned aging into actionable metric guiding prevention and clinical geroscience"}
+        rationale: {pt: "Quando idade é mensurável, então intervenção é avaliável.", en: "When age is measurable, intervention is assessable."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+target: 20
