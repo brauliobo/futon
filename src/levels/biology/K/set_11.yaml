@@ -1,0 +1,244 @@
+title:
+  pt: "🖨️ Bioimpressão 3D e engenharia de tecidos"
+  en: "🖨️ 3D bioprinting and tissue engineering"
+level: 'K'
+subject: biology
+objectives: [biology.bioprinting_tissue_eng]
+difficulty: 5
+authorNotes: "FRESH, DLP, extrusion, inkjet, GelMA, dECM bioink, vascularização sacrificial, organ-on-chip vasculatura, FRESH heart, vBio Wake Forest, Prellis Vascular, decellularized scaffolds."
+example:
+  pt: "Ex.: paciente DRC → biópsia → iPSC → diferenciação podócito + endotelial → bioprint glomérulo dECM-renal → maturação 30d → enxerto autólogo."
+  en: "Ex.: CKD patient → biopsy → iPSC → podocyte + endothelial differentiation → bioprint glomerulus on dECM-renal → 30d maturation → autologous graft."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Tecnologias de bioimpressão", en: "Bioprinting technologies"}
+    description: {pt: "Como construir tecido camada por camada.", en: "How to build tissue layer by layer."}
+    exercises:
+      - type: choice
+        question: {pt: "Extrusion bioprinting:", en: "Extrusion bioprinting:"}
+        choices:
+          - {pt: "Bioink hidrogel extrudado por bocal sob pressão deposita célula+matriz em 3D — flexível, alta densidade celular, resolução ~100-300µm", en: "Hydrogel bioink extruded through nozzle under pressure deposits cells+matrix in 3D — flexible, high cell density, ~100-300µm resolution"}
+          - {pt: "Extrusion deposita gota a gota como inkjet sem capacidade de manter integridade estrutural em construções 3D maiores que 1 mm", en: "Extrusion deposits drop-by-drop like inkjet without structural integrity in 3D constructs larger than 1 mm"}
+          - {pt: "Bioink em extrusão é sempre solução aquosa sem componente polimérico ou matriz extracelular sendo equivalente a microinjeção celular padrão", en: "Extrusion bioink is always aqueous without polymer or extracellular matrix being equivalent to standard cell microinjection"}
+          - {pt: "Resolução de extrusion é nanométrica e densidade celular é baixa sendo inadequada para tecidos densos como músculo ou fígado", en: "Extrusion resolution is nanometric and cell density is low being unsuitable for dense tissues like muscle or liver"}
+        correctAnswer: {pt: "Bioink hidrogel extrudado por bocal sob pressão deposita célula+matriz em 3D — flexível, alta densidade celular, resolução ~100-300µm", en: "Hydrogel bioink extruded through nozzle under pressure deposits cells+matrix in 3D — flexible, high cell density, ~100-300µm resolution"}
+        rationale: {pt: "Quando bocal extruda gel celular, então tecido cresce em camadas.", en: "When nozzle extrudes cell gel, tissue grows in layers."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DLP/SLA (vat):", en: "DLP/SLA (vat):"}
+        choices:
+          - {pt: "Luz UV/visível polimeriza camadas de bioink fotossensível com resolução micro/nano — ideal para vasculatura intricada e geometria complexa", en: "UV/visible light polymerizes photosensitive bioink layers at micro/nano resolution — ideal for intricate vasculature and complex geometry"}
+          - {pt: "DLP usa extrusão gota a gota sem componente fotopolimérico sendo equivalente operacional a inkjet com resolução milimétrica padrão", en: "DLP uses drop-by-drop extrusion without photopolymer component being operationally equivalent to millimeter-resolution inkjet"}
+          - {pt: "SLA é tecnologia de bioprinting acústica sem laser ou luz visível usada apenas para tecido muscular sem capacidade de gerar microvasculatura", en: "SLA is acoustic bioprinting without laser or visible light used only for muscle tissue without capacity for microvasculature"}
+          - {pt: "Bioink fotopolimerizável requer cura térmica subsequente sem uso de UV/visível sendo restrito a polímeros sintéticos sem células viáveis", en: "Photopolymerizable bioink requires subsequent thermal curing without UV/visible use being restricted to synthetic polymers without viable cells"}
+        correctAnswer: {pt: "Luz UV/visível polimeriza camadas de bioink fotossensível com resolução micro/nano — ideal para vasculatura intricada e geometria complexa", en: "UV/visible light polymerizes photosensitive bioink layers at micro/nano resolution — ideal for intricate vasculature and complex geometry"}
+        rationale: {pt: "Quando luz molda gel, então geometria fica precisa.", en: "When light molds gel, geometry stays precise."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "FRESH technique:", en: "FRESH technique:"}
+        choices:
+          - {pt: "Freeform Reversible Embedding em banho de gel térmico-reversível dá suporte temporário a estruturas pendentes — Feinberg coração 2019", en: "Freeform Reversible Embedding in thermo-reversible gel bath provides temporary support for pendant structures — Feinberg heart 2019"}
+          - {pt: "FRESH é técnica de extrusão direta sem banho suporte sendo restrita a estruturas planares 2D sem capacidade de geometria 3D pendente", en: "FRESH is direct extrusion without support bath restricted to planar 2D structures without pendant 3D geometry capacity"}
+          - {pt: "Banho térmico-reversível é incompatível com células vivas sendo FRESH limitada a polímeros acelulares para impressão 3D in vitro", en: "Thermo-reversible bath is incompatible with live cells making FRESH limited to acellular polymers for in vitro 3D printing"}
+          - {pt: "Feinberg 2019 demonstrou FRESH apenas em material plástico sintético sem componente celular ou matriz extracelular biológica funcional", en: "Feinberg 2019 demonstrated FRESH only in synthetic plastic without cellular component or functional biological extracellular matrix"}
+        correctAnswer: {pt: "Freeform Reversible Embedding em banho de gel térmico-reversível dá suporte temporário a estruturas pendentes — Feinberg coração 2019", en: "Freeform Reversible Embedding in thermo-reversible gel bath provides temporary support for pendant structures — Feinberg heart 2019"}
+        rationale: {pt: "Quando suporte é temporário, então gravidade não amassa.", en: "When support is temporary, gravity doesn't crush it."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inkjet bioprinting:", en: "Inkjet bioprinting:"}
+        choices:
+          - {pt: "Drop-on-demand piezo/thermal deposita gotas de bioink baixa-viscosidade — alta resolução, baixa densidade celular, bom para padrões 2D/multi-tipo", en: "Drop-on-demand piezo/thermal deposits low-viscosity bioink drops — high resolution, low cell density, good for 2D/multi-type patterns"}
+          - {pt: "Inkjet é técnica de extrusão contínua para bioink alta-viscosidade sendo equivalente operacional a extrusion sem componente drop-on-demand", en: "Inkjet is continuous extrusion for high-viscosity bioink being operationally equivalent to extrusion without drop-on-demand component"}
+          - {pt: "Piezo/thermal bioprinting é incompatível com células viáveis devido a estresse cisalhante alto sendo restrito a impressão de matriz acelular", en: "Piezo/thermal bioprinting is incompatible with viable cells due to high shear stress, restricted to acellular matrix printing"}
+          - {pt: "Inkjet exige bioink em fase sólida sem componente líquido sendo limitada a polímeros termoplásticos para construção 3D estrutural", en: "Inkjet requires solid-phase bioink without liquid component being limited to thermoplastic polymers for 3D structural builds"}
+        correctAnswer: {pt: "Drop-on-demand piezo/thermal deposita gotas de bioink baixa-viscosidade — alta resolução, baixa densidade celular, bom para padrões 2D/multi-tipo", en: "Drop-on-demand piezo/thermal deposits low-viscosity bioink drops — high resolution, low cell density, good for 2D/multi-type patterns"}
+        rationale: {pt: "Quando gota é fina, então padrão fica preciso.", en: "When drop is fine, pattern is precise."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GelMA bioink:", en: "GelMA bioink:"}
+        choices:
+          - {pt: "Gelatina metacrilada combina sítios RGD/MMP-cleavable com fotocura UV — biocompatível, ajustável em rigidez, padrão em DLP/extrusion celular", en: "Methacrylated gelatin combines RGD/MMP-cleavable sites with UV photocuring — biocompatible, tunable stiffness, standard in cell DLP/extrusion"}
+          - {pt: "GelMA é polímero sintético sem componente proteico nem sítios de ligação a receptor celular sendo bioink inerte para crescimento celular", en: "GelMA is a synthetic polymer without protein component or cell-receptor binding sites being an inert bioink for cell growth"}
+          - {pt: "Gelatina metacrilada é incompatível com fotocura UV exigindo cura térmica sendo restrita a inkjet sem aplicação em DLP fotopolimerizável", en: "Methacrylated gelatin is incompatible with UV photocuring requiring thermal cure, restricted to inkjet without DLP photopolymerization application"}
+          - {pt: "GelMA tem rigidez fixa não-ajustável e bloqueia adesão celular sendo bioink limitado a aplicações de impressão acelular sem células viáveis", en: "GelMA has fixed non-tunable stiffness and blocks cell adhesion being a bioink limited to acellular printing without viable cells"}
+        correctAnswer: {pt: "Gelatina metacrilada combina sítios RGD/MMP-cleavable com fotocura UV — biocompatível, ajustável em rigidez, padrão em DLP/extrusion celular", en: "Methacrylated gelatin combines RGD/MMP-cleavable sites with UV photocuring — biocompatible, tunable stiffness, standard in cell DLP/extrusion"}
+        rationale: {pt: "Quando GelMA cura, então tecido tem onde se ancorar.", en: "When GelMA cures, tissue has where to anchor."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "dECM bioink:", en: "dECM bioink:"}
+        choices:
+          - {pt: "Decellularized ECM em pó solubilizado preserva colágeno, GAG e fatores de crescimento órgão-específicos guiando diferenciação tecido-de-origem", en: "Decellularized ECM powder solubilized retains organ-specific collagen, GAGs and growth factors guiding tissue-of-origin differentiation"}
+          - {pt: "dECM bioink é composto sintético sem componente biológico nativo sendo equivalente a hidrogel acelular sem capacidade indutora de diferenciação", en: "dECM bioink is a synthetic compound without native biological component being equivalent to acellular hydrogel without differentiation induction"}
+          - {pt: "Decellularização elimina todos os fatores de crescimento e colágeno mantendo apenas DNA residual dispensável em bioprinting tecido-específico", en: "Decellularization eliminates all growth factors and collagen retaining only residual DNA dispensable in tissue-specific bioprinting"}
+          - {pt: "ECM órgão-específico não influencia diferenciação celular sendo uniformemente equivalente entre fígado, coração, rim em bioprinting moderno", en: "Organ-specific ECM does not influence differentiation being uniformly equivalent between liver, heart, kidney in modern bioprinting"}
+        correctAnswer: {pt: "Decellularized ECM em pó solubilizado preserva colágeno, GAG e fatores de crescimento órgão-específicos guiando diferenciação tecido-de-origem", en: "Decellularized ECM powder solubilized retains organ-specific collagen, GAGs and growth factors guiding tissue-of-origin differentiation"}
+        rationale: {pt: "Quando matriz é do órgão, então célula sabe quem ser.", en: "When matrix is from the organ, cell knows what to be."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vasculatura sacrificial:", en: "Sacrificial vasculature:"}
+        choices:
+          - {pt: "Imprime template Pluronic ou carboidrato lavável dentro de matriz; após cura matriz, lava sacrificial deixando lúmen perfundível interconectado", en: "Print washable Pluronic or carbohydrate template inside matrix; after matrix cure, wash sacrificial out leaving perfusable interconnected lumen"}
+          - {pt: "Vasculatura sacrificial é tecido viável que cresce no construto sem necessidade de remoção sendo equivalente a impressão de endotélio direto", en: "Sacrificial vasculature is viable tissue that grows in the construct without need for removal being equivalent to direct endothelium printing"}
+          - {pt: "Sacrificial é matriz permanente após cura sem componente removível sendo limitada a construções acelulares sem perfusão funcional", en: "Sacrificial is permanent matrix after cure without removable component restricted to acellular non-perfusable constructs"}
+          - {pt: "Pluronic e carboidratos não podem ser removidos seletivamente sem destruir a matriz adjacente sendo técnica inviável em bioprinting clínico", en: "Pluronic and carbohydrates cannot be selectively removed without destroying adjacent matrix being clinically infeasible in bioprinting"}
+        correctAnswer: {pt: "Imprime template Pluronic ou carboidrato lavável dentro de matriz; após cura matriz, lava sacrificial deixando lúmen perfundível interconectado", en: "Print washable Pluronic or carbohydrate template inside matrix; after matrix cure, wash sacrificial out leaving perfusable interconnected lumen"}
+        rationale: {pt: "Quando o sacrificial sai, então o lúmen aparece.", en: "When sacrificial leaves, lumen appears."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Coaxial nozzle:", en: "Coaxial nozzle:"}
+        choices:
+          - {pt: "Bocal duplo deposita ECM no exterior + crosslinker no interior gerando filamentos tubulares perfundíveis em uma passada — vasos diretos", en: "Dual nozzle deposits ECM outside + crosslinker inside producing perfusable tubular filaments in a single pass — direct vessels"}
+          - {pt: "Coaxial nozzle é técnica de extrusão simples sem componente concêntrico equivalente operacional a bocal único de extrusion bioprinting", en: "Coaxial nozzle is simple extrusion without concentric component, operationally equivalent to single-nozzle extrusion bioprinting"}
+          - {pt: "Bocal duplo extrai ar comprimido sem deposição de bioink sendo restrito a impressão a seco sem componente celular ou matriz", en: "Dual nozzle extracts compressed air without bioink deposition being restricted to dry printing without cell or matrix component"}
+          - {pt: "Coaxial nozzle requer múltiplas passadas sequenciais sendo incompatível com geração de filamento tubular único de uma vez em bioprint", en: "Coaxial nozzle requires sequential multi-pass being incompatible with single-pass tubular filament generation in bioprinting"}
+        correctAnswer: {pt: "Bocal duplo deposita ECM no exterior + crosslinker no interior gerando filamentos tubulares perfundíveis em uma passada — vasos diretos", en: "Dual nozzle deposits ECM outside + crosslinker inside producing perfusable tubular filaments in a single pass — direct vessels"}
+        rationale: {pt: "Quando duas linhas saem juntas, então tubo nasce pronto.", en: "When two lines emerge together, tube is born ready."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Two-photon polymerization:", en: "Two-photon polymerization:"}
+        choices:
+          - {pt: "Laser fs com absorção dois-fótons polimeriza voxel sub-µm permitindo nanoestruturas internas — ideal para arquitetura microvascular precisa", en: "fs laser with two-photon absorption polymerizes sub-µm voxel enabling internal nanostructures — ideal for precise microvascular architecture"}
+          - {pt: "Two-photon é técnica de luz visível sem componente laser fs sendo equivalente a DLP UV padrão sem capacidade de resolução sub-µm", en: "Two-photon is visible-light without fs laser component being equivalent to standard UV DLP without sub-µm resolution capacity"}
+          - {pt: "Polimerização dois-fótons exige bioink magneticamente sensível sem componente fotopolimerizável sendo restrita a impressão 2D em superfície", en: "Two-photon polymerization requires magnetically sensitive bioink without photopolymerizable component restricted to 2D surface printing"}
+          - {pt: "Resolução sub-µm é incompatível com viabilidade celular sendo two-photon restrito a polímeros sintéticos acelulares sem aplicação tecidual", en: "Sub-µm resolution is incompatible with cell viability making two-photon restricted to acellular synthetic polymers without tissue application"}
+        correctAnswer: {pt: "Laser fs com absorção dois-fótons polimeriza voxel sub-µm permitindo nanoestruturas internas — ideal para arquitetura microvascular precisa", en: "fs laser with two-photon absorption polymerizes sub-µm voxel enabling internal nanostructures — ideal for precise microvascular architecture"}
+        rationale: {pt: "Quando dois fótons coincidem, então voxel sub-µm acende.", en: "When two photons coincide, sub-µm voxel lights up."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Acoustic / magnetic:", en: "Acoustic / magnetic:"}
+        choices:
+          - {pt: "Campos acústicos/magnéticos posicionam células e partículas sem contato em padrões geométricos — adjuvante a extrusion para microestrutura", en: "Acoustic/magnetic fields position cells and particles contactless in geometric patterns — adjunct to extrusion for microstructure"}
+          - {pt: "Acoustic e magnetic bioprinting são técnicas de extrusão direta sem capacidade de posicionamento contactless sendo equivalentes a inkjet padrão", en: "Acoustic and magnetic bioprinting are direct extrusion without contactless positioning capacity, equivalent to standard inkjet"}
+          - {pt: "Posicionamento celular contactless é incompatível com células vivas sendo restrito a partículas sintéticas em construção acelular industrial", en: "Contactless cell positioning is incompatible with live cells being restricted to synthetic particles in industrial acellular construction"}
+          - {pt: "Campos acústicos quebram membranas celulares sendo contraindicados em bioprinting com células viáveis em qualquer escala de construção 3D", en: "Acoustic fields break cell membranes contraindicating use in bioprinting with viable cells at any 3D construction scale"}
+        correctAnswer: {pt: "Campos acústicos/magnéticos posicionam células e partículas sem contato em padrões geométricos — adjuvante a extrusion para microestrutura", en: "Acoustic/magnetic fields position cells and particles contactless in geometric patterns — adjunct to extrusion for microstructure"}
+        rationale: {pt: "Quando onda guia célula, então padrão emerge sem toque.", en: "When wave guides cell, pattern emerges without touch."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações teciduais", en: "Tissue applications"}
+    description: {pt: "Da pele à perspectiva de órgãos.", en: "From skin to organ outlook."}
+    exercises:
+      - type: choice
+        question: {pt: "Pele bioimpressa:", en: "Bioprinted skin:"}
+        choices:
+          - {pt: "Bioprint de derme + epiderme em queratinócito + fibroblasto autólogo sobre dECM cobre queimaduras grandes — Wake Forest Atala bedside printer", en: "Bioprinted dermis + epidermis with autologous keratinocyte + fibroblast on dECM covers large burns — Wake Forest Atala bedside printer"}
+          - {pt: "Pele bioimpressa é restrita a estudo pré-clínico sem aplicação em queimaduras humanas sendo conceito experimental sem demonstração clínica", en: "Bioprinted skin is restricted to preclinical study without human burn application being experimental concept without clinical demonstration"}
+          - {pt: "Wake Forest bedside printer é técnica de inkjet 2D sem componente celular nem capacidade de cobrir queimaduras maiores que 1 cm² em humano", en: "Wake Forest bedside printer is 2D inkjet without cell component or capacity to cover human burns larger than 1 cm²"}
+          - {pt: "Pele bioimpressa requer células alogênicas de doador sendo incompatível com abordagem autóloga em queimadura grande adulta", en: "Bioprinted skin requires allogeneic donor cells being incompatible with autologous approach in adult large burns"}
+        correctAnswer: {pt: "Bioprint de derme + epiderme em queratinócito + fibroblasto autólogo sobre dECM cobre queimaduras grandes — Wake Forest Atala bedside printer", en: "Bioprinted dermis + epidermis with autologous keratinocyte + fibroblast on dECM covers large burns — Wake Forest Atala bedside printer"}
+        rationale: {pt: "Quando pele imprime onde dói, então cura começa cedo.", en: "When skin prints where it hurts, healing starts early."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cartilagem de ouvido:", en: "Ear cartilage:"}
+        choices:
+          - {pt: "3DBio Therapeutics AuriNovo: condrócitos autólogos em scaffold colágeno bioimpresso para microtia — primeiro implante humano fase 1 (2022)", en: "3DBio Therapeutics AuriNovo: autologous chondrocytes on bioprinted collagen scaffold for microtia — first human implant phase 1 (2022)"}
+          - {pt: "AuriNovo usa cartilagem alogênica de cadáver sem componente bioimpresso autólogo sendo enxerto convencional sem necessidade de células do paciente", en: "AuriNovo uses cadaveric allogeneic cartilage without autologous bioprinted component being conventional graft without patient-cell need"}
+          - {pt: "Microtia é tratada exclusivamente com prótese sintética sem aplicação de cartilagem bioimpressa em humano clínico até 2024 em qualquer centro", en: "Microtia is treated exclusively with synthetic prosthesis without clinical bioprinted cartilage application by 2024 at any center"}
+          - {pt: "3DBio Therapeutics descontinuou AuriNovo em 2021 reconhecendo inviabilidade técnica de impressão celular em pediatria com microtia congênita", en: "3DBio Therapeutics discontinued AuriNovo in 2021 acknowledging technical infeasibility of cell printing in pediatric microtia"}
+        correctAnswer: {pt: "3DBio Therapeutics AuriNovo: condrócitos autólogos em scaffold colágeno bioimpresso para microtia — primeiro implante humano fase 1 (2022)", en: "3DBio Therapeutics AuriNovo: autologous chondrocytes on bioprinted collagen scaffold for microtia — first human implant phase 1 (2022)"}
+        rationale: {pt: "Quando orelha sai do bioprinter, então criança ganha forma própria.", en: "When ear comes from bioprinter, child gains own shape."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bexiga Atala:", en: "Atala bladder:"}
+        choices:
+          - {pt: "Anthony Atala (2006): bexiga engenheirada com células autólogas em scaffold biodegradável implantada em pacientes spina bifida — primeira de órgão", en: "Anthony Atala (2006): autologous cells on biodegradable scaffold engineered bladder implanted in spina bifida patients — first organ"}
+          - {pt: "Atala 2006 demonstrou bexiga decellularized de doador sem componente celular autólogo em paciente jovem sem espinha bífida ou disfunção urológica", en: "Atala 2006 demonstrated decellularized donor bladder without autologous cell component in young patient without spina bifida or urologic dysfunction"}
+          - {pt: "Bexiga engenheirada Atala foi descontinuada em 2008 por falha imunológica universal sendo conceito teórico sem aplicação clínica subsequente", en: "Atala engineered bladder was discontinued in 2008 due to universal immune failure being theoretical concept without subsequent clinical application"}
+          - {pt: "Spina bifida não é indicação para bexiga engenheirada sendo restrito a câncer urológico em adulto idoso sem componente pediátrico bioprinting", en: "Spina bifida is not an indication for engineered bladder being restricted to urologic cancer in elderly adults without pediatric bioprinting component"}
+        correctAnswer: {pt: "Anthony Atala (2006): bexiga engenheirada com células autólogas em scaffold biodegradável implantada em pacientes spina bifida — primeira de órgão", en: "Anthony Atala (2006): autologous cells on biodegradable scaffold engineered bladder implanted in spina bifida patients — first organ"}
+        rationale: {pt: "Quando órgão é cultivado a partir do paciente, então rejeição cai.", en: "When organ is grown from patient, rejection drops."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Coração FRESH:", en: "FRESH heart:"}
+        choices:
+          - {pt: "Feinberg/CMU: coração full-size em colágeno FRESH com geometria anatômica — não bate ainda mas integra câmaras, válvulas e vasos coronarianos", en: "Feinberg/CMU: full-size FRESH-collagen heart with anatomic geometry — does not beat yet but integrates chambers, valves and coronary vessels"}
+          - {pt: "FRESH heart Feinberg bate com função sistólica normal substituindo alotransplante humano sendo prática clínica padrão desde 2020 em centros americanos", en: "FRESH Feinberg heart beats with normal systolic function replacing human allotransplant being standard clinical practice since 2020 at US centers"}
+          - {pt: "Coração FRESH é restrito a peixe-zebra embrionário sem aplicação em geometria humana adulta sendo conceito pré-clínico em modelo animal", en: "FRESH heart is restricted to zebrafish embryo without adult human geometry application being preclinical concept in animal model"}
+          - {pt: "Feinberg 2019 imprimiu apenas válvula isolada sem capacidade de integrar câmaras, válvulas e vasos coronarianos em geometria anatômica completa", en: "Feinberg 2019 printed only an isolated valve without capacity to integrate chambers, valves and coronary vessels in complete anatomic geometry"}
+        correctAnswer: {pt: "Feinberg/CMU: coração full-size em colágeno FRESH com geometria anatômica — não bate ainda mas integra câmaras, válvulas e vasos coronarianos", en: "Feinberg/CMU: full-size FRESH-collagen heart with anatomic geometry — does not beat yet but integrates chambers, valves and coronary vessels"}
+        rationale: {pt: "Quando geometria casa, então fisiologia vira o próximo passo.", en: "When geometry matches, physiology becomes the next step."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Liver patches:", en: "Liver patches:"}
+        choices:
+          - {pt: "Hepatócitos iPSC + endotélio + estrelada em hidrogel/dECM implantados como patch em insuficiência hepática crônica avançada — fase pré-clínica", en: "iPSC hepatocytes + endothelium + stellate in hydrogel/dECM implanted as patch in advanced chronic liver failure — preclinical phase"}
+          - {pt: "Liver patches são derivados exclusivamente de cadáver sem componente iPSC nem hidrogel/dECM sendo enxerto convencional sem bioprinting envolvido", en: "Liver patches are exclusively cadaver-derived without iPSC or hydrogel/dECM component being conventional graft without bioprinting involvement"}
+          - {pt: "Patches hepáticos requerem hepatócitos primários humanos sem possibilidade de iPSC sendo bioprinting tissue-eng inviável para fígado", en: "Liver patches require primary human hepatocytes without iPSC possibility making tissue-eng bioprinting infeasible for liver"}
+          - {pt: "Insuficiência hepática crônica é tratada exclusivamente com transplante alogênico sem aplicação de patch bioimpresso em qualquer fase clínica", en: "Chronic liver failure is treated exclusively with allotransplant without bioprinted patch application at any clinical phase"}
+        correctAnswer: {pt: "Hepatócitos iPSC + endotélio + estrelada em hidrogel/dECM implantados como patch em insuficiência hepática crônica avançada — fase pré-clínica", en: "iPSC hepatocytes + endothelium + stellate in hydrogel/dECM implanted as patch in advanced chronic liver failure — preclinical phase"}
+        rationale: {pt: "Quando patch trabalha, então fígado falido ganha tempo.", en: "When patch works, failing liver buys time."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vasculatura intricada:", en: "Intricate vasculature:"}
+        choices:
+          - {pt: "Prellis Vascular usa two-photon imprime árvores vasculares de capilar a artéria — pré-vascularização permite enxerto antes de formar vaso novo", en: "Prellis Vascular uses two-photon to print capillary-to-artery vascular trees — pre-vascularization allows engraftment before new vessel growth"}
+          - {pt: "Prellis Vascular é fabricante de stents metálicos sem componente bioimpresso nem aplicação em pré-vascularização tecidual em bioprinting", en: "Prellis Vascular is a metal stent manufacturer without bioprinted component or application in tissue pre-vascularization in bioprinting"}
+          - {pt: "Two-photon não tem resolução para imprimir capilar sendo restrito a vasos maiores que 1 mm sem aplicação em árvore vascular completa", en: "Two-photon lacks capillary resolution being restricted to vessels larger than 1 mm without complete vascular tree application"}
+          - {pt: "Pré-vascularização é desnecessária em bioprinting sendo difusão suficiente para construções maiores que 1 cm em qualquer tecido enxertado", en: "Pre-vascularization is unnecessary in bioprinting with diffusion sufficient for >1 cm constructs in any engrafted tissue"}
+        correctAnswer: {pt: "Prellis Vascular usa two-photon imprime árvores vasculares de capilar a artéria — pré-vascularização permite enxerto antes de formar vaso novo", en: "Prellis Vascular uses two-photon to print capillary-to-artery vascular trees — pre-vascularization allows engraftment before new vessel growth"}
+        rationale: {pt: "Quando vasos vêm prontos, então tecido sobrevive maior.", en: "When vessels come ready, tissue survives bigger."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Maturation bioreactor:", en: "Maturation bioreactor:"}
+        choices:
+          - {pt: "Câmara perfusora com mecanocondicionamento + estímulo elétrico/oxigênio acelera maturação tecidual após bioprint — chave para função fisiológica", en: "Perfusion chamber with mechanical conditioning + electrical/oxygen stimulus speeds post-print tissue maturation — key for physiologic function"}
+          - {pt: "Bioreactor de maturação é incubadora estática sem componente perfusivo nem mecanocondicionamento sendo equivalente a placa de cultura padrão", en: "Maturation bioreactor is static incubator without perfusion or mechanical conditioning component being equivalent to standard culture dish"}
+          - {pt: "Maturação tecidual é instantânea após bioprint sem necessidade de bioreactor sendo função fisiológica imediatamente alcançada in vitro", en: "Tissue maturation is instantaneous post-print without bioreactor need with physiologic function immediately reached in vitro"}
+          - {pt: "Estímulo mecânico/elétrico atrofia tecido bioimpresso sendo contraindicado em maturação celular pós-impressão para qualquer aplicação tecidual", en: "Mechanical/electrical stimulus atrophies bioprinted tissue contraindicating use in post-print maturation for any tissue application"}
+        correctAnswer: {pt: "Câmara perfusora com mecanocondicionamento + estímulo elétrico/oxigênio acelera maturação tecidual após bioprint — chave para função fisiológica", en: "Perfusion chamber with mechanical conditioning + electrical/oxygen stimulus speeds post-print tissue maturation — key for physiologic function"}
+        rationale: {pt: "Quando tecido treina, então função aparece.", en: "When tissue trains, function shows up."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Decell scaffolds:", en: "Decell scaffolds:"}
+        choices:
+          - {pt: "Órgão de doador descelularizado preserva ECM e vasculatura natural — recelularização com células autólogas dá enxerto autoimune-tolerável", en: "Decellularized donor organ preserves ECM and natural vasculature — recellularization with autologous cells yields autoimmune-tolerable graft"}
+          - {pt: "Decellularização destrói vasculatura nativa do órgão exigindo bioprint completo de microvasos sendo scaffold decell incompatível com recelularização", en: "Decellularization destroys native organ vasculature requiring complete microvessel bioprint making decell scaffold incompatible with recellularization"}
+          - {pt: "Scaffolds decellularizados induzem rejeição imune máxima sendo desencorajados em engenharia tecidual moderna em favor de polímero sintético", en: "Decellularized scaffolds induce maximum immune rejection being discouraged in modern tissue engineering in favor of synthetic polymer"}
+          - {pt: "Recelularização exige células alogênicas obrigatórias sem possibilidade de autólogas sendo scaffold decell sempre imunogênico em transplante humano", en: "Recellularization requires mandatory allogeneic cells without autologous possibility making decell scaffold always immunogenic in human transplant"}
+        correctAnswer: {pt: "Órgão de doador descelularizado preserva ECM e vasculatura natural — recelularização com células autólogas dá enxerto autoimune-tolerável", en: "Decellularized donor organ preserves ECM and natural vasculature — recellularization with autologous cells yields autoimmune-tolerable graft"}
+        rationale: {pt: "Quando ECM e vasos sobrevivem, então só faltam células.", en: "When ECM and vessels survive, only cells are missing."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "FDA regulatório:", en: "FDA regulatory:"}
+        choices:
+          - {pt: "Bioprinted tissue regula como combination product (device + biológico) com IND para fase 1 — caminho ainda em construção, requer GMP células e printer", en: "Bioprinted tissue regulated as combination product (device + biologic) with IND for phase 1 — pathway still being built, GMP cells and printer required"}
+          - {pt: "Bioprinted tissue não tem regulação FDA sendo uso compassivo livre sem necessidade de IND ou GMP em fase 1 ou comercialização clínica", en: "Bioprinted tissue has no FDA regulation being free compassionate use without need for IND or GMP in phase 1 or clinical commercialization"}
+          - {pt: "FDA regula bioprinted tissue exclusivamente como dispositivo médico sem componente biológico sendo equivalente a stent metálico ou prótese sintética", en: "FDA regulates bioprinted tissue exclusively as medical device without biologic component being equivalent to metal stent or synthetic prosthesis"}
+          - {pt: "Combination product não se aplica a bioprinting sendo regulado como cosmético sem componente terapêutico em qualquer aplicação clínica humana", en: "Combination product does not apply to bioprinting being regulated as cosmetic without therapeutic component in any human clinical application"}
+        correctAnswer: {pt: "Bioprinted tissue regula como combination product (device + biológico) com IND para fase 1 — caminho ainda em construção, requer GMP células e printer", en: "Bioprinted tissue regulated as combination product (device + biologic) with IND for phase 1 — pathway still being built, GMP cells and printer required"}
+        rationale: {pt: "Quando regulação amadurece, então clínica destrava.", en: "When regulation matures, clinic unlocks."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese bioprinting:", en: "Bioprinting synthesis:"}
+        choices:
+          - {pt: "Extrusion/DLP/inkjet/two-photon + GelMA/dECM + sacrificial vasculatura + bioreactor + decell scaffold convergem para órgãos personalizados em pipeline", en: "Extrusion/DLP/inkjet/two-photon + GelMA/dECM + sacrificial vasculature + bioreactor + decell scaffold converge on personalized organs in pipeline"}
+          - {pt: "Bioprinting permanece pré-clínico sem aplicação em humano até 2024 sendo conceito experimental sem caso documentado de implante real funcional", en: "Bioprinting remains preclinical without human application by 2024 being experimental concept without documented real functional implant case"}
+          - {pt: "Tecnologias de bioprinting são intercambiáveis sem trade-off em resolução, viabilidade ou geometria tornando escolha tecnológica irrelevante clinicamente", en: "Bioprinting technologies are interchangeable without resolution, viability or geometry trade-off making technology choice clinically irrelevant"}
+          - {pt: "Engenharia tecidual depende exclusivamente de extrusão simples sem necessidade de vasculatura sacrificial ou bioreactor de maturação tecidual", en: "Tissue engineering depends exclusively on simple extrusion without need for sacrificial vasculature or maturation bioreactor"}
+        correctAnswer: {pt: "Extrusion/DLP/inkjet/two-photon + GelMA/dECM + sacrificial vasculatura + bioreactor + decell scaffold convergem para órgãos personalizados em pipeline", en: "Extrusion/DLP/inkjet/two-photon + GelMA/dECM + sacrificial vasculature + bioreactor + decell scaffold converge on personalized organs in pipeline"}
+        rationale: {pt: "Quando hardware, bioink e biologia se alinham, então órgãos viram código.", en: "When hardware, bioink and biology align, organs become code."}
+        objectives: [biology.bioprinting_tissue_eng]
+        difficulty: 5
+target: 20
