@@ -1,0 +1,244 @@
+title:
+  pt: "🧬 Reparo de DNA e síntese letal"
+  en: "🧬 DNA repair and synthetic lethality"
+level: 'K'
+subject: biology
+objectives: [biology.dna_repair]
+difficulty: 5
+authorNotes: "PARP, BRCA, ATR, ATM, MMR, HRD score, olaparib, ceralasertib, ATR inhibitors, MMRD, MSI-high WRN dependency."
+example:
+  pt: "Ex.: tumor BRCA1 mut → HRD → PARPi inibe via alternativa → tumor não repara DSB → morte sintética letal."
+  en: "Ex.: BRCA1-mut tumor → HRD → PARPi inhibits alternative pathway → tumor cannot repair DSB → synthetic-lethal death."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Vias de reparo", en: "Repair pathways"}
+    description: {pt: "Como o DNA é consertado.", en: "How DNA is repaired."}
+    exercises:
+      - type: choice
+        question: {pt: "HR (homologous recombination):", en: "HR (homologous recombination):"}
+        choices:
+          - {pt: "BRCA1/2 + RAD51 reparam DSB com alta fidelidade usando cromátide irmã como template em S/G2", en: "BRCA1/2 + RAD51 repair DSB with high fidelity using sister chromatid as template in S/G2"}
+          - {pt: "BRCA1/2 + Ku70 ligam extremidades sem template em G0/G1 produzindo indels frequentes em locus de DSB", en: "BRCA1/2 + Ku70 ligate ends template-free in G0/G1 producing frequent indels at DSB locus"}
+          - {pt: "RAD51 atua apenas em mismatch replicativo dispensando cromátide irmã e independente da fase do ciclo celular", en: "RAD51 acts only on replicative mismatch dispensing sister chromatid and independent of cell-cycle phase"}
+          - {pt: "Recombinação homóloga reescreve telômeros via telomerase em S/G2 substituindo função de BRCA1/2 em mama e ovário", en: "Homologous recombination rewrites telomeres via telomerase in S/G2 replacing BRCA1/2 function in breast and ovary"}
+        correctAnswer: {pt: "BRCA1/2 + RAD51 reparam DSB com alta fidelidade usando cromátide irmã como template em S/G2", en: "BRCA1/2 + RAD51 repair DSB with high fidelity using sister chromatid as template in S/G2"}
+        rationale: {pt: "Quando HR funciona, então DSB é reparada sem erro.", en: "When HR works, DSB is repaired error-free."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "NHEJ:", en: "NHEJ:"}
+        choices:
+          - {pt: "Ku70/80 + DNA-PK + Lig4 unem extremidades sem template — propenso a indel mas ativo em todas fases do ciclo celular", en: "Ku70/80 + DNA-PK + Lig4 join ends template-free — error-prone but active in all cell-cycle phases"}
+          - {pt: "Ku70/80 + RAD51 reparam DSB com alta fidelidade usando cromátide irmã restritos à fase S/G2 do ciclo celular", en: "Ku70/80 + RAD51 repair DSB with high fidelity using sister chromatid restricted to S/G2 of the cell cycle"}
+          - {pt: "DNA-PK fosforila MLH1 corrigindo mismatches replicativos em pós-S sem ligação direta de extremidades quebradas", en: "DNA-PK phosphorylates MLH1 correcting replicative mismatches post-S without direct ligation of broken ends"}
+          - {pt: "Lig4 atua apenas em embrião e silencia em células adultas tornando NHEJ inoperante após desenvolvimento intrauterino", en: "Lig4 acts only in embryo and silences in adult cells making NHEJ inoperative after intrauterine development"}
+        correctAnswer: {pt: "Ku70/80 + DNA-PK + Lig4 unem extremidades sem template — propenso a indel mas ativo em todas fases do ciclo celular", en: "Ku70/80 + DNA-PK + Lig4 join ends template-free — error-prone but active in all cell-cycle phases"}
+        rationale: {pt: "Quando NHEJ atua, então célula sobrevive com mutação.", en: "When NHEJ acts, cell survives with mutation."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MMR (mismatch):", en: "MMR (mismatch):"}
+        choices:
+          - {pt: "MLH1, MSH2, MSH6, PMS2 reparam mismatches replicativos — sua perda gera MSI-high em Lynch syndrome e CRC esporádico", en: "MLH1, MSH2, MSH6, PMS2 repair replicative mismatches — loss generates MSI-high in Lynch syndrome and sporadic CRC"}
+          - {pt: "MLH1 e MSH2 reparam DSBs por recombinação homóloga e sua perda em Lynch leva a HRD com sensibilidade a PARPi", en: "MLH1 and MSH2 repair DSBs by homologous recombination and loss in Lynch leads to HRD with PARPi sensitivity"}
+          - {pt: "MMR atua apenas em base oxidada removendo 8-oxoG e mutações causam síndromes ictiose sem aumento de risco oncológico", en: "MMR acts only on oxidized bases removing 8-oxoG and mutations cause ichthyosis syndromes with no cancer risk increase"}
+          - {pt: "PMS2 codifica DNA glicosylase de uracila e sua perda eleva MSI-low em CRC sem implicação para imunoterapia", en: "PMS2 encodes uracil DNA glycosylase and loss raises MSI-low in CRC with no implication for immunotherapy"}
+        correctAnswer: {pt: "MLH1, MSH2, MSH6, PMS2 reparam mismatches replicativos — sua perda gera MSI-high em Lynch syndrome e CRC esporádico", en: "MLH1, MSH2, MSH6, PMS2 repair replicative mismatches — loss generates MSI-high in Lynch syndrome and sporadic CRC"}
+        rationale: {pt: "Quando MMR cai, então mutações se acumulam.", en: "When MMR fails, mutations accumulate."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BER (base excision):", en: "BER (base excision):"}
+        choices:
+          - {pt: "DNA glycosylases removem bases danificadas; APE1, Pol β, ligase III completam reparo SSB e oxidativos rotineiros", en: "DNA glycosylases remove damaged bases; APE1, Pol β, ligase III complete routine SSB and oxidative repair"}
+          - {pt: "Pol β resolve interstrand crosslinks recrutando FANCD2 e Ligase IV em complexo replisoma cancer-específico", en: "Pol β resolves interstrand crosslinks recruiting FANCD2 and Ligase IV in cancer-specific replisome complex"}
+          - {pt: "BER atua exclusivamente em DSB de radiação ionizante demandando MRN complex e ativação de ATM em G2/M", en: "BER acts exclusively on ionizing-radiation DSBs demanding MRN complex and ATM activation in G2/M"}
+          - {pt: "APE1 fosforila histonas H2AX em foci de SSB sinalizando recrutamento de RAD51 para reparo homólogo da lesão", en: "APE1 phosphorylates H2AX histones at SSB foci signaling RAD51 recruitment for homologous repair of the lesion"}
+        correctAnswer: {pt: "DNA glycosylases removem bases danificadas; APE1, Pol β, ligase III completam reparo SSB e oxidativos rotineiros", en: "DNA glycosylases remove damaged bases; APE1, Pol β, ligase III complete routine SSB and oxidative repair"}
+        rationale: {pt: "Quando BER atua, então bases oxidadas saem.", en: "When BER acts, oxidized bases exit."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ATR/ATM:", en: "ATR/ATM:"}
+        choices:
+          - {pt: "ATM responde a DSB e ATR a estresse replicativo coordenando checkpoints S/G2 e reparo via Chk1/Chk2", en: "ATM responds to DSBs and ATR to replication stress coordinating S/G2 checkpoints and repair via Chk1/Chk2"}
+          - {pt: "ATM responde a estresse replicativo e ATR a DSB com Chk2 ativando checkpoint G1 em vez de S/G2 em tumores", en: "ATM responds to replication stress and ATR to DSB with Chk2 activating G1 checkpoint instead of S/G2 in tumors"}
+          - {pt: "ATR e ATM são pseudoquinases sem atividade catalítica e dispensam Chk1/Chk2 para resposta ao dano em mamíferos", en: "ATR and ATM are pseudokinases without catalytic activity dispensing Chk1/Chk2 for damage response in mammals"}
+          - {pt: "ATM é o sensor de mismatches e ATR de bases oxidadas desviando reparo para BER independente do ciclo celular", en: "ATM senses mismatches and ATR senses oxidized bases routing repair to BER independent of the cell cycle"}
+        correctAnswer: {pt: "ATM responde a DSB e ATR a estresse replicativo coordenando checkpoints S/G2 e reparo via Chk1/Chk2", en: "ATM responds to DSBs and ATR to replication stress coordinating S/G2 checkpoints and repair via Chk1/Chk2"}
+        rationale: {pt: "Quando ATM/ATR atua, então célula pausa para reparar.", en: "When ATM/ATR acts, cell pauses to repair."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PARP1 e SSB:", en: "PARP1 and SSB:"}
+        choices:
+          - {pt: "PARP1 detecta SSB e modifica proteínas com PAR sinalizando reparo — sua inibição em HRD bloqueia rota alternativa essencial", en: "PARP1 detects SSB and modifies proteins with PAR signaling repair — its inhibition in HRD blocks essential alternative route"}
+          - {pt: "PARP1 fosforila histonas H2AX em DSB sinalizando recrutamento de Ku80 e sua inibição estimula HR em tumores BRCA-mut", en: "PARP1 phosphorylates H2AX at DSBs signaling Ku80 recruitment and its inhibition stimulates HR in BRCA-mut tumors"}
+          - {pt: "PARP1 atua apenas em mitocôndria modificando mtDNA e sua inibição não impacta reparo nuclear de SSB em câncer", en: "PARP1 acts only in mitochondria modifying mtDNA and its inhibition does not impact nuclear SSB repair in cancer"}
+          - {pt: "Modificação PAR é etapa terminal de NHEJ e bloqueio PARPi previne ligação de extremidades em tumores HR-proficient", en: "PAR modification is terminal NHEJ step and PARPi block prevents end joining in HR-proficient tumors"}
+        correctAnswer: {pt: "PARP1 detecta SSB e modifica proteínas com PAR sinalizando reparo — sua inibição em HRD bloqueia rota alternativa essencial", en: "PARP1 detects SSB and modifies proteins with PAR signaling repair — its inhibition in HRD blocks essential alternative route"}
+        rationale: {pt: "Quando PARP é bloqueada, então HRD-tumor morre.", en: "When PARP is blocked, HRD-tumor dies."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Synthetic lethality BRCA-PARP:", en: "BRCA-PARP synthetic lethality:"}
+        choices:
+          - {pt: "Olaparib em BRCA1/2-mutant tumores explora dependência de PARP em SSB → DSB acumulada não reparada por HR", en: "Olaparib in BRCA1/2-mutant tumors exploits PARP dependence as SSB → DSB accumulates unrepaired by HR"}
+          - {pt: "Olaparib é citotóxico universal sem dependência de status BRCA induzindo apoptose igual em tumor e tecido saudável", en: "Olaparib is a universal cytotoxic without BRCA dependence inducing equal apoptosis in tumor and healthy tissue"}
+          - {pt: "Síntese letalidade BRCA-PARP requer mutação ATM concomitante e dispensa acúmulo de DSB para resposta clínica", en: "BRCA-PARP synthetic lethality requires concomitant ATM mutation and dispenses DSB accumulation for clinical response"}
+          - {pt: "PARPi reverte mutação BRCA em tumores germinativos restaurando HR funcional sem matar célula maligna em ovário", en: "PARPi reverts BRCA mutation in germline tumors restoring functional HR without killing malignant cells in ovary"}
+        correctAnswer: {pt: "Olaparib em BRCA1/2-mutant tumores explora dependência de PARP em SSB → DSB acumulada não reparada por HR", en: "Olaparib in BRCA1/2-mutant tumors exploits PARP dependence as SSB → DSB accumulates unrepaired by HR"}
+        rationale: {pt: "Quando dependência é única, então morte vira inevitável.", en: "When dependence is unique, death becomes inevitable."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "HRD score:", en: "HRD score:"}
+        choices:
+          - {pt: "Soma de LOH, TAI e LST mede deficiência HR genômica selecionando pacientes para PARPi mesmo sem BRCA mutação somática", en: "LOH + TAI + LST sum measures genomic HR deficiency selecting patients for PARPi even without somatic BRCA mutation"}
+          - {pt: "HRD score quantifica burden mutacional pontual em TP53 e KRAS prevendo resposta a PARPi sem avaliar instabilidade alelica", en: "HRD score quantifies point-mutation burden in TP53 and KRAS predicting PARPi response without assessing allelic instability"}
+          - {pt: "Cálculo HRD requer mutação BRCA somática como pré-requisito e exclui pacientes com BRCAness sem mutação detectável", en: "HRD calculation requires somatic BRCA mutation as prerequisite and excludes BRCAness patients without detectable mutation"}
+          - {pt: "Score HRD mede metilação MGMT e CDKN2A guiando decisão de temozolomida em glioma sem relação com PARP inhibitors", en: "HRD score measures MGMT and CDKN2A methylation guiding temozolomide decision in glioma unrelated to PARP inhibitors"}
+        correctAnswer: {pt: "Soma de LOH, TAI e LST mede deficiência HR genômica selecionando pacientes para PARPi mesmo sem BRCA mutação somática", en: "LOH + TAI + LST sum measures genomic HR deficiency selecting patients for PARPi even without somatic BRCA mutation"}
+        rationale: {pt: "Quando HRD é medido, então PARPi atinge subgrupos.", en: "When HRD is measured, PARPi reaches subgroups."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "WRN em MSI-H:", en: "WRN in MSI-H:"}
+        choices:
+          - {pt: "DepMap revelou WRN essencial em tumores MSI-high abrindo nova oportunidade terapêutica em CRC e endometrial", en: "DepMap revealed WRN as essential in MSI-high tumors opening new therapeutic window in CRC and endometrial"}
+          - {pt: "WRN é dispensável em MSI-H e essencial em MSS tornando tumores microssatélite-estáveis o alvo terapêutico de WRN inhibitors", en: "WRN is dispensable in MSI-H and essential in MSS making microsatellite-stable tumors the WRN inhibitor target"}
+          - {pt: "Helicase WRN ativa MMR em CRC esporádico e sua perda restaura sensibilidade a 5-FU sem dependência sintético-letal", en: "WRN helicase activates MMR in sporadic CRC and loss restores 5-FU sensitivity without synthetic-lethal dependence"}
+          - {pt: "Dependência WRN é exclusiva de leucemias agudas pediátricas com fusão MLL e ausente em tumores sólidos MSI-H adultos", en: "WRN dependency is exclusive to pediatric MLL-fused acute leukemias and absent in adult MSI-H solid tumors"}
+        correctAnswer: {pt: "DepMap revelou WRN essencial em tumores MSI-high abrindo nova oportunidade terapêutica em CRC e endometrial", en: "DepMap revealed WRN as essential in MSI-high tumors opening new therapeutic window in CRC and endometrial"}
+        rationale: {pt: "Quando dependência é única, então síntese letalidade vira fármaco.", en: "When dependence is unique, synthetic lethality becomes drug."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pol θ em alt-EJ:", en: "Pol θ in alt-EJ:"}
+        choices:
+          - {pt: "POLQ media MMEJ alternativo que sustenta tumores HRD após PARPi — POLQi (novobiocin) é segunda linha sintético-letal", en: "POLQ mediates alternative MMEJ sustaining HRD tumors after PARPi — POLQi (novobiocin) is second-line synthetic-lethal"}
+          - {pt: "POLQ é polimerase replicativa principal em S phase e sua inibição é tóxica universal em todas células proliferativas", en: "POLQ is main replicative polymerase in S phase and its inhibition is universally toxic in all proliferative cells"}
+          - {pt: "Alt-EJ via POLQ é redundante com NHEJ canônico em HRD tumors e POLQi não oferece vantagem após PARPi-resistance", en: "POLQ-driven alt-EJ is redundant with canonical NHEJ in HRD tumors and POLQi offers no benefit after PARPi-resistance"}
+          - {pt: "Novobiocin é antibiótico ativo em DNA gyrase bacteriana sem efeito em POLQ humana ou síntese letalidade tumoral", en: "Novobiocin is an antibiotic active on bacterial DNA gyrase with no effect on human POLQ or tumor synthetic lethality"}
+        correctAnswer: {pt: "POLQ media MMEJ alternativo que sustenta tumores HRD após PARPi — POLQi (novobiocin) é segunda linha sintético-letal", en: "POLQ mediates alternative MMEJ sustaining HRD tumors after PARPi — POLQi (novobiocin) is second-line synthetic-lethal"}
+        rationale: {pt: "Quando POLQ falta, então PARPi-resistente também morre.", en: "When POLQ fails, PARPi-resistant also dies."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Drogas e fronteiras", en: "Drugs and frontiers"}
+    description: {pt: "Inibidores de reparo na clínica.", en: "Repair inhibitors in the clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "PARP inhibitors clínicos:", en: "Clinical PARP inhibitors:"}
+        choices:
+          - {pt: "Olaparib, niraparib, rucaparib e talazoparib aprovados em ovário, mama, próstata e pâncreas BRCA-mut/HRD", en: "Olaparib, niraparib, rucaparib and talazoparib approved in BRCA-mut/HRD ovarian, breast, prostate and pancreas"}
+          - {pt: "PARPi aprovados são exclusivos para câncer de pulmão de pequenas células independentemente do status BRCA ou HRD", en: "Approved PARPi are exclusive to small-cell lung cancer regardless of BRCA or HRD status"}
+          - {pt: "Olaparib e niraparib são DNMT inhibitors com indicação em LMA refratária e leucemia linfoblástica aguda em adultos", en: "Olaparib and niraparib are DNMT inhibitors indicated in refractory AML and adult acute lymphoblastic leukemia"}
+          - {pt: "Talazoparib substitui transplante alogênico em HRD-tumors hematológicos e dispensa testagem genômica prévia ao uso", en: "Talazoparib replaces allogeneic transplant in HRD hematologic tumors and dispenses prior genomic testing"}
+        correctAnswer: {pt: "Olaparib, niraparib, rucaparib e talazoparib aprovados em ovário, mama, próstata e pâncreas BRCA-mut/HRD", en: "Olaparib, niraparib, rucaparib and talazoparib approved in BRCA-mut/HRD ovarian, breast, prostate and pancreas"}
+        rationale: {pt: "Quando PARPi escala, então HRD-tumores ganham terapia.", en: "When PARPi scales, HRD tumors gain therapy."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ATR inhibitors:", en: "ATR inhibitors:"}
+        choices:
+          - {pt: "Ceralasertib + olaparib e ATRi mono em tumores ATM-deficient e replication stress avançam fase 2/3 com toxicidade gerenciável", en: "Ceralasertib + olaparib and monoATRi in ATM-deficient and replication-stress tumors progress phase 2/3 with manageable toxicity"}
+          - {pt: "ATR inhibitors são contra-indicados em ATM-deficient tumors por risco hematológico letal e foram retirados de fase 2", en: "ATR inhibitors are contraindicated in ATM-deficient tumors due to lethal hematologic risk and were withdrawn from phase 2"}
+          - {pt: "Ceralasertib substitui olaparib em monoterapia anulando dependência sintético-letal de PARP em tumor HRD ovariano", en: "Ceralasertib replaces olaparib as monotherapy abolishing PARP synthetic-lethal dependence in HRD ovarian tumor"}
+          - {pt: "ATRi atua apenas em vírus oncogênicos como HPV e EBV sem aplicação em tumores sólidos com replication stress alto", en: "ATRi acts only on oncogenic viruses like HPV and EBV with no application in high-replication-stress solid tumors"}
+        correctAnswer: {pt: "Ceralasertib + olaparib e ATRi mono em tumores ATM-deficient e replication stress avançam fase 2/3 com toxicidade gerenciável", en: "Ceralasertib + olaparib and monoATRi in ATM-deficient and replication-stress tumors progress phase 2/3 with manageable toxicity"}
+        rationale: {pt: "Quando ATR bloqueia, então tumor com replication stress sucumbe.", en: "When ATR blocks, replication-stressed tumor succumbs."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "USP1 inhibitor:", en: "USP1 inhibitor:"}
+        choices:
+          - {pt: "USP1 deubiquitina FANCD2 e PCNA em FA pathway — KSQ-4279 testa-se em tumores BRCA-mut como sintético-letal alternativo", en: "USP1 deubiquitinates FANCD2 and PCNA in FA pathway — KSQ-4279 tested in BRCA-mut tumors as alternative synthetic-lethal"}
+          - {pt: "USP1 ubiquitina FANCD2 ativando FA pathway e seu bloqueio em BRCA-wt tumores aumenta crosslink resolution exponencial", en: "USP1 ubiquitinates FANCD2 activating FA pathway and its block in BRCA-wt tumors exponentially boosts crosslink resolution"}
+          - {pt: "KSQ-4279 é PARP inhibitor de quarta geração substituindo olaparib em BRCA-mut com resistência por mutação reverter", en: "KSQ-4279 is a fourth-generation PARP inhibitor replacing olaparib in BRCA-mut with revertant-mutation resistance"}
+          - {pt: "USP1 atua apenas em proteoma mitocondrial sem ligação à FA pathway nem aplicação em síntese letalidade BRCA-mut", en: "USP1 acts only on mitochondrial proteome without link to FA pathway nor application in BRCA-mut synthetic lethality"}
+        correctAnswer: {pt: "USP1 deubiquitina FANCD2 e PCNA em FA pathway — KSQ-4279 testa-se em tumores BRCA-mut como sintético-letal alternativo", en: "USP1 deubiquitinates FANCD2 and PCNA in FA pathway — KSQ-4279 tested in BRCA-mut tumors as alternative synthetic-lethal"}
+        rationale: {pt: "Quando USP1 cai, então PARPi-resistant também sucumbe.", en: "When USP1 falls, PARPi-resistant also succumbs."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anti-MSH2 immunoterapia:", en: "Anti-MSH2 immunotherapy:"}
+        choices:
+          - {pt: "MMRD/MSI-H tem TMB alto + neoantígenos — pembrolizumab tumor-agnóstico aprovado para qualquer câncer MSI-H avançado", en: "MMRD/MSI-H has high TMB + neoantigens — tumor-agnostic pembrolizumab approved for any advanced MSI-H cancer"}
+          - {pt: "MMRD reduz TMB e elimina neoantígenos tornando MSI-H tumores resistentes a anti-PD-1 em todas localizações primárias", en: "MMRD reduces TMB and eliminates neoantigens rendering MSI-H tumors resistant to anti-PD-1 across all primary sites"}
+          - {pt: "Pembrolizumab em MSI-H exige biomarcador PD-L1 ≥50% e está restrito a CRC esporádico não recomendado em Lynch", en: "Pembrolizumab in MSI-H requires PD-L1 ≥50% biomarker and is restricted to sporadic CRC, not recommended in Lynch"}
+          - {pt: "Imunoterapia anti-MSH2 substitui PARPi em BRCA-mut tumores agindo via reativação de MMR sem envolver checkpoint imune", en: "Anti-MSH2 immunotherapy replaces PARPi in BRCA-mut tumors acting via MMR reactivation without engaging immune checkpoint"}
+        correctAnswer: {pt: "MMRD/MSI-H tem TMB alto + neoantígenos — pembrolizumab tumor-agnóstico aprovado para qualquer câncer MSI-H avançado", en: "MMRD/MSI-H has high TMB + neoantigens — tumor-agnostic pembrolizumab approved for any advanced MSI-H cancer"}
+        rationale: {pt: "Quando MMR cai, então imunoterapia performa.", en: "When MMR fails, immunotherapy performs."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Werner syndrome:", en: "Werner syndrome:"}
+        choices:
+          - {pt: "Werner WRN LoF causa progeria adulta com instabilidade replicativa — modelo de aging acelerado link entre reparo e longevidade", en: "Werner WRN LoF causes adult progeria with replicative instability — accelerated aging model linking repair and longevity"}
+          - {pt: "Werner é ganho-de-função WRN com hiperestabilidade telomérica e longevidade aumentada link entre reparo e juventude", en: "Werner is WRN gain-of-function with hyperstable telomeres and increased longevity linking repair and youth"}
+          - {pt: "Síndrome Werner resulta de mutação BRCA1 germinativa causando câncer de mama precoce sem fenótipo de envelhecimento", en: "Werner syndrome stems from germline BRCA1 mutation causing early breast cancer without aging phenotype"}
+          - {pt: "WRN LoF é restrito a embrião com letalidade intrauterina e sem manifestação adulta de progeria ou instabilidade replicativa", en: "WRN LoF is restricted to embryo with intrauterine lethality and no adult progeria or replicative instability"}
+        correctAnswer: {pt: "Werner WRN LoF causa progeria adulta com instabilidade replicativa — modelo de aging acelerado link entre reparo e longevidade", en: "Werner WRN LoF causes adult progeria with replicative instability — accelerated aging model linking repair and longevity"}
+        rationale: {pt: "Quando reparo falha, então envelhecimento acelera.", en: "When repair fails, aging accelerates."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fanconi anemia:", en: "Fanconi anemia:"}
+        choices:
+          - {pt: "FA pathway resolve interstrand crosslinks — mutações causam pancitopenia, malformações e câncer com sensibilidade a MMC", en: "FA pathway resolves interstrand crosslinks — mutations cause pancytopenia, malformations and cancer with MMC sensitivity"}
+          - {pt: "FA pathway repara DSBs por NHEJ canônico e mutações causam apenas microcefalia isolada sem anemia ou risco oncológico", en: "FA pathway repairs DSBs by canonical NHEJ and mutations cause only isolated microcephaly without anemia or cancer risk"}
+          - {pt: "Fanconi anemia tem resistência intrínseca a mitomicina C servindo como modelo de quimioterapia bem tolerada em pediatria", en: "Fanconi anemia has intrinsic mitomycin C resistance serving as model of well-tolerated chemotherapy in pediatrics"}
+          - {pt: "FANCD2 ubiquitinação ativa MMR em mismatches replicativos sem envolvimento em interstrand crosslinks ou pancitopenia", en: "FANCD2 ubiquitination activates MMR on replicative mismatches without involvement in interstrand crosslinks or pancytopenia"}
+        correctAnswer: {pt: "FA pathway resolve interstrand crosslinks — mutações causam pancitopenia, malformações e câncer com sensibilidade a MMC", en: "FA pathway resolves interstrand crosslinks — mutations cause pancytopenia, malformations and cancer with MMC sensitivity"}
+        rationale: {pt: "Quando FA falha, então crosslinks são letais.", en: "When FA fails, crosslinks are lethal."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BARD1/BRCA1:", en: "BARD1/BRCA1:"}
+        choices:
+          - {pt: "BARD1 dimeriza BRCA1 para função E3 ligase em HR — variantes BARD1 são reconhecidas como prováveis patogênicas em BC/OV", en: "BARD1 dimerizes BRCA1 for E3 ligase function in HR — BARD1 variants are recognized as likely pathogenic in BC/OV"}
+          - {pt: "BARD1 inibe BRCA1 em hematopoiese e variantes BARD1 são protetoras contra câncer de mama e ovário em portadoras", en: "BARD1 inhibits BRCA1 in hematopoiesis and BARD1 variants are protective against breast and ovarian cancer in carriers"}
+          - {pt: "Heterodímero BARD1-BRCA1 atua como demetilase H3K27 em PRC2 e variantes são patogênicas apenas em glioma pediátrico", en: "BARD1-BRCA1 heterodimer acts as H3K27 demethylase on PRC2 and variants are pathogenic only in pediatric glioma"}
+          - {pt: "BARD1 codifica DNA glicosylase de timina e suas variantes não estão associadas a predisposição hereditária a câncer", en: "BARD1 encodes thymine DNA glycosylase and its variants are not associated with hereditary cancer predisposition"}
+        correctAnswer: {pt: "BARD1 dimeriza BRCA1 para função E3 ligase em HR — variantes BARD1 são reconhecidas como prováveis patogênicas em BC/OV", en: "BARD1 dimerizes BRCA1 for E3 ligase function in HR — BARD1 variants are recognized as likely pathogenic in BC/OV"}
+        rationale: {pt: "Quando BARD1 falta, então HR perde estabilidade.", en: "When BARD1 lacks, HR loses stability."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ctDNA tracking:", en: "ctDNA tracking:"}
+        choices:
+          - {pt: "Detecção de mutações reverter BRCA em ctDNA antecipa progressão sob PARPi guiando salto terapêutico oportunista", en: "Detection of reversion BRCA mutations in ctDNA anticipates progression under PARPi guiding opportunistic therapy switch"}
+          - {pt: "Reversão BRCA em ctDNA confirma resposta sustentada ao PARPi e permite extensão indefinida da terapia sem switch clínico", en: "BRCA reversion in ctDNA confirms sustained PARPi response and allows indefinite therapy extension without clinical switch"}
+          - {pt: "ctDNA é insensível a mutações reverter pequenas e exige biópsia tecidual repetida para detectar resistência a PARPi", en: "ctDNA is insensitive to small revertant mutations and demands repeat tissue biopsy to detect PARPi resistance"}
+          - {pt: "Mutações reverter ocorrem apenas em germline e cfDNA somático nunca contém eventos de reversão clinicamente relevantes", en: "Revertant mutations occur only in germline and somatic cfDNA never contains clinically relevant reversion events"}
+        correctAnswer: {pt: "Detecção de mutações reverter BRCA em ctDNA antecipa progressão sob PARPi guiando salto terapêutico oportunista", en: "Detection of reversion BRCA mutations in ctDNA anticipates progression under PARPi guiding opportunistic therapy switch"}
+        rationale: {pt: "Quando reversão emerge, então sangue avisa.", en: "When reversion emerges, blood warns."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Telomere ALT:", en: "Telomere ALT:"}
+        choices:
+          - {pt: "Tumores ALT-positivos sustentam telômeros via HR sem telomerase — alvos ATR e BLM helicase exploram fenótipo", en: "ALT-positive tumors sustain telomeres via HR without telomerase — ATR and BLM helicase targets exploit phenotype"}
+          - {pt: "ALT depende de telomerase hiperativa e ATRi não tem efeito em fenótipo ALT por ausência de dependência HR-telomérica", en: "ALT depends on hyperactive telomerase and ATRi has no effect on ALT phenotype due to absent HR-telomere dependence"}
+          - {pt: "Tumores ALT-positivos perdem telômeros aceleradamente entrando em senescência sem necessidade de terapia direcionada", en: "ALT-positive tumors lose telomeres rapidly entering senescence without need for targeted therapy"}
+          - {pt: "BLM helicase é supressor tumoral em ALT e seu silenciamento é estratégia terapêutica para reativar ALT em sarcoma", en: "BLM helicase is a tumor suppressor in ALT and its silencing is a therapeutic strategy to reactivate ALT in sarcoma"}
+        correctAnswer: {pt: "Tumores ALT-positivos sustentam telômeros via HR sem telomerase — alvos ATR e BLM helicase exploram fenótipo", en: "ALT-positive tumors sustain telomeres via HR without telomerase — ATR and BLM helicase targets exploit phenotype"}
+        rationale: {pt: "Quando ALT depende de HR, então ATRi atinge telomeros.", en: "When ALT depends on HR, ATRi hits telomeres."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese reparo DNA:", en: "DNA repair synthesis:"}
+        choices:
+          - {pt: "HR, NHEJ, MMR, BER e ATR/ATM definem fidelidade genômica — síntese letalidade traduz mutação tumoral em terapias precisas", en: "HR, NHEJ, MMR, BER and ATR/ATM define genomic fidelity — synthetic lethality translates tumor mutation into precise therapies"}
+          - {pt: "Vias de reparo são redundantes e síntese letalidade não traduz mutação tumoral em alvo terapêutico actionable em clínica", en: "Repair pathways are redundant and synthetic lethality fails to translate tumor mutation into actionable clinical target"}
+          - {pt: "Apenas HR define fidelidade genômica enquanto NHEJ, MMR, BER e ATR/ATM são vias acessórias sem relevância oncológica", en: "Only HR defines genomic fidelity while NHEJ, MMR, BER and ATR/ATM are accessory pathways with no oncologic relevance"}
+          - {pt: "Síntese letalidade exige sempre dupla mutação BRCA1 e BRCA2 simultânea no mesmo tumor para resposta a PARPi clínico", en: "Synthetic lethality always requires simultaneous BRCA1 and BRCA2 mutation in the same tumor for clinical PARPi response"}
+        correctAnswer: {pt: "HR, NHEJ, MMR, BER e ATR/ATM definem fidelidade genômica — síntese letalidade traduz mutação tumoral em terapias precisas", en: "HR, NHEJ, MMR, BER and ATR/ATM define genomic fidelity — synthetic lethality translates tumor mutation into precise therapies"}
+        rationale: {pt: "Quando dependência é única, então tumor seletivo morre.", en: "When dependence is unique, selective tumor dies."}
+        objectives: [biology.dna_repair]
+        difficulty: 5
+target: 20
