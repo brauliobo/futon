@@ -1,0 +1,244 @@
+title:
+  pt: "💊 mRNA terapêutico além de vacinas"
+  en: "💊 mRNA therapeutics beyond vaccines"
+level: 'K'
+subject: biology
+objectives: [biology.mrna_therapeutics]
+difficulty: 5
+authorNotes: "self-amplifying saRNA, circular RNA, modified nucleotides (m1Ψ), 5'-cap, polyA, Codon optimization, LNP, ionizable lipids, in vivo CAR-T, protein replacement, mRNA-1944 chikungunya antibody, mRNA-3927 propionic acidemia, mRNA editing therapy."
+example:
+  pt: "Ex.: paciente acidemia propiônica → mRNA-3927 LNP hepático → expressa PCC → metabolismo restaura → episódios caem (Moderna fase 1/2)."
+  en: "Ex.: propionic acidemia patient → mRNA-3927 hepatic LNP → expresses PCC → metabolism restores → episodes fall (Moderna phase 1/2)."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Engenharia molecular do mRNA", en: "mRNA molecular engineering"}
+    description: {pt: "Como o transcrito vira fármaco.", en: "How the transcript becomes drug."}
+    exercises:
+      - type: choice
+        question: {pt: "m1Ψ pseudouridina:", en: "m1Ψ pseudouridine:"}
+        choices:
+          - {pt: "Substituição de U por N1-metil-pseudouridina reduz resposta TLR3/7/8 e PKR — aumenta tradução e diminui IFN — base das mRNA vacinas COVID", en: "Replacing U with N1-methyl-pseudouridine cuts TLR3/7/8 and PKR response — boosts translation and lowers IFN — basis of mRNA COVID vaccines"}
+          - {pt: "m1Ψ aumenta resposta TLR3/7/8 e PKR sendo contraindicado em mRNA terapêutico por induzir IFN excessivo e bloquear tradução proteica", en: "m1Ψ raises TLR3/7/8 and PKR response and is contraindicated in therapeutic mRNA by inducing excess IFN and blocking protein translation"}
+          - {pt: "Pseudouridina substitui A em mRNA modificado sem afetar U sendo mecanismo de redução de imunogenicidade independente de TLR ou PKR", en: "Pseudouridine replaces A in modified mRNA without touching U being an immunogenicity-reduction mechanism independent of TLR or PKR"}
+          - {pt: "m1Ψ é desnecessário em mRNA terapêutico moderno sendo U não-modificada igualmente eficaz e dispensando substituição química na síntese", en: "m1Ψ is unnecessary in modern therapeutic mRNA with unmodified U equally effective and obviating chemical substitution in synthesis"}
+        correctAnswer: {pt: "Substituição de U por N1-metil-pseudouridina reduz resposta TLR3/7/8 e PKR — aumenta tradução e diminui IFN — base das mRNA vacinas COVID", en: "Replacing U with N1-methyl-pseudouridine cuts TLR3/7/8 and PKR response — boosts translation and lowers IFN — basis of mRNA COVID vaccines"}
+        rationale: {pt: "Quando U é mascarada, então sensor inato fica calmo.", en: "When U is masked, innate sensor stays calm."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "5' cap analog:", en: "5' cap analog:"}
+        choices:
+          - {pt: "CleanCap AG/CleanCap AU dão cap1 m7G(5')ppp(5')m co-transcricional eficiente — eIF4E reconhece, RIG-I não dispara, tradução ótima", en: "CleanCap AG/CleanCap AU give efficient co-transcriptional cap1 m7G(5')ppp(5')m — eIF4E recognizes, RIG-I doesn't fire, optimal translation"}
+          - {pt: "Cap analog não é necessário em mRNA terapêutico sendo 5'-trifosfato natural igualmente eficaz e dispensando capping enzyme em síntese in vitro", en: "Cap analog isn't needed in therapeutic mRNA with natural 5'-triphosphate equally effective and obviating capping enzyme in IVT synthesis"}
+          - {pt: "5'-trifosfato é mais traduzível que cap1 sendo CleanCap inferior em eIF4E recognition e tradução proteica em IVT-mRNA terapêutico clínico", en: "5'-triphosphate is more translatable than cap1 with CleanCap inferior in eIF4E recognition and protein translation in clinical IVT-mRNA therapeutic"}
+          - {pt: "Cap analog dispara RIG-I aumentando IFN sendo contraindicado em mRNA terapêutico em favor de 5'-trifosfato livre não-capeado em síntese", en: "Cap analog fires RIG-I raising IFN and is contraindicated in therapeutic mRNA in favor of free uncapped 5'-triphosphate in synthesis"}
+        correctAnswer: {pt: "CleanCap AG/CleanCap AU dão cap1 m7G(5')ppp(5')m co-transcricional eficiente — eIF4E reconhece, RIG-I não dispara, tradução ótima", en: "CleanCap AG/CleanCap AU give efficient co-transcriptional cap1 m7G(5')ppp(5')m — eIF4E recognizes, RIG-I doesn't fire, optimal translation"}
+        rationale: {pt: "Quando cap é cap1, então célula trata como próprio.", en: "When cap is cap1, cell treats as self."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Codon optimization:", en: "Codon optimization:"}
+        choices:
+          - {pt: "Substituir códon raro por sinônimo abundante em humano + GC-rich + evitar 5'-UTR estrutura aumenta tradução até 100× sem trocar proteína", en: "Replacing rare codons with abundant human synonyms + GC-rich + avoiding 5'-UTR structure boosts translation up to 100× without changing protein"}
+          - {pt: "Codon optimization muda sequência aminoacídica sendo equivalente a mutação proteica e contraindicado em mRNA terapêutico replacement", en: "Codon optimization changes amino acid sequence being equivalent to protein mutation and contraindicated in therapeutic replacement mRNA"}
+          - {pt: "Substituir códon raro por abundante diminui tradução sendo contraindicado em mRNA terapêutico em favor de códons raros para folding adequado", en: "Replacing rare codons with abundant ones lowers translation and is contraindicated in therapeutic mRNA in favor of rare codons for proper folding"}
+          - {pt: "GC-rich e 5'-UTR estruturada aumentam degradação RNase sendo evitados em mRNA terapêutico em favor de sequência AT-rich nativa", en: "GC-rich and structured 5'-UTR increase RNase degradation and are avoided in therapeutic mRNA in favor of native AT-rich sequence"}
+        correctAnswer: {pt: "Substituir códon raro por sinônimo abundante em humano + GC-rich + evitar 5'-UTR estrutura aumenta tradução até 100× sem trocar proteína", en: "Replacing rare codons with abundant human synonyms + GC-rich + avoiding 5'-UTR structure boosts translation up to 100× without changing protein"}
+        rationale: {pt: "Quando códon casa com tRNA, então ribossomo voa.", en: "When codon matches tRNA, ribosome flies."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "saRNA self-amplifying:", en: "Self-amplifying saRNA:"}
+        choices:
+          - {pt: "Replicon de alphavírus codifica replicase + transgene auto-replica no citoplasma — dose 1000× menor para mesma proteína (saRNA Arcturus, Pfizer)", en: "Alphavirus replicon encodes replicase + transgene self-replicating in cytoplasm — 1000× lower dose for same protein (saRNA Arcturus, Pfizer)"}
+          - {pt: "saRNA exige dose 1000× maior que mRNA convencional para mesma proteína sendo desencorajado em terapia clínica em favor de mRNA padrão", en: "saRNA needs 1000× higher dose than conventional mRNA for same protein and is discouraged in clinical therapy in favor of standard mRNA"}
+          - {pt: "Self-amplifying RNA replica no núcleo sem componente citoplasmático sendo equivalente a transgene viral integrativo em terapia gênica clínica", en: "Self-amplifying RNA replicates in nucleus without cytoplasmic component being equivalent to integrative viral transgene in clinical gene therapy"}
+          - {pt: "Replicase alphavírus integra DNA cromossômico sendo saRNA equivalente a vetor lentiviral sem componente RNA-dependente em síntese citoplasmática", en: "Alphavirus replicase integrates chromosomal DNA making saRNA equivalent to lentiviral vector without RNA-dependent cytoplasmic component"}
+        correctAnswer: {pt: "Replicon de alphavírus codifica replicase + transgene auto-replica no citoplasma — dose 1000× menor para mesma proteína (saRNA Arcturus, Pfizer)", en: "Alphavirus replicon encodes replicase + transgene self-replicating in cytoplasm — 1000× lower dose for same protein (saRNA Arcturus, Pfizer)"}
+        rationale: {pt: "Quando RNA se copia sozinho, então dose cai e durabilidade sobe.", en: "When RNA copies itself, dose falls and durability rises."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Circular RNA (circRNA):", en: "Circular RNA (circRNA):"}
+        choices:
+          - {pt: "RNA circular sem 5'-cap nem 3'-polyA é resistente a exonuclease — IRES dirige tradução, durabilidade 5-10× sobre mRNA linear (Orna, Laronde)", en: "Circular RNA without 5'-cap or 3'-polyA resists exonucleases — IRES drives translation, durability 5-10× over linear mRNA (Orna, Laronde)"}
+          - {pt: "circRNA exige 5'-cap e 3'-polyA igual mRNA linear sendo equivalente em estabilidade e dispensando IRES para tradução adequada citoplasmática", en: "circRNA requires 5'-cap and 3'-polyA like linear mRNA being equivalent in stability and obviating IRES for adequate cytoplasmic translation"}
+          - {pt: "RNA circular é traduzido apenas por scanning 5'-cap dependente sem componente IRES sendo dependente de eIF4E como mRNA linear convencional", en: "Circular RNA is translated only by 5'-cap-dependent scanning without IRES component being eIF4E-dependent like conventional linear mRNA"}
+          - {pt: "circRNA é menos estável que mRNA linear sendo degradado mais rápido por exonuclease e desencorajado em terapia clínica de longo prazo", en: "circRNA is less stable than linear mRNA being degraded faster by exonuclease and discouraged in long-term clinical therapy"}
+        correctAnswer: {pt: "RNA circular sem 5'-cap nem 3'-polyA é resistente a exonuclease — IRES dirige tradução, durabilidade 5-10× sobre mRNA linear (Orna, Laronde)", en: "Circular RNA without 5'-cap or 3'-polyA resists exonucleases — IRES drives translation, durability 5-10× over linear mRNA (Orna, Laronde)"}
+        rationale: {pt: "Quando RNA fecha em círculo, então exonuclease não acha ponta.", en: "When RNA closes in a circle, exonuclease finds no end."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PolyA tail:", en: "PolyA tail:"}
+        choices:
+          - {pt: "Cauda 100-150 A + segmentation breaker estabilizam mRNA contra deadenylation — PABP recruta eIF4G aumentando tradução e half-life sérico", en: "100-150 A tail + segmentation breaker stabilize mRNA against deadenylation — PABP recruits eIF4G boosting translation and serum half-life"}
+          - {pt: "PolyA tail é desnecessário em mRNA terapêutico sendo 5'-cap suficiente para estabilidade e tradução sem componente 3' adicional na síntese", en: "PolyA tail isn't needed in therapeutic mRNA with 5'-cap sufficient for stability and translation without additional 3' component in synthesis"}
+          - {pt: "Cauda <50 A é mais estável que cauda longa 100-150 A sendo deadenylation acelerada por cauda longa em mRNA terapêutico em circulação", en: "Tail <50 A is more stable than long 100-150 A tail with deadenylation accelerated by long tail in circulating therapeutic mRNA"}
+          - {pt: "PABP é proteína nuclear sem função citoplasmática sendo polyA tail irrelevante para recrutamento eIF4G ou tradução proteica em mRNA clínico", en: "PABP is a nuclear protein without cytoplasmic function making polyA tail irrelevant for eIF4G recruitment or protein translation in clinical mRNA"}
+        correctAnswer: {pt: "Cauda 100-150 A + segmentation breaker estabilizam mRNA contra deadenylation — PABP recruta eIF4G aumentando tradução e half-life sérico", en: "100-150 A tail + segmentation breaker stabilize mRNA against deadenylation — PABP recruits eIF4G boosting translation and serum half-life"}
+        rationale: {pt: "Quando cauda é longa, então mRNA dura mais.", en: "When tail is long, mRNA lasts longer."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "5'-UTR design:", en: "5'-UTR design:"}
+        choices:
+          - {pt: "5'-UTR curto, sem uORF, com motivos Kozak ótimos e baixa estrutura secundária maximiza scanning ribossomal — base de mRNA-1273, BNT162b2", en: "Short 5'-UTR, no uORF, optimal Kozak motifs and low secondary structure maximize ribosome scanning — basis of mRNA-1273, BNT162b2"}
+          - {pt: "uORF aumenta tradução do main ORF sendo recomendado em design de mRNA terapêutico em favor de eficiência ribossomal aumentada por reentrada", en: "uORF boosts main ORF translation and is recommended in therapeutic mRNA design favoring ribosome efficiency raised by reentry"}
+          - {pt: "5'-UTR longo e estruturado é benéfico em mRNA terapêutico aumentando estabilidade e dispensando otimização Kozak ou redução de uORF", en: "Long structured 5'-UTR is beneficial in therapeutic mRNA raising stability and obviating Kozak optimization or uORF reduction"}
+          - {pt: "Kozak motif é dispensável em mRNA terapêutico sendo seleção AUG aleatória suficiente para tradução sem necessidade de design 5'-UTR específico", en: "Kozak motif is dispensable in therapeutic mRNA with random AUG selection sufficient for translation without specific 5'-UTR design need"}
+        correctAnswer: {pt: "5'-UTR curto, sem uORF, com motivos Kozak ótimos e baixa estrutura secundária maximiza scanning ribossomal — base de mRNA-1273, BNT162b2", en: "Short 5'-UTR, no uORF, optimal Kozak motifs and low secondary structure maximize ribosome scanning — basis of mRNA-1273, BNT162b2"}
+        rationale: {pt: "Quando 5'-UTR é limpa, então ribossomo encontra AUG rápido.", en: "When 5'-UTR is clean, ribosome finds AUG fast."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "3'-UTR design:", en: "3'-UTR design:"}
+        choices:
+          - {pt: "3'-UTR de α/β-globin ou hemoglobin estabiliza mRNA via PABP e elementos AU-rich balanceados — half-life proteico vai de horas a dias", en: "α/β-globin or hemoglobin 3'-UTR stabilizes mRNA via PABP and balanced AU-rich elements — protein half-life from hours to days"}
+          - {pt: "3'-UTR é desnecessário em mRNA terapêutico sendo polyA tail suficiente para estabilidade sem componente sequência adicional 3' UTR funcional", en: "3'-UTR is unnecessary in therapeutic mRNA with polyA tail sufficient for stability without additional 3' UTR functional sequence component"}
+          - {pt: "AU-rich elements em 3'-UTR aumentam estabilidade sendo recomendados em mRNA terapêutico em favor de half-life prolongado em circulação humana", en: "AU-rich elements in 3'-UTR raise stability and are recommended in therapeutic mRNA favoring extended half-life in human circulation"}
+          - {pt: "α/β-globin 3'-UTR é destabilizador sendo evitado em mRNA terapêutico em favor de sequência aleatória otimizada para degradação rápida", en: "α/β-globin 3'-UTR is destabilizing and avoided in therapeutic mRNA in favor of random sequence optimized for rapid degradation"}
+        correctAnswer: {pt: "3'-UTR de α/β-globin ou hemoglobin estabiliza mRNA via PABP e elementos AU-rich balanceados — half-life proteico vai de horas a dias", en: "α/β-globin or hemoglobin 3'-UTR stabilizes mRNA via PABP and balanced AU-rich elements — protein half-life from hours to days"}
+        rationale: {pt: "Quando 3'-UTR vem de globina, então proteína sustenta dose.", en: "When 3'-UTR comes from globin, protein sustains dose."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "LNP composição:", en: "LNP composition:"}
+        choices:
+          - {pt: "Ionizável (DLin-MC3, ALC-0315) + helper PC (DSPC) + colesterol + PEG-DMG fundem com endossomo + fogem para citoplasma — 4-comp clínico", en: "Ionizable (DLin-MC3, ALC-0315) + helper PC (DSPC) + cholesterol + PEG-DMG fuse with endosome + escape to cytoplasm — clinical 4-comp"}
+          - {pt: "LNP é monocomponente lipídio ionizável sem helper PC, colesterol ou PEG sendo equivalente a lipossoma DOPE em entrega nuclear de mRNA", en: "LNP is monocomponent ionizable lipid without helper PC, cholesterol or PEG being equivalent to DOPE liposome in nuclear mRNA delivery"}
+          - {pt: "Ionizável funciona em pH neutro sem necessidade de protonação endossomal sendo escape citoplasmático independente de pH-dependent flip", en: "Ionizable works at neutral pH without endosomal protonation need with cytoplasmic escape independent of pH-dependent flip"}
+          - {pt: "PEG-DMG é estabilizador permanente sem desligar circulação e bloqueia uptake celular em fígado contraindicando uso em LNP terapêutico hepático", en: "PEG-DMG is permanent stabilizer without circulation shed and blocks hepatic uptake contraindicating hepatic therapeutic LNP use"}
+        correctAnswer: {pt: "Ionizável (DLin-MC3, ALC-0315) + helper PC (DSPC) + colesterol + PEG-DMG fundem com endossomo + fogem para citoplasma — 4-comp clínico", en: "Ionizable (DLin-MC3, ALC-0315) + helper PC (DSPC) + cholesterol + PEG-DMG fuse with endosome + escape to cytoplasm — clinical 4-comp"}
+        rationale: {pt: "Quando 4 lipídios cooperam, então mRNA chega ao citoplasma.", en: "When 4 lipids cooperate, mRNA reaches the cytoplasm."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tropismo não-hepático:", en: "Non-hepatic tropism:"}
+        choices:
+          - {pt: "SORT lipid (selective organ targeting) com DOTAP/DDAB redireciona LNP a baço, pulmão ou músculo — Siegwart 2020 expande mRNA além do fígado", en: "SORT lipid (selective organ targeting) with DOTAP/DDAB redirects LNP to spleen, lung or muscle — Siegwart 2020 expands mRNA beyond liver"}
+          - {pt: "LNP atinge baço, pulmão e músculo igualmente sem necessidade de SORT lipid sendo tropismo organ-agnóstico em LNP terapêutico padrão", en: "LNP reaches spleen, lung and muscle equally without need for SORT lipid with organ-agnostic tropism in standard therapeutic LNP"}
+          - {pt: "SORT lipid é restrito a tropismo hepático aumentando entrega ao fígado sem capacidade de redirecionar mRNA a baço, pulmão ou músculo", en: "SORT lipid is restricted to hepatic tropism boosting liver delivery without ability to redirect mRNA to spleen, lung or muscle"}
+          - {pt: "Tropismo extra-hepático é alcançado exclusivamente por anticorpo conjugado a LNP sem componente lipídico modular sendo SORT inviável tecnicamente", en: "Extra-hepatic tropism is achieved exclusively by antibody-conjugated LNP without modular lipid component making SORT technically infeasible"}
+        correctAnswer: {pt: "SORT lipid (selective organ targeting) com DOTAP/DDAB redireciona LNP a baço, pulmão ou músculo — Siegwart 2020 expande mRNA além do fígado", en: "SORT lipid (selective organ targeting) with DOTAP/DDAB redirects LNP to spleen, lung or muscle — Siegwart 2020 expands mRNA beyond liver"}
+        rationale: {pt: "Quando lipídio escolhe órgão, então mRNA sai do fígado.", en: "When lipid chooses organ, mRNA leaves liver."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações clínicas", en: "Clinical applications"}
+    description: {pt: "Da PoC à indicação aprovada.", en: "From PoC to approved indication."}
+    exercises:
+      - type: choice
+        question: {pt: "Protein replacement:", en: "Protein replacement:"}
+        choices:
+          - {pt: "mRNA-LNP entrega temporária de enzima/proteína funcional substitui infusão proteica recombinante crônica — durabilidade dias-semanas, re-dose viável", en: "mRNA-LNP transient delivery of functional enzyme/protein replaces chronic recombinant infusion — days-weeks durability, viable re-dose"}
+          - {pt: "mRNA terapêutico integra DNA genômico sendo equivalente a terapia gênica AAV em durabilidade e dispensando re-dose periódica em qualquer indicação", en: "Therapeutic mRNA integrates genomic DNA being equivalent to AAV gene therapy in durability and obviating periodic re-dose in any indication"}
+          - {pt: "Protein replacement por mRNA é incompatível com re-dose sendo single-dose obrigatório como AAV em insuficiência metabólica hepática crônica", en: "Protein replacement by mRNA is incompatible with re-dose being mandatory single-dose like AAV in chronic hepatic metabolic deficiency"}
+          - {pt: "mRNA-LNP entrega proteína permanente substituindo terapia gênica viral em deficiência enzimática sem necessidade de infusão repetida ou re-dose", en: "mRNA-LNP delivers permanent protein replacing viral gene therapy in enzyme deficiency without repeat infusion or re-dose need"}
+        correctAnswer: {pt: "mRNA-LNP entrega temporária de enzima/proteína funcional substitui infusão proteica recombinante crônica — durabilidade dias-semanas, re-dose viável", en: "mRNA-LNP transient delivery of functional enzyme/protein replaces chronic recombinant infusion — days-weeks durability, viable re-dose"}
+        rationale: {pt: "Quando célula vira fábrica temporária, então enzima volta sem injetar proteína.", en: "When cell becomes temporary factory, enzyme returns without injecting protein."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "mRNA-3927:", en: "mRNA-3927:"}
+        choices:
+          - {pt: "Moderna mRNA-LNP hepático codifica PCC α/β para acidemia propiônica — fase 1/2 reduziu episódios metabólicos em pacientes pediátricos", en: "Moderna hepatic mRNA-LNP encodes PCC α/β for propionic acidemia — phase 1/2 reduced metabolic episodes in pediatric patients"}
+          - {pt: "mRNA-3927 é PARP inhibitor oral para BRCA-mut ovário sem componente mRNA nem aplicação em acidemia propiônica em pediatria", en: "mRNA-3927 is an oral PARP inhibitor for BRCA-mut ovary without mRNA component or application in pediatric propionic acidemia"}
+          - {pt: "Acidemia propiônica é tratada exclusivamente com dieta sem aplicação de mRNA terapêutico em fase clínica humana até 2024 em pediatria", en: "Propionic acidemia is treated exclusively with diet without therapeutic mRNA clinical application by 2024 in pediatrics"}
+          - {pt: "Moderna descontinuou mRNA-3927 em 2022 reconhecendo inviabilidade de mRNA hepático em deficiência enzimática mitocondrial pediátrica", en: "Moderna discontinued mRNA-3927 in 2022 acknowledging hepatic mRNA infeasibility in pediatric mitochondrial enzyme deficiency"}
+        correctAnswer: {pt: "Moderna mRNA-LNP hepático codifica PCC α/β para acidemia propiônica — fase 1/2 reduziu episódios metabólicos em pacientes pediátricos", en: "Moderna hepatic mRNA-LNP encodes PCC α/β for propionic acidemia — phase 1/2 reduced metabolic episodes in pediatric patients"}
+        rationale: {pt: "Quando PCC volta, então propionato é metabolizado.", en: "When PCC returns, propionate is metabolized."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "mRNA antibody:", en: "mRNA antibody:"}
+        choices:
+          - {pt: "mRNA-1944 codifica IgG anti-CHIKV neutralizante in vivo — corpo do paciente vira fábrica de anticorpo passivo escalável e re-dosável", en: "mRNA-1944 encodes neutralizing anti-CHIKV IgG in vivo — patient's body becomes scalable, re-dosable passive antibody factory"}
+          - {pt: "mRNA-1944 é vacina ativa contra CHIKV induzindo memória imune sem componente passivo nem produção de IgG diretamente em paciente in vivo", en: "mRNA-1944 is an active CHIKV vaccine inducing immune memory without passive component or direct IgG production in patient in vivo"}
+          - {pt: "Anticorpo passivo só é producido em CHO recombinante sendo mRNA terapêutico in vivo incompatível com produção IgG humana funcional", en: "Passive antibody is only produced in recombinant CHO with in vivo therapeutic mRNA incompatible with functional human IgG production"}
+          - {pt: "mRNA-1944 induz IgM transitória sem capacidade de neutralizar CHIKV sendo proof-of-concept fracassado em fase 1 humana subsequente", en: "mRNA-1944 induces transient IgM without CHIKV-neutralizing capacity being a failed phase 1 human proof-of-concept"}
+        correctAnswer: {pt: "mRNA-1944 codifica IgG anti-CHIKV neutralizante in vivo — corpo do paciente vira fábrica de anticorpo passivo escalável e re-dosável", en: "mRNA-1944 encodes neutralizing anti-CHIKV IgG in vivo — patient's body becomes scalable, re-dosable passive antibody factory"}
+        rationale: {pt: "Quando paciente fabrica anticorpo, então logística vira local.", en: "When patient makes antibody, logistics turn local."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "in vivo CAR-T:", en: "in vivo CAR-T:"}
+        choices:
+          - {pt: "LNP-CD5/CD8 entrega mRNA-CAR direto em T-cells in vivo sem ex vivo manufacturing — Capstan Therapeutics e Epstein/Penn 2022 prova de conceito", en: "CD5/CD8-LNP delivers mRNA-CAR directly into T cells in vivo without ex vivo manufacturing — Capstan Therapeutics and Epstein/Penn 2022 PoC"}
+          - {pt: "in vivo CAR-T exige ex vivo expansion obrigatória dispensando LNP-mRNA in vivo sendo abordagem clinicamente inviável até 2024 em humano", en: "in vivo CAR-T requires mandatory ex vivo expansion obviating LNP-mRNA in vivo being clinically infeasible by 2024 in human"}
+          - {pt: "Targeting LNP a CD5/CD8 é inviável tecnicamente sendo entrega in vivo de mRNA-CAR restrita a hepatócitos sem aplicação em T-cells humanas", en: "Targeting LNP to CD5/CD8 is technically infeasible with in vivo mRNA-CAR delivery restricted to hepatocytes without human T-cell application"}
+          - {pt: "in vivo CAR-T é equivalente a CRISPR ex vivo em durabilidade sem componente transitório sendo edição genômica permanente em T-cell humana", en: "in vivo CAR-T equals ex vivo CRISPR in durability without transient component being permanent genomic editing in human T cell"}
+        correctAnswer: {pt: "LNP-CD5/CD8 entrega mRNA-CAR direto em T-cells in vivo sem ex vivo manufacturing — Capstan Therapeutics e Epstein/Penn 2022 prova de conceito", en: "CD5/CD8-LNP delivers mRNA-CAR directly into T cells in vivo without ex vivo manufacturing — Capstan Therapeutics and Epstein/Penn 2022 PoC"}
+        rationale: {pt: "Quando CAR é entregue dentro do paciente, então fábrica é desnecessária.", en: "When CAR is delivered inside patient, factory becomes unneeded."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "mRNA gene editing:", en: "mRNA gene editing:"}
+        choices:
+          - {pt: "mRNA codifica Cas9/ABE/CBE + sgRNA junto em LNP entregando edição transiente sem persistência — base de Verve, Intellia NTLA-2001", en: "mRNA encodes Cas9/ABE/CBE + sgRNA in LNP delivering transient editing without persistence — basis of Verve, Intellia NTLA-2001"}
+          - {pt: "Edição genômica via mRNA é incompatível com Cas9 expression sendo restrito a AAV-Cas9 com persistência longa em terapia gênica clínica", en: "mRNA genome editing is incompatible with Cas9 expression being restricted to long-persistence AAV-Cas9 in clinical gene therapy"}
+          - {pt: "mRNA-Cas9 integra DNA genômico sendo equivalente a vetor lentiviral em durabilidade e dispensando re-dose em qualquer aplicação clínica", en: "mRNA-Cas9 integrates genomic DNA being equivalent to lentiviral vector in durability and obviating re-dose in any clinical application"}
+          - {pt: "Verve e Intellia usam mRNA permanente sem capacidade de edição transiente sendo abordagem indistinguível de terapia gênica viral integrativa", en: "Verve and Intellia use permanent mRNA without transient-editing capacity being indistinguishable from integrative viral gene therapy"}
+        correctAnswer: {pt: "mRNA codifica Cas9/ABE/CBE + sgRNA junto em LNP entregando edição transiente sem persistência — base de Verve, Intellia NTLA-2001", en: "mRNA encodes Cas9/ABE/CBE + sgRNA in LNP delivering transient editing without persistence — basis of Verve, Intellia NTLA-2001"}
+        rationale: {pt: "Quando Cas9 some rápido, então off-target tem janela menor.", en: "When Cas9 vanishes fast, off-target has shorter window."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cancer mRNA vaccine:", en: "Cancer mRNA vaccine:"}
+        choices:
+          - {pt: "Personalizada (mRNA-4157, BNT122) ou off-the-shelf (KRAS G12D, hotspots) codifica neoantígeno em mRNA-LNP induzindo CD8 expansion clonal", en: "Personalized (mRNA-4157, BNT122) or off-the-shelf (KRAS G12D, hotspots) encodes neoantigen in mRNA-LNP inducing clonal CD8 expansion"}
+          - {pt: "Vacinas mRNA tumorais induzem apenas resposta humoral sem CD8 expansion sendo equivalentes a peptide vaccine convencional sem componente celular", en: "Tumor mRNA vaccines induce only humoral response without CD8 expansion being equivalent to conventional peptide vaccine without cellular component"}
+          - {pt: "Vacinas mRNA neoantígeno são exclusivamente off-the-shelf sem capacidade de personalização sendo BNT122 inviável tecnicamente em PDAC", en: "Neoantigen mRNA vaccines are exclusively off-the-shelf without personalization capacity making BNT122 technically infeasible in PDAC"}
+          - {pt: "Cancer mRNA vaccine é restrita a HPV-related tumor sem aplicação em melanoma ou PDAC sendo neoantígeno somático irrelevante em vacinologia", en: "Cancer mRNA vaccine is restricted to HPV-related tumor without melanoma or PDAC application making somatic neoantigen irrelevant in vaccinology"}
+        correctAnswer: {pt: "Personalizada (mRNA-4157, BNT122) ou off-the-shelf (KRAS G12D, hotspots) codifica neoantígeno em mRNA-LNP induzindo CD8 expansion clonal", en: "Personalized (mRNA-4157, BNT122) or off-the-shelf (KRAS G12D, hotspots) encodes neoantigen in mRNA-LNP inducing clonal CD8 expansion"}
+        rationale: {pt: "Quando neoantígeno expressa, então CD8 expande.", en: "When neoantigen expresses, CD8 expands."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inhalable mRNA:", en: "Inhalable mRNA:"}
+        choices:
+          - {pt: "Aerosol LNP polymer-coated atinge epitélio respiratório direto — fibrose cística mRNA-CFTR (Translate Bio MRT5005), influenza, asma alvos chave", en: "Polymer-coated aerosol LNP reaches respiratory epithelium directly — cystic fibrosis mRNA-CFTR (Translate Bio MRT5005), influenza, asthma key targets"}
+          - {pt: "mRNA inalável é incompatível com epitélio respiratório sendo restrito a entrega IV hepática sem aplicação em fibrose cística ou pulmão", en: "Inhalable mRNA is incompatible with respiratory epithelium being restricted to hepatic IV delivery without cystic fibrosis or lung application"}
+          - {pt: "Aerosol LNP atinge epitélio brônquico mas não chega ao alvéolo sendo restrito a tratamento de asma ou influenza sem aplicação CFTR alveolar", en: "Aerosol LNP reaches bronchial epithelium but not alveolus being restricted to asthma or influenza treatment without alveolar CFTR application"}
+          - {pt: "MRT5005 é tratamento oral de fibrose cística sem componente inalável sendo entrega sistêmica suficiente para correção CFTR funcional epitelial", en: "MRT5005 is an oral cystic fibrosis treatment without inhalable component with systemic delivery sufficient for functional epithelial CFTR correction"}
+        correctAnswer: {pt: "Aerosol LNP polymer-coated atinge epitélio respiratório direto — fibrose cística mRNA-CFTR (Translate Bio MRT5005), influenza, asma alvos chave", en: "Polymer-coated aerosol LNP reaches respiratory epithelium directly — cystic fibrosis mRNA-CFTR (Translate Bio MRT5005), influenza, asthma key targets"}
+        rationale: {pt: "Quando mRNA é inalado, então pulmão recebe sem fígado.", en: "When mRNA is inhaled, lung receives without liver."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imunogenicidade dose:", en: "Dose immunogenicity:"}
+        choices:
+          - {pt: "Re-dose mRNA-LNP estimula anti-PEG e IgG anti-LNP em alguns pacientes — alternar lipídio, PEG-density e descansar entre doses mitigam ADA", en: "Re-dose of mRNA-LNP triggers anti-PEG and anti-LNP IgG in some patients — alternating lipid, PEG-density and dosing intervals mitigate ADA"}
+          - {pt: "mRNA-LNP é não-imunogênico sendo re-dose ilimitada sem necessidade de monitoramento ADA ou alternância de lipídio em terapia clínica crônica", en: "mRNA-LNP is non-immunogenic with unlimited re-dose without ADA monitoring or lipid alternation in chronic clinical therapy"}
+          - {pt: "Anti-PEG é exclusivamente uma resposta a vacinas vetorizadas em AAV sem componente em LNP sendo irrelevante em mRNA terapêutico clínico", en: "Anti-PEG is exclusively a response to AAV-vectored vaccines without LNP component being irrelevant in clinical therapeutic mRNA"}
+          - {pt: "Re-dose mRNA-LNP induz tolerância imune universal eliminando ADA em qualquer cenário de tratamento crônico hepático ou extra-hepático", en: "Re-dose of mRNA-LNP induces universal immune tolerance eliminating ADA in any chronic hepatic or extra-hepatic treatment scenario"}
+        correctAnswer: {pt: "Re-dose mRNA-LNP estimula anti-PEG e IgG anti-LNP em alguns pacientes — alternar lipídio, PEG-density e descansar entre doses mitigam ADA", en: "Re-dose of mRNA-LNP triggers anti-PEG and anti-LNP IgG in some patients — alternating lipid, PEG-density and dosing intervals mitigate ADA"}
+        rationale: {pt: "Quando dose repete, então ADA aparece.", en: "When dose repeats, ADA shows up."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cold chain:", en: "Cold chain:"}
+        choices:
+          - {pt: "Ultra-baixa temperatura (-80°C BNT, -20°C Moderna) limita escala global — lyofilização, thermo-stable LNP e RNA químico estabilizado avançam", en: "Ultra-cold chain (-80°C BNT, -20°C Moderna) limits global scale — lyophilization, thermo-stable LNP and stabilized chemical RNA advance"}
+          - {pt: "mRNA-LNP é estável em temperatura ambiente sem necessidade de cold chain sendo logística global trivial em qualquer escala vacinal", en: "mRNA-LNP is room-temperature stable without cold chain need with trivial global logistics at any vaccine scale"}
+          - {pt: "Lyofilização desnaturaliza mRNA sendo contraindicado em formulação terapêutica em favor de armazenamento líquido ultra-frio em qualquer escala", en: "Lyophilization denatures mRNA and is contraindicated in therapeutic formulation in favor of ultra-cold liquid storage at any scale"}
+          - {pt: "Thermo-stable LNP é teórico sem demonstração clínica sendo cold chain ultra-baixa única opção viável em logística global de mRNA até 2024", en: "Thermo-stable LNP is theoretical without clinical demonstration making ultra-cold chain the only viable global mRNA logistics option by 2024"}
+        correctAnswer: {pt: "Ultra-baixa temperatura (-80°C BNT, -20°C Moderna) limita escala global — lyofilização, thermo-stable LNP e RNA químico estabilizado avançam", en: "Ultra-cold chain (-80°C BNT, -20°C Moderna) limits global scale — lyophilization, thermo-stable LNP and stabilized chemical RNA advance"}
+        rationale: {pt: "Quando frio aperta logística, então química resgata escala.", en: "When cold tightens logistics, chemistry rescues scale."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese mRNA terapêutico:", en: "Therapeutic mRNA synthesis:"}
+        choices:
+          - {pt: "m1Ψ + cap1 + codon-opt + UTRs + saRNA/circRNA + LNP/SORT + protein replacement + antibody + CAR-T + edição transitória + aerosol expandem além vacinas", en: "m1Ψ + cap1 + codon-opt + UTRs + saRNA/circRNA + LNP/SORT + protein replacement + antibody + CAR-T + transient editing + aerosol expand beyond vaccines"}
+          - {pt: "mRNA terapêutico permanece restrito a vacinas COVID sem aplicação em protein replacement, antibody, CAR-T ou edição transitória até 2024", en: "Therapeutic mRNA remains restricted to COVID vaccines without protein-replacement, antibody, CAR-T or transient-editing application by 2024"}
+          - {pt: "Modificações químicas e LNP são intercambiáveis sem trade-off em tradução, durabilidade ou imunogenicidade tornando design escolha indiferente", en: "Chemical modifications and LNP are interchangeable without trade-offs in translation, durability or immunogenicity making design choice indifferent"}
+          - {pt: "mRNA depende exclusivamente de cap1 e PolyA sendo m1Ψ, codon-opt e SORT lipid dispensáveis em qualquer aplicação terapêutica humana clínica", en: "mRNA depends exclusively on cap1 and PolyA with m1Ψ, codon-opt and SORT lipid dispensable in any human clinical therapeutic application"}
+        correctAnswer: {pt: "m1Ψ + cap1 + codon-opt + UTRs + saRNA/circRNA + LNP/SORT + protein replacement + antibody + CAR-T + edição transitória + aerosol expandem além vacinas", en: "m1Ψ + cap1 + codon-opt + UTRs + saRNA/circRNA + LNP/SORT + protein replacement + antibody + CAR-T + transient editing + aerosol expand beyond vaccines"}
+        rationale: {pt: "Quando todas as peças se alinham, então mRNA vira plataforma.", en: "When all pieces align, mRNA becomes a platform."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+target: 20
