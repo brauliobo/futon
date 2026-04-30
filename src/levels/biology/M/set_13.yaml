@@ -1,0 +1,244 @@
+title:
+  pt: "💊 Entrega inteligente de fármacos e materiais responsivos"
+  en: "💊 Smart drug delivery and responsive materials"
+level: 'M'
+subject: biology
+objectives: [biology.smart_drug_delivery]
+difficulty: 5
+authorNotes: "LNP Pfizer/Moderna ionizable lipid SM-102 ALC-0315, polymeric PLGA, Onpattro patisiran, Doxil PEG liposome, Abraxane nab-paclitaxel, Vyxeos CPX-351, ADC T-DXd Enhertu, pH-responsive, GSH-redox, MMP cleavable, glucose-responsive insulin Anderson Langer Zhen Gu, magnetic Fe3O4, ultrasound microbubble Konofagou, focused ultrasound BBB Hynynen Aubry, photothermal gold nanoshell Nanospectra AuroLase, mRNA-LNP cancer KEYNOTE-942, polymer micelle, exosome engineered, hydrogel injectable Anseth Mooney."
+example:
+  pt: "Ex.: glioblastoma → focused-ultrasound + microbubble disrupts BBB → carboplatin LNP atravessa → tumor mortality reduzido em ensaio Hynynen Insightec ExAblate Neuro 2023."
+  en: "Ex.: glioblastoma → focused-ultrasound + microbubble disrupts BBB → carboplatin LNP crosses → tumor mortality reduced in Hynynen Insightec ExAblate Neuro 2023 trial."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas nano + LNP", en: "Nano + LNP platforms"}
+    description: {pt: "Como nanopartícula entrega fármaco.", en: "How nanoparticle delivers drug."}
+    exercises:
+      - type: choice
+        question: {pt: "Lipid nanoparticle Pfizer/Moderna mRNA:", en: "Pfizer/Moderna mRNA lipid nanoparticle:"}
+        choices:
+          - {pt: "LNP COVID Pfizer ALC-0315 + Moderna SM-102 ionizable lipid + PEG-lipid + cholesterol + DSPC encapsulando mRNA pH-dependent endossomal escape — Acuitas/Arbutus/Genevant IP base de plataforma BNT162b2 + mRNA-1273 bilhões de doses", en: "Pfizer ALC-0315 + Moderna SM-102 ionizable lipid + PEG-lipid + cholesterol + DSPC LNPs encapsulate mRNA with pH-dependent endosomal escape — Acuitas/Arbutus/Genevant IP base for BNT162b2 + mRNA-1273 platform billions of doses"}
+          - {pt: "LNP é restrito a água sem componente lipídico sendo ionizable lipid inviável em qualquer vacina mRNA moderna em 2024", en: "LNPs are restricted to water without lipid component with ionizable lipid infeasible in any modern mRNA vaccine in 2024"}
+          - {pt: "ALC-0315 é teórico sem evidência clínica sendo SM-102 inviável em qualquer plataforma vacinal moderna em 2024", en: "ALC-0315 is theoretical without clinical evidence with SM-102 infeasible in any modern vaccine platform in 2024"}
+          - {pt: "PEG-lipid é incompatível com LNP sendo cholesterol inviável em qualquer formulação clínica moderna em 2024", en: "PEG-lipid is incompatible with LNPs with cholesterol infeasible in any modern clinical formulation in 2024"}
+        correctAnswer: {pt: "LNP COVID Pfizer ALC-0315 + Moderna SM-102 ionizable lipid + PEG-lipid + cholesterol + DSPC encapsulando mRNA pH-dependent endossomal escape — Acuitas/Arbutus/Genevant IP base de plataforma BNT162b2 + mRNA-1273 bilhões de doses", en: "Pfizer ALC-0315 + Moderna SM-102 ionizable lipid + PEG-lipid + cholesterol + DSPC LNPs encapsulate mRNA with pH-dependent endosomal escape — Acuitas/Arbutus/Genevant IP base for BNT162b2 + mRNA-1273 platform billions of doses"}
+        rationale: {pt: "Quando lipid ioniza, então mRNA escapa endossomo.", en: "When lipid ionizes, mRNA escapes endosome."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Onpattro patisiran siRNA:", en: "Onpattro patisiran siRNA:"}
+        choices:
+          - {pt: "Onpattro patisiran (Alnylam 2018 FDA-aprovado) primeiro siRNA-LNP IV-infused para hereditary ATTR amyloidosis silenciando TTR no fígado — milestone delivery RNAi sistêmica abrindo plataforma LNP siRNA hepática", en: "Onpattro patisiran (Alnylam 2018 FDA-approved) first IV-infused siRNA-LNP for hereditary ATTR amyloidosis silencing TTR in liver — RNAi systemic delivery milestone opening hepatic siRNA-LNP platform"}
+          - {pt: "Onpattro é restrito a oral sem componente IV-infused sendo siRNA-LNP inviável em qualquer aplicação clínica moderna em 2024", en: "Onpattro is restricted to oral without IV-infused component with siRNA-LNP infeasible in any modern clinical application in 2024"}
+          - {pt: "Alnylam 2018 é teórica sem evidência sendo patisiran inviável em qualquer plataforma RNAi moderna em 2024", en: "Alnylam 2018 is theoretical without evidence with patisiran infeasible in any modern RNAi platform in 2024"}
+          - {pt: "TTR amyloidosis é incompatível com Onpattro sendo hepatic siRNA inviável em qualquer estudo moderno em 2024", en: "TTR amyloidosis is incompatible with Onpattro with hepatic siRNA infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Onpattro patisiran (Alnylam 2018 FDA-aprovado) primeiro siRNA-LNP IV-infused para hereditary ATTR amyloidosis silenciando TTR no fígado — milestone delivery RNAi sistêmica abrindo plataforma LNP siRNA hepática", en: "Onpattro patisiran (Alnylam 2018 FDA-approved) first IV-infused siRNA-LNP for hereditary ATTR amyloidosis silencing TTR in liver — RNAi systemic delivery milestone opening hepatic siRNA-LNP platform"}
+        rationale: {pt: "Quando LNP carrega siRNA, então fígado silencia gene.", en: "When LNP carries siRNA, liver silences gene."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PLGA biodegradable polymer:", en: "PLGA biodegradable polymer:"}
+        choices:
+          - {pt: "PLGA poly(lactic-co-glycolic acid) é polímero biodegradável FDA-aprovado para Lupron Depot leuprolide microsphere + Risperdal Consta + Trelstar + Sandostatin LAR — sustained-release injectable depot semanas-meses controlled hydrolysis", en: "PLGA poly(lactic-co-glycolic acid) is FDA-approved biodegradable polymer for Lupron Depot leuprolide microsphere + Risperdal Consta + Trelstar + Sandostatin LAR — weeks-months sustained-release injectable depot via controlled hydrolysis"}
+          - {pt: "PLGA é restrito a non-degradable sem componente FDA-approved sendo Lupron Depot inviável em qualquer formulação clínica moderna em 2024", en: "PLGA is restricted to non-degradable without FDA-approved component with Lupron Depot infeasible in any modern clinical formulation in 2024"}
+          - {pt: "Microsphere é teórica sem evidência sendo Risperdal Consta inviável em qualquer plataforma moderna em 2024", en: "Microsphere is theoretical without evidence with Risperdal Consta infeasible in any modern platform in 2024"}
+          - {pt: "Hydrolysis é incompatível com PLGA sendo sustained-release inviável em qualquer aplicação clínica moderna em 2024", en: "Hydrolysis is incompatible with PLGA with sustained-release infeasible in any modern clinical application in 2024"}
+        correctAnswer: {pt: "PLGA poly(lactic-co-glycolic acid) é polímero biodegradável FDA-aprovado para Lupron Depot leuprolide microsphere + Risperdal Consta + Trelstar + Sandostatin LAR — sustained-release injectable depot semanas-meses controlled hydrolysis", en: "PLGA poly(lactic-co-glycolic acid) is FDA-approved biodegradable polymer for Lupron Depot leuprolide microsphere + Risperdal Consta + Trelstar + Sandostatin LAR — weeks-months sustained-release injectable depot via controlled hydrolysis"}
+        rationale: {pt: "Quando polímero degrada, então depot solta fármaco.", en: "When polymer degrades, depot releases drug."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Doxil/Caelyx PEGylated liposome:", en: "Doxil/Caelyx PEGylated liposome:"}
+        choices:
+          - {pt: "Doxil/Caelyx (J&J 1995 primeiro nanomedicine FDA-approved) é PEGylated liposomal doxorubicin estendendo half-life 50× e reduzindo cardiotoxicidade via stealth EPR effect — gold-standard ovarian/Kaposi/myeloma original Bangham/Gregoriadis liposome legacy", en: "Doxil/Caelyx (J&J 1995 first FDA-approved nanomedicine) is PEGylated liposomal doxorubicin extending half-life 50× and reducing cardiotoxicity via stealth EPR effect — gold-standard ovarian/Kaposi/myeloma original Bangham/Gregoriadis liposome legacy"}
+          - {pt: "Doxil é restrito a oral sem componente PEGylated sendo liposomal doxorubicin inviável em qualquer aplicação clínica moderna em 2024", en: "Doxil is restricted to oral without PEGylated component with liposomal doxorubicin infeasible in any modern clinical application in 2024"}
+          - {pt: "J&J 1995 é teórica sem evidência sendo nanomedicine FDA-approved inviável em qualquer plataforma moderna em 2024", en: "J&J 1995 is theoretical without evidence with nanomedicine FDA-approved infeasible in any modern platform in 2024"}
+          - {pt: "Stealth EPR é incompatível com Doxil sendo cardiotoxicity reduction inviável em qualquer estudo clínico moderno em 2024", en: "Stealth EPR is incompatible with Doxil with cardiotoxicity reduction infeasible in any modern clinical study in 2024"}
+        correctAnswer: {pt: "Doxil/Caelyx (J&J 1995 primeiro nanomedicine FDA-approved) é PEGylated liposomal doxorubicin estendendo half-life 50× e reduzindo cardiotoxicidade via stealth EPR effect — gold-standard ovarian/Kaposi/myeloma original Bangham/Gregoriadis liposome legacy", en: "Doxil/Caelyx (J&J 1995 first FDA-approved nanomedicine) is PEGylated liposomal doxorubicin extending half-life 50× and reducing cardiotoxicity via stealth EPR effect — gold-standard ovarian/Kaposi/myeloma original Bangham/Gregoriadis liposome legacy"}
+        rationale: {pt: "Quando PEG esconde lipossoma, então half-life cresce.", en: "When PEG hides liposome, half-life grows."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Abraxane nab-paclitaxel:", en: "Abraxane nab-paclitaxel:"}
+        choices:
+          - {pt: "Abraxane nab-paclitaxel (Celgene/BMS 2005 FDA-approved) é albumin-bound 130nm nanoparticle paclitaxel eliminando Cremophor solvent reduzindo hipersensibilidade aproveitando SPARC/gp60 albumin transcytosis tumor accumulation — metastatic breast/pancreas/NSCLC standard", en: "Abraxane nab-paclitaxel (Celgene/BMS 2005 FDA-approved) is albumin-bound 130nm nanoparticle paclitaxel eliminating Cremophor solvent reducing hypersensitivity leveraging SPARC/gp60 albumin transcytosis tumor accumulation — metastatic breast/pancreas/NSCLC standard"}
+          - {pt: "Abraxane é restrito a Cremophor sem componente albumin-bound sendo nanoparticle inviável em qualquer aplicação clínica moderna em 2024", en: "Abraxane is restricted to Cremophor without albumin-bound component with nanoparticle infeasible in any modern clinical application in 2024"}
+          - {pt: "Celgene 2005 é teórica sem evidência sendo nab-paclitaxel inviável em qualquer plataforma moderna em 2024", en: "Celgene 2005 is theoretical without evidence with nab-paclitaxel infeasible in any modern platform in 2024"}
+          - {pt: "SPARC/gp60 é incompatível com Abraxane sendo albumin transcytosis inviável em qualquer estudo moderno em 2024", en: "SPARC/gp60 is incompatible with Abraxane with albumin transcytosis infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Abraxane nab-paclitaxel (Celgene/BMS 2005 FDA-approved) é albumin-bound 130nm nanoparticle paclitaxel eliminando Cremophor solvent reduzindo hipersensibilidade aproveitando SPARC/gp60 albumin transcytosis tumor accumulation — metastatic breast/pancreas/NSCLC standard", en: "Abraxane nab-paclitaxel (Celgene/BMS 2005 FDA-approved) is albumin-bound 130nm nanoparticle paclitaxel eliminating Cremophor solvent reducing hypersensitivity leveraging SPARC/gp60 albumin transcytosis tumor accumulation — metastatic breast/pancreas/NSCLC standard"}
+        rationale: {pt: "Quando albumin carrega paclitaxel, então solvent é dispensável.", en: "When albumin carries paclitaxel, solvent is dispensable."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ADC trastuzumab deruxtecan T-DXd:", en: "ADC trastuzumab deruxtecan T-DXd:"}
+        choices:
+          - {pt: "Enhertu trastuzumab deruxtecan T-DXd (Daiichi Sankyo/AstraZeneca 2019-2022) é ADC HER2-targeting com cleavable tetrapeptide linker + topoisomerase-I inhibitor DXd payload DAR ~8 + bystander effect — DESTINY-Breast03/04 game-changer HER2-low pioneer", en: "Enhertu trastuzumab deruxtecan T-DXd (Daiichi Sankyo/AstraZeneca 2019-2022) is HER2-targeting ADC with cleavable tetrapeptide linker + topoisomerase-I inhibitor DXd payload DAR ~8 + bystander effect — DESTINY-Breast03/04 HER2-low game-changer pioneer"}
+          - {pt: "T-DXd é restrito a HER2-high sem componente HER2-low sendo cleavable linker inviável em qualquer aplicação clínica moderna em 2024", en: "T-DXd is restricted to HER2-high without HER2-low component with cleavable linker infeasible in any modern clinical application in 2024"}
+          - {pt: "Daiichi Sankyo é teórica sem evidência sendo Enhertu inviável em qualquer plataforma ADC moderna em 2024", en: "Daiichi Sankyo is theoretical without evidence with Enhertu infeasible in any modern ADC platform in 2024"}
+          - {pt: "DAR ~8 é incompatível com T-DXd sendo bystander effect inviável em qualquer estudo moderno em 2024", en: "DAR ~8 is incompatible with T-DXd with bystander effect infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Enhertu trastuzumab deruxtecan T-DXd (Daiichi Sankyo/AstraZeneca 2019-2022) é ADC HER2-targeting com cleavable tetrapeptide linker + topoisomerase-I inhibitor DXd payload DAR ~8 + bystander effect — DESTINY-Breast03/04 game-changer HER2-low pioneer", en: "Enhertu trastuzumab deruxtecan T-DXd (Daiichi Sankyo/AstraZeneca 2019-2022) is HER2-targeting ADC with cleavable tetrapeptide linker + topoisomerase-I inhibitor DXd payload DAR ~8 + bystander effect — DESTINY-Breast03/04 HER2-low game-changer pioneer"}
+        rationale: {pt: "Quando linker cliva, então payload mata vizinhos.", en: "When linker cleaves, payload kills neighbors."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "pH-responsive polymeric micelle:", en: "pH-responsive polymeric micelle:"}
+        choices:
+          - {pt: "pH-responsive polymeric micelle (NanoCarrier NC-6004 cisplatin/PAXCEED + BIND-014 docetaxel-PSMA) usa hydrazone/imine bond cleavable em endossomo pH 5-6 vs blood pH 7.4 disparando release tumor-selective EPR — segunda geração nanomedicine targeted oncology", en: "pH-responsive polymeric micelles (NanoCarrier NC-6004 cisplatin/PAXCEED + BIND-014 docetaxel-PSMA) use hydrazone/imine bond cleavable at endosome pH 5-6 vs blood pH 7.4 triggering tumor-selective EPR release — second-generation targeted oncology nanomedicine"}
+          - {pt: "pH-responsive é restrita a pH 7.4 sem componente endossomal sendo hydrazone bond inviável em qualquer plataforma moderna em 2024", en: "pH-responsive is restricted to pH 7.4 without endosomal component with hydrazone bond infeasible in any modern platform in 2024"}
+          - {pt: "NanoCarrier é teórica sem evidência sendo NC-6004 inviável em qualquer aplicação clínica moderna em 2024", en: "NanoCarrier is theoretical without evidence with NC-6004 infeasible in any modern clinical application in 2024"}
+          - {pt: "EPR é incompatível com pH-responsive sendo tumor-selective release inviável em qualquer estudo oncológico moderno em 2024", en: "EPR is incompatible with pH-responsive with tumor-selective release infeasible in any modern oncology study in 2024"}
+        correctAnswer: {pt: "pH-responsive polymeric micelle (NanoCarrier NC-6004 cisplatin/PAXCEED + BIND-014 docetaxel-PSMA) usa hydrazone/imine bond cleavable em endossomo pH 5-6 vs blood pH 7.4 disparando release tumor-selective EPR — segunda geração nanomedicine targeted oncology", en: "pH-responsive polymeric micelles (NanoCarrier NC-6004 cisplatin/PAXCEED + BIND-014 docetaxel-PSMA) use hydrazone/imine bond cleavable at endosome pH 5-6 vs blood pH 7.4 triggering tumor-selective EPR release — second-generation targeted oncology nanomedicine"}
+        rationale: {pt: "Quando pH cai, então fármaco solta.", en: "When pH drops, drug releases."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GSH-redox responsive disulfide:", en: "GSH-redox responsive disulfide:"}
+        choices:
+          - {pt: "GSH-redox-responsive disulfide-crosslinked nanocarrier explora 100-1000× higher cytosolic GSH (~10 mM) vs blood (~2 µM) clivando S-S bond intracelular liberando cargo — second-generation tumor-cell-selective release Hubbell/Kataoka platform", en: "GSH-redox-responsive disulfide-crosslinked nanocarriers exploit 100-1000× higher cytosolic GSH (~10 mM) vs blood (~2 µM) cleaving intracellular S-S bond releasing cargo — second-generation tumor-cell-selective release Hubbell/Kataoka platform"}
+          - {pt: "GSH é restrita a blood sem componente cytosolic sendo disulfide bond inviável em qualquer ensaio moderno em 2024", en: "GSH is restricted to blood without cytosolic component with disulfide bond infeasible in any modern assay in 2024"}
+          - {pt: "Hubbell é teórica sem evidência sendo redox-responsive inviável em qualquer plataforma moderna em 2024", en: "Hubbell is theoretical without evidence with redox-responsive infeasible in any modern platform in 2024"}
+          - {pt: "S-S bond é incompatível com GSH sendo intracellular release inviável em qualquer estudo moderno em 2024", en: "S-S bond is incompatible with GSH with intracellular release infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "GSH-redox-responsive disulfide-crosslinked nanocarrier explora 100-1000× higher cytosolic GSH (~10 mM) vs blood (~2 µM) clivando S-S bond intracelular liberando cargo — second-generation tumor-cell-selective release Hubbell/Kataoka platform", en: "GSH-redox-responsive disulfide-crosslinked nanocarriers exploit 100-1000× higher cytosolic GSH (~10 mM) vs blood (~2 µM) cleaving intracellular S-S bond releasing cargo — second-generation tumor-cell-selective release Hubbell/Kataoka platform"}
+        rationale: {pt: "Quando GSH é alto, então S-S quebra.", en: "When GSH is high, S-S breaks."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MMP-cleavable peptide linker:", en: "MMP-cleavable peptide linker:"}
+        choices:
+          - {pt: "MMP-cleavable peptide linker (sequence PLGLAG/GPLGV) explora matrix metalloproteinase MMP-2/9 superexpressas em tumor microenvironment ativando prodrug/activatable probe spatially restricted — Roger Tsien activatable cell-penetrating peptide ACPP imaging + therapy", en: "MMP-cleavable peptide linker (PLGLAG/GPLGV sequence) exploits MMP-2/9 matrix metalloproteinases overexpressed in tumor microenvironment activating prodrug/activatable probe spatially restricted — Roger Tsien activatable cell-penetrating peptide ACPP imaging + therapy"}
+          - {pt: "MMP-cleavable é restrita a normal tissue sem componente tumor sendo PLGLAG inviável em qualquer aplicação clínica moderna em 2024", en: "MMP-cleavable is restricted to normal tissue without tumor component with PLGLAG infeasible in any modern clinical application in 2024"}
+          - {pt: "Roger Tsien é teórica sem evidência sendo ACPP inviável em qualquer plataforma moderna em 2024", en: "Roger Tsien is theoretical without evidence with ACPP infeasible in any modern platform in 2024"}
+          - {pt: "MMP-2/9 é incompatível com tumor sendo activatable probe inviável em qualquer estudo oncológico moderno em 2024", en: "MMP-2/9 is incompatible with tumor with activatable probe infeasible in any modern oncology study in 2024"}
+        correctAnswer: {pt: "MMP-cleavable peptide linker (sequence PLGLAG/GPLGV) explora matrix metalloproteinase MMP-2/9 superexpressas em tumor microenvironment ativando prodrug/activatable probe spatially restricted — Roger Tsien activatable cell-penetrating peptide ACPP imaging + therapy", en: "MMP-cleavable peptide linker (PLGLAG/GPLGV sequence) exploits MMP-2/9 matrix metalloproteinases overexpressed in tumor microenvironment activating prodrug/activatable probe spatially restricted — Roger Tsien activatable cell-penetrating peptide ACPP imaging + therapy"}
+        rationale: {pt: "Quando MMP cliva, então prodrug ativa.", en: "When MMP cleaves, prodrug activates."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Glucose-responsive insulin Zhen Gu Anderson Langer:", en: "Glucose-responsive insulin Zhen Gu Anderson Langer:"}
+        choices:
+          - {pt: "Glucose-responsive insulin (Zhen Gu UCLA + Daniel Anderson + Robert Langer MIT) usa phenylboronic acid PBA ou GOx microneedle hydrogel that swells/dissolves quando glicose alta liberando insulin — closed-loop artificial pancreas alternativa physiological feedback diabetes type 1", en: "Glucose-responsive insulin (Zhen Gu UCLA + Daniel Anderson + Robert Langer MIT) uses phenylboronic acid PBA or GOx microneedle hydrogel that swells/dissolves when glucose is high releasing insulin — type 1 diabetes physiological-feedback closed-loop artificial-pancreas alternative"}
+          - {pt: "Glucose-responsive insulin é restrita a oral sem componente microneedle sendo phenylboronic acid inviável em qualquer plataforma moderna em 2024", en: "Glucose-responsive insulin is restricted to oral without microneedle component with phenylboronic acid infeasible in any modern platform in 2024"}
+          - {pt: "Zhen Gu é teórica sem evidência sendo GOx hydrogel inviável em qualquer aplicação clínica moderna em 2024", en: "Zhen Gu is theoretical without evidence with GOx hydrogel infeasible in any modern clinical application in 2024"}
+          - {pt: "Anderson/Langer é incompatível com closed-loop sendo type 1 diabetes inviável em qualquer estudo moderno em 2024", en: "Anderson/Langer is incompatible with closed-loop with type 1 diabetes infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Glucose-responsive insulin (Zhen Gu UCLA + Daniel Anderson + Robert Langer MIT) usa phenylboronic acid PBA ou GOx microneedle hydrogel that swells/dissolves quando glicose alta liberando insulin — closed-loop artificial pancreas alternativa physiological feedback diabetes type 1", en: "Glucose-responsive insulin (Zhen Gu UCLA + Daniel Anderson + Robert Langer MIT) uses phenylboronic acid PBA or GOx microneedle hydrogel that swells/dissolves when glucose is high releasing insulin — type 1 diabetes physiological-feedback closed-loop artificial-pancreas alternative"}
+        rationale: {pt: "Quando glicose sobe, então hydrogel solta insulina.", en: "When glucose rises, hydrogel releases insulin."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Estímulos externos + clínica", en: "External stimuli + clinic"}
+    description: {pt: "Como ativar release com energia externa.", en: "How to trigger release with external energy."}
+    exercises:
+      - type: choice
+        question: {pt: "Magnetic Fe3O4 + magnetic hyperthermia:", en: "Magnetic Fe3O4 + magnetic hyperthermia:"}
+        choices:
+          - {pt: "MagForce NanoTherm (Andreas Jordan Berlin Charité) usa Fe3O4 superparamagnetic iron oxide injetada intratumoral em glioblastoma + AC magnetic field 100kHz aquecendo 42-45°C tumor-localized hyperthermia + radioterapia — primeiro nanomedicine magnetic CE-marked Europe 2010", en: "MagForce NanoTherm (Andreas Jordan Berlin Charité) uses Fe3O4 superparamagnetic iron oxide injected intratumorally in glioblastoma + 100kHz AC magnetic field heating to 42-45°C tumor-localized hyperthermia + radiotherapy — first magnetic nanomedicine CE-marked in Europe 2010"}
+          - {pt: "MagForce é restrita a oral sem componente intratumoral sendo Fe3O4 inviável em qualquer aplicação clínica moderna em 2024", en: "MagForce is restricted to oral without intratumoral component with Fe3O4 infeasible in any modern clinical application in 2024"}
+          - {pt: "Andreas Jordan é teórica sem evidência sendo magnetic hyperthermia inviável em qualquer plataforma moderna em 2024", en: "Andreas Jordan is theoretical without evidence with magnetic hyperthermia infeasible in any modern platform in 2024"}
+          - {pt: "100kHz é incompatível com AC field sendo glioblastoma treatment inviável em qualquer estudo clínico moderno em 2024", en: "100kHz is incompatible with AC field with glioblastoma treatment infeasible in any modern clinical study in 2024"}
+        correctAnswer: {pt: "MagForce NanoTherm (Andreas Jordan Berlin Charité) usa Fe3O4 superparamagnetic iron oxide injetada intratumoral em glioblastoma + AC magnetic field 100kHz aquecendo 42-45°C tumor-localized hyperthermia + radioterapia — primeiro nanomedicine magnetic CE-marked Europe 2010", en: "MagForce NanoTherm (Andreas Jordan Berlin Charité) uses Fe3O4 superparamagnetic iron oxide injected intratumorally in glioblastoma + 100kHz AC magnetic field heating to 42-45°C tumor-localized hyperthermia + radiotherapy — first magnetic nanomedicine CE-marked in Europe 2010"}
+        rationale: {pt: "Quando magnetic field oscila, então tumor aquece.", en: "When magnetic field oscillates, tumor heats."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Focused ultrasound BBB Hynynen Aubry:", en: "Focused ultrasound BBB Hynynen Aubry:"}
+        choices:
+          - {pt: "Focused-ultrasound + microbubble BBB opening (Kullervo Hynynen Sunnybrook + Jean-Francois Aubry Paris + Elisa Konofagou Columbia) usa Insightec ExAblate Neuro MR-guided FUS + Definity microbubbles transient BBB disruption permitindo carboplatin/aducanumab/AAV9 entrega cerebral — clinical Alzheimer/glioma trials", en: "Focused-ultrasound + microbubble BBB opening (Kullervo Hynynen Sunnybrook + Jean-Francois Aubry Paris + Elisa Konofagou Columbia) uses Insightec ExAblate Neuro MR-guided FUS + Definity microbubbles for transient BBB disruption enabling brain delivery of carboplatin/aducanumab/AAV9 — clinical Alzheimer/glioma trials"}
+          - {pt: "FUS é restrita a oral sem componente MR-guided sendo BBB opening inviável em qualquer aplicação clínica moderna em 2024", en: "FUS is restricted to oral without MR-guided component with BBB opening infeasible in any modern clinical application in 2024"}
+          - {pt: "Hynynen é teórica sem evidência sendo Insightec ExAblate inviável em qualquer plataforma moderna em 2024", en: "Hynynen is theoretical without evidence with Insightec ExAblate infeasible in any modern platform in 2024"}
+          - {pt: "Definity microbubbles é incompatível com BBB sendo brain delivery inviável em qualquer estudo clínico moderno em 2024", en: "Definity microbubbles are incompatible with BBB with brain delivery infeasible in any modern clinical study in 2024"}
+        correctAnswer: {pt: "Focused-ultrasound + microbubble BBB opening (Kullervo Hynynen Sunnybrook + Jean-Francois Aubry Paris + Elisa Konofagou Columbia) usa Insightec ExAblate Neuro MR-guided FUS + Definity microbubbles transient BBB disruption permitindo carboplatin/aducanumab/AAV9 entrega cerebral — clinical Alzheimer/glioma trials", en: "Focused-ultrasound + microbubble BBB opening (Kullervo Hynynen Sunnybrook + Jean-Francois Aubry Paris + Elisa Konofagou Columbia) uses Insightec ExAblate Neuro MR-guided FUS + Definity microbubbles for transient BBB disruption enabling brain delivery of carboplatin/aducanumab/AAV9 — clinical Alzheimer/glioma trials"}
+        rationale: {pt: "Quando ultrassom + bolha abre BBB, então cérebro recebe fármaco.", en: "When ultrasound + bubble opens BBB, brain receives drug."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Photothermal gold nanoshell Nanospectra AuroLase:", en: "Photothermal gold nanoshell Nanospectra AuroLase:"}
+        choices:
+          - {pt: "Nanospectra AuroLase usa gold-silica nanoshell IV-infused passivamente acumulada em tumor + NIR laser 808nm aquecendo 60-70°C foto-thermal ablation prostate + recurrent head-and-neck cancer — Naomi Halas Rice silica-gold nanoshell platform clinical-stage", en: "Nanospectra AuroLase uses IV-infused gold-silica nanoshells passively accumulated in tumor + 808nm NIR laser heating to 60-70°C photothermal ablation prostate + recurrent head-and-neck cancer — Naomi Halas Rice silica-gold nanoshell clinical-stage platform"}
+          - {pt: "AuroLase é restrita a oral sem componente IV-infused sendo gold-silica nanoshell inviável em qualquer aplicação clínica moderna em 2024", en: "AuroLase is restricted to oral without IV-infused component with gold-silica nanoshell infeasible in any modern clinical application in 2024"}
+          - {pt: "Naomi Halas é teórica sem evidência sendo NIR laser ablation inviável em qualquer plataforma moderna em 2024", en: "Naomi Halas is theoretical without evidence with NIR laser ablation infeasible in any modern platform in 2024"}
+          - {pt: "808nm é incompatível com nanoshell sendo prostate cancer ablation inviável em qualquer estudo clínico moderno em 2024", en: "808nm is incompatible with nanoshell with prostate cancer ablation infeasible in any modern clinical study in 2024"}
+        correctAnswer: {pt: "Nanospectra AuroLase usa gold-silica nanoshell IV-infused passivamente acumulada em tumor + NIR laser 808nm aquecendo 60-70°C foto-thermal ablation prostate + recurrent head-and-neck cancer — Naomi Halas Rice silica-gold nanoshell platform clinical-stage", en: "Nanospectra AuroLase uses IV-infused gold-silica nanoshells passively accumulated in tumor + 808nm NIR laser heating to 60-70°C photothermal ablation prostate + recurrent head-and-neck cancer — Naomi Halas Rice silica-gold nanoshell clinical-stage platform"}
+        rationale: {pt: "Quando NIR brilha em ouro, então tumor cozinha.", en: "When NIR shines on gold, tumor cooks."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vyxeos CPX-351 dual-drug ratiometric:", en: "Vyxeos CPX-351 dual-drug ratiometric:"}
+        choices:
+          - {pt: "Vyxeos CPX-351 (Jazz Pharma 2017 FDA-approved) é liposomal cytarabine + daunorubicin co-encapsulated em fixed 5:1 molar ratio sinérgico para AML therapy-related/MDS — dual-drug ratiometric nanomedicine prolongando overall survival vs 7+3 standard induction", en: "Vyxeos CPX-351 (Jazz Pharma 2017 FDA-approved) is liposomal cytarabine + daunorubicin co-encapsulated at fixed synergistic 5:1 molar ratio for therapy-related/MDS-related AML — dual-drug ratiometric nanomedicine prolonging overall survival vs 7+3 standard induction"}
+          - {pt: "Vyxeos é restrita a single-drug sem componente liposomal sendo dual-drug 5:1 ratio inviável em qualquer aplicação clínica moderna em 2024", en: "Vyxeos is restricted to single-drug without liposomal component with dual-drug 5:1 ratio infeasible in any modern clinical application in 2024"}
+          - {pt: "Jazz Pharma é teórica sem evidência sendo CPX-351 inviável em qualquer plataforma moderna em 2024", en: "Jazz Pharma is theoretical without evidence with CPX-351 infeasible in any modern platform in 2024"}
+          - {pt: "Cytarabine + daunorubicin é incompatível com liposomal sendo AML therapy inviável em qualquer estudo clínico moderno em 2024", en: "Cytarabine + daunorubicin is incompatible with liposomal with AML therapy infeasible in any modern clinical study in 2024"}
+        correctAnswer: {pt: "Vyxeos CPX-351 (Jazz Pharma 2017 FDA-approved) é liposomal cytarabine + daunorubicin co-encapsulated em fixed 5:1 molar ratio sinérgico para AML therapy-related/MDS — dual-drug ratiometric nanomedicine prolongando overall survival vs 7+3 standard induction", en: "Vyxeos CPX-351 (Jazz Pharma 2017 FDA-approved) is liposomal cytarabine + daunorubicin co-encapsulated at fixed synergistic 5:1 molar ratio for therapy-related/MDS-related AML — dual-drug ratiometric nanomedicine prolonging overall survival vs 7+3 standard induction"}
+        rationale: {pt: "Quando dois fármacos viajam juntos, então sinergia é fixa.", en: "When two drugs travel together, synergy is fixed."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "mRNA-LNP cancer vaccine BNT122/mRNA-4157:", en: "mRNA-LNP cancer vaccine BNT122/mRNA-4157:"}
+        choices:
+          - {pt: "mRNA-4157 V940 (Moderna/Merck) + BNT122 autogene cevumeran (BioNTech/Genentech) são personalized neoantigen mRNA-LNP vaccines + pembrolizumab/atezolizumab para melanoma adjuvant + pancreatic — KEYNOTE-942 fase 2b risco de recidiva reduzido 49% vs Keytruda solo histórico imunoterapia personalizada", en: "mRNA-4157 V940 (Moderna/Merck) + BNT122 autogene cevumeran (BioNTech/Genentech) are personalized neoantigen mRNA-LNP vaccines + pembrolizumab/atezolizumab for adjuvant melanoma + pancreatic — KEYNOTE-942 phase 2b 49% recurrence risk reduction vs Keytruda alone personalized-immunotherapy milestone"}
+          - {pt: "mRNA-4157 é restrita a generic sem componente personalized sendo neoantigen mRNA-LNP inviável em qualquer aplicação clínica moderna em 2024", en: "mRNA-4157 is restricted to generic without personalized component with neoantigen mRNA-LNP infeasible in any modern clinical application in 2024"}
+          - {pt: "Moderna/Merck é teórica sem evidência sendo BNT122 inviável em qualquer plataforma moderna em 2024", en: "Moderna/Merck is theoretical without evidence with BNT122 infeasible in any modern platform in 2024"}
+          - {pt: "KEYNOTE-942 é incompatível com mRNA cancer vaccine sendo melanoma adjuvant inviável em qualquer estudo clínico moderno em 2024", en: "KEYNOTE-942 is incompatible with mRNA cancer vaccine with melanoma adjuvant infeasible in any modern clinical study in 2024"}
+        correctAnswer: {pt: "mRNA-4157 V940 (Moderna/Merck) + BNT122 autogene cevumeran (BioNTech/Genentech) são personalized neoantigen mRNA-LNP vaccines + pembrolizumab/atezolizumab para melanoma adjuvant + pancreatic — KEYNOTE-942 fase 2b risco de recidiva reduzido 49% vs Keytruda solo histórico imunoterapia personalizada", en: "mRNA-4157 V940 (Moderna/Merck) + BNT122 autogene cevumeran (BioNTech/Genentech) are personalized neoantigen mRNA-LNP vaccines + pembrolizumab/atezolizumab for adjuvant melanoma + pancreatic — KEYNOTE-942 phase 2b 49% recurrence risk reduction vs Keytruda alone personalized-immunotherapy milestone"}
+        rationale: {pt: "Quando mRNA codifica neoantigen, então T-cell aprende tumor.", en: "When mRNA encodes neoantigen, T-cell learns tumor."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Engineered exosome delivery:", en: "Engineered exosome delivery:"}
+        choices:
+          - {pt: "Engineered exosome (Codiak BioSciences exoSTING/exoIL-12 + Aruna Bio) usa loaded extracellular vesicle 30-150nm com surface display targeting peptide entregando RNA/protein/STING agonist — endogenous-like biocompatibility low immunogenicity carrier next-gen alternativa LNP", en: "Engineered exosomes (Codiak BioSciences exoSTING/exoIL-12 + Aruna Bio) use loaded 30-150nm extracellular vesicles with targeting-peptide surface display delivering RNA/protein/STING agonist — endogenous-like biocompatibility low-immunogenicity next-gen LNP alternative"}
+          - {pt: "Exosome é restrita a 1µm sem componente extracellular vesicle sendo surface display inviável em qualquer plataforma moderna em 2024", en: "Exosome is restricted to 1µm without extracellular vesicle component with surface display infeasible in any modern platform in 2024"}
+          - {pt: "Codiak é teórica sem evidência sendo exoSTING inviável em qualquer aplicação clínica moderna em 2024", en: "Codiak is theoretical without evidence with exoSTING infeasible in any modern clinical application in 2024"}
+          - {pt: "Endogenous-like é incompatível com exosome sendo low-immunogenicity inviável em qualquer estudo moderno em 2024", en: "Endogenous-like is incompatible with exosome with low-immunogenicity infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Engineered exosome (Codiak BioSciences exoSTING/exoIL-12 + Aruna Bio) usa loaded extracellular vesicle 30-150nm com surface display targeting peptide entregando RNA/protein/STING agonist — endogenous-like biocompatibility low immunogenicity carrier next-gen alternativa LNP", en: "Engineered exosomes (Codiak BioSciences exoSTING/exoIL-12 + Aruna Bio) use loaded 30-150nm extracellular vesicles with targeting-peptide surface display delivering RNA/protein/STING agonist — endogenous-like biocompatibility low-immunogenicity next-gen LNP alternative"}
+        rationale: {pt: "Quando vesícula é endógena, então corpo aceita melhor.", en: "When vesicle is endogenous, body accepts better."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Injectable hydrogel Anseth Mooney:", en: "Injectable hydrogel Anseth Mooney:"}
+        choices:
+          - {pt: "Injectable thermoresponsive/shear-thinning hydrogel (Kristi Anseth Colorado + David Mooney Harvard Wyss) PEG/HA/alginate forma in situ depot sustained-release de quimioterapia/citocina/células stem — Anseth Wyss/Mooney WDVAX vaccine + Investigator-led STAT-2D platform local delivery", en: "Injectable thermoresponsive/shear-thinning hydrogels (Kristi Anseth Colorado + David Mooney Harvard Wyss) PEG/HA/alginate form in situ depot for sustained-release chemotherapy/cytokine/stem cells — Anseth Wyss/Mooney WDVAX vaccine + investigator-led STAT-2D local-delivery platform"}
+          - {pt: "Injectable hydrogel é restrita a oral sem componente in situ sendo thermoresponsive inviável em qualquer aplicação clínica moderna em 2024", en: "Injectable hydrogel is restricted to oral without in situ component with thermoresponsive infeasible in any modern clinical application in 2024"}
+          - {pt: "Kristi Anseth é teórica sem evidência sendo PEG/HA hydrogel inviável em qualquer plataforma moderna em 2024", en: "Kristi Anseth is theoretical without evidence with PEG/HA hydrogel infeasible in any modern platform in 2024"}
+          - {pt: "Mooney é incompatível com WDVAX sendo local delivery inviável em qualquer estudo moderno em 2024", en: "Mooney is incompatible with WDVAX with local delivery infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Injectable thermoresponsive/shear-thinning hydrogel (Kristi Anseth Colorado + David Mooney Harvard Wyss) PEG/HA/alginate forma in situ depot sustained-release de quimioterapia/citocina/células stem — Anseth Wyss/Mooney WDVAX vaccine + Investigator-led STAT-2D platform local delivery", en: "Injectable thermoresponsive/shear-thinning hydrogels (Kristi Anseth Colorado + David Mooney Harvard Wyss) PEG/HA/alginate form in situ depot for sustained-release chemotherapy/cytokine/stem cells — Anseth Wyss/Mooney WDVAX vaccine + investigator-led STAT-2D local-delivery platform"}
+        rationale: {pt: "Quando hydrogel forma in situ, então depot fica local.", en: "When hydrogel forms in situ, depot stays local."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dissolvable microneedle vaccine patch:", en: "Dissolvable microneedle vaccine patch:"}
+        choices:
+          - {pt: "Dissolvable microneedle patch (Mark Prausnitz Georgia Tech + Micron Biomedical/Vaxxas) entrega vaccine intradermal painless self-administered eliminando needle-and-syringe + cold chain — measles-rubella WHO field trial Gambia 2023 + COVID/influenza pipeline", en: "Dissolvable microneedle patches (Mark Prausnitz Georgia Tech + Micron Biomedical/Vaxxas) deliver vaccine intradermally painless self-administered eliminating needle-and-syringe + cold chain — measles-rubella WHO field trial Gambia 2023 + COVID/influenza pipeline"}
+          - {pt: "Microneedle é restrita a IV sem componente intradermal sendo painless inviável em qualquer aplicação clínica moderna em 2024", en: "Microneedle is restricted to IV without intradermal component with painless infeasible in any modern clinical application in 2024"}
+          - {pt: "Mark Prausnitz é teórica sem evidência sendo dissolvable patch inviável em qualquer plataforma moderna em 2024", en: "Mark Prausnitz is theoretical without evidence with dissolvable patch infeasible in any modern platform in 2024"}
+          - {pt: "Vaxxas é incompatível com microneedle sendo measles-rubella WHO inviável em qualquer estudo de campo moderno em 2024", en: "Vaxxas is incompatible with microneedle with measles-rubella WHO infeasible in any modern field study in 2024"}
+        correctAnswer: {pt: "Dissolvable microneedle patch (Mark Prausnitz Georgia Tech + Micron Biomedical/Vaxxas) entrega vaccine intradermal painless self-administered eliminando needle-and-syringe + cold chain — measles-rubella WHO field trial Gambia 2023 + COVID/influenza pipeline", en: "Dissolvable microneedle patches (Mark Prausnitz Georgia Tech + Micron Biomedical/Vaxxas) deliver vaccine intradermally painless self-administered eliminating needle-and-syringe + cold chain — measles-rubella WHO field trial Gambia 2023 + COVID/influenza pipeline"}
+        rationale: {pt: "Quando agulha dissolve, então vacina é self-applied.", en: "When needle dissolves, vaccine is self-applied."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Implantable Anderson MIT capsule:", en: "Implantable Anderson MIT capsule:"}
+        choices:
+          - {pt: "Implantable refillable drug-delivery device (Daniel Anderson + Robert Langer + Giovanni Traverso MIT) inclui SOMA self-orienting millimeter applicator + LUMI-25 ingestible auto-injector + STAR Vaxess implantable extended-release formulação para HIV PrEP cabotegravir/insulin/contraceptive — long-acting implant pipeline", en: "Implantable refillable drug-delivery devices (Daniel Anderson + Robert Langer + Giovanni Traverso MIT) include SOMA self-orienting millimeter applicator + LUMI-25 ingestible auto-injector + STAR Vaxess implantable extended-release formulation for HIV PrEP cabotegravir/insulin/contraceptive — long-acting implant pipeline"}
+          - {pt: "Implantable é restrita a oral sem componente refillable sendo SOMA inviável em qualquer aplicação clínica moderna em 2024", en: "Implantable is restricted to oral without refillable component with SOMA infeasible in any modern clinical application in 2024"}
+          - {pt: "Anderson/Langer/Traverso é teórica sem evidência sendo LUMI-25 inviável em qualquer plataforma moderna em 2024", en: "Anderson/Langer/Traverso is theoretical without evidence with LUMI-25 infeasible in any modern platform in 2024"}
+          - {pt: "STAR Vaxess é incompatível com implantable sendo HIV PrEP cabotegravir inviável em qualquer estudo clínico moderno em 2024", en: "STAR Vaxess is incompatible with implantable with HIV PrEP cabotegravir infeasible in any modern clinical study in 2024"}
+        correctAnswer: {pt: "Implantable refillable drug-delivery device (Daniel Anderson + Robert Langer + Giovanni Traverso MIT) inclui SOMA self-orienting millimeter applicator + LUMI-25 ingestible auto-injector + STAR Vaxess implantable extended-release formulação para HIV PrEP cabotegravir/insulin/contraceptive — long-acting implant pipeline", en: "Implantable refillable drug-delivery devices (Daniel Anderson + Robert Langer + Giovanni Traverso MIT) include SOMA self-orienting millimeter applicator + LUMI-25 ingestible auto-injector + STAR Vaxess implantable extended-release formulation for HIV PrEP cabotegravir/insulin/contraceptive — long-acting implant pipeline"}
+        rationale: {pt: "Quando implant carrega meses, então adesão sobe.", en: "When implant carries months, adherence rises."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Targeted PSMA Pluvicto Lutathera:", en: "Targeted PSMA Pluvicto Lutathera:"}
+        choices:
+          - {pt: "Pluvicto 177Lu-PSMA-617 (Novartis 2022 FDA mCRPC) + Lutathera 177Lu-DOTATATE (Novartis 2018 FDA neuroendocrine) são radioligand therapies entregando β-particle nucleotide-emitting radioisotope pelo small-molecule binding PSMA/SSTR2 — VISION/NETTER-1 trial pioneers theranostic precision oncology", en: "Pluvicto 177Lu-PSMA-617 (Novartis 2022 FDA mCRPC) + Lutathera 177Lu-DOTATATE (Novartis 2018 FDA neuroendocrine) are radioligand therapies delivering β-particle radioisotope via small-molecule PSMA/SSTR2 binding — VISION/NETTER-1 theranostic precision-oncology pioneers"}
+          - {pt: "Pluvicto é restrita a chemotherapy sem componente radioligand sendo 177Lu-PSMA inviável em qualquer aplicação clínica moderna em 2024", en: "Pluvicto is restricted to chemotherapy without radioligand component with 177Lu-PSMA infeasible in any modern clinical application in 2024"}
+          - {pt: "Novartis é teórica sem evidência sendo Lutathera inviável em qualquer plataforma moderna em 2024", en: "Novartis is theoretical without evidence with Lutathera infeasible in any modern platform in 2024"}
+          - {pt: "VISION/NETTER-1 é incompatível com radioligand sendo theranostic precision oncology inviável em qualquer estudo moderno em 2024", en: "VISION/NETTER-1 is incompatible with radioligand with theranostic precision oncology infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Pluvicto 177Lu-PSMA-617 (Novartis 2022 FDA mCRPC) + Lutathera 177Lu-DOTATATE (Novartis 2018 FDA neuroendocrine) são radioligand therapies entregando β-particle nucleotide-emitting radioisotope pelo small-molecule binding PSMA/SSTR2 — VISION/NETTER-1 trial pioneers theranostic precision oncology", en: "Pluvicto 177Lu-PSMA-617 (Novartis 2022 FDA mCRPC) + Lutathera 177Lu-DOTATATE (Novartis 2018 FDA neuroendocrine) are radioligand therapies delivering β-particle radioisotope via small-molecule PSMA/SSTR2 binding — VISION/NETTER-1 theranostic precision-oncology pioneers"}
+        rationale: {pt: "Quando ligand carrega isótopo, então tumor recebe radiação direta.", en: "When ligand carries isotope, tumor takes direct radiation."}
+        objectives: [biology.smart_drug_delivery]
+        difficulty: 5
+target: 20
