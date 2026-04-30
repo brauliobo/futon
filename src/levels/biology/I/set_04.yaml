@@ -1,0 +1,244 @@
+title:
+  pt: "🦠 Biologia da COVID longa"
+  en: "🦠 Long COVID biology"
+level: 'I'
+subject: biology
+objectives: [biology.long_covid]
+difficulty: 5
+authorNotes: "PASC: persistência viral, microclots, autoimunidade, disautonomia, ME/CFS overlap, mast cells, mitocondrial dysfunction."
+example:
+  pt: "Ex.: SARS-CoV-2 inicial → reservatórios persistentes → autoimunidade + endotelite → fadiga e disfunção orgânica."
+  en: "Ex.: initial SARS-CoV-2 → persistent reservoirs → autoimmunity + endothelitis → fatigue and organ dysfunction."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Mecanismos da persistência", en: "Persistence mechanisms"}
+    description: {pt: "Por que sintomas duram meses.", en: "Why symptoms last months."}
+    exercises:
+      - type: choice
+        question: {pt: "Reservatório viral:", en: "Viral reservoir:"}
+        choices:
+          - {pt: "Nucleocapsídeo SARS-CoV-2 e RNA persistem em mucosa intestinal e gânglios em meses pós-infecção", en: "SARS-CoV-2 nucleocapsid and RNA persist in gut mucosa and ganglia for months post-infection"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Nucleocapsídeo SARS-CoV-2 e RNA persistem em mucosa intestinal e gânglios em meses pós-infecção", en: "SARS-CoV-2 nucleocapsid and RNA persist in gut mucosa and ganglia for months post-infection"}
+        rationale: {pt: "Quando vírus persiste, então estímulo crônico pode explicar sintomas.", en: "When virus persists, chronic stimulus may explain symptoms."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microclots:", en: "Microclots:"}
+        choices:
+          - {pt: "Fibrinólise resistente forma microcoágulos plasmáticos com proteínas inflamatórias presas em pacientes long COVID", en: "Fibrinolysis-resistant plasma microclots trap inflammatory proteins in long COVID patients"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fibrinólise resistente forma microcoágulos plasmáticos com proteínas inflamatórias presas em pacientes long COVID", en: "Fibrinolysis-resistant plasma microclots trap inflammatory proteins in long COVID patients"}
+        rationale: {pt: "Quando microclots persistem, então perfusão tecidual cai.", en: "When microclots persist, tissue perfusion falls."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Endothelite:", en: "Endothelitis:"}
+        choices:
+          - {pt: "Disfunção endotelial sistêmica via ACE2 e receptores soluveis altera tônus, permeabilidade e ativação imune", en: "Systemic endothelial dysfunction via ACE2 and soluble receptors alters tone, permeability and immune activation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Disfunção endotelial sistêmica via ACE2 e receptores soluveis altera tônus, permeabilidade e ativação imune", en: "Systemic endothelial dysfunction via ACE2 and soluble receptors alters tone, permeability and immune activation"}
+        rationale: {pt: "Quando endotélio sofre, então órgãos perdem regulação.", en: "When endothelium suffers, organs lose regulation."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Autoanticorpos:", en: "Autoantibodies:"}
+        choices:
+          - {pt: "GPCR autoanticorpos contra β-adrenérgicos, M-cholinérgicos e ACE2 aparecem aumentados em séries de long COVID", en: "GPCR autoantibodies against β-adrenergic, M-cholinergic and ACE2 receptors appear elevated in long COVID series"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "GPCR autoanticorpos contra β-adrenérgicos, M-cholinérgicos e ACE2 aparecem aumentados em séries de long COVID", en: "GPCR autoantibodies against β-adrenergic, M-cholinergic and ACE2 receptors appear elevated in long COVID series"}
+        rationale: {pt: "Quando autoanticorpos sobem, então sintomas autonômicos viram explicáveis.", en: "When autoantibodies rise, autonomic symptoms become explainable."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Reativação de EBV:", en: "EBV reactivation:"}
+        choices:
+          - {pt: "DNA EBV em sangue eleva-se em pacientes pós-COVID com fadiga sugerindo reativação como cofator de PASC", en: "Blood EBV DNA rises in post-COVID fatigue patients suggesting reactivation as PASC cofactor"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DNA EBV em sangue eleva-se em pacientes pós-COVID com fadiga sugerindo reativação como cofator de PASC", en: "Blood EBV DNA rises in post-COVID fatigue patients suggesting reactivation as PASC cofactor"}
+        rationale: {pt: "Quando EBV reativa, então sobrecarga viral cresce.", en: "When EBV reactivates, viral burden grows."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Disautonomia:", en: "Dysautonomia:"}
+        choices:
+          - {pt: "POTS pós-COVID com taquicardia ortostática e intolerância ao exercício é altamente prevalente em séries clínicas", en: "Post-COVID POTS with orthostatic tachycardia and exercise intolerance is highly prevalent in clinical series"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "POTS pós-COVID com taquicardia ortostática e intolerância ao exercício é altamente prevalente em séries clínicas", en: "Post-COVID POTS with orthostatic tachycardia and exercise intolerance is highly prevalent in clinical series"}
+        rationale: {pt: "Quando POTS chega, então atividades diárias ficam limitadas.", en: "When POTS arrives, daily activities become limited."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ME/CFS overlap:", en: "ME/CFS overlap:"}
+        choices:
+          - {pt: "PEM, fadiga não-restauradora e sono ruim alinham long COVID com ME/CFS sugerindo mecanismos compartilhados", en: "PEM, unrefreshing fatigue and poor sleep align long COVID with ME/CFS suggesting shared mechanisms"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "PEM, fadiga não-restauradora e sono ruim alinham long COVID com ME/CFS sugerindo mecanismos compartilhados", en: "PEM, unrefreshing fatigue and poor sleep align long COVID with ME/CFS suggesting shared mechanisms"}
+        rationale: {pt: "Quando overlap acontece, então pesquisa pode unificar duas síndromes.", en: "When overlap occurs, research may unify two syndromes."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mast cell activation:", en: "Mast cell activation:"}
+        choices:
+          - {pt: "MCAS com flushing, urticária, GI cresce em long COVID respondendo a anti-H1/H2 e cromoglicato em casuísticas", en: "MCAS with flushing, urticaria and GI symptoms rises in long COVID responding to anti-H1/H2 and cromolyn in case series"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "MCAS com flushing, urticária, GI cresce em long COVID respondendo a anti-H1/H2 e cromoglicato em casuísticas", en: "MCAS with flushing, urticaria and GI symptoms rises in long COVID responding to anti-H1/H2 and cromolyn in case series"}
+        rationale: {pt: "Quando mastócitos ativam, então sintomas cruzam sistemas.", en: "When mast cells activate, symptoms cross systems."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mitocondrial dysfunction:", en: "Mitochondrial dysfunction:"}
+        choices:
+          - {pt: "Capacidade oxidativa reduzida e ROS aumentada em PBMCs alinham com fadiga e PEM observados clinicamente", en: "Reduced oxidative capacity and elevated ROS in PBMCs align with clinically observed fatigue and PEM"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Capacidade oxidativa reduzida e ROS aumentada em PBMCs alinham com fadiga e PEM observados clinicamente", en: "Reduced oxidative capacity and elevated ROS in PBMCs align with clinically observed fatigue and PEM"}
+        rationale: {pt: "Quando mito falham, então energia tecidual desce.", en: "When mito fail, tissue energy drops."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cognitive symptoms (brain fog):", en: "Cognitive symptoms (brain fog):"}
+        choices:
+          - {pt: "PET mostra hipometabolismo cortical e neuroinflamação em frontal e temporal correlacionando com queixas cognitivas", en: "PET shows cortical hypometabolism and frontal/temporal neuroinflammation correlating with cognitive complaints"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "PET mostra hipometabolismo cortical e neuroinflamação em frontal e temporal correlacionando com queixas cognitivas", en: "PET shows cortical hypometabolism and frontal/temporal neuroinflammation correlating with cognitive complaints"}
+        rationale: {pt: "Quando cérebro inflama, então cognição declina.", en: "When brain inflames, cognition declines."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Diagnóstico, ensaios e cuidado", en: "Diagnosis, trials and care"}
+    description: {pt: "Como tratar uma síndrome ainda emergente.", en: "How to treat a still-emerging syndrome."}
+    exercises:
+      - type: choice
+        question: {pt: "Definição WHO PASC:", en: "WHO PASC definition:"}
+        choices:
+          - {pt: "Sintomas surgidos 3 meses após COVID que persistem ≥2 meses sem outra explicação configuram diagnóstico operacional", en: "Symptoms arising 3 months post-COVID persisting ≥2 months without other explanation set operational diagnosis"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sintomas surgidos 3 meses após COVID que persistem ≥2 meses sem outra explicação configuram diagnóstico operacional", en: "Symptoms arising 3 months post-COVID persisting ≥2 months without other explanation set operational diagnosis"}
+        rationale: {pt: "Quando definição padroniza, então pesquisa converge.", en: "When definition standardizes, research converges."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacinação reduz risco:", en: "Vaccination reduces risk:"}
+        choices:
+          - {pt: "Esquemas atualizados reduzem incidência de PASC em ~30-50% e severidade quando infecção ocorre", en: "Updated schedules cut PASC incidence ~30-50% and severity when infection happens"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Esquemas atualizados reduzem incidência de PASC em ~30-50% e severidade quando infecção ocorre", en: "Updated schedules cut PASC incidence ~30-50% and severity when infection happens"}
+        rationale: {pt: "Quando vacinação atua, então PASC vira menos provável.", en: "When vaccination acts, PASC becomes less likely."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Antiviral precoce (Paxlovid):", en: "Early antiviral (Paxlovid):"}
+        choices:
+          - {pt: "Pacientes que receberam Paxlovid agudo mostraram menor taxa de PASC em coortes observacionais sem RCT confirmatório", en: "Patients on acute Paxlovid showed lower PASC rates in observational cohorts without confirmatory RCT"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Pacientes que receberam Paxlovid agudo mostraram menor taxa de PASC em coortes observacionais sem RCT confirmatório", en: "Patients on acute Paxlovid showed lower PASC rates in observational cohorts without confirmatory RCT"}
+        rationale: {pt: "Quando agudo é tratado, então crônico parece reduzido.", en: "When acute is treated, chronic seems reduced."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RECOVER trial:", en: "RECOVER trial:"}
+        choices:
+          - {pt: "NIH RECOVER testa Paxlovid prolongado, IVIg, baricitinib e LDN para PASC em ensaios randomizados grandes", en: "NIH RECOVER tests extended Paxlovid, IVIg, baricitinib and LDN for PASC in large randomized trials"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "NIH RECOVER testa Paxlovid prolongado, IVIg, baricitinib e LDN para PASC em ensaios randomizados grandes", en: "NIH RECOVER tests extended Paxlovid, IVIg, baricitinib and LDN for PASC in large randomized trials"}
+        rationale: {pt: "Quando ensaios rodam, então tratamentos baseados em evidência emergem.", en: "When trials run, evidence-based treatments emerge."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pacing e rehab:", en: "Pacing and rehab:"}
+        choices:
+          - {pt: "Pacing baseado em PEM e reabilitação cuidadosa evitam crashes — exercício graduado é controverso em ME/CFS", en: "PEM-based pacing and careful rehab avoid crashes — graded exercise is controversial in ME/CFS"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Pacing baseado em PEM e reabilitação cuidadosa evitam crashes — exercício graduado é controverso em ME/CFS", en: "PEM-based pacing and careful rehab avoid crashes — graded exercise is controversial in ME/CFS"}
+        rationale: {pt: "Quando pacing aplica, então piora pós-esforço diminui.", en: "When pacing applies, post-exertional crash drops."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microclot terapias:", en: "Microclot therapies:"}
+        choices:
+          - {pt: "Triplo antitrombótico (HAART concept) é testado para microcoágulos — segurança em ensaios randomizados ainda em validação", en: "Triple antithrombotic (HAART concept) is tested for microclots — safety in randomized trials still under validation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Triplo antitrombótico (HAART concept) é testado para microcoágulos — segurança em ensaios randomizados ainda em validação", en: "Triple antithrombotic (HAART concept) is tested for microclots — safety in randomized trials still under validation"}
+        rationale: {pt: "Quando antitrombóticos testam, então hipótese vascular é avaliada.", en: "When antithrombotics test, vascular hypothesis is evaluated."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BC007 (autoanticorpo neutralizer):", en: "BC007 (autoantibody neutralizer):"}
+        choices:
+          - {pt: "Aptâmero neutralizante de GPCR autoanticorpos em ensaios fase 2 visando subgrupo autoimune do PASC", en: "GPCR autoantibody-neutralizing aptamer in phase 2 trials targeting autoimmune PASC subgroup"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Aptâmero neutralizante de GPCR autoanticorpos em ensaios fase 2 visando subgrupo autoimune do PASC", en: "GPCR autoantibody-neutralizing aptamer in phase 2 trials targeting autoimmune PASC subgroup"}
+        rationale: {pt: "Quando autoanticorpos viram alvo, então subgrupo recebe terapia direcionada.", en: "When autoantibodies become target, subgroup gets directed therapy."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Wearables monitoring:", en: "Wearables monitoring:"}
+        choices:
+          - {pt: "FC, HRV e sono via wearables capturam disautonomia objetivamente facilitando ensaios e cuidado individualizado", en: "Wearable HR, HRV and sleep capture dysautonomia objectively aiding trials and individualized care"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "FC, HRV e sono via wearables capturam disautonomia objetivamente facilitando ensaios e cuidado individualizado", en: "Wearable HR, HRV and sleep capture dysautonomia objectively aiding trials and individualized care"}
+        rationale: {pt: "Quando wearables medem, então sintoma vira métrica.", en: "When wearables measure, symptom becomes metric."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Crianças e PASC:", en: "Children and PASC:"}
+        choices:
+          - {pt: "Cardiopatia, MIS-C e fadiga ocorrem em jovens — incidência menor que adultos mas impacto educacional significativo", en: "Cardiopathy, MIS-C and fatigue occur in youth — lower incidence than adults but significant educational impact"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cardiopatia, MIS-C e fadiga ocorrem em jovens — incidência menor que adultos mas impacto educacional significativo", en: "Cardiopathy, MIS-C and fatigue occur in youth — lower incidence than adults but significant educational impact"}
+        rationale: {pt: "Quando crianças adoecem, então sistemas escolares precisam adaptar.", en: "When children get sick, school systems must adapt."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese da long COVID:", en: "Long COVID synthesis:"}
+        choices:
+          - {pt: "Persistência viral, autoimunidade, microcoagulação e disfunção mitocondrial convergem em síndrome multissistêmica que reescreve infecciologia pós-aguda", en: "Viral persistence, autoimmunity, microcoagulation and mitochondrial dysfunction converge in multisystem syndrome reshaping post-acute infectiology"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Persistência viral, autoimunidade, microcoagulação e disfunção mitocondrial convergem em síndrome multissistêmica que reescreve infecciologia pós-aguda", en: "Viral persistence, autoimmunity, microcoagulation and mitochondrial dysfunction converge in multisystem syndrome reshaping post-acute infectiology"}
+        rationale: {pt: "Quando mecanismos integram, então síndrome ganha tratamento racional.", en: "When mechanisms integrate, syndrome gains rational treatment."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+target: 20

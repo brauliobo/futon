@@ -1,0 +1,244 @@
+title:
+  pt: "🧫 Eixo microbioma-imunidade"
+  en: "🧫 Microbiome-immunity axis"
+level: 'I'
+subject: biology
+objectives: [biology.microbiome_immune]
+difficulty: 5
+authorNotes: "Bacterioides fragilis PSA, Akkermansia, Faecalibacterium, treg induction, allergic disease, IgA tuning, AMR e microbioma materno."
+example:
+  pt: "Ex.: nascimento → colonização → educação imune via PSA, SCFA → tolerância vs alergia → trajetória vital."
+  en: "Ex.: birth → colonization → immune education via PSA, SCFA → tolerance vs allergy → life trajectory."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Microbiota molda o sistema imune", en: "Microbiota shapes the immune system"}
+    description: {pt: "Como bactérias educam imunidade.", en: "How bacteria educate immunity."}
+    exercises:
+      - type: choice
+        question: {pt: "PSA de B. fragilis:", en: "B. fragilis PSA:"}
+        choices:
+          - {pt: "Polissacarídeo A induz Tregs FOXP3+ via TLR2 protegendo contra colite e modulando SNC", en: "Polysaccharide A induces FOXP3+ Tregs via TLR2 protecting against colitis and modulating CNS"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Polissacarídeo A induz Tregs FOXP3+ via TLR2 protegendo contra colite e modulando SNC", en: "Polysaccharide A induces FOXP3+ Tregs via TLR2 protecting against colitis and modulating CNS"}
+        rationale: {pt: "Quando PSA atua, então tolerância imune nasce no intestino.", en: "When PSA acts, immune tolerance is born in the gut."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SCFAs e Tregs colônicos:", en: "SCFAs and colonic Tregs:"}
+        choices:
+          - {pt: "Butirato inibe HDACs e ativa GPR43 induzindo Tregs colônicos que limitam inflamação intestinal e sistêmica", en: "Butyrate inhibits HDACs and activates GPR43 inducing colonic Tregs that limit intestinal and systemic inflammation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Butirato inibe HDACs e ativa GPR43 induzindo Tregs colônicos que limitam inflamação intestinal e sistêmica", en: "Butyrate inhibits HDACs and activates GPR43 inducing colonic Tregs that limit intestinal and systemic inflammation"}
+        rationale: {pt: "Quando butirato sobe, então tolerância intestinal estabelece-se.", en: "When butyrate rises, intestinal tolerance establishes."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Th17 indução por SFB:", en: "Th17 induction by SFB:"}
+        choices:
+          - {pt: "Bactérias filamentosas segmentadas induzem Th17 ileais via aderência epitelial promovendo defesa contra patógenos", en: "Segmented filamentous bacteria induce ileal Th17 via epithelial adherence promoting pathogen defense"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Bactérias filamentosas segmentadas induzem Th17 ileais via aderência epitelial promovendo defesa contra patógenos", en: "Segmented filamentous bacteria induce ileal Th17 via epithelial adherence promoting pathogen defense"}
+        rationale: {pt: "Quando SFB aderem, então Th17 protegem mucosa.", en: "When SFB adhere, Th17 protect the mucosa."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "IgA tuning:", en: "IgA tuning:"}
+        choices:
+          - {pt: "PIgR transporta sIgA dimérica que recobre microbiota mantendo equilíbrio sem induzir inflamação", en: "PIgR transports dimeric sIgA that coats microbiota maintaining balance without inducing inflammation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "PIgR transporta sIgA dimérica que recobre microbiota mantendo equilíbrio sem induzir inflamação", en: "PIgR transports dimeric sIgA that coats microbiota maintaining balance without inducing inflammation"}
+        rationale: {pt: "Quando sIgA cobre, então mucosa tolera sem inflamar.", en: "When sIgA coats, mucosa tolerates without inflaming."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hygiene hypothesis:", en: "Hygiene hypothesis:"}
+        choices:
+          - {pt: "Reduzida exposição microbiana precoce desvia imunidade para Th2 favorecendo asma e alergia em populações urbanizadas", en: "Reduced early microbial exposure deviates immunity toward Th2 favoring asthma and allergy in urbanized populations"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Reduzida exposição microbiana precoce desvia imunidade para Th2 favorecendo asma e alergia em populações urbanizadas", en: "Reduced early microbial exposure deviates immunity toward Th2 favoring asthma and allergy in urbanized populations"}
+        rationale: {pt: "Quando exposição cai, então alergia sobe.", en: "When exposure drops, allergy rises."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mãe-filho herança:", en: "Mother-infant inheritance:"}
+        choices:
+          - {pt: "Parto vaginal e amamentação transferem microbiota e HMOs moldando imunidade neonatal por anos seguintes", en: "Vaginal birth and breastfeeding transfer microbiota and HMOs shaping neonatal immunity for years"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Parto vaginal e amamentação transferem microbiota e HMOs moldando imunidade neonatal por anos seguintes", en: "Vaginal birth and breastfeeding transfer microbiota and HMOs shaping neonatal immunity for years"}
+        rationale: {pt: "Quando mãe transmite, então imunidade nasce educada.", en: "When mother transmits, immunity is born educated."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Antibiótico precoce:", en: "Early antibiotic exposure:"}
+        choices:
+          - {pt: "Cursos antes de 2 anos altam diversidade microbiana e elevam risco de asma, alergia e obesidade infantil", en: "Courses before age 2 reduce microbial diversity and raise asthma, allergy and childhood obesity risk"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cursos antes de 2 anos altam diversidade microbiana e elevam risco de asma, alergia e obesidade infantil", en: "Courses before age 2 reduce microbial diversity and raise asthma, allergy and childhood obesity risk"}
+        rationale: {pt: "Quando antibiótico cedo, então trajetória imune é alterada.", en: "When antibiotic comes early, immune trajectory shifts."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Akkermansia e mucosa:", en: "Akkermansia and mucus:"}
+        choices:
+          - {pt: "Akkermansia muciniphila refina camada de muco e reforça barreira intestinal — proteção contra inflamação metabólica", en: "Akkermansia muciniphila refines mucus layer and strengthens intestinal barrier — protects from metabolic inflammation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Akkermansia muciniphila refina camada de muco e reforça barreira intestinal — proteção contra inflamação metabólica", en: "Akkermansia muciniphila refines mucus layer and strengthens intestinal barrier — protects from metabolic inflammation"}
+        rationale: {pt: "Quando Akkermansia floresce, então barreira protege.", en: "When Akkermansia thrives, barrier protects."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Faecalibacterium e IBD:", en: "Faecalibacterium and IBD:"}
+        choices:
+          - {pt: "F. prausnitzii produz butirato, MAM antiinflamatório e está reduzido em pacientes com Crohn e colite ulcerativa", en: "F. prausnitzii produces butyrate, anti-inflammatory MAM and is reduced in Crohn and ulcerative colitis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "F. prausnitzii produz butirato, MAM antiinflamatório e está reduzido em pacientes com Crohn e colite ulcerativa", en: "F. prausnitzii produces butyrate, anti-inflammatory MAM and is reduced in Crohn and ulcerative colitis"}
+        rationale: {pt: "Quando Faecalibacterium volta, então inflamação cede.", en: "When Faecalibacterium returns, inflammation eases."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bile acids e nuclear receptors:", en: "Bile acids and nuclear receptors:"}
+        choices:
+          - {pt: "Ácidos biliares secundários ativam FXR e TGR5 modulando metabolismo, inflamação intestinal e barreira em todo corpo", en: "Secondary bile acids activate FXR and TGR5 modulating metabolism, gut inflammation and barrier body-wide"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Ácidos biliares secundários ativam FXR e TGR5 modulando metabolismo, inflamação intestinal e barreira em todo corpo", en: "Secondary bile acids activate FXR and TGR5 modulating metabolism, gut inflammation and barrier body-wide"}
+        rationale: {pt: "Quando bile acids sinalizam, então tecidos distantes recebem mensagens.", en: "When bile acids signal, distant tissues get messages."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Doença e terapia", en: "Disease and therapy"}
+    description: {pt: "Quando microbiota cura ou adoece.", en: "When microbiota heals or harms."}
+    exercises:
+      - type: choice
+        question: {pt: "Allergy march:", en: "Allergy march:"}
+        choices:
+          - {pt: "Disbiose precoce precede dermatite atópica → asma → rinite — janela crítica abre intervenções preventivas", en: "Early dysbiosis precedes atopic dermatitis → asthma → rhinitis — critical window opens preventive interventions"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Disbiose precoce precede dermatite atópica → asma → rinite — janela crítica abre intervenções preventivas", en: "Early dysbiosis precedes atopic dermatitis → asthma → rhinitis — critical window opens preventive interventions"}
+        rationale: {pt: "Quando trajetória é prevista, então prevenção pode interromper.", en: "When trajectory is predicted, prevention can intercept."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbioma e checkpoint:", en: "Microbiome and checkpoint:"}
+        choices:
+          - {pt: "Akkermansia, Faecalibacterium em fezes pré-tratamento prevê resposta a anti-PD-1 — FMT reverte resistência em alguns casos", en: "Pre-treatment Akkermansia, Faecalibacterium in feces predict anti-PD-1 response — FMT reverses resistance in some cases"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Akkermansia, Faecalibacterium em fezes pré-tratamento prevê resposta a anti-PD-1 — FMT reverte resistência em alguns casos", en: "Pre-treatment Akkermansia, Faecalibacterium in feces predict anti-PD-1 response — FMT reverses resistance in some cases"}
+        rationale: {pt: "Quando microbioma certo, então imunoterapia performa.", en: "When microbiome is right, immunotherapy performs."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GVHD pós-BMT:", en: "Post-BMT GVHD:"}
+        choices:
+          - {pt: "Diversidade microbiana baixa pré-transplante prediz GVHD severa e mortalidade — intervenções microbianas estão em estudo", en: "Low pre-transplant microbial diversity predicts severe GVHD and mortality — microbial interventions are under study"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Diversidade microbiana baixa pré-transplante prediz GVHD severa e mortalidade — intervenções microbianas estão em estudo", en: "Low pre-transplant microbial diversity predicts severe GVHD and mortality — microbial interventions are under study"}
+        rationale: {pt: "Quando diversidade cai, então rejeição cresce.", en: "When diversity drops, rejection rises."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbioma e vacinas:", en: "Microbiome and vaccines:"}
+        choices:
+          - {pt: "Composição microbiana modula resposta de vacinas orais e parenterais — antibiótico recente prejudica imunogenicidade", en: "Microbial composition modulates response to oral and parenteral vaccines — recent antibiotic harms immunogenicity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Composição microbiana modula resposta de vacinas orais e parenterais — antibiótico recente prejudica imunogenicidade", en: "Microbial composition modulates response to oral and parenteral vaccines — recent antibiotic harms immunogenicity"}
+        rationale: {pt: "Quando microbioma intacto, então vacina performa melhor.", en: "When microbiome is intact, vaccine performs better."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Probióticos farmacológicos:", en: "Pharmacological probiotics:"}
+        choices:
+          - {pt: "Cepas tipo VE303, VRL-101 entram em RCTs como biofármacos vivos com indicações específicas e farmacovigilância padronizada", en: "Strains like VE303, VRL-101 enter RCTs as live biopharmaceuticals with specific indications and standardized pharmacovigilance"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cepas tipo VE303, VRL-101 entram em RCTs como biofármacos vivos com indicações específicas e farmacovigilância padronizada", en: "Strains like VE303, VRL-101 enter RCTs as live biopharmaceuticals with specific indications and standardized pharmacovigilance"}
+        rationale: {pt: "Quando probiótico vira fármaco, então qualidade torna-se rigorosa.", en: "When probiotic becomes drug, quality grows rigorous."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AMR via microbioma:", en: "AMR via microbiome:"}
+        choices:
+          - {pt: "Pluralismo de genes de resistência (ARGs) circula entre micróbios via plasmídeos — vigilância metagenômica essencial", en: "Antibiotic-resistance gene (ARG) pool circulates among microbes via plasmids — metagenomic surveillance is essential"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Pluralismo de genes de resistência (ARGs) circula entre micróbios via plasmídeos — vigilância metagenômica essencial", en: "Antibiotic-resistance gene (ARG) pool circulates among microbes via plasmids — metagenomic surveillance is essential"}
+        rationale: {pt: "Quando ARGs movem, então saúde global responde com vigilância.", en: "When ARGs move, global health answers with surveillance."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Doença alérgica alimentar:", en: "Food allergy:"}
+        choices:
+          - {pt: "Exposição precoce + microbiota indutora de Tregs (Bacteroides, Clostridium) protege de sensibilização a amendoim e leite", en: "Early exposure + Treg-inducing microbiota (Bacteroides, Clostridium) protects from peanut and milk sensitization"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Exposição precoce + microbiota indutora de Tregs (Bacteroides, Clostridium) protege de sensibilização a amendoim e leite", en: "Early exposure + Treg-inducing microbiota (Bacteroides, Clostridium) protects from peanut and milk sensitization"}
+        rationale: {pt: "Quando exposição é precoce, então tolerância forma-se.", en: "When exposure is early, tolerance forms."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Multiple sclerosis e microbiota:", en: "Multiple sclerosis and microbiota:"}
+        choices:
+          - {pt: "Disbiose com aumento de Akkermansia e perda de Prevotella associa-se a MS — FMT modula curso em modelos murinos", en: "Dysbiosis with increased Akkermansia and lost Prevotella associates with MS — FMT modulates course in mouse models"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Disbiose com aumento de Akkermansia e perda de Prevotella associa-se a MS — FMT modula curso em modelos murinos", en: "Dysbiosis with increased Akkermansia and lost Prevotella associates with MS — FMT modulates course in mouse models"}
+        rationale: {pt: "Quando microbioma muda, então sintomas de MS modulam.", en: "When microbiome shifts, MS symptoms modulate."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Engineered probiotic em IBD:", en: "Engineered probiotic in IBD:"}
+        choices:
+          - {pt: "E. coli Nissle modificada para secretar IL-22 e elafina alivia colite em modelos abrindo medicamentos vivos para IBD", en: "Engineered E. coli Nissle secreting IL-22 and elafin alleviates colitis in models opening living drugs for IBD"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "E. coli Nissle modificada para secretar IL-22 e elafina alivia colite em modelos abrindo medicamentos vivos para IBD", en: "Engineered E. coli Nissle secreting IL-22 and elafin alleviates colitis in models opening living drugs for IBD"}
+        rationale: {pt: "Quando bactéria entrega, então fármaco fica no alvo.", en: "When bacterium delivers, drug stays on target."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese do eixo microbioma-imunidade:", en: "Microbiome-immunity synthesis:"}
+        choices:
+          - {pt: "Microbiota educa, modula e protege imunidade ao longo da vida — sua manipulação racional é fronteira da medicina preventiva e terapêutica", en: "Microbiota educates, modulates and protects immunity lifelong — its rational manipulation is frontier of preventive and therapeutic medicine"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Microbiota educa, modula e protege imunidade ao longo da vida — sua manipulação racional é fronteira da medicina preventiva e terapêutica", en: "Microbiota educates, modulates and protects immunity lifelong — its rational manipulation is frontier of preventive and therapeutic medicine"}
+        rationale: {pt: "Quando ecologia ensina, então imunidade fica educada.", en: "When ecology teaches, immunity stays educated."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+target: 20
