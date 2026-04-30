@@ -1,0 +1,244 @@
+title:
+  pt: "🔬 Perturb-seq e atlas funcionais"
+  en: "🔬 Perturb-seq and functional atlases"
+level: 'J'
+subject: biology
+objectives: [biology.functional_genomics]
+difficulty: 5
+authorNotes: "scCRISPR, Perturb-seq, ECCITE-seq, scGWAS, lineage tracing, RNA velocity, scAtlas comparisons."
+example:
+  pt: "Ex.: gRNA pool → CRISPR em milhares de células → scRNA-seq → mapa fenótipo-perturbação genômica."
+  en: "Ex.: gRNA pool → CRISPR in thousands of cells → scRNA-seq → phenotype-perturbation genomic map."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas funcionais", en: "Functional platforms"}
+    description: {pt: "Como medir efeito gene a gene em escala.", en: "How to measure gene-by-gene effect at scale."}
+    exercises:
+      - type: choice
+        question: {pt: "Perturb-seq:", en: "Perturb-seq:"}
+        choices:
+          - {pt: "Pooled CRISPR + scRNA-seq atribui guia a transcriptoma de cada célula gerando mapa de efeitos KO em paralelo", en: "Pooled CRISPR + scRNA-seq assigns guide to each cell transcriptome generating parallel KO effect map"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Pooled CRISPR + scRNA-seq atribui guia a transcriptoma de cada célula gerando mapa de efeitos KO em paralelo", en: "Pooled CRISPR + scRNA-seq assigns guide to each cell transcriptome generating parallel KO effect map"}
+        rationale: {pt: "Quando guias se atribuem, então fenótipo molecular fica visível por gene.", en: "When guides assign, molecular phenotype becomes visible per gene."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ECCITE-seq:", en: "ECCITE-seq:"}
+        choices:
+          - {pt: "Combina Perturb-seq + CITE-seq adicionando proteínas de superfície via anticorpos com barcode em mesma célula", en: "Combines Perturb-seq + CITE-seq adding surface proteins via barcoded antibodies in same cell"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Combina Perturb-seq + CITE-seq adicionando proteínas de superfície via anticorpos com barcode em mesma célula", en: "Combines Perturb-seq + CITE-seq adding surface proteins via barcoded antibodies in same cell"}
+        rationale: {pt: "Quando proteína mede junto, então fenótipo é multimodal.", en: "When protein measures together, phenotype is multimodal."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RNA velocity:", en: "RNA velocity:"}
+        choices:
+          - {pt: "Razão spliced/unspliced infere derivada temporal do estado celular reconstruindo trajetórias de diferenciação", en: "Spliced/unspliced ratio infers cell-state time derivative reconstructing differentiation trajectories"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Razão spliced/unspliced infere derivada temporal do estado celular reconstruindo trajetórias de diferenciação", en: "Spliced/unspliced ratio infers cell-state time derivative reconstructing differentiation trajectories"}
+        rationale: {pt: "Quando velocity calcula, então dinâmica molecular emerge de snapshot.", en: "When velocity computes, molecular dynamics emerge from snapshot."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lineage tracing por barcode:", en: "Barcode lineage tracing:"}
+        choices:
+          - {pt: "Larry, ZombieT e CRISPR-COLD inserem barcodes hereditários permitindo rastrear destinos celulares ao longo de divisões", en: "Larry, ZombieT and CRISPR-COLD insert heritable barcodes enabling cell fate tracking across divisions"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Larry, ZombieT e CRISPR-COLD inserem barcodes hereditários permitindo rastrear destinos celulares ao longo de divisões", en: "Larry, ZombieT and CRISPR-COLD insert heritable barcodes enabling cell fate tracking across divisions"}
+        rationale: {pt: "Quando barcodes herdam, então história celular fica legível.", en: "When barcodes inherit, cell history becomes readable."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genome-wide CRISPR screen:", en: "Genome-wide CRISPR screen:"}
+        choices:
+          - {pt: "Bibliotecas de ~80k gRNAs cobrem todo o genoma e identificam genes essenciais e moduladores em fenótipos competitivos", en: "~80k gRNA libraries cover whole genome identifying essential and modulator genes in competitive phenotypes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Bibliotecas de ~80k gRNAs cobrem todo o genoma e identificam genes essenciais e moduladores em fenótipos competitivos", en: "~80k gRNA libraries cover whole genome identifying essential and modulator genes in competitive phenotypes"}
+        rationale: {pt: "Quando todo gene é testado, então hits viram inevitáveis.", en: "When every gene is tested, hits become inevitable."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DepMap:", en: "DepMap:"}
+        choices:
+          - {pt: "Atlas de dependências em ~1k linhagens tumorais identifica vulnerabilidades genéticas guiando alvos terapêuticos", en: "Atlas of dependencies across ~1k tumor lines identifies genetic vulnerabilities guiding therapeutic targets"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Atlas de dependências em ~1k linhagens tumorais identifica vulnerabilidades genéticas guiando alvos terapêuticos", en: "Atlas of dependencies across ~1k tumor lines identifies genetic vulnerabilities guiding therapeutic targets"}
+        rationale: {pt: "Quando DepMap mapeia, então síntese letalidade é descoberta.", en: "When DepMap maps, synthetic lethality is discovered."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "scGWAS integration:", en: "scGWAS integration:"}
+        choices:
+          - {pt: "Variantes GWAS são mapeadas a tipos celulares via scRNA-seq de tecido alvo guiando interpretação funcional", en: "GWAS variants are mapped to cell types via target-tissue scRNA-seq guiding functional interpretation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Variantes GWAS são mapeadas a tipos celulares via scRNA-seq de tecido alvo guiando interpretação funcional", en: "GWAS variants are mapped to cell types via target-tissue scRNA-seq guiding functional interpretation"}
+        rationale: {pt: "Quando célula é localizada, então variante ganha mecanismo.", en: "When cell is localized, variant gains mechanism."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell type ontology:", en: "Cell type ontology:"}
+        choices:
+          - {pt: "Cell Ontology e CellTypist organizam tipos celulares hierarquicamente integrando atlas de referência globais", en: "Cell Ontology and CellTypist hierarchically organize cell types integrating global reference atlases"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cell Ontology e CellTypist organizam tipos celulares hierarquicamente integrando atlas de referência globais", en: "Cell Ontology and CellTypist hierarchically organize cell types integrating global reference atlases"}
+        rationale: {pt: "Quando ontologia padroniza, então comparações cruzam estudos.", en: "When ontology standardizes, comparisons cross studies."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Foundation models scRNA:", en: "scRNA foundation models:"}
+        choices:
+          - {pt: "scGPT, Geneformer e UCE pré-treinados em milhões de células permitem zero-shot predição e transferência cross-tecido", en: "scGPT, Geneformer and UCE pretrained on millions of cells enable zero-shot prediction and cross-tissue transfer"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "scGPT, Geneformer e UCE pré-treinados em milhões de células permitem zero-shot predição e transferência cross-tecido", en: "scGPT, Geneformer and UCE pretrained on millions of cells enable zero-shot prediction and cross-tissue transfer"}
+        rationale: {pt: "Quando IA pré-treina, então biologia ganha modelos de fundação.", en: "When AI pretrains, biology gains foundation models."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Optical pooled screening:", en: "Optical pooled screening:"}
+        choices:
+          - {pt: "Imagem in situ + sequenciamento de gRNA por hibridização permite screens fenotípicos baseados em morfologia em alta escala", en: "In situ imaging + gRNA in situ sequencing enables high-throughput morphology-based phenotypic screens"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Imagem in situ + sequenciamento de gRNA por hibridização permite screens fenotípicos baseados em morfologia em alta escala", en: "In situ imaging + gRNA in situ sequencing enables high-throughput morphology-based phenotypic screens"}
+        rationale: {pt: "Quando imagem screena, então morfologia vira métrica.", en: "When imaging screens, morphology becomes metric."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações biológicas e clínicas", en: "Biological and clinical applications"}
+    description: {pt: "O que perturb-seq descobre.", en: "What perturb-seq discovers."}
+    exercises:
+      - type: choice
+        question: {pt: "Genetic dependencies em câncer:", en: "Cancer genetic dependencies:"}
+        choices:
+          - {pt: "DepMap revelou WRN essencial em MSI-high tumors abrindo nova oportunidade terapêutica em CRC e endometrial", en: "DepMap revealed WRN as essential in MSI-high tumors opening new therapeutic window in CRC and endometrial"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DepMap revelou WRN essencial em MSI-high tumors abrindo nova oportunidade terapêutica em CRC e endometrial", en: "DepMap revealed WRN as essential in MSI-high tumors opening new therapeutic window in CRC and endometrial"}
+        rationale: {pt: "Quando dependência única, então síntese letalidade vira fármaco.", en: "When dependence is unique, synthetic lethality becomes drug."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell trajectory atlas:", en: "Cell trajectory atlas:"}
+        choices:
+          - {pt: "Atlas de hematopoese, neurogênese e gametogênese revelou gates moleculares de destino com resolução temporal", en: "Hematopoiesis, neurogenesis and gametogenesis atlases revealed molecular fate gates at temporal resolution"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Atlas de hematopoese, neurogênese e gametogênese revelou gates moleculares de destino com resolução temporal", en: "Hematopoiesis, neurogenesis and gametogenesis atlases revealed molecular fate gates at temporal resolution"}
+        rationale: {pt: "Quando atlas constrói, então biologia do desenvolvimento avança.", en: "When atlas builds, developmental biology advances."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Atlas de imunidade:", en: "Immunity atlas:"}
+        choices:
+          - {pt: "Human Cell Atlas mapeou ~1M células imune cobrindo tipos raros como Tfh, ILC, MAIT em múltiplos órgãos", en: "Human Cell Atlas mapped ~1M immune cells covering rare types like Tfh, ILC, MAIT across multiple organs"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Human Cell Atlas mapeou ~1M células imune cobrindo tipos raros como Tfh, ILC, MAIT em múltiplos órgãos", en: "Human Cell Atlas mapped ~1M immune cells covering rare types like Tfh, ILC, MAIT across multiple organs"}
+        rationale: {pt: "Quando atlas global cresce, então imunologia ganha referência.", en: "When global atlas grows, immunology gains reference."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cancer lineage tracing:", en: "Cancer lineage tracing:"}
+        choices:
+          - {pt: "scCarlin e MARC1 reconstroem clonalidade de tumores revelando origem metastática e plasticidade fenotípica", en: "scCarlin and MARC1 reconstruct tumor clonality revealing metastatic origin and phenotypic plasticity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "scCarlin e MARC1 reconstroem clonalidade de tumores revelando origem metastática e plasticidade fenotípica", en: "scCarlin and MARC1 reconstruct tumor clonality revealing metastatic origin and phenotypic plasticity"}
+        rationale: {pt: "Quando lineage rastreia, então oncologia muda mecânica.", en: "When lineage traces, oncology shifts mechanics."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Drug response screen:", en: "Drug response screen:"}
+        choices:
+          - {pt: "PRISM mistura barcode-tagged celllines em poços tratados gerando perfis de resposta a milhares de drogas em alta paralelismo", en: "PRISM pools barcode-tagged celllines in treated wells generating response profiles to thousands of drugs in high parallelism"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "PRISM mistura barcode-tagged celllines em poços tratados gerando perfis de resposta a milhares de drogas em alta paralelismo", en: "PRISM pools barcode-tagged celllines in treated wells generating response profiles to thousands of drugs in high parallelism"}
+        rationale: {pt: "Quando PRISM testa, então drug discovery acelera.", en: "When PRISM tests, drug discovery accelerates."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Scaling perturbations:", en: "Scaling perturbations:"}
+        choices:
+          - {pt: "Replogle 2022 perturbou todos os genes essenciais em K562 com Perturb-seq cobrindo modelo funcional completo de uma célula humana", en: "Replogle 2022 perturbed all essential genes in K562 with Perturb-seq covering complete functional model of a human cell"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Replogle 2022 perturbou todos os genes essenciais em K562 com Perturb-seq cobrindo modelo funcional completo de uma célula humana", en: "Replogle 2022 perturbed all essential genes in K562 with Perturb-seq covering complete functional model of a human cell"}
+        rationale: {pt: "Quando todo gene é mapeado, então célula vira modelo computável.", en: "When every gene is mapped, cell becomes computable model."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Variants of unknown significance:", en: "Variants of unknown significance:"}
+        choices:
+          - {pt: "Saturation mutagenesis + scRNA-seq classifica VUS funcionalmente em alelos patogênicos vs benignos guiando diagnóstico clínico", en: "Saturation mutagenesis + scRNA-seq functionally classifies VUS into pathogenic vs benign alleles guiding clinical diagnosis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Saturation mutagenesis + scRNA-seq classifica VUS funcionalmente em alelos patogênicos vs benignos guiando diagnóstico clínico", en: "Saturation mutagenesis + scRNA-seq functionally classifies VUS into pathogenic vs benign alleles guiding clinical diagnosis"}
+        rationale: {pt: "Quando VUS é resolvida, então diagnóstico genético cresce.", en: "When VUS is resolved, genetic diagnosis grows."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Compounds vs CRISPR:", en: "Compounds vs CRISPR:"}
+        choices:
+          - {pt: "Cell Painting + sc-MIP comparam efeitos de compostos vs perturbações genéticas alinhando alvos farmacológicos novos", en: "Cell Painting + sc-MIP compare compound vs genetic perturbation effects aligning novel pharmacological targets"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cell Painting + sc-MIP comparam efeitos de compostos vs perturbações genéticas alinhando alvos farmacológicos novos", en: "Cell Painting + sc-MIP compare compound vs genetic perturbation effects aligning novel pharmacological targets"}
+        rationale: {pt: "Quando alinhamento revela, então repurposing acelera.", en: "When alignment reveals, repurposing accelerates."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spatial perturbation:", en: "Spatial perturbation:"}
+        choices:
+          - {pt: "Perturb-FISH e Perturb-map mapeiam fenótipos espaciais de KOs em milhares de células preservando contexto tecidual", en: "Perturb-FISH and Perturb-map map spatial KO phenotypes across thousands of cells preserving tissue context"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Perturb-FISH e Perturb-map mapeiam fenótipos espaciais de KOs em milhares de células preservando contexto tecidual", en: "Perturb-FISH and Perturb-map map spatial KO phenotypes across thousands of cells preserving tissue context"}
+        rationale: {pt: "Quando perturbação espacializa, então arquitetura funcional emerge.", en: "When perturbation spatializes, functional architecture emerges."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese de genômica funcional:", en: "Functional genomics synthesis:"}
+        choices:
+          - {pt: "Perturbar genes em escala unicelular gera mapas funcionais de células e tumores transformando descoberta de alvos e biologia básica", en: "Perturbing genes at single-cell scale yields functional maps of cells and tumors transforming target discovery and basic biology"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Perturbar genes em escala unicelular gera mapas funcionais de células e tumores transformando descoberta de alvos e biologia básica", en: "Perturbing genes at single-cell scale yields functional maps of cells and tumors transforming target discovery and basic biology"}
+        rationale: {pt: "Quando perturbação escala, então genoma vira testável.", en: "When perturbation scales, genome becomes testable."}
+        objectives: [biology.functional_genomics]
+        difficulty: 5
+target: 20
