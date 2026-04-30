@@ -1,0 +1,244 @@
+title:
+  pt: "🧬 Biologia sintética e células mínimas"
+  en: "🧬 Synthetic biology and minimal cells"
+level: 'H'
+subject: biology
+objectives: [biology.synbio]
+difficulty: 5
+authorNotes: "Genoma sintético JCVI-syn3.0, circuitos genéticos, BioBricks, código genético expandido."
+example:
+  pt: "Ex.: design → síntese de DNA → transplante de genoma → célula sintética viável replica."
+  en: "Ex.: design → DNA synthesis → genome transplant → viable synthetic cell replicates."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Princípios e plataformas", en: "Principles and platforms"}
+    description: {pt: "Construir vida em laboratório.", en: "Building life in lab."}
+    exercises:
+      - type: choice
+        question: {pt: "JCVI-syn3.0:", en: "JCVI-syn3.0:"}
+        choices:
+          - {pt: "Genoma mínimo de 473 genes em Mycoplasma sintetizado e transplantado constitui forma de vida autoreplicante", en: "473-gene minimal genome in Mycoplasma synthesized and transplanted constitutes self-replicating life form"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Genoma mínimo de 473 genes em Mycoplasma sintetizado e transplantado constitui forma de vida autoreplicante", en: "473-gene minimal genome in Mycoplasma synthesized and transplanted constitutes self-replicating life form"}
+        rationale: {pt: "Quando mínimo replica, então essência da vida fica testável.", en: "When minimal replicates, essence of life becomes testable."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genoma recodificado (Syn61):", en: "Recoded genome (Syn61):"}
+        choices:
+          - {pt: "E. coli com 4 milhões pb redesenhado para usar 61 codões libera codões para aminoácidos não-canônicos", en: "E. coli with 4 Mb redesigned to use 61 codons frees codons for noncanonical amino acids"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "E. coli com 4 milhões pb redesenhado para usar 61 codões libera codões para aminoácidos não-canônicos", en: "E. coli with 4 Mb redesigned to use 61 codons frees codons for noncanonical amino acids"}
+        rationale: {pt: "Quando código encolhe, então xeno-aminoácidos cabem.", en: "When code shrinks, xeno-amino acids fit."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genetic toggle switch:", en: "Genetic toggle switch:"}
+        choices:
+          - {pt: "Dois repressores mutuamente inibitórios criam circuito biestável com memória celular programável", en: "Two mutually-inhibitory repressors create bistable circuit with programmable cell memory"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Dois repressores mutuamente inibitórios criam circuito biestável com memória celular programável", en: "Two mutually-inhibitory repressors create bistable circuit with programmable cell memory"}
+        rationale: {pt: "Quando biestabilidade existe, então células lembram estado.", en: "When bistability exists, cells remember state."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Repressilator:", en: "Repressilator:"}
+        choices:
+          - {pt: "Anel de três repressores tetR-LacI-cI gera oscilação periódica de fluorescência em E. coli", en: "Ring of three repressors tetR-LacI-cI generates periodic fluorescence oscillation in E. coli"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Anel de três repressores tetR-LacI-cI gera oscilação periódica de fluorescência em E. coli", en: "Ring of three repressors tetR-LacI-cI generates periodic fluorescence oscillation in E. coli"}
+        rationale: {pt: "Quando oscilação ocorre, então relógios sintéticos viram rotina.", en: "When oscillation occurs, synthetic clocks become routine."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Yeast 2.0 (Sc2.0):", en: "Yeast 2.0 (Sc2.0):"}
+        choices:
+          - {pt: "Cromossomos de S. cerevisiae redesenhados com loxP permitem SCRaMbLE — embaralhamento programado in vivo", en: "Redesigned S. cerevisiae chromosomes with loxP enable SCRaMbLE — in vivo programmed shuffling"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cromossomos de S. cerevisiae redesenhados com loxP permitem SCRaMbLE — embaralhamento programado in vivo", en: "Redesigned S. cerevisiae chromosomes with loxP enable SCRaMbLE — in vivo programmed shuffling"}
+        rationale: {pt: "Quando embaralha, então variantes ótimas surgem dirigidamente.", en: "When shuffled, optimal variants emerge directedly."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BioBricks/Standard parts:", en: "BioBricks/Standard parts:"}
+        choices:
+          - {pt: "Promotores, RBS, CDS e terminadores padronizados em registry permitem composição modular previsível", en: "Standardized promoters, RBS, CDS and terminators in registry enable predictable modular composition"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Promotores, RBS, CDS e terminadores padronizados em registry permitem composição modular previsível", en: "Standardized promoters, RBS, CDS and terminators in registry enable predictable modular composition"}
+        rationale: {pt: "Quando partes padronizam, então engenharia biológica vira projeto.", en: "When parts are standardized, biological engineering becomes design."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell-free expression (TX-TL):", en: "Cell-free expression (TX-TL):"}
+        choices:
+          - {pt: "Lisado celular com energia + DNA produz proteínas in vitro permitindo prototipagem rápida sem células", en: "Cell lysate with energy + DNA produces proteins in vitro enabling rapid prototyping without cells"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Lisado celular com energia + DNA produz proteínas in vitro permitindo prototipagem rápida sem células", en: "Cell lysate with energy + DNA produces proteins in vitro enabling rapid prototyping without cells"}
+        rationale: {pt: "Quando cell-free funciona, então design-build-test acelera.", en: "When cell-free works, design-build-test accelerates."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Xeno-nucleic acids (XNAs):", en: "Xeno-nucleic acids (XNAs):"}
+        choices:
+          - {pt: "Polímeros HNA, TNA, FANA com ligações modificadas armazenam e replicam informação alternativa ao DNA/RNA", en: "HNA, TNA, FANA polymers with modified linkages store and replicate information as DNA/RNA alternative"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Polímeros HNA, TNA, FANA com ligações modificadas armazenam e replicam informação alternativa ao DNA/RNA", en: "HNA, TNA, FANA polymers with modified linkages store and replicate information as DNA/RNA alternative"}
+        rationale: {pt: "Quando XNA replica, então biologia alternativa vira possível.", en: "When XNA replicates, alternative biology becomes possible."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Logic gates genéticos:", en: "Genetic logic gates:"}
+        choices:
+          - {pt: "Cellos compila lógica booleana em DNA usando bibliotecas caracterizadas — AND/OR/NOT em E. coli", en: "Cellos compiles boolean logic into DNA using characterized libraries — AND/OR/NOT in E. coli"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cellos compila lógica booleana em DNA usando bibliotecas caracterizadas — AND/OR/NOT em E. coli", en: "Cellos compiles boolean logic into DNA using characterized libraries — AND/OR/NOT in E. coli"}
+        rationale: {pt: "Quando lógica compila, então células computam decisões.", en: "When logic compiles, cells compute decisions."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Burden e contexto:", en: "Burden and context:"}
+        choices:
+          - {pt: "Construções heterólogas competem por ribossomos e energia alterando comportamento — efeito retroativo importante", en: "Heterologous constructs compete for ribosomes and energy altering behavior — retroactive effect matters"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Construções heterólogas competem por ribossomos e energia alterando comportamento — efeito retroativo importante", en: "Heterologous constructs compete for ribosomes and energy altering behavior — retroactive effect matters"}
+        rationale: {pt: "Quando carga sobe, então hospedeiro responde nonlinearmente.", en: "When burden rises, host responds non-linearly."}
+        objectives: [biology.synbio]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações sintéticas", en: "Synthetic applications"}
+    description: {pt: "De medicamentos a materiais.", en: "From drugs to materials."}
+    exercises:
+      - type: choice
+        question: {pt: "Artemisinina semi-sintética:", en: "Semi-synthetic artemisinin:"}
+        choices:
+          - {pt: "Levedura engenheirada produz ácido artemisínico em grande escala estabilizando suprimento antimalárico global", en: "Engineered yeast produces artemisinic acid at scale stabilizing global antimalarial supply"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Levedura engenheirada produz ácido artemisínico em grande escala estabilizando suprimento antimalárico global", en: "Engineered yeast produces artemisinic acid at scale stabilizing global antimalarial supply"}
+        rationale: {pt: "Quando levedura produz, então oferta deixa de depender de safra.", en: "When yeast produces, supply stops depending on harvest."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Insulina recombinante:", en: "Recombinant insulin:"}
+        choices:
+          - {pt: "E. coli e levedura produzem insulina humana desde 1982 substituindo extração de pâncreas suíno", en: "E. coli and yeast produce human insulin since 1982 replacing porcine pancreas extraction"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "E. coli e levedura produzem insulina humana desde 1982 substituindo extração de pâncreas suíno", en: "E. coli and yeast produce human insulin since 1982 replacing porcine pancreas extraction"}
+        rationale: {pt: "Quando insulina é recombinante, então diabetes ganha suprimento confiável.", en: "When insulin is recombinant, diabetes gains reliable supply."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spider silk:", en: "Spider silk:"}
+        choices:
+          - {pt: "Bactérias e leveduras expressam spidroínas para tecer fibras com resistência específica superior ao Kevlar", en: "Bacteria and yeast express spidroins weaving fibers with specific strength higher than Kevlar"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Bactérias e leveduras expressam spidroínas para tecer fibras com resistência específica superior ao Kevlar", en: "Bacteria and yeast express spidroins weaving fibers with specific strength higher than Kevlar"}
+        rationale: {pt: "Quando seda é produzida, então materiais bio competem com sintéticos.", en: "When silk is produced, bio-materials compete with synthetics."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DNA data storage:", en: "DNA data storage:"}
+        choices:
+          - {pt: "DNA codifica vídeos e arquivos com densidade de petabytes/grama e durabilidade de séculos", en: "DNA encodes videos and files at petabyte/gram density with century-scale durability"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DNA codifica vídeos e arquivos com densidade de petabytes/grama e durabilidade de séculos", en: "DNA encodes videos and files at petabyte/gram density with century-scale durability"}
+        rationale: {pt: "Quando DNA armazena, então arquivos viram moleculares.", en: "When DNA stores, files become molecular."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Living therapeutics:", en: "Living therapeutics:"}
+        choices:
+          - {pt: "E. coli Nissle engenheirada para metabolizar fenilalanina trata PKU em ensaios clínicos (SYNB1618)", en: "Engineered E. coli Nissle metabolizing phenylalanine treats PKU in clinical trials (SYNB1618)"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "E. coli Nissle engenheirada para metabolizar fenilalanina trata PKU em ensaios clínicos (SYNB1618)", en: "Engineered E. coli Nissle metabolizing phenylalanine treats PKU in clinical trials (SYNB1618)"}
+        rationale: {pt: "Quando bactérias tratam, então probiótico vira biofármaco.", en: "When bacteria treat, probiotic becomes biopharmaceutical."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bioplásticos PHA:", en: "PHA bioplastics:"}
+        choices:
+          - {pt: "Cupriavidus e E. coli engenheirada produzem polihidroxialcanoatos biodegradáveis substituindo plástico petroquímico", en: "Engineered Cupriavidus and E. coli produce biodegradable polyhydroxyalkanoates replacing petrochemical plastic"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cupriavidus e E. coli engenheirada produzem polihidroxialcanoatos biodegradáveis substituindo plástico petroquímico", en: "Engineered Cupriavidus and E. coli produce biodegradable polyhydroxyalkanoates replacing petrochemical plastic"}
+        rationale: {pt: "Quando PHA escala, então plástico vira biodegradável.", en: "When PHA scales, plastic becomes biodegradable."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Nitrogen fixation engineered:", en: "Engineered nitrogen fixation:"}
+        choices:
+          - {pt: "Transferir cluster nif para gramíneas reduziria dependência de fertilizantes — desafio técnico aberto", en: "Transferring nif cluster into grasses would cut fertilizer dependence — open technical challenge"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Transferir cluster nif para gramíneas reduziria dependência de fertilizantes — desafio técnico aberto", en: "Transferring nif cluster into grasses would cut fertilizer dependence — open technical challenge"}
+        rationale: {pt: "Quando nif chegasse, então agricultura mudaria.", en: "When nif arrives, agriculture changes."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biossensores:", en: "Biosensors:"}
+        choices:
+          - {pt: "Bactérias com promotores responsivos a arsênico ou TNT geram luz/cor permitindo diagnóstico ambiental in situ", en: "Bacteria with arsenic- or TNT-responsive promoters emit light/color enabling in situ environmental diagnostics"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Bactérias com promotores responsivos a arsênico ou TNT geram luz/cor permitindo diagnóstico ambiental in situ", en: "Bacteria with arsenic- or TNT-responsive promoters emit light/color enabling in situ environmental diagnostics"}
+        rationale: {pt: "Quando biossensor responde, então monitoramento fica acessível.", en: "When biosensor responds, monitoring becomes accessible."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biocontainment:", en: "Biocontainment:"}
+        choices:
+          - {pt: "Auxotrofia para aminoácido sintético + kill switches limitam organismos sintéticos ao laboratório", en: "Auxotrophy for synthetic amino acid + kill switches confine synthetic organisms to the lab"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Auxotrofia para aminoácido sintético + kill switches limitam organismos sintéticos ao laboratório", en: "Auxotrophy for synthetic amino acid + kill switches confine synthetic organisms to the lab"}
+        rationale: {pt: "Quando contenção é múltipla, então fugas viram improváveis.", en: "When containment is multilayered, escapes become unlikely."}
+        objectives: [biology.synbio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese de synbio:", en: "Synbio synthesis:"}
+        choices:
+          - {pt: "Engenharia genética com partes padronizadas e código expandido transforma células em fábricas e dispositivos programáveis", en: "Genetic engineering with standard parts and expanded code turns cells into programmable factories and devices"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Engenharia genética com partes padronizadas e código expandido transforma células em fábricas e dispositivos programáveis", en: "Genetic engineering with standard parts and expanded code turns cells into programmable factories and devices"}
+        rationale: {pt: "Quando design encontra biologia, então organismos viram tecnologia.", en: "When design meets biology, organisms become technology."}
+        objectives: [biology.synbio]
+        difficulty: 5
+target: 20

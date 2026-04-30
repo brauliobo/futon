@@ -1,0 +1,244 @@
+title:
+  pt: "🐷 Xenotransplante"
+  en: "🐷 Xenotransplantation"
+level: 'H'
+subject: biology
+objectives: [biology.xenotransplant]
+difficulty: 5
+authorNotes: "Órgãos de porcos editados (10-69 edições) com remoção de PERV e antígenos de rejeição — primeiros transplantes humanos."
+example:
+  pt: "Ex.: porco editado → coração sem α-Gal, sem PERV → transplante humano → sobrevida limitada."
+  en: "Ex.: edited pig → heart without α-Gal, without PERV → human transplant → limited survival."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Barreiras imunológicas", en: "Immunological barriers"}
+    description: {pt: "O que impede xeno funcionar.", en: "What blocks xeno from working."}
+    exercises:
+      - type: choice
+        question: {pt: "α-Gal:", en: "α-Gal:"}
+        choices:
+          - {pt: "Galactose-α1,3-Gal em endotélio porcino é alvo de IgM humanos preformados causando rejeição hiperaguda", en: "Galactose-α1,3-Gal on pig endothelium is targeted by preformed human IgM causing hyperacute rejection"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Galactose-α1,3-Gal em endotélio porcino é alvo de IgM humanos preformados causando rejeição hiperaguda", en: "Galactose-α1,3-Gal on pig endothelium is targeted by preformed human IgM causing hyperacute rejection"}
+        rationale: {pt: "Quando α-Gal é nocauteada, então rejeição hiperaguda some.", en: "When α-Gal is knocked out, hyperacute rejection vanishes."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sda/Neu5Gc:", en: "Sda/Neu5Gc:"}
+        choices:
+          - {pt: "Outros açúcares xenoantigênicos (Sda, Neu5Gc) também são removidos por triplo KO de glicosiltransferases", en: "Other xenoantigenic sugars (Sda, Neu5Gc) are also removed via triple-KO of glycosyltransferases"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Outros açúcares xenoantigênicos (Sda, Neu5Gc) também são removidos por triplo KO de glicosiltransferases", en: "Other xenoantigenic sugars (Sda, Neu5Gc) are also removed via triple-KO of glycosyltransferases"}
+        rationale: {pt: "Quando triplo KO existe, então glicano xeno fica humanizado.", en: "When triple KO exists, xeno glycan becomes humanized."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Reguladores de complemento humanos:", en: "Human complement regulators:"}
+        choices:
+          - {pt: "Transgenes hCD46, hCD55 e hCD59 inibem ativação de complemento humano sobre endotélio porcino", en: "hCD46, hCD55 and hCD59 transgenes inhibit human complement activation on pig endothelium"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Transgenes hCD46, hCD55 e hCD59 inibem ativação de complemento humano sobre endotélio porcino", en: "hCD46, hCD55 and hCD59 transgenes inhibit human complement activation on pig endothelium"}
+        rationale: {pt: "Quando reguladores chegam, então complemento poupa o enxerto.", en: "When regulators arrive, complement spares the graft."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PERV:", en: "PERV:"}
+        choices:
+          - {pt: "Retrovírus endógenos porcinos foram inativados em todas ~25-69 cópias por CRISPR removendo risco zoonótico", en: "Porcine endogenous retroviruses were inactivated in all ~25-69 copies by CRISPR removing zoonotic risk"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Retrovírus endógenos porcinos foram inativados em todas ~25-69 cópias por CRISPR removendo risco zoonótico", en: "Porcine endogenous retroviruses were inactivated in all ~25-69 copies by CRISPR removing zoonotic risk"}
+        rationale: {pt: "Quando PERV some, então segurança viral aproxima clínica.", en: "When PERV is gone, viral safety nears the clinic."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Coagulação cross-species:", en: "Cross-species coagulation:"}
+        choices:
+          - {pt: "Trombomodulina e EPCR humanas regulam coagulação contra disregulação tissue-factor porcina", en: "Human thrombomodulin and EPCR regulate coagulation against pig tissue-factor dysregulation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Trombomodulina e EPCR humanas regulam coagulação contra disregulação tissue-factor porcina", en: "Human thrombomodulin and EPCR regulate coagulation against pig tissue-factor dysregulation"}
+        rationale: {pt: "Quando coagulação é humanizada, então microtrombose desce.", en: "When coagulation is humanized, microthrombosis drops."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Crescimento adequado:", en: "Adequate growth:"}
+        choices:
+          - {pt: "Knockout do receptor de GH evita hipertrofia inadequada do órgão porcino no hospedeiro humano", en: "GH receptor knockout prevents inadequate pig organ overgrowth in the human host"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Knockout do receptor de GH evita hipertrofia inadequada do órgão porcino no hospedeiro humano", en: "GH receptor knockout prevents inadequate pig organ overgrowth in the human host"}
+        rationale: {pt: "Quando GHR cai, então órgão respeita tamanho humano.", en: "When GHR drops, organ respects human size."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Rejeição celular:", en: "Cellular rejection:"}
+        choices:
+          - {pt: "T cells humanas reconhecem MHC porcino — imunossupressão CD40-CD154 é mais eficaz que esquemas convencionais", en: "Human T cells recognize pig MHC — anti-CD40/CD154 immunosuppression outperforms conventional regimens"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "T cells humanas reconhecem MHC porcino — imunossupressão CD40-CD154 é mais eficaz que esquemas convencionais", en: "Human T cells recognize pig MHC — anti-CD40/CD154 immunosuppression outperforms conventional regimens"}
+        rationale: {pt: "Quando coestimulação é bloqueada, então rejeição celular cai.", en: "When costimulation is blocked, cellular rejection falls."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "10-edit GalSafe:", en: "10-edit GalSafe:"}
+        choices:
+          - {pt: "Linhagem porcina com 10 edições (3 KO de glicanos + 6 transgenes humanos + 1 GHR) usada em ensaios clínicos", en: "Pig line with 10 edits (3 glycan KOs + 6 human transgenes + 1 GHR) used in clinical trials"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Linhagem porcina com 10 edições (3 KO de glicanos + 6 transgenes humanos + 1 GHR) usada em ensaios clínicos", en: "Pig line with 10 edits (3 glycan KOs + 6 human transgenes + 1 GHR) used in clinical trials"}
+        rationale: {pt: "Quando edições somam, então órgão fica clinicamente compatível.", en: "When edits add up, organ becomes clinically compatible."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inativação de pCMV:", en: "pCMV inactivation:"}
+        choices:
+          - {pt: "Citomegalovírus porcino latente reativa pós-transplante exigindo doadores PCR-negativos rigorosos", en: "Latent porcine CMV reactivates post-transplant requiring rigorous PCR-negative donors"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Citomegalovírus porcino latente reativa pós-transplante exigindo doadores PCR-negativos rigorosos", en: "Latent porcine CMV reactivates post-transplant requiring rigorous PCR-negative donors"}
+        rationale: {pt: "Quando pCMV é eliminado, então sobrevida do enxerto sobe.", en: "When pCMV is eliminated, graft survival increases."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelo de NHP:", en: "NHP model:"}
+        choices:
+          - {pt: "Babuínos recebem coração porcino com sobrevida >900 dias validando combinação atual de edições", en: "Baboons receive pig heart with >900-day survival validating current edit combination"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Babuínos recebem coração porcino com sobrevida >900 dias validando combinação atual de edições", en: "Baboons receive pig heart with >900-day survival validating current edit combination"}
+        rationale: {pt: "Quando primata sobrevive, então humanos viram próximo passo.", en: "When primate survives, humans become next step."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações clínicas e ética", en: "Clinical applications and ethics"}
+    description: {pt: "Primeiros transplantes humanos.", en: "First human transplants."}
+    exercises:
+      - type: choice
+        question: {pt: "Bennett 2022:", en: "Bennett 2022:"}
+        choices:
+          - {pt: "Primeiro transplante de coração porcino em humano vivo durou 60 dias antes de falência por pCMV", en: "First pig-to-living-human heart transplant lasted 60 days before failure tied to pCMV"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Primeiro transplante de coração porcino em humano vivo durou 60 dias antes de falência por pCMV", en: "First pig-to-living-human heart transplant lasted 60 days before failure tied to pCMV"}
+        rationale: {pt: "Quando o caso ensinou, então protocolos PCR ficaram rígidos.", en: "When the case taught, PCR protocols became strict."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Slayman 2024 (rim):", en: "Slayman 2024 (kidney):"}
+        choices:
+          - {pt: "Primeiro rim porcino editado em humano vivo funcionou semanas mostrando viabilidade renal de xeno", en: "First edited pig kidney in living human functioned for weeks showing renal xeno viability"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Primeiro rim porcino editado em humano vivo funcionou semanas mostrando viabilidade renal de xeno", en: "First edited pig kidney in living human functioned for weeks showing renal xeno viability"}
+        rationale: {pt: "Quando rim funciona, então fila de diálise pode encolher um dia.", en: "When kidney works, dialysis waitlist may shrink someday."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Decedent studies:", en: "Decedent studies:"}
+        choices:
+          - {pt: "Estudos em humanos em morte cerebral testam xeno-órgãos sem risco do paciente acelerando aprendizado", en: "Brain-dead human studies test xeno-organs without patient risk accelerating learning"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Estudos em humanos em morte cerebral testam xeno-órgãos sem risco do paciente acelerando aprendizado", en: "Brain-dead human studies test xeno-organs without patient risk accelerating learning"}
+        rationale: {pt: "Quando decedente é estudado, então clínica progride com ética.", en: "When decedent is studied, clinic progresses with ethics."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fila de transplantes:", en: "Transplant waitlist:"}
+        choices:
+          - {pt: "~100k em fila apenas nos EUA com 17 mortes/dia — pressão demográfica impulsiona xeno como solução", en: "~100k US waitlist with 17 deaths/day — demographic pressure drives xeno as solution"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "~100k em fila apenas nos EUA com 17 mortes/dia — pressão demográfica impulsiona xeno como solução", en: "~100k US waitlist with 17 deaths/day — demographic pressure drives xeno as solution"}
+        rationale: {pt: "Quando demanda explode, então xeno deixa de ser luxo.", en: "When demand explodes, xeno stops being a luxury."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bem-estar animal:", en: "Animal welfare:"}
+        choices:
+          - {pt: "Pigs DPF criados em barreira têm bem-estar enriquecido mas debate ético sobre uso instrumental persiste", en: "DPF pigs raised in barrier housing have enriched welfare yet ethical debate over instrumental use persists"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Pigs DPF criados em barreira têm bem-estar enriquecido mas debate ético sobre uso instrumental persiste", en: "DPF pigs raised in barrier housing have enriched welfare yet ethical debate over instrumental use persists"}
+        rationale: {pt: "Quando bem-estar sobe, então legitimidade técnica cresce.", en: "When welfare rises, technical legitimacy grows."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Outros órgãos (fígado, pulmão):", en: "Other organs (liver, lung):"}
+        choices:
+          - {pt: "Fígado xeno tem rejeição mais agressiva por células de Kupffer e pulmão por pulmonary intravascular macrophages", en: "Xeno liver has more aggressive rejection from Kupffer cells and lung from pulmonary intravascular macrophages"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fígado xeno tem rejeição mais agressiva por células de Kupffer e pulmão por pulmonary intravascular macrophages", en: "Xeno liver has more aggressive rejection from Kupffer cells and lung from pulmonary intravascular macrophages"}
+        rationale: {pt: "Quando órgão muda, então barreira imune muda também.", en: "When organ changes, immune barrier changes too."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ilhotas xeno em diabéticos:", en: "Xeno islets in diabetics:"}
+        choices:
+          - {pt: "Ilhotas porcinas encapsuladas restauram glicemia em pacientes T1D dispensando imunossupressão sistêmica", en: "Encapsulated pig islets restore glycemia in T1D patients sparing systemic immunosuppression"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Ilhotas porcinas encapsuladas restauram glicemia em pacientes T1D dispensando imunossupressão sistêmica", en: "Encapsulated pig islets restore glycemia in T1D patients sparing systemic immunosuppression"}
+        rationale: {pt: "Quando encapsulamento isola, então rejeição é evitada localmente.", en: "When encapsulation isolates, rejection is locally avoided."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Regulação FDA:", en: "FDA regulation:"}
+        choices:
+          - {pt: "FDA exige caracterização extensa do doador, monitoramento PERV pós-transplante e seguimento ao longo da vida", en: "FDA requires extensive donor characterization, post-transplant PERV monitoring and lifelong follow-up"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "FDA exige caracterização extensa do doador, monitoramento PERV pós-transplante e seguimento ao longo da vida", en: "FDA requires extensive donor characterization, post-transplant PERV monitoring and lifelong follow-up"}
+        rationale: {pt: "Quando regulação é forte, então riscos zoonóticos são monitorados.", en: "When regulation is strong, zoonotic risks are monitored."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Quimera porco-humano:", en: "Pig-human chimera:"}
+        choices:
+          - {pt: "Blastocist complementation injeta iPSC humana em embrião porcino com nicho de órgão deletado para gerar órgãos humanizados", en: "Blastocyst complementation injects human iPSC into pig embryo with organ niche deleted to grow humanized organs"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Blastocist complementation injeta iPSC humana em embrião porcino com nicho de órgão deletado para gerar órgãos humanizados", en: "Blastocyst complementation injects human iPSC into pig embryo with organ niche deleted to grow humanized organs"}
+        rationale: {pt: "Quando nicho abre, então células humanas preenchem.", en: "When niche opens, human cells fill in."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese do xeno:", en: "Xeno synthesis:"}
+        choices:
+          - {pt: "Edição massiva torna porcos doadores universais — escassez de órgãos pode virar limite biológico não numérico", en: "Massive editing turns pigs into universal donors — organ scarcity may become biological not numerical limit"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Edição massiva torna porcos doadores universais — escassez de órgãos pode virar limite biológico não numérico", en: "Massive editing turns pigs into universal donors — organ scarcity may become biological not numerical limit"}
+        rationale: {pt: "Quando edição escala, então transplante deixa de ser limitado por filas.", en: "When editing scales, transplantation stops being waitlist-limited."}
+        objectives: [biology.xenotransplant]
+        difficulty: 5
+target: 20

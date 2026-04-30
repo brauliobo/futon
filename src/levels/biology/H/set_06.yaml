@@ -1,0 +1,244 @@
+title:
+  pt: "🦠 Terapia com bacteriófagos"
+  en: "🦠 Bacteriophage therapy"
+level: 'H'
+subject: biology
+objectives: [biology.phage_therapy]
+difficulty: 5
+authorNotes: "Fagos líticos contra MDR, cocktails personalizados, regulamentação compassionate use, fagos engenheirados."
+example:
+  pt: "Ex.: cultura clínica → screening de fagos → cocktail específico → infusão IV → resolução."
+  en: "Ex.: clinical culture → phage screening → specific cocktail → IV infusion → resolution."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Biologia dos fagos", en: "Phage biology"}
+    description: {pt: "Como vírus matam bactérias.", en: "How viruses kill bacteria."}
+    exercises:
+      - type: choice
+        question: {pt: "Ciclo lítico:", en: "Lytic cycle:"}
+        choices:
+          - {pt: "Fago adsorve, injeta DNA, replica massivamente e lisa célula liberando ~100 partículas em 30-60 min", en: "Phage adsorbs, injects DNA, massively replicates and lyses cell releasing ~100 particles in 30-60 min"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fago adsorve, injeta DNA, replica massivamente e lisa célula liberando ~100 partículas em 30-60 min", en: "Phage adsorbs, injects DNA, massively replicates and lyses cell releasing ~100 particles in 30-60 min"}
+        rationale: {pt: "Quando lise ocorre, então auto-amplificação é farmacologia única.", en: "When lysis occurs, self-amplification is unique pharmacology."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lisina e holina:", en: "Lysin and holin:"}
+        choices:
+          - {pt: "Holina permeabiliza membrana e endolisina degrada peptidoglicano causando lise programada do hospedeiro", en: "Holin permeabilizes membrane and endolysin degrades peptidoglycan causing programmed host lysis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Holina permeabiliza membrana e endolisina degrada peptidoglicano causando lise programada do hospedeiro", en: "Holin permeabilizes membrane and endolysin degrades peptidoglycan causing programmed host lysis"}
+        rationale: {pt: "Quando lisina rompe parede, então célula bacteriana morre.", en: "When lysin breaks wall, bacterial cell dies."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Receptores de hospedeiro:", en: "Host receptors:"}
+        choices:
+          - {pt: "Cauda do fago liga receptores específicos (LPS, OmpA, pili) determinando estreita gama de hospedeiros", en: "Phage tail binds specific receptors (LPS, OmpA, pili) determining narrow host range"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cauda do fago liga receptores específicos (LPS, OmpA, pili) determinando estreita gama de hospedeiros", en: "Phage tail binds specific receptors (LPS, OmpA, pili) determining narrow host range"}
+        rationale: {pt: "Quando especificidade alta, então microbioma normal é preservado.", en: "When specificity is high, normal microbiome is preserved."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resistência bacteriana a fagos:", en: "Bacterial phage resistance:"}
+        choices:
+          - {pt: "Mutação do receptor, sistemas CRISPR-Cas e R-M aumentam resistência — cocktails reduzem escape", en: "Receptor mutation, CRISPR-Cas and R-M systems raise resistance — cocktails reduce escape"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mutação do receptor, sistemas CRISPR-Cas e R-M aumentam resistência — cocktails reduzem escape", en: "Receptor mutation, CRISPR-Cas and R-M systems raise resistance — cocktails reduce escape"}
+        rationale: {pt: "Quando cocktail combina, então fuga vira difícil.", en: "When cocktails combine, escape becomes hard."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Trade-off resistência:", en: "Resistance trade-off:"}
+        choices:
+          - {pt: "Resistência a fagos pode ressensibilizar a antibióticos por perda de bombas de efluxo ou OmpF", en: "Phage resistance can resensitize to antibiotics via loss of efflux pumps or OmpF"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Resistência a fagos pode ressensibilizar a antibióticos por perda de bombas de efluxo ou OmpF", en: "Phage resistance can resensitize to antibiotics via loss of efflux pumps or OmpF"}
+        rationale: {pt: "Quando trade-off pesa, então combinação fago+antibiótico bate MDR.", en: "When trade-off weighs, phage+antibiotic combo beats MDR."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fagos lisogênicos:", en: "Lysogenic phages:"}
+        choices:
+          - {pt: "Profagos integram-se ao genoma e podem carregar genes de toxina ou resistência — evitados em terapia", en: "Prophages integrate into genome and can carry toxin or resistance genes — avoided in therapy"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Profagos integram-se ao genoma e podem carregar genes de toxina ou resistência — evitados em terapia", en: "Prophages integrate into genome and can carry toxin or resistance genes — avoided in therapy"}
+        rationale: {pt: "Quando lítico é puro, então segurança terapêutica sobe.", en: "When lytic is pure, therapeutic safety rises."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Farmacocinética de fagos:", en: "Phage pharmacokinetics:"}
+        choices:
+          - {pt: "Fagos amplificam-se onde há bactéria-alvo — auto-dosagem natural mas sequestrados pelo baço/fígado", en: "Phages amplify where target bacteria reside — natural self-dosing yet sequestered by spleen/liver"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fagos amplificam-se onde há bactéria-alvo — auto-dosagem natural mas sequestrados pelo baço/fígado", en: "Phages amplify where target bacteria reside — natural self-dosing yet sequestered by spleen/liver"}
+        rationale: {pt: "Quando PK é dinâmica, então dose e local importam mais.", en: "When PK is dynamic, dose and site matter more."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imunogenicidade:", en: "Immunogenicity:"}
+        choices:
+          - {pt: "Anticorpos neutralizantes anti-fago aparecem em ~7-14 dias podendo limitar eficácia em uso crônico", en: "Neutralizing anti-phage antibodies appear in ~7-14 days possibly limiting efficacy in chronic use"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Anticorpos neutralizantes anti-fago aparecem em ~7-14 dias podendo limitar eficácia em uso crônico", en: "Neutralizing anti-phage antibodies appear in ~7-14 days possibly limiting efficacy in chronic use"}
+        rationale: {pt: "Quando anticorpos formam, então rotação ou troca de fago é precisa.", en: "When antibodies form, phage rotation or switch is needed."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Phage banks:", en: "Phage banks:"}
+        choices:
+          - {pt: "Coleções públicas (USC, Eliava, IPATH) caracterizam centenas de fagos para resposta clínica rápida", en: "Public collections (USC, Eliava, IPATH) characterize hundreds of phages for rapid clinical response"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Coleções públicas (USC, Eliava, IPATH) caracterizam centenas de fagos para resposta clínica rápida", en: "Public collections (USC, Eliava, IPATH) characterize hundreds of phages for rapid clinical response"}
+        rationale: {pt: "Quando banco existe, então cocktail é montado em dias.", en: "When bank exists, cocktail is assembled in days."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biofilm e fagos:", en: "Biofilms and phages:"}
+        choices:
+          - {pt: "Fagos com despolimerases penetram matriz EPS dispersando biofilmes resistentes a antibióticos", en: "Phages with depolymerases penetrate EPS matrix dispersing antibiotic-resistant biofilms"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fagos com despolimerases penetram matriz EPS dispersando biofilmes resistentes a antibióticos", en: "Phages with depolymerases penetrate EPS matrix dispersing antibiotic-resistant biofilms"}
+        rationale: {pt: "Quando biofilme cai, então tratamento alcança bactérias internas.", en: "When biofilm falls, treatment reaches inner bacteria."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações clínicas", en: "Clinical applications"}
+    description: {pt: "Da bancada à beira do leito.", en: "From bench to bedside."}
+    exercises:
+      - type: choice
+        question: {pt: "Caso Patterson 2017:", en: "Patterson 2017 case:"}
+        choices:
+          - {pt: "Cocktail IV personalizado contra Acinetobacter MDR salvou paciente em coma — case marco do moderno phage therapy", en: "Personalized IV cocktail vs MDR Acinetobacter saved comatose patient — landmark of modern phage therapy"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cocktail IV personalizado contra Acinetobacter MDR salvou paciente em coma — case marco do moderno phage therapy", en: "Personalized IV cocktail vs MDR Acinetobacter saved comatose patient — landmark of modern phage therapy"}
+        rationale: {pt: "Quando caso resolve, então clínica acredita.", en: "When case resolves, clinic believes."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mycobacterium em CF (Dedrick 2019):", en: "Mycobacterium in CF (Dedrick 2019):"}
+        choices:
+          - {pt: "Cocktail engenheirado tratou M. abscessus disseminado em adolescente CF pós-transplante pulmonar", en: "Engineered cocktail treated disseminated M. abscessus in CF teen post lung transplant"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cocktail engenheirado tratou M. abscessus disseminado em adolescente CF pós-transplante pulmonar", en: "Engineered cocktail treated disseminated M. abscessus in CF teen post lung transplant"}
+        rationale: {pt: "Quando engenharia salva, então phage therapy é validada modernamente.", en: "When engineering saves, phage therapy is modernly validated."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ensaios clínicos randomizados:", en: "Randomized clinical trials:"}
+        choices:
+          - {pt: "Phagoburn e CYPHY mostram eficácia parcial — desenho de cocktail e detecção precoce melhoram resultados", en: "Phagoburn and CYPHY show partial efficacy — cocktail design and early detection improve outcomes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Phagoburn e CYPHY mostram eficácia parcial — desenho de cocktail e detecção precoce melhoram resultados", en: "Phagoburn and CYPHY show partial efficacy — cocktail design and early detection improve outcomes"}
+        rationale: {pt: "Quando RCT roda, então otimização molda futuro do campo.", en: "When RCT runs, optimization shapes the field's future."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Engenharia de fagos:", en: "Phage engineering:"}
+        choices:
+          - {pt: "BRED altera receptor binding proteins e remove genes lisogênicos expandindo gama de hospedeiros", en: "BRED alters receptor binding proteins and removes lysogenic genes expanding host range"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "BRED altera receptor binding proteins e remove genes lisogênicos expandindo gama de hospedeiros", en: "BRED alters receptor binding proteins and removes lysogenic genes expanding host range"}
+        rationale: {pt: "Quando fago é editado, então passa a tratar mais cepas com segurança.", en: "When phage is edited, it safely treats more strains."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Phage-CRISPR:", en: "Phage-CRISPR:"}
+        choices:
+          - {pt: "Fagos entregam Cas9+gRNA contra genes de virulência ou resistência ressensibilizando bactérias persistentes", en: "Phages deliver Cas9+gRNA against virulence or resistance genes resensitizing persistent bacteria"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fagos entregam Cas9+gRNA contra genes de virulência ou resistência ressensibilizando bactérias persistentes", en: "Phages deliver Cas9+gRNA against virulence or resistance genes resensitizing persistent bacteria"}
+        rationale: {pt: "Quando CRISPR vai dentro, então MDR é desarmada de dentro.", en: "When CRISPR goes inside, MDR is disarmed from within."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Aplicações tópicas:", en: "Topical applications:"}
+        choices:
+          - {pt: "Curativos com fagos contra Pseudomonas e Staphylococcus aceleram cicatrização de feridas crônicas", en: "Phage-loaded dressings against Pseudomonas and Staphylococcus accelerate chronic wound healing"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Curativos com fagos contra Pseudomonas e Staphylococcus aceleram cicatrização de feridas crônicas", en: "Phage-loaded dressings against Pseudomonas and Staphylococcus accelerate chronic wound healing"}
+        rationale: {pt: "Quando tópico atua, então sistêmico evita-se quando possível.", en: "When topical acts, systemic is avoided when possible."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Phage para microbioma:", en: "Phage for microbiome:"}
+        choices:
+          - {pt: "Cocktails dirigidos podem remover seletivamente patobiontes (E. coli AIEC) sem alterar microbiota benéfica", en: "Targeted cocktails can selectively remove pathobionts (AIEC E. coli) without disturbing beneficial microbiota"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cocktails dirigidos podem remover seletivamente patobiontes (E. coli AIEC) sem alterar microbiota benéfica", en: "Targeted cocktails can selectively remove pathobionts (AIEC E. coli) without disturbing beneficial microbiota"}
+        rationale: {pt: "Quando precisão é alta, então microbioma normal é poupado.", en: "When precision is high, normal microbiome is spared."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Endolisinas (Staphefekt):", en: "Endolysins (Staphefekt):"}
+        choices:
+          - {pt: "Enzima recombinante derivada de fago lisa S. aureus diretamente sem replicação — droga proteica simples", en: "Recombinant phage-derived enzyme directly lyses S. aureus without replication — simple protein drug"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Enzima recombinante derivada de fago lisa S. aureus diretamente sem replicação — droga proteica simples", en: "Recombinant phage-derived enzyme directly lyses S. aureus without replication — simple protein drug"}
+        rationale: {pt: "Quando enzima atua, então simplicidade regulatória aumenta.", en: "When enzyme acts, regulatory simplicity grows."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Regulação compassionate use:", en: "Compassionate use regulation:"}
+        choices:
+          - {pt: "FDA eIND e EMA hospital exemption permitem uso emergencial caso-a-caso impulsionando casuística terapêutica", en: "FDA eIND and EMA hospital exemption allow emergency case-by-case use driving therapeutic experience"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "FDA eIND e EMA hospital exemption permitem uso emergencial caso-a-caso impulsionando casuística terapêutica", en: "FDA eIND and EMA hospital exemption allow emergency case-by-case use driving therapeutic experience"}
+        rationale: {pt: "Quando vias regulatórias existem, então pacientes graves recebem opção.", en: "When regulatory paths exist, critical patients gain option."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese de phage therapy:", en: "Phage therapy synthesis:"}
+        choices:
+          - {pt: "Em era de antibioticorresistência, fagos personalizados oferecem opção complementar com lógica e farmacologia próprias", en: "In antibiotic-resistance era, personalized phages offer complementary option with their own logic and pharmacology"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Em era de antibioticorresistência, fagos personalizados oferecem opção complementar com lógica e farmacologia próprias", en: "In antibiotic-resistance era, personalized phages offer complementary option with their own logic and pharmacology"}
+        rationale: {pt: "Quando antibióticos falham, então fagos retomam protagonismo.", en: "When antibiotics fail, phages regain prominence."}
+        objectives: [biology.phage_therapy]
+        difficulty: 5
+target: 20
