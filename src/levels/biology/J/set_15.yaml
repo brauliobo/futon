@@ -1,0 +1,244 @@
+title:
+  pt: "👶 Reprodução e IVF"
+  en: "👶 Reproduction and IVF"
+level: 'J'
+subject: biology
+objectives: [biology.reproduction_ivf]
+difficulty: 5
+authorNotes: "Oogênese, espermatogênese, IVF, ICSI, PGT-A/M/SR, oocyte aging, spindle quality, IVG, AI embryo selection."
+example:
+  pt: "Ex.: oócito MII → ICSI → embrião → PGT-A → transferência única → gravidez saudável."
+  en: "Ex.: MII oocyte → ICSI → embryo → PGT-A → single transfer → healthy pregnancy."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Biologia reprodutiva", en: "Reproductive biology"}
+    description: {pt: "Como gametas e embriões formam-se.", en: "How gametes and embryos form."}
+    exercises:
+      - type: choice
+        question: {pt: "Oogênese:", en: "Oogenesis:"}
+        choices:
+          - {pt: "Oócitos param em prophase I no útero fetal e retomam meiose pré-ovulação ao longo de 12-50 anos sob LH surge", en: "Oocytes arrest in prophase I in utero and resume meiosis pre-ovulation across 12-50 years under LH surge"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Oócitos param em prophase I no útero fetal e retomam meiose pré-ovulação ao longo de 12-50 anos sob LH surge", en: "Oocytes arrest in prophase I in utero and resume meiosis pre-ovulation across 12-50 years under LH surge"}
+        rationale: {pt: "Quando meiose retoma, então óvulo vira fecundável.", en: "When meiosis resumes, egg becomes fertilizable."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spermatogenesis:", en: "Spermatogenesis:"}
+        choices:
+          - {pt: "SSC autorenovam continuamente em seminíferos via Sertoli + Leydig com 64-72 dias para formação completa de esperma", en: "SSCs continuously self-renew in seminiferous tubules via Sertoli + Leydig with 64-72 days for full sperm formation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "SSC autorenovam continuamente em seminíferos via Sertoli + Leydig com 64-72 dias para formação completa de esperma", en: "SSCs continuously self-renew in seminiferous tubules via Sertoli + Leydig with 64-72 days for full sperm formation"}
+        rationale: {pt: "Quando SSC trabalha, então esperma é produzido continuamente.", en: "When SSC works, sperm is continuously produced."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cumulus-oocyte complex:", en: "Cumulus-oocyte complex:"}
+        choices:
+          - {pt: "Células cumulus do folículo antral nutrem o oócito por gap junctions e expansão hialurônica até ovulação", en: "Antral follicle cumulus cells nourish oocyte via gap junctions and hyaluronic expansion until ovulation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Células cumulus do folículo antral nutrem o oócito por gap junctions e expansão hialurônica até ovulação", en: "Antral follicle cumulus cells nourish oocyte via gap junctions and hyaluronic expansion until ovulation"}
+        rationale: {pt: "Quando cumulus apoia, então óvulo amadurece bem.", en: "When cumulus supports, egg matures well."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ICSI:", en: "ICSI:"}
+        choices:
+          - {pt: "Injeção intracitoplasmática de espermatozoide contorna fertilização nula em oligo/azoospermia severa em IVF", en: "Intracytoplasmic sperm injection bypasses fertilization failure in severe oligo/azoospermia in IVF"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Injeção intracitoplasmática de espermatozoide contorna fertilização nula em oligo/azoospermia severa em IVF", en: "Intracytoplasmic sperm injection bypasses fertilization failure in severe oligo/azoospermia in IVF"}
+        rationale: {pt: "Quando ICSI entrega, então fecundação ocorre.", en: "When ICSI delivers, fertilization occurs."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Oocyte aging:", en: "Oocyte aging:"}
+        choices:
+          - {pt: "Idade materna eleva aneuploidia via cohesin loss em meiose I — explica curva de fertilidade declinante após 35 anos", en: "Maternal age raises aneuploidy via cohesin loss in meiosis I — explains declining fertility curve after age 35"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Idade materna eleva aneuploidia via cohesin loss em meiose I — explica curva de fertilidade declinante após 35 anos", en: "Maternal age raises aneuploidy via cohesin loss in meiosis I — explains declining fertility curve after age 35"}
+        rationale: {pt: "Quando cohesin some, então cromossomos não segregam.", en: "When cohesin is gone, chromosomes mis-segregate."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PGT-A:", en: "PGT-A:"}
+        choices:
+          - {pt: "Biópsia do trofectoderme em D5-6 + sequenciamento detecta aneuploidia priorizando transferência de embrião euploide único", en: "Day 5-6 trophectoderm biopsy + sequencing detects aneuploidy prioritizing single euploid embryo transfer"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Biópsia do trofectoderme em D5-6 + sequenciamento detecta aneuploidia priorizando transferência de embrião euploide único", en: "Day 5-6 trophectoderm biopsy + sequencing detects aneuploidy prioritizing single euploid embryo transfer"}
+        rationale: {pt: "Quando PGT-A filtra, então gestação saudável aumenta.", en: "When PGT-A filters, healthy pregnancy rises."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PGT-M (monogenic):", en: "PGT-M (monogenic):"}
+        choices:
+          - {pt: "Diagnóstico de mutação específica (CFTR, BRCA, HD) em embriões evita transmissão hereditária seleção embrião saudável", en: "Specific mutation diagnosis (CFTR, BRCA, HD) in embryos prevents hereditary transmission selecting healthy embryo"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Diagnóstico de mutação específica (CFTR, BRCA, HD) em embriões evita transmissão hereditária seleção embrião saudável", en: "Specific mutation diagnosis (CFTR, BRCA, HD) in embryos prevents hereditary transmission selecting healthy embryo"}
+        rationale: {pt: "Quando PGT-M atua, então doença monogênica não passa.", en: "When PGT-M acts, monogenic disease does not pass."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vitrification oocyte:", en: "Vitrification oocyte:"}
+        choices:
+          - {pt: "Vitrificação ultrarrápida + crioprotetores preserva oócitos com >90% sobrevida e gestação semelhante a fresh cycle", en: "Ultrafast vitrification + cryoprotectants preserves oocytes with >90% survival and pregnancy similar to fresh cycle"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Vitrificação ultrarrápida + crioprotetores preserva oócitos com >90% sobrevida e gestação semelhante a fresh cycle", en: "Ultrafast vitrification + cryoprotectants preserves oocytes with >90% survival and pregnancy similar to fresh cycle"}
+        rationale: {pt: "Quando vitrifica, então fertilidade é guardada.", en: "When vitrified, fertility is preserved."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single embryo transfer:", en: "Single embryo transfer:"}
+        choices:
+          - {pt: "SET reduz gemelaridade e prematuridade preservando taxa de gravidez moderna devido PGT-A + cultura blastocística", en: "SET cuts twinning and prematurity preserving modern pregnancy rate due to PGT-A + blastocyst culture"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "SET reduz gemelaridade e prematuridade preservando taxa de gravidez moderna devido PGT-A + cultura blastocística", en: "SET cuts twinning and prematurity preserving modern pregnancy rate due to PGT-A + blastocyst culture"}
+        rationale: {pt: "Quando SET seleciona, então gravidez saudável é objetivo.", en: "When SET selects, healthy pregnancy is goal."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Endometrial receptivity:", en: "Endometrial receptivity:"}
+        choices:
+          - {pt: "Janela implantatória de ~24-48h é avaliada por ERA test usando perfil de expressão para personalizar transferência", en: "~24-48h implantation window is assessed by ERA test using expression profile to personalize transfer"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Janela implantatória de ~24-48h é avaliada por ERA test usando perfil de expressão para personalizar transferência", en: "~24-48h implantation window is assessed by ERA test using expression profile to personalize transfer"}
+        rationale: {pt: "Quando endométrio sincroniza, então embrião implanta.", en: "When endometrium syncs, embryo implants."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Tecnologias e fronteiras", en: "Technologies and frontiers"}
+    description: {pt: "IVG, AI e edição embrionária.", en: "IVG, AI and embryo editing."}
+    exercises:
+      - type: choice
+        question: {pt: "AI embryo selection:", en: "AI embryo selection:"}
+        choices:
+          - {pt: "Vision-based deep learning em time-lapse prediz implantação superando morfologia clássica em ensaios randomizados", en: "Vision-based deep learning on time-lapse predicts implantation outperforming classical morphology in RCTs"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Vision-based deep learning em time-lapse prediz implantação superando morfologia clássica em ensaios randomizados", en: "Vision-based deep learning on time-lapse predicts implantation outperforming classical morphology in RCTs"}
+        rationale: {pt: "Quando IA seleciona, então sucesso aumenta.", en: "When AI selects, success rises."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "IVG (in vitro gametogenesis):", en: "IVG (in vitro gametogenesis):"}
+        choices:
+          - {pt: "Gametogênese de iPSC humano com PGCs + culturas de ovário/testículo é fronteira ativa para infertilidade e ARTs futuras", en: "Human iPSC gametogenesis with PGCs + ovary/testis cultures is active frontier for infertility and future ARTs"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Gametogênese de iPSC humano com PGCs + culturas de ovário/testículo é fronteira ativa para infertilidade e ARTs futuras", en: "Human iPSC gametogenesis with PGCs + ovary/testis cultures is active frontier for infertility and future ARTs"}
+        rationale: {pt: "Quando IVG matura, então gametas in vitro existem.", en: "When IVG matures, in vitro gametes exist."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mitochondrial replacement:", en: "Mitochondrial replacement:"}
+        choices:
+          - {pt: "MST/PNT substitui mitocôndrias maternas para evitar herança mt-disease — primeiros nascimentos regulados em UK 2023", en: "MST/PNT replaces maternal mitochondria to avoid mt-disease inheritance — first regulated births in UK 2023"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "MST/PNT substitui mitocôndrias maternas para evitar herança mt-disease — primeiros nascimentos regulados em UK 2023", en: "MST/PNT replaces maternal mitochondria to avoid mt-disease inheritance — first regulated births in UK 2023"}
+        rationale: {pt: "Quando mt troca, então herança mt-disease quebra.", en: "When mt swaps, mt-disease inheritance breaks."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sperm cryopreservation:", en: "Sperm cryopreservation:"}
+        choices:
+          - {pt: "Padrão clínico há décadas com gestações em amostras de >25 anos — preserva fertilidade masculina antes de quimio/radioterapia", en: "Clinical standard for decades with pregnancies from >25-year samples — preserves male fertility before chemo/radiotherapy"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Padrão clínico há décadas com gestações em amostras de >25 anos — preserva fertilidade masculina antes de quimio/radioterapia", en: "Clinical standard for decades with pregnancies from >25-year samples — preserves male fertility before chemo/radiotherapy"}
+        rationale: {pt: "Quando crio funciona, então fertilidade transcende décadas.", en: "When cryo works, fertility transcends decades."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ovarian tissue cryopreservation:", en: "Ovarian tissue cryopreservation:"}
+        choices:
+          - {pt: "Crio do córtex ovariano antes de quimio permite reimplante com gestação espontânea após câncer pré-pubescente", en: "Ovarian cortex cryopreservation before chemo enables reimplantation with spontaneous pregnancy after pre-pubescent cancer"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Crio do córtex ovariano antes de quimio permite reimplante com gestação espontânea após câncer pré-pubescente", en: "Ovarian cortex cryopreservation before chemo enables reimplantation with spontaneous pregnancy after pre-pubescent cancer"}
+        rationale: {pt: "Quando tecido é guardado, então fertilidade pediátrica é restaurável.", en: "When tissue is stored, pediatric fertility is restorable."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Endometriose:", en: "Endometriosis:"}
+        choices:
+          - {pt: "Tecido endometrial ectópico inflama e causa dor/infertilidade — relugolix CT trata com agonist GnRH+E2/P add-back", en: "Ectopic endometrial tissue inflames causing pain/infertility — relugolix CT treats with GnRH agonist+E2/P add-back"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tecido endometrial ectópico inflama e causa dor/infertilidade — relugolix CT trata com agonist GnRH+E2/P add-back", en: "Ectopic endometrial tissue inflames causing pain/infertility — relugolix CT treats with GnRH agonist+E2/P add-back"}
+        rationale: {pt: "Quando GnRH baixa, então endometriose recua.", en: "When GnRH falls, endometriosis recedes."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PCOS:", en: "PCOS:"}
+        choices:
+          - {pt: "Hiperandrogenismo + resistência insulina em ovários policísticos — letrozol e GLP-1 RAs melhoram ovulação e metabolismo", en: "Hyperandrogenism + insulin resistance in polycystic ovaries — letrozole and GLP-1 RAs improve ovulation and metabolism"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Hiperandrogenismo + resistência insulina em ovários policísticos — letrozol e GLP-1 RAs melhoram ovulação e metabolismo", en: "Hyperandrogenism + insulin resistance in polycystic ovaries — letrozole and GLP-1 RAs improve ovulation and metabolism"}
+        rationale: {pt: "Quando insulina cai, então ovulação retorna.", en: "When insulin falls, ovulation returns."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Synthetic embryo (SHEEFs):", en: "Synthetic embryo (SHEEFs):"}
+        choices:
+          - {pt: "Gastruloides + EXM cells em humano simulam embrião 14 dias permitindo modelar gastrulação sem fertilização — limites éticos", en: "Gastruloids + EXM cells in human simulate 14-day embryo enabling gastrulation modeling without fertilization — ethical limits"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Gastruloides + EXM cells em humano simulam embrião 14 dias permitindo modelar gastrulação sem fertilização — limites éticos", en: "Gastruloids + EXM cells in human simulate 14-day embryo enabling gastrulation modeling without fertilization — ethical limits"}
+        rationale: {pt: "Quando modelo escala, então biologia humana é estudada eticamente.", en: "When model scales, human biology is studied ethically."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Reproductive germline editing:", en: "Reproductive germline editing:"}
+        choices:
+          - {pt: "Edição de embrião humano em pesquisa permanece restrita pós-He Jiankui 2018 — moratória global protege herdabilidade", en: "Research-only human embryo editing remains restricted post-He Jiankui 2018 — global moratorium protects heritability"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Edição de embrião humano em pesquisa permanece restrita pós-He Jiankui 2018 — moratória global protege herdabilidade", en: "Research-only human embryo editing remains restricted post-He Jiankui 2018 — global moratorium protects heritability"}
+        rationale: {pt: "Quando germline é restringida, então riscos hereditários ficam contidos.", en: "When germline is restricted, heritable risks stay contained."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese da reprodução:", en: "Reproduction synthesis:"}
+        choices:
+          - {pt: "Reprodução assistida integra IVF, PGT, vitrificação, MRT, IVG e IA — medicina reprodutiva expande acesso e segurança a famílias modernas", en: "Assisted reproduction integrates IVF, PGT, vitrification, MRT, IVG and AI — reproductive medicine expands access and safety to modern families"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Reprodução assistida integra IVF, PGT, vitrificação, MRT, IVG e IA — medicina reprodutiva expande acesso e segurança a famílias modernas", en: "Assisted reproduction integrates IVF, PGT, vitrification, MRT, IVG and AI — reproductive medicine expands access and safety to modern families"}
+        rationale: {pt: "Quando ferramentas convergem, então reprodução vira segura e acessível.", en: "When tools converge, reproduction becomes safe and accessible."}
+        objectives: [biology.reproduction_ivf]
+        difficulty: 5
+target: 20
