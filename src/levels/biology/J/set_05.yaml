@@ -1,0 +1,244 @@
+title:
+  pt: "🫧 Vesículas extracelulares"
+  en: "🫧 Extracellular vesicles"
+level: 'J'
+subject: biology
+objectives: [biology.evs_biology]
+difficulty: 5
+authorNotes: "Exossomos, microvesículas, ectosomos, ESCRT, tetraspaninas, biomarcadores, drug delivery, EV-AAV, MISEV guidelines."
+example:
+  pt: "Ex.: célula doadora → ESCRT → exossomos com cargo → captação tecido distante → resposta funcional."
+  en: "Ex.: donor cell → ESCRT → exosomes with cargo → distant tissue uptake → functional response."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Biogênese e cargo", en: "Biogenesis and cargo"}
+    description: {pt: "Como vesículas saem e o que carregam.", en: "How vesicles exit and what they carry."}
+    exercises:
+      - type: choice
+        question: {pt: "Exossomo via MVB:", en: "MVB exosome:"}
+        choices:
+          - {pt: "ILVs formam-se em corpos multivesiculares por ESCRT-0/I/II/III + Alix; fusão com membrana plasmática libera exossomos", en: "ILVs form in multivesicular bodies via ESCRT-0/I/II/III + Alix; plasma-membrane fusion releases exosomes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ILVs formam-se em corpos multivesiculares por ESCRT-0/I/II/III + Alix; fusão com membrana plasmática libera exossomos", en: "ILVs form in multivesicular bodies via ESCRT-0/I/II/III + Alix; plasma-membrane fusion releases exosomes"}
+        rationale: {pt: "Quando MVB funde, então exossomos saem com cargo selecionado.", en: "When MVB fuses, exosomes exit with selected cargo."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ectosomos:", en: "Ectosomes:"}
+        choices:
+          - {pt: "Microvesículas brotam diretamente da membrana plasmática (~100-1000 nm) com cargo distinto de exossomos", en: "Microvesicles bud directly from plasma membrane (~100-1000 nm) with cargo distinct from exosomes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Microvesículas brotam diretamente da membrana plasmática (~100-1000 nm) com cargo distinto de exossomos", en: "Microvesicles bud directly from plasma membrane (~100-1000 nm) with cargo distinct from exosomes"}
+        rationale: {pt: "Quando ectosomos brotam, então rota distinta entrega cargo diferente.", en: "When ectosomes bud, distinct route delivers different cargo."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tetraspanin markers:", en: "Tetraspanin markers:"}
+        choices:
+          - {pt: "CD9, CD63 e CD81 enriquecem em exossomos servindo de marcadores positivos para isolamento e detecção", en: "CD9, CD63 and CD81 enrich in exosomes serving as positive markers for isolation and detection"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "CD9, CD63 e CD81 enriquecem em exossomos servindo de marcadores positivos para isolamento e detecção", en: "CD9, CD63 and CD81 enrich in exosomes serving as positive markers for isolation and detection"}
+        rationale: {pt: "Quando tetraspaninas marcam, então isolamento é específico.", en: "When tetraspanins mark, isolation is specific."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cargo selection:", en: "Cargo selection:"}
+        choices:
+          - {pt: "Mensageiro RNA, miRNA, proteínas e lipídios são selecionados via SUMOylação, RBP e tetraspanin sorting", en: "Messenger RNA, miRNA, proteins and lipids are selected via SUMOylation, RBPs and tetraspanin sorting"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mensageiro RNA, miRNA, proteínas e lipídios são selecionados via SUMOylação, RBP e tetraspanin sorting", en: "Messenger RNA, miRNA, proteins and lipids are selected via SUMOylation, RBPs and tetraspanin sorting"}
+        rationale: {pt: "Quando seleção é seletiva, então mensagem é precisa.", en: "When selection is selective, message is precise."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Uptake mecanismos:", en: "Uptake mechanisms:"}
+        choices:
+          - {pt: "Endocitose mediada por clatrina, CDV e fusão direta entregam cargo de EV ao citosol da célula receptora", en: "Clathrin-mediated endocytosis, CDV and direct fusion deliver EV cargo to recipient cell cytosol"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Endocitose mediada por clatrina, CDV e fusão direta entregam cargo de EV ao citosol da célula receptora", en: "Clathrin-mediated endocytosis, CDV and direct fusion deliver EV cargo to recipient cell cytosol"}
+        rationale: {pt: "Quando rota entrega, então mensagem chega.", en: "When route delivers, message arrives."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Apoptotic bodies:", en: "Apoptotic bodies:"}
+        choices:
+          - {pt: "Vesículas grandes (>1 μm) liberadas durante apoptose carregam DAMPs e antígenos para fagocitose mas também propagação", en: "Large vesicles (>1 μm) released during apoptosis carry DAMPs and antigens for phagocytosis but also propagation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Vesículas grandes (>1 μm) liberadas durante apoptose carregam DAMPs e antígenos para fagocitose mas também propagação", en: "Large vesicles (>1 μm) released during apoptosis carry DAMPs and antigens for phagocytosis but also propagation"}
+        rationale: {pt: "Quando apoptose ocorre, então mensagens finais saem em vesículas.", en: "When apoptosis occurs, final messages exit in vesicles."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Migrasome:", en: "Migrasome:"}
+        choices:
+          - {pt: "Vesícula deixada por células em movimento via TSPN/TSP-4 entrega mitocôndrias e RNAs ao tecido (Yu 2019)", en: "Vesicle left by migrating cells via TSPN/TSP-4 delivers mitochondria and RNAs to tissue (Yu 2019)"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Vesícula deixada por células em movimento via TSPN/TSP-4 entrega mitocôndrias e RNAs ao tecido (Yu 2019)", en: "Vesicle left by migrating cells via TSPN/TSP-4 delivers mitochondria and RNAs to tissue (Yu 2019)"}
+        rationale: {pt: "Quando migrasomes ficam, então herança extracelular é deixada.", en: "When migrasomes remain, extracellular legacy is left."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MISEV guidelines:", en: "MISEV guidelines:"}
+        choices:
+          - {pt: "ISEV publica MISEV2023 com critérios mínimos de caracterização EV padronizando estudos translacionais e regulatórios", en: "ISEV publishes MISEV2023 with minimal EV characterization criteria standardizing translational and regulatory studies"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ISEV publica MISEV2023 com critérios mínimos de caracterização EV padronizando estudos translacionais e regulatórios", en: "ISEV publishes MISEV2023 with minimal EV characterization criteria standardizing translational and regulatory studies"}
+        rationale: {pt: "Quando padrões existem, então campo amadurece.", en: "When standards exist, field matures."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "EV intercell communication:", en: "EV intercell communication:"}
+        choices:
+          - {pt: "Tumor exosomos com PD-L1, integrins e miRNAs preparam nicho metastático e suprimem T cells distantes", en: "Tumor exosomes with PD-L1, integrins and miRNAs prepare metastatic niche and suppress distant T cells"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tumor exosomos com PD-L1, integrins e miRNAs preparam nicho metastático e suprimem T cells distantes", en: "Tumor exosomes with PD-L1, integrins and miRNAs prepare metastatic niche and suppress distant T cells"}
+        rationale: {pt: "Quando exosomos viajam, então tumor coloniza à distância.", en: "When exosomes travel, tumor colonizes from afar."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Engineered EVs:", en: "Engineered EVs:"}
+        choices:
+          - {pt: "Lamp2b-RVG e CD9-fusões direcionam EVs a SNC ou tecidos específicos amplificando entrega farmacêutica nativa", en: "Lamp2b-RVG and CD9-fusions target EVs to CNS or specific tissues amplifying native pharmaceutical delivery"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Lamp2b-RVG e CD9-fusões direcionam EVs a SNC ou tecidos específicos amplificando entrega farmacêutica nativa", en: "Lamp2b-RVG and CD9-fusions target EVs to CNS or specific tissues amplifying native pharmaceutical delivery"}
+        rationale: {pt: "Quando EV é endereçada, então droga chega ao alvo.", en: "When EV is addressed, drug reaches target."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações clínicas", en: "Clinical applications"}
+    description: {pt: "EVs como diagnóstico e terapia.", en: "EVs as diagnostic and therapy."}
+    exercises:
+      - type: choice
+        question: {pt: "Liquid biopsy via EV:", en: "Liquid biopsy via EV:"}
+        choices:
+          - {pt: "ExoDx Prostate detecta KLK3, ERG e PCA3 em EVs urinárias evitando biópsia em homens com PSA limítrofe", en: "ExoDx Prostate detects KLK3, ERG and PCA3 in urinary EVs avoiding biopsy in borderline PSA men"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ExoDx Prostate detecta KLK3, ERG e PCA3 em EVs urinárias evitando biópsia em homens com PSA limítrofe", en: "ExoDx Prostate detects KLK3, ERG and PCA3 in urinary EVs avoiding biopsy in borderline PSA men"}
+        rationale: {pt: "Quando EVs urinárias falam, então biópsia recua.", en: "When urinary EVs speak, biopsy steps back."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Stem-cell-derived EVs:", en: "Stem-cell-derived EVs:"}
+        choices:
+          - {pt: "MSC-EVs entregam fatores trofísicos pulmonares e cardíacos em ARDS, IM e AVC sem células viáveis", en: "MSC-EVs deliver pulmonary and cardiac trophic factors in ARDS, MI and stroke without viable cells"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "MSC-EVs entregam fatores trofísicos pulmonares e cardíacos em ARDS, IM e AVC sem células viáveis", en: "MSC-EVs deliver pulmonary and cardiac trophic factors in ARDS, MI and stroke without viable cells"}
+        rationale: {pt: "Quando EVs entregam, então células ficam dispensáveis.", en: "When EVs deliver, cells become dispensable."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "EV-mRNA delivery:", en: "EV-mRNA delivery:"}
+        choices:
+          - {pt: "Engineered EVs entregam mRNA terapêutico evitando imunogenicidade LNP — alternativa para repouso de doses crônicas", en: "Engineered EVs deliver therapeutic mRNA bypassing LNP immunogenicity — alternative for chronic redosing"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Engineered EVs entregam mRNA terapêutico evitando imunogenicidade LNP — alternativa para repouso de doses crônicas", en: "Engineered EVs deliver therapeutic mRNA bypassing LNP immunogenicity — alternative for chronic redosing"}
+        rationale: {pt: "Quando EV substitui LNP, então tolerância cresce em uso repetido.", en: "When EV substitutes LNP, tolerance grows in repeat use."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "EVs em vacinas:", en: "EVs in vaccines:"}
+        choices:
+          - {pt: "DC-EVs apresentam antígenos via MHC mantendo imunidade adaptativa — Dexosomes em ensaios oncológicos", en: "DC-EVs present antigens via MHC sustaining adaptive immunity — Dexosomes in oncology trials"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DC-EVs apresentam antígenos via MHC mantendo imunidade adaptativa — Dexosomes em ensaios oncológicos", en: "DC-EVs present antigens via MHC sustaining adaptive immunity — Dexosomes in oncology trials"}
+        rationale: {pt: "Quando EVs apresentam, então vacina é célula-livre.", en: "When EVs present, vaccine is cell-free."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bacterial outer membrane vesicles:", en: "Bacterial OMVs:"}
+        choices:
+          - {pt: "Vesículas de Neisseria e E. coli liberam LPS e antígenos — base de vacina meningocóccica B (Bexsero)", en: "Neisseria and E. coli vesicles release LPS and antigens — basis of meningococcal B vaccine (Bexsero)"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Vesículas de Neisseria e E. coli liberam LPS e antígenos — base de vacina meningocóccica B (Bexsero)", en: "Neisseria and E. coli vesicles release LPS and antigens — basis of meningococcal B vaccine (Bexsero)"}
+        rationale: {pt: "Quando OMVs vacinam, então proteção amadurece.", en: "When OMVs vaccinate, protection matures."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "EV em neurodegeneração:", en: "EV in neurodegeneration:"}
+        choices:
+          - {pt: "EVs neuronais carregam α-syn, tau e Aβ propagando proteinopatias prion-like via vias perivasculares", en: "Neuronal EVs carry α-syn, tau and Aβ propagating prion-like proteinopathies via perivascular routes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "EVs neuronais carregam α-syn, tau e Aβ propagando proteinopatias prion-like via vias perivasculares", en: "Neuronal EVs carry α-syn, tau and Aβ propagating prion-like proteinopathies via perivascular routes"}
+        rationale: {pt: "Quando EVs viajam, então doença espalha.", en: "When EVs travel, disease spreads."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "EV em cardiac disease:", en: "EV in cardiac disease:"}
+        choices:
+          - {pt: "EVs cardíacas circulantes carregam miRNAs específicos sendo biomarcadores precoces de IAM e insuficiência cardíaca", en: "Circulating cardiac EVs carry specific miRNAs serving as early biomarkers of MI and heart failure"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "EVs cardíacas circulantes carregam miRNAs específicos sendo biomarcadores precoces de IAM e insuficiência cardíaca", en: "Circulating cardiac EVs carry specific miRNAs serving as early biomarkers of MI and heart failure"}
+        rationale: {pt: "Quando EVs circulam, então cardiologia ganha biomarcadores.", en: "When EVs circulate, cardiology gains biomarkers."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "EV-AAV hybrid:", en: "EV-AAV hybrid:"}
+        choices:
+          - {pt: "AAV em EVs (vEVs) reduzem capsid neutralization permitindo redosagem em terapia gênica eficaz humana", en: "AAV in EVs (vEVs) reduce capsid neutralization enabling effective human gene therapy redosing"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "AAV em EVs (vEVs) reduzem capsid neutralization permitindo redosagem em terapia gênica eficaz humana", en: "AAV in EVs (vEVs) reduce capsid neutralization enabling effective human gene therapy redosing"}
+        rationale: {pt: "Quando EV protege AAV, então terapia repete.", en: "When EV protects AAV, therapy repeats."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single EV analysis:", en: "Single EV analysis:"}
+        choices:
+          - {pt: "Nano-flow cytometry, super-res microscopy e SP-IRIS resolvem EVs individualmente revelando heterogeneidade biológica", en: "Nano-flow cytometry, super-res microscopy and SP-IRIS resolve EVs individually revealing biological heterogeneity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Nano-flow cytometry, super-res microscopy e SP-IRIS resolvem EVs individualmente revelando heterogeneidade biológica", en: "Nano-flow cytometry, super-res microscopy and SP-IRIS resolve EVs individually revealing biological heterogeneity"}
+        rationale: {pt: "Quando EVs individualizam, então populações ganham resolução.", en: "When EVs are resolved one-by-one, populations gain resolution."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese de EVs:", en: "EV synthesis:"}
+        choices:
+          - {pt: "EVs são meio nativo de comunicação intercelular — alvos diagnósticos, terapêuticos e veículos de entrega em medicina translacional", en: "EVs are native medium of intercellular communication — diagnostic, therapeutic targets and delivery vehicles in translational medicine"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "EVs são meio nativo de comunicação intercelular — alvos diagnósticos, terapêuticos e veículos de entrega em medicina translacional", en: "EVs are native medium of intercellular communication — diagnostic, therapeutic targets and delivery vehicles in translational medicine"}
+        rationale: {pt: "Quando EVs operam, então biologia ganha mensageiros endógenos.", en: "When EVs operate, biology gains endogenous messengers."}
+        objectives: [biology.evs_biology]
+        difficulty: 5
+target: 20
