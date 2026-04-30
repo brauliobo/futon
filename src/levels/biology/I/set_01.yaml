@@ -1,0 +1,244 @@
+title:
+  pt: "⏳ Hallmarks do envelhecimento"
+  en: "⏳ Hallmarks of aging"
+level: 'I'
+subject: biology
+objectives: [biology.aging_hallmarks]
+difficulty: 5
+authorNotes: "12 hallmarks (López-Otín 2023): instabilidade genômica, atrito telomérico, alterações epigenéticas, perda de proteostase, autofagia, sensing nutrientes, mito, senescência, células-tronco, comunicação intercelular, inflamação crônica, dysbiose."
+example:
+  pt: "Ex.: dano cumulativo → 12 hallmarks interagem → declínio funcional → doenças crônicas e morte."
+  en: "Ex.: cumulative damage → 12 hallmarks interact → functional decline → chronic disease and death."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Os 12 hallmarks", en: "The 12 hallmarks"}
+    description: {pt: "Pilares moleculares do envelhecimento.", en: "Molecular pillars of aging."}
+    exercises:
+      - type: choice
+        question: {pt: "Instabilidade genômica:", en: "Genomic instability:"}
+        choices:
+          - {pt: "Acúmulo de DSBs, mutações somáticas e CHIP cresce com idade aumentando risco de câncer e disfunção", en: "Accumulation of DSBs, somatic mutations and CHIP grows with age raising cancer and dysfunction risk"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Acúmulo de DSBs, mutações somáticas e CHIP cresce com idade aumentando risco de câncer e disfunção", en: "Accumulation of DSBs, somatic mutations and CHIP grows with age raising cancer and dysfunction risk"}
+        rationale: {pt: "Quando dano genômico acumula, então tecidos perdem fidelidade.", en: "When genomic damage accumulates, tissues lose fidelity."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Atrito telomérico:", en: "Telomere attrition:"}
+        choices:
+          - {pt: "Telômeros encurtam a cada divisão até disparar senescência ou apoptose limitando capacidade replicativa", en: "Telomeres shorten each division until triggering senescence or apoptosis capping replicative capacity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Telômeros encurtam a cada divisão até disparar senescência ou apoptose limitando capacidade replicativa", en: "Telomeres shorten each division until triggering senescence or apoptosis capping replicative capacity"}
+        rationale: {pt: "Quando telômeros caem, então clock celular se aproxima do fim.", en: "When telomeres drop, cellular clock nears its end."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Alterações epigenéticas:", en: "Epigenetic alterations:"}
+        choices:
+          - {pt: "DNAm, marcas de histona e organização 3D drift com idade — Horvath clock mede o relógio", en: "DNAm, histone marks and 3D organization drift with age — Horvath clock measures it"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DNAm, marcas de histona e organização 3D drift com idade — Horvath clock mede o relógio", en: "DNAm, histone marks and 3D organization drift with age — Horvath clock measures it"}
+        rationale: {pt: "Quando epigenoma deriva, então identidade celular borra.", en: "When epigenome drifts, cell identity blurs."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Perda de proteostase:", en: "Loss of proteostasis:"}
+        choices:
+          - {pt: "Chaperonas, UPS e autofagia perdem capacidade levando agregados (Aβ, αSyn) a acumular em tecidos pós-mitóticos", en: "Chaperones, UPS and autophagy lose capacity letting aggregates (Aβ, αSyn) accumulate in post-mitotic tissues"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Chaperonas, UPS e autofagia perdem capacidade levando agregados (Aβ, αSyn) a acumular em tecidos pós-mitóticos", en: "Chaperones, UPS and autophagy lose capacity letting aggregates (Aβ, αSyn) accumulate in post-mitotic tissues"}
+        rationale: {pt: "Quando proteostase falha, então neurodegeneração se instala.", en: "When proteostasis fails, neurodegeneration sets in."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Autofagia desabilitada:", en: "Disabled autophagy:"}
+        choices:
+          - {pt: "Mitofagia e CMA caem com idade — restauração farmacológica (espermidina) prolonga vida em modelos", en: "Mitophagy and CMA decline with age — pharmacological restoration (spermidine) extends life in models"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mitofagia e CMA caem com idade — restauração farmacológica (espermidina) prolonga vida em modelos", en: "Mitophagy and CMA decline with age — pharmacological restoration (spermidine) extends life in models"}
+        rationale: {pt: "Quando autofagia volta, então tecidos limpam lixo.", en: "When autophagy returns, tissues clean garbage."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sensing de nutrientes:", en: "Nutrient sensing:"}
+        choices:
+          - {pt: "mTOR, IGF-1, AMPK e sirtuínas integram sinais — restrição calórica e rapamicina prolongam vida em mamíferos", en: "mTOR, IGF-1, AMPK and sirtuins integrate signals — caloric restriction and rapamycin extend mammal life"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "mTOR, IGF-1, AMPK e sirtuínas integram sinais — restrição calórica e rapamicina prolongam vida em mamíferos", en: "mTOR, IGF-1, AMPK and sirtuins integrate signals — caloric restriction and rapamycin extend mammal life"}
+        rationale: {pt: "Quando sensing reseta, então longevidade aumenta.", en: "When sensing resets, longevity rises."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Disfunção mitocondrial:", en: "Mitochondrial dysfunction:"}
+        choices:
+          - {pt: "ETC menos eficiente, mais ROS e mtDNA mutado degradam metabolismo — NAD+/NMN está em testes humanos", en: "Less efficient ETC, more ROS and mtDNA mutations degrade metabolism — NAD+/NMN is in human trials"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ETC menos eficiente, mais ROS e mtDNA mutado degradam metabolismo — NAD+/NMN está em testes humanos", en: "Less efficient ETC, more ROS and mtDNA mutations degrade metabolism — NAD+/NMN is in human trials"}
+        rationale: {pt: "Quando mito declinam, então energia tecidual cai.", en: "When mito decline, tissue energy falls."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Senescência celular:", en: "Cellular senescence:"}
+        choices:
+          - {pt: "Células senescentes acumulam com idade liberando SASP pró-inflamatório — senolíticos (D+Q) reduzem morbidade em modelos", en: "Senescent cells accumulate with age releasing pro-inflammatory SASP — senolytics (D+Q) reduce morbidity in models"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Células senescentes acumulam com idade liberando SASP pró-inflamatório — senolíticos (D+Q) reduzem morbidade em modelos", en: "Senescent cells accumulate with age releasing pro-inflammatory SASP — senolytics (D+Q) reduce morbidity in models"}
+        rationale: {pt: "Quando senescentes saem, então tecidos rejuvenescem.", en: "When senescent leave, tissues rejuvenate."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Exaustão de células-tronco:", en: "Stem cell exhaustion:"}
+        choices:
+          - {pt: "HSCs e MuSCs perdem autorrenovação com idade — Wnt/Notch dirigem rejuvenescimento em modelos", en: "HSCs and MuSCs lose self-renewal with age — Wnt/Notch drive rejuvenation in models"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "HSCs e MuSCs perdem autorrenovação com idade — Wnt/Notch dirigem rejuvenescimento em modelos", en: "HSCs and MuSCs lose self-renewal with age — Wnt/Notch drive rejuvenation in models"}
+        rationale: {pt: "Quando stem cells caem, então reparo tecidual fica lento.", en: "When stem cells drop, tissue repair slows."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inflamação crônica (inflammaging):", en: "Chronic inflammation (inflammaging):"}
+        choices:
+          - {pt: "Estado pró-inflamatório basal aumenta com idade impulsionado por SASP, microbioma e cGAS-STING", en: "Basal pro-inflammatory state rises with age driven by SASP, microbiome and cGAS-STING"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Estado pró-inflamatório basal aumenta com idade impulsionado por SASP, microbioma e cGAS-STING", en: "Basal pro-inflammatory state rises with age driven by SASP, microbiome and cGAS-STING"}
+        rationale: {pt: "Quando inflamação é crônica, então comorbidades crescem juntas.", en: "When inflammation is chronic, comorbidities grow together."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Intervenções e fronteiras", en: "Interventions and frontiers"}
+    description: {pt: "Como adiar o envelhecimento.", en: "How to delay aging."}
+    exercises:
+      - type: choice
+        question: {pt: "Disbiose intestinal:", en: "Gut dysbiosis:"}
+        choices:
+          - {pt: "Microbioma diversifica e acumula patobiontes com idade — FMT de jovem rejuvenesce eixo intestino-cérebro em ratos", en: "Microbiome diversifies and accumulates pathobionts with age — young FMT rejuvenates gut-brain axis in mice"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Microbioma diversifica e acumula patobiontes com idade — FMT de jovem rejuvenesce eixo intestino-cérebro em ratos", en: "Microbiome diversifies and accumulates pathobionts with age — young FMT rejuvenates gut-brain axis in mice"}
+        rationale: {pt: "Quando microbioma muda, então sistemas distantes recebem sinais.", en: "When microbiome shifts, distant systems get signals."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Comunicação intercelular alterada:", en: "Altered intercellular communication:"}
+        choices:
+          - {pt: "Hormônios, citocinas e exossomos circulantes mudam — parabiose mostra que sangue jovem revigora tecidos velhos", en: "Hormones, cytokines and circulating exosomes shift — parabiosis shows young blood revives old tissues"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Hormônios, citocinas e exossomos circulantes mudam — parabiose mostra que sangue jovem revigora tecidos velhos", en: "Hormones, cytokines and circulating exosomes shift — parabiosis shows young blood revives old tissues"}
+        rationale: {pt: "Quando sinais sistêmicos viajam, então envelhecimento é compartilhado.", en: "When systemic signals travel, aging becomes shared."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Rapamicina:", en: "Rapamycin:"}
+        choices:
+          - {pt: "Inibidor de mTORC1 prolongou vida em camundongos com 20% mesmo iniciado em idade adulta — ITP múltiplo", en: "mTORC1 inhibitor extended mouse lifespan ~20% even started in adulthood — multiple ITP studies"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Inibidor de mTORC1 prolongou vida em camundongos com 20% mesmo iniciado em idade adulta — ITP múltiplo", en: "mTORC1 inhibitor extended mouse lifespan ~20% even started in adulthood — multiple ITP studies"}
+        rationale: {pt: "Quando mTOR baixa, então autofagia age e tempo aumenta.", en: "When mTOR drops, autophagy acts and lifespan grows."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Senolíticos D+Q:", en: "D+Q senolytics:"}
+        choices:
+          - {pt: "Dasatinib + quercetina remove senescentes em humanos com fibrose pulmonar idiopática reduzindo SASP medido", en: "Dasatinib + quercetin clears senescents in human idiopathic pulmonary fibrosis lowering measured SASP"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Dasatinib + quercetina remove senescentes em humanos com fibrose pulmonar idiopática reduzindo SASP medido", en: "Dasatinib + quercetin clears senescents in human idiopathic pulmonary fibrosis lowering measured SASP"}
+        rationale: {pt: "Quando senolíticos atuam, então morbidade tecidual desce.", en: "When senolytics act, tissue morbidity falls."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Restrição calórica:", en: "Caloric restriction:"}
+        choices:
+          - {pt: "20-40% redução prolongou vida e healthspan em primatas (Wisconsin/NIA) — CALERIE em humanos confirmou biomarcadores", en: "20-40% reduction extended primate lifespan and healthspan (Wisconsin/NIA) — CALERIE confirmed biomarkers in humans"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "20-40% redução prolongou vida e healthspan em primatas (Wisconsin/NIA) — CALERIE em humanos confirmou biomarcadores", en: "20-40% reduction extended primate lifespan and healthspan (Wisconsin/NIA) — CALERIE confirmed biomarkers in humans"}
+        rationale: {pt: "Quando dieta reduz, então sinais de longevidade ativam.", en: "When diet reduces, longevity signals activate."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Metformina (TAME):", en: "Metformin (TAME):"}
+        choices:
+          - {pt: "Ensaio TAME testa se metformina retarda eventos relacionados ao envelhecimento — primeiro RCT geroterapêutico", en: "TAME trial tests whether metformin delays aging-related events — first geroprotective RCT"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Ensaio TAME testa se metformina retarda eventos relacionados ao envelhecimento — primeiro RCT geroterapêutico", en: "TAME trial tests whether metformin delays aging-related events — first geroprotective RCT"}
+        rationale: {pt: "Quando RCT roda, então geroterapia entra na clínica.", en: "When RCT runs, geroscience enters the clinic."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GDF11/15 e parabiose:", en: "GDF11/15 and parabiosis:"}
+        choices:
+          - {pt: "Fatores circulantes (GDF11) e plasma jovem rejuvenescem cérebro e músculo em camundongos — Alkahest e outras testam em humanos", en: "Circulating factors (GDF11) and young plasma rejuvenate brain and muscle in mice — Alkahest et al. test in humans"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fatores circulantes (GDF11) e plasma jovem rejuvenescem cérebro e músculo em camundongos — Alkahest e outras testam em humanos", en: "Circulating factors (GDF11) and young plasma rejuvenate brain and muscle in mice — Alkahest et al. test in humans"}
+        rationale: {pt: "Quando fatores viajam, então rejuvenescimento sistêmico testa-se.", en: "When factors travel, systemic rejuvenation gets tested."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Geroprotectores naturais:", en: "Natural geroprotectors:"}
+        choices:
+          - {pt: "Espermidina, fisetin e urolithin A modulam autofagia e mitofagia em humanos com benefícios em mitocôndrias musculares", en: "Spermidine, fisetin and urolithin A modulate autophagy and mitophagy in humans with muscle-mitochondria benefit"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Espermidina, fisetin e urolithin A modulam autofagia e mitofagia em humanos com benefícios em mitocôndrias musculares", en: "Spermidine, fisetin and urolithin A modulate autophagy and mitophagy in humans with muscle-mitochondria benefit"}
+        rationale: {pt: "Quando moléculas naturais agem, então geroterapia chega via dieta.", en: "When natural molecules act, geroscience arrives via diet."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Exercise mimetics:", en: "Exercise mimetics:"}
+        choices:
+          - {pt: "AMPK ativadores e PGC-1α-induzidores buscam mimetizar benefícios do exercício em pacientes incapazes de treinar", en: "AMPK activators and PGC-1α inducers aim to mimic exercise benefits in patients unable to train"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "AMPK ativadores e PGC-1α-induzidores buscam mimetizar benefícios do exercício em pacientes incapazes de treinar", en: "AMPK activators and PGC-1α inducers aim to mimic exercise benefits in patients unable to train"}
+        rationale: {pt: "Quando mimetismo funciona, então benefício chega a quem mais precisa.", en: "When mimicry works, benefit reaches those who need it most."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese dos hallmarks:", en: "Hallmarks synthesis:"}
+        choices:
+          - {pt: "12 hallmarks integrados explicam fisiologia do envelhecimento abrindo alvos farmacológicos contra doenças crônicas idade-dependentes", en: "12 integrated hallmarks explain aging physiology opening drug targets against age-dependent chronic diseases"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "12 hallmarks integrados explicam fisiologia do envelhecimento abrindo alvos farmacológicos contra doenças crônicas idade-dependentes", en: "12 integrated hallmarks explain aging physiology opening drug targets against age-dependent chronic diseases"}
+        rationale: {pt: "Quando hallmarks são alvos, então geroterapia muda saúde pública.", en: "When hallmarks are targets, geroscience reshapes public health."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+target: 20
