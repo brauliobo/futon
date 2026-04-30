@@ -1,0 +1,244 @@
+title:
+  pt: "⌚ Biossensores wearable e monitoramento contínuo"
+  en: "⌚ Wearable biosensors and continuous monitoring"
+level: 'M'
+subject: biology
+objectives: [biology.wearable_biosensors]
+difficulty: 5
+authorNotes: "Apple Watch ECG/AFib, CGM Dexcom Libre, Oura ring, Whoop, sweat lactate, microneedle interstitial, BP cuffless, ePatch ECG, Empatica, EEG dry electrode, fall detection, AI ECG."
+example:
+  pt: "Ex.: paciente Watch detect AF paroxismal → cardiologist confirm via 12-lead → DOAC iniciado → AVC prevenido."
+  en: "Ex.: patient Watch detects paroxysmal AF → cardiologist confirms via 12-lead → DOAC started → stroke prevented."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas wearable", en: "Wearable platforms"}
+    description: {pt: "Como sensores monitoram fisiologia.", en: "How sensors monitor physiology."}
+    exercises:
+      - type: choice
+        question: {pt: "Apple Watch ECG:", en: "Apple Watch ECG:"}
+        choices:
+          - {pt: "Single-lead ECG via Digital Crown + photoplethysmography detecta AF paroxismal — Apple Heart Study 2019 e Fitbit AF Detection FDA-cleared identificam AF acionável clinicamente em consumer-grade", en: "Single-lead ECG via Digital Crown + photoplethysmography detects paroxysmal AF — Apple Heart Study 2019 and Fitbit AF Detection FDA-cleared identify clinically actionable AF in consumer-grade"}
+          - {pt: "Apple Watch ECG é restrito a 12-lead sem componente single-lead sendo Apple Heart Study inviável em qualquer paciente AF humano clínico moderno em 2024", en: "Apple Watch ECG is restricted to 12-lead without single-lead component with Apple Heart Study infeasible in any modern clinical AF human patient in 2024"}
+          - {pt: "Photoplethysmography é teórico sem evidência sendo Apple Watch inviável em qualquer aplicação humana clínica moderna em 2024", en: "Photoplethysmography is theoretical without evidence with Apple Watch infeasible in any modern clinical human application in 2024"}
+          - {pt: "Paroxysmal AF é incompatível com Watch sendo Fitbit AF Detection inviável em qualquer paciente humano clínico moderno em 2024", en: "Paroxysmal AF is incompatible with Watch with Fitbit AF Detection infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Single-lead ECG via Digital Crown + photoplethysmography detecta AF paroxismal — Apple Heart Study 2019 e Fitbit AF Detection FDA-cleared identificam AF acionável clinicamente em consumer-grade", en: "Single-lead ECG via Digital Crown + photoplethysmography detects paroxysmal AF — Apple Heart Study 2019 and Fitbit AF Detection FDA-cleared identify clinically actionable AF in consumer-grade"}
+        rationale: {pt: "Quando relógio captura AF, então AVC pode ser prevenido cedo.", en: "When watch captures AF, stroke can be prevented early."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CGM continuous:", en: "CGM continuous:"}
+        choices:
+          - {pt: "Dexcom G7, Abbott Libre 3 mede interstitial glucose 1-min real-time em adesivo cutâneo 10-14 days — TIR 70% target moderno T1D + insulin-T2D, expand non-diabetic wellness OTC 2024", en: "Dexcom G7, Abbott Libre 3 measure interstitial glucose every 1 min real-time in 10-14-day skin patch — 70% TIR target modern T1D + insulin-T2D, expand non-diabetic wellness OTC 2024"}
+          - {pt: "CGM é restrito a fingerstick sem componente continuous sendo Dexcom G7 inviável em qualquer paciente T1D humano clínico moderno em 2024", en: "CGM is restricted to fingerstick without continuous component with Dexcom G7 infeasible in any modern clinical T1D human patient in 2024"}
+          - {pt: "Interstitial glucose é incompatível com CGM sendo Libre 3 inviável tecnicamente em qualquer paciente humano clínico moderno em 2024", en: "Interstitial glucose is incompatible with CGM with Libre 3 technically infeasible in any modern clinical human patient in 2024"}
+          - {pt: "70% TIR é teórico sem evidência sendo modern standard inviável em qualquer paciente humano clínico moderno em 2024", en: "70% TIR is theoretical without evidence with modern standard infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Dexcom G7, Abbott Libre 3 mede interstitial glucose 1-min real-time em adesivo cutâneo 10-14 days — TIR 70% target moderno T1D + insulin-T2D, expand non-diabetic wellness OTC 2024", en: "Dexcom G7, Abbott Libre 3 measure interstitial glucose every 1 min real-time in 10-14-day skin patch — 70% TIR target modern T1D + insulin-T2D, expand non-diabetic wellness OTC 2024"}
+        rationale: {pt: "Quando glicose é vista em tempo real, então decisão fica imediata.", en: "When glucose is seen in real time, decision is immediate."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Oura/Whoop sleep:", en: "Oura/Whoop sleep:"}
+        choices:
+          - {pt: "Oura ring + Whoop strap medem HR + HRV + sleep stage + skin temp + SpO2 derivando readiness/recovery score — proxy autonomic nervous system + circadian + ovarian/menstrual cycle tracking", en: "Oura ring + Whoop strap measure HR + HRV + sleep stage + skin temp + SpO2 deriving readiness/recovery score — proxy autonomic nervous system + circadian + ovarian/menstrual cycle tracking"}
+          - {pt: "Oura/Whoop é restrito a heart rate sem componente HRV sendo wearables inviáveis em qualquer aplicação clínica humana moderna em 2024", en: "Oura/Whoop is restricted to heart rate without HRV component with wearables infeasible in any modern clinical human application in 2024"}
+          - {pt: "Sleep stage é teórico sem evidência sendo Whoop inviável em qualquer aplicação humana clínica moderna em 2024", en: "Sleep stage is theoretical without evidence with Whoop infeasible in any modern clinical human application in 2024"}
+          - {pt: "Skin temp é incompatível com wearable sendo SpO2 inviável em qualquer aplicação humana clínica moderna em 2024", en: "Skin temp is incompatible with wearable with SpO2 infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Oura ring + Whoop strap medem HR + HRV + sleep stage + skin temp + SpO2 derivando readiness/recovery score — proxy autonomic nervous system + circadian + ovarian/menstrual cycle tracking", en: "Oura ring + Whoop strap measure HR + HRV + sleep stage + skin temp + SpO2 deriving readiness/recovery score — proxy autonomic nervous system + circadian + ovarian/menstrual cycle tracking"}
+        rationale: {pt: "Quando ring lê fisiologia, então recovery vira mensurável.", en: "When ring reads physiology, recovery turns measurable."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sweat biosensor:", en: "Sweat biosensor:"}
+        choices:
+          - {pt: "Wearable patch sweat lactate, Na+/K+, glucose, cortisol, ethanol via electrochemical/colorimetric — Stanford Gao Lab, Eccrine Systems, Epicore commercialize cystic fibrosis sweat test continuous", en: "Wearable sweat patch lactate, Na+/K+, glucose, cortisol, ethanol via electrochemical/colorimetric — Stanford Gao Lab, Eccrine Systems, Epicore commercialize continuous cystic fibrosis sweat test"}
+          - {pt: "Sweat biosensor é restrito a saliva sem componente sweat sendo Stanford Gao Lab inviável em qualquer aplicação clínica humana moderna em 2024", en: "Sweat biosensor is restricted to saliva without sweat component with Stanford Gao Lab infeasible in any modern clinical human application in 2024"}
+          - {pt: "Lactate é teórico sem evidência sendo electrochemical inviável em qualquer paciente humano clínico moderno em 2024", en: "Lactate is theoretical without evidence with electrochemical infeasible in any modern clinical human patient in 2024"}
+          - {pt: "Cortisol é incompatível com sweat sendo Eccrine Systems inviável em qualquer aplicação humana clínica moderna em 2024", en: "Cortisol is incompatible with sweat with Eccrine Systems infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Wearable patch sweat lactate, Na+/K+, glucose, cortisol, ethanol via electrochemical/colorimetric — Stanford Gao Lab, Eccrine Systems, Epicore commercialize cystic fibrosis sweat test continuous", en: "Wearable sweat patch lactate, Na+/K+, glucose, cortisol, ethanol via electrochemical/colorimetric — Stanford Gao Lab, Eccrine Systems, Epicore commercialize continuous cystic fibrosis sweat test"}
+        rationale: {pt: "Quando suor é monitorado, então saúde metabólica fala.", en: "When sweat is monitored, metabolic health speaks."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microneedle interstitial:", en: "Microneedle interstitial:"}
+        choices:
+          - {pt: "Microneedle array <500 µm penetra epiderme acessando interstitial fluid sem dor — multi-analyte glucose/lactate/IL-6/cortisol monitoring, smart drug delivery formato emergem 2024", en: "Microneedle array <500 µm penetrates epidermis accessing interstitial fluid painlessly — multi-analyte glucose/lactate/IL-6/cortisol monitoring, smart-drug-delivery format emerging 2024"}
+          - {pt: "Microneedle é restrito a hipodérmico sem componente epiderme sendo microneedle array inviável em qualquer aplicação clínica humana moderna em 2024", en: "Microneedle is restricted to hypodermic without epidermis component with microneedle array infeasible in any modern clinical human application in 2024"}
+          - {pt: "Interstitial fluid é teórico sem evidência sendo multi-analyte inviável em qualquer paciente humano clínico moderno em 2024", en: "Interstitial fluid is theoretical without evidence with multi-analyte infeasible in any modern clinical human patient in 2024"}
+          - {pt: "Smart drug delivery é incompatível com microneedle sendo array inviável em qualquer aplicação humana clínica moderna em 2024", en: "Smart drug delivery is incompatible with microneedle with array infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Microneedle array <500 µm penetra epiderme acessando interstitial fluid sem dor — multi-analyte glucose/lactate/IL-6/cortisol monitoring, smart drug delivery formato emergem 2024", en: "Microneedle array <500 µm penetrates epidermis accessing interstitial fluid painlessly — multi-analyte glucose/lactate/IL-6/cortisol monitoring, smart-drug-delivery format emerging 2024"}
+        rationale: {pt: "Quando microagulha penetra suave, então interstitial fala sem dor.", en: "When microneedle penetrates softly, interstitial speaks without pain."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cuffless BP:", en: "Cuffless BP:"}
+        choices:
+          - {pt: "Aktiia, Valencell, Movano cuffless BP via PPG + arterial transit time + ML algorithm em watch/ring formato — pendente FDA accuracy validation, contínuous BP monitoring sem infl cuff inflation", en: "Aktiia, Valencell, Movano cuffless BP via PPG + arterial transit time + ML algorithm in watch/ring form — pending FDA accuracy validation, continuous BP monitoring without inflation cuff"}
+          - {pt: "Cuffless BP é restrito a sphygmomanometer sem componente PPG sendo Aktiia inviável em qualquer paciente HTN humano clínico moderno em 2024", en: "Cuffless BP is restricted to sphygmomanometer without PPG component with Aktiia infeasible in any modern clinical HTN human patient in 2024"}
+          - {pt: "Arterial transit time é teórico sem evidência sendo Valencell inviável em qualquer aplicação humana clínica moderna em 2024", en: "Arterial transit time is theoretical without evidence with Valencell infeasible in any modern clinical human application in 2024"}
+          - {pt: "ML algorithm é incompatível com BP sendo Movano inviável em qualquer paciente humano clínico moderno em 2024", en: "ML algorithm is incompatible with BP with Movano infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Aktiia, Valencell, Movano cuffless BP via PPG + arterial transit time + ML algorithm em watch/ring formato — pendente FDA accuracy validation, contínuous BP monitoring sem infl cuff inflation", en: "Aktiia, Valencell, Movano cuffless BP via PPG + arterial transit time + ML algorithm in watch/ring form — pending FDA accuracy validation, continuous BP monitoring without inflation cuff"}
+        rationale: {pt: "Quando BP fica contínuo sem cuff, então HTN é tratada precisão.", en: "When BP turns continuous without cuff, HTN is treated precisely."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ePatch ECG long-term:", en: "ePatch ECG long-term:"}
+        choices:
+          - {pt: "iRhythm Zio Patch, BardyDx, BioSense BodyGuardian 7-30 dias adesivo single-lead ECG — capture cardiac arrhythmia paroxysmal cryptogenic stroke evaluation com diagnostic yield superior Holter 24h", en: "iRhythm Zio Patch, BardyDx, BioSense BodyGuardian 7-30 days adhesive single-lead ECG — captures paroxysmal cardiac arrhythmia in cryptogenic stroke evaluation with superior diagnostic yield vs 24h Holter"}
+          - {pt: "ePatch é restrito a 12-lead sem componente single-lead sendo iRhythm Zio inviável em qualquer paciente humano clínico moderno em 2024", en: "ePatch is restricted to 12-lead without single-lead component with iRhythm Zio infeasible in any modern clinical human patient in 2024"}
+          - {pt: "Cryptogenic stroke é teórico sem evidência sendo BardyDx inviável em qualquer aplicação humana clínica moderna em 2024", en: "Cryptogenic stroke is theoretical without evidence with BardyDx infeasible in any modern clinical human application in 2024"}
+          - {pt: "Holter 24h é superior sendo BioSense BodyGuardian contraindicado em qualquer paciente humano clínico moderno em 2024", en: "24h Holter is superior with BioSense BodyGuardian contraindicated in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "iRhythm Zio Patch, BardyDx, BioSense BodyGuardian 7-30 dias adesivo single-lead ECG — capture cardiac arrhythmia paroxysmal cryptogenic stroke evaluation com diagnostic yield superior Holter 24h", en: "iRhythm Zio Patch, BardyDx, BioSense BodyGuardian 7-30 days adhesive single-lead ECG — captures paroxysmal cardiac arrhythmia in cryptogenic stroke evaluation with superior diagnostic yield vs 24h Holter"}
+        rationale: {pt: "Quando ECG dura 30 dias, então paroxismo aparece.", en: "When ECG lasts 30 days, paroxysm shows up."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Empatica seizure:", en: "Empatica seizure:"}
+        choices:
+          - {pt: "Empatica Embrace2 detecta tonic-clonic seizure via accelerometer + EDA (electrodermal activity) — FDA 2018 cleared epilepsy monitor, alerta caregiver para SUDEP risk reduction", en: "Empatica Embrace2 detects tonic-clonic seizure via accelerometer + EDA (electrodermal activity) — FDA 2018 cleared epilepsy monitor, alerts caregiver for SUDEP risk reduction"}
+          - {pt: "Empatica é restrito a EEG sem componente accelerometer sendo Embrace2 inviável em qualquer paciente epilepsia humano clínico moderno em 2024", en: "Empatica is restricted to EEG without accelerometer component with Embrace2 infeasible in any modern clinical epilepsy human patient in 2024"}
+          - {pt: "EDA é teórico sem evidência sendo Embrace2 inviável em qualquer aplicação humana clínica moderna em 2024", en: "EDA is theoretical without evidence with Embrace2 infeasible in any modern clinical human application in 2024"}
+          - {pt: "SUDEP é incompatível com Empatica sendo seizure detection inviável em qualquer paciente humano clínico moderno em 2024", en: "SUDEP is incompatible with Empatica with seizure detection infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Empatica Embrace2 detecta tonic-clonic seizure via accelerometer + EDA (electrodermal activity) — FDA 2018 cleared epilepsy monitor, alerta caregiver para SUDEP risk reduction", en: "Empatica Embrace2 detects tonic-clonic seizure via accelerometer + EDA (electrodermal activity) — FDA 2018 cleared epilepsy monitor, alerts caregiver for SUDEP risk reduction"}
+        rationale: {pt: "Quando convulsão é detectada, então caregiver é alertado.", en: "When seizure is detected, caregiver is alerted."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dry electrode EEG:", en: "Dry electrode EEG:"}
+        choices:
+          - {pt: "Muse, Emotiv, Neurable, Wearable Sensing dry-electrode EEG eliminam gel conductivo — neurofeedback, BCI consumer, sleep staging consumer-grade emergem em 2024 wearable EEG marketplace", en: "Muse, Emotiv, Neurable, Wearable Sensing dry-electrode EEG remove conductive gel — neurofeedback, consumer BCI, consumer-grade sleep staging emerge in 2024 wearable EEG marketplace"}
+          - {pt: "Dry electrode é restrito a wet gel sem componente dry sendo Muse inviável em qualquer aplicação clínica humana moderna em 2024", en: "Dry electrode is restricted to wet gel without dry component with Muse infeasible in any modern clinical human application in 2024"}
+          - {pt: "Neurofeedback é teórico sem evidência sendo Emotiv inviável em qualquer aplicação humana clínica moderna em 2024", en: "Neurofeedback is theoretical without evidence with Emotiv infeasible in any modern clinical human application in 2024"}
+          - {pt: "Consumer BCI é incompatível com EEG sendo Neurable inviável em qualquer aplicação humana clínica moderna em 2024", en: "Consumer BCI is incompatible with EEG with Neurable infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Muse, Emotiv, Neurable, Wearable Sensing dry-electrode EEG eliminam gel conductivo — neurofeedback, BCI consumer, sleep staging consumer-grade emergem em 2024 wearable EEG marketplace", en: "Muse, Emotiv, Neurable, Wearable Sensing dry-electrode EEG remove conductive gel — neurofeedback, consumer BCI, consumer-grade sleep staging emerge in 2024 wearable EEG marketplace"}
+        rationale: {pt: "Quando eletrodo seca, então EEG vira consumer.", en: "When electrode dries, EEG becomes consumer."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AI ECG hidden HF:", en: "AI ECG hidden HF:"}
+        choices:
+          - {pt: "Mayo Clinic deep-learning ECG-AI detecta low LVEF (HFrEF), hyperkalemia, AF risk em standard 12-lead ECG — predicts asymptomatic HF anos antes echocardiogram (Attia 2019/2024)", en: "Mayo Clinic deep-learning ECG-AI detects low LVEF (HFrEF), hyperkalemia, AF risk on standard 12-lead ECG — predicts asymptomatic HF years before echocardiogram (Attia 2019/2024)"}
+          - {pt: "AI ECG é restrito a manual reading sem componente AI sendo Mayo Clinic inviável em qualquer aplicação cardiovascular humana clínica moderna em 2024", en: "AI ECG is restricted to manual reading without AI component with Mayo Clinic infeasible in any modern clinical human cardiovascular application in 2024"}
+          - {pt: "Low LVEF é teórico sem evidência sendo Attia 2019 inviável em qualquer paciente humano clínico moderno em 2024", en: "Low LVEF is theoretical without evidence with Attia 2019 infeasible in any modern clinical human patient in 2024"}
+          - {pt: "Asymptomatic HF é incompatível com ECG sendo deep-learning inviável em qualquer aplicação humana clínica moderna em 2024", en: "Asymptomatic HF is incompatible with ECG with deep-learning infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Mayo Clinic deep-learning ECG-AI detecta low LVEF (HFrEF), hyperkalemia, AF risk em standard 12-lead ECG — predicts asymptomatic HF anos antes echocardiogram (Attia 2019/2024)", en: "Mayo Clinic deep-learning ECG-AI detects low LVEF (HFrEF), hyperkalemia, AF risk on standard 12-lead ECG — predicts asymptomatic HF years before echocardiogram (Attia 2019/2024)"}
+        rationale: {pt: "Quando AI lê ECG, então HF assintomática é flagada cedo.", en: "When AI reads ECG, asymptomatic HF gets flagged early."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações clínicas wearable", en: "Clinical wearable applications"}
+    description: {pt: "Da casa ao hospital.", en: "From home to hospital."}
+    exercises:
+      - type: choice
+        question: {pt: "RPM Medicare:", en: "Medicare RPM:"}
+        choices:
+          - {pt: "Remote Patient Monitoring CMS billing codes 99453/99454/99457/99458 viabilizam reimbursement para wearable BP, weight, CGM em CHF, T2D, HTN — Livongo, Teladoc, Babylon adoption em saúde populacional", en: "Remote Patient Monitoring CMS billing codes 99453/99454/99457/99458 enable reimbursement for wearable BP, weight, CGM in CHF, T2D, HTN — Livongo, Teladoc, Babylon adoption in population health"}
+          - {pt: "RPM é restrito a hospital sem componente remote sendo CMS billing inviável em qualquer paciente humano clínico moderno em 2024", en: "RPM is restricted to hospital without remote component with CMS billing infeasible in any modern clinical human patient in 2024"}
+          - {pt: "99453/99454 é teórico sem evidência sendo CMS inviável em qualquer aplicação humana clínica moderna em 2024", en: "99453/99454 is theoretical without evidence with CMS infeasible in any modern clinical human application in 2024"}
+          - {pt: "Livongo é incompatível com RPM sendo Teladoc inviável em qualquer aplicação humana clínica moderna em 2024", en: "Livongo is incompatible with RPM with Teladoc infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Remote Patient Monitoring CMS billing codes 99453/99454/99457/99458 viabilizam reimbursement para wearable BP, weight, CGM em CHF, T2D, HTN — Livongo, Teladoc, Babylon adoption em saúde populacional", en: "Remote Patient Monitoring CMS billing codes 99453/99454/99457/99458 enable reimbursement for wearable BP, weight, CGM in CHF, T2D, HTN — Livongo, Teladoc, Babylon adoption in population health"}
+        rationale: {pt: "Quando reimbursement existe, então wearable escala em saúde pública.", en: "When reimbursement exists, wearable scales in public health."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pulse oximetry COVID:", en: "Pulse oximetry COVID:"}
+        choices:
+          - {pt: "SpO2 home pulse oximetry guiou COVID-19 hospitalization decision em 'silent hypoxemia' triagem — Apple Watch SpO2 + Masimo SET algorithm + Owlet Smart Sock infant detect hipoxia em casa", en: "Home SpO2 pulse oximetry guided COVID-19 hospitalization in 'silent hypoxemia' triage — Apple Watch SpO2 + Masimo SET algorithm + Owlet Smart Sock infant detect home hypoxia"}
+          - {pt: "Pulse oximetry é restrito a hospital sem componente home sendo Masimo SET inviável em qualquer paciente COVID humano clínico moderno em 2024", en: "Pulse oximetry is restricted to hospital without home component with Masimo SET infeasible in any modern clinical COVID human patient in 2024"}
+          - {pt: "Silent hypoxemia é teórico sem evidência sendo Apple Watch SpO2 inviável em qualquer aplicação humana clínica moderna em 2024", en: "Silent hypoxemia is theoretical without evidence with Apple Watch SpO2 infeasible in any modern clinical human application in 2024"}
+          - {pt: "Owlet é incompatível com infant SpO2 sendo Smart Sock inviável em qualquer aplicação humana clínica moderna em 2024", en: "Owlet is incompatible with infant SpO2 with Smart Sock infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "SpO2 home pulse oximetry guiou COVID-19 hospitalization decision em 'silent hypoxemia' triagem — Apple Watch SpO2 + Masimo SET algorithm + Owlet Smart Sock infant detect hipoxia em casa", en: "Home SpO2 pulse oximetry guided COVID-19 hospitalization in 'silent hypoxemia' triage — Apple Watch SpO2 + Masimo SET algorithm + Owlet Smart Sock infant detect home hypoxia"}
+        rationale: {pt: "Quando SpO2 cai em casa, então hospital chama.", en: "When SpO2 falls at home, hospital is called."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fall detection:", en: "Fall detection:"}
+        choices:
+          - {pt: "Apple Watch Series 4+ + Pixel Watch + Lively detect fall via accelerometer + gyroscope + auto-call emergency contact em ≥3 sec sem-resposta — geriatria autonomous safety monitor", en: "Apple Watch Series 4+ + Pixel Watch + Lively detect fall via accelerometer + gyroscope + auto-call emergency contact at ≥3 sec no-response — geriatric autonomous safety monitor"}
+          - {pt: "Fall detection é restrito a button-press sem componente accelerometer sendo Apple Watch inviável em qualquer paciente geriátrico humano clínico moderno em 2024", en: "Fall detection is restricted to button-press without accelerometer component with Apple Watch infeasible in any modern clinical geriatric human patient in 2024"}
+          - {pt: "Pixel Watch é teórico sem evidência sendo Lively inviável em qualquer aplicação geriátrica humana clínica moderna em 2024", en: "Pixel Watch is theoretical without evidence with Lively infeasible in any modern clinical geriatric human application in 2024"}
+          - {pt: "Auto-call emergency é incompatível com fall detection sendo gyroscope inviável em qualquer paciente humano clínico moderno em 2024", en: "Auto-call emergency is incompatible with fall detection with gyroscope infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Apple Watch Series 4+ + Pixel Watch + Lively detect fall via accelerometer + gyroscope + auto-call emergency contact em ≥3 sec sem-resposta — geriatria autonomous safety monitor", en: "Apple Watch Series 4+ + Pixel Watch + Lively detect fall via accelerometer + gyroscope + auto-call emergency contact at ≥3 sec no-response — geriatric autonomous safety monitor"}
+        rationale: {pt: "Quando queda é detectada, então emergência é chamada sozinha.", en: "When fall is detected, emergency is called automatically."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Stretchable e-skin:", en: "Stretchable e-skin:"}
+        choices:
+          - {pt: "Bao Stanford, Rogers Northwestern stretchable epidermal electronics conformable a skin medem ECG, EMG, EEG, sweat, BP simultaneamente — Lab-on-Skin platform multi-modal contínua", en: "Bao Stanford, Rogers Northwestern stretchable epidermal electronics conformable to skin measure ECG, EMG, EEG, sweat, BP simultaneously — Lab-on-Skin multi-modal continuous platform"}
+          - {pt: "Stretchable e-skin é restrito a rigid sensor sem componente flexible sendo Bao Stanford inviável em qualquer aplicação clínica humana moderna em 2024", en: "Stretchable e-skin is restricted to rigid sensor without flexible component with Bao Stanford infeasible in any modern clinical human application in 2024"}
+          - {pt: "Conformable é teórico sem evidência sendo Rogers Northwestern inviável em qualquer aplicação humana clínica moderna em 2024", en: "Conformable is theoretical without evidence with Rogers Northwestern infeasible in any modern clinical human application in 2024"}
+          - {pt: "Lab-on-Skin é incompatível com multi-modal sendo platform inviável em qualquer aplicação humana clínica moderna em 2024", en: "Lab-on-Skin is incompatible with multi-modal with platform infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Bao Stanford, Rogers Northwestern stretchable epidermal electronics conformable a skin medem ECG, EMG, EEG, sweat, BP simultaneamente — Lab-on-Skin platform multi-modal contínua", en: "Bao Stanford, Rogers Northwestern stretchable epidermal electronics conformable to skin measure ECG, EMG, EEG, sweat, BP simultaneously — Lab-on-Skin multi-modal continuous platform"}
+        rationale: {pt: "Quando eletrônica acompanha pele, então fisiologia vira holística.", en: "When electronics follow skin, physiology turns holistic."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Smart toilet:", en: "Smart toilet:"}
+        choices:
+          - {pt: "Stanford Park-Pruthi Smart Toilet 2020 detecta polyp/CRC, urinary urinary infection, glucose-uria, kidney function via stool/urine sensor + image — daily passive screening home health", en: "Stanford Park-Pruthi 2020 Smart Toilet detects polyp/CRC, urinary infection, glucosuria, kidney function via stool/urine sensor + image — daily passive home-health screening"}
+          - {pt: "Smart toilet é restrito a clinic sem componente home sendo Stanford Park-Pruthi inviável em qualquer aplicação clínica humana moderna em 2024", en: "Smart toilet is restricted to clinic without home component with Stanford Park-Pruthi infeasible in any modern clinical human application in 2024"}
+          - {pt: "Polyp/CRC é teórico sem evidência sendo Smart Toilet inviável em qualquer paciente humano clínico moderno em 2024", en: "Polyp/CRC is theoretical without evidence with Smart Toilet infeasible in any modern clinical human patient in 2024"}
+          - {pt: "Glucosuria é incompatível com toilet sensor sendo image analysis inviável em qualquer aplicação humana clínica moderna em 2024", en: "Glucosuria is incompatible with toilet sensor with image analysis infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Stanford Park-Pruthi Smart Toilet 2020 detecta polyp/CRC, urinary urinary infection, glucose-uria, kidney function via stool/urine sensor + image — daily passive screening home health", en: "Stanford Park-Pruthi 2020 Smart Toilet detects polyp/CRC, urinary infection, glucosuria, kidney function via stool/urine sensor + image — daily passive home-health screening"}
+        rationale: {pt: "Quando vaso lê amostra, então screening é diário.", en: "When toilet reads sample, screening turns daily."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Smart inhaler asthma:", en: "Smart inhaler asthma:"}
+        choices:
+          - {pt: "Propeller Health, Adherium, Hailie attach sensor a inhaler MDI tracking adherence + technique + environment trigger — fase 4 RWE asthma + COPD demonstram exacerbation reduction 30-50%", en: "Propeller Health, Adherium, Hailie attach inhaler MDI sensor tracking adherence + technique + environment trigger — phase 4 RWE asthma + COPD show 30-50% exacerbation reduction"}
+          - {pt: "Smart inhaler é restrito a manual MDI sem componente sensor sendo Propeller Health inviável em qualquer paciente asthma humano clínico moderno em 2024", en: "Smart inhaler is restricted to manual MDI without sensor component with Propeller Health infeasible in any modern clinical asthma human patient in 2024"}
+          - {pt: "Adherence é teórico sem evidência sendo Adherium inviável em qualquer aplicação humana clínica moderna em 2024", en: "Adherence is theoretical without evidence with Adherium infeasible in any modern clinical human application in 2024"}
+          - {pt: "Environment trigger é incompatível com inhaler sendo Hailie inviável em qualquer paciente humano clínico moderno em 2024", en: "Environment trigger is incompatible with inhaler with Hailie infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Propeller Health, Adherium, Hailie attach sensor a inhaler MDI tracking adherence + technique + environment trigger — fase 4 RWE asthma + COPD demonstram exacerbation reduction 30-50%", en: "Propeller Health, Adherium, Hailie attach inhaler MDI sensor tracking adherence + technique + environment trigger — phase 4 RWE asthma + COPD show 30-50% exacerbation reduction"}
+        rationale: {pt: "Quando inhaler é monitorado, então adherence sobe e exacerbação cai.", en: "When inhaler is monitored, adherence rises and exacerbation falls."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Continuous temp:", en: "Continuous temp:"}
+        choices:
+          - {pt: "TempTraq, iThermonitor, BiOptio adesivo continuous temp 24-72h em pediatria + onco febrile neutropenia — capture fever pattern subtle vs intermittent thermometer manual measurement", en: "TempTraq, iThermonitor, BiOptio adhesive continuous temp 24-72h in pediatrics + febrile neutropenia onco — capture subtle fever patterns vs intermittent manual thermometer measurement"}
+          - {pt: "Continuous temp é restrito a thermometer manual sem componente continuous sendo TempTraq inviável em qualquer paciente pediátrico humano clínico moderno em 2024", en: "Continuous temp is restricted to manual thermometer without continuous component with TempTraq infeasible in any modern clinical pediatric human patient in 2024"}
+          - {pt: "Febrile neutropenia é teórico sem evidência sendo iThermonitor inviável em qualquer paciente onco humano clínico moderno em 2024", en: "Febrile neutropenia is theoretical without evidence with iThermonitor infeasible in any modern clinical onco human patient in 2024"}
+          - {pt: "Subtle fever pattern é incompatível com adesivo sendo BiOptio inviável em qualquer aplicação humana clínica moderna em 2024", en: "Subtle fever pattern is incompatible with adhesive with BiOptio infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "TempTraq, iThermonitor, BiOptio adesivo continuous temp 24-72h em pediatria + onco febrile neutropenia — capture fever pattern subtle vs intermittent thermometer manual measurement", en: "TempTraq, iThermonitor, BiOptio adhesive continuous temp 24-72h in pediatrics + febrile neutropenia onco — capture subtle fever patterns vs intermittent manual thermometer measurement"}
+        rationale: {pt: "Quando temperatura é monitorada contínua, então febre não escapa.", en: "When temperature is monitored continuously, fever doesn't escape."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Voice digital biomarker:", en: "Voice digital biomarker:"}
+        choices:
+          - {pt: "Mayo Clinic + Sonde Health + Canary Speech detect Parkinson, depression, AD via vocal acoustic + linguistic features — passive smartphone audio analysis em screening primario emergente", en: "Mayo Clinic + Sonde Health + Canary Speech detect Parkinson, depression, AD via vocal acoustic + linguistic features — passive smartphone audio analysis in emerging primary screening"}
+          - {pt: "Voice digital biomarker é restrito a self-report sem componente vocal sendo Mayo Clinic inviável em qualquer aplicação clínica humana moderna em 2024", en: "Voice digital biomarker is restricted to self-report without vocal component with Mayo Clinic infeasible in any modern clinical human application in 2024"}
+          - {pt: "Acoustic features é teórico sem evidência sendo Sonde Health inviável em qualquer paciente humano clínico moderno em 2024", en: "Acoustic features is theoretical without evidence with Sonde Health infeasible in any modern clinical human patient in 2024"}
+          - {pt: "Smartphone audio é incompatível com biomarker sendo Canary Speech inviável em qualquer aplicação humana clínica moderna em 2024", en: "Smartphone audio is incompatible with biomarker with Canary Speech infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Mayo Clinic + Sonde Health + Canary Speech detect Parkinson, depression, AD via vocal acoustic + linguistic features — passive smartphone audio analysis em screening primario emergente", en: "Mayo Clinic + Sonde Health + Canary Speech detect Parkinson, depression, AD via vocal acoustic + linguistic features — passive smartphone audio analysis in emerging primary screening"}
+        rationale: {pt: "Quando voz é analisada, então neuro vira flag passivo.", en: "When voice is analyzed, neuro becomes passive flag."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Privacy data wearable:", en: "Wearable data privacy:"}
+        choices:
+          - {pt: "Wearable health data não está sob HIPAA quando consumer tier (Apple, Fitbit, Whoop) — exposição em third-party apps + insurer + employer levanta concern privacy + GDPR compliance europeu", en: "Wearable health data isn't HIPAA-covered at consumer tier (Apple, Fitbit, Whoop) — exposure in third-party apps + insurer + employer raises privacy concerns + European GDPR compliance"}
+          - {pt: "Privacy é restrito a clinical EHR sem componente consumer sendo Apple Fitbit Whoop inviáveis em qualquer aplicação humana clínica moderna em 2024", en: "Privacy is restricted to clinical EHR without consumer component with Apple Fitbit Whoop infeasible in any modern clinical human application in 2024"}
+          - {pt: "HIPAA é teórico sem evidência sendo wearable data inviável em qualquer paciente humano clínico moderno em 2024", en: "HIPAA is theoretical without evidence with wearable data infeasible in any modern clinical human patient in 2024"}
+          - {pt: "GDPR é incompatível com wearable sendo third-party apps inviáveis em qualquer aplicação humana clínica moderna em 2024", en: "GDPR is incompatible with wearable with third-party apps infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Wearable health data não está sob HIPAA quando consumer tier (Apple, Fitbit, Whoop) — exposição em third-party apps + insurer + employer levanta concern privacy + GDPR compliance europeu", en: "Wearable health data isn't HIPAA-covered at consumer tier (Apple, Fitbit, Whoop) — exposure in third-party apps + insurer + employer raises privacy concerns + European GDPR compliance"}
+        rationale: {pt: "Quando dado escapa HIPAA, então paciente perde proteção.", en: "When data escapes HIPAA, patient loses protection."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese wearable:", en: "Wearable synthesis:"}
+        choices:
+          - {pt: "Apple Watch ECG + CGM + Oura/Whoop + sweat + microneedle + cuffless BP + ePatch + Empatica + EEG + AI ECG + RPM + SpO2 + fall + e-skin + smart toilet + inhaler + temp + voice + privacy redefinem medicina contínua", en: "Apple Watch ECG + CGM + Oura/Whoop + sweat + microneedle + cuffless BP + ePatch + Empatica + EEG + AI ECG + RPM + SpO2 + fall + e-skin + smart toilet + inhaler + temp + voice + privacy redefine continuous medicine"}
+          - {pt: "Wearable biosensors permanece pré-clínico sem aplicação humana até 2024 sendo conceito experimental sem implementação prática em qualquer indicação clínica humana globalmente", en: "Wearable biosensors remains preclinical without human application by 2024 being experimental concept without practical implementation in any clinical human indication globally"}
+          - {pt: "Plataformas wearable são intercambiáveis sem trade-off em parâmetro tornando escolha tecnológica indiferente em qualquer aplicação clínica humana 2024 globalmente em qualquer escala", en: "Wearable platforms are interchangeable without parameter trade-off making technology choice indifferent in any clinical human application 2024 globally at any scale"}
+          - {pt: "Wearables dependem exclusivamente de hospital sem componente home sendo Apple, Dexcom e Oura dispensáveis em qualquer paciente humano clínico moderno em 2024", en: "Wearables depend exclusively on hospital without home component with Apple, Dexcom and Oura dispensable in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Apple Watch ECG + CGM + Oura/Whoop + sweat + microneedle + cuffless BP + ePatch + Empatica + EEG + AI ECG + RPM + SpO2 + fall + e-skin + smart toilet + inhaler + temp + voice + privacy redefinem medicina contínua", en: "Apple Watch ECG + CGM + Oura/Whoop + sweat + microneedle + cuffless BP + ePatch + Empatica + EEG + AI ECG + RPM + SpO2 + fall + e-skin + smart toilet + inhaler + temp + voice + privacy redefine continuous medicine"}
+        rationale: {pt: "Quando sensores cobrem dia, então fisiologia vira contínua.", en: "When sensors cover the day, physiology turns continuous."}
+        objectives: [biology.wearable_biosensors]
+        difficulty: 5
+target: 20
