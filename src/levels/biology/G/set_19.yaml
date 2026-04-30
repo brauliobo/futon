@@ -1,0 +1,244 @@
+title:
+  pt: "🔥 Biologia da dor crônica"
+  en: "🔥 Chronic pain biology"
+level: 'G'
+subject: biology
+objectives: [biology.chronic_pain]
+difficulty: 5
+authorNotes: "Sensibilização central, neuropatia, fibromialgia, novos analgésicos não-opioides."
+example:
+  pt: "Ex.: lesão → sensibilização periférica → central → dor crônica mesmo sem estímulo."
+  en: "Ex.: injury → peripheral sensitization → central → chronic pain even without stimulus."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Mecanismos de cronicidade", en: "Chronicity mechanisms"}
+    description: {pt: "Como dor se torna crônica.", en: "How pain becomes chronic."}
+    exercises:
+      - type: choice
+        question: {pt: "Central sensitization:", en: "Central sensitization:"}
+        choices:
+          - {pt: "Neurônios do corno dorsal aumentam excitabilidade via NMDAR e plasticidade — dor sem estímulo", en: "Dorsal horn neurons increase excitability via NMDAR and plasticity — pain without stimulus"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Neurônios do corno dorsal aumentam excitabilidade via NMDAR e plasticidade — dor sem estímulo", en: "Dorsal horn neurons increase excitability via NMDAR and plasticity — pain without stimulus"}
+        rationale: {pt: "Quando central sensibiliza, então dor persiste sem dano contínuo.", en: "When central sensitizes, pain persists without ongoing damage."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Peripheral sensitization:", en: "Peripheral sensitization:"}
+        choices:
+          - {pt: "TRPV1, Nav1.7/1.8 upregulam em nociceptores reduzindo limiar — hiperalgesia local", en: "TRPV1, Nav1.7/1.8 upregulate in nociceptors lowering threshold — local hyperalgesia"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "TRPV1, Nav1.7/1.8 upregulam em nociceptores reduzindo limiar — hiperalgesia local", en: "TRPV1, Nav1.7/1.8 upregulate in nociceptors lowering threshold — local hyperalgesia"}
+        rationale: {pt: "Quando periférico sensibiliza, então toques normais doem.", en: "When peripheral sensitizes, normal touches hurt."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microglia e dor:", en: "Microglia and pain:"}
+        choices:
+          - {pt: "Microglia espinhal ativada após lesão libera BDNF e TNF amplificando dor neuropática", en: "Spinal microglia activated post-injury release BDNF and TNF amplifying neuropathic pain"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Microglia espinhal ativada após lesão libera BDNF e TNF amplificando dor neuropática", en: "Spinal microglia activated post-injury release BDNF and TNF amplifying neuropathic pain"}
+        rationale: {pt: "Quando microglia atua, então dor é mantida inflamatoriamente.", en: "When microglia acts, pain is inflammatorily maintained."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Glial cells in chronic pain:", en: "Glial cells in chronic pain:"}
+        choices:
+          - {pt: "Astrócitos GFAP+ contribuem para sensibilização sustentada via gap junctions e citocinas", en: "GFAP+ astrocytes contribute to sustained sensitization via gap junctions and cytokines"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Astrócitos GFAP+ contribuem para sensibilização sustentada via gap junctions e citocinas", en: "GFAP+ astrocytes contribute to sustained sensitization via gap junctions and cytokines"}
+        rationale: {pt: "Quando glia perpetua, então dor cronifica.", en: "When glia perpetuates, pain chronifies."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Descending modulation:", en: "Descending modulation:"}
+        choices:
+          - {pt: "PAG-RVM via opioides endógenos modula dor — disfunção contribui para crônica refratária", en: "PAG-RVM via endogenous opioids modulates pain — dysfunction contributes to refractory chronic"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "PAG-RVM via opioides endógenos modula dor — disfunção contribui para crônica refratária", en: "PAG-RVM via endogenous opioids modulates pain — dysfunction contributes to refractory chronic"}
+        rationale: {pt: "Quando descendente falha, então dor escapa ao controle natural.", en: "When descending fails, pain escapes natural control."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Nociplastic pain:", en: "Nociplastic pain:"}
+        choices:
+          - {pt: "Categoria sem lesão clara onde sensibilização central predomina — fibromialgia exemplo", en: "Category without clear lesion where central sensitization predominates — fibromyalgia example"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Categoria sem lesão clara onde sensibilização central predomina — fibromialgia exemplo", en: "Category without clear lesion where central sensitization predominates — fibromyalgia example"}
+        rationale: {pt: "Quando categoria é reconhecida, então tratamento é específico.", en: "When category is recognized, treatment is specific."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genetic contributors:", en: "Genetic contributors:"}
+        choices:
+          - {pt: "SCN9A perda total causa indolência congênita; ganho causa eritromelalgia — alvos terapêuticos", en: "SCN9A total loss causes congenital painlessness; gain causes erythromelalgia — therapeutic targets"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "SCN9A perda total causa indolência congênita; ganho causa eritromelalgia — alvos terapêuticos", en: "SCN9A total loss causes congenital painlessness; gain causes erythromelalgia — therapeutic targets"}
+        rationale: {pt: "Quando alvos genéticos existem, então drogas seletivas são desenhadas.", en: "When genetic targets exist, selective drugs are designed."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inflammation-pain link:", en: "Inflammation-pain link:"}
+        choices:
+          - {pt: "PGE2, bradicinina e citocinas inflamatórias sensibilizam nociceptores em \"sopa inflamatória\" tecidual", en: "PGE2, bradykinin and inflammatory cytokines sensitize nociceptors in tissue \"inflammatory soup\""}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "PGE2, bradicinina e citocinas inflamatórias sensibilizam nociceptores em \"sopa inflamatória\" tecidual", en: "PGE2, bradykinin and inflammatory cytokines sensitize nociceptors in tissue \"inflammatory soup\""}
+        rationale: {pt: "Quando sopa age, então toques inocentes doem.", en: "When soup acts, innocent touches hurt."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pain matrix in brain:", en: "Brain pain matrix:"}
+        choices:
+          - {pt: "S1, S2, ínsula, ACC e PFC integram experiência sensorial, afetiva e cognitiva da dor", en: "S1, S2, insula, ACC and PFC integrate sensory, affective and cognitive pain experience"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "S1, S2, ínsula, ACC e PFC integram experiência sensorial, afetiva e cognitiva da dor", en: "S1, S2, insula, ACC and PFC integrate sensory, affective and cognitive pain experience"}
+        rationale: {pt: "Quando rede integra, então dor é experiência multidimensional.", en: "When network integrates, pain is multidimensional experience."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Epigenetic memory of pain:", en: "Epigenetic pain memory:"}
+        choices:
+          - {pt: "Modificações em DNA e histonas em DRG e medula consolidam memória de dor após lesão", en: "DRG and spinal cord DNA and histone modifications consolidate pain memory after injury"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modificações em DNA e histonas em DRG e medula consolidam memória de dor após lesão", en: "DRG and spinal cord DNA and histone modifications consolidate pain memory after injury"}
+        rationale: {pt: "Quando epigenoma marca, então dor é lembrada celularmente.", en: "When epigenome marks, pain is cellularly remembered."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Tratamentos não-opioides", en: "Non-opioid treatments"}
+    description: {pt: "Inovação para crise opioide.", en: "Innovation for opioid crisis."}
+    exercises:
+      - type: choice
+        question: {pt: "Anti-CGRP antibodies:", en: "Anti-CGRP antibodies:"}
+        choices:
+          - {pt: "Erenumab e fremanezumab previnem enxaqueca via neutralização de CGRP — primeira classe específica", en: "Erenumab and fremanezumab prevent migraine via CGRP neutralization — first specific class"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Erenumab e fremanezumab previnem enxaqueca via neutralização de CGRP — primeira classe específica", en: "Erenumab and fremanezumab prevent migraine via CGRP neutralization — first specific class"}
+        rationale: {pt: "Quando CGRP é alvo, então prevenção é mecanística e específica.", en: "When CGRP is targeted, prevention is mechanism-specific."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Nav1.7 inhibitors:", en: "Nav1.7 inhibitors:"}
+        choices:
+          - {pt: "Suzetrigina (VX-548) seletiva para Nav1.7 promete analgesia sem efeitos centrais opioides", en: "Suzetrigine (VX-548) selective for Nav1.7 promises analgesia without central opioid effects"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Suzetrigina (VX-548) seletiva para Nav1.7 promete analgesia sem efeitos centrais opioides", en: "Suzetrigine (VX-548) selective for Nav1.7 promises analgesia without central opioid effects"}
+        rationale: {pt: "Quando seletividade é alta, então analgesia é segura.", en: "When selectivity is high, analgesia is safe."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Gabapentinoids:", en: "Gabapentinoids:"}
+        choices:
+          - {pt: "Gabapentina e pregabalina ligam α2δ-1 reduzindo Ca²⁺ pré-sináptico em dor neuropática", en: "Gabapentin and pregabalin bind α2δ-1 reducing presynaptic Ca²⁺ in neuropathic pain"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Gabapentina e pregabalina ligam α2δ-1 reduzindo Ca²⁺ pré-sináptico em dor neuropática", en: "Gabapentin and pregabalin bind α2δ-1 reducing presynaptic Ca²⁺ in neuropathic pain"}
+        rationale: {pt: "Quando Ca²⁺ é reduzido, então transmissão dor é atenuada.", en: "When Ca²⁺ is reduced, pain transmission is attenuated."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Duloxetine and SNRI:", en: "Duloxetine and SNRI:"}
+        choices:
+          - {pt: "Inhibe reuptake 5-HT/NE potenciando modulação descendente em dor neuropática e fibromialgia", en: "Inhibits 5-HT/NE reuptake boosting descending modulation in neuropathic pain and fibromyalgia"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Inhibe reuptake 5-HT/NE potenciando modulação descendente em dor neuropática e fibromialgia", en: "Inhibits 5-HT/NE reuptake boosting descending modulation in neuropathic pain and fibromyalgia"}
+        rationale: {pt: "Quando descendente é potenciada, então dor é controlada.", en: "When descending is boosted, pain is controlled."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spinal cord stimulation:", en: "Spinal cord stimulation:"}
+        choices:
+          - {pt: "Eletrodo epidural ativa Aβ inibindo dor refratária via gate theory de Melzack-Wall", en: "Epidural electrode activates Aβ inhibiting refractory pain via Melzack-Wall gate theory"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Eletrodo epidural ativa Aβ inibindo dor refratária via gate theory de Melzack-Wall", en: "Epidural electrode activates Aβ inhibiting refractory pain via Melzack-Wall gate theory"}
+        rationale: {pt: "Quando SCS atua, então dor refratária é controlada não-farmacologicamente.", en: "When SCS acts, refractory pain is non-pharmacologically controlled."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cannabinoids:", en: "Cannabinoids:"}
+        choices:
+          - {pt: "CB1/CB2 modulam dor neuropática e visceral; CBD/THC com evidência crescente em subgrupos", en: "CB1/CB2 modulate neuropathic and visceral pain; CBD/THC with growing evidence in subgroups"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "CB1/CB2 modulam dor neuropática e visceral; CBD/THC com evidência crescente em subgrupos", en: "CB1/CB2 modulate neuropathic and visceral pain; CBD/THC with growing evidence in subgroups"}
+        rationale: {pt: "Quando endocanabinoides agem, então dor crônica responde em alguns.", en: "When endocannabinoids act, chronic pain responds in some."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TRPV1 antagonists:", en: "TRPV1 antagonists:"}
+        choices:
+          - {pt: "Capsaicina patch (Qutenza) desensibiliza nociceptores em neuropatia diabética e pós-herpética", en: "Capsaicin patch (Qutenza) desensitizes nociceptors in diabetic and post-herpetic neuropathy"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Capsaicina patch (Qutenza) desensibiliza nociceptores em neuropatia diabética e pós-herpética", en: "Capsaicin patch (Qutenza) desensitizes nociceptors in diabetic and post-herpetic neuropathy"}
+        rationale: {pt: "Quando TRPV1 é dessensibilizado, então dor crônica é silenciada.", en: "When TRPV1 is desensitized, chronic pain is silenced."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PEA (palmitoylethanolamide):", en: "PEA (palmitoylethanolamide):"}
+        choices:
+          - {pt: "Lipídio endógeno modula mast cells e microglia — adjuvante em dor crônica e inflamação", en: "Endogenous lipid modulates mast cells and microglia — adjunct in chronic pain and inflammation"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Lipídio endógeno modula mast cells e microglia — adjuvante em dor crônica e inflamação", en: "Endogenous lipid modulates mast cells and microglia — adjunct in chronic pain and inflammation"}
+        rationale: {pt: "Quando PEA é suplementada, então neuroinflamação cai.", en: "When PEA is supplemented, neuroinflammation drops."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cognitive-behavioral therapy:", en: "Cognitive-behavioral therapy:"}
+        choices:
+          - {pt: "CBT para dor reduz sofrimento e incapacidade modulando matrix cerebral via estratégias cognitivas", en: "Pain CBT reduces suffering and disability modulating brain matrix via cognitive strategies"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "CBT para dor reduz sofrimento e incapacidade modulando matrix cerebral via estratégias cognitivas", en: "Pain CBT reduces suffering and disability modulating brain matrix via cognitive strategies"}
+        rationale: {pt: "Quando cognição muda, então experiência de dor melhora.", en: "When cognition changes, pain experience improves."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em dor:", en: "Next pain frontiers:"}
+        choices:
+          - {pt: "Bloqueadores Nav1.7/1.8 seletivos, terapias gênicas DRG e neuromodulação fechada personalizada", en: "Selective Nav1.7/1.8 blockers, DRG gene therapies and personalized closed-loop neuromodulation"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Bloqueadores Nav1.7/1.8 seletivos, terapias gênicas DRG e neuromodulação fechada personalizada", en: "Selective Nav1.7/1.8 blockers, DRG gene therapies and personalized closed-loop neuromodulation"}
+        rationale: {pt: "Quando ferramentas convergem, então crise opioide tem alternativas.", en: "When tools converge, opioid crisis has alternatives."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+target: 20

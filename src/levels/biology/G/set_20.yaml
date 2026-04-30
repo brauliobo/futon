@@ -1,0 +1,244 @@
+title:
+  pt: "🎓 Revisão cumulativa G"
+  en: "🎓 Cumulative review G"
+level: 'G'
+subject: biology
+objectives: [biology.cumulative_G]
+difficulty: 5
+authorNotes: "Revisão dos 19 tópicos de G: gastruloides, iPSC, imunoterapia, neuroinflamação, microbial dark matter, cognição animal, fitoquímica, hematopoese, hormônios vegetais, nichos stem, migração, UPR, micronutrientes, audição, visão, mucosa, neurofarmacologia, senescência, dor crônica."
+example:
+  pt: "Ex.: revisar tópico → reconhecer mecanismo → conectar à aplicação → consolidar."
+  en: "Ex.: review topic → recognize mechanism → link to application → consolidate."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Conceitos-chave I", en: "Key concepts I"}
+    description: {pt: "Tópicos 01-10 do nível G.", en: "Level G topics 01-10."}
+    exercises:
+      - type: choice
+        question: {pt: "Gastruloides:", en: "Gastruloids:"}
+        choices:
+          - {pt: "Agregados de células-tronco recapitulam eixos embrionários sem tecidos extraembrionários — modelo ético", en: "Stem cell aggregates recapitulate embryonic axes without extraembryonic tissues — ethical model"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Agregados de células-tronco recapitulam eixos embrionários sem tecidos extraembrionários — modelo ético", en: "Stem cell aggregates recapitulate embryonic axes without extraembryonic tissues — ethical model"}
+        rationale: {pt: "Quando gastruloides formam, então gastrulação é estudada in vitro.", en: "When gastruloids form, gastrulation is studied in vitro."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fatores de Yamanaka:", en: "Yamanaka factors:"}
+        choices:
+          - {pt: "OCT4, SOX2, KLF4, MYC reprogramam células somáticas em iPSCs pluripotentes", en: "OCT4, SOX2, KLF4, MYC reprogram somatic cells into pluripotent iPSCs"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "OCT4, SOX2, KLF4, MYC reprogramam células somáticas em iPSCs pluripotentes", en: "OCT4, SOX2, KLF4, MYC reprogram somatic cells into pluripotent iPSCs"}
+        rationale: {pt: "Quando OSKM expressam, então identidade celular é resetada.", en: "When OSKM express, cell identity is reset."}
+        objectives: [biology.pluripotency]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Checkpoint PD-1/PD-L1:", en: "PD-1/PD-L1 checkpoint:"}
+        choices:
+          - {pt: "Tumor expressa PD-L1 inibindo T cells via PD-1 — anticorpos bloqueadores reativam imunidade antitumoral", en: "Tumor expresses PD-L1 inhibiting T cells via PD-1 — blocking antibodies reactivate antitumor immunity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tumor expressa PD-L1 inibindo T cells via PD-1 — anticorpos bloqueadores reativam imunidade antitumoral", en: "Tumor expresses PD-L1 inhibiting T cells via PD-1 — blocking antibodies reactivate antitumor immunity"}
+        rationale: {pt: "Quando checkpoint é bloqueado, então T cells voltam a atacar tumor.", en: "When checkpoint is blocked, T cells resume attacking tumor."}
+        objectives: [biology.tumor_immunotherapy]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microglia ativada:", en: "Activated microglia:"}
+        choices:
+          - {pt: "Macrófagos residentes do SNC respondem a dano e patógenos liberando citocinas e podando sinapses", en: "CNS-resident macrophages respond to damage and pathogens releasing cytokines and pruning synapses"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Macrófagos residentes do SNC respondem a dano e patógenos liberando citocinas e podando sinapses", en: "CNS-resident macrophages respond to damage and pathogens releasing cytokines and pruning synapses"}
+        rationale: {pt: "Quando microglia ativa, então neuroinflamação modula doença.", en: "When microglia activates, neuroinflammation modulates disease."}
+        objectives: [biology.neuroinflammation]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CPR (Candidate Phyla Radiation):", en: "CPR (Candidate Phyla Radiation):"}
+        choices:
+          - {pt: "Bactérias ultrapequenas com genomas reduzidos descobertas por metagenômica — vasta diversidade não-cultivada", en: "Ultrasmall bacteria with reduced genomes discovered via metagenomics — vast uncultured diversity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Bactérias ultrapequenas com genomas reduzidos descobertas por metagenômica — vasta diversidade não-cultivada", en: "Ultrasmall bacteria with reduced genomes discovered via metagenomics — vast uncultured diversity"}
+        rationale: {pt: "Quando MAGs revelam CPR, então árvore da vida se expande.", en: "When MAGs reveal CPR, tree of life expands."}
+        objectives: [biology.microbial_dark]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cognição em corvídeos:", en: "Corvid cognition:"}
+        choices:
+          - {pt: "Corvos usam ferramentas, planejam para futuro e exibem cognição comparável a primatas com cérebros menores", en: "Crows use tools, plan for future and display cognition comparable to primates with smaller brains"}
+          - {pt: "Apenas curiosidade comportamental", en: "Just behavioral curiosity"}
+          - {pt: "Apenas detalhe etológico", en: "Just ethological detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Corvos usam ferramentas, planejam para futuro e exibem cognição comparável a primatas com cérebros menores", en: "Crows use tools, plan for future and display cognition comparable to primates with smaller brains"}
+        rationale: {pt: "Quando corvídeos resolvem, então inteligência transcende anatomia mamífera.", en: "When corvids solve, intelligence transcends mammalian anatomy."}
+        objectives: [biology.animal_cognition]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Artemisinina:", en: "Artemisinin:"}
+        choices:
+          - {pt: "Sesquiterpeno endoperóxido de Artemisia annua mata Plasmodium via radicais — antimalárico de primeira linha", en: "Endoperoxide sesquiterpene from Artemisia annua kills Plasmodium via radicals — first-line antimalarial"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sesquiterpeno endoperóxido de Artemisia annua mata Plasmodium via radicais — antimalárico de primeira linha", en: "Endoperoxide sesquiterpene from Artemisia annua kills Plasmodium via radicals — first-line antimalarial"}
+        rationale: {pt: "Quando artemisinina age, então malária resistente é tratada.", en: "When artemisinin acts, resistant malaria is treated."}
+        objectives: [biology.phytochemistry]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Nicho HSC:", en: "HSC niche:"}
+        choices:
+          - {pt: "Endósteo + sinusoides na medula com células estromais CXCL12+ mantêm quiescência de HSCs", en: "Endosteum + sinusoids in marrow with CXCL12+ stromal cells maintain HSC quiescence"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Endósteo + sinusoides na medula com células estromais CXCL12+ mantêm quiescência de HSCs", en: "Endosteum + sinusoids in marrow with CXCL12+ stromal cells maintain HSC quiescence"}
+        rationale: {pt: "Quando nicho assina, então HSCs autorenovam-se a vida toda.", en: "When niche signals, HSCs self-renew lifelong."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Auxinas:", en: "Auxins:"}
+        choices:
+          - {pt: "IAA controla crescimento, tropismos e dominância apical via transporte polar PIN e degradação Aux/IAA", en: "IAA controls growth, tropisms and apical dominance via PIN polar transport and Aux/IAA degradation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "IAA controla crescimento, tropismos e dominância apical via transporte polar PIN e degradação Aux/IAA", en: "IAA controls growth, tropisms and apical dominance via PIN polar transport and Aux/IAA degradation"}
+        rationale: {pt: "Quando auxina flui, então arquitetura vegetal é esculpida.", en: "When auxin flows, plant architecture is sculpted."}
+        objectives: [biology.plant_hormones]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cripta intestinal:", en: "Intestinal crypt:"}
+        choices:
+          - {pt: "LGR5+ ISCs na base com Paneth cells e Wnt mantêm renovação rápida do epitélio intestinal", en: "LGR5+ ISCs at base with Paneth cells and Wnt maintain rapid intestinal epithelial renewal"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "LGR5+ ISCs na base com Paneth cells e Wnt mantêm renovação rápida do epitélio intestinal", en: "LGR5+ ISCs at base with Paneth cells and Wnt maintain rapid intestinal epithelial renewal"}
+        rationale: {pt: "Quando cripta opera, então intestino se renova em dias.", en: "When crypt operates, intestine renews in days."}
+        objectives: [biology.stem_niches]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Conceitos-chave II", en: "Key concepts II"}
+    description: {pt: "Tópicos 11-19 do nível G.", en: "Level G topics 11-19."}
+    exercises:
+      - type: choice
+        question: {pt: "Rho GTPases na migração:", en: "Rho GTPases in migration:"}
+        choices:
+          - {pt: "Rac1 dirige lamellipodia, RhoA dirige contração actomiosina e Cdc42 dirige filopodia coordenando movimento", en: "Rac1 drives lamellipodia, RhoA drives actomyosin contraction and Cdc42 drives filopodia coordinating movement"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Rac1 dirige lamellipodia, RhoA dirige contração actomiosina e Cdc42 dirige filopodia coordenando movimento", en: "Rac1 drives lamellipodia, RhoA drives actomyosin contraction and Cdc42 drives filopodia coordinating movement"}
+        rationale: {pt: "Quando GTPases coordenam, então células se movem direcionalmente.", en: "When GTPases coordinate, cells move directionally."}
+        objectives: [biology.cell_migration]
+        difficulty: 5
+      - type: choice
+        question: {pt: "UPR (unfolded protein response):", en: "UPR (unfolded protein response):"}
+        choices:
+          - {pt: "PERK, IRE1 e ATF6 sensam estresse de RE reduzindo tradução e induzindo chaperonas — ou apoptose se severo", en: "PERK, IRE1 and ATF6 sense ER stress reducing translation and inducing chaperones — or apoptosis if severe"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "PERK, IRE1 e ATF6 sensam estresse de RE reduzindo tradução e induzindo chaperonas — ou apoptose se severo", en: "PERK, IRE1 and ATF6 sense ER stress reducing translation and inducing chaperones — or apoptosis if severe"}
+        rationale: {pt: "Quando UPR ativa, então proteostase é restaurada ou célula morre.", en: "When UPR activates, proteostasis is restored or cell dies."}
+        objectives: [biology.er_stress]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vitamina B12 e folato:", en: "Vitamin B12 and folate:"}
+        choices:
+          - {pt: "Cofatores essenciais para síntese de DNA e mielina — deficiência causa anemia megaloblástica e neuropatia", en: "Essential cofactors for DNA and myelin synthesis — deficiency causes megaloblastic anemia and neuropathy"}
+          - {pt: "Apenas curiosidade nutricional", en: "Just nutritional curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cofatores essenciais para síntese de DNA e mielina — deficiência causa anemia megaloblástica e neuropatia", en: "Essential cofactors for DNA and myelin synthesis — deficiency causes megaloblastic anemia and neuropathy"}
+        rationale: {pt: "Quando B12/folato faltam, então hematopoese e nervos falham.", en: "When B12/folate lack, hematopoiesis and nerves fail."}
+        objectives: [biology.micronutrients]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tonotopia coclear:", en: "Cochlear tonotopy:"}
+        choices:
+          - {pt: "Membrana basilar varia rigidez ao longo do comprimento — base detecta agudos, ápice detecta graves", en: "Basilar membrane varies stiffness along length — base detects highs, apex detects lows"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Membrana basilar varia rigidez ao longo do comprimento — base detecta agudos, ápice detecta graves", en: "Basilar membrane varies stiffness along length — base detects highs, apex detects lows"}
+        rationale: {pt: "Quando tonotopia organiza, então frequências mapeiam para posição.", en: "When tonotopy organizes, frequencies map to position."}
+        objectives: [biology.auditory_nsci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fototransdução:", en: "Phototransduction:"}
+        choices:
+          - {pt: "Fóton ativa rodopsina → transducina → PDE6 hidrolisa cGMP → canal CNG fecha — fotorreceptor hiperpolariza", en: "Photon activates rhodopsin → transducin → PDE6 hydrolyzes cGMP → CNG channel closes — photoreceptor hyperpolarizes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fóton ativa rodopsina → transducina → PDE6 hidrolisa cGMP → canal CNG fecha — fotorreceptor hiperpolariza", en: "Photon activates rhodopsin → transducin → PDE6 hydrolyzes cGMP → CNG channel closes — photoreceptor hyperpolarizes"}
+        rationale: {pt: "Quando cascata corre, então luz vira sinal elétrico.", en: "When cascade runs, light becomes electrical signal."}
+        objectives: [biology.visual_sys]
+        difficulty: 5
+      - type: choice
+        question: {pt: "IgA secretória:", en: "Secretory IgA:"}
+        choices:
+          - {pt: "Dímero de IgA com componente secretor é transportado por pIgR e neutraliza patógenos na luz das mucosas", en: "IgA dimer with secretory component is transported by pIgR neutralizing pathogens in mucosal lumen"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Dímero de IgA com componente secretor é transportado por pIgR e neutraliza patógenos na luz das mucosas", en: "IgA dimer with secretory component is transported by pIgR neutralizing pathogens in mucosal lumen"}
+        rationale: {pt: "Quando sIgA atua, então mucosas são protegidas sem inflamação.", en: "When sIgA acts, mucosae are protected without inflammation."}
+        objectives: [biology.mucosal_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cetamina antidepressiva:", en: "Antidepressant ketamine:"}
+        choices:
+          - {pt: "Antagonista NMDAR em dose subanestésica produz alívio rápido em depressão refratária via plasticidade glutamatérgica", en: "NMDAR antagonist at subanesthetic dose yields rapid relief in refractory depression via glutamatergic plasticity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Antagonista NMDAR em dose subanestésica produz alívio rápido em depressão refratária via plasticidade glutamatérgica", en: "NMDAR antagonist at subanesthetic dose yields rapid relief in refractory depression via glutamatergic plasticity"}
+        rationale: {pt: "Quando NMDAR é bloqueado, então sinapses se reorganizam rapidamente.", en: "When NMDAR is blocked, synapses rapidly reorganize."}
+        objectives: [biology.neuropharm]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SASP (senescence-associated secretory phenotype):", en: "SASP (senescence-associated secretory phenotype):"}
+        choices:
+          - {pt: "Células senescentes secretam IL-6, MMPs e quimiocinas alterando microambiente e impulsionando inflamaging", en: "Senescent cells secrete IL-6, MMPs and chemokines altering microenvironment and driving inflammaging"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Células senescentes secretam IL-6, MMPs e quimiocinas alterando microambiente e impulsionando inflamaging", en: "Senescent cells secrete IL-6, MMPs and chemokines altering microenvironment and driving inflammaging"}
+        rationale: {pt: "Quando SASP age, então senescência tem efeito sistêmico.", en: "When SASP acts, senescence has systemic effect."}
+        objectives: [biology.senescence]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anti-CGRP em enxaqueca:", en: "Anti-CGRP in migraine:"}
+        choices:
+          - {pt: "Anticorpos contra CGRP ou receptor previnem enxaqueca crônica bloqueando vasodilatação trigeminal", en: "Antibodies against CGRP or receptor prevent chronic migraine blocking trigeminal vasodilation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Anticorpos contra CGRP ou receptor previnem enxaqueca crônica bloqueando vasodilatação trigeminal", en: "Antibodies against CGRP or receptor prevent chronic migraine blocking trigeminal vasodilation"}
+        rationale: {pt: "Quando CGRP é neutralizado, então enxaquecas reduzem em frequência.", en: "When CGRP is neutralized, migraines reduce in frequency."}
+        objectives: [biology.chronic_pain]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese geral do nível G:", en: "Level G overall synthesis:"}
+        choices:
+          - {pt: "Biologia de fronteira integra terapias celulares, imunologia, neurociência e mecanismos moleculares em medicina translacional", en: "Frontier biology integrates cell therapies, immunology, neuroscience and molecular mechanisms into translational medicine"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Biologia de fronteira integra terapias celulares, imunologia, neurociência e mecanismos moleculares em medicina translacional", en: "Frontier biology integrates cell therapies, immunology, neuroscience and molecular mechanisms into translational medicine"}
+        rationale: {pt: "Quando disciplinas convergem, então biologia avança terapias humanas reais.", en: "When disciplines converge, biology advances real human therapies."}
+        objectives: [biology.cumulative_G]
+        difficulty: 5
+target: 20
