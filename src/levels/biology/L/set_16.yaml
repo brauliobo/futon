@@ -1,0 +1,244 @@
+title:
+  pt: "🌐 Genômica de saúde pública e PRS"
+  en: "🌐 Public health genomics and PRS"
+level: 'L'
+subject: biology
+objectives: [biology.population_genomics]
+difficulty: 5
+authorNotes: "PRS polygenic risk score, UK Biobank, All of Us, FinnGen, MyCode, GWAS, fine-mapping, eQTL, Mendelian Randomization, ancestry diversity, Illumina/Affymetrix array, GWAS catalog NHGRI-EBI, public health genomics."
+example:
+  pt: "Ex.: paciente 30 anos PRS top-2% CAD → discussão genetic counseling → statin precoce + lifestyle intensiva → preventive cardiology decade-shift."
+  en: "Ex.: 30-yo patient top-2% CAD PRS → genetic-counseling discussion → early statin + intensive lifestyle → decade-shift preventive cardiology."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "PRS e biobanks", en: "PRS and biobanks"}
+    description: {pt: "Como população guia clínica.", en: "How population guides clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "PRS construction:", en: "PRS construction:"}
+        choices:
+          - {pt: "Polygenic Risk Score soma ponderada de SNP effect sizes derivados de GWAS large-scale (~1M variants) → individual quantitative risk prediction de complex disease (CAD, T2D, BC)", en: "Polygenic Risk Score is weighted sum of SNP effect sizes from large-scale GWAS (~1M variants) → individual quantitative risk prediction of complex disease (CAD, T2D, BC)"}
+          - {pt: "PRS é restrito a Mendelian disease sem componente complex sendo SNP effect sizes inviáveis em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "PRS is restricted to Mendelian disease without complex component with SNP effect sizes infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "GWAS large-scale é teórico sem evidência experimental sendo PRS inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente populacional", en: "Large-scale GWAS is theoretical without experimental evidence with PRS technically infeasible in any modern clinical human patient in 2024 globally at any population patient scale"}
+          - {pt: "1M variants é incompatível com PRS sendo individual quantitative risk inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente populacional", en: "1M variants is incompatible with PRS with individual quantitative risk infeasible in any modern clinical human patient in 2024 globally at any population patient scale"}
+        correctAnswer: {pt: "Polygenic Risk Score soma ponderada de SNP effect sizes derivados de GWAS large-scale (~1M variants) → individual quantitative risk prediction de complex disease (CAD, T2D, BC)", en: "Polygenic Risk Score is weighted sum of SNP effect sizes from large-scale GWAS (~1M variants) → individual quantitative risk prediction of complex disease (CAD, T2D, BC)"}
+        rationale: {pt: "Quando milhares de SNPs somam, então risco individual emerge.", en: "When thousands of SNPs sum, individual risk emerges."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "UK Biobank 500k:", en: "UK Biobank 500k:"}
+        choices:
+          - {pt: "500k UK adults com genotype + exome + WGS + medical record + imaging — basis de muitos PRS, drug target validation via Mendelian randomization, GWAS hits para 2000+ traits", en: "500k UK adults with genotype + exome + WGS + medical record + imaging — basis for many PRSs, drug-target validation via Mendelian randomization, GWAS hits for 2000+ traits"}
+          - {pt: "UK Biobank é restrito a 100 indivíduos sem componente 500k sendo genotype + exome + WGS inviáveis em qualquer paciente populacional humano clínico moderno em 2024 globalmente em qualquer", en: "UK Biobank is restricted to 100 individuals without 500k component with genotype + exome + WGS infeasible in any modern clinical population human patient in 2024 globally at any"}
+          - {pt: "Mendelian randomization é teórico sem evidência experimental sendo drug-target validation inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "Mendelian randomization is theoretical without experimental evidence with drug-target validation technically infeasible in any modern clinical human patient in 2024 globally at any scale"}
+          - {pt: "2000+ traits é incompatível com UK Biobank sendo PRS inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente populacional adulto", en: "2000+ traits is incompatible with UK Biobank with PRS infeasible in any modern clinical adult population human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "500k UK adults com genotype + exome + WGS + medical record + imaging — basis de muitos PRS, drug target validation via Mendelian randomization, GWAS hits para 2000+ traits", en: "500k UK adults with genotype + exome + WGS + medical record + imaging — basis for many PRSs, drug-target validation via Mendelian randomization, GWAS hits for 2000+ traits"}
+        rationale: {pt: "Quando 500k pessoas dão dados, então GWAS ganha poder.", en: "When 500k people give data, GWAS gains power."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "All of Us NIH:", en: "All of Us NIH:"}
+        choices:
+          - {pt: "NIH All of Us cohort visa 1M+ adults USA com diversidade ancestral (50% non-European) — addressed bias UK Biobank + 23andMe pre-dominante European, expande PRS para multi-ancestry", en: "NIH All of Us cohort targets 1M+ US adults with ancestral diversity (50% non-European) — addresses UK Biobank + 23andMe European-dominant bias, expanding PRS to multi-ancestry"}
+          - {pt: "All of Us é restrito a 1000 indivíduos sem componente 1M sendo diversidade ancestral inviável em qualquer paciente populacional humano clínico moderno em 2024 globalmente em qualquer escala", en: "All of Us is restricted to 1000 individuals without 1M component with ancestral diversity infeasible in any modern clinical population human patient in 2024 globally at any scale"}
+          - {pt: "Multi-ancestry PRS é teórico sem implementação prática sendo NIH All of Us inviável tecnicamente em qualquer aplicação populacional humana clínica moderna em 2024 globalmente em qualquer", en: "Multi-ancestry PRS is theoretical without practical implementation with NIH All of Us technically infeasible in any modern clinical human population application in 2024 globally at any"}
+          - {pt: "Bias European é benéfico em PRS sendo All of Us contraindicado em favor de UK Biobank single-ancestry em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "European bias is beneficial in PRS with All of Us contraindicated in favor of single-ancestry UK Biobank in any modern clinical human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "NIH All of Us cohort visa 1M+ adults USA com diversidade ancestral (50% non-European) — addressed bias UK Biobank + 23andMe pre-dominante European, expande PRS para multi-ancestry", en: "NIH All of Us cohort targets 1M+ US adults with ancestral diversity (50% non-European) — addresses UK Biobank + 23andMe European-dominant bias, expanding PRS to multi-ancestry"}
+        rationale: {pt: "Quando coorte é diversa, então PRS serve mais ancestrias.", en: "When cohort is diverse, PRS serves more ancestries."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "FinnGen Estonia:", en: "FinnGen Estonia:"}
+        choices:
+          - {pt: "FinnGen 500k Finnish, Estonian Biobank 200k oferecem founder population enriquecida em rare alleles — descobrem novos drug targets (ANGPTL4, INHBE) em rare-variant collapsing", en: "FinnGen 500k Finnish, Estonian Biobank 200k offer founder population enriched in rare alleles — discover new drug targets (ANGPTL4, INHBE) in rare-variant collapsing"}
+          - {pt: "FinnGen é restrito a 100 indivíduos sem componente 500k sendo founder population inviável em qualquer aplicação populacional humana clínica moderna em 2024 globalmente em qualquer escala paciente", en: "FinnGen is restricted to 100 individuals without 500k component with founder population infeasible in any modern clinical human population application in 2024 globally at any patient scale"}
+          - {pt: "Rare-variant collapsing é teórico sem evidência experimental sendo Estonian Biobank inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Rare-variant collapsing is theoretical without experimental evidence with Estonian Biobank technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "ANGPTL4 e INHBE são teóricos sem componente clínico sendo FinnGen inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente metabólico cardiovascular adulto", en: "ANGPTL4 and INHBE are theoretical without clinical component with FinnGen infeasible in any modern clinical adult cardiovascular metabolic human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "FinnGen 500k Finnish, Estonian Biobank 200k oferecem founder population enriquecida em rare alleles — descobrem novos drug targets (ANGPTL4, INHBE) em rare-variant collapsing", en: "FinnGen 500k Finnish, Estonian Biobank 200k offer founder population enriched in rare alleles — discover new drug targets (ANGPTL4, INHBE) in rare-variant collapsing"}
+        rationale: {pt: "Quando population é founder, então variantes raras viram druggable.", en: "When population is founder, rare variants become druggable."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mendelian randomization:", en: "Mendelian randomization:"}
+        choices:
+          - {pt: "MR usa SNP genetic instruments como proxy para exposição (LDL, BMI, smoking) testando causalidade vs confounding observational — guia drug target (PCSK9, IL-6, GLP-1)", en: "MR uses SNP genetic instruments as proxy for exposure (LDL, BMI, smoking) testing causality vs observational confounding — guides drug targets (PCSK9, IL-6, GLP-1)"}
+          - {pt: "MR é restrito a observational sem componente genetic instrument sendo Mendelian randomization inviável em qualquer paciente populacional humano clínico moderno em 2024 globalmente em qualquer", en: "MR is restricted to observational without genetic-instrument component with Mendelian randomization infeasible in any modern clinical population human patient in 2024 globally at any"}
+          - {pt: "PCSK9, IL-6 e GLP-1 são teóricos sem evidência experimental sendo MR inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente farmacológico", en: "PCSK9, IL-6 and GLP-1 are theoretical without experimental evidence with MR technically infeasible in any modern clinical pharmacologic human patient in 2024 globally at any scale"}
+          - {pt: "Confounding observational é incompatível com MR sendo SNP instruments inviáveis em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente populacional adulto", en: "Observational confounding is incompatible with MR with SNP instruments infeasible in any modern clinical adult population human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "MR usa SNP genetic instruments como proxy para exposição (LDL, BMI, smoking) testando causalidade vs confounding observational — guia drug target (PCSK9, IL-6, GLP-1)", en: "MR uses SNP genetic instruments as proxy for exposure (LDL, BMI, smoking) testing causality vs observational confounding — guides drug targets (PCSK9, IL-6, GLP-1)"}
+        rationale: {pt: "Quando SNP age como random allocation, então causalidade revela.", en: "When SNP acts as random allocation, causality emerges."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fine-mapping causal:", en: "Causal fine-mapping:"}
+        choices:
+          - {pt: "GWAS hit é tag SNP em LD com causal variant — fine-mapping (SuSiE, CAVIAR, FINEMAP) + functional annotation eQTL/CADD identifica causal allele e gene em ~50% loci", en: "GWAS hit is tag SNP in LD with causal variant — fine-mapping (SuSiE, CAVIAR, FINEMAP) + eQTL/CADD functional annotation identify causal allele and gene in ~50% of loci"}
+          - {pt: "Fine-mapping é restrito a tag SNP sem componente causal sendo SuSiE e FINEMAP inviáveis em qualquer aplicação populacional humana clínica moderna em 2024 globalmente em qualquer escala", en: "Fine-mapping is restricted to tag SNP without causal component with SuSiE and FINEMAP infeasible in any modern clinical population human application in 2024 globally at any scale"}
+          - {pt: "eQTL/CADD é teórico sem evidência experimental sendo CAVIAR inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente populacional", en: "eQTL/CADD is theoretical without experimental evidence with CAVIAR technically infeasible in any modern clinical population human patient in 2024 globally at any patient scale"}
+          - {pt: "LD é incompatível com causal allele sendo functional annotation inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente populacional", en: "LD is incompatible with causal allele with functional annotation infeasible in any modern clinical population human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "GWAS hit é tag SNP em LD com causal variant — fine-mapping (SuSiE, CAVIAR, FINEMAP) + functional annotation eQTL/CADD identifica causal allele e gene em ~50% loci", en: "GWAS hit is tag SNP in LD with causal variant — fine-mapping (SuSiE, CAVIAR, FINEMAP) + eQTL/CADD functional annotation identify causal allele and gene in ~50% of loci"}
+        rationale: {pt: "Quando fine-map identifica causal, então gene drug-target aparece.", en: "When fine-map identifies causal, drug-target gene appears."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PRS clinical utility:", en: "PRS clinical utility:"}
+        choices:
+          - {pt: "PRS top decile aumenta risk equivalente a heterozygous Mendelian (FH, BRCA, Lynch) — guia early statin/colonoscopy/MRI; clinical PRS validation NICE/AHA/ESC pending", en: "PRS top decile raises risk equivalent to heterozygous Mendelian (FH, BRCA, Lynch) — guides early statin/colonoscopy/MRI; clinical PRS validation NICE/AHA/ESC pending"}
+          - {pt: "PRS clinical utility é restrito a Mendelian sem componente polygenic sendo top decile inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "PRS clinical utility is restricted to Mendelian without polygenic component with top decile infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "FH, BRCA e Lynch são teóricos sem evidência clínica sendo PRS inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente preventivo adulto", en: "FH, BRCA and Lynch are theoretical without clinical evidence with PRS technically infeasible in any modern clinical adult preventive human patient in 2024 globally at any scale"}
+          - {pt: "NICE/AHA/ESC validation é incompatível com PRS sendo clinical utility inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente preventivo populacional", en: "NICE/AHA/ESC validation is incompatible with PRS with clinical utility infeasible in any modern clinical preventive population human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "PRS top decile aumenta risk equivalente a heterozygous Mendelian (FH, BRCA, Lynch) — guia early statin/colonoscopy/MRI; clinical PRS validation NICE/AHA/ESC pending", en: "PRS top decile raises risk equivalent to heterozygous Mendelian (FH, BRCA, Lynch) — guides early statin/colonoscopy/MRI; clinical PRS validation NICE/AHA/ESC pending"}
+        rationale: {pt: "Quando PRS bate Mendelian, então prevention começa cedo.", en: "When PRS matches Mendelian, prevention starts early."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PRS ancestry bias:", en: "PRS ancestry bias:"}
+        choices:
+          - {pt: "PRS desenvolvido em European cohort transfere ~50% performance em African/East Asian — multi-ancestry GWAS (PAGE, GG, multi-ethnic All of Us) reduz bias mas equity gap persiste", en: "PRS developed in European cohort transfers ~50% performance to African/East Asian — multi-ancestry GWAS (PAGE, GG, multi-ethnic All of Us) cuts bias but equity gap persists"}
+          - {pt: "PRS ancestry bias é restrito a European sem componente non-European sendo PAGE e GG inviáveis em qualquer aplicação populacional humana clínica moderna em 2024 globalmente em qualquer escala", en: "PRS ancestry bias is restricted to European without non-European component with PAGE and GG infeasible in any modern clinical population human application in 2024 globally at any scale"}
+          - {pt: "African/East Asian PRS performance é teórica sem evidência experimental sendo multi-ancestry GWAS inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer", en: "African/East Asian PRS performance is theoretical without experimental evidence with multi-ancestry GWAS technically infeasible in any modern clinical human patient in 2024 globally at any"}
+          - {pt: "Equity gap é incompatível com PRS sendo multi-ethnic All of Us inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente populacional preventivo adulto", en: "Equity gap is incompatible with PRS with multi-ethnic All of Us infeasible in any modern clinical adult preventive population human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "PRS desenvolvido em European cohort transfere ~50% performance em African/East Asian — multi-ancestry GWAS (PAGE, GG, multi-ethnic All of Us) reduz bias mas equity gap persiste", en: "PRS developed in European cohort transfers ~50% performance to African/East Asian — multi-ancestry GWAS (PAGE, GG, multi-ethnic All of Us) cuts bias but equity gap persists"}
+        rationale: {pt: "Quando coorte é só European, então PRS não atende todo mundo.", en: "When cohort is European-only, PRS doesn't serve everyone."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pharmacogenomics:", en: "Pharmacogenomics:"}
+        choices:
+          - {pt: "CYP2C19 ↔ clopidogrel, CYP2D6 ↔ codeine/tamoxifen, HLA-B*5701 ↔ abacavir, TPMT ↔ azathioprine — CPIC guidelines + PGx panel pre-prescription escalam personalized dosing", en: "CYP2C19 ↔ clopidogrel, CYP2D6 ↔ codeine/tamoxifen, HLA-B*5701 ↔ abacavir, TPMT ↔ azathioprine — CPIC guidelines + PGx panel pre-prescription scale personalized dosing"}
+          - {pt: "Pharmacogenomics é restrito a single-gene sem componente PGx panel sendo CYP2C19 e CYP2D6 inviáveis em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Pharmacogenomics is restricted to single-gene without PGx panel component with CYP2C19 and CYP2D6 infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "HLA-B*5701 é teórico sem evidência experimental sendo abacavir inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente farmacogenômico", en: "HLA-B*5701 is theoretical without experimental evidence with abacavir technically infeasible in any modern clinical pharmacogenomic human patient in 2024 globally at any patient scale"}
+          - {pt: "CPIC guidelines é incompatível com PGx sendo TPMT/azathioprine inviáveis em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente farmacológico adulto", en: "CPIC guidelines is incompatible with PGx with TPMT/azathioprine infeasible in any modern clinical adult pharmacologic human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "CYP2C19 ↔ clopidogrel, CYP2D6 ↔ codeine/tamoxifen, HLA-B*5701 ↔ abacavir, TPMT ↔ azathioprine — CPIC guidelines + PGx panel pre-prescription escalam personalized dosing", en: "CYP2C19 ↔ clopidogrel, CYP2D6 ↔ codeine/tamoxifen, HLA-B*5701 ↔ abacavir, TPMT ↔ azathioprine — CPIC guidelines + PGx panel pre-prescription scale personalized dosing"}
+        rationale: {pt: "Quando PGx é check pré-prescription, então dose certa chega.", en: "When PGx is pre-prescription check, right dose arrives."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MyCode Geisinger:", en: "MyCode Geisinger:"}
+        choices:
+          - {pt: "Geisinger MyCode 250k participants linked to EHR identifies actionable findings (76 ACMG genes) returning to patient — ROI cost-effective preventive medicine + drug discovery partner", en: "Geisinger MyCode 250k participants linked to EHR identifies actionable findings (76 ACMG genes) returning to patient — ROI cost-effective preventive medicine + drug-discovery partner"}
+          - {pt: "MyCode é restrito a 100 indivíduos sem componente 250k sendo Geisinger inviável em qualquer aplicação populacional humana clínica moderna em 2024 globalmente em qualquer escala paciente", en: "MyCode is restricted to 100 individuals without 250k component with Geisinger infeasible in any modern clinical population human application in 2024 globally at any patient scale"}
+          - {pt: "76 ACMG genes é teórico sem evidência experimental sendo MyCode inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente preventivo", en: "76 ACMG genes is theoretical without experimental evidence with MyCode technically infeasible in any modern clinical preventive human patient in 2024 globally at any patient scale"}
+          - {pt: "ROI é incompatível com preventive medicine sendo MyCode inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente populacional adulto idoso", en: "ROI is incompatible with preventive medicine with MyCode infeasible in any modern clinical adult elderly population human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Geisinger MyCode 250k participants linked to EHR identifies actionable findings (76 ACMG genes) returning to patient — ROI cost-effective preventive medicine + drug discovery partner", en: "Geisinger MyCode 250k participants linked to EHR identifies actionable findings (76 ACMG genes) returning to patient — ROI cost-effective preventive medicine + drug-discovery partner"}
+        rationale: {pt: "Quando hospital genotype + EHR conecta, então preventive medicine flui.", en: "When hospital genotype + EHR connect, preventive medicine flows."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações populacionais", en: "Population applications"}
+    description: {pt: "Da bancada à saúde pública.", en: "From bench to public health."}
+    exercises:
+      - type: choice
+        question: {pt: "Newborn screening:", en: "Newborn screening:"}
+        choices:
+          - {pt: "GUARDIAN, BabyDetect, Genomics England Newborn estendem heel-prick a WGS detectando 200+ rare disease pré-sintomática (set 08/L) — early intervention SCID/SMA/PKU/MCAD", en: "GUARDIAN, BabyDetect, Genomics England Newborn extend heel-prick to WGS detecting 200+ pre-symptomatic rare diseases (set 08/L) — early SCID/SMA/PKU/MCAD intervention"}
+          - {pt: "Newborn screening é restrito a heel-prick convencional sem componente WGS sendo GUARDIAN e BabyDetect inviáveis em qualquer paciente neonatal humano clínico moderno em 2024 globalmente", en: "Newborn screening is restricted to conventional heel-prick without WGS component with GUARDIAN and BabyDetect infeasible in any modern clinical neonatal human patient in 2024 globally"}
+          - {pt: "200+ rare disease é teórico sem componente prático sendo Newborn WGS inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neonatal pediátrico", en: "200+ rare disease is theoretical without practical component with Newborn WGS infeasible in any modern clinical pediatric neonatal human patient in 2024 globally at any scale"}
+          - {pt: "SCID/SMA/PKU/MCAD são incompatíveis com WGS sendo Genomics England Newborn inviável em qualquer paciente neonatal humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "SCID/SMA/PKU/MCAD are incompatible with WGS with Genomics England Newborn infeasible in any modern clinical neonatal human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "GUARDIAN, BabyDetect, Genomics England Newborn estendem heel-prick a WGS detectando 200+ rare disease pré-sintomática (set 08/L) — early intervention SCID/SMA/PKU/MCAD", en: "GUARDIAN, BabyDetect, Genomics England Newborn extend heel-prick to WGS detecting 200+ pre-symptomatic rare diseases (set 08/L) — early SCID/SMA/PKU/MCAD intervention"}
+        rationale: {pt: "Quando WGS encontra raro antes do sintoma, então tratamento começa cedo.", en: "When WGS finds rare before symptom, treatment starts early."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Wastewater surveillance:", en: "Wastewater surveillance:"}
+        choices:
+          - {pt: "Sequenciamento de cesspits/sewage detecta SARS-CoV-2 variants, polio, mpox semanas antes de clinical detection — Biobot/CDC/Verily real-time pandemic early-warning system", en: "Sewage/cesspits sequencing detects SARS-CoV-2 variants, polio, mpox weeks before clinical detection — Biobot/CDC/Verily real-time pandemic early-warning system"}
+          - {pt: "Wastewater surveillance é restrito a clinical detection sem componente sewage sendo Biobot/CDC/Verily inviáveis em qualquer aplicação populacional humana clínica moderna em 2024 globalmente em qualquer", en: "Wastewater surveillance is restricted to clinical detection without sewage component with Biobot/CDC/Verily infeasible in any modern clinical population human application in 2024 globally at any"}
+          - {pt: "SARS-CoV-2 variants é teórico sem evidência experimental sendo Biobot inviável tecnicamente em qualquer aplicação saúde pública humana moderna em 2024 globalmente em qualquer escala paciente", en: "SARS-CoV-2 variants is theoretical without experimental evidence with Biobot technically infeasible in any modern public health human application in 2024 globally at any patient scale"}
+          - {pt: "Polio e mpox são incompatíveis com sewage sendo wastewater surveillance inviável em qualquer aplicação populacional humana clínica moderna em 2024 globalmente em qualquer escala paciente saúde pública", en: "Polio and mpox are incompatible with sewage with wastewater surveillance infeasible in any modern clinical population human application in 2024 globally at any public-health patient scale"}
+        correctAnswer: {pt: "Sequenciamento de cesspits/sewage detecta SARS-CoV-2 variants, polio, mpox semanas antes de clinical detection — Biobot/CDC/Verily real-time pandemic early-warning system", en: "Sewage/cesspits sequencing detects SARS-CoV-2 variants, polio, mpox weeks before clinical detection — Biobot/CDC/Verily real-time pandemic early-warning system"}
+        rationale: {pt: "Quando esgoto fala, então pandemia revela cedo.", en: "When sewage speaks, pandemic shows early."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Carrier screening expanded:", en: "Expanded carrier screening:"}
+        choices:
+          - {pt: "Pre-conception expanded carrier screening 100-500 genes recessive (CF, SMA, fragile X, Tay-Sachs) em casais identifica risk autosomal recessive offspring — Counsyl/Natera Horizon", en: "Pre-conception expanded carrier screening of 100-500 recessive genes (CF, SMA, fragile X, Tay-Sachs) in couples identifies autosomal-recessive offspring risk — Counsyl/Natera Horizon"}
+          - {pt: "Carrier screening é restrito a 5 genes sem componente expanded sendo Counsyl e Natera Horizon inviáveis em qualquer aplicação reprodutiva humana clínica moderna em 2024 globalmente em qualquer", en: "Carrier screening is restricted to 5 genes without expanded component with Counsyl and Natera Horizon infeasible in any modern clinical human reproductive application in 2024 globally at any"}
+          - {pt: "CF, SMA, fragile X são incompatíveis com carrier sendo expanded screening inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente reprodutivo", en: "CF, SMA, fragile X are incompatible with carrier with expanded screening technically infeasible in any modern clinical reproductive human patient in 2024 globally at any patient scale"}
+          - {pt: "Pre-conception é teórico sem evidência clínica sendo Tay-Sachs inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente reprodutivo adulto", en: "Pre-conception is theoretical without clinical evidence with Tay-Sachs infeasible in any modern clinical adult reproductive human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Pre-conception expanded carrier screening 100-500 genes recessive (CF, SMA, fragile X, Tay-Sachs) em casais identifica risk autosomal recessive offspring — Counsyl/Natera Horizon", en: "Pre-conception expanded carrier screening of 100-500 recessive genes (CF, SMA, fragile X, Tay-Sachs) in couples identifies autosomal-recessive offspring risk — Counsyl/Natera Horizon"}
+        rationale: {pt: "Quando carrier é encontrado pré-conception, então PGT-M ou opção informada existe.", en: "When carrier is found pre-conception, PGT-M or informed option exists."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ACMG actionable:", en: "ACMG actionable:"}
+        choices:
+          - {pt: "ACMG SF v3.2 lista 81 genes (BRCA1/2, MLH1/MSH2, KCNQ1, MYH7) com recommended return em incidental findings — TGCT, dyslipidemia, cardiomyopathy, cancer, channelopathy", en: "ACMG SF v3.2 lists 81 genes (BRCA1/2, MLH1/MSH2, KCNQ1, MYH7) with recommended return on incidental findings — TGCT, dyslipidemia, cardiomyopathy, cancer, channelopathy"}
+          - {pt: "ACMG é restrito a 1 gene sem componente 81 genes sendo SF v3.2 inviável em qualquer aplicação populacional humana clínica moderna em 2024 globalmente em qualquer escala paciente preventivo adulto", en: "ACMG is restricted to 1 gene without 81-gene component with SF v3.2 infeasible in any modern clinical adult preventive population human application in 2024 globally at any scale"}
+          - {pt: "BRCA1/2, MLH1/MSH2, KCNQ1, MYH7 são teóricos sem componente clínico sendo ACMG inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "BRCA1/2, MLH1/MSH2, KCNQ1, MYH7 are theoretical without clinical component with ACMG technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "Incidental findings é incompatível com ACMG sendo SF v3.2 inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente preventivo populacional adulto idoso", en: "Incidental findings are incompatible with ACMG with SF v3.2 infeasible in any modern clinical adult elderly preventive population human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "ACMG SF v3.2 lista 81 genes (BRCA1/2, MLH1/MSH2, KCNQ1, MYH7) com recommended return em incidental findings — TGCT, dyslipidemia, cardiomyopathy, cancer, channelopathy", en: "ACMG SF v3.2 lists 81 genes (BRCA1/2, MLH1/MSH2, KCNQ1, MYH7) with recommended return on incidental findings — TGCT, dyslipidemia, cardiomyopathy, cancer, channelopathy"}
+        rationale: {pt: "Quando ACMG lista genes acionáveis, então findings retornam aos pacientes.", en: "When ACMG lists actionable genes, findings return to patients."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GINA discrimination:", en: "GINA discrimination:"}
+        choices:
+          - {pt: "Genetic Information Nondiscrimination Act 2008 USA proíbe employer/health insurer usar genetic data — não cobre life/disability/long-term care, lacuna legal aberta", en: "Genetic Information Nondiscrimination Act 2008 USA bans employer/health-insurer use of genetic data — doesn't cover life/disability/long-term care, leaving an open legal gap"}
+          - {pt: "GINA é restrito a Mendelian sem componente polygenic sendo employer/health insurer use inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "GINA is restricted to Mendelian without polygenic component with employer/health-insurer use infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "Life/disability é coberto por GINA sendo legal gap inexistente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente populacional adulto idoso", en: "Life/disability is covered by GINA with no legal gap in any modern clinical adult elderly population human patient in 2024 globally at any patient scale"}
+          - {pt: "Genetic data é incompatível com GINA sendo Nondiscrimination Act inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente preventivo populacional adulto", en: "Genetic data is incompatible with GINA with Nondiscrimination Act infeasible in any modern clinical adult preventive population human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Genetic Information Nondiscrimination Act 2008 USA proíbe employer/health insurer usar genetic data — não cobre life/disability/long-term care, lacuna legal aberta", en: "Genetic Information Nondiscrimination Act 2008 USA bans employer/health-insurer use of genetic data — doesn't cover life/disability/long-term care, leaving an open legal gap"}
+        rationale: {pt: "Quando lei protege parcialmente, então prudência genética continua importante.", en: "When law partially protects, genetic prudence still matters."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Direct-to-consumer 23andMe:", en: "23andMe DTC:"}
+        choices:
+          - {pt: "23andMe, MyHeritage, AncestryDNA oferecem $100-200 array genotyping para ancestry + carrier + trait + 10+ FDA-cleared health predispositions — opt-in research database de millions", en: "23andMe, MyHeritage, AncestryDNA offer $100-200 array genotyping for ancestry + carrier + trait + 10+ FDA-cleared health predispositions — opt-in millions-strong research database"}
+          - {pt: "DTC é restrito a hospital sem componente consumer sendo 23andMe e MyHeritage inviáveis em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente populacional", en: "DTC is restricted to hospital without consumer component with 23andMe and MyHeritage infeasible in any modern clinical population human patient in 2024 globally at any patient scale"}
+          - {pt: "FDA-cleared health predispositions é teórico sem evidência experimental sendo AncestryDNA inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "FDA-cleared health predispositions is theoretical without experimental evidence with AncestryDNA technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "Opt-in research é incompatível com DTC sendo 23andMe inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente populacional preventivo adulto idoso", en: "Opt-in research is incompatible with DTC with 23andMe infeasible in any modern clinical adult elderly preventive population human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "23andMe, MyHeritage, AncestryDNA oferecem $100-200 array genotyping para ancestry + carrier + trait + 10+ FDA-cleared health predispositions — opt-in research database de millions", en: "23andMe, MyHeritage, AncestryDNA offer $100-200 array genotyping for ancestry + carrier + trait + 10+ FDA-cleared health predispositions — opt-in millions-strong research database"}
+        rationale: {pt: "Quando consumer paga $100, então DNA escala milhões e research evolui.", en: "When consumer pays $100, DNA scales to millions and research advances."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Privacy Re-id risk:", en: "Privacy/re-id risk:"}
+        choices:
+          - {pt: "Genealogical SNP re-identification (Yaniv Erlich 2018) demonstrou ~60% USA findable via 3rd-cousin DNA database — Golden State Killer 2018 forensic precedent enabled by GEDmatch", en: "Genealogical SNP re-identification (Yaniv Erlich 2018) showed ~60% of US findable via 3rd-cousin DNA database — Golden State Killer 2018 forensic precedent enabled by GEDmatch"}
+          - {pt: "Re-identification é restrito a fingerprint sem componente genealogical sendo Yaniv Erlich 2018 inviável em qualquer aplicação populacional humana clínica moderna em 2024 globalmente em qualquer", en: "Re-identification is restricted to fingerprint without genealogical component with Yaniv Erlich 2018 infeasible in any modern clinical population human application in 2024 globally at any"}
+          - {pt: "Golden State Killer é teórico sem evidência forense sendo GEDmatch inviável tecnicamente em qualquer aplicação humana clínica moderna em 2024 globalmente em qualquer escala paciente populacional", en: "Golden State Killer is theoretical without forensic evidence with GEDmatch technically infeasible in any modern clinical human application in 2024 globally at any population patient scale"}
+          - {pt: "60% USA é incompatível com 3rd-cousin sendo re-id inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente populacional preventivo adulto", en: "60% USA is incompatible with 3rd-cousin with re-id infeasible in any modern clinical adult preventive population human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Genealogical SNP re-identification (Yaniv Erlich 2018) demonstrou ~60% USA findable via 3rd-cousin DNA database — Golden State Killer 2018 forensic precedent enabled by GEDmatch", en: "Genealogical SNP re-identification (Yaniv Erlich 2018) showed ~60% of US findable via 3rd-cousin DNA database — Golden State Killer 2018 forensic precedent enabled by GEDmatch"}
+        rationale: {pt: "Quando primo distante envia DNA, então quase ninguém escapa.", en: "When distant cousin submits DNA, almost no one escapes."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Embryo polygenic edit ethics:", en: "Embryo polygenic edit ethics:"}
+        choices:
+          - {pt: "Genomic Prediction, MyOme oferecem PRS em embrião IVF para diabetes, schizophrenia, height — controvérsia ética dado predição limitada em 1 generation e seleção eugenic (set 10/L)", en: "Genomic Prediction, MyOme offer IVF embryo PRS for diabetes, schizophrenia, height — ethical controversy given limited 1-generation prediction and eugenic selection (set 10/L)"}
+          - {pt: "Polygenic embryo screening é restrito a PGT-A sem componente PRS sendo Genomic Prediction e MyOme inviáveis em qualquer paciente IVF humano clínico moderno em 2024 globalmente em qualquer", en: "Polygenic embryo screening is restricted to PGT-A without PRS component with Genomic Prediction and MyOme infeasible in any modern clinical IVF human patient in 2024 globally at any"}
+          - {pt: "Diabetes, schizophrenia, height são monogenic sendo PRS irrelevante em qualquer paciente IVF humano clínico moderno em 2024 globalmente em qualquer escala paciente reprodutivo adulto", en: "Diabetes, schizophrenia, height are monogenic with PRS irrelevant in any modern clinical IVF human patient in 2024 globally at any adult reproductive patient scale"}
+          - {pt: "Eugenic selection é teórico sem componente clínico sendo polygenic embryo screening inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Eugenic selection is theoretical without clinical component with polygenic embryo screening technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Genomic Prediction, MyOme oferecem PRS em embrião IVF para diabetes, schizophrenia, height — controvérsia ética dado predição limitada em 1 generation e seleção eugenic (set 10/L)", en: "Genomic Prediction, MyOme offer IVF embryo PRS for diabetes, schizophrenia, height — ethical controversy given limited 1-generation prediction and eugenic selection (set 10/L)"}
+        rationale: {pt: "Quando PRS escolhe embrião, então ética e ciência se cruzam.", en: "When PRS picks embryo, ethics and science cross."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Liquid biopsy + PRS:", en: "Liquid biopsy + PRS:"}
+        choices:
+          - {pt: "Combo PRS high + Galleri MCED+ aumenta PPV de cancer detection em adult preventive screening — 2024+ explorando integração genetic risk + cfDNA epigenetic signature em UK MCED", en: "PRS high + Galleri MCED+ combo raises adult-preventive-screening cancer-detection PPV — 2024+ exploring genetic-risk + cfDNA epigenetic-signature integration in UK MCED"}
+          - {pt: "Liquid biopsy + PRS é restrito a single-modality sem componente combo sendo Galleri MCED inviável em qualquer paciente populacional humano clínico moderno em 2024 globalmente em qualquer escala", en: "Liquid biopsy + PRS is restricted to single-modality without combo component with Galleri MCED infeasible in any modern clinical population human patient in 2024 globally at any scale"}
+          - {pt: "PPV cancer detection é teórico sem evidência experimental sendo PRS + cfDNA inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Cancer-detection PPV is theoretical without experimental evidence with PRS + cfDNA technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "Genetic risk + cfDNA epigenetic é incompatível com integration sendo UK MCED inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente preventivo populacional", en: "Genetic risk + cfDNA epigenetic is incompatible with integration with UK MCED infeasible in any modern clinical preventive population human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Combo PRS high + Galleri MCED+ aumenta PPV de cancer detection em adult preventive screening — 2024+ explorando integração genetic risk + cfDNA epigenetic signature em UK MCED", en: "PRS high + Galleri MCED+ combo raises adult-preventive-screening cancer-detection PPV — 2024+ exploring genetic-risk + cfDNA epigenetic-signature integration in UK MCED"}
+        rationale: {pt: "Quando PRS e MCED somam, então PPV vence.", en: "When PRS and MCED sum, PPV wins."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese pop genomics:", en: "Pop genomics synthesis:"}
+        choices:
+          - {pt: "PRS + UK Biobank/All of Us/FinnGen + MR + fine-mapping + clinical PRS + ancestry diversity + PGx + MyCode + newborn screening + wastewater + carrier + ACMG + GINA + DTC + MCED redefinem", en: "PRS + UK Biobank/All of Us/FinnGen + MR + fine-mapping + clinical PRS + ancestry diversity + PGx + MyCode + newborn screening + wastewater + carrier + ACMG + GINA + DTC + MCED redefine"}
+          - {pt: "Public health genomics permanece pré-clínica sem aplicação humana até 2024 sendo conceito experimental sem implementação prática em qualquer indicação clínica humana globalmente em qualquer", en: "Public health genomics remains preclinical without human application by 2024 being experimental concept without practical implementation in any clinical human indication globally at any"}
+          - {pt: "Plataformas populacionais são intercambiáveis sem trade-off em escala, ancestry ou aplicacao tornando escolha tecnológica indiferente em qualquer aplicação clínica humana 2024 globalmente em qualquer", en: "Population platforms are interchangeable without scale, ancestry or application trade-off making technology choice indifferent in any clinical human application 2024 globally at any"}
+          - {pt: "Public health genomics depende exclusivamente de Mendelian sem componente polygenic sendo PRS, UK Biobank e All of Us dispensáveis em qualquer paciente humano clínico moderno em 2024", en: "Public health genomics depends exclusively on Mendelian without polygenic component with PRS, UK Biobank and All of Us dispensable in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "PRS + UK Biobank/All of Us/FinnGen + MR + fine-mapping + clinical PRS + ancestry diversity + PGx + MyCode + newborn screening + wastewater + carrier + ACMG + GINA + DTC + MCED redefinem", en: "PRS + UK Biobank/All of Us/FinnGen + MR + fine-mapping + clinical PRS + ancestry diversity + PGx + MyCode + newborn screening + wastewater + carrier + ACMG + GINA + DTC + MCED redefine"}
+        rationale: {pt: "Quando population escala, então prevenção fica precisa.", en: "When population scales, prevention turns precise."}
+        objectives: [biology.population_genomics]
+        difficulty: 5
+target: 20
