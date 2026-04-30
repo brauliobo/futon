@@ -1,0 +1,244 @@
+title:
+  pt: "🧓 Senescência celular e senolíticos"
+  en: "🧓 Cellular senescence and senolytics"
+level: 'K'
+subject: biology
+objectives: [biology.senescence_senolytics]
+difficulty: 5
+authorNotes: "p16/p21, SASP, BCL-XL/BCL-2, dasatinib+quercetin (D+Q), navitoclax, fisetin, senolytic CAR-T uPAR, p16-INK-ATTAC, Unity Biotechnology UBX1325, intermittent dosing."
+example:
+  pt: "Ex.: idoso com fragilidade → senescentes p16+ acumulam → D+Q intermitente → SASP cai → função melhora (Mayo Kirkland fase 1)."
+  en: "Ex.: frail elder → p16+ senescents accumulate → intermittent D+Q → SASP drops → function improves (Mayo Kirkland phase 1)."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Biologia da senescência", en: "Senescence biology"}
+    description: {pt: "Como a célula trava o ciclo.", en: "How cell locks the cycle."}
+    exercises:
+      - type: choice
+        question: {pt: "p16/p21 dual:", en: "p16/p21 dual:"}
+        choices:
+          - {pt: "p16INK4a inibe CDK4/6 e p21 inibe CDK2 — Rb hipofosforilada bloqueia E2F travando G1/S de forma duradoura", en: "p16INK4a inhibits CDK4/6 and p21 inhibits CDK2 — hypophosphorylated Rb blocks E2F locking G1/S durably"}
+          - {pt: "p16 e p21 ativam CDK4/6 e CDK2 acelerando G1/S sendo proliferativos contraindicados em controle de senescência tecidual em idosos", en: "p16 and p21 activate CDK4/6 and CDK2 accelerating G1/S being proliferative and contraindicated in tissue-senescence control in elders"}
+          - {pt: "p16 atua em mitocôndria sem componente nuclear sendo CDK4/6 inhibitor in trans sem bloqueio direto de Rb-E2F na entrada de S phase", en: "p16 acts in mitochondria without nuclear component being a trans CDK4/6 inhibitor without direct Rb-E2F block at S-phase entry"}
+          - {pt: "Rb hipofosforilada ativa E2F sendo p16/p21 indutores de S-phase entry e proliferação aumentada em qualquer contexto biológico in vivo", en: "Hypophosphorylated Rb activates E2F with p16/p21 inducing S-phase entry and increased proliferation in any biological context in vivo"}
+        correctAnswer: {pt: "p16INK4a inibe CDK4/6 e p21 inibe CDK2 — Rb hipofosforilada bloqueia E2F travando G1/S de forma duradoura", en: "p16INK4a inhibits CDK4/6 and p21 inhibits CDK2 — hypophosphorylated Rb blocks E2F locking G1/S durably"}
+        rationale: {pt: "Quando CDK fica calado, então ciclo trava em G1.", en: "When CDK quiets, cycle locks in G1."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SASP:", en: "SASP:"}
+        choices:
+          - {pt: "Senescence-Associated Secretory Phenotype: IL-6, IL-8, MCP-1, MMPs e TGFβ — propaga senescência paracrina e remodela tecido com inflamação", en: "Senescence-Associated Secretory Phenotype: IL-6, IL-8, MCP-1, MMPs and TGFβ — propagates paracrine senescence and remodels tissue via inflammation"}
+          - {pt: "SASP é silenciamento secretor de células senescentes sem componente inflamatório sendo equivalente a quiescência G0 metabolicamente inerte", en: "SASP is secretory silencing of senescent cells without inflammatory component being equivalent to metabolically inert G0 quiescence"}
+          - {pt: "Citocinas SASP suprimem inflamação tecidual sendo benéficas em envelhecimento e contraindicadas como alvo terapêutico em senolíticos modernos", en: "SASP cytokines suppress tissue inflammation being beneficial in aging and contraindicated as a therapeutic target in modern senolytics"}
+          - {pt: "MMPs em SASP estabilizam ECM sem remodelagem proteolítica sendo função protetora tecidual em senescência fisiológica do envelhecimento adulto", en: "SASP MMPs stabilize ECM without proteolytic remodeling being a protective tissue function in physiologic adult-aging senescence"}
+        correctAnswer: {pt: "Senescence-Associated Secretory Phenotype: IL-6, IL-8, MCP-1, MMPs e TGFβ — propaga senescência paracrina e remodela tecido com inflamação", en: "Senescence-Associated Secretory Phenotype: IL-6, IL-8, MCP-1, MMPs and TGFβ — propagates paracrine senescence and remodels tissue via inflammation"}
+        rationale: {pt: "Quando SASP pega vizinho, então senescência espalha.", en: "When SASP touches neighbor, senescence spreads."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BCL-2/BCL-XL:", en: "BCL-2/BCL-XL:"}
+        choices:
+          - {pt: "Senescentes upregulam BCL-XL/BCL-2 escapando apoptose — vulnerabilidade alvo de navitoclax (ABT-263) e D+Q em senolítico clínico", en: "Senescents upregulate BCL-XL/BCL-2 escaping apoptosis — vulnerability targeted by navitoclax (ABT-263) and D+Q in clinical senolytics"}
+          - {pt: "Senescentes downregulam BCL-XL/BCL-2 sendo apoptose-prone sem necessidade de senolíticos para eliminação tecidual de células senescentes", en: "Senescents downregulate BCL-XL/BCL-2 being apoptosis-prone without senolytic need for tissue elimination of senescent cells"}
+          - {pt: "Navitoclax é PARP inhibitor sem componente BCL-2/BCL-XL contraindicado em senescência sendo restrito a HRD-BRCA-mut em câncer ovário", en: "Navitoclax is a PARP inhibitor without BCL-2/BCL-XL component contraindicated in senescence being restricted to HRD-BRCA-mut in ovarian cancer"}
+          - {pt: "BCL-XL e BCL-2 são pró-apoptóticos em senescentes sendo inibidores anti-apoptóticos contraindicados em senolíticos clínicos", en: "BCL-XL and BCL-2 are pro-apoptotic in senescents with anti-apoptotic inhibitors contraindicated in clinical senolytics"}
+        correctAnswer: {pt: "Senescentes upregulam BCL-XL/BCL-2 escapando apoptose — vulnerabilidade alvo de navitoclax (ABT-263) e D+Q em senolítico clínico", en: "Senescents upregulate BCL-XL/BCL-2 escaping apoptosis — vulnerability targeted by navitoclax (ABT-263) and D+Q in clinical senolytics"}
+        rationale: {pt: "Quando senescente depende de BCL, então BH3-mimetic mata.", en: "When senescent depends on BCL, BH3-mimetic kills."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "uPAR senolytic CAR-T:", en: "uPAR senolytic CAR-T:"}
+        choices:
+          - {pt: "uPAR é marcador de superfície de senescentes — CAR-T anti-uPAR (Lowe/MSKCC 2020) elimina senescentes seletivamente em fígado fibrótico murino", en: "uPAR is a surface marker of senescents — anti-uPAR CAR-T (Lowe/MSKCC 2020) selectively eliminates senescents in fibrotic mouse liver"}
+          - {pt: "uPAR é marcador exclusivo de células-tronco hematopoiéticas sem expressão em senescentes sendo CAR-T anti-uPAR irrelevante em senolítico", en: "uPAR is exclusive to hematopoietic stem cells without senescent expression making anti-uPAR CAR-T irrelevant in senolytics"}
+          - {pt: "CAR-T senolítica não é viável tecnicamente sendo restrito a câncer hematológico CD19/BCMA sem componente anti-uPAR ou senescência", en: "Senolytic CAR-T is technically infeasible being restricted to CD19/BCMA hematologic cancer without anti-uPAR or senescence component"}
+          - {pt: "MSKCC 2020 demonstrou CAR-T anti-CD19 em fibrose hepática sem componente uPAR ou senescência sendo equivalente a CAR-T B-cell linfoma", en: "MSKCC 2020 demonstrated anti-CD19 CAR-T in liver fibrosis without uPAR or senescence component being equivalent to CAR-T in B-cell lymphoma"}
+        correctAnswer: {pt: "uPAR é marcador de superfície de senescentes — CAR-T anti-uPAR (Lowe/MSKCC 2020) elimina senescentes seletivamente em fígado fibrótico murino", en: "uPAR is a surface marker of senescents — anti-uPAR CAR-T (Lowe/MSKCC 2020) selectively eliminates senescents in fibrotic mouse liver"}
+        rationale: {pt: "Quando uPAR marca, então CAR-T mira preciso.", en: "When uPAR marks, CAR-T aims precisely."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "p16-INK-ATTAC:", en: "p16-INK-ATTAC:"}
+        choices:
+          - {pt: "Modelo murino induzível com FKBP-Caspase8 sob promotor p16 elimina senescentes via AP20187 — Baker/van Deursen 2011/2016 estendeu lifespan", en: "Inducible mouse model with FKBP-Caspase8 under p16 promoter eliminates senescents via AP20187 — Baker/van Deursen 2011/2016 extended lifespan"}
+          - {pt: "p16-INK-ATTAC é construção transgênica em humano clínico sem componente murino sendo terapia senolítica aprovada FDA até 2024", en: "p16-INK-ATTAC is a human clinical transgenic construct without mouse component being an FDA-approved senolytic therapy by 2024"}
+          - {pt: "Baker/van Deursen 2011 demonstrou que eliminação senescente reduz lifespan murino sendo p16-ATTAC contraindicado como modelo de envelhecimento saudável", en: "Baker/van Deursen 2011 showed senescent elimination reduces mouse lifespan with p16-ATTAC contraindicated as healthy-aging model"}
+          - {pt: "FKBP-Caspase8 é equivalente a Cas9 sem componente apoptótico sendo p16-ATTAC ferramenta de edição CRISPR sem aplicação em senescência murina", en: "FKBP-Caspase8 is equivalent to Cas9 without apoptotic component making p16-ATTAC a CRISPR editing tool without murine senescence application"}
+        correctAnswer: {pt: "Modelo murino induzível com FKBP-Caspase8 sob promotor p16 elimina senescentes via AP20187 — Baker/van Deursen 2011/2016 estendeu lifespan", en: "Inducible mouse model with FKBP-Caspase8 under p16 promoter eliminates senescents via AP20187 — Baker/van Deursen 2011/2016 extended lifespan"}
+        rationale: {pt: "Quando p16+ ativa caspase, então senescente morre.", en: "When p16+ fires caspase, senescent dies."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "OIS oncogene-induced:", en: "Oncogene-induced senescence (OIS):"}
+        choices:
+          - {pt: "RAS/BRAF mutados induzem senescência via p16/p53 como barreira anti-tumoral natural — perda dessa barreira (CDKN2A loss) habilita progressão", en: "Mutant RAS/BRAF induce senescence via p16/p53 as natural anti-tumor barrier — loss of this barrier (CDKN2A loss) enables progression"}
+          - {pt: "OIS é proliferação descontrolada sem componente p16/p53 sendo senescência irrelevante em barreira anti-tumoral em câncer humano in vivo", en: "OIS is uncontrolled proliferation without p16/p53 component making senescence irrelevant in anti-tumor barrier in human in vivo cancer"}
+          - {pt: "RAS/BRAF mutados eliminam senescência sendo CDKN2A pró-tumoral e sua perda protetora contra progressão maligna em câncer epitelial", en: "Mutant RAS/BRAF eliminate senescence with CDKN2A pro-tumoral and its loss protective against malignant progression in epithelial cancer"}
+          - {pt: "Barreira anti-tumoral por senescência é mecanismo embrionário sem expressão em adulto sendo CDKN2A loss neutra para progressão tumoral somática", en: "Senescence-mediated anti-tumor barrier is an embryonic mechanism without adult expression making CDKN2A loss neutral for somatic tumor progression"}
+        correctAnswer: {pt: "RAS/BRAF mutados induzem senescência via p16/p53 como barreira anti-tumoral natural — perda dessa barreira (CDKN2A loss) habilita progressão", en: "Mutant RAS/BRAF induce senescence via p16/p53 as natural anti-tumor barrier — loss of this barrier (CDKN2A loss) enables progression"}
+        rationale: {pt: "Quando oncogene grita, então senescência cala o tumor cedo.", en: "When oncogene shouts, senescence quiets tumor early."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TIS therapy-induced:", en: "Therapy-induced senescence (TIS):"}
+        choices:
+          - {pt: "Quimio/radio induz senescência tumoral parcial — pacientes com TIS mantêm SASP pró-inflamatório e podem se beneficiar de senolítico após terapia", en: "Chemo/radio partially induces tumor senescence — TIS patients maintain pro-inflammatory SASP and can benefit from post-therapy senolytic"}
+          - {pt: "TIS elimina células tumorais permanentemente sendo apoptose final sem componente SASP nem necessidade de senolítico subsequente em câncer", en: "TIS permanently eliminates tumor cells being final apoptosis without SASP component or need for subsequent senolytic in cancer"}
+          - {pt: "Quimioterapia não induz senescência sendo restrito a apoptose ou necrose direta em qualquer tumor humano tratado em fase metastática", en: "Chemotherapy does not induce senescence being restricted to direct apoptosis or necrosis in any treated metastatic human tumor"}
+          - {pt: "SASP em TIS é anti-inflamatório protegendo tecido adjacente sendo senolítico contraindicado após quimio em câncer humano clínico tratado", en: "SASP in TIS is anti-inflammatory protecting adjacent tissue with senolytic contraindicated after chemotherapy in treated clinical human cancer"}
+        correctAnswer: {pt: "Quimio/radio induz senescência tumoral parcial — pacientes com TIS mantêm SASP pró-inflamatório e podem se beneficiar de senolítico após terapia", en: "Chemo/radio partially induces tumor senescence — TIS patients maintain pro-inflammatory SASP and can benefit from post-therapy senolytic"}
+        rationale: {pt: "Quando terapia para tumor, então senolítico limpa restos.", en: "When therapy stops tumor, senolytic clears remnants."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Telomere shortening:", en: "Telomere shortening:"}
+        choices:
+          - {pt: "Encurtamento telomérico ativa ATM/p53 induzindo senescência replicativa irreversível — limite Hayflick em fibroblasto humano (~50 divisões)", en: "Telomere shortening fires ATM/p53 inducing irreversible replicative senescence — Hayflick limit in human fibroblast (~50 divisions)"}
+          - {pt: "Telomere shortening alonga telômeros via telomerase sendo senescência replicativa apenas mecanismo embrionário sem expressão em adulto", en: "Telomere shortening lengthens telomeres via telomerase with replicative senescence only an embryonic mechanism without adult expression"}
+          - {pt: "Limite Hayflick é mito sem evidência experimental sendo fibroblastos humanos imortais e dispensando contagem de divisões celulares clinicamente", en: "Hayflick limit is a myth without experimental evidence with immortal human fibroblasts and dispensable division counting clinically"}
+          - {pt: "ATM e p53 são ativadas por dano oxidativo sem componente telomérico sendo encurtamento de telômero irrelevante em senescência replicativa adulta", en: "ATM and p53 are fired by oxidative damage without telomeric component making telomere shortening irrelevant in adult replicative senescence"}
+        correctAnswer: {pt: "Encurtamento telomérico ativa ATM/p53 induzindo senescência replicativa irreversível — limite Hayflick em fibroblasto humano (~50 divisões)", en: "Telomere shortening fires ATM/p53 inducing irreversible replicative senescence — Hayflick limit in human fibroblast (~50 divisions)"}
+        rationale: {pt: "Quando telômero encurta demais, então célula trava.", en: "When telomere shortens too much, cell locks."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SA-β-gal marker:", en: "SA-β-gal marker:"}
+        choices:
+          - {pt: "β-galactosidase em pH 6.0 detecta lisossomo aumentado em senescentes — marker imuno-histoquímico clássico (Dimri 1995) ainda padrão tecidual", en: "β-galactosidase at pH 6.0 detects enlarged lysosomes in senescents — classic immunohistochemical marker (Dimri 1995) still tissue standard"}
+          - {pt: "SA-β-gal é marker específico de células-tronco sem expressão em senescentes sendo Dimri 1995 inviável tecnicamente em tecido envelhecido humano", en: "SA-β-gal is a stem-cell-specific marker without senescent expression making Dimri 1995 technically infeasible in aged human tissue"}
+          - {pt: "β-galactosidase é detectada em pH neutro sem aumento lisossomal sendo SA-β-gal artefato técnico sem aplicação histoquímica em senescência", en: "β-galactosidase is detected at neutral pH without lysosomal enlargement with SA-β-gal a technical artifact without histochemical senescence application"}
+          - {pt: "SA-β-gal foi substituído por p16 IHC isolado sendo Dimri 1995 obsoleto e dispensável em pesquisa moderna de senescência tecidual", en: "SA-β-gal was replaced by isolated p16 IHC with Dimri 1995 obsolete and dispensable in modern tissue-senescence research"}
+        correctAnswer: {pt: "β-galactosidase em pH 6.0 detecta lisossomo aumentado em senescentes — marker imuno-histoquímico clássico (Dimri 1995) ainda padrão tecidual", en: "β-galactosidase at pH 6.0 detects enlarged lysosomes in senescents — classic immunohistochemical marker (Dimri 1995) still tissue standard"}
+        rationale: {pt: "Quando lisossomo cresce, então pH 6.0 acende azul.", en: "When lysosome grows, pH 6.0 lights up blue."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Heterogeneidade senescência:", en: "Senescence heterogeneity:"}
+        choices:
+          - {pt: "Subtipos OIS, TIS, replicativa, mitocondrial divergem em SASP e marker — não há único senescente, terapia precisa de target tecido-específico", en: "OIS, TIS, replicative, mitochondrial subtypes differ in SASP and markers — no single senescent, therapy needs tissue-specific target"}
+          - {pt: "Senescência é fenótipo único e homogêneo sem subtipos sendo terapia senolítica genérica equivalente em qualquer contexto tecidual em humano", en: "Senescence is a single homogeneous phenotype without subtypes with generic senolytic therapy equivalent in any human tissue context"}
+          - {pt: "Subtipos OIS/TIS/replicativa/mitocondrial são teóricos sem evidência tecidual sendo p16+ uniformemente equivalente entre tecidos em humano adulto", en: "OIS/TIS/replicative/mitochondrial subtypes are theoretical without tissue evidence with p16+ uniformly equivalent between tissues in human adult"}
+          - {pt: "Heterogeneidade senescência exige terapia única broad-spectrum sem componente tissue-specific sendo senolítico personalizado contraindicado clinicamente", en: "Senescence heterogeneity demands single broad-spectrum therapy without tissue-specific component with personalized senolytic clinically contraindicated"}
+        correctAnswer: {pt: "Subtipos OIS, TIS, replicativa, mitocondrial divergem em SASP e marker — não há único senescente, terapia precisa de target tecido-específico", en: "OIS, TIS, replicative, mitochondrial subtypes differ in SASP and markers — no single senescent, therapy needs tissue-specific target"}
+        rationale: {pt: "Quando subtipos divergem, então terapia precisa escolher.", en: "When subtypes diverge, therapy must choose."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Senolíticos clínicos", en: "Clinical senolytics"}
+    description: {pt: "Da bancada para o paciente.", en: "From bench to patient."}
+    exercises:
+      - type: choice
+        question: {pt: "D+Q (dasatinib+quercetin):", en: "D+Q (dasatinib+quercetin):"}
+        choices:
+          - {pt: "Combo TKI + flavonóide identificado por Kirkland (2015) elimina senescentes intermitentemente — fase 1 fibrose pulmonar e DRC mostraram melhora funcional", en: "Kirkland (2015) TKI + flavonoid combo eliminates senescents intermittently — phase 1 pulmonary fibrosis and CKD showed functional improvement"}
+          - {pt: "Dasatinib é PARP inhibitor e quercetin é vitamina C sendo D+Q combo para HRD-tumor sem componente senolítico ou aplicação em IPF", en: "Dasatinib is a PARP inhibitor and quercetin is vitamin C with D+Q a HRD-tumor combo without senolytic component or IPF application"}
+          - {pt: "D+Q é tomado continuamente sem intervalo de descanso sendo dosagem diária superior a intermitente em senolítico clínico humano em fibrose", en: "D+Q is taken continuously without rest interval with daily dosing superior to intermittent in clinical human senolytic in fibrosis"}
+          - {pt: "Kirkland 2015 demonstrou D+Q em câncer pediátrico sem componente senolítico nem aplicação em fibrose pulmonar ou doença renal crônica", en: "Kirkland 2015 showed D+Q in pediatric cancer without senolytic component or pulmonary fibrosis or chronic kidney disease application"}
+        correctAnswer: {pt: "Combo TKI + flavonóide identificado por Kirkland (2015) elimina senescentes intermitentemente — fase 1 fibrose pulmonar e DRC mostraram melhora funcional", en: "Kirkland (2015) TKI + flavonoid combo eliminates senescents intermittently — phase 1 pulmonary fibrosis and CKD showed functional improvement"}
+        rationale: {pt: "Quando dose é pulsátil, então toxicidade cai e função sobe.", en: "When dose is pulsatile, toxicity falls and function rises."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Navitoclax (ABT-263):", en: "Navitoclax (ABT-263):"}
+        choices:
+          - {pt: "BH3-mimetic BCL-XL/BCL-2 elimina senescentes em modelo murino mas trombocitopenia limita uso humano — derivativos seletivos BCL-XL exploram", en: "BCL-XL/BCL-2 BH3-mimetic eliminates senescents in mouse but thrombocytopenia limits human use — BCL-XL-selective derivatives explore"}
+          - {pt: "Navitoclax aumenta plaquetas sendo seguro em humano com perfil hematológico favorável dispensando design de derivativos seletivos BCL-XL", en: "Navitoclax raises platelets being safe in human with favorable hematologic profile dispensing BCL-XL-selective derivative design"}
+          - {pt: "ABT-263 é PARP inhibitor sem componente BCL-XL/BCL-2 sendo senolítico irrelevante em câncer e envelhecimento clinicamente humano testado", en: "ABT-263 is a PARP inhibitor without BCL-XL/BCL-2 component making senolytic irrelevant in clinically tested human cancer and aging"}
+          - {pt: "BH3-mimetics são pró-senescentes induzindo BCL-XL/BCL-2 expression sendo navitoclax indutor em vez de eliminador de senescentes em modelo", en: "BH3-mimetics are pro-senescent inducing BCL-XL/BCL-2 expression with navitoclax inducer instead of senescent eliminator in model"}
+        correctAnswer: {pt: "BH3-mimetic BCL-XL/BCL-2 elimina senescentes em modelo murino mas trombocitopenia limita uso humano — derivativos seletivos BCL-XL exploram", en: "BCL-XL/BCL-2 BH3-mimetic eliminates senescents in mouse but thrombocytopenia limits human use — BCL-XL-selective derivatives explore"}
+        rationale: {pt: "Quando plaqueta cai, então BCL-XL exige seletividade.", en: "When platelet drops, BCL-XL demands selectivity."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fisetin:", en: "Fisetin:"}
+        choices:
+          - {pt: "Flavonóide de morango com perfil senolítico em screening Mayo — fase 2 fibrose, frailty e DM2 testando dose intermitente em idosos", en: "Strawberry flavonoid with senolytic profile in Mayo screen — phase 2 fibrosis, frailty and T2D testing intermittent dose in elderly"}
+          - {pt: "Fisetin é PARP inhibitor sem componente flavonóide sendo restrito a HRD-câncer sem aplicação em senescência ou envelhecimento clínico humano", en: "Fisetin is a PARP inhibitor without flavonoid component being restricted to HRD cancer without senescence or clinical human aging application"}
+          - {pt: "Flavonóide de morango não tem perfil senolítico sendo Mayo screen falho com fisetin descontinuada em fase pré-clínica antes de fase 2 humana", en: "Strawberry flavonoid has no senolytic profile with Mayo screen failed and fisetin discontinued in preclinical before human phase 2"}
+          - {pt: "Fisetin requer dose contínua diária sem intervalo intermitente sendo dosagem única não terapêutica em senescência humana clínica", en: "Fisetin requires continuous daily dose without intermittent interval with single dosing non-therapeutic in clinical human senescence"}
+        correctAnswer: {pt: "Flavonóide de morango com perfil senolítico em screening Mayo — fase 2 fibrose, frailty e DM2 testando dose intermitente em idosos", en: "Strawberry flavonoid with senolytic profile in Mayo screen — phase 2 fibrosis, frailty and T2D testing intermittent dose in elderly"}
+        rationale: {pt: "Quando flavonóide age, então senescente sucumbe.", en: "When flavonoid acts, senescent succumbs."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Unity UBX1325:", en: "Unity UBX1325:"}
+        choices:
+          - {pt: "BCL-XL inhibitor injetado intravítreo elimina senescentes oculares em DMRI/edema diabético macular — fase 2 mostrou ganho visual sustentado", en: "BCL-XL inhibitor injected intravitreally eliminates ocular senescents in AMD/diabetic macular edema — phase 2 showed sustained visual gain"}
+          - {pt: "UBX1325 é injetado IV sistemicamente sem componente intravítreo sendo equivalente a navitoclax oral em DMRI sem ganho seletivo ocular", en: "UBX1325 is injected IV systemically without intravitreal component being equivalent to oral navitoclax in AMD without selective ocular gain"}
+          - {pt: "DMRI e DME não envolvem senescência ocular sendo UBX1325 inviável tecnicamente em fase 2 e descontinuado após PoC retina pré-clínica", en: "AMD and DME don't involve ocular senescence with UBX1325 technically infeasible in phase 2 and discontinued after retinal preclinical PoC"}
+          - {pt: "BCL-XL é exclusivamente hematopoiético sem expressão em retina sendo UBX1325 sem alvo ocular relevante em DMRI ou edema diabético macular", en: "BCL-XL is exclusively hematopoietic without retinal expression making UBX1325 without relevant ocular target in AMD or diabetic macular edema"}
+        correctAnswer: {pt: "BCL-XL inhibitor injetado intravítreo elimina senescentes oculares em DMRI/edema diabético macular — fase 2 mostrou ganho visual sustentado", en: "BCL-XL inhibitor injected intravitreally eliminates ocular senescents in AMD/diabetic macular edema — phase 2 showed sustained visual gain"}
+        rationale: {pt: "Quando olho recebe local, então sistêmico não cobra.", en: "When eye gets it locally, systemic doesn't charge."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Senomorphics:", en: "Senomorphics:"}
+        choices:
+          - {pt: "Compostos que silenciam SASP sem matar senescentes — rapamycin, metformina, ruxolitinib JAK1/2i atenuam inflamação sem estresse apoptótico", en: "Compounds that silence SASP without killing senescents — rapamycin, metformin, JAK1/2 ruxolitinib attenuate inflammation without apoptotic stress"}
+          - {pt: "Senomorphics matam senescentes via apoptose sendo equivalentes funcionais a senolíticos sem distinção mecanística em qualquer aplicação clínica", en: "Senomorphics kill senescents via apoptosis being functionally equivalent to senolytics without mechanistic distinction in any clinical application"}
+          - {pt: "Rapamycin e metformina ativam SASP sendo pró-inflamatórios contraindicados em envelhecimento clínico humano e desencorajados como geroprotetores", en: "Rapamycin and metformin activate SASP being pro-inflammatory contraindicated in clinical human aging and discouraged as geroprotectors"}
+          - {pt: "Senomorphics são exclusivamente cosméticos sem aplicação terapêutica em envelhecimento ou doença crônica humana clinicamente testada até 2024", en: "Senomorphics are exclusively cosmetic without therapeutic application in aging or chronic clinical human disease tested by 2024"}
+        correctAnswer: {pt: "Compostos que silenciam SASP sem matar senescentes — rapamycin, metformina, ruxolitinib JAK1/2i atenuam inflamação sem estresse apoptótico", en: "Compounds that silence SASP without killing senescents — rapamycin, metformin, JAK1/2 ruxolitinib attenuate inflammation without apoptotic stress"}
+        rationale: {pt: "Quando SASP cala, então célula segue mas inflamação some.", en: "When SASP quiets, cell stays but inflammation goes."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fibrose pulmonar:", en: "Pulmonary fibrosis:"}
+        choices:
+          - {pt: "AT2 senescentes em IPF expandem com SASP TGFβ que ativa fibroblasto — D+Q intermitente reduziu p16 alveolar e melhorou 6MWT em fase 1", en: "Senescent AT2 cells in IPF expand with TGFβ SASP activating fibroblast — intermittent D+Q reduced alveolar p16 and improved 6MWT in phase 1"}
+          - {pt: "AT2 senescentes em IPF são protetoras dispensando senolítico sendo D+Q contraindicado em fibrose pulmonar idiopática humana clínica testada", en: "Senescent AT2 cells in IPF are protective dispensing senolytic with D+Q contraindicated in clinically tested human idiopathic pulmonary fibrosis"}
+          - {pt: "TGFβ SASP é anti-fibrótico em IPF sendo senescente alveolar protetor contra fibroblast activation em qualquer paciente com fibrose pulmonar humana", en: "TGFβ SASP is anti-fibrotic in IPF with alveolar senescent protective against fibroblast activation in any human pulmonary fibrosis patient"}
+          - {pt: "D+Q em IPF aumenta p16 alveolar e piora 6MWT sendo senolítico contraindicado clinicamente em fase 1 humana de fibrose pulmonar idiopática", en: "D+Q in IPF raises alveolar p16 and worsens 6MWT with senolytic clinically contraindicated in human IPF phase 1"}
+        correctAnswer: {pt: "AT2 senescentes em IPF expandem com SASP TGFβ que ativa fibroblasto — D+Q intermitente reduziu p16 alveolar e melhorou 6MWT em fase 1", en: "Senescent AT2 cells in IPF expand with TGFβ SASP activating fibroblast — intermittent D+Q reduced alveolar p16 and improved 6MWT in phase 1"}
+        rationale: {pt: "Quando AT2 senescente sai, então pulmão respira melhor.", en: "When senescent AT2 leaves, lung breathes better."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Osteoartrite (OA):", en: "Osteoarthritis (OA):"}
+        choices:
+          - {pt: "Condrócitos senescentes em joelho OA secretam MMP13 e IL-6 — UBX0101 (Unity) injetado intra-articular reduziu dor mas falhou em endpoint primário fase 2", en: "Knee OA senescent chondrocytes secrete MMP13 and IL-6 — intra-articular UBX0101 (Unity) cut pain but failed primary endpoint in phase 2"}
+          - {pt: "UBX0101 injetado IV é PARP inhibitor sem componente intra-articular nem aplicação em OA sendo restrito a HRD-tumor metastático humano", en: "IV-injected UBX0101 is a PARP inhibitor without intra-articular component or OA application being restricted to metastatic HRD human tumor"}
+          - {pt: "Condrócitos senescentes em OA secretam apenas colágeno-II sendo anti-MMP13 contraindicado e fase 2 UBX0101 mostrou ganho funcional sustentado", en: "OA senescent chondrocytes secrete only collagen-II with anti-MMP13 contraindicated and phase 2 UBX0101 showed sustained functional gain"}
+          - {pt: "Osteoartrite não envolve senescência condrocitária sendo restrita a inflamação aguda e dispensando aplicação senolítica em qualquer fase", en: "Osteoarthritis doesn't involve chondrocyte senescence being restricted to acute inflammation and dispensing senolytic application at any phase"}
+        correctAnswer: {pt: "Condrócitos senescentes em joelho OA secretam MMP13 e IL-6 — UBX0101 (Unity) injetado intra-articular reduziu dor mas falhou em endpoint primário fase 2", en: "Knee OA senescent chondrocytes secrete MMP13 and IL-6 — intra-articular UBX0101 (Unity) cut pain but failed primary endpoint in phase 2"}
+        rationale: {pt: "Quando senescente injeta MMP, então cartilagem se degrada.", en: "When senescent injects MMP, cartilage degrades."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Aterosclerose:", en: "Atherosclerosis:"}
+        choices:
+          - {pt: "Macrófagos foam cells e VSMC senescentes em placa aterosclerótica secretam SASP MMP — eliminação reduz placa e estabiliza fibrose em modelo ApoE-/-", en: "Senescent foam-cell macrophages and VSMC in atherosclerotic plaque secrete MMP SASP — elimination cuts plaque and stabilizes fibrosis in ApoE-/-"}
+          - {pt: "Foam cell e VSMC em aterosclerose não são senescentes sendo restrito a apoptose sem componente p16/p21 nem aplicação senolítica clínica", en: "Atherosclerosis foam cells and VSMC are not senescent being restricted to apoptosis without p16/p21 component or clinical senolytic application"}
+          - {pt: "Eliminação de senescentes em ApoE-/- aumenta placa aterosclerótica sendo senolítico contraindicado em modelo cardiovascular pré-clínico testado", en: "Elimination of senescents in ApoE-/- raises atherosclerotic plaque with senolytic contraindicated in tested preclinical cardiovascular model"}
+          - {pt: "VSMC senescentes secretam apenas colágeno protetor sendo SASP MMP irrelevante em estabilização de placa aterosclerótica humana clinicamente", en: "Senescent VSMC secrete only protective collagen with MMP SASP irrelevant in clinically meaningful human atherosclerotic plaque stabilization"}
+        correctAnswer: {pt: "Macrófagos foam cells e VSMC senescentes em placa aterosclerótica secretam SASP MMP — eliminação reduz placa e estabiliza fibrose em modelo ApoE-/-", en: "Senescent foam-cell macrophages and VSMC in atherosclerotic plaque secrete MMP SASP — elimination cuts plaque and stabilizes fibrosis in ApoE-/-"}
+        rationale: {pt: "Quando senescente sai da placa, então fibrosa estabiliza.", en: "When senescent leaves plaque, fibrous cap stabilizes."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Frailty / sarcopenia:", en: "Frailty / sarcopenia:"}
+        choices:
+          - {pt: "Acúmulo p16+ no músculo idoso correlaciona com força e marcha — D+Q intermitente em fase 1/2 mostrou ganho de 6MWT e força em geriatria avançada", en: "p16+ accumulation in elderly muscle correlates with strength and gait — intermittent D+Q in phase 1/2 showed 6MWT and strength gain in advanced geriatrics"}
+          - {pt: "p16+ é marker de tecido jovem sem expressão em músculo idoso sendo D+Q contraindicado e marcha frágil sem componente senescente em geriatria", en: "p16+ is a young-tissue marker without elderly muscle expression with D+Q contraindicated and frail gait without senescent component in geriatrics"}
+          - {pt: "Frailty é exclusivamente comorbidade cardiovascular sem componente senescente sendo D+Q desencorajado em geriatria avançada com sarcopenia", en: "Frailty is exclusively cardiovascular comorbidity without senescent component with D+Q discouraged in advanced sarcopenic geriatrics"}
+          - {pt: "Senolítico em frailty piora 6MWT sendo D+Q contraindicado e fase 1/2 humana descontinuada por toxicidade muscular em idosos com sarcopenia", en: "Senolytic in frailty worsens 6MWT with D+Q contraindicated and human phase 1/2 discontinued for muscular toxicity in sarcopenic elderly"}
+        correctAnswer: {pt: "Acúmulo p16+ no músculo idoso correlaciona com força e marcha — D+Q intermitente em fase 1/2 mostrou ganho de 6MWT e força em geriatria avançada", en: "p16+ accumulation in elderly muscle correlates with strength and gait — intermittent D+Q in phase 1/2 showed 6MWT and strength gain in advanced geriatrics"}
+        rationale: {pt: "Quando músculo se livra de senescente, então força volta.", en: "When muscle sheds senescent, strength returns."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese senescência:", en: "Senescence synthesis:"}
+        choices:
+          - {pt: "p16/p21+SASP+BCL-2/XL+uPAR define alvos — D+Q/navitoclax/fisetin/UBX/CAR-T atacam — fibrose, OA, ATS, frailty viraram indicações senolíticas testadas", en: "p16/p21+SASP+BCL-2/XL+uPAR define targets — D+Q/navitoclax/fisetin/UBX/CAR-T attack — fibrosis, OA, ATS, frailty became tested senolytic indications"}
+          - {pt: "Senescência permanece pré-clínica sem aplicação humana até 2024 sendo D+Q, navitoclax, fisetin e UBX restritos a estudo murino sem fase 1 humana", en: "Senescence remains preclinical without human application by 2024 with D+Q, navitoclax, fisetin and UBX restricted to mouse without human phase 1"}
+          - {pt: "Senolíticos são intercambiáveis sem trade-off em alvo, toxicidade ou tropismo tecidual tornando escolha terapêutica indiferente em qualquer indicação", en: "Senolytics are interchangeable without target, toxicity or tissue tropism trade-offs making therapeutic choice indifferent in any indication"}
+          - {pt: "Senescência é fenótipo único sem subtipos sendo terapia genérica equivalente em fibrose, OA, aterosclerose ou frailty em humano clínico testado", en: "Senescence is a single phenotype without subtypes with generic therapy equivalent in fibrosis, OA, atherosclerosis or frailty in tested clinical human"}
+        correctAnswer: {pt: "p16/p21+SASP+BCL-2/XL+uPAR define alvos — D+Q/navitoclax/fisetin/UBX/CAR-T atacam — fibrose, OA, ATS, frailty viraram indicações senolíticas testadas", en: "p16/p21+SASP+BCL-2/XL+uPAR define targets — D+Q/navitoclax/fisetin/UBX/CAR-T attack — fibrosis, OA, ATS, frailty became tested senolytic indications"}
+        rationale: {pt: "Quando alvo, fármaco e indicação se cruzam, então geriatria ganha terapia.", en: "When target, drug and indication cross, geriatrics gains therapy."}
+        objectives: [biology.senescence_senolytics]
+        difficulty: 5
+target: 20
