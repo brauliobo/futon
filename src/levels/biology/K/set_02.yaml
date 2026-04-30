@@ -1,0 +1,244 @@
+title:
+  pt: "🤖 Descoberta de drogas com IA"
+  en: "🤖 AI-driven drug discovery"
+level: 'K'
+subject: biology
+objectives: [biology.ai_drug_discovery]
+difficulty: 5
+authorNotes: "AlphaFold3, AlphaProteo, RFdiffusion, generative chemistry (Diffusion-models, REINVENT), target ID, halicin, AlphaMissense."
+example:
+  pt: "Ex.: alvo descoberto via AI → diffusion gera ligante → AF3 prevê pose → DEL screen → otimização clínica."
+  en: "Ex.: AI-discovered target → diffusion generates ligand → AF3 predicts pose → DEL screen → clinical optimization."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas e modelos", en: "Platforms and models"}
+    description: {pt: "Como IA acelera pipeline farmacológico.", en: "How AI accelerates drug pipeline."}
+    exercises:
+      - type: choice
+        question: {pt: "AlphaFold3:", en: "AlphaFold3:"}
+        choices:
+          - {pt: "Versão 2024 prevê complexos proteína-DNA-RNA-ligante via diffusion + structural module mudando descoberta de alvos", en: "2024 version predicts protein-DNA-RNA-ligand complexes via diffusion + structural module reshaping target discovery"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Versão 2024 prevê complexos proteína-DNA-RNA-ligante via diffusion + structural module mudando descoberta de alvos", en: "2024 version predicts protein-DNA-RNA-ligand complexes via diffusion + structural module reshaping target discovery"}
+        rationale: {pt: "Quando complexos preveem, então alvos são priorizados.", en: "When complexes predict, targets are prioritized."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AlphaMissense:", en: "AlphaMissense:"}
+        choices:
+          - {pt: "Classifica 71M missense variantes humanos como prováveis patogênicos ou benignos guiando diagnóstico genético clínico", en: "Classifies 71M human missense variants as likely pathogenic or benign guiding clinical genetic diagnosis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Classifica 71M missense variantes humanos como prováveis patogênicos ou benignos guiando diagnóstico genético clínico", en: "Classifies 71M human missense variants as likely pathogenic or benign guiding clinical genetic diagnosis"}
+        rationale: {pt: "Quando variantes resolvem, então diagnóstico genético acelera.", en: "When variants resolve, genetic diagnosis accelerates."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AlphaProteo:", en: "AlphaProteo:"}
+        choices:
+          - {pt: "DeepMind 2024 desenha de novo binders contra alvos terapêuticos com afinidade nM-pM superando display experimental", en: "DeepMind 2024 designs de novo binders against therapeutic targets at nM-pM affinity surpassing experimental display"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DeepMind 2024 desenha de novo binders contra alvos terapêuticos com afinidade nM-pM superando display experimental", en: "DeepMind 2024 designs de novo binders against therapeutic targets at nM-pM affinity surpassing experimental display"}
+        rationale: {pt: "Quando IA desenha, então pipelines aceleram dramaticamente.", en: "When AI designs, pipelines accelerate dramatically."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RFdiffusion:", en: "RFdiffusion:"}
+        choices:
+          - {pt: "Modelo de difusão gera backbones de novo condicionados a hotspots, simetria ou interface alvo abrindo design molecular escalável", en: "Diffusion model generates de novo backbones conditioned on hotspots, symmetry or target interface opening scalable molecular design"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modelo de difusão gera backbones de novo condicionados a hotspots, simetria ou interface alvo abrindo design molecular escalável", en: "Diffusion model generates de novo backbones conditioned on hotspots, symmetry or target interface opening scalable molecular design"}
+        rationale: {pt: "Quando difusão desenha, então proteínas são criadas com função.", en: "When diffusion designs, proteins are created with function."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Halicin/abaucin:", en: "Halicin/abaucin:"}
+        choices:
+          - {pt: "Halicin (Stokes 2020) e abaucin (2023) descobertos por deep learning em screening computacional de bibliotecas químicas grandes", en: "Halicin (Stokes 2020) and abaucin (2023) discovered via deep learning in computational screening of large chemical libraries"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Halicin (Stokes 2020) e abaucin (2023) descobertos por deep learning em screening computacional de bibliotecas químicas grandes", en: "Halicin (Stokes 2020) and abaucin (2023) discovered via deep learning in computational screening of large chemical libraries"}
+        rationale: {pt: "Quando IA garimpa, então estruturas novas emergem.", en: "When AI prospects, new structures emerge."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Generative chemistry (REINVENT):", en: "Generative chemistry (REINVENT):"}
+        choices:
+          - {pt: "RNN+RL aprende SMILES otimizando docking, druglikeness e síntese acessibilidade gerando moléculas novas com alvo direcionado", en: "RNN+RL learns SMILES optimizing docking, druglikeness and synthetic accessibility generating novel molecules with directed target"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "RNN+RL aprende SMILES otimizando docking, druglikeness e síntese acessibilidade gerando moléculas novas com alvo direcionado", en: "RNN+RL learns SMILES optimizing docking, druglikeness and synthetic accessibility generating novel molecules with directed target"}
+        rationale: {pt: "Quando RL aprende, então chemistry vira programável.", en: "When RL learns, chemistry becomes programmable."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Diffusion drug models:", en: "Drug diffusion models:"}
+        choices:
+          - {pt: "DiffDock e Pocket2Mol geram pose docking em segundos superando AutoDock Vina em precisão e velocidade em painéis grandes", en: "DiffDock and Pocket2Mol generate docking pose in seconds outperforming AutoDock Vina in accuracy and speed across large panels"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DiffDock e Pocket2Mol geram pose docking em segundos superando AutoDock Vina em precisão e velocidade em painéis grandes", en: "DiffDock and Pocket2Mol generate docking pose in seconds outperforming AutoDock Vina in accuracy and speed across large panels"}
+        rationale: {pt: "Quando diffusion docks, então virtual screening escala.", en: "When diffusion docks, virtual screening scales."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Foundation models proteínas:", en: "Protein foundation models:"}
+        choices:
+          - {pt: "ESM-3 e ProGen2 pré-treinados em centenas de milhões de sequências geram proteínas funcionais zero-shot e hits experimentais", en: "ESM-3 and ProGen2 pretrained on hundreds of millions of sequences generate functional proteins zero-shot with experimental hits"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ESM-3 e ProGen2 pré-treinados em centenas de milhões de sequências geram proteínas funcionais zero-shot e hits experimentais", en: "ESM-3 and ProGen2 pretrained on hundreds of millions of sequences generate functional proteins zero-shot with experimental hits"}
+        rationale: {pt: "Quando linguagem proteica escala, então design vira generativo.", en: "When protein language scales, design becomes generative."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell painting + AI:", en: "Cell painting + AI:"}
+        choices:
+          - {pt: "Imagem em alta dimensão + DL classifica perfis morfológicos compostos vs perturbações genéticas alinhando alvos terapêuticos", en: "High-dimensional imaging + DL classifies compound vs genetic perturbation morphological profiles aligning therapeutic targets"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Imagem em alta dimensão + DL classifica perfis morfológicos compostos vs perturbações genéticas alinhando alvos terapêuticos", en: "High-dimensional imaging + DL classifies compound vs genetic perturbation morphological profiles aligning therapeutic targets"}
+        rationale: {pt: "Quando imagem alinha, então alvo emerge.", en: "When imaging aligns, target emerges."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Active learning:", en: "Active learning:"}
+        choices:
+          - {pt: "Modelos sugerem hits seguinte iteração + experimento + retreino fechando loop de descoberta com Bayesian optimization", en: "Models suggest next-iteration hits + experiment + retrain closing discovery loop with Bayesian optimization"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modelos sugerem hits seguinte iteração + experimento + retreino fechando loop de descoberta com Bayesian optimization", en: "Models suggest next-iteration hits + experiment + retrain closing discovery loop with Bayesian optimization"}
+        rationale: {pt: "Quando loop fecha, então pipeline aprende sozinho.", en: "When loop closes, pipeline self-learns."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações clínicas de IA", en: "AI clinical applications"}
+    description: {pt: "Da descoberta ao diagnóstico.", en: "From discovery to diagnosis."}
+    exercises:
+      - type: choice
+        question: {pt: "Insilico Medicine INS018_055:", en: "Insilico Medicine INS018_055:"}
+        choices:
+          - {pt: "Anti-fibrótico para IPF com alvo descoberto e molécula desenhada por IA entrou em fase 2 em <30 meses do conceito", en: "AI-target-discovered and AI-designed antifibrotic for IPF entered phase 2 in <30 months from concept"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Anti-fibrótico para IPF com alvo descoberto e molécula desenhada por IA entrou em fase 2 em <30 meses do conceito", en: "AI-target-discovered and AI-designed antifibrotic for IPF entered phase 2 in <30 months from concept"}
+        rationale: {pt: "Quando ciclo encurta, então tempo até clínica desce.", en: "When cycle shrinks, time-to-clinic drops."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AlphaMissense + clinical:", en: "AlphaMissense + clinical:"}
+        choices:
+          - {pt: "ClinVar incorpora predições AlphaMissense reduzindo VUS e ajudando classificação genética em painéis hereditários", en: "ClinVar incorporates AlphaMissense predictions reducing VUS and aiding genetic classification in hereditary panels"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ClinVar incorpora predições AlphaMissense reduzindo VUS e ajudando classificação genética em painéis hereditários", en: "ClinVar incorporates AlphaMissense predictions reducing VUS and aiding genetic classification in hereditary panels"}
+        rationale: {pt: "Quando ClinVar atualiza, então diagnóstico avança.", en: "When ClinVar updates, diagnosis advances."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AI radiology:", en: "AI radiology:"}
+        choices:
+          - {pt: "DL para mamografia, lung CT e fundoscopia equipara/supera radiologistas em sensibilidade aprovada FDA em rastreamento", en: "DL for mammography, lung CT and fundoscopy matches/exceeds radiologists in FDA-approved screening sensitivity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DL para mamografia, lung CT e fundoscopia equipara/supera radiologistas em sensibilidade aprovada FDA em rastreamento", en: "DL for mammography, lung CT and fundoscopy matches/exceeds radiologists in FDA-approved screening sensitivity"}
+        rationale: {pt: "Quando IA examina, então rastreio populacional escala.", en: "When AI examines, population screening scales."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ECG-AI:", en: "ECG-AI:"}
+        choices:
+          - {pt: "DL detecta ejection fraction reduzido, hiperkalemia e estenose aórtica em ECG 12-lead com performance multitask", en: "DL detects reduced ejection fraction, hyperkalemia and aortic stenosis on 12-lead ECG with multitask performance"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DL detecta ejection fraction reduzido, hiperkalemia e estenose aórtica em ECG 12-lead com performance multitask", en: "DL detects reduced ejection fraction, hyperkalemia and aortic stenosis on 12-lead ECG with multitask performance"}
+        rationale: {pt: "Quando ECG é lido, então diagnóstico amplia-se a barata.", en: "When ECG is read, diagnosis broadens cheaply."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pathology AI:", en: "Pathology AI:"}
+        choices:
+          - {pt: "Foundation models digital pathology (Paige, Virchow) preveem mutações, prognóstico e resposta a partir de WSI H&E", en: "Digital pathology foundation models (Paige, Virchow) predict mutations, prognosis and response from H&E WSI"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Foundation models digital pathology (Paige, Virchow) preveem mutações, prognóstico e resposta a partir de WSI H&E", en: "Digital pathology foundation models (Paige, Virchow) predict mutations, prognosis and response from H&E WSI"}
+        rationale: {pt: "Quando WSI fala, então patologia revela genótipo.", en: "When WSI speaks, pathology reveals genotype."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Antibody design AI:", en: "Antibody design AI:"}
+        choices:
+          - {pt: "AbDiffuser e ANARCI + ProteinMPNN desenham CDRs com afinidade alvo-específica reduzindo dependência de panning experimental", en: "AbDiffuser and ANARCI + ProteinMPNN design CDRs with target-specific affinity cutting dependence on experimental panning"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "AbDiffuser e ANARCI + ProteinMPNN desenham CDRs com afinidade alvo-específica reduzindo dependência de panning experimental", en: "AbDiffuser and ANARCI + ProteinMPNN design CDRs with target-specific affinity cutting dependence on experimental panning"}
+        rationale: {pt: "Quando CDRs são desenhados, então anticorpos saem do computador.", en: "When CDRs are designed, antibodies emerge from computer."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Patient stratification:", en: "Patient stratification:"}
+        choices:
+          - {pt: "Multi-modal models integram genotype, EHR, imagem e wearables para estratificar pacientes e prever resposta a terapias", en: "Multi-modal models integrate genotype, EHR, imaging and wearables to stratify patients and predict therapy response"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Multi-modal models integram genotype, EHR, imagem e wearables para estratificar pacientes e prever resposta a terapias", en: "Multi-modal models integrate genotype, EHR, imaging and wearables to stratify patients and predict therapy response"}
+        rationale: {pt: "Quando dados integram, então paciente é tratado individualmente.", en: "When data integrates, patient is individually treated."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Synthesis planning:", en: "Synthesis planning:"}
+        choices:
+          - {pt: "AiZynthFinder e ASKCOS planejam rotas sintéticas multi-step otimizadas para custo e disponibilidade de reagentes", en: "AiZynthFinder and ASKCOS plan multi-step synthesis routes optimized for cost and reagent availability"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "AiZynthFinder e ASKCOS planejam rotas sintéticas multi-step otimizadas para custo e disponibilidade de reagentes", en: "AiZynthFinder and ASKCOS plan multi-step synthesis routes optimized for cost and reagent availability"}
+        rationale: {pt: "Quando síntese plana, então química acelera.", en: "When synthesis plans, chemistry accelerates."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bioethics AI drug:", en: "AI drug bioethics:"}
+        choices:
+          - {pt: "Capacidade gerativa levanta riscos dual-use exigindo screening de DNA sintético e governança proativa em laboratórios", en: "Generative capacity raises dual-use risks demanding synthetic DNA screening and proactive lab governance"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Capacidade gerativa levanta riscos dual-use exigindo screening de DNA sintético e governança proativa em laboratórios", en: "Generative capacity raises dual-use risks demanding synthetic DNA screening and proactive lab governance"}
+        rationale: {pt: "Quando poder cresce, então governança precisa acompanhar.", en: "When power grows, governance must follow."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese AI drug discovery:", en: "AI drug discovery synthesis:"}
+        choices:
+          - {pt: "IA atravessa target ID, design molecular, otimização e clínica encurtando ciclos farmacológicos com governança ética indispensável", en: "AI traverses target ID, molecular design, optimization and clinic shortening drug cycles with indispensable ethical governance"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "IA atravessa target ID, design molecular, otimização e clínica encurtando ciclos farmacológicos com governança ética indispensável", en: "AI traverses target ID, molecular design, optimization and clinic shortening drug cycles with indispensable ethical governance"}
+        rationale: {pt: "Quando IA escala, então biologia ganha medicamentos programáveis.", en: "When AI scales, biology gains programmable medicines."}
+        objectives: [biology.ai_drug_discovery]
+        difficulty: 5
+target: 20

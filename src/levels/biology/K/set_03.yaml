@@ -1,0 +1,244 @@
+title:
+  pt: "🧬 Reprogramação celular in vivo"
+  en: "🧬 In vivo cell reprogramming"
+level: 'K'
+subject: biology
+objectives: [biology.in_vivo_reprog]
+difficulty: 5
+authorNotes: "Astrócito→neurônio in situ, fibroblast→cardiomyocyte, AAV-OSK retinal, glia→neuron NeuroD1, in vivo CAR-T mRNA."
+example:
+  pt: "Ex.: AAV entrega TFs em tecido lesado → célula somática converte → tipo desejado → reparo funcional in vivo."
+  en: "Ex.: AAV delivers TFs in damaged tissue → somatic cell converts → desired type → in vivo functional repair."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Mecanismos e plataformas", en: "Mechanisms and platforms"}
+    description: {pt: "Como reprogramar dentro do organismo.", en: "How to reprogram inside organism."}
+    exercises:
+      - type: choice
+        question: {pt: "NeuroD1 astro→neuron:", en: "NeuroD1 astro→neuron:"}
+        choices:
+          - {pt: "AAV-NeuroD1 reprograma astrócitos reativos em neurônios glutamatérgicos in situ pós-AVC ou TCE em modelos murinos", en: "AAV-NeuroD1 reprograms reactive astrocytes into glutamatergic neurons in situ post-stroke or TBI in mouse models"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "AAV-NeuroD1 reprograma astrócitos reativos em neurônios glutamatérgicos in situ pós-AVC ou TCE em modelos murinos", en: "AAV-NeuroD1 reprograms reactive astrocytes into glutamatergic neurons in situ post-stroke or TBI in mouse models"}
+        rationale: {pt: "Quando glia vira neurônio, então cérebro pode regenerar.", en: "When glia turns neuron, brain may regenerate."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PTBP1 controvérsia:", en: "PTBP1 controversy:"}
+        choices:
+          - {pt: "Knockdown de Ptbp1 em astrócitos foi reportado conversor em neurônios em PD mas estudos lineage tracing não confirmam", en: "Ptbp1 astrocyte knockdown was reported converting to neurons in PD but lineage tracing studies do not confirm"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Knockdown de Ptbp1 em astrócitos foi reportado conversor em neurônios em PD mas estudos lineage tracing não confirmam", en: "Ptbp1 astrocyte knockdown was reported converting to neurons in PD but lineage tracing studies do not confirm"}
+        rationale: {pt: "Quando lineage tracing nega, então campo recalibra rigor.", en: "When lineage tracing denies, field recalibrates rigor."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fibroblast→cardiomyocyte:", en: "Fibroblast→cardiomyocyte:"}
+        choices:
+          - {pt: "GMT (Gata4+Mef2c+Tbx5) ou GHMT direta-reprograma fibroblastos cardíacos pós-IM em cardiomyocyte-like in vivo", en: "GMT (Gata4+Mef2c+Tbx5) or GHMT directly reprograms cardiac fibroblasts post-MI into cardiomyocyte-like cells in vivo"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "GMT (Gata4+Mef2c+Tbx5) ou GHMT direta-reprograma fibroblastos cardíacos pós-IM em cardiomyocyte-like in vivo", en: "GMT (Gata4+Mef2c+Tbx5) or GHMT directly reprograms cardiac fibroblasts post-MI into cardiomyocyte-like cells in vivo"}
+        rationale: {pt: "Quando fibroblasto vira cardiomyocyte, então fibrose recua.", en: "When fibroblast turns cardiomyocyte, fibrosis recedes."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hepatocyte regeneration:", en: "Hepatocyte regeneration:"}
+        choices:
+          - {pt: "Wnt/β-catenina ativação e siRNA-Hippo em fibrose hepática promovem hepatocyte expansion e reprogramação biliar→hepatic", en: "Wnt/β-catenin activation and Hippo-siRNA in hepatic fibrosis promote hepatocyte expansion and biliary→hepatic reprogramming"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Wnt/β-catenina ativação e siRNA-Hippo em fibrose hepática promovem hepatocyte expansion e reprogramação biliar→hepatic", en: "Wnt/β-catenin activation and Hippo-siRNA in hepatic fibrosis promote hepatocyte expansion and biliary→hepatic reprogramming"}
+        rationale: {pt: "Quando vias ativam, então fígado regenera-se.", en: "When pathways activate, liver regenerates."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "OSK retinal:", en: "Retinal OSK:"}
+        choices:
+          - {pt: "AAV-OSK em RGCs reverteu glaucoma em camundongos restaurando metilação juvenil sem oncogenicidade — fronteira humana", en: "AAV-OSK in RGCs reversed glaucoma in mice restoring youthful methylation without oncogenicity — human frontier"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "AAV-OSK em RGCs reverteu glaucoma em camundongos restaurando metilação juvenil sem oncogenicidade — fronteira humana", en: "AAV-OSK in RGCs reversed glaucoma in mice restoring youthful methylation without oncogenicity — human frontier"}
+        rationale: {pt: "Quando MYC sai, então segurança aumenta sem perder rejuvenescimento.", en: "When MYC is removed, safety rises without losing rejuvenation."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Insulin-secreting trans-diff:", en: "Insulin-secreting trans-diff:"}
+        choices:
+          - {pt: "AAV-Pdx1+Mafa+Ngn3 em α-cell pancreático converte em β-cell funcional restaurando insulina em modelos T1D murinos", en: "AAV-Pdx1+Mafa+Ngn3 in pancreatic α-cell converts to functional β-cell restoring insulin in T1D mouse models"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "AAV-Pdx1+Mafa+Ngn3 em α-cell pancreático converte em β-cell funcional restaurando insulina em modelos T1D murinos", en: "AAV-Pdx1+Mafa+Ngn3 in pancreatic α-cell converts to functional β-cell restoring insulin in T1D mouse models"}
+        rationale: {pt: "Quando α vira β, então insulina volta sem doador.", en: "When α turns β, insulin returns without donor."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hair follicle regeneration:", en: "Hair follicle regeneration:"}
+        choices:
+          - {pt: "Wnt/Lef1 ativação em fibroblastos da derme promove neogênese folicular pós-WIHN abrindo terapia para alopecia", en: "Wnt/Lef1 activation in dermal fibroblasts drives follicular neogenesis post-WIHN opening alopecia therapy"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Wnt/Lef1 ativação em fibroblastos da derme promove neogênese folicular pós-WIHN abrindo terapia para alopecia", en: "Wnt/Lef1 activation in dermal fibroblasts drives follicular neogenesis post-WIHN opening alopecia therapy"}
+        rationale: {pt: "Quando Wnt liga, então folículos formam.", en: "When Wnt fires, follicles form."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "in vivo CAR-T mRNA:", en: "In vivo CAR-T mRNA:"}
+        choices:
+          - {pt: "LNP CD5-targeted entrega CAR mRNA a T cells in situ gerando CAR transitório seguro sem leucaférese (Rurik 2022)", en: "CD5-targeted LNP delivers CAR mRNA to T cells in situ creating safe transient CAR without leukapheresis (Rurik 2022)"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "LNP CD5-targeted entrega CAR mRNA a T cells in situ gerando CAR transitório seguro sem leucaférese (Rurik 2022)", en: "CD5-targeted LNP delivers CAR mRNA to T cells in situ creating safe transient CAR without leukapheresis (Rurik 2022)"}
+        rationale: {pt: "Quando CAR transitório age, então segurança aumenta drasticamente.", en: "When CAR is transient, safety rises drastically."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Reprogramação em mais idade:", en: "Aging reprogramming:"}
+        choices:
+          - {pt: "OSK cíclico em camundongos progeroides reverteu marcadores moleculares e estendeu vida sem teratomas (Belmonte 2016)", en: "Cyclic OSK in progeroid mice reverted molecular markers and extended life without teratomas (Belmonte 2016)"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "OSK cíclico em camundongos progeroides reverteu marcadores moleculares e estendeu vida sem teratomas (Belmonte 2016)", en: "Cyclic OSK in progeroid mice reverted molecular markers and extended life without teratomas (Belmonte 2016)"}
+        rationale: {pt: "Quando pulsos resetam, então identidade fica preservada.", en: "When pulses reset, identity stays preserved."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AAV vs LNP delivery:", en: "AAV vs LNP delivery:"}
+        choices:
+          - {pt: "AAV oferece expressão durável (anos) enquanto LNP-mRNA dá expressão transiente (dias) — escolha depende objetivo terapêutico", en: "AAV offers durable expression (years) while LNP-mRNA gives transient expression (days) — choice depends on therapeutic goal"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "AAV oferece expressão durável (anos) enquanto LNP-mRNA dá expressão transiente (dias) — escolha depende objetivo terapêutico", en: "AAV offers durable expression (years) while LNP-mRNA gives transient expression (days) — choice depends on therapeutic goal"}
+        rationale: {pt: "Quando objetivo difere, então plataforma seleciona-se.", en: "When goal differs, platform selects."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações terapêuticas", en: "Therapeutic applications"}
+    description: {pt: "Reprogramação como medicina.", en: "Reprogramming as medicine."}
+    exercises:
+      - type: choice
+        question: {pt: "Vision restoration NAION:", en: "NAION vision restoration:"}
+        choices:
+          - {pt: "Life Biosciences ensaia AAV-OSK ocular em NAION tentando restaurar visão pós-neuropatia óptica isquêmica anterior", en: "Life Biosciences trials ocular AAV-OSK in NAION trying to restore vision post-anterior ischemic optic neuropathy"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Life Biosciences ensaia AAV-OSK ocular em NAION tentando restaurar visão pós-neuropatia óptica isquêmica anterior", en: "Life Biosciences trials ocular AAV-OSK in NAION trying to restore vision post-anterior ischemic optic neuropathy"}
+        rationale: {pt: "Quando ensaio inicia, então rejuvenescimento sai do papel.", en: "When trial starts, rejuvenation leaves paper."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Heart MI repair:", en: "Heart MI repair:"}
+        choices:
+          - {pt: "miR-590, AAV-IGF1 e miR-19 induzem proliferação cardiomiócito pós-IM em modelos pré-clínicos abrindo regeneração", en: "miR-590, AAV-IGF1 and miR-19 induce cardiomyocyte proliferation post-MI in preclinical models opening regeneration"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "miR-590, AAV-IGF1 e miR-19 induzem proliferação cardiomiócito pós-IM em modelos pré-clínicos abrindo regeneração", en: "miR-590, AAV-IGF1 and miR-19 induce cardiomyocyte proliferation post-MI in preclinical models opening regeneration"}
+        rationale: {pt: "Quando coração regenera, então insuficiência muda paradigma.", en: "When heart regenerates, failure paradigm shifts."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Liver Wnt regen:", en: "Liver Wnt regen:"}
+        choices:
+          - {pt: "Reset epigenético em hepatócitos resgata fenótipo jovem em fígado idoso restaurando função detoxificante em modelos", en: "Epigenetic reset in hepatocytes rescues youthful phenotype in aged liver restoring detoxifying function in models"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Reset epigenético em hepatócitos resgata fenótipo jovem em fígado idoso restaurando função detoxificante em modelos", en: "Epigenetic reset in hepatocytes rescues youthful phenotype in aged liver restoring detoxifying function in models"}
+        rationale: {pt: "Quando fígado rejuvenesce, então pacientes idosos toleram drogas melhor.", en: "When liver rejuvenates, elderly patients tolerate drugs better."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CNS gene therapy delivery:", en: "CNS gene therapy delivery:"}
+        choices:
+          - {pt: "AAV9-PHP.eB com tropismo cerebral pós-IV em camundongo facilita terapia gênica do SNC com múltiplos alvos potenciais", en: "AAV9-PHP.eB with brain tropism post-IV in mouse eases CNS gene therapy with multiple potential targets"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "AAV9-PHP.eB com tropismo cerebral pós-IV em camundongo facilita terapia gênica do SNC com múltiplos alvos potenciais", en: "AAV9-PHP.eB with brain tropism post-IV in mouse eases CNS gene therapy with multiple potential targets"}
+        rationale: {pt: "Quando capsid evolui, então CNS recebe terapia.", en: "When capsid evolves, CNS receives therapy."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Limb regeneration target:", en: "Limb regeneration target:"}
+        choices:
+          - {pt: "Combo BMP, FGF, retinoic acid + MSC em axolote-inspired protocol promove regeneração parcial em primatas — pesquisa básica", en: "BMP, FGF, retinoic acid + MSC combo in axolotl-inspired protocol promotes partial regeneration in primates — basic research"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Combo BMP, FGF, retinoic acid + MSC em axolote-inspired protocol promove regeneração parcial em primatas — pesquisa básica", en: "BMP, FGF, retinoic acid + MSC combo in axolotl-inspired protocol promotes partial regeneration in primates — basic research"}
+        rationale: {pt: "Quando combos animam, então regeneração de extremidade vira viável.", en: "When combos work, limb regeneration becomes viable."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Heart failure ASO:", en: "Heart failure ASO:"}
+        choices:
+          - {pt: "ASO contra MYBPC3 em HCM restaura proteostase miocárdica em modelos pré-clínicos abrindo edição mRNA cardíaca", en: "MYBPC3 ASO in HCM restores myocardial proteostasis in preclinical models opening cardiac mRNA editing"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ASO contra MYBPC3 em HCM restaura proteostase miocárdica em modelos pré-clínicos abrindo edição mRNA cardíaca", en: "MYBPC3 ASO in HCM restores myocardial proteostasis in preclinical models opening cardiac mRNA editing"}
+        rationale: {pt: "Quando ASO entrega, então mRNA disfuncional cala.", en: "When ASO delivers, dysfunctional mRNA quiets."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Skin reprogramming:", en: "Skin reprogramming:"}
+        choices:
+          - {pt: "Fibroblastos parcialmente reprogramados mostram colágeno, renovação e elasticidade próximos de juvenis em humanos", en: "Partially reprogrammed fibroblasts show collagen, turnover and elasticity near youthful levels in humans"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fibroblastos parcialmente reprogramados mostram colágeno, renovação e elasticidade próximos de juvenis em humanos", en: "Partially reprogrammed fibroblasts show collagen, turnover and elasticity near youthful levels in humans"}
+        rationale: {pt: "Quando pele rejuvenesce, então prova de conceito visível chega.", en: "When skin rejuvenates, visible proof of concept arrives."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Risco de teratoma:", en: "Teratoma risk:"}
+        choices:
+          - {pt: "Reprogramação prolongada gera tumores indiferenciados — pulsos curtos e omissão de MYC mitigam risco oncogênico", en: "Prolonged reprogramming creates undifferentiated tumors — short pulses and MYC omission mitigate oncogenic risk"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Reprogramação prolongada gera tumores indiferenciados — pulsos curtos e omissão de MYC mitigam risco oncogênico", en: "Prolonged reprogramming creates undifferentiated tumors — short pulses and MYC omission mitigate oncogenic risk"}
+        rationale: {pt: "Quando risco é entendido, então protocolos ficam seguros.", en: "When risk is understood, protocols become safe."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tropism engineering:", en: "Tropism engineering:"}
+        choices:
+          - {pt: "Capsid evolution + ligant-conjugates direcionam AAV/LNP a tipos celulares específicos diminuindo off-target em terapia in vivo", en: "Capsid evolution + ligand conjugates direct AAV/LNP to specific cell types cutting off-target in in-vivo therapy"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Capsid evolution + ligant-conjugates direcionam AAV/LNP a tipos celulares específicos diminuindo off-target em terapia in vivo", en: "Capsid evolution + ligand conjugates direct AAV/LNP to specific cell types cutting off-target in in-vivo therapy"}
+        rationale: {pt: "Quando tropism é desenhado, então segurança cresce.", en: "When tropism is designed, safety grows."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese in vivo reprog:", en: "In vivo reprog synthesis:"}
+        choices:
+          - {pt: "Reprogramação in vivo via TFs + AAV/LNP transforma reparo tecidual e regeneração — fronteira translacional para SNC, coração e pâncreas", en: "TFs + AAV/LNP in vivo reprogramming transforms tissue repair and regeneration — translational frontier for CNS, heart and pancreas"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Reprogramação in vivo via TFs + AAV/LNP transforma reparo tecidual e regeneração — fronteira translacional para SNC, coração e pâncreas", en: "TFs + AAV/LNP in vivo reprogramming transforms tissue repair and regeneration — translational frontier for CNS, heart and pancreas"}
+        rationale: {pt: "Quando célula vira outra dentro do corpo, então medicina vira regenerativa.", en: "When cell turns inside the body, medicine becomes regenerative."}
+        objectives: [biology.in_vivo_reprog]
+        difficulty: 5
+target: 20

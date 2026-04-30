@@ -1,0 +1,244 @@
+title:
+  pt: "🧠 Organoides cerebrais vascularizados"
+  en: "🧠 Vascularized brain organoids"
+level: 'K'
+subject: biology
+objectives: [biology.brain_organoids_adv]
+difficulty: 5
+authorNotes: "Vascularized cerebral organoids, assembloids, connectoids, transplante in vivo, ChR2 readouts, ALSC e neurodegeneration modeling."
+example:
+  pt: "Ex.: iPSC + endothelial → organoid vascularizado → maturação prolongada → ensaio funcional + transplante."
+  en: "Ex.: iPSC + endothelial → vascularized organoid → extended maturation → functional assay + transplant."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Vascularização e maturação", en: "Vascularization and maturation"}
+    description: {pt: "Como organoids ganham idade biológica.", en: "How organoids gain biological age."}
+    exercises:
+      - type: choice
+        question: {pt: "Vascularização in vitro:", en: "In vitro vascularization:"}
+        choices:
+          - {pt: "ETV2-induced endothelial cells fundem-se a organoids cerebrais formando rede vascular perfusível interna em coculture", en: "ETV2-induced endothelial cells fuse with cerebral organoids forming internal perfusable vascular network in coculture"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ETV2-induced endothelial cells fundem-se a organoids cerebrais formando rede vascular perfusível interna em coculture", en: "ETV2-induced endothelial cells fuse with cerebral organoids forming internal perfusable vascular network in coculture"}
+        rationale: {pt: "Quando vasos formam, então maturação prolonga.", en: "When vessels form, maturation extends."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "In vivo vascularização:", en: "In vivo vascularization:"}
+        choices:
+          - {pt: "Transplante em córtex de rato adulto faz organoid se vascularizar e amadurecer com sinapses funcionais e percepção visual integrada", en: "Transplanting into adult rat cortex makes organoid vascularize and mature with functional synapses and integrated visual perception"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Transplante em córtex de rato adulto faz organoid se vascularizar e amadurecer com sinapses funcionais e percepção visual integrada", en: "Transplanting into adult rat cortex makes organoid vascularize and mature with functional synapses and integrated visual perception"}
+        rationale: {pt: "Quando hospedeiro vasculariza, então maturação supera prato.", en: "When host vascularizes, maturation surpasses dish."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Assembloid cortico-thalâmico:", en: "Cortical-thalamic assembloid:"}
+        choices:
+          - {pt: "Fundir organoids cortical + tálamo gera projeções recíprocas e oscilações talamocorticais reproduzindo circuit fisiológico", en: "Fusing cortical + thalamic organoids generates reciprocal projections and thalamocortical oscillations reproducing physiological circuit"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fundir organoids cortical + tálamo gera projeções recíprocas e oscilações talamocorticais reproduzindo circuit fisiológico", en: "Fusing cortical + thalamic organoids generates reciprocal projections and thalamocortical oscillations reproducing physiological circuit"}
+        rationale: {pt: "Quando regiões fundem, então circuitos emergem.", en: "When regions fuse, circuits emerge."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Connectoid:", en: "Connectoid:"}
+        choices:
+          - {pt: "Múltiplos organoids interconectados via canais microfluidicos modelam interação inter-regional cerebral em escala miniatura", en: "Multiple organoids interconnected via microfluidic channels model inter-regional brain interaction at miniature scale"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Múltiplos organoids interconectados via canais microfluidicos modelam interação inter-regional cerebral em escala miniatura", en: "Multiple organoids interconnected via microfluidic channels model inter-regional brain interaction at miniature scale"}
+        rationale: {pt: "Quando connectoid forma, então biologia integra circuitos longos.", en: "When connectoid forms, biology integrates long circuits."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microglia incorporation:", en: "Microglia incorporation:"}
+        choices:
+          - {pt: "iPSC-derived microglia infusionadas integram-se a cerebral organoid sintetizando ramificações e podando sinapses adequadamente", en: "iPSC-derived microglia infused into cerebral organoid integrate forming ramifications and appropriately pruning synapses"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "iPSC-derived microglia infusionadas integram-se a cerebral organoid sintetizando ramificações e podando sinapses adequadamente", en: "iPSC-derived microglia infused into cerebral organoid integrate forming ramifications and appropriately pruning synapses"}
+        rationale: {pt: "Quando microglia chegam, então organoid recebe vigia residente.", en: "When microglia arrive, organoid gains resident watch."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Optogenetic readouts:", en: "Optogenetic readouts:"}
+        choices:
+          - {pt: "ChR2 + GCaMP em organoid permite estimulação e gravação simultâneas mapeando dinâmica circuit-fenotipo em alta resolução", en: "ChR2 + GCaMP in organoid enables simultaneous stimulation and recording mapping circuit-phenotype dynamics at high resolution"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ChR2 + GCaMP em organoid permite estimulação e gravação simultâneas mapeando dinâmica circuit-fenotipo em alta resolução", en: "ChR2 + GCaMP in organoid enables simultaneous stimulation and recording mapping circuit-phenotype dynamics at high resolution"}
+        rationale: {pt: "Quando ChR2/GCaMP combinam, então organoid vira observatório elétrico.", en: "When ChR2/GCaMP combine, organoid becomes electrical observatory."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Aging organoids:", en: "Aging organoids:"}
+        choices:
+          - {pt: "Cultura prolongada >300 dias acumula proteínas senescentes e fenótipo etário modelando AD/PD em coorte iPSC pacientes", en: "Extended >300 day culture accumulates senescent proteins and aging phenotype modeling AD/PD in patient iPSC cohorts"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cultura prolongada >300 dias acumula proteínas senescentes e fenótipo etário modelando AD/PD em coorte iPSC pacientes", en: "Extended >300 day culture accumulates senescent proteins and aging phenotype modeling AD/PD in patient iPSC cohorts"}
+        rationale: {pt: "Quando tempo passa, então neurodegeneração emerge.", en: "When time passes, neurodegeneration emerges."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Patient-derived organoids:", en: "Patient-derived organoids:"}
+        choices:
+          - {pt: "Coortes hPSC com mutações específicas mostram fenótipos celulares precoces antes de sintomas clínicos guiando descoberta", en: "hPSC cohorts with specific mutations show early cellular phenotypes before clinical symptoms guiding discovery"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Coortes hPSC com mutações específicas mostram fenótipos celulares precoces antes de sintomas clínicos guiando descoberta", en: "hPSC cohorts with specific mutations show early cellular phenotypes before clinical symptoms guiding discovery"}
+        rationale: {pt: "Quando paciente vira organoid, então fenótipo é antecipado.", en: "When patient becomes organoid, phenotype is anticipated."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MEA (multielectrode arrays):", en: "MEA (multielectrode arrays):"}
+        choices:
+          - {pt: "MEA registram bursts e oscilações em organoids quantificando atividade local field potential em alta dimensão", en: "MEA record bursts and oscillations in organoids quantifying local field potential activity at high dimensionality"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "MEA registram bursts e oscilações em organoids quantificando atividade local field potential em alta dimensão", en: "MEA record bursts and oscillations in organoids quantifying local field potential activity at high dimensionality"}
+        rationale: {pt: "Quando MEA gravam, então organoide vira mensurável.", en: "When MEAs record, organoid becomes measurable."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spheroid em hospedeiro neonatal:", en: "Spheroid in neonatal host:"}
+        choices:
+          - {pt: "Transplante neonatal cresce com hospedeiro mantendo plasticidade integral — Pasca 2022 mostrou maturação humana em rato", en: "Neonatal transplant grows with host maintaining full plasticity — Pasca 2022 showed human maturation in rat"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Transplante neonatal cresce com hospedeiro mantendo plasticidade integral — Pasca 2022 mostrou maturação humana em rato", en: "Neonatal transplant grows with host maintaining full plasticity — Pasca 2022 showed human maturation in rat"}
+        rationale: {pt: "Quando neonato hospeda, então plasticidade plena emerge.", en: "When neonate hosts, full plasticity emerges."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações de doença e ética", en: "Disease applications and ethics"}
+    description: {pt: "Modelos avançados e dilemas.", en: "Advanced models and dilemmas."}
+    exercises:
+      - type: choice
+        question: {pt: "Microcefalia (Zika):", en: "Microcephaly (Zika):"}
+        choices:
+          - {pt: "Vírus Zika reduziu drasticamente cerebral organoid revelando mecanismo da microcefalia em 2016 — modelo causal humano", en: "Zika virus drastically shrank cerebral organoid revealing microcephaly mechanism in 2016 — human causal model"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Vírus Zika reduziu drasticamente cerebral organoid revelando mecanismo da microcefalia em 2016 — modelo causal humano", en: "Zika virus drastically shrank cerebral organoid revealing microcephaly mechanism in 2016 — human causal model"}
+        rationale: {pt: "Quando vírus testou, então causalidade humana foi estabelecida.", en: "When virus was tested, human causality was established."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Autism modeling:", en: "Autism modeling:"}
+        choices:
+          - {pt: "iPSC com mutações SHANK3, FMR1 e CHD8 mostram alterações sinápticas e oscilatórias precoces em organoids cerebrais", en: "iPSC with SHANK3, FMR1 and CHD8 mutations show early synaptic and oscillatory alterations in cerebral organoids"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "iPSC com mutações SHANK3, FMR1 e CHD8 mostram alterações sinápticas e oscilatórias precoces em organoids cerebrais", en: "iPSC with SHANK3, FMR1 and CHD8 mutations show early synaptic and oscillatory alterations in cerebral organoids"}
+        rationale: {pt: "Quando mutações expressam, então autismo molda circuit.", en: "When mutations express, autism shapes circuit."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ALS modeling:", en: "ALS modeling:"}
+        choices:
+          - {pt: "C9orf72, SOD1 e FUS organoids motor mostram TDP-43 mislocalização e degeneração axonal recapitulando ALS humano", en: "C9orf72, SOD1 and FUS motor organoids show TDP-43 mislocalization and axonal degeneration recapitulating human ALS"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "C9orf72, SOD1 e FUS organoids motor mostram TDP-43 mislocalização e degeneração axonal recapitulando ALS humano", en: "C9orf72, SOD1 and FUS motor organoids show TDP-43 mislocalization and axonal degeneration recapitulating human ALS"}
+        rationale: {pt: "Quando ALS modela, então drogas testam-se humanamente.", en: "When ALS models, drugs test humanly."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AD modeling:", en: "AD modeling:"}
+        choices:
+          - {pt: "APP/PSEN1 organoids mostram Aβ e tau aumentados após 6+ meses respondendo a γ-secretase modulators e BACE1 inhibitors", en: "APP/PSEN1 organoids show elevated Aβ and tau after 6+ months responding to γ-secretase modulators and BACE1 inhibitors"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "APP/PSEN1 organoids mostram Aβ e tau aumentados após 6+ meses respondendo a γ-secretase modulators e BACE1 inhibitors", en: "APP/PSEN1 organoids show elevated Aβ and tau after 6+ months responding to γ-secretase modulators and BACE1 inhibitors"}
+        rationale: {pt: "Quando AD molda, então drogas anti-Aβ pré-clinicam.", en: "When AD models, anti-Aβ drugs pre-clinic."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Brain cancer modeling:", en: "Brain cancer modeling:"}
+        choices:
+          - {pt: "GBM-organoid PDX preserva heterogeneidade clonal e responde diferentemente a TMZ, RT e bevacizumab guiando terapia", en: "GBM-organoid PDX preserves clonal heterogeneity and responds differently to TMZ, RT and bevacizumab guiding therapy"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "GBM-organoid PDX preserva heterogeneidade clonal e responde diferentemente a TMZ, RT e bevacizumab guiando terapia", en: "GBM-organoid PDX preserves clonal heterogeneity and responds differently to TMZ, RT and bevacizumab guiding therapy"}
+        rationale: {pt: "Quando GBM-organoid responde, então terapia personaliza-se.", en: "When GBM-organoid responds, therapy personalizes."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spinal cord assembloid:", en: "Spinal cord assembloid:"}
+        choices:
+          - {pt: "Cortical + spinal motor + skeletal muscle assembloid contrai sob ChR2-córtex demonstrando arco motor humano in vitro", en: "Cortical + spinal motor + skeletal muscle assembloid contracts under cortical ChR2 demonstrating human motor arc in vitro"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cortical + spinal motor + skeletal muscle assembloid contrai sob ChR2-córtex demonstrando arco motor humano in vitro", en: "Cortical + spinal motor + skeletal muscle assembloid contracts under cortical ChR2 demonstrating human motor arc in vitro"}
+        rationale: {pt: "Quando arco contrai, então motor é replicado.", en: "When arc contracts, motor is replicated."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Drug screening em organoids:", en: "Organoid drug screening:"}
+        choices:
+          - {pt: "Painéis de organoids derivados de paciente exibem resposta diferencial a drogas oncológicas e neuroactivas guiando escolha", en: "Patient-derived organoid panels exhibit differential response to oncology and neuroactive drugs guiding choice"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Painéis de organoids derivados de paciente exibem resposta diferencial a drogas oncológicas e neuroactivas guiando escolha", en: "Patient-derived organoid panels exhibit differential response to oncology and neuroactive drugs guiding choice"}
+        rationale: {pt: "Quando organoides triam, então medicina personalizada acelera.", en: "When organoids screen, personalized medicine accelerates."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bioethics consciousness:", en: "Consciousness bioethics:"}
+        choices:
+          - {pt: "Brain organoids com atividade complexa levantam questões sobre senciência e consentimento ampliado em pesquisa", en: "Brain organoids with complex activity raise questions about sentience and expanded consent in research"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Brain organoids com atividade complexa levantam questões sobre senciência e consentimento ampliado em pesquisa", en: "Brain organoids with complex activity raise questions about sentience and expanded consent in research"}
+        rationale: {pt: "Quando atividade emerge, então ética acompanha tecnologia.", en: "When activity emerges, ethics accompanies technology."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Brain organoid intelligence:", en: "Brain organoid intelligence:"}
+        choices:
+          - {pt: "Organoid intelligence (OI) integra organoids a chips computacionais aprendendo tarefas simples — fronteira ativa controversa", en: "Organoid intelligence (OI) integrates organoids with computational chips learning simple tasks — controversial active frontier"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Organoid intelligence (OI) integra organoids a chips computacionais aprendendo tarefas simples — fronteira ativa controversa", en: "Organoid intelligence (OI) integrates organoids with computational chips learning simple tasks — controversial active frontier"}
+        rationale: {pt: "Quando OI emerge, então biologia computacional surge.", en: "When OI emerges, computational biology surges."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese organoids:", en: "Organoid synthesis:"}
+        choices:
+          - {pt: "Vasos, microglia, assembloids e transplante destravam maturação humana — organoides reescrevem biologia translacional do SNC", en: "Vessels, microglia, assembloids and transplant unlock human maturation — organoids rewrite translational CNS biology"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Vasos, microglia, assembloids e transplante destravam maturação humana — organoides reescrevem biologia translacional do SNC", en: "Vessels, microglia, assembloids and transplant unlock human maturation — organoids rewrite translational CNS biology"}
+        rationale: {pt: "Quando organoides amadurecem, então cérebro humano é estudado em escala.", en: "When organoids mature, human brain is studied at scale."}
+        objectives: [biology.brain_organoids_adv]
+        difficulty: 5
+target: 20
