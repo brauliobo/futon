@@ -1,0 +1,244 @@
+title:
+  pt: "🔥 Hormesis e resposta a estresse"
+  en: "🔥 Hormesis and stress response"
+level: 'F'
+subject: biology
+objectives: [biology.hormesis]
+difficulty: 5
+authorNotes: "Mitohormesis, heat shock, exercício, calor/frio, jejum, NRF2, FOXO."
+example:
+  pt: "Ex.: estresse leve → resposta adaptativa → resiliência aumenta → benefício à longo prazo."
+  en: "Ex.: mild stress → adaptive response → resilience increases → long-term benefit."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Mecanismos de hormesis", en: "Hormesis mechanisms"}
+    description: {pt: "Como pequenos estresses fortalecem.", en: "How mild stresses strengthen."}
+    exercises:
+      - type: choice
+        question: {pt: "Conceito de hormesis:", en: "Hormesis concept:"}
+        choices:
+          - {pt: "Dose baixa de estressor induz adaptação benéfica enquanto altas doses prejudicam", en: "Low stressor dose induces beneficial adaptation while high doses harm"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Dose baixa de estressor induz adaptação benéfica enquanto altas doses prejudicam", en: "Low stressor dose induces beneficial adaptation while high doses harm"}
+        rationale: {pt: "Quando dose é certa, então biologia adapta beneficamente.", en: "When dose is right, biology beneficially adapts."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mitohormesis:", en: "Mitohormesis:"}
+        choices:
+          - {pt: "Pequeno burst de ROS mitocondrial ativa NRF2 e antioxidantes endógenos protegendo célula", en: "Mild mitochondrial ROS burst activates NRF2 and endogenous antioxidants protecting cell"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Pequeno burst de ROS mitocondrial ativa NRF2 e antioxidantes endógenos protegendo célula", en: "Mild mitochondrial ROS burst activates NRF2 and endogenous antioxidants protecting cell"}
+        rationale: {pt: "Quando ROS é leve, então defesa redox é boostada permanentemente.", en: "When ROS is mild, redox defense is permanently boosted."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Heat shock response:", en: "Heat shock response:"}
+        choices:
+          - {pt: "HSF1 ativa chaperones (HSP70, HSP90) protegendo proteoma de futuros estresses", en: "HSF1 activates chaperones (HSP70, HSP90) protecting proteome from future stresses"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "HSF1 ativa chaperones (HSP70, HSP90) protegendo proteoma de futuros estresses", en: "HSF1 activates chaperones (HSP70, HSP90) protecting proteome from future stresses"}
+        rationale: {pt: "Quando HSF1 ativa, então proteostase ganha resiliência.", en: "When HSF1 activates, proteostasis gains resilience."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "NRF2:", en: "NRF2:"}
+        choices:
+          - {pt: "Fator de transcrição mestre antioxidante ativado por estresse oxidativo via KEAP1 redox", en: "Master antioxidant transcription factor activated by oxidative stress via KEAP1 redox"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fator de transcrição mestre antioxidante ativado por estresse oxidativo via KEAP1 redox", en: "Master antioxidant transcription factor activated by oxidative stress via KEAP1 redox"}
+        rationale: {pt: "Quando NRF2 ativa, então HO-1, GSH e proteínas detox aumentam.", en: "When NRF2 activates, HO-1, GSH and detox proteins rise."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Exercício como hormesis:", en: "Exercise as hormesis:"}
+        choices:
+          - {pt: "Exercício gera ROS, dano muscular e calor — adaptação eleva força e resistência sistêmica", en: "Exercise generates ROS, muscle damage and heat — adaptation raises systemic strength and endurance"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Exercício gera ROS, dano muscular e calor — adaptação eleva força e resistência sistêmica", en: "Exercise generates ROS, muscle damage and heat — adaptation raises systemic strength and endurance"}
+        rationale: {pt: "Quando exercício é regular, então biologia adapta robustamente.", en: "When exercise is regular, biology robustly adapts."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Caloric restriction:", en: "Caloric restriction:"}
+        choices:
+          - {pt: "Redução de ~25% calorias ativa AMPK, sirtuínas e autofagia estendendo lifespan em modelos", en: "~25% calorie reduction activates AMPK, sirtuins and autophagy extending lifespan in models"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Redução de ~25% calorias ativa AMPK, sirtuínas e autofagia estendendo lifespan em modelos", en: "~25% calorie reduction activates AMPK, sirtuins and autophagy extending lifespan in models"}
+        rationale: {pt: "Quando CR é aplicada, então benefícios sistêmicos emergem.", en: "When CR is applied, systemic benefits emerge."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cold exposure:", en: "Cold exposure:"}
+        choices:
+          - {pt: "Exposição fria ativa BAT (UCP1) e mitofagia melhorando metabolismo glicêmico em modelos", en: "Cold exposure activates BAT (UCP1) and mitophagy improving glycemic metabolism in models"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Exposição fria ativa BAT (UCP1) e mitofagia melhorando metabolismo glicêmico em modelos", en: "Cold exposure activates BAT (UCP1) and mitophagy improving glycemic metabolism in models"}
+        rationale: {pt: "Quando frio age, então tecido adiposo marrom expande utilmente.", en: "When cold acts, brown fat expands usefully."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sauna heat:", en: "Sauna heat:"}
+        choices:
+          - {pt: "Estudos finlandeses associam saunas regulares a redução de mortalidade e Alzheimer", en: "Finnish studies associate regular saunas with reduced mortality and Alzheimer"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Estudos finlandeses associam saunas regulares a redução de mortalidade e Alzheimer", en: "Finnish studies associate regular saunas with reduced mortality and Alzheimer"}
+        rationale: {pt: "Quando heat é regular, então sistemas adaptam-se positivamente.", en: "When heat is regular, systems positively adapt."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "FOXO transcription factors:", en: "FOXO transcription factors:"}
+        choices:
+          - {pt: "Ativação por insulina-IGF baixa promove longevidade via genes antioxidantes e reparo DNA", en: "Activation by low insulin-IGF promotes longevity via antioxidant and DNA-repair genes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Ativação por insulina-IGF baixa promove longevidade via genes antioxidantes e reparo DNA", en: "Activation by low insulin-IGF promotes longevity via antioxidant and DNA-repair genes"}
+        rationale: {pt: "Quando FOXO atua, então células ganham programas de resiliência.", en: "When FOXO acts, cells gain resilience programs."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Phytochemical hormesis:", en: "Phytochemical hormesis:"}
+        choices:
+          - {pt: "Compostos vegetais como sulforaphane, curcumina ativam NRF2 em doses baixas terapêuticas", en: "Plant compounds like sulforaphane, curcumin activate NRF2 at low therapeutic doses"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Compostos vegetais como sulforaphane, curcumina ativam NRF2 em doses baixas terapêuticas", en: "Plant compounds like sulforaphane, curcumin activate NRF2 at low therapeutic doses"}
+        rationale: {pt: "Quando fitoquímicos atuam, então defesa endógena é induzida.", en: "When phytochemicals act, endogenous defense is induced."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações em saúde", en: "Health applications"}
+    description: {pt: "Hormesis na medicina preventiva.", en: "Hormesis in preventive medicine."}
+    exercises:
+      - type: choice
+        question: {pt: "Time-restricted eating:", en: "Time-restricted eating:"}
+        choices:
+          - {pt: "Jejum intermitente 16:8 ativa autofagia e melhora marcadores metabólicos em humanos", en: "16:8 intermittent fasting activates autophagy and improves metabolic markers in humans"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Jejum intermitente 16:8 ativa autofagia e melhora marcadores metabólicos em humanos", en: "16:8 intermittent fasting activates autophagy and improves metabolic markers in humans"}
+        rationale: {pt: "Quando timing é controlado, então benefícios metabólicos surgem.", en: "When timing is controlled, metabolic benefits arise."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resistance training:", en: "Resistance training:"}
+        choices:
+          - {pt: "Microtraumas musculares induzem hipertrofia, mitofagia e senolíticos endógenos seletivos", en: "Muscle microtraumas induce hypertrophy, mitophagy and selective endogenous senolytics"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Microtraumas musculares induzem hipertrofia, mitofagia e senolíticos endógenos seletivos", en: "Muscle microtraumas induce hypertrophy, mitophagy and selective endogenous senolytics"}
+        rationale: {pt: "Quando treino é resistido, então sarcopenia é prevenida.", en: "When training is resistance, sarcopenia is prevented."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "HIIT (high-intensity interval training):", en: "HIIT (high-intensity interval training):"}
+        choices:
+          - {pt: "Curtos bursts intensos ativam PGC-1α e biogênese mitocondrial em tempo eficiente", en: "Short intense bursts activate PGC-1α and mitochondrial biogenesis time-efficiently"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Curtos bursts intensos ativam PGC-1α e biogênese mitocondrial em tempo eficiente", en: "Short intense bursts activate PGC-1α and mitochondrial biogenesis time-efficiently"}
+        rationale: {pt: "Quando HIIT é aplicado, então benefícios cardiovasculares escalam.", en: "When HIIT is applied, cardiovascular benefits scale."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hormesis xenobiotic:", en: "Xenobiotic hormesis:"}
+        choices:
+          - {pt: "Plantas em estresse produzem mais polifenóis defensivos consumíveis humanamente como antioxidantes", en: "Stressed plants produce more defensive polyphenols consumable by humans as antioxidants"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Plantas em estresse produzem mais polifenóis defensivos consumíveis humanamente como antioxidantes", en: "Stressed plants produce more defensive polyphenols consumable by humans as antioxidants"}
+        rationale: {pt: "Quando plantas se defendem, então humanos compartilham sinal hormético.", en: "When plants defend, humans share hormetic signal."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hyperbaric oxygen:", en: "Hyperbaric oxygen:"}
+        choices:
+          - {pt: "Sessões controladas elevam VEGF, telomerase e melhoram cognição em estudos de aging", en: "Controlled sessions raise VEGF, telomerase and improve cognition in aging studies"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sessões controladas elevam VEGF, telomerase e melhoram cognição em estudos de aging", en: "Controlled sessions raise VEGF, telomerase and improve cognition in aging studies"}
+        rationale: {pt: "Quando hiperóxia é controlada, então mitocôndrias e tecidos respondem.", en: "When hyperoxia is controlled, mitochondria and tissues respond."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Doses baixas radiação:", en: "Low-dose radiation:"}
+        choices:
+          - {pt: "Hormesis radioativa controversa estuda doses muito baixas que induzem reparo de DNA otimizado", en: "Controversial radio-hormesis studies very-low doses inducing optimized DNA repair"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Hormesis radioativa controversa estuda doses muito baixas que induzem reparo de DNA otimizado", en: "Controversial radio-hormesis studies very-low doses inducing optimized DNA repair"}
+        rationale: {pt: "Quando hipótese é testada, então biologia oferece debate evidenciado.", en: "When hypothesis is tested, biology offers evidence-based debate."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hormesis em câncer:", en: "Hormesis in cancer:"}
+        choices:
+          - {pt: "Excesso de antioxidantes bloqueia hormesis útil — tumores podem aproveitar antioxidantes", en: "Excess antioxidants block useful hormesis — tumors may benefit from antioxidants"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Excesso de antioxidantes bloqueia hormesis útil — tumores podem aproveitar antioxidantes", en: "Excess antioxidants block useful hormesis — tumors may benefit from antioxidants"}
+        rationale: {pt: "Quando suplementação é excessiva, então hormesis é abortada.", en: "When supplementation is excessive, hormesis is aborted."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Stress resilience training:", en: "Stress resilience training:"}
+        choices:
+          - {pt: "Mindfulness e exposição controlada melhoram resposta autonômica e cognitiva ao estresse", en: "Mindfulness and controlled exposure improve autonomic and cognitive stress response"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mindfulness e exposição controlada melhoram resposta autonômica e cognitiva ao estresse", en: "Mindfulness and controlled exposure improve autonomic and cognitive stress response"}
+        rationale: {pt: "Quando treino é mental, então hormesis age cognitivamente.", en: "When training is mental, hormesis acts cognitively."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mimetic drugs:", en: "Mimetic drugs:"}
+        choices:
+          - {pt: "Resveratrol, metformina, NMN tentam simular hormesis sem necessidade de jejum ou exercício", en: "Resveratrol, metformin, NMN attempt to mimic hormesis without need for fasting or exercise"}
+          - {pt: "Apenas curiosidade industrial", en: "Just industrial curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Resveratrol, metformina, NMN tentam simular hormesis sem necessidade de jejum ou exercício", en: "Resveratrol, metformin, NMN attempt to mimic hormesis without need for fasting or exercise"}
+        rationale: {pt: "Quando droga simula, então benefícios são acessíveis a populações restritas.", en: "When drug simulates, benefits are accessible to restricted populations."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em hormesis:", en: "Next hormesis frontiers:"}
+        choices:
+          - {pt: "Personalized stress dosing, biomarcadores de resposta e precision-aging baseado em hormesis", en: "Personalized stress dosing, response biomarkers and hormesis-based precision-aging"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Personalized stress dosing, biomarcadores de resposta e precision-aging baseado em hormesis", en: "Personalized stress dosing, response biomarkers and hormesis-based precision-aging"}
+        rationale: {pt: "Quando ferramentas convergem, então hormesis vira ferramenta clínica.", en: "When tools converge, hormesis becomes clinical tool."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+target: 20
