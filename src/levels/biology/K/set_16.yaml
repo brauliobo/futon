@@ -1,0 +1,244 @@
+title:
+  pt: "🤖 Design de proteínas com IA"
+  en: "🤖 AI protein design"
+level: 'K'
+subject: biology
+objectives: [biology.ai_protein_design]
+difficulty: 5
+authorNotes: "AlphaFold2/3, ESMFold, RFdiffusion, ProteinMPNN, RFantibody, RoseTTAFold All-Atom, hallucination, inverse folding, binder design, miniprotein, de novo enzyme, Baker lab, DeepMind."
+example:
+  pt: "Ex.: target tumor PD-L1 → RFdiffusion gera scaffold de minibinder → ProteinMPNN sequência → AlphaFold2 valida → expressão E. coli → afinidade pM."
+  en: "Ex.: PD-L1 tumor target → RFdiffusion generates minibinder scaffold → ProteinMPNN sequence → AlphaFold2 validates → E. coli expression → pM affinity."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Predição estrutural", en: "Structure prediction"}
+    description: {pt: "Como IA infere conformação 3D.", en: "How AI infers 3D conformation."}
+    exercises:
+      - type: choice
+        question: {pt: "AlphaFold2:", en: "AlphaFold2:"}
+        choices:
+          - {pt: "Evoformer + structure module com MSA evolutivo prediz coordenadas 3D em escala atômica — CASP14 2020 atinge precisão experimental em maioria dos targets", en: "Evoformer + structure module with evolutionary MSA predicts 3D atomic coordinates — CASP14 2020 reaches experimental accuracy on most targets"}
+          - {pt: "AlphaFold2 prediz sequência primária a partir de estrutura 3D sendo equivalente operacional a inverse folding sem capacidade de predição estrutural", en: "AlphaFold2 predicts primary sequence from 3D structure being operationally equivalent to inverse folding without structure-prediction capacity"}
+          - {pt: "MSA evolutivo é dispensável em AlphaFold2 sendo predição single-sequence equivalente em precisão à versão 2020 com Evoformer e structure module", en: "Evolutionary MSA is dispensable in AlphaFold2 with single-sequence prediction equivalent in accuracy to 2020 Evoformer + structure module"}
+          - {pt: "CASP14 2020 demonstrou que AlphaFold2 falhou em precisão experimental sendo restrito a homology modeling tradicional sem componente neural deep learning", en: "CASP14 2020 showed AlphaFold2 failed at experimental accuracy being restricted to traditional homology modeling without deep-learning neural component"}
+        correctAnswer: {pt: "Evoformer + structure module com MSA evolutivo prediz coordenadas 3D em escala atômica — CASP14 2020 atinge precisão experimental em maioria dos targets", en: "Evoformer + structure module with evolutionary MSA predicts 3D atomic coordinates — CASP14 2020 reaches experimental accuracy on most targets"}
+        rationale: {pt: "Quando coevolução guia rede, então estrutura emerge.", en: "When coevolution guides network, structure emerges."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ESMFold:", en: "ESMFold:"}
+        choices:
+          - {pt: "Modelo de linguagem de proteína (ESM-2) elimina dependência MSA prevendo estrutura direto da sequência — 60× mais rápido que AlphaFold2 com perda discreta", en: "Protein language model (ESM-2) removes MSA dependency predicting structure directly from sequence — 60× faster than AlphaFold2 with modest accuracy loss"}
+          - {pt: "ESMFold exige MSA mais profundo que AlphaFold2 sendo equivalentemente lento em qualquer aplicação de predição estrutural em proteoma escalável", en: "ESMFold requires deeper MSA than AlphaFold2 being equivalently slow in any structure-prediction application across scalable proteome"}
+          - {pt: "ESM-2 é restrito a sequência primária sem capacidade de prever estrutura sendo equivalente operacional a BLAST sem componente 3D coordinates", en: "ESM-2 is restricted to primary sequence without structure-prediction capacity being operationally equivalent to BLAST without 3D coordinates component"}
+          - {pt: "Linguagem de proteína é teórica sem implementação prática sendo ESMFold inviável tecnicamente em escala metaproteoma ou metagenômico extenso", en: "Protein language is theoretical without practical implementation making ESMFold technically infeasible at metaproteome or extensive metagenomic scale"}
+        correctAnswer: {pt: "Modelo de linguagem de proteína (ESM-2) elimina dependência MSA prevendo estrutura direto da sequência — 60× mais rápido que AlphaFold2 com perda discreta", en: "Protein language model (ESM-2) removes MSA dependency predicting structure directly from sequence — 60× faster than AlphaFold2 with modest accuracy loss"}
+        rationale: {pt: "Quando linguagem aprende proteína, então MSA deixa de ser necessário.", en: "When language learns protein, MSA stops being needed."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AlphaFold3:", en: "AlphaFold3:"}
+        choices:
+          - {pt: "Diffusion-based all-atom model prediz proteína + DNA + RNA + ligand + ion + glycan em complexo — 2024 substitui PDB para complexos heterogêneos não-cristalográficos", en: "Diffusion-based all-atom model predicts protein + DNA + RNA + ligand + ion + glycan in complex — 2024 replaces PDB for heterogeneous non-crystallographic complexes"}
+          - {pt: "AlphaFold3 é restrito a proteína apo sem componente ligand, DNA ou RNA sendo equivalente operacional a AlphaFold2 sem ganho de domínio multi-modal", en: "AlphaFold3 is restricted to apo protein without ligand, DNA or RNA component being operationally equivalent to AlphaFold2 without multi-modal domain gain"}
+          - {pt: "Diffusion model é incompatível com predição estrutural sendo AlphaFold3 inviável tecnicamente em complexos heterogêneos proteína-ligand de afinidade", en: "Diffusion model is incompatible with structure prediction making AlphaFold3 technically infeasible in protein-ligand affinity heterogeneous complexes"}
+          - {pt: "AlphaFold3 prediz apenas sequência primária sem componente estrutural sendo equivalente a ESM-2 em qualquer aplicação de design molecular humano", en: "AlphaFold3 predicts only primary sequence without structural component being equivalent to ESM-2 in any human molecular-design application"}
+        correctAnswer: {pt: "Diffusion-based all-atom model prediz proteína + DNA + RNA + ligand + ion + glycan em complexo — 2024 substitui PDB para complexos heterogêneos não-cristalográficos", en: "Diffusion-based all-atom model predicts protein + DNA + RNA + ligand + ion + glycan in complex — 2024 replaces PDB for heterogeneous non-crystallographic complexes"}
+        rationale: {pt: "Quando todos os átomos entram, então complexo intero vira computável.", en: "When all atoms enter, full complex becomes computable."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RoseTTAFold All-Atom:", en: "RoseTTAFold All-Atom:"}
+        choices:
+          - {pt: "Baker lab estende RFAA a small molecules + covalente modifications + DNA/RNA — competidor open-source de AlphaFold3 com pesos públicos", en: "Baker lab extends RFAA to small molecules + covalent modifications + DNA/RNA — open-source AlphaFold3 competitor with public weights"}
+          - {pt: "RoseTTAFold All-Atom é restrito a proteína apo sem componente small-molecule sendo equivalente a RoseTTAFold original sem componente all-atom", en: "RoseTTAFold All-Atom is restricted to apo protein without small-molecule component being equivalent to original RoseTTAFold without all-atom component"}
+          - {pt: "Pesos públicos são incompatíveis com all-atom modeling sendo RFAA closed-source proprietário sem alternativa open-source à AlphaFold3 em 2024", en: "Public weights are incompatible with all-atom modeling making RFAA closed-source proprietary without open alternative to AlphaFold3 in 2024"}
+          - {pt: "Baker lab desistiu de RFAA em 2023 reconhecendo inviabilidade técnica de all-atom modeling sendo RoseTTAFold original o estado da arte do laboratório", en: "Baker lab abandoned RFAA in 2023 acknowledging all-atom modeling infeasibility with original RoseTTAFold being lab state of the art"}
+        correctAnswer: {pt: "Baker lab estende RFAA a small molecules + covalente modifications + DNA/RNA — competidor open-source de AlphaFold3 com pesos públicos", en: "Baker lab extends RFAA to small molecules + covalent modifications + DNA/RNA — open-source AlphaFold3 competitor with public weights"}
+        rationale: {pt: "Quando código abre, então comunidade itera.", en: "When code opens, community iterates."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MSA depth:", en: "MSA depth:"}
+        choices:
+          - {pt: "≥30 sequências homólogas garantem coevolução suficiente — proteína órfã (single-sequence) e human-only depende de ESM/single-seq prediction", en: "≥30 homologous sequences guarantee sufficient coevolution — orphan (single-sequence) and human-only proteins rely on ESM/single-seq prediction"}
+          - {pt: "MSA depth é irrelevante em AlphaFold2 sendo single sequence prediction equivalente em precisão a deep MSA em qualquer target proteico humano clínico", en: "MSA depth is irrelevant in AlphaFold2 with single-sequence prediction equivalent in accuracy to deep MSA in any clinical human protein target"}
+          - {pt: "Proteína órfã com baixa MSA prediz com mais precisão que proteína conservada sendo deep MSA contraindicado em design moderno proteico em 2024", en: "Orphan low-MSA protein predicts more accurately than conserved protein with deep MSA contraindicated in modern protein design in 2024"}
+          - {pt: "30 homólogos é insuficiente sendo ≥10000 sequências obrigatórias em qualquer predição AlphaFold2 ou estrutura proteica de alta precisão clínica", en: "30 homologs is insufficient with ≥10000 sequences mandatory in any AlphaFold2 prediction or high-accuracy clinical protein structure"}
+        correctAnswer: {pt: "≥30 sequências homólogas garantem coevolução suficiente — proteína órfã (single-sequence) e human-only depende de ESM/single-seq prediction", en: "≥30 homologous sequences guarantee sufficient coevolution — orphan (single-sequence) and human-only proteins rely on ESM/single-seq prediction"}
+        rationale: {pt: "Quando coevolução existe, então estrutura é predita; quando falta, ESM resgata.", en: "When coevolution exists, structure is predicted; when absent, ESM rescues."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "pLDDT confidence:", en: "pLDDT confidence:"}
+        choices:
+          - {pt: "Predicted Local Distance Difference Test (0-100) avalia confiança por resíduo — IDR/loop tipicamente <50, core globular >90, gate de aceitação", en: "Predicted Local Distance Difference Test (0-100) scores per-residue confidence — IDR/loops typically <50, globular core >90, acceptance gate"}
+          - {pt: "pLDDT é métrica de afinidade ligand-binding sem componente estrutural sendo confiança AlphaFold2 medida exclusivamente em RMSD com PDB experimental", en: "pLDDT is a ligand-binding affinity metric without structural component with AlphaFold2 confidence measured exclusively by experimental PDB RMSD"}
+          - {pt: "IDR e loop predizem com pLDDT >90 sendo regiões core <50 sem necessidade de gate de aceitação em qualquer pipeline de design proteico moderno", en: "IDR and loop predict with pLDDT >90 with core regions <50 without acceptance-gate need in any modern protein-design pipeline"}
+          - {pt: "Predicted Local Distance Difference Test é teórico sem implementação prática sendo pLDDT inviável tecnicamente em qualquer aplicação AlphaFold2", en: "Predicted Local Distance Difference Test is theoretical without practical implementation making pLDDT technically infeasible in any AlphaFold2 application"}
+        correctAnswer: {pt: "Predicted Local Distance Difference Test (0-100) avalia confiança por resíduo — IDR/loop tipicamente <50, core globular >90, gate de aceitação", en: "Predicted Local Distance Difference Test (0-100) scores per-residue confidence — IDR/loops typically <50, globular core >90, acceptance gate"}
+        rationale: {pt: "Quando pLDDT é alto, então estrutura é confiável.", en: "When pLDDT is high, structure is trustworthy."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inverse folding:", en: "Inverse folding:"}
+        choices:
+          - {pt: "ProteinMPNN, ESM-IF1 mapeiam estrutura → sequência — desenham aminoácidos compatíveis com fold dado, base de design proteico moderno", en: "ProteinMPNN, ESM-IF1 map structure → sequence — design amino acids compatible with given fold, basis of modern protein design"}
+          - {pt: "Inverse folding é equivalente a forward folding sendo ProteinMPNN restrito a predizer estrutura a partir de sequência sem componente design sequência", en: "Inverse folding equals forward folding with ProteinMPNN restricted to predict structure from sequence without sequence-design component"}
+          - {pt: "ProteinMPNN gera sequência aleatória sem componente structure-conditioned sendo design proteico moderno baseado exclusivamente em random mutagenesis", en: "ProteinMPNN generates random sequence without structure-conditioned component with modern protein design based exclusively on random mutagenesis"}
+          - {pt: "ESM-IF1 é restrito a NLP sem componente proteico sendo inverse folding inviável tecnicamente em design de novo de proteína funcional moderna", en: "ESM-IF1 is restricted to NLP without protein component making inverse folding technically infeasible in modern de novo functional protein design"}
+        correctAnswer: {pt: "ProteinMPNN, ESM-IF1 mapeiam estrutura → sequência — desenham aminoácidos compatíveis com fold dado, base de design proteico moderno", en: "ProteinMPNN, ESM-IF1 map structure → sequence — design amino acids compatible with given fold, basis of modern protein design"}
+        rationale: {pt: "Quando estrutura é dada, então sequência é desenhada.", en: "When structure is given, sequence is designed."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RFdiffusion:", en: "RFdiffusion:"}
+        choices:
+          - {pt: "Diffusion model gera scaffolds de novo conforme constraints (binder, motif scaffolding, simetria) — combina com ProteinMPNN e AlphaFold2 validation", en: "Diffusion model generates de novo scaffolds under constraints (binder, motif scaffolding, symmetry) — combines with ProteinMPNN and AlphaFold2 validation"}
+          - {pt: "RFdiffusion é restrito a predição estrutural sem componente generativo sendo equivalente operacional a AlphaFold2 sem capacidade de design de novo", en: "RFdiffusion is restricted to structure prediction without generative component being operationally equivalent to AlphaFold2 without de novo design capacity"}
+          - {pt: "Diffusion gera apenas sequência aleatória sem constraint binder ou motif sendo de novo design contraindicado em RFdiffusion para target funcional", en: "Diffusion generates only random sequence without binder or motif constraint with de novo design contraindicated in RFdiffusion for functional target"}
+          - {pt: "RFdiffusion é teórico sem implementação prática sendo Baker lab sem ferramenta generativa pública até 2024 em design de novo de proteína", en: "RFdiffusion is theoretical without practical implementation with Baker lab having no public generative tool by 2024 in de novo protein design"}
+        correctAnswer: {pt: "Diffusion model gera scaffolds de novo conforme constraints (binder, motif scaffolding, simetria) — combina com ProteinMPNN e AlphaFold2 validation", en: "Diffusion model generates de novo scaffolds under constraints (binder, motif scaffolding, symmetry) — combines with ProteinMPNN and AlphaFold2 validation"}
+        rationale: {pt: "Quando ruído condiciona scaffold, então proteína nasce sob medida.", en: "When noise conditions scaffold, protein is born to spec."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hallucination design:", en: "Hallucination design:"}
+        choices:
+          - {pt: "Otimiza sequência maximizando confidence AlphaFold2/RoseTTAFold via gradient — gera proteínas de novo com fold target, predecessor de RFdiffusion", en: "Optimizes sequence maximizing AlphaFold2/RoseTTAFold confidence via gradient — generates de novo proteins with target fold, RFdiffusion predecessor"}
+          - {pt: "Hallucination é artefato indesejado sem componente design sendo otimização gradient contraindicada em qualquer pipeline de design proteico moderno", en: "Hallucination is unwanted artifact without design component with gradient optimization contraindicated in any modern protein-design pipeline"}
+          - {pt: "Hallucination requer treino de novo do AlphaFold2 sendo dispensável em design moderno em favor de inverse folding direto sem componente gradient", en: "Hallucination requires AlphaFold2 retraining being dispensable in modern design in favor of direct inverse folding without gradient component"}
+          - {pt: "Maximizar confidence em AlphaFold2 é equivalente a random mutagenesis sendo hallucination indistinguível de evolução dirigida sem componente design", en: "Maximizing AlphaFold2 confidence equals random mutagenesis with hallucination indistinguishable from directed evolution without design component"}
+        correctAnswer: {pt: "Otimiza sequência maximizando confidence AlphaFold2/RoseTTAFold via gradient — gera proteínas de novo com fold target, predecessor de RFdiffusion", en: "Optimizes sequence maximizing AlphaFold2/RoseTTAFold confidence via gradient — generates de novo proteins with target fold, RFdiffusion predecessor"}
+        rationale: {pt: "Quando rede sonha proteína, então design emerge antes do laboratório.", en: "When network dreams protein, design emerges before lab."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Validation cycle:", en: "Validation cycle:"}
+        choices:
+          - {pt: "Design → AlphaFold2 forward check → expressar E. coli/CHO → SEC + CD + cristal/crio-EM + ITC/SPR — feedback fecha loop computacional-experimental", en: "Design → AlphaFold2 forward check → express E. coli/CHO → SEC + CD + crystal/cryo-EM + ITC/SPR — feedback closes computational-experimental loop"}
+          - {pt: "Validação experimental é dispensável sendo design proteico moderno baseado exclusivamente em predição AlphaFold2 sem componente bench em qualquer pipeline", en: "Experimental validation is dispensable with modern protein design based exclusively on AlphaFold2 prediction without bench component in any pipeline"}
+          - {pt: "Forward check em AlphaFold2 é incompatível com design sendo proteínas de novo testadas exclusivamente em produção industrial sem ciclo prévio de validação", en: "AlphaFold2 forward check is incompatible with design with de novo proteins tested exclusively in industrial production without prior validation cycle"}
+          - {pt: "ITC/SPR e cristal/crio-EM são técnicas obsoletas sem aplicação em design proteico moderno sendo bench feedback irrelevante em ciclo computacional", en: "ITC/SPR and crystal/cryo-EM are obsolete without modern protein-design application with bench feedback irrelevant in computational cycle"}
+        correctAnswer: {pt: "Design → AlphaFold2 forward check → expressar E. coli/CHO → SEC + CD + cristal/crio-EM + ITC/SPR — feedback fecha loop computacional-experimental", en: "Design → AlphaFold2 forward check → express E. coli/CHO → SEC + CD + crystal/cryo-EM + ITC/SPR — feedback closes computational-experimental loop"}
+        rationale: {pt: "Quando design encontra bench, então iteração corrige.", en: "When design meets bench, iteration corrects."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações de design", en: "Design applications"}
+    description: {pt: "Da minibinder à terapia.", en: "From minibinder to therapy."}
+    exercises:
+      - type: choice
+        question: {pt: "Minibinder design:", en: "Minibinder design:"}
+        choices:
+          - {pt: "RFdiffusion + ProteinMPNN geram proteínas 50-80aa que ligam target com afinidade pM-nM — Baker 2022 atinge SARS-CoV-2 RBD, IL-6, PD-L1", en: "RFdiffusion + ProteinMPNN generate 50-80aa proteins binding target at pM-nM affinity — Baker 2022 hits SARS-CoV-2 RBD, IL-6, PD-L1"}
+          - {pt: "Minibinder requer >300aa para afinidade nM sendo design RFdiffusion restrito a proteínas grandes sem capacidade de pequena molécula sintética", en: "Minibinder requires >300aa for nM affinity with RFdiffusion design restricted to large proteins without small-molecule synthetic capacity"}
+          - {pt: "ProteinMPNN gera sequência aleatória sem componente target-binding sendo minibinder afinidade pM-nM contraindicado em design moderno proteico", en: "ProteinMPNN generates random sequence without target-binding component with pM-nM minibinder affinity contraindicated in modern protein design"}
+          - {pt: "Baker 2022 demonstrou minibinder apenas em modelo computacional sem expressão experimental sendo afinidade pM teórica sem validação biofísica", en: "Baker 2022 showed minibinder only in computational model without experimental expression with pM affinity theoretical and without biophysical validation"}
+        correctAnswer: {pt: "RFdiffusion + ProteinMPNN geram proteínas 50-80aa que ligam target com afinidade pM-nM — Baker 2022 atinge SARS-CoV-2 RBD, IL-6, PD-L1", en: "RFdiffusion + ProteinMPNN generate 50-80aa proteins binding target at pM-nM affinity — Baker 2022 hits SARS-CoV-2 RBD, IL-6, PD-L1"}
+        rationale: {pt: "Quando proteína é pequena e afim, então terapia é fácil de fabricar.", en: "When protein is small and tight, therapy is easy to manufacture."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RFantibody:", en: "RFantibody:"}
+        choices:
+          - {pt: "Versão de RFdiffusion treinada em PDB-Ab desenha CDR-H3 + scaffold para target — supera display libraries em afinidade e desenvolvabilidade (Baker 2024)", en: "RFdiffusion variant trained on PDB-Ab designs CDR-H3 + scaffold for target — beats display libraries on affinity and developability (Baker 2024)"}
+          - {pt: "RFantibody é restrito a target carbohidrato sem componente proteína sendo design CDR-H3 inviável em qualquer aplicação clínica de imunoglobulina humana", en: "RFantibody is restricted to carbohydrate targets without protein component making CDR-H3 design infeasible in any clinical human immunoglobulin application"}
+          - {pt: "Display libraries superam RFantibody em afinidade sendo design computacional contraindicado em pipeline de descoberta de anticorpo terapêutico moderno", en: "Display libraries outperform RFantibody on affinity with computational design contraindicated in modern therapeutic-antibody discovery pipeline"}
+          - {pt: "PDB-Ab é dataset insuficiente para treinar modelo proteico sendo RFantibody teórico sem implementação prática em design de novo de IgG", en: "PDB-Ab is insufficient to train protein model with RFantibody theoretical and without practical de novo IgG design implementation"}
+        correctAnswer: {pt: "Versão de RFdiffusion treinada em PDB-Ab desenha CDR-H3 + scaffold para target — supera display libraries em afinidade e desenvolvabilidade (Baker 2024)", en: "RFdiffusion variant trained on PDB-Ab designs CDR-H3 + scaffold for target — beats display libraries on affinity and developability (Baker 2024)"}
+        rationale: {pt: "Quando rede aprende anticorpo, então CDR vira projeto.", en: "When network learns antibody, CDR becomes a draft."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "De novo enzyme:", en: "De novo enzyme:"}
+        choices:
+          - {pt: "Theozyme + Rosetta + ML refine geram catalisadores Kemp eliminase, retro-aldol, luciferase — Baker designs aproximam kcat/KM enzimas naturais", en: "Theozyme + Rosetta + ML refinement generate Kemp eliminase, retro-aldol, luciferase catalysts — Baker designs approach natural-enzyme kcat/KM"}
+          - {pt: "De novo enzyme requer evolução dirigida obrigatória sem componente design computacional sendo theozyme contraindicado em catalysis moderna proteica", en: "De novo enzyme requires mandatory directed evolution without computational design component with theozyme contraindicated in modern protein catalysis"}
+          - {pt: "Kemp eliminase e retro-aldol são reações naturais sem componente de novo sendo design proteico restrito a refinement de enzima nativa em qualquer pipeline", en: "Kemp eliminase and retro-aldol are natural reactions without de novo component with protein design restricted to native-enzyme refinement in any pipeline"}
+          - {pt: "Baker designs falham em atingir kcat/KM mensurável sendo de novo enzyme conceito teórico sem aplicação prática em catalysis enzimática biotecnológica", en: "Baker designs fail to reach measurable kcat/KM with de novo enzyme a theoretical concept without practical biotechnological enzyme-catalysis application"}
+        correctAnswer: {pt: "Theozyme + Rosetta + ML refine geram catalisadores Kemp eliminase, retro-aldol, luciferase — Baker designs aproximam kcat/KM enzimas naturais", en: "Theozyme + Rosetta + ML refinement generate Kemp eliminase, retro-aldol, luciferase catalysts — Baker designs approach natural-enzyme kcat/KM"}
+        rationale: {pt: "Quando estado de transição é desenhado, então enzima nasce.", en: "When transition state is drafted, enzyme is born."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vaccine antigen:", en: "Vaccine antigen:"}
+        choices:
+          - {pt: "Designed nanoparticle (icosaedro 60-mer) decora múltiplos cópias de RBD/HA — IPD/Baker SARS-CoV-2 vaccine GBP510/Skycovione fase 3 sucesso", en: "Designed nanoparticle (60-mer icosahedron) decorated with multiple RBD/HA copies — IPD/Baker SARS-CoV-2 vaccine GBP510/Skycovione phase 3 success"}
+          - {pt: "Nanopartícula designed é restrita a antígeno único sem componente multi-cópia sendo equivalente a peptide vaccine convencional sem ganho de potência", en: "Designed nanoparticle is restricted to single antigen without multi-copy component being equivalent to conventional peptide vaccine without potency gain"}
+          - {pt: "Icosaedro 60-mer é teórico sem implementação prática sendo IPD/Baker sem nanoparticle vaccine aprovada em fase 3 humana até 2024 globalmente", en: "60-mer icosahedron is theoretical without practical implementation with IPD/Baker no nanoparticle vaccine approved in human phase 3 globally by 2024"}
+          - {pt: "GBP510/Skycovione é vacina mRNA-LNP sem componente nanopartícula proteica sendo design de novo irrelevante em vacinologia humana clínica", en: "GBP510/Skycovione is an mRNA-LNP vaccine without protein-nanoparticle component making de novo design irrelevant in clinical human vaccinology"}
+        correctAnswer: {pt: "Designed nanoparticle (icosaedro 60-mer) decora múltiplos cópias de RBD/HA — IPD/Baker SARS-CoV-2 vaccine GBP510/Skycovione fase 3 sucesso", en: "Designed nanoparticle (60-mer icosahedron) decorated with multiple RBD/HA copies — IPD/Baker SARS-CoV-2 vaccine GBP510/Skycovione phase 3 success"}
+        rationale: {pt: "Quando antígeno multiplica em geometria, então imune dispara forte.", en: "When antigen multiplies in geometry, immune fires strong."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Symmetric assembly:", en: "Symmetric assembly:"}
+        choices:
+          - {pt: "RFdiffusion respeita simetria C2/C3/C4/D5 + tetrahedron + icosahedron gerando complexos auto-organizados — base para nano-cage delivery e display", en: "RFdiffusion respects C2/C3/C4/D5 + tetrahedron + icosahedron symmetry generating self-organized complexes — basis for nano-cage delivery and display"}
+          - {pt: "Simetria é incompatível com design de novo sendo RFdiffusion restrito a proteínas monoméricas assimétricas sem componente nano-cage funcional", en: "Symmetry is incompatible with de novo design with RFdiffusion restricted to asymmetric monomeric proteins without functional nano-cage component"}
+          - {pt: "Icosahedron e tetrahedron são geometrias virais naturais sem componente design sendo nano-cage delivery contraindicado em pipeline proteico moderno", en: "Icosahedron and tetrahedron are natural viral geometries without design component with nano-cage delivery contraindicated in modern protein pipeline"}
+          - {pt: "Auto-organização requer chaperonas obrigatórias sem componente design sendo simetria irrelevante em complexos sintéticos proteicos não-virais humanos", en: "Self-assembly requires mandatory chaperones without design component making symmetry irrelevant in synthetic non-viral human protein complexes"}
+        correctAnswer: {pt: "RFdiffusion respeita simetria C2/C3/C4/D5 + tetrahedron + icosahedron gerando complexos auto-organizados — base para nano-cage delivery e display", en: "RFdiffusion respects C2/C3/C4/D5 + tetrahedron + icosahedron symmetry generating self-organized complexes — basis for nano-cage delivery and display"}
+        rationale: {pt: "Quando simetria reza, então peças se encaixam sozinhas.", en: "When symmetry reigns, pieces self-assemble."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Therapeutic binder:", en: "Therapeutic binder:"}
+        choices:
+          - {pt: "Designed protein binders bloqueiam interação patológica (IL-23/IL-6/PD-L1) com vantagem em estabilidade térmica, fabricação E. coli e custo vs IgG", en: "Designed protein binders block pathologic interaction (IL-23/IL-6/PD-L1) with thermal stability, E. coli manufacturing and cost advantage vs IgG"}
+          - {pt: "Therapeutic binder requer expressão em CHO sem componente E. coli sendo design proteico moderno restrito a IgG convencional sem ganho de fabricação", en: "Therapeutic binder requires CHO expression without E. coli component with modern protein design restricted to conventional IgG without manufacturing gain"}
+          - {pt: "Designed binders são instáveis termicamente sendo IgG convencional preferido em qualquer indicação clínica em favor de estabilidade superior em soro", en: "Designed binders are thermally unstable with conventional IgG preferred in any clinical indication in favor of superior serum stability"}
+          - {pt: "Bloqueio de IL-23/IL-6/PD-L1 não é viável tecnicamente sendo therapeutic binder restrito a target intracelular sem aplicação extracelular ou superfície", en: "Blocking IL-23/IL-6/PD-L1 is technically infeasible with therapeutic binder restricted to intracellular targets without extracellular or surface application"}
+        correctAnswer: {pt: "Designed protein binders bloqueiam interação patológica (IL-23/IL-6/PD-L1) com vantagem em estabilidade térmica, fabricação E. coli e custo vs IgG", en: "Designed protein binders block pathologic interaction (IL-23/IL-6/PD-L1) with thermal stability, E. coli manufacturing and cost advantage vs IgG"}
+        rationale: {pt: "Quando proteína é pequena e estável, então custo e logística melhoram.", en: "When protein is small and stable, cost and logistics improve."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PROTAC binder design:", en: "PROTAC binder design:"}
+        choices:
+          - {pt: "AI desenha ligant + linker + E3 ligase ternary complex (CRBN/VHL) prevendo cooperatividade — acelera PROTAC otimização vs ensaio combinatorial", en: "AI designs ligand + linker + E3 ligase ternary complex (CRBN/VHL) predicting cooperativity — speeds PROTAC optimization vs combinatorial screen"}
+          - {pt: "PROTAC ternary complex é incompatível com AI prediction sendo design computacional contraindicado em otimização de heterobifunctional moderna em 2024", en: "PROTAC ternary complex is incompatible with AI prediction with computational design contraindicated in modern heterobifunctional optimization in 2024"}
+          - {pt: "Cooperatividade é uniforme entre linkers sem componente preditivo sendo PROTAC design restrito a screening combinatorial sem aplicação computacional moderna", en: "Cooperativity is uniform across linkers without predictive component with PROTAC design restricted to combinatorial screening without modern computational application"}
+          - {pt: "CRBN e VHL são E3 ligases sem ligant binders sendo PROTAC inviável tecnicamente em qualquer abordagem de degradação proteica direcionada moderna", en: "CRBN and VHL are E3 ligases without ligand binders making PROTAC technically infeasible in any modern targeted protein-degradation approach"}
+        correctAnswer: {pt: "AI desenha ligant + linker + E3 ligase ternary complex (CRBN/VHL) prevendo cooperatividade — acelera PROTAC otimização vs ensaio combinatorial", en: "AI designs ligand + linker + E3 ligase ternary complex (CRBN/VHL) predicting cooperativity — speeds PROTAC optimization vs combinatorial screen"}
+        rationale: {pt: "Quando ternário é predito, então linker certo é encontrado.", en: "When ternary is predicted, the right linker shows up."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cyclic peptide:", en: "Cyclic peptide:"}
+        choices:
+          - {pt: "Diffusion + Rosetta cyclic geram macrocyclic peptides 8-15aa para target intracelular — penetração celular superior a IgG, dosagem oral viável", en: "Diffusion + Rosetta cyclic generate 8-15aa macrocyclic peptides for intracellular targets — better cell penetration than IgG, viable oral dosing"}
+          - {pt: "Cyclic peptide é restrito a target extracelular sem componente intracelular sendo macrocyclic equivalente a IgG em penetração celular e dosagem", en: "Cyclic peptide is restricted to extracellular targets without intracellular component with macrocyclic equivalent to IgG in cell penetration and dosing"}
+          - {pt: "Macrocyclic 8-15aa não tem afinidade nM sendo equivalente operacional a peptide linear sem ganho de estabilidade ou penetração em qualquer indicação", en: "8-15aa macrocyclic lacks nM affinity being operationally equivalent to linear peptide without stability or penetration gain in any indication"}
+          - {pt: "Diffusion para cyclic peptide é teórico sem implementação prática sendo Rosetta cyclic restrito a IgG convencional sem componente macrociclo moderno", en: "Diffusion for cyclic peptide is theoretical without practical implementation with Rosetta cyclic restricted to conventional IgG without modern macrocycle component"}
+        correctAnswer: {pt: "Diffusion + Rosetta cyclic geram macrocyclic peptides 8-15aa para target intracelular — penetração celular superior a IgG, dosagem oral viável", en: "Diffusion + Rosetta cyclic generate 8-15aa macrocyclic peptides for intracellular targets — better cell penetration than IgG, viable oral dosing"}
+        rationale: {pt: "Quando peptide fecha em ciclo, então célula deixa entrar.", en: "When peptide closes in cycle, cell lets it in."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Generative scale:", en: "Generative scale:"}
+        choices:
+          - {pt: "RFdiffusion + ProteinMPNN + AlphaFold2 in silico screening permite milhões de candidatos antes de bench — GPU clusters substituem display libraries", en: "RFdiffusion + ProteinMPNN + AlphaFold2 in silico screening enables millions of candidates before bench — GPU clusters replace display libraries"}
+          - {pt: "In silico screening é incompatível com bench sendo design proteico moderno restrito a display libraries sem componente computacional generativo escalável", en: "In silico screening is incompatible with bench with modern protein design restricted to display libraries without scalable generative computational component"}
+          - {pt: "Milhões de candidatos é inviável em GPU sendo screening generativo restrito a centenas de proteínas em qualquer pipeline de descoberta moderna", en: "Millions of candidates are infeasible on GPU with generative screening restricted to hundreds of proteins in any modern discovery pipeline"}
+          - {pt: "GPU clusters não suportam AlphaFold2 sendo computação proteica restrita a CPU sem componente acelerado em qualquer pipeline moderno escalável", en: "GPU clusters don't support AlphaFold2 with protein computation restricted to CPU without accelerated component in any modern scalable pipeline"}
+        correctAnswer: {pt: "RFdiffusion + ProteinMPNN + AlphaFold2 in silico screening permite milhões de candidatos antes de bench — GPU clusters substituem display libraries", en: "RFdiffusion + ProteinMPNN + AlphaFold2 in silico screening enables millions of candidates before bench — GPU clusters replace display libraries"}
+        rationale: {pt: "Quando GPU substitui placa, então iteração explode.", en: "When GPU replaces plate, iteration explodes."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese AI design:", en: "AI design synthesis:"}
+        choices:
+          - {pt: "AlphaFold2/3 + ESMFold + RFAA + RFdiffusion + ProteinMPNN + hallucination + validation cycle redefinem descoberta proteica em escala generativa", en: "AlphaFold2/3 + ESMFold + RFAA + RFdiffusion + ProteinMPNN + hallucination + validation cycle redefine protein discovery at generative scale"}
+          - {pt: "AI protein design permanece pré-clínico sem aplicação em terapia ou descoberta de target até 2024 sendo conceito experimental teórico sem implementação", en: "AI protein design remains preclinical without therapy or target-discovery application by 2024 being theoretical experimental concept without implementation"}
+          - {pt: "Modelos AI são intercambiáveis sem trade-off em precisão, escala ou tipo de target tornando escolha tecnológica indiferente em qualquer aplicação", en: "AI models are interchangeable without precision, scale or target-type trade-offs making technology choice indifferent in any application"}
+          - {pt: "Predição estrutural é uniformemente equivalente entre AlphaFold2, ESMFold e RoseTTAFold dispensando ferramenta especializada em qualquer pipeline humano", en: "Structure prediction is uniformly equivalent across AlphaFold2, ESMFold and RoseTTAFold dispensing specialized tool in any human pipeline"}
+        correctAnswer: {pt: "AlphaFold2/3 + ESMFold + RFAA + RFdiffusion + ProteinMPNN + hallucination + validation cycle redefinem descoberta proteica em escala generativa", en: "AlphaFold2/3 + ESMFold + RFAA + RFdiffusion + ProteinMPNN + hallucination + validation cycle redefine protein discovery at generative scale"}
+        rationale: {pt: "Quando predição e design convergem, então biologia vira design.", en: "When prediction and design merge, biology becomes design."}
+        objectives: [biology.ai_protein_design]
+        difficulty: 5
+target: 20
