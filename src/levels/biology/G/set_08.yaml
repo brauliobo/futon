@@ -1,0 +1,244 @@
+title:
+  pt: "🩸 Hematopoese avançada"
+  en: "🩸 Advanced hematopoiesis"
+level: 'G'
+subject: biology
+objectives: [biology.hematopoiesis]
+difficulty: 5
+authorNotes: "HSC niche, lineage commitment, clonal hematopoiesis, leucemias, transplante."
+example:
+  pt: "Ex.: HSC → multipotent progenitor → linhagem específica → célula sanguínea madura."
+  en: "Ex.: HSC → multipotent progenitor → specific lineage → mature blood cell."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Mecanismos hematopoéticos", en: "Hematopoietic mechanisms"}
+    description: {pt: "Como sangue se renova.", en: "How blood renews."}
+    exercises:
+      - type: choice
+        question: {pt: "HSC niche:", en: "HSC niche:"}
+        choices:
+          - {pt: "Endothelial sinusoids e células CAR mantêm HSC quiescentes na medula óssea via SCF e CXCL12", en: "Endothelial sinusoids and CAR cells keep HSC quiescent in bone marrow via SCF and CXCL12"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Endothelial sinusoids e células CAR mantêm HSC quiescentes na medula óssea via SCF e CXCL12", en: "Endothelial sinusoids and CAR cells keep HSC quiescent in bone marrow via SCF and CXCL12"}
+        rationale: {pt: "Quando nicho funciona, então HSC são preservadas longa-duração.", en: "When niche works, HSC are long-term preserved."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lineage commitment:", en: "Lineage commitment:"}
+        choices:
+          - {pt: "GATA1 vs PU.1 antagonismo decide eritroide vs mieloide via cross-inhibition transcripcional", en: "GATA1 vs PU.1 antagonism decides erythroid vs myeloid via transcriptional cross-inhibition"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "GATA1 vs PU.1 antagonismo decide eritroide vs mieloide via cross-inhibition transcripcional", en: "GATA1 vs PU.1 antagonism decides erythroid vs myeloid via transcriptional cross-inhibition"}
+        rationale: {pt: "Quando antagonismo decide, então linhagens são definidas binariamente.", en: "When antagonism decides, lineages are binarily defined."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "EPO and erythropoiesis:", en: "EPO and erythropoiesis:"}
+        choices:
+          - {pt: "Eritropoietina renal sob hipóxia (HIF-2α) estimula maturação de eritroblastos via JAK2-STAT5", en: "Renal erythropoietin under hypoxia (HIF-2α) stimulates erythroblast maturation via JAK2-STAT5"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Eritropoietina renal sob hipóxia (HIF-2α) estimula maturação de eritroblastos via JAK2-STAT5", en: "Renal erythropoietin under hypoxia (HIF-2α) stimulates erythroblast maturation via JAK2-STAT5"}
+        rationale: {pt: "Quando EPO age, então oxigênio é levado tecidual.", en: "When EPO acts, oxygen is delivered tissue-wide."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Clonal hematopoiesis (CHIP):", en: "Clonal hematopoiesis (CHIP):"}
+        choices:
+          - {pt: "Mutações em DNMT3A, TET2, ASXL1 expandem clones HSC com idade — risco cardiovascular elevado", en: "DNMT3A, TET2, ASXL1 mutations expand HSC clones with age — elevated cardiovascular risk"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mutações em DNMT3A, TET2, ASXL1 expandem clones HSC com idade — risco cardiovascular elevado", en: "DNMT3A, TET2, ASXL1 mutations expand HSC clones with age — elevated cardiovascular risk"}
+        rationale: {pt: "Quando CHIP existe, então aging vincula sangue e cardio.", en: "When CHIP exists, aging links blood and cardio."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hematopoietic stem cells in vitro:", en: "In-vitro hematopoietic stem cells:"}
+        choices:
+          - {pt: "iPSC-HSC ainda enfrenta desafios em produzir HSCs verdadeiras com auto-renovação completa", en: "iPSC-HSC still faces challenges producing true HSCs with full self-renewal"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "iPSC-HSC ainda enfrenta desafios em produzir HSCs verdadeiras com auto-renovação completa", en: "iPSC-HSC still faces challenges producing true HSCs with full self-renewal"}
+        rationale: {pt: "Quando in vitro HSCs forem reais, então transplante alogênico universal escala.", en: "When in-vitro HSCs become real, universal allogeneic transplant scales."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Definitive vs primitive hematopoiesis:", en: "Definitive vs primitive hematopoiesis:"}
+        choices:
+          - {pt: "Embrião gera primeiramente eritrócitos primitivos no saco vitelino antes da AGM produzir HSC adultas", en: "Embryo first generates primitive erythrocytes in yolk sac before AGM produces adult HSC"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Embrião gera primeiramente eritrócitos primitivos no saco vitelino antes da AGM produzir HSC adultas", en: "Embryo first generates primitive erythrocytes in yolk sac before AGM produces adult HSC"}
+        rationale: {pt: "Quando ondas distintas existem, então biologia é desenvolvimentalmente complexa.", en: "When distinct waves exist, biology is developmentally complex."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Notch in HSC:", en: "Notch in HSC:"}
+        choices:
+          - {pt: "Notch delta-like ligands em endotélio mantêm pluripotência de HSC e bloqueiam diferenciação prematura", en: "Delta-like Notch ligands on endothelium maintain HSC pluripotency and block premature differentiation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Notch delta-like ligands em endotélio mantêm pluripotência de HSC e bloqueiam diferenciação prematura", en: "Delta-like Notch ligands on endothelium maintain HSC pluripotency and block premature differentiation"}
+        rationale: {pt: "Quando Notch sinaliza, então HSC permanecem multipotentes.", en: "When Notch signals, HSC remain multipotent."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Trained immunity:", en: "Trained immunity:"}
+        choices:
+          - {pt: "Mieloides desenvolvem memória epigenética após estímulos como BCG potenciando resposta heteróloga", en: "Myeloid cells develop epigenetic memory after stimuli like BCG boosting heterologous response"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mieloides desenvolvem memória epigenética após estímulos como BCG potenciando resposta heteróloga", en: "Myeloid cells develop epigenetic memory after stimuli like BCG boosting heterologous response"}
+        rationale: {pt: "Quando treinamento existe, então imunidade inata aprende.", en: "When training exists, innate immunity learns."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MPN (mieloproliferativos):", en: "MPN (myeloproliferative):"}
+        choices:
+          - {pt: "Mutações JAK2 V617F, CALR, MPL causam policitemia vera, trombocitemia e mielofibrose", en: "JAK2 V617F, CALR, MPL mutations cause polycythemia vera, thrombocythemia and myelofibrosis"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mutações JAK2 V617F, CALR, MPL causam policitemia vera, trombocitemia e mielofibrose", en: "JAK2 V617F, CALR, MPL mutations cause polycythemia vera, thrombocythemia and myelofibrosis"}
+        rationale: {pt: "Quando JAK ativa constitutivamente, então proliferação descontrolada ocorre.", en: "When JAK is constitutively active, uncontrolled proliferation occurs."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BCR-ABL e CML:", en: "BCR-ABL and CML:"}
+        choices:
+          - {pt: "Translocação Filadélfia gera tirosina-quinase constitutiva — alvo de imatinibe revolucionou terapia", en: "Philadelphia translocation generates constitutive tyrosine kinase — imatinib target revolutionized therapy"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Translocação Filadélfia gera tirosina-quinase constitutiva — alvo de imatinibe revolucionou terapia", en: "Philadelphia translocation generates constitutive tyrosine kinase — imatinib target revolutionized therapy"}
+        rationale: {pt: "Quando alvo molecular existe, então CML é cronicamente controlada.", en: "When molecular target exists, CML is chronically controlled."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações terapêuticas", en: "Therapeutic applications"}
+    description: {pt: "Sangue como medicina.", en: "Blood as medicine."}
+    exercises:
+      - type: choice
+        question: {pt: "Bone marrow transplant:", en: "Bone marrow transplant:"}
+        choices:
+          - {pt: "Allogeneic HSCT cura leucemias, talassemias e anemias falciformes via reconstituição completa", en: "Allogeneic HSCT cures leukemias, thalassemias and sickle cell via complete reconstitution"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Allogeneic HSCT cura leucemias, talassemias e anemias falciformes via reconstituição completa", en: "Allogeneic HSCT cures leukemias, thalassemias and sickle cell via complete reconstitution"}
+        rationale: {pt: "Quando enxerto pega, então cura é potencialmente alcançada.", en: "When graft takes, cure is potentially achieved."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Casgevy gene therapy:", en: "Casgevy gene therapy:"}
+        choices:
+          - {pt: "CRISPR ex vivo edita BCL11A em HSC reativando HbF curando sickle cell e talassemia", en: "Ex vivo CRISPR edits BCL11A in HSC reactivating HbF curing sickle cell and thalassemia"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "CRISPR ex vivo edita BCL11A em HSC reativando HbF curando sickle cell e talassemia", en: "Ex vivo CRISPR edits BCL11A in HSC reactivating HbF curing sickle cell and thalassemia"}
+        rationale: {pt: "Quando edição funciona, então hemoglobinopatias são potencialmente curadas.", en: "When editing works, hemoglobinopathies are potentially cured."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lenti-globin therapy:", en: "Lenti-globin therapy:"}
+        choices:
+          - {pt: "Bluebird Bio Zynteglo entrega β-globina via lentivírus em HSC autólogos para talassemia transfusão-dependente", en: "Bluebird Bio Zynteglo delivers β-globin via lentivirus in autologous HSC for transfusion-dependent thalassemia"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Bluebird Bio Zynteglo entrega β-globina via lentivírus em HSC autólogos para talassemia transfusão-dependente", en: "Bluebird Bio Zynteglo delivers β-globin via lentivirus in autologous HSC for transfusion-dependent thalassemia"}
+        rationale: {pt: "Quando gene corretivo é entregue, então transfusões são eliminadas.", en: "When corrective gene is delivered, transfusions are eliminated."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anti-CD20 (rituximab):", en: "Anti-CD20 (rituximab):"}
+        choices:
+          - {pt: "Anticorpo monoclonal depleta B cells em linfomas não-Hodgkin e doenças autoimunes", en: "Monoclonal antibody depletes B cells in non-Hodgkin lymphomas and autoimmune diseases"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Anticorpo monoclonal depleta B cells em linfomas não-Hodgkin e doenças autoimunes", en: "Monoclonal antibody depletes B cells in non-Hodgkin lymphomas and autoimmune diseases"}
+        rationale: {pt: "Quando B cells são depletadas, então autoimunidade e linfoma são tratados.", en: "When B cells are depleted, autoimmunity and lymphoma are treated."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "JAK2 inhibitors:", en: "JAK2 inhibitors:"}
+        choices:
+          - {pt: "Ruxolitinibe trata mielofibrose reduzindo esplenomegalia e sintomas — primeiro inibidor de JAK aprovado", en: "Ruxolitinib treats myelofibrosis reducing splenomegaly and symptoms — first approved JAK inhibitor"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Ruxolitinibe trata mielofibrose reduzindo esplenomegalia e sintomas — primeiro inibidor de JAK aprovado", en: "Ruxolitinib treats myelofibrosis reducing splenomegaly and symptoms — first approved JAK inhibitor"}
+        rationale: {pt: "Quando JAK é inibido, então MPNs são controlados.", en: "When JAK is inhibited, MPNs are controlled."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MDS targeted therapy:", en: "MDS targeted therapy:"}
+        choices:
+          - {pt: "Azacitidina + venetoclax e luspatercepte tratam MDS e anemia em pacientes selecionados", en: "Azacitidine + venetoclax and luspatercept treat MDS and anemia in selected patients"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Azacitidina + venetoclax e luspatercepte tratam MDS e anemia em pacientes selecionados", en: "Azacitidine + venetoclax and luspatercept treat MDS and anemia in selected patients"}
+        rationale: {pt: "Quando alvos são moleculares, então tratamentos selecionam pacientes.", en: "When targets are molecular, treatments select patients."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CAR-T em hematologia:", en: "CAR-T in hematology:"}
+        choices:
+          - {pt: "CD19, CD22 e BCMA CAR-Ts curam leucemias B e mielomas refratários a tratamentos convencionais", en: "CD19, CD22 and BCMA CAR-Ts cure refractory B leukemias and myelomas to conventional treatments"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "CD19, CD22 e BCMA CAR-Ts curam leucemias B e mielomas refratários a tratamentos convencionais", en: "CD19, CD22 and BCMA CAR-Ts cure refractory B leukemias and myelomas to conventional treatments"}
+        rationale: {pt: "Quando CAR-T é direcionado, então cura emerge em refratários.", en: "When CAR-T is targeted, cure emerges in refractory."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anti-thrombotic therapy:", en: "Anti-thrombotic therapy:"}
+        choices:
+          - {pt: "DOACs (apixabana, rivaroxabana) substituem warfarina em fibrilação atrial e TVP modernamente", en: "DOACs (apixaban, rivaroxaban) modernly replace warfarin in atrial fibrillation and DVT"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "DOACs (apixabana, rivaroxabana) substituem warfarina em fibrilação atrial e TVP modernamente", en: "DOACs (apixaban, rivaroxaban) modernly replace warfarin in atrial fibrillation and DVT"}
+        rationale: {pt: "Quando DOACs operam, então anticoagulação é mais segura.", en: "When DOACs operate, anticoagulation is safer."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hemoglobinopathies global:", en: "Global hemoglobinopathies:"}
+        choices:
+          - {pt: "Sickle cell e talassemias afetam ~7% global; gene therapy promete acesso equitativo se custo cair", en: "Sickle cell and thalassemias affect ~7% globally; gene therapy promises equitable access if cost drops"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sickle cell e talassemias afetam ~7% global; gene therapy promete acesso equitativo se custo cair", en: "Sickle cell and thalassemias affect ~7% globally; gene therapy promises equitable access if cost drops"}
+        rationale: {pt: "Quando custo cai, então saúde global avança.", en: "When cost drops, global health advances."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em hematopoese:", en: "Next hematopoiesis frontiers:"}
+        choices:
+          - {pt: "iPSC-HSC clinicamente viáveis, edição in vivo de HSC e gene therapy escalável globalmente", en: "Clinically-viable iPSC-HSC, in-vivo HSC editing and globally-scalable gene therapy"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "iPSC-HSC clinicamente viáveis, edição in vivo de HSC e gene therapy escalável globalmente", en: "Clinically-viable iPSC-HSC, in-vivo HSC editing and globally-scalable gene therapy"}
+        rationale: {pt: "Quando ferramentas convergem, então hematopoese vira terapia universal.", en: "When tools converge, hematopoiesis becomes universal therapy."}
+        objectives: [biology.hematopoiesis]
+        difficulty: 5
+target: 20
