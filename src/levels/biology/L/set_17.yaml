@@ -1,0 +1,244 @@
+title:
+  pt: "🧠 Neurodegeneração: AD/ALS/PD integradas"
+  en: "🧠 Neurodegeneration: AD/ALS/PD integrated"
+level: 'L'
+subject: biology
+objectives: [biology.neurodegeneration_advanced]
+difficulty: 5
+authorNotes: "Aducanumab/lecanemab/donanemab anti-Aβ, tau Tau MTBR, ALS tofersen SOD1, gene therapy AAV-SMN1, Parkinson α-synuclein, GBA1, LRRK2, Huntingtin tominersen, BACE1, PET amyloid/tau, gut-brain axis, MCI biomarker."
+example:
+  pt: "Ex.: paciente MCI 72y → amyloid PET+ → CSF Aβ42/40 baixo → lecanemab IV mensal → cognitive decline 27% slowed (CLARITY-AD 2023)."
+  en: "Ex.: 72-yo MCI patient → amyloid PET+ → low CSF Aβ42/40 → monthly IV lecanemab → cognitive decline 27% slowed (CLARITY-AD 2023)."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "AD biology", en: "AD biology"}
+    description: {pt: "Como tratar Alzheimer hoje.", en: "How to treat Alzheimer's today."}
+    exercises:
+      - type: choice
+        question: {pt: "Aducanumab Aduhelm:", en: "Aducanumab Aduhelm:"}
+        choices:
+          - {pt: "Anti-Aβ aggregated mAb Biogen Aduhelm FDA accelerated 2021 baseado em surrogate amyloid clearance — controvérsia eficácia clínica → withdrawn 2024 pelo Biogen apesar amyloid hypothesis", en: "Anti-aggregated-Aβ mAb Biogen Aduhelm FDA accelerated 2021 based on amyloid-clearance surrogate — clinical-efficacy controversy → withdrawn 2024 by Biogen despite amyloid hypothesis"}
+          - {pt: "Aducanumab é restrito a small-molecule sem componente mAb sendo Biogen Aduhelm inviável em qualquer paciente AD humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Aducanumab is restricted to small-molecule without mAb component with Biogen Aduhelm infeasible in any modern clinical AD human patient in 2024 globally at any patient scale"}
+          - {pt: "Surrogate amyloid clearance é teórico sem evidência experimental sendo accelerated FDA inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "Surrogate amyloid clearance is theoretical without experimental evidence with accelerated FDA technically infeasible in any modern clinical human patient in 2024 globally at any scale"}
+          - {pt: "Withdrawn 2024 é teórico sem componente prático sendo Biogen Aduhelm inviável em qualquer paciente AD humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração adulto", en: "Withdrawn 2024 is theoretical without practical component with Biogen Aduhelm infeasible in any modern clinical adult neurodegenerative AD human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Anti-Aβ aggregated mAb Biogen Aduhelm FDA accelerated 2021 baseado em surrogate amyloid clearance — controvérsia eficácia clínica → withdrawn 2024 pelo Biogen apesar amyloid hypothesis", en: "Anti-aggregated-Aβ mAb Biogen Aduhelm FDA accelerated 2021 based on amyloid-clearance surrogate — clinical-efficacy controversy → withdrawn 2024 by Biogen despite amyloid hypothesis"}
+        rationale: {pt: "Quando aprovação anda à frente de eficácia, então mercado retira.", en: "When approval runs ahead of efficacy, market withdraws."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lecanemab Leqembi:", en: "Lecanemab Leqembi:"}
+        choices:
+          - {pt: "Anti-Aβ protofibril Eisai/Biogen Leqembi reduz cognitive decline 27% em CLARITY-AD 2023 em early AD MCI/mild dementia — FDA full approval 2023 com ARIA risk monitoring", en: "Anti-Aβ-protofibril Eisai/Biogen Leqembi cuts cognitive decline 27% in CLARITY-AD 2023 in early AD MCI/mild dementia — FDA full approval 2023 with ARIA risk monitoring"}
+          - {pt: "Lecanemab é restrito a small-molecule sem componente mAb sendo Eisai/Biogen Leqembi inviável em qualquer paciente AD humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Lecanemab is restricted to small-molecule without mAb component with Eisai/Biogen Leqembi infeasible in any modern clinical AD human patient in 2024 globally at any patient scale"}
+          - {pt: "CLARITY-AD é teórico sem evidência experimental sendo Leqembi inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração", en: "CLARITY-AD is theoretical without experimental evidence with Leqembi technically infeasible in any modern clinical neurodegeneration human patient in 2024 globally at any patient scale"}
+          - {pt: "ARIA risk é benéfico em lecanemab sendo monitoring contraindicado em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente AD adulto idoso", en: "ARIA risk is beneficial in lecanemab with monitoring contraindicated in any modern clinical adult elderly AD human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Anti-Aβ protofibril Eisai/Biogen Leqembi reduz cognitive decline 27% em CLARITY-AD 2023 em early AD MCI/mild dementia — FDA full approval 2023 com ARIA risk monitoring", en: "Anti-Aβ-protofibril Eisai/Biogen Leqembi cuts cognitive decline 27% in CLARITY-AD 2023 in early AD MCI/mild dementia — FDA full approval 2023 with ARIA risk monitoring"}
+        rationale: {pt: "Quando protofibril é alvo, então cognitive decline desacelera.", en: "When protofibril is target, cognitive decline slows."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Donanemab Kisunla:", en: "Donanemab Kisunla:"}
+        choices:
+          - {pt: "Anti-Aβ N3pG plaque-targeted Lilly Kisunla atinge faster amyloid clearance em early AD — TRAILBLAZER-ALZ-2 2023 fase 3 cognitive decline 35% slowed, FDA 2024 approval", en: "Anti-Aβ N3pG plaque-targeted Lilly Kisunla achieves faster amyloid clearance in early AD — TRAILBLAZER-ALZ-2 2023 phase 3 cognitive decline 35% slowed, FDA 2024 approval"}
+          - {pt: "Donanemab é restrito a Aβ aggregated sem componente N3pG sendo Lilly Kisunla inviável em qualquer paciente AD humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Donanemab is restricted to aggregated Aβ without N3pG component with Lilly Kisunla infeasible in any modern clinical AD human patient in 2024 globally at any patient scale"}
+          - {pt: "TRAILBLAZER-ALZ-2 é teórico sem evidência experimental sendo Kisunla inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração", en: "TRAILBLAZER-ALZ-2 is theoretical without experimental evidence with Kisunla technically infeasible in any modern clinical neurodegeneration human patient in 2024 globally at any patient scale"}
+          - {pt: "FDA 2024 approval é teórico sem implementação prática sendo donanemab inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente AD adulto idoso", en: "FDA 2024 approval is theoretical without practical implementation with donanemab infeasible in any modern clinical adult elderly AD human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Anti-Aβ N3pG plaque-targeted Lilly Kisunla atinge faster amyloid clearance em early AD — TRAILBLAZER-ALZ-2 2023 fase 3 cognitive decline 35% slowed, FDA 2024 approval", en: "Anti-Aβ N3pG plaque-targeted Lilly Kisunla achieves faster amyloid clearance in early AD — TRAILBLAZER-ALZ-2 2023 phase 3 cognitive decline 35% slowed, FDA 2024 approval"}
+        rationale: {pt: "Quando N3pG é mirado, então plaque some rápido.", en: "When N3pG is targeted, plaque clears fast."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tau MTBR therapy:", en: "Tau MTBR therapy:"}
+        choices:
+          - {pt: "Anti-tau MTBR (microtubule binding region) bepranemab UCB, JNJ-63733657 (posdinemab) targetam aggregated tau >fenotipo cognitive — fase 2/3 ongoing AD Lily-supported", en: "Anti-tau MTBR (microtubule binding region) bepranemab UCB, JNJ-63733657 (posdinemab) target aggregated tau > cognitive phenotype — phase 2/3 ongoing Lilly-supported AD"}
+          - {pt: "Tau MTBR é restrito a Aβ sem componente tau sendo bepranemab e JNJ-63733657 inviáveis em qualquer paciente AD humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração", en: "Tau MTBR is restricted to Aβ without tau component with bepranemab and JNJ-63733657 infeasible in any modern clinical neurodegeneration AD human patient in 2024 globally at any patient scale"}
+          - {pt: "Microtubule binding region é teórico sem evidência experimental sendo posdinemab inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Microtubule binding region is theoretical without experimental evidence with posdinemab technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "Aggregated tau é incompatível com cognitive phenotype sendo UCB e Lilly-supported inviáveis em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente AD adulto", en: "Aggregated tau is incompatible with cognitive phenotype with UCB and Lilly-supported infeasible in any modern clinical adult AD human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Anti-tau MTBR (microtubule binding region) bepranemab UCB, JNJ-63733657 (posdinemab) targetam aggregated tau >fenotipo cognitive — fase 2/3 ongoing AD Lily-supported", en: "Anti-tau MTBR (microtubule binding region) bepranemab UCB, JNJ-63733657 (posdinemab) target aggregated tau > cognitive phenotype — phase 2/3 ongoing Lilly-supported AD"}
+        rationale: {pt: "Quando tau MTBR é alvo, então fenótipo cognitive cede.", en: "When tau MTBR is target, cognitive phenotype yields."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BACE1 inhibitor failure:", en: "BACE1 inhibitor failure:"}
+        choices:
+          - {pt: "Verubecestat, atabecestat, lanabecestat falharam em fase 3 AD por cognitive worsening + futility — APP cleavage upstream too late stage MCI/mild AD para ter impact reversal", en: "Verubecestat, atabecestat, lanabecestat failed phase 3 AD for cognitive worsening + futility — APP-cleavage upstream too-late MCI/mild-AD stage to have reversal impact"}
+          - {pt: "BACE1 inhibitor é restrito a small-molecule sem componente APP cleavage sendo verubecestat e atabecestat inviáveis em qualquer paciente AD humano clínico moderno em 2024 globalmente em qualquer", en: "BACE1 inhibitor is restricted to small-molecule without APP-cleavage component with verubecestat and atabecestat infeasible in any modern clinical AD human patient in 2024 globally at any"}
+          - {pt: "Cognitive worsening é teórico sem evidência experimental sendo lanabecestat inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente AD", en: "Cognitive worsening is theoretical without experimental evidence with lanabecestat technically infeasible in any modern clinical AD human patient in 2024 globally at any patient scale"}
+          - {pt: "Upstream too late stage é incompatível com BACE1 sendo verubecestat inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração adulto idoso", en: "Upstream too-late stage is incompatible with BACE1 with verubecestat infeasible in any modern clinical adult elderly neurodegeneration human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Verubecestat, atabecestat, lanabecestat falharam em fase 3 AD por cognitive worsening + futility — APP cleavage upstream too late stage MCI/mild AD para ter impact reversal", en: "Verubecestat, atabecestat, lanabecestat failed phase 3 AD for cognitive worsening + futility — APP-cleavage upstream too-late MCI/mild-AD stage to have reversal impact"}
+        rationale: {pt: "Quando intervenção é tarde, então cognitive não reverte.", en: "When intervention is late, cognitive doesn't reverse."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Plasma p-tau217:", en: "Plasma p-tau217:"}
+        choices:
+          - {pt: "Plasma phospho-tau-217 supera p-tau181 em discriminação AD vs non-AD MCI — Roche Elecsys, Quanterix Simoa platform diagnose AD via blood test sem PET/CSF invasive ou caro", en: "Plasma phospho-tau-217 outperforms p-tau181 in distinguishing AD vs non-AD MCI — Roche Elecsys, Quanterix Simoa platform diagnoses AD via blood test without invasive/costly PET/CSF"}
+          - {pt: "Plasma p-tau217 é restrito a CSF sem componente blood sendo Roche Elecsys e Quanterix Simoa inviáveis em qualquer paciente AD humano clínico moderno em 2024 globalmente em qualquer escala", en: "Plasma p-tau217 is restricted to CSF without blood component with Roche Elecsys and Quanterix Simoa infeasible in any modern clinical AD human patient in 2024 globally at any scale"}
+          - {pt: "p-tau181 é superior a p-tau217 sendo discriminação AD inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração adulto", en: "p-tau181 is superior to p-tau217 with AD discrimination technically infeasible in any modern clinical adult neurodegeneration human patient in 2024 globally at any patient scale"}
+          - {pt: "PET/CSF invasive é benéfico em AD sendo blood test contraindicado em favor de imagem em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração", en: "Invasive PET/CSF is beneficial in AD with blood test contraindicated in favor of imaging in any modern clinical neurodegeneration human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Plasma phospho-tau-217 supera p-tau181 em discriminação AD vs non-AD MCI — Roche Elecsys, Quanterix Simoa platform diagnose AD via blood test sem PET/CSF invasive ou caro", en: "Plasma phospho-tau-217 outperforms p-tau181 in distinguishing AD vs non-AD MCI — Roche Elecsys, Quanterix Simoa platform diagnoses AD via blood test without invasive/costly PET/CSF"}
+        rationale: {pt: "Quando blood test diagnostica AD, então acesso escala.", en: "When blood test diagnoses AD, access scales."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tofersen SOD1 ALS:", en: "Tofersen SOD1 ALS:"}
+        choices:
+          - {pt: "Ionis/Biogen Qalsody (tofersen) ASO anti-SOD1 intratecal em SOD1-mut ALS hereditary aprovado FDA accelerated 2023 baseado em neurofilament biomarker — primeiro ALS-specific gene therapy", en: "Ionis/Biogen Qalsody (tofersen) intrathecal anti-SOD1 ASO in SOD1-mutant hereditary ALS FDA accelerated 2023 based on neurofilament biomarker — first ALS-specific gene therapy"}
+          - {pt: "Tofersen é restrito a small-molecule sem componente ASO sendo Ionis/Biogen Qalsody inviável em qualquer paciente ALS humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Tofersen is restricted to small-molecule without ASO component with Ionis/Biogen Qalsody infeasible in any modern clinical ALS human patient in 2024 globally at any patient scale"}
+          - {pt: "SOD1-mut ALS é restrito a sporadic sem componente hereditary sendo Qalsody inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente ALS adulto", en: "SOD1-mut ALS is restricted to sporadic without hereditary component with Qalsody technically infeasible in any modern clinical adult ALS human patient in 2024 globally at any patient scale"}
+          - {pt: "Neurofilament biomarker é teórico sem evidência experimental sendo accelerated FDA inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração", en: "Neurofilament biomarker is theoretical without experimental evidence with accelerated FDA infeasible in any modern clinical neurodegeneration human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Ionis/Biogen Qalsody (tofersen) ASO anti-SOD1 intratecal em SOD1-mut ALS hereditary aprovado FDA accelerated 2023 baseado em neurofilament biomarker — primeiro ALS-specific gene therapy", en: "Ionis/Biogen Qalsody (tofersen) intrathecal anti-SOD1 ASO in SOD1-mutant hereditary ALS FDA accelerated 2023 based on neurofilament biomarker — first ALS-specific gene therapy"}
+        rationale: {pt: "Quando SOD1 cala, então ALS hereditary perde momentum.", en: "When SOD1 quiets, hereditary ALS loses momentum."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ALS C9orf72:", en: "ALS C9orf72:"}
+        choices:
+          - {pt: "C9orf72 GGGGCC repeat expansion (>30 repeats) é causa #1 hereditary ALS/FTD — toxic gain-of-function via DPR proteins + RNA foci, ASO BIIB078 fase 2/3 testando in vivo silencing", en: "C9orf72 GGGGCC repeat expansion (>30 repeats) is #1 cause of hereditary ALS/FTD — toxic gain-of-function via DPR proteins + RNA foci, ASO BIIB078 phase 2/3 testing in vivo silencing"}
+          - {pt: "C9orf72 é restrito a SOD1 sem componente GGGGCC sendo BIIB078 inviável em qualquer paciente ALS humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração", en: "C9orf72 is restricted to SOD1 without GGGGCC component with BIIB078 infeasible in any modern clinical ALS human patient in 2024 globally at any neurodegeneration patient scale"}
+          - {pt: "DPR proteins é teórico sem evidência experimental sendo C9orf72 inviável tecnicamente em qualquer paciente ALS/FTD humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "DPR proteins is theoretical without experimental evidence with C9orf72 technically infeasible in any modern clinical ALS/FTD human patient in 2024 globally at any patient scale"}
+          - {pt: "RNA foci é incompatível com toxic gain-of-function sendo BIIB078 inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração adulto idoso", en: "RNA foci is incompatible with toxic gain-of-function with BIIB078 infeasible in any modern clinical adult elderly neurodegeneration human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "C9orf72 GGGGCC repeat expansion (>30 repeats) é causa #1 hereditary ALS/FTD — toxic gain-of-function via DPR proteins + RNA foci, ASO BIIB078 fase 2/3 testando in vivo silencing", en: "C9orf72 GGGGCC repeat expansion (>30 repeats) is #1 cause of hereditary ALS/FTD — toxic gain-of-function via DPR proteins + RNA foci, ASO BIIB078 phase 2/3 testing in vivo silencing"}
+        rationale: {pt: "Quando GGGGCC cala, então DPR não cresce.", en: "When GGGGCC quiets, DPR doesn't grow."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GBA1 Parkinson:", en: "GBA1 Parkinson:"}
+        choices:
+          - {pt: "GBA1 heterozygous mutations elevam risk Parkinson 5-10× — venglustat ambroxol GCase chaperone fase 2/3 LBA testam restoring lysosomal function em GBA-PD specific subset", en: "Heterozygous GBA1 mutations raise Parkinson risk 5-10× — venglustat ambroxol GCase chaperone phase 2/3 LBA test restoring lysosomal function in GBA-PD-specific subset"}
+          - {pt: "GBA1 é restrito a homozygous Gaucher sem componente Parkinson risk sendo venglustat inviável em qualquer paciente PD humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração", en: "GBA1 is restricted to homozygous Gaucher without Parkinson-risk component with venglustat infeasible in any modern clinical PD neurodegeneration human patient in 2024 globally at any scale"}
+          - {pt: "GCase chaperone é teórico sem evidência experimental sendo ambroxol inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente Parkinson adulto", en: "GCase chaperone is theoretical without experimental evidence with ambroxol technically infeasible in any modern clinical adult Parkinson human patient in 2024 globally at any patient scale"}
+          - {pt: "Lysosomal function é incompatível com PD sendo GBA1-PD specific subset inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração adulto idoso", en: "Lysosomal function is incompatible with PD with GBA1-PD-specific subset infeasible in any modern clinical adult elderly neurodegeneration human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "GBA1 heterozygous mutations elevam risk Parkinson 5-10× — venglustat ambroxol GCase chaperone fase 2/3 LBA testam restoring lysosomal function em GBA-PD specific subset", en: "Heterozygous GBA1 mutations raise Parkinson risk 5-10× — venglustat ambroxol GCase chaperone phase 2/3 LBA test restoring lysosomal function in GBA-PD-specific subset"}
+        rationale: {pt: "Quando GCase volta, então lysosome PD funciona.", en: "When GCase returns, PD lysosome works."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "LRRK2 Parkinson:", en: "LRRK2 Parkinson:"}
+        choices:
+          - {pt: "LRRK2 G2019S é mutation hereditary Parkinson #2 — Denali DNL151 (BIIB122) LRRK2 kinase inhibitor avança fase 3 LIGHTHOUSE 2024 em LRRK2-PD specific cohort", en: "LRRK2 G2019S is hereditary Parkinson mutation #2 — Denali DNL151 (BIIB122) LRRK2 kinase inhibitor advances phase 3 LIGHTHOUSE 2024 in LRRK2-PD-specific cohort"}
+          - {pt: "LRRK2 é restrito a SNCA sem componente kinase sendo DNL151 inviável em qualquer paciente PD humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração adulto idoso", en: "LRRK2 is restricted to SNCA without kinase component with DNL151 infeasible in any modern clinical adult elderly PD neurodegeneration human patient in 2024 globally at any patient scale"}
+          - {pt: "G2019S é teórico sem evidência experimental sendo Denali DNL151 inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente PD", en: "G2019S is theoretical without experimental evidence with Denali DNL151 technically infeasible in any modern clinical PD human patient in 2024 globally at any patient scale"}
+          - {pt: "LIGHTHOUSE 2024 é teórico sem componente prático sendo BIIB122 inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente Parkinson neurodegeneração", en: "LIGHTHOUSE 2024 is theoretical without practical component with BIIB122 infeasible in any modern clinical Parkinson neurodegeneration human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "LRRK2 G2019S é mutation hereditary Parkinson #2 — Denali DNL151 (BIIB122) LRRK2 kinase inhibitor avança fase 3 LIGHTHOUSE 2024 em LRRK2-PD specific cohort", en: "LRRK2 G2019S is hereditary Parkinson mutation #2 — Denali DNL151 (BIIB122) LRRK2 kinase inhibitor advances phase 3 LIGHTHOUSE 2024 in LRRK2-PD-specific cohort"}
+        rationale: {pt: "Quando LRRK2 kinase é freada, então PD pode estabilizar.", en: "When LRRK2 kinase is braked, PD can stabilize."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações modernas", en: "Modern applications"}
+    description: {pt: "Da bancada à clínica neurológica.", en: "From bench to neurologic clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "α-synuclein Parkinson:", en: "α-synuclein Parkinson:"}
+        choices:
+          - {pt: "Anti-α-synuclein cinpanemab (Biogen), prasinezumab (Roche/Prothena) testam aggregated αSyn clearance em PD pré-clínica/early — fase 2 PASADENA mostra slowing motor decline", en: "Anti-α-synuclein cinpanemab (Biogen), prasinezumab (Roche/Prothena) test aggregated αSyn clearance in preclinical/early PD — phase 2 PASADENA shows motor-decline slowing"}
+          - {pt: "α-synuclein é restrito a Aβ sem componente αSyn sendo cinpanemab e prasinezumab inviáveis em qualquer paciente PD humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "α-synuclein is restricted to Aβ without αSyn component with cinpanemab and prasinezumab infeasible in any modern clinical PD human patient in 2024 globally at any patient scale"}
+          - {pt: "PASADENA é teórico sem evidência experimental sendo Roche/Prothena inviáveis tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração", en: "PASADENA is theoretical without experimental evidence with Roche/Prothena technically infeasible in any modern clinical neurodegeneration human patient in 2024 globally at any patient scale"}
+          - {pt: "Motor decline é incompatível com α-synuclein sendo cinpanemab inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente PD adulto idoso pediátrico", en: "Motor decline is incompatible with α-synuclein with cinpanemab infeasible in any modern clinical adult, elderly or pediatric PD human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Anti-α-synuclein cinpanemab (Biogen), prasinezumab (Roche/Prothena) testam aggregated αSyn clearance em PD pré-clínica/early — fase 2 PASADENA mostra slowing motor decline", en: "Anti-α-synuclein cinpanemab (Biogen), prasinezumab (Roche/Prothena) test aggregated αSyn clearance in preclinical/early PD — phase 2 PASADENA shows motor-decline slowing"}
+        rationale: {pt: "Quando αSyn aggregated cai, então PD progride menos.", en: "When aggregated αSyn falls, PD progresses less."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tominersen HD:", en: "Tominersen HD:"}
+        choices:
+          - {pt: "Ionis/Roche tominersen anti-HTT ASO intratecal reduz huntingtin total em Huntington — fase 3 GENERATION-HD1 2021 falhou e foi suspensa, dose-dependent toxicity issue", en: "Ionis/Roche tominersen anti-HTT intrathecal ASO cuts total huntingtin in Huntington's — phase 3 GENERATION-HD1 2021 failed and was halted, dose-dependent toxicity issue"}
+          - {pt: "Tominersen é restrito a small-molecule sem componente ASO sendo Ionis/Roche inviáveis em qualquer paciente HD humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração", en: "Tominersen is restricted to small-molecule without ASO component with Ionis/Roche infeasible in any modern clinical HD neurodegeneration human patient in 2024 globally at any patient scale"}
+          - {pt: "GENERATION-HD1 é teórico sem evidência experimental sendo tominersen inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente Huntington", en: "GENERATION-HD1 is theoretical without experimental evidence with tominersen technically infeasible in any modern clinical Huntington human patient in 2024 globally at any patient scale"}
+          - {pt: "Dose-dependent toxicity é benéfica em ASO sendo tominersen contraindicado em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente HD adulto idoso pediátrico", en: "Dose-dependent toxicity is beneficial in ASO with tominersen contraindicated in any modern clinical adult, elderly or pediatric HD human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Ionis/Roche tominersen anti-HTT ASO intratecal reduz huntingtin total em Huntington — fase 3 GENERATION-HD1 2021 falhou e foi suspensa, dose-dependent toxicity issue", en: "Ionis/Roche tominersen anti-HTT intrathecal ASO cuts total huntingtin in Huntington's — phase 3 GENERATION-HD1 2021 failed and was halted, dose-dependent toxicity issue"}
+        rationale: {pt: "Quando ASO falha clínica, então research recalibra alvo HD.", en: "When ASO fails clinic, research recalibrates HD target."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Allele-specific HD:", en: "Allele-specific HD:"}
+        choices:
+          - {pt: "Wave WVE-003, uniQure AMT-130 AAV-miHTT abordam allele-specific silencing huntingtin mutant CAG-expanded preservando wildtype — fase 1/2 reduz mutant HTT CSF sem off-target", en: "Wave WVE-003, uniQure AMT-130 AAV-miHTT take allele-specific silencing of CAG-expanded mutant huntingtin while preserving wildtype — phase 1/2 cut mutant HTT in CSF without off-target"}
+          - {pt: "Allele-specific HD é restrito a total HTT sem componente allele-specific sendo Wave WVE-003 e AMT-130 inviáveis em qualquer paciente HD humano clínico moderno em 2024 globalmente em qualquer", en: "Allele-specific HD is restricted to total HTT without allele-specific component with Wave WVE-003 and AMT-130 infeasible in any modern clinical HD human patient in 2024 globally at any"}
+          - {pt: "CAG-expanded é teórico sem evidência experimental sendo uniQure AMT-130 inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente HD", en: "CAG-expanded is theoretical without experimental evidence with uniQure AMT-130 technically infeasible in any modern clinical HD human patient in 2024 globally at any patient scale"}
+          - {pt: "AAV-miHTT é incompatível com allele-specific sendo Wave WVE-003 inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente Huntington adulto idoso pediátrico", en: "AAV-miHTT is incompatible with allele-specific with Wave WVE-003 infeasible in any modern clinical adult, elderly or pediatric Huntington human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Wave WVE-003, uniQure AMT-130 AAV-miHTT abordam allele-specific silencing huntingtin mutant CAG-expanded preservando wildtype — fase 1/2 reduz mutant HTT CSF sem off-target", en: "Wave WVE-003, uniQure AMT-130 AAV-miHTT take allele-specific silencing of CAG-expanded mutant huntingtin while preserving wildtype — phase 1/2 cut mutant HTT in CSF without off-target"}
+        rationale: {pt: "Quando só mutant é silenciado, então wildtype protege.", en: "When only mutant is silenced, wildtype protects."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Gut-brain α-synuclein:", en: "Gut-brain α-synuclein:"}
+        choices:
+          - {pt: "Vagal nerve transport αSyn aggregation gut→brain (Braak hypothesis) explica PD constipation prodromic + α-syn enteric — vagotomy Danish 2015 reduz PD risk 50% confirmando axis", en: "Vagal-nerve gut→brain αSyn aggregation transport (Braak hypothesis) explains prodromic PD constipation + enteric α-syn — Danish 2015 vagotomy cuts PD risk 50% confirming axis"}
+          - {pt: "Gut-brain é teórico sem componente prático sendo Braak hypothesis inviável em qualquer paciente PD humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração adulto", en: "Gut-brain is theoretical without practical component with Braak hypothesis infeasible in any modern clinical adult neurodegeneration PD human patient in 2024 globally at any scale"}
+          - {pt: "Vagal nerve transport é incompatível com αSyn sendo Danish 2015 inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente Parkinson", en: "Vagal-nerve transport is incompatible with αSyn with Danish 2015 technically infeasible in any modern clinical Parkinson human patient in 2024 globally at any patient scale"}
+          - {pt: "Constipation prodromic é benéfico em PD sendo Braak hypothesis contraindicado em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração adulto idoso", en: "Prodromic constipation is beneficial in PD with Braak hypothesis contraindicated in any modern clinical adult elderly neurodegeneration human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Vagal nerve transport αSyn aggregation gut→brain (Braak hypothesis) explica PD constipation prodromic + α-syn enteric — vagotomy Danish 2015 reduz PD risk 50% confirmando axis", en: "Vagal-nerve gut→brain αSyn aggregation transport (Braak hypothesis) explains prodromic PD constipation + enteric α-syn — Danish 2015 vagotomy cuts PD risk 50% confirming axis"}
+        rationale: {pt: "Quando vago carrega αSyn, então PD começa no gut.", en: "When vagus carries αSyn, PD starts in the gut."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Riluzole edaravone:", en: "Riluzole edaravone:"}
+        choices:
+          - {pt: "Riluzole inhibitor glutamate release (FDA 1995) e edaravone (Mitsubishi Radicava FDA 2017) atrasam ALS progression modestamente — Relyvrio (sodium phenylbutyrate + taurursodiol) FDA 2022", en: "Riluzole glutamate-release inhibitor (FDA 1995) and edaravone (Mitsubishi Radicava FDA 2017) modestly slow ALS progression — Relyvrio (sodium phenylbutyrate + taurursodiol) FDA 2022"}
+          - {pt: "Riluzole é restrito a edaravone sem componente glutamate sendo Mitsubishi Radicava inviável em qualquer paciente ALS humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração", en: "Riluzole is restricted to edaravone without glutamate component with Mitsubishi Radicava infeasible in any modern clinical ALS neurodegeneration human patient in 2024 globally at any patient scale"}
+          - {pt: "Sodium phenylbutyrate + taurursodiol é teórico sem evidência experimental sendo Relyvrio inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Sodium phenylbutyrate + taurursodiol is theoretical without experimental evidence with Relyvrio technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "ALS progression é incompatível com riluzole sendo edaravone inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente ALS adulto idoso pediátrico", en: "ALS progression is incompatible with riluzole with edaravone infeasible in any modern clinical adult, elderly or pediatric ALS human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Riluzole inhibitor glutamate release (FDA 1995) e edaravone (Mitsubishi Radicava FDA 2017) atrasam ALS progression modestamente — Relyvrio (sodium phenylbutyrate + taurursodiol) FDA 2022", en: "Riluzole glutamate-release inhibitor (FDA 1995) and edaravone (Mitsubishi Radicava FDA 2017) modestly slow ALS progression — Relyvrio (sodium phenylbutyrate + taurursodiol) FDA 2022"}
+        rationale: {pt: "Quando glutamate cala, então neurônio motor sobrevive mais.", en: "When glutamate quiets, motor neuron survives longer."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DBS Parkinson:", en: "DBS Parkinson:"}
+        choices:
+          - {pt: "Deep Brain Stimulation STN/GPi reduz motor fluctuation e levodopa-induced dyskinesia em mid-stage PD — Boston Sci Vercise, Medtronic Percept adaptive sensing closed-loop modernizam", en: "STN/GPi Deep Brain Stimulation cuts motor fluctuation and levodopa-induced dyskinesia in mid-stage PD — Boston Sci Vercise, Medtronic Percept adaptive-sensing closed-loop modernize"}
+          - {pt: "DBS é restrito a TENS superficial sem componente STN/GPi sendo Boston Sci Vercise e Medtronic Percept inviáveis em qualquer paciente PD humano clínico moderno em 2024 globalmente em qualquer", en: "DBS is restricted to superficial TENS without STN/GPi component with Boston Sci Vercise and Medtronic Percept infeasible in any modern clinical PD human patient in 2024 globally at any"}
+          - {pt: "STN/GPi é teórico sem evidência experimental sendo DBS inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente Parkinson neurodegeneração adulto", en: "STN/GPi is theoretical without experimental evidence with DBS technically infeasible in any modern clinical adult Parkinson neurodegeneration human patient in 2024 globally at any patient scale"}
+          - {pt: "Adaptive sensing closed-loop é incompatível com DBS sendo Vercise e Percept inviáveis em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente PD adulto idoso pediátrico", en: "Adaptive-sensing closed-loop is incompatible with DBS with Vercise and Percept infeasible in any modern clinical adult, elderly or pediatric PD human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Deep Brain Stimulation STN/GPi reduz motor fluctuation e levodopa-induced dyskinesia em mid-stage PD — Boston Sci Vercise, Medtronic Percept adaptive sensing closed-loop modernizam", en: "STN/GPi Deep Brain Stimulation cuts motor fluctuation and levodopa-induced dyskinesia in mid-stage PD — Boston Sci Vercise, Medtronic Percept adaptive-sensing closed-loop modernize"}
+        rationale: {pt: "Quando STN é estimulada, então tremor cede ao closed-loop.", en: "When STN is stimulated, tremor yields to closed-loop."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell therapy iPSC PD:", en: "iPSC PD cell therapy:"}
+        choices:
+          - {pt: "iPSC-derived dopaminergic neuron implant (Takahashi/Kyoto, BlueRock) substitui SNc neurons em mid-stage PD — fase 1 ongoing demonstra survival + motor improvement em primeiros pacientes 2024", en: "iPSC-derived dopaminergic neuron implant (Takahashi/Kyoto, BlueRock) replaces SNc neurons in mid-stage PD — ongoing phase 1 shows survival + motor improvement in first patients 2024"}
+          - {pt: "Cell therapy iPSC PD é restrito a small-molecule sem componente cell sendo Takahashi/Kyoto e BlueRock inviáveis em qualquer paciente PD humano clínico moderno em 2024 globalmente em qualquer escala", en: "iPSC PD cell therapy is restricted to small-molecule without cell component with Takahashi/Kyoto and BlueRock infeasible in any modern clinical PD human patient in 2024 globally at any scale"}
+          - {pt: "iPSC-derived dopaminergic neuron é teórico sem evidência experimental sendo SNc replacement inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "iPSC-derived dopaminergic neuron is theoretical without experimental evidence with SNc replacement technically infeasible in any modern clinical human patient in 2024 globally at any scale"}
+          - {pt: "Motor improvement é incompatível com cell therapy sendo BlueRock inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente Parkinson neurodegeneração adulto idoso", en: "Motor improvement is incompatible with cell therapy with BlueRock infeasible in any modern clinical adult elderly Parkinson neurodegeneration human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "iPSC-derived dopaminergic neuron implant (Takahashi/Kyoto, BlueRock) substitui SNc neurons em mid-stage PD — fase 1 ongoing demonstra survival + motor improvement em primeiros pacientes 2024", en: "iPSC-derived dopaminergic neuron implant (Takahashi/Kyoto, BlueRock) replaces SNc neurons in mid-stage PD — ongoing phase 1 shows survival + motor improvement in first patients 2024"}
+        rationale: {pt: "Quando dopamina cell volta, então PD recupera substância.", en: "When dopamine cell returns, PD reclaims substance."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anti-tau gosuranemab:", en: "Anti-tau gosuranemab:"}
+        choices:
+          - {pt: "Anti-N-terminal tau gosuranemab (Biogen) e zagotenemab (Lilly) testaram em early AD — falharam fase 2/3 cognitive endpoint, motivando shift para MTBR-targeted next-gen anti-tau biologics", en: "N-terminal-tau gosuranemab (Biogen) and zagotenemab (Lilly) tested in early AD — failed phase 2/3 cognitive endpoint, driving shift to next-gen MTBR-targeted anti-tau biologics"}
+          - {pt: "Anti-tau gosuranemab é restrito a Aβ sem componente tau sendo Biogen e Lilly inviáveis em qualquer paciente AD humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração", en: "Anti-tau gosuranemab is restricted to Aβ without tau component with Biogen and Lilly infeasible in any modern clinical AD neurodegeneration human patient in 2024 globally at any patient scale"}
+          - {pt: "N-terminal tau é teórico sem evidência experimental sendo zagotenemab inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente AD adulto idoso", en: "N-terminal tau is theoretical without experimental evidence with zagotenemab technically infeasible in any modern clinical adult elderly AD human patient in 2024 globally at any patient scale"}
+          - {pt: "Cognitive endpoint é incompatível com anti-tau sendo gosuranemab inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração adulto idoso pediátrico", en: "Cognitive endpoint is incompatible with anti-tau with gosuranemab infeasible in any modern clinical adult, elderly or pediatric neurodegeneration human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Anti-N-terminal tau gosuranemab (Biogen) e zagotenemab (Lilly) testaram em early AD — falharam fase 2/3 cognitive endpoint, motivando shift para MTBR-targeted next-gen anti-tau biologics", en: "N-terminal-tau gosuranemab (Biogen) and zagotenemab (Lilly) tested in early AD — failed phase 2/3 cognitive endpoint, driving shift to next-gen MTBR-targeted anti-tau biologics"}
+        rationale: {pt: "Quando epitope errado é mirado, então cognitive falha.", en: "When wrong epitope is targeted, cognitive fails."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PROTAC degrader brain:", en: "Brain PROTAC degrader:"}
+        choices:
+          - {pt: "BBB-penetrant PROTAC IRAK4, IRE1α, mut-Huntington, αSyn, tau aggregated explora targeted protein degradation em CNS — Arvinas, Cullinan, Kymera fase 1 emergência neurology degraders", en: "BBB-penetrant PROTACs against IRAK4, IRE1α, mut-Huntington, αSyn, aggregated tau explore CNS targeted protein degradation — Arvinas, Cullinan, Kymera emerging neurology phase-1 degraders"}
+          - {pt: "PROTAC degrader é restrito a small-molecule sem componente CNS sendo Arvinas e Cullinan inviáveis em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração", en: "PROTAC degrader is restricted to small-molecule without CNS component with Arvinas and Cullinan infeasible in any modern clinical neurodegeneration human patient in 2024 globally at any patient scale"}
+          - {pt: "BBB-penetrant é teórico sem evidência experimental sendo Kymera inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente CNS adulto idoso pediátrico", en: "BBB-penetrant is theoretical without experimental evidence with Kymera technically infeasible in any modern clinical adult, elderly or pediatric CNS human patient in 2024 globally at any patient scale"}
+          - {pt: "Targeted protein degradation é incompatível com CNS sendo PROTAC inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neurodegeneração adulto idoso", en: "Targeted protein degradation is incompatible with CNS with PROTAC infeasible in any modern clinical adult elderly neurodegeneration human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "BBB-penetrant PROTAC IRAK4, IRE1α, mut-Huntington, αSyn, tau aggregated explora targeted protein degradation em CNS — Arvinas, Cullinan, Kymera fase 1 emergência neurology degraders", en: "BBB-penetrant PROTACs against IRAK4, IRE1α, mut-Huntington, αSyn, aggregated tau explore CNS targeted protein degradation — Arvinas, Cullinan, Kymera emerging neurology phase-1 degraders"}
+        rationale: {pt: "Quando degrader atravessa BBB, então CNS proteinopathy reduz.", en: "When degrader crosses BBB, CNS proteinopathy reduces."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese neurodegeneração:", en: "Neurodegeneration synthesis:"}
+        choices:
+          - {pt: "Aducanumab/lecanemab/donanemab + tau MTBR + plasma p-tau217 + tofersen ALS + C9orf72 ASO + GBA/LRRK2 PD + α-synuclein + tominersen/HD allele + DBS + iPSC + PROTAC redefinem neurology", en: "Aducanumab/lecanemab/donanemab + tau MTBR + plasma p-tau217 + tofersen ALS + C9orf72 ASO + GBA/LRRK2 PD + α-synuclein + tominersen/HD allele + DBS + iPSC + PROTAC redefine neurology"}
+          - {pt: "Neurodegeneração permanece pré-clínica sem aplicação humana até 2024 sendo conceito experimental sem implementação prática em qualquer indicação clínica humana globalmente em qualquer escala paciente", en: "Neurodegeneration remains preclinical without human application by 2024 being experimental concept without practical implementation in any clinical human indication globally at any patient scale"}
+          - {pt: "Plataformas neuro são intercambiáveis sem trade-off em alvo, mecanismo ou estágio tornando escolha tecnológica indiferente em qualquer aplicação clínica humana 2024 globalmente em qualquer escala paciente", en: "Neuro platforms are interchangeable without target, mechanism or stage trade-off making technology choice indifferent in any clinical human application 2024 globally at any patient scale"}
+          - {pt: "Neurodegeneração depende exclusivamente de symptom drug sem componente disease-modifying sendo aducanumab e lecanemab dispensáveis em qualquer paciente humano clínico moderno em 2024", en: "Neurodegeneration depends exclusively on symptom drug without disease-modifying component with aducanumab and lecanemab dispensable in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Aducanumab/lecanemab/donanemab + tau MTBR + plasma p-tau217 + tofersen ALS + C9orf72 ASO + GBA/LRRK2 PD + α-synuclein + tominersen/HD allele + DBS + iPSC + PROTAC redefinem neurology", en: "Aducanumab/lecanemab/donanemab + tau MTBR + plasma p-tau217 + tofersen ALS + C9orf72 ASO + GBA/LRRK2 PD + α-synuclein + tominersen/HD allele + DBS + iPSC + PROTAC redefine neurology"}
+        rationale: {pt: "Quando alvos múltiplos convergem, então neurodegeneração desacelera.", en: "When multiple targets converge, neurodegeneration slows."}
+        objectives: [biology.neurodegeneration_advanced]
+        difficulty: 5
+target: 20
