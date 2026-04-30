@@ -1,0 +1,244 @@
+title:
+  pt: "🎓 Revisão cumulativa F"
+  en: "🎓 Cumulative review F"
+level: 'F'
+subject: biology
+objectives: [biology.cumulative_F]
+difficulty: 5
+authorNotes: "Revisão dos 19 tópicos de F: cryo-EM, sc multi-omics, 3D genome, splicing, tradução, mito, competição, plant immunity, insect symbiosis, marine, soil, extreme, behavior, sleep memory, aging clocks, hormesis, vaccines, bioethics, FAIR."
+example:
+  pt: "Ex.: revisar tópico → reconhecer mecanismo → conectar à aplicação → consolidar."
+  en: "Ex.: review topic → recognize mechanism → link to application → consolidate."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Conceitos-chave I", en: "Key concepts I"}
+    description: {pt: "Tópicos 01-10 do nível F.", en: "Level F topics 01-10."}
+    exercises:
+      - type: choice
+        question: {pt: "Cryo-ET:", en: "Cryo-ET:"}
+        choices:
+          - {pt: "Tilt-series + reconstrução 3D revelam organização molecular in situ em células", en: "Tilt-series + 3D reconstruction reveal in-situ molecular organization in cells"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tilt-series + reconstrução 3D revelam organização molecular in situ em células", en: "Tilt-series + 3D reconstruction reveal in-situ molecular organization in cells"}
+        rationale: {pt: "Quando cryo-ET imageia, então biologia nativa é vista em contexto.", en: "When cryo-ET images, native biology is seen in context."}
+        objectives: [biology.cryoem_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CITE-seq:", en: "CITE-seq:"}
+        choices:
+          - {pt: "Mede mRNA + proteínas de superfície (anticorpos com barcode) em mesma célula", en: "Measures mRNA + surface proteins (barcoded antibodies) in same cell"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mede mRNA + proteínas de superfície (anticorpos com barcode) em mesma célula", en: "Measures mRNA + surface proteins (barcoded antibodies) in same cell"}
+        rationale: {pt: "Quando dois modalidades coletam, então tipos celulares têm definição multidimensional.", en: "When two modalities collect, cell types have multidimensional definition."}
+        objectives: [biology.scmultiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Loop extrusion:", en: "Loop extrusion:"}
+        choices:
+          - {pt: "Cohesin extruda loops até bloqueio em CTCF — modelo dinâmico de TADs e loops", en: "Cohesin extrudes loops until blocked by CTCF — dynamic TAD/loop model"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cohesin extruda loops até bloqueio em CTCF — modelo dinâmico de TADs e loops", en: "Cohesin extrudes loops until blocked by CTCF — dynamic TAD/loop model"}
+        rationale: {pt: "Quando extrusão age, então arquitetura é dinamicamente mantida.", en: "When extrusion acts, architecture is dynamically maintained."}
+        objectives: [biology.genome3d]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spliceossomo:", en: "Spliceosome:"}
+        choices:
+          - {pt: "Complexo dinâmico de snRNPs U1-U6 catalisa remoção de introns em pré-mRNA", en: "Dynamic U1-U6 snRNP complex catalyzes intron removal from pre-mRNA"}
+          - {pt: "Apenas curiosidade molecular", en: "Just molecular curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Complexo dinâmico de snRNPs U1-U6 catalisa remoção de introns em pré-mRNA", en: "Dynamic U1-U6 snRNP complex catalyzes intron removal from pre-mRNA"}
+        rationale: {pt: "Quando spliceossomo monta, então mRNA maduro é gerado.", en: "When spliceosome assembles, mature mRNA is generated."}
+        objectives: [biology.splicing_adv]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ISR (integrated stress response):", en: "ISR (integrated stress response):"}
+        choices:
+          - {pt: "Hub molecular reprograma tradução em estresse — ATF4, CHOP guiam decisão de morte/sobrevivência", en: "Molecular hub reprogramming translation under stress — ATF4, CHOP guide death/survival"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Hub molecular reprograma tradução em estresse — ATF4, CHOP guiam decisão de morte/sobrevivência", en: "Molecular hub reprogramming translation under stress — ATF4, CHOP guide death/survival"}
+        rationale: {pt: "Quando ISR ativa, então células reagem proporcional à severidade.", en: "When ISR activates, cells respond proportionally to severity."}
+        objectives: [biology.translation_reg]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PINK1/Parkin mitofagia:", en: "PINK1/Parkin mitophagy:"}
+        choices:
+          - {pt: "PINK1 acumula em mito despolarizada e recruta Parkin para ubiquitinação e remoção", en: "PINK1 accumulates on depolarized mito recruiting Parkin for ubiquitination and clearance"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "PINK1 acumula em mito despolarizada e recruta Parkin para ubiquitinação e remoção", en: "PINK1 accumulates on depolarized mito recruiting Parkin for ubiquitination and clearance"}
+        rationale: {pt: "Quando mitofagia age, então mitocôndrias ruins são removidas seletivamente.", en: "When mitophagy acts, bad mitochondria are selectively cleared."}
+        objectives: [biology.mito_dynamics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell competition (Myc):", en: "Cell competition (Myc):"}
+        choices:
+          - {pt: "Células com Myc alto eliminam vizinhas wild-type por competição em Drosophila e mamíferos", en: "Cells with high Myc eliminate wild-type neighbors via competition in Drosophila and mammals"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Células com Myc alto eliminam vizinhas wild-type por competição em Drosophila e mamíferos", en: "Cells with high Myc eliminate wild-type neighbors via competition in Drosophila and mammals"}
+        rationale: {pt: "Quando Myc é elevado, então competição supera vizinhos saudáveis.", en: "When Myc is elevated, competition overtakes healthy neighbors."}
+        objectives: [biology.cell_competition]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ETI (effector-triggered immunity):", en: "ETI (effector-triggered immunity):"}
+        choices:
+          - {pt: "NLRs intracelulares reconhecem efetores patógenos disparando resposta hipersensível forte", en: "Intracellular NLRs recognize pathogen effectors triggering strong hypersensitive response"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "NLRs intracelulares reconhecem efetores patógenos disparando resposta hipersensível forte", en: "Intracellular NLRs recognize pathogen effectors triggering strong hypersensitive response"}
+        rationale: {pt: "Quando NLRs reconhecem, então morte celular localizada barra patógeno.", en: "When NLRs recognize, localized cell death blocks pathogen."}
+        objectives: [biology.plant_immunity]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Wolbachia:", en: "Wolbachia:"}
+        choices:
+          - {pt: "Bactéria endossimbionte em ~50% de insetos manipula reprodução e protege contra vírus", en: "Endosymbiotic bacterium in ~50% of insects manipulates reproduction and protects from viruses"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Bactéria endossimbionte em ~50% de insetos manipula reprodução e protege contra vírus", en: "Endosymbiotic bacterium in ~50% of insects manipulates reproduction and protects from viruses"}
+        rationale: {pt: "Quando Wolbachia coloniza, então biologia hospedeira é dramaticamente alterada.", en: "When Wolbachia colonizes, host biology is dramatically altered."}
+        objectives: [biology.insect_symbiosis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Coral bleaching:", en: "Coral bleaching:"}
+        choices:
+          - {pt: "Estresse térmico expulsa Symbiodinium causando perda de cor e morte se prolongado", en: "Thermal stress expels Symbiodinium causing color loss and death if prolonged"}
+          - {pt: "Apenas curiosidade ambiental", en: "Just environmental curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Estresse térmico expulsa Symbiodinium causando perda de cor e morte se prolongado", en: "Thermal stress expels Symbiodinium causing color loss and death if prolonged"}
+        rationale: {pt: "Quando temperatura sobe, então recifes globais branqueiam massivamente.", en: "When temperature rises, global reefs massively bleach."}
+        objectives: [biology.marine_coral]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Conceitos-chave II", en: "Key concepts II"}
+    description: {pt: "Tópicos 11-19 do nível F.", en: "Level F topics 11-19."}
+    exercises:
+      - type: choice
+        question: {pt: "Mycorrhizae:", en: "Mycorrhizae:"}
+        choices:
+          - {pt: "Fungos formam rede com raízes trocando fósforo por carbono — extensão massiva absorptiva", en: "Fungi form network with roots trading phosphorus for carbon — massive absorptive extension"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fungos formam rede com raízes trocando fósforo por carbono — extensão massiva absorptiva", en: "Fungi form network with roots trading phosphorus for carbon — massive absorptive extension"}
+        rationale: {pt: "Quando micorrizas formam, então plantas acessam recursos distantes.", en: "When mycorrhizae form, plants access distant resources."}
+        objectives: [biology.soil_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tardigrades:", en: "Tardigrades:"}
+        choices:
+          - {pt: "Sobrevivem vácuo, congelamento e radiação via criptobiose com proteínas TDP únicas", en: "Survive vacuum, freezing and radiation via cryptobiosis with unique TDP proteins"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sobrevivem vácuo, congelamento e radiação via criptobiose com proteínas TDP únicas", en: "Survive vacuum, freezing and radiation via cryptobiosis with unique TDP proteins"}
+        rationale: {pt: "Quando criptobiose ocorre, então metabolismo para sobrevivendo extremos.", en: "When cryptobiosis occurs, metabolism halts surviving extremes."}
+        objectives: [biology.extreme_bio]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Optogenetics:", en: "Optogenetics:"}
+        choices:
+          - {pt: "Channelrhodopsin (ChR2) em neurônios permite ativação por luz com precisão milisegundo", en: "Channelrhodopsin (ChR2) in neurons enables millisecond-precise light activation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Channelrhodopsin (ChR2) em neurônios permite ativação por luz com precisão milisegundo", en: "Channelrhodopsin (ChR2) in neurons enables millisecond-precise light activation"}
+        rationale: {pt: "Quando ChR2 é expressa, então causalidade circuit-comportamento é testada.", en: "When ChR2 is expressed, circuit-behavior causality is tested."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hippocampal ripples:", en: "Hippocampal ripples:"}
+        choices:
+          - {pt: "Ondas 150-250 Hz em CA1 acompanham replay de sequências aprendidas durante sono", en: "150-250 Hz CA1 waves accompany replay of learned sequences during sleep"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Ondas 150-250 Hz em CA1 acompanham replay de sequências aprendidas durante sono", en: "150-250 Hz CA1 waves accompany replay of learned sequences during sleep"}
+        rationale: {pt: "Quando ripples disparam, então memórias migram para córtex.", en: "When ripples fire, memories migrate to cortex."}
+        objectives: [biology.sleep_memory]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Horvath clock:", en: "Horvath clock:"}
+        choices:
+          - {pt: "353 sítios CpG com regressão prevê idade cronológica humana com erro <4 anos", en: "353 CpG sites with regression predicts human chronological age with <4 year error"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "353 sítios CpG com regressão prevê idade cronológica humana com erro <4 anos", en: "353 CpG sites with regression predicts human chronological age with <4 year error"}
+        rationale: {pt: "Quando relógio prevê, então biologia ganha métrica de envelhecimento.", en: "When clock predicts, biology gains aging metric."}
+        objectives: [biology.aging_clocks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mitohormesis:", en: "Mitohormesis:"}
+        choices:
+          - {pt: "Pequeno burst de ROS mitocondrial ativa NRF2 e antioxidantes endógenos protegendo célula", en: "Mild mitochondrial ROS burst activates NRF2 and endogenous antioxidants protecting cell"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Pequeno burst de ROS mitocondrial ativa NRF2 e antioxidantes endógenos protegendo célula", en: "Mild mitochondrial ROS burst activates NRF2 and endogenous antioxidants protecting cell"}
+        rationale: {pt: "Quando ROS é leve, então defesa redox é boostada permanentemente.", en: "When ROS is mild, redox defense is permanently boosted."}
+        objectives: [biology.hormesis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "mRNA vaccines:", en: "mRNA vaccines:"}
+        choices:
+          - {pt: "Modificação ψ + LNP entregam mRNA codificando antígeno gerando resposta imune robusta", en: "ψ modification + LNP deliver mRNA encoding antigen eliciting robust immune response"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modificação ψ + LNP entregam mRNA codificando antígeno gerando resposta imune robusta", en: "ψ modification + LNP deliver mRNA encoding antigen eliciting robust immune response"}
+        rationale: {pt: "Quando mRNA escala, então plataforma vacinal se acelera globalmente.", en: "When mRNA scales, vaccine platform globally accelerates."}
+        objectives: [biology.next_vaccines]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dual-use research of concern:", en: "Dual-use research of concern:"}
+        choices:
+          - {pt: "Política identifica pesquisa com potencial malicioso aplicando supervisão e screening adicionais", en: "Policy identifies research with malicious potential applying additional oversight and screening"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Política identifica pesquisa com potencial malicioso aplicando supervisão e screening adicionais", en: "Policy identifies research with malicious potential applying additional oversight and screening"}
+        rationale: {pt: "Quando DURC é regulado, então riscos são mitigados antecipadamente.", en: "When DURC is regulated, risks are anticipatorily mitigated."}
+        objectives: [biology.bioethics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "FAIR principles:", en: "FAIR principles:"}
+        choices:
+          - {pt: "Findable, Accessible, Interoperable, Reusable — princípios para dados científicos abertos", en: "Findable, Accessible, Interoperable, Reusable — principles for open scientific data"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Findable, Accessible, Interoperable, Reusable — princípios para dados científicos abertos", en: "Findable, Accessible, Interoperable, Reusable — principles for open scientific data"}
+        rationale: {pt: "Quando FAIR é seguido, então pesquisa escala globalmente.", en: "When FAIR is followed, research globally scales."}
+        objectives: [biology.bioinfo_fair]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese geral do nível F:", en: "Level F overall synthesis:"}
+        choices:
+          - {pt: "Biologia avançada integra tecnologia, ecologia, ética e dados abertos em escala global responsável", en: "Advanced biology integrates technology, ecology, ethics and open data at responsible global scale"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Biologia avançada integra tecnologia, ecologia, ética e dados abertos em escala global responsável", en: "Advanced biology integrates technology, ecology, ethics and open data at responsible global scale"}
+        rationale: {pt: "Quando disciplinas convergem, então biologia transforma medicina, planeta e sociedade.", en: "When disciplines converge, biology transforms medicine, planet and society."}
+        objectives: [biology.cumulative_F]
+        difficulty: 5
+target: 20
