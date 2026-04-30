@@ -1,0 +1,244 @@
+title:
+  pt: "🌱 Células-tronco pluripotentes"
+  en: "🌱 Pluripotent stem cells"
+level: 'G'
+subject: biology
+objectives: [biology.pluripotent]
+difficulty: 5
+authorNotes: "ESC, iPSC, naive vs primed, Yamanaka factors, differentiation, terapias clínicas."
+example:
+  pt: "Ex.: fibroblasto + OSKM → iPSC → diferenciação → tipo celular → terapia."
+  en: "Ex.: fibroblast + OSKM → iPSC → differentiation → cell type → therapy."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Biologia básica de PSC", en: "PSC fundamentals"}
+    description: {pt: "Como entendemos pluripotência.", en: "How we understand pluripotency."}
+    exercises:
+      - type: choice
+        question: {pt: "Yamanaka factors:", en: "Yamanaka factors:"}
+        choices:
+          - {pt: "OCT4, SOX2, KLF4, c-MYC reprogramam células somáticas em iPSC — Nobel 2012", en: "OCT4, SOX2, KLF4, c-MYC reprogram somatic cells into iPSC — 2012 Nobel"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "OCT4, SOX2, KLF4, c-MYC reprogramam células somáticas em iPSC — Nobel 2012", en: "OCT4, SOX2, KLF4, c-MYC reprogram somatic cells into iPSC — 2012 Nobel"}
+        rationale: {pt: "Quando OSKM age, então qualquer célula pode virar pluripotente.", en: "When OSKM acts, any cell can become pluripotent."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Naive vs primed pluripotency:", en: "Naive vs primed pluripotency:"}
+        choices:
+          - {pt: "Naive são pré-implantação com X-X ativos; primed são post-implantação com X inativado", en: "Naive are pre-implantation with active X-X; primed are post-implantation with X-inactivated"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Naive são pré-implantação com X-X ativos; primed são post-implantação com X inativado", en: "Naive are pre-implantation with active X-X; primed are post-implantation with X-inactivated"}
+        rationale: {pt: "Quando estados são distintos, então diferenciação tem janelas distintas.", en: "When states are distinct, differentiation has distinct windows."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pluripotency network:", en: "Pluripotency network:"}
+        choices:
+          - {pt: "OCT4, SOX2, NANOG formam triple-loop autoregulatório que define identidade pluripotente", en: "OCT4, SOX2, NANOG form auto-regulatory triple-loop defining pluripotent identity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "OCT4, SOX2, NANOG formam triple-loop autoregulatório que define identidade pluripotente", en: "OCT4, SOX2, NANOG form auto-regulatory triple-loop defining pluripotent identity"}
+        rationale: {pt: "Quando rede é estável, então identidade é mantida em divisão.", en: "When network is stable, identity is maintained in division."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Differentiation in vitro:", en: "In vitro differentiation:"}
+        choices:
+          - {pt: "Combinações de SMADs, Wnts, FGFs guiam iPSC para neurônios, cardiomiócitos, hepatócitos", en: "SMAD, Wnt, FGF combinations guide iPSC to neurons, cardiomyocytes, hepatocytes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Combinações de SMADs, Wnts, FGFs guiam iPSC para neurônios, cardiomiócitos, hepatócitos", en: "SMAD, Wnt, FGF combinations guide iPSC to neurons, cardiomyocytes, hepatocytes"}
+        rationale: {pt: "Quando sinalização é orquestrada, então linhagens emergem reproducíveis.", en: "When signaling is orchestrated, lineages reproducibly emerge."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Direct reprogramming:", en: "Direct reprogramming:"}
+        choices:
+          - {pt: "Fatores específicos convertem fibroblasto diretamente em neurônio sem passar por iPSC", en: "Specific factors directly convert fibroblast to neuron without iPSC intermediate"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fatores específicos convertem fibroblasto diretamente em neurônio sem passar por iPSC", en: "Specific factors directly convert fibroblast to neuron without iPSC intermediate"}
+        rationale: {pt: "Quando direct ocorre, então tempo de diferenciação reduz.", en: "When direct occurs, differentiation time reduces."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "iPSC quality control:", en: "iPSC quality control:"}
+        choices:
+          - {pt: "Cariótipo, expressão pluripotente, capacidade de teratoma e ausência mutações garantem qualidade", en: "Karyotype, pluripotent expression, teratoma capacity and mutation-free ensure quality"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cariótipo, expressão pluripotente, capacidade de teratoma e ausência mutações garantem qualidade", en: "Karyotype, pluripotent expression, teratoma capacity and mutation-free ensure quality"}
+        rationale: {pt: "Quando QC é robusto, então uso clínico é seguro.", en: "When QC is robust, clinical use is safe."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "iPSC haplobank:", en: "iPSC haplobanks:"}
+        choices:
+          - {pt: "Bancos de iPSC com haplótipos HLA homozigotos cobrem maioria populacional minimizando rejeição", en: "iPSC banks with HLA-homozygous haplotypes cover majority population minimizing rejection"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Bancos de iPSC com haplótipos HLA homozigotos cobrem maioria populacional minimizando rejeição", en: "iPSC banks with HLA-homozygous haplotypes cover majority population minimizing rejection"}
+        rationale: {pt: "Quando haplobanks escalam, então transplantes são acessíveis.", en: "When haplobanks scale, transplants are accessible."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Episomal reprogramming:", en: "Episomal reprogramming:"}
+        choices:
+          - {pt: "Plasmídeos com OSKM permitem reprogramação sem integração genômica reduzindo riscos", en: "OSKM plasmids enable reprogramming without genomic integration reducing risks"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Plasmídeos com OSKM permitem reprogramação sem integração genômica reduzindo riscos", en: "OSKM plasmids enable reprogramming without genomic integration reducing risks"}
+        rationale: {pt: "Quando integração é evitada, então segurança é potenciada.", en: "When integration is avoided, safety is boosted."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Somatic cell nuclear transfer (SCNT):", en: "Somatic cell nuclear transfer (SCNT):"}
+        choices:
+          - {pt: "Transferência de núcleo de célula adulta para oócito enucleado gerou Dolly e ESC humanas", en: "Adult cell nucleus transfer to enucleated oocyte yielded Dolly and human ESC"}
+          - {pt: "Apenas curiosidade histórica", en: "Just historical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Transferência de núcleo de célula adulta para oócito enucleado gerou Dolly e ESC humanas", en: "Adult cell nucleus transfer to enucleated oocyte yielded Dolly and human ESC"}
+        rationale: {pt: "Quando SCNT funciona, então totipotência é restaurada experimentalmente.", en: "When SCNT works, totipotency is experimentally restored."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Chemical reprogramming:", en: "Chemical reprogramming:"}
+        choices:
+          - {pt: "Combinações de pequenas moléculas (Deng 2022) reprogramam células sem fatores transcricionais", en: "Small molecule combinations (Deng 2022) reprogram cells without transcription factors"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Combinações de pequenas moléculas (Deng 2022) reprogramam células sem fatores transcricionais", en: "Small molecule combinations (Deng 2022) reprogram cells without transcription factors"}
+        rationale: {pt: "Quando química basta, então reprogramação é mais segura clinicamente.", en: "When chemistry suffices, reprogramming is clinically safer."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações clínicas", en: "Clinical applications"}
+    description: {pt: "iPSC do laboratório à clínica.", en: "iPSC from lab to clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "Macular degeneration trial:", en: "Macular degeneration trial:"}
+        choices:
+          - {pt: "Takahashi 2014 transplantou RPE iPSC autólogo em paciente com AMD com segurança documentada", en: "Takahashi 2014 transplanted autologous iPSC RPE in AMD patient with documented safety"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Takahashi 2014 transplantou RPE iPSC autólogo em paciente com AMD com segurança documentada", en: "Takahashi 2014 transplanted autologous iPSC RPE in AMD patient with documented safety"}
+        rationale: {pt: "Quando ensaio clínico sucede, então caminho regulatório se estabelece.", en: "When clinical trial succeeds, regulatory path establishes."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Parkinson cell therapy:", en: "Parkinson cell therapy:"}
+        choices:
+          - {pt: "Neurônios dopaminérgicos derivados de iPSC em ensaios de Parkinson em Japão e EUA", en: "iPSC-derived dopaminergic neurons in Parkinson trials in Japan and US"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Neurônios dopaminérgicos derivados de iPSC em ensaios de Parkinson em Japão e EUA", en: "iPSC-derived dopaminergic neurons in Parkinson trials in Japan and US"}
+        rationale: {pt: "Quando neurônios integram, então motora é potencialmente restaurada.", en: "When neurons integrate, motor is potentially restored."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cardiac patches:", en: "Cardiac patches:"}
+        choices:
+          - {pt: "Cardiomiócitos iPSC em scaffolds tratam falência cardíaca em ensaios clínicos iniciais", en: "iPSC cardiomyocytes in scaffolds treat heart failure in early clinical trials"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cardiomiócitos iPSC em scaffolds tratam falência cardíaca em ensaios clínicos iniciais", en: "iPSC cardiomyocytes in scaffolds treat heart failure in early clinical trials"}
+        rationale: {pt: "Quando patches integram, então insuficiência cardíaca pode ser revertida.", en: "When patches integrate, heart failure can be reversed."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Disease modeling:", en: "Disease modeling:"}
+        choices:
+          - {pt: "Mutação corrigida vs paciente lado a lado em iPSC gera modelo isogênico de doença genética", en: "Corrected vs patient mutation side-by-side in iPSC yields isogenic genetic disease model"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mutação corrigida vs paciente lado a lado em iPSC gera modelo isogênico de doença genética", en: "Corrected vs patient mutation side-by-side in iPSC yields isogenic genetic disease model"}
+        rationale: {pt: "Quando isogênicos são comparados, então causalidade é estabelecida.", en: "When isogenics are compared, causality is established."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Allogeneic off-the-shelf:", en: "Allogeneic off-the-shelf:"}
+        choices:
+          - {pt: "iPSC HLA-homozigotos editadas para evasão imune oferecem produto pronto para múltiplos pacientes", en: "HLA-homozygous iPSC edited for immune evasion offer off-the-shelf product for multiple patients"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "iPSC HLA-homozigotos editadas para evasão imune oferecem produto pronto para múltiplos pacientes", en: "HLA-homozygous iPSC edited for immune evasion offer off-the-shelf product for multiple patients"}
+        rationale: {pt: "Quando off-the-shelf escala, então custo cai dramaticamente.", en: "When off-the-shelf scales, cost dramatically drops."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Type 1 diabetes:", en: "Type 1 diabetes:"}
+        choices:
+          - {pt: "Ilhotas pancreáticas iPSC encapsuladas em hidrogéis tratam DM1 em ensaios fase 1/2", en: "Encapsulated iPSC pancreatic islets in hydrogels treat T1D in phase 1/2 trials"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Ilhotas pancreáticas iPSC encapsuladas em hidrogéis tratam DM1 em ensaios fase 1/2", en: "Encapsulated iPSC pancreatic islets in hydrogels treat T1D in phase 1/2 trials"}
+        rationale: {pt: "Quando ilhotas funcionam, então cura funcional emerge.", en: "When islets function, functional cure emerges."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spinal cord injury:", en: "Spinal cord injury:"}
+        choices:
+          - {pt: "Progenitores neurais iPSC injetados em medula espinhal lesionada com objetivo de regeneração", en: "iPSC neural progenitors injected in injured spinal cord aiming for regeneration"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Progenitores neurais iPSC injetados em medula espinhal lesionada com objetivo de regeneração", en: "iPSC neural progenitors injected in injured spinal cord aiming for regeneration"}
+        rationale: {pt: "Quando progenitores integram, então paraplegia ganha tratamento.", en: "When progenitors integrate, paraplegia gains treatment."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tumor risk:", en: "Tumor risk:"}
+        choices:
+          - {pt: "iPSC residuais em transplante podem formar teratomas — purificação rigorosa é essencial", en: "Residual iPSC in transplant can form teratomas — rigorous purification is essential"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "iPSC residuais em transplante podem formar teratomas — purificação rigorosa é essencial", en: "Residual iPSC in transplant can form teratomas — rigorous purification is essential"}
+        rationale: {pt: "Quando purificação é rigorosa, então tumores são prevenidos.", en: "When purification is rigorous, tumors are prevented."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Drug screening:", en: "Drug screening:"}
+        choices:
+          - {pt: "Cardiomiócitos iPSC em painel screen detectam toxicidade torsadogenic antes de fase clínica", en: "iPSC cardiomyocytes in panel screen detect torsadogenic toxicity before clinical phase"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cardiomiócitos iPSC em painel screen detectam toxicidade torsadogenic antes de fase clínica", en: "iPSC cardiomyocytes in panel screen detect torsadogenic toxicity before clinical phase"}
+        rationale: {pt: "Quando screening é precoce, então desenvolvimento de drogas é seguro.", en: "When screening is early, drug development is safe."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em PSC:", en: "Next PSC frontiers:"}
+        choices:
+          - {pt: "iPSC universais com edição imune, gerontologia regenerativa e GMP-scale industrial", en: "Universal iPSC with immune editing, regenerative gerontology and industrial GMP-scale"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "iPSC universais com edição imune, gerontologia regenerativa e GMP-scale industrial", en: "Universal iPSC with immune editing, regenerative gerontology and industrial GMP-scale"}
+        rationale: {pt: "Quando ferramentas convergem, então PSCs viram terapêuticas mainstream.", en: "When tools converge, PSCs become mainstream therapeutics."}
+        objectives: [biology.pluripotent]
+        difficulty: 5
+target: 20

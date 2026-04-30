@@ -1,0 +1,244 @@
+title:
+  pt: "🥚 Gastruloides e modelos embrionários"
+  en: "🥚 Gastruloids and embryo models"
+level: 'G'
+subject: biology
+objectives: [biology.gastruloids]
+difficulty: 5
+authorNotes: "Gastruloides, blastoides, embriões sintéticos, padrão corporal in vitro, ética 14-day."
+example:
+  pt: "Ex.: iPSC → agregação → sinalização → axes corporais → modelo embrionário in vitro."
+  en: "Ex.: iPSC → aggregation → signaling → body axes → in-vitro embryo model."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Construção de embrioides", en: "Embryoid construction"}
+    description: {pt: "Como modelamos embriões in vitro.", en: "How we model embryos in vitro."}
+    exercises:
+      - type: choice
+        question: {pt: "Gastruloides:", en: "Gastruloids:"}
+        choices:
+          - {pt: "Agregados de mESC se auto-organizam em estruturas com eixo AP, mesoderma e somitos", en: "mESC aggregates self-organize into structures with AP axis, mesoderm and somites"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Agregados de mESC se auto-organizam em estruturas com eixo AP, mesoderma e somitos", en: "mESC aggregates self-organize into structures with AP axis, mesoderm and somites"}
+        rationale: {pt: "Quando gastruloides formam, então padrão embrionário é estudável in vitro.", en: "When gastruloids form, embryonic pattern becomes in-vitro studyable."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Blastoides:", en: "Blastoids:"}
+        choices:
+          - {pt: "iPSC humanas formam estruturas blastocístio-like com epiblast, trofoblasto e hipoblasto", en: "Human iPSC form blastocyst-like structures with epiblast, trophoblast and hypoblast"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "iPSC humanas formam estruturas blastocístio-like com epiblast, trofoblasto e hipoblasto", en: "Human iPSC form blastocyst-like structures with epiblast, trophoblast and hypoblast"}
+        rationale: {pt: "Quando blastoides existem, então biologia humana precoce é acessível.", en: "When blastoids exist, early human biology becomes accessible."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Synthetic embryos:", en: "Synthetic embryos:"}
+        choices:
+          - {pt: "ETX combina ESC + TSC + XEN reproduzindo desenvolvimento até gastrulação murina", en: "ETX combines ESC + TSC + XEN reproducing development through murine gastrulation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ETX combina ESC + TSC + XEN reproduzindo desenvolvimento até gastrulação murina", en: "ETX combines ESC + TSC + XEN reproducing development through murine gastrulation"}
+        rationale: {pt: "Quando ETX funciona, então embriões podem ser gerados sem óvulos.", en: "When ETX works, embryos can be generated without eggs."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Micropattern stem cell:", en: "Stem cell micropatterns:"}
+        choices:
+          - {pt: "Geometria controlada em discos induz padrões reproducíveis de gastrulação humana", en: "Controlled geometry on discs induces reproducible human gastrulation patterns"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Geometria controlada em discos induz padrões reproducíveis de gastrulação humana", en: "Controlled geometry on discs induces reproducible human gastrulation patterns"}
+        rationale: {pt: "Quando geometria é definida, então sinalização morfogênica reproduz.", en: "When geometry is defined, morphogen signaling reproduces."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sinalização Wnt em gastruloides:", en: "Wnt signaling in gastruloids:"}
+        choices:
+          - {pt: "Pulse de CHIR99021 ativa Wnt iniciando elongação e padronização AP em modelos", en: "CHIR99021 pulse activates Wnt initiating elongation and AP patterning in models"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Pulse de CHIR99021 ativa Wnt iniciando elongação e padronização AP em modelos", en: "CHIR99021 pulse activates Wnt initiating elongation and AP patterning in models"}
+        rationale: {pt: "Quando Wnt é induzido, então biologia AP emerge previsivelmente.", en: "When Wnt is induced, AP biology predictably emerges."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single-cell em gastruloides:", en: "Single-cell in gastruloids:"}
+        choices:
+          - {pt: "scRNA-seq mapeia trajetórias celulares revelando recapitulação de transcriptoma embrionário", en: "scRNA-seq maps cell trajectories revealing recapitulation of embryonic transcriptome"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "scRNA-seq mapeia trajetórias celulares revelando recapitulação de transcriptoma embrionário", en: "scRNA-seq maps cell trajectories revealing recapitulation of embryonic transcriptome"}
+        rationale: {pt: "Quando sc é aplicado, então fidelidade do modelo é validada.", en: "When sc is applied, model fidelity is validated."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Limitações de gastruloides:", en: "Gastruloid limitations:"}
+        choices:
+          - {pt: "Faltam membranas extra-embrionárias e padrão DV completo limitando aplicações", en: "Lack extra-embryonic membranes and complete DV pattern limiting applications"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Faltam membranas extra-embrionárias e padrão DV completo limitando aplicações", en: "Lack extra-embryonic membranes and complete DV pattern limiting applications"}
+        rationale: {pt: "Quando limitações são reconhecidas, então modelos são interpretados com cuidado.", en: "When limitations are recognized, models are carefully interpreted."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cardiac gastruloides:", en: "Cardiac gastruloids:"}
+        choices:
+          - {pt: "Adicionar pulsos de BMP gera estruturas com câmara cardíaca contrátil para modelar cardiopatias", en: "Adding BMP pulses generates contractile cardiac chamber structures for modeling heart disease"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Adicionar pulsos de BMP gera estruturas com câmara cardíaca contrátil para modelar cardiopatias", en: "Adding BMP pulses generates contractile cardiac chamber structures for modeling heart disease"}
+        rationale: {pt: "Quando coração emerge, então modelagem de doenças cardíacas avança.", en: "When heart emerges, cardiac disease modeling advances."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Trophoblast organoids:", en: "Trophoblast organoids:"}
+        choices:
+          - {pt: "TSC humanos formam organoides recapitulando placenta para estudar pré-eclâmpsia e infecção", en: "Human TSC form organoids recapitulating placenta for studying preeclampsia and infection"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "TSC humanos formam organoides recapitulando placenta para estudar pré-eclâmpsia e infecção", en: "Human TSC form organoides recapitulating placenta for studying preeclampsia and infection"}
+        rationale: {pt: "Quando placenta é modelada, então gravidez é estudada in vitro.", en: "When placenta is modeled, pregnancy is in-vitro studied."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "iBlastoid (Polo lab):", en: "iBlastoid (Polo lab):"}
+        choices:
+          - {pt: "Reprogramação de fibroblastos + condições específicas geram blastoides humanos morfologicamente fiéis", en: "Fibroblast reprogramming + specific conditions yield morphologically-faithful human blastoids"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Reprogramação de fibroblastos + condições específicas geram blastoides humanos morfologicamente fiéis", en: "Fibroblast reprogramming + specific conditions yield morphologically-faithful human blastoids"}
+        rationale: {pt: "Quando reprogramação gera blastoides, então fonte celular escala.", en: "When reprogramming yields blastoids, cell source scales."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações e ética", en: "Applications and ethics"}
+    description: {pt: "Modelos embrionários na clínica.", en: "Embryo models in clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "Toxicology screening:", en: "Toxicology screening:"}
+        choices:
+          - {pt: "Embrioides testam efeitos teratogênicos de drogas e químicos sem usar embriões reais", en: "Embryoids test teratogenic effects of drugs and chemicals without using real embryos"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Embrioides testam efeitos teratogênicos de drogas e químicos sem usar embriões reais", en: "Embryoids test teratogenic effects of drugs and chemicals without using real embryos"}
+        rationale: {pt: "Quando modelos substituem, então segurança farmacológica escala eticamente.", en: "When models substitute, pharmacological safety ethically scales."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Infertilidade research:", en: "Infertility research:"}
+        choices:
+          - {pt: "Modelos permitem estudar implantação e desenvolvimento precoce sem usar embriões doados", en: "Models allow studying implantation and early development without using donated embryos"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modelos permitem estudar implantação e desenvolvimento precoce sem usar embriões doados", en: "Models allow studying implantation and early development without using donated embryos"}
+        rationale: {pt: "Quando modelos são acessíveis, então pesquisa avança eticamente.", en: "When models are accessible, research ethically advances."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Doenças do desenvolvimento:", en: "Developmental diseases:"}
+        choices:
+          - {pt: "Mutações em iPSC pacientes geram modelos para Down, autismo e malformações estruturais", en: "Patient iPSC mutations generate models for Down, autism and structural malformations"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mutações em iPSC pacientes geram modelos para Down, autismo e malformações estruturais", en: "Patient iPSC mutations generate models for Down, autism and structural malformations"}
+        rationale: {pt: "Quando paciente-específicos existem, então mecanismos personalizados emergem.", en: "When patient-specific exist, personalized mechanisms emerge."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ISSCR 14-day rule:", en: "ISSCR 14-day rule:"}
+        choices:
+          - {pt: "Sociedade revisou limite estendendo modelos in vitro com revisão caso-a-caso a partir de 2021", en: "Society revised limit extending in-vitro models with case-by-case review from 2021"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sociedade revisou limite estendendo modelos in vitro com revisão caso-a-caso a partir de 2021", en: "Society revised limit extending in-vitro models with case-by-case review from 2021"}
+        rationale: {pt: "Quando regulação evolui, então pesquisa progride responsavelmente.", en: "When regulation evolves, research responsibly progresses."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Status moral debate:", en: "Moral status debate:"}
+        choices:
+          - {pt: "Embrioides geram debate filosófico sobre se compartilham status moral com embriões reais", en: "Embryoids spark philosophical debate over whether they share moral status with real embryos"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Embrioides geram debate filosófico sobre se compartilham status moral com embriões reais", en: "Embryoids spark philosophical debate over whether they share moral status with real embryos"}
+        rationale: {pt: "Quando ética é debatida, então sociedade decide informadamente.", en: "When ethics is debated, society informedly decides."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sequencing development:", en: "Developmental sequencing:"}
+        choices:
+          - {pt: "Single-cell e spatial em embrioides revelam vias regulatórias dificilmente acessíveis em humano", en: "Single-cell and spatial on embryoids reveal regulatory pathways hard-to-access in human"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Single-cell e spatial em embrioides revelam vias regulatórias dificilmente acessíveis em humano", en: "Single-cell and spatial on embryoids reveal regulatory pathways hard-to-access in human"}
+        rationale: {pt: "Quando dados convergem, então biologia humana precoce é mapeada.", en: "When data converges, early human biology is mapped."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Regenerative applications:", en: "Regenerative applications:"}
+        choices:
+          - {pt: "Embrioides como fonte de tipos celulares específicos podem suprir terapias regenerativas", en: "Embryoids as source of specific cell types may supply regenerative therapies"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Embrioides como fonte de tipos celulares específicos podem suprir terapias regenerativas", en: "Embryoids as source of specific cell types may supply regenerative therapies"}
+        rationale: {pt: "Quando embrioides geram células, então transplantes ganham fonte renovável.", en: "When embryoids generate cells, transplants gain renewable source."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inter-species chimeras:", en: "Inter-species chimeras:"}
+        choices:
+          - {pt: "Embrioides quiméricos humanos-animais criados para órgãos humanos em hospedeiros animais — controverso", en: "Human-animal chimeric embryoids created for human organs in animal hosts — controversial"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Embrioides quiméricos humanos-animais criados para órgãos humanos em hospedeiros animais — controverso", en: "Human-animal chimeric embryoids created for human organs in animal hosts — controversial"}
+        rationale: {pt: "Quando quimeras emergem, então debates éticos se intensificam.", en: "When chimeras emerge, ethical debates intensify."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Future organogenesis:", en: "Future organogenesis:"}
+        choices:
+          - {pt: "Modelos completos podem permitir organogênese in vitro com vasculatura e células imunes integradas", en: "Complete models could enable in-vitro organogenesis with integrated vasculature and immune cells"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modelos completos podem permitir organogênese in vitro com vasculatura e células imunes integradas", en: "Complete models could enable in-vitro organogenesis with integrated vasculature and immune cells"}
+        rationale: {pt: "Quando integração escala, então órgãos in vitro podem ser fabricados.", en: "When integration scales, in-vitro organs may be fabricated."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em embrioides:", en: "Next embryoid frontiers:"}
+        choices:
+          - {pt: "Modelos completos com extra-embrionário, organogênese tardia e governança ética internacional", en: "Complete models with extra-embryonic, late organogenesis and international ethics governance"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "Modelos completos com extra-embrionário, organogênese tardia e governança ética internacional", en: "Complete models with extra-embryonic, late organogenesis and international ethics governance"}
+        rationale: {pt: "Quando ferramentas convergem, então biologia humana precoce é mapeada eticamente.", en: "When tools converge, early human biology is ethically mapped."}
+        objectives: [biology.gastruloids]
+        difficulty: 5
+target: 20
