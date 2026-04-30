@@ -1,0 +1,244 @@
+title:
+  pt: "🧠 Comportamento e circuitos"
+  en: "🧠 Behavior and circuits"
+level: 'F'
+subject: biology
+objectives: [biology.behavior_circuits]
+difficulty: 5
+authorNotes: "Optogenética, calcium imaging, decisões, social behavior, memória, fear circuits."
+example:
+  pt: "Ex.: estímulo → circuito específico → atividade neural → comportamento observável."
+  en: "Ex.: stimulus → specific circuit → neural activity → observable behavior."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Métodos para circuitos", en: "Circuit methods"}
+    description: {pt: "Como dissecamos circuitos.", en: "How we dissect circuits."}
+    exercises:
+      - type: choice
+        question: {pt: "Optogenética:", en: "Optogenetics:"}
+        choices:
+          - {pt: "Channelrhodopsin (ChR2) em neurônios permite ativação por luz com precisão milisegundo", en: "Channelrhodopsin (ChR2) in neurons enables millisecond-precise light activation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Channelrhodopsin (ChR2) em neurônios permite ativação por luz com precisão milisegundo", en: "Channelrhodopsin (ChR2) in neurons enables millisecond-precise light activation"}
+        rationale: {pt: "Quando ChR2 é expressa, então causalidade circuit-comportamento é testada.", en: "When ChR2 is expressed, circuit-behavior causality is tested."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Calcium imaging:", en: "Calcium imaging:"}
+        choices:
+          - {pt: "GCaMP em camundongos cabeça-fixa registra atividade de centenas de neurônios em comportamento", en: "GCaMP in head-fixed mice records hundreds of neurons during behavior"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "GCaMP em camundongos cabeça-fixa registra atividade de centenas de neurônios em comportamento", en: "GCaMP in head-fixed mice records hundreds of neurons during behavior"}
+        rationale: {pt: "Quando atividade é vista, então biologia circuital é mecanística.", en: "When activity is seen, circuit biology is mechanistic."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DREADDs:", en: "DREADDs:"}
+        choices:
+          - {pt: "Receptores químicos sintéticos ativados por CNO permitem manipulação celular reversível em horas", en: "Synthetic CNO-activated chemical receptors enable hour-scale reversible cellular manipulation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Receptores químicos sintéticos ativados por CNO permitem manipulação celular reversível em horas", en: "Synthetic CNO-activated chemical receptors enable hour-scale reversible cellular manipulation"}
+        rationale: {pt: "Quando DREADDs atuam, então estudos longos sem fibra óptica são possíveis.", en: "When DREADDs act, long studies without fiber are possible."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Neuropixels probes:", en: "Neuropixels probes:"}
+        choices:
+          - {pt: "Sondas com centenas de eletrodos registram atividade de muitas regiões cerebrais simultaneamente", en: "Probes with hundreds of electrodes record activity from many brain regions simultaneously"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sondas com centenas de eletrodos registram atividade de muitas regiões cerebrais simultaneamente", en: "Probes with hundreds of electrodes record activity from many brain regions simultaneously"}
+        rationale: {pt: "Quando muitas áreas são gravadas, então biologia integrativa emerge.", en: "When many areas are recorded, integrative biology emerges."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Engrams:", en: "Engrams:"}
+        choices:
+          - {pt: "Conjunto específico de neurônios codifica memória — Tonegawa demonstrou ativação por luz", en: "Specific neuron set encodes memory — Tonegawa demonstrated light activation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Conjunto específico de neurônios codifica memória — Tonegawa demonstrou ativação por luz", en: "Specific neuron set encodes memory — Tonegawa demonstrated light activation"}
+        rationale: {pt: "Quando engram é ativado, então memória é evocada artificialmente.", en: "When engram is activated, memory is artificially evoked."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fear circuits (amygdala):", en: "Fear circuits (amygdala):"}
+        choices:
+          - {pt: "Lateral amygdala recebe sinais sensoriais e central output gera resposta de medo aprendido", en: "Lateral amygdala receives sensory inputs and central output generates learned fear response"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Lateral amygdala recebe sinais sensoriais e central output gera resposta de medo aprendido", en: "Lateral amygdala receives sensory inputs and central output generates learned fear response"}
+        rationale: {pt: "Quando amígdala atua, então medo aprendido se manifesta.", en: "When amygdala acts, learned fear manifests."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Reward circuits (VTA-NAc):", en: "Reward circuits (VTA-NAc):"}
+        choices:
+          - {pt: "Dopamina mesolímbica codifica erro de predição motivando comportamento de busca", en: "Mesolimbic dopamine encodes prediction error motivating seeking behavior"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Dopamina mesolímbica codifica erro de predição motivando comportamento de busca", en: "Mesolimbic dopamine encodes prediction error motivating seeking behavior"}
+        rationale: {pt: "Quando dopamina atua, então motivação é codificada.", en: "When dopamine acts, motivation is encoded."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Place cells (hippocampus):", en: "Place cells (hippocampus):"}
+        choices:
+          - {pt: "Neurônios CA1/CA3 disparam em locais específicos formando mapa cognitivo do espaço — Nobel 2014", en: "CA1/CA3 neurons fire at specific locations forming cognitive space map — 2014 Nobel"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Neurônios CA1/CA3 disparam em locais específicos formando mapa cognitivo do espaço — Nobel 2014", en: "CA1/CA3 neurons fire at specific locations forming cognitive space map — 2014 Nobel"}
+        rationale: {pt: "Quando place cells funcionam, então navegação tem base celular.", en: "When place cells work, navigation has cellular foundation."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Grid cells (entorhinal):", en: "Grid cells (entorhinal):"}
+        choices:
+          - {pt: "Neurônios disparam em padrão hexagonal regular fornecendo coordenadas espaciais ao cérebro", en: "Neurons fire in regular hexagonal pattern providing spatial coordinates to brain"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Neurônios disparam em padrão hexagonal regular fornecendo coordenadas espaciais ao cérebro", en: "Neurons fire in regular hexagonal pattern providing spatial coordinates to brain"}
+        rationale: {pt: "Quando grid cells atuam, então biologia geometric é evidente.", en: "When grid cells act, geometric biology is evident."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Decision circuits (PFC):", en: "Decision circuits (PFC):"}
+        choices:
+          - {pt: "Córtex pré-frontal integra evidências e regras gerando decisões via competição neural", en: "Prefrontal cortex integrates evidence and rules generating decisions via neural competition"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Córtex pré-frontal integra evidências e regras gerando decisões via competição neural", en: "Prefrontal cortex integrates evidence and rules generating decisions via neural competition"}
+        rationale: {pt: "Quando PFC atua, então decisões executivas são possíveis.", en: "When PFC acts, executive decisions are possible."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Comportamento social e fronteiras", en: "Social behavior and frontiers"}
+    description: {pt: "Circuitos sociais e clínicos.", en: "Social and clinical circuits."}
+    exercises:
+      - type: choice
+        question: {pt: "Comportamento social (oxitocina):", en: "Social behavior (oxytocin):"}
+        choices:
+          - {pt: "Oxitocina hipotalâmica modula vínculo social, parental e empatia em mamíferos", en: "Hypothalamic oxytocin modulates social bonding, parental and empathy in mammals"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Oxitocina hipotalâmica modula vínculo social, parental e empatia em mamíferos", en: "Hypothalamic oxytocin modulates social bonding, parental and empathy in mammals"}
+        rationale: {pt: "Quando oxitocina atua, então comportamento social ganha base molecular.", en: "When oxytocin acts, social behavior gains molecular foundation."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Aggression circuits:", en: "Aggression circuits:"}
+        choices:
+          - {pt: "Hipotálamo ventromedial (VMHvl) coordena agressão masculina e cópula reprodutiva", en: "Ventromedial hypothalamus (VMHvl) coordinates male aggression and reproductive mating"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Hipotálamo ventromedial (VMHvl) coordena agressão masculina e cópula reprodutiva", en: "Ventromedial hypothalamus (VMHvl) coordinates male aggression and reproductive mating"}
+        rationale: {pt: "Quando VMHvl ativa, então comportamentos sexualmente dimórficos emergem.", en: "When VMHvl activates, sexually dimorphic behaviors emerge."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hunger circuits (AgRP):", en: "Hunger circuits (AgRP):"}
+        choices:
+          - {pt: "Neurônios AgRP em ARC dirigem fome — ativação induz alimentação independente de necessidade", en: "AgRP ARC neurons drive hunger — activation induces feeding independent of need"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Neurônios AgRP em ARC dirigem fome — ativação induz alimentação independente de necessidade", en: "AgRP ARC neurons drive hunger — activation induces feeding independent of need"}
+        rationale: {pt: "Quando AgRP é estimulado, então fome é gerada artificialmente.", en: "When AgRP is stimulated, hunger is artificially generated."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sleep circuits:", en: "Sleep circuits:"}
+        choices:
+          - {pt: "VLPO-orexin balanço regula vigília vs sono em modelo flip-flop neural", en: "VLPO-orexin balance regulates wakefulness vs sleep in neural flip-flop model"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "VLPO-orexin balanço regula vigília vs sono em modelo flip-flop neural", en: "VLPO-orexin balance regulates wakefulness vs sleep in neural flip-flop model"}
+        rationale: {pt: "Quando flip-flop atua, então transições sono-vigília são robustas.", en: "When flip-flop acts, sleep-wake transitions are robust."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Addiction circuits:", en: "Addiction circuits:"}
+        choices:
+          - {pt: "Plasticidade VTA-NAc-PFC durante uso crônico cria craving e busca compulsiva por droga", en: "VTA-NAc-PFC plasticity during chronic use creates craving and compulsive drug seeking"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Plasticidade VTA-NAc-PFC durante uso crônico cria craving e busca compulsiva por droga", en: "VTA-NAc-PFC plasticity during chronic use creates craving and compulsive drug seeking"}
+        rationale: {pt: "Quando plasticidade ocorre, então recompensa é desviada para droga.", en: "When plasticity occurs, reward is hijacked toward drug."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Depressão circuits:", en: "Depression circuits:"}
+        choices:
+          - {pt: "Subgenual cingulate (Cg25) hiperativo em depressão refratária — alvo de DBS clínica", en: "Hyperactive subgenual cingulate (Cg25) in refractory depression — clinical DBS target"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Subgenual cingulate (Cg25) hiperativo em depressão refratária — alvo de DBS clínica", en: "Hyperactive subgenual cingulate (Cg25) in refractory depression — clinical DBS target"}
+        rationale: {pt: "Quando Cg25 é estimulado, então depressão refratária responde.", en: "When Cg25 is stimulated, refractory depression responds."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Autismo circuits:", en: "Autism circuits:"}
+        choices:
+          - {pt: "Desbalanço E/I em córtex e disrupções em circuitos sociais hipotalâmicos contribuem", en: "Cortical E/I imbalance and disruptions in hypothalamic social circuits contribute"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Desbalanço E/I em córtex e disrupções em circuitos sociais hipotalâmicos contribuem", en: "Cortical E/I imbalance and disruptions in hypothalamic social circuits contribute"}
+        rationale: {pt: "Quando circuitos são alterados, então comportamento autista emerge.", en: "When circuits are altered, autistic behavior emerges."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Memory consolidation:", en: "Memory consolidation:"}
+        choices:
+          - {pt: "Sleep-driven hippocampal-cortical replay transfere memórias para córtex prefrontal", en: "Sleep-driven hippocampal-cortical replay transfers memories to prefrontal cortex"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sleep-driven hippocampal-cortical replay transfere memórias para córtex prefrontal", en: "Sleep-driven hippocampal-cortical replay transfers memories to prefrontal cortex"}
+        rationale: {pt: "Quando replay ocorre, então memórias se tornam estáveis.", en: "When replay occurs, memories become stable."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Neuropixels in humans:", en: "Neuropixels in humans:"}
+        choices:
+          - {pt: "Pesquisa em pacientes com epilepsia revela atividade single-unit em humanos durante cognição", en: "Epilepsy patient research reveals human single-unit activity during cognition"}
+          - {pt: "Apenas curiosidade clínica", en: "Just clinical curiosity"}
+          - {pt: "Apenas detalhe técnico", en: "Just technical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Pesquisa em pacientes com epilepsia revela atividade single-unit em humanos durante cognição", en: "Epilepsy patient research reveals human single-unit activity during cognition"}
+        rationale: {pt: "Quando humanos são gravados, então cognição superior é entendida.", en: "When humans are recorded, higher cognition is understood."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Próximas fronteiras em circuitos:", en: "Next circuit frontiers:"}
+        choices:
+          - {pt: "All-optical control, BCIs em humanos com decoders de linguagem e modelos completos cerebrais", en: "All-optical control, human BCIs with language decoders and complete brain models"}
+          - {pt: "Apenas pesquisa básica", en: "Just basic research"}
+          - {pt: "Apenas curiosidade", en: "Just curiosity"}
+          - {pt: "Apenas tradição clínica", en: "Just clinical tradition"}
+        correctAnswer: {pt: "All-optical control, BCIs em humanos com decoders de linguagem e modelos completos cerebrais", en: "All-optical control, human BCIs with language decoders and complete brain models"}
+        rationale: {pt: "Quando ferramentas convergem, então biologia comportamental vira clínica precisa.", en: "When tools converge, behavioral biology becomes precise clinic."}
+        objectives: [biology.behavior_circuits]
+        difficulty: 5
+target: 20
