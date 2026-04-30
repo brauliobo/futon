@@ -1,0 +1,244 @@
+title:
+  pt: "💉 Vacinas além de mRNA"
+  en: "💉 Vaccines beyond mRNA"
+level: 'L'
+subject: biology
+objectives: [biology.vaccines_beyond_mrna]
+difficulty: 5
+authorNotes: "Adenovirus vector ChAdOx1 J&J Sputnik, protein subunit Novavax, conjugate Hib pneumococcal, live-attenuated, inactivated, peptide vaccine, RTS,S malaria, Mosquirix, R21/Matrix-M, dengue Dengvaxia, RSV Abrysvo Arexvy nirsevimab."
+example:
+  pt: "Ex.: idoso 65+ → Arexvy GSK protein subunit + AS01 adjuvant → previne RSV severe disease 80% redução em fase 3 (RENOIR)."
+  en: "Ex.: elder 65+ → GSK Arexvy protein subunit + AS01 adjuvant → prevents severe RSV disease 80% reduction in phase 3 (RENOIR)."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas vacinais", en: "Vaccine platforms"}
+    description: {pt: "Como vacinas funcionam.", en: "How vaccines work."}
+    exercises:
+      - type: choice
+        question: {pt: "Adenovirus vector:", en: "Adenovirus vector:"}
+        choices:
+          - {pt: "ChAdOx1 (AstraZeneca), Ad26 (J&J), Ad5 (Sputnik) entregam DNA antígeno em nucleus → mRNA spike → resposta CD8 + IgG — base de COVID, Ebola Zabdeno", en: "ChAdOx1 (AstraZeneca), Ad26 (J&J), Ad5 (Sputnik) deliver DNA antigen to nucleus → spike mRNA → CD8 + IgG response — basis of COVID, Ebola Zabdeno"}
+          - {pt: "Adenovirus vector é restrito a mRNA-LNP sem componente DNA sendo ChAdOx1 e Ad26 inviáveis em qualquer aplicação vacinal humana clínica moderna em 2024 globalmente em qualquer", en: "Adenovirus vector is restricted to mRNA-LNP without DNA component with ChAdOx1 and Ad26 infeasible in any modern clinical human vaccine application in 2024 globally at any"}
+          - {pt: "DNA antígeno é incompatível com nucleus delivery sendo Sputnik e Zabdeno inviáveis tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "DNA antigen is incompatible with nucleus delivery with Sputnik and Zabdeno technically infeasible in any modern clinical human patient in 2024 globally at any scale"}
+          - {pt: "CD8 + IgG é teórico sem evidência experimental sendo adenovirus vector inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente vacinal", en: "CD8 + IgG is theoretical without experimental evidence with adenovirus vector infeasible in any modern clinical human vaccine patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "ChAdOx1 (AstraZeneca), Ad26 (J&J), Ad5 (Sputnik) entregam DNA antígeno em nucleus → mRNA spike → resposta CD8 + IgG — base de COVID, Ebola Zabdeno", en: "ChAdOx1 (AstraZeneca), Ad26 (J&J), Ad5 (Sputnik) deliver DNA antigen to nucleus → spike mRNA → CD8 + IgG response — basis of COVID, Ebola Zabdeno"}
+        rationale: {pt: "Quando vetor entrega DNA, então célula faz antígeno por dias.", en: "When vector delivers DNA, cell makes antigen for days."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Protein subunit:", en: "Protein subunit:"}
+        choices:
+          - {pt: "Novavax NVX-CoV2373 (recombinant spike + Matrix-M saponin), Sanofi VidPrevtyn entregam proteína purificada + adjuvante — não-replicating, sem genoma, perfil seguro", en: "Novavax NVX-CoV2373 (recombinant spike + Matrix-M saponin), Sanofi VidPrevtyn deliver purified protein + adjuvant — non-replicating, no genome, safe profile"}
+          - {pt: "Protein subunit é restrito a live-attenuated sem componente recombinant sendo Novavax e Sanofi inviáveis em qualquer aplicação vacinal humana clínica moderna em 2024 globalmente", en: "Protein subunit is restricted to live-attenuated without recombinant component with Novavax and Sanofi infeasible in any modern clinical human vaccine application in 2024 globally"}
+          - {pt: "Matrix-M saponin é teórico sem evidência experimental sendo NVX-CoV2373 inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Matrix-M saponin is theoretical without experimental evidence with NVX-CoV2373 technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "Recombinant spike é incompatível com adjuvante sendo VidPrevtyn inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente vacinal adulto", en: "Recombinant spike is incompatible with adjuvant with VidPrevtyn infeasible in any modern clinical human patient in 2024 globally at any adult vaccine patient scale"}
+        correctAnswer: {pt: "Novavax NVX-CoV2373 (recombinant spike + Matrix-M saponin), Sanofi VidPrevtyn entregam proteína purificada + adjuvante — não-replicating, sem genoma, perfil seguro", en: "Novavax NVX-CoV2373 (recombinant spike + Matrix-M saponin), Sanofi VidPrevtyn deliver purified protein + adjuvant — non-replicating, no genome, safe profile"}
+        rationale: {pt: "Quando proteína vai pura, então adjuvante faz a diferença.", en: "When protein arrives pure, adjuvant makes the difference."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Conjugate Hib/Pneumo:", en: "Hib/Pneumo conjugate:"}
+        choices:
+          - {pt: "Polysaccharide capsular conjugado a CRM197/TT/PD induz T-dependent IgG memory em <2 anos — Hib (PRP-T), Prevnar 20 (S. pneumoniae 20-valent), MenACWY/B em ped/adult", en: "CRM197/TT/PD-conjugated capsular polysaccharide induces T-dependent IgG memory in <2-year-olds — Hib (PRP-T), Prevnar 20 (20-valent S. pneumoniae), MenACWY/B in ped/adult"}
+          - {pt: "Conjugate vaccine é restrito a peptide sem componente polysaccharide sendo Hib PRP-T e Prevnar 20 inviáveis em qualquer paciente vacinal pediátrico humano clínico moderno em 2024", en: "Conjugate vaccine is restricted to peptide without polysaccharide component with Hib PRP-T and Prevnar 20 infeasible in any modern clinical pediatric human vaccine patient in 2024"}
+          - {pt: "T-dependent IgG memory é teórico sem evidência experimental sendo CRM197 e TT inviáveis tecnicamente em qualquer paciente pediátrico humano clínico moderno em 2024 globalmente", en: "T-dependent IgG memory is theoretical without experimental evidence with CRM197 and TT technically infeasible in any modern clinical pediatric human patient in 2024 globally"}
+          - {pt: "Pediatria é restrito a >5 anos sem componente <2 anos sendo conjugate vaccine inviável em qualquer paciente pediátrico humano clínico moderno em 2024 globalmente em qualquer", en: "Pediatrics is restricted to >5 years without <2-year component with conjugate vaccine infeasible in any modern clinical pediatric human patient in 2024 globally at any"}
+        correctAnswer: {pt: "Polysaccharide capsular conjugado a CRM197/TT/PD induz T-dependent IgG memory em <2 anos — Hib (PRP-T), Prevnar 20 (S. pneumoniae 20-valent), MenACWY/B em ped/adult", en: "CRM197/TT/PD-conjugated capsular polysaccharide induces T-dependent IgG memory in <2-year-olds — Hib (PRP-T), Prevnar 20 (20-valent S. pneumoniae), MenACWY/B in ped/adult"}
+        rationale: {pt: "Quando glycan é conjugado a proteína, então criança pequena responde.", en: "When glycan is conjugated to protein, young child responds."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Live-attenuated:", en: "Live-attenuated:"}
+        choices:
+          - {pt: "Vírus enfraquecido replica limitada (MMR, varicela, yellow fever, rotavirus) induz immunidade humoral + cellular durável — contraindicado em immunocompromised por replicação", en: "Weakened virus replicates with limits (MMR, varicella, yellow fever, rotavirus) inducing durable humoral + cellular immunity — contraindicated in immunocompromised due to replication"}
+          - {pt: "Live-attenuated é restrito a inactivated sem componente live sendo MMR e varicela inviáveis em qualquer aplicação vacinal humana clínica moderna em 2024 globalmente em qualquer", en: "Live-attenuated is restricted to inactivated without live component with MMR and varicella infeasible in any modern clinical human vaccine application in 2024 globally at any"}
+          - {pt: "Cellular immunity é teórica sem evidência experimental sendo yellow fever e rotavirus inviáveis tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente", en: "Cellular immunity is theoretical without experimental evidence with yellow fever and rotavirus technically infeasible in any modern clinical human patient in 2024 globally"}
+          - {pt: "Immunocompromised é restrito a tratamento convencional sem componente vacinal sendo live-attenuated contraindicação irrelevante em qualquer paciente humano clínico moderno em 2024", en: "Immunocompromised is restricted to conventional treatment without vaccine component with live-attenuated contraindication irrelevant in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Vírus enfraquecido replica limitada (MMR, varicela, yellow fever, rotavirus) induz immunidade humoral + cellular durável — contraindicado em immunocompromised por replicação", en: "Weakened virus replicates with limits (MMR, varicella, yellow fever, rotavirus) inducing durable humoral + cellular immunity — contraindicated in immunocompromised due to replication"}
+        rationale: {pt: "Quando vírus vivo é enfraquecido, então proteção dura mas exige sistema imune saudável.", en: "When live virus is weakened, protection lasts but demands healthy immune system."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inactivated whole:", en: "Inactivated whole:"}
+        choices:
+          - {pt: "Vírus completo formaldeído/β-propiolactone-inactivated (Sinovac CoronaVac, Sinopharm BIBP, Hep A, polio IPV) induz humoral mas T-cell limitado — necessita boost periódico", en: "Whole virus formaldehyde/β-propiolactone-inactivated (Sinovac CoronaVac, Sinopharm BIBP, Hep A, IPV polio) induces humoral but limited T-cell — needs periodic boost"}
+          - {pt: "Inactivated whole é restrito a live-attenuated sem componente killed sendo Sinovac e Sinopharm inviáveis em qualquer aplicação vacinal humana clínica moderna em 2024 globalmente", en: "Inactivated whole is restricted to live-attenuated without killed component with Sinovac and Sinopharm infeasible in any modern clinical human vaccine application in 2024 globally"}
+          - {pt: "Formaldeído é incompatível com inactivation sendo CoronaVac e BIBP inviáveis tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Formaldehyde is incompatible with inactivation with CoronaVac and BIBP technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "T-cell limitado é benéfico em inactivated sendo Hep A e IPV polio contraproducentes sem boost periódico em qualquer paciente humano clínico moderno em 2024 globalmente", en: "Limited T-cell is beneficial in inactivated with Hep A and IPV polio counterproductive without periodic boost in any modern clinical human patient in 2024 globally"}
+        correctAnswer: {pt: "Vírus completo formaldeído/β-propiolactone-inactivated (Sinovac CoronaVac, Sinopharm BIBP, Hep A, polio IPV) induz humoral mas T-cell limitado — necessita boost periódico", en: "Whole virus formaldehyde/β-propiolactone-inactivated (Sinovac CoronaVac, Sinopharm BIBP, Hep A, IPV polio) induces humoral but limited T-cell — needs periodic boost"}
+        rationale: {pt: "Quando vírus é morto inteiro, então humoral nasce mas T-cell pede boost.", en: "When whole virus is killed, humoral arises but T-cell asks for boost."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "VLP nanoparticle:", en: "VLP nanoparticle:"}
+        choices:
+          - {pt: "VLP self-assembly de proteínas estruturais sem genoma viral (HBsAg Engerix, HPV L1 Gardasil 9, Nuvaxovid SARS-CoV-2) imita vírus para imunidade sem replicação", en: "VLP self-assembly of structural proteins without viral genome (HBsAg Engerix, HPV L1 Gardasil 9, SARS-CoV-2 Nuvaxovid) mimics virus for immunity without replication"}
+          - {pt: "VLP é restrito a vírus vivo atenuado sem componente self-assembly sendo Engerix e Gardasil 9 inviáveis em qualquer aplicação vacinal humana clínica moderna em 2024 globalmente", en: "VLP is restricted to live attenuated virus without self-assembly component with Engerix and Gardasil 9 infeasible in any modern clinical human vaccine application in 2024 globally"}
+          - {pt: "HBsAg, HPV L1 e SARS-CoV-2 spike são incompatíveis com VLP sendo self-organização proteica inviável em qualquer pipeline vacinal humano clínico moderno em 2024 globalmente", en: "HBsAg, HPV L1 and SARS-CoV-2 spike are incompatible with VLP with protein self-assembly infeasible in any modern clinical human vaccine pipeline in 2024 globally"}
+          - {pt: "Nuvaxovid é mRNA vacina sem componente VLP sendo equivalente a BNT162b2 em qualquer aplicação humana clínica moderna em SARS-CoV-2 vacina em 2024 globalmente em qualquer escala", en: "Nuvaxovid is an mRNA vaccine without VLP component being equivalent to BNT162b2 in any modern clinical human SARS-CoV-2 vaccine application in 2024 globally at any scale"}
+        correctAnswer: {pt: "VLP self-assembly de proteínas estruturais sem genoma viral (HBsAg Engerix, HPV L1 Gardasil 9, Nuvaxovid SARS-CoV-2) imita vírus para imunidade sem replicação", en: "VLP self-assembly of structural proteins without viral genome (HBsAg Engerix, HPV L1 Gardasil 9, SARS-CoV-2 Nuvaxovid) mimics virus for immunity without replication"}
+        rationale: {pt: "Quando proteína auto-organiza, então vacina vira partícula.", en: "When protein self-assembles, vaccine becomes particle."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RTS,S Mosquirix:", en: "RTS,S Mosquirix:"}
+        choices:
+          - {pt: "Plasmodium falciparum CSP fundido a HBsAg + AS01 adjuvant — primeira vacina malaria aprovada WHO 2021/2023 para crianças <5 anos África subsaariana, eficácia 36%", en: "Plasmodium falciparum CSP fused to HBsAg + AS01 adjuvant — first malaria vaccine WHO-approved 2021/2023 for sub-Saharan African children <5 years, 36% efficacy"}
+          - {pt: "RTS,S é restrito a peptide isolado sem componente HBsAg sendo Mosquirix inviável em qualquer paciente malaria humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "RTS,S is restricted to isolated peptide without HBsAg component with Mosquirix infeasible in any modern clinical malaria human patient in 2024 globally at any patient scale"}
+          - {pt: "AS01 adjuvant é teórico sem evidência experimental sendo CSP fundido a HBsAg inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "AS01 adjuvant is theoretical without experimental evidence with CSP fused to HBsAg technically infeasible in any modern clinical human patient in 2024 globally at any scale"}
+          - {pt: "WHO 2021/2023 aprovação é teórica sem implementação prática sendo Mosquirix inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente malaria", en: "WHO 2021/2023 approval is theoretical without practical implementation with Mosquirix infeasible in any modern clinical malaria human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Plasmodium falciparum CSP fundido a HBsAg + AS01 adjuvant — primeira vacina malaria aprovada WHO 2021/2023 para crianças <5 anos África subsaariana, eficácia 36%", en: "Plasmodium falciparum CSP fused to HBsAg + AS01 adjuvant — first malaria vaccine WHO-approved 2021/2023 for sub-Saharan African children <5 years, 36% efficacy"}
+        rationale: {pt: "Quando CSP encontra HBsAg, então primeira vacina malaria nasce.", en: "When CSP meets HBsAg, first malaria vaccine is born."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "R21/Matrix-M:", en: "R21/Matrix-M:"}
+        choices:
+          - {pt: "Oxford R21 com Matrix-M adjuvant atinge 75% eficácia em fase 3 BARNI/Burkina Faso — segunda vacina malaria recomendada WHO 2023, mais potente que RTS,S", en: "Oxford R21 with Matrix-M adjuvant reaches 75% efficacy in BARNI/Burkina Faso phase 3 — second WHO-recommended malaria vaccine 2023, more potent than RTS,S"}
+          - {pt: "R21 é restrito a peptide sem componente Matrix-M sendo Oxford BARNI inviável em qualquer paciente malaria humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "R21 is restricted to peptide without Matrix-M component with Oxford BARNI infeasible in any modern clinical malaria human patient in 2024 globally at any patient scale"}
+          - {pt: "Matrix-M é teórico sem evidência experimental sendo R21 inviável tecnicamente em qualquer paciente Burkina Faso humano clínico moderno em 2024 globalmente em qualquer escala", en: "Matrix-M is theoretical without experimental evidence with R21 technically infeasible in any modern clinical Burkina Faso human patient in 2024 globally at any scale"}
+          - {pt: "75% eficácia é teórico sem implementação prática sendo R21 inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente malaria pediátrico", en: "75% efficacy is theoretical without practical implementation with R21 infeasible in any modern clinical malaria pediatric human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Oxford R21 com Matrix-M adjuvant atinge 75% eficácia em fase 3 BARNI/Burkina Faso — segunda vacina malaria recomendada WHO 2023, mais potente que RTS,S", en: "Oxford R21 with Matrix-M adjuvant reaches 75% efficacy in BARNI/Burkina Faso phase 3 — second WHO-recommended malaria vaccine 2023, more potent than RTS,S"}
+        rationale: {pt: "Quando adjuvante é melhor, então eficácia da vacina malaria sobe.", en: "When adjuvant improves, malaria vaccine efficacy rises."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dengvaxia controvérsia:", en: "Dengvaxia controversy:"}
+        choices:
+          - {pt: "Sanofi tetravalente live-attenuated mostra ADE risk em dengue-naive criança → infecção secundária pior — restrição WHO/FDA 2017 a sero-positive only, screening pré-uso", en: "Sanofi tetravalent live-attenuated shows ADE risk in dengue-naive children → worse secondary infection — WHO/FDA 2017 restriction to sero-positive only, pre-use screening"}
+          - {pt: "Dengvaxia é restrito a inactivated sem componente live sendo Sanofi tetravalente inviável em qualquer paciente pediátrico humano clínico moderno em 2024 globalmente em qualquer", en: "Dengvaxia is restricted to inactivated without live component with Sanofi tetravalent infeasible in any modern clinical pediatric human patient in 2024 globally at any"}
+          - {pt: "ADE risk é teórico sem evidência experimental sendo WHO/FDA 2017 restrição inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente dengue", en: "ADE risk is theoretical without experimental evidence with WHO/FDA 2017 restriction infeasible in any modern clinical human patient in 2024 globally at any dengue patient scale"}
+          - {pt: "Sero-positive screening é incompatível com vacina sendo Dengvaxia restrição contraindicada em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Sero-positive screening is incompatible with vaccine with Dengvaxia restriction contraindicated in any modern clinical human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Sanofi tetravalente live-attenuated mostra ADE risk em dengue-naive criança → infecção secundária pior — restrição WHO/FDA 2017 a sero-positive only, screening pré-uso", en: "Sanofi tetravalent live-attenuated shows ADE risk in dengue-naive children → worse secondary infection — WHO/FDA 2017 restriction to sero-positive only, pre-use screening"}
+        rationale: {pt: "Quando ADE é risco, então rastreio prévio à vacina vira lei.", en: "When ADE is a risk, pre-vaccine screening becomes law."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Qdenga TAK-003:", en: "Qdenga TAK-003:"}
+        choices:
+          - {pt: "Takeda tetravalente live-attenuated baseada em DENV2 backbone evita ADE em dengue-naive 4-16 anos — aprovada WHO 2023 sem screening pré-vaccine, melhora vs Dengvaxia", en: "Takeda tetravalent live-attenuated based on DENV2 backbone avoids ADE in dengue-naive 4-16-year-olds — WHO-approved 2023 without pre-vaccine screening, beats Dengvaxia"}
+          - {pt: "Qdenga é restrito a inactivated sem componente DENV2 backbone sendo Takeda inviável em qualquer paciente pediátrico humano clínico moderno em 2024 globalmente em qualquer escala", en: "Qdenga is restricted to inactivated without DENV2 backbone component with Takeda infeasible in any modern clinical pediatric human patient in 2024 globally at any scale"}
+          - {pt: "ADE em dengue-naive é benéfico sendo Qdenga contraindicado em qualquer paciente pediátrico humano clínico moderno em 2024 globalmente em qualquer escala paciente dengue 4-16", en: "ADE in dengue-naive is beneficial with Qdenga contraindicated in any modern clinical pediatric human patient in 2024 globally at any 4-16 dengue patient scale"}
+          - {pt: "WHO 2023 aprovação é teórica sem implementação prática sendo TAK-003 inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente dengue pediátrico", en: "WHO 2023 approval is theoretical without practical implementation with TAK-003 infeasible in any modern clinical dengue pediatric human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Takeda tetravalente live-attenuated baseada em DENV2 backbone evita ADE em dengue-naive 4-16 anos — aprovada WHO 2023 sem screening pré-vaccine, melhora vs Dengvaxia", en: "Takeda tetravalent live-attenuated based on DENV2 backbone avoids ADE in dengue-naive 4-16-year-olds — WHO-approved 2023 without pre-vaccine screening, beats Dengvaxia"}
+        rationale: {pt: "Quando backbone evita ADE, então vacina dengue serve naive.", en: "When backbone avoids ADE, dengue vaccine fits naive."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações modernas", en: "Modern applications"}
+    description: {pt: "Vacinas além do tradicional.", en: "Vaccines beyond tradition."}
+    exercises:
+      - type: choice
+        question: {pt: "RSV Abrysvo Arexvy:", en: "RSV Abrysvo Arexvy:"}
+        choices:
+          - {pt: "Pfizer Abrysvo bivalente preF + GSK Arexvy preF + AS01E são primeiras RSV vaccines aprovadas FDA 2023 em adultos 60+ e maternal — protege infant via transferência transplacental", en: "Pfizer bivalent preF Abrysvo + GSK Arexvy preF + AS01E are first RSV vaccines FDA-approved 2023 for adults 60+ and maternal — protects infant via transplacental transfer"}
+          - {pt: "RSV vaccine é restrito a pediatria sem componente adulto sendo Abrysvo e Arexvy inviáveis em qualquer paciente 60+ humano clínico moderno em 2024 globalmente em qualquer escala", en: "RSV vaccine is restricted to pediatrics without adult component with Abrysvo and Arexvy infeasible in any modern clinical 60+ human patient in 2024 globally at any scale"}
+          - {pt: "preF é incompatível com bivalente sendo Pfizer Abrysvo inviável tecnicamente em qualquer paciente RSV humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "preF is incompatible with bivalent with Pfizer Abrysvo technically infeasible in any modern clinical RSV human patient in 2024 globally at any patient scale"}
+          - {pt: "Maternal vaccine é teórico sem evidência experimental sendo transferência transplacental inviável em qualquer paciente RSV humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Maternal vaccine is theoretical without experimental evidence with transplacental transfer infeasible in any modern clinical RSV human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Pfizer Abrysvo bivalente preF + GSK Arexvy preF + AS01E são primeiras RSV vaccines aprovadas FDA 2023 em adultos 60+ e maternal — protege infant via transferência transplacental", en: "Pfizer bivalent preF Abrysvo + GSK Arexvy preF + AS01E are first RSV vaccines FDA-approved 2023 for adults 60+ and maternal — protects infant via transplacental transfer"}
+        rationale: {pt: "Quando preF estabiliza spike, então RSV vaccine finalmente funciona.", en: "When preF stabilizes spike, RSV vaccine finally works."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Nirsevimab Beyfortus:", en: "Nirsevimab Beyfortus:"}
+        choices:
+          - {pt: "Sanofi/AZ long-acting mAb anti-F protein RSV oferece passive immunity 5+ meses single-dose IM em infantes — alternativa a vacina com proteção imediata e durável", en: "Sanofi/AZ long-acting anti-F protein RSV mAb provides 5+ months passive immunity in single IM dose in infants — alternative to vaccine with immediate durable protection"}
+          - {pt: "Nirsevimab é restrito a vacina sem componente mAb sendo Beyfortus inviável em qualquer paciente infantil humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Nirsevimab is restricted to vaccine without mAb component with Beyfortus infeasible in any modern clinical infant human patient in 2024 globally at any patient scale"}
+          - {pt: "Long-acting mAb é teórico sem evidência experimental sendo Sanofi/AZ inviável tecnicamente em qualquer paciente RSV humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Long-acting mAb is theoretical without experimental evidence with Sanofi/AZ technically infeasible in any modern clinical RSV human patient in 2024 globally at any patient scale"}
+          - {pt: "Passive immunity 5+ meses é teórico sem implementação prática sendo Beyfortus inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente RSV", en: "5+-month passive immunity is theoretical without practical implementation with Beyfortus infeasible in any modern clinical RSV human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Sanofi/AZ long-acting mAb anti-F protein RSV oferece passive immunity 5+ meses single-dose IM em infantes — alternativa a vacina com proteção imediata e durável", en: "Sanofi/AZ long-acting anti-F protein RSV mAb provides 5+ months passive immunity in single IM dose in infants — alternative to vaccine with immediate durable protection"}
+        rationale: {pt: "Quando mAb protege em segundos, então infant não precisa esperar resposta.", en: "When mAb protects in seconds, infant doesn't wait for response."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TB BCG advances:", en: "TB BCG advances:"}
+        choices:
+          - {pt: "M72/AS01E (GSK) protein subunit mostrou 50% eficácia em latent TB conversion em fase 2b — possível primeira nova TB vaccine em 100 anos, supera BCG em adultos", en: "M72/AS01E (GSK) protein subunit showed 50% efficacy in latent-TB conversion in phase 2b — potentially first new TB vaccine in 100 years, beating BCG in adults"}
+          - {pt: "M72/AS01E é restrito a BCG sem componente protein subunit sendo GSK inviável em qualquer paciente latent TB humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "M72/AS01E is restricted to BCG without protein subunit component with GSK infeasible in any modern clinical latent-TB human patient in 2024 globally at any patient scale"}
+          - {pt: "50% eficácia é teórico sem evidência experimental sendo fase 2b inviável tecnicamente em qualquer paciente TB humano clínico moderno em 2024 globalmente em qualquer escala paciente adulto", en: "50% efficacy is theoretical without experimental evidence with phase 2b technically infeasible in any modern clinical TB human patient in 2024 globally at any adult patient scale"}
+          - {pt: "BCG é uniformemente eficaz em adulto sendo M72/AS01E redundante em qualquer paciente TB humano clínico moderno em 2024 globalmente em qualquer escala paciente latent adulto", en: "BCG is uniformly effective in adult with M72/AS01E redundant in any modern clinical TB human patient in 2024 globally at any latent adult patient scale"}
+        correctAnswer: {pt: "M72/AS01E (GSK) protein subunit mostrou 50% eficácia em latent TB conversion em fase 2b — possível primeira nova TB vaccine em 100 anos, supera BCG em adultos", en: "M72/AS01E (GSK) protein subunit showed 50% efficacy in latent-TB conversion in phase 2b — potentially first new TB vaccine in 100 years, beating BCG in adults"}
+        rationale: {pt: "Quando 100 anos depois nova TB vaccine acerta, então pandemia silenciosa cede.", en: "When new TB vaccine hits 100 years later, silent pandemic yields."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "HIV mRNA + bnAb:", en: "HIV mRNA + bnAb:"}
+        choices:
+          - {pt: "Moderna mRNA-1644 induz bnAb precursor (germline-targeting) em fase 1 — abordagem 'sequential immunization' guia evolução IgG broadly neutralizing contra HIV diverso clade", en: "Moderna mRNA-1644 induces bnAb precursor (germline-targeting) in phase 1 — sequential-immunization approach guides IgG evolution broadly neutralizing diverse HIV clades"}
+          - {pt: "HIV mRNA é restrito a SARS-CoV-2 sem componente HIV sendo Moderna mRNA-1644 inviável em qualquer paciente HIV humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "HIV mRNA is restricted to SARS-CoV-2 without HIV component with Moderna mRNA-1644 infeasible in any modern clinical HIV human patient in 2024 globally at any patient scale"}
+          - {pt: "bnAb precursor é teórico sem evidência experimental sendo germline-targeting inviável tecnicamente em qualquer paciente HIV humano clínico moderno em 2024 globalmente em qualquer escala", en: "bnAb precursor is theoretical without experimental evidence with germline-targeting technically infeasible in any modern clinical HIV human patient in 2024 globally at any scale"}
+          - {pt: "Sequential immunization é restrito a single-dose sem componente sequencial sendo Moderna inviável em qualquer paciente HIV humano clínico moderno em 2024 globalmente em qualquer", en: "Sequential immunization is restricted to single-dose without sequential component with Moderna infeasible in any modern clinical HIV human patient in 2024 globally at any"}
+        correctAnswer: {pt: "Moderna mRNA-1644 induz bnAb precursor (germline-targeting) em fase 1 — abordagem 'sequential immunization' guia evolução IgG broadly neutralizing contra HIV diverso clade", en: "Moderna mRNA-1644 induces bnAb precursor (germline-targeting) in phase 1 — sequential-immunization approach guides IgG evolution broadly neutralizing diverse HIV clades"}
+        rationale: {pt: "Quando vacina guia evolução IgG, então HIV diverso é alcançado.", en: "When vaccine guides IgG evolution, diverse HIV is reached."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Universal flu:", en: "Universal flu:"}
+        choices:
+          - {pt: "Designed nanoparticle stalk H1+H3 (HA stem) ou cocktail saRNA expandindo cross-strain neutralization — Krammer/Mt Sinai e Moderna em fase 1 universal influenza", en: "Designed stalk-H1+H3 nanoparticle (HA stem) or saRNA cocktail expanding cross-strain neutralization — Krammer/Mt Sinai and Moderna in universal-influenza phase 1"}
+          - {pt: "Universal flu é restrito a annual reformulation sem componente cross-strain sendo Krammer e Moderna inviáveis em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer", en: "Universal flu is restricted to annual reformulation without cross-strain component with Krammer and Moderna infeasible in any modern clinical human patient in 2024 globally at any"}
+          - {pt: "HA stem é incompatível com nanoparticle sendo designed flu vaccine inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "HA stem is incompatible with nanoparticle with designed flu vaccine technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "Cross-strain neutralization é teórica sem evidência experimental sendo universal flu inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente influenza", en: "Cross-strain neutralization is theoretical without experimental evidence with universal flu infeasible in any modern clinical influenza human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Designed nanoparticle stalk H1+H3 (HA stem) ou cocktail saRNA expandindo cross-strain neutralization — Krammer/Mt Sinai e Moderna em fase 1 universal influenza", en: "Designed stalk-H1+H3 nanoparticle (HA stem) or saRNA cocktail expanding cross-strain neutralization — Krammer/Mt Sinai and Moderna in universal-influenza phase 1"}
+        rationale: {pt: "Quando stalk vira alvo, então flu não escapa em variantes.", en: "When stalk becomes target, flu can't escape in variants."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pandemic readiness:", en: "Pandemic readiness:"}
+        choices:
+          - {pt: "CEPI 100-day mission cria platform-agnostic vacina pandêmica em 100 dias via Disease X preparedness — combina mRNA + protein subunit + viral vector ready-templates", en: "CEPI 100-day mission creates platform-agnostic pandemic vaccine in 100 days via Disease X preparedness — combines ready-template mRNA + protein subunit + viral vector"}
+          - {pt: "Pandemic readiness é teórico sem componente prático sendo CEPI 100-day inviável em qualquer aplicação vacinal humana clínica moderna em 2024 globalmente em qualquer escala paciente", en: "Pandemic readiness is theoretical without practical component with CEPI 100-day infeasible in any modern clinical human vaccine application in 2024 globally at any patient scale"}
+          - {pt: "Disease X é incompatível com vaccine prep sendo CEPI inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente vacinal pandêmico", en: "Disease X is incompatible with vaccine prep with CEPI technically infeasible in any modern clinical human patient in 2024 globally at any pandemic vaccine patient scale"}
+          - {pt: "Platform-agnostic é restrito a mRNA sem componente protein ou vector sendo CEPI 100-day inviável em qualquer aplicação vacinal humana clínica moderna em 2024 globalmente em qualquer", en: "Platform-agnostic is restricted to mRNA without protein or vector component with CEPI 100-day infeasible in any modern clinical human vaccine application in 2024 globally at any"}
+        correctAnswer: {pt: "CEPI 100-day mission cria platform-agnostic vacina pandêmica em 100 dias via Disease X preparedness — combina mRNA + protein subunit + viral vector ready-templates", en: "CEPI 100-day mission creates platform-agnostic pandemic vaccine in 100 days via Disease X preparedness — combines ready-template mRNA + protein subunit + viral vector"}
+        rationale: {pt: "Quando templates esperam Disease X, então 100 dias bastam.", en: "When templates wait for Disease X, 100 days suffice."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Self-amplifying saRNA:", en: "Self-amplifying saRNA:"}
+        choices:
+          - {pt: "Replicon de alphavírus codifica replicase + transgene auto-replica no citoplasma — Arcturus ARCT-154 + Pfizer aprovado Japão 2023, dose 1000× menor que mRNA convencional", en: "Alphavirus replicon encodes replicase + self-replicating transgene in cytoplasm — Arcturus ARCT-154 + Pfizer approved Japan 2023, dose 1000× lower than conventional mRNA"}
+          - {pt: "saRNA é restrito a mRNA convencional sem componente self-amplifying sendo Arcturus ARCT-154 inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "saRNA is restricted to conventional mRNA without self-amplifying component with Arcturus ARCT-154 infeasible in any modern clinical human patient in 2024 globally at any scale"}
+          - {pt: "Replicon de alphavírus é teórico sem evidência experimental sendo saRNA inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente vacinal", en: "Alphavirus replicon is theoretical without experimental evidence with saRNA technically infeasible in any modern clinical human patient in 2024 globally at any vaccine patient scale"}
+          - {pt: "Japão 2023 aprovação é teórica sem implementação prática sendo Arcturus ARCT-154 inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente vacinal", en: "Japan 2023 approval is theoretical without practical implementation with Arcturus ARCT-154 infeasible in any modern clinical human patient in 2024 globally at any vaccine patient scale"}
+        correctAnswer: {pt: "Replicon de alphavírus codifica replicase + transgene auto-replica no citoplasma — Arcturus ARCT-154 + Pfizer aprovado Japão 2023, dose 1000× menor que mRNA convencional", en: "Alphavirus replicon encodes replicase + self-replicating transgene in cytoplasm — Arcturus ARCT-154 + Pfizer approved Japan 2023, dose 1000× lower than conventional mRNA"}
+        rationale: {pt: "Quando RNA se copia sozinho, então dose cai e durabilidade sobe.", en: "When RNA copies itself, dose falls and durability rises."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ebola Zabdeno/Mvabea:", en: "Ebola Zabdeno/Mvabea:"}
+        choices:
+          - {pt: "J&J Ad26.ZEBOV (prime) + MVA-BN-Filo (boost) two-dose regimen aprovada EMA 2020 em Ebola Zaire — combina vetor adenovirus + modified vaccinia para imunidade durável", en: "J&J Ad26.ZEBOV (prime) + MVA-BN-Filo (boost) two-dose regimen EMA-approved 2020 for Zaire Ebola — combines adenovirus vector + modified vaccinia for durable immunity"}
+          - {pt: "Zabdeno/Mvabea é restrito a single-dose sem componente prime-boost sendo Ad26.ZEBOV inviável em qualquer paciente Ebola humano clínico moderno em 2024 globalmente em qualquer escala", en: "Zabdeno/Mvabea is restricted to single-dose without prime-boost component with Ad26.ZEBOV infeasible in any modern clinical Ebola human patient in 2024 globally at any scale"}
+          - {pt: "MVA-BN-Filo é teórico sem evidência experimental sendo modified vaccinia inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "MVA-BN-Filo is theoretical without experimental evidence with modified vaccinia technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "EMA 2020 aprovação é teórica sem implementação prática sendo J&J Ebola vaccine inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente Ebola Zaire", en: "EMA 2020 approval is theoretical without practical implementation with J&J Ebola vaccine infeasible in any modern clinical Zaire Ebola human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "J&J Ad26.ZEBOV (prime) + MVA-BN-Filo (boost) two-dose regimen aprovada EMA 2020 em Ebola Zaire — combina vetor adenovirus + modified vaccinia para imunidade durável", en: "J&J Ad26.ZEBOV (prime) + MVA-BN-Filo (boost) two-dose regimen EMA-approved 2020 for Zaire Ebola — combines adenovirus vector + modified vaccinia for durable immunity"}
+        rationale: {pt: "Quando prime-boost combina vetores, então imunidade Ebola dura.", en: "When prime-boost mixes vectors, Ebola immunity lasts."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Therapeutic vaccine:", en: "Therapeutic vaccine:"}
+        choices:
+          - {pt: "BNT122 (PDAC), mRNA-4157 (melanoma) personalizadas + ICI (set 7/K) traduzem mutação tumoral em vacina terapêutica que treata câncer existente vs prevenir infecção", en: "BNT122 (PDAC), mRNA-4157 (melanoma) personalized + ICI (set 7/K) translate tumor mutation into therapeutic vaccine treating existing cancer vs preventing infection"}
+          - {pt: "Therapeutic vaccine é restrito a profilática sem componente terapêutico sendo BNT122 e mRNA-4157 inviáveis em qualquer paciente oncológico humano clínico moderno em 2024 globalmente", en: "Therapeutic vaccine is restricted to prophylactic without therapeutic component with BNT122 and mRNA-4157 infeasible in any modern clinical human oncologic patient in 2024 globally"}
+          - {pt: "Personalized é teórico sem evidência experimental sendo BNT122 e mRNA-4157 inviáveis tecnicamente em qualquer paciente PDAC ou melanoma humano clínico moderno em 2024 globalmente", en: "Personalized is theoretical without experimental evidence with BNT122 and mRNA-4157 technically infeasible in any modern clinical PDAC or melanoma human patient in 2024 globally"}
+          - {pt: "ICI é restrito a small-molecule sem componente checkpoint sendo therapeutic vaccine inviável em qualquer paciente oncológico humano clínico moderno em 2024 globalmente em qualquer", en: "ICI is restricted to small-molecule without checkpoint component with therapeutic vaccine infeasible in any modern clinical human oncologic patient in 2024 globally at any"}
+        correctAnswer: {pt: "BNT122 (PDAC), mRNA-4157 (melanoma) personalizadas + ICI (set 7/K) traduzem mutação tumoral em vacina terapêutica que treata câncer existente vs prevenir infecção", en: "BNT122 (PDAC), mRNA-4157 (melanoma) personalized + ICI (set 7/K) translate tumor mutation into therapeutic vaccine treating existing cancer vs preventing infection"}
+        rationale: {pt: "Quando vacina trata câncer, então imunidade ataca em vez de prevenir.", en: "When vaccine treats cancer, immunity attacks instead of preventing."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese vacinas:", en: "Vaccine synthesis:"}
+        choices:
+          - {pt: "Adenovirus + protein subunit + conjugate + live-attenuated + inactivated + VLP + mRNA + saRNA + Mosquirix/R21 + Qdenga + RSV preF + nirsevimab + therapeutic vaccine redefinem vacinologia", en: "Adenovirus + protein subunit + conjugate + live-attenuated + inactivated + VLP + mRNA + saRNA + Mosquirix/R21 + Qdenga + RSV preF + nirsevimab + therapeutic vaccine redefine vaccinology"}
+          - {pt: "Vacinologia permanece pré-clínica sem aplicação humana até 2024 sendo conceito experimental sem implementação prática em qualquer indicação clínica humana globalmente em qualquer", en: "Vaccinology remains preclinical without human application by 2024 being experimental concept without practical implementation in any clinical human indication globally at any"}
+          - {pt: "Plataformas vacinais são intercambiáveis sem trade-off em alvo, mecanismo ou populacao tornando escolha tecnológica indiferente em qualquer aplicação clínica humana 2024 globalmente", en: "Vaccine platforms are interchangeable without target, mechanism or population trade-off making technology choice indifferent in any clinical human application 2024 globally"}
+          - {pt: "Vacinas dependem exclusivamente de mRNA sem componente outros sendo adenovirus, protein subunit e VLP dispensáveis em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer", en: "Vaccines depend exclusively on mRNA without other components with adenovirus, protein subunit and VLP dispensable in any modern clinical human patient in 2024 globally at any"}
+        correctAnswer: {pt: "Adenovirus + protein subunit + conjugate + live-attenuated + inactivated + VLP + mRNA + saRNA + Mosquirix/R21 + Qdenga + RSV preF + nirsevimab + therapeutic vaccine redefinem vacinologia", en: "Adenovirus + protein subunit + conjugate + live-attenuated + inactivated + VLP + mRNA + saRNA + Mosquirix/R21 + Qdenga + RSV preF + nirsevimab + therapeutic vaccine redefine vaccinology"}
+        rationale: {pt: "Quando plataformas convergem, então vacinas alcançam patógenos novos.", en: "When platforms converge, vaccines reach new pathogens."}
+        objectives: [biology.vaccines_beyond_mrna]
+        difficulty: 5
+target: 20
