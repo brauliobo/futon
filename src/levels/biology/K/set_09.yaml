@@ -1,0 +1,244 @@
+title:
+  pt: "🔧 Biologia sintética e circuitos genéticos"
+  en: "🔧 Synthetic biology and genetic circuits"
+level: 'K'
+subject: biology
+objectives: [biology.synthetic_biology]
+difficulty: 5
+authorNotes: "Toggle switch, repressilator, riboswitches, synNotch, MESA, CRISPRa/i circuits, logic gates AND/NOT, biosensor, kill switch, BioBricks, Calvin Synpromoter."
+example:
+  pt: "Ex.: CAR-T com synNotch sensor → reconhece HER2 → induz CAR anti-CD19 → especificidade dual."
+  en: "Ex.: CAR-T with synNotch sensor → recognizes HER2 → induces anti-CD19 CAR → dual specificity."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Circuitos básicos", en: "Basic circuits"}
+    description: {pt: "Os blocos do design sintético.", en: "Building blocks of synthetic design."}
+    exercises:
+      - type: choice
+        question: {pt: "Toggle switch:", en: "Toggle switch:"}
+        choices:
+          - {pt: "Dois repressores mutuamente inibitórios criam dois estados estáveis biestáveis — paradigma de memória celular sintética (Gardner 2000)", en: "Two mutually inhibitory repressors create two stable bistable states — paradigm of synthetic cellular memory (Gardner 2000)"}
+          - {pt: "Cascata linear de três ativadores em série criando expressão monotônica e sem capacidade de manter memória entre divisões celulares", en: "Linear cascade of three activators in series creating monotonic expression without ability to retain memory across divisions"}
+          - {pt: "Toggle switch é circuito oscilatório periódico equivalente ao repressilator sem propriedades de biestabilidade ou memória", en: "Toggle switch is a periodic oscillatory circuit equivalent to repressilator without bistability or memory properties"}
+          - {pt: "Sensor único de pequena molécula que liga gene reporter sem feedback nem capacidade de manter estado após retirada do sinal", en: "Single small-molecule sensor turning on a reporter gene without feedback or ability to retain state after signal removal"}
+        correctAnswer: {pt: "Dois repressores mutuamente inibitórios criam dois estados estáveis biestáveis — paradigma de memória celular sintética (Gardner 2000)", en: "Two mutually inhibitory repressors create two stable bistable states — paradigm of synthetic cellular memory (Gardner 2000)"}
+        rationale: {pt: "Quando repressores se cruzam, então célula trava em um estado.", en: "When repressors cross-inhibit, cell locks in one state."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Repressilator:", en: "Repressilator:"}
+        choices:
+          - {pt: "Anel de três repressores (LacI-TetR-cI) com feedback negativo gera oscilação periódica em E. coli — Elowitz/Leibler 2000", en: "Three-repressor ring (LacI-TetR-cI) with negative feedback yields periodic oscillation in E. coli — Elowitz/Leibler 2000"}
+          - {pt: "Repressilator é cascata linear sem feedback gerando expressão monotônica decrescente sem capacidade de oscilar periodicamente", en: "Repressilator is a linear cascade without feedback giving monotonic decreasing expression unable to oscillate periodically"}
+          - {pt: "Circuito de feedback positivo entre dois ativadores gerando biestabilidade equivalente a toggle switch sem comportamento oscilatório", en: "Positive-feedback circuit between two activators giving bistability equivalent to toggle switch without oscillatory behavior"}
+          - {pt: "Repressilator é restrito a leveduras eucarióticas e não funciona em E. coli onde feedback negativo de três nós perde sincronia", en: "Repressilator is restricted to eukaryotic yeast and fails in E. coli where three-node negative feedback loses synchrony"}
+        correctAnswer: {pt: "Anel de três repressores (LacI-TetR-cI) com feedback negativo gera oscilação periódica em E. coli — Elowitz/Leibler 2000", en: "Three-repressor ring (LacI-TetR-cI) with negative feedback yields periodic oscillation in E. coli — Elowitz/Leibler 2000"}
+        rationale: {pt: "Quando feedback fecha em 3 nós, então oscila com período fixo.", en: "When feedback closes in 3 nodes, system oscillates with fixed period."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Riboswitches:", en: "Riboswitches:"}
+        choices:
+          - {pt: "Aptâmero RNA cis-actuante muda estrutura ao ligar metabolito controlando tradução/transcrição — sensor sem proteína intermediária", en: "Cis-acting RNA aptamer changes structure on metabolite binding controlling translation/transcription — protein-free sensor"}
+          - {pt: "Riboswitch é proteína sintética com domínio de ligação a metabolito que regula transcrição via fator de transcrição clássico induzido", en: "Riboswitch is a synthetic protein with metabolite-binding domain regulating transcription via classical induced transcription factor"}
+          - {pt: "Sensor RNA em trans que requer maquinaria CRISPR e dCas9 para regular expressão sendo equivalente a CRISPRa em mamíferos", en: "Trans-acting RNA sensor requiring CRISPR machinery and dCas9 to regulate expression being equivalent to mammalian CRISPRa"}
+          - {pt: "Riboswitches são exclusivos de eucariotos e não atuam em bactérias onde regulação é dominada por sigma factors proteicos", en: "Riboswitches are exclusive to eukaryotes and do not act in bacteria where regulation is dominated by protein sigma factors"}
+        correctAnswer: {pt: "Aptâmero RNA cis-actuante muda estrutura ao ligar metabolito controlando tradução/transcrição — sensor sem proteína intermediária", en: "Cis-acting RNA aptamer changes structure on metabolite binding controlling translation/transcription — protein-free sensor"}
+        rationale: {pt: "Quando RNA muda forma, então gene escuta direto o metabolito.", en: "When RNA reshapes, gene listens directly to metabolite."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "synNotch:", en: "synNotch:"}
+        choices:
+          - {pt: "Receptor sintético com ectodomínio scFv + Notch core + TF intracelular cleaved on binding — base de CAR-T multi-target e logic gate AND", en: "Synthetic receptor with scFv ectodomain + Notch core + intracellular TF cleaved on binding — basis of multi-target CAR-T and AND logic gate"}
+          - {pt: "synNotch é receptor de citocina solúvel sem componente de cleavage proteolítico nem ativação direta de fator de transcrição associado", en: "synNotch is a soluble cytokine receptor without proteolytic cleavage component or direct linked transcription factor activation"}
+          - {pt: "synNotch detecta antígeno solúvel circulante via scFv mas não permite logic gate AND com CAR endógeno em CAR-T multi-target", en: "synNotch detects circulating soluble antigen via scFv but does not allow AND logic with endogenous CAR in multi-target CAR-T"}
+          - {pt: "Sistema synNotch é restrito a leveduras e não funciona em T-cells de mamíferos sendo inviável para engenharia de CAR-T humana clínica", en: "synNotch is restricted to yeast and fails in mammalian T cells, being unworkable for clinical human CAR-T engineering"}
+        correctAnswer: {pt: "Receptor sintético com ectodomínio scFv + Notch core + TF intracelular cleaved on binding — base de CAR-T multi-target e logic gate AND", en: "Synthetic receptor with scFv ectodomain + Notch core + intracellular TF cleaved on binding — basis of multi-target CAR-T and AND logic gate"}
+        rationale: {pt: "Quando antígeno bate, então TF entra no núcleo.", en: "When antigen hits, TF enters the nucleus."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MESA receptor:", en: "MESA receptor:"}
+        choices:
+          - {pt: "Modular Extracellular Sensor Architecture: dimeriza protease + alvo na membrana cleavando TF intracelular sob ligante específico", en: "Modular Extracellular Sensor Architecture: dimerizes protease + target at membrane cleaving intracellular TF on specific ligand"}
+          - {pt: "MESA é receptor de citocina IL-2 endógeno sem componente sintético nem cleavage proteolítico programável para sinalização customizada", en: "MESA is an endogenous IL-2 cytokine receptor without synthetic component or programmable proteolytic cleavage for custom signaling"}
+          - {pt: "Sensor metabolic intracelular sem componente extracelular nem clivagem programável usado apenas para regulação de fluxo de carbono", en: "Intracellular metabolic sensor without extracellular component or programmable cleavage used only for carbon-flux regulation"}
+          - {pt: "MESA depende de Cas9 para função de sensoriamento sendo equivalente operacional a synNotch sem capacidade modular de troca de ligante", en: "MESA depends on Cas9 for sensing function being operationally equivalent to synNotch without modular ligand swapping capacity"}
+        correctAnswer: {pt: "Modular Extracellular Sensor Architecture: dimeriza protease + alvo na membrana cleavando TF intracelular sob ligante específico", en: "Modular Extracellular Sensor Architecture: dimerizes protease + target at membrane cleaving intracellular TF on specific ligand"}
+        rationale: {pt: "Quando ligante junta as duas partes, então protease libera o TF.", en: "When ligand joins both halves, protease releases the TF."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CRISPRa/i circuitos:", en: "CRISPRa/i circuits:"}
+        choices:
+          - {pt: "dCas9-VPR ativa e dCas9-KRAB silencia múltiplos genes via gRNAs paralelas — base de circuitos sintéticos multi-gene programáveis", en: "dCas9-VPR activates and dCas9-KRAB silences multiple genes via parallel gRNAs — basis of programmable multi-gene synthetic circuits"}
+          - {pt: "CRISPRa/i exige Cas9 ativo gerando DSB para regulação sendo incompatível com edição reversível de expressão em circuitos sintéticos", en: "CRISPRa/i requires active Cas9 generating DSBs for regulation being incompatible with reversible expression editing in synthetic circuits"}
+          - {pt: "dCas9-VPR silencia e dCas9-KRAB ativa expressão sendo invertida convenção típica usada em circuitos genéticos sintéticos modernos", en: "dCas9-VPR silences and dCas9-KRAB activates expression, with convention inverted from typical use in modern synthetic genetic circuits"}
+          - {pt: "CRISPRa/i é restrito a edição genômica permanente sem aplicação em modulação reversível de circuito sintético em mamíferos", en: "CRISPRa/i is restricted to permanent genome editing without reversible synthetic circuit modulation application in mammals"}
+        correctAnswer: {pt: "dCas9-VPR ativa e dCas9-KRAB silencia múltiplos genes via gRNAs paralelas — base de circuitos sintéticos multi-gene programáveis", en: "dCas9-VPR activates and dCas9-KRAB silences multiple genes via parallel gRNAs — basis of programmable multi-gene synthetic circuits"}
+        rationale: {pt: "Quando dCas9 troca de domínio, então gene liga ou desliga sem cortar.", en: "When dCas9 swaps domains, gene turns on or off without cutting."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Logic gate AND:", en: "AND logic gate:"}
+        choices:
+          - {pt: "Expressão depende simultânea de duas entradas (synNotch HER2 + CAR CD19, riboswitch1 + riboswitch2) — alta especificidade tumoral", en: "Expression requires both inputs simultaneously (synNotch HER2 + CAR CD19, riboswitch1 + riboswitch2) — high tumor specificity"}
+          - {pt: "AND gate exige uma única entrada para expressão sendo redundante com gate OR sem ganho em especificidade ou seletividade celular", en: "AND gate requires a single input for expression being redundant with OR gate without specificity or selectivity gain"}
+          - {pt: "Logic gates não são implementáveis em mamíferos sendo restrito a E. coli e leveduras com cinética bacteriana exclusiva", en: "Logic gates are not implementable in mammals being restricted to E. coli and yeast with exclusive bacterial kinetics"}
+          - {pt: "AND gate diminui especificidade tumoral ao abrir múltiplas vias sendo desencorajado em design de CAR-T multi-target avançado", en: "AND gate reduces tumor specificity by opening multiple pathways and is discouraged in advanced multi-target CAR-T design"}
+        correctAnswer: {pt: "Expressão depende simultânea de duas entradas (synNotch HER2 + CAR CD19, riboswitch1 + riboswitch2) — alta especificidade tumoral", en: "Expression requires both inputs simultaneously (synNotch HER2 + CAR CD19, riboswitch1 + riboswitch2) — high tumor specificity"}
+        rationale: {pt: "Quando dois sinais coincidem, então só tumor ativa o circuito.", en: "When two signals coincide, only tumor activates the circuit."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Logic gate NOT:", en: "NOT logic gate:"}
+        choices:
+          - {pt: "Expressão é silenciada sob entrada (sinal saudável) — proteger tecido sadio do CAR-T usando antígeno-NOT como sensor de tecido normal", en: "Expression is silenced under input (healthy signal) — protect healthy tissue from CAR-T using antigen-NOT as normal-tissue sensor"}
+          - {pt: "NOT gate ativa expressão sob entrada equivalente a buffer e sem capacidade de proteger tecido sadio do CAR-T em design seletivo", en: "NOT gate activates expression under input equivalent to a buffer without ability to protect healthy tissue from CAR-T in selective design"}
+          - {pt: "Gate NOT é incompatível com CAR-T pois inibição transitória de TCR é sempre prejudicial para resposta clínica em tumores sólidos", en: "NOT gate is incompatible with CAR-T because transient TCR inhibition is always harmful for clinical response in solid tumors"}
+          - {pt: "Implementação NOT exige Cas9 ativo cortando DNA sendo incompatível com regulação reversível e dispensa em design clínico CAR-T moderno", en: "NOT implementation needs active Cas9 cutting DNA being incompatible with reversible regulation and dispensable in modern clinical CAR-T design"}
+        correctAnswer: {pt: "Expressão é silenciada sob entrada (sinal saudável) — proteger tecido sadio do CAR-T usando antígeno-NOT como sensor de tecido normal", en: "Expression is silenced under input (healthy signal) — protect healthy tissue from CAR-T using antigen-NOT as normal-tissue sensor"}
+        rationale: {pt: "Quando saudável grita, então CAR cala.", en: "When healthy shouts, CAR shuts up."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biosensor metabólico:", en: "Metabolic biosensor:"}
+        choices:
+          - {pt: "TF responsivo a metabolito (LacI/lactose, AraC/arabinose, TtgR/p-coumarate) acopla nível ao reporter — chave para metabolic engineering", en: "Metabolite-responsive TF (LacI/lactose, AraC/arabinose, TtgR/p-coumarate) couples level to reporter — key for metabolic engineering"}
+          - {pt: "Biosensor metabolic exige Cas9 ativo gerando DSB no locus reporter sendo incompatível com leitura quantitativa contínua de fluxo metabólico", en: "Metabolic biosensor needs active Cas9 generating DSBs at the reporter locus being incompatible with continuous quantitative metabolic-flux readout"}
+          - {pt: "TF responsivos a metabolito são exclusivos a leveduras e não atuam em bactérias industriais onde regulação metabólica usa apenas sigma", en: "Metabolite-responsive TFs are exclusive to yeast and fail in industrial bacteria where metabolic regulation uses only sigma factors"}
+          - {pt: "Biosensores metabolicos são teóricos e não foram demonstrados em LacI/AraC/TtgR sendo conceito artefactual de modelagem cinética", en: "Metabolic biosensors are theoretical and have not been demonstrated for LacI/AraC/TtgR being a kinetic-modeling artifact"}
+        correctAnswer: {pt: "TF responsivo a metabolito (LacI/lactose, AraC/arabinose, TtgR/p-coumarate) acopla nível ao reporter — chave para metabolic engineering", en: "Metabolite-responsive TF (LacI/lactose, AraC/arabinose, TtgR/p-coumarate) couples level to reporter — key for metabolic engineering"}
+        rationale: {pt: "Quando metabolito bate em TF, então fluorescência mede via.", en: "When metabolite hits TF, fluorescence reports flux."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Kill switch:", en: "Kill switch:"}
+        choices:
+          - {pt: "Circuito que ativa toxina (RNase, ccdB) sob sinal de fuga (mudança ambiente, perda de plasmid) — biocontainment para liberação ambiental", en: "Circuit activating a toxin (RNase, ccdB) on escape signal (environment change, plasmid loss) — biocontainment for environmental release"}
+          - {pt: "Kill switch é circuito de proteção que aumenta proliferação celular em condições adversas sem componente de toxina ou autodestruição", en: "Kill switch is a protection circuit increasing cell proliferation in adverse conditions without toxin or self-destruct component"}
+          - {pt: "Switch baseado apenas em deleção genômica sem componente sintético nem toxina expressa sob estresse ambiental ou perda plasmidial", en: "Switch based solely on genomic deletion without synthetic component or toxin expressed under environmental stress or plasmid loss"}
+          - {pt: "Kill switch é incompatível com biocontainment pois ativa proliferação em ambiente externo aumentando risco de liberação descontrolada", en: "Kill switch is incompatible with biocontainment because it triggers proliferation in external environment raising release risk"}
+        correctAnswer: {pt: "Circuito que ativa toxina (RNase, ccdB) sob sinal de fuga (mudança ambiente, perda de plasmid) — biocontainment para liberação ambiental", en: "Circuit activating a toxin (RNase, ccdB) on escape signal (environment change, plasmid loss) — biocontainment for environmental release"}
+        rationale: {pt: "Quando célula foge, então toxina dispara.", en: "When cell escapes, toxin fires."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações sintéticas", en: "Synthetic applications"}
+    description: {pt: "De engenharia metabólica a terapia.", en: "From metabolic engineering to therapy."}
+    exercises:
+      - type: choice
+        question: {pt: "Engenharia metabólica:", en: "Metabolic engineering:"}
+        choices:
+          - {pt: "Reescrita de fluxos via promotores tunable, knock-out competitivo e enzimas heterólogas — produção de artemisinina, opioids, beer flavors", en: "Flux rewiring via tunable promoters, competitive knockouts and heterologous enzymes — produces artemisinin, opioids, beer flavors"}
+          - {pt: "Engenharia metabólica é restrita a knockout simples sem promotores tunable ou enzimas heterólogas e dispensa redesign de fluxo metabólico", en: "Metabolic engineering is restricted to simple knockouts without tunable promoters or heterologous enzymes and dispenses metabolic-flux redesign"}
+          - {pt: "Produção de artemisinina e opioids permanece teórica sem demonstração industrial sendo conceito acadêmico sem aplicação comercial real", en: "Artemisinin and opioid production remains theoretical with no industrial demonstration being an academic concept without real commercial application"}
+          - {pt: "Reescrita de fluxos é incompatível com leveduras industriais sendo restrita a E. coli laboratorial sem escala fermentativa comercial", en: "Flux rewiring is incompatible with industrial yeast being restricted to lab E. coli without commercial fermentation scale"}
+        correctAnswer: {pt: "Reescrita de fluxos via promotores tunable, knock-out competitivo e enzimas heterólogas — produção de artemisinina, opioids, beer flavors", en: "Flux rewiring via tunable promoters, competitive knockouts and heterologous enzymes — produces artemisinin, opioids, beer flavors"}
+        rationale: {pt: "Quando fluxo é redirecionado, então célula vira fábrica.", en: "When flux is redirected, cell becomes a factory."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Synpromoter design:", en: "Synpromoter design:"}
+        choices:
+          - {pt: "Combinação modular de TFBS + core promoter sintetiza promotor com perfil quantitativo previsível — Calvin/Boeke synpromoter library", en: "Modular TFBS + core promoter combination synthesizes promoter with predictable quantitative profile — Calvin/Boeke synpromoter library"}
+          - {pt: "Synpromoter exige edição CRISPR no locus endógeno sem capacidade de design modular ou perfil quantitativo previsível em construção sintética", en: "Synpromoter requires CRISPR editing at endogenous locus without modular design or predictable quantitative profile in synthetic construct"}
+          - {pt: "Design de promotor é apenas empírico sem base computacional ou modular sendo necessário screening exaustivo de cada construção individualmente", en: "Promoter design is only empirical without computational or modular basis requiring exhaustive screening of each individual construct"}
+          - {pt: "Calvin/Boeke library é restrita a E. coli sem aplicação em mamíferos onde design modular de promotor é inviável tecnicamente até agora", en: "Calvin/Boeke library is restricted to E. coli without mammalian application where modular promoter design is technically infeasible to date"}
+        correctAnswer: {pt: "Combinação modular de TFBS + core promoter sintetiza promotor com perfil quantitativo previsível — Calvin/Boeke synpromoter library", en: "Modular TFBS + core promoter combination synthesizes promoter with predictable quantitative profile — Calvin/Boeke synpromoter library"}
+        rationale: {pt: "Quando blocos se combinam, então promotor fica programável.", en: "When blocks combine, promoter becomes programmable."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BioBricks/MoClo:", en: "BioBricks/MoClo:"}
+        choices:
+          - {pt: "Padrões de assembly modular hierárquico via Type IIS/Golden Gate permitem construir circuitos multipart de forma reutilizável e escalável", en: "Modular hierarchical assembly via Type IIS/Golden Gate builds reusable, scalable multipart circuits"}
+          - {pt: "BioBricks são apenas catálogo de partes sem método de assembly hierárquico sendo redundantes a Gibson cloning sem ganho operacional", en: "BioBricks are merely a parts catalog without hierarchical assembly method being redundant to Gibson cloning without operational gain"}
+          - {pt: "MoClo exige síntese química nova de cada parte sem reutilização sendo incompatível com pipelines escaláveis de circuit design", en: "MoClo requires chemical resynthesis of every part without reuse being incompatible with scalable circuit design pipelines"}
+          - {pt: "Assembly modular foi descontinuado em favor de Gibson exclusivo perdendo padronização e aumentando custo de iteração de circuito sintético", en: "Modular assembly was discontinued in favor of Gibson alone losing standardization and raising synthetic-circuit iteration cost"}
+        correctAnswer: {pt: "Padrões de assembly modular hierárquico via Type IIS/Golden Gate permitem construir circuitos multipart de forma reutilizável e escalável", en: "Modular hierarchical assembly via Type IIS/Golden Gate builds reusable, scalable multipart circuits"}
+        rationale: {pt: "Quando partes encaixam padrão, então construção escala.", en: "When parts share standard, builds scale."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Engineered probiotics:", en: "Engineered probiotics:"}
+        choices:
+          - {pt: "E. coli Nissle e Lactococcus engineered detectam doença (PKU, IBD, diabetes) e secretam terapêutico in situ — Synlogic SYNB1934 fase 2", en: "Engineered E. coli Nissle and Lactococcus sense disease (PKU, IBD, diabetes) and secrete therapeutic in situ — Synlogic SYNB1934 phase 2"}
+          - {pt: "Probióticos engenheirados são incompatíveis com colonização intestinal humana sendo restritos a estudo pré-clínico sem aplicação clínica real", en: "Engineered probiotics are incompatible with human gut colonization being restricted to preclinical study without real clinical application"}
+          - {pt: "Synlogic SYNB1934 é PARP inhibitor oral para HRD-tumor sem componente probiótico nem aplicação em PKU ou doença metabólica intestinal", en: "Synlogic SYNB1934 is an oral PARP inhibitor for HRD tumor without probiotic component or PKU/intestinal metabolic-disease application"}
+          - {pt: "E. coli Nissle não pode ser modificada geneticamente sendo restrita a uso como probiótico não-engenheirado em síndrome do intestino irritável", en: "E. coli Nissle cannot be genetically modified being restricted to use as non-engineered probiotic in irritable bowel syndrome"}
+        correctAnswer: {pt: "E. coli Nissle e Lactococcus engineered detectam doença (PKU, IBD, diabetes) e secretam terapêutico in situ — Synlogic SYNB1934 fase 2", en: "Engineered E. coli Nissle and Lactococcus sense disease (PKU, IBD, diabetes) and secrete therapeutic in situ — Synlogic SYNB1934 phase 2"}
+        rationale: {pt: "Quando bactéria sente, então secreta tratamento no local.", en: "When bacterium senses, it secretes treatment on site."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "synNotch CAR-T dual:", en: "synNotch dual CAR-T:"}
+        choices:
+          - {pt: "synNotch contra antígeno A induz CAR contra antígeno B — exigência tumor A+B+ poupa tecido A+ ou B+ isolado, aumentando especificidade", en: "synNotch against antigen A induces CAR against antigen B — A+B+ requirement spares A+ or B+ alone, raising specificity"}
+          - {pt: "Dual CAR-T com synNotch ativa CAR sob qualquer um dos dois antígenos perdendo seletividade equivalente a CAR convencional sem ganho", en: "Dual synNotch CAR-T fires CAR under either antigen losing selectivity equivalent to conventional CAR without gain"}
+          - {pt: "synNotch detecta apenas antígeno solúvel circulante e não pode ser usado para reconhecimento de antígeno tumoral em superfície celular", en: "synNotch detects only soluble circulating antigen and cannot be used for surface tumor antigen recognition"}
+          - {pt: "Dual CAR-T é incompatível com expressão simultânea de CAR sendo necessário separar ambos receptores em duas T-cells distintas re-infundidas", en: "Dual CAR-T is incompatible with simultaneous CAR expression requiring separation of both receptors into two distinct T cells re-infused"}
+        correctAnswer: {pt: "synNotch contra antígeno A induz CAR contra antígeno B — exigência tumor A+B+ poupa tecido A+ ou B+ isolado, aumentando especificidade", en: "synNotch against antigen A induces CAR against antigen B — A+B+ requirement spares A+ or B+ alone, raising specificity"}
+        rationale: {pt: "Quando lógica AND viaja em CAR-T, então tecido sadio sobrevive.", en: "When AND logic rides on CAR-T, healthy tissue survives."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Optogenética sintética:", en: "Synthetic optogenetics:"}
+        choices:
+          - {pt: "Cryptochromes (CRY2/CIB1) e LOV2 dimerizam sob luz azul ativando circuito on-demand — controle espaçotemporal de expressão e sinalização", en: "Cryptochromes (CRY2/CIB1) and LOV2 dimerize under blue light activating circuit on-demand — spatiotemporal control of expression and signaling"}
+          - {pt: "Optogenética sintética é restrita a neurônios sem aplicação em circuitos genéticos de expressão controlada espacialmente em tecido", en: "Synthetic optogenetics is restricted to neurons without application in spatially-controlled gene-expression circuits in tissue"}
+          - {pt: "CRY2 e LOV2 não respondem a luz azul em mamíferos sendo restritos a Arabidopsis thaliana sem componente para circuit design biológico", en: "CRY2 and LOV2 do not respond to blue light in mammals being restricted to Arabidopsis without component for biological circuit design"}
+          - {pt: "Controle espaçotemporal de expressão depende exclusivamente de doxiciclina sem alternativa por luz em sistemas sintéticos modernos", en: "Spatiotemporal expression control depends exclusively on doxycycline without light-based alternative in modern synthetic systems"}
+        correctAnswer: {pt: "Cryptochromes (CRY2/CIB1) e LOV2 dimerizam sob luz azul ativando circuito on-demand — controle espaçotemporal de expressão e sinalização", en: "Cryptochromes (CRY2/CIB1) and LOV2 dimerize under blue light activating circuit on-demand — spatiotemporal control of expression and signaling"}
+        rationale: {pt: "Quando luz acende, então circuito desperta.", en: "When light comes on, circuit wakes up."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genome refactoring:", en: "Genome refactoring:"}
+        choices:
+          - {pt: "Recoded E. coli rE.coli-57 e Sc2.0 (yeast) reescrevem códon ou cromossomo inteiro para resistência viral e regulação ortogonal", en: "Recoded rE.coli-57 and Sc2.0 (yeast) rewrite codons or whole chromosomes for viral resistance and orthogonal regulation"}
+          - {pt: "Genome refactoring é restrito a edição pontual sem capacidade de reescrita sistemática de códon ou cromossomo inteiro em organismos modelo", en: "Genome refactoring is restricted to point editing without systematic codon or whole-chromosome rewriting capacity in model organisms"}
+          - {pt: "rE.coli-57 e Sc2.0 são teóricos e nunca foram construídos sendo apenas conceito de modelagem computacional sem evidência experimental real", en: "rE.coli-57 and Sc2.0 are theoretical and have never been built being only computational concepts without real experimental evidence"}
+          - {pt: "Reescrita de códon não confere resistência viral nem regulação ortogonal sendo refactoring genômico de utilidade prática limitada", en: "Codon rewriting confers no viral resistance nor orthogonal regulation making genome refactoring of limited practical utility"}
+        correctAnswer: {pt: "Recoded E. coli rE.coli-57 e Sc2.0 (yeast) reescrevem códon ou cromossomo inteiro para resistência viral e regulação ortogonal", en: "Recoded rE.coli-57 and Sc2.0 (yeast) rewrite codons or whole chromosomes for viral resistance and orthogonal regulation"}
+        rationale: {pt: "Quando códon some, então fago não traduz mais.", en: "When codon vanishes, phage cannot translate anymore."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell-free synthesis:", en: "Cell-free synthesis:"}
+        choices:
+          - {pt: "TX-TL e PURE permitem prototipar circuitos in vitro sem célula viva — iteração rápida, biossensores portáteis e produção on-demand de proteína", en: "TX-TL and PURE enable in vitro circuit prototyping without live cells — fast iteration, portable biosensors and on-demand protein production"}
+          - {pt: "Cell-free synthesis é restrito a produção em larga escala industrial sem capacidade de prototipagem rápida de circuitos sintéticos em laboratório", en: "Cell-free synthesis is restricted to industrial-scale production without fast synthetic-circuit prototyping in lab"}
+          - {pt: "TX-TL e PURE exigem células vivas funcionais sem componente in vitro real sendo equivalente operacional a transformação plasmidial padrão", en: "TX-TL and PURE require functional living cells without real in vitro component being operationally equivalent to standard plasmid transformation"}
+          - {pt: "Cell-free systems não podem produzir proteína funcional sendo restritos a transcrição de mRNA sem capacidade de tradução proteica downstream", en: "Cell-free systems cannot make functional protein being restricted to mRNA transcription without downstream protein translation capacity"}
+        correctAnswer: {pt: "TX-TL e PURE permitem prototipar circuitos in vitro sem célula viva — iteração rápida, biossensores portáteis e produção on-demand de proteína", en: "TX-TL and PURE enable in vitro circuit prototyping without live cells — fast iteration, portable biosensors and on-demand protein production"}
+        rationale: {pt: "Quando célula sai do circuito, então design itera mais rápido.", en: "When cell leaves the loop, design iterates faster."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Burden e crosstalk:", en: "Burden and crosstalk:"}
+        choices:
+          - {pt: "Circuitos competem por ribossomos, RNAP e ATP — burden induz crescimento lento; partes ortogonais (T7-MIT, riboswitches) reduzem crosstalk", en: "Circuits compete for ribosomes, RNAP and ATP — burden slows growth; orthogonal parts (T7-MIT, riboswitches) cut crosstalk"}
+          - {pt: "Burden e crosstalk não afetam circuitos sintéticos modernos sendo conceito teórico sem implicação prática para design escalável", en: "Burden and crosstalk do not affect modern synthetic circuits being a theoretical concept without practical implication for scalable design"}
+          - {pt: "Partes ortogonais aumentam burden e crosstalk sendo desencorajadas em design de circuito sintético escalável em bactéria industrial", en: "Orthogonal parts raise burden and crosstalk being discouraged in scalable synthetic-circuit design in industrial bacteria"}
+          - {pt: "Burden é específico a leveduras e ausente em bactérias onde competição por recursos é desprezível em qualquer escala de circuito", en: "Burden is yeast-specific and absent in bacteria where resource competition is negligible at any circuit scale"}
+        correctAnswer: {pt: "Circuitos competem por ribossomos, RNAP e ATP — burden induz crescimento lento; partes ortogonais (T7-MIT, riboswitches) reduzem crosstalk", en: "Circuits compete for ribosomes, RNAP and ATP — burden slows growth; orthogonal parts (T7-MIT, riboswitches) cut crosstalk"}
+        rationale: {pt: "Quando circuito é grande, então célula sente o peso.", en: "When circuit grows, cell feels the load."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese synbio:", en: "synbio synthesis:"}
+        choices:
+          - {pt: "Toggle/repressilator + riboswitch + synNotch/MESA + CRISPRa/i + logic gates + biosensors + kill switch viabilizam células-terapia programáveis", en: "Toggle/repressilator + riboswitch + synNotch/MESA + CRISPRa/i + logic gates + biosensors + kill switch enable programmable cell therapies"}
+          - {pt: "Biologia sintética permanece pré-clínica sem aplicação em terapia celular ou metabolic engineering em escala industrial até 2024", en: "Synthetic biology remains preclinical without cell-therapy or industrial-scale metabolic engineering application by 2024"}
+          - {pt: "Circuitos sintéticos são intercambiáveis sem trade-offs em burden, crosstalk ou seletividade tornando design escolha tecnológica irrelevante", en: "Synthetic circuits are interchangeable without burden, crosstalk or selectivity trade-offs making design choice technologically irrelevant"}
+          - {pt: "Synbio depende exclusivamente de Cas9 nuclease canônica e dispensa toggle, riboswitch ou logic gate em design avançado de célula sintética", en: "synbio depends exclusively on canonical Cas9 nuclease dispensing toggle, riboswitch or logic gate in advanced synthetic-cell design"}
+        correctAnswer: {pt: "Toggle/repressilator + riboswitch + synNotch/MESA + CRISPRa/i + logic gates + biosensors + kill switch viabilizam células-terapia programáveis", en: "Toggle/repressilator + riboswitch + synNotch/MESA + CRISPRa/i + logic gates + biosensors + kill switch enable programmable cell therapies"}
+        rationale: {pt: "Quando partes encaixam, então célula vira programa.", en: "When parts compose, cell becomes program."}
+        objectives: [biology.synthetic_biology]
+        difficulty: 5
+target: 20
