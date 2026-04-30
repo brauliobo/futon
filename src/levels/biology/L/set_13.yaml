@@ -1,0 +1,244 @@
+title:
+  pt: "❤️ Cardiologia de precisão"
+  en: "❤️ Precision cardiology"
+level: 'L'
+subject: biology
+objectives: [biology.precision_cardiology]
+difficulty: 5
+authorNotes: "PCSK9 inhibitor evolocumab/alirocumab/inclisiran, Lp(a) olpasiran/pelacarsen, ANGPTL3 evinacumab, TTR amyloidosis tafamidis/patisiran, NT-proBNP, GLP-1 SGLT2, polygenic risk score CAD, TIMI risk."
+example:
+  pt: "Ex.: paciente FH LDL 200 mg/dL refratário a statin → inclisiran SC 6/6 meses → LDL cai 50% durável → evita ASCVD."
+  en: "Ex.: FH patient LDL 200 mg/dL statin-refractory → SC inclisiran every 6 months → LDL drops 50% durably → ASCVD averted."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Lipídeos e ASCVD", en: "Lipids and ASCVD"}
+    description: {pt: "Como tratar dislipidemia em precisão.", en: "How to treat dyslipidemia precisely."}
+    exercises:
+      - type: choice
+        question: {pt: "PCSK9 biology:", en: "PCSK9 biology:"}
+        choices:
+          - {pt: "Proprotein Convertase Subtilisin/Kexin type 9 degrada LDLR hepatocyte → reduz uptake LDL → eleva LDL plasma; inibição via mAb/siRNA/CRISPR aumenta LDLR e baixa LDL", en: "Proprotein Convertase Subtilisin/Kexin type 9 degrades hepatocyte LDLR → reduces LDL uptake → raises plasma LDL; inhibition via mAb/siRNA/CRISPR raises LDLR and lowers LDL"}
+          - {pt: "PCSK9 é restrito a estômago sem componente hepático sendo LDLR degradação inviável em qualquer paciente humano clínico moderno em dislipidemia em 2024 globalmente em qualquer", en: "PCSK9 is restricted to stomach without hepatic component with LDLR degradation infeasible in any modern clinical dyslipidemia human patient in 2024 globally at any"}
+          - {pt: "LDLR é restrito a B-cell sem expressão hepatocyte sendo PCSK9 inhibition inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "LDLR is restricted to B cells without hepatocyte expression with PCSK9 inhibition technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "mAb/siRNA/CRISPR são incompatíveis com PCSK9 sendo LDL reduction inviável em qualquer paciente FH humano clínico moderno em 2024 globalmente em qualquer escala paciente dislipidemia", en: "mAb/siRNA/CRISPR are incompatible with PCSK9 with LDL reduction infeasible in any modern clinical FH dyslipidemia human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Proprotein Convertase Subtilisin/Kexin type 9 degrada LDLR hepatocyte → reduz uptake LDL → eleva LDL plasma; inibição via mAb/siRNA/CRISPR aumenta LDLR e baixa LDL", en: "Proprotein Convertase Subtilisin/Kexin type 9 degrades hepatocyte LDLR → reduces LDL uptake → raises plasma LDL; inhibition via mAb/siRNA/CRISPR raises LDLR and lowers LDL"}
+        rationale: {pt: "Quando PCSK9 é bloqueado, então LDLR sobrevive e LDL desce.", en: "When PCSK9 is blocked, LDLR survives and LDL drops."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Evolocumab/alirocumab:", en: "Evolocumab/alirocumab:"}
+        choices:
+          - {pt: "mAb anti-PCSK9 SC 2/2 semanas reduz LDL 50-60% sobre statin/ezetimibe — Repatha (Amgen) e Praluent (Sanofi/Regeneron) FOURIER e ODYSSEY OUTCOMES reduzem MACE", en: "Anti-PCSK9 mAb SC every 2 weeks cuts LDL 50-60% on top of statin/ezetimibe — Repatha (Amgen) and Praluent (Sanofi/Regeneron) FOURIER and ODYSSEY OUTCOMES reduce MACE"}
+          - {pt: "Evolocumab é restrito a oral sem componente SC sendo Repatha inviável em qualquer paciente FH humano clínico moderno em 2024 globalmente em qualquer escala paciente dislipidemia", en: "Evolocumab is restricted to oral without SC component with Repatha infeasible in any modern clinical FH dyslipidemia human patient in 2024 globally at any patient scale"}
+          - {pt: "FOURIER e ODYSSEY são teóricos sem evidência experimental sendo MACE reduction inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "FOURIER and ODYSSEY are theoretical without experimental evidence with MACE reduction infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "mAb anti-PCSK9 é incompatível com statin sendo Repatha e Praluent inviáveis em combinação em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Anti-PCSK9 mAb is incompatible with statin with Repatha and Praluent infeasible in combination in any modern clinical human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "mAb anti-PCSK9 SC 2/2 semanas reduz LDL 50-60% sobre statin/ezetimibe — Repatha (Amgen) e Praluent (Sanofi/Regeneron) FOURIER e ODYSSEY OUTCOMES reduzem MACE", en: "Anti-PCSK9 mAb SC every 2 weeks cuts LDL 50-60% on top of statin/ezetimibe — Repatha (Amgen) and Praluent (Sanofi/Regeneron) FOURIER and ODYSSEY OUTCOMES reduce MACE"}
+        rationale: {pt: "Quando mAb anti-PCSK9 entra, então LDL despenca além de statin.", en: "When anti-PCSK9 mAb enters, LDL plunges beyond statin."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inclisiran twice-yearly:", en: "Inclisiran twice-yearly:"}
+        choices:
+          - {pt: "GalNAc-siRNA anti-PCSK9 SC cada 6 meses reduz LDL ~50% durável (set 04/L) — ORION trials e FDA 2021 redefinem hipercolesterolemia em adesão semestral", en: "GalNAc-siRNA anti-PCSK9 SC every 6 months cuts LDL ~50% durably (set 04/L) — ORION trials and FDA 2021 redefine hypercholesterolemia in semiannual adherence"}
+          - {pt: "Inclisiran é statin oral diária sem componente siRNA sendo equivalente a atorvastatina em qualquer paciente humano clínico moderno em hipercolesterolemia em 2024 globalmente em qualquer", en: "Inclisiran is daily oral statin without siRNA component being equivalent to atorvastatin in any modern clinical hypercholesterolemia human patient in 2024 globally at any"}
+          - {pt: "Twice-yearly é incompatível com siRNA sendo inclisiran inviável em delivery prolongado em qualquer paciente humano clínico moderno em hipercolesterolemia em 2024 globalmente em qualquer", en: "Twice-yearly is incompatible with siRNA with inclisiran infeasible in prolonged delivery in any modern clinical hypercholesterolemia human patient in 2024 globally at any"}
+          - {pt: "ORION trials demonstraram inclisiran sem efeito em LDL sendo aprovação FDA 2021 inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer", en: "ORION trials showed inclisiran without LDL effect with FDA 2021 approval technically infeasible in any modern clinical human patient in 2024 globally at any"}
+        correctAnswer: {pt: "GalNAc-siRNA anti-PCSK9 SC cada 6 meses reduz LDL ~50% durável (set 04/L) — ORION trials e FDA 2021 redefinem hipercolesterolemia em adesão semestral", en: "GalNAc-siRNA anti-PCSK9 SC every 6 months cuts LDL ~50% durably (set 04/L) — ORION trials and FDA 2021 redefine hypercholesterolemia in semiannual adherence"}
+        rationale: {pt: "Quando dose é semestral, então adesão para hipercolesterolemia melhora.", en: "When dose is biannual, hypercholesterolemia adherence improves."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "VERVE-101 PCSK9 edit:", en: "VERVE-101 PCSK9 edit:"}
+        choices:
+          - {pt: "ABE-LNP hepático silencia PCSK9 in vivo via base editing irreversível single-dose — primeiro humano com hipercolesterolemia familiar 2023 (set 06/K), LDL durável anos", en: "Hepatic ABE-LNP silences PCSK9 in vivo via irreversible single-dose base editing — first human with familial hypercholesterolemia 2023 (set 06/K), durable LDL for years"}
+          - {pt: "VERVE-101 é PARP inhibitor oral para HRD-tumor sem aplicação em controle lipídico ou edição de PCSK9 em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer", en: "VERVE-101 is an oral PARP inhibitor for HRD breast tumor without application in lipid control or PCSK9 editing in any modern clinical human patient in 2024 globally at any"}
+          - {pt: "Verve usa siRNA-LNP que silencia PCSK9 transitoriamente exigindo reinjeções mensais sem edição genômica permanente em qualquer paciente humano clínico moderno em 2024 globalmente", en: "Verve uses siRNA-LNP transiently silencing PCSK9, requiring monthly reinjections without permanent genome editing in any modern clinical human patient in 2024 globally"}
+          - {pt: "VERVE-101 ativa PCSK9 hepático elevando LDL em pacientes saudáveis como modelo experimental de aterogênese induzida em qualquer paciente humano clínico moderno em 2024 globalmente", en: "VERVE-101 activates hepatic PCSK9 raising LDL in healthy subjects as an induced-atherogenesis experimental model in any modern clinical human patient in 2024 globally"}
+        correctAnswer: {pt: "ABE-LNP hepático silencia PCSK9 in vivo via base editing irreversível single-dose — primeiro humano com hipercolesterolemia familiar 2023 (set 06/K), LDL durável anos", en: "Hepatic ABE-LNP silences PCSK9 in vivo via irreversible single-dose base editing — first human with familial hypercholesterolemia 2023 (set 06/K), durable LDL for years"}
+        rationale: {pt: "Quando PCSK9 cala permanente, então LDL fica baixo por anos.", en: "When PCSK9 silences permanently, LDL stays low for years."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lp(a) olpasiran:", en: "Lp(a) olpasiran:"}
+        choices:
+          - {pt: "GalNAc-siRNA anti-LPA reduz Lp(a) ~95% mensal SC — Amgen olpasiran fase 3 OCEAN(a)-Outcomes (2024) testa redução MACE em pacientes com Lp(a) >175 nmol/L elevado", en: "GalNAc-siRNA anti-LPA cuts Lp(a) ~95% monthly SC — Amgen olpasiran phase 3 OCEAN(a)-Outcomes (2024) tests MACE reduction in elevated Lp(a) >175 nmol/L patients"}
+          - {pt: "Olpasiran é restrito a Lp(b) sem componente Lp(a) sendo Amgen inviável em qualquer paciente Lp(a) elevado humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Olpasiran is restricted to Lp(b) without Lp(a) component with Amgen infeasible in any modern clinical elevated-Lp(a) human patient in 2024 globally at any patient scale"}
+          - {pt: "Lp(a) >175 nmol/L é teórico sem evidência experimental sendo OCEAN(a) inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Lp(a) >175 nmol/L is theoretical without experimental evidence with OCEAN(a) technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "GalNAc-siRNA é incompatível com Lp(a) sendo olpasiran inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente cardiovascular adulto idoso", en: "GalNAc-siRNA is incompatible with Lp(a) with olpasiran infeasible in any modern clinical cardiovascular adult elderly human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "GalNAc-siRNA anti-LPA reduz Lp(a) ~95% mensal SC — Amgen olpasiran fase 3 OCEAN(a)-Outcomes (2024) testa redução MACE em pacientes com Lp(a) >175 nmol/L elevado", en: "GalNAc-siRNA anti-LPA cuts Lp(a) ~95% monthly SC — Amgen olpasiran phase 3 OCEAN(a)-Outcomes (2024) tests MACE reduction in elevated Lp(a) >175 nmol/L patients"}
+        rationale: {pt: "Quando Lp(a) cai 95%, então risco genético-driven cede.", en: "When Lp(a) falls 95%, genetics-driven risk yields."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pelacarsen ASO:", en: "Pelacarsen ASO:"}
+        choices:
+          - {pt: "ASO anti-LPA conjugado a GalNAc reduz Lp(a) 80% mensal SC — Ionis/Novartis fase 3 Lp(a)HORIZON (2024) outcome trial em ~7000 pacientes com established CVD + Lp(a) elevado", en: "GalNAc-conjugated anti-LPA ASO cuts Lp(a) 80% monthly SC — Ionis/Novartis phase 3 Lp(a)HORIZON (2024) outcome trial in ~7000 established-CVD patients with elevated Lp(a)"}
+          - {pt: "Pelacarsen é restrito a small-molecule sem componente ASO sendo Ionis/Novartis inviáveis em qualquer paciente Lp(a) elevado humano clínico moderno em 2024 globalmente em qualquer", en: "Pelacarsen is restricted to small-molecule without ASO component with Ionis/Novartis infeasible in any modern clinical elevated-Lp(a) human patient in 2024 globally at any"}
+          - {pt: "Lp(a)HORIZON é teórico sem evidência experimental sendo ~7000 pacientes inviáveis tecnicamente em qualquer pipeline cardiovascular humano clínico moderno em 2024 globalmente em qualquer", en: "Lp(a)HORIZON is theoretical without experimental evidence with ~7000 patients technically infeasible in any modern clinical human cardiovascular pipeline in 2024 globally at any"}
+          - {pt: "Established CVD é incompatível com Lp(a) elevation sendo pelacarsen inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente cardiovascular adulto", en: "Established CVD is incompatible with Lp(a) elevation with pelacarsen infeasible in any modern clinical adult cardiovascular human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "ASO anti-LPA conjugado a GalNAc reduz Lp(a) 80% mensal SC — Ionis/Novartis fase 3 Lp(a)HORIZON (2024) outcome trial em ~7000 pacientes com established CVD + Lp(a) elevado", en: "GalNAc-conjugated anti-LPA ASO cuts Lp(a) 80% monthly SC — Ionis/Novartis phase 3 Lp(a)HORIZON (2024) outcome trial in ~7000 established-CVD patients with elevated Lp(a)"}
+        rationale: {pt: "Quando ASO cala LPA mensal, então MACE pode finalmente cair em Lp(a).", en: "When ASO silences LPA monthly, MACE can finally fall in Lp(a)."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ANGPTL3 evinacumab:", en: "ANGPTL3 evinacumab:"}
+        choices:
+          - {pt: "mAb anti-ANGPTL3 desinibe LPL e EL → reduz LDL/TG/HDL — Regeneron Evkeeza FDA 2021 em homozygous FH atinge LDL <100 onde statin/PCSK9i falham + variant LoF protege contra ASCVD", en: "Anti-ANGPTL3 mAb disinhibits LPL and EL → cuts LDL/TG/HDL — Regeneron Evkeeza FDA 2021 in homozygous FH reaches LDL <100 where statin/PCSK9i fail + LoF variant protects against ASCVD"}
+          - {pt: "Evinacumab é restrito a polygenic FH sem componente homozygous sendo Evkeeza inviável em qualquer paciente FH humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Evinacumab is restricted to polygenic FH without homozygous component with Evkeeza infeasible in any modern clinical FH human patient in 2024 globally at any patient scale"}
+          - {pt: "ANGPTL3 é restrito a coração sem componente hepático sendo evinacumab inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente FH", en: "ANGPTL3 is restricted to heart without hepatic component with evinacumab technically infeasible in any modern clinical FH human patient in 2024 globally at any patient scale"}
+          - {pt: "FDA 2021 aprovação é teórica sem implementação prática sendo Evkeeza inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente FH homozygous", en: "FDA 2021 approval is theoretical without practical implementation with Evkeeza infeasible in any modern clinical homozygous FH human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "mAb anti-ANGPTL3 desinibe LPL e EL → reduz LDL/TG/HDL — Regeneron Evkeeza FDA 2021 em homozygous FH atinge LDL <100 onde statin/PCSK9i falham + variant LoF protege contra ASCVD", en: "Anti-ANGPTL3 mAb disinhibits LPL and EL → cuts LDL/TG/HDL — Regeneron Evkeeza FDA 2021 in homozygous FH reaches LDL <100 where statin/PCSK9i fail + LoF variant protects against ASCVD"}
+        rationale: {pt: "Quando ANGPTL3 cai, então LPL trabalha e LDL/TG despencam.", en: "When ANGPTL3 falls, LPL works and LDL/TG plummet."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bempedoic acid Nexletol:", en: "Bempedoic acid Nexletol:"}
+        choices:
+          - {pt: "ATP-citrate lyase inibidor oral acima de HMGCoA reductase atua só em fígado (sem músculo) sendo statin-intolerant alternative — CLEAR Outcomes 2023 reduz MACE 13%", en: "Oral ATP-citrate lyase inhibitor above HMGCoA reductase acts only in liver (no muscle) being statin-intolerant alternative — CLEAR Outcomes 2023 cuts MACE 13%"}
+          - {pt: "Bempedoic acid é restrito a HMGCoA reductase sem componente ATP-citrate lyase sendo Nexletol inviável em qualquer paciente statin-intolerant humano clínico moderno em 2024 globalmente", en: "Bempedoic acid is restricted to HMGCoA reductase without ATP-citrate lyase component with Nexletol infeasible in any modern clinical statin-intolerant human patient in 2024 globally"}
+          - {pt: "ATP-citrate lyase é teórico sem evidência experimental sendo CLEAR Outcomes inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "ATP-citrate lyase is theoretical without experimental evidence with CLEAR Outcomes technically infeasible in any modern clinical human patient in 2024 globally at any scale"}
+          - {pt: "MACE 13% reduction é teórico sem implementação prática sendo bempedoic acid inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente cardiovascular", en: "13% MACE reduction is theoretical without practical implementation with bempedoic acid infeasible in any modern clinical cardiovascular human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "ATP-citrate lyase inibidor oral acima de HMGCoA reductase atua só em fígado (sem músculo) sendo statin-intolerant alternative — CLEAR Outcomes 2023 reduz MACE 13%", en: "Oral ATP-citrate lyase inhibitor above HMGCoA reductase acts only in liver (no muscle) being statin-intolerant alternative — CLEAR Outcomes 2023 cuts MACE 13%"}
+        rationale: {pt: "Quando alvo é só hepático, então músculo não dói e LDL desce.", en: "When target is liver-only, muscle doesn't ache and LDL falls."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TTR amyloidosis:", en: "TTR amyloidosis:"}
+        choices:
+          - {pt: "Tafamidis estabiliza tetrâmero (ATTR-ACT 2018), patisiran/inotersen RNAi/ASO calam TTR (set 04/L) em hATTR cardíaca/neuropática — vutrisiran SC trimestral simplifica (HELIOS-A)", en: "Tafamidis stabilizes tetramer (ATTR-ACT 2018), patisiran/inotersen RNAi/ASO silence TTR (set 04/L) in hATTR cardiac/neuropathic — vutrisiran SC quarterly simplifies (HELIOS-A)"}
+          - {pt: "TTR amyloidosis é restrito a tratamento convencional sem componente RNAi sendo tafamidis e patisiran inviáveis em qualquer paciente hATTR humano clínico moderno em 2024 globalmente", en: "TTR amyloidosis is restricted to conventional treatment without RNAi component with tafamidis and patisiran infeasible in any modern clinical hATTR human patient in 2024 globally"}
+          - {pt: "Vutrisiran é restrito a IV mensal sem componente SC trimestral sendo HELIOS-A inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "Vutrisiran is restricted to monthly IV without quarterly SC component with HELIOS-A technically infeasible in any modern clinical human patient in 2024 globally at any scale"}
+          - {pt: "ATTR-ACT 2018 é teórico sem evidência experimental sendo tafamidis inviável em qualquer paciente ATTR-CM humano clínico moderno em 2024 globalmente em qualquer escala paciente cardiovascular", en: "ATTR-ACT 2018 is theoretical without experimental evidence with tafamidis infeasible in any modern clinical cardiovascular ATTR-CM human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Tafamidis estabiliza tetrâmero (ATTR-ACT 2018), patisiran/inotersen RNAi/ASO calam TTR (set 04/L) em hATTR cardíaca/neuropática — vutrisiran SC trimestral simplifica (HELIOS-A)", en: "Tafamidis stabilizes tetramer (ATTR-ACT 2018), patisiran/inotersen RNAi/ASO silence TTR (set 04/L) in hATTR cardiac/neuropathic — vutrisiran SC quarterly simplifies (HELIOS-A)"}
+        rationale: {pt: "Quando TTR cala ou estabiliza, então amyloid não fora forma.", en: "When TTR silences or stabilizes, amyloid doesn't form."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PRS coronary artery:", en: "PRS coronary artery:"}
+        choices:
+          - {pt: "Polygenic Risk Score CAD em UK Biobank/All of Us classifica top 8% risk equivalente a heterozygous FH — guia early statin/PCSK9i e lifestyle intensification em 30s/40s", en: "Polygenic CAD risk score in UK Biobank/All of Us classifies top 8% risk equivalent to heterozygous FH — guides early statin/PCSK9i and lifestyle intensification in 30s/40s"}
+          - {pt: "PRS coronary artery é restrito a polygenic RS sem componente top 8% sendo UK Biobank inviável em qualquer paciente cardiovascular humano clínico moderno em 2024 globalmente em qualquer", en: "PRS coronary artery is restricted to polygenic RS without top 8% component with UK Biobank infeasible in any modern clinical cardiovascular human patient in 2024 globally at any"}
+          - {pt: "Heterozygous FH é restrito a homozygous sem componente heterozygous sendo PRS irrelevante em qualquer paciente cardiovascular humano clínico moderno em 2024 globalmente em qualquer escala", en: "Heterozygous FH is restricted to homozygous without heterozygous component with PRS irrelevant in any modern clinical cardiovascular human patient in 2024 globally at any scale"}
+          - {pt: "Early statin/PCSK9i é teórico sem implementação prática sendo PRS CAD inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente cardiovascular jovem", en: "Early statin/PCSK9i is theoretical without practical implementation with PRS CAD infeasible in any modern clinical young cardiovascular human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Polygenic Risk Score CAD em UK Biobank/All of Us classifica top 8% risk equivalente a heterozygous FH — guia early statin/PCSK9i e lifestyle intensification em 30s/40s", en: "Polygenic CAD risk score in UK Biobank/All of Us classifies top 8% risk equivalent to heterozygous FH — guides early statin/PCSK9i and lifestyle intensification in 30s/40s"}
+        rationale: {pt: "Quando PRS é alto, então prevenção começa cedo.", en: "When PRS is high, prevention starts early."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Insuficiência cardíaca / DM2", en: "Heart failure / T2D"}
+    description: {pt: "Como tratar HF/DM em precisão.", en: "How to treat HF/DM precisely."}
+    exercises:
+      - type: choice
+        question: {pt: "GLP-1 semaglutide:", en: "GLP-1 semaglutide:"}
+        choices:
+          - {pt: "Ozempic/Wegovy reduz HbA1c, peso e MACE em DM2 obesa via GLP-1R agonism cardiac protection — SELECT 2023 mostra 20% MACE reduction em obese non-diabetic, expansion CV indication", en: "Ozempic/Wegovy cuts HbA1c, weight and MACE in obese T2D via cardiac-protective GLP-1R agonism — SELECT 2023 shows 20% MACE reduction in non-diabetic obese, CV-indication expansion"}
+          - {pt: "GLP-1 é restrito a oral sem componente SC sendo Ozempic e Wegovy inviáveis em qualquer paciente DM2 obeso humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "GLP-1 is restricted to oral without SC component with Ozempic and Wegovy infeasible in any modern clinical T2D obese human patient in 2024 globally at any patient scale"}
+          - {pt: "SELECT 2023 é teórico sem evidência experimental sendo MACE reduction inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "SELECT 2023 is theoretical without experimental evidence with MACE reduction technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "GLP-1R agonism é incompatível com cardiac protection sendo semaglutide inviável em qualquer paciente cardiovascular humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "GLP-1R agonism is incompatible with cardiac protection with semaglutide infeasible in any modern clinical cardiovascular human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Ozempic/Wegovy reduz HbA1c, peso e MACE em DM2 obesa via GLP-1R agonism cardiac protection — SELECT 2023 mostra 20% MACE reduction em obese non-diabetic, expansion CV indication", en: "Ozempic/Wegovy cuts HbA1c, weight and MACE in obese T2D via cardiac-protective GLP-1R agonism — SELECT 2023 shows 20% MACE reduction in non-diabetic obese, CV-indication expansion"}
+        rationale: {pt: "Quando GLP-1 vai além glicêmico, então CV e peso ganham.", en: "When GLP-1 goes beyond glycemic, CV and weight gain."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tirzepatide Mounjaro:", en: "Tirzepatide Mounjaro:"}
+        choices:
+          - {pt: "Dual GLP-1 + GIP agonist Lilly Mounjaro reduz HbA1c >2% e peso até 22.5% em SURMOUNT-1/2 — supera semaglutide em weight loss + glucose control em DM2/obese", en: "Dual GLP-1 + GIP agonist Lilly Mounjaro cuts HbA1c >2% and weight up to 22.5% in SURMOUNT-1/2 — outperforms semaglutide in weight loss + glucose control in T2D/obesity"}
+          - {pt: "Tirzepatide é restrito a GLP-1 puro sem componente GIP sendo Mounjaro inviável em qualquer paciente DM2 obeso humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Tirzepatide is restricted to pure GLP-1 without GIP component with Mounjaro infeasible in any modern clinical T2D obese human patient in 2024 globally at any patient scale"}
+          - {pt: "GIP é restrito a B-cell sem expressão pancreática sendo dual agonist inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente DM2", en: "GIP is restricted to B cells without pancreatic expression with dual agonist technically infeasible in any modern clinical T2D human patient in 2024 globally at any patient scale"}
+          - {pt: "SURMOUNT-1/2 é teórico sem evidência experimental sendo Mounjaro inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente metabolic adulto", en: "SURMOUNT-1/2 is theoretical without experimental evidence with Mounjaro infeasible in any modern clinical adult metabolic human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Dual GLP-1 + GIP agonist Lilly Mounjaro reduz HbA1c >2% e peso até 22.5% em SURMOUNT-1/2 — supera semaglutide em weight loss + glucose control em DM2/obese", en: "Dual GLP-1 + GIP agonist Lilly Mounjaro cuts HbA1c >2% and weight up to 22.5% in SURMOUNT-1/2 — outperforms semaglutide in weight loss + glucose control in T2D/obesity"}
+        rationale: {pt: "Quando dois receptores agem juntos, então peso e glicose caem mais.", en: "When two receptors act together, weight and glucose fall more."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SGLT2 dapa/empagliflozin:", en: "SGLT2 dapa/empagliflozin:"}
+        choices:
+          - {pt: "SGLT2 inhibitor reduz hospitalization HF + slows CKD em DM2 e non-DM (DAPA-HF, EMPEROR-Reduced/Preserved, DAPA-CKD) — class effect cardio-renal independente HbA1c", en: "SGLT2 inhibitor cuts HF hospitalization + slows CKD in T2D and non-DM (DAPA-HF, EMPEROR-Reduced/Preserved, DAPA-CKD) — HbA1c-independent cardiorenal class effect"}
+          - {pt: "SGLT2 inhibitor é restrito a DM2 sem componente non-DM sendo DAPA-HF e EMPEROR inviáveis em qualquer paciente HF humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "SGLT2 inhibitor is restricted to T2D without non-DM component with DAPA-HF and EMPEROR infeasible in any modern clinical HF human patient in 2024 globally at any patient scale"}
+          - {pt: "Cardio-renal protection é teórico sem evidência experimental sendo dapagliflozin e empagliflozin inviáveis tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente", en: "Cardio-renal protection is theoretical without experimental evidence with dapagliflozin and empagliflozin technically infeasible in any modern clinical human patient in 2024 globally"}
+          - {pt: "DAPA-CKD é teórico sem implementação prática sendo SGLT2 inhibitor inviável em qualquer paciente CKD humano clínico moderno em 2024 globalmente em qualquer escala paciente cardiovascular", en: "DAPA-CKD is theoretical without practical implementation with SGLT2 inhibitor infeasible in any modern clinical cardiovascular CKD human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "SGLT2 inhibitor reduz hospitalization HF + slows CKD em DM2 e non-DM (DAPA-HF, EMPEROR-Reduced/Preserved, DAPA-CKD) — class effect cardio-renal independente HbA1c", en: "SGLT2 inhibitor cuts HF hospitalization + slows CKD in T2D and non-DM (DAPA-HF, EMPEROR-Reduced/Preserved, DAPA-CKD) — HbA1c-independent cardiorenal class effect"}
+        rationale: {pt: "Quando SGLT2 cai, então coração e rim ganham além de glicose.", en: "When SGLT2 drops, heart and kidney gain beyond glucose."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sacubitril/valsartan:", en: "Sacubitril/valsartan:"}
+        choices:
+          - {pt: "Neprilysin inhibitor + ARB Entresto eleva natriuretic peptide ativo + bloqueia AT1 — PARADIGM-HF 2014 reduz mortalidade 20% em HFrEF, classe ARNi standard 2017+", en: "Neprilysin inhibitor + ARB Entresto raises active natriuretic peptide + blocks AT1 — PARADIGM-HF 2014 cuts 20% mortality in HFrEF, ARNi class standard since 2017"}
+          - {pt: "Sacubitril/valsartan é restrito a single-component sem componente dual sendo Entresto inviável em qualquer paciente HFrEF humano clínico moderno em 2024 globalmente em qualquer escala", en: "Sacubitril/valsartan is restricted to single-component without dual component with Entresto infeasible in any modern clinical HFrEF human patient in 2024 globally at any scale"}
+          - {pt: "PARADIGM-HF 2014 é teórico sem evidência experimental sendo Entresto inviável tecnicamente em qualquer paciente HF humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "PARADIGM-HF 2014 is theoretical without experimental evidence with Entresto technically infeasible in any modern clinical HF human patient in 2024 globally at any patient scale"}
+          - {pt: "Neprilysin é restrito a B-cell sem expressão circulating sendo sacubitril inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente cardiovascular adulto", en: "Neprilysin is restricted to B cells without circulating expression with sacubitril infeasible in any modern clinical adult cardiovascular human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Neprilysin inhibitor + ARB Entresto eleva natriuretic peptide ativo + bloqueia AT1 — PARADIGM-HF 2014 reduz mortalidade 20% em HFrEF, classe ARNi standard 2017+", en: "Neprilysin inhibitor + ARB Entresto raises active natriuretic peptide + blocks AT1 — PARADIGM-HF 2014 cuts 20% mortality in HFrEF, ARNi class standard since 2017"}
+        rationale: {pt: "Quando ARB e neprilysin combinam, então HFrEF morre menos.", en: "When ARB and neprilysin combine, HFrEF mortality drops."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mavacamten HCM:", en: "Mavacamten HCM:"}
+        choices:
+          - {pt: "Cardiac myosin inhibitor reduz hypercontractility em HCM hereditária — MyoKardia/BMS Camzyos FDA 2022 atinge LVOT gradient reduction sem septal myectomy/alcohol ablation invasive", en: "Cardiac myosin inhibitor cuts hypercontractility in hereditary HCM — MyoKardia/BMS Camzyos FDA 2022 achieves LVOT gradient reduction without invasive septal myectomy/alcohol ablation"}
+          - {pt: "Mavacamten é restrito a beta-blocker sem componente myosin sendo Camzyos inviável em qualquer paciente HCM humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Mavacamten is restricted to beta-blocker without myosin component with Camzyos infeasible in any modern clinical HCM human patient in 2024 globally at any patient scale"}
+          - {pt: "Cardiac myosin é restrito a B-cell sem expressão cardíaca sendo mavacamten inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente HCM", en: "Cardiac myosin is restricted to B cells without cardiac expression with mavacamten technically infeasible in any modern clinical HCM human patient in 2024 globally at any patient scale"}
+          - {pt: "FDA 2022 aprovação é teórica sem implementação prática sendo Camzyos inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente cardiovascular HCM", en: "FDA 2022 approval is theoretical without practical implementation with Camzyos infeasible in any modern clinical cardiovascular HCM human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Cardiac myosin inhibitor reduz hypercontractility em HCM hereditária — MyoKardia/BMS Camzyos FDA 2022 atinge LVOT gradient reduction sem septal myectomy/alcohol ablation invasive", en: "Cardiac myosin inhibitor cuts hypercontractility in hereditary HCM — MyoKardia/BMS Camzyos FDA 2022 achieves LVOT gradient reduction without invasive septal myectomy/alcohol ablation"}
+        rationale: {pt: "Quando myosin é freado, então septum não comprime LVOT.", en: "When myosin is braked, septum doesn't compress LVOT."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TAVR vs SAVR:", en: "TAVR vs SAVR:"}
+        choices:
+          - {pt: "Transcatheter Aortic Valve Replacement substitui SAVR cirurgia em low-/intermediate-/high-risk via transfemoral access — PARTNER-3 e Evolut Low Risk 2019 expandem TAVR em <65 anos", en: "Transcatheter Aortic Valve Replacement replaces SAVR surgery in low-/intermediate-/high-risk via transfemoral access — PARTNER-3 and Evolut Low Risk 2019 expand TAVR to <65-year-olds"}
+          - {pt: "TAVR é restrito a high-risk sem componente low-risk sendo PARTNER-3 inviável em qualquer paciente AVR humano clínico moderno em 2024 globalmente em qualquer escala paciente cardiovascular", en: "TAVR is restricted to high-risk without low-risk component with PARTNER-3 infeasible in any modern clinical cardiovascular AVR human patient in 2024 globally at any scale"}
+          - {pt: "Transfemoral access é incompatível com TAVR sendo PARTNER-3 e Evolut inviáveis tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente AVR", en: "Transfemoral access is incompatible with TAVR with PARTNER-3 and Evolut technically infeasible in any modern clinical AVR human patient in 2024 globally at any patient scale"}
+          - {pt: "<65 anos é teórico sem evidência experimental sendo TAVR expansion inviável em qualquer paciente jovem humano clínico moderno em 2024 globalmente em qualquer escala paciente cardiovascular", en: "<65 years is theoretical without experimental evidence with TAVR expansion infeasible in any modern clinical young cardiovascular human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Transcatheter Aortic Valve Replacement substitui SAVR cirurgia em low-/intermediate-/high-risk via transfemoral access — PARTNER-3 e Evolut Low Risk 2019 expandem TAVR em <65 anos", en: "Transcatheter Aortic Valve Replacement replaces SAVR surgery in low-/intermediate-/high-risk via transfemoral access — PARTNER-3 and Evolut Low Risk 2019 expand TAVR to <65-year-olds"}
+        rationale: {pt: "Quando válvula entra por catheter, então aberta cirurgia é evitada.", en: "When valve enters via catheter, open surgery is avoided."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cardiac AAV:", en: "Cardiac AAV:"}
+        choices:
+          - {pt: "AAV9-SERCA2a (CUPID 1, MYDICAR) e AAV-cycSERCA em HF avançada testam restoration calcium cycling — fase 2 demonstrou tolerância mas eficácia variável, reformulações em curso", en: "AAV9-SERCA2a (CUPID 1, MYDICAR) and AAV-cycSERCA in advanced HF test calcium-cycling restoration — phase 2 showed tolerance but variable efficacy, reformulations ongoing"}
+          - {pt: "Cardiac AAV é restrito a hepático sem componente cardíaco sendo CUPID 1 e MYDICAR inviáveis em qualquer paciente HF humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Cardiac AAV is restricted to hepatic without cardiac component with CUPID 1 and MYDICAR infeasible in any modern clinical HF human patient in 2024 globally at any patient scale"}
+          - {pt: "SERCA2a é restrito a B-cell sem expressão cardíaca sendo AAV9 inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente HF", en: "SERCA2a is restricted to B cells without cardiac expression with AAV9 technically infeasible in any modern clinical HF human patient in 2024 globally at any patient scale"}
+          - {pt: "Calcium cycling é teórico sem evidência experimental sendo AAV-cycSERCA inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente HF avançado", en: "Calcium cycling is theoretical without experimental evidence with AAV-cycSERCA infeasible in any modern clinical advanced HF human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "AAV9-SERCA2a (CUPID 1, MYDICAR) e AAV-cycSERCA em HF avançada testam restoration calcium cycling — fase 2 demonstrou tolerância mas eficácia variável, reformulações em curso", en: "AAV9-SERCA2a (CUPID 1, MYDICAR) and AAV-cycSERCA in advanced HF test calcium-cycling restoration — phase 2 showed tolerance but variable efficacy, reformulations ongoing"}
+        rationale: {pt: "Quando SERCA volta, então cálcio cardíaco cicla melhor.", en: "When SERCA returns, cardiac calcium cycles better."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cardiac iPSC bioprinted:", en: "Bioprinted iPSC cardiac:"}
+        choices:
+          - {pt: "iPSC-cardiomyocyte + endotélio + estrelada cardiac patch bioimpresso (set 11/K) restaura post-MI área lesionada em modelo grande animal — fase 1 BioFreedom-CardioPatch 2024", en: "iPSC-cardiomyocyte + endothelium + stellate bioprinted cardiac patch (set 11/K) restores post-MI injured area in large animal model — BioFreedom-CardioPatch phase 1 2024"}
+          - {pt: "Cardiac iPSC bioprinted é restrito a single-cell sem componente patch sendo BioFreedom inviável em qualquer paciente post-MI humano clínico moderno em 2024 globalmente em qualquer escala", en: "Bioprinted iPSC cardiac is restricted to single-cell without patch component with BioFreedom infeasible in any modern clinical post-MI human patient in 2024 globally at any scale"}
+          - {pt: "iPSC-cardiomyocyte + endotélio + estrelada são incompatíveis sendo cardiac patch inviável tecnicamente em qualquer paciente HF humano clínico moderno em 2024 globalmente em qualquer escala", en: "iPSC-cardiomyocyte + endothelium + stellate are incompatible with cardiac patch technically infeasible in any modern clinical HF human patient in 2024 globally at any scale"}
+          - {pt: "BioFreedom-CardioPatch é teórico sem evidência experimental sendo bioprinted patch inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente cardiovascular", en: "BioFreedom-CardioPatch is theoretical without experimental evidence with bioprinted patch infeasible in any modern clinical cardiovascular human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "iPSC-cardiomyocyte + endotélio + estrelada cardiac patch bioimpresso (set 11/K) restaura post-MI área lesionada em modelo grande animal — fase 1 BioFreedom-CardioPatch 2024", en: "iPSC-cardiomyocyte + endothelium + stellate bioprinted cardiac patch (set 11/K) restores post-MI injured area in large animal model — BioFreedom-CardioPatch phase 1 2024"}
+        rationale: {pt: "Quando patch cardíaco vira biológico, então post-MI ganha tecido novo.", en: "When cardiac patch turns biological, post-MI gains new tissue."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Wearable AF:", en: "AF wearable:"}
+        choices:
+          - {pt: "Apple Watch ECG, AliveCor KardiaMobile, Fitbit detectam paroxysmal AF em consumer-grade — Apple Heart Study 2019 e Fitbit AF Detection FDA-cleared identifica AF clinicamente acionável", en: "Apple Watch ECG, AliveCor KardiaMobile, Fitbit detect paroxysmal AF in consumer-grade — Apple Heart Study 2019 and Fitbit AF Detection FDA-cleared identify clinically actionable AF"}
+          - {pt: "Wearable AF é restrito a 12-lead ECG sem componente single-lead sendo Apple Watch e KardiaMobile inviáveis em qualquer paciente AF humano clínico moderno em 2024 globalmente em qualquer", en: "Wearable AF is restricted to 12-lead ECG without single-lead component with Apple Watch and KardiaMobile infeasible in any modern clinical AF human patient in 2024 globally at any"}
+          - {pt: "Apple Heart Study 2019 é teórico sem evidência experimental sendo Fitbit AF Detection inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "Apple Heart Study 2019 is theoretical without experimental evidence with Fitbit AF Detection technically infeasible in any modern clinical human patient in 2024 globally at any scale"}
+          - {pt: "Paroxysmal AF é teórico sem evidência clínica sendo wearable detection inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente cardiovascular adulto", en: "Paroxysmal AF is theoretical without clinical evidence with wearable detection infeasible in any modern clinical adult cardiovascular human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Apple Watch ECG, AliveCor KardiaMobile, Fitbit detectam paroxysmal AF em consumer-grade — Apple Heart Study 2019 e Fitbit AF Detection FDA-cleared identifica AF clinicamente acionável", en: "Apple Watch ECG, AliveCor KardiaMobile, Fitbit detect paroxysmal AF in consumer-grade — Apple Heart Study 2019 and Fitbit AF Detection FDA-cleared identify clinically actionable AF"}
+        rationale: {pt: "Quando relógio captura AF, então AVC pode ser prevenido cedo.", en: "When watch captures AF, stroke can be prevented early."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese cardio:", en: "Cardio synthesis:"}
+        choices:
+          - {pt: "PCSK9 + Lp(a) + ANGPTL3 + bempedoic + tafamidis/patisiran + PRS + GLP-1/SGLT2/ARNi + mavacamten + TAVR + cardiac AAV/iPSC + wearable redefinem cardiologia precisão", en: "PCSK9 + Lp(a) + ANGPTL3 + bempedoic + tafamidis/patisiran + PRS + GLP-1/SGLT2/ARNi + mavacamten + TAVR + cardiac AAV/iPSC + wearable redefine precision cardiology"}
+          - {pt: "Cardiologia precisão permanece pré-clínica sem aplicação humana até 2024 sendo conceito experimental sem implementação prática em qualquer indicação clínica humana globalmente em qualquer", en: "Precision cardiology remains preclinical without human application by 2024 being experimental concept without practical implementation in any clinical human indication globally at any"}
+          - {pt: "Plataformas cardio são intercambiáveis sem trade-off em alvo, mecanismo ou populacao tornando escolha tecnológica indiferente em qualquer aplicação clínica humana 2024 globalmente em qualquer", en: "Cardio platforms are interchangeable without target, mechanism or population trade-off making technology choice indifferent in any clinical human application 2024 globally at any"}
+          - {pt: "Cardiologia depende exclusivamente de statin convencional sem componente PCSK9/Lp(a)/ANGPTL3 sendo inclisiran e olpasiran dispensáveis em qualquer paciente humano clínico moderno em 2024", en: "Cardiology depends exclusively on conventional statin without PCSK9/Lp(a)/ANGPTL3 component with inclisiran and olpasiran dispensable in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "PCSK9 + Lp(a) + ANGPTL3 + bempedoic + tafamidis/patisiran + PRS + GLP-1/SGLT2/ARNi + mavacamten + TAVR + cardiac AAV/iPSC + wearable redefinem cardiologia precisão", en: "PCSK9 + Lp(a) + ANGPTL3 + bempedoic + tafamidis/patisiran + PRS + GLP-1/SGLT2/ARNi + mavacamten + TAVR + cardiac AAV/iPSC + wearable redefine precision cardiology"}
+        rationale: {pt: "Quando alvos genéticos e wearables convergem, então CV vira preventivo.", en: "When genetic targets and wearables converge, CV turns preventive."}
+        objectives: [biology.precision_cardiology]
+        difficulty: 5
+target: 20
