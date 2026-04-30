@@ -1,0 +1,244 @@
+title:
+  pt: "🧫 Organoides humanos"
+  en: "🧫 Human organoids"
+level: 'H'
+subject: biology
+objectives: [biology.organoids]
+difficulty: 5
+authorNotes: "Mini-órgãos 3D de iPSC ou stem cells adultas: cerebrais, intestinais, renais, hepáticos — modelagem de doença e tela de fármacos."
+example:
+  pt: "Ex.: iPSC → matriz Matrigel + fatores → autoorganização 3D → mini-cérebro com camadas corticais."
+  en: "Ex.: iPSC → Matrigel + factors → 3D self-organization → mini-brain with cortical layers."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Tipos de organoides", en: "Organoid types"}
+    description: {pt: "Como diferentes tecidos viram mini-órgãos.", en: "How different tissues become mini-organs."}
+    exercises:
+      - type: choice
+        question: {pt: "Cerebral organoid:", en: "Cerebral organoid:"}
+        choices:
+          - {pt: "iPSC neuralizada autoorganiza em estruturas com zonas progenitoras e camadas corticais radiais", en: "Neuralized iPSC self-organizes into structures with progenitor zones and radial cortical layers"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "iPSC neuralizada autoorganiza em estruturas com zonas progenitoras e camadas corticais radiais", en: "Neuralized iPSC self-organizes into structures with progenitor zones and radial cortical layers"}
+        rationale: {pt: "Quando neuralização ocorre, então córtex em miniatura emerge.", en: "When neuralization occurs, miniature cortex emerges."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Intestinal organoid (Lgr5):", en: "Intestinal organoid (Lgr5):"}
+        choices:
+          - {pt: "Cripta única LGR5+ em Matrigel + Wnt/EGF/Noggin/R-spondin gera estrutura cripto-vilo autorenovável", en: "Single LGR5+ crypt in Matrigel + Wnt/EGF/Noggin/R-spondin yields self-renewing crypt-villus structure"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cripta única LGR5+ em Matrigel + Wnt/EGF/Noggin/R-spondin gera estrutura cripto-vilo autorenovável", en: "Single LGR5+ crypt in Matrigel + Wnt/EGF/Noggin/R-spondin yields self-renewing crypt-villus structure"}
+        rationale: {pt: "Quando ISCs são suportadas, então intestino mantém-se em prato.", en: "When ISCs are supported, intestine maintains itself in dish."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Kidney organoid:", en: "Kidney organoid:"}
+        choices:
+          - {pt: "iPSC com BMP4/CHIR/FGF9 forma nefrônios com glomérulos e túbulos proximais funcionais", en: "iPSC with BMP4/CHIR/FGF9 forms nephrons with functional glomeruli and proximal tubules"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "iPSC com BMP4/CHIR/FGF9 forma nefrônios com glomérulos e túbulos proximais funcionais", en: "iPSC with BMP4/CHIR/FGF9 forms nephrons with functional glomeruli and proximal tubules"}
+        rationale: {pt: "Quando indução é correta, então nefron é replicado in vitro.", en: "When induction is right, nephron is replicated in vitro."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Liver organoid:", en: "Liver organoid:"}
+        choices:
+          - {pt: "Hepatócito-like de iPSC ou ductal-derived modelam metabolismo de fármacos e doenças genéticas hepáticas", en: "Hepatocyte-like from iPSC or ductal-derived model drug metabolism and genetic liver diseases"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Hepatócito-like de iPSC ou ductal-derived modelam metabolismo de fármacos e doenças genéticas hepáticas", en: "Hepatocyte-like from iPSC or ductal-derived model drug metabolism and genetic liver diseases"}
+        rationale: {pt: "Quando hepatócitos crescem, então toxicidade é testável humanamente.", en: "When hepatocytes grow, toxicity is humanly testable."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lung organoid:", en: "Lung organoid:"}
+        choices:
+          - {pt: "Estruturas com células AT1/AT2, basais e clara permitem estudo de fibrose, COVID-19 e CF in vitro", en: "Structures with AT1/AT2, basal and club cells enable in vitro study of fibrosis, COVID-19 and CF"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Estruturas com células AT1/AT2, basais e clara permitem estudo de fibrose, COVID-19 e CF in vitro", en: "Structures with AT1/AT2, basal and club cells enable in vitro study of fibrosis, COVID-19 and CF"}
+        rationale: {pt: "Quando alvéolos formam, então pulmão se replica fora do corpo.", en: "When alveoli form, lung replicates outside body."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cardiac organoid:", en: "Cardiac organoid:"}
+        choices:
+          - {pt: "Cardioide com câmara contrátil e endotélio modela cardiopatias congênitas e responde a inotrópicos", en: "Cardioid with contractile chamber and endothelium models congenital heart disease and responds to inotropes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cardioide com câmara contrátil e endotélio modela cardiopatias congênitas e responde a inotrópicos", en: "Cardioid with contractile chamber and endothelium models congenital heart disease and responds to inotropes"}
+        rationale: {pt: "Quando câmara bate, então fisiologia cardíaca é replicada.", en: "When chamber beats, cardiac physiology is replicated."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Retinal organoid:", en: "Retinal organoid:"}
+        choices:
+          - {pt: "iPSC autoorganiza retina laminada com fotorreceptores funcionais que respondem a luz após ~150 dias", en: "iPSC self-organizes laminated retina with light-responsive photoreceptors after ~150 days"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "iPSC autoorganiza retina laminada com fotorreceptores funcionais que respondem a luz após ~150 dias", en: "iPSC self-organizes laminated retina with light-responsive photoreceptors after ~150 days"}
+        rationale: {pt: "Quando retina autoorganiza, então fototransdução vira modelável.", en: "When retina self-organizes, phototransduction becomes modelable."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Gastric organoid:", en: "Gastric organoid:"}
+        choices:
+          - {pt: "Modela infecção por H. pylori, atrofia e câncer gástrico com células parietais e principais autênticas", en: "Models H. pylori infection, atrophy and gastric cancer with authentic parietal and chief cells"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modela infecção por H. pylori, atrofia e câncer gástrico com células parietais e principais autênticas", en: "Models H. pylori infection, atrophy and gastric cancer with authentic parietal and chief cells"}
+        rationale: {pt: "Quando estômago é replicado, então H. pylori é estudada humanamente.", en: "When stomach is replicated, H. pylori is humanly studied."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Assembloids:", en: "Assembloids:"}
+        choices:
+          - {pt: "Fusão de organoides regionais (cortical + estriatal + tálamo) reconstrói circuitos com migração neuronal", en: "Fusion of regional organoids (cortical + striatal + thalamic) reconstructs circuits with neuronal migration"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fusão de organoides regionais (cortical + estriatal + tálamo) reconstrói circuitos com migração neuronal", en: "Fusion of regional organoids (cortical + striatal + thalamic) reconstructs circuits with neuronal migration"}
+        rationale: {pt: "Quando regiões fundem, então circuitos cerebrais ganham dimensão.", en: "When regions fuse, brain circuits gain dimension."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vascularização:", en: "Vascularization:"}
+        choices:
+          - {pt: "Coengenharia com células endoteliais ou transplante in vivo permite perfusão e maturação dos organoides", en: "Co-engineering with endothelial cells or in vivo transplant enables organoid perfusion and maturation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Coengenharia com células endoteliais ou transplante in vivo permite perfusão e maturação dos organoides", en: "Co-engineering with endothelial cells or in vivo transplant enables organoid perfusion and maturation"}
+        rationale: {pt: "Quando vasos chegam, então tamanho funcional aumenta.", en: "When vessels arrive, functional size increases."}
+        objectives: [biology.organoids]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações e limites", en: "Applications and limits"}
+    description: {pt: "Da modelagem de doença ao transplante.", en: "From disease modeling to transplant."}
+    exercises:
+      - type: choice
+        question: {pt: "Modelagem de doença genética:", en: "Genetic disease modeling:"}
+        choices:
+          - {pt: "iPSC do paciente diferenciada gera organoide com mutação isogênica revelando fenótipos celulares precoces", en: "Patient iPSC differentiates into organoid with isogenic mutation revealing early cellular phenotypes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "iPSC do paciente diferenciada gera organoide com mutação isogênica revelando fenótipos celulares precoces", en: "Patient iPSC differentiates into organoid with isogenic mutation revealing early cellular phenotypes"}
+        rationale: {pt: "Quando paciente vira organoide, então mecanismo é estudado em fundo genético real.", en: "When patient becomes organoid, mechanism is studied in real genetic background."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Drug screening:", en: "Drug screening:"}
+        choices:
+          - {pt: "Painéis de organoides tumorais respondem a drogas prevendo resposta clínica em CRC e CF", en: "Tumor organoid panels respond to drugs predicting clinical response in CRC and CF"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Painéis de organoides tumorais respondem a drogas prevendo resposta clínica em CRC e CF", en: "Tumor organoid panels respond to drugs predicting clinical response in CRC and CF"}
+        rationale: {pt: "Quando organoides triam, então medicina personalizada acelera.", en: "When organoids screen, personalized medicine accelerates."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microcefalia (Zika):", en: "Microcephaly (Zika):"}
+        choices:
+          - {pt: "Vírus Zika reduziu drasticamente cerebral organoid revelando mecanismo da microcefalia em 2016", en: "Zika virus drastically shrank cerebral organoid revealing microcephaly mechanism in 2016"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Vírus Zika reduziu drasticamente cerebral organoid revelando mecanismo da microcefalia em 2016", en: "Zika virus drastically shrank cerebral organoid revealing microcephaly mechanism in 2016"}
+        rationale: {pt: "Quando vírus testou, então causalidade humana foi estabelecida.", en: "When virus was tested, human causality was established."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Fibrose cística:", en: "Cystic fibrosis:"}
+        choices:
+          - {pt: "Forskolin induced swelling em rectal organoids prediz resposta individual a moduladores CFTR", en: "Forskolin-induced swelling in rectal organoids predicts individual response to CFTR modulators"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Forskolin induced swelling em rectal organoids prediz resposta individual a moduladores CFTR", en: "Forskolin-induced swelling in rectal organoids predicts individual response to CFTR modulators"}
+        rationale: {pt: "Quando organoide responde, então tratamento certo é escolhido.", en: "When organoid responds, right treatment is chosen."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Transplante intestinal:", en: "Intestinal transplant:"}
+        choices:
+          - {pt: "Organoides intestinais autólogos foram transplantados experimentalmente para corrigir mucosite e curtos intestinos", en: "Autologous intestinal organoids were transplanted experimentally to repair mucositis and short bowel"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Organoides intestinais autólogos foram transplantados experimentalmente para corrigir mucosite e curtos intestinos", en: "Autologous intestinal organoids were transplanted experimentally to repair mucositis and short bowel"}
+        rationale: {pt: "Quando organoide enxerta, então reconstrução intestinal vira possível.", en: "When organoid engrafts, intestinal reconstruction becomes possible."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hepatic regeneration:", en: "Hepatic regeneration:"}
+        choices:
+          - {pt: "Organoides hepáticos produzem albumina e fatores de coagulação ajudando suporte em falência hepática", en: "Liver organoids produce albumin and clotting factors aiding support in liver failure"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Organoides hepáticos produzem albumina e fatores de coagulação ajudando suporte em falência hepática", en: "Liver organoids produce albumin and clotting factors aiding support in liver failure"}
+        rationale: {pt: "Quando função existe, então bioartificial liver vira viável.", en: "When function exists, bioartificial liver becomes viable."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Limites de maturação:", en: "Maturation limits:"}
+        choices:
+          - {pt: "Maioria dos organoides estagna em estado fetal com expressão imatura — desafio principal do campo", en: "Most organoids stall at fetal state with immature expression — central challenge of the field"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Maioria dos organoides estagna em estado fetal com expressão imatura — desafio principal do campo", en: "Most organoids stall at fetal state with immature expression — central challenge of the field"}
+        rationale: {pt: "Quando maturação para, então fisiologia adulta fica limitada.", en: "When maturation halts, adult physiology stays limited."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bioethics em organoides:", en: "Organoid bioethics:"}
+        choices:
+          - {pt: "Organoides cerebrais com atividade complexa levantam questões sobre senciência e consentimento ampliado", en: "Brain organoids with complex activity raise questions about sentience and expanded consent"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Organoides cerebrais com atividade complexa levantam questões sobre senciência e consentimento ampliado", en: "Brain organoids with complex activity raise questions about sentience and expanded consent"}
+        rationale: {pt: "Quando atividade emerge, então ética acompanha tecnologia.", en: "When activity emerges, ethics accompanies technology."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Quimera órgão-organoid:", en: "Organ-organoid chimera:"}
+        choices:
+          - {pt: "Organoide humano transplantado em camundongo se vasculariza e amadurece além do limite in vitro", en: "Human organoid transplanted into mouse vascularizes and matures beyond in vitro limits"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Organoide humano transplantado em camundongo se vasculariza e amadurece além do limite in vitro", en: "Human organoid transplanted into mouse vascularizes and matures beyond in vitro limits"}
+        rationale: {pt: "Quando hospedeiro vasculariza, então maturação supera prato.", en: "When host vascularizes, maturation surpasses dish."}
+        objectives: [biology.organoids]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese de organoides:", en: "Organoid synthesis:"}
+        choices:
+          - {pt: "Mini-órgãos humanos preenchem o vão entre 2D e animal — modelagem, drogas e regeneração em escala personalizada", en: "Human mini-organs fill the gap between 2D and animal — modeling, drugs and regeneration at personalized scale"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Mini-órgãos humanos preenchem o vão entre 2D e animal — modelagem, drogas e regeneração em escala personalizada", en: "Human mini-organs fill the gap between 2D and animal — modeling, drugs and regeneration at personalized scale"}
+        rationale: {pt: "Quando organoides escalam, então biologia translacional ganha plataforma humana.", en: "When organoids scale, translational biology gains human platform."}
+        objectives: [biology.organoids]
+        difficulty: 5
+target: 20

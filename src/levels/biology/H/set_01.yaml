@@ -1,0 +1,244 @@
+title:
+  pt: "✏️ Edição de base e prime editing"
+  en: "✏️ Base and prime editing"
+level: 'H'
+subject: biology
+objectives: [biology.precision_editing]
+difficulty: 5
+authorNotes: "CRISPR de precisão sem quebra dupla: base editors (CBE/ABE) e prime editing — terapias monogênicas em testes."
+example:
+  pt: "Ex.: Cas9 nickase + deaminase → conversão C→T sem corte → mutação pontual corrigida."
+  en: "Ex.: Cas9 nickase + deaminase → C→T conversion without cut → point mutation corrected."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Mecanismos de edição precisa", en: "Precision editing mechanisms"}
+    description: {pt: "Como editar sem quebra dupla.", en: "How to edit without double-strand break."}
+    exercises:
+      - type: choice
+        question: {pt: "Cytosine base editor (CBE):", en: "Cytosine base editor (CBE):"}
+        choices:
+          - {pt: "Cas9 nickase fundido a citidina deaminase converte C→U→T em janela editável da gRNA", en: "Cas9 nickase fused to cytidine deaminase converts C→U→T within gRNA edit window"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cas9 nickase fundido a citidina deaminase converte C→U→T em janela editável da gRNA", en: "Cas9 nickase fused to cytidine deaminase converts C→U→T within gRNA edit window"}
+        rationale: {pt: "Quando CBE atua, então mutações pontuais são corrigidas sem quebra dupla.", en: "When CBE acts, point mutations are corrected without double-strand break."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Adenine base editor (ABE):", en: "Adenine base editor (ABE):"}
+        choices:
+          - {pt: "Cas9 nickase fundido a TadA evoluída converte A→I→G corrigindo até 50% de SNPs patogênicos", en: "Cas9 nickase fused to evolved TadA converts A→I→G correcting up to 50% of pathogenic SNPs"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cas9 nickase fundido a TadA evoluída converte A→I→G corrigindo até 50% de SNPs patogênicos", en: "Cas9 nickase fused to evolved TadA converts A→I→G correcting up to 50% of pathogenic SNPs"}
+        rationale: {pt: "Quando ABE atua, então transições A·T→G·C são feitas in vivo.", en: "When ABE acts, A·T→G·C transitions are performed in vivo."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Prime editing:", en: "Prime editing:"}
+        choices:
+          - {pt: "Cas9 nickase + reverse transcriptase + pegRNA inserem ou trocam até dezenas de pares de base programadas", en: "Cas9 nickase + reverse transcriptase + pegRNA insert or swap up to dozens of programmed base pairs"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cas9 nickase + reverse transcriptase + pegRNA inserem ou trocam até dezenas de pares de base programadas", en: "Cas9 nickase + reverse transcriptase + pegRNA insert or swap up to dozens of programmed base pairs"}
+        rationale: {pt: "Quando prime edita, então praticamente qualquer alteração curta vira possível.", en: "When prime edits, nearly any short alteration becomes possible."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Janela de edição:", en: "Editing window:"}
+        choices:
+          - {pt: "CBE/ABE editam bases em ~5 nt distantes do PAM — escolha de gRNA define alvo preciso", en: "CBE/ABE edit bases in ~5 nt window distal to PAM — gRNA choice defines precise target"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "CBE/ABE editam bases em ~5 nt distantes do PAM — escolha de gRNA define alvo preciso", en: "CBE/ABE edit bases in ~5 nt window distal to PAM — gRNA choice defines precise target"}
+        rationale: {pt: "Quando janela é considerada, então edição é cirurgicamente direcionada.", en: "When window is considered, editing is surgically directed."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bystander editing:", en: "Bystander editing:"}
+        choices:
+          - {pt: "Bases vizinhas dentro da janela também são editadas — engenharia da deaminase reduz off-targets", en: "Neighboring bases within window are also edited — deaminase engineering reduces off-targets"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Bases vizinhas dentro da janela também são editadas — engenharia da deaminase reduz off-targets", en: "Neighboring bases within window are also edited — deaminase engineering reduces off-targets"}
+        rationale: {pt: "Quando bystander reduz, então edição é mais específica.", en: "When bystander reduces, editing is more specific."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "pegRNA:", en: "pegRNA:"}
+        choices:
+          - {pt: "gRNA estendida com PBS + RT template carrega informação para a edição programada em prime editing", en: "Extended gRNA with PBS + RT template carries information for programmed prime edit"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "gRNA estendida com PBS + RT template carrega informação para a edição programada em prime editing", en: "Extended gRNA with PBS + RT template carries information for programmed prime edit"}
+        rationale: {pt: "Quando pegRNA dirige, então edição arbitrária é codificada na guia.", en: "When pegRNA directs, arbitrary edit is encoded in the guide."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Twin prime editing:", en: "Twin prime editing:"}
+        choices:
+          - {pt: "Dois pegRNAs em fitas opostas permitem inserções, deleções e inversões grandes com precisão", en: "Two pegRNAs on opposite strands enable large precise insertions, deletions and inversions"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Dois pegRNAs em fitas opostas permitem inserções, deleções e inversões grandes com precisão", en: "Two pegRNAs on opposite strands enable large precise insertions, deletions and inversions"}
+        rationale: {pt: "Quando twin prime atua, então alterações grandes ficam acessíveis.", en: "When twin prime acts, large alterations become accessible."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Off-target em base editing:", en: "Base editing off-targets:"}
+        choices:
+          - {pt: "Edição independente de gRNA (RNA e DNA) é mensurada por Orthogonal-R/Detect-seq guiando engenharia segura", en: "gRNA-independent edits (RNA and DNA) are measured by Orthogonal-R/Detect-seq guiding safe engineering"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Edição independente de gRNA (RNA e DNA) é mensurada por Orthogonal-R/Detect-seq guiando engenharia segura", en: "gRNA-independent edits (RNA and DNA) are measured by Orthogonal-R/Detect-seq guiding safe engineering"}
+        rationale: {pt: "Quando off-targets são mapeados, então versões clínicas são selecionadas.", en: "When off-targets are mapped, clinical versions are selected."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "LNP delivery:", en: "LNP delivery:"}
+        choices:
+          - {pt: "Nanopartículas lipídicas com mRNA do editor + gRNA permitem entrega in vivo no fígado e além", en: "Lipid nanoparticles with editor mRNA + gRNA enable in vivo liver delivery and beyond"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Nanopartículas lipídicas com mRNA do editor + gRNA permitem entrega in vivo no fígado e além", en: "Lipid nanoparticles with editor mRNA + gRNA enable in vivo liver delivery and beyond"}
+        rationale: {pt: "Quando LNP entrega, então terapias deixam de exigir extração celular.", en: "When LNP delivers, therapies stop requiring cell extraction."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Knock-in livre de DSB:", en: "DSB-free knock-in:"}
+        choices:
+          - {pt: "Prime editing + integrases programadas (PASTE) inserem cassetes de kb em sítios definidos sem quebra dupla", en: "Prime editing + programmed integrases (PASTE) insert kb cassettes at defined sites without double-strand break"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Prime editing + integrases programadas (PASTE) inserem cassetes de kb em sítios definidos sem quebra dupla", en: "Prime editing + programmed integrases (PASTE) insert kb cassettes at defined sites without double-strand break"}
+        rationale: {pt: "Quando PASTE integra, então genes inteiros entram com segurança.", en: "When PASTE integrates, whole genes safely enter."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações terapêuticas", en: "Therapeutic applications"}
+    description: {pt: "Edição de precisão na clínica.", en: "Precision editing in the clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "Verve VERVE-101:", en: "Verve VERVE-101:"}
+        choices:
+          - {pt: "ABE in vivo desliga PCSK9 hepático para reduzir LDL permanentemente em hipercolesterolemia familiar", en: "In vivo ABE turns off hepatic PCSK9 permanently lowering LDL in familial hypercholesterolemia"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ABE in vivo desliga PCSK9 hepático para reduzir LDL permanentemente em hipercolesterolemia familiar", en: "In vivo ABE turns off hepatic PCSK9 permanently lowering LDL in familial hypercholesterolemia"}
+        rationale: {pt: "Quando PCSK9 cai, então LDL despenca duradouramente.", en: "When PCSK9 drops, LDL falls durably."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anemia falciforme com base editing:", en: "Sickle cell with base editing:"}
+        choices:
+          - {pt: "ABE corrige diretamente HBB E6V ou ativa HbF — alternativa precisa ao knockout BCL11A do Casgevy", en: "ABE directly corrects HBB E6V or activates HbF — precise alternative to Casgevy BCL11A knockout"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ABE corrige diretamente HBB E6V ou ativa HbF — alternativa precisa ao knockout BCL11A do Casgevy", en: "ABE directly corrects HBB E6V or activates HbF — precise alternative to Casgevy BCL11A knockout"}
+        rationale: {pt: "Quando E6V é revertida, então hemoglobina volta a ser saudável.", en: "When E6V is reverted, hemoglobin returns to healthy."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "T-CALL leucemia (BEAM):", en: "T-CALL leukemia (BEAM):"}
+        choices:
+          - {pt: "Base editing multiplexado em CAR-T alogênico (CD7 KO + TRAC KO + CD52 KO) tratou T-ALL pediátrica refratária", en: "Multiplex base editing in allogeneic CAR-T (CD7 KO + TRAC KO + CD52 KO) treated refractory pediatric T-ALL"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Base editing multiplexado em CAR-T alogênico (CD7 KO + TRAC KO + CD52 KO) tratou T-ALL pediátrica refratária", en: "Multiplex base editing in allogeneic CAR-T (CD7 KO + TRAC KO + CD52 KO) treated refractory pediatric T-ALL"}
+        rationale: {pt: "Quando edições múltiplas combinam, então CAR-T off-the-shelf é viável.", en: "When multi-edits combine, off-the-shelf CAR-T becomes viable."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Distrofia muscular Duchenne:", en: "Duchenne muscular dystrophy:"}
+        choices:
+          - {pt: "Edição de splice acceptors com base editors restaura leitura de éxons saltáveis recuperando distrofina parcial", en: "Splice-acceptor editing with base editors restores skipping exons reading frame recovering partial dystrophin"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Edição de splice acceptors com base editors restaura leitura de éxons saltáveis recuperando distrofina parcial", en: "Splice-acceptor editing with base editors restores skipping exons reading frame recovering partial dystrophin"}
+        rationale: {pt: "Quando frame retorna, então distrofina volta a ser produzida.", en: "When frame returns, dystrophin is again produced."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Doença de Tay-Sachs:", en: "Tay-Sachs disease:"}
+        choices:
+          - {pt: "Prime editing in vivo no SNC promete corrigir HEXA mutado revertendo doença lisossomal antes do dano", en: "In vivo CNS prime editing promises HEXA correction reversing lysosomal disease before damage"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Prime editing in vivo no SNC promete corrigir HEXA mutado revertendo doença lisossomal antes do dano", en: "In vivo CNS prime editing promises HEXA correction reversing lysosomal disease before damage"}
+        rationale: {pt: "Quando HEXA é restaurada, então acúmulo cessa.", en: "When HEXA is restored, accumulation halts."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Edição mitocondrial (DdCBE):", en: "Mitochondrial editing (DdCBE):"}
+        choices:
+          - {pt: "TALEs + DddA dividida editam mtDNA in situ permitindo corrigir mutações de cardiomiopatia mitocondrial", en: "TALEs + split DddA edit mtDNA in situ enabling correction of mitochondrial cardiomyopathy mutations"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "TALEs + DddA dividida editam mtDNA in situ permitindo corrigir mutações de cardiomiopatia mitocondrial", en: "TALEs + split DddA edit mtDNA in situ enabling correction of mitochondrial cardiomyopathy mutations"}
+        rationale: {pt: "Quando mtDNA é editado, então herança mitocondrial é corrigida.", en: "When mtDNA is edited, mitochondrial inheritance is corrected."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Epigenetic editing:", en: "Epigenetic editing:"}
+        choices:
+          - {pt: "dCas9-DNMT3A/TET1 silenciam ou ativam genes alvo permanentemente sem alterar sequência", en: "dCas9-DNMT3A/TET1 permanently silence or activate target genes without sequence change"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "dCas9-DNMT3A/TET1 silenciam ou ativam genes alvo permanentemente sem alterar sequência", en: "dCas9-DNMT3A/TET1 permanently silence or activate target genes without sequence change"}
+        rationale: {pt: "Quando epigenoma é escrito, então expressão é regulada herdavelmente.", en: "When epigenome is written, expression is heritably regulated."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ITR/AAV duplas:", en: "Dual AAV/ITR:"}
+        choices:
+          - {pt: "Editor grande é dividido em dois AAV reagrupando-se via inteínas — driblando limite de 4.7 kb do AAV", en: "Large editor is split across two AAVs reassembling via inteins — bypassing the 4.7 kb AAV limit"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Editor grande é dividido em dois AAV reagrupando-se via inteínas — driblando limite de 4.7 kb do AAV", en: "Large editor is split across two AAVs reassembling via inteins — bypassing the 4.7 kb AAV limit"}
+        rationale: {pt: "Quando inteínas religam, então editores grandes cabem em AAV.", en: "When inteins relink, large editors fit in AAV."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Regulação clínica de germline:", en: "Germline clinical regulation:"}
+        choices:
+          - {pt: "Edição em embrião humano permanece banida mundialmente exceto pesquisa restrita após He Jiankui em 2018", en: "Human embryo editing remains globally banned except restricted research after He Jiankui in 2018"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Edição em embrião humano permanece banida mundialmente exceto pesquisa restrita após He Jiankui em 2018", en: "Human embryo editing remains globally banned except restricted research after He Jiankui in 2018"}
+        rationale: {pt: "Quando germline é restringida, então riscos hereditários são contidos.", en: "When germline is restricted, heritable risks are contained."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese da edição precisa:", en: "Precision editing synthesis:"}
+        choices:
+          - {pt: "Sem quebra dupla, com deaminases e prime, edição vira cirurgia molecular dirigida a doenças monogênicas", en: "Without double-strand break, with deaminases and prime, editing becomes molecular surgery targeting monogenic disease"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Sem quebra dupla, com deaminases e prime, edição vira cirurgia molecular dirigida a doenças monogênicas", en: "Without double-strand break, with deaminases and prime, editing becomes molecular surgery targeting monogenic disease"}
+        rationale: {pt: "Quando precisão sobe, então segurança e escopo terapêutico crescem juntos.", en: "When precision rises, safety and therapeutic scope grow together."}
+        objectives: [biology.precision_editing]
+        difficulty: 5
+target: 20
