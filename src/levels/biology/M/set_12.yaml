@@ -1,0 +1,244 @@
+title:
+  pt: "🔬 Multi-ômica espacial em célula única"
+  en: "🔬 Single-cell spatial multi-omics"
+level: 'M'
+subject: biology
+objectives: [biology.spatial_multiomics]
+difficulty: 5
+authorNotes: "10x Visium/Xenium, NanoString CosMx/GeoMx, Vizgen MERSCOPE MERFISH, seqFISH+, Slide-seq/Slide-tags, Stereo-seq BGI, DBiT-seq, CODEX/PhenoCycler, IMC Hyperion, MIBI, CITE-seq, Multiome ATAC+RNA, SHARE-seq, Stereo-seq Chen, Tabula Sapiens, HuBMAP, Human Cell Atlas Regev/Teichmann, scvi-tools, Squidpy/Giotto."
+example:
+  pt: "Ex.: tumor cólon → 10x Xenium 5000 genes spatial + CODEX 50 proteínas → mapa tumor-imune niche identifica TLS preditivo de resposta a ICI → biomarcador clínico."
+  en: "Ex.: colon tumor → 10x Xenium 5000-gene spatial + CODEX 50-protein → tumor-immune niche map identifies TLS predictive of ICI response → clinical biomarker."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas espaciais", en: "Spatial platforms"}
+    description: {pt: "Como mapear célula no tecido.", en: "How to map cell in tissue."}
+    exercises:
+      - type: choice
+        question: {pt: "10x Visium spatial transcriptomics:", en: "10x Visium spatial transcriptomics:"}
+        choices:
+          - {pt: "10x Visium captura mRNA em barcoded spots 55µm cobrindo 6.5×6.5mm em FFPE/fresh-frozen — whole-transcriptome spatial low-resolution multi-cell por spot — entry-level platform sequencing-based", en: "10x Visium captures mRNA on 55µm barcoded spots covering 6.5×6.5mm on FFPE/fresh-frozen — whole-transcriptome spatial low-resolution multi-cell per spot — sequencing-based entry-level platform"}
+          - {pt: "Visium é restrito a single-cell sem componente spatial sendo barcoded spots inviáveis em qualquer tecido FFPE moderno em 2024", en: "Visium is restricted to single-cell without spatial component with barcoded spots infeasible in any modern FFPE tissue in 2024"}
+          - {pt: "Whole-transcriptome é teórico sem evidência sendo 55µm spots inviável em qualquer plataforma moderna em 2024", en: "Whole-transcriptome is theoretical without evidence with 55µm spots infeasible in any modern platform in 2024"}
+          - {pt: "FFPE é incompatível com Visium sendo fresh-frozen inviável em qualquer aplicação clínica moderna em 2024", en: "FFPE is incompatible with Visium with fresh-frozen infeasible in any modern clinical application in 2024"}
+        correctAnswer: {pt: "10x Visium captura mRNA em barcoded spots 55µm cobrindo 6.5×6.5mm em FFPE/fresh-frozen — whole-transcriptome spatial low-resolution multi-cell por spot — entry-level platform sequencing-based", en: "10x Visium captures mRNA on 55µm barcoded spots covering 6.5×6.5mm on FFPE/fresh-frozen — whole-transcriptome spatial low-resolution multi-cell per spot — sequencing-based entry-level platform"}
+        rationale: {pt: "Quando spot captura mRNA, então tecido vira mapa.", en: "When spot captures mRNA, tissue becomes map."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "10x Xenium in situ:", en: "10x Xenium in situ:"}
+        choices:
+          - {pt: "Xenium realiza in situ hybridization fluorescence multiplexed 380-5000 genes single-cell sub-cellular resolution em FFPE — imaging-based panel-targeted high-throughput sucessor de Visium para single-cell spatial — clinical-grade", en: "Xenium runs multiplexed in situ fluorescence hybridization 380-5000 genes single-cell subcellular resolution on FFPE — imaging-based panel-targeted high-throughput Visium successor for single-cell spatial — clinical-grade"}
+          - {pt: "Xenium é restrito a bulk-tissue sem componente in situ sendo single-cell inviável em qualquer tecido FFPE moderno em 2024", en: "Xenium is restricted to bulk-tissue without in situ component with single-cell infeasible in any modern FFPE tissue in 2024"}
+          - {pt: "Multiplexed FISH é teórico sem evidência sendo subcellular resolution inviável em qualquer plataforma moderna em 2024", en: "Multiplexed FISH is theoretical without evidence with subcellular resolution infeasible in any modern platform in 2024"}
+          - {pt: "FFPE é incompatível com Xenium sendo panel-targeted inviável em qualquer fluxo clínico moderno em 2024", en: "FFPE is incompatible with Xenium with panel-targeted infeasible in any modern clinical workflow in 2024"}
+        correctAnswer: {pt: "Xenium realiza in situ hybridization fluorescence multiplexed 380-5000 genes single-cell sub-cellular resolution em FFPE — imaging-based panel-targeted high-throughput sucessor de Visium para single-cell spatial — clinical-grade", en: "Xenium runs multiplexed in situ fluorescence hybridization 380-5000 genes single-cell subcellular resolution on FFPE — imaging-based panel-targeted high-throughput Visium successor for single-cell spatial — clinical-grade"}
+        rationale: {pt: "Quando FISH multiplex, então célula vira ponto resolvido.", en: "When FISH multiplexes, cell becomes resolved point."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vizgen MERSCOPE MERFISH:", en: "Vizgen MERSCOPE MERFISH:"}
+        choices:
+          - {pt: "MERFISH (Xiaowei Zhuang Harvard) usa error-robust binary barcode com rounds sequenciais hybridization detectando 500-1000 RNA species single-molecule — gold-standard quantitative spatial mRNA imaging — Vizgen MERSCOPE comercializa", en: "MERFISH (Xiaowei Zhuang Harvard) uses error-robust binary barcoding with sequential hybridization rounds detecting 500-1000 RNA species single-molecule — gold-standard quantitative spatial mRNA imaging — commercialized as Vizgen MERSCOPE"}
+          - {pt: "MERFISH é restrito a 10 RNA species sem componente single-molecule sendo error-robust barcoding inviável em qualquer ensaio moderno em 2024", en: "MERFISH is restricted to 10 RNA species without single-molecule component with error-robust barcoding infeasible in any modern assay in 2024"}
+          - {pt: "Sequential hybridization é teórica sem evidência sendo 500-1000 RNA species inviável em qualquer plataforma moderna em 2024", en: "Sequential hybridization is theoretical without evidence with 500-1000 RNA species infeasible in any modern platform in 2024"}
+          - {pt: "Xiaowei Zhuang é incompatível com MERFISH sendo MERSCOPE inviável em qualquer pipeline comercial moderno em 2024", en: "Xiaowei Zhuang is incompatible with MERFISH with MERSCOPE infeasible in any modern commercial pipeline in 2024"}
+        correctAnswer: {pt: "MERFISH (Xiaowei Zhuang Harvard) usa error-robust binary barcode com rounds sequenciais hybridization detectando 500-1000 RNA species single-molecule — gold-standard quantitative spatial mRNA imaging — Vizgen MERSCOPE comercializa", en: "MERFISH (Xiaowei Zhuang Harvard) uses error-robust binary barcoding with sequential hybridization rounds detecting 500-1000 RNA species single-molecule — gold-standard quantitative spatial mRNA imaging — commercialized as Vizgen MERSCOPE"}
+        rationale: {pt: "Quando barcode é robusto, então mRNA single-molecule é mapeável.", en: "When barcode is robust, single-molecule mRNA is mappable."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "NanoString CosMx + GeoMx:", en: "NanoString CosMx + GeoMx:"}
+        choices:
+          - {pt: "CosMx Spatial Molecular Imager mede 6000-plex RNA + 64-plex protein single-cell spatial high-plex — GeoMx Digital Spatial Profiler usa AOI region-of-interest WTA whole-transcriptome — NanoString two-platform translational research", en: "CosMx Spatial Molecular Imager measures 6000-plex RNA + 64-plex protein single-cell spatial high-plex — GeoMx Digital Spatial Profiler uses AOI region-of-interest WTA whole-transcriptome — NanoString two-platform translational research"}
+          - {pt: "NanoString é restrito a 10-plex sem componente spatial sendo CosMx inviável em qualquer estudo translational moderno em 2024", en: "NanoString is restricted to 10-plex without spatial component with CosMx infeasible in any modern translational study in 2024"}
+          - {pt: "GeoMx AOI é teórico sem evidência sendo WTA whole-transcriptome inviável em qualquer plataforma moderna em 2024", en: "GeoMx AOI is theoretical without evidence with WTA whole-transcriptome infeasible in any modern platform in 2024"}
+          - {pt: "Single-cell é incompatível com CosMx sendo high-plex protein inviável em qualquer aplicação clínica moderna em 2024", en: "Single-cell is incompatible with CosMx with high-plex protein infeasible in any modern clinical application in 2024"}
+        correctAnswer: {pt: "CosMx Spatial Molecular Imager mede 6000-plex RNA + 64-plex protein single-cell spatial high-plex — GeoMx Digital Spatial Profiler usa AOI region-of-interest WTA whole-transcriptome — NanoString two-platform translational research", en: "CosMx Spatial Molecular Imager measures 6000-plex RNA + 64-plex protein single-cell spatial high-plex — GeoMx Digital Spatial Profiler uses AOI region-of-interest WTA whole-transcriptome — NanoString two-platform translational research"}
+        rationale: {pt: "Quando NanoString mede plex, então spatial vira translational.", en: "When NanoString multiplexes, spatial becomes translational."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Slide-seq + Slide-tags:", en: "Slide-seq + Slide-tags:"}
+        choices:
+          - {pt: "Slide-seq (Macosko/Chen Broad) deposita 10µm DNA-barcoded beads sequencing-based whole-transcriptome — Slide-tags 2023 transfere bead barcode para nuclei snRNA-seq spatial preservando viabilidade single-nucleus — high-resolution sub-cellular", en: "Slide-seq (Macosko/Chen Broad) deposits 10µm DNA-barcoded beads sequencing-based whole-transcriptome — Slide-tags 2023 transfers bead barcode to nuclei for spatial snRNA-seq preserving single-nucleus viability — high-resolution subcellular"}
+          - {pt: "Slide-seq é restrito a 100µm beads sem componente sequencing-based sendo whole-transcriptome inviável em qualquer ensaio moderno em 2024", en: "Slide-seq is restricted to 100µm beads without sequencing-based component with whole-transcriptome infeasible in any modern assay in 2024"}
+          - {pt: "Slide-tags é teórica sem evidência sendo bead-to-nuclei transfer inviável em qualquer plataforma moderna em 2024", en: "Slide-tags is theoretical without evidence with bead-to-nuclei transfer infeasible in any modern platform in 2024"}
+          - {pt: "Macosko/Chen é incompatível com Slide-seq sendo Broad pipeline inviável em qualquer estudo moderno em 2024", en: "Macosko/Chen is incompatible with Slide-seq with Broad pipeline infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Slide-seq (Macosko/Chen Broad) deposita 10µm DNA-barcoded beads sequencing-based whole-transcriptome — Slide-tags 2023 transfere bead barcode para nuclei snRNA-seq spatial preservando viabilidade single-nucleus — high-resolution sub-cellular", en: "Slide-seq (Macosko/Chen Broad) deposits 10µm DNA-barcoded beads sequencing-based whole-transcriptome — Slide-tags 2023 transfers bead barcode to nuclei for spatial snRNA-seq preserving single-nucleus viability — high-resolution subcellular"}
+        rationale: {pt: "Quando bead carrega barcode, então nuclei viram spatial.", en: "When bead carries barcode, nuclei become spatial."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Stereo-seq BGI:", en: "Stereo-seq BGI:"}
+        choices:
+          - {pt: "Stereo-seq (BGI Chen Longqi) usa DNB nanoball lattice 220nm spot-distance sub-cellular cm-scale capturing whole-transcriptome em mouse embryo MOSTA atlas — China-led ultra-high-resolution large-area platform sequencing-based", en: "Stereo-seq (BGI Chen Longqi) uses DNB nanoball lattice 220nm spot-distance subcellular cm-scale capturing whole-transcriptome on mouse embryo MOSTA atlas — China-led ultra-high-resolution large-area sequencing-based platform"}
+          - {pt: "Stereo-seq é restrito a 10µm resolution sem componente sub-cellular sendo cm-scale área inviável em qualquer ensaio moderno em 2024", en: "Stereo-seq is restricted to 10µm resolution without subcellular component with cm-scale area infeasible in any modern assay in 2024"}
+          - {pt: "DNB nanoball é teórico sem evidência sendo 220nm spot inviável em qualquer plataforma moderna em 2024", en: "DNB nanoball is theoretical without evidence with 220nm spots infeasible in any modern platform in 2024"}
+          - {pt: "BGI é incompatível com Stereo-seq sendo MOSTA atlas inviável em qualquer estudo moderno em 2024", en: "BGI is incompatible with Stereo-seq with MOSTA atlas infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Stereo-seq (BGI Chen Longqi) usa DNB nanoball lattice 220nm spot-distance sub-cellular cm-scale capturing whole-transcriptome em mouse embryo MOSTA atlas — China-led ultra-high-resolution large-area platform sequencing-based", en: "Stereo-seq (BGI Chen Longqi) uses DNB nanoball lattice 220nm spot-distance subcellular cm-scale capturing whole-transcriptome on mouse embryo MOSTA atlas — China-led ultra-high-resolution large-area sequencing-based platform"}
+        rationale: {pt: "Quando DNB lattice é fino, então embryo vira mapa.", en: "When DNB lattice is fine, embryo becomes map."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DBiT-seq microfluidic:", en: "DBiT-seq microfluidic:"}
+        choices:
+          - {pt: "DBiT-seq (Rong Fan Yale) usa microfluidic deterministic barcode in tissue cross-flow PDMS chip mapping mRNA + protein co-detection 10-50µm pixels low-cost — multi-omic spatial entry-level academic", en: "DBiT-seq (Rong Fan Yale) uses microfluidic deterministic barcoding in tissue cross-flow PDMS chip mapping mRNA + protein co-detection 10-50µm pixels low-cost — multi-omic spatial academic entry-level"}
+          - {pt: "DBiT-seq é restrita a mRNA-only sem componente protein sendo PDMS chip inviável em qualquer ensaio moderno em 2024", en: "DBiT-seq is restricted to mRNA-only without protein component with PDMS chip infeasible in any modern assay in 2024"}
+          - {pt: "Microfluidic barcoding é teórica sem evidência sendo cross-flow inviável em qualquer plataforma moderna em 2024", en: "Microfluidic barcoding is theoretical without evidence with cross-flow infeasible in any modern platform in 2024"}
+          - {pt: "Rong Fan Yale é incompatível com DBiT-seq sendo multi-omic spatial inviável em qualquer estudo moderno em 2024", en: "Rong Fan Yale is incompatible with DBiT-seq with multi-omic spatial infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "DBiT-seq (Rong Fan Yale) usa microfluidic deterministic barcode in tissue cross-flow PDMS chip mapping mRNA + protein co-detection 10-50µm pixels low-cost — multi-omic spatial entry-level academic", en: "DBiT-seq (Rong Fan Yale) uses microfluidic deterministic barcoding in tissue cross-flow PDMS chip mapping mRNA + protein co-detection 10-50µm pixels low-cost — multi-omic spatial academic entry-level"}
+        rationale: {pt: "Quando microfluidic carrega barcode, então tecido vira pixel.", en: "When microfluidic carries barcode, tissue becomes pixel."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CODEX/PhenoCycler proteomics:", en: "CODEX/PhenoCycler proteomics:"}
+        choices:
+          - {pt: "CODEX (Garry Nolan Stanford) renomeada Akoya PhenoCycler usa DNA-tagged antibody iterative imaging 50-100 proteínas single-cell em FFPE/fresh — high-plex spatial proteomics imaging-based clinical-grade alternativa a IMC", en: "CODEX (Garry Nolan Stanford) renamed Akoya PhenoCycler uses DNA-tagged antibody iterative imaging 50-100 proteins single-cell on FFPE/fresh — high-plex spatial proteomics imaging-based clinical-grade IMC alternative"}
+          - {pt: "CODEX é restrito a 5 proteínas sem componente DNA-tagged sendo iterative imaging inviável em qualquer ensaio moderno em 2024", en: "CODEX is restricted to 5 proteins without DNA-tagged component with iterative imaging infeasible in any modern assay in 2024"}
+          - {pt: "Garry Nolan é teórico sem evidência sendo PhenoCycler inviável em qualquer plataforma moderna em 2024", en: "Garry Nolan is theoretical without evidence with PhenoCycler infeasible in any modern platform in 2024"}
+          - {pt: "Akoya é incompatível com CODEX sendo high-plex proteomics inviável em qualquer aplicação clínica moderna em 2024", en: "Akoya is incompatible with CODEX with high-plex proteomics infeasible in any modern clinical application in 2024"}
+        correctAnswer: {pt: "CODEX (Garry Nolan Stanford) renomeada Akoya PhenoCycler usa DNA-tagged antibody iterative imaging 50-100 proteínas single-cell em FFPE/fresh — high-plex spatial proteomics imaging-based clinical-grade alternativa a IMC", en: "CODEX (Garry Nolan Stanford) renamed Akoya PhenoCycler uses DNA-tagged antibody iterative imaging 50-100 proteins single-cell on FFPE/fresh — high-plex spatial proteomics imaging-based clinical-grade IMC alternative"}
+        rationale: {pt: "Quando antibody tem DNA-tag, então proteína vira mapa.", en: "When antibody has DNA-tag, protein becomes map."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Imaging Mass Cytometry IMC + MIBI:", en: "Imaging Mass Cytometry IMC + MIBI:"}
+        choices:
+          - {pt: "IMC (Bodenmiller Standard BioTools Hyperion) e MIBI (Angelo/Nolan Ionpath) usam metal-tagged antibody laser/ion ablation mass-spec readout 40-50 proteínas single-cell sub-cellular sem autofluorescence — gold-standard tumor microenvironment", en: "IMC (Bodenmiller Standard BioTools Hyperion) and MIBI (Angelo/Nolan Ionpath) use metal-tagged antibody laser/ion ablation mass-spec readout 40-50 proteins single-cell subcellular without autofluorescence — gold-standard tumor microenvironment"}
+          - {pt: "IMC é restrito a 5 proteínas sem componente metal-tagged sendo Hyperion inviável em qualquer ensaio moderno em 2024", en: "IMC is restricted to 5 proteins without metal-tagged component with Hyperion infeasible in any modern assay in 2024"}
+          - {pt: "MIBI é teórica sem evidência sendo ion ablation inviável em qualquer plataforma moderna em 2024", en: "MIBI is theoretical without evidence with ion ablation infeasible in any modern platform in 2024"}
+          - {pt: "Bodenmiller é incompatível com IMC sendo tumor microenvironment inviável em qualquer estudo moderno em 2024", en: "Bodenmiller is incompatible with IMC with tumor microenvironment infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "IMC (Bodenmiller Standard BioTools Hyperion) e MIBI (Angelo/Nolan Ionpath) usam metal-tagged antibody laser/ion ablation mass-spec readout 40-50 proteínas single-cell sub-cellular sem autofluorescence — gold-standard tumor microenvironment", en: "IMC (Bodenmiller Standard BioTools Hyperion) and MIBI (Angelo/Nolan Ionpath) use metal-tagged antibody laser/ion ablation mass-spec readout 40-50 proteins single-cell subcellular without autofluorescence — gold-standard tumor microenvironment"}
+        rationale: {pt: "Quando metal marca antibody, então mass-spec vira imagem.", en: "When metal labels antibody, mass-spec becomes image."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "seqFISH + seqFISH+:", en: "seqFISH + seqFISH+:"}
+        choices:
+          - {pt: "seqFISH+ (Long Cai Caltech) usa pseudocolor expansion 60 rounds hybridization mapping 10000 genes single-molecule single-cell sub-cellular — highest-plex transcriptomic spatial imaging-based competitor a MERFISH", en: "seqFISH+ (Long Cai Caltech) uses pseudocolor expansion 60 hybridization rounds mapping 10000 genes single-molecule single-cell subcellular — highest-plex transcriptomic spatial imaging-based MERFISH competitor"}
+          - {pt: "seqFISH é restrito a 100 genes sem componente pseudocolor sendo single-molecule inviável em qualquer ensaio moderno em 2024", en: "seqFISH is restricted to 100 genes without pseudocolor component with single-molecule infeasible in any modern assay in 2024"}
+          - {pt: "Long Cai é teórico sem evidência sendo pseudocolor expansion inviável em qualquer plataforma moderna em 2024", en: "Long Cai is theoretical without evidence with pseudocolor expansion infeasible in any modern platform in 2024"}
+          - {pt: "Caltech é incompatível com seqFISH+ sendo 10000-gene mapping inviável em qualquer estudo moderno em 2024", en: "Caltech is incompatible with seqFISH+ with 10000-gene mapping infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "seqFISH+ (Long Cai Caltech) usa pseudocolor expansion 60 rounds hybridization mapping 10000 genes single-molecule single-cell sub-cellular — highest-plex transcriptomic spatial imaging-based competitor a MERFISH", en: "seqFISH+ (Long Cai Caltech) uses pseudocolor expansion 60 hybridization rounds mapping 10000 genes single-molecule single-cell subcellular — highest-plex transcriptomic spatial imaging-based MERFISH competitor"}
+        rationale: {pt: "Quando pseudocolor expande, então 10k genes viram mapa.", en: "When pseudocolor expands, 10k genes become map."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Multi-ômica + atlas", en: "Multi-omics + atlas"}
+    description: {pt: "Como integrar layers e construir atlas.", en: "How to integrate layers and build atlas."}
+    exercises:
+      - type: choice
+        question: {pt: "CITE-seq RNA + protein:", en: "CITE-seq RNA + protein:"}
+        choices:
+          - {pt: "CITE-seq (Marlon Stoeckius NYGC) usa oligonucleotide-tagged antibody TotalSeq permitindo simultâneo scRNA-seq + 100-300 surface proteins single-cell — gold-standard multi-omic measure transcriptome + proteome dissociated", en: "CITE-seq (Marlon Stoeckius NYGC) uses oligonucleotide-tagged TotalSeq antibody enabling simultaneous scRNA-seq + 100-300 surface proteins single-cell — gold-standard multi-omic measuring transcriptome + proteome dissociated"}
+          - {pt: "CITE-seq é restrito a RNA-only sem componente protein sendo TotalSeq inviável em qualquer ensaio moderno em 2024", en: "CITE-seq is restricted to RNA-only without protein component with TotalSeq infeasible in any modern assay in 2024"}
+          - {pt: "Marlon Stoeckius é teórico sem evidência sendo oligonucleotide-tagged antibody inviável em qualquer plataforma moderna em 2024", en: "Marlon Stoeckius is theoretical without evidence with oligonucleotide-tagged antibody infeasible in any modern platform in 2024"}
+          - {pt: "NYGC é incompatível com CITE-seq sendo multi-omic measurement inviável em qualquer estudo moderno em 2024", en: "NYGC is incompatible with CITE-seq with multi-omic measurement infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "CITE-seq (Marlon Stoeckius NYGC) usa oligonucleotide-tagged antibody TotalSeq permitindo simultâneo scRNA-seq + 100-300 surface proteins single-cell — gold-standard multi-omic measure transcriptome + proteome dissociated", en: "CITE-seq (Marlon Stoeckius NYGC) uses oligonucleotide-tagged TotalSeq antibody enabling simultaneous scRNA-seq + 100-300 surface proteins single-cell — gold-standard multi-omic measuring transcriptome + proteome dissociated"}
+        rationale: {pt: "Quando antibody tem oligo, então RNA + proteína viram um.", en: "When antibody has oligo, RNA + protein become one."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "10x Multiome ATAC + RNA:", en: "10x Multiome ATAC + RNA:"}
+        choices:
+          - {pt: "10x Multiome captura snATAC-seq cromatina aberta + snRNA-seq transcriptoma single-nucleus simultâneo permitindo regulome + transcriptome conjuntos — gold-standard linking enhancer-gene em mesmo nucleus single-cell multi-omic", en: "10x Multiome captures snATAC-seq open chromatin + snRNA-seq transcriptome single-nucleus simultaneously enabling joint regulome + transcriptome — gold-standard linking enhancer-gene in same nucleus single-cell multi-omic"}
+          - {pt: "Multiome é restrito a ATAC-only sem componente RNA sendo single-nucleus inviável em qualquer ensaio moderno em 2024", en: "Multiome is restricted to ATAC-only without RNA component with single-nucleus infeasible in any modern assay in 2024"}
+          - {pt: "snATAC-seq é teórica sem evidência sendo open chromatin inviável em qualquer plataforma moderna em 2024", en: "snATAC-seq is theoretical without evidence with open chromatin infeasible in any modern platform in 2024"}
+          - {pt: "Enhancer-gene linking é incompatível com Multiome sendo regulome + transcriptome inviável em qualquer estudo moderno em 2024", en: "Enhancer-gene linking is incompatible with Multiome with regulome + transcriptome infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "10x Multiome captura snATAC-seq cromatina aberta + snRNA-seq transcriptoma single-nucleus simultâneo permitindo regulome + transcriptome conjuntos — gold-standard linking enhancer-gene em mesmo nucleus single-cell multi-omic", en: "10x Multiome captures snATAC-seq open chromatin + snRNA-seq transcriptome single-nucleus simultaneously enabling joint regulome + transcriptome — gold-standard linking enhancer-gene in same nucleus single-cell multi-omic"}
+        rationale: {pt: "Quando ATAC + RNA juntos, então enhancer encontra gene.", en: "When ATAC + RNA together, enhancer meets gene."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SHARE-seq joint multi-omic:", en: "SHARE-seq joint multi-omic:"}
+        choices:
+          - {pt: "SHARE-seq (Jason Buenrostro/Sai Ma Broad) split-pool combinatorial barcoding scaling joint chromatin + RNA single-cell milhões de células low-cost — academic competidor a 10x Multiome para grandes atlas", en: "SHARE-seq (Jason Buenrostro/Sai Ma Broad) split-pool combinatorial barcoding scaling joint chromatin + RNA single-cell to millions of cells low-cost — academic 10x Multiome competitor for large atlases"}
+          - {pt: "SHARE-seq é restrito a 1000 células sem componente split-pool sendo combinatorial barcoding inviável em qualquer ensaio moderno em 2024", en: "SHARE-seq is restricted to 1000 cells without split-pool component with combinatorial barcoding infeasible in any modern assay in 2024"}
+          - {pt: "Jason Buenrostro é teórico sem evidência sendo joint chromatin + RNA inviável em qualquer plataforma moderna em 2024", en: "Jason Buenrostro is theoretical without evidence with joint chromatin + RNA infeasible in any modern platform in 2024"}
+          - {pt: "Broad é incompatível com SHARE-seq sendo million-cell scaling inviável em qualquer estudo atlas moderno em 2024", en: "Broad is incompatible with SHARE-seq with million-cell scaling infeasible in any modern atlas study in 2024"}
+        correctAnswer: {pt: "SHARE-seq (Jason Buenrostro/Sai Ma Broad) split-pool combinatorial barcoding scaling joint chromatin + RNA single-cell milhões de células low-cost — academic competidor a 10x Multiome para grandes atlas", en: "SHARE-seq (Jason Buenrostro/Sai Ma Broad) split-pool combinatorial barcoding scaling joint chromatin + RNA single-cell to millions of cells low-cost — academic 10x Multiome competitor for large atlases"}
+        rationale: {pt: "Quando split-pool escala, então atlas vira viável.", en: "When split-pool scales, atlas becomes feasible."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Human Cell Atlas (HCA):", en: "Human Cell Atlas (HCA):"}
+        choices:
+          - {pt: "Human Cell Atlas (Aviv Regev Broad/Sarah Teichmann Sanger 2016 founding) consortium internacional mapeando todas as células humanas single-cell + spatial em 30+ órgãos — open-data >100M células CZI Chan Zuckerberg backbone para precision medicine", en: "Human Cell Atlas (Aviv Regev Broad/Sarah Teichmann Sanger 2016 founding) international consortium mapping all human cells single-cell + spatial across 30+ organs — open-data >100M cells CZI Chan Zuckerberg backbone for precision medicine"}
+          - {pt: "HCA é restrito a 1 órgão sem componente single-cell sendo open-data inviável em qualquer consortium moderno em 2024", en: "HCA is restricted to 1 organ without single-cell component with open-data infeasible in any modern consortium in 2024"}
+          - {pt: "Aviv Regev é teórica sem evidência sendo HCA inviável em qualquer plataforma moderna em 2024", en: "Aviv Regev is theoretical without evidence with HCA infeasible in any modern platform in 2024"}
+          - {pt: "CZI é incompatível com HCA sendo 100M células inviável em qualquer aplicação clínica moderna em 2024", en: "CZI is incompatible with HCA with 100M cells infeasible in any modern clinical application in 2024"}
+        correctAnswer: {pt: "Human Cell Atlas (Aviv Regev Broad/Sarah Teichmann Sanger 2016 founding) consortium internacional mapeando todas as células humanas single-cell + spatial em 30+ órgãos — open-data >100M células CZI Chan Zuckerberg backbone para precision medicine", en: "Human Cell Atlas (Aviv Regev Broad/Sarah Teichmann Sanger 2016 founding) international consortium mapping all human cells single-cell + spatial across 30+ organs — open-data >100M cells CZI Chan Zuckerberg backbone for precision medicine"}
+        rationale: {pt: "Quando atlas é completo, então célula vira referência.", en: "When atlas is complete, cell becomes reference."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "HuBMAP NIH:", en: "HuBMAP NIH:"}
+        choices:
+          - {pt: "Human BioMolecular Atlas Program (HuBMAP NIH 2018) mapeia organ-by-organ multi-omic spatial 3D em donor humano saudável incluindo CODEX + Visium + IMC + GeoMx — complementar HCA NIH-funded de open infrastructure dataset portal", en: "Human BioMolecular Atlas Program (HuBMAP NIH 2018) maps organ-by-organ multi-omic spatial 3D in healthy human donor including CODEX + Visium + IMC + GeoMx — HCA-complementary NIH-funded open-infrastructure dataset portal"}
+          - {pt: "HuBMAP é restrito a 1 órgão sem componente multi-omic sendo donor humano saudável inviável em qualquer programa moderno em 2024", en: "HuBMAP is restricted to 1 organ without multi-omic component with healthy human donor infeasible in any modern program in 2024"}
+          - {pt: "NIH 2018 é teórica sem evidência sendo HuBMAP inviável em qualquer plataforma moderna em 2024", en: "NIH 2018 is theoretical without evidence with HuBMAP infeasible in any modern platform in 2024"}
+          - {pt: "Open infrastructure é incompatível com HuBMAP sendo dataset portal inviável em qualquer estudo moderno em 2024", en: "Open infrastructure is incompatible with HuBMAP with dataset portal infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Human BioMolecular Atlas Program (HuBMAP NIH 2018) mapeia organ-by-organ multi-omic spatial 3D em donor humano saudável incluindo CODEX + Visium + IMC + GeoMx — complementar HCA NIH-funded de open infrastructure dataset portal", en: "Human BioMolecular Atlas Program (HuBMAP NIH 2018) maps organ-by-organ multi-omic spatial 3D in healthy human donor including CODEX + Visium + IMC + GeoMx — HCA-complementary NIH-funded open-infrastructure dataset portal"}
+        rationale: {pt: "Quando NIH funda atlas, então órgão vira open-data.", en: "When NIH funds atlas, organ becomes open-data."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tabula Sapiens:", en: "Tabula Sapiens:"}
+        choices:
+          - {pt: "Tabula Sapiens (Stephen Quake Stanford CZ Biohub 2022) mapeia 500.000 células 24 tecidos 16 doadores humanos benchmark single-cell de referência cross-tissue — companion a Tabula Muris mouse atlas open-data CZI funded", en: "Tabula Sapiens (Stephen Quake Stanford CZ Biohub 2022) maps 500,000 cells across 24 tissues 16 human donors cross-tissue single-cell reference benchmark — companion to Tabula Muris mouse atlas open-data CZI funded"}
+          - {pt: "Tabula Sapiens é restrito a 1 tecido sem componente cross-tissue sendo single-cell reference inviável em qualquer atlas moderno em 2024", en: "Tabula Sapiens is restricted to 1 tissue without cross-tissue component with single-cell reference infeasible in any modern atlas in 2024"}
+          - {pt: "Stephen Quake é teórica sem evidência sendo CZ Biohub inviável em qualquer plataforma moderna em 2024", en: "Stephen Quake is theoretical without evidence with CZ Biohub infeasible in any modern platform in 2024"}
+          - {pt: "Tabula Muris é incompatível com Tabula Sapiens sendo cross-tissue benchmark inviável em qualquer estudo moderno em 2024", en: "Tabula Muris is incompatible with Tabula Sapiens with cross-tissue benchmark infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Tabula Sapiens (Stephen Quake Stanford CZ Biohub 2022) mapeia 500.000 células 24 tecidos 16 doadores humanos benchmark single-cell de referência cross-tissue — companion a Tabula Muris mouse atlas open-data CZI funded", en: "Tabula Sapiens (Stephen Quake Stanford CZ Biohub 2022) maps 500,000 cells across 24 tissues 16 human donors cross-tissue single-cell reference benchmark — companion to Tabula Muris mouse atlas open-data CZI funded"}
+        rationale: {pt: "Quando 24 tecidos juntos, então cross-tissue vira referência.", en: "When 24 tissues join, cross-tissue becomes reference."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "scvi-tools probabilistic models:", en: "scvi-tools probabilistic models:"}
+        choices:
+          - {pt: "scvi-tools (Yosef/Lopez UC Berkeley) é deep generative variational autoencoder framework Python open-source para single-cell integration batch correction differential expression imputação multi-modal — gold-standard ML toolkit single-cell genomics", en: "scvi-tools (Yosef/Lopez UC Berkeley) is deep generative variational autoencoder Python open-source framework for single-cell integration batch correction differential expression imputation multi-modal — gold-standard single-cell genomics ML toolkit"}
+          - {pt: "scvi-tools é restrito a R sem componente Python sendo VAE inviável em qualquer toolkit moderno em 2024", en: "scvi-tools is restricted to R without Python component with VAE infeasible in any modern toolkit in 2024"}
+          - {pt: "Variational autoencoder é teórica sem evidência sendo batch correction inviável em qualquer plataforma moderna em 2024", en: "Variational autoencoder is theoretical without evidence with batch correction infeasible in any modern platform in 2024"}
+          - {pt: "UC Berkeley é incompatível com scvi-tools sendo open-source toolkit inviável em qualquer aplicação clínica moderna em 2024", en: "UC Berkeley is incompatible with scvi-tools with open-source toolkit infeasible in any modern clinical application in 2024"}
+        correctAnswer: {pt: "scvi-tools (Yosef/Lopez UC Berkeley) é deep generative variational autoencoder framework Python open-source para single-cell integration batch correction differential expression imputação multi-modal — gold-standard ML toolkit single-cell genomics", en: "scvi-tools (Yosef/Lopez UC Berkeley) is deep generative variational autoencoder Python open-source framework for single-cell integration batch correction differential expression imputation multi-modal — gold-standard single-cell genomics ML toolkit"}
+        rationale: {pt: "Quando VAE integra batch, então célula encontra célula.", en: "When VAE integrates batch, cell meets cell."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Squidpy + Giotto spatial analysis:", en: "Squidpy + Giotto spatial analysis:"}
+        choices:
+          - {pt: "Squidpy (Theis lab Helmholtz Munich) e Giotto (Yuan Lab Boston) são Python/R toolkits open-source para spatial analysis cell-cell communication neighborhood enrichment Moran's I tissue domain detection — academic spatial bioinformatics standard pipelines", en: "Squidpy (Theis lab Helmholtz Munich) and Giotto (Yuan Lab Boston) are Python/R open-source toolkits for spatial analysis cell-cell communication neighborhood enrichment Moran's I tissue domain detection — academic spatial bioinformatics standard pipelines"}
+          - {pt: "Squidpy é restrita a Java sem componente Python sendo Theis lab inviável em qualquer pipeline moderno em 2024", en: "Squidpy is restricted to Java without Python component with Theis lab infeasible in any modern pipeline in 2024"}
+          - {pt: "Cell-cell communication é teórica sem evidência sendo Moran's I inviável em qualquer plataforma moderna em 2024", en: "Cell-cell communication is theoretical without evidence with Moran's I infeasible in any modern platform in 2024"}
+          - {pt: "Helmholtz Munich é incompatível com Squidpy sendo neighborhood enrichment inviável em qualquer estudo moderno em 2024", en: "Helmholtz Munich is incompatible with Squidpy with neighborhood enrichment infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Squidpy (Theis lab Helmholtz Munich) e Giotto (Yuan Lab Boston) são Python/R toolkits open-source para spatial analysis cell-cell communication neighborhood enrichment Moran's I tissue domain detection — academic spatial bioinformatics standard pipelines", en: "Squidpy (Theis lab Helmholtz Munich) and Giotto (Yuan Lab Boston) are Python/R open-source toolkits for spatial analysis cell-cell communication neighborhood enrichment Moran's I tissue domain detection — academic spatial bioinformatics standard pipelines"}
+        rationale: {pt: "Quando toolkit lê vizinhança, então tecido vira grafo.", en: "When toolkit reads neighborhood, tissue becomes graph."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tertiary lymphoid structure (TLS):", en: "Tertiary lymphoid structure (TLS):"}
+        choices:
+          - {pt: "Tertiary lymphoid structures (TLS) são agregados ectópicos B + T cells + DC mimicking lymph node detectados por spatial CODEX/Visium em tumores — TLS+ associadas a melhor resposta a ICI biomarcador preditivo Sautès-Fridman 2020 Nature", en: "Tertiary lymphoid structures (TLS) are ectopic B + T cell + DC aggregates mimicking lymph nodes detected by spatial CODEX/Visium in tumors — TLS+ associated with better ICI response predictive biomarker Sautès-Fridman 2020 Nature"}
+          - {pt: "TLS é restrita a lymph node sem componente ectópica sendo CODEX/Visium inviável em qualquer ensaio moderno em 2024", en: "TLS is restricted to lymph node without ectopic component with CODEX/Visium infeasible in any modern assay in 2024"}
+          - {pt: "Sautès-Fridman é teórica sem evidência sendo TLS biomarker inviável em qualquer aplicação clínica moderna em 2024", en: "Sautès-Fridman is theoretical without evidence with TLS biomarker infeasible in any modern clinical application in 2024"}
+          - {pt: "B + T + DC é incompatível com TLS sendo ICI response inviável em qualquer estudo moderno em 2024", en: "B + T + DC is incompatible with TLS with ICI response infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "Tertiary lymphoid structures (TLS) são agregados ectópicos B + T cells + DC mimicking lymph node detectados por spatial CODEX/Visium em tumores — TLS+ associadas a melhor resposta a ICI biomarcador preditivo Sautès-Fridman 2020 Nature", en: "Tertiary lymphoid structures (TLS) are ectopic B + T cell + DC aggregates mimicking lymph nodes detected by spatial CODEX/Visium in tumors — TLS+ associated with better ICI response predictive biomarker Sautès-Fridman 2020 Nature"}
+        rationale: {pt: "Quando spatial vê TLS, então ICI resposta é prevista.", en: "When spatial sees TLS, ICI response is predicted."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell-cell communication CellChat/CellPhoneDB:", en: "Cell-cell communication CellChat/CellPhoneDB:"}
+        choices:
+          - {pt: "CellChat (Suoqin Jin/Qing Nie UC Irvine) e CellPhoneDB (Sarah Teichmann Sanger) inferem ligand-receptor signaling cell-cell de scRNA-seq + spatial usando curated ligand-receptor database — gold-standard intercellular communication mapping", en: "CellChat (Suoqin Jin/Qing Nie UC Irvine) and CellPhoneDB (Sarah Teichmann Sanger) infer ligand-receptor cell-cell signaling from scRNA-seq + spatial using curated ligand-receptor database — gold-standard intercellular communication mapping"}
+          - {pt: "CellChat é restrita a 1 ligand sem componente receptor sendo cell-cell signaling inviável em qualquer ensaio moderno em 2024", en: "CellChat is restricted to 1 ligand without receptor component with cell-cell signaling infeasible in any modern assay in 2024"}
+          - {pt: "Suoqin Jin é teórica sem evidência sendo curated database inviável em qualquer plataforma moderna em 2024", en: "Suoqin Jin is theoretical without evidence with curated database infeasible in any modern platform in 2024"}
+          - {pt: "CellPhoneDB é incompatível com Sanger sendo intercellular communication inviável em qualquer estudo moderno em 2024", en: "CellPhoneDB is incompatible with Sanger with intercellular communication infeasible in any modern study in 2024"}
+        correctAnswer: {pt: "CellChat (Suoqin Jin/Qing Nie UC Irvine) e CellPhoneDB (Sarah Teichmann Sanger) inferem ligand-receptor signaling cell-cell de scRNA-seq + spatial usando curated ligand-receptor database — gold-standard intercellular communication mapping", en: "CellChat (Suoqin Jin/Qing Nie UC Irvine) and CellPhoneDB (Sarah Teichmann Sanger) infer ligand-receptor cell-cell signaling from scRNA-seq + spatial using curated ligand-receptor database — gold-standard intercellular communication mapping"}
+        rationale: {pt: "Quando ligand encontra receptor, então célula fala com célula.", en: "When ligand meets receptor, cell talks to cell."}
+        objectives: [biology.spatial_multiomics]
+        difficulty: 5
+target: 20
