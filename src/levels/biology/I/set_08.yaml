@@ -1,0 +1,244 @@
+title:
+  pt: "🧈 Biologia de lipídios"
+  en: "🧈 Lipid biology"
+level: 'I'
+subject: biology
+objectives: [biology.lipid_biology]
+difficulty: 5
+authorNotes: "Lipid droplets, ferroptose detalhada, lipidomics, MASH, ApoE, ferroptose-induced cancer therapy, FFAs como sinalizadores."
+example:
+  pt: "Ex.: ácidos graxos → LDs → mobilização → β-oxidação ou ferroptose dependendo de GPX4 e SLC7A11."
+  en: "Ex.: fatty acids → LDs → mobilization → β-oxidation or ferroptosis depending on GPX4 and SLC7A11."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Lipídios além da membrana", en: "Lipids beyond the membrane"}
+    description: {pt: "Estoque, sinalização e morte.", en: "Storage, signaling and death."}
+    exercises:
+      - type: choice
+        question: {pt: "Lipid droplets:", en: "Lipid droplets:"}
+        choices:
+          - {pt: "Organelas dinâmicas com TAG no núcleo, monocamada PL com perilipinas — armazenam energia e lipídios reativos", en: "Dynamic organelles with TAG core, PL monolayer with perilipins — store energy and reactive lipids"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Organelas dinâmicas com TAG no núcleo, monocamada PL com perilipinas — armazenam energia e lipídios reativos", en: "Dynamic organelles with TAG core, PL monolayer with perilipins — store energy and reactive lipids"}
+        rationale: {pt: "Quando LDs guardam, então estresse lipídico é absorvido.", en: "When LDs store, lipid stress is buffered."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipofagia:", en: "Lipophagy:"}
+        choices:
+          - {pt: "Autofagia seletiva degrada LDs liberando ácidos graxos para β-oxidação durante jejum e estresse energético", en: "Selective autophagy degrades LDs releasing fatty acids for β-oxidation during fasting and energy stress"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Autofagia seletiva degrada LDs liberando ácidos graxos para β-oxidação durante jejum e estresse energético", en: "Selective autophagy degrades LDs releasing fatty acids for β-oxidation during fasting and energy stress"}
+        rationale: {pt: "Quando lipofagia atua, então gordura vira combustível.", en: "When lipophagy acts, fat becomes fuel."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ferroptose:", en: "Ferroptosis:"}
+        choices:
+          - {pt: "Morte por peroxidação de PUFAs em PE com ferro catalisador — distinta de apoptose, necroptose e piroptose", en: "Death via PUFA peroxidation in PE with iron catalyst — distinct from apoptosis, necroptosis and pyroptosis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Morte por peroxidação de PUFAs em PE com ferro catalisador — distinta de apoptose, necroptose e piroptose", en: "Death via PUFA peroxidation in PE with iron catalyst — distinct from apoptosis, necroptosis and pyroptosis"}
+        rationale: {pt: "Quando peroxidação acumula, então membrana colapsa.", en: "When peroxidation accumulates, membrane collapses."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "GPX4 e selênio:", en: "GPX4 and selenium:"}
+        choices:
+          - {pt: "Glutationa peroxidase 4 selenodependente reduz hidroperóxidos lipídicos protegendo membranas — alvo central anti-ferroptose", en: "Selenium-dependent glutathione peroxidase 4 reduces lipid hydroperoxides protecting membranes — central anti-ferroptosis target"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Glutationa peroxidase 4 selenodependente reduz hidroperóxidos lipídicos protegendo membranas — alvo central anti-ferroptose", en: "Selenium-dependent glutathione peroxidase 4 reduces lipid hydroperoxides protecting membranes — central anti-ferroptosis target"}
+        rationale: {pt: "Quando GPX4 atua, então peróxidos não acumulam.", en: "When GPX4 acts, peroxides do not accumulate."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SLC7A11 (xCT):", en: "SLC7A11 (xCT):"}
+        choices:
+          - {pt: "Transportador cistina/glutamato fornece cisteína para síntese de GSH — sua perda induz ferroptose em tumores", en: "Cystine/glutamate transporter supplies cysteine for GSH synthesis — its loss induces ferroptosis in tumors"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Transportador cistina/glutamato fornece cisteína para síntese de GSH — sua perda induz ferroptose em tumores", en: "Cystine/glutamate transporter supplies cysteine for GSH synthesis — its loss induces ferroptosis in tumors"}
+        rationale: {pt: "Quando SLC7A11 cai, então GSH escasseia.", en: "When SLC7A11 falls, GSH runs low."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ACSL4:", en: "ACSL4:"}
+        choices:
+          - {pt: "Liga PUFAs (AA) à CoA esterificando-os em PE — alta expressão sensibiliza ferroptose", en: "Conjugates PUFAs (AA) to CoA esterifying them into PE — high expression sensitizes to ferroptosis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Liga PUFAs (AA) à CoA esterificando-os em PE — alta expressão sensibiliza ferroptose", en: "Conjugates PUFAs (AA) to CoA esterifying them into PE — high expression sensitizes to ferroptosis"}
+        rationale: {pt: "Quando ACSL4 esterifica, então PUFAs ficam vulneráveis.", en: "When ACSL4 esterifies, PUFAs become vulnerable."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipidomics shotgun:", en: "Shotgun lipidomics:"}
+        choices:
+          - {pt: "Espectrometria de massa direta perfila milhares de espécies lipídicas em sangue/tecido revelando assinaturas de doença", en: "Direct mass spectrometry profiles thousands of lipid species in blood/tissue revealing disease signatures"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Espectrometria de massa direta perfila milhares de espécies lipídicas em sangue/tecido revelando assinaturas de doença", en: "Direct mass spectrometry profiles thousands of lipid species in blood/tissue revealing disease signatures"}
+        rationale: {pt: "Quando lipidoma é lido, então biologia metabólica fica visível.", en: "When lipidome is read, metabolic biology becomes visible."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ceramidas e sinalização:", en: "Ceramides and signaling:"}
+        choices:
+          - {pt: "Sphingolipid bioativo regulando apoptose, resistência a insulina e neurodegeneração — biomarcador cardiometabólico", en: "Bioactive sphingolipid regulating apoptosis, insulin resistance and neurodegeneration — cardiometabolic biomarker"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sphingolipid bioativo regulando apoptose, resistência a insulina e neurodegeneração — biomarcador cardiometabólico", en: "Bioactive sphingolipid regulating apoptosis, insulin resistance and neurodegeneration — cardiometabolic biomarker"}
+        rationale: {pt: "Quando ceramidas sobem, então riscos metabólicos sobem juntos.", en: "When ceramides rise, metabolic risks rise together."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cholesterol e Lp(a):", en: "Cholesterol and Lp(a):"}
+        choices:
+          - {pt: "Lp(a) é fator genético independente de risco aterosclerótico — pelacarsen e olpasiran reduzem em ensaios clínicos", en: "Lp(a) is independent genetic atherosclerosis risk factor — pelacarsen and olpasiran lower it in clinical trials"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Lp(a) é fator genético independente de risco aterosclerótico — pelacarsen e olpasiran reduzem em ensaios clínicos", en: "Lp(a) is independent genetic atherosclerosis risk factor — pelacarsen and olpasiran lower it in clinical trials"}
+        rationale: {pt: "Quando Lp(a) baixa, então risco residual cai.", en: "When Lp(a) falls, residual risk drops."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Brown adipose tissue:", en: "Brown adipose tissue:"}
+        choices:
+          - {pt: "UCP1 desacopla ETC gerando calor — ativação BAT ou bege em humanos eleva gasto energético em estudos clínicos", en: "UCP1 uncouples ETC generating heat — BAT or beige activation in humans raises energy expenditure in clinical studies"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "UCP1 desacopla ETC gerando calor — ativação BAT ou bege em humanos eleva gasto energético em estudos clínicos", en: "UCP1 uncouples ETC generating heat — BAT or beige activation in humans raises energy expenditure in clinical studies"}
+        rationale: {pt: "Quando BAT queima, então metabolismo absorve excesso.", en: "When BAT burns, metabolism absorbs excess."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações clínicas e terapias", en: "Clinical applications and therapies"}
+    description: {pt: "Lipídios em câncer, fígado e neurodegeneração.", en: "Lipids in cancer, liver and neurodegeneration."}
+    exercises:
+      - type: choice
+        question: {pt: "MASH (NASH):", en: "MASH (NASH):"}
+        choices:
+          - {pt: "Esteatohepatite metabólica acumula DAGs e ceramidas hepáticas — resmetirom (THR-β) primeiro fármaco aprovado em 2024", en: "Metabolic steatohepatitis accumulates hepatic DAGs and ceramides — resmetirom (THR-β) first approved drug in 2024"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Esteatohepatite metabólica acumula DAGs e ceramidas hepáticas — resmetirom (THR-β) primeiro fármaco aprovado em 2024", en: "Metabolic steatohepatitis accumulates hepatic DAGs and ceramides — resmetirom (THR-β) first approved drug in 2024"}
+        rationale: {pt: "Quando lipídios tóxicos caem, então fígado para de inflamar.", en: "When toxic lipids fall, liver stops inflaming."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ApoE4 em Alzheimer:", en: "ApoE4 in Alzheimer:"}
+        choices:
+          - {pt: "ApoE4 altera metabolismo lipídico cerebral aumentando depósito de Aβ e neuroinflamação — alelo de maior risco genético", en: "ApoE4 alters brain lipid metabolism raising Aβ deposition and neuroinflammation — highest-risk genetic allele"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ApoE4 altera metabolismo lipídico cerebral aumentando depósito de Aβ e neuroinflamação — alelo de maior risco genético", en: "ApoE4 alters brain lipid metabolism raising Aβ deposition and neuroinflammation — highest-risk genetic allele"}
+        rationale: {pt: "Quando ApoE4 carrega, então cérebro tem lipidoma de risco.", en: "When ApoE4 carries, brain has risk lipidome."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ferroptose-targeted cancer:", en: "Ferroptosis-targeted cancer:"}
+        choices:
+          - {pt: "Cânceres mesenquimais e resistentes à terapia mostram dependência de GPX4/SLC7A11 — IKE e RSL3 induzem ferroptose seletiva", en: "Mesenchymal and therapy-resistant cancers depend on GPX4/SLC7A11 — IKE and RSL3 induce selective ferroptosis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cânceres mesenquimais e resistentes à terapia mostram dependência de GPX4/SLC7A11 — IKE e RSL3 induzem ferroptose seletiva", en: "Mesenchymal and therapy-resistant cancers depend on GPX4/SLC7A11 — IKE and RSL3 induce selective ferroptosis"}
+        rationale: {pt: "Quando dependência é única, então morte tumoral fica seletiva.", en: "When dependence is unique, tumor death becomes selective."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Liraglutide e ômega-3:", en: "Liraglutide and omega-3:"}
+        choices:
+          - {pt: "EPA/DHA modulam composição PE e PC reduzindo TG e potencializando efeitos lipídicos benéficos do GLP-1", en: "EPA/DHA modulate PE and PC composition lowering TG and enhancing beneficial lipid effects of GLP-1"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "EPA/DHA modulam composição PE e PC reduzindo TG e potencializando efeitos lipídicos benéficos do GLP-1", en: "EPA/DHA modulate PE and PC composition lowering TG and enhancing beneficial lipid effects of GLP-1"}
+        rationale: {pt: "Quando ω-3 modula, então perfil lipídico melhora.", en: "When ω-3 modulates, lipid profile improves."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bempedoic acid:", en: "Bempedoic acid:"}
+        choices:
+          - {pt: "Inibidor de ATP-citrato liase upstream de HMG-CoA reduz LDL com vantagem de não atingir músculo (sem mialgia)", en: "ATP-citrate lyase inhibitor upstream of HMG-CoA cuts LDL with no muscle uptake (no myalgia)"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Inibidor de ATP-citrato liase upstream de HMG-CoA reduz LDL com vantagem de não atingir músculo (sem mialgia)", en: "ATP-citrate lyase inhibitor upstream of HMG-CoA cuts LDL with no muscle uptake (no myalgia)"}
+        rationale: {pt: "Quando alvo é hepático, então mialgia some.", en: "When target is hepatic, myalgia vanishes."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Inclisiran (PCSK9 siRNA):", en: "Inclisiran (PCSK9 siRNA):"}
+        choices:
+          - {pt: "GalNAc-conjugado siRNA silencia PCSK9 hepático com dose semestral mantendo LDL reduzido em adesão simples", en: "GalNAc-conjugated siRNA silences hepatic PCSK9 with biannual dosing keeping LDL low with simple adherence"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "GalNAc-conjugado siRNA silencia PCSK9 hepático com dose semestral mantendo LDL reduzido em adesão simples", en: "GalNAc-conjugated siRNA silences hepatic PCSK9 with biannual dosing keeping LDL low with simple adherence"}
+        rationale: {pt: "Quando dose é rara, então adesão sobe.", en: "When dosing is rare, adherence rises."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lipid signaling em cancer:", en: "Lipid signaling in cancer:"}
+        choices:
+          - {pt: "FASN, SCD1 e SREBP-1 sustentam membranas e sinalizadores tumorais — alvos para fenótipos lipogênicos", en: "FASN, SCD1 and SREBP-1 sustain tumor membranes and signaling — targets for lipogenic phenotypes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "FASN, SCD1 e SREBP-1 sustentam membranas e sinalizadores tumorais — alvos para fenótipos lipogênicos", en: "FASN, SCD1 and SREBP-1 sustain tumor membranes and signaling — targets for lipogenic phenotypes"}
+        rationale: {pt: "Quando lipogênese é alvo, então tumor perde matéria-prima.", en: "When lipogenesis is target, tumor loses raw material."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Specialized pro-resolving mediators (SPMs):", en: "Specialized pro-resolving mediators (SPMs):"}
+        choices:
+          - {pt: "Resolvinas e protetinas derivadas de EPA/DHA terminam ativamente inflamação e estimulam reparo tecidual", en: "EPA/DHA-derived resolvins and protectins actively end inflammation and stimulate tissue repair"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Resolvinas e protetinas derivadas de EPA/DHA terminam ativamente inflamação e estimulam reparo tecidual", en: "EPA/DHA-derived resolvins and protectins actively end inflammation and stimulate tissue repair"}
+        rationale: {pt: "Quando SPMs agem, então resolução é ativa.", en: "When SPMs act, resolution is active."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Acid sphingomyelinase (Niemann-Pick):", en: "Acid sphingomyelinase (Niemann-Pick):"}
+        choices:
+          - {pt: "Deficiência de ASM acumula esfingomielina lisossomal causando NPB — terapia enzimática (olipudase) recém-aprovada", en: "ASM deficiency accumulates lysosomal sphingomyelin causing NPB — enzyme therapy (olipudase) recently approved"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Deficiência de ASM acumula esfingomielina lisossomal causando NPB — terapia enzimática (olipudase) recém-aprovada", en: "ASM deficiency accumulates lysosomal sphingomyelin causing NPB — enzyme therapy (olipudase) recently approved"}
+        rationale: {pt: "Quando enzima volta, então acúmulo cessa.", en: "When enzyme returns, accumulation stops."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese da biologia lipídica:", en: "Lipid biology synthesis:"}
+        choices:
+          - {pt: "Lipídios estocam, sinalizam e matam — entender ferroptose, lipidomics e dyslipidemias amplia medicina cardiometabólica e oncológica", en: "Lipids store, signal and kill — understanding ferroptosis, lipidomics and dyslipidemias broadens cardiometabolic and oncologic medicine"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Lipídios estocam, sinalizam e matam — entender ferroptose, lipidomics e dyslipidemias amplia medicina cardiometabólica e oncológica", en: "Lipids store, signal and kill — understanding ferroptosis, lipidomics and dyslipidemias broadens cardiometabolic and oncologic medicine"}
+        rationale: {pt: "Quando lipídios são vistos sistemicamente, então alvos clínicos multiplicam.", en: "When lipids are viewed systemically, clinical targets multiply."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+target: 20
