@@ -1,0 +1,222 @@
+title:
+  pt: "🧫 Sistemas cell-free e biologia in vitro"
+  en: "🧫 Cell-free systems and in vitro biology"
+level: 'M'
+subject: biology
+objectives: [biology.cell_free_systems]
+difficulty: 5
+authorNotes: "TX-TL E. coli extract, PURE Shimizu, Sutro Biopharma, Cellectricon, paper-based diagnostic, freeze-dried cell-free, Collins toehold switch, Sherlock CRISPR, abiotic protein synthesis, mRNA-LNP cell-free."
+example:
+  pt: "Ex.: outbreak Zika África → distribuir paper cell-free freeze-dried toehold switch → no cold-chain → 1h diagnostic via UV light em campo."
+  en: "Ex.: Zika outbreak Africa → distribute paper cell-free freeze-dried toehold switch → no cold chain → 1h field diagnostic via UV light."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas cell-free", en: "Cell-free platforms"}
+    description: {pt: "Como produzir biologia sem células.", en: "How to produce biology without cells."}
+    exercises:
+      - type: choice
+        question: {pt: "TX-TL E. coli:", en: "TX-TL E. coli:"}
+        choices:
+          - {pt: "Cell extract E. coli S30 + ribossomos + RNAP + tRNAs + amino acid + NTPs entregam transcrição+tradução in vitro de DNA template — open-source platform Noireaux/Murray UCSF", en: "S30 E. coli cell extract + ribosomes + RNAP + tRNAs + amino acids + NTPs deliver in vitro transcription+translation from DNA template — Noireaux/Murray UCSF open-source platform"}
+          - {pt: "TX-TL é restrito a célula viva sem componente extract sendo Noireaux/Murray inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "TX-TL is restricted to live cell without extract component with Noireaux/Murray infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "S30 extract é teórico sem evidência sendo TX-TL inviável em qualquer aplicação humana clínica moderna em 2024", en: "S30 extract is theoretical without evidence with TX-TL infeasible in any modern clinical human application in 2024"}
+          - {pt: "Open-source é incompatível com cell-free sendo UCSF inviável em qualquer aplicação humana clínica moderna em 2024", en: "Open-source is incompatible with cell-free with UCSF infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Cell extract E. coli S30 + ribossomos + RNAP + tRNAs + amino acid + NTPs entregam transcrição+tradução in vitro de DNA template — open-source platform Noireaux/Murray UCSF", en: "S30 E. coli cell extract + ribosomes + RNAP + tRNAs + amino acids + NTPs deliver in vitro transcription+translation from DNA template — Noireaux/Murray UCSF open-source platform"}
+        rationale: {pt: "Quando célula sai do circuito, então biologia entra in vitro.", en: "When cell leaves the loop, biology enters in vitro."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PURE Shimizu:", en: "Shimizu PURE:"}
+        choices:
+          - {pt: "PURE (Protein synthesis Using Recombinant Elements) Shimizu 2001 reconstitui translation com 36 purified proteins + ribosomes — minimum cell-free system fully defined, GMP-compliant", en: "Shimizu 2001 PURE (Protein synthesis Using Recombinant Elements) reconstitutes translation with 36 purified proteins + ribosomes — minimum cell-free system, fully defined, GMP-compliant"}
+          - {pt: "PURE é restrito a cell extract sem componente reconstituted sendo Shimizu 2001 inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "PURE is restricted to cell extract without reconstituted component with Shimizu 2001 infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "36 purified proteins é teórico sem evidência sendo PURE inviável em qualquer aplicação humana clínica moderna em 2024", en: "36 purified proteins is theoretical without evidence with PURE infeasible in any modern clinical human application in 2024"}
+          - {pt: "GMP-compliant é incompatível com cell-free sendo Shimizu 2001 inviável em qualquer aplicação humana clínica moderna em 2024", en: "GMP-compliant is incompatible with cell-free with Shimizu 2001 infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "PURE (Protein synthesis Using Recombinant Elements) Shimizu 2001 reconstitui translation com 36 purified proteins + ribosomes — minimum cell-free system fully defined, GMP-compliant", en: "Shimizu 2001 PURE (Protein synthesis Using Recombinant Elements) reconstitutes translation with 36 purified proteins + ribosomes — minimum cell-free system, fully defined, GMP-compliant"}
+        rationale: {pt: "Quando 36 proteínas montam tradução, então PURE controla cada peça.", en: "When 36 proteins assemble translation, PURE controls every piece."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sutro biopharm:", en: "Sutro biopharm:"}
+        choices:
+          - {pt: "Sutro Biopharma platform XpressCF cell-free expression em E. coli extract + non-natural amino acid incorporation enables ADC manufacturing site-specific conjugation Pfizer/Merck partnerships 2024", en: "Sutro Biopharma XpressCF cell-free expression platform in E. coli extract + non-natural amino acid incorporation enables site-specific ADC conjugation manufacturing — Pfizer/Merck partnerships 2024"}
+          - {pt: "Sutro é restrito a CHO sem componente cell-free sendo XpressCF inviável em qualquer aplicação biopharm humana clínica moderna em 2024", en: "Sutro is restricted to CHO without cell-free component with XpressCF infeasible in any modern clinical human biopharm application in 2024"}
+          - {pt: "Non-natural amino acid é teórico sem evidência sendo Sutro inviável em qualquer aplicação biopharm humana clínica moderna em 2024", en: "Non-natural amino acid is theoretical without evidence with Sutro infeasible in any modern clinical human biopharm application in 2024"}
+          - {pt: "Site-specific ADC é incompatível com cell-free sendo Pfizer/Merck inviável em qualquer aplicação humana clínica moderna em 2024", en: "Site-specific ADC is incompatible with cell-free with Pfizer/Merck infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Sutro Biopharma platform XpressCF cell-free expression em E. coli extract + non-natural amino acid incorporation enables ADC manufacturing site-specific conjugation Pfizer/Merck partnerships 2024", en: "Sutro Biopharma XpressCF cell-free expression platform in E. coli extract + non-natural amino acid incorporation enables site-specific ADC conjugation manufacturing — Pfizer/Merck partnerships 2024"}
+        rationale: {pt: "Quando cell-free incorpora ncAA, então ADC fica site-specific.", en: "When cell-free incorporates ncAA, ADC becomes site-specific."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Toehold switch:", en: "Toehold switch:"}
+        choices:
+          - {pt: "Yin/Collins 2014 RNA toehold switch on/off detecta target RNA sequence-specific via designed secondary structure unfolding triggers translation reporter — Sherlock CRISPR-precursor", en: "Yin/Collins 2014 RNA toehold switch on/off detects target RNA sequence-specific via designed secondary-structure unfolding triggering reporter translation — Sherlock CRISPR precursor"}
+          - {pt: "Toehold switch é restrito a DNA sem componente RNA sendo Yin/Collins 2014 inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "Toehold switch is restricted to DNA without RNA component with Yin/Collins 2014 infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "Secondary structure é teórico sem evidência sendo toehold switch inviável em qualquer aplicação humana clínica moderna em 2024", en: "Secondary structure is theoretical without evidence with toehold switch infeasible in any modern clinical human application in 2024"}
+          - {pt: "Sherlock CRISPR-precursor é incompatível com Yin/Collins sendo 2014 inviável em qualquer aplicação humana clínica moderna em 2024", en: "Sherlock CRISPR precursor is incompatible with Yin/Collins with 2014 infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Yin/Collins 2014 RNA toehold switch on/off detecta target RNA sequence-specific via designed secondary structure unfolding triggers translation reporter — Sherlock CRISPR-precursor", en: "Yin/Collins 2014 RNA toehold switch on/off detects target RNA sequence-specific via designed secondary-structure unfolding triggering reporter translation — Sherlock CRISPR precursor"}
+        rationale: {pt: "Quando RNA dobra e desdobra, então sensor sequence-specific liga.", en: "When RNA folds and unfolds, sequence-specific sensor turns on."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Sherlock CRISPR-Dx:", en: "Sherlock CRISPR-Dx:"}
+        choices:
+          - {pt: "Cas13 detection RNA target via collateral cleavage reporter (Gootenberg/Zhang 2017) — Sherlock Bioscience field-deployable freeze-dried test SARS-CoV-2, Zika, dengue lateral flow paper format", en: "Cas13 RNA-target detection via collateral cleavage reporter (Gootenberg/Zhang 2017) — Sherlock Bioscience field-deployable freeze-dried test SARS-CoV-2, Zika, dengue in lateral-flow paper format"}
+          - {pt: "Sherlock é restrito a Cas9 sem componente Cas13 sendo Gootenberg/Zhang 2017 inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "Sherlock is restricted to Cas9 without Cas13 component with Gootenberg/Zhang 2017 infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "Collateral cleavage é teórico sem evidência sendo Sherlock Bioscience inviável em qualquer aplicação humana clínica moderna em 2024", en: "Collateral cleavage is theoretical without evidence with Sherlock Bioscience infeasible in any modern clinical human application in 2024"}
+          - {pt: "Lateral flow paper é incompatível com CRISPR sendo Sherlock inviável em qualquer aplicação humana clínica moderna em 2024", en: "Lateral-flow paper is incompatible with CRISPR with Sherlock infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Cas13 detection RNA target via collateral cleavage reporter (Gootenberg/Zhang 2017) — Sherlock Bioscience field-deployable freeze-dried test SARS-CoV-2, Zika, dengue lateral flow paper format", en: "Cas13 RNA-target detection via collateral cleavage reporter (Gootenberg/Zhang 2017) — Sherlock Bioscience field-deployable freeze-dried test SARS-CoV-2, Zika, dengue in lateral-flow paper format"}
+        rationale: {pt: "Quando Cas13 corta colateral, então diagnóstico vira papel barato.", en: "When Cas13 cuts collaterally, diagnostic turns into cheap paper."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DETECTR Mammoth:", en: "Mammoth DETECTR:"}
+        choices:
+          - {pt: "Cas12a-based DETECTR Mammoth Biosciences Doudna-spinoff competidor de Sherlock — DNA detection lateral flow paper SARS-CoV-2, HPV, antibiotic resistance gene field-deployable diagnostic", en: "Cas12a-based DETECTR Mammoth Biosciences Doudna spinoff competes with Sherlock — DNA detection lateral-flow paper for SARS-CoV-2, HPV, antibiotic-resistance genes in field-deployable diagnostic"}
+          - {pt: "DETECTR é restrito a Cas9 sem componente Cas12a sendo Mammoth Biosciences inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "DETECTR is restricted to Cas9 without Cas12a component with Mammoth Biosciences infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "Doudna-spinoff é teórico sem evidência sendo DETECTR inviável em qualquer aplicação humana clínica moderna em 2024", en: "Doudna spinoff is theoretical without evidence with DETECTR infeasible in any modern clinical human application in 2024"}
+          - {pt: "HPV é incompatível com DETECTR sendo antibiotic resistance inviável em qualquer aplicação humana clínica moderna em 2024", en: "HPV is incompatible with DETECTR with antibiotic resistance infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Cas12a-based DETECTR Mammoth Biosciences Doudna-spinoff competidor de Sherlock — DNA detection lateral flow paper SARS-CoV-2, HPV, antibiotic resistance gene field-deployable diagnostic", en: "Cas12a-based DETECTR Mammoth Biosciences Doudna spinoff competes with Sherlock — DNA detection lateral-flow paper for SARS-CoV-2, HPV, antibiotic-resistance genes in field-deployable diagnostic"}
+        rationale: {pt: "Quando Cas12a vê DNA, então diagnostic field deploya.", en: "When Cas12a sees DNA, diagnostic field-deploys."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Freeze-dried cell-free:", en: "Freeze-dried cell-free:"}
+        choices:
+          - {pt: "Pardee/Collins/Yin 2016 freeze-dried cell-free system reconstitui via H2O após meses storage room-temp — paper-based Zika sensor lateral flow $1 USD low-resource setting deployment", en: "Pardee/Collins/Yin 2016 freeze-dried cell-free system reconstitutes via H2O after months at room temp — paper-based $1 Zika sensor lateral-flow low-resource setting deployment"}
+          - {pt: "Freeze-dried é restrito a refrigeration sem componente room-temp sendo Pardee/Collins/Yin 2016 inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "Freeze-dried is restricted to refrigeration without room-temp component with Pardee/Collins/Yin 2016 infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "$1 USD é teórico sem evidência sendo low-resource setting inviável em qualquer aplicação humana clínica moderna em 2024", en: "$1 USD is theoretical without evidence with low-resource setting infeasible in any modern clinical human application in 2024"}
+          - {pt: "Lateral flow é incompatível com freeze-dried sendo Zika sensor inviável em qualquer aplicação humana clínica moderna em 2024", en: "Lateral flow is incompatible with freeze-dried with Zika sensor infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Pardee/Collins/Yin 2016 freeze-dried cell-free system reconstitui via H2O após meses storage room-temp — paper-based Zika sensor lateral flow $1 USD low-resource setting deployment", en: "Pardee/Collins/Yin 2016 freeze-dried cell-free system reconstitutes via H2O after months at room temp — paper-based $1 Zika sensor lateral-flow low-resource setting deployment"}
+        rationale: {pt: "Quando seca a temperatura ambiente, então diagnóstico viaja sem cold chain.", en: "When dry at room temp, diagnostic travels without cold chain."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell-free vaccine:", en: "Cell-free vaccine:"}
+        choices:
+          - {pt: "Cell-free saRNA-LNP, mRNA-LNP encoding spike + adjuvant produzidos in vitro sem fermentation viva — DARPA RAPID program 2020 desenhou pandemic vaccine surge capacity em 60-day production", en: "Cell-free saRNA-LNP, mRNA-LNP encoding spike + adjuvant produced in vitro without live fermentation — DARPA RAPID 2020 program designed pandemic-vaccine surge capacity in 60-day production"}
+          - {pt: "Cell-free vaccine é restrito a CHO sem componente in vitro sendo DARPA RAPID inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "Cell-free vaccine is restricted to CHO without in vitro component with DARPA RAPID infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "saRNA-LNP é teórico sem evidência sendo cell-free vaccine inviável em qualquer aplicação humana clínica moderna em 2024", en: "saRNA-LNP is theoretical without evidence with cell-free vaccine infeasible in any modern clinical human application in 2024"}
+          - {pt: "60-day production é incompatível com pandemic sendo surge capacity inviável em qualquer aplicação humana clínica moderna em 2024", en: "60-day production is incompatible with pandemic with surge capacity infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Cell-free saRNA-LNP, mRNA-LNP encoding spike + adjuvant produzidos in vitro sem fermentation viva — DARPA RAPID program 2020 desenhou pandemic vaccine surge capacity em 60-day production", en: "Cell-free saRNA-LNP, mRNA-LNP encoding spike + adjuvant produced in vitro without live fermentation — DARPA RAPID 2020 program designed pandemic-vaccine surge capacity in 60-day production"}
+        rationale: {pt: "Quando vacina é cell-free, então production escala em pandemia.", en: "When vaccine is cell-free, production scales in pandemic."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell-free CRISPR drug:", en: "Cell-free CRISPR drug:"}
+        choices:
+          - {pt: "GreenLight Biosciences cell-free RNA platform produz Cas9/sgRNA mRNA + double-stranded RNA pesticide alternativa via cell-free fermentation enzymatic synthesis bypassing live-cell GMO regulation", en: "GreenLight Biosciences cell-free RNA platform makes Cas9/sgRNA mRNA + double-stranded RNA pesticide alternative via enzymatic cell-free fermentation synthesis bypassing live-cell GMO regulation"}
+          - {pt: "GreenLight é restrito a CHO sem componente cell-free sendo Cas9/sgRNA inviável em qualquer aplicação biotech humana clínica moderna em 2024", en: "GreenLight is restricted to CHO without cell-free component with Cas9/sgRNA infeasible in any modern clinical human biotech application in 2024"}
+          - {pt: "Double-stranded RNA pesticide é teórico sem evidência sendo enzymatic synthesis inviável em qualquer aplicação biotech humana clínica moderna em 2024", en: "Double-stranded RNA pesticide is theoretical without evidence with enzymatic synthesis infeasible in any modern clinical human biotech application in 2024"}
+          - {pt: "GMO regulation é incompatível com cell-free sendo GreenLight inviável em qualquer aplicação humana clínica moderna em 2024", en: "GMO regulation is incompatible with cell-free with GreenLight infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "GreenLight Biosciences cell-free RNA platform produz Cas9/sgRNA mRNA + double-stranded RNA pesticide alternativa via cell-free fermentation enzymatic synthesis bypassing live-cell GMO regulation", en: "GreenLight Biosciences cell-free RNA platform makes Cas9/sgRNA mRNA + double-stranded RNA pesticide alternative via enzymatic cell-free fermentation synthesis bypassing live-cell GMO regulation"}
+        rationale: {pt: "Quando RNA é cell-free, então GMO regulation se reformula.", en: "When RNA is cell-free, GMO regulation reframes."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BioBits classroom:", en: "BioBits classroom:"}
+        choices:
+          - {pt: "Jewett/Northwestern BioBits kit cell-free educational classroom synthesis de fluorescent protein, fragrance, pharmaceutical sem live cells — democratiza synthetic biology em escolas", en: "Jewett/Northwestern BioBits cell-free educational classroom kit synthesizes fluorescent protein, fragrance, pharmaceutical without live cells — democratizes synthetic biology in schools"}
+          - {pt: "BioBits é restrito a CHO sem componente cell-free sendo Jewett/Northwestern inviável em qualquer aplicação biológica educacional moderna em 2024", en: "BioBits is restricted to CHO without cell-free component with Jewett/Northwestern infeasible in any modern educational biological application in 2024"}
+          - {pt: "Fluorescent protein é teórico sem evidência sendo BioBits inviável em qualquer aplicação educacional humana moderna em 2024", en: "Fluorescent protein is theoretical without evidence with BioBits infeasible in any modern educational human application in 2024"}
+          - {pt: "Synthetic biology classroom é incompatível com cell-free sendo Jewett inviável em qualquer aplicação educacional moderna em 2024", en: "Classroom synthetic biology is incompatible with cell-free with Jewett infeasible in any modern educational application in 2024"}
+        correctAnswer: {pt: "Jewett/Northwestern BioBits kit cell-free educational classroom synthesis de fluorescent protein, fragrance, pharmaceutical sem live cells — democratiza synthetic biology em escolas", en: "Jewett/Northwestern BioBits cell-free educational classroom kit synthesizes fluorescent protein, fragrance, pharmaceutical without live cells — democratizes synthetic biology in schools"}
+        rationale: {pt: "Quando cell-free entra em sala, então synthetic biology se democratiza.", en: "When cell-free enters classroom, synthetic biology democratizes."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações cell-free", en: "Cell-free applications"}
+    description: {pt: "Da bancada à clínica.", en: "From bench to clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "ADC site-specific:", en: "Site-specific ADC:"}
+        choices:
+          - {pt: "Sutro XpressCF + ncAA + DAR 8 site-specific cleavable linker ADC produces homogeneous batch difícil em CHO live-cell — STRO-001/002 fase 2/3 anti-CD74/anti-folRα em multiple myeloma + ovarian", en: "Sutro XpressCF + ncAA + DAR 8 site-specific cleavable-linker ADC produces homogeneous batches hard in live-cell CHO — STRO-001/002 phase 2/3 anti-CD74/anti-folRα in multiple myeloma + ovarian"}
+          - {pt: "ADC site-specific é restrito a heterogeneous DAR sem componente ncAA sendo Sutro XpressCF inviável em qualquer aplicação clínica humana moderna em 2024", en: "Site-specific ADC is restricted to heterogeneous DAR without ncAA component with Sutro XpressCF infeasible in any modern clinical human application in 2024"}
+          - {pt: "STRO-001/002 é teórico sem evidência sendo Sutro inviável em qualquer aplicação clínica humana moderna em 2024", en: "STRO-001/002 is theoretical without evidence with Sutro infeasible in any modern clinical human application in 2024"}
+          - {pt: "Anti-CD74 é incompatível com ADC sendo anti-folRα inviável em qualquer aplicação humana clínica moderna em 2024", en: "Anti-CD74 is incompatible with ADC with anti-folRα infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Sutro XpressCF + ncAA + DAR 8 site-specific cleavable linker ADC produces homogeneous batch difícil em CHO live-cell — STRO-001/002 fase 2/3 anti-CD74/anti-folRα em multiple myeloma + ovarian", en: "Sutro XpressCF + ncAA + DAR 8 site-specific cleavable-linker ADC produces homogeneous batches hard in live-cell CHO — STRO-001/002 phase 2/3 anti-CD74/anti-folRα in multiple myeloma + ovarian"}
+        rationale: {pt: "Quando ADC é homogêneo, então clinical fica previsível.", en: "When ADC is homogeneous, clinic stays predictable."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Synthetic minimum cell:", en: "Synthetic minimum cell:"}
+        choices:
+          - {pt: "Venter Mycoplasma syn3.0 (2016) genome de 473 genes mínimos vivos — synthesized chemically + bootstrapped em Mycoplasma capricolum receptor cell, prova de conceito synthetic life", en: "Venter Mycoplasma syn3.0 (2016) 473-gene minimum genome alive — chemically synthesized + bootstrapped in Mycoplasma capricolum recipient cell, synthetic-life proof of concept"}
+          - {pt: "Synthetic minimum cell é restrito a >1000 genes sem componente minimum sendo Venter syn3.0 inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "Synthetic minimum cell is restricted to >1000 genes without minimum component with Venter syn3.0 infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "473 genes é teórico sem evidência sendo synthesized chemically inviável em qualquer aplicação humana clínica moderna em 2024", en: "473 genes is theoretical without evidence with chemical synthesis infeasible in any modern clinical human application in 2024"}
+          - {pt: "Mycoplasma capricolum é incompatível com syn3.0 sendo synthetic life inviável em qualquer aplicação humana clínica moderna em 2024", en: "Mycoplasma capricolum is incompatible with syn3.0 with synthetic life infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Venter Mycoplasma syn3.0 (2016) genome de 473 genes mínimos vivos — synthesized chemically + bootstrapped em Mycoplasma capricolum receptor cell, prova de conceito synthetic life", en: "Venter Mycoplasma syn3.0 (2016) 473-gene minimum genome alive — chemically synthesized + bootstrapped in Mycoplasma capricolum recipient cell, synthetic-life proof of concept"}
+        rationale: {pt: "Quando 473 genes mantêm vida, então synthetic life acende.", en: "When 473 genes sustain life, synthetic life lights up."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vesicle synthetic cell:", en: "Synthetic-cell vesicle:"}
+        choices:
+          - {pt: "Liposome encapsulation cell-free TX-TL + DNA template + lipid synthesis enzimas chega a self-replicating proto-cell — Build-A-Cell consortium, Bioscience2050 metas synthetic cell de baixo a topo", en: "Liposome encapsulation of cell-free TX-TL + DNA template + lipid synthesis enzymes approaches self-replicating proto-cell — Build-A-Cell consortium, Bioscience2050 bottom-up synthetic-cell goals"}
+          - {pt: "Vesicle synthetic cell é restrito a Mycoplasma sem componente liposome sendo Build-A-Cell inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "Vesicle synthetic cell is restricted to Mycoplasma without liposome component with Build-A-Cell infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "TX-TL é teórico sem evidência sendo Bioscience2050 inviável em qualquer aplicação humana clínica moderna em 2024", en: "TX-TL is theoretical without evidence with Bioscience2050 infeasible in any modern clinical human application in 2024"}
+          - {pt: "Self-replicating proto-cell é incompatível com vesicle sendo Build-A-Cell inviável em qualquer aplicação humana clínica moderna em 2024", en: "Self-replicating proto-cell is incompatible with vesicle with Build-A-Cell infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Liposome encapsulation cell-free TX-TL + DNA template + lipid synthesis enzimas chega a self-replicating proto-cell — Build-A-Cell consortium, Bioscience2050 metas synthetic cell de baixo a topo", en: "Liposome encapsulation of cell-free TX-TL + DNA template + lipid synthesis enzymes approaches self-replicating proto-cell — Build-A-Cell consortium, Bioscience2050 bottom-up synthetic-cell goals"}
+        rationale: {pt: "Quando vesícula sustenta TX-TL, então proto-cell emerge.", en: "When vesicle sustains TX-TL, proto-cell emerges."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RNA-only cell:", en: "RNA-only cell:"}
+        choices:
+          - {pt: "RNA World hypothesis-inspired self-replicating ribozyme + RNA-encoded ribosome + RNA polymerase — Szostak Harvard exploration de minimum self-replicating system pre-DNA prebiotic chemistry", en: "RNA World-hypothesis-inspired self-replicating ribozyme + RNA-encoded ribosome + RNA polymerase — Szostak Harvard exploration of minimum self-replicating system pre-DNA prebiotic chemistry"}
+          - {pt: "RNA-only cell é restrito a DNA sem componente RNA sendo Szostak Harvard inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "RNA-only cell is restricted to DNA without RNA component with Szostak Harvard infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "Ribozyme é teórico sem evidência sendo prebiotic chemistry inviável em qualquer aplicação humana clínica moderna em 2024", en: "Ribozyme is theoretical without evidence with prebiotic chemistry infeasible in any modern clinical human application in 2024"}
+          - {pt: "Self-replicating é incompatível com RNA sendo Szostak inviável em qualquer aplicação humana clínica moderna em 2024", en: "Self-replicating is incompatible with RNA with Szostak infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "RNA World hypothesis-inspired self-replicating ribozyme + RNA-encoded ribosome + RNA polymerase — Szostak Harvard exploration de minimum self-replicating system pre-DNA prebiotic chemistry", en: "RNA World-hypothesis-inspired self-replicating ribozyme + RNA-encoded ribosome + RNA polymerase — Szostak Harvard exploration of minimum self-replicating system pre-DNA prebiotic chemistry"}
+        rationale: {pt: "Quando RNA é tudo, então origem da vida fica reproduzível.", en: "When RNA is everything, origin of life becomes reproducible."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Engineered chassis:", en: "Engineered chassis:"}
+        choices:
+          - {pt: "JCVI Mycoplasma syn3A (2019) versão melhorada syn3.0 com 19 genes added para growth + division reliability — chassis platform inserir custom gene cassette para metabolic pathway target", en: "JCVI Mycoplasma syn3A (2019) improved syn3.0 with 19 added genes for growth + division reliability — chassis platform inserting custom gene cassettes for metabolic-pathway target"}
+          - {pt: "Engineered chassis é restrito a syn3.0 sem componente syn3A sendo JCVI 2019 inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "Engineered chassis is restricted to syn3.0 without syn3A component with JCVI 2019 infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "19 genes added é teórico sem evidência sendo growth + division inviável em qualquer aplicação humana clínica moderna em 2024", en: "19 added genes is theoretical without evidence with growth + division infeasible in any modern clinical human application in 2024"}
+          - {pt: "Custom gene cassette é incompatível com syn3A sendo metabolic pathway inviável em qualquer aplicação humana clínica moderna em 2024", en: "Custom gene cassette is incompatible with syn3A with metabolic pathway infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "JCVI Mycoplasma syn3A (2019) versão melhorada syn3.0 com 19 genes added para growth + division reliability — chassis platform inserir custom gene cassette para metabolic pathway target", en: "JCVI Mycoplasma syn3A (2019) improved syn3.0 with 19 added genes for growth + division reliability — chassis platform inserting custom gene cassettes for metabolic-pathway target"}
+        rationale: {pt: "Quando chassis é confiável, então engineering escala.", en: "When chassis is reliable, engineering scales."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Recoded organism:", en: "Recoded organism:"}
+        choices:
+          - {pt: "Church/Lajoie 2013 E. coli recoded TAG → TAA stop codon allowing TAG reassignment to ncAA — Sc2.0 Boeke yeast project recoda chromossomos completos para resistência viral + ncAA incorporation", en: "Church/Lajoie 2013 recoded E. coli TAG → TAA stop codon allowing TAG reassignment to ncAA — Boeke Sc2.0 yeast project recodes whole chromosomes for viral resistance + ncAA incorporation"}
+          - {pt: "Recoded organism é restrito a wildtype sem componente recoded sendo Church/Lajoie 2013 inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "Recoded organism is restricted to wildtype without recoded component with Church/Lajoie 2013 infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "TAG → TAA é teórico sem evidência sendo Sc2.0 inviável em qualquer aplicação biológica humana clínica moderna em 2024", en: "TAG → TAA is theoretical without evidence with Sc2.0 infeasible in any modern clinical human biological application in 2024"}
+          - {pt: "Viral resistance é incompatível com recoded sendo Boeke inviável em qualquer aplicação humana clínica moderna em 2024", en: "Viral resistance is incompatible with recoded with Boeke infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Church/Lajoie 2013 E. coli recoded TAG → TAA stop codon allowing TAG reassignment to ncAA — Sc2.0 Boeke yeast project recoda chromossomos completos para resistência viral + ncAA incorporation", en: "Church/Lajoie 2013 recoded E. coli TAG → TAA stop codon allowing TAG reassignment to ncAA — Boeke Sc2.0 yeast project recodes whole chromosomes for viral resistance + ncAA incorporation"}
+        rationale: {pt: "Quando código é reescrito, então organismos novos surgem.", en: "When code is rewritten, new organisms surface."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cell-free POC dx:", en: "Cell-free POC Dx:"}
+        choices:
+          - {pt: "Sherlock + DETECTR + Pardee freeze-dried + LamPORE + INSTI HIV self-test point-of-care diagnostic field-deployable em <1h sem instrumento, <$5 USD per test em low/middle-income countries", en: "Sherlock + DETECTR + Pardee freeze-dried + LamPORE + INSTI HIV self-test point-of-care diagnostic field-deployable in <1h without instrument, <$5 USD per test in low/middle-income countries"}
+          - {pt: "Cell-free POC dx é restrito a hospital lab sem componente field sendo Sherlock e DETECTR inviáveis em qualquer aplicação humana clínica moderna em 2024", en: "Cell-free POC Dx is restricted to hospital lab without field component with Sherlock and DETECTR infeasible in any modern clinical human application in 2024"}
+          - {pt: "<1h é teórico sem evidência sendo Pardee freeze-dried inviável em qualquer aplicação humana clínica moderna em 2024", en: "<1h is theoretical without evidence with Pardee freeze-dried infeasible in any modern clinical human application in 2024"}
+          - {pt: "Low/middle-income countries é incompatível com cell-free sendo INSTI HIV inviável em qualquer aplicação humana clínica moderna em 2024", en: "Low/middle-income countries is incompatible with cell-free with INSTI HIV infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "Sherlock + DETECTR + Pardee freeze-dried + LamPORE + INSTI HIV self-test point-of-care diagnostic field-deployable em <1h sem instrumento, <$5 USD per test em low/middle-income countries", en: "Sherlock + DETECTR + Pardee freeze-dried + LamPORE + INSTI HIV self-test point-of-care diagnostic field-deployable in <1h without instrument, <$5 USD per test in low/middle-income countries"}
+        rationale: {pt: "Quando teste é barato e rápido, então saúde global escala.", en: "When test is cheap and fast, global health scales."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese cell-free:", en: "Cell-free synthesis:"}
+        choices:
+          - {pt: "TX-TL + PURE + Sutro + toehold + Sherlock + DETECTR + freeze-dried + cell-free vaccine + GreenLight + BioBits + ADC + syn3.0/syn3A + vesicle proto-cell + RNA world + recoded + POC dx redefinem biologia in vitro", en: "TX-TL + PURE + Sutro + toehold + Sherlock + DETECTR + freeze-dried + cell-free vaccine + GreenLight + BioBits + ADC + syn3.0/syn3A + vesicle proto-cell + RNA world + recoded + POC dx redefine in vitro biology"}
+          - {pt: "Cell-free systems permanece pré-clínico sem aplicação humana até 2024 sendo conceito experimental sem implementação prática em qualquer indicação clínica humana globalmente em qualquer escala", en: "Cell-free systems remains preclinical without human application by 2024 being experimental concept without practical implementation in any clinical human indication globally at any scale"}
+          - {pt: "Plataformas cell-free são intercambiáveis sem trade-off em alvo tornando escolha tecnológica indiferente em qualquer aplicação clínica humana 2024 globalmente em qualquer escala paciente", en: "Cell-free platforms are interchangeable without target trade-off making technology choice indifferent in any clinical human application 2024 globally at any patient scale"}
+          - {pt: "Cell-free depende exclusivamente de live cell sem componente in vitro sendo TX-TL e PURE dispensáveis em qualquer aplicação humana clínica moderna em 2024", en: "Cell-free depends exclusively on live cell without in vitro component with TX-TL and PURE dispensable in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "TX-TL + PURE + Sutro + toehold + Sherlock + DETECTR + freeze-dried + cell-free vaccine + GreenLight + BioBits + ADC + syn3.0/syn3A + vesicle proto-cell + RNA world + recoded + POC dx redefinem biologia in vitro", en: "TX-TL + PURE + Sutro + toehold + Sherlock + DETECTR + freeze-dried + cell-free vaccine + GreenLight + BioBits + ADC + syn3.0/syn3A + vesicle proto-cell + RNA world + recoded + POC dx redefine in vitro biology"}
+        rationale: {pt: "Quando célula sai, então biologia vira modular.", en: "When cell exits, biology becomes modular."}
+        objectives: [biology.cell_free_systems]
+        difficulty: 5
+target: 20
