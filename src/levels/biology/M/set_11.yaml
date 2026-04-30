@@ -1,0 +1,244 @@
+title:
+  pt: "🛡️ Imunoterapia de câncer: resistência e next-gen"
+  en: "🛡️ Cancer immunotherapy: resistance and next-gen"
+level: 'M'
+subject: biology
+objectives: [biology.cancer_immunotherapy_advanced]
+difficulty: 5
+authorNotes: "Anti-PD-1, anti-CTLA-4, anti-LAG-3, TIGIT, TIM-3, primary/acquired resistance, hot vs cold tumor, MDSC, Tregs, TGF-β, hypoxia, neoantigen vaccine + ICI combo, oncolytic virus, IL-2 muteins."
+example:
+  pt: "Ex.: melanoma resistant a anti-PD-1 → relatlimab + nivolumab dual LAG-3/PD-1 (Opdualag) → response 36% RELATIVITY-047 vs 21% nivo monotherapy."
+  en: "Ex.: anti-PD-1 resistant melanoma → relatlimab + nivolumab dual LAG-3/PD-1 (Opdualag) → 36% response in RELATIVITY-047 vs 21% nivo monotherapy."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Mecanismos de resistência ICI", en: "ICI resistance mechanisms"}
+    description: {pt: "Por que anti-PD-1 falha.", en: "Why anti-PD-1 fails."}
+    exercises:
+      - type: choice
+        question: {pt: "Primary resistance:", en: "Primary resistance:"}
+        choices:
+          - {pt: "Tumor frio low-TMB low-CD8 (PDAC, prostate, MSS-CRC) sem inflammation pré-existente é primary resistance a anti-PD-1 — TMB <10 mut/Mb + cold immune phenotype + low PD-L1 + low TIL", en: "Cold low-TMB low-CD8 tumor (PDAC, prostate, MSS-CRC) without pre-existing inflammation is primary resistance to anti-PD-1 — TMB <10 mut/Mb + cold immune phenotype + low PD-L1 + low TIL"}
+          - {pt: "Primary resistance é restrito a tumor quente sem componente cold sendo TMB <10 inviável em qualquer paciente oncológico humano clínico moderno em 2024", en: "Primary resistance is restricted to hot tumor without cold component with TMB <10 infeasible in any modern clinical human oncologic patient in 2024"}
+          - {pt: "Cold immune phenotype é teórico sem evidência sendo PD-L1 inviável em qualquer aplicação humana clínica moderna em 2024", en: "Cold immune phenotype is theoretical without evidence with PD-L1 infeasible in any modern clinical human application in 2024"}
+          - {pt: "Low TIL é incompatível com primary resistance sendo PDAC inviável em qualquer paciente humano clínico moderno em 2024", en: "Low TIL is incompatible with primary resistance with PDAC infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Tumor frio low-TMB low-CD8 (PDAC, prostate, MSS-CRC) sem inflammation pré-existente é primary resistance a anti-PD-1 — TMB <10 mut/Mb + cold immune phenotype + low PD-L1 + low TIL", en: "Cold low-TMB low-CD8 tumor (PDAC, prostate, MSS-CRC) without pre-existing inflammation is primary resistance to anti-PD-1 — TMB <10 mut/Mb + cold immune phenotype + low PD-L1 + low TIL"}
+        rationale: {pt: "Quando tumor é frio, então anti-PD-1 não acende.", en: "When tumor is cold, anti-PD-1 doesn't ignite."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Acquired resistance:", en: "Acquired resistance:"}
+        choices:
+          - {pt: "Acquired resistance pós-anti-PD-1 envolve B2M loss + JAK1/2 mutation IFN-γ pathway loss + HLA-LOH + neoantigen escape + Treg/MDSC infiltration — biopsy progression vez time-of-progression mapping", en: "Post-anti-PD-1 acquired resistance involves B2M loss + JAK1/2 IFN-γ-pathway-loss mutation + HLA-LOH + neoantigen escape + Treg/MDSC infiltration — time-of-progression biopsy mapping"}
+          - {pt: "Acquired resistance é restrito a primary sem componente acquired sendo B2M loss inviável em qualquer paciente oncológico humano clínico moderno em 2024", en: "Acquired resistance is restricted to primary without acquired component with B2M loss infeasible in any modern clinical human oncologic patient in 2024"}
+          - {pt: "JAK1/2 é teórico sem evidência sendo IFN-γ pathway inviável em qualquer aplicação humana clínica moderna em 2024", en: "JAK1/2 is theoretical without evidence with IFN-γ pathway infeasible in any modern clinical human application in 2024"}
+          - {pt: "Neoantigen escape é incompatível com acquired sendo Treg/MDSC inviável em qualquer paciente humano clínico moderno em 2024", en: "Neoantigen escape is incompatible with acquired with Treg/MDSC infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Acquired resistance pós-anti-PD-1 envolve B2M loss + JAK1/2 mutation IFN-γ pathway loss + HLA-LOH + neoantigen escape + Treg/MDSC infiltration — biopsy progression vez time-of-progression mapping", en: "Post-anti-PD-1 acquired resistance involves B2M loss + JAK1/2 IFN-γ-pathway-loss mutation + HLA-LOH + neoantigen escape + Treg/MDSC infiltration — time-of-progression biopsy mapping"}
+        rationale: {pt: "Quando IFN-γ falha, então tumor escapa.", en: "When IFN-γ fails, tumor escapes."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Relatlimab LAG-3:", en: "Relatlimab LAG-3:"}
+        choices:
+          - {pt: "BMS Opdualag relatlimab + nivolumab dual LAG-3/PD-1 inhibitor RELATIVITY-047 trial 2022 melanoma metastatic 1L — PFS 10.1 vs 4.6 mo, primeira nova ICI class em 10 anos pós-anti-CTLA-4", en: "BMS Opdualag relatlimab + nivolumab dual LAG-3/PD-1 inhibitor RELATIVITY-047 trial 2022 in 1L metastatic melanoma — PFS 10.1 vs 4.6 mo, first new ICI class in 10 years post-anti-CTLA-4"}
+          - {pt: "Relatlimab é restrito a anti-CTLA-4 sem componente LAG-3 sendo Opdualag inviável em qualquer paciente melanoma humano clínico moderno em 2024", en: "Relatlimab is restricted to anti-CTLA-4 without LAG-3 component with Opdualag infeasible in any modern clinical melanoma human patient in 2024"}
+          - {pt: "RELATIVITY-047 é teórico sem evidência sendo PFS 10.1 inviável em qualquer aplicação humana clínica moderna em 2024", en: "RELATIVITY-047 is theoretical without evidence with PFS 10.1 infeasible in any modern clinical human application in 2024"}
+          - {pt: "Dual LAG-3/PD-1 é incompatível com BMS sendo nivolumab inviável em qualquer paciente humano clínico moderno em 2024", en: "Dual LAG-3/PD-1 is incompatible with BMS with nivolumab infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "BMS Opdualag relatlimab + nivolumab dual LAG-3/PD-1 inhibitor RELATIVITY-047 trial 2022 melanoma metastatic 1L — PFS 10.1 vs 4.6 mo, primeira nova ICI class em 10 anos pós-anti-CTLA-4", en: "BMS Opdualag relatlimab + nivolumab dual LAG-3/PD-1 inhibitor RELATIVITY-047 trial 2022 in 1L metastatic melanoma — PFS 10.1 vs 4.6 mo, first new ICI class in 10 years post-anti-CTLA-4"}
+        rationale: {pt: "Quando LAG-3 cala junto, então melanoma cede mais.", en: "When LAG-3 quiets along, melanoma yields more."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TIGIT vibostolimab:", en: "Vibostolimab TIGIT:"}
+        choices:
+          - {pt: "Anti-TIGIT tiragolumab (Roche), vibostolimab (Merck), domvanalimab (Gilead/Arcus) + anti-PD-(L)1 combo testam NSCLC fase 3 SKYSCRAPER/MK-7684 — mixed results 2023, ARC-7 + EDGE expectativas", en: "Anti-TIGIT tiragolumab (Roche), vibostolimab (Merck), domvanalimab (Gilead/Arcus) + anti-PD-(L)1 combo test NSCLC phase 3 SKYSCRAPER/MK-7684 — mixed results 2023, ARC-7 + EDGE expectations"}
+          - {pt: "TIGIT é restrito a anti-CTLA-4 sem componente TIGIT sendo vibostolimab inviável em qualquer paciente NSCLC humano clínico moderno em 2024", en: "TIGIT is restricted to anti-CTLA-4 without TIGIT component with vibostolimab infeasible in any modern clinical NSCLC human patient in 2024"}
+          - {pt: "Tiragolumab é teórico sem evidência sendo SKYSCRAPER inviável em qualquer aplicação humana clínica moderna em 2024", en: "Tiragolumab is theoretical without evidence with SKYSCRAPER infeasible in any modern clinical human application in 2024"}
+          - {pt: "Domvanalimab é incompatível com TIGIT sendo Gilead/Arcus inviável em qualquer paciente humano clínico moderno em 2024", en: "Domvanalimab is incompatible with TIGIT with Gilead/Arcus infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Anti-TIGIT tiragolumab (Roche), vibostolimab (Merck), domvanalimab (Gilead/Arcus) + anti-PD-(L)1 combo testam NSCLC fase 3 SKYSCRAPER/MK-7684 — mixed results 2023, ARC-7 + EDGE expectativas", en: "Anti-TIGIT tiragolumab (Roche), vibostolimab (Merck), domvanalimab (Gilead/Arcus) + anti-PD-(L)1 combo test NSCLC phase 3 SKYSCRAPER/MK-7684 — mixed results 2023, ARC-7 + EDGE expectations"}
+        rationale: {pt: "Quando TIGIT cala, então T-cell exhausted reativa.", en: "When TIGIT quiets, exhausted T-cell reactivates."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TIM-3 cobolimab:", en: "Cobolimab TIM-3:"}
+        choices:
+          - {pt: "Anti-TIM-3 cobolimab (TSR-022), sabatolimab (MBG453) + anti-PD-1 combo em refractory melanoma + AML/MDS — fase 2/3 explorando combo terceira ICI checkpoint além de PD-1 + CTLA-4 + LAG-3", en: "Anti-TIM-3 cobolimab (TSR-022), sabatolimab (MBG453) + anti-PD-1 combo in refractory melanoma + AML/MDS — phase 2/3 exploring combo as third ICI checkpoint beyond PD-1 + CTLA-4 + LAG-3"}
+          - {pt: "TIM-3 é restrito a PD-1 sem componente TIM-3 sendo cobolimab inviável em qualquer paciente refractory humano clínico moderno em 2024", en: "TIM-3 is restricted to PD-1 without TIM-3 component with cobolimab infeasible in any modern clinical refractory human patient in 2024"}
+          - {pt: "TSR-022 é teórico sem evidência sendo MBG453 inviável em qualquer aplicação humana clínica moderna em 2024", en: "TSR-022 is theoretical without evidence with MBG453 infeasible in any modern clinical human application in 2024"}
+          - {pt: "AML/MDS é incompatível com TIM-3 sendo sabatolimab inviável em qualquer paciente humano clínico moderno em 2024", en: "AML/MDS is incompatible with TIM-3 with sabatolimab infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Anti-TIM-3 cobolimab (TSR-022), sabatolimab (MBG453) + anti-PD-1 combo em refractory melanoma + AML/MDS — fase 2/3 explorando combo terceira ICI checkpoint além de PD-1 + CTLA-4 + LAG-3", en: "Anti-TIM-3 cobolimab (TSR-022), sabatolimab (MBG453) + anti-PD-1 combo in refractory melanoma + AML/MDS — phase 2/3 exploring combo as third ICI checkpoint beyond PD-1 + CTLA-4 + LAG-3"}
+        rationale: {pt: "Quando TIM-3 cala, então tumor refratário pode reagir.", en: "When TIM-3 quiets, refractory tumor may respond."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cold tumor heating:", en: "Cold tumor heating:"}
+        choices:
+          - {pt: "Cold tumor low-CD8 (PDAC, MSS-CRC) heating via radiotherapy abscopal + STING agonist (MIW815) + IL-12 + TLR9 (vidutolimod) + neoantigen vaccine + intra-tumoral oncolytic virus drives inflammation", en: "Cold low-CD8 tumor (PDAC, MSS-CRC) heating via abscopal radiotherapy + STING agonist (MIW815) + IL-12 + TLR9 (vidutolimod) + neoantigen vaccine + intra-tumoral oncolytic virus drives inflammation"}
+          - {pt: "Cold tumor é restrito a hot sem componente cold sendo radiotherapy abscopal inviável em qualquer paciente PDAC humano clínico moderno em 2024", en: "Cold tumor is restricted to hot without cold component with abscopal radiotherapy infeasible in any modern clinical PDAC human patient in 2024"}
+          - {pt: "STING agonist é teórico sem evidência sendo MIW815 inviável em qualquer aplicação humana clínica moderna em 2024", en: "STING agonist is theoretical without evidence with MIW815 infeasible in any modern clinical human application in 2024"}
+          - {pt: "Vidutolimod é incompatível com cold tumor sendo TLR9 inviável em qualquer paciente humano clínico moderno em 2024", en: "Vidutolimod is incompatible with cold tumor with TLR9 infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Cold tumor low-CD8 (PDAC, MSS-CRC) heating via radiotherapy abscopal + STING agonist (MIW815) + IL-12 + TLR9 (vidutolimod) + neoantigen vaccine + intra-tumoral oncolytic virus drives inflammation", en: "Cold low-CD8 tumor (PDAC, MSS-CRC) heating via abscopal radiotherapy + STING agonist (MIW815) + IL-12 + TLR9 (vidutolimod) + neoantigen vaccine + intra-tumoral oncolytic virus drives inflammation"}
+        rationale: {pt: "Quando frio aquece, então PD-1 volta a funcionar.", en: "When cold warms, PD-1 starts working again."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TGF-β bintrafusp:", en: "Bintrafusp TGF-β:"}
+        choices:
+          - {pt: "Bintrafusp alfa M7824 (Merck KGaA/GSK) bifunctional anti-PD-L1 + TGF-β trap dual blocks immune suppression + EMT — fase 3 NSCLC + biliary BC falhou 2021, mas paradigm dual blocade emerge", en: "Bintrafusp alfa M7824 (Merck KGaA/GSK) bifunctional anti-PD-L1 + TGF-β trap dual-blocks immune suppression + EMT — phase 3 NSCLC + biliary BC failed 2021, but dual-blockade paradigm emerges"}
+          - {pt: "TGF-β é restrito a IL-1 sem componente TGF-β sendo bintrafusp inviável em qualquer paciente humano clínico moderno em 2024", en: "TGF-β is restricted to IL-1 without TGF-β component with bintrafusp infeasible in any modern clinical human patient in 2024"}
+          - {pt: "M7824 é teórico sem evidência sendo Merck KGaA inviável em qualquer aplicação humana clínica moderna em 2024", en: "M7824 is theoretical without evidence with Merck KGaA infeasible in any modern clinical human application in 2024"}
+          - {pt: "EMT é incompatível com bintrafusp sendo dual blockade inviável em qualquer paciente humano clínico moderno em 2024", en: "EMT is incompatible with bintrafusp with dual blockade infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Bintrafusp alfa M7824 (Merck KGaA/GSK) bifunctional anti-PD-L1 + TGF-β trap dual blocks immune suppression + EMT — fase 3 NSCLC + biliary BC falhou 2021, mas paradigm dual blocade emerge", en: "Bintrafusp alfa M7824 (Merck KGaA/GSK) bifunctional anti-PD-L1 + TGF-β trap dual-blocks immune suppression + EMT — phase 3 NSCLC + biliary BC failed 2021, but dual-blockade paradigm emerges"}
+        rationale: {pt: "Quando dual blockade falha, então biology refina hypothesis.", en: "When dual blockade fails, biology refines hypothesis."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Treg depletion:", en: "Treg depletion:"}
+        choices:
+          - {pt: "Anti-CTLA-4 ipilimumab depletes intratumoral Treg via Fc engagement, anti-CCR8 BMS-986340 + tobemstomig + Mogamulizumab anti-CCR4 strategies expand Treg targeting in TME", en: "Anti-CTLA-4 ipilimumab depletes intratumoral Treg via Fc engagement; anti-CCR8 BMS-986340 + tobemstomig + Mogamulizumab anti-CCR4 strategies expand Treg targeting in TME"}
+          - {pt: "Treg depletion é restrito a effector T-cell sem componente Treg sendo anti-CTLA-4 inviável em qualquer paciente oncológico humano clínico moderno em 2024", en: "Treg depletion is restricted to effector T-cell without Treg component with anti-CTLA-4 infeasible in any modern clinical human oncologic patient in 2024"}
+          - {pt: "Fc engagement é teórico sem evidência sendo BMS-986340 inviável em qualquer aplicação humana clínica moderna em 2024", en: "Fc engagement is theoretical without evidence with BMS-986340 infeasible in any modern clinical human application in 2024"}
+          - {pt: "Anti-CCR4 é incompatível com Treg sendo Mogamulizumab inviável em qualquer paciente humano clínico moderno em 2024", en: "Anti-CCR4 is incompatible with Treg with Mogamulizumab infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Anti-CTLA-4 ipilimumab depletes intratumoral Treg via Fc engagement, anti-CCR8 BMS-986340 + tobemstomig + Mogamulizumab anti-CCR4 strategies expand Treg targeting in TME", en: "Anti-CTLA-4 ipilimumab depletes intratumoral Treg via Fc engagement; anti-CCR8 BMS-986340 + tobemstomig + Mogamulizumab anti-CCR4 strategies expand Treg targeting in TME"}
+        rationale: {pt: "Quando Treg cai, então T-cell efetor liberta.", en: "When Treg falls, effector T-cell frees up."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MDSC suppression:", en: "MDSC suppression:"}
+        choices:
+          - {pt: "Myeloid-Derived Suppressor Cell expansion em tumor produz iNOS + arginase + ROS suprimindo T-cell — strategies anti-CSF1R cabiralizumab + IDO inhibitor epacadostat + adenosine A2A target Trent/Drysdale", en: "Tumor MDSC expansion produces iNOS + arginase + ROS suppressing T-cell — strategies anti-CSF1R cabiralizumab + IDO inhibitor epacadostat + adenosine A2A target Trent/Drysdale"}
+          - {pt: "MDSC suppression é restrito a effector T sem componente MDSC sendo cabiralizumab inviável em qualquer paciente oncológico humano clínico moderno em 2024", en: "MDSC suppression is restricted to effector T without MDSC component with cabiralizumab infeasible in any modern clinical human oncologic patient in 2024"}
+          - {pt: "iNOS + arginase é teórico sem evidência sendo epacadostat inviável em qualquer aplicação humana clínica moderna em 2024", en: "iNOS + arginase is theoretical without evidence with epacadostat infeasible in any modern clinical human application in 2024"}
+          - {pt: "Adenosine A2A é incompatível com MDSC sendo Trent/Drysdale inviável em qualquer paciente humano clínico moderno em 2024", en: "Adenosine A2A is incompatible with MDSC with Trent/Drysdale infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Myeloid-Derived Suppressor Cell expansion em tumor produz iNOS + arginase + ROS suprimindo T-cell — strategies anti-CSF1R cabiralizumab + IDO inhibitor epacadostat + adenosine A2A target Trent/Drysdale", en: "Tumor MDSC expansion produces iNOS + arginase + ROS suppressing T-cell — strategies anti-CSF1R cabiralizumab + IDO inhibitor epacadostat + adenosine A2A target Trent/Drysdale"}
+        rationale: {pt: "Quando MDSC suprime, então T-cell perde combate.", en: "When MDSC suppresses, T-cell loses fight."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hypoxia HIF-2α:", en: "Hypoxia HIF-2α:"}
+        choices:
+          - {pt: "Tumor hypoxia HIF-2α drives angiogenesis + immune suppression + glycolytic shift — Belzutifan (Welireg, Merck) HIF-2α inhibitor FDA 2021 em VHL syndrome RCC + ccRCC fase 3 LITESPARK programs", en: "Tumor hypoxia HIF-2α drives angiogenesis + immune suppression + glycolytic shift — Belzutifan (Welireg, Merck) HIF-2α inhibitor FDA 2021 in VHL syndrome RCC + ccRCC LITESPARK phase 3 programs"}
+          - {pt: "Hypoxia é restrito a normoxia sem componente HIF-2α sendo Belzutifan inviável em qualquer paciente RCC humano clínico moderno em 2024", en: "Hypoxia is restricted to normoxia without HIF-2α component with Belzutifan infeasible in any modern clinical RCC human patient in 2024"}
+          - {pt: "VHL syndrome é teórico sem evidência sendo Welireg inviável em qualquer aplicação humana clínica moderna em 2024", en: "VHL syndrome is theoretical without evidence with Welireg infeasible in any modern clinical human application in 2024"}
+          - {pt: "ccRCC é incompatível com HIF-2α sendo LITESPARK inviável em qualquer paciente humano clínico moderno em 2024", en: "ccRCC is incompatible with HIF-2α with LITESPARK infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Tumor hypoxia HIF-2α drives angiogenesis + immune suppression + glycolytic shift — Belzutifan (Welireg, Merck) HIF-2α inhibitor FDA 2021 em VHL syndrome RCC + ccRCC fase 3 LITESPARK programs", en: "Tumor hypoxia HIF-2α drives angiogenesis + immune suppression + glycolytic shift — Belzutifan (Welireg, Merck) HIF-2α inhibitor FDA 2021 in VHL syndrome RCC + ccRCC LITESPARK phase 3 programs"}
+        rationale: {pt: "Quando HIF-2α cala, então RCC perde driver hypoxic.", en: "When HIF-2α quiets, RCC loses hypoxic driver."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Estratégias next-gen", en: "Next-gen strategies"}
+    description: {pt: "Da bancada à clínica.", en: "From bench to clinic."}
+    exercises:
+      - type: choice
+        question: {pt: "Oncolytic virus:", en: "Oncolytic virus:"}
+        choices:
+          - {pt: "T-VEC (talimogene laherparepvec) HSV-1 oncolytic + GM-CSF intra-tumoral melanoma FDA 2015 + RP1 (Replimune) + Pelareorep + CG0070 emergem combo com anti-PD-1 abscopal effect inflammation", en: "T-VEC (talimogene laherparepvec) HSV-1 oncolytic + GM-CSF intra-tumoral melanoma FDA 2015 + RP1 (Replimune) + Pelareorep + CG0070 emerge combo with anti-PD-1 for inflammation abscopal effect"}
+          - {pt: "Oncolytic virus é restrito a small-molecule sem componente HSV-1 sendo T-VEC inviável em qualquer paciente melanoma humano clínico moderno em 2024", en: "Oncolytic virus is restricted to small-molecule without HSV-1 component with T-VEC infeasible in any modern clinical melanoma human patient in 2024"}
+          - {pt: "GM-CSF intra-tumoral é teórico sem evidência sendo Replimune inviável em qualquer aplicação humana clínica moderna em 2024", en: "GM-CSF intra-tumoral is theoretical without evidence with Replimune infeasible in any modern clinical human application in 2024"}
+          - {pt: "Abscopal effect é incompatível com oncolytic sendo CG0070 inviável em qualquer paciente humano clínico moderno em 2024", en: "Abscopal effect is incompatible with oncolytic with CG0070 infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "T-VEC (talimogene laherparepvec) HSV-1 oncolytic + GM-CSF intra-tumoral melanoma FDA 2015 + RP1 (Replimune) + Pelareorep + CG0070 emergem combo com anti-PD-1 abscopal effect inflammation", en: "T-VEC (talimogene laherparepvec) HSV-1 oncolytic + GM-CSF intra-tumoral melanoma FDA 2015 + RP1 (Replimune) + Pelareorep + CG0070 emerge combo with anti-PD-1 for inflammation abscopal effect"}
+        rationale: {pt: "Quando vírus mata tumor, então imune é alertado.", en: "When virus kills tumor, immune is alerted."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "IL-2 mutein:", en: "IL-2 mutein:"}
+        choices:
+          - {pt: "Engineered IL-2 (NKTR-214 bempegaldesleukin, ALKS 4230 nemvaleukin) bias CD8/NK over Treg via IL-2Rα bias — fase 3 PIVOT-09 falhou 2022 mas ALKS, Synthekine, Werewolf next-gen IL-2 advance", en: "Engineered IL-2 (NKTR-214 bempegaldesleukin, ALKS 4230 nemvaleukin) bias CD8/NK over Treg via IL-2Rα bias — phase 3 PIVOT-09 failed 2022 but ALKS, Synthekine, Werewolf next-gen IL-2 advance"}
+          - {pt: "IL-2 mutein é restrito a IL-1 sem componente IL-2 sendo NKTR-214 inviável em qualquer paciente oncológico humano clínico moderno em 2024", en: "IL-2 mutein is restricted to IL-1 without IL-2 component with NKTR-214 infeasible in any modern clinical human oncologic patient in 2024"}
+          - {pt: "Bempegaldesleukin é teórico sem evidência sendo ALKS 4230 inviável em qualquer aplicação humana clínica moderna em 2024", en: "Bempegaldesleukin is theoretical without evidence with ALKS 4230 infeasible in any modern clinical human application in 2024"}
+          - {pt: "PIVOT-09 é incompatível com IL-2 sendo Werewolf inviável em qualquer paciente humano clínico moderno em 2024", en: "PIVOT-09 is incompatible with IL-2 with Werewolf infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Engineered IL-2 (NKTR-214 bempegaldesleukin, ALKS 4230 nemvaleukin) bias CD8/NK over Treg via IL-2Rα bias — fase 3 PIVOT-09 falhou 2022 mas ALKS, Synthekine, Werewolf next-gen IL-2 advance", en: "Engineered IL-2 (NKTR-214 bempegaldesleukin, ALKS 4230 nemvaleukin) bias CD8/NK over Treg via IL-2Rα bias — phase 3 PIVOT-09 failed 2022 but ALKS, Synthekine, Werewolf next-gen IL-2 advance"}
+        rationale: {pt: "Quando IL-2 favorece CD8, então tumor sente o impacto.", en: "When IL-2 favors CD8, tumor feels the impact."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Personalized vaccine combo:", en: "Personalized vaccine combo:"}
+        choices:
+          - {pt: "BNT122 (PDAC), mRNA-4157 (melanoma) personalizadas + ICI (set 7/K) traduzem mutação tumoral em vacina + checkpoint sinergia: vacina inicia resposta, ICI mantém — KEYNOTE-942 44% reducão recidiva", en: "BNT122 (PDAC), mRNA-4157 (melanoma) personalized + ICI (set 7/K) translate tumor mutation into vaccine + checkpoint synergy: vaccine primes response, ICI sustains — KEYNOTE-942 44% recurrence reduction"}
+          - {pt: "Personalized vaccine combo é restrito a generic sem componente personalized sendo BNT122 inviável em qualquer paciente PDAC humano clínico moderno em 2024", en: "Personalized vaccine combo is restricted to generic without personalized component with BNT122 infeasible in any modern clinical PDAC human patient in 2024"}
+          - {pt: "mRNA-4157 é teórico sem evidência sendo KEYNOTE-942 inviável em qualquer aplicação humana clínica moderna em 2024", en: "mRNA-4157 is theoretical without evidence with KEYNOTE-942 infeasible in any modern clinical human application in 2024"}
+          - {pt: "44% redução recidiva é incompatível com vacina sendo combo inviável em qualquer paciente humano clínico moderno em 2024", en: "44% recurrence reduction is incompatible with vaccine with combo infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "BNT122 (PDAC), mRNA-4157 (melanoma) personalizadas + ICI (set 7/K) traduzem mutação tumoral em vacina + checkpoint sinergia: vacina inicia resposta, ICI mantém — KEYNOTE-942 44% reducão recidiva", en: "BNT122 (PDAC), mRNA-4157 (melanoma) personalized + ICI (set 7/K) translate tumor mutation into vaccine + checkpoint synergy: vaccine primes response, ICI sustains — KEYNOTE-942 44% recurrence reduction"}
+        rationale: {pt: "Quando vacina prime, então ICI sustenta.", en: "When vaccine primes, ICI sustains."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TIL Lifileucel:", en: "Lifileucel TIL:"}
+        choices:
+          - {pt: "Linfócitos infiltrantes tumorais expandidos ex vivo + IL-2 reativam neoantígeno-específicos — Iovance Lifileucel/Amtagvi primeira terapia TIL aprovada FDA 2024 em melanoma metastatic ICI-refratária", en: "Tumor-infiltrating lymphocytes expanded ex vivo + IL-2 reactivate neoantigen-specific cells — Iovance Lifileucel/Amtagvi first FDA-approved TIL therapy 2024 in ICI-refractory metastatic melanoma"}
+          - {pt: "Lifileucel é restrito a CAR-T sem componente TIL sendo Iovance inviável em qualquer paciente melanoma humano clínico moderno em 2024", en: "Lifileucel is restricted to CAR-T without TIL component with Iovance infeasible in any modern clinical melanoma human patient in 2024"}
+          - {pt: "Neoantígeno-específicos é teórico sem evidência sendo Amtagvi inviável em qualquer aplicação humana clínica moderna em 2024", en: "Neoantigen-specific is theoretical without evidence with Amtagvi infeasible in any modern clinical human application in 2024"}
+          - {pt: "FDA 2024 é teórico sem implementação prática sendo Lifileucel inviável em qualquer paciente humano clínico moderno em 2024", en: "FDA 2024 is theoretical without practical implementation with Lifileucel infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Linfócitos infiltrantes tumorais expandidos ex vivo + IL-2 reativam neoantígeno-específicos — Iovance Lifileucel/Amtagvi primeira terapia TIL aprovada FDA 2024 em melanoma metastatic ICI-refratária", en: "Tumor-infiltrating lymphocytes expanded ex vivo + IL-2 reactivate neoantigen-specific cells — Iovance Lifileucel/Amtagvi first FDA-approved TIL therapy 2024 in ICI-refractory metastatic melanoma"}
+        rationale: {pt: "Quando TIL expande, então tumor é atacado por seu próprio repertório.", en: "When TIL expands, tumor is attacked by its own repertoire."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bispecific T-cell:", en: "Bispecific T-cell:"}
+        choices:
+          - {pt: "Bispecific T-cell engager liga CD3 + tumor antigen recrutando T-cell endógena — blinatumomab CD19/CD3 + teclistamab BCMA/CD3 + tarlatamab DLL3/CD3 SCLC + cevostamab FcRH5/CD3 myeloma 2024", en: "Bispecific T-cell engager links CD3 + tumor antigen recruiting endogenous T cells — blinatumomab CD19/CD3 + teclistamab BCMA/CD3 + tarlatamab DLL3/CD3 SCLC + cevostamab FcRH5/CD3 myeloma 2024"}
+          - {pt: "Bispecific T-cell é restrito a CAR-T autóloga sem componente bispecific sendo blinatumomab inviável em qualquer paciente humano clínico moderno em 2024", en: "Bispecific T-cell is restricted to autologous CAR-T without bispecific component with blinatumomab infeasible in any modern clinical human patient in 2024"}
+          - {pt: "Teclistamab é teórico sem evidência sendo tarlatamab inviável em qualquer aplicação humana clínica moderna em 2024", en: "Teclistamab is theoretical without evidence with tarlatamab infeasible in any modern clinical human application in 2024"}
+          - {pt: "DLL3/CD3 é incompatível com SCLC sendo cevostamab inviável em qualquer paciente humano clínico moderno em 2024", en: "DLL3/CD3 is incompatible with SCLC with cevostamab infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Bispecific T-cell engager liga CD3 + tumor antigen recrutando T-cell endógena — blinatumomab CD19/CD3 + teclistamab BCMA/CD3 + tarlatamab DLL3/CD3 SCLC + cevostamab FcRH5/CD3 myeloma 2024", en: "Bispecific T-cell engager links CD3 + tumor antigen recruiting endogenous T cells — blinatumomab CD19/CD3 + teclistamab BCMA/CD3 + tarlatamab DLL3/CD3 SCLC + cevostamab FcRH5/CD3 myeloma 2024"}
+        rationale: {pt: "Quando bispecific puxa T-cell, então CAR não precisa fabricar.", en: "When bispecific pulls T cell, CAR doesn't need manufacturing."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ADC + ICI:", en: "ADC + ICI:"}
+        choices:
+          - {pt: "Combo ADC trastuzumab deruxtecan T-DXd + pembrolizumab/nivolumab DESTINY-Lung04 phase 3 NSCLC + Enfortumab Vedotin EV-302 urothelial 2023 — sinergia immunogenic cell death + checkpoint blockade", en: "ADC trastuzumab deruxtecan T-DXd + pembrolizumab/nivolumab combo in DESTINY-Lung04 phase 3 NSCLC + Enfortumab Vedotin EV-302 urothelial 2023 — immunogenic-cell-death + checkpoint-blockade synergy"}
+          - {pt: "ADC + ICI é restrito a single-agent sem componente combo sendo T-DXd inviável em qualquer paciente NSCLC humano clínico moderno em 2024", en: "ADC + ICI is restricted to single-agent without combo component with T-DXd infeasible in any modern clinical NSCLC human patient in 2024"}
+          - {pt: "DESTINY-Lung04 é teórico sem evidência sendo Enfortumab Vedotin inviável em qualquer aplicação humana clínica moderna em 2024", en: "DESTINY-Lung04 is theoretical without evidence with Enfortumab Vedotin infeasible in any modern clinical human application in 2024"}
+          - {pt: "EV-302 é incompatível com ADC sendo urothelial inviável em qualquer paciente humano clínico moderno em 2024", en: "EV-302 is incompatible with ADC with urothelial infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Combo ADC trastuzumab deruxtecan T-DXd + pembrolizumab/nivolumab DESTINY-Lung04 phase 3 NSCLC + Enfortumab Vedotin EV-302 urothelial 2023 — sinergia immunogenic cell death + checkpoint blockade", en: "ADC trastuzumab deruxtecan T-DXd + pembrolizumab/nivolumab combo in DESTINY-Lung04 phase 3 NSCLC + Enfortumab Vedotin EV-302 urothelial 2023 — immunogenic-cell-death + checkpoint-blockade synergy"}
+        rationale: {pt: "Quando ADC mata tumor, então ICI termina o trabalho.", en: "When ADC kills tumor, ICI finishes the job."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cancer testis MAGE:", en: "MAGE cancer-testis:"}
+        choices:
+          - {pt: "Cancer-testis antigen MAGE-A4, NY-ESO-1, PRAME expressed exclusively em tumor + germline — TCR-T afami-cel sarcoma sinovial primeira aprovação FDA 2024, Tabelecleucel EBV-related antigens", en: "Cancer-testis antigens MAGE-A4, NY-ESO-1, PRAME expressed exclusively in tumor + germline — TCR-T afami-cel synovial sarcoma first FDA approval 2024, Tabelecleucel EBV-related antigens"}
+          - {pt: "Cancer-testis é restrito a tecido sadio sem componente tumoral sendo MAGE-A4 inviável em qualquer paciente sarcoma humano clínico moderno em 2024", en: "Cancer-testis is restricted to healthy tissue without tumor component with MAGE-A4 infeasible in any modern clinical sarcoma human patient in 2024"}
+          - {pt: "NY-ESO-1 é teórico sem evidência sendo PRAME inviável em qualquer aplicação humana clínica moderna em 2024", en: "NY-ESO-1 is theoretical without evidence with PRAME infeasible in any modern clinical human application in 2024"}
+          - {pt: "Afami-cel é incompatível com TCR-T sendo Tabelecleucel inviável em qualquer paciente humano clínico moderno em 2024", en: "Afami-cel is incompatible with TCR-T with Tabelecleucel infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Cancer-testis antigen MAGE-A4, NY-ESO-1, PRAME expressed exclusively em tumor + germline — TCR-T afami-cel sarcoma sinovial primeira aprovação FDA 2024, Tabelecleucel EBV-related antigens", en: "Cancer-testis antigens MAGE-A4, NY-ESO-1, PRAME expressed exclusively in tumor + germline — TCR-T afami-cel synovial sarcoma first FDA approval 2024, Tabelecleucel EBV-related antigens"}
+        rationale: {pt: "Quando cancer-testis expressa só em tumor, então TCR mira preciso.", en: "When cancer-testis expresses only in tumor, TCR aims precisely."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "STING agonist intra:", en: "STING agonist intra:"}
+        choices:
+          - {pt: "Aldoxorubicin DMXAA, MIW815/ADU-S100, BMS-986301 intra-tumoral STING agonist trigger type-I IFN inflammation in tumor + lymph node — heating cold tumor + dendritic cell priming + abscopal effect", en: "Aldoxorubicin DMXAA, MIW815/ADU-S100, BMS-986301 intra-tumoral STING agonist trigger type-I IFN inflammation in tumor + lymph node — cold-tumor heating + dendritic-cell priming + abscopal effect"}
+          - {pt: "STING agonist é restrito a IL-1 sem componente STING sendo MIW815 inviável em qualquer paciente oncológico humano clínico moderno em 2024", en: "STING agonist is restricted to IL-1 without STING component with MIW815 infeasible in any modern clinical human oncologic patient in 2024"}
+          - {pt: "Type-I IFN é teórico sem evidência sendo BMS-986301 inviável em qualquer aplicação humana clínica moderna em 2024", en: "Type-I IFN is theoretical without evidence with BMS-986301 infeasible in any modern clinical human application in 2024"}
+          - {pt: "Abscopal effect é incompatível com STING sendo intra-tumoral inviável em qualquer paciente humano clínico moderno em 2024", en: "Abscopal effect is incompatible with STING with intra-tumoral infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Aldoxorubicin DMXAA, MIW815/ADU-S100, BMS-986301 intra-tumoral STING agonist trigger type-I IFN inflammation in tumor + lymph node — heating cold tumor + dendritic cell priming + abscopal effect", en: "Aldoxorubicin DMXAA, MIW815/ADU-S100, BMS-986301 intra-tumoral STING agonist trigger type-I IFN inflammation in tumor + lymph node — cold-tumor heating + dendritic-cell priming + abscopal effect"}
+        rationale: {pt: "Quando STING acende, então cold vira hot.", en: "When STING ignites, cold turns hot."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anti-CD47 magrolimab:", en: "Magrolimab anti-CD47:"}
+        choices:
+          - {pt: "Anti-CD47 magrolimab (Gilead/Forty Seven) bloqueia 'don't eat me' signal CD47-SIRPα macrofago restoration phagocytosis em AML/MDS/lymphoma — fase 3 ENHANCE trial AML hold 2023 toxicity issue", en: "Anti-CD47 magrolimab (Gilead/Forty Seven) blocks CD47-SIRPα 'don't eat me' signal restoring macrophage phagocytosis in AML/MDS/lymphoma — phase 3 ENHANCE AML trial held 2023 over toxicity"}
+          - {pt: "Anti-CD47 é restrito a anti-PD-1 sem componente CD47 sendo magrolimab inviável em qualquer paciente AML humano clínico moderno em 2024", en: "Anti-CD47 is restricted to anti-PD-1 without CD47 component with magrolimab infeasible in any modern clinical AML human patient in 2024"}
+          - {pt: "Don't eat me é teórico sem evidência sendo CD47-SIRPα inviável em qualquer aplicação humana clínica moderna em 2024", en: "Don't eat me is theoretical without evidence with CD47-SIRPα infeasible in any modern clinical human application in 2024"}
+          - {pt: "ENHANCE é incompatível com magrolimab sendo Forty Seven inviável em qualquer paciente humano clínico moderno em 2024", en: "ENHANCE is incompatible with magrolimab with Forty Seven infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Anti-CD47 magrolimab (Gilead/Forty Seven) bloqueia 'don't eat me' signal CD47-SIRPα macrofago restoration phagocytosis em AML/MDS/lymphoma — fase 3 ENHANCE trial AML hold 2023 toxicity issue", en: "Anti-CD47 magrolimab (Gilead/Forty Seven) blocks CD47-SIRPα 'don't eat me' signal restoring macrophage phagocytosis in AML/MDS/lymphoma — phase 3 ENHANCE AML trial held 2023 over toxicity"}
+        rationale: {pt: "Quando 'don't eat me' cala, então macrófago come tumor.", en: "When 'don't eat me' quiets, macrophage eats tumor."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese cancer immuno:", en: "Cancer immuno synthesis:"}
+        choices:
+          - {pt: "Primary/acquired resistance + LAG-3 + TIGIT + TIM-3 + cold-heating + TGF-β + Treg/MDSC + HIF-2α + oncolytic virus + IL-2 mutein + TIL + bispecific + ADC + cancer-testis + STING + CD47 redefinem cancer immunotherapy", en: "Primary/acquired resistance + LAG-3 + TIGIT + TIM-3 + cold-heating + TGF-β + Treg/MDSC + HIF-2α + oncolytic virus + IL-2 mutein + TIL + bispecific + ADC + cancer-testis + STING + CD47 redefine cancer immunotherapy"}
+          - {pt: "Cancer immunotherapy permanece pré-clínica sem aplicação humana até 2024 sendo conceito experimental sem implementação prática em qualquer indicação clínica humana globalmente", en: "Cancer immunotherapy remains preclinical without human application by 2024 being experimental concept without practical implementation in any clinical human indication globally"}
+          - {pt: "Plataformas immuno são intercambiáveis sem trade-off em alvo tornando escolha tecnológica indiferente em qualquer aplicação clínica humana 2024 globalmente em qualquer escala paciente", en: "Immuno platforms are interchangeable without target trade-off making technology choice indifferent in any clinical human application 2024 globally at any patient scale"}
+          - {pt: "Cancer immuno depende exclusivamente de anti-PD-1 sem componente combo sendo LAG-3 e TIGIT dispensáveis em qualquer paciente humano clínico moderno em 2024", en: "Cancer immuno depends exclusively on anti-PD-1 without combo component with LAG-3 and TIGIT dispensable in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Primary/acquired resistance + LAG-3 + TIGIT + TIM-3 + cold-heating + TGF-β + Treg/MDSC + HIF-2α + oncolytic virus + IL-2 mutein + TIL + bispecific + ADC + cancer-testis + STING + CD47 redefinem cancer immunotherapy", en: "Primary/acquired resistance + LAG-3 + TIGIT + TIM-3 + cold-heating + TGF-β + Treg/MDSC + HIF-2α + oncolytic virus + IL-2 mutein + TIL + bispecific + ADC + cancer-testis + STING + CD47 redefine cancer immunotherapy"}
+        rationale: {pt: "Quando alvos imunes convergem, então tumor não escapa.", en: "When immune targets converge, tumor cannot escape."}
+        objectives: [biology.cancer_immunotherapy_advanced]
+        difficulty: 5
+target: 20
