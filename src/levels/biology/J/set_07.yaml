@@ -1,0 +1,244 @@
+title:
+  pt: "🌱 Pluripotência: naive vs primed"
+  en: "🌱 Pluripotency: naive vs primed"
+level: 'J'
+subject: biology
+objectives: [biology.pluripotency_states]
+difficulty: 5
+authorNotes: "Naive ESC, primed ESC, EpiSC, hESC convertidos, blastoides, totipotência, capability switch, nuclear reset, X reativação."
+example:
+  pt: "Ex.: hESC primed → CHIR + PD0325901 + receptor blockers → reset metabólico/X reativação → estado naive humano."
+  en: "Ex.: primed hESC → CHIR + PD0325901 + receptor blockers → metabolic/X reactivation reset → human naive state."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Estados de pluripotência", en: "Pluripotency states"}
+    description: {pt: "Como ESCs vivem em diferentes janelas.", en: "How ESCs live in different windows."}
+    exercises:
+      - type: choice
+        question: {pt: "Naive vs primed:", en: "Naive vs primed:"}
+        choices:
+          - {pt: "Naive (mouse ESC, blastocist) tem dois X ativos, OXPHOS baixo e domes; primed (EpiSC) tem X inativo e flat colônias", en: "Naive (mouse ESC, blastocyst) has two active X, low OXPHOS and dome colonies; primed (EpiSC) has inactive X and flat colonies"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Naive (mouse ESC, blastocist) tem dois X ativos, OXPHOS baixo e domes; primed (EpiSC) tem X inativo e flat colônias", en: "Naive (mouse ESC, blastocyst) has two active X, low OXPHOS and dome colonies; primed (EpiSC) has inactive X and flat colonies"}
+        rationale: {pt: "Quando estado muda, então propriedades celulares trocam.", en: "When state changes, cellular properties switch."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "2i+LIF media:", en: "2i+LIF media:"}
+        choices:
+          - {pt: "MEKi (PD0325901) + GSK3i (CHIR99021) + LIF estabilizam mESC naive bloqueando diferenciação espontânea", en: "MEKi (PD0325901) + GSK3i (CHIR99021) + LIF stabilize naive mESC blocking spontaneous differentiation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "MEKi (PD0325901) + GSK3i (CHIR99021) + LIF estabilizam mESC naive bloqueando diferenciação espontânea", en: "MEKi (PD0325901) + GSK3i (CHIR99021) + LIF stabilize naive mESC blocking spontaneous differentiation"}
+        rationale: {pt: "Quando 2i+LIF cobre, então naive permanece estável.", en: "When 2i+LIF covers, naive stays stable."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "hESC naive conversion:", en: "hESC naive conversion:"}
+        choices:
+          - {pt: "5iLAF, t2iLGö e e8 protocolos resetam hESC primed para naive humano com X-reativação parcial", en: "5iLAF, t2iLGö and e8 protocols reset primed hESC to human naive with partial X reactivation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "5iLAF, t2iLGö e e8 protocolos resetam hESC primed para naive humano com X-reativação parcial", en: "5iLAF, t2iLGö and e8 protocols reset primed hESC to human naive with partial X reactivation"}
+        rationale: {pt: "Quando reset funciona, então humanos têm naive in vitro.", en: "When reset works, humans have naive in vitro."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "X reactivation:", en: "X reactivation:"}
+        choices:
+          - {pt: "Naive humanos reactivam Xi pondo XIST off — marker chave de plenitude pluripotente versus primed", en: "Human naive reactivates Xi switching XIST off — key marker of full pluripotency versus primed"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Naive humanos reactivam Xi pondo XIST off — marker chave de plenitude pluripotente versus primed", en: "Human naive reactivates Xi switching XIST off — key marker of full pluripotency versus primed"}
+        rationale: {pt: "Quando X reactiva, então biologia naive completa-se.", en: "When X reactivates, naive biology completes."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Métabolismo glicolítico:", en: "Glycolytic metabolism:"}
+        choices:
+          - {pt: "Naive humanos usam OXPHOS+glicólise enquanto primed dependem mais de glicólise — marker metabólico do estado", en: "Human naive uses OXPHOS+glycolysis while primed relies more on glycolysis — metabolic state marker"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Naive humanos usam OXPHOS+glicólise enquanto primed dependem mais de glicólise — marker metabólico do estado", en: "Human naive uses OXPHOS+glycolysis while primed relies more on glycolysis — metabolic state marker"}
+        rationale: {pt: "Quando metabolismo difere, então identidade celular emerge.", en: "When metabolism differs, cell identity emerges."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Transcription factor circuit:", en: "Transcription factor circuit:"}
+        choices:
+          - {pt: "OCT4-SOX2-NANOG no core + KLF2/4, TFCP2L1, ESRRB sustentam naive — DNMT3 e CDX2 marcam saída para primed", en: "Core OCT4-SOX2-NANOG + KLF2/4, TFCP2L1, ESRRB sustain naive — DNMT3 and CDX2 mark exit to primed"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "OCT4-SOX2-NANOG no core + KLF2/4, TFCP2L1, ESRRB sustentam naive — DNMT3 e CDX2 marcam saída para primed", en: "Core OCT4-SOX2-NANOG + KLF2/4, TFCP2L1, ESRRB sustain naive — DNMT3 and CDX2 mark exit to primed"}
+        rationale: {pt: "Quando rede TF muda, então estado pluripotente troca.", en: "When TF network shifts, pluripotent state switches."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Totipotência (TBLC):", en: "Totipotency (TBLC):"}
+        choices:
+          - {pt: "Totipotent blastomere-like cells geram ICM e trofectoderme — Oct4 alto + Cdx2 + ZSCAN4 marca estado totipotente", en: "Totipotent blastomere-like cells form ICM and trophectoderm — high Oct4 + Cdx2 + ZSCAN4 marks totipotent state"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Totipotent blastomere-like cells geram ICM e trofectoderme — Oct4 alto + Cdx2 + ZSCAN4 marca estado totipotente", en: "Totipotent blastomere-like cells form ICM and trophectoderm — high Oct4 + Cdx2 + ZSCAN4 marks totipotent state"}
+        rationale: {pt: "Quando totipotente surge, então ambos lineage formam.", en: "When totipotent arises, both lineages form."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Blastoides humanos:", en: "Human blastoids:"}
+        choices:
+          - {pt: "Naive hPSCs autoorganizam em blastoides com EPI + Hyp + TE recapitulando blastocist 5-7 dpf — ético sem fertilização", en: "Naive hPSCs self-organize into blastoids with EPI + Hyp + TE recapitulating 5-7 dpf blastocyst — ethical without fertilization"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Naive hPSCs autoorganizam em blastoides com EPI + Hyp + TE recapitulando blastocist 5-7 dpf — ético sem fertilização", en: "Naive hPSCs self-organize into blastoids with EPI + Hyp + TE recapitulating 5-7 dpf blastocyst — ethical without fertilization"}
+        rationale: {pt: "Quando blastoid forma, então estágio pré-implantatório vira modelável.", en: "When blastoid forms, pre-implantation stage becomes modelable."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Trophoblast stem cells:", en: "Trophoblast stem cells:"}
+        choices:
+          - {pt: "TSCs humanas derivadas via CHIR + valproato + EGF mantêm-se autoreplicantes diferenciando em vilo e EVT", en: "Human TSCs derived via CHIR + valproate + EGF self-renew differentiating into villous and EVT"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "TSCs humanas derivadas via CHIR + valproato + EGF mantêm-se autoreplicantes diferenciando em vilo e EVT", en: "Human TSCs derived via CHIR + valproate + EGF self-renew differentiating into villous and EVT"}
+        rationale: {pt: "Quando TSC vive, então placenta é estudada in vitro.", en: "When TSC lives, placenta is studied in vitro."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mitochondrial reset:", en: "Mitochondrial reset:"}
+        choices:
+          - {pt: "Naive cells têm mtDNA reduzido e cristas imaturas — reset mitocondrial é critério de validação do estado", en: "Naive cells have reduced mtDNA and immature cristae — mitochondrial reset is state validation criterion"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Naive cells têm mtDNA reduzido e cristas imaturas — reset mitocondrial é critério de validação do estado", en: "Naive cells have reduced mtDNA and immature cristae — mitochondrial reset is state validation criterion"}
+        rationale: {pt: "Quando mito imaturas, então naive é fiel.", en: "When mito are immature, naive is faithful."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações em modelos e terapia", en: "Applications in models and therapy"}
+    description: {pt: "Por que o estado importa.", en: "Why state matters."}
+    exercises:
+      - type: choice
+        question: {pt: "Diferenciação eficaz:", en: "Efficient differentiation:"}
+        choices:
+          - {pt: "Estado primed direciona-se mais facilmente a tipos somáticos via gradientes morfógenos enquanto naive precisa transição capacitada", en: "Primed state more easily directs to somatic types via morphogen gradients while naive needs capacitated transition"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Estado primed direciona-se mais facilmente a tipos somáticos via gradientes morfógenos enquanto naive precisa transição capacitada", en: "Primed state more easily directs to somatic types via morphogen gradients while naive needs capacitated transition"}
+        rationale: {pt: "Quando estado certo é escolhido, então diferenciação funciona.", en: "When right state is chosen, differentiation works."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PGCs derivação:", en: "PGCs derivation:"}
+        choices:
+          - {pt: "Primordial germ cells de hPSC requerem estágio naive para responder a BMP4 + LIF — base de gametogênese in vitro", en: "Primordial germ cells from hPSC require naive stage to respond to BMP4 + LIF — basis of in vitro gametogenesis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Primordial germ cells de hPSC requerem estágio naive para responder a BMP4 + LIF — base de gametogênese in vitro", en: "Primordial germ cells from hPSC require naive stage to respond to BMP4 + LIF — basis of in vitro gametogenesis"}
+        rationale: {pt: "Quando naive entrega, então gametas in vitro viram possíveis.", en: "When naive delivers, in vitro gametes become possible."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Quimera contribuição:", en: "Chimera contribution:"}
+        choices:
+          - {pt: "Naive mPSC contribuem para todos tecidos em quimera murina — naive humano é alvo para quimera porco-humano em xeno-órgãos", en: "Naive mPSCs contribute to all tissues in mouse chimeras — human naive is target for pig-human chimeras in xeno-organs"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Naive mPSC contribuem para todos tecidos em quimera murina — naive humano é alvo para quimera porco-humano em xeno-órgãos", en: "Naive mPSCs contribute to all tissues in mouse chimeras — human naive is target for pig-human chimeras in xeno-organs"}
+        rationale: {pt: "Quando naive contribui, então engenharia em quimera escala.", en: "When naive contributes, chimera engineering scales."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Disease modeling iPSC:", en: "Disease modeling iPSC:"}
+        choices:
+          - {pt: "iPSC derivado naive captura early developmental disorders enquanto primed serve para fenótipos pós-implantação", en: "Naive-derived iPSC captures early developmental disorders while primed serves post-implantation phenotypes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "iPSC derivado naive captura early developmental disorders enquanto primed serve para fenótipos pós-implantação", en: "Naive-derived iPSC captures early developmental disorders while primed serves post-implantation phenotypes"}
+        rationale: {pt: "Quando estado casa, então doença é modelada certo.", en: "When state matches, disease is modeled rightly."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genome editing eficiência:", en: "Genome editing efficiency:"}
+        choices:
+          - {pt: "Naive cells editam mais eficientemente CRISPR via HDR — útil para correções precisas em iPSC clínicas", en: "Naive cells edit more efficiently with CRISPR HDR — useful for precise corrections in clinical iPSC"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Naive cells editam mais eficientemente CRISPR via HDR — útil para correções precisas em iPSC clínicas", en: "Naive cells edit more efficiently with CRISPR HDR — useful for precise corrections in clinical iPSC"}
+        rationale: {pt: "Quando HDR domina, então edições corretas geram-se.", en: "When HDR dominates, correct edits arise."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ECCITE e regimens:", en: "Capacitation:"}
+        choices:
+          - {pt: "Capacitação intermediária via PD03 + IWP-2 transita naive a primed sustentando capacidade germline e diferenciação", en: "Intermediate capacitation via PD03 + IWP-2 transitions naive to primed sustaining germline capacity and differentiation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Capacitação intermediária via PD03 + IWP-2 transita naive a primed sustentando capacidade germline e diferenciação", en: "Intermediate capacitation via PD03 + IWP-2 transitions naive to primed sustaining germline capacity and differentiation"}
+        rationale: {pt: "Quando capacitação ponte, então naive vira útil em primed protocols.", en: "When capacitation bridges, naive becomes useful in primed protocols."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ISSCR 14-day rule:", en: "ISSCR 14-day rule:"}
+        choices:
+          - {pt: "Diretrizes ISSCR 2021 permitem cultura de embriões além de 14 dias com avaliação caso-a-caso para gastrulação modelada", en: "ISSCR 2021 guidelines allow culturing embryos beyond 14 days with case-by-case review for modeled gastrulation"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Diretrizes ISSCR 2021 permitem cultura de embriões além de 14 dias com avaliação caso-a-caso para gastrulação modelada", en: "ISSCR 2021 guidelines allow culturing embryos beyond 14 days with case-by-case review for modeled gastrulation"}
+        rationale: {pt: "Quando regras flexibilizam, então pesquisa avança com governança.", en: "When rules flex, research advances with governance."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cancer pluripotency:", en: "Cancer pluripotency:"}
+        choices:
+          - {pt: "Tumores germinativos e teratomas expressam OCT4/NANOG — estado pluripotente patológico que orienta diagnóstico molecular", en: "Germ cell tumors and teratomas express OCT4/NANOG — pathological pluripotent state guiding molecular diagnosis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tumores germinativos e teratomas expressam OCT4/NANOG — estado pluripotente patológico que orienta diagnóstico molecular", en: "Germ cell tumors and teratomas express OCT4/NANOG — pathological pluripotent state guiding molecular diagnosis"}
+        rationale: {pt: "Quando pluripotência reaparece, então tumor é germinativo.", en: "When pluripotency reappears, tumor is germinal."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Off-target diferenciação:", en: "Off-target differentiation:"}
+        choices:
+          - {pt: "Variantes culturais e cariotípicas reduzem fidelidade do estado pluripotente — banking + control routine necessário", en: "Cultural and karyotypic variants reduce pluripotent state fidelity — banking + routine controls are needed"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Variantes culturais e cariotípicas reduzem fidelidade do estado pluripotente — banking + control routine necessário", en: "Cultural and karyotypic variants reduce pluripotent state fidelity — banking + routine controls are needed"}
+        rationale: {pt: "Quando QC roda, então segurança da terapia cresce.", en: "When QC runs, therapy safety grows."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese pluripotência:", en: "Pluripotency synthesis:"}
+        choices:
+          - {pt: "Naive, primed e totipotente abrem janelas distintas de modelagem, edição, gametogênese e xenotransplante em medicina regenerativa", en: "Naive, primed and totipotent open distinct windows for modeling, editing, gametogenesis and xenotransplant in regenerative medicine"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Naive, primed e totipotente abrem janelas distintas de modelagem, edição, gametogênese e xenotransplante em medicina regenerativa", en: "Naive, primed and totipotent open distinct windows for modeling, editing, gametogenesis and xenotransplant in regenerative medicine"}
+        rationale: {pt: "Quando estado é controlado, então biologia desenvolve possibilidades.", en: "When state is controlled, biology unlocks possibilities."}
+        objectives: [biology.pluripotency_states]
+        difficulty: 5
+target: 20
