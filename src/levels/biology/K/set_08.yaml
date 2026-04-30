@@ -1,0 +1,244 @@
+title:
+  pt: "🗺️ Transcriptômica espacial e atlas teciduais"
+  en: "🗺️ Spatial transcriptomics and tissue atlases"
+level: 'K'
+subject: biology
+objectives: [biology.spatial_transcriptomics]
+difficulty: 5
+authorNotes: "Visium, Slide-seq, Stereo-seq, MERFISH, seqFISH+, CosMx, Xenium, HuBMAP, Tabula Sapiens, niches, ligand-receptor CellChat, deconvolution cell2location."
+example:
+  pt: "Ex.: tumor mama → Visium + IHC → niche TME → CellChat ligand-receptor → identificar TLS protetor → prognóstico."
+  en: "Ex.: breast tumor → Visium + IHC → TME niche → CellChat ligand-receptor → identify protective TLS → prognosis."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas espaciais", en: "Spatial platforms"}
+    description: {pt: "Como mapear RNA in situ.", en: "How to map RNA in situ."}
+    exercises:
+      - type: choice
+        question: {pt: "10x Visium:", en: "10x Visium:"}
+        choices:
+          - {pt: "Capture array com spots de 55µm e ~1-10 células por spot mede whole-transcriptome — barcoded oligo-dT em vidro com tecido FFPE/fresh", en: "Capture array with 55µm spots and ~1-10 cells per spot measures whole-transcriptome — barcoded oligo-dT on glass with FFPE/fresh tissue"}
+          - {pt: "Visium tem resolução subcelular de 1µm com transcriptoma single-cell direto sem necessidade de deconvolução computacional", en: "Visium has subcellular 1µm resolution with direct single-cell transcriptome and no computational deconvolution needed"}
+          - {pt: "Plataforma de imagens fluorescentes target-based limitada a ~100 genes pré-selecionados sem captura whole-transcriptome", en: "Fluorescence imaging target-based platform limited to ~100 preselected genes without whole-transcriptome capture"}
+          - {pt: "Visium é restrito a tecido líquido tumoral em suspensão com leitura via cytometry sem componente espacial preservado", en: "Visium is restricted to liquid tumor suspension read by cytometry with no preserved spatial component"}
+        correctAnswer: {pt: "Capture array com spots de 55µm e ~1-10 células por spot mede whole-transcriptome — barcoded oligo-dT em vidro com tecido FFPE/fresh", en: "Capture array with 55µm spots and ~1-10 cells per spot measures whole-transcriptome — barcoded oligo-dT on glass with FFPE/fresh tissue"}
+        rationale: {pt: "Quando spots barcodam, então transcrito carrega coordenada.", en: "When spots barcode, transcripts carry coordinates."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Slide-seq V2:", en: "Slide-seq V2:"}
+        choices:
+          - {pt: "Beads barcoded de 10µm em puck dão near-single-cell whole-transcriptome — preço/área baixo viabiliza atlas tecidual amplo", en: "10µm barcoded beads on puck give near-single-cell whole-transcriptome — low price/area enables broad tissue atlas"}
+          - {pt: "Slide-seq usa beads de 100µm tornando resolução pior que Visium e desencorajando uso em mapeamento celular preciso", en: "Slide-seq uses 100µm beads making resolution worse than Visium and discouraging precise cell mapping use"}
+          - {pt: "Plataforma image-based de FISH com painel limitado a 50 genes sem captura whole-transcriptome em tecido espacialmente preservado", en: "FISH image-based platform with 50-gene panel limit without whole-transcriptome capture in spatially preserved tissue"}
+          - {pt: "Slide-seq V2 é exclusivo a cérebro de zebrafish embrionário sem aplicação em tecidos adultos de mamíferos ou tumores humanos", en: "Slide-seq V2 is exclusive to embryonic zebrafish brain without application in adult mammalian tissue or human tumors"}
+        correctAnswer: {pt: "Beads barcoded de 10µm em puck dão near-single-cell whole-transcriptome — preço/área baixo viabiliza atlas tecidual amplo", en: "10µm barcoded beads on puck give near-single-cell whole-transcriptome — low price/area enables broad tissue atlas"}
+        rationale: {pt: "Quando bead é menor, então célula vira ponto único.", en: "When bead is smaller, cell becomes single point."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Stereo-seq:", en: "Stereo-seq:"}
+        choices:
+          - {pt: "DNA nanoball arrays com resolução nanométrica em centímetros quadrados — viabilizou MOSTA atlas embrionário murino completo", en: "DNA nanoball arrays with nanometer resolution over square centimeters — enabled the full MOSTA mouse embryonic atlas"}
+          - {pt: "Stereo-seq é plataforma de scRNA-seq sem componente espacial usada para atlas de tecidos dissociados em suspensão", en: "Stereo-seq is a scRNA-seq platform without spatial component used for atlases of dissociated tissue in suspension"}
+          - {pt: "Resolução é limitada a 100µm por nanoball tornando captura embrionária impossível em escala centimétrica espacialmente preservada", en: "Resolution is capped at 100µm per nanoball making centimetric embryonic capture spatially impossible"}
+          - {pt: "Stereo-seq mede apenas ATAC-seq cromatínico sem captura de mRNA e dispensa atlas embrionário transcriptômico em desenvolvimento", en: "Stereo-seq measures only chromatin ATAC-seq without mRNA capture and dispenses transcriptomic embryonic developmental atlas"}
+        correctAnswer: {pt: "DNA nanoball arrays com resolução nanométrica em centímetros quadrados — viabilizou MOSTA atlas embrionário murino completo", en: "DNA nanoball arrays with nanometer resolution over square centimeters — enabled the full MOSTA mouse embryonic atlas"}
+        rationale: {pt: "Quando resolução é fina e área grande, então embrião inteiro mapeia.", en: "When resolution is fine and area is large, whole embryo maps."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "MERFISH/seqFISH+:", en: "MERFISH/seqFISH+:"}
+        choices:
+          - {pt: "FISH multiplex iterativo lê 100-10000 genes por imagem com resolução subcelular real — quantitativo, alta sensibilidade, painel pré-definido", en: "Iterative multiplex FISH reads 100-10000 genes per image with true subcellular resolution — quantitative, high sensitivity, predefined panel"}
+          - {pt: "MERFISH é plataforma sequencing-based sem componente imageamento que retorna whole-transcriptome unbiased em tecido FFPE preservado", en: "MERFISH is a sequencing-based platform without imaging that returns unbiased whole-transcriptome in FFPE-preserved tissue"}
+          - {pt: "seqFISH+ é restrito a 10 genes por amostra por imagem sendo inviável para atlas tecidual de alta complexidade celular", en: "seqFISH+ is restricted to 10 genes per sample per image and unworkable for high-complexity cellular tissue atlas"}
+          - {pt: "FISH multiplex perde resolução quando aumenta número de genes restringindo MERFISH a painéis menores que 50 transcritos diferentes", en: "Multiplex FISH loses resolution as gene count rises restricting MERFISH to panels smaller than 50 different transcripts"}
+        correctAnswer: {pt: "FISH multiplex iterativo lê 100-10000 genes por imagem com resolução subcelular real — quantitativo, alta sensibilidade, painel pré-definido", en: "Iterative multiplex FISH reads 100-10000 genes per image with true subcellular resolution — quantitative, high sensitivity, predefined panel"}
+        rationale: {pt: "Quando rounds de FISH se acumulam, então código binário cresce.", en: "When FISH rounds stack, binary code grows."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Xenium e CosMx:", en: "Xenium and CosMx:"}
+        choices:
+          - {pt: "Plataformas comerciais image-based (10x Xenium, NanoString CosMx) entregam ~300-1000 genes em FFPE com resolução subcelular ready-to-clinic", en: "Commercial image-based platforms (10x Xenium, NanoString CosMx) deliver ~300-1000 genes in FFPE with subcellular ready-to-clinic resolution"}
+          - {pt: "Xenium e CosMx são sequencing-based whole-transcriptome sem painel limitado, dispensando seleção prévia de genes alvo", en: "Xenium and CosMx are sequencing-based whole-transcriptome without limited panel, dispensing prior target-gene selection"}
+          - {pt: "Plataformas comerciais não funcionam em FFPE e são restritas a tecido fresco congelado limitando aplicação em pathology rotineira", en: "Commercial platforms do not work in FFPE and are restricted to fresh-frozen tissue limiting routine pathology application"}
+          - {pt: "Xenium e CosMx são equivalentes de Visium com mesma resolução de 55µm sem ganho em sensibilidade ou painéis multiplexados", en: "Xenium and CosMx are Visium equivalents with the same 55µm resolution without sensitivity gain or multiplexed panels"}
+        correctAnswer: {pt: "Plataformas comerciais image-based (10x Xenium, NanoString CosMx) entregam ~300-1000 genes em FFPE com resolução subcelular ready-to-clinic", en: "Commercial image-based platforms (10x Xenium, NanoString CosMx) deliver ~300-1000 genes in FFPE with subcellular ready-to-clinic resolution"}
+        rationale: {pt: "Quando FFPE-compatível, então clínica recebe spatial.", en: "When FFPE-compatible, clinic gets spatial."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Deconvolução cell2location:", en: "cell2location deconvolution:"}
+        choices:
+          - {pt: "Modelo bayesiano usa scRNA-seq atlas como referência para inferir abundância celular por spot Visium — chave para resolver mistura em ~10 células", en: "Bayesian model uses scRNA-seq atlas as reference inferring cell abundance per Visium spot — key to resolving ~10-cell mixture"}
+          - {pt: "cell2location é plataforma sequencing-based de scRNA-seq sem componente espacial deconvolutional aplicável a Visium ou Slide-seq", en: "cell2location is a scRNA-seq sequencing platform without spatial deconvolutional component applicable to Visium or Slide-seq"}
+          - {pt: "Deconvolução não é necessária em Visium porque cada spot já contém uma única célula com identidade definida sem mistura celular", en: "Deconvolution is not needed in Visium because each spot already contains a single cell with defined identity without cell mixture"}
+          - {pt: "cell2location prediz coordenadas espaciais a partir de dados scRNA-seq dissociados sem usar dados Visium reais como entrada", en: "cell2location predicts spatial coordinates from dissociated scRNA-seq data without using real Visium data as input"}
+        correctAnswer: {pt: "Modelo bayesiano usa scRNA-seq atlas como referência para inferir abundância celular por spot Visium — chave para resolver mistura em ~10 células", en: "Bayesian model uses scRNA-seq atlas as reference inferring cell abundance per Visium spot — key to resolving ~10-cell mixture"}
+        rationale: {pt: "Quando referência scRNA é boa, então deconvolução fica precisa.", en: "When scRNA reference is good, deconvolution gets precise."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Niche analysis:", en: "Niche analysis:"}
+        choices:
+          - {pt: "Clustering de vizinhança celular revela nichos recorrentes (TLS, mucosa intestinal cripta, glomérulo renal) com função tecidual emergente", en: "Cell-neighborhood clustering reveals recurrent niches (TLS, intestinal-crypt mucosa, renal glomerulus) with emergent tissue function"}
+          - {pt: "Niches são artefatos técnicos de spotting Visium e desaparecem em plataformas de resolução subcelular como MERFISH ou Xenium", en: "Niches are Visium spotting artifacts disappearing in subcellular-resolution platforms like MERFISH or Xenium"}
+          - {pt: "Clustering espacial é equivalente a clustering scRNA dissociado e não acrescenta informação ao perfil transcricional padrão de cada célula", en: "Spatial clustering equals dissociated scRNA clustering and adds no information beyond each cell's standard transcriptional profile"}
+          - {pt: "Nichos são exclusivos de embriologia e desaparecem em adultos sendo irrelevantes para análise de tumor sólido ou tecido normal humano", en: "Niches are exclusive to embryology vanishing in adults and irrelevant for solid tumor or normal adult human tissue analysis"}
+        correctAnswer: {pt: "Clustering de vizinhança celular revela nichos recorrentes (TLS, mucosa intestinal cripta, glomérulo renal) com função tecidual emergente", en: "Cell-neighborhood clustering reveals recurrent niches (TLS, intestinal-crypt mucosa, renal glomerulus) with emergent tissue function"}
+        rationale: {pt: "Quando vizinhos formam padrão, então nicho emerge.", en: "When neighbors form pattern, niche emerges."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CellChat / NicheNet:", en: "CellChat / NicheNet:"}
+        choices:
+          - {pt: "Modelos ligand-receptor inferem comunicação intercelular a partir de coexpressão e proximidade espacial — testáveis em organoides ou KO", en: "Ligand-receptor models infer intercellular communication from co-expression and spatial proximity — testable in organoids or KO"}
+          - {pt: "CellChat é plataforma de imagem fluorescente direta sem componente computacional de inferência ligand-receptor a partir de dados de expressão", en: "CellChat is a direct fluorescence imaging platform without computational ligand-receptor inference component from expression data"}
+          - {pt: "Comunicação intercelular não pode ser inferida computacionalmente exigindo proteomics direto e ELISA tecidual em paralelo obrigatório", en: "Intercellular communication cannot be computationally inferred requiring direct proteomics and tissue ELISA in mandatory parallel"}
+          - {pt: "NicheNet ignora proximidade espacial usando apenas coexpressão global sendo equivalente a correlação Pearson sem componente espacial", en: "NicheNet ignores spatial proximity using only global co-expression equivalent to Pearson correlation without spatial component"}
+        correctAnswer: {pt: "Modelos ligand-receptor inferem comunicação intercelular a partir de coexpressão e proximidade espacial — testáveis em organoides ou KO", en: "Ligand-receptor models infer intercellular communication from co-expression and spatial proximity — testable in organoids or KO"}
+        rationale: {pt: "Quando ligante e receptor coincidem, então comunicação é predita.", en: "When ligand and receptor coincide, communication is predicted."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spatial proteomics:", en: "Spatial proteomics:"}
+        choices:
+          - {pt: "CODEX, IMC e MIBI multiplexam 30-50 anticorpos em tecido — complementa transcriptômica espacial em microambiente tumoral", en: "CODEX, IMC and MIBI multiplex 30-50 antibodies in tissue — complements spatial transcriptomics in tumor microenvironment"}
+          - {pt: "Spatial proteomics requer dissociação tecidual e cytometry de fluxo sem preservação espacial sendo equivalente funcional a CITE-seq dissociado", en: "Spatial proteomics requires tissue dissociation and flow cytometry without spatial preservation being a functional CITE-seq dissociated equivalent"}
+          - {pt: "CODEX e IMC são limitados a 5 anticorpos simultâneos sem capacidade de multiplexação em microambiente complexo", en: "CODEX and IMC are limited to 5 simultaneous antibodies without multiplexing capacity in complex microenvironment"}
+          - {pt: "Proteomics espacial é redundante com transcriptômica e não adiciona informação relevante em microambiente tumoral imune", en: "Spatial proteomics is redundant with transcriptomics and adds no relevant information in immune tumor microenvironment"}
+        correctAnswer: {pt: "CODEX, IMC e MIBI multiplexam 30-50 anticorpos em tecido — complementa transcriptômica espacial em microambiente tumoral", en: "CODEX, IMC and MIBI multiplex 30-50 antibodies in tissue — complements spatial transcriptomics in tumor microenvironment"}
+        rationale: {pt: "Quando proteína vê espaço, então fenótipo confirma transcrito.", en: "When protein sees space, phenotype confirms transcript."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spatial-ATAC-seq:", en: "Spatial-ATAC-seq:"}
+        choices:
+          - {pt: "DBiT-seq e Stereo-ATAC capturam acessibilidade cromatínica espacial — revelam regulação cis em tecido sem dissociar célula", en: "DBiT-seq and Stereo-ATAC capture spatial chromatin accessibility — reveal cis regulation in tissue without cell dissociation"}
+          - {pt: "Spatial-ATAC mede expressão proteica em tecido sem componente cromatínico nem regulação cis associada a perfil transcricional", en: "Spatial-ATAC measures tissue protein expression without chromatin component nor cis regulation tied to transcriptional profile"}
+          - {pt: "Acessibilidade cromatínica é uniforme em tecido e não varia espacialmente sendo dispensada análise espacial de ATAC-seq", en: "Chromatin accessibility is uniform across tissue and does not vary spatially making spatial ATAC-seq analysis dispensable"}
+          - {pt: "DBiT-seq é restrito a embrião murino e perde resolução em tecido adulto sendo inviável para mapeamento de regulação cis humana", en: "DBiT-seq is restricted to mouse embryo and loses resolution in adult tissue being unworkable for human cis-regulation mapping"}
+        correctAnswer: {pt: "DBiT-seq e Stereo-ATAC capturam acessibilidade cromatínica espacial — revelam regulação cis em tecido sem dissociar célula", en: "DBiT-seq and Stereo-ATAC capture spatial chromatin accessibility — reveal cis regulation in tissue without cell dissociation"}
+        rationale: {pt: "Quando ATAC ganha espaço, então enhancer aparece in situ.", en: "When ATAC gains space, enhancer appears in situ."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Atlas e clínica", en: "Atlases and clinic"}
+    description: {pt: "Como espacial vira diagnóstico.", en: "How spatial becomes diagnostic."}
+    exercises:
+      - type: choice
+        question: {pt: "HuBMAP:", en: "HuBMAP:"}
+        choices:
+          - {pt: "Human BioMolecular Atlas Program mapeia órgãos saudáveis em multimodal (RNA, proteína, metabolito) com referência espacial padronizada", en: "Human BioMolecular Atlas Program maps healthy organs in multimodal (RNA, protein, metabolite) with standardized spatial reference"}
+          - {pt: "HuBMAP é atlas restrito a doenças cardiovasculares sem aplicação em órgãos saudáveis ou referência espacial multimodal padronizada", en: "HuBMAP is an atlas restricted to cardiovascular disease without healthy organs or multimodal standardized spatial reference application"}
+          - {pt: "Programa de scRNA-seq dissociado sem componente espacial nem multimodal restrito a tecido tumoral em pacientes com câncer avançado", en: "Dissociated scRNA-seq program without spatial nor multimodal component restricted to tumor tissue in advanced cancer patients"}
+          - {pt: "HuBMAP substitui Tabula Sapiens e elimina necessidade de atlas tecidual complementar para anotação de tipo celular humano", en: "HuBMAP replaces Tabula Sapiens and eliminates need for complementary tissue atlas for human cell-type annotation"}
+        correctAnswer: {pt: "Human BioMolecular Atlas Program mapeia órgãos saudáveis em multimodal (RNA, proteína, metabolito) com referência espacial padronizada", en: "Human BioMolecular Atlas Program maps healthy organs in multimodal (RNA, protein, metabolite) with standardized spatial reference"}
+        rationale: {pt: "Quando órgão é mapeado, então doença ganha baseline.", en: "When organ is mapped, disease gains baseline."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tabula Sapiens:", en: "Tabula Sapiens:"}
+        choices:
+          - {pt: "Atlas scRNA-seq de 24 órgãos de mesmo doador estabelecendo referência cross-organ — base para deconvolução e anotação de identidade celular", en: "scRNA-seq atlas of 24 organs from same donor establishing cross-organ reference — basis for deconvolution and cell identity annotation"}
+          - {pt: "Tabula Sapiens é atlas espacial Visium restrito a cérebro adulto com referência single-organ sem componente cross-organ", en: "Tabula Sapiens is a Visium spatial atlas restricted to adult brain with single-organ reference and no cross-organ component"}
+          - {pt: "Atlas multi-doador sem padronização entre órgãos sendo inviável como referência de deconvolução em plataformas espaciais como cell2location", en: "Multi-donor atlas without cross-organ standardization, unworkable as a deconvolution reference in spatial platforms like cell2location"}
+          - {pt: "Tabula Sapiens cobre só órgãos murinos servindo apenas para estudos pré-clínicos sem aplicação em tecido humano clínico real", en: "Tabula Sapiens covers only mouse organs serving solely for preclinical studies without real clinical human tissue application"}
+        correctAnswer: {pt: "Atlas scRNA-seq de 24 órgãos de mesmo doador estabelecendo referência cross-organ — base para deconvolução e anotação de identidade celular", en: "scRNA-seq atlas of 24 organs from same donor establishing cross-organ reference — basis for deconvolution and cell identity annotation"}
+        rationale: {pt: "Quando referência é única, então comparação fica limpa.", en: "When reference is single, comparison stays clean."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TLS protetor:", en: "Protective TLS:"}
+        choices:
+          - {pt: "Tertiary lymphoid structures intratumorais com B-cells GC predizem resposta a anti-PD-1 — biomarcador espacial de tumor 'quente' eficaz", en: "Intratumoral tertiary lymphoid structures with GC B cells predict anti-PD-1 response — effective 'hot' tumor spatial biomarker"}
+          - {pt: "TLS aumenta resistência a checkpoint inhibitors e correlaciona com pior sobrevida em melanoma e NSCLC tratados com anti-PD-1", en: "TLS raises checkpoint resistance and correlates with worse survival in melanoma and NSCLC treated with anti-PD-1"}
+          - {pt: "Estruturas linfoides terciárias são artefato histológico sem implicação prognóstica nem biomarcador de resposta a imunoterapia", en: "Tertiary lymphoid structures are histologic artifact without prognostic implication or immunotherapy response biomarker"}
+          - {pt: "TLS é exclusivo de baço normal e ausente em tumores sólidos sendo inutilizável como biomarcador espacial em câncer humano", en: "TLS is exclusive to normal spleen and absent in solid tumors being unusable as spatial biomarker in human cancer"}
+        correctAnswer: {pt: "Tertiary lymphoid structures intratumorais com B-cells GC predizem resposta a anti-PD-1 — biomarcador espacial de tumor 'quente' eficaz", en: "Intratumoral tertiary lymphoid structures with GC B cells predict anti-PD-1 response — effective 'hot' tumor spatial biomarker"}
+        rationale: {pt: "Quando TLS está dentro do tumor, então imunoterapia funciona.", en: "When TLS sits inside tumor, immunotherapy works."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tumor margin:", en: "Tumor margin:"}
+        choices:
+          - {pt: "Spatial revela transição abrupta tumor/estroma com gradient de hipóxia, EMT e CAF heterogêneos — invasão lê-se in situ", en: "Spatial reveals abrupt tumor/stroma transition with hypoxia, EMT and heterogeneous CAF gradient — invasion is read in situ"}
+          - {pt: "Margem tumoral é uniforme transcricionalmente e não exibe gradiente espacial sendo análoga ao centro tumoral em todos os parâmetros", en: "Tumor margin is transcriptionally uniform and shows no spatial gradient being analogous to tumor core in all parameters"}
+          - {pt: "Hipóxia e EMT na margem são artefatos de processamento sem significado funcional nem implicação para invasão tumoral espacial", en: "Hypoxia and EMT at the margin are processing artifacts without functional meaning or spatial tumor-invasion implication"}
+          - {pt: "Spatial transcriptomics não consegue resolver transição tumor/estroma exigindo IHC tradicional para definir margem invasiva clinicamente", en: "Spatial transcriptomics cannot resolve tumor/stroma transition demanding traditional IHC to clinically define invasive margin"}
+        correctAnswer: {pt: "Spatial revela transição abrupta tumor/estroma com gradient de hipóxia, EMT e CAF heterogêneos — invasão lê-se in situ", en: "Spatial reveals abrupt tumor/stroma transition with hypoxia, EMT and heterogeneous CAF gradient — invasion is read in situ"}
+        rationale: {pt: "Quando margem é mapeada, então invasão revela mecanismo.", en: "When margin is mapped, invasion shows its mechanism."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Brain spatial atlas:", en: "Brain spatial atlas:"}
+        choices:
+          - {pt: "Atlas BICCN combina Stereo-seq, MERFISH e Visium em córtex e hipocampo definindo subtipos neuronais com resolução de circuito", en: "BICCN atlas combines Stereo-seq, MERFISH and Visium in cortex and hippocampus defining neuronal subtypes at circuit resolution"}
+          - {pt: "Mapeamento cerebral espacial é restrito a embrião murino sem aplicação em córtex adulto humano em escala de circuito neuronal", en: "Spatial brain mapping is restricted to mouse embryo without adult human cortical circuit-scale application"}
+          - {pt: "BICCN usa apenas scRNA-seq dissociado sem componente espacial sendo equivalente a Tabula Sapiens em apenas um único órgão central", en: "BICCN uses only dissociated scRNA-seq without spatial component being a Tabula Sapiens equivalent in a single central organ"}
+          - {pt: "Subtipos neuronais não são distinguíveis por transcriptômica espacial exigindo eletrofisiologia e morfologia para definição de circuito", en: "Neuronal subtypes are not distinguishable by spatial transcriptomics, demanding electrophysiology and morphology for circuit definition"}
+        correctAnswer: {pt: "Atlas BICCN combina Stereo-seq, MERFISH e Visium em córtex e hipocampo definindo subtipos neuronais com resolução de circuito", en: "BICCN atlas combines Stereo-seq, MERFISH and Visium in cortex and hippocampus defining neuronal subtypes at circuit resolution"}
+        rationale: {pt: "Quando neurônio ganha endereço, então circuito vira biologia.", en: "When neuron gains address, circuit becomes biology."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Embrião Stereo-seq:", en: "Embryo Stereo-seq:"}
+        choices:
+          - {pt: "MOSTA mapeia camundongo E9.5-E16.5 inteiro em corte sagital subcelular — reconstrução 3D e identificação de fronteiras de gradient morfogen", en: "MOSTA maps whole mouse E9.5-E16.5 sagittal subcellular sections — 3D reconstruction and morphogen-gradient boundary identification"}
+          - {pt: "Stereo-seq embrionário é limitado a região craniofacial sem reconstrução 3D nem captura de gradiente morfogen completo", en: "Embryonic Stereo-seq is limited to craniofacial region without 3D reconstruction nor full morphogen gradient capture"}
+          - {pt: "Mapeamento embrionário usa apenas Visium 55µm sem subcelular nem cobertura whole-embryo em corte sagital com reconstrução 3D possível", en: "Embryonic mapping uses only Visium 55µm without subcellular nor whole-embryo sagittal coverage with 3D reconstruction possible"}
+          - {pt: "MOSTA cobre embrião humano em E20-E40 sem dados murinos correspondentes sendo único atlas embrionário publicado em mamíferos modelo", en: "MOSTA covers human embryo at E20-E40 without corresponding mouse data being the only published mammalian-model embryonic atlas"}
+        correctAnswer: {pt: "MOSTA mapeia camundongo E9.5-E16.5 inteiro em corte sagital subcelular — reconstrução 3D e identificação de fronteiras de gradient morfogen", en: "MOSTA maps whole mouse E9.5-E16.5 sagittal subcellular sections — 3D reconstruction and morphogen-gradient boundary identification"}
+        rationale: {pt: "Quando embrião inteiro vai ao chip, então gradient se vê.", en: "When whole embryo hits chip, gradient becomes visible."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spatial transcriptomics em IBD:", en: "Spatial transcriptomics in IBD:"}
+        choices:
+          - {pt: "Mapas de Crohn e UC mostram nichos pró-inflamatórios M1 + IgG plasmócitos em segmentos específicos predizendo resposta a anti-TNF e anti-IL-23", en: "Crohn and UC maps show pro-inflammatory M1 + IgG plasma cell niches in specific segments predicting anti-TNF and anti-IL-23 response"}
+          - {pt: "Inflamação intestinal é uniforme transcricionalmente sendo análoga ao tecido sadio adjacente sem variação espacial relevante", en: "Intestinal inflammation is transcriptionally uniform analogous to adjacent healthy tissue without relevant spatial variation"}
+          - {pt: "Anti-TNF e anti-IL-23 não têm preditores espaciais e são igualmente eficazes em todos os pacientes IBD independentemente de nichos", en: "Anti-TNF and anti-IL-23 have no spatial predictors and are equally effective across all IBD patients regardless of niches"}
+          - {pt: "Spatial em IBD é restrito a estudo pré-clínico em camundongo sem dados de paciente ou aplicação clínica para predição terapêutica", en: "IBD spatial is restricted to mouse preclinical work without patient data or clinical application for therapy prediction"}
+        correctAnswer: {pt: "Mapas de Crohn e UC mostram nichos pró-inflamatórios M1 + IgG plasmócitos em segmentos específicos predizendo resposta a anti-TNF e anti-IL-23", en: "Crohn and UC maps show pro-inflammatory M1 + IgG plasma cell niches in specific segments predicting anti-TNF and anti-IL-23 response"}
+        rationale: {pt: "Quando nicho prediz, então biológico vira preciso.", en: "When niche predicts, biologic becomes precise."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Trajetórias espaciais:", en: "Spatial trajectories:"}
+        choices:
+          - {pt: "RNA velocity + coordenadas espaciais inferem dinâmica em cripta intestinal, EMT tumoral e zonação hepática reconciliando tempo e local", en: "RNA velocity + spatial coordinates infer dynamics in intestinal crypt, tumor EMT and hepatic zonation reconciling time and place"}
+          - {pt: "RNA velocity é incompatível com dados espaciais e exclusivamente aplicável a scRNA-seq dissociado sem componente espacial preservado", en: "RNA velocity is incompatible with spatial data and applies exclusively to dissociated scRNA-seq without preserved spatial component"}
+          - {pt: "Trajetórias espaciais são equivalentes a pseudotime sem coordenada e não acrescentam informação dinâmica sobre processo tecidual real", en: "Spatial trajectories equal coordinate-free pseudotime adding no dynamic information about real tissue process"}
+          - {pt: "Cripta intestinal não exibe gradiente dinâmico de transcrição sendo célula-tronco e enterócito transcricionalmente idênticos in situ", en: "Intestinal crypt shows no dynamic transcription gradient with stem and enterocyte being transcriptionally identical in situ"}
+        correctAnswer: {pt: "RNA velocity + coordenadas espaciais inferem dinâmica em cripta intestinal, EMT tumoral e zonação hepática reconciliando tempo e local", en: "RNA velocity + spatial coordinates infer dynamics in intestinal crypt, tumor EMT and hepatic zonation reconciling time and place"}
+        rationale: {pt: "Quando velocity ganha endereço, então tempo + lugar contam história.", en: "When velocity gains address, time + place tell the story."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Subcellular mRNA:", en: "Subcellular mRNA:"}
+        choices:
+          - {pt: "MERFISH/seqFISH+ mostram localização nuclear vs perinuclear vs neurito — biologia de RNA targeting in vivo (β-actin, BDNF, MAP2)", en: "MERFISH/seqFISH+ show nuclear vs perinuclear vs neurite localization — in vivo RNA targeting biology (β-actin, BDNF, MAP2)"}
+          - {pt: "Localização subcelular de mRNA é uniforme em todas as células sendo distribuição citoplasmática homogênea sem aplicação biológica", en: "Subcellular mRNA localization is uniform across cells with homogeneous cytoplasmic distribution and no biological application"}
+          - {pt: "MERFISH não tem resolução subcelular sendo limitada a 10µm como Visium e impossibilitando estudo de targeting in vivo de mRNA específico", en: "MERFISH lacks subcellular resolution being capped at 10µm like Visium making in vivo specific-mRNA targeting study impossible"}
+          - {pt: "Targeting subcelular de mRNA é teórico e não foi demonstrado em β-actin, BDNF ou MAP2 sendo conceito artefactual em microscopia", en: "Subcellular mRNA targeting is theoretical and undemonstrated for β-actin, BDNF or MAP2 being an artifact in microscopy"}
+        correctAnswer: {pt: "MERFISH/seqFISH+ mostram localização nuclear vs perinuclear vs neurito — biologia de RNA targeting in vivo (β-actin, BDNF, MAP2)", en: "MERFISH/seqFISH+ show nuclear vs perinuclear vs neurite localization — in vivo RNA targeting biology (β-actin, BDNF, MAP2)"}
+        rationale: {pt: "Quando mRNA escolhe local, então tradução fica local.", en: "When mRNA chooses location, translation goes local."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese spatial atlas:", en: "Spatial atlas synthesis:"}
+        choices:
+          - {pt: "Visium/Slide-seq/Stereo-seq + MERFISH/Xenium + cell2location + CellChat + HuBMAP/Tabula transformam tecido em mapa funcional clínico-relevante", en: "Visium/Slide-seq/Stereo-seq + MERFISH/Xenium + cell2location + CellChat + HuBMAP/Tabula turn tissue into clinically relevant functional map"}
+          - {pt: "Spatial transcriptomics permanece pré-clínica sem aplicação em pathology ou imunoterapia até 2024 sendo curiosidade técnica acadêmica", en: "Spatial transcriptomics remains preclinical without pathology or immunotherapy application by 2024 being academic technical curiosity"}
+          - {pt: "Atlases tissue-wide são redundantes a scRNA-seq dissociado e não acrescentam dimensão informacional para diagnóstico de doença complexa", en: "Tissue-wide atlases are redundant to dissociated scRNA-seq and add no informational dimension to complex disease diagnostics"}
+          - {pt: "Plataformas espaciais são intercambiáveis sem trade-off em painel, resolução ou cobertura tornando escolha tecnológica irrelevante clinicamente", en: "Spatial platforms are interchangeable without panel, resolution or coverage trade-offs making technology choice clinically irrelevant"}
+        correctAnswer: {pt: "Visium/Slide-seq/Stereo-seq + MERFISH/Xenium + cell2location + CellChat + HuBMAP/Tabula transformam tecido em mapa funcional clínico-relevante", en: "Visium/Slide-seq/Stereo-seq + MERFISH/Xenium + cell2location + CellChat + HuBMAP/Tabula turn tissue into clinically relevant functional map"}
+        rationale: {pt: "Quando tecido vira mapa, então biologia ganha endereço.", en: "When tissue becomes map, biology gains an address."}
+        objectives: [biology.spatial_transcriptomics]
+        difficulty: 5
+target: 20
