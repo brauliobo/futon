@@ -1,0 +1,244 @@
+title:
+  pt: "🧨 Gene drives CRISPR"
+  en: "🧨 CRISPR gene drives"
+level: 'H'
+subject: biology
+objectives: [biology.gene_drives]
+difficulty: 5
+authorNotes: "Drives autopropagantes para suprimir vetores de malária; biossegurança, daisy drives, supressão vs replacement."
+example:
+  pt: "Ex.: alelo drive → herda em 100% gametas → espalha pela população → suprime vetor."
+  en: "Ex.: drive allele → inherited in 100% of gametes → spreads through population → suppresses vector."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Mecânica dos drives", en: "Drive mechanics"}
+    description: {pt: "Como herança forçada funciona.", en: "How forced inheritance works."}
+    exercises:
+      - type: choice
+        question: {pt: "Mendel violado:", en: "Mendel violated:"}
+        choices:
+          - {pt: "Drive copia-se para alelo selvagem em zigoto via Cas9+gRNA elevando herança de 50% para ~100%", en: "Drive copies into wild-type allele in zygote via Cas9+gRNA raising inheritance from 50% to ~100%"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Drive copia-se para alelo selvagem em zigoto via Cas9+gRNA elevando herança de 50% para ~100%", en: "Drive copies into wild-type allele in zygote via Cas9+gRNA raising inheritance from 50% to ~100%"}
+        rationale: {pt: "Quando herança é forçada, então alelos espalham mesmo deletérios.", en: "When inheritance is forced, alleles spread even when deleterious."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Homing endonuclease genes (HEGs):", en: "Homing endonuclease genes (HEGs):"}
+        choices:
+          - {pt: "Sistemas naturais como I-SceI inspiram drives sintéticos demonstrando viabilidade evolutiva", en: "Natural systems like I-SceI inspire synthetic drives demonstrating evolutionary viability"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sistemas naturais como I-SceI inspiram drives sintéticos demonstrando viabilidade evolutiva", en: "Natural systems like I-SceI inspire synthetic drives demonstrating evolutionary viability"}
+        rationale: {pt: "Quando natureza ensina, então engenharia copia.", en: "When nature teaches, engineering copies."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Suppression drive:", en: "Suppression drive:"}
+        choices:
+          - {pt: "Alelo deletério rompe gene de fertilidade feminina causando colapso populacional após gerações", en: "Deleterious allele disrupts female fertility gene causing population collapse over generations"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Alelo deletério rompe gene de fertilidade feminina causando colapso populacional após gerações", en: "Deleterious allele disrupts female fertility gene causing population collapse over generations"}
+        rationale: {pt: "Quando supressão age, então vetor pode desaparecer localmente.", en: "When suppression acts, vector may locally vanish."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Replacement drive:", en: "Replacement drive:"}
+        choices:
+          - {pt: "Drive carrega cassete que torna mosquitos resistentes a Plasmodium sem reduzir população", en: "Drive carries cassette making mosquitoes Plasmodium-refractory without reducing population"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Drive carrega cassete que torna mosquitos resistentes a Plasmodium sem reduzir população", en: "Drive carries cassette making mosquitoes Plasmodium-refractory without reducing population"}
+        rationale: {pt: "Quando refractory espalha, então transmissão cai sem extinção.", en: "When refractory spreads, transmission falls without extinction."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resistência ao drive:", en: "Drive resistance:"}
+        choices:
+          - {pt: "NHEJ gera alelos resistentes que bloqueiam Cas9 — desenho multi-gRNA reduz frequência de escape", en: "NHEJ generates resistance alleles blocking Cas9 — multi-gRNA design reduces escape frequency"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "NHEJ gera alelos resistentes que bloqueiam Cas9 — desenho multi-gRNA reduz frequência de escape", en: "NHEJ generates resistance alleles blocking Cas9 — multi-gRNA design reduces escape frequency"}
+        rationale: {pt: "Quando multi-gRNA atua, então fuga vira improvável.", en: "When multi-gRNA acts, escape becomes unlikely."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Daisy drive:", en: "Daisy drive:"}
+        choices:
+          - {pt: "Cadeia de elementos onde cada componente impulsiona o próximo gera drive autolimitado em poucas gerações", en: "Chain where each component drives the next produces self-limiting drive over few generations"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cadeia de elementos onde cada componente impulsiona o próximo gera drive autolimitado em poucas gerações", en: "Chain where each component drives the next produces self-limiting drive over few generations"}
+        rationale: {pt: "Quando autolimita, então dispersão geográfica fica contida.", en: "When self-limiting, geographic spread stays contained."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Threshold drive:", en: "Threshold drive:"}
+        choices:
+          - {pt: "Drive só se propaga acima de frequência inicial alta — escapes pequenos viram autolimitados", en: "Drive only spreads above high initial frequency — small escapes become self-limiting"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Drive só se propaga acima de frequência inicial alta — escapes pequenos viram autolimitados", en: "Drive only spreads above high initial frequency — small escapes become self-limiting"}
+        rationale: {pt: "Quando threshold protege, então liberação acidental falha.", en: "When threshold protects, accidental release fails."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Reversal drive:", en: "Reversal drive:"}
+        choices:
+          - {pt: "Segundo drive pode reverter primeiro restaurando alelo selvagem na população se efeito adverso aparecer", en: "Second drive can reverse first restoring wild-type allele in population if adverse effects emerge"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Segundo drive pode reverter primeiro restaurando alelo selvagem na população se efeito adverso aparecer", en: "Second drive can reverse first restoring wild-type allele in population if adverse effects emerge"}
+        rationale: {pt: "Quando reversor existe, então segurança ganha plano B.", en: "When reverser exists, safety gains plan B."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Drives X-shredder:", en: "X-shredder drives:"}
+        choices:
+          - {pt: "Cas9 destrói cromossomo X em espermatozoides gerando descendência majoritariamente macho — supressão pelo viés sexual", en: "Cas9 destroys X chromosome in sperm yielding majority-male offspring — suppression via sex bias"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cas9 destrói cromossomo X em espermatozoides gerando descendência majoritariamente macho — supressão pelo viés sexual", en: "Cas9 destroys X chromosome in sperm yielding majority-male offspring — suppression via sex bias"}
+        rationale: {pt: "Quando viés sexual aplica, então fêmeas escasseiam.", en: "When sex bias applies, females become scarce."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Modelagem populacional:", en: "Population modeling:"}
+        choices:
+          - {pt: "Simulações estocásticas com fluxo gênico, fitness e migração projetam dinâmica do drive antes de liberação", en: "Stochastic simulations with gene flow, fitness and migration project drive dynamics before release"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Simulações estocásticas com fluxo gênico, fitness e migração projetam dinâmica do drive antes de liberação", en: "Stochastic simulations with gene flow, fitness and migration project drive dynamics before release"}
+        rationale: {pt: "Quando modelo ensaia, então decisão fica informada.", en: "When model rehearses, decision becomes informed."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações e governança", en: "Applications and governance"}
+    description: {pt: "Da malária à invasão biológica.", en: "From malaria to biological invasion."}
+    exercises:
+      - type: choice
+        question: {pt: "Anopheles gambiae:", en: "Anopheles gambiae:"}
+        choices:
+          - {pt: "Target Malaria desenvolveu drive supressor em vetor principal de malária africana eliminando populações em jaula", en: "Target Malaria developed suppression drive in main African malaria vector clearing caged populations"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Target Malaria desenvolveu drive supressor em vetor principal de malária africana eliminando populações em jaula", en: "Target Malaria developed suppression drive in main African malaria vector clearing caged populations"}
+        rationale: {pt: "Quando jaula valida, então liberação tutelada vira plausível.", en: "When cage validates, supervised release becomes plausible."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Aedes aegypti:", en: "Aedes aegypti:"}
+        choices:
+          - {pt: "Vetor de dengue, zika e chikungunya estuda drives complementares ao Wolbachia e mosquitos GM masculinos esterilizados", en: "Vector of dengue, zika and chikungunya tests drives complementary to Wolbachia and sterile-male GM mosquitoes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Vetor de dengue, zika e chikungunya estuda drives complementares ao Wolbachia e mosquitos GM masculinos esterilizados", en: "Vector of dengue, zika and chikungunya tests drives complementary to Wolbachia and sterile-male GM mosquitoes"}
+        rationale: {pt: "Quando ferramentas combinam, então arboviroses caem.", en: "When tools combine, arboviral diseases drop."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Roedores invasores:", en: "Invasive rodents:"}
+        choices:
+          - {pt: "Drives em ratos para erradicar populações em ilhas vulneráveis testam viabilidade em mamíferos não tropicais", en: "Drives in rats to eradicate populations on vulnerable islands test feasibility in non-tropical mammals"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Drives em ratos para erradicar populações em ilhas vulneráveis testam viabilidade em mamíferos não tropicais", en: "Drives in rats to eradicate populations on vulnerable islands test feasibility in non-tropical mammals"}
+        rationale: {pt: "Quando mamífero responde, então conservação ganha alternativa.", en: "When mammal responds, conservation gains alternative."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Schistosoma mansoni:", en: "Schistosoma mansoni:"}
+        choices:
+          - {pt: "Drives no vetor caramujo Biomphalaria evitariam transmissão de esquistossomose para humanos", en: "Drives in snail vector Biomphalaria would prevent schistosomiasis transmission to humans"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Drives no vetor caramujo Biomphalaria evitariam transmissão de esquistossomose para humanos", en: "Drives in snail vector Biomphalaria would prevent schistosomiasis transmission to humans"}
+        rationale: {pt: "Quando hospedeiro intermediário cai, então parasita não completa ciclo.", en: "When intermediate host falls, parasite does not complete cycle."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pragas agrícolas:", en: "Agricultural pests:"}
+        choices:
+          - {pt: "Drives em Drosophila suzukii e Spodoptera frugiperda promete reduzir uso de inseticidas em frutas e milho", en: "Drives in Drosophila suzukii and Spodoptera frugiperda promise to cut insecticide use in fruit and maize"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Drives em Drosophila suzukii e Spodoptera frugiperda promete reduzir uso de inseticidas em frutas e milho", en: "Drives in Drosophila suzukii and Spodoptera frugiperda promise to cut insecticide use in fruit and maize"}
+        rationale: {pt: "Quando praga é controlada, então pesticida desce.", en: "When pest is controlled, pesticide use drops."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ecological off-targets:", en: "Ecological off-targets:"}
+        choices:
+          - {pt: "Hibridização interespecífica e fluxo gênico horizontal poderiam transferir drive a espécies não-alvo — preocupação chave", en: "Interspecies hybridization and horizontal gene flow could transfer drive to non-target species — key concern"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Hibridização interespecífica e fluxo gênico horizontal poderiam transferir drive a espécies não-alvo — preocupação chave", en: "Interspecies hybridization and horizontal gene flow could transfer drive to non-target species — key concern"}
+        rationale: {pt: "Quando off-target preocupa, então testes ecológicos longos importam.", en: "When off-target worries, long ecological tests matter."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Consentimento comunitário:", en: "Community consent:"}
+        choices:
+          - {pt: "Liberação requer engajamento cuidadoso com comunidades locais e países vizinhos por dispersão transfronteiriça", en: "Release requires careful engagement with local communities and neighbor countries due to cross-border dispersal"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Liberação requer engajamento cuidadoso com comunidades locais e países vizinhos por dispersão transfronteiriça", en: "Release requires careful engagement with local communities and neighbor countries due to cross-border dispersal"}
+        rationale: {pt: "Quando consentimento é amplo, então legitimidade cresce.", en: "When consent is broad, legitimacy grows."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CBD/Cartagena Protocol:", en: "CBD/Cartagena Protocol:"}
+        choices:
+          - {pt: "Tratado internacional avalia movimento transfronteiriço de organismos vivos modificados incluindo drives", en: "International treaty governs transboundary movement of living modified organisms including drives"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tratado internacional avalia movimento transfronteiriço de organismos vivos modificados incluindo drives", en: "International treaty governs transboundary movement of living modified organisms including drives"}
+        rationale: {pt: "Quando tratado existe, então governança não é só nacional.", en: "When treaty exists, governance is not only national."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dual-use concern:", en: "Dual-use concern:"}
+        choices:
+          - {pt: "Drives podem ser uso militar potencial de bioterrorismo — DARPA Safe Genes investiga contramedidas", en: "Drives could be potential bioterror military use — DARPA Safe Genes investigates countermeasures"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Drives podem ser uso militar potencial de bioterrorismo — DARPA Safe Genes investiga contramedidas", en: "Drives could be potential bioterror military use — DARPA Safe Genes investigates countermeasures"}
+        rationale: {pt: "Quando dual-use é claro, então pesquisa dirige defesa também.", en: "When dual-use is clear, research also drives defense."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese dos drives:", en: "Drive synthesis:"}
+        choices:
+          - {pt: "Drives oferecem ferramenta poderosa contra doenças tropicais e invasoras com governança global, ecológica e ética indispensáveis", en: "Drives offer powerful tool against tropical disease and invasives requiring indispensable global, ecological and ethical governance"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Drives oferecem ferramenta poderosa contra doenças tropicais e invasoras com governança global, ecológica e ética indispensáveis", en: "Drives offer powerful tool against tropical disease and invasives requiring indispensable global, ecological and ethical governance"}
+        rationale: {pt: "Quando poder é grande, então responsabilidade é global.", en: "When power is large, responsibility is global."}
+        objectives: [biology.gene_drives]
+        difficulty: 5
+target: 20
