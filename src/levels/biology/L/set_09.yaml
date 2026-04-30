@@ -1,0 +1,245 @@
+title:
+  pt: "🤕 Biologia da dor e analgésicos modernos"
+  en: "🤕 Pain biology and modern analgesics"
+level: 'L'
+subject: biology
+objectives: [biology.pain_biology]
+difficulty: 5
+authorNotes: "Nav1.7/1.8/1.9 sodium channels, TRPV1 capsaicin, NaV1.8 inhibitor VX-548 suzetrigine, opioid mu/kappa, biased agonism, monoclonal anti-NGF tanezumab, anti-CGRP migraine, neuromodulation, central sensitization, descending pain modulation."
+example:
+  pt: "Ex.: paciente pós-operatório → suzetrigine (VX-548) NaV1.8-selective oral 2024 → não-opioide → controle dor sem dependência."
+  en: "Ex.: post-op patient → suzetrigine (VX-548) oral NaV1.8-selective 2024 → non-opioid → pain control without dependence."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Mecanismos de dor", en: "Pain mechanisms"}
+    description: {pt: "Como nervo sente e amplifica dor.", en: "How nerve senses and amplifies pain."}
+    exercises:
+      - type: choice
+        question: {pt: "Nav1.7 channel:", en: "Nav1.7 channel:"}
+        choices:
+          - {pt: "SCN9A codifica Nav1.7 em DRG/trigeminal — loss-of-function congenital insensitivity to pain (CIPA), gain-of-function erythromelalgia/inherited erythermalgia", en: "SCN9A encodes DRG/trigeminal Nav1.7 — loss-of-function gives congenital insensitivity to pain (CIPA), gain-of-function gives erythromelalgia/inherited erythermalgia"}
+          - {pt: "Nav1.7 é restrito a coração sem componente DRG sendo SCN9A inviável em qualquer paciente humano clínico moderno em pain biology em 2024 globalmente em qualquer escala paciente", en: "Nav1.7 is restricted to heart without DRG component with SCN9A infeasible in any modern clinical human patient in pain biology in 2024 globally at any patient scale"}
+          - {pt: "CIPA é restrito a embrião sem componente adulto sendo loss-of-function Nav1.7 inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente adulto", en: "CIPA is restricted to embryo without adult component with Nav1.7 loss-of-function infeasible in any modern clinical human patient in 2024 globally at any adult patient scale"}
+          - {pt: "Erythromelalgia é teórico sem componente clínico sendo gain-of-function Nav1.7 inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "Erythromelalgia is theoretical without clinical component with Nav1.7 gain-of-function infeasible in any modern clinical human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "SCN9A codifica Nav1.7 em DRG/trigeminal — loss-of-function congenital insensitivity to pain (CIPA), gain-of-function erythromelalgia/inherited erythermalgia", en: "SCN9A encodes DRG/trigeminal Nav1.7 — loss-of-function gives congenital insensitivity to pain (CIPA), gain-of-function gives erythromelalgia/inherited erythermalgia"}
+        rationale: {pt: "Quando Nav1.7 falta, então dor desaparece; quando sobra, então arde.", en: "When Nav1.7 is missing, pain disappears; when extra, it burns."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Suzetrigine VX-548:", en: "Suzetrigine VX-548:"}
+        choices:
+          - {pt: "Vertex VX-548 (suzetrigine) NaV1.8-selective inibitor oral fase 3 mostrou eficácia pós-cirúrgica não-inferior a opioid sem dependência — FDA 2024 esperado em dor aguda", en: "Vertex VX-548 (suzetrigine) oral NaV1.8-selective inhibitor phase 3 showed non-inferior post-op efficacy vs opioid without dependence — FDA 2024 expected in acute pain"}
+          - {pt: "Suzetrigine é restrito a oral opioid sem componente NaV1.8 sendo Vertex VX-548 inviável em qualquer paciente pós-cirúrgico humano clínico moderno em 2024 globalmente em qualquer", en: "Suzetrigine is restricted to oral opioid without NaV1.8 component with Vertex VX-548 infeasible in any modern clinical post-surgical human patient in 2024 globally at any"}
+          - {pt: "NaV1.8 é restrito a coração sem expressão DRG sendo suzetrigine inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "NaV1.8 is restricted to heart without DRG expression with suzetrigine technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "Vertex VX-548 é PARP inhibitor sem componente NaV sendo suzetrigine inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente pós-cirúrgico", en: "Vertex VX-548 is a PARP inhibitor without NaV component with suzetrigine infeasible in any modern clinical post-surgical human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Vertex VX-548 (suzetrigine) NaV1.8-selective inibitor oral fase 3 mostrou eficácia pós-cirúrgica não-inferior a opioid sem dependência — FDA 2024 esperado em dor aguda", en: "Vertex VX-548 (suzetrigine) oral NaV1.8-selective inhibitor phase 3 showed non-inferior post-op efficacy vs opioid without dependence — FDA 2024 expected in acute pain"}
+        rationale: {pt: "Quando NaV1.8 cala, então dor para sem opioide.", en: "When NaV1.8 quiets, pain stops without opioid."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TRPV1 capsaicin:", en: "TRPV1 capsaicin:"}
+        choices:
+          - {pt: "Receptor sensível a heat >43°C, capsaicin, acid (low pH) — agonista crônico (Qutenza patch 8% capsaicin) defunctionalizа nociceptor C-fiber em pain neuropática", en: "Receptor sensitive to heat >43°C, capsaicin, acid (low pH) — chronic agonist (Qutenza 8% capsaicin patch) defunctionalizes C-fiber nociceptor in neuropathic pain"}
+          - {pt: "TRPV1 é restrito a coração sem componente DRG sensorial sendo capsaicin agonist inviável em qualquer paciente neuropática humano clínico moderno em 2024 globalmente em qualquer", en: "TRPV1 is restricted to heart without sensory DRG component with capsaicin agonist infeasible in any modern clinical neuropathic human patient in 2024 globally at any"}
+          - {pt: "Heat >43°C é incompatível com TRPV1 sendo Qutenza inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente neuropático", en: "Heat >43°C is incompatible with TRPV1 with Qutenza technically infeasible in any modern clinical human patient in 2024 globally at any neuropathic patient scale"}
+          - {pt: "Defunctionalization é teórico sem evidência experimental sendo capsaicin patch inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Defunctionalization is theoretical without experimental evidence with capsaicin patch infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Receptor sensível a heat >43°C, capsaicin, acid (low pH) — agonista crônico (Qutenza patch 8% capsaicin) defunctionalizа nociceptor C-fiber em pain neuropática", en: "Receptor sensitive to heat >43°C, capsaicin, acid (low pH) — chronic agonist (Qutenza 8% capsaicin patch) defunctionalizes C-fiber nociceptor in neuropathic pain"}
+        rationale: {pt: "Quando capsaicin satura TRPV1, então fibra C cala temporariamente.", en: "When capsaicin saturates TRPV1, C-fiber quiets temporarily."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Opioid mu receptor:", en: "Opioid mu receptor:"}
+        choices:
+          - {pt: "MOR Gi-coupled inibe AC, abre GIRK, fecha CaV — analgesia + euphoria + respiratory depression + dependence; β-arrestin pathway media tolerance e GI side-effects", en: "Gi-coupled MOR inhibits AC, opens GIRK, closes CaV — analgesia + euphoria + respiratory depression + dependence; β-arrestin pathway mediates tolerance and GI side effects"}
+          - {pt: "MOR é restrito a Gs-coupled sem componente Gi sendo opioid signaling inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente analgésico", en: "MOR is restricted to Gs-coupled without Gi component with opioid signaling infeasible in any modern clinical human patient in 2024 globally at any analgesic patient scale"}
+          - {pt: "β-arrestin é incompatível com MOR sendo tolerance e GI side-effects inviáveis em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente opioid", en: "β-arrestin is incompatible with MOR with tolerance and GI side effects infeasible in any modern clinical human patient in 2024 globally at any opioid patient scale"}
+          - {pt: "Respiratory depression é teórica sem evidência experimental sendo MOR-mediated apnea inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Respiratory depression is theoretical without experimental evidence with MOR-mediated apnea infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "MOR Gi-coupled inibe AC, abre GIRK, fecha CaV — analgesia + euphoria + respiratory depression + dependence; β-arrestin pathway media tolerance e GI side-effects", en: "Gi-coupled MOR inhibits AC, opens GIRK, closes CaV — analgesia + euphoria + respiratory depression + dependence; β-arrestin pathway mediates tolerance and GI side effects"}
+        rationale: {pt: "Quando MOR ativa, então analgesia vem com tolerance e depressão.", en: "When MOR fires, analgesia comes with tolerance and depression."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biased agonism:", en: "Biased agonism:"}
+        choices:
+          - {pt: "Oliceridine (Olinvyk) ativa MOR-G-protein desviando β-arrestin → analgesia com menos depressão respiratória/constipação — FDA 2020 aprovado dor aguda IV adulto", en: "Oliceridine (Olinvyk) activates MOR-G-protein bypassing β-arrestin → analgesia with less respiratory depression/constipation — FDA 2020 approved IV adult acute pain"}
+          - {pt: "Oliceridine é restrito a β-arrestin biased sem componente G-protein sendo Olinvyk inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Oliceridine is restricted to β-arrestin biased without G-protein component with Olinvyk infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "Biased agonism é teórico sem evidência experimental sendo oliceridine inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente analgésico", en: "Biased agonism is theoretical without experimental evidence with oliceridine technically infeasible in any modern clinical human patient in 2024 globally at any analgesic patient scale"}
+          - {pt: "FDA 2020 aprovação é teórica sem implementação prática sendo Olinvyk inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente analgésico adulto", en: "FDA 2020 approval is theoretical without practical implementation with Olinvyk infeasible in any modern clinical adult analgesic human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Oliceridine (Olinvyk) ativa MOR-G-protein desviando β-arrestin → analgesia com menos depressão respiratória/constipação — FDA 2020 aprovado dor aguda IV adulto", en: "Oliceridine (Olinvyk) activates MOR-G-protein bypassing β-arrestin → analgesia with less respiratory depression/constipation — FDA 2020 approved IV adult acute pain"}
+        rationale: {pt: "Quando agonismo é enviesado, então benefício separa de side-effect.", en: "When agonism is biased, benefit splits from side effects."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anti-NGF tanezumab:", en: "Anti-NGF tanezumab:"}
+        choices:
+          - {pt: "mAb anti-NGF reduz sensibilização periférica em OA — eficácia superior a NSAID em fase 3 mas FDA 2021 rejeitou por rapid joint destruction em pacientes selecionados", en: "Anti-NGF mAb cuts peripheral sensitization in OA — superior to NSAID in phase 3 but FDA 2021 rejected for rapid joint destruction in selected patients"}
+          - {pt: "Tanezumab é restrito a NSAID sem componente anti-NGF sendo mAb inviável em qualquer paciente OA humano clínico moderno em 2024 globalmente em qualquer escala paciente articular", en: "Tanezumab is restricted to NSAID without anti-NGF component with mAb infeasible in any modern clinical OA human patient in 2024 globally at any articular patient scale"}
+          - {pt: "NGF é restrito a embrião sem componente adulto sendo tanezumab inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente OA", en: "NGF is restricted to embryo without adult component with tanezumab technically infeasible in any modern clinical human patient in 2024 globally at any OA patient scale"}
+          - {pt: "FDA 2021 aprovou tanezumab sem componente rejeição sendo joint destruction inviável em qualquer paciente OA humano clínico moderno em 2024 globalmente em qualquer escala", en: "FDA 2021 approved tanezumab without rejection component with joint destruction infeasible in any modern clinical OA human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "mAb anti-NGF reduz sensibilização periférica em OA — eficácia superior a NSAID em fase 3 mas FDA 2021 rejeitou por rapid joint destruction em pacientes selecionados", en: "Anti-NGF mAb cuts peripheral sensitization in OA — superior to NSAID in phase 3 but FDA 2021 rejected for rapid joint destruction in selected patients"}
+        rationale: {pt: "Quando NGF cai, então dor cai mas articulação se desgasta sem aviso.", en: "When NGF falls, pain falls but joint wears down silently."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Anti-CGRP migraine:", en: "Anti-CGRP migraine:"}
+        choices:
+          - {pt: "Erenumab (Aimovig), fremanezumab (Ajovy), galcanezumab (Emgality), eptinezumab (Vyepti) bloqueiam CGRP/CGRPR — primeira preventive migraine class FDA 2018-2020", en: "Erenumab (Aimovig), fremanezumab (Ajovy), galcanezumab (Emgality), eptinezumab (Vyepti) block CGRP/CGRPR — first preventive migraine class FDA 2018-2020"}
+          - {pt: "Anti-CGRP é restrito a opioid sem componente migraine sendo Aimovig e Ajovy inviáveis em qualquer paciente migraineur humano clínico moderno em 2024 globalmente em qualquer", en: "Anti-CGRP is restricted to opioid without migraine component with Aimovig and Ajovy infeasible in any modern clinical migraine human patient in 2024 globally at any"}
+          - {pt: "CGRP é restrito a coração sem componente trigeminal sendo erenumab e fremanezumab inviáveis tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente", en: "CGRP is restricted to heart without trigeminal component with erenumab and fremanezumab technically infeasible in any modern clinical human patient in 2024 globally"}
+          - {pt: "FDA 2018-2020 aprovações são teóricas sem implementação prática sendo anti-CGRP inviável em qualquer paciente migraine humano clínico moderno em 2024 globalmente em qualquer", en: "FDA 2018-2020 approvals are theoretical without practical implementation with anti-CGRP infeasible in any modern clinical migraine human patient in 2024 globally at any"}
+        correctAnswer: {pt: "Erenumab (Aimovig), fremanezumab (Ajovy), galcanezumab (Emgality), eptinezumab (Vyepti) bloqueiam CGRP/CGRPR — primeira preventive migraine class FDA 2018-2020", en: "Erenumab (Aimovig), fremanezumab (Ajovy), galcanezumab (Emgality), eptinezumab (Vyepti) block CGRP/CGRPR — first preventive migraine class FDA 2018-2020"}
+        rationale: {pt: "Quando CGRP é bloqueado, então migrânea não dispara.", en: "When CGRP is blocked, migraine doesn't fire."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Gepants oral CGRP:", en: "Gepants oral CGRP:"}
+        choices:
+          - {pt: "Ubrogepant (Ubrelvy), rimegepant (Nurtec), atogepant (Qulipta) small-molecule CGRPR antagonistas oral — substituem triptan em pacientes CV-contraindicated migraine acute/preventive", en: "Ubrogepant (Ubrelvy), rimegepant (Nurtec), atogepant (Qulipta) small-molecule oral CGRPR antagonists — replace triptans in CV-contraindicated migraine acute/preventive patients"}
+          - {pt: "Gepants são restritos a IV sem componente oral sendo Ubrelvy e Nurtec inviáveis em qualquer paciente migraineur humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Gepants are restricted to IV without oral component with Ubrelvy and Nurtec infeasible in any modern clinical migraine human patient in 2024 globally at any patient scale"}
+          - {pt: "CGRPR antagonista é incompatível com small-molecule sendo Ubrelvy e Nurtec inviáveis tecnicamente em qualquer paciente migraine humano clínico moderno em 2024 globalmente", en: "CGRPR antagonist is incompatible with small-molecule with Ubrelvy and Nurtec technically infeasible in any modern clinical migraine human patient in 2024 globally"}
+          - {pt: "Triptan é restrito a CV-safe sem componente CGRPR sendo gepants redundantes em qualquer paciente migraine humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Triptan is restricted to CV-safe without CGRPR component with gepants redundant in any modern clinical migraine human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Ubrogepant (Ubrelvy), rimegepant (Nurtec), atogepant (Qulipta) small-molecule CGRPR antagonistas oral — substituem triptan em pacientes CV-contraindicated migraine acute/preventive", en: "Ubrogepant (Ubrelvy), rimegepant (Nurtec), atogepant (Qulipta) small-molecule oral CGRPR antagonists — replace triptans in CV-contraindicated migraine acute/preventive patients"}
+        rationale: {pt: "Quando CGRP é bloqueado oralmente, então triptan vira opcional.", en: "When CGRP is blocked orally, triptan becomes optional."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Central sensitization:", en: "Central sensitization:"}
+        choices:
+          - {pt: "Neurônios spinal dorsal horn ampliam sinal nociceptivo via NMDA, AMPA, CGRPR — fenótipo allodynia (dor a stimulus inócuo) e hyperalgesia em fibromyalgia, neuropática", en: "Dorsal-horn spinal neurons amplify nociceptive signal via NMDA, AMPA, CGRPR — allodynia (pain to innocuous stimulus) and hyperalgesia phenotype in fibromyalgia, neuropathic"}
+          - {pt: "Central sensitization é restrito a periférico sem componente spinal sendo NMDA e AMPA inviáveis em qualquer paciente fibromyalgia humano clínico moderno em 2024 globalmente em qualquer", en: "Central sensitization is restricted to peripheral without spinal component with NMDA and AMPA infeasible in any modern clinical fibromyalgia human patient in 2024 globally at any"}
+          - {pt: "Allodynia é teórico sem evidência experimental sendo dorsal horn amplification inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Allodynia is theoretical without experimental evidence with dorsal-horn amplification infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "CGRPR é restrito a periférico sem componente central sendo central sensitization inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer", en: "CGRPR is restricted to peripheral without central component with central sensitization technically infeasible in any modern clinical human patient in 2024 globally at any"}
+        correctAnswer: {pt: "Neurônios spinal dorsal horn ampliam sinal nociceptivo via NMDA, AMPA, CGRPR — fenótipo allodynia (dor a stimulus inócuo) e hyperalgesia em fibromyalgia, neuropática", en: "Dorsal-horn spinal neurons amplify nociceptive signal via NMDA, AMPA, CGRPR — allodynia (pain to innocuous stimulus) and hyperalgesia phenotype in fibromyalgia, neuropathic"}
+        rationale: {pt: "Quando central amplifica, então toque inócuo dói.", en: "When central amplifies, innocuous touch hurts."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Descending modulation:", en: "Descending modulation:"}
+        choices:
+          - {pt: "PAG → RVM → spinal dorsal horn modula dor via opioid endógeno, serotonin, norepinephrine — base de placebo, mindfulness e SNRI duloxetina em chronic pain", en: "PAG → RVM → spinal dorsal horn modulates pain via endogenous opioid, serotonin, norepinephrine — basis of placebo, mindfulness and duloxetine SNRI in chronic pain"}
+          - {pt: "Descending modulation é restrito a ascending sem componente top-down sendo PAG-RVM inviável em qualquer paciente chronic pain humano clínico moderno em 2024 globalmente em qualquer", en: "Descending modulation is restricted to ascending without top-down component with PAG-RVM infeasible in any modern clinical chronic-pain human patient in 2024 globally at any"}
+          - {pt: "Placebo é teórico sem evidência experimental sendo descending modulation inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Placebo is theoretical without experimental evidence with descending modulation technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "SNRI duloxetina é restrito a depression sem componente pain sendo descending modulation irrelevante em qualquer paciente chronic pain humano clínico moderno em 2024 globalmente", en: "Duloxetine SNRI is restricted to depression without pain component with descending modulation irrelevant in any modern clinical chronic-pain human patient in 2024 globally"}
+        correctAnswer: {pt: "PAG → RVM → spinal dorsal horn modula dor via opioid endógeno, serotonin, norepinephrine — base de placebo, mindfulness e SNRI duloxetina em chronic pain", en: "PAG → RVM → spinal dorsal horn modulates pain via endogenous opioid, serotonin, norepinephrine — basis of placebo, mindfulness and duloxetine SNRI in chronic pain"}
+        rationale: {pt: "Quando top-down age, então cérebro abaixa volume da dor.", en: "When top-down acts, brain lowers pain volume."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Terapias modernas", en: "Modern therapies"}
+    description: {pt: "Da molécula ao paciente.", en: "From molecule to patient."}
+    exercises:
+      - type: choice
+        question: {pt: "Cebranopadol:", en: "Cebranopadol:"}
+        choices:
+          - {pt: "Dual MOR + NOP receptor agonist menos abuse-prone que opioid puro — Tris Pharma fase 3 cebranopadol mostra analgesia cancer/pós-cirúrgica + reduced euphoria/respiratory depression", en: "Dual MOR + NOP receptor agonist less abuse-prone than pure opioid — Tris Pharma phase 3 cebranopadol shows cancer/post-op analgesia + reduced euphoria/respiratory depression"}
+          - {pt: "Cebranopadol é restrito a MOR puro sem componente NOP sendo Tris Pharma inviável em qualquer paciente cancer humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Cebranopadol is restricted to pure MOR without NOP component with Tris Pharma infeasible in any modern clinical cancer human patient in 2024 globally at any patient scale"}
+          - {pt: "NOP é restrito a B-cell sem expressão neuronal sendo cebranopadol inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "NOP is restricted to B cells without neuronal expression with cebranopadol technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "Abuse-prone é benéfico em opioid sendo dual MOR/NOP contraindicado em favor de MOR puro em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "Abuse-prone is beneficial in opioid with dual MOR/NOP contraindicated in favor of pure MOR in any modern clinical human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "Dual MOR + NOP receptor agonist menos abuse-prone que opioid puro — Tris Pharma fase 3 cebranopadol mostra analgesia cancer/pós-cirúrgica + reduced euphoria/respiratory depression", en: "Dual MOR + NOP receptor agonist less abuse-prone than pure opioid — Tris Pharma phase 3 cebranopadol shows cancer/post-op analgesia + reduced euphoria/respiratory depression"}
+        rationale: {pt: "Quando dois receptores agem juntos, então analgesia escapa euforia.", en: "When two receptors act together, analgesia escapes euphoria."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spinal cord stim:", en: "Spinal cord stim:"}
+        choices:
+          - {pt: "Implantable epidural electrode entrega tonic ou burst stimulation em low-back/leg/CRPS pain refractory — Nevro HF10 high-frequency, Boston Scientific WaveWriter clínica padrão", en: "Implantable epidural electrode delivers tonic or burst stimulation in refractory low-back/leg/CRPS pain — Nevro HF10 high-frequency, Boston Scientific WaveWriter clinical standard"}
+          - {pt: "Spinal cord stim é restrito a TENS superficial sem componente epidural sendo Nevro HF10 e WaveWriter inviáveis em qualquer paciente refractory humano clínico moderno em 2024", en: "Spinal cord stim is restricted to superficial TENS without epidural component with Nevro HF10 and WaveWriter infeasible in any modern clinical refractory human patient in 2024"}
+          - {pt: "Tonic ou burst stimulation é teórico sem componente prático sendo spinal cord stim inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer", en: "Tonic or burst stimulation is theoretical without practical component with spinal cord stim technically infeasible in any modern clinical human patient in 2024 globally at any"}
+          - {pt: "CRPS é restrito a tratamento convencional sem componente neuromodulação sendo Nevro HF10 contraindicado em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer", en: "CRPS is restricted to conventional treatment without neuromodulation component with Nevro HF10 contraindicated in any modern clinical human patient in 2024 globally at any"}
+        correctAnswer: {pt: "Implantable epidural electrode entrega tonic ou burst stimulation em low-back/leg/CRPS pain refractory — Nevro HF10 high-frequency, Boston Scientific WaveWriter clínica padrão", en: "Implantable epidural electrode delivers tonic or burst stimulation in refractory low-back/leg/CRPS pain — Nevro HF10 high-frequency, Boston Scientific WaveWriter clinical standard"}
+        rationale: {pt: "Quando eletrodo modula spinal cord, então dor crônica recua sem droga.", en: "When electrode modulates spinal cord, chronic pain recedes drug-free."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Gene therapy enkephalin:", en: "Gene-therapy enkephalin:"}
+        choices:
+          - {pt: "AAV-PENK (preproenkephalin) intratecal entrega gene de enkephalin endógeno → analgesia mantida sem opioid exógeno — fase 1 cancer pain refractário (Mata 2024)", en: "Intrathecal AAV-PENK (preproenkephalin) delivers endogenous enkephalin gene → sustained analgesia without exogenous opioid — phase 1 refractory cancer pain (Mata 2024)"}
+          - {pt: "AAV-PENK é restrito a IV sistêmico sem componente intratecal sendo gene therapy inviável em qualquer paciente cancer pain humano clínico moderno em 2024 globalmente em qualquer", en: "AAV-PENK is restricted to systemic IV without intrathecal component with gene therapy infeasible in any modern clinical cancer-pain human patient in 2024 globally at any"}
+          - {pt: "Preproenkephalin é teórico sem evidência experimental sendo Mata 2024 inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Preproenkephalin is theoretical without experimental evidence with Mata 2024 technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "Enkephalin endógeno é restrito a embrião sem componente adulto sendo AAV-PENK inviável em qualquer paciente cancer humano clínico moderno em 2024 globalmente em qualquer escala", en: "Endogenous enkephalin is restricted to embryo without adult component with AAV-PENK infeasible in any modern clinical cancer human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "AAV-PENK (preproenkephalin) intratecal entrega gene de enkephalin endógeno → analgesia mantida sem opioid exógeno — fase 1 cancer pain refractário (Mata 2024)", en: "Intrathecal AAV-PENK (preproenkephalin) delivers endogenous enkephalin gene → sustained analgesia without exogenous opioid — phase 1 refractory cancer pain (Mata 2024)"}
+        rationale: {pt: "Quando paciente fabrica próprio opióide endógeno, então tolerance some.", en: "When patient makes own endogenous opioid, tolerance vanishes."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Naloxone Narcan:", en: "Naloxone Narcan:"}
+        choices:
+          - {pt: "MOR antagonista IV/IM/intranasal reverte respiratory depression de overdose em <2 min — Narcan 4 mg intranasal aprovado FDA OTC 2023 reduz mortes opioide", en: "IV/IM/intranasal MOR antagonist reverses overdose respiratory depression in <2 min — Narcan 4 mg intranasal FDA-approved OTC 2023 cuts opioid deaths"}
+          - {pt: "Naloxone é restrito a oral sem componente intranasal sendo Narcan inviável em qualquer paciente overdose humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "Naloxone is restricted to oral without intranasal component with Narcan infeasible in any modern clinical overdose human patient in 2024 globally at any patient scale"}
+          - {pt: "MOR antagonista é incompatível com overdose reversal sendo Narcan inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "MOR antagonist is incompatible with overdose reversal with Narcan technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "FDA OTC 2023 é teórico sem implementação prática sendo Narcan inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente overdose adulto", en: "FDA OTC 2023 is theoretical without practical implementation with Narcan infeasible in any modern clinical overdose adult human patient in 2024 globally at any scale"}
+        correctAnswer: {pt: "MOR antagonista IV/IM/intranasal reverte respiratory depression de overdose em <2 min — Narcan 4 mg intranasal aprovado FDA OTC 2023 reduz mortes opioide", en: "IV/IM/intranasal MOR antagonist reverses overdose respiratory depression in <2 min — Narcan 4 mg intranasal FDA-approved OTC 2023 cuts opioid deaths"}
+          - {pt: "Quando antagonista chega em segundos, então respiração volta.", en: "When antagonist arrives in seconds, breathing returns."}
+        rationale: {pt: "Quando antagonista chega em segundos, então respiração volta.", en: "When antagonist arrives in seconds, breathing returns."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ketamine NMDA:", en: "Ketamine NMDA:"}
+        choices:
+          - {pt: "NMDA antagonist sub-anesthetic IV/IN dose reduz central sensitization e tem efeito antidepressivo rápido — esketamine Spravato FDA 2019 em depressão refratária", en: "Sub-anesthetic IV/IN NMDA antagonist dose cuts central sensitization with rapid antidepressant effect — esketamine Spravato FDA 2019 in refractory depression"}
+          - {pt: "Ketamine é restrito a anesthesia geral sem componente sub-anesthetic sendo NMDA antagonist inviável em qualquer paciente humano clínico moderno em pain ou depression em 2024", en: "Ketamine is restricted to general anesthesia without sub-anesthetic component with NMDA antagonist infeasible in any modern clinical human pain or depression patient in 2024"}
+          - {pt: "Esketamine é restrito a oral sem componente IN sendo Spravato inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente depressão", en: "Esketamine is restricted to oral without IN component with Spravato technically infeasible in any modern clinical human patient in 2024 globally at any depression patient scale"}
+          - {pt: "Central sensitization é independente de NMDA sendo ketamine sub-anesthetic dose irrelevante em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente pain", en: "Central sensitization is NMDA-independent with ketamine sub-anesthetic dose irrelevant in any modern clinical human pain patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "NMDA antagonist sub-anesthetic IV/IN dose reduz central sensitization e tem efeito antidepressivo rápido — esketamine Spravato FDA 2019 em depressão refratária", en: "Sub-anesthetic IV/IN NMDA antagonist dose cuts central sensitization with rapid antidepressant effect — esketamine Spravato FDA 2019 in refractory depression"}
+        rationale: {pt: "Quando NMDA cala, então amplificador da dor recua e humor melhora.", en: "When NMDA quiets, pain amplifier recedes and mood improves."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cannabidiol epilepsy:", en: "Cannabidiol epilepsy:"}
+        choices:
+          - {pt: "CBD oral (Epidiolex) reduz convulsões em Dravet, Lennox-Gastaut e tuberous sclerosis — primeira cannabis-derived medicine FDA 2018 com mecanismo non-CB1/CB2 specific", en: "Oral CBD (Epidiolex) cuts seizures in Dravet, Lennox-Gastaut and tuberous sclerosis — first cannabis-derived medicine FDA 2018 with non-CB1/CB2-specific mechanism"}
+          - {pt: "CBD é restrito a CB1/CB2 specific sem componente non-CB sendo Epidiolex inviável em qualquer paciente Dravet humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "CBD is restricted to CB1/CB2-specific without non-CB component with Epidiolex infeasible in any modern clinical Dravet human patient in 2024 globally at any patient scale"}
+          - {pt: "Cannabis-derived medicine é teórico sem evidência experimental sendo CBD inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente epilepsy", en: "Cannabis-derived medicine is theoretical without experimental evidence with CBD technically infeasible in any modern clinical human patient in 2024 globally at any epilepsy patient scale"}
+          - {pt: "FDA 2018 aprovação é teórica sem implementação prática sendo Epidiolex inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente epilepsy", en: "FDA 2018 approval is theoretical without practical implementation with Epidiolex infeasible in any modern clinical epilepsy human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "CBD oral (Epidiolex) reduz convulsões em Dravet, Lennox-Gastaut e tuberous sclerosis — primeira cannabis-derived medicine FDA 2018 com mecanismo non-CB1/CB2 specific", en: "Oral CBD (Epidiolex) cuts seizures in Dravet, Lennox-Gastaut and tuberous sclerosis — first cannabis-derived medicine FDA 2018 with non-CB1/CB2-specific mechanism"}
+        rationale: {pt: "Quando CBD age fora de CB1/CB2, então epilepsia rara responde.", en: "When CBD acts outside CB1/CB2, rare epilepsy responds."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Conolidine NMDA:", en: "Conolidine NMDA:"}
+        choices:
+          - {pt: "Indol alkaloid de Tabernaemontana com novel ACKR3 receptor binding (Lipton 2017) abre target inédito para analgesia non-opioid sem MOR — pré-clínico promissor", en: "Indole alkaloid from Tabernaemontana with novel ACKR3 receptor binding (Lipton 2017) opens a fresh target for non-opioid MOR-free analgesia — promising preclinical"}
+          - {pt: "Conolidine é restrito a opioid puro sem componente novel sendo ACKR3 binding inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente analgésico", en: "Conolidine is restricted to pure opioid without novel component with ACKR3 binding infeasible in any modern clinical analgesic human patient in 2024 globally at any patient scale"}
+          - {pt: "ACKR3 é restrito a chemokine sem componente analgesia sendo Lipton 2017 inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "ACKR3 is restricted to chemokine without analgesia component with Lipton 2017 technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "Tabernaemontana é teórico sem componente clínico sendo conolidine inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente analgésico adulto", en: "Tabernaemontana is theoretical without clinical component with conolidine infeasible in any modern clinical human patient in 2024 globally at any adult analgesic patient scale"}
+        correctAnswer: {pt: "Indol alkaloid de Tabernaemontana com novel ACKR3 receptor binding (Lipton 2017) abre target inédito para analgesia non-opioid sem MOR — pré-clínico promissor", en: "Indole alkaloid from Tabernaemontana with novel ACKR3 receptor binding (Lipton 2017) opens a fresh target for non-opioid MOR-free analgesia — promising preclinical"}
+        rationale: {pt: "Quando alkaloid encontra alvo novo, então MOR perde monopólio.", en: "When alkaloid finds new target, MOR loses monopoly."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cebranopadol vs morphine:", en: "Cebranopadol vs morphine:"}
+        choices:
+          - {pt: "Sangue cebranopadol mostra MOR 3000× mais potente + NOP modulator → analgesia equivalente a morphine sem respiratory depression equivalente em fase 2", en: "Cebranopadol sera show 3000× more potent MOR + NOP modulator → morphine-equivalent analgesia without equivalent respiratory depression in phase 2"}
+          - {pt: "Cebranopadol é restrito a NOP puro sem componente MOR sendo morphine-equivalent analgesia inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer", en: "Cebranopadol is restricted to pure NOP without MOR component with morphine-equivalent analgesia infeasible in any modern clinical human patient in 2024 globally at any"}
+          - {pt: "3000× MOR potency é teórico sem evidência experimental sendo cebranopadol inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala", en: "3000× MOR potency is theoretical without experimental evidence with cebranopadol technically infeasible in any modern clinical human patient in 2024 globally at any scale"}
+          - {pt: "Respiratory depression é benéfica em opioid sendo cebranopadol contraindicado em favor de morphine puro em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer", en: "Respiratory depression is beneficial in opioid with cebranopadol contraindicated in favor of pure morphine in any modern clinical human patient in 2024 globally at any"}
+        correctAnswer: {pt: "Sangue cebranopadol mostra MOR 3000× mais potente + NOP modulator → analgesia equivalente a morphine sem respiratory depression equivalente em fase 2", en: "Cebranopadol sera show 3000× more potent MOR + NOP modulator → morphine-equivalent analgesia without equivalent respiratory depression in phase 2"}
+        rationale: {pt: "Quando MOR é mais potente mas NOP modula, então segurança sobe.", en: "When MOR is more potent but NOP modulates, safety rises."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "DRG stim:", en: "DRG stim:"}
+        choices:
+          - {pt: "Targeted DRG (Dorsal Root Ganglion) stimulation Abbott Axium aprovado FDA 2016 em CRPS lower extremity — supera SCS convencional em precision body-region target", en: "Targeted DRG (Dorsal Root Ganglion) stimulation Abbott Axium FDA-approved 2016 in lower-extremity CRPS — beats conventional SCS in precision body-region targeting"}
+          - {pt: "DRG stim é restrito a TENS superficial sem componente DRG sendo Abbott Axium inviável em qualquer paciente CRPS humano clínico moderno em 2024 globalmente em qualquer escala", en: "DRG stim is restricted to superficial TENS without DRG component with Abbott Axium infeasible in any modern clinical CRPS human patient in 2024 globally at any scale"}
+          - {pt: "DRG é restrito a B-cell sem expressão neuronal sendo Abbott Axium inviável tecnicamente em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente", en: "DRG is restricted to B cells without neuronal expression with Abbott Axium technically infeasible in any modern clinical human patient in 2024 globally at any patient scale"}
+          - {pt: "FDA 2016 aprovação é teórica sem implementação prática sendo Axium inviável em qualquer paciente humano clínico moderno em 2024 globalmente em qualquer escala paciente CRPS", en: "FDA 2016 approval is theoretical without practical implementation with Axium infeasible in any modern clinical CRPS human patient in 2024 globally at any patient scale"}
+        correctAnswer: {pt: "Targeted DRG (Dorsal Root Ganglion) stimulation Abbott Axium aprovado FDA 2016 em CRPS lower extremity — supera SCS convencional em precision body-region target", en: "Targeted DRG (Dorsal Root Ganglion) stimulation Abbott Axium FDA-approved 2016 in lower-extremity CRPS — beats conventional SCS in precision body-region targeting"}
+        rationale: {pt: "Quando estímulo é DRG-target, então CRPS responde com precisão.", en: "When stimulus is DRG-target, CRPS responds with precision."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese pain biology:", en: "Pain biology synthesis:"}
+        choices:
+          - {pt: "Nav1.7/1.8 + suzetrigine + TRPV1 + opioid biased + anti-NGF + anti-CGRP/gepant + central sensitization + descending modulation + cannabinoid + neuromodulation redefinem analgesia", en: "Nav1.7/1.8 + suzetrigine + TRPV1 + opioid biased + anti-NGF + anti-CGRP/gepant + central sensitization + descending modulation + cannabinoid + neuromodulation redefine analgesia"}
+          - {pt: "Pain biology permanece pré-clínica sem aplicação humana até 2024 sendo conceito experimental sem implementação prática em qualquer indicação clínica humana globalmente em qualquer", en: "Pain biology remains preclinical without human application by 2024 being experimental concept without practical implementation in any clinical human indication globally at any"}
+          - {pt: "Plataformas pain são intercambiáveis sem trade-off em alvo, mecanismo ou dependência tornando escolha tecnológica indiferente em qualquer aplicação clínica humana 2024 globalmente", en: "Pain platforms are interchangeable without target, mechanism or dependence trade-off making technology choice indifferent in any clinical human application 2024 globally"}
+          - {pt: "Analgesia depende exclusivamente de opioide MOR puro sem componente NaV ou anti-CGRP sendo suzetrigine, gepants e anti-NGF dispensáveis em qualquer paciente humano clínico em 2024", en: "Analgesia depends exclusively on pure MOR opioid without NaV or anti-CGRP component with suzetrigine, gepants and anti-NGF dispensable in any clinical human patient in 2024"}
+        correctAnswer: {pt: "Nav1.7/1.8 + suzetrigine + TRPV1 + opioid biased + anti-NGF + anti-CGRP/gepant + central sensitization + descending modulation + cannabinoid + neuromodulation redefinem analgesia", en: "Nav1.7/1.8 + suzetrigine + TRPV1 + opioid biased + anti-NGF + anti-CGRP/gepant + central sensitization + descending modulation + cannabinoid + neuromodulation redefine analgesia"}
+        rationale: {pt: "Quando alvos novos somam, então analgesia escapa do opioide.", en: "When new targets sum, analgesia escapes the opioid."}
+        objectives: [biology.pain_biology]
+        difficulty: 5
+target: 20
