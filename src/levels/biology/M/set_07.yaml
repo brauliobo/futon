@@ -1,0 +1,244 @@
+title:
+  pt: "🤖 Robótica cirúrgica e cirurgia remota"
+  en: "🤖 Surgical robotics and remote surgery"
+level: 'M'
+subject: biology
+objectives: [biology.surgical_robotics]
+difficulty: 5
+authorNotes: "da Vinci Intuitive, Versius CMR, Hugo Medtronic, Hominis transoral, Mako orthopedic, Rosa, robotic prostatectomy, telesurgery 5G, haptic feedback, AI vision, single-port SP, micro-surgery."
+example:
+  pt: "Ex.: prostatectomia robótica da Vinci → 4 arms minimal incision → console cirurgião + visão 3D HD → continência + função sexual preserved vs open."
+  en: "Ex.: da Vinci robotic prostatectomy → 4 arms minimal incision → surgeon console + HD 3D view → continence + sexual function preserved vs open."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataformas robóticas", en: "Robotic platforms"}
+    description: {pt: "Como robô assiste cirurgia.", en: "How robot assists surgery."}
+    exercises:
+      - type: choice
+        question: {pt: "da Vinci Intuitive:", en: "da Vinci Intuitive:"}
+        choices:
+          - {pt: "Intuitive da Vinci Si/Xi/SP/Ion 4-arm robotic console master-slave teleoperation com 3D HD vision + EndoWrist 7-DOF — gold standard urology, gynecology, general surgery global ~7000 systems", en: "Intuitive da Vinci Si/Xi/SP/Ion 4-arm master-slave teleoperation console with 3D HD vision + EndoWrist 7-DOF — gold standard for urology, gynecology, general surgery globally with ~7000 systems"}
+          - {pt: "da Vinci é restrito a laparoscopy manual sem componente robótico sendo Intuitive inviável em qualquer paciente cirúrgico humano clínico moderno em 2024", en: "da Vinci is restricted to manual laparoscopy without robotic component with Intuitive infeasible in any modern clinical surgical human patient in 2024"}
+          - {pt: "EndoWrist 7-DOF é teórico sem evidência sendo da Vinci inviável em qualquer aplicação humana clínica moderna em 2024", en: "EndoWrist 7-DOF is theoretical without evidence with da Vinci infeasible in any modern clinical human application in 2024"}
+          - {pt: "Master-slave teleoperation é incompatível com console sendo Intuitive inviável em qualquer paciente humano clínico moderno em 2024", en: "Master-slave teleoperation is incompatible with console with Intuitive infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Intuitive da Vinci Si/Xi/SP/Ion 4-arm robotic console master-slave teleoperation com 3D HD vision + EndoWrist 7-DOF — gold standard urology, gynecology, general surgery global ~7000 systems", en: "Intuitive da Vinci Si/Xi/SP/Ion 4-arm master-slave teleoperation console with 3D HD vision + EndoWrist 7-DOF — gold standard for urology, gynecology, general surgery globally with ~7000 systems"}
+        rationale: {pt: "Quando braços têm 7-DOF, então cirurgia mínima fica precisa.", en: "When arms have 7-DOF, minimal surgery turns precise."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Versius CMR:", en: "Versius CMR:"}
+        choices:
+          - {pt: "CMR Surgical Versius modular cart-mounted single-arm setup substitui da Vinci com footprint menor + cost ~$500k vs $2M — UK/Europa expanding general surgery hospitals 2024", en: "CMR Surgical Versius modular cart-mounted single-arm setup replaces da Vinci with smaller footprint + ~$500k cost vs $2M — UK/Europe expanding general-surgery hospitals 2024"}
+          - {pt: "Versius é restrito a 4-arm sem componente single-arm sendo CMR Surgical inviável em qualquer paciente cirúrgico humano clínico moderno em 2024", en: "Versius is restricted to 4-arm without single-arm component with CMR Surgical infeasible in any modern clinical surgical human patient in 2024"}
+          - {pt: "Modular cart é teórico sem evidência sendo Versius inviável em qualquer aplicação humana clínica moderna em 2024", en: "Modular cart is theoretical without evidence with Versius infeasible in any modern clinical human application in 2024"}
+          - {pt: "$500k vs $2M é incompatível com Versius sendo CMR Surgical inviável em qualquer aplicação humana clínica moderna em 2024", en: "$500k vs $2M is incompatible with Versius with CMR Surgical infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "CMR Surgical Versius modular cart-mounted single-arm setup substitui da Vinci com footprint menor + cost ~$500k vs $2M — UK/Europa expanding general surgery hospitals 2024", en: "CMR Surgical Versius modular cart-mounted single-arm setup replaces da Vinci with smaller footprint + ~$500k cost vs $2M — UK/Europe expanding general-surgery hospitals 2024"}
+        rationale: {pt: "Quando custo cai e hospital expande, então robotic surgery escala.", en: "When cost falls and hospital expands, robotic surgery scales."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hugo Medtronic:", en: "Hugo Medtronic:"}
+        choices:
+          - {pt: "Medtronic Hugo modular 4-arm robotic platform competidor da Vinci — open architecture + cloud-based imaging analytics + real-time surgical analytics workflow Touch Surgery aggregation 2024", en: "Medtronic Hugo modular 4-arm robotic platform competes with da Vinci — open architecture + cloud-based imaging analytics + real-time surgical analytics workflow with Touch Surgery aggregation 2024"}
+          - {pt: "Hugo é restrito a manual laparoscopy sem componente robotic sendo Medtronic inviável em qualquer paciente cirúrgico humano clínico moderno em 2024", en: "Hugo is restricted to manual laparoscopy without robotic component with Medtronic infeasible in any modern clinical surgical human patient in 2024"}
+          - {pt: "Open architecture é teórico sem evidência sendo Hugo inviável em qualquer aplicação humana clínica moderna em 2024", en: "Open architecture is theoretical without evidence with Hugo infeasible in any modern clinical human application in 2024"}
+          - {pt: "Touch Surgery é incompatível com Hugo sendo Medtronic inviável em qualquer paciente humano clínico moderno em 2024", en: "Touch Surgery is incompatible with Hugo with Medtronic infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Medtronic Hugo modular 4-arm robotic platform competidor da Vinci — open architecture + cloud-based imaging analytics + real-time surgical analytics workflow Touch Surgery aggregation 2024", en: "Medtronic Hugo modular 4-arm robotic platform competes with da Vinci — open architecture + cloud-based imaging analytics + real-time surgical analytics workflow with Touch Surgery aggregation 2024"}
+        rationale: {pt: "Quando platform abre, então analytics escala.", en: "When platform opens, analytics scales."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mako orthopedic:", en: "Mako orthopedic:"}
+        choices:
+          - {pt: "Stryker Mako robotic-arm assistido knee/hip/total-shoulder arthroplasty CT-based virtual implant alignment + haptic boundary protege bone cuts → menor revision rate vs manual placement", en: "Stryker Mako robotic-arm-assisted knee/hip/total-shoulder arthroplasty with CT-based virtual implant alignment + haptic boundary protects bone cuts → lower revision rate vs manual placement"}
+          - {pt: "Mako é restrito a manual sem componente robotic-arm sendo Stryker inviável em qualquer paciente arthroplasty humano clínico moderno em 2024", en: "Mako is restricted to manual without robotic-arm component with Stryker infeasible in any modern clinical arthroplasty human patient in 2024"}
+          - {pt: "CT-based é teórico sem evidência sendo Mako inviável em qualquer aplicação humana clínica moderna em 2024", en: "CT-based is theoretical without evidence with Mako infeasible in any modern clinical human application in 2024"}
+          - {pt: "Haptic boundary é incompatível com Mako sendo Stryker inviável em qualquer paciente humano clínico moderno em 2024", en: "Haptic boundary is incompatible with Mako with Stryker infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Stryker Mako robotic-arm assistido knee/hip/total-shoulder arthroplasty CT-based virtual implant alignment + haptic boundary protege bone cuts → menor revision rate vs manual placement", en: "Stryker Mako robotic-arm-assisted knee/hip/total-shoulder arthroplasty with CT-based virtual implant alignment + haptic boundary protects bone cuts → lower revision rate vs manual placement"}
+        rationale: {pt: "Quando haptic protege bone, então prosthesis fica alinhado.", en: "When haptic protects bone, prosthesis aligns."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Rosa neurosurgery:", en: "Rosa neurosurgery:"}
+        choices:
+          - {pt: "Zimmer Biomet Rosa robotic stereotactic neurosurgery DBS electrode placement + epilepsy sEEG + biopsy via image-guided trajectory planning — sub-millimeter precision deep brain accuracy", en: "Zimmer Biomet Rosa robotic stereotactic neurosurgery for DBS electrode placement + epilepsy sEEG + biopsy via image-guided trajectory planning — sub-millimeter deep-brain accuracy"}
+          - {pt: "Rosa é restrito a craniotomy sem componente stereotactic sendo Zimmer Biomet inviável em qualquer paciente neuro humano clínico moderno em 2024", en: "Rosa is restricted to craniotomy without stereotactic component with Zimmer Biomet infeasible in any modern clinical neuro human patient in 2024"}
+          - {pt: "DBS electrode é teórico sem evidência sendo Rosa inviável em qualquer aplicação humana clínica moderna em 2024", en: "DBS electrode is theoretical without evidence with Rosa infeasible in any modern clinical human application in 2024"}
+          - {pt: "Sub-millimeter é incompatível com stereotactic sendo Zimmer Biomet inviável em qualquer paciente humano clínico moderno em 2024", en: "Sub-millimeter is incompatible with stereotactic with Zimmer Biomet infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Zimmer Biomet Rosa robotic stereotactic neurosurgery DBS electrode placement + epilepsy sEEG + biopsy via image-guided trajectory planning — sub-millimeter precision deep brain accuracy", en: "Zimmer Biomet Rosa robotic stereotactic neurosurgery for DBS electrode placement + epilepsy sEEG + biopsy via image-guided trajectory planning — sub-millimeter deep-brain accuracy"}
+        rationale: {pt: "Quando trajetória é planejada, então electrode chega no alvo.", en: "When trajectory is planned, electrode reaches target."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Telesurgery 5G:", en: "5G telesurgery:"}
+        choices:
+          - {pt: "Marescaux Lindbergh 2001 transatlantic gallbladder NY→Strasbourg + China 2019 Beijing→Sanya 5G low-latency <10ms + Versius/Toumai platforms emergem regional remote surgery low-resource", en: "Marescaux 2001 Lindbergh transatlantic gallbladder NY→Strasbourg + 2019 China Beijing→Sanya 5G low-latency <10ms + Versius/Toumai platforms emerge for low-resource regional remote surgery"}
+          - {pt: "Telesurgery é restrito a in-person sem componente remote sendo Marescaux inviável em qualquer paciente cirúrgico humano clínico moderno em 2024", en: "Telesurgery is restricted to in-person without remote component with Marescaux infeasible in any modern clinical surgical human patient in 2024"}
+          - {pt: "5G low-latency é teórico sem evidência sendo Beijing→Sanya inviável em qualquer aplicação humana clínica moderna em 2024", en: "5G low-latency is theoretical without evidence with Beijing→Sanya infeasible in any modern clinical human application in 2024"}
+          - {pt: "Regional remote é incompatível com surgery sendo Versius/Toumai inviável em qualquer paciente humano clínico moderno em 2024", en: "Regional remote is incompatible with surgery with Versius/Toumai infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Marescaux Lindbergh 2001 transatlantic gallbladder NY→Strasbourg + China 2019 Beijing→Sanya 5G low-latency <10ms + Versius/Toumai platforms emergem regional remote surgery low-resource", en: "Marescaux 2001 Lindbergh transatlantic gallbladder NY→Strasbourg + 2019 China Beijing→Sanya 5G low-latency <10ms + Versius/Toumai platforms emerge for low-resource regional remote surgery"}
+        rationale: {pt: "Quando latência é baixa, então cirurgião fica longe.", en: "When latency is low, surgeon stays far away."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Single-port SP:", en: "Single-port SP:"}
+        choices:
+          - {pt: "Intuitive da Vinci SP single-port robotic 4-arm tudo through 25mm access port — cosmetic improvement + reduced wound infection vs multi-port — urology, transoral, colorectal indications expand 2018+", en: "Intuitive da Vinci SP single-port robotic 4-arm all through 25 mm access port — cosmetic improvement + reduced wound infection vs multi-port — urology, transoral, colorectal indications expand 2018+"}
+          - {pt: "Single-port SP é restrito a multi-port sem componente single sendo Intuitive da Vinci inviável em qualquer paciente cirúrgico humano clínico moderno em 2024", en: "Single-port SP is restricted to multi-port without single component with Intuitive da Vinci infeasible in any modern clinical surgical human patient in 2024"}
+          - {pt: "25mm access port é teórico sem evidência sendo SP inviável em qualquer aplicação humana clínica moderna em 2024", en: "25 mm access port is theoretical without evidence with SP infeasible in any modern clinical human application in 2024"}
+          - {pt: "Cosmetic improvement é incompatível com SP sendo da Vinci inviável em qualquer paciente humano clínico moderno em 2024", en: "Cosmetic improvement is incompatible with SP with da Vinci infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Intuitive da Vinci SP single-port robotic 4-arm tudo through 25mm access port — cosmetic improvement + reduced wound infection vs multi-port — urology, transoral, colorectal indications expand 2018+", en: "Intuitive da Vinci SP single-port robotic 4-arm all through 25 mm access port — cosmetic improvement + reduced wound infection vs multi-port — urology, transoral, colorectal indications expand 2018+"}
+        rationale: {pt: "Quando 4 braços entram em 1 porto, então cicatriz some.", en: "When 4 arms enter 1 port, scar fades."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hominis transoral:", en: "Transoral Hominis:"}
+        choices:
+          - {pt: "Memic Hominis miniature humanoid robotic arms via single-port natural orifice transoral remove tumor laringe sem incisão externa + full-flexibility wrist-elbow-shoulder mimic surgeon arm motion", en: "Memic Hominis miniature humanoid robotic arms via single-port natural-orifice transoral remove laryngeal tumor without external incision + full-flexibility wrist-elbow-shoulder surgeon-arm motion mimicry"}
+          - {pt: "Hominis é restrito a external incision sem componente natural orifice sendo Memic inviável em qualquer paciente cirúrgico humano clínico moderno em 2024", en: "Hominis is restricted to external incision without natural-orifice component with Memic infeasible in any modern clinical surgical human patient in 2024"}
+          - {pt: "Miniature humanoid é teórico sem evidência sendo Hominis inviável em qualquer aplicação humana clínica moderna em 2024", en: "Miniature humanoid is theoretical without evidence with Hominis infeasible in any modern clinical human application in 2024"}
+          - {pt: "Wrist-elbow-shoulder é incompatível com Hominis sendo Memic inviável em qualquer paciente humano clínico moderno em 2024", en: "Wrist-elbow-shoulder is incompatible with Hominis with Memic infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Memic Hominis miniature humanoid robotic arms via single-port natural orifice transoral remove tumor laringe sem incisão externa + full-flexibility wrist-elbow-shoulder mimic surgeon arm motion", en: "Memic Hominis miniature humanoid robotic arms via single-port natural-orifice transoral remove laryngeal tumor without external incision + full-flexibility wrist-elbow-shoulder surgeon-arm motion mimicry"}
+        rationale: {pt: "Quando braços miniaturizam, então natural orifice opera tumor.", en: "When arms miniaturize, natural orifice operates tumor."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AI vision intraop:", en: "Intraop AI vision:"}
+        choices:
+          - {pt: "Theator, Caresyntax, Activ Surgical computer vision real-time cirurgia analytics indica anatomy + risk + skill assessment + automated documentation — emerging surgical AI workflow assist 2024", en: "Theator, Caresyntax, Activ Surgical computer-vision real-time surgical analytics indicate anatomy + risk + skill assessment + automated documentation — emerging surgical AI workflow assistance 2024"}
+          - {pt: "AI vision é restrito a manual reading sem componente AI sendo Theator inviável em qualquer paciente cirúrgico humano clínico moderno em 2024", en: "AI vision is restricted to manual reading without AI component with Theator infeasible in any modern clinical surgical human patient in 2024"}
+          - {pt: "Caresyntax é teórico sem evidência sendo Activ Surgical inviável em qualquer aplicação humana clínica moderna em 2024", en: "Caresyntax is theoretical without evidence with Activ Surgical infeasible in any modern clinical human application in 2024"}
+          - {pt: "Skill assessment é incompatível com AI sendo Theator inviável em qualquer paciente humano clínico moderno em 2024", en: "Skill assessment is incompatible with AI with Theator infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Theator, Caresyntax, Activ Surgical computer vision real-time cirurgia analytics indica anatomy + risk + skill assessment + automated documentation — emerging surgical AI workflow assist 2024", en: "Theator, Caresyntax, Activ Surgical computer-vision real-time surgical analytics indicate anatomy + risk + skill assessment + automated documentation — emerging surgical AI workflow assistance 2024"}
+        rationale: {pt: "Quando AI vê cirurgia, então analytics aparece em real-time.", en: "When AI sees surgery, analytics emerge in real time."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Magnetic capsule:", en: "Magnetic capsule:"}
+        choices:
+          - {pt: "Magnetic capsule endoscopy Intromedic Mirocam, Olympus EndoCapsule + magnetic steering external paciente swallow capsule passa GI tract image stomach/small bowel/colon sem sedation/intubation", en: "Magnetic capsule endoscopy Intromedic Mirocam, Olympus EndoCapsule + external magnetic steering — patient swallows capsule that traverses GI tract imaging stomach/small bowel/colon without sedation/intubation"}
+          - {pt: "Magnetic capsule é restrito a colonoscopy sem componente swallow sendo Intromedic inviável em qualquer paciente GI humano clínico moderno em 2024", en: "Magnetic capsule is restricted to colonoscopy without swallow component with Intromedic infeasible in any modern clinical GI human patient in 2024"}
+          - {pt: "External magnetic steering é teórico sem evidência sendo Olympus EndoCapsule inviável em qualquer aplicação humana clínica moderna em 2024", en: "External magnetic steering is theoretical without evidence with Olympus EndoCapsule infeasible in any modern clinical human application in 2024"}
+          - {pt: "Sedation/intubation é incompatível com capsule sendo Mirocam inviável em qualquer paciente humano clínico moderno em 2024", en: "Sedation/intubation is incompatible with capsule with Mirocam infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Magnetic capsule endoscopy Intromedic Mirocam, Olympus EndoCapsule + magnetic steering external paciente swallow capsule passa GI tract image stomach/small bowel/colon sem sedation/intubation", en: "Magnetic capsule endoscopy Intromedic Mirocam, Olympus EndoCapsule + external magnetic steering — patient swallows capsule that traverses GI tract imaging stomach/small bowel/colon without sedation/intubation"}
+        rationale: {pt: "Quando paciente engole câmera, então endoscopia fica gentil.", en: "When patient swallows camera, endoscopy turns gentle."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações cirúrgicas modernas", en: "Modern surgical applications"}
+    description: {pt: "Da bancada à sala.", en: "From bench to OR."}
+    exercises:
+      - type: choice
+        question: {pt: "Robotic prostatectomy:", en: "Robotic prostatectomy:"}
+        choices:
+          - {pt: "Robotic radical prostatectomy da Vinci Xi/SP supera open + laparoscopic em continência + nerve-sparing potency preservation — gold standard em PCa localizada surgically managed adulto >50 anos", en: "da Vinci Xi/SP robotic radical prostatectomy beats open + laparoscopic in continence + nerve-sparing potency preservation — gold standard in surgically managed localized PCa adult >50 years"}
+          - {pt: "Robotic prostatectomy é restrito a open sem componente robotic sendo da Vinci Xi inviável em qualquer paciente PCa humano clínico moderno em 2024", en: "Robotic prostatectomy is restricted to open without robotic component with da Vinci Xi infeasible in any modern clinical PCa human patient in 2024"}
+          - {pt: "Continência é teórico sem evidência sendo nerve-sparing inviável em qualquer aplicação humana clínica moderna em 2024", en: "Continence is theoretical without evidence with nerve-sparing infeasible in any modern clinical human application in 2024"}
+          - {pt: "Potency preservation é incompatível com robotic sendo da Vinci SP inviável em qualquer paciente humano clínico moderno em 2024", en: "Potency preservation is incompatible with robotic with da Vinci SP infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Robotic radical prostatectomy da Vinci Xi/SP supera open + laparoscopic em continência + nerve-sparing potency preservation — gold standard em PCa localizada surgically managed adulto >50 anos", en: "da Vinci Xi/SP robotic radical prostatectomy beats open + laparoscopic in continence + nerve-sparing potency preservation — gold standard in surgically managed localized PCa adult >50 years"}
+        rationale: {pt: "Quando nervos são poupados, então qualidade de vida pós-PCa preserva.", en: "When nerves are spared, post-PCa quality of life is preserved."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Robotic CABG:", en: "Robotic CABG:"}
+        choices:
+          - {pt: "Totally Endoscopic CABG (TECAB) da Vinci robotic LIMA-LAD anastomosis + minimally invasive multi-vessel — Suri/Bonatti pioneer expandindo robotic cardiac surgery 2010+ adulto coronariopatia selecionada", en: "Totally Endoscopic CABG (TECAB) da Vinci robotic LIMA-LAD anastomosis + minimally invasive multi-vessel — Suri/Bonatti pioneer expanding robotic cardiac surgery from 2010+ in selected adult coronary artery disease"}
+          - {pt: "Robotic CABG é restrito a open sternotomy sem componente endoscopic sendo TECAB inviável em qualquer paciente CABG humano clínico moderno em 2024", en: "Robotic CABG is restricted to open sternotomy without endoscopic component with TECAB infeasible in any modern clinical CABG human patient in 2024"}
+          - {pt: "LIMA-LAD anastomosis é teórico sem evidência sendo Suri/Bonatti inviável em qualquer aplicação humana clínica moderna em 2024", en: "LIMA-LAD anastomosis is theoretical without evidence with Suri/Bonatti infeasible in any modern clinical human application in 2024"}
+          - {pt: "Multi-vessel é incompatível com TECAB sendo da Vinci inviável em qualquer paciente humano clínico moderno em 2024", en: "Multi-vessel is incompatible with TECAB with da Vinci infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Totally Endoscopic CABG (TECAB) da Vinci robotic LIMA-LAD anastomosis + minimally invasive multi-vessel — Suri/Bonatti pioneer expandindo robotic cardiac surgery 2010+ adulto coronariopatia selecionada", en: "Totally Endoscopic CABG (TECAB) da Vinci robotic LIMA-LAD anastomosis + minimally invasive multi-vessel — Suri/Bonatti pioneer expanding robotic cardiac surgery from 2010+ in selected adult coronary artery disease"}
+        rationale: {pt: "Quando ponte cardíaca é endoscópica, então recovery encurta.", en: "When cardiac bypass is endoscopic, recovery shortens."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microsurgery vasc:", en: "Vascular microsurgery:"}
+        choices:
+          - {pt: "MUSA (Microsure) + Symani (Medical Microinstruments) supermicrosurgery anastomose vasos lymph 0.3-0.8 mm em lymphedema reconstruction + facial nerve repair + free flap reconstruction precision", en: "MUSA (Microsure) + Symani (Medical Microinstruments) supermicrosurgery anastomose 0.3-0.8 mm lymph vessels in lymphedema reconstruction + facial nerve repair + free flap reconstruction precision"}
+          - {pt: "Microsurgery vasc é restrito a manual sem componente robotic sendo MUSA inviável em qualquer paciente vascular humano clínico moderno em 2024", en: "Vascular microsurgery is restricted to manual without robotic component with MUSA infeasible in any modern clinical vascular human patient in 2024"}
+          - {pt: "0.3-0.8 mm é teórico sem evidência sendo Symani inviável em qualquer aplicação humana clínica moderna em 2024", en: "0.3-0.8 mm is theoretical without evidence with Symani infeasible in any modern clinical human application in 2024"}
+          - {pt: "Lymphedema reconstruction é incompatível com supermicrosurgery sendo MUSA inviável em qualquer paciente humano clínico moderno em 2024", en: "Lymphedema reconstruction is incompatible with supermicrosurgery with MUSA infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "MUSA (Microsure) + Symani (Medical Microinstruments) supermicrosurgery anastomose vasos lymph 0.3-0.8 mm em lymphedema reconstruction + facial nerve repair + free flap reconstruction precision", en: "MUSA (Microsure) + Symani (Medical Microinstruments) supermicrosurgery anastomose 0.3-0.8 mm lymph vessels in lymphedema reconstruction + facial nerve repair + free flap reconstruction precision"}
+        rationale: {pt: "Quando vasos são micrométricos, então robô vence tremor humano.", en: "When vessels are micrometric, robot beats human tremor."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Capsule colonoscopy:", en: "Capsule colonoscopy:"}
+        choices:
+          - {pt: "Medtronic PillCam Colon 2 capsule swallow paciente substitui colonoscopy invasiva em screening — sensibilidade 88% adenoma >10mm via image AI processing, opção screening adesão melhor", en: "Medtronic PillCam Colon 2 swallow capsule replaces invasive colonoscopy in screening — 88% sensitivity for >10 mm adenomas via AI image processing, screening option with better adherence"}
+          - {pt: "Capsule colonoscopy é restrito a sigmoidoscopy sem componente capsule sendo Medtronic PillCam inviável em qualquer paciente CRC humano clínico moderno em 2024", en: "Capsule colonoscopy is restricted to sigmoidoscopy without capsule component with Medtronic PillCam infeasible in any modern clinical CRC human patient in 2024"}
+          - {pt: "AI image processing é teórico sem evidência sendo PillCam inviável em qualquer aplicação humana clínica moderna em 2024", en: "AI image processing is theoretical without evidence with PillCam infeasible in any modern clinical human application in 2024"}
+          - {pt: "Adenoma >10mm é incompatível com capsule sendo Colon 2 inviável em qualquer paciente humano clínico moderno em 2024", en: "Adenoma >10 mm is incompatible with capsule with Colon 2 infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Medtronic PillCam Colon 2 capsule swallow paciente substitui colonoscopy invasiva em screening — sensibilidade 88% adenoma >10mm via image AI processing, opção screening adesão melhor", en: "Medtronic PillCam Colon 2 swallow capsule replaces invasive colonoscopy in screening — 88% sensitivity for >10 mm adenomas via AI image processing, screening option with better adherence"}
+        rationale: {pt: "Quando pílula faz colonoscopy, então adesão screening sobe.", en: "When pill does colonoscopy, screening adherence rises."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bronchoscopy Ion:", en: "Ion bronchoscopy:"}
+        choices:
+          - {pt: "Intuitive Ion robotic bronchoscopy peripheral nodule biopsy via flexible navigated catheter ≥ proximal lobar 4-5th generation, replicates electromagnetic navigation Auris Monarch competitor 2019+", en: "Intuitive Ion robotic bronchoscopy biopsies peripheral nodule via flexible navigated catheter ≥ proximal lobar 4-5th generation, replicates electromagnetic navigation; Auris Monarch competitor 2019+"}
+          - {pt: "Bronchoscopy Ion é restrito a flexible manual sem componente robotic sendo Intuitive Ion inviável em qualquer paciente lung humano clínico moderno em 2024", en: "Ion bronchoscopy is restricted to manual flexible without robotic component with Intuitive Ion infeasible in any modern clinical lung human patient in 2024"}
+          - {pt: "Peripheral nodule é teórico sem evidência sendo Auris Monarch inviável em qualquer aplicação humana clínica moderna em 2024", en: "Peripheral nodule is theoretical without evidence with Auris Monarch infeasible in any modern clinical human application in 2024"}
+          - {pt: "Electromagnetic navigation é incompatível com Ion sendo Intuitive inviável em qualquer paciente humano clínico moderno em 2024", en: "Electromagnetic navigation is incompatible with Ion with Intuitive infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Intuitive Ion robotic bronchoscopy peripheral nodule biopsy via flexible navigated catheter ≥ proximal lobar 4-5th generation, replicates electromagnetic navigation Auris Monarch competitor 2019+", en: "Intuitive Ion robotic bronchoscopy biopsies peripheral nodule via flexible navigated catheter ≥ proximal lobar 4-5th generation, replicates electromagnetic navigation; Auris Monarch competitor 2019+"}
+        rationale: {pt: "Quando catheter alcança periferia, então biópsia precisa.", en: "When catheter reaches periphery, biopsy is precise."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "AR/VR overlay:", en: "AR/VR overlay:"}
+        choices:
+          - {pt: "Augmented reality intraop overlay (Augmedics xVision spine, Brainlab Microscope, Magic Leap surgery) projeta anatomy + tumor margin + nerve em hot eye-piece + display surgeon view AR-guided", en: "Augmented-reality intraop overlay (Augmedics xVision spine, Brainlab Microscope, Magic Leap surgery) projects anatomy + tumor margin + nerve onto eye-piece + display surgeon view AR-guided"}
+          - {pt: "AR/VR overlay é restrito a 2D screen sem componente 3D sendo Augmedics inviável em qualquer paciente cirúrgico humano clínico moderno em 2024", en: "AR/VR overlay is restricted to 2D screen without 3D component with Augmedics infeasible in any modern clinical surgical human patient in 2024"}
+          - {pt: "xVision é teórico sem evidência sendo Brainlab inviável em qualquer aplicação humana clínica moderna em 2024", en: "xVision is theoretical without evidence with Brainlab infeasible in any modern clinical human application in 2024"}
+          - {pt: "Magic Leap é incompatível com surgery sendo Augmedics inviável em qualquer paciente humano clínico moderno em 2024", en: "Magic Leap is incompatible with surgery with Augmedics infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Augmented reality intraop overlay (Augmedics xVision spine, Brainlab Microscope, Magic Leap surgery) projeta anatomy + tumor margin + nerve em hot eye-piece + display surgeon view AR-guided", en: "Augmented-reality intraop overlay (Augmedics xVision spine, Brainlab Microscope, Magic Leap surgery) projects anatomy + tumor margin + nerve onto eye-piece + display surgeon view AR-guided"}
+        rationale: {pt: "Quando AR mostra anatomia, então cirurgião enxerga sob a pele.", en: "When AR shows anatomy, surgeon sees beneath the skin."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Haptic feedback:", en: "Haptic feedback:"}
+        choices:
+          - {pt: "Force-torque sensors em robotic arm + console motor restoration tactile feedback à surgeon — primary missing in da Vinci Xi mas Hugo, Versius integrating force feedback haptic tissue/suture grip", en: "Force-torque sensors in robotic arm + console motor restore tactile feedback to surgeon — main missing piece in da Vinci Xi but Hugo, Versius integrating haptic tissue/suture-grip force feedback"}
+          - {pt: "Haptic feedback é restrito a manual sem componente robotic sendo force-torque inviável em qualquer paciente cirúrgico humano clínico moderno em 2024", en: "Haptic feedback is restricted to manual without robotic component with force-torque infeasible in any modern clinical surgical human patient in 2024"}
+          - {pt: "Console motor é teórico sem evidência sendo da Vinci Xi inviável em qualquer aplicação humana clínica moderna em 2024", en: "Console motor is theoretical without evidence with da Vinci Xi infeasible in any modern clinical human application in 2024"}
+          - {pt: "Tissue/suture grip é incompatível com haptic sendo Hugo, Versius inviáveis em qualquer paciente humano clínico moderno em 2024", en: "Tissue/suture grip is incompatible with haptic with Hugo, Versius infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Force-torque sensors em robotic arm + console motor restoration tactile feedback à surgeon — primary missing in da Vinci Xi mas Hugo, Versius integrating force feedback haptic tissue/suture grip", en: "Force-torque sensors in robotic arm + console motor restore tactile feedback to surgeon — main missing piece in da Vinci Xi but Hugo, Versius integrating haptic tissue/suture-grip force feedback"}
+        rationale: {pt: "Quando força volta ao console, então cirurgião sente o tecido.", en: "When force returns to console, surgeon feels tissue."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Autonomy STAR:", en: "STAR autonomy:"}
+        choices:
+          - {pt: "Smart Tissue Autonomous Robot (Krieger/Children's Hospital DC) STAR autonomous suture intestinal anastomosis pig model 2016 — primeiro robotic surgery autonomous task without surgeon hand input", en: "Smart Tissue Autonomous Robot (Krieger/Children's Hospital DC) STAR autonomous suture intestinal anastomosis in pig model 2016 — first autonomous robotic-surgery task without surgeon hand input"}
+          - {pt: "STAR é restrito a manual sem componente autonomous sendo Krieger inviável em qualquer aplicação cirúrgica humana clínica moderna em 2024", en: "STAR is restricted to manual without autonomous component with Krieger infeasible in any modern clinical surgical human application in 2024"}
+          - {pt: "Suture intestinal é teórico sem evidência sendo Children's Hospital DC inviável em qualquer aplicação humana clínica moderna em 2024", en: "Suture intestinal is theoretical without evidence with Children's Hospital DC infeasible in any modern clinical human application in 2024"}
+          - {pt: "Pig model é incompatível com STAR sendo autonomous task inviável em qualquer paciente humano clínico moderno em 2024", en: "Pig model is incompatible with STAR with autonomous task infeasible in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "Smart Tissue Autonomous Robot (Krieger/Children's Hospital DC) STAR autonomous suture intestinal anastomosis pig model 2016 — primeiro robotic surgery autonomous task without surgeon hand input", en: "Smart Tissue Autonomous Robot (Krieger/Children's Hospital DC) STAR autonomous suture intestinal anastomosis in pig model 2016 — first autonomous robotic-surgery task without surgeon hand input"}
+        rationale: {pt: "Quando robô sutura sozinho, então autonomia entra na cirurgia.", en: "When robot sutures alone, autonomy enters surgery."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Robotic training sim:", en: "Robotic training sim:"}
+        choices:
+          - {pt: "dV-Trainer + Mimic + Simbionix robotic surgery simulator + VR realistic environment + AI scoring + GEARS objective skill assessment substitui learning curve cadaver/animal training cirurgião novato", en: "dV-Trainer + Mimic + Simbionix robotic-surgery simulator + realistic VR environment + AI scoring + GEARS objective skill assessment replace cadaver/animal learning-curve training for novice surgeon"}
+          - {pt: "Robotic training sim é restrito a animal sem componente VR sendo dV-Trainer inviável em qualquer aplicação cirúrgica humana clínica moderna em 2024", en: "Robotic training sim is restricted to animal without VR component with dV-Trainer infeasible in any modern clinical surgical human application in 2024"}
+          - {pt: "Mimic é teórico sem evidência sendo Simbionix inviável em qualquer aplicação humana clínica moderna em 2024", en: "Mimic is theoretical without evidence with Simbionix infeasible in any modern clinical human application in 2024"}
+          - {pt: "GEARS é incompatível com training sendo VR inviável em qualquer aplicação humana clínica moderna em 2024", en: "GEARS is incompatible with training with VR infeasible in any modern clinical human application in 2024"}
+        correctAnswer: {pt: "dV-Trainer + Mimic + Simbionix robotic surgery simulator + VR realistic environment + AI scoring + GEARS objective skill assessment substitui learning curve cadaver/animal training cirurgião novato", en: "dV-Trainer + Mimic + Simbionix robotic-surgery simulator + realistic VR environment + AI scoring + GEARS objective skill assessment replace cadaver/animal learning-curve training for novice surgeon"}
+        rationale: {pt: "Quando simulador é realista, então residente treina sem paciente.", en: "When simulator is realistic, resident trains without patient."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese surgical robotics:", en: "Surgical robotics synthesis:"}
+        choices:
+          - {pt: "da Vinci + Versius + Hugo + Mako + Rosa + 5G telesurgery + SP + Hominis + AI vision + magnetic capsule + prostatectomy + CABG + microsurgery + capsule colonoscopy + Ion + AR/VR + haptic + STAR + sim redefinem cirurgia", en: "da Vinci + Versius + Hugo + Mako + Rosa + 5G telesurgery + SP + Hominis + AI vision + magnetic capsule + prostatectomy + CABG + microsurgery + capsule colonoscopy + Ion + AR/VR + haptic + STAR + sim redefine surgery"}
+          - {pt: "Surgical robotics permanece pré-clínica sem aplicação humana até 2024 sendo conceito experimental sem implementação prática em qualquer indicação clínica humana globalmente", en: "Surgical robotics remains preclinical without human application by 2024 being experimental concept without practical implementation in any clinical human indication globally"}
+          - {pt: "Plataformas robotic são intercambiáveis sem trade-off em footprint tornando escolha tecnológica indiferente em qualquer aplicação clínica humana 2024 globalmente em qualquer escala paciente", en: "Robotic platforms are interchangeable without footprint trade-off making technology choice indifferent in any clinical human application 2024 globally at any patient scale"}
+          - {pt: "Robotics depende exclusivamente de manual surgery sem componente robotic sendo da Vinci e Mako dispensáveis em qualquer paciente humano clínico moderno em 2024", en: "Robotics depends exclusively on manual surgery without robotic component with da Vinci and Mako dispensable in any modern clinical human patient in 2024"}
+        correctAnswer: {pt: "da Vinci + Versius + Hugo + Mako + Rosa + 5G telesurgery + SP + Hominis + AI vision + magnetic capsule + prostatectomy + CABG + microsurgery + capsule colonoscopy + Ion + AR/VR + haptic + STAR + sim redefinem cirurgia", en: "da Vinci + Versius + Hugo + Mako + Rosa + 5G telesurgery + SP + Hominis + AI vision + magnetic capsule + prostatectomy + CABG + microsurgery + capsule colonoscopy + Ion + AR/VR + haptic + STAR + sim redefine surgery"}
+        rationale: {pt: "Quando robô e cirurgião colaboram, então OR vira inteligente.", en: "When robot and surgeon collaborate, OR becomes smart."}
+        objectives: [biology.surgical_robotics]
+        difficulty: 5
+target: 20
