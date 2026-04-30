@@ -1,0 +1,244 @@
+title:
+  pt: "🎓 Revisão cumulativa I"
+  en: "🎓 Cumulative review I"
+level: 'I'
+subject: biology
+objectives: [biology.cumulative_I]
+difficulty: 5
+authorNotes: "Revisão dos 19 tópicos de I: hallmarks, reprogramação, GLP-1, long COVID, resistência tumoral, microbioma-imune, inflamossomos, lipídios, ILCs, glinfático, tau, AMR, EDCs, vacinas mucosais, cura HIV, neonatal, sono, evasão tumoral, gut-brain."
+example:
+  pt: "Ex.: revisar tópico → reconhecer mecanismo → conectar à aplicação → consolidar."
+  en: "Ex.: review topic → recognize mechanism → link to application → consolidate."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Conceitos-chave I", en: "Key concepts I"}
+    description: {pt: "Tópicos 01-10 do nível I.", en: "Level I topics 01-10."}
+    exercises:
+      - type: choice
+        question: {pt: "Hallmarks aging integrados:", en: "Integrated aging hallmarks:"}
+        choices:
+          - {pt: "12 hallmarks (López-Otín 2023) integram dano genômico, telomere, epigenoma, proteostase, autofagia, sensing, mito, senescência, stem, comunicação, inflamação e dysbiose", en: "12 hallmarks (López-Otín 2023) integrate genomic damage, telomere, epigenome, proteostasis, autophagy, sensing, mito, senescence, stem, communication, inflammation and dysbiosis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "12 hallmarks (López-Otín 2023) integram dano genômico, telomere, epigenoma, proteostase, autofagia, sensing, mito, senescência, stem, comunicação, inflamação e dysbiose", en: "12 hallmarks (López-Otín 2023) integrate genomic damage, telomere, epigenome, proteostasis, autophagy, sensing, mito, senescence, stem, communication, inflammation and dysbiosis"}
+        rationale: {pt: "Quando hallmarks são alvos, então geroterapia muda saúde pública.", en: "When hallmarks are targets, geroscience reshapes public health."}
+        objectives: [biology.aging_hallmarks]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Partial reprogramming OSK:", en: "Partial reprogramming OSK:"}
+        choices:
+          - {pt: "Pulsos de OSK rejuvenescem epigenoma sem reverter identidade abrindo terapias para retina, fígado e SNC", en: "OSK pulses rejuvenate epigenome without reverting identity opening therapies for retina, liver and CNS"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Pulsos de OSK rejuvenescem epigenoma sem reverter identidade abrindo terapias para retina, fígado e SNC", en: "OSK pulses rejuvenate epigenome without reverting identity opening therapies for retina, liver and CNS"}
+        rationale: {pt: "Quando epigenoma reseta, então tempo vira ferramenta.", en: "When epigenome resets, time becomes a tool."}
+        objectives: [biology.partial_reprogramming]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tirzepatide e SELECT:", en: "Tirzepatide and SELECT:"}
+        choices:
+          - {pt: "GLP-1/GIP co-agonista perde ~22% de peso e semaglutida reduziu MACE 20% em obesos sem diabetes (SELECT)", en: "GLP-1/GIP co-agonist loses ~22% weight and semaglutide cut MACE 20% in non-diabetic obese (SELECT)"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "GLP-1/GIP co-agonista perde ~22% de peso e semaglutida reduziu MACE 20% em obesos sem diabetes (SELECT)", en: "GLP-1/GIP co-agonist loses ~22% weight and semaglutide cut MACE 20% in non-diabetic obese (SELECT)"}
+        rationale: {pt: "Quando peso cai, então cardiometabólico melhora amplamente.", en: "When weight falls, cardiometabolic broadly improves."}
+        objectives: [biology.glp1_metabolism]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Long COVID mecanismo:", en: "Long COVID mechanism:"}
+        choices:
+          - {pt: "Persistência viral, autoimunidade, microcoagulação e disfunção mitocondrial convergem em síndrome PASC multissistêmica", en: "Viral persistence, autoimmunity, microcoagulation and mitochondrial dysfunction converge in multisystem PASC"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Persistência viral, autoimunidade, microcoagulação e disfunção mitocondrial convergem em síndrome PASC multissistêmica", en: "Viral persistence, autoimmunity, microcoagulation and mitochondrial dysfunction converge in multisystem PASC"}
+        rationale: {pt: "Quando mecanismos integram, então tratamento racional emerge.", en: "When mechanisms integrate, rational treatment emerges."}
+        objectives: [biology.long_covid]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Drug-tolerant persisters:", en: "Drug-tolerant persisters:"}
+        choices:
+          - {pt: "Subpopulação tumoral reversível com fenótipo quiescente sobrevive sob droga sem mutação clássica gerando recidiva", en: "Reversible tumor subpopulation with quiescent phenotype survives under drug without classical mutation driving relapse"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Subpopulação tumoral reversível com fenótipo quiescente sobrevive sob droga sem mutação clássica gerando recidiva", en: "Reversible tumor subpopulation with quiescent phenotype survives under drug without classical mutation driving relapse"}
+        rationale: {pt: "Quando persisters dormem, então tratamento parece eficaz mas falha.", en: "When persisters sleep, treatment seems effective but fails."}
+        objectives: [biology.tumor_resistance]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PSA e Tregs colônicos:", en: "PSA and colonic Tregs:"}
+        choices:
+          - {pt: "B. fragilis PSA induz Tregs FOXP3+ via TLR2 protegendo contra colite e modulando SNC", en: "B. fragilis PSA induces FOXP3+ Tregs via TLR2 protecting against colitis and modulating CNS"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "B. fragilis PSA induz Tregs FOXP3+ via TLR2 protegendo contra colite e modulando SNC", en: "B. fragilis PSA induces FOXP3+ Tregs via TLR2 protecting against colitis and modulating CNS"}
+        rationale: {pt: "Quando PSA atua, então tolerância imune nasce no intestino.", en: "When PSA acts, immune tolerance is born in gut."}
+        objectives: [biology.microbiome_immune]
+        difficulty: 5
+      - type: choice
+        question: {pt: "NLRP3 e gota:", en: "NLRP3 and gout:"}
+        choices:
+          - {pt: "Cristais de urato ativam NLRP3 em macrófagos liberando IL-1β e gerando artrite aguda — anakinra alivia", en: "Urate crystals activate NLRP3 in macrophages releasing IL-1β and triggering acute arthritis — anakinra relieves"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cristais de urato ativam NLRP3 em macrófagos liberando IL-1β e gerando artrite aguda — anakinra alivia", en: "Urate crystals activate NLRP3 in macrophages releasing IL-1β and triggering acute arthritis — anakinra relieves"}
+        rationale: {pt: "Quando cristais ativam, então piroptose causa dor articular.", en: "When crystals activate, pyroptosis causes joint pain."}
+        objectives: [biology.inflammasomes]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Ferroptose GPX4:", en: "Ferroptosis GPX4:"}
+        choices:
+          - {pt: "GPX4 selenodependente reduz hidroperóxidos lipídicos protegendo membranas — alvo central anti-ferroptose em câncer", en: "Selenium-dependent GPX4 reduces lipid hydroperoxides protecting membranes — central anti-ferroptosis target in cancer"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "GPX4 selenodependente reduz hidroperóxidos lipídicos protegendo membranas — alvo central anti-ferroptose em câncer", en: "Selenium-dependent GPX4 reduces lipid hydroperoxides protecting membranes — central anti-ferroptosis target in cancer"}
+        rationale: {pt: "Quando GPX4 cai, então ferroptose mata.", en: "When GPX4 falls, ferroptosis kills."}
+        objectives: [biology.lipid_biology]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ILC2 e asma:", en: "ILC2 and asthma:"}
+        choices:
+          - {pt: "ILC2 ativadas por TSLP/IL-33 produzem IL-5/IL-13 perpetuando inflamação Th2 — tezepelumab e dupilumab tratam", en: "ILC2 activated by TSLP/IL-33 produce IL-5/IL-13 sustaining Th2 inflammation — tezepelumab and dupilumab treat"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ILC2 ativadas por TSLP/IL-33 produzem IL-5/IL-13 perpetuando inflamação Th2 — tezepelumab e dupilumab tratam", en: "ILC2 activated by TSLP/IL-33 produce IL-5/IL-13 sustaining Th2 inflammation — tezepelumab and dupilumab treat"}
+        rationale: {pt: "Quando ILC2 perde gatilho, então asma melhora.", en: "When ILC2 loses trigger, asthma improves."}
+        objectives: [biology.ilcs]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Glymphatic NREM:", en: "NREM glymphatic:"}
+        choices:
+          - {pt: "ISF expande ~60% em NREM acelerando clearance de Aβ ~2x via AQP4 perivascular — sono ruim acelera AD", en: "ISF expands ~60% in NREM accelerating Aβ clearance ~2x via perivascular AQP4 — poor sleep accelerates AD"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ISF expande ~60% em NREM acelerando clearance de Aβ ~2x via AQP4 perivascular — sono ruim acelera AD", en: "ISF expands ~60% in NREM accelerating Aβ clearance ~2x via perivascular AQP4 — poor sleep accelerates AD"}
+        rationale: {pt: "Quando NREM aprofunda, então cérebro lava-se.", en: "When NREM deepens, brain washes."}
+        objectives: [biology.glymphatic]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Conceitos-chave II", en: "Key concepts II"}
+    description: {pt: "Tópicos 11-19 do nível I.", en: "Level I topics 11-19."}
+    exercises:
+      - type: choice
+        question: {pt: "Tau cryo-EM strains:", en: "Tau cryo-EM strains:"}
+        choices:
+          - {pt: "Cryo-EM revelou dobras tau distintas para AD, PiD, CBD, PSP e CTE — base molecular de fenótipos clínicos", en: "Cryo-EM revealed distinct tau folds for AD, PiD, CBD, PSP and CTE — molecular basis of clinical phenotypes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cryo-EM revelou dobras tau distintas para AD, PiD, CBD, PSP e CTE — base molecular de fenótipos clínicos", en: "Cryo-EM revealed distinct tau folds for AD, PiD, CBD, PSP and CTE — molecular basis of clinical phenotypes"}
+        rationale: {pt: "Quando dobras separam, então diagnóstico molecular nasce.", en: "When folds separate, molecular diagnosis is born."}
+        objectives: [biology.tauopathies]
+        difficulty: 5
+      - type: choice
+        question: {pt: "NDM-1 e mcr-1:", en: "NDM-1 and mcr-1:"}
+        choices:
+          - {pt: "Carbapenemase NDM-1 e mcr-1 colistina dissolvem últimos antibióticos — vigilância OneHealth essencial em era pré-antibiótico", en: "Carbapenemase NDM-1 and mcr-1 colistin dissolve last-line antibiotics — OneHealth surveillance essential in pre-antibiotic era"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Carbapenemase NDM-1 e mcr-1 colistina dissolvem últimos antibióticos — vigilância OneHealth essencial em era pré-antibiótico", en: "Carbapenemase NDM-1 and mcr-1 colistin dissolve last-line antibiotics — OneHealth surveillance essential in pre-antibiotic era"}
+        rationale: {pt: "Quando último recurso falha, então pânico clínico cresce.", en: "When last resort fails, clinical alarm rises."}
+        objectives: [biology.amr_deep]
+        difficulty: 5
+      - type: choice
+        question: {pt: "EDCs e janelas críticas:", en: "EDCs and critical windows:"}
+        choices:
+          - {pt: "BPA, ftalatos, PFAS atuam em janelas in utero e infância com efeitos transgeracionais via epigenética germinal", en: "BPA, phthalates, PFAS act in in-utero and infancy windows with transgenerational effects via germline epigenetics"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "BPA, ftalatos, PFAS atuam em janelas in utero e infância com efeitos transgeracionais via epigenética germinal", en: "BPA, phthalates, PFAS act in in-utero and infancy windows with transgenerational effects via germline epigenetics"}
+        rationale: {pt: "Quando exposição é precoce, então efeito é vitalício.", en: "When exposure is early, effect is lifelong."}
+        objectives: [biology.endocrine_disruptors]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vacinas mucosais COVID:", en: "Mucosal COVID vaccines:"}
+        choices:
+          - {pt: "ChAd-COVID e MVA intranasais induzem IgA local e Trm pulmonares reduzindo carga viral em vias aéreas superiores", en: "Intranasal ChAd-COVID and MVA induce local IgA and pulmonary Trm cutting viral load in upper airways"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "ChAd-COVID e MVA intranasais induzem IgA local e Trm pulmonares reduzindo carga viral em vias aéreas superiores", en: "Intranasal ChAd-COVID and MVA induce local IgA and pulmonary Trm cutting viral load in upper airways"}
+        rationale: {pt: "Quando IgA bloqueia, então transmissão cai.", en: "When IgA blocks, transmission drops."}
+        objectives: [biology.mucosal_vaccines]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Berlin patient e CCR5-Δ32:", en: "Berlin patient and CCR5-Δ32:"}
+        choices:
+          - {pt: "Transplantes de medula com doadores CCR5-Δ32 homozigotos curaram HIV em ~5 pacientes leucêmicos demonstrando feasibility", en: "Bone marrow transplants from CCR5-Δ32 homozygous donors cured HIV in ~5 leukemic patients demonstrating feasibility"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Transplantes de medula com doadores CCR5-Δ32 homozigotos curaram HIV em ~5 pacientes leucêmicos demonstrando feasibility", en: "Bone marrow transplants from CCR5-Δ32 homozygous donors cured HIV in ~5 leukemic patients demonstrating feasibility"}
+        rationale: {pt: "Quando CCR5 falta, então HIV não entra.", en: "When CCR5 is missing, HIV cannot enter."}
+        objectives: [biology.hiv_cure]
+        difficulty: 5
+      - type: choice
+        question: {pt: "HMOs neonatais:", en: "Neonatal HMOs:"}
+        choices:
+          - {pt: "Oligossacarídeos humanos resistem digestão e nutrem Bifidobacterium infantis enriquecendo microbioma neonatal saudável", en: "Human oligosaccharides resist digestion feeding Bifidobacterium infantis enriching healthy neonatal microbiome"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Oligossacarídeos humanos resistem digestão e nutrem Bifidobacterium infantis enriquecendo microbioma neonatal saudável", en: "Human oligosaccharides resist digestion feeding Bifidobacterium infantis enriching healthy neonatal microbiome"}
+        rationale: {pt: "Quando HMOs alimentam, então flora amiga floresce.", en: "When HMOs feed, friendly flora blooms."}
+        objectives: [biology.neonatal_dev]
+        difficulty: 5
+      - type: choice
+        question: {pt: "BMAL1/CLOCK:", en: "BMAL1/CLOCK:"}
+        choices:
+          - {pt: "Heterodímero ativa transcrição de PER/CRY que retroalimenta inibindo BMAL1 — oscilação ~24h em cada célula", en: "Heterodimer activates PER/CRY transcription which feeds back inhibiting BMAL1 — ~24h oscillation in each cell"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Heterodímero ativa transcrição de PER/CRY que retroalimenta inibindo BMAL1 — oscilação ~24h em cada célula", en: "Heterodimer activates PER/CRY transcription which feeds back inhibiting BMAL1 — ~24h oscillation in each cell"}
+        rationale: {pt: "Quando feedback fecha, então relógio bate 24h.", en: "When feedback closes, clock ticks 24h."}
+        objectives: [biology.sleep_circadian]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Hot vs cold tumor:", en: "Hot vs cold tumor:"}
+        choices:
+          - {pt: "Tumor hot (TILs altos, IFN-γ) responde a anti-PD-1; cold (excluído) precisa de combos para virar respondedor", en: "Hot tumor (high TILs, IFN-γ) responds to anti-PD-1; cold (excluded) needs combos to become responder"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tumor hot (TILs altos, IFN-γ) responde a anti-PD-1; cold (excluído) precisa de combos para virar respondedor", en: "Hot tumor (high TILs, IFN-γ) responds to anti-PD-1; cold (excluded) needs combos to become responder"}
+        rationale: {pt: "Quando hot/cold é avaliado, então combo é desenhado.", en: "When hot/cold is gauged, combo is designed."}
+        objectives: [biology.tumor_immune_evasion]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Vagal afferents 80%:", en: "80% vagal afferents:"}
+        choices:
+          - {pt: "80% das fibras vagais são aferentes carregando sinais entéricos ao tronco cerebral via NTS modulando humor e cognição", en: "80% of vagal fibers are afferent carrying enteric signals to brainstem NTS modulating mood and cognition"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "80% das fibras vagais são aferentes carregando sinais entéricos ao tronco cerebral via NTS modulando humor e cognição", en: "80% of vagal fibers are afferent carrying enteric signals to brainstem NTS modulating mood and cognition"}
+        rationale: {pt: "Quando vagal sobe, então cérebro escuta o intestino.", en: "When vagus rises, brain listens to gut."}
+        objectives: [biology.gut_brain_axis]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese geral do nível I:", en: "Level I overall synthesis:"}
+        choices:
+          - {pt: "Biologia translacional integra envelhecimento, microbioma, imunidade, sono e metabolismo em medicina personalizada e prevenção populacional escalável", en: "Translational biology integrates aging, microbiome, immunity, sleep and metabolism into personalized medicine and scalable population prevention"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Biologia translacional integra envelhecimento, microbioma, imunidade, sono e metabolismo em medicina personalizada e prevenção populacional escalável", en: "Translational biology integrates aging, microbiome, immunity, sleep and metabolism into personalized medicine and scalable population prevention"}
+        rationale: {pt: "Quando sistemas convergem, então saúde humana ganha sinergia.", en: "When systems converge, human health gains synergy."}
+        objectives: [biology.cumulative_I]
+        difficulty: 5
+target: 20
