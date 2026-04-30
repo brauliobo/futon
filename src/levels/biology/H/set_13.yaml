@@ -1,0 +1,244 @@
+title:
+  pt: "🦣 De-extinção"
+  en: "🦣 De-extinction"
+level: 'H'
+subject: biology
+objectives: [biology.deextinction]
+difficulty: 5
+authorNotes: "Colossal Biosciences, mamute lanudo, thylacine, dodô — edição genômica em parente vivo + clonagem ou IVF."
+example:
+  pt: "Ex.: genoma antigo → comparar parente vivo → editar diferenças-chave → embrião → indivíduo proxy."
+  en: "Ex.: ancient genome → compare living relative → edit key differences → embryo → proxy individual."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Recuperar genomas extintos", en: "Recovering extinct genomes"}
+    description: {pt: "Como sequenciar e usar DNA antigo.", en: "How to sequence and use ancient DNA."}
+    exercises:
+      - type: choice
+        question: {pt: "DNA antigo (aDNA):", en: "Ancient DNA (aDNA):"}
+        choices:
+          - {pt: "Fragmentos curtos (~50 pb) com damage característico (C→T) sobrevivem em ossos e dentes preservados ao frio", en: "Short fragments (~50 bp) with characteristic damage (C→T) survive in cold-preserved bones and teeth"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fragmentos curtos (~50 pb) com damage característico (C→T) sobrevivem em ossos e dentes preservados ao frio", en: "Short fragments (~50 bp) with characteristic damage (C→T) survive in cold-preserved bones and teeth"}
+        rationale: {pt: "Quando aDNA é recuperado, então genomas extintos são reconstruídos.", en: "When aDNA is recovered, extinct genomes are reconstructed."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genoma do mamute lanudo:", en: "Woolly mammoth genome:"}
+        choices:
+          - {pt: "Sequenciamento de ~30 espécimes pleistocênicos revelou ~1.4M diferenças do elefante asiático parente próximo", en: "Sequencing of ~30 Pleistocene specimens revealed ~1.4M differences from close relative Asian elephant"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sequenciamento de ~30 espécimes pleistocênicos revelou ~1.4M diferenças do elefante asiático parente próximo", en: "Sequencing of ~30 Pleistocene specimens revealed ~1.4M differences from close relative Asian elephant"}
+        rationale: {pt: "Quando genoma é lido, então alvos de edição emergem.", en: "When genome is read, editing targets emerge."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Edição em iPSC de elefante:", en: "Editing in elephant iPSC:"}
+        choices:
+          - {pt: "Colossal gerou iPSC de elefante asiático em 2024 abrindo edição de centenas de genes em paralelo", en: "Colossal generated Asian elephant iPSC in 2024 opening parallel editing of hundreds of genes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Colossal gerou iPSC de elefante asiático em 2024 abrindo edição de centenas de genes em paralelo", en: "Colossal generated Asian elephant iPSC in 2024 opening parallel editing of hundreds of genes"}
+        rationale: {pt: "Quando iPSC existe, então edição em massa é possível.", en: "When iPSC exists, multiplex editing becomes possible."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Genes-alvo do mamute:", en: "Mammoth target genes:"}
+        choices:
+          - {pt: "Editar TRPV3 (frio), MC1R (pelo), HBB (hemoglobina) e KRT genes recriaria fenótipo Ártico em ~70 alterações", en: "Editing TRPV3 (cold), MC1R (hair), HBB (hemoglobin) and KRT genes would recreate Arctic phenotype in ~70 changes"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Editar TRPV3 (frio), MC1R (pelo), HBB (hemoglobina) e KRT genes recriaria fenótipo Ártico em ~70 alterações", en: "Editing TRPV3 (cold), MC1R (hair), HBB (hemoglobin) and KRT genes would recreate Arctic phenotype in ~70 changes"}
+        rationale: {pt: "Quando alvos são poucos, então proxy fica viável tecnicamente.", en: "When targets are few, proxy becomes technically feasible."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "SCNT (clonagem):", en: "SCNT (cloning):"}
+        choices:
+          - {pt: "Transferência de núcleo somático para oócito enucleado é via para gerar indivíduo a partir de célula editada", en: "Somatic cell nuclear transfer to enucleated oocyte is path to generate individual from edited cell"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Transferência de núcleo somático para oócito enucleado é via para gerar indivíduo a partir de célula editada", en: "Somatic cell nuclear transfer to enucleated oocyte is path to generate individual from edited cell"}
+        rationale: {pt: "Quando SCNT funciona, então DNA editado vira embrião.", en: "When SCNT works, edited DNA becomes embryo."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Útero substituto:", en: "Surrogate womb:"}
+        choices:
+          - {pt: "Elefante asiático carrega gestação de mamute proxy de 22 meses — útero artificial é alternativa pesquisada", en: "Asian elephant carries 22-month proxy mammoth pregnancy — artificial womb is researched alternative"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Elefante asiático carrega gestação de mamute proxy de 22 meses — útero artificial é alternativa pesquisada", en: "Asian elephant carries 22-month proxy mammoth pregnancy — artificial womb is researched alternative"}
+        rationale: {pt: "Quando útero é raro, então alternativas técnicas urgem.", en: "When womb is rare, technical alternatives become urgent."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Thylacine (lobo-da-tasmânia):", en: "Thylacine (Tasmanian wolf):"}
+        choices:
+          - {pt: "Genoma reconstruído de espécimes em álcool e edição em iPSC do dunnart parente são abordagem do projeto Colossal", en: "Genome reconstructed from alcohol-preserved specimens and editing in dunnart-relative iPSC is Colossal approach"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Genoma reconstruído de espécimes em álcool e edição em iPSC do dunnart parente são abordagem do projeto Colossal", en: "Genome reconstructed from alcohol-preserved specimens and editing in dunnart-relative iPSC is Colossal approach"}
+        rationale: {pt: "Quando marsupial é alvo, então plataforma de iPSC é nova.", en: "When marsupial is target, iPSC platform is new."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Dodô:", en: "Dodo:"}
+        choices:
+          - {pt: "Engenharia em primordial germ cells (PGCs) de pombo Nicobar — parente próximo — vincula edição a aves", en: "Engineering in primordial germ cells (PGCs) of close relative Nicobar pigeon links editing to birds"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Engenharia em primordial germ cells (PGCs) de pombo Nicobar — parente próximo — vincula edição a aves", en: "Engineering in primordial germ cells (PGCs) of close relative Nicobar pigeon links editing to birds"}
+        rationale: {pt: "Quando aves entram, então PGCs substituem iPSC mamífero.", en: "When birds enter, PGCs replace mammalian iPSC."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bottleneck genético inicial:", en: "Initial genetic bottleneck:"}
+        choices:
+          - {pt: "Pequeno número de fundadores ressuscitados gera baixa diversidade exigindo edição diversa em paralelo", en: "Small founder number from resurrection yields low diversity requiring parallel diverse editing"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Pequeno número de fundadores ressuscitados gera baixa diversidade exigindo edição diversa em paralelo", en: "Small founder number from resurrection yields low diversity requiring parallel diverse editing"}
+        rationale: {pt: "Quando bottleneck é severo, então conservação genética entra em jogo.", en: "When bottleneck is severe, genetic conservation matters."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Microbioma e cultura:", en: "Microbiome and culture:"}
+        choices:
+          - {pt: "Animal proxy precisa de microbiota intestinal e aprendizado social — extintos perdem ecologia comportamental", en: "Proxy animal needs gut microbiota and social learning — extinct species lose behavioral ecology"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Animal proxy precisa de microbiota intestinal e aprendizado social — extintos perdem ecologia comportamental", en: "Proxy animal needs gut microbiota and social learning — extinct species lose behavioral ecology"}
+        rationale: {pt: "Quando contexto biológico falta, então cópia é incompleta.", en: "When biological context is missing, copy stays incomplete."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Ecologia e ética", en: "Ecology and ethics"}
+    description: {pt: "Reintrodução, ressurreição e debate.", en: "Reintroduction, resurrection and debate."}
+    exercises:
+      - type: choice
+        question: {pt: "Pleistocene Park:", en: "Pleistocene Park:"}
+        choices:
+          - {pt: "Reserva siberiana testa hipótese de que pastores grandes restauram estepe, retêm carbono e estabilizam permafrost", en: "Siberian reserve tests hypothesis that large grazers restore steppe, retain carbon and stabilize permafrost"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Reserva siberiana testa hipótese de que pastores grandes restauram estepe, retêm carbono e estabilizam permafrost", en: "Siberian reserve tests hypothesis that large grazers restore steppe, retain carbon and stabilize permafrost"}
+        rationale: {pt: "Quando função ecológica retorna, então clima é ferramenta também.", en: "When ecological function returns, climate is a tool too."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Functional rewilding:", en: "Functional rewilding:"}
+        choices:
+          - {pt: "Reintroduzir proxy ecologicamente similar (mamute-elefante peludo) cumpre nicho mesmo sem fidelidade genética", en: "Introducing ecologically similar proxy (woolly elephant) fills niche without strict genetic fidelity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Reintroduzir proxy ecologicamente similar (mamute-elefante peludo) cumpre nicho mesmo sem fidelidade genética", en: "Introducing ecologically similar proxy (woolly elephant) fills niche without strict genetic fidelity"}
+        rationale: {pt: "Quando função volta, então ressurreição literal é dispensável.", en: "When function returns, literal resurrection is unnecessary."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Lazarus rana australis:", en: "Lazarus rana australis:"}
+        choices:
+          - {pt: "Embriões de Rheobatrachus (gastric brooding frog) recriados com SCNT em 2013 viveram ~poucos dias antes de morrerem", en: "Rheobatrachus (gastric-brooding frog) embryos recreated by SCNT in 2013 lived only days before dying"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Embriões de Rheobatrachus (gastric brooding frog) recriados com SCNT em 2013 viveram ~poucos dias antes de morrerem", en: "Rheobatrachus (gastric-brooding frog) embryos recreated by SCNT in 2013 lived only days before dying"}
+        rationale: {pt: "Quando piloto falha, então técnica precisa amadurecer.", en: "When pilot fails, technique must mature."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pyrenean ibex (bucardo):", en: "Pyrenean ibex (bucardo):"}
+        choices:
+          - {pt: "Primeira espécie ressuscitada com SCNT em 2003 — clone viveu 7 minutos por defeito pulmonar congênito", en: "First species resurrected via SCNT in 2003 — clone lived 7 minutes due to congenital lung defect"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Primeira espécie ressuscitada com SCNT em 2003 — clone viveu 7 minutos por defeito pulmonar congênito", en: "First species resurrected via SCNT in 2003 — clone lived 7 minutes due to congenital lung defect"}
+        rationale: {pt: "Quando primeiro caso ocorre, então prova-de-conceito é dolorosa.", en: "When first case occurs, proof of concept is painful."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biobanking criopreservado:", en: "Cryopreserved biobanking:"}
+        choices:
+          - {pt: "Frozen Zoo do San Diego mantém células de centenas de espécies ameaçadas para edição genética futura", en: "San Diego's Frozen Zoo maintains cells of hundreds of endangered species for future genetic editing"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Frozen Zoo do San Diego mantém células de centenas de espécies ameaçadas para edição genética futura", en: "San Diego's Frozen Zoo maintains cells of hundreds of endangered species for future genetic editing"}
+        rationale: {pt: "Quando células são preservadas, então conservação ganha tempo.", en: "When cells are preserved, conservation gains time."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Black-footed ferret (Elizabeth Ann):", en: "Black-footed ferret (Elizabeth Ann):"}
+        choices:
+          - {pt: "Clone gerado de tecido congelado em 1988 em 2020 ampliou diversidade genética da espécie quase extinta", en: "Clone generated from 1988 frozen tissue in 2020 expanded genetic diversity of near-extinct species"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Clone gerado de tecido congelado em 1988 em 2020 ampliou diversidade genética da espécie quase extinta", en: "Clone generated from 1988 frozen tissue in 2020 expanded genetic diversity of near-extinct species"}
+        rationale: {pt: "Quando crio salva, então recuperação tem alelos ausentes.", en: "When cryo saves, recovery gets missing alleles."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Bem-estar animal:", en: "Animal welfare:"}
+        choices:
+          - {pt: "Embriões malformados, mães substitutas estressadas e proxies em cativeiro levantam objeções éticas centrais", en: "Malformed embryos, stressed surrogate mothers and captive proxies raise core ethical objections"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Embriões malformados, mães substitutas estressadas e proxies em cativeiro levantam objeções éticas centrais", en: "Malformed embryos, stressed surrogate mothers and captive proxies raise core ethical objections"}
+        rationale: {pt: "Quando bem-estar pesa, então experimentos precisam de salvaguardas.", en: "When welfare weighs, experiments need safeguards."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Custo de oportunidade:", en: "Opportunity cost:"}
+        choices:
+          - {pt: "Recursos para de-extinction concorrem com proteção de habitats e espécies vivas — debate de prioridade conservacionista", en: "De-extinction resources compete with habitat protection and living species — conservation priority debate"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Recursos para de-extinction concorrem com proteção de habitats e espécies vivas — debate de prioridade conservacionista", en: "De-extinction resources compete with habitat protection and living species — conservation priority debate"}
+        rationale: {pt: "Quando recursos são finitos, então alocação importa.", en: "When resources are finite, allocation matters."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Moral hazard:", en: "Moral hazard:"}
+        choices:
+          - {pt: "Promessa de ressurreição pode reduzir cuidado com extinção em curso — argumento de complacência ambiental", en: "Resurrection promise may reduce care for ongoing extinction — environmental complacency argument"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Promessa de ressurreição pode reduzir cuidado com extinção em curso — argumento de complacência ambiental", en: "Resurrection promise may reduce care for ongoing extinction — environmental complacency argument"}
+        rationale: {pt: "Quando expectativa engana, então conservação enfraquece politicamente.", en: "When expectation misleads, conservation weakens politically."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese da de-extinção:", en: "De-extinction synthesis:"}
+        choices:
+          - {pt: "Edição massiva + clonagem podem reconstruir proxies funcionais — sucesso depende de ecologia, ética e conservação clássica", en: "Massive editing + cloning may rebuild functional proxies — success depends on ecology, ethics and classical conservation"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Edição massiva + clonagem podem reconstruir proxies funcionais — sucesso depende de ecologia, ética e conservação clássica", en: "Massive editing + cloning may rebuild functional proxies — success depends on ecology, ethics and classical conservation"}
+        rationale: {pt: "Quando ferramenta amadurece, então uso prudente define impacto.", en: "When tool matures, prudent use defines impact."}
+        objectives: [biology.deextinction]
+        difficulty: 5
+target: 20

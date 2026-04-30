@@ -1,0 +1,244 @@
+title:
+  pt: "🧠 Interfaces cérebro-computador"
+  en: "🧠 Brain-computer interfaces"
+level: 'H'
+subject: biology
+objectives: [biology.bci]
+difficulty: 5
+authorNotes: "Neuralink, Utah arrays, Stentrode, decoders, ECoG, BCI motor e fala — neurociência aplicada a próteses."
+example:
+  pt: "Ex.: eletrodos corticais → spike sorting → decodificador → cursor/voz → feedback ao paciente."
+  en: "Ex.: cortical electrodes → spike sorting → decoder → cursor/voice → feedback to patient."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Hardware e biologia neural", en: "Hardware and neural biology"}
+    description: {pt: "Como gravar e estimular neurônios.", en: "How to record and stimulate neurons."}
+    exercises:
+      - type: choice
+        question: {pt: "Utah array:", en: "Utah array:"}
+        choices:
+          - {pt: "100 microeletrodos de silício penetram córtex motor gravando spikes individuais por ~anos antes de gliose limitar", en: "100 silicon microelectrodes penetrate motor cortex recording individual spikes for ~years before gliosis limits"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "100 microeletrodos de silício penetram córtex motor gravando spikes individuais por ~anos antes de gliose limitar", en: "100 silicon microelectrodes penetrate motor cortex recording individual spikes for ~years before gliosis limits"}
+        rationale: {pt: "Quando spikes são gravados, então intenção motora pode ser decodificada.", en: "When spikes are recorded, motor intent becomes decodable."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Neuralink N1 thread:", en: "Neuralink N1 thread:"}
+        choices:
+          - {pt: "Fios flexíveis com >1000 eletrodos colocados por robô minimizam dano agudo aumentando densidade de gravação", en: "Flexible threads with >1000 electrodes placed by robot minimize acute damage raising recording density"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Fios flexíveis com >1000 eletrodos colocados por robô minimizam dano agudo aumentando densidade de gravação", en: "Flexible threads with >1000 electrodes placed by robot minimize acute damage raising recording density"}
+        rationale: {pt: "Quando flexibilidade aumenta, então biocompatibilidade melhora.", en: "When flexibility rises, biocompatibility improves."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ECoG:", en: "ECoG:"}
+        choices:
+          - {pt: "Grade subdural sobre córtex captura LFP de campos sem penetrar oferecendo estabilidade longitudinal melhor", en: "Subdural grid on cortex captures field LFP without penetration offering better longitudinal stability"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Grade subdural sobre córtex captura LFP de campos sem penetrar oferecendo estabilidade longitudinal melhor", en: "Subdural grid on cortex captures field LFP without penetration offering better longitudinal stability"}
+        rationale: {pt: "Quando ECoG dura, então uso clínico é viável.", en: "When ECoG lasts, clinical use is feasible."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Stentrode:", en: "Stentrode:"}
+        choices:
+          - {pt: "Eletrodo dentro de stent endovascular acessa córtex via veia evitando craniotomia em ALS e tetraplegia", en: "Electrode inside endovascular stent accesses cortex via vein bypassing craniotomy in ALS and tetraplegia"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Eletrodo dentro de stent endovascular acessa córtex via veia evitando craniotomia em ALS e tetraplegia", en: "Electrode inside endovascular stent accesses cortex via vein bypassing craniotomy in ALS and tetraplegia"}
+        rationale: {pt: "Quando vaso entrega, então cirurgia aberta é evitada.", en: "When vessel delivers, open surgery is avoided."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "fNIRS e EEG:", en: "fNIRS and EEG:"}
+        choices:
+          - {pt: "Métodos não-invasivos têm SNR baixo e bandwidth limitado servindo para BCI de comando simples", en: "Non-invasive methods have low SNR and limited bandwidth serving simple-command BCI"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Métodos não-invasivos têm SNR baixo e bandwidth limitado servindo para BCI de comando simples", en: "Non-invasive methods have low SNR and limited bandwidth serving simple-command BCI"}
+        rationale: {pt: "Quando não-invasivo, então capacidades são limitadas mas seguras.", en: "When non-invasive, capabilities are limited but safe."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Spike sorting:", en: "Spike sorting:"}
+        choices:
+          - {pt: "Forma de onda agrupa unidades neurais individuais por PCA + clustering essencial para decoders motores", en: "Waveform grouping clusters individual neural units via PCA + clustering essential for motor decoders"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Forma de onda agrupa unidades neurais individuais por PCA + clustering essencial para decoders motores", en: "Waveform grouping clusters individual neural units via PCA + clustering essential for motor decoders"}
+        rationale: {pt: "Quando spikes separam, então cada neurônio fala distintamente.", en: "When spikes separate, each neuron speaks distinctly."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Resposta gliótica:", en: "Glial response:"}
+        choices:
+          - {pt: "Astrocitose e microgliose ao redor do eletrodo formam encapsulamento isolando spikes — limite biológico chave", en: "Astrocyte and microglial encapsulation around electrode insulates spikes — key biological limit"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Astrocitose e microgliose ao redor do eletrodo formam encapsulamento isolando spikes — limite biológico chave", en: "Astrocyte and microglial encapsulation around electrode insulates spikes — key biological limit"}
+        rationale: {pt: "Quando glia encapsula, então sinal cai com tempo.", en: "When glia encapsulates, signal degrades over time."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Decoder Kalman:", en: "Kalman decoder:"}
+        choices:
+          - {pt: "Modelo linear estima velocidade da intenção a partir de taxa de disparo neural — primeiro decoder eficaz para cursor", en: "Linear model estimates intent velocity from neural firing rate — first effective cursor decoder"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Modelo linear estima velocidade da intenção a partir de taxa de disparo neural — primeiro decoder eficaz para cursor", en: "Linear model estimates intent velocity from neural firing rate — first effective cursor decoder"}
+        rationale: {pt: "Quando Kalman age, então cursor obedece intenção.", en: "When Kalman acts, cursor follows intent."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Estimulação para feedback tátil:", en: "Stimulation for tactile feedback:"}
+        choices:
+          - {pt: "Microestimulação no córtex somatossensorial gera sensação tátil dirigida em prótese fechando loop sensoriomotor", en: "Somatosensory cortex microstimulation produces directed tactile sensation in prosthesis closing sensorimotor loop"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Microestimulação no córtex somatossensorial gera sensação tátil dirigida em prótese fechando loop sensoriomotor", en: "Somatosensory cortex microstimulation produces directed tactile sensation in prosthesis closing sensorimotor loop"}
+        rationale: {pt: "Quando feedback existe, então prótese vira parte do corpo.", en: "When feedback exists, prosthesis becomes part of body."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Plasticidade cortical:", en: "Cortical plasticity:"}
+        choices:
+          - {pt: "Treino com BCI reorganiza M1 e córtex pré-motor — usuários aprendem padrões neurais novos com prática", en: "BCI training reorganizes M1 and premotor cortex — users learn novel neural patterns with practice"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Treino com BCI reorganiza M1 e córtex pré-motor — usuários aprendem padrões neurais novos com prática", en: "BCI training reorganizes M1 and premotor cortex — users learn novel neural patterns with practice"}
+        rationale: {pt: "Quando plasticidade ajuda, então BCI amadurece com uso.", en: "When plasticity helps, BCI matures with use."}
+        objectives: [biology.bci]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações clínicas e éticas", en: "Clinical and ethical applications"}
+    description: {pt: "Restaurar função humana.", en: "Restoring human function."}
+    exercises:
+      - type: choice
+        question: {pt: "BrainGate:", en: "BrainGate:"}
+        choices:
+          - {pt: "Tetraplégicos digitam, controlam braços robóticos e cursor com Utah array em M1 desde 2006", en: "Tetraplegics type, control robotic arms and cursor with M1 Utah array since 2006"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tetraplégicos digitam, controlam braços robóticos e cursor com Utah array em M1 desde 2006", en: "Tetraplegics type, control robotic arms and cursor with M1 Utah array since 2006"}
+        rationale: {pt: "Quando BrainGate funciona, então autonomia volta a paralisados.", en: "When BrainGate works, autonomy returns to paralyzed."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Neuralink Noland (2024):", en: "Neuralink Noland (2024):"}
+        choices:
+          - {pt: "Primeiro paciente humano da Neuralink controla cursor com seus pensamentos jogando xadrez online após implante", en: "First Neuralink human patient controls cursor with thoughts playing online chess after implant"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Primeiro paciente humano da Neuralink controla cursor com seus pensamentos jogando xadrez online após implante", en: "First Neuralink human patient controls cursor with thoughts playing online chess after implant"}
+        rationale: {pt: "Quando primeiro caso opera, então clínica acelera.", en: "When first case operates, clinic accelerates."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Speech BCI (UCSF 2023):", en: "Speech BCI (UCSF 2023):"}
+        choices:
+          - {pt: "Mulher com tronco cerebral lesionado fala via decoder ECoG + avatar gerando 78 palavras/min", en: "Woman with brainstem injury speaks via ECoG decoder + avatar generating 78 words/min"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Mulher com tronco cerebral lesionado fala via decoder ECoG + avatar gerando 78 palavras/min", en: "Woman with brainstem injury speaks via ECoG decoder + avatar generating 78 words/min"}
+        rationale: {pt: "Quando fala retorna, então comunicação volta a quem perdeu.", en: "When speech returns, communication returns to those who lost it."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cochlear implant:", en: "Cochlear implant:"}
+        choices:
+          - {pt: "Estimula nervo auditivo bypassando células ciliadas defeituosas — primeiro BCI clinicamente massivo com 1M+ usuários", en: "Stimulates auditory nerve bypassing damaged hair cells — first clinically massive BCI with 1M+ users"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Estimula nervo auditivo bypassando células ciliadas defeituosas — primeiro BCI clinicamente massivo com 1M+ usuários", en: "Stimulates auditory nerve bypassing damaged hair cells — first clinically massive BCI with 1M+ users"}
+        rationale: {pt: "Quando neurônios são estimulados, então surdez profunda fica tratável.", en: "When neurons are stimulated, profound deafness becomes treatable."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Visual prosthesis:", en: "Visual prosthesis:"}
+        choices:
+          - {pt: "Implantes retinais (Argus II) e corticais geram fosfenos artificiais devolvendo percepção luz/movimento", en: "Retinal (Argus II) and cortical implants produce artificial phosphenes giving back light/motion perception"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Implantes retinais (Argus II) e corticais geram fosfenos artificiais devolvendo percepção luz/movimento", en: "Retinal (Argus II) and cortical implants produce artificial phosphenes giving back light/motion perception"}
+        rationale: {pt: "Quando luz volta, então cegueira muda definição funcional.", en: "When light returns, blindness changes functional meaning."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Deep brain stimulation (DBS):", en: "Deep brain stimulation (DBS):"}
+        choices:
+          - {pt: "Eletrodo no STN trata Parkinson; alvos em VC/VS para OCD e em SCG para depressão refratária", en: "STN electrode treats Parkinson; VC/VS targets for OCD and SCG for refractory depression"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Eletrodo no STN trata Parkinson; alvos em VC/VS para OCD e em SCG para depressão refratária", en: "STN electrode treats Parkinson; VC/VS targets for OCD and SCG for refractory depression"}
+        rationale: {pt: "Quando DBS ajusta circuitos, então sintomas refratários cedem.", en: "When DBS tunes circuits, refractory symptoms ease."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Closed-loop neural recording:", en: "Closed-loop neural recording:"}
+        choices:
+          - {pt: "Sistemas como NeuroPace detectam padrão ictal e estimulam abortivamente reduzindo crises em epilepsia focal refratária", en: "Systems like NeuroPace detect ictal pattern and abortively stimulate cutting seizures in refractory focal epilepsy"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sistemas como NeuroPace detectam padrão ictal e estimulam abortivamente reduzindo crises em epilepsia focal refratária", en: "Systems like NeuroPace detect ictal pattern and abortively stimulate cutting seizures in refractory focal epilepsy"}
+        rationale: {pt: "Quando loop fecha, então tratamento age só quando precisa.", en: "When loop closes, treatment fires only when needed."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Memória e CA1 prosthesis:", en: "Memory and CA1 prosthesis:"}
+        choices:
+          - {pt: "Estímulo padronizado em CA1 hipocampal melhorou memória de codificação em pacientes com epilepsia", en: "Patterned CA1 hippocampal stimulation improved encoding memory in epilepsy patients"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Estímulo padronizado em CA1 hipocampal melhorou memória de codificação em pacientes com epilepsia", en: "Patterned CA1 hippocampal stimulation improved encoding memory in epilepsy patients"}
+        rationale: {pt: "Quando CA1 é estimulado, então memória recebe boost específico.", en: "When CA1 is stimulated, memory gets specific boost."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Privacidade e neurodireitos:", en: "Privacy and neurorights:"}
+        choices:
+          - {pt: "Chile e UNESCO debatem direitos sobre dados neurais — privacidade mental, identidade e equidade no acesso", en: "Chile and UNESCO debate neural-data rights — mental privacy, identity and access equity"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Chile e UNESCO debatem direitos sobre dados neurais — privacidade mental, identidade e equidade no acesso", en: "Chile and UNESCO debate neural-data rights — mental privacy, identity and access equity"}
+        rationale: {pt: "Quando neurodireitos amadurecem, então tecnologia ganha guardrails.", en: "When neurorights mature, technology gains guardrails."}
+        objectives: [biology.bci]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese de BCI:", en: "BCI synthesis:"}
+        choices:
+          - {pt: "BCI traduz neurônios em ações restaurando movimento, fala, audição e visão — fronteira clínica e ética simultâneas", en: "BCI translates neurons into actions restoring movement, speech, hearing and vision — simultaneous clinical and ethical frontier"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "BCI traduz neurônios em ações restaurando movimento, fala, audição e visão — fronteira clínica e ética simultâneas", en: "BCI translates neurons into actions restoring movement, speech, hearing and vision — simultaneous clinical and ethical frontier"}
+        rationale: {pt: "Quando BCI amadurece, então neurociência vira tecnologia humana.", en: "When BCI matures, neuroscience becomes human technology."}
+        objectives: [biology.bci]
+        difficulty: 5
+target: 20
