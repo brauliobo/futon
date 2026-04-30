@@ -1,0 +1,244 @@
+title:
+  pt: "💉 mRNA terapêutico"
+  en: "💉 Therapeutic mRNA"
+level: 'H'
+subject: biology
+objectives: [biology.mrna_therapeutics]
+difficulty: 5
+authorNotes: "mRNA além de vacinas: cancer neoantigen vaccines, replacement therapy, terapia tolerogênica, self-amplifying RNA."
+example:
+  pt: "Ex.: tumor → neoantígeno predito → mRNA personalizado em LNP → resposta T → mais protetora com checkpoint."
+  en: "Ex.: tumor → predicted neoantigen → personalized mRNA in LNP → T-cell response → more protective with checkpoint."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Plataforma e mecanismos", en: "Platform and mechanisms"}
+    description: {pt: "Como o mRNA virou medicamento.", en: "How mRNA became medicine."}
+    exercises:
+      - type: choice
+        question: {pt: "Pseudouridina (ψ):", en: "Pseudouridine (ψ):"}
+        choices:
+          - {pt: "Substituir uridina por N1-metilpseudouridina reduz ativação TLR7/8 mantendo tradução eficiente — chave da Karikó/Weissman", en: "Replacing uridine with N1-methylpseudouridine cuts TLR7/8 activation keeping efficient translation — Karikó/Weissman key"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Substituir uridina por N1-metilpseudouridina reduz ativação TLR7/8 mantendo tradução eficiente — chave da Karikó/Weissman", en: "Replacing uridine with N1-methylpseudouridine cuts TLR7/8 activation keeping efficient translation — Karikó/Weissman key"}
+        rationale: {pt: "Quando ψ é incorporada, então mRNA passa despercebido como exógeno.", en: "When ψ is incorporated, mRNA goes unnoticed as exogenous."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cap analógico:", en: "Cap analog:"}
+        choices:
+          - {pt: "Cap1 com m7G + 2′-O-metil mimetiza mRNA endógeno escapando RIG-I e elevando tradução em células", en: "Cap1 with m7G + 2′-O-methyl mimics endogenous mRNA escaping RIG-I and boosting translation in cells"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Cap1 com m7G + 2′-O-metil mimetiza mRNA endógeno escapando RIG-I e elevando tradução em células", en: "Cap1 with m7G + 2′-O-methyl mimics endogenous mRNA escaping RIG-I and boosting translation in cells"}
+        rationale: {pt: "Quando cap engana, então mRNA é traduzido em vez de detectado.", en: "When cap deceives, mRNA is translated rather than detected."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "LNP composição:", en: "LNP composition:"}
+        choices:
+          - {pt: "Lipídio ionizável + PEG-lipid + colesterol + helper formam nanopartícula que entrega mRNA via endossomo", en: "Ionizable lipid + PEG-lipid + cholesterol + helper form nanoparticle delivering mRNA via endosome"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Lipídio ionizável + PEG-lipid + colesterol + helper formam nanopartícula que entrega mRNA via endossomo", en: "Ionizable lipid + PEG-lipid + cholesterol + helper form nanoparticle delivering mRNA via endosome"}
+        rationale: {pt: "Quando LNP funde, então mRNA escapa para citosol.", en: "When LNP fuses, mRNA escapes to cytosol."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Self-amplifying RNA (saRNA):", en: "Self-amplifying RNA (saRNA):"}
+        choices:
+          - {pt: "Replicon de alphavirus copia o mRNA antigênico em células permitindo doses até 100x menores", en: "Alphavirus replicon copies antigenic mRNA inside cells allowing up to 100x lower doses"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Replicon de alphavirus copia o mRNA antigênico em células permitindo doses até 100x menores", en: "Alphavirus replicon copies antigenic mRNA inside cells allowing up to 100x lower doses"}
+        rationale: {pt: "Quando saRNA replica, então plataforma escala melhor.", en: "When saRNA replicates, platform scales better."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tropismo via lipídio:", en: "Lipid tropism:"}
+        choices:
+          - {pt: "Composição da LNP (SORT lipid) direciona entrega para fígado, baço ou pulmão sem ligante específico", en: "LNP composition (SORT lipid) targets delivery to liver, spleen or lung without specific ligand"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Composição da LNP (SORT lipid) direciona entrega para fígado, baço ou pulmão sem ligante específico", en: "LNP composition (SORT lipid) targets delivery to liver, spleen or lung without specific ligand"}
+        rationale: {pt: "Quando lipídio direciona, então tecido é escolhido pela formulação.", en: "When lipid directs, tissue is chosen by formulation."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tradução transitória:", en: "Transient translation:"}
+        choices:
+          - {pt: "mRNA produz proteína por horas a dias antes de ser degradado — segurança e dosagem flexíveis", en: "mRNA produces protein for hours to days before being degraded — flexible safety and dosing"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "mRNA produz proteína por horas a dias antes de ser degradado — segurança e dosagem flexíveis", en: "mRNA produces protein for hours to days before being degraded — flexible safety and dosing"}
+        rationale: {pt: "Quando expressão é transitória, então integração genômica é evitada.", en: "When expression is transient, genomic integration is avoided."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Cold-chain limitação:", en: "Cold chain limitation:"}
+        choices:
+          - {pt: "LNPs típicas exigem -70°C a -20°C reduzindo distribuição global — formulações termoestáveis em desenvolvimento", en: "Typical LNPs need -70°C to -20°C limiting global distribution — thermostable formulations in development"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "LNPs típicas exigem -70°C a -20°C reduzindo distribuição global — formulações termoestáveis em desenvolvimento", en: "Typical LNPs need -70°C to -20°C limiting global distribution — thermostable formulations in development"}
+        rationale: {pt: "Quando termoestável amadurece, então acesso global cresce.", en: "When thermostable matures, global access grows."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Biomanufatura cell-free:", en: "Cell-free biomanufacturing:"}
+        choices:
+          - {pt: "T7 RNA polimerase + DNA template em reator produz gramas de mRNA em horas com purificação por capture cromatográfica", en: "T7 RNA polymerase + DNA template in reactor yields grams of mRNA in hours with chromatographic capture purification"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "T7 RNA polimerase + DNA template em reator produz gramas de mRNA em horas com purificação por capture cromatográfica", en: "T7 RNA polymerase + DNA template in reactor yields grams of mRNA in hours with chromatographic capture purification"}
+        rationale: {pt: "Quando produção é rápida, então personalização vira viável.", en: "When production is fast, personalization becomes feasible."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Codon optimization:", en: "Codon optimization:"}
+        choices:
+          - {pt: "Reescrever sequência usando codons humanos frequentes aumenta tradução sem alterar proteína final", en: "Rewriting sequence with frequent human codons boosts translation without altering final protein"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Reescrever sequência usando codons humanos frequentes aumenta tradução sem alterar proteína final", en: "Rewriting sequence with frequent human codons boosts translation without altering final protein"}
+        rationale: {pt: "Quando codons casam, então rendimento sobe.", en: "When codons match, yield rises."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "5'/3' UTR design:", en: "5'/3' UTR design:"}
+        choices:
+          - {pt: "Sequências como β-globina e αHBA prolongam meia-vida e tradução — UTRs sintéticas otimizadas por ML emergem", en: "Sequences like β-globin and αHBA extend half-life and translation — ML-designed synthetic UTRs emerge"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sequências como β-globina e αHBA prolongam meia-vida e tradução — UTRs sintéticas otimizadas por ML emergem", en: "Sequences like β-globin and αHBA extend half-life and translation — ML-designed synthetic UTRs emerge"}
+        rationale: {pt: "Quando UTR é desenhada, então duração e potência crescem.", en: "When UTR is designed, duration and potency grow."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações além da pandemia", en: "Beyond pandemic applications"}
+    description: {pt: "mRNA em câncer, doenças raras e auto-imunidade.", en: "mRNA in cancer, rare disease and autoimmunity."}
+    exercises:
+      - type: choice
+        question: {pt: "Cancer neoantigen vaccine:", en: "Cancer neoantigen vaccine:"}
+        choices:
+          - {pt: "WGS + HLA prediz neoantígenos pessoais — mRNA personalizado + checkpoint melhora sobrevida em melanoma e PDAC", en: "WGS + HLA predicts personal neoantigens — personalized mRNA + checkpoint improves survival in melanoma and PDAC"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "WGS + HLA prediz neoantígenos pessoais — mRNA personalizado + checkpoint melhora sobrevida em melanoma e PDAC", en: "WGS + HLA predicts personal neoantigens — personalized mRNA + checkpoint improves survival in melanoma and PDAC"}
+        rationale: {pt: "Quando vacina é pessoal, então T cells veem mutações específicas.", en: "When vaccine is personal, T cells see specific mutations."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "PCV em melanoma (KEYNOTE-942):", en: "PCV in melanoma (KEYNOTE-942):"}
+        choices:
+          - {pt: "Moderna mRNA-4157 + pembrolizumab reduziu recorrência em melanoma ressecado em ensaio Fase 2 randomizado", en: "Moderna mRNA-4157 + pembrolizumab reduced recurrence in resected melanoma in randomized Phase 2 trial"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Moderna mRNA-4157 + pembrolizumab reduziu recorrência em melanoma ressecado em ensaio Fase 2 randomizado", en: "Moderna mRNA-4157 + pembrolizumab reduced recurrence in resected melanoma in randomized Phase 2 trial"}
+        rationale: {pt: "Quando ensaio mostra benefício, então mRNA em câncer ganha tração.", en: "When trial shows benefit, mRNA in cancer gains traction."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Replacement therapy:", en: "Replacement therapy:"}
+        choices:
+          - {pt: "mRNA de OTC ou MUT em LNP entrega enzima ausente em fígado em erros inatos do metabolismo", en: "OTC or MUT mRNA in LNP supplies missing enzyme in liver in inborn errors of metabolism"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "mRNA de OTC ou MUT em LNP entrega enzima ausente em fígado em erros inatos do metabolismo", en: "OTC or MUT mRNA in LNP supplies missing enzyme in liver in inborn errors of metabolism"}
+        rationale: {pt: "Quando enzima volta, então metabolismo se equilibra de novo.", en: "When enzyme returns, metabolism rebalances."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CFTR mRNA inhalatório:", en: "Inhaled CFTR mRNA:"}
+        choices:
+          - {pt: "Aerossol entrega CFTR mRNA em epitélio brônquico em CF complementando moduladores em populações sem alvo", en: "Aerosol delivers CFTR mRNA to bronchial epithelium in CF complementing modulators in populations without target"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Aerossol entrega CFTR mRNA em epitélio brônquico em CF complementando moduladores em populações sem alvo", en: "Aerosol delivers CFTR mRNA to bronchial epithelium in CF complementing modulators in populations without target"}
+        rationale: {pt: "Quando inhalado funciona, então pacientes sem mutação modulável ganham opção.", en: "When inhaled works, patients without modulatable mutation gain option."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "in vivo CAR-T:", en: "In vivo CAR-T:"}
+        choices:
+          - {pt: "LNP CD5-targeted entrega mRNA de CAR a T cells in situ gerando CAR transitório sem leucaférese", en: "CD5-targeted LNP delivers CAR mRNA to T cells in situ creating transient CAR without leukapheresis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "LNP CD5-targeted entrega mRNA de CAR a T cells in situ gerando CAR transitório sem leucaférese", en: "CD5-targeted LNP delivers CAR mRNA to T cells in situ creating transient CAR without leukapheresis"}
+        rationale: {pt: "Quando CAR transitório age, então segurança aumenta drasticamente.", en: "When CAR is transient, safety rises drastically."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Tolerogenic mRNA:", en: "Tolerogenic mRNA:"}
+        choices:
+          - {pt: "mRNA com modificações que evitam coestímulo induz Tregs autoantígeno-específicos suprimindo doença autoimune", en: "mRNA with modifications avoiding costimulation induces autoantigen-specific Tregs suppressing autoimmune disease"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "mRNA com modificações que evitam coestímulo induz Tregs autoantígeno-específicos suprimindo doença autoimune", en: "mRNA with modifications avoiding costimulation induces autoantigen-specific Tregs suppressing autoimmune disease"}
+        rationale: {pt: "Quando tolerância é induzida, então doença autoimune é silenciada.", en: "When tolerance is induced, autoimmune disease is silenced."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Pessoalismo regulatório (PRIME):", en: "Regulatory personalization (PRIME):"}
+        choices:
+          - {pt: "EMA PRIME e FDA PRV permitem fast-track de mRNA personalizados ajustando regulação ao tempo do paciente", en: "EMA PRIME and FDA PRV allow fast-track for personalized mRNA fitting regulation to patient time"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "EMA PRIME e FDA PRV permitem fast-track de mRNA personalizados ajustando regulação ao tempo do paciente", en: "EMA PRIME and FDA PRV allow fast-track for personalized mRNA fitting regulation to patient time"}
+        rationale: {pt: "Quando regulação se adapta, então personalização entra no SUS internacional.", en: "When regulation adapts, personalization enters mainstream care."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Acidente Bell's palsy:", en: "Bell's palsy adverse event:"}
+        choices:
+          - {pt: "Paralisia facial transitória ocorreu em <0.1% dos vacinados COVID — vigilância farmacológica aprimorou monitoramento", en: "Transient facial palsy occurred in <0.1% of COVID vaccinees — pharmacovigilance improved monitoring"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Paralisia facial transitória ocorreu em <0.1% dos vacinados COVID — vigilância farmacológica aprimorou monitoramento", en: "Transient facial palsy occurred in <0.1% of COVID vaccinees — pharmacovigilance improved monitoring"}
+        rationale: {pt: "Quando AE é raro, então sistemas de vigilância demonstram valor.", en: "When AE is rare, surveillance systems demonstrate value."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "RSV mRNA-1345:", en: "RSV mRNA-1345:"}
+        choices:
+          - {pt: "Vacina mRNA contra vírus respiratório sincicial em idosos foi aprovada em 2024 reduzindo doença grave", en: "mRNA vaccine against respiratory syncytial virus in elderly was approved in 2024 reducing severe disease"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Vacina mRNA contra vírus respiratório sincicial em idosos foi aprovada em 2024 reduzindo doença grave", en: "mRNA vaccine against respiratory syncytial virus in elderly was approved in 2024 reducing severe disease"}
+        rationale: {pt: "Quando segunda indicação aprova, então plataforma generaliza-se.", en: "When second indication approves, platform generalizes."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese do mRNA terapêutico:", en: "Therapeutic mRNA synthesis:"}
+        choices:
+          - {pt: "mRNA virou plataforma rápida e personalizável para vacinas, oncologia, doenças raras e tolerância — biologia ganha software-like medicine", en: "mRNA became fast personalizable platform for vaccines, oncology, rare disease and tolerance — biology gains software-like medicine"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "mRNA virou plataforma rápida e personalizável para vacinas, oncologia, doenças raras e tolerância — biologia ganha software-like medicine", en: "mRNA became fast personalizable platform for vaccines, oncology, rare disease and tolerance — biology gains software-like medicine"}
+        rationale: {pt: "Quando código é mensagem, então proteína é prescrição.", en: "When code is message, protein is prescription."}
+        objectives: [biology.mrna_therapeutics]
+        difficulty: 5
+target: 20

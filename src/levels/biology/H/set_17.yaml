@@ -1,0 +1,244 @@
+title:
+  pt: "🛡️ CAR-T 2.0 e edição de células T"
+  en: "🛡️ CAR-T 2.0 and T-cell editing"
+level: 'H'
+subject: biology
+objectives: [biology.cart_advanced]
+difficulty: 5
+authorNotes: "CAR-T allogenic, lógica AND/NOT, armored CAR, TCR-T, CAR-NK, edição base/prime para multiplex KO."
+example:
+  pt: "Ex.: T cell doadora → KO TRAC + B2M + PD-1 + CD52 → CAR alvo → CAR-T off-the-shelf seguro."
+  en: "Ex.: donor T cell → KO TRAC + B2M + PD-1 + CD52 → CAR construct → safe off-the-shelf CAR-T."
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - pageNumber: 1
+    title: {pt: "Engenharia da próxima geração", en: "Next-generation engineering"}
+    description: {pt: "Como CAR-T fica universal, lógico e armado.", en: "How CAR-T becomes universal, logical and armored."}
+    exercises:
+      - type: choice
+        question: {pt: "CAR estrutura básica:", en: "Basic CAR structure:"}
+        choices:
+          - {pt: "scFv extracelular + CD8 hinge + CD28/4-1BB + CD3ζ funde reconhecimento de antígeno e ativação de T cell", en: "Extracellular scFv + CD8 hinge + CD28/4-1BB + CD3ζ fuses antigen recognition and T cell activation"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "scFv extracelular + CD8 hinge + CD28/4-1BB + CD3ζ funde reconhecimento de antígeno e ativação de T cell", en: "Extracellular scFv + CD8 hinge + CD28/4-1BB + CD3ζ fuses antigen recognition and T cell activation"}
+        rationale: {pt: "Quando CAR sintetiza, então T cell vira programada.", en: "When CAR is built, T cell becomes programmed."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Allogenic off-the-shelf:", en: "Allogeneic off-the-shelf:"}
+        choices:
+          - {pt: "TRAC KO evita GvHD e B2M KO evita rejeição — CD52 KO permite linfodepleção sem afetar produto", en: "TRAC KO prevents GvHD and B2M KO prevents rejection — CD52 KO enables lymphodepletion without product hit"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "TRAC KO evita GvHD e B2M KO evita rejeição — CD52 KO permite linfodepleção sem afetar produto", en: "TRAC KO prevents GvHD and B2M KO prevents rejection — CD52 KO enables lymphodepletion without product hit"}
+        rationale: {pt: "Quando edições combinam, então produto torna-se universal.", en: "When edits combine, product becomes universal."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Logic AND gate (synNotch):", en: "Logic AND gate (synNotch):"}
+        choices:
+          - {pt: "synNotch detecta antígeno A liberando TF que ativa CAR contra B — alvo só onde A E B coexistem", en: "synNotch senses antigen A releasing TF that activates CAR against B — targets only A AND B overlap"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "synNotch detecta antígeno A liberando TF que ativa CAR contra B — alvo só onde A E B coexistem", en: "synNotch senses antigen A releasing TF that activates CAR against B — targets only A AND B overlap"}
+        rationale: {pt: "Quando lógica AND aplica, então tumor é distinto de tecido saudável.", en: "When AND logic applies, tumor is distinct from healthy tissue."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "NOT gate (iCAR):", en: "NOT gate (iCAR):"}
+        choices:
+          - {pt: "Inhibitory CAR contra antígeno saudável bloqueia ativação preservando tecido normal de off-tumor toxicity", en: "Inhibitory CAR against healthy antigen blocks activation sparing normal tissue from off-tumor toxicity"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Inhibitory CAR contra antígeno saudável bloqueia ativação preservando tecido normal de off-tumor toxicity", en: "Inhibitory CAR against healthy antigen blocks activation sparing normal tissue from off-tumor toxicity"}
+        rationale: {pt: "Quando NOT inibe, então on-target off-tumor cai.", en: "When NOT inhibits, on-target off-tumor falls."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Armored CAR:", en: "Armored CAR:"}
+        choices:
+          - {pt: "Coexpressão de IL-12, IL-18 ou dominantes-negativas TGF-βR fortalece CAR-T contra microambiente imunossupressor", en: "Coexpression of IL-12, IL-18 or dominant-negative TGF-βR fortifies CAR-T against immunosuppressive microenvironment"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Coexpressão de IL-12, IL-18 ou dominantes-negativas TGF-βR fortalece CAR-T contra microambiente imunossupressor", en: "Coexpression of IL-12, IL-18 or dominant-negative TGF-βR fortifies CAR-T against immunosuppressive microenvironment"}
+        rationale: {pt: "Quando T cell se arma, então sólidos ficam mais permeáveis.", en: "When T cell is armored, solids become more accessible."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Suicide switch (iCasp9):", en: "Suicide switch (iCasp9):"}
+        choices:
+          - {pt: "Caspase-9 dimerizable por rimiducide elimina CAR-T em horas se toxicidade severa emerge", en: "Rimiducid-dimerizable caspase-9 wipes out CAR-T in hours if severe toxicity emerges"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Caspase-9 dimerizable por rimiducide elimina CAR-T em horas se toxicidade severa emerge", en: "Rimiducid-dimerizable caspase-9 wipes out CAR-T in hours if severe toxicity emerges"}
+        rationale: {pt: "Quando off-switch existe, então segurança aumenta.", en: "When off-switch exists, safety rises."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Multiplex base editing:", en: "Multiplex base editing:"}
+        choices:
+          - {pt: "Base editor introduz 5-7 stop codons em genes-alvo simultaneamente sem quebra dupla evitando translocações", en: "Base editor introduces 5-7 stop codons in target genes simultaneously without DSB avoiding translocations"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Base editor introduz 5-7 stop codons em genes-alvo simultaneamente sem quebra dupla evitando translocações", en: "Base editor introduces 5-7 stop codons in target genes simultaneously without DSB avoiding translocations"}
+        rationale: {pt: "Quando edição é segura, então KO múltiplo vira clínico.", en: "When editing is safe, multiplex KO becomes clinical."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "TCR-T:", en: "TCR-T:"}
+        choices:
+          - {pt: "TCR engenheirado contra peptídeo HLA-restrito alcança alvos intracelulares como NY-ESO-1 ou KRAS G12D", en: "Engineered TCR against HLA-restricted peptide reaches intracellular targets like NY-ESO-1 or KRAS G12D"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "TCR engenheirado contra peptídeo HLA-restrito alcança alvos intracelulares como NY-ESO-1 ou KRAS G12D", en: "Engineered TCR against HLA-restricted peptide reaches intracellular targets like NY-ESO-1 or KRAS G12D"}
+        rationale: {pt: "Quando TCR atua, então alvos antes inacessíveis caem.", en: "When TCR acts, previously inaccessible targets fall."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CAR-NK:", en: "CAR-NK:"}
+        choices:
+          - {pt: "NK alogênicas com CAR têm GvHD baixo, CRS reduzido e podem ser produzidas em escala a partir de cordão umbilical", en: "Allogeneic CAR-NK shows low GvHD, reduced CRS and can be produced at scale from cord blood"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "NK alogênicas com CAR têm GvHD baixo, CRS reduzido e podem ser produzidas em escala a partir de cordão umbilical", en: "Allogeneic CAR-NK shows low GvHD, reduced CRS and can be produced at scale from cord blood"}
+        rationale: {pt: "Quando NK é a célula, então perfil de toxicidade muda.", en: "When NK is the cell, toxicity profile shifts."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CAR-Treg:", en: "CAR-Treg:"}
+        choices:
+          - {pt: "Tregs com CAR antígeno-específico suprimem rejeição em transplante e doença autoimune com precisão crescente", en: "Antigen-specific CAR Tregs suppress transplant rejection and autoimmune disease with growing precision"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tregs com CAR antígeno-específico suprimem rejeição em transplante e doença autoimune com precisão crescente", en: "Antigen-specific CAR Tregs suppress transplant rejection and autoimmune disease with growing precision"}
+        rationale: {pt: "Quando Treg é direcionada, então tolerância vira local.", en: "When Treg is directed, tolerance becomes local."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+  - pageNumber: 2
+    title: {pt: "Aplicações e desafios", en: "Applications and challenges"}
+    description: {pt: "Da hematologia à autoimunidade.", en: "From hematology to autoimmunity."}
+    exercises:
+      - type: choice
+        question: {pt: "Recorrência CD19-:", en: "CD19- relapse:"}
+        choices:
+          - {pt: "Linfomas escapam após anti-CD19 perdendo o alvo — bispecíficos CD19/CD22 ou CD20 reduzem fuga", en: "Lymphomas escape after anti-CD19 by losing target — bispecific CD19/CD22 or CD20 cuts evasion"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Linfomas escapam após anti-CD19 perdendo o alvo — bispecíficos CD19/CD22 ou CD20 reduzem fuga", en: "Lymphomas escape after anti-CD19 by losing target — bispecific CD19/CD22 or CD20 cuts evasion"}
+        rationale: {pt: "Quando bispecífico cobre, então escape antigênico cai.", en: "When bispecific covers, antigenic escape drops."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Mieloma BCMA:", en: "BCMA myeloma:"}
+        choices:
+          - {pt: "Idecabtagene e ciltacabtagene anti-BCMA induzem remissão profunda em mieloma múltiplo refratário multitraçado", en: "Idecabtagene and ciltacabtagene anti-BCMA induce deep remission in heavily pretreated refractory myeloma"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Idecabtagene e ciltacabtagene anti-BCMA induzem remissão profunda em mieloma múltiplo refratário multitraçado", en: "Idecabtagene and ciltacabtagene anti-BCMA induce deep remission in heavily pretreated refractory myeloma"}
+        rationale: {pt: "Quando BCMA é alvo, então mieloma rebelde recua.", en: "When BCMA is target, refractory myeloma retreats."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CAR-T em lupus:", en: "CAR-T in lupus:"}
+        choices:
+          - {pt: "Anti-CD19 zerou B cells e induziu remissão sustentada em lupus refratário em pequenas séries de Erlangen 2022", en: "Anti-CD19 zeroed B cells and induced sustained remission in refractory lupus in small Erlangen 2022 series"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Anti-CD19 zerou B cells e induziu remissão sustentada em lupus refratário em pequenas séries de Erlangen 2022", en: "Anti-CD19 zeroed B cells and induced sustained remission in refractory lupus in small Erlangen 2022 series"}
+        rationale: {pt: "Quando reset de B cells ocorre, então autoimunidade pode pausar duradouramente.", en: "When B-cell reset occurs, autoimmunity may pause durably."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Esclerose múltipla CAR-T:", en: "Multiple sclerosis CAR-T:"}
+        choices:
+          - {pt: "Anti-CD19 e anti-BCMA testam reset imune em MS progressiva — primeiros casos sugerem benefício clínico", en: "Anti-CD19 and anti-BCMA test immune reset in progressive MS — first cases suggest clinical benefit"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Anti-CD19 e anti-BCMA testam reset imune em MS progressiva — primeiros casos sugerem benefício clínico", en: "Anti-CD19 and anti-BCMA test immune reset in progressive MS — first cases suggest clinical benefit"}
+        rationale: {pt: "Quando reset funciona, então neurodegeneração imune pausa.", en: "When reset works, immune neurodegeneration pauses."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "CRS (cytokine release syndrome):", en: "CRS (cytokine release syndrome):"}
+        choices:
+          - {pt: "Tempestade de IL-6 pós-infusão é tratada com tocilizumab + corticoide e mitigada por dose fracionada", en: "Post-infusion IL-6 storm is treated with tocilizumab + corticosteroid and mitigated by fractionated dosing"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Tempestade de IL-6 pós-infusão é tratada com tocilizumab + corticoide e mitigada por dose fracionada", en: "Post-infusion IL-6 storm is treated with tocilizumab + corticosteroid and mitigated by fractionated dosing"}
+        rationale: {pt: "Quando CRS é manejada, então mortalidade desce.", en: "When CRS is managed, mortality falls."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "ICANS (neurotoxicidade):", en: "ICANS (neurotoxicity):"}
+        choices:
+          - {pt: "Síndrome neurotóxica imune-efetora envolve confusão e crises — corticoide é primeira linha com prognóstico variável", en: "Immune effector cell-associated neurotoxicity syndrome features confusion and seizures — first-line steroid with variable prognosis"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Síndrome neurotóxica imune-efetora envolve confusão e crises — corticoide é primeira linha com prognóstico variável", en: "Immune effector cell-associated neurotoxicity syndrome features confusion and seizures — first-line steroid with variable prognosis"}
+        rationale: {pt: "Quando ICANS aparece, então monitoramento neurológico vira chave.", en: "When ICANS arrives, neurological monitoring becomes key."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Solid tumor barrier:", en: "Solid tumor barrier:"}
+        choices:
+          - {pt: "TME hostil, alvo heterogêneo e exhaustion limitam CAR-T em sólidos — armored, dual logic e combos rompem barreiras", en: "Hostile TME, heterogeneous target and exhaustion limit CAR-T in solids — armored, dual logic and combos break barriers"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "TME hostil, alvo heterogêneo e exhaustion limitam CAR-T em sólidos — armored, dual logic e combos rompem barreiras", en: "Hostile TME, heterogeneous target and exhaustion limit CAR-T in solids — armored, dual logic and combos break barriers"}
+        rationale: {pt: "Quando barreira cede, então tumores sólidos viram tratáveis.", en: "When barrier cedes, solid tumors become treatable."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Custo e fabricação:", en: "Cost and manufacturing:"}
+        choices:
+          - {pt: "Produção autóloga custa ~$400k — automação fechada e produtos alogênicos prometem reduzir preço drasticamente", en: "Autologous production costs ~$400k — closed automation and allogeneic products promise drastic price reduction"}
+          - {pt: "Apenas curiosidade administrativa", en: "Just administrative curiosity"}
+          - {pt: "Apenas detalhe legal", en: "Just legal detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Produção autóloga custa ~$400k — automação fechada e produtos alogênicos prometem reduzir preço drasticamente", en: "Autologous production costs ~$400k — closed automation and allogeneic products promise drastic price reduction"}
+        rationale: {pt: "Quando custo cai, então acesso global cresce.", en: "When cost falls, global access grows."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "T cell exhaustion:", en: "T cell exhaustion:"}
+        choices:
+          - {pt: "Sinalização tônica, expressão de PD-1/TIM-3 e perda de stemness são alvos para reversão por engenharia ou edição", en: "Tonic signaling, PD-1/TIM-3 expression and stemness loss are targets for engineering or editing reversal"}
+          - {pt: "Apenas curiosidade técnica", en: "Just technical curiosity"}
+          - {pt: "Apenas detalhe analítico", en: "Just analytical detail"}
+          - {pt: "Apenas variação trivial", en: "Just trivial variation"}
+        correctAnswer: {pt: "Sinalização tônica, expressão de PD-1/TIM-3 e perda de stemness são alvos para reversão por engenharia ou edição", en: "Tonic signaling, PD-1/TIM-3 expression and stemness loss are targets for engineering or editing reversal"}
+        rationale: {pt: "Quando exhaustion é evitada, então persistência aumenta.", en: "When exhaustion is avoided, persistence rises."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+      - type: choice
+        question: {pt: "Síntese de CAR-T 2.0:", en: "CAR-T 2.0 synthesis:"}
+        choices:
+          - {pt: "Edição múltipla, lógica e armaduras transformam CAR-T em terapias universais, seguras e ativas em sólidos e autoimunidade", en: "Multiplex editing, logic and armoring transform CAR-T into universal, safe therapies active in solids and autoimmunity"}
+          - {pt: "Apenas catálogo descritivo", en: "Just descriptive catalog"}
+          - {pt: "Apenas observação anatômica", en: "Just anatomical observation"}
+          - {pt: "Apenas tradição histórica", en: "Just historical tradition"}
+        correctAnswer: {pt: "Edição múltipla, lógica e armaduras transformam CAR-T em terapias universais, seguras e ativas em sólidos e autoimunidade", en: "Multiplex editing, logic and armoring transform CAR-T into universal, safe therapies active in solids and autoimmunity"}
+        rationale: {pt: "Quando T cell vira programável, então imunoterapia se generaliza.", en: "When T cell is programmable, immunotherapy generalizes."}
+        objectives: [biology.cart_advanced]
+        difficulty: 5
+target: 20
