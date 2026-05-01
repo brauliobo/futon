@@ -1,0 +1,343 @@
+title:
+  pt: Biologia Estrutural por IA e Design Generativo de Proteínas
+  en: AI Structural Biology and Generative Protein Design
+level: S
+subject: biology
+objectives:
+  - Compreender AlphaFold2/3, ESMFold, RoseTTAFold
+  - Reconhecer RFdiffusion, ProteinMPNN, ESM3
+  - Identificar de novo binder design, enzyme design
+  - Avaliar limitações e aplicações terapêuticas
+difficulty: 5
+authorNotes: |
+  AI structural biology revolution. AlphaFold2 (Jumper DeepMind Nature 2021 CASP14
+  breakthrough), AlphaFold3 (2024 Nature multimers ligands DNA/RNA). ESMFold (Lin Meta
+  2023 Science ESM-2). RoseTTAFold (Baker UW Science 2021). RFdiffusion (Watson Baker
+  Nature 2023). ProteinMPNN (Dauparas Baker Science 2022). ESM3 (EvolutionaryScale 2024).
+  Generative biology era — de novo binders, enzymes, antibodies via AI.
+example:
+  question:
+    pt: AlphaFold2 (Jumper/Hassabis DeepMind Nature 2021) breakthrough em CASP14 (2020) foi…
+    en: AlphaFold2 (Jumper/Hassabis DeepMind Nature 2021) CASP14 (2020) breakthrough was…
+  choices:
+    - Atomic-accuracy protein structure prediction from sequence using attention-based deep learning trained on PDB plus MSA evolutionary signal
+    - Empirical homology modeling using only template-based threading without neural networks
+    - Direct experimental cryo-EM determination at scale using automated microscopes
+    - Molecular dynamics force-field improvements producing structures from physics alone
+  correctAnswer: Atomic-accuracy protein structure prediction from sequence using attention-based deep learning trained on PDB plus MSA evolutionary signal
+  rationale:
+    pt: 'AlphaFold2 (Jumper Evans Pritzel Senior Hassabis DeepMind Nature 2021): CASP14 2020 median GDT_TS ~92 (~atomic accuracy) — 50-year grand challenge solved. Architecture: Evoformer (attention sobre MSA + pair representation) → Structure Module (invariant point attention IPA) → 3D coordinates. Trained PDB ~170k structures + MSAs (UniRef, MGnify). 2022 EBI partnership released ~200M predicted structures (AlphaFold Protein Structure Database). Free/open. Hassabis/Jumper Nobel Chemistry 2024 (with Baker). Impacto: drug discovery, structural biology, enzymology democratized. Limits: dynamics, IDPs, novel folds outside PDB distribution.'
+    en: 'AlphaFold2 (Jumper Evans Pritzel Senior Hassabis DeepMind Nature 2021): CASP14 2020 median GDT_TS ~92 (~atomic accuracy) — 50-year grand challenge solved. Architecture: Evoformer (attention over MSA + pair representation) → Structure Module (invariant point attention IPA) → 3D coordinates. Trained on PDB ~170k structures + MSAs (UniRef, MGnify). 2022 EBI partnership released ~200M predicted structures (AlphaFold Protein Structure Database). Free/open. Hassabis/Jumper Nobel Chemistry 2024 (with Baker). Impact: drug discovery, structural biology, enzymology democratized. Limits: dynamics, IDPs, novel folds outside PDB distribution.'
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — AlphaFold e previsão de estrutura
+      en: Page 1 — AlphaFold and structure prediction
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: AlphaFold3 (Abramson/Jumper DeepMind Nature 2024) avanço sobre AF2 é…
+          en: AlphaFold3 (Abramson/Jumper DeepMind Nature 2024) advance over AF2 is…
+        choices:
+          - Unified diffusion-based prediction of protein-ligand-nucleic acid-ion complexes including small molecules and DNA/RNA in a single model
+          - Identical architecture to AF2 with only minor training-set expansion and no new modalities
+          - Replacement of attention with classical homology modeling for speed
+          - Restricted exclusively to single-chain proteins shorter than 100 residues
+        correctAnswer: Unified diffusion-based prediction of protein-ligand-nucleic acid-ion complexes including small molecules and DNA/RNA in a single model
+        rationale:
+          pt: 'AlphaFold3 (Abramson Adler Dunger Heelan Jumper DeepMind + Isomorphic Labs Nature 2024): generaliza além proteínas — predicts protein-protein, protein-ligand (small molecules), protein-DNA/RNA, post-translational modifications, ions complexes. Architectural shift: substitui Structure Module por diffusion-based generative module (similar imagem-generation diffusion). Pairformer replaces Evoformer. Single unified model multiple modalities. AlphaFold Server (free academic, restricted commercial via Isomorphic Labs drug-discovery spinout). Higher accuracy protein-ligand than docking tools (AutoDock, GOLD). Drug discovery acceleration. Limitations: hallucinations on unseen interactions, stoichiometry assumptions.'
+          en: 'AlphaFold3 (Abramson Adler Dunger Heelan Jumper DeepMind + Isomorphic Labs Nature 2024): generalizes beyond proteins — predicts protein-protein, protein-ligand (small molecules), protein-DNA/RNA, post-translational modifications, ions complexes. Architectural shift: replaces Structure Module with diffusion-based generative module (similar to image-generation diffusion). Pairformer replaces Evoformer. Single unified model multiple modalities. AlphaFold Server (free academic, restricted commercial via Isomorphic Labs drug-discovery spinout). Higher accuracy on protein-ligand than docking tools (AutoDock, GOLD). Drug discovery acceleration. Limitations: hallucinations on unseen interactions, stoichiometry assumptions.'
+        objectives: [AlphaFold3]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ESMFold (Lin/Rives Meta 2023 Science) diferença chave vs AlphaFold2 é…
+          en: ESMFold (Lin/Rives Meta 2023 Science) key difference vs AlphaFold2 is…
+        choices:
+          - Single-sequence inference from protein language model embeddings without MSA, ~60x faster at modest accuracy cost
+          - Identical pipeline to AlphaFold2 requiring full MSA construction per query
+          - Experimental NMR-based structure determination automated by robotics
+          - Random-forest regression on physicochemical descriptors without deep learning
+        correctAnswer: Single-sequence inference from protein language model embeddings without MSA, ~60x faster at modest accuracy cost
+        rationale:
+          pt: 'ESMFold (Lin Akin Rao Hie Zhu Meta AI 2023 Science): protein language model ESM-2 (15B params, MLM trained on UniRef ~65M sequences) → embeddings → folding head → 3D structure. Single-sequence inference (no MSA construction). ~60x faster than AlphaFold2 — enables metagenomic-scale folding. Released ESM Metagenomic Atlas ~617M predicted structures (vs AlphaFold DB ~200M from UniProt). Accuracy slightly lower than AF2 (no evolutionary signal beyond LM internal). Trade-off speed vs accuracy. Demonstrates language models implicitly learn structure from sequence statistics. ESM-2 open weights HuggingFace. Predecessor ESM-1b (Rives 2021 PNAS).'
+          en: 'ESMFold (Lin Akin Rao Hie Zhu Meta AI 2023 Science): protein language model ESM-2 (15B params, MLM trained on UniRef ~65M sequences) → embeddings → folding head → 3D structure. Single-sequence inference (no MSA construction). ~60x faster than AlphaFold2 — enables metagenomic-scale folding. Released ESM Metagenomic Atlas ~617M predicted structures (vs AlphaFold DB ~200M from UniProt). Accuracy slightly lower than AF2 (no evolutionary signal beyond LM internal). Trade-off speed vs accuracy. Demonstrates language models implicitly learn structure from sequence statistics. ESM-2 open weights on HuggingFace. Predecessor ESM-1b (Rives 2021 PNAS).'
+        objectives: [ESMFold]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: RoseTTAFold (Baek/Baker UW Science 2021) contribuição é…
+          en: RoseTTAFold (Baek/Baker UW Science 2021) contribution is…
+        choices:
+          - Three-track network coupling sequence/MSA/structure simultaneously, open-source AlphaFold2-class accuracy and forerunner of generative design tools
+          - Closed-source commercial reimplementation lagging behind in benchmarks
+          - Pure physics-based folding without machine learning
+          - Restricted to membrane proteins exclusively
+        correctAnswer: Three-track network coupling sequence/MSA/structure simultaneously, open-source AlphaFold2-class accuracy and forerunner of generative design tools
+        rationale:
+          pt: 'RoseTTAFold (Baek DiMaio Anishchenko Park Pereira Bera Baker UW Science 2021): 3-track architecture (sequence-track + MSA-track + structure-track communicating via attention). Released contemporaneamente AlphaFold2 — slightly lower accuracy mas open-source/academic-friendly + faster. Foundation Baker lab subsequent work: RoseTTAFold-Diffusion (RFdiffusion 2023), RoseTTAFold All-Atom (RFAA 2024 protein-ligand-NA), RoseTTAFold-NA (nucleic acids). David Baker Nobel Chemistry 2024 (com Hassabis/Jumper) for de novo design + AlphaFold. Institute Protein Design (IPD) Seattle. Open weights, GitHub baker-laboratory.'
+          en: 'RoseTTAFold (Baek DiMaio Anishchenko Park Pereira Bera Baker UW Science 2021): 3-track architecture (sequence-track + MSA-track + structure-track communicating via attention). Released contemporaneously with AlphaFold2 — slightly lower accuracy but open-source/academic-friendly + faster. Foundation for Baker lab subsequent work: RoseTTAFold-Diffusion (RFdiffusion 2023), RoseTTAFold All-Atom (RFAA 2024 protein-ligand-NA), RoseTTAFold-NA (nucleic acids). David Baker Nobel Chemistry 2024 (with Hassabis/Jumper) for de novo design + AlphaFold. Institute for Protein Design (IPD) Seattle. Open weights on GitHub baker-laboratory.'
+        objectives: [RoseTTAFold]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: AlphaFold Protein Structure Database (AlphaFold DB EBI 2022) escala é…
+          en: AlphaFold Protein Structure Database (AlphaFold DB EBI 2022) scale is…
+        choices:
+          - ~214M predicted structures spanning UniProt, openly downloadable; 1000-fold expansion over experimentally determined PDB
+          - ~10k curated structures restricted to model organisms only
+          - Closed commercial dataset accessible only by paid subscription
+          - Database of NMR ensembles without static-structure entries
+        correctAnswer: ~214M predicted structures spanning UniProt, openly downloadable; 1000-fold expansion over experimentally determined PDB
+        rationale:
+          pt: 'AlphaFold Protein Structure Database (AlphaFold DB): DeepMind + EMBL-EBI parceria 2021-2022. Initial 350k human proteome 2021 → ~214M structures 2022 (todo UniProt). PDB experimental ~220k structures (50 anos). 1000x expansion. Open access, CC-BY-4.0. Per-residue confidence (pLDDT 0-100), predicted alignment error (PAE). Hosted EBI alphafold.ebi.ac.uk. Foldseek (Steinegger 2024 Nat Biotech) structure search at scale. Impacto: dark proteome (proteins sem structural info) ~50%+ ahora preditas. Limits: pLDDT<70 ~30% residues low-confidence (often IDPs, signal peptides). Update cycles. Subsequent: ESM Metagenomic Atlas overlaps but distinct (metagenomic vs UniProt).'
+          en: 'AlphaFold Protein Structure Database (AlphaFold DB): DeepMind + EMBL-EBI partnership 2021-2022. Initial 350k human proteome 2021 → ~214M structures 2022 (entire UniProt). PDB experimental ~220k structures (50 years). 1000x expansion. Open access, CC-BY-4.0. Per-residue confidence (pLDDT 0-100), predicted alignment error (PAE). Hosted at EBI alphafold.ebi.ac.uk. Foldseek (Steinegger 2024 Nat Biotech) structure search at scale. Impact: dark proteome (proteins without structural info) ~50%+ now predicted. Limits: pLDDT<70 ~30% residues low-confidence (often IDPs, signal peptides). Update cycles. Subsequent: ESM Metagenomic Atlas overlaps but distinct (metagenomic vs UniProt).'
+        objectives: [AlphaFold DB]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: CASP (Critical Assessment of Structure Prediction) papel é…
+          en: CASP (Critical Assessment of Structure Prediction) role is…
+        choices:
+          - Biennial blind community benchmark using newly solved unreleased structures as targets; CASP14 (2020) marked the AlphaFold2 breakthrough
+          - Annual conference with no benchmark or evaluation component
+          - Industry-only competition closed to academic participants
+          - Solved-structures repository superseding the Protein Data Bank
+        correctAnswer: Biennial blind community benchmark using newly solved unreleased structures as targets; CASP14 (2020) marked the AlphaFold2 breakthrough
+        rationale:
+          pt: 'CASP (Critical Assessment of Structure Prediction): Moult et al 1994 → biennial blind benchmark structure prediction. Targets: experimentally solved structures (X-ray/NMR/cryo-EM) released to assessors but withheld until CASP submissions. ~100 targets, multiple categories (TBM template-based, FM free modeling, multimers, refinement). Metrics GDT_TS, lDDT, TM-score. CASP14 2020: AlphaFold2 median GDT_TS ~92 (vs ~70 best previous) — perceived "solved" milestone. CASP15 2022 multiple AF2-derived methods top. CASP16 2024 ongoing. Predictioncenter.org. Dependable arbiter sem self-reporting bias. Pivotal AlphaFold2 reception/Nobel narrative.'
+          en: 'CASP (Critical Assessment of Structure Prediction): Moult et al 1994 → biennial blind benchmark for structure prediction. Targets: experimentally solved structures (X-ray/NMR/cryo-EM) released to assessors but withheld until CASP submissions. ~100 targets, multiple categories (TBM template-based, FM free modeling, multimers, refinement). Metrics GDT_TS, lDDT, TM-score. CASP14 2020: AlphaFold2 median GDT_TS ~92 (vs ~70 best previous) — perceived "solved" milestone. CASP15 2022 multiple AF2-derived methods on top. CASP16 2024 ongoing. Predictioncenter.org. Dependable arbiter without self-reporting bias. Pivotal in AlphaFold2 reception/Nobel narrative.'
+        objectives: [CASP]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: AlphaFold-Multimer (Evans/Jumper 2021 bioRxiv) extension é…
+          en: AlphaFold-Multimer (Evans/Jumper 2021 bioRxiv) extension is…
+        choices:
+          - Protein-protein complex prediction with paired-MSA construction across chains and chain-aware loss; widely used for interactome modeling
+          - Single-chain fold prediction identical to original AlphaFold2 with no multimer support
+          - Cryo-EM image classifier for particle picking only
+          - Tool exclusively for crystal-packing arrangement prediction
+        correctAnswer: Protein-protein complex prediction with paired-MSA construction across chains and chain-aware loss; widely used for interactome modeling
+        rationale:
+          pt: 'AlphaFold-Multimer (Evans Jumper DeepMind 2021 bioRxiv → integrated AF2.2+): fine-tuned AlphaFold2 on multimeric structures + paired-MSA (homologs presence em ambas chains as orthologous-pair signal). Performance heterodímeros razoável, larger complexes mais difícil. Aplicação: interactome screens (Humphreys/Baker 2021 Science yeast pairs), antibody-antigen interfaces, virus-receptor. ColabFold provides accessible interface. AlphaFold3 supersedes for general complexes (small molecules, NA). Limits: induced-fit conformational change, transient interactions, large assemblies. Evaluation iptm/ptm scores. CASP15 had multimer category formal.'
+          en: 'AlphaFold-Multimer (Evans Jumper DeepMind 2021 bioRxiv → integrated AF2.2+): fine-tuned AlphaFold2 on multimeric structures + paired-MSA (homologs present in both chains as orthologous-pair signal). Performance reasonable for heterodimers, larger complexes harder. Application: interactome screens (Humphreys/Baker 2021 Science yeast pairs), antibody-antigen interfaces, virus-receptor. ColabFold provides accessible interface. AlphaFold3 supersedes for general complexes (small molecules, NA). Limits: induced-fit conformational change, transient interactions, large assemblies. Evaluation via iptm/ptm scores. CASP15 had a formal multimer category.'
+        objectives: [AlphaFold-Multimer]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ColabFold (Mirdita/Steinegger Nat Methods 2022) democratization vector foi…
+          en: ColabFold (Mirdita/Steinegger Nat Methods 2022) democratization vector was…
+        choices:
+          - Google Colab notebook running AlphaFold2 with MMseqs2-fast MSA, accessible without local GPU and used millions of times
+          - Commercial-only paid web service requiring subscription tiers
+          - Desktop software requiring 1TB local sequence databases per query
+          - Closed-source pipeline released only to selected academic partners
+        correctAnswer: Google Colab notebook running AlphaFold2 with MMseqs2-fast MSA, accessible without local GPU and used millions of times
+        rationale:
+          pt: 'ColabFold (Mirdita Schütze Moriwaki Heo Ovchinnikov Steinegger Nat Methods 2022): Google Colab Jupyter notebook + MMseqs2-based MSA server (UniRef30, ColabFoldDB) → AlphaFold2/AlphaFold-Multimer/RoseTTAFold inference. Reduces MSA construction de hours (jackhmmer/HHblits) para minutes. Free GPU via Colab. ~10M+ runs documented. Steinegger lab Seoul National Univ. Fundamental democratization — antes AF2 required local 2TB sequence DBs + heavy compute. Trade-off accuracy: MMseqs2 sensitivity slightly lower than HHblits mas marginal impacto. Standard ferramenta exploratory structure prediction global.'
+          en: 'ColabFold (Mirdita Schütze Moriwaki Heo Ovchinnikov Steinegger Nat Methods 2022): Google Colab Jupyter notebook + MMseqs2-based MSA server (UniRef30, ColabFoldDB) → AlphaFold2/AlphaFold-Multimer/RoseTTAFold inference. Reduces MSA construction from hours (jackhmmer/HHblits) to minutes. Free GPU via Colab. ~10M+ runs documented. Steinegger lab Seoul National Univ. Fundamental democratization — before AF2 required local 2TB sequence DBs + heavy compute. Trade-off in accuracy: MMseqs2 sensitivity slightly lower than HHblits but marginal impact. Standard exploratory structure prediction tool globally.'
+        objectives: [ColabFold]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: OpenFold (Ahdritz Columbia 2024 Nat Methods) significância é…
+          en: OpenFold (Ahdritz Columbia 2024 Nat Methods) significance is…
+        choices:
+          - PyTorch open-source AlphaFold2 reimplementation with retrained weights and OpenProteinSet, enabling fine-tuning and research extensions
+          - Closed proprietary alternative with no public weights release
+          - Pure Python rewrite without GPU support unsuitable for production
+          - Visualization-only viewer wrapping the original AlphaFold weights unchanged
+        correctAnswer: PyTorch open-source AlphaFold2 reimplementation with retrained weights and OpenProteinSet, enabling fine-tuning and research extensions
+        rationale:
+          pt: 'OpenFold (Ahdritz Bouatta Floristean Kadyan Xia Zhang AlQuraishi Columbia Nat Methods 2024): PyTorch reimplementation AlphaFold2 (originalmente JAX/DeepMind). Trained from scratch — released OpenProteinSet (~5M MSAs PDB+UniRef). Open weights + training data + code. Enables: fine-tuning para específicos dominios, ablation studies, research extensions (RNA, custom heads). Performance comparable to AF2 official. Critical para academic research community + reprodutibilidade. AlQuraishi lab. Used as backbone for various downstream tools. Subsequent: OpenFold-Multimer, integration Hugging Face. Foundation for OpenFold-Soloseq variants.'
+          en: 'OpenFold (Ahdritz Bouatta Floristean Kadyan Xia Zhang AlQuraishi Columbia Nat Methods 2024): PyTorch reimplementation of AlphaFold2 (originally JAX/DeepMind). Trained from scratch — released OpenProteinSet (~5M MSAs PDB+UniRef). Open weights + training data + code. Enables: fine-tuning to specific domains, ablation studies, research extensions (RNA, custom heads). Performance comparable to official AF2. Critical for academic research community + reproducibility. AlQuraishi lab. Used as backbone for various downstream tools. Subsequent: OpenFold-Multimer, Hugging Face integration. Foundation for OpenFold-Soloseq variants.'
+        objectives: [OpenFold]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Limitação intrínseca AlphaFold-class para intrinsically disordered proteins (IDPs) é…
+          en: Intrinsic limitation of AlphaFold-class methods for intrinsically disordered proteins (IDPs) is…
+        choices:
+          - Static single-structure output cannot represent conformational ensembles of IDPs which lack fixed native folds
+          - Errors in residue-numbering ordinarily fixed by post-processing scripts
+          - Inability to predict any α-helix when present in the input sequence
+          - Restriction to globular proteins shorter than 50 amino acids
+        correctAnswer: Static single-structure output cannot represent conformational ensembles of IDPs which lack fixed native folds
+        rationale:
+          pt: 'AlphaFold predicts single most-likely native structure — IDPs (intrinsically disordered proteins) ~30% eukaryotic proteome lack stable fold; exist em conformational ensembles. AF outputs IDP regions com low pLDDT (<50) — useful proxy disorder prediction (correlates IUPred, MobiDB). Mas não fornece ensemble. Soluções: AlphaFold-Cluster (Wayment-Steele 2024 alternative conformations via MSA clustering), AlphaFlow (Jing 2024 distill AF→flow-matching ensemble), molecular dynamics post-AF, NMR-restrained ensembles. Multiconformer methods active research. Outras limits: dynamics, allostery, metamorphic proteins, induced fit. AlphaFold3 small step but not full ensemble.'
+          en: 'AlphaFold predicts single most-likely native structure — IDPs (intrinsically disordered proteins) ~30% of eukaryotic proteome lack stable fold; they exist in conformational ensembles. AF outputs IDP regions with low pLDDT (<50) — useful proxy for disorder prediction (correlates with IUPred, MobiDB). But it does not provide an ensemble. Solutions: AlphaFold-Cluster (Wayment-Steele 2024 alternative conformations via MSA clustering), AlphaFlow (Jing 2024 distill AF→flow-matching ensemble), molecular dynamics post-AF, NMR-restrained ensembles. Multiconformer methods active research. Other limits: dynamics, allostery, metamorphic proteins, induced fit. AlphaFold3 small step but not full ensemble.'
+        objectives: [AF limitations IDPs]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Foldseek (van Kempen/Steinegger Nat Biotech 2024) inovação é…
+          en: Foldseek (van Kempen/Steinegger Nat Biotech 2024) innovation is…
+        choices:
+          - Structure search at sequence-search speed via 3Di structural alphabet, enabling AlphaFold-DB-scale homology by structure
+          - Sequence-only BLAST replacement with no structural component
+          - Manual structure superposition tool requiring pairwise input
+          - Cryo-EM map fitting algorithm without database search capability
+        correctAnswer: Structure search at sequence-search speed via 3Di structural alphabet, enabling AlphaFold-DB-scale homology by structure
+        rationale:
+          pt: 'Foldseek (van Kempen Kim Tumescheit Mirdita Lee Gilchrist Söding Steinegger Nat Biotech 2024): structural alphabet 3Di — discretiza local backbone geometry em 20 letters, transforma estrutura → sequence-like string → use MMseqs2-style amino acid sequence search algorithms. ~10⁴-10⁶x faster than DALI/TM-align/CE while maintaining sensitivity comparable. Enables structure search across AlphaFold DB (~214M) ou ESM Atlas (~617M) em minutos. Use cases: distant homology detection (sequences diverged demais BLAST mas structure conserved), function annotation orphan proteins, structural metagenomics. Steinegger lab Seoul SNU. Foldseek-multimer 2024 extends ao multimer. Open source.'
+          en: 'Foldseek (van Kempen Kim Tumescheit Mirdita Lee Gilchrist Söding Steinegger Nat Biotech 2024): structural alphabet 3Di — discretizes local backbone geometry into 20 letters, transforms structure → sequence-like string → applies MMseqs2-style amino acid sequence search algorithms. ~10⁴-10⁶x faster than DALI/TM-align/CE while maintaining comparable sensitivity. Enables structure search across AlphaFold DB (~214M) or ESM Atlas (~617M) in minutes. Use cases: distant homology detection (sequences too diverged for BLAST but structure conserved), function annotation of orphan proteins, structural metagenomics. Steinegger lab Seoul SNU. Foldseek-multimer 2024 extends it to multimers. Open source.'
+        objectives: [Foldseek]
+  - title:
+      pt: Página 2 — Design generativo de proteínas
+      en: Page 2 — Generative protein design
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: RFdiffusion (Watson/Baker Nature 2023) approach é…
+          en: RFdiffusion (Watson/Baker Nature 2023) approach is…
+        choices:
+          - Denoising diffusion model fine-tuned from RoseTTAFold weights to generate de novo backbones conditional on motifs, binders, or symmetry
+          - Random sequence sampling with Rosetta minimization as the only optimization step
+          - Homology-only template extraction without generative capability
+          - Sequence-design tool that does not produce 3D backbones
+        correctAnswer: Denoising diffusion model fine-tuned from RoseTTAFold weights to generate de novo backbones conditional on motifs, binders, or symmetry
+        rationale:
+          pt: 'RFdiffusion (Watson Juergens Bennett Trippe Yim Eisenach Baker IPD UW Nature 2023): denoising diffusion probabilistic model (similar Stable Diffusion concepto) sobre protein backbone coordinates, inicializado RoseTTAFold pretrained weights → fine-tuned diffusion task. Conditioning: fixed motif (scaffold around binding site), target receptor (binder design), symmetry (oligomer design), partial structure (motif inpainting). Output: backbone → ProteinMPNN sequence design → AlphaFold validation → experimental test. Demonstrated: de novo binders to PD-L1/IL-2R/influenza HA, symmetric oligomers, picomolar affinity binders. Open weights GitHub RosettaCommons. Foundation generative protein design 2023+. RFdiffusionAA 2024 extends ao all-atom (ligands, nucleic acids).'
+          en: 'RFdiffusion (Watson Juergens Bennett Trippe Yim Eisenach Baker IPD UW Nature 2023): denoising diffusion probabilistic model (similar concept to Stable Diffusion) over protein backbone coordinates, initialized from RoseTTAFold pretrained weights → fine-tuned on diffusion task. Conditioning: fixed motif (scaffold around binding site), target receptor (binder design), symmetry (oligomer design), partial structure (motif inpainting). Output: backbone → ProteinMPNN sequence design → AlphaFold validation → experimental test. Demonstrated: de novo binders to PD-L1/IL-2R/influenza HA, symmetric oligomers, picomolar-affinity binders. Open weights on GitHub RosettaCommons. Foundation for generative protein design 2023+. RFdiffusionAA 2024 extends to all-atom (ligands, nucleic acids).'
+        objectives: [RFdiffusion]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ProteinMPNN (Dauparas/Baker Science 2022) função é…
+          en: ProteinMPNN (Dauparas/Baker Science 2022) function is…
+        choices:
+          - Sequence design from backbone via message-passing neural network, vastly outperforming Rosetta on experimental success rate for de novo proteins
+          - Backbone generation from sequence input only
+          - Cryo-EM density-map interpretation tool
+          - General docking software for protein-ligand binding
+        correctAnswer: Sequence design from backbone via message-passing neural network, vastly outperforming Rosetta on experimental success rate for de novo proteins
+        rationale:
+          pt: 'ProteinMPNN (Dauparas Anishchenko Bhardwaj Bennett Bera Baker IPD Science 2022): graph neural network message-passing — input backbone Cα coordinates + masked sequence → predicts amino acid identities residue-by-residue conditioned on local 3D context. Trained on PDB sem MSA. Output sequences fold to target structure ~75% experimental success rate vs Rosetta ~10-30%. Used downstream RFdiffusion/Chroma generated backbones → ProteinMPNN sequence → AlphaFold validation pipeline standard. Variants: SolubleMPNN (force soluble surfaces), LigandMPNN 2024 (account for bound ligands/cofactors). Open source GitHub. Revolutionized de novo design success rates dramatically. Citation thousands.'
+          en: 'ProteinMPNN (Dauparas Anishchenko Bhardwaj Bennett Bera Baker IPD Science 2022): graph neural network message-passing — input backbone Cα coordinates + masked sequence → predicts amino acid identities residue-by-residue conditioned on local 3D context. Trained on PDB without MSA. Output sequences fold to target structure ~75% experimental success rate vs Rosetta ~10-30%. Used downstream of RFdiffusion/Chroma-generated backbones → ProteinMPNN sequence → AlphaFold validation pipeline as standard. Variants: SolubleMPNN (forces soluble surfaces), LigandMPNN 2024 (accounts for bound ligands/cofactors). Open source on GitHub. Revolutionized de novo design success rates dramatically. Citations in the thousands.'
+        objectives: [ProteinMPNN]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ESM3 (EvolutionaryScale 2024 bioRxiv) capacity é…
+          en: ESM3 (EvolutionaryScale 2024 bioRxiv) capacity is…
+        choices:
+          - Frontier multimodal generative protein language model joint over sequence/structure/function tokens at 98B parameters
+          - Sequence-only language model identical to ESM-2 with no new modalities
+          - Tool restricted to predicting α-helix percentages from sequence
+          - Image generation model unrelated to protein biology
+        correctAnswer: Frontier multimodal generative protein language model joint over sequence/structure/function tokens at 98B parameters
+        rationale:
+          pt: 'ESM3 (Hayes Rao Akin Sofroniew Oktay Lin Verkuil Tran Deaton Wiggert Badkundri Shafkat Gong Derry Molina EvolutionaryScale 2024 bioRxiv → Science 2025): generative protein LM jointly modeling sequence + structure tokens (VQ-VAE backbone tokenizer) + function annotations (InterPro/keywords). 98B parameters largest. Trained ~3.15B sequences + AlphaFold predicted structures. Capabilities: sequence/structure/function generation, infilling, conditioning. ESM3-open (1.4B/7B params open weights non-commercial), ESM3 large API/commercial. EvolutionaryScale spinout from Meta AI Protein Team (post-Meta-FAIR-protein-team-disbandment 2023). Demonstrated: generated novel GFP variants ~58% sequence identity to natural — equivalent ~500M years natural evolution. Frontier generative biology 2024-2025.'
+          en: 'ESM3 (Hayes Rao Akin Sofroniew Oktay Lin Verkuil Tran Deaton Wiggert Badkundri Shafkat Gong Derry Molina EvolutionaryScale 2024 bioRxiv → Science 2025): generative protein LM jointly modeling sequence + structure tokens (VQ-VAE backbone tokenizer) + function annotations (InterPro/keywords). 98B parameters largest. Trained on ~3.15B sequences + AlphaFold-predicted structures. Capabilities: sequence/structure/function generation, infilling, conditioning. ESM3-open (1.4B/7B params open weights non-commercial), ESM3 large API/commercial. EvolutionaryScale spinout from Meta AI Protein Team (post-Meta-FAIR-protein-team-disbandment 2023). Demonstrated: generated novel GFP variants ~58% sequence identity to natural — equivalent to ~500M years of natural evolution. Frontier generative biology 2024-2025.'
+        objectives: [ESM3]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: De novo binder design (Cao/Baker Nature 2022) breakthrough foi…
+          en: De novo binder design (Cao/Baker Nature 2022) breakthrough was…
+        choices:
+          - Computationally designed mini-proteins (~50-65 aa) binding therapeutic targets like SARS-CoV-2 spike with picomolar affinity, validated experimentally
+          - Theoretical-only computational study without any experimental validation
+          - Antibody humanization workflow for existing biologics
+          - Random-library phage display without any computational design step
+        correctAnswer: Computationally designed mini-proteins (~50-65 aa) binding therapeutic targets like SARS-CoV-2 spike with picomolar affinity, validated experimentally
+        rationale:
+          pt: 'De novo binder design (Cao Coventry Goreshnik Huang Park Pellock Baker IPD Nature 2022): computational pipeline → design ~50-65 aa mini-proteins binding given target receptor surface. Sucesso early targets: PD-L1, TrkA, EGFR, SARS-CoV-2 spike (LCB1 ~1nM, prophylactic intranasal mouse model). Pipeline: target hotspots → scaffold library → Rosetta interface design → experimental SPR/yeast display. Pós-RFdiffusion 2023+ pipeline simpler/higher-rate. Bennett et al Nature 2023 RFdiffusion binders ~10-100% success vs early ~0.1-1%. Therapeutic potential: agonists (IL-2 mimetic em vez nativa toxic), antagonists (immune checkpoints), virus neutralizers. Vendas Generate Biomedicines, Xaira Therapeutics, Cradle, Diamond Age Pharma — sector commercial.'
+          en: 'De novo binder design (Cao Coventry Goreshnik Huang Park Pellock Baker IPD Nature 2022): computational pipeline → designs ~50-65 aa mini-proteins binding a given target receptor surface. Early target successes: PD-L1, TrkA, EGFR, SARS-CoV-2 spike (LCB1 ~1nM, prophylactic intranasal mouse model). Pipeline: target hotspots → scaffold library → Rosetta interface design → experimental SPR/yeast display. Post-RFdiffusion 2023+ pipeline simpler/higher-rate. Bennett et al Nature 2023 RFdiffusion binders ~10-100% success vs early ~0.1-1%. Therapeutic potential: agonists (IL-2 mimetic instead of natively toxic), antagonists (immune checkpoints), virus neutralizers. Generate Biomedicines, Xaira Therapeutics, Cradle, Diamond Age Pharma — commercial sector.'
+        objectives: [De novo binders]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: De novo enzyme design (Yeh/Baker Nature 2023 luciferase, others) achievement é…
+          en: De novo enzyme design (Yeh/Baker Nature 2023 luciferase, etc.) achievement is…
+        choices:
+          - Computationally designed novel enzymes catalyzing reactions with no natural counterpart, including a luciferase outperforming natural ones
+          - Modification of natural enzymes only without ground-up design
+          - Theoretical models with zero in vitro turnover demonstrated
+          - Crystal-form modification preserving the natural active site unchanged
+        correctAnswer: Computationally designed novel enzymes catalyzing reactions with no natural counterpart, including a luciferase outperforming natural ones
+        rationale:
+          pt: 'De novo enzyme design Baker IPD trajectory: early Kemp eliminase 2008, retro-aldolase, Diels-Alderase Science 2010 — modest activities (~10⁵-10⁶x slower than natural). Decade improvement directed evolution + design iteration. Yeh Baker Nature 2023 LuxSit luciferase: novel small luciferase substrate diphenylterazine — tighter binding pocket than natural Renilla, brighter signal. Other recent: serine hydrolase (Lauko 2025), Diels-Alderases (Yang 2023), retroaldolase. Active site rehearsal via theozymes → scaffolding via RFdiffusion conditional on motif. Limits: complex reactions multi-step, transition state energy still hard. Industrial applications: biocatalysis, green chemistry, novel-to-nature reactions. Codexis, Arzeda, Aralez Bio commercial.'
+          en: 'De novo enzyme design Baker IPD trajectory: early Kemp eliminase 2008, retro-aldolase, Diels-Alderase Science 2010 — modest activities (~10⁵-10⁶x slower than natural). Decade of improvement via directed evolution + design iteration. Yeh Baker Nature 2023 LuxSit luciferase: novel small luciferase with substrate diphenylterazine — tighter binding pocket than natural Renilla, brighter signal. Other recent: serine hydrolase (Lauko 2025), Diels-Alderases (Yang 2023), retroaldolase. Active site rehearsal via theozymes → scaffolding via RFdiffusion conditional on motif. Limits: complex multi-step reactions, transition state energies still hard. Industrial applications: biocatalysis, green chemistry, novel-to-nature reactions. Codexis, Arzeda, Aralez Bio commercial.'
+        objectives: [De novo enzymes]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: AI antibody design (Generate Biomedicines, Absci 2023+) approach é…
+          en: AI antibody design (Generate Biomedicines, Absci 2023+) approach is…
+        choices:
+          - Generative models proposing CDR sequences or full antibodies binding antigens, with experimental validation in zero-shot or few-shot settings
+          - Traditional hybridoma immunization without computational input
+          - Restricted to humanization of mouse antibodies post-discovery only
+          - Pure docking against fixed antibody scaffolds without sequence design
+        correctAnswer: Generative models proposing CDR sequences or full antibodies binding antigens, with experimental validation in zero-shot or few-shot settings
+        rationale:
+          pt: 'AI antibody design landscape 2023-2025: Absci Nat Biotech 2023 (zero-shot HER2 binders denovo), Generate Biomedicines (chroma-based), Xaira Therapeutics (founded 2024 $1B Foresite + Sequoia, Baker IPD-affiliated), Diamond Age Pharma, BioNTech/InstaDeep. Baker IPD RFdiffusion-Antibody 2024 (Bennett bioRxiv) — RFdiffusion fine-tuned para CDR loops conditional on antigen. Challenges: paratope-epitope specificity, somatic hypermutation-like optimization, developability (aggregation/immunogenicity/PK). Typical pipeline: target epitope → AI proposes CDR sequences → expression yeast/CHO → SPR/BLI affinity → developability assays → lead optimization. Vs traditional discovery: weeks vs anos potential. Validation against natural Ab repertoires (OAS Observed Antibody Space).'
+          en: 'AI antibody design landscape 2023-2025: Absci Nat Biotech 2023 (zero-shot HER2 binders de novo), Generate Biomedicines (chroma-based), Xaira Therapeutics (founded 2024 $1B Foresite + Sequoia, Baker IPD-affiliated), Diamond Age Pharma, BioNTech/InstaDeep. Baker IPD RFdiffusion-Antibody 2024 (Bennett bioRxiv) — RFdiffusion fine-tuned for CDR loops conditional on antigen. Challenges: paratope-epitope specificity, somatic hypermutation-like optimization, developability (aggregation/immunogenicity/PK). Typical pipeline: target epitope → AI proposes CDR sequences → expression yeast/CHO → SPR/BLI affinity → developability assays → lead optimization. Vs traditional discovery: weeks vs years potentially. Validation against natural Ab repertoires (OAS Observed Antibody Space).'
+        objectives: [AI antibody design]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Chroma (Ingraham/Generate Biomedicines Nature 2023) é…
+          en: Chroma (Ingraham/Generate Biomedicines Nature 2023) is…
+        choices:
+          - Programmable diffusion model for full-protein generation conditioned on symmetry, shape, distance, and natural-language-described function
+          - Sequence search engine over the Protein Data Bank without generative capability
+          - Microscopy-image classifier for live-cell phenotyping
+          - Random-walk molecular dynamics simulator
+        correctAnswer: Programmable diffusion model for full-protein generation conditioned on symmetry, shape, distance, and natural-language-described function
+        rationale:
+          pt: 'Chroma (Ingraham Baranov Costello Frappier Ramesh Vecchio Barber Sun Murphy Brown Wessel Acosta Patel Tien Yan-Sweat Reed Cabrera Galletti Quintero-Lyles Ohi Pelliccia Bjelkmar Lukin Beam Hwang Lee Lippow Lai-Galindes Generate Biomedicines Nature 2023): programmable generative diffusion model proteins. Conditioning APIs: symmetry (oligomer), shape (cylinders, blobs), substructure RMSD, sequence/structure motif, natural-language semantic via auxiliary classifiers (e.g., "ATPase fold"). Equivariant graph neural network architecture. Backbone diffusion + sequence design integrated. Validated experimentally novel monomers/oligomers Nature 2023. Generate Biomedicines Cambridge MA Flagship Pioneering. Clinical antibody candidates entering trials 2024-2025.'
+          en: 'Chroma (Ingraham Baranov Costello Frappier Ramesh Vecchio Barber Sun Murphy Brown Wessel Acosta Patel Tien Yan-Sweat Reed Cabrera Galletti Quintero-Lyles Ohi Pelliccia Bjelkmar Lukin Beam Hwang Lee Lippow Lai-Galindes Generate Biomedicines Nature 2023): programmable generative diffusion model for proteins. Conditioning APIs: symmetry (oligomer), shape (cylinders, blobs), substructure RMSD, sequence/structure motif, natural-language semantic via auxiliary classifiers (e.g., "ATPase fold"). Equivariant graph neural network architecture. Backbone diffusion + sequence design integrated. Validated experimentally with novel monomers/oligomers Nature 2023. Generate Biomedicines Cambridge MA, Flagship Pioneering. Clinical antibody candidates entering trials 2024-2025.'
+        objectives: [Chroma]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Hallucination / inversion design (Anishchenko/Baker Nature 2021) precursor approach foi…
+          en: Hallucination / inversion design (Anishchenko/Baker Nature 2021) precursor approach was…
+        choices:
+          - Gradient-based sequence optimization using AlphaFold/RoseTTAFold confidence as fitness, hallucinating novel folds before diffusion models existed
+          - Sequence design via simple BLAST sampling against known proteins
+          - Rosetta classical Monte Carlo design without neural networks
+          - Manual inspection of crystal structures only
+        correctAnswer: Gradient-based sequence optimization using AlphaFold/RoseTTAFold confidence as fitness, hallucinating novel folds before diffusion models existed
+        rationale:
+          pt: 'Hallucination design (Anishchenko Pellock Chidyausiku Ramelot Ovchinnikov Baker Nature 2021): pre-diffusion-era de novo design. Started com random sequence → gradient ascent network confidence (RoseTTAFold/AlphaFold pLDDT, pTM) via Monte Carlo or backprop → optimized sequence "hallucinated" para fold confidently. Structures novel folds não in PDB (sometimes). Limit: bias toward common folds, modest experimental success. Subsequent work: TrDesign (Norn 2021), constrained hallucination (Wang 2022 ScaffoldGuided). Substituído largely by diffusion (RFdiffusion 2023) — more controllable, higher success rate. Conceptual lineage: inversion of structure-prediction model into design tool — precursor of modern generative biology.'
+          en: 'Hallucination design (Anishchenko Pellock Chidyausiku Ramelot Ovchinnikov Baker Nature 2021): pre-diffusion-era de novo design. Started with random sequence → gradient ascent on network confidence (RoseTTAFold/AlphaFold pLDDT, pTM) via Monte Carlo or backprop → optimized sequence "hallucinated" to fold confidently. Structures of novel folds not in PDB (sometimes). Limits: bias toward common folds, modest experimental success. Subsequent work: TrDesign (Norn 2021), constrained hallucination (Wang 2022 ScaffoldGuided). Largely replaced by diffusion (RFdiffusion 2023) — more controllable, higher success rate. Conceptual lineage: inversion of structure-prediction model into design tool — precursor of modern generative biology.'
+        objectives: [Hallucination design]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Limitação atual generative protein design para enzymes complexos é…
+          en: Current limitation of generative protein design for complex enzymes is…
+        choices:
+          - Modeling transition-state energetics and catalytic chemistry remains hard, so multi-step or high-rate reactions still require directed evolution
+          - All enzymatic activities are now achievable in zero-shot without any optimization
+          - Inability to design any α-helical motif by current models
+          - No tools exist for sequence design from generated backbones
+        correctAnswer: Modeling transition-state energetics and catalytic chemistry remains hard, so multi-step or high-rate reactions still require directed evolution
+        rationale:
+          pt: 'Generative design enzymes — backbone scaffolding + sequence design solved largely (RFdiffusion + ProteinMPNN). Catalysis bottleneck: chemistry-aware energetics. Transition state stabilization sub-ångström geometry critical. AlphaFold trained ground-state structures, no quantum mechanical TS info. Theozymes (Houk theoretical active sites) inputs RFdiffusion mas energetics imperfect. Designed enzymes typically kcat/KM 10⁵-10⁶ slower than natural counterparts initially. Solutions: directed evolution post-design (Lauko 2025 serine hydrolase ~10⁴ improvement directed evolution), QM/MM refinement, ML-trained energy functions (e.g., FlowSite, PoseBusters). Multi-step reactions cofactors metal centers especially challenging. Active research frontier 2024-2025.'
+          en: 'Generative enzyme design — backbone scaffolding + sequence design largely solved (RFdiffusion + ProteinMPNN). Catalysis bottleneck: chemistry-aware energetics. Transition state stabilization at sub-ångström geometry is critical. AlphaFold trained on ground-state structures, no quantum mechanical TS info. Theozymes (Houk theoretical active sites) used as inputs to RFdiffusion but energetics imperfect. Designed enzymes typically kcat/KM 10⁵-10⁶ slower than natural counterparts initially. Solutions: directed evolution post-design (Lauko 2025 serine hydrolase ~10⁴ improvement directed evolution), QM/MM refinement, ML-trained energy functions (e.g., FlowSite, PoseBusters). Multi-step reactions, cofactors, metal centers especially challenging. Active research frontier 2024-2025.'
+        objectives: [Enzyme design limits]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Nobel Chemistry 2024 (Baker + Hassabis + Jumper) reconheceu…
+          en: 2024 Nobel in Chemistry (Baker + Hassabis + Jumper) recognized…
+        choices:
+          - Computational protein design (Baker) and AI-based protein structure prediction (Hassabis/Jumper AlphaFold) as paired pillars of modern protein science
+          - Discovery of CRISPR genome editing instead of protein design
+          - Vaccine development for COVID-19 mRNA technology
+          - Synthesis of new antibiotics from natural products
+        correctAnswer: Computational protein design (Baker) and AI-based protein structure prediction (Hassabis/Jumper AlphaFold) as paired pillars of modern protein science
+        rationale:
+          pt: 'Nobel Chemistry 2024 — half David Baker (Univ Washington IPD) "computational protein design", half Demis Hassabis + John Jumper (Google DeepMind) "protein structure prediction" (AlphaFold2). Reconhecimento simultâneo two complementary halves: Baker decade+ Rosetta + ML era de novo design (Top7 2003 first de novo fold, mini-proteins, vaccines, picomolar binders, enzymes); Hassabis/Jumper AlphaFold2 CASP14 2020 atomic accuracy structure-from-sequence. Inflection point biology becoming engineerable discipline. Other recent biology Nobels: 2020 Charpentier+Doudna CRISPR Chemistry; 2023 Karikó+Weissman Medicine mRNA vaccines; 2022 Bertozzi+Meldal+Sharpless click chemistry. Field generative biology ascendant.'
+          en: '2024 Nobel in Chemistry — half David Baker (Univ Washington IPD) "computational protein design", half Demis Hassabis + John Jumper (Google DeepMind) "protein structure prediction" (AlphaFold2). Recognized simultaneously two complementary halves: Baker decade+ Rosetta + ML era of de novo design (Top7 2003 first de novo fold, mini-proteins, vaccines, picomolar binders, enzymes); Hassabis/Jumper AlphaFold2 CASP14 2020 atomic accuracy structure-from-sequence. Inflection point — biology becoming an engineerable discipline. Other recent biology Nobels: 2020 Charpentier+Doudna CRISPR Chemistry; 2023 Karikó+Weissman Medicine mRNA vaccines; 2022 Bertozzi+Meldal+Sharpless click chemistry. Field of generative biology ascendant.'
+        objectives: [Nobel 2024]
+target: 20
