@@ -1,0 +1,346 @@
+title:
+  pt: Genética de Populações e Coalescente
+  en: Population Genetics and Coalescent Theory
+level: P
+subject: biology
+objectives:
+  - Compreender Hardy-Weinberg e equilíbrio
+  - Reconhecer modelos Wright-Fisher e Moran
+  - Identificar deriva, mutação, seleção, migração
+  - Avaliar coalescente de Kingman e inferência
+difficulty: 5
+authorNotes: |
+  Quantitative population genetics. Hardy-Weinberg 1908. Wright-Fisher model (Sewall Wright,
+  R.A. Fisher 1922-1930). J.B.S. Haldane. Moran model (Patrick Moran 1958). Kimura's neutral
+  theory 1968. Coalescent: J.F.C. Kingman 1982. Tajima's D 1989, Fst Wright. Effective
+  population size Ne. Linkage disequilibrium D, r². Selective sweeps. Hudson's ms simulator.
+  msprime (Kelleher 2016). Felsenstein PHYLIP, RAxML, BEAST. ABC (Approximate Bayesian
+  Computation), Beaumont. PSMC (Li/Durbin 2011) infers Ne over time from single diploid.
+  Gravel et al. 2011 OOA model. Pickrell/Pritchard ALDER for admixture. Patterson F-stats
+  ADMIXTOOLS. Reich/Pääbo ancient DNA.
+example:
+  question:
+    pt: O equilíbrio de Hardy-Weinberg, formalizado em 1908, prevê frequências genotípicas em uma população sob quais premissas?
+    en: The Hardy-Weinberg equilibrium, formalized in 1908, predicts genotype frequencies in a population under which assumptions?
+  choices:
+    - População infinita, acasalamento aleatório, sem mutação/seleção/migração, gerações discretas
+    - População finita pequena com seleção forte e migração constante observável
+    - Apenas em organismos haploides com reprodução assexuada exclusivamente
+    - Em humanos saudáveis exclusivamente sem qualquer outra espécie aplicável
+  correctAnswer: População infinita, acasalamento aleatório, sem mutação/seleção/migração, gerações discretas
+  rationale:
+    pt: Hardy-Weinberg (1908): se p, q são frequências alélicas, genótipos AA:p², Aa:2pq, aa:q² em equilíbrio sob premissas neutras. Desvios sinalizam atuação de forças evolutivas — base da genética populacional moderna.
+    en: Hardy-Weinberg (1908): if p, q are allele frequencies, genotypes AA:p², Aa:2pq, aa:q² at equilibrium under neutral assumptions. Deviations flag evolutionary forces — basis of modern population genetics.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Modelos clássicos
+      en: Page 1 — Classical models
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O modelo Wright-Fisher (Sewall Wright, R.A. Fisher anos 1920-30) descreve…
+          en: The Wright-Fisher model (Sewall Wright, R.A. Fisher 1920s-30s) describes…
+        choices:
+          - Amostragem binomial de alelos a cada geração discreta com tamanho populacional fixo N
+          - Crescimento exponencial sem qualquer limitação demográfica
+          - Reprodução sexual obrigatória com pares fixos por geração
+          - Migração contínua entre 100 demes idênticas em meta-populações
+        correctAnswer: Amostragem binomial de alelos a cada geração discreta com tamanho populacional fixo N
+        rationale:
+          pt: Wright-Fisher: a cada geração, 2N alelos são amostrados com reposição da pool anterior — frequência alélica varia binomialmente. Modelo discreto canônico para deriva genética; usado para derivar resultados como tempo médio de fixação, probabilidade de fixação.
+          en: Wright-Fisher: each generation, 2N alleles are sampled with replacement from the previous pool — allele frequency varies binomially. Canonical discrete model for genetic drift; used to derive results like mean fixation time and fixation probability.
+        objectives: [Wright-Fisher]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O modelo de Moran (Patrick Moran 1958), alternativa contínua ao Wright-Fisher, propõe…
+          en: The Moran model (Patrick Moran 1958), continuous alternative to Wright-Fisher, proposes…
+        choices:
+          - A cada passo, um indivíduo morre e outro reproduz, com gerações sobrepostas
+          - Reprodução obrigatoriamente discreta com pais e filhos imortais
+          - Crescimento populacional ilimitado sem qualquer restrição demográfica
+          - Apenas reprodução sexuada com homozigotia perfeita por geração
+        correctAnswer: A cada passo, um indivíduo morre e outro reproduz, com gerações sobrepostas
+        rationale:
+          pt: Moran: tempo contínuo, gerações sobrepostas; a cada passo escolhe-se aleatório um indivíduo para morrer e outro (possivelmente o mesmo) para se reproduzir. Resultados análogos ao WF mas com timescale × N (vs WF onde é × N gerações).
+          en: Moran: continuous time, overlapping generations; each step picks a random individual to die and another (possibly the same) to reproduce. Results analogous to WF but on a timescale of × N (vs × N generations in WF).
+        objectives: [Moran]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "teoria neutra" de Motoo Kimura (1968) propôs que…
+          en: Motoo Kimura's "neutral theory" (1968) proposed that…
+        choices:
+          - A maior parte da variação molecular é selectivamente neutra, dirigida por deriva genética
+          - Toda variação observada é dirigida por seleção natural exclusivamente
+          - Mutações neutras nunca se fixam em populações finitas
+          - Apenas mutações deletérias são relevantes em evolução molecular
+        correctAnswer: A maior parte da variação molecular é selectivamente neutra, dirigida por deriva genética
+        rationale:
+          pt: Kimura (Nature 1968) e King/Jukes (Science 1969) propuseram teoria neutra: maior parte das mutações fixadas é neutra, fixada por deriva. Explica relógio molecular constante e dN/dS ≈ 1 em maioria dos sítios — paradigma fundador da evolução molecular moderna.
+          en: Kimura (Nature 1968) and King/Jukes (Science 1969) proposed the neutral theory: most fixed mutations are neutral, fixed by drift. Explains constant molecular clock and dN/dS ≈ 1 at most sites — founding paradigm of modern molecular evolution.
+        objectives: [Neutralidade]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O coalescente de Kingman (1982) descreve…
+          en: Kingman's coalescent (1982) describes…
+        choices:
+          - Genealogia retrospectiva de uma amostra com tempos de coalescência exponenciais
+          - Reprodução prospectiva da população crescendo no tempo futuro
+          - Apenas mutação molecular sem qualquer estrutura genealógica
+          - Modelo determinístico sem qualquer componente estocástico
+        correctAnswer: Genealogia retrospectiva de uma amostra com tempos de coalescência exponenciais
+        rationale:
+          pt: Coalescente de Kingman: dado n linhagens amostradas, traça-se a genealogia retrospectivamente; pares coalescem a taxa C(k,2)/N ⇒ tempos exponenciais. Compatível com Wright-Fisher no limite N grande, n pequeno. Ferramenta fundamental para inferência populacional.
+          en: Kingman's coalescent: given n sampled lineages, trace genealogy backward; pairs coalesce at rate C(k,2)/N ⇒ exponential times. Consistent with Wright-Fisher in large-N, small-n limit. Foundational tool for population inference.
+        objectives: [Kingman coalescent]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "tamanho populacional efetivo" Ne…
+          en: The "effective population size" Ne concept…
+        choices:
+          - Reflete o tamanho idealizado WF que reproduziria a deriva observada na população real
+          - Equivale exatamente ao número de indivíduos no censo populacional
+          - É sempre maior que o censo por adicionar imigrantes potenciais
+          - Aplica-se apenas a humanos sem qualquer outra espécie
+        correctAnswer: Reflete o tamanho idealizado WF que reproduziria a deriva observada na população real
+        rationale:
+          pt: Ne é "tamanho de população idealizada que produziria a mesma magnitude de deriva". Tipicamente Ne << N (censo) por: variância na progeniade, viés sexual, gargalos, expansões, estrutura. Para humanos: Ne ≈ 10⁴ vs censo atual ~10¹⁰ — herdado de gargalos pré-históricos.
+          en: Ne is "idealized population size that would produce the same magnitude of drift". Typically Ne << N (census) due to: progeny variance, sex bias, bottlenecks, expansions, structure. For humans: Ne ≈ 10⁴ vs current census ~10¹⁰ — inherited from prehistoric bottlenecks.
+        objectives: [Ne]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A probabilidade de fixação de uma mutação neutra em população WF é…
+          en: Fixation probability of a neutral mutation in a WF population is…
+        choices:
+          - 1/(2N) para diploides, igual à frequência inicial do alelo na geração de origem
+          - 100% sempre, qualquer mutação neutra fixa-se eventualmente
+          - 0% sempre, mutações neutras nunca se fixam em populações finitas
+          - Depende exclusivamente da seleção, não da deriva
+        correctAnswer: 1/(2N) para diploides, igual à frequência inicial do alelo na geração de origem
+        rationale:
+          pt: Em deriva pura, prob de fixação = freq inicial. Mutação nova: 1 cópia em 2N alelos ⇒ p = 1/(2N). Resultado clássico de Kimura. Para alelos selecionados: P ≈ 2s para s pequeno (Haldane 1927) ou (1-e^(-2s))/(1-e^(-4Ns)).
+          en: Under pure drift, fixation prob = initial freq. New mutation: 1 copy in 2N alleles ⇒ p = 1/(2N). Classical Kimura result. For selected alleles: P ≈ 2s for small s (Haldane 1927) or (1-e^(-2s))/(1-e^(-4Ns)).
+        objectives: [Prob fixação]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Fst de Wright mede o quê em estrutura populacional?
+          en: Wright's Fst measures what in population structure?
+        choices:
+          - Diferenciação genética entre subpopulações vs variação total
+          - Apenas heterozigosidade média sem comparação inter-população
+          - Idade absoluta de divergência em milhões de anos
+          - Taxa de migração instantânea entre subpopulações
+        correctAnswer: Diferenciação genética entre subpopulações vs variação total
+        rationale:
+          pt: Fst = (Ht − Hs)/Ht onde Ht é heterozigosidade total, Hs subpopulações. Fst = 0 sem estrutura; 1 totalmente diferenciado. Fst humano global é ~0,1 (low); chimps ~0,3; cachorros entre raças muito alto. Base de inferência demográfica e ancestralidade.
+          en: Fst = (Ht − Hs)/Ht where Ht is total heterozygosity, Hs subpopulation. Fst = 0 means no structure; 1 fully differentiated. Global human Fst is ~0.1 (low); chimps ~0.3; dog breeds very high. Foundation of demographic and ancestry inference.
+        objectives: [Fst]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Tajima's D (1989) é um estatístico que detecta…
+          en: Tajima's D (1989) is a statistic that detects…
+        choices:
+          - Desvios da neutralidade comparando π (heterozigosidade) e θ_w (Watterson) baseado em SNPs
+          - Apenas idade absoluta de uma mutação sem teste estatístico
+          - Distância filogenética entre pares de espécies
+          - Frequência de migração entre demes em modelo island
+        correctAnswer: Desvios da neutralidade comparando π (heterozigosidade) e θ_w (Watterson) baseado em SNPs
+        rationale:
+          pt: Tajima's D = (π − θ_w)/√V. Sob neutralidade ≈ 0. D negativo: excesso de raros (varredura seletiva, expansão). D positivo: excesso de intermediários (seleção balanceada, contração). Não distingue entre seleção e demografia sozinho.
+          en: Tajima's D = (π − θ_w)/√V. Under neutrality ≈ 0. Negative D: excess of rare variants (selective sweep, expansion). Positive D: excess of intermediate (balancing selection, contraction). Cannot distinguish selection from demography alone.
+        objectives: [Tajima's D]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: PSMC (Li & Durbin 2011) infere o quê a partir de um único genoma diploide humano?
+          en: PSMC (Li & Durbin 2011) infers what from a single diploid human genome?
+        choices:
+          - Histórico do tamanho efetivo populacional Ne em escala temporal de milhões de anos
+          - Identidade exata dos pais biológicos
+          - Diagnóstico molecular de doenças raras pediátricas
+          - Apenas idade exata do indivíduo em anos cronológicos
+        correctAnswer: Histórico do tamanho efetivo populacional Ne em escala temporal de milhões de anos
+        rationale:
+          pt: PSMC (Pairwise Sequentially Markovian Coalescent, Li & Durbin Nature 2011) usa coalescência entre alelos materno/paterno em um diploide para reconstruir Ne(t). Revelou gargalo OOA humano ~50-100k atrás, expansão pós-Neolítica e mais — ferramenta paleo-demográfica.
+          en: PSMC (Pairwise Sequentially Markovian Coalescent, Li & Durbin Nature 2011) uses coalescence between maternal/paternal alleles in a diploid to reconstruct Ne(t). Revealed human OOA bottleneck ~50-100k ago, post-Neolithic expansion and more — paleo-demographic tool.
+        objectives: [PSMC]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "varredura seletiva" (selective sweep) é detectável por…
+          en: A "selective sweep" is detectable by…
+        choices:
+          - Vale de diversidade ao redor do alelo selecionado, com excesso de SNPs raros
+          - Pico de heterozigosidade exclusivo em apenas uma população
+          - Aumento massivo de frequência de SNPs neutros no cromossomo todo
+          - Apenas observação direta de mortalidade aumentada em controles
+        correctAnswer: Vale de diversidade ao redor do alelo selecionado, com excesso de SNPs raros
+        rationale:
+          pt: Hitchhiking: alelo benéfico fixa-se carreando alelos neutros vizinhos → "vale" de diversidade ao redor. Detectado por iHS, XP-EHH, SweepFinder, OmegaPlus. Exemplos clássicos: lactase (LCT) em europeus/africanos, EDAR em asiáticos.
+          en: Hitchhiking: a beneficial allele fixes carrying neighboring neutral alleles along → diversity "valley" around it. Detected by iHS, XP-EHH, SweepFinder, OmegaPlus. Classic examples: lactase (LCT) in Europeans/Africans, EDAR in Asians.
+        objectives: [Selective sweep]
+  - title:
+      pt: Página 2 — Inferência e aplicações
+      en: Page 2 — Inference and applications
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: msprime (Jerome Kelleher 2016) e SLiM (Haller/Messer) são simuladores que…
+          en: msprime (Jerome Kelleher 2016) and SLiM (Haller/Messer) are simulators that…
+        choices:
+          - Geram dados genéticos sob modelos demográficos/seletivos para teste de inferência
+          - Substituem completamente sequenciamento genômico real
+          - Detectam variantes patogênicas em pacientes diretamente
+          - Apenas visualizam árvores filogenéticas sem simulação
+        correctAnswer: Geram dados genéticos sob modelos demográficos/seletivos para teste de inferência
+        rationale:
+          pt: msprime: simulação coalescente eficiente em escala genômica (10⁹+ sites). SLiM: simulação forward-time com seleção complexa, fluxo gênico, demografia. Ambos cruciais para benchmark de métodos, ABC, calibração de modelos. msprime + tskit revolucionaram escala (Nature Genetics 2018).
+          en: msprime: efficient coalescent simulation at genomic scale (10⁹+ sites). SLiM: forward-time simulation with complex selection, gene flow, demography. Both crucial for benchmarking methods, ABC, model calibration. msprime + tskit revolutionized scale (Nature Genetics 2018).
+        objectives: [msprime SLiM]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ABC (Approximate Bayesian Computation, Beaumont 2002) é usado quando…
+          en: ABC (Approximate Bayesian Computation, Beaumont 2002) is used when…
+        choices:
+          - Likelihood é intratável; substituída por simulações comparadas a sumários estatísticos
+          - Likelihood é trivialmente analítica e ABC é equivalente direto
+          - Apenas para dados de RNA single-cell exclusivamente
+          - Substitui inferência bayesiana por frequentista clássica
+        correctAnswer: Likelihood é intratável; substituída por simulações comparadas a sumários estatísticos
+        rationale:
+          pt: ABC: simula sob modelo, calcula sumários (Fst, π, etc.), aceita parâmetros que produzem sumários próximos aos observados (distância < ε). Aproxima posterior bayesiana sem likelihood explícita — viabiliza inferência demográfica complexa (modelos não-Markovianos, com estrutura).
+          en: ABC: simulate under the model, compute summaries (Fst, π, etc.), accept parameters producing summaries close to observed (distance < ε). Approximates Bayesian posterior without explicit likelihood — enables complex demographic inference (non-Markovian, structured models).
+        objectives: [ABC]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "carga genética" (genetic load) refere-se a…
+          en: "Genetic load" refers to…
+        choices:
+          - Redução média de fitness por mutações deletérias acumuladas em uma população
+          - Total de mutações neutras existentes no genoma humano
+          - Tamanho absoluto do genoma em pares de bases
+          - Número de cromossomos por núcleo celular
+        correctAnswer: Redução média de fitness por mutações deletérias acumuladas em uma população
+        rationale:
+          pt: Genetic load (Crow, Kimura): redução de fitness vs ótimo teórico, devido a mutações deletérias mantidas por equilíbrio mutação-seleção. Componentes: mutational, segregational (heterozygote advantage), substitutional. Conceito central em populações pequenas (humanos OoA: maior carga em não-africanos).
+          en: Genetic load (Crow, Kimura): fitness reduction vs theoretical optimum due to deleterious mutations maintained at mutation-selection balance. Components: mutational, segregational (heterozygote advantage), substitutional. Central in small populations (humans OoA: higher load in non-Africans).
+        objectives: [Carga genética]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Arquitetura genética de doenças complexas (e.g. T2D, esquizofrenia) é tipicamente…
+          en: Genetic architecture of complex diseases (e.g., T2D, schizophrenia) is typically…
+        choices:
+          - Poligênica, com centenas-milhares de variantes comuns de pequeno efeito
+          - Monogênica como fibrose cística, com mutação única causal
+          - Apenas mitocondrial, sem qualquer participação nuclear
+          - Determinada por um único gene de efeito muito grande
+        correctAnswer: Poligênica, com centenas-milhares de variantes comuns de pequeno efeito
+        rationale:
+          pt: GWAS (10⁵-10⁶ amostras) revelou que doenças comuns têm centenas-milhares de SNPs com OR ~1.05-1.5; cada explica pouco, mas conjuntos (PRS) explicam 10-30% da herdabilidade. "Omnigenic" (Pritchard 2017) leva ao extremo: quase todo gene expresso contribui levemente.
+          en: GWAS (10⁵-10⁶ samples) revealed common diseases have hundreds-thousands of SNPs with OR ~1.05-1.5; each explains little, but ensembles (PRS) explain 10-30% of heritability. "Omnigenic" (Pritchard 2017) takes it to extreme: nearly every expressed gene contributes lightly.
+        objectives: [Arquitetura poligênica]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A herdabilidade h² estimada por gêmeos vs por SNP-array (h²_SNP, Yang/Visscher GREML) frequentemente diverge. Por quê?
+          en: Heritability h² estimated by twins vs SNP-array (h²_SNP, Yang/Visscher GREML) often diverges. Why?
+        choices:
+          - SNP-array captura apenas variação comum tagada; raras + epistasia + ambiente compartilhado restam
+          - Gêmeos têm sempre 100% acurácia em qualquer estimativa
+          - GREML é metodologicamente errado e não deve ser usado
+          - Apenas mtDNA contribui para herdabilidade humana real
+        correctAnswer: SNP-array captura apenas variação comum tagada; raras + epistasia + ambiente compartilhado restam
+        rationale:
+          pt: "Missing heritability" (Manolio 2009): h²_twin (e.g. esquizofrenia ~0.8) >> h²_SNP (~0.3). Causas: variantes raras não capturadas, epistasia não-aditiva, GxE, ambiente partilhado erroneamente atribuído. WGS + biobanks gigantes reduzem mas não eliminam.
+          en: "Missing heritability" (Manolio 2009): h²_twin (e.g., schizophrenia ~0.8) >> h²_SNP (~0.3). Causes: untagged rare variants, non-additive epistasis, GxE, shared environment misattributed. WGS + huge biobanks narrow but don't eliminate the gap.
+        objectives: [Missing heritability]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O modelo Out-of-Africa (OOA) humano refinado por Gravel et al. 2011, Pickrell et al. estima que…
+          en: The human Out-of-Africa (OOA) model refined by Gravel et al. 2011, Pickrell et al. estimates that…
+        choices:
+          - Diversificação fora da África ~50-70k anos atrás com gargalo, pós-bantu expansion na África
+          - Origem multirregional simultânea em Europa, Ásia e África independentemente
+          - Saída da África há 1 milhão de anos sem qualquer evento posterior relevante
+          - Origem extraterrestre via panspermia em todos os modelos demográficos
+        correctAnswer: Diversificação fora da África ~50-70k anos atrás com gargalo, pós-bantu expansion na África
+        rationale:
+          pt: Modelos OOA (Gravel/Reich/Henn) calibrados em coalescente: humanos saíram da África ~50-70k atrás, com gargalo (Ne ~1k); diversificação posterior em Eurásia. Bantu expansion ~3-5k atrás levou populações da África subsaariana ao sul/leste. Ancient DNA (Pääbo, Reich) refinou pulsos de Neanderthal/Denisovan.
+          en: OOA models (Gravel/Reich/Henn) calibrated on coalescent: humans left Africa ~50-70k ago, with bottleneck (Ne ~1k); subsequent diversification in Eurasia. Bantu expansion ~3-5k ago took sub-Saharan African populations south/east. Ancient DNA (Pääbo, Reich) refined Neanderthal/Denisovan pulses.
+        objectives: [OOA]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Pääbo et al. demonstraram introgressão de Neandertal no homem moderno via…
+          en: Pääbo et al. showed Neanderthal introgression into modern humans via…
+        choices:
+          - ~2% de DNA neandertal em não-africanos derivado de hibridização ~50-60k anos atrás
+          - Ausência total de qualquer DNA neandertal em humanos atuais
+          - 50% de DNA neandertal em africanos exclusivamente
+          - Ancestralidade neandertal igual em todas as populações humanas modernas
+        correctAnswer: ~2% de DNA neandertal em não-africanos derivado de hibridização ~50-60k anos atrás
+        rationale:
+          pt: Green/Pääbo (Science 2010) sequenciou genoma neandertal e mostrou ~2% em não-africanos (não em africanos). Africanos têm <0,5% via fluxo reverso (introgressão de não-africanos retornando). Pääbo Nobel Medicina 2022 pela paleogenômica. Denisovan introgressão até 5% em melanésios.
+          en: Green/Pääbo (Science 2010) sequenced the Neanderthal genome and showed ~2% in non-Africans (not in Africans). Africans have <0.5% via reverse flow (introgression from non-Africans returning). Pääbo 2022 Medicine Nobel for paleogenomics. Denisovan introgression up to 5% in Melanesians.
+        objectives: [Neandertal]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O F-stats (D-statistic, F4-ratio) de Patterson/Reich/Pickrell são úteis para…
+          en: F-stats (D-statistic, F4-ratio) by Patterson/Reich/Pickrell are useful for…
+        choices:
+          - Detectar e quantificar admixtura entre populações com base em frequências alélicas compartilhadas
+          - Apenas calcular heterozigosidade média individual
+          - Diagnóstico clínico de doenças autossômicas recessivas
+          - Substituir totalmente PSMC e ABC em qualquer caso
+        correctAnswer: Detectar e quantificar admixtura entre populações com base em frequências alélicas compartilhadas
+        rationale:
+          pt: D-stat: testa se topologia (((P1, P2), P3), Outgroup) é simétrica; D ≠ 0 ⇒ fluxo P3 → P1 ou P2. F4-ratio: estima proporção de admixtura. ADMIXTOOLS (Patterson 2012) é pacote padrão. Aplicações: introgressão neandertal, ancestralidade europeia (Yamnaya, EEF, WHG), detalhes em Reich's "Who We Are".
+          en: D-stat: tests symmetry of topology (((P1, P2), P3), Outgroup); D ≠ 0 ⇒ P3 → P1 or P2 flow. F4-ratio: estimates admixture proportion. ADMIXTOOLS (Patterson 2012) is the standard package. Applications: Neanderthal introgression, European ancestry (Yamnaya, EEF, WHG), details in Reich's "Who We Are".
+        objectives: [F-stats]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "isolation by distance" (Wright 1943) prevê que…
+          en: "Isolation by distance" (Wright 1943) predicts that…
+        choices:
+          - Diferenciação genética cresce com distância geográfica em populações com migração espacialmente restrita
+          - Não há qualquer correlação entre genética e geografia em qualquer espécie
+          - Espécies migram aleatoriamente sem qualquer estrutura espacial
+          - Apenas população insular tem qualquer estrutura genética detectável
+        correctAnswer: Diferenciação genética cresce com distância geográfica em populações com migração espacialmente restrita
+        rationale:
+          pt: IBD: dispersão limitada por gerações causa correlação positiva entre Fst (ou diferença genética) e distância geográfica. Humanos: pico em África e expansão linear via Eurásia (Ramachandran 2005); plantas, peixes, mamíferos seguem padrão. EEMS (Petkova 2016) infere paisagens de fluxo gênico.
+          en: IBD: limited per-generation dispersal causes positive correlation between Fst (or genetic distance) and geographic distance. Humans: peak in Africa and linear expansion across Eurasia (Ramachandran 2005); plants, fish, mammals follow the pattern. EEMS (Petkova 2016) infers gene-flow landscapes.
+        objectives: [Isolation by distance]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "neutralidade quase neutra" de Tomoko Ohta (1973) propôs…
+          en: Tomoko Ohta's "nearly neutral theory" (1973) proposed…
+        choices:
+          - Mutações com |s| ≤ 1/Ne comportam-se efetivamente como neutras, dependendo de Ne
+          - Apenas mutações estritamente neutras existem em qualquer organismo
+          - Seleção positiva domina toda a evolução molecular
+          - Mutações deletérias nunca se fixam em qualquer condição
+        correctAnswer: Mutações com |s| ≤ 1/Ne comportam-se efetivamente como neutras, dependendo de Ne
+        rationale:
+          pt: Ohta (Nature 1973): mutações ligeiramente deletérias (|Ns| < 1) podem fixar-se por deriva, especialmente em pop pequenas. Refinou Kimura: explica taxas de evolução variáveis entre lineagens (e.g. mtDNA evolui mais rápido em pequenos mamíferos), e excesso de raras pseudogenes.
+          en: Ohta (Nature 1973): slightly deleterious mutations (|Ns| < 1) can fix by drift, especially in small populations. Refined Kimura: explains variable evolution rates across lineages (e.g., mtDNA evolves faster in small mammals) and excess rare pseudogenes.
+        objectives: [Quase neutralidade]
+target: 20
