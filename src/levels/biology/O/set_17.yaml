@@ -1,0 +1,348 @@
+title:
+  pt: Vacinologia 2.0 — mRNA, Personalizada e Pandêmica
+  en: Vaccinology 2.0 — mRNA, Personalized, and Pandemic
+level: O
+subject: biology
+objectives:
+  - Compreender plataformas mRNA, saRNA, vetores virais
+  - Reconhecer mRNA oncológico personalizado
+  - Identificar marcos (R21 malária, Abrysvo RSV, mpox)
+  - Avaliar PPR pandemia e CEPI 100 Days Mission
+difficulty: 5
+authorNotes: |
+  Frontier vaccinology. Karikó/Weissman 2005 modified nucleosides → 2023 Nobel Medicine.
+  COVID mRNA: BNT162b2 (Pfizer/BioNTech), mRNA-1273 (Moderna). Cancer mRNA: BioNTech/Genentech
+  individualized neoantigen pancreatic Rojas 2023 NEJM/Nature. mRNA-4157 (Moderna+Merck)
+  +pembro melanoma adjuvant Ph2b (KEYNOTE-942 2022 ASCO 44% recurrence reduction). RSV: Pfizer
+  Abrysvo (FDA May 2023, maternal Aug 2023), GSK Arexvy (May 2023), Moderna mRNA-1345 (May 2024).
+  CMV mRNA-1647 Moderna Ph3 CMVictory. Malaria: RTS,S/Mosquirix (GSK, WHO endorsed Oct 2021),
+  R21/Matrix-M (Oxford/SII, WHO Oct 2023 recommendation 75% efficacy). Mpox 2022-2024 outbreaks,
+  Jynneos vaccine. CEPI 100 Days Mission. Pandemic Treaty WHO 2024 (incomplete). saRNA:
+  Replicon-derived self-amplifying. Norwood/Pollard universal flu approach (HA stem). Vaccine
+  hesitancy as challenge. Antibodies vs T-cells in correlates of protection.
+example:
+  question:
+    pt: Em outubro de 2023, Katalin Karikó e Drew Weissman receberam o Nobel de Medicina pela descoberta que viabilizou as vacinas mRNA contra COVID. Qual descoberta?
+    en: In October 2023, Katalin Karikó and Drew Weissman won the Medicine Nobel for the discovery that enabled COVID mRNA vaccines. Which discovery?
+  choices:
+    - Substituir uridina por pseudouridina (e depois N1-metil-pseudouridina) elimina ativação imune inata e aumenta tradução
+    - Encapsular mRNA em LNP de PEG e ionizáveis lipídeos para entrega celular
+    - Adicionar 5' cap análogo m7G para estabilidade da molécula em soro
+    - Usar UTR do α-globina para prolongar vida do mRNA em citoplasma
+  correctAnswer: Substituir uridina por pseudouridina (e depois N1-metil-pseudouridina) elimina ativação imune inata e aumenta tradução
+  rationale:
+    pt: Karikó & Weissman (Immunity 2005) descobriram que substituir U por Ψ no mRNA evitava ativação de TLR7/8/RIG-I — eliminando inflamação inata e aumentando tradução. Pfizer/BioNTech e Moderna usam m1Ψ. Decisivo para COVID e cancer mRNA. Nobel 2023.
+    en: Karikó & Weissman (Immunity 2005) found that substituting U with Ψ in mRNA avoided TLR7/8/RIG-I activation — eliminating innate inflammation and boosting translation. Pfizer/BioNTech and Moderna use m1Ψ. Decisive for COVID and cancer mRNA. 2023 Nobel.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Plataformas e mRNA
+      en: Page 1 — Platforms and mRNA
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A vacina BNT162b2 (Pfizer/BioNTech) e mRNA-1273 (Moderna) entregam mRNA codificando…
+          en: BNT162b2 (Pfizer/BioNTech) and mRNA-1273 (Moderna) deliver mRNA encoding…
+        choices:
+          - Spike completo estabilizado em pré-fusão por mutações 2P (Pro-Pro)
+          - Apenas o domínio RBD do Spike sem qualquer estabilização conformacional
+          - Nucleoproteína N do SARS-CoV-2 imunogênica internamente apenas
+          - Polimerase RdRp viral como alvo de imunidade celular dominante
+        correctAnswer: Spike completo estabilizado em pré-fusão por mutações 2P (Pro-Pro)
+        rationale:
+          pt: Ambas vacinas codificam Spike full-length com mutações 2P (K986P/V987P) que travam pré-fusão (McLellan/Graham), conformação que melhor expõe epítopos neutralizantes. Booster XBB.1.5 (2023) usou Spike de Omicron monovalente.
+          en: Both vaccines encode full-length Spike with 2P mutations (K986P/V987P) locking pre-fusion (McLellan/Graham), the conformation that best exposes neutralizing epitopes. The XBB.1.5 booster (2023) used monovalent Omicron Spike.
+        objectives: [BNT162b2]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O componente lipídico ionizável das LNPs vacinais (e.g., ALC-0315 em BNT162b2) tem qual função crítica?
+          en: The ionizable lipid in vaccine LNPs (e.g., ALC-0315 in BNT162b2) has which critical function?
+        choices:
+          - Tornar-se positivo em pH endossomal liberando mRNA por desestabilização da membrana
+          - Conferir tropismo direto a linfócitos T após injeção intramuscular
+          - Substituir adjuvante clássico de alumínio em vacinas tradicionais
+          - Garantir alta termoestabilidade mesmo em temperatura ambiente
+        correctAnswer: Tornar-se positivo em pH endossomal liberando mRNA por desestabilização da membrana
+        rationale:
+          pt: Lipídeos ionizáveis (Pieter Cullis legado) são neutros a pH 7.4 (sangue) — minimizando toxicidade — mas protonam-se em pH 5-6 endossomal, fundindo com membrana e permitindo escape do mRNA ao citosol. Componentes adicionais: PEG, colesterol, fosfolipídio neutro.
+          en: Ionizable lipids (Pieter Cullis legacy) are neutral at pH 7.4 (blood) — minimizing toxicity — but protonate at endosomal pH 5-6, fusing with membrane and enabling mRNA escape to cytosol. Other components: PEG, cholesterol, neutral phospholipid.
+        objectives: [Lipídeo ionizável]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O ensaio KEYNOTE-942 (2022 ASCO), com mRNA-4157 (Moderna) + pembrolizumab adjuvante em melanoma, mostrou…
+          en: KEYNOTE-942 (2022 ASCO), with mRNA-4157 (Moderna) + pembrolizumab adjuvant in melanoma, showed…
+        choices:
+          - Redução de ~44% na recidiva em alto risco vs pembrolizumab sozinho
+          - Aumento de toxicidade fatal sem qualquer benefício de eficácia
+          - Eficácia idêntica a placebo, encerrando o programa precocemente
+          - Apenas resposta em portadores de HLA-A*02:01 sem outros benefícios
+        correctAnswer: Redução de ~44% na recidiva em alto risco vs pembrolizumab sozinho
+        rationale:
+          pt: KEYNOTE-942 (Khattak 2022 ASCO; Weber 2023 NEJM) randomizou 157 pacientes melanoma adjuvante; mRNA-4157 (até 34 neoantígenos personalizados) + pembro reduziu recidiva ~44% e morte por câncer ~65% vs pembro sozinho. Ph3 INTerpath-001 em curso 2024+.
+          en: KEYNOTE-942 (Khattak 2022 ASCO; Weber 2023 NEJM) randomized 157 adjuvant melanoma patients; mRNA-4157 (up to 34 personalized neoantigens) + pembro cut recurrence ~44% and cancer death ~65% vs pembro alone. Ph3 INTerpath-001 ongoing 2024+.
+        objectives: [mRNA-4157]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O autotransplante BioNTech/Genentech para câncer pancreático (Rojas et al., Nature 2023) demonstrou…
+          en: The BioNTech/Genentech autologous trial for pancreatic cancer (Rojas et al., Nature 2023) showed…
+        choices:
+          - Vacina autogene cevumeran induziu T-cells neoantígeno-específicas em 8/16, com sobrevida prolongada nos respondedores
+          - Cura completa em 16/16 pacientes operados sem qualquer recidiva
+          - Falha total sem qualquer detecção de imunidade celular específica
+          - Efeito apenas em pacientes com tumor microsatellite-instável (MSI-high)
+        correctAnswer: Vacina autogene cevumeran induziu T-cells neoantígeno-específicas em 8/16, com sobrevida prolongada nos respondedores
+        rationale:
+          pt: Rojas/Balachandran (Nature 2023) tratou 16 pacientes pós-Whipple com mRNA neoantígeno personalizado + atezolizumab + chemo; 8/16 mostraram resposta T forte e durável (≥18 meses RFS), vs sem expansão T pior — primeiro sucesso de mRNA vaccine em câncer "frio".
+          en: Rojas/Balachandran (Nature 2023) treated 16 post-Whipple patients with personalized neoantigen mRNA + atezolizumab + chemo; 8/16 showed strong durable T response (≥18-month RFS), vs no expansion patients worse — first mRNA-vaccine success in a "cold" cancer.
+        objectives: [Pancreático mRNA]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "saRNA" (mRNA auto-amplificável) difere do mRNA convencional por…
+          en: "saRNA" (self-amplifying mRNA) differs from conventional mRNA in that…
+        choices:
+          - Codifica também a replicase do alfavírus, replicando-se no citoplasma da célula transfectada
+          - Inclui DNA dependente que se integra ao genoma do hospedeiro permanentemente
+          - Encapsula vírus completo atenuado dentro de LNP padrão
+          - Necessita coadministração com retrovírus para replicação intracelular
+        correctAnswer: Codifica também a replicase do alfavírus, replicando-se no citoplasma da célula transfectada
+        rationale:
+          pt: saRNA (e.g. baseado em VEEV) codifica nsP1-4 (replicase de alfavírus) + antígeno; uma vez no citoplasma replica-se gerando muito mais antígeno por dose menor. Aprovação Arcturus ARCT-154 (KOSTAIVE) Japão fev/2024 — primeiro saRNA aprovado.
+          en: saRNA (e.g., VEEV-based) encodes nsP1-4 (alphavirus replicase) + antigen; once in cytoplasm it self-replicates, yielding far more antigen per smaller dose. Arcturus ARCT-154 (KOSTAIVE) approved in Japan Feb 2024 — first approved saRNA.
+        objectives: [saRNA]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A vacina malárica R21/Matrix-M (Oxford/SII), recomendada pela WHO em out/2023, atinge eficácia notável de…
+          en: R21/Matrix-M malaria vaccine (Oxford/SII), WHO-recommended Oct 2023, reaches a notable efficacy of…
+        choices:
+          - ~75% contra primeiro episódio em crianças em África sazonal alta-transmissão
+          - 100% contra qualquer infecção em adultos saudáveis sem dosagem
+          - 50% contra mortalidade exclusivamente em adultos > 65 anos
+          - <10%, considerada modesta mas significativa estatisticamente
+        correctAnswer: ~75% contra primeiro episódio em crianças em África sazonal alta-transmissão
+        rationale:
+          pt: R21/Matrix-M (Datoo/Tinto/Hill, Lancet 2023) em Burkina Faso e ensaios multinacionais atingiu ~75% eficácia em transmissão sazonal — superior a RTS,S/Mosquirix (GSK, ~30-40%). WHO recomenda; SII produz a custo baixo (US$3-4/dose). Distribuição em Camarões, Burkina Faso 2024.
+          en: R21/Matrix-M (Datoo/Tinto/Hill, Lancet 2023) in Burkina Faso and multinational trials reached ~75% efficacy in seasonal transmission — superior to RTS,S/Mosquirix (GSK, ~30-40%). WHO recommends; SII produces at low cost (US$3-4/dose). Roll-out in Cameroon, Burkina Faso in 2024.
+        objectives: [R21]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Pfizer Abrysvo (RSVpreF, FDA mai/2023) é primeiro vacina aprovada para que população nova?
+          en: Pfizer Abrysvo (RSVpreF, FDA May 2023) is the first vaccine approved for which new population?
+        choices:
+          - Idosos ≥60 e gestantes (32-36 sem) para proteção neonatal por anticorpos transplacentários
+          - Crianças <2 anos exclusivamente como prevenção primária
+          - Adolescentes em coorte universal sem qualquer fator de risco
+          - Apenas pacientes oncológicos imunocomprometidos pré-quimio
+        correctAnswer: Idosos ≥60 e gestantes (32-36 sem) para proteção neonatal por anticorpos transplacentários
+        rationale:
+          pt: Abrysvo, vacina baseada em F estabilizada pré-fusão (DS-Cav1-like), aprovada FDA mai/2023 para idosos e ago/2023 para gestantes (MATISSE NEJM 2023, eficácia ~82% contra hospitalização severa em <90 dias). GSK Arexvy, Moderna mRNA-1345 também aprovados.
+          en: Abrysvo, a pre-fusion-stabilized F vaccine (DS-Cav1-like), was FDA-approved May 2023 for older adults and Aug 2023 for pregnancy (MATISSE NEJM 2023, ~82% efficacy vs severe hospitalization in <90 days). GSK Arexvy, Moderna mRNA-1345 also approved.
+        objectives: [Abrysvo RSV]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Universal flu vaccines com foco em "HA stem" (haste) buscam resolver qual problema antigênico?
+          en: HA-stem-focused universal flu vaccines aim to solve which antigenic problem?
+        choices:
+          - HA-head varia com antigenic drift/shift; HA-stem é conservada entre subtipos e gera proteção amplo-espectro
+          - HA-stem é totalmente inacessível a anticorpos sem qualquer mecanismo neutralizante
+          - HA-head é conservada universalmente entre influenzas, dispensando atualização anual
+          - O alvo correto seria neuraminidase apenas, sem qualquer relação com HA
+        correctAnswer: HA-head varia com antigenic drift/shift; HA-stem é conservada entre subtipos e gera proteção amplo-espectro
+        rationale:
+          pt: HA-head é imunodominante mas hipervariável; HA-stem é conservada entre H1, H3 e até influenzas A/B. Vacinas com nanopartículas só-stem (Yassine/Graham), saRNA-stem (Pollard/Norwood), mRNA-multivalente HA-stem buscam imunidade durável amplo-espectro.
+          en: HA-head is immunodominant but hypervariable; HA-stem is conserved across H1, H3, and even influenza A/B. Stem-only nanoparticle vaccines (Yassine/Graham), saRNA-stem (Pollard/Norwood), mRNA-multivalent HA-stem aim for durable broad-spectrum immunity.
+        objectives: [Universal flu]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O programa "100 Days Mission" da CEPI/G7 visa…
+          en: The CEPI/G7 "100 Days Mission" aims to…
+        choices:
+          - Desenvolver vacina contra novo patógeno pandêmico em ≤100 dias após sequenciamento do genoma
+          - Vacinar 100% da população global em 100 dias após início de qualquer pandemia
+          - Reduzir mortalidade global em 100% sem vacinação obrigatória universal
+          - Eliminar doenças tropicais negligenciadas em 100 dias por ano
+        correctAnswer: Desenvolver vacina contra novo patógeno pandêmico em ≤100 dias após sequenciamento do genoma
+        rationale:
+          pt: 100 Days Mission (CEPI/Richard Hatchett 2021) propõe biblioteca prototípica + plataformas mRNA/saRNA + processos regulatórios pré-acordados para entregar vacina seguro-eficaz em 100 dias após sequenciamento. COVID levou ~330 dias; mira é melhorar dramaticamente.
+          en: 100 Days Mission (CEPI/Richard Hatchett 2021) proposes a prototype library + mRNA/saRNA platforms + pre-agreed regulatory processes to deliver a safe-effective vaccine within 100 days after sequencing. COVID took ~330 days; the goal is dramatic improvement.
+        objectives: [100 Days Mission]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "moratória" do Tratado Pandêmico da WHO em 2024 reflete que…
+          en: The 2024 WHO Pandemic Treaty stalemate reflects that…
+        choices:
+          - Países discordam sobre acesso equitativo a contramedidas e compartilhamento de patógenos/sequências
+          - WHO foi extinta tornando o tratado tecnicamente impossível
+          - Vacinas mRNA seriam proibidas internacionalmente pelo tratado
+          - Os EUA isoladamente vetaram qualquer cooperação por motivo bilateral
+        correctAnswer: Países discordam sobre acesso equitativo a contramedidas e compartilhamento de patógenos/sequências
+        rationale:
+          pt: WHA77 (mai/2024) não fechou Tratado Pandêmico; Sul Global pediu garantias firmes de acesso a vacinas em troca de compartilhamento de patógenos/sequências (PABS); países desenvolvidos relutaram. Negociações continuam em 2024-2025; emendas a IHR foram aprovadas separadamente.
+          en: WHA77 (May 2024) didn't close the Pandemic Treaty; the Global South demanded firm access guarantees for vaccines in exchange for pathogen/sequence sharing (PABS); developed countries balked. Negotiations continue 2024-2025; IHR amendments passed separately.
+        objectives: [Tratado pandêmico]
+  - title:
+      pt: Página 2 — Próximos passos e desafios
+      en: Page 2 — Next steps and challenges
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A Moderna mRNA-1647 contra citomegalovírus (CMV) é importante porque…
+          en: Moderna mRNA-1647 against cytomegalovirus (CMV) is important because…
+        choices:
+          - CMV congênito é causa principal de surdez e deficiência neurológica neonatal sem vacina aprovada até hoje
+          - CMV é causa frequente de meningite bacteriana em adolescentes
+          - Apenas pacientes oncológicos sob quimio precisam vacina
+          - CMV é vetor de COVID-19 e a vacina seria primária para pandemia
+        correctAnswer: CMV congênito é causa principal de surdez e deficiência neurológica neonatal sem vacina aprovada até hoje
+        rationale:
+          pt: CMV é causa principal de surdez/deficiência cognitiva por infecção congênita (~1 em 200 nascimentos infectados); nenhuma vacina aprovada até o presente. mRNA-1647 (Moderna, pentamer + gB) está em Ph3 CMVictory; resultados aguardados 2024-2025.
+          en: CMV is a leading cause of deafness/cognitive impairment via congenital infection (~1 in 200 newborns infected); no vaccine yet approved. mRNA-1647 (Moderna, pentamer + gB) is in Ph3 CMVictory; results awaited 2024-2025.
+        objectives: [CMV mRNA-1647]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O surto global de mpox (2022-) foi controlado em parte por uso da vacina Jynneos, baseada em…
+          en: The 2022- global mpox outbreak was partly controlled by Jynneos vaccine, based on…
+        choices:
+          - Vaccinia Ankara modificada (MVA-BN), variante atenuada não-replicante de poxvírus
+          - mRNA codificando glicoproteína de envelope do mpox específica
+          - Vetor adenoviral expressando antígenos múltiplos do orthopox
+          - Vírus inativado de varíola humana clássica reaproveitado em estoques antigos
+        correctAnswer: Vaccinia Ankara modificada (MVA-BN), variante atenuada não-replicante de poxvírus
+        rationale:
+          pt: Jynneos (Bavarian Nordic, MVA-BN) é vaccinia Ankara modificada, replicação-deficiente, segura em imunocomprometidos. FDA aprovou para mpox+varíola (2019). Surto 2022-2024 (clade IIb) e clade I (RDC 2024) drenou estoques; WHO declarou PHEIC ago/2024.
+          en: Jynneos (Bavarian Nordic, MVA-BN) is modified vaccinia Ankara, replication-deficient, safe in immunocompromised. FDA-approved for mpox+smallpox (2019). The 2022-2024 outbreak (clade IIb) and clade I (DRC 2024) drained stocks; WHO declared PHEIC Aug 2024.
+        objectives: [Jynneos mpox]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "correlate of protection" em vacinologia é importante porque…
+          en: The "correlate of protection" concept in vaccinology is important because it…
+        choices:
+          - Permite aprovar boosters/variantes via imunobridging sem ensaio clínico de eficácia completo
+          - Substitui qualquer ensaio clínico para qualquer indicação infecciosa
+          - É exclusivamente válido para vacinas de DNA sem outras plataformas
+          - Aplica-se apenas a vacinas pediátricas em rotina
+        correctAnswer: Permite aprovar boosters/variantes via imunobridging sem ensaio clínico de eficácia completo
+        rationale:
+          pt: Correlato (e.g. anticorpos neutralizantes para influenza, sarampo, COVID) permite imunobridging: comparar imunogenicidade do novo produto vs licenciado, evitando ensaios randomizados grandes. Crítico para boosters anuais COVID/flu, novas variantes e pandemias.
+          en: Correlates (e.g. neutralizing antibodies for influenza, measles, COVID) enable immunobridging: comparing immunogenicity of new product vs licensed, avoiding large randomized trials. Critical for annual COVID/flu boosters, new variants, and pandemics.
+        objectives: [Correlate of protection]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em terapia oncológica, a vantagem de mRNA personalizado vs peptídeos sintéticos como vacina é…
+          en: In oncology, the advantage of personalized mRNA vs synthetic peptides as a vaccine is…
+        choices:
+          - mRNA codifica múltiplos neoantígenos com processamento celular natural e apresentação em HLA-I e II
+          - Peptídeos não funcionam em qualquer paciente humano por princípio
+          - mRNA elimina a necessidade de identificar neoantígenos previamente por sequenciamento
+          - mRNA é mais antigo e tem custo radicalmente inferior aos peptídeos
+        correctAnswer: mRNA codifica múltiplos neoantígenos com processamento celular natural e apresentação em HLA-I e II
+        rationale:
+          pt: mRNA permite codificar 20-34 neoantígenos em uma molécula (BioNTech autogene cevumeran, Moderna mRNA-4157); ribossomos traduzem, proteassoma processa, peptídeos apresentados em HLA-I/II — recrutando CD8 e CD4. Peptídeos sintéticos requerem síntese química e adjuvante separado.
+          en: mRNA can encode 20-34 neoantigens in one molecule (BioNTech autogene cevumeran, Moderna mRNA-4157); ribosomes translate, proteasome processes, peptides are presented on HLA-I/II — recruiting CD8 and CD4. Synthetic peptides need chemical synthesis and separate adjuvant.
+        objectives: [mRNA vs peptídeos]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Um desafio térmico clássico de mRNA-LNP é…
+          en: A classic thermal challenge of mRNA-LNP is…
+        choices:
+          - Necessidade de cadeia ultra-fria (-70°C BNT162b2 inicial), motivando esforços de termoestabilidade
+          - Total destruição em qualquer temperatura abaixo de zero
+          - Estabilidade indefinida em temperatura ambiente sem refrigeração
+          - Aumento progressivo da eficácia em temperaturas altas
+        correctAnswer: Necessidade de cadeia ultra-fria (-70°C BNT162b2 inicial), motivando esforços de termoestabilidade
+        rationale:
+          pt: BNT162b2 inicial: -70°C; Moderna -20°C; reformulações reduzem para refrigerada (2-8°C). LNPs liofilizadas, novos lipídeos e excipientes (trealose, sucrose) buscam estabilidade ambiente — crítico para campanhas em LMIC sem cadeia ultra-fria.
+          en: Initial BNT162b2: -70°C; Moderna -20°C; reformulations reduce to refrigerated (2-8°C). Lyophilized LNPs, new lipids and excipients (trehalose, sucrose) target ambient stability — critical for LMIC campaigns lacking ultra-cold chain.
+        objectives: [Cadeia fria]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "miocardite associada a mRNA" foi observada principalmente em…
+          en: "mRNA-associated myocarditis" was observed mainly in…
+        choices:
+          - Homens jovens (16-29 anos) após segunda dose, frequência ~1/15-50 mil, geralmente leve e transitória
+          - Idosos >70 anos exclusivamente sem qualquer caso pediátrico
+          - 50% dos vacinados em qualquer idade com mortalidade alta
+          - Apenas pacientes com doença cardíaca prévia e nunca em saudáveis
+        correctAnswer: Homens jovens (16-29 anos) após segunda dose, frequência ~1/15-50 mil, geralmente leve e transitória
+        rationale:
+          pt: Sinal de segurança identificado em 2021: miocardite/pericardite após 2ª dose mRNA em homens jovens, ~1/15-50k, geralmente autolimitada. Mecanismo proposto: imunidade cruzada/inflamação local. Risco-benefício remane positivo, mas modulou recomendações de spacing/dose em alguns países.
+          en: Safety signal identified in 2021: myocarditis/pericarditis after 2nd mRNA dose in young males, ~1/15-50k, generally self-limited. Proposed mechanism: cross-immunity/local inflammation. Risk-benefit remains positive, but adjusted spacing/dose recommendations in some countries.
+        objectives: [Miocardite]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "imunidade híbrida" (vacinação + infecção natural) demonstrou em coortes COVID que…
+          en: "Hybrid immunity" (vaccination + natural infection) showed in COVID cohorts that…
+        choices:
+          - Combinação gera anticorpos neutralizantes mais altos e amplo-espectro do que cada componente isolado
+          - Apenas infecção natural protege; vacinação extra é prejudicial em todo cenário
+          - Apenas vacinação isolada protege; infecção previa anula benefício
+          - Não há diferença mensurável entre os três cenários em coortes humanas
+        correctAnswer: Combinação gera anticorpos neutralizantes mais altos e amplo-espectro do que cada componente isolado
+        rationale:
+          pt: Coortes (Bates/Schwarz 2022, Crotty/Wherry/Sette 2023) confirmaram que imunidade híbrida tem títulos neutralizantes mais altos e amplos contra variantes do que vacinação ou infecção sozinhas — concretiza vantagem de exposição múltipla via mecanismos imunológicos diferentes.
+          en: Cohorts (Bates/Schwarz 2022, Crotty/Wherry/Sette 2023) confirmed that hybrid immunity has higher and broader neutralizing titers against variants than vaccination or infection alone — instantiates the advantage of multiple exposures via different immunological mechanisms.
+        objectives: [Imunidade híbrida]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Norovirus permanece sem vacina aprovada apesar de causar maior parte da gastroenterite global. Principal obstáculo é…
+          en: Norovirus still lacks an approved vaccine despite causing most global gastroenteritis. The main obstacle is…
+        choices:
+          - Diversidade genética alta com múltiplos genogrupos/genótipos cocirculantes e drift contínuo
+          - Ausência completa de patogenicidade não justifica vacinação
+          - Não há mercado comercial atrativo para empresas farmacêuticas
+          - Pacientes têm imunidade vitalícia após primeira infecção, dispensando vacina
+        correctAnswer: Diversidade genética alta com múltiplos genogrupos/genótipos cocirculantes e drift contínuo
+        rationale:
+          pt: Norovirus tem GI/GII com dezenas de genótipos, drift antigênico em GII.4. Imunidade pós-infecção é curta. Moderna mRNA-1403 (trivalente GI/GII) e HilleVax HIL-214 (VLP) estão em Ph2/Ph3 buscando primeiro vacina aprovada — ainda nenhuma disponível em 2024.
+          en: Norovirus has GI/GII with dozens of genotypes, antigenic drift in GII.4. Post-infection immunity is short. Moderna mRNA-1403 (trivalent GI/GII) and HilleVax HIL-214 (VLP) are in Ph2/Ph3 chasing first approved vaccine — none available as of 2024.
+        objectives: [Norovirus]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Eficácia da vacina BCG, classicamente para tuberculose, mostra paradoxo geográfico interessante. Qual?
+          en: BCG vaccine efficacy, classically for tuberculosis, shows an interesting geographic paradox. Which?
+        choices:
+          - Eficácia em adultos varia de 0-80% conforme latitude/exposição prévia a micobactérias ambientais
+          - Eficácia é exatamente igual em todos os países do mundo
+          - Apenas funciona em populações africanas e asiáticas, falhando em europeias
+          - Apenas funciona em adultos > 65 anos como booster em qualquer região
+        correctAnswer: Eficácia em adultos varia de 0-80% conforme latitude/exposição prévia a micobactérias ambientais
+        rationale:
+          pt: Variação geográfica de BCG (Fine, Lancet 1995): eficácia adulta ~80% em UK e norte; ~0% em Índia trópico. Hipóteses: micobactérias ambientais que pré-imunizam mascarando BCG; cepa BCG variável; co-infecção helmíntica. Frente atual: novas vacinas (M72/AS01E, MTBVAC, RBM200).
+          en: BCG geographic variation (Fine, Lancet 1995): ~80% adult efficacy in UK and north; ~0% in tropical India. Hypotheses: environmental mycobacteria pre-immunizing and masking BCG; BCG strain variability; helminth co-infection. Current frontier: new vaccines (M72/AS01E, MTBVAC, RBM200).
+        objectives: [BCG paradoxo]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O movimento de vaccine hesitancy global (declínio de vacinação infantil pós-2020) desafia o quê?
+          en: Global vaccine hesitancy movement (post-2020 childhood vaccination decline) challenges what?
+        choices:
+          - Imunidade de rebanho contra sarampo, pertussis, com surtos crescentes em LMICs e HICs
+          - Apenas vacinas de COVID, sem efeito sobre vacinas pediátricas tradicionais
+          - Apenas vacinas mRNA, com cobertura de outras plataformas inalterada
+          - Apenas vacinação adulta, sem qualquer impacto em pediátricas
+        correctAnswer: Imunidade de rebanho contra sarampo, pertussis, com surtos crescentes em LMICs e HICs
+        rationale:
+          pt: WHO/UNICEF reportaram queda da cobertura DTP3 e MMR pós-COVID; surtos de sarampo (Europa 2023-24, EUA 2024 +20 surtos) ilustram vulnerabilidade. Hesitancy é multifator: desinformação, distrust pós-pandemia, complacency. Frente urgente em saúde pública.
+          en: WHO/UNICEF reported DTP3 and MMR coverage drop post-COVID; measles outbreaks (Europe 2023-24, US 2024 +20 outbreaks) illustrate vulnerability. Hesitancy is multifactorial: misinformation, post-pandemic distrust, complacency. Urgent public-health frontier.
+        objectives: [Hesitancy]
+target: 20
