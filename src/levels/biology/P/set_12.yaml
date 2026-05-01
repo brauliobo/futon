@@ -1,0 +1,345 @@
+title:
+  pt: Genômica de Conservação e Extinção
+  en: Conservation Genomics and Extinction
+level: P
+subject: biology
+objectives:
+  - Compreender Ne mínimo e diversidade genética
+  - Reconhecer endogamia e meltdown mutacional
+  - Identificar de-extinction e gene rescue
+  - Avaliar IUCN, CITES, eDNA
+difficulty: 5
+authorNotes: |
+  Conservation genetics. Frankham et al. textbook. 50/500 rule (Franklin/Soulé). Genetic
+  rescue: Florida panther 1995 8 Texas pumas. Whitehead Wisconsin pheasant. Inbreeding
+  depression. Mutational meltdown Lynch/Lande. De-extinction: Colossal Biosciences (mammoth,
+  thylacine, dodo). George Church/Eriona Hysolli. eDNA: Ficetola, Thomsen. iEcology.
+  IUCN Red List. CITES. Frozen zoo San Diego, Alaska. Tasmanian devil DFTD. White-nose
+  syndrome bats. Coral genomics Atlantic Genome Project, Selkoe.
+example:
+  question:
+    pt: A "regra 50/500" (Franklin/Soulé) em genética de conservação propõe que…
+    en: The "50/500 rule" (Franklin/Soulé) in conservation genetics proposes that…
+  choices:
+    - Ne ≥ 50 evita endogamia imediata; ≥ 500 mantém variação evolutiva longo prazo
+    - Apenas Ne = 100 sempre suficiente
+    - Apenas censo > 1000
+    - Sem qualquer threshold relevante
+  correctAnswer: Ne ≥ 50 evita endogamia imediata; ≥ 500 mantém variação evolutiva longo prazo
+  rationale:
+    pt: Franklin (1980), Soulé (1980): Ne 50 evita declínio imediato por endogamia (depressão fitness ~1%/geração); Ne 500 mantém variância aditiva para resposta evolutiva. Frankham (2014) propôs revisão para 100/1000 com dados modernos. Aplicado a IUCN VU/EN/CR critérios.
+  rationale_extra:
+    en: Franklin (1980), Soulé (1980): Ne 50 prevents immediate decline from inbreeding (~1%/generation fitness depression); Ne 500 preserves additive variance for evolutionary response. Frankham (2014) proposed revision to 100/1000 with modern data. Applied to IUCN VU/EN/CR criteria.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Genética populacional aplicada
+      en: Page 1 — Applied population genetics
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "depressão por endogamia" (inbreeding depression) ocorre por…
+          en: "Inbreeding depression" occurs through…
+        choices:
+          - Homozigose de alelos recessivos deletérios e perda de heterose
+          - Apenas mutações novas
+          - Aumento de fitness por homozigose
+          - Sem qualquer mecanismo molecular
+        correctAnswer: Homozigose de alelos recessivos deletérios e perda de heterose
+        rationale:
+          pt: Inbreeding aumenta F (coeficiente de endogamia); alelos recessivos prejudiciais expostos em homozigose. Modelos: dominance (recessivos manifestam) e overdominance (heterozygote advantage perdida). Magnitude varia: ~5-10% redução fitness por unidade F em populações outbred. Severidade depende de "load".
+          en: Inbreeding raises F (inbreeding coefficient); deleterious recessives expressed in homozygosity. Models: dominance (recessives manifest) and overdominance (heterozygote advantage lost). Magnitude varies: ~5-10% fitness reduction per F unit in outbred populations. Severity depends on "load".
+        objectives: [Inbreeding depression]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "mutational meltdown" (Lynch/Lande) ocorre em…
+          en: "Mutational meltdown" (Lynch/Lande) occurs in…
+        choices:
+          - Populações pequenas onde acúmulo de mutações deletérias supera capacidade de purga, levando à extinção
+          - Populações grandes equilibradas
+          - Apenas em populações artificiais
+          - Sem qualquer relevância para conservação
+        correctAnswer: Populações pequenas onde acúmulo de mutações deletérias supera capacidade de purga, levando à extinção
+        rationale:
+          pt: Lynch/Gabriel/Lande (1990s): em pequena Ne, deriva fixa mutações ligeiramente deletérias (s < 1/Ne); fitness médio decai; pop reduz mais; decai mais — espiral. Predominantemente teórico mas observado em chimpanzé/humano OOA bottleneck (load aumentado em não-africanos).
+          en: Lynch/Gabriel/Lande (1990s): in small Ne, drift fixes slightly deleterious mutations (s < 1/Ne); mean fitness decays; pop shrinks further; decays more — spiral. Predominantly theoretical but observed in chimpanzee/human OOA bottleneck (load increased in non-Africans).
+        objectives: [Mutational meltdown]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Florida panther genetic rescue (1995) consistiu em…
+          en: The Florida panther genetic rescue (1995) consisted of…
+        choices:
+          - Introdução de 8 fêmeas Texas pumas para reverter declínio fenótipo (criptorquidia, defeitos cardíacos)
+          - Reintrodução em outras regiões dos EUA
+          - Apenas vacinação contra patógenos
+          - Eliminação de competidores
+        correctAnswer: Introdução de 8 fêmeas Texas pumas para reverter declínio fenótipo (criptorquidia, defeitos cardíacos)
+        rationale:
+          pt: Florida panther isolado pós-1980, ~30 indivíduos, alta endogamia → criptorquidia, sopro cardíaco. 1995: 8 fêmeas Puma concolor stanleyana (Texas) translocadas; F1 ~30% maior fitness. Pop cresceu para ~200 em 2020s. Modelo de "genetic rescue" (Hedrick/Garcia-Dorado 2017).
+          en: Florida panther isolated post-1980, ~30 individuals, high inbreeding → cryptorchidism, cardiac murmurs. 1995: 8 female Puma concolor stanleyana (Texas) translocated; F1 ~30% greater fitness. Pop grew to ~200 by 2020s. Model "genetic rescue" (Hedrick/Garcia-Dorado 2017).
+        objectives: [Florida panther]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Tasmanian Devil enfrenta DFTD (Devil Facial Tumour Disease), uma forma de…
+          en: The Tasmanian Devil faces DFTD (Devil Facial Tumour Disease), a form of…
+        choices:
+          - Tumor transmissível por mordidas (linhagem celular clonal infectando todos os devils)
+          - Vírus oncogênico convencional
+          - Bactéria patogênica
+          - Resposta autoimune individual
+        correctAnswer: Tumor transmissível por mordidas (linhagem celular clonal infectando todos os devils)
+        rationale:
+          pt: DFTD (Pearse/Swift 2006): linhagem clonal Schwann-like que se transmite física mente entre devils via mordidas. Único tumor transmissível conhecido em vertebrados (junto com CTVT canino transmitido sexualmente). Reduziu pop em 80%+. Resistência genômica emergindo (Margres, Storfer).
+          en: DFTD (Pearse/Swift 2006): clonal Schwann-like lineage transmitted physically between devils via bites. Unique transmissible tumor known in vertebrates (along with sexually transmitted canine CTVT). Reduced pop by 80%+. Genomic resistance emerging (Margres, Storfer).
+        objectives: [DFTD]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A Colossal Biosciences (Lamm/Church 2021) foca em "de-extinction" de…
+          en: Colossal Biosciences (Lamm/Church 2021) focuses on "de-extinction" of…
+        choices:
+          - Mammoth (via DNA antigo + edição CRISPR de elefantes asiáticos), thylacine, dodo
+          - Apenas humanos extintos como Neandertal
+          - Apenas dinossauros do Mesozoico
+          - Apenas plantas extintas
+        correctAnswer: Mammoth (via DNA antigo + edição CRISPR de elefantes asiáticos), thylacine, dodo
+        rationale:
+          pt: Colossal (Ben Lamm + George Church 2021): edita 60+ loci em fibroblastos de elefante asiático para gerar "mammoth-elephant" híbrido. Filosofia: restaurar serviços ecológicos (steppe-like Pleistocene). Crítica: hibridação não é resurrection; ética e bem-estar. Outros: thylacine (Pask, Melbourne), dodo (Shapiro, UCSC).
+          en: Colossal (Ben Lamm + George Church 2021): edits 60+ loci in Asian elephant fibroblasts to generate "mammoth-elephant" hybrid. Philosophy: restore ecological services (steppe-like Pleistocene). Critique: hybridization isn't resurrection; ethics and welfare. Others: thylacine (Pask, Melbourne), dodo (Shapiro, UCSC).
+        objectives: [Colossal Biosciences]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Frozen Zoo (San Diego Zoo Wildlife Alliance) preserva…
+          en: The Frozen Zoo (San Diego Zoo Wildlife Alliance) preserves…
+        choices:
+          - Linhagens celulares (fibroblastos, gametas) de >10 mil indivíduos / ~1100 espécies
+          - Apenas DNA extraído sem células viáveis
+          - Apenas fotos digitais
+          - Apenas em vertebrados grandes
+        correctAnswer: Linhagens celulares (fibroblastos, gametas) de >10 mil indivíduos / ~1100 espécies
+        rationale:
+          pt: Frozen Zoo (Kurt Benirschke 1972): biopsia + cultura fibroblastos + gametas em N2 líquido a -196°C. Inclui amostras de espécies extintas (po'ouli 2004, kakapo). Northern white rhino: BioRescue programa cria iPS de Najin/Fatu; tentativa de embrião híbrido com sêmen masculino preservado.
+          en: Frozen Zoo (Kurt Benirschke 1972): biopsy + fibroblast culture + gametes in liquid N2 at -196°C. Includes extinct species samples (po'ouli 2004, kakapo). Northern white rhino: BioRescue program makes iPS from Najin/Fatu; attempt at hybrid embryo with preserved male sperm.
+        objectives: [Frozen zoo]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: eDNA (environmental DNA) em conservação serve para…
+          en: eDNA (environmental DNA) in conservation serves to…
+        choices:
+          - Detectar espécies presentes via DNA em água/solo/ar sem coleta direta
+          - Substituir censo direto sempre
+          - Apenas em laboratório controlado
+          - Apenas para espécies abundantes
+        correctAnswer: Detectar espécies presentes via DNA em água/solo/ar sem coleta direta
+        rationale:
+          pt: eDNA: organismos liberam DNA (mucus, fezes, células esfoliadas) no ambiente. Filtragem/extração/qPCR/metabarcoding identifica espécies. Aplicações: peixes raros (sturgeon), espécies invasoras (Asian carp), monitoramento de biodiversidade. Ficetola 2008 pioneiro. Sensibilidade enorme (1 ind. em 1 ha lago detectável).
+          en: eDNA: organisms shed DNA (mucus, feces, exfoliated cells) into environment. Filtration/extraction/qPCR/metabarcoding identifies species. Applications: rare fish (sturgeon), invasive species (Asian carp), biodiversity monitoring. Ficetola 2008 pioneered it. Huge sensitivity (1 ind. in 1 ha lake detectable).
+        objectives: [eDNA]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "Anthropocene defaunation" (Dirzo 2014) refere-se a…
+          en: "Anthropocene defaunation" (Dirzo 2014) refers to…
+        choices:
+          - Declínio massivo de fauna (vertebrados, invertebrados) por humanos, com impactos ecossistêmicos cascata
+          - Aumento de fauna por proteção
+          - Apenas perda de plantas sem fauna
+          - Apenas em zonas urbanas
+        correctAnswer: Declínio massivo de fauna (vertebrados, invertebrados) por humanos, com impactos ecossistêmicos cascata
+        rationale:
+          pt: Dirzo et al. (Science 2014) cunharam "defaunation": vertebrados terrestres declinaram ~25% em abundância média; insetos talvez 75% em algumas regiões (Hallmann 2017 Krefeld). Cascatas: polinização, dispersão sementes, controle de pragas. Different from "extinction" (frequentemente local).
+          en: Dirzo et al. (Science 2014) coined "defaunation": terrestrial vertebrates declined ~25% in average abundance; insects perhaps 75% in some regions (Hallmann 2017 Krefeld). Cascades: pollination, seed dispersal, pest control. Different from "extinction" (often local).
+        objectives: [Defaunation]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A Genome 10K, B10K, Vertebrate Genomes Project (VGP) buscam…
+          en: Genome 10K, B10K, Vertebrate Genomes Project (VGP) aim to…
+        choices:
+          - Sequenciar genomas de referência de todas as espécies de vertebrados (~70k)
+          - Apenas humanos diversos
+          - Apenas mamíferos pequenos
+          - Apenas espécies extintas
+        correctAnswer: Sequenciar genomas de referência de todas as espécies de vertebrados (~70k)
+        rationale:
+          pt: VGP (Erich Jarvis Rockefeller, Sadye Paez): genomas de referência cromossomo-completos para todas espécies vertebradas. Padrões PacBio HiFi + Hi-C scaffolding. Iniciativas correlatas: Earth BioGenome Project (1.5M eucariotos), Darwin Tree of Life UK, Aquatic Symbiosis Genomics. Permite conservação informada por genoma.
+          en: VGP (Erich Jarvis Rockefeller, Sadye Paez): chromosome-level reference genomes for all vertebrate species. Standards PacBio HiFi + Hi-C scaffolding. Related initiatives: Earth BioGenome Project (1.5M eukaryotes), Darwin Tree of Life UK, Aquatic Symbiosis Genomics. Enables genome-informed conservation.
+        objectives: [VGP]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "purging" em populações pequenas refere-se a…
+          en: "Purging" in small populations refers to…
+        choices:
+          - Remoção de alelos deletérios recessivos por seleção em homozigose, possível em endogamia controlada
+          - Apenas adição de novos alelos
+          - Substituição de seleção por deriva
+          - Sem qualquer aplicação prática
+        correctAnswer: Remoção de alelos deletérios recessivos por seleção em homozigose, possível em endogamia controlada
+        rationale:
+          pt: Purging: em populações endogâmicas, alelos recessivos deletérios expostos sofrem seleção forte → eliminação. Pode purgar load over time se Ne suficiente para seleção (não dominado por deriva). Dificil em prática para alelos com s pequeno. Argumentado em Vaquita (~10 indivíduos, 2024).
+          en: Purging: in inbred populations, exposed deleterious recessives undergo strong selection → elimination. Can purge load over time if Ne sufficient for selection (not drift-dominated). Difficult in practice for low-s alleles. Argued for vaquita (~10 individuals, 2024).
+        objectives: [Purging]
+  - title:
+      pt: Página 2 — Casos e desafios
+      en: Page 2 — Cases and challenges
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O White-nose Syndrome em morcegos (Geomyces destructans → Pseudogymnoascus) eliminou populações por…
+          en: White-nose Syndrome in bats (Geomyces destructans → Pseudogymnoascus) decimated populations by…
+        choices:
+          - Fungo psicrófilo invade hibernantes na América do Norte (chegada 2006); ~6M morcegos mortos
+          - Vírus respiratório
+          - Bactéria intestinal
+          - Resposta autoimune sazonal
+        correctAnswer: Fungo psicrófilo invade hibernantes na América do Norte (chegada 2006); ~6M morcegos mortos
+        rationale:
+          pt: WNS (Blehert 2009, Frick 2010): Pseudogymnoascus destructans (origem europeia, hospedeiros tolerantes) chegou em NY 2006. Em hibernantes americanos (sem coevolução), interrompe torpor → morte. Pequenos brown bats e Indiana bats devastados. Conservação: Pd-resistant strains, fungicidas, refúgios profilados.
+          en: WNS (Blehert 2009, Frick 2010): Pseudogymnoascus destructans (European origin, tolerant hosts) arrived NY 2006. In American hibernating species (no coevolution), disrupts torpor → death. Little brown bats and Indiana bats devastated. Conservation: Pd-resistant strains, fungicides, prophylactic refuges.
+        objectives: [White-nose syndrome]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em corais, mass bleaching events 2014-2017 e 2023-2024 são causados por…
+          en: In corals, mass bleaching events 2014-2017 and 2023-2024 are caused by…
+        choices:
+          - Estresse térmico expulsando algas Symbiodiniaceae (zooxantelas), perdendo cor + nutrição
+          - Apenas predação por estrelas-do-mar
+          - Apenas poluição local
+          - Não há qualquer fator térmico
+        correctAnswer: Estresse térmico expulsando algas Symbiodiniaceae (zooxantelas), perdendo cor + nutrição
+        rationale:
+          pt: Coral-algal mutualismo: Symbiodinium fornece ~90% nutrição; aquecimento >30°C dispara expulsão (bleaching). Eventos globais 1998, 2010, 2014-2017 (3-year), 2023-2024 (4ᵃ vez). Great Barrier Reef perdeu ~50% recifes em ~5 anos. Frente: corais "super resilient" (Hawaiian Heather) e probiotic SCTLD.
+          en: Coral-algal mutualism: Symbiodinium provides ~90% nutrition; warming >30°C triggers expulsion (bleaching). Global events 1998, 2010, 2014-2017 (3-year), 2023-2024 (4th). Great Barrier Reef lost ~50% reefs in ~5 years. Frontier: "super resilient" corals (Hawaiian Heather) and probiotic SCTLD.
+        objectives: [Coral bleaching]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A Vaquita marina (Phocoena sinus) golfinho-de-Cortez Mexicano tem ~10 indivíduos (2024); desafio porque…
+          en: The vaquita (Phocoena sinus) Mexican Cortez porpoise has ~10 individuals (2024); challenge because…
+        choices:
+          - Bycatch em redes de pesca ilegal de totoaba; pop refletindo critically endangered
+          - Caça ativa direta
+          - Doença infecciosa única
+          - Apenas mudança climática
+        correctAnswer: Bycatch em redes de pesca ilegal de totoaba; pop refletindo critically endangered
+        rationale:
+          pt: Vaquita morre presa em redes que pescam ilegalmente totoaba (peixe valioso na China por bexiga). Pop em colapso: ~600 (1997) → ~10 (2024). CIRVA recomenda zero netting. Frente: 2017 captura cativa falhou (estresse fatal); proteção militarizada do hábitat. Robin Baird, Jaramillo-Legorreta acompanham.
+          en: Vaquita die entangled in nets illegally fishing totoaba (valuable in China for swim bladder). Pop collapsed: ~600 (1997) → ~10 (2024). CIRVA recommends zero netting. Frontier: 2017 captive capture failed (fatal stress); militarized habitat protection. Robin Baird, Jaramillo-Legorreta track.
+        objectives: [Vaquita]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "Ehringham guardian" (espécie sentinela em conservação) refere-se a…
+          en: A "sentinel species" in conservation refers to…
+        choices:
+          - Espécies cujo declínio sinaliza problemas ambientais maiores (anfíbios, abelhas, líquens)
+          - Espécies invasoras
+          - Apenas espécies endêmicas
+          - Apenas em zoológicos cativeiros
+        correctAnswer: Espécies cujo declínio sinaliza problemas ambientais maiores (anfíbios, abelhas, líquens)
+        rationale:
+          pt: Sentinel species: anfíbios (pele permeável → poluição, UV), abelhas (pesticidas), líquens (qualidade do ar), peixes (água), aves (ecossistema). Bd (Batrachochytrium) chytridiomycosis colapsou 200+ espécies de anfíbios. CCD (Colony Collapse Disorder) em abelhas. Ron Heyer cunhou DAPTF anfíbios.
+          en: Sentinel species: amphibians (permeable skin → pollution, UV), bees (pesticides), lichens (air quality), fish (water), birds (ecosystem). Bd (Batrachochytrium) chytridiomycosis collapsed 200+ amphibian species. CCD (Colony Collapse Disorder) in bees. Ron Heyer coined DAPTF amphibians.
+        objectives: [Sentinel species]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em conservação genômica, o conceito de "evolutionary significant unit" (ESU, Ryder 1986) refere-se a…
+          en: In conservation genomics, "evolutionary significant unit" (ESU, Ryder 1986) refers to…
+        choices:
+          - População historicamente isolada com ancestralidade distinta — alvo de proteção independente
+          - Apenas indivíduo único de cada espécie
+          - Apenas zoo populations cativas
+          - Sem qualquer base genética
+        correctAnswer: População historicamente isolada com ancestralidade distinta — alvo de proteção independente
+        rationale:
+          pt: ESU: Moritz/Ryder definiram como populações reciprocamente monofiléticas em mtDNA + diferenciação alélica nuclear. Exemplos: ESUs salmão Pacífico (Pacific NW), tartaruga marrom Galápagos. Critérios mais rigorosos que subespécies clássicas. Implicação política: ESA dos EUA protege ESU.
+          en: ESU: Moritz/Ryder defined as reciprocally monophyletic populations in mtDNA + nuclear allelic differentiation. Examples: Pacific salmon ESUs (Pacific NW), Galápagos brown tortoise. Stricter than classical subspecies criteria. Policy implication: US ESA protects ESUs.
+        objectives: [ESU]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "outbreeding depression" pode ocorrer quando…
+          en: "Outbreeding depression" can occur when…
+        choices:
+          - Hibridização entre populações adaptadas localmente diluiu adaptação ou rompe coadaptação genômica
+          - Sem qualquer base molecular
+          - Apenas em hibridização interespecífica
+          - Apenas com alta endogamia
+        correctAnswer: Hibridização entre populações adaptadas localmente diluiu adaptação ou rompe coadaptação genômica
+        rationale:
+          pt: Outbreeding depression: cruzamentos entre populações distantes podem reduzir fitness por (1) diluição de adaptação local, (2) ruptura de coadaptação intergenômica (ex: Drosophila Bateson-Dobzhansky-Muller incompatibilidades). Frequentemente menor que inbreeding depression mas relevante em "genetic rescue" decisão. Florida panther não teve.
+          en: Outbreeding depression: crosses between distant populations may reduce fitness via (1) dilution of local adaptation, (2) disruption of intergenomic coadaptation (e.g., Drosophila Bateson-Dobzhansky-Muller incompatibilities). Often smaller than inbreeding depression but relevant in genetic-rescue decisions. Florida panther didn't have it.
+        objectives: [Outbreeding depression]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "extinction debt" (Tilman 1994) refere-se a…
+          en: "Extinction debt" (Tilman 1994) refers to…
+        choices:
+          - Espécies já comprometidas a extinção mas que ainda persistem brevemente após perda de habitat
+          - Espécies que já extinguiram historicamente
+          - Apenas espécies invasoras
+          - Apenas em pequenas ilhas
+        correctAnswer: Espécies já comprometidas a extinção mas que ainda persistem brevemente após perda de habitat
+        rationale:
+          pt: Tilman/Lehman/Yin (Nature 1994): após fragmentação, espécies acima do mínimo viável vão eventualmente extinguir mesmo sem perda adicional. Pagamento da "dívida" pode demorar décadas-séculos. Importante: aparente "estabilidade" após perturbação esconde declínio futuro.
+          en: Tilman/Lehman/Yin (Nature 1994): after fragmentation, species above minimum viable will eventually go extinct even without further loss. "Debt" payment can take decades-centuries. Important: apparent post-perturbation "stability" hides future decline.
+        objectives: [Extinction debt]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "30 by 30" em conservação global propõe…
+          en: "30 by 30" in global conservation proposes…
+        choices:
+          - Proteger 30% de terras e oceanos até 2030 (CBD COP15 Montreal 2022)
+          - Apenas 30 espécies prioritárias
+          - 30 milhões de hectares no total
+          - Apenas em parques federais
+        correctAnswer: Proteger 30% de terras e oceanos até 2030 (CBD COP15 Montreal 2022)
+        rationale:
+          pt: CBD COP15 Montreal dez/2022: Kunming-Montreal Global Biodiversity Framework (GBF) adotou meta 30x30. Atualmente: ~17% terra, ~8% oceanos protegidos. Áreas Marinhas Protegidas Patagonia, Pacific. Inclusão indígena via OECMs (Other Effective Conservation Measures). Crítico: implementação real, não nominal.
+          en: CBD COP15 Montreal Dec 2022: Kunming-Montreal Global Biodiversity Framework (GBF) adopted 30x30 target. Currently: ~17% land, ~8% oceans protected. Marine Protected Areas Patagonia, Pacific. Indigenous inclusion via OECMs (Other Effective Conservation Measures). Critical: real implementation, not nominal.
+        objectives: [30x30]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "rewilding com proxies" (Donlan 2005) e Pleistocene Park (Zimov, Sibéria) propõem…
+          en: "Rewilding with proxies" (Donlan 2005) and Pleistocene Park (Zimov, Siberia) propose…
+        choices:
+          - Reintroduzir espécies análogas a megafauna extinta para restaurar funções ecossistêmicas
+          - Restaurar exatamente espécies extintas
+          - Eliminar predadores nativos
+          - Apenas conservação passiva
+        correctAnswer: Reintroduzir espécies análogas a megafauna extinta para restaurar funções ecossistêmicas
+        rationale:
+          pt: Donlan/Greene (Nature 2005) sugeriu Pleistocene rewilding: introduzir elefante africano, leão, camelo na América do Norte como proxies de mammoth, smilodon, camelops. Zimov (Sibéria, desde 1996): bisonte, yak, cavalo selvagem para restaurar steppe-tundra (mantém solo congelado, libertando menos CH4). Mainstream contestado mas inspirador.
+          en: Donlan/Greene (Nature 2005) suggested Pleistocene rewilding: introduce African elephant, lion, camel in North America as proxies for mammoth, smilodon, camelops. Zimov (Siberia, since 1996): bison, yak, wild horse to restore steppe-tundra (keeps soil frozen, releasing less CH4). Mainstream contested but inspiring.
+        objectives: [Pleistocene Park]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O IUCN Red List, atualizado pela International Union for Conservation of Nature, classifica espécies em…
+          en: The IUCN Red List, maintained by International Union for Conservation of Nature, classifies species into…
+        choices:
+          - 9 categorias: NE, DD, LC, NT, VU, EN, CR, EW, EX
+          - Apenas 3 categorias amplas
+          - 100 categorias finamente granulares
+          - Sem categorização padronizada
+        correctAnswer: 9 categorias: NE, DD, LC, NT, VU, EN, CR, EW, EX
+        rationale:
+          pt: IUCN Red List 2001+: NE (Not Evaluated), DD (Data Deficient), LC (Least Concern), NT (Near Threatened), VU (Vulnerable), EN (Endangered), CR (Critically Endangered), EW (Extinct in Wild), EX (Extinct). Critérios A-E quantitativos. ~150k espécies avaliadas; ~42k ameaçadas. Padrão global para conservação e legislação.
+          en: IUCN Red List 2001+: NE (Not Evaluated), DD (Data Deficient), LC (Least Concern), NT (Near Threatened), VU (Vulnerable), EN (Endangered), CR (Critically Endangered), EW (Extinct in Wild), EX (Extinct). Criteria A-E quantitative. ~150k species assessed; ~42k threatened. Global standard for conservation and legislation.
+        objectives: [IUCN Red List]
+target: 20
