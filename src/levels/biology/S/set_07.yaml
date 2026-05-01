@@ -1,0 +1,343 @@
+title:
+  pt: Terapêuticas de mRNA e Fronteira da Imunoterapia Oncológica
+  en: mRNA Therapeutics and Cancer Immunotherapy Frontier
+level: S
+subject: biology
+objectives:
+  - Compreender mRNA modificado, LNP, vacinas COVID
+  - Reconhecer vacinas oncológicas personalizadas mRNA
+  - Identificar checkpoint inhibitors, CAR-T, TCR-T, BiTEs, ADCs
+  - Avaliar PROTACs e neoantígenos tumorais
+difficulty: 5
+authorNotes: |
+  Era pós-COVID: Karikó/Weissman Nobel 2023 (pseudouridine N1-Me-Ψ). Moderna mRNA-1273,
+  Pfizer-BioNTech BNT162b2. Personalized cancer vaccines: mRNA-4157/V940 Moderna+Merck KEYNOTE-942
+  melanoma 2024, BNT122 autogene cevumeran pancreatic Rojas/Balachandran 2023. Cancer
+  immunotherapy: PD-1/CTLA-4 Honjo/Allison Nobel 2018, CAR-T Kymriah, TCR-T afami-cel Tecelra
+  FDA 2024 (synovial sarcoma), BiTE blinatumomab, ADC T-DXd Enhertu, PROTACs Arvinas.
+example:
+  question:
+    pt: Karikó/Weissman Nobel Medicina 2023 reconheceu…
+    en: Karikó/Weissman 2023 Nobel in Medicine recognized…
+  choices:
+    - Discovery of nucleoside modifications (pseudouridine, N1-methylpseudouridine) enabling non-immunogenic mRNA, foundational for COVID-19 mRNA vaccines
+    - First isolation of mRNA from any tissue
+    - Invention of polymerase chain reaction (PCR)
+    - Discovery of small interfering RNA pathway
+  correctAnswer: Discovery of nucleoside modifications (pseudouridine, N1-methylpseudouridine) enabling non-immunogenic mRNA, foundational for COVID-19 mRNA vaccines
+  rationale:
+    pt: 'Nobel Medicine 2023 — Katalin Karikó + Drew Weissman (UPenn) "for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19". Trabalho seminal: Karikó Buckstein Ni Weissman Immunity 2005 — substituição uridine → pseudouridine (Ψ) reduz dramatic ativação TLR7/TLR8 PRR sensors → permite mRNA exógena ser traduzida sem inflammatory response excessive. N1-methylpseudouridine (m1Ψ) Anderson Karikó Weissman Nucleic Acids Res 2010 — versão otimizada usada em mRNA-1273/BNT162b2. Karikó histórico trajetória — décadas marginalized academia, BioNTech VP 2013-2022, Moderna technology paralela. Adicionalmente: 5′ cap analog, codon optimization, LNP delivery. Combined enable practical mRNA therapeutics — não apenas vaccines mas protein-replacement, cancer.'
+    en: '2023 Nobel in Medicine — Katalin Karikó + Drew Weissman (UPenn) "for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19". Seminal work: Karikó Buckstein Ni Weissman Immunity 2005 — substitution uridine → pseudouridine (Ψ) dramatically reduces activation of TLR7/TLR8 PRR sensors → allows exogenous mRNA to be translated without excessive inflammatory response. N1-methylpseudouridine (m1Ψ) Anderson Karikó Weissman Nucleic Acids Res 2010 — optimized version used in mRNA-1273/BNT162b2. Karikó historic trajectory — marginalized in academia for decades, BioNTech VP 2013-2022, Moderna technology in parallel. Additionally: 5′ cap analog, codon optimization, LNP delivery. Combined to enable practical mRNA therapeutics — not just vaccines but protein replacement and cancer.'
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — mRNA e vacinas
+      en: Page 1 — mRNA and vaccines
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: mRNA-1273 (Moderna NEJM 2020) e BNT162b2 (Pfizer-BioNTech NEJM 2020) mecanismo é…
+          en: mRNA-1273 (Moderna NEJM 2020) and BNT162b2 (Pfizer-BioNTech NEJM 2020) mechanism is…
+        choices:
+          - LNP-encapsulated nucleoside-modified mRNA encoding stabilized prefusion SARS-CoV-2 spike, translated by host cells to elicit neutralizing antibodies and T-cell responses
+          - Live attenuated SARS-CoV-2 virus inactivated by chemical treatment
+          - Recombinant spike protein purified from CHO cells with adjuvant
+          - DNA plasmid delivered by viral vector with chromosomal integration
+        correctAnswer: LNP-encapsulated nucleoside-modified mRNA encoding stabilized prefusion SARS-CoV-2 spike, translated by host cells to elicit neutralizing antibodies and T-cell responses
+        rationale:
+          pt: 'mRNA-1273 (Moderna NIH/Vaccine Research Center Graham/Corbett/Mascola) + BNT162b2 (Pfizer-BioNTech Sahin/Türeci): LNP-encapsulated mRNA com m1Ψ modification encoding 2P prefusion-stabilized SARS-CoV-2 spike (S-2P, Pallesen 2017 PNAS para MERS → Wrapp Cell 2020 SARS-CoV-2). Lipid nanoparticle 4-component (ionizable cationic + phospholipid + cholesterol + PEG-lipid). IM injection → uptake APCs (DCs) deltoid muscle/lymph nodes → translation → spike presented MHC-I/II → CD8/CD4 T cells + B cells producing neutralizing antibodies. Phase 3 efficacy ~95% symptomatic COVID original strain. EUA FDA dezembro 2020 — fastest vaccine development history (~9 meses sequence to authorization). Updated boosters Omicron variants 2022+. Foundation mRNA platform other indications.'
+          en: 'mRNA-1273 (Moderna with NIH/Vaccine Research Center Graham/Corbett/Mascola) + BNT162b2 (Pfizer-BioNTech Sahin/Türeci): LNP-encapsulated mRNA with m1Ψ modification encoding 2P prefusion-stabilized SARS-CoV-2 spike (S-2P, Pallesen 2017 PNAS for MERS → Wrapp Cell 2020 SARS-CoV-2). Lipid nanoparticle 4-component (ionizable cationic + phospholipid + cholesterol + PEG-lipid). IM injection → uptake by APCs (DCs) in deltoid muscle/lymph nodes → translation → spike presented on MHC-I/II → CD8/CD4 T cells + B cells producing neutralizing antibodies. Phase 3 efficacy ~95% against symptomatic COVID original strain. EUA FDA December 2020 — fastest vaccine development in history (~9 months from sequence to authorization). Updated boosters for Omicron variants 2022+. Foundation for mRNA platform in other indications.'
+        objectives: [mRNA COVID vaccines]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: mRNA-4157/V940 (Moderna+Merck KEYNOTE-942) é…
+          en: mRNA-4157/V940 (Moderna+Merck KEYNOTE-942) is…
+        choices:
+          - Personalized neoantigen mRNA vaccine encoding up to 34 patient-specific tumor mutations, combined with pembrolizumab in adjuvant melanoma reducing recurrence vs pembrolizumab alone
+          - Off-the-shelf vaccine targeting universal tumor antigens like CEA
+          - Live attenuated tumor cells injected as a whole-cell vaccine
+          - Single-peptide vaccine targeting one universal mutation
+        correctAnswer: Personalized neoantigen mRNA vaccine encoding up to 34 patient-specific tumor mutations, combined with pembrolizumab in adjuvant melanoma reducing recurrence vs pembrolizumab alone
+        rationale:
+          pt: 'mRNA-4157 / V940 (Moderna + Merck): personalized cancer vaccine. Pipeline: tumor biopsy → WES tumor + germline → identify somatic mutations → predict neoantigens (HLA-binding + MHC presentation algorithms NetMHCpan, EDGE Moderna) → rank top ~34 → encode em mRNA construct (string-of-beads design) → LNP IM injection ~9 doses every 3 weeks. KEYNOTE-942 trial (Phase 2b randomized): high-risk melanoma stage III/IV resected — V940 + pembrolizumab (anti-PD-1) vs pembrolizumab alone. Khattak Carlino Long Lancet 2024 results: ~44% reduction RFS recurrence-free survival hazard, ~62% reduction distant metastasis. Phase 3 INTerpath-001 ongoing. Conceito: prime tumor-specific T cells synergize com checkpoint blockade. Other mRNA personalized: BNT122/autogene cevumeran (BioNTech).'
+          en: 'mRNA-4157 / V940 (Moderna + Merck): personalized cancer vaccine. Pipeline: tumor biopsy → WES of tumor + germline → identify somatic mutations → predict neoantigens (HLA-binding + MHC presentation algorithms NetMHCpan, EDGE Moderna) → rank top ~34 → encode in mRNA construct (string-of-beads design) → LNP IM injection ~9 doses every 3 weeks. KEYNOTE-942 trial (Phase 2b randomized): high-risk resected stage III/IV melanoma — V940 + pembrolizumab (anti-PD-1) vs pembrolizumab alone. Khattak Carlino Long Lancet 2024 results: ~44% reduction in RFS recurrence-free survival hazard, ~62% reduction in distant metastasis. Phase 3 INTerpath-001 ongoing. Concept: prime tumor-specific T cells synergize with checkpoint blockade. Other personalized mRNA: BNT122/autogene cevumeran (BioNTech).'
+        objectives: [mRNA cancer vaccines]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: BNT122 / autogene cevumeran (Rojas/Balachandran/Sahin Nature 2023) trial showed…
+          en: BNT122 / autogene cevumeran (Rojas/Balachandran/Sahin Nature 2023) trial showed…
+        choices:
+          - Personalized mRNA neoantigen vaccine post-surgery in pancreatic ductal adenocarcinoma induced strong T-cell responses and improved recurrence-free survival in responders
+          - Failed Phase 1 trial without any T-cell response or clinical signal
+          - Vaccine restricted to advanced metastatic disease without curative intent
+          - Off-the-shelf KRAS G12D vaccine without personalization
+        correctAnswer: Personalized mRNA neoantigen vaccine post-surgery in pancreatic ductal adenocarcinoma induced strong T-cell responses and improved recurrence-free survival in responders
+        rationale:
+          pt: 'BNT122 (autogene cevumeran, BioNTech): Rojas Sethna Soares Park Khalil Iaccobuzio-Donahue Beadling DeMatteo Ralhan Bates Hong Sosa Ku McAlpine Pareja Coderre Allen Sun Mehta Iyer Jamal Veeramachaneni Yu Brentjens Ahuja Park Brennan Wei Prawira Nicholas Vyas Ho Gonen Allen Young Chou Sztompka Kabir Donhue Sahin Türeci Wolchok Drebin Balachandran Nature 2023): Phase 1 N=16 patients PDAC pancreatic ductal adenocarcinoma post-surgery (Whipple). Personalized: WES → ~20 neoantigens predicted → encoded em uridine-based mRNA + saRNA platform BioNTech. Vaccinated within ~9 weeks post-op + atezolizumab + chemo mFOLFIRINOX. ~50% (8/16) developed strong neoantigen-specific T-cell responses CD8+. Responders: longer recurrence-free survival ~18 months follow-up. Non-responders: median RFS ~13.4 months. PDAC notoriously immune-cold tumor — proof-of-concept significant. Phase 2 IMCODE003 ongoing. Companion paper Lancet 2024 personalized melanoma BioNTech.'
+          en: 'BNT122 (autogene cevumeran, BioNTech): Rojas Sethna Soares Park Khalil Iaccobuzio-Donahue Beadling DeMatteo Ralhan Bates Hong Sosa Ku McAlpine Pareja Coderre Allen Sun Mehta Iyer Jamal Veeramachaneni Yu Brentjens Ahuja Park Brennan Wei Prawira Nicholas Vyas Ho Gonen Allen Young Chou Sztompka Kabir Donhue Sahin Türeci Wolchok Drebin Balachandran Nature 2023): Phase 1 N=16 patients with PDAC pancreatic ductal adenocarcinoma post-surgery (Whipple). Personalized: WES → ~20 neoantigens predicted → encoded in uridine-based mRNA + saRNA platform BioNTech. Vaccinated within ~9 weeks post-op + atezolizumab + chemo mFOLFIRINOX. ~50% (8/16) developed strong neoantigen-specific CD8+ T-cell responses. Responders: longer recurrence-free survival at ~18 months follow-up. Non-responders: median RFS ~13.4 months. PDAC is notoriously immune-cold — proof-of-concept significant. Phase 2 IMCODE003 ongoing. Companion paper Lancet 2024 personalized melanoma BioNTech.'
+        objectives: [BNT122 pancreatic]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Self-amplifying RNA (saRNA, Arcturus/Gritstone) advantage é…
+          en: Self-amplifying RNA (saRNA, Arcturus/Gritstone) advantage is…
+        choices:
+          - Encodes alphavirus replicase plus the antigen of interest, allowing intracellular self-replication and lower dose to achieve equivalent expression vs conventional mRNA
+          - Permanent integration into the host genome for long-term expression
+          - DNA-based vector requiring nuclear delivery
+          - Viral capsid-based delivery without lipid nanoparticles
+        correctAnswer: Encodes alphavirus replicase plus the antigen of interest, allowing intracellular self-replication and lower dose to achieve equivalent expression vs conventional mRNA
+        rationale:
+          pt: 'Self-amplifying RNA (saRNA): backbone derivado alphavirus (Venezuelan/Sindbis equine encephalitis virus) RdRp replicase complex (nsP1-4) + subgenomic promoter encoding antigen of interest. Após delivery (LNP) → cytoplasmic replication via RdRp → 100-1000x amplification → robust antigen production sustained dias. Vantagens: ~100x lower dose conventional mRNA (Arcturus ARCT-154 COVID booster aprovado Japan 2023 1µg vs ~30-100µg pseudouridine-mRNA), longer expression. Limits: stronger innate immune activation (replicase intermediates RNA double-stranded → RIG-I/MDA5 → IFN), more reactogenic vs nucleoside-modified mRNA. Companies: Arcturus Therapeutics, Gritstone bio (cancer + COVID), Replicate Bioscience, Vidicell. trans-amplifying split versions (taRNA) emerging. Field promising but reactogenicity managing critical.'
+          en: 'Self-amplifying RNA (saRNA): backbone derived from alphavirus (Venezuelan/Sindbis equine encephalitis virus) RdRp replicase complex (nsP1-4) + subgenomic promoter encoding the antigen of interest. After delivery (LNP) → cytoplasmic replication via RdRp → 100-1000x amplification → robust antigen production sustained for days. Advantages: ~100x lower dose than conventional mRNA (Arcturus ARCT-154 COVID booster approved Japan 2023 at 1 µg vs ~30-100 µg for pseudouridine-mRNA), longer expression. Limits: stronger innate immune activation (replicase intermediates with double-stranded RNA → RIG-I/MDA5 → IFN), more reactogenic vs nucleoside-modified mRNA. Companies: Arcturus Therapeutics, Gritstone bio (cancer + COVID), Replicate Bioscience, Vidicell. trans-amplifying split versions (taRNA) emerging. Field is promising but reactogenicity management is critical.'
+        objectives: [saRNA]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: mRNA protein-replacement therapy (Moderna mRNA-3927 propionic acidemia) approach é…
+          en: mRNA protein-replacement therapy (Moderna mRNA-3927 propionic acidemia) approach is…
+        choices:
+          - LNP-delivered mRNA encoding the deficient enzyme repeatedly dosed to transiently restore function in metabolic diseases like propionic acidemia
+          - Permanent gene replacement via AAV with single-dose curative effect
+          - Small-molecule chaperone for misfolded enzyme without genetic component
+          - Bone marrow transplant providing donor-derived enzyme
+        correctAnswer: LNP-delivered mRNA encoding the deficient enzyme repeatedly dosed to transiently restore function in metabolic diseases like propionic acidemia
+        rationale:
+          pt: 'mRNA protein-replacement therapy: paradigma chronic dosing mRNA encoding deficient enzyme (não vaccine antigen). Moderna pipeline: mRNA-3927 propionic acidemia (PA, deficiência propionyl-CoA carboxylase PCCA/PCCB), mRNA-3705 methylmalonic acidemia (MMA-CB, MMUT), mRNA-3351 phenylketonuria (PAH), mRNA-3745 glycogen storage disease type 1a. LNP encapsulating mRNA + dual heteromeric subunits (e.g., PCCA+PCCB juntos) IV → liver hepatocytes → translate enzyme → metabolize substrate. Repeat ~biweekly chronic. Phase 1/2 PA Q4 2023 reduced metabolic decompensations ~70%. Vantagens vs AAV gene therapy: redoseable (no anti-AAV antibodies), no integration risk, controllable. Limit: chronic regimen, expensive long-term. Concurrent: BionTech, Translate Bio (Sanofi acquired), CureVac.'
+          en: 'mRNA protein-replacement therapy: paradigm of chronic dosing mRNA encoding the deficient enzyme (not a vaccine antigen). Moderna pipeline: mRNA-3927 propionic acidemia (PA, propionyl-CoA carboxylase PCCA/PCCB deficiency), mRNA-3705 methylmalonic acidemia (MMA-CB, MMUT), mRNA-3351 phenylketonuria (PAH), mRNA-3745 glycogen storage disease type 1a. LNP encapsulating mRNA + dual heteromeric subunits (e.g., PCCA+PCCB together) IV → liver hepatocytes → translate enzyme → metabolize substrate. Repeat ~biweekly chronic. Phase 1/2 PA Q4 2023 reduced metabolic decompensations ~70%. Advantages vs AAV gene therapy: redoseable (no anti-AAV antibodies), no integration risk, controllable. Limit: chronic regimen, expensive long-term. Concurrent: BionTech, Translate Bio (acquired by Sanofi), CureVac.'
+        objectives: [mRNA protein replacement]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: 5′ cap modification (m7G + cap-1) function em mRNA terapêutico é…
+          en: 5′ cap modification (m7G + cap-1) function in therapeutic mRNA is…
+        choices:
+          - Recognized by eIF4E for translation initiation and prevents detection by RIG-I as foreign, increasing translation efficiency and reducing innate immune sensing
+          - Blocks ribosome binding to prevent translation
+          - Targets mRNA exclusively for nuclear retention
+          - Required for reverse transcription into DNA
+        correctAnswer: Recognized by eIF4E for translation initiation and prevents detection by RIG-I as foreign, increasing translation efficiency and reducing innate immune sensing
+        rationale:
+          pt: '5′ cap mRNA: m7GpppN (7-methylguanosine triphosphate-linked to first nucleotide). Cap-0: m7Gppp + N (não 2′-O-methyl). Cap-1: m7Gppp + Nm (2′-O-methylated first nucleotide) — distinguishable cellular self-mRNA via 2′-O-methylation; sem 2′-O-Me → recognized by RIG-I/MDA5/IFIT1 → IFN response. Production therapeutic mRNA: enzymatic capping (Vaccinia VCE, NEB) ou co-transcriptional cap analog (CleanCap AG/m1Ψ Trilink AG analog gives Cap-1 directly during transcription). eIF4E recognizes m7G → recruits eIF4G → eIF4F complex → ribosome scanning AUG initiation. Cap quality critical translation efficiency: ARCA anti-reverse cap analog ensures correct orientation. Modified caps also less susceptible decapping enzymes → longer half-life. Combined with poly(A) tail (~120nt optimal), UTRs (Moderna proprietary 5′/3′-UTRs from screens), m1Ψ → composite mRNA design.'
+          en: '5′ cap of mRNA: m7GpppN (7-methylguanosine triphosphate-linked to the first nucleotide). Cap-0: m7Gppp + N (no 2′-O-methyl). Cap-1: m7Gppp + Nm (2′-O-methylated first nucleotide) — cellular self-mRNA distinguishable via 2′-O-methylation; without 2′-O-Me → recognized by RIG-I/MDA5/IFIT1 → IFN response. Production of therapeutic mRNA: enzymatic capping (Vaccinia VCE, NEB) or co-transcriptional cap analog (CleanCap AG/m1Ψ Trilink AG analog gives Cap-1 directly during transcription). eIF4E recognizes m7G → recruits eIF4G → eIF4F complex → ribosome scanning AUG initiation. Cap quality is critical for translation efficiency: ARCA anti-reverse cap analog ensures correct orientation. Modified caps are also less susceptible to decapping enzymes → longer half-life. Combined with poly(A) tail (~120 nt optimal), UTRs (Moderna proprietary 5′/3′-UTRs from screens), m1Ψ → composite mRNA design.'
+        objectives: [5 cap mRNA]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: CureVac CV2CoV vs BNT162b2 lessons (Nature 2021+) showed…
+          en: CureVac CV2CoV vs BNT162b2 lessons (Nature 2021+) showed…
+        choices:
+          - Unmodified uridine mRNA (CureVac) was less effective than nucleoside-modified mRNA, validating the importance of m1Ψ for efficacy and tolerability
+          - Both unmodified and modified mRNA achieved identical efficacy in pivotal trials
+          - DNA vaccines outperformed all mRNA platforms
+          - Live attenuated vaccines were superior to all mRNA in COVID-19 prevention
+        correctAnswer: Unmodified uridine mRNA (CureVac) was less effective than nucleoside-modified mRNA, validating the importance of m1Ψ for efficacy and tolerability
+        rationale:
+          pt: 'CureVac CVnCoV (uridine não modificada) Phase 3 HERALD trial 2021: ~47% efficacy COVID prevention vs ~95% Pfizer/Moderna m1Ψ-mRNA. Failure attributed: dose-limiting reactogenicity (uridine RNA → strong TLR/IFN response → cytokine release → forced lower doses ~12µg vs 30-100µg modified competitors). Validated importance Karikó-Weissman m1Ψ. CureVac pivot Q3 2021 → CV2CoV second-gen with codon optimization, longer 3′-UTRs (still uridine) — partner GSK. Eventually CureVac mRNA-LNP platform sold/abandoned cancer + influenza programs. Lesson: nucleoside modification não optional, central component mRNA platform success. Subsequent companies (Arcturus saRNA different strategy: 1µg low-dose unmodified leverages amplification). Pfizer/BioNTech + Moderna duopoly modified mRNA.'
+          en: 'CureVac CVnCoV (unmodified uridine) Phase 3 HERALD trial 2021: ~47% efficacy at COVID prevention vs ~95% for Pfizer/Moderna m1Ψ-mRNA. Failure attributed to: dose-limiting reactogenicity (uridine RNA → strong TLR/IFN response → cytokine release → forced lower doses ~12 µg vs 30-100 µg for modified competitors). Validated the importance of Karikó-Weissman m1Ψ. CureVac pivoted Q3 2021 → CV2CoV second-gen with codon optimization, longer 3′-UTRs (still uridine) — partnered with GSK. Eventually CureVac mRNA-LNP platform sold/abandoned cancer + influenza programs. Lesson: nucleoside modification is not optional, it is a central component of mRNA platform success. Subsequent companies (Arcturus saRNA) take a different strategy: 1 µg low-dose unmodified leverages amplification. Pfizer/BioNTech + Moderna form the modified-mRNA duopoly.'
+        objectives: [CureVac unmodified]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: GSK/CureVac mRNA influenza Lancet 2024 Phase 3 result foi…
+          en: GSK/CureVac mRNA influenza Lancet 2024 Phase 3 result was…
+        choices:
+          - Modest efficacy below seasonal flu vaccine standards underscoring delivery and antigen-design challenges for mRNA flu vaccines
+          - Superior efficacy to all approved flu vaccines confirming dominance
+          - Identical efficacy to placebo in all subgroups
+          - Approved by FDA in 2024 as first-in-class mRNA flu vaccine
+        correctAnswer: Modest efficacy below seasonal flu vaccine standards underscoring delivery and antigen-design challenges for mRNA flu vaccines
+        rationale:
+          pt: 'mRNA influenza vaccines lessons 2024: GSK/CureVac modular mRNA flu Phase 3 disappointing — efficacy modest below seasonal vaccine standards. Moderna mRNA-1010 quadrivalent flu Phase 3 2023 results: similar/marginal vs standard inactivated, certain strains worse. Pfizer mRNA flu Phase 3 também mixed. Hipóteses: delivery LNP IM less efficient mucosal/respiratory immunity flu (vs SARS-CoV-2 systemic primarily), antigen choice (full-length HA vs stabilized stem broader), pre-existing immunity older adults baseline. Combo COVID + flu (Moderna mRNA-1083): potential bundle Phase 3 ongoing. Field humbling — não all viruses equally amenable mRNA platform. Active research: stem-targeting universal flu (Krammer Mt Sinai), self-amplifying flu, intranasal mRNA via different vectors. Translation slower than COVID expectations.'
+          en: 'mRNA influenza vaccines lessons 2024: GSK/CureVac modular mRNA flu Phase 3 disappointing — efficacy modest below seasonal vaccine standards. Moderna mRNA-1010 quadrivalent flu Phase 3 2023 results: similar/marginal vs standard inactivated, worse for certain strains. Pfizer mRNA flu Phase 3 also mixed. Hypotheses: LNP IM delivery less efficient for mucosal/respiratory flu immunity (vs SARS-CoV-2 primarily systemic), antigen choice (full-length HA vs broader stabilized stem), pre-existing immunity in older adults at baseline. Combo COVID + flu (Moderna mRNA-1083): potential bundle, Phase 3 ongoing. Field is humbling — not all viruses are equally amenable to the mRNA platform. Active research: stem-targeting universal flu (Krammer Mt Sinai), self-amplifying flu, intranasal mRNA via different vectors. Translation is slower than post-COVID expectations.'
+        objectives: [mRNA flu challenges]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: mRNA cold-chain challenges enabled a evolução para…
+          en: mRNA cold-chain challenges enabled the evolution toward…
+        choices:
+          - Lyophilized formulations and improved LNPs allowing 2-8°C refrigeration with multi-month stability instead of -70°C ultracold
+          - Mandatory permanent -196°C liquid nitrogen storage for all mRNA products
+          - Dry powder inhalers replacing all injection routes
+          - Oral mRNA tablets replacing parenteral delivery entirely
+        correctAnswer: Lyophilized formulations and improved LNPs allowing 2-8°C refrigeration with multi-month stability instead of -70°C ultracold
+        rationale:
+          pt: 'Cold-chain mRNA evolution: BNT162b2 launch 2020 requereu -70°C ultra-cold (dry ice + special freezers logistics) → barrier global access. Moderna mRNA-1273 -20°C (standard freezer). Iterations subsequent improvements: optimizing LNP composition (specific ionizable lipids ALC-0315 BioNTech, SM-102 Moderna), buffer formulations (sucrose, trehalose cryoprotectants), reduced shear stress manufacturing. Updated Comirnaty 2023 thawed 2-8°C 10 weeks storage. Lyophilized mRNA-LNP development active 2024: Pfizer, Moderna, Arcturus partial freeze-drying — multi-month room-temperature stability potential. Goal access LMICs sem expensive cold-chain. CureVac CV2CoV refrigerator-stable was selling point. Gavi/COVAX procurement constraints highlighted. Innovation ongoing critical pandemic preparedness.'
+          en: 'Cold-chain mRNA evolution: BNT162b2 launch 2020 required -70 °C ultra-cold (dry ice + special freezers logistics) → barrier to global access. Moderna mRNA-1273 -20 °C (standard freezer). Subsequent iterations of improvements: optimizing LNP composition (specific ionizable lipids ALC-0315 BioNTech, SM-102 Moderna), buffer formulations (sucrose, trehalose cryoprotectants), reduced shear stress in manufacturing. Updated Comirnaty 2023 thawed 2-8 °C 10 weeks storage. Lyophilized mRNA-LNP development active 2024: Pfizer, Moderna, Arcturus partial freeze-drying — multi-month room-temperature stability potential. Goal: access in LMICs without expensive cold chain. CureVac CV2CoV refrigerator-stable was a selling point. Gavi/COVAX procurement constraints highlighted. Innovation ongoing — critical for pandemic preparedness.'
+        objectives: [mRNA cold chain]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: BioNTech/Moderna mRNA cancer vaccines vs neoantigen peptide vaccines vantagem é…
+          en: BioNTech/Moderna mRNA cancer vaccines vs neoantigen peptide vaccines advantage is…
+        choices:
+          - mRNA permits encoding many neoantigens in a single string-of-beads construct, faster manufacturing per patient than synthetic peptide pools, and intracellular MHC-I presentation
+          - mRNA platforms encode fewer neoantigens than peptides per patient construct
+          - Peptide vaccines induce stronger responses than mRNA in all clinical trials
+          - mRNA approach requires longer manufacturing turnaround than synthetic peptides
+        correctAnswer: mRNA permits encoding many neoantigens in a single string-of-beads construct, faster manufacturing per patient than synthetic peptide pools, and intracellular MHC-I presentation
+        rationale:
+          pt: 'Personalized cancer vaccines comparison: peptide vaccines (Ott Wu Catanzaro Snyder Nature 2017 melanoma 6/6 patients responses, NeoVax) vs mRNA platforms (Moderna mRNA-4157 ~34 antigens/construct, BioNTech BNT122). mRNA vantagens: encode dezenas mutations single construct (string-of-beads design — 25-mer epitopes linked by glycine-serine spacers), translation produces intracellular protein → endogenous MHC-I processing → CD8+ T cells (vs peptide cross-presentation dendritic cells less efficient para CD8 priming). Manufacturing: synthesize one mRNA (~1 dia) vs synthesize 30+ peptides individually (slower, expensive, hydrophobic peptides difficult). mRNA per-patient manufacturing turnaround ~6 weeks (Moderna) vs ~12-16 weeks peptide. Trade-off: mRNA requires LNP cold-chain infrastructure peptides simpler. Both fields complementary; mRNA ascendant 2023+.'
+          en: 'Personalized cancer vaccines comparison: peptide vaccines (Ott Wu Catanzaro Snyder Nature 2017 melanoma 6/6 patients responses, NeoVax) vs mRNA platforms (Moderna mRNA-4157 ~34 antigens/construct, BioNTech BNT122). mRNA advantages: encode dozens of mutations in a single construct (string-of-beads design — 25-mer epitopes linked by glycine-serine spacers), translation produces intracellular protein → endogenous MHC-I processing → CD8+ T cells (vs peptide cross-presentation by dendritic cells, less efficient for CD8 priming). Manufacturing: synthesize one mRNA (~1 day) vs synthesize 30+ peptides individually (slower, expensive, hydrophobic peptides difficult). mRNA per-patient manufacturing turnaround ~6 weeks (Moderna) vs ~12-16 weeks for peptides. Trade-off: mRNA requires LNP cold-chain infrastructure, peptides simpler. Both fields complementary; mRNA ascendant 2023+.'
+        objectives: [mRNA vs peptide vaccines]
+  - title:
+      pt: Página 2 — Imunoterapia oncológica avançada
+      en: Page 2 — Advanced cancer immunotherapy
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Honjo/Allison Nobel Medicina 2018 reconheceu…
+          en: 2018 Nobel in Medicine to Honjo/Allison recognized…
+        choices:
+          - Discovery of immune checkpoint inhibition (CTLA-4, PD-1) as a cancer therapy approach, transforming oncology with anti-PD-1/PD-L1 and anti-CTLA-4 antibodies
+          - Development of CAR-T cells for B-cell malignancies
+          - Discovery of HER2 and trastuzumab development
+          - Identification of BRCA1/BRCA2 hereditary cancer genes
+        correctAnswer: Discovery of immune checkpoint inhibition (CTLA-4, PD-1) as a cancer therapy approach, transforming oncology with anti-PD-1/PD-L1 and anti-CTLA-4 antibodies
+        rationale:
+          pt: 'Nobel Medicine 2018 — James Allison (MD Anderson, ex-Berkeley) + Tasuku Honjo (Kyoto Univ) "for their discovery of cancer therapy by inhibition of negative immune regulation". Allison: CTLA-4 (cytotoxic T-lymphocyte-associated protein 4) inhibitory receptor T cells (Krummel/Allison Science 1996). Anti-CTLA-4 antibody → T-cell activation → tumor regression mouse 1996; clinical ipilimumab (Bristol-Myers Squibb) FDA approval 2011 metastatic melanoma. Honjo: PD-1 (programmed death-1) Ishida 1992; PD-L1 ligand. Nivolumab/pembrolizumab anti-PD-1 FDA 2014. Anti-PD-L1: atezolizumab, durvalumab, avelumab. Field exploded — múltiplas indications ($30B+ market). Combinação ipi+nivo (anti-CTLA-4 + anti-PD-1) standard advanced melanoma. Limitations: ~20-40% response rates típico, hyperprogression alguns, immune-related adverse events (irAEs).'
+          en: '2018 Nobel in Medicine — James Allison (MD Anderson, ex-Berkeley) + Tasuku Honjo (Kyoto Univ) "for their discovery of cancer therapy by inhibition of negative immune regulation". Allison: CTLA-4 (cytotoxic T-lymphocyte-associated protein 4) inhibitory receptor on T cells (Krummel/Allison Science 1996). Anti-CTLA-4 antibody → T-cell activation → tumor regression in mouse 1996; clinical ipilimumab (Bristol-Myers Squibb) FDA approval 2011 metastatic melanoma. Honjo: PD-1 (programmed death-1) Ishida 1992; PD-L1 ligand. Nivolumab/pembrolizumab anti-PD-1 FDA 2014. Anti-PD-L1: atezolizumab, durvalumab, avelumab. Field exploded — multiple indications ($30B+ market). Combination ipi+nivo (anti-CTLA-4 + anti-PD-1) is standard for advanced melanoma. Limitations: typically ~20-40% response rates, hyperprogression in some, immune-related adverse events (irAEs).'
+        objectives: [Nobel 2018 checkpoint]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: CAR-T anti-CD19 (Kymriah/Yescarta FDA 2017) mecanismo é…
+          en: CAR-T anti-CD19 (Kymriah/Yescarta FDA 2017) mechanism is…
+        choices:
+          - Patient T cells engineered with chimeric antigen receptor recognizing CD19 on B-cell malignancies, MHC-independent killing of CD19+ cells
+          - HLA-matched donor T cells without genetic engineering
+          - Bispecific antibody linking T cell to tumor without cellular product
+          - Soluble cytokine therapy without cellular component
+        correctAnswer: Patient T cells engineered with chimeric antigen receptor recognizing CD19 on B-cell malignancies, MHC-independent killing of CD19+ cells
+        rationale:
+          pt: 'CAR-T (Chimeric Antigen Receptor T cell): patient autologous T cells extracted via leukapheresis → ex vivo lentiviral transduction CAR construct (anti-CD19 scFv + CD8 hinge/transmembrane + 4-1BB ou CD28 costimulatory + CD3ζ signaling) → expand → reinfuse após lymphodepleting chemo (fludarabine + cyclophosphamide). MHC-independent recognition CD19 surface antigen → cytotoxicity B-cell tumors. FDA approvals: Kymriah (tisagenlecleucel Novartis, originated Penn Carl June Bruce Levine) ALL pediatric 2017 + adult DLBCL 2018; Yescarta (axicabtagene Kite/Gilead, originated NCI Steven Rosenberg James Kochenderfer) adult DLBCL 2017. Subsequent: Tecartus (mantle cell), Breyanzi, Carvykti (BCMA myeloma), Abecma (BCMA). ORR ~70-90% B-ALL, durable complete responses ~40-60%. Toxicities: cytokine release syndrome (CRS), neurotoxicity (ICANS), B-cell aplasia. Future: solid tumors challenge.'
+          en: 'CAR-T (Chimeric Antigen Receptor T cell): patient autologous T cells extracted via leukapheresis → ex vivo lentiviral transduction with CAR construct (anti-CD19 scFv + CD8 hinge/transmembrane + 4-1BB or CD28 costimulatory + CD3ζ signaling) → expanded → reinfused after lymphodepleting chemo (fludarabine + cyclophosphamide). MHC-independent recognition of CD19 surface antigen → cytotoxicity against B-cell tumors. FDA approvals: Kymriah (tisagenlecleucel Novartis, originated at Penn with Carl June Bruce Levine) pediatric ALL 2017 + adult DLBCL 2018; Yescarta (axicabtagene Kite/Gilead, originated at NCI with Steven Rosenberg James Kochenderfer) adult DLBCL 2017. Subsequent: Tecartus (mantle cell), Breyanzi, Carvykti (BCMA myeloma), Abecma (BCMA). ORR ~70-90% in B-ALL, durable complete responses ~40-60%. Toxicities: cytokine release syndrome (CRS), neurotoxicity (ICANS), B-cell aplasia. Future: solid tumors remain a challenge.'
+        objectives: [CAR-T CD19]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: TCR-T afami-cel (Tecelra, Adaptimmune FDA 2024) é…
+          en: TCR-T afami-cel (Tecelra, Adaptimmune FDA 2024) is…
+        choices:
+          - First-ever T-cell receptor therapy targeting MAGE-A4 in HLA-A02:01+ synovial sarcoma, expanding T-cell therapy beyond hematologic malignancies into solid tumors
+          - CAR-T for B-cell lymphoma identical to Kymriah
+          - Allogeneic NK-cell therapy without TCR engineering
+          - Bispecific antibody not a cell therapy
+        correctAnswer: First-ever T-cell receptor therapy targeting MAGE-A4 in HLA-A02:01+ synovial sarcoma, expanding T-cell therapy beyond hematologic malignancies into solid tumors
+        rationale:
+          pt: 'Tecelra (afamitresgene autoleucel, afami-cel; Adaptimmune): FDA approval 2 agosto 2024 — primeira TCR-T (T-cell receptor therapy) approved unresectable/metastatic synovial sarcoma. Mechanism: autologous T cells engineered express affinity-enhanced TCR recognizing MAGE-A4 peptide (cancer-testis antigen) presented on HLA-A02:01 (HLA restriction). Difere CAR-T: TCR recognizes intracellular antigens via MHC-I (CAR-T limited surface antigens). Eligibility: HLA-A02:01+ + MAGE-A4+ tumor (~30% synovial sarcoma express both). SPEARHEAD-1 trial: ORR ~39%, durable responses median ~12 meses. Marca milestone TCR-T solid tumors. Concurrent: NCI Rosenberg trials TIL therapy melanoma (Iovance lifileucel Amtagvi FDA 2024 melanoma — ORR ~31% checkpoint-refractory). TCR-T pipeline: NY-ESO-1, KK-LC-1 outros antigens. Limit: HLA restriction limits broader population.'
+          en: 'Tecelra (afamitresgene autoleucel, afami-cel; Adaptimmune): FDA approval 2 August 2024 — first TCR-T (T-cell receptor therapy) approved for unresectable/metastatic synovial sarcoma. Mechanism: autologous T cells engineered to express affinity-enhanced TCR recognizing MAGE-A4 peptide (cancer-testis antigen) presented on HLA-A02:01 (HLA restriction). Differs from CAR-T: TCR recognizes intracellular antigens via MHC-I (CAR-T is limited to surface antigens). Eligibility: HLA-A02:01+ + MAGE-A4+ tumor (~30% of synovial sarcomas express both). SPEARHEAD-1 trial: ORR ~39%, durable responses median ~12 months. Marks milestone TCR-T in solid tumors. Concurrent: NCI Rosenberg trials of TIL therapy in melanoma (Iovance lifileucel Amtagvi FDA 2024 for melanoma — ORR ~31% in checkpoint-refractory). TCR-T pipeline: NY-ESO-1, KK-LC-1 other antigens. Limit: HLA restriction limits broader population.'
+        objectives: [TCR-T afami-cel]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Bispecific T-cell engagers (BiTE, blinatumomab Blincyto FDA 2014) mecanismo é…
+          en: Bispecific T-cell engagers (BiTE, blinatumomab Blincyto FDA 2014) mechanism is…
+        choices:
+          - Recombinant antibody linking CD19 on B cells to CD3 on T cells, redirecting T-cell cytotoxicity without genetic engineering
+          - Genetically engineered patient T cells with chimeric antigen receptor
+          - Small-molecule kinase inhibitor blocking BCR signaling
+          - Conjugated antibody-drug delivering chemotherapy payload
+        correctAnswer: Recombinant antibody linking CD19 on B cells to CD3 on T cells, redirecting T-cell cytotoxicity without genetic engineering
+        rationale:
+          pt: 'BiTE (Bispecific T-cell Engager): blinatumomab (Blincyto Amgen) — primeira aprovada FDA 2014 R/R B-ALL. Construct: tandem scFv (single-chain variable fragment) — anti-CD19 + anti-CD3 ligados linker. Una T cell e B cell em proximidade → forces immune synapse → polyclonal T-cell activation, perforin/granzyme cytolysis. Sem MHC restriction, sem genetic engineering, sem manufacturing per-patient (off-the-shelf). Limit: short half-life ~2hrs → continuous IV infusion ~28 dias hospitalization. Cytokine release syndrome similar CAR-T mas reversível stop infusion. Efficacy: ORR ~40-50% in R/R adult B-ALL pivotal. Subsequent BiTEs: tarlatamab (anti-DLL3 small cell lung Imdelltra Amgen 2024), teclistamab (anti-BCMA Tecvayli myeloma 2022), elranatamab Elrexfio, mosunetuzumab. Trade-off vs CAR-T: lower peak efficacy, easier manufacturing/dosing, broader access.'
+          en: 'BiTE (Bispecific T-cell Engager): blinatumomab (Blincyto Amgen) — first FDA-approved 2014 for R/R B-ALL. Construct: tandem scFv (single-chain variable fragment) — anti-CD19 + anti-CD3 linked. Joins T cell and B cell in proximity → forces immune synapse → polyclonal T-cell activation, perforin/granzyme cytolysis. No MHC restriction, no genetic engineering, no per-patient manufacturing (off-the-shelf). Limit: short half-life ~2 hrs → continuous IV infusion for ~28 days of hospitalization. Cytokine release syndrome similar to CAR-T but reversible by stopping infusion. Efficacy: ORR ~40-50% in R/R adult B-ALL pivotal. Subsequent BiTEs: tarlatamab (anti-DLL3 small cell lung Imdelltra Amgen 2024), teclistamab (anti-BCMA Tecvayli myeloma 2022), elranatamab Elrexfio, mosunetuzumab. Trade-off vs CAR-T: lower peak efficacy, easier manufacturing/dosing, broader access.'
+        objectives: [BiTE blinatumomab]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: T-DXd / Enhertu (Daiichi Sankyo + AstraZeneca, DESTINY-Breast04 NEJM 2022) marco foi…
+          en: T-DXd / Enhertu (Daiichi Sankyo + AstraZeneca, DESTINY-Breast04 NEJM 2022) milestone was…
+        choices:
+          - Antibody-drug conjugate (anti-HER2 trastuzumab + topoisomerase-I deruxtecan payload) effective in HER2-low breast cancer, redefining the actionable HER2 spectrum
+          - Pure trastuzumab without any cytotoxic payload
+          - First small-molecule HER2 inhibitor without antibody component
+          - Vaccine targeting HER2 antigen for prevention only
+        correctAnswer: Antibody-drug conjugate (anti-HER2 trastuzumab + topoisomerase-I deruxtecan payload) effective in HER2-low breast cancer, redefining the actionable HER2 spectrum
+        rationale:
+          pt: 'Trastuzumab deruxtecan (T-DXd, Enhertu, Daiichi Sankyo + AstraZeneca): ADC anti-HER2 trastuzumab (humanized monoclonal) conjugated via cleavable tetrapeptide linker → deruxtecan exatecan-derivative topoisomerase-I inhibitor payload, drug-antibody ratio (DAR) ~8 vs first-gen ADCs DAR ~3-4. High potency (~10x more cytotoxic than SN-38), bystander killing (membrane-permeable cleaved payload neighboring cells). DESTINY-Breast04 (Modi NEJM 2022): T-DXd vs chemo physician choice em HER2-low (IHC 1+ ou 2+/ISH-) metastatic breast — PFS ~10.1 vs 5.4 meses, OS ~23.9 vs 17.5 meses. Redefines: HER2-low (~50-55% breast cancers) actionable population, antes "HER2-negative". Subsequent: DESTINY-Breast06 HER2-ultralow positive too. Other indications: HER2 gastric (Enhertu approved), NSCLC, colorectal, biliary tract pan-tumor (FDA accelerated approval 2024 HER2+ solid tumors). Toxicity: interstitial lung disease ~10-15% (~1-2% fatal). ADC platform broader (Pfizer-Seagen Padcev/Trodelvy etc).'
+          en: 'Trastuzumab deruxtecan (T-DXd, Enhertu, Daiichi Sankyo + AstraZeneca): ADC of anti-HER2 trastuzumab (humanized monoclonal) conjugated via cleavable tetrapeptide linker → deruxtecan exatecan-derivative topoisomerase-I inhibitor payload, drug-antibody ratio (DAR) ~8 vs first-gen ADCs DAR ~3-4. High potency (~10x more cytotoxic than SN-38), bystander killing (membrane-permeable cleaved payload reaches neighboring cells). DESTINY-Breast04 (Modi NEJM 2022): T-DXd vs physician''s-choice chemo in HER2-low (IHC 1+ or 2+/ISH-) metastatic breast — PFS ~10.1 vs 5.4 months, OS ~23.9 vs 17.5 months. Redefines: HER2-low (~50-55% of breast cancers) actionable population, previously "HER2-negative". Subsequent: DESTINY-Breast06 HER2-ultralow positive too. Other indications: HER2 gastric (Enhertu approved), NSCLC, colorectal, biliary tract pan-tumor (FDA accelerated approval 2024 HER2+ solid tumors). Toxicity: interstitial lung disease ~10-15% (~1-2% fatal). Broader ADC platform (Pfizer-Seagen Padcev/Trodelvy etc).'
+        objectives: [T-DXd ADC]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: PROTACs (Crews Yale, Arvinas) mecanismo é…
+          en: PROTACs (Crews Yale, Arvinas) mechanism is…
+        choices:
+          - Bifunctional small molecules that recruit E3 ubiquitin ligase to a target protein, inducing its proteasomal degradation rather than just inhibiting its activity
+          - Classical kinase inhibitors blocking ATP binding only
+          - Antibodies binding extracellular receptors without intracellular component
+          - mRNA antisense oligonucleotides for transcript knockdown
+        correctAnswer: Bifunctional small molecules that recruit E3 ubiquitin ligase to a target protein, inducing its proteasomal degradation rather than just inhibiting its activity
+        rationale:
+          pt: 'PROTACs (Proteolysis Targeting Chimeras): Crews Yale + Deshaies Caltech 2001 PNAS conceito original. Heterobifunctional molecule: target-binding warhead + linker + E3 ligase recruiter (e.g., VHL, CRBN cereblon thalidomide-derivative). Binding both → ternary complex → ubiquitination target → 26S proteasome degradation. Catalytic (não estoichiometric) → low doses sufficient. Vantagens: degrade scaffold/tightly-bound proteins ("undruggable") sem requiring active-site inhibition, hits mutants resistant inhibitors, avoid feedback upregulation. Companies: Arvinas (Crews spinout) ARV-471 (vepdegestrant ER degrader Pfizer-partnered Phase 3 breast cancer), ARV-110 (bavdegalutamide AR prostate), Kymera Therapeutics IRAK4. Foghorn, C4, Nurix outros. CRBN-based PROTACs derivam IMiDs Celgene lenalidomide/pomalidomide. Field expanding: molecular glues (CDK7 SY-5609, GSPT1) outras flavors targeted protein degradation TPD.'
+          en: 'PROTACs (Proteolysis Targeting Chimeras): Crews Yale + Deshaies Caltech 2001 PNAS original concept. Heterobifunctional molecule: target-binding warhead + linker + E3 ligase recruiter (e.g., VHL, CRBN cereblon thalidomide-derivative). Binding both → ternary complex → ubiquitination of target → 26S proteasome degradation. Catalytic (not stoichiometric) → low doses are sufficient. Advantages: degrade scaffold/tightly-bound proteins ("undruggable") without requiring active-site inhibition, hits mutants resistant to inhibitors, avoids feedback upregulation. Companies: Arvinas (Crews spinout) ARV-471 (vepdegestrant ER degrader Pfizer-partnered Phase 3 breast cancer), ARV-110 (bavdegalutamide AR prostate), Kymera Therapeutics IRAK4. Foghorn, C4, Nurix others. CRBN-based PROTACs derive from IMiDs Celgene lenalidomide/pomalidomide. Field expanding: molecular glues (CDK7 SY-5609, GSPT1) and other flavors of targeted protein degradation TPD.'
+        objectives: [PROTACs]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: TIL therapy lifileucel (Amtagvi, Iovance FDA 2024) é…
+          en: TIL therapy lifileucel (Amtagvi, Iovance FDA 2024) is…
+        choices:
+          - Tumor-infiltrating lymphocytes harvested from patient tumor, expanded ex vivo with IL-2, reinfused after lymphodepletion to treat checkpoint-refractory melanoma
+          - CAR-engineered T cells with anti-MART-1 receptor
+          - NK cell therapy from cord blood without TIL component
+          - Vaccine-based melanoma immunotherapy without cell transfer
+        correctAnswer: Tumor-infiltrating lymphocytes harvested from patient tumor, expanded ex vivo with IL-2, reinfused after lymphodepletion to treat checkpoint-refractory melanoma
+        rationale:
+          pt: 'Lifileucel (Amtagvi, Iovance Biotherapeutics): FDA approval 16 fevereiro 2024 — primeira TIL therapy aprovada. Mechanism: tumor-infiltrating lymphocytes (TILs, mix CD8/CD4 T cells naturally infiltrating tumor) extracted surgical excision tumor → ex vivo expansion ~22 days IL-2 + activation → ~10⁹-10¹¹ cells reinfused após lymphodepleting chemo (fludarabine + cyclophosphamide) + post-infusion IL-2 high-dose. Indication: unresectable/metastatic melanoma checkpoint-refractory após anti-PD-1. C-144-01 trial: ORR ~31%, ~14% durable responses >18 meses. Foundation: NCI Steven Rosenberg trabalho décadas (TIL therapy first concept 1988). Concurrent: TIL trials cervical (lifileucel + pembro), NSCLC, head/neck. Limit: surgical access tumor required, complex manufacturing ~5 weeks, IL-2 toxicity. Companies: Iovance, Achilles Therapeutics (clonal neoantigen-reactive TILs), Instil Bio.'
+          en: 'Lifileucel (Amtagvi, Iovance Biotherapeutics): FDA approval 16 February 2024 — first TIL therapy approved. Mechanism: tumor-infiltrating lymphocytes (TILs, mix of CD8/CD4 T cells naturally infiltrating tumor) extracted from surgical excision of tumor → ex vivo expansion ~22 days with IL-2 + activation → ~10⁹-10¹¹ cells reinfused after lymphodepleting chemo (fludarabine + cyclophosphamide) + post-infusion high-dose IL-2. Indication: unresectable/metastatic melanoma checkpoint-refractory after anti-PD-1. C-144-01 trial: ORR ~31%, ~14% durable responses >18 months. Foundation: decades of work by NCI Steven Rosenberg (TIL therapy first conceived 1988). Concurrent: TIL trials in cervical (lifileucel + pembro), NSCLC, head/neck. Limit: surgical access to tumor required, complex manufacturing ~5 weeks, IL-2 toxicity. Companies: Iovance, Achilles Therapeutics (clonal neoantigen-reactive TILs), Instil Bio.'
+        objectives: [TIL lifileucel]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: KRAS inhibitors (sotorasib Lumakras Amgen 2021, adagrasib Krazati Mirati 2022) marco é…
+          en: KRAS inhibitors (sotorasib Lumakras Amgen 2021, adagrasib Krazati Mirati 2022) milestone is…
+        choices:
+          - Covalent inhibitors of KRAS G12C trapping the GDP-bound state, breaking decades of "undruggable" KRAS perception in cancer
+          - Indirect inhibitors of downstream MEK/ERK without KRAS binding
+          - Pan-KRAS inhibitors targeting all KRAS mutations universally
+          - Antibody-based therapy against extracellular KRAS forms
+        correctAnswer: Covalent inhibitors of KRAS G12C trapping the GDP-bound state, breaking decades of "undruggable" KRAS perception in cancer
+        rationale:
+          pt: 'KRAS G12C inhibitors: Shokat lab UCSF 2013 PNAS demonstrated covalent reactive cysteine pocket de novo created by G12C mutation. Sotorasib (AMG 510, Amgen Lumakras) FDA approval 2021, adagrasib (MRTX849, Mirati Krazati) FDA 2022. Both small molecules acrylamide reactive group covalent bond Cys12 → trap inactive GDP-bound state KRAS. Indications: KRAS G12C mutant NSCLC ~13% all NSCLC. ORR ~30-40%, PFS ~6-7 meses. Limitations: resistance rapidly (target mutations Y96D, secondary KRAS mutations, parallel pathways), tumor genomic context dependent (STK11, KEAP1 mutations worse responses). Combinações: anti-PD-1, MEK inhibitors, SHP2 inhibitors active investigation. Pan-KRAS inhibitors (BBP-454 BridgeBio, RMC-7977 RAS(ON) Revolution Medicines) próximas wave 2024+. KRAS G12D (~50% pancreatic) também actively developed. Marca era "druggable KRAS".'
+          en: 'KRAS G12C inhibitors: Shokat lab UCSF 2013 PNAS demonstrated covalent reactive cysteine pocket de novo created by the G12C mutation. Sotorasib (AMG 510, Amgen Lumakras) FDA approval 2021, adagrasib (MRTX849, Mirati Krazati) FDA 2022. Both small molecules with acrylamide reactive group covalent bond Cys12 → trap inactive GDP-bound state of KRAS. Indications: KRAS G12C mutant NSCLC ~13% of all NSCLC. ORR ~30-40%, PFS ~6-7 months. Limitations: resistance arises rapidly (target mutations Y96D, secondary KRAS mutations, parallel pathways), tumor genomic context dependent (STK11, KEAP1 mutations worse responses). Combinations: anti-PD-1, MEK inhibitors, SHP2 inhibitors active investigation. Pan-KRAS inhibitors (BBP-454 BridgeBio, RMC-7977 RAS(ON) Revolution Medicines) next wave 2024+. KRAS G12D (~50% of pancreatic) also actively developed. Marks "druggable KRAS" era.'
+        objectives: [KRAS G12C]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: iPSC-NK cell therapy (Fate Therapeutics) advantage é…
+          en: iPSC-NK cell therapy (Fate Therapeutics) advantage is…
+        choices:
+          - Off-the-shelf allogeneic NK cells from a master iPSC line, scalable manufacturing without HLA matching and lower GvHD risk than T-cell therapies
+          - Patient-specific autologous T-cell engineering with long manufacturing
+          - Antibody-only therapy without cellular component
+          - Bone-marrow-derived stem cells without iPSC origin
+        correctAnswer: Off-the-shelf allogeneic NK cells from a master iPSC line, scalable manufacturing without HLA matching and lower GvHD risk than T-cell therapies
+        rationale:
+          pt: 'iPSC-NK cell therapy (Fate Therapeutics, MD Anderson Rezvani lab): natural killer (NK) cells inate immune lineage — não express TCR → não cause GvHD allogeneic transfer (vs T cells need HLA-matching ou TCR knockout). iPSC-derived: master iPSC line clonally engineered (CD16 high-affinity Fc receptor, IL-15 transgene autocrine support, knockout CD58 ou outros immune-evasion edits) → differentiated NK cells em scale → cryopreserved → off-the-shelf. Fate FT516 (CD16 high-affinity), FT596 (CAR-NK + CD19), FT819 iPSC-CAR-T (TRAC knockout). Cord blood-derived NK alternative pathway (Rezvani anti-CD19 CAR-NK NEJM 2020 ~73% CR rate B-NHL). Allogeneic CAR-NK comparison vs CAR-T: lower CRS/ICANS toxicity, scalable, mas shorter persistence ~weeks vs months/years. Field active 2024+ — Fate, Affimed, Wugen, Century Therapeutics. Solid tumors potential.'
+          en: 'iPSC-NK cell therapy (Fate Therapeutics, MD Anderson Rezvani lab): natural killer (NK) cells of innate immune lineage — do not express TCR → do not cause GvHD on allogeneic transfer (vs T cells which need HLA-matching or TCR knockout). iPSC-derived: master iPSC line clonally engineered (CD16 high-affinity Fc receptor, IL-15 transgene autocrine support, knockout of CD58 or other immune-evasion edits) → differentiated to NK cells at scale → cryopreserved → off-the-shelf. Fate FT516 (CD16 high-affinity), FT596 (CAR-NK + CD19), FT819 iPSC-CAR-T (TRAC knockout). Cord blood-derived NK alternative pathway (Rezvani anti-CD19 CAR-NK NEJM 2020 ~73% CR rate in B-NHL). Allogeneic CAR-NK comparison vs CAR-T: lower CRS/ICANS toxicity, scalable, but shorter persistence ~weeks vs months/years. Field active 2024+ — Fate, Affimed, Wugen, Century Therapeutics. Solid-tumor potential.'
+        objectives: [iPSC-NK]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Tumor neoantigen prediction (NetMHCpan, EDGE Moderna) bottleneck atual é…
+          en: Tumor neoantigen prediction (NetMHCpan, EDGE Moderna) current bottleneck is…
+        choices:
+          - Distinguishing truly immunogenic neoantigens (driving T-cell responses) from merely presented peptides; presentation prediction is mature, but immunogenicity ranking remains imperfect
+          - Inability to predict any HLA-binding peptide from tumor sequencing
+          - Lack of any tumor sequencing data sources at scale
+          - Absence of MHC-I structural information for any human allele
+        correctAnswer: Distinguishing truly immunogenic neoantigens (driving T-cell responses) from merely presented peptides; presentation prediction is mature, but immunogenicity ranking remains imperfect
+        rationale:
+          pt: 'Neoantigen prediction pipeline: WES tumor + germline → call somatic SNVs/indels → translate ORF → peptidoma 8-11mer windows → MHC-I binding prediction (NetMHCpan Nielsen Lund DTU, MHCflurry O''Donnell Hammerbacher, EDGE Bulik-Sullivan Moderna trained mass-spec data). Presentation prediction: MS-validated MHC-I peptidome, ~80%+ accuracy mature methods. Immunogenicity prediction (does peptide trigger CD8 T-cell response in vivo?) bottleneck: depends presence T-cell repertoire reactive (TCR avidity), thymic negative selection (similarity self-proteome), antigen processing (proteasome, TAP), tumor microenvironment. Current ~10-20% of well-presented neoantigens elicit measurable T-cell responses in vaccine trials. Active research: TCR-pMHC structural prediction (AlphaFold-based), binding affinity → recognition translation models, public datasets (TESLA Wells consortium 2020 Cell). Better immunogenicity ranking key personalized vaccine efficacy.'
+          en: 'Neoantigen prediction pipeline: WES of tumor + germline → call somatic SNVs/indels → translate ORF → peptidome of 8-11mer windows → MHC-I binding prediction (NetMHCpan Nielsen Lund DTU, MHCflurry O''Donnell Hammerbacher, EDGE Bulik-Sullivan Moderna trained on mass-spec data). Presentation prediction: MS-validated MHC-I peptidome, ~80%+ accuracy in mature methods. Immunogenicity prediction (does peptide trigger CD8 T-cell response in vivo?) is the bottleneck: depends on presence of reactive T-cell repertoire (TCR avidity), thymic negative selection (similarity to self-proteome), antigen processing (proteasome, TAP), tumor microenvironment. Currently ~10-20% of well-presented neoantigens elicit measurable T-cell responses in vaccine trials. Active research: TCR-pMHC structural prediction (AlphaFold-based), binding affinity → recognition translation models, public datasets (TESLA Wells consortium 2020 Cell). Better immunogenicity ranking is key to personalized vaccine efficacy.'
+        objectives: [Neoantigen prediction]
+target: 20
