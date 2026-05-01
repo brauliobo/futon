@@ -1,0 +1,345 @@
+title:
+  pt: IA Estrutural e Design de Proteínas De Novo
+  en: Structural AI and De Novo Protein Design
+level: O
+subject: biology
+objectives:
+  - Compreender AlphaFold2/3 e RoseTTAFold
+  - Reconhecer design de proteínas (Hallucination, RFdiffusion)
+  - Identificar aplicações (vacinas, ligantes, enzimas)
+  - Avaliar Nobel 2024 e ecossistema (ESMFold, ColabFold, OpenFold)
+difficulty: 5
+authorNotes: |
+  Frontier protein AI. AlphaFold2 (Jumper/Hassabis, Nature 2021), AF3 (2024 multi-modal),
+  RoseTTAFold (Baek/Baker 2021). ESMFold (Lin/Rives Meta 2022). ColabFold (Mirdita/Steinegger).
+  De novo design: Top7 (Kuhlman 2003), influenza HA binders Strauch 2017, Hallucination
+  Anishchenko 2021, RFdiffusion (Watson/Baker 2023), all-atom RFdiffusion 2024. AAV capsid
+  Diao 2024. Mini-protein binders Cao 2022. Nobel Chem 2024: Baker / Hassabis / Jumper.
+  CASP14 2020 watershed. ESM3 (Hayes 2024 EvolutionaryScale). DeepMind founded 2010, Google
+  acquired 2014. Isomorphic Labs 2021 spinoff for drugs.
+example:
+  question:
+    pt: Em outubro de 2024, o Nobel de Química foi concedido pela revolução em estrutura e design de proteínas. Quem foram os laureados?
+    en: In October 2024, the Nobel Prize in Chemistry was awarded for the protein structure and design revolution. Who were the laureates?
+  choices:
+    - David Baker (UW), Demis Hassabis e John Jumper (Google DeepMind)
+    - Jennifer Doudna, Emmanuelle Charpentier e Feng Zhang
+    - Frances Arnold, George Smith e Gregory Winter
+    - Yoshinori Ohsumi, Bruce Beutler e Jules Hoffmann
+  correctAnswer: David Baker (UW), Demis Hassabis e John Jumper (Google DeepMind)
+  rationale:
+    pt: O Nobel de Química 2024 foi dividido — metade para Baker pelo design computacional de proteínas, metade para Hassabis e Jumper pelo AlphaFold2 que resolveu o problema de previsão de estrutura proteica.
+    en: The 2024 Chemistry Nobel was split — half to Baker for computational protein design, half to Hassabis and Jumper for AlphaFold2 which solved the protein structure prediction problem.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — AlphaFold e previsão de estrutura
+      en: Page 1 — AlphaFold and structure prediction
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O CASP14 (2020) marcou o ponto de virada para previsão de estrutura. Qual foi o GDT_TS médio do AlphaFold2?
+          en: CASP14 (2020) marked the turning point for structure prediction. What was AlphaFold2's median GDT_TS?
+        choices:
+          - ~92, atingindo qualidade experimental para a maioria dos alvos pela primeira vez
+          - ~50, comparável a métodos clássicos sem ganho real significativo
+          - ~30, inferior a Rosetta clássico em alvos de homologia distante
+          - ~100 perfeito em todos os alvos sem qualquer erro residual
+        correctAnswer: ~92, atingindo qualidade experimental para a maioria dos alvos pela primeira vez
+        rationale:
+          pt: AF2 atingiu GDT_TS mediano ~92,4 no CASP14, com a maior parte dos alvos com qualidade comparável a estruturas experimentais — segundo lugar tinha ~73, gap histórico que catalisou o reconhecimento Nobel.
+          en: AF2 achieved median GDT_TS ~92.4 at CASP14, with most targets at experimental-quality precision — second place was ~73, a historic gap that catalyzed the Nobel recognition.
+        objectives: [CASP14]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A inovação arquitetural central do AlphaFold2 (Jumper et al., Nature 2021) é…
+          en: AlphaFold2's (Jumper et al., Nature 2021) central architectural innovation is…
+        choices:
+          - Evoformer com atenção sobre MSA + matriz de pares + structure module com IPA
+          - Transformer simples sem qualquer informação evolutiva multi-sequência
+          - Rede convolucional clássica sobre matrizes de contato como AlphaFold1
+          - Modelo gráfico bayesiano sobre rotâmeros de cadeias laterais apenas
+        correctAnswer: Evoformer com atenção sobre MSA + matriz de pares + structure module com IPA
+        rationale:
+          pt: AF2 introduziu Evoformer (atenção sobre MSA + representação de pares com axial attention + triângulos) seguido por Structure Module com Invariant Point Attention (IPA) gerando coordenadas SE(3)-equivariantes — paradigma revolucionário.
+          en: AF2 introduced Evoformer (attention over MSA + pair representation with axial attention + triangle updates) followed by Structure Module with Invariant Point Attention (IPA) producing SE(3)-equivariant coordinates — a revolutionary paradigm.
+        objectives: [Evoformer]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O AlphaFold Protein Structure Database, lançado em 2021 com EMBL-EBI, contém aproximadamente quantas estruturas?
+          en: The AlphaFold Protein Structure Database, launched 2021 with EMBL-EBI, contains approximately how many structures?
+        choices:
+          - ~200 milhões cobrindo virtualmente todo proteoma de UniProt sequenciado
+          - ~5 mil restritas a proteínas humanas de doença prioritária
+          - ~50 milhões mas apenas para vertebrados sem invertebrados ou plantas
+          - ~10 mil disponíveis exclusivamente sob assinatura paga da DeepMind
+        correctAnswer: ~200 milhões cobrindo virtualmente todo proteoma de UniProt sequenciado
+        rationale:
+          pt: A AFDB cresceu de ~360k em 2021 para ~200M em 2022, cobrindo praticamente todo UniProt — disponibilizada gratuitamente via EMBL-EBI; transformou bioinformática estrutural de boutique a ubíqua.
+          en: The AFDB grew from ~360k in 2021 to ~200M in 2022, covering essentially all of UniProt — released freely via EMBL-EBI; transformed structural bioinformatics from boutique to ubiquitous.
+        objectives: [AFDB]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: AlphaFold3 (2024) expandiu capacidades para incluir o quê?
+          en: AlphaFold3 (2024) expanded capabilities to include what?
+        choices:
+          - Estruturas de complexos proteína-ligante, proteína-DNA/RNA e modificações pós-traducionais
+          - Apenas dimerização entre cópias da mesma proteína sem heteroméricos
+          - Previsão de dinâmica molecular sem qualquer modelo estático associado
+          - Apenas estruturas de proteínas de membrana com lipídeos pré-definidos
+        correctAnswer: Estruturas de complexos proteína-ligante, proteína-DNA/RNA e modificações pós-traducionais
+        rationale:
+          pt: AF3 (Abramson et al., Nature 2024) substituiu structure module por difusor; prevê complexos proteína-DNA/RNA, ligantes orgânicos, íons e PTMs — passo de modelagem de monômero a modelagem celular. Servido inicialmente pelo AlphaFold Server (uso restrito comercial).
+          en: AF3 (Abramson et al., Nature 2024) replaced the structure module with a diffuser; predicts protein-DNA/RNA complexes, organic ligands, ions, and PTMs — moving from monomer modeling to cellular modeling. Initially served by AlphaFold Server (restricted commercial use).
+        objectives: [AlphaFold3]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O RoseTTAFold (Baek et al., Science 2021), do laboratório de David Baker, diferencia-se do AF2 por…
+          en: RoseTTAFold (Baek et al., Science 2021) from David Baker's lab differs from AF2 by…
+        choices:
+          - Usar arquitetura tri-track (1D sequência, 2D distâncias, 3D coordenadas) e ser open-source
+          - Utilizar redes convolucionais clássicas sem qualquer mecanismo de atenção
+          - Não depender de MSA, baseando-se exclusivamente em sequência única
+          - Funcionar exclusivamente em GPUs proprietárias da Google sem reprodução possível
+        correctAnswer: Usar arquitetura tri-track (1D sequência, 2D distâncias, 3D coordenadas) e ser open-source
+        rationale:
+          pt: RoseTTAFold introduziu arquitetura tri-track integrando sequência, geometria 2D e estrutura 3D com message passing entre tracks; lançado open-source semanas antes do AF2 ser publicado — democratizando acesso e fundando ecossistema RoseTTAFold-AA, RFdiffusion etc.
+          en: RoseTTAFold introduced tri-track architecture integrating sequence, 2D geometry, and 3D structure with cross-track message passing; released open-source weeks before AF2's publication — democratizing access and founding the RoseTTAFold-AA, RFdiffusion ecosystem.
+        objectives: [RoseTTAFold]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ESMFold (Meta AI, 2022, Lin/Rives) inova ao prever estrutura sem o quê, comparado a AF2?
+          en: ESMFold (Meta AI, 2022, Lin/Rives) innovates by predicting structure without what, compared to AF2?
+        choices:
+          - Sem alinhamento múltiplo (MSA), usando apenas embeddings do protein language model ESM-2
+          - Sem pesos treinados, sendo modelo zero-shot puro sem aprendizado supervisionado
+          - Sem qualquer dado de estrutura PDB durante treinamento como benchmark
+          - Sem GPU, rodando exclusivamente em CPU para máxima acessibilidade
+        correctAnswer: Sem alinhamento múltiplo (MSA), usando apenas embeddings do protein language model ESM-2
+        rationale:
+          pt: ESMFold elimina a busca por MSA (gargalo lento de AF2): usa embeddings de ESM-2 (15B parâmetros) que internalizam coevolução. Trade-off: ~10% pior em alvos com homólogos abundantes mas ~60x mais rápido — útil para metagenomas sem MSAs.
+          en: ESMFold eliminates MSA search (AF2's slow bottleneck): uses ESM-2 (15B parameters) embeddings that internalize coevolution. Trade-off: ~10% worse on targets with abundant homologs but ~60x faster — useful for MSA-poor metagenomes.
+        objectives: [ESMFold]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ColabFold (Mirdita/Steinegger 2022) é amplamente usado por…
+          en: ColabFold (Mirdita/Steinegger 2022) is widely used because it…
+        choices:
+          - Rodar AlphaFold2 grátis em Google Colab usando MMseqs2 para MSA rápida via API
+          - Treinar AF2 do zero em hardware doméstico via técnicas de quantização
+          - Substituir AlphaFold2 por modelo proprietário publicado pela Cambridge
+          - Permitir busca em PDB sem qualquer modelagem estrutural envolvida
+        correctAnswer: Rodar AlphaFold2 grátis em Google Colab usando MMseqs2 para MSA rápida via API
+        rationale:
+          pt: ColabFold (Mirdita/Schütze/Steinegger, Nat Methods 2022) embrulha AF2 em Google Colab e substitui jackhmmer por MMseqs2 + servidor MSA público — reduz tempo de MSA de horas a minutos, democratizou previsão estrutural.
+          en: ColabFold (Mirdita/Schütze/Steinegger, Nat Methods 2022) wraps AF2 in Google Colab and replaces jackhmmer with MMseqs2 + a public MSA server — cutting MSA time from hours to minutes, democratizing structure prediction.
+        objectives: [ColabFold]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A Isomorphic Labs, fundada em 2021 por Demis Hassabis, foca em quê?
+          en: Isomorphic Labs, founded in 2021 by Demis Hassabis, focuses on what?
+        choices:
+          - Descoberta de fármacos por IA usando AlphaFold como núcleo, parcerias com Eli Lilly e Novartis
+          - Construção de robôs humanoides para uso doméstico e industrial em escala
+          - Desenvolvimento de novos veículos elétricos autônomos com a Waymo
+          - Engenharia de processadores quânticos para mineração de criptomoedas
+        correctAnswer: Descoberta de fármacos por IA usando AlphaFold como núcleo, parcerias com Eli Lilly e Novartis
+        rationale:
+          pt: Isomorphic Labs é spin-off da Alphabet/DeepMind dedicada a drug discovery por IA, alavancando AF e modelos generativos; em 2024 fechou parcerias bilionárias com Eli Lilly (US$ 1,7B) e Novartis (US$ 1,2B).
+          en: Isomorphic Labs is an Alphabet/DeepMind spin-off dedicated to AI drug discovery, leveraging AF and generative models; in 2024 it signed billion-dollar deals with Eli Lilly (US$ 1.7B) and Novartis (US$ 1.2B).
+        objectives: [Isomorphic Labs]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A primeira proteína inteiramente nova ("de novo") com função desejada e estrutura cristalográfica resolvida foi…
+          en: The first entirely new ("de novo") protein with desired function and crystallographically resolved structure was…
+        choices:
+          - Top7, dobramento ααββ inédito desenhado por Kuhlman/Baker em 2003 sem homólogos naturais
+          - GFP, isolada de Aequorea victoria nos anos 1960 sem qualquer design computacional
+          - Insulina humana sintetizada em 1981 por engenharia recombinante padrão
+          - Anticorpo monoclonal humanizado primeiro aprovado pela FDA em 1986
+        correctAnswer: Top7, dobramento ααββ inédito desenhado por Kuhlman/Baker em 2003 sem homólogos naturais
+        rationale:
+          pt: Top7 (Kuhlman et al., Science 2003) é proteína de 93 aa com topologia ααββ inédita; estrutura cristalográfica idêntica ao desenho computacional Rosetta — marco fundador do design de novo, pré-requisito do Nobel 2024 de Baker.
+          en: Top7 (Kuhlman et al., Science 2003) is a 93-aa protein with unprecedented ααββ topology; crystal structure matched the Rosetta computational design — founding milestone of de novo design, prerequisite for Baker's 2024 Nobel.
+        objectives: [Top7]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Limitação importante do AlphaFold2 reconhecida pelos próprios autores é…
+          en: An important AlphaFold2 limitation acknowledged by the authors is…
+        choices:
+          - Falha em prever efeitos de mutações pontuais e estados conformacionais alternativos
+          - Incapacidade de prever estrutura de proteínas globulares grandes acima de 400 aa
+          - Dependência total de cristalografia prévia da mesma proteína para qualquer previsão
+          - Restrição a proteínas humanas, falhando em qualquer organismo não-humano
+        correctAnswer: Falha em prever efeitos de mutações pontuais e estados conformacionais alternativos
+        rationale:
+          pt: AF2 prediz uma conformação dominante; tem dificuldade com mutações pontuais (efeito sutil), proteínas multi-estado (GPCRs ativo/inativo, kinesinas, IDPs). Métodos como AF-Cluster, MSA-subsampling tentam reabilitar conformações alternativas.
+          en: AF2 predicts a dominant conformation; struggles with point mutations (subtle effects), multi-state proteins (active/inactive GPCRs, kinesins, IDPs). Methods like AF-Cluster, MSA-subsampling try to recover alternative conformations.
+        objectives: [Limites AF2]
+  - title:
+      pt: Página 2 — Design de proteínas e aplicações
+      en: Page 2 — Protein design and applications
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "hallucination" introduzida por Anishchenko/Baker (Nature 2021) consiste em…
+          en: "Hallucination" introduced by Anishchenko/Baker (Nature 2021) consists of…
+        choices:
+          - Inverter um preditor de estrutura para gerar sequências cuja estrutura prevista é confiante
+          - Treinar GANs em estruturas para amostrar novas dobras sem restrições físicas
+          - Desenhar manualmente sequências e validar por mutação aleatória in vitro
+          - Usar transformers de linguagem natural sem qualquer conhecimento estrutural
+        correctAnswer: Inverter um preditor de estrutura para gerar sequências cuja estrutura prevista é confiante
+        rationale:
+          pt: Hallucination usa Monte Carlo no espaço de sequências, otimizando para alta confiança da rede preditora (trRosetta, AF2) — a sequência "alucina" uma estrutura. Validação experimental confirmou várias dobras inéditas, aproveitando preditor como modelo generativo implícito.
+          en: Hallucination runs Monte Carlo in sequence space, optimizing for high confidence of the predictor network (trRosetta, AF2) — the sequence "hallucinates" a structure. Experimental validation confirmed several novel folds, using the predictor as an implicit generative model.
+        objectives: [Hallucination]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: RFdiffusion (Watson et al., Nature 2023) é um modelo de difusão treinado para…
+          en: RFdiffusion (Watson et al., Nature 2023) is a diffusion model trained for…
+        choices:
+          - Gerar coordenadas backbone novas com motivos funcionais ou tópicos pré-definidos
+          - Gerar sequências de DNA otimizadas para expressão recombinante apenas
+          - Modelar dinâmica molecular substituindo MD clássica em todas as escalas
+          - Decodificar imagens de criomicroscopia eletrônica em estruturas atômicas
+        correctAnswer: Gerar coordenadas backbone novas com motivos funcionais ou tópicos pré-definidos
+        rationale:
+          pt: RFdiffusion adapta arquitetura do RoseTTAFold como rede de denoising para difusão de coordenadas backbone — gera novas dobras condicionalmente em motivos (sítios ativos, ligantes), simetrias, contatos. Sequência então desenhada por ProteinMPNN.
+          en: RFdiffusion adapts the RoseTTAFold architecture as a denoising network for backbone-coordinate diffusion — generating new folds conditionally on motifs (active sites, ligands), symmetries, contacts. Sequence then designed by ProteinMPNN.
+        objectives: [RFdiffusion]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ProteinMPNN (Dauparas et al., Science 2022) resolve qual problema crítico do design?
+          en: ProteinMPNN (Dauparas et al., Science 2022) solves which critical design problem?
+        choices:
+          - "Inverse folding": dado backbone, prever sequência que se enovela nele com alta taxa de sucesso experimental
+          - Predição de função molecular a partir apenas da estrutura sem sequência
+          - Cálculo de energia livre de enovelamento para validação termodinâmica
+          - Identificação automática de sítios ativos enzimáticos sem cristalografia prévia
+        correctAnswer: "Inverse folding": dado backbone, prever sequência que se enovela nele com alta taxa de sucesso experimental
+        rationale:
+          pt: ProteinMPNN é GNN/MPNN treinada em PDB para inverse folding: dado backbone, prevê sequências; superou Rosetta em sucesso experimental de design (~50% vs ~10%) — par natural de RFdiffusion (que produz só backbone).
+          en: ProteinMPNN is a GNN/MPNN trained on PDB for inverse folding: given a backbone, predicts sequences; outperformed Rosetta in experimental design success (~50% vs ~10%) — natural pair to RFdiffusion (which produces only backbone).
+        objectives: [ProteinMPNN]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Mini-binders desenhados por Cao/Baker (Nature 2022) atingiram afinidades altas contra qual alvo de relevância pandêmica?
+          en: Mini-binders designed by Cao/Baker (Nature 2022) reached high affinity against which pandemically relevant target?
+        choices:
+          - Domínio RBD da proteína Spike de SARS-CoV-2, neutralizando o vírus em modelos animais
+          - Hemaglutinina apenas do vírus influenza H1N1 sazonal sem efeito pandêmico
+          - Capsídeo de HIV-1 em macacos com proteção pré-exposição clinicamente validada
+          - Toxina diftérica isolada como antígeno vacinal padronizado contra C. diphtheriae
+        correctAnswer: Domínio RBD da proteína Spike de SARS-CoV-2, neutralizando o vírus em modelos animais
+        rationale:
+          pt: Cao et al. (Nature 2022) usaram Rosetta + RFjoint para desenhar mini-binders de ~50-65 aa contra RBD com Kd picomolar; alguns neutralizaram SARS-CoV-2 em camundongos — prova de princípio para resposta pandêmica rápida via design.
+          en: Cao et al. (Nature 2022) used Rosetta + RFjoint to design ~50-65 aa mini-binders against RBD with picomolar Kd; some neutralized SARS-CoV-2 in mice — proof of principle for rapid pandemic response via design.
+        objectives: [Mini-binders]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A vacina SKYCovione (SK Bioscience, aprovada Coreia 2022) baseia-se em qual plataforma de proteína desenhada?
+          en: SKYCovione vaccine (SK Bioscience, Korea-approved 2022) is based on which designed protein platform?
+        choices:
+          - Nanopartícula icosaédrica I53-50 desenhada por Baker apresentando RBD do SARS-CoV-2
+          - Vetor adenoviral Ad26 modificado como Janssen sem nanopartícula proteica
+          - LNP-mRNA tipo Pfizer/Moderna sem componente desenhado computacionalmente
+          - Vírus inativado convencional como Sinovac/CoronaVac sem engenharia
+        correctAnswer: Nanopartícula icosaédrica I53-50 desenhada por Baker apresentando RBD do SARS-CoV-2
+        rationale:
+          pt: SKYCovione (GBP510) usa I53-50, nanopartícula icosaédrica desenhada por King/Baker apresentando 60 cópias de RBD em arranjo simétrico — primeira vacina aprovada com proteína de design de novo no esqueleto. Aprovada na Coreia 2022 e WHO EUL 2023.
+          en: SKYCovione (GBP510) uses I53-50, an icosahedral nanoparticle designed by King/Baker displaying 60 RBD copies symmetrically — first approved vaccine with de novo designed protein scaffold. Approved in Korea 2022 and WHO EUL 2023.
+        objectives: [Vacina I53-50]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Frances Arnold (Nobel 2018) representa qual abordagem complementar ao design racional?
+          en: Frances Arnold (2018 Nobel) represents which approach complementary to rational design?
+        choices:
+          - Evolução dirigida, mutagenizando aleatoriamente e selecionando funcionalmente em ciclos iterativos
+          - Cristalografia de raios-X de alta resolução em proteínas multi-megadálton
+          - Síntese química total de proteínas ao estilo da química peptídica clássica
+          - Triagem de produtos naturais microbianos como antibióticos descobertos serendipitosamente
+        correctAnswer: Evolução dirigida, mutagenizando aleatoriamente e selecionando funcionalmente em ciclos iterativos
+        rationale:
+          pt: Arnold (Caltech) ganhou o Nobel 2018 por pioneering directed evolution: mutar aleatoriamente, selecionar variantes melhoradas, repetir — abordagem empírica que complementa design racional/IA, e hoje é hibridizada (ML guia rounds de DE).
+          en: Arnold (Caltech) won the 2018 Nobel for pioneering directed evolution: random mutation, selection of improved variants, repeat — an empirical approach complementing rational/AI design, and today hybridized (ML guides DE rounds).
+        objectives: [Evolução dirigida]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ESM3 (EvolutionaryScale 2024) é um modelo "multimodal" para proteínas no sentido de…
+          en: ESM3 (EvolutionaryScale 2024) is "multimodal" for proteins meaning…
+        choices:
+          - Modelar conjuntamente sequência, estrutura 3D e função em um único transformer generativo
+          - Modelar exclusivamente DNA, RNA e proteínas separadamente sem qualquer compartilhamento
+          - Modelar apenas modificações pós-traducionais sem qualquer estrutura ou sequência
+          - Modelar somente lipídeos e carboidratos sem incluir proteínas no escopo
+        correctAnswer: Modelar conjuntamente sequência, estrutura 3D e função em um único transformer generativo
+        rationale:
+          pt: ESM3 (Hayes et al. 2024, EvolutionaryScale spinoff de Meta) modela tokens de sequência + estrutura + função simultaneamente; gerou esmGFP, fluoróforo distante de GFPs naturais — equivalente evolutivo de 500M anos. Aberto até 98B parâmetros em 2024.
+          en: ESM3 (Hayes et al. 2024, EvolutionaryScale spinoff from Meta) models sequence + structure + function tokens jointly; generated esmGFP, a fluorophore distant from natural GFPs — ~500M years evolutionary equivalent. Open up to 98B parameters in 2024.
+        objectives: [ESM3]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Rosetta@Home, distribuído desde 2005, foi pioneiro em…
+          en: Rosetta@Home, distributed since 2005, pioneered…
+        choices:
+          - Computação distribuída para predição/design de proteínas, base do FoldIt e da maioria dos códigos Baker
+          - Mineração distribuída de Bitcoin como fonte de financiamento universitário
+          - Sequenciamento distribuído por crowdsourcing de cidadãos cientistas
+          - Mapeamento distribuído de exoplanetas em parceria com SETI
+        correctAnswer: Computação distribuída para predição/design de proteínas, base do FoldIt e da maioria dos códigos Baker
+        rationale:
+          pt: Rosetta@Home (BOINC) usa CPU ociosa de voluntários para amostrar conformações; gerou FoldIt (gamificação 2008) e suportou descobertas de design por uma década. Continua em produção como recurso comunitário do Baker Lab.
+          en: Rosetta@Home (BOINC) uses volunteer idle CPU to sample conformations; spawned FoldIt (gamification 2008) and supported design discoveries for a decade. Still runs as Baker Lab community resource.
+        objectives: [Rosetta@Home]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Críticas atuais à confiabilidade de previsões AlphaFold incluem…
+          en: Current criticisms of AlphaFold reliability include…
+        choices:
+          - pLDDT alto não garante correção em proteínas IDP, conformações induzidas ou novelas dobras
+          - AF2 retorna sempre coordenadas idênticas independentemente da sequência de entrada
+          - Estruturas previstas têm precisão sub-atômica garantida acima de 0.1 Å em todos os casos
+          - AF2 dispensa toda validação experimental subsequente em qualquer aplicação clínica
+        correctAnswer: pLDDT alto não garante correção em proteínas IDP, conformações induzidas ou novelas dobras
+        rationale:
+          pt: pLDDT alto correlaciona com confiança local mas pode ser falsamente alto em proteínas intrinsecamente desordenadas (que AF2 prevê como dobradas) ou conformações induzidas por ligante; novelas dobras sem precedente em PDB também podem enganar — AF é guia, não substitui experimento.
+          en: High pLDDT correlates with local confidence but can be falsely high for intrinsically disordered proteins (which AF2 predicts as folded) or ligand-induced conformations; novel folds without PDB precedent can also mislead — AF is a guide, not an experimental substitute.
+        objectives: [Confiabilidade AF]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Aplicação emergente de design generativo é a criação de…
+          en: An emerging generative design application is creating…
+        choices:
+          - Capsídeos AAV com tropismo e imunoevasão otimizadas para terapia gênica clínica
+          - Vírus de DNA totalmente novos sem qualquer relação com vírus existentes
+          - Carboidratos complexos sintéticos sem participação proteica em design
+          - Anticorpos exclusivamente naturais sem qualquer modificação computacional
+        correctAnswer: Capsídeos AAV com tropismo e imunoevasão otimizadas para terapia gênica clínica
+        rationale:
+          pt: Diao et al. (Nat Biotech 2024) e Dyno Therapeutics aplicam ML+design generativo para reengenharia de capsídeos AAV (loops de superfície) buscando tropismo tecidual e fuga de anticorpos pré-existentes — gargalo central de terapia gênica.
+          en: Diao et al. (Nat Biotech 2024) and Dyno Therapeutics apply ML+generative design to re-engineer AAV capsids (surface loops) for tissue tropism and pre-existing antibody escape — a central gene-therapy bottleneck.
+        objectives: [Capsídeos AAV design]
+target: 20
