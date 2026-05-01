@@ -1,0 +1,344 @@
+title:
+  pt: Resistência Antimicrobiana e Terapia com Bacteriófagos
+  en: Antimicrobial Resistance and Phage Therapy
+level: O
+subject: biology
+objectives:
+  - Compreender mecanismos de AMR e patógenos ESKAPE
+  - Reconhecer novas classes de antibióticos pós-2017
+  - Identificar marcos da terapia fágica moderna
+  - Avaliar políticas globais (O'Neill, GLASS, CARB-X)
+difficulty: 5
+authorNotes: |
+  Frontier AMR. ESKAPE (Rice 2008), O'Neill 2014/2016 reports, GLASS WHO 2015, CARB-X
+  Boston University+BARDA. Phage rescue: Tom Patterson 2016 (Strathdee/UCSD), Mallory
+  Smith 2017, Isabelle 2018 (Dedrick/Hatfull). Companies: Locus Biosciences, BiomX,
+  Adaptive Phage Therapeutics, Armata. New abx: Cefiderocol Shionogi 2019, Murepavadin
+  Polyphor (failed Ph3), Lefamulin Nabriva 2019, Gepotidacin GSK 2024 UTI, Zoliflodacin
+  Innoviva 2024 GC, Recarbrio (imipenem/cilastatin/relebactam) Merck 2019.
+example:
+  question:
+    pt: O acrônimo ESKAPE, cunhado por Louis Rice em 2008, refere-se a patógenos que "escapam" do efeito de antibióticos. Quais são os 6 organismos?
+    en: The ESKAPE acronym, coined by Louis Rice in 2008, refers to pathogens that "escape" antibiotic action. Which 6 organisms?
+  choices:
+    - Enterococcus faecium, Staphylococcus aureus, Klebsiella pneumoniae, Acinetobacter baumannii, Pseudomonas aeruginosa, Enterobacter
+    - E. coli, Salmonella typhi, Klebsiella oxytoca, Acinetobacter lwoffii, Pseudomonas fluorescens, Enterococcus faecalis
+    - Enterococcus faecalis, Streptococcus pyogenes, Klebsiella aerogenes, Acinetobacter junii, Proteus mirabilis, Enterobacter aerogenes
+    - Enterobacter cloacae, Staph epidermidis, Klebsiella granulomatis, Aeromonas hydrophila, Providencia stuartii, Erwinia herbicola
+  correctAnswer: Enterococcus faecium, Staphylococcus aureus, Klebsiella pneumoniae, Acinetobacter baumannii, Pseudomonas aeruginosa, Enterobacter
+  rationale:
+    pt: Rice (J Infect Dis 2008) cunhou ESKAPE para os 6 patógenos hospitalares que "escapam" da ação antibiótica via múltiplos mecanismos de resistência — alvo prioritário da WHO e do CARB-X.
+    en: Rice (J Infect Dis 2008) coined ESKAPE for the 6 hospital pathogens that "escape" antibiotic action via multiple resistance mechanisms — WHO and CARB-X priority targets.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Resistência antimicrobiana e novos antibióticos
+      en: Page 1 — Antimicrobial resistance and new antibiotics
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O relatório O'Neill (2014-2016) projetou quantas mortes anuais por AMR até 2050 se nada fosse feito?
+          en: The O'Neill report (2014-2016) projected how many annual AMR deaths by 2050 in a do-nothing scenario?
+        choices:
+          - 10 milhões de mortes/ano, ultrapassando câncer, com custo cumulativo de US$ 100 trilhões
+          - 1 milhão de mortes/ano, comparável à malária no século 20 sem grande impacto econômico
+          - 50 milhões de mortes/ano, equivalente à pandemia de gripe espanhola anualmente
+          - 100 mil mortes/ano, restritas a hospitais sem efeito comunitário relevante
+        correctAnswer: 10 milhões de mortes/ano, ultrapassando câncer, com custo cumulativo de US$ 100 trilhões
+        rationale:
+          pt: Jim O'Neill, encomendado por David Cameron, projetou 10M mortes/ano até 2050 e perda de US$ 100T cumulativos — número catalisador de políticas globais (CARB-X, GLASS, leis push-pull).
+          en: Jim O'Neill, commissioned by David Cameron, projected 10M deaths/year by 2050 and US$100T cumulative loss — the catalyst figure for global policy (CARB-X, GLASS, push-pull laws).
+        objectives: [Política AMR]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A iniciativa CARB-X, fundada em 2016, é uma parceria entre quem para acelerar antibióticos pré-clínicos?
+          en: The CARB-X initiative, founded in 2016, is a partnership between whom to accelerate preclinical antibiotics?
+        choices:
+          - Boston University, BARDA (HHS) e Wellcome Trust financiando empresas em estágio inicial
+          - Pfizer e Merck financiando exclusivamente desenvolvimento clínico de fase tardia
+          - WHO e Banco Mundial sem participação industrial direta
+          - NIH e DARPA isoladamente sem parceiros internacionais
+        correctAnswer: Boston University, BARDA (HHS) e Wellcome Trust financiando empresas em estágio inicial
+        rationale:
+          pt: CARB-X (Combating Antibiotic-Resistant Bacteria Biopharmaceutical Accelerator) sediado em BU, financiado por BARDA + Wellcome + governos UK/DE/CA, financia pesquisa pré-clínica/Ph1 — corrigindo a falha de mercado de antibióticos.
+          en: CARB-X (Combating Antibiotic-Resistant Bacteria Biopharmaceutical Accelerator) at BU, funded by BARDA + Wellcome + UK/DE/CA governments, funds preclinical/Ph1 research — fixing the antibiotic market failure.
+        objectives: [CARB-X]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Cefiderocol (Fetroja, Shionogi 2019) inova como antibiótico ao explorar qual estratégia de entrada celular?
+          en: Cefiderocol (Fetroja, Shionogi 2019) innovates by exploiting which cell-entry strategy?
+        choices:
+          - "Cavalo de Troia": cefalosporina ligada a sideróforo entra via transportadores de ferro de Gram-negativos
+          - Lipopeptídeo que se insere diretamente na membrana externa por hidrofobicidade extrema
+          - Inibidor de β-lactamase puro sem atividade antibiótica intrínseca contra parede celular
+          - Penetração por canais de pressão osmótica criados por co-administração de detergentes
+        correctAnswer: "Cavalo de Troia": cefalosporina ligada a sideróforo entra via transportadores de ferro de Gram-negativos
+        rationale:
+          pt: Cefiderocol acopla um sideróforo catecol ao núcleo cefalosporínico; o complexo Fe³⁺-fármaco usa transportadores TonB de ferro para entrar — bypass de porinas e bombas de efluxo. Aprovado para Gram-negativos MDR.
+          en: Cefiderocol couples a catechol siderophore to a cephalosporin core; the Fe³⁺-drug complex uses TonB iron transporters to enter — bypassing porins and efflux pumps. Approved for MDR Gram-negatives.
+        objectives: [Novos antibióticos]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A WHO publicou em 2017 sua lista de patógenos prioritários para P&D de antibióticos. Os 3 da categoria "crítica" são…
+          en: WHO published its 2017 priority pathogens list for antibiotic R&D. The 3 "critical" tier organisms are…
+        choices:
+          - Acinetobacter baumannii, Pseudomonas aeruginosa e Enterobacteriaceae resistentes a carbapenêmicos
+          - Mycobacterium tuberculosis MDR/XDR, Plasmodium falciparum e Trypanosoma cruzi
+          - Streptococcus pneumoniae, Haemophilus influenzae e Neisseria meningitidis sem vacina
+          - Clostridioides difficile, Helicobacter pylori e Campylobacter jejuni alimentares
+        correctAnswer: Acinetobacter baumannii, Pseudomonas aeruginosa e Enterobacteriaceae resistentes a carbapenêmicos
+        rationale:
+          pt: A "WHO Priority Pathogens List" 2017 (atualizada 2024) classifica como crítica os Gram-negativos resistentes a carbapenêmicos: A. baumannii, P. aeruginosa e Enterobacterales (CRE) — alvos de cefiderocol, ceftolozane/tazobactam, meropenem/vaborbactam.
+          en: The 2017 WHO Priority Pathogens List (updated 2024) classifies as critical the carbapenem-resistant Gram-negatives: A. baumannii, P. aeruginosa, and Enterobacterales (CRE) — targets of cefiderocol, ceftolozane/tazobactam, meropenem/vaborbactam.
+        objectives: [Lista WHO]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Gepotidacin (GSK, aprovado FDA 2024 para UTI não-complicada) é a primeira nova classe oral de antibióticos em décadas. Qual seu mecanismo?
+          en: Gepotidacin (GSK, FDA-approved 2024 for uncomplicated UTI) is the first new oral antibiotic class in decades. What is its mechanism?
+        choices:
+          - Inibidor de topoisomerase II/IV com sítio único de ligação distinto das fluoroquinolonas (triazaaceenaftileno)
+          - Inibidor de DHFR como trimetoprim mas com 1000x mais potência contra E. coli
+          - Análogo de β-lactama com estrutura monobactâmica modificada e estabilidade a ESBL
+          - Inibidor de RNA polimerase como rifampicina mas com penetração urinária superior
+        correctAnswer: Inibidor de topoisomerase II/IV com sítio único de ligação distinto das fluoroquinolonas (triazaaceenaftileno)
+        rationale:
+          pt: Gepotidacin (Blujepa) é um triazaaceenaftileno que inibe DNA girase + topo IV em sítio distinto das fluoroquinolonas — primeira classe oral nova em ~30 anos para UTI. FDA aprovou em mar/2024.
+          en: Gepotidacin (Blujepa) is a triazaacenaphthylene inhibiting DNA gyrase + topo IV at a site distinct from fluoroquinolones — first new oral class in ~30 years for UTI. FDA-approved Mar 2024.
+        objectives: [Gepotidacin]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Zoliflodacin (Innoviva/GARDP, 2024) tem qual aplicação principal sendo a primeira nova classe oral em décadas?
+          en: Zoliflodacin (Innoviva/GARDP, 2024) has which main indication as the first new oral class in decades?
+        choices:
+          - Gonorreia não-complicada, incluindo cepas resistentes a ceftriaxona
+          - Tuberculose MDR substituindo bedaquilina em primeira linha pediátrica
+          - Malária por P. falciparum em áreas com resistência à artemisinina no Sudeste Asiático
+          - HIV em pacientes naive substituindo dolutegravir em esquemas de primeira linha
+        correctAnswer: Gonorreia não-complicada, incluindo cepas resistentes a ceftriaxona
+        rationale:
+          pt: Zoliflodacin (espiropirimidinetriona) inibe topoisomerase II em sítio único; estudo Ph3 GARDP 2024 mostrou não-inferioridade vs ceftriaxona+azitromicina em gonorreia — primeira classe oral nova para GC em décadas, importante por resistência crescente.
+          en: Zoliflodacin (spiropyrimidinetrione) inhibits topoisomerase II at a unique site; GARDP's 2024 Ph3 showed non-inferiority vs ceftriaxone+azithromycin in gonorrhea — first new oral class for GC in decades, key amid rising resistance.
+        objectives: [Zoliflodacin]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Colistina (polimixina E), reintroduzida como "última linha" para Gram-negativos MDR, teve sua utilidade ameaçada por qual descoberta de 2015?
+          en: Colistin (polymyxin E), reintroduced as last-line for MDR Gram-negatives, had its utility threatened by which 2015 discovery?
+        choices:
+          - Gene mcr-1 plasmidial conferindo resistência transferível a colistina, identificado na China
+          - Mutação cromossomal pmrB rara em E. coli sem qualquer transferência horizontal
+          - Inativação por β-lactamases de espectro estendido convencionais já conhecidas
+          - Bombas de efluxo OqxAB usuais sem nenhuma novidade epidemiológica importante
+        correctAnswer: Gene mcr-1 plasmidial conferindo resistência transferível a colistina, identificado na China
+        rationale:
+          pt: Yi-Yun Liu (Lancet ID 2015) descreveu mcr-1 em plasmídeo IncI2 em E. coli de suínos chineses — primeiro mecanismo plasmidial de resistência à colistina, espalhando-se globalmente em meses, ameaçando o último recurso para CRE/A. baumannii.
+          en: Yi-Yun Liu (Lancet ID 2015) described mcr-1 on an IncI2 plasmid in E. coli from Chinese pigs — first plasmid-borne colistin resistance mechanism, spreading globally in months, threatening the last resort for CRE/A. baumannii.
+        objectives: [mcr-1]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: GLASS (Global Antimicrobial Resistance Surveillance System), lançado pela WHO em 2015, padroniza o quê?
+          en: GLASS (Global Antimicrobial Resistance Surveillance System), launched by WHO in 2015, standardizes what?
+        choices:
+          - Coleta e reporte global de dados de AMR por país com indicadores comparáveis
+          - Receituário clínico obrigatório de antibióticos em todos os países membros
+          - Pesquisa básica de novos alvos com financiamento direto da WHO
+          - Produção industrial centralizada de antibióticos genéricos para baixa renda
+        correctAnswer: Coleta e reporte global de dados de AMR por país com indicadores comparáveis
+        rationale:
+          pt: GLASS criou pela primeira vez infraestrutura padronizada para reporte nacional de AMR, com taxas de resistência por patógeno-fármaco prioritários — base epidemiológica para políticas globais e para o Tripartite (WHO/FAO/OIE) One Health.
+          en: GLASS created the first standardized infrastructure for national AMR reporting, with priority pathogen-drug resistance rates — the epidemiological base for global policy and the WHO/FAO/OIE Tripartite One Health.
+        objectives: [Vigilância GLASS]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O modelo "push-pull" de financiamento de antibióticos refere-se a…
+          en: The "push-pull" antibiotic funding model refers to…
+        choices:
+          - Push (subsídio P&D) + Pull (recompensa pós-aprovação tipo modelo de assinatura/PASTEUR Act)
+          - Push de marketing direto ao consumidor + Pull de prescrição médica obrigatória
+          - Push de exportação + Pull de importação em mercados de baixa renda apenas
+          - Push de patente prolongada + Pull de quebra de patente após 20 anos
+        correctAnswer: Push (subsídio P&D) + Pull (recompensa pós-aprovação tipo modelo de assinatura/PASTEUR Act)
+        rationale:
+          pt: "Push" = subsídios de P&D (CARB-X). "Pull" = recompensas pós-mercado desconectadas do volume vendido (UK NHS subscription model 2022, PASTEUR Act dos EUA proposto) — corrige a falha de mercado de antibióticos guardados como reserva.
+          en: "Push" = R&D subsidies (CARB-X). "Pull" = post-market rewards decoupled from sales volume (UK NHS subscription model 2022, US PASTEUR Act proposed) — fixes the market failure of antibiotics held in reserve.
+        objectives: [Push-pull]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Murepavadin, da Polyphor, era promissor contra Pseudomonas aeruginosa por que?
+          en: Polyphor's murepavadin was promising against Pseudomonas aeruginosa because?
+        choices:
+          - Primeiro antibiótico de classe nova "outer membrane protein targeting" (OMPTA) ligando-se a LptD
+          - Primeiro inibidor oral de β-lactamases NDM-1 metalo aprovado para uso clínico
+          - Primeiro fluoroquinolona específica contra biofilmes pulmonares em fibrose cística
+          - Primeiro aminoglicosídeo livre de toxicidade renal e ototóxica em ensaios fase 3
+        correctAnswer: Primeiro antibiótico de classe nova "outer membrane protein targeting" (OMPTA) ligando-se a LptD
+        rationale:
+          pt: Murepavadin é um peptidomimético cíclico que se liga a LptD (transportador de LPS) só em P. aeruginosa — classe OMPTA inédita. Polyphor descontinuou Ph3 em 2019 por toxicidade renal, mas a classe permanece em desenvolvimento.
+          en: Murepavadin is a cyclic peptidomimetic binding LptD (LPS transporter) only in P. aeruginosa — a novel OMPTA class. Polyphor halted Ph3 in 2019 over nephrotoxicity, but the class continues in development.
+        objectives: [Classes novas]
+  - title:
+      pt: Página 2 — Bacteriófagos e terapias alternativas
+      en: Page 2 — Bacteriophages and alternative therapies
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em 2016, o caso de Tom Patterson (psiquiatra, marido de Steffanie Strathdee) marcou a era moderna da fagoterapia ocidental. Que infecção?
+          en: In 2016, the Tom Patterson case (psychiatrist, husband of Steffanie Strathdee) marked the modern era of Western phage therapy. Which infection?
+        choices:
+          - Acinetobacter baumannii pancreático MDR resistente a todos os antibióticos disponíveis
+          - Pseudomonas aeruginosa pulmonar em fibrose cística refratária a tobramicina inalada
+          - Mycobacterium abscessus pós-transplante pulmonar com falência total de macrolídeos
+          - Klebsiella pneumoniae KPC-3 abdominal com choque séptico após colecistectomia
+        correctAnswer: Acinetobacter baumannii pancreático MDR resistente a todos os antibióticos disponíveis
+        rationale:
+          pt: Patterson contraiu pseudocisto pancreático com A. baumannii pan-resistente em 2015 no Egito; Strathdee montou coquetel de fagos via Texas A&M e Marinha dos EUA, salvando-o em 2016 — caso seminal narrado em "The Perfect Predator".
+          en: Patterson contracted pan-resistant A. baumannii pancreatic pseudocyst in 2015 in Egypt; Strathdee assembled a phage cocktail via Texas A&M and the US Navy, saving him in 2016 — seminal case told in "The Perfect Predator".
+        objectives: [Caso Patterson]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A IPATH (Innovative Phage Applications and Therapeutics), criada após o caso Patterson, está sediada em qual instituição?
+          en: IPATH (Innovative Phage Applications and Therapeutics), created after the Patterson case, is based at which institution?
+        choices:
+          - UC San Diego, dirigida por Steffanie Strathdee e Robert Schooley como primeiro centro fágico clínico nos EUA
+          - Harvard Medical School ligada ao Brigham and Women's com programa próprio
+          - Mayo Clinic Rochester como expansão do programa de doenças infecciosas
+          - Texas A&M no Center for Phage Technology de Ry Young exclusivamente
+        correctAnswer: UC San Diego, dirigida por Steffanie Strathdee e Robert Schooley como primeiro centro fágico clínico nos EUA
+        rationale:
+          pt: IPATH foi inaugurado em 2018 na UCSD após o resgate de Patterson — primeiro centro acadêmico ocidental dedicado à fagoterapia clínica com casos compassivos via FDA eIND.
+          en: IPATH opened in 2018 at UCSD after Patterson's rescue — first Western academic center dedicated to clinical phage therapy with FDA eIND compassionate cases.
+        objectives: [IPATH]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em 2018-2019, Rebekah Dedrick (lab Hatfull, Pittsburgh) tratou uma paciente de fibrose cística com qual abordagem inédita?
+          en: In 2018-2019, Rebekah Dedrick (Hatfull lab, Pittsburgh) treated a CF patient with what unprecedented approach?
+        choices:
+          - Coquetel de fagos micobacterianos engenheirados por CRISPR contra Mycobacterium abscessus pós-transplante pulmonar
+          - Vacina autóloga produzida a partir do M. abscessus do próprio paciente isolado
+          - Transplante fecal repetido para alterar microbioma e modular imunidade pulmonar
+          - Anticorpos monoclonais anti-glicopeptideolipídios da parede micobacteriana
+        correctAnswer: Coquetel de fagos micobacterianos engenheirados por CRISPR contra Mycobacterium abscessus pós-transplante pulmonar
+        rationale:
+          pt: Dedrick et al. (Nature Medicine 2019) usaram 3 fagos da coleção SEA-PHAGES de Hatfull, dois deles engenheirados por recombineering para virulência, em Isabelle Carnell-Holdaway — primeiro uso de fagos engenheirados em humano.
+          en: Dedrick et al. (Nat Med 2019) used 3 phages from Hatfull's SEA-PHAGES collection, two engineered for virulence by recombineering, in Isabelle Carnell-Holdaway — first use of engineered phages in a human.
+        objectives: [Fagos engenheirados]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A Locus Biosciences (Carolina do Norte) desenvolve "crPhages" combinando fagos com qual tecnologia?
+          en: Locus Biosciences (North Carolina) develops "crPhages" combining phages with which technology?
+        choices:
+          - CRISPR-Cas3, que clivagem progressivamente o genoma bacteriano após reconhecimento de alvo
+          - mRNA encapsulado em LNP entregue dentro do capsídeo viral para terapia gênica humana
+          - PROTAC degradadores de proteínas bacterianas essenciais como FtsZ
+          - Anticorpos biespecíficos anti-LPS conjugados a peptídeos antimicrobianos
+        correctAnswer: CRISPR-Cas3, que clivagem progressivamente o genoma bacteriano após reconhecimento de alvo
+        rationale:
+          pt: Locus carrega fagos com cassetes CRISPR-Cas3 alvo-específicos; após injetar DNA na bactéria, o sistema cliva genomas em sequência — programa Ph2 LBP-EC01 contra E. coli urinária recidivante.
+          en: Locus arms phages with target-specific CRISPR-Cas3 cassettes; after injecting DNA into bacteria, the system shreds genomes — Ph2 program LBP-EC01 against recurrent E. coli UTI.
+        objectives: [crPhages]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A vantagem teórica de fagos sobre antibióticos de amplo espectro inclui…
+          en: Phages' theoretical advantage over broad-spectrum antibiotics includes…
+        choices:
+          - Especificidade estreita preservando microbioma e auto-amplificação no sítio de infecção
+          - Penetração tecidual instantânea sem qualquer dependência da farmacocinética
+          - Ausência total de resistência bacteriana evolutivamente impossível por design natural
+          - Síntese química mais barata que qualquer molécula pequena tradicional
+        correctAnswer: Especificidade estreita preservando microbioma e auto-amplificação no sítio de infecção
+        rationale:
+          pt: Fagos atacam tipicamente uma espécie/cepa, poupando microbioma; replicam-se no foco infeccioso aumentando dose localmente. Desvantagens: imunogenicidade, resistência por mutação de receptor, e necessidade de phage matching prévio.
+          en: Phages typically target one species/strain, sparing microbiome; they replicate at the infection focus, locally increasing dose. Drawbacks: immunogenicity, receptor-mutation resistance, and the need for upfront phage matching.
+        objectives: [Vantagens fagos]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Eliava Institute, em Tbilisi (Geórgia), tem qual relevância histórica para a fagoterapia?
+          en: The Eliava Institute in Tbilisi, Georgia has what historical relevance to phage therapy?
+        choices:
+          - Centro fundado nos anos 1920 por Giorgi Eliava e d'Hérelle, mantendo prática clínica contínua na URSS
+          - Primeiro centro a receber fagos de FDA-cleared GRAS para uso oral pediátrico
+          - Sede da OMS para padronização de produção de fagos por GMP em 1995
+          - Spin-off do CARB-X de 2018 sediado em país de baixa renda como demonstração
+        correctAnswer: Centro fundado nos anos 1920 por Giorgi Eliava e d'Hérelle, mantendo prática clínica contínua na URSS
+        rationale:
+          pt: Giorgi Eliava fundou o instituto em 1923 com Félix d'Hérelle (codescobridor dos fagos); a URSS manteve prática clínica enquanto o Ocidente migrava para antibióticos. Tbilisi é hoje peregrinação de pacientes com infecções intratáveis.
+          en: Giorgi Eliava founded the institute in 1923 with Félix d'Hérelle (phage co-discoverer); the USSR maintained clinical use while the West shifted to antibiotics. Tbilisi today is a pilgrimage for patients with intractable infections.
+        objectives: [Eliava]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O ensaio CRePHAGE (UK, 2024-2025) testa fagos para qual indicação como "magistral" sob regulação MHRA?
+          en: The CRePHAGE trial (UK, 2024-2025) tests phages for which indication as "magistral" under MHRA regulation?
+        choices:
+          - Infecções diabéticas/ortopédicas crônicas com S. aureus, P. aeruginosa e Enterobacterales MDR
+          - Tuberculose pulmonar resistente a primeira-linha em adultos imunocompetentes
+          - Sepse neonatal por Klebsiella pneumoniae em UTI pediátrica
+          - Pneumonia comunitária em idosos com vacinação pneumocócica inadequada
+        correctAnswer: Infecções diabéticas/ortopédicas crônicas com S. aureus, P. aeruginosa e Enterobacterales MDR
+        rationale:
+          pt: CRePHAGE no Reino Unido testa fagos para infecções crônicas (osteomielite, pé diabético, próteses) com cocktails personalizados sob regulação magistral MHRA — modelo regulatório alternativo ao IND clássico.
+          en: CRePHAGE in the UK tests phages for chronic infections (osteomyelitis, diabetic foot, prosthetic joints) with personalized cocktails under MHRA magistral regulation — an alternative regulatory model to classical IND.
+        objectives: [Ensaios fágicos]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Resistência bacteriana a fagos ocorre principalmente por…
+          en: Bacterial resistance to phages mainly arises by…
+        choices:
+          - Mutação ou perda do receptor de superfície usado pelo fago para adsorção
+          - Hidrólise enzimática direta de proteínas do capsídeo viral por proteases bacterianas
+          - Bombas de efluxo bacterianas ejetando o DNA fágico após injeção
+          - Endocitose anormal sem internalização do material genético do fago
+        correctAnswer: Mutação ou perda do receptor de superfície usado pelo fago para adsorção
+        rationale:
+          pt: Fagos reconhecem receptores específicos (LPS, OmpC, pili, flagelo). Bactérias evoluem rapidamente perdendo/modificando receptores — mas isso frequentemente reduz fitness ou virulência (trade-off explorável). Outros mecanismos: CRISPR-Cas, sistemas R-M, abortive infection.
+          en: Phages recognize specific receptors (LPS, OmpC, pili, flagella). Bacteria evolve rapidly by losing/modifying receptors — but this often reduces fitness or virulence (an exploitable trade-off). Other mechanisms: CRISPR-Cas, R-M systems, abortive infection.
+        objectives: [Resistência fágica]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Lefamulin (Xenleta, Nabriva 2019) é a primeira pleuromutilina sistêmica em humanos. Qual sua indicação aprovada?
+          en: Lefamulin (Xenleta, Nabriva 2019) is the first systemic pleuromutilin in humans. What is its approved indication?
+        choices:
+          - Pneumonia adquirida na comunidade (CABP) atípica e por S. pneumoniae resistente
+          - Endocardite por Enterococcus faecium resistente a vancomicina (VRE)
+          - Meningite por Neisseria meningitidis resistente a penicilina como primeira linha
+          - Tuberculose extensivamente resistente (XDR-TB) em segunda linha pediátrica
+        correctAnswer: Pneumonia adquirida na comunidade (CABP) atípica e por S. pneumoniae resistente
+        rationale:
+          pt: Lefamulin liga-se ao centro peptidil-transferase do ribossomo bacteriano (sítio único, sem resistência cruzada); FDA 2019 para CABP, ativo contra S. pneumoniae, atípicos (Mycoplasma, Chlamydia, Legionella) e MRSA resp.
+          en: Lefamulin binds the bacterial ribosome peptidyl transferase center (unique site, no cross-resistance); FDA 2019 for CABP, active vs S. pneumoniae, atypicals (Mycoplasma, Chlamydia, Legionella), and respiratory MRSA.
+        objectives: [Lefamulin]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "One Health" aplicado à AMR enfatiza que…
+          en: The "One Health" concept applied to AMR emphasizes that…
+        choices:
+          - Resistência humana, animal e ambiental são interconectadas, exigindo vigilância e ação integradas
+          - Saúde humana é prioridade absoluta, e medidas em animais devem ser adiadas indefinidamente
+          - Apenas uso veterinário deve ser regulado, pois o humano clínico é tecnicamente seguro
+          - O ambiente não tem papel relevante na transmissão de genes de resistência hoje
+        correctAnswer: Resistência humana, animal e ambiental são interconectadas, exigindo vigilância e ação integradas
+        rationale:
+          pt: One Health (WHO/FAO/WOAH/UNEP Quadripartite) reconhece que genes AMR fluem entre humanos, animais (75% antibióticos globais vão para gado) e ambiente (esgoto, agricultura) — exigindo políticas integradas como restrições a colistina veterinária pós-mcr-1.
+          en: One Health (WHO/FAO/WOAH/UNEP Quadripartite) recognizes AMR genes flow between humans, animals (75% of global antibiotics go to livestock), and environment (sewage, agriculture) — requiring integrated policy such as veterinary colistin restrictions post-mcr-1.
+        objectives: [One Health]
+target: 20
