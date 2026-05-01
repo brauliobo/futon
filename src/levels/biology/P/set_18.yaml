@@ -1,0 +1,343 @@
+title:
+  pt: Imunologia Quantitativa e Repertórios
+  en: Quantitative Immunology and Repertoires
+level: P
+subject: biology
+objectives:
+  - Compreender VDJ recombination e diversidade
+  - Reconhecer affinity maturation, GC dynamics
+  - Identificar TCR/BCR repertoire sequencing
+  - Avaliar correlatos vacinais e modelos
+difficulty: 5
+authorNotes: |
+  Quantitative immunology. Tonegawa VDJ Nobel 1987. AID Honjo Nobel 2018 PD-1 also. Eisen
+  affinity maturation. Germinal centers Klaus Rajewsky, Gabriel Victora "lottery" 2013.
+  Repertoire sequencing (RepSeq, AIRR-seq): Adaptive Biotechnologies (Robins, Carlson),
+  Immcantation Vander Heiden. ELISpot, ICS, MHC tetramers Davis. Models: shape space (Perelson),
+  cross-reactivity, neutralization landscape. Cohen network thinking.
+example:
+  question:
+    pt: A geração de diversidade BCR/TCR via recombinação V(D)J (Tonegawa Nobel 1987) produz…
+    en: V(D)J recombination diversity (Tonegawa 1987 Nobel) produces…
+  choices:
+    - Diversidade combinatorial + junctional N/P-additions, gerando ~10^11 receptors potenciais
+    - Apenas diversidade germinativa fixa
+    - Apenas mutação somática
+    - Sem qualquer mecanismo combinatorial
+  correctAnswer: Diversidade combinatorial + junctional N/P-additions, gerando ~10^11 receptors potenciais
+  rationale:
+    pt: Susumu Tonegawa (MIT, Nobel 1987): V(D)J recombination junta segmentos V, D, J variáveis (heavy chain) e V, J (light) → cadeia pesada/leve únicas. Junctional adições (TdT N nucleotides, P palindrome) amplificam diversidade. Total ~10^11 BCRs/TCRs possíveis. RAG1/RAG2 enzimas. Selection contra autoreatividade no tymus/medula.
+    en: Susumu Tonegawa (MIT, 1987 Nobel): V(D)J recombination joins variable V, D, J segments (heavy chain) and V, J (light) → unique heavy/light chain. Junctional additions (TdT N nucleotides, P palindrome) amplify diversity. Total ~10^11 possible BCRs/TCRs. RAG1/RAG2 enzymes. Selection against autoreactivity in thymus/marrow.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Diversidade e maturação
+      en: Page 1 — Diversity and maturation
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Affinity maturation em centros germinativos (GCs) usa…
+          en: Affinity maturation in germinal centers (GCs) uses…
+        choices:
+          - SHM (Somatic Hypermutation) por AID + seleção em zona escura/clara contra antígeno em FDCs
+          - Apenas seleção sem qualquer mutação
+          - Apenas no timo
+          - Apenas em humanos
+        correctAnswer: SHM (Somatic Hypermutation) por AID + seleção em zona escura/clara contra antígeno em FDCs
+        rationale:
+          pt: GC: B cells ativadas migram para folículo, formam dark zone (proliferam + SHM via AID — Honjo Nobel 2018) e light zone (TFH-help-dependent selection vs antígeno em FDCs). Iterações ~5-7 ciclos elevam afinidade ~100x-1000x. Output: plasmablasts (Ab) + memory B. Chave em vacinas; HIV bNAbs requerem GC anos.
+          en: GC: activated B cells migrate to follicle, form dark zone (proliferate + SHM via AID — Honjo 2018 Nobel) and light zone (TFH-help-dependent selection vs antigen on FDCs). ~5-7 iteration cycles raise affinity ~100x-1000x. Output: plasmablasts (Ab) + memory B. Key in vaccines; HIV bNAbs require years of GC.
+        objectives: [Affinity maturation]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Gabriel Victora (Rockefeller) demonstrou em germinal center que…
+          en: Gabriel Victora (Rockefeller) showed in germinal centers that…
+        choices:
+          - Migration entre dark/light zones é dinâmica via Brainbow tracking; "lottery" estocástico
+          - Estrutura estática sem migração
+          - Apenas reativação de memory cells
+          - Sem qualquer dinâmica observable
+        correctAnswer: Migration entre dark/light zones é dinâmica via Brainbow tracking; "lottery" estocástico
+        rationale:
+          pt: Victora/Schwickert/Nussenzweig 2010: photoactivatable GFP marcou cells em dark zone; rastreio mostrou migração contínua dark → light → dark com cycles ~6 hours. "Cellular lottery" (Tas 2016): estocasticidade significativa em selection. Multiphoton intravital imagem revolucionou entendimento de GC dynamics.
+          en: Victora/Schwickert/Nussenzweig 2010: photoactivatable GFP labeled cells in dark zone; tracking showed continuous dark → light → dark migration with ~6-hour cycles. "Cellular lottery" (Tas 2016): significant stochasticity in selection. Multiphoton intravital imaging revolutionized GC dynamics understanding.
+        objectives: [Victora GC]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Repertoire sequencing (RepSeq, AIRR-seq) com Illumina mede…
+          en: Repertoire sequencing (RepSeq, AIRR-seq) with Illumina measures…
+        choices:
+          - Diversidade observada de TCR/BCR num indivíduo (~10^7-10^8 únicos por sangue)
+          - Apenas dezenas de receptors
+          - Toda diversidade teórica
+          - Sem qualquer aplicação prática
+        correctAnswer: Diversidade observada de TCR/BCR num indivíduo (~10^7-10^8 únicos por sangue)
+        rationale:
+          pt: RepSeq (Robins/Carlson Adaptive Bio 2009): PCR multiplex de V(D)J → Illumina sequencing → milhões de reads. Distinguir clones, contar abundância, rastrear expansão pós-vacinação. Aplicações: monitorar response vacinal, MRD em LLA (clonoSEQ FDA), autoimunidade, COVID-19. Standard AIRR-C metadata + iReceptor commons.
+          en: RepSeq (Robins/Carlson Adaptive Bio 2009): multiplex V(D)J PCR → Illumina sequencing → millions of reads. Distinguish clones, count abundance, track post-vaccination expansion. Applications: monitor vaccine response, MRD in B-ALL (clonoSEQ FDA), autoimmunity, COVID-19. AIRR-C metadata + iReceptor commons standard.
+        objectives: [RepSeq]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "shape space" (Perelson 1979) modela imunidade como…
+          en: "Shape space" (Perelson 1979) models immunity as…
+        choices:
+          - Espaço abstrato onde antígenos e anticorpos têm coordenadas; afinidade = proximidade
+          - Espaço euclidiano simples sem variáveis
+          - Apenas Boolean networks
+          - Sem qualquer modelagem
+        correctAnswer: Espaço abstrato onde antígenos e anticorpos têm coordenadas; afinidade = proximidade
+        rationale:
+          pt: Perelson/Oster (J Theor Biol 1979): shape space N-dimensional. Cada Ab e Ag tem coordenadas; afinidade ~ exp(-d²/σ²). Cobertura: anti-Ag específico cobre subset N-1 dim (esfera). Seleção positiva escolhe high-affinity. Modelo prediz cross-reactivity, interferência. Útil em vaccinology, autoimmunity.
+          en: Perelson/Oster (J Theor Biol 1979): N-dimensional shape space. Each Ab and Ag has coordinates; affinity ~ exp(-d²/σ²). Coverage: anti-Ag specific covers N-1 dim subset (sphere). Positive selection picks high-affinity. Model predicts cross-reactivity, interference. Useful in vaccinology, autoimmunity.
+        objectives: [Shape space]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em HIV, broadly neutralizing antibodies (bNAbs) requerem…
+          en: In HIV, broadly neutralizing antibodies (bNAbs) require…
+        choices:
+          - Anos de evolução em GCs com SHM extensiva (~30%) contra Env diverso
+          - Single round de exposição
+          - Sem qualquer mutação
+          - Apenas em pacientes vacinados
+        correctAnswer: Anos de evolução em GCs com SHM extensiva (~30%) contra Env diverso
+        rationale:
+          pt: HIV Env hypervariable; bNAbs (VRC01, PG9, 10E8) precisam SHM ~30% (vs ~5% típico) para atingir afinidade contra epítopos conservados (CD4-binding site, V1V2). Co-evolução vírus-Ab em ~3-5 anos em alguns indivíduos (Liao/Haynes 2013). Implicação vacinal: imunizações sequenciais para guiar maturation (Schief, Crotty germline-targeting). HIVacine progress lento.
+          en: HIV Env is hypervariable; bNAbs (VRC01, PG9, 10E8) need ~30% SHM (vs ~5% typical) to reach affinity against conserved epitopes (CD4-binding site, V1V2). Virus-Ab co-evolution over ~3-5 years in some individuals (Liao/Haynes 2013). Vaccine implication: sequential immunizations to guide maturation (Schief, Crotty germline-targeting). HIV vaccine progress slow.
+        objectives: [HIV bNAbs]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "thymic selection" elimina T cells via…
+          en: Thymic selection eliminates T cells via…
+        choices:
+          - Positive (afinidade fraca a auto-MHC sobrevive) + negative (afinidade alta a self-Ag deleta) + Treg
+          - Apenas seleção positiva
+          - Sem qualquer seleção
+          - Apenas em adultos
+        correctAnswer: Positive (afinidade fraca a auto-MHC sobrevive) + negative (afinidade alta a self-Ag deleta) + Treg
+        rationale:
+          pt: Timo: thymocytes DP testam TCR contra self-Ag em corticais (positive: TCR funcional sobrevive) e medular (negative: AIRE expressa peripheral Ag → delete autoreactivas). Treg gerados em parallelo (Foxp3, IL-2). ~98% thymocytes morrem. Falhas → autoimunidade (APECED em AIRE deficiency). Lifelong baseline.
+          en: Thymus: DP thymocytes test TCR against self-Ag in cortex (positive: functional TCR survives) and medulla (negative: AIRE expresses peripheral Ag → delete autoreactives). Tregs generated in parallel (Foxp3, IL-2). ~98% thymocytes die. Failures → autoimmunity (APECED in AIRE deficiency). Lifelong baseline.
+        objectives: [Thymic selection]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "cytokine storm" (e.g. CRS em CAR-T, COVID severo) é caracterizado por…
+          en: "Cytokine storm" (e.g., CRS in CAR-T, severe COVID) is characterized by…
+        choices:
+          - Liberação massiva de IL-6, TNF, IFN-γ por macrófagos/T ativados, gerando MAS-like
+          - Apenas IL-2 individual
+          - Sem qualquer mediador
+          - Apenas anti-inflammatórios
+        correctAnswer: Liberação massiva de IL-6, TNF, IFN-γ por macrófagos/T ativados, gerando MAS-like
+        rationale:
+          pt: Cytokine storm: IL-6 dominante (HLH, MAS-like). Tocilizumab anti-IL-6R em CRS, severe COVID. CAR-T ICANS pode envolver IL-1 (anakinra). Mecanismo: feedback positivo desregulado entre macrofagos/Tcells. Treatment: blockers, esteroides. Modelos: mathematical positive feedback motifs.
+          en: Cytokine storm: IL-6 dominant (HLH, MAS-like). Tocilizumab anti-IL-6R in CRS, severe COVID. CAR-T ICANS may involve IL-1 (anakinra). Mechanism: dysregulated positive feedback between macrophages/T cells. Treatment: blockers, steroids. Models: mathematical positive-feedback motifs.
+        objectives: [Cytokine storm]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "antigenic original sin" (Francis 1960) refere-se a…
+          en: "Antigenic original sin" (Francis 1960) refers to…
+        choices:
+          - Primeira exposição a antígeno enviesa response futura mesmo a variantes diferentes
+          - Apenas em vacinas modernas
+          - Sem qualquer relevância
+          - Apenas em crianças
+        correctAnswer: Primeira exposição a antígeno enviesa response futura mesmo a variantes diferentes
+        rationale:
+          pt: Francis (Annu Rev Immunol 1960): infecção influenza primeira na infância marca repertorio dominante; reinfecções com strains drifted ainda boost original (cross-reactive) Ab em vez de gerar novos. Importante para influenza universal, COVID booster strategy. "Imprinting" termo moderno (Henry/Wilson 2018).
+          en: Francis (Annu Rev Immunol 1960): first influenza infection in childhood imprints dominant repertoire; reinfections with drifted strains still boost original (cross-reactive) Ab rather than generating new. Important for universal influenza, COVID booster strategy. "Imprinting" modern term (Henry/Wilson 2018).
+        objectives: [Original sin]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ELISpot e Intracellular Cytokine Staining (ICS) medem…
+          en: ELISpot and Intracellular Cytokine Staining (ICS) measure…
+        choices:
+          - Frequência de T cells antígeno-específicas via cytokine production após estímulo
+          - Apenas Ab séricos
+          - Apenas viabilidade celular
+          - Apenas DNA
+        correctAnswer: Frequência de T cells antígeno-específicas via cytokine production após estímulo
+        rationale:
+          pt: ELISpot: PBMCs estimuladas com peptídeo + capture-Ab cytokine (IFN-γ, IL-2); spots = T cells secretando. ICS: estímulo + brefeldin → fixação → flow cytometry per cytokine. Padrões para vaccine immunology, infections. Tetramers MHC-peptide (Davis Stanford 1996) complementam direct Ag-specificity. Pessoa pode ter ~0.01-1% específica.
+          en: ELISpot: PBMCs stimulated with peptide + cytokine capture-Ab (IFN-γ, IL-2); spots = T cells secreting. ICS: stimulation + brefeldin → fixation → flow cytometry per cytokine. Standards for vaccine immunology, infections. MHC-peptide tetramers (Davis Stanford 1996) complement direct Ag-specificity. Person may have ~0.01-1% specific.
+        objectives: [ELISpot ICS]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "memory inflation" em CMV refere-se a…
+          en: "Memory inflation" in CMV refers to…
+        choices:
+          - Acúmulo ao longo da vida de T CD8 anti-CMV até ~10-30% repertório em idosos (~oligoclonal)
+          - Apenas em jovens
+          - Decaimento monotônico
+          - Sem qualquer fenômeno
+        correctAnswer: Acúmulo ao longo da vida de T CD8 anti-CMV até ~10-30% repertório em idosos (~oligoclonal)
+        rationale:
+          pt: CMV chronic infection (~50-90% adults) reativa periodicamente; T CD8 anti-CMV expandem ao longo da vida ("inflation"). Em idosos, dominam repertório (~10-30%), restrição clonal (oligoclonal). Implicação imunossenescência: menos espaço para novas resposes (e.g. SARS-CoV-2). Karrer/Klenerman seminal.
+          en: CMV chronic infection (~50-90% adults) periodically reactivates; anti-CMV CD8 T cells expand throughout life ("inflation"). In elderly, dominate repertoire (~10-30%), clonal restriction (oligoclonal). Immunosenescence implication: less room for new responses (e.g., SARS-CoV-2). Karrer/Klenerman seminal.
+        objectives: [Memory inflation CMV]
+  - title:
+      pt: Página 2 — Modelos e aplicações
+      en: Page 2 — Models and applications
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em modelos de vacinas, "correlate of protection" é…
+          en: In vaccine models, "correlate of protection" is…
+        choices:
+          - Métrica imunológica (e.g. titers neutralizantes) que prediz proteção; permite imunobridging
+          - Apenas eficácia clínica observada
+          - Sem qualquer predição
+          - Apenas em humanos vacinados
+        correctAnswer: Métrica imunológica (e.g. titers neutralizantes) que prediz proteção; permite imunobridging
+        rationale:
+          pt: Correlatos: Plotkin & Gilbert (Vaccine 2012). HAI ≥1:40 protege vs influenza (~50% redução). Anti-PRP ≥1 μg/mL Hib. NT ≥X COVID-19 (Khoury 2021 Nat Med). Imunobridging: novos boosters/variantes aprovados via imunogenicidade vs eficácia (FDA aceita 2021+). Crítico em respostas pandêmicas.
+          en: Correlates: Plotkin & Gilbert (Vaccine 2012). HAI ≥1:40 protects vs influenza (~50% reduction). Anti-PRP ≥1 μg/mL Hib. NT ≥X COVID-19 (Khoury 2021 Nat Med). Immunobridging: new boosters/variants approved via immunogenicity vs efficacy (FDA accepts 2021+). Critical in pandemic responses.
+        objectives: [Correlate]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "T cell exhaustion" em câncer e infecção crônica é caracterizada por…
+          en: T cell exhaustion in cancer and chronic infection is characterized by…
+        choices:
+          - Co-expressão de inhibitory receptors (PD-1, LAG3, TIM3, TIGIT) com função reduzida; reversível por checkpoint blockade
+          - Apenas activated state
+          - Sem qualquer marker
+          - Apenas em vacinas
+        correctAnswer: Co-expressão de inhibitory receptors (PD-1, LAG3, TIM3, TIGIT) com função reduzida; reversível por checkpoint blockade
+        rationale:
+          pt: Wherry/Kaech: exhaustion gradiente — Tex_progenitor (TCF-1+) → Tex_terminal (TCF-1−). Multiplex inhibitory receptors. Suporta transcripcional fixed pelo TOX (Scott 2019). Anti-PD-1 (Honjo Nobel 2018) reverte parcialmente terminal-exhausted; melhor em early. Mitochondrial dysfunction (Bengsch).
+          en: Wherry/Kaech: exhaustion gradient — Tex_progenitor (TCF-1+) → Tex_terminal (TCF-1−). Multiplex inhibitory receptors. Transcriptionally fixed by TOX (Scott 2019). Anti-PD-1 (Honjo 2018 Nobel) reverses partially terminal-exhausted; better in early. Mitochondrial dysfunction (Bengsch).
+        objectives: [T exhaustion]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em vacina mRNA COVID-19, dose duas mostra HAI maior que dose única por…
+          en: In mRNA COVID-19 vaccine, dose two shows higher HAI than single dose by…
+        choices:
+          - Boost amplifica clones expandidos pós-prime, melhorando affinity maturation em GC
+          - Single dose é suficiente sempre
+          - Sem qualquer diferença
+          - Apenas em jovens
+        correctAnswer: Boost amplifica clones expandidos pós-prime, melhorando affinity maturation em GC
+        rationale:
+          pt: Prime-boost paradigma vacinal. Prime: expande naïve → memory. Boost: re-engaja memory + GC, mais SHM, increase Ab affinity, classes (IgG2/3/4 in humans). Pfizer/Moderna 21-28 dias intervalo otimizado. Spaced boosters aumentam ainda mais (Tao/Hannenhalli 2021). Crotty Salk monitora.
+          en: Prime-boost vaccine paradigm. Prime: expands naïve → memory. Boost: re-engages memory + GC, more SHM, increased Ab affinity, classes (IgG2/3/4 in humans). Pfizer/Moderna 21-28-day interval optimized. Spaced boosters increase further (Tao/Hannenhalli 2021). Crotty Salk monitors.
+        objectives: [Prime-boost]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "innate lymphoid cell" (ILC) family (Spits 2013) inclui…
+          en: The "innate lymphoid cell" (ILC) family (Spits 2013) includes…
+        choices:
+          - ILC1/2/3 (espelhando Th1/2/17), NK, LTi — sem TCR/BCR mas com cytokines mirror
+          - Apenas células T classicas
+          - Apenas neutrófilos
+          - Sem qualquer relação com adaptive
+        correctAnswer: ILC1/2/3 (espelhando Th1/2/17), NK, LTi — sem TCR/BCR mas com cytokines mirror
+        rationale:
+          pt: ILCs (Vivier, Diefenbach, Eberl, Artis): linfoides inatas sem receptors específicos. ILC1 IFN-γ (≈Th1), ILC2 IL-5/13 (≈Th2 — asma, helmintos), ILC3 IL-17/22 (≈Th17 — barreira). NK CD56+ citotóxicas. LTi (Lymphoid Tissue inducer) embrionárias. Conceito unificou imunidade inata-adaptativa em mirror.
+          en: ILCs (Vivier, Diefenbach, Eberl, Artis): innate lymphoid lacking specific receptors. ILC1 IFN-γ (≈Th1), ILC2 IL-5/13 (≈Th2 — asthma, helminths), ILC3 IL-17/22 (≈Th17 — barrier). NK CD56+ cytotoxic. LTi (Lymphoid Tissue inducer) embryonic. Unified innate-adaptive immunity in mirror.
+        objectives: [ILC]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "TCR repertoire" pessoal humano é estimado em…
+          en: Human personal "TCR repertoire" is estimated at…
+        choices:
+          - 10⁷-10⁸ unique sequences (após HSCT/expanding); naïve compartment representativo
+          - Apenas 100 unique
+          - 10²⁰ unique
+          - Sem qualquer estimativa
+        correctAnswer: 10⁷-10⁸ unique sequences (após HSCT/expanding); naïve compartment representativo
+        rationale:
+          pt: Estimativas: Robins/Carlson 2010 ~10⁶-10⁷; Qi/Lythe 2014 mais alto. Naïve T cells ~10¹¹ no corpo, ~10⁷-10⁸ unique TCRβ. Expandem 1000x se ativadas. Diversidade decai com idade, infecção crônica (CMV). Adaptive Biotechnologies T-MAP COVID assina padrões SARS-CoV-2-specific.
+          en: Estimates: Robins/Carlson 2010 ~10⁶-10⁷; Qi/Lythe 2014 higher. Naïve T cells ~10¹¹ in body, ~10⁷-10⁸ unique TCRβ. Expand 1000x if activated. Diversity declines with age, chronic infection (CMV). Adaptive Biotechnologies T-MAP COVID signs SARS-CoV-2-specific patterns.
+        objectives: [TCR repertoire size]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Tas/Mesin/Victora 2016 mostraram em camundongo via Brainbow GC labeling que…
+          en: Tas/Mesin/Victora 2016 showed in mouse via Brainbow GC labeling that…
+        choices:
+          - GCs frequentemente convertem em monoclonais (1 dominant ancestor) ao longo de semanas — "lottery"
+          - Mantêm sempre múltiplas linhagens
+          - Não há dynamics
+          - Apenas em humanos
+        correctAnswer: GCs frequentemente convertem em monoclonais (1 dominant ancestor) ao longo de semanas — "lottery"
+        rationale:
+          pt: Tas et al. (Science 2016) usou Confetti (random fluorescent labeling) para rastrear linhagens em GC vivos. Inicialmente policlonal; em 2-3 semanas, ~50% GCs colapsam para clone dominante. Lottery: estocasticidade + selection. Restrição de output Ab repertoire — implicação vacinal (need many GCs).
+          en: Tas et al. (Science 2016) used Confetti (random fluorescent labeling) to track lineages in live GCs. Initially polyclonal; in 2-3 weeks, ~50% of GCs collapse to dominant clone. Lottery: stochasticity + selection. Restricts Ab repertoire output — vaccine implication (need many GCs).
+        objectives: [GC monoclonal]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em modelo de doenças autoimunes, a "molecular mimicry" hypothesis postula que…
+          en: In autoimmune disease models, "molecular mimicry" hypothesis posits that…
+        choices:
+          - Patógenos com epítopos similares a self podem ativar T/B cross-reactive autoreactive
+          - Apenas mutação genética sem qualquer infecção
+          - Sem qualquer mecanismo
+          - Apenas em pediatria
+        correctAnswer: Patógenos com epítopos similares a self podem ativar T/B cross-reactive autoreactive
+        rationale:
+          pt: Mimicry: Streptococcus β-hemolítico → febre reumática (M protein vs cardiac myosin). Coxsackie B → T1D (P2C vs GAD65). EBV recently linked a EM (Lanz 2022 Nature, anti-EBNA1 cross-reacts GlialCAM). Provoca autoimmunity via bystander activation, epitope spreading. Modelos matemáticos (Cohen network).
+          en: Mimicry: Streptococcus β-hemolytic → rheumatic fever (M protein vs cardiac myosin). Coxsackie B → T1D (P2C vs GAD65). EBV recently linked to MS (Lanz 2022 Nature, anti-EBNA1 cross-reacts GlialCAM). Provokes autoimmunity via bystander activation, epitope spreading. Mathematical models (Cohen network).
+        objectives: [Mimicry]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "trained immunity" (Netea 2011+) propõe…
+          en: "Trained immunity" (Netea 2011+) proposes…
+        choices:
+          - Imunidade inata (monócitos, NK) tem memória epigenética/metabolica — BCG, β-glucans
+          - Apenas adaptiva tem memória
+          - Sem qualquer memória inata
+          - Apenas em pacientes vacinados
+        correctAnswer: Imunidade inata (monócitos, NK) tem memória epigenética/metabolica — BCG, β-glucans
+        rationale:
+          pt: Mihai Netea (Radboud): BCG, β-glucans induzem H3K4me3 em promotores inflamatórios + glicólise/glutaminólise, persistem por meses. "Heterologous protection": BCG reduz mortality não-TB em LMIC infants. Janus do dogma "memory only adaptive". Aplicações: revacinação BCG idosos, COVID? Frente clínica.
+          en: Mihai Netea (Radboud): BCG, β-glucans induce H3K4me3 at inflammatory promoters + glycolysis/glutaminolysis, persist months. "Heterologous protection": BCG reduces non-TB mortality in LMIC infants. Janus to "adaptive-only memory" dogma. Applications: BCG revaccination of elderly, COVID? Clinical frontier.
+        objectives: [Trained immunity]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "AID-induced class switch recombination" (CSR) gera…
+          en: AID-induced class switch recombination (CSR) generates…
+        choices:
+          - IgG, IgA, IgE de IgM via deleção de Sμ-Sx switch regions, alterando função efetora
+          - Apenas IgM
+          - Apenas mutação proteica
+          - Sem qualquer função
+        correctAnswer: IgG, IgA, IgE de IgM via deleção de Sμ-Sx switch regions, alterando função efetora
+        rationale:
+          pt: AID (Activation-Induced Deaminase, Honjo Nobel 2018): deamina C → U em Sμ regions, induzindo DSBs → recombinação que substitui Cμ por Cγ/α/ε. Resulta em IgG (FcγR), IgA (mucosa), IgE (alérgico). Mantém VDJ specificity. Falhas: Hyper-IgM syndrome (mutações AID, CD40L, CD40). Vacinação induce CSR via TFH-help.
+          en: AID (Activation-Induced Deaminase, Honjo 2018 Nobel): deaminates C → U in Sμ regions, inducing DSBs → recombination replacing Cμ with Cγ/α/ε. Results in IgG (FcγR), IgA (mucosa), IgE (allergic). Preserves VDJ specificity. Failures: Hyper-IgM syndrome (AID, CD40L, CD40 mutations). Vaccination induces CSR via TFH help.
+        objectives: [CSR AID]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em câncer, neoantigen prediction (NetMHCpan, MHCflurry) é importante para…
+          en: In cancer, neoantigen prediction (NetMHCpan, MHCflurry) is important for…
+        choices:
+          - Identificar peptídeos mutados ligados a HLA do paciente para vacinas personalizadas mRNA/peptide
+          - Apenas estimar TMB
+          - Apenas mutação proteica trivial
+          - Sem qualquer aplicação
+        correctAnswer: Identificar peptídeos mutados ligados a HLA do paciente para vacinas personalizadas mRNA/peptide
+        rationale:
+          pt: NetMHCpan (Nielsen, deep learning), MHCflurry (Park) preveem affinity peptide-HLA. Pipeline: WES tumor → identify mutações → 9-mer peptides flanking → predict HLA binding → priorize → mRNA encoding (Moderna, BioNTech). Resultados Ph2: KEYNOTE-942 melanoma, BNT122 pancreático. Crítica: predição de imunogenicidade real ainda subótima.
+          en: NetMHCpan (Nielsen, deep learning), MHCflurry (Park) predict peptide-HLA affinity. Pipeline: WES tumor → identify mutations → 9-mer peptides flanking → predict HLA binding → prioritize → mRNA encoding (Moderna, BioNTech). Ph2 results: KEYNOTE-942 melanoma, BNT122 pancreatic. Critique: real immunogenicity prediction still suboptimal.
+        objectives: [Neoantigen prediction]
+target: 20
