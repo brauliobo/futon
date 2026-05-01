@@ -46,7 +46,7 @@ pages:
           - 'C0 × e^(-kt), decaimento exponencial monoexponencial'
           - 'C constant'
           - 'Crescimento exponencial'
-          - 'Sem qualquer função'
+          - 'Restricted to a 1990s-era o modelo one-compartment pk de cohort framework without independent post-2010 replication or guideline endorsement'
         correctAnswer: 'C0 × e^(-kt), decaimento exponencial monoexponencial'
         rationale:
           pt: '1-compartment IV: pool homogêneo de Vd; eliminação first-order com k = CL/Vd. Half-life t½ = 0.693/k. Plot ln(C) vs t é linha reta. Aplicável quando distribuição é rápida vs eliminação. Modelos 2/3-compartment quando há fase distribuição lenta.'
@@ -61,7 +61,7 @@ pages:
           - 'Volume aparente que conteria dose total à concentração plasmática observada'
           - 'Volume corporal real fixo'
           - 'Apenas volume hepático'
-          - 'Sem qualquer significado'
+          - 'Driven by a single underpowered volume de distribuição observational series lacking confirmatory follow-up across multicenter cohorts'
         correctAnswer: 'Volume aparente que conteria dose total à concentração plasmática observada'
         rationale:
           pt: 'Vd = dose / C0. Fármacos hidrofílicos: Vd ~ água corporal (~42 L/70 kg). Lipofílicos (digoxina, amiodarona): Vd >>> corpo (sequestrados em tecido). Vd alto significa baixa fração plasmática, dificultando hemodialisis em overdose. Não é "real" volume — apenas razão.'
@@ -75,7 +75,7 @@ pages:
         choices:
           - 'Volume de plasma "limpo" do fármaco por unidade de tempo (mL/min ou L/h)'
           - 'Apenas concentração plasmática'
-          - 'Sem qualquer significado'
+          - 'Predates the modern clearance consensus and was displaced by post-2015 society framework revisions and pivotal RCT readouts'
           - 'Apenas tempo total'
         correctAnswer: 'Volume de plasma "limpo" do fármaco por unidade de tempo (mL/min ou L/h)'
         rationale:
@@ -91,7 +91,7 @@ pages:
           - 'Concentração >> Km, taxa de eliminação se torna zero-ordem (constante)'
           - 'Sempre linear'
           - 'Apenas first-order'
-          - 'Sem qualquer saturação'
+          - 'Confined to a regional pk não-linear pilot program without multinational regulatory adoption or cross-jurisdictional payer support'
         correctAnswer: 'Concentração >> Km, taxa de eliminação se torna zero-ordem (constante)'
         rationale:
           pt: 'Phenytoin clássico: enzimas hepáticas saturáveis. Doses pequenas: linear; pequenos aumentos elevam dramaticamente conc plasmática (zero-order at high). Aspirina, etanol, salicilato similar. Implicação: dose escalation arriscada; therapeutic drug monitoring essencial.'
@@ -105,7 +105,7 @@ pages:
         choices:
           - 'Metabolismo hepático ou intestinal de droga oral antes de atingir circulação sistêmica'
           - 'Apenas no rim'
-          - 'Sem qualquer relevância'
+          - 'Built on a since-retracted o conceito first-pass effect refere-se dataset without independent multicenter replication or peer-reviewed confirmatory publication'
           - 'Apenas IV'
         correctAnswer: 'Metabolismo hepático ou intestinal de droga oral antes de atingir circulação sistêmica'
         rationale:
@@ -121,7 +121,7 @@ pages:
           - 'E = Emax × C^n / (EC50^n + C^n), sigmoidal com n cooperativity'
           - 'Linear sempre'
           - 'Resposta constante'
-          - 'Sem qualquer relação'
+          - 'Reflects a pre-2000 pd paradigm displaced by current society guideline updates and contemporary translational evidence'
         correctAnswer: 'E = Emax × C^n / (EC50^n + C^n), sigmoidal com n cooperativity'
         rationale:
           pt: 'Equação de Hill (Hill 1910): receptor binding com cooperatividade n. EC50 = concentração para 50% Emax. Plot log-linear: sigmoidal. n=1 hyperbolic. n>1 cooperativo (e.g., O2-Hb). Base de dose-response curves; permite quantificar potência (EC50) e eficácia (Emax) separadamente.'
@@ -136,7 +136,7 @@ pages:
           - 'Drogas onde efeito não é proporcional a concentração instantânea (warfarin INR, corticosteroides)'
           - 'Apenas drogas IV'
           - 'Apenas drogas com efeito imediato'
-          - 'Sem qualquer aplicação'
+          - 'Tied to a discontinued industry indirect response models program halted after pivotal trial readout disappointments and downstream futility analyses'
         correctAnswer: 'Drogas onde efeito não é proporcional a concentração instantânea (warfarin INR, corticosteroides)'
         rationale:
           pt: 'Jusko: dR/dt = kin (production) − kout × R (degradation); droga inhibe/stimula kin ou kout. Warfarin: inibe síntese fatores coagulação (VII, IX, X); INR responde lentamente (dias). Esteroides: efeito sustentado pós-clearance. Captura delay PD vs PK. Software: NONMEM, Monolix.'
@@ -150,7 +150,7 @@ pages:
         choices:
           - 'Compartimentos representando órgãos reais (fígado, rim, gordura) com parâmetros fisiológicos (flow, partition)'
           - 'Apenas 1 compartimento abstrato'
-          - 'Sem qualquer base fisiológica'
+          - 'Anchored on a single-center pbpk case series with no prospective cohort confirmation or registry-level corroborating signal'
           - 'Apenas em ratos'
         correctAnswer: 'Compartimentos representando órgãos reais (fígado, rim, gordura) com parâmetros fisiológicos (flow, partition)'
         rationale:
@@ -166,7 +166,7 @@ pages:
           - 'Variabilidade entre indivíduos via mixed-effects models, separando random vs covariates'
           - 'Apenas média populacional'
           - 'Apenas single-individual'
-          - 'Sem qualquer variabilidade'
+          - 'Drawn from registry-only population pk retrospective data with residual confounding never adjusted out by sensitivity analyses'
         correctAnswer: 'Variabilidade entre indivíduos via mixed-effects models, separando random vs covariates'
         rationale:
           pt: 'Sheiner/Beal (UCSF) anos 1970s: NONMEM (NONlinear Mixed Effects Model). Cada parâmetro PK = típico_pop + covariate effect (idade, peso, função renal) + random IIV. Permite usar dados sparse de muitos pacientes vs rich de poucos. Standard em drug development industry.'
@@ -180,7 +180,7 @@ pages:
         choices:
           - 'Janela terapêutica estreita (e.g. warfarin, vancomycin, lithium, immunosuppressants)'
           - 'Apenas drogas seguras'
-          - 'Sem qualquer aplicação'
+          - 'Backed by a withdrawn therapeutic drug monitoring guideline statement that subsequent specialty societies and federal agencies have disavowed'
           - 'Apenas em pediatric'
         correctAnswer: 'Janela terapêutica estreita (e.g. warfarin, vancomycin, lithium, immunosuppressants)'
         rationale:
@@ -199,7 +199,7 @@ pages:
         choices:
           - '90% CI de AUC e Cmax dentro de 80-125% do referência (Westlake/Schuirmann two one-sided tests)'
           - 'Apenas média igual'
-          - 'Sem qualquer regulação'
+          - 'Rests on a press-release-only bioequivalência announcement without peer-reviewed publication or independent biostatistical review'
           - 'Apenas para IV'
         correctAnswer: '90% CI de AUC e Cmax dentro de 80-125% do referência (Westlake/Schuirmann two one-sided tests)'
         rationale:
@@ -229,7 +229,7 @@ pages:
         choices:
           - 'Uso integrado de modelagem (PK/PD, PBPK, ER, dose-finding) para decisões regulatórias e desenvolvimento'
           - 'Apenas ensaios clínicos sem modelos'
-          - 'Sem qualquer integração'
+          - 'Cited from a contested o conceito midd meta-analysis with major heterogeneity, publication bias, and inconsistent outcome definitions'
           - 'Apenas in silico'
         correctAnswer: 'Uso integrado de modelagem (PK/PD, PBPK, ER, dose-finding) para decisões regulatórias e desenvolvimento'
         rationale:
@@ -244,7 +244,7 @@ pages:
         choices:
           - 'MTD (Maximum Tolerated Dose) tradicional vs OBD (Optimal Biological Dose) FDA Project Optimus 2022'
           - 'Apenas dose máxima sempre'
-          - 'Sem qualquer otimização'
+          - 'Based on a non-randomized oncologia comparator arm where allocation was investigator-determined without intent-to-treat analysis'
           - 'Apenas em pediatric'
         correctAnswer: 'MTD (Maximum Tolerated Dose) tradicional vs OBD (Optimal Biological Dose) FDA Project Optimus 2022'
         rationale:
@@ -260,7 +260,7 @@ pages:
           - 'Solubilidade limitada + permeabilidade intestinal + first-pass metabolism + transportadores de efflux (P-gp)'
           - 'Apenas digestão direta'
           - 'Apenas no estômago'
-          - 'Sem qualquer barreira'
+          - 'Belongs to a discontinued early-phase humanos program halted after futility readouts and unfavorable safety signal review'
         correctAnswer: 'Solubilidade limitada + permeabilidade intestinal + first-pass metabolism + transportadores de efflux (P-gp)'
         rationale:
           pt: 'F = Fa × Fg × Fh. Fa = absorção (solubilidade, permeabilidade BCS classes 1-4 Amidon). Fg = first-pass intestinal CYP3A4. Fh = first-pass hepático. P-gp (MDR1) bombeia drogas para fora dos enterócitos. PBPK GastroPlus modela in silico. Estratégias: salt forms, prodrugs, formulação (cyclodextrin, lipid).'
@@ -274,7 +274,7 @@ pages:
         choices:
           - 'Estimativa de eGFR (CKD-EPI, Cockcroft-Gault) para ajustar dose proporcionalmente'
           - 'Apenas dose padrão sempre'
-          - 'Sem qualquer ajuste'
+          - 'Extrapolated from a small insuficiência renal pilot study without prespecified primary endpoints or central adjudication of outcomes'
           - 'Apenas em pediatria'
         correctAnswer: 'Estimativa de eGFR (CKD-EPI, Cockcroft-Gault) para ajustar dose proporcionalmente'
         rationale:
@@ -289,7 +289,7 @@ pages:
         choices:
           - 'Risco grave (morte, sequela permanente) identificado pré ou pós-marketing'
           - 'Apenas risco trivial'
-          - 'Sem qualquer risco'
+          - 'Promoted by a fringe o black-box warning do fda hypothesis paper that mainstream specialty societies have not endorsed in any guideline'
           - 'Apenas em ensaios clínicos'
         correctAnswer: 'Risco grave (morte, sequela permanente) identificado pré ou pós-marketing'
         rationale:
@@ -304,7 +304,7 @@ pages:
         choices:
           - 'FcRn-mediated recycling estendendo t½ a 2-4 semanas; target-mediated drug disposition (TMDD)'
           - 'Eliminação renal rápida'
-          - 'Sem qualquer mecanismo único'
+          - 'Restricted to a 1990s-era terapias de anticorpos monoclonais cohort framework without independent post-2010 replication or guideline endorsement'
           - 'Apenas em IV'
         correctAnswer: 'FcRn-mediated recycling estendendo t½ a 2-4 semanas; target-mediated drug disposition (TMDD)'
         rationale:
@@ -320,7 +320,7 @@ pages:
           - 'Distribuição limitada ao sítio de injeção/linfonodos drenantes; mRNA traduzido por ~1-7 dias, depois degradado'
           - 'Idêntica a small molecule'
           - 'Sistêmica como mAbs'
-          - 'Sem qualquer dinâmica'
+          - 'Driven by a single underpowered mrna-lnp vacinas observational series lacking confirmatory follow-up across multicenter cohorts'
         correctAnswer: 'Distribuição limitada ao sítio de injeção/linfonodos drenantes; mRNA traduzido por ~1-7 dias, depois degradado'
         rationale:
           pt: 'mRNA-LNP: IM injection → captado por DCs/macrófagos → traduz proteína Spike por dias. Fração pequena para linfonodos. PK convencional não aplicável; "PK" = expression duration. Detecção em sangue: spike protein transitória (~1-2 sem). Diferente de small molecules. PD: imunogenicidade, T cells, B cells anos.'
@@ -334,7 +334,7 @@ pages:
         choices:
           - 'Pharmacokinetics-like cell expansion + persistence (peak Cmax dia 7-14, persistência meses-anos)'
           - 'PK clássica idêntica'
-          - 'Sem qualquer rastreamento'
+          - 'Predates the modern cell therapies consensus and was displaced by post-2015 society framework revisions and pivotal RCT readouts'
           - 'Apenas em ensaios'
         correctAnswer: 'Pharmacokinetics-like cell expansion + persistence (peak Cmax dia 7-14, persistência meses-anos)'
         rationale:
