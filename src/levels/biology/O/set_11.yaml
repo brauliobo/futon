@@ -1,0 +1,347 @@
+title:
+  pt: Drives Gênicos e Engenharia Ecológica
+  en: Gene Drives and Ecological Engineering
+level: O
+subject: biology
+objectives:
+  - Compreender drives de cópia e supressão
+  - Reconhecer alvos (Anopheles, Aedes, Plasmodium)
+  - Identificar drives controlados (daisy, threshold, split)
+  - Avaliar governança e ensaios de campo
+difficulty: 5
+authorNotes: |
+  Frontier gene drives. Burt 2003 theoretical, HEGs. Gantz/Bier 2015 mutagenic chain reaction
+  drosophila. Hammond/Crisanti Imperial 2016/2018 doublesex Anopheles gambiae 100% pop crash.
+  Esvelt MIT proposed daisy drive 2016 + responsive science. Target Malaria (Crisanti, Burt,
+  Diabate, Gates+Open Phil funded) — Burkina Faso 2019 sterile males release as proof of capacity.
+  Akbari UCSD female-deleterious. Confined drives: split drives (separate Cas9+gRNA), threshold
+  drives. Kevin Esvelt 2017 Mice Against Ticks (Nantucket/Martha's Vineyard) Borrelia Lyme. NIH
+  not funding drives (no public release in US per moratorium). Oxitec OX513A/OX5034 RIDL not
+  drives — self-limiting. NAS 2016 report. African Union Aug 2018 endorsed exploration. CBD
+  COP15 2022. Genetic Biocontrol of Invasive Rodents (GBIRd).
+example:
+  question:
+    pt: Em 2003, Austin Burt formalizou matematicamente a ideia de drives gênicos baseados em qual mecanismo natural?
+    en: In 2003, Austin Burt formalized the math of gene drives based on which natural mechanism?
+  choices:
+    - Endonucleases de homing (HEGs) que cortam alelo selvagem e copiam-se via reparo HDR
+    - Transposões de classe II Tc1/mariner replicativos sem qualquer corte direcionado
+    - Plasmídeos conjugativos bacterianos transferindo entre espécies sem especificidade
+    - Vírus retrotransposons com integração randômica no genoma do hospedeiro
+  correctAnswer: Endonucleases de homing (HEGs) que cortam alelo selvagem e copiam-se via reparo HDR
+  rationale:
+    pt: Burt (Proc Roy Soc B 2003) formalizou que HEGs (intrônicas em fungos/algas) clivam alelo selvagem e o reparo por HDR copia o gene da HEG no homólogo — herança quase 100% (super-Mendeliana) — base teórica para drives sintéticos.
+    en: Burt (Proc Roy Soc B 2003) formalized that HEGs (intronic in fungi/algae) cleave the wild allele and HDR repair copies the HEG gene to the homolog — near-100% (super-Mendelian) inheritance — theoretical basis for synthetic drives.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Mecanismos e arquiteturas de drive
+      en: Page 1 — Drive mechanisms and architectures
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "Mutagenic Chain Reaction" (MCR) demonstrada por Gantz/Bier (Science 2015) foi a primeira a aplicar CRISPR como drive em qual organismo?
+          en: The "Mutagenic Chain Reaction" (MCR) by Gantz/Bier (Science 2015) was the first CRISPR drive in which organism?
+        choices:
+          - Drosophila melanogaster, demonstrando herança >95% via CRISPR-Cas9 + gRNA homing
+          - Anopheles gambiae diretamente sem prova de princípio em modelo prévio
+          - Saccharomyces cerevisiae como demonstração restrita a organismo unicelular
+          - Caenorhabditis elegans com taxas modestas e sem aplicação a controle vetorial
+        correctAnswer: Drosophila melanogaster, demonstrando herança >95% via CRISPR-Cas9 + gRNA homing
+        rationale:
+          pt: Gantz/Bier (UCSD, Science 2015) chamaram MCR à arquitetura Cas9+gRNA inserida no genoma — em mosca, herança ~97% em vez de 50%. Prova de princípio decisiva para drives baseados em CRISPR. Esvelt havia proposto a abordagem em 2014.
+          en: Gantz/Bier (UCSD, Science 2015) named MCR an architecture with Cas9+gRNA inserted into the genome — in fly, inheritance was ~97% vs 50%. Decisive proof of principle for CRISPR-based drives. Esvelt had proposed the approach in 2014.
+        objectives: [MCR Drosophila]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em 2018, Kyrou/Hammond/Crisanti (Nat Biotech) reportaram colapso completo de uma população de Anopheles gambiae em laboratório usando drive contra qual alvo?
+          en: In 2018, Kyrou/Hammond/Crisanti (Nat Biotech) reported complete collapse of an Anopheles gambiae lab population using a drive against which target?
+        choices:
+          - Doublesex (dsx), gene de determinação sexual cujo splicing fêmea-específico é interrompido
+          - Apenas marcadores neutros como GFP sem efeito fenotípico em fêmeas
+          - Receptor olfativo Or8 envolvido em busca de hospedeiro humano para alimentação
+          - Gene de fertilidade masculina ginandromorfo independente do desenvolvimento sexual
+        correctAnswer: Doublesex (dsx), gene de determinação sexual cujo splicing fêmea-específico é interrompido
+        rationale:
+          pt: O drive cliva sítio essencial ao splicing fêmea-específico de dsx; fêmeas homozigotas dsx-mutadas são intersexo e estéreis, machos férteis. Em ~7-11 gerações em gaiolas, populações inteiras colapsam — primeiro drive a suprimir totalmente Anopheles em escala lab.
+          en: The drive cleaves the female-specific splice site of dsx; dsx-mutant homozygous females are intersex and sterile, males fertile. In ~7-11 generations in cages, entire populations collapse — first drive to fully suppress Anopheles at lab scale.
+        objectives: [dsx drive]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Target Malaria, consórcio que desenvolve drives anti-Anopheles, é financiado principalmente por…
+          en: Target Malaria, the consortium developing anti-Anopheles drives, is mainly funded by…
+        choices:
+          - Bill & Melinda Gates Foundation, Open Philanthropy e governo do Reino Unido
+          - WHO exclusivamente, sem qualquer participação de filantropia privada
+          - NIH dos EUA com financiamento direto via grants R01 padrão
+          - Empresas farmacêuticas (Pfizer, GSK) buscando vacina antimalária comercial
+        correctAnswer: Bill & Melinda Gates Foundation, Open Philanthropy e governo do Reino Unido
+        rationale:
+          pt: Target Malaria (sediado em Imperial College, parceiros em Burkina Faso, Mali, Uganda, Gana) é financiado principalmente por Gates Foundation e Open Philanthropy, com apoio adicional do FCDO/UK e WT — busca eliminar malária via supressão populacional de A. gambiae.
+          en: Target Malaria (Imperial College HQ, partners in Burkina Faso, Mali, Uganda, Ghana) is funded mainly by Gates Foundation and Open Philanthropy, with FCDO/UK and WT — seeks to eliminate malaria via A. gambiae population suppression.
+        objectives: [Target Malaria]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em 2019, Burkina Faso autorizou a primeira liberação de mosquitos GE da Target Malaria. Que tipo de mosquito?
+          en: In 2019, Burkina Faso authorized the first GE mosquito release by Target Malaria. What type?
+        choices:
+          - Machos estéreis A. coluzzii (não-drive), como teste de capacidade regulatória, ecológica e comunitária
+          - Drive completo dsx em A. gambiae já como ferramenta de eliminação
+          - Mosquitos transgênicos resistentes a Plasmodium para reposição populacional
+          - Apenas Aedes aegypti modificados como controle de dengue
+        correctAnswer: Machos estéreis A. coluzzii (não-drive), como teste de capacidade regulatória, ecológica e comunitária
+        rationale:
+          pt: Liberação de jul/2019 em Bana foi de ~6.400 machos estéreis A. coluzzii, sem drive — primeiro release de inseto GE na África, projetado para validar logística, regulação e engajamento comunitário antes de tecnologias de drive ulteriores.
+          en: The Jul 2019 release in Bana involved ~6,400 sterile A. coluzzii males, no drive — first GE insect release in Africa, designed to validate logistics, regulation, and community engagement before later drive technologies.
+        objectives: [Burkina Faso 2019]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Drives "daisy chain" (Esvelt 2016) buscam resolver qual problema dos drives globais?
+          en: Daisy-chain drives (Esvelt 2016) aim to solve which global-drive problem?
+        choices:
+          - Disseminação descontrolada além da área-alvo, ao limitar o drive a poucas gerações
+          - Inativação espontânea por mutações de resistência no sítio de corte
+          - Custo de fabricação industrial de mosquitos transgênicos em escala
+          - Necessidade de autorização internacional para qualquer ensaio de laboratório
+        correctAnswer: Disseminação descontrolada além da área-alvo, ao limitar o drive a poucas gerações
+        rationale:
+          pt: Daisy drives (Esvelt/Min, MIT 2016) usam cadeia de elementos onde cada nível depende do próximo; o último não se copia, então a cadeia "se desliga" em poucas gerações — confina geograficamente o drive, abordando preocupação ecológica e ética.
+          en: Daisy drives (Esvelt/Min, MIT 2016) use a chain where each level depends on the next; the last doesn't copy, so the chain "switches off" in a few generations — geographically confining the drive, addressing ecological and ethical concerns.
+        objectives: [Daisy drives]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: "Threshold drives" diferem de drives clássicos por…
+          en: Threshold drives differ from classical drives by…
+        choices:
+          - Necessitar frequência mínima inicial para se espalhar, perdendo-se abaixo desse limiar
+          - Atuar apenas em populações marinhas sem aplicabilidade em vertebrados terrestres
+          - Substituir CRISPR por ribozimas auto-clivantes sem necessidade de Cas9
+          - Funcionar exclusivamente em organismos clonais sem reprodução sexuada
+        correctAnswer: Necessitar frequência mínima inicial para se espalhar, perdendo-se abaixo desse limiar
+        rationale:
+          pt: Threshold drives (e.g. Wolbachia-like, underdominance) só se espalham se introduzidos acima de uma frequência crítica; abaixo, são eliminados — espalhamento espacialmente confinado e reversível, abordando preocupações de irreversibilidade.
+          en: Threshold drives (e.g. Wolbachia-like, underdominance) only spread if introduced above a critical frequency; below it, they go extinct — spatially confined and reversible spread, addressing irreversibility concerns.
+        objectives: [Threshold drives]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: "Split drives" mantêm Cas9 e gRNA em loci separados para…
+          en: Split drives keep Cas9 and gRNA at separate loci to…
+        choices:
+          - Evitar autopropagação completa: o drive só age enquanto ambos os componentes coexistirem
+          - Aumentar a taxa de homing acima de 99% em todas as gerações
+          - Compatibilizar com qualquer organismo independente de sistema reprodutor
+          - Eliminar a necessidade de validação ecológica antes de qualquer liberação
+        correctAnswer: Evitar autopropagação completa: o drive só age enquanto ambos os componentes coexistirem
+        rationale:
+          pt: Em split drives, Cas9 (não dirige) e gRNA (dirige) estão em cromossomos diferentes; gRNA copia-se via Cas9, mas sem Cas9 endógeno, fora do laboratório o drive segrega Mendelianamente e se dilui — ferramenta segura de pesquisa.
+          en: In split drives, Cas9 (non-driving) and gRNA (driving) sit on different chromosomes; gRNA copies via Cas9, but without endogenous Cas9, outside the lab the drive segregates Mendelianly and dilutes — a safe research tool.
+        objectives: [Split drives]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "modificação populacional" (replacement drive), alternativa à supressão, busca…
+          en: Population modification (replacement drive), an alternative to suppression, seeks to…
+        choices:
+          - Substituir alelos selvagens por alelos refratários a patógeno (e.g., anti-Plasmodium em Anopheles)
+          - Eliminar completamente a espécie-alvo causadora de doença ecologicamente
+          - Cruzar duas espécies para criar híbridos estéreis em larga escala
+          - Reduzir o IMC populacional em humanos por modificação alimentar
+        correctAnswer: Substituir alelos selvagens por alelos refratários a patógeno (e.g., anti-Plasmodium em Anopheles)
+        rationale:
+          pt: Modificação visa substituir, não eliminar: drives carregam transgenes anti-patógeno (e.g., scFv anti-Plasmodium ou peptídeos antiparasitários) — Akbari/James UCI/UCSD demonstraram em A. stephensi 2015. Mantém serviços ecossistêmicos do mosquito, mas bloqueia transmissão.
+          en: Modification seeks to replace, not eliminate: drives carry anti-pathogen transgenes (e.g., anti-Plasmodium scFv or antiparasitic peptides) — Akbari/James UCI/UCSD showed it in A. stephensi (2015). Preserves mosquito ecosystem services while blocking transmission.
+        objectives: [Replacement drive]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A maior limitação biológica observada em drives CRISPR é…
+          en: The biggest observed biological limitation of CRISPR drives is…
+        choices:
+          - Surgimento de alelos resistentes via NHEJ que destrói sítio sem copiar o drive
+          - Fertilidade aumentada em homozigotas selvagens compensando o drive
+          - Reversão espontânea por crossover meiótico em alta frequência fixa
+          - Inativação imediata por metilação epigenética de Cas9 inserido
+        correctAnswer: Surgimento de alelos resistentes via NHEJ que destrói sítio sem copiar o drive
+        rationale:
+          pt: NHEJ pode reparar o corte sem usar molde HDR, gerando indels que mudam o sítio — alelos resistentes ("R1" funcional ou "R2" não-funcional) bloqueiam homing. Crisanti contornou em dsx escolhendo sítio ultra-conservado: NHEJ que altera essa sequência destrói função feminina, eliminando-se.
+          en: NHEJ can repair the cut without HDR template, producing indels that alter the site — resistant alleles ("R1" functional or "R2" non-functional) block homing. Crisanti circumvented this in dsx by choosing an ultra-conserved site: NHEJ that alters that sequence destroys female function, self-eliminating.
+        objectives: [Resistência drive]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A escolha de Anopheles gambiae como alvo principal para drives malariais reflete…
+          en: Choosing Anopheles gambiae as the main malaria-drive target reflects…
+        choices:
+          - Vetor mais eficiente de P. falciparum na África subsaariana, responsável pela maioria das mortes globais
+          - Único vetor de malária no mundo todo sem qualquer outro relevante
+          - Distribuição apenas asiática limitada à Índia e Sudeste asiático
+          - Resistência inerente do mosquito a inseticidas convencionais sem alternativas
+        correctAnswer: Vetor mais eficiente de P. falciparum na África subsaariana, responsável pela maioria das mortes globais
+        rationale:
+          pt: A. gambiae s.l. (complexo gambiae/coluzzii/arabiensis) é o vetor dominante de P. falciparum na África Subsaariana, onde >95% das ~600k mortes anuais por malária ocorrem; suprimi-lo poderia interromper transmissão regional inteira.
+          en: A. gambiae s.l. (gambiae/coluzzii/arabiensis complex) is the dominant P. falciparum vector in sub-Saharan Africa, where >95% of the ~600k annual malaria deaths occur; suppressing it could interrupt regional transmission entirely.
+        objectives: [Por que A. gambiae]
+  - title:
+      pt: Página 2 — Aplicações ecológicas e governança
+      en: Page 2 — Ecological applications and governance
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A iniciativa "Mice Against Ticks" de Kevin Esvelt visa, em ilhas de Massachusetts, o quê?
+          en: Kevin Esvelt's "Mice Against Ticks" initiative on Massachusetts islands targets what?
+        choices:
+          - Camundongos brancos imunizados contra Borrelia/OspA, reduzindo Lyme em humanos via cadeia trófica
+          - Eliminação total de camundongos Peromyscus em Nantucket por drive de supressão
+          - Carrapatos diretamente modificados para serem incapazes de transmitir Borrelia
+          - Cervos modificados como hospedeiros adultos preferenciais ao humano
+        correctAnswer: Camundongos brancos imunizados contra Borrelia/OspA, reduzindo Lyme em humanos via cadeia trófica
+        rationale:
+          pt: Esvelt (MIT) propôs em 2017 introduzir em Peromyscus de Nantucket/Martha's Vineyard alelos que codificam anticorpos anti-OspA (proteína de Borrelia), interrompendo ciclo carrapato-camundongo. Notável por governança comunitária prévia: comunidades das ilhas debatem antes do trabalho.
+          en: Esvelt (MIT) proposed in 2017 introducing into Peromyscus on Nantucket/Martha's Vineyard alleles encoding anti-OspA antibodies (Borrelia protein), breaking the tick-mouse cycle. Notable for upstream community governance: islanders deliberate before the work.
+        objectives: [Mice Against Ticks]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O programa GBIRd (Genetic Biocontrol of Invasive Rodents) explora drives para qual problema ecológico?
+          en: The GBIRd program (Genetic Biocontrol of Invasive Rodents) explores drives for which ecological problem?
+        choices:
+          - Eliminação de roedores invasores em ilhas oceânicas para proteger aves marinhas e endêmicos
+          - Controle de roedores urbanos em metrópoles globais como vetor de leptospirose
+          - Produção de modelos murinos transgênicos para pesquisa biomédica básica
+          - Substituição de gado bovino por roedores GE em pecuária sustentável
+        correctAnswer: Eliminação de roedores invasores em ilhas oceânicas para proteger aves marinhas e endêmicos
+        rationale:
+          pt: GBIRd (NCSU, USDA, Island Conservation, Sociedade de Conservação Australiana) avalia drives em ratos (Rattus, Mus) introduzidos em ilhas onde devastam aves marinhas e endêmicos — alternativa a baits anticoagulantes que afetam toda a fauna nativa.
+          en: GBIRd (NCSU, USDA, Island Conservation, Australian Wildlife Conservancy) evaluates drives in introduced rats (Rattus, Mus) on islands where they devastate seabirds and endemics — an alternative to anticoagulant baits that hit native wildlife.
+        objectives: [GBIRd]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Oxitec OX5034 (mosquito Aedes aegypti com tTAV female-lethal), liberado em Florida 2021 e Brasil, NÃO é considerado um drive porque…
+          en: Oxitec OX5034 (Aedes aegypti with tTAV female-lethal), released in Florida 2021 and Brazil, is NOT a drive because…
+        choices:
+          - É autolimitante: o transgene é eliminado em poucas gerações sem propagar-se
+          - Não é detectável em laboratório por marcadores fluorescentes padrão
+          - Atua apenas em adultos sem qualquer transmissão à prole por design
+          - É exclusivamente acaricida sem efeito mosquiticida específico real
+        correctAnswer: É autolimitante: o transgene é eliminado em poucas gerações sem propagar-se
+        rationale:
+          pt: OX5034 é "self-limiting": machos GE acasalam com fêmeas selvagens, prole feminina morre antes da idade reprodutiva, machos sobrevivem mas o transgene se dilui em poucas gerações — não é drive (não tem herança >50%). Estratégia de Liberação de Insetos com Letalidade Dominante (RIDL).
+          en: OX5034 is self-limiting: GE males mate wild females, female offspring die before reproductive age, males survive but the transgene dilutes within generations — not a drive (no super-Mendelian inheritance). Release of Insects carrying Dominant Lethality (RIDL).
+        objectives: [Oxitec não-drive]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A Conferência de Partes da CBD (COP15, Montreal 2022) tomou qual posição sobre drives?
+          en: The CBD COP15 (Montreal 2022) took which stance on drives?
+        choices:
+          - Não impôs moratória global, mantendo abordagem caso-a-caso com avaliação de risco
+          - Proibiu todo desenvolvimento de drives gênicos por 50 anos como precaução
+          - Tornou drives obrigatórios para controle vetorial em todos os países membros
+          - Centralizou regulação de drives na FAO sem participação de outras agências
+        correctAnswer: Não impôs moratória global, mantendo abordagem caso-a-caso com avaliação de risco
+        rationale:
+          pt: A COP14 (Egito 2018) e COP15 (Montreal 2022) recusaram pedidos de moratória global; manteve abordagem caso-a-caso com consentimento livre, prévio e informado dos países afetados — ambiente regulatório que permite ensaios contidos como Burkina Faso 2019.
+          en: COP14 (Egypt 2018) and COP15 (Montreal 2022) refused calls for a global moratorium; maintained a case-by-case approach with free, prior, informed consent from affected countries — regulatory environment enabling contained trials like Burkina Faso 2019.
+        objectives: [CBD COP15]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O relatório da NAS de 2016 sobre gene drives concluiu o quê em sua principal recomendação?
+          en: The 2016 NAS gene drive report concluded what in its main recommendation?
+        choices:
+          - Pesquisa contida deve continuar; liberações em campo precisam de quadro fásico de avaliação ecológica e governança
+          - Toda pesquisa deve ser interrompida imediatamente sem qualquer trabalho contido
+          - Drives devem ser comercializados livremente após qualquer ensaio em laboratório
+          - Apenas governos devem fazer pesquisa de drives, excluindo academia e indústria
+        correctAnswer: Pesquisa contida deve continuar; liberações em campo precisam de quadro fásico de avaliação ecológica e governança
+        rationale:
+          pt: O relatório NASEM 2016 endossou pesquisa em laboratório/contida e propôs estrutura fásica para campo, com avaliação de risco ecológico, engajamento comunitário e quadros regulatórios — base sobre a qual organizações como Target Malaria projetam roadmap.
+          en: The NASEM 2016 report endorsed contained/lab research and proposed a phased framework for field deployment, with ecological risk assessment, community engagement, and regulatory frameworks — the basis on which Target Malaria designs roadmaps.
+        objectives: [NAS 2016]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Críticas éticas centrais a drives globais incluem…
+          en: Central ethical critiques of global drives include…
+        choices:
+          - Irreversibilidade, transfronteiriço e consentimento informado em populações afetadas distantes
+          - Custo financeiro proibitivo restrito a empresas multibilionárias apenas
+          - Necessidade de licenciamento patentário centralizado pela FDA dos EUA
+          - Apenas problemas técnicos como resistência sem qualquer dimensão ética
+        correctAnswer: Irreversibilidade, transfronteiriço e consentimento informado em populações afetadas distantes
+        rationale:
+          pt: Drives globais cruzam fronteiras (mosquitos voam) e podem ser irreversíveis. Quem consente? — populações vizinhas? Globais? Esvelt e outros propõem "responsive science": comunidade-alvo decide antes; tecnologia confinada (daisy/threshold) primeiro. Tema central da ELSI dos drives.
+          en: Global drives cross borders (mosquitoes fly) and may be irreversible. Who consents? — neighboring populations? Globally? Esvelt and others advocate "responsive science": target community decides first; confined technology (daisy/threshold) first. Central theme of drive ELSI.
+        objectives: [Ética drives]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Wolbachia pipientis, bactéria endossimbionte usada pela World Mosquito Program (Scott O'Neill), reduz arboviroses por…
+          en: Wolbachia pipientis, endosymbiont used by the World Mosquito Program (Scott O'Neill), reduces arboviruses via…
+        choices:
+          - Bloqueio de replicação viral em A. aegypti + viés de herança via incompatibilidade citoplasmática
+          - Edição genômica direta de Aedes substituindo genes virais nativos do mosquito
+          - Esterilização química do mosquito após picada de humano não infectado apenas
+          - Atração química do mosquito para armadilhas via feromônio bacteriano
+        correctAnswer: Bloqueio de replicação viral em A. aegypti + viés de herança via incompatibilidade citoplasmática
+        rationale:
+          pt: Wolbachia infecta Aedes, bloqueia replicação de dengue/Zika/chikungunya, e gera incompatibilidade citoplasmática que enviesa herança — fêmeas Wolbachia-positivas têm vantagem reprodutiva e o "drive" se fixa. Liberações na Indonésia (Yogyakarta) reduziram dengue em 77% (NEJM 2021).
+          en: Wolbachia infects Aedes, blocks dengue/Zika/chikungunya replication, and generates cytoplasmic incompatibility biasing inheritance — Wolbachia+ females have reproductive advantage and the "drive" fixes. Indonesia (Yogyakarta) releases reduced dengue by 77% (NEJM 2021).
+        objectives: [Wolbachia]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "anti-drive" ou "reversal drive" foi proposto para…
+          en: "Anti-drive" or "reversal drive" was proposed to…
+        choices:
+          - Reverter ou neutralizar um drive previamente liberado, restaurando alelo selvagem
+          - Substituir drives de supressão por drives de modificação automaticamente
+          - Eliminar todos os mosquitos do planeta indistintamente da espécie
+          - Patentear drives para uso exclusivo comercial após liberação inicial
+        correctAnswer: Reverter ou neutralizar um drive previamente liberado, restaurando alelo selvagem
+        rationale:
+          pt: Esvelt e outros propuseram "immunizing reversal drives" (IRDs) que se sobrepõem a drives existentes restaurando funcionalidade — ferramenta de segurança caso ecologia adversa apareça. Demonstrações em moscas e leveduras, ainda não em campo.
+          en: Esvelt and others proposed "immunizing reversal drives" (IRDs) that overlay existing drives restoring functionality — a safety tool if adverse ecology emerges. Fly and yeast demonstrations exist, not yet in field.
+        objectives: [Anti-drive]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A African Union, em 2018, declarou apoio à exploração de drives. Por quê?
+          en: The African Union, in 2018, declared support for exploring drives. Why?
+        choices:
+          - Pressão da carga global de malária e direito de países africanos à autodeterminação tecnológica
+          - Pressão direta de empresas farmacêuticas multinacionais sobre governos do continente
+          - Necessidade de exportar tecnologia para mercados europeus em troca de tarifas
+          - Imposição da WHO sob ameaça de retirada de fundos para vacinação
+        correctAnswer: Pressão da carga global de malária e direito de países africanos à autodeterminação tecnológica
+        rationale:
+          pt: Em ago/2018, a AU/AU-NEPAD endossou exploração de drives como ferramenta legítima ante a carga catastrófica da malária; argumento é também de soberania — populações afetadas têm direito a participar e decidir. Posição contrastou com pedidos de moratória global de ONGs do Norte.
+          en: In Aug 2018, AU/AU-NEPAD endorsed drive exploration as a legitimate tool given malaria's catastrophic burden; the argument is also one of sovereignty — affected populations have the right to participate and decide. Contrasted with Northern NGO moratorium calls.
+        objectives: [AU 2018]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Um risco ecológico difícil de prever em drive de supressão de A. gambiae é…
+          en: A hard-to-predict ecological risk of A. gambiae suppression drives is…
+        choices:
+          - Vácuo de nicho que pode ser ocupado por outro vetor de patógeno emergente
+          - Eliminação simultânea de plantas polinizadas exclusivamente por mosquitos adultos
+          - Colapso da cadeia alimentar de aves predadoras dependentes do mosquito
+          - Aumento de chuvas regionais por perda de vapor d'água larval
+        correctAnswer: Vácuo de nicho que pode ser ocupado por outro vetor de patógeno emergente
+        rationale:
+          pt: Sem a A. gambiae, outros Anopheles (arabiensis, funestus) ou Culex/Aedes podem expandir; substituição vetorial é risco real. A maioria dos modeladores prevê impacto baixo (mosquitos não são polinizadores nem presa-chave), mas substituição por outro vetor competente é a preocupação mais concreta.
+          en: Without A. gambiae, other Anopheles (arabiensis, funestus) or Culex/Aedes could expand; vector replacement is a real risk. Most modelers predict low impact (mosquitoes are not key pollinators or prey), but replacement by another competent vector is the most concrete concern.
+        objectives: [Vácuo de nicho]
+target: 20
