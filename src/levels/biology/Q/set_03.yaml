@@ -1,0 +1,344 @@
+title:
+  pt: Farmacovigilância e Reações Adversas
+  en: Pharmacovigilance and Adverse Drug Reactions
+level: Q
+subject: biology
+objectives:
+  - Compreender ADR types (A-F, idiossincráticas)
+  - Reconhecer signal detection (FAERS, EudraVigilance, VigiBase)
+  - Identificar REMS, withdrawals históricas
+  - Avaliar Yellow Card e MedDRA
+difficulty: 5
+authorNotes: |
+  Pharmacovigilance. WHO Uppsala Monitoring Centre (UMC) VigiBase. FDA FAERS. EMA EudraVigilance.
+  UK MHRA Yellow Card. Withdrawals: thalidomide 1961, vioxx 2004 (Merck Lancet 2007), troglitazone
+  1997-2000, cisapride 2000 long QT. ADR types: Rawlins/Thompson A (augmented), B (bizarre,
+  idiosyncratic), C (chronic), D (delayed), E (end-of-treatment), F (failure). Naranjo algorithm.
+  Hartwig severity. Hauben/Bate disproportionality (PRR, ROR, BCPNN). Black-box warnings. RMP
+  EU. REMS US. MedDRA terminology. CIOMS. Periodic Safety Update Report (PSUR).
+example:
+  question:
+    pt: A classificação de Rawlins-Thompson de ADRs categoriza tipo A como…
+    en: Rawlins-Thompson ADR classification categorizes type A as…
+  choices:
+    - Augmented: dose-dependente, previsível pela farmacologia, comum (e.g. hipoglicemia em insulina)
+    - Apenas reação alérgica
+    - Apenas em pediatric
+    - Sem qualquer mecanismo
+  correctAnswer: Augmented: dose-dependente, previsível pela farmacologia, comum (e.g. hipoglicemia em insulina)
+  rationale:
+    pt: Rawlins/Thompson 1977 6 categorias: A (Augmented, ~80% ADRs, dose-dependent, previsível), B (Bizarre, idiossincráticas, raras, e.g. anafilaxia), C (Chronic), D (Delayed, e.g. tardive dyskinesia, segundo câncer), E (End-of-treatment, withdrawal), F (Failure). Útil clínicamente.
+    en: Rawlins/Thompson 1977 6 categories: A (Augmented, ~80% of ADRs, dose-dependent, predictable), B (Bizarre, idiosyncratic, rare, e.g., anaphylaxis), C (Chronic), D (Delayed, e.g., tardive dyskinesia, second cancers), E (End-of-treatment, withdrawal), F (Failure). Clinically useful.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Detecção e classificação
+      en: Page 1 — Detection and classification
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O caso da talidomida (1957-1961) marcou início da farmacovigilância moderna por…
+          en: Thalidomide case (1957-1961) marked beginning of modern pharmacovigilance because…
+        choices:
+          - ~10k bebês com focomelia em 46 países revelou necessidade de regulação pre-marketing rigorosa
+          - Apenas ensaio clínico
+          - Sem qualquer impacto regulatório
+          - Apenas em US
+        correctAnswer: ~10k bebês com focomelia em 46 países revelou necessidade de regulação pre-marketing rigorosa
+        rationale:
+          pt: Talidomida (Chemie Grünenthal): hipnótico para gestantes 1957-1961. ~10k crianças com phocomelia (limb agenesis). Frances Kelsey FDA reteve aprovação US salvando milhares. Levou a Kefauver-Harris Amendments 1962 (eficácia + segurança), Yellow Card UK (1964), WHO PIDM 1968. Tragédia fundadora. Talidomida hoje aprovada para mieloma múltiplo (Celgene, REMS).
+          en: Thalidomide (Chemie Grünenthal): hypnotic for pregnant women 1957-1961. ~10k children with phocomelia (limb agenesis). Frances Kelsey FDA withheld US approval, saving thousands. Led to Kefauver-Harris Amendments 1962 (efficacy + safety), UK Yellow Card (1964), WHO PIDM 1968. Founding tragedy. Thalidomide now approved for multiple myeloma (Celgene, REMS).
+        objectives: [Talidomida]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Vioxx (rofecoxib, Merck) foi retirado em 2004 por…
+          en: Vioxx (rofecoxib, Merck) was withdrawn in 2004 due to…
+        choices:
+          - Risco aumentado AMI/AVC, Lancet 2007 estimou ~88-140k EUA + ~30k mortes globais
+          - Apenas hepatotoxicidade
+          - Sem qualquer evidência
+          - Apenas para pediatric
+        correctAnswer: Risco aumentado AMI/AVC, Lancet 2007 estimou ~88-140k EUA + ~30k mortes globais
+        rationale:
+          pt: Vioxx (COX-2 selective) aprovado 1999, withdrawn set/2004 (Merck voluntário). VIGOR trial (2000) mostrou MI 2x; APPROVe (2004) confirmou. Graham (FDA whistleblower, Lancet 2004) estimou casualties. Litigação $4.85B settlement. Lições: post-marketing surveillance critical, COI farmacêutica influenciando reviewers. Mudou FDA Office of Surveillance.
+          en: Vioxx (COX-2 selective) approved 1999, voluntarily withdrawn Sep 2004 by Merck. VIGOR trial (2000) showed MI 2x; APPROVe (2004) confirmed. Graham (FDA whistleblower, Lancet 2004) estimated casualties. $4.85B settlement litigation. Lessons: critical post-marketing surveillance, pharma COI influencing reviewers. Changed FDA Office of Surveillance.
+        objectives: [Vioxx]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O FAERS (FDA Adverse Event Reporting System) é importante por…
+          en: FAERS (FDA Adverse Event Reporting System) is important for…
+        choices:
+          - Coleta voluntária de ADR reports + mandatory para fabricantes; signal detection com disproportionality
+          - Apenas para fabricantes
+          - Apenas dados clínicos isolados
+          - Sem qualquer aplicação
+        correctAnswer: Coleta voluntária de ADR reports + mandatory para fabricantes; signal detection com disproportionality
+        rationale:
+          pt: FAERS (sucessor MEDWatch): ~1-2M reports/ano. MedDRA terminology. Sources: HCPs, patients, manufactures (mandatory IND). Análises: PRR (Proportional Reporting Ratio), ROR (Reporting OR), BCPNN (Bayesian Confidence Propagation NN). Limitações: under-reporting (~5-10% real ADRs), Weber effect (peak after launch). EudraVigilance EU análogo, VigiBase WHO global.
+          en: FAERS (MEDWatch successor): ~1-2M reports/year. MedDRA terminology. Sources: HCPs, patients, manufacturers (mandatory IND). Analyses: PRR (Proportional Reporting Ratio), ROR (Reporting OR), BCPNN (Bayesian Confidence Propagation NN). Limitations: under-reporting (~5-10% real ADRs), Weber effect (peak after launch). EudraVigilance EU analogous, VigiBase WHO global.
+        objectives: [FAERS]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Naranjo algorithm avalia…
+          en: Naranjo algorithm assesses…
+        choices:
+          - Probabilidade de causalidade individual: definite, probable, possible, doubtful via 10 perguntas
+          - Apenas severidade
+          - Apenas custos
+          - Sem qualquer estrutura
+        correctAnswer: Probabilidade de causalidade individual: definite, probable, possible, doubtful via 10 perguntas
+        rationale:
+          pt: Naranjo et al. (Clin Pharmacol Ther 1981): 10-item questionnaire score 1-13. Definite ≥9, Probable 5-8, Possible 1-4, Doubtful ≤0. Padrão clínico para case assessment. Análoga: WHO-UMC algorithm (mais flexível). Critérios: temporal, dose-response, rechallenge, alternative explanations.
+          en: Naranjo et al. (Clin Pharmacol Ther 1981): 10-item questionnaire score 1-13. Definite ≥9, Probable 5-8, Possible 1-4, Doubtful ≤0. Clinical standard for case assessment. Analogous: WHO-UMC algorithm (more flexible). Criteria: temporal, dose-response, rechallenge, alternative explanations.
+        objectives: [Naranjo]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: MedDRA (Medical Dictionary for Regulatory Activities) é…
+          en: MedDRA (Medical Dictionary for Regulatory Activities) is…
+        choices:
+          - Hierarquia ICH-padrão de termos médicos (~80k LLT) para reporting de safety global
+          - Apenas em US
+          - Sem qualquer estrutura
+          - Apenas histórica
+        correctAnswer: Hierarquia ICH-padrão de termos médicos (~80k LLT) para reporting de safety global
+        rationale:
+          pt: MedDRA: SOC > HLGT > HLT > PT > LLT (5 níveis). Mantida por ICH MSSO. Atualização semestral (versão 27 em 2024). Padrão para FAERS, EudraVigilance, VigiBase. Standardised MedDRA Queries (SMQs) facilitam grupings (e.g. "drug-induced liver injury", "anaphylaxis"). License paga.
+          en: MedDRA: SOC > HLGT > HLT > PT > LLT (5 levels). Maintained by ICH MSSO. Biannual updates (version 27 in 2024). Standard for FAERS, EudraVigilance, VigiBase. Standardised MedDRA Queries (SMQs) facilitate groupings (e.g., "drug-induced liver injury", "anaphylaxis"). Paid license.
+        objectives: [MedDRA]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: REMS (Risk Evaluation and Mitigation Strategies, FDA) é exigido para…
+          en: REMS (Risk Evaluation and Mitigation Strategies, FDA) is required for…
+        choices:
+          - Drogas com risco grave necessitando programa de gestão (e.g. talidomida, isotretinoína iPLEDGE)
+          - Apenas ensaios clínicos
+          - Sem qualquer obrigação
+          - Apenas em pediatria
+        correctAnswer: Drogas com risco grave necessitando programa de gestão (e.g. talidomida, isotretinoína iPLEDGE)
+        rationale:
+          pt: REMS (FDAAA 2007): elementos podem incluir Medication Guide, Communication Plan, ETASU (Elements to Assure Safe Use). iPLEDGE: isotretinoína evita gestações (S-TIRF teratógeno). Talidomida REVLIMID. Clozapine ANC monitoring. CAR-T REMS (CRS). Restringe distribuição. Análoga EU: Risk Management Plan (RMP).
+          en: REMS (FDAAA 2007): elements can include Medication Guide, Communication Plan, ETASU (Elements to Assure Safe Use). iPLEDGE: isotretinoin to avoid pregnancies (teratogenic S-TIRF). Thalidomide REVLIMID. Clozapine ANC monitoring. CAR-T REMS (CRS). Restricts distribution. EU analogous: Risk Management Plan (RMP).
+        objectives: [REMS]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Yellow Card scheme (UK MHRA, 1964) é…
+          en: Yellow Card scheme (UK MHRA, 1964) is…
+        choices:
+          - Reporting voluntário de ADRs por HCPs e pacientes; pioneiro pós-talidomida
+          - Apenas mandatory
+          - Apenas para fabricantes
+          - Sem qualquer participação pública
+        correctAnswer: Reporting voluntário de ADRs por HCPs e pacientes; pioneiro pós-talidomida
+        rationale:
+          pt: Yellow Card (Bill Inman MHRA 1964): cartões amarelos para ADR voluntary reports. Em 2000s, eletrônico (online, app). Patient reporting incluído 2005. ~30k reports/ano. Modelo: Black Triangle ▼ marca novos drugs (intensificado monitoring). Análoga: Lareb Holanda, ANSM França.
+          en: Yellow Card (Bill Inman MHRA 1964): yellow cards for voluntary ADR reports. In 2000s, electronic (online, app). Patient reporting included 2005. ~30k reports/year. Model: Black Triangle ▼ marks new drugs (intensified monitoring). Analogous: Lareb Netherlands, ANSM France.
+        objectives: [Yellow Card]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "drug-induced liver injury" (DILI) é importante porque…
+          en: "Drug-induced liver injury" (DILI) is important because…
+        choices:
+          - Causa principal de withdrawals e hepatotoxicidade idiossincrática difícil de prever
+          - Apenas em pediatric
+          - Sem qualquer impacto
+          - Apenas em alcoolistas
+        correctAnswer: Causa principal de withdrawals e hepatotoxicidade idiossincrática difícil de prever
+        rationale:
+          pt: DILI: maior causa de FDA withdrawal pós-marketing (troglitazone 2000, bromfenac 1998, ticrynafen 1980). Hy's law (Hyman Zimmerman): ALT >3xULN + bilirrubina >2xULN sem outra causa = grave (~10% mortalidade). Idiossincrática: HLA-B*57:01 (abacavir, flucloxacillin), HLA-B*35:01 (PLI). DILIN (NIH) registry, LiverTox database NIH/NLM.
+          en: DILI: major cause of post-marketing FDA withdrawals (troglitazone 2000, bromfenac 1998, ticrynafen 1980). Hy's law (Hyman Zimmerman): ALT >3xULN + bilirubin >2xULN without other cause = severe (~10% mortality). Idiosyncratic: HLA-B*57:01 (abacavir, flucloxacillin), HLA-B*35:01 (PLI). DILIN (NIH) registry, LiverTox database NIH/NLM.
+        objectives: [DILI]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Pharmacogenomics em farmacovigilância identificou…
+          en: Pharmacogenomics in pharmacovigilance identified…
+        choices:
+          - HLA-B*57:01 abacavir hypersensitivity, HLA-B*15:02 carbamazepine SJS — testing pré-prescrição
+          - Apenas factor genético trivial
+          - Sem qualquer relação
+          - Apenas em US
+        correctAnswer: HLA-B*57:01 abacavir hypersensitivity, HLA-B*15:02 carbamazepine SJS — testing pré-prescrição
+        rationale:
+          pt: HLA-B*57:01: 5-8% Caucasians, 100% PPV abacavir (Mallal PREDICT-1 2008 NEJM); FDA label requer testing. HLA-B*15:02: 10-15% Asians, carbamazepine Stevens-Johnson Syndrome; FDA label 2007. HLA-B*58:01 allopurinol SJS Asians. CPIC guidelines integradas a EHR alerts. Pharmacogenomic prevention de toxicidade severa.
+          en: HLA-B*57:01: 5-8% Caucasians, 100% PPV abacavir (Mallal PREDICT-1 2008 NEJM); FDA label requires testing. HLA-B*15:02: 10-15% Asians, carbamazepine Stevens-Johnson Syndrome; FDA label 2007. HLA-B*58:01 allopurinol SJS Asians. CPIC guidelines integrated into EHR alerts. Pharmacogenomic prevention of severe toxicity.
+        objectives: [PGx ADR]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "Periodic Safety Update Report" (PSUR/PBRER) é…
+          en: "Periodic Safety Update Report" (PSUR/PBRER) is…
+        choices:
+          - Resumo periódico de safety por fabricante avaliado por agências (ICH E2C(R2))
+          - Apenas relatório financeiro
+          - Sem qualquer obrigação
+          - Apenas para US
+        correctAnswer: Resumo periódico de safety por fabricante avaliado por agências (ICH E2C(R2))
+        rationale:
+          pt: PSUR (EU)/PBRER (ICH harmonized): cada drug em comércio submete relatório global periódico. Frequência: 6 meses primeiros 2 anos, depois anual, eventualmente cada 3 anos. Conteúdo: exposure, ADRs, signal evaluation, benefit-risk. EMA tem repository. Pode levar a label changes, restrictions.
+          en: PSUR (EU)/PBRER (ICH harmonized): each drug in market submits periodic global report. Frequency: 6 months first 2 years, then annual, eventually every 3 years. Content: exposure, ADRs, signal evaluation, benefit-risk. EMA has repository. Can lead to label changes, restrictions.
+        objectives: [PSUR]
+  - title:
+      pt: Página 2 — Sinais e práticas
+      en: Page 2 — Signals and practice
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "Weber effect" em farmacovigilância postula…
+          en: "Weber effect" in pharmacovigilance posits…
+        choices:
+          - Reports peak ~2 anos pós-launch e decrescem; viés temporal de detecção
+          - Reports são uniformes ao longo do tempo
+          - Sem qualquer dinâmica
+          - Apenas em pediatric
+        correctAnswer: Reports peak ~2 anos pós-launch e decrescem; viés temporal de detecção
+        rationale:
+          pt: Hauben/Bate (Drug Saf 2009) confirmaram empiricamente: reports peak ~2 anos após launch (familiarity, marketing campaigns), depois decline mesmo com uso constante. Implicação: signal detection precisa controlar para tempo. BCPNN, IC25 e métodos similares ajustam.
+          en: Hauben/Bate (Drug Saf 2009) empirically confirmed: reports peak ~2 years after launch (familiarity, marketing campaigns), then decline even with constant use. Implication: signal detection must control for time. BCPNN, IC25, and similar methods adjust.
+        objectives: [Weber effect]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Pharmacovigilance pediátrica é desafio porque…
+          en: Pediatric pharmacovigilance is challenging because…
+        choices:
+          - Limited trials, off-label use comum, dose-by-weight, reporting reduzido por pais/HCPs
+          - Apenas trivial
+          - Sem qualquer dificuldade
+          - Sem qualquer aplicação
+        correctAnswer: Limited trials, off-label use comum, dose-by-weight, reporting reduzido por pais/HCPs
+        rationale:
+          pt: ~80% drugs usadas em pediatria são off-label/unlicensed. Doses extrapoladas. Reporting bias: pais menos confiantes, HCPs subestimam. Iniciativas: EU Pediatric Regulation 2007 PRP requirement, US BPCA/PREA 2002/2007. PEDIA-pharmacovigilance ENCePP. EHR mining adolescente. ADRs frequentemente diferentes por desenvolvimento (adultos warfarin INR vs criança susceptibilidade).
+          en: ~80% of drugs used in pediatrics are off-label/unlicensed. Doses extrapolated. Reporting bias: parents less confident, HCPs underestimate. Initiatives: EU Pediatric Regulation 2007 PRP requirement, US BPCA/PREA 2002/2007. PEDIA-pharmacovigilance ENCePP. Adolescent EHR mining. ADRs often different by development (adult warfarin INR vs child susceptibility).
+        objectives: [Pediatric pv]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Sistema "spontaneous reporting" tem limitação principal de…
+          en: "Spontaneous reporting" system's main limitation is…
+        choices:
+          - Under-reporting (~5-10% reportados); não há denominador de exposição
+          - Sempre completo
+          - Apenas mandatory
+          - Sem qualquer limitação
+        correctAnswer: Under-reporting (~5-10% reportados); não há denominador de exposição
+        rationale:
+          pt: Spontaneous: estimativas under-reporting 90-95% para ADRs sérios e 99%+ para mild. Sem denominator exposure → IR (incidence rate) não calculável. Útil para signal generation, não confirmação. Complementado por: cohort studies, RWE, EHR-based surveillance, electronic active surveillance (FDA Sentinel).
+          en: Spontaneous: estimates of under-reporting 90-95% for serious ADRs and 99%+ for mild. Without exposure denominator → IR (incidence rate) not computable. Useful for signal generation, not confirmation. Complemented by: cohort studies, RWE, EHR-based surveillance, active electronic surveillance (FDA Sentinel).
+        objectives: [Spontaneous limits]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: FDA Sentinel (~2009+) é sistema active de…
+          en: FDA Sentinel (~2009+) is an active system for…
+        choices:
+          - Surveillance via electronic claims/EHR de >300M pessoas em US (Aetna, Optum, Veterans, Medicare)
+          - Apenas voluntários
+          - Sem qualquer dado
+          - Apenas para US states isolados
+        correctAnswer: Surveillance via electronic claims/EHR de >300M pessoas em US (Aetna, Optum, Veterans, Medicare)
+        rationale:
+          pt: Sentinel Initiative (FDA, lançada 2009 pós-FDAAA): rede distribuída de Data Partners; queries on-demand; ICPE protocolos. Used: rotavirus intussusception (Rotateq), dabigatran bleeding, COVID vaccine myocarditis (BEST). Não substitui FAERS mas confirma com denominator. EU análogo: ENCePP. Crescente uso em RWE regulatory.
+          en: Sentinel Initiative (FDA, launched 2009 post-FDAAA): distributed Data Partner network; on-demand queries; ICPE protocols. Used: Rotateq rotavirus intussusception, dabigatran bleeding, BEST COVID vaccine myocarditis. Doesn't replace FAERS but confirms with denominator. EU analogous: ENCePP. Growing use in regulatory RWE.
+        objectives: [Sentinel]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Causalidade individual (Bradford Hill 1965) usa critérios como…
+          en: Individual causality (Bradford Hill 1965) uses criteria like…
+        choices:
+          - Strength, consistency, temporality, dose-response, biological plausibility
+          - Apenas estatística trivial
+          - Sem qualquer critério
+          - Apenas correlação
+        correctAnswer: Strength, consistency, temporality, dose-response, biological plausibility
+        rationale:
+          pt: Bradford Hill 9 viewpoints: strength of association, consistency, specificity, temporality, biological gradient (dose-response), plausibility, coherence, experiment, analogy. Não checklist mas guidelines. Ainda relevante; estendido por modern causal inference (DAGs, target trial). Aplicável a ADR causality individual e populacional.
+          en: Bradford Hill 9 viewpoints: strength of association, consistency, specificity, temporality, biological gradient (dose-response), plausibility, coherence, experiment, analogy. Not a checklist but guidelines. Still relevant; extended by modern causal inference (DAGs, target trial). Applicable to individual and population ADR causality.
+        objectives: [Bradford Hill]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "long QT" druginduced é signal importante porque…
+          en: Drug-induced "long QT" is an important signal because…
+        choices:
+          - Risco de torsade de pointes/morte súbita; cisapride retirado 2000, terfenadine 1998
+          - Apenas trivial
+          - Sem qualquer impacto cardíaco
+          - Apenas em pediatria
+        correctAnswer: Risco de torsade de pointes/morte súbita; cisapride retirado 2000, terfenadine 1998
+        rationale:
+          pt: Drug-induced QT prolongation: hERG channel block. Cisapride (Propulsid) retirado 2000 (>80 mortes). Terfenadine 1998 substituída por fexofenadine. ICH E14 (2005) requer Thorough QT/QTc study (TQT) em fase III. Hoje QTcF >500 ms ou Δ>60 ms é red flag. Lista CredibleMeds.org categoriza.
+          en: Drug-induced QT prolongation: hERG channel block. Cisapride (Propulsid) withdrawn 2000 (>80 deaths). Terfenadine 1998 replaced by fexofenadine. ICH E14 (2005) requires Thorough QT/QTc study (TQT) in Phase III. Today QTcF >500 ms or Δ>60 ms is red flag. CredibleMeds.org list categorizes.
+        objectives: [Long QT]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em vacinas pós-COVID, surveillance ativo identificou…
+          en: In vaccines post-COVID, active surveillance identified…
+        choices:
+          - Miocardite mRNA (jovens masculinos), trombose com trombocitopenia AdV (VITT, AstraZeneca/Janssen)
+          - Apenas eficácia
+          - Sem qualquer ADR
+          - Apenas em adultos
+        correctAnswer: Miocardite mRNA (jovens masculinos), trombose com trombocitopenia AdV (VITT, AstraZeneca/Janssen)
+        rationale:
+          pt: Myocarditis mRNA pós-2nd dose ~1/15-50k em homens 16-29 anos (VAERS, Sentinel BEST). VITT (Vaccine-induced Immune Thrombotic Thrombocytopenia) AstraZeneca/Janssen ~1/100k via anti-PF4 antibodies (Greinacher 2021 NEJM). Levou pause in some countries. Risk-benefit reconfirmado. Ilustra valor de surveillance robusta.
+          en: Post-2nd-dose mRNA myocarditis ~1/15-50k in 16-29-year-old males (VAERS, Sentinel BEST). VITT (Vaccine-induced Immune Thrombotic Thrombocytopenia) AstraZeneca/Janssen ~1/100k via anti-PF4 antibodies (Greinacher 2021 NEJM). Led to pause in some countries. Risk-benefit reconfirmed. Illustrates robust surveillance value.
+        objectives: [Vaccine surveillance]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O signal "5-FU + DPYD deficiency" exemplifica…
+          en: "5-FU + DPYD deficiency" signal exemplifies…
+        choices:
+          - Pre-prescription pharmacogenomic testing previne fatalidades por toxicidade severa
+          - Apenas trivial
+          - Sem qualquer prevenção
+          - Apenas em pediatria
+        correctAnswer: Pre-prescription pharmacogenomic testing previne fatalidades por toxicidade severa
+        rationale:
+          pt: 5-FU/capecitabina metabolizadas por DPYD; deficiência (~3-9% Caucasians) → toxicidade severa (mucosite, neutropenia, fatal). Henricks 2018 NEJM: DPYD genotyping reduz toxicidade ~50%. EMA, NICE, FDA guidance pré-prescrição. Brasil: ANVISA orientação 2023. Exemplo de PGx clinical implementation.
+          en: 5-FU/capecitabine metabolized by DPYD; deficiency (~3-9% Caucasians) → severe toxicity (mucositis, neutropenia, fatal). Henricks 2018 NEJM: DPYD genotyping reduces toxicity by ~50%. EMA, NICE, FDA pre-prescription guidance. Brazil: ANVISA 2023 guidance. Example of PGx clinical implementation.
+        objectives: [DPYD 5-FU]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Concept "post-marketing commitment" (PMC) ou "post-marketing requirement" (PMR) FDA são…
+          en: "Post-marketing commitment" (PMC) or "post-marketing requirement" (PMR) FDA are…
+        choices:
+          - Estudos exigidos pós-aprovação para confirmar/expandir dados, especialmente em accelerated approval
+          - Apenas opcional
+          - Sem qualquer obrigação
+          - Apenas para genéricos
+        correctAnswer: Estudos exigidos pós-aprovação para confirmar/expandir dados, especialmente em accelerated approval
+        rationale:
+          pt: PMC: voluntário. PMR: obrigatório (FDAAA 2007 specific authorities). Especialmente accelerated approval requer Phase 4 confirmatory. Compliance imperfeito: muitos atrasos, alguns nunca completam. FDA Project Confirm 2021+ track. Pode revogar accelerated se PMR fail (e.g. Makena 2023).
+          en: PMC: voluntary. PMR: mandatory (FDAAA 2007 specific authorities). Especially accelerated approval requires Phase 4 confirmatory. Imperfect compliance: many delays, some never complete. FDA Project Confirm 2021+ tracks. Can revoke accelerated if PMR fails (e.g., Makena 2023).
+        objectives: [PMR PMC]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Brighton Collaboration é importante por…
+          en: The Brighton Collaboration is important for…
+        choices:
+          - Padronização de case definitions de adverse events post-vaccination (AESI)
+          - Apenas pediatric vaccines
+          - Sem qualquer impacto
+          - Apenas em US
+        correctAnswer: Padronização de case definitions de adverse events post-vaccination (AESI)
+        rationale:
+          pt: Brighton Collaboration (1999): consórcio global. Adverse Events of Special Interest (AESI) com case definitions stratified (Level 1-3 certainty). Aplicações: COVID vaccines (TTS, myocarditis, GBS), influenza, pediatric. SPEAC (Safety Platform for Emergency vACcines) post-COVID standardizou ainda mais.
+          en: Brighton Collaboration (1999): global consortium. Adverse Events of Special Interest (AESI) with stratified case definitions (Level 1-3 certainty). Applications: COVID vaccines (TTS, myocarditis, GBS), influenza, pediatric. SPEAC (Safety Platform for Emergency vACcines) post-COVID further standardized.
+        objectives: [Brighton]
+target: 20
