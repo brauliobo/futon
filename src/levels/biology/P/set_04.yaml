@@ -1,0 +1,343 @@
+title:
+  pt: Ecologia Quantitativa e Dinâmica de Comunidades
+  en: Quantitative Ecology and Community Dynamics
+level: P
+subject: biology
+objectives:
+  - Compreender modelos populacionais (logístico, Lotka-Volterra)
+  - Reconhecer teoria de nicho e comunidade neutra
+  - Identificar diversidade alfa, beta, gama
+  - Avaliar redes tróficas e estabilidade
+difficulty: 5
+authorNotes: |
+  Quantitative ecology. Logistic Verhulst 1838. Lotka-Volterra predator-prey 1920s. Hutchinson
+  niche n-dim. Hubbell unified neutral theory 2001. Levins metapopulations. May complexity-
+  stability 1972. Tilman R*. MacArthur-Wilson island biogeography 1967. Connell-Slatyer
+  succession. Diamond assembly rules. Jared Diamond, Robert Paine keystone species. Allee
+  effect. Network ecology Pascual/Dunne. Latitudinal diversity gradient. Janzen-Connell.
+example:
+  question:
+    pt: O modelo Lotka-Volterra de presa-predador (1920s) prevê…
+    en: The Lotka-Volterra predator-prey model (1920s) predicts…
+  choices:
+    - Oscilações cíclicas acopladas em densidade de presa e predador, defasadas em fase
+    - Equilíbrio estável imediato sem qualquer oscilação
+    - Crescimento exponencial ilimitado de ambos sem limitação
+    - Extinção determinística rápida de ambas espécies em poucas gerações
+  correctAnswer: Oscilações cíclicas acopladas em densidade de presa e predador, defasadas em fase
+  rationale:
+    pt: Lotka-Volterra: dN/dt = aN − bNP, dP/dt = cNP − dP — oscilações neutras em torno de centro fixo, presa lidera predador em fase. Confirmado em ciclos lebre-lince Hudson Bay. Refinado para incluir crescimento logístico, resposta funcional, etc.
+    en: Lotka-Volterra: dN/dt = aN − bNP, dP/dt = cNP − dP — neutral oscillations around fixed center, prey leads predator in phase. Confirmed in Hudson Bay hare-lynx cycles. Refined to include logistic growth, functional response, etc.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Populações e nichos
+      en: Page 1 — Populations and niches
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O modelo logístico (Verhulst 1838) descreve crescimento populacional como…
+          en: The logistic model (Verhulst 1838) describes population growth as…
+        choices:
+          - dN/dt = rN(1 − N/K), atingindo capacidade de suporte K assintoticamente
+          - Crescimento exponencial puro sem qualquer limitação
+          - Decrescimento monotônico sempre
+          - Apenas oscilações sem qualquer estabilização
+        correctAnswer: dN/dt = rN(1 − N/K), atingindo capacidade de suporte K assintoticamente
+        rationale:
+          pt: Verhulst (1838): equação logística com r (taxa intrínseca) e K (capacidade de suporte). N(t) = K/(1+(K/N0-1)e^(-rt)) — sigmoide. Base para mapas de tempo discreto (May 1976) que geram caos em r alto. Aplicável a qualquer recurso limitado.
+          en: Verhulst (1838): logistic equation with r (intrinsic rate) and K (carrying capacity). N(t) = K/(1+(K/N0-1)e^(-rt)) — sigmoid. Foundation for discrete time maps (May 1976) generating chaos at high r. Applicable to any resource-limited setting.
+        objectives: [Logístico]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O nicho n-dimensional de G.E. Hutchinson (1957) define…
+          en: G.E. Hutchinson's n-dimensional niche (1957) defines…
+        choices:
+          - Hipercaixa em espaço de fatores ambientais (temperatura, recursos, etc.) onde a espécie pode persistir
+          - Apenas habitat físico geográfico sem dimensão ambiental
+          - Posição única em uma cadeia trófica linear
+          - Conjunto de organismos competidores em comunidade
+        correctAnswer: Hipercaixa em espaço de fatores ambientais (temperatura, recursos, etc.) onde a espécie pode persistir
+        rationale:
+          pt: Hutchinson distinguiu nicho fundamental (todos fatores tolerados) e realizado (após competição). Multidimensional. Base para ecologia preditiva, modelagem de distribuição de espécies (MaxEnt, GBIF), e princípio de exclusão competitiva.
+          en: Hutchinson distinguished fundamental niche (all tolerated factors) from realized (after competition). Multidimensional. Foundation for predictive ecology, species distribution modeling (MaxEnt, GBIF), and competitive exclusion principle.
+        objectives: [Nicho hutchinsoniano]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A teoria neutra unificada de biodiversidade (Hubbell 2001) propõe que…
+          en: Hubbell's unified neutral theory of biodiversity (2001) proposes that…
+        choices:
+          - Diversidade emerge de processos demográficos estocásticos (deriva ecológica) com espécies funcionalmente equivalentes
+          - Apenas competição determinística explica diversidade
+          - Toda diversidade decorre de adaptações específicas e diferenciação de nicho
+          - Diversidade é puramente acaso sem qualquer base em ecologia
+        correctAnswer: Diversidade emerge de processos demográficos estocásticos (deriva ecológica) com espécies funcionalmente equivalentes
+        rationale:
+          pt: Hubbell propôs paralelo da teoria neutra de Kimura: assumir espécies equivalentes funcionalmente, prever distribuição de abundâncias (zero-sum, log-series). Surpreendente: ajusta dados de florestas tropicais. Debate intenso com nicho/Tilman; síntese moderna combina ambas.
+          en: Hubbell proposed a parallel to Kimura's neutral theory: assume species functionally equivalent, predict abundance distributions (zero-sum, log-series). Surprising fit to tropical forest data. Intense debate with niche/Tilman; modern synthesis combines both.
+        objectives: [Hubbell neutral]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A regra R* de David Tilman estabelece que…
+          en: David Tilman's R* rule states that…
+        choices:
+          - Espécie que sobrevive em menor concentração de recurso limitante exclui outras
+          - Apenas a maior espécie domina sempre por princípio
+          - Competição é independente de recursos disponíveis
+          - Espécies coexistem sem qualquer mecanismo de seleção
+        correctAnswer: Espécie que sobrevive em menor concentração de recurso limitante exclui outras
+        rationale:
+          pt: Tilman (anos 1980): em competição por recurso único, vence quem tolera menor concentração de equilíbrio (R* mínimo). Coexistência exige múltiplos recursos com trade-offs. Generalizado em "trade-off-based community assembly". Fundamental em ecologia de plantas.
+          en: Tilman (1980s): in single-resource competition, the species tolerating the lowest equilibrium concentration (lowest R*) wins. Coexistence requires multiple resources with trade-offs. Generalized in "trade-off-based community assembly". Fundamental in plant ecology.
+        objectives: [R* Tilman]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A teoria de biogeografia de ilhas (MacArthur & Wilson 1967) prevê que diversidade em ilha é determinada por…
+          en: Island biogeography theory (MacArthur & Wilson 1967) predicts island diversity is determined by…
+        choices:
+          - Equilíbrio entre imigração (decaindo com distância) e extinção (aumentando com tamanho menor)
+          - Apenas tempo desde formação da ilha
+          - Apenas competição entre espécies endêmicas
+          - Acaso puro sem qualquer regra preditiva
+        correctAnswer: Equilíbrio entre imigração (decaindo com distância) e extinção (aumentando com tamanho menor)
+        rationale:
+          pt: MacArthur/Wilson: ilha distante e pequena = baixa imigração + alta extinção = pouco rica. Ilha próxima e grande = oposto. S = cA^z (relação espécie-área, z ~ 0.25). Base para conservação (reservas como ilhas).
+          en: MacArthur/Wilson: distant small island = low immigration + high extinction = species-poor. Close large island = opposite. S = cA^z (species-area relation, z ~ 0.25). Foundation for conservation (reserves as islands).
+        objectives: [Ilha biogeografia]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Espécie "keystone" (Robert Paine 1969) é definida como…
+          en: A "keystone" species (Robert Paine 1969) is defined as…
+        choices:
+          - Espécie cujo impacto na comunidade é desproporcionalmente grande comparado à sua abundância
+          - Espécie mais abundante na comunidade automaticamente
+          - Espécie endêmica restrita a uma única região geográfica
+          - Espécie com maior biomassa total medida
+        correctAnswer: Espécie cujo impacto na comunidade é desproporcionalmente grande comparado à sua abundância
+        rationale:
+          pt: Paine (1969) removeu predador estrela-do-mar Pisaster de poças costeiras; comunidade colapsou (mexilhões dominaram, espécies perdidas). Cunhou "keystone" — pequena biomassa, impacto desproporcional. Outros: lobos Yellowstone, lontras marinhas, pinheiros whitebark.
+          en: Paine (1969) removed sea star Pisaster from rocky pools; community collapsed (mussels dominated, species lost). Coined "keystone" — small biomass, disproportionate impact. Others: Yellowstone wolves, sea otters, whitebark pines.
+        objectives: [Keystone]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Robert May (1972) demonstrou matematicamente que…
+          en: Robert May (1972) mathematically demonstrated that…
+        choices:
+          - Comunidades grandes e altamente conectadas tendem a ser instáveis (paradoxo complexidade-estabilidade)
+          - Mais espécies sempre estabilizam a comunidade ecologicamente
+          - Comunidades simples são sempre instáveis
+          - Estabilidade independe de complexidade
+        correctAnswer: Comunidades grandes e altamente conectadas tendem a ser instáveis (paradoxo complexidade-estabilidade)
+        rationale:
+          pt: May (Nature 1972) usou teoria de matrizes aleatórias: estabilidade local de Jacobiano requer α√(SC) < 1 (S espécies, C conectividade, α força média). Paradoxo vs intuição "diversidade estabiliza". Resoluções modernas: estrutura modular, interações fracas (McCann 1998).
+          en: May (Nature 1972) used random matrix theory: local Jacobian stability requires α√(SC) < 1 (S species, C connectivity, α mean strength). Paradox vs intuition "diversity stabilizes". Modern resolutions: modular structure, weak interactions (McCann 1998).
+        objectives: [May 1972]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O efeito Allee em populações pequenas refere-se a…
+          en: The Allee effect in small populations refers to…
+        choices:
+          - Crescimento per-capita reduzido em densidade muito baixa, com possível extinção
+          - Crescimento ilimitado em populações pequenas
+          - Apenas crescimento logístico clássico
+          - Resistência a extinção em qualquer densidade
+        correctAnswer: Crescimento per-capita reduzido em densidade muito baixa, com possível extinção
+        rationale:
+          pt: Allee (1931): cooperação intra-específica (encontro de parceiros, defesa comum, alimentação social) reduz fitness em densidade muito baixa. Cria limiar mínimo viável; abaixo dele, extinção. Crítico em conservação (lobos vermelhos, ostras), invasivas, e gestão de pesca.
+          en: Allee (1931): intraspecific cooperation (mate finding, communal defense, social feeding) reduces fitness at very low density. Creates a minimum viable threshold; below it, extinction. Critical in conservation (red wolves, oysters), invasives, and fisheries management.
+        objectives: [Allee effect]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Metapopulações de Levins (1969) descrevem…
+          en: Levins metapopulations (1969) describe…
+        choices:
+          - Conjunto de subpopulações conectadas por migração, com extinções e recolonizações locais
+          - Apenas uma população isolada sem qualquer conexão
+          - Migração sem extinção em qualquer escala
+          - População homogênea sem estrutura espacial
+        correctAnswer: Conjunto de subpopulações conectadas por migração, com extinções e recolonizações locais
+        rationale:
+          pt: Levins propôs dp/dt = mp(1−p) − ep onde p = fração de manchas ocupadas, m taxa colonização, e extinção. Persistência exige m > e. Aplicações: gestão de paisagens fragmentadas (corredores), borboletas Glanville em Finlândia (Hanski), conservação.
+          en: Levins proposed dp/dt = mp(1−p) − ep where p = fraction of patches occupied, m colonization rate, e extinction rate. Persistence requires m > e. Applications: fragmented-landscape management (corridors), Glanville fritillaries in Finland (Hanski), conservation.
+        objectives: [Metapopulação]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Diversidade alfa, beta, gama (Whittaker 1960) referem-se a…
+          en: Alpha, beta, gamma diversity (Whittaker 1960) refer to…
+        choices:
+          - Local (alfa), turnover entre locais (beta), regional total (gama); γ = α × β
+          - Local, regional, global em ordem inversa
+          - Apenas medidas alternativas sem hierarquia
+          - Apenas para microbioma sem outros sistemas
+        correctAnswer: Local (alfa), turnover entre locais (beta), regional total (gama); γ = α × β
+        rationale:
+          pt: Whittaker decompôs diversidade. Alfa = diversidade local (Shannon, Simpson). Beta = diferenciação entre locais (Bray-Curtis, Jaccard). Gama = pool regional. Múltiplas formulações (multiplicativa, aditiva). Pivotal em ecologia, microbioma e conservação.
+          en: Whittaker decomposed diversity. Alpha = local diversity (Shannon, Simpson). Beta = differentiation between sites (Bray-Curtis, Jaccard). Gamma = regional pool. Multiple formulations (multiplicative, additive). Pivotal in ecology, microbiome, and conservation.
+        objectives: [α β γ]
+  - title:
+      pt: Página 2 — Comunidades e perturbações
+      en: Page 2 — Communities and disturbances
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O gradiente latitudinal de diversidade (LDG) é o padrão de que…
+          en: The latitudinal diversity gradient (LDG) is the pattern that…
+        choices:
+          - Riqueza de espécies aumenta dos polos para o equador em quase todos os táxons
+          - Diversidade é uniforme em todas as latitudes globalmente
+          - Maior diversidade ocorre em altas latitudes polares
+          - Apenas em ecossistemas marinhos sem padrão terrestre
+        correctAnswer: Riqueza de espécies aumenta dos polos para o equador em quase todos os táxons
+        rationale:
+          pt: LDG é padrão mais robusto da biogeografia: trópicos têm 5-10x mais espécies que zonas temperadas (plantas, vertebrados, insetos, fungos). Hipóteses: produtividade, área, estabilidade climática, taxas de especiação/extinção, energia. Mittelbach 2007 review unificadora.
+          en: LDG is biogeography's most robust pattern: tropics have 5-10x more species than temperate (plants, vertebrates, insects, fungi). Hypotheses: productivity, area, climatic stability, speciation/extinction rates, energy. Mittelbach 2007 unifying review.
+        objectives: [LDG]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A hipótese Janzen-Connell (1970-71) explica diversidade tropical alta porque…
+          en: Janzen-Connell hypothesis (1970-71) explains high tropical diversity because…
+        choices:
+          - Plântulas próximas ao parental sofrem mortalidade densidade-dependente por patógenos/herbívoros
+          - Plântulas crescem melhor próximas ao parental sempre
+          - Não há qualquer relação espacial em florestas tropicais
+          - Diversidade é apenas resposta climática direta
+        correctAnswer: Plântulas próximas ao parental sofrem mortalidade densidade-dependente por patógenos/herbívoros
+        rationale:
+          pt: Janzen (1970) e Connell (1971) propuseram independentemente: plântulas perto do parental enfrentam patógenos/herbívoros especialistas → mortalidade densidade-dependente → permite outras espécies coexistir. Confirmado em florestas tropicais (Wright, Hubbell), explicando alta diversidade local.
+          en: Janzen (1970) and Connell (1971) independently proposed: seedlings near parent face specialist pathogens/herbivores → density-dependent mortality → permits other species to coexist. Confirmed in tropical forests (Wright, Hubbell), explaining high local diversity.
+        objectives: [Janzen-Connell]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Cascatas tróficas em Yellowstone após reintrodução de lobos (1995) demonstraram…
+          en: Trophic cascades in Yellowstone after wolf reintroduction (1995) demonstrated…
+        choices:
+          - Recuperação de aspen, vegetação ripária e castores devido à modulação de cervídeos
+          - Nenhum efeito mensurável em vegetação
+          - Aumento massivo de cervídeos pela proteção dos lobos
+          - Colapso ecossistêmico imediato pós-reintrodução
+        correctAnswer: Recuperação de aspen, vegetação ripária e castores devido à modulação de cervídeos
+        rationale:
+          pt: Reintrodução de lobos (Canis lupus) em Yellowstone (1995) reduziu cervídeos e mudou seu comportamento (ecology of fear); permitiu recuperação de aspen, willow ripário, castores e mais — cascata trófica clássica. Ripple/Beschta documentaram (BioScience 2005). Caso emblemático de keystone predator.
+          en: Wolf (Canis lupus) reintroduction to Yellowstone (1995) reduced elk and changed their behavior (ecology of fear); allowed aspen, riparian willow, beaver, and more to recover — classic trophic cascade. Ripple/Beschta documented it (BioScience 2005). Iconic keystone-predator case.
+        objectives: [Yellowstone wolves]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "intermediate disturbance hypothesis" (Connell 1978) postula que…
+          en: The "intermediate disturbance hypothesis" (Connell 1978) posits that…
+        choices:
+          - Diversidade é máxima em níveis intermediários de perturbação, balanceando exclusão competitiva e extinção
+          - Diversidade é máxima sem qualquer perturbação
+          - Diversidade é máxima sob perturbação extrema
+          - Perturbação é irrelevante para diversidade
+        correctAnswer: Diversidade é máxima em níveis intermediários de perturbação, balanceando exclusão competitiva e extinção
+        rationale:
+          pt: Connell (1978): sem perturbação, dominância competitiva exclui; com muita perturbação, espécies sensíveis extinguem. Intermediário = máximo. Aplicações: fogo, ondas em recifes, queimadas controladas. Crítica: padrão não universal, mas frequente.
+          en: Connell (1978): without disturbance, competitive dominance excludes; under heavy disturbance, sensitive species go extinct. Intermediate = maximum. Applications: fire, waves on reefs, prescribed burns. Critique: not universal but common.
+        objectives: [IDH]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O efeito de "ecology of fear" (Brown & Kotler) refere-se a…
+          en: "Ecology of fear" (Brown & Kotler) refers to…
+        choices:
+          - Modulação comportamental por presença de predadores afetando uso de habitat e forrageamento
+          - Apenas mortalidade direta por predação sem efeitos comportamentais
+          - Estresse hormonal individual sem qualquer impacto comunitário
+          - Comportamento territorial sem qualquer relação com predadores
+        correctAnswer: Modulação comportamental por presença de predadores afetando uso de habitat e forrageamento
+        rationale:
+          pt: Predadores afetam presas não só matando-as, mas alterando comportamento — reduz forrageamento em áreas perigosas (giving-up density, GUD), muda uso de habitat. Em Yellowstone, cervídeos evitaram ravinas com lobos → vegetação recuperou. Conceito central em ecologia comportamental.
+          en: Predators affect prey not only by killing but by altering behavior — reduces foraging in dangerous areas (giving-up density, GUD), shifts habitat use. In Yellowstone, elk avoided gullies with wolves → vegetation recovered. Central concept in behavioral ecology.
+        objectives: [Ecology of fear]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A taxa de extinção atual estimada é tipicamente quantas vezes a "taxa de fundo" geológica?
+          en: Current extinction rate is typically estimated to be how many times the geological "background rate"?
+        choices:
+          - 100-1000x maior, indicando "Sexta Extinção" em curso
+          - Idêntica à taxa de fundo
+          - 10x menor, em era de baixa extinção
+          - Não há qualquer extinção mensurável atualmente
+        correctAnswer: 100-1000x maior, indicando "Sexta Extinção" em curso
+        rationale:
+          pt: Pimm/Raven/Brooks/Lawton (Science 2014) e IPBES 2019 estimam taxa atual 100-1000x background fóssil; ~1M espécies ameaçadas. Causas: perda de habitat, espécies invasoras, sobre-exploração, mudança climática, poluição. Termo "Anthropocene defaunation" (Dirzo 2014) e "Sexta Extinção" (Kolbert 2014).
+          en: Pimm/Raven/Brooks/Lawton (Science 2014) and IPBES 2019 estimate current rate 100-1000x fossil background; ~1M species threatened. Causes: habitat loss, invasives, overexploitation, climate change, pollution. Terms: "Anthropocene defaunation" (Dirzo 2014) and "Sixth Extinction" (Kolbert 2014).
+        objectives: [Extinção atual]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: BCI (Barro Colorado Island), parcelas de Smithsonian/STRI, são importantes por…
+          en: BCI (Barro Colorado Island), Smithsonian/STRI plots, are important for…
+        choices:
+          - Censo plurianual de cada árvore em 50 ha de floresta tropical (>200 mil indivíduos), revelando dinâmica
+          - Apenas estudo de uma espécie específica isoladamente
+          - Estudo apenas em pântanos sem floresta tropical
+          - Coleta de fósseis pré-cambrianos antigos
+        correctAnswer: Censo plurianual de cada árvore em 50 ha de floresta tropical (>200 mil indivíduos), revelando dinâmica
+        rationale:
+          pt: BCI/STRI Panamá: parcela 50 ha em floresta tropical com cada árvore >1cm DBH censuada plurianualmente desde 1980 (Hubbell, Foster). >320 espécies, >200k indivíduos. Modelo replicado em ForestGEO global (~70 sítios). Dados base para teoria neutra, Janzen-Connell, climático.
+          en: BCI/STRI Panama: 50 ha tropical forest plot with every tree >1cm DBH censused multi-year since 1980 (Hubbell, Foster). >320 species, >200k individuals. Model replicated across ForestGEO globally (~70 sites). Backbone for neutral, Janzen-Connell, climate work.
+        objectives: [BCI ForestGEO]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A hipótese "diversity-stability" moderna foi reformulada por McCann (2000) como…
+          en: The modern diversity-stability hypothesis was reformulated by McCann (2000) as…
+        choices:
+          - Interações fracas estabilizam comunidades; combinação de muitos elos fracos é o segredo
+          - Mais espécies sempre estabilizam sem qualquer ressalva
+          - Mais ligações fortes sempre são melhores
+          - Ligações fracas são irrelevantes para estabilidade
+        correctAnswer: Interações fracas estabilizam comunidades; combinação de muitos elos fracos é o segredo
+        rationale:
+          pt: McCann (Nature 2000) sintetizou: o paradoxo de May resolve-se notando que ligações reais em comunidades são predominantemente fracas; estas amortecem oscilações fortes. "Strong-weak coupling" estabiliza. Empírico em peixes lacustres (Paine intertidal weak links).
+          en: McCann (Nature 2000) synthesized: May's paradox resolves by noting real community links are mostly weak; these dampen strong oscillations. "Strong-weak coupling" stabilizes. Empirical in lake fish (Paine intertidal weak links).
+        objectives: [McCann fraco]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em redes mutualísticas planta-polinizador (Bascompte/Jordano), a estrutura tipicamente é…
+          en: In plant-pollinator mutualistic networks (Bascompte/Jordano), structure is typically…
+        choices:
+          - Aninhada (nested), com generalistas formando núcleo e especialistas conectados a estes
+          - Modular sem qualquer aninhamento ecológico
+          - Aleatória sem qualquer padrão estrutural
+          - Lineares sem qualquer ramificação
+        correctAnswer: Aninhada (nested), com generalistas formando núcleo e especialistas conectados a estes
+        rationale:
+          pt: Bascompte/Jordano (Annu Rev Ecol 2007): redes mutualísticas (polinização, dispersão de sementes, simbiose) são aninhadas — generalistas no centro, especialistas conectados quase exclusivamente a generalistas. Padrão estabiliza coexistência, robusto à extinção parcial. Diferente de redes tróficas (modulares).
+          en: Bascompte/Jordano (Annu Rev Ecol 2007): mutualistic networks (pollination, seed dispersal, symbiosis) are nested — generalists at the core, specialists connected almost only to generalists. Stabilizes coexistence, robust to partial extinction. Different from trophic networks (modular).
+        objectives: [Nested mutualísticas]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "rewilding" em conservação (Soulé/Noss; Tompkins) busca…
+          en: "Rewilding" in conservation (Soulé/Noss; Tompkins) seeks…
+        choices:
+          - Restaurar processos ecológicos por reintrodução de espécies-chave e remoção de barreiras
+          - Apenas plantar árvores em áreas degradadas
+          - Eliminar humanos de qualquer área natural
+          - Substituir ecossistemas nativos por sintéticos
+        correctAnswer: Restaurar processos ecológicos por reintrodução de espécies-chave e remoção de barreiras
+        rationale:
+          pt: Rewilding: visão dinâmica de conservação — restaurar predadores, herbívoros, conectividade. Exemplos: lobos Yellowstone, lince ibérico, bisão europeu, Chernobyl renaturalização. Tompkins na Patagônia. "Pleistocene rewilding" (Donlan 2005) é versão controvertida com megafauna proxy.
+          en: Rewilding: a dynamic view of conservation — restoring predators, herbivores, connectivity. Examples: Yellowstone wolves, Iberian lynx, European bison, Chernobyl rewilding. Tompkins in Patagonia. "Pleistocene rewilding" (Donlan 2005) is the controversial megafauna-proxy version.
+        objectives: [Rewilding]
+target: 20
