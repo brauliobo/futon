@@ -1,0 +1,343 @@
+title:
+  pt: Organoides Cerebrais, Conectomas e Neurotecnologia
+  en: Brain Organoids, Connectomes, and Neurotechnology
+level: S
+subject: biology
+objectives:
+  - Compreender organoides cerebrais e assembloides
+  - Reconhecer FlyWire, MICrONS, conectomas EM
+  - Identificar BCI clínicos (Neuralink, Synchron, BrainGate)
+  - Avaliar Neuropixels, optogenética, voltage indicators
+difficulty: 5
+authorNotes: |
+  Era moderna neurociência. Organoides cerebrais (Lancaster/Knoblich Nature 2013), assembloides
+  (Pasca Stanford). Conectomas: C. elegans 1986 White (302n), FlyWire 2024 fruit fly ~140k,
+  MICrONS mouse cortex IARPA. BCI clínicos 2024+: Neuralink N1, Synchron Stentrode, BrainGate,
+  Stanford/UCSF speech BCIs 2023. Neuropixels probes (Allen/IMEC). Optogenetics Deisseroth/Boyden
+  Nobel-track. Voltage indicators GEVIs. DishBrain Cortical Labs.
+example:
+  question:
+    pt: FlyWire (Dorkenwald/Murthy/Seung Nature 2024) marco foi…
+    en: FlyWire (Dorkenwald/Murthy/Seung Nature 2024) milestone was…
+  choices:
+    - First complete synapse-resolution connectome of an adult Drosophila brain (~140k neurons, ~50M synapses) released open with cell-type annotation
+    - Manual reconstruction of a single fly visual lobe without the full brain
+    - First mouse whole-brain connectome at synapse resolution
+    - Bulk transcriptomic atlas of fly brain without circuit-level data
+  correctAnswer: First complete synapse-resolution connectome of an adult Drosophila brain (~140k neurons, ~50M synapses) released open with cell-type annotation
+  rationale:
+    pt: 'FlyWire (Dorkenwald Matsliah Sterling Schlegel Yu McKellar Lin Costa Eichler Druckmann Macrina Lu Lee Bates Reinhard Tobin Schneider-Mizell Ali Yin Park Murthy Seung Princeton Nature 2024 set 9 papers): primeira complete adult Drosophila brain (FAFB Female Adult Fly Brain) connectome — ~140k neurons, ~50M synapses, ~150k cell-type annotations. Serial section EM (FAFB Bock 2014 acquisition), AI-segmentation (flood-filling networks Januszewski + auto-detection synapses), human proofreading via online platform FlyWire (codex.flywire.ai). Acompanha hemibrain (Janelia 2020 ~25k neurons partial) e male fly connectome (FANC ventral nerve cord 2023). Implicações: link circuito-comportamento (visão, olfato, memória, locomoção) — testable model neuroscience. Próximos: zebrafish larva, mouse cortex MICrONS, eventually mouse whole brain. Connectomics era enabled by AI segmentation.'
+    en: 'FlyWire (Dorkenwald Matsliah Sterling Schlegel Yu McKellar Lin Costa Eichler Druckmann Macrina Lu Lee Bates Reinhard Tobin Schneider-Mizell Ali Yin Park Murthy Seung Princeton Nature 2024 set of 9 papers): first complete adult Drosophila brain (FAFB Female Adult Fly Brain) connectome — ~140k neurons, ~50M synapses, ~150k cell-type annotations. Serial-section EM (FAFB Bock 2014 acquisition), AI segmentation (flood-filling networks Januszewski + auto-detection of synapses), human proofreading via online platform FlyWire (codex.flywire.ai). Accompanies hemibrain (Janelia 2020 ~25k neurons partial) and male fly connectome (FANC ventral nerve cord 2023). Implications: link circuit-behavior (vision, olfaction, memory, locomotion) — testable model neuroscience. Next: zebrafish larva, mouse cortex MICrONS, eventually mouse whole brain. Connectomics era enabled by AI segmentation.'
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Conectomas e organoides
+      en: Page 1 — Connectomes and organoids
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: MICrONS Program (IARPA Allen/Princeton/Baylor 2025) escala é…
+          en: MICrONS Program (IARPA Allen/Princeton/Baylor 2025) scale is…
+        choices:
+          - 1 mm³ mouse visual cortex EM connectome (~200k neurons, 500M+ synapses) co-registered with two-photon functional imaging
+          - Whole-mouse-brain connectome released as a single block dataset
+          - Single-neuron reconstruction without functional or synaptic data
+          - Light-microscopy-only atlas without electron-microscopy data
+        correctAnswer: 1 mm³ mouse visual cortex EM connectome (~200k neurons, 500M+ synapses) co-registered with two-photon functional imaging
+        rationale:
+          pt: 'MICrONS (Machine Intelligence from Cortical Networks): IARPA program ~$100M iniciado 2016, completion 2025. Goal: 1 mm³ mouse primary + higher visual cortex L1-L6 → comprehensive map. Pipeline: in vivo two-photon calcium imaging visual stimuli → tissue extracted → serial-section EM (~30nm xy, ~40nm z) → AI segmentation (Allen, Seung Princeton) → ~200k neurons reconstructed, 500M+ synapses, cell typing. Co-registered functional + structural atlas. Allen Institute (Tolias Baylor / Bock Allen Reid Vienna), Princeton (Seung), Baylor College Medicine (Andreas Tolias). Released microns-explorer.org. Implications: Hebbian co-tuning prediction (Ding 2024 Nature: cofunctional neurons more connected), connectomic prediction of function. Next: rat hippocampus, primate cortex, eventually mouse whole brain.'
+          en: 'MICrONS (Machine Intelligence from Cortical Networks): IARPA program ~$100M started 2016, completion 2025. Goal: 1 mm³ mouse primary + higher visual cortex L1-L6 → comprehensive map. Pipeline: in vivo two-photon calcium imaging with visual stimuli → tissue extracted → serial-section EM (~30nm xy, ~40nm z) → AI segmentation (Allen, Seung Princeton) → ~200k neurons reconstructed, 500M+ synapses, cell typing. Co-registered functional + structural atlas. Allen Institute (Tolias Baylor / Bock Allen Reid Vienna), Princeton (Seung), Baylor College of Medicine (Andreas Tolias). Released microns-explorer.org. Implications: Hebbian co-tuning prediction (Ding 2024 Nature: co-functional neurons more connected), connectomic prediction of function. Next: rat hippocampus, primate cortex, eventually mouse whole brain.'
+        objectives: [MICrONS]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: C. elegans connectome (White/Brenner 1986) significância foi…
+          en: C. elegans connectome (White/Brenner 1986) significance was…
+        choices:
+          - First complete nervous system map (~302 neurons, ~7000 synapses) by manual EM reconstruction, foundational reference for systems neuroscience
+          - First complete fruit fly connectome at synapse resolution
+          - Functional imaging atlas without structural connectivity
+          - Genetic perturbation screen of nervous-system genes only
+        correctAnswer: First complete nervous system map (~302 neurons, ~7000 synapses) by manual EM reconstruction, foundational reference for systems neuroscience
+        rationale:
+          pt: 'C. elegans connectome (White Southgate Thomson Brenner Phil Trans R Soc Lond 1986 "The Mind of a Worm"): primeira complete nervous system synapse-resolution. Hermafrodita: 302 neurons, ~7000 chemical synapses + ~600 gap junctions. Reconstrução manual décade work — serial-section TEM, hand-tracings desenhos transparências sobrepostos. Sydney Brenner (Nobel 2002 for C. elegans developmental cell lineage). Foundational — connectomics field nasce. Subsequent updates Cook 2019 Nature Hall lab Albert Einstein (sex differences male connectome). C. elegans cell lineage Sulston (Nobel 2002 with Brenner Horvitz) — every cell division mapped. Limit: connectome anatomical, not functional weights, not learning/plasticity. Modern era: AI segmentation enables ~1000x larger animals (FlyWire, MICrONS).'
+          en: 'C. elegans connectome (White Southgate Thomson Brenner Phil Trans R Soc Lond 1986 "The Mind of a Worm"): first complete nervous system at synapse resolution. Hermaphrodite: 302 neurons, ~7000 chemical synapses + ~600 gap junctions. Manual reconstruction over a decade — serial-section TEM, hand-tracings on transparency overlays. Sydney Brenner (Nobel 2002 for C. elegans developmental cell lineage). Foundational — connectomics field is born. Subsequent updates: Cook 2019 Nature, Hall lab Albert Einstein (sex differences in male connectome). C. elegans cell lineage by Sulston (Nobel 2002 with Brenner and Horvitz) — every cell division mapped. Limit: connectome is anatomical, not functional weights, not learning/plasticity. Modern era: AI segmentation enables ~1000x larger animals (FlyWire, MICrONS).'
+        objectives: [C. elegans connectome]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Cerebral organoids (Lancaster/Knoblich Nature 2013) breakthrough foi…
+          en: Cerebral organoids (Lancaster/Knoblich Nature 2013) breakthrough was…
+        choices:
+          - Self-organizing 3D iPSC-derived structures recapitulating early brain regional patterning, embedded in Matrigel and grown in spinning bioreactors
+          - 2D monolayer cortical neuron cultures without 3D tissue architecture
+          - Direct brain biopsies maintained in dissociated cell culture
+          - Lateralized hemispheric brain slices ex vivo from adult donors
+        correctAnswer: Self-organizing 3D iPSC-derived structures recapitulating early brain regional patterning, embedded in Matrigel and grown in spinning bioreactors
+        rationale:
+          pt: 'Cerebral organoids (Lancaster Renner Martin Wenzel Bicknell Hurles Homfray Penninger Jackson Knoblich IMBA Vienna Nature 2013 "Cerebral organoids model human brain development and microcephaly"): iPSC → embryoid body → neural induction → Matrigel embedding → spinning bioreactor (oxygen access). Self-organizing — sem rigid patterning protocol. Develop diverse brain regions: dorsal forebrain, ventral, midbrain, hindbrain, choroid plexus, retina occasionally. Modeled microcephaly via patient iPSC (CDK5RAP2 mutation) — smaller organoids. Limits: lack vasculature → necrotic core ~4mm size, immature (~fetal trimester 1-2 maximum), variable region composition. Subsequent: guided protocols region-specific (Pasca cortical, Eiraku optic cup, Sasai), assembloids fusing regions, vascularized via transplantation. Field foundation cerebral organoids translation.'
+          en: 'Cerebral organoids (Lancaster Renner Martin Wenzel Bicknell Hurles Homfray Penninger Jackson Knoblich IMBA Vienna Nature 2013 "Cerebral organoids model human brain development and microcephaly"): iPSC → embryoid body → neural induction → Matrigel embedding → spinning bioreactor (oxygen access). Self-organizing — no rigid patterning protocol. Develop diverse brain regions: dorsal forebrain, ventral, midbrain, hindbrain, choroid plexus, retina occasionally. Modeled microcephaly via patient iPSC (CDK5RAP2 mutation) — smaller organoids. Limits: lack vasculature → necrotic core at ~4mm size, immature (~fetal trimester 1-2 maximum), variable region composition. Subsequent: guided protocols region-specific (Pasca cortical, Eiraku optic cup, Sasai), assembloids fusing regions, vascularized via transplantation. Foundational field for cerebral organoids translation.'
+        objectives: [Cerebral organoids]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Assembloids (Pasca Stanford Nature 2017+) inovação é…
+          en: Assembloids (Pasca Stanford Nature 2017+) innovation is…
+        choices:
+          - Fusion of region-specific organoids (e.g., dorsal cortex + ventral GABAergic) to study long-range circuits, cell migration, and cortico-cortical connectivity
+          - Single homogeneous cortical organoid without regional patterning
+          - Mixture of mouse and human cells in chimeric embryos
+          - 2D co-culture of neurons and glia without 3D architecture
+        correctAnswer: Fusion of region-specific organoids (e.g., dorsal cortex + ventral GABAergic) to study long-range circuits, cell migration, and cortico-cortical connectivity
+        rationale:
+          pt: 'Assembloids (Birey Andersen Makinson Islam Wei Sebastian Forster Eom Pasca Stanford Nature 2017): protocol — generate two regionally patterned organoids separately (dorsal pallium vs ventral subpallium MGE) → physical fusion in low-attachment dish → form continuous tissue. Demonstrated GABAergic interneurons born ventrally migrate dorsally → mimics tangential interneuron migration in vivo developing cortex. Subsequent: cortico-thalamic, cortico-striatal, cortico-spinal-muscle (3-part: cortex + spinal + muscle moves muscle by cortical optogenetic stim Andersen Pasca Cell 2020). Pasca lab Sergiu Pasca Stanford. Limit: fetal-stage circuits, no behavior, ethical bounds (consciousness debates). Aplicações: schizophrenia/autism patient iPSC modeling, drug screens, multi-region disease (Pitt-Hopkins, Timothy syndrome).'
+          en: 'Assembloids (Birey Andersen Makinson Islam Wei Sebastian Forster Eom Pasca Stanford Nature 2017): protocol — generate two regionally patterned organoids separately (dorsal pallium vs ventral subpallium MGE) → physical fusion in low-attachment dish → form continuous tissue. Demonstrated GABAergic interneurons born ventrally migrate dorsally → mimics tangential interneuron migration in vivo in developing cortex. Subsequent: cortico-thalamic, cortico-striatal, cortico-spinal-muscle (3-part: cortex + spinal + muscle moves muscle by cortical optogenetic stim Andersen Pasca Cell 2020). Pasca lab Sergiu Pasca Stanford. Limit: fetal-stage circuits, no behavior, ethical bounds (consciousness debates). Applications: schizophrenia/autism patient iPSC modeling, drug screens, multi-region disease (Pitt-Hopkins, Timothy syndrome).'
+        objectives: [Assembloids]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Vascularized organoids (Pasca/Wu Nature 2022+ rat transplant) approach é…
+          en: Vascularized organoids (Pasca/Wu Nature 2022+ rat transplant) approach is…
+        choices:
+          - Transplanting human cortical organoids into neonatal rat cortex, where host blood vessels invade and human neurons integrate into rat circuits
+          - In vitro perfusion with synthetic blood substitutes only, never in animal hosts
+          - Co-culture with iPSC-derived endothelial cells with no in vivo step
+          - Direct gene therapy of vascularization factors in adult human brain
+        correctAnswer: Transplanting human cortical organoids into neonatal rat cortex, where host blood vessels invade and human neurons integrate into rat circuits
+        rationale:
+          pt: 'Vascularized organoids transplant approach (Revah Gore Schafer Birey Linker Saxena Park Sebastian Pasca Stanford Nature 2022 "Maturation and circuit integration of transplanted human cortical organoids"): inject human cortical organoid into newborn (P3-P7) rat somatosensory cortex → host blood vessels invade → human neurons integrate via dendritic + axonal projections → respond to rat sensory input (whisker stim) → display mature electrophysiology including high-frequency spiking impossible in vitro. Reach ~6-9 month maturity in rat host (vs in vitro plateau ~6 months early postnatal). Aplicações: model human-specific disease neurons in living animal, behavioral test (CRISPR-edited human disease neurons → optogenetic-driven reward learning rat). Concurrent: Mansour Gage Salk transplant adult mice 2018, Wu Stanford xeno organoid hosts. Ética debate consciousness.'
+          en: 'Vascularized organoid transplant approach (Revah Gore Schafer Birey Linker Saxena Park Sebastian Pasca Stanford Nature 2022 "Maturation and circuit integration of transplanted human cortical organoids"): inject human cortical organoid into newborn (P3-P7) rat somatosensory cortex → host blood vessels invade → human neurons integrate via dendritic + axonal projections → respond to rat sensory input (whisker stim) → display mature electrophysiology including high-frequency spiking impossible in vitro. Reach ~6-9 month maturity in rat host (vs in vitro plateau ~6 months early postnatal). Applications: model human-specific disease neurons in living animal, behavioral test (CRISPR-edited human disease neurons → optogenetic-driven reward learning in rat). Concurrent: Mansour Gage Salk transplant adult mice 2018, Wu Stanford xeno organoid hosts. Ethics debate consciousness.'
+        objectives: [Vascularized organoids]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Cortical organoids maturation timing limit é…
+          en: Cortical organoids maturation timing limit is…
+        choices:
+          - In vitro maturation plateaus near early postnatal stages (~6 months culture ≈ neonate), not reaching adult-like circuits without in vivo transplantation
+          - Achievement of full adult-equivalent cortex in 2 weeks of culture
+          - Capability to reach octogenarian-cortex transcriptional age
+          - Identical maturation tempo to mouse cortex with no species difference
+        correctAnswer: In vitro maturation plateaus near early postnatal stages (~6 months culture ≈ neonate), not reaching adult-like circuits without in vivo transplantation
+        rationale:
+          pt: 'Cortical organoids maturation: in vitro plateau ~6 months culture ≈ neonatal stage. Lack: vasculature (necrotic core), microglia (need separate engineering), maturation cues vivo (sensory input, hormones, sleep). Transcriptional age: scRNA-seq vs Allen Brain Atlas reveals plateau early postnatal — Pasca/Andersen Stanford et al. Solutions: longer culture (2 anos some labs maturation > stretches), microglia introduction, vascularization via co-culture or transplant, sensory stimulation, electrical stimulation. Transplant Pasca 2022 reaches ~6-9 month rat-equivalent. Ethical concerns: extended in vitro maturation toward consciousness — Greely/Hyun bioethics 2018+ recommend assess sentience. Active engineering frontier 2024+. Field aligns with brain-aging research challenges human-specific aging recapitulation.'
+          en: 'Cortical organoids maturation: in vitro plateau ~6 months culture ≈ neonatal stage. Lack of: vasculature (necrotic core), microglia (need separate engineering), in vivo maturation cues (sensory input, hormones, sleep). Transcriptional age: scRNA-seq vs Allen Brain Atlas reveals plateau at early postnatal — Pasca/Andersen Stanford et al. Solutions: longer culture (2 years some labs maturation > stretches), microglia introduction, vascularization via co-culture or transplant, sensory stimulation, electrical stimulation. Transplant Pasca 2022 reaches ~6-9 month rat-equivalent. Ethical concerns: extended in vitro maturation toward consciousness — Greely/Hyun bioethics 2018+ recommend assessing sentience. Active engineering frontier 2024+. Field aligns with brain-aging research challenges around human-specific aging recapitulation.'
+        objectives: [Organoid maturation]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Optic-cup organoids (Eiraku/Sasai Nature 2011) achievement foi…
+          en: Optic-cup organoids (Eiraku/Sasai Nature 2011) achievement was…
+        choices:
+          - Self-organization of an optic-cup-like structure with photoreceptor lamination from ESCs in 3D culture, demonstrating intrinsic organogenesis programs
+          - Surgical transplantation of fetal eye tissue into adult retinas
+          - Drug screen identifying small molecules patterning the eye field
+          - Cre-lox knockout strategy revealing eye-development genes in vivo
+        correctAnswer: Self-organization of an optic-cup-like structure with photoreceptor lamination from ESCs in 3D culture, demonstrating intrinsic organogenesis programs
+        rationale:
+          pt: 'Optic-cup self-organization (Eiraku Takata Ishibashi Kawada Sakakura Okuda Sekiguchi Adachi Sasai RIKEN Nature 2011): mouse ESCs Suspended in low-cell-density 3D Matrigel + minimal patterning factors → SFEBq protocol → spontaneous formation optic-cup with neural retina + retinal pigment epithelium, including invagination dynamics. Demonstrated intrinsic morphogenetic program independent embryonic context. Sasai Yoshiki RIKEN founder eye/cortical organoid field. Subsequent human iPSC adaptation Nakano 2012 Cell Stem Cell. Modern human retinal organoids: photoreceptor outer segments, opsins, light response. Aplicações: retinal disease modeling (RP retinitis pigmentosa), drug screens, eventual cell therapy (RPE Astellas/UCL trial macular degeneration). Sasai falecido 2014 — pioneer field.'
+          en: 'Optic-cup self-organization (Eiraku Takata Ishibashi Kawada Sakakura Okuda Sekiguchi Adachi Sasai RIKEN Nature 2011): mouse ESCs suspended in low-cell-density 3D Matrigel + minimal patterning factors → SFEBq protocol → spontaneous formation of optic-cup with neural retina + retinal pigment epithelium, including invagination dynamics. Demonstrated intrinsic morphogenetic program independent of embryonic context. Sasai Yoshiki RIKEN founder of eye/cortical organoid field. Subsequent human iPSC adaptation Nakano 2012 Cell Stem Cell. Modern human retinal organoids: photoreceptor outer segments, opsins, light response. Applications: retinal disease modeling (RP retinitis pigmentosa), drug screens, eventual cell therapy (RPE Astellas/UCL trial macular degeneration). Sasai deceased 2014 — pioneer of the field.'
+        objectives: [Optic cup organoids]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: DishBrain (Kagan/Cortical Labs Neuron 2022) demonstrated…
+          en: DishBrain (Kagan/Cortical Labs Neuron 2022) demonstrated…
+        choices:
+          - Cultured neurons playing Pong via closed-loop electrical interface, showing goal-directed activity changes consistent with sensorimotor learning
+          - Whole-organism behavior in 2D dish cultures matching adult brains
+          - First simulated AI brain without biological neurons
+          - Optical recording of organoid neurons without electrical interface
+        correctAnswer: Cultured neurons playing Pong via closed-loop electrical interface, showing goal-directed activity changes consistent with sensorimotor learning
+        rationale:
+          pt: 'DishBrain (Kagan Kitchen Tran Habibollahi Khajehnejad Parker Bhat Rollo Razi Friston Cortical Labs Melbourne Neuron 2022 "In vitro neurons learn and exhibit sentience when embodied in a simulated game-world"): ~800k cortical neurons (mouse + iPSC-derived) cultured on multi-electrode array (HD-MEA Maxwell). Closed-loop: Pong game state encoded em stimulation patterns sent ao culture → neuronal spiking decoded as paddle movement → game returns reward signal. Within 5min — neurons exhibited improvements paddle accuracy. Inspired Karl Friston free-energy principle — cultures interpret as predictive system. Cortical Labs commercial spinout — Cortical Cloud platform. Provocative claim "sentience" debated. Subsequent: extended Pong, drug discovery applications, hybrid biological-AI computing. Concurrent Finalspark Switzerland organoid computing. Field nascent: organoid intelligence (OI).'
+          en: 'DishBrain (Kagan Kitchen Tran Habibollahi Khajehnejad Parker Bhat Rollo Razi Friston Cortical Labs Melbourne Neuron 2022 "In vitro neurons learn and exhibit sentience when embodied in a simulated game-world"): ~800k cortical neurons (mouse + iPSC-derived) cultured on multi-electrode array (HD-MEA Maxwell). Closed-loop: Pong game state encoded in stimulation patterns sent to culture → neuronal spiking decoded as paddle movement → game returns reward signal. Within 5 min — neurons exhibited improvements in paddle accuracy. Inspired by Karl Friston free-energy principle — cultures interpreted as a predictive system. Cortical Labs commercial spinout — Cortical Cloud platform. Provocative "sentience" claim debated. Subsequent: extended Pong, drug-discovery applications, hybrid biological-AI computing. Concurrent Finalspark Switzerland organoid computing. Nascent field: organoid intelligence (OI).'
+        objectives: [DishBrain]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Brain organoids ethical concerns 2024 main questão é…
+          en: Brain organoids ethical concerns 2024 main question is…
+        choices:
+          - Whether maturing organoids could develop sentience-relevant features and what monitoring/limits should apply, prompting NAS reports and regulatory guidance
+          - Pure intellectual property questions about organoid commercialization
+          - Whether organoids can replace primate models entirely
+          - Concerns limited to public funding allocation only
+        correctAnswer: Whether maturing organoids could develop sentience-relevant features and what monitoring/limits should apply, prompting NAS reports and regulatory guidance
+        rationale:
+          pt: 'Brain organoid bioethics 2018+: NAS NASEM 2021 report "The Emerging Field of Human Neural Organoids, Transplants, and Chimeras" — call monitoring sentience-relevant features (rhythmic EEG-like activity Trujillo 2019, integrated information). Greely Hyun Lancaster Pasca Stanford Law/Bioethics. Concerns: (1) consciousness — does maturing organoid feel? indicators: spontaneous oscillations, sensory responses, integrated activity. (2) chimeras — human organoid em rat ou human brain pig — moral status considerations. (3) consent — donor of iPSCs vs derivative organoid. (4) what counts as too mature/too long? Currently field consensus organoids ainda fetal-stage não sentient mas frontier moves rapidly. Legal framework largely absent — research community self-regulation via ISSCR guidelines updated 2021. Aplicações balance sci ethics.'
+          en: 'Brain organoid bioethics 2018+: NAS NASEM 2021 report "The Emerging Field of Human Neural Organoids, Transplants, and Chimeras" — calls for monitoring sentience-relevant features (rhythmic EEG-like activity Trujillo 2019, integrated information). Greely Hyun Lancaster Pasca Stanford Law/Bioethics. Concerns: (1) consciousness — does a maturing organoid feel? indicators: spontaneous oscillations, sensory responses, integrated activity. (2) chimeras — human organoid in rat or human brain in pig — moral status considerations. (3) consent — donor of iPSCs vs derivative organoid. (4) what counts as too mature/too long? Currently field consensus organoids still fetal-stage and not sentient but frontier moves rapidly. Legal framework largely absent — research community self-regulation via ISSCR guidelines updated 2021. Applications balance sci/ethics.'
+        objectives: [Organoid ethics]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Allen Mouse Brain Connectivity Atlas (Oh/Harris Nature 2014) approach é…
+          en: Allen Mouse Brain Connectivity Atlas (Oh/Harris Nature 2014) approach is…
+        choices:
+          - Mesoscale projectome via systematic AAV-GFP injections across the mouse brain, tracing axonal projections at light microscopy resolution
+          - Synapse-resolution EM connectome of the entire mouse brain at once
+          - Bulk RNA-sequencing atlas without spatial connectivity
+          - Manual Golgi staining of single neurons reconstructed by hand
+        correctAnswer: Mesoscale projectome via systematic AAV-GFP injections across the mouse brain, tracing axonal projections at light microscopy resolution
+        rationale:
+          pt: 'Allen Mouse Brain Connectivity Atlas (Oh Harris Hirokawa Levi Henry Kuan Mortrud Ouellette Nguyen Sorensen Slaughterbeck Wakeman Li Feng Ho Nicholas Hirokawa Bohn Joines Peng Hawrylycz Phillips Hohmann Wohnoutka Gerfen Koch Bernard Dang Jones Zeng Allen Institute Nature 2014): systematic AAV1-GFP injections ~300 brain regions in mouse (C57BL/6J ou Cre-driver lines for cell-type specificity) → 2-photon STP serial-section tomography → 1µm xy resolution full brain → axonal projections traced. ~470 brain regions interconnect graph ~5x10⁵ ipsilateral connections quantified. Mesoscale (between brain-areas, not synapse-resolution). Mouse Connectome Project Hofer Mrsic-Flogel Sussex/UCL parallel. Atlas open connectivity.brain-map.org. Foundation for systems neuroscience comparable studies. Now extends ao Allen Brain Cell Atlas (BICCN consortium, single-cell + spatial + connectivity integrated 2023+ Nature suite).'
+          en: 'Allen Mouse Brain Connectivity Atlas (Oh Harris Hirokawa Levi Henry Kuan Mortrud Ouellette Nguyen Sorensen Slaughterbeck Wakeman Li Feng Ho Nicholas Hirokawa Bohn Joines Peng Hawrylycz Phillips Hohmann Wohnoutka Gerfen Koch Bernard Dang Jones Zeng Allen Institute Nature 2014): systematic AAV1-GFP injections in ~300 brain regions in mouse (C57BL/6J or Cre-driver lines for cell-type specificity) → 2-photon STP serial-section tomography → 1µm xy resolution full brain → axonal projections traced. ~470 brain regions interconnect graph ~5x10⁵ ipsilateral connections quantified. Mesoscale (between brain areas, not synapse resolution). Mouse Connectome Project Hofer Mrsic-Flogel Sussex/UCL parallel. Atlas open at connectivity.brain-map.org. Foundation for systems neuroscience comparable studies. Now extends to Allen Brain Cell Atlas (BICCN consortium, single-cell + spatial + connectivity integrated 2023+ Nature suite).'
+        objectives: [Allen Connectivity Atlas]
+  - title:
+      pt: Página 2 — Neurotecnologia e BCI
+      en: Page 2 — Neurotechnology and BCI
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Neuralink N1 implant (Musk 2024 first human) characteristics são…
+          en: Neuralink N1 implant (Musk 2024 first human) characteristics are…
+        choices:
+          - 1024 ultra-fine flexible polymer threads inserted by a surgical robot into motor cortex, wireless, with first human (Noland Arbaugh) in 2024 controlling cursors
+          - Rigid stainless-steel needle electrode array implanted via standard craniotomy
+          - Non-invasive scalp EEG cap with no surgical component
+          - Optogenetic-only stimulation without recording capability
+        correctAnswer: 1024 ultra-fine flexible polymer threads inserted by a surgical robot into motor cortex, wireless, with first human (Noland Arbaugh) in 2024 controlling cursors
+        rationale:
+          pt: 'Neuralink N1 implant (Musk founded 2016): chip ~23×8mm 1024 channels distribuídos ~64 polymer threads ~5µm diameter cada com 16 electrodes. Robotic surgery (R1 robot) avoids vasculature, inserts threads 2-3mm cortex. Battery wireless charging, Bluetooth-class data. PRIME study 2023 FDA breakthrough device → first human Noland Arbaugh (quadriplégico C4-C5 spinal injury) implanted janeiro 2024. Cursor control demonstration ~8 BPS bits-per-second (vs ~1-2 BPS Utah array). ~85% threads retracted post-implant — engineering challenge. Second patient mid-2024 improved retention. Goal: motor restoration, eventually cognitive prostheses, vision (Blindsight). Concurrent BCI: Synchron (intravascular), BrainGate (Utah array), Paradromics, Precision Neuroscience (Layer 7). Field clinical maturation 2024-2025.'
+          en: 'Neuralink N1 implant (Musk founded 2016): chip ~23×8mm with 1024 channels distributed across ~64 polymer threads ~5µm diameter each with 16 electrodes. Robotic surgery (R1 robot) avoids vasculature, inserts threads 2-3mm into cortex. Battery wireless charging, Bluetooth-class data. PRIME study 2023 FDA breakthrough device → first human Noland Arbaugh (C4-C5 spinal injury quadriplegic) implanted January 2024. Cursor control demonstration ~8 BPS bits-per-second (vs ~1-2 BPS for Utah array). ~85% of threads retracted post-implant — engineering challenge. Second patient mid-2024 improved retention. Goal: motor restoration, eventually cognitive prostheses, vision (Blindsight). Concurrent BCI: Synchron (intravascular), BrainGate (Utah array), Paradromics, Precision Neuroscience (Layer 7). Field reaching clinical maturation 2024-2025.'
+        objectives: [Neuralink]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Synchron Stentrode (Oxley/Opie 2020+) approach é…
+          en: Synchron Stentrode (Oxley/Opie 2020+) approach is…
+        choices:
+          - Endovascular electrode array deployed via catheter through the jugular vein into the superior sagittal sinus near motor cortex, no craniotomy required
+          - Open-craniotomy depth electrode penetrating cortical tissue
+          - Subdural ECoG grid placed beneath the dura via burr hole
+          - Wireless transcranial stimulation device only
+        correctAnswer: Endovascular electrode array deployed via catheter through the jugular vein into the superior sagittal sinus near motor cortex, no craniotomy required
+        rationale:
+          pt: 'Synchron Stentrode (Oxley Opie Univ Melbourne, Synchron founded 2016): self-expanding stent-mounted electrode array 16 channels. Delivery: jugular vein → superior sagittal sinus venous drainage near motor cortex/SMA → expand. Sem craniotomy → minimally invasive (interventional radiology procedure ~2hrs). Records local field potentials (não single-unit spikes high-resolution). FDA IDE approval 2021 — primeira BCI implanted humanos via blood vessels. SWITCH trial Australia + COMMAND trial USA: ALS/spinal cord injury patients control digital devices (typing, web browsing, email) via thought. Lower bandwidth than Neuralink/Utah array mas safer surgical profile. ~10 patients implanted 2024. Backed Bezos, Gates Frontier funds. Trade-off: invasiveness vs bandwidth — Synchron prioritizes minimally invasive.'
+          en: 'Synchron Stentrode (Oxley Opie Univ Melbourne, Synchron founded 2016): self-expanding stent-mounted electrode array with 16 channels. Delivery: jugular vein → superior sagittal sinus venous drainage near motor cortex/SMA → expand. No craniotomy → minimally invasive (interventional radiology procedure ~2 hrs). Records local field potentials (not high-resolution single-unit spikes). FDA IDE approval 2021 — first BCI implanted in humans via blood vessels. SWITCH trial Australia + COMMAND trial USA: ALS/spinal cord injury patients control digital devices (typing, web browsing, email) by thought. Lower bandwidth than Neuralink/Utah array but safer surgical profile. ~10 patients implanted 2024. Backed by Bezos, Gates Frontier funds. Trade-off: invasiveness vs bandwidth — Synchron prioritizes minimally invasive.'
+        objectives: [Synchron Stentrode]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: BrainGate (Donoghue Brown/Hochberg) papel histórico é…
+          en: BrainGate (Donoghue Brown/Hochberg) historic role is…
+        choices:
+          - Decade-long clinical research consortium using 96-channel Utah arrays in motor cortex of paralyzed patients, foundational for modern BCI translation
+          - First commercial consumer BCI for healthy users
+          - Non-invasive scalp EEG only without implanted electrodes
+          - Pure software platform without any hardware component
+        correctAnswer: Decade-long clinical research consortium using 96-channel Utah arrays in motor cortex of paralyzed patients, foundational for modern BCI translation
+        rationale:
+          pt: 'BrainGate (John Donoghue Brown Univ → Leigh Hochberg MGH/Brown lead clinical): consortium founded 2002. Uses Utah array (Blackrock Neurotech) — 4×4mm 96-channel silicon microelectrode array (Normann Utah 1990s development) implanted motor cortex M1. Trial NCT00912041 + subsequent. Achievements: Hochberg Donoghue Nature 2006 first paralyzed patient (Matthew Nagle) cursor control; Hochberg 2012 robotic arm coffee cup self-feeding. Speech BCI: Willett Henderson Stanford Nature 2023 typing 62 wpm via motor cortex Utah array, Moses Chang UCSF Nature 2023 ECoG speech decode. Subjects multi-year implants (>10 anos some patients). Limit: rigid silicon array, gliosis over time, ~96 channels. Foundation field, modern BCI iterates increased channel counts (Neuralink 1024, Paradromics 1600).'
+          en: 'BrainGate (John Donoghue Brown Univ → Leigh Hochberg MGH/Brown lead clinical): consortium founded 2002. Uses Utah array (Blackrock Neurotech) — 4×4mm 96-channel silicon microelectrode array (Normann Utah 1990s development) implanted in motor cortex M1. Trial NCT00912041 + subsequent. Achievements: Hochberg Donoghue Nature 2006 first paralyzed patient (Matthew Nagle) cursor control; Hochberg 2012 robotic arm coffee cup self-feeding. Speech BCI: Willett Henderson Stanford Nature 2023 typing 62 wpm via motor cortex Utah array, Moses Chang UCSF Nature 2023 ECoG speech decode. Subjects multi-year implants (>10 years in some patients). Limit: rigid silicon array, gliosis over time, ~96 channels. Foundation of the field; modern BCI iterates with increased channel counts (Neuralink 1024, Paradromics 1600).'
+        objectives: [BrainGate]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Neuropixels probes (Jun/IMEC/Allen Nature 2017, 2.0 2021) capabilities são…
+          en: Neuropixels probes (Jun/IMEC/Allen Nature 2017, 2.0 2021) capabilities are…
+        choices:
+          - Single CMOS shank ~10mm with hundreds of recording sites enabling simultaneous extracellular recording from hundreds of neurons across brain regions
+          - Single-electrode glass pipette enabling only one neuron per recording session
+          - Wireless EEG cap for human consumer use exclusively
+          - Optical-only imaging tool without electrical recording
+        correctAnswer: Single CMOS shank ~10mm with hundreds of recording sites enabling simultaneous extracellular recording from hundreds of neurons across brain regions
+        rationale:
+          pt: 'Neuropixels (Jun Steinmetz Siegle Denman Bauza Barbarits Lee Anastassiou Andrei Aydin Barbic Blanche Bonin Couto Dutta Gratiy Gutnisky Häusser Karsh Ledochowitsch Lopez Mitelut Musa Okun Pachitariu Putzeys Rich Rossant Sun Welkenhuysen Bartho Carandini Harris Koch O''Keefe Siapas Mainen Shepherd Steinmetz Buzsáki Allen/IMEC/UCL HHMI Nature 2017): silicon CMOS probe ~10mm × 70µm × 24µm, 384 simultaneous recording channels (out of 960 sites total switchable). Permite ~700 neurons single shank. Neuropixels 2.0 (Steinmetz Aydin Lebedeva Carandini Harris Allen 2021 Science): smaller, 4-shank versions, chronic recording months. Enables ações múltiplas brain regions simultânea (cortex + thalamus + hippocampus em single insertion). Open-Ephys community. Revolution rodent ephys — ~$3000/probe. Limit: rodent primary, primate Neuropixels in development. International Brain Lab (IBL) standardized data ~138 mouse brain regions atlas.'
+          en: 'Neuropixels (Jun Steinmetz Siegle Denman Bauza Barbarits Lee Anastassiou Andrei Aydin Barbic Blanche Bonin Couto Dutta Gratiy Gutnisky Häusser Karsh Ledochowitsch Lopez Mitelut Musa Okun Pachitariu Putzeys Rich Rossant Sun Welkenhuysen Bartho Carandini Harris Koch O''Keefe Siapas Mainen Shepherd Steinmetz Buzsáki Allen/IMEC/UCL HHMI Nature 2017): silicon CMOS probe ~10mm × 70µm × 24µm, 384 simultaneous recording channels (out of 960 sites total switchable). Allows ~700 neurons per single shank. Neuropixels 2.0 (Steinmetz Aydin Lebedeva Carandini Harris Allen 2021 Science): smaller, 4-shank versions, chronic recording for months. Enables actions in multiple brain regions simultaneously (cortex + thalamus + hippocampus in a single insertion). Open-Ephys community. Revolutionized rodent ephys — ~$3000/probe. Limit: primarily rodent, primate version Neuropixels Primate in development. International Brain Lab (IBL) standardized data ~138 mouse brain regions atlas.'
+        objectives: [Neuropixels]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Optogenetics (Boyden/Deisseroth Nat Neurosci 2005, ChR2) breakthrough foi…
+          en: Optogenetics (Boyden/Deisseroth Nat Neurosci 2005, ChR2) breakthrough was…
+        choices:
+          - Channelrhodopsin-2 from algae expressed in neurons enables millisecond-precision blue-light depolarization, enabling causal circuit dissection
+          - Pure pharmacological inactivation of neurons via systemic drugs
+          - Genetic ablation by inducible cell death without temporal control
+          - Magnetic-field-only neuromodulation without genetic targeting
+        correctAnswer: Channelrhodopsin-2 from algae expressed in neurons enables millisecond-precision blue-light depolarization, enabling causal circuit dissection
+        rationale:
+          pt: 'Optogenetics origin (Boyden Zhang Bamberg Nagel Deisseroth Stanford Nat Neurosci 2005): Channelrhodopsin-2 (ChR2) — algal opsin Chlamydomonas reinhardtii (Nagel/Hegemann discovered in 2002-2003) — light-gated cation channel. Expressed neurons via AAV → 470nm blue light → ms depolarization → action potentials. Causal dissection neural circuits. Subsequent: halorhodopsin (NpHR) yellow-light hyperpolarization, archaerhodopsin (Arch), red-shifted ReaChR/Chrimson, faster Chronos, anion channelrhodopsins iC1C2. Deisseroth + Boyden + Hegemann + Roska Brain Prize 2013, Nakasone Award 2010. Aplicações: behavior (lever press triggered ChR2 specific neurons), reward circuits, fear, locomotion, sleep. Translational: vision restoration (RST-001 GenSight Allergan PIONEER trial blind retinitis pigmentosa partial vision restored 2021). Foundational tool modern neuroscience.'
+          en: 'Optogenetics origin (Boyden Zhang Bamberg Nagel Deisseroth Stanford Nat Neurosci 2005): Channelrhodopsin-2 (ChR2) — algal opsin Chlamydomonas reinhardtii (Nagel/Hegemann discovered in 2002-2003) — light-gated cation channel. Expressed in neurons via AAV → 470nm blue light → ms depolarization → action potentials. Causal dissection of neural circuits. Subsequent: halorhodopsin (NpHR) yellow-light hyperpolarization, archaerhodopsin (Arch), red-shifted ReaChR/Chrimson, faster Chronos, anion channelrhodopsins iC1C2. Deisseroth + Boyden + Hegemann + Roska Brain Prize 2013, Nakasone Award 2010. Applications: behavior (lever press triggered ChR2 specific neurons), reward circuits, fear, locomotion, sleep. Translational: vision restoration (RST-001 GenSight Allergan PIONEER trial blind retinitis pigmentosa partial vision restored 2021). Foundational tool of modern neuroscience.'
+        objectives: [Optogenetics]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: DREADDs / chemogenetics (Roth/Armbruster PNAS 2007) approach é…
+          en: DREADDs / chemogenetics (Roth/Armbruster PNAS 2007) approach is…
+        choices:
+          - Engineered GPCRs activated only by inert small molecules (CNO, DCZ), allowing reversible long-timescale neuronal activation or silencing
+          - Channel proteins gated by ambient neurotransmitters without exogenous control
+          - Light-gated channels identical to optogenetics
+          - Permanent genetic ablation of targeted neurons
+        correctAnswer: Engineered GPCRs activated only by inert small molecules (CNO, DCZ), allowing reversible long-timescale neuronal activation or silencing
+        rationale:
+          pt: 'DREADDs (Designer Receptors Exclusively Activated by Designer Drugs, Armbruster Roth UNC PNAS 2007): mutated muscarinic receptors hM3Dq (Gq excitatory) e hM4Di (Gi inhibitory) — activated by clozapine-N-oxide (CNO) inert ligand não endogenous, não native receptor activation. Expressed targeted neurons via AAV/Cre. Hours-long activation/silencing (vs ms optogenetics). Deschloroclozapine DCZ (Nagai 2020) lower-dose alternative. Aplicações behavior: anxiety, addiction, sleep, feeding circuits. Concurrent: PSAMs (Magnus Sternson HHMI Janelia ionotropic chemogenetics). Limit: CNO sometimes back-metabolized clozapine real → confounds — DCZ avoids. Trade-off vs optogenetics: easier (no fiber implant), longer timescale, less precise temporally. Bryan Roth UNC PDSP database, NIMH PDSP screen. Combined optogenetics + DREADDs + Neuropixels modern circuit dissection.'
+          en: 'DREADDs (Designer Receptors Exclusively Activated by Designer Drugs, Armbruster Roth UNC PNAS 2007): mutated muscarinic receptors hM3Dq (Gq excitatory) and hM4Di (Gi inhibitory) — activated by clozapine-N-oxide (CNO) inert ligand not endogenous, no native receptor activation. Expressed in targeted neurons via AAV/Cre. Hours-long activation/silencing (vs ms optogenetics). Deschloroclozapine DCZ (Nagai 2020) lower-dose alternative. Applications behavior: anxiety, addiction, sleep, feeding circuits. Concurrent: PSAMs (Magnus Sternson HHMI Janelia ionotropic chemogenetics). Limit: CNO sometimes back-metabolized to clozapine in vivo → confounds — DCZ avoids. Trade-off vs optogenetics: easier (no fiber implant), longer timescale, less precise temporally. Bryan Roth UNC PDSP database, NIMH PDSP screen. Combined optogenetics + DREADDs + Neuropixels modern circuit dissection.'
+        objectives: [DREADDs]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Speech BCI 2023 (Willett/Henderson Stanford + Metzger/Chang UCSF Nature) breakthroughs foram…
+          en: 2023 speech BCI (Willett/Henderson Stanford + Metzger/Chang UCSF Nature) breakthroughs were…
+        choices:
+          - Real-time decoding of attempted speech from motor cortex neural activity at ~62-78 wpm via RNN/transformer language models, restoring communication in ALS
+          - Pure text-input keyboards without neural decoding
+          - Bulk EEG-based imagined-speech decoding at 5 wpm chance-level performance
+          - Audio playback of recorded patient voice without any decoding
+        correctAnswer: Real-time decoding of attempted speech from motor cortex neural activity at ~62-78 wpm via RNN/transformer language models, restoring communication in ALS
+        rationale:
+          pt: 'Speech BCI 2023: Willett Kunz Avansino Henderson Stanford Nature ago 2023 — ALS patient (Pat Bennett) com Utah arrays motor cortex articulatory areas → ~62 words-per-minute (wpm) via RNN decoder + 125k-word vocabulary language model. Companion paper Metzger Sun Card Anumanchipalli Moses Chang UCSF Nature ago 2023 — patient (Ann) ECoG grid (high-density 253 electrodes) sensorimotor cortex → ~78 wpm via transformer-based phoneme decoder + avatar facial movements + voice synthesis (pre-loss recordings). Both demonstrate real-time naturalistic communication restoration severe paralysis (ALS, brainstem stroke). Followup BCI Award 2023. Earlier Moses Chang 2021 NEJM 50-word vocabulary anarthria patient. Field rapid: ~6 wpm 2021 → ~78 wpm 2023 ~13x improvement 2 years. Hardware (channels) + algorithms (LLMs, larger speech models) co-driving. Translation FDA approval pathway 2024-2026 expected.'
+          en: '2023 speech BCI: Willett Kunz Avansino Henderson Stanford Nature Aug 2023 — ALS patient (Pat Bennett) with Utah arrays in motor cortex articulatory areas → ~62 words-per-minute (wpm) via RNN decoder + 125k-word vocabulary language model. Companion paper Metzger Sun Card Anumanchipalli Moses Chang UCSF Nature Aug 2023 — patient (Ann) ECoG grid (high-density 253 electrodes) sensorimotor cortex → ~78 wpm via transformer-based phoneme decoder + avatar facial movements + voice synthesis (pre-loss recordings). Both demonstrate real-time naturalistic communication restoration in severe paralysis (ALS, brainstem stroke). Followup BCI Award 2023. Earlier Moses Chang 2021 NEJM 50-word vocabulary anarthria patient. Field rapid: ~6 wpm 2021 → ~78 wpm 2023 ~13x improvement in 2 years. Hardware (channels) + algorithms (LLMs, larger speech models) co-driving. Translation FDA approval pathway 2024-2026 expected.'
+        objectives: [Speech BCI]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Functional ultrasound (fUS, Macé/Tanter Nature Methods 2011) é…
+          en: Functional ultrasound (fUS, Macé/Tanter Nature Methods 2011) is…
+        choices:
+          - Ultrasensitive Doppler ultrasound imaging cerebral blood volume changes ~100µm spatial / 100ms temporal resolution as proxy for neural activity
+          - X-ray-based brain imaging at micrometer resolution
+          - Magnetic field-based imaging like fMRI but invasive
+          - Electrophysiology recording of single neurons via piezo elements
+        correctAnswer: Ultrasensitive Doppler ultrasound imaging cerebral blood volume changes ~100µm spatial / 100ms temporal resolution as proxy for neural activity
+        rationale:
+          pt: 'Functional ultrasound (fUS, Macé Montaldo Cohen Baulac Fink Tanter Inserm/INSERM Paris Nat Methods 2011): plane-wave ultrasonography ultrahigh-framerate (~10kHz) → Doppler signal cerebral blood volume changes (CBV). Resolution ~100µm spatial × ~100ms temporal — between fMRI (mm-s) e two-photon (µm-ms intracellular). Hemodynamic proxy neural activity (similar BOLD fMRI). Applications: rodent brain through cranial window, neonatal humans through fontanelles (bedside imaging premature infants), intra-operative imaging tumor borders. Iconeus startup commercial fUS. Limitations: penetration ~5cm tissue, skull blocks adults — requires craniotomy ou ultrasound-transparent windows. Tanter Mickael Inserm pioneer + Mathieu Pernot. Combined with ultrasound contrast microbubbles → super-resolution ULM (~10µm). Recent: 2D → 3D volumetric matrix arrays.'
+          en: 'Functional ultrasound (fUS, Macé Montaldo Cohen Baulac Fink Tanter Inserm/INSERM Paris Nat Methods 2011): plane-wave ultrasonography at ultrahigh frame rate (~10 kHz) → Doppler signal of cerebral blood volume changes (CBV). Resolution ~100 µm spatial × ~100 ms temporal — between fMRI (mm-s) and two-photon (µm-ms intracellular). Hemodynamic proxy of neural activity (similar to BOLD fMRI). Applications: rodent brain through cranial window, neonatal humans through fontanelles (bedside imaging of premature infants), intraoperative imaging of tumor borders. Iconeus startup commercializes fUS. Limitations: penetration ~5 cm tissue, skull blocks adults — requires craniotomy or ultrasound-transparent windows. Tanter Mickael Inserm pioneer + Mathieu Pernot. Combined with ultrasound contrast microbubbles → super-resolution ULM (~10 µm). Recent: 2D → 3D volumetric matrix arrays.'
+        objectives: [Functional ultrasound]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Voltage indicators (GEVIs, ASAP/Voltron) advantage vs calcium indicators é…
+          en: Voltage indicators (GEVIs, ASAP/Voltron) advantage vs calcium indicators is…
+        choices:
+          - Direct millisecond readout of membrane potential including subthreshold and individual action potentials, vs slower indirect calcium proxy
+          - Slower kinetics suitable only for chronic months-long imaging
+          - Inability to detect any neuronal activity-related signal
+          - Only readable in invertebrate model organisms
+        correctAnswer: Direct millisecond readout of membrane potential including subthreshold and individual action potentials, vs slower indirect calcium proxy
+        rationale:
+          pt: 'Genetically encoded voltage indicators (GEVIs): direct membrane potential readout — kinetics ms scale single APs, subthreshold dynamics. Vs GECIs (genetically encoded Ca²⁺ indicators GCaMP series Kim 2001 → GCaMP8 2023): slower (~50-200ms decay), report Ca²⁺ rise after APs (firing-rate proxy not voltage), miss subthreshold. ASAP family (Pichler St-Pierre Lin Ng Lin Cohen Lavis Andreasson Kim Lin Schnitzer Stanford Nat Methods 2014 → ASAP3 2019 ASAP4 2021): GFP-based voltage-sensitive fluorescent. Voltron (Abdelfattah Janelia 2019 Science): rhodopsin-based bright photoactivatable, hybrid via JF dye fluorophore-binding domain. paQuasAr (Hochbaum Cohen 2014). Applications: in vivo imaging fly brain, mouse cortex, voltage-spike trains directly. Trade-off photostability brightness signal-to-noise — historically GEVIs lagged GECIs but rapidly closing.'
+          en: 'Genetically encoded voltage indicators (GEVIs): direct membrane-potential readout — ms-scale kinetics for single APs, subthreshold dynamics. Vs GECIs (genetically encoded Ca²⁺ indicators GCaMP series Kim 2001 → GCaMP8 2023): slower (~50-200 ms decay), reports Ca²⁺ rise after APs (firing-rate proxy not voltage), miss subthreshold. ASAP family (Pichler St-Pierre Lin Ng Lin Cohen Lavis Andreasson Kim Lin Schnitzer Stanford Nat Methods 2014 → ASAP3 2019 ASAP4 2021): GFP-based voltage-sensitive fluorescent. Voltron (Abdelfattah Janelia 2019 Science): rhodopsin-based bright photoactivatable, hybrid via JF dye fluorophore-binding domain. paQuasAr (Hochbaum Cohen 2014). Applications: in vivo imaging of fly brain, mouse cortex, voltage spike trains directly. Trade-off photostability/brightness/signal-to-noise — historically GEVIs lagged GECIs but rapidly closing.'
+        objectives: [Voltage indicators]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Allen Brain Cell Atlas (BICCN consortium 2023 Nature suite) entrega é…
+          en: Allen Brain Cell Atlas (BICCN consortium 2023 Nature suite) deliverable is…
+        choices:
+          - Multimodal mouse whole-brain census integrating scRNA-seq, scATAC-seq, MERFISH spatial, projections, and morphology across ~5300 cell types
+          - Bulk RNA-seq of dissected brain regions without single-cell or spatial data
+          - Connectome at synapse resolution covering the entire mouse brain
+          - Functional imaging atlas without molecular cell-type information
+        correctAnswer: Multimodal mouse whole-brain census integrating scRNA-seq, scATAC-seq, MERFISH spatial, projections, and morphology across ~5300 cell types
+        rationale:
+          pt: 'BICCN BRAIN Initiative Cell Census Network: NIH-funded 2017+ multi-institute. Outputs incluem 2021 motor cortex Nature suite (~17 papers); 2023 Allen Brain Cell Atlas mouse whole-brain (Yao Zhang van Velthoven 2023 Nature 11 papers): ~5300 cell types definidos via scRNA-seq (~7M cells), scATAC-seq, MERFISH spatial (transcriptomic-defined cells in situ), Patch-seq morphology + electrophysiology, projection types Cre-driver lines. Hierarchical taxonomy: classes → subclasses → supertypes → clusters. Open data + analysis tools Allen Brain Knowledge Platform. Companion human MTG Hodge 2019, primate atlas Bakken 2021. Paradigma cell-type-centric neuroscience — neurons defined by molecular signatures rather than gross anatomy/electrophysiology only. Foundation translational research, AI/comp neuro, drug discovery.'
+          en: 'BICCN BRAIN Initiative Cell Census Network: NIH-funded 2017+ multi-institute. Outputs include 2021 motor cortex Nature suite (~17 papers); 2023 Allen Brain Cell Atlas mouse whole-brain (Yao Zhang van Velthoven 2023 Nature 11 papers): ~5300 cell types defined via scRNA-seq (~7M cells), scATAC-seq, MERFISH spatial (transcriptomically-defined cells in situ), Patch-seq morphology + electrophysiology, projection types via Cre-driver lines. Hierarchical taxonomy: classes → subclasses → supertypes → clusters. Open data + analysis tools at Allen Brain Knowledge Platform. Companion human MTG Hodge 2019, primate atlas Bakken 2021. Paradigm cell-type-centric neuroscience — neurons defined by molecular signatures rather than gross anatomy/electrophysiology alone. Foundation for translational research, AI/comp neuro, drug discovery.'
+        objectives: [Allen Brain Cell Atlas]
+target: 20
