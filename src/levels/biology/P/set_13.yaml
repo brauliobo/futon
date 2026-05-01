@@ -1,0 +1,344 @@
+title:
+  pt: Biologia Evo-Devo e Toolkit Genético
+  en: Evolutionary Developmental Biology and Genetic Toolkit
+level: P
+subject: biology
+objectives:
+  - Compreender genes Hox e Bauplan
+  - Reconhecer toolkit conservado (PAX, MyoD, eyeless)
+  - Identificar restrição vs flexibilidade evolutiva
+  - Avaliar Cambriano e novidades evolutivas
+difficulty: 5
+authorNotes: |
+  Evo-devo. Sean Carroll Wisconsin. Endless Forms Most Beautiful 2005. Hox cluster discovery
+  (Lewis, Nüsslein-Volhard, Wieschaus 1995 Nobel). Edwin Lewis bithorax 1978. Christiane
+  Nüsslein-Volhard, Eric Wieschaus drosophila screens. Walter Gehring eyeless = Pax6 1995.
+  MyoD (Weintraub) muscle. Hox colinearity. Cambrian explosion Burgess shale (Walcott).
+  Knoll, Marshall. Atavism whale legs. CRISPR in non-model species. Gerhart-Kirschner
+  facilitated variation 2005.
+example:
+  question:
+    pt: Os genes Hox são notáveis em desenvolvimento porque…
+    en: Hox genes are notable in development because they…
+  choices:
+    - Especificam identidade de segmentos ao longo do eixo anteroposterior, com colinearidade espacial e temporal
+    - Determinam apenas cor de pelagem
+    - Apenas em insetos sem aplicação a vertebrados
+    - Sem qualquer função em organização corporal
+  correctAnswer: Especificam identidade de segmentos ao longo do eixo anteroposterior, com colinearidade espacial e temporal
+  rationale:
+    pt: Hox genes (Edwin Lewis 1978 bithorax; Nobel 1995 com Nüsslein-Volhard/Wieschaus): cluster genômico onde ordem física = ordem expressão ao longo do corpo. Conservados de mosca a humano. Mutações causam homeoses (transformação de segmento). Drosophila Antennapedia: pernas no lugar de antenas.
+    en: Hox genes (Edwin Lewis 1978 bithorax; 1995 Nobel with Nüsslein-Volhard/Wieschaus): genomic cluster where physical order = expression order along body. Conserved from fly to human. Mutations cause homeoses (segment transformation). Drosophila Antennapedia: legs in place of antennae.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Toolkit conservado
+      en: Page 1 — Conserved toolkit
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Pax6 (eyeless em Drosophila) demonstra…
+          en: Pax6 (eyeless in Drosophila) demonstrates…
+        choices:
+          - Conservação profunda: gene mestre de desenvolvimento ocular de moscas a vertebrados
+          - Apenas em vertebrados
+          - Apenas mutação rara sem importância
+          - Substituição por outro gene em insetos
+        correctAnswer: Conservação profunda: gene mestre de desenvolvimento ocular de moscas a vertebrados
+        rationale:
+          pt: Walter Gehring (Cell 1995): expressão ectópica de eyeless (mosca) em pernas → olhos ectópicos. Pax6 mamífero substitui eyeless funcionalmente. Mutações Pax6: aniridia em humanos, Small eye em rato. Família PAX (1-9) tem outros papéis (PAX3 sangue, PAX5 B-cell). Toolkit conservado paradigmatico.
+          en: Walter Gehring (Cell 1995): ectopic eyeless (fly) expression in legs → ectopic eyes. Mammalian Pax6 functionally substitutes eyeless. Pax6 mutations: aniridia in humans, Small eye in mouse. PAX family (1-9) has other roles (PAX3 blood, PAX5 B-cell). Paradigmatic conserved toolkit.
+        objectives: [Pax6]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "colinearidade" Hox refere-se a…
+          en: Hox "colinearity" refers to…
+        choices:
+          - Ordem 5'-3' do cluster Hox = ordem espacial e temporal de expressão no embrião
+          - Apenas semelhança de sequência sem padrão
+          - Localização cromossômica aleatória
+          - Apenas em invertebrados
+        correctAnswer: Ordem 5'-3' do cluster Hox = ordem espacial e temporal de expressão no embrião
+        rationale:
+          pt: Colinearidade espacial: gene 3' expressa anteriormente, 5' posteriormente. Temporal: 3' expressa primeiro. Em vertebrados, 4 paralogous clusters HoxA/B/C/D (duplicação ancestral). Mecanismo: organização cromatínica progressiva (heterocromatin → euchromatin via PRC).
+          en: Colinearity spatial: 3' gene expressed anteriorly, 5' posteriorly. Temporal: 3' expressed first. In vertebrates, 4 paralogous clusters HoxA/B/C/D (ancestral duplication). Mechanism: progressive chromatin organization (heterochromatin → euchromatin via PRC).
+        objectives: [Hox colinearity]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Sean Carroll (Wisconsin) popularizou em "Endless Forms Most Beautiful" (2005) o conceito que…
+          en: Sean Carroll (Wisconsin) popularized in "Endless Forms Most Beautiful" (2005) the concept that…
+        choices:
+          - Diferenças morfológicas entre espécies frequentemente são via mudanças cis-regulatórias, não em proteínas
+          - Mudanças apenas em genes estruturais explicam morfologia
+          - Apenas em invertebrados
+          - Sem qualquer relação com regulação
+        correctAnswer: Diferenças morfológicas entre espécies frequentemente são via mudanças cis-regulatórias, não em proteínas
+        rationale:
+          pt: Carroll/Stern: divergência morfológica frequentemente reside em enhancers (regiões cis), não em sequência proteica. Exemplos: pigmentação Drosophila (Yellow enhancer); Pitx1 em peixe stickleback (perda enhancer membro pélvico). Diferentemente do dogma "mutação proteica". Modular: muda fenótipo sem efeito pleiotrópico devastador.
+          en: Carroll/Stern: morphological divergence often resides in enhancers (cis regions), not in protein sequence. Examples: Drosophila pigmentation (Yellow enhancer); Pitx1 in stickleback fish (loss of pelvic-limb enhancer). Differs from "protein mutation" dogma. Modular: changes phenotype without devastating pleiotropic effect.
+        objectives: [cis-regulatory]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "Cambrian explosion" (~540 Ma) surpreende porque…
+          en: The "Cambrian explosion" (~540 Ma) is surprising because it…
+        choices:
+          - Maioria dos filos animais aparece em ~20 Myr; Burgess Shale (Walcott 1909) preserva fauna
+          - Eventos lentos sem qualquer rapidez relativa
+          - Apenas em ambiente terrestre
+          - Sem qualquer fóssil
+        correctAnswer: Maioria dos filos animais aparece em ~20 Myr; Burgess Shale (Walcott 1909) preserva fauna
+        rationale:
+          pt: Cambriano: 13 dos ~30 filos animais conhecidos aparecem em ~20 milhões de anos. Burgess Shale (BC Canada, Walcott 1909, Whittington 1970s) preserva tecidos moles. Causas debatidas: O2 atmosférico, predação driver evolutiva, toolkit Hox/PAX já preexistente, calcificação. Knoll, Marshall, Erwin lideram.
+          en: Cambrian: 13 of ~30 known animal phyla appear in ~20 million years. Burgess Shale (BC Canada, Walcott 1909, Whittington 1970s) preserves soft tissues. Causes debated: atmospheric O2, predation as evolutionary driver, pre-existing Hox/PAX toolkit, calcification. Knoll, Marshall, Erwin lead.
+        objectives: [Cambrian]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "Bauplan" (plano corporal) em evo-devo refere-se a…
+          en: "Bauplan" (body plan) concept in evo-devo refers to…
+        choices:
+          - Arquitetura geral compartilhada por filo (e.g. simetria bilateral, segmentação) preservada por evolução
+          - Apenas tamanho corporal sem outros aspectos
+          - Apenas cor da pelagem
+          - Sem qualquer base genética
+        correctAnswer: Arquitetura geral compartilhada por filo (e.g. simetria bilateral, segmentação) preservada por evolução
+        rationale:
+          pt: Bauplan (Carl Gegenbaur, 1859): plano arquitetural conservado em filo. Bilateria: simetria, mesoderme, sistema nervoso central. Manutenção: toolkit Hox conservado limita variação aceitável. Disrupção tipicamente letal — restringe espaço evolutivo (constraint). Charles Darwin "endless forms" deve respeitar Bauplan.
+          en: Bauplan (Carl Gegenbaur, 1859): conserved architectural plan within phylum. Bilateria: symmetry, mesoderm, central nervous system. Maintenance: conserved Hox toolkit limits acceptable variation. Disruption typically lethal — constrains evolutionary space. Charles Darwin's "endless forms" must respect Bauplan.
+        objectives: [Bauplan]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em Drosophila, Nüsslein-Volhard/Wieschaus (Nobel 1995) screens identificaram genes de…
+          en: In Drosophila, Nüsslein-Volhard/Wieschaus (1995 Nobel) screens identified genes of…
+        choices:
+          - Padronização anteroposterior (gap, pair-rule, segment polarity, homeotic) por mutagênese sistemática
+          - Apenas pigmentação ocular sem padronização
+          - Apenas viabilidade adulta
+          - Apenas comportamento sexual
+        correctAnswer: Padronização anteroposterior (gap, pair-rule, segment polarity, homeotic) por mutagênese sistemática
+        rationale:
+          pt: Heidelberg screens 1980s: Nüsslein-Volhard/Wieschaus mutagenizaram ~10k linhagens, identificando ~120 genes essenciais. Gap genes (Krüppel, hunchback) → 4 segmentos largos → pair-rule (eve, ftz) → 14 segmentos → segment polarity (engrailed, hh, wg) → polaridade individual. Cascata hierárquica.
+          en: Heidelberg 1980s screens: Nüsslein-Volhard/Wieschaus mutagenized ~10k lines, identifying ~120 essential genes. Gap genes (Krüppel, hunchback) → 4 broad segments → pair-rule (eve, ftz) → 14 segments → segment polarity (engrailed, hh, wg) → individual polarity. Hierarchical cascade.
+        objectives: [Heidelberg screens]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "atavismo" (e.g. baleia com membros posteriores) é interpretado como…
+          en: "Atavism" (e.g., whale with hindlimbs) is interpreted as…
+        choices:
+          - Reativação de toolkit ancestral suprimido, evidenciando conservação latente
+          - Mutação aleatória sem padrão
+          - Apenas cosmética
+          - Sem qualquer base evolutiva
+        correctAnswer: Reativação de toolkit ancestral suprimido, evidenciando conservação latente
+        rationale:
+          pt: Cetáceos perderam membros posteriores ~50 Ma, mas raros indivíduos têm pernas vestigiais externas. Genes (Sonic Hedgehog regulators) inativos mas ainda presentes. Atavismos similares: caudas em humanos, dentes em pássaros (engenharia possível ressurrecting). Demonstram que evolução suprime ao invés de deletar.
+          en: Cetaceans lost hindlimbs ~50 Ma, but rare individuals have external vestigial legs. Genes (Sonic Hedgehog regulators) inactive but still present. Similar atavisms: human tails, bird teeth (possibly resurrectable engineering). Demonstrate evolution suppresses rather than deletes.
+        objectives: [Atavismo]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Sticklebacks (Pungitius) e a perda de membros pélvicos (Shapiro/Kingsley) é exemplo emblemático de…
+          en: Sticklebacks (Pungitius) and pelvic-limb loss (Shapiro/Kingsley) is iconic example of…
+        choices:
+          - Mudança regulatória cis: deleção de enhancer Pitx1 específico para membro pélvico, sem afetar outras funções
+          - Mudança proteica em Pitx1
+          - Apenas seleção sexual
+          - Apenas mutação ambiental
+        correctAnswer: Mudança regulatória cis: deleção de enhancer Pitx1 específico para membro pélvico, sem afetar outras funções
+        rationale:
+          pt: Shapiro/Kingsley (Nature 2004): populações de stickleback em lagos (sem predadores aquáticos) perderam pelvic spines vs marinhas (com predadores). Mutação convergente em deleções de PelA enhancer de Pitx1. Pitx1 proteína mantida (necessária em outros lugares). Modelo paradigma evo-devo cis.
+          en: Shapiro/Kingsley (Nature 2004): stickleback lake populations (no aquatic predators) lost pelvic spines vs marine (with predators). Convergent mutations: PelA enhancer deletions of Pitx1. Pitx1 protein maintained (needed elsewhere). Paradigm evo-devo cis model.
+        objectives: [Stickleback Pitx1]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "facilitated variation" (Kirschner/Gerhart 2005) propõe que evolução é facilitada por…
+          en: "Facilitated variation" (Kirschner/Gerhart 2005) proposes evolution is facilitated by…
+        choices:
+          - Toolkit conservado modular permite mudanças regulatórias com grande efeito mas baixa pleiotropia
+          - Apenas mutação aleatória pura sem facilitação
+          - Substituição completa de qualquer toolkit
+          - Apenas em organismos modelo de laboratório
+        correctAnswer: Toolkit conservado modular permite mudanças regulatórias com grande efeito mas baixa pleiotropia
+        rationale:
+          pt: Kirschner/Gerhart (2005 "The Plausibility of Life"): organismos têm "core processes" conservados (transcripcion factors, signaling, cytoskeleton) que são "weakly linked" — mudar um pouco produz variação útil sem destruir tudo. Acelera evolução. Conexão com Carroll cis-regulatório, Wagner robustez, modularidade.
+          en: Kirschner/Gerhart (2005 "The Plausibility of Life"): organisms have conserved "core processes" (transcription factors, signaling, cytoskeleton) that are "weakly linked" — small changes produce useful variation without destroying all. Speeds evolution. Connects to Carroll cis-regulation, Wagner robustness, modularity.
+        objectives: [Facilitated variation]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "geneticization" of evo-devo via CRISPR em organismos não-modelo (por exemplo Hofmann em sticklebacks, Patel em butterflies) permitiu…
+          en: "Geneticization" of evo-devo via CRISPR in non-model organisms (e.g., Hofmann in sticklebacks, Patel in butterflies) enabled…
+        choices:
+          - Testar funcionalmente genes candidatos identificados por GWAS comparativos em diversa fauna/flora
+          - Substituir totalmente Drosophila como modelo
+          - Apenas observação sem manipulação
+          - Apenas em mamíferos
+        correctAnswer: Testar funcionalmente genes candidatos identificados por GWAS comparativos em diversa fauna/flora
+        rationale:
+          pt: CRISPR-Cas9 democratizou edição em organismos antes intratáveis: borboletas (Patel WntA), squamados (Wagner reptile), insetos não-Drosophila, marinhos (Sebé-Pedrós cnidários). Combina-se com genomas (VGP, Earth BioGenome) para testar hipóteses convergência, novidade evolutiva, em qualquer espécie.
+          en: CRISPR-Cas9 democratized editing in previously intractable organisms: butterflies (Patel WntA), squamates (Wagner reptile), non-Drosophila insects, marine (Sebé-Pedrós cnidarians). Combined with genomes (VGP, Earth BioGenome) to test convergence and evolutionary novelty hypotheses in any species.
+        objectives: [CRISPR non-model]
+  - title:
+      pt: Página 2 — Aplicações e exemplos
+      en: Page 2 — Applications and examples
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A inovação evolutiva "membros tetrapodes" surgiu de…
+          en: The evolutionary innovation "tetrapod limbs" arose from…
+        choices:
+          - Modificação de fins peixe sarcopterígios via remodelação de toolkit (Sonic Hedgehog, Hox13, BMP)
+          - Origem totalmente nova sem precedente
+          - Apenas em humanos
+          - Sem qualquer mecanismo molecular
+        correctAnswer: Modificação de fins peixe sarcopterígios via remodelação de toolkit (Sonic Hedgehog, Hox13, BMP)
+        rationale:
+          pt: Tetrapodes evoluíram de peixes lobe-finned (~400 Ma): Tiktaalik (Shubin 2006) representa transição. Membro = padrão "rod with branches" mantém Hox13 em distal, SHH em ZPA (Zone of Polarizing Activity), BMP em interdigital. Estrutura pre-existente em peixes; reorganização cis regulatória produziu dedos.
+          en: Tetrapods evolved from lobe-finned fish (~400 Ma): Tiktaalik (Shubin 2006) represents transition. Limb = "rod with branches" pattern maintains Hox13 in distal, SHH in ZPA (Zone of Polarizing Activity), BMP in interdigital. Pre-existing structure in fish; cis-regulatory reorganization produced digits.
+        objectives: [Membros tetrapodes]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "neoteny" em humanos (Gould 1977) propõe que…
+          en: "Neoteny" in humans (Gould 1977) proposes that…
+        choices:
+          - Adultos retêm traços juvenis; cabeça grande, face plana, dependência prolongada — aceleração mental
+          - Aceleração de envelhecimento
+          - Apenas em mulheres
+          - Sem qualquer base biológica
+        correctAnswer: Adultos retêm traços juvenis; cabeça grande, face plana, dependência prolongada — aceleração mental
+        rationale:
+          pt: Stephen Jay Gould "Ontogeny and Phylogeny" 1977: humanos têm proporções pedomórficas vs chimpanzé adulto (face plana, cérebro grande relativo a corpo). Hipótese: heterocronia retardando maturação favorece aprendizagem/cultura prolongada. Sub-domínios (FOXP2 fala, MECP2 desenvolvimento neural) sob seleção positiva humana.
+          en: Stephen Jay Gould "Ontogeny and Phylogeny" 1977: humans have paedomorphic proportions vs adult chimp (flat face, large brain relative to body). Hypothesis: heterochrony delaying maturation favors prolonged learning/culture. Subdomains (FOXP2 speech, MECP2 neural development) under positive human selection.
+        objectives: [Neoteny]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Snakes (Cobras) perderam membros — mecanismo decifrado por…
+          en: Snakes (cobras) lost limbs — mechanism deciphered by…
+        choices:
+          - Mutações em ZRS enhancer de Sonic Hedgehog (Kvon, Lopez-Rios 2016)
+          - Mutações em SHH proteína
+          - Apenas perda completa de Hox
+          - Apenas processo aleatório
+        correctAnswer: Mutações em ZRS enhancer de Sonic Hedgehog (Kvon, Lopez-Rios 2016)
+        rationale:
+          pt: Kvon/Lopez-Rios (Cell 2016): cobras têm enhancer ZRS (Zone of polarizing activity Regulatory Sequence) de Shh com mutações pontuais; reduzido drasticamente em pythons, completamente desfuncional em cobras. Substituir ZRS humano em rato cobra recupera membro parcial. Cis-regulatório clássico.
+          en: Kvon/Lopez-Rios (Cell 2016): snakes have Sonic Hedgehog ZRS enhancer (Zone of polarizing activity Regulatory Sequence) with point mutations; severely reduced in pythons, completely non-functional in cobras. Substituting snake ZRS with human one in mouse recovers partial limb. Classical cis-regulatory.
+        objectives: [Snake ZRS]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em vertebrados, "duplicação 2R" (whole genome duplication) ocorreu…
+          en: In vertebrates, "2R duplication" (whole genome duplication) occurred…
+        choices:
+          - 2 vezes no ancestral vertebrado, gerando ~4 cópias de muitos genes (incluindo 4 clusters Hox)
+          - Apenas uma vez
+          - 10 vezes consecutivas
+          - Sem qualquer duplicação
+        correctAnswer: 2 vezes no ancestral vertebrado, gerando ~4 cópias de muitos genes (incluindo 4 clusters Hox)
+        rationale:
+          pt: 2R hypothesis (Ohno 1970): 2 rounds de WGD no ancestral vertebrado (~520 Ma). Apoio: 4 clusters Hox (HoxA/B/C/D), 4 famílias dishevelled, etc. Salmon/Trout adicionalmente teve 3R/4R. Plantas têm WGD frequentes (Arabidopsis 3 rounds, soybean recente). Material para inovação evolutiva.
+          en: 2R hypothesis (Ohno 1970): 2 rounds of WGD in vertebrate ancestor (~520 Ma). Support: 4 Hox clusters (HoxA/B/C/D), 4 dishevelled families, etc. Salmon/trout additionally had 3R/4R. Plants have frequent WGDs (Arabidopsis 3 rounds, recent soybean). Material for evolutionary innovation.
+        objectives: [2R duplication]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "deep homology" (Shubin/Tabin/Carroll 1997) refere-se a…
+          en: "Deep homology" (Shubin/Tabin/Carroll 1997) refers to…
+        choices:
+          - Estruturas com função similar usando o mesmo toolkit genético em organismos divergentes (eyes Pax6, hearts Nkx2.5)
+          - Apenas semelhança morfológica sem genética
+          - Apenas em humanos
+          - Sem qualquer base molecular
+        correctAnswer: Estruturas com função similar usando o mesmo toolkit genético em organismos divergentes (eyes Pax6, hearts Nkx2.5)
+        rationale:
+          pt: Deep homology: olhos de mosca, mamífero, lula são estruturalmente diferentes mas todos recrutam Pax6. Corações de mosca/mamífero usam Nkx2.5/tinman. Membros e fins de peixe partilham toolkit (Hox, BMP). Conceito: convergência funcional pode usar componentes ancestrais, "evolutionary tinkering" (Jacob).
+          en: Deep homology: fly, mammal, squid eyes are structurally different but all recruit Pax6. Fly/mammal hearts use Nkx2.5/tinman. Limbs and fish fins share toolkit (Hox, BMP). Concept: functional convergence may use ancestral components, "evolutionary tinkering" (Jacob).
+        objectives: [Deep homology]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Borboletas e seu padrão de asa (Heliconius, Patel) é exemplo de…
+          en: Butterflies and wing pattern (Heliconius, Patel) is an example of…
+        choices:
+          - Mimetismo Mülleriano + bases moleculares (cortex, optix, WntA) controlando padrões miméticos
+          - Apenas plumagem ornamental
+          - Apenas reprodução isolada
+          - Sem qualquer mecanismo genético
+        correctAnswer: Mimetismo Mülleriano + bases moleculares (cortex, optix, WntA) controlando padrões miméticos
+        rationale:
+          pt: Heliconius (Heliconiini): radiações sympatric com mimetismo Mülleriano (espécies impalatáveis convergem em sinal aposemático). Loci genéticos: optix (vermelho), WntA (preto), cortex (amarelo). Mavarez/Jiggins/Patel/McMillan caracterizaram. Hibridização interespecífica entre H. melpomene e cydno cria "supergenes" miméticos.
+          en: Heliconius (Heliconiini): sympatric radiations with Müllerian mimicry (unpalatable species converge on aposematic signal). Genetic loci: optix (red), WntA (black), cortex (yellow). Mavarez/Jiggins/Patel/McMillan characterized. Interspecific hybridization between H. melpomene and cydno creates mimetic "supergenes".
+        objectives: [Heliconius]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O fenômeno "evolutionary novelty" (e.g. asas de insetos, paquidermos com tromba) é desafio porque…
+          en: "Evolutionary novelty" (e.g., insect wings, pachyderm trunks) is a challenge because…
+        choices:
+          - Estruturas qualitativamente novas exigem explicação além de seleção gradual sobre traços pré-existentes
+          - Sem qualquer dificuldade conceitual
+          - Apenas em vertebrados
+          - Apenas em fungos
+        correctAnswer: Estruturas qualitativamente novas exigem explicação além de seleção gradual sobre traços pré-existentes
+        rationale:
+          pt: Novelties (Müller/Wagner 1991): "qualitative" — não é só variação quantitativa. Asas de insetos: hipótese branchial (gill-derived) ou pleural. Tromba de elefante: lábio + nariz fundidos. Marcus Jones/Nadia Beck conduzem evo-devo das novidades. Mecanismos: cooptação, duplicação + neofuncionalização, novelas combinações.
+          en: Novelties (Müller/Wagner 1991): "qualitative" — not just quantitative variation. Insect wings: branchial (gill-derived) or pleural hypothesis. Elephant trunk: lip + nose fused. Marcus Jones/Nadia Beck do novelty evo-devo. Mechanisms: cooption, duplication + neofunctionalization, novel combinations.
+        objectives: [Novelty]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em desenvolvimento, "morfogênios" (Wolpert 1969) estabelecem padrões via…
+          en: In development, "morphogens" (Wolpert 1969) establish patterns via…
+        choices:
+          - Gradientes de concentração que ativam genes target em diferentes thresholds posicionais
+          - Apenas distribuição uniforme sem gradiente
+          - Apenas movimento celular ativo
+          - Sem qualquer base molecular
+        correctAnswer: Gradientes de concentração que ativam genes target em diferentes thresholds posicionais
+        rationale:
+          pt: Wolpert "French Flag model": gradiente de morfogênio (alto-médio-baixo) → 3 zonas. Exemplos: Bicoid em Drosophila (anterior), SHH no membro tetrápode (ZPA). Decapentaplegic, Wnt, BMP, FGF são morfogênios. Recentemente refinado: dynamics (não só steady state), feedback, cell movement.
+          en: Wolpert "French Flag model": morphogen gradient (high-mid-low) → 3 zones. Examples: Bicoid in Drosophila (anterior), SHH in tetrapod limb (ZPA). Decapentaplegic, Wnt, BMP, FGF are morphogens. Recently refined: dynamics (not just steady state), feedback, cell movement.
+        objectives: [Morfogênios]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em cnidários (Hydra), o toolkit Wnt/β-catenina foi descoberto controlando…
+          en: In cnidarians (Hydra), Wnt/β-catenin toolkit was discovered controlling…
+        choices:
+          - Eixo oral-aboral, com Wnt na "head organizer", paradigma para tetrápodos depois
+          - Apenas reprodução assexuada
+          - Apenas regeneração de tentáculos sem padrão
+          - Sem qualquer aplicação a vertebrados
+        correctAnswer: Eixo oral-aboral, com Wnt na "head organizer", paradigma para tetrápodos depois
+        rationale:
+          pt: Holstein/Bode/Galliot: Wnt em Hydra organiza eixo oral. Conservada em cnidários e bilaterians. Originou conceito moderno de "primary axis induction" via Wnt. β-catenin maternal em vertebrados estabelece "Spemann organizer" — analogous deeply to Hydra. Cnidários: linha de pesquisa para origens da Bauplan animal.
+          en: Holstein/Bode/Galliot: Wnt in Hydra organizes oral axis. Conserved in cnidarians and bilaterians. Originated modern concept of "primary axis induction" via Wnt. Maternal β-catenin in vertebrates establishes "Spemann organizer" — deeply analogous to Hydra. Cnidarians: research line for origins of animal Bauplan.
+        objectives: [Hydra Wnt]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "Spemann organizer" (1924, Nobel 1935) demonstrou…
+          en: The "Spemann organizer" (1924, 1935 Nobel) demonstrated…
+        choices:
+          - Transplante de "lábio dorsal blastóporo" induz eixo secundário em embrião receptor
+          - Sem qualquer indução em embriões
+          - Apenas mutações genéticas
+          - Apenas em mamíferos
+        correctAnswer: Transplante de "lábio dorsal blastóporo" induz eixo secundário em embrião receptor
+        rationale:
+          pt: Hans Spemann + Hilde Mangold 1924 (Mangold morreu antes do Nobel 1935): embrião salamandra com transplante de dorsal blastopore lip à barriga produz embrião gêmeo siamês. Mostrou "indução": uma região controla destino de outra. Identificação molecular décadas depois: Chordin, Noggin, Goosecoid. Protótipo de "organizador" embrionário.
+          en: Hans Spemann + Hilde Mangold 1924 (Mangold died before 1935 Nobel): salamander embryo with dorsal blastopore lip transplanted to belly produces conjoined twin embryo. Showed "induction": one region controls another's fate. Molecular identification decades later: Chordin, Noggin, Goosecoid. Prototype of embryonic "organizer".
+        objectives: [Spemann]
+target: 20
