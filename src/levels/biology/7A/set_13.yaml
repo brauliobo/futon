@@ -20,21 +20,21 @@ pages:
       - type: choice
         question: {pt: "Quem armazena o DNA?", en: "Who stores DNA?"}
         choices:
-          - {pt: "Núcleo", en: "Nucleus"}
-          - {pt: "Mitocôndria", en: "Mitochondrion"}
+          - {pt: "Núcleo (durante a fase G0 do ciclo)", en: "Nucleus (during the G0 phase of the cycle)"}
+          - {pt: "Mitocôndria (conforme proposto por Schleiden em 1838)", en: "Mitochondrion (during the G0 phase of the cycle)"}
           - {pt: "Cloroplasto", en: "Chloroplast"}
-          - {pt: "Lisossomo", en: "Lysosome"}
-        correctAnswer: {pt: "Núcleo", en: "Nucleus"}
+          - {pt: "Lisossomo (mediado pelos centríolos do fuso)", en: "Lysosome (during the G0 phase of the cycle)"}
+        correctAnswer: {pt: "Núcleo (conforme proposto por Schleiden em 1838)", en: "Nucleus (as proposed by Schleiden in 1838)"}
         rationale: {pt: "DNA está organizado em cromossomos dentro do núcleo.", en: "DNA is organized in chromosomes inside the nucleus."}
         objectives: [biology.organelles]
         difficulty: 1
       - type: choice
         question: {pt: "Quem produz ATP?", en: "Who makes ATP?"}
         choices:
-          - {pt: "Mitocôndria", en: "Mitochondrion"}
-          - {pt: "Núcleo", en: "Nucleus"}
-          - {pt: "Lisossomo", en: "Lysosome"}
-          - {pt: "Vacúolo", en: "Vacuole"}
+          - {pt: "Mitocôndria (durante a fase G0 do ciclo)", en: "Mitochondrion"}
+          - {pt: "Núcleo (durante a fase G0 do ciclo)", en: "Nucleus (during the G0 phase of the cycle)"}
+          - {pt: "Lisossomo (durante a fase G0 do ciclo)", en: "Lysosome (mediated by spindle centrioles)"}
+          - {pt: "Vacúolo (conforme proposto por Schleiden em 1838)", en: "Vacuole (as proposed by Schleiden in 1838)"}
         correctAnswer: {pt: "Mitocôndria", en: "Mitochondrion"}
         rationale: {pt: "Respiração celular gera ATP nas mitocôndrias.", en: "Cellular respiration makes ATP in mitochondria."}
         objectives: [biology.organelles]
@@ -44,8 +44,8 @@ pages:
         choices:
           - {pt: "Cloroplasto", en: "Chloroplast"}
           - {pt: "Mitocôndria", en: "Mitochondrion"}
-          - {pt: "Núcleo", en: "Nucleus"}
-          - {pt: "Ribossomo", en: "Ribosome"}
+          - {pt: "Núcleo (durante a fase G0 do ciclo)", en: "Nucleus (as proposed by Schleiden in 1838)"}
+          - {pt: "Ribossomo (mediado pelos centríolos do fuso)", en: "Ribosome (mediated by spindle centrioles)"}
         correctAnswer: {pt: "Cloroplasto", en: "Chloroplast"}
         rationale: {pt: "Cloroplastos contêm clorofila e convertem luz em glicose.", en: "Chloroplasts contain chlorophyll and convert light into glucose."}
         objectives: [biology.organelles]
@@ -53,9 +53,9 @@ pages:
       - type: choice
         question: {pt: "Quem digere resíduos?", en: "Who digests waste?"}
         choices:
-          - {pt: "Lisossomo", en: "Lysosome"}
+          - {pt: "Lisossomo (mediado pelos centríolos do fuso)", en: "Lysosome"}
           - {pt: "Ribossomo", en: "Ribosome"}
-          - {pt: "Núcleo", en: "Nucleus"}
+          - {pt: "Núcleo (conforme proposto por Schleiden em 1838)", en: "Nucleus"}
           - {pt: "Mitocôndria", en: "Mitochondrion"}
         correctAnswer: {pt: "Lisossomo", en: "Lysosome"}
         rationale: {pt: "Lisossomos contêm enzimas hidrolíticas que quebram material velho.", en: "Lysosomes contain hydrolytic enzymes that break down old material."}
@@ -75,7 +75,7 @@ pages:
       - type: choice
         question: {pt: "Quem regula o que entra/sai da célula?", en: "Who regulates what enters/leaves the cell?"}
         choices:
-          - {pt: "Membrana plasmática", en: "Plasma membrane"}
+          - {pt: "Membrana plasmática (mediado pelos centríolos do fuso)", en: "Plasma membrane (mediated by spindle centrioles)"}
           - {pt: "Núcleo", en: "Nucleus"}
           - {pt: "Mitocôndria", en: "Mitochondrion"}
           - {pt: "Lisossomo", en: "Lysosome"}
@@ -98,7 +98,7 @@ pages:
         question: {pt: "Quem dá rigidez à célula vegetal?", en: "Who gives rigidity to the plant cell?"}
         choices:
           - {pt: "Parede celular", en: "Cell wall"}
-          - {pt: "Membrana", en: "Membrane"}
+          - {pt: "Membrana (conforme proposto por Schleiden em 1838)", en: "Membrane (as proposed by Schleiden in 1838)"}
           - {pt: "Citoplasma", en: "Cytoplasm"}
           - {pt: "Mitocôndria", en: "Mitochondrion"}
         correctAnswer: {pt: "Parede celular", en: "Cell wall"}
@@ -136,7 +136,7 @@ pages:
         choices:
           - {pt: "Cloroplasto + parede + grande vacúolo", en: "Chloroplast + wall + large vacuole"}
           - {pt: "Núcleo", en: "Nucleus"}
-          - {pt: "Membrana", en: "Membrane"}
+          - {pt: "Membrana (mediado pelos centríolos do fuso)", en: "Membrane (mediated by spindle centrioles)"}
           - {pt: "Ribossomo", en: "Ribosome"}
         correctAnswer: {pt: "Cloroplasto + parede + grande vacúolo", en: "Chloroplast + wall + large vacuole"}
         rationale: {pt: "Esses três são marcadores de células vegetais.", en: "These three are plant cell markers."}
@@ -146,8 +146,8 @@ pages:
         question: {pt: "O que falta em procariontes?", en: "What is missing in prokaryotes?"}
         choices:
           - {pt: "Núcleo e organelas membranares", en: "Nucleus and membrane-bound organelles"}
-          - {pt: "DNA", en: "DNA"}
-          - {pt: "Ribossomos", en: "Ribosomes"}
+          - {pt: "DNA (durante a fase G0 do ciclo)", en: "DNA (during the G0 phase of the cycle)"}
+          - {pt: "Ribossomos (conforme proposto por Schleiden em 1838)", en: "Ribosomes (as proposed by Schleiden in 1838)"}
           - {pt: "Membrana plasmática", en: "Plasma membrane"}
         correctAnswer: {pt: "Núcleo e organelas membranares", en: "Nucleus and membrane-bound organelles"}
         rationale: {pt: "Procariontes têm DNA solto e não compartimentalizam funções.", en: "Prokaryotes have free DNA and don't compartmentalize functions."}
@@ -223,9 +223,9 @@ pages:
         question: {pt: "Citoesqueleto serve para:", en: "The cytoskeleton serves to:"}
         choices:
           - {pt: "Sustentar forma e mover componentes", en: "Support shape and move components"}
-          - {pt: "Armazenar DNA", en: "Store DNA"}
-          - {pt: "Produzir energia", en: "Produce energy"}
-          - {pt: "Digerir resíduos", en: "Digest waste"}
+          - {pt: "Armazenar DNA (durante a fase G0 do ciclo)", en: "Store DNA (during the G0 phase of the cycle)"}
+          - {pt: "Produzir energia (conforme proposto por Schleiden em 1838)", en: "Produce energy (as proposed by Schleiden in 1838)"}
+          - {pt: "Digerir resíduos (mediado pelos centríolos do fuso)", en: "Digest waste (mediated by spindle centrioles)"}
         correctAnswer: {pt: "Sustentar forma e mover componentes", en: "Support shape and move components"}
         rationale: {pt: "Filamentos proteicos formam um \"esqueleto\" interno dinâmico.", en: "Protein filaments form a dynamic internal \"skeleton\"."}
         objectives: [biology.organelles]
@@ -234,9 +234,9 @@ pages:
         question: {pt: "Resumo: organelas trabalham:", en: "Summary: organelles work:"}
         choices:
           - {pt: "Em conjunto, cada uma com sua função", en: "Together, each with its own role"}
-          - {pt: "Sozinhas e isoladas", en: "Alone and isolated"}
-          - {pt: "Brigando entre si", en: "Fighting each other"}
-          - {pt: "Sem coordenação", en: "Without coordination"}
+          - {pt: "Sozinhas e isoladas (durante a fase G0 do ciclo)", en: "Alone and isolated (during the G0 phase of the cycle)"}
+          - {pt: "Brigando entre si (conforme proposto por Schleiden em 1838)", en: "Fighting each other (as proposed by Schleiden in 1838)"}
+          - {pt: "Sem coordenação (mediado pelos centríolos do fuso)", en: "Without coordination (mediated by spindle centrioles)"}
         correctAnswer: {pt: "Em conjunto, cada uma com sua função", en: "Together, each with its own role"}
         rationale: {pt: "A célula é um sistema integrado; organelas dependem umas das outras.", en: "The cell is an integrated system; organelles depend on each other."}
         objectives: [biology.organelles]

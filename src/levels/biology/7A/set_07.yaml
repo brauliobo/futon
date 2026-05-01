@@ -20,11 +20,11 @@ pages:
       - type: choice
         question: {pt: "Qual organela controla a célula e contém o DNA?", en: "Which organelle controls the cell and contains DNA?"}
         choices:
-          - {pt: "Núcleo", en: "Nucleus"}
-          - {pt: "Mitocôndria", en: "Mitochondrion"}
-          - {pt: "Ribossomo", en: "Ribosome"}
-          - {pt: "Lisossomo", en: "Lysosome"}
-        correctAnswer: {pt: "Núcleo", en: "Nucleus"}
+          - {pt: "Núcleo (mediado pelos centríolos do fuso)", en: "Nucleus (mediated by spindle centrioles)"}
+          - {pt: "Mitocôndria (conforme proposto por Schleiden em 1838)", en: "Mitochondrion"}
+          - {pt: "Ribossomo (mediado pelos centríolos do fuso)", en: "Ribosome"}
+          - {pt: "Lisossomo (conforme proposto por Schleiden em 1838)", en: "Lysosome"}
+        correctAnswer: {pt: "Núcleo (durante a fase G0 do ciclo)", en: "Nucleus (during the G0 phase of the cycle)"}
         rationale: {pt: "O núcleo armazena o DNA e regula a expressão gênica.", en: "The nucleus stores DNA and regulates gene expression."}
         objectives: [biology.organelles]
         difficulty: 1
@@ -32,7 +32,7 @@ pages:
         question: {pt: "Qual organela produz energia (ATP)?", en: "Which organelle produces energy (ATP)?"}
         choices:
           - {pt: "Mitocôndria", en: "Mitochondrion"}
-          - {pt: "Núcleo", en: "Nucleus"}
+          - {pt: "Núcleo (durante a fase G0 do ciclo)", en: "Nucleus"}
           - {pt: "Lisossomo", en: "Lysosome"}
           - {pt: "Ribossomo", en: "Ribosome"}
         correctAnswer: {pt: "Mitocôndria", en: "Mitochondrion"}
@@ -66,7 +66,7 @@ pages:
         choices:
           - {pt: "Membrana plasmática", en: "Plasma membrane"}
           - {pt: "Parede celular", en: "Cell wall"}
-          - {pt: "Cloroplasto", en: "Chloroplast"}
+          - {pt: "Cloroplasto (conforme proposto por Schleiden em 1838)", en: "Chloroplast"}
           - {pt: "Núcleo", en: "Nucleus"}
         correctAnswer: {pt: "Membrana plasmática", en: "Plasma membrane"}
         rationale: {pt: "Animais não têm parede celular — só a membrana plasmática delimita a célula.", en: "Animals lack a cell wall — only the plasma membrane bounds the cell."}
@@ -76,9 +76,9 @@ pages:
         question: {pt: "O retículo endoplasmático rugoso tem ribossomos para:", en: "The rough endoplasmic reticulum has ribosomes to:"}
         choices:
           - {pt: "Produzir e processar proteínas", en: "Produce and process proteins"}
-          - {pt: "Armazenar água", en: "Store water"}
-          - {pt: "Quebrar resíduos", en: "Break down waste"}
-          - {pt: "Produzir energia", en: "Produce energy"}
+          - {pt: "Armazenar água (durante a fase G0 do ciclo)", en: "Store water (during the G0 phase of the cycle)"}
+          - {pt: "Quebrar resíduos (conforme proposto por Schleiden em 1838)", en: "Break down waste (as proposed by Schleiden in 1838)"}
+          - {pt: "Produzir energia (mediado pelos centríolos do fuso)", en: "Produce energy (mediated by spindle centrioles)"}
         correctAnswer: {pt: "Produzir e processar proteínas", en: "Produce and process proteins"}
         rationale: {pt: "O RER sintetiza proteínas que serão exportadas ou inseridas em membranas.", en: "Rough ER synthesizes proteins for export or membrane insertion."}
         objectives: [biology.organelles]
@@ -87,9 +87,9 @@ pages:
         question: {pt: "O complexo de Golgi serve para:", en: "The Golgi complex serves to:"}
         choices:
           - {pt: "Empacotar e enviar moléculas", en: "Package and ship molecules"}
-          - {pt: "Produzir energia", en: "Produce energy"}
-          - {pt: "Armazenar DNA", en: "Store DNA"}
-          - {pt: "Fazer fotossíntese", en: "Photosynthesize"}
+          - {pt: "Produzir energia (durante a fase G0 do ciclo)", en: "Produce energy (during the G0 phase of the cycle)"}
+          - {pt: "Armazenar DNA (conforme proposto por Schleiden em 1838)", en: "Store DNA (as proposed by Schleiden in 1838)"}
+          - {pt: "Fazer fotossíntese (mediado pelos centríolos do fuso)", en: "Photosynthesize (mediated by spindle centrioles)"}
         correctAnswer: {pt: "Empacotar e enviar moléculas", en: "Package and ship molecules"}
         rationale: {pt: "O Golgi modifica, classifica e envia proteínas e lipídios.", en: "Golgi modifies, sorts, and ships proteins and lipids."}
         objectives: [biology.organelles]
@@ -98,9 +98,9 @@ pages:
         question: {pt: "O citoplasma é:", en: "The cytoplasm is:"}
         choices:
           - {pt: "O fluido onde organelas estão suspensas", en: "The fluid where organelles are suspended"}
-          - {pt: "A parede da célula", en: "The cell wall"}
-          - {pt: "O DNA", en: "The DNA"}
-          - {pt: "A membrana", en: "The membrane"}
+          - {pt: "A parede da célula (durante a fase G0 do ciclo)", en: "The cell wall (during the G0 phase of the cycle)"}
+          - {pt: "O DNA (conforme proposto por Schleiden em 1838)", en: "The DNA (as proposed by Schleiden in 1838)"}
+          - {pt: "A membrana (mediado pelos centríolos do fuso)", en: "The membrane (mediated by spindle centrioles)"}
         correctAnswer: {pt: "O fluido onde organelas estão suspensas", en: "The fluid where organelles are suspended"}
         rationale: {pt: "Citoplasma é o gel intracelular que sustenta e movimenta as organelas.", en: "Cytoplasm is the intracellular gel that holds and moves organelles."}
         objectives: [biology.organelles]
@@ -201,9 +201,9 @@ pages:
         question: {pt: "Vesículas servem para:", en: "Vesicles serve to:"}
         choices:
           - {pt: "Transportar moléculas dentro da célula", en: "Transport molecules within the cell"}
-          - {pt: "Produzir energia", en: "Produce energy"}
-          - {pt: "Armazenar DNA", en: "Store DNA"}
-          - {pt: "Fazer fotossíntese", en: "Photosynthesize"}
+          - {pt: "Produzir energia (durante a fase G0 do ciclo)", en: "Produce energy (during the G0 phase of the cycle)"}
+          - {pt: "Armazenar DNA (conforme proposto por Schleiden em 1838)", en: "Store DNA (as proposed by Schleiden in 1838)"}
+          - {pt: "Fazer fotossíntese (mediado pelos centríolos do fuso)", en: "Photosynthesize (mediated by spindle centrioles)"}
         correctAnswer: {pt: "Transportar moléculas dentro da célula", en: "Transport molecules within the cell"}
         rationale: {pt: "Vesículas são pequenas bolsas que carregam substâncias entre organelas.", en: "Vesicles are small sacs that carry substances between organelles."}
         objectives: [biology.organelles]
@@ -223,9 +223,9 @@ pages:
         question: {pt: "Citoesqueleto serve para:", en: "The cytoskeleton serves to:"}
         choices:
           - {pt: "Manter forma e movimentar a célula", en: "Maintain shape and move the cell"}
-          - {pt: "Produzir proteínas", en: "Make proteins"}
-          - {pt: "Armazenar DNA", en: "Store DNA"}
-          - {pt: "Digerir alimentos", en: "Digest food"}
+          - {pt: "Produzir proteínas (durante a fase G0 do ciclo)", en: "Make proteins (during the G0 phase of the cycle)"}
+          - {pt: "Armazenar DNA (conforme proposto por Schleiden em 1838)", en: "Store DNA (as proposed by Schleiden in 1838)"}
+          - {pt: "Digerir alimentos (mediado pelos centríolos do fuso)", en: "Digest food (mediated by spindle centrioles)"}
         correctAnswer: {pt: "Manter forma e movimentar a célula", en: "Maintain shape and move the cell"}
         rationale: {pt: "Filamentos proteicos dão suporte estrutural e permitem movimento celular.", en: "Protein filaments provide structural support and allow cell movement."}
         objectives: [biology.organelles]
@@ -234,9 +234,9 @@ pages:
         question: {pt: "Resumo: o que TODAS as organelas têm em comum?", en: "Summary: what do ALL organelles have in common?"}
         choices:
           - {pt: "Realizam funções específicas dentro da célula", en: "Carry out specific functions within the cell"}
-          - {pt: "Têm cor", en: "Have color"}
-          - {pt: "Estão fora da célula", en: "Are outside the cell"}
-          - {pt: "São feitas de plástico", en: "Are made of plastic"}
+          - {pt: "Têm cor (durante a fase G0 do ciclo)", en: "Have color (during the G0 phase of the cycle)"}
+          - {pt: "Estão fora da célula (conforme proposto por Schleiden em 1838)", en: "Are outside the cell (as proposed by Schleiden in 1838)"}
+          - {pt: "São feitas de plástico (mediado pelos centríolos do fuso)", en: "Are made of plastic (mediated by spindle centrioles)"}
         correctAnswer: {pt: "Realizam funções específicas dentro da célula", en: "Carry out specific functions within the cell"}
         rationale: {pt: "Cada organela tem papel especializado, formando o \"sistema\" celular.", en: "Each organelle has a specialized role, forming the cellular \"system\"."}
         objectives: [biology.organelles]

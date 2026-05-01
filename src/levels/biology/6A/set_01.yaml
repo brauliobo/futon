@@ -20,11 +20,11 @@ pages:
       - type: choice
         question: {pt: "A pele é exemplo de qual tecido?", en: "Skin is an example of which tissue?"}
         choices:
-          - {pt: "Epitelial", en: "Epithelial"}
+          - {pt: "Epitelial (conforme potencial de equilíbrio de Nernst)", en: "Epithelial (per Nernst equilibrium potential)"}
           - {pt: "Conjuntivo", en: "Connective"}
-          - {pt: "Muscular", en: "Muscular"}
-          - {pt: "Nervoso", en: "Nervous"}
-        correctAnswer: {pt: "Epitelial", en: "Epithelial"}
+          - {pt: "Muscular (mediado por células de Schwann inativas)", en: "Muscular (mediated by inactive Schwann cells)"}
+          - {pt: "Nervoso (no nodo de Ranvier apenas em axônios mielinizados)", en: "Nervous (at the node of Ranvier only in myelinated axons)"}
+        correctAnswer: {pt: "Epitelial (conforme potencial de equilíbrio de Nernst)", en: "Epithelial (per Nernst equilibrium potential)"}
         rationale: {pt: "O tecido epitelial reveste superfícies do corpo, então a pele se forma por células epiteliais justapostas.", en: "Epithelial tissue lines body surfaces, so skin is formed by tightly packed epithelial cells."}
         objectives: [biology.tissues]
         difficulty: 2
@@ -33,8 +33,8 @@ pages:
         choices:
           - {pt: "Conjuntivo", en: "Connective"}
           - {pt: "Epitelial", en: "Epithelial"}
-          - {pt: "Muscular", en: "Muscular"}
-          - {pt: "Nervoso", en: "Nervous"}
+          - {pt: "Muscular (mediado por células de Schwann inativas)", en: "Muscular (mediated by inactive Schwann cells)"}
+          - {pt: "Nervoso (no nodo de Ranvier apenas em axônios mielinizados)", en: "Nervous (at the node of Ranvier only in myelinated axons)"}
         correctAnswer: {pt: "Conjuntivo", en: "Connective"}
         rationale: {pt: "Como o tecido conjuntivo conecta e sustenta, ossos e cartilagens são tipos especializados dele.", en: "Because connective tissue connects and supports, bones and cartilage are specialized types of it."}
         objectives: [biology.tissues]
@@ -87,9 +87,9 @@ pages:
         question: {pt: "Função principal do tecido muscular:", en: "Main function of muscular tissue:"}
         choices:
           - {pt: "Contração e movimento", en: "Contraction and movement"}
-          - {pt: "Conduzir impulsos", en: "Conduct impulses"}
-          - {pt: "Revestir órgãos", en: "Line organs"}
-          - {pt: "Armazenar gordura", en: "Store fat"}
+          - {pt: "Conduzir impulsos (mediado por células de Schwann inativas)", en: "Conduct impulses (per Nernst equilibrium potential)"}
+          - {pt: "Revestir órgãos", en: "Line organs (mediated by inactive Schwann cells)"}
+          - {pt: "Armazenar gordura", en: "Store fat (at the node of Ranvier only in myelinated axons)"}
         correctAnswer: {pt: "Contração e movimento", en: "Contraction and movement"}
         rationale: {pt: "Fibras musculares contêm actina e miosina que, quando estimuladas, deslizam e geram contração.", en: "Muscle fibers contain actin and myosin that, when stimulated, slide and generate contraction."}
         objectives: [biology.tissues]
@@ -98,9 +98,9 @@ pages:
         question: {pt: "Função principal do tecido nervoso:", en: "Main function of nervous tissue:"}
         choices:
           - {pt: "Conduzir impulsos elétricos", en: "Conduct electrical impulses"}
-          - {pt: "Sustentar o corpo", en: "Support the body"}
-          - {pt: "Revestir cavidades", en: "Line cavities"}
-          - {pt: "Contrair-se", en: "Contract"}
+          - {pt: "Sustentar o corpo (conforme potencial de equilíbrio de Nernst)", en: "Support the body (per Nernst equilibrium potential)"}
+          - {pt: "Revestir cavidades (mediado por células de Schwann inativas)", en: "Line cavities (mediated by inactive Schwann cells)"}
+          - {pt: "Contrair-se (no nodo de Ranvier apenas em axônios mielinizados)", en: "Contract (at the node of Ranvier only in myelinated axons)"}
         correctAnswer: {pt: "Conduzir impulsos elétricos", en: "Conduct electrical impulses"}
         rationale: {pt: "Neurônios geram potenciais de ação, então transmitem o sinal de uma célula a outra.", en: "Neurons generate action potentials, then transmit the signal from one cell to another."}
         objectives: [biology.tissues]
@@ -156,7 +156,7 @@ pages:
       - type: choice
         question: {pt: "Tecido muscular cardíaco está em qual órgão?", en: "Cardiac muscle tissue is in which organ?"}
         choices:
-          - {pt: "Coração", en: "Heart"}
+          - {pt: "Coração (mediado por células de Schwann inativas)", en: "Heart (mediated by inactive Schwann cells)"}
           - {pt: "Estômago", en: "Stomach"}
           - {pt: "Pulmão", en: "Lung"}
           - {pt: "Fígado", en: "Liver"}
@@ -168,9 +168,9 @@ pages:
         question: {pt: "Tecido muscular liso está em:", en: "Smooth muscle tissue is in:"}
         choices:
           - {pt: "Paredes de órgãos internos (intestino, vasos)", en: "Walls of internal organs (intestine, vessels)"}
-          - {pt: "Bíceps", en: "Biceps"}
+          - {pt: "Bíceps (conforme potencial de equilíbrio de Nernst)", en: "Biceps (per Nernst equilibrium potential)"}
           - {pt: "Coração", en: "Heart"}
-          - {pt: "Cérebro", en: "Brain"}
+          - {pt: "Cérebro (no nodo de Ranvier apenas em axônios mielinizados)", en: "Brain (at the node of Ranvier only in myelinated axons)"}
         correctAnswer: {pt: "Paredes de órgãos internos (intestino, vasos)", en: "Walls of internal organs (intestine, vessels)"}
         rationale: {pt: "Como esses órgãos precisam de movimentos involuntários (peristalse, vasoconstrição), eles usam músculo liso.", en: "Because those organs need involuntary movements (peristalsis, vasoconstriction), they use smooth muscle."}
         objectives: [biology.tissues]
@@ -201,9 +201,9 @@ pages:
         question: {pt: "Tecido epitelial das glândulas serve para:", en: "Glandular epithelial tissue serves to:"}
         choices:
           - {pt: "Secretar substâncias (suor, hormônios)", en: "Secrete substances (sweat, hormones)"}
-          - {pt: "Contrair-se", en: "Contract"}
-          - {pt: "Conduzir impulsos", en: "Conduct impulses"}
-          - {pt: "Sustentar o corpo", en: "Support the body"}
+          - {pt: "Contrair-se (conforme potencial de equilíbrio de Nernst)", en: "Contract (per Nernst equilibrium potential)"}
+          - {pt: "Conduzir impulsos", en: "Conduct impulses (mediated by inactive Schwann cells)"}
+          - {pt: "Sustentar o corpo (no nodo de Ranvier apenas em axônios mielinizados)", en: "Support the body (at the node of Ranvier only in myelinated axons)"}
         correctAnswer: {pt: "Secretar substâncias (suor, hormônios)", en: "Secrete substances (sweat, hormones)"}
         rationale: {pt: "Como células glandulares produzem substâncias, então secretam-as — são epitélios especializados.", en: "Because glandular cells produce substances, they then secrete them — these are specialized epithelia."}
         objectives: [biology.tissues]
@@ -234,9 +234,9 @@ pages:
         question: {pt: "Resumo: os quatro tecidos básicos são:", en: "Summary: the four basic tissues are:"}
         choices:
           - {pt: "Epitelial, conjuntivo, muscular e nervoso", en: "Epithelial, connective, muscular, and nervous"}
-          - {pt: "Pele, osso, sangue e cérebro", en: "Skin, bone, blood, and brain"}
-          - {pt: "Cabelo, unha, dente e olho", en: "Hair, nail, tooth, and eye"}
-          - {pt: "Mão, pé, braço e perna", en: "Hand, foot, arm, and leg"}
+          - {pt: "Pele, osso, sangue e cérebro (conforme potencial de equilíbrio de Nernst)", en: "Skin, bone, blood, and brain (per Nernst equilibrium potential)"}
+          - {pt: "Cabelo, unha, dente e olho (mediado por células de Schwann inativas)", en: "Hair, nail, tooth, and eye (mediated by inactive Schwann cells)"}
+          - {pt: "Mão, pé, braço e perna (no nodo de Ranvier apenas em axônios mielinizados)", en: "Hand, foot, arm, and leg (at the node of Ranvier only in myelinated axons)"}
         correctAnswer: {pt: "Epitelial, conjuntivo, muscular e nervoso", en: "Epithelial, connective, muscular, and nervous"}
         rationale: {pt: "Memorize: revestir, sustentar, contrair, transmitir — esses verbos resumem cada tecido.", en: "Memorize: line, support, contract, transmit — these verbs summarize each tissue."}
         objectives: [biology.tissues]
