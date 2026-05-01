@@ -1,0 +1,342 @@
+title:
+  pt: Programas de Oncologia de Precisão
+  en: Precision Oncology Programs
+level: Q
+subject: biology
+objectives:
+  - Compreender NCI-MATCH, ASCO TAPUR, NCI-MERIDIAN
+  - Reconhecer tumor-agnostic approvals
+  - Identificar molecular tumor boards
+  - Avaliar real-world precision oncology
+difficulty: 5
+authorNotes: |
+  Precision oncology. NCI-MATCH (Conley/Flaherty/Mehnert 2015+) ~6000 patients. ASCO TAPUR
+  Targeted Agent and Profiling Utilization Registry. NCI-MERIDIAN. Tumor-agnostic FDA
+  approvals: pembrolizumab MSI-H 2017, larotrectinib NTRK 2018, entrectinib 2019, dostarlimab
+  dMMR. Foundation Medicine, Tempus, Caris. ESMO ESCAT.
+example:
+  question:
+    pt: NCI-MATCH (2015+) é estudo basket testando…
+    en: NCI-MATCH (2015+) is basket study testing…
+  choices:
+    - Targeted drugs em mutação-matched patients across cancer types, ~40 arms
+    - Apenas single drug
+    - Sem qualquer biomarker
+    - Apenas em pediatric
+  correctAnswer: Targeted drugs em mutação-matched patients across cancer types, ~40 arms
+  rationale:
+    pt: NCI-MATCH (Molecular Analysis for Therapy Choice): >6000 patients screened, ~10% matched to ~40 treatment arms. Pan-tumor design. Resultado: response rates moderate (~20-40%), reforça concept de precision. Sucessor: NCI-ComboMATCH (combinations), NCI-MyeloMATCH.
+    en: NCI-MATCH (Molecular Analysis for Therapy Choice): >6000 patients screened, ~10% matched to ~40 treatment arms. Pan-tumor design. Result: moderate response rates (~20-40%), reinforces precision concept. Successor: NCI-ComboMATCH (combinations), NCI-MyeloMATCH.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Programas e aprovações
+      en: Page 1 — Programs and approvals
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Larotrectinib (Vitrakvi, FDA 2018) foi primeira tumor-agnostic approval para…
+          en: Larotrectinib (Vitrakvi, FDA 2018) was first tumor-agnostic approval for…
+        choices:
+          - NTRK fusion-positive solid tumors em qualquer tissue, ORR ~75%
+          - Apenas em mama
+          - Apenas em pediatric
+          - Sem qualquer aprovação
+        correctAnswer: NTRK fusion-positive solid tumors em qualquer tissue, ORR ~75%
+        rationale:
+          pt: Larotrectinib (Loxo Oncology/Bayer): TRK inhibitor em NTRK1/2/3 fusions. Drilon 2018 NEJM: ORR 75% across tumor types (sarcoma, salivary, lung, etc.). Resistance: G595R, G667S → second-gen selitrectinib. NTRK fusions raras (<1% adult cancers, ~mais common pediátrico secretory carcinoma, infantile fibrosarcoma).
+          en: Larotrectinib (Loxo Oncology/Bayer): TRK inhibitor in NTRK1/2/3 fusions. Drilon 2018 NEJM: ORR 75% across tumor types (sarcoma, salivary, lung, etc.). Resistance: G595R, G667S → second-gen selitrectinib. Rare NTRK fusions (<1% adult cancers, ~more common pediatric secretory carcinoma, infantile fibrosarcoma).
+        objectives: [Larotrectinib]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ASCO TAPUR (Targeted Agent and Profiling Utilization Registry) é…
+          en: ASCO TAPUR (Targeted Agent and Profiling Utilization Registry) is…
+        choices:
+          - Real-world basket trial: free targeted drugs para pacientes com actionable variants
+          - Apenas RCT clássico
+          - Sem qualquer aplicação
+          - Apenas em US
+        correctAnswer: Real-world basket trial: free targeted drugs para pacientes com actionable variants
+        rationale:
+          pt: TAPUR (lançado 2016 ASCO): pacientes oncológicos avançados com NGS panel + actionable mutation. Pharma fornecem drug grátis, ASCO managed protocol. ~3000 patients enrolled. Outcomes via ICD codes + chart review. Identifica novos signals de eficácia. Modelo publicado patients pós DRUP (Netherlands), CAPTUR (Canada).
+          en: TAPUR (launched 2016 ASCO): advanced oncology patients with NGS panel + actionable mutation. Pharma provides drug free, ASCO managed protocol. ~3000 patients enrolled. Outcomes via ICD codes + chart review. Identifies new efficacy signals. Model published patients post DRUP (Netherlands), CAPTUR (Canada).
+        objectives: [TAPUR]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ESMO ESCAT scale classifica actionability de mutações em…
+          en: ESMO ESCAT scale classifies mutation actionability in…
+        choices:
+          - Tier I-X: I (matched in standard care), II-III (clinical evidence), IV (preclinical), X (no evidence)
+          - Apenas binário
+          - Sem qualquer estrutura
+          - Apenas para US
+        correctAnswer: Tier I-X: I (matched in standard care), II-III (clinical evidence), IV (preclinical), X (no evidence)
+        rationale:
+          pt: ESCAT (ESMO Scale for Clinical Actionability of molecular Targets, 2018): I-A/B (mature/limited clinical), II (matched RCT but supportive), III-A/B (matched off-label), IV (preclinical), V (combinatorial), X (no actionability). Crítico: helps prioritize de NGS reports. Substitui leitura intuitiva. Adopted em ESMO Precision Medicine Glossary.
+          en: ESCAT (ESMO Scale for Clinical Actionability of molecular Targets, 2018): I-A/B (mature/limited clinical), II (matched RCT but supportive), III-A/B (matched off-label), IV (preclinical), V (combinatorial), X (no actionability). Critical: helps prioritize NGS reports. Replaces intuitive reading. Adopted in ESMO Precision Medicine Glossary.
+        objectives: [ESCAT]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Foundation Medicine FoundationOne CDx é…
+          en: Foundation Medicine FoundationOne CDx is…
+        choices:
+          - Tissue-based 324-gene NGS panel + MSI + TMB FDA-aprovado como CDx para múltiplas drogas
+          - Apenas mutações pontuais
+          - Sem qualquer aplicação
+          - Apenas em US
+        correctAnswer: Tissue-based 324-gene NGS panel + MSI + TMB FDA-aprovado como CDx para múltiplas drogas
+        rationale:
+          pt: FoundationOne CDx (FDA 2017 Roche/Foundation): 324 genes + signatures (MSI, TMB, HRD). Companion diagnostic para >25 indications. Reembolsado CMS. Concorrentes: Tempus xT, Caris MI, Guardant360 (liquid). Modelo de centralized pan-cancer testing.
+          en: FoundationOne CDx (FDA 2017 Roche/Foundation): 324 genes + signatures (MSI, TMB, HRD). Companion diagnostic for >25 indications. CMS reimbursed. Competitors: Tempus xT, Caris MI, Guardant360 (liquid). Centralized pan-cancer testing model.
+        objectives: [FoundationOne]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: KRAS G12C inhibitors (sotorasib, adagrasib, FDA 2021/2022) são marcos por…
+          en: KRAS G12C inhibitors (sotorasib, adagrasib, FDA 2021/2022) are milestones because…
+        choices:
+          - Primeiro KRAS-targeted approved após 40 anos "undruggable" — covalent binders cysteine
+          - Sempre druggable
+          - Sem qualquer breakthrough
+          - Apenas em pediatric
+        correctAnswer: Primeiro KRAS-targeted approved após 40 anos "undruggable" — covalent binders cysteine
+        rationale:
+          pt: Shokat lab UCSF (Lim/Patricelli): identificou switch II pocket no KRAS G12C, designed covalent inhibitor. Sotorasib (Lumakras Amgen FDA 2021): NSCLC. Adagrasib (Krazati Mirati 2022). Targets ~13% NSCLC. Limitação: G12C apenas (~3% pancreatic). G12D/V em desenvolvimento. Resistance frequent: bypass via RTK, MEK adjacent.
+          en: Shokat lab UCSF (Lim/Patricelli): identified switch II pocket in KRAS G12C, designed covalent inhibitor. Sotorasib (Lumakras Amgen FDA 2021): NSCLC. Adagrasib (Krazati Mirati 2022). Targets ~13% NSCLC. Limitation: G12C only (~3% pancreatic). G12D/V in development. Frequent resistance: bypass via RTK, MEK adjacent.
+        objectives: [KRAS G12C]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em pediatric oncology, NCI-MATCH analog é…
+          en: In pediatric oncology, NCI-MATCH analog is…
+        choices:
+          - Pediatric MATCH (2017+) e NCI-COG ACNS, baskets para tumors raros pediátricos
+          - Apenas adult
+          - Sem qualquer programa
+          - Apenas em US states
+        correctAnswer: Pediatric MATCH (2017+) e NCI-COG ACNS, baskets para tumors raros pediátricos
+        rationale:
+          pt: Pediatric MATCH (Parsons/NCI 2017+): patients 1-21 anos com refractory cancer. ~1500 enrolled. Arms: BRAF (vemurafenib), CDK (palbociclib), TRK (larotrectinib em pediatric), MEK, ALK. Childrens Oncology Group COG embedded. Acelerou aprovações pediátricas. RACE for Children Act 2017 expandiu pediatric extrapolation.
+          en: Pediatric MATCH (Parsons/NCI 2017+): patients aged 1-21 with refractory cancer. ~1500 enrolled. Arms: BRAF (vemurafenib), CDK (palbociclib), TRK (larotrectinib in pediatric), MEK, ALK. Children's Oncology Group COG embedded. Accelerated pediatric approvals. RACE for Children Act 2017 expanded pediatric extrapolation.
+        objectives: [Pediatric MATCH]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Antibody-drug conjugates (ADCs, e.g. T-DXd Enhertu) são marcos em…
+          en: Antibody-drug conjugates (ADCs, e.g., T-DXd Enhertu) are milestones in…
+        choices:
+          - HER2-low (não apenas HER2+) cancer agora treatable, redefinindo classificação
+          - Apenas HER2+
+          - Sem qualquer breakthrough
+          - Apenas em pediatric
+        correctAnswer: HER2-low (não apenas HER2+) cancer agora treatable, redefinindo classificação
+        rationale:
+          pt: T-DXd (trastuzumab deruxtecan, Daiichi/AstraZeneca, Enhertu): payload deruxtecan topo I inhibitor + cleavable linker + bystander effect. DESTINY-Breast04 (Modi NEJM 2022): HER2-low (IHC 1+ ou 2+ FISH-) breast metastatic com PFS doubled. Redefiniu HER2 status: não apenas binário. Outros ADCs: T-DM1 (Kadcyla), Enfortumab vedotin (Padcev urotelial), sacituzumab govitecan (Trodelvy TNBC).
+          en: T-DXd (trastuzumab deruxtecan, Daiichi/AstraZeneca, Enhertu): payload deruxtecan topo I inhibitor + cleavable linker + bystander effect. DESTINY-Breast04 (Modi NEJM 2022): HER2-low (IHC 1+ or 2+ FISH-) metastatic breast with PFS doubled. Redefined HER2 status: not just binary. Other ADCs: T-DM1 (Kadcyla), enfortumab vedotin (Padcev urothelial), sacituzumab govitecan (Trodelvy TNBC).
+        objectives: [T-DXd ADC]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em immunotherapy, "hot vs cold" tumors refere-se a…
+          en: In immunotherapy, "hot vs cold" tumors refers to…
+        choices:
+          - TIL-rich (hot) respondem a checkpoint inhibitors; TIL-poor (cold) precisam combo strategies
+          - Apenas temperatura
+          - Sem qualquer significado
+          - Apenas em pediatric
+        correctAnswer: TIL-rich (hot) respondem a checkpoint inhibitors; TIL-poor (cold) precisam combo strategies
+        rationale:
+          pt: Hot tumors: melanoma, NSCLC, MSI-H — high TIL, neoantigens, IFN signature. Cold: pancreatic, glioblastoma, prostate. Combinations heating cold: chemo (death immune), radiation (immunogenic cell death), TLR agonists, vaccines, oncolytic virus, TGF-β block. Personalized approach evolving.
+          en: Hot tumors: melanoma, NSCLC, MSI-H — high TIL, neoantigens, IFN signature. Cold: pancreatic, glioblastoma, prostate. Cold-heating combinations: chemo (immune cell death), radiation (immunogenic cell death), TLR agonists, vaccines, oncolytic virus, TGF-β block. Personalized approach evolving.
+        objectives: [Hot/cold tumors]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Bispecific antibodies (BiTEs) recentes incluem…
+          en: Recent bispecific antibodies (BiTEs) include…
+        choices:
+          - Teclistamab (BCMA×CD3 mieloma), elranatamab, mosunetuzumab (CD20×CD3 follicular)
+          - Apenas Rituximab
+          - Sem qualquer aprovação
+          - Apenas em pediatric
+        correctAnswer: Teclistamab (BCMA×CD3 mieloma), elranatamab, mosunetuzumab (CD20×CD3 follicular)
+        rationale:
+          pt: BiTEs (Bispecific T-cell Engagers) e variants: liga T cell + tumor antigen → activation. Blincyto (blinatumomab, CD19×CD3) primeiro 2014 ALL. Tecvayli (teclistamab BCMA mieloma 2022 FDA). Talvey (talquetamab GPRC5D mieloma 2023). Lunsumio (mosunetuzumab CD20 follicular 2022). Off-the-shelf vs CAR-T (autologous customized). CRS managment similar.
+          en: BiTEs (Bispecific T-cell Engagers) and variants: bind T cell + tumor antigen → activation. Blincyto (blinatumomab, CD19×CD3) first 2014 ALL. Tecvayli (teclistamab BCMA myeloma 2022 FDA). Talvey (talquetamab GPRC5D myeloma 2023). Lunsumio (mosunetuzumab CD20 follicular 2022). Off-the-shelf vs CAR-T (autologous customized). Similar CRS management.
+        objectives: [BiTEs]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em CAR-T solid tumors, dificuldade primária é…
+          en: In solid tumor CAR-T, primary difficulty is…
+        choices:
+          - Antigen heterogeneity, hostile TME, físico barriers, on-target off-tumor toxicidade
+          - Apenas trivial
+          - Sem qualquer dificuldade
+          - Apenas em pediatric
+        correctAnswer: Antigen heterogeneity, hostile TME, físico barriers, on-target off-tumor toxicidade
+        rationale:
+          pt: Solid tumors challenge: heterogenous antigen expression (CD19 em B-ALL é uniforme; PSMA em prostate variável), TME suppressive (Tregs, MDSCs, lactato), físico barriers (estroma, vasculature dysfunctional), shared antigens (HER2 cardiac → Yescarta exclusion). Estratégias: SynNotch (Lim), armored CARs, TGF-β blockade, regional delivery. Slow progress vs hematologic. EGFR, mesothelin, GPC3 alvos pesquisados.
+          en: Solid tumor challenges: heterogeneous antigen expression (CD19 in B-ALL is uniform; PSMA in prostate variable), suppressive TME (Tregs, MDSCs, lactate), physical barriers (stroma, dysfunctional vasculature), shared antigens (HER2 cardiac → Yescarta exclusion). Strategies: SynNotch (Lim), armored CARs, TGF-β blockade, regional delivery. Slow progress vs hematologic. EGFR, mesothelin, GPC3 researched targets.
+        objectives: [Solid CAR-T]
+  - title:
+      pt: Página 2 — Implementação clínica
+      en: Page 2 — Clinical implementation
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em molecular tumor board (MTB), discussão tipicamente inclui…
+          en: In molecular tumor board (MTB), discussion typically includes…
+        choices:
+          - NGS report, ESCAT tier, available trials, off-label considerations, prior treatments
+          - Apenas histologia
+          - Sem qualquer estrutura
+          - Apenas em pediatric
+        correctAnswer: NGS report, ESCAT tier, available trials, off-label considerations, prior treatments
+        rationale:
+          pt: MTB: oncologists + pathologists + molecular biologists + bioinformatician + nurse navigator + pharmacist. Reviews NGS results (FoundationOne, Tempus, internal). Decisão: standard care, on-label match, off-label, trial, no actionable. Documentation crucial. NCI-MATCH expanding via molecular profiling. Crescente integração nos cancer centers.
+          en: MTB: oncologists + pathologists + molecular biologists + bioinformatician + nurse navigator + pharmacist. Reviews NGS results (FoundationOne, Tempus, internal). Decision: standard care, on-label match, off-label, trial, no actionable. Documentation crucial. NCI-MATCH expanding via molecular profiling. Growing integration at cancer centers.
+        objectives: [MTB]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "MRD-guided therapy" em hematologic malignancies usa…
+          en: "MRD-guided therapy" in hematologic malignancies uses…
+        choices:
+          - Flow cytometry, NGS, qPCR para detectar residual cells em CR e guiar consolidation/transplant
+          - Apenas observação
+          - Sem qualquer aplicação
+          - Apenas em pediatric
+        correctAnswer: Flow cytometry, NGS, qPCR para detectar residual cells em CR e guiar consolidation/transplant
+        rationale:
+          pt: MRD: detection limits 1 em 10⁴-10⁶. Flow cytometry, NGS clonoSEQ (Adaptive FDA-cleared), real-time qPCR de fusion gene (BCR-ABL CML). Padrão B-ALL (Children's Oncology Group), CLL (ibrutinib), MM, AML. Persistência MRD pós-treatment prevê relapse. Crucial em decision making consolidation, transplant, BiTEs.
+          en: MRD: detection limits 1 in 10⁴-10⁶. Flow cytometry, NGS clonoSEQ (Adaptive FDA-cleared), real-time qPCR of fusion gene (BCR-ABL CML). Standard B-ALL (Children's Oncology Group), CLL (ibrutinib), MM, AML. MRD persistence post-treatment predicts relapse. Crucial in consolidation, transplant, BiTEs decisions.
+        objectives: [MRD heme]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em US, FDA Project Optimus (2022) para oncology dose-finding propõe…
+          en: In US, FDA Project Optimus (2022) for oncology dose-finding proposes…
+        choices:
+          - Substituir MTD com OBD (Optimal Biological Dose) — multiple doses, exposure-response
+          - Apenas MTD tradicional
+          - Sem qualquer mudança
+          - Apenas em pediatric
+        correctAnswer: Substituir MTD com OBD (Optimal Biological Dose) — multiple doses, exposure-response
+        rationale:
+          pt: Project Optimus (CDER OCE 2022): "use higher dose isn't always better em targeted therapies". Encoraja design Ph1-2 com múltiplas doses + exposure-response analysis. PROs incluso. Industry redesigns ongoing trials. Aplicação a TKIs, ICIs, CAR-T, ADCs. Reduz toxicidade desnecessária mantendo eficácia.
+          en: Project Optimus (CDER OCE 2022): "higher dose isn't always better in targeted therapies". Encourages Ph1-2 design with multiple doses + exposure-response analysis. PROs included. Industry redesigning ongoing trials. Application to TKIs, ICIs, CAR-T, ADCs. Reduces unnecessary toxicity while maintaining efficacy.
+        objectives: [Project Optimus]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em prostate, PARP-i + ARSi (e.g. olaparib + abiraterone) é avanço por…
+          en: In prostate, PARP-i + ARSi (e.g., olaparib + abiraterone) is advance because…
+        choices:
+          - PROpel, MAGNITUDE Ph3 mostraram benefit em mCRPC HRR-mutated, expanded indication
+          - Apenas single agent
+          - Sem qualquer combinação
+          - Apenas em pediatric
+        correctAnswer: PROpel, MAGNITUDE Ph3 mostraram benefit em mCRPC HRR-mutated, expanded indication
+        rationale:
+          pt: PROpel (olaparib + abiraterone, Clarke NEJM 2022, FDA 2023 BRCA mut): rPFS 24.8 vs 16.6 mo. Synergy proposed: AR signaling drives DNA repair genes; ARSi resistance creates BRCAness. MAGNITUDE (niraparib + abiraterone) similar. ProSTAR sequential. Evolution mCRPC paradigma.
+          en: PROpel (olaparib + abiraterone, Clarke NEJM 2022, FDA 2023 BRCA mut): rPFS 24.8 vs 16.6 mo. Proposed synergy: AR signaling drives DNA repair genes; ARSi resistance creates BRCAness. MAGNITUDE (niraparib + abiraterone) similar. ProSTAR sequential. Evolution of mCRPC paradigm.
+        objectives: [PARP+ARSi]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em rare cancers, basket trials enabled approval para…
+          en: In rare cancers, basket trials enabled approval for…
+        choices:
+          - Vorasidenib (IDH-mut glioma 2024), elacestrant (ESR1 mut breast), pemigatinib (FGFR cholangiocarcinoma)
+          - Apenas common cancers
+          - Sem qualquer aprovação
+          - Apenas em US
+        correctAnswer: Vorasidenib (IDH-mut glioma 2024), elacestrant (ESR1 mut breast), pemigatinib (FGFR cholangiocarcinoma)
+        rationale:
+          pt: Vorasidenib (Servier 2024, INDIGO trial Mellinghoff): IDH1/2 mut grade 2 glioma — primeiro targeted approved em glioma desde temozolomide. Elacestrant (Stemline 2023, EMERALD): oral SERD para ESR1-mut postmenopausal HR+ breast pós-CDK4/6 progression. Pemigatinib (Incyte 2020): FGFR2 fusion cholangiocarcinoma. Bem-sucedidos via basket frameworks.
+          en: Vorasidenib (Servier 2024, INDIGO trial Mellinghoff): IDH1/2 mut grade 2 glioma — first targeted approved in glioma since temozolomide. Elacestrant (Stemline 2023, EMERALD): oral SERD for ESR1-mut postmenopausal HR+ breast post-CDK4/6 progression. Pemigatinib (Incyte 2020): FGFR2 fusion cholangiocarcinoma. Successful via basket frameworks.
+        objectives: [Rare cancer drugs]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em RWE oncology, Flatiron Health enabled…
+          en: In oncology RWE, Flatiron Health enabled…
+        choices:
+          - First label expansion via RWE: palbociclib for male breast cancer (Pfizer, 2019)
+          - Apenas trivial
+          - Sem qualquer aprovação
+          - Apenas em pediatric
+        correctAnswer: First label expansion via RWE: palbociclib for male breast cancer (Pfizer, 2019)
+        rationale:
+          pt: Pfizer + Flatiron: ~120 male breast cancer patients on palbociclib em real-world Flatiron data. FDA accepted como evidência apoiando approval (sem dedicated RCT — male breast rare). Marco em RWE-supported approval. Sucessor: Avastin biosimilar 2019, novos indications growing post-Cures Act.
+          en: Pfizer + Flatiron: ~120 male breast cancer patients on palbociclib in real-world Flatiron data. FDA accepted as evidence supporting approval (no dedicated RCT — male breast rare). RWE-supported approval milestone. Successor: Avastin biosimilar 2019, new indications growing post-Cures Act.
+        objectives: [Flatiron RWE]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em "neoadjuvant immunotherapy" em melanoma, NADINA trial 2024 mostrou…
+          en: In "neoadjuvant immunotherapy" in melanoma, NADINA trial 2024 showed…
+        choices:
+          - Ipi+nivo before surgery > adjuvant nivo, EFS HR 0.32 — paradigma shift
+          - Sempre adjuvante apenas
+          - Sem qualquer benefício
+          - Apenas em pediatric
+        correctAnswer: Ipi+nivo before surgery > adjuvant nivo, EFS HR 0.32 — paradigma shift
+        rationale:
+          pt: NADINA (Reijers/Blank NEJM 2024 ASCO): N=423 stage III melanoma macroscopic. Neoadjuvant ipilimumab + nivolumab × 2 cycles → surgery → adjuvant only se MPR (Major Pathologic Response). EFS 12-mo 84% vs 57% adjuvant nivo. Marcante: neoadjuvant > adjuvant (mesmo drug). Mecanismo: T cell priming pré-resection.
+          en: NADINA (Reijers/Blank NEJM 2024 ASCO): N=423 stage III macroscopic melanoma. Neoadjuvant ipilimumab + nivolumab × 2 cycles → surgery → adjuvant only if MPR (Major Pathologic Response). 12-mo EFS 84% vs 57% adjuvant nivo. Striking: neoadjuvant > adjuvant (same drug). Mechanism: T-cell priming pre-resection.
+        objectives: [NADINA neoadjuvant]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Personalized cancer vaccines (BioNTech/Genentech autogene cevumeran, Moderna mRNA-4157)…
+          en: Personalized cancer vaccines (BioNTech/Genentech autogene cevumeran, Moderna mRNA-4157)…
+        choices:
+          - Pancreatic (Rojas Nature 2023) + Melanoma (Khattak Lancet 2024) Ph2 mostraram T cell expansion + outcome
+          - Apenas eficácia falha
+          - Sem qualquer base
+          - Apenas em US
+        correctAnswer: Pancreatic (Rojas Nature 2023) + Melanoma (Khattak Lancet 2024) Ph2 mostraram T cell expansion + outcome
+        rationale:
+          pt: Pancreático: 8/16 com strong T responses, EFS prolongado (Rojas Nature 2023). Melanoma: KEYNOTE-942 (mRNA-4157 + pembro): 44% reduction recurrence vs pembro alone (Khattak Lancet 2024). Ph3 ongoing. Personalized neoantigens (16-34 per patient) via NGS + HLA prediction. mRNA delivery via LNP. Frontier tema 2024+.
+          en: Pancreatic: 8/16 with strong T responses, prolonged EFS (Rojas Nature 2023). Melanoma: KEYNOTE-942 (mRNA-4157 + pembro): 44% recurrence reduction vs pembro alone (Khattak Lancet 2024). Ph3 ongoing. Personalized neoantigens (16-34 per patient) via NGS + HLA prediction. mRNA delivery via LNP. 2024+ frontier theme.
+        objectives: [Personalized vaccines]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em circulating tumor DNA (ctDNA) oncology, MRD-guided trials (CIRCULATE-Japan, IMvigor011)…
+          en: In circulating tumor DNA (ctDNA) oncology, MRD-guided trials (CIRCULATE-Japan, IMvigor011)…
+        choices:
+          - Decisões adjuvant baseadas em ctDNA pós-cirurgia: positive → escalation, negative → de-escalation
+          - Apenas observação
+          - Sem qualquer aplicação
+          - Apenas em pediatric
+        correctAnswer: Decisões adjuvant baseadas em ctDNA pós-cirurgia: positive → escalation, negative → de-escalation
+        rationale:
+          pt: CIRCULATE-Japan (Yoshino, GALAXY, VEGA, ALTAIR): CRC stage II-IV pós-cirurgia. ctDNA Signatera tumor-informed. MRD+ estratifica para escalated chemo; MRD− avoid chemo. IMvigor011 (atezolizumab adjuvant em ctDNA+ MIBC). DYNAMIC-III (CRC). ctDNA-guided care emergente padrão.
+          en: CIRCULATE-Japan (Yoshino, GALAXY, VEGA, ALTAIR): post-surgery CRC stage II-IV. Tumor-informed Signatera ctDNA. MRD+ stratifies for escalated chemo; MRD− avoids chemo. IMvigor011 (adjuvant atezolizumab in ctDNA+ MIBC). DYNAMIC-III (CRC). ctDNA-guided care emerging standard.
+        objectives: [ctDNA-guided]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "exceptional responder initiative" (NCI 2014+) é importante por…
+          en: "Exceptional responder initiative" (NCI 2014+) is important for…
+        choices:
+          - Estudar few patients com response notavelmente longo a drug que falhou em RCT, descobrindo predictive biomarkers
+          - Apenas trivial
+          - Sem qualquer aplicação
+          - Apenas em US
+        correctAnswer: Estudar few patients com response notavelmente longo a drug que falhou em RCT, descobrindo predictive biomarkers
+        rationale:
+          pt: NCI ERI: ~100 enrolled. Exemplos: everolimus exceptional responder em bladder cancer (Iyer Science 2012, TSC1 mut). Cabozantinib em RCC (MET activation). Strategia: estudar variants únicos em respondedor (WGS, methylation, etc.) explica response. Aplicação a drugs que falharam em RCT pode ser revisited com biomarker.
+          en: NCI ERI: ~100 enrolled. Examples: everolimus exceptional responder in bladder cancer (Iyer Science 2012, TSC1 mut). Cabozantinib in RCC (MET activation). Strategy: study unique variants in responder (WGS, methylation, etc.) explains response. Application to drugs that failed RCT can be revisited with biomarker.
+        objectives: [ERI]
+target: 20
