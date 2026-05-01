@@ -1,0 +1,344 @@
+title:
+  pt: Medicina Translacional e Biomarcadores
+  en: Translational Medicine and Biomarkers
+level: Q
+subject: biology
+objectives:
+  - Compreender bench-to-bedside e bedside-to-bench
+  - Reconhecer biomarker classes (BEST/FDA-NIH)
+  - Identificar valley of death e CTSA
+  - Avaliar surrogate, prognostic, predictive
+difficulty: 5
+authorNotes: |
+  Translational medicine. NIH CTSA program 2006+ (Clinical and Translational Science Awards).
+  T0-T4 phases. BEST (Biomarkers, EndpointS, and other Tools) Resource FDA-NIH. Biomarker
+  classes: prognostic, predictive, monitoring, pharmacodynamic, response, susceptibility.
+  Validation: analytical + clinical + utility. CMS LDT regulation 2024. PD-L1 IHC, MSI-H, TMB,
+  HRD as predictive. Companion diagnostics. Imaging biomarkers RECIST. Liquid biopsy as
+  biomarker. Translational gap "valley of death".
+example:
+  question:
+    pt: A "valley of death" em translational research refere-se a…
+    en: "Valley of death" in translational research refers to…
+  choices:
+    - Gap entre descoberta básica e desenvolvimento clínico (financiamento + expertise)
+    - Apenas custo
+    - Sem qualquer aplicação
+    - Apenas em US
+  correctAnswer: Gap entre descoberta básica e desenvolvimento clínico (financiamento + expertise)
+  rationale:
+    pt: "Valley of death": fase T1 (basic to first-in-human) e T2 (proof-of-concept to RCT) com poucos resources, alto risco. NIH CTSA 2006 + DARPA, BARDA, focus venture (Flagship, ARCH) tentam preencher. <10% candidates fase 1 chegam a aprovação. Termo cunhado em business; aplicado a biomedicina.
+    en: "Valley of death": T1 phase (basic to first-in-human) and T2 (proof-of-concept to RCT) with few resources, high risk. NIH CTSA 2006 + DARPA, BARDA, focused venture (Flagship, ARCH) try to fill. <10% of phase 1 candidates reach approval. Term coined in business; applied to biomedicine.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Conceitos e biomarcadores
+      en: Page 1 — Concepts and biomarkers
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: As fases translacionais T0-T4 são…
+          en: T0-T4 translational phases are…
+        choices:
+          - T0 basic, T1 to humans, T2 to clinical trials, T3 to practice, T4 to populations
+          - Apenas binário
+          - Sem qualquer estrutura
+          - Apenas em US
+        correctAnswer: T0 basic, T1 to humans, T2 to clinical trials, T3 to practice, T4 to populations
+        rationale:
+          pt: NIH CTSA framework: T0 (mechanism in lab/preclinical) → T1 (proof-of-concept FIH) → T2 (efficacy RCT) → T3 (effectiveness real-world) → T4 (population health, policy). Cada transição tem barriers. Westfall/Mold/Fagnan (JAMA 2007) original; refinado por Khoury, IOM. Aplicação a precision medicine, public health.
+          en: NIH CTSA framework: T0 (lab/preclinical mechanism) → T1 (proof-of-concept FIH) → T2 (efficacy RCT) → T3 (real-world effectiveness) → T4 (population health, policy). Each transition has barriers. Westfall/Mold/Fagnan (JAMA 2007) original; refined by Khoury, IOM. Applied to precision medicine, public health.
+        objectives: [T0-T4 phases]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O FDA-NIH BEST Resource classifica biomarkers em…
+          en: FDA-NIH BEST Resource classifies biomarkers into…
+        choices:
+          - Diagnostic, monitoring, pharmacodynamic, predictive, prognostic, safety, susceptibility
+          - Apenas binário positivo/negativo
+          - Sem qualquer classificação
+          - Apenas para imaging
+        correctAnswer: Diagnostic, monitoring, pharmacodynamic, predictive, prognostic, safety, susceptibility
+        rationale:
+          pt: BEST (FDA-NIH 2016, atualizado 2024): glossário padronizado. Diagnostic: presença de doença. Monitoring: status atual. PD: efeito de droga. Predictive: response provável (e.g. EGFR-mut → TKI). Prognostic: outcome regardless of treatment. Safety: AE risk (HLA-B*57:01). Susceptibility: future risk (BRCA1/2 cancer).
+          en: BEST (FDA-NIH 2016, updated 2024): standardized glossary. Diagnostic: disease presence. Monitoring: current status. PD: drug effect. Predictive: likely response (e.g., EGFR-mut → TKI). Prognostic: outcome regardless of treatment. Safety: AE risk (HLA-B*57:01). Susceptibility: future risk (BRCA1/2 cancer).
+        objectives: [BEST]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A diferença "predictive" vs "prognostic" biomarker é…
+          en: "Predictive" vs "prognostic" biomarker difference is…
+        choices:
+          - Predictive prevê benefício de tratamento específico; prognostic prevê outcome independente
+          - Idênticos
+          - Sem qualquer diferença
+          - Apenas em oncology
+        correctAnswer: Predictive prevê benefício de tratamento específico; prognostic prevê outcome independente
+        rationale:
+          pt: Predictive: HER2+ → trastuzumab benefit; KRAS-mut → cetuximab no benefit. Prognostic: TP53 mut em CRC → pior outcome com qualquer tratamento. Distinção crítica para clinical decision-making. Validação requer interaction term tx × biomarker em RCTs prospectivos. Confusion comum em literatura.
+          en: Predictive: HER2+ → trastuzumab benefit; KRAS-mut → cetuximab no benefit. Prognostic: TP53 mut in CRC → worse outcome with any treatment. Critical distinction for clinical decision-making. Validation requires tx × biomarker interaction term in prospective RCTs. Common confusion in literature.
+        objectives: [Predictive vs prognostic]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O CTSA program (NIH 2006+) financia…
+          en: The CTSA program (NIH 2006+) funds…
+        choices:
+          - ~60 hubs acadêmicos US para acelerar translational research e treinar TR scientists
+          - Apenas pesquisa básica
+          - Sem qualquer treinamento
+          - Apenas em US states
+        correctAnswer: ~60 hubs acadêmicos US para acelerar translational research e treinar TR scientists
+        rationale:
+          pt: NIH NCATS gerencia CTSA hubs (~60 institutions, ~$500M/ano). Mission: services (biostats, CRC, bioinformatics, regulatory), training (KL2, TL1), pilot funding. Principle Investigators in clinical/translational science. Trial Innovation Network coordena multisite. Modelo replicado: NIHR UK BRCs, France F-CRIN.
+          en: NIH NCATS manages CTSA hubs (~60 institutions, ~$500M/year). Mission: services (biostats, CRC, bioinformatics, regulatory), training (KL2, TL1), pilot funding. Principal Investigators in clinical/translational science. Trial Innovation Network coordinates multisite. Model replicated: UK NIHR BRCs, France F-CRIN.
+        objectives: [CTSA]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "bedside-to-bench" complementa "bench-to-bedside" por…
+          en: "Bedside-to-bench" complements "bench-to-bedside" by…
+        choices:
+          - Observações clínicas inspiram research básica (e.g. Imatinib BCR-ABL via leucemia myeloid)
+          - Apenas direção única
+          - Sem qualquer reciprocidade
+          - Apenas em pediatric
+        correctAnswer: Observações clínicas inspiram research básica (e.g. Imatinib BCR-ABL via leucemia myeloid)
+        rationale:
+          pt: Reverse translation: clínica → laboratory. Imatinib (Gleevec): observações de Philadelphia chromosome em CML levaram a BCR-ABL como target → drug Brian Druker/Novartis 2001. Outros: anti-PD-1 anti-PD-L1 emergiu de observações clínicas + Honjo lab. Frame "bidirectional" mais accurate. Robert Califf, Sharon Terry advogam.
+          en: Reverse translation: clinic → laboratory. Imatinib (Gleevec): Philadelphia chromosome observations in CML led to BCR-ABL as target → Brian Druker/Novartis drug 2001. Others: anti-PD-1 anti-PD-L1 emerged from clinical observations + Honjo lab. "Bidirectional" frame more accurate. Robert Califf, Sharon Terry advocate.
+        objectives: [Bedside-to-bench]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Validação de biomarker requer…
+          en: Biomarker validation requires…
+        choices:
+          - Analítica (assay precisão), clínica (sensitivity/specificity), utility (impacta decisões e outcomes)
+          - Apenas precisão
+          - Sem qualquer validação
+          - Apenas para devices
+        correctAnswer: Analítica (assay precisão), clínica (sensitivity/specificity), utility (impacta decisões e outcomes)
+        rationale:
+          pt: Pepe et al. 2001 framework. Analytical: assay reproducibility, LoD, accuracy. Clinical: AUC, NPV/PPV em populações alvo. Clinical utility: clinical decisions impacted, outcomes melhoram. Frequentemente subestimada utility (ex: PSA controvertido). FDA Biomarker Qualification Program (2010+) para drug development tools. EMA equivalent.
+          en: Pepe et al. 2001 framework. Analytical: assay reproducibility, LoD, accuracy. Clinical: AUC, NPV/PPV in target populations. Clinical utility: clinical decisions impacted, outcomes improve. Often understudied utility (e.g., PSA controversial). FDA Biomarker Qualification Program (2010+) for drug development tools. EMA equivalent.
+        objectives: [Validation tiers]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: PD-L1 IHC como predictive biomarker para anti-PD-1 tem limitações como…
+          en: PD-L1 IHC as predictive biomarker for anti-PD-1 has limitations such as…
+        choices:
+          - Cutoffs variáveis (1%, 50%, CPS), múltiplos clones (22C3, SP142, SP263) não-intercambiáveis
+          - Sempre claro
+          - Sem qualquer ambiguidade
+          - Apenas em ensaios
+        correctAnswer: Cutoffs variáveis (1%, 50%, CPS), múltiplos clones (22C3, SP142, SP263) não-intercambiáveis
+        rationale:
+          pt: PD-L1 expressão dinâmica, heterogênea espacial. Múltiplos assays (Dako 22C3 pembro, Ventana SP142 atezo, SP263 durva, 28-8 nivo) não substituíveis. Blueprint study harmonizou parcialmente. NSCLC ≥50% pembro mono; CPS ≥1 outras indicações; mama TNBC SP142 ≥1%. Predictive limitado: ~30-40% PPV mesmo em high expressers.
+          en: PD-L1 expression dynamic, spatially heterogeneous. Multiple assays (Dako 22C3 pembro, Ventana SP142 atezo, SP263 durva, 28-8 nivo) not interchangeable. Blueprint study partially harmonized. NSCLC ≥50% pembro mono; CPS ≥1 other indications; breast TNBC SP142 ≥1%. Predictive limited: ~30-40% PPV even in high expressers.
+        objectives: [PD-L1 limits]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: TMB (Tumor Mutational Burden) ≥10 mut/Mb foi aprovado como biomarker tumor-agnostic para…
+          en: TMB (Tumor Mutational Burden) ≥10 mut/Mb was approved as tumor-agnostic biomarker for…
+        choices:
+          - Pembrolizumab em qualquer câncer sólido (FDA 2020), mas eficácia heterogênea
+          - Apenas em melanoma
+          - Sem qualquer aprovação
+          - Apenas pediatric
+        correctAnswer: Pembrolizumab em qualquer câncer sólido (FDA 2020), mas eficácia heterogênea
+        rationale:
+          pt: KEYNOTE-158 (Marabelle 2020 Lancet Oncol) aprovação tumor-agnostic FDA jul/2020. Crítica: validação não consistente em todos cancer types (e.g. fraco em melanoma uveal, glioma). EMA não aprovou em base TMB. Mensuração: WES vs gene panels, cutoffs, signature artefacts. NCCN guidelines variáveis. Marker imperfeito mas útil.
+          en: KEYNOTE-158 (Marabelle 2020 Lancet Oncol) FDA tumor-agnostic approval Jul 2020. Critique: validation inconsistent across cancer types (e.g., weak in uveal melanoma, glioma). EMA didn't approve based on TMB. Measurement: WES vs gene panels, cutoffs, signature artifacts. NCCN guidelines variable. Imperfect but useful marker.
+        objectives: [TMB-H]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: MSI-H/dMMR como predictive biomarker para checkpoint inhibitors emergiu de…
+          en: MSI-H/dMMR as predictive biomarker for checkpoint inhibitors emerged from…
+        choices:
+          - Le et al. (NEJM 2015) mostrou response em CRC dMMR, expandindo a tumor-agnostic 2017 (1ª aprovação tumor-agnostic FDA)
+          - Apenas em mama
+          - Sem qualquer estudo
+          - Apenas em pediatric
+        correctAnswer: Le et al. (NEJM 2015) mostrou response em CRC dMMR, expandindo a tumor-agnostic 2017 (1ª aprovação tumor-agnostic FDA)
+        rationale:
+          pt: Dung Le/Diaz/Vogelstein (Hopkins, NEJM 2015): dMMR CRC com pembro mostrou ORR ~40%; pMMR ~0%. FDA 2017 primeiro tumor-agnostic approval (qualquer dMMR/MSI-H sólido). Mecanismo: hypermutator → neoantigens → immune response. Lynch syndrome detection bonus. Mudou pan-cancer testing standard.
+          en: Dung Le/Diaz/Vogelstein (Hopkins, NEJM 2015): dMMR CRC with pembro showed ORR ~40%; pMMR ~0%. FDA 2017 first tumor-agnostic approval (any solid dMMR/MSI-H). Mechanism: hypermutator → neoantigens → immune response. Lynch syndrome detection bonus. Changed pan-cancer testing standard.
+        objectives: [MSI-H]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: HRD (Homologous Recombination Deficiency) score como biomarker para PARP-i é…
+          en: HRD (Homologous Recombination Deficiency) score as biomarker for PARP-i is…
+        choices:
+          - Score genômico (LOH + TAI + LST) que captura BRCA1/2-like phenotype expandindo elegibilidade
+          - Apenas BRCA mutation
+          - Sem qualquer composição
+          - Apenas em mama
+        correctAnswer: Score genômico (LOH + TAI + LST) que captura BRCA1/2-like phenotype expandindo elegibilidade
+        rationale:
+          pt: HRD score (Myriad MyChoice CDx, FoundationOne CDx HRD): integra Loss of Heterozygosity, Telomeric Allelic Imbalance, Large-Scale Transitions — assinatura genômica de defective HR. ~50% ovário high-grade serous são BRCA-wild mas HRD+, beneficiam de PARP-i. Cutoff ≥42 (Myriad). Olaparib + bevacizumab maintenance ovário PAOLA-1.
+          en: HRD score (Myriad MyChoice CDx, FoundationOne CDx HRD): integrates Loss of Heterozygosity, Telomeric Allelic Imbalance, Large-Scale Transitions — genomic signature of defective HR. ~50% high-grade serous ovarian are BRCA-wild but HRD+, benefit from PARP-i. Cutoff ≥42 (Myriad). Olaparib + bevacizumab maintenance ovarian PAOLA-1.
+        objectives: [HRD]
+  - title:
+      pt: Página 2 — Aplicações
+      en: Page 2 — Applications
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Imaging biomarkers RECIST 1.1 (2009) padronizam…
+          en: Imaging biomarkers RECIST 1.1 (2009) standardize…
+        choices:
+          - Avaliação de response em sólidos: target lesions, CR/PR/SD/PD definitions
+          - Apenas em pediatric
+          - Sem qualquer estrutura
+          - Apenas para mama
+        correctAnswer: Avaliação de response em sólidos: target lesions, CR/PR/SD/PD definitions
+        rationale:
+          pt: RECIST 1.1 (Eisenhauer 2009): max 5 target lesions (≤2/órgão); CR (todas desaparecem), PR (≥30% redução), PD (≥20% aumento), SD entre. Limitações em immunotherapy (pseudoprogression): iRECIST 2017 modificado. mRECIST para HCC (necrose). Padrão FDA/EMA, intercambiável entre sites.
+          en: RECIST 1.1 (Eisenhauer 2009): max 5 target lesions (≤2/organ); CR (all disappear), PR (≥30% reduction), PD (≥20% increase), SD in between. Limitations in immunotherapy (pseudoprogression): modified iRECIST 2017. mRECIST for HCC (necrosis). FDA/EMA standard, interchangeable between sites.
+        objectives: [RECIST]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Liquid biopsy (ctDNA) emergiu como biomarker monitoramento por…
+          en: Liquid biopsy (ctDNA) emerged as monitoring biomarker because it…
+        choices:
+          - Permite MRD detection 6-24 meses pré-radiologic em CRC, mama, pulmão, bexiga
+          - Apenas para diagnostic
+          - Sem qualquer aplicação
+          - Apenas em pediatric
+        correctAnswer: Permite MRD detection 6-24 meses pré-radiologic em CRC, mama, pulmão, bexiga
+        rationale:
+          pt: Tumor-informed assays (Signatera, RaDaR): WES tumor → personalized panel → cfDNA monitoring. CIRCULATE-Japan, IMvigor011 baseiam decisões adjuvantes em MRD. Lead time 6-24 meses vs imaging. FDA aprovou via accelerated pathway. Standard care evoluindo rapidamente.
+          en: Tumor-informed assays (Signatera, RaDaR): tumor WES → personalized panel → cfDNA monitoring. CIRCULATE-Japan, IMvigor011 base adjuvant decisions on MRD. 6-24-month lead time vs imaging. FDA approved via accelerated pathway. Standard care evolving rapidly.
+        objectives: [Liquid biopsy biomarker]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Surrogate endpoint validation (Prentice 1989) requer…
+          en: Surrogate endpoint validation (Prentice 1989) requires…
+        choices:
+          - Surrogate captures total treatment effect on clinical outcome (statistical equivalence)
+          - Apenas correlação simples
+          - Sem qualquer validação
+          - Apenas em RCT
+        correctAnswer: Surrogate captures total treatment effect on clinical outcome (statistical equivalence)
+        rationale:
+          pt: Prentice criteria: surrogate deve ser na causal pathway, captura total treatment effect. Casos clássicos: CD4 count (HIV) válido; LDL para cardiac mortalidade nem sempre (CETP inhibitors paradoxo dalcetrapib). Surrogate threshold effect (Buyse): meta-analytic correlation R²trial-level. FDA accelerated approval baseia em surrogates "razoavelmente likely".
+          en: Prentice criteria: surrogate must be on causal pathway, capture total treatment effect. Classic cases: CD4 count (HIV) valid; LDL for cardiac mortality not always (CETP inhibitors paradox dalcetrapib). Surrogate threshold effect (Buyse): meta-analytic trial-level R² correlation. FDA accelerated approval based on "reasonably likely" surrogates.
+        objectives: [Prentice surrogate]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em Alzheimer disease, biomarkers via PET/CSF/blood transformaram…
+          en: In Alzheimer disease, biomarkers via PET/CSF/blood transformed…
+        choices:
+          - Diagnóstico pré-clínico, A/T/N classification (NIA-AA 2018)
+          - Apenas curiosidade
+          - Sem qualquer impacto
+          - Apenas em US
+        correctAnswer: Diagnóstico pré-clínico, A/T/N classification (NIA-AA 2018)
+        rationale:
+          pt: NIA-AA framework 2018 (Jack/Bennett): A (Aβ amyloid PET/CSF), T (tau PET/p-tau), N (neurodegeneration MRI/FDG). A+T+ = AD biológica mesmo pré-sintomática. Plasma p-tau217 (Lilly, C2N PrecivityAD) mudando game (cheap, accessible). Lecanemab (Leqembi) requer A+ confirmation.
+          en: NIA-AA 2018 framework (Jack/Bennett): A (Aβ amyloid PET/CSF), T (tau PET/p-tau), N (neurodegeneration MRI/FDG). A+T+ = biological AD even pre-symptomatic. Plasma p-tau217 (Lilly, C2N PrecivityAD) changing game (cheap, accessible). Lecanemab (Leqembi) requires A+ confirmation.
+        objectives: [AD biomarkers]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O FDA Biomarker Qualification Program (BQP) destaca-se por…
+          en: FDA Biomarker Qualification Program (BQP) stands out for…
+        choices:
+          - Qualifica biomarkers para use repetido em drug development sem reaprovação por droga
+          - Apenas para uma droga
+          - Sem qualquer reuse
+          - Apenas para devices
+        correctAnswer: Qualifica biomarkers para use repetido em drug development sem reaprovação por droga
+        rationale:
+          pt: BQP (Drug Development Tools, FDA 2010+): biomarker qualification = pode ser usado em multiple drug applications no mesmo context-of-use. Exemplos: total kidney volume em ADPKD, blood eosinophils em asthma type 2. Pre-competitive collaborations (FNIH, C-Path, IMI). Acelera development and harmoniza.
+          en: BQP (Drug Development Tools, FDA 2010+): biomarker qualification = can be used across multiple drug applications in same context-of-use. Examples: total kidney volume in ADPKD, blood eosinophils in type 2 asthma. Pre-competitive collaborations (FNIH, C-Path, IMI). Accelerates development and harmonizes.
+        objectives: [FDA BQP]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "minimum important difference" (MID) em PROs é…
+          en: "Minimum important difference" (MID) in PROs is…
+        choices:
+          - Smallest change considered meaningful pelos pacientes; threshold para clinical significance
+          - Apenas estatística sem significado clínico
+          - Sem qualquer threshold
+          - Apenas em US
+        correctAnswer: Smallest change considered meaningful pelos pacientes; threshold para clinical significance
+        rationale:
+          pt: MID (Jaeschke/Guyatt 1989): contextualiza statistical significance. Anchor-based (linked to global rating) ou distribution-based (½ SD, SE measurement). Aplicável a qualquer PRO (FACT-G, EQ-5D, PROMIS). Crítico em interpretation de RCTs: large N pode dar significance estatística sem MID clinical. FDA PRO guidance 2009 enfatiza.
+          en: MID (Jaeschke/Guyatt 1989): contextualizes statistical significance. Anchor-based (linked to global rating) or distribution-based (½ SD, measurement SE). Applicable to any PRO (FACT-G, EQ-5D, PROMIS). Critical in RCT interpretation: large N can give statistical significance without clinical MID. FDA PRO guidance 2009 emphasizes.
+        objectives: [MID]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "drug repurposing" via translational medicine é importante por…
+          en: "Drug repurposing" via translational medicine is important because…
+        choices:
+          - Drogas approved têm safety estabelecida; reposicionamento acelera + reduz custo (e.g. metformin em câncer)
+          - Sem qualquer benefício
+          - Apenas para genéricos
+          - Apenas em pediatric
+        correctAnswer: Drogas approved têm safety estabelecida; reposicionamento acelera + reduz custo (e.g. metformin em câncer)
+        rationale:
+          pt: Repurposing/repositioning: NIH NCATS Cures Acceleration Network. Métodos: connectivity map (Lamb 2006 Broad), GWAS-based, computational network. Sucessos: thalidomide (sleep → MM), sildenafil (HBP → ED), minoxidil (HBP → alopecia), bupropion (depression → smoking cessation), rituximab (lymphoma → autoimmune), low-dose aspirin (analgesic → CV prevention).
+          en: Repurposing/repositioning: NIH NCATS Cures Acceleration Network. Methods: connectivity map (Lamb 2006 Broad), GWAS-based, computational network. Successes: thalidomide (sleep → MM), sildenafil (HBP → ED), minoxidil (HBP → alopecia), bupropion (depression → smoking cessation), rituximab (lymphoma → autoimmune), low-dose aspirin (analgesic → CV prevention).
+        objectives: [Repurposing]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A molecular tumor board é fórum para…
+          en: Molecular tumor board is a forum for…
+        choices:
+          - Discutir resultados NGS em pacientes com câncer e priorizar terapias guiadas por biomarker
+          - Apenas pesquisa básica
+          - Sem qualquer estrutura
+          - Apenas em pediatric
+        correctAnswer: Discutir resultados NGS em pacientes com câncer e priorizar terapias guiadas por biomarker
+        rationale:
+          pt: MTB: oncologistas + pathologists + geneticists + molecular biologists revisam casos. NCCN incentiva. NCI-MATCH, ASCO TAPUR providenciam basket de drugs gratuitos para variants actionable. Tabou clínico: complexidade do reporting NGS, treatment off-label, pagamento. Crescente integração nos cancer centers.
+          en: MTB: oncologists + pathologists + geneticists + molecular biologists review cases. NCCN encourages. NCI-MATCH, ASCO TAPUR provide free drug basket for actionable variants. Clinical taboo: NGS reporting complexity, off-label treatment, payment. Growing integration at cancer centers.
+        objectives: [Molecular tumor board]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em rare disease, "natural history studies" são importantes por…
+          en: In rare disease, "natural history studies" are important because they…
+        choices:
+          - Caracterizar progressão da doença sem tratamento, criando comparator histórico para single-arm trials
+          - Apenas observação acadêmica
+          - Sem qualquer aplicação
+          - Apenas em US
+        correctAnswer: Caracterizar progressão da doença sem tratamento, criando comparator histórico para single-arm trials
+        rationale:
+          pt: NHS: prospectivos longitudinais, captura outcomes, biomarkers ao longo do tempo. Crítico em rare/ultra-rare onde RCT comparator unethical. Exemplos: PNCR (Pediatric Neuromuscular Clinical Research) para SMA → comparator Zolgensma; UPDRS Parkinson; DMD natural history. FDA guidance 2019 para rare diseases.
+          en: NHS: prospective longitudinal, captures outcomes, biomarkers over time. Critical in rare/ultra-rare where comparator RCT unethical. Examples: PNCR (Pediatric Neuromuscular Clinical Research) for SMA → comparator Zolgensma; Parkinson UPDRS; DMD natural history. FDA 2019 guidance for rare diseases.
+        objectives: [Natural history]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Initiative on Patient-Centered Clinical Trials (FDA Patient-Focused Drug Development) busca…
+          en: Patient-Focused Drug Development Initiative (FDA) seeks to…
+        choices:
+          - Incorporar voz do paciente em outcomes, design, regulatory decisions
+          - Apenas industry voice
+          - Sem qualquer envolvimento patient
+          - Apenas em pediatric
+        correctAnswer: Incorporar voz do paciente em outcomes, design, regulatory decisions
+        rationale:
+          pt: PFDD (FDA PDUFA V 2012+): meetings com pacientes para entender disease burden, treatment priorities, what matters. Resulta em PFDD reports. Influencia label, endpoints, trials. Exemplos: lung cancer fatigue, ADHD parents, Parkinson "Off" time. Crescente em rare diseases (CFF, MDA, NORD partnerships).
+          en: PFDD (FDA PDUFA V 2012+): meetings with patients to understand disease burden, treatment priorities, what matters. Results in PFDD reports. Influences label, endpoints, trials. Examples: lung cancer fatigue, ADHD parents, Parkinson "Off" time. Growing in rare diseases (CFF, MDA, NORD partnerships).
+        objectives: [PFDD]
+target: 20
