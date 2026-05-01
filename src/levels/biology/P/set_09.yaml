@@ -1,0 +1,343 @@
+title:
+  pt: Arquitetura 3D do Genoma e Cromatina
+  en: 3D Genome Architecture and Chromatin
+level: P
+subject: biology
+objectives:
+  - Compreender Hi-C, TADs, compartments A/B
+  - Reconhecer loop extrusion (cohesina, CTCF)
+  - Identificar Micro-C, ChIA-PET, capture-Hi-C
+  - Avaliar relação com transcrição e doenças
+difficulty: 5
+authorNotes: |
+  3D genome. Lieberman-Aiden Hi-C 2009. Job Dekker, Mirny, Aiden, Bing Ren. TADs (Dixon 2012,
+  Nora 2012). CTCF Phillips/Corces. Cohesina (SMC1/3/RAD21/STAG1-2). Loop extrusion model
+  Mirny/Nuebler 2018, Sanborn-Rao 2015. Micro-C (Hsieh 2020). ChIA-PET. Disease: cohesinopathies
+  (Cornelia de Lange NIPBL), Cohesin in cancer. 4DN consortium NIH. Pol II clusters/condensates
+  Lippincott-Schwartz/Cisse. Phase separation Hyman/Brangwynne.
+example:
+  question:
+    pt: Hi-C (Lieberman-Aiden 2009 Science) mede frequência de contato entre…
+    en: Hi-C (Lieberman-Aiden 2009 Science) measures contact frequency between…
+  choices:
+    - Pares de fragmentos genômicos via crosslink + ligação proximal + sequenciamento
+    - Apenas pares próximos no DNA linear sem informação 3D
+    - Apenas RNA-RNA sem qualquer DNA
+    - Apenas estruturas 3D atômicas via cristalografia
+  correctAnswer: Pares de fragmentos genômicos via crosslink + ligação proximal + sequenciamento
+  rationale:
+    pt: Hi-C: formaldeído crosslinka contatos in situ; digestão restrição (HindIII, MboI); ligação proximal (em diluição alta); sequenciamento paired-end identifica pares espacialmente próximos. Mapas 3D revelaram compartimentos A/B, TADs, loops. Job Dekker (3C 2002) precursor; Hi-C escala genome-wide.
+    en: Hi-C: formaldehyde crosslinks contacts in situ; restriction digestion (HindIII, MboI); proximal ligation (high dilution); paired-end sequencing identifies spatially close pairs. 3D maps revealed A/B compartments, TADs, loops. Job Dekker (3C 2002) precursor; Hi-C scales genome-wide.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — TADs e organização
+      en: Page 1 — TADs and organization
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Compartimentos A/B do genoma (Lieberman-Aiden 2009) refletem…
+          en: A/B compartments (Lieberman-Aiden 2009) reflect…
+        choices:
+          - Domínios eucromatínicos ativos (A) vs heterocromatínicos inativos (B), em escala de Mb
+          - Apenas regiões teloméricas vs centroméricas
+          - Apenas cromossomos sexuais vs autossomos
+          - Sem qualquer correlação com transcrição
+        correctAnswer: Domínios eucromatínicos ativos (A) vs heterocromatínicos inativos (B), em escala de Mb
+        rationale:
+          pt: Compartimentos A/B emergem de PCA da matriz Hi-C (5-100 kb resolução). A: cromatina aberta, alta densidade gênica, expressão alta, replicação precoce. B: heterocromatina, gênica baixa, replicação tardia. Reconfigurados em diferenciação celular.
+          en: A/B compartments emerge from PCA of Hi-C matrix (5-100 kb resolution). A: open chromatin, high gene density, high expression, early replication. B: heterochromatin, low genes, late replication. Reconfigured in cellular differentiation.
+        objectives: [Compartments A/B]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: TADs (Topologically Associating Domains, Dixon 2012, Nora 2012) são…
+          en: TADs (Topologically Associating Domains, Dixon 2012, Nora 2012) are…
+        choices:
+          - Domínios de ~100 kb-1 Mb com auto-interação intensa, separados por boundaries CTCF/cohesina
+          - Apenas regiões aleatórias sem qualquer estrutura
+          - Apenas em cromossomo X inativado (Xist)
+          - Substituição completa do conceito de cromossomo
+        correctAnswer: Domínios de ~100 kb-1 Mb com auto-interação intensa, separados por boundaries CTCF/cohesina
+        rationale:
+          pt: TADs: blocos de auto-interação preservados entre tipos celulares e até espécies. Boundaries enriquecidas em CTCF e cohesina. Definem unidades regulatórias: enhancer-promoter pairs preferem dentro do mesmo TAD. Disrupção causa misregulation (e.g. WNT6 limb malformation, Lupiáñez 2015).
+          en: TADs: self-interacting blocks preserved across cell types and even species. Boundaries enriched in CTCF and cohesin. Define regulatory units: enhancer-promoter pairs prefer within same TAD. Disruption causes misregulation (e.g., WNT6 limb malformation, Lupiáñez 2015).
+        objectives: [TADs]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O modelo "loop extrusion" (Sanborn/Rao 2015, Mirny 2018) propõe que…
+          en: "Loop extrusion" model (Sanborn/Rao 2015, Mirny 2018) proposes that…
+        choices:
+          - Cohesina extrude alça de DNA até parar em CTCF convergente, formando loops e TADs
+          - Histonas se movem ativamente formando loops sem cohesina
+          - DNA dobra-se passivamente sem qualquer máquina
+          - Apenas em mitose, sem qualquer relevância para interfase
+        correctAnswer: Cohesina extrude alça de DNA até parar em CTCF convergente, formando loops e TADs
+        rationale:
+          pt: Cohesina (SMC1/3, RAD21, STAG) carrega DNA, extrudindo alça progressivamente. Para em sítios CTCF orientados convergentemente. Modelo unifica TADs, loops, sister-chromatid (mitose). Suporte: depleção CTCF (Nora 2017), cohesina (Rao 2017) elimina loops/TADs. Single-molecule (Davidson, Kim 2019) visualizou diretamente.
+          en: Cohesin (SMC1/3, RAD21, STAG) loads onto DNA, progressively extruding loop. Stops at convergently oriented CTCF sites. Model unifies TADs, loops, sister-chromatid (mitosis). Support: CTCF depletion (Nora 2017), cohesin (Rao 2017) eliminates loops/TADs. Single-molecule (Davidson, Kim 2019) directly visualized.
+        objectives: [Loop extrusion]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: CTCF (CCCTC-binding factor) tem função arquitetural por…
+          en: CTCF (CCCTC-binding factor) has architectural function by…
+        choices:
+          - Bloquear cohesina, definindo boundaries de TADs e loops; orientação direcional
+          - Apenas reprimir transcrição diretamente
+          - Atuar como histona modificadora exclusivamente
+          - Substituir SMC complexes em qualquer função
+        correctAnswer: Bloquear cohesina, definindo boundaries de TADs e loops; orientação direcional
+        rationale:
+          pt: CTCF (Renkawitz/Lobanenkov 1990): zinc finger TF com 50k+ sítios genoma humano. ~80% pares de loops têm CTCF nas duas pontas, orientação convergente. Tornou-se "arquiteto" canônico do genoma 3D, junto com YY1 (loops específicos), RNA Pol II.
+          en: CTCF (Renkawitz/Lobanenkov 1990): zinc-finger TF with 50k+ sites in human genome. ~80% of loop pairs have CTCF at both anchors, convergent orientation. Became the canonical 3D genome "architect" alongside YY1 (specific loops), RNA Pol II.
+        objectives: [CTCF]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Micro-C (Hsieh 2020) difere de Hi-C tradicional por…
+          en: Micro-C (Hsieh 2020) differs from traditional Hi-C by…
+        choices:
+          - Usar MNase em vez de restrição → resolução de nucleossomo (~150 bp)
+          - Usar enzimas de restrição mais grosseiras
+          - Pular completamente a etapa de crosslink
+          - Substituir sequenciamento por microscopia
+        correctAnswer: Usar MNase em vez de restrição → resolução de nucleossomo (~150 bp)
+        rationale:
+          pt: Micro-C (Hsieh/Rando 2020 Cell, Krietenstein 2020 Mol Cell) usa MNase digestão a nucleossomo único, atingindo resolução ~150 bp vs ~1-5 kb de Hi-C. Revelou stripes finas de extrusion, micro-TADs em humano. Padrão atual para alta resolução.
+          en: Micro-C (Hsieh/Rando 2020 Cell, Krietenstein 2020 Mol Cell) uses MNase digestion to single nucleosome, achieving ~150 bp resolution vs ~1-5 kb of Hi-C. Revealed fine extrusion stripes, micro-TADs in human. Current standard for high resolution.
+        objectives: [Micro-C]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ChIA-PET e HiChIP enriquecem contatos relacionados a…
+          en: ChIA-PET and HiChIP enrich contacts associated with…
+        choices:
+          - Proteína específica (e.g. Pol II, CTCF, H3K27ac) via ChIP antes da ligação proximal
+          - Apenas regiões repetitivas
+          - Apenas RNA com pouca proteína
+          - Substituição completa de Hi-C
+        correctAnswer: Proteína específica (e.g. Pol II, CTCF, H3K27ac) via ChIP antes da ligação proximal
+        rationale:
+          pt: ChIA-PET (Fullwood/Ruan 2009) e HiChIP (Mumbach/Chang 2016) combinam ChIP com Hi-C: enriquecem por proteína-alvo, identificando loops específicos a esse complexo. Pol II ChIA-PET revela enhancer-promoter promíscuo; CTCF dá architectural. H3K27ac HiChIP padrão para ativos.
+          en: ChIA-PET (Fullwood/Ruan 2009) and HiChIP (Mumbach/Chang 2016) combine ChIP with Hi-C: enrich for target protein, identifying loops specific to that complex. Pol II ChIA-PET reveals promiscuous enhancer-promoter; CTCF gives architectural. H3K27ac HiChIP is active standard.
+        objectives: [HiChIP ChIA-PET]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Capture-Hi-C (Mifsud, Schoenfelder) é importante para…
+          en: Capture-Hi-C (Mifsud, Schoenfelder) is important for…
+        choices:
+          - Enriquecer interações de regiões específicas (e.g. promotores) para alta resolução baixa quantidade
+          - Apenas Hi-C convencional sem qualquer enriquecimento
+          - Substituir CRISPR genômico
+          - Apenas em organismos modelo
+        correctAnswer: Enriquecer interações de regiões específicas (e.g. promotores) para alta resolução baixa quantidade
+        rationale:
+          pt: Capture-Hi-C usa probes biotinilados sobre promotores ou enhancers, enriquece library Hi-C 100-1000x. Permite mapas de alta resolução por sequenciamento moderado. Promoter Capture Hi-C (Schoenfelder) mapeou ~80k interações promotor em ENCODE/4DN. Aplicação em GWAS para conectar variantes a genes.
+          en: Capture-Hi-C uses biotinylated probes over promoters or enhancers, enriches Hi-C library 100-1000x. Allows high-resolution maps with moderate sequencing. Promoter Capture Hi-C (Schoenfelder) mapped ~80k promoter interactions in ENCODE/4DN. GWAS application to connect variants to genes.
+        objectives: [Capture-Hi-C]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O 4D Nucleome Project (4DN, NIH 2015+) tem objetivo de…
+          en: The 4D Nucleome Project (4DN, NIH 2015+) aims to…
+        choices:
+          - Mapear estrutura 3D do genoma e dinâmica temporal em múltiplas células e condições
+          - Apenas estruturas 4D mecânicas
+          - Substituir 4DN por outro nome arbitrário
+          - Apenas dados estáticos sem qualquer dinâmica
+        correctAnswer: Mapear estrutura 3D do genoma e dinâmica temporal em múltiplas células e condições
+        rationale:
+          pt: 4DN (NIH Common Fund 2015): consórcio mapeando structure-function da arquitetura 3D do genoma, integrando Hi-C, microscopia super-res, edição CRISPR. Bing Ren, Aiden, Job Dekker, Mirny, Mirny são líderes. Análoga a ENCODE para 3D.
+          en: 4DN (NIH Common Fund 2015): consortium mapping structure-function of 3D genome architecture, integrating Hi-C, super-resolution microscopy, CRISPR editing. Bing Ren, Aiden, Job Dekker, Mirny lead. Analogous to ENCODE for 3D.
+        objectives: [4DN]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Síndromes de Cohesina (Cornelia de Lange, mutações em NIPBL/SMC1A/SMC3) afetam…
+          en: Cohesinopathies (Cornelia de Lange, NIPBL/SMC1A/SMC3 mutations) affect…
+        choices:
+          - Carregamento e estabilidade da cohesina, perturbando arquitetura 3D e regulação transcricional
+          - Apenas separação de cromátides irmãs em mitose
+          - Apenas processos mitocondriais sem cromatina
+          - Substituição direta por NHEJ
+        correctAnswer: Carregamento e estabilidade da cohesina, perturbando arquitetura 3D e regulação transcricional
+        rationale:
+          pt: Cornelia de Lange Syndrome (CdLS): mutações em NIPBL (~70%), SMC1A, SMC3, RAD21, HDAC8 — máquina de cohesina. Apresenta-se com micro-cefalia, anormalidades faciais, retardo. Hipótese atual: efeito é mais transcripcional (loop extrusion, regulação) que cromossômico (segregação).
+          en: Cornelia de Lange Syndrome (CdLS): mutations in NIPBL (~70%), SMC1A, SMC3, RAD21, HDAC8 — cohesin machinery. Presents with microcephaly, facial anomalies, retardation. Current hypothesis: effect is more transcriptional (loop extrusion, regulation) than chromosomal (segregation).
+        objectives: [CdLS]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Mutações em STAG2 (subunidade de cohesina) são frequentes em qual câncer?
+          en: STAG2 (cohesin subunit) mutations are frequent in which cancer?
+        choices:
+          - Bexiga, Ewing sarcoma, leucemia mieloide aguda
+          - Apenas glioblastoma
+          - Apenas câncer de mama
+          - Apenas linfoma de Hodgkin
+        correctAnswer: Bexiga, Ewing sarcoma, leucemia mieloide aguda
+        rationale:
+          pt: STAG2 (gene X-linked, frequentemente mutado em cânceres). Solomon/Hammoudi 2011 (Science) observou mutações em ~30% bexiga, melanoma, Ewing, AML. Função: contribui à arquitetura 3D; perda altera padrões transcricionais oncogênicos. Synthetic lethality com STAG1 explorada.
+          en: STAG2 (X-linked gene, frequently mutated in cancers). Solomon/Hammoudi 2011 (Science) found mutations in ~30% bladder, melanoma, Ewing, AML. Function: contributes to 3D architecture; loss alters oncogenic transcription patterns. Synthetic lethality with STAG1 exploited.
+        objectives: [STAG2 cancer]
+  - title:
+      pt: Página 2 — Dinâmica e fenômenos modernos
+      en: Page 2 — Dynamics and modern phenomena
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Os "polymer models" (Mirny, Marenduzzo) descrevem o cromossomo como…
+          en: Polymer models (Mirny, Marenduzzo) describe the chromosome as…
+        choices:
+          - Cadeia polimérica em fluido com forças (LE, atração intra-A/B), simulada com MD
+          - Estrutura cristalina rígida e estática
+          - Apenas DNA linear sem qualquer 3D
+          - Substituição completa de Hi-C experimental
+        correctAnswer: Cadeia polimérica em fluido com forças (LE, atração intra-A/B), simulada com MD
+        rationale:
+          pt: Polymer models: cromossomo como random walk + interações específicas (loop extrusion, microphase separation A/B). Mirny lab simulou (MD coarse-grained); reproduz mapas Hi-C qualitativamente. Inferências quantitativas sobre tempos de extrusão, frequência de loops, dinâmica de TADs. Análoga a "knot theory" em fagos.
+          en: Polymer models: chromosome as random walk + specific interactions (loop extrusion, microphase separation A/B). Mirny lab simulated (coarse-grained MD); reproduces Hi-C maps qualitatively. Quantitative inferences about extrusion times, loop frequencies, TAD dynamics. Analogous to "knot theory" in phages.
+        objectives: [Polymer models]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "phase separation" (LLPS, Hyman/Brangwynne) em transcrição é importante porque…
+          en: Phase separation (LLPS, Hyman/Brangwynne) in transcription matters because…
+        choices:
+          - Hub transcripcionais (super-enhancers + Pol II + Med1) formam condensados líquidos via IDRs
+          - Apenas em organelas membranosas como mitocôndrias
+          - Substituição de complexos macromoleculares clássicos
+          - Apenas em vírus envelopados
+        correctAnswer: Hub transcripcionais (super-enhancers + Pol II + Med1) formam condensados líquidos via IDRs
+        rationale:
+          pt: Liquid-Liquid Phase Separation (Brangwynne 2009 P granules; Hyman/Sabari/Young 2017+): proteínas com domínios desordenados (IDRs) formam condensados sem membrana. Em transcrição: super-enhancers + Med1 + BRD4 + Pol II concentram-se em "transcription condensates", explicando hyperexpression. CDK9/CDK7, eRNA contribuem.
+          en: Liquid-Liquid Phase Separation (Brangwynne 2009 P granules; Hyman/Sabari/Young 2017+): proteins with disordered domains (IDRs) form membraneless condensates. In transcription: super-enhancers + Med1 + BRD4 + Pol II concentrate into "transcription condensates", explaining hyperexpression. CDK9/CDK7, eRNA contribute.
+        objectives: [LLPS transcrição]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em mitose, o cromossomo é compactado por…
+          en: In mitosis, the chromosome is compacted by…
+        choices:
+          - Condensina I/II via loop extrusion massivo, eliminando TADs interfásicos
+          - Apenas histonas modificadas sem complexos SMC
+          - Apenas separação de cromátides sem compactação
+          - DNA bruto sem qualquer organização
+        correctAnswer: Condensina I/II via loop extrusion massivo, eliminando TADs interfásicos
+        rationale:
+          pt: Mitose: condensina I (citoplasma, eu/heterocromatina geral) e II (nuclear, heterocromatina) gerão alças nested em massa via loop extrusion. Hi-C mitótico (Naumova 2013) revelou helicoide longitudinal sem TADs/compartimentos. Re-emerge na G1 progressivamente.
+          en: Mitosis: condensin I (cytoplasm, general eu/heterochromatin) and II (nuclear, heterochromatin) form nested loops in mass via loop extrusion. Mitotic Hi-C (Naumova 2013) revealed longitudinal helix without TADs/compartments. Re-emerges in G1 progressively.
+        objectives: [Mitose condensina]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O cromossomo X inativado em mamíferos forma estrutura especial chamada…
+          en: The inactivated mammalian X chromosome forms a special structure called…
+        choices:
+          - Corpúsculo de Barr, com Xist RNA recobrindo e silenciando bi-/megadomínios
+          - Sem qualquer compactação especial
+          - Apenas heterocromatina convencional sem Xist
+          - Substituído por Y inativo
+        correctAnswer: Corpúsculo de Barr, com Xist RNA recobrindo e silenciando bi-/megadomínios
+        rationale:
+          pt: X inativado: Xist lncRNA cobre o cromossomo (~17kb), recruta PRC2/H3K27me3, gera mega-domínios (Hi-C mostra 2 superTADs separados por DXZ4). Corpúsculo de Barr é estrutura citológica visível. Lyon (1961) propôs hipótese de inativação aleatória; Brockdorff caracterizou Xist (1991+).
+          en: Inactivated X: Xist lncRNA coats the chromosome (~17kb), recruits PRC2/H3K27me3, generates mega-domains (Hi-C shows 2 super-TADs separated by DXZ4). Barr body is the cytologically visible structure. Lyon (1961) proposed random inactivation hypothesis; Brockdorff characterized Xist (1991+).
+        objectives: [X inativo]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em desenvolvimento embrionário precoce, a "zigotic genome activation" (ZGA) está acompanhada de…
+          en: Embryonic zygotic genome activation (ZGA) is accompanied by…
+        choices:
+          - Estabelecimento gradual de TADs e compartimentos A/B inicialmente ausentes
+          - Apenas replicação de DNA sem qualquer estrutura 3D
+          - Estrutura 3D já presente desde fertilização
+          - Substituição completa de cromatina maternal
+        correctAnswer: Estabelecimento gradual de TADs e compartimentos A/B inicialmente ausentes
+        rationale:
+          pt: Du/Hsieh/Tachibana 2017 (Nature) e Ke 2017 mostraram em rato/humano que TADs e compartimentos surgem progressivamente após ZGA, refletindo estabelecimento de cromatina ativa/inativa. CTCF/cohesina pré-existentes em oocyte mas atividade depende de transcrição zigótica.
+          en: Du/Hsieh/Tachibana 2017 (Nature) and Ke 2017 showed in mouse/human that TADs and compartments arise progressively after ZGA, reflecting active/inactive chromatin establishment. CTCF/cohesin pre-existing in oocyte but activity depends on zygotic transcription.
+        objectives: [ZGA 3D]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "TAD-disruption disease" (Lupiáñez 2015 Cell) demonstrou que…
+          en: "TAD-disruption disease" (Lupiáñez 2015 Cell) demonstrated that…
+        choices:
+          - Deleções/inversões em boundaries de TADs causam misregulação de genes (e.g. malformações de membros via WNT6/EPHA4)
+          - TADs são irrelevantes para regulação gênica
+          - Mutações em TADs causam apenas câncer
+          - Substituição de qualquer regulação canônica
+        correctAnswer: Deleções/inversões em boundaries de TADs causam misregulação de genes (e.g. malformações de membros via WNT6/EPHA4)
+        rationale:
+          pt: Lupiáñez et al. (Cell 2015): pacientes com malformações de mãos/pés têm SVs (deleções, inversões, duplicações) em boundary de TAD próxima a EPHA4/WNT6/PAX3 — colocando enhancers de outro TAD em contato com gene errado. Marco para "structural variants disrupting 3D".
+          en: Lupiáñez et al. (Cell 2015): patients with hand/foot malformations have SVs (deletions, inversions, duplications) at TAD boundary near EPHA4/WNT6/PAX3 — placing enhancers from another TAD in contact with wrong gene. Landmark for "structural variants disrupting 3D".
+        objectives: [TAD disruption disease]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em câncer, perda de boundaries de TADs (e.g. CTCF mutations, IDH1 hypermethylation) pode ativar…
+          en: In cancer, loss of TAD boundaries (e.g., CTCF mutations, IDH1 hypermethylation) can activate…
+        choices:
+          - Oncogenes via "enhancer hijacking" — enhancer ativo entra em contato com proto-oncogene previamente isolado
+          - Apenas tumor supressores sem oncogenes
+          - Apenas genes de manutenção sem efeito clínico
+          - Substituição de qualquer mutação somática clássica
+        correctAnswer: Oncogenes via "enhancer hijacking" — enhancer ativo entra em contato com proto-oncogene previamente isolado
+        rationale:
+          pt: Glioma IDH-mut hypermetila CTCF, dissolvendo TAD boundary entre enhancer constitutivo e PDGFRA → ativa oncogene (Flavahan 2016). Northcott Burkitt linfoma t(8;14) coloca MYC em TAD com IGH enhancers. "Enhancer hijacking" = mecanismo oncogênico recorrente em SV.
+          en: IDH-mut glioma hypermethylates CTCF, dissolving TAD boundary between constitutive enhancer and PDGFRA → activates oncogene (Flavahan 2016). Northcott Burkitt lymphoma t(8;14) places MYC in TAD with IGH enhancers. "Enhancer hijacking" = recurrent oncogenic mechanism in SV.
+        objectives: [Enhancer hijacking]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Métodos single-cell Hi-C (Nagano 2013, Stevens 2017) revelaram…
+          en: Single-cell Hi-C methods (Nagano 2013, Stevens 2017) revealed…
+        choices:
+          - Variabilidade célula-a-célula em conformação 3D, com TADs preservados mas instâncias específicas
+          - TADs idênticos em todas as células
+          - Apenas em células de levedura
+          - Apenas para organismos modelo
+        correctAnswer: Variabilidade célula-a-célula em conformação 3D, com TADs preservados mas instâncias específicas
+        rationale:
+          pt: scHi-C (Nagano 2013), Dip-C (Tan 2018), sn-m3C (Lee 2019) mostraram que mapas Hi-C populacionais são médias; cada célula tem subconjunto distinto de contatos. TADs estáveis em "ensemble" mas dinâmicos em single-cell. Estoichiometria de extrusão e ciclo celular interferem.
+          en: scHi-C (Nagano 2013), Dip-C (Tan 2018), sn-m3C (Lee 2019) showed population Hi-C maps are averages; each cell has distinct contact subset. TADs stable "in ensemble" but dynamic in single cells. Extrusion stoichiometry and cell cycle matter.
+        objectives: [scHi-C]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em microscopia super-resolvida (STORM, OligoSTORM, ChromOSCAR), a visualização direta de cromatina revelou…
+          en: Super-resolution microscopy (STORM, OligoSTORM, ChromOSCAR) of chromatin directly revealed…
+        choices:
+          - Domínios cromossômicos em ~50-200 nm, complementando Hi-C com posições absolutas
+          - Apenas confirmação de cromossomos já visíveis em microscopia clássica
+          - Substituição completa de Hi-C
+          - Apenas em virus sem aplicação a humano
+        correctAnswer: Domínios cromossômicos em ~50-200 nm, complementando Hi-C com posições absolutas
+        rationale:
+          pt: OligoSTORM (Boettiger 2016 Nature), ORCA (Mateo 2019), HiPR-FISH dão imageamento direto de loci individuais com sondas DNA-FISH oligomerizadas. Confirmaram TADs/compartimentos como entidades físicas, mediram tamanhos absolutos. Complementam Hi-C em escala individual de célula viva.
+          en: OligoSTORM (Boettiger 2016 Nature), ORCA (Mateo 2019), HiPR-FISH directly image individual loci with DNA-FISH oligomerized probes. Confirmed TADs/compartments as physical entities, measured absolute sizes. Complement Hi-C at single-cell level live.
+        objectives: [Chromatin imaging]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O modelo "transcription factory" (Pombo, Cook), revisado em 3D, propõe que…
+          en: The "transcription factory" model (Pombo, Cook), revised in 3D, proposes that…
+        choices:
+          - Pol II forma clusters dinâmicos com múltiplos genes coregulados, frequentemente em loops/hubs
+          - Cada gene tem própria fábrica isolada
+          - Apenas genes housekeeping são transcritos
+          - Sem qualquer organização espacial da transcrição
+        correctAnswer: Pol II forma clusters dinâmicos com múltiplos genes coregulados, frequentemente em loops/hubs
+        rationale:
+          pt: Cook (1999), Pombo (2006) propuseram "fábricas de transcrição" — Pol II em clusters serve múltiplos genes. Imageamento dinâmico (Cisse, Hansen 2013) confirmou clusters em ~10 segundos. Combina-se com 3D contacts: genes coregulados em "hubs" via loops, formando microambientes de transcrição.
+          en: Cook (1999), Pombo (2006) proposed "transcription factories" — Pol II clusters serve multiple genes. Dynamic imaging (Cisse, Hansen 2013) confirmed clusters at ~10 seconds. Combines with 3D contacts: co-regulated genes in "hubs" via loops, forming transcription microenvironments.
+        objectives: [Transcription factories]
+target: 20
