@@ -1,0 +1,343 @@
+title:
+  pt: Inteligência de Organoides e Interfaces Cérebro-Computador
+  en: Organoid Intelligence and Brain-Computer Interfaces
+level: O
+subject: biology
+objectives:
+  - Entender inteligência de organoides (OI) e DishBrain
+  - Reconhecer plataformas de BCI (Neuralink, Synchron, Utah Array)
+  - Identificar aplicações clínicas (ALS, tetraplegia, fala)
+  - Avaliar dilemas éticos (consciência, privacidade neural)
+difficulty: 5
+authorNotes: |
+  Frontier OI/BCI. Hartung OI roadmap 2023, Cortical Labs DishBrain Pong (Kagan 2022),
+  FinalSpark Neuroplatform, Neuralink N1 PRIME trial 2024 (Noland Arbaugh), Synchron
+  Stentrode (Tom Oxley), BrainGate (Donoghue/Hochberg), Utah Array (Normann), Stanford
+  speech BCI 62 wpm (Willett 2023), UCSF speech avatar (Chang 2023), Blackrock,
+  Paradromics, NeuroRights (Yuste, Chile constitutional 2021), Ienca privacy.
+example:
+  question:
+    pt: Em 2022, o experimento DishBrain do Cortical Labs demonstrou que neurônios humanos cultivados em multi-eletrodos aprendiam a jogar um jogo clássico em minutos. Qual jogo e qual o autor principal?
+    en: In 2022, Cortical Labs' DishBrain experiment showed cultured human neurons on multi-electrode arrays learning to play a classic game within minutes. Which game and lead author?
+  choices:
+    - Pong — Brett Kagan e colaboradores no Cortical Labs em Melbourne
+    - Tetris — Thomas Hartung no Johns Hopkins liderando o consórcio OI
+    - Pac-Man — Fred Gage no Salk Institute usando organoides corticais
+    - Space Invaders — Madeline Lancaster no MRC-LMB Cambridge
+  correctAnswer: Pong — Brett Kagan e colaboradores no Cortical Labs em Melbourne
+  rationale:
+    pt: O DishBrain (Kagan et al., Neuron 2022) usou ~800.000 neurônios sobre MEA HD-MEA e aprendizado por princípio de energia livre para jogar Pong, marcando a primeira "inteligência sintética biológica" demonstrada empiricamente.
+    en: DishBrain (Kagan et al., Neuron 2022) used ~800k neurons on HD-MEA with free-energy-principle learning to play Pong, marking the first empirically demonstrated "synthetic biological intelligence".
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Organoides e inteligência biológica
+      en: Page 1 — Organoids and biological intelligence
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em 2023, Thomas Hartung publicou um roadmap para "Inteligência de Organoides". Qual sua tese central sobre vantagem comparativa frente à IA de silício?
+          en: In 2023, Thomas Hartung published an "Organoid Intelligence" roadmap. What is his central thesis on comparative advantage vs silicon AI?
+        choices:
+          - Cérebros biológicos consomem ~20W e aprendem com poucos exemplos, vencendo silício em eficiência energética e generalização
+          - Organoides têm mais neurônios que GPUs e por isso superam LLMs em raciocínio matemático complexo
+          - Neurônios cultivados podem ser clonados infinitamente sem custo, eliminando despesa computacional
+          - OI substitui modelos de fronteira porque dispensa dados de treinamento e funciona sem energia
+        correctAnswer: Cérebros biológicos consomem ~20W e aprendem com poucos exemplos, vencendo silício em eficiência energética e generalização
+        rationale:
+          pt: Hartung argumenta que cérebros humanos resolvem em ~20W tarefas que exigem MW em data centers, e aprendem com poucos exemplos — daí o programa OI buscar substratos biológicos para computação.
+          en: Hartung argues human brains do at ~20W what data centers do at MW, and learn from few examples — hence the OI program seeking biological substrates for computation.
+        objectives: [Inteligência de organoides]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A FinalSpark, startup suíça, opera a "Neuroplatform" comercializando acesso remoto a quê?
+          en: Swiss startup FinalSpark operates the "Neuroplatform" commercializing remote access to what?
+        choices:
+          - Organoides cerebrais vivos com eletrodos para experimentos de computação biológica via internet
+          - Modelos de IA treinados exclusivamente em dados de fMRI humano coletados na Suíça
+          - Bibliotecas de DNA sintético encomendáveis para neurociência computacional
+          - Robôs humanoides controlados por redes neurais artificiais hospedadas em Genebra
+        correctAnswer: Organoides cerebrais vivos com eletrodos para experimentos de computação biológica via internet
+        rationale:
+          pt: A FinalSpark (Vaud, Suíça) oferece acesso 24/7 a organoides em MEA via API, permitindo que pesquisadores executem experimentos de wetware computing remotamente — primeira plataforma SaaS de neurônios vivos.
+          en: FinalSpark (Vaud, Switzerland) offers 24/7 API access to MEA-mounted organoids, letting researchers run wetware computing experiments remotely — the first live-neuron SaaS.
+        objectives: [Inteligência de organoides]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Organoides cerebrais vascularizados, demonstrados por Sergiu Paşca e outros em 2022-2024, resolvem qual limitação clássica?
+          en: Vascularized brain organoids, demonstrated by Sergiu Paşca and others in 2022-2024, solve which classic limitation?
+        choices:
+          - Necrose central por difusão limitada de oxigênio e nutrientes além de ~400 μm
+          - Ausência de células gliais como astrócitos e oligodendrócitos nos cultivos
+          - Incapacidade de gerar potenciais de ação espontâneos em neurônios maduros
+          - Falta de identidade regional cortical estável durante a diferenciação
+        correctAnswer: Necrose central por difusão limitada de oxigênio e nutrientes além de ~400 μm
+        rationale:
+          pt: Sem vasculatura, organoides excedem o limite de difusão de O2 (~400 μm) e necrosam no centro. Vascularização (transplante em cérebro de rato, co-cultura com células endoteliais) preserva o tecido profundo.
+          en: Without vasculature, organoids exceed O2 diffusion limit (~400 μm) and necrose centrally. Vascularization (rat-brain transplant, endothelial co-culture) preserves deep tissue.
+        objectives: [Organoides cerebrais]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O experimento DishBrain (Kagan 2022) usou qual princípio teórico para fazer neurônios "aprenderem" a jogar Pong sem reforço supervisionado clássico?
+          en: The DishBrain experiment (Kagan 2022) used which theoretical principle to make neurons "learn" Pong without classical supervised reinforcement?
+        choices:
+          - Princípio da Energia Livre de Karl Friston (estimulação previsível ao acertar, ruído imprevisível ao errar)
+          - Backpropagation com gradiente descendente clássico aplicado via estímulos elétricos calibrados
+          - Aprendizado Hebbiano puro sem feedback ambiental usando apenas plasticidade STDP
+          - Algoritmo genético de Hinton com mutação aleatória de pesos sinápticos no MEA
+        correctAnswer: Princípio da Energia Livre de Karl Friston (estimulação previsível ao acertar, ruído imprevisível ao errar)
+        rationale:
+          pt: DishBrain implementou o Free Energy Principle de Friston: estimulação previsível recompensa, imprevisível pune. Os neurônios minimizam surpresa ajustando atividade — aprendendo Pong em ~5 minutos.
+          en: DishBrain implemented Friston's Free Energy Principle: predictable stimulation rewards, unpredictable punishes. Neurons minimize surprise by adjusting activity — learning Pong in ~5 minutes.
+        objectives: [DishBrain]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Organoides assembloides (Paşca) servem para estudar o quê de modo único?
+          en: Assembloids (Paşca) uniquely allow studying what?
+        choices:
+          - Conectividade entre regiões cerebrais distintas (córtex-estriado, córtex-medula) fundindo organoides regionais
+          - Apenas neurogênese cortical em camada única sem interação inter-regional
+          - Apenas vascularização passiva sem comportamento eletrofisiológico funcional
+          - Apenas mielinização de axônios isolados sem qualquer rede neural
+        correctAnswer: Conectividade entre regiões cerebrais distintas (córtex-estriado, córtex-medula) fundindo organoides regionais
+        rationale:
+          pt: Assembloides fundem organoides de identidades regionais distintas (ex: córtex + estriado, ou córtex + medula espinhal + músculo) permitindo estudar circuitos inter-regionais e migração interneuronal.
+          en: Assembloids fuse organoids of distinct regional identities (e.g. cortex+striatum, or cortex+spinal cord+muscle), letting researchers study inter-regional circuits and interneuron migration.
+        objectives: [Assembloides]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em 2022, organoides corticais humanos transplantados em ratos neonatos por Paşca demonstraram o quê?
+          en: In 2022, human cortical organoids transplanted into neonatal rats by Paşca demonstrated what?
+        choices:
+          - Integração funcional, com neurônios humanos disparando em resposta a estímulos sensoriais (vibrissas) do hospedeiro
+          - Rejeição imune total dentro de 48 horas mesmo em ratos imunossuprimidos
+          - Crescimento descontrolado formando teratomas em ~80% dos animais transplantados
+          - Apenas sobrevivência passiva sem qualquer integração elétrica com circuitos do hospedeiro
+        correctAnswer: Integração funcional, com neurônios humanos disparando em resposta a estímulos sensoriais (vibrissas) do hospedeiro
+        rationale:
+          pt: Revah et al. (Nature 2022) mostraram que neurônios humanos integrados ao córtex somatossensorial de rato disparavam quando vibrissas eram estimuladas — primeira integração sensorial humano-rato funcional in vivo.
+          en: Revah et al. (Nature 2022) showed human neurons integrated into rat somatosensory cortex fired when whiskers were stimulated — the first functional in vivo human-rat sensory integration.
+        objectives: [Quimeras humano-roedor]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Madeline Lancaster (MRC-LMB) é reconhecida por qual contribuição seminal para o campo de organoides cerebrais?
+          en: Madeline Lancaster (MRC-LMB) is recognized for which seminal contribution to brain organoids?
+        choices:
+          - Protocolo original de organoides cerebrais auto-organizados via embebimento em Matrigel (Nature 2013)
+          - Primeira terapia clínica baseada em organoides aprovada pelo FDA para epilepsia
+          - Descoberta de células-tronco pluripotentes induzidas, depois confirmada por Yamanaka
+          - Mapeamento eletrofisiológico completo do conectoma humano em alta resolução
+        correctAnswer: Protocolo original de organoides cerebrais auto-organizados via embebimento em Matrigel (Nature 2013)
+        rationale:
+          pt: Lancaster & Knoblich (Nature 2013) publicaram o protocolo seminal de organoides cerebrais auto-organizados — embebimento em Matrigel + biorreator giratório — fundando o campo moderno.
+          en: Lancaster & Knoblich (Nature 2013) published the seminal self-organizing brain-organoid protocol — Matrigel embedding + spinning bioreactor — founding the modern field.
+        objectives: [Pioneiros]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Críticos do DishBrain (e.g. Hartung) argumentam que o termo "consciência" é prematuro para esses sistemas porque…
+          en: Critics of DishBrain (e.g. Hartung) argue "consciousness" is premature for these systems because…
+        choices:
+          - Faltam estruturas como tálamo, conectividade hierárquica e mielina necessárias para experiência fenomênica integrada
+          - Os neurônios são humanos, e por princípio nenhum tecido humano vivo pode ser consciente fora do corpo
+          - Pong é simples demais como tarefa cognitiva para qualquer julgamento sobre consciência
+          - Apenas redes maiores que 10¹¹ neurônios poderiam, em teoria, gerar consciência
+        correctAnswer: Faltam estruturas como tálamo, conectividade hierárquica e mielina necessárias para experiência fenomênica integrada
+        rationale:
+          pt: O argumento dominante é estrutural: organoides carecem de tálamo, hierarquia cortical, mielinização adulta e input sensorial real — substratos arquitetônicos da experiência integrada conforme IIT/GNW.
+          en: The dominant argument is structural: organoids lack thalamus, cortical hierarchy, adult myelination, and real sensory input — architectural substrates of integrated experience per IIT/GNW.
+        objectives: [Bioética OI]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A diretriz da ISSCR de 2021 sobre organoides cerebrais recomenda…
+          en: The 2021 ISSCR guidelines on brain organoids recommend…
+        choices:
+          - Revisão ética específica para experimentos com potencial de consciência ou integração em hospedeiros animais
+          - Proibição total de qualquer organoide cerebral humano por princípio precaucionário
+          - Permissão irrestrita por se tratarem de cultivos in vitro sem qualquer status moral
+          - Limitação a 14 dias por analogia direta à regra de embriões pré-implantação
+        correctAnswer: Revisão ética específica para experimentos com potencial de consciência ou integração em hospedeiros animais
+        rationale:
+          pt: A ISSCR 2021 abandonou proibições gerais e adotou revisão caso-a-caso, com escrutínio reforçado para protocolos que possam gerar consciência ou para quimeras humano-animal com tecido neural.
+          en: ISSCR 2021 dropped blanket bans and adopted case-by-case review, with heightened scrutiny for protocols that might generate consciousness or for human-animal chimeras with neural tissue.
+        objectives: [Governança ISSCR]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "wetware computing" promovido por OI propõe substituir GPUs por neurônios vivos principalmente em qual nicho?
+          en: "Wetware computing" promoted by OI proposes replacing GPUs with live neurons primarily in which niche?
+        choices:
+          - Tarefas de baixa potência exigindo aprendizado adaptativo contínuo com pouquíssimos exemplos
+          - Treinamento de LLMs de fronteira como GPT/Claude em larga escala
+          - Mineração de criptomoedas e processamento gráfico em tempo real
+          - Computação científica determinística com altíssima precisão numérica
+        correctAnswer: Tarefas de baixa potência exigindo aprendizado adaptativo contínuo com pouquíssimos exemplos
+        rationale:
+          pt: O nicho realista de OI é edge computing adaptativo de baixa potência (sensores, robótica autônoma), não escala bruta — onde a vantagem energética e few-shot do tecido biológico compensa a complexidade.
+          en: OI's realistic niche is low-power adaptive edge computing (sensors, autonomous robotics), not brute scale — where biological tissue's energy and few-shot advantages outweigh complexity.
+        objectives: [Wetware computing]
+  - title:
+      pt: Página 2 — Interfaces cérebro-computador clínicas
+      en: Page 2 — Clinical brain-computer interfaces
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Utah Array, padrão-ouro de eletrodos invasivos por décadas, foi desenvolvido por quem?
+          en: The Utah Array, gold-standard invasive electrode for decades, was developed by whom?
+        choices:
+          - Richard Normann na Universidade de Utah, comercializado depois pela Blackrock Neurotech
+          - Elon Musk e equipe inicial da Neuralink em 2016 baseando-se em silício monolítico
+          - Tom Oxley e Synchron derivado do stent endovascular para uso intraparenquimatoso
+          - John Donoghue diretamente em Brown como precursor do BrainGate sem outros parceiros
+        correctAnswer: Richard Normann na Universidade de Utah, comercializado depois pela Blackrock Neurotech
+        rationale:
+          pt: O Utah Array (10×10 microeletrodos de silício) foi inventado por Richard Normann nos anos 1990 em Utah, e é fabricado e vendido pela Blackrock Neurotech — base de quase todos os ensaios clínicos de BCI invasivo.
+          en: The Utah Array (10×10 silicon microelectrodes) was invented by Richard Normann in the 1990s at Utah, and is manufactured and sold by Blackrock Neurotech — the basis of nearly all invasive BCI trials.
+        objectives: [Hardware BCI]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O ensaio PRIME da Neuralink, iniciado em 2024, recrutou Noland Arbaugh como primeiro paciente humano com qual condição?
+          en: Neuralink's PRIME trial, started 2024, enrolled Noland Arbaugh as first human with which condition?
+        choices:
+          - Tetraplegia por lesão medular cervical, controlando cursor por intenção motora
+          - Esclerose lateral amiotrófica em estágio terminal com perda completa de fala
+          - Cegueira congênita por degeneração retiniana hereditária autossômica
+          - Doença de Parkinson refratária com freezing of gait severo e quedas
+        correctAnswer: Tetraplegia por lesão medular cervical, controlando cursor por intenção motora
+        rationale:
+          pt: Arbaugh, tetraplégico após acidente em 2016, recebeu o N1 da Neuralink em jan/2024 e demonstrou controle de cursor para xadrez e jogos — primeiro humano com BCI da Neuralink (alguns fios retraíram).
+          en: Arbaugh, tetraplegic after a 2016 accident, received Neuralink's N1 in Jan 2024 and demonstrated cursor control for chess and games — first human with Neuralink BCI (some threads retracted).
+        objectives: [Neuralink]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Stentrode da Synchron (Tom Oxley) inova por ser implantado por qual via, evitando craniotomia?
+          en: Synchron's Stentrode (Tom Oxley) innovates by being implanted via which route, avoiding craniotomy?
+        choices:
+          - Endovascular pela veia jugular até o seio sagital sobre o córtex motor, como um stent cardíaco
+          - Transnasal pela placa cribriforme atingindo o bulbo olfatório e córtex frontal
+          - Transcraniana ultrassônica focalizada sem qualquer implante físico
+          - Subcutânea no escalpo com eletrodos transmitindo através do crânio intacto
+        correctAnswer: Endovascular pela veia jugular até o seio sagital sobre o córtex motor, como um stent cardíaco
+        rationale:
+          pt: O Stentrode é entregue por cateterismo da jugular até o seio sagital superior, posicionando eletrodos contra o córtex motor pelo lúmen vascular — sem abrir o crânio. FDA Investigational Device aprovou ensaios em ALS.
+          en: Stentrode is catheter-delivered via jugular into the superior sagittal sinus, positioning electrodes against motor cortex through the vessel lumen — no skull opening. FDA IDE approved for ALS trials.
+        objectives: [Synchron]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em 2023, Frank Willett e Krishna Shenoy (Stanford) reportaram um BCI de fala para paciente com ALS atingindo qual marca?
+          en: In 2023, Frank Willett and Krishna Shenoy (Stanford) reported a speech BCI for an ALS patient achieving what milestone?
+        choices:
+          - Decodificação de ~62 palavras por minuto a partir de córtex motor da fala via Utah Arrays
+          - Reconstrução de áudio inteligível direto da cóclea sem qualquer modelo de linguagem
+          - Tradução simultânea entre 12 idiomas com 99% de acurácia em tempo real
+          - Síntese de canto operístico controlado por intenção de pacientes saudáveis
+        correctAnswer: Decodificação de ~62 palavras por minuto a partir de córtex motor da fala via Utah Arrays
+        rationale:
+          pt: Willett et al. (Nature 2023) decodificaram ~62 wpm com 23,8% WER em vocabulário de 125k palavras, usando 4 Utah Arrays no córtex motor da fala de Pat Bennett — recorde da época.
+          en: Willett et al. (Nature 2023) decoded ~62 wpm at 23.8% WER on a 125k vocabulary, using 4 Utah Arrays in Pat Bennett's speech motor cortex — the record at the time.
+        objectives: [BCI fala]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Edward Chang (UCSF) em 2023 demonstrou um BCI de fala adicionando qual modalidade inovadora?
+          en: Edward Chang (UCSF) in 2023 demonstrated a speech BCI adding which novel modality?
+        choices:
+          - Avatar digital com voz personalizada e expressões faciais sincronizadas com a intenção da paciente
+          - Estimulação direta da medula espinhal para restaurar movimento das pregas vocais
+          - Implante coclear bilateral combinado com decodificação cortical da fala
+          - Tradução automática para língua de sinais via mãos robóticas controladas pelo BCI
+        correctAnswer: Avatar digital com voz personalizada e expressões faciais sincronizadas com a intenção da paciente
+        rationale:
+          pt: Metzger/Chang (Nature 2023) usaram ECoG de alta densidade para decodificar fala + expressões em Ann Johnson (AVC tronco), animando avatar com voz reconstruída do casamento — restauração comunicativa rica.
+          en: Metzger/Chang (Nature 2023) used high-density ECoG to decode speech + expressions in Ann Johnson (brainstem stroke), animating an avatar with voice reconstructed from her wedding — rich communicative restoration.
+        objectives: [BCI multimodal]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O consórcio BrainGate, ativo desde os anos 2000, é liderado historicamente por qual pesquisador em Brown?
+          en: The BrainGate consortium, active since the 2000s, has been historically led by which researcher at Brown?
+        choices:
+          - John Donoghue, depois com Leigh Hochberg expandindo para Massachusetts General e Stanford
+          - Miguel Nicolelis em Duke focando em interfaces para primatas não-humanos
+          - Eric Leuthardt em Washington University focando em ECoG para epilepsia
+          - Andrew Schwartz em Pittsburgh focando em controle de braço robótico tátil
+        correctAnswer: John Donoghue, depois com Leigh Hochberg expandindo para Massachusetts General e Stanford
+        rationale:
+          pt: Donoghue iniciou o BrainGate em Brown nos anos 2000 (Cathy Hutchinson controlando braço robótico em 2012); Hochberg estendeu o consórcio para MGH/Stanford, sustentando a maior série de implantes Utah em humanos.
+          en: Donoghue started BrainGate at Brown in the 2000s (Cathy Hutchinson's robot-arm control in 2012); Hochberg extended the consortium to MGH/Stanford, sustaining the largest human Utah-array series.
+        objectives: [BrainGate]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A Paradromics e a Precision Neuroscience competem com a Neuralink propondo qual diferencial técnico principal?
+          en: Paradromics and Precision Neuroscience compete with Neuralink proposing which key technical differentiator?
+        choices:
+          - Maior densidade de canais e/ou eletrodos minimamente invasivos sobre o córtex sem penetrar o tecido
+          - Implante exclusivamente óptico via fibras sem qualquer eletrodo metálico no cérebro
+          - Estimulação magnética transcraniana focal substituindo qualquer cirurgia intracraniana
+          - Interface puramente baseada em EEG de superfície evitando toda a craniotomia
+        correctAnswer: Maior densidade de canais e/ou eletrodos minimamente invasivos sobre o córtex sem penetrar o tecido
+        rationale:
+          pt: Paradromics busca densidades altas (>1600 canais) com fios penetrantes; Precision (Ben Rapoport) propõe a "Layer 7", filme fino subdural sem penetração — abordagens que disputam o nicho da Neuralink.
+          en: Paradromics targets high channel counts (>1600) with penetrating wires; Precision (Ben Rapoport) proposes "Layer 7", a thin subdural film without penetration — approaches contesting Neuralink's niche.
+        objectives: [Concorrentes BCI]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Rafael Yuste e a iniciativa NeuroRights propõem cinco direitos neurais. Qual país foi o primeiro a inscrevê-los na constituição em 2021?
+          en: Rafael Yuste and the NeuroRights initiative propose five neuro-rights. Which country first enshrined them in its constitution in 2021?
+        choices:
+          - Chile, com emenda constitucional protegendo identidade pessoal e dados cerebrais
+          - Estados Unidos via emenda federal aprovada pelo Congresso em mandato Biden
+          - China via lei nacional de cibersegurança estendida ao domínio neural
+          - Suíça via referendo cantonal seguido de adoção federal posterior
+        correctAnswer: Chile, com emenda constitucional protegendo identidade pessoal e dados cerebrais
+        rationale:
+          pt: O Chile aprovou em 2021 emenda constitucional (Art. 19, n. 1) protegendo "atividade cerebral e informação dela proveniente", inspirada nos NeuroRights de Yuste — primeiro país a constitucionalizar privacidade neural.
+          en: Chile passed a 2021 constitutional amendment (Art. 19, no. 1) protecting "brain activity and information derived from it", inspired by Yuste's NeuroRights — first country to constitutionalize neural privacy.
+        objectives: [NeuroRights]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Marcello Ienca destaca qual nova categoria de privacidade necessária na era de BCI consumidor?
+          en: Marcello Ienca highlights which new privacy category needed in the consumer-BCI era?
+        choices:
+          - Privacidade mental/cognitiva, protegendo inferências sobre estados internos a partir de sinais cerebrais
+          - Privacidade financeira já garantida por leis bancárias estendida diretamente ao cérebro
+          - Privacidade genética restrita ao genoma sem extensão para dados neurais
+          - Privacidade biométrica focada apenas em impressão digital e reconhecimento facial
+        correctAnswer: Privacidade mental/cognitiva, protegendo inferências sobre estados internos a partir de sinais cerebrais
+        rationale:
+          pt: Ienca (ETH Zürich) cunhou "neurodireitos" em 2017 incluindo privacidade mental, identidade pessoal, livre-arbítrio, acesso equitativo a aprimoramento e proteção contra viés algorítmico aplicado a dados neurais.
+          en: Ienca (ETH Zürich) coined "neuro-rights" in 2017 including mental privacy, personal identity, free will, equitable access to enhancement, and protection from algorithmic bias on neural data.
+        objectives: [Privacidade neural]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Um desafio crônico de BCIs invasivos é a perda gradual de sinal por…
+          en: A chronic challenge for invasive BCIs is gradual signal loss due to…
+        choices:
+          - Encapsulação glial (gliose) ao redor dos eletrodos isolando-os eletricamente do tecido
+          - Migração espontânea dos eletrodos para fora do crânio através do escalpo
+          - Reabsorção completa do silício pelo metabolismo neuronal em poucos meses
+          - Saturação magnética dos eletrodos pelo campo terrestre acumulado
+        correctAnswer: Encapsulação glial (gliose) ao redor dos eletrodos isolando-os eletricamente do tecido
+        rationale:
+          pt: Gliose reativa (astrócitos + microglia) forma cápsula isolante ao redor de eletrodos penetrantes em meses-anos, degradando SNR — motor de pesquisa em revestimentos biocompatíveis e eletrodos flexíveis.
+          en: Reactive gliosis (astrocytes + microglia) forms an insulating capsule around penetrating electrodes over months-years, degrading SNR — driving research into biocompatible coatings and flexible electrodes.
+        objectives: [Biocompatibilidade]
+target: 20
