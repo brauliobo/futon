@@ -1,0 +1,345 @@
+title:
+  pt: Senescência Celular e Senolíticos
+  en: Cellular Senescence and Senolytics
+level: O
+subject: biology
+objectives:
+  - Compreender o programa de senescência e SASP
+  - Reconhecer marcadores (p16INK4a, p21, SA-β-gal)
+  - Identificar senolíticos farmacológicos (D+Q, fisetina, UBX0101)
+  - Avaliar ensaios clínicos e geroscience
+difficulty: 5
+authorNotes: |
+  Frontier senolytics. Hayflick limit 1961. Judith Campisi (Buck Institute) SASP paradigm.
+  Mayo: James Kirkland, Tamar Tchkonia, Jan van Deursen (INK-ATTAC mouse 2011/2016).
+  Senolytics discovered 2015 (D+Q Zhu et al.). UBX0101 osteoarthritis Ph2 failed 2020;
+  UBX1325 (Unity) wet AMD/DME Ph2 BEHOLD/ENVISION 2023-2024. Fisetin (Cornell GRH-Aging).
+  TAME-trial Nir Barzilai metformin. p16-3MR Demaria. ROBUST Mayo D+Q DKD pilot.
+  Senotherapy classes: senolytic (kill) vs senomorphic (silence SASP, e.g. JAK-i ruxolitinib,
+  metformin, rapamycin partial). Clearance ameliorates aging in INK-ATTAC mice (Baker 2016).
+example:
+  question:
+    pt: A senescência celular foi descrita pela primeira vez em 1961 por Leonard Hayflick e Paul Moorhead. Qual o achado seminal?
+    en: Cellular senescence was first described in 1961 by Leonard Hayflick and Paul Moorhead. What was the seminal finding?
+  choices:
+    - Fibroblastos humanos primários param de se dividir após ~50 duplicações populacionais (limite de Hayflick)
+    - Células de câncer humano são imortais por princípio mesmo sem mutações em telomerase
+    - Senescência só ocorre em células germinativas, não em somáticas adultas
+    - Apenas neurônios pós-mitóticos sofrem senescência clássica em humanos
+  correctAnswer: Fibroblastos humanos primários param de se dividir após ~50 duplicações populacionais (limite de Hayflick)
+  rationale:
+    pt: Hayflick & Moorhead (Exp Cell Res 1961) mostraram que fibroblastos humanos param após ~50 divisões — refutando dogma de imortalidade celular de Carrel. Limite explicado depois por encurtamento telomérico (Olovnikov, Blackburn).
+    en: Hayflick & Moorhead (Exp Cell Res 1961) showed human fibroblasts stop after ~50 divisions — refuting Carrel's cell-immortality dogma. The limit was later explained by telomere shortening (Olovnikov, Blackburn).
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Biologia da senescência
+      en: Page 1 — Senescence biology
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de SASP (Senescence-Associated Secretory Phenotype), formalizado por Judith Campisi, descreve…
+          en: SASP (Senescence-Associated Secretory Phenotype), formalized by Judith Campisi, describes…
+        choices:
+          - Secreção de citocinas, quimiocinas, MMPs e fatores de crescimento por células senescentes, gerando inflamação parácrina
+          - Perda completa de qualquer função secretória pelas células senescentes em todos os tecidos
+          - Secreção exclusiva de exossomos contendo DNA circular pró-apoptóticos
+          - Liberação seletiva de antioxidantes que protegem células vizinhas do estresse oxidativo
+        correctAnswer: Secreção de citocinas, quimiocinas, MMPs e fatores de crescimento por células senescentes, gerando inflamação parácrina
+        rationale:
+          pt: Campisi (Buck Institute) descreveu o SASP: células senescentes secretam IL-6, IL-8, MCP-1, MMPs, TGF-β etc., promovendo inflamação crônica de baixo grau ("inflammaging") — base mecanística para envelhecimento e câncer parácrino.
+          en: Campisi (Buck Institute) described SASP: senescent cells secrete IL-6, IL-8, MCP-1, MMPs, TGF-β etc., driving chronic low-grade inflammation ("inflammaging") — mechanistic basis of aging and paracrine cancer.
+        objectives: [SASP]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O marcador histoquímico mais clássico de senescência celular in situ é…
+          en: The most classical in situ histochemical senescence marker is…
+        choices:
+          - SA-β-galactosidase (β-gal lisossomal detectável em pH 6.0), descrita por Dimri/Campisi 1995
+          - Atividade de telomerase elevada detectada por TRAP assay padrão
+          - Fosforilação de mTOR em S2448 como leitura imuno-histoquímica
+          - Núcleos picnóticos com TUNEL-positivo como sinal de morte programada
+        correctAnswer: SA-β-galactosidase (β-gal lisossomal detectável em pH 6.0), descrita por Dimri/Campisi 1995
+        rationale:
+          pt: Dimri/Campisi (PNAS 1995) descreveram SA-β-gal: aumento de β-galactosidase lisossomal detectável a pH 6.0 (vs 4.0 normal) — marcador histoquímico universal mas com falsos-positivos em macrófagos e cultura confluente.
+          en: Dimri/Campisi (PNAS 1995) described SA-β-gal: lysosomal β-galactosidase detectable at pH 6.0 (vs normal 4.0) — universal histochemical marker but with false positives in macrophages and confluent cultures.
+        objectives: [SA-beta-gal]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A via de p16INK4a (CDKN2A) na senescência atua…
+          en: The p16INK4a (CDKN2A) pathway in senescence works by…
+        choices:
+          - Inibindo CDK4/6, mantendo Rb hipofosforilado e bloqueando entrada em fase S
+          - Ativando ciclina E e CDK2 para acelerar progressão G1/S
+          - Estimulando proliferação via fosforilação de p53 em Ser15
+          - Ativando ATM/ATR diretamente sem qualquer relação com Rb
+        correctAnswer: Inibindo CDK4/6, mantendo Rb hipofosforilado e bloqueando entrada em fase S
+        rationale:
+          pt: p16INK4a inibe CDK4/6, impedindo fosforilação de Rb que mantém E2F sequestrado — bloqueia transcrição de genes de fase S. Acúmulo de p16 é marcador robusto de senescência (e alvo de inibidores CDK4/6 oncológicos como palbociclib).
+          en: p16INK4a inhibits CDK4/6, preventing Rb phosphorylation that keeps E2F sequestered — blocking S-phase gene transcription. p16 accumulation is a robust senescence marker (and target of CDK4/6 inhibitors like palbociclib in oncology).
+        objectives: [p16INK4a]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O sistema INK-ATTAC desenvolvido por Jan van Deursen (Mayo) permite o quê?
+          en: The INK-ATTAC system developed by Jan van Deursen (Mayo) allows what?
+        choices:
+          - Eliminação induzível de células p16⁺ em camundongos via dimerização forçada de caspase-8
+          - Visualização in vivo de células senescentes por fluorescência sem eliminação
+          - Indução química de senescência em tecidos específicos por tetraciclina
+          - Ablação seletiva de células-tronco hematopoéticas para transplante
+        correctAnswer: Eliminação induzível de células p16⁺ em camundongos via dimerização forçada de caspase-8
+        rationale:
+          pt: Van Deursen (Nature 2011, 2016) construiu transgênico que expressa caspase-8 dimerizável (FKBP-Casp8) sob promotor p16; AP20187 dimeriza, matando seletivamente células p16⁺. Demonstrou que clearance retarda envelhecimento em vários tecidos.
+          en: Van Deursen (Nature 2011, 2016) built a transgenic expressing dimerizable caspase-8 (FKBP-Casp8) under p16 promoter; AP20187 dimerizes, selectively killing p16⁺ cells. Showed clearance delays aging across tissues.
+        objectives: [INK-ATTAC]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em 2016, Baker/van Deursen reportaram que ablação contínua de células p16⁺ em INK-ATTAC produzia o quê?
+          en: In 2016, Baker/van Deursen reported that continuous ablation of p16⁺ cells in INK-ATTAC produced what?
+        choices:
+          - Aumento de tempo de vida saudável (~25%) e redução de patologias renais, cardíacas e adiposas
+          - Encurtamento drástico do tempo de vida por colapso renal precoce
+          - Apenas melhora cognitiva sem qualquer impacto em outros sistemas orgânicos
+          - Aumento massivo de tumores por perda de senescência oncogene-induzida
+        correctAnswer: Aumento de tempo de vida saudável (~25%) e redução de patologias renais, cardíacas e adiposas
+        rationale:
+          pt: Baker et al. (Nature 2016) mostraram que clearance de p16⁺ aumentou healthspan em ~25%, reduzindo glomerulosclerose, cardiomiopatia e perda de tecido adiposo — prova de princípio de que senescência é alvo terapêutico.
+          en: Baker et al. (Nature 2016) showed p16⁺ clearance increased healthspan by ~25%, reducing glomerulosclerosis, cardiomyopathy, and adipose loss — proof of principle that senescence is a therapeutic target.
+        objectives: [Clearance benefit]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A senescência oncogene-induzida (OIS) representa…
+          en: Oncogene-induced senescence (OIS) represents…
+        choices:
+          - Barreira tumoral inicial, em que oncogenes como RAS-V12 ativam p53/p16 e param células
+          - Estado proliferativo descontrolado induzido por oncogenes em qualquer condição
+          - Forma de apoptose imediata sem qualquer parada de ciclo intermediária
+          - Reversão de senescência clássica para câncer terminal sem barreira intermediária
+        correctAnswer: Barreira tumoral inicial, em que oncogenes como RAS-V12 ativam p53/p16 e param células
+        rationale:
+          pt: Serrano/Lowe descreveram OIS: oncogenes hiperativos (RAS, BRAF) induzem senescência via p53/p16, freando tumorigênese. Nevos melanocíticos com BRAF V600E são exemplo benigno parado em OIS — câncer requer escape dessa barreira.
+          en: Serrano/Lowe described OIS: hyperactive oncogenes (RAS, BRAF) induce senescence via p53/p16, blocking tumorigenesis. Melanocytic nevi with BRAF V600E exemplify benign OIS arrest — cancer requires escape from this barrier.
+        objectives: [OIS]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A senescência também ocorre em desenvolvimento embrionário, descrita por Manuel Serrano e Bill Keyes em 2013, com qual papel?
+          en: Senescence also occurs in embryonic development, described by Manuel Serrano and Bill Keyes in 2013, with what role?
+        choices:
+          - Modelagem tecidual programada (mesonefros, AER) por TGFβ-SMAD sem dano clássico
+          - Apoptose massiva de células neuronais excedentes durante neurogênese
+          - Apenas patologia placentária associada a pré-eclâmpsia ou aborto espontâneo
+          - Defesa antiviral inata contra infecções congênitas como CMV ou rubéola
+        correctAnswer: Modelagem tecidual programada (mesonefros, AER) por TGFβ-SMAD sem dano clássico
+        rationale:
+          pt: Storer/Keyes e Muñoz-Espín/Serrano (Cell 2013) mostraram senescência embrionária programada em estruturas como mesonefros e AER, dependente de TGFβ/SMAD e independente de p53/dano — função morfogenética ancestral.
+          en: Storer/Keyes and Muñoz-Espín/Serrano (Cell 2013) showed programmed embryonic senescence in structures like mesonephros and AER, dependent on TGFβ/SMAD and independent of p53/damage — ancestral morphogenetic function.
+        objectives: [Senescência developmental]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: SAHF (Senescence-Associated Heterochromatin Foci), descritos por Narita/Lowe, são…
+          en: SAHF (Senescence-Associated Heterochromatin Foci), described by Narita/Lowe, are…
+        choices:
+          - Domínios de heterocromatina ricos em H3K9me3 e HP1 que silenciam genes proliferativos como E2F-alvos
+          - Pontos de fragmentação cromossômica indicativos de instabilidade genômica terminal
+          - Acúmulos de proteínas mal-enoveladas no núcleo análogos a corpos de inclusão
+          - Regiões de hipertranscrição de oncogenes em células pré-cancerosas precoces
+        correctAnswer: Domínios de heterocromatina ricos em H3K9me3 e HP1 que silenciam genes proliferativos como E2F-alvos
+        rationale:
+          pt: SAHFs são focos de heterocromatina densamente DAPI⁺ contendo H3K9me3, H3K27me3, HP1, macroH2A — silenciam genes E2F-alvo, reforçando parada proliferativa. Visíveis em fibroblastos OIS humanos mas variáveis entre espécies.
+          en: SAHFs are densely DAPI⁺ heterochromatin foci containing H3K9me3, H3K27me3, HP1, macroH2A — silencing E2F-target genes, reinforcing proliferative arrest. Visible in human OIS fibroblasts but variable across species.
+        objectives: [SAHF]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "inflammaging", proposto por Claudio Franceschi (Bolonha), descreve…
+          en: "Inflammaging", proposed by Claudio Franceschi (Bologna), describes…
+        choices:
+          - Inflamação crônica estéril de baixo grau no envelhecimento, parcialmente alimentada pelo SASP
+          - Aumento massivo de infecções bacterianas em idosos por imunossenescência terminal
+          - Reação inflamatória aguda restrita ao SNC em doenças neurodegenerativas
+          - Resposta autoimune sistêmica generalizada característica de centenários
+        correctAnswer: Inflamação crônica estéril de baixo grau no envelhecimento, parcialmente alimentada pelo SASP
+        rationale:
+          pt: Franceschi (2000) cunhou "inflammaging" para o estado pró-inflamatório basal crônico em idosos, marcado por IL-6 e CRP elevados; SASP é fonte importante, ligando senescência celular a doenças relacionadas à idade (sarcopenia, aterosclerose, demência).
+          en: Franceschi (2000) coined "inflammaging" for the chronic baseline pro-inflammatory state in elders, marked by elevated IL-6 and CRP; SASP is a key source, linking cellular senescence to age-related diseases (sarcopenia, atherosclerosis, dementia).
+        objectives: [Inflammaging]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "senescência induzida por terapia" (TIS) é relevante em oncologia porque…
+          en: Therapy-induced senescence (TIS) is oncologically relevant because…
+        choices:
+          - Quimio/radioterapia induz senescência em células tumorais e estromais, criando ambiente pró-recidiva via SASP
+          - Apenas radioterapia induz TIS, e seus efeitos são exclusivamente benéficos sem recidiva
+          - TIS imuniza o paciente contra novos tumores sem efeitos colaterais relatados
+          - TIS ocorre apenas em cânceres pediátricos e não tem relevância em adultos
+        correctAnswer: Quimio/radioterapia induz senescência em células tumorais e estromais, criando ambiente pró-recidiva via SASP
+        rationale:
+          pt: TIS: muitos quimioterápicos (doxorrubicina, etoposídeo) e radiação induzem senescência tumoral. Inicialmente protetora, sustentadamente o SASP recruta MDSC, promove EMT e recidiva — racional para terapia "1-2 punch": quimio + senolítico.
+          en: TIS: many chemo agents (doxorubicin, etoposide) and radiation induce tumor senescence. Initially protective, sustained SASP recruits MDSCs, promotes EMT, and drives relapse — rationale for "1-2 punch" therapy: chemo + senolytic.
+        objectives: [TIS]
+  - title:
+      pt: Página 2 — Senolíticos e ensaios clínicos
+      en: Page 2 — Senolytics and clinical trials
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O primeiro coquetel senolítico publicado em 2015 (Zhu et al., Aging Cell) combina quais drogas?
+          en: The first published senolytic cocktail in 2015 (Zhu et al., Aging Cell) combines which drugs?
+        choices:
+          - Dasatinib (inibidor de quinase) + Quercetina (flavonoide) — D+Q, descoberto via SCAP
+          - Metformina + rapamicina como combinação antidiabética/imunossupressora
+          - Aspirina + estatina como anti-inflamatório/cardiovascular padrão
+          - Imatinib + curcumina como antioxidante anti-tumoral genérico
+        correctAnswer: Dasatinib (inibidor de quinase) + Quercetina (flavonoide) — D+Q, descoberto via SCAP
+        rationale:
+          pt: Kirkland/Tchkonia (Aging Cell 2015) usaram a hipótese SCAP (Senescent Cell Anti-Apoptotic Pathways): senescentes dependem de redes pró-sobrevida (BCL-2, PI3K, p21). D+Q matou seletivamente em camundongos e células humanas — primeira prova de princípio.
+          en: Kirkland/Tchkonia (Aging Cell 2015) used the SCAP hypothesis (Senescent Cell Anti-Apoptotic Pathways): senescent cells depend on pro-survival networks (BCL-2, PI3K, p21). D+Q selectively killed them in mice and human cells — first proof of principle.
+        objectives: [D+Q]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A fisetina, flavonoide presente em morangos, foi identificada como senolítico potente por qual pesquisador?
+          en: Fisetin, a flavonoid found in strawberries, was identified as a potent senolytic by whom?
+        choices:
+          - Paul Robbins/Laura Niedernhofer no programa GRH-Aging (Pittsburgh, depois Minnesota)
+          - David Sinclair em Harvard via screening de extratos vinhícolas resveratrol-like
+          - Aubrey de Grey na SENS Research Foundation testando flavonoides
+          - Steve Horvath no UCLA via correlação com seu epigenetic clock
+        correctAnswer: Paul Robbins/Laura Niedernhofer no programa GRH-Aging (Pittsburgh, depois Minnesota)
+        rationale:
+          pt: Yousefzadeh et al. (EBioMedicine 2018, Robbins/Niedernhofer) testaram 10 flavonoides; fisetina foi o senolítico mais potente, prolongando lifespan em camundongos progeroides — base para ensaios clínicos AFFIRM-LITE e outros.
+          en: Yousefzadeh et al. (EBioMedicine 2018, Robbins/Niedernhofer) tested 10 flavonoids; fisetin was the most potent senolytic, extending lifespan in progeroid mice — basis for AFFIRM-LITE and other clinical trials.
+        objectives: [Fisetina]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: UBX0101, primeiro senolítico testado em humanos pela Unity Biotechnology, falhou no ensaio Ph2 de 2020. Qual indicação e mecanismo?
+          en: UBX0101, the first human-tested senolytic by Unity Biotechnology, failed its 2020 Ph2 trial. Which indication and mechanism?
+        choices:
+          - Osteoartrite de joelho via inibidor MDM2/p53 com administração intra-articular
+          - Fibrose pulmonar idiopática via inibidor BCL-xL inalado
+          - Diabetes tipo 2 via inibidor BCL-2 oral cronicamente administrado
+          - Glaucoma crônico via inibidor PI3K em colírio tópico de uso diário
+        correctAnswer: Osteoartrite de joelho via inibidor MDM2/p53 com administração intra-articular
+        rationale:
+          pt: UBX0101 inibia MDM2-p53, induzindo apoptose em condrócitos senescentes; injeção intra-articular para OA de joelho. Ph2 (2020) não atingiu desfecho de dor vs placebo — Unity descontinuou o programa, redirecionando para olho.
+          en: UBX0101 inhibited MDM2-p53, inducing apoptosis in senescent chondrocytes; intra-articular injection for knee OA. Ph2 (2020) missed pain endpoint vs placebo — Unity discontinued the program, redirecting to eye.
+        objectives: [UBX0101]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: UBX1325, segunda geração da Unity Biotechnology, mira qual indicação com qual mecanismo?
+          en: UBX1325, Unity Biotechnology's second-generation candidate, targets which indication with which mechanism?
+        choices:
+          - DME e AMD úmida via inibidor BCL-xL injetado intravítreo (BEHOLD/ENVISION)
+          - Doença de Alzheimer via inibidor BCL-2 oral atravessando BBB
+          - Cardiomiopatia diabética via inibidor MDM2 sistêmico semanal
+          - Esclerose múltipla via inibidor de PI3K oral cronicamente administrado
+        correctAnswer: DME e AMD úmida via inibidor BCL-xL injetado intravítreo (BEHOLD/ENVISION)
+        rationale:
+          pt: UBX1325 (foselutoclax) inibe BCL-xL, matando células endoteliais retinianas senescentes; ensaios BEHOLD (DME) e ENVISION (AMD úmida) mostraram melhora visual em 2023-2024 — pode reduzir necessidade de anti-VEGF mensal.
+          en: UBX1325 (foselutoclax) inhibits BCL-xL, killing senescent retinal endothelial cells; BEHOLD (DME) and ENVISION (wet AMD) trials showed visual improvement in 2023-2024 — may reduce need for monthly anti-VEGF.
+        objectives: [UBX1325]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O ensaio TAME (Targeting Aging with MEtformin), liderado por Nir Barzilai, busca o quê regulatoriamente?
+          en: The TAME trial (Targeting Aging with MEtformin), led by Nir Barzilai, regulatorily seeks what?
+        choices:
+          - Aprovação do envelhecimento como indicação clínica pelo FDA, retardando múltiplas comorbidades
+          - Aprovação de metformina especificamente para diabetes tipo 1 pediátrico
+          - Aprovação como contraceptivo oral hormonal com mecanismo metabólico
+          - Aprovação como antineoplásico de primeira linha para câncer pancreático
+        correctAnswer: Aprovação do envelhecimento como indicação clínica pelo FDA, retardando múltiplas comorbidades
+        rationale:
+          pt: TAME (Albert Einstein, AFAR) é desenho landmark para validar geroscience: testa se metformina retarda surgimento de cluster de doenças relacionadas à idade (CV, câncer, demência) — buscando precedente regulatório de "aging as indication".
+          en: TAME (Albert Einstein, AFAR) is a landmark design to validate geroscience: tests whether metformin delays onset of age-related disease clusters (CV, cancer, dementia) — seeking regulatory precedent for "aging as indication".
+        objectives: [TAME trial]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Senomórficos, em contraste com senolíticos, atuam como…
+          en: Senomorphics, in contrast with senolytics, work as…
+        choices:
+          - Supressores do SASP (silenciam secreções) sem matar a célula senescente, ex.: ruxolitinib (JAK-i), metformina
+          - Indutores de mais senescência em tecidos saudáveis para fim oncológico
+          - Estimuladores de proliferação em células senescentes para reverter o estado
+          - Apenas marcadores biológicos sem qualquer efeito terapêutico farmacológico
+        correctAnswer: Supressores do SASP (silenciam secreções) sem matar a célula senescente, ex.: ruxolitinib (JAK-i), metformina
+        rationale:
+          pt: Senomórficos silenciam o SASP: ruxolitinib (JAK-i, sinaliza IL-6), metformina, rapamicina parcial, MCC950 (NLRP3) — útil quando matar senescentes seria perigoso (tecidos críticos pós-mitóticos), mas requer dosagem crônica.
+          en: Senomorphics silence SASP: ruxolitinib (JAK-i, IL-6 signaling), metformin, partial rapamycin, MCC950 (NLRP3) — useful when killing senescent cells would be hazardous (critical post-mitotic tissues), but requires chronic dosing.
+        objectives: [Senomórficos]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Navitoclax (ABT-263), inibidor de BCL-2/BCL-xL/BCL-w, é senolítico potente mas tem qual limitação principal?
+          en: Navitoclax (ABT-263), a BCL-2/BCL-xL/BCL-w inhibitor, is a potent senolytic but has which main limitation?
+        choices:
+          - Trombocitopenia dose-dependente por inibição de BCL-xL plaquetário
+          - Cardiotoxicidade idiossincrática como antraciclinas em todos os pacientes
+          - Hepatotoxicidade colestática rapidamente progressiva e fatal
+          - Neuropatia periférica permanente após dose única acumulativa
+        correctAnswer: Trombocitopenia dose-dependente por inibição de BCL-xL plaquetário
+        rationale:
+          pt: BCL-xL é essencial para sobrevida plaquetária; navitoclax (Abbvie/AbbVie) causa trombocitopenia dose-limitante, motivando desenvolvimento de PROTACs degradadores BCL-xL plaqueta-poupadores (ARV-825 derivados) e seletivos BCL-2 (venetoclax).
+          en: BCL-xL is essential for platelet survival; navitoclax (Abbvie/AbbVie) causes dose-limiting thrombocytopenia, motivating platelet-sparing BCL-xL degrader PROTACs (ARV-825 derivatives) and BCL-2-selective drugs (venetoclax).
+        objectives: [Navitoclax]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O biomarcador GDF15, frequentemente discutido em geroscience e SASP, é…
+          en: GDF15, often discussed in geroscience and SASP, is…
+        choices:
+          - Citocina TGF-β-relacionada elevada com idade, estresse mitocondrial e senescência
+          - Hormônio sexual feminino que declina com a menopausa exclusivamente
+          - Fator de coagulação plaquetário inversamente relacionado à idade
+          - Neurotransmissor central regulando saciedade no hipotálamo apenas
+        correctAnswer: Citocina TGF-β-relacionada elevada com idade, estresse mitocondrial e senescência
+        rationale:
+          pt: GDF15 (MIC-1) é citocina da superfamília TGF-β secretada em estresse mitocondrial, senescência, inflamação; eleva-se monotonicamente com a idade. Atua via receptor GFRAL no tronco encefálico — alvo emergente em caquexia e potencial biomarcador de geroscience.
+          en: GDF15 (MIC-1) is a TGF-β superfamily cytokine secreted under mitochondrial stress, senescence, inflammation; rises monotonically with age. Acts via GFRAL receptor in brainstem — emerging target in cachexia and potential geroscience biomarker.
+        objectives: [GDF15]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Marco Demaria criou o sistema p16-3MR para…
+          en: Marco Demaria created the p16-3MR system to…
+        choices:
+          - Visualizar (luciferase, RFP) e ablar (HSV-TK + ganciclovir) células p16⁺ em camundongos
+          - Editar geneticamente locus CDKN2A em embriões via knock-in CRISPR
+          - Produzir células iPS livres de p16 para terapia regenerativa segura
+          - Quantificar telômeros por FISH em alta resolução em tecidos
+        correctAnswer: Visualizar (luciferase, RFP) e ablar (HSV-TK + ganciclovir) células p16⁺ em camundongos
+        rationale:
+          pt: Demaria (Buck Institute) criou p16-3MR (Tri-Modal Reporter): camundongo com luciferase + monomérica RFP + HSV-TK sob promotor p16 — permite imagem in vivo e ablação por ganciclovir, complementando INK-ATTAC.
+          en: Demaria (Buck Institute) made p16-3MR (Tri-Modal Reporter): mouse with luciferase + monomeric RFP + HSV-TK under p16 promoter — allowing in vivo imaging and ganciclovir ablation, complementing INK-ATTAC.
+        objectives: [p16-3MR]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O ensaio piloto ROBUST de Mayo (Hickson et al. 2019) testou D+Q em qual coorte clínica?
+          en: Mayo's ROBUST pilot trial (Hickson et al. 2019) tested D+Q in which clinical cohort?
+        choices:
+          - Pacientes com doença renal diabética, demonstrando redução de células p16⁺ na pele e tecido adiposo
+          - Pacientes oncológicos com mama metastática em terceira linha quimioterápica
+          - Crianças com progéria de Hutchinson-Gilford em tratamento com lonafarnib
+          - Centenários saudáveis em estudo observacional sem intervenção comparativa
+        correctAnswer: Pacientes com doença renal diabética, demonstrando redução de células p16⁺ na pele e tecido adiposo
+        rationale:
+          pt: Hickson et al. (EBioMedicine 2019) administraram D+Q a 9 pacientes com DRC diabética; após 11 dias, biópsias mostraram queda de células p16/p21⁺ na pele e adiposo — primeiro estudo humano demonstrando efeito senolítico tecidual mensurável.
+          en: Hickson et al. (EBioMedicine 2019) gave D+Q to 9 patients with diabetic CKD; after 11 days, biopsies showed reduction of p16/p21⁺ cells in skin and adipose — first human study demonstrating measurable senolytic tissue effect.
+        objectives: [ROBUST]
+target: 20
