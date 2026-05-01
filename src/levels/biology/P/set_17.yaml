@@ -1,0 +1,342 @@
+title:
+  pt: Alometria, Escala e História de Vida
+  en: Allometry, Scaling, and Life History
+level: P
+subject: biology
+objectives:
+  - Compreender Kleiber's law e exponentes de escala
+  - Reconhecer West-Brown-Enquist 3/4 fractal model
+  - Identificar life-history trade-offs (Stearns)
+  - Avaliar metabolic theory of ecology
+difficulty: 5
+authorNotes: |
+  Allometry. Kleiber 1932 metabolic rate ∝ M^0.75. Schmidt-Nielsen "Why is Animal Size So
+  Important?" 1984. West/Brown/Enquist Nature 1997 fractal-network model. Bonner. Charnov
+  body size and life history. Stearns evolution of life histories 1992. Brown's metabolic
+  theory of ecology 2004. SIZE limits: Sebens, Bonner. Mouse to elephant curve.
+example:
+  question:
+    pt: A "Kleiber's law" (1932) prevê que taxa metabólica B varia com massa M como…
+    en: Kleiber's law (1932) predicts metabolic rate B varies with mass M as…
+  choices:
+    - B ∝ M^(3/4), exponente intermediário entre área (2/3) e volume (1)
+    - B ∝ M (linear)
+    - B ∝ M² (quadrático)
+    - Sem qualquer scaling
+  correctAnswer: B ∝ M^(3/4), exponente intermediário entre área (2/3) e volume (1)
+  rationale:
+    pt: Max Kleiber (Davis CA): plotou taxa metabólica vs massa (mouse a elefante) em log-log; slope ~0.75. Lei "3/4 power" replica em mamíferos, aves, plantas, microorganismos. Implicação: musaranho consome ~50x energia per kg que elefante. Modelo geométrico clássico (Rubner) prevê 2/3; observado 3/4 motivou modelos fractais (West/Brown).
+    en: Max Kleiber (Davis CA): plotted metabolic rate vs mass (mouse to elephant) in log-log; slope ~0.75. "3/4 power" law replicates in mammals, birds, plants, microorganisms. Implication: shrew consumes ~50x energy per kg vs elephant. Classical geometric model (Rubner) predicts 2/3; observed 3/4 motivated fractal models (West/Brown).
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Escala alométrica
+      en: Page 1 — Allometric scaling
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: West/Brown/Enquist (Science 1997) explicaram exponente 3/4 com…
+          en: West/Brown/Enquist (Science 1997) explained the 3/4 exponent with…
+        choices:
+          - Modelo fractal de redes hierárquicas otimizadas (vasculatura, raízes) com space-filling
+          - Apenas geometria euclidiana 2D
+          - Sem qualquer modelo unificador
+          - Apenas para vertebrados
+        correctAnswer: Modelo fractal de redes hierárquicas otimizadas (vasculatura, raízes) com space-filling
+        rationale:
+          pt: WBE: redes vasculares space-filling, hierárquicas, terminais invariantes (capilares mesmo tamanho em todos mamíferos), área-preserving — gerou 3/4 emergente. Aplicado a árvores (xilema), insetos (traqueia), até teia metabolic. Crítica: empíricos mostram exponentes variáveis (2/3 a 1); modelo simplista. Mas frame paradigmático.
+          en: WBE: space-filling, hierarchical vascular networks, invariant terminals (capillaries same size in all mammals), area-preserving — yielded emergent 3/4. Applied to trees (xylem), insects (tracheae), even web metabolic. Critique: empirics show variable exponents (2/3 to 1); model simplistic. But paradigmatic frame.
+        objectives: [WBE 1997]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "metabolic theory of ecology" (Brown 2004) extende Kleiber para predizer…
+          en: "Metabolic theory of ecology" (Brown 2004) extends Kleiber to predict…
+        choices:
+          - Taxas de mutação, longevidade, biodiversidade, dinâmica populacional como funções de M e T
+          - Apenas peso corporal isolado
+          - Sem qualquer aplicação ecológica
+          - Apenas em humanos
+        correctAnswer: Taxas de mutação, longevidade, biodiversidade, dinâmica populacional como funções de M e T
+        rationale:
+          pt: Brown/Gillooly/Allen/Savage/West (Ecology 2004): MTE estende Kleiber a (1) Boltzmann factor da temperatura: k = e^(-E/RT), (2) mass scaling. Predições: rate de mutação, lifespan, biodiversidade ~M^a × e^(E/RT). Marco: explicar de comportamento individual a ecossistemas com framework único. Crítica: simplificações.
+          en: Brown/Gillooly/Allen/Savage/West (Ecology 2004): MTE extends Kleiber to (1) Boltzmann temperature factor: k = e^(-E/RT), (2) mass scaling. Predictions: mutation rate, lifespan, biodiversity ~M^a × e^(E/RT). Milestone: explaining from individual behavior to ecosystems with single framework. Critique: simplifications.
+        objectives: [MTE]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Um "trade-off" clássico em life history é…
+          en: A classical "trade-off" in life history is…
+        choices:
+          - Reprodução vs sobrevivência (Williams 1966 antagonistic pleiotropy)
+          - Comer vs respirar
+          - Sem qualquer trade-off
+          - Apenas em humanos
+        correctAnswer: Reprodução vs sobrevivência (Williams 1966 antagonistic pleiotropy)
+        rationale:
+          pt: Williams (1957) "Pleiotropy, natural selection, and the evolution of senescence": alelos benéficos quando jovem podem ser deletérios na velhice. Reprodução custa recursos/risco; trade-off com sobrevivência futura. Confirmado em Drosophila (Rose), C. elegans (Kenyon), humanos epidemiology. Base evolutiva da senescência.
+          en: Williams (1957) "Pleiotropy, natural selection, and the evolution of senescence": alleles beneficial when young may be deleterious in old age. Reproduction costs resources/risk; trade-off with future survival. Confirmed in Drosophila (Rose), C. elegans (Kenyon), human epidemiology. Evolutionary basis of senescence.
+        objectives: [Reproduction vs survival]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Lifespan em mamíferos varia mas a correlação com massa é…
+          en: Lifespan in mammals varies but correlation with mass is…
+        choices:
+          - Positiva mas modificada (M^0.2-0.3); morcegos e aves vivem desproporcionalmente longos
+          - Sem qualquer correlação
+          - Negativa fortemente
+          - Linear estritamente
+        correctAnswer: Positiva mas modificada (M^0.2-0.3); morcegos e aves vivem desproporcionalmente longos
+        rationale:
+          pt: Lifespan ~M^0.2-0.3 em mamíferos. Outliers: morcegos (até 40+ anos), pássaros, humanos vivem ~3-5x predicted. Hipóteses: redução de predação seleciona longevidade (Williams), mitochondrial reduzido (Barja). Naked mole-rat 30+ anos é caso extremo (resistência a câncer também). MTE prediz lifespan ∝ ~M^0.25 com Boltzmann.
+          en: Lifespan ~M^0.2-0.3 in mammals. Outliers: bats (up to 40+ years), birds, humans live ~3-5x predicted. Hypotheses: predation reduction selects longevity (Williams), reduced mitochondrial (Barja). Naked mole-rat 30+ years is extreme case (cancer resistance too). MTE predicts lifespan ∝ ~M^0.25 with Boltzmann.
+        objectives: [Lifespan scaling]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "elephant in the room" sobre limites de tamanho em terra é…
+          en: The "elephant in the room" about size limits on land is…
+        choices:
+          - Suporte mecânico vs gravidade limita ~10⁵ kg em terrestres
+          - Sem qualquer limite
+          - Apenas alimentação limita
+          - Apenas digestão
+        correctAnswer: Suporte mecânico vs gravidade limita ~10⁵ kg em terrestres
+        rationale:
+          pt: Maior animal terrestre vivo: elefante ~6t. Maior fóssil: Argentinosaurus ~70-100t (saurópodes). Limites: estresse em ossos (área ~M^2/3 não acompanha massa), dificuldade de bombear sangue, eliminação de calor. Em água, limite menor (cetáceos: baleia azul ~190t — flutua). Falconeri Sicilian elefante anão (1m, ilha = constraints diferentes).
+          en: Largest living land animal: elephant ~6t. Largest fossil: Argentinosaurus ~70-100t (sauropods). Limits: bone stress (area ~M^2/3 doesn't keep up with mass), pumping blood, heat elimination. In water, lower constraint (cetaceans: blue whale ~190t — floats). Falconeri Sicilian dwarf elephant (1m, island = different constraints).
+        objectives: [Size limits]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "Bergmann's rule" prediz que…
+          en: Bergmann's rule predicts that…
+        choices:
+          - Endotermos em latitudes maiores (frias) tendem a ser maiores (área/volume favorece retenção de calor)
+          - Endotermos em latitudes maiores são menores
+          - Sem qualquer relação latitudinal
+          - Apenas em ectotermos
+        correctAnswer: Endotermos em latitudes maiores (frias) tendem a ser maiores (área/volume favorece retenção de calor)
+        rationale:
+          pt: Bergmann (1847): ursos polares > tropicais; pinguim Emperor > Galápagos. Relação A/V: corpo maior tem menor superfície relativa, perde menos calor. Permanece controvertida (exceções, signal fraco em alguns clades). Allen's rule: extremidades menores em frio (orelhas, caudas).
+          en: Bergmann (1847): polar bears > tropical; emperor penguin > Galápagos. A/V relation: larger body has smaller relative surface, loses less heat. Remains controversial (exceptions, weak signal in some clades). Allen's rule: shorter extremities in cold (ears, tails).
+        objectives: [Bergmann]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "naked mole-rat" (Heterocephalus glaber) é fascinante por…
+          en: The naked mole-rat (Heterocephalus glaber) is fascinating because it…
+        choices:
+          - Lifespan 30+ anos (~5x esperado), eussocialidade, resistência a câncer e dor (HMW-HA)
+          - Lifespan curto típico
+          - Reprodução solitária
+          - Sem qualquer característica especial
+        correctAnswer: Lifespan 30+ anos (~5x esperado), eussocialidade, resistência a câncer e dor (HMW-HA)
+        rationale:
+          pt: H. glaber (Buffenstein, Park): mamífero único com eussocialidade (rainha + soldados), tolerância a hipóxia (anaerobic frutose, Park 2017), resistência ao câncer (HMW-hyaluronic acid impede contato celular maligno), insensibilidade a alguns dolores. Modelo gerontologia + cancer biology. Genoma sequenciado 2011.
+          en: H. glaber (Buffenstein, Park): unique mammal with eusociality (queen + soldiers), hypoxia tolerance (anaerobic fructose, Park 2017), cancer resistance (HMW-hyaluronic acid prevents malignant cell contact), some pain insensitivity. Gerontology + cancer biology model. Genome sequenced 2011.
+        objectives: [Naked mole-rat]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "K-selection" vs "r-selection" (MacArthur/Wilson 1967) refere-se a…
+          en: "K-selection" vs "r-selection" (MacArthur/Wilson 1967) refers to…
+        choices:
+          - K: poucos filhotes grandes com alta sobrevida; r: muitos filhotes pequenos rápido turnover
+          - Apenas em peixes
+          - Sem qualquer significado evolutivo
+          - Apenas em organismos artificiais
+        correctAnswer: K: poucos filhotes grandes com alta sobrevida; r: muitos filhotes pequenos rápido turnover
+        rationale:
+          pt: r-strategists (bactérias, insetos, anfíbios): muitos descendentes pequenos, baixa sobrevida individual, bem-sucedidos em ambientes instáveis/recursos abundantes. K-strategists (elefante, baleia, humano): poucos descendentes grandes, alto investimento parental, ambientes estáveis/competitivos. Continuum, não dicotomia. Pianka generalizou.
+          en: r-strategists (bacteria, insects, amphibians): many small offspring, low individual survival, successful in unstable environments/abundant resources. K-strategists (elephant, whale, human): few large offspring, high parental investment, stable/competitive environments. Continuum, not dichotomy. Pianka generalized.
+        objectives: [r/K selection]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "menopausa" em humanos é incomum em mamíferos; explicações evolutivas incluem…
+          en: Menopause in humans is uncommon in mammals; evolutionary explanations include…
+        choices:
+          - Hipótese da avó: investir em netos > continuar reprodução tardia (Hawkes/O'Connell)
+          - Apenas patologia sem qualquer base evolutiva
+          - Apenas em humanos sem qualquer outra espécie
+          - Sem qualquer hipótese
+        correctAnswer: Hipótese da avó: investir em netos > continuar reprodução tardia (Hawkes/O'Connell)
+        rationale:
+          pt: Mamíferos, menopausa: humanos + 4 espécies de cetáceos (orcas, baleias). Hawkes/O'Connell (1997): mulheres pós-reprodutivas aumentam fitness via cuidado de netos. Williams: pleiotropy reduzindo fertilidade tardia. Williams + Hawkes: hipóteses complementares. Trabalhos em orcas (Croft 2017) confirmam grandmother effect.
+          en: Mammals with menopause: humans + 4 cetacean species (orcas, whales). Hawkes/O'Connell (1997): post-reproductive women boost fitness via grandchild care. Williams: pleiotropy reducing late fertility. Williams + Hawkes: complementary hypotheses. Orca work (Croft 2017) confirms grandmother effect.
+        objectives: [Menopausa]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "Cope's rule" (1887) postulou que linhagens evolutivas tendem a aumentar de tamanho ao longo do tempo geológico. Status moderno?
+          en: "Cope's rule" (1887) posited that evolutionary lineages tend to increase in size over geological time. Modern status?
+        choices:
+          - Apoio estatístico em alguns clados (mamíferos, dinossauros) mas não universal
+          - Confirmado universalmente
+          - Refutado completamente
+          - Sem qualquer dado
+        correctAnswer: Apoio estatístico em alguns clados (mamíferos, dinossauros) mas não universal
+        rationale:
+          pt: Cope: ED Cope (1887) propôs aumento de tamanho como tendência evolutiva. Estatísticas modernas (Alroy 1998 NA mamíferos, Smith 2010 marinhos): alguns clades sim (mamíferos pós-Cretáceo, mosasaurs), outros não (sauropodes diminuíram em algumas linhagens). Drift random vs seleção: Stanley argumentou drift. Não regra universal.
+          en: Cope: ED Cope (1887) proposed size increase as evolutionary trend. Modern statistics (Alroy 1998 NA mammals, Smith 2010 marine): some clades yes (mammals post-Cretaceous, mosasaurs), others no (sauropods shrunk in some lineages). Random drift vs selection: Stanley argued drift. Not universal rule.
+        objectives: [Cope's rule]
+  - title:
+      pt: Página 2 — Aplicações comparativas
+      en: Page 2 — Comparative applications
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em humanos, escala mass-brain ratio é desproporcional. Encefalização é medida por…
+          en: In humans, the mass-brain ratio is disproportionate. Encephalization is measured by…
+        choices:
+          - EQ (Encephalization Quotient, Jerison): observed brain mass / expected for body size
+          - Apenas peso bruto do cérebro
+          - Apenas circunferência craniana
+          - Sem qualquer métrica padrão
+        correctAnswer: EQ (Encephalization Quotient, Jerison): observed brain mass / expected for body size
+        rationale:
+          pt: Harry Jerison 1973: EQ baseado em log-log regressão brain mass ~ body mass; resíduo = encefalização. Humano EQ ~7.5 (vs 1.0 média de mamíferos). Golfinhos ~5, chimpanzés ~2-3. Aumento humano ~3x desde Australopithecus. Energética: cérebro 2% massa, ~20% energia.
+          en: Harry Jerison 1973: EQ based on log-log brain mass ~ body mass regression; residual = encephalization. Human EQ ~7.5 (vs 1.0 mammal average). Dolphins ~5, chimps ~2-3. Human increase ~3x since Australopithecus. Energetics: brain 2% mass, ~20% energy.
+        objectives: [EQ]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "expensive tissue hypothesis" (Aiello/Wheeler 1995) propõe…
+          en: "Expensive tissue hypothesis" (Aiello/Wheeler 1995) proposes…
+        choices:
+          - Cérebro grande humano evoluiu reduzindo intestino (cooking pre-digere comida)
+          - Cérebro evoluiu sem qualquer trade-off
+          - Apenas dieta vegetal favorece cérebro
+          - Sem qualquer hipótese energética
+        correctAnswer: Cérebro grande humano evoluiu reduzindo intestino (cooking pre-digere comida)
+        rationale:
+          pt: Aiello/Wheeler 1995 Curr Anthropology: tecidos metabólicos caros (brain, gut, heart, kidney) competem por orçamento energético. Humanos: brain 3x maior que esperado, mas gut menor. Hipótese: cooking (Wrangham "Catching Fire") pre-digere alimentos → intestino encolhe → libera energia para cérebro. Suporte parcial; debates ativos.
+          en: Aiello/Wheeler 1995 Curr Anthropology: metabolically costly tissues (brain, gut, heart, kidney) compete for energy budget. Humans: brain 3x larger than expected, but smaller gut. Hypothesis: cooking (Wrangham "Catching Fire") pre-digests food → intestine shrinks → frees energy for brain. Partial support; active debates.
+        objectives: [Expensive tissue]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em plantas, a "metabolic theory of ecology" prediz scaling de massa de árvore individual com…
+          en: In plants, "metabolic theory of ecology" predicts individual tree mass scales with…
+        choices:
+          - Diâmetro do tronco como D ∝ M^(3/8), seguindo suporte mecânico + rede de transporte
+          - Linear com D
+          - Sem qualquer relação
+          - Apenas com altura
+        correctAnswer: Diâmetro do tronco como D ∝ M^(3/8), seguindo suporte mecânico + rede de transporte
+        rationale:
+          pt: Niklas (Plant Allometry 1994), West/Brown predicação de M ∝ D^(8/3) (revertendo: D ∝ M^3/8). Suporte mecânico (Greenhill 1881) prevê altura ∝ D^2/3. Combinação: árvores escalam por princípios shared com animais. Aplicação à fisiologia florestal e mudança climática (CO2 sink).
+          en: Niklas (Plant Allometry 1994), West/Brown predict M ∝ D^(8/3) (inverting: D ∝ M^3/8). Mechanical support (Greenhill 1881) predicts height ∝ D^2/3. Combination: trees scale by principles shared with animals. Application to forest physiology and climate change (CO2 sink).
+        objectives: [Plant scaling]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "island rule" (Foster 1964) descreve…
+          en: The "island rule" (Foster 1964) describes…
+        choices:
+          - Em ilhas, mamíferos pequenos tendem a crescer; grandes a encolher (insular dwarfism/gigantism)
+          - Sem qualquer mudança em ilhas
+          - Apenas crescimento
+          - Apenas redução
+        correctAnswer: Em ilhas, mamíferos pequenos tendem a crescer; grandes a encolher (insular dwarfism/gigantism)
+        rationale:
+          pt: Bristol J Foster (Nature 1964): mamíferos em ilhas exibem padrão. Pigmeu: elefante ananão Sicília (Falconeri ~1m), Mammoth Wrangel Island. Gigante: rato Cyprus, lagomorfo Madeira. Causas: ausência de predadores (não precisa ser pequeno) e recursos limitados (não pode ser grande). Homo floresiensis "Hobbit" exemplo controvertido.
+          en: Bristol J Foster (Nature 1964): mammals on islands show pattern. Dwarf: Sicilian dwarf elephant (Falconeri ~1m), Wrangel Island mammoth. Giant: Cyprus rat, Madeira lagomorph. Causes: absence of predators (no need to be small) and limited resources (cannot be large). Homo floresiensis "Hobbit" controversial example.
+        objectives: [Island rule]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "rate of living" hypothesis de Pearl (1928) postulou…
+          en: Pearl's (1928) "rate of living" hypothesis posited…
+        choices:
+          - Lifespan ∝ 1/metabolic rate; baseou senescência inicial mas hoje é refinada/refutada
+          - Sem qualquer relação
+          - Lifespan independente
+          - Apenas em ectotermos
+        correctAnswer: Lifespan ∝ 1/metabolic rate; baseou senescência inicial mas hoje é refinada/refutada
+        rationale:
+          pt: Pearl: vida total = dose total de oxigênio queimada. Encaixa Kleiber → smaller animals shorter lives. Refutado: morcegos/pássaros desafiam (alto metabolismo, vida longa). Refinada por "free radical theory" (Harman 1956): ROS generate damage. Hoje, mitochondria/sirtuin/mTOR mais sofisticadas. Caloric restriction estende life em modelos.
+          en: Pearl: total life = total oxygen dose burned. Fits Kleiber → smaller animals shorter lives. Refuted: bats/birds challenge (high metabolism, long life). Refined by "free radical theory" (Harman 1956): ROS generate damage. Today, mitochondria/sirtuin/mTOR more sophisticated. Caloric restriction extends life in models.
+        objectives: [Rate of living]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em peixes ectothermos, taxa metabólica varia com temperatura via…
+          en: In ectothermic fish, metabolic rate varies with temperature via…
+        choices:
+          - Q10 ~2-3 (cada +10°C dobra/triplica taxa); Boltzmann factor explícito
+          - Independente de temperatura
+          - Negativamente
+          - Sem qualquer fator térmico
+        correctAnswer: Q10 ~2-3 (cada +10°C dobra/triplica taxa); Boltzmann factor explícito
+        rationale:
+          pt: Q10 = (R_T+10/R_T) tipicamente 2-3 em reações biológicas. Boltzmann: e^(-Ea/RT). Implicação climática: aquecimento +1-3°C aumenta metabolismo ectotérmico ~10-30%, modificando demanda de oxigênio, tamanho, distribuição (Pörtner OCLTT theory). Importante para pesca e conservação.
+          en: Q10 = (R_T+10/R_T) typically 2-3 in biological reactions. Boltzmann: e^(-Ea/RT). Climate implication: +1-3°C warming raises ectothermic metabolism ~10-30%, modifying oxygen demand, size, distribution (Pörtner OCLTT theory). Important for fisheries and conservation.
+        objectives: [Q10]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "Pace of life syndrome" (POLS) refere-se a covariações…
+          en: "Pace of life syndrome" (POLS) refers to covariation…
+        choices:
+          - Entre traços fisiológicos, comportamentais e história de vida (rápido/lento) em escala individual e populacional
+          - Apenas comportamento isolado
+          - Sem qualquer associação
+          - Apenas em humanos
+        correctAnswer: Entre traços fisiológicos, comportamentais e história de vida (rápido/lento) em escala individual e populacional
+        rationale:
+          pt: POLS (Réale 2010): "fast" individuals: alta metabolismo, ousadia, reprodução precoce, vida curta. "Slow": opostos. Conserva-se através de espécies. Mecanismos: mitochondrial, hormonal (cortisol), genéticos. Aplicação a comportamentos individuais (boldness, aggression). Estende life history a níveis múltiplos.
+          en: POLS (Réale 2010): "fast" individuals: high metabolism, boldness, early reproduction, short life. "Slow": opposites. Conserved across species. Mechanisms: mitochondrial, hormonal (cortisol), genetic. Application to individual behaviors (boldness, aggression). Extends life history to multiple levels.
+        objectives: [POLS]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "scaling of biodiversity" segue lei…
+          en: "Scaling of biodiversity" follows a law…
+        choices:
+          - Espécie-área S = cA^z com z ~0.25 em ilhas/continentes (Arrhenius/Preston/MacArthur)
+          - Linear com área
+          - Sem qualquer relação
+          - Apenas em mamíferos
+        correctAnswer: Espécie-área S = cA^z com z ~0.25 em ilhas/continentes (Arrhenius/Preston/MacArthur)
+        rationale:
+          pt: SAR (Species-Area Relationship): S = cA^z. Arrhenius (1921), Preston (1962). z ~0.25 em ilhas; ~0.15 em mainland. Implicação: dobrar área aumenta espécies por 2^0.25 ≈ 1.19. Conservação: perda de habitat 50% extingue ~16% espécies. Foundational em macroecologia.
+          en: SAR (Species-Area Relationship): S = cA^z. Arrhenius (1921), Preston (1962). z ~0.25 on islands; ~0.15 on mainland. Implication: doubling area increases species by 2^0.25 ≈ 1.19. Conservation: 50% habitat loss extinguishes ~16% species. Foundational in macroecology.
+        objectives: [SAR]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "dwarfing" em humanos pigmeus africanos é exemplo de…
+          en: "Dwarfing" in African pygmy humans is an example of…
+        choices:
+          - Adaptação a rainforest (mobilidade entre vegetação) + GH/IGF1 modificado, evolução paralela
+          - Apenas patologia
+          - Sem qualquer base genética
+          - Apenas em mamíferos não-humanos
+        correctAnswer: Adaptação a rainforest (mobilidade entre vegetação) + GH/IGF1 modificado, evolução paralela
+        rationale:
+          pt: Pigmeus (Mbuti, Aka, Twa, Negritos Asia, Andamaneses): altura ~150 cm. Genética: variantes em GH receptor, IGF1, P53, autoimmune relacionado. Evolução paralela em múltiplos continentes. Hipóteses: termoregulação rainforest, mobilidade arbórea, life history. Recente trabalho (Perry 2014, Hsieh 2017) refinou.
+          en: Pygmies (Mbuti, Aka, Twa, Asian Negritos, Andamanese): height ~150 cm. Genetics: variants in GH receptor, IGF1, P53, autoimmune-related. Parallel evolution in multiple continents. Hypotheses: rainforest thermoregulation, arboreal mobility, life history. Recent work (Perry 2014, Hsieh 2017) refined.
+        objectives: [Pigmeus]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "Carnot efficiency" do metabolismo biológico está limitada por…
+          en: Carnot efficiency of biological metabolism is limited by…
+        choices:
+          - Termodinâmica fundamental + perdas em cada step de transferência (~30-40% eficiência ATP)
+          - Sem qualquer limite teórico
+          - 100% de eficiência
+          - Apenas pela capacidade enzimática
+        correctAnswer: Termodinâmica fundamental + perdas em cada step de transferência (~30-40% eficiência ATP)
+        rationale:
+          pt: Glicose → ATP: ~36-38 ATP por molécula (~38% eficiência teórica). Cellular respiration captura ~40% energia química como ATP; resto liberado como calor. Termodinamicamente, sistema biológico é dissipativo aberto. Mitchell quimiosmose (Nobel 1978) elucidou ATP synthesis. Eficiência total muscle ~25-30% (resto = calor + atrito).
+          en: Glucose → ATP: ~36-38 ATP per molecule (~38% theoretical efficiency). Cellular respiration captures ~40% chemical energy as ATP; rest released as heat. Thermodynamically, biological system is open dissipative. Mitchell chemiosmosis (1978 Nobel) elucidated ATP synthesis. Total muscle efficiency ~25-30% (rest = heat + friction).
+        objectives: [Carnot efficiency]
+target: 20
