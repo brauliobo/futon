@@ -1,13 +1,13 @@
 title:
-  pt: Saúde Digital e Wearables Clínicos
-  en: Digital Health and Clinical Wearables
+  pt: 'Saúde Digital e Wearables Clínicos'
+  en: 'Digital Health and Clinical Wearables'
 level: Q
 subject: biology
 objectives:
-  - Compreender SaMD (Software as Medical Device)
-  - Reconhecer wearables (Apple Watch, CGM, Oura)
-  - Identificar DTx (Digital Therapeutics)
-  - Avaliar regulação FDA, EMA, CE
+  - 'Compreender SaMD (Software as Medical Device)'
+  - 'Reconhecer wearables (Apple Watch, CGM, Oura)'
+  - 'Identificar DTx (Digital Therapeutics)'
+  - 'Avaliar regulação FDA, EMA, CE'
 difficulty: 5
 authorNotes: |
   Digital health. SaMD framework IMDRF/FDA. Apple Heart Study 2019 NEJM. Fitbit AFib. CGM
@@ -16,327 +16,327 @@ authorNotes: |
   apps. EU MDR 2017/745. CDS Hooks HL7 FHIR. Apple HealthKit, Google Fit. Oura ring sleep.
 example:
   question:
-    pt: SaMD (Software as Medical Device, IMDRF/FDA) classifica software por…
-    en: SaMD (Software as Medical Device, IMDRF/FDA) classifies software by…
+    pt: 'SaMD (Software as Medical Device, IMDRF/FDA) classifica software por…'
+    en: 'SaMD (Software as Medical Device, IMDRF/FDA) classifies software by…'
   choices:
     - Risk: I-IV baseado em significado clínico (informar/drive/diagnose) × estado paciente
-    - Apenas binário
-    - Sem qualquer classificação
-    - Apenas para hardware
-  correctAnswer: Risk: I-IV baseado em significado clínico (informar/drive/diagnose) × estado paciente
+    - 'Apenas binário'
+    - 'Sem qualquer classificação'
+    - 'Apenas para hardware'
+  correctAnswer: 'Risk: I-IV baseado em significado clínico (informar/drive/diagnose) × estado paciente'
   rationale:
-    pt: IMDRF risk categorization: Class I (informe healthcare condition non-serious) a IV (treat/diagnose serious/critical). FDA usa para DSP (Digital Health Software Pre-Cert) pilot. Ex: app calculating BMI = I; CDS recomendando dose anticancer = III. EU MDR 2017/745 paralela com Annex VIII. Define grau de regulamentação.
-    en: IMDRF risk categorization: Class I (inform non-serious healthcare condition) to IV (treat/diagnose serious/critical). FDA uses for DSP (Digital Health Software Pre-Cert) pilot. E.g., BMI calculator app = I; CDS recommending anticancer dose = III. EU MDR 2017/745 parallel with Annex VIII. Defines regulation level.
+    pt: 'IMDRF risk categorization: Class I (informe healthcare condition non-serious) a IV (treat/diagnose serious/critical). FDA usa para DSP (Digital Health Software Pre-Cert) pilot. Ex: app calculating BMI = I; CDS recomendando dose anticancer = III. EU MDR 2017/745 paralela com Annex VIII. Define grau de regulamentação.'
+    en: 'IMDRF risk categorization: Class I (inform non-serious healthcare condition) to IV (treat/diagnose serious/critical). FDA uses for DSP (Digital Health Software Pre-Cert) pilot. E.g., BMI calculator app = I; CDS recommending anticancer dose = III. EU MDR 2017/745 parallel with Annex VIII. Defines regulation level.'
 passCriteria:
   minAccuracyPercent: 85
   maxAvgSecondsPerExercise: 14
 pages:
   - title:
-      pt: Página 1 — Wearables e DTx
-      en: Page 1 — Wearables and DTx
+      pt: 'Página 1 — Wearables e DTx'
+      en: 'Page 1 — Wearables and DTx'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: Apple Watch (FDA cleared 2018) detecta…
-          en: Apple Watch (FDA cleared 2018) detects…
+          pt: 'Apple Watch (FDA cleared 2018) detecta…'
+          en: 'Apple Watch (FDA cleared 2018) detects…'
         choices:
-          - AFib via PPG + ECG (1-lead), single-lead ECG, fall detection, blood oxygen
-          - Apenas pulso
-          - Sem qualquer função médica
-          - Apenas em hospital
-        correctAnswer: AFib via PPG + ECG (1-lead), single-lead ECG, fall detection, blood oxygen
+          - 'AFib via PPG + ECG (1-lead), single-lead ECG, fall detection, blood oxygen'
+          - 'Apenas pulso'
+          - 'Sem qualquer função médica'
+          - 'Apenas em hospital'
+        correctAnswer: 'AFib via PPG + ECG (1-lead), single-lead ECG, fall detection, blood oxygen'
         rationale:
-          pt: Apple Watch Series 4+ (2018): FDA cleared single-lead ECG + irregular rhythm notification AFib. Apple Heart Study (Perez 2019 NEJM, ~419k participants): PPV 84%. Series 6+ SpO2. Series 8+ temperature. Watch Ultra 2: dual frequency GPS. Concorrentes: Fitbit Charge AFib, Galaxy Watch ECG.
-          en: Apple Watch Series 4+ (2018): FDA cleared single-lead ECG + irregular rhythm notification AFib. Apple Heart Study (Perez 2019 NEJM, ~419k participants): PPV 84%. Series 6+ SpO2. Series 8+ temperature. Watch Ultra 2: dual frequency GPS. Competitors: Fitbit Charge AFib, Galaxy Watch ECG.
+          pt: 'Apple Watch Series 4+ (2018): FDA cleared single-lead ECG + irregular rhythm notification AFib. Apple Heart Study (Perez 2019 NEJM, ~419k participants): PPV 84%. Series 6+ SpO2. Series 8+ temperature. Watch Ultra 2: dual frequency GPS. Concorrentes: Fitbit Charge AFib, Galaxy Watch ECG.'
+          en: 'Apple Watch Series 4+ (2018): FDA cleared single-lead ECG + irregular rhythm notification AFib. Apple Heart Study (Perez 2019 NEJM, ~419k participants): PPV 84%. Series 6+ SpO2. Series 8+ temperature. Watch Ultra 2: dual frequency GPS. Competitors: Fitbit Charge AFib, Galaxy Watch ECG.'
         objectives: [Apple Watch]
       - type: choice
         difficulty: 5
         question:
-          pt: Continuous Glucose Monitors (CGM, Dexcom G7, Abbott Libre) revolucionaram diabetes por…
-          en: Continuous Glucose Monitors (CGM, Dexcom G7, Abbott Libre) revolutionized diabetes by…
+          pt: 'Continuous Glucose Monitors (CGM, Dexcom G7, Abbott Libre) revolucionaram diabetes por…'
+          en: 'Continuous Glucose Monitors (CGM, Dexcom G7, Abbott Libre) revolutionized diabetes by…'
         choices:
-          - Glucose intersticial cada 1-5 min, eliminando finger sticks; closed-loop pumps automatizam insulina
-          - Apenas single measurement
-          - Sem qualquer impacto
-          - Apenas em ICU
-        correctAnswer: Glucose intersticial cada 1-5 min, eliminando finger sticks; closed-loop pumps automatizam insulina
+          - 'Glucose intersticial cada 1-5 min, eliminando finger sticks; closed-loop pumps automatizam insulina'
+          - 'Apenas single measurement'
+          - 'Sem qualquer impacto'
+          - 'Apenas em ICU'
+        correctAnswer: 'Glucose intersticial cada 1-5 min, eliminando finger sticks; closed-loop pumps automatizam insulina'
         rationale:
-          pt: CGM: sensor enzimático intersticial. Dexcom G7 (FDA 2022): 10-day wear, calibration-free, Bluetooth phone. Abbott Libre 3: 14-day. Drives "Time in Range" (TIR 70-180 mg/dL) novo metric clínico. Closed-loop: Tandem Control-IQ, Medtronic 780G, Omnipod 5 — automated insulin delivery (AID). Mudou T1D management profundamente.
-          en: CGM: interstitial enzymatic sensor. Dexcom G7 (FDA 2022): 10-day wear, calibration-free, Bluetooth phone. Abbott Libre 3: 14-day. Drives "Time in Range" (TIR 70-180 mg/dL) new clinical metric. Closed-loop: Tandem Control-IQ, Medtronic 780G, Omnipod 5 — automated insulin delivery (AID). Profoundly changed T1D management.
+          pt: 'CGM: sensor enzimático intersticial. Dexcom G7 (FDA 2022): 10-day wear, calibration-free, Bluetooth phone. Abbott Libre 3: 14-day. Drives "Time in Range" (TIR 70-180 mg/dL) novo metric clínico. Closed-loop: Tandem Control-IQ, Medtronic 780G, Omnipod 5 — automated insulin delivery (AID). Mudou T1D management profundamente.'
+          en: 'CGM: interstitial enzymatic sensor. Dexcom G7 (FDA 2022): 10-day wear, calibration-free, Bluetooth phone. Abbott Libre 3: 14-day. Drives "Time in Range" (TIR 70-180 mg/dL) new clinical metric. Closed-loop: Tandem Control-IQ, Medtronic 780G, Omnipod 5 — automated insulin delivery (AID). Profoundly changed T1D management.'
         objectives: [CGM]
       - type: choice
         difficulty: 5
         question:
-          pt: Pear Therapeutics reSET (2017) foi primeiro DTx (Digital Therapeutic) FDA-aprovado para…
-          en: Pear Therapeutics reSET (2017) was first FDA-approved DTx (Digital Therapeutic) for…
+          pt: 'Pear Therapeutics reSET (2017) foi primeiro DTx (Digital Therapeutic) FDA-aprovado para…'
+          en: 'Pear Therapeutics reSET (2017) was first FDA-approved DTx (Digital Therapeutic) for…'
         choices:
-          - Substance use disorder (CBT-based app), prescrição médica; empresa faliu 2023 — comercialização DTx desafio
-          - Diabetes
-          - Sem qualquer aprovação
-          - Apenas para US
-        correctAnswer: Substance use disorder (CBT-based app), prescrição médica; empresa faliu 2023 — comercialização DTx desafio
+          - 'Substance use disorder (CBT-based app), prescrição médica; empresa faliu 2023 — comercialização DTx desafio'
+          - 'Diabetes'
+          - 'Sem qualquer aprovação'
+          - 'Apenas para US'
+        correctAnswer: 'Substance use disorder (CBT-based app), prescrição médica; empresa faliu 2023 — comercialização DTx desafio'
         rationale:
-          pt: reSET (2017) e reSET-O (opioid 2018, somnryst insomnia 2020): primeiros prescription DTx FDA. Falha comercial: payors recusaram cobertura (sem CPT codes), prescrição médica complicada. Pear Therapeutics bankrupt 2023. Lições: regulação ≠ adoção. Akili EndeavorRx (ADHD video game 2020) similar challenges. Modelo evolui.
-          en: reSET (2017) and reSET-O (opioid 2018, Somnryst insomnia 2020): first FDA prescription DTx. Commercial failure: payors refused coverage (no CPT codes), complicated medical prescribing. Pear Therapeutics bankrupt 2023. Lessons: regulation ≠ adoption. Akili EndeavorRx (ADHD video game 2020) similar challenges. Model evolving.
+          pt: 'reSET (2017) e reSET-O (opioid 2018, somnryst insomnia 2020): primeiros prescription DTx FDA. Falha comercial: payors recusaram cobertura (sem CPT codes), prescrição médica complicada. Pear Therapeutics bankrupt 2023. Lições: regulação ≠ adoção. Akili EndeavorRx (ADHD video game 2020) similar challenges. Modelo evolui.'
+          en: 'reSET (2017) and reSET-O (opioid 2018, Somnryst insomnia 2020): first FDA prescription DTx. Commercial failure: payors refused coverage (no CPT codes), complicated medical prescribing. Pear Therapeutics bankrupt 2023. Lessons: regulation ≠ adoption. Akili EndeavorRx (ADHD video game 2020) similar challenges. Model evolving.'
         objectives: [Pear DTx]
       - type: choice
         difficulty: 5
         question:
-          pt: AppliedVR RelieVRx (FDA 2021) é DTx para…
-          en: AppliedVR RelieVRx (FDA 2021) is DTx for…
+          pt: 'AppliedVR RelieVRx (FDA 2021) é DTx para…'
+          en: 'AppliedVR RelieVRx (FDA 2021) is DTx for…'
         choices:
-          - Chronic low back pain via VR-based behavioral therapy 8-week program
-          - Diabetes
-          - Sem qualquer aplicação
-          - Apenas em pediatric
-        correctAnswer: Chronic low back pain via VR-based behavioral therapy 8-week program
+          - 'Chronic low back pain via VR-based behavioral therapy 8-week program'
+          - 'Diabetes'
+          - 'Sem qualquer aplicação'
+          - 'Apenas em pediatric'
+        correctAnswer: 'Chronic low back pain via VR-based behavioral therapy 8-week program'
         rationale:
-          pt: RelieVRx: 56-day VR program (8 weeks). Cognitive behavioral therapy + relaxation + biofeedback delivered via headset. RCT showed pain reduction. FDA Authorization 2021 via De Novo. Veterans Affairs (VA) cobertura. Modelo de "intervention without medication" para chronic pain — relevante crise opioide.
-          en: RelieVRx: 56-day VR program (8 weeks). Cognitive behavioral therapy + relaxation + biofeedback delivered via headset. RCT showed pain reduction. FDA Authorization 2021 via De Novo. Veterans Affairs (VA) coverage. "Intervention without medication" model for chronic pain — relevant to opioid crisis.
+          pt: 'RelieVRx: 56-day VR program (8 weeks). Cognitive behavioral therapy + relaxation + biofeedback delivered via headset. RCT showed pain reduction. FDA Authorization 2021 via De Novo. Veterans Affairs (VA) cobertura. Modelo de "intervention without medication" para chronic pain — relevante crise opioide.'
+          en: 'RelieVRx: 56-day VR program (8 weeks). Cognitive behavioral therapy + relaxation + biofeedback delivered via headset. RCT showed pain reduction. FDA Authorization 2021 via De Novo. Veterans Affairs (VA) coverage. "Intervention without medication" model for chronic pain — relevant to opioid crisis.'
         objectives: [AppliedVR]
       - type: choice
         difficulty: 5
         question:
-          pt: Oura Ring é wearable popular por…
-          en: Oura Ring is popular wearable for…
+          pt: 'Oura Ring é wearable popular por…'
+          en: 'Oura Ring is popular wearable for…'
         choices:
-          - Sleep tracking, HRV, body temperature (ovulation detection), forma anel discrete
-          - Apenas pulse
-          - Sem qualquer aplicação
-          - Apenas para atletas
-        correctAnswer: Sleep tracking, HRV, body temperature (ovulation detection), forma anel discrete
+          - 'Sleep tracking, HRV, body temperature (ovulation detection), forma anel discrete'
+          - 'Apenas pulse'
+          - 'Sem qualquer aplicação'
+          - 'Apenas para atletas'
+        correctAnswer: 'Sleep tracking, HRV, body temperature (ovulation detection), forma anel discrete'
         rationale:
-          pt: Oura (Finlândia, 2013+): infrared LED PPG + temperature + accelerometer em anel. Sleep stages, HRV, readiness score. Cycle tracking via temperature. Apple Watch double-down em 2022 com temperature. Estudos: sleep + COVID detection (Mason 2022). Lifestyle wearable — não regulated medical (yet).
-          en: Oura (Finland, 2013+): infrared LED PPG + temperature + accelerometer in ring. Sleep stages, HRV, readiness score. Cycle tracking via temperature. Apple Watch doubled down in 2022 with temperature. Studies: sleep + COVID detection (Mason 2022). Lifestyle wearable — not yet regulated medical.
+          pt: 'Oura (Finlândia, 2013+): infrared LED PPG + temperature + accelerometer em anel. Sleep stages, HRV, readiness score. Cycle tracking via temperature. Apple Watch double-down em 2022 com temperature. Estudos: sleep + COVID detection (Mason 2022). Lifestyle wearable — não regulated medical (yet).'
+          en: 'Oura (Finland, 2013+): infrared LED PPG + temperature + accelerometer in ring. Sleep stages, HRV, readiness score. Cycle tracking via temperature. Apple Watch doubled down in 2022 with temperature. Studies: sleep + COVID detection (Mason 2022). Lifestyle wearable — not yet regulated medical.'
         objectives: [Oura ring]
       - type: choice
         difficulty: 5
         question:
-          pt: O FDA Predetermined Change Control Plans (PCCP, 2024 final guidance) permite…
-          en: FDA Predetermined Change Control Plans (PCCP, 2024 final guidance) allow…
+          pt: 'O FDA Predetermined Change Control Plans (PCCP, 2024 final guidance) permite…'
+          en: 'FDA Predetermined Change Control Plans (PCCP, 2024 final guidance) allow…'
         choices:
-          - Updates pré-aprovados em ML/AI medical devices sem reaprovação completa
-          - Apenas aprovação fixa
-          - Sem qualquer flexibilidade
-          - Apenas para small companies
-        correctAnswer: Updates pré-aprovados em ML/AI medical devices sem reaprovação completa
+          - 'Updates pré-aprovados em ML/AI medical devices sem reaprovação completa'
+          - 'Apenas aprovação fixa'
+          - 'Sem qualquer flexibilidade'
+          - 'Apenas para small companies'
+        correctAnswer: 'Updates pré-aprovados em ML/AI medical devices sem reaprovação completa'
         rationale:
-          pt: PCCP final guidance dez/2024: developers especificam ex-ante modificações (retraining, new populations, hardware) com critérios pre-approved. Solução para "modelos vivos" — antes, cada update precisava nova clearance. Aplicável a >900 ML/AI-enabled devices na lista FDA. Permite continuous learning systems. EMA, MHRA equivalents.
-          en: PCCP final guidance Dec 2024: developers specify ex-ante modifications (retraining, new populations, hardware) with pre-approved criteria. Solution for "living models" — before, each update needed new clearance. Applicable to >900 ML/AI-enabled devices on FDA list. Enables continuous learning systems. EMA, MHRA equivalents.
+          pt: 'PCCP final guidance dez/2024: developers especificam ex-ante modificações (retraining, new populations, hardware) com critérios pre-approved. Solução para "modelos vivos" — antes, cada update precisava nova clearance. Aplicável a >900 ML/AI-enabled devices na lista FDA. Permite continuous learning systems. EMA, MHRA equivalents.'
+          en: 'PCCP final guidance Dec 2024: developers specify ex-ante modifications (retraining, new populations, hardware) with pre-approved criteria. Solution for "living models" — before, each update needed new clearance. Applicable to >900 ML/AI-enabled devices on FDA list. Enables continuous learning systems. EMA, MHRA equivalents.'
         objectives: [PCCP]
       - type: choice
         difficulty: 5
         question:
-          pt: Mental health apps (Headspace, Calm, Woebot, Wysa) são desafio porque…
-          en: Mental health apps (Headspace, Calm, Woebot, Wysa) are challenging because of…
+          pt: 'Mental health apps (Headspace, Calm, Woebot, Wysa) são desafio porque…'
+          en: 'Mental health apps (Headspace, Calm, Woebot, Wysa) are challenging because of…'
         choices:
-          - Maioria não é validada clinicamente; uso explosivo mas evidência fraca; risco off-label
-          - Sempre validados
-          - Sem qualquer uso
-          - Apenas em US
-        correctAnswer: Maioria não é validada clinicamente; uso explosivo mas evidência fraca; risco off-label
+          - 'Maioria não é validada clinicamente; uso explosivo mas evidência fraca; risco off-label'
+          - 'Sempre validados'
+          - 'Sem qualquer uso'
+          - 'Apenas em US'
+        correctAnswer: 'Maioria não é validada clinicamente; uso explosivo mas evidência fraca; risco off-label'
         rationale:
-          pt: ~10k+ mental health apps disponíveis. Maioria não regulamentada (lifestyle, não medical claims). Reviews (Torous, Donker): poucos com RCT, fewer with clinical-grade evidence. APA App Evaluation Model framework. FDA aprovou alguns (Pear reSET, Akili EndeavorRx). Riscos: harm from bad advice (suicide), data privacy, displacement de care real.
-          en: ~10k+ mental health apps available. Most unregulated (lifestyle, not medical claims). Reviews (Torous, Donker): few with RCT, fewer with clinical-grade evidence. APA App Evaluation Model framework. FDA approved some (Pear reSET, Akili EndeavorRx). Risks: harm from bad advice (suicide), data privacy, displacement of real care.
+          pt: '~10k+ mental health apps disponíveis. Maioria não regulamentada (lifestyle, não medical claims). Reviews (Torous, Donker): poucos com RCT, fewer with clinical-grade evidence. APA App Evaluation Model framework. FDA aprovou alguns (Pear reSET, Akili EndeavorRx). Riscos: harm from bad advice (suicide), data privacy, displacement de care real.'
+          en: '~10k+ mental health apps available. Most unregulated (lifestyle, not medical claims). Reviews (Torous, Donker): few with RCT, fewer with clinical-grade evidence. APA App Evaluation Model framework. FDA approved some (Pear reSET, Akili EndeavorRx). Risks: harm from bad advice (suicide), data privacy, displacement of real care.'
         objectives: [MH apps]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "digital biomarker" estende biomarker tradicional para…
-          en: "Digital biomarker" extends traditional biomarker to…
+          pt: 'O conceito "digital biomarker" estende biomarker tradicional para…'
+          en: '"Digital biomarker" extends traditional biomarker to…'
         choices:
-          - Sinais coletados via dispositivos digitais (gait, voice, sleep) refletindo estado de saúde
-          - Apenas blood tests
-          - Sem qualquer modelo
-          - Apenas para pediatric
-        correctAnswer: Sinais coletados via dispositivos digitais (gait, voice, sleep) refletindo estado de saúde
+          - 'Sinais coletados via dispositivos digitais (gait, voice, sleep) refletindo estado de saúde'
+          - 'Apenas blood tests'
+          - 'Sem qualquer modelo'
+          - 'Apenas para pediatric'
+        correctAnswer: 'Sinais coletados via dispositivos digitais (gait, voice, sleep) refletindo estado de saúde'
         rationale:
-          pt: Digital biomarkers: gait analysis (Parkinson, fall risk), voice analysis (depression, COVID, ALS), sleep architecture (psiquiatria), HRV (stress, autonomic). Pesquisas: Parkinson via smartphone (Bot 2016, mPower app), Alzheimer via passive sensing (digital divide concerns). Pode ter regulatory qualification. AppleResearchKit, Google Health Stack.
-          en: Digital biomarkers: gait analysis (Parkinson, fall risk), voice analysis (depression, COVID, ALS), sleep architecture (psychiatry), HRV (stress, autonomic). Research: Parkinson via smartphone (Bot 2016, mPower app), Alzheimer via passive sensing (digital divide concerns). May have regulatory qualification. AppleResearchKit, Google Health Stack.
+          pt: 'Digital biomarkers: gait analysis (Parkinson, fall risk), voice analysis (depression, COVID, ALS), sleep architecture (psiquiatria), HRV (stress, autonomic). Pesquisas: Parkinson via smartphone (Bot 2016, mPower app), Alzheimer via passive sensing (digital divide concerns). Pode ter regulatory qualification. AppleResearchKit, Google Health Stack.'
+          en: 'Digital biomarkers: gait analysis (Parkinson, fall risk), voice analysis (depression, COVID, ALS), sleep architecture (psychiatry), HRV (stress, autonomic). Research: Parkinson via smartphone (Bot 2016, mPower app), Alzheimer via passive sensing (digital divide concerns). May have regulatory qualification. AppleResearchKit, Google Health Stack.'
         objectives: [Digital biomarkers]
       - type: choice
         difficulty: 5
         question:
-          pt: Em ophthalmology, IDx-DR (Digital Diagnostics 2018) foi…
-          en: In ophthalmology, IDx-DR (Digital Diagnostics 2018) was…
+          pt: 'Em ophthalmology, IDx-DR (Digital Diagnostics 2018) foi…'
+          en: 'In ophthalmology, IDx-DR (Digital Diagnostics 2018) was…'
         choices:
-          - Primeiro AI autônomo aprovado FDA: detecta retinopatia diabética em primary care sem oftalmologista
-          - Apenas teleconsulta
-          - Sem qualquer aprovação
-          - Apenas em US
-        correctAnswer: Primeiro AI autônomo aprovado FDA: detecta retinopatia diabética em primary care sem oftalmologista
+          - 'Primeiro AI autônomo aprovado FDA: detecta retinopatia diabética em primary care sem oftalmologista'
+          - 'Apenas teleconsulta'
+          - 'Sem qualquer aprovação'
+          - 'Apenas em US'
+        correctAnswer: 'Primeiro AI autônomo aprovado FDA: detecta retinopatia diabética em primary care sem oftalmologista'
         rationale:
-          pt: IDx-DR (Michael Abramoff, Iowa, FDA cleared abr/2018): fundus photo upload → AI determina "more than mild diabetic retinopathy" yes/no. Sensitivity 87%, specificity 90%. Primary care setting. Marco regulatório: AI autonomous decision-making approved. Sucessores: EyeArt (Eyenuk), AEYE Health.
-          en: IDx-DR (Michael Abramoff, Iowa, FDA cleared Apr 2018): fundus photo upload → AI determines "more than mild diabetic retinopathy" yes/no. Sensitivity 87%, specificity 90%. Primary care setting. Regulatory milestone: autonomous AI decision-making approved. Successors: EyeArt (Eyenuk), AEYE Health.
+          pt: 'IDx-DR (Michael Abramoff, Iowa, FDA cleared abr/2018): fundus photo upload → AI determina "more than mild diabetic retinopathy" yes/no. Sensitivity 87%, specificity 90%. Primary care setting. Marco regulatório: AI autonomous decision-making approved. Sucessores: EyeArt (Eyenuk), AEYE Health.'
+          en: 'IDx-DR (Michael Abramoff, Iowa, FDA cleared Apr 2018): fundus photo upload → AI determines "more than mild diabetic retinopathy" yes/no. Sensitivity 87%, specificity 90%. Primary care setting. Regulatory milestone: autonomous AI decision-making approved. Successors: EyeArt (Eyenuk), AEYE Health.'
         objectives: [IDx-DR]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "decentralized clinical trial" (DCT) acelerou pós-COVID por…
-          en: "Decentralized clinical trial" (DCT) accelerated post-COVID via…
+          pt: 'O conceito "decentralized clinical trial" (DCT) acelerou pós-COVID por…'
+          en: '"Decentralized clinical trial" (DCT) accelerated post-COVID via…'
         choices:
-          - Home-based visits, telemedicine, eConsent, wearables, drug delivery direct-to-patient
-          - Apenas hospital tradicional
-          - Sem qualquer mudança
-          - Apenas em US
-        correctAnswer: Home-based visits, telemedicine, eConsent, wearables, drug delivery direct-to-patient
+          - 'Home-based visits, telemedicine, eConsent, wearables, drug delivery direct-to-patient'
+          - 'Apenas hospital tradicional'
+          - 'Sem qualquer mudança'
+          - 'Apenas em US'
+        correctAnswer: 'Home-based visits, telemedicine, eConsent, wearables, drug delivery direct-to-patient'
         rationale:
-          pt: DCTs FDA guidance 2023: emit specific recommendations for hybrid/full-DCT. Vantagens: recruitment expanded (rural, mobility-limited), faster, lower drop-out. Desafios: data integrity, equity, source verification. Companies: Science 37, Medable, ObvioHealth. Pós-pandemic ~30% trials usam algum DCT element.
-          en: DCT FDA 2023 guidance: issues specific recommendations for hybrid/full DCT. Advantages: expanded recruitment (rural, mobility-limited), faster, lower dropout. Challenges: data integrity, equity, source verification. Companies: Science 37, Medable, ObvioHealth. Post-pandemic ~30% of trials use some DCT element.
+          pt: 'DCTs FDA guidance 2023: emit specific recommendations for hybrid/full-DCT. Vantagens: recruitment expanded (rural, mobility-limited), faster, lower drop-out. Desafios: data integrity, equity, source verification. Companies: Science 37, Medable, ObvioHealth. Pós-pandemic ~30% trials usam algum DCT element.'
+          en: 'DCT FDA 2023 guidance: issues specific recommendations for hybrid/full DCT. Advantages: expanded recruitment (rural, mobility-limited), faster, lower dropout. Challenges: data integrity, equity, source verification. Companies: Science 37, Medable, ObvioHealth. Post-pandemic ~30% of trials use some DCT element.'
         objectives: [DCT]
   - title:
-      pt: Página 2 — Aplicações
-      en: Page 2 — Applications
+      pt: 'Página 2 — Aplicações'
+      en: 'Page 2 — Applications'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: O EU AI Act (2024) é importante para digital health por…
-          en: The EU AI Act (2024) is important for digital health because…
+          pt: 'O EU AI Act (2024) é importante para digital health por…'
+          en: 'The EU AI Act (2024) is important for digital health because…'
         choices:
-          - Classifica AI clinical como "high-risk" requirindo CE conformity, transparência, post-market monitoring
-          - Apenas voluntário
-          - Sem qualquer regulação
-          - Apenas para US
-        correctAnswer: Classifica AI clinical como "high-risk" requirindo CE conformity, transparência, post-market monitoring
+          - 'Classifica AI clinical como "high-risk" requirindo CE conformity, transparência, post-market monitoring'
+          - 'Apenas voluntário'
+          - 'Sem qualquer regulação'
+          - 'Apenas para US'
+        correctAnswer: 'Classifica AI clinical como "high-risk" requirindo CE conformity, transparência, post-market monitoring'
         rationale:
-          pt: EU AI Act (entered force ago/2024, enforcement gradual 2025-2027): classifica AI por risco. Medical AI = "high-risk" (junto com critical infrastructure, biometric ID). Exige: CE marking via Notified Body, risk management, transparency, human oversight, post-market monitoring, incident reporting. Penalties até 7% revenue global. Expansão de MDR.
-          en: EU AI Act (entered force Aug 2024, gradual enforcement 2025-2027): classifies AI by risk. Medical AI = "high-risk" (along with critical infrastructure, biometric ID). Requires: CE marking via Notified Body, risk management, transparency, human oversight, post-market monitoring, incident reporting. Penalties up to 7% global revenue. MDR expansion.
+          pt: 'EU AI Act (entered force ago/2024, enforcement gradual 2025-2027): classifica AI por risco. Medical AI = "high-risk" (junto com critical infrastructure, biometric ID). Exige: CE marking via Notified Body, risk management, transparency, human oversight, post-market monitoring, incident reporting. Penalties até 7% revenue global. Expansão de MDR.'
+          en: 'EU AI Act (entered force Aug 2024, gradual enforcement 2025-2027): classifies AI by risk. Medical AI = "high-risk" (along with critical infrastructure, biometric ID). Requires: CE marking via Notified Body, risk management, transparency, human oversight, post-market monitoring, incident reporting. Penalties up to 7% global revenue. MDR expansion.'
         objectives: [EU AI Act]
       - type: choice
         difficulty: 5
         question:
-          pt: HL7 FHIR (Fast Healthcare Interoperability Resources) é padrão para…
-          en: HL7 FHIR (Fast Healthcare Interoperability Resources) is standard for…
+          pt: 'HL7 FHIR (Fast Healthcare Interoperability Resources) é padrão para…'
+          en: 'HL7 FHIR (Fast Healthcare Interoperability Resources) is standard for…'
         choices:
-          - Interoperabilidade EHR via REST API + JSON, RESTful resources médicos
-          - Apenas formato proprietário
-          - Sem qualquer interoperabilidade
-          - Apenas para imaging
-        correctAnswer: Interoperabilidade EHR via REST API + JSON, RESTful resources médicos
+          - 'Interoperabilidade EHR via REST API + JSON, RESTful resources médicos'
+          - 'Apenas formato proprietário'
+          - 'Sem qualquer interoperabilidade'
+          - 'Apenas para imaging'
+        correctAnswer: 'Interoperabilidade EHR via REST API + JSON, RESTful resources médicos'
         rationale:
-          pt: FHIR (Grahame Grieve 2014+): substituto moderno de HL7 v2/v3 e CDA. Resources: Patient, Observation, Medication, Encounter, etc. Apple Health, Epic MyChart, ONC US Cures Act 2016 mandate. SMART on FHIR (Boston Children's Mandl) permite apps acessarem EHR data. Driving force em modern health IT.
-          en: FHIR (Grahame Grieve 2014+): modern successor to HL7 v2/v3 and CDA. Resources: Patient, Observation, Medication, Encounter, etc. Apple Health, Epic MyChart, ONC US Cures Act 2016 mandate. SMART on FHIR (Boston Children's Mandl) lets apps access EHR data. Driving force in modern health IT.
+          pt: 'FHIR (Grahame Grieve 2014+): substituto moderno de HL7 v2/v3 e CDA. Resources: Patient, Observation, Medication, Encounter, etc. Apple Health, Epic MyChart, ONC US Cures Act 2016 mandate. SMART on FHIR (Boston Children''s Mandl) permite apps acessarem EHR data. Driving force em modern health IT.'
+          en: 'FHIR (Grahame Grieve 2014+): modern successor to HL7 v2/v3 and CDA. Resources: Patient, Observation, Medication, Encounter, etc. Apple Health, Epic MyChart, ONC US Cures Act 2016 mandate. SMART on FHIR (Boston Children''s Mandl) lets apps access EHR data. Driving force in modern health IT.'
         objectives: [FHIR]
       - type: choice
         difficulty: 5
         question:
-          pt: Em smartphone-based detection de COVID (Mason 2022, Mishra 2020), wearables…
-          en: In smartphone-based COVID detection (Mason 2022, Mishra 2020), wearables…
+          pt: 'Em smartphone-based detection de COVID (Mason 2022, Mishra 2020), wearables…'
+          en: 'In smartphone-based COVID detection (Mason 2022, Mishra 2020), wearables…'
         choices:
-          - Detected fisiológicos (HRV, temperature, sleep) podem prever COVID 1-2 dias pré-sintoma
-          - Sem qualquer detecção
-          - Apenas teste PCR
-          - Apenas em US
-        correctAnswer: Detected fisiológicos (HRV, temperature, sleep) podem prever COVID 1-2 dias pré-sintoma
+          - 'Detected fisiológicos (HRV, temperature, sleep) podem prever COVID 1-2 dias pré-sintoma'
+          - 'Sem qualquer detecção'
+          - 'Apenas teste PCR'
+          - 'Apenas em US'
+        correctAnswer: 'Detected fisiológicos (HRV, temperature, sleep) podem prever COVID 1-2 dias pré-sintoma'
         rationale:
-          pt: Mishra/Snyder Stanford 2020 (Nat Biomed Eng): Fitbit detected fisiologic anomalies pre-symptoms. Mason/Conroy/Snyder 2022 Cell Rep Med: Oura validation. WHOOP, Apple Watch similar. Aplicações: early warning, cohort surveillance. Não substitui PCR mas complementa. Promissor para outras infecções (flu, RSV).
-          en: Mishra/Snyder Stanford 2020 (Nat Biomed Eng): Fitbit detected physiologic anomalies pre-symptoms. Mason/Conroy/Snyder 2022 Cell Rep Med: Oura validation. WHOOP, Apple Watch similar. Applications: early warning, cohort surveillance. Doesn't replace PCR but complements. Promising for other infections (flu, RSV).
+          pt: 'Mishra/Snyder Stanford 2020 (Nat Biomed Eng): Fitbit detected fisiologic anomalies pre-symptoms. Mason/Conroy/Snyder 2022 Cell Rep Med: Oura validation. WHOOP, Apple Watch similar. Aplicações: early warning, cohort surveillance. Não substitui PCR mas complementa. Promissor para outras infecções (flu, RSV).'
+          en: 'Mishra/Snyder Stanford 2020 (Nat Biomed Eng): Fitbit detected physiologic anomalies pre-symptoms. Mason/Conroy/Snyder 2022 Cell Rep Med: Oura validation. WHOOP, Apple Watch similar. Applications: early warning, cohort surveillance. Doesn''t replace PCR but complements. Promising for other infections (flu, RSV).'
         objectives: [COVID wearable]
       - type: choice
         difficulty: 5
         question:
-          pt: Em digital health, "digital divide" é problema porque…
-          en: In digital health, "digital divide" is a problem because…
+          pt: 'Em digital health, "digital divide" é problema porque…'
+          en: 'In digital health, "digital divide" is a problem because…'
         choices:
-          - Older, low-income, rural, minorities têm menos acesso a smartphones, internet, digital literacy
-          - Sem qualquer divide
-          - Apenas em US
-          - Sem qualquer impacto
-        correctAnswer: Older, low-income, rural, minorities têm menos acesso a smartphones, internet, digital literacy
+          - 'Older, low-income, rural, minorities têm menos acesso a smartphones, internet, digital literacy'
+          - 'Sem qualquer divide'
+          - 'Apenas em US'
+          - 'Sem qualquer impacto'
+        correctAnswer: 'Older, low-income, rural, minorities têm menos acesso a smartphones, internet, digital literacy'
         rationale:
-          pt: Pew Research US: ~25% adultos sem broadband home, concentrado em low-income, rural. CDC: telehealth use durante COVID estratificou por raça, renda, idade — exacerbando disparities. Soluções: federal subsidies (FCC Affordable Connectivity Program), library Wi-Fi, simplified UX, multi-modal (voice). Frontier de equity.
-          en: Pew Research US: ~25% adults without home broadband, concentrated in low-income, rural. CDC: COVID-era telehealth use stratified by race, income, age — exacerbating disparities. Solutions: federal subsidies (FCC Affordable Connectivity Program), library Wi-Fi, simplified UX, multi-modal (voice). Equity frontier.
+          pt: 'Pew Research US: ~25% adultos sem broadband home, concentrado em low-income, rural. CDC: telehealth use durante COVID estratificou por raça, renda, idade — exacerbando disparities. Soluções: federal subsidies (FCC Affordable Connectivity Program), library Wi-Fi, simplified UX, multi-modal (voice). Frontier de equity.'
+          en: 'Pew Research US: ~25% adults without home broadband, concentrated in low-income, rural. CDC: COVID-era telehealth use stratified by race, income, age — exacerbating disparities. Solutions: federal subsidies (FCC Affordable Connectivity Program), library Wi-Fi, simplified UX, multi-modal (voice). Equity frontier.'
         objectives: [Digital divide]
       - type: choice
         difficulty: 5
         question:
-          pt: Em radiologia, AI clearance FDA cresceu para…
-          en: In radiology, FDA AI clearance grew to…
+          pt: 'Em radiologia, AI clearance FDA cresceu para…'
+          en: 'In radiology, FDA AI clearance grew to…'
         choices:
-          - >700 AI/ML radiology devices em 2024 (~75% de todos AI-enabled FDA cleared)
-          - Apenas 1
-          - Apenas em pediatria
-          - Sem qualquer aprovação
-        correctAnswer: >700 AI/ML radiology devices em 2024 (~75% de todos AI-enabled FDA cleared)
+          - '>700 AI/ML radiology devices em 2024 (~75% de todos AI-enabled FDA cleared)'
+          - 'Apenas 1'
+          - 'Apenas em pediatria'
+          - 'Sem qualquer aprovação'
+        correctAnswer: '>700 AI/ML radiology devices em 2024 (~75% de todos AI-enabled FDA cleared)'
         rationale:
-          pt: Radiologia lidera em volume aprovações: triagem (Aidoc, Viz.ai LVO stroke), detection (Annalise CXR, Lunit chest), quantification (HeartFlow FFR-CT), workflow. Modelos aprovados via 510(k) substantial equivalence. Crescimento exponencial 2018+. Limites: bias (training set), generalization out-of-distribution, integration EHR.
-          en: Radiology leads in approval volume: triage (Aidoc, Viz.ai LVO stroke), detection (Annalise CXR, Lunit chest), quantification (HeartFlow FFR-CT), workflow. Models approved via 510(k) substantial equivalence. Exponential growth 2018+. Limits: bias (training set), out-of-distribution generalization, EHR integration.
+          pt: 'Radiologia lidera em volume aprovações: triagem (Aidoc, Viz.ai LVO stroke), detection (Annalise CXR, Lunit chest), quantification (HeartFlow FFR-CT), workflow. Modelos aprovados via 510(k) substantial equivalence. Crescimento exponencial 2018+. Limites: bias (training set), generalization out-of-distribution, integration EHR.'
+          en: 'Radiology leads in approval volume: triage (Aidoc, Viz.ai LVO stroke), detection (Annalise CXR, Lunit chest), quantification (HeartFlow FFR-CT), workflow. Models approved via 510(k) substantial equivalence. Exponential growth 2018+. Limits: bias (training set), out-of-distribution generalization, EHR integration.'
         objectives: [Radiology AI]
       - type: choice
         difficulty: 5
         question:
-          pt: Em telesaúde, Med-Gemini/Med-PaLM (Google) e GPT-4 demonstraram…
-          en: In telehealth, Med-Gemini/Med-PaLM (Google) and GPT-4 demonstrated…
+          pt: 'Em telesaúde, Med-Gemini/Med-PaLM (Google) e GPT-4 demonstraram…'
+          en: 'In telehealth, Med-Gemini/Med-PaLM (Google) and GPT-4 demonstrated…'
         choices:
-          - USMLE-equivalent reasoning, mas alucinação e bias remain critical issues
-          - Substituem médicos completamente
-          - Sem qualquer capacidade
-          - Apenas em US
-        correctAnswer: USMLE-equivalent reasoning, mas alucinação e bias remain critical issues
+          - 'USMLE-equivalent reasoning, mas alucinação e bias remain critical issues'
+          - 'Substituem médicos completamente'
+          - 'Sem qualquer capacidade'
+          - 'Apenas em US'
+        correctAnswer: 'USMLE-equivalent reasoning, mas alucinação e bias remain critical issues'
         rationale:
-          pt: Med-PaLM 2 (Singhal/Google 2023): ~86% USMLE. Med-Gemini multimodal (texto + imagem + áudio). GPT-4 também competitive. Mas Crítica: alucinação (fictional dosing, references), bias (race, gender), context-stripping. Aplicações cuidadosas: documentation assistance, patient education, clinical question answering com human review. Não diagnostic autonomous.
-          en: Med-PaLM 2 (Singhal/Google 2023): ~86% USMLE. Med-Gemini multimodal (text + image + audio). GPT-4 also competitive. But critique: hallucination (fictional dosing, references), bias (race, gender), context-stripping. Cautious applications: documentation assistance, patient education, clinical question answering with human review. Not autonomous diagnostic.
+          pt: 'Med-PaLM 2 (Singhal/Google 2023): ~86% USMLE. Med-Gemini multimodal (texto + imagem + áudio). GPT-4 também competitive. Mas Crítica: alucinação (fictional dosing, references), bias (race, gender), context-stripping. Aplicações cuidadosas: documentation assistance, patient education, clinical question answering com human review. Não diagnostic autonomous.'
+          en: 'Med-PaLM 2 (Singhal/Google 2023): ~86% USMLE. Med-Gemini multimodal (text + image + audio). GPT-4 also competitive. But critique: hallucination (fictional dosing, references), bias (race, gender), context-stripping. Cautious applications: documentation assistance, patient education, clinical question answering with human review. Not autonomous diagnostic.'
         objectives: [LLM medicine]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "ambient documentation" (Microsoft DAX, Nuance) usa AI para…
-          en: "Ambient documentation" (Microsoft DAX, Nuance) uses AI for…
+          pt: 'O conceito "ambient documentation" (Microsoft DAX, Nuance) usa AI para…'
+          en: '"Ambient documentation" (Microsoft DAX, Nuance) uses AI for…'
         choices:
-          - Listening em consulta + gerando nota clínica + ICD codes em segundos via NLP/LLM
-          - Apenas dictation
-          - Sem qualquer automação
-          - Apenas em US
-        correctAnswer: Listening em consulta + gerando nota clínica + ICD codes em segundos via NLP/LLM
+          - 'Listening em consulta + gerando nota clínica + ICD codes em segundos via NLP/LLM'
+          - 'Apenas dictation'
+          - 'Sem qualquer automação'
+          - 'Apenas em US'
+        correctAnswer: 'Listening em consulta + gerando nota clínica + ICD codes em segundos via NLP/LLM'
         rationale:
-          pt: DAX Copilot (Microsoft 2023+, Nuance integration), Abridge, Suki, Augmedix: ambient AI scribes. Reduzem tempo documentation (~20-30 min/visit → 0). Adoção rápida em primary care, especialty (Stanford Medicine, Mass General Brigham, Kaiser Permanente). Limitações: PHI security, EHR integration, accuracy verification. CMS Medicare exploring billing.
-          en: DAX Copilot (Microsoft 2023+, Nuance integration), Abridge, Suki, Augmedix: ambient AI scribes. Reduce documentation time (~20-30 min/visit → 0). Rapid adoption in primary care, specialty (Stanford Medicine, Mass General Brigham, Kaiser Permanente). Limitations: PHI security, EHR integration, accuracy verification. CMS Medicare exploring billing.
+          pt: 'DAX Copilot (Microsoft 2023+, Nuance integration), Abridge, Suki, Augmedix: ambient AI scribes. Reduzem tempo documentation (~20-30 min/visit → 0). Adoção rápida em primary care, especialty (Stanford Medicine, Mass General Brigham, Kaiser Permanente). Limitações: PHI security, EHR integration, accuracy verification. CMS Medicare exploring billing.'
+          en: 'DAX Copilot (Microsoft 2023+, Nuance integration), Abridge, Suki, Augmedix: ambient AI scribes. Reduce documentation time (~20-30 min/visit → 0). Rapid adoption in primary care, specialty (Stanford Medicine, Mass General Brigham, Kaiser Permanente). Limitations: PHI security, EHR integration, accuracy verification. CMS Medicare exploring billing.'
         objectives: [Ambient AI]
       - type: choice
         difficulty: 5
         question:
-          pt: Apple Health Records (FHIR-based, 2018+) permitiu…
-          en: Apple Health Records (FHIR-based, 2018+) allowed…
+          pt: 'Apple Health Records (FHIR-based, 2018+) permitiu…'
+          en: 'Apple Health Records (FHIR-based, 2018+) allowed…'
         choices:
-          - Pacientes acessam EHR data via iPhone Health app de >800 hospitals US
-          - Apenas para Apple devices
-          - Sem qualquer integração
-          - Apenas em UK
-        correctAnswer: Pacientes acessam EHR data via iPhone Health app de >800 hospitals US
+          - 'Pacientes acessam EHR data via iPhone Health app de >800 hospitals US'
+          - 'Apenas para Apple devices'
+          - 'Sem qualquer integração'
+          - 'Apenas em UK'
+        correctAnswer: 'Pacientes acessam EHR data via iPhone Health app de >800 hospitals US'
         rationale:
-          pt: Apple Health Records (lançado 2018): patient-mediated EHR access via FHIR API + Argonaut Project. Hoje: 800+ hospitals + clinics. Inclui labs, medicações, immunizations, vital signs. Cures Act 2016 + ONC 21st Century Cures regula info blocking. Empowers patients, mas integration desigual. Análoga: Google Fitbit, MyChart Epic.
-          en: Apple Health Records (launched 2018): patient-mediated EHR access via FHIR API + Argonaut Project. Today: 800+ hospitals + clinics. Includes labs, medications, immunizations, vital signs. Cures Act 2016 + ONC 21st Century Cures regulates info blocking. Empowers patients, but uneven integration. Analogous: Google Fitbit, MyChart Epic.
+          pt: 'Apple Health Records (lançado 2018): patient-mediated EHR access via FHIR API + Argonaut Project. Hoje: 800+ hospitals + clinics. Inclui labs, medicações, immunizations, vital signs. Cures Act 2016 + ONC 21st Century Cures regula info blocking. Empowers patients, mas integration desigual. Análoga: Google Fitbit, MyChart Epic.'
+          en: 'Apple Health Records (launched 2018): patient-mediated EHR access via FHIR API + Argonaut Project. Today: 800+ hospitals + clinics. Includes labs, medications, immunizations, vital signs. Cures Act 2016 + ONC 21st Century Cures regulates info blocking. Empowers patients, but uneven integration. Analogous: Google Fitbit, MyChart Epic.'
         objectives: [Apple Health Records]
       - type: choice
         difficulty: 5
         question:
-          pt: Em vital signs, Apple Watch + iPhone fall detection foi importante por…
-          en: In vital signs, Apple Watch + iPhone fall detection was important for…
+          pt: 'Em vital signs, Apple Watch + iPhone fall detection foi importante por…'
+          en: 'In vital signs, Apple Watch + iPhone fall detection was important for…'
         choices:
-          - Detectando hard falls e auto-chamando emergência se sem response, salvando vidas idosos
-          - Apenas curiosidade
-          - Sem qualquer função
-          - Apenas para atletas
-        correctAnswer: Detectando hard falls e auto-chamando emergência se sem response, salvando vidas idosos
+          - 'Detectando hard falls e auto-chamando emergência se sem response, salvando vidas idosos'
+          - 'Apenas curiosidade'
+          - 'Sem qualquer função'
+          - 'Apenas para atletas'
+        correctAnswer: 'Detectando hard falls e auto-chamando emergência se sem response, salvando vidas idosos'
         rationale:
-          pt: Apple Watch Series 4+ (2018) + iPhone 14+ (2022 crash detection): ML em accelerometer/gyroscope detecta hard falls/crashes. Se user não responde em 60s, automaticamente chama emergency services + sends location. Múltiplos casos documentados de vidas salvas (icy roads, swimming, elderly falls). Privacy preserves: data on-device.
-          en: Apple Watch Series 4+ (2018) + iPhone 14+ (2022 crash detection): ML on accelerometer/gyroscope detects hard falls/crashes. If user doesn't respond within 60s, automatically calls emergency services + sends location. Multiple documented cases of lives saved (icy roads, swimming, elderly falls). Privacy preserves: on-device data.
+          pt: 'Apple Watch Series 4+ (2018) + iPhone 14+ (2022 crash detection): ML em accelerometer/gyroscope detecta hard falls/crashes. Se user não responde em 60s, automaticamente chama emergency services + sends location. Múltiplos casos documentados de vidas salvas (icy roads, swimming, elderly falls). Privacy preserves: data on-device.'
+          en: 'Apple Watch Series 4+ (2018) + iPhone 14+ (2022 crash detection): ML on accelerometer/gyroscope detects hard falls/crashes. If user doesn''t respond within 60s, automatically calls emergency services + sends location. Multiple documented cases of lives saved (icy roads, swimming, elderly falls). Privacy preserves: on-device data.'
         objectives: [Fall detection]
       - type: choice
         difficulty: 5
         question:
-          pt: O FDA Digital Health Center of Excellence (DHCoE, 2020+) é importante por…
-          en: FDA Digital Health Center of Excellence (DHCoE, 2020+) is important for…
+          pt: 'O FDA Digital Health Center of Excellence (DHCoE, 2020+) é importante por…'
+          en: 'FDA Digital Health Center of Excellence (DHCoE, 2020+) is important for…'
         choices:
-          - Centralizar policy de digital health within FDA, acelerar reviews, harmonizar SaMD/AI
-          - Apenas para hardware
-          - Sem qualquer impacto
-          - Apenas em US
-        correctAnswer: Centralizar policy de digital health within FDA, acelerar reviews, harmonizar SaMD/AI
+          - 'Centralizar policy de digital health within FDA, acelerar reviews, harmonizar SaMD/AI'
+          - 'Apenas para hardware'
+          - 'Sem qualquer impacto'
+          - 'Apenas em US'
+        correctAnswer: 'Centralizar policy de digital health within FDA, acelerar reviews, harmonizar SaMD/AI'
         rationale:
-          pt: DHCoE (CDRH 2020): hub para digital health policy, education, partnership. Programs: Software Pre-Cert (pilot), Cybersecurity, AI/ML Action Plan 2021. PCCP final guidance 2024. Coordinates com EMA, MHRA, IMDRF. Helps balance innovation × safety. Faces challenge: rapid pace technology vs regulatory cycle.
-          en: DHCoE (CDRH 2020): hub for digital health policy, education, partnership. Programs: Software Pre-Cert (pilot), Cybersecurity, AI/ML Action Plan 2021. PCCP final guidance 2024. Coordinates with EMA, MHRA, IMDRF. Helps balance innovation × safety. Faces challenge: rapid pace technology vs regulatory cycle.
+          pt: 'DHCoE (CDRH 2020): hub para digital health policy, education, partnership. Programs: Software Pre-Cert (pilot), Cybersecurity, AI/ML Action Plan 2021. PCCP final guidance 2024. Coordinates com EMA, MHRA, IMDRF. Helps balance innovation × safety. Faces challenge: rapid pace technology vs regulatory cycle.'
+          en: 'DHCoE (CDRH 2020): hub for digital health policy, education, partnership. Programs: Software Pre-Cert (pilot), Cybersecurity, AI/ML Action Plan 2021. PCCP final guidance 2024. Coordinates with EMA, MHRA, IMDRF. Helps balance innovation × safety. Faces challenge: rapid pace technology vs regulatory cycle.'
         objectives: [DHCoE]
 target: 20

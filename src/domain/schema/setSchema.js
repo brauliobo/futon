@@ -25,7 +25,16 @@ export const setSchema = {
     title: localizable,
     level: { type: 'string', minLength: 1 },
     subject: { type: 'string', enum: ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'] },
-    example: localizable,
+    // `example` may be a localizable string OR a full exercise-shape object
+    // (the convention biology authoring uses to anchor the set's flagship
+    // worked example). We don't validate the inner exercise shape here; that's
+    // covered by the per-page exercise validators if it ever appears in pages.
+    // `example` may be a localizable string OR a {pt,en} object OR a full
+    // exercise-shape object (biology authoring uses the latter to anchor the
+    // set's flagship worked example). Use `anyOf` instead of localizable's
+    // `oneOf` so a {pt,en} value isn't ambiguously matched by both the
+    // localizable-object branch and the generic-object branch.
+    example: { anyOf: [{ type: 'string' }, { type: 'object' }] },
     inputType: { type: 'string' },
     repeatAll: { type: 'integer', minimum: 1 },
     target: { type: 'integer', minimum: 1 },

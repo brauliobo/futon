@@ -1,13 +1,13 @@
 title:
-  pt: Economia da Saúde e Farmacoeconomia
-  en: Health Economics and Pharmacoeconomics
+  pt: 'Economia da Saúde e Farmacoeconomia'
+  en: 'Health Economics and Pharmacoeconomics'
 level: Q
 subject: biology
 objectives:
-  - Compreender QALY, ICER, willingness-to-pay
-  - Reconhecer NICE, ICER US, IQWiG
-  - Identificar value-based pricing
-  - Avaliar gene therapies high-cost
+  - 'Compreender QALY, ICER, willingness-to-pay'
+  - 'Reconhecer NICE, ICER US, IQWiG'
+  - 'Identificar value-based pricing'
+  - 'Avaliar gene therapies high-cost'
 difficulty: 5
 authorNotes: |
   Pharmacoeconomics. QALY (Klarman 1968). DALY WHO 1996. ICER incremental cost-effectiveness
@@ -16,327 +16,327 @@ authorNotes: |
   Zolgensma $2.1M, Hemgenix $3.5M. Outcomes-based agreements. Innovative reimbursement.
 example:
   question:
-    pt: O QALY (Quality-Adjusted Life Year) combina…
-    en: The QALY (Quality-Adjusted Life Year) combines…
+    pt: 'O QALY (Quality-Adjusted Life Year) combina…'
+    en: 'The QALY (Quality-Adjusted Life Year) combines…'
   choices:
-    - Anos de vida ganhos × utility weight (0=morte, 1=saúde perfeita) por estado de saúde
-    - Apenas anos
-    - Apenas qualidade
-    - Sem qualquer cálculo
-  correctAnswer: Anos de vida ganhos × utility weight (0=morte, 1=saúde perfeita) por estado de saúde
+    - 'Anos de vida ganhos × utility weight (0=morte, 1=saúde perfeita) por estado de saúde'
+    - 'Apenas anos'
+    - 'Apenas qualidade'
+    - 'Sem qualquer cálculo'
+  correctAnswer: 'Anos de vida ganhos × utility weight (0=morte, 1=saúde perfeita) por estado de saúde'
   rationale:
-    pt: QALY (Klarman 1968): integra quantidade + qualidade. Utility 1.0 = saúde perfeita; 0 = morte; <0 = pior que morte. Métodos: Time Trade-Off, Standard Gamble, EQ-5D, SF-6D. Permite comparar tratamentos cross-condition. Padrão UK NICE; alternative: DALY (WHO, disability-adjusted, prevention-focused).
-    en: QALY (Klarman 1968): integrates quantity + quality. Utility 1.0 = perfect health; 0 = death; <0 = worse than death. Methods: Time Trade-Off, Standard Gamble, EQ-5D, SF-6D. Allows cross-condition treatment comparison. UK NICE standard; alternative: DALY (WHO, disability-adjusted, prevention-focused).
+    pt: 'QALY (Klarman 1968): integra quantidade + qualidade. Utility 1.0 = saúde perfeita; 0 = morte; <0 = pior que morte. Métodos: Time Trade-Off, Standard Gamble, EQ-5D, SF-6D. Permite comparar tratamentos cross-condition. Padrão UK NICE; alternative: DALY (WHO, disability-adjusted, prevention-focused).'
+    en: 'QALY (Klarman 1968): integrates quantity + quality. Utility 1.0 = perfect health; 0 = death; <0 = worse than death. Methods: Time Trade-Off, Standard Gamble, EQ-5D, SF-6D. Allows cross-condition treatment comparison. UK NICE standard; alternative: DALY (WHO, disability-adjusted, prevention-focused).'
 passCriteria:
   minAccuracyPercent: 85
   maxAvgSecondsPerExercise: 14
 pages:
   - title:
-      pt: Página 1 — Métricas e métodos
-      en: Page 1 — Metrics and methods
+      pt: 'Página 1 — Métricas e métodos'
+      en: 'Page 1 — Metrics and methods'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: O ICER (Incremental Cost-Effectiveness Ratio) é calculado como…
-          en: The ICER (Incremental Cost-Effectiveness Ratio) is calculated as…
+          pt: 'O ICER (Incremental Cost-Effectiveness Ratio) é calculado como…'
+          en: 'The ICER (Incremental Cost-Effectiveness Ratio) is calculated as…'
         choices:
-          - (Custo_novo − Custo_referência) / (QALY_novo − QALY_referência)
-          - Apenas custo
-          - Apenas eficácia
-          - Sem qualquer fórmula
-        correctAnswer: (Custo_novo − Custo_referência) / (QALY_novo − QALY_referência)
+          - '(Custo_novo − Custo_referência) / (QALY_novo − QALY_referência)'
+          - 'Apenas custo'
+          - 'Apenas eficácia'
+          - 'Sem qualquer fórmula'
+        correctAnswer: '(Custo_novo − Custo_referência) / (QALY_novo − QALY_referência)'
         rationale:
-          pt: ICER mede $ extra por QALY ganho. Se ICER < willingness-to-pay (WTP) threshold → cost-effective. UK NICE: £20-30k/QALY base, £50k em raras + end-of-life. WHO: 1-3x GDP per capita. ICER negativo: dominante (mais barato + mais eficaz).
-          en: ICER measures extra $ per QALY gained. If ICER < willingness-to-pay (WTP) threshold → cost-effective. UK NICE: £20-30k/QALY base, £50k for rare + end-of-life. WHO: 1-3x GDP per capita. Negative ICER: dominant (cheaper + more effective).
+          pt: 'ICER mede $ extra por QALY ganho. Se ICER < willingness-to-pay (WTP) threshold → cost-effective. UK NICE: £20-30k/QALY base, £50k em raras + end-of-life. WHO: 1-3x GDP per capita. ICER negativo: dominante (mais barato + mais eficaz).'
+          en: 'ICER measures extra $ per QALY gained. If ICER < willingness-to-pay (WTP) threshold → cost-effective. UK NICE: £20-30k/QALY base, £50k for rare + end-of-life. WHO: 1-3x GDP per capita. Negative ICER: dominant (cheaper + more effective).'
         objectives: [ICER]
       - type: choice
         difficulty: 5
         question:
-          pt: O DALY (WHO 1996) difere de QALY por…
-          en: DALY (WHO 1996) differs from QALY by…
+          pt: 'O DALY (WHO 1996) difere de QALY por…'
+          en: 'DALY (WHO 1996) differs from QALY by…'
         choices:
-          - DALY mede burden (disability + mortalidade), QALY mede gain; perspectivas opostas
-          - Idênticos
-          - DALY apenas para pediatric
-          - Sem qualquer diferença
-        correctAnswer: DALY mede burden (disability + mortalidade), QALY mede gain; perspectivas opostas
+          - 'DALY mede burden (disability + mortalidade), QALY mede gain; perspectivas opostas'
+          - 'Idênticos'
+          - 'DALY apenas para pediatric'
+          - 'Sem qualquer diferença'
+        correctAnswer: 'DALY mede burden (disability + mortalidade), QALY mede gain; perspectivas opostas'
         rationale:
-          pt: DALY (Disability-Adjusted Life Year): YLL (Years Life Lost) + YLD (Years Lived Disability). Burden/perda. WHO Global Burden of Disease (Murray IHME) usa para priorização global. QALY: quanto guarda. CEA com QALY mais comum em HIC; DALY domina LMIC e public health. GBD 2019/2021 estima ~2.5B DALYs globais.
-          en: DALY (Disability-Adjusted Life Year): YLL (Years Life Lost) + YLD (Years Lived Disability). Burden/loss. WHO Global Burden of Disease (Murray IHME) uses for global prioritization. QALY: how much saved. CEA with QALY more common in HIC; DALY dominates LMIC and public health. GBD 2019/2021 estimates ~2.5B DALYs globally.
+          pt: 'DALY (Disability-Adjusted Life Year): YLL (Years Life Lost) + YLD (Years Lived Disability). Burden/perda. WHO Global Burden of Disease (Murray IHME) usa para priorização global. QALY: quanto guarda. CEA com QALY mais comum em HIC; DALY domina LMIC e public health. GBD 2019/2021 estima ~2.5B DALYs globais.'
+          en: 'DALY (Disability-Adjusted Life Year): YLL (Years Life Lost) + YLD (Years Lived Disability). Burden/loss. WHO Global Burden of Disease (Murray IHME) uses for global prioritization. QALY: how much saved. CEA with QALY more common in HIC; DALY dominates LMIC and public health. GBD 2019/2021 estimates ~2.5B DALYs globally.'
         objectives: [DALY vs QALY]
       - type: choice
         difficulty: 5
         question:
-          pt: NICE (UK National Institute for Health and Care Excellence) decisão "não recomendado" para droga implica…
-          en: NICE (UK National Institute for Health and Care Excellence) "not recommended" decision for drug implies…
+          pt: 'NICE (UK National Institute for Health and Care Excellence) decisão "não recomendado" para droga implica…'
+          en: 'NICE (UK National Institute for Health and Care Excellence) "not recommended" decision for drug implies…'
         choices:
-          - NHS não cobre rotineiramente; pacientes pagam private ou Cancer Drugs Fund (oncology)
-          - Aprovação automática
-          - Sem qualquer impacto
-          - Apenas em US
-        correctAnswer: NHS não cobre rotineiramente; pacientes pagam private ou Cancer Drugs Fund (oncology)
+          - 'NHS não cobre rotineiramente; pacientes pagam private ou Cancer Drugs Fund (oncology)'
+          - 'Aprovação automática'
+          - 'Sem qualquer impacto'
+          - 'Apenas em US'
+        correctAnswer: 'NHS não cobre rotineiramente; pacientes pagam private ou Cancer Drugs Fund (oncology)'
         rationale:
-          pt: NICE STA (Single Technology Appraisal) avalia ICER + qualidade evidência + impacto. NHS England obrigada a financiar "recommended". CDF (Cancer Drugs Fund) interim funding para oncology > NICE threshold. Decisões controversas: Aducanumab Alzheimer rejected (sem clinical benefit clear), Trikafta CF approved após negociação preço.
-          en: NICE STA (Single Technology Appraisal) assesses ICER + evidence quality + impact. NHS England obligated to fund "recommended". CDF (Cancer Drugs Fund) interim funding for oncology > NICE threshold. Controversial decisions: Aducanumab Alzheimer rejected (no clear clinical benefit), Trikafta CF approved after price negotiation.
+          pt: 'NICE STA (Single Technology Appraisal) avalia ICER + qualidade evidência + impacto. NHS England obrigada a financiar "recommended". CDF (Cancer Drugs Fund) interim funding para oncology > NICE threshold. Decisões controversas: Aducanumab Alzheimer rejected (sem clinical benefit clear), Trikafta CF approved após negociação preço.'
+          en: 'NICE STA (Single Technology Appraisal) assesses ICER + evidence quality + impact. NHS England obligated to fund "recommended". CDF (Cancer Drugs Fund) interim funding for oncology > NICE threshold. Controversial decisions: Aducanumab Alzheimer rejected (no clear clinical benefit), Trikafta CF approved after price negotiation.'
         objectives: [NICE]
       - type: choice
         difficulty: 5
         question:
-          pt: Zolgensma (onasemnogene abeparvovec, Novartis) tem preço de US$ 2.1M por dose porque…
-          en: Zolgensma (onasemnogene abeparvovec, Novartis) is priced at US$ 2.1M per dose because…
+          pt: 'Zolgensma (onasemnogene abeparvovec, Novartis) tem preço de US$ 2.1M por dose porque…'
+          en: 'Zolgensma (onasemnogene abeparvovec, Novartis) is priced at US$ 2.1M per dose because…'
         choices:
-          - Cura potencial de SMA tipo 1 (alternativa: lifetime nusinersen ~$750k/ano); ICER ~ aceitável em HIC
-          - Apenas marketing arbitrário
-          - Sem qualquer racional
-          - Apenas em US
-        correctAnswer: Cura potencial de SMA tipo 1 (alternativa: lifetime nusinersen ~$750k/ano); ICER ~ aceitável em HIC
+          - 'Cura potencial de SMA tipo 1 (alternativa: lifetime nusinersen ~$750k/ano); ICER ~ aceitável em HIC'
+          - 'Apenas marketing arbitrário'
+          - 'Sem qualquer racional'
+          - 'Apenas em US'
+        correctAnswer: 'Cura potencial de SMA tipo 1 (alternativa: lifetime nusinersen ~$750k/ano); ICER ~ aceitável em HIC'
         rationale:
-          pt: Zolgensma (FDA 2019): AAV9-SMN1 IV única dose para SMA1 <2 anos. SMA1 sem tratamento mortalidade ~2 anos; Zolgensma converte em ambulatório. Preço $2.1M reflete: lifetime nusinersen $750k/ano × 20+ anos = >$15M; novartis "discount" implícito. Outcomes-based agreements em alguns países (refund se morte/falência). Bioethics: equity acesso.
-          en: Zolgensma (FDA 2019): AAV9-SMN1 single IV dose for SMA1 <2 years. Untreated SMA1 ~2-year mortality; Zolgensma converts to ambulatory. $2.1M price reflects: lifetime nusinersen $750k/year × 20+ years = >$15M; Novartis implicit "discount". Outcomes-based agreements in some countries (refund if death/failure). Bioethics: access equity.
+          pt: 'Zolgensma (FDA 2019): AAV9-SMN1 IV única dose para SMA1 <2 anos. SMA1 sem tratamento mortalidade ~2 anos; Zolgensma converte em ambulatório. Preço $2.1M reflete: lifetime nusinersen $750k/ano × 20+ anos = >$15M; novartis "discount" implícito. Outcomes-based agreements em alguns países (refund se morte/falência). Bioethics: equity acesso.'
+          en: 'Zolgensma (FDA 2019): AAV9-SMN1 single IV dose for SMA1 <2 years. Untreated SMA1 ~2-year mortality; Zolgensma converts to ambulatory. $2.1M price reflects: lifetime nusinersen $750k/year × 20+ years = >$15M; Novartis implicit "discount". Outcomes-based agreements in some countries (refund if death/failure). Bioethics: access equity.'
         objectives: [Zolgensma price]
       - type: choice
         difficulty: 5
         question:
-          pt: Hemgenix (etranacogene dezaparvovec, CSL Behring) para hemofilia B tem preço de…
-          en: Hemgenix (etranacogene dezaparvovec, CSL Behring) for hemophilia B is priced at…
+          pt: 'Hemgenix (etranacogene dezaparvovec, CSL Behring) para hemofilia B tem preço de…'
+          en: 'Hemgenix (etranacogene dezaparvovec, CSL Behring) for hemophilia B is priced at…'
         choices:
-          - US$ 3.5M por dose única — "drug mais caro do mundo" 2022, justificado por substituir factor IX lifetime
-          - Apenas $1000
-          - Sem qualquer pricing
-          - Apenas para pediatric
-        correctAnswer: US$ 3.5M por dose única — "drug mais caro do mundo" 2022, justificado por substituir factor IX lifetime
+          - 'US$ 3.5M por dose única — "drug mais caro do mundo" 2022, justificado por substituir factor IX lifetime'
+          - 'Apenas $1000'
+          - 'Sem qualquer pricing'
+          - 'Apenas para pediatric'
+        correctAnswer: 'US$ 3.5M por dose única — "drug mais caro do mundo" 2022, justificado por substituir factor IX lifetime'
         rationale:
-          pt: Hemgenix FDA nov/2022, preço $3.5M (highest single-dose drug). Substitui infusões factor IX prophylactic ~$700-800k/ano, lifetime ~$20M+. Roctavian (BioMarin, hemofilia A) similar $2.9M. Outcomes-based contracts em alguns payors. Modelo "pague-em-resultado": refund parcial se factor IX <X% após 5 anos.
-          en: Hemgenix FDA Nov 2022, $3.5M (highest single-dose drug). Replaces prophylactic factor IX infusions ~$700-800k/year, lifetime ~$20M+. Roctavian (BioMarin, hemophilia A) similar $2.9M. Outcomes-based contracts in some payors. "Pay-for-performance" model: partial refund if factor IX <X% after 5 years.
+          pt: 'Hemgenix FDA nov/2022, preço $3.5M (highest single-dose drug). Substitui infusões factor IX prophylactic ~$700-800k/ano, lifetime ~$20M+. Roctavian (BioMarin, hemofilia A) similar $2.9M. Outcomes-based contracts em alguns payors. Modelo "pague-em-resultado": refund parcial se factor IX <X% após 5 anos.'
+          en: 'Hemgenix FDA Nov 2022, $3.5M (highest single-dose drug). Replaces prophylactic factor IX infusions ~$700-800k/year, lifetime ~$20M+. Roctavian (BioMarin, hemophilia A) similar $2.9M. Outcomes-based contracts in some payors. "Pay-for-performance" model: partial refund if factor IX <X% after 5 years.'
         objectives: [Hemgenix]
       - type: choice
         difficulty: 5
         question:
-          pt: Glybera (alipogene tiparvovec) foi withdraw em 2017 por…
-          en: Glybera (alipogene tiparvovec) was withdrawn in 2017 due to…
+          pt: 'Glybera (alipogene tiparvovec) foi withdraw em 2017 por…'
+          en: 'Glybera (alipogene tiparvovec) was withdrawn in 2017 due to…'
         choices:
-          - €1M preço + uso muito raro (LPLD ~1/1M); apenas 1 paciente comercial; insustentável
-          - Apenas eficácia falha
-          - Sem qualquer razão
-          - Apenas para US
-        correctAnswer: €1M preço + uso muito raro (LPLD ~1/1M); apenas 1 paciente comercial; insustentável
+          - '€1M preço + uso muito raro (LPLD ~1/1M); apenas 1 paciente comercial; insustentável'
+          - 'Apenas eficácia falha'
+          - 'Sem qualquer razão'
+          - 'Apenas para US'
+        correctAnswer: '€1M preço + uso muito raro (LPLD ~1/1M); apenas 1 paciente comercial; insustentável'
         rationale:
-          pt: Glybera (uniQure 2012 EMA, primeiro gene therapy aprovado em ocidente): LPLD (lipoprotein lipase deficiency, dor pancreatite). Preço €1M shocking 2012. Apenas 31 pacientes tratados (clinical trials + 1 comercial 2015). Comercialmente falhou; uniQure withdraw 2017. Lições: rarity + price duplo desafio. Catalisou debate sustentabilidade gene therapies.
-          en: Glybera (uniQure 2012 EMA, first Western-approved gene therapy): LPLD (lipoprotein lipase deficiency, pancreatitis pain). €1M price shocking 2012. Only 31 patients treated (clinical trials + 1 commercial 2015). Commercially failed; uniQure withdrew 2017. Lessons: rarity + price dual challenge. Catalyzed sustainability debate for gene therapies.
+          pt: 'Glybera (uniQure 2012 EMA, primeiro gene therapy aprovado em ocidente): LPLD (lipoprotein lipase deficiency, dor pancreatite). Preço €1M shocking 2012. Apenas 31 pacientes tratados (clinical trials + 1 comercial 2015). Comercialmente falhou; uniQure withdraw 2017. Lições: rarity + price duplo desafio. Catalisou debate sustentabilidade gene therapies.'
+          en: 'Glybera (uniQure 2012 EMA, first Western-approved gene therapy): LPLD (lipoprotein lipase deficiency, pancreatitis pain). €1M price shocking 2012. Only 31 patients treated (clinical trials + 1 commercial 2015). Commercially failed; uniQure withdrew 2017. Lessons: rarity + price dual challenge. Catalyzed sustainability debate for gene therapies.'
         objectives: [Glybera]
       - type: choice
         difficulty: 5
         question:
-          pt: Outcomes-based agreements (OBA) ou risk-sharing são…
-          en: Outcomes-based agreements (OBA) or risk-sharing are…
+          pt: 'Outcomes-based agreements (OBA) ou risk-sharing são…'
+          en: 'Outcomes-based agreements (OBA) or risk-sharing are…'
         choices:
-          - Pagamento parcialmente vinculado a outcomes reais; payor não paga se droga falha
-          - Apenas pagamento up-front sempre
-          - Sem qualquer estrutura
-          - Apenas em US
-        correctAnswer: Pagamento parcialmente vinculado a outcomes reais; payor não paga se droga falha
+          - 'Pagamento parcialmente vinculado a outcomes reais; payor não paga se droga falha'
+          - 'Apenas pagamento up-front sempre'
+          - 'Sem qualquer estrutura'
+          - 'Apenas em US'
+        correctAnswer: 'Pagamento parcialmente vinculado a outcomes reais; payor não paga se droga falha'
         rationale:
-          pt: OBA modelos: refund parcial/total, milestone payments, anuidades. Crítico para CAR-T, gene therapies (one-time, durabilidade incerta). Exemplos: Kymriah (Novartis-CMS milestone payments), Zolgensma anuidades em Europa. Italy AIFA pioneira (Velcade refund). Crescente: NICE OBR, CMS pilots.
-          en: OBA models: partial/full refund, milestone payments, annuities. Critical for CAR-T, gene therapies (one-time, uncertain durability). Examples: Kymriah (Novartis-CMS milestone payments), Zolgensma annuities in Europe. Italy AIFA pioneer (Velcade refund). Growing: NICE OBR, CMS pilots.
+          pt: 'OBA modelos: refund parcial/total, milestone payments, anuidades. Crítico para CAR-T, gene therapies (one-time, durabilidade incerta). Exemplos: Kymriah (Novartis-CMS milestone payments), Zolgensma anuidades em Europa. Italy AIFA pioneira (Velcade refund). Crescente: NICE OBR, CMS pilots.'
+          en: 'OBA models: partial/full refund, milestone payments, annuities. Critical for CAR-T, gene therapies (one-time, uncertain durability). Examples: Kymriah (Novartis-CMS milestone payments), Zolgensma annuities in Europe. Italy AIFA pioneer (Velcade refund). Growing: NICE OBR, CMS pilots.'
         objectives: [OBA]
       - type: choice
         difficulty: 5
         question:
-          pt: O Inflation Reduction Act (US 2022) afeta drug pricing por…
-          en: The Inflation Reduction Act (US 2022) affects drug pricing via…
+          pt: 'O Inflation Reduction Act (US 2022) afeta drug pricing por…'
+          en: 'The Inflation Reduction Act (US 2022) affects drug pricing via…'
         choices:
-          - Medicare drug price negotiation (10 drugs em 2026, expandir), out-of-pocket cap, inflation rebates
-          - Apenas tax cuts
-          - Sem qualquer impacto
-          - Apenas para genéricos
-        correctAnswer: Medicare drug price negotiation (10 drugs em 2026, expandir), out-of-pocket cap, inflation rebates
+          - 'Medicare drug price negotiation (10 drugs em 2026, expandir), out-of-pocket cap, inflation rebates'
+          - 'Apenas tax cuts'
+          - 'Sem qualquer impacto'
+          - 'Apenas para genéricos'
+        correctAnswer: 'Medicare drug price negotiation (10 drugs em 2026, expandir), out-of-pocket cap, inflation rebates'
         rationale:
-          pt: IRA 2022: primeira lei federal US a permitir Medicare negociar preços. CMS selecionou 10 drugs (Eliquis, Jardiance, Xarelto, Januvia, Farxiga, Entresto, Enbrel, Imbruvica, Stelara, Fiasp) Aug 2024 para preços efetivos jan/2026. $2k OOP cap Part D 2025. Industry challenges legais. Modelo: NICE-like negotiation gradualmente em US.
-          en: IRA 2022: first federal US law allowing Medicare to negotiate prices. CMS selected 10 drugs (Eliquis, Jardiance, Xarelto, Januvia, Farxiga, Entresto, Enbrel, Imbruvica, Stelara, Fiasp) Aug 2024 for prices effective Jan 2026. $2k OOP cap Part D 2025. Industry legal challenges. Model: NICE-like negotiation gradually in US.
+          pt: 'IRA 2022: primeira lei federal US a permitir Medicare negociar preços. CMS selecionou 10 drugs (Eliquis, Jardiance, Xarelto, Januvia, Farxiga, Entresto, Enbrel, Imbruvica, Stelara, Fiasp) Aug 2024 para preços efetivos jan/2026. $2k OOP cap Part D 2025. Industry challenges legais. Modelo: NICE-like negotiation gradualmente em US.'
+          en: 'IRA 2022: first federal US law allowing Medicare to negotiate prices. CMS selected 10 drugs (Eliquis, Jardiance, Xarelto, Januvia, Farxiga, Entresto, Enbrel, Imbruvica, Stelara, Fiasp) Aug 2024 for prices effective Jan 2026. $2k OOP cap Part D 2025. Industry legal challenges. Model: NICE-like negotiation gradually in US.'
         objectives: [IRA]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "value-based pricing" propõe…
-          en: "Value-based pricing" proposes…
+          pt: 'O conceito "value-based pricing" propõe…'
+          en: '"Value-based pricing" proposes…'
         choices:
-          - Preço derivado de valor clínico/societal vs custo de produção; alinha com payor's WTP
-          - Apenas custo de produção
-          - Sem qualquer cálculo
-          - Apenas marketing
-        correctAnswer: Preço derivado de valor clínico/societal vs custo de produção; alinha com payor's WTP
+          - 'Preço derivado de valor clínico/societal vs custo de produção; alinha com payor''s WTP'
+          - 'Apenas custo de produção'
+          - 'Sem qualquer cálculo'
+          - 'Apenas marketing'
+        correctAnswer: 'Preço derivado de valor clínico/societal vs custo de produção; alinha com payor''s WTP'
         rationale:
-          pt: VBP (Drummond, Garrison): preço justo = valor incremental × WTP. Implementações: NICE STA decisões, ICER reports, CMS demonstration projects, EU JCA. Crítica: arbitrariedade WTP, value perspective (patient vs societal vs payor), complexity de modelos. Alternativa: cost-plus, internal reference pricing.
-          en: VBP (Drummond, Garrison): fair price = incremental value × WTP. Implementations: NICE STA decisions, ICER reports, CMS demonstration projects, EU JCA. Critique: arbitrary WTP, value perspective (patient vs societal vs payor), model complexity. Alternative: cost-plus, internal reference pricing.
+          pt: 'VBP (Drummond, Garrison): preço justo = valor incremental × WTP. Implementações: NICE STA decisões, ICER reports, CMS demonstration projects, EU JCA. Crítica: arbitrariedade WTP, value perspective (patient vs societal vs payor), complexity de modelos. Alternativa: cost-plus, internal reference pricing.'
+          en: 'VBP (Drummond, Garrison): fair price = incremental value × WTP. Implementations: NICE STA decisions, ICER reports, CMS demonstration projects, EU JCA. Critique: arbitrary WTP, value perspective (patient vs societal vs payor), model complexity. Alternative: cost-plus, internal reference pricing.'
         objectives: [Value-based]
       - type: choice
         difficulty: 5
         question:
-          pt: Em modelo CEA (Cost-Effectiveness Analysis), Markov state-transition modela…
-          en: In CEA (Cost-Effectiveness Analysis), Markov state-transition models…
+          pt: 'Em modelo CEA (Cost-Effectiveness Analysis), Markov state-transition modela…'
+          en: 'In CEA (Cost-Effectiveness Analysis), Markov state-transition models…'
         choices:
-          - Pacientes movendo-se entre estados de saúde com probabilidades em ciclos discretos
-          - Apenas single estado
-          - Sem qualquer dinâmica
-          - Apenas linear
-        correctAnswer: Pacientes movendo-se entre estados de saúde com probabilidades em ciclos discretos
+          - 'Pacientes movendo-se entre estados de saúde com probabilidades em ciclos discretos'
+          - 'Apenas single estado'
+          - 'Sem qualquer dinâmica'
+          - 'Apenas linear'
+        correctAnswer: 'Pacientes movendo-se entre estados de saúde com probabilidades em ciclos discretos'
         rationale:
-          pt: Markov: estados (e.g. healthy, diseased, dead), transition probabilities por ciclo (mês/ano). Permite long-term simulação a partir de short-term trial data. TreeAge, R, Excel implementam. Lifetime horizon padrão NICE. Probabilistic Sensitivity Analysis (PSA): incerteza via Monte Carlo. Microsimulation alternative para individual heterogeneity.
-          en: Markov: states (e.g., healthy, diseased, dead), transition probabilities per cycle (month/year). Allows long-term simulation from short-term trial data. TreeAge, R, Excel implement. NICE lifetime horizon standard. Probabilistic Sensitivity Analysis (PSA): uncertainty via Monte Carlo. Microsimulation alternative for individual heterogeneity.
+          pt: 'Markov: estados (e.g. healthy, diseased, dead), transition probabilities por ciclo (mês/ano). Permite long-term simulação a partir de short-term trial data. TreeAge, R, Excel implementam. Lifetime horizon padrão NICE. Probabilistic Sensitivity Analysis (PSA): incerteza via Monte Carlo. Microsimulation alternative para individual heterogeneity.'
+          en: 'Markov: states (e.g., healthy, diseased, dead), transition probabilities per cycle (month/year). Allows long-term simulation from short-term trial data. TreeAge, R, Excel implement. NICE lifetime horizon standard. Probabilistic Sensitivity Analysis (PSA): uncertainty via Monte Carlo. Microsimulation alternative for individual heterogeneity.'
         objectives: [Markov CEA]
   - title:
-      pt: Página 2 — Aplicações
-      en: Page 2 — Applications
+      pt: 'Página 2 — Aplicações'
+      en: 'Page 2 — Applications'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: Aducanumab (Biogen 2021 FDA accelerated approval) gerou crise por…
-          en: Aducanumab (Biogen 2021 FDA accelerated approval) caused crisis due to…
+          pt: 'Aducanumab (Biogen 2021 FDA accelerated approval) gerou crise por…'
+          en: 'Aducanumab (Biogen 2021 FDA accelerated approval) caused crisis due to…'
         choices:
-          - Aprovação controvertida sobre amyloid surrogate; preço $56k/ano; CMS CMS limit cobertura
-          - Sem qualquer controvérsia
-          - Aprovação trivial
-          - Apenas em pediatric
-        correctAnswer: Aprovação controvertida sobre amyloid surrogate; preço $56k/ano; CMS CMS limit cobertura
+          - 'Aprovação controvertida sobre amyloid surrogate; preço $56k/ano; CMS CMS limit cobertura'
+          - 'Sem qualquer controvérsia'
+          - 'Aprovação trivial'
+          - 'Apenas em pediatric'
+        correctAnswer: 'Aprovação controvertida sobre amyloid surrogate; preço $56k/ano; CMS CMS limit cobertura'
         rationale:
-          pt: Aduhelm (FDA jun/2021) aprovado contra recommendation Adv Comm. Surrogate amyloid reduction; clinical benefit fraco. Preço inicial $56k/ano. CMS abr/2022 limitou cobertura a clinical trials only. Biogen reduziu preço $28k. Comercialmente falhou; Eisai-Biogen Leqembi (lecanemab, 2023) sucessor com benefício marginal mais robusto.
-          en: Aduhelm (FDA Jun 2021) approved against Adv Comm recommendation. Amyloid reduction surrogate; weak clinical benefit. Initial $56k/year price. CMS Apr 2022 restricted coverage to clinical trials only. Biogen reduced price to $28k. Commercially failed; Eisai-Biogen Leqembi (lecanemab, 2023) successor with more robust marginal benefit.
+          pt: 'Aduhelm (FDA jun/2021) aprovado contra recommendation Adv Comm. Surrogate amyloid reduction; clinical benefit fraco. Preço inicial $56k/ano. CMS abr/2022 limitou cobertura a clinical trials only. Biogen reduziu preço $28k. Comercialmente falhou; Eisai-Biogen Leqembi (lecanemab, 2023) sucessor com benefício marginal mais robusto.'
+          en: 'Aduhelm (FDA Jun 2021) approved against Adv Comm recommendation. Amyloid reduction surrogate; weak clinical benefit. Initial $56k/year price. CMS Apr 2022 restricted coverage to clinical trials only. Biogen reduced price to $28k. Commercially failed; Eisai-Biogen Leqembi (lecanemab, 2023) successor with more robust marginal benefit.'
         objectives: [Aducanumab crisis]
       - type: choice
         difficulty: 5
         question:
-          pt: Em LMIC, custo-efetividade frequentemente usa threshold…
-          en: In LMIC, cost-effectiveness often uses threshold…
+          pt: 'Em LMIC, custo-efetividade frequentemente usa threshold…'
+          en: 'In LMIC, cost-effectiveness often uses threshold…'
         choices:
-          - 1-3x GDP per capita por DALY (WHO-CHOICE), ajustado contextualmente
-          - Igual a UK NICE
-          - Sem qualquer threshold
-          - 100x GDP
-        correctAnswer: 1-3x GDP per capita por DALY (WHO-CHOICE), ajustado contextualmente
+          - '1-3x GDP per capita por DALY (WHO-CHOICE), ajustado contextualmente'
+          - 'Igual a UK NICE'
+          - 'Sem qualquer threshold'
+          - '100x GDP'
+        correctAnswer: '1-3x GDP per capita por DALY (WHO-CHOICE), ajustado contextualmente'
         rationale:
-          pt: WHO-CHOICE thresholds: <1x GDP per capita = "very cost-effective"; 1-3x = "cost-effective"; >3x = "not cost-effective". Aplicado a malaria interventions, ART HIV, vacinas. Crítica (Bertram 2016 BWHO): threshold arbitrário, deve ser país-específico (opportunity cost de health budget). NICE-like processes em India, Thailand HITAP, Brazil CONITEC.
-          en: WHO-CHOICE thresholds: <1x GDP per capita = "very cost-effective"; 1-3x = "cost-effective"; >3x = "not cost-effective". Applied to malaria interventions, HIV ART, vaccines. Critique (Bertram 2016 BWHO): arbitrary threshold, should be country-specific (health-budget opportunity cost). NICE-like processes in India, Thailand HITAP, Brazil CONITEC.
+          pt: 'WHO-CHOICE thresholds: <1x GDP per capita = "very cost-effective"; 1-3x = "cost-effective"; >3x = "not cost-effective". Aplicado a malaria interventions, ART HIV, vacinas. Crítica (Bertram 2016 BWHO): threshold arbitrário, deve ser país-específico (opportunity cost de health budget). NICE-like processes em India, Thailand HITAP, Brazil CONITEC.'
+          en: 'WHO-CHOICE thresholds: <1x GDP per capita = "very cost-effective"; 1-3x = "cost-effective"; >3x = "not cost-effective". Applied to malaria interventions, HIV ART, vaccines. Critique (Bertram 2016 BWHO): arbitrary threshold, should be country-specific (health-budget opportunity cost). NICE-like processes in India, Thailand HITAP, Brazil CONITEC.'
         objectives: [WHO-CHOICE]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "budget impact analysis" complementa CEA por…
-          en: "Budget impact analysis" complements CEA by…
+          pt: 'O conceito "budget impact analysis" complementa CEA por…'
+          en: '"Budget impact analysis" complements CEA by…'
         choices:
-          - Estimar impacto financeiro absoluto sobre payor (e.g. NHS) ao longo de horizon (3-5 anos)
-          - Apenas long-term
-          - Sem qualquer impacto financeiro
-          - Apenas para US
-        correctAnswer: Estimar impacto financeiro absoluto sobre payor (e.g. NHS) ao longo de horizon (3-5 anos)
+          - 'Estimar impacto financeiro absoluto sobre payor (e.g. NHS) ao longo de horizon (3-5 anos)'
+          - 'Apenas long-term'
+          - 'Sem qualquer impacto financeiro'
+          - 'Apenas para US'
+        correctAnswer: 'Estimar impacto financeiro absoluto sobre payor (e.g. NHS) ao longo de horizon (3-5 anos)'
         rationale:
-          pt: BIA: ICER pode ser cost-effective mas BIA pode ser inafortável (e.g. CAR-T para 1000 pacientes/ano = $400M-1B). NICE introduziu BIA threshold (£20M-50M/ano) para "fast-track" decisões. ISPOR 2014/2024 guidelines. Crítico em pricing negotiations e formulary decisions. Junto com CEA forma análise abrangente.
-          en: BIA: ICER can be cost-effective but BIA can be unaffordable (e.g., CAR-T for 1000 patients/year = $400M-1B). NICE introduced BIA threshold (£20M-50M/year) for "fast-track" decisions. ISPOR 2014/2024 guidelines. Critical in pricing negotiations and formulary decisions. Combined with CEA forms comprehensive analysis.
+          pt: 'BIA: ICER pode ser cost-effective mas BIA pode ser inafortável (e.g. CAR-T para 1000 pacientes/ano = $400M-1B). NICE introduziu BIA threshold (£20M-50M/ano) para "fast-track" decisões. ISPOR 2014/2024 guidelines. Crítico em pricing negotiations e formulary decisions. Junto com CEA forma análise abrangente.'
+          en: 'BIA: ICER can be cost-effective but BIA can be unaffordable (e.g., CAR-T for 1000 patients/year = $400M-1B). NICE introduced BIA threshold (£20M-50M/year) for "fast-track" decisions. ISPOR 2014/2024 guidelines. Critical in pricing negotiations and formulary decisions. Combined with CEA forms comprehensive analysis.'
         objectives: [BIA]
       - type: choice
         difficulty: 5
         question:
-          pt: Em vacinas, CEA frequentemente concluí que vacinação infantil é…
-          en: In vaccines, CEA often concludes that childhood vaccination is…
+          pt: 'Em vacinas, CEA frequentemente concluí que vacinação infantil é…'
+          en: 'In vaccines, CEA often concludes that childhood vaccination is…'
         choices:
-          - Cost-saving (não apenas cost-effective): previne custos médicos > custo da vacina
-          - Apenas cost-effective sem savings
-          - Sem qualquer benefício
-          - Apenas para pediatric
-        correctAnswer: Cost-saving (não apenas cost-effective): previne custos médicos > custo da vacina
+          - 'Cost-saving (não apenas cost-effective): previne custos médicos > custo da vacina'
+          - 'Apenas cost-effective sem savings'
+          - 'Sem qualquer benefício'
+          - 'Apenas para pediatric'
+        correctAnswer: 'Cost-saving (não apenas cost-effective): previne custos médicos > custo da vacina'
         rationale:
-          pt: Pediatric vaccines (DTP, MMR, Hib, pneumococcal, rotavirus): direct medical savings + productivity > vaccine cost. ROI 4-30:1 em LMIC (Ozawa 2016 Health Aff). Influenza, HPV mais variáveis. Adult shingles, RSV cost-effective mas não cost-saving usualmente. WHO IVIR-AC, Gavi VIS frameworks priorizam.
-          en: Pediatric vaccines (DTP, MMR, Hib, pneumococcal, rotavirus): direct medical savings + productivity > vaccine cost. ROI 4-30:1 in LMIC (Ozawa 2016 Health Aff). Influenza, HPV more variable. Adult shingles, RSV cost-effective but usually not cost-saving. WHO IVIR-AC, Gavi VIS frameworks prioritize.
+          pt: 'Pediatric vaccines (DTP, MMR, Hib, pneumococcal, rotavirus): direct medical savings + productivity > vaccine cost. ROI 4-30:1 em LMIC (Ozawa 2016 Health Aff). Influenza, HPV mais variáveis. Adult shingles, RSV cost-effective mas não cost-saving usualmente. WHO IVIR-AC, Gavi VIS frameworks priorizam.'
+          en: 'Pediatric vaccines (DTP, MMR, Hib, pneumococcal, rotavirus): direct medical savings + productivity > vaccine cost. ROI 4-30:1 in LMIC (Ozawa 2016 Health Aff). Influenza, HPV more variable. Adult shingles, RSV cost-effective but usually not cost-saving. WHO IVIR-AC, Gavi VIS frameworks prioritize.'
         objectives: [Vaccine CEA]
       - type: choice
         difficulty: 5
         question:
-          pt: O "QALY discrimination" debate refere-se a…
-          en: "QALY discrimination" debate refers to…
+          pt: 'O "QALY discrimination" debate refere-se a…'
+          en: '"QALY discrimination" debate refers to…'
         choices:
-          - QALYs implicitamente desvalorizam pessoas com disability/idade — controvertido equity
-          - Sem qualquer crítica
-          - Apenas em US
-          - Apenas técnica
-        correctAnswer: QALYs implicitamente desvalorizam pessoas com disability/idade — controvertido equity
+          - 'QALYs implicitamente desvalorizam pessoas com disability/idade — controvertido equity'
+          - 'Sem qualquer crítica'
+          - 'Apenas em US'
+          - 'Apenas técnica'
+        correctAnswer: 'QALYs implicitamente desvalorizam pessoas com disability/idade — controvertido equity'
         rationale:
-          pt: Pessoa com disability: utilities 0.5; saúde perfeita 1.0. Salvar pessoa com disability "vale" 50% — argumentado discriminatório (US ADA, disability rights). Soluções: equal value of life-years gained (NICE rejeitou), equity weights, capability approach (Sen, Nussbaum). ICER US tenta "modified QALY" controverso. Tema central em ICER reports controversiais.
-          en: Person with disability: utilities 0.5; perfect health 1.0. Saving person with disability "worth" 50% — argued discriminatory (US ADA, disability rights). Solutions: equal value of life-years gained (NICE rejected), equity weights, capability approach (Sen, Nussbaum). ICER US tries "modified QALY" controversial. Central theme in controversial ICER reports.
+          pt: 'Pessoa com disability: utilities 0.5; saúde perfeita 1.0. Salvar pessoa com disability "vale" 50% — argumentado discriminatório (US ADA, disability rights). Soluções: equal value of life-years gained (NICE rejeitou), equity weights, capability approach (Sen, Nussbaum). ICER US tenta "modified QALY" controverso. Tema central em ICER reports controversiais.'
+          en: 'Person with disability: utilities 0.5; perfect health 1.0. Saving person with disability "worth" 50% — argued discriminatory (US ADA, disability rights). Solutions: equal value of life-years gained (NICE rejected), equity weights, capability approach (Sen, Nussbaum). ICER US tries "modified QALY" controversial. Central theme in controversial ICER reports.'
         objectives: [QALY discrimination]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "innovation premium" em pricing reflete…
-          en: "Innovation premium" in pricing reflects…
+          pt: 'O conceito "innovation premium" em pricing reflete…'
+          en: '"Innovation premium" in pricing reflects…'
         choices:
-          - Reward para inovação (R&D ROI) vs commodity pricing; tema em rare diseases, gene therapies
-          - Apenas para genéricos
-          - Sem qualquer reward
-          - Apenas custos diretos
-        correctAnswer: Reward para inovação (R&D ROI) vs commodity pricing; tema em rare diseases, gene therapies
+          - 'Reward para inovação (R&D ROI) vs commodity pricing; tema em rare diseases, gene therapies'
+          - 'Apenas para genéricos'
+          - 'Sem qualquer reward'
+          - 'Apenas custos diretos'
+        correctAnswer: 'Reward para inovação (R&D ROI) vs commodity pricing; tema em rare diseases, gene therapies'
         rationale:
-          pt: Pharma argumenta: pricing reward inovação para sustainable R&D (~$2.6B per drug DiMasi 2016). Críticos: muitos drugs incremental; preços não correlacionam com R&D real. Solutions discutidas: cost-plus pricing, social impact bonds, push (subsídio R&D) + pull (recompensa pós-aprovação) PASTEUR Act antibiotics. Equilíbrio innovation-access central a debates.
-          en: Pharma argues: pricing rewards innovation for sustainable R&D (~$2.6B per drug DiMasi 2016). Critics: many drugs incremental; prices don't correlate with real R&D. Discussed solutions: cost-plus pricing, social impact bonds, push (R&D subsidy) + pull (post-approval reward) PASTEUR Act antibiotics. Innovation-access balance central to debates.
+          pt: 'Pharma argumenta: pricing reward inovação para sustainable R&D (~$2.6B per drug DiMasi 2016). Críticos: muitos drugs incremental; preços não correlacionam com R&D real. Solutions discutidas: cost-plus pricing, social impact bonds, push (subsídio R&D) + pull (recompensa pós-aprovação) PASTEUR Act antibiotics. Equilíbrio innovation-access central a debates.'
+          en: 'Pharma argues: pricing rewards innovation for sustainable R&D (~$2.6B per drug DiMasi 2016). Critics: many drugs incremental; prices don''t correlate with real R&D. Discussed solutions: cost-plus pricing, social impact bonds, push (R&D subsidy) + pull (post-approval reward) PASTEUR Act antibiotics. Innovation-access balance central to debates.'
         objectives: [Innovation premium]
       - type: choice
         difficulty: 5
         question:
-          pt: O CADTH (Canada) e PBAC (Australia) modelos diferem de NICE por…
-          en: CADTH (Canada) and PBAC (Australia) models differ from NICE by…
+          pt: 'O CADTH (Canada) e PBAC (Australia) modelos diferem de NICE por…'
+          en: 'CADTH (Canada) and PBAC (Australia) models differ from NICE by…'
         choices:
-          - Recomendações para listing público mas decisões finais em províncias/Commonwealth
-          - Apenas idênticos a NICE
-          - Sem qualquer estrutura
-          - Apenas para drogas oncológicas
-        correctAnswer: Recomendações para listing público mas decisões finais em províncias/Commonwealth
+          - 'Recomendações para listing público mas decisões finais em províncias/Commonwealth'
+          - 'Apenas idênticos a NICE'
+          - 'Sem qualquer estrutura'
+          - 'Apenas para drogas oncológicas'
+        correctAnswer: 'Recomendações para listing público mas decisões finais em províncias/Commonwealth'
         rationale:
-          pt: CADTH: recommends to provinces (Quebec INESSS separately). PBAC: recommends to Australian Health Minister para PBS listing. Frameworks similar a NICE (CEA, ICER, BIA). Negotiations preço entre payor e fabricante. CADTH HTA reformou em 2024 (transparency, faster reviews). EU JCA (2025+) mais centralizado.
-          en: CADTH: recommends to provinces (Quebec INESSS separately). PBAC: recommends to Australian Health Minister for PBS listing. Frameworks similar to NICE (CEA, ICER, BIA). Price negotiations between payor and manufacturer. CADTH HTA reformed 2024 (transparency, faster reviews). EU JCA (2025+) more centralized.
+          pt: 'CADTH: recommends to provinces (Quebec INESSS separately). PBAC: recommends to Australian Health Minister para PBS listing. Frameworks similar a NICE (CEA, ICER, BIA). Negotiations preço entre payor e fabricante. CADTH HTA reformou em 2024 (transparency, faster reviews). EU JCA (2025+) mais centralizado.'
+          en: 'CADTH: recommends to provinces (Quebec INESSS separately). PBAC: recommends to Australian Health Minister for PBS listing. Frameworks similar to NICE (CEA, ICER, BIA). Price negotiations between payor and manufacturer. CADTH HTA reformed 2024 (transparency, faster reviews). EU JCA (2025+) more centralized.'
         objectives: [CADTH PBAC]
       - type: choice
         difficulty: 5
         question:
-          pt: Em ATMPs (Advanced Therapy Medicinal Products: gene/cell therapies), HTA é desafio porque…
-          en: In ATMPs (Advanced Therapy Medicinal Products: gene/cell therapies), HTA is challenging because…
+          pt: 'Em ATMPs (Advanced Therapy Medicinal Products: gene/cell therapies), HTA é desafio porque…'
+          en: 'In ATMPs (Advanced Therapy Medicinal Products: gene/cell therapies), HTA is challenging because…'
         choices:
-          - Single-arm trials, surrogate endpoints, durabilidade incerta, alto custo upfront
-          - Sempre simples
-          - Sem qualquer dado
-          - Apenas em pediatric
-        correctAnswer: Single-arm trials, surrogate endpoints, durabilidade incerta, alto custo upfront
+          - 'Single-arm trials, surrogate endpoints, durabilidade incerta, alto custo upfront'
+          - 'Sempre simples'
+          - 'Sem qualquer dado'
+          - 'Apenas em pediatric'
+        correctAnswer: 'Single-arm trials, surrogate endpoints, durabilidade incerta, alto custo upfront'
         rationale:
-          pt: ATMPs (Glybera, Luxturna, Strimvelis, Zolgensma, Hemgenix, CAR-Ts): trials pequenos sem comparator; eficácia long-term unclear; high upfront cost. NICE/CADTH/PBAC adaptaram processes. Managed access agreements, conditional reimbursement. EU adotou regulamento ATMP especial. Maioria das ATMPs aprovadas em UE/UK custa €0.5-3M.
-          en: ATMPs (Glybera, Luxturna, Strimvelis, Zolgensma, Hemgenix, CAR-Ts): small trials without comparator; long-term efficacy unclear; high upfront cost. NICE/CADTH/PBAC adapted processes. Managed access agreements, conditional reimbursement. EU adopted special ATMP regulation. Most EU/UK-approved ATMPs cost €0.5-3M.
+          pt: 'ATMPs (Glybera, Luxturna, Strimvelis, Zolgensma, Hemgenix, CAR-Ts): trials pequenos sem comparator; eficácia long-term unclear; high upfront cost. NICE/CADTH/PBAC adaptaram processes. Managed access agreements, conditional reimbursement. EU adotou regulamento ATMP especial. Maioria das ATMPs aprovadas em UE/UK custa €0.5-3M.'
+          en: 'ATMPs (Glybera, Luxturna, Strimvelis, Zolgensma, Hemgenix, CAR-Ts): small trials without comparator; long-term efficacy unclear; high upfront cost. NICE/CADTH/PBAC adapted processes. Managed access agreements, conditional reimbursement. EU adopted special ATMP regulation. Most EU/UK-approved ATMPs cost €0.5-3M.'
         objectives: [ATMPs HTA]
       - type: choice
         difficulty: 5
         question:
-          pt: O "Ten Year Drug Plan" UK (2023+) propõe…
-          en: UK "Ten Year Drug Plan" (2023+) proposes…
+          pt: 'O "Ten Year Drug Plan" UK (2023+) propõe…'
+          en: 'UK "Ten Year Drug Plan" (2023+) proposes…'
         choices:
-          - Acelerar acesso a innovative drugs via Innovative Medicines Fund, MHRA reform pós-Brexit
-          - Apenas continuar status quo
-          - Eliminar NICE
-          - Apenas para US
-        correctAnswer: Acelerar acesso a innovative drugs via Innovative Medicines Fund, MHRA reform pós-Brexit
+          - 'Acelerar acesso a innovative drugs via Innovative Medicines Fund, MHRA reform pós-Brexit'
+          - 'Apenas continuar status quo'
+          - 'Eliminar NICE'
+          - 'Apenas para US'
+        correctAnswer: 'Acelerar acesso a innovative drugs via Innovative Medicines Fund, MHRA reform pós-Brexit'
         rationale:
-          pt: UK pós-Brexit (2021+): MHRA independente. Programs: Innovative Licensing and Access Pathway (ILAP) 2021, Innovative Medicines Fund (IMF, 2022, modeled em CDF expandido para non-cancer), recognition de FDA/EMA approvals. Visa positioning UK como atractive launch market. Tensões com NICE thresholds permanecem.
-          en: Post-Brexit UK (2021+): independent MHRA. Programs: Innovative Licensing and Access Pathway (ILAP) 2021, Innovative Medicines Fund (IMF, 2022, modeled on CDF expanded to non-cancer), recognition of FDA/EMA approvals. Aims to position UK as attractive launch market. Tensions with NICE thresholds remain.
+          pt: 'UK pós-Brexit (2021+): MHRA independente. Programs: Innovative Licensing and Access Pathway (ILAP) 2021, Innovative Medicines Fund (IMF, 2022, modeled em CDF expandido para non-cancer), recognition de FDA/EMA approvals. Visa positioning UK como atractive launch market. Tensões com NICE thresholds permanecem.'
+          en: 'Post-Brexit UK (2021+): independent MHRA. Programs: Innovative Licensing and Access Pathway (ILAP) 2021, Innovative Medicines Fund (IMF, 2022, modeled on CDF expanded to non-cancer), recognition of FDA/EMA approvals. Aims to position UK as attractive launch market. Tensions with NICE thresholds remain.'
         objectives: [UK reform]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito de "willingness to pay per QALY" (WTP) é controverso porque…
-          en: "Willingness to pay per QALY" (WTP) concept is controversial because…
+          pt: 'O conceito de "willingness to pay per QALY" (WTP) é controverso porque…'
+          en: '"Willingness to pay per QALY" (WTP) concept is controversial because…'
         choices:
-          - Threshold é arbitrário; UK £20-30k base nunca foi adjusted por inflação
-          - Sempre objetivo
-          - Sem qualquer base
-          - Apenas para US
-        correctAnswer: Threshold é arbitrário; UK £20-30k base nunca foi adjusted por inflação
+          - 'Threshold é arbitrário; UK £20-30k base nunca foi adjusted por inflação'
+          - 'Sempre objetivo'
+          - 'Sem qualquer base'
+          - 'Apenas para US'
+        correctAnswer: 'Threshold é arbitrário; UK £20-30k base nunca foi adjusted por inflação'
         rationale:
-          pt: NICE £20-30k threshold definido 1999/2004; nunca formally updated. Real-terms reduzido ~30% por inflação. Claxton et al. 2015 estimaram threshold "real" UK ~£13k (opportunity cost). US ICER $100-150k/QALY. WHO 1-3x GDP. Sem consensus internacional. Decisões mistas (threshold ICER + outras considerações: severidade, equity, innovation).
-          en: NICE £20-30k threshold set 1999/2004; never formally updated. Real-terms reduced ~30% by inflation. Claxton et al. 2015 estimated UK "real" threshold ~£13k (opportunity cost). US ICER $100-150k/QALY. WHO 1-3x GDP. No international consensus. Mixed decisions (ICER threshold + other considerations: severity, equity, innovation).
+          pt: 'NICE £20-30k threshold definido 1999/2004; nunca formally updated. Real-terms reduzido ~30% por inflação. Claxton et al. 2015 estimaram threshold "real" UK ~£13k (opportunity cost). US ICER $100-150k/QALY. WHO 1-3x GDP. Sem consensus internacional. Decisões mistas (threshold ICER + outras considerações: severidade, equity, innovation).'
+          en: 'NICE £20-30k threshold set 1999/2004; never formally updated. Real-terms reduced ~30% by inflation. Claxton et al. 2015 estimated UK "real" threshold ~£13k (opportunity cost). US ICER $100-150k/QALY. WHO 1-3x GDP. No international consensus. Mixed decisions (ICER threshold + other considerations: severity, equity, innovation).'
         objectives: [WTP threshold]
 target: 20

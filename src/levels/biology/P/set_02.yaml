@@ -1,344 +1,344 @@
 title:
-  pt: Filogenética Molecular e Relógios
-  en: Molecular Phylogenetics and Clocks
+  pt: 'Filogenética Molecular e Relógios'
+  en: 'Molecular Phylogenetics and Clocks'
 level: P
 subject: biology
 objectives:
-  - Compreender métodos (parsimônia, ML, Bayesiano)
-  - Reconhecer software (RAxML, IQ-TREE, BEAST, MrBayes)
-  - Identificar modelos de substituição (JC69, HKY, GTR)
-  - Avaliar relógio molecular relaxado e datação
+  - 'Compreender métodos (parsimônia, ML, Bayesiano)'
+  - 'Reconhecer software (RAxML, IQ-TREE, BEAST, MrBayes)'
+  - 'Identificar modelos de substituição (JC69, HKY, GTR)'
+  - 'Avaliar relógio molecular relaxado e datação'
 difficulty: 5
 authorNotes: |
   Phylogenetics. Felsenstein PHYLIP/Felsenstein 1981 ML. RAxML Stamatakis. IQ-TREE Minh.
-  Bayesian: MrBayes Huelsenbeck/Ronquist; BEAST Drummond/Rambaut. Models: JC69, K2P, HKY,
+  Bayesian: 'MrBayes Huelsenbeck/Ronquist; BEAST Drummond/Rambaut. Models: JC69, K2P, HKY,'
   GTR, +Γ rates, +I invariant. Tree of life: Pace, Woese 1977 archaea. Tree-of-Life Pace.
   Molecular clock: Zuckerkandl/Pauling 1965. Relaxed clocks: Drummond/Rambaut. Tip dating
   for ancient DNA. ASTRAL coalescent species tree. SARS-CoV-2 phylodynamics: Nextstrain
   Bedford/Neher.
 example:
   question:
-    pt: O método de máxima parsimônia em filogenia, formalizado por Camin & Sokal (1965), busca…
-    en: Maximum parsimony in phylogenetics, formalized by Camin & Sokal (1965), seeks…
+    pt: 'O método de máxima parsimônia em filogenia, formalizado por Camin & Sokal (1965), busca…'
+    en: 'Maximum parsimony in phylogenetics, formalized by Camin & Sokal (1965), seeks…'
   choices:
-    - Árvore com menor número de mudanças de caracter ao longo dos ramos
-    - Árvore com maior verossimilhança sob modelo Markov
-    - Árvore com maior probabilidade posterior bayesiana
-    - Árvore aleatória sem critério de otimização
-  correctAnswer: Árvore com menor número de mudanças de caracter ao longo dos ramos
+    - 'Árvore com menor número de mudanças de caracter ao longo dos ramos'
+    - 'Árvore com maior verossimilhança sob modelo Markov'
+    - 'Árvore com maior probabilidade posterior bayesiana'
+    - 'Árvore aleatória sem critério de otimização'
+  correctAnswer: 'Árvore com menor número de mudanças de caracter ao longo dos ramos'
   rationale:
-    pt: Parsimônia minimiza substituições. Vantagem: simples, sem modelo. Desvantagem: long-branch attraction (Felsenstein zone). Substituída em maioria por ML/Bayes em filogenia molecular.
-    en: Parsimony minimizes substitutions. Advantage: simple, model-free. Disadvantage: long-branch attraction (Felsenstein zone). Replaced largely by ML/Bayes in molecular phylogenetics.
+    pt: 'Parsimônia minimiza substituições. Vantagem: simples, sem modelo. Desvantagem: long-branch attraction (Felsenstein zone). Substituída em maioria por ML/Bayes em filogenia molecular.'
+    en: 'Parsimony minimizes substitutions. Advantage: simple, model-free. Disadvantage: long-branch attraction (Felsenstein zone). Replaced largely by ML/Bayes in molecular phylogenetics.'
 passCriteria:
   minAccuracyPercent: 85
   maxAvgSecondsPerExercise: 14
 pages:
   - title:
-      pt: Página 1 — Métodos e modelos
-      en: Page 1 — Methods and models
+      pt: 'Página 1 — Métodos e modelos'
+      en: 'Page 1 — Methods and models'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: Felsenstein (1981) introduziu máxima verossimilhança em filogenia com algoritmo eficiente baseado em…
-          en: Felsenstein (1981) introduced maximum likelihood in phylogenetics with an efficient algorithm based on…
+          pt: 'Felsenstein (1981) introduziu máxima verossimilhança em filogenia com algoritmo eficiente baseado em…'
+          en: 'Felsenstein (1981) introduced maximum likelihood in phylogenetics with an efficient algorithm based on…'
         choices:
-          - Algoritmo "pruning" recursivo computando likelihood em cada nó interno
-          - Distância média entre pares sem qualquer modelo probabilístico
-          - Apenas neighbor-joining sem cálculo de likelihood
-          - Algoritmo genético sem qualquer modelo de substituição
-        correctAnswer: Algoritmo "pruning" recursivo computando likelihood em cada nó interno
+          - 'Algoritmo "pruning" recursivo computando likelihood em cada nó interno'
+          - 'Distância média entre pares sem qualquer modelo probabilístico'
+          - 'Apenas neighbor-joining sem cálculo de likelihood'
+          - 'Algoritmo genético sem qualquer modelo de substituição'
+        correctAnswer: 'Algoritmo "pruning" recursivo computando likelihood em cada nó interno'
         rationale:
-          pt: O pruning algorithm de Felsenstein percorre árvore pós-ordem; em cada nó interno computa probabilidade condicional do estado, integrando filhos. Permite ML em árvores grandes — base de RAxML, IQ-TREE, PhyML.
-          en: Felsenstein's pruning algorithm traverses tree post-order; at each internal node computes state conditional probability, integrating over children. Enables ML on large trees — basis of RAxML, IQ-TREE, PhyML.
+          pt: 'O pruning algorithm de Felsenstein percorre árvore pós-ordem; em cada nó interno computa probabilidade condicional do estado, integrando filhos. Permite ML em árvores grandes — base de RAxML, IQ-TREE, PhyML.'
+          en: 'Felsenstein''s pruning algorithm traverses tree post-order; at each internal node computes state conditional probability, integrating over children. Enables ML on large trees — basis of RAxML, IQ-TREE, PhyML.'
         objectives: [ML pruning]
       - type: choice
         difficulty: 5
         question:
-          pt: O modelo GTR (General Time Reversible) tem quantos parâmetros livres de taxa?
-          en: How many free rate parameters does the GTR (General Time Reversible) model have?
+          pt: 'O modelo GTR (General Time Reversible) tem quantos parâmetros livres de taxa?'
+          en: 'How many free rate parameters does the GTR (General Time Reversible) model have?'
         choices:
-          - 6 taxas de substituição entre pares de bases (com restrição de reversibilidade)
-          - 1 taxa única para toda substituição (modelo JC69)
-          - 16 taxas independentes sem restrição
-          - 0 taxas, é puramente determinístico
-        correctAnswer: 6 taxas de substituição entre pares de bases (com restrição de reversibilidade)
+          - '6 taxas de substituição entre pares de bases (com restrição de reversibilidade)'
+          - '1 taxa única para toda substituição (modelo JC69)'
+          - '16 taxas independentes sem restrição'
+          - '0 taxas, é puramente determinístico'
+        correctAnswer: '6 taxas de substituição entre pares de bases (com restrição de reversibilidade)'
         rationale:
-          pt: GTR: 4 frequências (3 livres) + 6 taxas pares (5 livres após normalização) = 8 livres. Modelo mais geral reversível em DNA. Subconjuntos: HKY (transições/transversões diferentes), F81 (frequências mas igual rate), JC69 (todas iguais).
-          en: GTR: 4 frequencies (3 free) + 6 pair rates (5 free after normalization) = 8 free. Most general reversible DNA model. Subsets: HKY (different transitions/transversions), F81 (frequencies but equal rate), JC69 (all equal).
+          pt: 'GTR: 4 frequências (3 livres) + 6 taxas pares (5 livres após normalização) = 8 livres. Modelo mais geral reversível em DNA. Subconjuntos: HKY (transições/transversões diferentes), F81 (frequências mas igual rate), JC69 (todas iguais).'
+          en: 'GTR: 4 frequencies (3 free) + 6 pair rates (5 free after normalization) = 8 free. Most general reversible DNA model. Subsets: HKY (different transitions/transversions), F81 (frequencies but equal rate), JC69 (all equal).'
         objectives: [GTR]
       - type: choice
         difficulty: 5
         question:
-          pt: A modelagem "+Γ" em filogenia adiciona…
-          en: "+Γ" modeling in phylogenetics adds…
+          pt: 'A modelagem "+Γ" em filogenia adiciona…'
+          en: '"+Γ" modeling in phylogenetics adds…'
         choices:
-          - Heterogeneidade de taxas entre sítios via distribuição gamma com parâmetro α
-          - Heterocronia entre lineagens diferentes
-          - Apenas correção para sítios invariantes sem heterogeneidade
-          - Modelo de relógio molecular sem variação intersítios
-        correctAnswer: Heterogeneidade de taxas entre sítios via distribuição gamma com parâmetro α
+          - 'Heterogeneidade de taxas entre sítios via distribuição gamma com parâmetro α'
+          - 'Heterocronia entre lineagens diferentes'
+          - 'Apenas correção para sítios invariantes sem heterogeneidade'
+          - 'Modelo de relógio molecular sem variação intersítios'
+        correctAnswer: 'Heterogeneidade de taxas entre sítios via distribuição gamma com parâmetro α'
         rationale:
-          pt: +Γ modela variação de taxas entre sítios via gamma com parâmetro de forma α (≈ 0.5 alta heterogeneidade, ≈ ∞ uniforme). Discretizada em 4-8 categorias para tractabilidade. +I adiciona fração de sítios invariantes. Padrão moderno em maioria das análises.
-          en: +Γ models site-rate variation via gamma with shape α (≈ 0.5 high heterogeneity, ≈ ∞ uniform). Discretized into 4-8 categories for tractability. +I adds invariant-site fraction. Modern standard in most analyses.
+          pt: '+Γ modela variação de taxas entre sítios via gamma com parâmetro de forma α (≈ 0.5 alta heterogeneidade, ≈ ∞ uniforme). Discretizada em 4-8 categorias para tractabilidade. +I adiciona fração de sítios invariantes. Padrão moderno em maioria das análises.'
+          en: '+Γ models site-rate variation via gamma with shape α (≈ 0.5 high heterogeneity, ≈ ∞ uniform). Discretized into 4-8 categories for tractability. +I adds invariant-site fraction. Modern standard in most analyses.'
         objectives: [Gamma]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito de "long-branch attraction" (LBA) em parsimônia ocorre quando…
-          en: "Long-branch attraction" (LBA) in parsimony occurs when…
+          pt: 'O conceito de "long-branch attraction" (LBA) em parsimônia ocorre quando…'
+          en: '"Long-branch attraction" (LBA) in parsimony occurs when…'
         choices:
-          - Lineagens com ramos longos são erroneamente agrupadas pela acumulação de mudanças similares
-          - Ramos curtos artificialmente colapsam em politomias
-          - Distâncias absolutas são mal calculadas em apenas dois táxons
-          - Apenas ML sofre desse artefato, não parsimônia
-        correctAnswer: Lineagens com ramos longos são erroneamente agrupadas pela acumulação de mudanças similares
+          - 'Lineagens com ramos longos são erroneamente agrupadas pela acumulação de mudanças similares'
+          - 'Ramos curtos artificialmente colapsam em politomias'
+          - 'Distâncias absolutas são mal calculadas em apenas dois táxons'
+          - 'Apenas ML sofre desse artefato, não parsimônia'
+        correctAnswer: 'Lineagens com ramos longos são erroneamente agrupadas pela acumulação de mudanças similares'
         rationale:
-          pt: LBA (Felsenstein 1978): com taxas heterogêneas e ramos muito longos, mudanças paralelas acumuladas fazem parecer relacionados. Parsimônia é mais sensível; ML/Bayes com modelo correto resolvem. Histórico: insetos vs Cambriano, microsporídios.
-          en: LBA (Felsenstein 1978): with heterogeneous rates and very long branches, accumulated parallel changes make taxa look related. Parsimony is most sensitive; ML/Bayes with correct model resolve it. Historical: insects vs Cambrian, microsporidia.
+          pt: 'LBA (Felsenstein 1978): com taxas heterogêneas e ramos muito longos, mudanças paralelas acumuladas fazem parecer relacionados. Parsimônia é mais sensível; ML/Bayes com modelo correto resolvem. Histórico: insetos vs Cambriano, microsporídios.'
+          en: 'LBA (Felsenstein 1978): with heterogeneous rates and very long branches, accumulated parallel changes make taxa look related. Parsimony is most sensitive; ML/Bayes with correct model resolve it. Historical: insects vs Cambrian, microsporidia.'
         objectives: [LBA]
       - type: choice
         difficulty: 5
         question:
-          pt: O bootstrap (Felsenstein 1985) em filogenia avalia…
-          en: The bootstrap (Felsenstein 1985) in phylogenetics assesses…
+          pt: 'O bootstrap (Felsenstein 1985) em filogenia avalia…'
+          en: 'The bootstrap (Felsenstein 1985) in phylogenetics assesses…'
         choices:
-          - Robustez de cada clado por reamostragem com reposição de colunas do alinhamento
-          - Idade absoluta do nó em milhões de anos
-          - Apenas qualidade do alinhamento sem inferência de árvore
-          - Confiabilidade do modelo de substituição usado
-        correctAnswer: Robustez de cada clado por reamostragem com reposição de colunas do alinhamento
+          - 'Robustez de cada clado por reamostragem com reposição de colunas do alinhamento'
+          - 'Idade absoluta do nó em milhões de anos'
+          - 'Apenas qualidade do alinhamento sem inferência de árvore'
+          - 'Confiabilidade do modelo de substituição usado'
+        correctAnswer: 'Robustez de cada clado por reamostragem com reposição de colunas do alinhamento'
         rationale:
-          pt: Bootstrap reamostra colunas do alinhamento ~100-1000 vezes, refaz árvore; suporte = % vezes que clado aparece. Convencão: ≥70% confiável (Hillis/Bull). UFBoot (Hoang 2018) é versão ultra-rápida em IQ-TREE.
-          en: Bootstrap resamples alignment columns ~100-1000 times, re-infers tree; support = % of times clade appears. Convention: ≥70% reliable (Hillis/Bull). UFBoot (Hoang 2018) is the ultra-fast version in IQ-TREE.
+          pt: 'Bootstrap reamostra colunas do alinhamento ~100-1000 vezes, refaz árvore; suporte = % vezes que clado aparece. Convencão: ≥70% confiável (Hillis/Bull). UFBoot (Hoang 2018) é versão ultra-rápida em IQ-TREE.'
+          en: 'Bootstrap resamples alignment columns ~100-1000 times, re-infers tree; support = % of times clade appears. Convention: ≥70% reliable (Hillis/Bull). UFBoot (Hoang 2018) is the ultra-fast version in IQ-TREE.'
         objectives: [Bootstrap]
       - type: choice
         difficulty: 5
         question:
-          pt: BEAST (Drummond/Rambaut) é diferenciado de RAxML/IQ-TREE por…
-          en: BEAST (Drummond/Rambaut) differs from RAxML/IQ-TREE in that it…
+          pt: 'BEAST (Drummond/Rambaut) é diferenciado de RAxML/IQ-TREE por…'
+          en: 'BEAST (Drummond/Rambaut) differs from RAxML/IQ-TREE in that it…'
         choices:
-          - Inferência bayesiana com MCMC, datação calibrada e relógios relaxados integrados
-          - Apenas máxima verossimilhança sem qualquer componente bayesiano
-          - Não suporta modelos de substituição complexos
-          - Funciona apenas em dados nucleotídicos sem proteínas
-        correctAnswer: Inferência bayesiana com MCMC, datação calibrada e relógios relaxados integrados
+          - 'Inferência bayesiana com MCMC, datação calibrada e relógios relaxados integrados'
+          - 'Apenas máxima verossimilhança sem qualquer componente bayesiano'
+          - 'Não suporta modelos de substituição complexos'
+          - 'Funciona apenas em dados nucleotídicos sem proteínas'
+        correctAnswer: 'Inferência bayesiana com MCMC, datação calibrada e relógios relaxados integrados'
         rationale:
-          pt: BEAST (Bayesian Evolutionary Analysis Sampling Trees) integra inferência de árvore + datação molecular com calibrações fósseis ou pontas (tip dating) + modelos demográficos (skyline). MCMC explora posterior. Padrão para phylodynamics SARS-CoV-2, datação ancestral.
-          en: BEAST (Bayesian Evolutionary Analysis Sampling Trees) integrates tree inference + molecular dating with fossil or tip-date calibrations + demographic models (skyline). MCMC explores posterior. Standard for SARS-CoV-2 phylodynamics and ancestral dating.
+          pt: 'BEAST (Bayesian Evolutionary Analysis Sampling Trees) integra inferência de árvore + datação molecular com calibrações fósseis ou pontas (tip dating) + modelos demográficos (skyline). MCMC explora posterior. Padrão para phylodynamics SARS-CoV-2, datação ancestral.'
+          en: 'BEAST (Bayesian Evolutionary Analysis Sampling Trees) integrates tree inference + molecular dating with fossil or tip-date calibrations + demographic models (skyline). MCMC explores posterior. Standard for SARS-CoV-2 phylodynamics and ancestral dating.'
         objectives: [BEAST]
       - type: choice
         difficulty: 5
         question:
-          pt: O relógio molecular relaxado (Drummond et al. 2006) permite…
-          en: The relaxed molecular clock (Drummond et al. 2006) allows…
+          pt: 'O relógio molecular relaxado (Drummond et al. 2006) permite…'
+          en: 'The relaxed molecular clock (Drummond et al. 2006) allows…'
         choices:
-          - Taxas variáveis entre lineagens (uncorrelated lognormal ou exponencial), com datação robusta
-          - Taxa estritamente constante em todos os ramos
-          - Apenas datação por carbono-14 sem dados moleculares
-          - Substituição completa do modelo de substituição
-        correctAnswer: Taxas variáveis entre lineagens (uncorrelated lognormal ou exponencial), com datação robusta
+          - 'Taxas variáveis entre lineagens (uncorrelated lognormal ou exponencial), com datação robusta'
+          - 'Taxa estritamente constante em todos os ramos'
+          - 'Apenas datação por carbono-14 sem dados moleculares'
+          - 'Substituição completa do modelo de substituição'
+        correctAnswer: 'Taxas variáveis entre lineagens (uncorrelated lognormal ou exponencial), com datação robusta'
         rationale:
-          pt: Relógio estrito (Zuckerkandl/Pauling 1965) raramente válido. Relaxed clock: cada ramo tem taxa amostrada de distribuição (UCLN, UCED). Permite datação Bayesiana com dados modernos + calibrações fósseis. BEAST padrão.
-          en: Strict clock (Zuckerkandl/Pauling 1965) rarely holds. Relaxed clock: each branch has rate drawn from a distribution (UCLN, UCED). Enables Bayesian dating with modern data + fossil calibrations. BEAST standard.
+          pt: 'Relógio estrito (Zuckerkandl/Pauling 1965) raramente válido. Relaxed clock: cada ramo tem taxa amostrada de distribuição (UCLN, UCED). Permite datação Bayesiana com dados modernos + calibrações fósseis. BEAST padrão.'
+          en: 'Strict clock (Zuckerkandl/Pauling 1965) rarely holds. Relaxed clock: each branch has rate drawn from a distribution (UCLN, UCED). Enables Bayesian dating with modern data + fossil calibrations. BEAST standard.'
         objectives: [Relaxed clock]
       - type: choice
         difficulty: 5
         question:
-          pt: ASTRAL (Mirarab/Warnow) infere "espécies tree" considerando o quê?
-          en: ASTRAL (Mirarab/Warnow) infers "species tree" considering what?
+          pt: 'ASTRAL (Mirarab/Warnow) infere "espécies tree" considerando o quê?'
+          en: 'ASTRAL (Mirarab/Warnow) infers "species tree" considering what?'
         choices:
-          - Discordância entre árvores de gene via modelo coalescente multispecies
-          - Apenas concatenação de todos os genes em supermatriz
-          - Apenas árvore consensual majoritária sem coalescente
-          - Substitui qualquer outro método sem ressalvas
-        correctAnswer: Discordância entre árvores de gene via modelo coalescente multispecies
+          - 'Discordância entre árvores de gene via modelo coalescente multispecies'
+          - 'Apenas concatenação de todos os genes em supermatriz'
+          - 'Apenas árvore consensual majoritária sem coalescente'
+          - 'Substitui qualquer outro método sem ressalvas'
+        correctAnswer: 'Discordância entre árvores de gene via modelo coalescente multispecies'
         rationale:
-          pt: ILS (Incomplete Lineage Sorting) faz árvores de gene diferirem da espécie. ASTRAL: combina árvores de gene maximizando quartet score sob coalescente multispecies. Eficiente para 1000+ genes/táxons. Alternativa a concatenação que sofre com ILS.
-          en: ILS (Incomplete Lineage Sorting) makes gene trees differ from species tree. ASTRAL: combines gene trees maximizing quartet score under multispecies coalescent. Efficient for 1000+ genes/taxa. Alternative to concatenation which is biased under ILS.
+          pt: 'ILS (Incomplete Lineage Sorting) faz árvores de gene diferirem da espécie. ASTRAL: combina árvores de gene maximizando quartet score sob coalescente multispecies. Eficiente para 1000+ genes/táxons. Alternativa a concatenação que sofre com ILS.'
+          en: 'ILS (Incomplete Lineage Sorting) makes gene trees differ from species tree. ASTRAL: combines gene trees maximizing quartet score under multispecies coalescent. Efficient for 1000+ genes/taxa. Alternative to concatenation which is biased under ILS.'
         objectives: [ASTRAL ILS]
       - type: choice
         difficulty: 5
         question:
-          pt: A árvore de três domínios (Woese 1977) baseou-se em qual molécula como cronômetro?
-          en: The three-domain tree (Woese 1977) was based on which molecule as chronometer?
+          pt: 'A árvore de três domínios (Woese 1977) baseou-se em qual molécula como cronômetro?'
+          en: 'The three-domain tree (Woese 1977) was based on which molecule as chronometer?'
         choices:
-          - rRNA 16S/18S, suficientemente conservada e universal
-          - mtDNA inteiro, embora bactérias não tenham
-          - Apenas proteínas glicolíticas conservadas
-          - DNA repetitivo telomérico apenas
-        correctAnswer: rRNA 16S/18S, suficientemente conservada e universal
+          - 'rRNA 16S/18S, suficientemente conservada e universal'
+          - 'mtDNA inteiro, embora bactérias não tenham'
+          - 'Apenas proteínas glicolíticas conservadas'
+          - 'DNA repetitivo telomérico apenas'
+        correctAnswer: 'rRNA 16S/18S, suficientemente conservada e universal'
         rationale:
-          pt: Carl Woese (PNAS 1977) usou rRNA 16S (procariotos) e 18S (eucariotos) — universal, conservada, evolui suficientemente para resolver fundo da árvore. Resultado: três domínios — Bacteria, Archaea, Eukarya. Revelou Archaea distintos.
-          en: Carl Woese (PNAS 1977) used 16S rRNA (prokaryotes) and 18S (eukaryotes) — universal, conserved, evolves enough to resolve tree base. Result: three domains — Bacteria, Archaea, Eukarya. Revealed distinct Archaea.
+          pt: 'Carl Woese (PNAS 1977) usou rRNA 16S (procariotos) e 18S (eucariotos) — universal, conservada, evolui suficientemente para resolver fundo da árvore. Resultado: três domínios — Bacteria, Archaea, Eukarya. Revelou Archaea distintos.'
+          en: 'Carl Woese (PNAS 1977) used 16S rRNA (prokaryotes) and 18S (eukaryotes) — universal, conserved, evolves enough to resolve tree base. Result: three domains — Bacteria, Archaea, Eukarya. Revealed distinct Archaea.'
         objectives: [16S Woese]
       - type: choice
         difficulty: 5
         question:
-          pt: Filogenia de SARS-CoV-2 em tempo real (Nextstrain Bedford/Neher) permitiu…
-          en: Real-time SARS-CoV-2 phylogeny (Nextstrain Bedford/Neher) enabled…
+          pt: 'Filogenia de SARS-CoV-2 em tempo real (Nextstrain Bedford/Neher) permitiu…'
+          en: 'Real-time SARS-CoV-2 phylogeny (Nextstrain Bedford/Neher) enabled…'
         choices:
-          - Rastrear emergência de variantes (Alpha, Delta, Omicron) e quantificar transmissão global
-          - Apenas diagnóstico individual de pacientes em tempo de PCR
-          - Substituir vacinas por análise filogenética isolada
-          - Eliminar a necessidade de sequenciamento Sanger em laboratório
-        correctAnswer: Rastrear emergência de variantes (Alpha, Delta, Omicron) e quantificar transmissão global
+          - 'Rastrear emergência de variantes (Alpha, Delta, Omicron) e quantificar transmissão global'
+          - 'Apenas diagnóstico individual de pacientes em tempo de PCR'
+          - 'Substituir vacinas por análise filogenética isolada'
+          - 'Eliminar a necessidade de sequenciamento Sanger em laboratório'
+        correctAnswer: 'Rastrear emergência de variantes (Alpha, Delta, Omicron) e quantificar transmissão global'
         rationale:
-          pt: Nextstrain (Bedford UW + Neher Basel) integrou >10M sequências GISAID em filogenia em tempo real, identificando linhagens emergentes (Alpha B.1.1.7, Delta B.1.617.2, Omicron BA.1). Phylodynamics quantitativa transformou epidemiologia COVID.
-          en: Nextstrain (Bedford UW + Neher Basel) integrated >10M GISAID sequences into real-time phylogeny, identifying emerging lineages (Alpha B.1.1.7, Delta B.1.617.2, Omicron BA.1). Quantitative phylodynamics transformed COVID epidemiology.
+          pt: 'Nextstrain (Bedford UW + Neher Basel) integrou >10M sequências GISAID em filogenia em tempo real, identificando linhagens emergentes (Alpha B.1.1.7, Delta B.1.617.2, Omicron BA.1). Phylodynamics quantitativa transformou epidemiologia COVID.'
+          en: 'Nextstrain (Bedford UW + Neher Basel) integrated >10M GISAID sequences into real-time phylogeny, identifying emerging lineages (Alpha B.1.1.7, Delta B.1.617.2, Omicron BA.1). Quantitative phylodynamics transformed COVID epidemiology.'
         objectives: [Nextstrain]
   - title:
-      pt: Página 2 — Aplicações modernas
-      en: Page 2 — Modern applications
+      pt: 'Página 2 — Aplicações modernas'
+      en: 'Page 2 — Modern applications'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "tip dating" (Pybus, Drummond) usa o quê para calibrar relógio?
-          en: "Tip dating" (Pybus, Drummond) uses what to calibrate the clock?
+          pt: 'O conceito "tip dating" (Pybus, Drummond) usa o quê para calibrar relógio?'
+          en: '"Tip dating" (Pybus, Drummond) uses what to calibrate the clock?'
         choices:
-          - Datas de coleta das próprias sequências (e.g. ancient DNA, vírus em série temporal)
-          - Apenas calibrações fósseis externas profundas
-          - Idade absoluta determinada por carbono-14 obrigatoriamente
-          - Substituição completa por relógio estrito sem calibração
-        correctAnswer: Datas de coleta das próprias sequências (e.g. ancient DNA, vírus em série temporal)
+          - 'Datas de coleta das próprias sequências (e.g. ancient DNA, vírus em série temporal)'
+          - 'Apenas calibrações fósseis externas profundas'
+          - 'Idade absoluta determinada por carbono-14 obrigatoriamente'
+          - 'Substituição completa por relógio estrito sem calibração'
+        correctAnswer: 'Datas de coleta das próprias sequências (e.g. ancient DNA, vírus em série temporal)'
         rationale:
-          pt: Tip dating: datas amostrais (e.g. vírus coletados ao longo de meses, ossos com C-14) calibram árvore diretamente sem necessidade de fóssil profundo. Especialmente útil em ancient DNA (Pääbo, Reich) e phylodynamics viral. BEAST suporta nativamente.
-          en: Tip dating: sample dates (e.g. viruses collected over months, C-14 dated bones) calibrate tree directly without needing deep fossil. Especially useful in ancient DNA (Pääbo, Reich) and viral phylodynamics. BEAST natively supports it.
+          pt: 'Tip dating: datas amostrais (e.g. vírus coletados ao longo de meses, ossos com C-14) calibram árvore diretamente sem necessidade de fóssil profundo. Especialmente útil em ancient DNA (Pääbo, Reich) e phylodynamics viral. BEAST suporta nativamente.'
+          en: 'Tip dating: sample dates (e.g. viruses collected over months, C-14 dated bones) calibrate tree directly without needing deep fossil. Especially useful in ancient DNA (Pääbo, Reich) and viral phylodynamics. BEAST natively supports it.'
         objectives: [Tip dating]
       - type: choice
         difficulty: 5
         question:
-          pt: O "horizontal gene transfer" (HGT) em procariotos torna a "árvore da vida" mais bem descrita como…
-          en: "Horizontal gene transfer" (HGT) in prokaryotes makes the "tree of life" better described as…
+          pt: 'O "horizontal gene transfer" (HGT) em procariotos torna a "árvore da vida" mais bem descrita como…'
+          en: '"Horizontal gene transfer" (HGT) in prokaryotes makes the "tree of life" better described as…'
         choices:
-          - Rede emaranhada (web), com transferências laterais frequentes especialmente em bactérias/archaea
-          - Árvore estritamente bifurcante sem transferências
-          - Politomias completas sem qualquer estrutura
-          - Apenas árvores eucarióticas relevantes biologicamente
-        correctAnswer: Rede emaranhada (web), com transferências laterais frequentes especialmente em bactérias/archaea
+          - 'Rede emaranhada (web), com transferências laterais frequentes especialmente em bactérias/archaea'
+          - 'Árvore estritamente bifurcante sem transferências'
+          - 'Politomias completas sem qualquer estrutura'
+          - 'Apenas árvores eucarióticas relevantes biologicamente'
+        correctAnswer: 'Rede emaranhada (web), com transferências laterais frequentes especialmente em bactérias/archaea'
         rationale:
-          pt: Doolittle (Science 1999) e outros mostraram que HGT em procariotos produz "rede da vida" em vez de árvore estrita. Genes movem-se via fagos, plasmídeos, transformação. Estrutura em rede ainda preserva sinal vertical em "core genome" (ribossomais), mas pan-genoma é dinâmico.
-          en: Doolittle (Science 1999) and others showed prokaryotic HGT produces a "web of life" rather than a strict tree. Genes move via phages, plasmids, transformation. Network structure still preserves vertical signal in the "core genome" (ribosomal), but pan-genome is dynamic.
+          pt: 'Doolittle (Science 1999) e outros mostraram que HGT em procariotos produz "rede da vida" em vez de árvore estrita. Genes movem-se via fagos, plasmídeos, transformação. Estrutura em rede ainda preserva sinal vertical em "core genome" (ribossomais), mas pan-genoma é dinâmico.'
+          en: 'Doolittle (Science 1999) and others showed prokaryotic HGT produces a "web of life" rather than a strict tree. Genes move via phages, plasmids, transformation. Network structure still preserves vertical signal in the "core genome" (ribosomal), but pan-genome is dynamic.'
         objectives: [HGT web]
       - type: choice
         difficulty: 5
         question:
-          pt: Filogenia molecular ajudou a resolver…
-          en: Molecular phylogeny helped resolve…
+          pt: 'Filogenia molecular ajudou a resolver…'
+          en: 'Molecular phylogeny helped resolve…'
         choices:
-          - Posição das baleias dentro de Artiodactyla (cetartiodactyla, próximas a hipopótamos)
-          - Apenas relações entre vírus sem qualquer aplicação a animais
-          - Apenas cronologia humana sem outros vertebrados
-          - Substituição da paleontologia clássica em todos os contextos
-        correctAnswer: Posição das baleias dentro de Artiodactyla (cetartiodactyla, próximas a hipopótamos)
+          - 'Posição das baleias dentro de Artiodactyla (cetartiodactyla, próximas a hipopótamos)'
+          - 'Apenas relações entre vírus sem qualquer aplicação a animais'
+          - 'Apenas cronologia humana sem outros vertebrados'
+          - 'Substituição da paleontologia clássica em todos os contextos'
+        correctAnswer: 'Posição das baleias dentro de Artiodactyla (cetartiodactyla, próximas a hipopótamos)'
         rationale:
-          pt: Filogenia molecular (Graur/Higgins 1994, Gatesy 1997 SINEs) mostrou cetáceos dentro de Artiodactyla, irmãos de hipopótamos — não como ordem separada. Confirmado por fósseis Pakicetus/Ambulocetus (Thewissen). Marco de integração molecular-paleontologia.
-          en: Molecular phylogeny (Graur/Higgins 1994, Gatesy 1997 SINEs) showed cetaceans within Artiodactyla, sisters to hippos — not a separate order. Confirmed by Pakicetus/Ambulocetus fossils (Thewissen). Molecular-paleontology integration milestone.
+          pt: 'Filogenia molecular (Graur/Higgins 1994, Gatesy 1997 SINEs) mostrou cetáceos dentro de Artiodactyla, irmãos de hipopótamos — não como ordem separada. Confirmado por fósseis Pakicetus/Ambulocetus (Thewissen). Marco de integração molecular-paleontologia.'
+          en: 'Molecular phylogeny (Graur/Higgins 1994, Gatesy 1997 SINEs) showed cetaceans within Artiodactyla, sisters to hippos — not a separate order. Confirmed by Pakicetus/Ambulocetus fossils (Thewissen). Molecular-paleontology integration milestone.'
         objectives: [Baleias]
       - type: choice
         difficulty: 5
         question:
-          pt: ModelTest/jModelTest/ModelFinder seleciona modelo de substituição via…
-          en: ModelTest/jModelTest/ModelFinder selects substitution model via…
+          pt: 'ModelTest/jModelTest/ModelFinder seleciona modelo de substituição via…'
+          en: 'ModelTest/jModelTest/ModelFinder selects substitution model via…'
         choices:
-          - AIC, BIC ou hLRT comparando ML de modelos aninhados ou não
-          - Escolha aleatória uniforme entre modelos disponíveis
-          - Apenas o modelo mais simples sempre por princípio
-          - Apenas o GTR+Γ+I em todos os datasets sem teste
-        correctAnswer: AIC, BIC ou hLRT comparando ML de modelos aninhados ou não
+          - 'AIC, BIC ou hLRT comparando ML de modelos aninhados ou não'
+          - 'Escolha aleatória uniforme entre modelos disponíveis'
+          - 'Apenas o modelo mais simples sempre por princípio'
+          - 'Apenas o GTR+Γ+I em todos os datasets sem teste'
+        correctAnswer: 'AIC, BIC ou hLRT comparando ML de modelos aninhados ou não'
         rationale:
-          pt: ModelTest (Posada/Crandall 1998), jModelTest (Posada 2008), ModelFinder (Kalyaanamoorthy 2017 IQ-TREE) ajustam vários modelos e comparam por critério de informação. Boa prática moderna em filogenética.
-          en: ModelTest (Posada/Crandall 1998), jModelTest (Posada 2008), ModelFinder (Kalyaanamoorthy 2017 IQ-TREE) fit several models and compare by information criterion. Modern best practice in phylogenetics.
+          pt: 'ModelTest (Posada/Crandall 1998), jModelTest (Posada 2008), ModelFinder (Kalyaanamoorthy 2017 IQ-TREE) ajustam vários modelos e comparam por critério de informação. Boa prática moderna em filogenética.'
+          en: 'ModelTest (Posada/Crandall 1998), jModelTest (Posada 2008), ModelFinder (Kalyaanamoorthy 2017 IQ-TREE) fit several models and compare by information criterion. Modern best practice in phylogenetics.'
         objectives: [ModelTest]
       - type: choice
         difficulty: 5
         question:
-          pt: A topologia mitocondrial humana coalesce em…
-          en: Human mitochondrial topology coalesces at…
+          pt: 'A topologia mitocondrial humana coalesce em…'
+          en: 'Human mitochondrial topology coalesces at…'
         choices:
-          - "Eva mitocondrial" ~150-200k anos atrás na África
-          - 1 milhão de anos com origem na Europa
-          - Diretamente ao chimpanzé sem qualquer divergência
-          - Múltiplas origens regionais simultâneas
-        correctAnswer: "Eva mitocondrial" ~150-200k anos atrás na África
+          - '"Eva mitocondrial" ~150-200k anos atrás na África'
+          - '1 milhão de anos com origem na Europa'
+          - 'Diretamente ao chimpanzé sem qualquer divergência'
+          - 'Múltiplas origens regionais simultâneas'
+        correctAnswer: '"Eva mitocondrial" ~150-200k anos atrás na África'
         rationale:
-          pt: mtDNA coalesce em ancestral feminina africana ~150-200k anos atrás (Cann/Stoneking/Wilson 1987 Nature). Y-MRCA ("Adam Y") é mais recente (~200-300k). Não significa "primeira mulher", apenas MRCA das linhagens mitocondriais sobreviventes.
-          en: mtDNA coalesces at an African female ancestor ~150-200k years ago (Cann/Stoneking/Wilson 1987 Nature). Y-MRCA ("Y Adam") is more recent (~200-300k). Doesn't mean "first woman", just MRCA of surviving mitochondrial lineages.
+          pt: 'mtDNA coalesce em ancestral feminina africana ~150-200k anos atrás (Cann/Stoneking/Wilson 1987 Nature). Y-MRCA ("Adam Y") é mais recente (~200-300k). Não significa "primeira mulher", apenas MRCA das linhagens mitocondriais sobreviventes.'
+          en: 'mtDNA coalesces at an African female ancestor ~150-200k years ago (Cann/Stoneking/Wilson 1987 Nature). Y-MRCA ("Y Adam") is more recent (~200-300k). Doesn''t mean "first woman", just MRCA of surviving mitochondrial lineages.'
         objectives: [Mt Eva]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "Last Universal Common Ancestor" (LUCA) é inferido por…
-          en: "Last Universal Common Ancestor" (LUCA) is inferred by…
+          pt: 'O conceito "Last Universal Common Ancestor" (LUCA) é inferido por…'
+          en: '"Last Universal Common Ancestor" (LUCA) is inferred by…'
         choices:
-          - Genes presentes em todos os domínios via parsimônia/ML, sugerindo ~3.5-4 bilhões anos
-          - Datação direta de fósseis microbianos
-          - Apenas modelo abiogenético sem dados moleculares
-          - Triagem de meteoritos com biomarcadores intactos
-        correctAnswer: Genes presentes em todos os domínios via parsimônia/ML, sugerindo ~3.5-4 bilhões anos
+          - 'Genes presentes em todos os domínios via parsimônia/ML, sugerindo ~3.5-4 bilhões anos'
+          - 'Datação direta de fósseis microbianos'
+          - 'Apenas modelo abiogenético sem dados moleculares'
+          - 'Triagem de meteoritos com biomarcadores intactos'
+        correctAnswer: 'Genes presentes em todos os domínios via parsimônia/ML, sugerindo ~3.5-4 bilhões anos'
         rationale:
-          pt: LUCA reconstruído por Weiss/Sousa/Martin 2016 (Nature Microbiol) via genes presentes em todos os 3 domínios; ~355 genes universais sugerem LUCA termofílico anaeróbico, com Wood-Ljungdahl. Idade ~4 bilhões anos por relógio molecular.
-          en: LUCA reconstructed by Weiss/Sousa/Martin 2016 (Nat Microbiol) via genes shared across all 3 domains; ~355 universal genes suggest a thermophilic anaerobic LUCA with Wood-Ljungdahl. Age ~4 billion years by molecular clock.
+          pt: 'LUCA reconstruído por Weiss/Sousa/Martin 2016 (Nature Microbiol) via genes presentes em todos os 3 domínios; ~355 genes universais sugerem LUCA termofílico anaeróbico, com Wood-Ljungdahl. Idade ~4 bilhões anos por relógio molecular.'
+          en: 'LUCA reconstructed by Weiss/Sousa/Martin 2016 (Nat Microbiol) via genes shared across all 3 domains; ~355 universal genes suggest a thermophilic anaerobic LUCA with Wood-Ljungdahl. Age ~4 billion years by molecular clock.'
         objectives: [LUCA]
       - type: choice
         difficulty: 5
         question:
-          pt: A "Felsenstein zone" em parsimônia refere-se a…
-          en: The "Felsenstein zone" in parsimony refers to…
+          pt: 'A "Felsenstein zone" em parsimônia refere-se a…'
+          en: 'The "Felsenstein zone" in parsimony refers to…'
         choices:
-          - Regiões do espaço de árvore onde parsimônia converge ao errado mesmo com dados infinitos
-          - Zona ótima onde parsimônia sempre acerta
-          - Apenas árvores com 4 táxons sem possibilidade de erro
-          - Conceito sem suporte teórico moderno
-        correctAnswer: Regiões do espaço de árvore onde parsimônia converge ao errado mesmo com dados infinitos
+          - 'Regiões do espaço de árvore onde parsimônia converge ao errado mesmo com dados infinitos'
+          - 'Zona ótima onde parsimônia sempre acerta'
+          - 'Apenas árvores com 4 táxons sem possibilidade de erro'
+          - 'Conceito sem suporte teórico moderno'
+        correctAnswer: 'Regiões do espaço de árvore onde parsimônia converge ao errado mesmo com dados infinitos'
         rationale:
-          pt: Felsenstein 1978 mostrou que com 4 táxons em topologia ((A,C),(B,D)) com ramos longos em A e C (curtos em B e D), parsimônia agrupa A e C (LBA) com probabilidade crescente até 1 — inconsistência estatística de parsimônia em "Felsenstein zone".
-          en: Felsenstein 1978 showed that for 4-taxon topology ((A,C),(B,D)) with long branches in A and C (short in B and D), parsimony groups A and C (LBA) with probability increasing to 1 — parsimony's statistical inconsistency in the "Felsenstein zone".
+          pt: 'Felsenstein 1978 mostrou que com 4 táxons em topologia ((A,C),(B,D)) com ramos longos em A e C (curtos em B e D), parsimônia agrupa A e C (LBA) com probabilidade crescente até 1 — inconsistência estatística de parsimônia em "Felsenstein zone".'
+          en: 'Felsenstein 1978 showed that for 4-taxon topology ((A,C),(B,D)) with long branches in A and C (short in B and D), parsimony groups A and C (LBA) with probability increasing to 1 — parsimony''s statistical inconsistency in the "Felsenstein zone".'
         objectives: [Felsenstein zone]
       - type: choice
         difficulty: 5
         question:
-          pt: Phylogeny-aware MSA (PRANK, Löytynoja/Goldman) é importante porque…
-          en: Phylogeny-aware MSA (PRANK, Löytynoja/Goldman) is important because it…
+          pt: 'Phylogeny-aware MSA (PRANK, Löytynoja/Goldman) é importante porque…'
+          en: 'Phylogeny-aware MSA (PRANK, Löytynoja/Goldman) is important because it…'
         choices:
-          - Trata indels sem viés contra inserções, distinguindo-as de deleções na árvore
-          - Substitui completamente todos os outros alinhadores em qualquer caso
-          - É exponencialmente mais rápido que MAFFT/MUSCLE
-          - Funciona apenas em sequências proteicas longas
-        correctAnswer: Trata indels sem viés contra inserções, distinguindo-as de deleções na árvore
+          - 'Trata indels sem viés contra inserções, distinguindo-as de deleções na árvore'
+          - 'Substitui completamente todos os outros alinhadores em qualquer caso'
+          - 'É exponencialmente mais rápido que MAFFT/MUSCLE'
+          - 'Funciona apenas em sequências proteicas longas'
+        correctAnswer: 'Trata indels sem viés contra inserções, distinguindo-as de deleções na árvore'
         rationale:
-          pt: Aligners convencionais (MAFFT, MUSCLE, T-Coffee) tratam gaps como ambíguos, podendo introduzir falsas homologias. PRANK usa árvore-guia para distinguir inserções (não devem ser realinhadas) e deleções — alinhamentos mais conservadores e adequados para inferência subsequente.
-          en: Conventional aligners (MAFFT, MUSCLE, T-Coffee) treat gaps as ambiguous, possibly introducing false homologies. PRANK uses a guide tree to distinguish insertions (shouldn't be re-aligned) from deletions — more conservative alignments suitable for downstream inference.
+          pt: 'Aligners convencionais (MAFFT, MUSCLE, T-Coffee) tratam gaps como ambíguos, podendo introduzir falsas homologias. PRANK usa árvore-guia para distinguir inserções (não devem ser realinhadas) e deleções — alinhamentos mais conservadores e adequados para inferência subsequente.'
+          en: 'Conventional aligners (MAFFT, MUSCLE, T-Coffee) treat gaps as ambiguous, possibly introducing false homologies. PRANK uses a guide tree to distinguish insertions (shouldn''t be re-aligned) from deletions — more conservative alignments suitable for downstream inference.'
         objectives: [PRANK]
       - type: choice
         difficulty: 5
         question:
-          pt: Uma "polytomia" em filogenia indica…
-          en: A polytomy in phylogenetics indicates…
+          pt: 'Uma "polytomia" em filogenia indica…'
+          en: 'A polytomy in phylogenetics indicates…'
         choices:
-          - Não-resolução, podendo ser falta de dados (soft) ou radiação rápida (hard)
-          - Apenas erro do método sem qualquer significado biológico
-          - Sempre radiação adaptativa explosiva confirmada
-          - Confirmação irrevocável de origem comum
-        correctAnswer: Não-resolução, podendo ser falta de dados (soft) ou radiação rápida (hard)
+          - 'Não-resolução, podendo ser falta de dados (soft) ou radiação rápida (hard)'
+          - 'Apenas erro do método sem qualquer significado biológico'
+          - 'Sempre radiação adaptativa explosiva confirmada'
+          - 'Confirmação irrevocável de origem comum'
+        correctAnswer: 'Não-resolução, podendo ser falta de dados (soft) ou radiação rápida (hard)'
         rationale:
-          pt: Polytomy soft: dados insuficientes para resolver ramificação dicotômica. Hard polytomy: especiação tão rápida que coalescência não retém ordem. Distingue-se via mais dados (soft) vs continuar não-resolução com mais dados (hard). Exemplos clássicos: filo dos Animalia, mamíferos basal.
-          en: Soft polytomy: insufficient data to resolve dichotomous branching. Hard polytomy: speciation so rapid that coalescence retains no order. Distinguished via more data (soft) vs. unresolved-with-more-data (hard). Classical examples: Animalia phyla, basal mammals.
+          pt: 'Polytomy soft: dados insuficientes para resolver ramificação dicotômica. Hard polytomy: especiação tão rápida que coalescência não retém ordem. Distingue-se via mais dados (soft) vs continuar não-resolução com mais dados (hard). Exemplos clássicos: filo dos Animalia, mamíferos basal.'
+          en: 'Soft polytomy: insufficient data to resolve dichotomous branching. Hard polytomy: speciation so rapid that coalescence retains no order. Distinguished via more data (soft) vs. unresolved-with-more-data (hard). Classical examples: Animalia phyla, basal mammals.'
         objectives: [Polytomy]
       - type: choice
         difficulty: 5
         question:
-          pt: O Tree of Life Project (TOL) e Open Tree of Life (Hinchliff 2015 PNAS) buscam…
-          en: The Tree of Life Project (TOL) and Open Tree of Life (Hinchliff 2015 PNAS) seek to…
+          pt: 'O Tree of Life Project (TOL) e Open Tree of Life (Hinchliff 2015 PNAS) buscam…'
+          en: 'The Tree of Life Project (TOL) and Open Tree of Life (Hinchliff 2015 PNAS) seek to…'
         choices:
-          - Sintetizar todas as filogenias publicadas em uma única árvore consensual de ~2.3M espécies
-          - Substituir GenBank como repositório de sequências brutas
-          - Apenas datar todos os fósseis em centralização
-          - Criar nomenclatura taxonômica nova substituindo Lineu
-        correctAnswer: Sintetizar todas as filogenias publicadas em uma única árvore consensual de ~2.3M espécies
+          - 'Sintetizar todas as filogenias publicadas em uma única árvore consensual de ~2.3M espécies'
+          - 'Substituir GenBank como repositório de sequências brutas'
+          - 'Apenas datar todos os fósseis em centralização'
+          - 'Criar nomenclatura taxonômica nova substituindo Lineu'
+        correctAnswer: 'Sintetizar todas as filogenias publicadas em uma única árvore consensual de ~2.3M espécies'
         rationale:
-          pt: Open Tree of Life integra >480 árvores publicadas + 2.3M espécies de OTT (taxonomy). Aborda fragmentação de filogenias parciais; provê API para consulta. Comunidade pode adicionar/refinar — ciência colaborativa em escala. Análogo ao OneZoom para visualização interativa.
-          en: Open Tree of Life integrates >480 published trees + 2.3M species from OTT (taxonomy). Addresses fragmentation of partial phylogenies; provides API for queries. Community can add/refine — collaborative science at scale. OneZoom is analogous for interactive visualization.
+          pt: 'Open Tree of Life integra >480 árvores publicadas + 2.3M espécies de OTT (taxonomy). Aborda fragmentação de filogenias parciais; provê API para consulta. Comunidade pode adicionar/refinar — ciência colaborativa em escala. Análogo ao OneZoom para visualização interativa.'
+          en: 'Open Tree of Life integrates >480 published trees + 2.3M species from OTT (taxonomy). Addresses fragmentation of partial phylogenies; provides API for queries. Community can add/refine — collaborative science at scale. OneZoom is analogous for interactive visualization.'
         objectives: [Open Tree]
 target: 20

@@ -1,343 +1,343 @@
 title:
-  pt: Informática Clínica e Registro Eletrônico
-  en: Clinical Informatics and Electronic Health Records
+  pt: 'Informática Clínica e Registro Eletrônico'
+  en: 'Clinical Informatics and Electronic Health Records'
 level: Q
 subject: biology
 objectives:
-  - Compreender EHR adoption e Meaningful Use
-  - Reconhecer interoperability (HL7, FHIR, USCDI)
-  - Identificar CDS (Clinical Decision Support)
-  - Avaliar EHR burden e fadiga
+  - 'Compreender EHR adoption e Meaningful Use'
+  - 'Reconhecer interoperability (HL7, FHIR, USCDI)'
+  - 'Identificar CDS (Clinical Decision Support)'
+  - 'Avaliar EHR burden e fadiga'
 difficulty: 5
 authorNotes: |
   Clinical informatics. ARRA HITECH Act 2009 EHR incentives. Meaningful Use 2011-2017.
   ONC Cures Act 2016 information blocking. USCDI v1-v5. SMART on FHIR (Mandl/Kohane). Epic
   ~50% US market. Cerner (Oracle 2022). NLP: cTAKES, MetaMap, ScispaCy. CDS Hooks. Sepsis
   Watch Duke. Schulam/Saria. EHR burden: Sinsky/Shanafelt burnout. Pajama time. Generative AI
-  notes: DAX Microsoft, Abridge.
+  notes: 'DAX Microsoft, Abridge.'
 example:
   question:
-    pt: A HITECH Act (2009) é importante por…
-    en: HITECH Act (2009) is important for…
+    pt: 'A HITECH Act (2009) é importante por…'
+    en: 'HITECH Act (2009) is important for…'
   choices:
-    - Investiu ~$30B incentivando EHR adoption via Meaningful Use; aceleração massiva 2011-2017
-    - Apenas para hospitais grandes
-    - Sem qualquer impacto
-    - Apenas em US states
-  correctAnswer: Investiu ~$30B incentivando EHR adoption via Meaningful Use; aceleração massiva 2011-2017
+    - 'Investiu ~$30B incentivando EHR adoption via Meaningful Use; aceleração massiva 2011-2017'
+    - 'Apenas para hospitais grandes'
+    - 'Sem qualquer impacto'
+    - 'Apenas em US states'
+  correctAnswer: 'Investiu ~$30B incentivando EHR adoption via Meaningful Use; aceleração massiva 2011-2017'
   rationale:
-    pt: HITECH Act (Health Information Technology for Economic and Clinical Health, parte ARRA 2009): bonuses Medicare/Medicaid para EHR adoption + Meaningful Use criteria. EHR adoption foi de ~10% (2008) a ~96% hospitals + ~80% physicians (2017). Mas: focou em quantity sobre quality, criou data silos. Sucessor: 21st Century Cures Act 2016 emphasizou interoperability.
-    en: HITECH Act (Health Information Technology for Economic and Clinical Health, part of ARRA 2009): Medicare/Medicaid bonuses for EHR adoption + Meaningful Use criteria. EHR adoption went from ~10% (2008) to ~96% hospitals + ~80% physicians (2017). But: focused on quantity over quality, created data silos. Successor: 21st Century Cures Act 2016 emphasized interoperability.
+    pt: 'HITECH Act (Health Information Technology for Economic and Clinical Health, parte ARRA 2009): bonuses Medicare/Medicaid para EHR adoption + Meaningful Use criteria. EHR adoption foi de ~10% (2008) a ~96% hospitals + ~80% physicians (2017). Mas: focou em quantity sobre quality, criou data silos. Sucessor: 21st Century Cures Act 2016 emphasizou interoperability.'
+    en: 'HITECH Act (Health Information Technology for Economic and Clinical Health, part of ARRA 2009): Medicare/Medicaid bonuses for EHR adoption + Meaningful Use criteria. EHR adoption went from ~10% (2008) to ~96% hospitals + ~80% physicians (2017). But: focused on quantity over quality, created data silos. Successor: 21st Century Cures Act 2016 emphasized interoperability.'
 passCriteria:
   minAccuracyPercent: 85
   maxAvgSecondsPerExercise: 14
 pages:
   - title:
-      pt: Página 1 — EHR e interoperability
-      en: Page 1 — EHR and interoperability
+      pt: 'Página 1 — EHR e interoperability'
+      en: 'Page 1 — EHR and interoperability'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: Em US, dois EHR vendors dominam mercado. Quais?
-          en: In US, two EHR vendors dominate the market. Which?
+          pt: 'Em US, dois EHR vendors dominam mercado. Quais?'
+          en: 'In US, two EHR vendors dominate the market. Which?'
         choices:
-          - Epic (~50% hospitais grandes) e Cerner/Oracle (~25%, Oracle adquiriu 2022)
-          - Apenas Microsoft
-          - Sem qualquer dominância
-          - Apenas em UK
-        correctAnswer: Epic (~50% hospitais grandes) e Cerner/Oracle (~25%, Oracle adquiriu 2022)
+          - 'Epic (~50% hospitais grandes) e Cerner/Oracle (~25%, Oracle adquiriu 2022)'
+          - 'Apenas Microsoft'
+          - 'Sem qualquer dominância'
+          - 'Apenas em UK'
+        correctAnswer: 'Epic (~50% hospitais grandes) e Cerner/Oracle (~25%, Oracle adquiriu 2022)'
         rationale:
-          pt: Epic Systems (Verona WI, Judy Faulkner founder 1979): private, ~50% large hospitals. Cerner: Oracle adquiriu por $28B 2022 → Oracle Health. Athenahealth, MEDITECH, Allscripts/Veradigm também. Diferentes UI, customization, billing integration. Vendor consolidation atual. Acuidade pacientes em mover dados entre vendors challenge.
-          en: Epic Systems (Verona WI, Judy Faulkner founder 1979): private, ~50% of large hospitals. Cerner: Oracle acquired for $28B 2022 → Oracle Health. Athenahealth, MEDITECH, Allscripts/Veradigm too. Different UI, customization, billing integration. Current vendor consolidation. Patient acuity in moving data between vendors a challenge.
+          pt: 'Epic Systems (Verona WI, Judy Faulkner founder 1979): private, ~50% large hospitals. Cerner: Oracle adquiriu por $28B 2022 → Oracle Health. Athenahealth, MEDITECH, Allscripts/Veradigm também. Diferentes UI, customization, billing integration. Vendor consolidation atual. Acuidade pacientes em mover dados entre vendors challenge.'
+          en: 'Epic Systems (Verona WI, Judy Faulkner founder 1979): private, ~50% of large hospitals. Cerner: Oracle acquired for $28B 2022 → Oracle Health. Athenahealth, MEDITECH, Allscripts/Veradigm too. Different UI, customization, billing integration. Current vendor consolidation. Patient acuity in moving data between vendors a challenge.'
         objectives: [Epic Cerner]
       - type: choice
         difficulty: 5
         question:
-          pt: O 21st Century Cures Act (2016) Information Blocking provisions exigem…
-          en: 21st Century Cures Act (2016) Information Blocking provisions require…
+          pt: 'O 21st Century Cures Act (2016) Information Blocking provisions exigem…'
+          en: '21st Century Cures Act (2016) Information Blocking provisions require…'
         choices:
-          - Hospitais/EHRs não podem bloquear acesso de pacientes a EHI; penalties para vendors
-          - Apenas para fabricantes
-          - Sem qualquer impacto
-          - Apenas para US states
-        correctAnswer: Hospitais/EHRs não podem bloquear acesso de pacientes a EHI; penalties para vendors
+          - 'Hospitais/EHRs não podem bloquear acesso de pacientes a EHI; penalties para vendors'
+          - 'Apenas para fabricantes'
+          - 'Sem qualquer impacto'
+          - 'Apenas para US states'
+        correctAnswer: 'Hospitais/EHRs não podem bloquear acesso de pacientes a EHI; penalties para vendors'
         rationale:
-          pt: Cures Act + ONC final rule 2020 (effective 2022+): proibido "info blocking" — interferência com access, exchange, use de EHI. Patients podem fazer download via Apple Health, MyChart. Hospital penalties: até $1M/violation. EHR developers: até $1M. Forçou abertura de APIs FHIR. Aplicações: Apple Health Records, third-party apps via SMART on FHIR.
-          en: Cures Act + ONC final rule 2020 (effective 2022+): "info blocking" prohibited — interference with EHI access, exchange, use. Patients can download via Apple Health, MyChart. Hospital penalties: up to $1M/violation. EHR developers: up to $1M. Forced FHIR API opening. Applications: Apple Health Records, third-party apps via SMART on FHIR.
+          pt: 'Cures Act + ONC final rule 2020 (effective 2022+): proibido "info blocking" — interferência com access, exchange, use de EHI. Patients podem fazer download via Apple Health, MyChart. Hospital penalties: até $1M/violation. EHR developers: até $1M. Forçou abertura de APIs FHIR. Aplicações: Apple Health Records, third-party apps via SMART on FHIR.'
+          en: 'Cures Act + ONC final rule 2020 (effective 2022+): "info blocking" prohibited — interference with EHI access, exchange, use. Patients can download via Apple Health, MyChart. Hospital penalties: up to $1M/violation. EHR developers: up to $1M. Forced FHIR API opening. Applications: Apple Health Records, third-party apps via SMART on FHIR.'
         objectives: [Info blocking]
       - type: choice
         difficulty: 5
         question:
-          pt: USCDI (United States Core Data for Interoperability) é…
-          en: USCDI (United States Core Data for Interoperability) is…
+          pt: 'USCDI (United States Core Data for Interoperability) é…'
+          en: 'USCDI (United States Core Data for Interoperability) is…'
         choices:
-          - Padrão minimal de data elements (vital signs, labs, problems, meds) para FHIR exchange
-          - Apenas para hospitais
-          - Sem qualquer estrutura
-          - Apenas em UK
-        correctAnswer: Padrão minimal de data elements (vital signs, labs, problems, meds) para FHIR exchange
+          - 'Padrão minimal de data elements (vital signs, labs, problems, meds) para FHIR exchange'
+          - 'Apenas para hospitais'
+          - 'Sem qualquer estrutura'
+          - 'Apenas em UK'
+        correctAnswer: 'Padrão minimal de data elements (vital signs, labs, problems, meds) para FHIR exchange'
         rationale:
-          pt: USCDI v1 (2020) → v5 (2024): elemental list dos dados que devem ser shareable. Inclui: patient demo, problems, allergies, meds, immunizations, labs, vital signs, procedures, procedures, encounter info. ONC certifica EHR. Análoga internacional: openEHR, EU EHDS (European Health Data Space) Regulation 2025+.
-          en: USCDI v1 (2020) → v5 (2024): elemental list of data that must be shareable. Includes: patient demo, problems, allergies, meds, immunizations, labs, vital signs, procedures, encounter info. ONC certifies EHR. Analogous international: openEHR, EU EHDS (European Health Data Space) Regulation 2025+.
+          pt: 'USCDI v1 (2020) → v5 (2024): elemental list dos dados que devem ser shareable. Inclui: patient demo, problems, allergies, meds, immunizations, labs, vital signs, procedures, procedures, encounter info. ONC certifica EHR. Análoga internacional: openEHR, EU EHDS (European Health Data Space) Regulation 2025+.'
+          en: 'USCDI v1 (2020) → v5 (2024): elemental list of data that must be shareable. Includes: patient demo, problems, allergies, meds, immunizations, labs, vital signs, procedures, encounter info. ONC certifies EHR. Analogous international: openEHR, EU EHDS (European Health Data Space) Regulation 2025+.'
         objectives: [USCDI]
       - type: choice
         difficulty: 5
         question:
-          pt: TEFCA (Trusted Exchange Framework and Common Agreement) é…
-          en: TEFCA (Trusted Exchange Framework and Common Agreement) is…
+          pt: 'TEFCA (Trusted Exchange Framework and Common Agreement) é…'
+          en: 'TEFCA (Trusted Exchange Framework and Common Agreement) is…'
         choices:
-          - Framework US para nationwide health information exchange (HIE) via QHINs (2023+)
-          - Apenas hospital local
-          - Sem qualquer estrutura
-          - Apenas em US states
-        correctAnswer: Framework US para nationwide health information exchange (HIE) via QHINs (2023+)
+          - 'Framework US para nationwide health information exchange (HIE) via QHINs (2023+)'
+          - 'Apenas hospital local'
+          - 'Sem qualquer estrutura'
+          - 'Apenas em US states'
+        correctAnswer: 'Framework US para nationwide health information exchange (HIE) via QHINs (2023+)'
         rationale:
-          pt: TEFCA (ONC, designated 2023): rede de QHINs (Qualified Health Information Networks) — Epic Carequality, eHealth Exchange, etc. Goal: any provider/patient acesso to records nationwide. Started com 7 QHINs ago/2023. Long-term vision: NHIN-like network. Análoga: Sweden Vården (national EHR), UK Spine.
-          en: TEFCA (ONC, designated 2023): network of QHINs (Qualified Health Information Networks) — Epic Carequality, eHealth Exchange, etc. Goal: any provider/patient access to records nationwide. Started with 7 QHINs Aug 2023. Long-term vision: NHIN-like network. Analogous: Sweden Vården (national EHR), UK Spine.
+          pt: 'TEFCA (ONC, designated 2023): rede de QHINs (Qualified Health Information Networks) — Epic Carequality, eHealth Exchange, etc. Goal: any provider/patient acesso to records nationwide. Started com 7 QHINs ago/2023. Long-term vision: NHIN-like network. Análoga: Sweden Vården (national EHR), UK Spine.'
+          en: 'TEFCA (ONC, designated 2023): network of QHINs (Qualified Health Information Networks) — Epic Carequality, eHealth Exchange, etc. Goal: any provider/patient access to records nationwide. Started with 7 QHINs Aug 2023. Long-term vision: NHIN-like network. Analogous: Sweden Vården (national EHR), UK Spine.'
         objectives: [TEFCA]
       - type: choice
         difficulty: 5
         question:
-          pt: SMART on FHIR (Mandl/Kohane Boston Children's) permite…
-          en: SMART on FHIR (Mandl/Kohane Boston Children's) allows…
+          pt: 'SMART on FHIR (Mandl/Kohane Boston Children''s) permite…'
+          en: 'SMART on FHIR (Mandl/Kohane Boston Children''s) allows…'
         choices:
-          - Aplicações terceiras leem/escrevem em EHR via OAuth + FHIR API standardized
-          - Apenas EHR proprietary
-          - Sem qualquer integração
-          - Apenas para hospitais
-        correctAnswer: Aplicações terceiras leem/escrevem em EHR via OAuth + FHIR API standardized
+          - 'Aplicações terceiras leem/escrevem em EHR via OAuth + FHIR API standardized'
+          - 'Apenas EHR proprietary'
+          - 'Sem qualquer integração'
+          - 'Apenas para hospitais'
+        correctAnswer: 'Aplicações terceiras leem/escrevem em EHR via OAuth + FHIR API standardized'
         rationale:
-          pt: SMART (Substitutable Medical Apps, Reusable Technology, Mandl/Kohane 2010+): App Store-like ecosystem para clinical apps. App em Epic, Cerner, etc. com mesmas APIs. Apps: pediatric growth charts, opioid risk, BP, COVID screening. Standard adoptado por ONC. Permite innovation rápida sem vendor lock-in.
-          en: SMART (Substitutable Medical Apps, Reusable Technology, Mandl/Kohane 2010+): App Store-like ecosystem for clinical apps. App in Epic, Cerner, etc. with same APIs. Apps: pediatric growth charts, opioid risk, BP, COVID screening. Standard adopted by ONC. Enables rapid innovation without vendor lock-in.
+          pt: 'SMART (Substitutable Medical Apps, Reusable Technology, Mandl/Kohane 2010+): App Store-like ecosystem para clinical apps. App em Epic, Cerner, etc. com mesmas APIs. Apps: pediatric growth charts, opioid risk, BP, COVID screening. Standard adoptado por ONC. Permite innovation rápida sem vendor lock-in.'
+          en: 'SMART (Substitutable Medical Apps, Reusable Technology, Mandl/Kohane 2010+): App Store-like ecosystem for clinical apps. App in Epic, Cerner, etc. with same APIs. Apps: pediatric growth charts, opioid risk, BP, COVID screening. Standard adopted by ONC. Enables rapid innovation without vendor lock-in.'
         objectives: [SMART on FHIR]
       - type: choice
         difficulty: 5
         question:
-          pt: Clinical Decision Support (CDS) integra-se a EHR via…
-          en: Clinical Decision Support (CDS) integrates into EHR via…
+          pt: 'Clinical Decision Support (CDS) integra-se a EHR via…'
+          en: 'Clinical Decision Support (CDS) integrates into EHR via…'
         choices:
-          - Pop-up alerts, order sets, CDS Hooks (FHIR), passive infobutton — risk ranges from beneficial a alert fatigue
-          - Apenas pop-ups manuais
-          - Sem qualquer integração
-          - Apenas para hospitais grandes
-        correctAnswer: Pop-up alerts, order sets, CDS Hooks (FHIR), passive infobutton — risk ranges from beneficial a alert fatigue
+          - 'Pop-up alerts, order sets, CDS Hooks (FHIR), passive infobutton — risk ranges from beneficial a alert fatigue'
+          - 'Apenas pop-ups manuais'
+          - 'Sem qualquer integração'
+          - 'Apenas para hospitais grandes'
+        correctAnswer: 'Pop-up alerts, order sets, CDS Hooks (FHIR), passive infobutton — risk ranges from beneficial a alert fatigue'
         rationale:
-          pt: CDS forms: alerts (drug-allergy, drug-drug interactions, dose limits), order sets (sepsis bundle), reminders (cancer screening), context-aware infobuttons. CDS Hooks (HL7, 2016+): FHIR-based hooks que invocam external CDS at specific workflow points. Beneficial em vacinação, sepsis. Risco: alert fatigue (~80-90% override rates), missed important alerts.
-          en: CDS forms: alerts (drug-allergy, drug-drug interactions, dose limits), order sets (sepsis bundle), reminders (cancer screening), context-aware infobuttons. CDS Hooks (HL7, 2016+): FHIR-based hooks invoking external CDS at specific workflow points. Beneficial in vaccination, sepsis. Risk: alert fatigue (~80-90% override rates), missed important alerts.
+          pt: 'CDS forms: alerts (drug-allergy, drug-drug interactions, dose limits), order sets (sepsis bundle), reminders (cancer screening), context-aware infobuttons. CDS Hooks (HL7, 2016+): FHIR-based hooks que invocam external CDS at specific workflow points. Beneficial em vacinação, sepsis. Risco: alert fatigue (~80-90% override rates), missed important alerts.'
+          en: 'CDS forms: alerts (drug-allergy, drug-drug interactions, dose limits), order sets (sepsis bundle), reminders (cancer screening), context-aware infobuttons. CDS Hooks (HL7, 2016+): FHIR-based hooks invoking external CDS at specific workflow points. Beneficial in vaccination, sepsis. Risk: alert fatigue (~80-90% override rates), missed important alerts.'
         objectives: [CDS]
       - type: choice
         difficulty: 5
         question:
-          pt: Sepsis Watch (Duke, Sendak/Saria 2020) é exemplo de…
-          en: Sepsis Watch (Duke, Sendak/Saria 2020) is example of…
+          pt: 'Sepsis Watch (Duke, Sendak/Saria 2020) é exemplo de…'
+          en: 'Sepsis Watch (Duke, Sendak/Saria 2020) is example of…'
         choices:
-          - ML-based deep learning predicting sepsis 4-12h pré-clinical com integration EHR-RRT response
-          - Apenas observação manual
-          - Sem qualquer aplicação
-          - Apenas em pediatria
-        correctAnswer: ML-based deep learning predicting sepsis 4-12h pré-clinical com integration EHR-RRT response
+          - 'ML-based deep learning predicting sepsis 4-12h pré-clinical com integration EHR-RRT response'
+          - 'Apenas observação manual'
+          - 'Sem qualquer aplicação'
+          - 'Apenas em pediatria'
+        correctAnswer: 'ML-based deep learning predicting sepsis 4-12h pré-clinical com integration EHR-RRT response'
         rationale:
-          pt: Duke Sepsis Watch (Sendak, Henao, Saria, Balu, Casey): RNN treinada em dados Duke. Predicts sepsis ~4-12h antes. Integration: alerts → Rapid Response Team (RRT) → bedside evaluation. Outcomes: improved time-to-treatment, mortality. Crítica seguida do trabalho: Wong/Sun JAMA Intern Med 2021 mostrou Epic Sepsis Model (proprietary) sub-performance em external validation.
-          en: Duke Sepsis Watch (Sendak, Henao, Saria, Balu, Casey): RNN trained on Duke data. Predicts sepsis ~4-12h ahead. Integration: alerts → Rapid Response Team (RRT) → bedside evaluation. Outcomes: improved time-to-treatment, mortality. Critique-following work: Wong/Sun JAMA Intern Med 2021 showed Epic Sepsis Model (proprietary) underperforms in external validation.
+          pt: 'Duke Sepsis Watch (Sendak, Henao, Saria, Balu, Casey): RNN treinada em dados Duke. Predicts sepsis ~4-12h antes. Integration: alerts → Rapid Response Team (RRT) → bedside evaluation. Outcomes: improved time-to-treatment, mortality. Crítica seguida do trabalho: Wong/Sun JAMA Intern Med 2021 mostrou Epic Sepsis Model (proprietary) sub-performance em external validation.'
+          en: 'Duke Sepsis Watch (Sendak, Henao, Saria, Balu, Casey): RNN trained on Duke data. Predicts sepsis ~4-12h ahead. Integration: alerts → Rapid Response Team (RRT) → bedside evaluation. Outcomes: improved time-to-treatment, mortality. Critique-following work: Wong/Sun JAMA Intern Med 2021 showed Epic Sepsis Model (proprietary) underperforms in external validation.'
         objectives: [Sepsis Watch]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "EHR burden" e "pajama time" se refere a…
-          en: "EHR burden" and "pajama time" refer to…
+          pt: 'O conceito "EHR burden" e "pajama time" se refere a…'
+          en: '"EHR burden" and "pajama time" refer to…'
         choices:
-          - Médicos completing notes em casa fora-horário, contributing burnout (Sinsky/Shanafelt)
-          - Apenas durante shift
-          - Sem qualquer impacto
-          - Apenas em US
-        correctAnswer: Médicos completing notes em casa fora-horário, contributing burnout (Sinsky/Shanafelt)
+          - 'Médicos completing notes em casa fora-horário, contributing burnout (Sinsky/Shanafelt)'
+          - 'Apenas durante shift'
+          - 'Sem qualquer impacto'
+          - 'Apenas em US'
+        correctAnswer: 'Médicos completing notes em casa fora-horário, contributing burnout (Sinsky/Shanafelt)'
         rationale:
-          pt: Sinsky/Shanafelt Mayo: physicians spend ~2h documentation/desk per 1h face-to-face. ~40% trabalho EHR fora-horário. Burnout taxa 50%+ em algumas specialties. Mudança ICD-10 + Meaningful Use exacerbou. Solutions: scribes, ambient AI (DAX, Abridge), template optimization, dictation. Tema central wellbeing physician.
-          en: Sinsky/Shanafelt Mayo: physicians spend ~2h documentation/desk per 1h face-to-face. ~40% EHR work after-hours. Burnout rate 50%+ in some specialties. ICD-10 change + Meaningful Use exacerbated. Solutions: scribes, ambient AI (DAX, Abridge), template optimization, dictation. Central physician wellbeing theme.
+          pt: 'Sinsky/Shanafelt Mayo: physicians spend ~2h documentation/desk per 1h face-to-face. ~40% trabalho EHR fora-horário. Burnout taxa 50%+ em algumas specialties. Mudança ICD-10 + Meaningful Use exacerbou. Solutions: scribes, ambient AI (DAX, Abridge), template optimization, dictation. Tema central wellbeing physician.'
+          en: 'Sinsky/Shanafelt Mayo: physicians spend ~2h documentation/desk per 1h face-to-face. ~40% EHR work after-hours. Burnout rate 50%+ in some specialties. ICD-10 change + Meaningful Use exacerbated. Solutions: scribes, ambient AI (DAX, Abridge), template optimization, dictation. Central physician wellbeing theme.'
         objectives: [EHR burden]
       - type: choice
         difficulty: 5
         question:
-          pt: Em NLP clínico, ferramentas como cTAKES, MetaMap, ScispaCy extraem…
-          en: In clinical NLP, tools like cTAKES, MetaMap, ScispaCy extract…
+          pt: 'Em NLP clínico, ferramentas como cTAKES, MetaMap, ScispaCy extraem…'
+          en: 'In clinical NLP, tools like cTAKES, MetaMap, ScispaCy extract…'
         choices:
-          - Conceitos médicos (UMLS), mapped a ICD/SNOMED, de unstructured notes
-          - Apenas estructura padrão
-          - Sem qualquer aplicação
-          - Apenas para US
-        correctAnswer: Conceitos médicos (UMLS), mapped a ICD/SNOMED, de unstructured notes
+          - 'Conceitos médicos (UMLS), mapped a ICD/SNOMED, de unstructured notes'
+          - 'Apenas estructura padrão'
+          - 'Sem qualquer aplicação'
+          - 'Apenas para US'
+        correctAnswer: 'Conceitos médicos (UMLS), mapped a ICD/SNOMED, de unstructured notes'
         rationale:
-          pt: cTAKES (Mayo Clinical, Apache): rule-based + ML. MetaMap (NLM): UMLS lookup. ScispaCy (AllenAI): SciSpacy customization. Aplicações: phenotyping, eligibility screening, adverse event detection. LLMs (BioBERT, ClinicalBERT, GPT-4) emergindo. Challenge: clinical notes context-dependent, abreviações, negations.
-          en: cTAKES (Mayo Clinical, Apache): rule-based + ML. MetaMap (NLM): UMLS lookup. ScispaCy (AllenAI): SciSpacy customization. Applications: phenotyping, eligibility screening, adverse event detection. LLMs (BioBERT, ClinicalBERT, GPT-4) emerging. Challenge: clinical notes context-dependent, abbreviations, negations.
+          pt: 'cTAKES (Mayo Clinical, Apache): rule-based + ML. MetaMap (NLM): UMLS lookup. ScispaCy (AllenAI): SciSpacy customization. Aplicações: phenotyping, eligibility screening, adverse event detection. LLMs (BioBERT, ClinicalBERT, GPT-4) emergindo. Challenge: clinical notes context-dependent, abreviações, negations.'
+          en: 'cTAKES (Mayo Clinical, Apache): rule-based + ML. MetaMap (NLM): UMLS lookup. ScispaCy (AllenAI): SciSpacy customization. Applications: phenotyping, eligibility screening, adverse event detection. LLMs (BioBERT, ClinicalBERT, GPT-4) emerging. Challenge: clinical notes context-dependent, abbreviations, negations.'
         objectives: [Clinical NLP]
       - type: choice
         difficulty: 5
         question:
-          pt: O All of Us Research Program (NIH 2018+) é…
-          en: All of Us Research Program (NIH 2018+) is…
+          pt: 'O All of Us Research Program (NIH 2018+) é…'
+          en: 'All of Us Research Program (NIH 2018+) is…'
         choices:
-          - Programa para enrolling 1M+ Americans diversos com EHR + WGS + biospecimens + surveys
-          - Apenas em US states
-          - Sem qualquer escala
-          - Apenas para pediatric
-        correctAnswer: Programa para enrolling 1M+ Americans diversos com EHR + WGS + biospecimens + surveys
+          - 'Programa para enrolling 1M+ Americans diversos com EHR + WGS + biospecimens + surveys'
+          - 'Apenas em US states'
+          - 'Sem qualquer escala'
+          - 'Apenas para pediatric'
+        correctAnswer: 'Programa para enrolling 1M+ Americans diversos com EHR + WGS + biospecimens + surveys'
         rationale:
-          pt: All of Us (NIH PMI Cohort, lançado mai/2018): >800k enrolled mid-2024. >50% participants são minorities historically underrepresented. WGS de >250k released 2024. Researcher Workbench (Google Cloud) para análise. Modelo: UK Biobank-like mas mais diverso. Mission: precision medicine for all.
-          en: All of Us (NIH PMI Cohort, launched May 2018): >800k enrolled mid-2024. >50% participants are historically underrepresented minorities. WGS of >250k released 2024. Researcher Workbench (Google Cloud) for analysis. Model: UK Biobank-like but more diverse. Mission: precision medicine for all.
+          pt: 'All of Us (NIH PMI Cohort, lançado mai/2018): >800k enrolled mid-2024. >50% participants são minorities historically underrepresented. WGS de >250k released 2024. Researcher Workbench (Google Cloud) para análise. Modelo: UK Biobank-like mas mais diverso. Mission: precision medicine for all.'
+          en: 'All of Us (NIH PMI Cohort, launched May 2018): >800k enrolled mid-2024. >50% participants are historically underrepresented minorities. WGS of >250k released 2024. Researcher Workbench (Google Cloud) for analysis. Model: UK Biobank-like but more diverse. Mission: precision medicine for all.'
         objectives: [All of Us]
   - title:
-      pt: Página 2 — Aplicações
-      en: Page 2 — Applications
+      pt: 'Página 2 — Aplicações'
+      en: 'Page 2 — Applications'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "phenotyping" via EHR algorithms é importante para…
-          en: "Phenotyping" via EHR algorithms is important for…
+          pt: 'O conceito "phenotyping" via EHR algorithms é importante para…'
+          en: '"Phenotyping" via EHR algorithms is important for…'
         choices:
-          - Identificar cohorts de pacientes com condition (e.g. T2D, MS) usando ICD codes + labs + meds
-          - Apenas em ensaios
-          - Sem qualquer aplicação
-          - Apenas para US
-        correctAnswer: Identificar cohorts de pacientes com condition (e.g. T2D, MS) usando ICD codes + labs + meds
+          - 'Identificar cohorts de pacientes com condition (e.g. T2D, MS) usando ICD codes + labs + meds'
+          - 'Apenas em ensaios'
+          - 'Sem qualquer aplicação'
+          - 'Apenas para US'
+        correctAnswer: 'Identificar cohorts de pacientes com condition (e.g. T2D, MS) usando ICD codes + labs + meds'
         rationale:
-          pt: eMERGE Network: Vanderbilt, Marshfield, Northwestern. Phenotype algorithms: ICD + labs + meds + free-text NLP. PheKB.org repository. Aplicações: GWAS, drug repurposing, RWE. PheCode (Denny 2010) groups ICD into ~1800 phenotypes. Crucial em RWE — better signal-to-noise via curated phenotypes.
-          en: eMERGE Network: Vanderbilt, Marshfield, Northwestern. Phenotype algorithms: ICD + labs + meds + free-text NLP. PheKB.org repository. Applications: GWAS, drug repurposing, RWE. PheCode (Denny 2010) groups ICD into ~1800 phenotypes. Crucial in RWE — better signal-to-noise via curated phenotypes.
+          pt: 'eMERGE Network: Vanderbilt, Marshfield, Northwestern. Phenotype algorithms: ICD + labs + meds + free-text NLP. PheKB.org repository. Aplicações: GWAS, drug repurposing, RWE. PheCode (Denny 2010) groups ICD into ~1800 phenotypes. Crucial em RWE — better signal-to-noise via curated phenotypes.'
+          en: 'eMERGE Network: Vanderbilt, Marshfield, Northwestern. Phenotype algorithms: ICD + labs + meds + free-text NLP. PheKB.org repository. Applications: GWAS, drug repurposing, RWE. PheCode (Denny 2010) groups ICD into ~1800 phenotypes. Crucial in RWE — better signal-to-noise via curated phenotypes.'
         objectives: [Phenotyping]
       - type: choice
         difficulty: 5
         question:
-          pt: Hospital safety reporting via EHR-derived events é crescente para…
-          en: Hospital safety reporting via EHR-derived events is growing for…
+          pt: 'Hospital safety reporting via EHR-derived events é crescente para…'
+          en: 'Hospital safety reporting via EHR-derived events is growing for…'
         choices:
-          - Detecção automática de adverse events (DVT, sepsis, falls) via trigger algorithms IHI Global Trigger Tool
-          - Apenas reporting manual
-          - Sem qualquer aplicação
-          - Apenas em US
-        correctAnswer: Detecção automática de adverse events (DVT, sepsis, falls) via trigger algorithms IHI Global Trigger Tool
+          - 'Detecção automática de adverse events (DVT, sepsis, falls) via trigger algorithms IHI Global Trigger Tool'
+          - 'Apenas reporting manual'
+          - 'Sem qualquer aplicação'
+          - 'Apenas em US'
+        correctAnswer: 'Detecção automática de adverse events (DVT, sepsis, falls) via trigger algorithms IHI Global Trigger Tool'
         rationale:
-          pt: Global Trigger Tool (IHI): identifica adverse events via clinical triggers (e.g. naloxone use → opioid AE). Auto-detection via EHR muito mais accurate que voluntary reporting (~10x mais events). Aplicações: hospital safety improvement, value-based care metrics. Schmaltz/Bates pioneers.
-          en: Global Trigger Tool (IHI): identifies adverse events via clinical triggers (e.g., naloxone use → opioid AE). Auto-detection via EHR far more accurate than voluntary reporting (~10x more events). Applications: hospital safety improvement, value-based care metrics. Schmaltz/Bates pioneers.
+          pt: 'Global Trigger Tool (IHI): identifica adverse events via clinical triggers (e.g. naloxone use → opioid AE). Auto-detection via EHR muito mais accurate que voluntary reporting (~10x mais events). Aplicações: hospital safety improvement, value-based care metrics. Schmaltz/Bates pioneers.'
+          en: 'Global Trigger Tool (IHI): identifies adverse events via clinical triggers (e.g., naloxone use → opioid AE). Auto-detection via EHR far more accurate than voluntary reporting (~10x more events). Applications: hospital safety improvement, value-based care metrics. Schmaltz/Bates pioneers.'
         objectives: [GTT]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "data altruism" em EU EHDS (2025+) é…
-          en: "Data altruism" in EU EHDS (2025+) is…
+          pt: 'O conceito "data altruism" em EU EHDS (2025+) é…'
+          en: '"Data altruism" in EU EHDS (2025+) is…'
         choices:
-          - Pacientes contribuem voluntariamente data para research em data spaces governed
-          - Apenas comercial
-          - Sem qualquer estrutura
-          - Apenas em US
-        correctAnswer: Pacientes contribuem voluntariamente data para research em data spaces governed
+          - 'Pacientes contribuem voluntariamente data para research em data spaces governed'
+          - 'Apenas comercial'
+          - 'Sem qualquer estrutura'
+          - 'Apenas em US'
+        correctAnswer: 'Pacientes contribuem voluntariamente data para research em data spaces governed'
         rationale:
-          pt: EU EHDS (European Health Data Space) Regulation 2025+: primary use (citizen access, cross-border) + secondary use (research, policy). Health Data Access Bodies. Data altruism via Data Governance Act framework. Crítico: balance privacy GDPR com research utility. Países adoptam progressivamente. Modelo único globalmente em ambition.
-          en: EU EHDS (European Health Data Space) Regulation 2025+: primary use (citizen access, cross-border) + secondary use (research, policy). Health Data Access Bodies. Data altruism via Data Governance Act framework. Critical: balance GDPR privacy with research utility. Countries adopt progressively. Globally unique model in ambition.
+          pt: 'EU EHDS (European Health Data Space) Regulation 2025+: primary use (citizen access, cross-border) + secondary use (research, policy). Health Data Access Bodies. Data altruism via Data Governance Act framework. Crítico: balance privacy GDPR com research utility. Países adoptam progressivamente. Modelo único globalmente em ambition.'
+          en: 'EU EHDS (European Health Data Space) Regulation 2025+: primary use (citizen access, cross-border) + secondary use (research, policy). Health Data Access Bodies. Data altruism via Data Governance Act framework. Critical: balance GDPR privacy with research utility. Countries adopt progressively. Globally unique model in ambition.'
         objectives: [EHDS]
       - type: choice
         difficulty: 5
         question:
-          pt: HL7 v2 vs v3 vs FHIR diferem em…
-          en: HL7 v2 vs v3 vs FHIR differ in that…
+          pt: 'HL7 v2 vs v3 vs FHIR diferem em…'
+          en: 'HL7 v2 vs v3 vs FHIR differ in that…'
         choices:
-          - v2 (1989) pipe-delimited messaging; v3 (XML overcomplicated, falhou); FHIR (2014, REST/JSON moderno)
-          - Idênticos
-          - Apenas v3 dominante
-          - Sem qualquer diferença
-        correctAnswer: v2 (1989) pipe-delimited messaging; v3 (XML overcomplicated, falhou); FHIR (2014, REST/JSON moderno)
+          - 'v2 (1989) pipe-delimited messaging; v3 (XML overcomplicated, falhou); FHIR (2014, REST/JSON moderno)'
+          - 'Idênticos'
+          - 'Apenas v3 dominante'
+          - 'Sem qualquer diferença'
+        correctAnswer: 'v2 (1989) pipe-delimited messaging; v3 (XML overcomplicated, falhou); FHIR (2014, REST/JSON moderno)'
         rationale:
-          pt: HL7 v2: pipe-delimited fields ainda dominante em EHR-EHR messaging (lab results, ADT). v3 RIM (Reference Information Model): ambitioso, complexo, falhou em ampla adoção. FHIR: simpler, REST API + JSON, web-native. CDA (Clinical Document Architecture) também v3-derived. FHIR substituiu v3, complementa v2 em produção.
-          en: HL7 v2: pipe-delimited fields still dominant in EHR-EHR messaging (lab results, ADT). v3 RIM (Reference Information Model): ambitious, complex, failed wide adoption. FHIR: simpler, REST API + JSON, web-native. CDA (Clinical Document Architecture) also v3-derived. FHIR replaced v3, complements v2 in production.
+          pt: 'HL7 v2: pipe-delimited fields ainda dominante em EHR-EHR messaging (lab results, ADT). v3 RIM (Reference Information Model): ambitioso, complexo, falhou em ampla adoção. FHIR: simpler, REST API + JSON, web-native. CDA (Clinical Document Architecture) também v3-derived. FHIR substituiu v3, complementa v2 em produção.'
+          en: 'HL7 v2: pipe-delimited fields still dominant in EHR-EHR messaging (lab results, ADT). v3 RIM (Reference Information Model): ambitious, complex, failed wide adoption. FHIR: simpler, REST API + JSON, web-native. CDA (Clinical Document Architecture) also v3-derived. FHIR replaced v3, complements v2 in production.'
         objectives: [HL7 evolution]
       - type: choice
         difficulty: 5
         question:
-          pt: SNOMED CT é importante para EHRs por…
-          en: SNOMED CT is important for EHRs because it…
+          pt: 'SNOMED CT é importante para EHRs por…'
+          en: 'SNOMED CT is important for EHRs because it…'
         choices:
-          - Vocabulário clínico abrangente (~350k concepts) com hierarchies para conceptos clinicais
-          - Apenas para diagnoses
-          - Sem qualquer estrutura
-          - Apenas em UK
-        correctAnswer: Vocabulário clínico abrangente (~350k concepts) com hierarchies para conceptos clinicais
+          - 'Vocabulário clínico abrangente (~350k concepts) com hierarchies para conceptos clinicais'
+          - 'Apenas para diagnoses'
+          - 'Sem qualquer estrutura'
+          - 'Apenas em UK'
+        correctAnswer: 'Vocabulário clínico abrangente (~350k concepts) com hierarchies para conceptos clinicais'
         rationale:
-          pt: SNOMED CT (Systematized Nomenclature of Medicine — Clinical Terms): IHTSDO/SNOMED International gerencia. ~350k concepts com hierarchies (acute MI ⊂ MI ⊂ ischemic heart disease). Granular além de ICD. NHS UK obriga; US use crescente. Mapeamentos: ICD-10/11, LOINC. Useful para CDS, queries. License paid em alguns países.
-          en: SNOMED CT (Systematized Nomenclature of Medicine — Clinical Terms): IHTSDO/SNOMED International manages. ~350k concepts with hierarchies (acute MI ⊂ MI ⊂ ischemic heart disease). Granular beyond ICD. UK NHS mandates; US use growing. Mappings: ICD-10/11, LOINC. Useful for CDS, queries. Paid license in some countries.
+          pt: 'SNOMED CT (Systematized Nomenclature of Medicine — Clinical Terms): IHTSDO/SNOMED International gerencia. ~350k concepts com hierarchies (acute MI ⊂ MI ⊂ ischemic heart disease). Granular além de ICD. NHS UK obriga; US use crescente. Mapeamentos: ICD-10/11, LOINC. Useful para CDS, queries. License paid em alguns países.'
+          en: 'SNOMED CT (Systematized Nomenclature of Medicine — Clinical Terms): IHTSDO/SNOMED International manages. ~350k concepts with hierarchies (acute MI ⊂ MI ⊂ ischemic heart disease). Granular beyond ICD. UK NHS mandates; US use growing. Mappings: ICD-10/11, LOINC. Useful for CDS, queries. Paid license in some countries.'
         objectives: [SNOMED CT]
       - type: choice
         difficulty: 5
         question:
-          pt: LOINC (Logical Observation Identifiers, Regenstrief) é padrão para…
-          en: LOINC (Logical Observation Identifiers, Regenstrief) is standard for…
+          pt: 'LOINC (Logical Observation Identifiers, Regenstrief) é padrão para…'
+          en: 'LOINC (Logical Observation Identifiers, Regenstrief) is standard for…'
         choices:
-          - Lab tests, observations identifications globally — universal codes
-          - Apenas medicações
-          - Sem qualquer estrutura
-          - Apenas em US
-        correctAnswer: Lab tests, observations identifications globally — universal codes
+          - 'Lab tests, observations identifications globally — universal codes'
+          - 'Apenas medicações'
+          - 'Sem qualquer estrutura'
+          - 'Apenas em US'
+        correctAnswer: 'Lab tests, observations identifications globally — universal codes'
         rationale:
-          pt: LOINC (1994, Regenstrief Indianapolis): codes universais para labs (e.g. 2160-0 = creatinine), measures, surveys (PROMIS). Free, multilingual. Imperative para interoperability — sem LOINC, "creatinine" pode ser diferente codes em diferentes labs. Complementa SNOMED CT (LOINC para "what observed", SNOMED para "what found").
-          en: LOINC (1994, Regenstrief Indianapolis): universal codes for labs (e.g., 2160-0 = creatinine), measures, surveys (PROMIS). Free, multilingual. Imperative for interoperability — without LOINC, "creatinine" can be different codes at different labs. Complements SNOMED CT (LOINC for "what observed", SNOMED for "what found").
+          pt: 'LOINC (1994, Regenstrief Indianapolis): codes universais para labs (e.g. 2160-0 = creatinine), measures, surveys (PROMIS). Free, multilingual. Imperative para interoperability — sem LOINC, "creatinine" pode ser diferente codes em diferentes labs. Complementa SNOMED CT (LOINC para "what observed", SNOMED para "what found").'
+          en: 'LOINC (1994, Regenstrief Indianapolis): universal codes for labs (e.g., 2160-0 = creatinine), measures, surveys (PROMIS). Free, multilingual. Imperative for interoperability — without LOINC, "creatinine" can be different codes at different labs. Complements SNOMED CT (LOINC for "what observed", SNOMED for "what found").'
         objectives: [LOINC]
       - type: choice
         difficulty: 5
         question:
-          pt: ICD-11 (WHO 2022 implementation) substitui ICD-10 com…
-          en: ICD-11 (WHO 2022 implementation) replaces ICD-10 with…
+          pt: 'ICD-11 (WHO 2022 implementation) substitui ICD-10 com…'
+          en: 'ICD-11 (WHO 2022 implementation) replaces ICD-10 with…'
         choices:
-          - Estrutura digital-first, ~55k entities, expansion mental health, codificações genéticas
-          - Idêntica
-          - Sem qualquer mudança
-          - Apenas para US
-        correctAnswer: Estrutura digital-first, ~55k entities, expansion mental health, codificações genéticas
+          - 'Estrutura digital-first, ~55k entities, expansion mental health, codificações genéticas'
+          - 'Idêntica'
+          - 'Sem qualquer mudança'
+          - 'Apenas para US'
+        correctAnswer: 'Estrutura digital-first, ~55k entities, expansion mental health, codificações genéticas'
         rationale:
-          pt: ICD-11 (WHO 2018 endorse, jan/2022 effective): primeiro digital-first ICD. Browser, API. Categorias novas: gaming disorder, trans em saúde sexual (não doença mental), traditional medicine cap. ~55k entities (vs ~14k ICD-10). Adoption gradual: US Medicare ainda ICD-10-CM 2024+. Outros países (Tailândia, Brasil) implementing.
-          en: ICD-11 (WHO 2018 endorsed, Jan 2022 effective): first digital-first ICD. Browser, API. New categories: gaming disorder, trans in sexual health (not mental disorder), traditional medicine chapter. ~55k entities (vs ~14k ICD-10). Gradual adoption: US Medicare still ICD-10-CM in 2024+. Other countries (Thailand, Brazil) implementing.
+          pt: 'ICD-11 (WHO 2018 endorse, jan/2022 effective): primeiro digital-first ICD. Browser, API. Categorias novas: gaming disorder, trans em saúde sexual (não doença mental), traditional medicine cap. ~55k entities (vs ~14k ICD-10). Adoption gradual: US Medicare ainda ICD-10-CM 2024+. Outros países (Tailândia, Brasil) implementing.'
+          en: 'ICD-11 (WHO 2018 endorsed, Jan 2022 effective): first digital-first ICD. Browser, API. New categories: gaming disorder, trans in sexual health (not mental disorder), traditional medicine chapter. ~55k entities (vs ~14k ICD-10). Gradual adoption: US Medicare still ICD-10-CM in 2024+. Other countries (Thailand, Brazil) implementing.'
         objectives: [ICD-11]
       - type: choice
         difficulty: 5
         question:
-          pt: Em EHR generative AI, ambient documentation (DAX Microsoft, Abridge) reduz…
-          en: In EHR generative AI, ambient documentation (DAX Microsoft, Abridge) reduces…
+          pt: 'Em EHR generative AI, ambient documentation (DAX Microsoft, Abridge) reduz…'
+          en: 'In EHR generative AI, ambient documentation (DAX Microsoft, Abridge) reduces…'
         choices:
-          - Documentation time ~30 min/visit → ~0; LLM gera nota + ICD codes em segundos
-          - Sempre aumenta
-          - Sem qualquer impacto
-          - Apenas em US
-        correctAnswer: Documentation time ~30 min/visit → ~0; LLM gera nota + ICD codes em segundos
+          - 'Documentation time ~30 min/visit → ~0; LLM gera nota + ICD codes em segundos'
+          - 'Sempre aumenta'
+          - 'Sem qualquer impacto'
+          - 'Apenas em US'
+        correctAnswer: 'Documentation time ~30 min/visit → ~0; LLM gera nota + ICD codes em segundos'
         rationale:
-          pt: DAX Copilot (Microsoft 2023, Nuance integration), Abridge ($150M Series C 2024), Suki, Augmedix: ambient AI scribes. Streamline workflow: physician focuses paciente, AI listens. Generates SOAP-style note. Stanford Medicine, Mass General Brigham, Kaiser Permanente adoção massiva 2024+. Liability shift, accuracy verification permanece.
-          en: DAX Copilot (Microsoft 2023, Nuance integration), Abridge ($150M Series C 2024), Suki, Augmedix: ambient AI scribes. Streamline workflow: physician focuses on patient, AI listens. Generates SOAP-style note. Stanford Medicine, Mass General Brigham, Kaiser Permanente massive adoption 2024+. Liability shift, accuracy verification remain.
+          pt: 'DAX Copilot (Microsoft 2023, Nuance integration), Abridge ($150M Series C 2024), Suki, Augmedix: ambient AI scribes. Streamline workflow: physician focuses paciente, AI listens. Generates SOAP-style note. Stanford Medicine, Mass General Brigham, Kaiser Permanente adoção massiva 2024+. Liability shift, accuracy verification permanece.'
+          en: 'DAX Copilot (Microsoft 2023, Nuance integration), Abridge ($150M Series C 2024), Suki, Augmedix: ambient AI scribes. Streamline workflow: physician focuses on patient, AI listens. Generates SOAP-style note. Stanford Medicine, Mass General Brigham, Kaiser Permanente massive adoption 2024+. Liability shift, accuracy verification remain.'
         objectives: [Ambient AI]
       - type: choice
         difficulty: 5
         question:
-          pt: Em US Medicare, MIPS (Merit-based Incentive Payment System) inclui categorias como…
-          en: In US Medicare, MIPS (Merit-based Incentive Payment System) includes categories like…
+          pt: 'Em US Medicare, MIPS (Merit-based Incentive Payment System) inclui categorias como…'
+          en: 'In US Medicare, MIPS (Merit-based Incentive Payment System) includes categories like…'
         choices:
-          - Quality, Cost, Promoting Interoperability (formerly EHR/MU), Improvement Activities
-          - Apenas eficácia
-          - Sem qualquer estrutura
-          - Apenas hospitals
-        correctAnswer: Quality, Cost, Promoting Interoperability (formerly EHR/MU), Improvement Activities
+          - 'Quality, Cost, Promoting Interoperability (formerly EHR/MU), Improvement Activities'
+          - 'Apenas eficácia'
+          - 'Sem qualquer estrutura'
+          - 'Apenas hospitals'
+        correctAnswer: 'Quality, Cost, Promoting Interoperability (formerly EHR/MU), Improvement Activities'
         rationale:
-          pt: MIPS (MACRA 2015 substituted Meaningful Use): physicians payment adjusted ±9% por performance. Promoting Interoperability mantém EHR-related criteria. Crítica: complexo, burdensome, may not improve outcomes. APMs (Alternative Payment Models) — ACOs, bundled payments — alternative track. Value-based care evolution.
-          en: MIPS (MACRA 2015 replaced Meaningful Use): physician payment adjusted ±9% by performance. Promoting Interoperability maintains EHR-related criteria. Critique: complex, burdensome, may not improve outcomes. APMs (Alternative Payment Models) — ACOs, bundled payments — alternative track. Value-based care evolution.
+          pt: 'MIPS (MACRA 2015 substituted Meaningful Use): physicians payment adjusted ±9% por performance. Promoting Interoperability mantém EHR-related criteria. Crítica: complexo, burdensome, may not improve outcomes. APMs (Alternative Payment Models) — ACOs, bundled payments — alternative track. Value-based care evolution.'
+          en: 'MIPS (MACRA 2015 replaced Meaningful Use): physician payment adjusted ±9% by performance. Promoting Interoperability maintains EHR-related criteria. Critique: complex, burdensome, may not improve outcomes. APMs (Alternative Payment Models) — ACOs, bundled payments — alternative track. Value-based care evolution.'
         objectives: [MIPS]
       - type: choice
         difficulty: 5
         question:
-          pt: O futuro EHR pós-Cures Act + AI aponta para…
-          en: Post-Cures Act + AI EHR future points to…
+          pt: 'O futuro EHR pós-Cures Act + AI aponta para…'
+          en: 'Post-Cures Act + AI EHR future points to…'
         choices:
-          - Patient-mediated data, AI-assisted documentation, FHIR-based ecosystem, ambient computing
-          - Apenas legacy software
-          - Sem qualquer evolução
-          - Apenas em US
-        correctAnswer: Patient-mediated data, AI-assisted documentation, FHIR-based ecosystem, ambient computing
+          - 'Patient-mediated data, AI-assisted documentation, FHIR-based ecosystem, ambient computing'
+          - 'Apenas legacy software'
+          - 'Sem qualquer evolução'
+          - 'Apenas em US'
+        correctAnswer: 'Patient-mediated data, AI-assisted documentation, FHIR-based ecosystem, ambient computing'
         rationale:
-          pt: Future EHR: less admin burden (ambient + LLM), patient as data owner (Cures Act), AI clinical decision augmentation (ChatGPT-equivalent), FHIR API ecosystem (apps explode), continuous learning systems. Challenges: bias, hallucination, integration, equity, billing. Tema dominante: clinical informatics 2025+ era.
-          en: Future EHR: less admin burden (ambient + LLM), patient as data owner (Cures Act), AI clinical decision augmentation (ChatGPT-equivalent), FHIR API ecosystem (apps explode), continuous learning systems. Challenges: bias, hallucination, integration, equity, billing. Dominant theme: clinical informatics 2025+ era.
+          pt: 'Future EHR: less admin burden (ambient + LLM), patient as data owner (Cures Act), AI clinical decision augmentation (ChatGPT-equivalent), FHIR API ecosystem (apps explode), continuous learning systems. Challenges: bias, hallucination, integration, equity, billing. Tema dominante: clinical informatics 2025+ era.'
+          en: 'Future EHR: less admin burden (ambient + LLM), patient as data owner (Cures Act), AI clinical decision augmentation (ChatGPT-equivalent), FHIR API ecosystem (apps explode), continuous learning systems. Challenges: bias, hallucination, integration, equity, billing. Dominant theme: clinical informatics 2025+ era.'
         objectives: [Future EHR]
 target: 20

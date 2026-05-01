@@ -1,13 +1,13 @@
 title:
-  pt: Metodologia de Ensaios Clínicos
-  en: Clinical Trial Methodology
+  pt: 'Metodologia de Ensaios Clínicos'
+  en: 'Clinical Trial Methodology'
 level: Q
 subject: biology
 objectives:
-  - Compreender fases I-IV e desenhos clássicos
-  - Reconhecer adaptive trials e biomarker-driven
-  - Identificar endpoint primário e composto
-  - Avaliar GCP, registro, transparência
+  - 'Compreender fases I-IV e desenhos clássicos'
+  - 'Reconhecer adaptive trials e biomarker-driven'
+  - 'Identificar endpoint primário e composto'
+  - 'Avaliar GCP, registro, transparência'
 difficulty: 5
 authorNotes: |
   Clinical trial methodology. Phases I-IV. Hill criteria 1965. CONSORT 2010. ICH-GCP. Adaptive
@@ -17,327 +17,327 @@ authorNotes: |
   Pragmatic trials Schwartz/Lellouch. Real-world evidence FDA 21st Century Cures.
 example:
   question:
-    pt: As fases clínicas tradicionais I-IV servem para…
-    en: Traditional clinical trial phases I-IV serve for…
+    pt: 'As fases clínicas tradicionais I-IV servem para…'
+    en: 'Traditional clinical trial phases I-IV serve for…'
   choices:
-    - I (safety/dose), II (eficácia preliminar), III (eficácia comparativa), IV (vigilância pós-marketing)
-    - Apenas I e II
-    - Apenas eficácia sem qualquer segurança
-    - Sem qualquer estrutura
-  correctAnswer: I (safety/dose), II (eficácia preliminar), III (eficácia comparativa), IV (vigilância pós-marketing)
+    - 'I (safety/dose), II (eficácia preliminar), III (eficácia comparativa), IV (vigilância pós-marketing)'
+    - 'Apenas I e II'
+    - 'Apenas eficácia sem qualquer segurança'
+    - 'Sem qualquer estrutura'
+  correctAnswer: 'I (safety/dose), II (eficácia preliminar), III (eficácia comparativa), IV (vigilância pós-marketing)'
   rationale:
-    pt: Fase I: ~20-100 voluntários saudáveis (ou pacientes em oncologia), MTD/PK. Fase II: ~100-300 pacientes, prova de eficácia, dose. Fase III: ~1000-10000, RCT pivotal vs SOC, registro. Fase IV: pós-marketing, RWE, raras AEs. Modelos modernos (Project Optimus, master protocols) flexibilizam.
-    en: Phase I: ~20-100 healthy volunteers (or oncology patients), MTD/PK. Phase II: ~100-300 patients, efficacy proof, dose. Phase III: ~1000-10000, pivotal RCT vs SOC, registration. Phase IV: post-marketing, RWE, rare AEs. Modern models (Project Optimus, master protocols) make these more flexible.
+    pt: 'Fase I: ~20-100 voluntários saudáveis (ou pacientes em oncologia), MTD/PK. Fase II: ~100-300 pacientes, prova de eficácia, dose. Fase III: ~1000-10000, RCT pivotal vs SOC, registro. Fase IV: pós-marketing, RWE, raras AEs. Modelos modernos (Project Optimus, master protocols) flexibilizam.'
+    en: 'Phase I: ~20-100 healthy volunteers (or oncology patients), MTD/PK. Phase II: ~100-300 patients, efficacy proof, dose. Phase III: ~1000-10000, pivotal RCT vs SOC, registration. Phase IV: post-marketing, RWE, rare AEs. Modern models (Project Optimus, master protocols) make these more flexible.'
 passCriteria:
   minAccuracyPercent: 85
   maxAvgSecondsPerExercise: 14
 pages:
   - title:
-      pt: Página 1 — Desenhos e fases
-      en: Page 1 — Designs and phases
+      pt: 'Página 1 — Desenhos e fases'
+      en: 'Page 1 — Designs and phases'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: O Randomized Controlled Trial (RCT) tornou-se gold standard porque…
-          en: The Randomized Controlled Trial (RCT) became gold standard because it…
+          pt: 'O Randomized Controlled Trial (RCT) tornou-se gold standard porque…'
+          en: 'The Randomized Controlled Trial (RCT) became gold standard because it…'
         choices:
-          - Aleatorização balança confounders conhecidos e desconhecidos, controle reduz viés
-          - Apenas observação descritiva
-          - Sem qualquer controle
-          - Apenas em pediatria
-        correctAnswer: Aleatorização balança confounders conhecidos e desconhecidos, controle reduz viés
+          - 'Aleatorização balança confounders conhecidos e desconhecidos, controle reduz viés'
+          - 'Apenas observação descritiva'
+          - 'Sem qualquer controle'
+          - 'Apenas em pediatria'
+        correctAnswer: 'Aleatorização balança confounders conhecidos e desconhecidos, controle reduz viés'
         rationale:
-          pt: Bradford Hill MRC streptomycin TB 1948 (primeiro RCT moderno). Aleatorização → grupos comparáveis em expectation. Blinding (single, double, triple) reduz expectation bias. CONSORT 2010 (Schulz/Altman) padroniza reporting. ITT (intention-to-treat) preserva benefícios da randomização.
-          en: Bradford Hill MRC streptomycin TB 1948 (first modern RCT). Randomization → groups comparable in expectation. Blinding (single, double, triple) reduces expectation bias. CONSORT 2010 (Schulz/Altman) standardizes reporting. ITT (intention-to-treat) preserves randomization benefits.
+          pt: 'Bradford Hill MRC streptomycin TB 1948 (primeiro RCT moderno). Aleatorização → grupos comparáveis em expectation. Blinding (single, double, triple) reduz expectation bias. CONSORT 2010 (Schulz/Altman) padroniza reporting. ITT (intention-to-treat) preserva benefícios da randomização.'
+          en: 'Bradford Hill MRC streptomycin TB 1948 (first modern RCT). Randomization → groups comparable in expectation. Blinding (single, double, triple) reduces expectation bias. CONSORT 2010 (Schulz/Altman) standardizes reporting. ITT (intention-to-treat) preserves randomization benefits.'
         objectives: [RCT]
       - type: choice
         difficulty: 5
         question:
-          pt: Adaptive designs (Bauer/Köhne, Berry) permitem…
-          en: Adaptive designs (Bauer/Köhne, Berry) allow…
+          pt: 'Adaptive designs (Bauer/Köhne, Berry) permitem…'
+          en: 'Adaptive designs (Bauer/Köhne, Berry) allow…'
         choices:
-          - Modificações pré-especificadas baseadas em interim analysis (drop arm, sample size, dose)
-          - Apenas mudanças ad-hoc
-          - Sem qualquer flexibilidade
-          - Apenas em pediatria
-        correctAnswer: Modificações pré-especificadas baseadas em interim analysis (drop arm, sample size, dose)
+          - 'Modificações pré-especificadas baseadas em interim analysis (drop arm, sample size, dose)'
+          - 'Apenas mudanças ad-hoc'
+          - 'Sem qualquer flexibilidade'
+          - 'Apenas em pediatria'
+        correctAnswer: 'Modificações pré-especificadas baseadas em interim analysis (drop arm, sample size, dose)'
         rationale:
-          pt: Adaptive: pre-specified rules para modificar trial baseado em dados acumulados. Tipos: group sequential (O'Brien-Fleming, Pocock), sample-size re-estimation, response-adaptive randomization, drop-the-loser. Bayesian framework (Berry) natural. FDA aceita guidance 2019. Reduz N, tempo. RAR controvertido (ethical balance).
-          en: Adaptive: pre-specified rules for modifying trial based on accumulating data. Types: group sequential (O'Brien-Fleming, Pocock), sample-size re-estimation, response-adaptive randomization, drop-the-loser. Bayesian framework (Berry) natural. FDA accepts 2019 guidance. Reduces N, time. RAR controversial (ethical balance).
+          pt: 'Adaptive: pre-specified rules para modificar trial baseado em dados acumulados. Tipos: group sequential (O''Brien-Fleming, Pocock), sample-size re-estimation, response-adaptive randomization, drop-the-loser. Bayesian framework (Berry) natural. FDA aceita guidance 2019. Reduz N, tempo. RAR controvertido (ethical balance).'
+          en: 'Adaptive: pre-specified rules for modifying trial based on accumulating data. Types: group sequential (O''Brien-Fleming, Pocock), sample-size re-estimation, response-adaptive randomization, drop-the-loser. Bayesian framework (Berry) natural. FDA accepts 2019 guidance. Reduces N, time. RAR controversial (ethical balance).'
         objectives: [Adaptive]
       - type: choice
         difficulty: 5
         question:
-          pt: "Master protocols" (NEJM 2017 Woodcock/LaVange) incluem…
-          en: "Master protocols" (NEJM 2017 Woodcock/LaVange) include…
+          pt: '"Master protocols" (NEJM 2017 Woodcock/LaVange) incluem…'
+          en: '"Master protocols" (NEJM 2017 Woodcock/LaVange) include…'
         choices:
-          - Basket (1 droga, múltiplos cânceres), umbrella (1 câncer, múltiplas drogas), platform (perpétuo)
-          - Apenas RCT padrão
-          - Sem qualquer inovação
-          - Apenas para pediatria
-        correctAnswer: Basket (1 droga, múltiplos cânceres), umbrella (1 câncer, múltiplas drogas), platform (perpétuo)
+          - 'Basket (1 droga, múltiplos cânceres), umbrella (1 câncer, múltiplas drogas), platform (perpétuo)'
+          - 'Apenas RCT padrão'
+          - 'Sem qualquer inovação'
+          - 'Apenas para pediatria'
+        correctAnswer: 'Basket (1 droga, múltiplos cânceres), umbrella (1 câncer, múltiplas drogas), platform (perpétuo)'
         rationale:
-          pt: Basket: e.g. larotrectinib (Vitrakvi) em qualquer NTRK fusion (Drilon 2018 NEJM) — primeiro tumor-agnostic FDA. Umbrella: BATTLE NSCLC, Lung-MAP. Platform: I-SPY breast (3-7+ arms perpétuo, Bayesian), RECOVERY COVID-19, PRINCIPLE primary care. Eficiência radical, controle compartilhado.
-          en: Basket: e.g., larotrectinib (Vitrakvi) for any NTRK fusion (Drilon 2018 NEJM) — first tumor-agnostic FDA. Umbrella: BATTLE NSCLC, Lung-MAP. Platform: I-SPY breast (3-7+ arms perpetual, Bayesian), RECOVERY COVID-19, PRINCIPLE primary care. Radical efficiency, shared control.
+          pt: 'Basket: e.g. larotrectinib (Vitrakvi) em qualquer NTRK fusion (Drilon 2018 NEJM) — primeiro tumor-agnostic FDA. Umbrella: BATTLE NSCLC, Lung-MAP. Platform: I-SPY breast (3-7+ arms perpétuo, Bayesian), RECOVERY COVID-19, PRINCIPLE primary care. Eficiência radical, controle compartilhado.'
+          en: 'Basket: e.g., larotrectinib (Vitrakvi) for any NTRK fusion (Drilon 2018 NEJM) — first tumor-agnostic FDA. Umbrella: BATTLE NSCLC, Lung-MAP. Platform: I-SPY breast (3-7+ arms perpetual, Bayesian), RECOVERY COVID-19, PRINCIPLE primary care. Radical efficiency, shared control.'
         objectives: [Master protocols]
       - type: choice
         difficulty: 5
         question:
-          pt: O ensaio RECOVERY (UK, 2020+) tornou-se modelo por…
-          en: The RECOVERY trial (UK, 2020+) became a model by…
+          pt: 'O ensaio RECOVERY (UK, 2020+) tornou-se modelo por…'
+          en: 'The RECOVERY trial (UK, 2020+) became a model by…'
         choices:
-          - Plataforma pragmática NHS hospitalar testando ~10 drogas COVID-19 com ITT simples, mostrou dexametasona reduz mortalidade
-          - Apenas single-arm
-          - Sem qualquer impacto clínico
-          - Apenas em laboratório
-        correctAnswer: Plataforma pragmática NHS hospitalar testando ~10 drogas COVID-19 com ITT simples, mostrou dexametasona reduz mortalidade
+          - 'Plataforma pragmática NHS hospitalar testando ~10 drogas COVID-19 com ITT simples, mostrou dexametasona reduz mortalidade'
+          - 'Apenas single-arm'
+          - 'Sem qualquer impacto clínico'
+          - 'Apenas em laboratório'
+        correctAnswer: 'Plataforma pragmática NHS hospitalar testando ~10 drogas COVID-19 com ITT simples, mostrou dexametasona reduz mortalidade'
         rationale:
-          pt: RECOVERY (Peter Horby, Martin Landray Oxford): UK-wide, recruitment via NHS staff, eCRF mínimo, randomização computer-based. Dexametasona em ventilados reduz mortalidade ~30% (Horby 2021 NEJM). Mais: tocilizumab, baricitinib, hydroxychloroquine (rejeitada). Modelo "ultra-pragmático" influencia design pós-pandemia.
-          en: RECOVERY (Peter Horby, Martin Landray Oxford): UK-wide, recruitment via NHS staff, minimal eCRF, computer-based randomization. Dexamethasone in ventilated patients reduces mortality ~30% (Horby 2021 NEJM). Plus: tocilizumab, baricitinib, hydroxychloroquine (rejected). "Ultra-pragmatic" model influences post-pandemic design.
+          pt: 'RECOVERY (Peter Horby, Martin Landray Oxford): UK-wide, recruitment via NHS staff, eCRF mínimo, randomização computer-based. Dexametasona em ventilados reduz mortalidade ~30% (Horby 2021 NEJM). Mais: tocilizumab, baricitinib, hydroxychloroquine (rejeitada). Modelo "ultra-pragmático" influencia design pós-pandemia.'
+          en: 'RECOVERY (Peter Horby, Martin Landray Oxford): UK-wide, recruitment via NHS staff, minimal eCRF, computer-based randomization. Dexamethasone in ventilated patients reduces mortality ~30% (Horby 2021 NEJM). Plus: tocilizumab, baricitinib, hydroxychloroquine (rejected). "Ultra-pragmatic" model influences post-pandemic design.'
         objectives: [RECOVERY]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "ITT (Intention-To-Treat)" em análise de RCT é importante porque…
-          en: "ITT (Intention-To-Treat)" in RCT analysis is important because it…
+          pt: 'O conceito "ITT (Intention-To-Treat)" em análise de RCT é importante porque…'
+          en: '"ITT (Intention-To-Treat)" in RCT analysis is important because it…'
         choices:
-          - Preserva randomização incluindo todos pacientes alocados, mesmo que não tomem droga (preserve type I error)
-          - Inclui apenas pacientes que completaram protocolo
-          - Sem qualquer aplicação prática
-          - Apenas em ensaios pequenos
-        correctAnswer: Preserva randomização incluindo todos pacientes alocados, mesmo que não tomem droga (preserve type I error)
+          - 'Preserva randomização incluindo todos pacientes alocados, mesmo que não tomem droga (preserve type I error)'
+          - 'Inclui apenas pacientes que completaram protocolo'
+          - 'Sem qualquer aplicação prática'
+          - 'Apenas em ensaios pequenos'
+        correctAnswer: 'Preserva randomização incluindo todos pacientes alocados, mesmo que não tomem droga (preserve type I error)'
         rationale:
-          pt: ITT mantém grupos comparáveis. PP (per-protocol): só completers — viola randomization, otimista. mITT (modified) excludes apenas baseline-violations. CONSORT requer ITT primária. Evita "treatment crossover" bias. Em oncologia, sensibilidade analyses (PP, as-treated) suportam.
-          en: ITT preserves comparable groups. PP (per-protocol): only completers — violates randomization, optimistic. mITT (modified) excludes only baseline violations. CONSORT requires primary ITT. Avoids "treatment crossover" bias. In oncology, sensitivity analyses (PP, as-treated) support.
+          pt: 'ITT mantém grupos comparáveis. PP (per-protocol): só completers — viola randomization, otimista. mITT (modified) excludes apenas baseline-violations. CONSORT requer ITT primária. Evita "treatment crossover" bias. Em oncologia, sensibilidade analyses (PP, as-treated) suportam.'
+          en: 'ITT preserves comparable groups. PP (per-protocol): only completers — violates randomization, optimistic. mITT (modified) excludes only baseline violations. CONSORT requires primary ITT. Avoids "treatment crossover" bias. In oncology, sensitivity analyses (PP, as-treated) support.'
         objectives: [ITT]
       - type: choice
         difficulty: 5
         question:
-          pt: Endpoints primários em oncologia incluem…
-          en: Primary oncology endpoints include…
+          pt: 'Endpoints primários em oncologia incluem…'
+          en: 'Primary oncology endpoints include…'
         choices:
-          - OS (Overall Survival), PFS (Progression-Free Survival), ORR (Objective Response Rate)
-          - Apenas qualidade de vida
-          - Apenas mortalidade infantil
-          - Sem qualquer endpoint
-        correctAnswer: OS (Overall Survival), PFS (Progression-Free Survival), ORR (Objective Response Rate)
+          - 'OS (Overall Survival), PFS (Progression-Free Survival), ORR (Objective Response Rate)'
+          - 'Apenas qualidade de vida'
+          - 'Apenas mortalidade infantil'
+          - 'Sem qualquer endpoint'
+        correctAnswer: 'OS (Overall Survival), PFS (Progression-Free Survival), ORR (Objective Response Rate)'
         rationale:
-          pt: OS: gold standard mas demora. PFS surrogate (RECIST criteria). ORR (CR + PR). DOR (Duration of Response). DCR (Disease Control Rate). Surrogate validation: e.g. PFS ↔ OS varia por câncer (forte mama HER2+, fraco RCC). FDA accelerated approval frequentemente baseia ORR/PFS, requer Phase 4 OS confirm.
-          en: OS: gold standard but slow. PFS surrogate (RECIST criteria). ORR (CR + PR). DOR (Duration of Response). DCR (Disease Control Rate). Surrogate validation: e.g., PFS ↔ OS varies by cancer (strong HER2+ breast, weak RCC). FDA accelerated approval often based on ORR/PFS, requires Phase 4 OS confirmation.
+          pt: 'OS: gold standard mas demora. PFS surrogate (RECIST criteria). ORR (CR + PR). DOR (Duration of Response). DCR (Disease Control Rate). Surrogate validation: e.g. PFS ↔ OS varia por câncer (forte mama HER2+, fraco RCC). FDA accelerated approval frequentemente baseia ORR/PFS, requer Phase 4 OS confirm.'
+          en: 'OS: gold standard but slow. PFS surrogate (RECIST criteria). ORR (CR + PR). DOR (Duration of Response). DCR (Disease Control Rate). Surrogate validation: e.g., PFS ↔ OS varies by cancer (strong HER2+ breast, weak RCC). FDA accelerated approval often based on ORR/PFS, requires Phase 4 OS confirmation.'
         objectives: [Oncology endpoints]
       - type: choice
         difficulty: 5
         question:
-          pt: Composite endpoints (e.g. MACE) são desafio porque…
-          en: Composite endpoints (e.g., MACE) are challenging because…
+          pt: 'Composite endpoints (e.g. MACE) são desafio porque…'
+          en: 'Composite endpoints (e.g., MACE) are challenging because…'
         choices:
-          - Eventos componentes podem ter pesos diferentes ou direções opostas, hierárquico análise needed
-          - Sempre simples
-          - Sem qualquer dificuldade
-          - Apenas em pediatria
-        correctAnswer: Eventos componentes podem ter pesos diferentes ou direções opostas, hierárquico análise needed
+          - 'Eventos componentes podem ter pesos diferentes ou direções opostas, hierárquico análise needed'
+          - 'Sempre simples'
+          - 'Sem qualquer dificuldade'
+          - 'Apenas em pediatria'
+        correctAnswer: 'Eventos componentes podem ter pesos diferentes ou direções opostas, hierárquico análise needed'
         rationale:
-          pt: MACE (Major Adverse Cardiovascular Event): morte CV + AMI + AVC + revascularização. Componentes muito diferentes em severidade. Win ratio (Pocock 2012) hierárquico: morte > AMI > AVC. Permite componentes raros + comuns. Aceito por FDA, ESC trial (DAPA-HF, EMPEROR). Substitui ratio simples.
-          en: MACE (Major Adverse Cardiovascular Event): CV death + MI + stroke + revascularization. Components very different in severity. Win ratio (Pocock 2012) hierarchical: death > MI > stroke. Allows rare + common components. FDA, ESC accepted (DAPA-HF, EMPEROR trials). Replaces simple ratio.
+          pt: 'MACE (Major Adverse Cardiovascular Event): morte CV + AMI + AVC + revascularização. Componentes muito diferentes em severidade. Win ratio (Pocock 2012) hierárquico: morte > AMI > AVC. Permite componentes raros + comuns. Aceito por FDA, ESC trial (DAPA-HF, EMPEROR). Substitui ratio simples.'
+          en: 'MACE (Major Adverse Cardiovascular Event): CV death + MI + stroke + revascularization. Components very different in severity. Win ratio (Pocock 2012) hierarchical: death > MI > stroke. Allows rare + common components. FDA, ESC accepted (DAPA-HF, EMPEROR trials). Replaces simple ratio.'
         objectives: [Composite endpoints]
       - type: choice
         difficulty: 5
         question:
-          pt: O ICH-GCP (Good Clinical Practice) é importante por…
-          en: ICH-GCP (Good Clinical Practice) is important for…
+          pt: 'O ICH-GCP (Good Clinical Practice) é importante por…'
+          en: 'ICH-GCP (Good Clinical Practice) is important for…'
         choices:
-          - Padrão internacional para conduzir ensaios clínicos: design, reporting, monitoramento, ética
-          - Apenas em US
-          - Apenas para drogas oncológicas
-          - Sem qualquer padrão
-        correctAnswer: Padrão internacional para conduzir ensaios clínicos: design, reporting, monitoramento, ética
+          - 'Padrão internacional para conduzir ensaios clínicos: design, reporting, monitoramento, ética'
+          - 'Apenas em US'
+          - 'Apenas para drogas oncológicas'
+          - 'Sem qualquer padrão'
+        correctAnswer: 'Padrão internacional para conduzir ensaios clínicos: design, reporting, monitoramento, ética'
         rationale:
-          pt: ICH-GCP E6(R2) 2016, R3 2024+: harmonização entre FDA/EMA/PMDA Japan. Componentes: protocol, IRB/ethics committee, informed consent, monitoring, source data verification, AE reporting. ICH también desenvolve E8 (general considerations), E9 (statistics), E10 (controls), E11 (pediatric). Compliance é mandatório para registro internacional.
-          en: ICH-GCP E6(R2) 2016, R3 2024+: harmonization between FDA/EMA/PMDA Japan. Components: protocol, IRB/ethics committee, informed consent, monitoring, source data verification, AE reporting. ICH also develops E8 (general considerations), E9 (statistics), E10 (controls), E11 (pediatric). Compliance mandatory for international registration.
+          pt: 'ICH-GCP E6(R2) 2016, R3 2024+: harmonização entre FDA/EMA/PMDA Japan. Componentes: protocol, IRB/ethics committee, informed consent, monitoring, source data verification, AE reporting. ICH también desenvolve E8 (general considerations), E9 (statistics), E10 (controls), E11 (pediatric). Compliance é mandatório para registro internacional.'
+          en: 'ICH-GCP E6(R2) 2016, R3 2024+: harmonization between FDA/EMA/PMDA Japan. Components: protocol, IRB/ethics committee, informed consent, monitoring, source data verification, AE reporting. ICH also develops E8 (general considerations), E9 (statistics), E10 (controls), E11 (pediatric). Compliance mandatory for international registration.'
         objectives: [ICH-GCP]
       - type: choice
         difficulty: 5
         question:
-          pt: A Helsinki Declaration (WMA 1964/2013) é base ética porque…
-          en: Helsinki Declaration (WMA 1964/2013) is ethical foundation because it…
+          pt: 'A Helsinki Declaration (WMA 1964/2013) é base ética porque…'
+          en: 'Helsinki Declaration (WMA 1964/2013) is ethical foundation because it…'
         choices:
-          - Princípios para pesquisa em humanos: informed consent, IRB, vulneráveis, post-trial access
-          - Apenas para US
-          - Apenas histórica sem aplicação atual
-          - Sem qualquer princípio
-        correctAnswer: Princípios para pesquisa em humanos: informed consent, IRB, vulneráveis, post-trial access
+          - 'Princípios para pesquisa em humanos: informed consent, IRB, vulneráveis, post-trial access'
+          - 'Apenas para US'
+          - 'Apenas histórica sem aplicação atual'
+          - 'Sem qualquer princípio'
+        correctAnswer: 'Princípios para pesquisa em humanos: informed consent, IRB, vulneráveis, post-trial access'
         rationale:
-          pt: Helsinki: WMA (World Medical Association). Sucessor de Nuremberg Code 1947 (post-Holocaust). Atualizações: 1975 (placebo controvérsia), 2000 (post-trial access), 2013 (vulneráveis, transparência), 2024 (digital, ML). Aceito globalmente. Influência: 21 CFR 50, FDA. Relacionado: Belmont Report 1979 (US), CIOMS guidelines.
-          en: Helsinki: WMA (World Medical Association). Successor of 1947 Nuremberg Code (post-Holocaust). Updates: 1975 (placebo controversy), 2000 (post-trial access), 2013 (vulnerable, transparency), 2024 (digital, ML). Globally accepted. Influence: 21 CFR 50, FDA. Related: 1979 Belmont Report (US), CIOMS guidelines.
+          pt: 'Helsinki: WMA (World Medical Association). Sucessor de Nuremberg Code 1947 (post-Holocaust). Atualizações: 1975 (placebo controvérsia), 2000 (post-trial access), 2013 (vulneráveis, transparência), 2024 (digital, ML). Aceito globalmente. Influência: 21 CFR 50, FDA. Relacionado: Belmont Report 1979 (US), CIOMS guidelines.'
+          en: 'Helsinki: WMA (World Medical Association). Successor of 1947 Nuremberg Code (post-Holocaust). Updates: 1975 (placebo controversy), 2000 (post-trial access), 2013 (vulnerable, transparency), 2024 (digital, ML). Globally accepted. Influence: 21 CFR 50, FDA. Related: 1979 Belmont Report (US), CIOMS guidelines.'
         objectives: [Helsinki]
       - type: choice
         difficulty: 5
         question:
-          pt: O registro obrigatório em ClinicalTrials.gov (FDAAA 2007) busca…
-          en: Mandatory registration in ClinicalTrials.gov (FDAAA 2007) seeks…
+          pt: 'O registro obrigatório em ClinicalTrials.gov (FDAAA 2007) busca…'
+          en: 'Mandatory registration in ClinicalTrials.gov (FDAAA 2007) seeks…'
         choices:
-          - Transparência: pre-specification de protocolos, redução de publication bias e selective reporting
-          - Apenas controle burocrático
-          - Sem qualquer benefício
-          - Apenas para US trials
-        correctAnswer: Transparência: pre-specification de protocolos, redução de publication bias e selective reporting
+          - 'Transparência: pre-specification de protocolos, redução de publication bias e selective reporting'
+          - 'Apenas controle burocrático'
+          - 'Sem qualquer benefício'
+          - 'Apenas para US trials'
+        correctAnswer: 'Transparência: pre-specification de protocolos, redução de publication bias e selective reporting'
         rationale:
-          pt: FDAAA 801: registro pré-recrutamento + reporting de resultados em ~12 meses. ICMJE journals exigem registro como condição de publication. Análoga: EUDRACT EU, ANZCTR Australia, ChiCTR China. WHO ICTRP integra. Reduz "file drawer problem". Compliance imperfeito (Anderson 2015 Lancet ~38% noncompliance).
-          en: FDAAA 801: pre-recruitment registration + results reporting within ~12 months. ICMJE journals require registration as publication condition. Analogous: EUDRACT EU, ANZCTR Australia, ChiCTR China. WHO ICTRP integrates. Reduces "file drawer problem". Imperfect compliance (Anderson 2015 Lancet ~38% noncompliance).
+          pt: 'FDAAA 801: registro pré-recrutamento + reporting de resultados em ~12 meses. ICMJE journals exigem registro como condição de publication. Análoga: EUDRACT EU, ANZCTR Australia, ChiCTR China. WHO ICTRP integra. Reduz "file drawer problem". Compliance imperfeito (Anderson 2015 Lancet ~38% noncompliance).'
+          en: 'FDAAA 801: pre-recruitment registration + results reporting within ~12 months. ICMJE journals require registration as publication condition. Analogous: EUDRACT EU, ANZCTR Australia, ChiCTR China. WHO ICTRP integrates. Reduces "file drawer problem". Imperfect compliance (Anderson 2015 Lancet ~38% noncompliance).'
         objectives: [ClinicalTrials.gov]
   - title:
-      pt: Página 2 — Desafios e modernidades
-      en: Page 2 — Challenges and modernities
+      pt: 'Página 2 — Desafios e modernidades'
+      en: 'Page 2 — Challenges and modernities'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: Trials pragmáticos (Schwartz/Lellouch 1967) diferem de explanatórios por…
-          en: Pragmatic trials (Schwartz/Lellouch 1967) differ from explanatory in that they…
+          pt: 'Trials pragmáticos (Schwartz/Lellouch 1967) diferem de explanatórios por…'
+          en: 'Pragmatic trials (Schwartz/Lellouch 1967) differ from explanatory in that they…'
         choices:
-          - Mimetizam prática clínica real (ampla inclusion, flexible protocol, real outcomes)
-          - Apenas em laboratório
-          - Sem qualquer flexibilidade
-          - Apenas highly controlled
-        correctAnswer: Mimetizam prática clínica real (ampla inclusion, flexible protocol, real outcomes)
+          - 'Mimetizam prática clínica real (ampla inclusion, flexible protocol, real outcomes)'
+          - 'Apenas em laboratório'
+          - 'Sem qualquer flexibilidade'
+          - 'Apenas highly controlled'
+        correctAnswer: 'Mimetizam prática clínica real (ampla inclusion, flexible protocol, real outcomes)'
         rationale:
-          pt: PRECIS-2 framework (Loudon 2015): nove domínios em explanatório-pragmático spectrum. Pragmáticos: amplo recruitment (saúde real), local clinic, real-world endpoints (mortalidade, hospitalizações), análise minimal. RECOVERY, SPRINT, PRINCIPLE são exemplos. Vantagem: generalização; desvantagem: dilui efeito.
-          en: PRECIS-2 framework (Loudon 2015): nine domains on explanatory-pragmatic spectrum. Pragmatics: broad recruitment (real-world), local clinic, real-world endpoints (mortality, hospitalizations), minimal analysis. RECOVERY, SPRINT, PRINCIPLE are examples. Advantage: generalization; disadvantage: dilutes effect.
+          pt: 'PRECIS-2 framework (Loudon 2015): nove domínios em explanatório-pragmático spectrum. Pragmáticos: amplo recruitment (saúde real), local clinic, real-world endpoints (mortalidade, hospitalizações), análise minimal. RECOVERY, SPRINT, PRINCIPLE são exemplos. Vantagem: generalização; desvantagem: dilui efeito.'
+          en: 'PRECIS-2 framework (Loudon 2015): nine domains on explanatory-pragmatic spectrum. Pragmatics: broad recruitment (real-world), local clinic, real-world endpoints (mortality, hospitalizations), minimal analysis. RECOVERY, SPRINT, PRINCIPLE are examples. Advantage: generalization; disadvantage: dilutes effect.'
         objectives: [Pragmatic]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito Real-World Evidence (RWE, FDA 21st Century Cures 2016) usa…
-          en: Real-World Evidence (RWE, FDA 21st Century Cures 2016) uses…
+          pt: 'O conceito Real-World Evidence (RWE, FDA 21st Century Cures 2016) usa…'
+          en: 'Real-World Evidence (RWE, FDA 21st Century Cures 2016) uses…'
         choices:
-          - Dados de EHRs, claims, registros, wearables para suportar regulatory decisions
-          - Apenas RCTs tradicionais
-          - Sem qualquer dado
-          - Apenas in silico
-        correctAnswer: Dados de EHRs, claims, registros, wearables para suportar regulatory decisions
+          - 'Dados de EHRs, claims, registros, wearables para suportar regulatory decisions'
+          - 'Apenas RCTs tradicionais'
+          - 'Sem qualquer dado'
+          - 'Apenas in silico'
+        correctAnswer: 'Dados de EHRs, claims, registros, wearables para suportar regulatory decisions'
         rationale:
-          pt: 21st Century Cures Act (2016): FDA aceita RWE para indicações ampliadas, post-marketing. Exemplos: Ibrance label expansion male breast cancer (Flatiron Health/Pfizer). Métodos: target trial emulation, propensity score, instrumental variables. Programas: FDA Sentinel, OMOP/OHDSI. Crítica: confounding residual, missing data.
-          en: 21st Century Cures Act (2016): FDA accepts RWE for expanded indications, post-marketing. Examples: Ibrance male breast cancer label expansion (Flatiron Health/Pfizer). Methods: target trial emulation, propensity score, instrumental variables. Programs: FDA Sentinel, OMOP/OHDSI. Critique: residual confounding, missing data.
+          pt: '21st Century Cures Act (2016): FDA aceita RWE para indicações ampliadas, post-marketing. Exemplos: Ibrance label expansion male breast cancer (Flatiron Health/Pfizer). Métodos: target trial emulation, propensity score, instrumental variables. Programas: FDA Sentinel, OMOP/OHDSI. Crítica: confounding residual, missing data.'
+          en: '21st Century Cures Act (2016): FDA accepts RWE for expanded indications, post-marketing. Examples: Ibrance male breast cancer label expansion (Flatiron Health/Pfizer). Methods: target trial emulation, propensity score, instrumental variables. Programs: FDA Sentinel, OMOP/OHDSI. Critique: residual confounding, missing data.'
         objectives: [RWE]
       - type: choice
         difficulty: 5
         question:
-          pt: O "I-SPY 2" trial em câncer de mama é exemplo importante de…
-          en: I-SPY 2 trial in breast cancer is important example of…
+          pt: 'O "I-SPY 2" trial em câncer de mama é exemplo importante de…'
+          en: 'I-SPY 2 trial in breast cancer is important example of…'
         choices:
-          - Platform Bayesian adaptive testing múltiplas drogas neoadjuvantes em paralelo, biomarker-guided
-          - Apenas single-arm
-          - Sem qualquer biomarker
-          - Apenas para pediatric
-        correctAnswer: Platform Bayesian adaptive testing múltiplas drogas neoadjuvantes em paralelo, biomarker-guided
+          - 'Platform Bayesian adaptive testing múltiplas drogas neoadjuvantes em paralelo, biomarker-guided'
+          - 'Apenas single-arm'
+          - 'Sem qualquer biomarker'
+          - 'Apenas para pediatric'
+        correctAnswer: 'Platform Bayesian adaptive testing múltiplas drogas neoadjuvantes em paralelo, biomarker-guided'
         rationale:
-          pt: I-SPY 2 (Don Berry, Laura Esserman UCSF; Quantum Leap Healthcare): biomarker-stratified (HR/HER2/MammaPrint) + Bayesian adaptive randomization. Drogas competem; "graduate" para Ph3 ou "drop". Veliparib, neratinib, pembrolizumab adicionados. Endpoint: pCR. Modelo de master protocol. I-SPY 2.2 desde 2019.
-          en: I-SPY 2 (Don Berry, Laura Esserman UCSF; Quantum Leap Healthcare): biomarker-stratified (HR/HER2/MammaPrint) + Bayesian adaptive randomization. Drugs compete; "graduate" to Ph3 or "drop". Veliparib, neratinib, pembrolizumab added. Endpoint: pCR. Master protocol model. I-SPY 2.2 since 2019.
+          pt: 'I-SPY 2 (Don Berry, Laura Esserman UCSF; Quantum Leap Healthcare): biomarker-stratified (HR/HER2/MammaPrint) + Bayesian adaptive randomization. Drogas competem; "graduate" para Ph3 ou "drop". Veliparib, neratinib, pembrolizumab adicionados. Endpoint: pCR. Modelo de master protocol. I-SPY 2.2 desde 2019.'
+          en: 'I-SPY 2 (Don Berry, Laura Esserman UCSF; Quantum Leap Healthcare): biomarker-stratified (HR/HER2/MammaPrint) + Bayesian adaptive randomization. Drugs compete; "graduate" to Ph3 or "drop". Veliparib, neratinib, pembrolizumab added. Endpoint: pCR. Master protocol model. I-SPY 2.2 since 2019.'
         objectives: [I-SPY 2]
       - type: choice
         difficulty: 5
         question:
-          pt: Surrogate endpoints (PFS, biomarkers) para registration FDA exigem…
-          en: Surrogate endpoints (PFS, biomarkers) for FDA registration require…
+          pt: 'Surrogate endpoints (PFS, biomarkers) para registration FDA exigem…'
+          en: 'Surrogate endpoints (PFS, biomarkers) for FDA registration require…'
         choices:
-          - Validação que surrogate prediz outcome clínico relevante; aceito sob accelerated approval
-          - Sempre aceito sem validação
-          - Sem qualquer validação possível
-          - Apenas para fase IV
-        correctAnswer: Validação que surrogate prediz outcome clínico relevante; aceito sob accelerated approval
+          - 'Validação que surrogate prediz outcome clínico relevante; aceito sob accelerated approval'
+          - 'Sempre aceito sem validação'
+          - 'Sem qualquer validação possível'
+          - 'Apenas para fase IV'
+        correctAnswer: 'Validação que surrogate prediz outcome clínico relevante; aceito sob accelerated approval'
         rationale:
-          pt: Accelerated approval (Subpart H, 1992): surrogate aprovado se "razoável" prediz benefício. Confirmation Phase 4 obrigatório. Issues: cancer drugs aprovados em ORR/PFS, conformação OS frequentemente fraca/falha (Naci, Prasad 2019). FDA Project Confirm 2021 reforço. EU Article 14(8) similar.
-          en: Accelerated approval (Subpart H, 1992): surrogate approved if "reasonably likely" predicts benefit. Phase 4 confirmation mandatory. Issues: cancer drugs approved on ORR/PFS, OS confirmation often weak/fails (Naci, Prasad 2019). FDA Project Confirm 2021 reinforcement. EU Article 14(8) similar.
+          pt: 'Accelerated approval (Subpart H, 1992): surrogate aprovado se "razoável" prediz benefício. Confirmation Phase 4 obrigatório. Issues: cancer drugs aprovados em ORR/PFS, conformação OS frequentemente fraca/falha (Naci, Prasad 2019). FDA Project Confirm 2021 reforço. EU Article 14(8) similar.'
+          en: 'Accelerated approval (Subpart H, 1992): surrogate approved if "reasonably likely" predicts benefit. Phase 4 confirmation mandatory. Issues: cancer drugs approved on ORR/PFS, OS confirmation often weak/fails (Naci, Prasad 2019). FDA Project Confirm 2021 reinforcement. EU Article 14(8) similar.'
         objectives: [Surrogate]
       - type: choice
         difficulty: 5
         question:
-          pt: O "stopping rule" em interim analysis é necessário porque…
-          en: "Stopping rule" in interim analysis is necessary because…
+          pt: 'O "stopping rule" em interim analysis é necessário porque…'
+          en: '"Stopping rule" in interim analysis is necessary because…'
         choices:
-          - Múltiplas peeks inflam type I error; O'Brien-Fleming, Pocock alocam alpha
-          - Sem qualquer impacto
-          - Apenas estatística trivial
-          - Sem qualquer rule
-        correctAnswer: Múltiplas peeks inflam type I error; O'Brien-Fleming, Pocock alocam alpha
+          - 'Múltiplas peeks inflam type I error; O''Brien-Fleming, Pocock alocam alpha'
+          - 'Sem qualquer impacto'
+          - 'Apenas estatística trivial'
+          - 'Sem qualquer rule'
+        correctAnswer: 'Múltiplas peeks inflam type I error; O''Brien-Fleming, Pocock alocam alpha'
         rationale:
-          pt: Group sequential design: K interim looks. O'Brien-Fleming (conservador inicial, próximo final) preserva alpha global. Pocock (uniform threshold) gasta mais cedo. Lan-DeMets alpha-spending allows flexibility. DSMB recomenda parar para benefit (efficacy), futility, harm. EMPEROR, DAPA-HF param early para benefit.
-          en: Group sequential design: K interim looks. O'Brien-Fleming (conservative early, near-end) preserves global alpha. Pocock (uniform threshold) spends earlier. Lan-DeMets alpha-spending allows flexibility. DSMB recommends stopping for benefit (efficacy), futility, harm. EMPEROR, DAPA-HF stopped early for benefit.
+          pt: 'Group sequential design: K interim looks. O''Brien-Fleming (conservador inicial, próximo final) preserva alpha global. Pocock (uniform threshold) gasta mais cedo. Lan-DeMets alpha-spending allows flexibility. DSMB recomenda parar para benefit (efficacy), futility, harm. EMPEROR, DAPA-HF param early para benefit.'
+          en: 'Group sequential design: K interim looks. O''Brien-Fleming (conservative early, near-end) preserves global alpha. Pocock (uniform threshold) spends earlier. Lan-DeMets alpha-spending allows flexibility. DSMB recommends stopping for benefit (efficacy), futility, harm. EMPEROR, DAPA-HF stopped early for benefit.'
         objectives: [Stopping rules]
       - type: choice
         difficulty: 5
         question:
-          pt: Pediatric trials são desafios por…
-          en: Pediatric trials are challenging because of…
+          pt: 'Pediatric trials são desafios por…'
+          en: 'Pediatric trials are challenging because of…'
         choices:
-          - Vulnerabilidade ética + variabilidade desenvolvimental + N pequeno + extrapolação difícil
-          - Apenas porque são fáceis
-          - Sem qualquer dificuldade
-          - Apenas em rare diseases
-        correctAnswer: Vulnerabilidade ética + variabilidade desenvolvimental + N pequeno + extrapolação difícil
+          - 'Vulnerabilidade ética + variabilidade desenvolvimental + N pequeno + extrapolação difícil'
+          - 'Apenas porque são fáceis'
+          - 'Sem qualquer dificuldade'
+          - 'Apenas em rare diseases'
+        correctAnswer: 'Vulnerabilidade ética + variabilidade desenvolvimental + N pequeno + extrapolação difícil'
         rationale:
-          pt: Pediatric exigências: BPCA + PREA (US 2002, 2007); EU Pediatric Regulation 2007. Plano pediátrico obrigatório. Issues: PK/PD dependente de idade, doses não-extrapoláveis, ethical (placebo limitado, recruta pais). Master protocols (PEDS-PLAN), PBPK extrapolação reduce burden. Adequate Pediatric Studies em ~63% drugs aprovados via MIDD.
-          en: Pediatric requirements: BPCA + PREA (US 2002, 2007); EU Pediatric Regulation 2007. Pediatric plan mandatory. Issues: age-dependent PK/PD, non-extrapolable doses, ethical (limited placebo, parent recruitment). Master protocols (PEDS-PLAN), PBPK extrapolation reduce burden. Adequate Pediatric Studies in ~63% of drugs approved via MIDD.
+          pt: 'Pediatric exigências: BPCA + PREA (US 2002, 2007); EU Pediatric Regulation 2007. Plano pediátrico obrigatório. Issues: PK/PD dependente de idade, doses não-extrapoláveis, ethical (placebo limitado, recruta pais). Master protocols (PEDS-PLAN), PBPK extrapolação reduce burden. Adequate Pediatric Studies em ~63% drugs aprovados via MIDD.'
+          en: 'Pediatric requirements: BPCA + PREA (US 2002, 2007); EU Pediatric Regulation 2007. Pediatric plan mandatory. Issues: age-dependent PK/PD, non-extrapolable doses, ethical (limited placebo, parent recruitment). Master protocols (PEDS-PLAN), PBPK extrapolation reduce burden. Adequate Pediatric Studies in ~63% of drugs approved via MIDD.'
         objectives: [Pediatric trials]
       - type: choice
         difficulty: 5
         question:
-          pt: A pandemic COVID-19 transformou clinical trials por…
-          en: COVID-19 pandemic transformed clinical trials by…
+          pt: 'A pandemic COVID-19 transformou clinical trials por…'
+          en: 'COVID-19 pandemic transformed clinical trials by…'
         choices:
-          - Decentralized trials, eConsent, telemedicine, RWE/EHR linkage acelerados
-          - Apenas voltou ao normal
-          - Sem qualquer mudança
-          - Apenas para vacinas
-        correctAnswer: Decentralized trials, eConsent, telemedicine, RWE/EHR linkage acelerados
+          - 'Decentralized trials, eConsent, telemedicine, RWE/EHR linkage acelerados'
+          - 'Apenas voltou ao normal'
+          - 'Sem qualquer mudança'
+          - 'Apenas para vacinas'
+        correctAnswer: 'Decentralized trials, eConsent, telemedicine, RWE/EHR linkage acelerados'
         rationale:
-          pt: COVID forçou: home-based trials (medication delivery, virtual visits), eConsent (DocuSign, ePRO), wearables (Apple Watch, Fitbit), wastewater epidemiology. FDA emitiu guidance 2020-2024 sobre DCTs (Decentralized Clinical Trials). Tecnologias adotadas em ensaios pós-pandemia. Risco: digital divide.
-          en: COVID forced: home-based trials (medication delivery, virtual visits), eConsent (DocuSign, ePRO), wearables (Apple Watch, Fitbit), wastewater epidemiology. FDA issued guidance 2020-2024 on DCTs (Decentralized Clinical Trials). Technologies adopted in post-pandemic trials. Risk: digital divide.
+          pt: 'COVID forçou: home-based trials (medication delivery, virtual visits), eConsent (DocuSign, ePRO), wearables (Apple Watch, Fitbit), wastewater epidemiology. FDA emitiu guidance 2020-2024 sobre DCTs (Decentralized Clinical Trials). Tecnologias adotadas em ensaios pós-pandemia. Risco: digital divide.'
+          en: 'COVID forced: home-based trials (medication delivery, virtual visits), eConsent (DocuSign, ePRO), wearables (Apple Watch, Fitbit), wastewater epidemiology. FDA issued guidance 2020-2024 on DCTs (Decentralized Clinical Trials). Technologies adopted in post-pandemic trials. Risk: digital divide.'
         objectives: [DCT pandemic]
       - type: choice
         difficulty: 5
         question:
-          pt: O "n-of-1 trial" é desenho útil para…
-          en: "n-of-1 trial" is a useful design for…
+          pt: 'O "n-of-1 trial" é desenho útil para…'
+          en: '"n-of-1 trial" is a useful design for…'
         choices:
-          - Doença rara individual; cada paciente tem múltiplos crossovers ABAB com periodos blinded
-          - Apenas para grandes coortes
-          - Sem qualquer aplicação
-          - Apenas em pediatria
-        correctAnswer: Doença rara individual; cada paciente tem múltiplos crossovers ABAB com periodos blinded
+          - 'Doença rara individual; cada paciente tem múltiplos crossovers ABAB com periodos blinded'
+          - 'Apenas para grandes coortes'
+          - 'Sem qualquer aplicação'
+          - 'Apenas em pediatria'
+        correctAnswer: 'Doença rara individual; cada paciente tem múltiplos crossovers ABAB com periodos blinded'
         rationale:
-          pt: N-of-1: paciente individual = própria controle via repeated crossovers. Útil em doenças raras, individualização. Milasen (Kim et al. NEJM 2019) é exemplo extreme: ASO personalizada. n-Lorem Foundation oferece ASOs n=1 grátis. Limitação: generalização zero.
-          en: N-of-1: individual patient = own control via repeated crossovers. Useful in rare diseases, individualization. Milasen (Kim et al. NEJM 2019) is extreme example: personalized ASO. n-Lorem Foundation offers free n=1 ASOs. Limitation: zero generalization.
+          pt: 'N-of-1: paciente individual = própria controle via repeated crossovers. Útil em doenças raras, individualização. Milasen (Kim et al. NEJM 2019) é exemplo extreme: ASO personalizada. n-Lorem Foundation oferece ASOs n=1 grátis. Limitação: generalização zero.'
+          en: 'N-of-1: individual patient = own control via repeated crossovers. Useful in rare diseases, individualization. Milasen (Kim et al. NEJM 2019) is extreme example: personalized ASO. n-Lorem Foundation offers free n=1 ASOs. Limitation: zero generalization.'
         objectives: [n-of-1]
       - type: choice
         difficulty: 5
         question:
-          pt: A "non-inferiority" trial é apropriado quando…
-          en: "Non-inferiority" trial is appropriate when…
+          pt: 'A "non-inferiority" trial é apropriado quando…'
+          en: '"Non-inferiority" trial is appropriate when…'
         choices:
-          - Nova terapia tem outras vantagens (custo, segurança, conveniência) sobre standard ativo
-          - Apenas para superioridade
-          - Sem qualquer aplicação
-          - Apenas placebo-controlled
-        correctAnswer: Nova terapia tem outras vantagens (custo, segurança, conveniência) sobre standard ativo
+          - 'Nova terapia tem outras vantagens (custo, segurança, conveniência) sobre standard ativo'
+          - 'Apenas para superioridade'
+          - 'Sem qualquer aplicação'
+          - 'Apenas placebo-controlled'
+        correctAnswer: 'Nova terapia tem outras vantagens (custo, segurança, conveniência) sobre standard ativo'
         rationale:
-          pt: NI trial: nova vs SOC ativo, margin pré-especificado δ. Concluir non-inferior se 95% CI exclui δ. Controvertido em oncologia (placebo unethical, mas margins liberais). Examples: novos anticoagulantes (DOACs vs warfarin), antibióticos (cefiderocol). EMA/FDA guidance estritos sobre δ choice (preserve at least 50% benefício standard).
-          en: NI trial: new vs active SOC, pre-specified margin δ. Conclude non-inferior if 95% CI excludes δ. Controversial in oncology (unethical placebo, but liberal margins). Examples: new anticoagulants (DOACs vs warfarin), antibiotics (cefiderocol). EMA/FDA strict guidance on δ choice (preserve at least 50% of standard benefit).
+          pt: 'NI trial: nova vs SOC ativo, margin pré-especificado δ. Concluir non-inferior se 95% CI exclui δ. Controvertido em oncologia (placebo unethical, mas margins liberais). Examples: novos anticoagulantes (DOACs vs warfarin), antibióticos (cefiderocol). EMA/FDA guidance estritos sobre δ choice (preserve at least 50% benefício standard).'
+          en: 'NI trial: new vs active SOC, pre-specified margin δ. Conclude non-inferior if 95% CI excludes δ. Controversial in oncology (unethical placebo, but liberal margins). Examples: new anticoagulants (DOACs vs warfarin), antibiotics (cefiderocol). EMA/FDA strict guidance on δ choice (preserve at least 50% of standard benefit).'
         objectives: [Non-inferiority]
       - type: choice
         difficulty: 5
         question:
-          pt: A diversidade racial/étnica em ensaios clínicos é desafio porque…
-          en: Racial/ethnic diversity in clinical trials is a challenge because…
+          pt: 'A diversidade racial/étnica em ensaios clínicos é desafio porque…'
+          en: 'Racial/ethnic diversity in clinical trials is a challenge because…'
         choices:
-          - Histórico under-representation; FDA 2024 Diversity Action Plan exigência
-          - Já é representativa
-          - Sem qualquer impacto
-          - Apenas em US
-        correctAnswer: Histórico under-representation; FDA 2024 Diversity Action Plan exigência
+          - 'Histórico under-representation; FDA 2024 Diversity Action Plan exigência'
+          - 'Já é representativa'
+          - 'Sem qualquer impacto'
+          - 'Apenas em US'
+        correctAnswer: 'Histórico under-representation; FDA 2024 Diversity Action Plan exigência'
         rationale:
-          pt: ~75% participants em FDA-aprovados são brancos. Variabilidade PK/PD e doença por ancestralidade documentada (e.g. clopidogrel CYP2C19, EGFR-TKI ásiáticos, sickle cell trait). FDA 2022 Diversity Plans Guidance e 2024 Diversity Action Plans (DAP) obrigatórios para Phase 3 + relevant outros. Setores: cardiology, oncology, rare diseases lideram.
-          en: ~75% of participants in FDA-approved are white. PK/PD and disease variability by ancestry documented (e.g., clopidogrel CYP2C19, EGFR-TKI Asians, sickle cell trait). FDA 2022 Diversity Plans Guidance and mandatory 2024 Diversity Action Plans (DAP) for Phase 3 + other relevant. Cardiology, oncology, rare diseases lead.
+          pt: '~75% participants em FDA-aprovados são brancos. Variabilidade PK/PD e doença por ancestralidade documentada (e.g. clopidogrel CYP2C19, EGFR-TKI ásiáticos, sickle cell trait). FDA 2022 Diversity Plans Guidance e 2024 Diversity Action Plans (DAP) obrigatórios para Phase 3 + relevant outros. Setores: cardiology, oncology, rare diseases lideram.'
+          en: '~75% of participants in FDA-approved are white. PK/PD and disease variability by ancestry documented (e.g., clopidogrel CYP2C19, EGFR-TKI Asians, sickle cell trait). FDA 2022 Diversity Plans Guidance and mandatory 2024 Diversity Action Plans (DAP) for Phase 3 + other relevant. Cardiology, oncology, rare diseases lead.'
         objectives: [Diversity DAP]
 target: 20

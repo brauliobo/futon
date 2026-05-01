@@ -1,13 +1,13 @@
 title:
-  pt: GWAS, QTL e Arquitetura de Traços
-  en: GWAS, QTL and Trait Architecture
+  pt: 'GWAS, QTL e Arquitetura de Traços'
+  en: 'GWAS, QTL and Trait Architecture'
 level: P
 subject: biology
 objectives:
-  - Compreender GWAS e correção múltipla
-  - Reconhecer eQTL, sQTL, mQTL
-  - Identificar PRS e mendelian randomization
-  - Avaliar fine-mapping e colocalização
+  - 'Compreender GWAS e correção múltipla'
+  - 'Reconhecer eQTL, sQTL, mQTL'
+  - 'Identificar PRS e mendelian randomization'
+  - 'Avaliar fine-mapping e colocalização'
 difficulty: 5
 authorNotes: |
   Statistical genetics. WTCCC 2007 first big GWAS. Pe'er, Visscher LDSC. PLINK Purcell. Bolt-LMM
@@ -15,330 +15,330 @@ authorNotes: |
   significance. eQTL: GTEx Consortium. sQTL: splicing. mQTL: methylation. UK Biobank ~500k.
   All of Us NIH ~1M. FinnGen. PRS: Khera 2018, Lewis/Vassos. Mendelian randomization Smith/
   Ebrahim. Fine-mapping: SuSiE Wang/Stephens, FINEMAP Benner. Colocalization: COLOC Giambartolomei.
-  Heritability: GREML Yang. PRS-CSx Ge.
+  Heritability: 'GREML Yang. PRS-CSx Ge.'
 example:
   question:
-    pt: O primeiro grande GWAS multidoença, WTCCC 2007 (Wellcome Trust Case Control Consortium), incluiu…
-    en: The first major multi-disease GWAS, WTCCC 2007 (Wellcome Trust Case Control Consortium), included…
+    pt: 'O primeiro grande GWAS multidoença, WTCCC 2007 (Wellcome Trust Case Control Consortium), incluiu…'
+    en: 'The first major multi-disease GWAS, WTCCC 2007 (Wellcome Trust Case Control Consortium), included…'
   choices:
-    - 7 doenças comuns × 2000 casos cada vs 3000 controles compartilhados
-    - Apenas 1 doença com 100 mil pacientes
-    - 100 doenças com 50 pacientes cada
-    - Apenas estudos familiares sem qualquer coorte populacional
-  correctAnswer: 7 doenças comuns × 2000 casos cada vs 3000 controles compartilhados
+    - '7 doenças comuns × 2000 casos cada vs 3000 controles compartilhados'
+    - 'Apenas 1 doença com 100 mil pacientes'
+    - '100 doenças com 50 pacientes cada'
+    - 'Apenas estudos familiares sem qualquer coorte populacional'
+  correctAnswer: '7 doenças comuns × 2000 casos cada vs 3000 controles compartilhados'
   rationale:
-    pt: WTCCC (Nature 2007) testou 7 doenças (Crohn, T1D, T2D, hipertensão, doença coronária, artrite reumatoide, transtorno bipolar) — 14k casos + 3k controles em 500k SNPs Affymetrix. Validou GWAS em escala, identificou loci como PTPN22 (autoimune), TCF7L2 (T2D). Marco fundador.
-    en: WTCCC (Nature 2007) tested 7 diseases (Crohn, T1D, T2D, hypertension, coronary disease, rheumatoid arthritis, bipolar disorder) — 14k cases + 3k controls on 500k SNPs Affymetrix. Validated GWAS at scale, identified loci like PTPN22 (autoimmune), TCF7L2 (T2D). Founding milestone.
+    pt: 'WTCCC (Nature 2007) testou 7 doenças (Crohn, T1D, T2D, hipertensão, doença coronária, artrite reumatoide, transtorno bipolar) — 14k casos + 3k controles em 500k SNPs Affymetrix. Validou GWAS em escala, identificou loci como PTPN22 (autoimune), TCF7L2 (T2D). Marco fundador.'
+    en: 'WTCCC (Nature 2007) tested 7 diseases (Crohn, T1D, T2D, hypertension, coronary disease, rheumatoid arthritis, bipolar disorder) — 14k cases + 3k controls on 500k SNPs Affymetrix. Validated GWAS at scale, identified loci like PTPN22 (autoimmune), TCF7L2 (T2D). Founding milestone.'
 passCriteria:
   minAccuracyPercent: 85
   maxAvgSecondsPerExercise: 14
 pages:
   - title:
-      pt: Página 1 — GWAS e quantificação
-      en: Page 1 — GWAS and quantification
+      pt: 'Página 1 — GWAS e quantificação'
+      en: 'Page 1 — GWAS and quantification'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: O threshold convencional de "genome-wide significance" em GWAS é…
-          en: Conventional "genome-wide significance" threshold in GWAS is…
+          pt: 'O threshold convencional de "genome-wide significance" em GWAS é…'
+          en: 'Conventional "genome-wide significance" threshold in GWAS is…'
         choices:
-          - p < 5×10^-8, correspondendo a Bonferroni para ~1M de testes independentes
-          - p < 0.05 sem qualquer correção
-          - p < 10^-3 estatisticamente
-          - p < 10^-15 com correção exagerada
-        correctAnswer: p < 5×10^-8, correspondendo a Bonferroni para ~1M de testes independentes
+          - 'p < 5×10^-8, correspondendo a Bonferroni para ~1M de testes independentes'
+          - 'p < 0.05 sem qualquer correção'
+          - 'p < 10^-3 estatisticamente'
+          - 'p < 10^-15 com correção exagerada'
+        correctAnswer: 'p < 5×10^-8, correspondendo a Bonferroni para ~1M de testes independentes'
         rationale:
-          pt: Bonferroni para ~1M SNPs efetivamente independentes em humano (após LD pruning) → α/M ≈ 5×10^-8. Pe'er et al. 2008 derivaram. Padrão desde WTCCC 2007. Loci abaixo são suggestive (10^-5 a 10^-7).
-          en: Bonferroni for ~1M effectively independent SNPs in humans (after LD pruning) → α/M ≈ 5×10^-8. Pe'er et al. 2008 derived it. Standard since WTCCC 2007. Loci below are suggestive (10^-5 to 10^-7).
+          pt: 'Bonferroni para ~1M SNPs efetivamente independentes em humano (após LD pruning) → α/M ≈ 5×10^-8. Pe''er et al. 2008 derivaram. Padrão desde WTCCC 2007. Loci abaixo são suggestive (10^-5 a 10^-7).'
+          en: 'Bonferroni for ~1M effectively independent SNPs in humans (after LD pruning) → α/M ≈ 5×10^-8. Pe''er et al. 2008 derived it. Standard since WTCCC 2007. Loci below are suggestive (10^-5 to 10^-7).'
         objectives: [GWAS threshold]
       - type: choice
         difficulty: 5
         question:
-          pt: O modelo "linear mixed model" (LMM, Bolt-LMM, SAIGE) é necessário em GWAS porque…
-          en: Linear mixed models (LMM, Bolt-LMM, SAIGE) are needed in GWAS because they…
+          pt: 'O modelo "linear mixed model" (LMM, Bolt-LMM, SAIGE) é necessário em GWAS porque…'
+          en: 'Linear mixed models (LMM, Bolt-LMM, SAIGE) are needed in GWAS because they…'
         choices:
-          - Corrigem para parentesco oculto e estratificação populacional, evitando inflação falsa
-          - Aumentam falso-positivos artificialmente
-          - Substituem completamente regressão logística
-          - São apenas para datasets pequenos
-        correctAnswer: Corrigem para parentesco oculto e estratificação populacional, evitando inflação falsa
+          - 'Corrigem para parentesco oculto e estratificação populacional, evitando inflação falsa'
+          - 'Aumentam falso-positivos artificialmente'
+          - 'Substituem completamente regressão logística'
+          - 'São apenas para datasets pequenos'
+        correctAnswer: 'Corrigem para parentesco oculto e estratificação populacional, evitando inflação falsa'
         rationale:
-          pt: Em coortes grandes (UK Biobank), parentesco oculto e estratificação inflacionam estatísticas se ignorados. LMMs (EMMAX, Bolt-LMM Loh 2015, SAIGE Lee 2018) ajustam via matriz de relatedness genética (GRM). PCs principais não bastam em coortes grandes não-aparentadas.
-          en: In large cohorts (UK Biobank), hidden relatedness and stratification inflate statistics if ignored. LMMs (EMMAX, Bolt-LMM Loh 2015, SAIGE Lee 2018) adjust via genetic relatedness matrix (GRM). Top PCs are insufficient in large non-related cohorts.
+          pt: 'Em coortes grandes (UK Biobank), parentesco oculto e estratificação inflacionam estatísticas se ignorados. LMMs (EMMAX, Bolt-LMM Loh 2015, SAIGE Lee 2018) ajustam via matriz de relatedness genética (GRM). PCs principais não bastam em coortes grandes não-aparentadas.'
+          en: 'In large cohorts (UK Biobank), hidden relatedness and stratification inflate statistics if ignored. LMMs (EMMAX, Bolt-LMM Loh 2015, SAIGE Lee 2018) adjust via genetic relatedness matrix (GRM). Top PCs are insufficient in large non-related cohorts.'
         objectives: [LMM]
       - type: choice
         difficulty: 5
         question:
-          pt: GTEx (Genotype-Tissue Expression Consortium) caracterizou…
-          en: GTEx (Genotype-Tissue Expression Consortium) characterized…
+          pt: 'GTEx (Genotype-Tissue Expression Consortium) caracterizou…'
+          en: 'GTEx (Genotype-Tissue Expression Consortium) characterized…'
         choices:
-          - eQTLs em ~50 tecidos humanos, mostrando especificidade tecidual da regulação
-          - Apenas eQTLs em sangue periférico
-          - Variantes patogênicas em pacientes oncológicos
-          - GWAS de uma única doença sem componente expressão
-        correctAnswer: eQTLs em ~50 tecidos humanos, mostrando especificidade tecidual da regulação
+          - 'eQTLs em ~50 tecidos humanos, mostrando especificidade tecidual da regulação'
+          - 'Apenas eQTLs em sangue periférico'
+          - 'Variantes patogênicas em pacientes oncológicos'
+          - 'GWAS de uma única doença sem componente expressão'
+        correctAnswer: 'eQTLs em ~50 tecidos humanos, mostrando especificidade tecidual da regulação'
         rationale:
-          pt: GTEx (Lonsdale 2013, Nature 2017, 2020) coletou ~17k amostras de ~1k doadores em ~50 tecidos. Mapeou eQTLs (cis: <1Mb), sQTLs (splicing), mQTLs. Mostrou regulação altamente tecido-específica. Ferramenta crucial para anotar GWAS hits funcionalmente.
-          en: GTEx (Lonsdale 2013, Nature 2017, 2020) collected ~17k samples from ~1k donors across ~50 tissues. Mapped eQTLs (cis: <1Mb), sQTLs (splicing), mQTLs. Showed highly tissue-specific regulation. Crucial tool for functionally annotating GWAS hits.
+          pt: 'GTEx (Lonsdale 2013, Nature 2017, 2020) coletou ~17k amostras de ~1k doadores em ~50 tecidos. Mapeou eQTLs (cis: <1Mb), sQTLs (splicing), mQTLs. Mostrou regulação altamente tecido-específica. Ferramenta crucial para anotar GWAS hits funcionalmente.'
+          en: 'GTEx (Lonsdale 2013, Nature 2017, 2020) collected ~17k samples from ~1k donors across ~50 tissues. Mapped eQTLs (cis: <1Mb), sQTLs (splicing), mQTLs. Showed highly tissue-specific regulation. Crucial tool for functionally annotating GWAS hits.'
         objectives: [GTEx]
       - type: choice
         difficulty: 5
         question:
-          pt: O PRS (Polygenic Risk Score) clássico é calculado como…
-          en: Classical PRS (Polygenic Risk Score) is computed as…
+          pt: 'O PRS (Polygenic Risk Score) clássico é calculado como…'
+          en: 'Classical PRS (Polygenic Risk Score) is computed as…'
         choices:
-          - Soma ponderada de alelos × β-coeficientes de GWAS, possivelmente após clumping/thresholding
-          - Apenas presença/ausência de uma única variante patogênica
-          - Apenas score baseado em fatores não-genéticos
-          - Substituição direta de heredograma familiar
-        correctAnswer: Soma ponderada de alelos × β-coeficientes de GWAS, possivelmente após clumping/thresholding
+          - 'Soma ponderada de alelos × β-coeficientes de GWAS, possivelmente após clumping/thresholding'
+          - 'Apenas presença/ausência de uma única variante patogênica'
+          - 'Apenas score baseado em fatores não-genéticos'
+          - 'Substituição direta de heredograma familiar'
+        correctAnswer: 'Soma ponderada de alelos × β-coeficientes de GWAS, possivelmente após clumping/thresholding'
         rationale:
-          pt: PRS = Σ_i (β_i × dose_i). Métodos: C+T (clump+threshold), LDpred (Vilhjálmsson 2015), PRS-CS (Ge 2019), PRS-CSx (multiancestry). Khera et al. 2018 mostrou PRS de coronariopatia equivalente a OR 4 em top 8% — comparável a herança monogênica.
-          en: PRS = Σ_i (β_i × dose_i). Methods: C+T (clump+threshold), LDpred (Vilhjálmsson 2015), PRS-CS (Ge 2019), PRS-CSx (multiancestry). Khera et al. 2018 showed coronary PRS equivalent to OR 4 in top 8% — comparable to monogenic inheritance.
+          pt: 'PRS = Σ_i (β_i × dose_i). Métodos: C+T (clump+threshold), LDpred (Vilhjálmsson 2015), PRS-CS (Ge 2019), PRS-CSx (multiancestry). Khera et al. 2018 mostrou PRS de coronariopatia equivalente a OR 4 em top 8% — comparável a herança monogênica.'
+          en: 'PRS = Σ_i (β_i × dose_i). Methods: C+T (clump+threshold), LDpred (Vilhjálmsson 2015), PRS-CS (Ge 2019), PRS-CSx (multiancestry). Khera et al. 2018 showed coronary PRS equivalent to OR 4 in top 8% — comparable to monogenic inheritance.'
         objectives: [PRS]
       - type: choice
         difficulty: 5
         question:
-          pt: Mendelian Randomization (Davey Smith/Ebrahim) usa variantes genéticas como…
-          en: Mendelian Randomization (Davey Smith/Ebrahim) uses genetic variants as…
+          pt: 'Mendelian Randomization (Davey Smith/Ebrahim) usa variantes genéticas como…'
+          en: 'Mendelian Randomization (Davey Smith/Ebrahim) uses genetic variants as…'
         choices:
-          - Variáveis instrumentais para inferência causal entre exposição e desfecho, contornando confounding
-          - Apenas marcadores genealógicos sem qualquer aplicação causal
-          - Substituição de RCTs em todos os contextos
-          - Apenas em estudos familiares pequenos
-        correctAnswer: Variáveis instrumentais para inferência causal entre exposição e desfecho, contornando confounding
+          - 'Variáveis instrumentais para inferência causal entre exposição e desfecho, contornando confounding'
+          - 'Apenas marcadores genealógicos sem qualquer aplicação causal'
+          - 'Substituição de RCTs em todos os contextos'
+          - 'Apenas em estudos familiares pequenos'
+        correctAnswer: 'Variáveis instrumentais para inferência causal entre exposição e desfecho, contornando confounding'
         rationale:
-          pt: MR explora aleatorização meiótica natural: variantes que afetam exposição (e.g. LDL via PCSK9) servem como IV. Se exposição causa desfecho, variante deve associar-se ao desfecho via efeito previsto. Pressupõe IV válido (relevância, exclusão, exclusão restrita). Two-sample MR (Burgess) usa GWAS sumário público.
-          en: MR exploits natural meiotic randomization: variants affecting exposure (e.g., LDL via PCSK9) serve as IV. If exposure causes outcome, the variant must associate with outcome via predicted effect. Requires valid IV (relevance, exclusion, exclusion restriction). Two-sample MR (Burgess) uses public summary GWAS.
+          pt: 'MR explora aleatorização meiótica natural: variantes que afetam exposição (e.g. LDL via PCSK9) servem como IV. Se exposição causa desfecho, variante deve associar-se ao desfecho via efeito previsto. Pressupõe IV válido (relevância, exclusão, exclusão restrita). Two-sample MR (Burgess) usa GWAS sumário público.'
+          en: 'MR exploits natural meiotic randomization: variants affecting exposure (e.g., LDL via PCSK9) serve as IV. If exposure causes outcome, the variant must associate with outcome via predicted effect. Requires valid IV (relevance, exclusion, exclusion restriction). Two-sample MR (Burgess) uses public summary GWAS.'
         objectives: [MR]
       - type: choice
         difficulty: 5
         question:
-          pt: Fine-mapping (e.g. SuSiE de Wang/Stephens 2020) busca…
-          en: Fine-mapping (e.g., SuSiE by Wang/Stephens 2020) seeks…
+          pt: 'Fine-mapping (e.g. SuSiE de Wang/Stephens 2020) busca…'
+          en: 'Fine-mapping (e.g., SuSiE by Wang/Stephens 2020) seeks…'
         choices:
-          - Identificar variantes causais dentro de bloco de LD com sumários posteriores
-          - Apenas variantes mais frequentes em qualquer bloco
-          - Substituir GWAS sem qualquer benefício
-          - Apenas reportar SNP top sem refinamento
-        correctAnswer: Identificar variantes causais dentro de bloco de LD com sumários posteriores
+          - 'Identificar variantes causais dentro de bloco de LD com sumários posteriores'
+          - 'Apenas variantes mais frequentes em qualquer bloco'
+          - 'Substituir GWAS sem qualquer benefício'
+          - 'Apenas reportar SNP top sem refinamento'
+        correctAnswer: 'Identificar variantes causais dentro de bloco de LD com sumários posteriores'
         rationale:
-          pt: GWAS hits são frequentemente blocos LD com 10s-100s de SNPs. Fine-mapping (CAVIAR Hormozdiari 2014, FINEMAP Benner 2016, SuSiE Wang 2020) infere posterior probability of causality (PIP) por SNP, usando LD reference. SuSiE detecta múltiplos sinais independentes via sum of single effects.
-          en: GWAS hits are often LD blocks with 10s-100s of SNPs. Fine-mapping (CAVIAR Hormozdiari 2014, FINEMAP Benner 2016, SuSiE Wang 2020) infers posterior probability of causality (PIP) per SNP, using LD reference. SuSiE detects multiple independent signals via sum of single effects.
+          pt: 'GWAS hits são frequentemente blocos LD com 10s-100s de SNPs. Fine-mapping (CAVIAR Hormozdiari 2014, FINEMAP Benner 2016, SuSiE Wang 2020) infere posterior probability of causality (PIP) por SNP, usando LD reference. SuSiE detecta múltiplos sinais independentes via sum of single effects.'
+          en: 'GWAS hits are often LD blocks with 10s-100s of SNPs. Fine-mapping (CAVIAR Hormozdiari 2014, FINEMAP Benner 2016, SuSiE Wang 2020) infers posterior probability of causality (PIP) per SNP, using LD reference. SuSiE detects multiple independent signals via sum of single effects.'
         objectives: [Fine-mapping]
       - type: choice
         difficulty: 5
         question:
-          pt: Colocalização (COLOC, Giambartolomei 2014) testa hipótese de…
-          en: Colocalization (COLOC, Giambartolomei 2014) tests the hypothesis that…
+          pt: 'Colocalização (COLOC, Giambartolomei 2014) testa hipótese de…'
+          en: 'Colocalization (COLOC, Giambartolomei 2014) tests the hypothesis that…'
         choices:
-          - Mesma variante causal de GWAS e eQTL/proteômica em locus, evidenciando mecanismo
-          - Apenas que variantes coincidem por acaso
-          - Apenas que LD é alta
-          - Substituição de fine-mapping em qualquer cenário
-        correctAnswer: Mesma variante causal de GWAS e eQTL/proteômica em locus, evidenciando mecanismo
+          - 'Mesma variante causal de GWAS e eQTL/proteômica em locus, evidenciando mecanismo'
+          - 'Apenas que variantes coincidem por acaso'
+          - 'Apenas que LD é alta'
+          - 'Substituição de fine-mapping em qualquer cenário'
+        correctAnswer: 'Mesma variante causal de GWAS e eQTL/proteômica em locus, evidenciando mecanismo'
         rationale:
-          pt: Colocalização: H0 (sem causal), H1/H2 (apenas um), H3 (causais distintos), H4 (causal compartilhado). PP_H4 alta sugere mecanismo: GWAS variant atua via gene/proteína. Útil para priorizar drug targets. Estende-se a múltiplos traits (moloc), tecidos (eCAVIAR).
-          en: Colocalization: H0 (no causal), H1/H2 (only one), H3 (distinct causals), H4 (shared causal). High PP_H4 suggests mechanism: GWAS variant acts via gene/protein. Useful for drug target prioritization. Extended to multi-trait (moloc), multi-tissue (eCAVIAR).
+          pt: 'Colocalização: H0 (sem causal), H1/H2 (apenas um), H3 (causais distintos), H4 (causal compartilhado). PP_H4 alta sugere mecanismo: GWAS variant atua via gene/proteína. Útil para priorizar drug targets. Estende-se a múltiplos traits (moloc), tecidos (eCAVIAR).'
+          en: 'Colocalization: H0 (no causal), H1/H2 (only one), H3 (distinct causals), H4 (shared causal). High PP_H4 suggests mechanism: GWAS variant acts via gene/protein. Useful for drug target prioritization. Extended to multi-trait (moloc), multi-tissue (eCAVIAR).'
         objectives: [COLOC]
       - type: choice
         difficulty: 5
         question:
-          pt: A heritability h² SNP via GREML (Yang/Visscher 2010) estima…
-          en: SNP heritability via GREML (Yang/Visscher 2010) estimates…
+          pt: 'A heritability h² SNP via GREML (Yang/Visscher 2010) estima…'
+          en: 'SNP heritability via GREML (Yang/Visscher 2010) estimates…'
         choices:
-          - Variância do trait explicada por todos os SNPs juntos via REML em GRM
-          - Apenas h² monogênica de variantes únicas
-          - Apenas variância ambiental sem componente genético
-          - Substituição de h² gemelar por mesma estimativa exata
-        correctAnswer: Variância do trait explicada por todos os SNPs juntos via REML em GRM
+          - 'Variância do trait explicada por todos os SNPs juntos via REML em GRM'
+          - 'Apenas h² monogênica de variantes únicas'
+          - 'Apenas variância ambiental sem componente genético'
+          - 'Substituição de h² gemelar por mesma estimativa exata'
+        correctAnswer: 'Variância do trait explicada por todos os SNPs juntos via REML em GRM'
         rationale:
-          pt: GREML/GCTA: para n indivíduos, GRM (similaridade genética) + traço; ajusta var(trait) ~ GRM × σ²_g. Estima h²_SNP — fração do trait explicada por variantes comuns tagadas. Tipicamente captura ~30-50% de h²_twin. "Missing heritability" gap.
-          en: GREML/GCTA: for n individuals, GRM (genetic similarity) + trait; fits var(trait) ~ GRM × σ²_g. Estimates h²_SNP — trait fraction explained by common tagged variants. Typically captures ~30-50% of twin h². "Missing heritability" gap.
+          pt: 'GREML/GCTA: para n indivíduos, GRM (similaridade genética) + traço; ajusta var(trait) ~ GRM × σ²_g. Estima h²_SNP — fração do trait explicada por variantes comuns tagadas. Tipicamente captura ~30-50% de h²_twin. "Missing heritability" gap.'
+          en: 'GREML/GCTA: for n individuals, GRM (genetic similarity) + trait; fits var(trait) ~ GRM × σ²_g. Estimates h²_SNP — trait fraction explained by common tagged variants. Typically captures ~30-50% of twin h². "Missing heritability" gap.'
         objectives: [GREML]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "omnigenic" (Boyle/Li/Pritchard 2017) propõe que…
-          en: The "omnigenic" concept (Boyle/Li/Pritchard 2017) proposes that…
+          pt: 'O conceito "omnigenic" (Boyle/Li/Pritchard 2017) propõe que…'
+          en: 'The "omnigenic" concept (Boyle/Li/Pritchard 2017) proposes that…'
         choices:
-          - Em traços poligênicos, virtualmente todo gene expresso contribui via redes ("peripheral" + core)
-          - Apenas ~10 genes "core" determinam todo trait
-          - Apenas variantes raras importam
-          - Não há genes de pequeno efeito relevantes
-        correctAnswer: Em traços poligênicos, virtualmente todo gene expresso contribui via redes ("peripheral" + core)
+          - 'Em traços poligênicos, virtualmente todo gene expresso contribui via redes ("peripheral" + core)'
+          - 'Apenas ~10 genes "core" determinam todo trait'
+          - 'Apenas variantes raras importam'
+          - 'Não há genes de pequeno efeito relevantes'
+        correctAnswer: 'Em traços poligênicos, virtualmente todo gene expresso contribui via redes ("peripheral" + core)'
         rationale:
-          pt: Omnigenic (Boyle/Li/Pritchard Cell 2017): observação de que sinal GWAS de traços complexos espalha-se por todo o genoma sugere que núcleos pequenos de genes "core" são afetados por contagens grandes de "peripheral" via redes celulares. Implicação: alvos pivotais difíceis de isolar.
-          en: Omnigenic (Boyle/Li/Pritchard Cell 2017): observation that complex-trait GWAS signal spreads across the genome suggests small "core" gene nuclei are affected by many "peripheral" via cellular networks. Implication: pivotal targets hard to isolate.
+          pt: 'Omnigenic (Boyle/Li/Pritchard Cell 2017): observação de que sinal GWAS de traços complexos espalha-se por todo o genoma sugere que núcleos pequenos de genes "core" são afetados por contagens grandes de "peripheral" via redes celulares. Implicação: alvos pivotais difíceis de isolar.'
+          en: 'Omnigenic (Boyle/Li/Pritchard Cell 2017): observation that complex-trait GWAS signal spreads across the genome suggests small "core" gene nuclei are affected by many "peripheral" via cellular networks. Implication: pivotal targets hard to isolate.'
         objectives: [Omnigenic]
       - type: choice
         difficulty: 5
         question:
-          pt: A "transferability" de PRS entre ancestralidades é problemática porque…
-          en: PRS transferability across ancestries is problematic because…
+          pt: 'A "transferability" de PRS entre ancestralidades é problemática porque…'
+          en: 'PRS transferability across ancestries is problematic because…'
         choices:
-          - LD difere entre populações; PRSs treinados em europeus perdem ~50-80% acurácia em africanos
-          - PRS é universal sem qualquer dependência ancestral
-          - Apenas em humanos, irrelevante para medicina
-          - PRS é igualmente acurado em todas as populações
-        correctAnswer: LD difere entre populações; PRSs treinados em europeus perdem ~50-80% acurácia em africanos
+          - 'LD difere entre populações; PRSs treinados em europeus perdem ~50-80% acurácia em africanos'
+          - 'PRS é universal sem qualquer dependência ancestral'
+          - 'Apenas em humanos, irrelevante para medicina'
+          - 'PRS é igualmente acurado em todas as populações'
+        correctAnswer: 'LD difere entre populações; PRSs treinados em europeus perdem ~50-80% acurácia em africanos'
         rationale:
-          pt: GWAS bases (UKB, FinnGen) são predominantemente europeias (~80%); LD differs between populations, so PRS pesos otimais para europeus generalizam mal. Iniciativas: All of Us, GenomeAsia, H3Africa, NHGRI Diversity. Métodos: PRS-CSx multiancestry. Tema central de equity em genômica.
-          en: GWAS bases (UKB, FinnGen) are predominantly European (~80%); LD differs between populations, so PRS weights optimal for Europeans generalize poorly. Initiatives: All of Us, GenomeAsia, H3Africa, NHGRI Diversity. Methods: PRS-CSx multi-ancestry. Central genomic equity issue.
+          pt: 'GWAS bases (UKB, FinnGen) são predominantemente europeias (~80%); LD differs between populations, so PRS pesos otimais para europeus generalizam mal. Iniciativas: All of Us, GenomeAsia, H3Africa, NHGRI Diversity. Métodos: PRS-CSx multiancestry. Tema central de equity em genômica.'
+          en: 'GWAS bases (UKB, FinnGen) are predominantly European (~80%); LD differs between populations, so PRS weights optimal for Europeans generalize poorly. Initiatives: All of Us, GenomeAsia, H3Africa, NHGRI Diversity. Methods: PRS-CSx multi-ancestry. Central genomic equity issue.'
         objectives: [PRS transferability]
   - title:
-      pt: Página 2 — Aplicações e desafios
-      en: Page 2 — Applications and challenges
+      pt: 'Página 2 — Aplicações e desafios'
+      en: 'Page 2 — Applications and challenges'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: A "Manhattan plot" em GWAS visualiza…
-          en: GWAS "Manhattan plot" visualizes…
+          pt: 'A "Manhattan plot" em GWAS visualiza…'
+          en: 'GWAS "Manhattan plot" visualizes…'
         choices:
-          - −log10(p) por SNP ao longo do genoma; "torres" indicam loci associados
-          - Estrutura 3D do genoma sem valores estatísticos
-          - Apenas variantes patogênicas raras
-          - Distribuição filogenética de SNPs
-        correctAnswer: −log10(p) por SNP ao longo do genoma; "torres" indicam loci associados
+          - '−log10(p) por SNP ao longo do genoma; "torres" indicam loci associados'
+          - 'Estrutura 3D do genoma sem valores estatísticos'
+          - 'Apenas variantes patogênicas raras'
+          - 'Distribuição filogenética de SNPs'
+        correctAnswer: '−log10(p) por SNP ao longo do genoma; "torres" indicam loci associados'
         rationale:
-          pt: Manhattan plot mostra cromossomo no eixo x, −log10(p) no y. Cada ponto = um SNP. Linhas horizontais = thresholds (5e-8 GW, 1e-5 suggestive). Picos = loci associados. Plot QQ avalia inflação (λ_GC). Estabelecido desde WTCCC 2007.
-          en: Manhattan plot shows chromosome on x-axis, −log10(p) on y-axis. Each point = one SNP. Horizontal lines = thresholds (5e-8 GW, 1e-5 suggestive). Peaks = associated loci. QQ plot assesses inflation (λ_GC). Established since WTCCC 2007.
+          pt: 'Manhattan plot mostra cromossomo no eixo x, −log10(p) no y. Cada ponto = um SNP. Linhas horizontais = thresholds (5e-8 GW, 1e-5 suggestive). Picos = loci associados. Plot QQ avalia inflação (λ_GC). Estabelecido desde WTCCC 2007.'
+          en: 'Manhattan plot shows chromosome on x-axis, −log10(p) on y-axis. Each point = one SNP. Horizontal lines = thresholds (5e-8 GW, 1e-5 suggestive). Peaks = associated loci. QQ plot assesses inflation (λ_GC). Established since WTCCC 2007.'
         objectives: [Manhattan plot]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "imputation" em GWAS refere-se a…
-          en: The "imputation" concept in GWAS refers to…
+          pt: 'O conceito "imputation" em GWAS refere-se a…'
+          en: 'The "imputation" concept in GWAS refers to…'
         choices:
-          - Inferir genótipos não-tipados usando reference panels (1000 Genomes, TOPMed) via HMM
-          - Substituir genotipagem com sequenciamento direto sempre
-          - Apenas correção de erros de array sem inferência
-          - Apenas em variantes raras pediátricas
-        correctAnswer: Inferir genótipos não-tipados usando reference panels (1000 Genomes, TOPMed) via HMM
+          - 'Inferir genótipos não-tipados usando reference panels (1000 Genomes, TOPMed) via HMM'
+          - 'Substituir genotipagem com sequenciamento direto sempre'
+          - 'Apenas correção de erros de array sem inferência'
+          - 'Apenas em variantes raras pediátricas'
+        correctAnswer: 'Inferir genótipos não-tipados usando reference panels (1000 Genomes, TOPMed) via HMM'
         rationale:
-          pt: Imputation (IMPUTE2 Howie 2009, Minimac4 Das 2016, Beagle Browning) usa LD em reference panels para inferir alelos não-medidos no array. Multiplica densidade efetiva (~10M variantes a partir de ~500k array). TOPMed (~133k WGS) é referência atual. Crítico para fine-mapping.
-          en: Imputation (IMPUTE2 Howie 2009, Minimac4 Das 2016, Beagle Browning) uses LD in reference panels to infer alleles not measured on the array. Multiplies effective density (~10M variants from ~500k array). TOPMed (~133k WGS) is current reference. Critical for fine-mapping.
+          pt: 'Imputation (IMPUTE2 Howie 2009, Minimac4 Das 2016, Beagle Browning) usa LD em reference panels para inferir alelos não-medidos no array. Multiplica densidade efetiva (~10M variantes a partir de ~500k array). TOPMed (~133k WGS) é referência atual. Crítico para fine-mapping.'
+          en: 'Imputation (IMPUTE2 Howie 2009, Minimac4 Das 2016, Beagle Browning) uses LD in reference panels to infer alleles not measured on the array. Multiplies effective density (~10M variants from ~500k array). TOPMed (~133k WGS) is current reference. Critical for fine-mapping.'
         objectives: [Imputation]
       - type: choice
         difficulty: 5
         question:
-          pt: O FinnGen (~500k participantes) é importante por…
-          en: FinnGen (~500k participants) is important because of…
+          pt: 'O FinnGen (~500k participantes) é importante por…'
+          en: 'FinnGen (~500k participants) is important because of…'
         choices:
-          - População isoladamente expandida (efeito fundador) com variantes raras enriquecidas
-          - Apenas tamanho amostral comparável à UKB
-          - Apenas dados clínicos sem genotipagem
-          - Coorte oncológica exclusiva
-        correctAnswer: População isoladamente expandida (efeito fundador) com variantes raras enriquecidas
+          - 'População isoladamente expandida (efeito fundador) com variantes raras enriquecidas'
+          - 'Apenas tamanho amostral comparável à UKB'
+          - 'Apenas dados clínicos sem genotipagem'
+          - 'Coorte oncológica exclusiva'
+        correctAnswer: 'População isoladamente expandida (efeito fundador) com variantes raras enriquecidas'
         rationale:
-          pt: Finlândia teve gargalos populacionais; variantes raras em outros lugares estão enriquecidas (1-100x). Permite descoberta de associações com poder maior em variantes funcionais. FinnGen integra biobanco hospitalar + EHR + genotipagem; análoga: Iceland deCODE, Estonia, MyCode.
-          en: Finland had population bottlenecks; variants rare elsewhere are enriched (1-100x). Enables association discovery with greater power for functional variants. FinnGen integrates hospital biobank + EHR + genotyping; analogous: Iceland deCODE, Estonia, MyCode.
+          pt: 'Finlândia teve gargalos populacionais; variantes raras em outros lugares estão enriquecidas (1-100x). Permite descoberta de associações com poder maior em variantes funcionais. FinnGen integra biobanco hospitalar + EHR + genotipagem; análoga: Iceland deCODE, Estonia, MyCode.'
+          en: 'Finland had population bottlenecks; variants rare elsewhere are enriched (1-100x). Enables association discovery with greater power for functional variants. FinnGen integrates hospital biobank + EHR + genotyping; analogous: Iceland deCODE, Estonia, MyCode.'
         objectives: [FinnGen]
       - type: choice
         difficulty: 5
         question:
-          pt: Em medicina genômica, "rare variant burden testing" (e.g. SKAT, Lee 2012) busca…
-          en: In genomic medicine, "rare variant burden testing" (e.g., SKAT, Lee 2012) seeks…
+          pt: 'Em medicina genômica, "rare variant burden testing" (e.g. SKAT, Lee 2012) busca…'
+          en: 'In genomic medicine, "rare variant burden testing" (e.g., SKAT, Lee 2012) seeks…'
         choices:
-          - Agregar variantes raras em gene/região para detectar associação com poder estatístico
-          - Apenas testar uma variante de cada vez
-          - Substituir GWAS sem qualquer ressalva
-          - Apenas em populações pediátricas
-        correctAnswer: Agregar variantes raras em gene/região para detectar associação com poder estatístico
+          - 'Agregar variantes raras em gene/região para detectar associação com poder estatístico'
+          - 'Apenas testar uma variante de cada vez'
+          - 'Substituir GWAS sem qualquer ressalva'
+          - 'Apenas em populações pediátricas'
+        correctAnswer: 'Agregar variantes raras em gene/região para detectar associação com poder estatístico'
         rationale:
-          pt: Variantes raras (MAF<1%) têm baixo poder em GWAS individual. Burden tests (collapsing) somam contagens; SKAT (Wu/Lee 2011-2012) usa kernel allowing direções mistas; SKAT-O combina. Aplicações: WES/WGS análises (GeneMatcher, ExAC/gnomAD constraint).
-          en: Rare variants (MAF<1%) have low power in individual GWAS. Burden tests (collapsing) sum counts; SKAT (Wu/Lee 2011-2012) uses kernel allowing mixed directions; SKAT-O combines. Applications: WES/WGS analyses (GeneMatcher, ExAC/gnomAD constraint).
+          pt: 'Variantes raras (MAF<1%) têm baixo poder em GWAS individual. Burden tests (collapsing) somam contagens; SKAT (Wu/Lee 2011-2012) usa kernel allowing direções mistas; SKAT-O combina. Aplicações: WES/WGS análises (GeneMatcher, ExAC/gnomAD constraint).'
+          en: 'Rare variants (MAF<1%) have low power in individual GWAS. Burden tests (collapsing) sum counts; SKAT (Wu/Lee 2011-2012) uses kernel allowing mixed directions; SKAT-O combines. Applications: WES/WGS analyses (GeneMatcher, ExAC/gnomAD constraint).'
         objectives: [SKAT]
       - type: choice
         difficulty: 5
         question:
-          pt: O "gnomAD" (Genome Aggregation Database, Karczewski 2020) tornou-se essencial em variant interpretation por…
-          en: gnomAD (Genome Aggregation Database, Karczewski 2020) became essential in variant interpretation because it…
+          pt: 'O "gnomAD" (Genome Aggregation Database, Karczewski 2020) tornou-se essencial em variant interpretation por…'
+          en: 'gnomAD (Genome Aggregation Database, Karczewski 2020) became essential in variant interpretation because it…'
         choices:
-          - Frequências populacionais de >800k WES + 80k WGS, mostrando constraint metrics (LOEUF)
-          - Apenas dados clínicos sem qualquer agregação populacional
-          - Substituição direta de ClinVar
-          - Apenas frequências em grupos étnicos brancos
-        correctAnswer: Frequências populacionais de >800k WES + 80k WGS, mostrando constraint metrics (LOEUF)
+          - 'Frequências populacionais de >800k WES + 80k WGS, mostrando constraint metrics (LOEUF)'
+          - 'Apenas dados clínicos sem qualquer agregação populacional'
+          - 'Substituição direta de ClinVar'
+          - 'Apenas frequências em grupos étnicos brancos'
+        correctAnswer: 'Frequências populacionais de >800k WES + 80k WGS, mostrando constraint metrics (LOEUF)'
         rationale:
-          pt: gnomAD (sucessor de ExAC) agrega WES/WGS de 800k+ indivíduos diversos. LOEUF (loss-of-function observed/expected upper fraction): genes com LOEUF baixo (≤0.35) são intolerantes a perda de função → candidatos para doenças haploinsuficientes. Karczewski 2020 (Nature) é referência clínica fundamental.
-          en: gnomAD (successor of ExAC) aggregates WES/WGS of 800k+ diverse individuals. LOEUF (loss-of-function observed/expected upper fraction): low-LOEUF genes (≤0.35) are LoF-intolerant → candidates for haploinsufficient diseases. Karczewski 2020 (Nature) is fundamental clinical reference.
+          pt: 'gnomAD (sucessor de ExAC) agrega WES/WGS de 800k+ indivíduos diversos. LOEUF (loss-of-function observed/expected upper fraction): genes com LOEUF baixo (≤0.35) são intolerantes a perda de função → candidatos para doenças haploinsuficientes. Karczewski 2020 (Nature) é referência clínica fundamental.'
+          en: 'gnomAD (successor of ExAC) aggregates WES/WGS of 800k+ diverse individuals. LOEUF (loss-of-function observed/expected upper fraction): low-LOEUF genes (≤0.35) are LoF-intolerant → candidates for haploinsufficient diseases. Karczewski 2020 (Nature) is fundamental clinical reference.'
         objectives: [gnomAD]
       - type: choice
         difficulty: 5
         question:
-          pt: ACMG/AMP guidelines (Richards 2015) classificam variantes em…
-          en: ACMG/AMP guidelines (Richards 2015) classify variants into…
+          pt: 'ACMG/AMP guidelines (Richards 2015) classificam variantes em…'
+          en: 'ACMG/AMP guidelines (Richards 2015) classify variants into…'
         choices:
-          - 5 tiers: Pathogenic, Likely Pathogenic, VUS, Likely Benign, Benign — baseado em evidências
-          - Apenas 2 tiers: causal ou neutro
-          - 100 categorias finamente granulares
-          - Sem classificação padronizada
-        correctAnswer: 5 tiers: Pathogenic, Likely Pathogenic, VUS, Likely Benign, Benign — baseado em evidências
+          - '5 tiers: Pathogenic, Likely Pathogenic, VUS, Likely Benign, Benign — baseado em evidências'
+          - 'Apenas 2 tiers: causal ou neutro'
+          - '100 categorias finamente granulares'
+          - 'Sem classificação padronizada'
+        correctAnswer: '5 tiers: Pathogenic, Likely Pathogenic, VUS, Likely Benign, Benign — baseado em evidências'
         rationale:
-          pt: ACMG/AMP 2015: 28 critérios PVS1, PS1-4, PM1-6, PP1-5, BA1, BS1-4, BP1-7. Combinação produz tier. Implementado em InterVar, VarSome, Genoox. ClinGen refina por gene/condição. AlphaMissense melhora classificação computacional dos missense.
-          en: ACMG/AMP 2015: 28 criteria PVS1, PS1-4, PM1-6, PP1-5, BA1, BS1-4, BP1-7. Combination yields tier. Implemented in InterVar, VarSome, Genoox. ClinGen refines per gene/condition. AlphaMissense improves computational missense classification.
+          pt: 'ACMG/AMP 2015: 28 critérios PVS1, PS1-4, PM1-6, PP1-5, BA1, BS1-4, BP1-7. Combinação produz tier. Implementado em InterVar, VarSome, Genoox. ClinGen refina por gene/condição. AlphaMissense melhora classificação computacional dos missense.'
+          en: 'ACMG/AMP 2015: 28 criteria PVS1, PS1-4, PM1-6, PP1-5, BA1, BS1-4, BP1-7. Combination yields tier. Implemented in InterVar, VarSome, Genoox. ClinGen refines per gene/condition. AlphaMissense improves computational missense classification.'
         objectives: [ACMG]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito de "PheWAS" (Phenome-Wide Association Studies) inverte a lógica do GWAS por…
-          en: "PheWAS" (Phenome-Wide Association Studies) inverts GWAS logic by…
+          pt: 'O conceito de "PheWAS" (Phenome-Wide Association Studies) inverte a lógica do GWAS por…'
+          en: '"PheWAS" (Phenome-Wide Association Studies) inverts GWAS logic by…'
         choices:
-          - Testar uma variante contra centenas/milhares de fenótipos (EHR, ICD-10) simultaneamente
-          - Testar zero variantes contra fenótipos
-          - Apenas variantes patogênicas em pacientes
-          - Substituição de GWAS por método inferior
-        correctAnswer: Testar uma variante contra centenas/milhares de fenótipos (EHR, ICD-10) simultaneamente
+          - 'Testar uma variante contra centenas/milhares de fenótipos (EHR, ICD-10) simultaneamente'
+          - 'Testar zero variantes contra fenótipos'
+          - 'Apenas variantes patogênicas em pacientes'
+          - 'Substituição de GWAS por método inferior'
+        correctAnswer: 'Testar uma variante contra centenas/milhares de fenótipos (EHR, ICD-10) simultaneamente'
         rationale:
-          pt: PheWAS (Denny 2010): variante de interesse → testa associação com todos os ICD-10/PheCodes. Útil para descoberta de pleiotropia, repurposing de drogas, validação de drug targets. Vanderbilt BioVU, UK Biobank, eMERGE pioneiros. Inverso de GWAS pivotal.
-          en: PheWAS (Denny 2010): variant of interest → test association with all ICD-10/PheCodes. Useful for pleiotropy discovery, drug repurposing, drug target validation. Pioneers: Vanderbilt BioVU, UK Biobank, eMERGE. Pivotal inverse of GWAS.
+          pt: 'PheWAS (Denny 2010): variante de interesse → testa associação com todos os ICD-10/PheCodes. Útil para descoberta de pleiotropia, repurposing de drogas, validação de drug targets. Vanderbilt BioVU, UK Biobank, eMERGE pioneiros. Inverso de GWAS pivotal.'
+          en: 'PheWAS (Denny 2010): variant of interest → test association with all ICD-10/PheCodes. Useful for pleiotropy discovery, drug repurposing, drug target validation. Pioneers: Vanderbilt BioVU, UK Biobank, eMERGE. Pivotal inverse of GWAS.'
         objectives: [PheWAS]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito de "winner's curse" em GWAS refere-se a…
-          en: The "winner's curse" concept in GWAS refers to…
+          pt: 'O conceito de "winner''s curse" em GWAS refere-se a…'
+          en: 'The "winner''s curse" concept in GWAS refers to…'
         choices:
-          - Efeitos estimados em coorte de descoberta superestimados; replicação dá efeitos menores
-          - Apenas falso-positivos sem qualquer efeito real
-          - Subestimação sistemática de efeitos
-          - Apenas problema em estudos pequenos
-        correctAnswer: Efeitos estimados em coorte de descoberta superestimados; replicação dá efeitos menores
+          - 'Efeitos estimados em coorte de descoberta superestimados; replicação dá efeitos menores'
+          - 'Apenas falso-positivos sem qualquer efeito real'
+          - 'Subestimação sistemática de efeitos'
+          - 'Apenas problema em estudos pequenos'
+        correctAnswer: 'Efeitos estimados em coorte de descoberta superestimados; replicação dá efeitos menores'
         rationale:
-          pt: Winner's curse: SNPs identificados por p<5e-8 têm efeito estimado superestimado por chance estatística (regressão à média). Causas: thresholds, heterogeneidade. Correção via shrinkage Bayesiano, replicação independente, polygenic prediction. Importante na construção de PRS calibrados.
-          en: Winner's curse: SNPs found at p<5e-8 have effect estimates inflated by statistical chance (regression to mean). Causes: thresholds, heterogeneity. Correction via Bayesian shrinkage, independent replication, polygenic prediction. Important for calibrating PRS.
+          pt: 'Winner''s curse: SNPs identificados por p<5e-8 têm efeito estimado superestimado por chance estatística (regressão à média). Causas: thresholds, heterogeneidade. Correção via shrinkage Bayesiano, replicação independente, polygenic prediction. Importante na construção de PRS calibrados.'
+          en: 'Winner''s curse: SNPs found at p<5e-8 have effect estimates inflated by statistical chance (regression to mean). Causes: thresholds, heterogeneity. Correction via Bayesian shrinkage, independent replication, polygenic prediction. Important for calibrating PRS.'
         objectives: [Winner's curse]
       - type: choice
         difficulty: 5
         question:
-          pt: O "UK Biobank" tem qual característica única que facilita análises GWAS?
-          en: UK Biobank has which unique feature facilitating GWAS analyses?
+          pt: 'O "UK Biobank" tem qual característica única que facilita análises GWAS?'
+          en: 'UK Biobank has which unique feature facilitating GWAS analyses?'
         choices:
-          - 500k participantes com genotipagem + EHR + biomarkers + imagem em coorte aberta para pesquisa
-          - Apenas genotipagem sem qualquer fenótipo associado
-          - Restrita a oncologia exclusivamente
-          - Apenas mil indivíduos pediátricos
-        correctAnswer: 500k participantes com genotipagem + EHR + biomarkers + imagem em coorte aberta para pesquisa
+          - '500k participantes com genotipagem + EHR + biomarkers + imagem em coorte aberta para pesquisa'
+          - 'Apenas genotipagem sem qualquer fenótipo associado'
+          - 'Restrita a oncologia exclusivamente'
+          - 'Apenas mil indivíduos pediátricos'
+        correctAnswer: '500k participantes com genotipagem + EHR + biomarkers + imagem em coorte aberta para pesquisa'
         rationale:
-          pt: UKB (Sudlow 2015): 502k recrutados 2006-2010 (40-69 anos), genotipados (Affymetrix array + imputed), WES (450k 2023), WGS sendo gerado. Vincula EHR, biomarcadores, imagem (MRI cardíaca/cerebral, DXA), questionários — recurso global (>30k pesquisadores aprovados). Modelos: All of Us NIH (~1M), Million Veteran Program.
-          en: UKB (Sudlow 2015): 502k recruited 2006-2010 (40-69 years), genotyped (Affymetrix array + imputed), WES (450k 2023), WGS being generated. Links EHR, biomarkers, imaging (cardiac/brain MRI, DXA), questionnaires — global resource (>30k approved researchers). Models: All of Us NIH (~1M), Million Veteran Program.
+          pt: 'UKB (Sudlow 2015): 502k recrutados 2006-2010 (40-69 anos), genotipados (Affymetrix array + imputed), WES (450k 2023), WGS sendo gerado. Vincula EHR, biomarcadores, imagem (MRI cardíaca/cerebral, DXA), questionários — recurso global (>30k pesquisadores aprovados). Modelos: All of Us NIH (~1M), Million Veteran Program.'
+          en: 'UKB (Sudlow 2015): 502k recruited 2006-2010 (40-69 years), genotyped (Affymetrix array + imputed), WES (450k 2023), WGS being generated. Links EHR, biomarkers, imaging (cardiac/brain MRI, DXA), questionnaires — global resource (>30k approved researchers). Models: All of Us NIH (~1M), Million Veteran Program.'
         objectives: [UK Biobank]
       - type: choice
         difficulty: 5
         question:
-          pt: A "regressão LD score" (LDSC, Bulik-Sullivan/Loh 2015) calcula…
-          en: LD score regression (LDSC, Bulik-Sullivan/Loh 2015) computes…
+          pt: 'A "regressão LD score" (LDSC, Bulik-Sullivan/Loh 2015) calcula…'
+          en: 'LD score regression (LDSC, Bulik-Sullivan/Loh 2015) computes…'
         choices:
-          - Heritability e correlação genética entre traços a partir apenas de sumários GWAS
-          - Apenas h² individual sem correlação
-          - Apenas em dados raw individuais sem sumários
-          - Substituição completa de GREML
-        correctAnswer: Heritability e correlação genética entre traços a partir apenas de sumários GWAS
+          - 'Heritability e correlação genética entre traços a partir apenas de sumários GWAS'
+          - 'Apenas h² individual sem correlação'
+          - 'Apenas em dados raw individuais sem sumários'
+          - 'Substituição completa de GREML'
+        correctAnswer: 'Heritability e correlação genética entre traços a partir apenas de sumários GWAS'
         rationale:
-          pt: LDSC: regressão de χ² ~ LD score por SNP. Slope = h²; intercept = inflação por confounding (estratificação, parentesco). Cross-trait LDSC: covariância → r_g (correlação genética). Vantagem: usa apenas summary stats, escala em milhões de SNPs e traços.
-          en: LDSC: regression of χ² ~ LD score per SNP. Slope = h²; intercept = inflation from confounding (stratification, relatedness). Cross-trait LDSC: covariance → r_g (genetic correlation). Advantage: uses only summary stats, scales to millions of SNPs and traits.
+          pt: 'LDSC: regressão de χ² ~ LD score por SNP. Slope = h²; intercept = inflação por confounding (estratificação, parentesco). Cross-trait LDSC: covariância → r_g (correlação genética). Vantagem: usa apenas summary stats, escala em milhões de SNPs e traços.'
+          en: 'LDSC: regression of χ² ~ LD score per SNP. Slope = h²; intercept = inflation from confounding (stratification, relatedness). Cross-trait LDSC: covariance → r_g (genetic correlation). Advantage: uses only summary stats, scales to millions of SNPs and traits.'
         objectives: [LDSC]
 target: 20

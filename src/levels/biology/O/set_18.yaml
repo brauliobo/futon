@@ -1,13 +1,13 @@
 title:
-  pt: Biologia Sintética e Computação Celular
-  en: Synthetic Biology and Cellular Computing
+  pt: 'Biologia Sintética e Computação Celular'
+  en: 'Synthetic Biology and Cellular Computing'
 level: O
 subject: biology
 objectives:
-  - Compreender circuitos genéticos e portas lógicas
-  - Reconhecer infraestrutura (iGEM, BBF, biofoundries)
-  - Identificar aplicações (terapêutica viva, biosensores)
-  - Avaliar governança de organismos engenheirados
+  - 'Compreender circuitos genéticos e portas lógicas'
+  - 'Reconhecer infraestrutura (iGEM, BBF, biofoundries)'
+  - 'Identificar aplicações (terapêutica viva, biosensores)'
+  - 'Avaliar governança de organismos engenheirados'
 difficulty: 5
 authorNotes: |
   Frontier synbio. Pioneers: Drew Endy (Stanford), Tom Knight (MIT), Christopher Voigt (MIT
@@ -22,327 +22,327 @@ authorNotes: |
   Plenty/AeroFarms vertical agriculture. Bolt Threads spider silk Microsilk.
 example:
   question:
-    pt: Em 2000, dois trabalhos seminais na Nature inauguraram a "biologia sintética moderna" com circuitos genéticos. Quais e por quem?
-    en: In 2000, two seminal Nature papers inaugurated "modern synthetic biology" with genetic circuits. Which, and by whom?
+    pt: 'Em 2000, dois trabalhos seminais na Nature inauguraram a "biologia sintética moderna" com circuitos genéticos. Quais e por quem?'
+    en: 'In 2000, two seminal Nature papers inaugurated "modern synthetic biology" with genetic circuits. Which, and by whom?'
   choices:
-    - Toggle switch (Gardner/Collins) e Repressilator (Elowitz/Leibler), demonstrando memória e oscilação em E. coli
-    - CRISPR-Cas9 (Doudna/Charpentier) e CRISPRi (Qi/Lim) silenciando genes universalmente
-    - Optogenetics (Boyden/Deisseroth) e iPSC (Yamanaka) reprogramando células
-    - PCR (Mullis) e Sequenciamento Sanger (Sanger) inventando a biotecnologia básica
-  correctAnswer: Toggle switch (Gardner/Collins) e Repressilator (Elowitz/Leibler), demonstrando memória e oscilação em E. coli
+    - 'Toggle switch (Gardner/Collins) e Repressilator (Elowitz/Leibler), demonstrando memória e oscilação em E. coli'
+    - 'CRISPR-Cas9 (Doudna/Charpentier) e CRISPRi (Qi/Lim) silenciando genes universalmente'
+    - 'Optogenetics (Boyden/Deisseroth) e iPSC (Yamanaka) reprogramando células'
+    - 'PCR (Mullis) e Sequenciamento Sanger (Sanger) inventando a biotecnologia básica'
+  correctAnswer: 'Toggle switch (Gardner/Collins) e Repressilator (Elowitz/Leibler), demonstrando memória e oscilação em E. coli'
   rationale:
-    pt: Gardner/Cantor/Collins (Nature 2000) construíram um toggle bistable em E. coli com dois repressores mutuamente exclusivos. Elowitz/Leibler (Nature 2000) construíram repressilator (oscilador de 3 nós). Juntos provaram que circuitos modulares podiam ser desenhados — fundadores da synbio.
-    en: Gardner/Cantor/Collins (Nature 2000) built a bistable toggle in E. coli with two mutually exclusive repressors. Elowitz/Leibler (Nature 2000) built the repressilator (3-node oscillator). Together they proved modular circuits could be designed — synbio founders.
+    pt: 'Gardner/Cantor/Collins (Nature 2000) construíram um toggle bistable em E. coli com dois repressores mutuamente exclusivos. Elowitz/Leibler (Nature 2000) construíram repressilator (oscilador de 3 nós). Juntos provaram que circuitos modulares podiam ser desenhados — fundadores da synbio.'
+    en: 'Gardner/Cantor/Collins (Nature 2000) built a bistable toggle in E. coli with two mutually exclusive repressors. Elowitz/Leibler (Nature 2000) built the repressilator (3-node oscillator). Together they proved modular circuits could be designed — synbio founders.'
 passCriteria:
   minAccuracyPercent: 85
   maxAvgSecondsPerExercise: 14
 pages:
   - title:
-      pt: Página 1 — Circuitos genéticos e infraestrutura
-      en: Page 1 — Genetic circuits and infrastructure
+      pt: 'Página 1 — Circuitos genéticos e infraestrutura'
+      en: 'Page 1 — Genetic circuits and infrastructure'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: O Cello (Voigt et al., Science 2016) é importante porque é…
-          en: Cello (Voigt et al., Science 2016) is important because it is…
+          pt: 'O Cello (Voigt et al., Science 2016) é importante porque é…'
+          en: 'Cello (Voigt et al., Science 2016) is important because it is…'
         choices:
-          - Compilador de Verilog para circuitos genéticos em E. coli, automatizando design de DNA
-          - Plataforma de cultivo automatizado para fermentação de leveduras industriais
-          - Banco de dados de proteínas modificadas pós-traducionalmente
-          - Robô cirúrgico para manipulação celular em microfluídica
-        correctAnswer: Compilador de Verilog para circuitos genéticos em E. coli, automatizando design de DNA
+          - 'Compilador de Verilog para circuitos genéticos em E. coli, automatizando design de DNA'
+          - 'Plataforma de cultivo automatizado para fermentação de leveduras industriais'
+          - 'Banco de dados de proteínas modificadas pós-traducionalmente'
+          - 'Robô cirúrgico para manipulação celular em microfluídica'
+        correctAnswer: 'Compilador de Verilog para circuitos genéticos em E. coli, automatizando design de DNA'
         rationale:
-          pt: Cello (Nielsen, Voigt et al., Science 2016) compila Verilog (HDL) → DNA: usuário descreve lógica desejada (AND, OR, NOT...), Cello escolhe gates de uma biblioteca caracterizada e gera sequência. Funcionou para 60+ circuitos em E. coli — software-like engineering.
-          en: Cello (Nielsen, Voigt et al., Science 2016) compiles Verilog (HDL) → DNA: user describes desired logic (AND, OR, NOT...), Cello picks gates from a characterized library and outputs sequence. Worked for 60+ E. coli circuits — software-like engineering.
+          pt: 'Cello (Nielsen, Voigt et al., Science 2016) compila Verilog (HDL) → DNA: usuário descreve lógica desejada (AND, OR, NOT...), Cello escolhe gates de uma biblioteca caracterizada e gera sequência. Funcionou para 60+ circuitos em E. coli — software-like engineering.'
+          en: 'Cello (Nielsen, Voigt et al., Science 2016) compiles Verilog (HDL) → DNA: user describes desired logic (AND, OR, NOT...), Cello picks gates from a characterized library and outputs sequence. Worked for 60+ E. coli circuits — software-like engineering.'
         objectives: [Cello]
       - type: choice
         difficulty: 5
         question:
-          pt: O Registry of Standard Biological Parts (BBF) e o iGEM, fundados em torno de 2003-2004 no MIT, foram criados por…
-          en: The Registry of Standard Biological Parts (BBF) and iGEM, founded around 2003-2004 at MIT, were created by…
+          pt: 'O Registry of Standard Biological Parts (BBF) e o iGEM, fundados em torno de 2003-2004 no MIT, foram criados por…'
+          en: 'The Registry of Standard Biological Parts (BBF) and iGEM, founded around 2003-2004 at MIT, were created by…'
         choices:
-          - Tom Knight, Drew Endy, Randy Rettberg formalizando "BioBricks" como peças padronizadas
-          - Craig Venter no Institute for Genomic Research como projeto comercial
-          - George Church no Harvard Wyss como sucessor do Human Genome Project
-          - Eric Lander no Broad Institute como expansão direta de microarrays
-        correctAnswer: Tom Knight, Drew Endy, Randy Rettberg formalizando "BioBricks" como peças padronizadas
+          - 'Tom Knight, Drew Endy, Randy Rettberg formalizando "BioBricks" como peças padronizadas'
+          - 'Craig Venter no Institute for Genomic Research como projeto comercial'
+          - 'George Church no Harvard Wyss como sucessor do Human Genome Project'
+          - 'Eric Lander no Broad Institute como expansão direta de microarrays'
+        correctAnswer: 'Tom Knight, Drew Endy, Randy Rettberg formalizando "BioBricks" como peças padronizadas'
         rationale:
-          pt: BioBricks (sites de restrição padronizados EcoRI/XbaI/SpeI/PstI) foram propostos por Knight (1999) e formalizados por Endy/Rettberg como base do Registry. iGEM (International Genetically Engineered Machine) é competição estudantil anual desde 2004 que popularizou parts e standards.
-          en: BioBricks (EcoRI/XbaI/SpeI/PstI standardized restriction sites) were proposed by Knight (1999) and formalized by Endy/Rettberg as the Registry's basis. iGEM (International Genetically Engineered Machine) is an annual student competition since 2004 that popularized parts and standards.
+          pt: 'BioBricks (sites de restrição padronizados EcoRI/XbaI/SpeI/PstI) foram propostos por Knight (1999) e formalizados por Endy/Rettberg como base do Registry. iGEM (International Genetically Engineered Machine) é competição estudantil anual desde 2004 que popularizou parts e standards.'
+          en: 'BioBricks (EcoRI/XbaI/SpeI/PstI standardized restriction sites) were proposed by Knight (1999) and formalized by Endy/Rettberg as the Registry''s basis. iGEM (International Genetically Engineered Machine) is an annual student competition since 2004 that popularized parts and standards.'
         objectives: [iGEM BBF]
       - type: choice
         difficulty: 5
         question:
-          pt: Ginkgo Bioworks, fundada em 2008 em Boston, oferece comercialmente o quê?
-          en: Ginkgo Bioworks, founded in 2008 in Boston, commercially offers what?
+          pt: 'Ginkgo Bioworks, fundada em 2008 em Boston, oferece comercialmente o quê?'
+          en: 'Ginkgo Bioworks, founded in 2008 in Boston, commercially offers what?'
         choices:
-          - "Foundry as a service": engenharia de microrganismos sob demanda usando automação massiva
-          - Apenas síntese de DNA em oligo arrays como Twist concorrente
-          - Vacinas mRNA prontas para campanhas de massa global
-          - Equipamentos de sequenciamento próprios concorrendo com Illumina
-        correctAnswer: "Foundry as a service": engenharia de microrganismos sob demanda usando automação massiva
+          - '"Foundry as a service": engenharia de microrganismos sob demanda usando automação massiva'
+          - 'Apenas síntese de DNA em oligo arrays como Twist concorrente'
+          - 'Vacinas mRNA prontas para campanhas de massa global'
+          - 'Equipamentos de sequenciamento próprios concorrendo com Illumina'
+        correctAnswer: '"Foundry as a service": engenharia de microrganismos sob demanda usando automação massiva'
         rationale:
-          pt: Ginkgo (Knight, Kelly, Reshma Shetty + 2 outros do MIT) industrializou DBTL (Design-Build-Test-Learn) com fundição automatizada de leveduras/E. coli para clientes (sabores, fragrâncias, terapêutica, agricultura). IPO 2021; aquisições Bayer Crop Science (2022), Zymergen (2022).
-          en: Ginkgo (Knight, Kelly, Reshma Shetty + 2 others from MIT) industrialized DBTL (Design-Build-Test-Learn) with automated yeast/E. coli foundry for clients (flavors, fragrances, therapeutics, agriculture). IPO 2021; acquired Bayer Crop Science (2022) and Zymergen (2022).
+          pt: 'Ginkgo (Knight, Kelly, Reshma Shetty + 2 outros do MIT) industrializou DBTL (Design-Build-Test-Learn) com fundição automatizada de leveduras/E. coli para clientes (sabores, fragrâncias, terapêutica, agricultura). IPO 2021; aquisições Bayer Crop Science (2022), Zymergen (2022).'
+          en: 'Ginkgo (Knight, Kelly, Reshma Shetty + 2 others from MIT) industrialized DBTL (Design-Build-Test-Learn) with automated yeast/E. coli foundry for clients (flavors, fragrances, therapeutics, agriculture). IPO 2021; acquired Bayer Crop Science (2022) and Zymergen (2022).'
         objectives: [Ginkgo]
       - type: choice
         difficulty: 5
         question:
-          pt: Twist Bioscience tem qual contribuição decisiva para a economia da synbio?
-          en: Twist Bioscience has which decisive contribution to synbio economics?
+          pt: 'Twist Bioscience tem qual contribuição decisiva para a economia da synbio?'
+          en: 'Twist Bioscience has which decisive contribution to synbio economics?'
         choices:
-          - Síntese de oligo em chips de silício, reduzindo custo de DNA sintético em ordens de magnitude
-          - Engenharia de proteínas via evolução dirigida exclusivamente
-          - Sequenciamento single-cell com chips microfluídicos próprios
-          - Edição CRISPR clínica em pacientes com hemoglobinopatias
-        correctAnswer: Síntese de oligo em chips de silício, reduzindo custo de DNA sintético em ordens de magnitude
+          - 'Síntese de oligo em chips de silício, reduzindo custo de DNA sintético em ordens de magnitude'
+          - 'Engenharia de proteínas via evolução dirigida exclusivamente'
+          - 'Sequenciamento single-cell com chips microfluídicos próprios'
+          - 'Edição CRISPR clínica em pacientes com hemoglobinopatias'
+        correctAnswer: 'Síntese de oligo em chips de silício, reduzindo custo de DNA sintético em ordens de magnitude'
         rationale:
-          pt: Twist (Emily Leproust, fundadora, IPO 2018) usa síntese de DNA em chips de silício com ~10k poços por chip — custo por bp ~10x menor que IDT. Liberou síntese genômica em escala (Sc2.0, projetos de design) e bibliotecas de variantes para evolução dirigida.
-          en: Twist (Emily Leproust, founder, IPO 2018) synthesizes DNA on silicon chips with ~10k wells per chip — ~10x lower cost per bp than IDT. Enabled genome-scale synthesis (Sc2.0, design projects) and variant libraries for directed evolution.
+          pt: 'Twist (Emily Leproust, fundadora, IPO 2018) usa síntese de DNA em chips de silício com ~10k poços por chip — custo por bp ~10x menor que IDT. Liberou síntese genômica em escala (Sc2.0, projetos de design) e bibliotecas de variantes para evolução dirigida.'
+          en: 'Twist (Emily Leproust, founder, IPO 2018) synthesizes DNA on silicon chips with ~10k wells per chip — ~10x lower cost per bp than IDT. Enabled genome-scale synthesis (Sc2.0, design projects) and variant libraries for directed evolution.'
         objectives: [Twist]
       - type: choice
         difficulty: 5
         question:
-          pt: A "porta lógica AND" em circuito genético sintético tipicamente é construída por…
-          en: An AND logic gate in synthetic genetic circuit is typically built by…
+          pt: 'A "porta lógica AND" em circuito genético sintético tipicamente é construída por…'
+          en: 'An AND logic gate in synthetic genetic circuit is typically built by…'
         choices:
-          - Necessidade de dois ativadores transcricionais que agem cooperativamente no promotor
-          - Repressor único responsivo a duas moléculas indutoras
-          - Recombinase invertendo sequência por exposição a um único sinal
-          - Ribozima auto-clivante regulada por temperatura ambiente
-        correctAnswer: Necessidade de dois ativadores transcricionais que agem cooperativamente no promotor
+          - 'Necessidade de dois ativadores transcricionais que agem cooperativamente no promotor'
+          - 'Repressor único responsivo a duas moléculas indutoras'
+          - 'Recombinase invertendo sequência por exposição a um único sinal'
+          - 'Ribozima auto-clivante regulada por temperatura ambiente'
+        correctAnswer: 'Necessidade de dois ativadores transcricionais que agem cooperativamente no promotor'
         rationale:
-          pt: AND clássico requer ambos sinais simultâneos. Implementado com 2 ativadores (e.g. T7 RNAP fragmentado em 2 partes, complementação via dimerização induzida; ou tRNA supressor + Amber stop codon dependente de outro indutor) — várias arquiteturas existem.
-          en: Classical AND requires both signals simultaneously. Implemented with 2 activators (e.g. T7 RNAP split into 2 fragments, complementation via induced dimerization; or amber-stop suppressor tRNA + another inducer) — multiple architectures exist.
+          pt: 'AND clássico requer ambos sinais simultâneos. Implementado com 2 ativadores (e.g. T7 RNAP fragmentado em 2 partes, complementação via dimerização induzida; ou tRNA supressor + Amber stop codon dependente de outro indutor) — várias arquiteturas existem.'
+          en: 'Classical AND requires both signals simultaneously. Implemented with 2 activators (e.g. T7 RNAP split into 2 fragments, complementation via induced dimerization; or amber-stop suppressor tRNA + another inducer) — multiple architectures exist.'
         objectives: [AND gate]
       - type: choice
         difficulty: 5
         question:
-          pt: A Synlogic, com SYNB1618 e SYNB1934 (probióticos engenheirados E. coli Nissle) para fenilcetonúria (PKU), buscou…
-          en: Synlogic, with SYNB1618 and SYNB1934 (engineered E. coli Nissle probiotics) for phenylketonuria (PKU), aimed to…
+          pt: 'A Synlogic, com SYNB1618 e SYNB1934 (probióticos engenheirados E. coli Nissle) para fenilcetonúria (PKU), buscou…'
+          en: 'Synlogic, with SYNB1618 and SYNB1934 (engineered E. coli Nissle probiotics) for phenylketonuria (PKU), aimed to…'
         choices:
-          - E. coli ingerida que metaboliza fenilalanina entérica, reduzindo Phe sistêmica em pacientes PKU
-          - Vacinação contra fenilalanina como alergeno alimentar
-          - Edição CRISPR de PAH no fígado para correção genômica
-          - Substituição de pâncreas por bactéria endócrina permanente
-        correctAnswer: E. coli ingerida que metaboliza fenilalanina entérica, reduzindo Phe sistêmica em pacientes PKU
+          - 'E. coli ingerida que metaboliza fenilalanina entérica, reduzindo Phe sistêmica em pacientes PKU'
+          - 'Vacinação contra fenilalanina como alergeno alimentar'
+          - 'Edição CRISPR de PAH no fígado para correção genômica'
+          - 'Substituição de pâncreas por bactéria endócrina permanente'
+        correctAnswer: 'E. coli ingerida que metaboliza fenilalanina entérica, reduzindo Phe sistêmica em pacientes PKU'
         rationale:
-          pt: Synlogic engenheirou Nissle expressando PAL (phe ammonia lyase) que degrada Phe no intestino → trans-cinamato. SYNB1618 falhou Ph2 SYNPHENY-1 (2022); SYNB1934 (otimização) entrou Ph3 SYNPHENY-3 (2024). Demonstra promessa e desafio das "living therapeutics".
-          en: Synlogic engineered Nissle expressing PAL (phe ammonia lyase) degrading Phe in gut → trans-cinnamate. SYNB1618 failed Ph2 SYNPHENY-1 (2022); SYNB1934 (optimization) entered Ph3 SYNPHENY-3 (2024). Demonstrates the promise and challenge of "living therapeutics".
+          pt: 'Synlogic engenheirou Nissle expressando PAL (phe ammonia lyase) que degrada Phe no intestino → trans-cinamato. SYNB1618 falhou Ph2 SYNPHENY-1 (2022); SYNB1934 (otimização) entrou Ph3 SYNPHENY-3 (2024). Demonstra promessa e desafio das "living therapeutics".'
+          en: 'Synlogic engineered Nissle expressing PAL (phe ammonia lyase) degrading Phe in gut → trans-cinnamate. SYNB1618 failed Ph2 SYNPHENY-1 (2022); SYNB1934 (optimization) entered Ph3 SYNPHENY-3 (2024). Demonstrates the promise and challenge of "living therapeutics".'
         objectives: [Synlogic PKU]
       - type: choice
         difficulty: 5
         question:
-          pt: Recombinase-based logic (Tabor/Bashor) explora qual propriedade única para memória celular?
-          en: Recombinase-based logic (Tabor/Bashor) leverages which unique property for cellular memory?
+          pt: 'Recombinase-based logic (Tabor/Bashor) explora qual propriedade única para memória celular?'
+          en: 'Recombinase-based logic (Tabor/Bashor) leverages which unique property for cellular memory?'
         choices:
-          - Inversões/excisões irreversíveis de DNA gerando registros permanentes do estado celular
-          - Oscilação rítmica permitindo medição de tempo em horas
-          - Acoplamento direto a fotossíntese sem qualquer fonte externa
-          - Capacidade de imitar redes neurais artificiais clássicas
-        correctAnswer: Inversões/excisões irreversíveis de DNA gerando registros permanentes do estado celular
+          - 'Inversões/excisões irreversíveis de DNA gerando registros permanentes do estado celular'
+          - 'Oscilação rítmica permitindo medição de tempo em horas'
+          - 'Acoplamento direto a fotossíntese sem qualquer fonte externa'
+          - 'Capacidade de imitar redes neurais artificiais clássicas'
+        correctAnswer: 'Inversões/excisões irreversíveis de DNA gerando registros permanentes do estado celular'
         rationale:
-          pt: Recombinases (Bxb1, ϕC31, Cre) invertem ou excisam fragmentos de DNA flanqueados por sítios; invariância pós-recombinação cria memória de eventos. Bashor/Bonnet/Voigt construíram counters, locks, "tape recorders" cumulativos — memória robusta sem necessidade de feedback contínuo.
-          en: Recombinases (Bxb1, ϕC31, Cre) invert or excise DNA fragments flanked by sites; post-recombination invariance creates memory of events. Bashor/Bonnet/Voigt built counters, locks, cumulative "tape recorders" — robust memory without continuous feedback.
+          pt: 'Recombinases (Bxb1, ϕC31, Cre) invertem ou excisam fragmentos de DNA flanqueados por sítios; invariância pós-recombinação cria memória de eventos. Bashor/Bonnet/Voigt construíram counters, locks, "tape recorders" cumulativos — memória robusta sem necessidade de feedback contínuo.'
+          en: 'Recombinases (Bxb1, ϕC31, Cre) invert or excise DNA fragments flanked by sites; post-recombination invariance creates memory of events. Bashor/Bonnet/Voigt built counters, locks, cumulative "tape recorders" — robust memory without continuous feedback.'
         objectives: [Recombinase logic]
       - type: choice
         difficulty: 5
         question:
-          pt: Coda Biotherapeutics, fundada em 2017, foca em…
-          en: Coda Biotherapeutics, founded 2017, focuses on…
+          pt: 'Coda Biotherapeutics, fundada em 2017, foca em…'
+          en: 'Coda Biotherapeutics, founded 2017, focuses on…'
         choices:
-          - Genetic switches induzíveis para neurologia (epilepsia, dor, Parkinson) via AAV
-          - Vacinas mRNA pediátricas como concorrente direta da Moderna
-          - Diagnóstico molecular baseado exclusivamente em CRISPR-SHERLOCK
-          - Robôs cirúrgicos minimamente invasivos para neurocirurgia
-        correctAnswer: Genetic switches induzíveis para neurologia (epilepsia, dor, Parkinson) via AAV
+          - 'Genetic switches induzíveis para neurologia (epilepsia, dor, Parkinson) via AAV'
+          - 'Vacinas mRNA pediátricas como concorrente direta da Moderna'
+          - 'Diagnóstico molecular baseado exclusivamente em CRISPR-SHERLOCK'
+          - 'Robôs cirúrgicos minimamente invasivos para neurocirurgia'
+        correctAnswer: 'Genetic switches induzíveis para neurologia (epilepsia, dor, Parkinson) via AAV'
         rationale:
-          pt: Coda Biotherapeutics (San Francisco) usa receptores quiméricos induzíveis (DREADDs ou rOAT) entregues por AAV em circuitos neuronais; pequena molécula oral ativa o receptor, modulando neurônio. Plataforma para epilepsia farmaco-resistente, dor crônica, Parkinson — circuit-specific drug therapy.
-          en: Coda Biotherapeutics (San Francisco) uses inducible chimeric receptors (DREADDs or rOAT) delivered by AAV into neural circuits; an oral small molecule activates the receptor, modulating the neuron. Platform for drug-resistant epilepsy, chronic pain, Parkinson — circuit-specific drug therapy.
+          pt: 'Coda Biotherapeutics (San Francisco) usa receptores quiméricos induzíveis (DREADDs ou rOAT) entregues por AAV em circuitos neuronais; pequena molécula oral ativa o receptor, modulando neurônio. Plataforma para epilepsia farmaco-resistente, dor crônica, Parkinson — circuit-specific drug therapy.'
+          en: 'Coda Biotherapeutics (San Francisco) uses inducible chimeric receptors (DREADDs or rOAT) delivered by AAV into neural circuits; an oral small molecule activates the receptor, modulating the neuron. Platform for drug-resistant epilepsy, chronic pain, Parkinson — circuit-specific drug therapy.'
         objectives: [Coda Bio]
       - type: choice
         difficulty: 5
         question:
-          pt: A computação celular baseada em "DNA strand displacement" (Lulu Qian/Erik Winfree) realiza…
-          en: Cellular computing via "DNA strand displacement" (Lulu Qian/Erik Winfree) performs…
+          pt: 'A computação celular baseada em "DNA strand displacement" (Lulu Qian/Erik Winfree) realiza…'
+          en: 'Cellular computing via "DNA strand displacement" (Lulu Qian/Erik Winfree) performs…'
         choices:
-          - Cálculos baseados em hibridação competitiva de fitas, criando portas lógicas e neural networks de DNA
-          - Apenas amplificação por PCR sem qualquer computação subjacente
-          - Sequenciamento de uma fita de DNA detectando caracteres ASCII
-          - Síntese química de polímeros condutores elétricos com DNA
-        correctAnswer: Cálculos baseados em hibridação competitiva de fitas, criando portas lógicas e neural networks de DNA
+          - 'Cálculos baseados em hibridação competitiva de fitas, criando portas lógicas e neural networks de DNA'
+          - 'Apenas amplificação por PCR sem qualquer computação subjacente'
+          - 'Sequenciamento de uma fita de DNA detectando caracteres ASCII'
+          - 'Síntese química de polímeros condutores elétricos com DNA'
+        correctAnswer: 'Cálculos baseados em hibridação competitiva de fitas, criando portas lógicas e neural networks de DNA'
         rationale:
-          pt: Strand displacement: fita invasora desloca outra do duplex, propagando sinal via cinética de hibridação. Qian/Winfree (Caltech) construíram redes neurais de DNA capazes de classificação de pattern. Plataforma à temperatura ambiente sem enzimas — biocomputação química pura.
-          en: Strand displacement: an invading strand displaces another from a duplex, propagating signals via hybridization kinetics. Qian/Winfree (Caltech) built DNA neural networks capable of pattern classification. Room-temperature platform without enzymes — pure chemical biocomputation.
+          pt: 'Strand displacement: fita invasora desloca outra do duplex, propagando sinal via cinética de hibridação. Qian/Winfree (Caltech) construíram redes neurais de DNA capazes de classificação de pattern. Plataforma à temperatura ambiente sem enzimas — biocomputação química pura.'
+          en: 'Strand displacement: an invading strand displaces another from a duplex, propagating signals via hybridization kinetics. Qian/Winfree (Caltech) built DNA neural networks capable of pattern classification. Room-temperature platform without enzymes — pure chemical biocomputation.'
         objectives: [Strand displacement]
       - type: choice
         difficulty: 5
         question:
-          pt: PROTACs (Crews/Yale), na fronteira entre química e biologia, atuam por…
-          en: PROTACs (Crews/Yale), at the chemistry-biology frontier, act by…
+          pt: 'PROTACs (Crews/Yale), na fronteira entre química e biologia, atuam por…'
+          en: 'PROTACs (Crews/Yale), at the chemistry-biology frontier, act by…'
         choices:
-          - Recrutar E3 ubiquitina ligase a uma proteína-alvo para degradação proteasomal
-          - Inibir alostericamente sítio ativo enzimático sem qualquer degradação
-          - Ativar autofagia generalizada sem especificidade alvo
-          - Bloquear tradução de mRNA-alvo via siRNA sintético
-        correctAnswer: Recrutar E3 ubiquitina ligase a uma proteína-alvo para degradação proteasomal
+          - 'Recrutar E3 ubiquitina ligase a uma proteína-alvo para degradação proteasomal'
+          - 'Inibir alostericamente sítio ativo enzimático sem qualquer degradação'
+          - 'Ativar autofagia generalizada sem especificidade alvo'
+          - 'Bloquear tradução de mRNA-alvo via siRNA sintético'
+        correctAnswer: 'Recrutar E3 ubiquitina ligase a uma proteína-alvo para degradação proteasomal'
         rationale:
-          pt: PROTAC (PROteolysis TArgeting Chimera, Crews 2001) é molécula bivalente: ligante alvo + ligante E3 ubiquitina ligase + linker. Aproxima E3 → poliubiquitinação → degradação proteasomal. Arvinas (ARV-471 mama, ARV-110 próstata em Ph3) lidera; Foghorn, Kymera, C4 também.
-          en: PROTAC (PROteolysis TArgeting Chimera, Crews 2001) is a bivalent molecule: target ligand + E3 ubiquitin ligase ligand + linker. Bringing E3 close → polyubiquitination → proteasomal degradation. Arvinas (ARV-471 breast, ARV-110 prostate in Ph3) leads; Foghorn, Kymera, C4 also.
+          pt: 'PROTAC (PROteolysis TArgeting Chimera, Crews 2001) é molécula bivalente: ligante alvo + ligante E3 ubiquitina ligase + linker. Aproxima E3 → poliubiquitinação → degradação proteasomal. Arvinas (ARV-471 mama, ARV-110 próstata em Ph3) lidera; Foghorn, Kymera, C4 também.'
+          en: 'PROTAC (PROteolysis TArgeting Chimera, Crews 2001) is a bivalent molecule: target ligand + E3 ubiquitin ligase ligand + linker. Bringing E3 close → polyubiquitination → proteasomal degradation. Arvinas (ARV-471 breast, ARV-110 prostate in Ph3) leads; Foghorn, Kymera, C4 also.'
         objectives: [PROTACs]
   - title:
-      pt: Página 2 — Aplicações e governança
-      en: Page 2 — Applications and governance
+      pt: 'Página 2 — Aplicações e governança'
+      en: 'Page 2 — Applications and governance'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: A produção biotecnológica de "carne cultivada" (Aleph Farms, UPSIDE Foods) baseia-se em…
-          en: Cultivated meat production (Aleph Farms, UPSIDE Foods) is based on…
+          pt: 'A produção biotecnológica de "carne cultivada" (Aleph Farms, UPSIDE Foods) baseia-se em…'
+          en: 'Cultivated meat production (Aleph Farms, UPSIDE Foods) is based on…'
         choices:
-          - Células musculares e adiposas cultivadas em biorreatores com scaffold edível
-          - Engenharia de plantas para imitar sabor de carne via flavorizantes naturais
-          - Cultivo de fungos micélio fermentados sem qualquer célula animal
-          - Síntese química direta de aminoácidos sem cultura celular
-        correctAnswer: Células musculares e adiposas cultivadas em biorreatores com scaffold edível
+          - 'Células musculares e adiposas cultivadas em biorreatores com scaffold edível'
+          - 'Engenharia de plantas para imitar sabor de carne via flavorizantes naturais'
+          - 'Cultivo de fungos micélio fermentados sem qualquer célula animal'
+          - 'Síntese química direta de aminoácidos sem cultura celular'
+        correctAnswer: 'Células musculares e adiposas cultivadas em biorreatores com scaffold edível'
         rationale:
-          pt: Carne cultivada usa células-tronco musculares (mioblastos) ou iPSC bovinos/aviários expandidos em biorreator com meio de cultura (FBS-substituto), em scaffold (colágeno, plant-based). UPSIDE (frango, FDA jun/2023, USDA out/2023) e Good Meat (Eat Just) primeiras aprovações nos EUA.
-          en: Cultivated meat uses muscle stem cells (myoblasts) or bovine/avian iPSCs expanded in bioreactor with culture medium (FBS-substitute), on a scaffold (collagen, plant-based). UPSIDE (chicken, FDA Jun 2023, USDA Oct 2023) and Good Meat (Eat Just) first US approvals.
+          pt: 'Carne cultivada usa células-tronco musculares (mioblastos) ou iPSC bovinos/aviários expandidos em biorreator com meio de cultura (FBS-substituto), em scaffold (colágeno, plant-based). UPSIDE (frango, FDA jun/2023, USDA out/2023) e Good Meat (Eat Just) primeiras aprovações nos EUA.'
+          en: 'Cultivated meat uses muscle stem cells (myoblasts) or bovine/avian iPSCs expanded in bioreactor with culture medium (FBS-substitute), on a scaffold (collagen, plant-based). UPSIDE (chicken, FDA Jun 2023, USDA Oct 2023) and Good Meat (Eat Just) first US approvals.'
         objectives: [Carne cultivada]
       - type: choice
         difficulty: 5
         question:
-          pt: Bolt Threads e AMSilk produzem industrialmente proteínas de seda de aranha por…
-          en: Bolt Threads and AMSilk industrially produce spider silk proteins via…
+          pt: 'Bolt Threads e AMSilk produzem industrialmente proteínas de seda de aranha por…'
+          en: 'Bolt Threads and AMSilk industrially produce spider silk proteins via…'
         choices:
-          - Fermentação em leveduras/E. coli engenheiradas expressando spidroins sintéticas
-          - Coleta direta de teias de aranhas em fazendas controladas
-          - Extração química de cocoons de bicho-da-seda Bombyx mori
-          - Síntese química de polímeros de origem petroquímica
-        correctAnswer: Fermentação em leveduras/E. coli engenheiradas expressando spidroins sintéticas
+          - 'Fermentação em leveduras/E. coli engenheiradas expressando spidroins sintéticas'
+          - 'Coleta direta de teias de aranhas em fazendas controladas'
+          - 'Extração química de cocoons de bicho-da-seda Bombyx mori'
+          - 'Síntese química de polímeros de origem petroquímica'
+        correctAnswer: 'Fermentação em leveduras/E. coli engenheiradas expressando spidroins sintéticas'
         rationale:
-          pt: Bolt Threads (Microsilk, depois Mylo de fungo) e AMSilk (Munique) expressam genes de spidroin (Latrodectus, Nephila) em chassis microbianos; fibras processadas mecanicamente. Aplicações em textil, biomédico (suturas), cosmético — exemplo de "biofabrication" de materiais.
-          en: Bolt Threads (Microsilk, later Mylo from fungus) and AMSilk (Munich) express spidroin genes (Latrodectus, Nephila) in microbial chassis; fibers are mechanically processed. Applications in textile, biomedical (sutures), cosmetics — example of materials "biofabrication".
+          pt: 'Bolt Threads (Microsilk, depois Mylo de fungo) e AMSilk (Munique) expressam genes de spidroin (Latrodectus, Nephila) em chassis microbianos; fibras processadas mecanicamente. Aplicações em textil, biomédico (suturas), cosmético — exemplo de "biofabrication" de materiais.'
+          en: 'Bolt Threads (Microsilk, later Mylo from fungus) and AMSilk (Munich) express spidroin genes (Latrodectus, Nephila) in microbial chassis; fibers are mechanically processed. Applications in textile, biomedical (sutures), cosmetics — example of materials "biofabrication".'
         objectives: [Seda de aranha]
       - type: choice
         difficulty: 5
         question:
-          pt: A síntese de artemisinina (anti-malárico) por levedura engenheirada (Jay Keasling, Berkeley) é um marco porque…
-          en: Yeast-engineered artemisinin synthesis (Jay Keasling, Berkeley) is a milestone because it…
+          pt: 'A síntese de artemisinina (anti-malárico) por levedura engenheirada (Jay Keasling, Berkeley) é um marco porque…'
+          en: 'Yeast-engineered artemisinin synthesis (Jay Keasling, Berkeley) is a milestone because it…'
         choices:
-          - Primeiro composto natural complexo produzido por fermentação engenheirada em escala industrial
-          - Primeira pequena molécula sintetizada exclusivamente por química combinatória
-          - Primeira proteína recombinante produzida em E. coli aprovada pela FDA
-          - Primeira via metabólica clonada de planta para mamífero
-        correctAnswer: Primeiro composto natural complexo produzido por fermentação engenheirada em escala industrial
+          - 'Primeiro composto natural complexo produzido por fermentação engenheirada em escala industrial'
+          - 'Primeira pequena molécula sintetizada exclusivamente por química combinatória'
+          - 'Primeira proteína recombinante produzida em E. coli aprovada pela FDA'
+          - 'Primeira via metabólica clonada de planta para mamífero'
+        correctAnswer: 'Primeiro composto natural complexo produzido por fermentação engenheirada em escala industrial'
         rationale:
-          pt: Keasling/Sanofi (One World Health, 2013) reconstruíram via biossintética da artemisinina (~12 enzimas) em S. cerevisiae produzindo ácido artemisínico, depois finalizado quimicamente — substituiu cultivo de Artemisia annua flutuante. Marco fundador da synbio aplicada.
-          en: Keasling/Sanofi (One World Health, 2013) reconstructed the artemisinin biosynthetic pathway (~12 enzymes) in S. cerevisiae producing artemisinic acid, then chemically finalized — replacing volatile Artemisia annua cultivation. Foundational applied-synbio milestone.
+          pt: 'Keasling/Sanofi (One World Health, 2013) reconstruíram via biossintética da artemisinina (~12 enzimas) em S. cerevisiae produzindo ácido artemisínico, depois finalizado quimicamente — substituiu cultivo de Artemisia annua flutuante. Marco fundador da synbio aplicada.'
+          en: 'Keasling/Sanofi (One World Health, 2013) reconstructed the artemisinin biosynthetic pathway (~12 enzymes) in S. cerevisiae producing artemisinic acid, then chemically finalized — replacing volatile Artemisia annua cultivation. Foundational applied-synbio milestone.'
         objectives: [Artemisinina synbio]
       - type: choice
         difficulty: 5
         question:
-          pt: O SBOL (Synthetic Biology Open Language) é importante para o campo porque…
-          en: SBOL (Synthetic Biology Open Language) is important to the field because it…
+          pt: 'O SBOL (Synthetic Biology Open Language) é importante para o campo porque…'
+          en: 'SBOL (Synthetic Biology Open Language) is important to the field because it…'
         choices:
-          - Padrão aberto de descrição de design de circuitos genéticos para troca entre ferramentas
-          - Linguagem de programação proprietária para dispositivos comerciais como Arduino
-          - Apenas formato de imagem para diagramas de circuitos genéticos
-          - Substituto direto de FASTA/GenBank em todos os contextos
-        correctAnswer: Padrão aberto de descrição de design de circuitos genéticos para troca entre ferramentas
+          - 'Padrão aberto de descrição de design de circuitos genéticos para troca entre ferramentas'
+          - 'Linguagem de programação proprietária para dispositivos comerciais como Arduino'
+          - 'Apenas formato de imagem para diagramas de circuitos genéticos'
+          - 'Substituto direto de FASTA/GenBank em todos os contextos'
+        correctAnswer: 'Padrão aberto de descrição de design de circuitos genéticos para troca entre ferramentas'
         rationale:
-          pt: SBOL é padrão aberto (XML/RDF) para descrever DNA designs, hierarquia, função, simulações — equivalente a netlist/Verilog em EDA. Permite que Cello, JBEI ICE, SynBioHub etc. troquem dados. Mantido pela SBOL Industrial Consortium.
-          en: SBOL is an open standard (XML/RDF) for describing DNA designs, hierarchy, function, simulations — equivalent to netlist/Verilog in EDA. Allows Cello, JBEI ICE, SynBioHub etc. to exchange data. Maintained by the SBOL Industrial Consortium.
+          pt: 'SBOL é padrão aberto (XML/RDF) para descrever DNA designs, hierarquia, função, simulações — equivalente a netlist/Verilog em EDA. Permite que Cello, JBEI ICE, SynBioHub etc. troquem dados. Mantido pela SBOL Industrial Consortium.'
+          en: 'SBOL is an open standard (XML/RDF) for describing DNA designs, hierarchy, function, simulations — equivalent to netlist/Verilog in EDA. Allows Cello, JBEI ICE, SynBioHub etc. to exchange data. Maintained by the SBOL Industrial Consortium.'
         objectives: [SBOL]
       - type: choice
         difficulty: 5
         question:
-          pt: Bioprodução em "células-livre de células" (cell-free systems, e.g. PURE, S30) tem qual vantagem?
-          en: Cell-free production (e.g. PURE, S30 systems) has which advantage?
+          pt: 'Bioprodução em "células-livre de células" (cell-free systems, e.g. PURE, S30) tem qual vantagem?'
+          en: 'Cell-free production (e.g. PURE, S30 systems) has which advantage?'
         choices:
-          - Permite produção rápida sem manutenção de organismo vivo, com menor regulação biocontentiva
-          - Maior eficiência de produção que qualquer cultura celular conhecida
-          - Eliminação completa da necessidade de DNA template
-          - Capacidade exclusiva de produzir glicoproteínas complexas
-        correctAnswer: Permite produção rápida sem manutenção de organismo vivo, com menor regulação biocontentiva
+          - 'Permite produção rápida sem manutenção de organismo vivo, com menor regulação biocontentiva'
+          - 'Maior eficiência de produção que qualquer cultura celular conhecida'
+          - 'Eliminação completa da necessidade de DNA template'
+          - 'Capacidade exclusiva de produzir glicoproteínas complexas'
+        correctAnswer: 'Permite produção rápida sem manutenção de organismo vivo, com menor regulação biocontentiva'
         rationale:
-          pt: Sistemas livres de células (TX-TL) usam extrato bacteriano com energia + dNTP/aa fornecidos; produzem proteína em horas. Vantagens: sem GMO regulamentado, prototipagem rápida, escalável em sachês liofilizados (Collins, Pardee). Aplicações: vacinas in-field, diagnóstico (SHERLOCK).
-          en: Cell-free systems (TX-TL) use bacterial extract with supplied energy + dNTPs/aa; produce protein in hours. Advantages: no regulated GMO, rapid prototyping, scalable in lyophilized sachets (Collins, Pardee). Applications: field vaccines, diagnostics (SHERLOCK).
+          pt: 'Sistemas livres de células (TX-TL) usam extrato bacteriano com energia + dNTP/aa fornecidos; produzem proteína em horas. Vantagens: sem GMO regulamentado, prototipagem rápida, escalável em sachês liofilizados (Collins, Pardee). Aplicações: vacinas in-field, diagnóstico (SHERLOCK).'
+          en: 'Cell-free systems (TX-TL) use bacterial extract with supplied energy + dNTPs/aa; produce protein in hours. Advantages: no regulated GMO, rapid prototyping, scalable in lyophilized sachets (Collins, Pardee). Applications: field vaccines, diagnostics (SHERLOCK).'
         objectives: [Cell-free]
       - type: choice
         difficulty: 5
         question:
-          pt: Uma aplicação ambiental de synbio é "biorremediação" — qual exemplo notório?
-          en: A synbio environmental application is "bioremediation" — which notable example?
+          pt: 'Uma aplicação ambiental de synbio é "biorremediação" — qual exemplo notório?'
+          en: 'A synbio environmental application is "bioremediation" — which notable example?'
         choices:
-          - Engenharia de Pseudomonas/E. coli para degradar plásticos (PET) via PETase + MHETase
-          - Remoção de CO2 atmosférico por leveduras carbono-positivas
-          - Eliminação de radioatividade de Chernobyl por bactérias engenheiradas
-          - Substituição de fertilizantes petroquímicos por bactérias diazotróficas universais
-        correctAnswer: Engenharia de Pseudomonas/E. coli para degradar plásticos (PET) via PETase + MHETase
+          - 'Engenharia de Pseudomonas/E. coli para degradar plásticos (PET) via PETase + MHETase'
+          - 'Remoção de CO2 atmosférico por leveduras carbono-positivas'
+          - 'Eliminação de radioatividade de Chernobyl por bactérias engenheiradas'
+          - 'Substituição de fertilizantes petroquímicos por bactérias diazotróficas universais'
+        correctAnswer: 'Engenharia de Pseudomonas/E. coli para degradar plásticos (PET) via PETase + MHETase'
         rationale:
-          pt: Após descoberta de Ideonella sakaiensis com PETase (Yoshida 2016), engenharia melhorou a enzima (FAST-PETase, Tournier 2020 LCC). Mecanismo industrial Carbios (FR) faz reciclagem química de PET; pesquisa expande para outras matrizes plásticas.
-          en: After Ideonella sakaiensis with PETase was discovered (Yoshida 2016), engineering improved it (FAST-PETase, Tournier 2020 LCC). Carbios (FR) industrially does PET chemical recycling; research extends to other plastic matrices.
+          pt: 'Após descoberta de Ideonella sakaiensis com PETase (Yoshida 2016), engenharia melhorou a enzima (FAST-PETase, Tournier 2020 LCC). Mecanismo industrial Carbios (FR) faz reciclagem química de PET; pesquisa expande para outras matrizes plásticas.'
+          en: 'After Ideonella sakaiensis with PETase was discovered (Yoshida 2016), engineering improved it (FAST-PETase, Tournier 2020 LCC). Carbios (FR) industrially does PET chemical recycling; research extends to other plastic matrices.'
         objectives: [PETase]
       - type: choice
         difficulty: 5
         question:
-          pt: A fronteira "diagnóstico CRISPR" (SHERLOCK, DETECTR) explora qual propriedade?
-          en: The "CRISPR diagnostics" frontier (SHERLOCK, DETECTR) leverages which property?
+          pt: 'A fronteira "diagnóstico CRISPR" (SHERLOCK, DETECTR) explora qual propriedade?'
+          en: 'The "CRISPR diagnostics" frontier (SHERLOCK, DETECTR) leverages which property?'
         choices:
-          - Atividade de "trans-cleavage" colateral de Cas13/Cas12 após reconhecimento alvo, gerando sinal fluorescente amplificado
-          - Capacidade exclusiva de cortar DNA tumoral circulante in vivo
-          - Edição de RNA viral em pacientes vivos para diagnóstico molecular
-          - Substituição direta de PCR sem qualquer amplificação molecular
-        correctAnswer: Atividade de "trans-cleavage" colateral de Cas13/Cas12 após reconhecimento alvo, gerando sinal fluorescente amplificado
+          - 'Atividade de "trans-cleavage" colateral de Cas13/Cas12 após reconhecimento alvo, gerando sinal fluorescente amplificado'
+          - 'Capacidade exclusiva de cortar DNA tumoral circulante in vivo'
+          - 'Edição de RNA viral em pacientes vivos para diagnóstico molecular'
+          - 'Substituição direta de PCR sem qualquer amplificação molecular'
+        correctAnswer: 'Atividade de "trans-cleavage" colateral de Cas13/Cas12 após reconhecimento alvo, gerando sinal fluorescente amplificado'
         rationale:
-          pt: SHERLOCK (Zhang/Collins) e DETECTR (Doudna/Chen) usam Cas13a/Cas12a; após Cas reconhecer alvo via gRNA, ativa-se "collateral cleavage" — corta repórter fluorogênico arbitrário. Combinado com RPA/LAMP isotérmica = teste sem PCR, papel-baseado, point-of-care (Mammoth Bio).
-          en: SHERLOCK (Zhang/Collins) and DETECTR (Doudna/Chen) use Cas13a/Cas12a; once Cas recognizes target via gRNA, collateral cleavage activates — cutting an arbitrary fluorogenic reporter. Combined with isothermal RPA/LAMP = PCR-free, paper-based, point-of-care (Mammoth Bio).
+          pt: 'SHERLOCK (Zhang/Collins) e DETECTR (Doudna/Chen) usam Cas13a/Cas12a; após Cas reconhecer alvo via gRNA, ativa-se "collateral cleavage" — corta repórter fluorogênico arbitrário. Combinado com RPA/LAMP isotérmica = teste sem PCR, papel-baseado, point-of-care (Mammoth Bio).'
+          en: 'SHERLOCK (Zhang/Collins) and DETECTR (Doudna/Chen) use Cas13a/Cas12a; once Cas recognizes target via gRNA, collateral cleavage activates — cutting an arbitrary fluorogenic reporter. Combined with isothermal RPA/LAMP = PCR-free, paper-based, point-of-care (Mammoth Bio).'
         objectives: [SHERLOCK]
       - type: choice
         difficulty: 5
         question:
-          pt: A questão da "biossegurança" em organismos engenheirados liberados implica…
-          en: "Biosafety" of released engineered organisms implies…
+          pt: 'A questão da "biossegurança" em organismos engenheirados liberados implica…'
+          en: '"Biosafety" of released engineered organisms implies…'
         choices:
-          - Mecanismos de contenção (auxotrofia, kill switches, dependência de aminoácido sintético)
-          - Liberação livre sem qualquer cuidado regulatório especial
-          - Substituição completa por organismos selvagens equivalentes
-          - Aprovação automática se houver patente comercial
-        correctAnswer: Mecanismos de contenção (auxotrofia, kill switches, dependência de aminoácido sintético)
+          - 'Mecanismos de contenção (auxotrofia, kill switches, dependência de aminoácido sintético)'
+          - 'Liberação livre sem qualquer cuidado regulatório especial'
+          - 'Substituição completa por organismos selvagens equivalentes'
+          - 'Aprovação automática se houver patente comercial'
+        correctAnswer: 'Mecanismos de contenção (auxotrofia, kill switches, dependência de aminoácido sintético)'
         rationale:
-          pt: Estratégias de contenção: auxotrofia (necessidade de aminoácido sintético não-natural via "GRO" — Genomically Recoded Organism, Isaacs/Church); kill switches em circuitos (toggle suicidas); contenção semântica (códon raro). Synbio responsável requer múltiplas redundâncias.
-          en: Containment strategies: auxotrophy (need for non-natural synthetic amino acid via "GRO" — Genomically Recoded Organism, Isaacs/Church); circuit kill switches (suicidal toggles); semantic containment (rare codons). Responsible synbio requires multiple redundancies.
+          pt: 'Estratégias de contenção: auxotrofia (necessidade de aminoácido sintético não-natural via "GRO" — Genomically Recoded Organism, Isaacs/Church); kill switches em circuitos (toggle suicidas); contenção semântica (códon raro). Synbio responsável requer múltiplas redundâncias.'
+          en: 'Containment strategies: auxotrophy (need for non-natural synthetic amino acid via "GRO" — Genomically Recoded Organism, Isaacs/Church); circuit kill switches (suicidal toggles); semantic containment (rare codons). Responsible synbio requires multiple redundancies.'
         objectives: [Biocontainment]
       - type: choice
         difficulty: 5
         question:
-          pt: Os "Genomically Recoded Organisms" (GROs, Isaacs/Church) são notáveis por…
-          en: Genomically Recoded Organisms (GROs, Isaacs/Church) are notable because they…
+          pt: 'Os "Genomically Recoded Organisms" (GROs, Isaacs/Church) são notáveis por…'
+          en: 'Genomically Recoded Organisms (GROs, Isaacs/Church) are notable because they…'
         choices:
-          - E. coli com 7 codons reescritos (TAG→TAA), permitindo incorporação de aminoácidos não-naturais e resistência a fagos
-          - Levedura completamente sintética sem qualquer modificação de codon
-          - Mamíferos transgênicos com genoma totalmente artificial substituído
-          - Plantas com cromossomos duplicados como poliplóides naturais
-        correctAnswer: E. coli com 7 codons reescritos (TAG→TAA), permitindo incorporação de aminoácidos não-naturais e resistência a fagos
+          - 'E. coli com 7 codons reescritos (TAG→TAA), permitindo incorporação de aminoácidos não-naturais e resistência a fagos'
+          - 'Levedura completamente sintética sem qualquer modificação de codon'
+          - 'Mamíferos transgênicos com genoma totalmente artificial substituído'
+          - 'Plantas com cromossomos duplicados como poliplóides naturais'
+        correctAnswer: 'E. coli com 7 codons reescritos (TAG→TAA), permitindo incorporação de aminoácidos não-naturais e resistência a fagos'
         rationale:
-          pt: Isaacs/Lajoie/Church (Science 2013) construíram E. coli com TAG → TAA em 321 sítios; subsequente Syn61 (Lajoie/Robertson Cambridge 2019) eliminou TCA/TCG/TAG. Resultado: chassis para incorporação genética de >100 aminoácidos não-naturais e ortogonal a fagos comuns.
-          en: Isaacs/Lajoie/Church (Science 2013) built E. coli with TAG → TAA at 321 sites; subsequent Syn61 (Lajoie/Robertson Cambridge 2019) removed TCA/TCG/TAG. Result: a chassis for genetic incorporation of >100 non-natural amino acids and orthogonal to common phages.
+          pt: 'Isaacs/Lajoie/Church (Science 2013) construíram E. coli com TAG → TAA em 321 sítios; subsequente Syn61 (Lajoie/Robertson Cambridge 2019) eliminou TCA/TCG/TAG. Resultado: chassis para incorporação genética de >100 aminoácidos não-naturais e ortogonal a fagos comuns.'
+          en: 'Isaacs/Lajoie/Church (Science 2013) built E. coli with TAG → TAA at 321 sites; subsequent Syn61 (Lajoie/Robertson Cambridge 2019) removed TCA/TCG/TAG. Result: a chassis for genetic incorporation of >100 non-natural amino acids and orthogonal to common phages.'
         objectives: [GROs]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito de "responsável" em synbio (Drew Endy, ETC group) propõe…
-          en: "Responsible" synbio (Drew Endy, ETC group) proposes…
+          pt: 'O conceito de "responsável" em synbio (Drew Endy, ETC group) propõe…'
+          en: '"Responsible" synbio (Drew Endy, ETC group) proposes…'
         choices:
-          - Engajamento público e governança upstream antes da ampla aplicação industrial
-          - Proibição absoluta de qualquer manipulação genética nos próximos 50 anos
-          - Aprovação automática de qualquer organismo com patente registrada
-          - Centralização da pesquisa em três governos apenas globalmente
-        correctAnswer: Engajamento público e governança upstream antes da ampla aplicação industrial
+          - 'Engajamento público e governança upstream antes da ampla aplicação industrial'
+          - 'Proibição absoluta de qualquer manipulação genética nos próximos 50 anos'
+          - 'Aprovação automática de qualquer organismo com patente registrada'
+          - 'Centralização da pesquisa em três governos apenas globalmente'
+        correctAnswer: 'Engajamento público e governança upstream antes da ampla aplicação industrial'
         rationale:
-          pt: Endy (Stanford) e ETC Group/Hope Shand defendem governança upstream — discussão pública e regulatória antes de tecnologia ser aplicada amplamente, em vez de "responder a fait accompli". Especialmente em drives e organismos liberados; SynBioBeta, iGEM Safety/Security Committee implementam.
-          en: Endy (Stanford) and ETC Group/Hope Shand advocate upstream governance — public and regulatory discussion before tech is broadly applied, rather than "responding to fait accompli". Especially for drives and released organisms; SynBioBeta, iGEM Safety/Security Committee implement.
+          pt: 'Endy (Stanford) e ETC Group/Hope Shand defendem governança upstream — discussão pública e regulatória antes de tecnologia ser aplicada amplamente, em vez de "responder a fait accompli". Especialmente em drives e organismos liberados; SynBioBeta, iGEM Safety/Security Committee implementam.'
+          en: 'Endy (Stanford) and ETC Group/Hope Shand advocate upstream governance — public and regulatory discussion before tech is broadly applied, rather than "responding to fait accompli". Especially for drives and released organisms; SynBioBeta, iGEM Safety/Security Committee implement.'
         objectives: [Synbio responsável]
 target: 20

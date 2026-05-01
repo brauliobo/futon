@@ -1,13 +1,13 @@
 title:
-  pt: Edição Epigenética e Memória da Cromatina
-  en: Epigenome Editing and Chromatin Memory
+  pt: 'Edição Epigenética e Memória da Cromatina'
+  en: 'Epigenome Editing and Chromatin Memory'
 level: O
 subject: biology
 objectives:
-  - Compreender efetores epi (DNMT3A, TET, KRAB, p300)
-  - Reconhecer plataformas dCas9/dCas12 e ZF/TALE
-  - Identificar empresas (Tune, Chroma, Epicrispr, Epitor)
-  - Avaliar herança mitótica e durabilidade
+  - 'Compreender efetores epi (DNMT3A, TET, KRAB, p300)'
+  - 'Reconhecer plataformas dCas9/dCas12 e ZF/TALE'
+  - 'Identificar empresas (Tune, Chroma, Epicrispr, Epitor)'
+  - 'Avaliar herança mitótica e durabilidade'
 difficulty: 5
 authorNotes: |
   Frontier epi-editing. Founders: David Liu (Broad), Charles Gersbach (Duke), Keith Joung
@@ -20,327 +20,327 @@ authorNotes: |
   Ph1 2024-2025. Epigenetic editing principle: lasting marks without DSBs.
 example:
   question:
-    pt: O que distingue conceitualmente edição "epigenética" de edição "genômica" clássica como CRISPR-Cas9?
-    en: What conceptually distinguishes "epigenetic" editing from classical "genomic" editing like CRISPR-Cas9?
+    pt: 'O que distingue conceitualmente edição "epigenética" de edição "genômica" clássica como CRISPR-Cas9?'
+    en: 'What conceptually distinguishes "epigenetic" editing from classical "genomic" editing like CRISPR-Cas9?'
   choices:
-    - Epigenética modifica marcas de cromatina ou metilação sem alterar sequência de DNA
-    - Epigenética edita apenas mtDNA enquanto Cas9 edita só DNA nuclear
-    - Epigenética requer entrega via AAV apenas, Cas9 só LNP
-    - Epigenética só funciona em células-tronco, Cas9 em todas
-  correctAnswer: Epigenética modifica marcas de cromatina ou metilação sem alterar sequência de DNA
+    - 'Epigenética modifica marcas de cromatina ou metilação sem alterar sequência de DNA'
+    - 'Epigenética edita apenas mtDNA enquanto Cas9 edita só DNA nuclear'
+    - 'Epigenética requer entrega via AAV apenas, Cas9 só LNP'
+    - 'Epigenética só funciona em células-tronco, Cas9 em todas'
+  correctAnswer: 'Epigenética modifica marcas de cromatina ou metilação sem alterar sequência de DNA'
   rationale:
-    pt: Edição epigenética usa Cas9 cataliticamente morto (dCas9) fundido a efetores que escrevem/apagam metilação de DNA, modificações de histonas etc. — modula expressão gênica sem alterar sequência, evitando indels permanentes e off-target genômicos.
-    en: Epigenetic editing uses catalytically dead Cas9 (dCas9) fused to effectors writing/erasing DNA methylation, histone modifications, etc. — modulating gene expression without altering sequence, avoiding permanent indels and genomic off-targets.
+    pt: 'Edição epigenética usa Cas9 cataliticamente morto (dCas9) fundido a efetores que escrevem/apagam metilação de DNA, modificações de histonas etc. — modula expressão gênica sem alterar sequência, evitando indels permanentes e off-target genômicos.'
+    en: 'Epigenetic editing uses catalytically dead Cas9 (dCas9) fused to effectors writing/erasing DNA methylation, histone modifications, etc. — modulating gene expression without altering sequence, avoiding permanent indels and genomic off-targets.'
 passCriteria:
   minAccuracyPercent: 85
   maxAvgSecondsPerExercise: 14
 pages:
   - title:
-      pt: Página 1 — Plataformas e efetores
-      en: Page 1 — Platforms and effectors
+      pt: 'Página 1 — Plataformas e efetores'
+      en: 'Page 1 — Platforms and effectors'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: O efetor "KRAB" (Krüppel-Associated Box) recrutado por dCas9-KRAB induz…
-          en: The KRAB (Krüppel-Associated Box) effector recruited by dCas9-KRAB induces…
+          pt: 'O efetor "KRAB" (Krüppel-Associated Box) recrutado por dCas9-KRAB induz…'
+          en: 'The KRAB (Krüppel-Associated Box) effector recruited by dCas9-KRAB induces…'
         choices:
-          - Silenciamento gênico via KAP1/SETDB1, depositando H3K9me3 heterocromatínico
-          - Ativação gênica via p300 e marcação de H3K27ac
-          - Quebra de fita dupla seguida por reparo NHEJ clássico
-          - Ubiquitinação direta de RNA polimerase II e degradação proteasomal
-        correctAnswer: Silenciamento gênico via KAP1/SETDB1, depositando H3K9me3 heterocromatínico
+          - 'Silenciamento gênico via KAP1/SETDB1, depositando H3K9me3 heterocromatínico'
+          - 'Ativação gênica via p300 e marcação de H3K27ac'
+          - 'Quebra de fita dupla seguida por reparo NHEJ clássico'
+          - 'Ubiquitinação direta de RNA polimerase II e degradação proteasomal'
+        correctAnswer: 'Silenciamento gênico via KAP1/SETDB1, depositando H3K9me3 heterocromatínico'
         rationale:
-          pt: KRAB (de ZNFs) recruta KAP1/TRIM28 → SETDB1 → H3K9me3 + DNA-met → heterocromatina. dCas9-KRAB silencia via guia única; combinação KRAB+DNMT3A+DNMT3L (CRISPRoff) gera silenciamento herdado por divisões celulares.
-          en: KRAB (from ZNFs) recruits KAP1/TRIM28 → SETDB1 → H3K9me3 + DNA-met → heterochromatin. dCas9-KRAB silences with a single guide; KRAB+DNMT3A+DNMT3L combo (CRISPRoff) yields silencing inherited across cell divisions.
+          pt: 'KRAB (de ZNFs) recruta KAP1/TRIM28 → SETDB1 → H3K9me3 + DNA-met → heterocromatina. dCas9-KRAB silencia via guia única; combinação KRAB+DNMT3A+DNMT3L (CRISPRoff) gera silenciamento herdado por divisões celulares.'
+          en: 'KRAB (from ZNFs) recruits KAP1/TRIM28 → SETDB1 → H3K9me3 + DNA-met → heterochromatin. dCas9-KRAB silences with a single guide; KRAB+DNMT3A+DNMT3L combo (CRISPRoff) yields silencing inherited across cell divisions.'
         objectives: [KRAB]
       - type: choice
         difficulty: 5
         question:
-          pt: A plataforma "CRISPRoff" (Bintu/Lippman/Weissman, Cell 2021) atinge silenciamento durável e herdado por…
-          en: The "CRISPRoff" platform (Bintu/Lippman/Weissman, Cell 2021) achieves durable and heritable silencing by…
+          pt: 'A plataforma "CRISPRoff" (Bintu/Lippman/Weissman, Cell 2021) atinge silenciamento durável e herdado por…'
+          en: 'The "CRISPRoff" platform (Bintu/Lippman/Weissman, Cell 2021) achieves durable and heritable silencing by…'
         choices:
-          - Combinar ZNF10-KRAB + DNMT3A-DNMT3L em fusão única, instalando metilação herdada mitoticamente
-          - Apenas KRAB sem qualquer metilação direta de DNA, com efeito transitório
-          - Quebra dupla de DNA seguida por reparo HDR clássico de toda região
-          - Inibidores químicos genéricos de transcrição global sem especificidade alvo
-        correctAnswer: Combinar ZNF10-KRAB + DNMT3A-DNMT3L em fusão única, instalando metilação herdada mitoticamente
+          - 'Combinar ZNF10-KRAB + DNMT3A-DNMT3L em fusão única, instalando metilação herdada mitoticamente'
+          - 'Apenas KRAB sem qualquer metilação direta de DNA, com efeito transitório'
+          - 'Quebra dupla de DNA seguida por reparo HDR clássico de toda região'
+          - 'Inibidores químicos genéricos de transcrição global sem especificidade alvo'
+        correctAnswer: 'Combinar ZNF10-KRAB + DNMT3A-DNMT3L em fusão única, instalando metilação herdada mitoticamente'
         rationale:
-          pt: CRISPRoff (Nuñez et al., Cell 2021) fundiu ZNF10-KRAB com DNMT3A-DNMT3L em dCas9; entrega transitória de mRNA leva a metilação CpG hereditária + H3K9me3, sustentável por meses-anos sem novas doses.
-          en: CRISPRoff (Nuñez et al., Cell 2021) fused ZNF10-KRAB with DNMT3A-DNMT3L on dCas9; transient mRNA delivery yields heritable CpG methylation + H3K9me3, sustained for months-years without new doses.
+          pt: 'CRISPRoff (Nuñez et al., Cell 2021) fundiu ZNF10-KRAB com DNMT3A-DNMT3L em dCas9; entrega transitória de mRNA leva a metilação CpG hereditária + H3K9me3, sustentável por meses-anos sem novas doses.'
+          en: 'CRISPRoff (Nuñez et al., Cell 2021) fused ZNF10-KRAB with DNMT3A-DNMT3L on dCas9; transient mRNA delivery yields heritable CpG methylation + H3K9me3, sustained for months-years without new doses.'
         objectives: [CRISPRoff]
       - type: choice
         difficulty: 5
         question:
-          pt: O efetor "p300 core" usado em dCas9-p300core (Hilton et al., Nat Biotech 2015) realiza…
-          en: The "p300 core" effector used in dCas9-p300core (Hilton et al., Nat Biotech 2015) performs…
+          pt: 'O efetor "p300 core" usado em dCas9-p300core (Hilton et al., Nat Biotech 2015) realiza…'
+          en: 'The "p300 core" effector used in dCas9-p300core (Hilton et al., Nat Biotech 2015) performs…'
         choices:
-          - Acetilação de H3K27 em enhancers e promotores, ativando transcrição localmente
-          - Metilação de DNA exclusivamente em ilhas CpG promotoras
-          - Desmetilação de H3K9 via demetilase de aldeído clássica
-          - Ubiquitinação K48 de proteínas alvo para degradação proteasomal
-        correctAnswer: Acetilação de H3K27 em enhancers e promotores, ativando transcrição localmente
+          - 'Acetilação de H3K27 em enhancers e promotores, ativando transcrição localmente'
+          - 'Metilação de DNA exclusivamente em ilhas CpG promotoras'
+          - 'Desmetilação de H3K9 via demetilase de aldeído clássica'
+          - 'Ubiquitinação K48 de proteínas alvo para degradação proteasomal'
+        correctAnswer: 'Acetilação de H3K27 em enhancers e promotores, ativando transcrição localmente'
         rationale:
-          pt: p300 é HAT que acetila H3K27ac em enhancers ativos. dCas9-p300core (Hilton/Gersbach 2015) deposita H3K27ac em alvos, ativando transcrição com especificidade de uma única gRNA — superior a VP64 em loci enhancer-distantes.
-          en: p300 is a HAT acetylating H3K27ac at active enhancers. dCas9-p300core (Hilton/Gersbach 2015) deposits H3K27ac at targets, activating transcription with single-gRNA specificity — superior to VP64 at enhancer-distant loci.
+          pt: 'p300 é HAT que acetila H3K27ac em enhancers ativos. dCas9-p300core (Hilton/Gersbach 2015) deposita H3K27ac em alvos, ativando transcrição com especificidade de uma única gRNA — superior a VP64 em loci enhancer-distantes.'
+          en: 'p300 is a HAT acetylating H3K27ac at active enhancers. dCas9-p300core (Hilton/Gersbach 2015) deposits H3K27ac at targets, activating transcription with single-gRNA specificity — superior to VP64 at enhancer-distant loci.'
         objectives: [p300]
       - type: choice
         difficulty: 5
         question:
-          pt: dCas9-TET1 ativa expressão gênica por…
-          en: dCas9-TET1 activates gene expression by…
+          pt: 'dCas9-TET1 ativa expressão gênica por…'
+          en: 'dCas9-TET1 activates gene expression by…'
         choices:
-          - Hidroxilar 5mC em 5hmC, iniciando desmetilação ativa de DNA
-          - Metilar diretamente CpGs em promotores silenciando
-          - Acetilar H3K9 deslocando heterocromatina constitutivamente
-          - Fosforilar Pol II Ser5 promovendo elongação transcricional
-        correctAnswer: Hidroxilar 5mC em 5hmC, iniciando desmetilação ativa de DNA
+          - 'Hidroxilar 5mC em 5hmC, iniciando desmetilação ativa de DNA'
+          - 'Metilar diretamente CpGs em promotores silenciando'
+          - 'Acetilar H3K9 deslocando heterocromatina constitutivamente'
+          - 'Fosforilar Pol II Ser5 promovendo elongação transcricional'
+        correctAnswer: 'Hidroxilar 5mC em 5hmC, iniciando desmetilação ativa de DNA'
         rationale:
-          pt: TET1 (Ten-Eleven Translocation) oxida 5mC → 5hmC → 5fC → 5caC, levando a desmetilação ativa via TDG/BER. dCas9-TET1 reverte silenciamento epigenético em genes hipermetilados — útil em terapia (e.g., MECP2, HBG, FMR1) sem alterar sequência.
-          en: TET1 (Ten-Eleven Translocation) oxidizes 5mC → 5hmC → 5fC → 5caC, driving active demethylation via TDG/BER. dCas9-TET1 reverses epigenetic silencing at hypermethylated genes — useful in therapy (e.g., MECP2, HBG, FMR1) without altering sequence.
+          pt: 'TET1 (Ten-Eleven Translocation) oxida 5mC → 5hmC → 5fC → 5caC, levando a desmetilação ativa via TDG/BER. dCas9-TET1 reverte silenciamento epigenético em genes hipermetilados — útil em terapia (e.g., MECP2, HBG, FMR1) sem alterar sequência.'
+          en: 'TET1 (Ten-Eleven Translocation) oxidizes 5mC → 5hmC → 5fC → 5caC, driving active demethylation via TDG/BER. dCas9-TET1 reverses epigenetic silencing at hypermethylated genes — useful in therapy (e.g., MECP2, HBG, FMR1) without altering sequence.'
         objectives: [TET1]
       - type: choice
         difficulty: 5
         question:
-          pt: A vantagem central de edição epigenética versus edição CRISPR-Cas9 clássica é…
-          en: The central advantage of epigenetic editing versus classical CRISPR-Cas9 is…
+          pt: 'A vantagem central de edição epigenética versus edição CRISPR-Cas9 clássica é…'
+          en: 'The central advantage of epigenetic editing versus classical CRISPR-Cas9 is…'
         choices:
-          - Reversibilidade potencial e ausência de quebras de DNA com seus riscos genotóxicos
-          - Eficiência sempre 100% mesmo em células não-divisórias adultas
-          - Custo radicalmente inferior em produção a qualquer escala industrial
-          - Aplicabilidade exclusiva em órgãos sólidos vs hematológicos para Cas9
-        correctAnswer: Reversibilidade potencial e ausência de quebras de DNA com seus riscos genotóxicos
+          - 'Reversibilidade potencial e ausência de quebras de DNA com seus riscos genotóxicos'
+          - 'Eficiência sempre 100% mesmo em células não-divisórias adultas'
+          - 'Custo radicalmente inferior em produção a qualquer escala industrial'
+          - 'Aplicabilidade exclusiva em órgãos sólidos vs hematológicos para Cas9'
+        correctAnswer: 'Reversibilidade potencial e ausência de quebras de DNA com seus riscos genotóxicos'
         rationale:
-          pt: Sem DSBs, evita-se: indels desejados/indesejados, translocações, ativação de p53, perda cromossômica grande (chromothripsis). Marcas epigenéticas podem ser revertidas (potencialmente). Trade-off: durabilidade variável; para CRISPRoff, inexata mas longa.
-          en: Without DSBs, avoid: intended/unintended indels, translocations, p53 activation, large chromosome loss (chromothripsis). Epigenetic marks may be reversed (potentially). Trade-off: variable durability; for CRISPRoff, durable but imperfect.
+          pt: 'Sem DSBs, evita-se: indels desejados/indesejados, translocações, ativação de p53, perda cromossômica grande (chromothripsis). Marcas epigenéticas podem ser revertidas (potencialmente). Trade-off: durabilidade variável; para CRISPRoff, inexata mas longa.'
+          en: 'Without DSBs, avoid: intended/unintended indels, translocations, p53 activation, large chromosome loss (chromothripsis). Epigenetic marks may be reversed (potentially). Trade-off: variable durability; for CRISPRoff, durable but imperfect.'
         objectives: [Vantagem epi]
       - type: choice
         difficulty: 5
         question:
-          pt: Em 2024, a Tune Therapeutics reportou em primatas não-humanos silenciamento durável de qual gene como prova de princípio terapêutica?
-          en: In 2024, Tune Therapeutics reported durable silencing in non-human primates of which gene as therapeutic proof of principle?
+          pt: 'Em 2024, a Tune Therapeutics reportou em primatas não-humanos silenciamento durável de qual gene como prova de princípio terapêutica?'
+          en: 'In 2024, Tune Therapeutics reported durable silencing in non-human primates of which gene as therapeutic proof of principle?'
         choices:
-          - PCSK9 hepático, reduzindo LDL-c por mais de 6 meses após dose única
-          - APOE4 em hepatócitos como pré-clínico para Alzheimer familiar
-          - SCN9A em neurônios sensoriais como tratamento de dor crônica
-          - DUX4 em fibras musculares como pré-clínico para FSHD
-        correctAnswer: PCSK9 hepático, reduzindo LDL-c por mais de 6 meses após dose única
+          - 'PCSK9 hepático, reduzindo LDL-c por mais de 6 meses após dose única'
+          - 'APOE4 em hepatócitos como pré-clínico para Alzheimer familiar'
+          - 'SCN9A em neurônios sensoriais como tratamento de dor crônica'
+          - 'DUX4 em fibras musculares como pré-clínico para FSHD'
+        correctAnswer: 'PCSK9 hepático, reduzindo LDL-c por mais de 6 meses após dose única'
         rationale:
-          pt: Tune Therapeutics (Hilton/Reddy/Akhtar) reportou em 2024 (AHA/ASH) silenciamento durável de PCSK9 em macacos com TUNE-401 (LNP entregando epi-silenciador), reduzindo LDL-c >50% sustentadamente — primeiro precedente clínico de epi-edição in vivo em primata.
-          en: Tune Therapeutics (Hilton/Reddy/Akhtar) reported in 2024 (AHA/ASH) durable PCSK9 silencing in macaques with TUNE-401 (LNP delivering an epi-silencer), reducing LDL-c >50% durably — first clinical precedent of in vivo epi-editing in primates.
+          pt: 'Tune Therapeutics (Hilton/Reddy/Akhtar) reportou em 2024 (AHA/ASH) silenciamento durável de PCSK9 em macacos com TUNE-401 (LNP entregando epi-silenciador), reduzindo LDL-c >50% sustentadamente — primeiro precedente clínico de epi-edição in vivo em primata.'
+          en: 'Tune Therapeutics (Hilton/Reddy/Akhtar) reported in 2024 (AHA/ASH) durable PCSK9 silencing in macaques with TUNE-401 (LNP delivering an epi-silencer), reducing LDL-c >50% durably — first clinical precedent of in vivo epi-editing in primates.'
         objectives: [Tune PCSK9]
       - type: choice
         difficulty: 5
         question:
-          pt: Chroma Medicine, fundada em 2021, foca em epi-edição clínica para qual indicação inicial?
-          en: Chroma Medicine, founded in 2021, focuses initial clinical epi-editing on which indication?
+          pt: 'Chroma Medicine, fundada em 2021, foca em epi-edição clínica para qual indicação inicial?'
+          en: 'Chroma Medicine, founded in 2021, focuses initial clinical epi-editing on which indication?'
         choices:
-          - Hepatite B crônica via silenciamento de cccDNA viral persistente em hepatócitos
-          - Beta-talassemia via reativação de gama-globina fetal exclusivamente
-          - Hipercolesterolemia familiar via silenciamento de PCSK9 idêntico ao Tune
-          - Distrofia muscular de Duchenne via silenciamento de myostatina (MSTN)
-        correctAnswer: Hepatite B crônica via silenciamento de cccDNA viral persistente em hepatócitos
+          - 'Hepatite B crônica via silenciamento de cccDNA viral persistente em hepatócitos'
+          - 'Beta-talassemia via reativação de gama-globina fetal exclusivamente'
+          - 'Hipercolesterolemia familiar via silenciamento de PCSK9 idêntico ao Tune'
+          - 'Distrofia muscular de Duchenne via silenciamento de myostatina (MSTN)'
+        correctAnswer: 'Hepatite B crônica via silenciamento de cccDNA viral persistente em hepatócitos'
         rationale:
-          pt: Chroma (cofundada por Bock, Joung, Vakoc, Zhang) anunciou em 2024 ensaio Ph1 do CMD-101: epi-silenciador entregue por LNP a hepatócitos para silenciar cccDNA do HBV — alvo histórico que antiviraIs reduzem mas não eliminam, com expectativa de cura funcional via marcas duráveis. Em 2024 fundiu-se com nVelop, formando nChroma Bio.
-          en: Chroma (cofounded by Bock, Joung, Vakoc, Zhang) announced in 2024 a Ph1 trial of CMD-101: an epi-silencer delivered by LNP to hepatocytes to silence HBV cccDNA — a historic target that antivirals reduce but don't eliminate, with hope of functional cure via durable marks. In 2024 it merged with nVelop forming nChroma Bio.
+          pt: 'Chroma (cofundada por Bock, Joung, Vakoc, Zhang) anunciou em 2024 ensaio Ph1 do CMD-101: epi-silenciador entregue por LNP a hepatócitos para silenciar cccDNA do HBV — alvo histórico que antiviraIs reduzem mas não eliminam, com expectativa de cura funcional via marcas duráveis. Em 2024 fundiu-se com nVelop, formando nChroma Bio.'
+          en: 'Chroma (cofounded by Bock, Joung, Vakoc, Zhang) announced in 2024 a Ph1 trial of CMD-101: an epi-silencer delivered by LNP to hepatocytes to silence HBV cccDNA — a historic target that antivirals reduce but don''t eliminate, with hope of functional cure via durable marks. In 2024 it merged with nVelop forming nChroma Bio.'
         objectives: [Chroma HBV]
       - type: choice
         difficulty: 5
         question:
-          pt: A herdabilidade mitótica de marcas epigenéticas instaladas por CRISPRoff depende criticamente de…
-          en: Mitotic heritability of CRISPRoff-installed epigenetic marks critically depends on…
+          pt: 'A herdabilidade mitótica de marcas epigenéticas instaladas por CRISPRoff depende criticamente de…'
+          en: 'Mitotic heritability of CRISPRoff-installed epigenetic marks critically depends on…'
         choices:
-          - Recrutamento de DNMT1/UHRF1 que copia padrão de metilação CpG após replicação
-          - Ausência total de qualquer DNMT após instalação inicial das marcas
-          - Reentrega contínua de Cas9 a cada ciclo celular para manter as marcas
-          - Recrutamento de TET2/TET3 que reduz metilação após divisão
-        correctAnswer: Recrutamento de DNMT1/UHRF1 que copia padrão de metilação CpG após replicação
+          - 'Recrutamento de DNMT1/UHRF1 que copia padrão de metilação CpG após replicação'
+          - 'Ausência total de qualquer DNMT após instalação inicial das marcas'
+          - 'Reentrega contínua de Cas9 a cada ciclo celular para manter as marcas'
+          - 'Recrutamento de TET2/TET3 que reduz metilação após divisão'
+        correctAnswer: 'Recrutamento de DNMT1/UHRF1 que copia padrão de metilação CpG após replicação'
         rationale:
-          pt: Após replicação, fitas-filhas são hemi-metiladas; UHRF1 reconhece e recruta DNMT1 que metila CpG nascente — circuito que perpetua metilação herdada. CRISPRoff explora isso: instalação inicial via DNMT3A/L cria substrato que DNMT1/UHRF1 mantêm.
-          en: After replication, daughter strands are hemi-methylated; UHRF1 recognizes them and recruits DNMT1 to methylate the nascent CpG — circuit perpetuating inheritance. CRISPRoff exploits this: initial installation via DNMT3A/L creates the substrate maintained by DNMT1/UHRF1.
+          pt: 'Após replicação, fitas-filhas são hemi-metiladas; UHRF1 reconhece e recruta DNMT1 que metila CpG nascente — circuito que perpetua metilação herdada. CRISPRoff explora isso: instalação inicial via DNMT3A/L cria substrato que DNMT1/UHRF1 mantêm.'
+          en: 'After replication, daughter strands are hemi-methylated; UHRF1 recognizes them and recruits DNMT1 to methylate the nascent CpG — circuit perpetuating inheritance. CRISPRoff exploits this: initial installation via DNMT3A/L creates the substrate maintained by DNMT1/UHRF1.'
         objectives: [Herança CpG]
       - type: choice
         difficulty: 5
         question:
-          pt: Plataformas "Cas-CLOVER" (Demeter Bio) e dCas9-X usam Cas9 modificado para reduzir off-targets. Qual modificação típica?
-          en: "Cas-CLOVER" (Demeter Bio) and dCas9-X platforms use modified Cas9 to reduce off-targets. What typical modification?
+          pt: 'Plataformas "Cas-CLOVER" (Demeter Bio) e dCas9-X usam Cas9 modificado para reduzir off-targets. Qual modificação típica?'
+          en: '"Cas-CLOVER" (Demeter Bio) and dCas9-X platforms use modified Cas9 to reduce off-targets. What typical modification?'
         choices:
-          - Cas9 dimerizado dependente de duas gRNAs adjacentes para atividade catalítica
-          - Cas9 fundido a anticorpo anti-DNA para localização nuclear absoluta
-          - Cas9 com ligação direta a histonas H3 sem reconhecimento de PAM
-          - Cas9 com ribozima auto-clivante para autodestruição imediata
-        correctAnswer: Cas9 dimerizado dependente de duas gRNAs adjacentes para atividade catalítica
+          - 'Cas9 dimerizado dependente de duas gRNAs adjacentes para atividade catalítica'
+          - 'Cas9 fundido a anticorpo anti-DNA para localização nuclear absoluta'
+          - 'Cas9 com ligação direta a histonas H3 sem reconhecimento de PAM'
+          - 'Cas9 com ribozima auto-clivante para autodestruição imediata'
+        correctAnswer: 'Cas9 dimerizado dependente de duas gRNAs adjacentes para atividade catalítica'
         rationale:
-          pt: Cas-CLOVER e similares usam Cas9 dimerizável (dois half-Cas9 ou Cas9-Fok1) que requer duas gRNAs adjacentes — reduz off-targets ~100x. Para epi-editing, foco em alta especificidade é tão crítico quanto para edição genômica clássica.
-          en: Cas-CLOVER and similar use dimerizable Cas9 (two half-Cas9 or Cas9-FokI) requiring two adjacent gRNAs — cutting off-targets ~100x. For epi-editing, high specificity is as critical as for classical genome editing.
+          pt: 'Cas-CLOVER e similares usam Cas9 dimerizável (dois half-Cas9 ou Cas9-Fok1) que requer duas gRNAs adjacentes — reduz off-targets ~100x. Para epi-editing, foco em alta especificidade é tão crítico quanto para edição genômica clássica.'
+          en: 'Cas-CLOVER and similar use dimerizable Cas9 (two half-Cas9 or Cas9-FokI) requiring two adjacent gRNAs — cutting off-targets ~100x. For epi-editing, high specificity is as critical as for classical genome editing.'
         objectives: [Cas-CLOVER]
       - type: choice
         difficulty: 5
         question:
-          pt: Predecessores históricos de dCas9 epi-editores incluem fusões com…
-          en: Historical predecessors of dCas9 epi-editors include fusions with…
+          pt: 'Predecessores históricos de dCas9 epi-editores incluem fusões com…'
+          en: 'Historical predecessors of dCas9 epi-editors include fusions with…'
         choices:
-          - Zinc fingers (Sangamo) e TALEs com DNMT3A/TET1 antes da era CRISPR
-          - Apenas anticorpos sem qualquer reconhecimento de DNA
-          - Receptores de hormônios nucleares como ER/PR sem direcionamento sequência-específico
-          - Endonucleases ômega de fungos sem fusão a efetores epigenéticos
-        correctAnswer: Zinc fingers (Sangamo) e TALEs com DNMT3A/TET1 antes da era CRISPR
+          - 'Zinc fingers (Sangamo) e TALEs com DNMT3A/TET1 antes da era CRISPR'
+          - 'Apenas anticorpos sem qualquer reconhecimento de DNA'
+          - 'Receptores de hormônios nucleares como ER/PR sem direcionamento sequência-específico'
+          - 'Endonucleases ômega de fungos sem fusão a efetores epigenéticos'
+        correctAnswer: 'Zinc fingers (Sangamo) e TALEs com DNMT3A/TET1 antes da era CRISPR'
         rationale:
-          pt: Antes do CRISPR, Sangamo (Edward Lanphier, Fyodor Urnov) usava ZF-DNMT3A; TAL effectors também foram fundidos a efetores. CRISPR baixou barreira de design (gRNA vs proteína customizada), mas o conceito vem de ~2000s. ZFs ainda usados em modalidades clínicas.
-          en: Before CRISPR, Sangamo (Edward Lanphier, Fyodor Urnov) used ZF-DNMT3A; TAL effectors were also fused to effectors. CRISPR lowered the design barrier (gRNA vs custom protein), but the concept dates from the 2000s. ZFs are still used in clinical modalities.
+          pt: 'Antes do CRISPR, Sangamo (Edward Lanphier, Fyodor Urnov) usava ZF-DNMT3A; TAL effectors também foram fundidos a efetores. CRISPR baixou barreira de design (gRNA vs proteína customizada), mas o conceito vem de ~2000s. ZFs ainda usados em modalidades clínicas.'
+          en: 'Before CRISPR, Sangamo (Edward Lanphier, Fyodor Urnov) used ZF-DNMT3A; TAL effectors were also fused to effectors. CRISPR lowered the design barrier (gRNA vs custom protein), but the concept dates from the 2000s. ZFs are still used in clinical modalities.'
         objectives: [ZF/TALE]
   - title:
-      pt: Página 2 — Aplicações e governança
-      en: Page 2 — Applications and governance
+      pt: 'Página 2 — Aplicações e governança'
+      en: 'Page 2 — Applications and governance'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: A reativação de hemoglobina fetal (HbF) para β-hemoglobinopatias por epi-edição visa qual mecanismo?
-          en: Fetal hemoglobin (HbF) reactivation by epi-editing for β-hemoglobinopathies targets which mechanism?
+          pt: 'A reativação de hemoglobina fetal (HbF) para β-hemoglobinopatias por epi-edição visa qual mecanismo?'
+          en: 'Fetal hemoglobin (HbF) reactivation by epi-editing for β-hemoglobinopathies targets which mechanism?'
         choices:
-          - Silenciar BCL11A ou desmetilar promotor de HBG1/HBG2 para reativar γ-globina
-          - Editar HBB diretamente substituindo a mutação patogênica de novo
-          - Aumentar expressão de eritropoetina em rim para hiperprodução de hemoglobina
-          - Substituir células-tronco hematopoiéticas por alotransplante imediato sem condição
-        correctAnswer: Silenciar BCL11A ou desmetilar promotor de HBG1/HBG2 para reativar γ-globina
+          - 'Silenciar BCL11A ou desmetilar promotor de HBG1/HBG2 para reativar γ-globina'
+          - 'Editar HBB diretamente substituindo a mutação patogênica de novo'
+          - 'Aumentar expressão de eritropoetina em rim para hiperprodução de hemoglobina'
+          - 'Substituir células-tronco hematopoiéticas por alotransplante imediato sem condição'
+        correctAnswer: 'Silenciar BCL11A ou desmetilar promotor de HBG1/HBG2 para reativar γ-globina'
         rationale:
-          pt: Casgevy (Vertex/CRISPR Tx, FDA dez/2023) edita BCL11A ex vivo. Edição epigenética alternativa: dCas9-KRAB silenciar BCL11A, ou dCas9-TET1 desmetilar HBG sem cortar — Epicrispr Bio e outros desenvolvem essas vias.
-          en: Casgevy (Vertex/CRISPR Tx, FDA Dec 2023) edits BCL11A ex vivo. Alternative epi-editing: dCas9-KRAB silencing BCL11A, or dCas9-TET1 demethylating HBG without cutting — Epicrispr Bio and others develop these.
+          pt: 'Casgevy (Vertex/CRISPR Tx, FDA dez/2023) edita BCL11A ex vivo. Edição epigenética alternativa: dCas9-KRAB silenciar BCL11A, ou dCas9-TET1 desmetilar HBG sem cortar — Epicrispr Bio e outros desenvolvem essas vias.'
+          en: 'Casgevy (Vertex/CRISPR Tx, FDA Dec 2023) edits BCL11A ex vivo. Alternative epi-editing: dCas9-KRAB silencing BCL11A, or dCas9-TET1 demethylating HBG without cutting — Epicrispr Bio and others develop these.'
         objectives: [HbF reativação]
       - type: choice
         difficulty: 5
         question:
-          pt: Em síndrome de Rett (mutação MECP2 ligada ao X), epi-edição busca o quê?
-          en: In Rett syndrome (X-linked MECP2 mutation), epi-editing seeks what?
+          pt: 'Em síndrome de Rett (mutação MECP2 ligada ao X), epi-edição busca o quê?'
+          en: 'In Rett syndrome (X-linked MECP2 mutation), epi-editing seeks what?'
         choices:
-          - Reativar o alelo MECP2 silenciado no X-inativado em mulheres heterozigotas
-          - Silenciar permanentemente todo o cromossomo X masculino
-          - Substituir MECP2 por gene homólogo CDKL5 mais robusto
-          - Eliminar todo neurônio com MECP2 mutado por apoptose seletiva
-        correctAnswer: Reativar o alelo MECP2 silenciado no X-inativado em mulheres heterozigotas
+          - 'Reativar o alelo MECP2 silenciado no X-inativado em mulheres heterozigotas'
+          - 'Silenciar permanentemente todo o cromossomo X masculino'
+          - 'Substituir MECP2 por gene homólogo CDKL5 mais robusto'
+          - 'Eliminar todo neurônio com MECP2 mutado por apoptose seletiva'
+        correctAnswer: 'Reativar o alelo MECP2 silenciado no X-inativado em mulheres heterozigotas'
         rationale:
-          pt: Mulheres com Rett têm MECP2 selvagem no X inativado em ~50% das células. Reativar este alelo via desmetilação direcionada ou knockdown de Xist resgataria função sem editar sequência. Modelos de camundongo (Bird, Beard) mostram potencial reversibilidade do fenótipo.
-          en: Rett females carry wild-type MECP2 silenced on the inactive X in ~50% of cells. Reactivating this allele via targeted demethylation or Xist knockdown would rescue function without editing sequence. Mouse models (Bird, Beard) show potential phenotype reversibility.
+          pt: 'Mulheres com Rett têm MECP2 selvagem no X inativado em ~50% das células. Reativar este alelo via desmetilação direcionada ou knockdown de Xist resgataria função sem editar sequência. Modelos de camundongo (Bird, Beard) mostram potencial reversibilidade do fenótipo.'
+          en: 'Rett females carry wild-type MECP2 silenced on the inactive X in ~50% of cells. Reactivating this allele via targeted demethylation or Xist knockdown would rescue function without editing sequence. Mouse models (Bird, Beard) show potential phenotype reversibility.'
         objectives: [Rett MECP2]
       - type: choice
         difficulty: 5
         question:
-          pt: A síndrome do X frágil (FMR1) é candidato a epi-edição por…
-          en: Fragile X (FMR1) is an epi-editing candidate because…
+          pt: 'A síndrome do X frágil (FMR1) é candidato a epi-edição por…'
+          en: 'Fragile X (FMR1) is an epi-editing candidate because…'
         choices:
-          - Hipermetilação de expansão CGG silencia gene; desmetilação direcionada poderia restaurar FMRP
-          - Tem mutação pontual em códon iniciador requerindo substituição de base
-          - Possui deleção parcial do gene FMR1 sem qualquer marca epigenética envolvida
-          - É doença recessiva ligada ao Y exclusivamente em homens adultos
-        correctAnswer: Hipermetilação de expansão CGG silencia gene; desmetilação direcionada poderia restaurar FMRP
+          - 'Hipermetilação de expansão CGG silencia gene; desmetilação direcionada poderia restaurar FMRP'
+          - 'Tem mutação pontual em códon iniciador requerindo substituição de base'
+          - 'Possui deleção parcial do gene FMR1 sem qualquer marca epigenética envolvida'
+          - 'É doença recessiva ligada ao Y exclusivamente em homens adultos'
+        correctAnswer: 'Hipermetilação de expansão CGG silencia gene; desmetilação direcionada poderia restaurar FMRP'
         rationale:
-          pt: Em FX, expansão CGG em 5'UTR de FMR1 (>200 repetições) sofre hipermetilação extensa, silenciando o gene — não há mutação proteica. Liu/Jaenisch (Cell 2018) mostraram que dCas9-TET1 desmetila CGG e restaura expressão em iPSC-neurônios, abrindo terapia.
-          en: In FX, the CGG expansion in FMR1 5'UTR (>200 repeats) becomes extensively hypermethylated, silencing the gene — no protein mutation. Liu/Jaenisch (Cell 2018) showed dCas9-TET1 demethylates CGG and restores expression in iPSC-neurons, opening therapy.
+          pt: 'Em FX, expansão CGG em 5''UTR de FMR1 (>200 repetições) sofre hipermetilação extensa, silenciando o gene — não há mutação proteica. Liu/Jaenisch (Cell 2018) mostraram que dCas9-TET1 desmetila CGG e restaura expressão em iPSC-neurônios, abrindo terapia.'
+          en: 'In FX, the CGG expansion in FMR1 5''UTR (>200 repeats) becomes extensively hypermethylated, silencing the gene — no protein mutation. Liu/Jaenisch (Cell 2018) showed dCas9-TET1 demethylates CGG and restores expression in iPSC-neurons, opening therapy.'
         objectives: [FMR1 epi]
       - type: choice
         difficulty: 5
         question:
-          pt: A "memória da pioneer transcription factors" descrita por Levin et al. e Whitehead lab refere-se a…
-          en: "Pioneer transcription factor memory" described by Levin et al. and the Whitehead lab refers to…
+          pt: 'A "memória da pioneer transcription factors" descrita por Levin et al. e Whitehead lab refere-se a…'
+          en: '"Pioneer transcription factor memory" described by Levin et al. and the Whitehead lab refers to…'
         choices:
-          - Persistência de marcas de cromatina mesmo após retirada do fator que as instalou
-          - Habilidade dos TFs de pulsar oscilações em segundos
-          - Memória cronológica de exposição a hormônios nucleares apenas
-          - Capacidade de TFs migrarem entre células vizinhas via gap junctions
-        correctAnswer: Persistência de marcas de cromatina mesmo após retirada do fator que as instalou
+          - 'Persistência de marcas de cromatina mesmo após retirada do fator que as instalou'
+          - 'Habilidade dos TFs de pulsar oscilações em segundos'
+          - 'Memória cronológica de exposição a hormônios nucleares apenas'
+          - 'Capacidade de TFs migrarem entre células vizinhas via gap junctions'
+        correctAnswer: 'Persistência de marcas de cromatina mesmo após retirada do fator que as instalou'
         rationale:
-          pt: TFs pioneer (FoxA, OCT4, etc.) abrem cromatina; quando removidos, marcas associadas (H3K27ac, K4me3) podem persistir por divisões — base biológica para edição epigenética durável. Identidade celular emerge dessa memória ratificada pela cromatina.
-          en: Pioneer TFs (FoxA, OCT4, etc.) open chromatin; once removed, associated marks (H3K27ac, K4me3) can persist across divisions — biological basis for durable epi-editing. Cell identity emerges from this chromatin-ratified memory.
+          pt: 'TFs pioneer (FoxA, OCT4, etc.) abrem cromatina; quando removidos, marcas associadas (H3K27ac, K4me3) podem persistir por divisões — base biológica para edição epigenética durável. Identidade celular emerge dessa memória ratificada pela cromatina.'
+          en: 'Pioneer TFs (FoxA, OCT4, etc.) open chromatin; once removed, associated marks (H3K27ac, K4me3) can persist across divisions — biological basis for durable epi-editing. Cell identity emerges from this chromatin-ratified memory.'
         objectives: [Memória cromatina]
       - type: choice
         difficulty: 5
         question:
-          pt: Off-targets em epi-edição diferem de off-targets em CRISPR-Cas9 porque…
-          en: Off-targets in epi-editing differ from CRISPR-Cas9 off-targets because…
+          pt: 'Off-targets em epi-edição diferem de off-targets em CRISPR-Cas9 porque…'
+          en: 'Off-targets in epi-editing differ from CRISPR-Cas9 off-targets because…'
         choices:
-          - Não geram indels, mas podem alterar expressão pleiotropicamente em genes vizinhos
-          - São sempre completamente reversíveis em horas, sem qualquer consequência
-          - Não existem teoricamente em qualquer plataforma epi-edição moderna
-          - Causam apenas fragmentação cromossômica generalizada
-        correctAnswer: Não geram indels, mas podem alterar expressão pleiotropicamente em genes vizinhos
+          - 'Não geram indels, mas podem alterar expressão pleiotropicamente em genes vizinhos'
+          - 'São sempre completamente reversíveis em horas, sem qualquer consequência'
+          - 'Não existem teoricamente em qualquer plataforma epi-edição moderna'
+          - 'Causam apenas fragmentação cromossômica generalizada'
+        correctAnswer: 'Não geram indels, mas podem alterar expressão pleiotropicamente em genes vizinhos'
         rationale:
-          pt: Off-targets epi → metilação/desmetilação ou marcas de histona em loci não-alvo, alterando expressão sem mudar sequência. Pode afetar genes vizinhos pelo "spreading" da marca. Detectados via WGBS, RNA-seq, ATAC-seq — exigem due diligence próprio do método, não GUIDE-seq.
-          en: Epi-off-targets → methylation/demethylation or histone marks at non-target loci, altering expression without changing sequence. May affect neighboring genes via mark "spreading". Detected by WGBS, RNA-seq, ATAC-seq — requires its own due diligence, not GUIDE-seq.
+          pt: 'Off-targets epi → metilação/desmetilação ou marcas de histona em loci não-alvo, alterando expressão sem mudar sequência. Pode afetar genes vizinhos pelo "spreading" da marca. Detectados via WGBS, RNA-seq, ATAC-seq — exigem due diligence próprio do método, não GUIDE-seq.'
+          en: 'Epi-off-targets → methylation/demethylation or histone marks at non-target loci, altering expression without changing sequence. May affect neighboring genes via mark "spreading". Detected by WGBS, RNA-seq, ATAC-seq — requires its own due diligence, not GUIDE-seq.'
         objectives: [Off-targets epi]
       - type: choice
         difficulty: 5
         question:
-          pt: A entrega de epi-editores em humanos in vivo vai geralmente por qual modalidade?
-          en: In vivo human delivery of epi-editors typically uses which modality?
+          pt: 'A entrega de epi-editores em humanos in vivo vai geralmente por qual modalidade?'
+          en: 'In vivo human delivery of epi-editors typically uses which modality?'
         choices:
-          - mRNA encapsulado em LNP (transitório), aproveitando durabilidade da própria marca
-          - AAV expressando proteína indefinidamente como em terapia gênica clássica
-          - Plasmídeo nu sem qualquer veículo de entrega aplicado intramuscularmente
-          - Eletroporação de células somáticas in vivo via campos elétricos transcutâneos
-        correctAnswer: mRNA encapsulado em LNP (transitório), aproveitando durabilidade da própria marca
+          - 'mRNA encapsulado em LNP (transitório), aproveitando durabilidade da própria marca'
+          - 'AAV expressando proteína indefinidamente como em terapia gênica clássica'
+          - 'Plasmídeo nu sem qualquer veículo de entrega aplicado intramuscularmente'
+          - 'Eletroporação de células somáticas in vivo via campos elétricos transcutâneos'
+        correctAnswer: 'mRNA encapsulado em LNP (transitório), aproveitando durabilidade da própria marca'
         rationale:
-          pt: LNP-mRNA é preferido: entrega transitória do epi-editor (que age por horas-dias instalando marca), depois é eliminado; marca persiste — minimiza imunogenicidade contra Cas9 e off-targets prolongados. Tune e Chroma usam essa estratégia. AAV é alternativa para órgãos refratários a LNP.
-          en: LNP-mRNA is preferred: transient editor delivery (acting over hours-days to install the mark), then cleared; the mark persists — minimizing Cas9 immunogenicity and prolonged off-targets. Tune and Chroma use this strategy. AAV is an alternative for LNP-refractory organs.
+          pt: 'LNP-mRNA é preferido: entrega transitória do epi-editor (que age por horas-dias instalando marca), depois é eliminado; marca persiste — minimiza imunogenicidade contra Cas9 e off-targets prolongados. Tune e Chroma usam essa estratégia. AAV é alternativa para órgãos refratários a LNP.'
+          en: 'LNP-mRNA is preferred: transient editor delivery (acting over hours-days to install the mark), then cleared; the mark persists — minimizing Cas9 immunogenicity and prolonged off-targets. Tune and Chroma use this strategy. AAV is an alternative for LNP-refractory organs.'
         objectives: [Entrega LNP-mRNA]
       - type: choice
         difficulty: 5
         question:
-          pt: A reversibilidade teórica de marcas epigenéticas é vantagem clínica porque…
-          en: The theoretical reversibility of epi marks is a clinical advantage because…
+          pt: 'A reversibilidade teórica de marcas epigenéticas é vantagem clínica porque…'
+          en: 'The theoretical reversibility of epi marks is a clinical advantage because…'
         choices:
-          - Permite "antídoto" via demethylator/desmetilase em caso de adverso, contrastando com edição definitiva
-          - Garante 100% de eficácia em qualquer paciente sem variabilidade
-          - Elimina necessidade de imunossupressão pós-tratamento
-          - Reduz custo a zero por não requerer manufatura GMP
-        correctAnswer: Permite "antídoto" via demethylator/desmetilase em caso de adverso, contrastando com edição definitiva
+          - 'Permite "antídoto" via demethylator/desmetilase em caso de adverso, contrastando com edição definitiva'
+          - 'Garante 100% de eficácia em qualquer paciente sem variabilidade'
+          - 'Elimina necessidade de imunossupressão pós-tratamento'
+          - 'Reduz custo a zero por não requerer manufatura GMP'
+        correctAnswer: 'Permite "antídoto" via demethylator/desmetilase em caso de adverso, contrastando com edição definitiva'
         rationale:
-          pt: Em teoria, dCas9-TET1 pode reverter dCas9-KRAB-DNMT3A; este "antídoto epigenético" oferece reversibilidade, atributo único frente a Cas9/base/prime editing. Validação em humano ainda pendente, mas conceito é diferenciador.
-          en: In theory, dCas9-TET1 can reverse dCas9-KRAB-DNMT3A; this "epigenetic antidote" offers reversibility, a unique attribute vs Cas9/base/prime editing. Human validation pending, but the concept is a differentiator.
+          pt: 'Em teoria, dCas9-TET1 pode reverter dCas9-KRAB-DNMT3A; este "antídoto epigenético" oferece reversibilidade, atributo único frente a Cas9/base/prime editing. Validação em humano ainda pendente, mas conceito é diferenciador.'
+          en: 'In theory, dCas9-TET1 can reverse dCas9-KRAB-DNMT3A; this "epigenetic antidote" offers reversibility, a unique attribute vs Cas9/base/prime editing. Human validation pending, but the concept is a differentiator.'
         objectives: [Antídoto epi]
       - type: choice
         difficulty: 5
         question:
-          pt: Um desafio significativo da epi-edição é a "deriva" das marcas em alguns loci. O que isso significa?
-          en: A significant epi-editing challenge is "drift" of marks at some loci. What does that mean?
+          pt: 'Um desafio significativo da epi-edição é a "deriva" das marcas em alguns loci. O que isso significa?'
+          en: 'A significant epi-editing challenge is "drift" of marks at some loci. What does that mean?'
         choices:
-          - Erosão progressiva da marca instalada ao longo de gerações celulares, exigindo reaplicação
-          - Deslocamento espacial da marca para genes não-alvo após instalação
-          - Conversão automática de silenciamento em ativação após algumas semanas
-          - Migração da marca entre células via comunicação intercelular
-        correctAnswer: Erosão progressiva da marca instalada ao longo de gerações celulares, exigindo reaplicação
+          - 'Erosão progressiva da marca instalada ao longo de gerações celulares, exigindo reaplicação'
+          - 'Deslocamento espacial da marca para genes não-alvo após instalação'
+          - 'Conversão automática de silenciamento em ativação após algumas semanas'
+          - 'Migração da marca entre células via comunicação intercelular'
+        correctAnswer: 'Erosão progressiva da marca instalada ao longo de gerações celulares, exigindo reaplicação'
         rationale:
-          pt: Em alguns contextos, marcas epigenéticas instaladas erodem após divisões (especialmente em loci ativos transcricionalmente competentes). Variabilidade entre alvos é desafio em otimização — combinar KRAB+DNMT+H3K9 (CRISPRoff) maximiza durabilidade.
-          en: In some contexts, installed epigenetic marks erode after divisions (especially at transcriptionally competent loci). Variability across targets is an optimization challenge — combining KRAB+DNMT+H3K9 (CRISPRoff) maximizes durability.
+          pt: 'Em alguns contextos, marcas epigenéticas instaladas erodem após divisões (especialmente em loci ativos transcricionalmente competentes). Variabilidade entre alvos é desafio em otimização — combinar KRAB+DNMT+H3K9 (CRISPRoff) maximiza durabilidade.'
+          en: 'In some contexts, installed epigenetic marks erode after divisions (especially at transcriptionally competent loci). Variability across targets is an optimization challenge — combining KRAB+DNMT+H3K9 (CRISPRoff) maximizes durability.'
         objectives: [Deriva]
       - type: choice
         difficulty: 5
         question:
-          pt: O FDA, em sua orientação sobre epi-editing in vivo (2024+), categoriza esses produtos como…
-          en: FDA, in its in vivo epi-editing guidance (2024+), categorizes these products as…
+          pt: 'O FDA, em sua orientação sobre epi-editing in vivo (2024+), categoriza esses produtos como…'
+          en: 'FDA, in its in vivo epi-editing guidance (2024+), categorizes these products as…'
         choices:
-          - Terapias gênicas (gene therapies) sob CBER, com requerimentos de durabilidade e off-target específicos
-          - Pequenas moléculas convencionais sob CDER sem categoria especial
-          - Vacinas profiláticas sob OVRR independente do mecanismo molecular
-          - Dispositivos médicos cirúrgicos requerendo apenas autorização CDRH 510(k)
-        correctAnswer: Terapias gênicas (gene therapies) sob CBER, com requerimentos de durabilidade e off-target específicos
+          - 'Terapias gênicas (gene therapies) sob CBER, com requerimentos de durabilidade e off-target específicos'
+          - 'Pequenas moléculas convencionais sob CDER sem categoria especial'
+          - 'Vacinas profiláticas sob OVRR independente do mecanismo molecular'
+          - 'Dispositivos médicos cirúrgicos requerendo apenas autorização CDRH 510(k)'
+        correctAnswer: 'Terapias gênicas (gene therapies) sob CBER, com requerimentos de durabilidade e off-target específicos'
         rationale:
-          pt: A FDA considera epi-editores como terapia gênica/celular sob CBER (Center for Biologics Evaluation and Research), exigindo análises de durabilidade da modulação, off-targets epigenéticos por WGBS/RNA-seq, segurança ao longo do tempo. Tune, Chroma e outros submetem INDs nesse quadro.
-          en: FDA treats epi-editors as gene/cell therapies under CBER (Center for Biologics Evaluation and Research), requiring analyses of modulation durability, epigenetic off-targets by WGBS/RNA-seq, longitudinal safety. Tune, Chroma and others file INDs in this framework.
+          pt: 'A FDA considera epi-editores como terapia gênica/celular sob CBER (Center for Biologics Evaluation and Research), exigindo análises de durabilidade da modulação, off-targets epigenéticos por WGBS/RNA-seq, segurança ao longo do tempo. Tune, Chroma e outros submetem INDs nesse quadro.'
+          en: 'FDA treats epi-editors as gene/cell therapies under CBER (Center for Biologics Evaluation and Research), requiring analyses of modulation durability, epigenetic off-targets by WGBS/RNA-seq, longitudinal safety. Tune, Chroma and others file INDs in this framework.'
         objectives: [FDA CBER]
       - type: choice
         difficulty: 5
         question:
-          pt: A vantagem regulatória prática de epi-edição sobre Cas9 clássico em algumas indicações é…
-          en: A practical regulatory advantage of epi-editing over classical Cas9 in some indications is…
+          pt: 'A vantagem regulatória prática de epi-edição sobre Cas9 clássico em algumas indicações é…'
+          en: 'A practical regulatory advantage of epi-editing over classical Cas9 in some indications is…'
         choices:
-          - Ausência de DSBs reduz preocupações de translocações cromossômicas e seleção p53 detectadas em CAR-T
-          - Aprovação automática sem qualquer ensaio clínico
-          - Designação universal Breakthrough sem dados pré-clínicos
-          - Substituição de toxicologia por estudos in silico apenas
-        correctAnswer: Ausência de DSBs reduz preocupações de translocações cromossômicas e seleção p53 detectadas em CAR-T
+          - 'Ausência de DSBs reduz preocupações de translocações cromossômicas e seleção p53 detectadas em CAR-T'
+          - 'Aprovação automática sem qualquer ensaio clínico'
+          - 'Designação universal Breakthrough sem dados pré-clínicos'
+          - 'Substituição de toxicologia por estudos in silico apenas'
+        correctAnswer: 'Ausência de DSBs reduz preocupações de translocações cromossômicas e seleção p53 detectadas em CAR-T'
         rationale:
-          pt: Casos pós-comercialização de CAR-T com neoplasias secundárias (FDA jan/2024) reacenderam preocupação com integração lentiviral + ativação de Cas9 em ALL pediátricas. Epi-edição sem DSB evita esses mecanismos — argumento real em favor de epi-editores em algumas indicações.
-          en: Post-marketing CAR-T cases with secondary malignancies (FDA Jan 2024) renewed concern about lentiviral integration + Cas9 activation in pediatric ALL. DSB-free epi-editing avoids these mechanisms — a real argument for epi-editors in some indications.
+          pt: 'Casos pós-comercialização de CAR-T com neoplasias secundárias (FDA jan/2024) reacenderam preocupação com integração lentiviral + ativação de Cas9 em ALL pediátricas. Epi-edição sem DSB evita esses mecanismos — argumento real em favor de epi-editores em algumas indicações.'
+          en: 'Post-marketing CAR-T cases with secondary malignancies (FDA Jan 2024) renewed concern about lentiviral integration + Cas9 activation in pediatric ALL. DSB-free epi-editing avoids these mechanisms — a real argument for epi-editors in some indications.'
         objectives: [Vantagem regulatória]
 target: 20

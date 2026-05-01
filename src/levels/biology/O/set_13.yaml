@@ -1,13 +1,13 @@
 title:
-  pt: Crio-Microscopia Eletrônica e Tomografia Celular
-  en: Cryo-Electron Microscopy and Cellular Tomography
+  pt: 'Crio-Microscopia Eletrônica e Tomografia Celular'
+  en: 'Cryo-Electron Microscopy and Cellular Tomography'
 level: O
 subject: biology
 objectives:
-  - Compreender SPA, cryo-ET e FIB-milling
-  - Reconhecer marcos (Nobel 2017, K2/K3, sub-2Å)
-  - Identificar software (RELION, cryoSPARC, ChimeraX)
-  - Avaliar aplicações (vacinas, fármacos, in situ)
+  - 'Compreender SPA, cryo-ET e FIB-milling'
+  - 'Reconhecer marcos (Nobel 2017, K2/K3, sub-2Å)'
+  - 'Identificar software (RELION, cryoSPARC, ChimeraX)'
+  - 'Avaliar aplicações (vacinas, fármacos, in situ)'
 difficulty: 5
 authorNotes: |
   Frontier cryo-EM. Nobel 2017: Henderson (MRC-LMB), Frank (Columbia), Dubochet (Lausanne).
@@ -19,327 +19,327 @@ authorNotes: |
   pre-fusion stabilization Jason McLellan/Barney Graham → Pfizer/Moderna.
 example:
   question:
-    pt: O Nobel de Química 2017 foi concedido pela criomicroscopia eletrônica. Quem foram os laureados?
-    en: The 2017 Chemistry Nobel was awarded for cryo-electron microscopy. Who were the laureates?
+    pt: 'O Nobel de Química 2017 foi concedido pela criomicroscopia eletrônica. Quem foram os laureados?'
+    en: 'The 2017 Chemistry Nobel was awarded for cryo-electron microscopy. Who were the laureates?'
   choices:
-    - Jacques Dubochet (Lausanne), Joachim Frank (Columbia) e Richard Henderson (MRC-LMB)
-    - Roger Kornberg, Ada Yonath e Venkatraman Ramakrishnan pelo ribossomo cristalográfico
-    - Eric Betzig, Stefan Hell e William Moerner pela microscopia de superresolução óptica
-    - Frances Arnold, George Smith e Gregory Winter por evolução dirigida e phage display
-  correctAnswer: Jacques Dubochet (Lausanne), Joachim Frank (Columbia) e Richard Henderson (MRC-LMB)
+    - 'Jacques Dubochet (Lausanne), Joachim Frank (Columbia) e Richard Henderson (MRC-LMB)'
+    - 'Roger Kornberg, Ada Yonath e Venkatraman Ramakrishnan pelo ribossomo cristalográfico'
+    - 'Eric Betzig, Stefan Hell e William Moerner pela microscopia de superresolução óptica'
+    - 'Frances Arnold, George Smith e Gregory Winter por evolução dirigida e phage display'
+  correctAnswer: 'Jacques Dubochet (Lausanne), Joachim Frank (Columbia) e Richard Henderson (MRC-LMB)'
   rationale:
-    pt: Nobel 2017: Dubochet (vitrificação de água por congelamento rápido), Frank (algoritmos de classificação de partículas individuais), Henderson (primeiras estruturas atômicas por crio-EM, bacteriorhodopsin) — fundadores do método.
-    en: 2017 Nobel: Dubochet (rapid water vitrification), Frank (single-particle classification algorithms), Henderson (first atomic cryo-EM structures, bacteriorhodopsin) — founders of the method.
+    pt: 'Nobel 2017: Dubochet (vitrificação de água por congelamento rápido), Frank (algoritmos de classificação de partículas individuais), Henderson (primeiras estruturas atômicas por crio-EM, bacteriorhodopsin) — fundadores do método.'
+    en: '2017 Nobel: Dubochet (rapid water vitrification), Frank (single-particle classification algorithms), Henderson (first atomic cryo-EM structures, bacteriorhodopsin) — founders of the method.'
 passCriteria:
   minAccuracyPercent: 85
   maxAvgSecondsPerExercise: 14
 pages:
   - title:
-      pt: Página 1 — Análise de partícula única (SPA)
-      en: Page 1 — Single Particle Analysis (SPA)
+      pt: 'Página 1 — Análise de partícula única (SPA)'
+      en: 'Page 1 — Single Particle Analysis (SPA)'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: A "resolution revolution" da crio-EM em 2013 foi catalisada por…
-          en: The cryo-EM "resolution revolution" of 2013 was catalyzed by…
+          pt: 'A "resolution revolution" da crio-EM em 2013 foi catalisada por…'
+          en: 'The cryo-EM "resolution revolution" of 2013 was catalyzed by…'
         choices:
-          - Detectores de elétrons diretos (K2 Summit) com leitura rápida e correção de drift por movie mode
-          - Microscópios eletrônicos de varredura mais potentes substituindo TEM tradicional
-          - Substituição completa do gelo amorfo por trealose como crioprotetor barato
-          - Algoritmos de aprendizado profundo aplicados a imagens TEM convencionais
-        correctAnswer: Detectores de elétrons diretos (K2 Summit) com leitura rápida e correção de drift por movie mode
+          - 'Detectores de elétrons diretos (K2 Summit) com leitura rápida e correção de drift por movie mode'
+          - 'Microscópios eletrônicos de varredura mais potentes substituindo TEM tradicional'
+          - 'Substituição completa do gelo amorfo por trealose como crioprotetor barato'
+          - 'Algoritmos de aprendizado profundo aplicados a imagens TEM convencionais'
+        correctAnswer: 'Detectores de elétrons diretos (K2 Summit) com leitura rápida e correção de drift por movie mode'
         rationale:
-          pt: Kühlbrandt cunhou "resolution revolution" (Science 2014) creditando os DED (K2 Summit/Gatan) que substituíram CCD em 2012-2013, com leitura rápida permitindo movie mode (correção de drift e dose-fractionation), elevando alcance de ~8Å a <4Å na maioria dos alvos.
-          en: Kühlbrandt coined "resolution revolution" (Science 2014) crediting DEDs (K2 Summit/Gatan) replacing CCDs in 2012-2013, with fast readout enabling movie mode (drift correction and dose fractionation), pushing typical reach from ~8Å to <4Å.
+          pt: 'Kühlbrandt cunhou "resolution revolution" (Science 2014) creditando os DED (K2 Summit/Gatan) que substituíram CCD em 2012-2013, com leitura rápida permitindo movie mode (correção de drift e dose-fractionation), elevando alcance de ~8Å a <4Å na maioria dos alvos.'
+          en: 'Kühlbrandt coined "resolution revolution" (Science 2014) crediting DEDs (K2 Summit/Gatan) replacing CCDs in 2012-2013, with fast readout enabling movie mode (drift correction and dose fractionation), pushing typical reach from ~8Å to <4Å.'
         objectives: [Resolution revolution]
       - type: choice
         difficulty: 5
         question:
-          pt: A "vitrificação" de Dubochet refere-se a…
-          en: Dubochet's "vitrification" refers to…
+          pt: 'A "vitrificação" de Dubochet refere-se a…'
+          en: 'Dubochet''s "vitrification" refers to…'
         choices:
-          - Congelamento ultrarrápido em etano líquido formando gelo amorfo sem cristais danificadores
-          - Substituição da água por sacarose 80% antes de congelamento lento clássico
-          - Polimerização química do líquido em torno da amostra com glutaraldeído
-          - Liofilização sob vácuo seguida de re-hidratação controlada com glicerol
-        correctAnswer: Congelamento ultrarrápido em etano líquido formando gelo amorfo sem cristais danificadores
+          - 'Congelamento ultrarrápido em etano líquido formando gelo amorfo sem cristais danificadores'
+          - 'Substituição da água por sacarose 80% antes de congelamento lento clássico'
+          - 'Polimerização química do líquido em torno da amostra com glutaraldeído'
+          - 'Liofilização sob vácuo seguida de re-hidratação controlada com glicerol'
+        correctAnswer: 'Congelamento ultrarrápido em etano líquido formando gelo amorfo sem cristais danificadores'
         rationale:
-          pt: Dubochet (Lausanne, anos 1980) demonstrou que mergulho rápido em etano líquido (~-180°C) vitrifica água em gelo amorfo, sem cristais que destruiriam estrutura — preserva proteínas em estado nativo hidratado, fundamento de toda crio-EM moderna.
-          en: Dubochet (Lausanne, 1980s) showed rapid plunging in liquid ethane (~-180°C) vitrifies water into amorphous ice, without crystals that would destroy structure — preserves proteins in native hydrated state, the foundation of all modern cryo-EM.
+          pt: 'Dubochet (Lausanne, anos 1980) demonstrou que mergulho rápido em etano líquido (~-180°C) vitrifica água em gelo amorfo, sem cristais que destruiriam estrutura — preserva proteínas em estado nativo hidratado, fundamento de toda crio-EM moderna.'
+          en: 'Dubochet (Lausanne, 1980s) showed rapid plunging in liquid ethane (~-180°C) vitrifies water into amorphous ice, without crystals that would destroy structure — preserves proteins in native hydrated state, the foundation of all modern cryo-EM.'
         objectives: [Vitrificação]
       - type: choice
         difficulty: 5
         question:
-          pt: O software RELION, lançado por Sjors Scheres (MRC-LMB), é central para SPA por…
-          en: RELION software, released by Sjors Scheres (MRC-LMB), is central to SPA because it…
+          pt: 'O software RELION, lançado por Sjors Scheres (MRC-LMB), é central para SPA por…'
+          en: 'RELION software, released by Sjors Scheres (MRC-LMB), is central to SPA because it…'
         choices:
-          - Estimar parâmetros simultaneamente via abordagem bayesiana com max-likelihood empírico (MLE)
-          - Aplicar redes convolucionais profundas exclusivamente para classificação 2D
-          - Substituir Fourier shell correlation por métricas de aprendizado de máquina
-          - Realizar refinamento manual partícula-a-partícula sem automação algorítmica
-        correctAnswer: Estimar parâmetros simultaneamente via abordagem bayesiana com max-likelihood empírico (MLE)
+          - 'Estimar parâmetros simultaneamente via abordagem bayesiana com max-likelihood empírico (MLE)'
+          - 'Aplicar redes convolucionais profundas exclusivamente para classificação 2D'
+          - 'Substituir Fourier shell correlation por métricas de aprendizado de máquina'
+          - 'Realizar refinamento manual partícula-a-partícula sem automação algorítmica'
+        correctAnswer: 'Estimar parâmetros simultaneamente via abordagem bayesiana com max-likelihood empírico (MLE)'
         rationale:
-          pt: RELION (Scheres 2012) usa abordagem bayesiana com priors empíricos e expectation-maximization para refinar simultaneamente alinhamento, classificação e modelo 3D — robusto em SNR baixo. Padrão de fato no campo, junto a cryoSPARC.
-          en: RELION (Scheres 2012) uses a Bayesian approach with empirical priors and expectation-maximization to simultaneously refine alignment, classification, and 3D model — robust in low SNR. The de facto standard, alongside cryoSPARC.
+          pt: 'RELION (Scheres 2012) usa abordagem bayesiana com priors empíricos e expectation-maximization para refinar simultaneamente alinhamento, classificação e modelo 3D — robusto em SNR baixo. Padrão de fato no campo, junto a cryoSPARC.'
+          en: 'RELION (Scheres 2012) uses a Bayesian approach with empirical priors and expectation-maximization to simultaneously refine alignment, classification, and 3D model — robust in low SNR. The de facto standard, alongside cryoSPARC.'
         objectives: [RELION]
       - type: choice
         difficulty: 5
         question:
-          pt: cryoSPARC (Punjani et al., Toronto/Structura Bio) inova em SPA principalmente por…
-          en: cryoSPARC (Punjani et al., Toronto/Structura Bio) innovates SPA primarily through…
+          pt: 'cryoSPARC (Punjani et al., Toronto/Structura Bio) inova em SPA principalmente por…'
+          en: 'cryoSPARC (Punjani et al., Toronto/Structura Bio) innovates SPA primarily through…'
         choices:
-          - Reconstrução ab initio rápida via SGD estocástico e refinamento heterogêneo (3DVA)
-          - Interface gráfica em python sem qualquer melhoria algorítmica subjacente
-          - Substituição de detectores DED por software simulando leitura mais rápida
-          - Cristalografia paralela hibridizada com SPA na mesma plataforma
-        correctAnswer: Reconstrução ab initio rápida via SGD estocástico e refinamento heterogêneo (3DVA)
+          - 'Reconstrução ab initio rápida via SGD estocástico e refinamento heterogêneo (3DVA)'
+          - 'Interface gráfica em python sem qualquer melhoria algorítmica subjacente'
+          - 'Substituição de detectores DED por software simulando leitura mais rápida'
+          - 'Cristalografia paralela hibridizada com SPA na mesma plataforma'
+        correctAnswer: 'Reconstrução ab initio rápida via SGD estocástico e refinamento heterogêneo (3DVA)'
         rationale:
-          pt: cryoSPARC introduziu reconstrução ab initio via gradiente descendente estocástico em modelo gerativo (Punjani 2017), e depois 3D Variability Analysis (3DVA) para conformações contínuas — acelerou pipeline em ordens de magnitude e popularizou interface webby.
-          en: cryoSPARC introduced ab initio reconstruction via stochastic gradient descent on a generative model (Punjani 2017), then 3D Variability Analysis (3DVA) for continuous conformations — sped pipelines by orders of magnitude and popularized a web UI.
+          pt: 'cryoSPARC introduziu reconstrução ab initio via gradiente descendente estocástico em modelo gerativo (Punjani 2017), e depois 3D Variability Analysis (3DVA) para conformações contínuas — acelerou pipeline em ordens de magnitude e popularizou interface webby.'
+          en: 'cryoSPARC introduced ab initio reconstruction via stochastic gradient descent on a generative model (Punjani 2017), then 3D Variability Analysis (3DVA) for continuous conformations — sped pipelines by orders of magnitude and popularized a web UI.'
         objectives: [cryoSPARC]
       - type: choice
         difficulty: 5
         question:
-          pt: A resolução máxima publicada em SPA, atingida em apoferritina em 2020, foi de…
-          en: The highest published SPA resolution, reached on apoferritin in 2020, was…
+          pt: 'A resolução máxima publicada em SPA, atingida em apoferritina em 2020, foi de…'
+          en: 'The highest published SPA resolution, reached on apoferritin in 2020, was…'
         choices:
-          - ~1.2 Å, suficiente para visualizar átomos de hidrogênio e densidades de cadeia lateral
-          - ~3 Å, equivalente à média atual da maioria das estruturas em PDB
-          - ~5 Å, comparável a estruturas iniciais antes da revolução de detectores
-          - ~10 Å, limite teórico estimado por físicos durante anos no campo
-        correctAnswer: ~1.2 Å, suficiente para visualizar átomos de hidrogênio e densidades de cadeia lateral
+          - '~1.2 Å, suficiente para visualizar átomos de hidrogênio e densidades de cadeia lateral'
+          - '~3 Å, equivalente à média atual da maioria das estruturas em PDB'
+          - '~5 Å, comparável a estruturas iniciais antes da revolução de detectores'
+          - '~10 Å, limite teórico estimado por físicos durante anos no campo'
+        correctAnswer: '~1.2 Å, suficiente para visualizar átomos de hidrogênio e densidades de cadeia lateral'
         rationale:
-          pt: Yip et al. (Diamond/CryoSCM) e Nakane et al. (LMB/JEOL CRYO ARM 300) reportaram em 2020 apoferritina a 1.22-1.25 Å, visualizando hidrogênios — comparável a alta resolução cristalográfica. Limites são amostra-dependentes, mas o princípio físico já não é mais o gargalo.
-          en: Yip et al. (Diamond/CryoSCM) and Nakane et al. (LMB/JEOL CRYO ARM 300) reported in 2020 apoferritin at 1.22-1.25 Å, visualizing hydrogens — comparable to high-res crystallography. Limits are sample-dependent, but physics is no longer the bottleneck.
+          pt: 'Yip et al. (Diamond/CryoSCM) e Nakane et al. (LMB/JEOL CRYO ARM 300) reportaram em 2020 apoferritina a 1.22-1.25 Å, visualizando hidrogênios — comparável a alta resolução cristalográfica. Limites são amostra-dependentes, mas o princípio físico já não é mais o gargalo.'
+          en: 'Yip et al. (Diamond/CryoSCM) and Nakane et al. (LMB/JEOL CRYO ARM 300) reported in 2020 apoferritin at 1.22-1.25 Å, visualizing hydrogens — comparable to high-res crystallography. Limits are sample-dependent, but physics is no longer the bottleneck.'
         objectives: [Sub-2A]
       - type: choice
         difficulty: 5
         question:
-          pt: A FSC (Fourier Shell Correlation) com critério "0.143" é usada para…
-          en: FSC (Fourier Shell Correlation) with the "0.143" criterion is used to…
+          pt: 'A FSC (Fourier Shell Correlation) com critério "0.143" é usada para…'
+          en: 'FSC (Fourier Shell Correlation) with the "0.143" criterion is used to…'
         choices:
-          - Estimar resolução comparando metades independentes do dataset (gold standard)
-          - Calcular contraste de fase em imagens individuais antes da reconstrução 3D
-          - Decidir limiar de contornagem do mapa em ChimeraX para visualização final
-          - Estabelecer simetria local em complexos macromoleculares heterogêneos
-        correctAnswer: Estimar resolução comparando metades independentes do dataset (gold standard)
+          - 'Estimar resolução comparando metades independentes do dataset (gold standard)'
+          - 'Calcular contraste de fase em imagens individuais antes da reconstrução 3D'
+          - 'Decidir limiar de contornagem do mapa em ChimeraX para visualização final'
+          - 'Estabelecer simetria local em complexos macromoleculares heterogêneos'
+        correctAnswer: 'Estimar resolução comparando metades independentes do dataset (gold standard)'
         rationale:
-          pt: O dataset é dividido em metades; cada uma reconstrói volume independente; FSC vs frequência mede correlação. Resolução = frequência onde FSC cai a 0.143 (gold standard de Rosenthal/Henderson 2003), evitando overfitting com noise de validação cruzada.
-          en: The dataset is split in halves; each reconstructs an independent volume; FSC vs frequency measures correlation. Resolution = frequency where FSC drops to 0.143 (Rosenthal/Henderson 2003 gold standard), avoiding overfitting via cross-validation noise.
+          pt: 'O dataset é dividido em metades; cada uma reconstrói volume independente; FSC vs frequência mede correlação. Resolução = frequência onde FSC cai a 0.143 (gold standard de Rosenthal/Henderson 2003), evitando overfitting com noise de validação cruzada.'
+          en: 'The dataset is split in halves; each reconstructs an independent volume; FSC vs frequency measures correlation. Resolution = frequency where FSC drops to 0.143 (Rosenthal/Henderson 2003 gold standard), avoiding overfitting via cross-validation noise.'
         objectives: [FSC 0.143]
       - type: choice
         difficulty: 5
         question:
-          pt: O efeito de "preferred orientation" em SPA causa o quê?
-          en: "Preferred orientation" in SPA causes what?
+          pt: 'O efeito de "preferred orientation" em SPA causa o quê?'
+          en: '"Preferred orientation" in SPA causes what?'
         choices:
-          - Anisotropia direcional do mapa, com baixa resolução em uma ou mais direções
-          - Aumento global da resolução por concentração estatística de partículas
-          - Eliminação da necessidade de classificação 3D no pipeline
-          - Conversão automática para tomografia sem reconstrução cônica adicional
-        correctAnswer: Anisotropia direcional do mapa, com baixa resolução em uma ou mais direções
+          - 'Anisotropia direcional do mapa, com baixa resolução em uma ou mais direções'
+          - 'Aumento global da resolução por concentração estatística de partículas'
+          - 'Eliminação da necessidade de classificação 3D no pipeline'
+          - 'Conversão automática para tomografia sem reconstrução cônica adicional'
+        correctAnswer: 'Anisotropia direcional do mapa, com baixa resolução em uma ou mais direções'
         rationale:
-          pt: Quando partículas preferem orientações específicas em gelo (interação ar-água), faltam vistas — Fourier space é mal amostrado anisotropicamente, deformando mapa. Soluções: surfactantes, tilted-data collection, suportes nano-fabricados, novas grids de grafeno.
-          en: When particles prefer specific orientations in ice (air-water interaction), views are missing — Fourier space is anisotropically sampled, distorting the map. Solutions: surfactants, tilted data collection, nanofabricated supports, new graphene grids.
+          pt: 'Quando partículas preferem orientações específicas em gelo (interação ar-água), faltam vistas — Fourier space é mal amostrado anisotropicamente, deformando mapa. Soluções: surfactantes, tilted-data collection, suportes nano-fabricados, novas grids de grafeno.'
+          en: 'When particles prefer specific orientations in ice (air-water interaction), views are missing — Fourier space is anisotropically sampled, distorting the map. Solutions: surfactants, tilted data collection, nanofabricated supports, new graphene grids.'
         objectives: [Preferred orientation]
       - type: choice
         difficulty: 5
         question:
-          pt: A estrutura cryo-EM da spike pré-fusão estabilizada (2P prefusion) por Jason McLellan/Barney Graham foi crucial para…
-          en: The 2P-stabilized pre-fusion spike cryo-EM structure by Jason McLellan/Barney Graham was crucial for…
+          pt: 'A estrutura cryo-EM da spike pré-fusão estabilizada (2P prefusion) por Jason McLellan/Barney Graham foi crucial para…'
+          en: 'The 2P-stabilized pre-fusion spike cryo-EM structure by Jason McLellan/Barney Graham was crucial for…'
         choices:
-          - Vacinas COVID Pfizer/Moderna ao definir antígeno otimizado em conformação imunogênica
-          - Aprovação de remdesivir como antiviral oral de primeira linha pandêmica
-          - Triagem de pacientes assintomáticos via biomarcador estrutural sérico
-          - Diagnóstico molecular de variantes SARS-CoV-2 substituindo PCR padrão
-        correctAnswer: Vacinas COVID Pfizer/Moderna ao definir antígeno otimizado em conformação imunogênica
+          - 'Vacinas COVID Pfizer/Moderna ao definir antígeno otimizado em conformação imunogênica'
+          - 'Aprovação de remdesivir como antiviral oral de primeira linha pandêmica'
+          - 'Triagem de pacientes assintomáticos via biomarcador estrutural sérico'
+          - 'Diagnóstico molecular de variantes SARS-CoV-2 substituindo PCR padrão'
+        correctAnswer: 'Vacinas COVID Pfizer/Moderna ao definir antígeno otimizado em conformação imunogênica'
         rationale:
-          pt: McLellan (UTexas)/Graham (NIAID/VRC) introduziram mutações 2P (K986P/V987P) que travam spike na pré-fusão metaestável; estrutura cryo-EM (Wrapp et al., Science 2020) guiou design das vacinas mRNA Pfizer/BioNTech e Moderna em semanas — exemplo paradigmático.
-          en: McLellan (UTexas)/Graham (NIAID/VRC) introduced 2P mutations (K986P/V987P) locking spike in metastable pre-fusion; the cryo-EM structure (Wrapp et al., Science 2020) guided Pfizer/BioNTech and Moderna mRNA vaccine design within weeks — paradigmatic example.
+          pt: 'McLellan (UTexas)/Graham (NIAID/VRC) introduziram mutações 2P (K986P/V987P) que travam spike na pré-fusão metaestável; estrutura cryo-EM (Wrapp et al., Science 2020) guiou design das vacinas mRNA Pfizer/BioNTech e Moderna em semanas — exemplo paradigmático.'
+          en: 'McLellan (UTexas)/Graham (NIAID/VRC) introduced 2P mutations (K986P/V987P) locking spike in metastable pre-fusion; the cryo-EM structure (Wrapp et al., Science 2020) guided Pfizer/BioNTech and Moderna mRNA vaccine design within weeks — paradigmatic example.'
         objectives: [2P spike]
       - type: choice
         difficulty: 5
         question:
-          pt: Microscópios "Krios" (FEI/Thermo Fisher) operam tipicamente em…
-          en: "Krios" microscopes (FEI/Thermo Fisher) typically operate at…
+          pt: 'Microscópios "Krios" (FEI/Thermo Fisher) operam tipicamente em…'
+          en: '"Krios" microscopes (FEI/Thermo Fisher) typically operate at…'
         choices:
-          - 300 kV com fonte FEG e estágio criogênico, padrão para SPA de alta resolução
-          - 100 kV com fonte LaB6 e estágio à temperatura ambiente como TEM básico
-          - 1000 kV com fonte de plasma e estágio em hélio líquido obrigatório
-          - Funcionam exclusivamente em luz visível sem feixe de elétrons real
-        correctAnswer: 300 kV com fonte FEG e estágio criogênico, padrão para SPA de alta resolução
+          - '300 kV com fonte FEG e estágio criogênico, padrão para SPA de alta resolução'
+          - '100 kV com fonte LaB6 e estágio à temperatura ambiente como TEM básico'
+          - '1000 kV com fonte de plasma e estágio em hélio líquido obrigatório'
+          - 'Funcionam exclusivamente em luz visível sem feixe de elétrons real'
+        correctAnswer: '300 kV com fonte FEG e estágio criogênico, padrão para SPA de alta resolução'
         rationale:
-          pt: Krios = TEM 300 kV com FEG (Field Emission Gun), estágio cryo a -190°C, autoloader, monocromador opcional, K3/Falcon DED — instrumento de referência. Glacios é versão 200 kV mais barata e compacta. Custo Krios: ~5-7M.
-          en: Krios = 300 kV TEM with FEG (Field Emission Gun), cryo-stage at -190°C, autoloader, optional monochromator, K3/Falcon DED — reference instrument. Glacios is the cheaper compact 200 kV version. Krios cost: ~US$5-7M.
+          pt: 'Krios = TEM 300 kV com FEG (Field Emission Gun), estágio cryo a -190°C, autoloader, monocromador opcional, K3/Falcon DED — instrumento de referência. Glacios é versão 200 kV mais barata e compacta. Custo Krios: ~5-7M.'
+          en: 'Krios = 300 kV TEM with FEG (Field Emission Gun), cryo-stage at -190°C, autoloader, optional monochromator, K3/Falcon DED — reference instrument. Glacios is the cheaper compact 200 kV version. Krios cost: ~US$5-7M.'
         objectives: [Krios]
       - type: choice
         difficulty: 5
         question:
-          pt: A "exposição cumulativa" típica em SPA por partícula é mantida em torno de…
-          en: Typical cumulative dose per particle in SPA is kept around…
+          pt: 'A "exposição cumulativa" típica em SPA por partícula é mantida em torno de…'
+          en: 'Typical cumulative dose per particle in SPA is kept around…'
         choices:
-          - 30-50 e⁻/Å², limite que balanceia SNR contra dano radiativo às proteínas
-          - 1000 e⁻/Å² para maximizar SNR em todas as condições amostrais
-          - 0.1 e⁻/Å² evitando completamente dano radiativo possível
-          - 10 keV/Å³ usando energias de raio-X em vez de elétrons
-        correctAnswer: 30-50 e⁻/Å², limite que balanceia SNR contra dano radiativo às proteínas
+          - '30-50 e⁻/Å², limite que balanceia SNR contra dano radiativo às proteínas'
+          - '1000 e⁻/Å² para maximizar SNR em todas as condições amostrais'
+          - '0.1 e⁻/Å² evitando completamente dano radiativo possível'
+          - '10 keV/Å³ usando energias de raio-X em vez de elétrons'
+        correctAnswer: '30-50 e⁻/Å², limite que balanceia SNR contra dano radiativo às proteínas'
         rationale:
-          pt: Acima de ~50 e⁻/Å² ocorre dano significativo (perda de cadeias laterais, quebras CC); abaixo de ~30, SNR é insuficiente. Movie mode permite "weighting" diferencial dos frames (early frames preservam alta resolução, late frames têm SNR para alinhamento).
-          en: Above ~50 e⁻/Å² significant damage occurs (side-chain loss, CC breaks); below ~30, SNR is insufficient. Movie mode allows differential frame weighting (early frames preserve high resolution, late frames have SNR for alignment).
+          pt: 'Acima de ~50 e⁻/Å² ocorre dano significativo (perda de cadeias laterais, quebras CC); abaixo de ~30, SNR é insuficiente. Movie mode permite "weighting" diferencial dos frames (early frames preservam alta resolução, late frames têm SNR para alinhamento).'
+          en: 'Above ~50 e⁻/Å² significant damage occurs (side-chain loss, CC breaks); below ~30, SNR is insufficient. Movie mode allows differential frame weighting (early frames preserve high resolution, late frames have SNR for alignment).'
         objectives: [Dose]
   - title:
-      pt: Página 2 — Crio-tomografia e biologia in situ
-      en: Page 2 — Cryo-tomography and in situ biology
+      pt: 'Página 2 — Crio-tomografia e biologia in situ'
+      en: 'Page 2 — Cryo-tomography and in situ biology'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: A crio-tomografia eletrônica (cryo-ET) difere de SPA principalmente porque…
-          en: Cryo-electron tomography (cryo-ET) differs from SPA mainly because…
+          pt: 'A crio-tomografia eletrônica (cryo-ET) difere de SPA principalmente porque…'
+          en: 'Cryo-electron tomography (cryo-ET) differs from SPA mainly because…'
         choices:
-          - Coleta múltiplas imagens de uma mesma região em ângulos diferentes (tilt series), preservando contexto in situ
-          - Usa amostras secas em ar ambiente sem qualquer crioprotetor adicional
-          - Trabalha apenas com partículas isoladas e purificadas, sem células
-          - Substitui elétrons por raios-X duros mantendo a mesma cinemática
-        correctAnswer: Coleta múltiplas imagens de uma mesma região em ângulos diferentes (tilt series), preservando contexto in situ
+          - 'Coleta múltiplas imagens de uma mesma região em ângulos diferentes (tilt series), preservando contexto in situ'
+          - 'Usa amostras secas em ar ambiente sem qualquer crioprotetor adicional'
+          - 'Trabalha apenas com partículas isoladas e purificadas, sem células'
+          - 'Substitui elétrons por raios-X duros mantendo a mesma cinemática'
+        correctAnswer: 'Coleta múltiplas imagens de uma mesma região em ângulos diferentes (tilt series), preservando contexto in situ'
         rationale:
-          pt: Cryo-ET coleta tilt-series (-60 a +60°) e reconstrói volume 3D — permite imageamento in situ de células inteiras finas ou lamelas, mostrando macromoléculas em seu contexto celular. Trade-off: dose dividida = pior SNR/resolução vs SPA.
-          en: Cryo-ET collects tilt series (-60 to +60°) and reconstructs a 3D volume — enabling in situ imaging of thin whole cells or lamellae, showing macromolecules in their cellular context. Trade-off: split dose = worse SNR/resolution than SPA.
+          pt: 'Cryo-ET coleta tilt-series (-60 a +60°) e reconstrói volume 3D — permite imageamento in situ de células inteiras finas ou lamelas, mostrando macromoléculas em seu contexto celular. Trade-off: dose dividida = pior SNR/resolução vs SPA.'
+          en: 'Cryo-ET collects tilt series (-60 to +60°) and reconstructs a 3D volume — enabling in situ imaging of thin whole cells or lamellae, showing macromolecules in their cellular context. Trade-off: split dose = worse SNR/resolution than SPA.'
         objectives: [Cryo-ET vs SPA]
       - type: choice
         difficulty: 5
         question:
-          pt: Wolfgang Baumeister (Max Planck) é considerado pioneiro em…
-          en: Wolfgang Baumeister (Max Planck) is considered pioneer of…
+          pt: 'Wolfgang Baumeister (Max Planck) é considerado pioneiro em…'
+          en: 'Wolfgang Baumeister (Max Planck) is considered pioneer of…'
         choices:
-          - Cryo-ET de células inteiras e subtomogram averaging para visualizar máquinas in situ
-          - SPA da bacteriorhodopsin como primeiro alvo do crio-EM moderno
-          - Síntese de proteínas em sistema livre de células com tradução de novo
-          - Microscopia óptica de superresolução STED de fluorescência
-        correctAnswer: Cryo-ET de células inteiras e subtomogram averaging para visualizar máquinas in situ
+          - 'Cryo-ET de células inteiras e subtomogram averaging para visualizar máquinas in situ'
+          - 'SPA da bacteriorhodopsin como primeiro alvo do crio-EM moderno'
+          - 'Síntese de proteínas em sistema livre de células com tradução de novo'
+          - 'Microscopia óptica de superresolução STED de fluorescência'
+        correctAnswer: 'Cryo-ET de células inteiras e subtomogram averaging para visualizar máquinas in situ'
         rationale:
-          pt: Baumeister (MPI Biochemistry, Martinsried) liderou desenvolvimento de cryo-ET de células inteiras e subtomogram averaging — visualizou ribossomos, proteasomas, complexos COP-II in situ. Sua "visual proteomics" antecipou tendência atual de biologia estrutural celular.
-          en: Baumeister (MPI Biochemistry, Martinsried) led whole-cell cryo-ET and subtomogram averaging development — visualizing ribosomes, proteasomes, COP-II complexes in situ. His "visual proteomics" anticipated today's cellular structural biology.
+          pt: 'Baumeister (MPI Biochemistry, Martinsried) liderou desenvolvimento de cryo-ET de células inteiras e subtomogram averaging — visualizou ribossomos, proteasomas, complexos COP-II in situ. Sua "visual proteomics" antecipou tendência atual de biologia estrutural celular.'
+          en: 'Baumeister (MPI Biochemistry, Martinsried) led whole-cell cryo-ET and subtomogram averaging development — visualizing ribosomes, proteasomes, COP-II complexes in situ. His "visual proteomics" anticipated today''s cellular structural biology.'
         objectives: [Baumeister]
       - type: choice
         difficulty: 5
         question:
-          pt: FIB-SEM milling (Focused Ion Beam-Scanning Electron Microscopy) em cryo-ET serve para…
-          en: FIB-SEM milling (Focused Ion Beam-Scanning Electron Microscopy) in cryo-ET serves to…
+          pt: 'FIB-SEM milling (Focused Ion Beam-Scanning Electron Microscopy) em cryo-ET serve para…'
+          en: 'FIB-SEM milling (Focused Ion Beam-Scanning Electron Microscopy) in cryo-ET serves to…'
         choices:
-          - Esculpir lamelas finas (~150-300 nm) de células vitrificadas, viabilizando TEM in situ
-          - Decapar a parede celular bacteriana antes de qualquer congelamento
-          - Acelerar elétrons retroespalhados para imageamento de superfície
-          - Marcar proteínas-alvo com íons de gálio em coloração imuno-histoquímica
-        correctAnswer: Esculpir lamelas finas (~150-300 nm) de células vitrificadas, viabilizando TEM in situ
+          - 'Esculpir lamelas finas (~150-300 nm) de células vitrificadas, viabilizando TEM in situ'
+          - 'Decapar a parede celular bacteriana antes de qualquer congelamento'
+          - 'Acelerar elétrons retroespalhados para imageamento de superfície'
+          - 'Marcar proteínas-alvo com íons de gálio em coloração imuno-histoquímica'
+        correctAnswer: 'Esculpir lamelas finas (~150-300 nm) de células vitrificadas, viabilizando TEM in situ'
         rationale:
-          pt: Células vitrificadas são espessas demais para TEM (precisa <500 nm); FIB-SEM com gálio esculpe lamelas finas a -190°C antes do TEM — combinação Aquilos2 (Thermo) ou Helios é padrão. Liberou cryo-ET de procariotos para eucariotos em geral, incluindo neurônios.
-          en: Vitrified cells are too thick for TEM (need <500 nm); cryo FIB-SEM with gallium mills thin lamellae at -190°C before TEM — Aquilos2 (Thermo) or Helios are standard. Liberated cryo-ET from prokaryotes to eukaryotes broadly, including neurons.
+          pt: 'Células vitrificadas são espessas demais para TEM (precisa <500 nm); FIB-SEM com gálio esculpe lamelas finas a -190°C antes do TEM — combinação Aquilos2 (Thermo) ou Helios é padrão. Liberou cryo-ET de procariotos para eucariotos em geral, incluindo neurônios.'
+          en: 'Vitrified cells are too thick for TEM (need <500 nm); cryo FIB-SEM with gallium mills thin lamellae at -190°C before TEM — Aquilos2 (Thermo) or Helios are standard. Liberated cryo-ET from prokaryotes to eukaryotes broadly, including neurons.'
         objectives: [FIB milling]
       - type: choice
         difficulty: 5
         question:
-          pt: Subtomogram averaging (STA) em cryo-ET equivale a…
-          en: Subtomogram averaging (STA) in cryo-ET is equivalent to…
+          pt: 'Subtomogram averaging (STA) em cryo-ET equivale a…'
+          en: 'Subtomogram averaging (STA) in cryo-ET is equivalent to…'
         choices:
-          - Promediar sub-volumes contendo mesmo complexo, atingindo resolução muito superior à do tomograma
-          - Normalizar imagens 2D antes da reconstrução tomográfica padrão
-          - Substituir reconstrução 3D por projeção máxima 2D para visualização rápida
-          - Apenas filtragem de ruído em domínio Fourier sem promediação
-        correctAnswer: Promediar sub-volumes contendo mesmo complexo, atingindo resolução muito superior à do tomograma
+          - 'Promediar sub-volumes contendo mesmo complexo, atingindo resolução muito superior à do tomograma'
+          - 'Normalizar imagens 2D antes da reconstrução tomográfica padrão'
+          - 'Substituir reconstrução 3D por projeção máxima 2D para visualização rápida'
+          - 'Apenas filtragem de ruído em domínio Fourier sem promediação'
+        correctAnswer: 'Promediar sub-volumes contendo mesmo complexo, atingindo resolução muito superior à do tomograma'
         rationale:
-          pt: STA: extrai sub-volumes ao redor de cópias do mesmo complexo (ribossomos, vírus etc.) no tomograma, alinha e promedia — atinge sub-nanômetro a Angstrom. Combina contexto in situ com resolução SPA-like. Software: RELION-4 (sub-tomogram), STOPGAP, Dynamo, EMAN2.
-          en: STA: extracts sub-volumes around copies of the same complex (ribosomes, viruses, etc.) in the tomogram, aligns and averages — reaches sub-nanometer to Angstrom. Combines in situ context with SPA-like resolution. Software: RELION-4 (sub-tomogram), STOPGAP, Dynamo, EMAN2.
+          pt: 'STA: extrai sub-volumes ao redor de cópias do mesmo complexo (ribossomos, vírus etc.) no tomograma, alinha e promedia — atinge sub-nanômetro a Angstrom. Combina contexto in situ com resolução SPA-like. Software: RELION-4 (sub-tomogram), STOPGAP, Dynamo, EMAN2.'
+          en: 'STA: extracts sub-volumes around copies of the same complex (ribosomes, viruses, etc.) in the tomogram, aligns and averages — reaches sub-nanometer to Angstrom. Combines in situ context with SPA-like resolution. Software: RELION-4 (sub-tomogram), STOPGAP, Dynamo, EMAN2.'
         objectives: [STA]
       - type: choice
         difficulty: 5
         question:
-          pt: A abordagem CLEM (Correlative Light and Electron Microscopy) em cryo-ET serve para…
-          en: CLEM (Correlative Light and Electron Microscopy) in cryo-ET serves to…
+          pt: 'A abordagem CLEM (Correlative Light and Electron Microscopy) em cryo-ET serve para…'
+          en: 'CLEM (Correlative Light and Electron Microscopy) in cryo-ET serves to…'
         choices:
-          - Localizar regiões de interesse via fluorescência cryo antes de FIB-milling/TEM
-          - Substituir cryo-ET por fluorescência exclusivamente sem qualquer feixe de elétrons
-          - Aplicar feixe de íons coloridos para diferenciar tipos celulares por cor
-          - Eliminar a necessidade de vitrificação pelo uso de fluoróforos especiais
-        correctAnswer: Localizar regiões de interesse via fluorescência cryo antes de FIB-milling/TEM
+          - 'Localizar regiões de interesse via fluorescência cryo antes de FIB-milling/TEM'
+          - 'Substituir cryo-ET por fluorescência exclusivamente sem qualquer feixe de elétrons'
+          - 'Aplicar feixe de íons coloridos para diferenciar tipos celulares por cor'
+          - 'Eliminar a necessidade de vitrificação pelo uso de fluoróforos especiais'
+        correctAnswer: 'Localizar regiões de interesse via fluorescência cryo antes de FIB-milling/TEM'
         rationale:
-          pt: CLEM cryo-fluorescente (Leica Cryo CLEM, Zeiss LSM cryo) marca alvos com proteínas fluorescentes; localização guia FIB-SEM e cryo-ET subsequentes — eficiência radical em vez de busca cega. Cryo-LM acima de 300 nm de profundidade e seleção de eventos raros são desafios atuais.
-          en: Cryo-fluorescent CLEM (Leica Cryo CLEM, Zeiss LSM cryo) marks targets with fluorescent proteins; localization guides downstream FIB-SEM and cryo-ET — radical efficiency vs blind search. Cryo-LM beyond 300 nm depth and rare-event selection are current challenges.
+          pt: 'CLEM cryo-fluorescente (Leica Cryo CLEM, Zeiss LSM cryo) marca alvos com proteínas fluorescentes; localização guia FIB-SEM e cryo-ET subsequentes — eficiência radical em vez de busca cega. Cryo-LM acima de 300 nm de profundidade e seleção de eventos raros são desafios atuais.'
+          en: 'Cryo-fluorescent CLEM (Leica Cryo CLEM, Zeiss LSM cryo) marks targets with fluorescent proteins; localization guides downstream FIB-SEM and cryo-ET — radical efficiency vs blind search. Cryo-LM beyond 300 nm depth and rare-event selection are current challenges.'
         objectives: [CLEM cryo]
       - type: choice
         difficulty: 5
         question:
-          pt: ChimeraX (UCSF) é amplamente usado em cryo-EM para…
-          en: ChimeraX (UCSF) is widely used in cryo-EM for…
+          pt: 'ChimeraX (UCSF) é amplamente usado em cryo-EM para…'
+          en: 'ChimeraX (UCSF) is widely used in cryo-EM for…'
         choices:
-          - Visualização de mapas de densidade, ajuste de modelos atômicos e vídeos científicos
-          - Coleta automática de dados em microscópios Krios em tempo real
-          - Reconstrução 3D substituindo RELION/cryoSPARC em pipelines de produção
-          - Execução de cálculos de dinâmica molecular substituindo GROMACS
-        correctAnswer: Visualização de mapas de densidade, ajuste de modelos atômicos e vídeos científicos
+          - 'Visualização de mapas de densidade, ajuste de modelos atômicos e vídeos científicos'
+          - 'Coleta automática de dados em microscópios Krios em tempo real'
+          - 'Reconstrução 3D substituindo RELION/cryoSPARC em pipelines de produção'
+          - 'Execução de cálculos de dinâmica molecular substituindo GROMACS'
+        correctAnswer: 'Visualização de mapas de densidade, ajuste de modelos atômicos e vídeos científicos'
         rationale:
-          pt: ChimeraX (Tom Goddard/Thomas Ferrin, UCSF) sucede ao Chimera; padrão para visualizar mapas EM, ajustar modelos atômicos, criar vídeos para artigos. Integra com AlphaFold, ColabFold, Phenix em fluxos de modelagem.
-          en: ChimeraX (Tom Goddard/Thomas Ferrin, UCSF) succeeds Chimera; the standard for visualizing EM maps, fitting atomic models, and creating publication videos. Integrates with AlphaFold, ColabFold, Phenix in modeling pipelines.
+          pt: 'ChimeraX (Tom Goddard/Thomas Ferrin, UCSF) sucede ao Chimera; padrão para visualizar mapas EM, ajustar modelos atômicos, criar vídeos para artigos. Integra com AlphaFold, ColabFold, Phenix em fluxos de modelagem.'
+          en: 'ChimeraX (Tom Goddard/Thomas Ferrin, UCSF) succeeds Chimera; the standard for visualizing EM maps, fitting atomic models, and creating publication videos. Integrates with AlphaFold, ColabFold, Phenix in modeling pipelines.'
         objectives: [ChimeraX]
       - type: choice
         difficulty: 5
         question:
-          pt: A combinação de AlphaFold2 + cryo-EM é especialmente poderosa porque…
-          en: The combination of AlphaFold2 + cryo-EM is especially powerful because…
+          pt: 'A combinação de AlphaFold2 + cryo-EM é especialmente poderosa porque…'
+          en: 'The combination of AlphaFold2 + cryo-EM is especially powerful because…'
         choices:
-          - AF2 fornece modelos iniciais de alta qualidade para ajuste em mapas EM, acelerando construção atômica
-          - AF2 substitui completamente a necessidade de coletar dados crio-EM experimentais
-          - Crio-EM dispensa MSAs no AF2 ao usar imagens em vez de sequências
-          - Ambos métodos juntos só funcionam para cristais sólidos, não amostras vitrificadas
-        correctAnswer: AF2 fornece modelos iniciais de alta qualidade para ajuste em mapas EM, acelerando construção atômica
+          - 'AF2 fornece modelos iniciais de alta qualidade para ajuste em mapas EM, acelerando construção atômica'
+          - 'AF2 substitui completamente a necessidade de coletar dados crio-EM experimentais'
+          - 'Crio-EM dispensa MSAs no AF2 ao usar imagens em vez de sequências'
+          - 'Ambos métodos juntos só funcionam para cristais sólidos, não amostras vitrificadas'
+        correctAnswer: 'AF2 fornece modelos iniciais de alta qualidade para ajuste em mapas EM, acelerando construção atômica'
         rationale:
-          pt: AF2 fornece coordenadas iniciais com alta confiança para subunidades; ajuste em mapa EM (rigid-body + flexível) é muito mais rápido que construção de novo. Para complexos heterogêneos, AF2-Multimer + cryo-EM acelera elucidação. Padrão de fato em 2023+.
-          en: AF2 provides high-confidence initial coordinates for subunits; fitting into EM maps (rigid-body + flexible) is much faster than de novo building. For heterogeneous complexes, AF2-Multimer + cryo-EM accelerates determination. De facto standard since 2023.
+          pt: 'AF2 fornece coordenadas iniciais com alta confiança para subunidades; ajuste em mapa EM (rigid-body + flexível) é muito mais rápido que construção de novo. Para complexos heterogêneos, AF2-Multimer + cryo-EM acelera elucidação. Padrão de fato em 2023+.'
+          en: 'AF2 provides high-confidence initial coordinates for subunits; fitting into EM maps (rigid-body + flexible) is much faster than de novo building. For heterogeneous complexes, AF2-Multimer + cryo-EM accelerates determination. De facto standard since 2023.'
         objectives: [AF + cryo-EM]
       - type: choice
         difficulty: 5
         question:
-          pt: Em cryo-EM single-particle, "PDB-redo automatizado" e ferramentas como Phenix/Coot tratam…
-          en: In single-particle cryo-EM, "PDB-redo automated" and tools like Phenix/Coot handle…
+          pt: 'Em cryo-EM single-particle, "PDB-redo automatizado" e ferramentas como Phenix/Coot tratam…'
+          en: 'In single-particle cryo-EM, "PDB-redo automated" and tools like Phenix/Coot handle…'
         choices:
-          - Refinamento atômico com restrições estereoquímicas e validação de modelo final
-          - Coleta de dados em microscópio sem qualquer intervenção humana ou software
-          - Vitrificação automatizada de grids antes da inserção no Krios
-          - Triagem inicial de partículas em movie mode antes de classificação 2D
-        correctAnswer: Refinamento atômico com restrições estereoquímicas e validação de modelo final
+          - 'Refinamento atômico com restrições estereoquímicas e validação de modelo final'
+          - 'Coleta de dados em microscópio sem qualquer intervenção humana ou software'
+          - 'Vitrificação automatizada de grids antes da inserção no Krios'
+          - 'Triagem inicial de partículas em movie mode antes de classificação 2D'
+        correctAnswer: 'Refinamento atômico com restrições estereoquímicas e validação de modelo final'
         rationale:
-          pt: Phenix.real_space_refine (Adams), Coot (Emsley/Crispin), ISOLDE (Croll com Vmd) refinam coordenadas em mapas EM com restrições de geometria, B-fatores, validação MolProbity — equivalente a Refmac/Phenix da cristalografia. Adicional: Servalcat para rachadura ML.
-          en: Phenix.real_space_refine (Adams), Coot (Emsley/Crispin), ISOLDE (Croll with VMD) refine coordinates against EM maps with geometry restraints, B-factors, MolProbity validation — equivalent to crystallography's Refmac/Phenix. Plus: Servalcat for ML.
+          pt: 'Phenix.real_space_refine (Adams), Coot (Emsley/Crispin), ISOLDE (Croll com Vmd) refinam coordenadas em mapas EM com restrições de geometria, B-fatores, validação MolProbity — equivalente a Refmac/Phenix da cristalografia. Adicional: Servalcat para rachadura ML.'
+          en: 'Phenix.real_space_refine (Adams), Coot (Emsley/Crispin), ISOLDE (Croll with VMD) refine coordinates against EM maps with geometry restraints, B-factors, MolProbity validation — equivalent to crystallography''s Refmac/Phenix. Plus: Servalcat for ML.'
         objectives: [Refinamento atômico]
       - type: choice
         difficulty: 5
         question:
-          pt: O EMPIAR (Electron Microscopy Public Image Archive) é importante por…
-          en: EMPIAR (Electron Microscopy Public Image Archive) is important because it…
+          pt: 'O EMPIAR (Electron Microscopy Public Image Archive) é importante por…'
+          en: 'EMPIAR (Electron Microscopy Public Image Archive) is important because it…'
         choices:
-          - Repositório aberto de raw movies/tilt series, permitindo reanalysis e benchmarking metodológico
-          - Banco de dados privado de microscopistas industriais sem acesso público
-          - Repositório de fotos artísticas obtidas com microscópios sem dados científicos
-          - Ferramenta de coleta automatizada de dados sem armazenamento permanente
-        correctAnswer: Repositório aberto de raw movies/tilt series, permitindo reanalysis e benchmarking metodológico
+          - 'Repositório aberto de raw movies/tilt series, permitindo reanalysis e benchmarking metodológico'
+          - 'Banco de dados privado de microscopistas industriais sem acesso público'
+          - 'Repositório de fotos artísticas obtidas com microscópios sem dados científicos'
+          - 'Ferramenta de coleta automatizada de dados sem armazenamento permanente'
+        correctAnswer: 'Repositório aberto de raw movies/tilt series, permitindo reanalysis e benchmarking metodológico'
         rationale:
-          pt: EMPIAR (EMBL-EBI Hinxton) hospeda raw data EM (TBs por dataset) — tornou possível comparar métodos diretamente, treinar redes neurais (e.g. Topaz para picking), e impulsionou reprodutibilidade. EMDB hospeda mapas finais; PDB hospeda modelos atômicos finais.
-          en: EMPIAR (EMBL-EBI Hinxton) hosts raw EM data (TBs per dataset) — made direct method comparison possible, enabled neural-net training (e.g. Topaz for picking), and boosted reproducibility. EMDB hosts final maps; PDB hosts final atomic models.
+          pt: 'EMPIAR (EMBL-EBI Hinxton) hospeda raw data EM (TBs por dataset) — tornou possível comparar métodos diretamente, treinar redes neurais (e.g. Topaz para picking), e impulsionou reprodutibilidade. EMDB hospeda mapas finais; PDB hospeda modelos atômicos finais.'
+          en: 'EMPIAR (EMBL-EBI Hinxton) hosts raw EM data (TBs per dataset) — made direct method comparison possible, enabled neural-net training (e.g. Topaz for picking), and boosted reproducibility. EMDB hosts final maps; PDB hosts final atomic models.'
         objectives: [EMPIAR]
       - type: choice
         difficulty: 5
         question:
-          pt: Aplicação emergente de cryo-EM em farmacologia é…
-          en: An emerging cryo-EM application in pharmacology is…
+          pt: 'Aplicação emergente de cryo-EM em farmacologia é…'
+          en: 'An emerging cryo-EM application in pharmacology is…'
         choices:
-          - Drug discovery contra GPCRs/canais iônicos com complexos receptor-ligante em alta resolução
-          - Substituição completa de ensaios bioquímicos por imageamento estrutural sem amostra
-          - Diagnóstico in vivo de doenças por crio-EM em pacientes vivos diretamente
-          - Eliminação total da necessidade de cristalografia em qualquer indicação
-        correctAnswer: Drug discovery contra GPCRs/canais iônicos com complexos receptor-ligante em alta resolução
+          - 'Drug discovery contra GPCRs/canais iônicos com complexos receptor-ligante em alta resolução'
+          - 'Substituição completa de ensaios bioquímicos por imageamento estrutural sem amostra'
+          - 'Diagnóstico in vivo de doenças por crio-EM em pacientes vivos diretamente'
+          - 'Eliminação total da necessidade de cristalografia em qualquer indicação'
+        correctAnswer: 'Drug discovery contra GPCRs/canais iônicos com complexos receptor-ligante em alta resolução'
         rationale:
-          pt: GPCRs e canais iônicos resistiam à cristalografia; cryo-EM resolveu centenas de complexos receptor-ligante (GLP-1R, μ-opioid, NMDAR etc.) acelerando structure-based drug design. Estruturas Krios com sub-3Å para complexos clinicamente relevantes saíram do nicho ao mainstream.
-          en: GPCRs and ion channels resisted crystallography; cryo-EM solved hundreds of receptor-ligand complexes (GLP-1R, μ-opioid, NMDAR, etc.), accelerating structure-based drug design. Sub-3Å Krios structures of clinically relevant complexes have moved from niche to mainstream.
+          pt: 'GPCRs e canais iônicos resistiam à cristalografia; cryo-EM resolveu centenas de complexos receptor-ligante (GLP-1R, μ-opioid, NMDAR etc.) acelerando structure-based drug design. Estruturas Krios com sub-3Å para complexos clinicamente relevantes saíram do nicho ao mainstream.'
+          en: 'GPCRs and ion channels resisted crystallography; cryo-EM solved hundreds of receptor-ligand complexes (GLP-1R, μ-opioid, NMDAR, etc.), accelerating structure-based drug design. Sub-3Å Krios structures of clinically relevant complexes have moved from niche to mainstream.'
         objectives: [Cryo-EM drug discovery]
 target: 20

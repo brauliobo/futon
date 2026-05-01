@@ -1,13 +1,13 @@
 title:
-  pt: Modelagem Matemática de Doenças Infecciosas
-  en: Mathematical Modeling of Infectious Diseases
+  pt: 'Modelagem Matemática de Doenças Infecciosas'
+  en: 'Mathematical Modeling of Infectious Diseases'
 level: P
 subject: biology
 objectives:
-  - Compreender SIR/SEIR e R0
-  - Reconhecer threshold, herd immunity, age-structured
-  - Identificar modelos espaciais e estocásticos
-  - Avaliar phylodynamics e contact tracing
+  - 'Compreender SIR/SEIR e R0'
+  - 'Reconhecer threshold, herd immunity, age-structured'
+  - 'Identificar modelos espaciais e estocásticos'
+  - 'Avaliar phylodynamics e contact tracing'
 difficulty: 5
 authorNotes: |
   Math epidemiology. Kermack-McKendrick 1927 SIR. Anderson-May "Infectious Diseases of Humans"
@@ -18,327 +18,327 @@ authorNotes: |
   1980, polio (close).
 example:
   question:
-    pt: O modelo SIR clássico (Kermack-McKendrick 1927) descreve epidemia com…
-    en: The classical SIR model (Kermack-McKendrick 1927) describes an epidemic with…
+    pt: 'O modelo SIR clássico (Kermack-McKendrick 1927) descreve epidemia com…'
+    en: 'The classical SIR model (Kermack-McKendrick 1927) describes an epidemic with…'
   choices:
-    - Compartimentos Susceptível, Infectado, Recuperado com EDOs acopladas e R0 = β/γ
-    - Apenas crescimento exponencial sem qualquer compartimento
-    - Modelo espacial obrigatório com difusão
-    - Apenas dados estatísticos sem dinâmica
-  correctAnswer: Compartimentos Susceptível, Infectado, Recuperado com EDOs acopladas e R0 = β/γ
+    - 'Compartimentos Susceptível, Infectado, Recuperado com EDOs acopladas e R0 = β/γ'
+    - 'Apenas crescimento exponencial sem qualquer compartimento'
+    - 'Modelo espacial obrigatório com difusão'
+    - 'Apenas dados estatísticos sem dinâmica'
+  correctAnswer: 'Compartimentos Susceptível, Infectado, Recuperado com EDOs acopladas e R0 = β/γ'
   rationale:
-    pt: SIR: dS/dt = −βSI, dI/dt = βSI − γI, dR/dt = γI. R0 = β/γ. Se R0 > 1, epidemia cresce até pico, depois decai pela depleção de S. Atinge tamanho final R∞ < N. Generalizado em SEIR (E exposed), SIRS (perda de imunidade), SIS (cíclico), age-structured.
-    en: SIR: dS/dt = −βSI, dI/dt = βSI − γI, dR/dt = γI. R0 = β/γ. If R0 > 1, epidemic grows to peak then decays via S depletion. Final size R∞ < N. Generalized to SEIR (E exposed), SIRS (immunity loss), SIS (cyclic), age-structured.
+    pt: 'SIR: dS/dt = −βSI, dI/dt = βSI − γI, dR/dt = γI. R0 = β/γ. Se R0 > 1, epidemia cresce até pico, depois decai pela depleção de S. Atinge tamanho final R∞ < N. Generalizado em SEIR (E exposed), SIRS (perda de imunidade), SIS (cíclico), age-structured.'
+    en: 'SIR: dS/dt = −βSI, dI/dt = βSI − γI, dR/dt = γI. R0 = β/γ. If R0 > 1, epidemic grows to peak then decays via S depletion. Final size R∞ < N. Generalized to SEIR (E exposed), SIRS (immunity loss), SIS (cyclic), age-structured.'
 passCriteria:
   minAccuracyPercent: 85
   maxAvgSecondsPerExercise: 14
 pages:
   - title:
-      pt: Página 1 — Modelos básicos e R0
-      en: Page 1 — Basic models and R0
+      pt: 'Página 1 — Modelos básicos e R0'
+      en: 'Page 1 — Basic models and R0'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: O número básico de reprodução R0 representa…
-          en: The basic reproduction number R0 represents…
+          pt: 'O número básico de reprodução R0 representa…'
+          en: 'The basic reproduction number R0 represents…'
         choices:
-          - Número médio de novos casos gerados por um infectado em população totalmente susceptível
-          - Apenas tempo médio de doença em dias
-          - Letalidade média da infecção
-          - Probabilidade de transmissão por contato apenas
-        correctAnswer: Número médio de novos casos gerados por um infectado em população totalmente susceptível
+          - 'Número médio de novos casos gerados por um infectado em população totalmente susceptível'
+          - 'Apenas tempo médio de doença em dias'
+          - 'Letalidade média da infecção'
+          - 'Probabilidade de transmissão por contato apenas'
+        correctAnswer: 'Número médio de novos casos gerados por um infectado em população totalmente susceptível'
         rationale:
-          pt: R0 é "secondary cases per primary in fully susceptible pop". R0 > 1 = epidemia possível; R0 < 1 = extinção. Sarampo: R0 ~12-18; influenza pandêmica ~1.5-2; COVID-19 ancestral ~2.5-3, Omicron BA.5 ~10. Calcula-se via método next-generation (Diekmann/Heesterbeek).
-          en: R0 is "secondary cases per primary in fully susceptible pop". R0 > 1 = epidemic possible; R0 < 1 = extinction. Measles: R0 ~12-18; pandemic flu ~1.5-2; ancestral COVID-19 ~2.5-3, Omicron BA.5 ~10. Computed via next-generation method (Diekmann/Heesterbeek).
+          pt: 'R0 é "secondary cases per primary in fully susceptible pop". R0 > 1 = epidemia possível; R0 < 1 = extinção. Sarampo: R0 ~12-18; influenza pandêmica ~1.5-2; COVID-19 ancestral ~2.5-3, Omicron BA.5 ~10. Calcula-se via método next-generation (Diekmann/Heesterbeek).'
+          en: 'R0 is "secondary cases per primary in fully susceptible pop". R0 > 1 = epidemic possible; R0 < 1 = extinction. Measles: R0 ~12-18; pandemic flu ~1.5-2; ancestral COVID-19 ~2.5-3, Omicron BA.5 ~10. Computed via next-generation method (Diekmann/Heesterbeek).'
         objectives: [R0]
       - type: choice
         difficulty: 5
         question:
-          pt: A imunidade de rebanho (herd immunity threshold, HIT) é atingida quando fração imune excede…
-          en: Herd immunity threshold (HIT) is reached when immune fraction exceeds…
+          pt: 'A imunidade de rebanho (herd immunity threshold, HIT) é atingida quando fração imune excede…'
+          en: 'Herd immunity threshold (HIT) is reached when immune fraction exceeds…'
         choices:
-          - 1 − 1/R0 (e.g. R0 = 5 → HIT = 80%)
-          - 1/R0 sempre (e.g. R0 = 5 → HIT = 20%)
-          - 100% sempre, qualquer epidemia exige
-          - 50% independentemente de R0
-        correctAnswer: 1 − 1/R0 (e.g. R0 = 5 → HIT = 80%)
+          - '1 − 1/R0 (e.g. R0 = 5 → HIT = 80%)'
+          - '1/R0 sempre (e.g. R0 = 5 → HIT = 20%)'
+          - '100% sempre, qualquer epidemia exige'
+          - '50% independentemente de R0'
+        correctAnswer: '1 − 1/R0 (e.g. R0 = 5 → HIT = 80%)'
         rationale:
-          pt: HIT = 1 − 1/R0 em modelo SIR homogêneo. Sarampo R0 ~15 → HIT ~93% — alta cobertura vacinal essencial. COVID-19 mostrou que heterogeneidade, ondas sazonais, e perda de imunidade complicam HIT na prática.
-          en: HIT = 1 − 1/R0 in homogeneous SIR model. Measles R0 ~15 → HIT ~93% — high vaccine coverage essential. COVID-19 showed that heterogeneity, seasonal waves, and immunity loss complicate HIT in practice.
+          pt: 'HIT = 1 − 1/R0 em modelo SIR homogêneo. Sarampo R0 ~15 → HIT ~93% — alta cobertura vacinal essencial. COVID-19 mostrou que heterogeneidade, ondas sazonais, e perda de imunidade complicam HIT na prática.'
+          en: 'HIT = 1 − 1/R0 in homogeneous SIR model. Measles R0 ~15 → HIT ~93% — high vaccine coverage essential. COVID-19 showed that heterogeneity, seasonal waves, and immunity loss complicate HIT in practice.'
         objectives: [HIT]
       - type: choice
         difficulty: 5
         question:
-          pt: O modelo SEIR adiciona compartimento "Exposto" (E) entre S e I para representar…
-          en: The SEIR model adds an "Exposed" (E) compartment between S and I to represent…
+          pt: 'O modelo SEIR adiciona compartimento "Exposto" (E) entre S e I para representar…'
+          en: 'The SEIR model adds an "Exposed" (E) compartment between S and I to represent…'
         choices:
-          - Período de latência antes da transmissibilidade, importante em COVID, sarampo, HIV
-          - Apenas estágio assintomático sem qualquer transmissão
-          - Apenas pacientes vacinados protegidos
-          - Substituição de R por E no modelo
-        correctAnswer: Período de latência antes da transmissibilidade, importante em COVID, sarampo, HIV
+          - 'Período de latência antes da transmissibilidade, importante em COVID, sarampo, HIV'
+          - 'Apenas estágio assintomático sem qualquer transmissão'
+          - 'Apenas pacientes vacinados protegidos'
+          - 'Substituição de R por E no modelo'
+        correctAnswer: 'Período de latência antes da transmissibilidade, importante em COVID, sarampo, HIV'
         rationale:
-          pt: SEIR: S → E (latente, infectado mas não infeccioso) → I (sintomático/transmissível) → R. Latência típica: COVID ~3-5 dias, sarampo ~10. Importante quando latência ≠ período de incubação. Período pré-sintomático em COVID complicou contact tracing.
-          en: SEIR: S → E (latent, infected but not infectious) → I (symptomatic/transmissible) → R. Typical latency: COVID ~3-5 days, measles ~10. Important when latency ≠ incubation period. Pre-symptomatic period in COVID complicated contact tracing.
+          pt: 'SEIR: S → E (latente, infectado mas não infeccioso) → I (sintomático/transmissível) → R. Latência típica: COVID ~3-5 dias, sarampo ~10. Importante quando latência ≠ período de incubação. Período pré-sintomático em COVID complicou contact tracing.'
+          en: 'SEIR: S → E (latent, infected but not infectious) → I (symptomatic/transmissible) → R. Typical latency: COVID ~3-5 days, measles ~10. Important when latency ≠ incubation period. Pre-symptomatic period in COVID complicated contact tracing.'
         objectives: [SEIR]
       - type: choice
         difficulty: 5
         question:
-          pt: A heterogeneidade ("superspreader") em transmissão é capturada por…
-          en: Heterogeneity ("superspreader") in transmission is captured by…
+          pt: 'A heterogeneidade ("superspreader") em transmissão é capturada por…'
+          en: 'Heterogeneity ("superspreader") in transmission is captured by…'
         choices:
-          - Distribuição com cauda longa de offspring (Lloyd-Smith 2005, parâmetro k)
-          - Apenas média sem qualquer variância
-          - Distribuição uniforme em todos os indivíduos
-          - Apenas modelos determinísticos sem estocasticidade
-        correctAnswer: Distribuição com cauda longa de offspring (Lloyd-Smith 2005, parâmetro k)
+          - 'Distribuição com cauda longa de offspring (Lloyd-Smith 2005, parâmetro k)'
+          - 'Apenas média sem qualquer variância'
+          - 'Distribuição uniforme em todos os indivíduos'
+          - 'Apenas modelos determinísticos sem estocasticidade'
+        correctAnswer: 'Distribuição com cauda longa de offspring (Lloyd-Smith 2005, parâmetro k)'
         rationale:
-          pt: Lloyd-Smith/Schreiber/Kopp/Getz (Nature 2005): R0 médio mascara variação enorme. Distribuição binomial negativa com k pequeno (~0.1 SARS, COVID) significa que ~20% dos casos causa ~80% das transmissões — superspreader. Implicações para controle (foco em eventos vs casos).
-          en: Lloyd-Smith/Schreiber/Kopp/Getz (Nature 2005): mean R0 hides huge variation. Negative binomial distribution with small k (~0.1 SARS, COVID) means ~20% of cases cause ~80% of transmissions — superspreaders. Implications for control (focus on events vs cases).
+          pt: 'Lloyd-Smith/Schreiber/Kopp/Getz (Nature 2005): R0 médio mascara variação enorme. Distribuição binomial negativa com k pequeno (~0.1 SARS, COVID) significa que ~20% dos casos causa ~80% das transmissões — superspreader. Implicações para controle (foco em eventos vs casos).'
+          en: 'Lloyd-Smith/Schreiber/Kopp/Getz (Nature 2005): mean R0 hides huge variation. Negative binomial distribution with small k (~0.1 SARS, COVID) means ~20% of cases cause ~80% of transmissions — superspreaders. Implications for control (focus on events vs cases).'
         objectives: [Superspreader]
       - type: choice
         difficulty: 5
         question:
-          pt: O método "next-generation matrix" (Diekmann/Heesterbeek 1990) calcula R0 em modelos…
-          en: The "next-generation matrix" method (Diekmann/Heesterbeek 1990) computes R0 in…
+          pt: 'O método "next-generation matrix" (Diekmann/Heesterbeek 1990) calcula R0 em modelos…'
+          en: 'The "next-generation matrix" method (Diekmann/Heesterbeek 1990) computes R0 in…'
         choices:
-          - Multi-compartimentais e age-/risk-structured via autovalor dominante de FV^-1
-          - Apenas SIR clássico simples sem qualquer estrutura
-          - Modelos puramente estatísticos sem EDO
-          - Substituição de método matricial por Monte Carlo
-        correctAnswer: Multi-compartimentais e age-/risk-structured via autovalor dominante de FV^-1
+          - 'Multi-compartimentais e age-/risk-structured via autovalor dominante de FV^-1'
+          - 'Apenas SIR clássico simples sem qualquer estrutura'
+          - 'Modelos puramente estatísticos sem EDO'
+          - 'Substituição de método matricial por Monte Carlo'
+        correctAnswer: 'Multi-compartimentais e age-/risk-structured via autovalor dominante de FV^-1'
         rationale:
-          pt: NGM: separar matriz F (novos infectados) e V (transições/exit); R0 = ρ(FV^-1). Aplicável a SEIR, age-structured, vector-borne, multi-strain. Padrão moderno; substitui derivações ad hoc. Implementado em pacotes R/Python.
-          en: NGM: separate matrix F (new infections) and V (transitions/exits); R0 = ρ(FV^-1). Applicable to SEIR, age-structured, vector-borne, multi-strain. Modern standard; replaces ad hoc derivations. Implemented in R/Python packages.
+          pt: 'NGM: separar matriz F (novos infectados) e V (transições/exit); R0 = ρ(FV^-1). Aplicável a SEIR, age-structured, vector-borne, multi-strain. Padrão moderno; substitui derivações ad hoc. Implementado em pacotes R/Python.'
+          en: 'NGM: separate matrix F (new infections) and V (transitions/exits); R0 = ρ(FV^-1). Applicable to SEIR, age-structured, vector-borne, multi-strain. Modern standard; replaces ad hoc derivations. Implemented in R/Python packages.'
         objectives: [NGM]
       - type: choice
         difficulty: 5
         question:
-          pt: O Imperial College "Report 9" (Ferguson 16/mar/2020) projetou para COVID-19…
-          en: Imperial College "Report 9" (Ferguson, 16 Mar 2020) projected for COVID-19…
+          pt: 'O Imperial College "Report 9" (Ferguson 16/mar/2020) projetou para COVID-19…'
+          en: 'Imperial College "Report 9" (Ferguson, 16 Mar 2020) projected for COVID-19…'
         choices:
-          - 510 mil mortes UK / 2.2M EUA sem mitigação, transformando políticas globais para lockdown
-          - Pandemia trivial sem mitigação necessária
-          - Erradicação completa em poucas semanas
-          - Apenas surto local sem espalhamento global
-        correctAnswer: 510 mil mortes UK / 2.2M EUA sem mitigação, transformando políticas globais para lockdown
+          - '510 mil mortes UK / 2.2M EUA sem mitigação, transformando políticas globais para lockdown'
+          - 'Pandemia trivial sem mitigação necessária'
+          - 'Erradicação completa em poucas semanas'
+          - 'Apenas surto local sem espalhamento global'
+        correctAnswer: '510 mil mortes UK / 2.2M EUA sem mitigação, transformando políticas globais para lockdown'
         rationale:
-          pt: Report 9 do Imperial usou modelo individual-based (Ferguson, Walker, Whittaker) projetando ~510k mortes UK e ~2.2M EUA com cenário "do-nothing"; com mitigação (lockdown), ~20k. Documento mais influente nas políticas de NPI (lockdown) globais em 2020.
-          en: Imperial Report 9 used an individual-based model (Ferguson, Walker, Whittaker) projecting ~510k UK and ~2.2M US deaths in a "do-nothing" scenario; with mitigation (lockdown), ~20k. The most influential document on global NPI (lockdown) policy in 2020.
+          pt: 'Report 9 do Imperial usou modelo individual-based (Ferguson, Walker, Whittaker) projetando ~510k mortes UK e ~2.2M EUA com cenário "do-nothing"; com mitigação (lockdown), ~20k. Documento mais influente nas políticas de NPI (lockdown) globais em 2020.'
+          en: 'Imperial Report 9 used an individual-based model (Ferguson, Walker, Whittaker) projecting ~510k UK and ~2.2M US deaths in a "do-nothing" scenario; with mitigation (lockdown), ~20k. The most influential document on global NPI (lockdown) policy in 2020.'
         objectives: [Report 9]
       - type: choice
         difficulty: 5
         question:
-          pt: Modelos espaciais de epidemia (e.g. metapopulação Colizza/Vespignani GLEAM) capturam…
-          en: Spatial epidemic models (e.g., Colizza/Vespignani metapopulation GLEAM) capture…
+          pt: 'Modelos espaciais de epidemia (e.g. metapopulação Colizza/Vespignani GLEAM) capturam…'
+          en: 'Spatial epidemic models (e.g., Colizza/Vespignani metapopulation GLEAM) capture…'
         choices:
-          - Tráfego aéreo e mobilidade humana real para prever invasão geográfica
-          - Apenas modelo determinístico sem qualquer dado real
-          - Apenas spread espacial em pequena escala local
-          - Substituem completamente modelos compartimentais clássicos
-        correctAnswer: Tráfego aéreo e mobilidade humana real para prever invasão geográfica
+          - 'Tráfego aéreo e mobilidade humana real para prever invasão geográfica'
+          - 'Apenas modelo determinístico sem qualquer dado real'
+          - 'Apenas spread espacial em pequena escala local'
+          - 'Substituem completamente modelos compartimentais clássicos'
+        correctAnswer: 'Tráfego aéreo e mobilidade humana real para prever invasão geográfica'
         rationale:
-          pt: GLEAM (Vespignani et al.) integra IATA tráfego aéreo + censo + commuting com SEIR por subpopulação. Previu spread de H1N1 2009, COVID-19. Mostrou que conectividade aérea explica timing de chegada de epidemia em cidades distantes.
-          en: GLEAM (Vespignani et al.) integrates IATA air traffic + census + commuting with SEIR per subpopulation. Predicted H1N1 2009, COVID-19 spread. Showed air connectivity explains epidemic arrival timing in distant cities.
+          pt: 'GLEAM (Vespignani et al.) integra IATA tráfego aéreo + censo + commuting com SEIR por subpopulação. Previu spread de H1N1 2009, COVID-19. Mostrou que conectividade aérea explica timing de chegada de epidemia em cidades distantes.'
+          en: 'GLEAM (Vespignani et al.) integrates IATA air traffic + census + commuting with SEIR per subpopulation. Predicted H1N1 2009, COVID-19 spread. Showed air connectivity explains epidemic arrival timing in distant cities.'
         objectives: [GLEAM]
       - type: choice
         difficulty: 5
         question:
-          pt: Em redes (Pastor-Satorras/Vespignani 2001), threshold de epidemia em rede scale-free é…
-          en: In networks (Pastor-Satorras/Vespignani 2001), epidemic threshold in scale-free networks is…
+          pt: 'Em redes (Pastor-Satorras/Vespignani 2001), threshold de epidemia em rede scale-free é…'
+          en: 'In networks (Pastor-Satorras/Vespignani 2001), epidemic threshold in scale-free networks is…'
         choices:
-          - Zero ou quase zero, doenças sempre podem se propagar via hubs
-          - Igual a 1/R0 do modelo bem-misturado padrão
-          - Maior que em qualquer outra estrutura de rede
-          - Independente da topologia de contato
-        correctAnswer: Zero ou quase zero, doenças sempre podem se propagar via hubs
+          - 'Zero ou quase zero, doenças sempre podem se propagar via hubs'
+          - 'Igual a 1/R0 do modelo bem-misturado padrão'
+          - 'Maior que em qualquer outra estrutura de rede'
+          - 'Independente da topologia de contato'
+        correctAnswer: 'Zero ou quase zero, doenças sempre podem se propagar via hubs'
         rationale:
-          pt: Pastor-Satorras/Vespignani (PRL 2001) mostrou que em rede scale-free com γ ≤ 3, threshold epidêmico → 0 — qualquer infectividade gera epidemia via hubs. Implicações: não há estratégia uniforme; targeting de hubs (high-degree vacc) é mais eficiente.
-          en: Pastor-Satorras/Vespignani (PRL 2001) showed in scale-free network with γ ≤ 3, epidemic threshold → 0 — any infectivity yields epidemic via hubs. Implications: no uniform strategy; hub targeting (high-degree vaccination) more efficient.
+          pt: 'Pastor-Satorras/Vespignani (PRL 2001) mostrou que em rede scale-free com γ ≤ 3, threshold epidêmico → 0 — qualquer infectividade gera epidemia via hubs. Implicações: não há estratégia uniforme; targeting de hubs (high-degree vacc) é mais eficiente.'
+          en: 'Pastor-Satorras/Vespignani (PRL 2001) showed in scale-free network with γ ≤ 3, epidemic threshold → 0 — any infectivity yields epidemic via hubs. Implications: no uniform strategy; hub targeting (high-degree vaccination) more efficient.'
         objectives: [Threshold scale-free]
       - type: choice
         difficulty: 5
         question:
-          pt: A erradicação da varíola (1977-1980) é considerada marco porque…
-          en: Smallpox eradication (1977-1980) is considered a milestone because it…
+          pt: 'A erradicação da varíola (1977-1980) é considerada marco porque…'
+          en: 'Smallpox eradication (1977-1980) is considered a milestone because it…'
         choices:
-          - Primeiro patógeno humano erradicado por vacinação coordenada global (vaccinia + ring vaccination)
-          - Apenas controlado regionalmente sem erradicação real
-          - Patógeno se extinguiu naturalmente sem intervenção
-          - Substituído por outro vírus zoonótico imediatamente
-        correctAnswer: Primeiro patógeno humano erradicado por vacinação coordenada global (vaccinia + ring vaccination)
+          - 'Primeiro patógeno humano erradicado por vacinação coordenada global (vaccinia + ring vaccination)'
+          - 'Apenas controlado regionalmente sem erradicação real'
+          - 'Patógeno se extinguiu naturalmente sem intervenção'
+          - 'Substituído por outro vírus zoonótico imediatamente'
+        correctAnswer: 'Primeiro patógeno humano erradicado por vacinação coordenada global (vaccinia + ring vaccination)'
         rationale:
-          pt: Programa WHO de erradicação (1959-1980, liderança Henderson, Foege) usou ring vaccination — vacinar contatos de casos confirmados — em vez de vacinação universal. Último caso natural Somália 1977 (Ali Maow Maalin). Declarada erradicada 8/mai/1980. Polio próxima (Afeganistão, Paquistão).
-          en: WHO eradication program (1959-1980, led by Henderson, Foege) used ring vaccination — vaccinating contacts of confirmed cases — rather than universal vaccination. Last natural case Somalia 1977 (Ali Maow Maalin). Declared eradicated 8 May 1980. Polio is next (Afghanistan, Pakistan).
+          pt: 'Programa WHO de erradicação (1959-1980, liderança Henderson, Foege) usou ring vaccination — vacinar contatos de casos confirmados — em vez de vacinação universal. Último caso natural Somália 1977 (Ali Maow Maalin). Declarada erradicada 8/mai/1980. Polio próxima (Afeganistão, Paquistão).'
+          en: 'WHO eradication program (1959-1980, led by Henderson, Foege) used ring vaccination — vaccinating contacts of confirmed cases — rather than universal vaccination. Last natural case Somalia 1977 (Ali Maow Maalin). Declared eradicated 8 May 1980. Polio is next (Afghanistan, Pakistan).'
         objectives: [Erradicação varíola]
       - type: choice
         difficulty: 5
         question:
-          pt: Phylodynamics (Volz, Pybus, Grenfell) integra…
-          en: Phylodynamics (Volz, Pybus, Grenfell) integrates…
+          pt: 'Phylodynamics (Volz, Pybus, Grenfell) integra…'
+          en: 'Phylodynamics (Volz, Pybus, Grenfell) integrates…'
         choices:
-          - Filogenia + epidemiologia para inferir parâmetros (R0, geração) a partir de sequências virais
-          - Apenas filogenia molecular sem qualquer epidemiologia
-          - Apenas dados clínicos sem componente filogenético
-          - Substituição completa de modelos compartimentais por sequências
-        correctAnswer: Filogenia + epidemiologia para inferir parâmetros (R0, geração) a partir de sequências virais
+          - 'Filogenia + epidemiologia para inferir parâmetros (R0, geração) a partir de sequências virais'
+          - 'Apenas filogenia molecular sem qualquer epidemiologia'
+          - 'Apenas dados clínicos sem componente filogenético'
+          - 'Substituição completa de modelos compartimentais por sequências'
+        correctAnswer: 'Filogenia + epidemiologia para inferir parâmetros (R0, geração) a partir de sequências virais'
         rationale:
-          pt: Phylodynamics (Grenfell 2004): coalescência viral acoplada a transmissão; árvores informam Ne(t) ∝ 1/incidência. Volz/Pybus formalizaram. BEAST com tip-dating. Aplicações: HIV (Pybus 2009), influenza pandêmica, SARS-CoV-2 (Nextstrain).
-          en: Phylodynamics (Grenfell 2004): viral coalescence coupled to transmission; trees inform Ne(t) ∝ 1/incidence. Volz/Pybus formalized. BEAST with tip-dating. Applications: HIV (Pybus 2009), pandemic influenza, SARS-CoV-2 (Nextstrain).
+          pt: 'Phylodynamics (Grenfell 2004): coalescência viral acoplada a transmissão; árvores informam Ne(t) ∝ 1/incidência. Volz/Pybus formalizaram. BEAST com tip-dating. Aplicações: HIV (Pybus 2009), influenza pandêmica, SARS-CoV-2 (Nextstrain).'
+          en: 'Phylodynamics (Grenfell 2004): viral coalescence coupled to transmission; trees inform Ne(t) ∝ 1/incidence. Volz/Pybus formalized. BEAST with tip-dating. Applications: HIV (Pybus 2009), pandemic influenza, SARS-CoV-2 (Nextstrain).'
         objectives: [Phylodynamics]
   - title:
-      pt: Página 2 — Aplicações e desafios
-      en: Page 2 — Applications and challenges
+      pt: 'Página 2 — Aplicações e desafios'
+      en: 'Page 2 — Applications and challenges'
     exercises:
       - type: choice
         difficulty: 5
         question:
-          pt: A "interferência viral" entre patógenos respiratórios é exemplo de…
-          en: "Viral interference" between respiratory pathogens is an example of…
+          pt: 'A "interferência viral" entre patógenos respiratórios é exemplo de…'
+          en: '"Viral interference" between respiratory pathogens is an example of…'
         choices:
-          - Imunidade temporária inata (IFN) reduzindo susceptibilidade a outro vírus por dias-semanas
-          - Apenas mutação genética conjunta entre vírus
-          - Substituição direta de cepas por evolução clonal
-          - Sem qualquer mecanismo biológico real
-        correctAnswer: Imunidade temporária inata (IFN) reduzindo susceptibilidade a outro vírus por dias-semanas
+          - 'Imunidade temporária inata (IFN) reduzindo susceptibilidade a outro vírus por dias-semanas'
+          - 'Apenas mutação genética conjunta entre vírus'
+          - 'Substituição direta de cepas por evolução clonal'
+          - 'Sem qualquer mecanismo biológico real'
+        correctAnswer: 'Imunidade temporária inata (IFN) reduzindo susceptibilidade a outro vírus por dias-semanas'
         rationale:
-          pt: Resposta IFN-α/β após infecção com rinovírus, RSV, influenza protege transitoriamente contra outros vírus. Implicações: temporada de gripe e COVID-19 podem inibir-se mutualmente — observação no inverno 2020 (gripe quase ausente). Discutido por Greer/Galiano e outros.
-          en: IFN-α/β response after rhinovirus, RSV, influenza infection transiently protects against other viruses. Implications: flu and COVID-19 seasons may inhibit each other — observed winter 2020 (flu nearly absent). Discussed by Greer/Galiano and others.
+          pt: 'Resposta IFN-α/β após infecção com rinovírus, RSV, influenza protege transitoriamente contra outros vírus. Implicações: temporada de gripe e COVID-19 podem inibir-se mutualmente — observação no inverno 2020 (gripe quase ausente). Discutido por Greer/Galiano e outros.'
+          en: 'IFN-α/β response after rhinovirus, RSV, influenza infection transiently protects against other viruses. Implications: flu and COVID-19 seasons may inhibit each other — observed winter 2020 (flu nearly absent). Discussed by Greer/Galiano and others.'
         objectives: [Interferência viral]
       - type: choice
         difficulty: 5
         question:
-          pt: A vacina rotavírus (Rotarix, RotaTeq) salva ~150 mil vidas/ano. Modelagem prévia ajudou ao…
-          en: Rotavirus vaccine (Rotarix, RotaTeq) saves ~150k lives/year. Modeling helped by…
+          pt: 'A vacina rotavírus (Rotarix, RotaTeq) salva ~150 mil vidas/ano. Modelagem prévia ajudou ao…'
+          en: 'Rotavirus vaccine (Rotarix, RotaTeq) saves ~150k lives/year. Modeling helped by…'
         choices:
-          - Estimar custo-efetividade e impacto comunitário (herd) em GAVI/Lancet 2008
-          - Apenas observar uso pós-aprovação sem modelagem
-          - Eliminar necessidade de ensaios clínicos
-          - Substituir vacinas de sarampo automaticamente
-        correctAnswer: Estimar custo-efetividade e impacto comunitário (herd) em GAVI/Lancet 2008
+          - 'Estimar custo-efetividade e impacto comunitário (herd) em GAVI/Lancet 2008'
+          - 'Apenas observar uso pós-aprovação sem modelagem'
+          - 'Eliminar necessidade de ensaios clínicos'
+          - 'Substituir vacinas de sarampo automaticamente'
+        correctAnswer: 'Estimar custo-efetividade e impacto comunitário (herd) em GAVI/Lancet 2008'
         rationale:
-          pt: Modelagem (Atherly, Tate et al. CDC) estimou que rotavac em LMICs preveniria ~2.4M mortes/decade com USD 21/dose; informou GAVI Alliance financiamento (2007+). Estendido para HPV (Bosch), pneumococo, malária — modelo de custo-efetividade em vacinas pediátricas.
-          en: Modeling (Atherly, Tate et al. CDC) estimated rotavirus vaccine in LMICs would prevent ~2.4M deaths/decade at USD 21/dose; informed GAVI Alliance funding (2007+). Extended to HPV (Bosch), pneumococcal, malaria — cost-effectiveness model in pediatric vaccines.
+          pt: 'Modelagem (Atherly, Tate et al. CDC) estimou que rotavac em LMICs preveniria ~2.4M mortes/decade com USD 21/dose; informou GAVI Alliance financiamento (2007+). Estendido para HPV (Bosch), pneumococo, malária — modelo de custo-efetividade em vacinas pediátricas.'
+          en: 'Modeling (Atherly, Tate et al. CDC) estimated rotavirus vaccine in LMICs would prevent ~2.4M deaths/decade at USD 21/dose; informed GAVI Alliance funding (2007+). Extended to HPV (Bosch), pneumococcal, malaria — cost-effectiveness model in pediatric vaccines.'
         objectives: [Modelagem vacina]
       - type: choice
         difficulty: 5
         question:
-          pt: O modelo "agent-based" (ABM) em epidemiologia, popularizado por Ferguson e Eubank (2004), permite…
-          en: Agent-based models (ABM) in epidemiology, popularized by Ferguson and Eubank (2004), allow…
+          pt: 'O modelo "agent-based" (ABM) em epidemiologia, popularizado por Ferguson e Eubank (2004), permite…'
+          en: 'Agent-based models (ABM) in epidemiology, popularized by Ferguson and Eubank (2004), allow…'
         choices:
-          - Simulação de cada indivíduo com movimentação, contatos, e idade — alta resolução heterogênea
-          - Apenas modelos compartimentais sem qualquer indivíduo
-          - Substituição completa de RT-PCR
-          - Apenas estudos retrospectivos sem prospecção
-        correctAnswer: Simulação de cada indivíduo com movimentação, contatos, e idade — alta resolução heterogênea
+          - 'Simulação de cada indivíduo com movimentação, contatos, e idade — alta resolução heterogênea'
+          - 'Apenas modelos compartimentais sem qualquer indivíduo'
+          - 'Substituição completa de RT-PCR'
+          - 'Apenas estudos retrospectivos sem prospecção'
+        correctAnswer: 'Simulação de cada indivíduo com movimentação, contatos, e idade — alta resolução heterogênea'
         rationale:
-          pt: ABMs simulam ~10⁶-10⁹ agentes com regras heterogêneas (idade, ocupação, mobilidade). Eubank Los Alamos 2004 fez Portland inteira; Ferguson Imperial fez Reino Unido. COVID-19: Covasim (Kerr/Klein), OpenABM-Covid19. Computacionalmente caro mas captura efeitos micro.
-          en: ABMs simulate ~10⁶-10⁹ agents with heterogeneous rules (age, occupation, mobility). Eubank Los Alamos 2004 did all Portland; Ferguson Imperial did the UK. COVID-19: Covasim (Kerr/Klein), OpenABM-Covid19. Computationally expensive but captures micro effects.
+          pt: 'ABMs simulam ~10⁶-10⁹ agentes com regras heterogêneas (idade, ocupação, mobilidade). Eubank Los Alamos 2004 fez Portland inteira; Ferguson Imperial fez Reino Unido. COVID-19: Covasim (Kerr/Klein), OpenABM-Covid19. Computacionalmente caro mas captura efeitos micro.'
+          en: 'ABMs simulate ~10⁶-10⁹ agents with heterogeneous rules (age, occupation, mobility). Eubank Los Alamos 2004 did all Portland; Ferguson Imperial did the UK. COVID-19: Covasim (Kerr/Klein), OpenABM-Covid19. Computationally expensive but captures micro effects.'
         objectives: [ABM]
       - type: choice
         difficulty: 5
         question:
-          pt: Bjørnstad, Grenfell e outros documentaram em sarampo dos anos 1950 padrões de…
-          en: Bjørnstad, Grenfell, and others documented in 1950s measles patterns of…
+          pt: 'Bjørnstad, Grenfell e outros documentaram em sarampo dos anos 1950 padrões de…'
+          en: 'Bjørnstad, Grenfell, and others documented in 1950s measles patterns of…'
         choices:
-          - Ciclos bianuais em populações grandes acima de threshold de extinção crítico
-          - Aleatoriedade total sem qualquer ciclicidade
-          - Sem qualquer relação com tamanho populacional urbano
-          - Apenas crescimento monotônico sem oscilação
-        correctAnswer: Ciclos bianuais em populações grandes acima de threshold de extinção crítico
+          - 'Ciclos bianuais em populações grandes acima de threshold de extinção crítico'
+          - 'Aleatoriedade total sem qualquer ciclicidade'
+          - 'Sem qualquer relação com tamanho populacional urbano'
+          - 'Apenas crescimento monotônico sem oscilação'
+        correctAnswer: 'Ciclos bianuais em populações grandes acima de threshold de extinção crítico'
         rationale:
-          pt: Sarampo na Inglaterra/Gales 1944-1966 (Bjornstad/Finkenstadt/Grenfell) mostrou ciclos bianuais em cidades grandes (>250k); fadeouts em pequenas. Modelos TSIR (Time-Series SIR) calibrados a registros vitais. Pré-vacinação 1968. Modelo ecológico clássico.
-          en: Measles in England/Wales 1944-1966 (Bjornstad/Finkenstadt/Grenfell) showed biennial cycles in large cities (>250k); fadeouts in small. TSIR (Time-Series SIR) models calibrated to vital records. Pre-vaccine 1968. Classical ecological model.
+          pt: 'Sarampo na Inglaterra/Gales 1944-1966 (Bjornstad/Finkenstadt/Grenfell) mostrou ciclos bianuais em cidades grandes (>250k); fadeouts em pequenas. Modelos TSIR (Time-Series SIR) calibrados a registros vitais. Pré-vacinação 1968. Modelo ecológico clássico.'
+          en: 'Measles in England/Wales 1944-1966 (Bjornstad/Finkenstadt/Grenfell) showed biennial cycles in large cities (>250k); fadeouts in small. TSIR (Time-Series SIR) models calibrated to vital records. Pre-vaccine 1968. Classical ecological model.'
         objectives: [Sarampo TSIR]
       - type: choice
         difficulty: 5
         question:
-          pt: Em vector-borne (malária, dengue), R0 inclui termo de…
-          en: In vector-borne (malaria, dengue), R0 includes term for…
+          pt: 'Em vector-borne (malária, dengue), R0 inclui termo de…'
+          en: 'In vector-borne (malaria, dengue), R0 includes term for…'
         choices:
-          - Densidade de vetor por humano e taxa de picada (Macdonald/Ross formalismo)
-          - Apenas humano-a-humano direto
-          - Substituição completa de SIR por modelo SI sem vetor
-          - Apenas idade média da população humana
-        correctAnswer: Densidade de vetor por humano e taxa de picada (Macdonald/Ross formalismo)
+          - 'Densidade de vetor por humano e taxa de picada (Macdonald/Ross formalismo)'
+          - 'Apenas humano-a-humano direto'
+          - 'Substituição completa de SIR por modelo SI sem vetor'
+          - 'Apenas idade média da população humana'
+        correctAnswer: 'Densidade de vetor por humano e taxa de picada (Macdonald/Ross formalismo)'
         rationale:
-          pt: Ross-Macdonald: R0 ∝ ma²bcp^n/(-ln p × r), onde m vetor/humano, a taxa picada, b/c competência, p sobrevivência diária do vetor, n incubação, r recuperação. Justifica controle de mosquitos (insetcides, redes) — quão sensível R0 é a m e a vida do vetor.
-          en: Ross-Macdonald: R0 ∝ ma²bcp^n/(-ln p × r), where m vector/human, a bite rate, b/c competence, p daily vector survival, n incubation, r recovery. Justifies mosquito control (insecticides, nets) — how sensitive R0 is to m and vector lifespan.
+          pt: 'Ross-Macdonald: R0 ∝ ma²bcp^n/(-ln p × r), onde m vetor/humano, a taxa picada, b/c competência, p sobrevivência diária do vetor, n incubação, r recuperação. Justifica controle de mosquitos (insetcides, redes) — quão sensível R0 é a m e a vida do vetor.'
+          en: 'Ross-Macdonald: R0 ∝ ma²bcp^n/(-ln p × r), where m vector/human, a bite rate, b/c competence, p daily vector survival, n incubation, r recovery. Justifies mosquito control (insecticides, nets) — how sensitive R0 is to m and vector lifespan.'
         objectives: [Ross-Macdonald]
       - type: choice
         difficulty: 5
         question:
-          pt: O conceito "test-trace-isolate" (TTI) em epidemia depende criticamente de…
-          en: "Test-trace-isolate" (TTI) in epidemics critically depends on…
+          pt: 'O conceito "test-trace-isolate" (TTI) em epidemia depende criticamente de…'
+          en: '"Test-trace-isolate" (TTI) in epidemics critically depends on…'
         choices:
-          - Velocidade: rastreamento + isolamento mais rápido que tempo de geração da infecção
-          - Apenas testes em massa sem qualquer rastreamento
-          - Apenas isolamento dos sintomáticos
-          - Apenas vacinação universal
-        correctAnswer: Velocidade: rastreamento + isolamento mais rápido que tempo de geração da infecção
+          - 'Velocidade: rastreamento + isolamento mais rápido que tempo de geração da infecção'
+          - 'Apenas testes em massa sem qualquer rastreamento'
+          - 'Apenas isolamento dos sintomáticos'
+          - 'Apenas vacinação universal'
+        correctAnswer: 'Velocidade: rastreamento + isolamento mais rápido que tempo de geração da infecção'
         rationale:
-          pt: Hellewell/Ferguson (Lancet GH 2020) modelou TTI para COVID: requer rastreamento >70% contatos e turnaround <48h para reduzir Re abaixo de 1, dadas tempos de geração ~5 dias. SARS-CoV-2 pré-sintomático/assintomático limitou efectividade vs SARS 2003. Apps móveis (NHS Covid-19, COVIDSafe) ajudaram parcialmente.
-          en: Hellewell/Ferguson (Lancet GH 2020) modeled TTI for COVID: needs >70% contact tracing and <48h turnaround to reduce Re below 1, given ~5-day generation times. SARS-CoV-2 pre-/asymptomatic transmission limited effectiveness vs SARS 2003. Mobile apps (NHS Covid-19, COVIDSafe) helped partially.
+          pt: 'Hellewell/Ferguson (Lancet GH 2020) modelou TTI para COVID: requer rastreamento >70% contatos e turnaround <48h para reduzir Re abaixo de 1, dadas tempos de geração ~5 dias. SARS-CoV-2 pré-sintomático/assintomático limitou efectividade vs SARS 2003. Apps móveis (NHS Covid-19, COVIDSafe) ajudaram parcialmente.'
+          en: 'Hellewell/Ferguson (Lancet GH 2020) modeled TTI for COVID: needs >70% contact tracing and <48h turnaround to reduce Re below 1, given ~5-day generation times. SARS-CoV-2 pre-/asymptomatic transmission limited effectiveness vs SARS 2003. Mobile apps (NHS Covid-19, COVIDSafe) helped partially.'
         objectives: [TTI]
       - type: choice
         difficulty: 5
         question:
-          pt: A "fadiga pandêmica" e adesão decrescente a NPIs (medidas não-farmacêuticas) afetam modelos quando…
-          en: "Pandemic fatigue" and decreasing NPI adherence affect models when…
+          pt: 'A "fadiga pandêmica" e adesão decrescente a NPIs (medidas não-farmacêuticas) afetam modelos quando…'
+          en: '"Pandemic fatigue" and decreasing NPI adherence affect models when…'
         choices:
-          - Comportamento muda com a duração; modelos com comportamento adaptativo (game theory) capturam
-          - Não há qualquer impacto na trajetória observada
-          - Apenas vacinação influencia, sem componente comportamental
-          - Modelos clássicos SIR são suficientes ignorando comportamento
-        correctAnswer: Comportamento muda com a duração; modelos com comportamento adaptativo (game theory) capturam
+          - 'Comportamento muda com a duração; modelos com comportamento adaptativo (game theory) capturam'
+          - 'Não há qualquer impacto na trajetória observada'
+          - 'Apenas vacinação influencia, sem componente comportamental'
+          - 'Modelos clássicos SIR são suficientes ignorando comportamento'
+        correctAnswer: 'Comportamento muda com a duração; modelos com comportamento adaptativo (game theory) capturam'
         rationale:
-          pt: Bauch/Earn 2004 e outros modelaram comportamento adaptativo (vacinação, distanciamento); incentivos individuais vs coletivos divergem. Pandemic fatigue: distanciamento decresce com duração e exaustão. Modelos integrados (SBM, SafeGraph mobility) viraram área ativa pós-COVID.
-          en: Bauch/Earn 2004 and others modeled adaptive behavior (vaccination, distancing); individual vs collective incentives diverge. Pandemic fatigue: distancing decreases over duration and exhaustion. Integrated models (SBM, SafeGraph mobility) became an active post-COVID area.
+          pt: 'Bauch/Earn 2004 e outros modelaram comportamento adaptativo (vacinação, distanciamento); incentivos individuais vs coletivos divergem. Pandemic fatigue: distanciamento decresce com duração e exaustão. Modelos integrados (SBM, SafeGraph mobility) viraram área ativa pós-COVID.'
+          en: 'Bauch/Earn 2004 and others modeled adaptive behavior (vaccination, distancing); individual vs collective incentives diverge. Pandemic fatigue: distancing decreases over duration and exhaustion. Integrated models (SBM, SafeGraph mobility) became an active post-COVID area.'
         objectives: [Pandemic fatigue]
       - type: choice
         difficulty: 5
         question:
-          pt: SARS-CoV-2 evolução de variantes (Alpha, Delta, Omicron) é melhor explicada por…
-          en: SARS-CoV-2 variant evolution (Alpha, Delta, Omicron) is best explained by…
+          pt: 'SARS-CoV-2 evolução de variantes (Alpha, Delta, Omicron) é melhor explicada por…'
+          en: 'SARS-CoV-2 variant evolution (Alpha, Delta, Omicron) is best explained by…'
         choices:
-          - Pressão seletiva por imunoescape e maior transmissibilidade, possivelmente em hospedeiros imunocomprometidos crônicos
-          - Apenas mutação aleatória sem qualquer seleção
-          - Programa coordenado por governo único
-          - Recombinação com vírus animais não-relacionados
-        correctAnswer: Pressão seletiva por imunoescape e maior transmissibilidade, possivelmente em hospedeiros imunocomprometidos crônicos
+          - 'Pressão seletiva por imunoescape e maior transmissibilidade, possivelmente em hospedeiros imunocomprometidos crônicos'
+          - 'Apenas mutação aleatória sem qualquer seleção'
+          - 'Programa coordenado por governo único'
+          - 'Recombinação com vírus animais não-relacionados'
+        correctAnswer: 'Pressão seletiva por imunoescape e maior transmissibilidade, possivelmente em hospedeiros imunocomprometidos crônicos'
         rationale:
-          pt: Variantes ganharam mutações em Spike (N501Y, E484K, K417, etc.) facilitando ACE2 binding e escapando anticorpos. Hipótese para grandes saltos (Omicron com >30 mutações em Spike): evolução crônica em paciente imunocomprometido + saídas. Selo de evolução adaptativa rápida.
-          en: Variants gained Spike mutations (N501Y, E484K, K417, etc.) facilitating ACE2 binding and escaping antibodies. Hypothesis for big jumps (Omicron with >30 Spike mutations): chronic evolution in immunocompromised patient + spillover. Hallmark of rapid adaptive evolution.
+          pt: 'Variantes ganharam mutações em Spike (N501Y, E484K, K417, etc.) facilitando ACE2 binding e escapando anticorpos. Hipótese para grandes saltos (Omicron com >30 mutações em Spike): evolução crônica em paciente imunocomprometido + saídas. Selo de evolução adaptativa rápida.'
+          en: 'Variants gained Spike mutations (N501Y, E484K, K417, etc.) facilitating ACE2 binding and escaping antibodies. Hypothesis for big jumps (Omicron with >30 Spike mutations): chronic evolution in immunocompromised patient + spillover. Hallmark of rapid adaptive evolution.'
         objectives: [Evolução SARS-CoV-2]
       - type: choice
         difficulty: 5
         question:
-          pt: Wastewater epidemiology, exemplificada por Biobot/Boston Children's, foi crucial em COVID por…
-          en: Wastewater epidemiology, exemplified by Biobot/Boston Children's, was crucial in COVID for…
+          pt: 'Wastewater epidemiology, exemplificada por Biobot/Boston Children''s, foi crucial em COVID por…'
+          en: 'Wastewater epidemiology, exemplified by Biobot/Boston Children''s, was crucial in COVID for…'
         choices:
-          - Detectar circulação de SARS-CoV-2 e variantes antes do crescimento clínico, sem viés de testagem
-          - Substituir totalmente PCR clínico em pacientes
-          - Apenas estudos retrospectivos pós-pandemia
-          - Não teve qualquer aplicação real
-        correctAnswer: Detectar circulação de SARS-CoV-2 e variantes antes do crescimento clínico, sem viés de testagem
+          - 'Detectar circulação de SARS-CoV-2 e variantes antes do crescimento clínico, sem viés de testagem'
+          - 'Substituir totalmente PCR clínico em pacientes'
+          - 'Apenas estudos retrospectivos pós-pandemia'
+          - 'Não teve qualquer aplicação real'
+        correctAnswer: 'Detectar circulação de SARS-CoV-2 e variantes antes do crescimento clínico, sem viés de testagem'
         rationale:
-          pt: Biobot Analytics, CDC NWSS monitorizam SARS-CoV-2 RNA em esgoto; pico antecipa testes clínicos por 1-2 semanas. Captura assintomáticos e pessoas sem acesso a teste. Modelo replicado para polio, mpox, RSV. Estimativas quantitativas via shedding rate.
-          en: Biobot Analytics, CDC NWSS monitor SARS-CoV-2 RNA in sewage; the peak leads clinical tests by 1-2 weeks. Captures asymptomatic and untested people. Model replicated for polio, mpox, RSV. Quantitative estimates via shedding rate.
+          pt: 'Biobot Analytics, CDC NWSS monitorizam SARS-CoV-2 RNA em esgoto; pico antecipa testes clínicos por 1-2 semanas. Captura assintomáticos e pessoas sem acesso a teste. Modelo replicado para polio, mpox, RSV. Estimativas quantitativas via shedding rate.'
+          en: 'Biobot Analytics, CDC NWSS monitor SARS-CoV-2 RNA in sewage; the peak leads clinical tests by 1-2 weeks. Captures asymptomatic and untested people. Model replicated for polio, mpox, RSV. Quantitative estimates via shedding rate.'
         objectives: [Wastewater]
       - type: choice
         difficulty: 5
         question:
-          pt: O "leaky vaccine" vs "all-or-nothing" em modelos vacinais difere em…
-          en: "Leaky" vs "all-or-nothing" vaccine in models differs in that…
+          pt: 'O "leaky vaccine" vs "all-or-nothing" em modelos vacinais difere em…'
+          en: '"Leaky" vs "all-or-nothing" vaccine in models differs in that…'
         choices:
-          - Leaky reduz susceptibilidade igualmente em todos os vacinados; AON protege completamente uma fração
-          - Apenas leaky funciona em qualquer cenário real
-          - AON e leaky são equivalentes matematicamente
-          - Leaky elimina necessidade de booster
-        correctAnswer: Leaky reduz susceptibilidade igualmente em todos os vacinados; AON protege completamente uma fração
+          - 'Leaky reduz susceptibilidade igualmente em todos os vacinados; AON protege completamente uma fração'
+          - 'Apenas leaky funciona em qualquer cenário real'
+          - 'AON e leaky são equivalentes matematicamente'
+          - 'Leaky elimina necessidade de booster'
+        correctAnswer: 'Leaky reduz susceptibilidade igualmente em todos os vacinados; AON protege completamente uma fração'
         rationale:
-          pt: Leaky: cada vacinado tem risco reduzido (1−VE) por exposição. AON: fração VE totalmente protegida, restante totalmente susceptível. Eficácia per-exposure observada difere; importante para modelar dinâmica e interpretar VE em ensaios. Halloran/Longini distingue.
-          en: Leaky: each vaccinated has reduced risk (1−VE) per exposure. AON: fraction VE fully protected, rest fully susceptible. Observed per-exposure efficacy differs; important for dynamic modeling and VE trial interpretation. Halloran/Longini distinguish.
+          pt: 'Leaky: cada vacinado tem risco reduzido (1−VE) por exposição. AON: fração VE totalmente protegida, restante totalmente susceptível. Eficácia per-exposure observada difere; importante para modelar dinâmica e interpretar VE em ensaios. Halloran/Longini distingue.'
+          en: 'Leaky: each vaccinated has reduced risk (1−VE) per exposure. AON: fraction VE fully protected, rest fully susceptible. Observed per-exposure efficacy differs; important for dynamic modeling and VE trial interpretation. Halloran/Longini distinguish.'
         objectives: [Leaky AON]
 target: 20
