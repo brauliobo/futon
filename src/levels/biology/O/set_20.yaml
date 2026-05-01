@@ -1,0 +1,343 @@
+title:
+  pt: Nível O — Revisão Cumulativa de Fronteira
+  en: Level O — Cumulative Frontier Review
+level: O
+subject: biology
+objectives:
+  - Integrar tópicos de fronteira biomédica
+  - Reconhecer marcos clínicos e tecnológicos
+  - Identificar pioneiros e empresas-chave
+  - Avaliar interseções entre tecnologias
+difficulty: 5
+authorNotes: |
+  Revisão cumulativa do Nível O cobrindo: Long COVID (set 1), genomas sintéticos (2),
+  glicomics (3), farmacogenômica (4), OI/BCIs (5), AMR/fagos (6), mitocondrial (7),
+  senescência (8), IA estrutural (9), xenotransplante (10), drives (11), CAR-T (12),
+  crio-EM (13), biópsia líquida (14), imunometabolismo (15), edição epi (16), vacinas (17),
+  synbio (18), IA biológica (19). Uma questão por tópico + uma integrativa.
+example:
+  question:
+    pt: Qual conjunto de descobertas/tecnologias caracteriza o "Nível O" de fronteira biomédica em meados da década de 2020?
+    en: Which set of discoveries/technologies characterizes the "Level O" frontier of biomedicine in the mid-2020s?
+  choices:
+    - AlphaFold + edição epigenética + xenotransplante + CAR-T autoimune + IA generativa
+    - PCR + sequenciamento Sanger + clonagem por SCNT + microarrays + bioinformática inicial
+    - Penicilina + insulina recombinante + raio-X + microscopia óptica clássica
+    - Apenas otimizações incrementais sem qualquer descoberta nova relevante na década
+  correctAnswer: AlphaFold + edição epigenética + xenotransplante + CAR-T autoimune + IA generativa
+  rationale:
+    pt: A era 2020-2025 é marcada por convergência de IA estrutural (Nobel 2024), edição epigenética durável, xenotransplante clínico humano, CAR-T para autoimunidade e biologia generativa — saltos qualitativos abrangendo múltiplas frentes.
+    en: The 2020-2025 era is marked by convergence of structural AI (2024 Nobel), durable epigenetic editing, clinical human xenotransplantation, autoimmune CAR-T, and generative biology — qualitative leaps across multiple frontiers.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Revisão integrativa I
+      en: Page 1 — Integrative review I
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 1) Em Long COVID, o consórcio RECOVER-NIH e Akiko Iwasaki investigam mecanismos. Qual hipótese central?
+          en: (Set 1) In Long COVID, the RECOVER-NIH consortium and Akiko Iwasaki probe mechanisms. What is the central hypothesis?
+        choices:
+          - Persistência viral, autoimunidade e disfunção mitocondrial/microclot, plausivelmente em paralelo
+          - Apenas estresse psicossomático sem qualquer base biológica mensurável
+          - Reativação exclusiva de varicela-zóster como gatilho único
+          - Hipoxemia residual estrutural sem qualquer outro mecanismo envolvido
+        correctAnswer: Persistência viral, autoimunidade e disfunção mitocondrial/microclot, plausivelmente em paralelo
+        rationale:
+          pt: Hipóteses concorrentes (não exclusivas) para Long COVID: reservatórios virais (Akiko Iwasaki), autoanticorpos cross-reactive, microclots/Pretorius, disfunção mitocondrial, disautonomia. RECOVER-NIH busca biomarcadores e ensaios — ainda em fase Ph2.
+          en: Competing (non-exclusive) Long COVID hypotheses: viral reservoirs (Akiko Iwasaki), cross-reactive autoantibodies, microclots/Pretorius, mitochondrial dysfunction, dysautonomia. RECOVER-NIH seeks biomarkers and trials — still in Ph2.
+        objectives: [Long COVID]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 2) JCVI-syn3.0 (Hutchison/Venter 2016) representa…
+          en: (Set 2) JCVI-syn3.0 (Hutchison/Venter 2016) represents…
+        choices:
+          - Genoma mínimo (~473 genes) capaz de sustentar vida celular auto-replicante
+          - Bactéria com genoma humano completo transplantado
+          - Levedura sintética eucariótica completa terminada em 2016
+          - Bactéria fotossintética desenhada para captura de CO2 industrial
+        correctAnswer: Genoma mínimo (~473 genes) capaz de sustentar vida celular auto-replicante
+        rationale:
+          pt: JCVI-syn3.0 reduziu o genoma de Mycoplasma a ~473 genes essenciais — célula viva mínima (Hutchison/Venter, Science 2016). Sc2.0 (Boeke) é a levedura sintética eucariótica, com último cromossomo concluído em 2023.
+          en: JCVI-syn3.0 reduced Mycoplasma's genome to ~473 essential genes — minimal living cell (Hutchison/Venter, Science 2016). Sc2.0 (Boeke) is the synthetic eukaryotic yeast, last chromosome completed in 2023.
+        objectives: [Genoma mínimo]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 3) Carolyn Bertozzi recebeu o Nobel de Química 2022 por…
+          en: (Set 3) Carolyn Bertozzi received the 2022 Chemistry Nobel for…
+        choices:
+          - Glicobiologia bioortogonal e click chemistry para estudar glicanos in vivo
+          - Descoberta de CRISPR-Cas9 como sistema de edição genômica
+          - Caracterização do mecanismo de checkpoint imune PD-1/PD-L1
+          - Síntese química total de antibióticos β-lactâmicos
+        correctAnswer: Glicobiologia bioortogonal e click chemistry para estudar glicanos in vivo
+        rationale:
+          pt: Bertozzi (Stanford), Sharpless (Scripps) e Meldal (Copenhagen) dividiram o Nobel 2022 — Bertozzi pela "bioorthogonal click chemistry" que permite marcar glicanos em organismos vivos (fundadora moderna da glicobiologia funcional).
+          en: Bertozzi (Stanford), Sharpless (Scripps), and Meldal (Copenhagen) shared the 2022 Nobel — Bertozzi for "bioorthogonal click chemistry" enabling labeling of glycans in living organisms (founder of modern functional glycobiology).
+        objectives: [Bertozzi 2022]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 4) Em farmacogenômica, o consórcio CPIC (Clinical Pharmacogenetics Implementation Consortium) publica…
+          en: (Set 4) In pharmacogenomics, the CPIC (Clinical Pharmacogenetics Implementation Consortium) publishes…
+        choices:
+          - Diretrizes prescritivas baseadas em genótipos para múltiplos pares fármaco-gene
+          - Apenas ensaios clínicos em produção sem qualquer recomendação prática
+          - Lista de genes proibidos para teste em qualquer paciente humano
+          - Patentes farmacogenômicas sob propriedade intelectual centralizada
+        correctAnswer: Diretrizes prescritivas baseadas em genótipos para múltiplos pares fármaco-gene
+        rationale:
+          pt: CPIC (NIH-funded, PharmGKB hosted) publica diretrizes traduzindo genótipo (CYP2D6, CYP2C19, TPMT, DPYD, HLA-B*57:01 etc.) em recomendação prescritiva concreta — interface entre laboratório e prática clínica.
+          en: CPIC (NIH-funded, PharmGKB-hosted) publishes guidelines translating genotype (CYP2D6, CYP2C19, TPMT, DPYD, HLA-B*57:01, etc.) into concrete prescribing recommendations — interface between lab and clinical practice.
+        objectives: [CPIC]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 5) DishBrain (Cortical Labs 2022) e o Neuralink PRIME trial (2024) representam dois eixos da neurotecnologia. Quais?
+          en: (Set 5) DishBrain (Cortical Labs 2022) and Neuralink PRIME trial (2024) represent two neurotechnology axes. Which?
+        choices:
+          - Inteligência de organoides (computação biológica) e BCI invasivo (interface neuro-digital)
+          - Apenas neurônios in vitro sem qualquer tradução clínica humana
+          - Apenas BCIs em humanos saudáveis sem aplicação terapêutica
+          - Vacinação contra doenças neurais e exclusivamente farmacologia
+        correctAnswer: Inteligência de organoides (computação biológica) e BCI invasivo (interface neuro-digital)
+        rationale:
+          pt: DishBrain demonstrou aprendizado em neurônios cultivados (Pong em ~5 min); Neuralink PRIME implantou N1 em Noland Arbaugh (jan/2024). Eixos: usar tecido vivo como computador vs conectar cérebro humano a computador — ambos eixos de "neurotecnologia frontier".
+          en: DishBrain showed learning in cultured neurons (Pong in ~5 min); Neuralink PRIME implanted N1 in Noland Arbaugh (Jan 2024). Axes: using living tissue as computer vs connecting human brain to computer — both frontier-neurotechnology axes.
+        objectives: [Neurotech]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 6) A WHO classificou em 2017 como prioridade "crítica" em AMR…
+          en: (Set 6) The WHO classified as "critical" priority for AMR in 2017…
+        choices:
+          - Acinetobacter baumannii, Pseudomonas aeruginosa e Enterobacterales resistentes a carbapenêmicos
+          - Staphylococcus aureus MRSA exclusivamente sem outros patógenos
+          - Mycobacterium tuberculosis em qualquer perfil de resistência
+          - Apenas vírus pandêmicos sem contemplar bactérias em listas
+        correctAnswer: Acinetobacter baumannii, Pseudomonas aeruginosa e Enterobacterales resistentes a carbapenêmicos
+        rationale:
+          pt: WHO Priority Pathogens List 2017 (atualizada 2024) destaca Gram-negativos resistentes a carbapenêmicos como crítica — alvo de cefiderocol, ceftolozane/tazobactam, meropenem/vaborbactam e fagoterapia.
+          en: WHO Priority Pathogens List 2017 (updated 2024) highlights carbapenem-resistant Gram-negatives as critical — targets of cefiderocol, ceftolozane/tazobactam, meropenem/vaborbactam, and phage therapy.
+        objectives: [WHO crítica AMR]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 7) DdCBE (Mok/Mougous/Liu 2020) revolucionou edição mitocondrial por…
+          en: (Set 7) DdCBE (Mok/Mougous/Liu 2020) revolutionized mitochondrial editing because it…
+        choices:
+          - Permitir edição base-a-base de mtDNA in vivo sem necessidade de gRNA importável
+          - Substituir mtDNA inteiro por DNA bacteriano sintético
+          - Editar mtDNA via CRISPR-Cas9 com gRNA importável pela primeira vez
+          - Eliminar todas as mitocôndrias da célula seletivamente
+        correctAnswer: Permitir edição base-a-base de mtDNA in vivo sem necessidade de gRNA importável
+        rationale:
+          pt: DdCBE = TALE-DddA cytidine deaminase: TALEs proteicos importáveis na mitocôndria via MTS, deaminase split em metades inativas que se ativam ao se aproximarem — primeira edição de mtDNA in vivo, sem gRNA (RNA não cruza membrana mt).
+          en: DdCBE = TALE-DddA cytidine deaminase: protein TALEs importable to mitochondria via MTS, deaminase split into inactive halves activated by proximity — first in vivo mtDNA editing, without gRNA (RNA can't cross mt membrane).
+        objectives: [DdCBE]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 8) Em 2022, Schett (Erlangen) publicou no NEJM CAR-T anti-CD19 para qual condição não-oncológica revolucionária?
+          en: (Set 8) In 2022, Schett (Erlangen) published in NEJM anti-CD19 CAR-T for which revolutionary non-oncology condition?
+        choices:
+          - Lúpus eritematoso sistêmico refratário, com remissão livre de droga sustentada
+          - Esclerose múltipla primária progressiva exclusivamente
+          - Diabetes tipo 1 com restauração total de função pancreática
+          - Doença de Alzheimer pré-clínica em pacientes APOE4
+        correctAnswer: Lúpus eritematoso sistêmico refratário, com remissão livre de droga sustentada
+        rationale:
+          pt: Mackensen/Schett (Nat Med 2022) tratou 5 LES r/r com CAR-T anti-CD19 atingindo remissão livre de droga sustentada >12 meses — abriu caminho para CAR-T em autoimunidade (esclerose sistêmica, miastenia, dermatomiosite).
+          en: Mackensen/Schett (Nat Med 2022) treated 5 r/r SLE with anti-CD19 CAR-T reaching sustained drug-free remission >12 months — opened the way for CAR-T in autoimmunity (systemic sclerosis, myasthenia, dermatomyositis).
+        objectives: [CAR-T autoimune]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 9) O Nobel de Química 2024 foi para…
+          en: (Set 9) The 2024 Chemistry Nobel went to…
+        choices:
+          - David Baker (design proteico) e Demis Hassabis + John Jumper (AlphaFold2)
+          - Doudna, Charpentier e Zhang (CRISPR)
+          - Karikó e Weissman (mRNA modificado)
+          - Bertozzi, Sharpless e Meldal (click chemistry)
+        correctAnswer: David Baker (design proteico) e Demis Hassabis + John Jumper (AlphaFold2)
+        rationale:
+          pt: Nobel Química 2024: metade Baker pelo design computacional de proteínas (Top7, mini-binders, vacinas, etc.); metade Hassabis e Jumper pelo AlphaFold2, que resolveu o problema de previsão estrutural.
+          en: 2024 Chemistry Nobel: half to Baker for computational protein design (Top7, mini-binders, vaccines, etc.); half to Hassabis and Jumper for AlphaFold2, which solved the structure-prediction problem.
+        objectives: [Nobel 2024]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 10) O xenotransplante humano de janeiro de 2022 (Bennett, Maryland) usou suíno com quantas modificações genéticas?
+          en: (Set 10) The Jan 2022 human xenotransplant (Bennett, Maryland) used a pig with how many genetic modifications?
+        choices:
+          - 10 (Revivicor 10-GE: 3 KOs glicano + GHR-KO + 6 transgenes humanos)
+          - Apenas 1 (GGTA1 sozinho sem qualquer outro)
+          - 100 mil edições mitocondriais separadas
+          - Nenhuma — era suíno selvagem como controle
+        correctAnswer: 10 (Revivicor 10-GE: 3 KOs glicano + GHR-KO + 6 transgenes humanos)
+        rationale:
+          pt: 10-GE Revivicor: KOs GGTA1, CMAH, β4GalNT2, GHR + transgenes hCD46/CD55/CD59 (anti-complemento) + hTHBD/EPCR (anti-coagulação) + hHMOX1 (anti-inflamação). Bennett 2022 (~60 dias). eGenesis kidney depois 69-edições.
+          en: Revivicor 10-GE: KOs GGTA1, CMAH, β4GalNT2, GHR + hCD46/CD55/CD59 transgenes (anti-complement) + hTHBD/EPCR (anti-coagulation) + hHMOX1 (anti-inflammation). Bennett 2022 (~60 days). eGenesis kidney later 69-edits.
+        objectives: [10-GE]
+  - title:
+      pt: Página 2 — Revisão integrativa II
+      en: Page 2 — Integrative review II
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 11) Em 2018, Crisanti et al. (Imperial) demonstraram colapso completo de A. gambiae em laboratório com drive contra…
+          en: (Set 11) In 2018, Crisanti et al. (Imperial) showed complete A. gambiae lab collapse with drive against…
+        choices:
+          - doublesex (dsx), interrompendo splicing fêmea-específico essencial
+          - Apenas marcadores neutros sem qualquer efeito de fertilidade
+          - Receptor olfativo Or8 sem efeito em desenvolvimento sexual
+          - Genes ribossomais conservados em todas as espécies de mosquito
+        correctAnswer: doublesex (dsx), interrompendo splicing fêmea-específico essencial
+        rationale:
+          pt: Kyrou/Hammond/Crisanti (Nat Biotech 2018): drive CRISPR no sítio de splicing fêmea-específico de dsx; fêmeas dsx-mutantes intersexuais e estéreis. Populações em gaiola colapsaram em 7-11 gerações — primeiro drive a suprimir totalmente Anopheles em escala lab.
+          en: Kyrou/Hammond/Crisanti (Nat Biotech 2018): CRISPR drive at female-specific splice site of dsx; dsx-mutant females intersex and sterile. Cage populations collapsed in 7-11 generations — first drive to fully suppress Anopheles at lab scale.
+        objectives: [dsx drive]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 12) A primeira CAR-T aprovada pela FDA (2017) e o conceito atual de CAR-T in vivo via LNP-mRNA têm em comum o que?
+          en: (Set 12) The first FDA-approved CAR-T (2017) and current LNP-mRNA in vivo CAR-T share what?
+        choices:
+          - Alvo CD19 ou similar e modulação imune adotiva — diferem em fabricação ex vivo vs in situ
+          - Uso de células doadas alogênicas idênticas em ambas as plataformas
+          - Indicação exclusiva em tumores sólidos sem componente hematológico
+          - Aplicação tópica via colírio em oftalmologia clínica padrão
+        correctAnswer: Alvo CD19 ou similar e modulação imune adotiva — diferem em fabricação ex vivo vs in situ
+        rationale:
+          pt: Kymriah (CD19 autólogo, ex vivo) ↔ Capstan/Umoja CAR-T in vivo via LNP entregando mRNA do CAR a T-cells endógenas. Mesma lógica imune adotiva, mas fabricação interna ao paciente — elimina aférese, custos e atraso vein-to-vein.
+          en: Kymriah (CD19 autologous, ex vivo) ↔ Capstan/Umoja in vivo LNP-mRNA CAR-T delivered to endogenous T cells. Same adoptive-immune logic, but in-patient manufacturing — eliminates apheresis, costs, and vein-to-vein delay.
+        objectives: [CAR-T evolução]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 13) A combinação AlphaFold2 + crio-EM tornou-se padrão pós-2021 porque…
+          en: (Set 13) AlphaFold2 + cryo-EM combination became standard post-2021 because it…
+        choices:
+          - AF2 fornece modelos atômicos iniciais que aceleram ajuste em mapas cryo-EM heterogêneos
+          - AF2 substitui completamente a coleta de dados experimentais
+          - Crio-EM sem AF2 dispensa qualquer modelagem atômica
+          - Métodos são incompatíveis e nunca foram combinados em prática
+        correctAnswer: AF2 fornece modelos atômicos iniciais que aceleram ajuste em mapas cryo-EM heterogêneos
+        rationale:
+          pt: AF2 (especialmente AF-Multimer) fornece coordenadas iniciais com pLDDT alto; ajuste rígido + flexível em mapa cryo-EM (ChimeraX, ISOLDE, Phenix.real_space_refine) é muito mais rápido que construção de novo. Para complexos heterogêneos hoje é padrão.
+          en: AF2 (especially AF-Multimer) provides initial coordinates with high pLDDT; rigid + flexible fitting into cryo-EM map (ChimeraX, ISOLDE, Phenix.real_space_refine) is far faster than de novo building. For heterogeneous complexes today this is standard.
+        objectives: [AF + cryo-EM]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 14) MRD detectada por biópsia líquida tumor-informed (Signatera, RaDaR) prediz…
+          en: (Set 14) MRD detected by tumor-informed liquid biopsy (Signatera, RaDaR) predicts…
+        choices:
+          - Recidiva 6-24 meses antes da imagem clínica em CRC, mama, pulmão e bexiga
+          - Apenas estado atual sem qualquer valor preditivo
+          - Resposta a quimio neoadjuvante sem informação prognóstica
+          - Diagnóstico inicial substituindo biópsia tecidual primária
+        correctAnswer: Recidiva 6-24 meses antes da imagem clínica em CRC, mama, pulmão e bexiga
+        rationale:
+          pt: MRD-positivo pós-cirurgia/quimio prediz recidiva quase certa, lead time 6-24 meses vs imagem. Ensaios COBRA, CIRCULATE-Japan, IMvigor011 baseiam decisões adjuvantes em MRD — paradigma "treatment de-escalation/escalation" guiado por sangue.
+          en: MRD-positive post-surgery/chemo predicts near-certain recurrence, lead time 6-24 months vs imaging. COBRA, CIRCULATE-Japan, IMvigor011 trials base adjuvant decisions on MRD — paradigm of blood-guided "treatment de-/escalation".
+        objectives: [MRD lead time]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 15) Itaconato (O'Neill 2018) é metabólito imunomodulador que…
+          en: (Set 15) Itaconate (O'Neill 2018) is an immunomodulator metabolite that…
+        choices:
+          - Alcalila cisteínas em KEAP1 e GAPDH, ativando Nrf2 e atenuando glicólise inflamatória
+          - Estimula maciçamente IL-6 e TNF-α em macrófagos M1
+          - Substitui ATP em todas as células do organismo durante sepse
+          - É secretado apenas por linfócitos B em ambiente esplênico
+        correctAnswer: Alcalila cisteínas em KEAP1 e GAPDH, ativando Nrf2 e atenuando glicólise inflamatória
+        rationale:
+          pt: Itaconato derivado de IRG1/ACOD1 alkila cisteínas via Michael addition em KEAP1 (libera Nrf2 → respostas antioxidantes/anti-inflamatórias) e GAPDH (atenua glicólise). 4-octyl-itaconato é mimético terapêutico testado em modelos.
+          en: IRG1/ACOD1-derived itaconate alkylates cysteines via Michael addition on KEAP1 (releases Nrf2 → antioxidant/anti-inflammatory responses) and GAPDH (dampens glycolysis). 4-octyl-itaconate is a therapeutic mimic tested in models.
+        objectives: [Itaconato]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 16) CRISPRoff (Bintu/Lippman/Weissman 2021) instala silenciamento durável e herdado por…
+          en: (Set 16) CRISPRoff (Bintu/Lippman/Weissman 2021) installs durable, heritable silencing through…
+        choices:
+          - Combinação ZNF10-KRAB + DNMT3A-DNMT3L em dCas9, deixando metilação CpG mantida por DNMT1/UHRF1
+          - Quebra de fita dupla seguida por reparo NHEJ permanente
+          - Apenas KRAB sem DNMTs com efeito breve
+          - Inibição química genérica de transcrição global
+        correctAnswer: Combinação ZNF10-KRAB + DNMT3A-DNMT3L em dCas9, deixando metilação CpG mantida por DNMT1/UHRF1
+        rationale:
+          pt: CRISPRoff: ZNF10-KRAB recruta heterocromatina H3K9me3; DNMT3A-DNMT3L instala metilação CpG. Após replicação, DNMT1+UHRF1 mantém padrão hemimetilado → metilação plena → silenciamento herdado por divisões celulares.
+          en: CRISPRoff: ZNF10-KRAB recruits H3K9me3 heterochromatin; DNMT3A-DNMT3L installs CpG methylation. After replication, DNMT1+UHRF1 maintains hemimethylated pattern → full methylation → silencing inherited across divisions.
+        objectives: [CRISPRoff]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 17) Karikó e Weissman receberam Nobel Medicina 2023 por…
+          en: (Set 17) Karikó and Weissman received the 2023 Medicine Nobel for…
+        choices:
+          - Substituir uridina por pseudouridina em mRNA, evitando ativação inata e aumentando tradução
+          - Encapsular mRNA em LNP e desenvolvê-las em escala industrial
+          - Sequenciar genoma viral SARS-CoV-2 em janeiro de 2020
+          - Criar primeiro vetor lentiviral seguro para terapia gênica
+        correctAnswer: Substituir uridina por pseudouridina em mRNA, evitando ativação inata e aumentando tradução
+        rationale:
+          pt: Karikó & Weissman (Immunity 2005) descobriram que U → Ψ no mRNA evita ativação de TLR7/8/RIG-I — eliminando inflamação inata e aumentando tradução. Pfizer/BioNTech e Moderna usam m1Ψ. Decisivo para vacinas COVID e terapia mRNA. Nobel Medicina 2023.
+          en: Karikó & Weissman (Immunity 2005) found that U → Ψ in mRNA avoids TLR7/8/RIG-I activation — eliminating innate inflammation and boosting translation. Pfizer/BioNTech and Moderna use m1Ψ. Decisive for COVID vaccines and mRNA therapy. 2023 Medicine Nobel.
+        objectives: [Karikó Weissman]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 18) Cello (Voigt 2016) e GROs (Isaacs/Church 2013) compartilham qual visão fundamental?
+          en: (Set 18) Cello (Voigt 2016) and GROs (Isaacs/Church 2013) share what fundamental vision?
+        choices:
+          - Tratar células como sistemas engenheirados programáveis com abstrações computacionais e código genético modular
+          - Substituir DNA por RNA como material genético principal em organismos
+          - Eliminar qualquer regulação biossegura de organismos engenheirados
+          - Criar única bactéria útil para cada aplicação industrial
+        correctAnswer: Tratar células como sistemas engenheirados programáveis com abstrações computacionais e código genético modular
+        rationale:
+          pt: Cello compila Verilog em circuitos genéticos (abstração software-like); GROs reescrevem códon TAG → TAA em E. coli (abstração de "linguagem genética"). Ambos refletem visão de "biology as engineering": modular, programável, padronizada — núcleo do programa synbio iniciado em 2003+.
+          en: Cello compiles Verilog into genetic circuits (software-like abstraction); GROs rewrite TAG → TAA codon in E. coli ("genetic language" abstraction). Both reflect a "biology as engineering" vision: modular, programmable, standardized — core synbio program from 2003+.
+        objectives: [Synbio engineering]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Set 19) AlphaMissense (2023) e Med-PaLM 2 (2023) representam aplicações distintas de IA. Qual o eixo?
+          en: (Set 19) AlphaMissense (2023) and Med-PaLM 2 (2023) represent distinct AI applications. What is the axis?
+        choices:
+          - Genômica/proteômica preditiva vs raciocínio clínico em linguagem natural — extremos do espectro IA-biomedicina
+          - Apenas modelos de linguagem aplicados a tarefas idênticas
+          - Apenas modelos de visão sem qualquer componente de texto
+          - Modelos puramente teóricos sem qualquer aplicação real
+        correctAnswer: Genômica/proteômica preditiva vs raciocínio clínico em linguagem natural — extremos do espectro IA-biomedicina
+        rationale:
+          pt: AlphaMissense classifica patogenicidade de variantes (genômica preditiva); Med-PaLM 2 responde questões médicas em linguagem natural ~86% USMLE. Ambos foundation-models, mas modalidades e tarefas distintas — espectro amplo da IA na biomedicina contemporânea.
+          en: AlphaMissense classifies variant pathogenicity (predictive genomics); Med-PaLM 2 answers medical questions in natural language ~86% USMLE. Both are foundation models, but modalities and tasks differ — wide spectrum of contemporary biomedical AI.
+        objectives: [IA biomédica espectro]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: (Integrativa) Qual conjunto de tecnologias do Nível O converge para terapia gênica/celular de doença complexa?
+          en: (Integrative) Which set of Level O technologies converges for gene/cell therapy of complex disease?
+        choices:
+          - Edição epigenética + LNP-mRNA + CAR-T in vivo + foundation models, integrando entrega, alvo e validação
+          - Apenas cristalografia de raio-X com microscopia óptica clássica
+          - Apenas PCR e Sanger sem qualquer modalidade molecular nova
+          - Apenas observação clínica sem qualquer manipulação molecular
+        correctAnswer: Edição epigenética + LNP-mRNA + CAR-T in vivo + foundation models, integrando entrega, alvo e validação
+        rationale:
+          pt: Convergência da era 2020s: LNPs entregam mRNA (entrega), CRISPRoff/Tune/Chroma silenciam genes (alvo), CAR-T in vivo via LNP (efetor celular), AlphaFold/Cello desenham componentes (validação). Doença complexa exige stack integrado, não ferramenta única — espírito do Nível O.
+          en: Convergence of the 2020s era: LNPs deliver mRNA (delivery), CRISPRoff/Tune/Chroma silence genes (target), in vivo CAR-T via LNP (cellular effector), AlphaFold/Cello design components (validation). Complex disease demands integrated stack, not single tool — Level O spirit.
+        objectives: [Convergência]
+target: 20
