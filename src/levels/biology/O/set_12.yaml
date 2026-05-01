@@ -1,0 +1,346 @@
+title:
+  pt: CAR-T de Próxima Geração e Imunoterapia Celular
+  en: Next-Generation CAR-T and Cellular Immunotherapy
+level: O
+subject: biology
+objectives:
+  - Compreender CAR-T autólogo (CD19, BCMA) e gerações
+  - Reconhecer alogênico off-the-shelf, allogeneic CAR-NK e CAR-T in vivo
+  - Identificar uso em autoimunidade (lúpus Schett 2022)
+  - Avaliar CRS/ICANS e segurança a longo prazo
+difficulty: 5
+authorNotes: |
+  Frontier CAR-T. CD19: Kymriah (Novartis, FDA 2017 ALL pediátrica), Yescarta (Kite/Gilead),
+  Tecartus, Breyanzi. BCMA: Abecma (Bristol/2seventy), Carvykti (J&J/Legend cilta-cel).
+  Carl June (Penn), Michel Sadelain (MSK/Columbia ARC Institute 2024), Steven Rosenberg (NCI),
+  Renier Brentjens. Lúpus CAR-T: Georg Schett Erlangen NEJM 2022 5pts SLE → MISCAR/MUSE-LE
+  expansion myasthenia gravis, dermato/poly-myositis, systemic sclerosis. Allogeneic: Allogene
+  ALLO-501, Caribou CB-010, Precision BioSciences. CAR-NK: MD Anderson Rezvani. In vivo:
+  Capstan Tx, Umoja, Orna, Tessera. CRS Lee grading, ICANS ASTCT 2019. Bispecific BCMAxCD3
+  teclistamab/Tecvayli J&J.
+example:
+  question:
+    pt: A primeira terapia CAR-T aprovada pela FDA, em agosto de 2017, foi para qual indicação?
+    en: The first FDA-approved CAR-T therapy, in August 2017, was for which indication?
+  choices:
+    - Tisagenlecleucel (Kymriah, Novartis) para leucemia linfoblástica aguda B pediátrica/jovem-adulto recidivada
+    - Axicabtagene ciloleucel (Yescarta) para linfoma difuso de grandes células B em adultos
+    - Idecabtagene vicleucel (Abecma) para mieloma múltiplo de plasmócitos refratário
+    - Brexucabtagene autoleucel (Tecartus) para leucemia linfoide crônica de células maduras
+  correctAnswer: Tisagenlecleucel (Kymriah, Novartis) para leucemia linfoblástica aguda B pediátrica/jovem-adulto recidivada
+  rationale:
+    pt: Kymriah (anti-CD19, 4-1BB+CD3ζ) foi a primeira CAR-T aprovada (FDA ago/2017) para LLA-B pediátrica/jovem adulto r/r. Tecnologia da equipe de Carl June/Penn licenciada à Novartis, com taxa de remissão completa ~83% no ELIANA — virou ponto de virada da imunoterapia celular.
+    en: Kymriah (anti-CD19, 4-1BB+CD3ζ) was the first approved CAR-T (FDA Aug 2017) for r/r pediatric/young-adult B-ALL. Carl June/Penn team technology licensed to Novartis, with ~83% complete remission rate in ELIANA — pivotal moment for cellular immunotherapy.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Fundamentos e CAR-T autólogo
+      en: Page 1 — Fundamentals and autologous CAR-T
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A arquitetura básica de um CAR de "segunda geração" inclui quais domínios em cis?
+          en: A "second-generation" CAR architecture includes which domains in cis?
+        choices:
+          - scFv anti-antígeno + transmembrana + um domínio coestimulador (CD28 ou 4-1BB) + CD3ζ
+          - scFv + apenas CD3ζ sem qualquer domínio coestimulador associado
+          - TCR αβ nativo modificado sem qualquer scFv ou cadeia ζ no construto
+          - Receptor de citocina IL-15 fundido a scFv sem ativação tradicional T
+        correctAnswer: scFv anti-antígeno + transmembrana + um domínio coestimulador (CD28 ou 4-1BB) + CD3ζ
+        rationale:
+          pt: 1ª geração: só CD3ζ (pouca persistência). 2ª: + 1 coestimulador (CD28 = expansão rápida + breve, ex. Yescarta; 4-1BB = persistência longa, ex. Kymriah). 3ª: 2 coestimuladores. 4ª: + carga adicional (IL-12, "armored CARs").
+          en: 1st gen: CD3ζ only (poor persistence). 2nd: + 1 costimulator (CD28 = fast brief expansion, e.g. Yescarta; 4-1BB = long persistence, e.g. Kymriah). 3rd: 2 costimulators. 4th: + extra cargo (IL-12, "armored CARs").
+        objectives: [Gerações CAR]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O ensaio ZUMA-1 estabeleceu Yescarta (axi-cel) para qual indicação adulta?
+          en: ZUMA-1 established Yescarta (axi-cel) for which adult indication?
+        choices:
+          - Linfoma difuso de grandes células B (DLBCL) refratário/recidivado pós-quimioterapia
+          - Linfoma de Hodgkin clássico em primeira linha de tratamento
+          - Câncer de pulmão de pequenas células metastático em terceira linha
+          - Mieloma múltiplo BCMA-positivo de novo sem tratamentos prévios
+        correctAnswer: Linfoma difuso de grandes células B (DLBCL) refratário/recidivado pós-quimioterapia
+        rationale:
+          pt: ZUMA-1 (Neelapu et al., NEJM 2017) demonstrou ORR 82% e CR 54% em DLBCL r/r após ≥2 linhas; FDA aprovou Yescarta out/2017. ZUMA-7 (2021) levou Yescarta a 2ª linha vs autotransplante em DLBCL primário-refratário/recidiva precoce.
+          en: ZUMA-1 (Neelapu et al., NEJM 2017) showed ORR 82% and CR 54% in r/r DLBCL after ≥2 lines; FDA approved Yescarta Oct 2017. ZUMA-7 (2021) moved Yescarta to 2nd line vs auto-transplant in primary-refractory/early-relapse DLBCL.
+        objectives: [Yescarta DLBCL]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A síndrome de liberação de citocinas (CRS) na CAR-T é principalmente mediada por…
+          en: Cytokine release syndrome (CRS) in CAR-T is mainly mediated by…
+        choices:
+          - IL-6 derivada de macrófagos ativados, base do uso de tocilizumabe (anti-IL-6R) como antídoto
+          - IL-2 derivada das próprias células CAR-T sem participação de macrófagos
+          - TNF-α derivada de neutrófilos circulantes recrutados pelo tumor
+          - Histamina derivada de mastócitos ativados durante a infusão inicial
+        correctAnswer: IL-6 derivada de macrófagos ativados, base do uso de tocilizumabe (anti-IL-6R) como antídoto
+        rationale:
+          pt: CAR-T ativadas estimulam macrófagos a produzir IL-6/IL-1; IL-6 é o driver clássico da CRS. Tocilizumabe (anti-IL-6R) é antídoto padrão; anakinra (anti-IL-1) é segunda linha. Lee criteria graduam CRS.
+          en: Activated CAR-T stimulate macrophages to produce IL-6/IL-1; IL-6 is the classic CRS driver. Tocilizumab (anti-IL-6R) is the standard antidote; anakinra (anti-IL-1) is second-line. Lee criteria grade CRS.
+        objectives: [CRS]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O ICANS (Immune effector Cell-Associated Neurotoxicity Syndrome) é graduado pelo critério ASTCT 2019 baseando-se principalmente em…
+          en: ICANS (Immune effector Cell-Associated Neurotoxicity Syndrome) is graded by ASTCT 2019 mainly using…
+        choices:
+          - ICE score (orientação, nomeação, comandos, escrita, atenção) + nível de consciência + convulsões
+          - Apenas nível sérico de IL-6 sem qualquer avaliação clínica neurológica direta
+          - Tomografia computadorizada de crânio com graduação por área de edema
+          - Eletroencefalograma quantitativo com classificação automática por IA
+        correctAnswer: ICE score (orientação, nomeação, comandos, escrita, atenção) + nível de consciência + convulsões
+        rationale:
+          pt: ASTCT 2019 (Lee et al.) graduou ICANS de 1 a 4 baseando-se em ICE (10 pontos), nível de consciência, convulsões e edema cerebral — padronização que substituiu CTCAE/grading-CARTOX heterogêneo, facilitando comparação entre ensaios.
+          en: ASTCT 2019 (Lee et al.) graded ICANS 1-4 based on ICE (10 points), consciousness level, seizures, and cerebral edema — standardization that replaced heterogeneous CTCAE/CARTOX grading, enabling cross-trial comparison.
+        objectives: [ICANS]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Cilta-cel (Carvykti, Legend/J&J), aprovada em 2022, atinge qual alvo em mieloma múltiplo?
+          en: Cilta-cel (Carvykti, Legend/J&J), approved 2022, targets which antigen in multiple myeloma?
+        choices:
+          - BCMA (TNFRSF17), com domínios VHH duplos (camelídeo) para alta avidez
+          - CD19, com scFv humanizado convencional como em CAR-Ts linfoide
+          - CD138, sindecano expresso em plasmócitos malignos exclusivamente
+          - CD38 com depleção de NK células e plasmócitos simultaneamente
+        correctAnswer: BCMA (TNFRSF17), com domínios VHH duplos (camelídeo) para alta avidez
+        rationale:
+          pt: Cilta-cel (ciltacabtagene autoleucel) usa dois VHH camelídeos anti-BCMA em tandem + 4-1BB+CD3ζ. CARTITUDE-1 (NEJM 2021): ORR 98%, CR ~80% em MM r/r — atualmente eficácia mais alta em CAR-T de MM. FDA fev/2022; UE maio/2022.
+          en: Cilta-cel (ciltacabtagene autoleucel) uses two tandem anti-BCMA camelid VHH + 4-1BB+CD3ζ. CARTITUDE-1 (NEJM 2021): ORR 98%, CR ~80% in r/r MM — currently the highest CAR-T efficacy in MM. FDA Feb 2022; EU May 2022.
+        objectives: [Carvykti]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "fuga antigênica" (antigen escape) em CAR-T anti-CD19 manifesta-se como…
+          en: Antigen escape in anti-CD19 CAR-T manifests as…
+        choices:
+          - Recidiva CD19-negativa por splicing alternativo, mutação ou linhagem mieloide
+          - Apenas perda de eficácia transitória sem perda do antígeno tumoral
+          - Aumento de expressão de CD20 substituindo CD19 sem efeito clínico
+          - Conversão completa do tumor em outro tipo de neoplasia hematológica
+        correctAnswer: Recidiva CD19-negativa por splicing alternativo, mutação ou linhagem mieloide
+        rationale:
+          pt: Em ~30-50% das recidivas pós-CAR-T anti-CD19, o tumor perde CD19 — splicing exon 2, mutação, lineage switch para mieloide, ou trogocitose. Motivou desenvolvimento de CAR-Ts duplos (CD19xCD22) e estratégias de retratamento.
+          en: In ~30-50% of post-anti-CD19 CAR-T relapses, the tumor loses CD19 — exon-2 splicing, mutation, myeloid lineage switch, or trogocytosis. This motivated dual CAR-Ts (CD19xCD22) and retreatment strategies.
+        objectives: [Fuga CD19]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em 2022, o grupo de Georg Schett (Erlangen) publicou no NEJM o uso de CAR-T anti-CD19 para qual indicação revolucionária?
+          en: In 2022, Georg Schett's group (Erlangen) published in NEJM the use of anti-CD19 CAR-T for which revolutionary indication?
+        choices:
+          - Lúpus eritematoso sistêmico refratário, com remissão livre de droga sustentada em 5 pacientes
+          - Esclerose lateral amiotrófica em estágio terminal sem efeito clínico relevante
+          - Doença de Alzheimer precoce com efeito sobre placas amiloides
+          - Diabetes tipo 1 recente com restauração da produção de insulina endógena
+        correctAnswer: Lúpus eritematoso sistêmico refratário, com remissão livre de droga sustentada em 5 pacientes
+        rationale:
+          pt: Mackensen/Schett (Nat Med 2022) tratou 5 LES r/r com CAR-T anti-CD19 e atingiu remissão livre de droga sustentada >12 meses, com células B retornando saudáveis. Reabriu paradigma: depleção profunda de B + reset imune. Estendido a esclerose sistêmica, dermatomiosite, miastenia gravis.
+          en: Mackensen/Schett (Nat Med 2022) treated 5 r/r SLE with anti-CD19 CAR-T and achieved sustained drug-free remission >12 months, with B cells returning healthy. Reopened paradigm: deep B-depletion + immune reset. Extended to systemic sclerosis, dermatomyositis, myasthenia gravis.
+        objectives: [CAR-T lúpus]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "linfodepleção" pré-CAR-T (fludarabina + ciclofosfamida) é importante porque…
+          en: Pre-CAR-T lymphodepletion (fludarabine + cyclophosphamide) is important because it…
+        choices:
+          - Cria nicho homeostático com IL-7/IL-15 para expansão das CAR-T infundidas
+          - Mata diretamente as células tumorais sem qualquer participação das CAR-T
+          - Reduz expressão do antígeno alvo tumoral para evitar fuga antigênica
+          - Substitui a necessidade de qualquer condicionamento imunossupressor pós-infusão
+        correctAnswer: Cria nicho homeostático com IL-7/IL-15 para expansão das CAR-T infundidas
+        rationale:
+          pt: Linfodepleção remove linfócitos endógenos competindo por IL-7/IL-15, criando nicho de citocinas homeostáticas que expande CAR-T infundidas e remove Tregs. Falha de linfodepleção correlaciona com pior expansão e eficácia.
+          en: Lymphodepletion removes endogenous lymphocytes competing for IL-7/IL-15, creating a homeostatic-cytokine niche that expands infused CAR-T and removes Tregs. Inadequate lymphodepletion correlates with poorer expansion and efficacy.
+        objectives: [Linfodepleção]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O atraso de "vein-to-vein" típico para CAR-T autólogo é de aproximadamente…
+          en: Typical "vein-to-vein" turnaround for autologous CAR-T is approximately…
+        choices:
+          - 3-5 semanas, considerando aférese, transdução, expansão, liberação e infusão
+          - Algumas horas, equivalente a transfusão sanguínea convencional
+          - 6-12 meses, comparável a transplante de medula com matching de doador
+          - Imediato, sem qualquer processamento ex vivo das células do paciente
+        correctAnswer: 3-5 semanas, considerando aférese, transdução, expansão, liberação e infusão
+        rationale:
+          pt: Aférese (dia 0), envio à fábrica, transdução com vetor lentiviral/retroviral, expansão ex vivo, controle de qualidade e liberação levam ~3-5 semanas — janela em que o paciente pode progredir; motivação para CAR-Ts alogênicos prontos.
+          en: Apheresis (day 0), shipping to facility, lentiviral/retroviral transduction, ex vivo expansion, QC, and release take ~3-5 weeks — a window in which the patient may progress; motivation for off-the-shelf allogeneic CAR-Ts.
+        objectives: [Vein-to-vein]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A FDA emitiu em 2024 um alerta sobre risco de neoplasias secundárias com CAR-T baseado em…
+          en: FDA issued a 2024 warning on secondary malignancy risk with CAR-T based on…
+        choices:
+          - Casos raros de linfomas T derivados das próprias CAR-T por integração insercional do vetor
+          - Risco aumentado de cânceres sólidos em pacientes pós-CAR-T como mama e cólon
+          - Aumento de leucemias mieloides clonais não relacionadas ao construto CAR-T
+          - Reativação de vírus oncogênicos como HPV, EBV em todos os pacientes
+        correctAnswer: Casos raros de linfomas T derivados das próprias CAR-T por integração insercional do vetor
+        rationale:
+          pt: FDA out/2023 e jan/2024 emitiu black box warning após ~33 casos de neoplasias T pós-CAR-T (geralmente raros, MOA debatido — integração insercional vs predisposição). Continua liberada como benefit-risk favorável, mas vigilância pós-marketing reforçada.
+          en: FDA Oct 2023 and Jan 2024 issued black-box warnings after ~33 post-CAR-T T-cell malignancies (rare, MOA debated — insertional vs predisposition). Approval continues as benefit-risk favorable, with strengthened post-market surveillance.
+        objectives: [Black box CAR-T]
+  - title:
+      pt: Página 2 — CAR-T alogênico, in vivo e plataformas alternativas
+      en: Page 2 — Allogeneic, in vivo, and alternative platforms
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: CAR-T alogênico ("off-the-shelf") requer qual edição genômica para evitar GvHD?
+          en: Allogeneic ("off-the-shelf") CAR-T requires which genomic edit to avoid GvHD?
+        choices:
+          - Knockout do TCR endógeno (TRAC) por TALEN/CRISPR para impedir reatividade contra recipiente
+          - Knockout completo de HLA classe I e classe II para invisibilidade total ao recipiente
+          - Substituição do CD3ζ por sinalização de NK natural sem qualquer modificação adicional
+          - Indução de senescência por p16INK4a para limitar proliferação após infusão
+        correctAnswer: Knockout do TCR endógeno (TRAC) por TALEN/CRISPR para impedir reatividade contra recipiente
+        rationale:
+          pt: CAR-T alogênico do doador atacaria o recipiente via TCR (GvHD); KO do TRAC remove TCR. Adicionalmente, KO de β2-microglobulina ou expressão de HLA-E pode evitar rejeição pelo recipiente. Allogene, Cellectis, Caribou, Precision Bio usam TALEN ou Cas12a/9.
+          en: Donor allo-CAR-T would attack recipient via TCR (GvHD); TRAC KO removes TCR. Additionally, β2-microglobulin KO or HLA-E expression can prevent host rejection. Allogene, Cellectis, Caribou, Precision Bio use TALEN or Cas12a/9.
+        objectives: [Alogênico TRAC-KO]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: CAR-NK (células NK como efetor) tem qual vantagem teórica sobre CAR-T?
+          en: CAR-NK (NK cells as effectors) has what theoretical advantage over CAR-T?
+        choices:
+          - Risco baixo de GvHD e CRS, permitindo uso alogênico sem KO de TCR ou HLA
+          - Maior expansão e persistência que CAR-T autólogos típicos
+          - Capacidade única de atravessar a barreira hematoencefálica para tumores cerebrais
+          - Não exige qualquer condicionamento de linfodepleção pré-infusão
+        correctAnswer: Risco baixo de GvHD e CRS, permitindo uso alogênico sem KO de TCR ou HLA
+        rationale:
+          pt: NK não tem TCR — não causa GvHD; CRS é mais leve. MD Anderson (Rezvani) reportou CAR-NK CD19 de cordão umbilical (NEJM 2020) com ORR 73% sem CRS/ICANS significativos. Limitação: persistência menor (semanas vs meses).
+          en: NK cells lack TCR — no GvHD; CRS is milder. MD Anderson (Rezvani) reported cord-blood CD19 CAR-NK (NEJM 2020) with ORR 73% and minimal CRS/ICANS. Limitation: shorter persistence (weeks vs months).
+        objectives: [CAR-NK]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: CAR-T "in vivo" via LNP-mRNA (Capstan, Umoja, Orna) busca eliminar qual etapa?
+          en: In vivo CAR-T via LNP-mRNA (Capstan, Umoja, Orna) aims to eliminate which step?
+        choices:
+          - Aférese e fabricação ex vivo: o CAR é entregue diretamente ao paciente em LNP
+          - Necessidade de condicionamento linfodepletivo pré-tratamento ainda obrigatório
+          - Triagem do antígeno alvo, considerada redundante na nova plataforma
+          - Imunossupressão pós-infusão para todos os pacientes oncológicos
+        correctAnswer: Aférese e fabricação ex vivo: o CAR é entregue diretamente ao paciente em LNP
+        rationale:
+          pt: LNPs-mRNA com tropismo para linfócitos T (CD5, CD8) entregam mRNA do CAR in vivo, transformando T-cells transitoriamente — sem aférese, sem fabricação. Capstan (Penn/Carl June e others), Umoja, Orna desenvolvem para oncologia e autoimunidade. Estudo Penn em fibrose cardíaca (Science 2022 Epstein/Bach) provou princípio in vivo.
+          en: T-cell-tropic LNP-mRNA (CD5, CD8) deliver CAR mRNA in vivo, transiently transforming T cells — no apheresis, no manufacturing. Capstan (Penn/Carl June and others), Umoja, Orna develop for oncology and autoimmunity. Penn cardiac-fibrosis study (Science 2022 Epstein/Bach) proved principle in vivo.
+        objectives: [In vivo CAR-T]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em 2022, Joel Epstein (Penn) demonstrou em camundongos uso terapêutico inédito de CAR-T mRNA-LNP para…
+          en: In 2022, Jonathan Epstein (Penn) showed in mice a novel CAR-T mRNA-LNP therapeutic use for…
+        choices:
+          - Fibrose cardíaca, alvejando fibroblastos ativados (FAP) com efeito reversor após injeção única
+          - Tumores cerebrais glioblastoma com penetração via barreira hematoencefálica completa
+          - Diabetes tipo 1 visando células beta autólogas e gerando regeneração total
+          - Esclerose múltipla por depleção de B-cells refratárias a fármacos clássicos
+        correctAnswer: Fibrose cardíaca, alvejando fibroblastos ativados (FAP) com efeito reversor após injeção única
+        rationale:
+          pt: Rurik/Epstein (Science 2022) entregaram mRNA anti-FAP em LNPs T-trópicas; CAR-T transitórias eliminaram fibroblastos ativados e reverteram fibrose cardíaca em modelo murino — demonstração landmark de CAR-T in vivo para indicação não oncológica.
+          en: Rurik/Epstein (Science 2022) delivered anti-FAP mRNA in T-tropic LNPs; transient CAR-T cleared activated fibroblasts and reversed cardiac fibrosis in mice — landmark demonstration of in vivo CAR-T for a non-oncology indication.
+        objectives: [Fibrose cardíaca CAR]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: TIL therapy (Lifileucel/Amtagvi, Iovance, FDA fev/2024) é CAR-T? Por que ou por que não?
+          en: TIL therapy (Lifileucel/Amtagvi, Iovance, FDA Feb 2024) — is it CAR-T? Why or why not?
+        choices:
+          - Não: usa linfócitos infiltrantes de tumor expandidos sem CAR; usa TCR endógeno do paciente
+          - Sim: é CAR-T anti-MART1 igual à plataforma Yescarta
+          - Sim, é a primeira CAR-T para tumor sólido aprovada pela FDA recentemente
+          - Não: é vacina autóloga sem qualquer adoção celular adotiva
+        correctAnswer: Não: usa linfócitos infiltrantes de tumor expandidos sem CAR; usa TCR endógeno do paciente
+        rationale:
+          pt: Lifileucel é TIL: TILs do tumor expandidos in vitro com IL-2 e reinfundidos. Sem engenharia de CAR — exploram o repertório TCR natural anti-tumor. Aprovado FDA fev/2024 para melanoma metastático refratário, primeira terapia celular para tumor sólido.
+          en: Lifileucel is TIL: tumor-infiltrating lymphocytes expanded in vitro with IL-2 and reinfused. No CAR engineering — exploits the natural anti-tumor TCR repertoire. FDA Feb 2024 for refractory metastatic melanoma — first cell therapy for a solid tumor.
+        objectives: [Lifileucel TIL]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Tecvayli (teclistamab, J&J 2022) é uma estratégia diferente de CAR-T para mieloma. Qual?
+          en: Tecvayli (teclistamab, J&J 2022) is a different strategy from CAR-T for myeloma. Which?
+        choices:
+          - Anticorpo biespecífico BCMAxCD3 que recruta T-cells endógenos sem fabricação ex vivo
+          - CAR-T autólogo anti-BCMA equivalente a Carvykti em arquitetura
+          - Inibidor de proteasoma análogo a bortezomib em MM precoce
+          - Imunoconjugado anti-CD38 para reposição direta de plasmócitos
+        correctAnswer: Anticorpo biespecífico BCMAxCD3 que recruta T-cells endógenos sem fabricação ex vivo
+        rationale:
+          pt: Teclistamab é T-cell engager BCMA×CD3 — bispecífico que liga BCMA tumoral e CD3 de qualquer T-cell endógena, ativando-a in situ. Off-the-shelf, infusão SC. MajesTEC-1 mostrou ORR 63% em MM pesadamente tratado. Compete com CAR-T BCMA pela mesma indicação.
+          en: Teclistamab is a BCMA×CD3 T-cell engager — a bispecific binding tumor BCMA and any endogenous T cell's CD3, activating it in situ. Off-the-shelf, SC infusion. MajesTEC-1 showed ORR 63% in heavily-treated MM. Competes with BCMA CAR-T for the same indication.
+        objectives: [Teclistamab]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "armored CAR-T" (CAR-T blindado) refere-se a…
+          en: "Armored CAR-T" refers to…
+        choices:
+          - CAR-T expressando carga adicional (IL-12, IL-18, dominantes negativos) para resistir ao microambiente
+          - Cápsula de proteção física aplicada às células T antes de infusão
+          - Resistência mecânica do construto plasmidial à degradação intracelular
+          - Camada glicoprotéica protetora contra ataque de macrófagos do recipiente
+        correctAnswer: CAR-T expressando carga adicional (IL-12, IL-18, dominantes negativos) para resistir ao microambiente
+        rationale:
+          pt: Armored CARs (TRUCKs por Hinrich Abken) carregam citocinas (IL-12, IL-18) ou bloqueadores (PD-1 dominante negativo, scFv anti-TGFβ) para resistir/remodelar o microambiente tumoral imunossupressor — chave para tumores sólidos.
+          en: Armored CARs (TRUCKs per Hinrich Abken) carry cytokines (IL-12, IL-18) or blockers (PD-1 dominant negative, anti-TGFβ scFv) to resist/remodel the immunosuppressive tumor microenvironment — key for solid tumors.
+        objectives: [Armored CAR]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O alvo GPC3 (Glipican-3) atrai pesquisa CAR-T para qual câncer?
+          en: GPC3 (Glipican-3) attracts CAR-T research for which cancer?
+        choices:
+          - Carcinoma hepatocelular, com expressão alta em tumor e baixa em fígado normal
+          - Carcinoma colorretal metastático com perfil de microssatélite instável
+          - Adenocarcinoma de próstata com alta expressão de PSMA simultaneamente
+          - Câncer de mama HER2-negativo triplo-negativo agressivo apenas
+        correctAnswer: Carcinoma hepatocelular, com expressão alta em tumor e baixa em fígado normal
+        rationale:
+          pt: GPC3 é proteoglicano fetal expresso em ~70% dos HCCs e ausente em fígado normal adulto — alvo atraente. CT001/Carsgen, Hu/CT003 e outros conduzem ensaios; toxicidade hepática on-target off-tumor é a preocupação principal.
+          en: GPC3 is a fetal proteoglycan expressed in ~70% of HCCs and absent from normal adult liver — attractive target. CT001/Carsgen, Hu/CT003 and others run trials; on-target off-tumor liver toxicity is the main concern.
+        objectives: [GPC3 HCC]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "logic-gated CARs" usa qual estratégia para aumentar especificidade tumoral?
+          en: "Logic-gated CARs" use which strategy to boost tumor specificity?
+        choices:
+          - Lógica AND/NOT: ativar apenas se antígeno-A presente e antígeno-B ausente, e.g. SynNotch
+          - Aumentar afinidade do scFv ao máximo possível independente de seletividade
+          - Reduzir dose CAR-T ao mínimo terapêutico para todos pacientes uniformemente
+          - Dispensar coestimulação CD28/4-1BB para limitar ativação tecidual
+        correctAnswer: Lógica AND/NOT: ativar apenas se antígeno-A presente e antígeno-B ausente, e.g. SynNotch
+        rationale:
+          pt: Wendell Lim (UCSF) desenvolveu synNotch — receptor sintético em que ligação a antígeno-A induz expressão do CAR contra antígeno-B (lógica AND). NOT-gates inibem CAR-T se antígeno saudável presente. Estratégia para tumores sólidos sem antígeno único exclusivo.
+          en: Wendell Lim (UCSF) developed synNotch — a synthetic receptor where antigen-A binding induces CAR expression against antigen-B (AND logic). NOT-gates inhibit CAR-T if healthy antigen is present. A strategy for solid tumors without a unique exclusive antigen.
+        objectives: [synNotch]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O custo aprovisionado típico (US listado) de uma única dose de CAR-T autólogo aprovado é da ordem de…
+          en: The typical US list price of a single autologous CAR-T dose is on the order of…
+        choices:
+          - US$ 400-500 mil para o produto, sem contar internação e tratamento de toxicidade
+          - US$ 5-10 mil, comparável a quimioterapia padrão de primeira linha
+          - US$ 50-100 mil, similar a anticorpos monoclonais oncológicos clássicos
+          - US$ 5-10 milhões por dose, restrito a cobertura especial de seguros
+        correctAnswer: US$ 400-500 mil para o produto, sem contar internação e tratamento de toxicidade
+        rationale:
+          pt: Kymriah, Yescarta, Carvykti têm preços listados de ~US$ 373-500 mil só pelo produto; com hospitalização, manejo CRS/ICANS, custo total comum >US$ 1M/paciente. Pressão por modelo alogênico/in vivo é em parte para reduzir custo a fração disso.
+          en: Kymriah, Yescarta, Carvykti list ~US$ 373-500k for product alone; with hospitalization, CRS/ICANS management, common total >US$ 1M/patient. Pressure for allogeneic/in vivo models is partly to slash cost.
+        objectives: [Custo CAR-T]
+target: 20
