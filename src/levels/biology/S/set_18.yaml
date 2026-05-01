@@ -1,0 +1,327 @@
+title:
+  pt: Genômica Psiquiátrica e Neurociência Translacional
+  en: Psychiatric Genomics and Translational Neuroscience
+level: S
+subject: biology
+objectives:
+  - Compreender PGC schizophrenia, autism, BPD GWAS
+  - Reconhecer Alzheimer GWAS APOE, AD therapeutics
+  - Identificar lecanemab, donanemab, psilocybin, ketamine
+  - Avaliar Zurzuvae allopregnanolone, microglia neurodegeneration
+difficulty: 5
+authorNotes: |
+  Psychiatric genomics PGC 2022 schizophrenia ~270 loci Trubetskoy Nature. AD: APOE4 Selkoe,
+  lecanemab Eisai/Biogen 2023, donanemab Eli Lilly Kisunla 2024. Psilocybin Compass Pathways
+  COMP360 Phase 3 2024. Ketamine/Spravato esketamine 2019. Zurzuvae brexanolone allopregnanolone
+  2023 postpartum.
+example:
+  question:
+    pt: PGC schizophrenia 2022 (Trubetskoy/Pardiñas Nature) é…
+    en: PGC schizophrenia 2022 (Trubetskoy/Pardiñas Nature) is…
+  choices:
+    - GWAS meta-analysis ~76755 cases ~243649 controls identifying ~287 distinct genome-wide significant loci, implicating synaptic transmission and neurodevelopmental pathways
+    - Single-gene Mendelian disorder
+    - Pure environmental etiology without genetics
+    - Linkage analysis only without GWAS
+  correctAnswer: GWAS meta-analysis ~76755 cases ~243649 controls identifying ~287 distinct genome-wide significant loci, implicating synaptic transmission and neurodevelopmental pathways
+  rationale:
+    pt: 'PGC (Psychiatric Genomics Consortium) schizophrenia GWAS (Trubetskoy Pardiñas Qi Panagiotaropoulou Awasthi Bigdeli Bryois Chen Dennison Hall Lam Pardiñas Saevarsdottir Bigdeli Trubetskoy Bryois Chen Hall Saevarsdottir et al for PGC SCZ Nature 2022 abril): largest schizophrenia GWAS to date — 76755 cases + 243649 controls multiple ancestries (~75% European). Identified 287 genome-wide significant loci (p<5e-8), explaining ~24% liability heritability. Implicated genes: synaptic biology (DLG2, DLG4, GRIN2A, NRG1, NLGN family), neurodevelopment (FOXP2, SOX5, MEF2C), DRD2 (dopamine receptor — antipsychotic target), GRIA3, GABRB2. Polygenic — many small-effect variants vs single causal. PRS schizophrenia ~6-7% variance explained 2022. Rare CNVs (22q11.2 deletion DiGeorge syndrome ~25x risk, 16p11.2, 1q21.1, NRXN1) + rare SNVs (Fromer 2014 + SCHEMA Singh Nature 2022 — 10 genes including SETD1A, GRIN2A, CACNA1G with exome-sequencing exome). Trauma/cannabis interactions emerging. Subsequent: PGC ASD (autism), bipolar BPD, MDD (major depressive disorder), ADHD GWAS continuous expansion. Limitations: ancestry bias, not yet clinically actionable PRS routinely, drug discovery — only DRD2 vintage 1950s antipsychotic target.'
+    en: 'PGC (Psychiatric Genomics Consortium) schizophrenia GWAS (Trubetskoy/Pardiñas/Bryois et al for PGC SCZ Nature April 2022): largest schizophrenia GWAS to date — 76755 cases + 243649 controls across ancestries (~75% European). Identified 287 genome-wide significant loci (p<5e-8), explaining ~24% liability heritability. Implicated genes: synaptic biology (DLG2, DLG4, GRIN2A, NRG1, NLGN family), neurodevelopment (FOXP2, SOX5, MEF2C), DRD2 (dopamine receptor — antipsychotic target), GRIA3, GABRB2. Polygenic — many small-effect variants vs single causal. PRS schizophrenia ~6-7% variance explained 2022. Rare CNVs (22q11.2 deletion DiGeorge syndrome ~25x risk, 16p11.2, 1q21.1, NRXN1) + rare SNVs (Fromer 2014 + SCHEMA Singh Nature 2022 — 10 genes including SETD1A, GRIN2A, CACNA1G with exome sequencing). Trauma/cannabis interactions emerging. Subsequent: PGC ASD (autism), bipolar BPD, MDD (major depressive disorder), ADHD GWAS continuous expansion. Limitations: ancestry bias, not yet clinically actionable PRS routinely, drug discovery — only DRD2 vintage 1950s antipsychotic target.'
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Genômica psiquiátrica
+      en: Page 1 — Psychiatric genomics
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Autism spectrum disorder (ASD) genetics — SPARK + iPSYCH consortia + de novo é…
+          en: Autism spectrum disorder (ASD) genetics — SPARK + iPSYCH consortia + de novo is…
+        choices:
+          - ~50-100 high-confidence ASD genes (SCN2A, CHD8, SYNGAP1, ARID1B, ANKRD11) identified via exome-sequenced trios capturing rare de novo variants + GWAS common variation polygenic
+          - Single-gene autosomal dominant cause
+          - Pure environmental etiology
+          - Mitochondrial DNA only
+        correctAnswer: ~50-100 high-confidence ASD genes (SCN2A, CHD8, SYNGAP1, ARID1B, ANKRD11) identified via exome-sequenced trios capturing rare de novo variants + GWAS common variation polygenic
+        rationale:
+          pt: 'ASD genetics: heritability ~80% (twin studies). Architecture: ~10-20% individual cases attributable rare highly-penetrant variants (de novo SNV/indel, CNVs); rest polygenic common variants. SPARK (Simons Foundation 2016+ ~100k+ enrolled families exome-sequenced), AGRE (Autism Genetic Resource Exchange Foundations), iPSYCH (Denmark birth cohort genomic linked national health). Discoveries: De Rubeis Cell 2014, Iossifov Nature 2014, Sanders Cell 2015 — exome trios identifying ~70 ASD genes (LRP score ≥0.99 high-confidence): SCN2A (sodium channel), CHD8 (chromatin remodeler), SYNGAP1 (synaptic plasticity), ARID1B (BAF complex), ANKRD11, PTEN, TBR1, FOXP1, ADNP, DYRK1A, SHANK3 (synaptic scaffold). Sex bias: ~4:1 male:female (lower diagnosis females masking, "female protective effect"). Common variant GWAS: ~5 genome-wide significant loci PGC ASD 2019 (~46k cases). Subsequent ASD therapeutics: SCN2A-targeted (Praxis), KMT2D Kabuki syndrome, SYNGAP1-Parents-of-affected-children advocacy → drug discovery. Field 2024 mature: SFARI Gene database curated.'
+          en: 'ASD genetics: heritability ~80% (twin studies). Architecture: ~10-20% of individual cases attributable to rare highly-penetrant variants (de novo SNV/indel, CNVs); rest polygenic common variants. SPARK (Simons Foundation 2016+ ~100k+ enrolled families exome-sequenced), AGRE (Autism Genetic Resource Exchange Foundations), iPSYCH (Denmark birth cohort genomic linked to national health). Discoveries: De Rubeis Cell 2014, Iossifov Nature 2014, Sanders Cell 2015 — exome trios identifying ~70 ASD genes (LRP score ≥0.99 high-confidence): SCN2A (sodium channel), CHD8 (chromatin remodeler), SYNGAP1 (synaptic plasticity), ARID1B (BAF complex), ANKRD11, PTEN, TBR1, FOXP1, ADNP, DYRK1A, SHANK3 (synaptic scaffold). Sex bias: ~4:1 male:female (lower diagnosis in females masking, "female protective effect"). Common variant GWAS: ~5 genome-wide significant loci PGC ASD 2019 (~46k cases). Subsequent ASD therapeutics: SCN2A-targeted (Praxis), KMT2D Kabuki syndrome, SYNGAP1-Parents-of-affected-children advocacy → drug discovery. Field 2024 mature: SFARI Gene database curated.'
+        objectives: [ASD genetics]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Alzheimer disease genetics (APOE4, APP/PSEN1/PSEN2, GWAS 2022) é…
+          en: Alzheimer disease genetics (APOE4, APP/PSEN1/PSEN2, GWAS 2022) is…
+        choices:
+          - APOE4 strongest risk allele (~3x heterozygote, ~12x homozygote); rare APP/PSEN1/PSEN2 cause autosomal dominant early-onset; GWAS ~75 loci (Bellenguez Nat Genet 2022) implicating microglia, lipid metabolism, complement
+          - Single-gene Mendelian only
+          - No genetic component, purely environmental
+          - Mitochondrial inheritance only
+        correctAnswer: APOE4 strongest risk allele (~3x heterozygote, ~12x homozygote); rare APP/PSEN1/PSEN2 cause autosomal dominant early-onset; GWAS ~75 loci (Bellenguez Nat Genet 2022) implicating microglia, lipid metabolism, complement
+        rationale:
+          pt: 'Alzheimer disease (AD) genetics: heritability ~70-80%. Two main forms: (1) Early-onset familial AD (EOAD ~5% cases, <65yo onset) — autosomal dominant rare mutations APP (amyloid precursor protein, chromosome 21 — Down syndrome trisomy 21 → triple APP dose → AD by 60s), PSEN1 (presenilin1 γ-secretase catalytic), PSEN2. (2) Late-onset AD (LOAD ~95% cases, >65yo) — polygenic + APOE genotype. APOE alleles: ε2 (protective), ε3 (neutral, common), ε4 (risk). Heterozygote APOE4 ~2-3x risk, homozygote ~12-15x, age of onset ~10 years earlier. Mechanism: APOE4 reduced Aβ clearance + increased aggregation. APOE2 conversely protective. GWAS large (Bellenguez Nat Genet 2022 ~75 loci, Schwartzentruber 2021) — implicate microglia (TREM2, CD33, MS4A6A, INPP5D, PLCG2, ABI3, SPI1), lipid metabolism (CLU, APOE), complement (CR1, C1S), endocytosis (BIN1, PICALM, CD2AP, EPHA1, ABCA7). Common variant PRS modest predictive (5-10% variance). Rare TREM2 R47H ~3x risk variant. Field 2024+: APOE-targeted therapy (gene therapy AAV converting APOE4 → APOE3 preclinical).'
+          en: 'Alzheimer disease (AD) genetics: heritability ~70-80%. Two main forms: (1) Early-onset familial AD (EOAD ~5% of cases, <65yo onset) — autosomal dominant rare mutations APP (amyloid precursor protein, chromosome 21 — Down syndrome trisomy 21 → triple APP dose → AD by 60s), PSEN1 (presenilin1 γ-secretase catalytic), PSEN2. (2) Late-onset AD (LOAD ~95% of cases, >65yo) — polygenic + APOE genotype. APOE alleles: ε2 (protective), ε3 (neutral, common), ε4 (risk). Heterozygote APOE4 ~2-3x risk, homozygote ~12-15x, age of onset ~10 years earlier. Mechanism: APOE4 reduced Aβ clearance + increased aggregation. APOE2 conversely protective. GWAS large (Bellenguez Nat Genet 2022 ~75 loci, Schwartzentruber 2021) — implicate microglia (TREM2, CD33, MS4A6A, INPP5D, PLCG2, ABI3, SPI1), lipid metabolism (CLU, APOE), complement (CR1, C1S), endocytosis (BIN1, PICALM, CD2AP, EPHA1, ABCA7). Common variant PRS modestly predictive (5-10% variance). Rare TREM2 R47H ~3x risk variant. Field 2024+: APOE-targeted therapy (gene therapy AAV converting APOE4 → APOE3 preclinical).'
+        objectives: [Alzheimer genetics APOE]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Lecanemab (Leqembi Biogen/Eisai 2023 FDA) é…
+          en: Lecanemab (Leqembi Biogen/Eisai 2023 FDA) is…
+        choices:
+          - Anti-Aβ protofibril humanized monoclonal antibody, FDA-approved 2023 for early Alzheimer disease — slowed cognitive decline ~27% vs placebo at 18 months in CLARITY-AD trial
+          - Pure cholinesterase inhibitor like donepezil
+          - Vaccine against tau protein
+          - Standard antipsychotic
+        correctAnswer: Anti-Aβ protofibril humanized monoclonal antibody, FDA-approved 2023 for early Alzheimer disease — slowed cognitive decline ~27% vs placebo at 18 months in CLARITY-AD trial
+        rationale:
+          pt: 'Lecanemab (BAN2401, Leqembi, Eisai/Biogen): humanized monoclonal antibody anti-Aβ protofibril (intermediate aggregates, soluble, mais tóxico que monomers + plaques). Origin: BAN2401 deriva BioArctic mAb158 mouse → humanized. CLARITY-AD trial (van Dyck NEJM 2022 + Phase 3 confirm 2023): ~1795 patients early AD (MCI ou mild dementia AD pathology biomarker-positive amyloid PET ou CSF Aβ42/40). Lecanemab IV infusion q2 weeks 18 meses. Resultados: slowed CDR-SB (Clinical Dementia Rating Sum of Boxes) decline by ~27% vs placebo (0.45 points difference 1.66 vs 1.21 magnitude, statistically significant mas modest clinically). Aβ removal: ~70% reduction PET amyloid 18 meses. Aprovação FDA acelerada janeiro 2023 → traditional approval 6 julho 2023 — first FDA-approved AD modifying disease therapy decade. Toxicidade: ARIA (Amyloid-Related Imaging Abnormalities) edema (ARIA-E ~12.5%, severe ~2.5%) + microhemorrhages (ARIA-H ~17%) — APOE4 homozygotes higher risk (~30% ARIA-E). Cost: $26500/year. Subsequent: donanemab Lilly Kisunla julho 2024 (Phase 3 TRAILBLAZER-ALZ 2 — anti-pyroglutamate Aβ ~35% slowing decline). Aducanumab Aduhelm (Biogen 2021 controversial accelerated approval) discontinued 2024.'
+          en: 'Lecanemab (BAN2401, Leqembi, Eisai/Biogen): humanized monoclonal antibody anti-Aβ protofibril (intermediate aggregates, soluble, more toxic than monomers + plaques). Origin: BAN2401 derived from BioArctic mAb158 mouse → humanized. CLARITY-AD trial (van Dyck NEJM 2022 + Phase 3 confirm 2023): ~1795 patients with early AD (MCI or mild dementia with AD pathology biomarker-positive amyloid PET or CSF Aβ42/40). Lecanemab IV infusion q2 weeks for 18 months. Results: slowed CDR-SB (Clinical Dementia Rating Sum of Boxes) decline by ~27% vs placebo (0.45 points difference, 1.66 vs 1.21 magnitude, statistically significant but modest clinically). Aβ removal: ~70% reduction in PET amyloid by 18 months. Accelerated FDA approval January 2023 → traditional approval 6 July 2023 — first FDA-approved AD disease-modifying therapy in a decade. Toxicity: ARIA (Amyloid-Related Imaging Abnormalities) edema (ARIA-E ~12.5%, severe ~2.5%) + microhemorrhages (ARIA-H ~17%) — APOE4 homozygotes higher risk (~30% ARIA-E). Cost: $26500/year. Subsequent: donanemab Lilly Kisunla July 2024 (Phase 3 TRAILBLAZER-ALZ 2 — anti-pyroglutamate Aβ ~35% slowing decline). Aducanumab Aduhelm (Biogen 2021 controversial accelerated approval) discontinued 2024.'
+        objectives: [Lecanemab]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Ketamine + esketamine (Spravato Janssen FDA 2019) é…
+          en: Ketamine + esketamine (Spravato Janssen FDA 2019) is…
+        choices:
+          - Rapid-acting NMDA receptor antagonist antidepressant — esketamine intranasal FDA-approved 2019 treatment-resistant depression, racemic ketamine off-label IV ~70-80% response rates within hours
+          - Standard SSRI like fluoxetine
+          - Pure dopamine antagonist antipsychotic
+          - Sedative without antidepressant action
+        correctAnswer: Rapid-acting NMDA receptor antagonist antidepressant — esketamine intranasal FDA-approved 2019 treatment-resistant depression, racemic ketamine off-label IV ~70-80% response rates within hours
+        rationale:
+          pt: 'Ketamine antidepressant: ketamine racemic mixture (R+S enantiomers) — anestésico dissociative since 1970s clinical. Antidepressant discoveries: Berman/Krystal/Mathew Yale Biol Psychiatry 2000 first observation rapid antidepressant effect IV ketamine treatment-resistant depression — hours-onset (vs SSRIs 2-6 weeks). Mecanismo: NMDA receptor antagonist → glutamatergic neurotransmission alteration → BDNF release + synaptogenesis prefrontal cortex (Duman/Aghajanian Sci 2012). S-isomer esketamine 2-3x potent NMDA. Spravato (esketamine intranasal Janssen): FDA approval 5 março 2019 treatment-resistant depression (TRD) + suicidal ideation 2020. Cost ~$590-885/dose, twice-weekly maintenance. ~70-80% acute response rate, 12-week sustained ~50-60%. Off-label IV racemic ketamine: ~$400-600/infusion, multiple ketamine clinics (Mindbloom, etc) outpatient settings. Limit: dissociative side effects, abuse potential (Schedule III), urinary toxicity chronic use (ketamine cystitis). Subsequent: Auvelity (dextromethorphan/bupropion AXS-05 Axsome NMDA antagonist 2022 FDA), psychedelics (psilocybin Compass COMP360 Phase 3, MDMA-assisted PTSD Lykos 2024 FDA rejected req additional trials). Field paradigm shift psychiatry rapid-acting antidepressants.'
+          en: 'Ketamine antidepressant: ketamine racemic mixture (R+S enantiomers) — clinical dissociative anesthetic since 1970s. Antidepressant discoveries: Berman/Krystal/Mathew Yale Biol Psychiatry 2000 first observation of rapid antidepressant effect with IV ketamine in treatment-resistant depression — hours onset (vs SSRIs 2-6 weeks). Mechanism: NMDA receptor antagonist → alters glutamatergic neurotransmission → BDNF release + synaptogenesis in prefrontal cortex (Duman/Aghajanian Sci 2012). S-isomer esketamine 2-3x more potent on NMDA. Spravato (esketamine intranasal Janssen): FDA approval 5 March 2019 for treatment-resistant depression (TRD) + suicidal ideation 2020. Cost ~$590-885/dose, twice-weekly maintenance. ~70-80% acute response rate, 12-week sustained ~50-60%. Off-label IV racemic ketamine: ~$400-600/infusion, multiple ketamine clinics (Mindbloom, etc) in outpatient settings. Limit: dissociative side effects, abuse potential (Schedule III), urinary toxicity with chronic use (ketamine cystitis). Subsequent: Auvelity (dextromethorphan/bupropion AXS-05 Axsome NMDA antagonist 2022 FDA), psychedelics (psilocybin Compass COMP360 Phase 3, MDMA-assisted PTSD Lykos 2024 FDA rejected, requested additional trials). Field paradigm shift in psychiatry — rapid-acting antidepressants.'
+        objectives: [Ketamine esketamine]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Psilocybin therapy depression (Compass COMP360 Phase 3 2024+) é…
+          en: Psilocybin therapy depression (Compass COMP360 Phase 3 2024+) is…
+        choices:
+          - 5-HT2A serotonin receptor agonist psychedelic for treatment-resistant depression — Compass COMP360 Phase 2b NEJM 2022 single dose ~36% response 12 weeks; Phase 3 ongoing 2024+
+          - Pure SSRI antidepressant
+          - Antipsychotic D2 antagonist
+          - Sedative without psychedelic component
+        correctAnswer: 5-HT2A serotonin receptor agonist psychedelic for treatment-resistant depression — Compass COMP360 Phase 2b NEJM 2022 single dose ~36% response 12 weeks; Phase 3 ongoing 2024+
+        rationale:
+          pt: 'Psilocybin therapy depression: psilocybin (psychoactive Psilocybe mushroom alkaloid, prodrug → psilocin) — 5-HT2A receptor agonist. Renaissance research after decades restriction (Schedule I 1968 USA). Pioneer: Robin Carhart-Harris UCSF (ex-Imperial College London 2014+). Trials: (1) Compass Pathways COMP360 (synthetic GMP-grade psilocybin 25mg single dose + psychotherapy support sessions): Phase 2b NEJM 2022 (Goodwin) ~233 TRD patients ~36.7% response 12 weeks 25mg vs ~12% 1mg; remission ~29%. Phase 3 ongoing 2024+. (2) Imperial College trial (Carhart-Harris NEJM 2021) 2 doses 10mg + 25mg vs escitalopram SSRI — comparable efficacy MDD. (3) Johns Hopkins Hopkins Center Psychedelic Consciousness Research (Griffiths) cancer-related anxiety/depression. Outras: MDMA-assisted PTSD (Lykos Therapeutics, MAPS spinout) — Phase 3 trials 2023+ ~67% PTSD remission BUT FDA panel August 2024 rejected approval request (concerns blinding, AEs, manufacturing). LSD anxiety, ayahuasca depression Brazil, ibogaine addiction smaller trials. Field 2024+ active but regulatory caution post-Lykos rejection.'
+          en: 'Psilocybin therapy depression: psilocybin (psychoactive alkaloid in Psilocybe mushrooms, prodrug → psilocin) — 5-HT2A receptor agonist. Renaissance research after decades of restriction (Schedule I 1968 USA). Pioneer: Robin Carhart-Harris UCSF (ex-Imperial College London 2014+). Trials: (1) Compass Pathways COMP360 (synthetic GMP-grade psilocybin 25mg single dose + psychotherapy support sessions): Phase 2b NEJM 2022 (Goodwin) ~233 TRD patients ~36.7% response 12 weeks at 25mg vs ~12% at 1mg; remission ~29%. Phase 3 ongoing 2024+. (2) Imperial College trial (Carhart-Harris NEJM 2021) 2 doses 10mg + 25mg vs escitalopram SSRI — comparable efficacy MDD. (3) Johns Hopkins Hopkins Center Psychedelic Consciousness Research (Griffiths) cancer-related anxiety/depression. Others: MDMA-assisted PTSD (Lykos Therapeutics, MAPS spinout) — Phase 3 trials 2023+ ~67% PTSD remission BUT FDA panel August 2024 rejected approval request (concerns over blinding, AEs, manufacturing). LSD anxiety, ayahuasca depression Brazil, ibogaine addiction smaller trials. Field 2024+ active but regulatory caution post-Lykos rejection.'
+        objectives: [Psilocybin therapy]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Zurzuvae (zuranolone Sage/Biogen FDA 2023 postpartum depression) é…
+          en: Zurzuvae (zuranolone Sage/Biogen FDA 2023 postpartum depression) is…
+        choices:
+          - Oral neuroactive steroid GABA-A modulator FDA-approved 2023 for postpartum depression — 14-day course rapid onset; allopregnanolone-derived analog
+          - Pure SSRI antidepressant
+          - IV-only therapy without oral form
+          - Vaccine-based postpartum prevention
+        correctAnswer: Oral neuroactive steroid GABA-A modulator FDA-approved 2023 for postpartum depression — 14-day course rapid onset; allopregnanolone-derived analog
+        rationale:
+          pt: 'Zuranolone (Zurzuvae, SAGE-217, Sage Therapeutics + Biogen): oral neuroactive steroid GABA-A receptor positive allosteric modulator. Synthetic analog allopregnanolone (endogenous neurosteroid pregnane progesterone metabolite, GABA-A-PAM). FDA approval 4 agosto 2023 — first oral specifically for postpartum depression (PPD). Predecessor: brexanolone (Zulresso, Sage 2019) — IV allopregnanolone, 60-hour infusion in-clinic ~$34000 — efficacious but logistically prohibitive. Zuranolone oral 50mg/day × 14 days. Trials: ROBIN + SKYLARK Phase 3 (Deligiannidis JAMA Psychiatry 2023): rapid HAMD-17 reduction days 3+, sustained 28+ days. Indications: PPD only (rejected MDD Phase 3 LANDSCAPE 2022 — modest efficacy). Cost: $15900/14-day course. Mechanism unique vs SSRIs (slow onset 4-6 weeks): GABA-A allosteric modulation rapid antianxiolytic + antidepressant effects neurosteroid-mediated (estrogen/progesterone fluctuations postpartum implicated). Concurrent: SAGE-324 (selective δ-subunit GABA-A — anxiety, essential tremor Phase 2 disappointing 2023+ Sage layoffs), allopregnanolone aging trial. Field neuroactive steroid era emerging psychiatry.'
+          en: 'Zuranolone (Zurzuvae, SAGE-217, Sage Therapeutics + Biogen): oral neuroactive steroid GABA-A receptor positive allosteric modulator. Synthetic analog of allopregnanolone (endogenous neurosteroid, pregnane progesterone metabolite, GABA-A-PAM). FDA approval 4 August 2023 — first oral specifically for postpartum depression (PPD). Predecessor: brexanolone (Zulresso, Sage 2019) — IV allopregnanolone, 60-hour infusion in-clinic ~$34000 — efficacious but logistically prohibitive. Zuranolone oral 50mg/day × 14 days. Trials: ROBIN + SKYLARK Phase 3 (Deligiannidis JAMA Psychiatry 2023): rapid HAMD-17 reduction by days 3+, sustained 28+ days. Indications: PPD only (rejected for MDD Phase 3 LANDSCAPE 2022 — modest efficacy). Cost: $15900/14-day course. Mechanism unique vs SSRIs (slow onset 4-6 weeks): GABA-A allosteric modulation rapid anxiolytic + antidepressant effects neurosteroid-mediated (estrogen/progesterone fluctuations postpartum implicated). Concurrent: SAGE-324 (selective δ-subunit GABA-A — anxiety, essential tremor Phase 2 disappointing 2023+, Sage layoffs), allopregnanolone aging trial. Field neuroactive steroid era emerging in psychiatry.'
+        objectives: [Zurzuvae zuranolone]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: KarXT (Cobenfy Bristol Myers Squibb 2024 schizophrenia) é…
+          en: KarXT (Cobenfy Bristol Myers Squibb 2024 schizophrenia) is…
+        choices:
+          - First non-D2-targeting antipsychotic — xanomeline (M1/M4 muscarinic agonist) + trospium (peripheral antagonist for tolerability) FDA-approved 2024 for schizophrenia after EMERGENT trials
+          - Standard D2 antagonist like olanzapine
+          - Pure dopamine agonist
+          - Glutamate receptor antagonist
+        correctAnswer: First non-D2-targeting antipsychotic — xanomeline (M1/M4 muscarinic agonist) + trospium (peripheral antagonist for tolerability) FDA-approved 2024 for schizophrenia after EMERGENT trials
+        rationale:
+          pt: 'KarXT (Cobenfy, Karuna Therapeutics → Bristol Myers Squibb 2024 acquisition $14B): novel mechanism schizophrenia. Xanomeline: M1/M4 muscarinic acetylcholine receptor agonist (originally Eli Lilly Alzheimer disease program 1990s — abandoned cholinergic side effects). Trospium: peripheral muscarinic antagonist (BBB-impermeable) — blocks GI/cardiovascular cholinergic effects but spares CNS. Combination: KarXT (xanomeline + trospium) gets CNS-selective M1/M4 activation. Trials: EMERGENT-1 NEJM 2020 (Brannan), EMERGENT-2 + 3 Lancet 2024 — significant PANSS reduction acute schizophrenia ~5-week trials. FDA approval 26 setembro 2024 — historic: first non-D2-targeting antipsychotic primary mechanism after ~70 years D2 dominance (chlorpromazine 1952 first antipsychotic via D2 antagonism). Cost ~$22500/year. Significance: paradigm shift schizophrenia neurobiology — addresses negative + cognitive symptoms cholinergic deficit hypothesis (D2 drugs largely treat positive symptoms hallucinations/delusions). Subsequent: emraclidine (Cerevel/AbbVie, M4-selective) Phase 3 trials 2024+ failed primary endpoint, anavex muscarinic novel pipelines. Field 2024 active beyond D2 paradigm.'
+          en: 'KarXT (Cobenfy, Karuna Therapeutics → Bristol Myers Squibb 2024 acquisition $14B): novel mechanism for schizophrenia. Xanomeline: M1/M4 muscarinic acetylcholine receptor agonist (originally Eli Lilly Alzheimer disease program 1990s — abandoned for cholinergic side effects). Trospium: peripheral muscarinic antagonist (BBB-impermeable) — blocks GI/cardiovascular cholinergic effects but spares CNS. Combination: KarXT (xanomeline + trospium) achieves CNS-selective M1/M4 activation. Trials: EMERGENT-1 NEJM 2020 (Brannan), EMERGENT-2 + 3 Lancet 2024 — significant PANSS reduction in acute schizophrenia in ~5-week trials. FDA approval 26 September 2024 — historic: first non-D2-targeting antipsychotic primary mechanism after ~70 years of D2 dominance (chlorpromazine 1952 first antipsychotic via D2 antagonism). Cost ~$22500/year. Significance: paradigm shift in schizophrenia neurobiology — addresses negative + cognitive symptoms cholinergic deficit hypothesis (D2 drugs largely treat positive symptoms hallucinations/delusions). Subsequent: emraclidine (Cerevel/AbbVie, M4-selective) Phase 3 trials 2024+ failed primary endpoint, Anavex muscarinic novel pipelines. Field 2024 active beyond D2 paradigm.'
+        objectives: [KarXT Cobenfy]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Microglia synaptic pruning + neurodegeneration (Stevens/Stephan Cell 2007+) é…
+          en: Microglia synaptic pruning + neurodegeneration (Stevens/Stephan Cell 2007+) is…
+        choices:
+          - Microglia engulf synapses via complement (C1q/C3) tagging during development + aberrantly in Alzheimer/schizophrenia/aging — "synaptic pruning" mechanism with therapeutic implications
+          - Pure neuronal autonomous process
+          - Astrocyte-only function
+          - Random cell death without active mechanism
+        correctAnswer: Microglia engulf synapses via complement (C1q/C3) tagging during development + aberrantly in Alzheimer/schizophrenia/aging — "synaptic pruning" mechanism with therapeutic implications
+        rationale:
+          pt: 'Microglia synaptic pruning (Stevens Allen Vázquez Howell Christopherson Nouri Micheva Mehalow Huberman Stafford Sher Smith Lubischer Bressler Bjornson Reynolds Yamasaki Stephan Wenceslau Yu Schafer Welsh Galimberti Cabezas-Wallscheid Iwakura Castelli Christensen Trope Jiang Stansfield Ferrari Bader Sutter Riese Loomis Pellegrino Wertheim Vargas Eroglu Stevens Stephan Barres Cell 2007 + Schafer Lehrman Kautzman Koyama Mardinly Yamasaki Ransohoff Greenberg Barres Stevens Neuron 2012): microglia engulfing synapses developmental refinement neuronal circuitry. Mecanismo: classical complement cascade (C1q + C3) tagging "weaker" synapses → microglia C3 receptor (CR3, CD11b/CD18) recognition → phagocytose. Ben Barres Stanford + Beth Stevens Boston Children pioneers. Aberrant pruning mechanisms aging/disease: (1) Alzheimer disease — Aβ activates C1q → excessive synaptic loss prefronts symptoms (Hong/Stevens Sci 2016). (2) Schizophrenia — C4A copy-number variation increases pruning over-aggressive (Sekar/McCarroll Nat 2016 Nature). (3) Frontotemporal dementia C9orf72 (Lall/Hsu Cell 2021). Therapeutics: complement inhibitors C5 eculizumab (paroxysmal nocturnal hemoglobinuria), C1q neutralizing antibodies (annexon BIN2401 2024+ trials AD/ALS). Field 2024+ rapidly maturing.'
+          en: 'Microglia synaptic pruning (Stevens/Barres Cell 2007 + Schafer/Stevens Neuron 2012): microglia engulfing synapses for developmental refinement of neuronal circuitry. Mechanism: classical complement cascade (C1q + C3) tags "weaker" synapses → microglia C3 receptor (CR3, CD11b/CD18) recognition → phagocytose. Ben Barres Stanford + Beth Stevens Boston Children pioneers. Aberrant pruning mechanisms in aging/disease: (1) Alzheimer disease — Aβ activates C1q → excessive synaptic loss precedes symptoms (Hong/Stevens Sci 2016). (2) Schizophrenia — C4A copy-number variation increases pruning over-aggressively (Sekar/McCarroll Nature 2016). (3) Frontotemporal dementia C9orf72 (Lall/Hsu Cell 2021). Therapeutics: complement inhibitors C5 eculizumab (for paroxysmal nocturnal hemoglobinuria), C1q neutralizing antibodies (Annexon BIN2401 2024+ trials in AD/ALS). Field 2024+ rapidly maturing.'
+        objectives: [Microglia synaptic pruning]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Polygenic risk scores (PRS) clinical translation 2024 é…
+          en: Polygenic risk scores (PRS) clinical translation 2024 is…
+        choices:
+          - Aggregating effects across genome-wide variants for disease risk prediction; CARDIA + UK Biobank validations show ~3-5x risk stratification cardiovascular/diabetes/breast cancer; ancestry bias remains barrier
+          - Single-gene Mendelian testing only
+          - Pure environmental risk without genetic component
+          - Tested only in research without clinical use
+        correctAnswer: Aggregating effects across genome-wide variants for disease risk prediction; CARDIA + UK Biobank validations show ~3-5x risk stratification cardiovascular/diabetes/breast cancer; ancestry bias remains barrier
+        rationale:
+          pt: 'Polygenic risk scores (PRS): sum of genome-wide weighted contributions ~thousands of variants → disease risk score per individual. Methodology evolution: P+T (pruning + thresholding), LDpred (Vilhjálmsson 2015), PRS-CS (continuous shrinkage Ge 2019), MegaPRS, SBayesR (Lloyd-Jones 2019). Validations: CAD coronary artery disease PRS (Khera Nat Genet 2018) — top 5% PRS ~5x risk equivalent monogenic familial hypercholesterolemia. Breast cancer PRS-313 (Mavaddat AJHG 2019) ~5-10x risk top decile. T2D, prostate, atrial fibrillation PRS clinical-grade. Limitations: (1) ancestry bias (~80% GWAS European descent → PRS performance ~5x worse African ancestry, ~3x worse East Asian — Martin Nat Genet 2019), (2) modest absolute performance individual prediction (~5-10% variance explained typical), (3) clinical utility evidence developing. Companies: MyOme (cardiovascular PRS), Nightingale Health (UK Biobank metabolomics), Genomic Health, 23andMe research arm + Allelica clinical-grade certification ~CLIA. Field 2024+ adoption: NHS UK piloting PRS-based screening, MGB Mass General Brigham eMERGE. Implementation challenges insurance discrimination GINA federal law USA + EU AI Act 2024 implications.'
+          en: 'Polygenic risk scores (PRS): sum of genome-wide weighted contributions of ~thousands of variants → disease risk score per individual. Methodology evolution: P+T (pruning + thresholding), LDpred (Vilhjálmsson 2015), PRS-CS (continuous shrinkage Ge 2019), MegaPRS, SBayesR (Lloyd-Jones 2019). Validations: CAD coronary artery disease PRS (Khera Nat Genet 2018) — top 5% PRS ~5x risk equivalent to monogenic familial hypercholesterolemia. Breast cancer PRS-313 (Mavaddat AJHG 2019) ~5-10x risk in top decile. T2D, prostate, atrial fibrillation PRS clinical-grade. Limitations: (1) ancestry bias (~80% of GWAS in European descent → PRS performance ~5x worse in African ancestry, ~3x worse in East Asian — Martin Nat Genet 2019), (2) modest absolute performance for individual prediction (~5-10% variance explained typical), (3) clinical utility evidence developing. Companies: MyOme (cardiovascular PRS), Nightingale Health (UK Biobank metabolomics), Genomic Health, 23andMe research arm + Allelica clinical-grade certification ~CLIA. Field 2024+ adoption: NHS UK piloting PRS-based screening, MGB Mass General Brigham eMERGE. Implementation challenges insurance discrimination GINA federal law USA + EU AI Act 2024 implications.'
+        objectives: [PRS clinical]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: TMS / DBS neuromodulation depression é…
+          en: TMS / DBS neuromodulation depression is…
+        choices:
+          - rTMS (Transcranial Magnetic Stimulation) FDA-approved 2008 treatment-resistant depression; SAINT accelerated protocol (Stanford Williams Sci 2020) ~80% remission; DBS still investigational
+          - Pure pharmacotherapy without device
+          - Surgical lobotomy without targeted approach
+          - Vaccine-based depression treatment
+        correctAnswer: rTMS (Transcranial Magnetic Stimulation) FDA-approved 2008 treatment-resistant depression; SAINT accelerated protocol (Stanford Williams Sci 2020) ~80% remission; DBS still investigational
+        rationale:
+          pt: 'Neuromodulation depression: (1) rTMS (repetitive Transcranial Magnetic Stimulation) — FDA-approved 2008 (Neuronetics NeuroStar) TRD. Standard protocol: 6 weeks daily sessions, ~30-40% response, ~25-30% remission. SAINT (Stanford Accelerated Intelligent Neuromodulation Therapy, Williams Stanford Sci 2020 + Mitchell Brain Stim 2022): personalized targeting (fMRI guided functional connectivity sgACC subgenual anterior cingulate), high-dose accelerated (10 sessions/day × 5 days), theta-burst stimulation (iTBS shorter sessions vs traditional 10Hz). ~80% remission TRD trial (n=29 ~14/29 remission post-acute, sustained 1 month). Subsequent CalvinKnown commercial offering Magnus Medical SAINT 2022+ FDA-cleared. (2) Deep brain stimulation (DBS) — Helen Mayberg sgCG (subgenual cingulate gyrus area 25) target Mayberg Neuron 2005 small open-label trial ~60% response. BROADEN trial (St. Jude 2014) failed primary efficacy interim analysis. Subsequent: closed-loop adaptive DBS (Scangos/Dawes/Chang Nat Med 2021 individualized targeting amygdala dorsal striatum). Field 2024+: Magnus + Stanford + Penn neuropsychiatric DBS programs. (3) Focused ultrasound (FUS) — Insightec subthalamic transcranial. (4) tDCS (transcranial direct current stimulation) home device modest evidence.'
+          en: 'Neuromodulation depression: (1) rTMS (repetitive Transcranial Magnetic Stimulation) — FDA-approved 2008 (Neuronetics NeuroStar) for TRD. Standard protocol: 6 weeks daily sessions, ~30-40% response, ~25-30% remission. SAINT (Stanford Accelerated Intelligent Neuromodulation Therapy, Williams Stanford Sci 2020 + Mitchell Brain Stim 2022): personalized targeting (fMRI-guided functional connectivity to sgACC subgenual anterior cingulate), high-dose accelerated (10 sessions/day × 5 days), theta-burst stimulation (iTBS shorter sessions vs traditional 10 Hz). ~80% remission in TRD trial (n=29 ~14/29 remission post-acute, sustained 1 month). Subsequent commercial offering Magnus Medical SAINT 2022+ FDA-cleared. (2) Deep brain stimulation (DBS) — Helen Mayberg sgCG (subgenual cingulate gyrus area 25) target Mayberg Neuron 2005 small open-label trial ~60% response. BROADEN trial (St. Jude 2014) failed primary efficacy at interim analysis. Subsequent: closed-loop adaptive DBS (Scangos/Dawes/Chang Nat Med 2021 individualized targeting amygdala dorsal striatum). Field 2024+: Magnus + Stanford + Penn neuropsychiatric DBS programs. (3) Focused ultrasound (FUS) — Insightec subthalamic transcranial. (4) tDCS (transcranial direct current stimulation) home device modest evidence.'
+        objectives: [TMS DBS depression]
+  - title:
+      pt: Página 2 — Neurociência translacional
+      en: Page 2 — Translational neuroscience
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Donanemab (Kisunla Eli Lilly julho 2024) é…
+          en: Donanemab (Kisunla Eli Lilly July 2024) is…
+        choices:
+          - Anti-pyroglutamate Aβ monoclonal antibody for early Alzheimer disease, slowing cognitive decline ~35% in TRAILBLAZER-ALZ 2 (NEJM 2023) and FDA-approved July 2024 with limited duration once amyloid cleared
+          - Pure cholinesterase inhibitor
+          - Tau-targeting therapy
+          - Anti-inflammatory IL-6 inhibitor
+        correctAnswer: Anti-pyroglutamate Aβ monoclonal antibody for early Alzheimer disease, slowing cognitive decline ~35% in TRAILBLAZER-ALZ 2 (NEJM 2023) and FDA-approved July 2024 with limited duration once amyloid cleared
+        rationale:
+          pt: 'Donanemab (LY3002813, Kisunla, Eli Lilly): humanized anti-Aβ monoclonal antibody targeting pyroglutamate-modified Aβ (N-terminal pyroE3 form) — abundant deposited plaques. TRAILBLAZER-ALZ 2 trial (Sims/Lilly NEJM 2023 + JAMA 2024): ~1736 patients with low-medium tau early AD → donanemab IV q4 weeks. Resultados: slowing iADRS (integrated AD Rating Scale) decline ~35% vs placebo 18 meses (1.6 vs 2.4 magnitude points), 18-week amyloid PET clearance ~80% patients. Dosing strategy unique: discontinue donanemab once amyloid cleared (~50% by 18 meses) → cost-effective vs lifetime dosing. FDA approval 2 julho 2024 — second AD modifying therapy (after lecanemab). Cost ~$32000/year. ARIA: ARIA-E ~24%, severe ~6.1%; ARIA-H ~31% — APOE4 dose-dependent. Subsequent: head-to-head donanemab vs lecanemab pending. Donanemab Phase 3 TRAILBLAZER-ALZ 3 prevention trial (presymptomatic AD biomarker-positive) ongoing. Concurrent: remternetug subcutaneous next-gen Lilly Phase 3, gantenerumab Roche 2022 failed Phase 3 GRADUATE trial discontinued.'
+          en: 'Donanemab (LY3002813, Kisunla, Eli Lilly): humanized anti-Aβ monoclonal antibody targeting pyroglutamate-modified Aβ (N-terminal pyroE3 form) — abundant in deposited plaques. TRAILBLAZER-ALZ 2 trial (Sims/Lilly NEJM 2023 + JAMA 2024): ~1736 patients with low-medium tau early AD → donanemab IV q4 weeks. Results: slowing iADRS (integrated AD Rating Scale) decline ~35% vs placebo at 18 months (1.6 vs 2.4 magnitude points), 18-week amyloid PET clearance in ~80% of patients. Unique dosing strategy: discontinue donanemab once amyloid cleared (~50% by 18 months) → cost-effective vs lifetime dosing. FDA approval 2 July 2024 — second AD disease-modifying therapy (after lecanemab). Cost ~$32000/year. ARIA: ARIA-E ~24%, severe ~6.1%; ARIA-H ~31% — APOE4 dose-dependent. Subsequent: head-to-head donanemab vs lecanemab pending. Donanemab Phase 3 TRAILBLAZER-ALZ 3 prevention trial (presymptomatic AD biomarker-positive) ongoing. Concurrent: remternetug subcutaneous next-gen Lilly Phase 3, gantenerumab Roche 2022 failed Phase 3 GRADUATE trial discontinued.'
+        objectives: [Donanemab]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Tau-targeting therapies pipelines (anti-tau antibodies, ASOs) é…
+          en: Tau-targeting therapies pipelines (anti-tau antibodies, ASOs) is…
+        choices:
+          - Multiple Phase 2/3 candidates targeting tau (ASOs Ionis BIIB080, anti-tau antibodies bepranemab, gosuranemab, semorinemab) for AD/FTD/PSP — modest efficacy signals 2024+
+          - Pure Aβ-only without tau
+          - Standard antipsychotic
+          - Vaccine-only without antibody/ASO
+        correctAnswer: Multiple Phase 2/3 candidates targeting tau (ASOs Ionis BIIB080, anti-tau antibodies bepranemab, gosuranemab, semorinemab) for AD/FTD/PSP — modest efficacy signals 2024+
+        rationale:
+          pt: 'Tau therapeutics: tau (microtubule-associated protein, MAPT) hyperphosphorylation + aggregation neurofibrillary tangles (NFTs) — neurodegeneration correlates better cognitive decline AD than Aβ. Pipelines: (1) ASO (antisense oligonucleotide) — BIIB080 (IONIS-MAPTRx, Ionis/Biogen) intrathecal MAPT mRNA degradation, Phase 2 GENERATION mild AD ongoing 2024+. (2) Anti-tau monoclonals: bepranemab (UCB/Roche, anti-mid-region tau) Phase 2 TOGETHER tau+/AD; gosuranemab (Biogen/Bristol) Phase 2 PSP TANGO trial 2021 negative; semorinemab (AbbVie/Genentech) Phase 2 LAURIET 2022 mixed. (3) Tau aggregation inhibitors: TRx0237 (LMTM, leuco-methylthioninium TauRx) Phase 3 LUCIDITY 2023 mild AD positive — controversial methodology. (4) Tau vaccines: AADvac1 (Axon Neuroscience), ACI-35 (AC Immune). Tau-PET imaging biomarkers: flortaucipir (Tauvid Lilly FDA 2020 first), MK-6240 (Cerveau Technologies), PI-2620 (Life Molecular). Field 2024+ active: Aβ-targeted therapies showing efficacy (lecanemab/donanemab) → tau-target combinatory trials emerging promise additive efficacy.'
+          en: 'Tau therapeutics: tau (microtubule-associated protein, MAPT) hyperphosphorylation + aggregation into neurofibrillary tangles (NFTs) — neurodegeneration correlates better with cognitive decline in AD than Aβ. Pipelines: (1) ASO (antisense oligonucleotide) — BIIB080 (IONIS-MAPTRx, Ionis/Biogen) intrathecal for MAPT mRNA degradation, Phase 2 GENERATION mild AD ongoing 2024+. (2) Anti-tau monoclonals: bepranemab (UCB/Roche, anti-mid-region tau) Phase 2 TOGETHER tau+/AD; gosuranemab (Biogen/Bristol) Phase 2 PSP TANGO trial 2021 negative; semorinemab (AbbVie/Genentech) Phase 2 LAURIET 2022 mixed. (3) Tau aggregation inhibitors: TRx0237 (LMTM, leuco-methylthioninium TauRx) Phase 3 LUCIDITY 2023 mild AD positive — controversial methodology. (4) Tau vaccines: AADvac1 (Axon Neuroscience), ACI-35 (AC Immune). Tau-PET imaging biomarkers: flortaucipir (Tauvid Lilly FDA 2020 first), MK-6240 (Cerveau Technologies), PI-2620 (Life Molecular). Field 2024+ active: Aβ-targeted therapies showing efficacy (lecanemab/donanemab) → tau-target combinatory trials emerging promise additive efficacy.'
+        objectives: [Tau therapeutics]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: TREM2 + microglia AD therapies é…
+          en: TREM2 + microglia AD therapies are…
+        choices:
+          - TREM2 (Triggering Receptor Expressed on Myeloid cells 2) loss-of-function variants increase AD risk; TREM2 agonist antibodies (latozinemab Alector AL002 + others) + microglia modulators in clinical trials
+          - Pure neuronal target without microglia
+          - Standard cholinesterase inhibitor
+          - Anti-inflammatory steroids only
+        correctAnswer: TREM2 (Triggering Receptor Expressed on Myeloid cells 2) loss-of-function variants increase AD risk; TREM2 agonist antibodies (latozinemab Alector AL002 + others) + microglia modulators in clinical trials
+        rationale:
+          pt: 'TREM2 + microglia therapies AD: TREM2 (Triggering Receptor Expressed on Myeloid cells 2) — microglial surface receptor signaling DAP12. R47H rare variant ~3x AD risk (Guerreiro/Hardy NEJM 2013). Function: senses lipids (apoE-bound, anionic phospholipids damaged neurons), Aβ aggregates → microglia activation, phagocytosis Aβ + apoptotic debris. Loss-of-function → reduced microglia clearance → AD risk. Therapeutic strategy: TREM2 agonist antibodies → boost microglial function. Latozinemab (AL002 Alector + AbbVie partnership) Phase 2 INVOKE-2 mild-moderate AD failed primary endpoint outubro 2024 — disappointing. Concurrent: progranulin (PGRN) modulators for FTD progranulin haploinsufficiency (latozinemab AL001 latozinemab Alector). LRRK2 inhibitors Parkinson — Denali biosanlumetinib Phase 1/2 2024+ promising. Microglia transcriptional state targeting (DAM disease-associated microglia, Krasemann/Butovsky 2017 single-cell AD microglia). Field active: PROteome aLEAGUE biomarker development; INPP5D inhibitors; MS4A4A. Microglia therapeutics still emerging post-Aβ era — additive promise but standalone limit.'
+          en: 'TREM2 + microglia therapies in AD: TREM2 (Triggering Receptor Expressed on Myeloid cells 2) — microglial surface receptor signaling via DAP12. R47H rare variant ~3x AD risk (Guerreiro/Hardy NEJM 2013). Function: senses lipids (apoE-bound, anionic phospholipids of damaged neurons), Aβ aggregates → microglia activation, phagocytosis of Aβ + apoptotic debris. Loss-of-function → reduced microglia clearance → AD risk. Therapeutic strategy: TREM2 agonist antibodies → boost microglial function. Latozinemab (AL002 Alector + AbbVie partnership) Phase 2 INVOKE-2 mild-moderate AD failed primary endpoint October 2024 — disappointing. Concurrent: progranulin (PGRN) modulators for FTD progranulin haploinsufficiency (latozinemab AL001 latozinemab Alector). LRRK2 inhibitors for Parkinson — Denali biosanlumetinib Phase 1/2 2024+ promising. Microglia transcriptional state targeting (DAM disease-associated microglia, Krasemann/Butovsky 2017 single-cell AD microglia). Field active: PROteome aLEAGUE biomarker development; INPP5D inhibitors; MS4A4A. Microglia therapeutics still emerging post-Aβ era — additive promise but standalone limited.'
+        objectives: [TREM2 microglia AD]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Speech BCI brain-computer interface (Stanford Williams + UCSF Chang 2023) é…
+          en: Speech BCI brain-computer interface (Stanford Williams + UCSF Chang 2023) is…
+        choices:
+          - Real-time speech decoding from motor cortex neural activity at ~62-78 wpm via Utah arrays + RNN/transformer language models, restoring communication in ALS/brainstem stroke
+          - Pure text input without neural decoding
+          - Audio playback only
+          - Imaging without communication
+        correctAnswer: Real-time speech decoding from motor cortex neural activity at ~62-78 wpm via Utah arrays + RNN/transformer language models, restoring communication in ALS/brainstem stroke
+        rationale:
+          pt: 'Speech BCI: covered in S/set_06 brain organoids + neurotechnology. Recapping: Stanford Willett 2023 Pat Bennett ALS Utah arrays motor cortex articulatory areas → ~62 wpm RNN decoder + 125k vocabulary. Concurrent UCSF Metzger/Chang Nature 2023 Ann patient brainstem stroke → ECoG grid 253 electrodes sensorimotor cortex → ~78 wpm transformer phoneme decoder + voice synthesis (pre-loss audio recordings) + avatar facial movements. Both Phase 1+ feasibility — paradigm for restoring naturalistic communication severe paralysis. FDA approval pathway 2024-2026. Concurrent neurotech: Neuralink (Noland Arbaugh implant Jan 2024 cursor), Synchron Stentrode (intravascular minimally invasive BCI), Paradromics, Precision Neuroscience. Field 2024+ explosion clinical activity. Adjacent: optogenetic + chemogenetic neuromodulation, focused ultrasound (Insightec) blood-brain barrier opening drug delivery, low-intensity FUS sonogenetics neuromodulation. Field rapidly maturing biological + electronic neural interfacing.'
+          en: 'Speech BCI: covered in S/set_06 brain organoids + neurotechnology. Recapping: Stanford Willett 2023 Pat Bennett ALS Utah arrays in motor cortex articulatory areas → ~62 wpm RNN decoder + 125k vocabulary. Concurrent UCSF Metzger/Chang Nature 2023 Ann patient with brainstem stroke → ECoG grid 253 electrodes sensorimotor cortex → ~78 wpm transformer phoneme decoder + voice synthesis (pre-loss audio recordings) + avatar facial movements. Both Phase 1+ feasibility — paradigm for restoring naturalistic communication in severe paralysis. FDA approval pathway 2024-2026. Concurrent neurotech: Neuralink (Noland Arbaugh implant Jan 2024 cursor), Synchron Stentrode (intravascular minimally invasive BCI), Paradromics, Precision Neuroscience. Field 2024+ explosion of clinical activity. Adjacent: optogenetic + chemogenetic neuromodulation, focused ultrasound (Insightec) blood-brain barrier opening for drug delivery, low-intensity FUS sonogenetics neuromodulation. Field rapidly maturing — biological + electronic neural interfacing.'
+        objectives: [Speech BCI]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Frontotemporal dementia C9orf72 + GRN é…
+          en: Frontotemporal dementia C9orf72 + GRN is…
+        choices:
+          - C9orf72 hexanucleotide repeat expansion (GGGGCC) most common FTD/ALS cause; GRN haploinsufficiency in FTD; Alector latozinemab AL001 progranulin restoration FDA Breakthrough 2024
+          - Pure tau-only mechanism without other genes
+          - Single-gene autosomal dominant only
+          - Vascular dementia without genetic component
+        correctAnswer: C9orf72 hexanucleotide repeat expansion (GGGGCC) most common FTD/ALS cause; GRN haploinsufficiency in FTD; Alector latozinemab AL001 progranulin restoration FDA Breakthrough 2024
+        rationale:
+          pt: 'Frontotemporal dementia (FTD) genetics: ~30-40% familial component. Major genes: (1) C9orf72 hexanucleotide repeat expansion (GGGGCC, ~24-4500 repeats vs <30 normal) — most common FTD + ALS cause (DeJesus-Hernandez/Rademakers Neuron 2011 + Renton/Traynor Neuron 2011 simultaneous discovery). Mechanism: C9orf72 loss-of-function + RNA toxicity (foci) + RAN translation (RAN nucleotide-repeat-associated → dipeptide repeat proteins DPRs poly-GA poly-GP poly-PR poly-GR poly-PA — toxic aggregates). (2) GRN (progranulin) haploinsufficiency — autosomal dominant FTD-TDP-43, ~10-20% familial FTD. (3) MAPT (microtubule-associated tau) — FTD-tau (4R-tau or 3R+4R Pick disease). (4) Rare: TARDBP TDP-43, FUS, VCP, CHMP2B. Therapeutics: (1) Latozinemab AL001 (Alector + GSK partnership): anti-sortilin antibody → blocks SORT1-mediated PGRN clearance → restores progranulin levels. INFRONT-3 Phase 3 ongoing 2024+ FTD-GRN. FDA Breakthrough Designation. (2) C9orf72 ASO trials Biogen/Ionis (BIIB078) Phase 1/2 ongoing. (3) C9orf72-targeting CRISPR preclinical. Field 2024 active novel mechanisms targeting biology FTD beyond symptomatic care (only acetylcholinesterase inhibitors approved historically).'
+          en: 'Frontotemporal dementia (FTD) genetics: ~30-40% familial component. Major genes: (1) C9orf72 hexanucleotide repeat expansion (GGGGCC, ~24-4500 repeats vs <30 normal) — most common FTD + ALS cause (DeJesus-Hernandez/Rademakers Neuron 2011 + Renton/Traynor Neuron 2011 simultaneous discovery). Mechanism: C9orf72 loss-of-function + RNA toxicity (foci) + RAN translation (RAN nucleotide-repeat-associated → dipeptide repeat proteins DPRs poly-GA poly-GP poly-PR poly-GR poly-PA — toxic aggregates). (2) GRN (progranulin) haploinsufficiency — autosomal dominant FTD-TDP-43, ~10-20% of familial FTD. (3) MAPT (microtubule-associated tau) — FTD-tau (4R-tau or 3R+4R Pick disease). (4) Rare: TARDBP TDP-43, FUS, VCP, CHMP2B. Therapeutics: (1) Latozinemab AL001 (Alector + GSK partnership): anti-sortilin antibody → blocks SORT1-mediated PGRN clearance → restores progranulin levels. INFRONT-3 Phase 3 ongoing 2024+ in FTD-GRN. FDA Breakthrough Designation. (2) C9orf72 ASO trials Biogen/Ionis (BIIB078) Phase 1/2 ongoing. (3) C9orf72-targeting CRISPR preclinical. Field 2024 active novel mechanisms targeting biology of FTD beyond symptomatic care (only acetylcholinesterase inhibitors approved historically).'
+        objectives: [FTD C9orf72]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Parkinson disease genetics + therapeutics 2024 é…
+          en: Parkinson disease genetics + therapeutics 2024 is…
+        choices:
+          - LRRK2 + GBA + α-synuclein major risk genes; Denali bioteknologi NPM-001 LRRK2 inhibitor Phase 2/3 + Cerevel CEMENT Phase 2 anti-tau α-synuclein PET imaging biomarkers (Stoessl 2024)
+          - Pure environmental etiology
+          - Single-gene Mendelian only
+          - Standard tremor management without disease modification
+        correctAnswer: LRRK2 + GBA + α-synuclein major risk genes; Denali bioteknologi NPM-001 LRRK2 inhibitor Phase 2/3 + Cerevel CEMENT Phase 2 anti-tau α-synuclein PET imaging biomarkers (Stoessl 2024)
+        rationale:
+          pt: 'Parkinson disease (PD) genetics + therapeutics: ~10-15% familial PD. Major genes: (1) LRRK2 (Leucine-Rich Repeat Kinase 2) — most common Mendelian PD, G2019S variant ~5-10% of familial PD, ~30% of Ashkenazi Jewish + Maghreb-descent cases. Gain-of-function. (2) GBA (Glucocerebrosidase, Gaucher disease gene) — heterozygous mutations ~5-10% PD risk increased. Loss-of-function lysosomal dysfunction. (3) SNCA α-synuclein — autosomal dominant rare missense (A53T, E46K, A30P) + duplications/triplications gene dosage. Forms Lewy body aggregates pathognomonic. (4) PARK7/DJ-1, PINK1, Parkin (autosomal recessive young-onset PD) — mitochondrial quality control. Therapeutics 2024+: (1) LRRK2 kinase inhibitors — Denali DNL151 BIIB122 (~1B Biogen partnership 2020 → 2023 Phase 2/3 LUMA + LIGHTHOUSE) ongoing. (2) GBA-modulators — venglustat (Sanofi GBA1-PD Phase 2 failed 2021), small molecules increasing GBA function. (3) Anti-α-synuclein antibodies — prasinezumab (Roche Phase 3 PADOVA 2024+), cinpanemab (Biogen Phase 2 SPARK 2021 failed). (4) α-Syn PET imaging — [18F]ACI-12589 Sanofi/AC Immune 2023 first selective α-syn PET tracer, enabling tracking pathology. Subsequent: GLP-1 agonists exenatide-extended-release Phase 3 + lixisenatide Lancet 2024 LIXIPARK trial — slowed PD progression mild benefit. Field 2024+ active translational research.'
+          en: 'Parkinson disease (PD) genetics + therapeutics: ~10-15% familial PD. Major genes: (1) LRRK2 (Leucine-Rich Repeat Kinase 2) — most common Mendelian PD, G2019S variant ~5-10% of familial PD, ~30% of Ashkenazi Jewish + Maghreb-descent cases. Gain-of-function. (2) GBA (Glucocerebrosidase, Gaucher disease gene) — heterozygous mutations ~5-10% PD risk increased. Loss-of-function lysosomal dysfunction. (3) SNCA α-synuclein — autosomal dominant rare missense (A53T, E46K, A30P) + duplications/triplications gene dosage. Forms Lewy body aggregates pathognomonic. (4) PARK7/DJ-1, PINK1, Parkin (autosomal recessive young-onset PD) — mitochondrial quality control. Therapeutics 2024+: (1) LRRK2 kinase inhibitors — Denali DNL151 BIIB122 (~1B Biogen partnership 2020 → 2023 Phase 2/3 LUMA + LIGHTHOUSE) ongoing. (2) GBA-modulators — venglustat (Sanofi GBA1-PD Phase 2 failed 2021), small molecules increasing GBA function. (3) Anti-α-synuclein antibodies — prasinezumab (Roche Phase 3 PADOVA 2024+), cinpanemab (Biogen Phase 2 SPARK 2021 failed). (4) α-Syn PET imaging — [18F]ACI-12589 Sanofi/AC Immune 2023 first selective α-syn PET tracer, enabling tracking pathology. Subsequent: GLP-1 agonists exenatide-extended-release Phase 3 + lixisenatide Lancet 2024 LIXIPARK trial — slowed PD progression mild benefit. Field 2024+ active translational research.'
+        objectives: [Parkinson genetics therapeutics]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: ALS / motor neuron disease therapeutics 2024+ é…
+          en: ALS / motor neuron disease therapeutics 2024+ is…
+        choices:
+          - Tofersen (SOD1 ASO Biogen FDA 2023) + AMX0035 Relyvrio (Amylyx withdrew 2024 failed Phase 3) + edaravone Radicava + riluzole — modest progress, gene-targeted promise
+          - Disease cured
+          - Pure supportive care without disease modification
+          - Single therapy approved
+        correctAnswer: Tofersen (SOD1 ASO Biogen FDA 2023) + AMX0035 Relyvrio (Amylyx withdrew 2024 failed Phase 3) + edaravone Radicava + riluzole — modest progress, gene-targeted promise
+        rationale:
+          pt: 'ALS/MND (Amyotrophic Lateral Sclerosis/Motor Neuron Disease) therapeutics: ~30000 Americans, ~2-5/100k incidence, ~3-5 year median survival. Therapeutics: (1) Riluzole (Rilutek 1995, oral): glutamate antagonist, modest ~3-month survival benefit. (2) Edaravone (Radicava Mitsubishi Tanabe FDA 2017 IV → oral 2022): free radical scavenger, modest functional decline reduction. (3) Tofersen (Qalsody, Biogen/Ionis FDA approval 25 abril 2023): ASO targeting SOD1 mRNA → degradation. Indications: SOD1-mutant ALS (~2% all ALS, ~20% familial). VALOR Phase 3 NEJM 2022 — primary endpoint not met but plasma neurofilament reduction → accelerated approval. (4) AMX0035 (Relyvrio, Amylyx, sodium phenylbutyrate + taurursodiol fixed combination): FDA accelerated approval 2022 based CENTAUR Phase 2 → Phase 3 PHOENIX trial 2024 negative → Amylyx withdrew Relyvrio April 2024 — major setback. (5) Pre-clinical/Phase 1+ pipeline: C9orf72 ASOs (Biogen BIIB078), AAV gene therapy SOD1 (AVXS-202), CRISPR therapy, stem cell therapies (NurOwn/BrainStorm), antibody to misfolded SOD1, FUS-targeted ASOs. (6) Symptomatic: dextromethorphan-quinidine Nuedexta pseudobulbar affect. Field 2024 frustrating multiple failures — basic biology defective protein folding aggregation challenge classical drug development.'
+          en: 'ALS/MND (Amyotrophic Lateral Sclerosis/Motor Neuron Disease) therapeutics: ~30000 Americans, ~2-5/100k incidence, ~3-5 year median survival. Therapeutics: (1) Riluzole (Rilutek 1995, oral): glutamate antagonist, modest ~3-month survival benefit. (2) Edaravone (Radicava Mitsubishi Tanabe FDA 2017 IV → oral 2022): free radical scavenger, modest functional decline reduction. (3) Tofersen (Qalsody, Biogen/Ionis FDA approval 25 April 2023): ASO targeting SOD1 mRNA → degradation. Indication: SOD1-mutant ALS (~2% of all ALS, ~20% of familial). VALOR Phase 3 NEJM 2022 — primary endpoint not met but plasma neurofilament reduced → accelerated approval. (4) AMX0035 (Relyvrio, Amylyx, sodium phenylbutyrate + taurursodiol fixed combination): FDA accelerated approval 2022 based on CENTAUR Phase 2 → Phase 3 PHOENIX trial 2024 negative → Amylyx withdrew Relyvrio April 2024 — major setback. (5) Pre-clinical/Phase 1+ pipeline: C9orf72 ASOs (Biogen BIIB078), AAV gene therapy SOD1 (AVXS-202), CRISPR therapy, stem cell therapies (NurOwn/BrainStorm), antibody to misfolded SOD1, FUS-targeted ASOs. (6) Symptomatic: dextromethorphan-quinidine Nuedexta for pseudobulbar affect. Field 2024 frustrating multiple failures — basic biology of defective protein folding aggregation challenges classical drug development.'
+        objectives: [ALS therapeutics]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Pain biology + non-opioid analgesics frontier é…
+          en: Pain biology + non-opioid analgesics frontier is…
+        choices:
+          - Vertex VX-548 (suzetrigine) selective Nav1.8 sodium channel inhibitor — non-opioid acute pain Phase 3 success 2024+, FDA approval expected; targeted neuropathic + acute pain
+          - Pure opioid-only approaches
+          - NSAIDs without novel targets
+          - Vaccine-based pain
+        correctAnswer: Vertex VX-548 (suzetrigine) selective Nav1.8 sodium channel inhibitor — non-opioid acute pain Phase 3 success 2024+, FDA approval expected; targeted neuropathic + acute pain
+        rationale:
+          pt: 'Vertex VX-548 (suzetrigine, Journavx): selective Nav1.8 (SCN10A) sodium channel inhibitor — peripheral nociceptor pain relief. Mecanismo: Nav1.8 expressed primarily peripheral sensory neurons (DRG dorsal root ganglia, peripheral C-fibers) — pain signal transmission essential, distinct CNS Nav1.7. Não opioid, no abuse potential, no respiratory depression. Phase 3 trials: SUSTAIN-1 + SUSTAIN-2 acute pain (post-operative bunionectomy + abdominoplasty Phase 3 NEJM 2024 + CHEN HEAVENLY HOPE 2024) — ~50-60mg q12h, significant reduction pain VAS scores vs placebo, comparable to opioid hydrocodone/acetaminophen but without opioid AEs. FDA approval 30 janeiro 2025 — first non-opioid acute pain new mechanism in decades. Cost ~$232/8-day course. Pipeline: VX-993 (next-gen Nav1.8) Phase 2 chronic neuropathic pain. Vertex investment ~$5B+ pain franchise. Concurrent non-opioid: Nektar Therapeutics PEGylated opioids partial agonists, NSAIDs improvements (resmecaftor cyclic GMP), CGRP antagonists migraine (atogepant Qulipta + ubrogepant + rimegepant). Field 2024+ explosion non-addictive pain therapeutics. Foundation discoveries: Stephen Waxman Yale Nav1.7 + Nav1.8 pain biology pioneer ~30 years.'
+          en: 'Vertex VX-548 (suzetrigine, Journavx): selective Nav1.8 (SCN10A) sodium channel inhibitor — peripheral nociceptor pain relief. Mechanism: Nav1.8 expressed primarily on peripheral sensory neurons (DRG dorsal root ganglia, peripheral C-fibers) — essential for pain signal transmission, distinct from CNS Nav1.7. Non-opioid, no abuse potential, no respiratory depression. Phase 3 trials: SUSTAIN-1 + SUSTAIN-2 acute pain (post-operative bunionectomy + abdominoplasty, Phase 3 NEJM 2024 + CHEN HEAVENLY HOPE 2024) — ~50-60mg q12h, significant reduction in pain VAS scores vs placebo, comparable to opioid hydrocodone/acetaminophen but without opioid AEs. FDA approval 30 January 2025 — first non-opioid acute pain new mechanism in decades. Cost ~$232/8-day course. Pipeline: VX-993 (next-gen Nav1.8) Phase 2 chronic neuropathic pain. Vertex investment ~$5B+ in pain franchise. Concurrent non-opioid: Nektar Therapeutics PEGylated opioids partial agonists, NSAIDs improvements (resmecaftor cyclic GMP), CGRP antagonists for migraine (atogepant Qulipta + ubrogepant + rimegepant). Field 2024+ explosion of non-addictive pain therapeutics. Foundation discoveries: Stephen Waxman Yale Nav1.7 + Nav1.8 pain biology pioneer ~30 years.'
+        objectives: [VX-548 Nav1.8]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Sleep disorders + orexin antagonists (suvorexant/lemborexant/daridorexant) é…
+          en: Sleep disorders + orexin antagonists (suvorexant/lemborexant/daridorexant) are…
+        choices:
+          - Dual orexin receptor antagonists (DORAs) for chronic insomnia — block OX1R/OX2R wake-promoting orexin signaling; FDA-approved Belsomra/Dayvigo/Quviviq alternatives to benzodiazepines
+          - Pure benzodiazepines without novel mechanism
+          - Antihistamines only
+          - Vaccine-based sleep therapy
+        correctAnswer: Dual orexin receptor antagonists (DORAs) for chronic insomnia — block OX1R/OX2R wake-promoting orexin signaling; FDA-approved Belsomra/Dayvigo/Quviviq alternatives to benzodiazepines
+        rationale:
+          pt: 'Orexin/hypocretin antagonists insomnia: orexin (hypocretin) — neuropeptide hypothalamus identified Sakurai/Yanagisawa 1998 + de Lecea/Sutcliffe 1998 simultaneous Cell. Two receptors: OX1R (orexin receptor 1) + OX2R. Wake-promoting signaling — narcolepsy type 1 caused autoimmune destruction orexin-producing neurons (orexin <1/3 normal). Insomnia drug development inverse approach: DORAs (Dual Orexin Receptor Antagonists) block both OX1R/OX2R → promote sleep transition (vs benzodiazepines GABA-A enhancement, antihistamines). FDA-approved DORAs: (1) Suvorexant (Belsomra Merck 2014) — first DORA. (2) Lemborexant (Dayvigo Eisai 2019). (3) Daridorexant (Quviviq Idorsia 2022). All similar efficacy ~30-40 minutes earlier sleep onset, similar sleep maintenance, day-after performance better than Z-drugs. Lower abuse potential vs benzo/Z-drugs. AEs: somnolence next-day, abnormal dreams. Concurrent: orexin agonists narcolepsy (Takeda TAK-925 oveporexton Phase 3 narcolepsy type 1 NEJM 2024+ promising), pitolisant (Wakix Bioprojet) histamine H3 inverse agonist for narcolepsy (FDA 2019). Field 2024+ orexin pharmacology expanding mature indications.'
+          en: 'Orexin/hypocretin antagonists for insomnia: orexin (hypocretin) — hypothalamic neuropeptide identified by Sakurai/Yanagisawa 1998 + de Lecea/Sutcliffe 1998 simultaneous Cell. Two receptors: OX1R (orexin receptor 1) + OX2R. Wake-promoting signaling — narcolepsy type 1 caused by autoimmune destruction of orexin-producing neurons (orexin <1/3 of normal). Insomnia drug development took inverse approach: DORAs (Dual Orexin Receptor Antagonists) block both OX1R/OX2R → promote sleep transition (vs benzodiazepines via GABA-A enhancement, antihistamines). FDA-approved DORAs: (1) Suvorexant (Belsomra Merck 2014) — first DORA. (2) Lemborexant (Dayvigo Eisai 2019). (3) Daridorexant (Quviviq Idorsia 2022). All have similar efficacy ~30-40 minutes earlier sleep onset, similar sleep maintenance, better day-after performance than Z-drugs. Lower abuse potential vs benzo/Z-drugs. AEs: next-day somnolence, abnormal dreams. Concurrent: orexin agonists for narcolepsy (Takeda TAK-925 oveporexton Phase 3 narcolepsy type 1 NEJM 2024+ promising), pitolisant (Wakix Bioprojet) histamine H3 inverse agonist for narcolepsy (FDA 2019). Field 2024+ orexin pharmacology expanding mature indications.'
+        objectives: [Orexin antagonists insomnia]
+target: 20
