@@ -1,0 +1,343 @@
+title:
+  pt: Biologia de Sistemas e Redes
+  en: Systems Biology and Networks
+level: P
+subject: biology
+objectives:
+  - Compreender redes (PPI, GRN, metabólicas)
+  - Reconhecer motivos (FFL, NF) e dinâmica
+  - Identificar bases de dados (KEGG, Reactome, STRING)
+  - Avaliar análise de fluxo (FBA) e modelos
+difficulty: 5
+authorNotes: |
+  Systems biology. Uri Alon (Weizmann) network motifs (FFL, NF). Hiroaki Kitano (RIKEN/SBI).
+  Leroy Hood ISB Seattle. KEGG (Kanehisa Kyoto), Reactome (Stein/EBI), STRING (Mering/Bork
+  Heidelberg). FBA: Bernhard Palsson UCSD. Robustness/redundancy. Boolean networks Kauffman.
+  Crosstalks signaling. mTOR, MAPK, Wnt, Hippo, Notch. Bionetgen, COPASI, COBRApy.
+  Mark Newman networks. Albert/Barabasi scale-free. Vidal interactome.
+example:
+  question:
+    pt: Uri Alon (Weizmann) catalogou "motivos de rede" recorrentes em redes regulatórias. Qual o mais frequente em E. coli?
+    en: Uri Alon (Weizmann) catalogued recurring "network motifs" in regulatory networks. Which is most frequent in E. coli?
+  choices:
+    - Feed-forward loop (FFL), com X regulando Y e Z, e Y regulando Z
+    - Auto-regulação positiva isolada como motif único
+    - Apenas ciclos completos com 10+ nós
+    - Topologia aleatória sem qualquer enriquecimento
+  correctAnswer: Feed-forward loop (FFL), com X regulando Y e Z, e Y regulando Z
+  rationale:
+    pt: Alon (Nat Rev Genet 2007) mostrou enriquecimento de FFLs em redes regulatórias bacterianas — particularmente "coherent FFL" (todos +) que filtra ruído de pulsos curtos. Outros motivos: feedback negativo (osciladores), bi-fan, single-input module.
+    en: Alon (Nat Rev Genet 2007) showed FFL enrichment in bacterial regulatory networks — particularly "coherent FFL" (all +) which filters short-pulse noise. Other motifs: negative feedback (oscillators), bi-fan, single-input module.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Redes e bases
+      en: Page 1 — Networks and databases
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Redes de interação proteína-proteína (PPI) humanas catalogadas em bancos como BioGRID e STRING têm ordem de…
+          en: Human protein-protein interaction (PPI) networks catalogued in BioGRID and STRING have on the order of…
+        choices:
+          - 10⁵-10⁶ interações entre ~20 mil proteínas, com cobertura crescente
+          - 100 interações totais sem qualquer escala genômica
+          - 10¹² interações testadas exaustivamente
+          - Zero, pois PPIs ainda não foram mapeadas
+        correctAnswer: 10⁵-10⁶ interações entre ~20 mil proteínas, com cobertura crescente
+        rationale:
+          pt: BioGRID, IntAct, STRING agregam ensaios Y2H, AP-MS, co-cristalização, predições. Estimativa: ~600k binárias, com cobertura crescente. Vidal et al. HuRI (Nature 2020) reportou ~53k interações por Y2H sistemático em 17 mil ORFs humanas.
+          en: BioGRID, IntAct, STRING aggregate Y2H, AP-MS, co-crystallization, predictions. Estimate: ~600k binary interactions, growing coverage. Vidal et al. HuRI (Nature 2020) reported ~53k interactions via systematic Y2H over 17k human ORFs.
+        objectives: [PPI escala]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: KEGG (Kyoto Encyclopedia of Genes and Genomes), criada por Minoru Kanehisa, fornece…
+          en: KEGG (Kyoto Encyclopedia of Genes and Genomes), by Minoru Kanehisa, provides…
+        choices:
+          - Mapas curados de vias metabólicas, sinalização, doenças com IDs cross-link a genes/composto
+          - Apenas sequências de DNA brutas sem anotação funcional
+          - Filogenias automatizadas substituindo NCBI Taxonomy
+          - Banco de cristais 3D substituindo PDB
+        correctAnswer: Mapas curados de vias metabólicas, sinalização, doenças com IDs cross-link a genes/composto
+        rationale:
+          pt: KEGG (Kyoto, desde 1995) curou ~550 mapas pathway (metabolismo, sinalização, doenças, fármacos). KEGG Orthology (KO) ID conecta genes ortólogos. Padrão para anotação funcional de genomas microbianos e enrichment analysis. Reactome (EBI) é alternativa orientada a humanos.
+          en: KEGG (Kyoto, since 1995) curated ~550 pathway maps (metabolism, signaling, disease, drugs). KEGG Orthology (KO) IDs link orthologous genes. Standard for microbial genome functional annotation and enrichment analysis. Reactome (EBI) is the human-focused alternative.
+        objectives: [KEGG]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Análise de Fluxo Balanceado (FBA, Bernhard Palsson UCSD) modela…
+          en: Flux Balance Analysis (FBA, Bernhard Palsson UCSD) models…
+        choices:
+          - Estado estacionário metabólico em rede genome-scale, otimizando função objetivo (e.g. crescimento)
+          - Apenas dinâmica transitória sem qualquer otimização
+          - Cinética enzimática individual sem rede integrada
+          - Estrutura 3D de enzimas sem qualquer fluxo molecular
+        correctAnswer: Estado estacionário metabólico em rede genome-scale, otimizando função objetivo (e.g. crescimento)
+        rationale:
+          pt: FBA: balanço de massa em rede de reações com matriz S, programação linear maximiza biomassa (ou ATP, etc.) sob restrições. Não requer parâmetros cinéticos. Aplicável a modelos genome-scale (E. coli iJO1366, humano Recon3D). Palsson estabeleceu paradigma com COBRA Toolbox.
+          en: FBA: steady-state mass balance over reaction network with stoichiometric matrix S, LP maximizes biomass (or ATP, etc.) under constraints. Doesn't need kinetic parameters. Applicable to genome-scale models (E. coli iJO1366, human Recon3D). Palsson established paradigm with COBRA Toolbox.
+        objectives: [FBA]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A rede genética é frequentemente "scale-free" no sentido Barabási-Albert. Isso significa…
+          en: Genetic networks are often "scale-free" in the Barabási-Albert sense. This means…
+        choices:
+          - Distribuição de grau segue power-law P(k) ~ k^-γ, com hubs raros mas presentes
+          - Todos os nós têm exatamente o mesmo número de conexões
+          - Rede aleatória uniforme sem qualquer estrutura de hubs
+          - Apenas redes lineares sem qualquer ramificação
+        correctAnswer: Distribuição de grau segue power-law P(k) ~ k^-γ, com hubs raros mas presentes
+        rationale:
+          pt: Barabási/Albert (Science 1999) mostraram redes "scale-free" em internet, citações etc. Em biologia (Jeong 2000, Yook 2004), hubs como p53, Myc têm centenas de conexões; maioria dos nós tem poucas. Hubs são frequentemente essenciais (Jeong 2001) e alvos de doenças.
+          en: Barabási/Albert (Science 1999) showed scale-free networks in internet, citations, etc. In biology (Jeong 2000, Yook 2004), hubs like p53, Myc have hundreds of connections; most nodes have few. Hubs are often essential (Jeong 2001) and disease targets.
+        objectives: [Scale-free]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "lethality-essentiality" em rede PPI postula que…
+          en: "Lethality-essentiality" in PPI networks posits that…
+        choices:
+          - Hubs (alta conectividade) são desproporcionalmente essenciais quando deletados
+          - Apenas nós periféricos são essenciais para a célula
+          - Toda proteína é igualmente essencial sem qualquer estrutura
+          - Hubs são totalmente redundantes e dispensáveis
+        correctAnswer: Hubs (alta conectividade) são desproporcionalmente essenciais quando deletados
+        rationale:
+          pt: Jeong/Mason/Barabási (Nature 2001) em yeast PPI: hubs (top 5%) tinham probabilidade de essencialidade ~3x maior. Conexão entre topologia e função: deletar hub desfaz muitos complexos/vias. Coral-finding em câncer (oncogenes hubs).
+          en: Jeong/Mason/Barabási (Nature 2001) in yeast PPI: hubs (top 5%) had ~3x higher essentiality probability. Connection between topology and function: deleting a hub breaks many complexes/pathways. Coral-finding in cancer (hub oncogenes).
+        objectives: [Hubs essenciais]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O motivo "negative feedback loop" (NFL) em redes biológicas serve para…
+          en: The "negative feedback loop" (NFL) motif in biological networks serves to…
+        choices:
+          - Estabilizar concentrações via correção de erros (homeostase) e gerar oscilações
+          - Amplificar sinais arbitrariamente sem limite
+          - Eliminar resposta sinalizatória completamente
+          - Apenas memorizar estados sem processamento
+        correctAnswer: Estabilizar concentrações via correção de erros (homeostase) e gerar oscilações
+        rationale:
+          pt: NFL: produto inibe sua própria síntese — homeostase (níveis estáveis) ou oscilação (com delay/saturação). Exemplos: p53-Mdm2, NF-κB-IκB, circadiano (Per/Cry-Bmal/Clock). Repressilator de Elowitz é NFL com 3 nós em série gerando oscilação.
+          en: NFL: product inhibits its own synthesis — homeostasis (stable levels) or oscillation (with delay/saturation). Examples: p53-Mdm2, NF-κB-IκB, circadian (Per/Cry-Bmal/Clock). Elowitz's repressilator is an NFL with 3 nodes in series generating oscillation.
+        objectives: [NFL]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Boolean networks (Stuart Kauffman) modelam…
+          en: Boolean networks (Stuart Kauffman) model…
+        choices:
+          - Estados ON/OFF de genes com regras lógicas, atratores como tipos celulares
+          - Apenas dinâmica contínua de concentrações
+          - Difusão espacial sem regulação genética
+          - Estados quantum em moléculas únicas
+        correctAnswer: Estados ON/OFF de genes com regras lógicas, atratores como tipos celulares
+        rationale:
+          pt: Kauffman (1969) propôs redes booleanas para regulação genética; cada gene ON/OFF, atualizações por regras lógicas; atratores estáveis correspondem a tipos celulares. Modelos discretos NK refletem rugosidade de paisagem de fitness. Aplicações em desenvolvimento e câncer.
+          en: Kauffman (1969) proposed Boolean networks for genetic regulation; each gene ON/OFF, updates by logic rules; stable attractors correspond to cell types. Discrete NK models reflect fitness-landscape ruggedness. Applications in development and cancer.
+        objectives: [Boolean networks]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: SBML (Systems Biology Markup Language) é importante para a comunidade por…
+          en: SBML (Systems Biology Markup Language) is important to the community because it…
+        choices:
+          - Padrão XML aberto para modelos biológicos quantitativos, permitindo intercâmbio entre softwares
+          - Linguagem proprietária de empresa única
+          - Substituição direta de Python em todos os contextos
+          - Apenas formato de imagem para diagramas de redes
+        correctAnswer: Padrão XML aberto para modelos biológicos quantitativos, permitindo intercâmbio entre softwares
+        rationale:
+          pt: SBML (Hucka 2003) padroniza descrição de modelos cinéticos/estequiométricos. Permite que CellDesigner, COPASI, Tellurium, Bionetgen, MATLAB SimBio carreguem mesmo modelo. BioModels Database hospeda 2000+ modelos curados em SBML.
+          en: SBML (Hucka 2003) standardizes kinetic/stoichiometric model descriptions. Lets CellDesigner, COPASI, Tellurium, Bionetgen, MATLAB SimBio load the same model. BioModels Database hosts 2000+ curated SBML models.
+        objectives: [SBML]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: GO (Gene Ontology) é fundamental em sistemas biológicos por…
+          en: GO (Gene Ontology) is foundational in systems biology because it…
+        choices:
+          - Vocabulário controlado e estruturado de função molecular, processo biológico, componente celular
+          - Banco de sequências brutas substituindo GenBank
+          - Apenas árvore filogenética sem componente funcional
+          - Sistema de nomenclatura de fármacos comerciais
+        correctAnswer: Vocabulário controlado e estruturado de função molecular, processo biológico, componente celular
+        rationale:
+          pt: GO (Ashburner 2000, Nat Genet) tem 3 ontologias: MF (molecular function), BP (biological process), CC (cellular component). Termos hierárquicos (DAG) com ~50k entradas. Fundamental para análises de enrichment (clusterProfiler, DAVID, Enrichr).
+          en: GO (Ashburner 2000, Nat Genet) has 3 ontologies: MF (molecular function), BP (biological process), CC (cellular component). Hierarchical terms (DAG) with ~50k entries. Foundational for enrichment analyses (clusterProfiler, DAVID, Enrichr).
+        objectives: [GO ontology]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Análise de "enrichment" (e.g. GSEA, Subramanian 2005) procura…
+          en: Enrichment analysis (e.g., GSEA, Subramanian 2005) seeks…
+        choices:
+          - Conjuntos de genes (pathways, GO) sobre-representados em lista ranqueada por estatística
+          - Sequências mais longas em datasets de RNA-seq
+          - Apenas variantes patogênicas em pacientes oncológicos
+          - SNPs altamente conservados em escala genômica
+        correctAnswer: Conjuntos de genes (pathways, GO) sobre-representados em lista ranqueada por estatística
+        rationale:
+          pt: GSEA (Mootha/Subramanian 2003-2005) testa se gene set tem distribuição enriquecida em ranking (e.g. log2FC). KS-like statistic. Alternativa a Fisher exact em listas threshold. MSigDB hospeda gene sets canônicos. Padrão em transcriptômica diferencial.
+          en: GSEA (Mootha/Subramanian 2003-2005) tests whether a gene set is enrichedly distributed in a ranking (e.g., log2FC). KS-like statistic. Alternative to threshold-list Fisher exact. MSigDB hosts canonical gene sets. Standard in differential transcriptomics.
+        objectives: [GSEA]
+  - title:
+      pt: Página 2 — Dinâmica e aplicações
+      en: Page 2 — Dynamics and applications
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "robustez" de redes biológicas (Kitano) refere-se a…
+          en: "Robustness" of biological networks (Kitano) refers to…
+        choices:
+          - Manutenção de função frente a perturbações (mutações, ruído, ambiente)
+          - Apenas resistência mecânica de tecidos
+          - Estabilidade temporal sem qualquer mudança
+          - Imunidade contra qualquer manipulação experimental
+        correctAnswer: Manutenção de função frente a perturbações (mutações, ruído, ambiente)
+        rationale:
+          pt: Kitano (Nat Rev Genet 2004) formalizou robustez: redundância, feedback, modularidade, neutralidade. Trade-offs: alta robustez frente a perturbações comuns mas frágil a ataques alvejados (hubs). Câncer subverte robustez normal.
+          en: Kitano (Nat Rev Genet 2004) formalized robustness: redundancy, feedback, modularity, neutrality. Trade-offs: high robustness vs common perturbations but fragile to targeted attacks (hubs). Cancer subverts normal robustness.
+        objectives: [Robustez]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "sinalização" Wnt/β-catenina é importante exemplo de via canônica em sistemas porque…
+          en: Wnt/β-catenin signaling is an important canonical pathway example in systems because it…
+        choices:
+          - Conserva-se de fungos a humanos, regula desenvolvimento, regeneração e câncer (cólon)
+          - Apenas humano em órgão específico sem conservação
+          - É exclusivamente embriológica, sem papel adulto
+          - Sinaliza apenas em organismos unicelulares
+        correctAnswer: Conserva-se de fungos a humanos, regula desenvolvimento, regeneração e câncer (cólon)
+        rationale:
+          pt: Wnt: ligante extracelular → Frizzled/LRP → DVL → estabiliza β-catenina → núcleo → TCF/LEF transcrição (c-Myc, ciclina D). Mutações APC (β-catenin destruction complex) → câncer colorretal (~80%). Conservada em todos os animais. Alvo de drogas: porcupine, β-catenin inhibitors.
+          en: Wnt: extracellular ligand → Frizzled/LRP → DVL → stabilizes β-catenin → nucleus → TCF/LEF transcription (c-Myc, cyclin D). APC mutations (β-catenin destruction complex) → colorectal cancer (~80%). Conserved across animals. Drug targets: porcupine, β-catenin inhibitors.
+        objectives: [Wnt]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "synthetic lethality" em farmacologia explora…
+          en: "Synthetic lethality" in pharmacology exploits…
+        choices:
+          - Pares de genes onde perda de ambos é letal mas perda de cada um isoladamente é viável
+          - Apenas dose excessiva de fármaco indução letal
+          - Combinação de toxicidade aguda em qualquer paciente
+          - Substituição de quimioterapia por imunoterapia em todos os casos
+        correctAnswer: Pares de genes onde perda de ambos é letal mas perda de cada um isoladamente é viável
+        rationale:
+          pt: Synthetic lethality: par A-B onde A^- e B^- isolados são viáveis, mas A^- B^- letais. PARP-i em BRCA1/2 mutados é exemplo clínico (Bryant/Helleday 2005, Farmer/Ashworth 2005). Olaparib aprovado para mama/ovário/próstata BRCA1/2. Princípio se estende a SL synthetic vulnerabilities.
+          en: Synthetic lethality: pair A-B where A^- and B^- alone are viable, but A^- B^- lethal. PARP-i in BRCA1/2-mutated tumors is the clinical example (Bryant/Helleday 2005, Farmer/Ashworth 2005). Olaparib approved for BRCA1/2 breast/ovarian/prostate. Principle extends to SL synthetic vulnerabilities.
+        objectives: [SL PARP]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: COBRApy e Recon3D (Brunk 2018) representam frente em…
+          en: COBRApy and Recon3D (Brunk 2018) represent the frontier in…
+        choices:
+          - Modelos metabólicos genome-scale humanos (~13 mil reações) integrando proteínas, transcrição
+          - Apenas modelos de E. coli sem qualquer humano
+          - Estrutura 3D de proteínas catalíticas
+          - Substituição completa de FBA por modelos kineticos
+        correctAnswer: Modelos metabólicos genome-scale humanos (~13 mil reações) integrando proteínas, transcrição
+        rationale:
+          pt: Recon3D (Brunk et al., Nat Biotech 2018) tem 13.5k reações, 4k metabólitos, 3.7k genes — modelo metabólico humano abrangente integrado a estruturas 3D e expressão. COBRApy é toolkit Python para FBA, simulações, integrações. Aplicações em câncer, gemelar, diagnóstico.
+          en: Recon3D (Brunk et al., Nat Biotech 2018) has 13.5k reactions, 4k metabolites, 3.7k genes — comprehensive human metabolic model integrated with 3D structures and expression. COBRApy is a Python toolkit for FBA, simulations, integrations. Applications in cancer, dual, diagnostics.
+        objectives: [Recon3D]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "modularidade" em redes biológicas é importante porque…
+          en: Modularity in biological networks is important because it…
+        choices:
+          - Permite evoluibilidade independente, especialização funcional e isolamento de perturbações
+          - Aumenta a fragilidade da rede inteira
+          - Elimina necessidade de redundância em qualquer organismo
+          - Reduz a possibilidade de novas funções emergirem
+        correctAnswer: Permite evoluibilidade independente, especialização funcional e isolamento de perturbações
+        rationale:
+          pt: Modularidade: subgrupos densamente conectados internamente, frouxamente entre si — facilita evolução por reúso de módulos (Wagner 2008). Detectada via Louvain, Leiden em redes. Pathways canônicos KEGG são modulares; complexos proteicos identificáveis via clustering.
+          en: Modularity: subgroups densely connected internally, loosely between — facilitates evolution by module reuse (Wagner 2008). Detected via Louvain, Leiden in networks. KEGG canonical pathways are modular; protein complexes identifiable via clustering.
+        objectives: [Modularidade]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em câncer, atlas de redes (TCGA Pan-Cancer) revelaram…
+          en: In cancer, network atlases (TCGA Pan-Cancer) revealed…
+        choices:
+          - Apenas ~20 vias core (RTK/RAS, p53, ciclo celular, PI3K, etc.) recorrentemente alteradas
+          - Cada câncer tem perfil único sem qualquer convergência
+          - Apenas mutações pontuais sem impacto em redes
+          - Câncer é puramente epigenético sem alteração genética
+        correctAnswer: Apenas ~20 vias core (RTK/RAS, p53, ciclo celular, PI3K, etc.) recorrentemente alteradas
+        rationale:
+          pt: Sanchez-Vega/Schultz/Sander/Cell 2018 (TCGA Pan-Cancer) mostrou que ~10 vias canônicas (RTK/RAS/PI3K, p53, ciclo, Wnt, TGFβ, NRF2, Notch, Myc, Hippo, β-catenin) são alteradas em ~89% dos tumores. Convergência funcional > diversidade mutacional aparente.
+          en: Sanchez-Vega/Schultz/Sander/Cell 2018 (TCGA Pan-Cancer) showed ~10 canonical pathways (RTK/RAS/PI3K, p53, cycle, Wnt, TGFβ, NRF2, Notch, Myc, Hippo, β-catenin) altered in ~89% of tumors. Functional convergence > apparent mutational diversity.
+        objectives: [Pan-cancer pathways]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Modelagem de "stochastic gene expression" em células únicas (Elowitz 2002 Science) revelou…
+          en: Stochastic gene expression modeling in single cells (Elowitz 2002 Science) revealed…
+        choices:
+          - Ruído intrínseco (transcrição em bursts) e extrínseco (concentrações de TFs) gerando heterogeneidade
+          - Expressão é exclusivamente determinística sem qualquer variação
+          - Toda heterogeneidade é causada por mutações somáticas
+          - Apenas células diferenciadas têm expressão variável
+        correctAnswer: Ruído intrínseco (transcrição em bursts) e extrínseco (concentrações de TFs) gerando heterogeneidade
+        rationale:
+          pt: Elowitz/Levine/Siggia/Swain (Science 2002) usou repórteres CFP/YFP em E. coli; ruído intrínseco (intra-célula) decompôs de extrínseco (entre células). Estabeleceu paradigma de stochasticidade como fonte fundamental de heterogeneidade — relevante em câncer, desenvolvimento, evolução.
+          en: Elowitz/Levine/Siggia/Swain (Science 2002) used CFP/YFP reporters in E. coli; intrinsic noise (within-cell) decomposed from extrinsic (between cells). Established stochasticity as fundamental heterogeneity source — relevant in cancer, development, evolution.
+        objectives: [Ruído gênico]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "phenotypic plasticity" em sistemas regulatórios refere-se a…
+          en: "Phenotypic plasticity" in regulatory systems refers to…
+        choices:
+          - Capacidade do mesmo genoma gerar múltiplos fenótipos conforme contexto/estresse
+          - Mutação espontânea aleatória sem regulação
+          - Apenas mudanças mendelianas sem qualquer influência ambiental
+          - Substituição de genoma por outro durante a vida
+        correctAnswer: Capacidade do mesmo genoma gerar múltiplos fenótipos conforme contexto/estresse
+        rationale:
+          pt: Plasticidade fenotípica: bistabilidade, EMT (epithelial-mesenchymal transition em câncer), persisters bacterianos, diferenciação celular reversível. Mecanismos: feedback positivos, multistabilidade. Importante em resistência a fármacos e adaptação evolutiva rápida.
+          en: Phenotypic plasticity: bistability, EMT (epithelial-mesenchymal transition in cancer), bacterial persisters, reversible cell differentiation. Mechanisms: positive feedbacks, multistability. Important in drug resistance and rapid evolutionary adaptation.
+        objectives: [Plasticidade]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: STRING (Mering, Bork) é diferente de BioGRID por…
+          en: STRING (Mering, Bork) differs from BioGRID by…
+        choices:
+          - Integrar evidências (experimentais, texto, coexpressão, genômica) em score probabilístico
+          - Conter apenas interações cristalográficas validadas
+          - Ser limitada a humanos sem outros organismos
+          - Substituir UniProt como banco de proteínas
+        correctAnswer: Integrar evidências (experimentais, texto, coexpressão, genômica) em score probabilístico
+        rationale:
+          pt: STRING agrega evidências de múltiplas fontes (experimental, text mining, neighborhood, fusion, co-occurrence, co-expression) em score combinado por organismo. Cobertura ampla (>14k organismos). Útil para hipóteses e visualização. BioGRID/IntAct mais focados em curadoria experimental.
+          en: STRING aggregates evidence from multiple sources (experimental, text mining, neighborhood, fusion, co-occurrence, co-expression) into combined score per organism. Broad coverage (>14k organisms). Useful for hypotheses and visualization. BioGRID/IntAct more focused on experimental curation.
+        objectives: [STRING]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Atlas de connectoma celular humano (Human Cell Atlas, HCA) tem qual relação com biologia de sistemas?
+          en: Human Cell Atlas (HCA) has what relation to systems biology?
+        choices:
+          - Censo single-cell de tipos/estados celulares para construir referência integrativa
+          - Apenas catálogo de pacientes oncológicos sem diversidade tecidual
+          - Substitui completamente atlas histopatológicos clássicos
+          - Apenas anotação anatômica macroscópica sem nível celular
+        correctAnswer: Censo single-cell de tipos/estados celulares para construir referência integrativa
+        rationale:
+          pt: HCA (Aviv Regev, Sarah Teichmann iniciativa 2016) integra scRNA-seq, scATAC-seq, espacial em mapeia ~37 trilhões células humanas em tipos/estados. Referência para fenotipagem em saúde/doença. Tabula Sapiens/Tabula Muris são contribuições relacionadas. Bedrock para inferência de redes celular-específicas.
+          en: HCA (Aviv Regev, Sarah Teichmann initiative 2016) integrates scRNA-seq, scATAC-seq, spatial to map ~37 trillion human cells into types/states. Reference for health/disease phenotyping. Tabula Sapiens/Tabula Muris are related contributions. Bedrock for cell-specific network inference.
+        objectives: [HCA]
+target: 20
