@@ -1,0 +1,343 @@
+title:
+  pt: Telemedicina e Monitoramento Remoto
+  en: Telemedicine and Remote Monitoring
+level: Q
+subject: biology
+objectives:
+  - Compreender modalidades (sync, async, store-forward)
+  - Reconhecer regulação (HIPAA, EU GDPR, licenciamento)
+  - Identificar RPM (remote patient monitoring)
+  - Avaliar evidências de outcomes
+difficulty: 5
+authorNotes: |
+  Telemedicine. ATA (American Telemedicine Association). Pre-COVID ~1% visits; pandemic spike
+  ~30%. CMS waivers 2020 expanded coverage. Synchronous (video), asynchronous (store-forward),
+  RPM. State licensing barriers US. International: India eSanjeevani, China Tencent. RPM
+  CPT codes 99453-99458. CMS reimbursement post-2020 sustained. Mental health: BetterHelp,
+  Talkspace. Specialist tele-derm, tele-stroke (TeleStroke Brigham), tele-ICU.
+example:
+  question:
+    pt: A telemedicina se expandiu rapidamente em 2020 porque…
+    en: Telemedicine rapidly expanded in 2020 because…
+  choices:
+    - COVID-19 + CMS PHE waivers + cross-state licensing relaxado, indo de ~1% a ~30% visits
+    - Apenas inovação tecnológica
+    - Sem qualquer crescimento
+    - Apenas em US
+  correctAnswer: COVID-19 + CMS PHE waivers + cross-state licensing relaxado, indo de ~1% a ~30% visits
+  rationale:
+    pt: Pre-pandemic: ~1% Medicare visits via tele. Mar/2020 PHE: CMS expanded telehealth (audio-only included), state licensing relaxado, HIPAA enforcement discretion para Zoom etc. Pico ~30-50% visits Apr/2020; estabilizou ~17% pós-pandemia (>20x baseline). Permanente: post-2024 CMS rule extended muitas flexibilities.
+    en: Pre-pandemic: ~1% Medicare visits via tele. Mar 2020 PHE: CMS expanded telehealth (audio-only included), relaxed state licensing, HIPAA enforcement discretion for Zoom etc. Peak ~30-50% visits Apr 2020; stabilized ~17% post-pandemic (>20x baseline). Permanent: post-2024 CMS rule extended many flexibilities.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Modalidades e regulação
+      en: Page 1 — Modalities and regulation
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: As modalidades primárias de telemedicina são…
+          en: Primary telemedicine modalities are…
+        choices:
+          - Sync video, async store-forward (e.g. tele-derm fotos), RPM (devices), mHealth (apps)
+          - Apenas video
+          - Sem qualquer modalidade
+          - Apenas chat
+        correctAnswer: Sync video, async store-forward (e.g. tele-derm fotos), RPM (devices), mHealth (apps)
+        rationale:
+          pt: ATA modalities: Synchronous (real-time video), Asynchronous (store-forward — derm photos, ECG over email), Remote Patient Monitoring (RPM, IoT devices reporting), Mobile Health (mHealth apps). Cada com diferente regulatory + reimbursement. Telephone (audio-only) controvertido pre-pandemic; CMS aceitou em PHE.
+          en: ATA modalities: Synchronous (real-time video), Asynchronous (store-forward — derm photos, ECG over email), Remote Patient Monitoring (RPM, IoT devices reporting), Mobile Health (mHealth apps). Each with different regulation + reimbursement. Telephone (audio-only) controversial pre-pandemic; CMS accepted in PHE.
+        objectives: [Modalities]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: TeleStroke (Brigham, Massachusetts model) é importante por…
+          en: TeleStroke (Brigham, Massachusetts model) is important for…
+        choices:
+          - Conectar primary stroke centers a comprehensive via vídeo + imaging em tempo real para tPA decisions
+          - Apenas educação
+          - Sem qualquer impacto
+          - Apenas em US
+        correctAnswer: Conectar primary stroke centers a comprehensive via vídeo + imaging em tempo real para tPA decisions
+        rationale:
+          pt: TeleStroke (Massachusetts General/Lee Schwamm 2000s+): hub-and-spoke. Spoke ED faz CT, ativa hub neurologist via video; hub revisa imaging, recomenda tPA ou transfer mechanical thrombectomy. Reduz door-to-needle time. Replicado mundialmente. AHA endorsed. Outcomes: similar a in-person evaluation. Crítico para windows < 4.5h.
+          en: TeleStroke (Massachusetts General/Lee Schwamm 2000s+): hub-and-spoke. Spoke ED does CT, activates hub neurologist via video; hub reviews imaging, recommends tPA or transfer for mechanical thrombectomy. Reduces door-to-needle time. Replicated worldwide. AHA endorsed. Outcomes: similar to in-person evaluation. Critical for <4.5h windows.
+        objectives: [TeleStroke]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Tele-ICU (Phillips eICU, Mercy Virtual) cobre o quê?
+          en: Tele-ICU (Phillips eICU, Mercy Virtual) covers what?
+        choices:
+          - Monitoring 24/7 de ICU patients via remote intensivists e nurses, suportando rural hospitals
+          - Apenas video calls
+          - Sem qualquer função
+          - Apenas em US states
+        correctAnswer: Monitoring 24/7 de ICU patients via remote intensivists e nurses, suportando rural hospitals
+        rationale:
+          pt: eICU/Tele-ICU: 1 intensivist + nurses centrally monitor ~150-200 ICU beds. Vital signs, alarms, EHR integration. Útil em ICUs rurais (specialist shortage), nights/weekends. Studies: reduced mortality, LOS (Lilly 2014 JAMA). Modelo: Mercy Virtual (Missouri) primeiro hospital "without walls". Pós-pandemic crescente.
+          en: eICU/Tele-ICU: 1 intensivist + nurses centrally monitor ~150-200 ICU beds. Vital signs, alarms, EHR integration. Useful in rural ICUs (specialist shortage), nights/weekends. Studies: reduced mortality, LOS (Lilly 2014 JAMA). Model: Mercy Virtual (Missouri) first "hospital without walls". Post-pandemic growing.
+        objectives: [Tele-ICU]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em US, "interstate licensure compact" (IMLC, PSYPACT) facilita…
+          en: In US, "interstate licensure compact" (IMLC, PSYPACT) facilitates…
+        choices:
+          - Físicos/psicólogos atender em múltiplos estados sem licença em cada via fast-track
+          - Apenas single state
+          - Sem qualquer compact
+          - Apenas em pediatria
+        correctAnswer: Físicos/psicólogos atender em múltiplos estados sem licença em cada via fast-track
+        rationale:
+          pt: IMLC (Interstate Medical Licensure Compact, 2017+): ~40 estados membros. Fast-track licensing em outros estados para physicians já licensed. PSYPACT (psychology): expandido pós-COVID. Não elimina licensing por estado mas streamlined. Federal proposals (Pelosi/Sanders) para nationwide telehealth licensure não passaram.
+          en: IMLC (Interstate Medical Licensure Compact, 2017+): ~40 member states. Fast-track licensing in other states for already-licensed physicians. PSYPACT (psychology): expanded post-COVID. Doesn't eliminate state licensing but streamlines. Federal proposals (Pelosi/Sanders) for nationwide telehealth licensure didn't pass.
+        objectives: [IMLC]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: RPM (Remote Patient Monitoring) reembolsado por CMS via CPT codes desde…
+          en: RPM (Remote Patient Monitoring) reimbursed by CMS via CPT codes since…
+        choices:
+          - 2018 (CPT 99453-99458) para devices coletando ≥16 dias/mês de dados
+          - Sem qualquer reembolso
+          - Apenas em UK
+          - Apenas para hospitalizados
+        correctAnswer: 2018 (CPT 99453-99458) para devices coletando ≥16 dias/mês de dados
+        rationale:
+          pt: CMS RPM codes (2018+): 99453 setup, 99454 device supply, 99457 first 20 min review, 99458 each additional 20 min. Devices: BP cuffs, scales, glucometers, pulse ox. Common conditions: HTN, HF, COPD, diabetes. Crescimento explosivo: ~$2B mercado em 2024. Companies: Cadence, Ouma Health, BioIntelliSense.
+          en: CMS RPM codes (2018+): 99453 setup, 99454 device supply, 99457 first 20 min review, 99458 each additional 20 min. Devices: BP cuffs, scales, glucometers, pulse ox. Common conditions: HTN, HF, COPD, diabetes. Explosive growth: ~$2B market in 2024. Companies: Cadence, Ouma Health, BioIntelliSense.
+        objectives: [RPM CPT]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Tele-mental health (BetterHelp, Talkspace) é especialmente importante por…
+          en: Tele-mental health (BetterHelp, Talkspace) is especially important for…
+        choices:
+          - Acesso a therapy em áreas com shortage de psicólogos/psiquiatras (~50% counties US)
+          - Apenas para paciente preference
+          - Sem qualquer benefício
+          - Apenas em US
+        correctAnswer: Acesso a therapy em áreas com shortage de psicólogos/psiquiatras (~50% counties US)
+        rationale:
+          pt: HRSA: ~158M Americans em mental health professional shortage areas. BetterHelp (~3M users), Talkspace listed company, Cerebral, Headspace Health expandiram acesso. Crítica: quality variance, patient-therapist matching, escalation protocols (suicidality). FDA aprovou primeiro DTx para insomnia (Pear Somnryst 2020) então psicotrópicos. Cresce frente.
+          en: HRSA: ~158M Americans in mental health professional shortage areas. BetterHelp (~3M users), Talkspace listed company, Cerebral, Headspace Health expanded access. Critique: quality variance, patient-therapist matching, escalation protocols (suicidality). FDA approved first DTx for insomnia (Pear Somnryst 2020) then psychiatric. Growing frontier.
+        objectives: [Tele-MH]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em LMIC, eSanjeevani (Índia 2020+) é exemplo notável por…
+          en: In LMIC, eSanjeevani (India 2020+) is a notable example because…
+        choices:
+          - Sistema nacional gratuito de telemedicina, >300M consultas, conecta rural com urban specialists
+          - Apenas em US
+          - Sem qualquer escala
+          - Apenas para US
+        correctAnswer: Sistema nacional gratuito de telemedicina, >300M consultas, conecta rural com urban specialists
+        rationale:
+          pt: eSanjeevani: governo Indiano (Ministry of Health) lançou abr/2020 PHE COVID. Plataforma multilingue + smartphone-friendly. >300M consultas até 2024. Modelo doctor-to-patient (D2P) e doctor-to-doctor (D2D, hub-and-spoke). Escala massiva única. Modelo replicável em outros LMIC. Tencent Healthcare na China também grande.
+          en: eSanjeevani: Indian government (Ministry of Health) launched Apr 2020 COVID PHE. Multilingual + smartphone-friendly platform. >300M consultations through 2024. Doctor-to-patient (D2P) and doctor-to-doctor (D2D, hub-and-spoke) models. Unique massive scale. Replicable model in other LMICs. Tencent Healthcare in China also large.
+        objectives: [eSanjeevani]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em outcomes, evidências para telemedicina mostram…
+          en: In outcomes, evidence for telemedicine shows…
+        choices:
+          - Equivalência geral em primary care + behavioral health; menos clear em complex specialty
+          - Sempre inferior
+          - Sempre superior
+          - Sem qualquer evidência
+        correctAnswer: Equivalência geral em primary care + behavioral health; menos clear em complex specialty
+        rationale:
+          pt: Cochrane reviews + systematic reviews: telemedicina equivalente para diabetes management, depression, hypertension, follow-ups. Variável: dermatology (depende de imagem qualidade), specialty (cardiology, neurology) — physical exam loss. Outcomes patient satisfaction high. Concerns: missed diagnoses (não-verbal cues, palpation), continuity de care.
+          en: Cochrane reviews + systematic reviews: telemedicine equivalent for diabetes management, depression, hypertension, follow-ups. Variable: dermatology (depends on image quality), specialty (cardiology, neurology) — loss of physical exam. High patient satisfaction outcomes. Concerns: missed diagnoses (non-verbal cues, palpation), continuity of care.
+        objectives: [Outcomes]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em "Hospital at Home" (Boston Brigham/Mount Sinai/Atrius/Kaiser) o paciente…
+          en: In "Hospital at Home" (Boston Brigham/Mount Sinai/Atrius/Kaiser) the patient…
+        choices:
+          - Recebe acute hospital-level care no domicílio via telemedicine + visitas + RPM
+          - Apenas hospitalizado
+          - Sem qualquer integração
+          - Apenas em UK
+        correctAnswer: Recebe acute hospital-level care no domicílio via telemedicine + visitas + RPM
+        rationale:
+          pt: Hospital at Home (Bruce Leff Hopkins 1990s+): para condições selecionadas (CHF exacerbation, pneumonia, cellulitis), care delivered home com physician/nurse visits + RPM + 24/7 video. CMS Acute Hospital Care at Home waiver dez/2020 (300+ hospitais). Outcomes: lower mortality, LOS, cost (~30% reduction Levine NEJM 2020). Equity: digital divide concerns.
+          en: Hospital at Home (Bruce Leff Hopkins 1990s+): for selected conditions (CHF exacerbation, pneumonia, cellulitis), care delivered at home with physician/nurse visits + RPM + 24/7 video. CMS Acute Hospital Care at Home waiver Dec 2020 (300+ hospitals). Outcomes: lower mortality, LOS, cost (~30% reduction Levine NEJM 2020). Equity: digital divide concerns.
+        objectives: [Hospital at Home]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "asynchronous teleophthalmology" para retinopatia diabética usa…
+          en: "Asynchronous teleophthalmology" for diabetic retinopathy uses…
+        choices:
+          - Fundus fotos no consultório primário → upload → review remoto + AI (IDx-DR), screening em massa
+          - Apenas video
+          - Sem qualquer aplicação
+          - Apenas em hospital
+        correctAnswer: Fundus fotos no consultório primário → upload → review remoto + AI (IDx-DR), screening em massa
+        rationale:
+          pt: Async tele-derm + tele-eye care: ideal para screening high-volume. UK National Diabetic Eye Screening Programme: cada paciente diabético fundus annual. EUA: Project ECHO eye care, JAEB Center. AI integration (IDx-DR) acelera. Outcomes: increased screening rates (especialmente low-income, rural). Modelo escalável.
+          en: Async tele-derm + tele-eye care: ideal for high-volume screening. UK National Diabetic Eye Screening Programme: every diabetic patient annual fundus. US: Project ECHO eye care, JAEB Center. AI integration (IDx-DR) accelerates. Outcomes: increased screening rates (especially low-income, rural). Scalable model.
+        objectives: [Async tele-eye]
+  - title:
+      pt: Página 2 — Aplicações
+      en: Page 2 — Applications
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em obstetric care, telehealth + RPM tem aplicação em…
+          en: In obstetric care, telehealth + RPM has application in…
+        choices:
+          - Pré-natal monitoramento (BP, weight, fetal movement) reduzindo visits + maternal mortality
+          - Apenas hospital
+          - Sem qualquer aplicação
+          - Apenas pediatric
+        correctAnswer: Pré-natal monitoramento (BP, weight, fetal movement) reduzindo visits + maternal mortality
+        rationale:
+          pt: Mayo Connected Care (Butler 2018), George Washington University: hybrid prenatal care (4-5 in-person + RPM). Outcomes equivalent + improved access. Importante em US (highest maternal mortality em HIC, especialmente black women). Companies: Babyscripts, Maven Clinic. Crucial post-Dobbs era para care reproductive remote.
+          en: Mayo Connected Care (Butler 2018), George Washington University: hybrid prenatal care (4-5 in-person + RPM). Equivalent outcomes + improved access. Important in US (highest maternal mortality in HIC, especially Black women). Companies: Babyscripts, Maven Clinic. Crucial post-Dobbs era for remote reproductive care.
+        objectives: [Tele-OB]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em tele-derm, store-forward com smartphone fotos é especialmente útil para…
+          en: In tele-derm, store-forward with smartphone photos is especially useful for…
+        choices:
+          - Triage initial em primary care, reduzindo wait time para dermatologists especialistas
+          - Apenas em hospitais
+          - Sem qualquer aplicação
+          - Apenas para acne
+        correctAnswer: Triage initial em primary care, reduzindo wait time para dermatologists especialistas
+        rationale:
+          pt: Tele-derm: PCP captura fotos com smartphone (or dermatoscope attachment), envia para dermatologist async review. Triage: rotina vs urgent, biopsy needed. VA US, NHS UK programs. Concordance com in-person ~80-90% para benign vs malignant. AI tools (Esteva CNN 2017, DermaSensor 2024) emergindo. App-direct (SkinVision) consumidor.
+          en: Tele-derm: PCP captures smartphone photos (or dermatoscope attachment), sends to dermatologist for async review. Triage: routine vs urgent, biopsy needed. VA US, NHS UK programs. Concordance with in-person ~80-90% for benign vs malignant. AI tools (Esteva CNN 2017, DermaSensor 2024) emerging. App-direct (SkinVision) consumer.
+        objectives: [Tele-derm]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em emergency departments, "tele-ED" hub serve para…
+          en: In emergency departments, "tele-ED" hub serves to…
+        choices:
+          - Conectar pequenos rural EDs com specialists (neurology, psychiatry, surgical) via video
+          - Apenas atendimento sem suporte
+          - Sem qualquer função
+          - Apenas em US
+        correctAnswer: Conectar pequenos rural EDs com specialists (neurology, psychiatry, surgical) via video
+        rationale:
+          pt: Avera eCARE (Iowa, Bradshaw), Sentara/UPMC tele-ED programs. Indian Health Service 2010s+. Specialty consults: tele-neurology (stroke, status epilepticus), tele-psychiatry (suicidal ideation), tele-trauma (Mass General). Reduz boarding, transfer, melhora outcomes em rural EDs. CMS reimbursement 2020+.
+          en: Avera eCARE (Iowa, Bradshaw), Sentara/UPMC tele-ED programs. Indian Health Service 2010s+. Specialty consults: tele-neurology (stroke, status epilepticus), tele-psychiatry (suicidal ideation), tele-trauma (Mass General). Reduces boarding, transfer, improves outcomes in rural EDs. CMS reimbursement 2020+.
+        objectives: [Tele-ED]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "digital front door" em healthcare é…
+          en: "Digital front door" in healthcare is…
+        choices:
+          - Plataforma digital integrando scheduling, virtual visits, chat, RPM, payment para acesso unificado
+          - Apenas portal trivial
+          - Sem qualquer integração
+          - Apenas para hospitalizações
+        correctAnswer: Plataforma digital integrando scheduling, virtual visits, chat, RPM, payment para acesso unificado
+        rationale:
+          pt: Digital front door: OneMedical (Amazon, $3.9B 2023), CityMD, Forward, primary care chains com tech-enabled experience. EHR integrations: Epic MyChart App, Cerner. Modelos D2C (Direct-to-Consumer): Hims, Roman, Ro. Mudança: acesso self-service, menos friction. Critique: fragmentação, comoditização, fee-for-service incentives.
+          en: Digital front door: OneMedical (Amazon, $3.9B 2023), CityMD, Forward, primary care chains with tech-enabled experience. EHR integrations: Epic MyChart App, Cerner. D2C (Direct-to-Consumer) models: Hims, Roman, Ro. Shift: self-service access, less friction. Critique: fragmentation, commoditization, fee-for-service incentives.
+        objectives: [Digital front door]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em US, Medicare DSMT (Diabetes Self-Management Training) via telehealth…
+          en: In US, Medicare DSMT (Diabetes Self-Management Training) via telehealth…
+        choices:
+          - Cobertura permanente pós-PHE para CDC-recognized DPP programs com flexibility virtual
+          - Apenas in-person
+          - Sem qualquer cobertura
+          - Apenas em pediatric
+        correctAnswer: Cobertura permanente pós-PHE para CDC-recognized DPP programs com flexibility virtual
+        rationale:
+          pt: CMS DPP (Diabetes Prevention Program): coverage de DPP YMCA-style 2018+. Pós-COVID, virtual flexibility permanente para DSMT, DPP. Companies: Omada Health, Livongo (acquired Teladoc 2020), Virta Health (low-carb). Outcomes: weight loss, HbA1c reduction comparáveis a in-person. Modelo de chronic disease management.
+          en: CMS DPP (Diabetes Prevention Program): coverage of DPP YMCA-style 2018+. Post-COVID, permanent virtual flexibility for DSMT, DPP. Companies: Omada Health, Livongo (acquired by Teladoc 2020), Virta Health (low-carb). Outcomes: weight loss, HbA1c reduction comparable to in-person. Chronic disease management model.
+        objectives: [DSMT]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "embedded telehealth" em primary care é…
+          en: "Embedded telehealth" in primary care is…
+        choices:
+          - Specialist remote consultation while patient ainda em PCP office (eConsults, instant access)
+          - Apenas referral por mês
+          - Sem qualquer integração
+          - Apenas em US
+        correctAnswer: Specialist remote consultation while patient ainda em PCP office (eConsults, instant access)
+        rationale:
+          pt: eConsults / curbside consults via async messaging em EHR. Liberou clinical time. Reduzs wait time semanas → horas/dias. CMS reimburses 99451-99452. Studies: AltaMed, Champlain Quebec. Especialmente útil em integrated systems (Kaiser, VA). Crescente em onco, cardiology, pediatric specialists.
+          en: eConsults / curbside consults via async messaging in EHR. Frees clinical time. Reduces wait time from weeks → hours/days. CMS reimburses 99451-99452. Studies: AltaMed, Champlain Quebec. Especially useful in integrated systems (Kaiser, VA). Growing in onco, cardiology, pediatric specialists.
+        objectives: [eConsults]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: HIPAA enforcement durante PHE foi…
+          en: HIPAA enforcement during PHE was…
+        choices:
+          - Discretion para non-compliant platforms (Zoom, FaceTime) — flexibility temporária; ended mai/2023
+          - Sempre stricto
+          - Sem qualquer mudança
+          - Apenas em pediatria
+        correctAnswer: Discretion para non-compliant platforms (Zoom, FaceTime) — flexibility temporária; ended mai/2023
+        rationale:
+          pt: OCR HHS mar/2020: enforcement discretion para good-faith use de non-public-facing video (Zoom, FaceTime, Google Meet) sem BAA durante PHE. End mai/2023 com PHE expiry. Hoje: BAAs obrigatórias com vendors compliantes (Zoom for Healthcare, doxy.me). State laws (Texas medical board) podem variar. Patient privacy desafio crescente.
+          en: OCR HHS Mar 2020: enforcement discretion for good-faith use of non-public-facing video (Zoom, FaceTime, Google Meet) without BAA during PHE. End May 2023 with PHE expiry. Today: BAAs required with compliant vendors (Zoom for Healthcare, doxy.me). State laws (Texas medical board) may vary. Growing patient privacy challenge.
+        objectives: [HIPAA PHE]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em "asynchronous chat" platforms (Hims, Roman, Curology), Direct-to-Consumer…
+          en: In "asynchronous chat" platforms (Hims, Roman, Curology), Direct-to-Consumer…
+        choices:
+          - Healthcare commoditizado para indications limitadas (acne, ED, hair loss); critics warn fragmentação
+          - Apenas curiosidade
+          - Sem qualquer impacto
+          - Apenas em pediatria
+        correctAnswer: Healthcare commoditizado para indications limitadas (acne, ED, hair loss); critics warn fragmentação
+        rationale:
+          pt: D2C health: Hims (~3M customers), Ro (Roman), Cerebral mental health, Curology dermatology. Modelo: questionário online → physician review (geralmente brief async) → prescrição → home delivery. Vantagem: convenience, privacy, low cost. Riscos: minimal physician contact, missed serious diagnoses, fragmentation de care, controlled substance abuse (Cerebral Adderall investigation 2022).
+          en: D2C health: Hims (~3M customers), Ro (Roman), Cerebral mental health, Curology dermatology. Model: online questionnaire → physician review (usually brief async) → prescription → home delivery. Advantage: convenience, privacy, low cost. Risks: minimal physician contact, missed serious diagnoses, care fragmentation, controlled substance abuse (Cerebral Adderall investigation 2022).
+        objectives: [D2C]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em medicaid, telehealth coverage e PHE flexibilities…
+          en: In Medicaid, telehealth coverage and PHE flexibilities…
+        choices:
+          - Variam por state; algumas extending pós-PHE, outras restringindo audio-only
+          - Uniformes
+          - Sem qualquer mudança
+          - Apenas em pediatria
+        correctAnswer: Variam por state; algumas extending pós-PHE, outras restringindo audio-only
+        rationale:
+          pt: Medicaid: state-by-state. Mancando: 50% states adopted permanent telehealth parity laws 2024. Audio-only: Medicare adicionou em CMS 2023; Medicaid varia. Equity tema: rural Medicaid recipients beneficiam-se massivamente. Uninsured adults D2C — gap em coverage. Federal proposals for nationwide standards continuam.
+          en: Medicaid: state-by-state. Tracking: 50% of states adopted permanent telehealth parity laws by 2024. Audio-only: Medicare added in CMS 2023; Medicaid varies. Equity theme: rural Medicaid recipients massively benefit. Uninsured adults D2C — gap in coverage. Federal proposals for nationwide standards continue.
+        objectives: [Medicaid]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O futuro de telemedicina aponta para…
+          en: The future of telemedicine points to…
+        choices:
+          - Hybrid care (in-person + virtual + RPM + AI), AI-augmented, ambient documentation
+          - Apenas in-person
+          - Sem qualquer evolução
+          - Apenas D2C
+        correctAnswer: Hybrid care (in-person + virtual + RPM + AI), AI-augmented, ambient documentation
+        rationale:
+          pt: Future telemedicine: hybrid care models (Geisinger ProvenCare, Kaiser virtual-first), ambient documentation (DAX), AI clinical decision support, RPM-driven care, integration de mental health. PHE forçou mainstream; estabilização em ~17-25% visits. Equity, regulation, reimbursement, quality continuam desafios. Generative AI mudará workflow.
+          en: Future telemedicine: hybrid care models (Geisinger ProvenCare, Kaiser virtual-first), ambient documentation (DAX), AI clinical decision support, RPM-driven care, mental health integration. PHE forced mainstream; stabilization at ~17-25% visits. Equity, regulation, reimbursement, quality remain challenges. Generative AI will change workflow.
+        objectives: [Future tele]
+target: 20
