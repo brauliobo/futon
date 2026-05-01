@@ -1,0 +1,347 @@
+title:
+  pt: Imunometabolismo e Reprogramação de Células Imunes
+  en: Immunometabolism and Immune Cell Reprogramming
+level: O
+subject: biology
+objectives:
+  - Compreender Warburg em T-cells e macrófagos M1/M2
+  - Reconhecer metabólitos sinalizadores (succinato, itaconato, lactato)
+  - Identificar alvos terapêuticos (IDO, GLS, ACC)
+  - Avaliar exaustão T mitocondrial em câncer/infecção crônica
+difficulty: 5
+authorNotes: |
+  Frontier immunometabolism. Field founders: Erika Pearce (Max Planck/JHU), Edward Pearce,
+  Luke O'Neill (Trinity Dublin). Macrophage M1 (glycolysis, succinate, itaconate via Irg1)
+  vs M2 (FAO, OXPHOS). Itaconate immunoregulator (Mills 2018, O'Neill). T-cells: naive
+  (OXPHOS), activated (glycolysis Warburg), memory (FAO). Tregs (FAO/lipid). Asparagine
+  Wei et al. 2020. Glutamine: GLS1 inhibitor CB-839 telaglenastat (Calithera Ph3 fail RCC).
+  Tryptophan/IDO: epacadostat (Incyte ECHO-301 fail melanoma 2018). Lactate as signaling
+  (lactylation Zhao et al. 2019). Mitochondrial exhaustion (Bengsch/Wherry/Kaech).
+  Methotrexate as classic immunometabolism drug (folate). Cancer: tumor-microenvironment
+  metabolism crowds out T cells (CD8 dysfunction). Tumor-Treg metabolism (Lim 2021).
+example:
+  question:
+    pt: O "switch metabólico" clássico em linfócitos T ativados (Warburg-like) consiste em…
+    en: The classic metabolic switch in activated T lymphocytes (Warburg-like) consists of…
+  choices:
+    - Aumento de glicólise aeróbica e lactato apesar de oxigênio disponível, com mTORC1 ativado
+    - Aumento exclusivo de fosforilação oxidativa em mitocôndrias hiperativas
+    - Conversão completa para β-oxidação de ácidos graxos sem qualquer glicólise
+    - Suspensão total do metabolismo em estado quiescente após ativação TCR
+  correctAnswer: Aumento de glicólise aeróbica e lactato apesar de oxigênio disponível, com mTORC1 ativado
+  rationale:
+    pt: T-cells naive usam OXPHOS; após engagement TCR + CD28 + IL-2, mTORC1/Myc induzem programa Warburg-like (glicólise aeróbica) que sustenta proliferação e função efetora. Memória reverte para FAO/OXPHOS oxigenativa.
+    en: Naive T cells use OXPHOS; after TCR + CD28 + IL-2 engagement, mTORC1/Myc induce a Warburg-like program (aerobic glycolysis) sustaining proliferation and effector function. Memory cells revert to oxidative FAO/OXPHOS.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Macrófagos e células T
+      en: Page 1 — Macrophages and T cells
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Macrófagos M1 (LPS/IFN-γ ativados) caracterizam-se por qual perfil metabólico?
+          en: M1 macrophages (LPS/IFN-γ activated) are characterized by which metabolic profile?
+        choices:
+          - Glicólise aeróbica, ciclo de Krebs interrompido em succinato e itaconato, OXPHOS reduzida
+          - β-oxidação de ácidos graxos predominante com OXPHOS plenamente funcional
+          - Auto-fagia maciça sem qualquer atividade glicolítica residual
+          - Apenas via de pentose-fosfato sem ciclo de Krebs ou glicólise canônica
+        correctAnswer: Glicólise aeróbica, ciclo de Krebs interrompido em succinato e itaconato, OXPHOS reduzida
+        rationale:
+          pt: M1 ativam HIF-1α e glicólise; ciclo de Krebs "quebra" em dois pontos — citrato → itaconato (via IRG1/ACOD1) e succinato acumula (inibe SDH, estabiliza HIF-1α, dispara IL-1β via ROS reverso). Tagliani/O'Neill caracterizou paradigma.
+          en: M1 cells activate HIF-1α and glycolysis; Krebs cycle "breaks" at two points — citrate → itaconate (via IRG1/ACOD1) and succinate accumulates (inhibits SDH, stabilizes HIF-1α, drives IL-1β via reverse ROS). Tannahill/O'Neill characterized this paradigm.
+        objectives: [M1 metabolism]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Itaconato, descoberto como imunorregulador por Luke O'Neill (Trinity Dublin) em 2018, atua via…
+          en: Itaconate, identified as an immunoregulator by Luke O'Neill (Trinity Dublin) in 2018, acts via…
+        choices:
+          - Alkilação eletrofílica de cisteínas em KEAP1 (ativando Nrf2) e GAPDH (modulando glicólise)
+          - Inibição direta de PI3K em todas as células do organismo simultaneamente
+          - Estímulo de produção de citocinas pró-inflamatórias TNF-α e IL-6 maciças
+          - Inibição completa de OXPHOS sem efeito sobre vias anti-inflamatórias
+        correctAnswer: Alkilação eletrofílica de cisteínas em KEAP1 (ativando Nrf2) e GAPDH (modulando glicólise)
+        rationale:
+          pt: Mills/O'Neill (Nature 2018) mostraram que itaconato derivado de IRG1/ACOD1 alkila cisteínas via Michael addition: KEAP1 (libera Nrf2 → respostas antioxidantes/anti-inflamatórias) e GAPDH (atenua glicólise). 4-octyl-itaconato mimetiza terapeuticamente.
+          en: Mills/O'Neill (Nature 2018) showed IRG1/ACOD1-derived itaconate alkylates cysteines via Michael addition: KEAP1 (releases Nrf2 → antioxidant/anti-inflammatory responses) and GAPDH (dampens glycolysis). 4-octyl-itaconate is a therapeutic mimic.
+        objectives: [Itaconato]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Tregs (T regulatórias) preferem qual metabolismo, distinto de Teff?
+          en: Tregs (regulatory T cells) prefer which metabolism, distinct from Teff?
+        choices:
+          - β-oxidação de ácidos graxos e OXPHOS, sustentada parcialmente por captação lipídica do microambiente
+          - Glicólise aeróbica intensa idêntica a Th17 com lactato elevado
+          - Apenas via pentose-fosfato sem qualquer outra fonte energética
+          - Ausência completa de metabolismo durante função supressora
+        correctAnswer: β-oxidação de ácidos graxos e OXPHOS, sustentada parcialmente por captação lipídica do microambiente
+        rationale:
+          pt: Tregs (FoxP3⁺) dependem de FAO/OXPHOS, em contraste com Teff (Th1/Th17 glicolíticos). FoxP3 reprime Myc/glicólise. Microambiente tumoral rico em lipídeos favorece Tregs (Lim et al. 2021), explicando supressão imune local.
+          en: Tregs (FoxP3⁺) depend on FAO/OXPHOS, contrasting glycolytic Teff (Th1/Th17). FoxP3 represses Myc/glycolysis. The lipid-rich tumor microenvironment favors Tregs (Lim et al. 2021), explaining local immune suppression.
+        objectives: [Treg FAO]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "exaustão de células T" em infecção crônica/câncer está associada a qual disfunção mitocondrial?
+          en: T-cell exhaustion in chronic infection/cancer is associated with which mitochondrial dysfunction?
+        choices:
+          - Mitocôndrias despolarizadas, ROS elevadas e biogênese reduzida via PGC-1α suprimida
+          - Hiperpolarização mitocondrial com superóxido elevado em todas as células T
+          - Aumento massivo de mitocôndrias funcionais sem mudança fenotípica T
+          - Fissão mitocondrial massiva sem qualquer efeito metabólico real
+        correctAnswer: Mitocôndrias despolarizadas, ROS elevadas e biogênese reduzida via PGC-1α suprimida
+        rationale:
+          pt: Bengsch/Wherry e outros mostraram que T exaustas (PD-1⁺ TOX⁺) têm mitocôndrias despolarizadas, fragmentadas, com ROS aumentadas e PGC-1α reduzido. Restaurar biogênese via PGC-1α melhora função em modelos — base de combinações com checkpoint blockade.
+          en: Bengsch/Wherry and others showed exhausted T cells (PD-1⁺ TOX⁺) have depolarized, fragmented mitochondria with elevated ROS and reduced PGC-1α. Restoring biogenesis via PGC-1α improves function in models — basis for combination with checkpoint blockade.
+        objectives: [T exaustão mt]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Memory T cells de longa duração caracterizam-se por…
+          en: Long-lived memory T cells are characterized by…
+        choices:
+          - Reserva mitocondrial alta (SRC), FAO ativa e biogênese mitocondrial via mTORC1 modulado
+          - Glicólise aeróbica máxima como T efetoras ativadas
+          - Ausência de mitocôndrias funcionais por reciclagem completa
+          - Auto-fagia ininterrupta sem qualquer fosforilação oxidativa
+        correctAnswer: Reserva mitocondrial alta (SRC), FAO ativa e biogênese mitocondrial via mTORC1 modulado
+        rationale:
+          pt: Memória central tem alta SRC (Spare Respiratory Capacity), preferindo FAO; metformina e rapamicina em modelos aumentam memória pós-vacina. Pearce/Pearce mostraram dependência crítica de biogênese mt para longevidade.
+          en: Central memory has high SRC (Spare Respiratory Capacity), preferring FAO; metformin and rapamycin in models boost post-vaccine memory. Pearce/Pearce showed critical dependence on mitochondrial biogenesis for longevity.
+        objectives: [Memory FAO]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A enzima IDO1 (indoleamine 2,3-dioxygenase) catabolisa triptofano em qual contexto imunológico?
+          en: IDO1 (indoleamine 2,3-dioxygenase) catabolizes tryptophan in which immune context?
+        choices:
+          - Microambiente tumoral e tolerância placentária, gerando kinureninas imunossupressoras
+          - Apenas em hepatócitos durante metabolismo basal sem efeito imune
+          - Em sinapses neuronais regulando neurotransmissão serotoninérgica
+          - Apenas no epitélio intestinal durante absorção alimentar
+        correctAnswer: Microambiente tumoral e tolerância placentária, gerando kinureninas imunossupressoras
+        rationale:
+          pt: IDO1 (induzida por IFN-γ) deplecta triptofano e gera kinureninas; T cells sentem fome de Trp via GCN2 e induzem anergia. Munn/Mellor 1998 mostraram em placenta. Tumores cooptam mecanismo. Epacadostat (Incyte) falhou em Ph3 ECHO-301 (2018), arrefecendo entusiasmo.
+          en: IDO1 (IFN-γ-induced) depletes tryptophan and generates kynurenines; T cells sense Trp starvation via GCN2 and become anergic. Munn/Mellor 1998 showed it in placenta. Tumors co-opt the mechanism. Epacadostat (Incyte) failed Ph3 ECHO-301 (2018), cooling enthusiasm.
+        objectives: [IDO1]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O fracasso do epacadostat em melanoma metastático ECHO-301 (2018) ensinou ao campo que…
+          en: Epacadostat's failure in metastatic melanoma ECHO-301 (2018) taught the field that…
+        choices:
+          - Inibição alvejada de uma única isoforma metabólica pode ser insuficiente em tumor já permissivo a checkpoint
+          - IDO1 não é expresso em melanoma metastático em qualquer subtipo histológico
+          - Ensaios placebo-controlados em oncologia são desnecessários e devem ser eliminados
+          - Combinar imunoterapias é sempre prejudicial e tóxico em todos os contextos clínicos
+        correctAnswer: Inibição alvejada de uma única isoforma metabólica pode ser insuficiente em tumor já permissivo a checkpoint
+        rationale:
+          pt: ECHO-301 (Long et al., Lancet Oncol 2019) testou epacadostat + pembrolizumab vs pembrolizumab em melanoma; sem benefício. Lições: TDO2 e IDO2 podem compensar; tumor com pembro-eficácia já não precisava de IDO; necessidade de biomarcadores melhores. Field cooled mas não morto.
+          en: ECHO-301 (Long et al., Lancet Oncol 2019) tested epacadostat + pembrolizumab vs pembrolizumab in melanoma; no benefit. Lessons: TDO2 and IDO2 may compensate; pembro-responsive tumors didn't need IDO; need for better biomarkers. Field cooled but not dead.
+        objectives: [Epacadostat lesson]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Glutamine na imunometabolismo é importante porque…
+          en: Glutamine in immunometabolism is important because…
+        choices:
+          - Anaplerótica para o ciclo de Krebs em T-cells ativadas e células tumorais (glutaminólise)
+          - Fonte exclusiva de oxigênio para fosforilação oxidativa nas mitocôndrias
+          - Substrato direto da via glicolítica antes da hexoquinase
+          - Inibidor natural da via mTORC1 em todas as células de mamíferos
+        correctAnswer: Anaplerótica para o ciclo de Krebs em T-cells ativadas e células tumorais (glutaminólise)
+        rationale:
+          pt: Glutamina → glutamato → α-cetoglutarato (via GLS1/GLS2 + GLUD1) reabastece Krebs para biossíntese e energia. Tumores e T-cells ativadas dependem fortemente. CB-839 (telaglenastat, Calithera) inibe GLS1; falhou Ph3 em CCR claras (2021), motivando combos com IDO/glucose-targeting.
+          en: Glutamine → glutamate → α-ketoglutarate (via GLS1/GLS2 + GLUD1) refuels Krebs for biosynthesis and energy. Tumors and activated T cells depend heavily on it. CB-839 (telaglenastat, Calithera) inhibits GLS1; failed Ph3 in clear-cell RCC (2021), motivating combos with IDO/glucose-targeting.
+        objectives: [Glutamina]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Wei et al. (Cell 2020) mostraram que a privação de qual aminoácido limita ativação de T cells e crescimento tumoral?
+          en: Wei et al. (Cell 2020) showed that deprivation of which amino acid limits T-cell activation and tumor growth?
+        choices:
+          - Asparagina, exigida para síntese proteica e proliferação após ativação TCR
+          - Lisina, essencial para histonas e modificações epigenéticas pós-ativação
+          - Triptofano, já estudado clássicamente via IDO no tumor
+          - Cisteína, necessária para síntese de glutationa antioxidante
+        correctAnswer: Asparagina, exigida para síntese proteica e proliferação após ativação TCR
+        rationale:
+          pt: Wei et al. mostraram que asparagina é limitante após ativação T; restrição inibe proliferação. Asparaginase (Erwinia, E. coli) já é tratamento de LLA; T-cells e tumores compartilham essa dependência — combinação asparaginase + checkpoint é hipótese ativa.
+          en: Wei et al. showed asparagine is limiting after T activation; restriction inhibits proliferation. Asparaginase (Erwinia, E. coli) is already a B-ALL treatment; T cells and tumors share this dependency — asparaginase + checkpoint combos are an active hypothesis.
+        objectives: [Asparagina]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito de "lactylação" de histonas, descrito por Yingming Zhao (Chicago) em 2019, refere-se a…
+          en: Histone "lactylation", described by Yingming Zhao (Chicago) in 2019, refers to…
+        choices:
+          - Modificação de lisina por lactato como marca epigenética dependente do estado glicolítico
+          - Conversão de lactato em CO2 dentro do núcleo celular sem efeito epigenético
+          - Lactato substituindo metionina na via de transmetilação clássica
+          - Polimerização de lactato em fibras estruturais nucleares semelhantes a actina
+        correctAnswer: Modificação de lisina por lactato como marca epigenética dependente do estado glicolítico
+        rationale:
+          pt: Zhang/Zhao (Nature 2019) descobriram Kla (lisina-lactil) em histonas, derivada de lactato glicolítico. Liga estado metabólico a transcrição: macrófagos M1 → M2 atenuação parcial via lactilação. Conexão direta entre Warburg e epigenoma.
+          en: Zhang/Zhao (Nature 2019) discovered Kla (lysine-lactyl) histone modification, derived from glycolytic lactate. Links metabolic state to transcription: M1 → M2 macrophage partial attenuation via lactylation. Direct bridge between Warburg and the epigenome.
+        objectives: [Lactilação]
+  - title:
+      pt: Página 2 — Tumor, infecção e terapêutica
+      en: Page 2 — Tumor, infection, and therapeutics
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O microambiente tumoral suprime T-cells via competição metabólica principalmente por…
+          en: The tumor microenvironment suppresses T cells via metabolic competition mainly by…
+        choices:
+          - Esgotamento de glicose e arginina + acúmulo de lactato/ROS pelas células tumorais
+          - Liberação de glucagon que estimula T-cells contra o próprio tumor
+          - Aumento maciço de oxigenação tecidual favorecendo OXPHOS de T efetoras
+          - Concentração elevada de glicose facilitando function T máxima
+        correctAnswer: Esgotamento de glicose e arginina + acúmulo de lactato/ROS pelas células tumorais
+        rationale:
+          pt: Tumores Warburg-ávidos consomem glicose deixando T-cells em hipoglicemia local; arginase tumoral/MDSC depleta arginina (T-cells precisam para CD3ζ); lactato ácido inibe NK/T citotóxicas. Patrick Ho/Erika Pearce/Chang descreveram este "metabolic interplay".
+          en: Warburg-avid tumors consume glucose, leaving T cells in local hypoglycemia; tumor/MDSC arginase depletes arginine (T cells need it for CD3ζ); acidic lactate inhibits NK/cytotoxic T. Patrick Ho/Erika Pearce/Chang described this "metabolic interplay".
+        objectives: [TME competição]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Mutações em IDH1/IDH2 em gliomas e LMA produzem qual oncometabólito?
+          en: IDH1/IDH2 mutations in gliomas and AML produce which oncometabolite?
+        choices:
+          - 2-hydroxyglutarato (2-HG), inibidor de dioxigenases TET/KDM e mediador de hipermetilação
+          - Lactato em concentrações milimolares acumulando-se no tumor
+          - Succinato exclusivamente como oncometabólito principal
+          - Itaconato em altíssimas concentrações intracelulares prolongadas
+        correctAnswer: 2-hydroxyglutarato (2-HG), inibidor de dioxigenases TET/KDM e mediador de hipermetilação
+        rationale:
+          pt: IDH1/2 mutadas adquirem atividade neomórfica produzindo D-2-HG; este inibe dioxigenases dependentes de αKG (TET2, KDMs, prolyl-hydroxylases). Resultado: hipermetilação CpG (G-CIMP em glioma) e bloqueio de diferenciação. Inibidores: ivosidenib (IDH1, AML/cholangiocarcinoma), enasidenib (IDH2 AML).
+          en: Mutant IDH1/2 acquire neomorphic activity producing D-2-HG; it inhibits αKG-dependent dioxygenases (TET2, KDMs, prolyl hydroxylases). Result: CpG hypermethylation (G-CIMP in glioma) and differentiation block. Inhibitors: ivosidenib (IDH1, AML/cholangiocarcinoma), enasidenib (IDH2 AML).
+        objectives: [2-HG IDH]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Macrófagos associados ao tumor (TAMs) tipicamente apresentam fenótipo M2-like que…
+          en: Tumor-associated macrophages (TAMs) typically show an M2-like phenotype that…
+        choices:
+          - Promove angiogênese, supressão imune e remodelagem matricial favorecendo o tumor
+          - Mata tumor diretamente via TNF-α em todos os casos avançados
+          - Ataca células tumorais por opsonização anti-CD47 espontânea
+          - É indistinguível de M1 inflamatório clássico em qualquer marcador metabólico
+        correctAnswer: Promove angiogênese, supressão imune e remodelagem matricial favorecendo o tumor
+        rationale:
+          pt: TAMs M2-like usam FAO/OXPHOS, secretam VEGF, IL-10, TGF-β, arginase; promovem angiogênese, fibrose e supressão de T-cells. Reprogramá-los para M1 (toll-like agonistas, anti-CD47, bloqueio CSF1R) é estratégia ativa em ensaios.
+          en: M2-like TAMs use FAO/OXPHOS, secrete VEGF, IL-10, TGF-β, arginase; promote angiogenesis, fibrosis, and T-cell suppression. Reprogramming them to M1 (TLR agonists, anti-CD47, CSF1R blockade) is an active trial strategy.
+        objectives: [TAM M2]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Metformina, metabolismo e imunidade: qual mecanismo imunológico tem sido proposto?
+          en: Metformin, metabolism, and immunity: which immune mechanism has been proposed?
+        choices:
+          - Restauração de função T mitocondrial e potencial sinergia com checkpoint inhibitors
+          - Estímulo direto de Tregs via FoxP3 em todos os pacientes diabéticos
+          - Inibição completa da resposta inata inata sem efeito sobre adaptativa
+          - Bloqueio de antígeno HLA classe I em apresentação tumoral
+        correctAnswer: Restauração de função T mitocondrial e potencial sinergia com checkpoint inhibitors
+        rationale:
+          pt: Metformina inibe Complex I, ativa AMPK, reduz mTORC1; em modelos murinos restaura função mitocondrial T-CD8 e sinergiza com anti-PD-1. Ensaios humanos exploram metformina + pembrolizumab. Eric Tartour, Pere Puigserver e outros conduzem investigações.
+          en: Metformin inhibits Complex I, activates AMPK, lowers mTORC1; in mouse models it restores CD8 T mitochondrial function and synergizes with anti-PD-1. Human trials explore metformin + pembrolizumab. Eric Tartour, Pere Puigserver, and others run investigations.
+        objectives: [Metformina imune]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em sepse, "imunoparalisia" pós-fase hiperinflamatória relaciona-se a…
+          en: In sepsis, post-hyperinflammatory "immunoparalysis" relates to…
+        choices:
+          - Tolerância endotóxica com defeito de glicólise e OXPHOS em monócitos circulantes
+          - Hiperativação persistente de M1 sem qualquer fase de resolução
+          - Aumento monoclonal de IgG sem qualquer disfunção celular metabólica
+          - Restauração total de função imune em horas após o pico inflamatório
+        correctAnswer: Tolerância endotóxica com defeito de glicólise e OXPHOS em monócitos circulantes
+        rationale:
+          pt: Mihai Netea, Hotchkiss e outros mostraram que monócitos pós-sepse têm defeito de glicólise + OXPHOS (ambas reduzidas), HLA-DR baixo, refratários a re-estímulo — base da imunoparalisia. Reprogramação metabólica (β-glucanos, IFN-γ, recombinant IL-7) em ensaios.
+          en: Mihai Netea, Hotchkiss, and others showed post-sepsis monocytes have impaired glycolysis + OXPHOS (both reduced), low HLA-DR, refractory to restimulation — the basis of immunoparalysis. Metabolic reprogramming (β-glucans, IFN-γ, recombinant IL-7) is in trials.
+        objectives: [Imunoparalisia]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "trained immunity" (imunidade treinada), descrita por Mihai Netea (Radboud), é mediada por…
+          en: "Trained immunity", described by Mihai Netea (Radboud), is mediated by…
+        choices:
+          - Reprogramação epigenética e metabólica de monócitos/NK pós-BCG ou β-glucano, com hiper-resposta heteróloga
+          - Hiper-mutação somática em BCRs/TCRs após segunda exposição antigênica clássica
+          - Ativação de Tregs específicos para antígenos da vacina BCG apenas
+          - Memória imune de longuíssimo prazo em células T efetoras CD4+
+        correctAnswer: Reprogramação epigenética e metabólica de monócitos/NK pós-BCG ou β-glucano, com hiper-resposta heteróloga
+        rationale:
+          pt: Netea propôs trained immunity: BCG, β-glucanos induzem mudanças epigenéticas (H3K4me3 em promotores) + metabólicas (glicólise, glutaminólise) em monócitos/NK que persistem por meses, gerando proteção heteróloga contra outros patógenos — Janus do dogma "memória apenas em adaptativa".
+          en: Netea proposed trained immunity: BCG, β-glucans induce epigenetic (H3K4me3 at promoters) + metabolic (glycolysis, glutaminolysis) changes in monocytes/NK persisting for months, yielding heterologous protection against other pathogens — Janus to the "memory only in adaptive" dogma.
+        objectives: [Trained immunity]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O eixo "succinato → IL-1β" em macrófagos pró-inflamatórios envolve…
+          en: The "succinate → IL-1β" axis in pro-inflammatory macrophages involves…
+        choices:
+          - Acúmulo de succinato → ROS reverso na Complex I → estabilização HIF-1α → transcrição IL-1β
+          - Succinato direto liga-se a TLR4 ativando NF-κB independente de mitocôndria
+          - Succinato é exportado e ativa GPR91 em adipócitos exclusivamente
+          - Succinato inibe NLRP3 inflamassoma reduzindo IL-1β em todos os macrófagos
+        correctAnswer: Acúmulo de succinato → ROS reverso na Complex I → estabilização HIF-1α → transcrição IL-1β
+        rationale:
+          pt: Tannahill/O'Neill (Nature 2013): succinato acumulado inibe SDH/Complex II e gera ROS reversamente na Complex I; ROS estabilizam HIF-1α que, com NF-κB, induzem IL-1β. Eixo central de inflamação metabólica em macrófagos M1.
+          en: Tannahill/O'Neill (Nature 2013): accumulated succinate inhibits SDH/Complex II and generates reverse-electron-transport ROS at Complex I; ROS stabilize HIF-1α which, with NF-κB, induces IL-1β. Central axis of metabolic inflammation in M1 macrophages.
+        objectives: [Succinato IL-1β]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A enzima ACC (acetil-CoA carboxilase), alvo emergente em imunometabolismo, é importante porque…
+          en: ACC (acetyl-CoA carboxylase), an emerging immunometabolism target, is important because it…
+        choices:
+          - Limita síntese de novo de ácidos graxos exigida por Th17 patogênicas e plasmócitos
+          - Catalisa o último passo da β-oxidação em mitocôndria como controle terminal
+          - Substrato direto de mTORC1 em vias autofágicas
+          - Conecta glicólise diretamente à via pentose-fosfato sem intermediário
+        correctAnswer: Limita síntese de novo de ácidos graxos exigida por Th17 patogênicas e plasmócitos
+        rationale:
+          pt: ACC1 catalisa acetil-CoA → malonil-CoA, primeiro passo da síntese de ácidos graxos. Th17 patogênicas, plasmócitos e tumores precisam de FAS de novo. Inibidores como firsocostat (Gilead) testados em NASH; potencial em autoimunidade está em estudo.
+          en: ACC1 catalyzes acetyl-CoA → malonyl-CoA, the first step of fatty acid synthesis. Pathogenic Th17, plasma cells, and tumors require de novo FAS. Inhibitors like firsocostat (Gilead) tested in NASH; potential in autoimmunity is under study.
+        objectives: [ACC1]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A relação entre obesidade, "inflamação metabólica" e doença é mediada principalmente por…
+          en: The link between obesity, "metaflammation", and disease is mediated mainly by…
+        choices:
+          - Macrófagos M1 e Th17 infiltrando tecido adiposo, com IL-6/TNF-α e resistência insulínica
+          - Apenas hiperglicemia direta sem qualquer participação imune
+          - Acúmulo de Tregs no tecido adiposo eliminando a inflamação
+          - Excesso de β-oxidação muscular sem qualquer envolvimento adiposo
+        correctAnswer: Macrófagos M1 e Th17 infiltrando tecido adiposo, com IL-6/TNF-α e resistência insulínica
+        rationale:
+          pt: Adiposo expandido recruta macrófagos M1 (substituindo M2 residentes) e Th17; secreção crônica de TNF-α/IL-6 induz resistência insulínica em hepatócitos/musculares. Hotamisligil cunhou "metaflammation". Subjacente a NASH, T2D e CV. Nexo imuno-metabólico.
+          en: Expanded adipose recruits M1 macrophages (replacing resident M2) and Th17; chronic TNF-α/IL-6 secretion induces insulin resistance in hepatocytes/muscle. Hotamisligil coined "metaflammation". Underlies NASH, T2D, and CV. The immuno-metabolic nexus.
+        objectives: [Metaflammation]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em vacinologia, a "memória metabólica" de células T influencia o quê?
+          en: In vaccinology, T-cell "metabolic memory" influences what?
+        choices:
+          - Durabilidade da imunidade pós-vacinal, modulável por moduladores de mTORC1 e AMPK
+          - Eficácia restrita à dose única sem qualquer efeito de boost subsequente
+          - Apenas resposta humoral primária sem participação de células de memória
+          - Sensibilidade inicial ao adjuvante sem qualquer impacto de longo prazo
+        correctAnswer: Durabilidade da imunidade pós-vacinal, modulável por moduladores de mTORC1 e AMPK
+        rationale:
+          pt: Memória central T necessita FAO/OXPHOS; rapamicina baixa-dose e metformina aumentam memória pós-vacina em modelos. Pearce, Goldrath, Kaech têm trabalhos. Aplicação humana exige titulação cuidadosa para não imunossuprimir, mas é frente ativa em vacinologia.
+          en: Central T memory requires FAO/OXPHOS; low-dose rapamycin and metformin boost post-vaccine memory in models. Pearce, Goldrath, Kaech have key works. Human application requires careful titration to avoid immunosuppression, but is an active vaccinology frontier.
+        objectives: [Memória vacinal]
+target: 20
