@@ -1,0 +1,344 @@
+title:
+  pt: Farmacologia Quantitativa e Modelagem PK/PD
+  en: Quantitative Pharmacology and PK/PD Modeling
+level: Q
+subject: biology
+objectives:
+  - Compreender PK (absorção, distribuição, metabolismo, excreção)
+  - Reconhecer PK/PD models (Emax, Hill, indirect response)
+  - Identificar PBPK e MIDD
+  - Avaliar therapeutic window e individualização
+difficulty: 5
+authorNotes: |
+  Quantitative pharmacology. PK basics: Cmax, Tmax, AUC, t1/2, Vd, CL. Compartmental models
+  (1, 2, 3-compartment). Non-linear PK (Michaelis-Menten). PD: Hill equation, EC50, sigmoid
+  Emax. Indirect response models (Jusko). PBPK (Physiologically Based PK): Rowland, Jamei
+  Simcyp. Model-Informed Drug Development (MIDD) FDA. NONMEM/Monolix. Therapeutic drug
+  monitoring (TDM): vancomycin, immunosuppressants, anticancer. Population PK Sheiner/Beal.
+  Microdosing. Goodman & Gilman classic textbook. Population variability.
+example:
+  question:
+    pt: A "AUC" (Area Under Curve) em PK representa…
+    en: "AUC" (Area Under Curve) in PK represents…
+  choices:
+    - Exposição total ao fármaco ao longo do tempo, integral de concentração
+    - Apenas concentração máxima
+    - Tempo de absorção
+    - Sem qualquer significado farmacocinético
+  correctAnswer: Exposição total ao fármaco ao longo do tempo, integral de concentração
+  rationale:
+    pt: AUC = ∫₀^∞ C(t) dt — exposição total. Calculável por trapezoidal rule. AUC ∝ dose/CL (clearance). Métrica fundamental em bioequivalência (genéricos), individualização vancomycin AUC₂₄/MIC, dose escalation oncology.
+    en: AUC = ∫₀^∞ C(t) dt — total exposure. Computable by trapezoidal rule. AUC ∝ dose/CL (clearance). Fundamental metric in bioequivalence (generics), vancomycin AUC₂₄/MIC individualization, oncology dose escalation.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Princípios PK
+      en: Page 1 — PK principles
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O modelo "one-compartment" PK de IV bolus prevê concentração C(t) =…
+          en: One-compartment PK model of IV bolus predicts concentration C(t) =…
+        choices:
+          - C0 × e^(-kt), decaimento exponencial monoexponencial
+          - C constant
+          - Crescimento exponencial
+          - Sem qualquer função
+        correctAnswer: C0 × e^(-kt), decaimento exponencial monoexponencial
+        rationale:
+          pt: 1-compartment IV: pool homogêneo de Vd; eliminação first-order com k = CL/Vd. Half-life t½ = 0.693/k. Plot ln(C) vs t é linha reta. Aplicável quando distribuição é rápida vs eliminação. Modelos 2/3-compartment quando há fase distribuição lenta.
+          en: 1-compartment IV: homogeneous Vd pool; first-order elimination with k = CL/Vd. Half-life t½ = 0.693/k. Plot ln(C) vs t is a straight line. Applies when distribution is fast vs elimination. 2/3-compartment models when slow distribution phase exists.
+        objectives: [1-compartment]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Volume de distribuição (Vd) é definido como…
+          en: Volume of distribution (Vd) is defined as…
+        choices:
+          - Volume aparente que conteria dose total à concentração plasmática observada
+          - Volume corporal real fixo
+          - Apenas volume hepático
+          - Sem qualquer significado
+        correctAnswer: Volume aparente que conteria dose total à concentração plasmática observada
+        rationale:
+          pt: Vd = dose / C0. Fármacos hidrofílicos: Vd ~ água corporal (~42 L/70 kg). Lipofílicos (digoxina, amiodarona): Vd >>> corpo (sequestrados em tecido). Vd alto significa baixa fração plasmática, dificultando hemodialisis em overdose. Não é "real" volume — apenas razão.
+          en: Vd = dose / C0. Hydrophilic drugs: Vd ~ body water (~42 L/70 kg). Lipophilic (digoxin, amiodarone): Vd >>> body (sequestered in tissue). High Vd means low plasma fraction, making hemodialysis difficult in overdose. Not a "real" volume — just a ratio.
+        objectives: [Vd]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Clearance (CL) representa…
+          en: Clearance (CL) represents…
+        choices:
+          - Volume de plasma "limpo" do fármaco por unidade de tempo (mL/min ou L/h)
+          - Apenas concentração plasmática
+          - Sem qualquer significado
+          - Apenas tempo total
+        correctAnswer: Volume de plasma "limpo" do fármaco por unidade de tempo (mL/min ou L/h)
+        rationale:
+          pt: CL é taxa de eliminação. Hepática: extracted ratio + flow. Renal: GFR-based + tubular secretion. CL_total = CL_hepatic + CL_renal + outras. Independente da concentração em first-order. Modificada em insuficiência renal/hepática → ajuste de dose (Cockcroft-Gault, MDRD para CL_renal).
+          en: CL is elimination rate. Hepatic: extraction ratio + flow. Renal: GFR-based + tubular secretion. CL_total = CL_hepatic + CL_renal + others. Independent of concentration in first-order. Modified in renal/hepatic insufficiency → dose adjustment (Cockcroft-Gault, MDRD for CL_renal).
+        objectives: [Clearance]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em PK não-linear (Michaelis-Menten), saturação ocorre quando…
+          en: In non-linear PK (Michaelis-Menten), saturation occurs when…
+        choices:
+          - Concentração >> Km, taxa de eliminação se torna zero-ordem (constante)
+          - Sempre linear
+          - Apenas first-order
+          - Sem qualquer saturação
+        correctAnswer: Concentração >> Km, taxa de eliminação se torna zero-ordem (constante)
+        rationale:
+          pt: Phenytoin clássico: enzimas hepáticas saturáveis. Doses pequenas: linear; pequenos aumentos elevam dramaticamente conc plasmática (zero-order at high). Aspirina, etanol, salicilato similar. Implicação: dose escalation arriscada; therapeutic drug monitoring essencial.
+          en: Phenytoin classic: saturable hepatic enzymes. Small doses: linear; small increases dramatically elevate plasma conc (zero-order at high). Aspirin, ethanol, salicylate similar. Implication: dose escalation risky; therapeutic drug monitoring essential.
+        objectives: [Michaelis-Menten PK]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "first-pass effect" refere-se a…
+          en: "First-pass effect" refers to…
+        choices:
+          - Metabolismo hepático ou intestinal de droga oral antes de atingir circulação sistêmica
+          - Apenas no rim
+          - Sem qualquer relevância
+          - Apenas IV
+        correctAnswer: Metabolismo hepático ou intestinal de droga oral antes de atingir circulação sistêmica
+        rationale:
+          pt: First-pass: drogas absorvidas vão por veia porta → fígado → CL hepática alta antes de chegar a circulação. Reduz biodisponibilidade F. Exemplos: lidocaína (F~30%), morfina (F~25%), propranolol. Estratégias: IV, sublingual, transdermal, rectal evitam first-pass.
+          en: First-pass: absorbed drugs go via portal vein → liver → high hepatic CL before reaching circulation. Reduces bioavailability F. Examples: lidocaine (F~30%), morphine (F~25%), propranolol. Strategies: IV, sublingual, transdermal, rectal bypass first-pass.
+        objectives: [First-pass]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: PD (farmacodinâmica) "Emax model" Hill equation prevê resposta como…
+          en: PD "Emax model" Hill equation predicts response as…
+        choices:
+          - E = Emax × C^n / (EC50^n + C^n), sigmoidal com n cooperativity
+          - Linear sempre
+          - Resposta constante
+          - Sem qualquer relação
+        correctAnswer: E = Emax × C^n / (EC50^n + C^n), sigmoidal com n cooperativity
+        rationale:
+          pt: Equação de Hill (Hill 1910): receptor binding com cooperatividade n. EC50 = concentração para 50% Emax. Plot log-linear: sigmoidal. n=1 hyperbolic. n>1 cooperativo (e.g., O2-Hb). Base de dose-response curves; permite quantificar potência (EC50) e eficácia (Emax) separadamente.
+          en: Hill equation (Hill 1910): receptor binding with cooperativity n. EC50 = concentration for 50% Emax. Log-linear plot: sigmoidal. n=1 hyperbolic. n>1 cooperative (e.g., O2-Hb). Foundation of dose-response curves; allows quantifying potency (EC50) and efficacy (Emax) separately.
+        objectives: [Hill equation]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Indirect response models (Jusko) são úteis para…
+          en: Indirect response models (Jusko) are useful for…
+        choices:
+          - Drogas onde efeito não é proporcional a concentração instantânea (warfarin INR, corticosteroides)
+          - Apenas drogas IV
+          - Apenas drogas com efeito imediato
+          - Sem qualquer aplicação
+        correctAnswer: Drogas onde efeito não é proporcional a concentração instantânea (warfarin INR, corticosteroides)
+        rationale:
+          pt: Jusko: dR/dt = kin (production) − kout × R (degradation); droga inhibe/stimula kin ou kout. Warfarin: inibe síntese fatores coagulação (VII, IX, X); INR responde lentamente (dias). Esteroides: efeito sustentado pós-clearance. Captura delay PD vs PK. Software: NONMEM, Monolix.
+          en: Jusko: dR/dt = kin (production) − kout × R (degradation); drug inhibits/stimulates kin or kout. Warfarin: inhibits clotting factor (VII, IX, X) synthesis; INR responds slowly (days). Steroids: sustained effect post-clearance. Captures PD delay vs PK. Software: NONMEM, Monolix.
+        objectives: [Indirect response]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: PBPK (Physiologically-Based PK) modela o quê?
+          en: PBPK (Physiologically-Based PK) models what?
+        choices:
+          - Compartimentos representando órgãos reais (fígado, rim, gordura) com parâmetros fisiológicos (flow, partition)
+          - Apenas 1 compartimento abstrato
+          - Sem qualquer base fisiológica
+          - Apenas em ratos
+        correctAnswer: Compartimentos representando órgãos reais (fígado, rim, gordura) com parâmetros fisiológicos (flow, partition)
+        rationale:
+          pt: PBPK: ~10-20 órgãos com volumes, fluxos sanguíneos, partition coefficients órgão/sangue. Permite extrapolação espécie (rat → human), populações especiais (pediátrico, gestante, obesidade), DDI predições. Software: Simcyp (Certara), GastroPlus, PK-Sim. Aceito em FDA submissions (2020+ MIDD).
+          en: PBPK: ~10-20 organs with volumes, blood flows, organ/blood partition coefficients. Allows species extrapolation (rat → human), special populations (pediatric, pregnant, obesity), DDI predictions. Software: Simcyp (Certara), GastroPlus, PK-Sim. Accepted in FDA submissions (2020+ MIDD).
+        objectives: [PBPK]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Population PK (Sheiner/Beal NONMEM) trata…
+          en: Population PK (Sheiner/Beal NONMEM) treats…
+        choices:
+          - Variabilidade entre indivíduos via mixed-effects models, separando random vs covariates
+          - Apenas média populacional
+          - Apenas single-individual
+          - Sem qualquer variabilidade
+        correctAnswer: Variabilidade entre indivíduos via mixed-effects models, separando random vs covariates
+        rationale:
+          pt: Sheiner/Beal (UCSF) anos 1970s: NONMEM (NONlinear Mixed Effects Model). Cada parâmetro PK = típico_pop + covariate effect (idade, peso, função renal) + random IIV. Permite usar dados sparse de muitos pacientes vs rich de poucos. Standard em drug development industry.
+          en: Sheiner/Beal (UCSF) 1970s: NONMEM (NONlinear Mixed Effects Model). Each PK parameter = pop_typical + covariate effect (age, weight, renal function) + random IIV. Allows using sparse data from many patients vs rich from few. Industry drug-development standard.
+        objectives: [Population PK]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Therapeutic drug monitoring (TDM) é necessário para drogas com…
+          en: Therapeutic drug monitoring (TDM) is needed for drugs with…
+        choices:
+          - Janela terapêutica estreita (e.g. warfarin, vancomycin, lithium, immunosuppressants)
+          - Apenas drogas seguras
+          - Sem qualquer aplicação
+          - Apenas em pediatric
+        correctAnswer: Janela terapêutica estreita (e.g. warfarin, vancomycin, lithium, immunosuppressants)
+        rationale:
+          pt: TDM mede concentração plasmática para individualizar dose. Drogas: aminoglicosídeos (toxicidade renal), vancomycin (AUC₂₄/MIC), tacrolimus/cyclosporine (transplante), anticonvulsantes, lithium, methotrexate. Bayesian dosing software (DoseMe, InsightRX) ajuda. Salva vidas em janela estreita.
+          en: TDM measures plasma concentration to individualize dose. Drugs: aminoglycosides (renal toxicity), vancomycin (AUC₂₄/MIC), tacrolimus/cyclosporine (transplant), anticonvulsants, lithium, methotrexate. Bayesian dosing software (DoseMe, InsightRX) helps. Lifesaving in narrow windows.
+        objectives: [TDM]
+  - title:
+      pt: Página 2 — Aplicações modernas
+      en: Page 2 — Modern applications
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Bioequivalência (BE) entre genéricos e referência exige…
+          en: Bioequivalence (BE) between generics and reference requires…
+        choices:
+          - 90% CI de AUC e Cmax dentro de 80-125% do referência (Westlake/Schuirmann two one-sided tests)
+          - Apenas média igual
+          - Sem qualquer regulação
+          - Apenas para IV
+        correctAnswer: 90% CI de AUC e Cmax dentro de 80-125% do referência (Westlake/Schuirmann two one-sided tests)
+        rationale:
+          pt: BE: cross-over study saudáveis (~24-36); compara AUC, Cmax. Critério Two One-Sided Tests (TOST, Schuirmann 1987): 90% CI completo dentro 80-125% (dado em log-scale: ±20% efetivo). Aceito por FDA, EMA. Para narrow therapeutic index drugs (warfarin, levothyroxine), critério mais estrito (90-111%).
+          en: BE: crossover study in healthy subjects (~24-36); compares AUC, Cmax. Two One-Sided Tests (TOST, Schuirmann 1987): 90% CI fully within 80-125% (log-scale: ~±20% effective). Accepted by FDA, EMA. For narrow therapeutic index drugs (warfarin, levothyroxine), stricter (90-111%).
+        objectives: [Bioequivalence]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Drug-drug interactions (DDI) via CYP3A4 são clinicamente importantes porque…
+          en: Drug-drug interactions (DDI) via CYP3A4 are clinically important because…
+        choices:
+          - CYP3A4 metaboliza ~50% das drogas comerciais; inibidores (cetoconazol, ritonavir) ou indutores (rifampicina) alteram exposição
+          - CYP3A4 não tem qualquer importância
+          - Apenas em alguns casos isolados
+          - Apenas em pediatria
+        correctAnswer: CYP3A4 metaboliza ~50% das drogas comerciais; inibidores (cetoconazol, ritonavir) ou indutores (rifampicina) alteram exposição
+        rationale:
+          pt: CYP3A4 (hepatic + intestinal) metaboliza enorme fração drugs. Inibidores potentes (ritonavir, ketoconazol) elevam exposição substrato 3-10x. Indutores (rifampicin, St John's Wort, carbamazepine) reduzem 50-90%. Paxlovid (nirmatrelvir/ritonavir) explora ritonavir como booster. PBPK preditivo regulatorialmente.
+          en: CYP3A4 (hepatic + intestinal) metabolizes huge fraction of drugs. Strong inhibitors (ritonavir, ketoconazole) elevate substrate exposure 3-10x. Inducers (rifampin, St John's Wort, carbamazepine) reduce 50-90%. Paxlovid (nirmatrelvir/ritonavir) exploits ritonavir as booster. PBPK regulatorily predictive.
+        objectives: [CYP3A4 DDI]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito MIDD (Model-Informed Drug Development, FDA 2018+) propõe…
+          en: MIDD (Model-Informed Drug Development, FDA 2018+) proposes…
+        choices:
+          - Uso integrado de modelagem (PK/PD, PBPK, ER, dose-finding) para decisões regulatórias e desenvolvimento
+          - Apenas ensaios clínicos sem modelos
+          - Sem qualquer integração
+          - Apenas in silico
+        correctAnswer: Uso integrado de modelagem (PK/PD, PBPK, ER, dose-finding) para decisões regulatórias e desenvolvimento
+        rationale:
+          pt: MIDD: FDA estabeleceu programa 2018, incluiu reauthorization PDUFA VII. Aplicações: dose selection (Adaptive trials), pediatric extrapolation (~63% drugs aprovados), DDI predictions (PBPK), exposure-response. Reduz tempo, custo, samples. CDER, OCS-Pharmacometrics liderança.
+          en: MIDD: FDA established program 2018, included in PDUFA VII reauthorization. Applications: dose selection (adaptive trials), pediatric extrapolation (~63% of approved drugs), DDI predictions (PBPK), exposure-response. Reduces time, cost, samples. CDER, OCS-Pharmacometrics lead.
+        objectives: [MIDD]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em oncologia, "exposure-response" analyses motivam…
+          en: In oncology, "exposure-response" analyses motivate…
+        choices:
+          - MTD (Maximum Tolerated Dose) tradicional vs OBD (Optimal Biological Dose) FDA Project Optimus 2022
+          - Apenas dose máxima sempre
+          - Sem qualquer otimização
+          - Apenas em pediatric
+        correctAnswer: MTD (Maximum Tolerated Dose) tradicional vs OBD (Optimal Biological Dose) FDA Project Optimus 2022
+        rationale:
+          pt: Project Optimus (FDA 2022): "use higher dose isn't always better em targeted therapies"; encoraja dose-finding moderna além de MTD. Targeted (TKIs, ICIs) podem atingir efeito máximo abaixo de MTD; doses altas tóxicas sem ganho. PRO incluso. Efeito industry: redesigns Ph1-2 com múltiplas doses-arms.
+          en: Project Optimus (FDA 2022): "higher dose isn't always better in targeted therapies"; encourages modern dose-finding beyond MTD. Targeted (TKIs, ICIs) can achieve max effect below MTD; high doses toxic without gain. PRO included. Industry effect: Ph1-2 redesigns with multiple-dose arms.
+        objectives: [Project Optimus]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em humanos, biodisponibilidade oral F é frequentemente baixa por…
+          en: In humans, oral bioavailability F is often low due to…
+        choices:
+          - Solubilidade limitada + permeabilidade intestinal + first-pass metabolism + transportadores de efflux (P-gp)
+          - Apenas digestão direta
+          - Apenas no estômago
+          - Sem qualquer barreira
+        correctAnswer: Solubilidade limitada + permeabilidade intestinal + first-pass metabolism + transportadores de efflux (P-gp)
+        rationale:
+          pt: F = Fa × Fg × Fh. Fa = absorção (solubilidade, permeabilidade BCS classes 1-4 Amidon). Fg = first-pass intestinal CYP3A4. Fh = first-pass hepático. P-gp (MDR1) bombeia drogas para fora dos enterócitos. PBPK GastroPlus modela in silico. Estratégias: salt forms, prodrugs, formulação (cyclodextrin, lipid).
+          en: F = Fa × Fg × Fh. Fa = absorption (solubility, permeability — Amidon BCS classes 1-4). Fg = intestinal CYP3A4 first-pass. Fh = hepatic first-pass. P-gp (MDR1) pumps drugs out of enterocytes. PBPK GastroPlus models in silico. Strategies: salt forms, prodrugs, formulation (cyclodextrin, lipid).
+        objectives: [Bioavailability]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em insuficiência renal, ajuste de dose para drogas eliminadas renal usa…
+          en: In renal insufficiency, dose adjustment for renally eliminated drugs uses…
+        choices:
+          - Estimativa de eGFR (CKD-EPI, Cockcroft-Gault) para ajustar dose proporcionalmente
+          - Apenas dose padrão sempre
+          - Sem qualquer ajuste
+          - Apenas em pediatria
+        correctAnswer: Estimativa de eGFR (CKD-EPI, Cockcroft-Gault) para ajustar dose proporcionalmente
+        rationale:
+          pt: Em CKD/AKI, drogas renal-cleared acumulam. Ajuste: dose × (eGFR_paciente / eGFR_normal). CKD-EPI 2021 substituiu CKD-EPI 2009 (removeu raça, debate equity). Cockcroft-Gault histórico (creatinine-based, idade, peso, sexo). Critério: clinical FDA labels com tier reduction (mild/mod/severe). Hemodiálise: drogas Vd baixo, MW <500 dialisáveis.
+          en: In CKD/AKI, renally-cleared drugs accumulate. Adjustment: dose × (patient eGFR / normal eGFR). CKD-EPI 2021 replaced CKD-EPI 2009 (removed race, equity debate). Historical Cockcroft-Gault (creatinine-based, age, weight, sex). Criteria: clinical FDA labels with tier reductions (mild/mod/severe). Hemodialysis: low Vd, MW <500 drugs dialyzable.
+        objectives: [Renal adjustment]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "black-box warning" do FDA é aplicado quando…
+          en: FDA "black-box warning" is applied when…
+        choices:
+          - Risco grave (morte, sequela permanente) identificado pré ou pós-marketing
+          - Apenas risco trivial
+          - Sem qualquer risco
+          - Apenas em ensaios clínicos
+        correctAnswer: Risco grave (morte, sequela permanente) identificado pré ou pós-marketing
+        rationale:
+          pt: Black-box (boxed warning) é mais forte alerta FDA. Exemplos: opioides (overdose), tiazolidinediones (CHF, fraturas, vesícula bladder cancer rosiglitazone), CAR-T (neoplasias secundárias 2024). Pode ser revogado raramente (rosiglitazone parcialmente em 2013). Análoga: REMS (Risk Evaluation and Mitigation Strategy) requer programa de manejo.
+          en: Black-box (boxed warning) is FDA's strongest alert. Examples: opioids (overdose), thiazolidinediones (CHF, fractures, bladder cancer rosiglitazone), CAR-T (secondary malignancies 2024). Can be removed rarely (rosiglitazone partially in 2013). Analogous: REMS (Risk Evaluation and Mitigation Strategy) requires management program.
+        objectives: [Black-box warning]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em terapias de anticorpos monoclonais (mAbs), PK é dominada por…
+          en: In monoclonal antibody (mAb) therapies, PK is dominated by…
+        choices:
+          - FcRn-mediated recycling estendendo t½ a 2-4 semanas; target-mediated drug disposition (TMDD)
+          - Eliminação renal rápida
+          - Sem qualquer mecanismo único
+          - Apenas em IV
+        correctAnswer: FcRn-mediated recycling estendendo t½ a 2-4 semanas; target-mediated drug disposition (TMDD)
+        rationale:
+          pt: mAbs: tamanho ~150 kDa, não filtram glomerularmente. FcRn em endotelial recicla IgG → t½ 2-4 sem (Brambell 1960s). TMDD (Mager/Jusko 2001): binding ao target afeta PK; concentrações altas saturam → "linear" PK. Alvos solúveis (IL-6 sIL-6R) podem ter "antigen sink". Pediatric: FcRn imaturo modifica PK.
+          en: mAbs: ~150 kDa size, not glomerularly filtered. FcRn in endothelium recycles IgG → t½ 2-4 weeks (Brambell 1960s). TMDD (Mager/Jusko 2001): target binding affects PK; high concentrations saturate → "linear" PK. Soluble targets (IL-6 sIL-6R) can have "antigen sink". Pediatric: immature FcRn modifies PK.
+        objectives: [mAb PK]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em mRNA-LNP vacinas, "PK" é…
+          en: In mRNA-LNP vaccines, "PK" is…
+        choices:
+          - Distribuição limitada ao sítio de injeção/linfonodos drenantes; mRNA traduzido por ~1-7 dias, depois degradado
+          - Idêntica a small molecule
+          - Sistêmica como mAbs
+          - Sem qualquer dinâmica
+        correctAnswer: Distribuição limitada ao sítio de injeção/linfonodos drenantes; mRNA traduzido por ~1-7 dias, depois degradado
+        rationale:
+          pt: mRNA-LNP: IM injection → captado por DCs/macrófagos → traduz proteína Spike por dias. Fração pequena para linfonodos. PK convencional não aplicável; "PK" = expression duration. Detecção em sangue: spike protein transitória (~1-2 sem). Diferente de small molecules. PD: imunogenicidade, T cells, B cells anos.
+          en: mRNA-LNP: IM injection → taken up by DCs/macrophages → translates Spike protein for days. Small fraction to lymph nodes. Conventional PK not applicable; "PK" = expression duration. Blood detection: transient spike protein (~1-2 weeks). Differs from small molecules. PD: immunogenicity, T cells, B cells years.
+        objectives: [mRNA PK]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em cell therapies (CAR-T), o conceito PK é substituído por…
+          en: In cell therapies (CAR-T), PK concept is replaced by…
+        choices:
+          - Pharmacokinetics-like cell expansion + persistence (peak Cmax dia 7-14, persistência meses-anos)
+          - PK clássica idêntica
+          - Sem qualquer rastreamento
+          - Apenas em ensaios
+        correctAnswer: Pharmacokinetics-like cell expansion + persistence (peak Cmax dia 7-14, persistência meses-anos)
+        rationale:
+          pt: CAR-T pharmacology: monitorada via qPCR vector copies/μg DNA ou flow cytometry CAR+ cells. Expansão pico ~dia 7-14 pós-infusão (1000-10000x), depois contracção, plateau. Persistence varia por construct (4-1BB > CD28 longo prazo). Korelações: peak ↔ resposta + CRS. Modelos novos (Liu/Mager 2021).
+          en: CAR-T pharmacology: monitored via qPCR vector copies/μg DNA or flow cytometry CAR+ cells. Peak expansion ~day 7-14 post-infusion (1000-10000x), then contraction, plateau. Persistence varies by construct (4-1BB > CD28 long-term). Correlations: peak ↔ response + CRS. New models (Liu/Mager 2021).
+        objectives: [CAR-T PK]
+target: 20
