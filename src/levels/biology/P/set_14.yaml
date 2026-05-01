@@ -1,0 +1,344 @@
+title:
+  pt: Ecologia Microbiana e Metagenômica Funcional
+  en: Microbial Ecology and Functional Metagenomics
+level: P
+subject: biology
+objectives:
+  - Compreender 16S, shotgun, MAGs
+  - Reconhecer ciclos biogeoquímicos (C, N, S)
+  - Identificar dark matter microbiana e CPR
+  - Avaliar mock communities e benchmarking
+difficulty: 5
+authorNotes: |
+  Microbial ecology. Carl Woese 1977 archaea. Norman Pace 1985 PCR microbial diversity. Pace
+  uncultured majority. Earth Microbiome Project (Knight, Gilbert 2010). 16S rRNA gene.
+  Metagenomics shotgun. MAGs (Metagenome-Assembled Genomes). Tara Oceans (Sunagawa, Bork).
+  Banfield CPR (Candidate Phyla Radiation) 2015. Asgard archaea Spang 2015. Nitrogen cycle:
+  fixation Haber-Bosch vs biological. Carbon: photoautotroph, chemoautotroph. Wood-Ljungdahl
+  acetogens. Anammox bacteria. Nitrification archaea Thaumarchaeota. Sulfur cycle vents.
+example:
+  question:
+    pt: Norman Pace (Colorado) 1985 revolucionou microbiologia ambiental ao usar…
+    en: Norman Pace (Colorado) 1985 revolutionized environmental microbiology by using…
+  choices:
+    - Sequenciamento direto de 16S rRNA via PCR sem cultivo, revelando "uncultured majority"
+    - Cultivo padrão em ágar
+    - Microscopia óptica clássica apenas
+    - Sequenciamento de proteínas
+  correctAnswer: Sequenciamento direto de 16S rRNA via PCR sem cultivo, revelando "uncultured majority"
+  rationale:
+    pt: Pace usou PCR + clonagem + Sanger para amplificar 16S rRNA de amostras ambientais; identificou táxons sem cultivar (~99% microbiota é "unculturable" em laboratório). Fundou microbial ecology molecular. Earth Microbiome Project (Knight 2010+) industrializou.
+    en: Pace used PCR + cloning + Sanger to amplify 16S rRNA from environmental samples; identified taxa without culturing (~99% of microbiota is "unculturable" in lab). Founded molecular microbial ecology. Earth Microbiome Project (Knight 2010+) industrialized it.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Métodos e descobertas
+      en: Page 1 — Methods and discoveries
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O 16S rRNA gene tornou-se cronômetro molecular padrão em procariotos por…
+          en: The 16S rRNA gene became standard molecular chronometer in prokaryotes because it…
+        choices:
+          - Universal, conservado mas com regiões hipervariáveis V1-V9 para taxonomia
+          - Apenas em archaea
+          - Não tem regiões variáveis
+          - Apenas em humanos
+        correctAnswer: Universal, conservado mas com regiões hipervariáveis V1-V9 para taxonomia
+        rationale:
+          pt: 16S (16 Svedberg, ~1500 nt): presente em ribossomo de todos procariotos. Conserva sequência core mas tem 9 regiões variáveis (V1-V9). V3-V4 mais usado em Illumina (~250 bp leitura). Bancos: SILVA, Greengenes, RDP. Limitação: resolução de espécie variável; full-length 16S (PacBio) melhora.
+          en: 16S (16 Svedberg, ~1500 nt): present in all prokaryote ribosomes. Conserves core sequence but has 9 variable regions (V1-V9). V3-V4 most used in Illumina (~250 bp read). Banks: SILVA, Greengenes, RDP. Limitation: variable species resolution; full-length 16S (PacBio) improves.
+        objectives: [16S rRNA]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: MAGs (Metagenome-Assembled Genomes) reconstroem genomas via…
+          en: MAGs (Metagenome-Assembled Genomes) reconstruct genomes via…
+        choices:
+          - Binning de contigs assemblados de metagenomas, agrupando por composição (k-mer, GC) e abundância
+          - Cultivo prévio sem qualquer assembly
+          - Sequenciamento Sanger único
+          - Apenas predição computacional sem dados
+        correctAnswer: Binning de contigs assemblados de metagenomas, agrupando por composição (k-mer, GC) e abundância
+        rationale:
+          pt: MAGs: shotgun metagenomic → assembly (megahit, metaspades) → binning (MetaBAT2, CONCOCT, MaxBin) usando composition + co-abundance. Quality assessed by CheckM (completeness, contamination via single-copy genes). MIMAG standards. Genome Taxonomy Database (GTDB Parks/Hugenholtz) classifica via 120 marker genes.
+          en: MAGs: shotgun metagenomic → assembly (megahit, metaspades) → binning (MetaBAT2, CONCOCT, MaxBin) using composition + co-abundance. Quality assessed by CheckM (completeness, contamination via single-copy genes). MIMAG standards. Genome Taxonomy Database (GTDB Parks/Hugenholtz) classifies via 120 marker genes.
+        objectives: [MAGs]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Earth Microbiome Project (Knight, Gilbert) coletou amostras de…
+          en: Earth Microbiome Project (Knight, Gilbert) collected samples from…
+        choices:
+          - >27 mil locais globais (solo, água, animais, plantas) com protocolo padronizado
+          - Apenas Antártica
+          - Apenas humanos
+          - Sem padronização
+        correctAnswer: >27 mil locais globais (solo, água, animais, plantas) com protocolo padronizado
+        rationale:
+          pt: EMP (Thompson 2017 Nature): coleta padronizada (DNA extraction, 16S V4, primers 515F/806R) >27k samples. Catalogou ~300k OTUs (97% identity), revelando padrões globais (latitude, pH como driver dominante em solo). Tornou-se reference para microbiome studies. EMP-2 expanding protocols.
+          en: EMP (Thompson 2017 Nature): standardized collection (DNA extraction, 16S V4, primers 515F/806R) >27k samples. Catalogued ~300k OTUs (97% identity), revealing global patterns (latitude, pH as dominant driver in soil). Became reference for microbiome studies. EMP-2 expanding protocols.
+        objectives: [EMP]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Tara Oceans expedition (2009-2013) e seguintes mapeou…
+          en: Tara Oceans expedition (2009-2013) and follow-ups mapped…
+        choices:
+          - Diversidade microbiana global em oceanos via metagenômica + metatranscriptômica
+          - Apenas peixes superficiais
+          - Apenas Antártico
+          - Apenas em laboratório terrestre
+        correctAnswer: Diversidade microbiana global em oceanos via metagenômica + metatranscriptômica
+        rationale:
+          pt: Tara Oceans (Bork, Karsenti, Gorsky): velejador de pesquisa coletou ~210 estações globais. Sunagawa et al. (Science 2015) catalog ~40M genes microbianos. Revelou que temperatura é driver dominante; viroplâncton (Roux 2016) com 50k+ OTUs novos. Tara Pacific (corais), Tara Polar.
+          en: Tara Oceans (Bork, Karsenti, Gorsky): research schooner collected ~210 global stations. Sunagawa et al. (Science 2015) catalog ~40M microbial genes. Revealed temperature as dominant driver; viroplankton (Roux 2016) with 50k+ novel OTUs. Tara Pacific (corals), Tara Polar.
+        objectives: [Tara Oceans]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Candidate Phyla Radiation (CPR) (Banfield 2015 Nature) revelou…
+          en: Candidate Phyla Radiation (CPR) (Banfield 2015 Nature) revealed…
+        choices:
+          - ~30% diversidade bacteriana é uncultured ramo basal com genomas pequenos e metabolismos parasíticos/simbióticos
+          - Apenas bactérias bem-conhecidas
+          - Apenas archaea
+          - Sem qualquer significado evolutivo
+        correctAnswer: ~30% diversidade bacteriana é uncultured ramo basal com genomas pequenos e metabolismos parasíticos/simbióticos
+        rationale:
+          pt: Banfield/Hug et al. 2015-2016 Nature: 1000+ MAGs de aquíferos, lixo, etc. revelaram CPR — clade massiva nunca cultivada, com genomas reduzidos (~1 Mb), provavelmente parasíticas/episímbiontes (Saccharibacteria/TM7 cresce em filme oral só com hospedeiro Actinomyces). Reforma a Tree of Life: bacterias têm "dark matter".
+          en: Banfield/Hug et al. 2015-2016 Nature: 1000+ MAGs from aquifers, sludge, etc. revealed CPR — massive never-cultured clade with reduced genomes (~1 Mb), likely parasitic/episymbiont (Saccharibacteria/TM7 grows on oral biofilm only with Actinomyces host). Reshapes Tree of Life: bacteria have "dark matter".
+        objectives: [CPR]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Asgard archaea (Lokiarchaeota) descobertos por Spang/Ettema (2015 Nature) são importantes por…
+          en: Asgard archaea (Lokiarchaeota) discovered by Spang/Ettema (2015 Nature) are important because…
+        choices:
+          - Mais próximo grupo procariótico vivo a eucariotos, com homólogos de actina, tubulina, ESCRT
+          - Apenas archaea metanogênica padrão
+          - Sem qualquer relação com eucariotos
+          - Apenas em ambientes vulcânicos
+        correctAnswer: Mais próximo grupo procariótico vivo a eucariotos, com homólogos de actina, tubulina, ESCRT
+        rationale:
+          pt: Lokiarchaeota (e parentes Heimdall, Thor, Odin, Asgard) recuperados de sedimentos hidrotermais profundos (Loki's Castle vent). Codificam "ESPs" (Eukaryotic Signature Proteins) — actina, tubulina-like, ESCRT, GTPases. Imachi 2020 cultivou Prometheoarchaeum em laboratório (12 anos). Apoia eukaryogenesis com archaea + α-proteobacteria.
+          en: Lokiarchaeota (and relatives Heimdall, Thor, Odin, Asgard) recovered from deep hydrothermal sediments (Loki's Castle vent). Encode "ESPs" (Eukaryotic Signature Proteins) — actin, tubulin-like, ESCRT, GTPases. Imachi 2020 cultivated Prometheoarchaeum in lab (12 years). Supports eukaryogenesis from archaea + α-proteobacteria.
+        objectives: [Asgard]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Anammox (Anaerobic Ammonium Oxidation) é processo bacteriano de…
+          en: Anammox (Anaerobic Ammonium Oxidation) is a bacterial process that…
+        choices:
+          - NH4+ + NO2- → N2 + H2O em condições anaeróbicas, descoberto em ETE Delft 1990s
+          - Apenas em ambiente aeróbico
+          - Sem qualquer importância ambiental
+          - Apenas em laboratório
+        correctAnswer: NH4+ + NO2- → N2 + H2O em condições anaeróbicas, descoberto em ETE Delft 1990s
+        rationale:
+          pt: Anammox: Planctomycetes (Brocadia, Kuenenia) realizam reação termodinamicamente favorável mas tabu por décadas. Descoberto Strous/van de Graaf Delft 1990s em ETE. Importância: ~30-50% do N2 marinho global; aplicação em tratamento de esgoto eficiente. Hidrazina é intermediário em organela "anammoxossoma" (Sinninghe Damsté).
+          en: Anammox: Planctomycetes (Brocadia, Kuenenia) perform a thermodynamically favorable reaction taboo for decades. Discovered Strous/van de Graaf Delft 1990s in WWTP. Importance: ~30-50% of global marine N2; applications in efficient wastewater treatment. Hydrazine is intermediate in "anammoxosome" organelle (Sinninghe Damsté).
+        objectives: [Anammox]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O ciclo do nitrogênio biológico inclui qual reação custosa em energia?
+          en: The biological nitrogen cycle includes which energy-expensive reaction?
+        choices:
+          - Fixação N2 → NH3 por nitrogenase (16 ATP, sensível a O2), restrita a procariotos
+          - Apenas redução de NO3- a N2
+          - Apenas amonificação trivial
+          - Sem qualquer custo energético
+        correctAnswer: Fixação N2 → NH3 por nitrogenase (16 ATP, sensível a O2), restrita a procariotos
+        rationale:
+          pt: Nitrogenase (Mo/V/Fe-dependente) reduz N2 (triple bond) a 2 NH3 com 16 ATP, sensível a O2 (oxida cluster). Apenas em diazotróficos (Rhizobium em leguminosas; cianobactérias; Frankia; Klebsiella). Haber-Bosch industrial faz mesmo a 400°C/200 atm. Fixação biológica responsável por ~half do N reativo natural.
+          en: Nitrogenase (Mo/V/Fe-dependent) reduces N2 (triple bond) to 2 NH3 with 16 ATP, sensitive to O2 (oxidizes cluster). Only in diazotrophs (Rhizobium in legumes; cyanobacteria; Frankia; Klebsiella). Haber-Bosch industrial does same at 400°C/200 atm. Biological fixation accounts for ~half of natural reactive N.
+        objectives: [Nitrogenase]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Thaumarchaeota são grupo de archaea importantes ambientalmente por…
+          en: Thaumarchaeota are environmentally important archaea because they…
+        choices:
+          - Oxidação aeróbica de NH3 → NO2- (nitrificação) em solo/oceano, Ne ~10⁹/g
+          - Fixação N2 anaeróbica
+          - Metanogênese exclusiva
+          - Sem qualquer importância
+        correctAnswer: Oxidação aeróbica de NH3 → NO2- (nitrificação) em solo/oceano, Ne ~10⁹/g
+        rationale:
+          pt: Thaumarchaeota (Brochier-Armanet 2008): clade de archaea com ammonia monooxigenase (amoA). Konneke 2005 cultivou Nitrosopumilus de oceano. Densos em solo/oceano (~10⁹ cels/g). Pode ser maior contribuição à nitrificação que bactérias Nitrosomonas/Nitrosospira clássicas. Metabolismo CO2-fixante (3-hydroxypropionate/4-hydroxybutyrate).
+          en: Thaumarchaeota (Brochier-Armanet 2008): archaeal clade with ammonia monooxygenase (amoA). Konneke 2005 cultivated Nitrosopumilus from ocean. Dense in soil/ocean (~10⁹ cells/g). May contribute more to nitrification than classical Nitrosomonas/Nitrosospira bacteria. CO2-fixing metabolism (3-hydroxypropionate/4-hydroxybutyrate).
+        objectives: [Thaumarchaeota]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "rare biosphere" (Sogin 2006 PNAS) postula que…
+          en: "Rare biosphere" (Sogin 2006 PNAS) posits that…
+        choices:
+          - Comunidades microbianas têm cauda longa de táxons raros que servem como reservatório de diversidade
+          - Apenas táxons abundantes existem
+          - Sem qualquer biodiversidade detectável
+          - Apenas em laboratório
+        correctAnswer: Comunidades microbianas têm cauda longa de táxons raros que servem como reservatório de diversidade
+        rationale:
+          pt: Sogin "rare biosphere": deep sequencing revelou cauda log-normal massiva. ~99% das espécies tem <1% abundância. Função: reservatório para "seed banks" sob mudança ambiental, recombinação metabólica, diversidade funcional latente. Lynch/Neufeld discutem ecologia funcional. Análoga a "long tail" econômico.
+          en: Sogin "rare biosphere": deep sequencing revealed massive log-normal tail. ~99% of species have <1% abundance. Function: reservoir for "seed banks" under environmental change, metabolic recombination, latent functional diversity. Lynch/Neufeld discuss functional ecology. Analogous to economic "long tail".
+        objectives: [Rare biosphere]
+  - title:
+      pt: Página 2 — Aplicações e ciclos
+      en: Page 2 — Applications and cycles
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O microbioma humano (HMP, NIH 2007-2014) é distribuído em qual ordem em humano adulto saudável?
+          en: The human microbiome (HMP, NIH 2007-2014) is distributed in what order in a healthy adult?
+        choices:
+          - ~10¹³ bactérias intestinais > pele/oral; razão bactéria:célula humana ~1:1 (revisada de 10:1)
+          - 10x mais células humanas que bactérias
+          - Apenas pele tem microbioma
+          - Apenas em pacientes doentes
+        correctAnswer: ~10¹³ bactérias intestinais > pele/oral; razão bactéria:célula humana ~1:1 (revisada de 10:1)
+        rationale:
+          pt: HMP/iHMP (NIH 2007+): catalog dos microbiomas em 18 sítios humanos. Sender/Fuchs/Milo (PLOS Biol 2016) revisou razão clássica 10:1 → ~1:1. Intestino domina (~10¹³ bactérias). Variabilidade entre indivíduos enorme; "core microbiome" ~30% espécies compartilhadas. Knight Earth Microbiome amplia para ambiental.
+          en: HMP/iHMP (NIH 2007+): catalogue of microbiomes at 18 human sites. Sender/Fuchs/Milo (PLOS Biol 2016) revised classical 10:1 ratio → ~1:1. Gut dominates (~10¹³ bacteria). Inter-individual variability huge; "core microbiome" ~30% shared species. Knight Earth Microbiome extends to environmental.
+        objectives: [HMP]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Ciclos de carbono microbianos incluem qual processo dominante anaeróbico?
+          en: Microbial carbon cycles include which dominant anaerobic process?
+        choices:
+          - Metanogênese por archaea Methanobacterium, Methanosarcina, em sedimentos e digestores
+          - Apenas fotossíntese aeróbica
+          - Apenas respiração
+          - Sem qualquer participação archaeal
+        correctAnswer: Metanogênese por archaea Methanobacterium, Methanosarcina, em sedimentos e digestores
+        rationale:
+          pt: Metanogênese: archaea hidrogenotróficas (CO2 + 4H2 → CH4) e acetoclastas (CH3COOH → CH4 + CO2). Únicos produtores biológicos de CH4. Ambientes: ruminantes, arrozais, sedimentos, esgotos. Contribuição ~70% do CH4 atmosférico, gás-estufa potente. Sintrofia com H2-produtores (sintrofas).
+          en: Methanogenesis: hydrogenotrophic archaea (CO2 + 4H2 → CH4) and acetoclastic (CH3COOH → CH4 + CO2). Unique biological CH4 producers. Environments: ruminants, rice paddies, sediments, wastewater. ~70% of atmospheric CH4 contribution, potent greenhouse gas. Syntrophy with H2-producers (syntrophs).
+        objectives: [Metanogênese]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "anaerobic methane oxidation" (AOM) em sedimentos marinhos é realizada por…
+          en: "Anaerobic methane oxidation" (AOM) in marine sediments is performed by…
+        choices:
+          - Consórcio archaea ANME + bactéria sulfato-redutora (Boetius 2000), sintrofia obrigatória
+          - Apenas bactérias isoladas
+          - Apenas em superfície aeróbica
+          - Sem qualquer organismo
+        correctAnswer: Consórcio archaea ANME + bactéria sulfato-redutora (Boetius 2000), sintrofia obrigatória
+        rationale:
+          pt: AOM: ANME (Anaerobic Methanotrophic) archaea reverte metanogênese (CH4 → CO2 + ?) acopladas a SRB (sulfate-reducing bacteria, Desulfobulbus) que aceitam elétrons via SO4 → H2S. Boetius 2000 visualizou consórcio. Consome ~80% CH4 sedimentar antes de atingir atmosfera — sumidouro global crítico.
+          en: AOM: ANME (Anaerobic Methanotrophic) archaea reverse methanogenesis (CH4 → CO2 + ?) coupled to SRB (sulfate-reducing bacteria, Desulfobulbus) accepting electrons via SO4 → H2S. Boetius 2000 visualized consortium. Consumes ~80% of sedimentary CH4 before reaching atmosphere — critical global sink.
+        objectives: [AOM]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "syntrophy" em comunidades microbianas refere-se a…
+          en: "Syntrophy" in microbial communities refers to…
+        choices:
+          - Cooperação obrigatória onde produto residual de um é substrato para outro, viabilizando reações borderline termodinâmicas
+          - Apenas competição direta
+          - Apenas predação trivial
+          - Sem qualquer interação
+        correctAnswer: Cooperação obrigatória onde produto residual de um é substrato para outro, viabilizando reações borderline termodinâmicas
+        rationale:
+          pt: Syntrophy: e.g. degradação anaeróbica de propionato — fermentador produz H2 (ΔG positivo); H2-consumidor (metanógeno) mantém [H2] baixo, fazendo reação favorável. Sem parceiro, fermentador para. Princípio onipresente em ecossistemas anaeróbicos. Schink define.
+          en: Syntrophy: e.g., anaerobic propionate degradation — fermenter produces H2 (positive ΔG); H2-consumer (methanogen) keeps [H2] low, making the reaction favorable. Without partner, fermenter halts. Ubiquitous principle in anaerobic ecosystems. Schink defines.
+        objectives: [Syntrophy]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em vents hidrotermais, comunidades chemoautotróficas (Cavanaugh 1981 Nature) usam qual fonte de energia?
+          en: At hydrothermal vents, chemoautotrophic communities (Cavanaugh 1981 Nature) use which energy source?
+        choices:
+          - Sulfeto de hidrogênio (H2S) oxidado por endossimbiontes em Riftia (tubeworm), gerando energia química
+          - Apenas luz solar trivialmente
+          - Apenas CO2 atmosférico
+          - Sem qualquer mecanismo único
+        correctAnswer: Sulfeto de hidrogênio (H2S) oxidado por endossimbiontes em Riftia (tubeworm), gerando energia química
+        rationale:
+          pt: Cavanaugh 1981: Riftia pachyptila (tube worm de Galápagos vents, descoberto Corliss 1977) abriga em trofossoma simbionte γ-proteobacteria (Endoriftia) que oxida H2S vent → energia química → CO2 fix em Calvin Cycle → carboidratos para hospedeiro. Vermes não têm boca/intestino. Modelo de quimiossíntese profunda.
+          en: Cavanaugh 1981: Riftia pachyptila (Galápagos vent tube worm, Corliss 1977 discovery) harbors in trophosome a γ-proteobacterial symbiont (Endoriftia) oxidizing vent H2S → chemical energy → CO2 fix in Calvin Cycle → carbohydrates for host. Worms have no mouth/gut. Deep-sea chemosynthesis model.
+        objectives: [Riftia]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Banfield/Hugenholtz revolucionaram a "Tree of Life" recente (2016 Nature) por…
+          en: Banfield/Hugenholtz revolutionized recent "Tree of Life" (2016 Nature) by…
+        choices:
+          - Inclusão de >1k MAGs ambientais, mostrando que bactérias dominam diversidade vivente
+          - Substituir Domain Eukarya
+          - Eliminar archaea
+          - Não houve qualquer mudança
+        correctAnswer: Inclusão de >1k MAGs ambientais, mostrando que bactérias dominam diversidade vivente
+        rationale:
+          pt: Hug/Baker/Banfield (Nat Microbiol 2016) "A new view of the tree of life": filogenia incluindo CPR + DPANN archaea revelou que bactérias dominam diversidade vivente; eucariotos formam apenas pequena ramificação dentro de archaea Asgard. Quebrou narrativa antropocêntrica de "três domínios em paridade".
+          en: Hug/Baker/Banfield (Nat Microbiol 2016) "A new view of the tree of life": phylogeny including CPR + DPANN archaea revealed bacteria dominate living diversity; eukaryotes form only a small branching within Asgard archaea. Broke anthropocentric narrative of "three domains in parity".
+        objectives: [Hug 2016 ToL]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Bioremediation usa microrganismos para…
+          en: Bioremediation uses microorganisms to…
+        choices:
+          - Degradar/sequestrar poluentes (hidrocarbonetos, metais pesados, organoclorados) em sítios contaminados
+          - Apenas observar contaminação sem ação
+          - Apenas conservação de patogênios
+          - Sem qualquer aplicação
+        correctAnswer: Degradar/sequestrar poluentes (hidrocarbonetos, metais pesados, organoclorados) em sítios contaminados
+        rationale:
+          pt: Aplicações: Pseudomonas degradando hidrocarbonetos petrolíferos (Exxon Valdez 1989 cleanup), Geobacter U6+ → U4+ insolúvel (Anderson/Lovley), Dehalococcoides PCE/TCE chlorinated. Microbial fuel cells eletroativos. Tim Mahendra Jadhav, Lovley pioneiros. Sintrofia + diversidade de chassis multicepa-multifuncional permite remediação real.
+          en: Applications: Pseudomonas degrading petroleum hydrocarbons (Exxon Valdez 1989 cleanup), Geobacter U6+ → U4+ insoluble (Anderson/Lovley), Dehalococcoides PCE/TCE chlorinated. Microbial fuel cells electroactive. Tim Mahendra Jadhav, Lovley pioneers. Syntrophy + multi-strain chassis diversity enables real remediation.
+        objectives: [Bioremediation]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Coral microbiome ("holobiont") inclui…
+          en: Coral microbiome ("holobiont") includes…
+        choices:
+          - Coral animal + Symbiodinium algas + bactérias + fungos + vírus, todos com papéis ecológicos
+          - Apenas o coral animal sem qualquer associação
+          - Apenas algas isoladas
+          - Sem qualquer comunidade
+        correctAnswer: Coral animal + Symbiodinium algas + bactérias + fungos + vírus, todos com papéis ecológicos
+        rationale:
+          pt: Holobiont (Margulis): coral é "ecossistema" completo. Symbiodinium fornece ~90% energia (fotossíntese). Bactérias mucus (Endozoicomonas) modulam imunidade. Vírus (cyanophages) regulam algas. Probiotic interventions (Peixoto 2017+) aumentam tolerância térmica. Bleaching = ruptura do holobiont.
+          en: Holobiont (Margulis): coral is a complete "ecosystem". Symbiodinium provides ~90% of energy (photosynthesis). Mucus bacteria (Endozoicomonas) modulate immunity. Viruses (cyanophages) regulate algae. Probiotic interventions (Peixoto 2017+) boost thermal tolerance. Bleaching = holobiont breakdown.
+        objectives: [Holobiont coral]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O termo "core microbiome" refere-se a…
+          en: "Core microbiome" refers to…
+        choices:
+          - Conjunto de táxons compartilhados consistentemente entre indivíduos/amostras de um habitat
+          - Apenas uma única espécie dominante
+          - Sem qualquer compartilhamento
+          - Apenas em humanos
+        correctAnswer: Conjunto de táxons compartilhados consistentemente entre indivíduos/amostras de um habitat
+        rationale:
+          pt: Core: definido por presença em alta % das amostras (e.g. ≥50%, ≥80%). Em humano gut: Bacteroides, Faecalibacterium, Eubacterium. Em rizosfera: Pseudomonas. Útil para identificar membros funcionalmente importantes vs ruído. "Pan-microbiome" inclui acessórios. Conceito análogo a pan-genome.
+          en: Core: defined by presence in high % of samples (e.g., ≥50%, ≥80%). In human gut: Bacteroides, Faecalibacterium, Eubacterium. In rhizosphere: Pseudomonas. Useful to identify functionally important members vs noise. "Pan-microbiome" includes accessories. Concept analogous to pan-genome.
+        objectives: [Core microbiome]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em metagenômica funcional, anotação de KEGG/COG após binning permite…
+          en: In functional metagenomics, KEGG/COG annotation after binning enables…
+        choices:
+          - Inferir capacidade metabólica (vias presentes/ausentes) e potencial ecológico de cada MAG
+          - Apenas identificação taxonômica
+          - Apenas qualidade de DNA
+          - Sem qualquer função
+        correctAnswer: Inferir capacidade metabólica (vias presentes/ausentes) e potencial ecológico de cada MAG
+        rationale:
+          pt: Após assembly+binning, MAGs anotados via Prokka, eggNOG-mapper, KEGG-decoder, METABOLIC inferem vias completas/incompletas. Permite identificar nicho funcional: nitrification (amoA), sulfate reduction (dsrAB), photosynthesis (psbA, rbcL). Combina-se com metatranscriptomics para verificar atividade real. Frameworks: PICRUSt2 estima de 16S apenas.
+          en: After assembly+binning, MAGs annotated via Prokka, eggNOG-mapper, KEGG-decoder, METABOLIC infer complete/incomplete pathways. Identify functional niche: nitrification (amoA), sulfate reduction (dsrAB), photosynthesis (psbA, rbcL). Combine with metatranscriptomics to verify actual activity. Frameworks: PICRUSt2 estimates from 16S only.
+        objectives: [Functional annotation]
+target: 20
