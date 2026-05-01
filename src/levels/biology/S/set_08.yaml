@@ -1,0 +1,343 @@
+title:
+  pt: Síntese de Genomas e Engenharia Metabólica
+  en: Genome Synthesis and Metabolic Engineering
+level: S
+subject: biology
+objectives:
+  - Compreender JCVI Syn1.0/Syn3.0, Sc2.0, GP-write
+  - Reconhecer recoded organisms (C321, Syn61)
+  - Identificar microbiome therapeutics e cell ag
+  - Avaliar phage therapy, xenobio, unnatural base pairs
+difficulty: 5
+authorNotes: |
+  Genome writing era: JCVI Venter Syn1.0 (Mycoplasma mycoides 2010), Syn3.0 minimal (Hutchison
+  2016 ~473 genes), Sc2.0 yeast Boeke. Recoded E. coli C321 (Isaacs/Church 2013), Syn61
+  (Fredens/Chin Nature 2019). GP-write 2016. Microbiome: Vowst/Rebyota FMT C. difficile FDA
+  2022-2023. Synlogic SYNB1934 PKU. Cell ag: Upside/Eat Just FDA 2022. Phage therapy
+  Strathdee/Patterson UCSD. Romesberg unnatural base pairs Synthorx.
+example:
+  question:
+    pt: JCVI Syn1.0 (Gibson/Glass/Smith/Venter Science 2010) marco foi…
+    en: JCVI Syn1.0 (Gibson/Glass/Smith/Venter Science 2010) milestone was…
+  choices:
+    - First bacterial cell controlled by a fully chemically synthesized genome — Mycoplasma mycoides JCVI-syn1.0 transplanted into M. capricolum recipient
+    - First de novo synthesis of a eukaryotic chromosome from scratch
+    - First successful CRISPR knockout of an essential gene in mammals
+    - First synthetic protein cage assembled from designed peptides
+  correctAnswer: First bacterial cell controlled by a fully chemically synthesized genome — Mycoplasma mycoides JCVI-syn1.0 transplanted into M. capricolum recipient
+  rationale:
+    pt: 'JCVI Syn1.0 (Gibson Glass Lartigue Noskov Chuang Algire Benders Montague Ma Moodie Merryman Vashee Krishnakumar Assad-Garcia Andrews-Pfannkoch Denisova Young Qi Segall-Shapiro Calvey Parmar Hutchison Smith Venter Science 2010): assembled ~1.08 Mbp Mycoplasma mycoides genome em yeast (TAR transformation-associated recombination), em ~25kb cassettes via Gibson assembly hierarchical → transplant into M. capricolum recipient cell (Lartigue 2007 prior genome transplant) → daughter cells contain only synthetic genome (watermarks identifiable). Custom: Hamilton Smith (Nobel 1978 restriction enzymes) + Daniel Gibson (Gibson assembly nome) + Craig Venter. Investment ~$40M. Demonstration genome-as-software: design-build-boot. Limit: usou existing M. mycoides genome design (sem rational reduction). Subsequent: Syn3.0 2016 minimal version, Sc2.0 yeast eukaryote first.'
+    en: 'JCVI Syn1.0 (Gibson Glass Lartigue Noskov Chuang Algire Benders Montague Ma Moodie Merryman Vashee Krishnakumar Assad-Garcia Andrews-Pfannkoch Denisova Young Qi Segall-Shapiro Calvey Parmar Hutchison Smith Venter Science 2010): assembled ~1.08 Mbp Mycoplasma mycoides genome in yeast (TAR transformation-associated recombination), in ~25 kb cassettes via Gibson assembly hierarchical → transplanted into M. capricolum recipient cell (Lartigue 2007 prior genome transplant) → daughter cells contain only the synthetic genome (watermarks identifiable). Cast: Hamilton Smith (Nobel 1978 restriction enzymes) + Daniel Gibson (Gibson assembly namesake) + Craig Venter. Investment ~$40M. Demonstration of genome-as-software: design-build-boot. Limit: used existing M. mycoides genome design (no rational reduction). Subsequent: Syn3.0 2016 minimal version, Sc2.0 yeast eukaryote first.'
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Síntese de genomas
+      en: Page 1 — Genome synthesis
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: JCVI Syn3.0 (Hutchison/Venter Science 2016) achievement foi…
+          en: JCVI Syn3.0 (Hutchison/Venter Science 2016) achievement was…
+        choices:
+          - Minimal viable bacterial genome (~531 kbp, 473 genes) — smallest known self-replicating cell genome, defining a near-essential gene set
+          - Removal of all DNA from a bacterial cell while preserving replication
+          - Largest synthetic genome ever assembled at ~10 Mbp
+          - First eukaryotic minimal genome in S. cerevisiae
+        correctAnswer: Minimal viable bacterial genome (~531 kbp, 473 genes) — smallest known self-replicating cell genome, defining a near-essential gene set
+        rationale:
+          pt: 'JCVI Syn3.0 (Hutchison Chuang Noskov Assad-Garcia Deerinck Ellisman Gill Kannan Karas Ma Pelletier Qi Richter Strychalski Sun Suzuki Tsvetanova Wise Smith Glass Merryman Gibson Venter Science 2016): minimal viable Mycoplasma mycoides genome — ~531 kbp, 473 protein-coding genes (vs ~901 Syn1.0). Iterative design-build-test: deletion experiments transposon mutagenesis identified essential vs quasi-essential vs non-essential. Reconstrução em 8 segmentos. ~149 genes (~32%) ainda unknown function — fundamentos vida ainda incompletos. Smallest known self-replicating cell genome (Mycoplasma genitalium 525kbp ~482 genes natural). Doubling time ~3hrs (vs M. mycoides ~1hr). Subsequent Syn3A 2021 (Breuer Pelletier elongated cell shape). Foundation for build-up additions purposeful — SBOL standardization synthetic biology design language. Aplicações: chassis minimal designed circuits, biosafety contained synthetic life, fundamental biology questions.'
+          en: 'JCVI Syn3.0 (Hutchison Chuang Noskov Assad-Garcia Deerinck Ellisman Gill Kannan Karas Ma Pelletier Qi Richter Strychalski Sun Suzuki Tsvetanova Wise Smith Glass Merryman Gibson Venter Science 2016): minimal viable Mycoplasma mycoides genome — ~531 kbp, 473 protein-coding genes (vs ~901 in Syn1.0). Iterative design-build-test: deletion experiments by transposon mutagenesis identified essential vs quasi-essential vs non-essential. Reconstructed in 8 segments. ~149 genes (~32%) still of unknown function — fundamentals of life are still incomplete. Smallest known self-replicating cell genome (Mycoplasma genitalium 525 kbp ~482 genes natural). Doubling time ~3 hrs (vs M. mycoides ~1 hr). Subsequent Syn3A 2021 (Breuer Pelletier elongated cell shape). Foundation for build-up additions purposeful — SBOL standardization of synthetic biology design language. Applications: chassis for minimal designed circuits, biosafety-contained synthetic life, fundamental biology questions.'
+        objectives: [Syn3.0 minimal]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Sc2.0 (synthetic yeast, Boeke + international consortium Cell 2023) é…
+          en: Sc2.0 (synthetic yeast, Boeke + international consortium Cell 2023) is…
+        choices:
+          - First fully synthetic eukaryotic genome — redesigned 16 chromosomes of S. cerevisiae with loxPsym sites enabling SCRaMbLE genome shuffling
+          - Synthetic prokaryotic genome based on E. coli
+          - Computer-only simulation of yeast genome without physical assembly
+          - Single chromosome rewrite of yeast chromosome III only
+        correctAnswer: First fully synthetic eukaryotic genome — redesigned 16 chromosomes of S. cerevisiae with loxPsym sites enabling SCRaMbLE genome shuffling
+        rationale:
+          pt: 'Sc2.0 (Synthetic Yeast Genome Project, Boeke NYU + international ~12 labs Edinburgh, Tsinghua, JHU, Imperial, etc, founded 2007): synthesized 16 designer chromosomes (~12 Mbp total) S. cerevisiae. Design changes: removed introns, retrotransposons, tRNA genes (relocated specialized neochromosome), recoded TAA stop codons, inserted loxPsym sites every ~3kb (allows SCRaMbLE — synthetic chromosome rearrangement and modification by loxP-mediated evolution → rapid genome shuffling adaptive evolution). Synthesized in 750bp Building Blocks → 10kb minichunks → 30-60kb chunks. Final integration via SwAP-In replacement. 2023 Cell suite + 2024 papers: complete genome synthesis assembly accomplished. Largest engineered eukaryotic genome até now. Foundation: directed evolution (SCRaMbLE library mining), pathway engineering, fundamental yeast biology. Boeke Jef NYU Langone leadership decade+. International consortium model bigscience.'
+          en: 'Sc2.0 (Synthetic Yeast Genome Project, Boeke NYU + international ~12 labs Edinburgh, Tsinghua, JHU, Imperial, etc, founded 2007): synthesized 16 designer chromosomes (~12 Mbp total) of S. cerevisiae. Design changes: removed introns, retrotransposons, tRNA genes (relocated to a specialized neochromosome), recoded TAA stop codons, inserted loxPsym sites every ~3kb (allows SCRaMbLE — synthetic chromosome rearrangement and modification by loxP-mediated evolution → rapid genome shuffling adaptive evolution). Synthesized in 750bp Building Blocks → 10kb minichunks → 30-60kb chunks. Final integration via SwAP-In replacement. 2023 Cell suite + 2024 papers: complete genome synthesis assembly accomplished. Largest engineered eukaryotic genome to date. Foundation for: directed evolution (SCRaMbLE library mining), pathway engineering, fundamental yeast biology. Jef Boeke NYU Langone has led for over a decade. International consortium model of big-science.'
+        objectives: [Sc2.0]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Recoded E. coli C321 (Lajoie/Isaacs/Church Science 2013) achievement foi…
+          en: Recoded E. coli C321 (Lajoie/Isaacs/Church Science 2013) achievement was…
+        choices:
+          - Genome-wide replacement of all 321 TAG amber stop codons with TAA, freeing TAG for non-canonical amino acid incorporation in vivo
+          - Random codon shuffling without functional impact on any genes
+          - Single-codon swap at one locus only
+          - Replacement of all stop codons across all three classes simultaneously
+        correctAnswer: Genome-wide replacement of all 321 TAG amber stop codons with TAA, freeing TAG for non-canonical amino acid incorporation in vivo
+        rationale:
+          pt: 'C321.ΔA (Lajoie Rovner Goodman Aerni Haimovich Kuznetsov Mercer Wang Stracquadanio Amiram Bonneau Aitken Ahn Boeke Carmel-Harel Carr Dunn Helman Gibson Tolonen Wu Bartik Carr Heffernan Daniels Chum Hentges Chouvet Wang Hutchings Jain Sleator Sterling Mosberg Whittaker Liu Singh Jakobson Konnova Way Rinehart Conway Sodergren Tsherniak Jewett Forster Krummel Fischbach Voigt Jacobson Lewis Caputo Gardner Heinemann Shoulders Karpel Park Phillips Rinehart Sherwood Patriarca Gosling Burgess Smith Glass Merryman Beck Chiang Stupple Sehnal Allen Bedford Calhoun Mehta Wilkinson Ostrov Ellis-Hutchings Gershater Boeke Wong Stoyles Jewett Schultz Hochuli Strain Yeates Chestnut Zane Liss Smith Ostrov Liang Niebuhr Pulkkinen Neumann Wood Schimmel Niquille Pham Lin Dyer Lemay Krug Lin Goyal Anikst Chuang Voigt Holley Conway Ramey Schein Lipp Dyer Bagrov Bhagat Brik Cetra Edrich Frey Galloway Husson Kuhlmann Park Pizzino Pratt-Riccio Rao Slovak Trapasso Vakili Vipulanantham Yeoh Lim Mu Poelmans Senger Stalmasek Walsh Yang Zellner Hirano Lieberman Zhuang Skipper Mukai Whitehead Hochuli Way Church Science 2013): primeira genome-wide codon replacement E. coli MG1655. Substituiu todas as 321 TAG amber stop codons → TAA stop. Released release factor RF1 (TAG-specific) deletion → TAG agora available reassignment via orthogonal aminoacyl-tRNA synthetase + tRNA pair (e.g., Methanosarcina pyrrolysyl-tRNA synthetase) → incorporate non-canonical amino acids (ncAAs) site-specifically. ncAAs: phototrigger, click chemistry, fluorescent. Aplicações: enhanced biocontainment (synthetic auxotrophy ncAAs Mandell 2015), proteome expansion, virus resistance partial (T7 phage uses TAG). Foundational genome-scale recoding. Subsequent: Syn61 Chin reduces 64 → 61 codons.'
+          en: 'C321.ΔA (Lajoie Isaacs Church Science 2013): first genome-wide codon replacement in E. coli MG1655. Replaced all 321 TAG amber stop codons → TAA stop. Released release factor RF1 (TAG-specific) deletion → TAG now available for reassignment via orthogonal aminoacyl-tRNA synthetase + tRNA pair (e.g., Methanosarcina pyrrolysyl-tRNA synthetase) → incorporates non-canonical amino acids (ncAAs) site-specifically. ncAAs: phototriggers, click chemistry, fluorescent. Applications: enhanced biocontainment (synthetic auxotrophy ncAAs Mandell 2015), proteome expansion, partial virus resistance (T7 phage uses TAG). Foundational genome-scale recoding. Subsequent: Syn61 Chin reduces 64 → 61 codons.'
+        objectives: [C321 recoded]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Syn61 (Fredens/Chin MRC-LMB Nature 2019) é…
+          en: Syn61 (Fredens/Chin MRC-LMB Nature 2019) is…
+        choices:
+          - E. coli with all serine TCG/TCA codons and TAG stop replaced, reducing the genetic code to 61 codons and freeing 3 codons for non-canonical amino acid incorporation
+          - First E. coli with classical 64-codon genetic code without modifications
+          - Yeast strain with synthetic chromosome only
+          - Mammalian cell line with reduced codon usage
+        correctAnswer: E. coli with all serine TCG/TCA codons and TAG stop replaced, reducing the genetic code to 61 codons and freeing 3 codons for non-canonical amino acid incorporation
+        rationale:
+          pt: 'Syn61 (Fredens Wang de la Torre Funke Robertson Christova Chia Schmied Dunkelmann Beránek Uttamapinant Llamazares Elliott Chin MRC Laboratory of Molecular Biology Cambridge Nature 2019): synthesized E. coli MG1655 com ~4Mbp genome refactored. Substituições: all TCG → AGC, all TCA → AGT (both encode serine), all TAG → TAA stop. Genetic code reduced 64 → 61 functional codons. Liberou 3 codons (TCG, TCA, TAG) → reassignable. Subsequent Syn61Δ3 (Robertson 2021) deleted serT (TCG-tRNA), serU (TCA-tRNA), prfA (RF1 release factor TAG) → fully blanked codons → reassigned ncAAs encoding non-canonical amino acids → polymers ribosomally synthesized de macrocyclic peptides therapeutic potential. Resistance virus broad (phages relying TCG/TCA/TAG silenced). Jason Chin lab Cambridge — Nobel-trajectory expanded genetic code. Synthesized via REXER (replicon excision-mediated chromosomal exchange) iterative replacement. Foundation expanded biology xenobio.'
+          en: 'Syn61 (Fredens Wang de la Torre Funke Robertson Christova Chia Schmied Dunkelmann Beránek Uttamapinant Llamazares Elliott Chin MRC Laboratory of Molecular Biology Cambridge Nature 2019): synthesized E. coli MG1655 with ~4 Mbp genome refactored. Replacements: all TCG → AGC, all TCA → AGT (both encode serine), all TAG → TAA stop. Genetic code reduced from 64 → 61 functional codons. Freed 3 codons (TCG, TCA, TAG) → reassignable. Subsequent Syn61Δ3 (Robertson 2021) deleted serT (TCG-tRNA), serU (TCA-tRNA), prfA (RF1 release factor TAG) → fully blanked codons → reassigned ncAAs encoding non-canonical amino acids → polymers ribosomally synthesized to macrocyclic peptides with therapeutic potential. Broad virus resistance (phages relying on TCG/TCA/TAG silenced). Jason Chin lab Cambridge — Nobel-trajectory expanded genetic code. Synthesized via REXER (replicon excision-mediated chromosomal exchange) iterative replacement. Foundation for expanded biology and xenobio.'
+        objectives: [Syn61]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Genome Project-Write (GP-write, Boeke/Church/Yamazaki/Glass 2016) goal é…
+          en: Genome Project-Write (GP-write, Boeke/Church/Yamazaki/Glass 2016) goal is…
+        choices:
+          - Pilot ambitious genome-engineering projects culminating in synthesis of full-size mammalian and plant genomes, with ultraviolet-resistant human cell line as flagship
+          - Read every human genome on Earth one more time at higher coverage
+          - Sequence remaining unsolved heterochromatin gaps in T2T assembly
+          - Build a centralized DNA-storage service for archival data
+        correctAnswer: Pilot ambitious genome-engineering projects culminating in synthesis of full-size mammalian and plant genomes, with ultraviolet-resistant human cell line as flagship
+        rationale:
+          pt: 'Genome Project-Write (GP-write): launched 2016 (Boeke Church Hessel Yamazaki Glass Voigt et al Science 2016 commentary). Successor conceptual ao Human Genome Project (read genomes) — write genomes. Goal: drop DNA synthesis cost 1000-fold over decade enabling synthesis full-size genomes including mammalian (human cell). Pilot project flagship: ultra-safe cell line (recoded human cell virus-resistant, ncAA-incorporating, biosafer). Center of Excellence for Engineering Biology nonprofit umbrella. Sub-projects: Sc2.0 yeast (Boeke), Recoded E. coli (Church/Isaacs), human chromosome 21 minimal (Boeke 2024 progress 2 Mbp section), virus-resistant cells (Liu Church Lajoie). Slow progress vs original 10-year vision — DNA synthesis costs declining slower than predicted (Twist ~$0.07/bp 2024 still). Ethical concerns: dual-use, germline. International consortia continued GP-write 2.0 reframe 2024.'
+          en: 'Genome Project-Write (GP-write): launched 2016 (Boeke Church Hessel Yamazaki Glass Voigt et al Science 2016 commentary). Conceptual successor to the Human Genome Project (read genomes) — write genomes. Goal: drop DNA synthesis cost 1000-fold over a decade enabling synthesis of full-size genomes including mammalian (human cell). Pilot project flagship: ultra-safe cell line (recoded human cell virus-resistant, ncAA-incorporating, biosafer). Center of Excellence for Engineering Biology nonprofit umbrella. Sub-projects: Sc2.0 yeast (Boeke), Recoded E. coli (Church/Isaacs), human chromosome 21 minimal (Boeke 2024 progress on a 2 Mbp section), virus-resistant cells (Liu Church Lajoie). Slow progress vs original 10-year vision — DNA synthesis costs declining slower than predicted (Twist ~$0.07/bp 2024 still). Ethical concerns: dual-use, germline. International consortia continued in GP-write 2.0 reframe 2024.'
+        objectives: [GP-write]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Enzymatic DNA synthesis (DNA Script, Ansa Biotechnologies) advantage é…
+          en: Enzymatic DNA synthesis (DNA Script, Ansa Biotechnologies) advantage is…
+        choices:
+          - TdT-based enzymatic synthesis avoids harsh phosphoramidite chemistry, enabling longer oligos with fewer errors and water-only chemistry on benchtop instruments
+          - Identical phosphoramidite chemistry as legacy methods
+          - Production via random fragment shotgun ligation only
+          - Synthesis exclusively of single nucleotide modifications without polymerization
+        correctAnswer: TdT-based enzymatic synthesis avoids harsh phosphoramidite chemistry, enabling longer oligos with fewer errors and water-only chemistry on benchtop instruments
+        rationale:
+          pt: 'Enzymatic DNA synthesis (EDS): paradigm shift legacy phosphoramidite chemistry (Caruthers 1981 — sintetiza ~200nt DNA via 4 chemical steps per cycle, organic solvents acetonitrile, harsh conditions, depurination ~0.5%/cycle limita length). EDS approach: terminal deoxynucleotidyl transferase (TdT) DNA polymerase template-independent + reversibly blocked nucleotides (3′-OH protected). Cycle: enzymatic addition + wash + deblock. Companies: DNA Script (BioXp 9600 SYNTAX benchtop ~280nt sub-day), Ansa Biotechnologies (record longest enzymatic 1005nt 2023, GenScript partnership). Advantages: longer oligos (eventually >1kbp possible), fewer errors longer fragments, aqueous chemistry safer/greener, automation-friendly desktop unit. Subsequent: Roche Sequencing acquired EvonetiX, Twist Bioscience also exploring. Goal: democratize gene synthesis — research labs synthesize-on-demand. Field 2024 maturity emerging — cost competitive ~$0.10/bp scaling.'
+          en: 'Enzymatic DNA synthesis (EDS): paradigm shift from legacy phosphoramidite chemistry (Caruthers 1981 — synthesizes ~200 nt DNA via 4 chemical steps per cycle, organic solvents like acetonitrile, harsh conditions, depurination ~0.5%/cycle limits length). EDS approach: terminal deoxynucleotidyl transferase (TdT) DNA polymerase template-independent + reversibly blocked nucleotides (3′-OH protected). Cycle: enzymatic addition + wash + deblock. Companies: DNA Script (BioXp 9600 SYNTAX benchtop ~280 nt sub-day), Ansa Biotechnologies (record longest enzymatic 1005 nt 2023, GenScript partnership). Advantages: longer oligos (eventually >1 kbp possible), fewer errors in longer fragments, aqueous chemistry safer/greener, automation-friendly desktop unit. Subsequent: Roche Sequencing acquired EvonetiX, Twist Bioscience also exploring. Goal: democratize gene synthesis — research labs synthesize-on-demand. Field 2024 maturity emerging — cost competitive ~$0.10/bp scaling.'
+        objectives: [Enzymatic DNA synthesis]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Twist Bioscience silicon-based oligo array synthesis significância foi…
+          en: Twist Bioscience silicon-based oligo array synthesis significance was…
+        choices:
+          - Miniaturizing phosphoramidite synthesis on silicon wafers ~10000 oligos in parallel, dropping gene-synthesis costs ~1-2 orders of magnitude vs column-based legacy
+          - Identical column-based synthesis without process changes
+          - Synthesis exclusively for diagnostics not gene engineering
+          - Pure software platform without hardware innovation
+        correctAnswer: Miniaturizing phosphoramidite synthesis on silicon wafers ~10000 oligos in parallel, dropping gene-synthesis costs ~1-2 orders of magnitude vs column-based legacy
+        rationale:
+          pt: 'Twist Bioscience (founded 2013, Emily Leproust CEO ex-Agilent): silicon-based array synthesis platform. Miniaturized wells ~10000 oligos parallel single chip → assemble genes via inkjet-style nanoscale chemistry. Cost ~$0.07-0.09/bp 2024 (vs ~$0.20-0.50/bp column-based legacy IDT, GenScript). Throughput ~millions oligos/day. Aplicações: gene synthesis academia + industry, NGS library prep adapters, antibody phage display libraries (1B+ variants), DNA storage. Twist Antibody Optimization (TAO) early-stage drug discovery. IPO 2018, market leadership ~50% gene synthesis market. Concurrent: GenScript (China-based market leader), Eurofins, IDT. Limit: phosphoramidite chemistry limits ~200nt single oligos → assembly Gibson Klenow PCR multistep. Enzymatic synthesis (DNA Script, Ansa) potential disruptor next decade. Twist 2024 ~$200M revenue, expanding biopharma services.'
+          en: 'Twist Bioscience (founded 2013, Emily Leproust CEO ex-Agilent): silicon-based array synthesis platform. Miniaturized wells ~10000 oligos in parallel on a single chip → assemble genes via inkjet-style nanoscale chemistry. Cost ~$0.07-0.09/bp 2024 (vs ~$0.20-0.50/bp column-based legacy IDT, GenScript). Throughput ~millions of oligos/day. Applications: gene synthesis for academia + industry, NGS library-prep adapters, antibody phage-display libraries (1B+ variants), DNA storage. Twist Antibody Optimization (TAO) early-stage drug discovery. IPO 2018, market leadership ~50% gene-synthesis market. Concurrent: GenScript (China-based market leader), Eurofins, IDT. Limit: phosphoramidite chemistry limits ~200 nt single oligos → assembly Gibson Klenow PCR multistep. Enzymatic synthesis (DNA Script, Ansa) potential disruptor in next decade. Twist 2024 ~$200M revenue, expanding biopharma services.'
+        objectives: [Twist Bioscience]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Human Pangenome Reference (HPRC Nature 2023) advance é…
+          en: Human Pangenome Reference (HPRC Nature 2023) advance is…
+        choices:
+          - Graph-based pangenome from 47 phased diploid haplotype assemblies capturing structural diversity missed by linear GRCh38 reference
+          - Single-ancestry linear reference identical to GRCh38
+          - Mouse-only multi-strain assembly without human data
+          - Bulk SNP catalog without long-range haplotype information
+        correctAnswer: Graph-based pangenome from 47 phased diploid haplotype assemblies capturing structural diversity missed by linear GRCh38 reference
+        rationale:
+          pt: 'Human Pangenome Reference Consortium (HPRC) Nature 2023 (Liao Asri Ebler Doerr Haukness Hickey Lu Lucas Monlong Abel Buonaiuto Chang Cheng Chu Colonna Eizenga Feng Fischer Fulton Garg Groza Guarracino Harvey Heumos Howe Jain Lu Markello Martin Mitchell Norman Olsen Pesout Porubsky Prins Redon Rolando Roussou Salama Stewart Watkins Workman Yang Yu Zeng Mwaniki Bauer Genome10K HPRC ARC Sanger NHGRI Nature 2023 abr): graph-based pangenome assembled from 47 phased diploid haplotype assemblies (94 haplotypes total) representing diverse global ancestries. PGGB (PanGenome Graph Builder), Minigraph-Cactus aligners. Captures structural variants (SVs), indels, repeats, complex regions GRCh38 missed. Aligning reads pangenome reduces reference bias (ancestry-biased alignment GRCh38), better SV calling. Goal 350+ haplotypes 2025+. Foundation precision medicine inclusive. Concurrent: telomere-to-telomere (T2T) consortium 2022 first complete human genome (Nurk Science). Future: graph-aware variant calling clinical, GWAS imputation reference panels, complex region characterization (HLA, IGH antibodies, KIR).'
+          en: 'Human Pangenome Reference Consortium (HPRC) Nature 2023: graph-based pangenome assembled from 47 phased diploid haplotype assemblies (94 haplotypes total) representing diverse global ancestries. PGGB (PanGenome Graph Builder), Minigraph-Cactus aligners. Captures structural variants (SVs), indels, repeats, complex regions GRCh38 missed. Aligning reads to the pangenome reduces reference bias (ancestry-biased alignment to GRCh38), better SV calling. Goal 350+ haplotypes by 2025+. Foundation for inclusive precision medicine. Concurrent: telomere-to-telomere (T2T) consortium 2022 first complete human genome (Nurk Science). Future: graph-aware clinical variant calling, GWAS imputation reference panels, complex-region characterization (HLA, IGH antibodies, KIR).'
+        objectives: [HPRC pangenome]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Chromosome engineering (Wu Liu Cell 2018 mouse) approach é…
+          en: Chromosome engineering (Wu Liu Cell 2018 mouse) approach is…
+        choices:
+          - Megabase-scale CRISPR-mediated chromosome translocations and deletions producing viable mice with engineered karyotype changes
+          - Single-bp point mutations only without large-scale rearrangement
+          - mRNA injection for transient chromosomal effects
+          - Pure transcriptomic profiling without genome editing
+        correctAnswer: Megabase-scale CRISPR-mediated chromosome translocations and deletions producing viable mice with engineered karyotype changes
+        rationale:
+          pt: 'Chromosome engineering (Wu Wang Liu Sun Liu Lin Zheng Bai Tang Pang Bai Cell 2018 ou Li Sun Wang Cell 2022): CRISPR-Cas9 with two sgRNAs flanking large genomic regions → kilobase to megabase deletions, inversions, or translocations between chromosomes. Wang Sun mouse 2018 demonstrated chromosomal fusion: fusion mouse chromosomes 4+5 e 1+2 (engineered ESCs → live mice 21 chromosomes vs natural 20). Liu lab Hangzhou Cell 2024 yeast karyotype reduction. Aplicações: model genome instability cancers, study large-scale chromosomal evolution, engineering minimal chromosomes Sc2.0-style. Limit: efficiency low pasta megabase ranges, inviabilities frequent. Subsequent: AsCas12a + Cas9 multiplex strategies, prime editing-based large insertions (PASTE Tome). Field expanding chromosome surgery beyond gene-level edits. Genome architecture genuinely engineering target.'
+          en: 'Chromosome engineering: CRISPR-Cas9 with two sgRNAs flanking large genomic regions → kilobase- to megabase-scale deletions, inversions, or translocations between chromosomes. Mouse 2018 demonstrated chromosomal fusion: fusion of mouse chromosomes 4+5 and 1+2 (engineered ESCs → live mice with 21 chromosomes vs natural 20). Liu lab Hangzhou Cell 2024 yeast karyotype reduction. Applications: model genome instability in cancers, study large-scale chromosomal evolution, engineering minimal chromosomes in the Sc2.0 style. Limit: efficiency low at megabase ranges, frequent inviabilities. Subsequent: AsCas12a + Cas9 multiplex strategies, prime-editing-based large insertions (PASTE Tome). Field expanding chromosome surgery beyond gene-level edits. Genome architecture genuinely an engineering target.'
+        objectives: [Chromosome engineering]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Telomere-to-telomere (T2T) consortium 2022 entrega é…
+          en: Telomere-to-telomere (T2T) consortium 2022 deliverable is…
+        choices:
+          - First gapless human genome (T2T-CHM13) covering centromeres, rDNA arrays, and segmental duplications previously missing from GRCh38
+          - First mouse complete reference genome
+          - Pangenome of 100 individuals released as a single linear FASTA
+          - Bulk transcriptomic atlas of every human tissue
+        correctAnswer: First gapless human genome (T2T-CHM13) covering centromeres, rDNA arrays, and segmental duplications previously missing from GRCh38
+        rationale:
+          pt: 'T2T Consortium (Nurk Koren Rhie Rautiainen Bzikadze Mikheenko Vollger Altemose Uralsky Gershman Aganezov Hoyt Diekhans Logsdon Alonge Antonarakis Borchers Bouffard Brooks Caldas Chen Cheng Compton Costanzo Crinklaw Davis Diekhans Dishuck Dougherty Dreszer Dunn Ebert Ebler Edge Ferrer Filichkin Frith Galante Gao Gee Gershman Goerz Goloborodko Graves-Lindsay Guest Hagey Halabian Hall Hansen Harris Hatamian Heard Hilbert Hoyt Hourlier Hsu Hung Hwang Jain Jangir Jarvis Jayakumar Jha Jones Joseph Karolchik Kelley Kesidis Kim Kim Kong Korlach Kothari Krogan Kronenberg Lansdorp Lapidus Lasser Latorre Layer Leeb Leshner Lewis Linde Liu Logsdon Lou Lowy-Gallego Lukyanchikova Mahmoud Maiden Marin-Acevedo Marini Marshall Maslan Matthews McCabe McDaniel McEwen Medvedev Meeks Meredith Miller Millman Misiarz Moh Mohan Moncrief Monlong Moore Morrison Mountain Mwoman Nagai Naranjo Neale Neely Negi Nguyen Nik-Zainal Niu Norton Novalin Nye Nyovat Olshen Onishi Pace Padillarivera Park Pavlou Pavlovic Peart Peizhen Penacchio Phillippy Pomerantz Porubsky Prager Prokopenko Pulit Quinn Razzhivina Reedy Reichelt Reverdy Rey Rhie Roach Robertson Robles-Espinoza Rodriguez Rolph Sanchez Sankaran Sasaki Schedl Schenz Schlenker Schloss Schueler Schulman Schwartz Scott Searcy Seliverstov Sergeyev Sergushichev Sgrelli Shafin Sharp Shen Shum Sinha Skvortsov Smith Soldatov Steinberg Stewart Strecker Sukhwani Sun Sun Talbert Tang Tassi Tatum Taubmann Telenti Theiss Thibaud-Nissen Thielen Tilley Travesa Triplett Trundle Trzcinski Tutuncu Vakhrushev Vasilevsky Vincze Walker Wang Wang Wang Wansing Watanabe Wendt Werner Whitaker Wilkinson Williamson Wong Wood Yang Yashin Ye Yee Yost Zarate Zhang Zhang Zhang Zheng Zhou Zikic Zimin Hoyt Eichler Salzberg Schatz Wang Phillippy NHGRI Science 2022 abril): primeira complete human genome — T2T-CHM13 hydatidiform mole haploid cell line (gestational tissue uniform haploid, simpler assembly). Long-read PacBio HiFi + Oxford Nanopore Ultra-Long. Includes ~200Mb new sequence GRCh38 missing: centromeric satellites, rDNA arrays (acrocentric chromosomes), segmental duplications, immunoglobulin/HLA. Subsequent T2T-Y 2023 male Y chromosome, HPRC pangenome 2023 47 individuals. Foundation: complete reference end era ~20 years post-HGP draft 2001/2003.'
+          en: 'T2T Consortium (Nurk Koren et al NHGRI Science 2022 April): first complete human genome — T2T-CHM13 hydatidiform mole haploid cell line (gestational tissue uniform haploid, simpler assembly). Long-read PacBio HiFi + Oxford Nanopore Ultra-Long. Includes ~200 Mb new sequence GRCh38 missed: centromeric satellites, rDNA arrays (acrocentric chromosomes), segmental duplications, immunoglobulin/HLA. Subsequent T2T-Y 2023 male Y chromosome, HPRC pangenome 2023 47 individuals. Foundation: complete reference end era ~20 years post-HGP draft 2001/2003.'
+        objectives: [T2T consortium]
+  - title:
+      pt: Página 2 — Microbioma e engenharia metabólica
+      en: Page 2 — Microbiome and metabolic engineering
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Vowst (Seres Therapeutics SER-109 FDA 2023) e Rebyota (Ferring 2022) são…
+          en: Vowst (Seres Therapeutics SER-109 FDA 2023) and Rebyota (Ferring 2022) are…
+        choices:
+          - First FDA-approved microbiome therapeutics — donor-derived live biotherapeutic products preventing recurrent C. difficile infection by restoring gut Firmicutes
+          - Antibiotics used to treat C. difficile via direct bacterial killing
+          - Vaccines against C. difficile based on toxin antigens
+          - Engineered probiotics from a single recombinant strain
+        correctAnswer: First FDA-approved microbiome therapeutics — donor-derived live biotherapeutic products preventing recurrent C. difficile infection by restoring gut Firmicutes
+        rationale:
+          pt: 'First-generation microbiome therapeutics: Rebyota (RBX2660 Ferring/Rebiotix) FDA approval novembro 2022 — fecal microbiota transplant rectal enema, donor-derived. Vowst (SER-109 Seres Therapeutics) FDA approval abril 2023 — first oral microbiome capsule, purified Firmicutes spores from donor stool. Indication: prevention recurrent C. difficile infection (rCDI) following antibiotic treatment. Mechanism: restore competitive gut microbiome ecosystem displacing C. difficile, restoring bile-acid metabolism, secondary bile acids inhibit C. difficile germination. Phase 3 trials: ~12 weeks rCDI rates ~12% vs ~40% placebo. Donor-derived → screening rigorous (pathogens, transmissible disease). Predecessor: classical FMT (fecal microbiota transplant) compounded fresh donor stool, used decades clinically. Marketing 2023+: Vowst Seres struggled, sold pivot 2024. Future: defined-consortium products (Vedanta VE303, Finch).'
+          en: 'First-generation microbiome therapeutics: Rebyota (RBX2660 Ferring/Rebiotix) FDA approval November 2022 — fecal microbiota transplant rectal enema, donor-derived. Vowst (SER-109 Seres Therapeutics) FDA approval April 2023 — first oral microbiome capsule, purified Firmicutes spores from donor stool. Indication: prevention of recurrent C. difficile infection (rCDI) following antibiotic treatment. Mechanism: restore competitive gut microbiome ecosystem displacing C. difficile, restoring bile-acid metabolism, secondary bile acids inhibit C. difficile germination. Phase 3 trials: ~12-week rCDI rates ~12% vs ~40% placebo. Donor-derived → rigorous screening (pathogens, transmissible disease). Predecessor: classical FMT (fecal microbiota transplant) compounded from fresh donor stool, used clinically for decades. Marketing 2023+: Vowst Seres struggled, sold pivot 2024. Future: defined-consortium products (Vedanta VE303, Finch).'
+        objectives: [Vowst Rebyota microbiome]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Synlogic SYNB1934 (PKU phenylketonuria) approach é…
+          en: Synlogic SYNB1934 (PKU phenylketonuria) approach is…
+        choices:
+          - Engineered E. coli Nissle expressing phenylalanine ammonia-lyase to degrade phenylalanine in the gut, reducing systemic Phe in PKU patients
+          - Gene therapy AAV delivering PAH enzyme to liver
+          - Dietary protein restriction without any biotherapeutic
+          - Surgical gastric bypass for metabolic disease
+        correctAnswer: Engineered E. coli Nissle expressing phenylalanine ammonia-lyase to degrade phenylalanine in the gut, reducing systemic Phe in PKU patients
+        rationale:
+          pt: 'Synlogic SYNB1934 (oral live biotherapeutic, PKU phenylketonuria deficiência PAH phenylalanine hydroxylase): engineered E. coli Nissle 1917 (probiotic safe chassis) expressing PAL (phenylalanine ammonia-lyase from Anabaena variabilis) → degrade phenylalanine em gut → reduce absorbed Phe → systemic Phe levels lower → prevent neurotoxicity PKU. Synthetic Biotic platform (Synlogic founded Boston Jim Collins MIT). Phase 2 SynPheny-1 trial 2023 results modest — Phe reduction ~30-40% sustained. Phase 3 ongoing. Concurrent indications: SYNB1353 homocystinuria, gout. Pfizer acquired Synlogic strategic 2024 — engineered live biotherapeutics platform validation. Concept extends: bacterial chassis programmed sense-respond molecules em gut/tumor microenvironment. Limits: dosing q.day, gut-resident vs transit, narrow therapeutic window. Other companies: Novome, Pendulum, AOBiome. Field "engineered probiotics" 2.0.'
+          en: 'Synlogic SYNB1934 (oral live biotherapeutic, PKU phenylketonuria PAH phenylalanine hydroxylase deficiency): engineered E. coli Nissle 1917 (probiotic safe chassis) expressing PAL (phenylalanine ammonia-lyase from Anabaena variabilis) → degrades phenylalanine in gut → reduces absorbed Phe → systemic Phe levels lower → prevents PKU neurotoxicity. Synthetic Biotic platform (Synlogic founded in Boston by Jim Collins MIT). Phase 2 SynPheny-1 trial 2023 results modest — Phe reduction ~30-40% sustained. Phase 3 ongoing. Concurrent indications: SYNB1353 homocystinuria, gout. Pfizer acquired Synlogic strategic 2024 — engineered live biotherapeutics platform validation. Concept extends: bacterial chassis programmed sense-respond to molecules in gut/tumor microenvironment. Limits: q.day dosing, gut-resident vs transit, narrow therapeutic window. Other companies: Novome, Pendulum, AOBiome. Field "engineered probiotics" 2.0.'
+        objectives: [Synlogic PKU]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Artemisinin via metabolic engineering (Keasling Berkeley/Sanofi 2013) achievement é…
+          en: Artemisinin via metabolic engineering (Keasling Berkeley/Sanofi 2013) achievement is…
+        choices:
+          - Engineered yeast producing artemisinic acid via mevalonate pathway, semisynthesis to artemisinin antimalarial drug at industrial scale
+          - Direct chemical total synthesis without microbial production
+          - Enzymatic conversion of waste corn stalks to artemisinin in one step
+          - Plant breeding of higher-yielding Artemisia annua only
+        correctAnswer: Engineered yeast producing artemisinic acid via mevalonate pathway, semisynthesis to artemisinin antimalarial drug at industrial scale
+        rationale:
+          pt: 'Artemisinin metabolic engineering: Keasling lab Berkeley + Amyris startup. Plant Artemisia annua source supply variable, expensive. Engineered Saccharomyces cerevisiae → mevalonate pathway → amorphadiene synthase + cytochrome P450 CYP71AV1 → produce artemisinic acid (Ro Paddon Westfall Nature 2006/2013). Sanofi industrial scale-up 2013 — semisynthesis: artemisinic acid → photo-singlet-oxygen oxidation → artemisinin. Marketed via OneWorld Health partnership. Industrial production ~50-60 tons/year peak 2014-2015 — meaningful supply WHO ACT (artemisinin combination therapy) malaria. Subsequent: market dynamics — plant-derived prices fell, industrial yeast economics challenging, Sanofi exited 2017. Lessons: technical proof of metabolic engineering possible but commercial viability requires sustained price advantage. Concurrent: opioid biosynthesis Smolke Stanford Science 2015, cannabinoids Keasling Nature 2019, vanillin natural products. Field expanded synbio companies (Ginkgo, Zymergen, Amyris).'
+          en: 'Artemisinin metabolic engineering: Keasling lab Berkeley + Amyris startup. Plant Artemisia annua source had variable, expensive supply. Engineered Saccharomyces cerevisiae → mevalonate pathway → amorphadiene synthase + cytochrome P450 CYP71AV1 → produces artemisinic acid (Ro Paddon Westfall Nature 2006/2013). Sanofi industrial scale-up 2013 — semisynthesis: artemisinic acid → photo-singlet-oxygen oxidation → artemisinin. Marketed via OneWorld Health partnership. Industrial production ~50-60 tons/year peak 2014-2015 — meaningful supply for WHO ACT (artemisinin combination therapy) malaria. Subsequent: market dynamics — plant-derived prices fell, industrial yeast economics challenging, Sanofi exited 2017. Lessons: technical proof of metabolic engineering is possible but commercial viability requires sustained price advantage. Concurrent: opioid biosynthesis Smolke Stanford Science 2015, cannabinoids Keasling Nature 2019, vanillin natural products. Field expanded synbio companies (Ginkgo, Zymergen, Amyris).'
+        objectives: [Artemisinin]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Cultivated meat regulatory milestone (Upside Foods + Eat Just FDA 2022/USDA 2023) foi…
+          en: Cultivated meat regulatory milestone (Upside Foods + Eat Just FDA 2022/USDA 2023) was…
+        choices:
+          - First USDA-cleared chicken cultivated from animal cells for sale in US restaurants, paving path for cell-based meat industry
+          - First plant-based burger approved without animal cells
+          - First insect-protein product cleared for human consumption
+          - First lab-grown beef approved exclusively in EU
+        correctAnswer: First USDA-cleared chicken cultivated from animal cells for sale in US restaurants, paving path for cell-based meat industry
+        rationale:
+          pt: 'Cultivated meat regulatory clearance: Upside Foods (ex-Memphis Meats, Berkeley) + Eat Just GOOD Meat — FDA "no questions" letters (pre-market consultation) novembro 2022, USDA approval junho 2023 → first US sales cultivated chicken at high-end restaurants (Bar Crenn SF, José Andrés Washington DC). Mechanism: harvest cells animal biopsy (chicken muscle satellite cells, fibroblasts) → expand bioreactor cell culture media (FBS-free serum-replacement formulations) → differentiate skeletal muscle + adipose → harvest → process. Singapore foi first country approving cultivated chicken Eat Just 2020 (regulatory sandbox). Israel approval 2024. Cost challenge: ~$1000/kg laboratory-scale → goal $5-10/kg viable consumer. Bottlenecks: bioreactor scale, growth media cost (~80% expense), product differentiation vs plant-based. Companies: Upside, Eat Just, Mosa Meat (Mark Post Maastricht 2013 first lab burger), BlueNalu seafood, Mission Barns pork fat, Aleph Farms steaks. Industry capital winter 2023-2024 — ~$3B invested aggregate, slow progress.'
+          en: 'Cultivated meat regulatory clearance: Upside Foods (ex-Memphis Meats, Berkeley) + Eat Just GOOD Meat — FDA "no questions" letters (pre-market consultation) November 2022, USDA approval June 2023 → first US sales of cultivated chicken at high-end restaurants (Bar Crenn SF, José Andrés Washington DC). Mechanism: harvest cells from animal biopsy (chicken muscle satellite cells, fibroblasts) → expand in bioreactor cell culture media (FBS-free serum-replacement formulations) → differentiate to skeletal muscle + adipose → harvest → process. Singapore was first country approving cultivated chicken (Eat Just 2020 regulatory sandbox). Israel approval 2024. Cost challenge: ~$1000/kg laboratory-scale → goal $5-10/kg consumer-viable. Bottlenecks: bioreactor scale, growth media cost (~80% of expense), product differentiation vs plant-based. Companies: Upside, Eat Just, Mosa Meat (Mark Post Maastricht 2013 first lab burger), BlueNalu seafood, Mission Barns pork fat, Aleph Farms steaks. Industry capital winter 2023-2024 — ~$3B invested aggregate, slow progress.'
+        objectives: [Cultivated meat]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Recombinant insulin (Genentech/Lilly Humulin 1982) histórico impacto foi…
+          en: Recombinant insulin (Genentech/Lilly Humulin 1982) historic impact was…
+        choices:
+          - First FDA-approved recombinant biopharmaceutical, demonstrating microbial expression of human proteins and launching the biotech pharmaceutical industry
+          - Final use of bovine/porcine insulin without any biotechnology
+          - First gene therapy delivered as a clinical treatment
+          - First monoclonal antibody approved for diabetes
+        correctAnswer: First FDA-approved recombinant biopharmaceutical, demonstrating microbial expression of human proteins and launching the biotech pharmaceutical industry
+        rationale:
+          pt: 'Recombinant human insulin (Humulin): Genentech (Boyer Swanson founded 1976) + Eli Lilly partnership. Goeddel 1979 PNAS demonstrated synthetic gene → E. coli expression human insulin chains A + B → in vitro disulfide bond → bioactive. FDA approval 1982 — primeira recombinant biopharmaceutical commercial. Replaces bovine/porcine insulin sources (limited supply, immunogenicity, contamination concerns). Foundational milestone biotech industry: proof of concept genes-as-products. Subsequent recombinant: human growth hormone (Genentech 1985), erythropoietin (Amgen Epogen 1989), tPA, Factor VIII, monoclonal antibodies (Lilly Centocor ReoPro 1994). Genentech eventually acquired Roche $46.8B 2009. Industry $300B+ biopharm 2024. Genome-encoded therapeutics: insulin → recombinant antibodies → vaccines → mRNA → cell therapies → gene therapies → engineered live biotherapeutics. Continuum 40+ years.'
+          en: 'Recombinant human insulin (Humulin): Genentech (Boyer Swanson founded 1976) + Eli Lilly partnership. Goeddel 1979 PNAS demonstrated synthetic gene → E. coli expression of human insulin chains A + B → in vitro disulfide bond → bioactive. FDA approval 1982 — first commercial recombinant biopharmaceutical. Replaces bovine/porcine insulin sources (limited supply, immunogenicity, contamination concerns). Foundational milestone for biotech industry: proof of concept of genes-as-products. Subsequent recombinant: human growth hormone (Genentech 1985), erythropoietin (Amgen Epogen 1989), tPA, Factor VIII, monoclonal antibodies (Lilly Centocor ReoPro 1994). Genentech eventually acquired by Roche for $46.8B 2009. Industry $300B+ biopharm 2024. Genome-encoded therapeutics: insulin → recombinant antibodies → vaccines → mRNA → cell therapies → gene therapies → engineered live biotherapeutics. Continuum of 40+ years.'
+        objectives: [Recombinant insulin]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Phage therapy resurgence (Strathdee/Patterson UCSD 2017) é…
+          en: Phage therapy resurgence (Strathdee/Patterson UCSD 2017) is…
+        choices:
+          - Compassionate-use intravenous bacteriophage therapy curing multi-drug-resistant Acinetobacter baumannii infection, reigniting clinical phage interest in the West
+          - Routine antibiotic-only treatment without bacteriophage involvement
+          - Vaccine against bacterial infections without phage component
+          - Surgical drainage as the sole intervention
+        correctAnswer: Compassionate-use intravenous bacteriophage therapy curing multi-drug-resistant Acinetobacter baumannii infection, reigniting clinical phage interest in the West
+        rationale:
+          pt: 'Phage therapy clinical resurgence: Tom Patterson UCSD professor critical illness 2015-2016 multi-drug-resistant Acinetobacter baumannii pneumonia/sepsis. Wife Steffanie Strathdee epidemiologist coordinated emergency phage cocktail compassionate-use IND FDA — phages identified Naval Medical Research Center, AmpliPhi (Australia), Texas A&M Center for Phage Technology. IV phage cocktail → patient recovered 2017. Inspired UCSD IPATH (Innovative Phage Applications and Therapeutics) center 2018, Phage Directory, Phagebank Australia. Subsequent compassionate cases hundreds globally. Companies: Locus Biosciences (CRISPR-Cas3 + phage delivery), Adaptive Phage Therapeutics, Armata, BiomX, Pherecydes (acquired Phaxiam Therapeutics France). Trials: Cystic fibrosis Pseudomonas (CYPHY), prosthetic joint infections, UTI. Limit: regulatory framework UNCLEAR, phage specificity narrow, resistance emergence, phage-host coevolution challenges. Renewed interest amid AMR crisis post-WHO 2023 reports.'
+          en: 'Phage therapy clinical resurgence: Tom Patterson UCSD professor critically ill 2015-2016 with multi-drug-resistant Acinetobacter baumannii pneumonia/sepsis. Wife Steffanie Strathdee epidemiologist coordinated emergency phage cocktail compassionate-use IND with FDA — phages identified by Naval Medical Research Center, AmpliPhi (Australia), Texas A&M Center for Phage Technology. IV phage cocktail → patient recovered 2017. Inspired UCSD IPATH (Innovative Phage Applications and Therapeutics) center 2018, Phage Directory, Phagebank Australia. Subsequent compassionate-use cases number in the hundreds globally. Companies: Locus Biosciences (CRISPR-Cas3 + phage delivery), Adaptive Phage Therapeutics, Armata, BiomX, Pherecydes (acquired by Phaxiam Therapeutics France). Trials: cystic fibrosis Pseudomonas (CYPHY), prosthetic joint infections, UTI. Limit: regulatory framework unclear, phage specificity narrow, resistance emergence, phage-host coevolution challenges. Renewed interest amid AMR crisis post-WHO 2023 reports.'
+        objectives: [Phage therapy resurgence]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Romesberg unnatural base pairs (X-Y, Synthorx/Sanofi) approach é…
+          en: Romesberg unnatural base pairs (X-Y, Synthorx/Sanofi) approach is…
+        choices:
+          - Synthetic dNaM-dTPT3 base pair functional in living E. coli expanding the genetic alphabet beyond ATCG to enable new amino acids and codons
+          - Modification of natural ATGC bases via methylation only
+          - Replacement of one natural base with another within standard alphabet
+          - Pure in vitro chemistry without any cellular implementation
+        correctAnswer: Synthetic dNaM-dTPT3 base pair functional in living E. coli expanding the genetic alphabet beyond ATCG to enable new amino acids and codons
+        rationale:
+          pt: 'Unnatural base pairs (UBP): Floyd Romesberg Scripps Research → Synthorx spinout 2015 (Sanofi acquired 2019). dNaM-dTPT3 (Malyshev Dhami Lavergne Chen Lee Diao Khachatryan Romesberg Nature 2014): synthetic hydrophobic base pair functional in vivo E. coli — replicated, transcribed, translated. Foundation expanded genetic alphabet (6-letter: ATCG + XY → 64 codons → 216 codons potential). Synthorx product THOR-707 (denenicokin) recombinant IL-2 with site-specifically incorporated PEGylation site via UBP-encoded ncAA → reduced toxicity vs aldesleukin (high-dose IL-2 melanoma). Phase 1/2 advanced solid tumors. Concurrent: Steven Benner Foundation Applied Molecular Evolution 8-letter alphabet (Hoshika Leal Kim Karalkar Kim Eun Ranjan Lim Liu Bradley Sztompka Naseem Reichman Pascucci Chowdhury Naidu Stachler Stachler Lutz Carrigan Yang Lampert Rich Chittum Hutter Lassner Hossain Tran Kruger Yu Hutter Lampert Khazi McCray Snyder Hampikian Benner Foundation Science 2019 8-letter Z-P alphabet). Field xenobiology: expand chemistry life. Biocontainment built-in (cells require synthetic UBP, can´t escape).'
+          en: 'Unnatural base pairs (UBP): Floyd Romesberg Scripps Research → Synthorx spinout 2015 (Sanofi acquired 2019). dNaM-dTPT3 (Malyshev Dhami Lavergne Chen Lee Diao Khachatryan Romesberg Nature 2014): synthetic hydrophobic base pair functional in vivo E. coli — replicated, transcribed, translated. Foundation for expanded genetic alphabet (6-letter: ATCG + XY → 64 codons → 216 codons potential). Synthorx product THOR-707 (denenicokin) recombinant IL-2 with site-specifically incorporated PEGylation site via UBP-encoded ncAA → reduced toxicity vs aldesleukin (high-dose IL-2 melanoma). Phase 1/2 advanced solid tumors. Concurrent: Steven Benner Foundation for Applied Molecular Evolution 8-letter alphabet (Hoshika 2019 Z-P alphabet). Field of xenobiology: expand chemistry of life. Built-in biocontainment (cells require synthetic UBP, cannot escape).'
+        objectives: [Unnatural base pairs]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Spider silk biofabrication (Bolt Threads, AMSilk, Spiber) approach é…
+          en: Spider silk biofabrication (Bolt Threads, AMSilk, Spiber) approach is…
+        choices:
+          - Heterologous expression of spider-silk-protein genes in microbial hosts and spinning of recombinant fibers for textile and biomedical applications
+          - Direct harvest of fibers from spider colonies at industrial scale
+          - Pure synthetic-polymer chemistry without biological component
+          - Plant-derived cellulose modification only
+        correctAnswer: Heterologous expression of spider-silk-protein genes in microbial hosts and spinning of recombinant fibers for textile and biomedical applications
+        rationale:
+          pt: 'Spider silk biofabrication: spiders cannot be farmed (cannibalism, low yield); silk proteins (spidroins) ~250-350kDa, highly repetitive sequence, mechanical properties exceed Kevlar (toughness/density). Recombinant approach: spidroin gene constructs (truncated-shortened repeats e.g., 16x dragline silk Major Ampullate spidroin) → expressed E. coli, P. pastoris yeast, alfalfa, silkworms transgenic. Bolt Threads (founded 2009, Berkeley): yeast-fermented "Microsilk" → Adidas Stan Smith collaboration, Stella McCartney garments 2017. AMSilk (Munich, founded 2008): bacterial expression spider silk protein, partnered Adidas, BMW interior, biomedical scaffolds. Spiber (Japan, founded 2007): fermentation Brewed Protein™ → North Face Moon Parka 2019, Goldwin garments. Limit: scale, mechanical properties recombinant spider silk inferior natural (still no replicate full mechanical), cost. Bolt Threads pivot 2023 mycelium leather Mylo. AMSilk 2024 commercial fibers cosmetics textiles. Cellular agriculture parallel: leather (Modern Meadow), feathers (Spiber), wool (Spiber).'
+          en: 'Spider silk biofabrication: spiders cannot be farmed (cannibalism, low yield); silk proteins (spidroins) ~250-350 kDa, highly repetitive sequence, mechanical properties exceed Kevlar (toughness/density). Recombinant approach: spidroin gene constructs (truncated-shortened repeats e.g., 16x dragline silk Major Ampullate spidroin) → expressed in E. coli, P. pastoris yeast, transgenic alfalfa, silkworms. Bolt Threads (founded 2009, Berkeley): yeast-fermented "Microsilk" → Adidas Stan Smith collaboration, Stella McCartney garments 2017. AMSilk (Munich, founded 2008): bacterial expression of spider silk protein, partnered Adidas, BMW interior, biomedical scaffolds. Spiber (Japan, founded 2007): fermentation Brewed Protein™ → North Face Moon Parka 2019, Goldwin garments. Limit: scale, mechanical properties of recombinant spider silk inferior to natural (still cannot replicate full mechanical properties), cost. Bolt Threads pivot 2023 to mycelium leather Mylo. AMSilk 2024 commercial fibers in cosmetics and textiles. Cellular agriculture parallel: leather (Modern Meadow), feathers (Spiber), wool (Spiber).'
+        objectives: [Spider silk biofabrication]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Engineered Rhizobium / nitrogen-fixing crops (Pivot Bio, Joyn Bio) approach é…
+          en: Engineered Rhizobium / nitrogen-fixing crops (Pivot Bio, Joyn Bio) approach is…
+        choices:
+          - Microbial inoculants engineered to fix atmospheric nitrogen on cereal-crop roots, partially replacing synthetic fertilizers and reducing nitrogen runoff
+          - Pure chemical fertilizer formulation without biological component
+          - Genetic engineering of corn to fix nitrogen autonomously without microbes
+          - Crop rotation alone without microbial supplementation
+        correctAnswer: Microbial inoculants engineered to fix atmospheric nitrogen on cereal-crop roots, partially replacing synthetic fertilizers and reducing nitrogen runoff
+        rationale:
+          pt: 'Nitrogen-fixing inoculants: Pivot Bio (Berkeley founded 2010, ex-Karsten Temme), product Proven (Klebsiella variicola engineered), Return ON (Kosakonia sacchari engineered) — ammonia-secreting microbes applied corn/wheat seeds. Mechanism: native microbes nitrogen fixation regulated suppressed presence ammonium → engineered remove regulatory checkpoints → constitutive nitrogen fixation → secrete ammonium roots → plant uptake. Reduces synthetic fertilizer (Haber-Bosch) need ~20-25% per acre. Field trials ~5-15 bushels/acre yield improvement. Concurrent: Joyn Bio (Bayer + Ginkgo Bioworks JV 2017-2022 spun back parent), Sound Agriculture, Indigo Ag (microbiome inoculants broader), AgBiome. Climate impact: nitrogen fertilizer ~2% global emissions Haber-Bosch process + nitrous oxide runoff. Goal: nitrogen-fixing cereals (corn, wheat, rice) replicating legume-Rhizobium symbiosis — long-term Bill Gates Breakthrough Energy investment area. Engineering challenges large.'
+          en: 'Nitrogen-fixing inoculants: Pivot Bio (Berkeley founded 2010, ex-Karsten Temme), products Proven (Klebsiella variicola engineered), Return ON (Kosakonia sacchari engineered) — ammonia-secreting microbes applied to corn/wheat seeds. Mechanism: native microbe nitrogen fixation regulated to suppress in presence of ammonium → engineered to remove regulatory checkpoints → constitutive nitrogen fixation → secretes ammonium at roots → plant uptake. Reduces synthetic fertilizer (Haber-Bosch) need ~20-25% per acre. Field trials ~5-15 bushels/acre yield improvement. Concurrent: Joyn Bio (Bayer + Ginkgo Bioworks JV 2017-2022 spun back to parents), Sound Agriculture, Indigo Ag (broader microbiome inoculants), AgBiome. Climate impact: nitrogen fertilizer ~2% of global emissions from Haber-Bosch process + nitrous oxide runoff. Goal: nitrogen-fixing cereals (corn, wheat, rice) replicating legume-Rhizobium symbiosis — long-term Bill Gates Breakthrough Energy investment area. Engineering challenges large.'
+        objectives: [Nitrogen-fixing inoculants]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: DNA data storage (Microsoft/UW Project Silica + Catalog) approach é…
+          en: DNA data storage (Microsoft/UW Project Silica + Catalog) approach is…
+        choices:
+          - Encoding digital information in synthesized DNA bases for ultra-dense (~exabyte/g) durable archival storage with retrieval via sequencing
+          - Pure magnetic-tape archival storage without DNA component
+          - Storage of binary data in living bacterial cells temporarily
+          - Optical disc storage with laser writing in glass
+        correctAnswer: Encoding digital information in synthesized DNA bases for ultra-dense (~exabyte/g) durable archival storage with retrieval via sequencing
+        rationale:
+          pt: 'DNA data storage: encode binary 0s/1s → ATCG nucleotides via codes (Goldman Birney EBI 2013 Nature trinary, Church 2012, Erlich Zielinski Science 2017 fountain code). Synthesize DNA via phosphoramidite ou enzymatic → store dry powder/oligonucleotide pool ~indefinitely (DNA half-life dry ~1000+ years). Read: sequence → decode. Density ~1 exabyte (10⁹ GB)/gram theoretical (~10⁶x denser tape). Major players: Microsoft Research + Univ Washington (Project Silica precursor → DNA Storage Alliance 2020), Twist Bioscience (synthesis partner), Catalog Technologies (Boston, "tape-and-cassette" DNA), Iridia, Ansa Biotechnologies. Demonstration: GitHub archive (~21TB Project Silica 2020), entire OK Computer Radiohead album, Wikipedia, films (Paris). Limits: write speed ~kBps maximum currently (vs MBps tape), cost ~$1000/MB write (target $0.01/MB), random access limited. Niche compelling: cold archival (banking, government, intel) >100 years horizon. Field 5-10 years niche commercial maturity expected.'
+          en: 'DNA data storage: encode binary 0s/1s → ATCG nucleotides via codes (Goldman Birney EBI 2013 Nature trinary, Church 2012, Erlich Zielinski Science 2017 fountain code). Synthesize DNA via phosphoramidite or enzymatic → store dry powder/oligonucleotide pool ~indefinitely (DNA half-life dry ~1000+ years). Read: sequence → decode. Density ~1 exabyte (10⁹ GB)/gram theoretical (~10⁶x denser than tape). Major players: Microsoft Research + Univ Washington (Project Silica precursor → DNA Storage Alliance 2020), Twist Bioscience (synthesis partner), Catalog Technologies (Boston, "tape-and-cassette" DNA), Iridia, Ansa Biotechnologies. Demonstrations: GitHub archive (~21TB Project Silica 2020), entire OK Computer Radiohead album, Wikipedia, films (Paris). Limits: write speed ~kBps maximum currently (vs MBps tape), cost ~$1000/MB write (target $0.01/MB), limited random access. Niche compelling: cold archival (banking, government, intel) >100-year horizon. Field 5-10 years to niche commercial maturity expected.'
+        objectives: [DNA storage]
+target: 20
