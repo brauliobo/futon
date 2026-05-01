@@ -1,0 +1,343 @@
+title:
+  pt: Algoritmos em Bioinformática
+  en: Bioinformatics Algorithms
+level: P
+subject: biology
+objectives:
+  - Compreender alinhamentos (Smith-Waterman, BLAST)
+  - Reconhecer indexação (BWT, suffix arrays)
+  - Identificar montagem (de Bruijn graph, OLC)
+  - Avaliar HMMs e modelos de Markov em genômica
+difficulty: 5
+authorNotes: |
+  Bioinformatics. Needleman-Wunsch 1970 global. Smith-Waterman 1981 local. BLAST 1990 Altschul.
+  BWT (Burrows-Wheeler 1994) → BWA (Li/Durbin 2009), Bowtie (Langmead/Salzberg 2009). Suffix
+  array (Manber/Myers 1990). Assembly: OLC (Celera) vs de Bruijn (Pevzner). SPAdes, Flye.
+  HMMs: Krogh, Eddy HMMER. Profile HMMs Pfam. RNA-seq: Tophat/HISAT2 (Salzberg), STAR
+  (Dobin), Cufflinks/StringTie. Variant calling: GATK (Broad), DeepVariant (Google).
+example:
+  question:
+    pt: O algoritmo Needleman-Wunsch (1970) realiza…
+    en: The Needleman-Wunsch algorithm (1970) performs…
+  choices:
+    - Alinhamento global de duas sequências via programação dinâmica O(mn)
+    - Alinhamento local apenas, ignorando regiões fora do match
+    - Apenas busca em banco de dados sem alinhamento explícito
+    - Reconstrução de árvore filogenética sem alinhamento
+  correctAnswer: Alinhamento global de duas sequências via programação dinâmica O(mn)
+  rationale:
+    pt: Needleman-Wunsch (J Mol Biol 1970): primeiro algoritmo de alinhamento global por programação dinâmica. Matriz mxn, score = max(diagonal+match/mismatch, vertical+gap, horizontal+gap). Backtrace reconstrói alinhamento ótimo. Variante Smith-Waterman (1981) é local.
+    en: Needleman-Wunsch (J Mol Biol 1970): first global alignment algorithm via dynamic programming. m×n matrix, score = max(diagonal+match/mismatch, vertical+gap, horizontal+gap). Backtrace reconstructs optimal alignment. Smith-Waterman variant (1981) is local.
+passCriteria:
+  minAccuracyPercent: 85
+  maxAvgSecondsPerExercise: 14
+pages:
+  - title:
+      pt: Página 1 — Alinhamento e busca
+      en: Page 1 — Alignment and search
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O BLAST (Altschul 1990) revolucionou busca em bancos por usar…
+          en: BLAST (Altschul 1990) revolutionized database search by using…
+        choices:
+          - Heurística baseada em "words" (sementes) seguida de extensão local, milhões de vezes mais rápido que SW exato
+          - Programação dinâmica completa em todo o banco
+          - Apenas comparação Hamming sem qualquer extensão
+          - Hash perfeito sem qualquer aproximação
+        correctAnswer: Heurística baseada em "words" (sementes) seguida de extensão local, milhões de vezes mais rápido que SW exato
+        rationale:
+          pt: BLAST (Basic Local Alignment Search Tool, Altschul/Lipman/Myers PNAS 1990): identifica sementes (default 11 nt DNA, 3 aa proteína) e estende com Smith-Waterman local. E-value mede significância. Variantes: blastn, blastp, blastx, tblastn, tblastx. Substituiu FASTA. Padrão em bioinformática há 30+ anos.
+          en: BLAST (Basic Local Alignment Search Tool, Altschul/Lipman/Myers PNAS 1990): finds seeds (default 11 nt DNA, 3 aa protein) and extends with local Smith-Waterman. E-value measures significance. Variants: blastn, blastp, blastx, tblastn, tblastx. Replaced FASTA. Bioinformatics standard for 30+ years.
+        objectives: [BLAST]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Burrows-Wheeler Transform (BWT, 1994) usado em BWA/Bowtie permite…
+          en: The Burrows-Wheeler Transform (BWT, 1994) used in BWA/Bowtie enables…
+        choices:
+          - Indexação compacta de genoma (~1 byte/base) com busca exata em O(m)
+          - Apenas compressão de dados sem qualquer busca
+          - Substituição de qualquer alinhamento por hashing trivial
+          - Apenas processamento de imagens sem aplicação genômica
+        correctAnswer: Indexação compacta de genoma (~1 byte/base) com busca exata em O(m)
+        rationale:
+          pt: BWT (Burrows-Wheeler 1994) é transformação reversível com clusters; FM-index (Ferragina/Manzini 2000) permite busca em O(m). BWA (Li/Durbin 2009) e Bowtie/Bowtie2 (Langmead/Salzberg) usam para alinhamento curto reads em genomas. Tornou NGS escalável.
+          en: BWT (Burrows-Wheeler 1994) is a reversible transformation that clusters similar characters; FM-index (Ferragina/Manzini 2000) enables O(m) search. BWA (Li/Durbin 2009) and Bowtie/Bowtie2 (Langmead/Salzberg) use it for short-read alignment to genomes. Made NGS scalable.
+        objectives: [BWT]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A montagem de novo de genomas via "de Bruijn graphs" (Pevzner 2001) constrói grafo onde…
+          en: De novo genome assembly via "de Bruijn graphs" (Pevzner 2001) builds a graph where…
+        choices:
+          - Nós são k-mers (sub-sequências de comprimento k); arestas representam sobreposição k-1
+          - Nós são leituras inteiras conectadas por sobreposição
+          - Nós são genes anotados sem qualquer conexão
+          - Apenas para sequências circulares plasmídicas
+        correctAnswer: Nós são k-mers (sub-sequências de comprimento k); arestas representam sobreposição k-1
+        rationale:
+          pt: De Bruijn graph: cada read fragmentado em k-mers; arestas conectam k-mers com overlap k-1. Caminho Eulerian = montagem. Vantagem sobre OLC (overlap-layout-consensus de Sanger Celera): escala para muitas reads curtas. SPAdes, Velvet, ABySS implementam. Para reads longos (PacBio, Nanopore), OLC volta (Flye, Canu).
+          en: De Bruijn graph: each read fragmented into k-mers; edges connect k-mers with k-1 overlap. Eulerian path = assembly. Advantage over OLC (Sanger Celera overlap-layout-consensus): scales to many short reads. SPAdes, Velvet, ABySS implement it. For long reads (PacBio, Nanopore), OLC returns (Flye, Canu).
+        objectives: [de Bruijn]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: HMMER (Sean Eddy) é importante por…
+          en: HMMER (Sean Eddy) is important for…
+        choices:
+          - Profile HMMs para detecção sensível de domínios proteicos remotos (Pfam)
+          - Apenas alinhamento local sem componente probabilístico
+          - Substituição de BLAST por método mais rápido em todos os casos
+          - Apenas análise de RNA secundário
+        correctAnswer: Profile HMMs para detecção sensível de domínios proteicos remotos (Pfam)
+        rationale:
+          pt: HMMER (Eddy 1998+) implementa Profile HMMs: estados match/insert/delete codificam alinhamento múltiplo, capturam variabilidade posição-específica. Detecta homólogos remotos melhor que BLAST. Pfam (~20k famílias proteicas) é construído em HMMER. HMMER3 é versão veloz atual.
+          en: HMMER (Eddy 1998+) implements Profile HMMs: match/insert/delete states encode multiple alignment, capture position-specific variability. Detects remote homologs better than BLAST. Pfam (~20k protein families) is built on HMMER. HMMER3 is the current fast version.
+        objectives: [HMMER Pfam]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em RNA-seq, o "splice-aware aligner" é necessário porque…
+          en: In RNA-seq, "splice-aware aligners" are needed because…
+        choices:
+          - Reads de mRNA atravessam junções éxon-éxon, descontínuas no genoma
+          - Reads de RNA são mais curtas que reads de DNA
+          - mRNA tem qualidade base diferente
+          - Substituem PCR direto sem alinhamento
+        correctAnswer: Reads de mRNA atravessam junções éxon-éxon, descontínuas no genoma
+        rationale:
+          pt: Reads de RNA-seq podem cruzar exon-exon junctions, gerando "split reads" não-contíguos no genoma. STAR (Dobin 2013), HISAT2 (Kim/Salzberg 2019) detectam junções; Tophat (Trapnell 2009) foi pioneiro. Salmon/Kallisto fazem pseudo-alinhamento mais rápido para quantificação.
+          en: RNA-seq reads can cross exon-exon junctions, producing "split reads" non-contiguous in the genome. STAR (Dobin 2013), HISAT2 (Kim/Salzberg 2019) detect junctions; Tophat (Trapnell 2009) was pioneer. Salmon/Kallisto do faster pseudo-alignment for quantification.
+        objectives: [Splice-aware]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: GATK (Genome Analysis Toolkit, Broad) "best practices" inclui…
+          en: GATK (Genome Analysis Toolkit, Broad) "best practices" include…
+        choices:
+          - BWA → MarkDuplicates → BQSR → HaplotypeCaller → joint calling → VQSR/CNN
+          - Apenas BLAST direto sem qualquer pipeline
+          - Substituição completa por DeepVariant em qualquer contexto
+          - Pipeline aleatório sem reprodutibilidade
+        correctAnswer: BWA → MarkDuplicates → BQSR → HaplotypeCaller → joint calling → VQSR/CNN
+        rationale:
+          pt: GATK best practices (DePristo 2011, Van der Auwera 2013): BWA-MEM align → MarkDuplicates Picard → Base Quality Score Recalibration → HaplotypeCaller (assembly local + likelihood) → GenomicsDB joint calling → VQSR ou CNN filter. Padrão clínico mundial.
+          en: GATK best practices (DePristo 2011, Van der Auwera 2013): BWA-MEM align → MarkDuplicates Picard → Base Quality Score Recalibration → HaplotypeCaller (local assembly + likelihood) → GenomicsDB joint calling → VQSR or CNN filter. Worldwide clinical standard.
+        objectives: [GATK best practices]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: DeepVariant (Google 2018) chama variantes de DNA via…
+          en: DeepVariant (Google 2018) calls DNA variants via…
+        choices:
+          - CNN treinada em pileups como imagens, sem regras explícitas de chamada
+          - Apenas regras estatísticas como GATK convencional
+          - Sequenciamento direto sem alinhamento
+          - Substituição de PacBio por Illumina exclusivamente
+        correctAnswer: CNN treinada em pileups como imagens, sem regras explícitas de chamada
+        rationale:
+          pt: Poplin/Carroll Google (Nat Biotech 2018) trataram pileup como imagem RGB e treinaram CNN. Aprende padrões de variantes diretamente; competitivo com GATK em SNVs/indels Illumina; superior em PacBio HiFi. Ilustra "machine learning vs feature engineering" em genômica clínica.
+          en: Poplin/Carroll Google (Nat Biotech 2018) treated pileup as RGB image and trained a CNN. Learns variant patterns directly; competitive with GATK on Illumina SNVs/indels; superior on PacBio HiFi. Illustrates "ML vs feature engineering" in clinical genomics.
+        objectives: [DeepVariant]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O alinhamento múltiplo de sequências (MSA) progressivo (ClustalW, MUSCLE, MAFFT) usa qual estratégia?
+          en: Progressive multiple sequence alignment (ClustalW, MUSCLE, MAFFT) uses which strategy?
+        choices:
+          - Árvore-guia + alinhamento iterativo de pares mais próximos primeiro
+          - Alinhamento simultâneo exato em hyperdimensão
+          - Sem qualquer árvore, apenas média aritmética
+          - Substituição de Needleman-Wunsch por algoritmo trivial
+        correctAnswer: Árvore-guia + alinhamento iterativo de pares mais próximos primeiro
+        rationale:
+          pt: ClustalW (Thompson 1994) e sucessores: pairwise distances → árvore-guia (NJ ou similar) → alinha pares progressivamente, profile-vs-profile, dos mais próximos aos mais distantes. MUSCLE (Edgar 2004) e MAFFT (Katoh 2002+) refinaram com iterações. T-Coffee combina informação local de bibliotecas.
+          en: ClustalW (Thompson 1994) and successors: pairwise distances → guide tree (NJ or similar) → progressively align pairs, profile-vs-profile, from closest to most distant. MUSCLE (Edgar 2004) and MAFFT (Katoh 2002+) refined with iterations. T-Coffee combines local library information.
+        objectives: [Progressive MSA]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Estruturas de dados como "k-mer hash tables" (Jellyfish, KMC) servem para…
+          en: K-mer hash tables (Jellyfish, KMC) data structures serve to…
+        choices:
+          - Contar k-mers em datasets grandes para metagenômica, error correction, assembly
+          - Apenas armazenar sequências brutas FASTQ
+          - Substituir BWT em qualquer contexto
+          - Apenas contagem de leituras totais
+        correctAnswer: Contar k-mers em datasets grandes para metagenômica, error correction, assembly
+        rationale:
+          pt: Jellyfish (Marçais 2011), KMC, BBNorm contam k-mers eficientemente (lock-free, on-disk). Aplicações: distâncias entre genomas (Mash), error correction (Quake, Lighter), avaliação de complexidade (KAT), classificação metagenômica (Kraken).
+          en: Jellyfish (Marçais 2011), KMC, BBNorm count k-mers efficiently (lock-free, on-disk). Applications: genome-genome distances (Mash), error correction (Quake, Lighter), complexity assessment (KAT), metagenomic classification (Kraken).
+        objectives: [K-mer counting]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Compressão genômica via CRAM (sucessor de BAM) explora…
+          en: CRAM genomic compression (successor of BAM) leverages…
+        choices:
+          - Compressão referência-baseada (apenas armazena diferenças vs genoma referência)
+          - Compressão lossy obrigatória descartando bases
+          - Reordenação aleatória sem benefício
+          - Apenas zlib genérica sem qualquer especialização
+        correctAnswer: Compressão referência-baseada (apenas armazena diferenças vs genoma referência)
+        rationale:
+          pt: CRAM (Hsi-Yang Fritz/Cox 2011) armazena apenas variantes do read vs referência + qualidades comprimidas — ~30-50% menor que BAM. Lossy quality compression opcional. Padrão EBI European Genome-Phenome Archive. htslib suporta para troca/análise.
+          en: CRAM (Hsi-Yang Fritz/Cox 2011) stores only variants of read vs reference + compressed qualities — ~30-50% smaller than BAM. Optional lossy quality compression. Standard at EBI European Genome-Phenome Archive. htslib supports for exchange/analysis.
+        objectives: [CRAM]
+  - title:
+      pt: Página 2 — Aplicações modernas
+      en: Page 2 — Modern applications
+    exercises:
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A indexação "minimap2" (Heng Li 2018) para reads longos usa…
+          en: "minimap2" indexing (Heng Li 2018) for long reads uses…
+        choices:
+          - Minimizers (k-mer mais "leve" em janela), reduzindo redundância e acelerando alinhamento
+          - Apenas BWT padrão sem qualquer adaptação
+          - Substituição completa de qualquer alinhador genômico
+          - Apenas hash de Bloom filter sem indexação real
+        correctAnswer: Minimizers (k-mer mais "leve" em janela), reduzindo redundância e acelerando alinhamento
+        rationale:
+          pt: minimap2 (Li, Bioinformatics 2018) usa minimizers (Roberts 2004): selecionar k-mer mínimo em janela de w nucleotídeos. Reduz indexação ~w-fold, mantém sensibilidade. Padrão para PacBio HiFi, Nanopore, alinhamento entre genomas. Substituiu BLASR, BWA-MEM em long reads.
+          en: minimap2 (Li, Bioinformatics 2018) uses minimizers (Roberts 2004): select minimum k-mer in window of w nucleotides. Reduces indexing ~w-fold, retains sensitivity. Standard for PacBio HiFi, Nanopore, genome-genome alignment. Replaced BLASR, BWA-MEM for long reads.
+        objectives: [minimap2]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O grafo pangenômico (e.g. vg, pggb) representa…
+          en: Pangenome graph (e.g., vg, pggb) represents…
+        choices:
+          - Variação inter-genômica como grafo, com nós representando segmentos comuns ou alternativos
+          - Apenas referência linear sem qualquer variação
+          - Apenas árvore filogenética sem componente sequência
+          - Substituição completa de FASTA sem qualquer benefício
+        correctAnswer: Variação inter-genômica como grafo, com nós representando segmentos comuns ou alternativos
+        rationale:
+          pt: Pangenome graphs (Garrison vg 2018, pggb Garrison/Marschall 2024) capturam SNVs, indels, SVs, inversões em estrutura grafo — alinhamento contra grafo evita viés de referência única (especialmente em populações sub-representadas). Human Pangenome Reference Consortium 2023.
+          en: Pangenome graphs (Garrison vg 2018, pggb Garrison/Marschall 2024) capture SNVs, indels, SVs, inversions in graph structure — alignment against the graph avoids single-reference bias (especially in underrepresented populations). Human Pangenome Reference Consortium 2023.
+        objectives: [Pangenome]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O "indexed genome" T2T-CHM13 (Telomere-to-Telomere consortium 2022) é importante por…
+          en: The "indexed genome" T2T-CHM13 (Telomere-to-Telomere consortium 2022) is important because it…
+        choices:
+          - Primeiro genoma humano completo sem gaps, incluindo regiões repetitivas (~8% extras)
+          - Apenas adenina/timina sem qualquer outra base
+          - Genoma artificial sem origem em paciente real
+          - Substituição de GRCh38 sem qualquer benefício
+        correctAnswer: Primeiro genoma humano completo sem gaps, incluindo regiões repetitivas (~8% extras)
+        rationale:
+          pt: T2T-CHM13 (Nurk/Phillippy/Miga 2022 Science) usou PacBio HiFi + ONT para resolver heterocromatina pericêntrica, satélites, rDNA, segmentos centrais — adicionou ~200 Mb (8%) à GRCh38, descobriu ~2k novos genes. Base do Pangenome Reference. Inclusivo com Y completo (T2T-CHM13+Y 2023).
+          en: T2T-CHM13 (Nurk/Phillippy/Miga 2022 Science) used PacBio HiFi + ONT to resolve pericentric heterochromatin, satellites, rDNA, centric segments — adding ~200 Mb (8%) to GRCh38, discovering ~2k new genes. Foundation of Pangenome Reference. Inclusive with complete Y (T2T-CHM13+Y 2023).
+        objectives: [T2T-CHM13]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: A "annotation" automática de genomas (e.g. NCBI RefSeq, Ensembl) usa…
+          en: Automatic genome annotation (e.g., NCBI RefSeq, Ensembl) uses…
+        choices:
+          - Combinação de gene prediction ab initio (AUGUSTUS, GeneMark) + alinhamento RNA-seq + homologia
+          - Apenas predição ab initio sem qualquer evidência
+          - Apenas RNA-seq sem ab initio
+          - Curadoria manual exclusiva sem componente automático
+        correctAnswer: Combinação de gene prediction ab initio (AUGUSTUS, GeneMark) + alinhamento RNA-seq + homologia
+        rationale:
+          pt: Pipelines modernos (NCBI Gnomon, Ensembl Anacode) integram: ab initio (AUGUSTUS HMM, GeneMark, GENSCAN), evidências experimentais (RNA-seq, EST, CAGE, IsoSeq), homologia (BLAST a UniProt, Pfam). MAKER, BRAKER comuns para genomas novos. PacBio Iso-Seq melhora isoformas alternativas.
+          en: Modern pipelines (NCBI Gnomon, Ensembl Anacode) integrate: ab initio (AUGUSTUS HMM, GeneMark, GENSCAN), experimental evidence (RNA-seq, EST, CAGE, IsoSeq), homology (BLAST to UniProt, Pfam). MAKER, BRAKER common for new genomes. PacBio Iso-Seq improves alternative isoforms.
+        objectives: [Annotation]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Em metagenômica, Kraken2 (Wood/Salzberg) classifica reads via…
+          en: In metagenomics, Kraken2 (Wood/Salzberg) classifies reads via…
+        choices:
+          - LCA (lowest common ancestor) de hits de k-mers em árvore taxonômica indexada
+          - Apenas BLAST direto contra GenBank
+          - Alinhamento exato com BWA contra cada genoma
+          - Apenas contagem de leituras sem classificação
+        correctAnswer: LCA (lowest common ancestor) de hits de k-mers em árvore taxonômica indexada
+        rationale:
+          pt: Kraken2 (Wood 2019): cada k-mer associado a LCA de hits em árvore NCBI Taxonomy; read classificada conforme contagem de k-mers ao longo do path. Speed: milhões de reads/min em laptop. Sucessor: Bracken (Lu 2017) refina abundância. Concorrentes: KrakenUniq, Centrifuge, MetaPhlAn (marcadores).
+          en: Kraken2 (Wood 2019): each k-mer maps to LCA of hits in NCBI Taxonomy tree; read classified by k-mer counts along path. Speed: millions of reads/min on laptop. Successor: Bracken (Lu 2017) refines abundance. Competitors: KrakenUniq, Centrifuge, MetaPhlAn (markers).
+        objectives: [Kraken2]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Os "graph neural networks" (GNN) em bioinformática são aplicados a…
+          en: Graph neural networks (GNN) in bioinformatics are applied to…
+        choices:
+          - Predição de propriedade molecular, drug discovery, redes biológicas, predição estrutural
+          - Apenas substituição de BLAST sem benefício
+          - Apenas processamento de imagem celular
+          - Apenas modelagem de RNA sem outras aplicações
+        correctAnswer: Predição de propriedade molecular, drug discovery, redes biológicas, predição estrutural
+        rationale:
+          pt: GNNs (GCN Kipf/Welling 2017, GAT Velickovic 2018, GraphSAGE Hamilton 2017) aplicam a moléculas (átomos = nós, ligações = arestas) para predição de toxicidade, solubilidade, atividade. Em redes: drug-target interaction. AlphaFold2 e RoseTTAFold usam variantes de GNN/transformer.
+          en: GNNs (GCN Kipf/Welling 2017, GAT Velickovic 2018, GraphSAGE Hamilton 2017) apply to molecules (atoms = nodes, bonds = edges) for predicting toxicity, solubility, activity. In networks: drug-target interaction. AlphaFold2 and RoseTTAFold use GNN/transformer variants.
+        objectives: [GNN bio]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O Galaxy Project (Penn State, Nekrutenko/Taylor) é importante por…
+          en: The Galaxy Project (Penn State, Nekrutenko/Taylor) is important for…
+        choices:
+          - Plataforma web reproduzível com fluxos bioinformáticos visuais, acessível a não-programadores
+          - Apenas armazenamento de dados sem qualquer análise
+          - Substituição obrigatória de qualquer linha de comando
+          - Apenas para ensino sem produção real
+        correctAnswer: Plataforma web reproduzível com fluxos bioinformáticos visuais, acessível a não-programadores
+        rationale:
+          pt: Galaxy (Goecks 2010 Genome Biol) democratizou bioinformática: tools wrapped, GUI workflow, history compartilhável, public servers (Main, EU, AU). Reproducibility via histórico/Wikis. Comparável a Workflow systems (Snakemake, Nextflow) mas mais acessível.
+          en: Galaxy (Goecks 2010 Genome Biol) democratized bioinformatics: tools wrapped, GUI workflow, shareable history, public servers (Main, EU, AU). Reproducibility via history/Wikis. Comparable to workflow systems (Snakemake, Nextflow) but more accessible.
+        objectives: [Galaxy]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: Snakemake/Nextflow são "workflow managers" que…
+          en: Snakemake/Nextflow are "workflow managers" that…
+        choices:
+          - Permitem pipelines reproduzíveis, paralelos, com containers Docker/Singularity
+          - Substituem qualquer linguagem de programação
+          - Apenas executam tarefas únicas sequencialmente
+          - Limitados a single-thread sem qualquer paralelismo
+        correctAnswer: Permitem pipelines reproduzíveis, paralelos, com containers Docker/Singularity
+        rationale:
+          pt: Snakemake (Köster 2012, Python-based) e Nextflow (Di Tommaso 2017, Groovy) são linguagens declarativas para pipelines bioinformáticos com paralelização, containers, integração HPC/cloud. Pacotes nf-core (Ewels) standardizam. Substituíram Make/Bash em produção.
+          en: Snakemake (Köster 2012, Python-based) and Nextflow (Di Tommaso 2017, Groovy) are declarative languages for bioinformatics pipelines with parallelization, containers, HPC/cloud integration. nf-core packages (Ewels) standardize. Replaced Make/Bash in production.
+        objectives: [Snakemake Nextflow]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito FAIR data principles (Wilkinson 2016) advoga que dados sejam…
+          en: FAIR data principles (Wilkinson 2016) advocate that data be…
+        choices:
+          - Findable, Accessible, Interoperable, Reusable
+          - Apenas Found sem outros critérios
+          - Fechados, Acessíveis, Indexados, Reusáveis
+          - Sem qualquer princípio organizador
+        correctAnswer: Findable, Accessible, Interoperable, Reusable
+        rationale:
+          pt: FAIR (Wilkinson Sci Data 2016): F (findable, com identificadores únicos como DOI), A (accessible, protocolos abertos), I (interoperable, formatos/ontologias padrão), R (reusable, licença + metadata rica). Adotado pela Comissão Europeia, NIH, UNESCO. Crítico em ciência aberta.
+          en: FAIR (Wilkinson Sci Data 2016): F (findable, with unique identifiers like DOI), A (accessible, open protocols), I (interoperable, standard formats/ontologies), R (reusable, license + rich metadata). Adopted by European Commission, NIH, UNESCO. Critical in open science.
+        objectives: [FAIR]
+      - type: choice
+        difficulty: 5
+        question:
+          pt: O conceito "single source of truth" em base genômica clínica é exemplificado por…
+          en: "Single source of truth" in clinical genomic database is exemplified by…
+        choices:
+          - ClinVar (NCBI), agregando interpretações clínicas de variantes com evidência
+          - Apenas dbSNP sem qualquer curadoria clínica
+          - Apenas GenBank sem componente clínico
+          - Substituído por wikis abertos sem revisão
+        correctAnswer: ClinVar (NCBI), agregando interpretações clínicas de variantes com evidência
+        rationale:
+          pt: ClinVar (NCBI 2013) agrega submissões de laboratórios + literatura + curadoria expert sobre variantes humanas (patogênica, benigna, VUS). Padrão para diagnóstico clínico, integrado em pipelines (VEP, ANNOVAR, InterVar). ACMG/AMP guidelines (Richards 2015) padronizam interpretação.
+          en: ClinVar (NCBI 2013) aggregates lab submissions + literature + expert curation on human variants (pathogenic, benign, VUS). Standard for clinical diagnosis, integrated in pipelines (VEP, ANNOVAR, InterVar). ACMG/AMP guidelines (Richards 2015) standardize interpretation.
+        objectives: [ClinVar]
+target: 20
