@@ -21,11 +21,21 @@ const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m';
 const c = (t, col) => `${col}${t}${RESET}`;
 
+const SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9' };
+
 const normalize = (s) =>
   String(s)
     .replace(/[×·]/g, '*')
     .replace(/÷/g, '/')
     .replace(/−/g, '-')
+    // Convert "N²" / "x³" → "(N)^2" / "(x)^3"
+    .replace(/([\)\]a-zA-Z\d])([⁰¹²³⁴⁵⁶⁷⁸⁹]+)/g, (_, base, sups) => {
+      const exp = [...sups].map(ch => SUP[ch] || ch).join('');
+      return `${base}^${exp}`;
+    })
+    // √N or √(expr) → sqrt(N) / sqrt(expr)
+    .replace(/√\s*\(([^)]+)\)/g, 'sqrt($1)')
+    .replace(/√\s*(-?\d+(?:\.\d+)?)/g, 'sqrt($1)')
     .replace(/\s+/g, ' ')
     .trim();
 
@@ -47,10 +57,22 @@ function toNumber(v) {
 }
 
 const EQ_RE = /^(.+?)\s*=\s*(.+?)\s*,\s*x\s*=\s*$/i;
+const FN_RE = /^f\(x\)\s*=\s*(.+?)\s*,\s*f\((-?\d+(?:\.\d+)?)\)\s*=\s*\??\s*$/i;
 
 function verify(question, answer, type) {
   const q = normalize(question);
   const a = normalize(answer);
+
+  // Function-evaluation form: "f(x) = <expr>, f(N) = ?"
+  const fn = q.match(FN_RE);
+  if (fn) {
+    const xVal = Number(fn[2]);
+    const fv = (() => { try { return math.evaluate(fn[1], { x: xVal }); } catch { return null; } })();
+    const av = tryEval(a);
+    const fn_n = toNumber(fv), an = toNumber(av);
+    if (fn_n == null || an == null) return null;
+    return { ok: Math.abs(fn_n - an) < 1e-9, computed: `${fn_n}`, kind: 'function' };
+  }
 
   // Equation form. Two accepted shapes:
   //   "<lhs> = <rhs>, x ="    (correctAnswer is x)
@@ -89,7 +111,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0 };
   const mismatches = [];
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
@@ -115,7 +137,7 @@ async function main() {
   }
 
   console.log(c('\n🧮 MATH CORRECTNESS (mathjs)', BOLD));
-  console.log(`  ${checked} exercises verified  (equation: ${byKind.equation}, expression: ${byKind.expression}).\n`);
+  console.log(`  ${checked} exercises verified  (equation: ${byKind.equation}, expression: ${byKind.expression}, function: ${byKind.function}).\n`);
   if (!mismatches.length) {
     console.log(c('✅ All authored answers match library evaluation.', GREEN));
     process.exit(0);
