@@ -90,7 +90,7 @@ async function main() {
         const pageDeclared = fam.declared(p.title);
         const declared = pageDeclared || setDeclared;
         if (!declared) continue;
-        if (/mistur|revis[ãa]o|mix|geral|variad|combinad|desafio|maestria/i.test(p.title || '')) continue;
+        if (/mistur|revis[ãa]o|mix|geral|variad|combinad|desafio|maestria|ele mesmo/i.test(p.title || '')) continue;
         const operands = [];
         for (const e of p.exercises || []) {
           const ops = fam.operands(String(e.question || ''));
