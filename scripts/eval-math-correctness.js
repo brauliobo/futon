@@ -59,6 +59,7 @@ function toNumber(v) {
 const EQ_RE = /^(.+?)\s*=\s*(.+?)\s*,\s*x\s*=\s*$/i;
 const FN_RE = /^f\(x\)\s*=\s*(.+?)\s*,\s*f\((-?\d+(?:\.\d+)?)\)\s*=\s*\??\s*$/i;
 const LIM_RE = /^lim\s*\(\s*x\s*→\s*(-?\d+(?:\.\d+)?)\s*\)\s*(.+?)\s*=\s*\??\s*$/i;
+const LIM_INF_RE = /^lim\s*\(\s*x\s*→\s*(-?∞|-?infty?|-?inf)\s*\)\s*(.+?)\s*=\s*\??\s*$/i;
 
 function verify(question, answer, type) {
   const q = normalize(question);
@@ -84,6 +85,20 @@ function verify(question, answer, type) {
     const ln = toNumber(lv), an = toNumber(av);
     if (ln == null || an == null) return null;
     return { ok: Math.abs(ln - an) < 1e-9, computed: `${ln}`, kind: 'limit' };
+  }
+
+  // Limit at infinity: evaluate at a very large value as numeric proxy.
+  const liminf = q.match(LIM_INF_RE);
+  if (liminf) {
+    const sign = liminf[1].trim().startsWith('-') ? -1 : 1;
+    const xVal = sign * 1e8;
+    const lv = (() => { try { return math.evaluate(liminf[2], { x: xVal }); } catch { return null; } })();
+    const av = tryEval(a);
+    const ln = toNumber(lv), an = toNumber(av);
+    if (ln == null || an == null) return null;
+    // Loose tolerance — convergence isn't exact at finite x.
+    const tol = Math.max(1e-4, Math.abs(an) * 1e-4);
+    return { ok: Math.abs(ln - an) < tol, computed: `${ln}`, kind: 'limit∞' };
   }
 
   // Equation form. Two accepted shapes:
@@ -123,7 +138,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0 };
   const mismatches = [];
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
@@ -149,7 +164,7 @@ async function main() {
   }
 
   console.log(c('\n🧮 MATH CORRECTNESS (mathjs)', BOLD));
-  console.log(`  ${checked} exercises verified  (equation: ${byKind.equation}, expression: ${byKind.expression}, function: ${byKind.function}, limit: ${byKind.limit}).\n`);
+  console.log(`  ${checked} exercises verified  (equation: ${byKind.equation}, expression: ${byKind.expression}, function: ${byKind.function}, limit: ${byKind.limit}, limit∞: ${byKind['limit∞']}).\n`);
   if (!mismatches.length) {
     console.log(c('✅ All authored answers match library evaluation.', GREEN));
     process.exit(0);
