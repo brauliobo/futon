@@ -66,10 +66,29 @@ const EQ_RE = /^(.+?)\s*=\s*(.+?)\s*,\s*x\s*=\s*$/i;
 const FN_RE = /^f\(x\)\s*=\s*(.+?)\s*,\s*f\((-?\d+(?:\.\d+)?)\)\s*=\s*\??\s*$/i;
 const LIM_RE = /^lim\s*\(\s*x\s*→\s*(-?\d+(?:\.\d+)?)\s*\)\s*(.+?)\s*=\s*\??\s*$/i;
 const LIM_INF_RE = /^lim\s*\(\s*x\s*→\s*(-?∞|-?infty?|-?inf)\s*\)\s*(.+?)\s*=\s*\??\s*$/i;
+const NEXT_RE = /^(?:depois|ap[óo]s)\s+de\s+(-?\d+)\s+vem:?\s*$/i;
+const PREV_RE = /^antes\s+de\s+(-?\d+)\s+vem:?\s*$/i;
 
 function verify(question, answer, type) {
   const q = normalize(question);
   const a = normalize(answer);
+
+  // "Depois de N vem:" → answer N+1
+  const next = q.match(NEXT_RE);
+  if (next) {
+    const expected = Number(next[1]) + 1;
+    const an = toNumber(tryEval(a));
+    if (an == null) return null;
+    return { ok: an === expected, computed: `${expected}`, kind: 'successor' };
+  }
+  // "Antes de N vem:" → answer N-1
+  const prev = q.match(PREV_RE);
+  if (prev) {
+    const expected = Number(prev[1]) - 1;
+    const an = toNumber(tryEval(a));
+    if (an == null) return null;
+    return { ok: an === expected, computed: `${expected}`, kind: 'predecessor' };
+  }
 
   // Function-evaluation form: "f(x) = <expr>, f(N) = ?"
   const fn = q.match(FN_RE);
@@ -153,7 +172,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0 };
   const mismatches = [];
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
@@ -179,7 +198,8 @@ async function main() {
   }
 
   console.log(c('\n🧮 MATH CORRECTNESS (mathjs)', BOLD));
-  console.log(`  ${checked} exercises verified  (equation: ${byKind.equation}, expression: ${byKind.expression}, function: ${byKind.function}, limit: ${byKind.limit}, limit∞: ${byKind['limit∞']}, identity: ${byKind.identity}).\n`);
+  const summary = Object.entries(byKind).filter(([, n]) => n > 0).map(([k, n]) => `${k}: ${n}`).join(', ');
+  console.log(`  ${checked} exercises verified  (${summary}).\n`);
   if (!mismatches.length) {
     console.log(c('✅ All authored answers match library evaluation.', GREEN));
     process.exit(0);
