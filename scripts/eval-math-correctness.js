@@ -73,9 +73,33 @@ const SQUARE_ROOT_RE = /^[a-zσ]\^?2\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*[a-zσ]\s*=
 const AREA_RECT_RE = /^[áa]rea\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
 const PERIM_RECT_RE = /^per[íi]metro\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
 
+// Probe-verify two expressions are equivalent by evaluating at several x.
+function probeEquivalent(expr1, expr2) {
+  const xs = [0.31, 1.7, -2.3, 4.1, -5.9, 3];
+  for (const x of xs) {
+    let v1, v2;
+    try { v1 = math.evaluate(expr1, { x }); } catch { return null; }
+    try { v2 = math.evaluate(expr2, { x }); } catch { return null; }
+    const n1 = toNumber(v1), n2 = toNumber(v2);
+    if (n1 == null || n2 == null) return null;
+    if (Math.abs(n1 - n2) > Math.max(1e-6, Math.abs(n1) * 1e-6)) return false;
+  }
+  return true;
+}
+
 function verify(question, answer, type) {
   const q = normalize(question);
   const a = normalize(answer);
+
+  // Polynomial-factoring form: question is an expression, answer is its
+  // factored product. Both depend on x; probe at several values.
+  if (type === 'factoring' || type === 'algebraic_expression') {
+    // Strip parenthesized hints like "(começa com …)".
+    const qExpr = q.replace(/\s*\([^)]*com[^)]*\)\s*$/i, '').trim();
+    const result = probeEquivalent(qExpr, a);
+    if (result === true) return { ok: true, computed: 'expanded match', kind: 'factoring' };
+    if (result === false) return { ok: false, computed: 'expansions differ', kind: 'factoring' };
+  }
 
   // "<expr> = (hint)" mental-math form: compute LHS, ignore the hint.
   const hint = q.match(MENTAL_HINT_RE);
@@ -210,7 +234,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0 };
   const mismatches = [];
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
