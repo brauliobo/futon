@@ -76,6 +76,8 @@ const MENTAL_HINT_RE = /^(.+?)\s*=\s*\([^)]+\)\s*$/;       // "7 + 9 = (7 + 10 -
 const SQUARE_ROOT_RE = /^[a-zσ]\^?2\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*[a-zσ]\s*=\s*\??\s*$/i;
 const AREA_RECT_RE = /^[áa]rea\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
 const PERIM_RECT_RE = /^per[íi]metro\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
+// Three-term arithmetic sequence with one blank: "__,15,16" / "7,__,9" / "11,12,__"
+const SEQ3_RE = /^\s*(__|-?\d+)\s*,\s*(__|-?\d+)\s*,\s*(__|-?\d+)\s*$/;
 
 // Probe-verify two expressions are equivalent by evaluating at several x.
 function probeEquivalent(expr1, expr2) {
@@ -137,6 +139,23 @@ function verify(question, answer, type) {
       const expected = Math.sqrt(target);
       const an = toNumber(tryEval(a));
       if (an != null) return { ok: Math.abs(expected - an) < 1e-9, computed: `${expected}`, kind: 'sqrt_eq' };
+    }
+  }
+  // Three-term arithmetic sequence with one blank.
+  const seq = q.match(SEQ3_RE);
+  if (seq) {
+    const t = [seq[1], seq[2], seq[3]];
+    const i = t.indexOf('__');
+    if (i >= 0 && t.filter(x => x === '__').length === 1) {
+      const a0 = i === 0 ? null : Number(t[0]);
+      const a1 = i === 1 ? null : Number(t[1]);
+      const a2 = i === 2 ? null : Number(t[2]);
+      let expected;
+      if (i === 0) expected = 2 * a1 - a2;
+      else if (i === 2) expected = 2 * a1 - a0;
+      else expected = (a0 + a2) / 2;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'seq3' };
     }
   }
   // "Depois de N vem:" → answer N+1
@@ -236,7 +255,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0 };
   const mismatches = [];
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
