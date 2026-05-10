@@ -21,6 +21,8 @@ const CHECKS = [
   ['eval:pedagogy', 'Rubric scoring (/100)', [['scripts/pedagogy-eval.js']]],
   ['eval:disconnected', 'Disconnected/placeholder rationales', [['scripts/find-disconnected.js']]],
   ['eval:arithmetic', 'Arithmetic answer correctness', [['scripts/eval-arithmetic.js']]],
+  ['eval:correctness', 'Math correctness via mathjs (eq/fn/expr)', [['scripts/eval-math-correctness.js']]],
+  ['eval:title-content', 'Title↔content match (tabuada/divisão)', [['scripts/eval-title-content-match.js']]],
   ['eval:alignment', 'Example-exercise operator alignment', [['scripts/eval-example-alignment.js']]],
   ['eval:relevance', 'Rationale references operand/answer', [['scripts/eval-rationale-relevance.js']]],
   ['eval:answers', 'Choice exercises: answer-in-choices', [['scripts/eval-answer-in-choices.js']]],
