@@ -28,6 +28,10 @@ const normalize = (s) =>
     .replace(/[×·]/g, '*')
     .replace(/÷/g, '/')
     .replace(/−/g, '-')
+    .replace(/\bsen\b/g, 'sin')
+    .replace(/\bcosseno\b/g, 'cos')
+    .replace(/\btg\b/g, 'tan')
+    .replace(/\bcotg\b/g, 'cot')
     // Convert "N²" / "x³" → "(N)^2" / "(x)^3"
     .replace(/([\)\]a-zA-Z\d])([⁰¹²³⁴⁵⁶⁷⁸⁹]+)/g, (_, base, sups) => {
       const exp = [...sups].map(ch => SUP[ch] || ch).join('');
@@ -124,21 +128,30 @@ function verify(question, answer, type) {
     return { ok: Math.abs(ln - rn) < 1e-9, computed: `LHS=${ln}, RHS=${rn}`, kind: 'equation' };
   }
 
-  // Plain "<expr> =" form: evaluate LHS, compare to answer.
-  if (!q.endsWith('=')) return null;
-  const lhs = q.slice(0, -1).trim();
-  // Skip if LHS contains letters (we don't know the scope for a generic var).
-  if (/[a-wyzA-WYZ]/.test(lhs)) return null;
-  const lv = tryEval(lhs);
+  // Plain "<expr> = [?]" form: evaluate LHS, compare to answer.
+  // Skip if the authored answer is a bare variable name (algebra identity:
+  // we can't compare a variable to a numeric probe).
+  if (/^[A-Za-z]$/.test(a.trim())) return null;
+  const trimmed = q.replace(/\s*\?\s*$/, '').trim();
+  if (!trimmed.endsWith('=')) return null;
+  const lhs = trimmed.slice(0, -1).trim();
+  // Try direct numeric evaluation first; if it relies on x, probe at x=1.
+  let lv = tryEval(lhs);
+  let identity = false;
+  if (lv == null) {
+    try { lv = math.evaluate(lhs, { x: 1 }); identity = lv != null; } catch {}
+  }
+  if (lv == null) return null;
   const av = tryEval(a);
   const ln = toNumber(lv), an = toNumber(av);
   if (ln == null || an == null) return null;
-  return { ok: Math.abs(ln - an) < 1e-6, computed: `${ln}`, kind: 'expression' };
+  const tol = identity ? 1e-6 : 1e-6;
+  return { ok: Math.abs(ln - an) < tol, computed: `${ln}`, kind: identity ? 'identity' : 'expression' };
 }
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0 };
   const mismatches = [];
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
@@ -164,7 +177,7 @@ async function main() {
   }
 
   console.log(c('\n🧮 MATH CORRECTNESS (mathjs)', BOLD));
-  console.log(`  ${checked} exercises verified  (equation: ${byKind.equation}, expression: ${byKind.expression}, function: ${byKind.function}, limit: ${byKind.limit}, limit∞: ${byKind['limit∞']}).\n`);
+  console.log(`  ${checked} exercises verified  (equation: ${byKind.equation}, expression: ${byKind.expression}, function: ${byKind.function}, limit: ${byKind.limit}, limit∞: ${byKind['limit∞']}, identity: ${byKind.identity}).\n`);
   if (!mismatches.length) {
     console.log(c('✅ All authored answers match library evaluation.', GREEN));
     process.exit(0);
