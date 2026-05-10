@@ -70,6 +70,8 @@ const NEXT_RE = /^(?:depois|ap[óo]s)\s+de\s+(-?\d+)\s+vem:?\s*$/i;
 const PREV_RE = /^antes\s+de\s+(-?\d+)\s+vem:?\s*$/i;
 const MENTAL_HINT_RE = /^(.+?)\s*=\s*\([^)]+\)\s*$/;       // "7 + 9 = (7 + 10 - 1)" → LHS = "7 + 9"
 const SQUARE_ROOT_RE = /^[a-zσ]\^?2\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*[a-zσ]\s*=\s*\??\s*$/i;
+const AREA_RECT_RE = /^[áa]rea\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
+const PERIM_RECT_RE = /^per[íi]metro\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
 
 function verify(question, answer, type) {
   const q = normalize(question);
@@ -84,6 +86,20 @@ function verify(question, answer, type) {
     if (ln != null && an != null) {
       return { ok: Math.abs(ln - an) < 1e-6, computed: `${ln}`, kind: 'mental_hint' };
     }
+  }
+  // "Área do retângulo/quadrado a×b = ?" → a*b
+  const area = q.match(AREA_RECT_RE);
+  if (area) {
+    const expected = Number(area[1]) * Number(area[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'area_rect' };
+  }
+  // "Perímetro do retângulo a×b = ?" → 2*(a+b)
+  const perim = q.match(PERIM_RECT_RE);
+  if (perim) {
+    const expected = 2 * (Number(perim[1]) + Number(perim[2]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'perim_rect' };
   }
   // "v² = N → v = ?" — positive square root of N.
   const sqr = q.match(SQUARE_ROOT_RE);
@@ -194,7 +210,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0 };
   const mismatches = [];
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
