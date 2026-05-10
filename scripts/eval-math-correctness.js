@@ -68,11 +68,33 @@ const LIM_RE = /^lim\s*\(\s*x\s*→\s*(-?\d+(?:\.\d+)?)\s*\)\s*(.+?)\s*=\s*\??\s
 const LIM_INF_RE = /^lim\s*\(\s*x\s*→\s*(-?∞|-?infty?|-?inf)\s*\)\s*(.+?)\s*=\s*\??\s*$/i;
 const NEXT_RE = /^(?:depois|ap[óo]s)\s+de\s+(-?\d+)\s+vem:?\s*$/i;
 const PREV_RE = /^antes\s+de\s+(-?\d+)\s+vem:?\s*$/i;
+const MENTAL_HINT_RE = /^(.+?)\s*=\s*\([^)]+\)\s*$/;       // "7 + 9 = (7 + 10 - 1)" → LHS = "7 + 9"
+const SQUARE_ROOT_RE = /^[a-zσ]\^?2\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*[a-zσ]\s*=\s*\??\s*$/i;
 
 function verify(question, answer, type) {
   const q = normalize(question);
   const a = normalize(answer);
 
+  // "<expr> = (hint)" mental-math form: compute LHS, ignore the hint.
+  const hint = q.match(MENTAL_HINT_RE);
+  if (hint) {
+    const lv = tryEval(normalize(hint[1]));
+    const an = toNumber(tryEval(a));
+    const ln = toNumber(lv);
+    if (ln != null && an != null) {
+      return { ok: Math.abs(ln - an) < 1e-6, computed: `${ln}`, kind: 'mental_hint' };
+    }
+  }
+  // "v² = N → v = ?" — positive square root of N.
+  const sqr = q.match(SQUARE_ROOT_RE);
+  if (sqr) {
+    const target = Number(sqr[1]);
+    if (target >= 0) {
+      const expected = Math.sqrt(target);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(expected - an) < 1e-9, computed: `${expected}`, kind: 'sqrt_eq' };
+    }
+  }
   // "Depois de N vem:" → answer N+1
   const next = q.match(NEXT_RE);
   if (next) {
@@ -172,7 +194,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0 };
   const mismatches = [];
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
