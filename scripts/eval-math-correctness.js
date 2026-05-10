@@ -25,6 +25,10 @@ const SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5
 
 const normalize = (s) =>
   String(s)
+    // Group bare "a/b" fractions before reducing ÷ to / so that
+    // "2/6 ÷ 3/4" parses as (2/6) ÷ (3/4), not ((2/6)/3)/4.
+    // Don't grab the digits inside "√N/M" — that's a separate sqrt.
+    .replace(/(?<![a-zA-Z\d\)√])(-?\d+\/\d+)(?![a-zA-Z\d])/g, '($1)')
     .replace(/[×·]/g, '*')
     .replace(/÷/g, '/')
     .replace(/−/g, '-')
@@ -211,13 +215,11 @@ function verify(question, answer, type) {
     return { ok: Math.abs(ln - rn) < 1e-9, computed: `LHS=${ln}, RHS=${rn}`, kind: 'equation' };
   }
 
-  // Plain "<expr> = [?]" form: evaluate LHS, compare to answer.
-  // Skip if the authored answer is a bare variable name (algebra identity:
-  // we can't compare a variable to a numeric probe).
+  // Plain "<expr> = [?]" form or bare expression (radical/exponent forms
+  // sometimes omit the '='). Strip trailing '?' / '=' and evaluate.
   if (/^[A-Za-z]$/.test(a.trim())) return null;
-  const trimmed = q.replace(/\s*\?\s*$/, '').trim();
-  if (!trimmed.endsWith('=')) return null;
-  const lhs = trimmed.slice(0, -1).trim();
+  const lhs = q.replace(/\s*\?\s*$/, '').replace(/\s*=\s*$/, '').trim();
+  if (!lhs) return null;
   // Try direct numeric evaluation first; if it relies on x, probe at x=1.
   let lv = tryEval(lhs);
   let identity = false;
