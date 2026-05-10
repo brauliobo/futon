@@ -32,6 +32,8 @@ const normalize = (s) =>
     .replace(/\bcosseno\b/g, 'cos')
     .replace(/\btg\b/g, 'tan')
     .replace(/\bcotg\b/g, 'cot')
+    // "(N°)" → "(N deg)" so mathjs treats the argument as degrees
+    .replace(/(-?\d+(?:\.\d+)?)\s*°/g, '($1 deg)')
     // Convert "N²" / "x³" → "(N)^2" / "(x)^3"
     .replace(/([\)\]a-zA-Z\d])([⁰¹²³⁴⁵⁶⁷⁸⁹]+)/g, (_, base, sups) => {
       const exp = [...sups].map(ch => SUP[ch] || ch).join('');
