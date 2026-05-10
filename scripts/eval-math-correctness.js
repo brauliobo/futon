@@ -58,6 +58,7 @@ function toNumber(v) {
 
 const EQ_RE = /^(.+?)\s*=\s*(.+?)\s*,\s*x\s*=\s*$/i;
 const FN_RE = /^f\(x\)\s*=\s*(.+?)\s*,\s*f\((-?\d+(?:\.\d+)?)\)\s*=\s*\??\s*$/i;
+const LIM_RE = /^lim\s*\(\s*x\s*→\s*(-?\d+(?:\.\d+)?)\s*\)\s*(.+?)\s*=\s*\??\s*$/i;
 
 function verify(question, answer, type) {
   const q = normalize(question);
@@ -72,6 +73,17 @@ function verify(question, answer, type) {
     const fn_n = toNumber(fv), an = toNumber(av);
     if (fn_n == null || an == null) return null;
     return { ok: Math.abs(fn_n - an) < 1e-9, computed: `${fn_n}`, kind: 'function' };
+  }
+
+  // Limit (substitution-friendly): "lim(x→N) <expr> = ?"
+  const lim = q.match(LIM_RE);
+  if (lim) {
+    const xVal = Number(lim[1]);
+    const lv = (() => { try { return math.evaluate(lim[2], { x: xVal }); } catch { return null; } })();
+    const av = tryEval(a);
+    const ln = toNumber(lv), an = toNumber(av);
+    if (ln == null || an == null) return null;
+    return { ok: Math.abs(ln - an) < 1e-9, computed: `${ln}`, kind: 'limit' };
   }
 
   // Equation form. Two accepted shapes:
@@ -111,7 +123,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0 };
   const mismatches = [];
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
@@ -137,7 +149,7 @@ async function main() {
   }
 
   console.log(c('\n🧮 MATH CORRECTNESS (mathjs)', BOLD));
-  console.log(`  ${checked} exercises verified  (equation: ${byKind.equation}, expression: ${byKind.expression}, function: ${byKind.function}).\n`);
+  console.log(`  ${checked} exercises verified  (equation: ${byKind.equation}, expression: ${byKind.expression}, function: ${byKind.function}, limit: ${byKind.limit}).\n`);
   if (!mismatches.length) {
     console.log(c('✅ All authored answers match library evaluation.', GREEN));
     process.exit(0);
