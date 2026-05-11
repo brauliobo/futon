@@ -266,15 +266,19 @@ function verify(question, answer, type) {
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
   let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0 };
+  const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
     for (const p of s.pages || []) {
       for (const e of p.exercises || []) {
+        const t = e.type || 'unknown';
+        byType.total[t] = (byType.total[t] || 0) + 1;
         const r = verify(e.question, e.correctAnswer, e.type);
         if (!r) continue;
         checked++;
         byKind[r.kind]++;
+        byType.verified[t] = (byType.verified[t] || 0) + 1;
         if (!r.ok) {
           mismatches.push({
             file: f.replace('src/levels/', ''),
@@ -293,6 +297,15 @@ async function main() {
   console.log(c('\n🧮 MATH CORRECTNESS (mathjs)', BOLD));
   const summary = Object.entries(byKind).filter(([, n]) => n > 0).map(([k, n]) => `${k}: ${n}`).join(', ');
   console.log(`  ${checked} exercises verified  (${summary}).\n`);
+  if (process.argv.includes('--by-type')) {
+    const types = Object.keys(byType.total).sort();
+    console.log('  Per-type coverage:');
+    for (const t of types) {
+      const tot = byType.total[t], ver = byType.verified[t] || 0;
+      const pct = tot ? Math.round(100 * ver / tot) : 0;
+      console.log(`    ${t.padEnd(28)} ${String(ver).padStart(5)} / ${String(tot).padStart(5)}  (${pct}%)`);
+    }
+  }
   if (!mismatches.length) {
     console.log(c('✅ All authored answers match library evaluation.', GREEN));
     process.exit(0);
