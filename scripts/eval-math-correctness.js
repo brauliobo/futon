@@ -494,14 +494,26 @@ function verify(question, answer, type) {
   }
 
   // Limit (substitution-friendly): "lim(x→N) <expr> = ?"
+  // If direct substitution gives NaN/Infinity (0/0 form), fall back to a
+  // small epsilon offset so 'lim(x→0) sin(x)/x' resolves to 1.
   const lim = q.match(LIM_RE);
   if (lim) {
     const xVal = Number(lim[1]);
-    const lv = (() => { try { return math.evaluate(lim[2], { x: xVal }); } catch { return null; } })();
-    const av = tryEval(a);
-    const ln = toNumber(lv), an = toNumber(av);
-    if (ln == null || an == null) return null;
-    return { ok: Math.abs(ln - an) < 1e-9, computed: `${ln}`, kind: 'limit' };
+    const evalAt = (v) => { try { return toNumber(math.evaluate(lim[2], { x: v })); } catch { return null; } };
+    let ln = evalAt(xVal);
+    let kind = 'limit';
+    if (ln == null || !Number.isFinite(ln)) {
+      const eps = 1e-6;
+      const left = evalAt(xVal - eps), right = evalAt(xVal + eps);
+      if (left != null && right != null && Math.abs(left - right) < 1e-3) {
+        ln = (left + right) / 2;
+        kind = 'limit_indet';
+      }
+    }
+    if (ln == null) return null;
+    const an = toNumber(tryEval(a));
+    if (an == null) return null;
+    return { ok: Math.abs(ln - an) < 1e-3, computed: `${ln}`, kind };
   }
 
   // Limit at infinity: evaluate at a very large value as numeric proxy.
@@ -562,7 +574,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
