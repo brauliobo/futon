@@ -40,6 +40,9 @@ const normalize = (s) =>
     .replace(/(-?\d+(?:\.\d+)?)\s*°/g, '($1 deg)')
     // π → pi (mathjs uses the latin name)
     .replace(/π/g, 'pi')
+    // '0x' is a hex prefix in mathjs — force it to be 0*x. Same for any
+    // digit immediately followed by x or y so '2x' / '3y' tokenize cleanly.
+    .replace(/(\d)(?=[xy]\b)/g, '$1*')
     // |expr| → abs(expr) — non-nested form only.
     .replace(/\|([^|]+)\|/g, 'abs($1)')
     // Convert "N²" / "x³" → "(N)^2" / "(x)^3"
