@@ -143,6 +143,14 @@ const SPHERE_SURFACE_RE = /^[áa]rea\s+da\s+superf[íi]cie\s+da\s+esfera\s*=\s*4
 const HYPOT_RE = /^catetos?\s+(\d+(?:\.\d+)?)\s+e\s+(\d+(?:\.\d+)?)\s*[—-]+\s*hipotenusa\s*=\s*\??\s*$/i;
 const OTHER_LEG_RE = /^hipotenusa\s+(\d+(?:\.\d+)?(?:√\d+)?)\s*,?\s*cateto\s+(\d+(?:\.\d+)?)\s*[—-]+\s*(?:outro\s+)?cateto\s*=\s*\??\s*$/i;
 const RIGHT_TRI_C_RE = /^com\s+a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*C\s*=\s*\(?90\s*deg\)?\s*:\s*c\s*=\s*\??\s*$/i;
+// Vector operations on 2D vectors written as (a,b).
+const NUM = '-?\\d+(?:\\.\\d+)?(?:\\/\\d+)?';
+const VECTOR = `\\(\\s*(${NUM})\\s*,\\s*(${NUM})\\s*\\)`;
+const NORM_RE = new RegExp(`^\\|\\|${VECTOR}\\|\\|\\s*=\\s*\\??\\s*$`);
+const VEC_ADD_RE = new RegExp(`^${VECTOR}\\s*\\+\\s*${VECTOR}\\s*=\\s*\\??\\s*$`);
+const VEC_SUB_RE = new RegExp(`^${VECTOR}\\s*-\\s*${VECTOR}\\s*=\\s*\\??\\s*$`);
+const VEC_SCAL_RE = new RegExp(`^\\(?(${NUM})\\)?\\s*\\*?·?\\s*${VECTOR}\\s*=\\s*\\??\\s*$`);
+const VEC_DOT_RE = new RegExp(`^${VECTOR}\\s*·\\s*${VECTOR}\\s*=\\s*\\??\\s*$`);
 const TRAP_GENERIC_RE = /^trap[ée]zio\s+com\s+B\s*=\s*(\d+)\s*,\s*b\s*=\s*(\d+)\s*,\s*h\s*=\s*(\d+)\s*:\s*A\s*=\s*\??\s*$/i;
 const AREA_BASE_ALTURA_RE = /^se\s+[áa]rea\s*=\s*(\d+)\s+e\s+base\s*=\s*(\d+)\s*,\s*altura\s*=\s*\??\s*$/i;
 const CIRCLE_PI_APPROX_RE = /^[áa]rea\s+do\s+c[íi]rculo\s+r\s*=\s*(\d+(?:\.\d+)?):\s*(\d+)π\s*≈\s*\?\s*$/i;
@@ -508,6 +516,44 @@ function verify(question, answer, type) {
     const expected = Math.sqrt(A * A + B * B);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'hypotenuse' };
+  }
+  // 2D vector forms — match against ORIGINAL (normalize mangles · and ||).
+  const evalFrac = (s) => { const m = s.match(/^(-?\d+)\/(\d+)$/); return m ? Number(m[1]) / Number(m[2]) : Number(s); };
+  const parseVec = (ans) => {
+    const m = ans.replace(/\s+/g, '').match(/^\((-?\d+(?:\.\d+)?(?:\/\d+)?),(-?\d+(?:\.\d+)?(?:\/\d+)?)\)$/);
+    return m ? [evalFrac(m[1]), evalFrac(m[2])] : null;
+  };
+  const norm = question.match(NORM_RE);
+  if (norm) {
+    const x = evalFrac(norm[1]), y = evalFrac(norm[2]);
+    const expected = Math.sqrt(x * x + y * y);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'vec_norm' };
+  }
+  const va = question.match(VEC_ADD_RE);
+  if (va) {
+    const expected = [evalFrac(va[1]) + evalFrac(va[3]), evalFrac(va[2]) + evalFrac(va[4])];
+    const got = parseVec(answer);
+    if (got) return { ok: Math.abs(got[0] - expected[0]) < 1e-9 && Math.abs(got[1] - expected[1]) < 1e-9, computed: `(${expected})`, kind: 'vec_add' };
+  }
+  const vs = question.match(VEC_SUB_RE);
+  if (vs) {
+    const expected = [evalFrac(vs[1]) - evalFrac(vs[3]), evalFrac(vs[2]) - evalFrac(vs[4])];
+    const got = parseVec(answer);
+    if (got) return { ok: Math.abs(got[0] - expected[0]) < 1e-9 && Math.abs(got[1] - expected[1]) < 1e-9, computed: `(${expected})`, kind: 'vec_sub' };
+  }
+  const vd = question.match(VEC_DOT_RE);
+  if (vd) {
+    const expected = evalFrac(vd[1]) * evalFrac(vd[3]) + evalFrac(vd[2]) * evalFrac(vd[4]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'vec_dot' };
+  }
+  const vsc = question.match(VEC_SCAL_RE);
+  if (vsc && !question.includes('·(') && !question.match(/\(\s*\d+\s*,\s*\d+\s*\)\s*[+\-]/)) {
+    const k = evalFrac(vsc[1]), x = evalFrac(vsc[2]), y = evalFrac(vsc[3]);
+    const expected = [k * x, k * y];
+    const got = parseVec(answer);
+    if (got) return { ok: Math.abs(got[0] - expected[0]) < 1e-9 && Math.abs(got[1] - expected[1]) < 1e-9, computed: `(${expected})`, kind: 'vec_scal' };
   }
   // 'Trapézio com B=B, b=b, h=H: A = ?' → (B+b)*H/2
   const trapG = q.match(TRAP_GENERIC_RE);
@@ -970,7 +1016,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, sum_1_to_n: 0, other_leg: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
