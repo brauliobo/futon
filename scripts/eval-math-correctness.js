@@ -25,6 +25,8 @@ const SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5
 const SUB = { '₀': '0', '₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9' };
 // Arithmetic-progression aₙ = a₁ + (n-1)·r
 const AP_TERM_RE = /^a1\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*r\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*a(\d+)\s*=\s*\??\s*$/i;
+const COUNT_LABELED_RE = /^(\d+)\s+(?:bolinhas?|pontos?|figurinhas?|objetos?|c[íi]rculos?|estrelas?|quadrad[oi]s?|tri[âa]ngulos?|flores?|frutas?|brinquedos?|carros?|bal[õo]es?)\s*\.?\s*$/i;
+const GROUPS_RE = /^(\d+)\s+grupos?\s+de\s+(\d+)\s+[a-z]+\.?\s*total\??\s*$/i;
 
 const normalize = (s) =>
   String(s)
@@ -317,6 +319,22 @@ function verify(question, answer, type) {
       const expected = Math.sqrt(target);
       const an = toNumber(tryEval(a));
       if (an != null) return { ok: Math.abs(expected - an) < 1e-9, computed: `${expected}`, kind: 'sqrt_eq' };
+    }
+  }
+  // 'N bolinhas' / 'N pontos' / 'N figurinhas' — labelled-count form.
+  if (type === 'count') {
+    const lab = q.match(COUNT_LABELED_RE);
+    if (lab) {
+      const expected = Number(lab[1]);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'count' };
+    }
+    // 'K grupos de N <objs>. Total?' → K*N
+    const gr = q.match(GROUPS_RE);
+    if (gr) {
+      const expected = Number(gr[1]) * Number(gr[2]);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'count' };
     }
   }
   // Count shapes: question is exclusively N glyphs separated by spaces
