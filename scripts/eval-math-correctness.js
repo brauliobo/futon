@@ -28,7 +28,7 @@ const AP_TERM_RE = /^a1\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*r\s*=\s*(-?\d+(?:\.\d+)?)\
 const PA_RATIO_RE = /^PA\s*\{?\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*,/i;
 const PA_SUM_RE = /^PA\s+((?:-?\d+(?:\.\d+)?\s*,\s*)+)\.\.\.\s*,\s*(-?\d+(?:\.\d+)?)\s*:\s*(?:S\d+|Soma)\s*=\s*\??\s*$/i;
 const COUNT_LABELED_RE = /^(\d+)\s+(?:bolinhas?|pontos?|figurinhas?|objetos?|c[íi]rculos?|estrelas?|quadrad[oi]s?|tri[âa]ngulos?|flores?|frutas?|brinquedos?|carros?|bal[õo]es?)\s*\.?\s*$/i;
-const GROUPS_RE = /^(\d+)\s+grupos?\s+de\s+(\d+)\s+[a-z]+\.?\s*total\??\s*$/i;
+const GROUPS_RE = /^(\d+)\s+grupos?\s+de\s+(\d+)\s+[a-záâãéêíóôõúç]+\.?\s*total\??\s*$/i;
 
 const normalize = (s) =>
   String(s)
@@ -539,14 +539,17 @@ function verify(question, answer, type) {
       if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'count' };
     }
   }
-  // Count shapes: question is exclusively N glyphs separated by spaces
-  // (skip comparison/word problems like "Qual tem mais?").
-  if (type === 'count' && /^[\s●▲◆★■♦♥♣♠○△□◇☆▢]+$/.test(question)) {
-    const shapes = question.match(/[●▲◆★■♦♥♣♠○△□◇☆▢]/g);
-    if (shapes) {
-      const expected = shapes.length;
-      const an = toNumber(tryEval(a));
-      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'count' };
+  // Count shapes: question is exclusively N glyphs (possibly with a
+  // 'Conte:' prefix and spaces) — skip comparison/word forms.
+  if (type === 'count' && !/qual\s+tem|maior\s+que|menor\s+que|igual\s+a/i.test(question)) {
+    const stripped = question.replace(/^conte:?\s*/i, '').trim();
+    if (/^[\s●▲◆★■♦♥♣♠○△□◇☆▢☀☼☾♫♪]+$/.test(stripped)) {
+      const shapes = stripped.match(/[●▲◆★■♦♥♣♠○△□◇☆▢☀☼☾♫♪]/g);
+      if (shapes) {
+        const expected = shapes.length;
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'count' };
+      }
     }
   }
   // 'PA {a1, a2, …} — razão = ?' → a2 - a1
