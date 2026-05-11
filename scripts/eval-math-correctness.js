@@ -595,6 +595,11 @@ function verify(question, answer, type) {
       && !/\bqual\s+tem\b/i.test(question)
       && !/\bgrupos?\s+de\b/i.test(question)) {
     const nums = (question.match(/\d+/g) || []).map(Number);
+    if (nums.length === 1 && /\bmetade\b/i.test(question)) {
+      const expected = nums[0] / 2;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'word_problem' };
+    }
     if (nums.length === 2) {
       const [n1, n2] = nums;
       let expected = null;
