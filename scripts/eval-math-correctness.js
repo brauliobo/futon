@@ -28,6 +28,8 @@ const SUB = { '₀': '0', '₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅':
 const AP_TERM_RE = /^a1\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*r\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*a(\d+)\s*=\s*\??\s*$/i;
 const GP_TERM_RE = /^a1\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*q\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*a(\d+)\s*=\s*\??\s*$/i;
 const AP_FIND_N_RE = /^a1\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*r\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*qual\s+n\s+tem\s+an\s*=\s*(-?\d+(?:\.\d+)?)\??\s*$/i;
+const AP_N_FROM_VAL_RE = /^a1\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*an\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*r\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*n\s*=\s*\??\s*$/i;
+const AP_RATIO_EXPLICIT_RE = /^a1\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*a(\d+)\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*r\s*=\s*\(\s*(-?\d+(?:\.\d+)?)\s*-\s*(-?\d+(?:\.\d+)?)\s*\)\s*\/\s*(-?\d+)\s*=\s*\??\s*$/i;
 const AP_RATIO_TWO_RE = /^se\s+a(\d+)\s*=\s*(-?\d+(?:\.\d+)?)\s+e\s+a(\d+)\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*r\s*=\s*\??\s*$/i;
 const SUM_FORMULA_RE = /soma[^=]+=\s*(n²|n2|n\(n\+1\)|n\*\(n\+1\))[^=]*Para\s+n\s*=\s*(\d+)\s*:\s*\??\s*$/i;
 const CONVERGE_DIV_RE = /^(?:converge\s+apenas\s+se|diverge\s+se)\s+\|q\|\s*[<≥>]\s*\??\s*$/i;
@@ -1034,6 +1036,23 @@ function verify(question, answer, type) {
       const an = toNumber(tryEval(a));
       if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'ap_find_n' };
     }
+  }
+  // 'a₁=N, aₙ=M, r=R, n = ?' → 1 + (M-N)/R
+  const an_n = q.match(AP_N_FROM_VAL_RE);
+  if (an_n) {
+    const a1 = Number(an_n[1]), aN = Number(an_n[2]), r = Number(an_n[3]);
+    if (r !== 0) {
+      const expected = 1 + (aN - a1) / r;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'ap_find_n' };
+    }
+  }
+  // 'a₁=N, aK=M, r = (M-N)/(K-1) = ?' (explicit-fraction form)
+  const aRE = q.match(AP_RATIO_EXPLICIT_RE);
+  if (aRE) {
+    const expected = (Number(aRE[4]) - Number(aRE[5])) / Number(aRE[6]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'pa_ratio' };
   }
   // 'Se aN = V, aM = W, r = ?' → (W - V) / (M - N)
   const apr = q.match(AP_RATIO_TWO_RE);
