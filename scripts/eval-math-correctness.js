@@ -93,6 +93,9 @@ const AREA_RECT_RE = /^[áa]rea\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*
 const PERIM_RECT_RE = /^per[íi]metro\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
 // Three-term arithmetic sequence with one blank: "__,15,16" / "7,__,9" / "11,12,__"
 const SEQ3_RE = /^\s*(__|-?\d+)\s*,\s*(__|-?\d+)\s*,\s*(__|-?\d+)\s*$/;
+// Require a literal '{' or a leading digit so 'Amplitude de y=cos(x) + 5'
+// (a trig waveform question) doesn't get mistaken for a stats aggregate.
+const STAT_RE = /^(m[ée]dia|mediana|moda|amplitude)\s+(?:de\s+)?(\{[^}]+\}|-?\d[^=]*?)\s*=\s*\??\s*$/i;
 
 // Probe-verify two expressions are equivalent by evaluating at several x.
 function probeEquivalent(expr1, expr2) {
@@ -122,6 +125,35 @@ function verify(question, answer, type) {
     if (result === false) return { ok: false, computed: 'expansions differ', kind: 'factoring' };
   }
 
+  // Statistics: "Média / Mediana / Moda / Amplitude de {n,...} = ?"
+  const stat = q.match(STAT_RE);
+  if (stat) {
+    const kind = stat[1].toLowerCase().replace('é', 'e');
+    const numsRaw = stat[2].replace(/[{}]/g, '').split(/[,\s]\s*(?:e\s+)?/).filter(Boolean);
+    const nums = numsRaw.map(x => Number(x.trim())).filter(x => Number.isFinite(x));
+    if (nums.length) {
+      let expected;
+      if (kind === 'media') expected = nums.reduce((s, n) => s + n, 0) / nums.length;
+      else if (kind === 'mediana') {
+        const sorted = [...nums].sort((x, y) => x - y);
+        const m = sorted.length;
+        expected = m % 2 ? sorted[(m - 1) / 2] : (sorted[m / 2 - 1] + sorted[m / 2]) / 2;
+      } else if (kind === 'amplitude') {
+        expected = Math.max(...nums) - Math.min(...nums);
+      } else if (kind === 'moda') {
+        const counts = nums.reduce((a, n) => (a[n] = (a[n] || 0) + 1, a), {});
+        const maxCount = Math.max(...Object.values(counts));
+        const modes = Object.entries(counts).filter(([, c]) => c === maxCount).map(([n]) => Number(n));
+        if (modes.length === 1) expected = modes[0];
+        else if (modes.length === nums.length) return null;  // amodal — non-numeric
+        else expected = Math.min(...modes);                  // bimodal — cite smaller
+      }
+      if (expected != null) {
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'stat' };
+      }
+    }
+  }
   // "<expr> = (hint)" mental-math form: compute LHS, ignore the hint.
   const hint = q.match(MENTAL_HINT_RE);
   if (hint) {
@@ -416,7 +448,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
@@ -430,7 +462,12 @@ async function main() {
         // factor; the rationales' own arithmetic doesn't match the answers.
         if (e.type === 'linear_equation' && f.endsWith('math/H/set_02.yaml')) continue;
         const r = verify(e.question, e.correctAnswer, e.type);
-        if (!r) continue;
+        if (!r) {
+          if (process.argv.includes('--debug-unverified') && process.argv.includes(e.type)) {
+            console.log(`SKIP ${e.type}: ${f}  q="${e.question}" a="${e.correctAnswer}"`);
+          }
+          continue;
+        }
         checked++;
         byKind[r.kind]++;
         byType.verified[t] = (byType.verified[t] || 0) + 1;
