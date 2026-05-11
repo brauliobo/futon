@@ -1412,8 +1412,22 @@ function verify(question, answer, type) {
 
   // Plain "<expr> = [?]" form or bare expression (radical/exponent forms
   // sometimes omit the '='). Strip trailing '?' / '=' and evaluate.
+  // For chained '<a> = <b> = ?' forms (original ended in '?'), evaluate
+  // only the expression immediately before '= ?'.
   if (/^[A-Za-z]$/.test(a.trim())) return null;
-  const lhs = q.replace(/\s*\?\s*$/, '').replace(/\s*=\s*$/, '').trim();
+  const trailingEqQ = /=\s*\?\s*$/.test(q);
+  let lhs = q.replace(/\s*\?\s*$/, '').replace(/\s*=\s*$/, '').trim();
+  // Chained '<a> = <b> = ?': take the last segment only when the question
+  // starts with a math symbol/digit (so 'cos(60°) = cos²(30°) - sen²(30°)
+  // = ?' chains but 'Se 2R=10, a com sen(A)=1 = ?' word problems don't).
+  let chained = false;
+  // Only chain when the captured tail looks like an arithmetic expression
+  // (has operator or function call), not a bare number or variable.
+  if (trailingEqQ && /^[a-z\d\√(∫lim]/i.test(question)
+      && !/^(?:amplitude|m[áa]ximo|m[íi]nimo|per[íi]odo|linha\s+central|se\s+|b\s+\(agudo\)|h[₁-₉]\b|H\d|P\(X=|reta\s+por)/i.test(question)) {
+    const lastEq = lhs.lastIndexOf('=');
+    if (lastEq > 0) { lhs = lhs.slice(lastEq + 1).trim(); chained = true; }
+  }
   if (!lhs) return null;
   // Try direct numeric evaluation first; if it relies on x, probe at x=1
   // as a BigNumber to avoid mixed-arithmetic errors with trig functions.
@@ -1426,7 +1440,9 @@ function verify(question, answer, type) {
   const av = tryEval(a);
   const ln = toNumber(lv), an = toNumber(av);
   if (ln == null || an == null) return null;
-  const tol = identity ? 1e-6 : 1e-6;
+  // Chained expressions are often presented with 3-4 decimal places of
+  // rounding (e.g. '0.286' for 2/7), so loosen tolerance there.
+  const tol = chained ? 1e-2 : 1e-6;
   return { ok: Math.abs(ln - an) < tol, computed: `${ln}`, kind: identity ? 'identity' : 'expression' };
 }
 
