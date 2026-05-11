@@ -162,6 +162,9 @@ const VEC_SCAL_RE = new RegExp(`^\\(?(${NUM})\\)?\\s*\\*?·?\\s*${VECTOR}\\s*=\\
 const VEC_DOT_RE = new RegExp(`^${VECTOR}\\s*·\\s*${VECTOR}\\s*=\\s*\\??\\s*$`);
 const VEC_ADD_PARTIAL_RE = new RegExp(`^${VECTOR}\\s*([+\\-])\\s*${VECTOR}\\s*=\\s*\\(\\s*(\\?|${NUM})\\s*,\\s*(\\?|${NUM})\\s*\\)\\s*$`);
 const VEC_COMP_RE = new RegExp(`^${VECTOR}\\s*([+\\-])\\s*${VECTOR}\\s*[—-]+\\s*componente\\s+([xy])\\s*=\\s*\\??\\s*$`, 'i');
+const VEC_BETWEEN_RE = new RegExp(`^vetor\\s+de\\s+${VECTOR}\\s+a\\s+${VECTOR}\\s*=\\s*(?:\\??|\\(\\s*(\\?|${NUM})\\s*,\\s*(\\?|${NUM})\\s*\\))\\s*$`, 'i');
+const TRI_30_60_90_RE = /^em\s+30-?60-?90\s+com\s+x\s*=\s*(\d+(?:\.\d+)?)\s*,\s*(hipotenusa|lado\s+de\s+60.*?)\s*=\s*\??\s*$/i;
+const CUBE_SOLVE_RE = /^se\s+v\s*=\s*(\d+(?:\.\d+)?)\s*,\s*lado\s*=\s*\??\s*$/i;
 const TRAP_GENERIC_RE = /^trap[ée]zio\s+com\s+B\s*=\s*(\d+)\s*,\s*b\s*=\s*(\d+)\s*,\s*h\s*=\s*(\d+)\s*:\s*A\s*=\s*\??\s*$/i;
 const AREA_BASE_ALTURA_RE = /^se\s+[áa]rea\s*=\s*(\d+)\s+e\s+base\s*=\s*(\d+)\s*,\s*altura\s*=\s*\??\s*$/i;
 const CIRCLE_PI_APPROX_RE = /^[áa]rea\s+do\s+c[íi]rculo\s+r\s*=\s*(\d+(?:\.\d+)?):\s*(\d+)π\s*≈\s*\?\s*$/i;
@@ -606,6 +609,43 @@ function verify(question, answer, type) {
       : evalFrac(vco[2]) + op * evalFrac(vco[5]);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'vec_partial' };
+  }
+  // 'Vetor de (a,b) a (c,d)' → (c-a, d-b)
+  const vbt = question.match(VEC_BETWEEN_RE);
+  if (vbt) {
+    const [x1, y1, x2, y2] = [vbt[1], vbt[2], vbt[3], vbt[4]].map(evalFrac);
+    const expected = [x2 - x1, y2 - y1];
+    if (vbt[5] != null) {
+      const ex = vbt[5] === '?' ? expected[0] : expected[1];
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - ex) < 1e-9, computed: `${ex}`, kind: 'vec_partial' };
+    } else {
+      const got = parseVec(answer);
+      if (got) return { ok: Math.abs(got[0] - expected[0]) < 1e-9 && Math.abs(got[1] - expected[1]) < 1e-9, computed: `(${expected})`, kind: 'vec_sub' };
+    }
+  }
+  // 30-60-90 triangle: 'Em 30-60-90 com x=N, hipotenusa = ?' → 2N
+  // or 'lado de 60° = ?' → N√3
+  const tri90 = q.match(TRI_30_60_90_RE);
+  if (tri90) {
+    const N = Number(tri90[1]);
+    const isHyp = /hipotenusa/i.test(tri90[2]);
+    if (isHyp) {
+      const expected = 2 * N;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'tri_special' };
+    } else {
+      const expected = N * Math.sqrt(3);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'tri_special' };
+    }
+  }
+  // 'Se V=N, lado = ?' for a cube → N^(1/3)
+  const cs = q.match(CUBE_SOLVE_RE);
+  if (cs) {
+    const expected = Math.cbrt(Number(cs[1]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'cube_solve' };
   }
   // Scalar mul (run last so VEC_DOT/ADD/SUB take precedence).
   const vsc = question.match(VEC_SCAL_RE);
@@ -1095,7 +1135,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, tri_special: 0, cube_solve: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
