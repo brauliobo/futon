@@ -81,6 +81,7 @@ const GRAPH_POINT_RE = /^ponto\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s
 const SLOPE_RE = /^pontos\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+e\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*$/i;
 const SYS_EQ_RE = /^(.+?)\s*,\s*(.+?)\s*$/;
 const POINT_ANS_RE = /^\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s*$/;
+const TWO_ROOTS_RE = /x\s*=\s*(-?\d+(?:\.\d+)?)\s+ou\s+x\s*=\s*(-?\d+(?:\.\d+)?)/i;
 const PLACE_VALUE_RE = /^quantas?\s+(unidades?|dezenas?|centenas?|milhares|milhar)\s+t[êe]m?\s+o\s+n[úu]mero\s+(-?\d+)\??\s*$/i;
 const SKIP_CNT_RE = /^(-?\d+(?:\s*,\s*-?\d+){2,})\s*,\s*\?\s*$/;
 const MENTAL_HINT_RE = /^(.+?)\s*=\s*\([^)]+\)\s*$/;       // "7 + 9 = (7 + 10 - 1)" → LHS = "7 + 9"
@@ -212,6 +213,24 @@ function verify(question, answer, type) {
     const A = Number(cmp[1]), B = Number(cmp[2]);
     const expected = A < B ? '<' : A > B ? '>' : '=';
     return { ok: a.trim() === expected, computed: expected, kind: 'comparison' };
+  }
+  // Quadratic with two roots: "x = R1 ou x = R2" — substitute each root.
+  if (type === 'quadratic' && /=\s*0\s*$/.test(q)) {
+    const rootMatch = answer.match(TWO_ROOTS_RE);
+    if (rootMatch) {
+      const r1 = Number(rootMatch[1]), r2 = Number(rootMatch[2]);
+      const lhs = q.replace(/=\s*0\s*$/, '').trim();
+      const checkRoot = (r) => {
+        try {
+          const v = math.evaluate(lhs, { x: r });
+          return Math.abs(toNumber(v)) < 1e-6;
+        } catch { return null; }
+      };
+      const c1 = checkRoot(r1), c2 = checkRoot(r2);
+      if (c1 != null && c2 != null) {
+        return { ok: c1 && c2, computed: `f(${r1})=${c1?0:'x'}, f(${r2})=${c2?0:'x'}`, kind: 'quad_roots' };
+      }
+    }
   }
   // "Pontos (a,b) e (c,d)" → slope (d-b)/(c-a)
   const slope = q.match(SLOPE_RE);
@@ -388,7 +407,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
