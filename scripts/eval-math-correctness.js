@@ -200,6 +200,10 @@ const STAT_DASH_RE = /^(\{[^}]+\})\s*[—-]+\s*(m[ée]dia|mediana|moda|amplitude
 const PERMUTATIONS_RE = /^fila\s+de\s+(\d+)\s+pessoas:\s*permuta[çc][õo]es\??\s*$/i;
 const CHOOSE_FROM_RE = /^escolher\s+(\d+)\s+de\s+(\d+)\s+\w+\s+sem\s+ordem\??\s*$/i;
 const COIN_K_HEADS_RE = /^moeda\s+lan[çc]ada\s+(\d+)\s+vezes?\s*[—-]+\s*P\((\d+)\s+(?:caras?|coroas?)\)\s*=\s*\??\s*$/i;
+// Law of cosines: 'a=A, b=B, C=θ° — c² = ?' → A² + B² - 2AB·cos(θ)
+const LAW_COS_C2_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*C\s*=\s*(\d+(?:\.\d+)?)°\s*[—-]+\s*c²\s*=\s*\??\s*$/i;
+// Triangle area: 'a=A, b=B, C=θ° — área = ?' → AB·sin(θ)/2, or AB/2 when θ=90°
+const TRIG_TRI_AREA_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*C\s*=\s*(\d+(?:\.\d+)?)°\s*[—-]+\s*[áa]rea\s*=\s*(?:\?√3)?\s*\??\s*$/i;
 const DEVIATION_RE = /^desvio\s+de\s+(-?\d+(?:\.\d+)?)\s+em\s+rela[çc][ãa]o\s+a\s+(-?\d+(?:\.\d+)?)\s*=\s*\??\s*$/i;
 const DEV_SQUARED_RE = /^quadrado\s+do\s+desvio\s+(-?\d+(?:\.\d+)?)\s*=\s*\??\s*$/i;
 const VAR_TO_STD_RE = /^se\s+vari[âa]ncia\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*desvio\s+padr[ãa]o\s*=\s*\??\s*$/i;
@@ -800,6 +804,25 @@ function verify(question, answer, type) {
       const an = toNumber(tryEval(a));
       if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'other_leg' };
     }
+  }
+  // Law of cosines c² (any angle C)
+  const lc = question.match(LAW_COS_C2_RE);
+  if (lc) {
+    const A = Number(lc[1]), B = Number(lc[2]), theta = Number(lc[3]) * Math.PI / 180;
+    const expected = A * A + B * B - 2 * A * B * Math.cos(theta);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-3, computed: `${expected}`, kind: 'law_cos' };
+  }
+  // Triangle area with two sides + included angle: AB·sin(C)/2.
+  // For '— área = ?√3', the answer is the COEFFICIENT (so multiply by 2/√3).
+  const tta = question.match(TRIG_TRI_AREA_RE);
+  if (tta) {
+    const A = Number(tta[1]), B = Number(tta[2]), theta = Number(tta[3]) * Math.PI / 180;
+    const fullArea = A * B * Math.sin(theta) / 2;
+    const expectsRoot3 = /\?√3/.test(question);
+    const expected = expectsRoot3 ? fullArea / Math.sqrt(3) : fullArea;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-3, computed: `${expected}`, kind: 'tri_area_sas' };
   }
   // 'Com a=A, b=B, C=90°: c = ?' → sqrt(A² + B²)
   const rtc = q.match(RIGHT_TRI_C_RE);
@@ -1614,7 +1637,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, ap_find_n: 0, sum_formula: 0, pg_converge: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, identity_vf: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, double_angle: 0, frequency: 0, rel_freq: 0, interval_amp: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, tri_special: 0, cube_solve: 0, circumference: 0, circle_radius: 0, poly_perim: 0, poly_int_angle: 0, poly_sum_angle: 0, square_area: 0, square_diag: 0, hex_area: 0, equi_tri_area: 0, arrange: 0, permute: 0, combine: 0, pair_product: 0, det_2x2: 0, mat_add: 0, mat_scale: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, ap_find_n: 0, sum_formula: 0, pg_converge: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, identity_vf: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, double_angle: 0, frequency: 0, rel_freq: 0, interval_amp: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, tri_special: 0, cube_solve: 0, circumference: 0, circle_radius: 0, poly_perim: 0, poly_int_angle: 0, poly_sum_angle: 0, square_area: 0, square_diag: 0, hex_area: 0, equi_tri_area: 0, arrange: 0, permute: 0, combine: 0, pair_product: 0, det_2x2: 0, mat_add: 0, mat_scale: 0, law_cos: 0, tri_area_sas: 0 };
   const byType = { verified: {}, total: {} };
   const byLevel = { verified: {}, total: {} };
   const mismatches = [];
