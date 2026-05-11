@@ -180,6 +180,7 @@ const CIRCLE_EQ_RADIUS_RE = /^x\^?2\s*\+\s*y\^?2\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+
 const POLY_PERIM_RE = /^(?:tri[âa]ngulo|quadrado|pent[áa]gono|hex[áa]gono|hept[áa]gono|oct[óo]gono|pol[íi]gono\s+regular\s+de\s+(\d+)\s+lados)\s*(?:regular\s+)?(?:[—-]+\s*)?lado\s*=\s*(\d+(?:\.\d+)?)\s*:?\s*per[íi]metro\s*=\s*\??\s*$/i;
 const HEXAGON_AREA_RE = /^hex[áa]gono\s+regular\s+lado\s*=\s*(\d+(?:\.\d+)?)\s*:\s*[áa]rea\s*=\s*\?√3\s*$/i;
 const EQUI_TRI_AREA_RE = /^tri[âa]ngulo\s+equil[áa]tero\s+lado\s*=\s*(\d+(?:\.\d+)?)(?::|\s+[áa]rea\s*=\s*\?√3)/i;
+const EQUI_TRI_FULL_RE = /^[áa]rea\s+do\s+tri[âa]ngulo\s+equil[áa]tero\s+lado\s*=\s*(\d+(?:\.\d+)?)(?:\s*[—:][^=]*?)?\s*=\s*\??\s*$/i;
 const POLY_INT_ANGLE_RE = /^[âa]ngulo\s+interno\s+do\s+(tri[âa]ngulo\s+equil[áa]tero|quadrado|pent[áa]gono\s+regular|hex[áa]gono\s+regular|hept[áa]gono\s+regular|oct[óo]gono\s+regular)\s*=\s*\?°?\s*$/i;
 const POLY_SUM_ANGLE_RE = /^soma\s+[âa]ngulos\s+internos\s+do\s+[a-záâãéêíóôõúç]+(?:\s+regular)?\s*\(n\s*=\s*(\d+)\)\s*=\s*\?°?\s*$/i;
 const SQ_AREA_RE = /^quadrado\s+lado\s*=\s*(\d+(?:\.\d+)?)\s*:\s*[áa]rea\s*=\s*\??\s*$/i;
@@ -883,6 +884,14 @@ function verify(question, answer, type) {
     const expected = L * L / 4;
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'equi_tri_area' };
+  }
+  // 'Área do triângulo equilátero lado=N = ?' → L²·√3/4 (full numeric)
+  const etf = question.match(EQUI_TRI_FULL_RE);
+  if (etf && !/\?√3\s*$/.test(question)) {
+    const L = Number(etf[1]);
+    const expected = L * L * Math.sqrt(3) / 4;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'equi_tri_area' };
   }
   // 'Quadrado lado=N — diagonal = ?√2' → N (match raw question — √ is normalized)
   const sqd = question.match(SQ_DIAG_RE);
