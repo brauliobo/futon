@@ -141,6 +141,8 @@ const RECT_ALTURA_RE = /^se\s+[áa]rea\s+do\s+ret[âa]ngulo\s*=\s*(\d+)\s+e\s+ba
 const CUBE_VOL_RE = /^volume\s+do\s+cubo\s+lado\s+(\d+)\s*=\s*\??\s*$/i;
 const SPHERE_SURFACE_RE = /^[áa]rea\s+da\s+superf[íi]cie\s+da\s+esfera\s*=\s*4πr[²2]\.\s*Para\s+r\s*=\s*(\d+(?:\.\d+)?):\s*\?π\s*$/i;
 const HYPOT_RE = /^catetos?\s+(\d+(?:\.\d+)?)\s+e\s+(\d+(?:\.\d+)?)\s*[—-]+\s*hipotenusa\s*=\s*\??\s*$/i;
+const OTHER_LEG_RE = /^hipotenusa\s+(\d+(?:\.\d+)?(?:√\d+)?)\s*,?\s*cateto\s+(\d+(?:\.\d+)?)\s*[—-]+\s*(?:outro\s+)?cateto\s*=\s*\??\s*$/i;
+const RIGHT_TRI_C_RE = /^com\s+a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*C\s*=\s*\(?90\s*deg\)?\s*:\s*c\s*=\s*\??\s*$/i;
 const TRAP_GENERIC_RE = /^trap[ée]zio\s+com\s+B\s*=\s*(\d+)\s*,\s*b\s*=\s*(\d+)\s*,\s*h\s*=\s*(\d+)\s*:\s*A\s*=\s*\??\s*$/i;
 const AREA_BASE_ALTURA_RE = /^se\s+[áa]rea\s*=\s*(\d+)\s+e\s+base\s*=\s*(\d+)\s*,\s*altura\s*=\s*\??\s*$/i;
 const CIRCLE_PI_APPROX_RE = /^[áa]rea\s+do\s+c[íi]rculo\s+r\s*=\s*(\d+(?:\.\d+)?):\s*(\d+)π\s*≈\s*\?\s*$/i;
@@ -486,6 +488,24 @@ function verify(question, answer, type) {
   if (hyp) {
     const a1 = Number(hyp[1]), b1 = Number(hyp[2]);
     const expected = Math.sqrt(a1 * a1 + b1 * b1);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'hypotenuse' };
+  }
+  // 'Hipotenusa H, cateto K — outro cateto = ?' → sqrt(H² - K²)
+  const oleg = q.match(OTHER_LEG_RE);
+  if (oleg) {
+    const H = Number(oleg[1]), K = Number(oleg[2]);
+    if (Number.isFinite(H) && Number.isFinite(K) && H >= K) {
+      const expected = Math.sqrt(H * H - K * K);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'other_leg' };
+    }
+  }
+  // 'Com a=A, b=B, C=90°: c = ?' → sqrt(A² + B²)
+  const rtc = q.match(RIGHT_TRI_C_RE);
+  if (rtc) {
+    const A = Number(rtc[1]), B = Number(rtc[2]);
+    const expected = Math.sqrt(A * A + B * B);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'hypotenuse' };
   }
@@ -950,7 +970,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, sum_1_to_n: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, sum_1_to_n: 0, other_leg: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
