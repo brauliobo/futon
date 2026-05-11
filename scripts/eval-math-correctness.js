@@ -272,22 +272,29 @@ function verify(question, answer, type) {
       return { ok: aClean === expected, computed: expected, kind: 'sq_hint' };
     }
   }
-  // Quadratic with two roots: "x = R1 ou x = R2" — substitute each root.
+  // Quadratic with roots: "x = R1 ou x = R2" or single "x = R" (double root).
   if (type === 'quadratic' && /=\s*0\s*$/.test(q)) {
+    const lhs = q.replace(/=\s*0\s*$/, '').trim();
+    const checkRoot = (r) => {
+      try {
+        const v = math.evaluate(lhs, { x: r });
+        return Math.abs(toNumber(v)) < 1e-6;
+      } catch { return null; }
+    };
     const rootMatch = answer.match(TWO_ROOTS_RE);
     if (rootMatch) {
       const r1 = Number(rootMatch[1]), r2 = Number(rootMatch[2]);
-      const lhs = q.replace(/=\s*0\s*$/, '').trim();
-      const checkRoot = (r) => {
-        try {
-          const v = math.evaluate(lhs, { x: r });
-          return Math.abs(toNumber(v)) < 1e-6;
-        } catch { return null; }
-      };
       const c1 = checkRoot(r1), c2 = checkRoot(r2);
       if (c1 != null && c2 != null) {
         return { ok: c1 && c2, computed: `f(${r1})=${c1?0:'x'}, f(${r2})=${c2?0:'x'}`, kind: 'quad_roots' };
       }
+    }
+    // Single root: "x = R"
+    const single = answer.match(/^x\s*=\s*(-?\d+(?:\.\d+)?)\s*$/i);
+    if (single) {
+      const r = Number(single[1]);
+      const c = checkRoot(r);
+      if (c != null) return { ok: c, computed: `f(${r})=${c?0:'x'}`, kind: 'quad_roots' };
     }
   }
   // "Pontos (a,b) e (c,d)" → slope (d-b)/(c-a)
