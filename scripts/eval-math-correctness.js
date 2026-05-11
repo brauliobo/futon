@@ -200,6 +200,9 @@ const COINS_N_RE = /^(\d+)\s+moedas?\s+[—-]+\s*quantos\s+resultados/i;
 const DICE_N_RE = /^(?:dois|tr[êe]s|quatro|cinco|(\d+))\s+dados?\s+[—-]+\s*quantos\s+resultados/i;
 const PROB_DIE_RE = /^P\((\d+|[áa]s)\s+em\s+(?:um\s+)?(?:dado|baralho(?:\s+de\s+(\d+))?)\)\s*=\s*\??\s*$/i;
 const TRIG_GIVEN_RE = /^se\s+(sin|cos|tan|cot|sec|csc)\(x\)\s*=\s*([^,]+?)(?:\s*\([^)]+\))?\s*,\s*(sin|cos|tan|cot|sec|csc)\(x\)(\^2)?\s*=\s*\??\s*$/i;
+// 'Se sin(x) = V, cos(2x) = ?' and similar double-angle inference.
+const DOUBLE_ANGLE_SINGLE_RE = /^se\s+(sin|cos|tan)\(x\)\s*=\s*([^,]+?)\s*,\s*(sin|cos|tan)\(2\s*\*?\s*x\)\s*=\s*\??\s*$/i;
+const DOUBLE_ANGLE_PAIR_RE = /^se\s+(sin|cos|tan)\(x\)\s*=\s*([^\s]+)\s+e\s+(sin|cos|tan)\(x\)\s*=\s*([^\s,]+)\s*,\s*(sin|cos|tan)\(2\s*\*?\s*x\)\s*=\s*\??\s*$/i;
 const ARRANGE_RE = /^A\((\d+)\s*,\s*(\d+)\)(?:\s*=\s*[\d·*+-]+)?\s*=\s*\??\s*$/i;
 const PERMUTE_RE = /^P\((\d+)\)\s*=\s*\??\s*$/i;
 const COMBINE_RE = /^C\((\d+)\s*,\s*(\d+)\)\s*=\s*\??\s*$/i;
@@ -400,6 +403,51 @@ function verify(question, answer, type) {
     const expected = Number(ue[1]) + Number(ue[2]) - Number(ue[3]);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'prob_value' };
+  }
+  // Double-angle from a single given value.
+  // sin(x)=V → cos(2x) = 1 - 2V² ; sin(2x) = 2V·√(1-V²)
+  // cos(x)=V → cos(2x) = 2V² - 1 ; sin(2x) = 2V·√(1-V²) (positive root)
+  // tan(x)=V → tan(2x) = 2V/(1-V²) ; sin(2x) = 2V/(1+V²) ; cos(2x) = (1-V²)/(1+V²)
+  const das = q.match(DOUBLE_ANGLE_SINGLE_RE);
+  if (das) {
+    const [, fn1, vStr, fn2] = das;
+    const V = toNumber(tryEval(vStr));
+    if (V != null) {
+      let expected = null;
+      if (fn1 === 'sin') {
+        if (fn2 === 'cos') expected = 1 - 2 * V * V;
+        else if (fn2 === 'sin') expected = 2 * V * Math.sqrt(Math.max(0, 1 - V * V));
+      } else if (fn1 === 'cos') {
+        if (fn2 === 'cos') expected = 2 * V * V - 1;
+        else if (fn2 === 'sin') expected = 2 * V * Math.sqrt(Math.max(0, 1 - V * V));
+      } else if (fn1 === 'tan') {
+        if (fn2 === 'tan') expected = 2 * V / (1 - V * V);
+        else if (fn2 === 'sin') expected = 2 * V / (1 + V * V);
+        else if (fn2 === 'cos') expected = (1 - V * V) / (1 + V * V);
+      }
+      if (expected != null) {
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: Math.abs(an - expected) < 1e-3, computed: `${expected}`, kind: 'double_angle' };
+      }
+    }
+  }
+  // Double-angle from both sin(x) and cos(x) given.
+  const dap = q.match(DOUBLE_ANGLE_PAIR_RE);
+  if (dap) {
+    const [, fn1, v1Str, fn2, v2Str, target] = dap;
+    if (fn1 !== fn2 && (fn1 === 'sin' || fn1 === 'cos') && (fn2 === 'sin' || fn2 === 'cos')) {
+      const sVal = toNumber(tryEval(fn1 === 'sin' ? v1Str : v2Str));
+      const cVal = toNumber(tryEval(fn1 === 'cos' ? v1Str : v2Str));
+      if (sVal != null && cVal != null) {
+        let expected = null;
+        if (target === 'sin') expected = 2 * sVal * cVal;
+        else if (target === 'cos') expected = cVal * cVal - sVal * sVal;
+        if (expected != null) {
+          const an = toNumber(tryEval(a));
+          if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'double_angle' };
+        }
+      }
+    }
   }
   // 'Se fn1(x) = V, fn2(x) = ?' — invert fn1 to find x, then evaluate fn2.
   const tg = q.match(TRIG_GIVEN_RE);
@@ -1330,7 +1378,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, ap_find_n: 0, sum_formula: 0, pg_converge: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, tri_special: 0, cube_solve: 0, circumference: 0, circle_radius: 0, poly_perim: 0, poly_int_angle: 0, poly_sum_angle: 0, square_area: 0, square_diag: 0, arrange: 0, permute: 0, combine: 0, pair_product: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, ap_find_n: 0, sum_formula: 0, pg_converge: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, double_angle: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, tri_special: 0, cube_solve: 0, circumference: 0, circle_radius: 0, poly_perim: 0, poly_int_angle: 0, poly_sum_angle: 0, square_area: 0, square_diag: 0, arrange: 0, permute: 0, combine: 0, pair_product: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
