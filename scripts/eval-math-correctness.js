@@ -161,6 +161,7 @@ const DIE_RE = /^lan[çc]ando\s+(?:um\s+)?dado\s*,?\s*quantos\s+resultados/i;
 const COINS_N_RE = /^(\d+)\s+moedas?\s+[—-]+\s*quantos\s+resultados/i;
 const DICE_N_RE = /^(?:dois|tr[êe]s|quatro|cinco|(\d+))\s+dados?\s+[—-]+\s*quantos\s+resultados/i;
 const PROB_DIE_RE = /^P\((\d+|[áa]s)\s+em\s+(?:um\s+)?(?:dado|baralho(?:\s+de\s+(\d+))?)\)\s*=\s*\??\s*$/i;
+const TRIG_GIVEN_RE = /^se\s+(sin|cos|tan|cot|sec|csc)\(x\)\s*=\s*([^,]+?)(?:\s*\([^)]+\))?\s*,\s*(sin|cos|tan|cot|sec|csc)(\^2)?\(x\)\s*=\s*\??\s*$/i;
 
 // Probe-verify two expressions are equivalent by evaluating at several x.
 function probeEquivalent(expr1, expr2) {
@@ -284,6 +285,25 @@ function verify(question, answer, type) {
       const an = toNumber(tryEval(a));
       if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'prob_count' };
     }
+  }
+  // 'Se fn1(x) = V, fn2(x) = ?' — invert fn1 to find x, then evaluate fn2.
+  const tg = q.match(TRIG_GIVEN_RE);
+  if (tg) {
+    const [, fn1, valStr, fn2, sq] = tg;
+    const inv = { sin: 'asin', cos: 'acos', tan: 'atan', cot: x => Math.atan(1 / x),
+                  sec: x => Math.acos(1 / x), csc: x => Math.asin(1 / x) };
+    try {
+      const v = toNumber(math.evaluate(valStr));
+      if (v != null) {
+        const theta = typeof inv[fn1] === 'string' ? Math[inv[fn1]](v) : inv[fn1](v);
+        const fns = { sin: Math.sin, cos: Math.cos, tan: Math.tan,
+                      cot: x => 1 / Math.tan(x), sec: x => 1 / Math.cos(x), csc: x => 1 / Math.sin(x) };
+        let expected = fns[fn2](theta);
+        if (sq) expected = expected * expected;
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: Math.abs(an - expected) < 1e-3, computed: `${expected}`, kind: 'trig_given' };
+      }
+    } catch {}
   }
   // 'P(N em um dado)' → 1/6 ; 'P(ás em baralho de 52)' → 4/52 = 1/13
   const pd = q.match(PROB_DIE_RE);
@@ -888,7 +908,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
