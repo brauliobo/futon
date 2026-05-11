@@ -78,6 +78,9 @@ const ALG_SUBST_RE = /^se\s+x\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*ent[ãa]o\s+(.+?)\s*
 const COMPARISON_RE = /^(-?\d+(?:\.\d+)?)\s*\?\s*(-?\d+(?:\.\d+)?)\s*$/;
 const EVEN_ODD_RE = /^(?:o\s+n[úu]mero\s+)?(-?\d+)\s+é(?::|\s+par\s+ou\s+[íi]mpar\??(?:\s*\(par\/[íi]mpar\))?\s*)\s*$/i;
 const GRAPH_POINT_RE = /^ponto\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*$/i;
+const SLOPE_RE = /^pontos\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+e\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*$/i;
+const SYS_EQ_RE = /^(.+?)\s*,\s*(.+?)\s*$/;
+const POINT_ANS_RE = /^\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s*$/;
 const PLACE_VALUE_RE = /^quantas?\s+(unidades?|dezenas?|centenas?|milhares|milhar)\s+t[êe]m?\s+o\s+n[úu]mero\s+(-?\d+)\??\s*$/i;
 const SKIP_CNT_RE = /^(-?\d+(?:\s*,\s*-?\d+){2,})\s*,\s*\?\s*$/;
 const MENTAL_HINT_RE = /^(.+?)\s*=\s*\([^)]+\)\s*$/;       // "7 + 9 = (7 + 10 - 1)" → LHS = "7 + 9"
@@ -209,6 +212,41 @@ function verify(question, answer, type) {
     const A = Number(cmp[1]), B = Number(cmp[2]);
     const expected = A < B ? '<' : A > B ? '>' : '=';
     return { ok: a.trim() === expected, computed: expected, kind: 'comparison' };
+  }
+  // "Pontos (a,b) e (c,d)" → slope (d-b)/(c-a)
+  const slope = q.match(SLOPE_RE);
+  if (slope) {
+    const [a1, b1, c1, d1] = slope.slice(1, 5).map(Number);
+    if (c1 - a1 !== 0) {
+      const expected = (d1 - b1) / (c1 - a1);
+      const an = toNumber(tryEval(a));
+      if (an != null) {
+        return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'slope' };
+      }
+    }
+  }
+  // System of two linear equations with answer "(x,y)" — substitute and
+  // check both equations.
+  if (type === 'system_equation' || (q.includes(',') && q.includes('='))) {
+    const sysParts = q.split(/\s*,\s*(?=[^=]*=)/);
+    const ptMatch = a.replace(/\s+/g, '').match(POINT_ANS_RE);
+    if (ptMatch && sysParts.length === 2) {
+      const xVal = Number(ptMatch[1]), yVal = Number(ptMatch[2]);
+      const checkSide = (eq) => {
+        const eqIdx = eq.indexOf('=');
+        if (eqIdx < 0) return null;
+        try {
+          const lv = math.evaluate(eq.slice(0, eqIdx), { x: xVal, y: yVal });
+          const rv = math.evaluate(eq.slice(eqIdx + 1), { x: xVal, y: yVal });
+          return Math.abs(toNumber(lv) - toNumber(rv)) < 1e-9;
+        } catch { return null; }
+      };
+      const e1 = checkSide(sysParts[0]);
+      const e2 = checkSide(sysParts[1]);
+      if (e1 != null && e2 != null) {
+        return { ok: e1 && e2, computed: `eq1=${e1}, eq2=${e2}`, kind: 'system_eq' };
+      }
+    }
   }
   // "Ponto (a, b)" → answer should match literal coords.
   const gp = q.match(GRAPH_POINT_RE);
@@ -350,7 +388,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
