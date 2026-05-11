@@ -419,6 +419,28 @@ function verify(question, answer, type) {
       if (an != null) return { ok: Math.abs(expected - an) < 1e-9, computed: `${expected}`, kind: 'sqrt_eq' };
     }
   }
+  // Simple word problem (PT): two-number questions where keyword fixes the op.
+  // Skip comparison questions ('Qual tem mais X ou Y?') and group/multiplier
+  // questions ('K grupos de N') — those are handled elsewhere.
+  if ((type === 'word_problem' || type === 'count')
+      && !/\bqual\s+tem\b/i.test(question)
+      && !/\bgrupos?\s+de\b/i.test(question)) {
+    const nums = (question.match(/\d+/g) || []).map(Number);
+    if (nums.length === 2) {
+      const [n1, n2] = nums;
+      let expected = null;
+      // Additive cues (check first — 'deu mais' should override 'deu').
+      if (/\b(?:deu\s+mais|juntou|achou|coletou|recebeu|ganhou|comprou|viu\s+mais|somando|total|junt[oa]s?|coletaram|veio\s+mais|chegaram\s+mais)\b/i.test(question)) {
+        expected = n1 + n2;
+      } else if (/\b(?:perdeu|deu|comeu|gastou|tirou|sobrou|sobraram|ficou|ficaram|menos)\b/i.test(question)) {
+        expected = n1 - n2;
+      }
+      if (expected != null) {
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'word_problem' };
+      }
+    }
+  }
   // 'N bolinhas' / 'N pontos' / 'N figurinhas' — labelled-count form.
   if (type === 'count') {
     const lab = q.match(COUNT_LABELED_RE);
@@ -804,7 +826,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
