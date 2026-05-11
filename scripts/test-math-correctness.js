@@ -62,6 +62,15 @@ const CASES = [
   // Identity (free vars)
   { q: '1 + cot²(x) = ?', a: 'csc²(x)', type: 'trigonometry', want: true },
 
+  // Combine-like-terms (algebra in x,y)
+  { q: '-9x + -6x', a: '-15x', type: 'algebra', want: true },
+  // 2x2 determinant
+  { q: 'det([1 2; 3 4]) = ?', a: '-2', type: 'algebra', want: true },
+  // 'via' hint stripping
+  { q: 'cos(60°) via cos(120°/2) = ?', a: '1/2', type: 'trigonometry', want: true },
+  // 6A comparison
+  { q: 'Qual tem mais: ●● ou ●●●●●? (2 ou 5)', a: '5', type: 'count', want: true },
+
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
   { q: '7 × 9 =', a: '64', type: 'multiplication', want: false },
