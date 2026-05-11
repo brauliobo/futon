@@ -1037,6 +1037,13 @@ function verify(question, answer, type) {
       if (ln != null && rn != null) {
         return { ok: Math.abs(ln - rn) < 1e-9, computed: `LHS=${ln}, RHS=${rn}`, kind: 'fill_blank' };
       }
+      // Fall back to probe-equivalence if direct eval fails (likely
+      // because the question has a free variable, e.g. 'cos(2x) = 1 - ?·sen²(x)').
+      if (/[a-z]/i.test(lhsExpr + rhsExpr)) {
+        const result = probeEquivalent(lhsExpr, rhsExpr);
+        if (result === true) return { ok: true, computed: 'identity', kind: 'fill_blank' };
+        if (result === false) return { ok: false, computed: 'identity disagrees', kind: 'fill_blank' };
+      }
     }
   }
   // "Quantas <unidades|dezenas|centenas> tem o número N?"
