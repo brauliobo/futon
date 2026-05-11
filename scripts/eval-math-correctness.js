@@ -209,6 +209,10 @@ const COMBINE_RE = /^C\((\d+)\s*,\s*(\d+)\)\s*=\s*\??\s*$/i;
 const PRODUCT_PAIRS_RE = /^(\d+)\s+\w+\s+e\s+(\d+)\s+\w+\s*[—-]+\s*quan(?:tos|tas)\s+\w+\??\s*$/i;
 const COMPLEMENT_PROB_RE = /^se\s+P\([^)]+\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(n[ãa]o[^)]*\)\s*=\s*\??\s*$/i;
 const UNION_INC_EXC_RE = /^se\s+P\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(B\)\s*=\s*(\d+(?:\.\d+)?)\s*e\s+P\(A∩B\)\s*=\s*(\d+(?:\.\d+)?)\s*→\s*P\(A∪B\)\s*=\s*\??\s*$/i;
+const FREQ_OF_RE = /^em\s+\{([^}]+)\}\s*,\s*frequ[êe]ncia\s+de\s+([^=]+?)\s*=\s*\??\s*$/i;
+const REL_FREQ_RE = /^em\s+(?:conjunto\s+com\s+)?n\s*=\s*(\d+)\s+com\s+f\s*=\s*(\d+)\s*,\s*fr?\s*=\s*\??\s*$/i;
+const REL_FREQ_PCT_RE = /^frequ[êe]ncia\s+relativa\s+em\s+%\s+quando\s+f\s*=\s*(\d+)\s+e\s+n\s*=\s*(\d+)\s*=\s*\?%?\s*$/i;
+const INTERVAL_AMP_RE = /^amplitude\s+do\s+intervalo\s+[\[\(]\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*[\]\)]\s*=\s*\??\s*$/i;
 const FRAC_TO_DEC_RE = /^\((-?\d+)\/(\d+)\)\s+em\s+decimal(?:\s*\([^)]+\))?\s*$/i;
 const POWER_EQ_RE = /^x\^(\d+)\s*=\s*(-?\d+(?:\.\d+)?)\s*$/i;
 const SUM_1_TO_N_RE = /^soma\s+1\s*\+\s*2\s*\+\s*3\s*\+\s*\.\.\.\s*\+\s*(\d+)\s*=\s*\??\s*$/i;
@@ -396,6 +400,36 @@ function verify(question, answer, type) {
     const expected = 1 - Number(cp[1]);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'prob_value' };
+  }
+  // 'Em {nums}, frequência de N = ?' → count of N in the set
+  const fr = q.match(FREQ_OF_RE);
+  if (fr) {
+    const items = fr[1].split(',').map(s => s.trim());
+    const target = fr[2].trim();
+    const expected = items.filter(x => x === target).length;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'frequency' };
+  }
+  // 'Em n=N com f=F, fᵣ = ?' → F/N
+  const rfm = q.match(REL_FREQ_RE);
+  if (rfm) {
+    const expected = Number(rfm[2]) / Number(rfm[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'rel_freq' };
+  }
+  // 'Frequência relativa em % quando f=F e n=N = ?%' → 100·F/N
+  const rfp = q.match(REL_FREQ_PCT_RE);
+  if (rfp) {
+    const expected = 100 * Number(rfp[1]) / Number(rfp[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'rel_freq' };
+  }
+  // 'Amplitude do intervalo [a,b) = ?' → b - a
+  const iam = q.match(INTERVAL_AMP_RE);
+  if (iam) {
+    const expected = Number(iam[2]) - Number(iam[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'interval_amp' };
   }
   // 'Se P(A) = a, P(B) = b e P(A∩B) = c → P(A∪B) = ?' → a+b-c
   const ue = question.match(UNION_INC_EXC_RE);
@@ -1378,7 +1412,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, ap_find_n: 0, sum_formula: 0, pg_converge: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, double_angle: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, tri_special: 0, cube_solve: 0, circumference: 0, circle_radius: 0, poly_perim: 0, poly_int_angle: 0, poly_sum_angle: 0, square_area: 0, square_diag: 0, arrange: 0, permute: 0, combine: 0, pair_product: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, ap_find_n: 0, sum_formula: 0, pg_converge: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, double_angle: 0, frequency: 0, rel_freq: 0, interval_amp: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, tri_special: 0, cube_solve: 0, circumference: 0, circle_radius: 0, poly_perim: 0, poly_int_angle: 0, poly_sum_angle: 0, square_area: 0, square_diag: 0, arrange: 0, permute: 0, combine: 0, pair_product: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
