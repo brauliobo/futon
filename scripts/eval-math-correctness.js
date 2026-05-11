@@ -22,6 +22,9 @@ const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m';
 const c = (t, col) => `${col}${t}${RESET}`;
 
 const SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9' };
+const SUB = { '₀': '0', '₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9' };
+// Arithmetic-progression aₙ = a₁ + (n-1)·r
+const AP_TERM_RE = /^a1\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*r\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*a(\d+)\s*=\s*\??\s*$/i;
 
 const normalize = (s) =>
   String(s)
@@ -54,6 +57,8 @@ const normalize = (s) =>
       const exp = [...sups].map(ch => SUP[ch] || ch).join('');
       return `${base}^${exp}`;
     })
+    // Subscript digits: 'a₁' / 'a₁₀' → 'a1' / 'a10' (used in PA/PG notation).
+    .replace(/([₀₁₂₃₄₅₆₇₈₉]+)/g, (s) => [...s].map(c => SUB[c] || c).join(''))
     // 'sin^2(x)' is invalid in mathjs (parses 'sin^2' as pow(sin, 2)).
     // Rewrite trig-function-then-power-then-arg → 'fn(arg)^pow'. Must
     // run AFTER superscript conversion so 'sen²(x)' has already become
@@ -323,6 +328,14 @@ function verify(question, answer, type) {
       const an = toNumber(tryEval(a));
       if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'count' };
     }
+  }
+  // PA term: 'a₁=N, r=R, aₖ = ?' → N + (k-1)*R
+  const ap = q.match(AP_TERM_RE);
+  if (ap) {
+    const a1 = Number(ap[1]), r = Number(ap[2]), k = Number(ap[3]);
+    const expected = a1 + (k - 1) * r;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'ap_term' };
   }
   // Three-term arithmetic sequence with one blank.
   const seq = q.match(SEQ3_RE);
@@ -636,7 +649,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
