@@ -185,14 +185,16 @@ const POWER_EQ_RE = /^x\^(\d+)\s*=\s*(-?\d+(?:\.\d+)?)\s*$/i;
 const SUM_1_TO_N_RE = /^soma\s+1\s*\+\s*2\s*\+\s*3\s*\+\s*\.\.\.\s*\+\s*(\d+)\s*=\s*\??\s*$/i;
 const RATIO_FROM_TWO_RE = /^a(\d+)\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*a1\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*r\s*=\s*\??\s*$/i;
 
-// Probe-verify two expressions are equivalent by evaluating at several x.
-function probeEquivalent(expr1, expr2) {
+// Probe-verify two expressions are equivalent by evaluating at several
+// values of every free variable in vars (default ['x']).
+function probeEquivalent(expr1, expr2, vars = ['x']) {
   const xs = [0.31, 1.7, -2.3, 4.1, -5.9, 3];
   for (const xn of xs) {
+    const scope = {};
+    for (const v of vars) scope[v] = math.bignumber(xn + vars.indexOf(v) * 0.5);
     let v1, v2;
-    const x = math.bignumber(xn);  // avoid BigNumber↔number mixed-arith errors
-    try { v1 = math.evaluate(expr1, { x }); } catch { return null; }
-    try { v2 = math.evaluate(expr2, { x }); } catch { return null; }
+    try { v1 = math.evaluate(expr1, scope); } catch { return null; }
+    try { v2 = math.evaluate(expr2, scope); } catch { return null; }
     const n1 = toNumber(v1), n2 = toNumber(v2);
     if (n1 == null || n2 == null) return null;
     if (Math.abs(n1 - n2) > Math.max(1e-6, Math.abs(n1) * 1e-6)) return false;
@@ -848,18 +850,24 @@ function verify(question, answer, type) {
     const expected = (Math.abs(N) % 2 === 0) ? 'par' : 'ímpar';
     return { ok: a.trim().toLowerCase() === expected, computed: expected, kind: 'even_odd' };
   }
-  // Symbolic identity: '<lhs in x> = ?' with answer an expression also in x.
-  // Probe both sides at several x values. Catches trig identities like
-  // '1 + cot²(x) = csc²(x)'.
-  if (q.includes('?') && q.includes('=') && /[a-zA-Z]/.test(a) && q.match(/\bx\b/) && a.match(/\bx\b/)) {
-    const eqIdx = q.lastIndexOf('=');
-    const qms = (q.match(/\?/g) || []).length;
-    if (qms === 1 && eqIdx > 0) {
-      const lhsTpl = q.slice(0, eqIdx).replace(/\?/g, `(${a})`).trim();
-      const rhsTpl = q.slice(eqIdx + 1).replace(/\?/g, `(${a})`).trim();
-      const result = probeEquivalent(lhsTpl, rhsTpl);
-      if (result === true) return { ok: true, computed: 'identity', kind: 'identity_symbolic' };
-      if (result === false) return { ok: false, computed: 'sides disagree', kind: 'identity_symbolic' };
+  // Symbolic identity: '<lhs in vars> = ?' with answer an expression also
+  // in those vars. Probe both sides at several values. Catches trig
+  // identities like '1 + cot²(x) = csc²(x)' and 'cos(a+b) = …'.
+  if (q.includes('?') && q.includes('=') && /[a-zA-Z]/.test(a)) {
+    // Free variables that appear in both q and a (single-letter names).
+    // Exclude 'e' and 'i' which are mathjs constants (Euler / imaginary).
+    const sharedVars = [...new Set([...q.matchAll(/\b([a-z])\b/g)].map(m => m[1]))]
+      .filter(v => v !== 'e' && v !== 'i' && new RegExp(`\\b${v}\\b`).test(a));
+    if (sharedVars.length) {
+      const eqIdx = q.lastIndexOf('=');
+      const qms = (q.match(/\?/g) || []).length;
+      if (qms === 1 && eqIdx > 0) {
+        const lhsTpl = q.slice(0, eqIdx).replace(/\?/g, `(${a})`).trim();
+        const rhsTpl = q.slice(eqIdx + 1).replace(/\?/g, `(${a})`).trim();
+        const result = probeEquivalent(lhsTpl, rhsTpl, sharedVars);
+        if (result === true) return { ok: true, computed: 'identity', kind: 'identity_symbolic' };
+        if (result === false) return { ok: false, computed: 'sides disagree', kind: 'identity_symbolic' };
+      }
     }
   }
   // Equation with a single literal '?' placeholder: substitute the authored
