@@ -47,14 +47,14 @@ const normalize = (s) =>
     .replace(/[×·]/g, '*')
     .replace(/÷/g, '/')
     .replace(/−/g, '-')
-    .replace(/\barcsen\b/g, 'asin')
-    .replace(/\barccos\b/g, 'acos')
-    .replace(/\barctan\b/g, 'atan')
-    .replace(/\barctg\b/g, 'atan')
-    .replace(/\bsen\b/g, 'sin')
-    .replace(/\bcosseno\b/g, 'cos')
-    .replace(/\btg\b/g, 'tan')
-    .replace(/\bcotg\b/g, 'cot')
+    .replace(/(?<![a-zA-Z])arcsen(?![a-zA-Z])/g, 'asin')
+    .replace(/(?<![a-zA-Z])arccos(?![a-zA-Z])/g, 'acos')
+    .replace(/(?<![a-zA-Z])arctan(?![a-zA-Z])/g, 'atan')
+    .replace(/(?<![a-zA-Z])arctg(?![a-zA-Z])/g, 'atan')
+    .replace(/(?<![a-zA-Z])sen(?![a-zA-Z])/g, 'sin')
+    .replace(/(?<![a-zA-Z])cosseno(?![a-zA-Z])/g, 'cos')
+    .replace(/(?<![a-zA-Z])tg(?![a-zA-Z])/g, 'tan')
+    .replace(/(?<![a-zA-Z])cotg(?![a-zA-Z])/g, 'cot')
     // "N°" → "(N deg)" so mathjs treats the argument as degrees. Don't
     // swallow a leading '-' that's really a subtraction ('45°-45°' must
     // stay as '(45 deg)-(45 deg)', not '(45 deg)(-45 deg)').
