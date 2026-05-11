@@ -89,6 +89,8 @@ const PLACE_VALUE_RE = /^quantas?\s+(unidades?|dezenas?|centenas?|milhares|milha
 const SKIP_CNT_RE = /^(-?\d+(?:\s*,\s*-?\d+){2,})\s*,\s*\?\s*$/;
 const MENTAL_HINT_RE = /^(.+?)\s*=\s*\([^)]+\)\s*$/;       // "7 + 9 = (7 + 10 - 1)" → LHS = "7 + 9"
 const SQUARE_ROOT_RE = /^[a-zσ]\^?2\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*[a-zσ]\s*=\s*\??\s*$/i;
+// "x² = N (raiz positiva|negativa|ambas raízes)" — answer is ±√N depending on hint.
+const SQ_HINT_RE = /^x\^?2\s*=\s*(-?\d+(?:\.\d+)?)\s*\((raiz\s+(?:positiva|negativa)|ambas\s+ra[íi]zes)\)\s*$/i;
 const AREA_RECT_RE = /^[áa]rea\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
 const PERIM_RECT_RE = /^per[íi]metro\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
 // Three-term arithmetic sequence with one blank: "__,15,16" / "7,__,9" / "11,12,__"
@@ -255,6 +257,21 @@ function verify(question, answer, type) {
   // contradicting their own rationales. Running this verifier flagged 424
   // mismatches in a row. Surfacing those needs an authoring pass — not a
   // gate that turns red until they're fixed. Track separately if needed.
+  // "x² = N (raiz positiva|negativa|ambas)" — answer is ±√N as string
+  const sqh = q.match(SQ_HINT_RE);
+  if (sqh) {
+    const N = Number(sqh[1]);
+    const hint = sqh[2].toLowerCase();
+    if (N >= 0) {
+      const r = Math.sqrt(N);
+      let expected;
+      if (hint.includes('positiva')) expected = `x = ${r}`;
+      else if (hint.includes('negativa')) expected = `x = ${-r}`;
+      else expected = `x = ±${r}`;
+      const aClean = answer.replace(/\s+/g, ' ').trim();
+      return { ok: aClean === expected, computed: expected, kind: 'sq_hint' };
+    }
+  }
   // Quadratic with two roots: "x = R1 ou x = R2" — substitute each root.
   if (type === 'quadratic' && /=\s*0\s*$/.test(q)) {
     const rootMatch = answer.match(TWO_ROOTS_RE);
@@ -448,7 +465,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
