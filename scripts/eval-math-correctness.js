@@ -50,6 +50,11 @@ const normalize = (s) =>
       const exp = [...sups].map(ch => SUP[ch] || ch).join('');
       return `${base}^${exp}`;
     })
+    // 'sin^2(x)' is invalid in mathjs (parses 'sin^2' as pow(sin, 2)).
+    // Rewrite trig-function-then-power-then-arg → 'fn(arg)^pow'. Must
+    // run AFTER superscript conversion so 'sen²(x)' has already become
+    // 'sin^2(x)' by the time this fires.
+    .replace(/\b(sin|cos|tan|sec|csc|cot)\s*\^\s*(\d+)\s*\(((?:[^()]|\([^)]*\))*)\)/g, '$1($3)^$2')
     // √N or √(expr) → sqrt(N) / sqrt(expr)
     .replace(/√\s*\(([^)]+)\)/g, 'sqrt($1)')
     .replace(/√\s*(-?\d+(?:\.\d+)?)/g, 'sqrt($1)')
