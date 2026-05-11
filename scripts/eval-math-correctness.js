@@ -47,8 +47,14 @@ const normalize = (s) =>
     .replace(/\bcosseno\b/g, 'cos')
     .replace(/\btg\b/g, 'tan')
     .replace(/\bcotg\b/g, 'cot')
-    // "(N°)" → "(N deg)" so mathjs treats the argument as degrees
-    .replace(/(-?\d+(?:\.\d+)?)\s*°/g, '($1 deg)')
+    // "N°" → "(N deg)" so mathjs treats the argument as degrees. Don't
+    // swallow a leading '-' that's really a subtraction ('45°-45°' must
+    // stay as '(45 deg)-(45 deg)', not '(45 deg)(-45 deg)').
+    .replace(/(?<![\d°)\]])-?(\d+(?:\.\d+)?)\s*°/g, (_, n, off, full) => {
+      // Add explicit '-' only when this token's '-' is at the start of the
+      // match (i.e. the match started with '-'). Otherwise keep neutral.
+      return '(' + (full[off] === '-' ? '-' : '') + n + ' deg)';
+    })
     // π → pi (mathjs uses the latin name)
     .replace(/π/g, 'pi')
     // '0x' is a hex prefix in mathjs — force it to be 0*x. Same for any
