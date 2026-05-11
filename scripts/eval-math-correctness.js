@@ -32,6 +32,10 @@ const normalize = (s) =>
     .replace(/[×·]/g, '*')
     .replace(/÷/g, '/')
     .replace(/−/g, '-')
+    .replace(/\barcsen\b/g, 'asin')
+    .replace(/\barccos\b/g, 'acos')
+    .replace(/\barctan\b/g, 'atan')
+    .replace(/\barctg\b/g, 'atan')
     .replace(/\bsen\b/g, 'sin')
     .replace(/\bcosseno\b/g, 'cos')
     .replace(/\btg\b/g, 'tan')
@@ -68,6 +72,15 @@ function tryEval(expr) {
 function toNumber(v) {
   if (v == null) return null;
   if (typeof v === 'number') return Number.isFinite(v) ? v : null;
+  // mathjs Unit: convert to base SI (e.g. degrees → radians) so trig
+  // identities like 'acos(0)' (radians) and '90°' (degrees) agree.
+  if (v && typeof v === 'object' && Array.isArray(v.units)) {
+    try {
+      const base = v.toSI?.() ?? v;
+      const n = base.toNumber?.() ?? Number(base.value);
+      return Number.isFinite(n) ? n : null;
+    } catch { return null; }
+  }
   if (typeof v?.toNumber === 'function') {
     const n = v.toNumber();
     return Number.isFinite(n) ? n : null;
