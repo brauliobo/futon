@@ -22,7 +22,8 @@ const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m';
 const c = (t, col) => `${col}${t}${RESET}`;
 
 const SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9' };
-const SUB = { '₀': '0', '₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9' };
+const SUB = { '₀': '0', '₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9',
+  'ₙ': 'n', 'ₖ': 'k', 'ᵢ': 'i', 'ⱼ': 'j', 'ₘ': 'm' };
 // Arithmetic-progression aₙ = a₁ + (n-1)·r
 const AP_TERM_RE = /^a1\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*r\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*a(\d+)\s*=\s*\??\s*$/i;
 const GP_TERM_RE = /^a1\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*q\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*a(\d+)\s*=\s*\??\s*$/i;
@@ -72,8 +73,8 @@ const normalize = (s) =>
       const exp = [...sups].map(ch => SUP[ch] || ch).join('');
       return `${base}^${exp}`;
     })
-    // Subscript digits: 'a₁' / 'a₁₀' → 'a1' / 'a10' (used in PA/PG notation).
-    .replace(/([₀₁₂₃₄₅₆₇₈₉]+)/g, (s) => [...s].map(c => SUB[c] || c).join(''))
+    // Subscript chars: digits + n/k/i/j/m letters used in PA/PG notation.
+    .replace(/([₀₁₂₃₄₅₆₇₈₉ₙₖᵢⱼₘ]+)/g, (s) => [...s].map(c => SUB[c] || c).join(''))
     // LaTeX-style braces in exponents: 'e^{2x}' → 'e^(2x)'
     .replace(/\^\{([^{}]+)\}/g, '^($1)')
     // 'sin^2(x)' is invalid in mathjs (parses 'sin^2' as pow(sin, 2)).
