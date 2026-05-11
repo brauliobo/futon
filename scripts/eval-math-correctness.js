@@ -154,6 +154,13 @@ const DEV_SQUARED_RE = /^quadrado\s+do\s+desvio\s+(-?\d+(?:\.\d+)?)\s*=\s*\??\s*
 const VAR_TO_STD_RE = /^se\s+vari[âa]ncia\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*desvio\s+padr[ãa]o\s*=\s*\??\s*$/i;
 const VARIANCE_RE = /^vari[âa]ncia\s+de\s+(\{[^}]+\})(?:\s*\([^)]+\))?\s*=\s*\??\s*$/i;
 const STDDEV_RE = /^desvio\s+padr[ãa]o\s+de\s+(\{[^}]+\})(?:\s*\([^)]+\))?\s*=\s*\??\s*$/i;
+const SUM_SQ_DEV_RE = /^soma\s+dos\s+quadrados\s+dos\s+desvios\s+de\s+(\{[^}]+\})\s*=\s*\??\s*$/i;
+const SUM_DEV_RE = /^soma\s+dos\s+desvios\s+de\s+(\{[^}]+\})\s+em\s+rela[çc][ãa]o\s+[àa]\s+m[ée]dia\s*=\s*\??\s*$/i;
+const COIN_RE = /^lan[çc]ando\s+(?:uma\s+)?moeda\s*,?\s*quantos\s+resultados/i;
+const DIE_RE = /^lan[çc]ando\s+(?:um\s+)?dado\s*,?\s*quantos\s+resultados/i;
+const COINS_N_RE = /^(\d+)\s+moedas?\s+[—-]+\s*quantos\s+resultados/i;
+const DICE_N_RE = /^(?:dois|tr[êe]s|quatro|cinco|(\d+))\s+dados?\s+[—-]+\s*quantos\s+resultados/i;
+const PROB_DIE_RE = /^P\((\d+|[áa]s)\s+em\s+(?:um\s+)?(?:dado|baralho(?:\s+de\s+(\d+))?)\)\s*=\s*\??\s*$/i;
 
 // Probe-verify two expressions are equivalent by evaluating at several x.
 function probeEquivalent(expr1, expr2) {
@@ -235,6 +242,61 @@ function verify(question, answer, type) {
         if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind };
       }
     }
+  }
+  // Sum of (squared) deviations from the mean.
+  const ssdev = q.match(SUM_SQ_DEV_RE);
+  if (ssdev) {
+    const nums = ssdev[1].replace(/[{}]/g, '').split(',').map(x => Number(x.trim())).filter(Number.isFinite);
+    if (nums.length) {
+      const mean = nums.reduce((s, n) => s + n, 0) / nums.length;
+      const expected = nums.reduce((s, n) => s + (n - mean) ** 2, 0);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'sum_sq_dev' };
+    }
+  }
+  if (q.match(SUM_DEV_RE)) {
+    // Sum of (non-squared) deviations from the mean is always 0.
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'sum_dev' };
+  }
+  // 'Lançando moeda/dado, quantos resultados há?' → 2 / 6
+  if (q.match(COIN_RE)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 2, computed: '2', kind: 'prob_count' };
+  }
+  if (q.match(DIE_RE)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 6, computed: '6', kind: 'prob_count' };
+  }
+  // 'K moedas/dados — quantos resultados?' → 2^K / 6^K
+  const ncoins = q.match(COINS_N_RE);
+  if (ncoins) {
+    const expected = 2 ** Number(ncoins[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'prob_count' };
+  }
+  const ndice = q.match(DICE_N_RE);
+  if (ndice) {
+    const word = { dois: 2, três: 3, tres: 3, quatro: 4, cinco: 5 };
+    const k = ndice[1] ? Number(ndice[1]) : word[q.toLowerCase().match(/^([a-zçãâêíóô]+)/)?.[1]];
+    if (k) {
+      const expected = 6 ** k;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'prob_count' };
+    }
+  }
+  // 'P(N em um dado)' → 1/6 ; 'P(ás em baralho de 52)' → 4/52 = 1/13
+  const pd = q.match(PROB_DIE_RE);
+  if (pd) {
+    let expected;
+    if (/baralho/i.test(question)) {
+      const deck = pd[2] ? Number(pd[2]) : 52;
+      expected = 4 / deck;
+    } else {
+      expected = 1 / 6;
+    }
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'prob_value' };
   }
   // Statistics: "Média / Mediana / Moda / Amplitude de {n,...} = ?"
   const stat = q.match(STAT_RE);
@@ -826,7 +888,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
