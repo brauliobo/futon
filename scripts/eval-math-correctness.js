@@ -25,6 +25,8 @@ const SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5
 const SUB = { '₀': '0', '₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9' };
 // Arithmetic-progression aₙ = a₁ + (n-1)·r
 const AP_TERM_RE = /^a1\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*r\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*a(\d+)\s*=\s*\??\s*$/i;
+const PA_RATIO_RE = /^PA\s*\{?\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*,/i;
+const PA_SUM_RE = /^PA\s+((?:-?\d+(?:\.\d+)?\s*,\s*)+)\.\.\.\s*,\s*(-?\d+(?:\.\d+)?)\s*:\s*(?:S\d+|Soma)\s*=\s*\??\s*$/i;
 const COUNT_LABELED_RE = /^(\d+)\s+(?:bolinhas?|pontos?|figurinhas?|objetos?|c[íi]rculos?|estrelas?|quadrad[oi]s?|tri[âa]ngulos?|flores?|frutas?|brinquedos?|carros?|bal[õo]es?)\s*\.?\s*$/i;
 const GROUPS_RE = /^(\d+)\s+grupos?\s+de\s+(\d+)\s+[a-z]+\.?\s*total\??\s*$/i;
 
@@ -443,6 +445,30 @@ function verify(question, answer, type) {
       if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'count' };
     }
   }
+  // 'PA {a1, a2, …} — razão = ?' → a2 - a1
+  if (/raz[ãa]o\s*=\s*\??\s*$/i.test(q)) {
+    const m = q.match(PA_RATIO_RE);
+    if (m) {
+      const expected = Number(m[2]) - Number(m[1]);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'pa_ratio' };
+    }
+  }
+  // 'PA a1, a2, …, aN: S = ?' → arithmetic sum
+  const sumM = q.match(PA_SUM_RE);
+  if (sumM) {
+    const head = sumM[1].split(',').map(s => Number(s.trim())).filter(Number.isFinite);
+    const aN = Number(sumM[2]);
+    if (head.length >= 2) {
+      const a1 = head[0], r = head[1] - head[0];
+      if (r !== 0) {
+        const n = Math.round((aN - a1) / r) + 1;
+        const expected = n * (a1 + aN) / 2;
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'pa_sum' };
+      }
+    }
+  }
   // PA term: 'a₁=N, r=R, aₖ = ?' → N + (k-1)*R
   const ap = q.match(AP_TERM_RE);
   if (ap) {
@@ -777,7 +803,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
