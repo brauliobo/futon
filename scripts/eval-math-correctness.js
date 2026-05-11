@@ -141,6 +141,11 @@ const SEQ3_RE = /^\s*(__|-?\d+)\s*,\s*(__|-?\d+)\s*,\s*(__|-?\d+)\s*$/;
 // Require a literal '{' or a leading digit so 'Amplitude de y=cos(x) + 5'
 // (a trig waveform question) doesn't get mistaken for a stats aggregate.
 const STAT_RE = /^(m[ée]dia|mediana|moda|amplitude)\s+(?:de\s+)?(\{[^}]+\}|-?\d[^=]*?)\s*=\s*\??\s*$/i;
+const DEVIATION_RE = /^desvio\s+de\s+(-?\d+(?:\.\d+)?)\s+em\s+rela[çc][ãa]o\s+a\s+(-?\d+(?:\.\d+)?)\s*=\s*\??\s*$/i;
+const DEV_SQUARED_RE = /^quadrado\s+do\s+desvio\s+(-?\d+(?:\.\d+)?)\s*=\s*\??\s*$/i;
+const VAR_TO_STD_RE = /^se\s+vari[âa]ncia\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*desvio\s+padr[ãa]o\s*=\s*\??\s*$/i;
+const VARIANCE_RE = /^vari[âa]ncia\s+de\s+(\{[^}]+\})(?:\s*\([^)]+\))?\s*=\s*\??\s*$/i;
+const STDDEV_RE = /^desvio\s+padr[ãa]o\s+de\s+(\{[^}]+\})(?:\s*\([^)]+\))?\s*=\s*\??\s*$/i;
 
 // Probe-verify two expressions are equivalent by evaluating at several x.
 function probeEquivalent(expr1, expr2) {
@@ -181,6 +186,45 @@ function verify(question, answer, type) {
         const ok = probeEquivalent(integrand, dExpr.toString());
         if (ok != null) return { ok, computed: `d/dx[${antideriv}] = ${dExpr.toString()}`, kind: 'integral' };
       } catch {}
+    }
+  }
+  // Stats: 'Desvio de N em relação a M' → N - M
+  const dev = q.match(DEVIATION_RE);
+  if (dev) {
+    const expected = Number(dev[1]) - Number(dev[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'deviation' };
+  }
+  // Stats: 'Quadrado do desvio N' → N²
+  const devsq = q.match(DEV_SQUARED_RE);
+  if (devsq) {
+    const N = Number(devsq[1]);
+    const expected = N * N;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'dev_sq' };
+  }
+  // Stats: 'Se variância = N, desvio padrão = ?' → sqrt(N)
+  const vts = q.match(VAR_TO_STD_RE);
+  if (vts) {
+    const N = Number(vts[1]);
+    if (N >= 0) {
+      const expected = Math.sqrt(N);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'var_to_std' };
+    }
+  }
+  // Stats: 'Variância de {nums}' / 'Desvio padrão de {nums}' (population, /n)
+  for (const [re, kind] of [[VARIANCE_RE, 'variance'], [STDDEV_RE, 'stddev']]) {
+    const m = q.match(re);
+    if (m) {
+      const nums = m[1].replace(/[{}]/g, '').split(',').map(x => Number(x.trim())).filter(Number.isFinite);
+      if (nums.length) {
+        const mean = nums.reduce((s, n) => s + n, 0) / nums.length;
+        const v = nums.reduce((s, n) => s + (n - mean) ** 2, 0) / nums.length;
+        const expected = kind === 'variance' ? v : Math.sqrt(v);
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind };
+      }
     }
   }
   // Statistics: "Média / Mediana / Moda / Amplitude de {n,...} = ?"
@@ -667,7 +711,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
