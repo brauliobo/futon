@@ -106,10 +106,16 @@ const INVERSE_RE = /^f\(x\)\s*=\s*(.+?)\s*,\s*f⁻¹\((-?\d+(?:\.\d+)?)\)\s*=\s*
 const AREA_RECT_RE = /^[áa]rea\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
 const PERIM_RECT_RE = /^per[íi]metro\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
 const SHAPE_SIDES = { triângulo: 3, triangulo: 3, quadrado: 4, retângulo: 4, retangulo: 4, pentágono: 5, pentagono: 5, hexágono: 6, hexagono: 6, heptágono: 7, heptagono: 7, octógono: 8, octogono: 8, círculo: 0, circulo: 0 };
-const SHAPE_COUNT_RE = /^quantos\s+(?:lados|cantos|v[ée]rtices)\s+t[êe]m?\s+um\s+([a-zíáéóô]+)\??\s*$/i;
+const SHAPE_COUNT_RE = /^quantos\s+(?:lados|cantos|v[ée]rtices)\s+t[êe]m?\s+um\s+([a-záâãéêíóôõúç]+)\??\s*$/i;
 const PARALLELOGRAM_RE = /^[áa]rea\s+do\s+paralelogramo\s+b\s*=\s*(\d+)\s*,\s*h\s*=\s*(\d+)\s*=\s*\??\s*$/i;
 const TRAPEZIUM_RE = /^[áa]rea\s+do\s+trap[ée]zio\s+B\s*=\s*(\d+)\s*,\s*b\s*=\s*(\d+)\s*,\s*h\s*=\s*(\d+)\s*=\s*\??\s*$/i;
 const CIRCLE_AREA_HINT_RE = /^[áa]rea\s+do\s+c[íi]rculo\s+r\s*=\s*(\d+(?:\.\d+)?):\s*\?π\s*$/i;
+const TRIANGLE_AREA_RE = /^[áa]rea\s+do\s+tri[âa]ngulo\s+b\s*=\s*(\d+)\s*,\s*h\s*=\s*(\d+)\s*=\s*\??\s*$/i;
+const BOX_VOLUME_RE = /^caixa\s+(\d+)\s*[×*]\s*(\d+)\s*[×*]\s*(\d+)\s+[—-]+\s*volume\s*=\s*\??\s*$/i;
+const CYLINDER_VOL_RE = /^cilindro\s+r\s*=\s*(\d+)\s*,\s*h\s*=\s*(\d+)\s*:\s*v\s*=\s*\?π\s*$/i;
+const CONE_VOL_RE = /^cone\s+r\s*=\s*(\d+)\s*,\s*h\s*=\s*(\d+)\s*:\s*v\s*=\s*\?π\s*$/i;
+const SPHERE_VOL_RE = /^esfera\s+r\s*=\s*(\d+)\s*:\s*v\s*=\s*\?π\s*$/i;
+const RECT_ALTURA_RE = /^se\s+[áa]rea\s+do\s+ret[âa]ngulo\s*=\s*(\d+)\s+e\s+base\s*=\s*(\d+)\s*,\s*altura\s*=\s*\??\s*$/i;
 // Three-term arithmetic sequence with one blank: "__,15,16" / "7,__,9" / "11,12,__"
 const SEQ3_RE = /^\s*(__|-?\d+)\s*,\s*(__|-?\d+)\s*,\s*(__|-?\d+)\s*$/;
 // Require a literal '{' or a leading digit so 'Amplitude de y=cos(x) + 5'
@@ -232,6 +238,49 @@ function verify(question, answer, type) {
     const expected = (Number(trap[1]) + Number(trap[2])) * Number(trap[3]) / 2;
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'trapezium' };
+  }
+  // "Área do triângulo b=B, h=H = ?" → B*H/2
+  const tri = q.match(TRIANGLE_AREA_RE);
+  if (tri) {
+    const expected = Number(tri[1]) * Number(tri[2]) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'triangle_area' };
+  }
+  // "Caixa a×b×c — volume = ?" → a*b*c
+  const box = q.match(BOX_VOLUME_RE);
+  if (box) {
+    const expected = Number(box[1]) * Number(box[2]) * Number(box[3]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'box_vol' };
+  }
+  // "Cilindro r=R, h=H: V = ?π" → R²*H (match original; normalize replaced π→pi)
+  const cyl = question.match(CYLINDER_VOL_RE);
+  if (cyl) {
+    const r = Number(cyl[1]), h = Number(cyl[2]);
+    const expected = r * r * h;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'cylinder_vol' };
+  }
+  const cone = question.match(CONE_VOL_RE);
+  if (cone) {
+    const r = Number(cone[1]), h = Number(cone[2]);
+    const expected = r * r * h / 3;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'cone_vol' };
+  }
+  const sph = question.match(SPHERE_VOL_RE);
+  if (sph) {
+    const r = Number(sph[1]);
+    const expected = 4 * r * r * r / 3;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'sphere_vol' };
+  }
+  // "Se área do retângulo = A e base = B, altura = ?" → A/B
+  const ralt = q.match(RECT_ALTURA_RE);
+  if (ralt) {
+    const expected = Number(ralt[1]) / Number(ralt[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'rect_altura' };
   }
   // "Área do círculo r=N: ?π" → answer is r² (factor of π implicit).
   // Match against original question — normalize already converted π→pi.
@@ -574,7 +623,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
