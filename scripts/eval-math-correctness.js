@@ -218,6 +218,7 @@ function probeEquivalent(expr1, expr2, vars = ['x']) {
   return true;
 }
 
+export { verify, normalize, probeEquivalent };
 function verify(question, answer, type) {
   const q = normalize(question);
   const a = normalize(answer);
