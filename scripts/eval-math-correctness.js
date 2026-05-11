@@ -360,6 +360,32 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'prob_value' };
   }
+  // Common probability phrasings (single answer).
+  const PROBS = [
+    [/^P\(cara\)\s+em\s+moeda\s*=\s*\??\s*$|^P\(cara\s+em\s+(?:uma\s+)?moeda\)\s*=\s*\??\s*$|^P\(n[ãa]o\s+cara\)\s+em\s+moeda\s*=\s*\??\s*$/i, 1 / 2],
+    [/^P\(copas\s+em\s+baralho\)\s*=\s*\??\s*$/i, 1 / 4],
+    [/^P\(evento\s+certo\)\s*=\s*\??\s*$/i, 1],
+    [/^P\(evento\s+imposs[íi]vel\)\s*=\s*\??\s*$/i, 0],
+    [/^P\(n[ãa]o\s+\d+\s+em\s+dado\)\s*=\s*\??\s*$/i, 5 / 6],
+    [/^P\(n[ãa]o\s+[áa]s\s+em\s+baralho\)\s*=\s*\??\s*$/i, 12 / 13],
+    [/^P\((?:par|[íi]mpar)\s+em\s+(?:um\s+)?dado\)\s*=\s*\??\s*$/i, 1 / 2],
+    [/^maior\s+valor\s+poss[íi]vel\s+de\s+P\(A\)\s*=\s*\??\s*$/i, 1],
+    [/^menor\s+valor\s+poss[íi]vel\s+de\s+P\(A\)\s*=\s*\??\s*$/i, 0],
+    [/^eventos?\s+mutuamente\s+exclusivos?\s+t[êe]m?\s+P\(A∩B\)\s*=\s*\??\s*$/i, 0],
+  ];
+  for (const [re, expected] of PROBS) {
+    if (re.test(question)) {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'prob_value' };
+    }
+  }
+  // 'P(A)=N e P(B)=M ... mutuamente exclusivo' → N + M (P(A∪B))
+  const peux = question.match(/P\(A\)\s*=\s*(\d+(?:\.\d+)?)[^=]*P\(B\)\s*=\s*(\d+(?:\.\d+)?)/);
+  if (peux && /(?:exclusivo|exclusivos)/i.test(question) && /∪|ou\s+B/i.test(question)) {
+    const expected = Number(peux[1]) + Number(peux[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'prob_value' };
+  }
   // Statistics: "Média / Mediana / Moda / Amplitude de {n,...} = ?"
   const stat = q.match(STAT_RE);
   if (stat) {
