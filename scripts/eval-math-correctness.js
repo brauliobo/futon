@@ -38,6 +38,8 @@ const normalize = (s) =>
     .replace(/\bcotg\b/g, 'cot')
     // "(N°)" → "(N deg)" so mathjs treats the argument as degrees
     .replace(/(-?\d+(?:\.\d+)?)\s*°/g, '($1 deg)')
+    // π → pi (mathjs uses the latin name)
+    .replace(/π/g, 'pi')
     // |expr| → abs(expr) — non-nested form only.
     .replace(/\|([^|]+)\|/g, 'abs($1)')
     // Convert "N²" / "x³" → "(N)^2" / "(x)^3"
