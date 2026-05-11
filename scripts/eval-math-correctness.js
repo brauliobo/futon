@@ -99,6 +99,11 @@ const INTEGRAL_RE = /^∫\s*(.+?)\s*dx\s*=\s*\??\s*$/i;
 const COMPOSE_RE = /^f\(x\)\s*=\s*(.+?)\s*,\s*g\(x\)\s*=\s*(.+?)\s*,\s*f\(g\((-?\d+(?:\.\d+)?)\)\)\s*=\s*\??\s*$/i;
 const AREA_RECT_RE = /^[áa]rea\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
 const PERIM_RECT_RE = /^per[íi]metro\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
+const SHAPE_SIDES = { triângulo: 3, triangulo: 3, quadrado: 4, retângulo: 4, retangulo: 4, pentágono: 5, pentagono: 5, hexágono: 6, hexagono: 6, heptágono: 7, heptagono: 7, octógono: 8, octogono: 8, círculo: 0, circulo: 0 };
+const SHAPE_COUNT_RE = /^quantos\s+(?:lados|cantos|v[ée]rtices)\s+t[êe]m?\s+um\s+([a-zíáéóô]+)\??\s*$/i;
+const PARALLELOGRAM_RE = /^[áa]rea\s+do\s+paralelogramo\s+b\s*=\s*(\d+)\s*,\s*h\s*=\s*(\d+)\s*=\s*\??\s*$/i;
+const TRAPEZIUM_RE = /^[áa]rea\s+do\s+trap[ée]zio\s+B\s*=\s*(\d+)\s*,\s*b\s*=\s*(\d+)\s*,\s*h\s*=\s*(\d+)\s*=\s*\??\s*$/i;
+const CIRCLE_AREA_HINT_RE = /^[áa]rea\s+do\s+c[íi]rculo\s+r\s*=\s*(\d+(?:\.\d+)?):\s*\?π\s*$/i;
 // Three-term arithmetic sequence with one blank: "__,15,16" / "7,__,9" / "11,12,__"
 const SEQ3_RE = /^\s*(__|-?\d+)\s*,\s*(__|-?\d+)\s*,\s*(__|-?\d+)\s*$/;
 // Require a literal '{' or a leading digit so 'Amplitude de y=cos(x) + 5'
@@ -198,6 +203,38 @@ function verify(question, answer, type) {
     const expected = 2 * (Number(perim[1]) + Number(perim[2]));
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'perim_rect' };
+  }
+  // "Quantos lados/cantos tem um <shape>?"
+  const sides = q.match(SHAPE_COUNT_RE);
+  if (sides) {
+    const expected = SHAPE_SIDES[sides[1].toLowerCase()];
+    if (expected != null) {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'shape_count' };
+    }
+  }
+  // "Área do paralelogramo b=B, h=H = ?" → B*H
+  const par = q.match(PARALLELOGRAM_RE);
+  if (par) {
+    const expected = Number(par[1]) * Number(par[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'parallelogram' };
+  }
+  // "Área do trapézio B=B, b=b, h=H = ?" → (B+b)*H/2
+  const trap = q.match(TRAPEZIUM_RE);
+  if (trap) {
+    const expected = (Number(trap[1]) + Number(trap[2])) * Number(trap[3]) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'trapezium' };
+  }
+  // "Área do círculo r=N: ?π" → answer is r² (factor of π implicit).
+  // Match against original question — normalize already converted π→pi.
+  const circ = question.match(CIRCLE_AREA_HINT_RE);
+  if (circ) {
+    const r = Number(circ[1]);
+    const expected = r * r;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'circle_area' };
   }
   // "v² = N → v = ?" — positive square root of N.
   const sqr = q.match(SQUARE_ROOT_RE);
@@ -505,7 +542,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
