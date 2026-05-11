@@ -63,6 +63,8 @@ const normalize = (s) =>
     })
     // Subscript digits: 'a₁' / 'a₁₀' → 'a1' / 'a10' (used in PA/PG notation).
     .replace(/([₀₁₂₃₄₅₆₇₈₉]+)/g, (s) => [...s].map(c => SUB[c] || c).join(''))
+    // LaTeX-style braces in exponents: 'e^{2x}' → 'e^(2x)'
+    .replace(/\^\{([^{}]+)\}/g, '^($1)')
     // 'sin^2(x)' is invalid in mathjs (parses 'sin^2' as pow(sin, 2)).
     // Rewrite trig-function-then-power-then-arg → 'fn(arg)^pow'. Must
     // run AFTER superscript conversion so 'sen²(x)' has already become
