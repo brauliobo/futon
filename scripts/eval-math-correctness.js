@@ -189,8 +189,8 @@ function verify(question, answer, type) {
   // Polynomial-factoring form: question is an expression, answer is its
   // factored product. Both depend on x; probe at several values.
   if (type === 'factoring' || type === 'algebraic_expression') {
-    // Strip parenthesized hints like "(começa com …)".
-    const qExpr = q.replace(/\s*\([^)]*com[^)]*\)\s*$/i, '').trim();
+    // Strip the '(começa com …)' hint — may itself contain parens.
+    const qExpr = q.replace(/\s*\(\s*come[çc]a\s+com[\s\S]*\)\s*$/i, '').trim();
     const result = probeEquivalent(qExpr, a);
     if (result === true) return { ok: true, computed: 'expanded match', kind: 'factoring' };
     if (result === false) return { ok: false, computed: 'expansions differ', kind: 'factoring' };
