@@ -1000,9 +1000,11 @@ function verify(question, answer, type) {
     }
   }
   // Count shapes: question is exclusively N glyphs (possibly with a
-  // 'Conte:' prefix and spaces) — skip comparison/word forms.
+  // 'Conte:' prefix or 'X a mais/menos de Y:' tail) — skip comparison/word
+  // forms.
   if (type === 'count' && !/qual\s+tem|maior\s+que|menor\s+que|igual\s+a/i.test(question)) {
-    const stripped = question.replace(/^conte:?\s*/i, '').trim();
+    // Strip leading words like 'Conte:' or 'Dois a menos de 10:' / 'Três a mais de 5:'.
+    const stripped = question.replace(/^[a-zçãâêíóôõ\d\s,]*:\s*/i, '').trim();
     if (/^[\s●▲◆★■♦♥♣♠○△□◇☆▢☀☼☾♫♪]+$/.test(stripped)) {
       const shapes = stripped.match(/[●▲◆★■♦♥♣♠○△□◇☆▢☀☼☾♫♪]/g);
       if (shapes) {
@@ -1010,6 +1012,27 @@ function verify(question, answer, type) {
         const an = toNumber(tryEval(a));
         if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'count' };
       }
+    }
+  }
+  // 'Qual tem mais/menos: <glyphs1> ou <glyphs2>? (N1 ou N2)'
+  if (type === 'count') {
+    const cmp = question.match(/^qual\s+tem\s+(mais|menos):\s+([●▲◆★■♦♥♣♠○△□◇☆▢☀☼☾♫♪]+)\s+ou\s+([●▲◆★■♦♥♣♠○△□◇☆▢☀☼☾♫♪]+)\?/i);
+    if (cmp) {
+      const c1 = cmp[2].length, c2 = cmp[3].length;
+      const expected = cmp[1].toLowerCase() === 'mais' ? Math.max(c1, c2) : Math.min(c1, c2);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'count' };
+    }
+    // 'Igual a N: (group1/group2)' or 'Maior/Menor que N: …' — answer is a glyph string
+    const choice = question.match(/^(igual\s+a|maior\s+que|menor\s+que)\s+(\d+):\s*\(([^/]+)\/([^)]+)\)/i);
+    if (choice) {
+      const target = Number(choice[2]);
+      const g1 = (choice[3].match(/[●▲◆★■♦♥♣♠○△□◇☆▢☀☼☾♫♪]/g) || []).length;
+      const g2 = (choice[4].match(/[●▲◆★■♦♥♣♠○△□◇☆▢☀☼☾♫♪]/g) || []).length;
+      const cmp1 = choice[1].toLowerCase();
+      const matches = (n) => cmp1.startsWith('igual') ? n === target : cmp1.startsWith('maior') ? n > target : n < target;
+      const correctOpt = matches(g1) ? choice[3].trim() : matches(g2) ? choice[4].trim() : null;
+      if (correctOpt) return { ok: a.trim() === correctOpt, computed: correctOpt, kind: 'count' };
     }
   }
   // 'PA {a1, a2, …} — razão = ?' → a2 - a1
