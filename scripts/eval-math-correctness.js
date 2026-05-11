@@ -1040,9 +1040,16 @@ function verify(question, answer, type) {
       // Fall back to probe-equivalence if direct eval fails (likely
       // because the question has a free variable, e.g. 'cos(2x) = 1 - ?·sen²(x)').
       if (/[a-z]/i.test(lhsExpr + rhsExpr)) {
-        const result = probeEquivalent(lhsExpr, rhsExpr);
-        if (result === true) return { ok: true, computed: 'identity', kind: 'fill_blank' };
-        if (result === false) return { ok: false, computed: 'identity disagrees', kind: 'fill_blank' };
+        // Auto-pick free vars shared by both sides (single letters,
+        // excluding mathjs constants).
+        const lvars = [...new Set([...lhsExpr.matchAll(/\b([a-z])\b/g)].map(m => m[1]))];
+        const rvars = [...new Set([...rhsExpr.matchAll(/\b([a-z])\b/g)].map(m => m[1]))];
+        const sharedVars = lvars.filter(v => v !== 'e' && v !== 'i' && rvars.includes(v));
+        if (sharedVars.length) {
+          const result = probeEquivalent(lhsExpr, rhsExpr, sharedVars);
+          if (result === true) return { ok: true, computed: 'identity', kind: 'fill_blank' };
+          if (result === false) return { ok: false, computed: 'identity disagrees', kind: 'fill_blank' };
+        }
       }
     }
   }
