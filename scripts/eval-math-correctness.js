@@ -558,8 +558,9 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'vec_dot' };
   }
+  // Scalar mul (run last so VEC_DOT/ADD/SUB take precedence).
   const vsc = question.match(VEC_SCAL_RE);
-  if (vsc && !question.includes('·(') && !question.match(/\(\s*\d+\s*,\s*\d+\s*\)\s*[+\-]/)) {
+  if (vsc && !question.match(/\)\s*[·+\-]\s*\(/)) {
     const k = evalFrac(vsc[1]), x = evalFrac(vsc[2]), y = evalFrac(vsc[3]);
     const expected = [k * x, k * y];
     const got = parseVec(answer);
