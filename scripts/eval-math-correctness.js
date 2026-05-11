@@ -70,8 +70,10 @@ const EQ_RE = /^(.+?)\s*=\s*(.+?)\s*,\s*x\s*=\s*$/i;
 const FN_RE = /^f\(x\)\s*=\s*(.+?)\s*,\s*f\((-?\d+(?:\.\d+)?)\)\s*=\s*\??\s*$/i;
 const LIM_RE = /^lim\s*\(\s*x\s*→\s*(-?\d+(?:\.\d+)?)\s*\)\s*(.+?)\s*=\s*\??\s*$/i;
 const LIM_INF_RE = /^lim\s*\(\s*x\s*→\s*(-?∞|-?infty?|-?inf)\s*\)\s*(.+?)\s*=\s*\??\s*$/i;
-const NEXT_RE = /^(?:depois|ap[óo]s)\s+de\s+(-?\d+)\s+vem:?\s*$/i;
-const PREV_RE = /^antes\s+de\s+(-?\d+)\s+vem:?\s*$/i;
+const NEXT_RE = /^(?:depois|ap[óo]s|pr[óo]ximo)\s+(?:de\s+)?(-?\d+)(?:\s+vem)?:?\s*$/i;
+const PREV_RE = /^(?:antes|anterior)\s+(?:de\s+)?(-?\d+)(?:\s+vem)?:?\s*$/i;
+const ALG_SUBST_RE = /^se\s+x\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*ent[ãa]o\s+(.+?)\s*=\s*\??\s*$/i;
+const COMPARISON_RE = /^(-?\d+(?:\.\d+)?)\s*\?\s*(-?\d+(?:\.\d+)?)\s*$/;
 const MENTAL_HINT_RE = /^(.+?)\s*=\s*\([^)]+\)\s*$/;       // "7 + 9 = (7 + 10 - 1)" → LHS = "7 + 9"
 const SQUARE_ROOT_RE = /^[a-zσ]\^?2\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*[a-zσ]\s*=\s*\??\s*$/i;
 const AREA_RECT_RE = /^[áa]rea\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
@@ -168,7 +170,7 @@ function verify(question, answer, type) {
       if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'seq3' };
     }
   }
-  // "Depois de N vem:" → answer N+1
+  // "Depois de N vem:" / "Próximo de N" → N+1
   const next = q.match(NEXT_RE);
   if (next) {
     const expected = Number(next[1]) + 1;
@@ -176,13 +178,31 @@ function verify(question, answer, type) {
     if (an == null) return null;
     return { ok: an === expected, computed: `${expected}`, kind: 'successor' };
   }
-  // "Antes de N vem:" → answer N-1
+  // "Antes de N vem:" / "Anterior de N" → N-1
   const prev = q.match(PREV_RE);
   if (prev) {
     const expected = Number(prev[1]) - 1;
     const an = toNumber(tryEval(a));
     if (an == null) return null;
     return { ok: an === expected, computed: `${expected}`, kind: 'predecessor' };
+  }
+  // "Se x = N, então <expr> =" — substitute and evaluate.
+  const alg = q.match(ALG_SUBST_RE);
+  if (alg) {
+    const xVal = Number(alg[1]);
+    const lv = (() => { try { return math.evaluate(alg[2], { x: xVal }); } catch { return null; } })();
+    const an = toNumber(tryEval(a));
+    const ln = toNumber(lv);
+    if (ln != null && an != null) {
+      return { ok: Math.abs(ln - an) < 1e-9, computed: `${ln}`, kind: 'alg_subst' };
+    }
+  }
+  // "A ? B" with answer <, >, =
+  const cmp = q.match(COMPARISON_RE);
+  if (cmp) {
+    const A = Number(cmp[1]), B = Number(cmp[2]);
+    const expected = A < B ? '<' : A > B ? '>' : '=';
+    return { ok: a.trim() === expected, computed: expected, kind: 'comparison' };
   }
 
   // Function-evaluation form: "f(x) = <expr>, f(N) = ?"
@@ -265,7 +285,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
