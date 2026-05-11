@@ -787,11 +787,12 @@ function verify(question, answer, type) {
   if (/^[A-Za-z]$/.test(a.trim())) return null;
   const lhs = q.replace(/\s*\?\s*$/, '').replace(/\s*=\s*$/, '').trim();
   if (!lhs) return null;
-  // Try direct numeric evaluation first; if it relies on x, probe at x=1.
+  // Try direct numeric evaluation first; if it relies on x, probe at x=1
+  // as a BigNumber to avoid mixed-arithmetic errors with trig functions.
   let lv = tryEval(lhs);
   let identity = false;
   if (lv == null) {
-    try { lv = math.evaluate(lhs, { x: 1 }); identity = lv != null; } catch {}
+    try { lv = math.evaluate(lhs, { x: math.bignumber(1) }); identity = lv != null; } catch {}
   }
   if (lv == null) return null;
   const av = tryEval(a);
