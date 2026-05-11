@@ -195,6 +195,11 @@ const SEQ3_RE = /^\s*(__|-?\d+)\s*,\s*(__|-?\d+)\s*,\s*(__|-?\d+)\s*$/;
 // Require a literal '{' or a leading digit so 'Amplitude de y=cos(x) + 5'
 // (a trig waveform question) doesn't get mistaken for a stats aggregate.
 const STAT_RE = /^(m[ée]dia|mediana|moda|amplitude)\s+(?:de\s+)?(\{[^}]+\}|-?\d[^=]*?)\s*=\s*\??\s*$/i;
+// '{nums} — média/mediana/amplitude = ?' (dash form)
+const STAT_DASH_RE = /^(\{[^}]+\})\s*[—-]+\s*(m[ée]dia|mediana|moda|amplitude)\s*=\s*\??\s*$/i;
+const PERMUTATIONS_RE = /^fila\s+de\s+(\d+)\s+pessoas:\s*permuta[çc][õo]es\??\s*$/i;
+const CHOOSE_FROM_RE = /^escolher\s+(\d+)\s+de\s+(\d+)\s+\w+\s+sem\s+ordem\??\s*$/i;
+const COIN_K_HEADS_RE = /^moeda\s+lan[çc]ada\s+(\d+)\s+vezes?\s*[—-]+\s*P\((\d+)\s+(?:caras?|coroas?)\)\s*=\s*\??\s*$/i;
 const DEVIATION_RE = /^desvio\s+de\s+(-?\d+(?:\.\d+)?)\s+em\s+rela[çc][ãa]o\s+a\s+(-?\d+(?:\.\d+)?)\s*=\s*\??\s*$/i;
 const DEV_SQUARED_RE = /^quadrado\s+do\s+desvio\s+(-?\d+(?:\.\d+)?)\s*=\s*\??\s*$/i;
 const VAR_TO_STD_RE = /^se\s+vari[âa]ncia\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*desvio\s+padr[ãa]o\s*=\s*\??\s*$/i;
@@ -583,6 +588,58 @@ function verify(question, answer, type) {
     const expected = Number(peux[1]) + Number(peux[2]);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'prob_value' };
+  }
+  // '{nums} — aggregate = ?' dash form: reroute to STAT logic.
+  const sdash = q.match(STAT_DASH_RE);
+  if (sdash) {
+    const kind = sdash[2].toLowerCase().replace('é', 'e');
+    const nums = sdash[1].replace(/[{}]/g, '').split(',').map(x => Number(x.trim())).filter(Number.isFinite);
+    if (nums.length) {
+      let expected;
+      if (kind === 'media') expected = nums.reduce((s, n) => s + n, 0) / nums.length;
+      else if (kind === 'mediana') {
+        const sorted = [...nums].sort((x, y) => x - y);
+        const m = sorted.length;
+        expected = m % 2 ? sorted[(m - 1) / 2] : (sorted[m / 2 - 1] + sorted[m / 2]) / 2;
+      } else if (kind === 'amplitude') {
+        expected = Math.max(...nums) - Math.min(...nums);
+      }
+      if (expected != null) {
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'stat' };
+      }
+    }
+  }
+  // 'Fila de N pessoas: permutações?' → N!
+  const permF = q.match(PERMUTATIONS_RE);
+  if (permF) {
+    const N = Number(permF[1]);
+    let expected = 1;
+    for (let i = 2; i <= N; i++) expected *= i;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'permute' };
+  }
+  // 'Escolher K de N alunos sem ordem?' → C(N,K)
+  const cf = q.match(CHOOSE_FROM_RE);
+  if (cf) {
+    const K = Number(cf[1]), N = Number(cf[2]);
+    const f = (n) => { let r = 1; for (let i = 2; i <= n; i++) r *= i; return r; };
+    if (N >= K) {
+      const expected = f(N) / (f(K) * f(N - K));
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
+    }
+  }
+  // 'Moeda lançada N vezes — P(K caras) = ?' → C(N,K) / 2^N
+  const ckh = q.match(COIN_K_HEADS_RE);
+  if (ckh) {
+    const N = Number(ckh[1]), K = Number(ckh[2]);
+    const f = (n) => { let r = 1; for (let i = 2; i <= n; i++) r *= i; return r; };
+    if (N >= K) {
+      const expected = f(N) / (f(K) * f(N - K)) / 2 ** N;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'prob_value' };
+    }
   }
   // Statistics: "Média / Mediana / Moda / Amplitude de {n,...} = ?"
   const stat = q.match(STAT_RE);
