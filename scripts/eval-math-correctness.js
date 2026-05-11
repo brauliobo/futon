@@ -38,6 +38,8 @@ const normalize = (s) =>
     .replace(/\bcotg\b/g, 'cot')
     // "(N°)" → "(N deg)" so mathjs treats the argument as degrees
     .replace(/(-?\d+(?:\.\d+)?)\s*°/g, '($1 deg)')
+    // |expr| → abs(expr) — non-nested form only.
+    .replace(/\|([^|]+)\|/g, 'abs($1)')
     // Convert "N²" / "x³" → "(N)^2" / "(x)^3"
     .replace(/([\)\]a-zA-Z\d])([⁰¹²³⁴⁵⁶⁷⁸⁹]+)/g, (_, base, sups) => {
       const exp = [...sups].map(ch => SUP[ch] || ch).join('');
@@ -74,7 +76,8 @@ const NEXT_RE = /^(?:depois|ap[óo]s|pr[óo]ximo)\s+(?:de\s+)?(-?\d+)(?:\s+vem)?
 const PREV_RE = /^(?:antes|anterior)\s+(?:de\s+)?(-?\d+)(?:\s+vem)?:?\s*$/i;
 const ALG_SUBST_RE = /^se\s+x\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*ent[ãa]o\s+(.+?)\s*=\s*\??\s*$/i;
 const COMPARISON_RE = /^(-?\d+(?:\.\d+)?)\s*\?\s*(-?\d+(?:\.\d+)?)\s*$/;
-const EVEN_ODD_RE = /^o\s+n[úu]mero\s+(-?\d+)\s+é:?\s*$/i;
+const EVEN_ODD_RE = /^(?:o\s+n[úu]mero\s+)?(-?\d+)\s+é(?::|\s+par\s+ou\s+[íi]mpar\??(?:\s*\(par\/[íi]mpar\))?\s*)\s*$/i;
+const GRAPH_POINT_RE = /^ponto\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*$/i;
 const PLACE_VALUE_RE = /^quantas?\s+(unidades?|dezenas?|centenas?|milhares|milhar)\s+t[êe]m?\s+o\s+n[úu]mero\s+(-?\d+)\??\s*$/i;
 const SKIP_CNT_RE = /^(-?\d+(?:\s*,\s*-?\d+){2,})\s*,\s*\?\s*$/;
 const MENTAL_HINT_RE = /^(.+?)\s*=\s*\([^)]+\)\s*$/;       // "7 + 9 = (7 + 10 - 1)" → LHS = "7 + 9"
@@ -207,7 +210,14 @@ function verify(question, answer, type) {
     const expected = A < B ? '<' : A > B ? '>' : '=';
     return { ok: a.trim() === expected, computed: expected, kind: 'comparison' };
   }
-  // "O número N é:" → par/ímpar
+  // "Ponto (a, b)" → answer should match literal coords.
+  const gp = q.match(GRAPH_POINT_RE);
+  if (gp) {
+    const expected = `(${gp[1]},${gp[2]})`;
+    const cleaned = a.replace(/\s+/g, '');
+    return { ok: cleaned === expected, computed: expected, kind: 'graph_point' };
+  }
+  // "O número N é:" / "N é par ou ímpar?" → par/ímpar
   const eo = q.match(EVEN_ODD_RE);
   if (eo) {
     const N = Number(eo[1]);
@@ -340,7 +350,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
