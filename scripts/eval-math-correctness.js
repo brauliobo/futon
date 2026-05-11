@@ -810,13 +810,15 @@ function verify(question, answer, type) {
     if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'circumference' };
   }
   // 'Se A = N·π, raio = ?' → sqrt(N) ; 'Se C = N·π, raio = ?' → N/2
-  const cra = q.match(CIRCLE_RADIUS_AREA_RE);
+  // Match against original — normalize converts π → pi.
+  const cra = question.match(CIRCLE_RADIUS_AREA_RE) ||
+    question.match(/^se\s+[áa]rea\s*=\s*(\d+(?:\.\d+)?)π\s*,\s*raio\s*=\s*\??\s*$/i);
   if (cra) {
     const expected = Math.sqrt(Number(cra[1]));
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'circle_radius' };
   }
-  const crc = q.match(CIRCLE_RADIUS_C_RE);
+  const crc = question.match(CIRCLE_RADIUS_C_RE);
   if (crc) {
     const expected = Number(crc[1]) / 2;
     const an = toNumber(tryEval(a));
