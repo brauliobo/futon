@@ -96,6 +96,7 @@ const SQUARE_ROOT_RE = /^[a-zσ]\^?2\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*[a-zσ]\s*=
 const SQ_HINT_RE = /^x\^?2\s*=\s*(-?\d+(?:\.\d+)?)\s*\((raiz\s+(?:positiva|negativa)|ambas\s+ra[íi]zes)\)\s*$/i;
 // Indefinite integral: '∫ <integrand> dx = ?' with answer '<antideriv> + C'
 const INTEGRAL_RE = /^∫\s*(.+?)\s*dx\s*=\s*\??\s*$/i;
+const COMPOSE_RE = /^f\(x\)\s*=\s*(.+?)\s*,\s*g\(x\)\s*=\s*(.+?)\s*,\s*f\(g\((-?\d+(?:\.\d+)?)\)\)\s*=\s*\??\s*$/i;
 const AREA_RECT_RE = /^[áa]rea\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
 const PERIM_RECT_RE = /^per[íi]metro\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
 // Three-term arithmetic sequence with one blank: "__,15,16" / "7,__,9" / "11,12,__"
@@ -410,6 +411,20 @@ function verify(question, answer, type) {
     }
   }
 
+  // Function composition: "f(x) = …, g(x) = …, f(g(N)) = ?"
+  const comp = q.match(COMPOSE_RE);
+  if (comp) {
+    const fExpr = comp[1], gExpr = comp[2], xVal = Number(comp[3]);
+    try {
+      const gv = math.evaluate(gExpr, { x: xVal });
+      const fv = math.evaluate(fExpr, { x: toNumber(gv) });
+      const an = toNumber(tryEval(a));
+      const fn_n = toNumber(fv);
+      if (fn_n != null && an != null) {
+        return { ok: Math.abs(fn_n - an) < 1e-9, computed: `${fn_n}`, kind: 'compose' };
+      }
+    } catch {}
+  }
   // Function-evaluation form: "f(x) = <expr>, f(N) = ?"
   const fn = q.match(FN_RE);
   if (fn) {
@@ -490,7 +505,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
