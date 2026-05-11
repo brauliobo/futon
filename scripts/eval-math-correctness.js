@@ -141,6 +141,16 @@ function verify(question, answer, type) {
       if (an != null) return { ok: Math.abs(expected - an) < 1e-9, computed: `${expected}`, kind: 'sqrt_eq' };
     }
   }
+  // Count shapes: question is exclusively N glyphs separated by spaces
+  // (skip comparison/word problems like "Qual tem mais?").
+  if (type === 'count' && /^[\s●▲◆★■♦♥♣♠○△□◇☆▢]+$/.test(question)) {
+    const shapes = question.match(/[●▲◆★■♦♥♣♠○△□◇☆▢]/g);
+    if (shapes) {
+      const expected = shapes.length;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'count' };
+    }
+  }
   // Three-term arithmetic sequence with one blank.
   const seq = q.match(SEQ3_RE);
   if (seq) {
@@ -255,7 +265,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0 };
   const mismatches = [];
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
