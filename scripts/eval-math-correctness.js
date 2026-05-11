@@ -366,7 +366,7 @@ function verify(question, answer, type) {
   // Equation form. Two accepted shapes:
   //   "<lhs> = <rhs>, x ="    (correctAnswer is x)
   //   "<lhs> = <rhs>"         (type=equation; correctAnswer is x)
-  if (type === 'equation' || /,\s*x\s*=\s*$/i.test(q)) {
+  if (type === 'equation' || type === 'proportion' || /,\s*x\s*=\s*$/i.test(q)) {
     let lhsExpr, rhsExpr;
     const m = q.match(EQ_RE);
     if (m) { lhsExpr = m[1]; rhsExpr = m[2]; }
