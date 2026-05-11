@@ -207,6 +207,13 @@ const TRIG_TRI_AREA_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)
 const TRANSLATE_RE = /^ponto\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+transladado\s+por\s+T\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*([xy])'\s*=\s*\??\s*$/i;
 const REFLECT_AXIS_RE = /^reflex[ãa]o\s+de\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+(?:no\s+eixo\s+([xy])|na\s+origem)\s*:\s*([xy])'\s*=\s*\??\s*$/i;
 const HOMOTHETY_RE = /^homotetia\s+k\s*=\s*(-?\d+(?:\.\d+)?(?:\/\d+)?)\s+de\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*([xy])'\s*=\s*\??\s*$/i;
+const DISTANCE_RE = /^dist[âa]ncia\s+entre\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+e\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*=\s*\??\s*$/i;
+const MIDPOINT_RE = /^ponto\s+m[ée]dio\s+entre\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+e\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*([xy])_M\s*=\s*\??\s*$/i;
+const PARALLEL_M_RE = /^reta\s+paralela\s+a\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*\*?\s*x[^:]*:\s*m\s*=\s*\??\s*$/i;
+const PERP_M_RE = /^reta\s+perpendicular\s+a\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*\*?\s*x[^:]*:\s*m\s*=\s*\??\s*$/i;
+const HORIZ_M_RE = /^reta\s+horizontal\s*:\s*m\s*=\s*\??\s*$/i;
+const VERT_LINE_RE = /^reta\s+vertical\s*:\s*m\s*=\s*\??\s*$/i;
+const LINE_B_RE = /^reta\s+(?:por\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+com\s+m\s*=\s*(-?\d+(?:\.\d+)?)|m\s*=\s*(-?\d+(?:\.\d+)?)\s+passando\s+por\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\))\s*:\s*b\s*=\s*\??\s*$/i;
 const DEVIATION_RE = /^desvio\s+de\s+(-?\d+(?:\.\d+)?)\s+em\s+rela[çc][ãa]o\s+a\s+(-?\d+(?:\.\d+)?)\s*=\s*\??\s*$/i;
 const DEV_SQUARED_RE = /^quadrado\s+do\s+desvio\s+(-?\d+(?:\.\d+)?)\s*=\s*\??\s*$/i;
 const VAR_TO_STD_RE = /^se\s+vari[âa]ncia\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*desvio\s+padr[ãa]o\s*=\s*\??\s*$/i;
@@ -836,6 +843,52 @@ function verify(question, answer, type) {
     const expected = hm[4].toLowerCase() === 'x' ? k * px : k * py;
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'homothety' };
+  }
+  // Distance between two points.
+  const dst = question.match(DISTANCE_RE);
+  if (dst) {
+    const [, x1, y1, x2, y2] = dst.map(Number);
+    const expected = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'distance' };
+  }
+  // Midpoint (component-specific).
+  const mp = question.match(MIDPOINT_RE);
+  if (mp) {
+    const [, x1, y1, x2, y2, comp] = mp;
+    const expected = comp.toLowerCase() === 'x' ? (Number(x1) + Number(x2)) / 2 : (Number(y1) + Number(y2)) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'midpoint' };
+  }
+  // Parallel line shares slope; perpendicular slope = -1/m.
+  const pm = question.match(PARALLEL_M_RE);
+  if (pm) {
+    const expected = Number(pm[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'slope' };
+  }
+  const perp = question.match(PERP_M_RE);
+  if (perp) {
+    const m = Number(perp[1]);
+    if (m !== 0) {
+      const expected = -1 / m;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'slope' };
+    }
+  }
+  if (HORIZ_M_RE.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'slope' };
+  }
+  // y-intercept b given point and slope.
+  const lb = question.match(LINE_B_RE);
+  if (lb) {
+    const px = lb[1] != null ? Number(lb[1]) : Number(lb[5]);
+    const py = lb[2] != null ? Number(lb[2]) : Number(lb[6]);
+    const m = lb[3] != null ? Number(lb[3]) : Number(lb[4]);
+    const expected = py - m * px;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'line_b' };
   }
   // Law of cosines c² (any angle C)
   const lc = question.match(LAW_COS_C2_RE);
@@ -1669,7 +1722,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, ap_find_n: 0, sum_formula: 0, pg_converge: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, identity_vf: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, double_angle: 0, frequency: 0, rel_freq: 0, interval_amp: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, tri_special: 0, cube_solve: 0, circumference: 0, circle_radius: 0, poly_perim: 0, poly_int_angle: 0, poly_sum_angle: 0, square_area: 0, square_diag: 0, hex_area: 0, equi_tri_area: 0, arrange: 0, permute: 0, combine: 0, pair_product: 0, det_2x2: 0, mat_add: 0, mat_scale: 0, law_cos: 0, tri_area_sas: 0, translate: 0, reflect: 0, homothety: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, ap_find_n: 0, sum_formula: 0, pg_converge: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, identity_vf: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, double_angle: 0, frequency: 0, rel_freq: 0, interval_amp: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, tri_special: 0, cube_solve: 0, circumference: 0, circle_radius: 0, poly_perim: 0, poly_int_angle: 0, poly_sum_angle: 0, square_area: 0, square_diag: 0, hex_area: 0, equi_tri_area: 0, arrange: 0, permute: 0, combine: 0, pair_product: 0, det_2x2: 0, mat_add: 0, mat_scale: 0, law_cos: 0, tri_area_sas: 0, translate: 0, reflect: 0, homothety: 0, distance: 0, midpoint: 0, line_b: 0 };
   const byType = { verified: {}, total: {} };
   const byLevel = { verified: {}, total: {} };
   const mismatches = [];
