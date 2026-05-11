@@ -74,6 +74,9 @@ const NEXT_RE = /^(?:depois|ap[óo]s|pr[óo]ximo)\s+(?:de\s+)?(-?\d+)(?:\s+vem)?
 const PREV_RE = /^(?:antes|anterior)\s+(?:de\s+)?(-?\d+)(?:\s+vem)?:?\s*$/i;
 const ALG_SUBST_RE = /^se\s+x\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*ent[ãa]o\s+(.+?)\s*=\s*\??\s*$/i;
 const COMPARISON_RE = /^(-?\d+(?:\.\d+)?)\s*\?\s*(-?\d+(?:\.\d+)?)\s*$/;
+const EVEN_ODD_RE = /^o\s+n[úu]mero\s+(-?\d+)\s+é:?\s*$/i;
+const PLACE_VALUE_RE = /^quantas?\s+(unidades?|dezenas?|centenas?|milhares|milhar)\s+t[êe]m?\s+o\s+n[úu]mero\s+(-?\d+)\??\s*$/i;
+const SKIP_CNT_RE = /^(-?\d+(?:\s*,\s*-?\d+){2,})\s*,\s*\?\s*$/;
 const MENTAL_HINT_RE = /^(.+?)\s*=\s*\([^)]+\)\s*$/;       // "7 + 9 = (7 + 10 - 1)" → LHS = "7 + 9"
 const SQUARE_ROOT_RE = /^[a-zσ]\^?2\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*[a-zσ]\s*=\s*\??\s*$/i;
 const AREA_RECT_RE = /^[áa]rea\s+do\s+(?:ret[âa]ngulo|quadrado)\s+(\d+)\s*[×*]\s*(\d+)\s*=\s*\??\s*$/i;
@@ -204,6 +207,40 @@ function verify(question, answer, type) {
     const expected = A < B ? '<' : A > B ? '>' : '=';
     return { ok: a.trim() === expected, computed: expected, kind: 'comparison' };
   }
+  // "O número N é:" → par/ímpar
+  const eo = q.match(EVEN_ODD_RE);
+  if (eo) {
+    const N = Number(eo[1]);
+    const expected = (Math.abs(N) % 2 === 0) ? 'par' : 'ímpar';
+    return { ok: a.trim().toLowerCase() === expected, computed: expected, kind: 'even_odd' };
+  }
+  // "Quantas <unidades|dezenas|centenas> tem o número N?"
+  const pv = q.match(PLACE_VALUE_RE);
+  if (pv) {
+    const unit = pv[1].toLowerCase().replace(/s$/, '');
+    const N = Math.abs(Number(pv[2]));
+    let expected;
+    if (unit.startsWith('unidad')) expected = N % 10;
+    else if (unit.startsWith('dezen')) expected = Math.floor(N / 10) % 10;
+    else if (unit.startsWith('centen')) expected = Math.floor(N / 100) % 10;
+    else expected = Math.floor(N / 1000) % 10;
+    const an = toNumber(tryEval(a));
+    if (an == null) return null;
+    return { ok: an === expected, computed: `${expected}`, kind: 'place_value' };
+  }
+  // "a, b, c, ?" arithmetic skip-counting (extrapolate by common difference)
+  const sk = q.match(SKIP_CNT_RE);
+  if (sk) {
+    const nums = sk[1].split(',').map(s => Number(s.trim()));
+    if (nums.length >= 3) {
+      const diffs = nums.slice(1).map((v, i) => v - nums[i]);
+      if (diffs.every(d => d === diffs[0])) {
+        const expected = nums[nums.length - 1] + diffs[0];
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'skip_count' };
+      }
+    }
+  }
 
   // Function-evaluation form: "f(x) = <expr>, f(N) = ?"
   const fn = q.match(FN_RE);
@@ -285,7 +322,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
