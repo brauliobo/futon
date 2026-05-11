@@ -214,6 +214,24 @@ function verify(question, answer, type) {
     const expected = (Math.abs(N) % 2 === 0) ? 'par' : 'ímpar';
     return { ok: a.trim().toLowerCase() === expected, computed: expected, kind: 'even_odd' };
   }
+  // Equation with a single literal '?' placeholder: substitute the authored
+  // numeric answer and check both sides. Covers decomposition, missing_-
+  // number, proportion, and similar "fill in the blank" forms.
+  // Requires a purely-numeric answer (skip 'A', '90°', etc).
+  if (q.includes('?') && q.includes('=') && /^-?\d+(?:\.\d+)?(?:\/\d+)?$/.test(a.trim())) {
+    const eqIdx = q.lastIndexOf('=');
+    const qms = (q.match(/\?/g) || []).length;
+    if (qms === 1 && eqIdx > 0) {
+      const aStr = `(${a.trim()})`;
+      const lhsExpr = q.slice(0, eqIdx).replace(/\?/g, aStr).trim();
+      const rhsExpr = q.slice(eqIdx + 1).replace(/\?/g, aStr).trim();
+      const lv = tryEval(lhsExpr), rv = tryEval(rhsExpr);
+      const ln = toNumber(lv), rn = toNumber(rv);
+      if (ln != null && rn != null) {
+        return { ok: Math.abs(ln - rn) < 1e-9, computed: `LHS=${ln}, RHS=${rn}`, kind: 'fill_blank' };
+      }
+    }
+  }
   // "Quantas <unidades|dezenas|centenas> tem o número N?"
   const pv = q.match(PLACE_VALUE_RE);
   if (pv) {
@@ -322,7 +340,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0 };
   const byType = { verified: {}, total: {} };
   const mismatches = [];
   for (const f of files) {
