@@ -779,6 +779,18 @@ const SEMI_PERIM_RE = /^Para\s+a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d
 const SEMI_PERIM_EQ_RE = /^Para\s+a\s*=\s*b\s*=\s*c\s*=\s*(\d+(?:\.\d+)?)\s*,\s*p\s*=\s*\??\s*$/i;
 // Heron's formula evaluated: '√(N·M·K·L) = ?'
 const HERON_NUM_RE = /A\s*=\s*√\(p\(p-a\)\(p-b\)\(p-c\)\)\s*→\s*√\(([\d·*\s]+)\)\s*=\s*\?/i;
+// Series patterns
+const SUM_1_TO_N_GENERIC_RE = /^Soma\s+de\s+1\s+a\s+(\d+)\s*=\s*\??\s*$/i;
+const SUM_INFINITE_HALVES_RE = /^Soma\s+infinita\s+de\s+1\s*\+\s*\(?1\/2\)?\s*\+\s*\(?1\/4\)?\s*\+\s*\.\.\.\s*=\s*\??\s*$/i;
+const SIGMA_QN_CONVERGE_RE = /^Σ\s*q\^?n\s+converge\s+se\s+\|q\|\s*<\s*\??\s*$/i;
+const HARMONIC_RE = /^H[₀-₉0-9]+\s*\(aprox\)\s*=\s*\??\s*$/i;
+const PA_CENTRAL_RE = /^Em\s+PA\s*,\s*termo\s+central\s+de\s+\{\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\}\s*=\s*\??\s*$/i;
+const GM_BETWEEN_RE = /^Termo\s+m[ée]dio\s+geom[ée]trico\s+entre\s+(\d+(?:\.\d+)?)\s+e\s+(\d+(?:\.\d+)?)\s*=\s*\??\s*$/i;
+const SIGMA_N_DIVERGES_RE = /^Σn\s+diverge\s+porque\s+a[ₙn]\s*→\s*\?\s*\(/i;
+const SUM_TO_N_FORMULA_RE = /^Soma\s+de\s+1\s+a\s+n\s*=\s*n\(n\+1\)\/\?\s*$/i;
+const SUM_ODD_RE = /^Soma\s+1\s*\+\s*3\s*\+\s*5\s*\+\s*\.\.\.\s*\+\s*\(\s*2n\s*-\s*1\s*\)\s*=\s*\??\s*$/i;
+const SUM_EVEN_RE = /^Soma\s+2\s*\+\s*4\s*\+\s*6\s*\+\s*\.\.\.\s*\+\s*2n\s*=\s*\??\s*$/i;
+const PA_DIFFERENCE_RE = /^a[₃3]\s*-\s*a[₂2]\s*=\s*\??\s*$/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -4702,6 +4714,76 @@ function verify(question, answer, type) {
     const expected = 3 * Number(spe[1]) / 2;
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'law_cos' };
+  }
+  // Sum 1 to N = N(N+1)/2
+  const s1nGen = q.match(SUM_1_TO_N_GENERIC_RE);
+  if (s1nGen) {
+    const N = Number(s1nGen[1]);
+    const expected = N * (N + 1) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'sum_formula' };
+  }
+  // Infinite sum 1 + 1/2 + 1/4 + ... = 2
+  if (SUM_INFINITE_HALVES_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 2, computed: '2', kind: 'geom_inf' };
+  }
+  // Σ q^n converges iff |q| < 1 (raw — '|q|' normalizes to 'abs(q)')
+  if (SIGMA_QN_CONVERGE_RE.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'pg_converge' };
+  }
+  // H_N harmonic number
+  const hrm = question.match(/^H([₀-₉0-9]+)\s*\(aprox\)\s*=\s*\??\s*$/i);
+  if (hrm) {
+    const subDigits = { '₀':0,'₁':1,'₂':2,'₃':3,'₄':4,'₅':5,'₆':6,'₇':7,'₈':8,'₉':9 };
+    let N = 0;
+    for (const ch of hrm[1]) N = N * 10 + (subDigits[ch] ?? Number(ch));
+    if (N > 0 && N <= 50) {
+      let expected = 0;
+      for (let i = 1; i <= N; i++) expected += 1 / i;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 0.01, computed: `${expected}`, kind: 'sum_formula' };
+    }
+  }
+  // PA central term of 3 values: middle
+  const pac = q.match(PA_CENTRAL_RE);
+  if (pac) {
+    const expected = Number(pac[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'ap_term' };
+  }
+  // GM between A and B: √(A·B)
+  const gmB = q.match(GM_BETWEEN_RE);
+  if (gmB) {
+    const expected = Math.sqrt(Number(gmB[1]) * Number(gmB[2]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'gp_term' };
+  }
+  // 'Σn diverge porque aₙ → ?' → ∞
+  if (SIGMA_N_DIVERGES_RE.test(q)) {
+    const ans = String(answer).trim();
+    return { ok: ans === '∞' || ans.toLowerCase() === 'infinito' || ans.toLowerCase() === 'infty', computed: '∞', kind: 'pg_converge' };
+  }
+  // Soma de 1 a n = n(n+1)/?
+  if (SUM_TO_N_FORMULA_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 2, computed: '2', kind: 'sum_formula' };
+  }
+  // Soma 1+3+5+...+(2n-1) = n²
+  if (SUM_ODD_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === 'n²' || ans === 'n^2', computed: 'n²', kind: 'identity_symbolic' };
+  }
+  // Soma 2+4+6+...+2n = n(n+1)
+  if (SUM_EVEN_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === 'n(n+1)' || ans === 'n*(n+1)', computed: 'n(n+1)', kind: 'identity_symbolic' };
+  }
+  // a₃ - a₂ = r
+  if (PA_DIFFERENCE_RE.test(q)) {
+    const ans = String(answer).trim().toLowerCase();
+    return { ok: ans === 'r', computed: 'r', kind: 'identity_symbolic' };
   }
   // Heron's evaluation
   const hrn = question.match(HERON_NUM_RE);

@@ -375,6 +375,16 @@ const CASES = [
   { q: 'c² = a² + b² quando C = ?°', a: '90', type: 'trigonometry', want: true },
   { q: 'Para a=3, b=4, c=5, p = ?', a: '6', type: 'trigonometry', want: true },
   { q: 'A = √(p(p-a)(p-b)(p-c)) → √(6·3·2·1) = ?', a: '6', type: 'trigonometry', want: true },
+  // Series sum + geometric mean + harmonic + identity symbols
+  { q: 'Soma de 1 a 100 = ?', a: '5050', type: 'sequence', want: true },
+  { q: 'Soma infinita de 1 + 1/2 + 1/4 + ... = ?', a: '2', type: 'sequence', want: true },
+  { q: 'Σ q^n converge se |q| < ?', a: '1', type: 'sequence', want: true },
+  { q: 'H₄ (aprox) = ?', a: '2.083', type: 'sequence', want: true },
+  { q: 'Em PA, termo central de {3,7,11} = ?', a: '7', type: 'sequence', want: true },
+  { q: 'Termo médio geométrico entre 1 e 9 = ?', a: '3', type: 'sequence', want: true },
+  { q: 'Soma 1+3+5+...+(2n-1) = ?', a: 'n²', type: 'sequence', want: true },
+  { q: 'Soma 2+4+6+...+2n = ?', a: 'n(n+1)', type: 'sequence', want: true },
+  { q: 'a₃-a₂ = ?', a: 'r', type: 'sequence', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
