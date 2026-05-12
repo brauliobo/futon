@@ -811,7 +811,7 @@ const QUARTILE_RE = /^\{\s*([\d,\s.]+)\s*\}\s*[—-]+\s*Q\d+\s*\(posi[çc][ãa]o
 // 'ŷ=A + B×N = ? para reta ŷ=A+Bx' → A+B·N
 const REGRESSION_CHAINED_RE = /^ŷ\s*=\s*(-?\d+(?:\.\d+)?)\s*([+\-])\s*(\d+(?:\.\d+)?)\s*[×*]\s*(\d+(?:\.\d+)?)\s*=\s*\?\s+para\s+reta\s+ŷ\s*=/i;
 // Vector patterns: ||v||² and cos θ and ||u||·||v||
-const NORM_SQ_RE = /^u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*,\s*v\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*\|\|v\|\|\^?2\s*=\s*\??\s*$/i;
+const NORM_SQ_RE = /^u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*,\s*v\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*\|\|v\|\|(?:²|\^?2)\s*=\s*\??\s*$/i;
 const COS_THETA_RE = /^u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*,\s*v\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*cosθ\s*=\s*\??\s*$/i;
 const NORM_PRODUCT_RE = /^u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*,\s*v\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*\|\|u\|\|\s*[·*]\s*\|\|v\|\|\s*=\s*\??\s*$/i;
 // proj_v u components: 'proj_(c,d) (a,b): x-componente = ?' → scalar·c/(c²+d²)·c (or just scalar a if axis-aligned)
@@ -861,7 +861,7 @@ const RANK_RE = /^Posto\s+de\s+matriz\s+\[([^\]]+)\]\s*=\s*\??\s*$/i;
 const BASE_NORM_RE = /^Base\s+ortonormal:\s*\|\|e[ᵢi]\|\|\s*=\s*\??\s*$/i;
 const BASE_DOT_RE = /^Base\s+ortonormal:\s*e[ᵢi]\s*[·*]\s*e[ⱼj]\s*\([^)]+\)\s*=\s*\??\s*$/i;
 // 'dim de núcleo (ker) de matriz n×n injetiva = ?' → 0
-const KER_INJ_RE = /^dim\s+de\s+n[úu]cleo\s+\(ker\)\s+de\s+matriz\s+n[×x]\s*n\s+injetiva\s*=\s*\??\s*$/i;
+const KER_INJ_RE = /^dim\s+de\s+n[úu]cleo\s+\(ker\)\s+de\s+matriz\s+n\s*[×x*]\s*n\s+injetiva\s*=\s*\??\s*$/i;
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
@@ -4923,15 +4923,15 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'r_squared' };
   }
-  // ||v||² for 2D vector
-  const ns2v = q.match(NORM_SQ_RE);
+  // ||v||² for 2D vector (raw — '||v||' normalizes to abs(v))
+  const ns2v = question.match(NORM_SQ_RE);
   if (ns2v) {
     const expected = Number(ns2v[3]) ** 2 + Number(ns2v[4]) ** 2;
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'vec_norm' };
   }
   // cos θ between two 2D vectors
-  const ct = q.match(COS_THETA_RE);
+  const ct = question.match(COS_THETA_RE);
   if (ct) {
     const ax = Number(ct[1]), ay = Number(ct[2]), bx = Number(ct[3]), by = Number(ct[4]);
     const dot = ax * bx + ay * by;
@@ -4940,7 +4940,7 @@ function verify(question, answer, type) {
     if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'vec_norm' };
   }
   // ||u||·||v|| product of norms
-  const npr = q.match(NORM_PRODUCT_RE);
+  const npr = question.match(NORM_PRODUCT_RE);
   if (npr) {
     const expected = Math.sqrt(Number(npr[1]) ** 2 + Number(npr[2]) ** 2) * Math.sqrt(Number(npr[3]) ** 2 + Number(npr[4]) ** 2);
     const an = toNumber(tryEval(a));
@@ -4966,8 +4966,8 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'vec_norm' };
   }
-  // Cross product magnitude for axis-aligned 3D vectors
-  const cax = q.match(CROSS_AXIS_RE);
+  // Cross product magnitude for axis-aligned 3D vectors (raw — |u×v|)
+  const cax = question.match(CROSS_AXIS_RE);
   if (cax) {
     const expected = Math.abs(Number(cax[1]) * Number(cax[2]));
     const an = toNumber(tryEval(a));
@@ -4996,8 +4996,8 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'cross_z' };
   }
-  // u·v=0 → θ=90° constant
-  if (DOT_ZERO_RE.test(q)) {
+  // u·v=0 → θ=90° constant (raw — '·' and '°' both normalize)
+  if (DOT_ZERO_RE.test(question)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: matchDeg(an, 90), computed: '90°', kind: 'vec_norm' };
   }
@@ -5054,7 +5054,7 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === 1, computed: '1', kind: 'reflect' };
   }
-  if (UNIT_NORM_RE.test(q) || NORM_UNIT_RE.test(question)) {
+  if (UNIT_NORM_RE.test(question) || NORM_UNIT_RE.test(question)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === 1, computed: '1', kind: 'vec_norm' };
   }
@@ -5106,8 +5106,8 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === rank, computed: `${rank}`, kind: 'dim_r' };
   }
-  // Base ortonormal constants
-  if (BASE_NORM_RE.test(q)) {
+  // Base ortonormal constants (raw — '||' normalizes)
+  if (BASE_NORM_RE.test(question)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === 1, computed: '1', kind: 'vec_norm' };
   }
