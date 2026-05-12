@@ -791,6 +791,25 @@ const SUM_TO_N_FORMULA_RE = /^Soma\s+de\s+1\s+a\s+n\s*=\s*n\(n\+1\)\/\?\s*$/i;
 const SUM_ODD_RE = /^Soma\s+1\s*\+\s*3\s*\+\s*5\s*\+\s*\.\.\.\s*\+\s*\(\s*2n\s*-\s*1\s*\)\s*=\s*\??\s*$/i;
 const SUM_EVEN_RE = /^Soma\s+2\s*\+\s*4\s*\+\s*6\s*\+\s*\.\.\.\s*\+\s*2n\s*=\s*\??\s*$/i;
 const PA_DIFFERENCE_RE = /^a[₃3]\s*-\s*a[₂2]\s*=\s*\??\s*$/i;
+// Regression: 'ŷ = A + B·x; x=N → ŷ = ?'
+const REGRESSION_EVAL_RE = /^ŷ\s*=\s*(-?\d+(?:\.\d+)?)\s*([+\-])\s*(\d+(?:\.\d+)?)\s*\*?\s*x\s*;\s*x\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*ŷ\s*=\s*\??\s*$/i;
+// 'ŷ = A + B·x — inclinação b = ?'
+const REGRESSION_B_RE = /^ŷ\s*=\s*(-?\d+(?:\.\d+)?)\s*([+\-])\s*(\d+(?:\.\d+)?)\s*\*?\s*x\s*[—-]+\s*inclina[çc][ãa]o\s+b\s*=\s*\??\s*$/i;
+const REGRESSION_A_RE = /^ŷ\s*=\s*(-?\d+(?:\.\d+)?)\s*([+\-])\s*(\d+(?:\.\d+)?)\s*\*?\s*x\s*[—-]+\s*intercepto\s+a\s*=\s*\??\s*$/i;
+// 'y=Y, ŷ=Z → resíduo eᵢ = ?' → Y - Z
+const RESIDUAL_RE = /^y\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*ŷ\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*(?:res[íi]duo\s+)?e[ᵢi]\s*=\s*\??\s*$/i;
+// 'R²=A → r = ? (positivo)' → √A
+const R_FROM_R2_RE = /^R[²2^]+\s*=\s*(\d+(?:\.\d+)?)\s*→\s*r\s*=\s*\?\s*\(positivo\)\s*$/i;
+// 'R²=A → modelo explica % da variação = ?' → 100·A
+const R2_PCT_RE = /^R[²2^]+\s*=\s*(\d+(?:\.\d+)?)\s*→\s*modelo\s+explica\s+%\s+da\s+varia[çc][ãa]o\s*=\s*\??\s*$/i;
+// 'Soma dos resíduos em MQO = ?' → 0
+const RESID_SUM_RE = /^Soma\s+dos\s+res[íi]duos\s+em\s+MQO\s*=\s*\??\s*$/i;
+// 'Reta de regressão sempre passa por (x̄, ?)' → ȳ
+const REG_THROUGH_RE = /^Reta\s+de\s+regress[ãa]o\s+sempre\s+passa\s+por\s+\(x̄\s*,\s*\?\)\s*=\s*\??\s*$/i;
+// '{a,b,...n} — Q1 (posição K) = ?' → element at K
+const QUARTILE_RE = /^\{\s*([\d,\s.]+)\s*\}\s*[—-]+\s*Q\d+\s*\(posi[çc][ãa]o\s+(\d+)\)\s*=\s*\??\s*$/i;
+// 'ŷ=A + B×N = ? para reta ŷ=A+Bx' → A+B·N
+const REGRESSION_CHAINED_RE = /^ŷ\s*=\s*(-?\d+(?:\.\d+)?)\s*([+\-])\s*(\d+(?:\.\d+)?)\s*[×*]\s*(\d+(?:\.\d+)?)\s*=\s*\?\s+para\s+reta\s+ŷ\s*=/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -4784,6 +4803,71 @@ function verify(question, answer, type) {
   if (PA_DIFFERENCE_RE.test(q)) {
     const ans = String(answer).trim().toLowerCase();
     return { ok: ans === 'r', computed: 'r', kind: 'identity_symbolic' };
+  }
+  // Regression evaluation ŷ = A + B·x; x=N → ŷ = A + B·N
+  const regE = q.match(REGRESSION_EVAL_RE);
+  if (regE) {
+    const A = Number(regE[1]), sign = regE[2] === '-' ? -1 : 1, B = sign * Number(regE[3]), N = Number(regE[4]);
+    const expected = A + B * N;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'r_squared' };
+  }
+  const regB = q.match(REGRESSION_B_RE);
+  if (regB) {
+    const sign = regB[2] === '-' ? -1 : 1;
+    const expected = sign * Number(regB[3]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'r_squared' };
+  }
+  const regA = q.match(REGRESSION_A_RE);
+  if (regA) {
+    const expected = Number(regA[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'r_squared' };
+  }
+  const resd = q.match(RESIDUAL_RE);
+  if (resd) {
+    const expected = Number(resd[1]) - Number(resd[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'r_squared' };
+  }
+  const rfr = q.match(R_FROM_R2_RE);
+  if (rfr) {
+    const expected = Math.sqrt(Number(rfr[1]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'r_squared' };
+  }
+  const r2p = q.match(R2_PCT_RE);
+  if (r2p) {
+    const expected = Number(r2p[1]) * 100;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'r_squared' };
+  }
+  if (RESID_SUM_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'r_squared' };
+  }
+  if (REG_THROUGH_RE.test(q)) {
+    return { ok: String(answer).trim() === 'ȳ', computed: 'ȳ', kind: 'r_squared' };
+  }
+  // Quartile by position
+  const qrt = q.match(QUARTILE_RE);
+  if (qrt) {
+    const arr = qrt[1].split(/\s*,\s*/).map(Number).filter(Number.isFinite);
+    const pos = Number(qrt[2]);
+    if (pos >= 1 && pos <= arr.length) {
+      const expected = arr[pos - 1];
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'stat' };
+    }
+  }
+  // Regression chained: 'ŷ=A + B×N = ? para reta ŷ=A+Bx'
+  const regC = q.match(REGRESSION_CHAINED_RE);
+  if (regC) {
+    const A = Number(regC[1]), sign = regC[2] === '-' ? -1 : 1, B = sign * Number(regC[3]), N = Number(regC[4]);
+    const expected = A + B * N;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'r_squared' };
   }
   // Heron's evaluation
   const hrn = question.match(HERON_NUM_RE);

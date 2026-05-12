@@ -385,6 +385,18 @@ const CASES = [
   { q: 'Soma 1+3+5+...+(2n-1) = ?', a: 'n²', type: 'sequence', want: true },
   { q: 'Soma 2+4+6+...+2n = ?', a: 'n(n+1)', type: 'sequence', want: true },
   { q: 'a₃-a₂ = ?', a: 'r', type: 'sequence', want: true },
+  // Linear regression
+  { q: 'ŷ = 2 + 3x; x=4 → ŷ = ?', a: '14', type: 'mental_math', want: true },
+  { q: 'ŷ = 10 - 2x; x=3 → ŷ = ?', a: '4', type: 'mental_math', want: true },
+  { q: 'ŷ = 2 + 3x — inclinação b = ?', a: '3', type: 'mental_math', want: true },
+  { q: 'ŷ = 2 + 3x — intercepto a = ?', a: '2', type: 'mental_math', want: true },
+  { q: 'y=10, ŷ=8 → resíduo eᵢ = ?', a: '2', type: 'mental_math', want: true },
+  { q: 'R²=0.64 → r = ? (positivo)', a: '0.8', type: 'mental_math', want: true },
+  { q: 'R²=0.5 → modelo explica % da variação = ?', a: '50', type: 'mental_math', want: true },
+  { q: 'Soma dos resíduos em MQO = ?', a: '0', type: 'mental_math', want: true },
+  { q: 'Reta de regressão sempre passa por (x̄, ?) = ?', a: 'ȳ', type: 'mental_math', want: true },
+  { q: '{1,2,3,4,5,6,7,8} — Q1 (posição 2) = ?', a: '2', type: 'mental_math', want: true },
+  { q: 'ŷ=12 + 1.5×6 = ? para reta ŷ=12+1.5x', a: '21', type: 'mental_math', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
