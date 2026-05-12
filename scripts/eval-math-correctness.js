@@ -1180,6 +1180,87 @@ const VALID_ANY_TRI_RE = /^Vale\s+em\s+qualquer\s+tri[âa]ngulo\s*\(V\/F\)\?\s*$
 const SSA_FACTS_RE = /^Se\s+(?:sen\(B\)\s*<\s*1\s+e\s+A\s*<\s*B\s*,\s*h[áa]\s+2\s+tri[âa]ngulos|o\s+[âa]ngulo\s+[ée]\s+obtuso\s*,\s*s[óo]\s+h[áa]\s+caso\s+[úu]nico)\s*\(V\/F\)\?\s*$/i;
 // More SIM facts
 const SIM_FACT2_RE = /^Vale\s+em\s+qualquer\s+tri[âa]ngulo\?\s*\((?:sim\/n[ãa]o|n[ãa]o\/sim)\)\s*$/i;
+// Dictionary of statistical/probability factual answers
+const KNOWN_FACTS = [
+  [/^Gr[áa]fico\s+de\s+barras\s+[ée]\s+usado\s+para\s+dados:/i, 'qualitativos'],
+  [/^Eixo\s+vertical\s+no\s+gr[áa]fico\s+de\s+barras\s+geralmente\s+mostra:/i, 'frequência'],
+  [/^Barras\s+podem\s+ser:/i, 'ambas'],
+  [/^Histograma\s+vs\s+barras:\s*histograma\s+tem\s+barras:/i, 'coladas'],
+  [/^Histograma\s+representa\s+dados:/i, 'contínuos em classes'],
+  [/^Formato\s+da\s+curva\s+normal:/i, 'sino'],
+  [/^Pico\s+da\s+curva\s+normal\s+[ée]\s+em:/i, 'ambas'],
+  [/^Se\s+P\(A∩B\)\s*=\s*0\s*,\s*eventos\s+s[ãa]o:/i, 'mutuamente exclusivos'],
+  [/^Soma\s+dos\s+desvios\s+em\s+rela[çc][ãa]o\s+[àa]\s+m[ée]dia\s+[ée]\s+sempre:/i, 'zero'],
+  [/^Desvio\s+padr[ãa]o\s+sempre\s+[ée]/i, 'positivo'],
+  [/^Desvio\s+padr[ãa]o\s+menor\s+significa\s+dados:/i, 'mais próximos da média'],
+  [/^M[ée]dia\s+ponderada\s+com\s+pesos\s+iguais\s+[ée]:/i, 'sim'],
+  [/^Moda\s+de\s+\{[^}]+\}\s+\(amodal\)\?/i, 'amodal'],
+  [/^\{5,5,5,5\}\s+vs\s+\{1,2,3,4,5\}:\s+maior\s+dispers[ãa]o\?/i, 'segundo conjunto'],
+  // P/set_18 chart-type questions
+  [/^Comparar\s+vendas[^?]+gr[áa]fico\?/i, 'barras'],
+  [/^Evolu[çc][ãa]o\s+de\s+temperatura\s+ao\s+longo\s+do\s+tempo[^?]+gr[áa]fico\?/i, 'linha'],
+  [/^Frequ[êe]ncia\s+de\s+idades\s+cont[íi]nuas[^?]+gr[áa]fico\?/i, 'histograma'],
+  [/^Propor[çc][ãa]o\s+de\s+votos\s+por\s+partido[^?]+gr[áa]fico\?/i, 'pizza'],
+  [/^Rela[çc][ãa]o\s+entre\s+altura\s+e\s+peso[^?]+gr[áa]fico\?/i, 'dispersão'],
+  [/^Amostra\s+de\s+conveni[êe]ncia\s+pode\s+gerar/i, 'viés'],
+  [/^Boxplot\s*[—-]+\s*Q2\s+[ée]\s+a/i, 'mediana'],
+  [/^Correla[çc][ãa]o\s+entre\s+vari[áa]veis\s+implica/i, 'associação'],
+  [/^Eixo\s+y\s+come[çc]ando\s+em\s+\d+/i, 'exagerar'],
+  [/^Escala\s+logar[íi]tmica\s+no\s+eixo\s+y/i, 'linear'],
+  [/^Gr[áa]fico\s+de\s+pizza\s+com\s+fatias\s+3D/i, 'dificulta'],
+  [/^Histograma\s+com\s+barra\s+central\s+alta\s+e\s+sim[ée]tricas/i, 'normal'],
+  [/^Histograma\s+com\s+barras\s+iguais/i, 'uniforme'],
+  [/^Histograma\s+com\s+cauda\s+[àa]\s+direita/i, 'direita'],
+  // CV interpretation
+  [/^CV\s+maior\s+indica/i, 'mais'],
+  // P/set_19 hypothesis testing
+  [/^H[₀0]\s+representa\s+a\s+hip[óo]tese/i, 'nula'],
+  [/^H[₁1]\s+representa\s+a\s+hip[óo]tese/i, 'alternativa'],
+  [/^Erro\s+tipo\s+I\s*=\s*rejeitar\s+H[₀0]\s+sendo\s+ela/i, 'verdadeira'],
+  [/^Erro\s+tipo\s+II\s*=\s*n[ãa]o\s+rejeitar\s+H[₀0]\s+sendo\s+ela/i, 'falsa'],
+  [/^Teste\s+bilateral:/i, 'bilateral'],
+  [/^Teste\s+unilateral\s+direito:/i, 'unilateral'],
+  [/^Aumentar\s+n\s*→\s*poder/i, 'aumenta'],
+  [/^Efeito\s+maior\s*→\s*poder/i, 'aumenta'],
+  [/^p\s+menor\s*→\s*evid[êe]ncia/i, 'mais'],
+  [/^α\s+mais\s+baixo\s*→\s*erro\s+tipo\s+I/i, 'diminui'],
+  [/^\|z\|\s+grande\s+indica\s+resultado/i, 'improvável'],
+  [/^Poder\s+ideal/i, '0.8'],
+  [/^α\s+t[íi]pico\s+em\s+ci[êe]ncias\s+sociais/i, '0.05'],
+  [/^z\s*=\s*2\.0\s*,\s*α\s*=\s*0\.05\s+bilateral/i, '1.96'],
+  [/^α\s*=\s*0\.05\s+significa/i, 'rejeitar H₀ sendo'],
+  // P/set_16
+  [/^Censo\s+vs\s+amostragem/i, 'todo'],
+  [/^IC\s+mais\s+largo\s*→/i, 'mais'],
+  [/^n\s*=\s*1000\s+\(grande\)\s*→/i, 'boa'],
+  [/^Por\s+que\s+dividir\s+por\s+n-1/i, 'evitar'],
+  [/^Binomial\s+requer\s+quantas\s+condi[çc][õo]es\?/i, '4'],
+  // P/set_17 regression
+  [/^b\s*>\s*0\s+indica\s+rela[çc][ãa]o/i, 'positiva'],
+  [/^r\s*=\s*0\.95\s+indica\s+correla[çc][ãa]o/i, 'forte'],
+  [/^r\s*=\s*0\s+indica/i, 'nenhuma linear'],
+  [/^r\s*=\s*1\s+indica\s+correla[çc][ãa]o/i, 'perfeita positiva'],
+  [/^r\s*=\s*-1\s+indica/i, 'perfeita negativa'],
+  [/^R[²2^]+\s*=\s*1\s*→\s*modelo\s+explica/i, 'todo'],
+  [/^Res[íi]duo\s+positivo\s*→\s*modelo/i, 'subestimou'],
+  // M/set_13 PG q-range categorical (single label parens)
+  [/^PG\s+com\s+q\s*=\s*1\s+[ée]:\s*\(crescente\/constante\)/i, 'constante'],
+  [/^q\s*=\s*0\s*[—-]+\s*PG\s+[ée]:\s*\(nula\/constante\)/i, 'nula'],
+  // M/set_18 calculus terminology
+  [/^S[ée]rie\s+de\s+Taylor\s+representa\s+fun[çc][ãa]o\s+como:/i, 'soma infinita de potências'],
+  [/^Taylor\s+em\s+torno\s+de\s+x\s*=\s*0\s+tamb[ée]m\s+se\s+chama:/i, 'Maclaurin'],
+  [/^Erro\s+quando\s+aumentamos\s+termos:/i, 'diminui'],
+  [/^Maior\s+x\s*→\s*preciso/i, 'mais'],
+  [/^Integra[çc][ãa]o\s+de\s+s[ée]rie\s+[ée]:/i, 'termo a termo dentro do raio'],
+  // M/set_10 SSA
+  [/^Configura[çc][ãa]o\s+SSA[^?]+casos:/i, '1 ou 2'],
+  [/^Se\s+sen\(B\)\s*=\s*1\s*,\s*caso\s+[ée]:/i, 'único'],
+  [/^Se\s+sen\(B\)\s*>\s*1\s*,\s*o?\s*tri[âa]ngulo:/i, 'não existe'],
+  // 'A normal padrão tem média = ? e σ = ?' → '0 e 1'
+  [/^A\s+normal\s+padr[ãa]o\s+tem\s+m[ée]dia\s*=\s*\?\s+e\s+σ\s*=\s*\?/i, '0 e 1'],
+  // 'Moda de {bimodal, cite o menor}': author requires the smallest among modes
+];
+const MODA_BIMODAL_RE = /^Moda\s+de\s+\{([\d,\s]+)\}\s+\(bimodal,\s+cite\s+o\s+menor\)/i;
 const SERIES_VERB_RE = /^Σ\s*([\s\S]+?):\s*\((converge|diverge)\/(?:diverge|converge)\)\s*$/i;
 // Trig identity V/F: '(sen|cos|tan)(N°) = <expr> (V/F)?'
 const TRIG_IDENT_VF_RE = /^(sen|sin|cos|tan)\(?\s*(\d+(?:\.\d+)?)°\)?\s*=\s*(.+?)\s*\(V\/F\)\?\s*$/i;
@@ -6851,6 +6932,24 @@ function verify(question, answer, type) {
   // SSA edge cases → V
   if (SSA_FACTS_RE.test(question)) {
     return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'identity_vf' };
+  }
+  // Known categorical/fact dictionary
+  for (const [re, expected] of KNOWN_FACTS) {
+    if (re.test(question)) {
+      return { ok: String(answer).trim().toLowerCase() === expected.toLowerCase(), computed: expected, kind: 'identity_vf' };
+    }
+  }
+  // Moda bimodal: cite o menor → smallest value with max frequency
+  const mb = question.match(MODA_BIMODAL_RE);
+  if (mb) {
+    const nums = mb[1].split(/\s*,\s*/).map(Number).filter(Number.isFinite);
+    const freq = {};
+    for (const n of nums) freq[n] = (freq[n] || 0) + 1;
+    const maxF = Math.max(...Object.values(freq));
+    const modes = Object.entries(freq).filter(([, f]) => f === maxF).map(([k]) => Number(k)).sort((a, b) => a - b);
+    const expected = modes[0];
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'stat' };
   }
   // cos(x/2) acute from cos(x) — literal: √((1+V)/2)
   const cha = question.match(COS_HALF_AGUDO_RE);
