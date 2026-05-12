@@ -542,7 +542,7 @@ const GENERAL_PAIR_RE = /^Solu[çc][ãa]o\s+geral\s+de\s+sin\(x\)\s*=\s*([^:]+)\
 // 'a/sen(A) = b/sen(B) = c/sen(?)' → 'C'  (symbolic)
 const LAW_SIN_THIRD_RE = /^a\/sin\(A\)\s*=\s*b\/sin\(B\)\s*=\s*c\/sin\(\?\)\s*$/i;
 // 'a/sen(A) = 2R' literal answer
-const LAW_SIN_2R_RE = /^a\/sin\(A\)\s+[ée]\s+igual\s+a:\s*\(/i;
+const LAW_SIN_2R_RE = /^(?:Lei\s+dos\s+senos:\s*a\/sin\(A\)\s*=\s*\?\s*$|a\/sin\(A\)\s+[ée]\s+igual\s+a:\s*\()/i;
 // 'a/sen(A) = 2R, onde R é o raio da circunferência: (inscrita/circunscrita)' → 'circunscrita'
 const LAW_SIN_CIRC_RE = /^a\/sin\(A\)\s*=\s*2R,\s+onde\s+R\s+[ée]\s+o\s+raio\s+da\s+circunfer[êe]ncia:\s*\(/i;
 // 'a=A, A=α°, C=β°, c = ?' law of sines for c
@@ -773,7 +773,7 @@ const EQ_TRI_R_NUM_RE = /^Em\s+tri[âa]ngulo\s+equil[áa]tero\s+lado\s+(\d+(?:\.
 // Law of cosines variants
 const LAW_COS_CSQ_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*C\s*=\s*(\d+(?:\.\d+)?)°\s*:?\s*c(?:²|\^?2)\s*=\s*\??\s*$/i;
 const LAW_COS_C_90_RE = /^c\^?2\s*=\s*a\^?2\s*\+\s*b\^?2\s+quando\s+C\s*=\s*\?°?\s*$/i;
-const LAW_COS_CONST_RE = /^c\^?2\s*=\s*a\^?2\s*\+\s*b\^?2\s*-\s*2ab\s*[·*]\s*cos\(\?\)\s*$/i;
+const LAW_COS_CONST_RE = /^(?:Lei\s+dos\s+cossenos:\s*)?c\^?2\s*=\s*a\^?2\s*\+\s*b\^?2\s*-\s*2ab\s*[·*]\s*cos\(\?\)\s*$/i;
 // Heron's: p = (a+b+c)/2
 const SEMI_PERIM_RE = /^Para\s+a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*c\s*=\s*(\d+(?:\.\d+)?)\s*,\s*p\s*=\s*\??\s*$/i;
 const SEMI_PERIM_EQ_RE = /^Para\s+a\s*=\s*b\s*=\s*c\s*=\s*(\d+(?:\.\d+)?)\s*,\s*p\s*=\s*\??\s*$/i;
@@ -836,7 +836,7 @@ const DET_2X2_NUMERIC_RE = /^A\s*=\s*\[\s*(-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)\
 const DET_3X3_TRIANG_RE = /^det\(\[\s*(-?\d+)\s+(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s+(-?\d+)\s*\]\)\s*=\s*\??\s*$/i;
 // det(A·B) = det(A)·det(B)
 const DET_PRODUCT_RE = /^det\(A\s*[·*]\s*B\)\s*=\s*det\(A\)\s*[·*]\s*det\(B\)\s*;\s*det\s*A\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*det\s*B\s*=\s*(-?\d+(?:\.\d+)?)\s*:\s*det\(AB\)\s*=\s*\??\s*$/i;
-const DET_COMPOSITION_RE = /^\[S∘T\]\s*=\s*\[S\][·*]\[T\][^;]*;\s*detS\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*detT\s*=\s*(-?\d+(?:\.\d+)?)\s*:\s*det\(S∘T\)\s*=\s*\??\s*$/i;
+const DET_COMPOSITION_RE = /detS\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*detT\s*=\s*(-?\d+(?:\.\d+)?)\s*:\s*det\(S∘T\)\s*=\s*\??\s*$/i;
 // 'Linha/coluna nula → det = 0' constant
 const ZERO_LINE_DET_RE = /^Linha\/coluna\s+nula\s*→\s*det\s*=\s*\??\s*$/i;
 // 'Matriz A·A⁻¹ = ?' → I (literal)
@@ -903,8 +903,8 @@ const CHAR_POLY_RE = /pol[ií]n[ôo]mio\s+λ(?:²|\^?2)\s*-\s*(\d+(?:\.\d+)?)\s*
 // Tr(A) = λ₁+λ₂ for 2x2
 const TRACE_AS_SUM_RE = /^A\s*=\s*\[\s*(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s*\]\s*:\s*tr\(A\)\s*=\s*λ[₁1]\s*\+\s*λ[₂2]\s*=\s*\??\s*$/i;
 // Diagonal/upper-triangular eigenvalues (sample: A=[1 2; 0 3] or A=[3 0; 0 5])
-const EIG_DIAG_RE = /^A\s*=\s*\[\s*(-?\d+)\s+(-?\d+)\s*;\s*0\s+(-?\d+)\s*\][^=]*(?:maior|menor|λ\s*[₁12])\s*=\s*\??\s*$/i;
-const EIG_DIAG_BOTH_RE = /^A\s*=\s*\[\s*(-?\d+)\s+0\s*;\s*0\s+(-?\d+)\s*\][^=]*(?:maior|menor|λ\s*[₁12])\s*=\s*\??\s*$/i;
+const EIG_DIAG_RE = /^A\s*=\s*\[\s*(-?\d+)\s+(-?\d+)\s*;\s*0\s+(-?\d+)\s*\][^?]*?(?:maior|menor|λ\s*[₁12])\s*=\s*\??\s*$/i;
+const EIG_DIAG_BOTH_RE = /^A\s*=\s*\[\s*(-?\d+)\s+0\s*;\s*0\s+(-?\d+)\s*\][^?]*?(?:maior|menor|λ\s*[₁12])\s*=\s*\??\s*$/i;
 // 'A=[3 0; 0 5]: λ₂ = ?' / 'A=[2 1; 1 2]: λ₁ = ?' — companion form
 const EIG_INDEX_RE = /A\s*=\s*\[\s*(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s*\][^=]*λ([₁₂12])\s*=\s*\??\s*$/i;
 // 'A=[a b; c d]: D=[e 0; 0 f]; D[i,j] = ?' → e or f for i=j
@@ -1040,7 +1040,10 @@ const SEN_NUMERATOR_RE = /^(sen|sin|cos)\s+(\d+)°\s*=\s*\?√(\d+)\s*\(numerado
 // 'P(A) = N, P(Ā) = ?' alternate form
 const COMPLEMENT_ALT_RE = /^P\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(Ā\)\s*=\s*\??\s*$/i;
 // 'P(A|B) = P(A∩B)/P(B); P(A∩B)=X, P(B)=Y → P(A|B) = ?' (already partially covered)
+// Use raw question — '|' normalizes to 'abs('.
 const COND_PROB_LONG_RE = /^P\(A\|B\)\s*=\s*P\(A∩B\)\/P\(B\)\s*;\s*P\(A∩B\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(B\)\s*=\s*(\d+(?:\.\d+)?)\s*→\s*P\(A\|B\)\s*=\s*\??\s*$/i;
+// E linearity with intermediate Var clause
+const E_LIN_WITH_VAR_RE = /^E\[X\]\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*Var\(X\)\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*E\[\s*(?:(-?\d+)\s*\*?\s*)?X\s*(?:([+\-])\s*(\d+(?:\.\d+)?))?\s*\]\s*=\s*\??\s*$/i;
 // 'A e B independentes com P(A)=X, P(B)=Y → P(A∩B) = ?' → X·Y
 const INDEP_PROB_COM_RE = /^A\s+e\s+B\s+independentes\s+com\s+P\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(B\)\s*=\s*(\d+(?:\.\d+)?)\s*→\s*P\(A∩B\)\s*=\s*\??\s*$/i;
 // Bin(n, p) with → arrow form
@@ -1069,10 +1072,10 @@ const SCALAR_PROJ_FROM_VEC_RE = /^comp_\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)
 const CROSS_NORM_AXIS_RE = /^u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*0\s*(?:,\s*0)?\)\s*,\s*v\s*=\s*\(0\s*,\s*(-?\d+(?:\.\d+)?)\s*(?:,\s*0)?\)\s*:\s*\|\|u×v\|\|\s*=\s*\??\s*$/i;
 // Trig solving
 const COS_X_VAL_FIRST_DEG_RE = /^Menor\s+positiva\s+de\s+cos\(x\)\s*=\s*([\d\/.√]+)\s*:\s*\?°?\s*$/i;
-const SEN_X_VAL_1Q_RE = /^sin\(x\)\s*=\s*([\d\/.√]+)\s+no\s+1[ºo]\s+quadrante\s*=\s*\?°?\s*$/i;
-const TAN_X_VAL_1Q_RE = /^tan\(x\)\s*=\s*([\d\/.√]+)\s+no\s+1[ºo]\s+quadrante\s*=\s*\?°?\s*$/i;
+const SEN_X_VAL_1Q_RE = /^(?:sen|sin)\(x\)\s*=\s*\(?([\d\/.√]+)\)?\s+no\s+1[ºo]\s+quadrante\s*=\s*\?°?\s*$/i;
+const TAN_X_VAL_1Q_RE = /^tan\(x\)\s*=\s*\(?([\d\/.√]+)\)?\s+no\s+1[ºo]\s+quadrante\s*=\s*\?°?\s*$/i;
 const COS_X_SECOND_SOL_RE = /^cos\(x\)\s*=\s*0\s+no\s+\[0°?\s*,\s*360°?\)\s*=\s*90°\s+e\s+\?°?\s*$/i;
-const SEN_ZERO_COUNT_RE = /^sin\(x\)\s*=\s*0\s+em\s+\[0°?\s*,\s*360°?\)\s*[—-]+\s*n[úu]mero\s+de\s+solu[çc][õo]es:\s*\?\s*$/i;
+const SEN_ZERO_COUNT_RE = /^(?:sen|sin)\(x\)\s*=\s*0\s+em\s+\[0°?\s*,\s*360°?\)\s*[—-]+\s*n[úu]mero\s+de\s+solu[çc][õo]es:\s*\?\s*$/i;
 const TAN_ZERO_COUNT_RE = /^tan\(x\)\s*=\s*0\s*→\s*n[úu]mero\s+de\s+solu[çc][õo]es\s+em\s+\[0°?\s*,\s*360°?\)\?\s*$/i;
 // Period of cos/sen(Kx) = 360/K
 const PERIOD_OF_K_RE = /^Per[íi]odo\s+de\s+y\s*=\s*(?:sin|cos)\(\s*(\d+)\s*\*?\s*x\)\s*=\s*\??\s*$/i;
@@ -1090,7 +1093,7 @@ const SIN_POS1_RE = /^sin\(x\)\s*=\s*1\s*→\s*x\s+em\s+\[0°?\s*,\s*360°?\)\s*
 // 'sen²(x) - sen(x) = 0 → sen(x)=0 ou sen(x)=?' → 1
 const SIN_SQ_LINEAR_RE = /^sin\(x\)\^?2\s*-\s*sin\(x\)\s*=\s*0[^?]+sin\(x\)\s*=\s*\?\s*$/i;
 // 'sen(90°+x) = cos(x)'
-const SIN_SHIFT_RE = /^sin\((\d+)°\s*([+\-])\s*x\)\s*=\s*\??\s*$/i;
+const SIN_SHIFT_RE = /^(?:sen|sin)\((\d+)°\s*([+\-])\s*x\)\s*=\s*\??\s*$/i;
 // 'sen(a+b)·sen(a-b) = sen²(a) - sen²(b)' (literal)
 const SIN_PRODUCT_DIFF_RE = /^sin\(a\s*\+\s*b\)\s*[·*]\s*sin\(a\s*-\s*b\)\s*=\s*sin\(a\)\^?2\s*-\s*\?\s*$/i;
 // 'Setor 90° com r=8: área = ?π' covered by SECTOR_AREA_COLON_RE
@@ -5233,20 +5236,20 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'cross_z' };
   }
-  // Triangle area via ||u×v||/2 axis-aligned
-  const txv = q.match(TRIANGLE_UXV_AREA_RE);
+  // Triangle area via ||u×v||/2 axis-aligned (raw)
+  const txv = question.match(TRIANGLE_UXV_AREA_RE);
   if (txv) {
     const expected = Math.abs(Number(txv[1]) * Number(txv[2])) / 2;
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'parallelogram_area' };
   }
-  // Cross of standard basis: i×j = k → z component = 1
-  if (CROSS_BASIS_Z_RE.test(q)) {
+  // Cross of standard basis: i×j = k → z component = 1 (raw — × normalizes to *)
+  if (CROSS_BASIS_Z_RE.test(question)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === 1, computed: '1', kind: 'cross_z' };
   }
-  // i×j or j×i — z component (1 or -1)
-  const ixj = q.match(I_CROSS_J_RE);
+  // i×j or j×i — z component (1 or -1) (raw — × normalizes to *)
+  const ixj = question.match(I_CROSS_J_RE);
   if (ixj) {
     const a1 = ixj[1].toLowerCase(), b1 = ixj[2].toLowerCase();
     // i×j = k (z=1); j×i = -k (z=-1); i×i = j×j = 0
@@ -5261,8 +5264,8 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: matchDeg(an, 90), computed: '90°', kind: 'vec_norm' };
   }
-  // u∥v → u×v = 0 (norm)
-  if (PARALLEL_CROSS_RE.test(q)) {
+  // u∥v → u×v = 0 (raw — ∥/× normalize)
+  if (PARALLEL_CROSS_RE.test(question)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === 0, computed: '0', kind: 'cross_z' };
   }
@@ -6113,12 +6116,22 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'prob_value' };
   }
-  // Conditional probability long form
-  const cpL = q.match(COND_PROB_LONG_RE);
+  // Conditional probability long form (raw — '|' normalizes)
+  const cpL = question.match(COND_PROB_LONG_RE);
   if (cpL) {
     const expected = Number(cpL[1]) / Number(cpL[2]);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'cond_prob' };
+  }
+  // E linearity with intermediate Var(X) clause: E[X]=A, Var(X)=B → E[kX+c] = kA+c
+  const elwv = q.match(E_LIN_WITH_VAR_RE);
+  if (elwv) {
+    const EX = Number(elwv[1]);
+    const k = elwv[3] ? Number(elwv[3]) : 1;
+    const c = elwv[5] ? (elwv[4] === '-' ? -1 : 1) * Number(elwv[5]) : 0;
+    const expected = k * EX + c;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'expected' };
   }
   // Independent (A e B independentes com ...)
   const ipc = q.match(INDEP_PROB_COM_RE);
