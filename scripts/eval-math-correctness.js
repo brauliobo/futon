@@ -190,7 +190,7 @@ const CIRCUM_D_RE = /^comprimento\s+da\s+circunfer[êe]ncia\s+d\s*=\s*(\d+(?:\.\
 const CIRCLE_RADIUS_AREA_RE = /^se\s+A\s*=\s*(\d+(?:\.\d+)?)π\s*,\s*raio\s*=\s*\??\s*$/i;
 const CIRCLE_RADIUS_C_RE = /^se\s+C\s*=\s*(\d+(?:\.\d+)?)π\s*,\s*raio\s*=\s*\??\s*$/i;
 const CIRCLE_EQ_RADIUS_RE = /^x\^?2\s*\+\s*y\^?2\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*raio\s*=\s*\??\s*$/i;
-const POLY_PERIM_RE = /^(?:tri[âa]ngulo|quadrado|pent[áa]gono|hex[áa]gono|hept[áa]gono|oct[óo]gono|pol[íi]gono\s+regular\s+de\s+(\d+)\s+lados)\s*(?:regular\s+)?(?:[—-]+\s*)?lado\s*=\s*(\d+(?:\.\d+)?)\s*:?\s*per[íi]metro\s*=\s*\??\s*$/i;
+const POLY_PERIM_RE = /^(?:tri[âa]ngulo|quadrado|pent[áa]gono|hex[áa]gono|hept[áa]gono|oct[óo]gono|pol[íi]gono\s+regular\s+de\s+(\d+)\s+lados)\s*(?:regular\s+)?(?:[—,\-]+\s*)?lado\s*=\s*(\d+(?:\.\d+)?)\s*:?\s*per[íi]metro\s*=\s*\??\s*$/i;
 const HEXAGON_AREA_RE = /^hex[áa]gono\s+regular\s+lado\s*=\s*(\d+(?:\.\d+)?)\s*:\s*[áa]rea\s*=\s*\?√3\s*$/i;
 const EQUI_TRI_AREA_RE = /^tri[âa]ngulo\s+equil[áa]tero\s+lado\s*=\s*(\d+(?:\.\d+)?)(?::|\s+[áa]rea\s*=\s*\?√3)/i;
 const EQUI_TRI_FULL_RE = /^[áa]rea\s+do\s+tri[âa]ngulo\s+equil[áa]tero\s+lado\s*=\s*(\d+(?:\.\d+)?)(?:\s*[—:][^=]*?)?\s*=\s*\??\s*$/i;
@@ -326,6 +326,22 @@ const Z_SCORE_TEM_RE = /^μ\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*σ\s*=\s*(-?\d+(?:\.\d
 // Sturges' rule: 1+3.3·log(n). 'Para n=N, k ≈ ?' → round(1 + 3.3*log10(N))
 const STURGES_RE = /(?:sturges|regra\s+de\s+sturges)[\s\S]*?n\s*=\s*(\d+)\s*,\s*k\s*≈\s*\??\s*$/i;
 // 'P(A∪B) = P(A)+P(B)-P(A∩B)' style with 3 numbers — covered by UNION_INC_EXC_RE.
+// Circle area '?π' coefficient — accept '=' or em-dash separators.
+const CIRCLE_AREA_PI_RE = /^[áa]rea\s+do\s+c[íi]rculo\s+r\s*=\s*(\d+(?:\.\d+)?)\s*=\s*\?π\s*$/i;
+const CIRCLE_AREA_DASH_PI_RE = /^c[íi]rculo\s+r\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*[áa]rea\s*=\s*\?π\s*$/i;
+const CIRCLE_DIAM_AREA_RE = /^c[íi]rculo\s+d\s*=\s*(\d+(?:\.\d+)?)\s*:\s*[áa]rea\s*=\s*\?π\s*$/i;
+// 'Cubo lado N — V = ?'
+const CUBE_VOL_DASH_RE = /^cubo\s+lado\s*=?\s*(\d+(?:\.\d+)?)\s*[—-]+\s*v\s*=\s*\??\s*$/i;
+// 'Centro (h,k) e r=R: (x-h)² + (y-k)² = ?' → R²
+const CIRCLE_EQ_CENTER_R_RE = /^centro\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+e\s+r\s*=\s*(\d+(?:\.\d+)?)\s*:.*?=\s*\??\s*$/i;
+// 'Circunferência (com centro)? (0,0)? r=R: x²+y² = ?' → R²
+const CIRCLE_EQ_R_RE = /^circunfer[êe]ncia\s+(?:com\s+)?centro\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*(?:e\s+)?r\s*=\s*(\d+(?:\.\d+)?)\s*:.*?=\s*\??\s*$/i;
+// '(x-h)²+(y-k)²=N — raio = ?' → sqrt(N)
+const CIRCLE_EQ_RAD_DASH_RE = /^\(x[+\-]\d+\)[²2]\s*\+\s*\(y[+\-]\d+\)[²2]\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*raio\s*=\s*\??\s*$/i;
+// '(x-h)²+(y-k)²=N — centro = (h, ?)' → k (extract h, k from regex)
+const CIRCLE_EQ_CENTER_PARTIAL_RE = /^\(x([+\-])(\d+(?:\.\d+)?)\)[²2]\s*\+\s*\(y([+\-])(\d+(?:\.\d+)?)\)[²2]\s*=\s*\d+(?:\.\d+)?\s*[—-]+\s*centro\s*=\s*\(\s*(-?\d+(?:\.\d+)?)\s*,\s*\?\s*\)\s*$/i;
+// 'Quadrilátero inscrito — soma ângulos internos' → 360 constant covered by POLY_SUM_ANGLE? Not quite — answer is 360 directly without (n=) hint.
+// 'Volume do cone = ? do cilindro de mesmas dimensões' → 1/3 (constant)
 // Linear systems solving for a single variable.
 // 'Se <eq1> e <eq2>, x = ?' or 'Com y=N, no sistema <eq1> e <eq2>, x = ?'
 const SYS_SOLVE_RE = /^(?:se|com\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*no\s+sistema)\s+(.+?)\s+e\s+(.+?)\s*,\s*([xy])\s*=\s*\??\s*$/i;
@@ -1605,14 +1621,14 @@ function verify(question, answer, type) {
       if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'tri_special' };
     }
   }
-  // Circumference: 'Comprimento da circunferência r=R = ?π' → 2R
-  const cr = q.match(CIRCUM_R_RE);
+  // Circumference: 'Comprimento da circunferência r=R = ?π' → 2R  (raw — '?π' is normalized away)
+  const cr = question.match(CIRCUM_R_RE);
   if (cr) {
     const expected = 2 * Number(cr[1]);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'circumference' };
   }
-  const cd = q.match(CIRCUM_D_RE);
+  const cd = question.match(CIRCUM_D_RE);
   if (cd) {
     const expected = Number(cd[1]);
     const an = toNumber(tryEval(a));
@@ -1644,7 +1660,7 @@ function verify(question, answer, type) {
   const SIDES_BY_NAME = { triângulo: 3, triangulo: 3, quadrado: 4, pentágono: 5, pentagono: 5, hexágono: 6, hexagono: 6, heptágono: 7, heptagono: 7, octógono: 8, octogono: 8 };
   const pp2 = q.match(POLY_PERIM_RE);
   if (pp2) {
-    const word = q.toLowerCase().match(/^(\w+)/)[1];
+    const word = q.toLowerCase().split(/\s+/)[0];
     const n = pp2[1] ? Number(pp2[1]) : SIDES_BY_NAME[word];
     const len = Number(pp2[2]);
     if (n) {
@@ -1900,6 +1916,59 @@ function verify(question, answer, type) {
     const expected = Math.round(1 + 3.3 * Math.log10(Number(stu[1])));
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) <= 1, computed: `${expected}`, kind: 'stat' };
+  }
+  // Circle area '?π' — multiple phrasings.
+  const cap = question.match(CIRCLE_AREA_PI_RE) || question.match(CIRCLE_AREA_DASH_PI_RE);
+  if (cap) {
+    const expected = Number(cap[1]) ** 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'circle_area' };
+  }
+  const cda = question.match(CIRCLE_DIAM_AREA_RE);
+  if (cda) {
+    const expected = (Number(cda[1]) / 2) ** 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'circle_area' };
+  }
+  // 'Cubo lado N — V = ?' → N³
+  const cvD = q.match(CUBE_VOL_DASH_RE);
+  if (cvD) {
+    const expected = Number(cvD[1]) ** 3;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'cube_vol' };
+  }
+  // 'Centro (h,k) e r=R: (x-h)² + (y-k)² = ?' → R²
+  const ccr = q.match(CIRCLE_EQ_CENTER_R_RE) || q.match(CIRCLE_EQ_R_RE);
+  if (ccr) {
+    const expected = Number(ccr[3]) ** 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  // '(x-h)²+(y-k)²=N — raio = ?' → sqrt(N)
+  const cerd = question.match(CIRCLE_EQ_RAD_DASH_RE);
+  if (cerd) {
+    const expected = Math.sqrt(Number(cerd[1]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  // '(x-h)²+(y-k)²=N — centro = (h, ?)' → -sign·k
+  const cep = question.match(CIRCLE_EQ_CENTER_PARTIAL_RE);
+  if (cep) {
+    // sign in regex captures '+' or '-'; centre offset is opposite sign.
+    const k = (cep[3] === '+' ? -1 : 1) * Number(cep[4]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === k, computed: `${k}`, kind: 'circle_radius' };
+  }
+  // 'Volume do cone = ? do cilindro de mesmas dimensões' → 1/3 constant
+  if (/^volume\s+do\s+cone\s*=\s*\?\s+do\s+cilindro/i.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - 1/3) < 1e-6, computed: '0.333', kind: 'cone_vol' };
+  }
+  // '... soma ângulos internos de quadrilátero ... = ?°' → 360 constant
+  if (/soma\s+[âa]ngulos\s+internos\s+de\s+quadril[áa]tero[\s\S]*=\s*\?°?\s*$/i.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an === 360) return { ok: true, computed: '360', kind: 'poly_sum_angle' };
+    if (an != null) return { ok: false, computed: '360', kind: 'poly_sum_angle' };
   }
   // 3D dot product
   const vd3 = question.match(VEC3_DOT_RE);

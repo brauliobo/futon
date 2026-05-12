@@ -135,6 +135,16 @@ const CASES = [
   { q: 'μ=10, σ=2 — x=14 tem z = ?', a: '2', type: 'mental_math', want: true },
   { q: 'Valores 10 (f=2) e 20 (f=3) — média = ?', a: '16', type: 'mental_math', want: true },
   { q: '4 camisas e 3 calças — quantos conjuntos?', a: '12', type: 'mental_math', want: true },
+  // Circle area '?π' coefficient + circle equation patterns
+  { q: 'Área do círculo r=10 = ?π', a: '100', type: 'geometry', want: true },
+  { q: 'Círculo r=5 — área = ?π', a: '25', type: 'geometry', want: true },
+  { q: 'Círculo d=10: área = ?π', a: '25', type: 'geometry', want: true },
+  { q: 'Comprimento da circunferência r=3 = ?π', a: '6', type: 'geometry', want: true },
+  { q: 'Cubo lado 4 — V = ?', a: '64', type: 'geometry', want: true },
+  { q: 'Centro (2,1) e r=5: (x-2)² + (y-1)² = ?', a: '25', type: 'geometry', want: true },
+  { q: '(x+2)²+(y-3)²=25 — raio = ?', a: '5', type: 'geometry', want: true },
+  { q: 'Polígono regular de 10 lados, lado=5: perímetro = ?', a: '50', type: 'geometry', want: true },
+  { q: 'Hexágono lado=3: perímetro = ?', a: '18', type: 'geometry', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
