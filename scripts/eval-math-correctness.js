@@ -480,6 +480,42 @@ const DECK_SPACE_RE = /^tirando\s+uma\s+carta\s+de\s+baralho\s*\(\s*\d+\s*\)\s*,
 const DICE_EVEN_RE = /^Dado\s*[—-]+\s*P\(face\s+par\)\s*=\s*\??\s*$/i;
 const DICE_GT_RE = /^Dado\s*[—-]+\s*P\(maior\s+que\s+(\d+)\)\s*=\s*\??\s*$/i;
 const DECK_RED_RE = /^Baralho\s*\(\s*52\s*\)\s*[—-]+\s*P\(carta\s+vermelha\)\s*=\s*\??\s*$/i;
+// Line patterns
+const LINE_SLOPE_RE = /^Reta\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*\*?\s*x\s*([+\-]\s*\d+(?:\.\d+)?)?\s*:\s*m\s*=\s*\??\s*$/i;
+const LINE_YAT_RE = /^Reta\s+y\s*=\s*(-?\d+(?:\.\d+)?)?\s*\*?\s*x\s*([+\-])\s*(\d+(?:\.\d+)?)\s*[—-]+\s*ponto\s+x\s*=\s*(-?\d+(?:\.\d+)?)\s*:\s*y\s*=\s*\??\s*$/i;
+const LINE_ZERO_RE = /^Reta\s+y\s*=\s*(-?\d+(?:\.\d+)?)?\s*\*?\s*x\s*([+\-])\s*(\d+(?:\.\d+)?)\s*[—-]+\s*zero\s+\(x\s+tal\s+que\s+y\s*=\s*0\)\s*:\s*x\s*=\s*\??\s*$/i;
+const LINES_PARALLEL_RE = /^Retas\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*\*?\s*x[^=]*=\s*(-?\d+(?:\.\d+)?)\s*\*?\s*x[^=]*:\s*s[ãa]o\s+paralelas\?/i;
+const SLOPE_PRODUCT_RE = /^m[₁1]\s*=\s*(-?\d+(?:\.\d+)?(?:\/-?\d+)?)\s+e\s+m[₂2]\s*=\s*(-?\d+(?:\.\d+)?(?:\/-?\d+)?)\s*:\s*produto\s+m[₁1]·m[₂2]\s*=\s*\??\s*$/i;
+const POINT_LINE_DIST_RE = /^Reta\s+(-?\d+(?:\.\d+)?)\s*\*?\s*x\s*([+\-])\s*(\d+(?:\.\d+)?)\s*\*?\s*y\s*([+\-])\s*(\d+(?:\.\d+)?)\s*=\s*0\s*;\s*ponto\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*d\s*=\s*\??\s*$/i;
+const POINT_LINE_DIST_NOCONST_RE = /^Reta\s+(-?\d+(?:\.\d+)?)\s*\*?\s*x\s*([+\-])\s*(\d+(?:\.\d+)?)\s*\*?\s*y\s*=\s*0\s*;\s*ponto\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*d\s*=\s*\??\s*$/i;
+const POINT_LINE_DIST_SQRT_RE = /^Reta\s+(-?\d+(?:\.\d+)?)?\s*\*?\s*x\s*([+\-])\s*\*?\s*y\s*([+\-])\s*(\d+(?:\.\d+)?)\s*=\s*0\s*;\s*ponto\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*d\s*=\s*\?√2\s*$/i;
+const MID_TO_ORIG_RE = /^Ponto\s+m[ée]dio\s+de\s+segmento\s+com\s+extremos\s+\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s+e\s+\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s*:\s*dist\s+do\s+orig\s*=\s*\??\s*$/i;
+const POINT_ON_LINE_RE = /^Ponto\s+sobre\s+a\s+reta\s+(-?\d+(?:\.\d+)?)\s*\*?\s*x\s*([+\-])\s*(\d+(?:\.\d+)?)?\s*\*?\s*y\s*([+\-])\s*(\d+(?:\.\d+)?)\s*=\s*0\s+em\s+x\s*=\s*(-?\d+(?:\.\d+)?)\s*:\s*y\s*=\s*\??\s*$/i;
+// Conics
+const CONIC_CIRCLE_E_RE = /^Circunfer[êe]ncia:\s*e\s*=\s*\??\s*$/i;
+const ELLIPSE_E_RE = /^Elipse\s+a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*c\s*=\s*(\d+(?:\.\d+)?)\s*:\s*e\s*=\s*\??\s*$/i;
+const HYPER_E_RE = /^Hip[ée]rbole\s+a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*c\s*=\s*(\d+(?:\.\d+)?)\s*:\s*e\s*=\s*\??\s*$/i;
+const ELLIPSE_C_FROM_AB_RE = /^Elipse\s+com\s+a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*:\s*c\s*=\s*\??\s*$/i;
+const ELLIPSE_IS_CIRCLE_RE = /^Elipse\s+com\s+a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s+[ée]\s+um\s+\(1=c[íi]rculo[^)]*\)/i;
+const ELLIPSE_EQ_C2_RE = /^Elipse\s+x[²2^]+\/(\d+)\s*\+\s*y[²2^]+\/(\d+)\s*=\s*1\s*;\s*c\^?2\s*=\s*a\^?2\s*-\s*b\^?2\s*=\s*\??\s*$/i;
+const ELLIPSE_EQ_C_RE = /^Elipse\s+x[²2^]+\/(\d+)\s*\+\s*y[²2^]+\/(\d+)\s*=\s*1\s*;\s*c\s*=\s*\??\s*$/i;
+const HYPER_EQ_C2_RE = /^Hip[ée]rbole\s+x[²2^]+\/(\d+)\s*-\s*y[²2^]+\/(\d+)\s*=\s*1\s*;\s*c\^?2\s*=\s*a\^?2\s*\+\s*b\^?2\s*=\s*\??\s*$/i;
+const HYPER_EQ_C_RE = /^Hip[ée]rbole\s+x[²2^]+\/(\d+)\s*-\s*y[²2^]+\/(\d+)\s*=\s*1\s*;\s*c\s*=\s*\??\s*$/i;
+const HYPER_ASYMPTOTE_RE = /^Hip[ée]rbole\s+x[²2^]+\/(\d+)\s*-\s*y[²2^]+\/(\d+)\s*=\s*1\s*;\s*ass[íi]ntota\s+m\s*=\s*b\/a\s*=\s*\??\s*$/i;
+const CONIC_AB_RE = /^x[²2^]+\/(\d+)\s*([+\-])\s*y[²2^]+\/(\d+)\s*=\s*1\s*;\s*([ab])\s*=\s*\??\s*$/i;
+const CONIC_SEMI_RE = /^x[²2^]+\/(\d+)\s*\+\s*y[²2^]+\/(\d+)\s*=\s*1\s*;\s*semi-eixo\s+(maior|menor)\s+([ab])\s*=\s*\??\s*$/i;
+const CIRCLE_HAS_POINT_RE = /^x[²2^]+\+y[²2^]+\s*=\s*(\d+)\s*;\s*ponto\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+est[áa]\s+na\s+circunfer[êe]ncia\?\s*\(\s*1\s*=\s*sim\s*,\s*0\s*=\s*n[ãa]o\s*\)\s*$/i;
+const PARABOLA_ZEROS_RE = /^Par[áa]bola\s+y\s*=\s*x[²2^]+\s*-\s*(\d+)\s*;\s*zeros:\s*abs\(x\)\s*=\s*\??\s*$/i;
+// Trig identities
+// normalize: sen→sin, tg→tan, ²→^2 (when attached to base).
+const COS_FROM_SIN_RE = /^Se\s+cos\s+θ\s*=\s*(\d+(?:\.\d+)?)\s*,\s*sin\s+θ\s*=\s*\??\s*$/i;
+const SIN_FROM_COS_RE = /^Se\s+sin\s+θ\s*=\s*(\d+(?:\.\d+)?)\s*,\s*cos\^?2\s*θ\s*=\s*\??\s*$/i;
+const SEC_FROM_TG_RE = /^1\s*\+\s*tan\^?2\s*θ\s*=\s*sec\^?2\s*θ\s*;\s*se\s+tan\s+θ\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*sec\^?2\s*θ\s*=\s*\??\s*$/i;
+// Homothety scaling
+const HOMOTHETY_LEN_RE = /^Quadrado\s+lado\s*=\s*(\d+(?:\.\d+)?)\s+com\s+homotetia\s+k\s*=\s*(\d+(?:\.\d+)?)\s*:\s*novo\s+lado\s*=\s*\??\s*$/i;
+const HOMOTHETY_AREA_RE = /^Quadrado\s+lado\s*=\s*(\d+(?:\.\d+)?)\s+com\s+homotetia\s+k\s*=\s*(\d+(?:\.\d+)?)\s*:\s*nova\s+[áa]rea\s*=\s*\??\s*$/i;
+// Translation total: T(a,b) leva (0,0) para: x' = ?
+const T_FROM_ORIGIN_RE = /^T\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s+leva\s+\(\s*0\s*,\s*0\s*\)\s+para\s*:\s*([xy])'\s*=\s*\??\s*$/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -3039,6 +3075,215 @@ function verify(question, answer, type) {
     const expected = (6 - v) / 6;
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+  }
+  // Line slope from y = mx + b
+  const lns = question.match(LINE_SLOPE_RE);
+  if (lns) {
+    const expected = Number(lns[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'slope' };
+  }
+  // y at x for y = mx + b
+  const lya = question.match(LINE_YAT_RE);
+  if (lya) {
+    const m = lya[1] === '' || lya[1] == null ? 1 : Number(lya[1]);
+    const b1 = (lya[2] === '-' ? -1 : 1) * Number(lya[3]);
+    const x = Number(lya[4]);
+    const expected = m * x + b1;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'y_at_x' };
+  }
+  // zero of y = mx + b
+  const lz = question.match(LINE_ZERO_RE);
+  if (lz) {
+    const m = lz[1] === '' || lz[1] == null ? 1 : Number(lz[1]);
+    const b1 = (lz[2] === '-' ? -1 : 1) * Number(lz[3]);
+    if (m !== 0) {
+      const expected = -b1 / m;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'y_at_x' };
+    }
+  }
+  // Parallel lines (same slope)
+  const lps = question.match(LINES_PARALLEL_RE);
+  if (lps) {
+    const expected = Number(lps[1]) === Number(lps[2]) ? 1 : 0;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'slope' };
+  }
+  // Slope product
+  const spp = question.match(SLOPE_PRODUCT_RE);
+  if (spp) {
+    const parse = (s) => { const m = s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+)$/); return m ? Number(m[1]) / Number(m[2]) : Number(s); };
+    const expected = parse(spp[1]) * parse(spp[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'slope' };
+  }
+  // Point-to-line distance |ax+by+c|/√(a²+b²)
+  const pld = question.match(POINT_LINE_DIST_RE);
+  if (pld) {
+    const A = Number(pld[1]), bS = pld[2] === '-' ? -1 : 1, B = bS * Number(pld[3]);
+    const cS = pld[4] === '-' ? -1 : 1, C = cS * Number(pld[5]);
+    const x0 = Number(pld[6]), y0 = Number(pld[7]);
+    const expected = Math.abs(A * x0 + B * y0 + C) / Math.sqrt(A * A + B * B);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'distance' };
+  }
+  const pldNC = question.match(POINT_LINE_DIST_NOCONST_RE);
+  if (pldNC) {
+    const A = Number(pldNC[1]), bS = pldNC[2] === '-' ? -1 : 1, B = bS * Number(pldNC[3]);
+    const x0 = Number(pldNC[4]), y0 = Number(pldNC[5]);
+    const expected = Math.abs(A * x0 + B * y0) / Math.sqrt(A * A + B * B);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'distance' };
+  }
+  // Midpoint dist to origin: √((x1+x2)²/4 + (y1+y2)²/4)
+  const m2o = question.match(MID_TO_ORIG_RE);
+  if (m2o) {
+    const mx = (Number(m2o[1]) + Number(m2o[3])) / 2, my = (Number(m2o[2]) + Number(m2o[4])) / 2;
+    const expected = Math.sqrt(mx * mx + my * my);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'distance' };
+  }
+  // y on line ax+by+c=0 at x = N: y = -(a·N+c)/b
+  const pol = question.match(POINT_ON_LINE_RE);
+  if (pol) {
+    const A = Number(pol[1]), bS = pol[2] === '-' ? -1 : 1, B = bS * (pol[3] ? Number(pol[3]) : 1);
+    const cS = pol[4] === '-' ? -1 : 1, C = cS * Number(pol[5]);
+    const x = Number(pol[6]);
+    if (B !== 0) {
+      const expected = -(A * x + C) / B;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'y_at_x' };
+    }
+  }
+  // Conic constants & eccentricity
+  if (CONIC_CIRCLE_E_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'circle_radius' };
+  }
+  const elE = q.match(ELLIPSE_E_RE) || q.match(HYPER_E_RE);
+  if (elE) {
+    const expected = Number(elE[2]) / Number(elE[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  const elC = q.match(ELLIPSE_C_FROM_AB_RE);
+  if (elC) {
+    const A = Number(elC[1]), B = Number(elC[2]);
+    const expected = Math.sqrt(A * A - B * B);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  const ellipseCircle = q.match(ELLIPSE_IS_CIRCLE_RE);
+  if (ellipseCircle) {
+    const expected = Number(ellipseCircle[1]) === Number(ellipseCircle[2]) ? 1 : 0;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  const eqC2 = q.match(ELLIPSE_EQ_C2_RE);
+  if (eqC2) {
+    const A2 = Number(eqC2[1]), B2 = Number(eqC2[2]);
+    const expected = Math.max(A2, B2) - Math.min(A2, B2);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  const eqC = q.match(ELLIPSE_EQ_C_RE);
+  if (eqC) {
+    const A2 = Number(eqC[1]), B2 = Number(eqC[2]);
+    const expected = Math.sqrt(Math.abs(A2 - B2));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  const hC2 = q.match(HYPER_EQ_C2_RE);
+  if (hC2) {
+    const expected = Number(hC2[1]) + Number(hC2[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  const hC = q.match(HYPER_EQ_C_RE);
+  if (hC) {
+    const expected = Math.sqrt(Number(hC[1]) + Number(hC[2]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  const hAS = q.match(HYPER_ASYMPTOTE_RE);
+  if (hAS) {
+    const expected = Math.sqrt(Number(hAS[2])) / Math.sqrt(Number(hAS[1]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'slope' };
+  }
+  const cab = q.match(CONIC_AB_RE);
+  if (cab) {
+    const N = Number(cab[cab[4].toLowerCase() === 'a' ? 1 : 3]);
+    const expected = Math.sqrt(N);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  const csem = q.match(CONIC_SEMI_RE);
+  if (csem) {
+    const A2 = Number(csem[1]), B2 = Number(csem[2]);
+    const which = csem[3].toLowerCase() === 'maior' ? Math.max(A2, B2) : Math.min(A2, B2);
+    const expected = Math.sqrt(which);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  const chp = q.match(CIRCLE_HAS_POINT_RE);
+  if (chp) {
+    const R2 = Number(chp[1]), x = Number(chp[2]), y = Number(chp[3]);
+    const expected = Math.abs(x * x + y * y - R2) < 1e-9 ? 1 : 0;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  const pz = q.match(PARABOLA_ZEROS_RE);
+  if (pz) {
+    const expected = Math.sqrt(Number(pz[1]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'parabola_vertex' };
+  }
+  // Trig identities
+  const csfs = q.match(COS_FROM_SIN_RE);
+  if (csfs) {
+    const c = Number(csfs[1]);
+    if (Math.abs(c) <= 1) {
+      const expected = Math.sqrt(1 - c * c);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'trig_meta' };
+    }
+  }
+  const sfcs = q.match(SIN_FROM_COS_RE);
+  if (sfcs) {
+    const s = Number(sfcs[1]);
+    const expected = 1 - s * s;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'trig_meta' };
+  }
+  const sfg = q.match(SEC_FROM_TG_RE);
+  if (sfg) {
+    const t = Number(sfg[1]);
+    const expected = 1 + t * t;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'trig_meta' };
+  }
+  // Homothety scaling
+  const hl = q.match(HOMOTHETY_LEN_RE);
+  if (hl) {
+    const expected = Number(hl[1]) * Number(hl[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'homothety' };
+  }
+  const haR = q.match(HOMOTHETY_AREA_RE);
+  if (haR) {
+    const expected = Number(haR[1]) ** 2 * Number(haR[2]) ** 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'homothety' };
+  }
+  // T(a,b) leva (0,0) para: x'/y'
+  const tFO = question.match(T_FROM_ORIGIN_RE);
+  if (tFO) {
+    const expected = tFO[3].toLowerCase() === 'x' ? Number(tFO[1]) : Number(tFO[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'translate' };
   }
   // Calculus-type pure-arithmetic series sums: '<arith> ≈ ?' / '<arith> = ?'.
   if (type === 'calculus') {

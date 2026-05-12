@@ -239,6 +239,22 @@ const CASES = [
   { q: 'Número de termos na expansão de (a+b)^6 = ?', a: '7', type: 'mental_math', want: true },
   { q: 'Termo k=2 de (x+1)^5 — coeficiente = ?', a: '10', type: 'mental_math', want: true },
   { q: 'Linha 4 — coeficiente do meio = ?', a: '6', type: 'mental_math', want: true },
+  // Line/conic/trig identity patterns
+  { q: 'Reta y = -3x+2: m = ?', a: '-3', type: 'geometry', want: true },
+  { q: 'Reta y=x+3 — ponto x=5: y = ?', a: '8', type: 'geometry', want: true },
+  { q: 'Reta y=2x-1 — zero (x tal que y=0): x = ?', a: '0.5', type: 'geometry', want: true },
+  { q: 'Reta 3x+4y-5=0; ponto (0,0): d = ?', a: '1', type: 'geometry', want: true },
+  { q: 'Ponto médio de segmento com extremos (0,0) e (6,8): dist do orig = ?', a: '5', type: 'geometry', want: true },
+  { q: 'Elipse a=5, c=3: e = ?', a: '0.6', type: 'geometry', want: true },
+  { q: 'Elipse com a=10, b=6: c = ?', a: '8', type: 'geometry', want: true },
+  { q: 'Elipse x²/25 + y²/16 = 1; c = ?', a: '3', type: 'geometry', want: true },
+  { q: 'Hipérbole x²/9 - y²/16 = 1; c = ?', a: '5', type: 'geometry', want: true },
+  { q: 'x²+y²=25; ponto (3,4) está na circunferência? (1=sim, 0=não)', a: '1', type: 'geometry', want: true },
+  { q: 'Parábola y=x²-4; zeros: |x| = ?', a: '2', type: 'geometry', want: true },
+  { q: 'Se cos θ = 0.8, sen θ = ?', a: '0.6', type: 'geometry', want: true },
+  { q: '1 + tg²θ = sec²θ; se tg θ=1, sec²θ = ?', a: '2', type: 'geometry', want: true },
+  { q: 'Quadrado lado=4 com homotetia k=3: novo lado = ?', a: '12', type: 'geometry', want: true },
+  { q: 'Quadrado lado=4 com homotetia k=3: nova área = ?', a: '144', type: 'geometry', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
