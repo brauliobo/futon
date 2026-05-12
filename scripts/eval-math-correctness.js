@@ -1047,8 +1047,8 @@ const INDEP_PROB_COM_RE = /^A\s+e\s+B\s+independentes\s+com\s+P\(A\)\s*=\s*(\d+(
 const BIN_ARROW_RE = /^Bin\(\s*(\d+)\s*,\s*(\d+(?:\.\d+)?)\s*\)\s*→\s*([^?]+?)\s*=\s*(?:[^?]+?\s*=\s*)?\??\s*$/i;
 // 'Trig integration sum-to-product helpers'
 const TRIG_INT_CC_RE = /^Ao\s+integrar\s+cos\(\s*(\d+)\s*\*?\s*x\)\s*cos\(\s*(\d+)?\s*\*?\s*x\)\s*,\s*converta\s+em\s+soma:\s*\(cos\s+(\d+)\s*\*?\s*x\s*\+\s*cos\s+\?\s*\)\/2\s*$/i;
-const TRIG_INT_SC_RE = /^Ao\s+integrar\s+sen\(\s*(\d+)\s*\*?\s*x\)\s*cos\(\s*(\d+)\s*\*?\s*x\)\s*,\s*converta\s+em\s+soma:\s*\(sen\s+(\d+)\s*\*?\s*x\s*\+\s*sen\s+\?\s*\)\/2\s*$/i;
-const TRIG_INT_SS_RE = /^Ao\s+integrar\s+sen\(\s*(\d+)\s*\*?\s*x\)\s*sen\(\s*(\d+)?\s*\*?\s*x\)\s*:\s*\(cos\s+\?\s*-\s*cos\s+(\d+)\s*\*?\s*x\)\/2\s*$/i;
+const TRIG_INT_SC_RE = /^Ao\s+integrar\s+sin\(\s*(\d+)\s*\*?\s*x\)\s*cos\(\s*(\d+)\s*\*?\s*x\)\s*,\s*converta\s+em\s+soma:\s*\(sin\s+(\d+)\s*\*?\s*x\s*\+\s*sin\s+\?\s*\)\/2\s*$/i;
+const TRIG_INT_SS_RE = /^Ao\s+integrar\s+sin\(\s*(\d+)\s*\*?\s*x\)\s*sin\(\s*(\d+)?\s*\*?\s*x\)\s*:\s*\(cos\s+\?\s*-\s*cos\s+(\d+)\s*\*?\s*x\)\/2\s*$/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
