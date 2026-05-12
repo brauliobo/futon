@@ -71,6 +71,47 @@ const CASES = [
   // 6A comparison
   { q: 'Qual tem mais: ●● ou ●●●●●? (2 ou 5)', a: '5', type: 'count', want: true },
 
+  // V/F identity questions
+  { q: 'sen(a)+sen(b) = sen(a+b) (V/F)?', a: 'F', type: 'trigonometry', want: true },
+  // Inverse trig with degree answer
+  { q: 'arccos(1/2) = ?', a: '60°', type: 'trigonometry', want: true },
+  // Double angle (single given)
+  { q: 'Se cos(x) = 0, cos(2x) = ?', a: '-1', type: 'trigonometry', want: true },
+  // Law of cosines / Law of sines
+  { q: 'a=10, b=10, C=60° — c² = ?', a: '100', type: 'geometry', want: true },
+  { q: 'a=10, A=30°, B=90°, b = ?', a: '20', type: 'trigonometry', want: true },
+  // 2D vector ops
+  { q: '||(3,4)|| = ?', a: '5', type: 'geometry', want: true },
+  { q: '(2,3)·(4,-1) = ?', a: '5', type: 'geometry', want: true },
+  { q: '2·(3,4) = ?', a: '(6, 8)', type: 'geometry', want: true },
+  // 3D vector ops
+  { q: '(1,2,3)·(4,5,6) = ?', a: '32', type: 'geometry', want: true },
+  // Matrix
+  { q: 'A=[1 2; 3 4]: det(A) = ?', a: '-2', type: 'algebra', want: true },
+  { q: 'A=[1 2; 3 4]: tr(A) = ?', a: '5', type: 'algebra', want: true },
+  // Transformations
+  { q: 'Ponto (3,4) transladado por T(2,1): x\' = ?', a: '5', type: 'geometry', want: true },
+  { q: 'Reflexão de (3,5) no eixo x: y\' = ?', a: '-5', type: 'geometry', want: true },
+  // Coordinate geometry
+  { q: 'Distância entre (0,0) e (5,12) = ?', a: '13', type: 'geometry', want: true },
+  { q: 'Ponto médio entre (2,4) e (8,10): x_M = ?', a: '5', type: 'geometry', want: true },
+  // Probability dictionary
+  { q: 'P(cara em uma moeda) = ?', a: '1/2', type: 'mental_math', want: true },
+  { q: 'Eventos mutuamente exclusivos têm P(A∩B) = ?', a: '0', type: 'mental_math', want: true },
+  // Combinatorics
+  { q: 'C(5,2) = ?', a: '10', type: 'mental_math', want: true },
+  { q: 'Anagramas de MAMA = ?', a: '6', type: 'mental_math', want: true },
+  // Statistics
+  { q: 'Variância de {2,4,6} (divisão por n) = ?', a: '2.67', type: 'mental_math', want: true },
+  // Normal distribution
+  { q: '% dentro de ±1σ = ?', a: '68', type: 'mental_math', want: true },
+  { q: 'μ=100, σ=15 — z para x=130 = ?', a: '2', type: 'mental_math', want: true },
+  // Absolute value
+  { q: '|x + -5| = 5', a: '0', type: 'absolute_value', want: true },
+  // Polygon
+  { q: 'Volume do cubo lado 3 = ?', a: '27', type: 'geometry', want: true },
+  { q: 'Soma ângulos internos do hexágono (n=6) = ?°', a: '720', type: 'geometry', want: true },
+
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
   { q: '7 × 9 =', a: '64', type: 'multiplication', want: false },
