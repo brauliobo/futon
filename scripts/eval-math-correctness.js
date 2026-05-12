@@ -1183,6 +1183,13 @@ const HALF_SQ_FROM_COS_RE = /^(?:sen|sin|cos)\(x\/2\)\s*=\s*±√\(\(1\s*([+\-])
 const TAN_HALF_NUMERIC_RE = /^tan\(x\/2\)\s+com\s+(?:sen|sin)\(x\)\s*=\s*\(?(\d+\/\d+|\d+(?:\.\d+)?)\)?\s*,\s*cos\(x\)\s*=\s*\(?(\d+\/\d+|\d+(?:\.\d+)?)\)?\s*=\s*\(1-cos\s+x\)\/(?:sen|sin)\s+x\s*=\s*\??\s*$/i;
 // 'cos(x/2) com cos(x)=V (agudo) = ?' → √((1+V)/2)
 const COS_HALF_AGUDO_RE = /^cos\(x\/2\)\s+com\s+cos\(x\)\s*=\s*\(?(\d+\/\d+|\d+(?:\.\d+)?)\)?\s+\(agudo\)\s*=\s*\??\s*$/i;
+// Half-open interval [a,b): inclui a → sim; inclui b → não.
+const INTERVAL_INCL_RE = /^Intervalo\s+\[\s*(\d+(?:\.\d+)?)\s*,\s*(\d+(?:\.\d+)?)\s*\)\s+inclui\s+(\d+(?:\.\d+)?)\?/i;
+// Known mathematical truth V/F statements
+// Only matches when question explicitly contains V/F marker — avoid false positives on (sim/não) variants.
+const V_TRUTHS_RE = /^(?:Soma\s+das\s+frequ[êe]ncias\s*=\s*total\s+de\s+dados:?\s*V\/F\??|Frequ[êe]ncia\s+acumulada\s+final\s*=\s*total\s+de\s+dados:?\s*V\/F\??|Quanto\s+maior\s+\|z\|[\s\S]+mais\s+afastado[\s\S]*\(V\/F\)\?|z\s*=\s*0\s+corresponde\s+a\s+x\s*=\s*μ\s*\(V\/F\)\?|Para\s+multiplicar\s*,\s*colunas\s+de\s+A\s*=\s*linhas\s+de\s+B\s*\(V\/F\)\?|Matriz\s+identidade\s+tem\s+1\s+na\s+diagonal\s+e\s+0\s+fora\s*\(V\/F\)\?|A\s*\+\s*0\s*=\s*A\s*\(V\/F\)\?|A\s*\+\s*B\s*=\s*B\s*\+\s*A\s*\(V\/F\)\?|Opera[çc][õo]es\s+elementares[\s\S]*\(V\/F\)\?|Ap[óo]s\s+Gauss[\s\S]*solu[çc][ãa]o\s+[úu]nica[\s\S]*\(V\/F\)\?|Se\s+x\s*=\s*1\s*,\s*y\s*=\s*2\s*,\s*z\s*=\s*3\s+satisfaz[\s\S]*\(V\/F\)\?)/i;
+// Dictionary of yes/no answers for known fact-checks (when answer is sim/não/V/F)
+const SIM_FACT_RE = /^(?:Curva\s+normal\s+[ée]\s+sim[ée]trica|Na\s+normal\s*,\s*m[ée]dia\s*=\s*mediana\s*=\s*moda|Mesma\s+m[ée]dia[^?]+dispers[õo]es\s+diferentes\s+[ée]\s+poss[íi]vel)\?\s*\((?:sim\/n[ãa]o|n[ãa]o\/sim)\)/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -6770,6 +6777,22 @@ function verify(question, answer, type) {
       const an = toNumber(tryEval(a));
       if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'half_angle' };
     }
+  }
+  // Half-open interval inclusion: [a,b) — a yes, b no
+  const ivi = question.match(INTERVAL_INCL_RE);
+  if (ivi) {
+    const a1 = Number(ivi[1]), b1 = Number(ivi[2]), x = Number(ivi[3]);
+    const isIncluded = x >= a1 && x < b1;
+    const expected = isIncluded ? 'sim' : 'não';
+    return { ok: String(answer).trim().toLowerCase() === expected, computed: expected, kind: 'identity_vf' };
+  }
+  // Known mathematical truth V/F → V
+  if (V_TRUTHS_RE.test(question)) {
+    return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'identity_vf' };
+  }
+  // Known yes/no truth → sim
+  if (SIM_FACT_RE.test(question)) {
+    return { ok: String(answer).trim().toLowerCase() === 'sim', computed: 'sim', kind: 'identity_vf' };
   }
   // cos(x/2) acute from cos(x) — literal: √((1+V)/2)
   const cha = question.match(COS_HALF_AGUDO_RE);
