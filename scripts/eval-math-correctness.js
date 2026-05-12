@@ -57,6 +57,7 @@ const normalize = (s) =>
     .replace(/(?<![a-zA-Z])cosseno(?![a-zA-Z])/g, 'cos')
     .replace(/(?<![a-zA-Z])tg(?![a-zA-Z])/g, 'tan')
     .replace(/(?<![a-zA-Z])cotg(?![a-zA-Z])/g, 'cot')
+    .replace(/(?<![a-zA-Z])ln(?=\s*\()/g, 'log')
     // "N°" → "(N deg)" so mathjs treats the argument as degrees. Don't
     // swallow a leading '-' that's really a subtraction ('45°-45°' must
     // stay as '(45 deg)-(45 deg)', not '(45 deg)(-45 deg)').
@@ -379,6 +380,15 @@ const TRIG_SOL_MENOR_RE = /^menor(?:\s+solu[çc][ãa]o)?(?:\s+positiva)?\s+(?:de
 const TRIG_SOL_PLAIN_RE = /^solu[çc][ãa]o\s+de\s+(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^?]+?)\s+em\s+\[0°?\s*,\s*360°?\)\s*\??\s*$/i;
 // 'kFN(x) = E → FN(x) = ?' → E/k
 const TRIG_DIVIDE_RE = /^(\d+)\s*(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^→]+?)\s*→\s*\2\(x\)\s*=\s*\??\s*$/i;
+// Trig solutions filtered to a sub-range [0°, U°].
+const TRIG_NUM_IN_RANGE_RE = /^em\s+\[0°?\s*,\s*(\d+)°?\],?\s*n[úu]mero\s+de\s+solu[çc][õo]es\s+de\s+(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^?]+?)\??\s*$/i;
+const TRIG_RANGE_FIRST_RE = /^em\s+\[0°?\s*,\s*(\d+)°?\],?\s*solu[çc][õo]es\s+de\s+(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^:?]+?)\s*:\s*\??\s*$/i;
+// 'Em [0°, U°], soluções de FN(x) = V: (X° e ?)' → 2nd solution in range
+const TRIG_RANGE_SECOND_RE = /^em\s+\[0°?\s*,\s*(\d+)°?\],?\s*solu[çc][õo]es\s+de\s+(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^:?]+?)\s*:\s*\(\s*\d+°?\s+e\s+\?\s*\)\s*$/i;
+// 'Quantas soluções tem FN(x) = V em [0°, 360°)?'
+const TRIG_QUANTAS_RE = /^quantas\s+solu[çc][õo]es\s+tem\s+(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^?]+?)\s+em\s+\[0°?\s*,\s*360°?\)\s*\??\s*$/i;
+// 'Soluções menores de FN(x) = V em [0°, 360°): (primeira)'
+const TRIG_MENORES_RE = /^solu[çc][õo]es\s+menores\s+de\s+(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^?:]+?)\s+em\s+\[0°?\s*,\s*360°?\)\s*:\s*\(\s*primeira\s*\)\s*$/i;
 // Binomial / Pascal identities & counting.
 const C_CONST_RE = /^C\(\s*n\s*,\s*([01n])\s*\)\s*=\s*\??\s*$/i;
 const C_SYMMETRY_PARTIAL_RE = /^C\(\s*(\d+)\s*,\s*(\d+)\s*\)\s*=\s*C\(\s*(\d+)\s*,\s*\?\s*\)\s*$/i;
@@ -2217,6 +2227,62 @@ function verify(question, answer, type) {
     if (Math.abs(an - expectedDeg) < 1e-2) return true;
     return Math.abs(an - expectedDeg * Math.PI / 180) < 1e-3;
   };
+  // Trig range filter: filter trigSolveDeg() output to [0, upper] inclusive.
+  // If upper is a full period (≥360°) and 0 is a solution, include 360° as well —
+  // matches author convention for "[0°, 360°]" (closed bracket) counting.
+  const trigSolveRange = (fnRaw, rhsExpr, upper) => {
+    const all = trigSolveDeg(fnRaw, rhsExpr);
+    if (!all) return null;
+    const within = all.filter(s => s <= upper + 1e-6);
+    if (upper >= 360 - 1e-6 && all.includes(0)) within.push(360);
+    return within;
+  };
+  // 'Em [0°, U°], número de soluções de FN(x) = V?'
+  const tnRange = question.match(TRIG_NUM_IN_RANGE_RE);
+  if (tnRange) {
+    const sols = trigSolveRange(tnRange[2], tnRange[3], Number(tnRange[1]));
+    if (sols) {
+      const expected = sols.length;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'trig_meta' };
+    }
+  }
+  const trRangeF = question.match(TRIG_RANGE_FIRST_RE);
+  if (trRangeF) {
+    const sols = trigSolveRange(trRangeF[2], trRangeF[3], Number(trRangeF[1]));
+    if (sols && sols.length) {
+      const expected = sols[0];
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+    }
+  }
+  const trRangeS = question.match(TRIG_RANGE_SECOND_RE);
+  if (trRangeS) {
+    const sols = trigSolveRange(trRangeS[2], trRangeS[3], Number(trRangeS[1]));
+    if (sols && sols.length >= 2) {
+      const expected = sols[1];
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+    }
+  }
+  const trQuantas = question.match(TRIG_QUANTAS_RE);
+  if (trQuantas) {
+    const sols = trigSolveDeg(trQuantas[1], trQuantas[2]);
+    if (sols) {
+      const expected = sols.length;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'trig_meta' };
+    }
+  }
+  const trMenores = question.match(TRIG_MENORES_RE);
+  if (trMenores) {
+    const sols = trigSolveDeg(trMenores[1], trMenores[2]);
+    if (sols && sols.length) {
+      const expected = sols[0];
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+    }
+  }
   const trigSolFirst = question.match(TRIG_SOL_FIRST_RE);
   if (trigSolFirst) {
     const sols = trigSolveDeg(trigSolFirst[1], trigSolFirst[2]);
@@ -2562,6 +2628,50 @@ function verify(question, answer, type) {
   if (/^para\s+p[\-\s]?s[ée]rie\s+convergir\s*,?\s*p\s*[>≥]\s*\??/i.test(q)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === 1, computed: '1', kind: 'pg_converge' };
+  }
+  // Convergence-radius-of-1 constants — '|x| < ?' / '|x| ≥ ?' / 'x > ?' / 'x ∈ (-1, ?]' for ln(1+x)/1/(1-x)
+  if (/^converge\s+para\s+\|x\|\s*<\s*\??\s*$/i.test(question) ||
+      /^s[ée]rie\s+diverge\s+se\s+\|x\|\s*≥\s*\??\s*$/i.test(question) ||
+      /^s[ée]rie\s+(?:log|ln)\(1\+x\)\s+n[ãa]o\s+converge\s+em\s+x\s*>\s*\??\s*$/i.test(q) ||
+      /^(?:log|ln)\(1\+x\)\s+converge\s+em\s+x\s*∈\s*\(-1\s*,\s*\?\s*\]\s*$/i.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'pg_converge' };
+  }
+  // 'ln(1) = ?' → 0  (q normalized has 'log(1)')
+  if (/^(?:log|ln)\(1\)\s*=\s*\??\s*$/i.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'expression' };
+  }
+  // 'e ≈ ?' / 'Valor exato de ln(2) ≈ ?' / 'Valor real de e^0.1 ≈ ?'  — numeric constants
+  const eConst = q.match(/^(?:e|valor\s+(?:exato|real)\s+de\s+(.+?))\s*≈?\s*\?\s*(?:\([^)]*\))?\s*$/i);
+  if (eConst) {
+    let target = eConst[1] ? eConst[1].trim() : 'e';
+    target = target.replace(/\s*\(valor[^)]*\)\s*$/i, '').trim();
+    try {
+      const val = toNumber(math.evaluate(normalize(target)));
+      const an = toNumber(tryEval(a));
+      if (val != null && an != null) {
+        return { ok: Math.abs(an - val) < 0.01, computed: `${val}`, kind: 'expression' };
+      }
+    } catch {}
+  }
+  // Calculus-type pure-arithmetic series sums: '<arith> ≈ ?' / '<arith> = ?'.
+  if (type === 'calculus') {
+    const m = question.match(/(?:[:—,]|primeiros\s+\d+\s+termos[^:]*=|com\s+\d+\s+termos[^:]*:)\s*([0-9+\-*/.()\s!^]+?)\s*[≈=]\s*\?\s*(?:\([^)]*\))?\s*$/i);
+    if (m) {
+      let expr = m[1].replace(/(\d+)!/g, (_, d) => {
+        let r = 1; for (let i = 2; i <= Number(d); i++) r *= i; return String(r);
+      });
+      if (/^[0-9+\-*/.()\s^]+$/.test(expr) && /[+\-*/]/.test(expr)) {
+        try {
+          const val = toNumber(math.evaluate(expr));
+          const an = toNumber(tryEval(a));
+          if (val != null && an != null && Math.abs(an - val) < 0.01) {
+            return { ok: true, computed: `${val}`, kind: 'expression' };
+          }
+        } catch {}
+      }
+    }
   }
   // 'kFN(x) = E → FN(x) = ?' → E/k (simple algebra divide)
   const tdv = question.match(TRIG_DIVIDE_RE);

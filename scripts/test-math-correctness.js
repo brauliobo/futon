@@ -202,6 +202,14 @@ const CASES = [
   { q: 'Retas perpendiculares têm produto dos coef. angulares = ?', a: '-1', type: 'geometry', want: true },
   { q: 'Triângulo com A=45°, B=60°, C=? °', a: '75', type: 'geometry', want: true },
   { q: 'a=10, A=30°, B=90° — b = ?', a: '20', type: 'geometry', want: true },
+  // Trig range solver + calculus constants
+  { q: 'Em [0°, 360°], número de soluções de cos(x) = 0?', a: '2', type: 'trigonometry', want: true },
+  { q: 'Em [0°, 180°], soluções de sen(x) = 1/2: (30° e ?)', a: '150°', type: 'trigonometry', want: true },
+  { q: 'Quantas soluções tem sen(x) = 1/2 em [0°, 360°)?', a: '2', type: 'trigonometry', want: true },
+  { q: 'Converge para |x| < ?', a: '1', type: 'calculus', want: true },
+  { q: 'ln(1) = ?', a: '0', type: 'calculus', want: true },
+  { q: 'Valor exato de ln(2) ≈ ?', a: '0.693', type: 'calculus', want: true },
+  { q: 'Primeiros 3 termos de e^x em x=1: 1+1+0.5 = ?', a: '2.5', type: 'calculus', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
