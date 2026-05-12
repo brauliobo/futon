@@ -1163,6 +1163,26 @@ const SUM_EXP_CONVERGES_RE = /^Σ\s*x[ⁿn]\s*\/\s*n!\s+converge\s+para\s+todo\s
 // Series convergence V/F
 const SERIES_VF_RE = /^Σ\s*([\s\S]+?)\s+(converge|diverge)[^(]*\(V\/F\)\?\s*$/i;
 const SERIES_VERB_RE = /^Σ\s*([\s\S]+?):\s*\((converge|diverge)\/(?:diverge|converge)\)\s*$/i;
+// Trig identity V/F: '(sen|cos|tan)(N°) = <expr> (V/F)?'
+const TRIG_IDENT_VF_RE = /^(sen|sin|cos|tan)\(?\s*(\d+(?:\.\d+)?)°\)?\s*=\s*(.+?)\s*\(V\/F\)\?\s*$/i;
+// 'Portanto Σ <expr> diverge (V/F)?' — strip 'Portanto'
+const SERIES_PORTANTO_RE = /^Portanto\s+Σ\s*([\s\S]+?)\s+(converge|diverge)\s*\(V\/F\)\?\s*$/i;
+// 'Σ <expr> é uma série geométrica (V/F)?' — true iff matches geometric form a·r^n
+const SERIES_IS_GEOM_RE = /^Σ\s*([\s\S]+?)\s+[ée]\s+uma\s+s[ée]rie\s+geom[ée]trica\s*\(V\/F\)\?\s*$/i;
+// 'Σ <expr> ... dominado por <bound>, logo converge (V/F)?' — V if both expr and bound converge
+const SERIES_DOMINATED_RE = /^Σ\s*([\s\S]+?)\s+[ée]\s+dominado\s+por\s+([\s\S]+?)\s*,\s*logo\s+converge\s*\(V\/F\)\?\s*$/i;
+// 'PG com |q|<1 converge (V/F)?' → V
+const PG_CONV_VF_RE = /^PG\s+com\s+\|q\|\s*<\s*1\s+converge\s*\(V\/F\)\?\s*$/i;
+// 'Série de Taylor converge ao menos dentro do raio de convergência (V/F)?' → V
+const TAYLOR_RADIUS_VF_RE = /^S[ée]rie\s+de\s+Taylor\s+converge\s+ao\s+menos\s+dentro\s+do\s+raio\s+de\s+converg[êe]ncia\s*\(V\/F\)\?\s*$/i;
+// 'Multiplicar magnitudes — soma argumentos (V/F)?' / 'Dividir magnitudes — subtrair argumentos (V/F)?' → V
+const POLAR_MULDIV_VF_RE = /^(?:Multiplicar|Dividir)\s+magnitudes\s*[—-]+\s*(?:soma|subtrair)\s+argumentos\s*\(V\/F\)\?\s*$/i;
+// 'sen(x/2) = ±√((1-cos x)/2). Se cos(x)=V, sen(x/2)² = ?' → (1-V)/2 (or (1+V)/2 for cos(x/2))
+const HALF_SQ_FROM_COS_RE = /^(?:sen|sin|cos)\(x\/2\)\s*=\s*±√\(\(1\s*([+\-])\s*cos\s+x\)\/2\)\.\s*Se\s+cos\(x\)\s*=\s*(\d+(?:\.\d+)?|\d+\/\d+)\s*,\s*(?:sen|sin|cos)\(x\/2\)[²2^]+\s*=\s*\??\s*$/i;
+// 'tan(x/2) com sen(x)=A, cos(x)=B = (1-cos x)/sen x = ?'
+const TAN_HALF_NUMERIC_RE = /^tan\(x\/2\)\s+com\s+(?:sen|sin)\(x\)\s*=\s*\(?(\d+\/\d+|\d+(?:\.\d+)?)\)?\s*,\s*cos\(x\)\s*=\s*\(?(\d+\/\d+|\d+(?:\.\d+)?)\)?\s*=\s*\(1-cos\s+x\)\/(?:sen|sin)\s+x\s*=\s*\??\s*$/i;
+// 'cos(x/2) com cos(x)=V (agudo) = ?' → √((1+V)/2)
+const COS_HALF_AGUDO_RE = /^cos\(x\/2\)\s+com\s+cos\(x\)\s*=\s*\(?(\d+\/\d+|\d+(?:\.\d+)?)\)?\s+\(agudo\)\s*=\s*\??\s*$/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -6677,6 +6697,88 @@ function verify(question, answer, type) {
       const expected = conv ? 'converge' : 'diverge';
       return { ok: String(answer).trim().toLowerCase() === expected, computed: expected, kind: 'pg_converge' };
     }
+  }
+  // 'Portanto Σ <expr> diverge (V/F)?' — Portanto prefix
+  const spt = question.match(SERIES_PORTANTO_RE);
+  if (spt) {
+    const conv = seriesConverges(spt[1]);
+    if (conv !== null) {
+      const expected = (spt[2].toLowerCase() === 'converge') === conv ? 'V' : 'F';
+      return { ok: String(answer).trim().toUpperCase() === expected, computed: expected, kind: 'pg_converge' };
+    }
+  }
+  // 'Σ <expr> é uma série geométrica (V/F)?' — geometric iff expr is a^n form
+  const sgM = question.match(SERIES_IS_GEOM_RE);
+  if (sgM) {
+    const e = sgM[1].replace(/\s+/g, '');
+    const isGeom = /^([\d.]+)\^n$/.test(e) || /^\(?[\d.]+\/[\d.]+\)?\^n$/.test(e) || /^\(-1\)\^n/.test(e);
+    const expected = isGeom ? 'V' : 'F';
+    return { ok: String(answer).trim().toUpperCase() === expected, computed: expected, kind: 'pg_converge' };
+  }
+  // 'Σ <expr> é dominado por <bound>, logo converge (V/F)?' — V if bound converges
+  const sdom = question.match(SERIES_DOMINATED_RE);
+  if (sdom) {
+    const conv = seriesConverges(sdom[2]);
+    if (conv === true) {
+      return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'pg_converge' };
+    }
+  }
+  // PG com |q|<1 converge → V
+  if (PG_CONV_VF_RE.test(question)) {
+    return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'pg_converge' };
+  }
+  if (TAYLOR_RADIUS_VF_RE.test(question)) {
+    return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'identity_vf' };
+  }
+  if (POLAR_MULDIV_VF_RE.test(question)) {
+    return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'identity_vf' };
+  }
+  // Trig identity V/F: compute LHS and RHS numerically and compare
+  const tidv = question.match(TRIG_IDENT_VF_RE);
+  if (tidv) {
+    const fn = tidv[1].toLowerCase().replace('sen', 'sin');
+    const ang = Number(tidv[2]) * Math.PI / 180;
+    let lhs;
+    if (fn === 'sin') lhs = Math.sin(ang);
+    else if (fn === 'cos') lhs = Math.cos(ang);
+    else lhs = Math.tan(ang);
+    try {
+      const rhs = toNumber(math.evaluate(normalize(tidv[3].trim())));
+      if (rhs != null) {
+        const isV = Math.abs(lhs - rhs) < 1e-3;
+        const expected = isV ? 'V' : 'F';
+        return { ok: String(answer).trim().toUpperCase() === expected, computed: expected, kind: 'identity_vf' };
+      }
+    } catch {}
+  }
+  // Half-angle from cos(x)=V: sen(x/2)² = (1-V)/2; cos(x/2)² = (1+V)/2  (raw — √)
+  const hsf = question.match(HALF_SQ_FROM_COS_RE);
+  if (hsf) {
+    const sign = hsf[1] === '-' ? -1 : 1;
+    const cv = hsf[2].match(/^(\d+)\/(\d+)$/) ? Number(hsf[2].split('/')[0]) / Number(hsf[2].split('/')[1]) : Number(hsf[2]);
+    const expected = (1 + sign * cv) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'half_angle' };
+  }
+  // tan(x/2) = (1-cos x)/sen x with given sen(x)=A, cos(x)=B
+  const thn = question.match(TAN_HALF_NUMERIC_RE);
+  if (thn) {
+    const parseF = (s) => { const m = s.match(/^(\d+)\/(\d+)$/); return m ? Number(m[1]) / Number(m[2]) : Number(s); };
+    const senX = parseF(thn[1]), cosX = parseF(thn[2]);
+    if (senX !== 0) {
+      const expected = (1 - cosX) / senX;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'half_angle' };
+    }
+  }
+  // cos(x/2) acute from cos(x) — literal: √((1+V)/2)
+  const cha = question.match(COS_HALF_AGUDO_RE);
+  if (cha) {
+    const parseF = (s) => { const m = s.match(/^(\d+)\/(\d+)$/); return m ? Number(m[1]) / Number(m[2]) : Number(s); };
+    const V = parseF(cha[1]);
+    const expected = Math.sqrt((1 + V) / 2);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'half_angle' };
   }
   // 'P(...|...) ≈ A/(A+B) ≈ ?' → A/(A+B) rounded
   const rxa = question.match(RATIO_APPROX_RE);
