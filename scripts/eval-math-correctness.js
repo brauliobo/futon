@@ -710,6 +710,32 @@ const HOM_TRANSLATE_RE = /^Homotetia\s+k\s*=\s*(-?\d+(?:\.\d+)?)\s+de\s+\((-?\d+
 const PARALLEL_DIST_RE = /^Dist[âa]ncia\s+entre\s+retas\s+paralelas\s+y\s*=\s*x\s*\+\s*(-?\d+(?:\.\d+)?)\s+e\s+y\s*=\s*x\s*-\s*(\d+(?:\.\d+)?)\s*:\s*d\s*=\s*\?\/√2\s*$/i;
 // 'Reta x-y+c=0; ponto (x0,y0): d = ?√2' → |x0-y0+c|/2
 const X_MINUS_Y_DIST_RE = /^Reta\s+x\s*-\s*y\s*([+\-])\s*(\d+(?:\.\d+)?)\s*=\s*0\s*;\s*ponto\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*d\s*=\s*\?√2\s*$/i;
+// Sample variance with formula '{set} — μ=N; σ² = [expr]/D = ?'
+const SAMPLE_VAR_FULL_RE = /^\{[\d,\s.]+\}\s*[—-]+\s*(?:μ|x̄)\s*=\s*-?\d+(?:\.\d+)?\s*;\s*(?:σ²|σ\^?2|s²|s\^?2)\s*=\s*(.+?)\s*=\s*\?\s*$/i;
+// SE = σ/√n
+const SE_FORMULA_RE = /^σ\s*=\s*(\d+(?:\.\d+)?)\s*,\s*n\s*=\s*(\d+)\s*(?:[—-]+|→)\s*SE(?:\s*=\s*σ\/(?:√n|sqrt\(n\)))?\s*=\s*\??\s*$/i;
+// n from σ, ME, z: n = (z·σ/ME)²
+const N_FROM_ME_RE = /^σ\s*=\s*(\d+(?:\.\d+)?)\s*,\s*ME\s*=\s*(\d+(?:\.\d+)?)\s*,\s*z\s*=\s*(\d+(?:\.\d+)?)\s*(?:[—-]+|→)\s*n\s*=\s*(?:[^?]+?)?\??\s*$/i;
+// IC midpoint completion: 'x̄=A, ME=M → IC = [A-M, ?]'
+const IC_RIGHT_RE = /^x̄\s*=\s*(\d+(?:\.\d+)?)\s*,\s*ME\s*=\s*(\d+(?:\.\d+)?)\s*→\s*IC\s*=\s*\[\s*-?\d+(?:\.\d+)?\s*,\s*\?\s*\]\s*$/i;
+// 'x̄=A, SE=S → limite inferior do IC 95% = ?'
+const IC_LOWER_RE = /^x̄\s*=\s*(\d+(?:\.\d+)?)\s*,\s*SE\s*=\s*(\d+(?:\.\d+)?)\s*→\s*limite\s+inferior\s+do\s+IC\s+95%\s*=\s*\??\s*$/i;
+const IC_UPPER_RE = /^x̄\s*=\s*(\d+(?:\.\d+)?)\s*,\s*SE\s*=\s*(\d+(?:\.\d+)?)\s*→\s*limite\s+superior\s+do\s+IC\s+95%\s*=[^?]*\??\s*$/i;
+const IC_INF_CHAIN_RE = /^x̄\s*=\s*(\d+(?:\.\d+)?)\s*,\s*σ\s*=\s*(\d+(?:\.\d+)?)\s*,\s*n\s*=\s*(\d+)\s*→\s*SE\s*=\s*\d+\s*;\s*IC\s+95%\s+inferior\s*≈\s*\?\s*$/i;
+// 'Margem de erro do IC 95% com SE=S ≈ ?'
+const ME_FROM_SE_RE = /^Margem\s+de\s+erro\s+do\s+IC\s+95%\s+com\s+SE\s*=\s*(\d+(?:\.\d+)?)\s*≈\s*\??\s*$/i;
+// Quadruplicar n → fator = 0.5
+const QUAD_N_RE = /^Quadruplicar\s+n\s*→\s*SE\s+muda\s+por\s+fator\s*=\s*\??\s*$/i;
+// IC 99% z = 2.58
+const Z_99_RE = /^Para\s+IC\s+99%\s+usa-se\s+z\s*≈\s*\??\s*\(/i;
+// Symbol questions
+const SYMBOL_S_RE = /^S[íi]mbolo\s+do\s+desvio\s+padr[ãa]o\s+amostral\s*=/i;
+const SYMBOL_XBAR_RE = /^S[íi]mbolo\s+do\s+estimador\s+m[ée]dia\s+amostral\s*=/i;
+const SYMBOL_MU_RE = /^S[íi]mbolo\s+do\s+par[âa]metro\s+m[ée]dia\s+populacional\s*=/i;
+// r=A → R² = A²
+const R_SQUARED_RE = /^r\s*=\s*(\d+(?:\.\d+)?)\s*→\s*R[²2^]+\s*=\s*\??\s*$/i;
+// b = r·(sy/sx)
+const B_REG_RE = /^b\s*=\s*r\s*[·*]\s*\(sy\/sx\)\s*;\s*r\s*=\s*(\d+(?:\.\d+)?)\s*,\s*sy\s*=\s*(\d+(?:\.\d+)?)\s*,\s*sx\s*=\s*(\d+(?:\.\d+)?)\s*→\s*b\s*=\s*\??\s*$/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -4357,6 +4383,112 @@ function verify(question, answer, type) {
     const expected = Math.abs(x0 - y0 + c) / 2;
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'distance' };
+  }
+  // Sample variance formula extraction: '{set} — μ=N; σ² = [expr]/D = ?'
+  const svfL = q.match(SAMPLE_VAR_FULL_RE);
+  if (svfL) {
+    try {
+      // Find structure: 'expr_or_[expr] / D' or just 'expr_or_[expr]'.
+      let body = svfL[1];
+      let divisor = null;
+      const divMatch = body.match(/^(.+)\/\(?\s*(\d+(?:\.\d+)?(?:\s*-\s*\d+)?)\s*\)?\s*$/);
+      if (divMatch) {
+        body = divMatch[1].trim();
+        const dStr = divMatch[2];
+        divisor = /-/.test(dStr) ? eval(dStr) : Number(dStr);
+      }
+      // Strip outer brackets if present
+      body = body.trim();
+      while (body.startsWith('[') && body.endsWith(']')) body = body.slice(1, -1);
+      const num = toNumber(math.evaluate(body));
+      if (num != null) {
+        const expected = divisor != null ? num / divisor : num;
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'variance' };
+      }
+    } catch {}
+  }
+  // SE = σ/√n
+  const sef = q.match(SE_FORMULA_RE);
+  if (sef) {
+    const expected = Number(sef[1]) / Math.sqrt(Number(sef[2]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stat' };
+  }
+  // n from σ, ME, z = (z·σ/ME)²
+  const nfm = q.match(N_FROM_ME_RE);
+  if (nfm) {
+    const sig = Number(nfm[1]), ME = Number(nfm[2]), z = Number(nfm[3]);
+    if (ME !== 0) {
+      const expected = Math.pow(z * sig / ME, 2);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stat' };
+    }
+  }
+  // IC = [x̄-ME, x̄+ME]
+  const icr = q.match(IC_RIGHT_RE);
+  if (icr) {
+    const expected = Number(icr[1]) + Number(icr[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stat' };
+  }
+  const icL = q.match(IC_LOWER_RE);
+  if (icL) {
+    const expected = Number(icL[1]) - 1.96 * Number(icL[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stat' };
+  }
+  const icU = q.match(IC_UPPER_RE);
+  if (icU) {
+    const expected = Number(icU[1]) + 1.96 * Number(icU[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stat' };
+  }
+  const icCh = q.match(IC_INF_CHAIN_RE);
+  if (icCh) {
+    const SE = Number(icCh[2]) / Math.sqrt(Number(icCh[3]));
+    const expected = Number(icCh[1]) - 1.96 * SE;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stat' };
+  }
+  // Margem de erro = 1.96 · SE
+  const mfs = q.match(ME_FROM_SE_RE);
+  if (mfs) {
+    const expected = 1.96 * Number(mfs[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stat' };
+  }
+  if (QUAD_N_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - 0.5) < 1e-9, computed: '0.5', kind: 'stat' };
+  }
+  if (Z_99_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - 2.58) < 1e-2, computed: '2.58', kind: 'stat' };
+  }
+  // Symbol questions
+  if (SYMBOL_S_RE.test(q)) {
+    return { ok: String(answer).trim() === 's', computed: 's', kind: 'stat' };
+  }
+  if (SYMBOL_XBAR_RE.test(q)) {
+    return { ok: String(answer).trim() === 'x̄', computed: 'x̄', kind: 'stat' };
+  }
+  if (SYMBOL_MU_RE.test(q)) {
+    return { ok: String(answer).trim() === 'μ', computed: 'μ', kind: 'stat' };
+  }
+  // r → R² = r²
+  const rsqR = q.match(R_SQUARED_RE);
+  if (rsqR) {
+    const expected = Math.pow(Number(rsqR[1]), 2);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'r_squared' };
+  }
+  // b = r·sy/sx
+  const breg = q.match(B_REG_RE);
+  if (breg) {
+    const expected = Number(breg[1]) * Number(breg[2]) / Number(breg[3]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'r_squared' };
   }
   // Calculus-type pure-arithmetic series sums: '<arith> ≈ ?' / '<arith> = ?'.
   if (type === 'calculus') {

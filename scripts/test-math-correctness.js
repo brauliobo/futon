@@ -344,6 +344,20 @@ const CASES = [
   { q: 'T(2,3) seguida de T(-2,-3) em (5,5): x\' = ?', a: '5', type: 'geometry', want: true },
   { q: 'Homotetia k=2 de (3,1), seguida de T(0,-1): y\' = ?', a: '1', type: 'geometry', want: true },
   { q: 'Distância entre retas paralelas y=x+2 e y=x-3: d = ?/√2', a: '5', type: 'geometry', want: true },
+  // Statistics: sample var formula + SE + n-formula + IC bounds + correlation
+  { q: '{0,10} — μ=5; σ² = [(0-5)²+(10-5)²]/2 = ?', a: '25', type: 'mental_math', want: true },
+  { q: '{2,4,6} — μ=4; σ² = [(2-4)²+(4-4)²+(6-4)²]/3 = ?', a: '2.667', type: 'mental_math', want: true },
+  { q: 'σ=10, n=100 → SE = σ/√n = ?', a: '1', type: 'mental_math', want: true },
+  { q: 'σ=4, n=4 → SE = ?', a: '2', type: 'mental_math', want: true },
+  { q: 'σ=10, ME=2, z=2 → n = (2×10/2)² = ?', a: '100', type: 'mental_math', want: true },
+  { q: 'x̄=20, ME=3 → IC = [17, ?]', a: '23', type: 'mental_math', want: true },
+  { q: 'x̄=50, SE=1 → limite inferior do IC 95% = ?', a: '48.04', type: 'mental_math', want: true },
+  { q: 'Margem de erro do IC 95% com SE=2 ≈ ?', a: '3.92', type: 'mental_math', want: true },
+  { q: 'Quadruplicar n → SE muda por fator = ?', a: '0.5', type: 'mental_math', want: true },
+  { q: 'Para IC 99% usa-se z ≈ ? (1.96/2.58/3.0)', a: '2.58', type: 'mental_math', want: true },
+  { q: 'Símbolo do desvio padrão amostral = ? (σ/s)', a: 's', type: 'mental_math', want: true },
+  { q: 'r=0.8 → R² = ?', a: '0.64', type: 'mental_math', want: true },
+  { q: 'b = r·(sy/sx); r=0.6, sy=5, sx=3 → b = ?', a: '1', type: 'mental_math', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
