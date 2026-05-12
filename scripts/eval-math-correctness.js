@@ -292,6 +292,40 @@ const EXPECTED_1_RE = /^X\s*=\s*(-?\d+(?:\.\d+)?)\s+com\s+P\s*=\s*1\s*→\s*E\[X
 const DIE_EX_RE = /^dado\s+justo\s+\{1\.\.6\}\s*[—-]+\s*E\[X\]\s*=\s*\??\s*$/i;
 // 'r² = X → r = ? (positive)' or 'r = ? (negative)' — square-root with sign.
 const R_SQ_RE = /^r²\s*=\s*(\d+(?:\.\d+)?)\s*→\s*r\s*=\s*\?\s*\(valor\s+(positivo|negativo)\)\s*$/i;
+// Dash-form geometry shapes. Accept '—' separator alongside ':'.
+const CONE_VOL_DASH_RE = /^cone\s+r\s*=\s*(\d+(?:\.\d+)?)\s*,\s*h\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*v\s*=\s*\?π\s*$/i;
+const CYLINDER_VOL_DASH_RE = /^cilindro\s+r\s*=\s*(\d+(?:\.\d+)?)\s*,\s*h\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*v\s*=\s*\?π\s*$/i;
+const SPHERE_VOL_DASH_RE = /^esfera\s+r\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*v\s*=\s*\?π\s*$/i;
+const RECT_AREA_RE = /^ret[âa]ngulo\s+(\d+(?:\.\d+)?)\s*[×x*]\s*(\d+(?:\.\d+)?)\s*[—-]+\s*[áa]rea\s*=\s*\??\s*$/i;
+const SQUARE_PERIM_DASH_RE = /^quadrado\s+lado\s*=?\s*(\d+(?:\.\d+)?)\s*[—-]+\s*per[íi]metro\s*=\s*\??\s*$/i;
+const TRI_AREA_DASH_RE = /^tri[âa]ngulo\s+b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*h\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*[áa]rea\s*=\s*\??\s*$/i;
+const TRAPEZIUM_DASH_RE = /^trap[ée]zio\s+B\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*h\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*[áa]rea\s*=\s*\??\s*$/i;
+const TRAPEZIUM_SAMEB_RE = /^trap[ée]zio\s+com\s+B\s*=\s*b\s*=\s*(\d+(?:\.\d+)?)\s+e\s+h\s*=\s*(\d+(?:\.\d+)?)\s*\([^)]*\)\s*:\s*A\s*=\s*\??\s*$/i;
+const PYRAMID_VOL_RE = /^pir[âa]mide\s+base\s+(\d+(?:\.\d+)?)\s*[×x*]\s*(\d+(?:\.\d+)?)\s*,\s*h\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*v\s*=\s*\??\s*$/i;
+const SECTOR_AREA_RE = /^[áa]rea\s+do\s+setor\s+(\d+(?:\.\d+)?)°\s+com\s+r\s*=\s*(\d+(?:\.\d+)?)\s*=\s*\?π\s*$/i;
+const SECTOR_AREA_DASH_RE = /^setor\s+com\s+[âa]ngulo\s+central\s+(\d+(?:\.\d+)?)°\s+e\s+r\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*[áa]rea\s*=\s*\?π\s*$/i;
+const ARC_LEN_RE = /^arco\s+de\s+(\d+(?:\.\d+)?)°\s+com\s+r\s*=\s*(\d+(?:\.\d+)?)\s*=\s*\?π\s*$/i;
+const CENTRAL_INSCRIBED_RE = /^[âa]ngulo\s+central\s+de\s+(\d+(?:\.\d+)?)°\s*[—-]+\s*[âa]ngulo\s+inscrito\s+correspondente\s*=\s*\?°?\s*$/i;
+const INSCRIBED_ARC_RE = /^[âa]ngulo\s+inscrito\s+de\s+(\d+(?:\.\d+)?)°\s*[—-]+\s*arco\s+correspondente\s*=\s*\?°?\s*$/i;
+const SLOPE_2POINTS_RE = /^coef\.?\s+angular\s+entre\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+e\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*=\s*\??\s*$/i;
+const QUADR_APOTHEM_RE = /^quadrado\s+com\s+ap[óo]tema\s*=\s*(\d+(?:\.\d+)?)\s*\([^)]*\)\s*:\s*[áa]rea\s*=\s*\??\s*$/i;
+// 'Valores X (f=a) e Y (f=b) — média = ?' → (a·X + b·Y) / (a + b)
+const WEIGHTED_MEAN_2_RE = /^valores\s+(-?\d+(?:\.\d+)?)\s+\(f\s*=\s*(\d+)\)\s+e\s+(-?\d+(?:\.\d+)?)\s+\(f\s*=\s*(\d+)\)\s*[—-]+\s*m[ée]dia\s*=\s*\??\s*$/i;
+// 'Valores N (f=K) — média = ?' → N (single-value short-circuit)
+const WEIGHTED_MEAN_1_RE = /^valores\s+(-?\d+(?:\.\d+)?)\s+\(f\s*=\s*\d+\)\s*[—-]+\s*m[ée]dia\s*=\s*\??\s*$/i;
+// 'Em conjunto com n=N, se f=F, fᵣ = ?' → F/N
+const REL_FREQ_SET_RE = /^em\s+conjunto\s+com\s+n\s*=\s*(\d+)\s*,\s*se\s+f\s*=\s*(\d+)\s*,\s*f[ᵣr]\s*=\s*\??\s*$/i;
+// 'Quantos anagramas de WORD?' → factorial / repeats
+const ANAGRAM_HOW_MANY_RE = /^quantos\s+anagramas\s+de\s+([A-Z]+)\s*\??\s*$/i;
+// 'Anagramas de WORD = ?' (alt to existing ANAGRAM_RE)
+const ANAGRAM_PLAIN_RE = /^anagramas\s+de\s+([A-Z]+)\s*=\s*\??\s*$/i;
+// 'X UNIT-A e Y UNIT-B — quantos/quantas Z?' → X*Y (accept accented words)
+const PRODUCT_PAIRS_UNI_RE = /^(\d+)\s+[a-záâãéêíóôõúçA-Z]+\s+e\s+(\d+)\s+[a-záâãéêíóôõúçA-Z]+\s*[—-]+\s*quan(?:tos|tas)\s+[a-záâãéêíóôõúçA-Z]+\??\s*$/i;
+// μ=M, σ=S — x=X tem z = ?  (variant of existing z_para_x phrasing)
+const Z_SCORE_TEM_RE = /^μ\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*σ\s*=\s*(-?\d+(?:\.\d+)?)\s*[—-]+\s*x\s*=\s*(-?\d+(?:\.\d+)?)\s+tem\s+z\s*=\s*\??\s*$/i;
+// Sturges' rule: 1+3.3·log(n). 'Para n=N, k ≈ ?' → round(1 + 3.3*log10(N))
+const STURGES_RE = /(?:sturges|regra\s+de\s+sturges)[\s\S]*?n\s*=\s*(\d+)\s*,\s*k\s*≈\s*\??\s*$/i;
+// 'P(A∪B) = P(A)+P(B)-P(A∩B)' style with 3 numbers — covered by UNION_INC_EXC_RE.
 // Linear systems solving for a single variable.
 // 'Se <eq1> e <eq2>, x = ?' or 'Com y=N, no sistema <eq1> e <eq2>, x = ?'
 const SYS_SOLVE_RE = /^(?:se|com\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*no\s+sistema)\s+(.+?)\s+e\s+(.+?)\s*,\s*([xy])\s*=\s*\??\s*$/i;
@@ -328,7 +362,7 @@ function parseComplex(s) {
   return null;
 }
 const FREQ_OF_RE = /^em\s+\{([^}]+)\}\s*,\s*frequ[êe]ncia\s+de\s+([^=]+?)\s*=\s*\??\s*$/i;
-const REL_FREQ_RE = /^em\s+(?:conjunto\s+com\s+)?n\s*=\s*(\d+)\s+com\s+f\s*=\s*(\d+)\s*,\s*fr?\s*=\s*\??\s*$/i;
+const REL_FREQ_RE = /^em\s+(?:conjunto\s+com\s+)?n\s*=\s*(\d+)\s+com\s+f\s*=\s*(\d+)\s*,\s*f[ᵣr]?\s*=\s*\??\s*$/i;
 const REL_FREQ_PCT_RE = /^frequ[êe]ncia\s+relativa\s+em\s+%\s+quando\s+f\s*=\s*(\d+)\s+e\s+n\s*=\s*(\d+)\s*=\s*\?%?\s*$/i;
 const INTERVAL_AMP_RE = /^amplitude\s+do\s+intervalo\s+[\[\(]\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*[\]\)]\s*=\s*\??\s*$/i;
 const FRAC_TO_DEC_RE = /^\((-?\d+)\/(\d+)\)\s+em\s+decimal(?:\s*\([^)]+\))?\s*$/i;
@@ -1683,6 +1717,189 @@ function verify(question, answer, type) {
     const expected = Math.cbrt(Number(cs[1]));
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'cube_solve' };
+  }
+  // Dash-form cone/cylinder/sphere ?π coefficient.
+  const cylD = question.match(CYLINDER_VOL_DASH_RE);
+  if (cylD) {
+    const expected = Number(cylD[1]) ** 2 * Number(cylD[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'cylinder_vol' };
+  }
+  const coneD = question.match(CONE_VOL_DASH_RE);
+  if (coneD) {
+    const expected = Number(coneD[1]) ** 2 * Number(coneD[2]) / 3;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'cone_vol' };
+  }
+  const sphD = question.match(SPHERE_VOL_DASH_RE);
+  if (sphD) {
+    const expected = 4 * Number(sphD[1]) ** 3 / 3;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'sphere_vol' };
+  }
+  // 'Retângulo W×H — área = ?' → W*H
+  const ra = q.match(RECT_AREA_RE);
+  if (ra) {
+    const expected = Number(ra[1]) * Number(ra[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'area_rect' };
+  }
+  // 'Quadrado lado N — perímetro = ?' → 4N
+  const sp = q.match(SQUARE_PERIM_DASH_RE);
+  if (sp) {
+    const expected = 4 * Number(sp[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'poly_perim' };
+  }
+  // 'Triângulo b=B, h=H — área = ?' → B*H/2
+  const tab = q.match(TRI_AREA_DASH_RE);
+  if (tab) {
+    const expected = Number(tab[1]) * Number(tab[2]) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'triangle_area' };
+  }
+  // 'Trapézio B=N, b=N, h=N — área = ?' → (B+b)*h/2
+  const trd = q.match(TRAPEZIUM_DASH_RE);
+  if (trd) {
+    const expected = (Number(trd[1]) + Number(trd[2])) * Number(trd[3]) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'trapezium' };
+  }
+  // 'Trapézio com B=b=N e h=M (paralelogramo): A = ?' → 2N*M/2 = N*M
+  const tsb = q.match(TRAPEZIUM_SAMEB_RE);
+  if (tsb) {
+    const expected = Number(tsb[1]) * Number(tsb[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'trapezium' };
+  }
+  // 'Pirâmide base BxB, h=H — V = ?' → B²·H/3
+  const pyr = q.match(PYRAMID_VOL_RE);
+  if (pyr) {
+    const expected = Number(pyr[1]) * Number(pyr[2]) * Number(pyr[3]) / 3;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'box_vol' };
+  }
+  // 'Área do setor θ° com r=R = ?π' → R²·θ/360  (raw question — '°' is normalized away)
+  const sec1 = question.match(SECTOR_AREA_RE);
+  if (sec1) {
+    const expected = Number(sec1[2]) ** 2 * Number(sec1[1]) / 360;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'circle_area' };
+  }
+  const sec2 = question.match(SECTOR_AREA_DASH_RE);
+  if (sec2) {
+    const expected = Number(sec2[2]) ** 2 * Number(sec2[1]) / 360;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'circle_area' };
+  }
+  // 'Arco de θ° com r=R = ?π' → R·θ/180
+  const arc = question.match(ARC_LEN_RE);
+  if (arc) {
+    const expected = Number(arc[2]) * Number(arc[1]) / 180;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'circumference' };
+  }
+  // Central → inscribed: θ/2
+  const ci = question.match(CENTRAL_INSCRIBED_RE);
+  if (ci) {
+    const expected = Number(ci[1]) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'poly_int_angle' };
+  }
+  // Inscribed → arc: 2θ
+  const ia2 = question.match(INSCRIBED_ARC_RE);
+  if (ia2) {
+    const expected = 2 * Number(ia2[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'poly_int_angle' };
+  }
+  // Constant facts.
+  if (/^[âa]ngulo\s+inscrito\s+sobre\s+di[âa]metro\s*=\s*\?°?\s*$/i.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an === 90) return { ok: true, computed: '90', kind: 'poly_int_angle' };
+    if (an != null) return { ok: false, computed: '90', kind: 'poly_int_angle' };
+  }
+  if (/^soma\s+dos\s+[âa]ngulos\s+internos\s+de\s+um\s+tri[âa]ngulo\s*=\s*\?°?\s*$/i.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an === 180) return { ok: true, computed: '180', kind: 'poly_sum_angle' };
+    if (an != null) return { ok: false, computed: '180', kind: 'poly_sum_angle' };
+  }
+  // Slope between two points
+  const slp = q.match(SLOPE_2POINTS_RE);
+  if (slp) {
+    const dx = Number(slp[3]) - Number(slp[1]);
+    if (dx !== 0) {
+      const expected = (Number(slp[4]) - Number(slp[2])) / dx;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'slope' };
+    }
+  }
+  // Quadrado com apótema=N (= metade do lado): área = ?  → (2N)²
+  const qap = q.match(QUADR_APOTHEM_RE);
+  if (qap) {
+    const expected = (2 * Number(qap[1])) ** 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'square_area' };
+  }
+  // Weighted mean (2 buckets)
+  const wm2 = q.match(WEIGHTED_MEAN_2_RE);
+  if (wm2) {
+    const X = Number(wm2[1]), a1 = Number(wm2[2]), Y = Number(wm2[3]), b1 = Number(wm2[4]);
+    if (a1 + b1 > 0) {
+      const expected = (a1 * X + b1 * Y) / (a1 + b1);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stat' };
+    }
+  }
+  // Weighted mean single bucket — answer is the value itself.
+  const wm1 = q.match(WEIGHTED_MEAN_1_RE);
+  if (wm1) {
+    const expected = Number(wm1[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'stat' };
+  }
+  // Relative frequency
+  const rf = q.match(REL_FREQ_RE) || q.match(REL_FREQ_SET_RE);
+  if (rf) {
+    const expected = Number(rf[2]) / Number(rf[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'rel_freq' };
+  }
+  // 'Quantos anagramas de WORD?' / 'Anagramas de WORD = ?'
+  const anaH = question.match(ANAGRAM_HOW_MANY_RE) || question.match(ANAGRAM_PLAIN_RE);
+  if (anaH) {
+    const word = anaH[1];
+    const counts = {};
+    for (const ch of word) counts[ch] = (counts[ch] || 0) + 1;
+    const fact = (n) => { let r = 1; for (let i = 2; i <= n; i++) r *= i; return r; };
+    let expected = fact(word.length);
+    for (const k in counts) expected /= fact(counts[k]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'anagram' };
+  }
+  // Accented-word product-pair variant.
+  const ppu = question.match(PRODUCT_PAIRS_UNI_RE);
+  if (ppu && /(?:conjunto|combina|opç[õo])/i.test(question)) {
+    const expected = Number(ppu[1]) * Number(ppu[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'pair_product' };
+  }
+  // z-score "tem z = ?" form
+  const zsT = question.match(Z_SCORE_TEM_RE);
+  if (zsT) {
+    const M = Number(zsT[1]), S = Number(zsT[2]), X = Number(zsT[3]);
+    if (S !== 0) {
+      const expected = (X - M) / S;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'z_score' };
+    }
+  }
+  // Sturges
+  const stu = question.match(STURGES_RE);
+  if (stu) {
+    const expected = Math.round(1 + 3.3 * Math.log10(Number(stu[1])));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) <= 1, computed: `${expected}`, kind: 'stat' };
   }
   // 3D dot product
   const vd3 = question.match(VEC3_DOT_RE);

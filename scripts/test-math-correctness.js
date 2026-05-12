@@ -112,6 +112,30 @@ const CASES = [
   { q: 'Volume do cubo lado 3 = ?', a: '27', type: 'geometry', want: true },
   { q: 'Soma ângulos internos do hexágono (n=6) = ?°', a: '720', type: 'geometry', want: true },
 
+  // Dash-form geometry shapes
+  { q: 'Cilindro r=2, h=5 — V = ?π', a: '20', type: 'geometry', want: true },
+  { q: 'Cone r=2, h=6 — V = ?π', a: '8', type: 'geometry', want: true },
+  { q: 'Esfera r=3 — V = ?π', a: '36', type: 'geometry', want: true },
+  { q: 'Retângulo 5×8 — área = ?', a: '40', type: 'geometry', want: true },
+  { q: 'Quadrado lado 6 — perímetro = ?', a: '24', type: 'geometry', want: true },
+  { q: 'Triângulo b=10, h=4 — área = ?', a: '20', type: 'geometry', want: true },
+  { q: 'Trapézio B=12, b=8, h=5 — área = ?', a: '50', type: 'geometry', want: true },
+  { q: 'Pirâmide base 4×4, h=9 — V = ?', a: '48', type: 'geometry', want: true },
+  // Sector / arc / inscribed
+  { q: 'Área do setor 60° com r=6 = ?π', a: '6', type: 'geometry', want: true },
+  { q: 'Arco de 90° com r=4 = ?π', a: '2', type: 'geometry', want: true },
+  { q: 'Ângulo central de 80° — ângulo inscrito correspondente = ?°', a: '40', type: 'geometry', want: true },
+  { q: 'Soma dos ângulos internos de um triângulo = ?°', a: '180', type: 'geometry', want: true },
+  // Slope between two points
+  { q: 'Coef. angular entre (0,0) e (2,4) = ?', a: '2', type: 'geometry', want: true },
+  // Anagram variants
+  { q: 'Quantos anagramas de AMOR?', a: '24', type: 'mental_math', want: true },
+  // Weighted mean / relative frequency / z-score variant
+  { q: 'Em n=20 com f=5, fᵣ = ?', a: '0.25', type: 'mental_math', want: true },
+  { q: 'μ=10, σ=2 — x=14 tem z = ?', a: '2', type: 'mental_math', want: true },
+  { q: 'Valores 10 (f=2) e 20 (f=3) — média = ?', a: '16', type: 'mental_math', want: true },
+  { q: '4 camisas e 3 calças — quantos conjuntos?', a: '12', type: 'mental_math', want: true },
+
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
   { q: '7 × 9 =', a: '64', type: 'multiplication', want: false },
