@@ -880,6 +880,66 @@ const OUTLIER_HI_RE = /Outlier\s+superior[^;]+;\s*Q3\s*=\s*(\d+(?:\.\d+)?)\s*,\s
 const HIST_TOTAL_RE = /^Total\s+n\s+de\s+histograma\s+com\s+classes\s+f\s*=\s*\{\s*([\d,\s]+)\s*\}\s*=\s*\??\s*$/i;
 // 'Classe [a,b) com f=X e [c,d) com f=Y — qual classe tem mais dados?' → max-frequency class' start
 const HIST_MAX_CLASS_RE = /^Classe\s+\[\s*(\d+(?:\.\d+)?)\s*,\s*\d+(?:\.\d+)?\s*\)\s+com\s+f\s*=\s*(\d+)\s+e\s+\[\s*(\d+(?:\.\d+)?)\s*,\s*\d+(?:\.\d+)?\s*\)\s+com\s+f\s*=\s*(\d+)\s*[—-]+\s*qual\s+classe\s+tem\s+mais\s+dados\?\s*$/i;
+// Linear transformation T(x,y)=(αx,βy) and variants
+const T_DIAG_DET_RE = /^T\(x\s*,\s*y\)\s*=\s*\(\s*(-?\d+)\s*\*?\s*x\s*,\s*(-?\d+)\s*\*?\s*y\s*\)\s*:\s*det\(\[T\]\)\s*=\s*\??\s*$/i;
+const T_DIAG_APPLY_RE = /^T\(x\s*,\s*y\)\s*=\s*\(\s*(-?\d+)\s*\*?\s*x\s*,\s*(-?\d+)\s*\*?\s*y\s*\)\s*:\s*T\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*[—-]+\s*([xy])-comp\s*=\s*\??\s*$/i;
+const T_DIAG_MATRIX_RE = /^T\(x\s*,\s*y\)\s*=\s*\(\s*(-?\d+)\s*\*?\s*x\s*,\s*(-?\d+)\s*\*?\s*y\s*\)\s*:\s*\[T\]\[\s*(\d+)\s*,\s*(\d+)\s*\]\s*(?:\([^)]*\))?\s*=\s*\??\s*$/i;
+// T(x,y)=(x+y, x-y): T(p,q) — x or y comp
+const T_SUM_DIFF_RE = /^T\(x\s*,\s*y\)\s*=\s*\(\s*x\s*([+\-])\s*y\s*,\s*x\s*([+\-])\s*y\s*\)\s*:\s*T\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*[—-]+\s*([xy])-comp\s*=\s*\??\s*$/i;
+// 'T(x,y)=(x+y, x+y): det([T]) = 0' — rank-1
+const T_DEG_DET_RE = /^T\(x\s*,\s*y\)\s*=\s*\(\s*x\s*\+\s*y\s*,\s*x\s*\+\s*y\s*\)\s*:\s*det\(\[T\]\)\s*=\s*\??\s*$/i;
+// 'T(x,y)=(x,0): dim Im / dim ker / ker contém ...'
+const T_PROJ_DIM_IM_RE = /^T\(x\s*,\s*y\)\s*=\s*\(x\s*,\s*0\)\s*:\s*dim\s+Im\s*=\s*\??\s*$/i;
+const T_PROJ_DIM_KER_RE = /^T\(x\s*,\s*y\)\s*=\s*\(x\s*,\s*0\)\s*:\s*dim\s+ker\s*=\s*\??\s*$/i;
+// Composition of two diagonal transformations
+const T_COMPOSE_DIAG_RE = /^T\(x\s*,\s*y\)\s*=\s*\(\s*(-?\d+)\s*\*?\s*x\s*,\s*y\s*\)\s*;\s*S\(x\s*,\s*y\)\s*=\s*\(\s*x\s*,\s*(-?\d+)\s*\*?\s*y\s*\)\s*:\s*\(S∘T\)\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*[—-]+\s*([xy])\s*=\s*\??\s*$/i;
+// Transformation constants
+const T_LINEAR_ZERO_RE = /^T\s+linear\s*→\s*T\(0\)\s*=\s*\??\s*$/i;
+const T_INJ_KER_RE = /^T\s+injetiva\s*↔\s*dim\s+ker\s*=\s*\??\s*$/i;
+const T_INV_COMP_RE = /^T\s*∘\s*T⁻¹\s*=\s*\?\s*\(/i;
+const RANK_NULLITY_RE = /^Teorema\s+rank-nulidade[^;]*;\s*T:\s*R\^?(\d+|²|³)\s*→\s*R\^?(\d+|²|³)\s*:\s*dim\s+ker\s*\+\s*dim\s+Im\s*=\s*\??\s*$/i;
+// 2x2 eigenvalues from char polynomial 'λ²-Sλ+P=0; λ₁/λ₂ = ?'
+const CHAR_POLY_RE = /pol[ií]n[ôo]mio\s+λ(?:²|\^?2)\s*-\s*(\d+(?:\.\d+)?)\s*λ\s*\+\s*(\d+(?:\.\d+)?)\s*=\s*0\s*;\s*λ([₁₂12])\s*=\s*\??\s*$/i;
+// Tr(A) = λ₁+λ₂ for 2x2
+const TRACE_AS_SUM_RE = /^A\s*=\s*\[\s*(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s*\]\s*:\s*tr\(A\)\s*=\s*λ[₁1]\s*\+\s*λ[₂2]\s*=\s*\??\s*$/i;
+// Diagonal/upper-triangular eigenvalues (sample: A=[1 2; 0 3] or A=[3 0; 0 5])
+const EIG_DIAG_RE = /^A\s*=\s*\[\s*(-?\d+)\s+(-?\d+)\s*;\s*0\s+(-?\d+)\s*\][^=]*(?:maior|menor|λ\s*[₁12])\s*=\s*\??\s*$/i;
+const EIG_DIAG_BOTH_RE = /^A\s*=\s*\[\s*(-?\d+)\s+0\s*;\s*0\s+(-?\d+)\s*\][^=]*(?:maior|menor|λ\s*[₁12])\s*=\s*\??\s*$/i;
+// 'A=[3 0; 0 5]: λ₂ = ?' / 'A=[2 1; 1 2]: λ₁ = ?' — companion form
+const EIG_INDEX_RE = /A\s*=\s*\[\s*(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s*\][^=]*λ([₁₂12])\s*=\s*\??\s*$/i;
+// 'A=[a b; c d]: D=[e 0; 0 f]; D[i,j] = ?' → e or f for i=j
+const DIAG_ENTRY_RE = /D\s*=\s*\[\s*(-?\d+)\s+0\s*;\s*0\s+(-?\d+)\s*\]\s*;\s*D\[\s*(\d+)\s*,\s*(\d+)\s*\]\s*=\s*\??\s*$/i;
+// '(1/2)·(4,6) = ?' → scalar·vector (literal answer with parens)
+const SCALAR_TIMES_VEC_RE = /^\((-?\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)\)\s*[·*]\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*=\s*\??\s*$/i;
+// 'Vetor oposto a (a,b) = ?' → (-a,-b) (literal)
+const VEC_OPPOSITE_RE = /^Vetor\s+oposto\s+a\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*=\s*\??\s*$/i;
+// 'Vetor nulo = ?' → (0, 0)
+const VEC_ZERO_RE = /^Vetor\s+nulo\s*=\s*\??\s*$/i;
+// 'Unitário de (a,b) = ?' literal '(a/r, b/r)'
+const UNIT_VEC_RE = /^Unit[áa]rio\s+de\s+\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s*=\s*\??\s*$/i;
+// 'u=(a,b), v=(c,d): u·v = ?' from labeled form
+const LABELED_DOT_RE = /^u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*,\s*v\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*u\s*[·*]\s*v\s*=\s*\??\s*$/i;
+// Conic vertex of parabola: 'y=ax²+bx; vértice em x = -b/(2a) = ?'
+const PARABOLA_VERTEX_X_RE = /^y\s*=\s*(-?\d+(?:\.\d+)?)\s*\*?\s*x\^?2\s*([+\-])\s*(\d+(?:\.\d+)?)\s*\*?\s*x\s*;\s*v[ée]rtice\s+em\s+x\s*=\s*-b\/\(2a\)\s*=\s*\??\s*$/i;
+// 'y=x²; reta y=N: x² = N → x = ?'
+const Y_EQ_XSQ_RE = /^y\s*=\s*x\^?2\s*;\s*reta\s+y\s*=\s*(\d+(?:\.\d+)?)\s*:\s*x\^?2\s*=\s*\1\s*→\s*x\s*=\s*\??\s*$/i;
+// 'y=x²; reta y=x: x²=x → x(x-1)=0; x₁=0, x₂ = ?'
+const Y_XSQ_X_RE = /^y\s*=\s*x\^?2\s*;\s*reta\s+y\s*=\s*x[^;]*;\s*x[₁1]\s*=\s*0\s*,\s*x[₂2]\s*=\s*\??\s*$/i;
+// 'x²+y²=R²; reta y=0: |x| = ?' → √(R²)
+const CIRCLE_AT_Y_ZERO_RE = /^x\^?2\s*\+\s*y\^?2\s*=\s*(\d+(?:\.\d+)?)\s*;\s*reta\s+y\s*=\s*0\s*:\s*abs\(x\)\s*=\s*\??\s*$/i;
+// 'Cônica com e=1 é: (1=parábola)' → 1
+const CONIC_E1_RE = /^C[ôo]nica\s+com\s+e\s*=\s*1\s+[ée]:\s*\(/i;
+// 'Parábola y=x² abre para (cima=1, baixo=-1): ?' → 1 (positive leading)
+const PARABOLA_DIR_RE = /^Par[áa]bola\s+y\s*=\s*x\^?2\s+abre\s+para\s+\(/i;
+// 'Diagonal do quadrado lado L = ?' → 'L√2'
+const SQUARE_DIAG_LITERAL_RE = /^Diagonal\s+do\s+quadrado\s+lado\s+L\s*=\s*\??\s*$/i;
+// 'Quadrado diagonal D — lado = D√2/2'
+const SQUARE_LADO_FROM_DIAG_RE = /^Quadrado\s+diagonal\s+(\d+(?:\.\d+)?)\s*[—-]+\s*lado\s*=\s*\??\s*$/i;
+// '30-60-90 com x=N, lado de 60° = ?' → 'N√3'
+const TRI_30_60_LADO_60_RE = /^Em\s+30-?60-?90\s+com\s+x\s*=\s*(\d+(?:\.\d+)?)\s*,\s*lado\s+de\s+60°\s*=\s*\??\s*$/i;
+// '30-60-90 lado oposto a 30° = x; oposto a 60° = ?' → 'x√3'
+const TRI_30_60_X_VAR_RE = /^Em\s+30-?60-?90\s*,\s*lado\s+oposto\s+a\s+30°\s*=\s*x\s*;\s*oposto\s+a\s+60°\s*=\s*\??\s*$/i;
+// '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
 // Inverse trig with degree result
@@ -5232,6 +5292,256 @@ function verify(question, answer, type) {
     const expected = f1 >= f2 ? a1 : a2;
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'stat' };
+  }
+  // T(x,y) = (αx, βy): det = α·β
+  const tdd = q.match(T_DIAG_DET_RE);
+  if (tdd) {
+    const expected = Number(tdd[1]) * Number(tdd[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'linear_T' };
+  }
+  // T(x,y) = (αx, βy): T(p,q) component
+  const tda = q.match(T_DIAG_APPLY_RE);
+  if (tda) {
+    const α = Number(tda[1]), β = Number(tda[2]), p = Number(tda[3]), qv = Number(tda[4]);
+    const expected = tda[5].toLowerCase() === 'x' ? α * p : β * qv;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'linear_T' };
+  }
+  // T(x,y) = (αx, βy): [T][i,j] diagonal
+  const tdm = q.match(T_DIAG_MATRIX_RE);
+  if (tdm) {
+    const α = Number(tdm[1]), β = Number(tdm[2]), i = Number(tdm[3]), j = Number(tdm[4]);
+    let expected;
+    if (i === 1 && j === 1) expected = α;
+    else if (i === 2 && j === 2) expected = β;
+    else expected = 0;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'linear_T' };
+  }
+  // T(x,y) = (x±y, x±y): T(p,q) component
+  const tsd = q.match(T_SUM_DIFF_RE);
+  if (tsd) {
+    const s1 = tsd[1] === '-' ? -1 : 1, s2 = tsd[2] === '-' ? -1 : 1;
+    const p = Number(tsd[3]), qv = Number(tsd[4]);
+    const expected = tsd[5].toLowerCase() === 'x' ? p + s1 * qv : p + s2 * qv;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'linear_T' };
+  }
+  if (T_DEG_DET_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'linear_T' };
+  }
+  if (T_PROJ_DIM_IM_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'linear_T' };
+  }
+  if (T_PROJ_DIM_KER_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'linear_T' };
+  }
+  // Composition: T(x,y)=(αx,y); S(x,y)=(x,βy); (S∘T)(p,q) = (α·p, β·q)
+  const tcd = q.match(T_COMPOSE_DIAG_RE);
+  if (tcd) {
+    const α = Number(tcd[1]), β = Number(tcd[2]), p = Number(tcd[3]), qv = Number(tcd[4]);
+    const expected = tcd[5].toLowerCase() === 'x' ? α * p : β * qv;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'linear_T' };
+  }
+  // T linear → T(0) = 0
+  if (T_LINEAR_ZERO_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'linear_T' };
+  }
+  // T injetiva ↔ dim ker = 0
+  if (T_INJ_KER_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'linear_T' };
+  }
+  // T∘T⁻¹ = identidade (1)
+  if (T_INV_COMP_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'linear_T' };
+  }
+  // Rank-nullity: dim ker + dim Im = dim domínio
+  const rn = q.match(RANK_NULLITY_RE);
+  if (rn) {
+    const map = { '²': 2, '³': 3 };
+    const expected = map[rn[1]] ?? Number(rn[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'linear_T' };
+  }
+  // Eigenvalues from λ²-Sλ+P=0
+  const cpe = question.match(CHAR_POLY_RE);
+  if (cpe) {
+    const S = Number(cpe[1]), P = Number(cpe[2]);
+    const disc = S * S - 4 * P;
+    if (disc >= 0) {
+      const r1 = (S - Math.sqrt(disc)) / 2, r2 = (S + Math.sqrt(disc)) / 2;
+      const idx = (cpe[3] === '₁' || cpe[3] === '1') ? 0 : 1;
+      const expected = [Math.min(r1, r2), Math.max(r1, r2)][idx];
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'eigenvalue' };
+    }
+  }
+  // tr(A) = a + d for 2x2
+  const trs = q.match(TRACE_AS_SUM_RE);
+  if (trs) {
+    const expected = Number(trs[1]) + Number(trs[4]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'eigenvalue' };
+  }
+  // Upper-triangular: eigenvalues are a and d
+  const edt = q.match(EIG_DIAG_RE);
+  if (edt) {
+    const a1 = Number(edt[1]), d1 = Number(edt[3]);
+    const wantMax = /maior/i.test(q), wantMin = /menor/i.test(q);
+    const lambda1 = /λ\s*[₁1]/i.test(q);
+    let expected;
+    if (wantMax) expected = Math.max(a1, d1);
+    else if (wantMin) expected = Math.min(a1, d1);
+    else expected = lambda1 ? Math.min(a1, d1) : Math.max(a1, d1);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'eigenvalue' };
+  }
+  // General 2x2 eigenvalue by index — only when not already matched by diagonal/triangular forms.
+  const eix = q.match(EIG_INDEX_RE);
+  if (eix && Number(eix[2]) !== 0 && Number(eix[3]) !== 0) {
+    // Only handle when not upper/lower triangular (those use EIG_DIAG_RE)
+    const A = Number(eix[1]), B = Number(eix[2]), C = Number(eix[3]), D = Number(eix[4]);
+    const trA = A + D, detA = A * D - B * C;
+    const disc = trA * trA - 4 * detA;
+    if (disc >= 0) {
+      const r1 = (trA - Math.sqrt(disc)) / 2, r2 = (trA + Math.sqrt(disc)) / 2;
+      const idx = (eix[5] === '₁' || eix[5] === '1') ? 0 : 1;
+      const expected = [Math.min(r1, r2), Math.max(r1, r2)][idx];
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'eigenvalue' };
+    }
+  }
+  // Diagonal: eigenvalues are a and b
+  const edb = q.match(EIG_DIAG_BOTH_RE);
+  if (edb) {
+    const a1 = Number(edb[1]), b1 = Number(edb[2]);
+    const wantMax = /maior/i.test(q), wantMin = /menor/i.test(q);
+    const lambda1 = /λ\s*[₁1]/i.test(q);
+    let expected;
+    if (wantMax) expected = Math.max(a1, b1);
+    else if (wantMin) expected = Math.min(a1, b1);
+    else expected = lambda1 ? Math.min(a1, b1) : Math.max(a1, b1);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'eigenvalue' };
+  }
+  // D[i,j] diagonal entry
+  const de = q.match(DIAG_ENTRY_RE);
+  if (de) {
+    const a1 = Number(de[1]), b1 = Number(de[2]), i = Number(de[3]), j = Number(de[4]);
+    let expected;
+    if (i === 1 && j === 1) expected = a1;
+    else if (i === 2 && j === 2) expected = b1;
+    else expected = 0;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'diag_eig' };
+  }
+  // Scalar times vector (literal answer with parens)
+  const sxv = question.match(SCALAR_TIMES_VEC_RE);
+  if (sxv) {
+    const k = Number(sxv[1]) / Number(sxv[2]);
+    const ex = k * Number(sxv[3]), ey = k * Number(sxv[4]);
+    const expected = `(${ex}, ${ey})`;
+    const ansClean = String(answer).trim().replace(/\s/g, '');
+    return { ok: ansClean === expected.replace(/\s/g, ''), computed: expected, kind: 'vec_scal' };
+  }
+  // Vetor oposto literal
+  const vop = question.match(VEC_OPPOSITE_RE);
+  if (vop) {
+    const expected = `(${-Number(vop[1])}, ${-Number(vop[2])})`;
+    const ans = String(answer).trim().replace(/\s/g, '');
+    return { ok: ans === expected.replace(/\s/g, ''), computed: expected, kind: 'vec_scal' };
+  }
+  if (VEC_ZERO_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s/g, '');
+    return { ok: ans === '(0,0)', computed: '(0, 0)', kind: 'vec_scal' };
+  }
+  // Unitário literal: '(a/r, b/r)' where r=√(a²+b²)
+  const uv = question.match(UNIT_VEC_RE);
+  if (uv) {
+    const a1 = Number(uv[1]), b1 = Number(uv[2]);
+    const r = Math.sqrt(a1 * a1 + b1 * b1);
+    if (Number.isInteger(r)) {
+      const expected = `(${a1}/${r}, ${b1}/${r})`;
+      const ans = String(answer).trim().replace(/\s/g, '');
+      return { ok: ans === expected.replace(/\s/g, ''), computed: expected, kind: 'vec_norm' };
+    }
+  }
+  // u·v from labeled form
+  const ldot = q.match(LABELED_DOT_RE);
+  if (ldot) {
+    const expected = Number(ldot[1]) * Number(ldot[3]) + Number(ldot[2]) * Number(ldot[4]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'vec_dot' };
+  }
+  // Parabola vertex x = -b/(2a)
+  const pvxL = q.match(PARABOLA_VERTEX_X_RE);
+  if (pvxL) {
+    const A = Number(pvxL[1]), sign = pvxL[2] === '-' ? -1 : 1, B = sign * Number(pvxL[3]);
+    const expected = -B / (2 * A);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'parabola_vertex' };
+  }
+  // y=x²; reta y=N → x = √N (positive)
+  const yxs = q.match(Y_EQ_XSQ_RE);
+  if (yxs) {
+    const expected = Math.sqrt(Number(yxs[1]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'quad_roots' };
+  }
+  // y=x²; reta y=x → x=0 or 1 (second answer = 1)
+  if (Y_XSQ_X_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'quad_roots' };
+  }
+  // Circle intersect y=0: |x| = √(R²)
+  const caz = q.match(CIRCLE_AT_Y_ZERO_RE);
+  if (caz) {
+    const expected = Math.sqrt(Number(caz[1]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  // 'Cônica com e=1' constant → 1
+  if (CONIC_E1_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'circle_radius' };
+  }
+  if (PARABOLA_DIR_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'parabola_vertex' };
+  }
+  // 'Diagonal do quadrado lado L = ?' → L√2 (literal)
+  if (SQUARE_DIAG_LITERAL_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === 'L√2' || ans === 'L*sqrt(2)', computed: 'L√2', kind: 'square_diag' };
+  }
+  // 'Quadrado diagonal D — lado = D√2/2' (literal '5√2' for D=10)
+  const sld = q.match(SQUARE_LADO_FROM_DIAG_RE);
+  if (sld) {
+    const D = Number(sld[1]);
+    const expected = D === 10 ? '5√2' : `${D / 2}√2`;
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === expected, computed: expected, kind: 'square_diag' };
+  }
+  // 30-60-90 with x=N, lado de 60° = N√3 (literal, raw — ° normalizes)
+  const t306 = question.match(TRI_30_60_LADO_60_RE);
+  if (t306) {
+    const N = Number(t306[1]);
+    const expected = N === 1 ? '√3' : `${N}√3`;
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === expected, computed: expected, kind: 'tri_special' };
+  }
+  // 30-60-90 with x var, lado oposto a 60° = x√3 (literal, raw)
+  if (TRI_30_60_X_VAR_RE.test(question)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === 'x√3', computed: 'x√3', kind: 'tri_special' };
   }
   // Inverse trig (degree results) — parse value via normalized expression. Use raw question
   // because 'arccos/arcsen/arctan' normalize to 'acos/asin/atan'.
