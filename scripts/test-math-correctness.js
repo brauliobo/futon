@@ -457,6 +457,16 @@ const CASES = [
   { q: 'x²+y²=25; reta y=0: |x| = ?', a: '5', type: 'geometry', want: true },
   { q: 'Diagonal do quadrado lado L = ?', a: 'L√2', type: 'geometry', want: true },
   { q: 'Em 30-60-90 com x=2, lado de 60° = ?', a: '2√3', type: 'geometry', want: true },
+  // Hypothesis testing + circular table + Se P(A)+P(Ā)
+  { q: 'β=0.1 → poder = ?', a: '0.9', type: 'mental_math', want: true },
+  { q: 'β = P(erro tipo II); poder = 1 - β; se β=0.2 → poder = ?', a: '0.8', type: 'mental_math', want: true },
+  { q: 'x̄=50, μ₀=50 → z = ?', a: '0', type: 'mental_math', want: true },
+  { q: 'Rejeitamos H₀ quando p-valor (< ou >) α?', a: '<', type: 'mental_math', want: true },
+  { q: 'p=0.001, α=0.01 → decisão?', a: 'rejeitar', type: 'mental_math', want: true },
+  { q: 'Mesa circular de 5 pessoas = ?', a: '24', type: 'mental_math', want: true },
+  { q: 'X={1,2,3} uniforme → E[X] = ?', a: '2', type: 'mental_math', want: true },
+  { q: 'x̄=50, SE=2 → IC 95% superior = ?', a: '53.92', type: 'mental_math', want: true },
+  { q: 'Se P(A)+P(Ā) = ?, sempre', a: '1', type: 'mental_math', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

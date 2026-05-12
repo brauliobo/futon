@@ -939,6 +939,19 @@ const SQUARE_LADO_FROM_DIAG_RE = /^Quadrado\s+diagonal\s+(\d+(?:\.\d+)?)\s*[—-
 const TRI_30_60_LADO_60_RE = /^Em\s+30-?60-?90\s+com\s+x\s*=\s*(\d+(?:\.\d+)?)\s*,\s*lado\s+de\s+60°\s*=\s*\??\s*$/i;
 // '30-60-90 lado oposto a 30° = x; oposto a 60° = ?' → 'x√3'
 const TRI_30_60_X_VAR_RE = /^Em\s+30-?60-?90\s*,\s*lado\s+oposto\s+a\s+30°\s*=\s*x\s*;\s*oposto\s+a\s+60°\s*=\s*\??\s*$/i;
+// Hypothesis testing patterns
+const BETA_TO_POWER_RE = /β\s*=\s*(\d+(?:\.\d+)?)\s*→\s*poder(?:\s+do\s+teste)?\s*=\s*\??\s*$/i;
+const POWER_FORMULA_RE = /β\s*=\s*P\(erro\s+tipo\s+II\)[^;]*;\s*poder\s*=\s*1\s*-\s*β\s*;\s*se\s+β\s*=\s*(\d+(?:\.\d+)?)\s*→\s*poder\s*=\s*\??\s*$/i;
+const Z_EQUAL_MU_RE = /^x̄\s*=\s*(\d+(?:\.\d+)?)\s*,\s*μ[₀0]\s*=\s*\1\s*→\s*z\s*=\s*\??\s*$/i;
+const REJECT_H0_RE = /^Rejeitamos\s+H[₀0]\s+quando\s+p-valor\s*\(/i;
+const DECISION_PVAL_RE = /^p\s*=\s*(\d+(?:\.\d+)?)\s*,\s*α\s*=\s*(\d+(?:\.\d+)?)\s*→\s*decis[ãa]o\?\s*$/i;
+// 'Mesa circular de N pessoas = ?' → (N-1)!
+const CIRCULAR_TABLE_RE = /^Mesa\s+circular\s+de\s+(\d+)\s+pessoas\s*=\s*\??\s*$/i;
+// 'X={a,b,c} uniforme → E[X] = ?' arrow form (existing handler uses '—'; add for '→')
+const UNIFORM_E_ARROW_RE = /^X\s*=\s*\{\s*([^}]+)\s*\}\s*uniforme\s*→\s*E\[X\]\s*=\s*\??\s*$/i;
+// IC superior with → operator
+const IC_UPPER_ARROW_RE = /^x̄\s*=\s*(\d+(?:\.\d+)?)\s*,\s*SE\s*=\s*(\d+(?:\.\d+)?)\s*→\s*IC\s+95%\s+superior\s*=\s*\??\s*$/i;
+// 'Se P(A)+P(Ā) = ?, sempre' constant (existing partial — extend to allow ', sempre' tail)
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -5542,6 +5555,65 @@ function verify(question, answer, type) {
   if (TRI_30_60_X_VAR_RE.test(question)) {
     const ans = String(answer).trim().replace(/\s+/g, '');
     return { ok: ans === 'x√3', computed: 'x√3', kind: 'tri_special' };
+  }
+  // β → poder = 1-β
+  const bp = q.match(BETA_TO_POWER_RE);
+  if (bp) {
+    const expected = 1 - Number(bp[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'stat' };
+  }
+  const pf = q.match(POWER_FORMULA_RE);
+  if (pf) {
+    const expected = 1 - Number(pf[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'stat' };
+  }
+  // x̄ = μ₀ → z = 0
+  if (Z_EQUAL_MU_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'z_score' };
+  }
+  // Rejeitamos H₀ quando p-valor < α
+  if (REJECT_H0_RE.test(q)) {
+    return { ok: String(answer).trim() === '<', computed: '<', kind: 'stat' };
+  }
+  // Decision from p-value and α
+  const dpv = q.match(DECISION_PVAL_RE);
+  if (dpv) {
+    const p1 = Number(dpv[1]), alpha = Number(dpv[2]);
+    const expected = p1 < alpha ? 'rejeitar' : 'aceitar';
+    return { ok: String(answer).trim().toLowerCase() === expected, computed: expected, kind: 'stat' };
+  }
+  // Mesa circular de N pessoas = (N-1)!
+  const ctab = q.match(CIRCULAR_TABLE_RE);
+  if (ctab) {
+    const N = Number(ctab[1]);
+    let expected = 1; for (let i = 2; i <= N - 1; i++) expected *= i;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'permute' };
+  }
+  // Uniform E[X] arrow form
+  const ueA = q.match(UNIFORM_E_ARROW_RE);
+  if (ueA) {
+    const xs = parseVals(ueA[1]);
+    if (xs.length) {
+      const expected = xs.reduce((s, x) => s + x, 0) / xs.length;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'expected' };
+    }
+  }
+  // IC superior arrow form
+  const icuA = q.match(IC_UPPER_ARROW_RE);
+  if (icuA) {
+    const expected = Number(icuA[1]) + 1.96 * Number(icuA[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stat' };
+  }
+  // 'Se P(A)+P(Ā) = ?, sempre' → 1
+  if (/^se\s+P\(A\)\s*\+\s*P\(Ā\)\s*=\s*\?,?\s*sempre\s*$/i.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'prob_value' };
   }
   // Inverse trig (degree results) — parse value via normalized expression. Use raw question
   // because 'arccos/arcsen/arctan' normalize to 'acos/asin/atan'.
