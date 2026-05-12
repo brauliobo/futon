@@ -1114,6 +1114,15 @@ const SEN_B_FROM_LAW_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?
 // 'cos(22.5°) numerador sob raiz (1+cos 45°) = ?' → 1+cos(45°) = 1+√2/2 (literal)
 const COS_HALF_NUMERATOR_RE = /^cos\(\s*22\.5°\s*\)\s+numerador\s+sob\s+raiz\s+\(1\s*\+\s*cos\s+45°\)\s*=\s*\??\s*$/i;
 const SEN_HALF_NUMERATOR_RE = /^(?:sen|sin)\(\s*22\.5°\s*\)\s+numerador\s+sob\s+raiz\s+\(1\s*-\s*cos\s+45°\)\s*=\s*\??\s*$/i;
+// 'Com y=N, no sistema x=My, x+y=K, x = ?' → M·N
+const SUBST_SYSTEM_RE = /^Com\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*no\s+sistema\s+x\s*=\s*(-?\d+(?:\.\d+)?)\s*\*?\s*y\s*,\s*x\s*\+\s*y\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*x\s*=\s*\??\s*$/i;
+// Eigenvector from linear constraint: '; x+y=0; autovetor = (1,?)' / x-y=0
+const EIGVEC_CONSTRAINT_RE = /;\s*x\s*([+\-])\s*y\s*=\s*0\s*;\s*autovetor\s*=\s*\(\s*1\s*,\s*\?\s*\)\s*$/i;
+// Eigenvector for diagonal: A=[a 0; 0 d], λ=a: v = (c,?) → 0
+const EIGVEC_DIAG_C_RE = /^A\s*=\s*\[\s*(-?\d+)\s+0\s*;\s*0\s+(-?\d+)\s*\]\s*,\s*λ\s*=\s*(-?\d+)\s*:[^;]*;?\s*v\s*=\s*\(\s*c\s*,\s*\?\s*\)\s+para\s+c\s*≠\s*0\s*$/i;
+const EIGVEC_DIAG_0Q_RE = /^A\s*=\s*\[\s*(-?\d+)\s+0\s*;\s*0\s+(-?\d+)\s*\]\s*,\s*λ\s*=\s*(-?\d+)\s*:\s*autovetor\s*=\s*\(\s*0\s*,\s*\?\s*\)\s*$/i;
+// Sum-to-1 prob completion with 'P(X=K)=?' final
+const PROB_SUM_NO_PARA_RE = /^P\(X\s*=\s*\d+\)\s*=\s*\(?(\d+\/\d+|\d+(?:\.\d+)?)\)?\s*,\s*P\(X\s*=\s*\d+\)\s*=\s*\(?(\d+\/\d+|\d+(?:\.\d+)?)\)?\s*,\s*P\(X\s*=\s*\d+\)\s*=\s*\?\s*=\s*\?\s*$/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -6443,6 +6452,50 @@ function verify(question, answer, type) {
   if (SEN_HALF_NUMERATOR_RE.test(question)) {
     const ans = String(answer).trim().replace(/\s+/g, '');
     return { ok: ans === '1-√2/2', computed: '1-√2/2', kind: 'half_angle' };
+  }
+  // 'Com y=N, no sistema x=My, x+y=K, x = ?' → M·N
+  const substSys = q.match(SUBST_SYSTEM_RE);
+  if (substSys) {
+    const Y = Number(substSys[1]), M = Number(substSys[2]);
+    const expected = M * Y;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'sys_solve' };
+  }
+  // Eigenvector from constraint: x+y=0 (autovetor=(1,?) → -1); x-y=0 → 1
+  const evcr = q.match(EIGVEC_CONSTRAINT_RE);
+  if (evcr) {
+    const expected = evcr[1] === '+' ? -1 : 1;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'eigenvalue' };
+  }
+  // Diagonal eigenvector (c, ?): λ=a → second=0
+  const evdc = q.match(EIGVEC_DIAG_C_RE);
+  if (evdc) {
+    const a1 = Number(evdc[1]), d1 = Number(evdc[2]), lam = Number(evdc[3]);
+    let expected;
+    if (lam === a1) expected = 0;
+    else if (lam === d1) expected = null;  // would need c=0, not match this pattern
+    if (expected != null) {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'eigenvalue' };
+    }
+  }
+  // Diagonal eigenvector (0, ?): λ=d → second≠0, conventional 1
+  const evd0 = q.match(EIGVEC_DIAG_0Q_RE);
+  if (evd0) {
+    const a1 = Number(evd0[1]), d1 = Number(evd0[2]), lam = Number(evd0[3]);
+    if (lam === d1) {
+      const an = toNumber(tryEval(a));
+      if (an != null && an !== 0) return { ok: true, computed: `${an}`, kind: 'eigenvalue' };
+    }
+  }
+  // Sum-to-1 trailing '?=?'
+  const psum = q.match(PROB_SUM_NO_PARA_RE);
+  if (psum) {
+    const parseN = (s) => { const m = s.match(/^(\d+)\/(\d+)$/); return m ? Number(m[1]) / Number(m[2]) : Number(s); };
+    const expected = 1 - parseN(psum[1]) - parseN(psum[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
   }
   // Inverse trig (degree results) — parse value via normalized expression. Use raw question
   // because 'arccos/arcsen/arctan' normalize to 'acos/asin/atan'.
