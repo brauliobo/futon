@@ -944,7 +944,11 @@ const BETA_TO_POWER_RE = /β\s*=\s*(\d+(?:\.\d+)?)\s*→\s*poder(?:\s+do\s+teste
 const POWER_FORMULA_RE = /β\s*=\s*P\(erro\s+tipo\s+II\)[^;]*;\s*poder\s*=\s*1\s*-\s*β\s*;\s*se\s+β\s*=\s*(\d+(?:\.\d+)?)\s*→\s*poder\s*=\s*\??\s*$/i;
 const Z_EQUAL_MU_RE = /^x̄\s*=\s*(\d+(?:\.\d+)?)\s*,\s*μ[₀0]\s*=\s*\1\s*→\s*z\s*=\s*\??\s*$/i;
 const REJECT_H0_RE = /^Rejeitamos\s+H[₀0]\s+quando\s+p-valor\s*\(/i;
-const DECISION_PVAL_RE = /^p\s*=\s*(\d+(?:\.\d+)?)\s*,\s*α\s*=\s*(\d+(?:\.\d+)?)\s*→\s*decis[ãa]o\?\s*$/i;
+const DECISION_PVAL_RE = /^p\s*=\s*(\d+(?:\.\d+)?)\s*,\s*α\s*=\s*(\d+(?:\.\d+)?)\s*→\s*decis[ãa]o\?\s*(?:\([^)]*\))?\s*$/i;
+// z-test decision: 'z=N > z_crit=M → decisão? (...)'
+const DECISION_Z_RE = /^z\s*=\s*(-?\d+(?:\.\d+)?)\s*>\s*z_crit\s*=\s*(\d+(?:\.\d+)?)\s*→\s*decis[ãa]o\?\s*(?:\([^)]*\))?\s*$/i;
+// 'p=N, α=M → decisão?' with the 'borderline' option label — author may pick 'não rejeitar' for p=α
+const DECISION_BORDER_RE = /^p\s*=\s*α\s*→\s*decis[ãa]o\?/i;
 // 'Mesa circular de N pessoas = ?' → (N-1)!
 const CIRCULAR_TABLE_RE = /^Mesa\s+circular\s+de\s+(\d+)\s+pessoas\s*=\s*\??\s*$/i;
 // 'X={a,b,c} uniforme → E[X] = ?' arrow form (existing handler uses '—'; add for '→')
@@ -5761,12 +5765,19 @@ function verify(question, answer, type) {
   if (REJECT_H0_RE.test(q)) {
     return { ok: String(answer).trim() === '<', computed: '<', kind: 'stat' };
   }
-  // Decision from p-value and α
+  // Decision from p-value and α: < α → rejeitar; ≥ α → não rejeitar (also accept 'aceitar')
   const dpv = q.match(DECISION_PVAL_RE);
   if (dpv) {
     const p1 = Number(dpv[1]), alpha = Number(dpv[2]);
-    const expected = p1 < alpha ? 'rejeitar' : 'aceitar';
-    return { ok: String(answer).trim().toLowerCase() === expected, computed: expected, kind: 'stat' };
+    const expected = p1 < alpha ? 'rejeitar' : 'não rejeitar';
+    const ans = String(answer).trim().toLowerCase();
+    const ok = ans === expected || (expected === 'não rejeitar' && ans === 'aceitar');
+    return { ok, computed: expected, kind: 'stat' };
+  }
+  // z-test: z > z_crit → rejeitar
+  const dz = q.match(DECISION_Z_RE);
+  if (dz) {
+    return { ok: String(answer).trim().toLowerCase() === 'rejeitar', computed: 'rejeitar', kind: 'stat' };
   }
   // Mesa circular de N pessoas = (N-1)!
   const ctab = q.match(CIRCULAR_TABLE_RE);
@@ -7383,6 +7394,10 @@ async function main() {
   const byType = { verified: {}, total: {} };
   const byLevel = { verified: {}, total: {} };
   const mismatches = [];
+  const unverified = [];
+  // `--unverified-set LEVEL/set_NN` filters output to one set.
+  const setFilterIdx = process.argv.indexOf('--unverified-set');
+  const setFilter = setFilterIdx >= 0 ? process.argv[setFilterIdx + 1] : null;
   for (const f of files) {
     const level = f.match(/math\/([^/]+)\//)?.[1] ?? '?';
     const s = YAML.parse(readFileSync(f, 'utf8'));
@@ -7391,12 +7406,13 @@ async function main() {
         const t = e.type || 'unknown';
         byType.total[t] = (byType.total[t] || 0) + 1;
         byLevel.total[level] = (byLevel.total[level] || 0) + 1;
-        // (No per-file skips currently — see CORRECTNESS.md / memory for
-        // skipped types like inequality.)
         const r = verify(e.question, e.correctAnswer, e.type);
         if (!r) {
           if (process.argv.includes('--debug-unverified') && process.argv.includes(e.type)) {
             console.log(`SKIP ${e.type}: ${f}  q="${e.question}" a="${e.correctAnswer}"`);
+          }
+          if (process.argv.includes('--unverified')) {
+            unverified.push({ file: f.replace('src/levels/', ''), type: t, q: e.question, a: e.correctAnswer });
           }
           continue;
         }
@@ -7444,6 +7460,18 @@ async function main() {
       const pct = tot ? Math.round(100 * ver / tot) : 0;
       console.log(`    ${t.padEnd(28)} ${String(ver).padStart(5)} / ${String(tot).padStart(5)}  (${pct}%)`);
     }
+  }
+  if (process.argv.includes('--unverified')) {
+    // Filter by set (e.g., --unverified-set Q/set_06) when provided.
+    const filtered = setFilter ? unverified.filter(u => u.file.startsWith(`math/${setFilter}`)) : unverified;
+    // Group by type for easier scanning. Skip V/F and multi-option categorical.
+    const filterCat = !process.argv.includes('--unverified-all');
+    const visible = filtered.filter(u => !filterCat || (!/\(V\/F\)|V\/F\?/.test(u.q) && !/\([^)]+\/[^)]+\)/.test(u.q)));
+    console.log(c(`\n  Unverified${setFilter ? ` in ${setFilter}` : ''}: ${visible.length}/${filtered.length} non-categorical`, BOLD));
+    for (const u of visible.slice(0, 100)) {
+      console.log(`    ${c(u.file, BOLD)} [${u.type}]  ${u.q}  =  ${u.a}`);
+    }
+    if (visible.length > 100) console.log(`    … and ${visible.length - 100} more`);
   }
   if (!mismatches.length) {
     console.log(c('✅ All authored answers match library evaluation.', GREEN));
