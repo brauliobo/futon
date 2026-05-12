@@ -1779,12 +1779,25 @@ function verify(question, answer, type) {
     const expected = A < B ? '<' : A > B ? '>' : '=';
     return { ok: a.trim() === expected, computed: expected, kind: 'comparison' };
   }
-  // Linear inequality is intentionally NOT verified here: a quick check of
-  // the H/set_06..H/set_07 datasets shows the authored answers are
-  // systematically off-by-one or use the un-flipped pre-divide bound,
-  // contradicting their own rationales. Running this verifier flagged 424
-  // mismatches in a row. Surfacing those needs an authoring pass — not a
-  // gate that turns red until they're fixed. Track separately if needed.
+  // Linear inequality: '<ax+b> <op> <c>' — boundary closest-integer answer.
+  if (type === 'inequality') {
+    const m = q.match(/^(-?\d+)\s*\*?\s*x\s*\+\s*(-?\d+)\s*(<=|>=|<|>)\s*(-?\d+)\s*$/);
+    if (m) {
+      const A = Number(m[1]), B = Number(m[2]), op = m[3], C = Number(m[4]);
+      if (A !== 0) {
+        const bound = (C - B) / A;
+        const flipped = A < 0 ? (op === '<' ? '>' : op === '>' ? '<' : op) : op;
+        const isInt = Number.isInteger(bound);
+        let expected;
+        if (flipped === '<') expected = isInt ? bound - 1 : Math.floor(bound);
+        else if (flipped === '>') expected = isInt ? bound + 1 : Math.ceil(bound);
+        if (expected != null) {
+          const an = toNumber(tryEval(a));
+          if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'inequality' };
+        }
+      }
+    }
+  }
   // "x² = N (raiz positiva|negativa|ambas)" — answer is ±√N as string
   const sqh = q.match(SQ_HINT_RE);
   if (sqh) {
