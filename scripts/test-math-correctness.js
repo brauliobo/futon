@@ -479,6 +479,21 @@ const CASES = [
   { q: 'i · i = cis(90°)·cis(90°) = cis(?°) = ?', a: '-1', type: 'algebra', want: true },
   { q: '(2+i)(3+2i) = ? + 7i', a: '4', type: 'algebra', want: true },
   { q: '(a+bi) + 0 = ?', a: 'a+bi', type: 'algebra', want: true },
+  // Cylinder h-from-V, law-cos Com, two-arc angle, 2x2 inverse element, symmetric, det(Aᵀ), subspace, R90+R90, T+reflect, row-vec dot
+  { q: 'Se V=18π e r=3, h = ?', a: '2', type: 'geometry', want: true },
+  { q: 'Com a=5, b=5, C=60°: c = ?', a: '5', type: 'geometry', want: true },
+  { q: 'Dois arcos opostos de 120° e 240° — ângulo entre cordas = ?°', a: '60', type: 'geometry', want: true },
+  { q: 'A=[2 1; 1 1]: A⁻¹[1,1] (elemento linha1,col1) = ?', a: '1', type: 'algebra', want: true },
+  { q: 'A=[2 1; 1 1]: A⁻¹[1,2] = ?', a: '-1', type: 'algebra', want: true },
+  { q: 'A=[5 3; 3 7]: A é simétrica? (1=sim, 0=não)', a: '1', type: 'algebra', want: true },
+  { q: 'det(Aᵀ) = det(A); A=[2 1; 5 3]: det = ?', a: '1', type: 'algebra', want: true },
+  { q: 'Origem (0,0) pertence a qualquer subespaço? (1=sim, 0=não)', a: '1', type: 'algebra', want: true },
+  { q: 'Reta y=2x em R²: é subespaço? (1=sim, 0=não)', a: '1', type: 'algebra', want: true },
+  { q: 'Reta y=2x+1 em R²: é subespaço? (1=sim, 0=não)', a: '0', type: 'algebra', want: true },
+  { q: 'R90° seguida de R90° de (1,0): x\' = ?', a: '-1', type: 'geometry', want: true },
+  { q: 'T(1,0) seguida de reflexão eixo y de (2,3): x\' = ?', a: '-3', type: 'geometry', want: true },
+  { q: '(7+2i) - (3+5i) = ? + ?i', a: '4 - 3i', type: 'algebra', want: true },
+  { q: '[1 2]·[3 4]ᵀ (1×2 vezes 2×1) = ?', a: '11', type: 'algebra', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

@@ -975,6 +975,36 @@ const I_TIMES_I_CIS_RE = /^i\s*[·*]\s*i\s*=\s*cis\((\d+)°\)\s*[·*]\s*cis\((\d
 const COMPLEX_MUL_REAL_RE = /^\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*=\s*\?\s*\+\s*(-?\d+)i\s*$/i;
 // '(a+bi) + 0 = ?' → a+bi (literal)
 const COMPLEX_ADD_ZERO_RE = /^\(\s*a\s*\+\s*bi\s*\)\s*\+\s*0\s*=\s*\??\s*$/i;
+// 'Se V=Nπ e r=R, h = ?' → N/R²
+const CYL_H_FROM_V_RE = /^Se\s+V\s*=\s*(\d+(?:\.\d+)?)\s*pi\s+e\s+r\s*=\s*(\d+(?:\.\d+)?)\s*,\s*h\s*=\s*\??\s*$/i;
+// Law of cosines (Com prefix): 'Com a=A, b=B, C=θ°: c = ?' → √(A²+B²-2AB·cos(θ))
+const LAW_COS_COM_RE = /^Com\s+a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*C\s*=\s*(\d+(?:\.\d+)?)°\s*:\s*c\s*=\s*\??\s*$/i;
+// 'Dois arcos opostos de A° e B° — ângulo entre cordas = ?°' → |A-B|/2
+const TWO_ARCS_ANGLE_RE = /^Dois\s+arcos\s+opostos\s+de\s+(\d+(?:\.\d+)?)°\s+e\s+(\d+(?:\.\d+)?)°\s*[—-]+\s*[âa]ngulo\s+entre\s+cordas\s*=\s*\?°?\s*$/i;
+// 2x2 inverse element: 'A=[a b; c d]: A⁻¹[i,j] = ?'
+const INV_2X2_ELEM_RE = /^A\s*=\s*\[\s*(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s*\]\s*:\s*A⁻¹\[\s*(\d)\s*,\s*(\d)\s*\]/i;
+// 'A=[a b; c d]: A é simétrica? (1=sim, 0=não)' → 1 if b==c
+const SYMMETRIC_RE = /^A\s*=\s*\[\s*(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s*\]\s*:\s*A\s+[ée]\s+sim[ée]trica\?\s*\(/i;
+// 'det(Aᵀ) = det(A); A=[a b; c d]: det = ?' → ad-bc
+const DET_TRANSP_RE = /det\(Aᵀ\)\s*=\s*det\(A\)\s*;\s*A\s*=\s*\[\s*(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s*\]\s*:\s*det\s*=\s*\??\s*$/i;
+// '(AB)ᵀ = BᵀAᵀ; ordem das matrizes é: (1=invertida, 0=mesma)' → 1
+const ABT_ORDER_RE = /^\(AB\)ᵀ\s*=\s*BᵀAᵀ\s*;\s*ordem\s+das\s+matrizes\s+[ée]:\s*\(/i;
+// 'Origem (0,0) pertence a qualquer subespaço? (1=sim, 0=não)' → 1
+const ORIGIN_SUBSPACE_RE = /^Origem\s+\(0\s*,\s*0\)\s+pertence\s+a\s+qualquer\s+subespa[çc]o\?/i;
+// 'Plano z=0 em R³: é subespaço? (1=sim, 0=não)' → 1
+const PLANE_Z0_RE = /^Plano\s+z\s*=\s*0\s+em\s+R\^?[³3]\s*:\s*[ée]\s+subespa[çc]o\?/i;
+// 'Reta y=mx em R²: é subespaço?' → 1 if line through origin (no constant), 0 otherwise
+const LINE_SUBSPACE_RE = /^Reta\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*\*?\s*x\s*([+\-]\s*\d+(?:\.\d+)?)?\s+em\s+R\^?[²2]\s*:\s*[ée]\s+subespa[çc]o\?/i;
+// 'Conjunto {v₁,v₂} L.D. ↔ det da matriz formada = ?' → 0
+const LD_DET_RE = /^Conjunto\s+\{v[₁1]\s*,\s*v[₂2]\}\s+L\.?D\.?\s+↔\s+det\s+da\s+matriz\s+formada\s*=\s*\??\s*$/i;
+// 'R90° seguida de R90° de (a,b): x'/y'' → 180° rotation
+const R90_R90_RE = /^R90°\s+seguida\s+de\s+R90°\s+de\s+\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s*:\s*([xy])'\s*=\s*\??\s*$/i;
+// 'T(c,d) seguida de reflexão eixo y de (a,b): x'/y''
+const T_THEN_REFY_RE = /^T\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s+seguida\s+de\s+reflex[ãa]o\s+eixo\s+y\s+de\s+\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s*:\s*([xy])'\s*=\s*\??\s*$/i;
+// '(a+bi) - (c+di) = ? + ?i' two-component literal answer
+const COMPLEX_SUB_FULL_RE = /^\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*-\s*\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*=\s*\?\s*\+\s*\?i\s*$/i;
+// '[1 2]·[3 4]ᵀ (1×2 vezes 2×1) = ?' → dot product of row vectors
+const ROW_VEC_DOT_RE = /^\[\s*(-?\d+)\s+(-?\d+)\s*\]\s*[·*]\s*\[\s*(-?\d+)\s+(-?\d+)\s*\]ᵀ/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -5720,6 +5750,121 @@ function verify(question, answer, type) {
   if (COMPLEX_ADD_ZERO_RE.test(q)) {
     const ans = String(answer).trim().replace(/\s+/g, '');
     return { ok: ans === 'a+bi', computed: 'a+bi', kind: 'complex_part' };
+  }
+  // Cylinder height from V=Nπ and r=R: h = N/R²
+  const chfv = q.match(CYL_H_FROM_V_RE);
+  if (chfv) {
+    const N = Number(chfv[1]), R = Number(chfv[2]);
+    if (R !== 0) {
+      const expected = N / (R * R);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'cylinder_vol' };
+    }
+  }
+  // Law of cosines (Com prefix): c = sqrt(a²+b²-2ab·cos(θ))
+  const lcCom = question.match(LAW_COS_COM_RE);
+  if (lcCom) {
+    const A = Number(lcCom[1]), B = Number(lcCom[2]), C = Number(lcCom[3]);
+    const expected = Math.sqrt(A * A + B * B - 2 * A * B * Math.cos(C * Math.PI / 180));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_cos' };
+  }
+  // Two opposite arcs angle: |A-B|/2
+  const tarc = question.match(TWO_ARCS_ANGLE_RE);
+  if (tarc) {
+    const expected = Math.abs(Number(tarc[1]) - Number(tarc[2])) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'poly_int_angle' };
+  }
+  // 2x2 inverse element by [i,j]
+  const inv2 = q.match(INV_2X2_ELEM_RE);
+  if (inv2) {
+    const A = Number(inv2[1]), B = Number(inv2[2]), C = Number(inv2[3]), D = Number(inv2[4]);
+    const i = Number(inv2[5]), j = Number(inv2[6]);
+    const det = A * D - B * C;
+    if (det !== 0) {
+      const cof = [[D, -B], [-C, A]];
+      const expected = cof[i - 1][j - 1] / det;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'mat_op' };
+    }
+  }
+  // 'A é simétrica?' (1=sim, 0=não)
+  const sym = q.match(SYMMETRIC_RE);
+  if (sym) {
+    const B = Number(sym[2]), C = Number(sym[3]);
+    const expected = B === C ? 1 : 0;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'mat_op' };
+  }
+  // det(Aᵀ) = det(A); A=[a b; c d]: det = ad-bc
+  const dtr = question.match(DET_TRANSP_RE);
+  if (dtr) {
+    const expected = Number(dtr[1]) * Number(dtr[4]) - Number(dtr[2]) * Number(dtr[3]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'det_2x2' };
+  }
+  // (AB)ᵀ = BᵀAᵀ; ordem é: 1
+  if (ABT_ORDER_RE.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'mat_op' };
+  }
+  // Origin in any subspace → 1
+  if (ORIGIN_SUBSPACE_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'dim_r' };
+  }
+  // Plano z=0 em R³ → 1
+  if (PLANE_Z0_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'dim_r' };
+  }
+  // Reta y=mx[±c] em R² → 1 if no constant, 0 if has constant
+  const lsub = q.match(LINE_SUBSPACE_RE);
+  if (lsub) {
+    const hasConstant = lsub[2] != null && lsub[2].trim() !== '';
+    const expected = hasConstant ? 0 : 1;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'dim_r' };
+  }
+  // L.D. → det = 0
+  if (LD_DET_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'lin_indep' };
+  }
+  // R90° + R90° = 180° rotation
+  const r9090 = question.match(R90_R90_RE);
+  if (r9090) {
+    const px = Number(r9090[1]), py = Number(r9090[2]);
+    const expected = r9090[3].toLowerCase() === 'x' ? -px : -py;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'reflect' };
+  }
+  // T(c,d) then reflexão eixo y: T first → (a+c, b+d), reflect y → (-(a+c), b+d)
+  const tref = question.match(T_THEN_REFY_RE);
+  if (tref) {
+    const tx = Number(tref[1]), ty = Number(tref[2]);
+    const px = Number(tref[3]), py = Number(tref[4]);
+    const expected = tref[5].toLowerCase() === 'x' ? -(px + tx) : py + ty;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'reflect' };
+  }
+  // Complex sub with both ? — literal '(a-c) + (b-d)i'
+  const csf = question.match(COMPLEX_SUB_FULL_RE);
+  if (csf) {
+    const a1 = Number(csf[1]), bSign = csf[2] === '-' ? -1 : 1, b1 = bSign * (csf[3] === '' ? 1 : Number(csf[3]));
+    const c1 = Number(csf[4]), dSign = csf[5] === '-' ? -1 : 1, d1 = dSign * (csf[6] === '' ? 1 : Number(csf[6]));
+    const re2 = a1 - c1, im2 = b1 - d1;
+    const expected = `${re2} ${im2 >= 0 ? '+' : '-'} ${Math.abs(im2)}i`;
+    const ans = String(answer).trim().replace(/\s+/g, ' ');
+    return { ok: ans === expected, computed: expected, kind: 'complex_part' };
+  }
+  // Row-vector dot product: [a b]·[c d]ᵀ = ac+bd
+  const rvd = question.match(ROW_VEC_DOT_RE);
+  if (rvd) {
+    const expected = Number(rvd[1]) * Number(rvd[3]) + Number(rvd[2]) * Number(rvd[4]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'mat_op' };
   }
   // Inverse trig (degree results) — parse value via normalized expression. Use raw question
   // because 'arccos/arcsen/arctan' normalize to 'acos/asin/atan'.
