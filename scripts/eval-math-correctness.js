@@ -864,6 +864,23 @@ const BASE_DOT_RE = /^Base\s+ortonormal:\s*e[ᵢi]\s*[·*]\s*e[ⱼj]\s*\([^)]+\)
 const KER_INJ_RE = /^dim\s+de\s+n[úu]cleo\s+\(ker\)\s+de\s+matriz\s+n\s*[×x*]\s*n\s+injetiva\s*=\s*\??\s*$/i;
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
+// Inverse trig with degree result
+const ARCCOS_DEG_RE = /^arccos\(\s*([\-\d.√\/]+)\s*\)\s*=\s*\?°?\s*$/i;
+const ARCSEN_DEG_RE = /^arcsen\(\s*([\-\d.√\/]+)\s*\)\s*=\s*\?°?\s*$/i;
+const ARCTAN_DEG_RE = /^arctan\(\s*([\-\d.√\/]+)\s*\)\s*=\s*\?°?\s*$/i;
+// 'Se cos(C) = V, então C = ?°' → acos(V) in degrees
+const COS_TO_ANGLE_RE = /^Se\s+cos\(C\)\s*=\s*(-?[\d.]+)\s*,\s*ent[ãa]o\s+C\s*=\s*\?°?\s*$/i;
+// 'cos(x)=V → x em [0°,360°) = ?' → first non-negative solution
+const COS_X_FIRST_RE = /^cos\(x\)\s*=\s*([\-\d.√\/]+)\s*→\s*x\s+em\s+\[0°?\s*,\s*360°?\)\s*=\s*\??\s*$/i;
+// '2cos²(x) - 1 = 0 → cos(x) = ? (positivo)' → √2/2
+const TWO_COS_SQ_POS_RE = /^2\s*\*?\s*cos\(x\)\^?2\s*-\s*1\s*=\s*0\s*→\s*cos\(x\)\s*=\s*\?\s*\(positivo\)\s*$/i;
+// 'p (semiperímetro) = (a+b+c)/?' → 2
+const SEMI_PERIM_DENOM_RE = /^p\s+\(semiper[íi]metro\)\s*=\s*\(a\s*\+\s*b\s*\+\s*c\)\/\?\s*$/i;
+// 'Em triângulo equilátero lado N, R = N/√3 ≈ ?' (already added but check)
+// sen(B) from law of sines numerator: 'a=A, b=B, A=α°, sen(B) = (B·senα°)/A ≈ ?'
+const SIN_B_LAW_RE = /a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*A\s*=\s*(\d+(?:\.\d+)?)°\s*,\s*sen\(B\)\s*=\s*\([\d.·*\s]+\)\s*\/\s*\d+\s*≈\s*\?/i;
+// 'cos(x)=1 → x em [0°,360°) = ?' → 0
+// cos(C) angle dictionary already partial covered. Pattern below also matches 'cos(C) = 0' etc.
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -4753,8 +4770,8 @@ function verify(question, answer, type) {
     const ans = String(answer).trim().replace(/\s+/g, '');
     return { ok: ans === expected, computed: expected, kind: 'tri_special' };
   }
-  // Equilateral R numeric: N/√3 ≈ ?
-  const eqRN = q.match(EQ_TRI_R_NUM_RE);
+  // Equilateral R numeric: N/√3 ≈ ?  (raw — √3 stays)
+  const eqRN = question.match(EQ_TRI_R_NUM_RE);
   if (eqRN) {
     const expected = Number(eqRN[1]) / Math.sqrt(3);
     const an = toNumber(tryEval(a));
@@ -5118,6 +5135,78 @@ function verify(question, answer, type) {
   if (KER_INJ_RE.test(q)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === 0, computed: '0', kind: 'dim_r' };
+  }
+  // Inverse trig (degree results) — parse value via normalized expression. Use raw question
+  // because 'arccos/arcsen/arctan' normalize to 'acos/asin/atan'.
+  const parseTrigVal = (s) => {
+    try { return toNumber(math.evaluate(normalize(s.trim()))); } catch { return null; }
+  };
+  const acR = question.match(ARCCOS_DEG_RE);
+  if (acR) {
+    const V = parseTrigVal(acR[1]);
+    if (V != null && Math.abs(V) <= 1) {
+      const expected = Math.acos(V) * 180 / Math.PI;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'inverse' };
+    }
+  }
+  const asR = question.match(ARCSEN_DEG_RE);
+  if (asR) {
+    const V = parseTrigVal(asR[1]);
+    if (V != null && Math.abs(V) <= 1) {
+      const expected = Math.asin(V) * 180 / Math.PI;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'inverse' };
+    }
+  }
+  const atR = question.match(ARCTAN_DEG_RE);
+  if (atR) {
+    const V = parseTrigVal(atR[1]);
+    if (V != null) {
+      const expected = Math.atan(V) * 180 / Math.PI;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'inverse' };
+    }
+  }
+  // 'Se cos(C) = V, então C = ?°' → acos in degrees
+  const c2a = q.match(COS_TO_ANGLE_RE);
+  if (c2a) {
+    const V = Number(c2a[1]);
+    if (Math.abs(V) <= 1) {
+      const expected = Math.acos(V) * 180 / Math.PI;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'inverse' };
+    }
+  }
+  // 'cos(x)=V → x em [0°,360°) = ?' → smallest non-neg solution (one or two)
+  const cxF = question.match(COS_X_FIRST_RE);
+  if (cxF) {
+    const V = parseTrigVal(cxF[1]);
+    if (V != null && Math.abs(V) <= 1) {
+      const expected = Math.acos(V) * 180 / Math.PI;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+    }
+  }
+  // '2cos²(x) - 1 = 0 → cos(x) = ? (positivo)' → √2/2 (literal)
+  if (TWO_COS_SQ_POS_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === '√2/2' || ans === 'sqrt(2)/2', computed: '√2/2', kind: 'trig_meta' };
+  }
+  // p (semiperímetro) = (a+b+c)/2
+  if (SEMI_PERIM_DENOM_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 2, computed: '2', kind: 'law_cos' };
+  }
+  // Law of sines numeric: sen(B) = b·sin(A)/a
+  const sbn = question.match(SIN_B_LAW_RE);
+  if (sbn) {
+    const A_side = Number(sbn[1]), B_side = Number(sbn[2]), alpha = Number(sbn[3]);
+    if (A_side !== 0) {
+      const expected = B_side * Math.sin(alpha * Math.PI / 180) / A_side;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_sin' };
+    }
   }
   // Heron's evaluation
   const hrn = question.match(HERON_NUM_RE);

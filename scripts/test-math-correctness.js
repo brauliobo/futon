@@ -416,6 +416,17 @@ const CASES = [
   { q: '2·(1,0) + 3·(0,1) = (?,3)', a: '2', type: 'geometry', want: true },
   { q: 'Base ortonormal: ||eᵢ|| = ?', a: '1', type: 'geometry', want: true },
   { q: 'dim de núcleo (ker) de matriz n×n injetiva = ?', a: '0', type: 'geometry', want: true },
+  // Inverse trig + cos→C angle + semi-perim constant
+  { q: 'arccos(1/2) = ?°', a: '60', type: 'trigonometry', want: true },
+  { q: 'arccos(-1) = ?°', a: '180', type: 'trigonometry', want: true },
+  { q: 'arcsen(0) = ?°', a: '0', type: 'trigonometry', want: true },
+  { q: 'arcsen(1/2) = ?°', a: '30', type: 'trigonometry', want: true },
+  { q: 'arctan(1) = ?°', a: '45', type: 'trigonometry', want: true },
+  { q: 'Se cos(C) = 0.5, então C = ?°', a: '60°', type: 'trigonometry', want: true },
+  { q: 'Se cos(C) = -0.5, então C = ?°', a: '120°', type: 'trigonometry', want: true },
+  { q: 'cos(x)=1 → x em [0°,360°) = ?', a: '0', type: 'trigonometry', want: true },
+  { q: 'p (semiperímetro) = (a+b+c)/?', a: '2', type: 'trigonometry', want: true },
+  { q: 'Em triângulo equilátero lado 6, R = 6/√3 ≈ ?', a: '3.46', type: 'trigonometry', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
