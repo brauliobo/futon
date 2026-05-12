@@ -1,6 +1,6 @@
 # `eval:correctness` — math answer verifier
 
-`scripts/eval-math-correctness.js` checks authored `correctAnswer` fields against a library-computed (mathjs) value. Currently verifies **41,472 / 43,889** math exercises (94.5%); the rest are word-problem / conceptual questions with text answers that aren't pattern-matchable.
+`scripts/eval-math-correctness.js` checks authored `correctAnswer` fields against a library-computed (mathjs) value. Currently verifies **42,124 / 43,889** math exercises (96%); the rest are word-problem / conceptual questions with text answers that aren't pattern-matchable.
 
 Run:
 
@@ -34,6 +34,7 @@ The verifier dispatches via a long if-chain; each branch returns `{ ok, computed
 ### Equations / roots
 
 | `quad_roots` | `…= 0` with `x = R` (single) or `x = R1 ou x = R2` | Substitute each root into LHS |
+| `inequality` | `ax + b op c` (`type:inequality`) | Compute bound = (c-b)/a, flip op if a<0, return closest integer strictly in solution set |
 | `sq_hint` | `x² = N (raiz positiva/negativa/ambas)` | String-compare ±√N |
 | `sqrt_eq` | `v² = N → v = ?` | √N |
 | `power_eq` | `x^N = M` | M^(1/N) |
@@ -121,14 +122,14 @@ The verifier dispatches via a long if-chain; each branch returns `{ ok, computed
 | `translate` / `reflect` / `homothety` | Geometric transformations |
 | `det_2x2` / `mat_add` / `mat_scale` / `mat_op` | 2×2 matrix det/sum/scale element queries; named A/B with `det`, `tr`, `Aᵀ[i,j]`, `AB[i,j]` |
 
-## Known-buggy authoring (skipped, not gate-failing)
+## Historical content fixes
 
-See `~/.claude/projects/-home-braulio-Projects-futon/memory/project_inequality_bugs.md`:
+Two scripts under `scripts/fix-*.mjs` are one-off content-side fixes for systematic authoring bugs that have been committed:
 
-- `math/H/set_06` + `math/H/set_07` — 424 inequality answers don't reflect the sign-flip their own rationale describes (`type:inequality` is excluded from the verifier).
-- `math/H/set_02` — 50 linear_equation answers divide by the wrong factor (this file is per-file-skipped inside the verifier loop).
+- `scripts/fix-h-set02.mjs` — `math/H/set_02` had 100 linear-equation answers that dropped the denominator factor when solving `(N/2)x + b = c`. Recomputed and rebuilt rationales.
+- `scripts/fix-h-inequalities.mjs` — `math/H/set_06` + set_07 + set_08 + set_14 + set_20 had 302 inequality answers that forgot the sign-flip when dividing by a negative coefficient. Recomputed answers as the closest integer strictly in the (correctly-flipped) solution set; rationales already mentioned the flip and were left unchanged.
 
-Removing those skips will resurface 474 mismatches. The fix is content-side (regenerate answers), not script-side.
+Both scripts can be re-run idempotently if needed.
 
 ## Normalization pipeline
 
