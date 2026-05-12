@@ -53,7 +53,7 @@ const normalize = (s) =>
     .replace(/(?<![a-zA-Z])arccos(?![a-zA-Z])/g, 'acos')
     .replace(/(?<![a-zA-Z])arctan(?![a-zA-Z])/g, 'atan')
     .replace(/(?<![a-zA-Z])arctg(?![a-zA-Z])/g, 'atan')
-    .replace(/(?<![a-zA-Z])sen(?![a-zA-Z])/g, 'sin')
+    .replace(/(?<![a-zA-Z])sen(?![a-zA-Záâãéêíóôõúçñ])/g, 'sin')
     .replace(/(?<![a-zA-Z])cosseno(?![a-zA-Z])/g, 'cos')
     .replace(/(?<![a-zA-Z])tg(?![a-zA-Z])/g, 'tan')
     .replace(/(?<![a-zA-Z])cotg(?![a-zA-Z])/g, 'cot')
@@ -1143,6 +1143,8 @@ const TAN_PLUS_COT_RE = /^tan\(x\)\s*\+\s*cot\(x\)\s*=[\s\S]+=\s*2\s*[·*]\s*csc
 const SIM_ONLY_RE = /\?\s*\(\s*1\s*=\s*sim\s*\)\s*$/i;
 // 'P(...|...) ≈ A/(A+B) ≈ ? (arredonde para K casas)' → A/(A+B)
 const RATIO_APPROX_RE = /P\([^)]*\)\s*≈\s*(\d+(?:\.\d+)?)\s*\/\s*\(\s*(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*\)\s*≈\s*\?/i;
+// 'Diagnóstico médico. P(doença)=A, P(teste+|doença)=B, P(teste+|saudável)=C. De N pessoas, ~quantas têm teste positivo e estão doentes?' → N·A·B
+const DIAG_TRUE_POS_RE = /Diagn[óo]stico\s+m[ée]dico[\s\S]+P\(doen[çc]a\)\s*=\s*(\d+(?:\.\d+)?)[\s\S]+P\(teste\+\|doen[çc]a\)\s*=\s*(\d+(?:\.\d+)?)[\s\S]+P\(teste\+\|saud[áa]vel\)\s*=\s*(\d+(?:\.\d+)?)[\s\S]+De\s+(\d+(?:\s*\d+)*)\s+pessoas[\s\S]+teste\s+positivo\s+e\s+est[ãa]o\s+doentes\?/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -6575,6 +6577,15 @@ function verify(question, answer, type) {
   if (SIM_ONLY_RE.test(question)) {
     const an = toNumber(tryEval(a));
     if (an != null && an === 1) return { ok: true, computed: '1', kind: 'identity_vf' };
+  }
+  // Diagnostic medical Bayes — true positives from sample size
+  const diag = question.match(DIAG_TRUE_POS_RE);
+  if (diag) {
+    const pD = Number(diag[1]), pTpD = Number(diag[2]);
+    const N = Number(diag[4].replace(/\s+/g, ''));
+    const expected = Math.round(N * pD * pTpD);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1, computed: `${expected}`, kind: 'cond_prob' };
   }
   // 'P(...|...) ≈ A/(A+B) ≈ ?' → A/(A+B) rounded
   const rxa = question.match(RATIO_APPROX_RE);
