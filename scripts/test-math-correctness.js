@@ -210,6 +210,19 @@ const CASES = [
   { q: 'ln(1) = ?', a: '0', type: 'calculus', want: true },
   { q: 'Valor exato de ln(2) ≈ ?', a: '0.693', type: 'calculus', want: true },
   { q: 'Primeiros 3 termos de e^x em x=1: 1+1+0.5 = ?', a: '2.5', type: 'calculus', want: true },
+  // Binomial reverse + complex + polar + systems
+  { q: '(a+b)⁴: coeficiente de a²b² = ?', a: '6', type: 'algebra', want: true },
+  { q: '(a+b)³ coeficiente de a²b = ?', a: '3', type: 'algebra', want: true },
+  { q: 'Em (a+b)⁵, T₃ = C(5,?)·a³·b²', a: '2', type: 'algebra', want: true },
+  { q: '(2+3i) + (1+4i) = ? + 7i', a: '3', type: 'algebra', want: true },
+  { q: '(5+3i) - (2+i) = ? + 2i', a: '3', type: 'algebra', want: true },
+  { q: 'Polar de z=√3+i: r = ?', a: '2', type: 'algebra', want: true },
+  { q: 'r=√2, θ=135° → real = ?', a: '-1', type: 'algebra', want: true },
+  { q: 'r=5, θ=0° → z = ?', a: '5', type: 'algebra', want: true },
+  { q: 'e^(iπ) = ?', a: '-1', type: 'algebra', want: true },
+  { q: 'Somando x+y=5 e x-y=3 → 2x = ?', a: '8', type: 'algebra', want: true },
+  { q: 'De 2x=8, então x = ?', a: '4', type: 'algebra', want: true },
+  { q: 'No sistema x+y=7 e x-y=1, y = ?', a: '3', type: 'algebra', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

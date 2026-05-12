@@ -415,6 +415,33 @@ const ODD_SUM_AT_N_RE = /^soma\s+dos\s+n\s+primeiros\s+[íi]mpares\s*=\s*n(?:\^2
 // Taylor series radii constants
 const TAYLOR_R_RE = /^(e\^x|sen\(x\)|cos\(x\)|ln\(1\+x\)|1\/\(1-x\))\s*:?\s*R\s*=\s*\??\s*$/i;
 const TAYLOR_R_VARIANT_RE = /^raio\s+de\s+converg[êe]ncia\s+de\s+(e\^x|sen\(x\)|cos\(x\)|ln\(1\+x\)|1\/\(1-x\))\s*:?\s*\??\s*$/i;
+// Reverse-order binomial coefficient: '(a+b)^N: coeficiente de a^i b^j = ?'
+const BINOMIAL_REVERSE_RE = /^\(\s*[a-z\d]+\s*\+\s*[a-z\d]+\s*\)\s*\^\s*(\d+)\s*:?\s*coeficiente\s+de\s+([a-z])(?:\^(\d+))?\s*\*?\s*([a-z])(?:\^(\d+))?\s*=\s*\??\s*$/i;
+// Complex addition/subtraction extraction: '(a±bi) op (c±di) = ?+?i' or similar — extract real/imag.
+// '1i' or just 'i' both ok — imag coefficient defaults to 1.
+const COMPLEX_ADD_REAL_RE = /^\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*\+\s*\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*=\s*\?\s*\+\s*(-?\d+)i\s*$/i;
+const COMPLEX_ADD_IMAG_RE = /^\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*\+\s*\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*=\s*(-?\d+)\s*\+\s*\?i\s*$/i;
+const COMPLEX_SUB_REAL_RE = /^\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*-\s*\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*=\s*\?\s*\+\s*(-?\d+)i\s*$/i;
+const COMPLEX_SUB_IMAG_RE = /^\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*-\s*\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*=\s*(-?\d+)\s*\+\s*\?i\s*$/i;
+// Polar r from Cartesian a+bi
+const POLAR_R_RE = /^polar\s+de\s+z\s*=\s*(-?\d+|√\d+)\s*([+\-])\s*(\d+|√\d+)?i\s*:?\s*r\s*=\s*\??\s*$/i;
+// Polar θ from Cartesian
+const POLAR_THETA_RE = /^polar\s+de\s+z\s*=\s*(-?\d+|√\d+)\s*([+\-])\s*(\d+|√\d+)?i\s*:?\s*(?:r\s*=\s*[√\d]+\s*;\s*)?θ\s*=\s*\?°?\s*$/i;
+// 'r=R, θ=α° → real = ?' or '→ z = ?' or ': a = ?' for cartesian conversion
+const POLAR_TO_REAL_RE = /^r\s*=\s*(-?\d+(?:\.\d+)?|√\d+)\s*,\s*θ\s*=\s*(-?\d+(?:\.\d+)?)°\s*(?:→|:)\s*(?:real|a)\s*=\s*\??\s*$/i;
+const POLAR_TO_Z_RE = /^r\s*=\s*(-?\d+(?:\.\d+)?|√\d+)\s*,\s*θ\s*=\s*0°\s*→\s*z\s*=\s*\??\s*$/i;
+// Linear systems quick patterns
+const SUM_X_PLUS_Y_RE = /^somando\s+x\s*\+\s*y\s*=\s*(-?\d+(?:\.\d+)?)\s+e\s+x\s*-\s*y\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*2x\s*=\s*\??\s*$/i;
+const SIMPLE_DOUBLE_RE = /^De\s+2x\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*ent[ãa]o\s+x\s*=\s*\??\s*$/i;
+const SYSTEM_SUBST_RE = /^Se\s+x\s*=\s*2y\s*,\s*x\s*\+\s*y\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*y\s*=\s*\??\s*$/i;
+const SYSTEM_SUM_DIFF_RE = /^No\s+sistema\s+x\s*\+\s*y\s*=\s*(-?\d+(?:\.\d+)?)\s+e\s+x\s*-\s*y\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*([xy])\s*=\s*\??\s*$/i;
+const SYSTEM_XYZ_SAME_RE = /^Se\s+x\s*\+\s*y\s*\+\s*z\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*x\s*-\s*y\s*=\s*0\s*,\s*y\s*-\s*z\s*=\s*0\s*→\s*x\s*=\s*y\s*=\s*z\s*=\s*\??\s*$/i;
+// 'Em (a+b)^n, Tk = C(n,?)·...^p·...^q' → q (k-1 index)
+const T_K_BINOM_RE = /^Em\s+\(\s*[a-z]\s*\+\s*[a-z]\s*\)\s*\^\s*(\d+)\s*,\s*T(\d+)\s*=\s*C\(\s*\1\s*,\s*\?\s*\)\s*·?\s*[a-z]\^?(\d+)?\s*·?\s*[a-z]\^?(\d+)?\s*$/i;
+// 'Em (x+1)^n, coeficiente de x^k = C(n,?) = ...' → k
+const X_COEFF_K_RE = /^Em\s+\(\s*x\s*\+\s*1\s*\)\s*\^\s*(\d+)\s*,\s*coeficiente\s+de\s+x\^?(\d+)\s*=\s*C\(\s*\1\s*,\s*\?\s*\)\s*=/i;
+// 'r=√3+i' polar r — single √3 form
+const POLAR_R_SQRT_RE = /^polar\s+de\s+z\s*=\s*√3\s*\+\s*i\s*:?\s*r\s*=\s*\??\s*$/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -2654,6 +2681,131 @@ function verify(question, answer, type) {
         return { ok: Math.abs(an - val) < 0.01, computed: `${val}`, kind: 'expression' };
       }
     } catch {}
+  }
+  // Reverse-order binomial coef: '(a+b)^N: coeficiente de a^i b^j = ?'
+  const brev = q.match(BINOMIAL_REVERSE_RE);
+  if (brev) {
+    const N = Number(brev[1]);
+    const i = brev[3] ? Number(brev[3]) : 1, j = brev[5] ? Number(brev[5]) : 1;
+    if (i + j === N) {
+      const f = (m) => { let r = 1; for (let k = 2; k <= m; k++) r *= k; return r; };
+      const expected = f(N) / (f(i) * f(j));
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'binomial_coef' };
+    }
+  }
+  // Em (a+b)^n, Tk = C(n,?)·a^p·b^q → answer is k-1 (T_{k+1} = C(n,k)·...).
+  // q has '*' from normalize, regex allows both.
+  const T_K_BINOM_NORM = /^Em\s+\(\s*[a-z]\s*\+\s*[a-z]\s*\)\s*\^\s*(\d+)\s*,\s*T(\d+)\s*=\s*C\(\s*\1\s*,\s*\?\s*\)\s*[·*]?\s*[a-z](?:\^?\d+)?\s*[·*]?\s*[a-z](?:\^?\d+)?\s*$/i;
+  const tkb = q.match(T_K_BINOM_NORM);
+  if (tkb) {
+    const N = Number(tkb[1]), tIdx = Number(tkb[2]);
+    const expected = tIdx - 1;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'binomial_coef' };
+  }
+  // 'Em (x+1)^n, coeficiente de x^k = C(n,?) = ...' → k
+  const xck = q.match(X_COEFF_K_RE);
+  if (xck) {
+    const expected = Number(xck[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'binomial_coef' };
+  }
+  // Complex add/sub component extraction
+  const sumOrSign = (sign, n) => sign === '-' ? -n : n;
+  const cAR = question.match(COMPLEX_ADD_REAL_RE);
+  if (cAR) {
+    const expected = Number(cAR[1]) + Number(cAR[4]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'complex_part' };
+  }
+  const cAI = question.match(COMPLEX_ADD_IMAG_RE);
+  if (cAI) {
+    const imA = sumOrSign(cAI[2], cAI[3] === '' ? 1 : Number(cAI[3]));
+    const imB = sumOrSign(cAI[5], cAI[6] === '' ? 1 : Number(cAI[6]));
+    const expected = imA + imB;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'complex_part' };
+  }
+  const cSR = question.match(COMPLEX_SUB_REAL_RE);
+  if (cSR) {
+    const expected = Number(cSR[1]) - Number(cSR[4]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'complex_part' };
+  }
+  const cSI = question.match(COMPLEX_SUB_IMAG_RE);
+  if (cSI) {
+    const imA = sumOrSign(cSI[2], cSI[3] === '' ? 1 : Number(cSI[3]));
+    const imB = sumOrSign(cSI[5], cSI[6] === '' ? 1 : Number(cSI[6]));
+    const expected = imA - imB;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'complex_part' };
+  }
+  // Polar r from a+bi (cartesian magnitudes — supports √N for imag). Raw question
+  // so √N isn't lowered to sqrt(N).
+  const polR = question.match(POLAR_R_RE);
+  if (polR) {
+    const parseVal = (s) => /^√/.test(s) ? Math.sqrt(Number(s.replace('√', ''))) : /^sqrt\(/.test(s) ? Math.sqrt(Number(s.match(/\((\d+)\)/)[1])) : Number(s);
+    const re = parseVal(polR[1]);
+    const im = sumOrSign(polR[2], polR[3] ? parseVal(polR[3]) : 1);
+    const expected = Math.sqrt(re * re + im * im);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'complex_mod' };
+  }
+  // 'r=R, θ=α° → real = ?' or ': a = ?'  (raw to keep °)
+  const ptr = question.match(POLAR_TO_REAL_RE);
+  if (ptr) {
+    const parseR = (s) => /^√/.test(s) ? Math.sqrt(Number(s.replace('√', ''))) : /^sqrt\(/.test(s) ? Math.sqrt(Number(s.match(/\((\d+)\)/)[1])) : Number(s);
+    const R = parseR(ptr[1]), theta = Number(ptr[2]) * Math.PI / 180;
+    const expected = R * Math.cos(theta);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'complex_part' };
+  }
+  // 'r=R, θ=0° → z = ?' → R
+  const ptz = question.match(POLAR_TO_Z_RE);
+  if (ptz) {
+    const R = /^√/.test(ptz[1]) ? Math.sqrt(Number(ptz[1].replace('√', ''))) : Number(ptz[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - R) < 1e-2, computed: `${R}`, kind: 'complex_part' };
+  }
+  // System solve helpers (raw question — '2x' normalize→'2*x' breaks literals)
+  const sxy = question.match(SUM_X_PLUS_Y_RE);
+  if (sxy) {
+    const expected = Number(sxy[1]) + Number(sxy[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'sys_solve' };
+  }
+  const sdd = question.match(SIMPLE_DOUBLE_RE);
+  if (sdd) {
+    const expected = Number(sdd[1]) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'sys_solve' };
+  }
+  const ssub = question.match(SYSTEM_SUBST_RE);
+  if (ssub) {
+    // x = 2y, x + y = N → 3y = N → y = N/3
+    const expected = Number(ssub[1]) / 3;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'sys_solve' };
+  }
+  if (q.match(SYSTEM_SUM_DIFF_RE)) {
+    const m = q.match(SYSTEM_SUM_DIFF_RE);
+    const sumN = Number(m[1]), diff = Number(m[2]);
+    const xVal = (sumN + diff) / 2, yVal = (sumN - diff) / 2;
+    const expected = m[3].toLowerCase() === 'x' ? xVal : yVal;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'sys_solve' };
+  }
+  if (q.match(SYSTEM_XYZ_SAME_RE)) {
+    const m = q.match(SYSTEM_XYZ_SAME_RE);
+    const expected = Number(m[1]) / 3;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'sys_solve' };
+  }
+  // e^(iπ) = -1 (Euler's identity)
+  if (/^e\^\(i\s*pi\)\s*=\s*\??\s*$/i.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === -1, computed: '-1', kind: 'complex_part' };
   }
   // Calculus-type pure-arithmetic series sums: '<arith> ≈ ?' / '<arith> = ?'.
   if (type === 'calculus') {
