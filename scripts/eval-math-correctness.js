@@ -1103,6 +1103,17 @@ const QUAD_COS_OR_RE = /^2\s*\*?\s*cos\(x\)\^?2\s*\+\s*cos\(x\)\s*-\s*1\s*=\s*0\
 // 'cos(x)=0 → número de soluções em [0°,360°)?' → 2 (covered)
 // 'tg θ em termos de sen e cos = sen θ / ?' → cos
 const TAN_AS_DIV_RE = /^tg\s+θ\s+em\s+termos\s+de\s+(?:sen|sin)\s+e\s+cos\s*=\s*(?:sen|sin)\s+θ\s*\/\s*\?\s*$/i;
+// Half-angle quadrant sign for sen(x/2)/cos(x/2)
+const HALF_QUADRANT_RE = /^Se\s+x\/2\s+est[áa]\s+no\s+([1234])[ºo]\s+quadrante\s*,\s*(sen|sin|cos)\(x\/2\)\s+tem\s+sinal:/i;
+// 'cos/sen(x/2) em função de cos(x): ±√((1±cos(x))/?)' → 2 (constant denominator)
+const HALF_FORMULA_DENOM_RE = /^(?:sen|sin|cos)\(x\/2\)\s+em\s+fun[çc][ãa]o\s+de\s+cos\(x\):\s*±√\(\(1\s*[+\-]\s*cos\(x\)\)\/\?\)\s*$/i;
+// 'Se sen(B)=V, B no 1º quadrante = ?'
+const SEN_B_1Q_PREFIX_RE = /^Se\s+(?:sen|sin)\(B\)\s*=\s*\(?([\d\/.√]+)\)?\s*,\s*B\s+no\s+1[ºo]\s+quadrante\s*=\s*\?°?\s*$/i;
+// 'a=A, b=B, A=α°, sen(B) = (B·senα°)/A ≈ ?' → B·sin(α)/A
+const SEN_B_FROM_LAW_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*A\s*=\s*(\d+(?:\.\d+)?)°\s*,\s*(?:sen|sin)\(B\)\s*=\s*\(\s*\d+(?:\.\d+)?\s*[·*]\s*(?:sen|sin)\s*\d+(?:\.\d+)?°\s*\)\s*\/\s*\d+\s*≈\s*\??\s*$/i;
+// 'cos(22.5°) numerador sob raiz (1+cos 45°) = ?' → 1+cos(45°) = 1+√2/2 (literal)
+const COS_HALF_NUMERATOR_RE = /^cos\(\s*22\.5°\s*\)\s+numerador\s+sob\s+raiz\s+\(1\s*\+\s*cos\s+45°\)\s*=\s*\??\s*$/i;
+const SEN_HALF_NUMERATOR_RE = /^(?:sen|sin)\(\s*22\.5°\s*\)\s+numerador\s+sob\s+raiz\s+\(1\s*-\s*cos\s+45°\)\s*=\s*\??\s*$/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -6386,6 +6397,52 @@ function verify(question, answer, type) {
   if (TAN_AS_DIV_RE.test(question)) {
     const ans = String(answer).trim().toLowerCase();
     return { ok: ans === 'cos', computed: 'cos', kind: 'identity_symbolic' };
+  }
+  // Half-angle quadrant sign: sin/cos sign per quadrant
+  const hqr = question.match(HALF_QUADRANT_RE);
+  if (hqr) {
+    const Q = Number(hqr[1]), fn = hqr[2].toLowerCase();
+    const isSin = fn === 'sen' || fn === 'sin';
+    // sin: + for Q1,Q2; - for Q3,Q4. cos: + for Q1,Q4; - for Q2,Q3.
+    const signs = { sin: { 1: '+', 2: '+', 3: '-', 4: '-' }, cos: { 1: '+', 2: '-', 3: '-', 4: '+' } };
+    const expected = isSin ? signs.sin[Q] : signs.cos[Q];
+    return { ok: String(answer).trim() === expected, computed: expected, kind: 'identity_symbolic' };
+  }
+  // Half-angle formula denominator → 2
+  if (HALF_FORMULA_DENOM_RE.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 2, computed: '2', kind: 'half_angle' };
+  }
+  // sen(B) in Q1 = asin(V) deg
+  const sb1q = question.match(SEN_B_1Q_PREFIX_RE);
+  if (sb1q) {
+    try {
+      const V = toNumber(math.evaluate(normalize(sb1q[1])));
+      if (V != null && Math.abs(V) <= 1) {
+        const expected = Math.asin(V) * 180 / Math.PI;
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+      }
+    } catch {}
+  }
+  // Law of sines numeric sen(B)
+  const sbfL = question.match(SEN_B_FROM_LAW_RE);
+  if (sbfL) {
+    const A = Number(sbfL[1]), B = Number(sbfL[2]), alpha = Number(sbfL[3]);
+    if (A !== 0) {
+      const expected = B * Math.sin(alpha * Math.PI / 180) / A;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_sin' };
+    }
+  }
+  // cos(22.5°) numerator = 1 + cos(45°) = 1 + √2/2 (literal)
+  if (COS_HALF_NUMERATOR_RE.test(question)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === '1+√2/2', computed: '1+√2/2', kind: 'half_angle' };
+  }
+  if (SEN_HALF_NUMERATOR_RE.test(question)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === '1-√2/2', computed: '1-√2/2', kind: 'half_angle' };
   }
   // Inverse trig (degree results) — parse value via normalized expression. Use raw question
   // because 'arccos/arcsen/arctan' normalize to 'acos/asin/atan'.
