@@ -467,6 +467,18 @@ const CASES = [
   { q: 'X={1,2,3} uniforme → E[X] = ?', a: '2', type: 'mental_math', want: true },
   { q: 'x̄=50, SE=2 → IC 95% superior = ?', a: '53.92', type: 'mental_math', want: true },
   { q: 'Se P(A)+P(Ā) = ?, sempre', a: '1', type: 'mental_math', want: true },
+  // Literal trig + categorical cos(C) + PG q + complex
+  { q: 'tan(a+b) numerador = ?', a: 'tan(a)+tan(b)', type: 'trigonometry', want: true },
+  { q: 'tan(2x) numerador = ?', a: '2tan(x)', type: 'trigonometry', want: true },
+  { q: '2·sen(a)cos(a) = ?', a: 'sen(2a)', type: 'trigonometry', want: true },
+  { q: '2·cos²(a) = 1 + ?', a: 'cos(2a)', type: 'trigonometry', want: true },
+  { q: '2·sen(45°)·cos(45°) = sen(?)', a: '90°', type: 'trigonometry', want: true },
+  { q: 'Polar de z=1+i: (r=√2, θ=45°) V/F', a: 'V', type: 'algebra', want: true },
+  { q: 'Se cos(C) = 0, C é: (reto)', a: 'reto', type: 'trigonometry', want: true },
+  { q: 'q=1 — PG é: (constante)', a: 'constante', type: 'sequence', want: true },
+  { q: 'i · i = cis(90°)·cis(90°) = cis(?°) = ?', a: '-1', type: 'algebra', want: true },
+  { q: '(2+i)(3+2i) = ? + 7i', a: '4', type: 'algebra', want: true },
+  { q: '(a+bi) + 0 = ?', a: 'a+bi', type: 'algebra', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

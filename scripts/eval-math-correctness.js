@@ -952,6 +952,29 @@ const UNIFORM_E_ARROW_RE = /^X\s*=\s*\{\s*([^}]+)\s*\}\s*uniforme\s*→\s*E\[X\]
 // IC superior with → operator
 const IC_UPPER_ARROW_RE = /^x̄\s*=\s*(\d+(?:\.\d+)?)\s*,\s*SE\s*=\s*(\d+(?:\.\d+)?)\s*→\s*IC\s+95%\s+superior\s*=\s*\??\s*$/i;
 // 'Se P(A)+P(Ā) = ?, sempre' constant (existing partial — extend to allow ', sempre' tail)
+// Trig formula numerator/denominator literals
+const TAN_SUM_NUM_RE = /^tan\(a\s*\+\s*b\)\s+numerador\s*=\s*\??\s*$/i;
+const TAN_SUM_DEN_RE = /^tan\(a\s*\+\s*b\)\s+denominador\s*=\s*\??\s*$/i;
+const TAN_2X_NUM_RE = /^tan\(\s*2\s*\*?\s*x\)\s+numerador\s*=\s*\??\s*$/i;
+const TAN_2X_DEN_RE = /^tan\(\s*2\s*\*?\s*x\)\s+denominador\s*=\s*\??\s*$/i;
+// 2·sen(a)·cos(a) = sen(2a)
+const DOUBLE_ANGLE_LITERAL_RE = /^2\s*\*?\s*sin\(a\)\s*\*?\s*cos\(a\)\s*=\s*\??\s*$/i;
+// 2·cos²(a) = 1 + cos(2a)
+const COS_SQ_DOUBLE_RE = /^2\s*\*?\s*cos\(a\)\^?2\s*=\s*1\s*\+\s*\??\s*$/i;
+// 2·sen(A°)·cos(A°) = sen(?) → 2A°
+const DOUBLE_ANGLE_NUM_RE = /^2\s*\*?\s*sin\((\d+(?:\.\d+)?)°\)\s*\*?\s*cos\(\1°\)\s*=\s*sin\(\?\)\s*$/i;
+// 'Polar de z=1+i: (r=√2, θ=45°) V/F' → V
+const POLAR_VF_RE = /^Polar\s+de\s+z\s*=\s*1\s*\+\s*i\s*:\s*\(r\s*=\s*√2\s*,\s*θ\s*=\s*45°\s*\)\s*V\/F\s*$/i;
+// Cos(C) sign → angle classification ('Se cos(C) = 0, C é: (reto)' etc.)
+const COSC_CLASS_RE = /^Se\s+cos\(C\)\s*(=\s*0|<\s*0|>\s*0(?:\s+e\s+≠\s*1)?)\s*,?\s*C\s+[ée]:\s*\(([^)]+)\)\s*$/i;
+// PG q-range → label (extract from parens)
+const PG_Q_CLASS_RE = /^(?:q\s*=\s*\d+\s*[—-]+|q\s*[<>]\s*\d+(?:\s+e\s+a[₁1]\s*[<>]\s*\d+)?\s*[—-]+|0\s*<\s*q\s*<\s*1\s*[—-]+)\s*PG\s+[ée]:\s*\(([^)]+)\)\s*$/i;
+// 'i · i = cis(90°)·cis(90°) = cis(?°) = ?' — answer for final '= ?' is cis(180°) = -1
+const I_TIMES_I_CIS_RE = /^i\s*[·*]\s*i\s*=\s*cis\((\d+)°\)\s*[·*]\s*cis\((\d+)°\)\s*=\s*cis\(\?°\)\s*=\s*\?\s*$/i;
+// '(2+i)(3+2i) = ? + Ki' → real part of product (ac-bd)
+const COMPLEX_MUL_REAL_RE = /^\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*=\s*\?\s*\+\s*(-?\d+)i\s*$/i;
+// '(a+bi) + 0 = ?' → a+bi (literal)
+const COMPLEX_ADD_ZERO_RE = /^\(\s*a\s*\+\s*bi\s*\)\s*\+\s*0\s*=\s*\??\s*$/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -5614,6 +5637,89 @@ function verify(question, answer, type) {
   if (/^se\s+P\(A\)\s*\+\s*P\(Ā\)\s*=\s*\?,?\s*sempre\s*$/i.test(q)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === 1, computed: '1', kind: 'prob_value' };
+  }
+  // Tan sum/double-angle literal answers
+  if (TAN_SUM_NUM_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === 'tan(a)+tan(b)', computed: 'tan(a)+tan(b)', kind: 'tan_sum_part' };
+  }
+  if (TAN_SUM_DEN_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === '1-tan(a)tan(b)' || ans === '1-tan(a)*tan(b)', computed: '1-tan(a)tan(b)', kind: 'tan_sum_part' };
+  }
+  if (TAN_2X_NUM_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === '2tan(x)' || ans === '2*tan(x)', computed: '2tan(x)', kind: 'tan_sum_part' };
+  }
+  if (TAN_2X_DEN_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === '1-tan²(x)' || ans === '1-tan(x)²' || ans === '1-tan(x)^2', computed: '1-tan²(x)', kind: 'tan_sum_part' };
+  }
+  // 2sen(a)cos(a) = sen(2a) (literal)
+  if (DOUBLE_ANGLE_LITERAL_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === 'sen(2a)' || ans === 'sin(2a)', computed: 'sen(2a)', kind: 'double_angle' };
+  }
+  // 2cos²(a) = 1 + cos(2a) (literal)
+  if (COS_SQ_DOUBLE_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === 'cos(2a)', computed: 'cos(2a)', kind: 'double_angle' };
+  }
+  // 2sen(A°)cos(A°) = sen(2A°)  (raw — ° normalizes to (N deg))
+  const dan = question.match(/^2\s*[·*]?\s*sen\((\d+(?:\.\d+)?)°\)\s*[·*]?\s*cos\(\1°\)\s*=\s*sen\(\?\)\s*$/i);
+  if (dan) {
+    const A = Number(dan[1]);
+    const expected = 2 * A;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'double_angle' };
+  }
+  // 'Polar de z=1+i: (r=√2, θ=45°) V/F' → V
+  if (POLAR_VF_RE.test(question)) {
+    return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'identity_vf' };
+  }
+  // cos(C) classification — check answer against expected based on cond
+  const ccl = q.match(COSC_CLASS_RE);
+  if (ccl) {
+    const cond = ccl[1].replace(/\s+/g, '');
+    let expected;
+    if (cond === '=0') expected = 'reto';
+    else if (cond === '<0') expected = 'obtuso';
+    else expected = 'agudo';  // >0 (with optional ≠1)
+    return { ok: String(answer).trim().toLowerCase() === expected, computed: expected, kind: 'law_cos' };
+  }
+  // PG q-range labels: skip multi-option forms (we don't know which to pick)
+  const pqc = q.match(PG_Q_CLASS_RE);
+  if (pqc) {
+    const label = pqc[1].trim().toLowerCase();
+    // Only verify when parens hold a single label (no '/' inside)
+    if (!label.includes('/')) {
+      return { ok: String(answer).trim().toLowerCase() === label, computed: label, kind: 'gp_term' };
+    }
+  }
+  // 'i · i = cis(N°)·cis(N°) = cis(?°) = ?' — final '= ?' is cos(2N) + i·sin(2N)
+  const iti = question.match(I_TIMES_I_CIS_RE);
+  if (iti) {
+    const angle = (Number(iti[1]) + Number(iti[2])) % 360;
+    const map = { 0: '1', 90: 'i', 180: '-1', 270: '-i' };
+    const expected = map[angle];
+    if (expected) {
+      const ans = String(answer).trim().replace(/\s+/g, '');
+      return { ok: ans === expected, computed: expected, kind: 'complex_part' };
+    }
+  }
+  // (a+bi)(c+di) = (ac-bd) + (ad+bc)i — real part
+  const cmr = question.match(COMPLEX_MUL_REAL_RE);
+  if (cmr) {
+    const a1 = Number(cmr[1]), bSign = cmr[2] === '-' ? -1 : 1, b1 = bSign * (cmr[3] === '' ? 1 : Number(cmr[3]));
+    const c1 = Number(cmr[4]), dSign = cmr[5] === '-' ? -1 : 1, d1 = dSign * (cmr[6] === '' ? 1 : Number(cmr[6]));
+    const expected = a1 * c1 - b1 * d1;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'complex_part' };
+  }
+  // (a+bi) + 0 = a+bi (literal)
+  if (COMPLEX_ADD_ZERO_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === 'a+bi', computed: 'a+bi', kind: 'complex_part' };
   }
   // Inverse trig (degree results) — parse value via normalized expression. Use raw question
   // because 'arccos/arcsen/arctan' normalize to 'acos/asin/atan'.
