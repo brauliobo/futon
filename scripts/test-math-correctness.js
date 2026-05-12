@@ -427,6 +427,16 @@ const CASES = [
   { q: 'cos(x)=1 → x em [0°,360°) = ?', a: '0', type: 'trigonometry', want: true },
   { q: 'p (semiperímetro) = (a+b+c)/?', a: '2', type: 'trigonometry', want: true },
   { q: 'Em triângulo equilátero lado 6, R = 6/√3 ≈ ?', a: '3.46', type: 'trigonometry', want: true },
+  // Boxplot / quartile / outlier / histogram + fraction-distribution E[X]
+  { q: 'X={1,3,5}, P={1/3,1/3,1/3} → E[X] = ?', a: '3', type: 'mental_math', want: true },
+  { q: 'Par de meias de gaveta com 5 meias distintas = ?', a: '10', type: 'mental_math', want: true },
+  { q: '3 dígitos distintos entre 1-5?', a: '60', type: 'mental_math', want: true },
+  { q: 'Mediana corresponde ao percentil = ?', a: '50', type: 'mental_math', want: true },
+  { q: 'Q1=10, Q3=20 → IQR = ?', a: '10', type: 'mental_math', want: true },
+  { q: 'Outlier inferior = Q1 - 1.5×IQR; Q1=10, IQR=10 → limite = ?', a: '-5', type: 'mental_math', want: true },
+  { q: 'Outlier superior = Q3 + 1.5×IQR; Q3=20, IQR=10 → limite = ?', a: '35', type: 'mental_math', want: true },
+  { q: 'Total n de histograma com classes f={4,6,10,5} = ?', a: '25', type: 'mental_math', want: true },
+  { q: 'Classe [10,20) com f=5 e [20,30) com f=15 — qual classe tem mais dados?', a: '20', type: 'mental_math', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

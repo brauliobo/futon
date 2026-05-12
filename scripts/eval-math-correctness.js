@@ -368,8 +368,8 @@ const INTERVAL_MID_RE = /^ponto\s+m[ée]dio\s+de\s+[\[\(]\s*(-?\d+(?:\.\d+)?)\s*
 const UNIFORM_REL_FREQ_RE = /^se\s+todas\s+as\s+categorias\s+t[êe]m\s+mesma\s+frequ[êe]ncia\s+e\s+s[ãa]o\s+(\d+)\s*,\s*f[ᵣr]?\s+de\s+cada\s*=\s*\??\s*$/i;
 // Permutation A(n,k) inline: '... — arranjo A(N,K) = ?' or '... — A(N,K) = ?'
 const ARRANGE_INLINE_RE = /A\(\s*(\d+)\s*,\s*(\d+)\s*\)\s*=\s*\??\s*$/i;
-// Combine C(N,K) inline: '... — C(N,K) = ?'
-const COMBINE_INLINE_RE = /C\(\s*(\d+)\s*,\s*(\d+)\s*\)\s*=\s*\??\s*$/i;
+// Combine C(N,K) inline: '... — C(N,K) = ?' (also accept ≈ ? and trailing parens)
+const COMBINE_INLINE_RE = /C\(\s*(\d+)\s*,\s*(\d+)\s*\)\s*[≈=]\s*\?\s*(?:\([^)]*\))?\s*$/i;
 // 'P(A∩B) = 0 → mutuamente exclusivos' constant (V/F + label)
 // '<list> (V/F)?' — answers V/F are not computable; skip.
 // Trig equation solving in degrees: 'Primeira/Segunda/Menor solução de FN(x) = V em [0°, 360°)?'.
@@ -862,6 +862,24 @@ const BASE_NORM_RE = /^Base\s+ortonormal:\s*\|\|e[ᵢi]\|\|\s*=\s*\??\s*$/i;
 const BASE_DOT_RE = /^Base\s+ortonormal:\s*e[ᵢi]\s*[·*]\s*e[ⱼj]\s*\([^)]+\)\s*=\s*\??\s*$/i;
 // 'dim de núcleo (ker) de matriz n×n injetiva = ?' → 0
 const KER_INJ_RE = /^dim\s+de\s+n[úu]cleo\s+\(ker\)\s+de\s+matriz\s+n\s*[×x*]\s*n\s+injetiva\s*=\s*\??\s*$/i;
+// 'Par de meias de gaveta com N meias distintas = ?' → C(N,2)
+const PAIR_SOCKS_RE = /^Par\s+de\s+meias\s+de\s+gaveta\s+com\s+(\d+)\s+meias\s+distintas\s*=\s*\??\s*$/i;
+// 'K dígitos distintos entre M-N?' → P(N-M+1, K)
+const DISTINCT_DIGITS_RE = /^(\d+)\s+d[íi]gitos\s+distintos\s+entre\s+(\d+)-(\d+)\?\s*$/i;
+// Boxplot/quartile constants
+const MEDIAN_PCT_RE = /^Mediana\s+corresponde\s+ao\s+percentil\s*=\s*\??\s*$/i;
+const Q1_PCT_RE = /^Q1\s+corresponde\s+ao\s+percentil\s*=\s*\??\s*$/i;
+const Q3_PCT_RE = /^Q3\s+corresponde\s+ao\s+percentil\s*=\s*\??\s*$/i;
+const BOX_CONTAINS_RE = /^Caixa\s+do\s+boxplot\s+cont[ée]m\s+\(/i;
+// 'Q1=A, Q3=B → IQR = ?' → B-A
+const IQR_RE = /^Q1\s*=\s*(\d+(?:\.\d+)?)\s*,\s*Q3\s*=\s*(\d+(?:\.\d+)?)\s*→\s*IQR\s*=\s*\??\s*$/i;
+// Outlier bounds
+const OUTLIER_LO_RE = /Outlier\s+inferior[^;]+;\s*Q1\s*=\s*(\d+(?:\.\d+)?)\s*,\s*IQR\s*=\s*(\d+(?:\.\d+)?)\s*→\s*limite\s*=\s*\??\s*$/i;
+const OUTLIER_HI_RE = /Outlier\s+superior[^;]+;\s*Q3\s*=\s*(\d+(?:\.\d+)?)\s*,\s*IQR\s*=\s*(\d+(?:\.\d+)?)\s*→\s*limite\s*=\s*\??\s*$/i;
+// 'Total n de histograma com classes f={a,b,c,d} = ?' → sum
+const HIST_TOTAL_RE = /^Total\s+n\s+de\s+histograma\s+com\s+classes\s+f\s*=\s*\{\s*([\d,\s]+)\s*\}\s*=\s*\??\s*$/i;
+// 'Classe [a,b) com f=X e [c,d) com f=Y — qual classe tem mais dados?' → max-frequency class' start
+const HIST_MAX_CLASS_RE = /^Classe\s+\[\s*(\d+(?:\.\d+)?)\s*,\s*\d+(?:\.\d+)?\s*\)\s+com\s+f\s*=\s*(\d+)\s+e\s+\[\s*(\d+(?:\.\d+)?)\s*,\s*\d+(?:\.\d+)?\s*\)\s+com\s+f\s*=\s*(\d+)\s*[—-]+\s*qual\s+classe\s+tem\s+mais\s+dados\?\s*$/i;
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
 // Inverse trig with degree result
@@ -3820,7 +3838,11 @@ function verify(question, answer, type) {
     if (an != null) return { ok: an === 1, computed: '1', kind: 'trig_meta' };
   }
   // E[X] from explicit distribution
-  const parseVals = (s) => s.split(/\s*,\s*/).map(p => { const m = p.match(/^(-?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/); return m ? Number(m[1]) / Number(m[2]) : Number(p); }).filter(Number.isFinite);
+  const parseVals = (s) => s.split(/\s*,\s*/).map(p => {
+    const cleaned = p.trim().replace(/^\(|\)$/g, '');
+    const m = cleaned.match(/^(-?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);
+    return m ? Number(m[1]) / Number(m[2]) : Number(cleaned);
+  }).filter(Number.isFinite);
   const deD = q.match(DIST_EXPECTED_RE);
   if (deD) {
     const xs = parseVals(deD[1]);
@@ -5135,6 +5157,81 @@ function verify(question, answer, type) {
   if (KER_INJ_RE.test(q)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === 0, computed: '0', kind: 'dim_r' };
+  }
+  // 'Par de meias de gaveta com N meias distintas = ?' → C(N,2)
+  const pms = q.match(PAIR_SOCKS_RE);
+  if (pms) {
+    const N = Number(pms[1]);
+    if (N >= 2) {
+      const f = (m) => { let r = 1; for (let i = 2; i <= m; i++) r *= i; return r; };
+      const expected = f(N) / (f(2) * f(N - 2));
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
+    }
+  }
+  // 'K dígitos distintos entre M-N?' → P(N-M+1, K) = (count)! / (count-K)!
+  const ddg = q.match(DISTINCT_DIGITS_RE);
+  if (ddg) {
+    const K = Number(ddg[1]), m1 = Number(ddg[2]), n1 = Number(ddg[3]);
+    const count = n1 - m1 + 1;
+    if (count >= K) {
+      let expected = 1;
+      for (let i = 0; i < K; i++) expected *= (count - i);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'arrange' };
+    }
+  }
+  // Boxplot constants
+  if (MEDIAN_PCT_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 50, computed: '50', kind: 'stat' };
+  }
+  if (Q1_PCT_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 25, computed: '25', kind: 'stat' };
+  }
+  if (Q3_PCT_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 75, computed: '75', kind: 'stat' };
+  }
+  if (BOX_CONTAINS_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 50, computed: '50', kind: 'stat' };
+  }
+  // IQR = Q3-Q1
+  const iqr = q.match(IQR_RE);
+  if (iqr) {
+    const expected = Number(iqr[2]) - Number(iqr[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'stat' };
+  }
+  // Outlier bounds
+  const olo = q.match(OUTLIER_LO_RE);
+  if (olo) {
+    const expected = Number(olo[1]) - 1.5 * Number(olo[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'stat' };
+  }
+  const ohi = q.match(OUTLIER_HI_RE);
+  if (ohi) {
+    const expected = Number(ohi[1]) + 1.5 * Number(ohi[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'stat' };
+  }
+  // Histogram total
+  const ht = q.match(HIST_TOTAL_RE);
+  if (ht) {
+    const expected = ht[1].split(/\s*,\s*/).map(Number).reduce((s, v) => s + v, 0);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'stat' };
+  }
+  // Histogram max class
+  const hmc = q.match(HIST_MAX_CLASS_RE);
+  if (hmc) {
+    const a1 = Number(hmc[1]), f1 = Number(hmc[2]), a2 = Number(hmc[3]), f2 = Number(hmc[4]);
+    const expected = f1 >= f2 ? a1 : a2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'stat' };
   }
   // Inverse trig (degree results) — parse value via normalized expression. Use raw question
   // because 'arccos/arcsen/arctan' normalize to 'acos/asin/atan'.
