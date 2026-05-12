@@ -301,6 +301,30 @@ const PARABOLA_VX_RE = /^y\s*=\s*(-?\d*)x\^?2(?:\s*([+\-])\s*(\d+)\s*\*?\s*x)?(?
 const I_POWER_RE = /^i\^?(\d+)\s*=\s*\??\s*$/i;
 const COMPLEX_PART_RE = /^em\s+z\s*=\s*(-?\d+(?:\.\d+)?)\s*([+\-])\s*(\d+(?:\.\d+)?)i\s*,\s*parte\s+(real|imagin[áa]ria)\s*=\s*\??\s*$/i;
 const LINEAR_T_RE = /^T\(x,y\)\s*=\s*\(([^,]+?)\s*,\s*([^)]+?)\)\s*:\s*T\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*=\s*\(\s*(\?|-?\d+(?:\.\d+)?)\s*,\s*(\?|-?\d+(?:\.\d+)?)\s*\)\s*$/i;
+// Complex modulus: '|<a±bi>| = ?' / arg(<a±bi>) = ?°
+const COMPLEX_MOD_RE = /^\|([^|]+)\|\s*=\s*\??\s*$/;
+const COMPLEX_ARG_RE = /^arg\(([^)]+)\)\s*=\s*\?°?\s*$/i;
+// Parse 'a+bi' or 'a-bi' or 'bi' or 'a' to {re, im}.
+function parseComplex(s) {
+  s = s.replace(/\s+/g, '');
+  if (s === 'i') return { re: 0, im: 1 };
+  if (s === '-i') return { re: 0, im: -1 };
+  const m = s.match(/^(-?\d+(?:\.\d+)?)?([+\-]\d*(?:\.\d+)?)?i?$/);
+  if (m && (m[1] != null || m[2] != null)) {
+    if (s.endsWith('i')) {
+      const re = m[1] && !s.startsWith(m[1] + (m[2] || '') + 'i') ? Number(m[1]) : (m[2] != null ? Number(m[1] || 0) : 0);
+      // Try simpler: split by last '+' or '-' that's not first char.
+      const sign = s.match(/^(-?\d+(?:\.\d+)?)([+\-]\d*(?:\.\d+)?)i$/);
+      if (sign) return { re: Number(sign[1]), im: sign[2] === '+' || sign[2] === '-' ? Number(sign[2] + '1') : Number(sign[2]) };
+      const noRe = s.match(/^(-?\d*(?:\.\d+)?)i$/);
+      if (noRe) return { re: 0, im: noRe[1] === '' || noRe[1] === '-' ? Number(noRe[1] + '1') : Number(noRe[1]) };
+    } else {
+      const real = s.match(/^(-?\d+(?:\.\d+)?)$/);
+      if (real) return { re: Number(real[1]), im: 0 };
+    }
+  }
+  return null;
+}
 const FREQ_OF_RE = /^em\s+\{([^}]+)\}\s*,\s*frequ[êe]ncia\s+de\s+([^=]+?)\s*=\s*\??\s*$/i;
 const REL_FREQ_RE = /^em\s+(?:conjunto\s+com\s+)?n\s*=\s*(\d+)\s+com\s+f\s*=\s*(\d+)\s*,\s*fr?\s*=\s*\??\s*$/i;
 const REL_FREQ_PCT_RE = /^frequ[êe]ncia\s+relativa\s+em\s+%\s+quando\s+f\s*=\s*(\d+)\s+e\s+n\s*=\s*(\d+)\s*=\s*\?%?\s*$/i;
@@ -681,6 +705,31 @@ function verify(question, answer, type) {
   if (DIE_EX_RE.test(question)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - 3.5) < 1e-9, computed: '3.5', kind: 'expected' };
+  }
+  // Complex modulus: '|a+bi| = ?' → √(a² + b²). Use mathjs evaluate, which
+  // handles 'i' natively, then take abs.
+  const cm = question.match(COMPLEX_MOD_RE);
+  if (cm && /i/i.test(cm[1])) {
+    try {
+      const v = math.evaluate(cm[1]);
+      const re = typeof v === 'object' && 're' in v ? v.re : Number(v);
+      const im = typeof v === 'object' && 'im' in v ? v.im : 0;
+      const expected = Math.sqrt(re * re + im * im);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'complex_mod' };
+    } catch {}
+  }
+  // arg of complex: 'arg(a+bi) = ?°' → atan2(b, a) in degrees
+  const carg = question.match(COMPLEX_ARG_RE);
+  if (carg) {
+    try {
+      const v = math.evaluate(carg[1]);
+      const re = typeof v === 'object' && 're' in v ? v.re : Number(v);
+      const im = typeof v === 'object' && 'im' in v ? v.im : 0;
+      const expected = Math.atan2(im, re) * 180 / Math.PI;
+      const an = toNumber(tryEval(String(answer).replace(/°/g, '')));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-3, computed: `${expected}`, kind: 'complex_arg' };
+    } catch {}
   }
   // Linear transformation: 'T(x,y) = (expr1, expr2): T(a,b) = (?, c)'
   const lt = question.match(LINEAR_T_RE);
@@ -2295,7 +2344,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, ap_find_n: 0, sum_formula: 0, pg_converge: 0, geom_inf: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, identity_vf: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, double_angle: 0, half_angle: 0, tan_sum_part: 0, frequency: 0, rel_freq: 0, interval_amp: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, parallelogram_area: 0, cross_z: 0, tri_special: 0, cube_solve: 0, circumference: 0, circle_radius: 0, poly_perim: 0, poly_int_angle: 0, poly_sum_angle: 0, square_area: 0, square_diag: 0, hex_area: 0, equi_tri_area: 0, arrange: 0, permute: 0, combine: 0, pair_product: 0, det_2x2: 0, mat_add: 0, mat_scale: 0, mat_op: 0, matrix_dim: 0, eigenvalue: 0, matvec: 0, dim_r: 0, lin_indep: 0, law_cos: 0, law_sin: 0, amplitude: 0, trig_meta: 0, tri_area_sas: 0, translate: 0, reflect: 0, homothety: 0, distance: 0, midpoint: 0, line_b: 0, absolute_value: 0, normal_dist: 0, z_score: 0, anagram: 0, binomial_coef: 0, bernoulli: 0, die_uniform: 0, cond_prob: 0, indep_prob: 0, expected: 0, r_squared: 0, sys_solve: 0, y_at_x: 0, parabola_vertex: 0, i_power: 0, complex_part: 0, linear_T: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, ap_find_n: 0, sum_formula: 0, pg_converge: 0, geom_inf: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, identity_vf: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, double_angle: 0, half_angle: 0, tan_sum_part: 0, frequency: 0, rel_freq: 0, interval_amp: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, parallelogram_area: 0, cross_z: 0, tri_special: 0, cube_solve: 0, circumference: 0, circle_radius: 0, poly_perim: 0, poly_int_angle: 0, poly_sum_angle: 0, square_area: 0, square_diag: 0, hex_area: 0, equi_tri_area: 0, arrange: 0, permute: 0, combine: 0, pair_product: 0, det_2x2: 0, mat_add: 0, mat_scale: 0, mat_op: 0, matrix_dim: 0, eigenvalue: 0, matvec: 0, dim_r: 0, lin_indep: 0, law_cos: 0, law_sin: 0, amplitude: 0, trig_meta: 0, tri_area_sas: 0, translate: 0, reflect: 0, homothety: 0, distance: 0, midpoint: 0, line_b: 0, absolute_value: 0, normal_dist: 0, z_score: 0, anagram: 0, binomial_coef: 0, bernoulli: 0, die_uniform: 0, cond_prob: 0, indep_prob: 0, expected: 0, r_squared: 0, sys_solve: 0, y_at_x: 0, parabola_vertex: 0, i_power: 0, complex_part: 0, complex_mod: 0, complex_arg: 0, linear_T: 0 };
   const byType = { verified: {}, total: {} };
   const byLevel = { verified: {}, total: {} };
   const mismatches = [];
