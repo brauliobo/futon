@@ -1041,10 +1041,10 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'homothety' };
   }
-  // Absolute-value equation: '|<expr>| = N' — substitute answer into expr
-  // and check that the magnitude equals N.
+  // Absolute-value equation: '|<expr>| = N [(raiz maior/menor)]' — substitute
+  // answer into expr and check that the magnitude equals N.
   if (type === 'absolute_value') {
-    const m = q.match(/^abs\(([^)]+)\)\s*=\s*(-?\d+(?:\.\d+)?)\s*$/);
+    const m = q.match(/^abs\(([^)]+)\)\s*=\s*(-?\d+(?:\.\d+)?)(?:\s*\(raiz\s+(?:maior|menor)\))?\s*$/i);
     if (m) {
       const xVal = toNumber(tryEval(a));
       const rhs = Number(m[2]);
