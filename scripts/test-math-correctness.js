@@ -286,6 +286,21 @@ const CASES = [
   { q: 'P(A)=0.3, P(B)=0.5, P(A∩B)=0.1 → P(A∪B) = ?', a: '0.7', type: 'mental_math', want: true },
   { q: 'E[X]=5 → E[-X] = ?', a: '-5', type: 'mental_math', want: true },
   { q: 'P(par ou maior que 4) em dado = ?', a: '4/6', type: 'mental_math', want: true },
+  // System solve flexible + lines + matrix + complex
+  { q: 'x+y=10, x-y=4 → x = ?', a: '7', type: 'algebra', want: true },
+  { q: 'Resolva x+y=12 e x-y=2 → x = ?', a: '7', type: 'algebra', want: true },
+  { q: 'Reta y = 2x + 5 — intercepto y = ?', a: '5', type: 'algebra', want: true },
+  { q: 'Reta y = -x + 4 — coef. angular = ?', a: '-1', type: 'algebra', want: true },
+  { q: 'A · I = ?', a: 'A', type: 'algebra', want: true },
+  { q: '-1·A = ?', a: '-A', type: 'algebra', want: true },
+  { q: 'A (2×3) · B (3×4) é dimensão: ?', a: '2×4', type: 'algebra', want: true },
+  { q: 'det da identidade 3×3 = ?', a: '1', type: 'algebra', want: true },
+  { q: 'det 2×2 de [a b; c d] = ?', a: 'ad-bc', type: 'algebra', want: true },
+  { q: 'cis(-90°) = ?', a: '-i', type: 'algebra', want: true },
+  { q: 'Conjugado de 3+4i = ?', a: '3-4i', type: 'algebra', want: true },
+  { q: 'Conjugado de 5 = ?', a: '5', type: 'algebra', want: true },
+  { q: '(1+i)² = ?', a: '2i', type: 'algebra', want: true },
+  { q: 'Polar de z=i: r=1; θ = ?°', a: '90', type: 'algebra', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

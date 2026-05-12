@@ -588,6 +588,30 @@ const UNION_NO_SE_RE = /^P\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(B\)\s*=\s*(\d+(?:
 const E_NEG_RE = /^E\[X\]\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*E\[-X\]\s*=\s*\??\s*$/i;
 // 'P(par ou maior que K) em dado = ?' → |even ∪ >K| / 6
 const DICE_PAR_OR_GT_RE = /^P\(par\s+ou\s+maior\s+que\s+(\d+)\)\s+em\s+dado\s*=\s*\??\s*$/i;
+// Systems with various phrasings: 'x+y=A {,|e} x-y=B {→|,} {x|y} = ?'
+const SYSTEM_SUM_DIFF_FLEX_RE = /^(?:Resolva\s+|No\s+sistema\s+|Em\s+sistema\s+)?x\s*\+\s*y\s*=\s*(-?\d+(?:\.\d+)?)\s*(?:,|e)\s*x\s*-\s*y\s*=\s*(-?\d+(?:\.\d+)?)\s*(?:→|,)\s*([xy])\s*=\s*\??\s*$/i;
+// Line patterns
+const LINE_INTERCEPT_RE = /^Reta\s+y\s*=\s*(-?\d+(?:\.\d+)?)?\s*\*?\s*x\s*([+\-])\s*(\d+(?:\.\d+)?)\s*[—-]+\s*intercepto\s+y\s*=\s*\??\s*$/i;
+const LINE_COEF_ANG_RE = /^Reta\s+y\s*=\s*(-?\d+(?:\.\d+)?|-)?\s*\*?\s*x\s*([+\-]\s*\d+(?:\.\d+)?)?\s*[—-]+\s*coef\.?\s+angular\s*=\s*\??\s*$/i;
+const LINE_THROUGH_M_RE = /^Reta\s+por\s+\(\s*0\s*,\s*\d+(?:\.\d+)?\s*\)\s+com\s+m\s*=\s*(-?\d+(?:\.\d+)?)\s*:\s*y\s*=\s*\?\s*\*?\s*x\s*[+\-]/i;
+// 'Para (a,b) e (c,d), m = ?' (variant of SLOPE_2POINTS_RE)
+const SLOPE_PARA_RE = /^Para\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+e\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*,\s*m\s*=\s*\??\s*$/i;
+// Matrix concepts
+const MAT_DIM_PRODUCT_RE = /^A\s*\((\d+)\s*[×x*]\s*(\d+)\)\s*[·*]\s*B\s*\((\d+)\s*[×x*]\s*(\d+)\)\s*(?:é\s+dimens[ãa]o|resulta\s+em\s+matriz):\s*(?:\?|\(\s*[\d×x*]+\s*\/[^)]+\))\s*$/i;
+const MAT_A_TIMES_I_RE = /^A\s*[·*]\s*I\s*=\s*\??\s*$/i;
+const MAT_K_TIMES_A_RE = /^(-?\d+(?:\.\d+)?)\s*[·*]\s*A\s*=\s*\??\s*$/i;
+const DET_ID_RE = /^det\s+da\s+identidade\s+(\d+)\s*[×x*]\s*\d+\s*=\s*\??\s*$/i;
+const DET_2X2_GENERIC_RE = /^det\s+2[×x*]2\s+de\s+\[\s*a\s+b\s*;\s*c\s+d\s*\]\s*=\s*\??\s*$/i;
+// Complex constants
+const CIS_DEG_RE = /^cis\(\s*(-?\d+(?:\.\d+)?)°?\s*\)\s*=\s*\??\s*$/i;
+const CONJUGATE_RE = /^Conjugado\s+de\s+(-?\d+|-?\d+[+\-]?\d*i|-?\d*i|-?\d+[+\-]\d+i)\s*=\s*\??\s*$/i;
+const COMPLEX_SQUARE_PM_I_RE = /^\(\s*1\s*([+\-])\s*i\s*\)\s*\^?2\s*=\s*\??\s*$/i;
+const CIS_INV_RE = /^1\s*\/\s*cis\(\s*(-?\d+(?:\.\d+)?)°?\s*\)\s*=\s*cis\(\s*\?°?\s*\)\s*$/i;
+// '(A·cis α°)(B·cis β°) = (?·cis ...)' → A·B
+const CIS_MUL_MAG_RE = /^\(\s*(\d+(?:\.\d+)?)\s*[·*]\s*cis\s*\(?\s*(-?\d+(?:\.\d+)?)°?\s*\)?\s*\)\s*\(\s*(\d+(?:\.\d+)?)\s*[·*]\s*cis\s*\(?\s*(-?\d+(?:\.\d+)?)°?\s*\)?\s*\)\s*=\s*\(\s*\?\s*[·*]\s*cis\(?\s*-?\d+(?:\.\d+)?°?\)?\s*\)\s*$/i;
+const CIS_DIV_MAG_RE = /^\(\s*(\d+(?:\.\d+)?)\s*[·*]\s*cis\s*\(?\s*(-?\d+(?:\.\d+)?)°?\s*\)?\s*\)\s*\/\s*\(\s*(\d+(?:\.\d+)?)\s*[·*]\s*cis\s*\(?\s*(-?\d+(?:\.\d+)?)°?\s*\)?\s*\)\s*=\s*\?\s*[·*]\s*cis\s*-?\d+(?:\.\d+)?°?/i;
+// 'Polar de z=N+i: θ = ?°' or 'Polar de z=N+i: r=√2; θ = ?°'
+const POLAR_THETA_NUM_RE = /^Polar\s+de\s+z\s*=\s*(-?\d+|√\d+)\s*([+\-])\s*(\d+|√\d+)?i\s*:\s*(?:r\s*=\s*[√\d]+\s*;\s*)?θ\s*=\s*\?°?\s*$/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -3659,6 +3683,166 @@ function verify(question, answer, type) {
     const expected = set.size / 6;
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+  }
+  // System x+y=A {,e} x-y=B → x or y (flexible phrasing)
+  const ssf = q.match(SYSTEM_SUM_DIFF_FLEX_RE);
+  if (ssf) {
+    const A = Number(ssf[1]), B = Number(ssf[2]);
+    const xVal = (A + B) / 2, yVal = (A - B) / 2;
+    const expected = ssf[3].toLowerCase() === 'x' ? xVal : yVal;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'sys_solve' };
+  }
+  // Line intercept: 'Reta y = mx + b — intercepto y = ?' → b (signed)
+  const linInt = question.match(LINE_INTERCEPT_RE);
+  if (linInt) {
+    const sign = linInt[2] === '-' ? -1 : 1;
+    const expected = sign * Number(linInt[3]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'line_b' };
+  }
+  // Line slope variant: 'Reta y = mx + b — coef. angular = ?'
+  const linCA = question.match(LINE_COEF_ANG_RE);
+  if (linCA) {
+    const raw = linCA[1];
+    const expected = raw == null || raw === '' ? 1 : raw === '-' ? -1 : Number(raw);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'slope' };
+  }
+  // 'Reta por (0,b) com m=N: y = ?x + b' → N
+  const linTM = question.match(LINE_THROUGH_M_RE);
+  if (linTM) {
+    const expected = Number(linTM[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'slope' };
+  }
+  // Slope 'Para (a,b) e (c,d), m = ?'
+  const spp2 = question.match(SLOPE_PARA_RE);
+  if (spp2) {
+    const dx = Number(spp2[3]) - Number(spp2[1]);
+    if (dx !== 0) {
+      const expected = (Number(spp2[4]) - Number(spp2[2])) / dx;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'slope' };
+    }
+  }
+  // Matrix product dimension (raw answer to preserve '×')
+  const mdp = q.match(MAT_DIM_PRODUCT_RE);
+  if (mdp) {
+    const rows = Number(mdp[1]), cols = Number(mdp[4]);
+    const expected = `${rows}×${cols}`;
+    const raw = String(answer).trim().replace(/x/i, '×').replace(/\*/g, '×');
+    return { ok: raw === expected, computed: expected, kind: 'mat_op' };
+  }
+  // A · I = A (literal answer)
+  if (MAT_A_TIMES_I_RE.test(q)) {
+    const ok = String(a).trim().toUpperCase() === 'A';
+    return { ok, computed: 'A', kind: 'mat_op' };
+  }
+  // k · A — string answers (0A=0, 1A=A, -1A=-A, others kA)
+  const kA = question.match(MAT_K_TIMES_A_RE);
+  if (kA) {
+    const k = Number(kA[1]);
+    const ansClean = String(a).trim().replace(/\s+/g, '');
+    let expected = k === 0 ? '0' : k === 1 ? 'A' : k === -1 ? '-A' : `${k}A`;
+    return { ok: ansClean === expected, computed: expected, kind: 'mat_op' };
+  }
+  // det of identity N×N = 1
+  if (DET_ID_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'det_2x2' };
+  }
+  // det 2×2 of [a b; c d] = ad-bc (string)
+  if (DET_2X2_GENERIC_RE.test(q)) {
+    const ans = String(a).trim().replace(/\s+/g, '');
+    return { ok: ans === 'ad-bc' || ans === 'a*d-b*c', computed: 'ad-bc', kind: 'det_2x2' };
+  }
+  // cis(N°) = value
+  const cdr = question.match(CIS_DEG_RE);
+  if (cdr) {
+    const deg = Number(cdr[1]);
+    const wrapped = ((deg % 360) + 360) % 360;
+    const known = { 0: '1', 90: 'i', 180: '-1', 270: '-i' };
+    const expected = known[wrapped];
+    if (expected) {
+      const ok = String(a).trim().replace(/\s+/g, '') === expected;
+      return { ok, computed: expected, kind: 'complex_part' };
+    }
+  }
+  // Conjugate: a+bi → a-bi (literal string match)
+  const cjr = question.match(CONJUGATE_RE);
+  if (cjr) {
+    const src = cjr[1];
+    const conj = src.match(/^(-?\d+)([+\-])(\d*)i$/);
+    let expected;
+    if (conj) {
+      // a±bi → a∓bi
+      const a1 = conj[1], sign = conj[2] === '+' ? '-' : '+', b1 = conj[3] || '';
+      expected = `${a1}${sign}${b1}i`;
+    } else if (/^-?\d+$/.test(src)) {
+      // real number → itself
+      expected = src;
+    } else if (/^(-?)(\d*)i$/.test(src)) {
+      // pure imag: bi → -bi
+      const m = src.match(/^(-?)(\d*)i$/);
+      const sign = m[1] === '-' ? '' : '-';
+      expected = `${sign}${m[2]}i`;
+    }
+    if (expected) {
+      const ok = String(a).trim().replace(/\s+/g, '') === expected;
+      return { ok, computed: expected, kind: 'complex_part' };
+    }
+  }
+  // (1±i)² = ±2i  (q normalized: '²' → '^2' on adjacent base char)
+  const csqi = q.match(COMPLEX_SQUARE_PM_I_RE);
+  if (csqi) {
+    const expected = csqi[1] === '+' ? '2i' : '-2i';
+    const ok = String(a).trim().replace(/\s+/g, '') === expected;
+    return { ok, computed: expected, kind: 'complex_part' };
+  }
+  // 1/cis(N°) = cis(-N°)
+  const cinv = question.match(CIS_INV_RE);
+  if (cinv) {
+    const expected = -Number(cinv[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2 || matchDeg(an, ((expected % 360) + 360) % 360), computed: `${expected}°`, kind: 'complex_arg' };
+  }
+  // (A·cis α°)(B·cis β°) = (?·cis ...) → A·B
+  const cmm = question.match(CIS_MUL_MAG_RE);
+  if (cmm) {
+    const expected = Number(cmm[1]) * Number(cmm[3]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'complex_mod' };
+  }
+  // (A·cis α°)/(B·cis β°) = ?·cis ... → A/B
+  const cdvm = question.match(CIS_DIV_MAG_RE);
+  if (cdvm) {
+    const expected = Number(cdvm[1]) / Number(cdvm[3]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'complex_mod' };
+  }
+  // Polar θ from cartesian a+bi
+  const polTh = question.match(POLAR_THETA_NUM_RE);
+  if (polTh) {
+    const parseVal = (s) => /^√/.test(s) ? Math.sqrt(Number(s.replace('√', ''))) : Number(s);
+    const re2 = parseVal(polTh[1]);
+    const im2 = (polTh[2] === '-' ? -1 : 1) * (polTh[3] ? parseVal(polTh[3]) : 1);
+    let expected = Math.atan2(im2, re2) * 180 / Math.PI;
+    if (expected < 0) expected += 360;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'complex_arg' };
+  }
+  // Polar of pure-imag z=i: θ = 90°
+  if (/^Polar\s+de\s+z\s*=\s*i\s*:.*θ\s*=\s*\?°?\s*$/i.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 90), computed: '90°', kind: 'complex_arg' };
+  }
+  // 1/cis(N°) at start of expression like 'X em polar: 1/cis(N°) = cis(?°)' — embedded
+  const cinvEmb = question.match(/1\/cis\(?\s*(-?\d+(?:\.\d+)?)°?\)?\s*=\s*cis\(\s*\?°?\s*\)/i);
+  if (cinvEmb) {
+    const expected = -Number(cinvEmb[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, ((expected % 360) + 360) % 360) || Math.abs(an - expected) < 1e-2, computed: `${expected}°`, kind: 'complex_arg' };
   }
   // Calculus-type pure-arithmetic series sums: '<arith> ≈ ?' / '<arith> = ?'.
   if (type === 'calculus') {
