@@ -379,6 +379,18 @@ const TRIG_SOL_MENOR_RE = /^menor(?:\s+solu[çc][ãa]o)?(?:\s+positiva)?\s+(?:de
 const TRIG_SOL_PLAIN_RE = /^solu[çc][ãa]o\s+de\s+(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^?]+?)\s+em\s+\[0°?\s*,\s*360°?\)\s*\??\s*$/i;
 // 'kFN(x) = E → FN(x) = ?' → E/k
 const TRIG_DIVIDE_RE = /^(\d+)\s*(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^→]+?)\s*→\s*\2\(x\)\s*=\s*\??\s*$/i;
+// Binomial / Pascal identities & counting.
+const C_CONST_RE = /^C\(\s*n\s*,\s*([01n])\s*\)\s*=\s*\??\s*$/i;
+const C_SYMMETRY_PARTIAL_RE = /^C\(\s*(\d+)\s*,\s*(\d+)\s*\)\s*=\s*C\(\s*(\d+)\s*,\s*\?\s*\)\s*$/i;
+const SUBSET_COUNT_RE = /^subconjuntos\s+de\s+(\d+)\s+elementos\s*=\s*\??\s*$/i;
+const POLY_SUM_COEFFS_RE = /^soma\s+dos\s+coeficientes\s+de\s+\(\s*1\s*\+\s*x\s*\)\s*\^?\s*(\d+)\s*=\s*\??\s*$/i;
+// 'k-ésima/N-ésima entrada da linha L (k=K)' or '(L,K) entry' — C(L,K)
+const PASCAL_ENTRY_RE = /entrada\s+da\s+linha\s+(\d+)\s+\(k\s*=\s*(\d+)\)\s*=\s*\??\s*$/i;
+// 'Linha N: 1 X Y ... ?' — last entry always 1
+const PASCAL_LINE_LAST_RE = /^linha\s+\d+(?:\s+do\s+tri[âa]ngulo)?:?\s*\(?1\s+\d+(?:\s+\d+)*\s*\??\s*\)?\s*$/i;
+// cis(α°)·cis(β°) = cis(?°) and cis(α°)/cis(β°) = cis(?°)
+const CIS_MULT_RE = /^cis\(\s*(-?\d+(?:\.\d+)?)°?\s*\)\s*[·*]\s*cis\(\s*(-?\d+(?:\.\d+)?)°?\s*\)\s*=\s*cis\(\s*\?°?\s*\)\s*$/i;
+const CIS_DIV_RE = /^cis\(\s*(-?\d+(?:\.\d+)?)°?\s*\)\s*\/\s*cis\(\s*(-?\d+(?:\.\d+)?)°?\s*\)\s*=\s*cis\(\s*\?°?\s*\)\s*$/i;
 // Linear systems solving for a single variable.
 // 'Se <eq1> e <eq2>, x = ?' or 'Com y=N, no sistema <eq1> e <eq2>, x = ?'
 const SYS_SOLVE_RE = /^(?:se|com\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*no\s+sistema)\s+(.+?)\s+e\s+(.+?)\s*,\s*([xy])\s*=\s*\??\s*$/i;
@@ -849,8 +861,9 @@ function verify(question, answer, type) {
       }
     } catch {}
   }
-  // i^N — powers of imaginary unit cycle 1, i, -1, -i.
-  const ip = question.match(I_POWER_RE);
+  // i^N — powers of imaginary unit cycle 1, i, -1, -i. Use normalized q so 'i³'
+  // (superscript) lowers to 'i^3'.
+  const ip = q.match(I_POWER_RE);
   if (ip) {
     const n = Number(ip[1]) % 4;
     const expected = n === 0 ? '1' : n === 1 ? 'i' : n === 2 ? '-1' : '-i';
@@ -2199,6 +2212,75 @@ function verify(question, answer, type) {
       const an = toNumber(tryEval(a));
       if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
     }
+  }
+  // C(n,0) = 1, C(n,n) = 1, C(n,1) = n. Answer compared as numeric for 0/1 cases;
+  // symbolic 'n' is matched as string.
+  const ccst = q.match(C_CONST_RE);
+  if (ccst) {
+    const which = ccst[1].toLowerCase();
+    if (which === '0' || which === 'n') {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === 1, computed: '1', kind: 'combine' };
+    } else if (which === '1') {
+      // 'C(n,1) = n' — answer must literally be the symbol 'n'
+      const ok = String(a).trim().toLowerCase() === 'n';
+      return { ok, computed: 'n', kind: 'combine' };
+    }
+  }
+  // 'C(N,K) = C(N,?)' → N - K
+  const csymP = question.match(C_SYMMETRY_PARTIAL_RE);
+  if (csymP && csymP[1] === csymP[3]) {
+    const expected = Number(csymP[1]) - Number(csymP[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
+  }
+  // Subconjuntos de N elementos = 2^N
+  const sub = q.match(SUBSET_COUNT_RE);
+  if (sub) {
+    const expected = 2 ** Number(sub[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
+  }
+  // 'Soma dos coeficientes de (1+x)^N' = 2^N
+  const psc = q.match(POLY_SUM_COEFFS_RE);
+  if (psc) {
+    const expected = 2 ** Number(psc[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
+  }
+  // 'k-ésima entrada da linha L (k=K)' → C(L,K)
+  const pek = q.match(PASCAL_ENTRY_RE);
+  if (pek) {
+    const L = Number(pek[1]), K = Number(pek[2]);
+    if (L >= K) {
+      const f = (m) => { let r = 1; for (let i = 2; i <= m; i++) r *= i; return r; };
+      const expected = f(L) / (f(K) * f(L - K));
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
+    }
+  }
+  // 'Linha N: 1 a b ... ?' — last entry always 1
+  if (PASCAL_LINE_LAST_RE.test(q) && /linha/i.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'combine' };
+  }
+  // 'Soma dos coeficientes da linha n = 2^?' → answer 'n' (symbolic)
+  if (/^soma\s+dos\s+coeficientes\s+da\s+linha\s+n\s*=\s*2\s*\^\s*\??\s*$/i.test(q)) {
+    const ok = String(a).trim().toLowerCase() === 'n';
+    return { ok, computed: 'n', kind: 'combine' };
+  }
+  // cis(α°)·cis(β°) = cis(?°)
+  const cisM = question.match(CIS_MULT_RE);
+  if (cisM) {
+    const expected = (Number(cisM[1]) + Number(cisM[2]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, ((expected % 360) + 360) % 360) || matchDeg(an, expected), computed: `${expected}°`, kind: 'complex_arg' };
+  }
+  const cisD = question.match(CIS_DIV_RE);
+  if (cisD) {
+    const expected = Number(cisD[1]) - Number(cisD[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, ((expected % 360) + 360) % 360) || matchDeg(an, expected), computed: `${expected}°`, kind: 'complex_arg' };
   }
   // 'kFN(x) = E → FN(x) = ?' → E/k (simple algebra divide)
   const tdv = question.match(TRIG_DIVIDE_RE);

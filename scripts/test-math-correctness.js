@@ -166,6 +166,16 @@ const CASES = [
   { q: 'Menor solução de sen(x)=-1?', a: '270°', type: 'trigonometry', want: true },
   { q: 'Menor positiva de 2sen(x) = √3?', a: '60°', type: 'trigonometry', want: true },
   { q: '2sen(x) = √3 → sen(x) = ?', a: '√3/2', type: 'trigonometry', want: true },
+  // Binomial / Pascal identities
+  { q: 'C(10,3) = C(10,?)', a: '7', type: 'algebra', want: true },
+  { q: 'C(n,0) = ?', a: '1', type: 'algebra', want: true },
+  { q: 'C(n,1) = ?', a: 'n', type: 'algebra', want: true },
+  { q: 'Subconjuntos de 8 elementos = ?', a: '256', type: 'algebra', want: true },
+  { q: 'Soma dos coeficientes de (1+x)⁴ = ?', a: '16', type: 'algebra', want: true },
+  { q: 'Terceira entrada da linha 5 (k=2) = ?', a: '10', type: 'algebra', want: true },
+  { q: 'i³ = ?', a: '-i', type: 'algebra', want: true },
+  { q: 'cis(30°) · cis(60°) = cis(?°)', a: '90', type: 'algebra', want: true },
+  { q: 'cis(90°)/cis(45°) = cis(?°)', a: '45', type: 'algebra', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
