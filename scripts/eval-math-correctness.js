@@ -21,7 +21,7 @@ const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m';
 const c = (t, col) => `${col}${t}${RESET}`;
 
-const SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9' };
+const SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9', 'ⁿ': 'n' };
 const SUB = { '₀': '0', '₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9',
   'ₙ': 'n', 'ₖ': 'k', 'ᵢ': 'i', 'ⱼ': 'j', 'ₘ': 'm' };
 // Arithmetic-progression aₙ = a₁ + (n-1)·r
@@ -74,7 +74,7 @@ const normalize = (s) =>
     // |expr| → abs(expr) — non-nested form only.
     .replace(/\|([^|]+)\|/g, 'abs($1)')
     // Convert "N²" / "x³" → "(N)^2" / "(x)^3"
-    .replace(/([\)\]a-zA-Z\d])([⁰¹²³⁴⁵⁶⁷⁸⁹]+)/g, (_, base, sups) => {
+    .replace(/([\)\]a-zA-Z\d])([⁰¹²³⁴⁵⁶⁷⁸⁹ⁿ]+)/g, (_, base, sups) => {
       const exp = [...sups].map(ch => SUP[ch] || ch).join('');
       return `${base}^${exp}`;
     })
@@ -1049,6 +1049,57 @@ const BIN_ARROW_RE = /^Bin\(\s*(\d+)\s*,\s*(\d+(?:\.\d+)?)\s*\)\s*→\s*([^?]+?)
 const TRIG_INT_CC_RE = /^Ao\s+integrar\s+cos\(\s*(\d+)\s*\*?\s*x\)\s*cos\(\s*(\d+)?\s*\*?\s*x\)\s*,\s*converta\s+em\s+soma:\s*\(cos\s+(\d+)\s*\*?\s*x\s*\+\s*cos\s+\?\s*\)\/2\s*$/i;
 const TRIG_INT_SC_RE = /^Ao\s+integrar\s+sin\(\s*(\d+)\s*\*?\s*x\)\s*cos\(\s*(\d+)\s*\*?\s*x\)\s*,\s*converta\s+em\s+soma:\s*\(sin\s+(\d+)\s*\*?\s*x\s*\+\s*sin\s+\?\s*\)\/2\s*$/i;
 const TRIG_INT_SS_RE = /^Ao\s+integrar\s+sin\(\s*(\d+)\s*\*?\s*x\)\s*sin\(\s*(\d+)?\s*\*?\s*x\)\s*:\s*\(cos\s+\?\s*-\s*cos\s+(\d+)\s*\*?\s*x\)\/2\s*$/i;
+// '(x-h)²+(y-k)²=R²: raio = ?' (colon variant) → √R²
+const CIRC_RAD_COLON_RE = /^Circunfer[êe]ncia\s+\(x[+\-]\d+\)[²2]\s*\+\s*\(y[+\-]\d+\)[²2]\s*=\s*(\d+(?:\.\d+)?)\s*:\s*raio\s*=\s*\??\s*$/i;
+// 'Circunferência d=D: comprimento = ?π' → D
+const CIRC_COMP_D_RE = /^Circunfer[êe]ncia\s+d\s*=\s*(\d+(?:\.\d+)?)\s*:\s*comprimento\s*=\s*\?π\s*$/i;
+// 'Círculo r=R: área = ?π' → R²
+const CIRCLE_AREA_COLON_RE = /^C[íi]rculo\s+r\s*=\s*(\d+(?:\.\d+)?)\s*:\s*[áa]rea\s*=\s*\?π\s*$/i;
+// 'Lei dos senos: a=A, A=α°, B=β°: b = ?' → A·sin(β)/sin(α)
+const LAW_SIN_LEI_RE = /^Lei\s+dos\s+senos:\s*a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*A\s*=\s*(\d+(?:\.\d+)?)°\s*,\s*B\s*=\s*(\d+(?:\.\d+)?)°\s*:\s*b\s*=\s*\??\s*$/i;
+// 'Rotação X° de (p,q): x-comp/y-comp = ?'
+const ROT_XCOMP_RE = /^Rota[çc][ãa]o\s+(90|180|270)°\s+(?:anti-?hor[áa]rio\s+)?de\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*([xy])-comp\s*=\s*\??\s*$/i;
+// 'Setor θ° com r=R: área = ?π' → R²·θ/360
+const SECTOR_AREA_COLON_RE = /^Setor\s+(\d+(?:\.\d+)?)°\s+com\s+r\s*=\s*(\d+(?:\.\d+)?)\s*:\s*[áa]rea\s*=\s*\?π\s*$/i;
+// 'Translação T(a,b) de (p,q): x' = ?'
+const TRANSLATE_BY_RE = /^Transla[çc][ãa]o\s+T\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s+de\s+\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*([xy])'\s*=\s*\??\s*$/i;
+// 'comp_(c,d) (a,b) = (u·v)/||v|| = ?'
+const SCALAR_PROJ_FROM_VEC_RE = /^comp_\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*=[^=]+=\s*\??\s*$/i;
+// 'u=(a,0), v=(0,b): ||u×v|| = ?' → |a·b|  (double-bar variant)
+const CROSS_NORM_AXIS_RE = /^u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*0\s*(?:,\s*0)?\)\s*,\s*v\s*=\s*\(0\s*,\s*(-?\d+(?:\.\d+)?)\s*(?:,\s*0)?\)\s*:\s*\|\|u×v\|\|\s*=\s*\??\s*$/i;
+// Trig solving
+const COS_X_VAL_FIRST_DEG_RE = /^Menor\s+positiva\s+de\s+cos\(x\)\s*=\s*([\d\/.√]+)\s*:\s*\?°?\s*$/i;
+const SEN_X_VAL_1Q_RE = /^sin\(x\)\s*=\s*([\d\/.√]+)\s+no\s+1[ºo]\s+quadrante\s*=\s*\?°?\s*$/i;
+const TAN_X_VAL_1Q_RE = /^tan\(x\)\s*=\s*([\d\/.√]+)\s+no\s+1[ºo]\s+quadrante\s*=\s*\?°?\s*$/i;
+const COS_X_SECOND_SOL_RE = /^cos\(x\)\s*=\s*0\s+no\s+\[0°?\s*,\s*360°?\)\s*=\s*90°\s+e\s+\?°?\s*$/i;
+const SEN_ZERO_COUNT_RE = /^sin\(x\)\s*=\s*0\s+em\s+\[0°?\s*,\s*360°?\)\s*[—-]+\s*n[úu]mero\s+de\s+solu[çc][õo]es:\s*\?\s*$/i;
+const TAN_ZERO_COUNT_RE = /^tan\(x\)\s*=\s*0\s*→\s*n[úu]mero\s+de\s+solu[çc][õo]es\s+em\s+\[0°?\s*,\s*360°?\)\?\s*$/i;
+// Period of cos/sen(Kx) = 360/K
+const PERIOD_OF_K_RE = /^Per[íi]odo\s+de\s+y\s*=\s*(?:sin|cos)\(\s*(\d+)\s*\*?\s*x\)\s*=\s*\??\s*$/i;
+// Amplitude shift: 'Amplitude de y=cos(x) + N = ?' → 1
+const AMP_OF_SHIFT_RE = /^Amplitude\s+de\s+y\s*=\s*(?:sin|cos)\(x\)\s*[+\-]\s*\d+(?:\.\d+)?\s*=\s*\??\s*$/i;
+// Linha central de y=fn(x)+N → N
+const CENTER_LINE_RE = /^Linha\s+central\s+de\s+y\s*=\s*(?:sin|cos)\(x\)\s*\+\s*(-?\d+(?:\.\d+)?)\s*=\s*\??\s*$/i;
+// 'Em equilátero com lado L, altura = ?' → L·√3/2 (literal coef form: 3√3 for L=6)
+const EQUILAT_ALT_RE = /^Em\s+equil[áa]tero\s+com\s+lado\s+(\d+(?:\.\d+)?)\s*,\s*altura\s*=\s*\??\s*$/i;
+// 'Em retângulo com catetos A e B, hipotenusa = ?' (mis-labeled but means right triangle)
+const RT_HYP_FROM_LEGS_RE = /^Em\s+ret[âa]ngulo\s+com\s+catetos\s+(\d+(?:\.\d+)?)\s+e\s+(\d+(?:\.\d+)?)\s*,\s*hipotenusa\s*=\s*\??\s*$/i;
+// 'sen(x)=-1 → única solução em [0°,360°)'
+const SIN_NEG1_RE = /^sin\(x\)\s*=\s*-1\s*→\s*[úu]nica\s+solu[çc][ãa]o\s+em\s+\[0°?\s*,\s*360°?\)\s*=\s*\??\s*$/i;
+const SIN_POS1_RE = /^sin\(x\)\s*=\s*1\s*→\s*x\s+em\s+\[0°?\s*,\s*360°?\)\s*=\s*\??\s*$/i;
+// 'sen²(x) - sen(x) = 0 → sen(x)=0 ou sen(x)=?' → 1
+const SIN_SQ_LINEAR_RE = /^sin\(x\)\^?2\s*-\s*sin\(x\)\s*=\s*0[^?]+sin\(x\)\s*=\s*\?\s*$/i;
+// 'sen(90°+x) = cos(x)'
+const SIN_SHIFT_RE = /^sin\((\d+)°\s*([+\-])\s*x\)\s*=\s*\??\s*$/i;
+// 'sen(a+b)·sen(a-b) = sen²(a) - sen²(b)' (literal)
+const SIN_PRODUCT_DIFF_RE = /^sin\(a\s*\+\s*b\)\s*[·*]\s*sin\(a\s*-\s*b\)\s*=\s*sin\(a\)\^?2\s*-\s*\?\s*$/i;
+// 'Setor 90° com r=8: área = ?π' covered by SECTOR_AREA_COLON_RE
+// '2cos²(x) + cos(x) - 1 = 0 → cos(x) = 1/2 ou ?' → -1
+const QUAD_COS_OR_RE = /^2\s*\*?\s*cos\(x\)\^?2\s*\+\s*cos\(x\)\s*-\s*1\s*=\s*0\s*→\s*cos\(x\)\s*=\s*\(?1\/2\)?\s+ou\s+\?\s*$/i;
+// 'Então sen(x) = ? (positivo)' contextual — skip
+// 'cos(x)=0 → número de soluções em [0°,360°)?' → 2 (covered)
+// 'tg θ em termos de sen e cos = sen θ / ?' → cos
+const TAN_AS_DIV_RE = /^tg\s+θ\s+em\s+termos\s+de\s+(?:sen|sin)\s+e\s+cos\s*=\s*(?:sen|sin)\s+θ\s*\/\s*\?\s*$/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -6125,6 +6176,203 @@ function verify(question, answer, type) {
       const ans = String(answer).trim().replace(/\s+/g, '');
       return { ok: ans === expected, computed: expected, kind: 'identity_symbolic' };
     }
+  }
+  // Circle radius from full equation (colon variant)
+  const crcC = question.match(CIRC_RAD_COLON_RE);
+  if (crcC) {
+    const expected = Math.sqrt(Number(crcC[1]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'circle_radius' };
+  }
+  const ccD = question.match(CIRC_COMP_D_RE);
+  if (ccD) {
+    const expected = Number(ccD[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'circumference' };
+  }
+  const cac = question.match(CIRCLE_AREA_COLON_RE);
+  if (cac) {
+    const expected = Number(cac[1]) ** 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'circle_area' };
+  }
+  // Lei dos senos with prefix: b = a·sin(β)/sin(α)
+  const lsL = question.match(LAW_SIN_LEI_RE);
+  if (lsL) {
+    const A = Number(lsL[1]), alpha = Number(lsL[2]) * Math.PI / 180, beta = Number(lsL[3]) * Math.PI / 180;
+    if (Math.abs(Math.sin(alpha)) > 1e-9) {
+      const expected = A * Math.sin(beta) / Math.sin(alpha);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_sin' };
+    }
+  }
+  // Rotação X° de (p,q): x/y-comp = ?
+  const rxc = question.match(ROT_XCOMP_RE);
+  if (rxc) {
+    const deg = Number(rxc[1]), px = Number(rxc[2]), py = Number(rxc[3]), comp = rxc[4].toLowerCase();
+    let nx, ny;
+    if (deg === 90) { nx = -py; ny = px; }
+    else if (deg === 180) { nx = -px; ny = -py; }
+    else { nx = py; ny = -px; }
+    const expected = comp === 'x' ? nx : ny;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'reflect' };
+  }
+  const secC = question.match(SECTOR_AREA_COLON_RE);
+  if (secC) {
+    const expected = Number(secC[2]) ** 2 * Number(secC[1]) / 360;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'circle_area' };
+  }
+  const trB = question.match(TRANSLATE_BY_RE);
+  if (trB) {
+    const tx = Number(trB[1]), ty = Number(trB[2]), px = Number(trB[3]), py = Number(trB[4]);
+    const expected = trB[5].toLowerCase() === 'x' ? px + tx : py + ty;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'translate' };
+  }
+  // comp_(c,d) (a,b) = (a·c+b·d)/√(c²+d²)
+  const spv = question.match(SCALAR_PROJ_FROM_VEC_RE);
+  if (spv) {
+    const c1 = Number(spv[1]), d1 = Number(spv[2]), a1 = Number(spv[3]), b1 = Number(spv[4]);
+    const denom = Math.sqrt(c1 * c1 + d1 * d1);
+    if (denom !== 0) {
+      const expected = (a1 * c1 + b1 * d1) / denom;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'vec_norm' };
+    }
+  }
+  // ||u×v|| for axis-aligned 2D/3D
+  const cna = question.match(CROSS_NORM_AXIS_RE);
+  if (cna) {
+    const expected = Math.abs(Number(cna[1]) * Number(cna[2]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'cross_z' };
+  }
+  // Menor positiva de cos(x) = V: ?°
+  const cxv = question.match(COS_X_VAL_FIRST_DEG_RE);
+  if (cxv) {
+    try {
+      const V = toNumber(math.evaluate(normalize(cxv[1])));
+      if (V != null && Math.abs(V) <= 1) {
+        const expected = Math.acos(V) * 180 / Math.PI;
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+      }
+    } catch {}
+  }
+  // sen(x) = V in 1st quadrant
+  const sxv1 = question.match(SEN_X_VAL_1Q_RE);
+  if (sxv1) {
+    try {
+      const V = toNumber(math.evaluate(normalize(sxv1[1])));
+      if (V != null && Math.abs(V) <= 1) {
+        const expected = Math.asin(V) * 180 / Math.PI;
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+      }
+    } catch {}
+  }
+  const txv1 = question.match(TAN_X_VAL_1Q_RE);
+  if (txv1) {
+    try {
+      const V = toNumber(math.evaluate(normalize(txv1[1])));
+      if (V != null) {
+        const expected = Math.atan(V) * 180 / Math.PI;
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+      }
+    } catch {}
+  }
+  // 'cos(x) = 0 no [0°, 360°) = 90° e ?°' → 270°
+  if (COS_X_SECOND_SOL_RE.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 270), computed: '270°', kind: 'trig_meta' };
+  }
+  // 'sen(x)=0 em [0°,360°) — número de soluções: ?' → 3 (closed)
+  if (SEN_ZERO_COUNT_RE.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 3, computed: '3', kind: 'trig_meta' };
+  }
+  // 'tan(x)=0 → número de soluções em [0°,360°)?' → 2 (closed)
+  if (TAN_ZERO_COUNT_RE.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 2, computed: '2', kind: 'trig_meta' };
+  }
+  // Period of y=cos(Kx) = 360/K
+  const pok = q.match(PERIOD_OF_K_RE);
+  if (pok) {
+    const K = Number(pok[1]);
+    const expected = 360 / K;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+  }
+  // Amplitude with shift → 1 (cos/sen base amplitude is 1, additive shift doesn't change)
+  if (AMP_OF_SHIFT_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'amplitude' };
+  }
+  // Linha central of y=fn(x)+N → N
+  const ctL = q.match(CENTER_LINE_RE);
+  if (ctL) {
+    const expected = Number(ctL[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'trig_meta' };
+  }
+  // Equilateral altura: L·√3/2 — literal coef form (3√3 for L=6)
+  const eqAlt = q.match(EQUILAT_ALT_RE);
+  if (eqAlt) {
+    const L = Number(eqAlt[1]);
+    const half = L / 2;
+    const expected = half === 1 ? '√3' : `${half}√3`;
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === expected, computed: expected, kind: 'equi_tri_area' };
+  }
+  // Right triangle hypotenuse from legs
+  const rthL = q.match(RT_HYP_FROM_LEGS_RE);
+  if (rthL) {
+    const expected = Math.sqrt(Number(rthL[1]) ** 2 + Number(rthL[2]) ** 2);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'hypotenuse' };
+  }
+  // sen(x)=-1 → 270
+  if (SIN_NEG1_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 270), computed: '270°', kind: 'trig_meta' };
+  }
+  if (SIN_POS1_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 90), computed: '90°', kind: 'trig_meta' };
+  }
+  // sen²(x) - sen(x) = 0 → other root 1
+  if (SIN_SQ_LINEAR_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'trig_meta' };
+  }
+  // sen(N°+x) shifts
+  const sShift = question.match(SIN_SHIFT_RE);
+  if (sShift) {
+    const N = Number(sShift[1]), op = sShift[2];
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    if (N === 90) {
+      const expected = op === '+' ? 'cos(x)' : 'cos(x)';
+      return { ok: ans === expected, computed: expected, kind: 'identity_symbolic' };
+    }
+  }
+  // sen(a+b)·sen(a-b) = sen²(a) - sen²(b)
+  if (SIN_PRODUCT_DIFF_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '').replace(/²/g, '^2');
+    return { ok: ans === 'sin^2(b)' || ans === 'sen^2(b)' || ans === 'sen²(b)' || ans === 'sin(b)^2', computed: 'sen²(b)', kind: 'identity_symbolic' };
+  }
+  // 2cos²(x) + cos(x) - 1 = 0 → other root -1
+  if (QUAD_COS_OR_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === -1, computed: '-1', kind: 'trig_meta' };
+  }
+  // tg θ = sen θ / cos
+  if (TAN_AS_DIV_RE.test(question)) {
+    const ans = String(answer).trim().toLowerCase();
+    return { ok: ans === 'cos', computed: 'cos', kind: 'identity_symbolic' };
   }
   // Inverse trig (degree results) — parse value via normalized expression. Use raw question
   // because 'arccos/arcsen/arctan' normalize to 'acos/asin/atan'.
