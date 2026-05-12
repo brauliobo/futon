@@ -176,6 +176,16 @@ const CASES = [
   { q: 'i³ = ?', a: '-i', type: 'algebra', want: true },
   { q: 'cis(30°) · cis(60°) = cis(?°)', a: '90', type: 'algebra', want: true },
   { q: 'cis(90°)/cis(45°) = cis(?°)', a: '45', type: 'algebra', want: true },
+  // PG sums and Taylor radii
+  { q: 'PG 1,2,4,8,16,32 — S₆ = ?', a: '63', type: 'sequence', want: true },
+  { q: 'PG 1, 1/2, 1/4,... — S∞ = ?', a: '2', type: 'sequence', want: true },
+  { q: 'PG {2,6,18,54,...} — q = ?', a: '3', type: 'sequence', want: true },
+  { q: 'PG 5,5,5,5,5,5 (q=1) — soma = ?', a: '30', type: 'sequence', want: true },
+  { q: 'PG com a₁=4 e a₂=12, q = ?', a: '3', type: 'sequence', want: true },
+  { q: 'e^x: R = ?', a: '∞', type: 'calculus', want: true },
+  { q: 'ln(1+x): R = ?', a: '1', type: 'calculus', want: true },
+  { q: 'Para p-série convergir, p > ?', a: '1', type: 'calculus', want: true },
+  { q: 'Soma dos n primeiros ímpares = n². Para n=20: ?', a: '400', type: 'sequence', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

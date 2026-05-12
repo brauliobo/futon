@@ -391,6 +391,20 @@ const PASCAL_LINE_LAST_RE = /^linha\s+\d+(?:\s+do\s+tri[âa]ngulo)?:?\s*\(?1\s+\
 // cis(α°)·cis(β°) = cis(?°) and cis(α°)/cis(β°) = cis(?°)
 const CIS_MULT_RE = /^cis\(\s*(-?\d+(?:\.\d+)?)°?\s*\)\s*[·*]\s*cis\(\s*(-?\d+(?:\.\d+)?)°?\s*\)\s*=\s*cis\(\s*\?°?\s*\)\s*$/i;
 const CIS_DIV_RE = /^cis\(\s*(-?\d+(?:\.\d+)?)°?\s*\)\s*\/\s*cis\(\s*(-?\d+(?:\.\d+)?)°?\s*\)\s*=\s*cis\(\s*\?°?\s*\)\s*$/i;
+// PG / PA term-list queries: 'PG <terms> — q/S<n>/S∞ = ?'
+const PG_TERMS_RE = /^PG\s*\{?\s*([^—}]+?)\s*\}?\s*[—-]+\s*(q|soma|S\s*[₀-₉∞]+|S\s*\d+|S\s*_\s*\d+|S∞)\s*=\s*\??\s*$/i;
+const PG_TERMS_SOMA_RE = /^PG\s*\{?\s*([^—}]+?)\s*\}?\s*\([^)]*\)\s*[—-]+\s*soma\s*=\s*\??\s*$/i;
+// 'PG com a₁=4 e a₂=12, q = ?' → a₂/a₁
+const PG_A1A2_RE = /^PG\s+com\s+a[₁1]\s*=\s*(-?\d+(?:\.\d+)?)\s+e\s+a[₂2]\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*q\s*=\s*\??\s*$/i;
+// 'a₁=N, q=Q, S<k> = ...' → numeric S_k for explicit formula
+// Skip — content already provides the formula
+// 'Soma dos n primeiros ímpares = n². Para n=N: ?' → N²
+const ODD_SUM_AT_N_RE = /^soma\s+dos\s+n\s+primeiros\s+[íi]mpares\s*=\s*n(?:\^2|²)\.\s*Para\s+n\s*=\s*(\d+)\s*:\s*\??\s*$/i;
+// 'Soma 1+3+5+...+(2n-1) = ?' → answer 'n²'
+// 'Soma 2+4+6+...+2n = ?' → answer 'n(n+1)'
+// Taylor series radii constants
+const TAYLOR_R_RE = /^(e\^x|sen\(x\)|cos\(x\)|ln\(1\+x\)|1\/\(1-x\))\s*:?\s*R\s*=\s*\??\s*$/i;
+const TAYLOR_R_VARIANT_RE = /^raio\s+de\s+converg[êe]ncia\s+de\s+(e\^x|sen\(x\)|cos\(x\)|ln\(1\+x\)|1\/\(1-x\))\s*:?\s*\??\s*$/i;
 // Linear systems solving for a single variable.
 // 'Se <eq1> e <eq2>, x = ?' or 'Com y=N, no sistema <eq1> e <eq2>, x = ?'
 const SYS_SOLVE_RE = /^(?:se|com\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*no\s+sistema)\s+(.+?)\s+e\s+(.+?)\s*,\s*([xy])\s*=\s*\??\s*$/i;
@@ -2281,6 +2295,88 @@ function verify(question, answer, type) {
     const expected = Number(cisD[1]) - Number(cisD[2]);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: matchDeg(an, ((expected % 360) + 360) % 360) || matchDeg(an, expected), computed: `${expected}°`, kind: 'complex_arg' };
+  }
+  // PG term-list queries: extract terms, compute q / Sn / S∞.
+  const pgTerms = (s) => {
+    const cleaned = s.replace(/\.\.\.|…/g, '').replace(/[{}]/g, '').trim();
+    const parts = cleaned.split(/\s*,\s*/).filter(Boolean);
+    const nums = parts.map(p => {
+      const f = p.match(/^(-?\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)$/);
+      if (f) return Number(f[1]) / Number(f[2]);
+      return Number(p);
+    }).filter(x => Number.isFinite(x));
+    return nums;
+  };
+  const pgTermsM = question.match(PG_TERMS_RE);
+  if (pgTermsM) {
+    const nums = pgTerms(pgTermsM[1]);
+    const opRaw = pgTermsM[2].toLowerCase().replace(/\s+/g, '');
+    if (nums.length >= 2) {
+      const q1 = nums[1] / nums[0];
+      const an = toNumber(tryEval(a));
+      let expected = null;
+      if (opRaw === 'q') expected = q1;
+      else if (/^s∞$/i.test(opRaw) || opRaw === 's∞') {
+        if (Math.abs(q1) < 1) expected = nums[0] / (1 - q1);
+      } else {
+        // S<n>: parse trailing index (sub or plain digits).
+        const subDigits = { '₀':0,'₁':1,'₂':2,'₃':3,'₄':4,'₅':5,'₆':6,'₇':7,'₈':8,'₉':9 };
+        const idxStr = pgTermsM[2].replace(/[^₀-₉0-9_]/g, '').replace(/_/g, '');
+        let n = 0;
+        for (const ch of idxStr) n = n * 10 + (subDigits[ch] ?? Number(ch));
+        if (n > 0) {
+          if (Math.abs(q1 - 1) < 1e-9) expected = n * nums[0];
+          else expected = nums[0] * (q1 ** n - 1) / (q1 - 1);
+        }
+      }
+      if (expected != null && an != null) {
+        return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'gp_term' };
+      }
+    }
+  }
+  // 'PG terms (q=N) — soma = ?' constant-PG case (q=1): N·count
+  const pgSC = question.match(PG_TERMS_SOMA_RE);
+  if (pgSC) {
+    const nums = pgTerms(pgSC[1]);
+    if (nums.length && nums.every(v => v === nums[0])) {
+      const expected = nums[0] * nums.length;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'gp_term' };
+    }
+  }
+  // PG com a₁=A, a₂=B, q = ? → B/A
+  const pga = q.match(PG_A1A2_RE);
+  if (pga) {
+    const expected = Number(pga[2]) / Number(pga[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'pa_ratio' };
+  }
+  // 'Para n=N: ?' → N² for odd-numbers sum
+  const osm = q.match(ODD_SUM_AT_N_RE);
+  if (osm) {
+    const N = Number(osm[1]);
+    const expected = N * N;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'sum_formula' };
+  }
+  // Taylor R constants: e^x/sen/cos → ∞; ln(1+x)/1/(1-x) → 1.
+  const taylorR = question.match(TAYLOR_R_RE) || question.match(TAYLOR_R_VARIANT_RE);
+  if (taylorR) {
+    const fn = taylorR[1].toLowerCase();
+    const isInf = /^(e\^x|sen\(x\)|cos\(x\))$/.test(fn);
+    const cleanA = String(a).trim().toLowerCase();
+    if (isInf) {
+      const ok = cleanA === '∞' || cleanA === 'infinito' || cleanA === 'inf' || cleanA === 'infty';
+      return { ok, computed: '∞', kind: 'pg_converge' };
+    } else {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === 1, computed: '1', kind: 'pg_converge' };
+    }
+  }
+  // 'Para p-série convergir, p > ?' → 1
+  if (/^para\s+p[\-\s]?s[ée]rie\s+convergir\s*,?\s*p\s*[>≥]\s*\??/i.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'pg_converge' };
   }
   // 'kFN(x) = E → FN(x) = ?' → E/k (simple algebra divide)
   const tdv = question.match(TRIG_DIVIDE_RE);
