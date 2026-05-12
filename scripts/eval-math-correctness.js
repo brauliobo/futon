@@ -609,6 +609,39 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'prob_value' };
   }
+  // Bernoulli distribution facts (with explicit p).
+  const bn = question.match(/^Bernoulli\((\d+(?:\.\d+)?|p)\)\s*[—-]+\s*(E\[X\]|Var\(X\).*?|P\(X\s*=\s*0\)\+P\(X\s*=\s*1\)|P\(X\s*=\s*0\))\s*=\s*\??/i);
+  if (bn) {
+    const p = bn[1] === 'p' ? NaN : Number(bn[1]);
+    let expected = null;
+    const op = bn[2].toLowerCase();
+    if (op === 'e[x]') expected = isNaN(p) ? null : p;
+    else if (op.startsWith('var')) expected = isNaN(p) ? null : p * (1 - p);
+    else if (op === 'p(x=0)+p(x=1)') expected = 1;
+    else if (op === 'p(x=0)') expected = isNaN(p) ? null : 1 - p;
+    if (expected !== null) {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'bernoulli' };
+    }
+  }
+  // Uniform die: 'Dado justo [de N faces] — P(X=k) = ?' → 1/N
+  const dj = question.match(/^dado\s+justo(?:\s+de\s+(\d+)\s+faces?)?\s*[—-]+\s*P\(X\s*=\s*(\d+)\)\s*=\s*\??/i);
+  if (dj) {
+    const N = dj[1] ? Number(dj[1]) : 6, k = Number(dj[2]);
+    if (k >= 1 && k <= N) {
+      const expected = 1 / N;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'die_uniform' };
+    }
+  }
+  // 'Dado justo — P(X ≤/<= k) = ?' → k/6
+  const dle = question.match(/^dado\s+justo(?:\s+de\s+(\d+)\s+faces?)?\s*[—-]+\s*P\(X\s*[≤<]=?\s*(\d+)\)\s*=\s*\??/i);
+  if (dle) {
+    const N = dle[1] ? Number(dle[1]) : 6, k = Number(dle[2]);
+    const expected = k / N;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'die_uniform' };
+  }
   // Normal distribution facts (P-level).
   const NORMAL = [
     [/^%\s+dentro\s+de\s+±1σ\s*=\s*\??\s*$/i, 68],
@@ -1886,7 +1919,7 @@ function verify(question, answer, type) {
 
 async function main() {
   const files = await fg('src/levels/math/**/set_*.yaml');
-  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, ap_find_n: 0, sum_formula: 0, pg_converge: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, identity_vf: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, double_angle: 0, frequency: 0, rel_freq: 0, interval_amp: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, tri_special: 0, cube_solve: 0, circumference: 0, circle_radius: 0, poly_perim: 0, poly_int_angle: 0, poly_sum_angle: 0, square_area: 0, square_diag: 0, hex_area: 0, equi_tri_area: 0, arrange: 0, permute: 0, combine: 0, pair_product: 0, det_2x2: 0, mat_add: 0, mat_scale: 0, mat_op: 0, law_cos: 0, law_sin: 0, tri_area_sas: 0, translate: 0, reflect: 0, homothety: 0, distance: 0, midpoint: 0, line_b: 0, absolute_value: 0, normal_dist: 0, z_score: 0, anagram: 0, binomial_coef: 0 };
+  let checked = 0, byKind = { equation: 0, expression: 0, function: 0, limit: 0, 'limit∞': 0, identity: 0, successor: 0, predecessor: 0, mental_hint: 0, sqrt_eq: 0, area_rect: 0, perim_rect: 0, factoring: 0, seq3: 0, count: 0, alg_subst: 0, comparison: 0, even_odd: 0, place_value: 0, skip_count: 0, fill_blank: 0, graph_point: 0, slope: 0, system_eq: 0, quad_roots: 0, inequality: 0, stat: 0, sq_hint: 0, integral: 0, compose: 0, shape_count: 0, parallelogram: 0, trapezium: 0, circle_area: 0, inverse: 0, limit_indet: 0, triangle_area: 0, box_vol: 0, cylinder_vol: 0, cone_vol: 0, sphere_vol: 0, rect_altura: 0, ap_term: 0, gp_term: 0, ap_find_n: 0, sum_formula: 0, pg_converge: 0, deviation: 0, dev_sq: 0, var_to_std: 0, variance: 0, stddev: 0, identity_symbolic: 0, identity_vf: 0, cube_vol: 0, sphere_surf: 0, hypotenuse: 0, circle_approx: 0, pa_ratio: 0, pa_sum: 0, word_problem: 0, sum_sq_dev: 0, sum_dev: 0, prob_count: 0, prob_value: 0, trig_given: 0, frac_to_dec: 0, power_eq: 0, double_angle: 0, frequency: 0, rel_freq: 0, interval_amp: 0, sum_1_to_n: 0, other_leg: 0, vec_norm: 0, vec_add: 0, vec_sub: 0, vec_dot: 0, vec_scal: 0, vec_partial: 0, tri_special: 0, cube_solve: 0, circumference: 0, circle_radius: 0, poly_perim: 0, poly_int_angle: 0, poly_sum_angle: 0, square_area: 0, square_diag: 0, hex_area: 0, equi_tri_area: 0, arrange: 0, permute: 0, combine: 0, pair_product: 0, det_2x2: 0, mat_add: 0, mat_scale: 0, mat_op: 0, law_cos: 0, law_sin: 0, tri_area_sas: 0, translate: 0, reflect: 0, homothety: 0, distance: 0, midpoint: 0, line_b: 0, absolute_value: 0, normal_dist: 0, z_score: 0, anagram: 0, binomial_coef: 0, bernoulli: 0, die_uniform: 0 };
   const byType = { verified: {}, total: {} };
   const byLevel = { verified: {}, total: {} };
   const mismatches = [];
