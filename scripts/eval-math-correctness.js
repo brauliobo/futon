@@ -101,6 +101,10 @@ function tryEval(expr) {
 function toNumber(v) {
   if (v == null) return null;
   if (typeof v === 'number') return Number.isFinite(v) ? v : null;
+  // mathjs Complex with negligible imaginary part is a real number.
+  if (v && typeof v === 'object' && 're' in v && 'im' in v && typeof v.re === 'number') {
+    if (Math.abs(v.im) < 1e-9) return Number.isFinite(v.re) ? v.re : null;
+  }
   // mathjs Unit: convert to base SI (e.g. degrees → radians) so trig
   // identities like 'acos(0)' (radians) and '90°' (degrees) agree.
   if (v && typeof v === 'object' && Array.isArray(v.units)) {
