@@ -1258,6 +1258,33 @@ const KNOWN_FACTS = [
   [/^Se\s+sen\(B\)\s*>\s*1\s*,\s*o?\s*tri[âa]ngulo:/i, 'não existe'],
   // 'A normal padrão tem média = ? e σ = ?' → '0 e 1'
   [/^A\s+normal\s+padr[ãa]o\s+tem\s+m[ée]dia\s*=\s*\?\s+e\s+σ\s*=\s*\?/i, '0 e 1'],
+  // Geometry Q/set_01
+  [/^Em\s+paralelogramo\s*,\s*lados\s+opostos\s+s[ãa]o:/i, 'paralelos'],
+  // Q/set_05 matrix basics
+  [/^Matriz\s+quadrada\s+tem:/i, 'mesmo número de linhas e colunas'],
+  [/^Matriz\s+nula\s+tem\s+todos\s+os\s+elementos\s+iguais\s+a:/i, '0'],
+  [/^Transposta\s+troca\s+linhas\s+por:/i, 'colunas'],
+  [/^Para\s+somar\s*,\s*as\s+matrizes\s+devem\s+ter:/i, 'mesmas dimensões'],
+  [/^A\s*\(\s*2\s*[×*]\s*3\s*\)\s*[·*]\s*B\s*\(\s*3\s*[×*]\s*2\s*\)\s+resulta\s+em\s+matriz:/i, '2×2'],
+  [/^A\s*[·*]\s*B\s*=\s*B\s*[·*]\s*A\s+em\s+geral\?/i, 'não'],
+  // Q/set_06 system classifications
+  [/^Sistema\s+com\s+uma\s+solu[çc][ãa]o\s+[úu]nica:/i, 'determinado'],
+  [/^Sistema\s+sem\s+solu[çc][ãa]o:/i, 'impossível'],
+  [/^Sistema\s+com\s+infinitas\s+solu[çc][õo]es:/i, 'indeterminado'],
+  [/^Sistema\s+3\s*[×*]\s*3\s+com\s+det\(A\)\s*≠\s*0\s+[ée]:/i, 'determinado'],
+  [/^x\s*\+\s*y\s*=\s*2\s+e\s+2\s*\*?\s*x\s*\+\s*2\s*\*?\s*y\s*=\s*4\s+[ée]:/i, 'indeterminado'],
+  [/^x\s*\+\s*y\s*=\s*2\s+e\s+x\s*\+\s*y\s*=\s*3\s+[ée]:/i, 'impossível'],
+  [/^Quantas\s+equa[çc][õo]es\s+s[ãa]o\s+necess[áa]rias\s+para\s+determinar\s+3\s+vari[áa]veis\?/i, '3'],
+  [/^Escalonamento\s+transforma\s+sistema\s+em:/i, 'triangular'],
+  [/^Ap[óo]s\s+escalonamento\s+temos\s+matriz:/i, 'triangular superior'],
+  [/^Gauss-Jordan\s+produz:/i, 'identidade'],
+  [/^Matriz\s+aumentada\s+tem:/i, 'coeficientes + termos independentes'],
+  // Q/set_07 system+det
+  [/^Sistema\s+com\s+det\s*≠\s*0\s+[ée]:/i, 'determinado'],
+  [/^Sistema\s+com\s+det\s*=\s*0\s+e\s+termos\s+compat[íi]veis\s+[ée]:/i, 'indeterminado'],
+  [/^Sistema\s+com\s+det\s*=\s*0\s+e\s+termos\s+incompat[íi]veis\s+[ée]:/i, 'impossível'],
+  // Q/set_17 subspace-related (already partial handled)
+  [/^Se\s+A\s*=\s*B\s*=\s*45°\s*,\s*tri[âa]ngulo\s+[ée]:/i, 'retângulo isósceles'],
   // 'Moda de {bimodal, cite o menor}': author requires the smallest among modes
 ];
 const MODA_BIMODAL_RE = /^Moda\s+de\s+\{([\d,\s]+)\}\s+\(bimodal,\s+cite\s+o\s+menor\)/i;
