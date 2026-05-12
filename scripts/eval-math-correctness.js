@@ -672,6 +672,44 @@ const DOUBLE_ME_RE = /^Dobrar\s+ME\s*→\s*n\s+muda\s+por\s+fator\s*=\s*\??\s*$/
 const PASSWORD_DISTINCT_RE = /^Senhas\s+de\s+(\d+)\s+d[íi]gitos\s+distintos\s+usando\s+\{([\d,\s]+)\}\s*=\s*\??\s*$/i;
 // 'A(n,k) / C(n,k) = ?' → k!
 const A_OVER_C_RE = /^Rela[çc][ãa]o\s+A\(n\s*,\s*k\)\s*\/\s*C\(n\s*,\s*k\)\s*=\s*\??\s*$/i;
+// 45-45-90 with single cathetus: 'Cateto N, hipotenusa = ?' → N√2 (literal)
+const CATHETUS_HYP_RE = /^Cateto\s+(\d+(?:\.\d+)?)\s*,\s*hipotenusa\s*=\s*\??\s*$/i;
+// 'Hipotenusa √N, catetos = ?'
+const HYP_TO_CATHETI_RE = /^Hipotenusa\s+√(\d+(?:\.\d+)?)\s*,\s*catetos?\s*=\s*\??\s*$/i;
+// Triangle equilatero area: '... lado=N — área = ?√3' → N²/4
+const EQ_TRI_AREA_DASH_RE = /^Tri[âa]ngulo\s+equil[áa]tero\s+lado\s*=?\s*(\d+(?:\.\d+)?)\s*[—-]+\s*[áa]rea\s*=\s*\?√3\s*$/i;
+// '... lado=N — raio circunscrito R = ?' for equilateral → N/√3 = N√3/3
+const EQ_TRI_CIRC_R_RE = /^Tri[âa]ngulo\s+equil[áa]tero\s+lado\s*=?\s*(\d+(?:\.\d+)?)\s*[—-]+\s*raio\s+circunscrito\s+R\s*=\s*\??\s*$/i;
+// Hexagon circumradius = side
+const HEX_CIRC_R_RE = /^Hex[áa]gono\s+regular\s+lado\s*=?\s*(\d+(?:\.\d+)?)\s*[—-]+\s*raio\s+circunscrito\s+R\s*=\s*\??\s*$/i;
+// Hexagon inradius: side/2 coefficient of √3
+const HEX_INRADIUS_RE = /^Hex[áa]gono\s+regular\s+lado\s*=?\s*(\d+(?:\.\d+)?)\s*[—-]+\s*raio\s+inscrito\s+\(ap[óo]tema\)\s*=\s*\?√3\s*$/i;
+// Square circumscribed: lado/√2 — answer is coef of √2 = lado/2
+const SQUARE_CIRC_R_RE = /^Quadrado\s+lado\s*=?\s*(\d+(?:\.\d+)?)\s*[—-]+\s*raio\s+circunscrito\s*=\s*\?√2\s*$/i;
+// Square from circumradius R=N√2/2 — lado = N
+const SQUARE_FROM_R_RE = /^Quadrado\s+com\s+R\s*=\s*(\d+(?:\.\d+)?)√2\/2\s*[—-]+\s*lado\s*=\s*\??\s*$/i;
+// 'Triângulo equilátero lado N — área = ?' (full numeric, no √3 in pattern)
+const EQ_TRI_AREA_DASH_FULL_RE = /^Tri[âa]ngulo\s+equil[áa]tero\s+lado\s+(\d+(?:\.\d+)?)\s*[—-]+\s*[áa]rea\s*=\s*\??\s*$/i;
+// 'Reta por (a,b) e (c,d): m = ?'
+const SLOPE_FROM_LINE_THROUGH_RE = /^Reta\s+por\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+e\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*m\s*=\s*\??\s*$/i;
+// '(x-h)²+(y-k)² = N — centro = ?' literal '(h, -k)'
+const CIRCLE_EQ_CENTER_LIT_RE = /^\(x([+\-])(\d+(?:\.\d+)?)\)\^?2\s*\+\s*\(y([+\-])(\d+(?:\.\d+)?)\)\^?2\s*=\s*\d+(?:\.\d+)?\s*[—-]+\s*centro\s*=\s*\??\s*$/i;
+// 'a=A, b=B, c=C — numerador de cosC = a²+b²-c² = ?' → A²+B²-C²
+const COSC_NUMER_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*c\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*numerador\s+de\s+cosC\s*=\s*a\^?2\s*\+\s*b\^?2\s*-\s*c\^?2\s*=\s*\??\s*$/i;
+// 'a=A, A=α°, b=A — B = ?°' (isoceles)
+const ISOCELES_B_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*A\s*=\s*(\d+(?:\.\d+)?)°\s*,\s*b\s*=\s*\1\s*[—-]+\s*B\s*=\s*\?°?\s*$/i;
+// 'a=b=c (equilátero, a=N): c² = ?' → N²
+const EQUILAT_CSQ_RE = /^a\s*=\s*b\s*=\s*c\s+\(equil[áa]tero\s*,\s*a\s*=\s*(\d+(?:\.\d+)?)\)\s*:\s*c\^?2\s*=\s*\??\s*$/i;
+// Reflection composition (double reflection identity): returns original
+const REFLECT_DOUBLE_RE = /^Reflex[ãa]o\s+eixo\s+([xy])\s+seguida\s+de\s+reflex[ãa]o\s+eixo\s+\1\s+de\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*([xy])'\s*=\s*\??\s*$/i;
+// T(a,b) seguida de T(-a,-b) em (x,y): returns original
+const T_CANCEL_RE = /^T\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s+seguida\s+de\s+T\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s+em\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*([xy])'\s*=\s*\??\s*$/i;
+// Homotetia k seguida de T: scaled point + translation
+const HOM_TRANSLATE_RE = /^Homotetia\s+k\s*=\s*(-?\d+(?:\.\d+)?)\s+de\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*,\s*seguida\s+de\s+T\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*([xy])'\s*=\s*\??\s*$/i;
+// 'Distância entre retas paralelas y=x+a e y=x-b: d = ?/√2'
+const PARALLEL_DIST_RE = /^Dist[âa]ncia\s+entre\s+retas\s+paralelas\s+y\s*=\s*x\s*\+\s*(-?\d+(?:\.\d+)?)\s+e\s+y\s*=\s*x\s*-\s*(\d+(?:\.\d+)?)\s*:\s*d\s*=\s*\?\/√2\s*$/i;
+// 'Reta x-y+c=0; ponto (x0,y0): d = ?√2' → |x0-y0+c|/2
+const X_MINUS_Y_DIST_RE = /^Reta\s+x\s*-\s*y\s*([+\-])\s*(\d+(?:\.\d+)?)\s*=\s*0\s*;\s*ponto\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*d\s*=\s*\?√2\s*$/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -4166,6 +4204,159 @@ function verify(question, answer, type) {
   // A(n,k)/C(n,k) = k! (literal)
   if (A_OVER_C_RE.test(q)) {
     return { ok: String(a).trim().replace(/\s+/g, '') === 'k!', computed: 'k!', kind: 'identity_symbolic' };
+  }
+  // Cateto N, hipotenusa = N√2 (literal)
+  const cathH = q.match(CATHETUS_HYP_RE);
+  if (cathH) {
+    const N = Number(cathH[1]);
+    const expected = N === 1 ? '√2' : `${N}√2`;
+    const ansClean = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ansClean === expected, computed: expected, kind: 'tri_special' };
+  }
+  // Hipotenusa √N, catetos = ?  → √(N/2)  (raw — √ stays)
+  const hypC = question.match(HYP_TO_CATHETI_RE);
+  if (hypC) {
+    const N = Number(hypC[1]);
+    const expected = Math.sqrt(N / 2);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'tri_special' };
+  }
+  // Equilateral triangle area: L²/4 coefficient of √3
+  const eqArea = question.match(EQ_TRI_AREA_DASH_RE);
+  if (eqArea) {
+    const L = Number(eqArea[1]);
+    const expected = L * L / 4;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'equi_tri_area' };
+  }
+  // Equilateral circumradius R = L/√3 = L√3/3 (numeric or literal '2√3' for L=6)
+  const eqR = q.match(EQ_TRI_CIRC_R_RE);
+  if (eqR) {
+    const L = Number(eqR[1]);
+    const expected = L / Math.sqrt(3);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'tri_special' };
+  }
+  // Hexagon R = side
+  const hexR = q.match(HEX_CIRC_R_RE);
+  if (hexR) {
+    const expected = Number(hexR[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'tri_special' };
+  }
+  // Hexagon inradius coef of √3 = side/2
+  const hexIn = question.match(HEX_INRADIUS_RE);
+  if (hexIn) {
+    const expected = Number(hexIn[1]) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'hex_area' };
+  }
+  // Square circumradius coef of √2 = side/2
+  const sqC = question.match(SQUARE_CIRC_R_RE);
+  if (sqC) {
+    const expected = Number(sqC[1]) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'square_diag' };
+  }
+  // Square from R=N√2/2: side = N
+  const sqF = question.match(SQUARE_FROM_R_RE);
+  if (sqF) {
+    const expected = Number(sqF[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'square_area' };
+  }
+  // Equilateral area full numeric: L²·√3/4
+  const eqFull = q.match(EQ_TRI_AREA_DASH_FULL_RE);
+  if (eqFull) {
+    const L = Number(eqFull[1]);
+    const expected = L * L * Math.sqrt(3) / 4;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'equi_tri_area' };
+  }
+  // 'Reta por (a,b) e (c,d): m = ?' → slope
+  const slpL = question.match(SLOPE_FROM_LINE_THROUGH_RE);
+  if (slpL) {
+    const dx = Number(slpL[3]) - Number(slpL[1]);
+    if (dx !== 0) {
+      const expected = (Number(slpL[4]) - Number(slpL[2])) / dx;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'slope' };
+    }
+  }
+  // '(x-h)²+(y-k)² = N — centro = ?' → (h, -k) literal
+  const ceL = q.match(CIRCLE_EQ_CENTER_LIT_RE);
+  if (ceL) {
+    const h = (ceL[1] === '+' ? -1 : 1) * Number(ceL[2]);
+    const k = (ceL[3] === '+' ? -1 : 1) * Number(ceL[4]);
+    const expected = `(${h}, ${k})`;
+    const ansClean = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ansClean === expected.replace(/\s/g, ''), computed: expected, kind: 'circle_radius' };
+  }
+  // cosC numerator: a²+b²-c²
+  const csn = q.match(COSC_NUMER_RE);
+  if (csn) {
+    const A = Number(csn[1]), B = Number(csn[2]), C = Number(csn[3]);
+    const expected = A * A + B * B - C * C;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'law_cos' };
+  }
+  // Isoceles: a=A, A=α°, b=A → B=α
+  const iso = question.match(ISOCELES_B_RE);
+  if (iso) {
+    const expected = Number(iso[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'law_sin' };
+  }
+  // a=b=c (equilátero, a=N): c² = N²
+  const eqCsq = q.match(EQUILAT_CSQ_RE);
+  if (eqCsq) {
+    const expected = Math.pow(Number(eqCsq[1]), 2);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'law_cos' };
+  }
+  // Double reflection x→x or y→y: returns original
+  const refD = question.match(REFLECT_DOUBLE_RE);
+  if (refD) {
+    const px = Number(refD[2]), py = Number(refD[3]);
+    const expected = refD[4].toLowerCase() === 'x' ? px : py;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'reflect' };
+  }
+  // T(a,b) then T(-a,-b) cancels — returns original
+  const tCan = question.match(T_CANCEL_RE);
+  if (tCan) {
+    const a1 = Number(tCan[1]), b1 = Number(tCan[2]), c1 = Number(tCan[3]), d1 = Number(tCan[4]);
+    if (a1 + c1 === 0 && b1 + d1 === 0) {
+      const px = Number(tCan[5]), py = Number(tCan[6]);
+      const expected = tCan[7].toLowerCase() === 'x' ? px : py;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'translate' };
+    }
+  }
+  // Homotetia k de P, seguida T(c,d): (k·px+c, k·py+d)
+  const hmT = question.match(HOM_TRANSLATE_RE);
+  if (hmT) {
+    const k = Number(hmT[1]), px = Number(hmT[2]), py = Number(hmT[3]);
+    const dx = Number(hmT[4]), dy = Number(hmT[5]);
+    const expected = hmT[6].toLowerCase() === 'x' ? k * px + dx : k * py + dy;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'homothety' };
+  }
+  // Distance between parallel y=x+a, y=x-b: |a+b|/√2 — coef of /√2 = a+b
+  const pdL = question.match(PARALLEL_DIST_RE);
+  if (pdL) {
+    const expected = Math.abs(Number(pdL[1]) + Number(pdL[2]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'distance' };
+  }
+  // 'Reta x-y±c=0; ponto (x0,y0): d = ?√2' → |x0-y0±c|/2
+  const xyd = question.match(X_MINUS_Y_DIST_RE);
+  if (xyd) {
+    const c = (xyd[1] === '-' ? -1 : 1) * Number(xyd[2]);
+    const x0 = Number(xyd[3]), y0 = Number(xyd[4]);
+    const expected = Math.abs(x0 - y0 + c) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'distance' };
   }
   // Calculus-type pure-arithmetic series sums: '<arith> ≈ ?' / '<arith> = ?'.
   if (type === 'calculus') {

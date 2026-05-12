@@ -330,6 +330,20 @@ const CASES = [
   { q: 'Dobrar ME → n muda por fator = ?', a: '0.25', type: 'mental_math', want: true },
   { q: 'Senhas de 3 dígitos distintos usando {1,2,3} = ?', a: '6', type: 'mental_math', want: true },
   { q: 'Relação A(n,k) / C(n,k) = ?', a: 'k!', type: 'mental_math', want: true },
+  // Special triangles + reflection composition + parallel-line distance
+  { q: 'Cateto 1, hipotenusa = ?', a: '√2', type: 'geometry', want: true },
+  { q: 'Cateto 3, hipotenusa = ?', a: '3√2', type: 'geometry', want: true },
+  { q: 'Hipotenusa √2, catetos = ?', a: '1', type: 'geometry', want: true },
+  { q: 'Triângulo equilátero lado 6 — área = ?', a: '9√3', type: 'geometry', want: true },
+  { q: 'Hexágono regular lado=5 — raio circunscrito R = ?', a: '5', type: 'geometry', want: true },
+  { q: 'Quadrado lado=4 — raio circunscrito = ?√2', a: '2', type: 'geometry', want: true },
+  { q: 'Reta por (0,0) e (4,8): m = ?', a: '2', type: 'geometry', want: true },
+  { q: 'a=2, b=3, c=4 — numerador de cosC = a²+b²-c² = ?', a: '-3', type: 'geometry', want: true },
+  { q: 'a=b=c (equilátero, a=4): c² = ?', a: '16', type: 'geometry', want: true },
+  { q: 'Reflexão eixo x seguida de reflexão eixo x de (3,4): y\' = ?', a: '4', type: 'geometry', want: true },
+  { q: 'T(2,3) seguida de T(-2,-3) em (5,5): x\' = ?', a: '5', type: 'geometry', want: true },
+  { q: 'Homotetia k=2 de (3,1), seguida de T(0,-1): y\' = ?', a: '1', type: 'geometry', want: true },
+  { q: 'Distância entre retas paralelas y=x+2 e y=x-3: d = ?/√2', a: '5', type: 'geometry', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
