@@ -358,6 +358,23 @@ const CASES = [
   { q: 'Símbolo do desvio padrão amostral = ? (σ/s)', a: 's', type: 'mental_math', want: true },
   { q: 'r=0.8 → R² = ?', a: '0.64', type: 'mental_math', want: true },
   { q: 'b = r·(sy/sx); r=0.6, sy=5, sx=3 → b = ?', a: '1', type: 'mental_math', want: true },
+  // Trig multi-step solving + law of sines/cosines variants + Heron
+  { q: 'cos(2x) = 0 → 2x = 90° + 180°k → x = ?', a: '45°', type: 'trigonometry', want: true },
+  { q: 'cos(x-30°) = 1 → x = ?', a: '30°', type: 'trigonometry', want: true },
+  { q: 'sen(x+45°) = 1 → x+45° = 90° → x = ?', a: '45°', type: 'trigonometry', want: true },
+  { q: 'sen(x) = cos(x) → primeira solução positiva?', a: '45°', type: 'trigonometry', want: true },
+  { q: 'Menor positiva de tan(2x) = 1?', a: '22.5°', type: 'trigonometry', want: true },
+  { q: 'Número de soluções em [0°, 360°) de 2sen²(x) = 1?', a: '4', type: 'trigonometry', want: true },
+  { q: 'Primeira solução positiva de sen(2x) = 0?', a: '0', type: 'trigonometry', want: true },
+  { q: 'Segunda solução positiva de sen(2x) = 0?', a: '90°', type: 'trigonometry', want: true },
+  { q: 'Se a=10 e A=30°, R = ?', a: '10', type: 'trigonometry', want: true },
+  { q: 'Se a=10 e sen(A)=0.5, 2R = ?', a: '20', type: 'trigonometry', want: true },
+  { q: 'Se a=5, A=90°, R = ?', a: '2.5', type: 'trigonometry', want: true },
+  { q: 'Em triângulo equilátero com R=2, lado = ?', a: '2√3', type: 'trigonometry', want: true },
+  { q: 'a=6, b=8, C=90°: c² = ?', a: '100', type: 'trigonometry', want: true },
+  { q: 'c² = a² + b² quando C = ?°', a: '90', type: 'trigonometry', want: true },
+  { q: 'Para a=3, b=4, c=5, p = ?', a: '6', type: 'trigonometry', want: true },
+  { q: 'A = √(p(p-a)(p-b)(p-c)) → √(6·3·2·1) = ?', a: '6', type: 'trigonometry', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

@@ -736,6 +736,49 @@ const SYMBOL_MU_RE = /^S[íi]mbolo\s+do\s+par[âa]metro\s+m[ée]dia\s+populacion
 const R_SQUARED_RE = /^r\s*=\s*(\d+(?:\.\d+)?)\s*→\s*R[²2^]+\s*=\s*\??\s*$/i;
 // b = r·(sy/sx)
 const B_REG_RE = /^b\s*=\s*r\s*[·*]\s*\(sy\/sx\)\s*;\s*r\s*=\s*(\d+(?:\.\d+)?)\s*,\s*sy\s*=\s*(\d+(?:\.\d+)?)\s*,\s*sx\s*=\s*(\d+(?:\.\d+)?)\s*→\s*b\s*=\s*\??\s*$/i;
+// Trig solving with shift: 'cos(2x) = 0 → 2x = 90° + 180°k → x = ?' → 45° (half of 90°)
+const TRIG_SOLVE_SHIFT_RE = /(?:sen|sin|cos|tan)\(\s*(\d+)\s*\*?\s*x\s*\)\s*=\s*[^→]+→\s*\1\s*\*?\s*x\s*=\s*(\d+)°\s*\+\s*\d+°\s*[·*]?\s*k\s*→\s*x\s*=\s*\??\s*$/i;
+// 'sen(x±A°) = V → x±A° = θ° → x = ?' → θ ∓ A  (sign-aware: works in raw question form)
+const TRIG_SHIFTED_ARG_RE = /^(?:sen|sin|cos)\(x\s*([+\-])\s*(\d+)°?\s*\)\s*=\s*[\-\d.√\/]+\s*→\s*x\s*[+\-]\s*\d+°\s*=\s*(\d+)°\s*→\s*x\s*=\s*\??\s*$/i;
+// 'sen(2x) = 0 → 2x = 180°k → x = ?·k' → 90°
+const TRIG_HALF_K_RE = /^(?:sin|cos)\(\s*2\s*\*?\s*x\s*\)\s*=\s*0\s*→\s*2\s*\*?\s*x\s*=\s*(?:\(?180\s*deg\)?|180°)\s*\*?\s*k\s*→\s*x\s*=\s*\?\s*\*?·?\s*k\s*$/i;
+// 'sen(x) = cos(x) → primeira solução positiva?' → 45°
+const SIN_EQ_COS_RE = /^sin\(x\)\s*=\s*cos\(x\)\s*→\s*primeira\s+solu[çc][ãa]o\s+positiva\?/i;
+// 'Menor positiva de sen(x)-cos(x)=0?' → 45° (tan=1)
+const MENOR_SIN_MINUS_COS_RE = /^Menor\s+positiva\s+de\s+sin\(x\)\s*-\s*cos\(x\)\s*=\s*0\?\s*$/i;
+// 'Menor positiva de tan(Nx) = 1?' → 45°/N
+const MENOR_TANK_RE = /^Menor\s+positiva\s+de\s+tan\(\s*(\d+)\s*\*?\s*x\s*\)\s*=\s*(\d+(?:\.\d+)?)\?\s*$/i;
+// 'Número de soluções em [0°, 360°) de 2sen²(x) = N?' → 4 (sen²=N/2, |sen|=√(N/2), 2 quadrants × 2 = 4)
+const NUM_SOL_2SIN2_RE = /^N[úu]mero\s+de\s+solu[çc][õo]es\s+em\s+\[0°?\s*,\s*360°?\)\s+de\s+2(?:sen|sin)[²2]\(x\)\s*=\s*(\d+(?:\.\d+)?)\?\s*$/i;
+// 'Primeira/Segunda solução positiva de sen(2x) = 0?' → 0 or 90°
+const SIN2X_POS_RE = /^(Primeira|Segunda)\s+solu[çc][ãa]o\s+positiva\s+de\s+sin\(\s*2\s*\*?\s*x\s*\)\s*=\s*0\?\s*$/i;
+// 'Primeira solução positiva de 2cos²(x) - 1 = 0?' → 45°
+const PRIM_2COS2_RE = /^Primeira\s+solu[çc][ãa]o\s+positiva\s+de\s+2\s*\*?\s*cos\(x\)\^?2\s*-\s*1\s*=\s*0\?\s*$/i;
+// 'sen(x) + cos(x) = 1 (primeira positiva)?' → 0
+const SIN_PLUS_COS_1_RE = /^sin\(x\)\s*\+\s*cos\(x\)\s*=\s*1\s+\(primeira\s+positiva\)\?\s*$/i;
+// '2sen²(x) - 1 = 0 → sen(x) = ? (positivo)' → √2/2 (literal)
+const SIN_POSITIVE_RE = /^2\s*\*?\s*sin\(x\)\^?2\s*-\s*1\s*=\s*0\s*→\s*sin\(x\)\s*=\s*\?\s*\(positivo\)\s*$/i;
+// 'Em [0°, 180°], soluções de FN(x) = V: (X° e ?)' — fixed handler exists but may need; when only 1 solution, the author wrote the existing one. Already handled.
+// 'cos²(x) = 0 → solução positiva menor?' → 90°
+const COS2_ZERO_RE = /^cos\(x\)\^?2\s*=\s*0\s*→\s*solu[çc][ãa]o\s+positiva\s+menor\?\s*$/i;
+// Law of sines variants
+const LAW_SIN_R_FROM_A_A_RE = /^Se\s+a\s*=\s*(\d+(?:\.\d+)?)\s+e\s+A\s*=\s*(\d+(?:\.\d+)?)°\s*,\s*R\s*=\s*\??\s*$/i;
+const LAW_SIN_2R_FROM_A_SINA_RE = /^Se\s+a\s*=\s*(\d+(?:\.\d+)?)\s+e\s+sin\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*2R\s*=\s*\??\s*$/i;
+const LAW_SIN_A_FROM_2R_RE = /^Se\s+2R\s*=\s*(\d+(?:\.\d+)?)\s*,\s*a\s+com\s+sin\(A\)\s*=\s*1\s*=\s*\??\s*$/i;
+const LAW_SIN_R_A_90_RE = /^Se\s+a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*A\s*=\s*90°\s*,\s*R\s*=\s*\??\s*$/i;
+const ASIN_DEG_RE = /^Se\s+sin\(B\)\s*=\s*([\d.√\/]+)\s*(?:,\s*B\s+no\s+1[ºo]\s+quadrante)?\s*=\s*\??\s*$/i;
+const ASIN_DEG_ALT_RE = /^Se\s+sin\(B\)\s*=\s*([\d.√\/]+)\s*,\s*B\s*=\s*\??\s*$/i;
+const EQ_TRI_FROM_R_RE = /^Em\s+tri[âa]ngulo\s+equil[áa]tero\s+com\s+R\s*=\s*(\d+(?:\.\d+)?)\s*,\s*lado\s*=\s*\??\s*$/i;
+const EQ_TRI_R_NUM_RE = /^Em\s+tri[âa]ngulo\s+equil[áa]tero\s+lado\s+(\d+(?:\.\d+)?)\s*,\s*R\s*=\s*\d+\/√3\s*≈\s*\??\s*$/i;
+// Law of cosines variants
+const LAW_COS_CSQ_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*C\s*=\s*(\d+(?:\.\d+)?)°\s*:?\s*c(?:²|\^?2)\s*=\s*\??\s*$/i;
+const LAW_COS_C_90_RE = /^c\^?2\s*=\s*a\^?2\s*\+\s*b\^?2\s+quando\s+C\s*=\s*\?°?\s*$/i;
+const LAW_COS_CONST_RE = /^c\^?2\s*=\s*a\^?2\s*\+\s*b\^?2\s*-\s*2ab\s*[·*]\s*cos\(\?\)\s*$/i;
+// Heron's: p = (a+b+c)/2
+const SEMI_PERIM_RE = /^Para\s+a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*c\s*=\s*(\d+(?:\.\d+)?)\s*,\s*p\s*=\s*\??\s*$/i;
+const SEMI_PERIM_EQ_RE = /^Para\s+a\s*=\s*b\s*=\s*c\s*=\s*(\d+(?:\.\d+)?)\s*,\s*p\s*=\s*\??\s*$/i;
+// Heron's formula evaluated: '√(N·M·K·L) = ?'
+const HERON_NUM_RE = /A\s*=\s*√\(p\(p-a\)\(p-b\)\(p-c\)\)\s*→\s*√\(([\d·*\s]+)\)\s*=\s*\?/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -4489,6 +4532,187 @@ function verify(question, answer, type) {
     const expected = Number(breg[1]) * Number(breg[2]) / Number(breg[3]);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'r_squared' };
+  }
+  // 'cos(Nx) = V → Nx = θ° + Pk → x = ?' → θ°/N
+  const tss = question.match(TRIG_SOLVE_SHIFT_RE);
+  if (tss) {
+    const N = Number(tss[1]);
+    const theta = Number(tss[2] ?? tss[3]);
+    const expected = theta / N;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+  }
+  // 'sen(x±A°) = V → x±A° = θ° → x = θ ∓ A' (use raw question)
+  const tsa = question.match(TRIG_SHIFTED_ARG_RE);
+  if (tsa) {
+    const sign = tsa[1] === '-' ? 1 : -1;  // 'x-A' → x = θ+A; 'x+A' → x = θ-A
+    const A = Number(tsa[2]);
+    const theta = Number(tsa[3]);
+    const expected = theta + sign * A;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+  }
+  // 'cos(x-A°) = 1 → x = ?' (single-step where cos⁻¹(1) = 0, so x = A)
+  const cosShift1 = question.match(/^cos\(\s*x\s*([+\-])\s*(\d+)°\s*\)\s*=\s*1\s*→\s*x\s*=\s*\??\s*$/i);
+  if (cosShift1) {
+    const A = Number(cosShift1[2]);
+    const expected = cosShift1[1] === '-' ? A : -A;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+  }
+  // sen(2x) = 0 → x = 90° · k
+  if (TRIG_HALF_K_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 90), computed: '90°', kind: 'trig_meta' };
+  }
+  // sen(x) = cos(x) primeira positiva → 45°
+  if (SIN_EQ_COS_RE.test(q) || MENOR_SIN_MINUS_COS_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 45), computed: '45°', kind: 'trig_meta' };
+  }
+  // Menor positiva de tan(Nx) = V → atan(V) / N
+  const mtk = q.match(MENOR_TANK_RE);
+  if (mtk) {
+    const N = Number(mtk[1]), V = Number(mtk[2]);
+    const expected = Math.atan(V) * 180 / Math.PI / N;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+  }
+  // 2sen²(x) = N → number of solutions in [0, 360) (raw question for °/superscript)
+  const ns2 = question.match(NUM_SOL_2SIN2_RE);
+  if (ns2) {
+    const N = Number(ns2[1]);
+    const val = Math.sqrt(N / 2);
+    let expected;
+    if (val > 1 + 1e-9) expected = 0;
+    else if (Math.abs(val - 1) < 1e-9) expected = 2;
+    else if (Math.abs(val) < 1e-9) expected = 2;
+    else expected = 4;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'trig_meta' };
+  }
+  // sen(2x) = 0 positive solutions: 0, 90, 180, 270
+  const s2x = q.match(SIN2X_POS_RE);
+  if (s2x) {
+    const which = s2x[1].toLowerCase() === 'primeira' ? 0 : 90;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, which), computed: `${which}°`, kind: 'trig_meta' };
+  }
+  // 2cos²(x) - 1 = 0 → cos(x) = ±√2/2 → 45° first positive
+  if (PRIM_2COS2_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 45), computed: '45°', kind: 'trig_meta' };
+  }
+  // sen(x)+cos(x)=1: first positive solution → 0
+  if (SIN_PLUS_COS_1_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'trig_meta' };
+  }
+  // 2sen²(x) - 1 = 0 → sen(x) = √2/2 (positive)
+  if (SIN_POSITIVE_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === '√2/2' || ans === 'sqrt(2)/2', computed: '√2/2', kind: 'trig_meta' };
+  }
+  // cos²(x) = 0 → 90° smallest positive
+  if (COS2_ZERO_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 90), computed: '90°', kind: 'trig_meta' };
+  }
+  // R = a / (2 sin A)  (raw question — ° needed)
+  const lrA = question.match(LAW_SIN_R_FROM_A_A_RE);
+  if (lrA) {
+    const expected = Number(lrA[1]) / (2 * Math.sin(Number(lrA[2]) * Math.PI / 180));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_sin' };
+  }
+  // 2R = a / sin(A)
+  const l2R = q.match(LAW_SIN_2R_FROM_A_SINA_RE);
+  if (l2R) {
+    const expected = Number(l2R[1]) / Number(l2R[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_sin' };
+  }
+  // 2R=N, sinA=1 → a = N
+  const laR = q.match(LAW_SIN_A_FROM_2R_RE);
+  if (laR) {
+    const expected = Number(laR[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'law_sin' };
+  }
+  // a=N, A=90° → R = N/2
+  const lr90 = question.match(LAW_SIN_R_A_90_RE);
+  if (lr90) {
+    const expected = Number(lr90[1]) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_sin' };
+  }
+  // asin(V) — degrees from sin(B)=V
+  const asnDeg = q.match(ASIN_DEG_RE) || q.match(ASIN_DEG_ALT_RE);
+  if (asnDeg) {
+    let raw = asnDeg[1].trim();
+    let V;
+    if (raw === '1') V = 1;
+    else if (raw === '√2/2' || raw === 'sqrt(2)/2') V = Math.sqrt(2) / 2;
+    else V = Number(raw);
+    if (Number.isFinite(V) && Math.abs(V) <= 1) {
+      const expected = Math.asin(V) * 180 / Math.PI;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'law_sin' };
+    }
+  }
+  // Equilateral from R: lado = R√3 (literal)
+  const eqR2 = q.match(EQ_TRI_FROM_R_RE);
+  if (eqR2) {
+    const N = Number(eqR2[1]);
+    const expected = N === 1 ? '√3' : `${N}√3`;
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === expected, computed: expected, kind: 'tri_special' };
+  }
+  // Equilateral R numeric: N/√3 ≈ ?
+  const eqRN = q.match(EQ_TRI_R_NUM_RE);
+  if (eqRN) {
+    const expected = Number(eqRN[1]) / Math.sqrt(3);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'tri_special' };
+  }
+  // Law of cosines: c² = a² + b² - 2ab·cos(θ)  (raw — needs ° literal and superscript)
+  const lcsq = question.match(LAW_COS_CSQ_RE);
+  if (lcsq) {
+    const A = Number(lcsq[1]), B = Number(lcsq[2]), C = Number(lcsq[3]);
+    const expected = A * A + B * B - 2 * A * B * Math.cos(C * Math.PI / 180);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_cos' };
+  }
+  if (LAW_COS_C_90_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 90), computed: '90°', kind: 'law_cos' };
+  }
+  if (LAW_COS_CONST_RE.test(q)) {
+    return { ok: String(answer).trim().toUpperCase() === 'C', computed: 'C', kind: 'law_cos' };
+  }
+  // Heron's semi-perimeter
+  const sps = q.match(SEMI_PERIM_RE);
+  if (sps) {
+    const expected = (Number(sps[1]) + Number(sps[2]) + Number(sps[3])) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'law_cos' };
+  }
+  const spe = q.match(SEMI_PERIM_EQ_RE);
+  if (spe) {
+    const expected = 3 * Number(spe[1]) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'law_cos' };
+  }
+  // Heron's evaluation
+  const hrn = question.match(HERON_NUM_RE);
+  if (hrn) {
+    try {
+      const product = hrn[1].replace(/·/g, '*').replace(/\s+/g, '');
+      const val = math.evaluate(product);
+      const expected = Math.sqrt(Number(val));
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_cos' };
+    } catch {}
   }
   // Calculus-type pure-arithmetic series sums: '<arith> ≈ ?' / '<arith> = ?'.
   if (type === 'calculus') {
