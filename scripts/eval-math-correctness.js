@@ -255,7 +255,7 @@ const DOUBLE_ANGLE_SINGLE_RE = /^se\s+(sin|cos|tan)\(x\)\s*=\s*([^,]+?)\s*,\s*(s
 const HALF_ANGLE_RE = /^se\s+cos\(x\)\s*=\s*([^,(]+?)\s*\([^)]*\)\s*,\s*(sin|cos)\(x\s*\/\s*2\)\s*=\s*\??\s*$/i;
 // 'tan(A±B) numerador/denominador = ?' — sum-of-angles formula numerator/denominator.
 const TAN_SUM_PART_RE = /^tan\(((?:[^()]|\([^)]*\))+?)\s*([+\-])\s*((?:[^()]|\([^)]*\))+?)\)\s+(numerador|denominador)\s*=\s*\??\s*$/i;
-const DOUBLE_ANGLE_PAIR_RE = /^se\s+(sin|cos|tan)\(x\)\s*=\s*([^\s]+)\s+e\s+(sin|cos|tan)\(x\)\s*=\s*([^\s,]+)\s*,\s*(sin|cos|tan)\(2\s*\*?\s*x\)\s*=\s*\??\s*$/i;
+const DOUBLE_ANGLE_PAIR_RE = /^se\s+(sin|cos|tan)\(x\)\s*=\s*([^\s,]+)(?:\s+e\s+|\s*,\s*)(sin|cos|tan)\(x\)\s*=\s*([^\s,]+)\s*,\s*(sin|cos|tan)\(2\s*\*?\s*x\)\s*=\s*\??\s*$/i;
 const ARRANGE_RE = /^A\((\d+)\s*,\s*(\d+)\)(?:\s*=\s*[\d·*+-]+)?\s*=\s*\??\s*$/i;
 const DET_2X2_RE = /^det\(\[\s*(-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)\s*;\s*(-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)\s*\]\)\s*=\s*\??\s*$/i;
 const MAT2 = /\[\s*(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s*\]/;
