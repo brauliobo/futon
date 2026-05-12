@@ -315,6 +315,21 @@ const CASES = [
   { q: 'a₁=1, q=0.5, S₁₀ = (0.5^10 - 1)/(0.5-1) ≈ ?', a: '1.998', type: 'sequence', want: true },
   { q: 'Em (2+x)⁴, T₃ = C(4,2)·2²·x² = ? · x²', a: '24', type: 'algebra', want: true },
   { q: 'Em (a+b)⁶, T₄ = C(6,3)·a³·b³ = 20·a³·b³. Coeficiente = ?', a: '20', type: 'algebra', want: true },
+  // Binomial distribution + sample-variance + IC + passwords
+  { q: 'Bin(10, 0.5) — Var(X) = ?', a: '2.5', type: 'mental_math', want: true },
+  { q: 'Bin(10, 0.5) — σ = √2.5 ≈ ?', a: '1.581', type: 'mental_math', want: true },
+  { q: 'Bin(2,0.5) — P(X=0) = ?', a: '0.25', type: 'mental_math', want: true },
+  { q: 'Bin(3,0.5) — P(X=2) = ?', a: '0.375', type: 'mental_math', want: true },
+  { q: 'Bin(3,0.5) — soma P(X=0..3) = ?', a: '1', type: 'mental_math', want: true },
+  { q: 'X~Bin(n=10, p=0.3) — E[X] = ?', a: '3', type: 'mental_math', want: true },
+  { q: '10 peças P(def)=0.1 — Var(X) = ?', a: '0.9', type: 'mental_math', want: true },
+  { q: 'σ² = 9 → σ = ?', a: '3', type: 'mental_math', want: true },
+  { q: '{2,4,6} — s² = 4 → s = ?', a: '2', type: 'mental_math', want: true },
+  { q: 'IC=[14, 26] → x̄ (ponto central) = ?', a: '20', type: 'mental_math', want: true },
+  { q: 'IC 95% — em 100 amostras, ~quantas contêm μ?', a: '95', type: 'mental_math', want: true },
+  { q: 'Dobrar ME → n muda por fator = ?', a: '0.25', type: 'mental_math', want: true },
+  { q: 'Senhas de 3 dígitos distintos usando {1,2,3} = ?', a: '6', type: 'mental_math', want: true },
+  { q: 'Relação A(n,k) / C(n,k) = ?', a: 'k!', type: 'mental_math', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

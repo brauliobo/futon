@@ -652,6 +652,26 @@ const PA_STEPS_RE = /cresceram?\s+(\d+(?:\.\d+)?)\s+cm\s+cada\s+degrau\s*,\s*ini
 const PA_SAVINGS_RE = /Poupan[çc]a[^—-]*[—-]+\s*R\$\s*(\d+(?:\.\d+)?)\s*,\s*aumenta\s+R\$\s*(\d+(?:\.\d+)?)\/m[êe]s\.\s+No\s+(\d+)[ºo]\s+m[êe]s\s*=\s*\?/i;
 // 'Linha 0 do Triângulo: (1 1/1)' → 1 (constant)
 const PASCAL_LINE_0_RE = /^Linha\s+0\s+do\s+Tri[âa]ngulo:\s*\(/i;
+// Binomial distribution: Bin(n, p) — extract n and p (also 'X~Bin(n=N, p=P)' and 'N peças P(def)=p')
+// Capture content between dash and last '= ?' / '≈ ?' (non-greedy expanded to longest match).
+const BIN_RE = /^(?:X\s*~\s*)?Bin\(\s*(?:n\s*=\s*)?(\d+)\s*,\s*(?:p\s*=\s*)?(\d+(?:\.\d+)?)\s*\)\s*[—-]+\s*(.+?)\s*(?:=|≈)\s*\??\s*$/i;
+const BIN_PIECES_RE = /^(\d+)\s+pe[çc]as(?:\s*,)?\s+P\(def[^)]*\)\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*(?:E\[defeituosas\]|Var\(X\)|σ)\s*=\s*\??\s*$/i;
+// σ from σ²
+const SIGMA_FROM_SQ_RE = /^σ²\s*=\s*(\d+(?:\.\d+)?)\s*→\s*σ\s*=\s*\??\s*$/i;
+// '{set} — s² = N → s = ?' or 'σ²'
+const SIGMA_FROM_VAR_LIST_RE = /^\{[\d,\s.]+\}\s*[—-]+\s*(?:σ²|σ\^?2|s²|s\^?2)\s*=\s*(\d+(?:\.\d+)?)\s*→\s*[σs]\s*=\s*\??\s*$/i;
+// Variance from listed formula: 'X̄=N; s² = [expr] = ?'
+const SAMPLE_VAR_FORMULA_RE = /[xs̄μ]\s*=\s*\d+(?:\.\d+)?\s*;\s*[σs]²\s*=\s*\[([^=]+)\]\s*=\s*\?\s*$/i;
+// 'IC=[a,b] → x̄ (ponto central) = ?'
+const IC_CENTER_RE = /^IC\s*=\s*\[\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\]\s*→\s*x̄\s+\(ponto\s+central\)\s*=\s*\??\s*$/i;
+// 'IC N% — em 100 amostras, ~quantas contêm μ?' → N
+const IC_PCT_RE = /^IC\s+(\d+)%\s*[—-]+\s*em\s+100\s+amostras\s*,\s*~quantas\s+cont[êe]m\s+μ\?\s*$/i;
+// 'Dobrar ME → n muda por fator = ?' → 0.25
+const DOUBLE_ME_RE = /^Dobrar\s+ME\s*→\s*n\s+muda\s+por\s+fator\s*=\s*\??\s*$/i;
+// 'Senhas de K dígitos distintos usando {set} = ?' → P(|set|, K)
+const PASSWORD_DISTINCT_RE = /^Senhas\s+de\s+(\d+)\s+d[íi]gitos\s+distintos\s+usando\s+\{([\d,\s]+)\}\s*=\s*\??\s*$/i;
+// 'A(n,k) / C(n,k) = ?' → k!
+const A_OVER_C_RE = /^Rela[çc][ãa]o\s+A\(n\s*,\s*k\)\s*\/\s*C\(n\s*,\s*k\)\s*=\s*\??\s*$/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -4036,6 +4056,116 @@ function verify(question, answer, type) {
   if (PASCAL_LINE_0_RE.test(q)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === 1, computed: '1', kind: 'combine' };
+  }
+  // Binomial Bin(n,p) — E[X], Var(X), σ, P(X=k), P(X≥k), sum
+  const bnm = q.match(BIN_RE);
+  if (bnm) {
+    const n = Number(bnm[1]), p = Number(bnm[2]);
+    const op = bnm[3].toLowerCase();
+    const f = (x) => { let r = 1; for (let i = 2; i <= x; i++) r *= i; return r; };
+    const pmf = (k) => f(n) / (f(k) * f(n - k)) * Math.pow(p, k) * Math.pow(1 - p, n - k);
+    let expected = null;
+    let m;
+    if ((m = op.match(/^p\(x\s*=\s*(\d+)\)/))) {
+      const k = Number(m[1]);
+      if (k <= n) expected = pmf(k);
+    } else if ((m = op.match(/^p\(x\s*≥\s*(\d+)\)/))) {
+      const k = Number(m[1]);
+      if (k <= n) { expected = 0; for (let i = k; i <= n; i++) expected += pmf(i); }
+    } else if ((m = op.match(/^p\(x\s*≤\s*(\d+)\)/))) {
+      const k = Number(m[1]);
+      if (k <= n) { expected = 0; for (let i = 0; i <= k; i++) expected += pmf(i); }
+    } else if (/^soma\s+p\(x/.test(op)) {
+      expected = 1;
+    } else if (/var\(x\)/.test(op)) {
+      expected = n * p * (1 - p);
+    } else if (/(?:^|\s)σ(?:$|\s|=)/.test(op) || /(?:^|\s)s(?:$|\s|=)/.test(op)) {
+      expected = Math.sqrt(n * p * (1 - p));
+    } else if (/e\[x\]/.test(op)) {
+      expected = n * p;
+    }
+    if (expected != null) {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'bernoulli' };
+    }
+  }
+  // 'N peças P(def)=p — {E[defeituosas]|Var(X)|σ}'
+  const bnp = q.match(BIN_PIECES_RE);
+  if (bnp) {
+    const n = Number(bnp[1]), p = Number(bnp[2]);
+    const lower = q.toLowerCase();
+    let expected;
+    if (/var\(x\)/i.test(lower)) expected = n * p * (1 - p);
+    else if (/σ/.test(q)) expected = Math.sqrt(n * p * (1 - p));
+    else expected = n * p;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'bernoulli' };
+  }
+  // σ from σ² → √N
+  const sfs = q.match(SIGMA_FROM_SQ_RE);
+  if (sfs) {
+    const expected = Math.sqrt(Number(sfs[1]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stddev' };
+  }
+  const sfvl = q.match(SIGMA_FROM_VAR_LIST_RE);
+  if (sfvl) {
+    const expected = Math.sqrt(Number(sfvl[1]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stddev' };
+  }
+  // Sample variance: 'x̄=N; s²/σ² = [expr] = ?'
+  const svf = q.match(SAMPLE_VAR_FORMULA_RE);
+  if (svf) {
+    try {
+      // Strip leading/trailing brackets that may remain, eval the inner expression.
+      let expr = svf[1].replace(/\s+/g, '');
+      // Remove enclosing brackets if present.
+      while (expr.startsWith('[') && expr.endsWith(']')) expr = expr.slice(1, -1);
+      // The formula may already be the numerator; check if it ends with /(n-1) etc.
+      const trailMatch = q.match(/\]\s*\/\s*\((\d+)\)\s*=/);
+      const divisor = trailMatch ? Number(trailMatch[1]) : (q.match(/\]\s*\/\s*(\d+)\s*=/) ? Number(q.match(/\]\s*\/\s*(\d+)\s*=/)[1]) : null);
+      const num = toNumber(math.evaluate(expr));
+      if (num != null) {
+        const expected = divisor ? num / divisor : num;
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'variance' };
+      }
+    } catch {}
+  }
+  // IC midpoint
+  const ic = q.match(IC_CENTER_RE);
+  if (ic) {
+    const expected = (Number(ic[1]) + Number(ic[2])) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stat' };
+  }
+  const icp = q.match(IC_PCT_RE);
+  if (icp) {
+    const expected = Number(icp[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'stat' };
+  }
+  // Dobrar ME → fator = 0.25
+  if (DOUBLE_ME_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - 0.25) < 1e-9, computed: '0.25', kind: 'stat' };
+  }
+  // Senhas de K dígitos distintos usando {set} → P(|set|, K)
+  const pwd = q.match(PASSWORD_DISTINCT_RE);
+  if (pwd) {
+    const K = Number(pwd[1]);
+    const setSize = pwd[2].split(/\s*,\s*/).length;
+    if (setSize >= K) {
+      let expected = 1;
+      for (let i = 0; i < K; i++) expected *= (setSize - i);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'arrange' };
+    }
+  }
+  // A(n,k)/C(n,k) = k! (literal)
+  if (A_OVER_C_RE.test(q)) {
+    return { ok: String(a).trim().replace(/\s+/g, '') === 'k!', computed: 'k!', kind: 'identity_symbolic' };
   }
   // Calculus-type pure-arithmetic series sums: '<arith> ≈ ?' / '<arith> = ?'.
   if (type === 'calculus') {
