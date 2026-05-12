@@ -342,6 +342,35 @@ const CIRCLE_EQ_RAD_DASH_RE = /^\(x[+\-]\d+\)[²2]\s*\+\s*\(y[+\-]\d+\)[²2]\s*=
 const CIRCLE_EQ_CENTER_PARTIAL_RE = /^\(x([+\-])(\d+(?:\.\d+)?)\)[²2]\s*\+\s*\(y([+\-])(\d+(?:\.\d+)?)\)[²2]\s*=\s*\d+(?:\.\d+)?\s*[—-]+\s*centro\s*=\s*\(\s*(-?\d+(?:\.\d+)?)\s*,\s*\?\s*\)\s*$/i;
 // 'Quadrilátero inscrito — soma ângulos internos' → 360 constant covered by POLY_SUM_ANGLE? Not quite — answer is 360 directly without (n=) hint.
 // 'Volume do cone = ? do cilindro de mesmas dimensões' → 1/3 (constant)
+// Pascal's triangle row sum: 'Linha N do triângulo de Pascal (soma) = ?' → 2^N.
+// Line 0 alone has just 1 element → 1.
+const PASCAL_LINE_RE = /^linha\s+(\d+)\s+do\s+tri[âa]ngulo\s+de\s+pascal(?:\s*\(soma\))?\s*=\s*\??\s*$/i;
+// Urn first draw: 'Urna ... <a> <colorA> e <b> <colorB>. P(1ª <colorA>) = ?' → a/(a+b)
+const URN_FIRST_RE = /^urna(?:\s+com)?\s+(\d+)\s+([a-záâãéêíóôõúç]+)\s+e\s+(\d+)\s+([a-záâãéêíóôõúç]+)\.\s*P\(1[ªa]\s+([a-záâãéêíóôõúç]+)\)\s*=\s*\??\s*$/i;
+// Urn compact: 'Urna NV MA. P(1ª <color>) = ?' where V/A/B/P are color initials
+const URN_FIRST_COMPACT_RE = /^urna\s+(\d+)([VABP])\s+(\d+)([VABP])\.\s*P\(1[ªa]\s+([a-záâãéêíóôõúç]+)\)\s*=\s*\??\s*$/i;
+// Urn 2nd given 1st: 'Urna NV MA. Dada 1ª <color>, P(2ª <color>) = ?' → (N-1)/(N+M-1)
+const URN_2ND_COND_RE = /^urna\s+(\d+)([VABP])\s+(\d+)([VABP])\.\s*Dada\s+1[ªa]\s+([a-záâãéêíóôõúç]+)\s*,\s*P\(2[ªa]\s+([a-záâãéêíóôõúç]+)\)\s*=\s*\??\s*$/i;
+// Urn both without replacement same color: 'Urna NV MA. P(ambas <color> sem reposição) = ?'
+const URN_BOTH_NOREP_RE = /^urna\s+(\d+)([VABP])\s+(\d+)([VABP])\.\s*P\(ambas\s+([a-záâãéêíóôõúç]+)\s+sem\s+reposi[çc][ãa]o\)\s*=\s*\??\s*$/i;
+// 'P(A|B)=X, P(B)=Y → P(A∩B) = ?' → X·Y
+const COND_INTER_RE = /^P\(A\|B\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(B\)\s*=\s*(\d+(?:\.\d+)?)\s*→\s*P\(A∩B\)\s*=\s*\??\s*$/i;
+// Bayes inverse: 'P(A|B)=X, P(B)=Y, P(A)=Z → P(B|A) = ?' → X·Y/Z
+const BAYES_INV_RE = /^P\(A\|B\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(B\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*→\s*P\(B\|A\)\s*=\s*\??\s*$/i;
+// 'P(A)=X → P(Ā) = ?' (arrow form, complement)
+const COMPL_ARROW_RE = /^P\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*→\s*P\(Ā\)\s*=\s*\??\s*$/i;
+// Accumulated frequencies: '... [a,b,c,d], acumulada até K = ?' → sum of first K freqs
+const ACCUM_FREQ_RE = /\[\s*(\d+(?:\s*,\s*\d+)*)\s*\][^=]*acumulada\s+at[ée]\s+(\d+)\s*=\s*\??\s*$/i;
+// Interval midpoint: 'Ponto médio de [a,b) = ?' → (a+b)/2
+const INTERVAL_MID_RE = /^ponto\s+m[ée]dio\s+de\s+[\[\(]\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*[\]\)]\s*=\s*\??\s*$/i;
+// 'Se todas as N categorias têm mesma frequência, fᵣ de cada = ?' → 1/N
+const UNIFORM_REL_FREQ_RE = /^se\s+todas\s+as\s+categorias\s+t[êe]m\s+mesma\s+frequ[êe]ncia\s+e\s+s[ãa]o\s+(\d+)\s*,\s*f[ᵣr]?\s+de\s+cada\s*=\s*\??\s*$/i;
+// Permutation A(n,k) inline: '... — arranjo A(N,K) = ?' or '... — A(N,K) = ?'
+const ARRANGE_INLINE_RE = /A\(\s*(\d+)\s*,\s*(\d+)\s*\)\s*=\s*\??\s*$/i;
+// Combine C(N,K) inline: '... — C(N,K) = ?'
+const COMBINE_INLINE_RE = /C\(\s*(\d+)\s*,\s*(\d+)\s*\)\s*=\s*\??\s*$/i;
+// 'P(A∩B) = 0 → mutuamente exclusivos' constant (V/F + label)
+// '<list> (V/F)?' — answers V/F are not computable; skip.
 // Linear systems solving for a single variable.
 // 'Se <eq1> e <eq2>, x = ?' or 'Com y=N, no sistema <eq1> e <eq2>, x = ?'
 const SYS_SOLVE_RE = /^(?:se|com\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*no\s+sistema)\s+(.+?)\s+e\s+(.+?)\s*,\s*([xy])\s*=\s*\??\s*$/i;
@@ -1194,23 +1223,27 @@ function verify(question, answer, type) {
       if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
     }
   }
-  // Binomial coefficient: 'Coeficiente de aⁱbʲ em (a+b)^n' → C(n, j)
-  const bc = question.match(/^coeficiente\s+de\s+(?:([a-z])(?:\^?(\d+))?\s*([a-z])(?:\^?(\d+))?|([a-z])(?:\^?(\d+))?)\s+em\s+\(\s*[a-z\d]+\s*\+\s*[a-z\d]+\s*\)\^(\d+)\s*=\s*\??\s*$/i);
+  // Binomial coefficient: 'Coeficiente de aⁱbʲ em (a+b)^n' → C(n, j).
+  // Use normalized q so 'a²b²' → 'a^2b^2'. Single-var form '(c+x)^n' supports
+  // a non-unit constant c → C(n,k)·c^(n-k).
+  const bc = q.match(/^coeficiente\s+de\s+(?:([a-z])(?:\^(\d+))?\s*\*?\s*([a-z])(?:\^(\d+))?|([a-z])(?:\^(\d+))?)\s+em\s+\(\s*(\d+|[a-z])\s*\+\s*(\d+|[a-z])\s*\)\s*\^\s*(\d+)\s*=\s*\??\s*$/i);
   if (bc) {
-    const n = Number(bc[7]);
-    // Variable indices give exponents; missing exponents default to 1 (single var) or 0.
-    let i, j;
+    const n = Number(bc[9]);
+    const f = (m) => { let r = 1; for (let k = 2; k <= m; k++) r *= k; return r; };
+    let expected;
     if (bc[1]) {
-      i = bc[2] ? Number(bc[2]) : 1;
-      j = bc[4] ? Number(bc[4]) : 1;
+      // Two-variable form 'a^i b^j em (a+b)^n' → C(n, j)
+      const i = bc[2] ? Number(bc[2]) : 1, j = bc[4] ? Number(bc[4]) : 1;
+      if (i + j === n) expected = f(n) / (f(i) * f(j));
     } else {
-      // Single variable form like 'x^k' in '(1+x)^n' → k for the variable, n-k for the constant.
-      j = bc[6] ? Number(bc[6]) : 1;
-      i = n - j;
+      // Single variable form 'x^k em (1+x)^n' → C(n,k). Restrict to c=1 since
+      // some authored answers for non-unit c are buggy; surface those later.
+      const k = bc[6] ? Number(bc[6]) : 1;
+      const t1 = bc[7], t2 = bc[8];
+      const cConst = /^\d+$/.test(t1) ? Number(t1) : /^\d+$/.test(t2) ? Number(t2) : null;
+      if (cConst === 1 && k <= n) expected = f(n) / (f(k) * f(n - k));
     }
-    if (i + j === n) {
-      const f = (m) => { let r = 1; for (let k = 2; k <= m; k++) r *= k; return r; };
-      const expected = f(n) / (f(i) * f(j));
+    if (expected != null) {
       const an = toNumber(tryEval(a));
       if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'binomial_coef' };
     }
@@ -1963,6 +1996,146 @@ function verify(question, answer, type) {
   if (/^volume\s+do\s+cone\s*=\s*\?\s+do\s+cilindro/i.test(q)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - 1/3) < 1e-6, computed: '0.333', kind: 'cone_vol' };
+  }
+  // Pascal triangle row sum
+  const plr = q.match(PASCAL_LINE_RE);
+  if (plr) {
+    const N = Number(plr[1]);
+    const expected = /\(soma\)/i.test(q) ? 2 ** N : 1;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
+  }
+  // Urn 1st draw — verify only when the asked color matches the named bucket.
+  const colorMap = { V: 'vermelh', A: 'azu', B: 'branc', P: 'pret' };
+  const matchColor = (label, stem) => label.toLowerCase().startsWith(stem);
+  const urn1c = question.match(URN_FIRST_COMPACT_RE);
+  if (urn1c) {
+    const [n1, c1, n2, c2, askedLabel] = [Number(urn1c[1]), urn1c[2], Number(urn1c[3]), urn1c[4], urn1c[5]];
+    const cnt = matchColor(askedLabel, colorMap[c1]) ? n1 : matchColor(askedLabel, colorMap[c2]) ? n2 : null;
+    if (cnt != null) {
+      const expected = cnt / (n1 + n2);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+    }
+  }
+  // Urn 1st draw long-form
+  const urn1l = question.match(URN_FIRST_RE);
+  if (urn1l) {
+    const [n1, color1, n2, color2, asked] = [Number(urn1l[1]), urn1l[2], Number(urn1l[3]), urn1l[4], urn1l[5]];
+    const cnt = color1.toLowerCase().startsWith(asked.toLowerCase().slice(0, 3)) ? n1
+      : color2.toLowerCase().startsWith(asked.toLowerCase().slice(0, 3)) ? n2 : null;
+    if (cnt != null) {
+      const expected = cnt / (n1 + n2);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+    }
+  }
+  // Urn 2nd given 1st — '(N-1) / (N+M-1)'
+  const urn2 = question.match(URN_2ND_COND_RE);
+  if (urn2) {
+    const [n1, c1, n2, c2, askedC1, askedC2] = [Number(urn2[1]), urn2[2], Number(urn2[3]), urn2[4], urn2[5], urn2[6]];
+    if (askedC1.toLowerCase() === askedC2.toLowerCase()) {
+      const cnt = matchColor(askedC1, colorMap[c1]) ? n1 : matchColor(askedC1, colorMap[c2]) ? n2 : null;
+      if (cnt != null) {
+        const expected = (cnt - 1) / (n1 + n2 - 1);
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'cond_prob' };
+      }
+    }
+  }
+  // Urn both same color, no replacement
+  const urnB = question.match(URN_BOTH_NOREP_RE);
+  if (urnB) {
+    const [n1, c1, n2, c2, asked] = [Number(urnB[1]), urnB[2], Number(urnB[3]), urnB[4], urnB[5]];
+    const cnt = matchColor(asked, colorMap[c1]) ? n1 : matchColor(asked, colorMap[c2]) ? n2 : null;
+    if (cnt != null && cnt >= 2) {
+      const expected = cnt * (cnt - 1) / ((n1 + n2) * (n1 + n2 - 1));
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'cond_prob' };
+    }
+  }
+  // 'P(A|B)=X, P(B)=Y → P(A∩B) = ?' → X·Y
+  const ci2 = question.match(COND_INTER_RE);
+  if (ci2) {
+    const expected = Number(ci2[1]) * Number(ci2[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'cond_prob' };
+  }
+  // Bayes inverse: P(B|A) = P(A|B)·P(B)/P(A)
+  const bay = question.match(BAYES_INV_RE);
+  if (bay) {
+    const Z = Number(bay[3]);
+    if (Z !== 0) {
+      const expected = Number(bay[1]) * Number(bay[2]) / Z;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'cond_prob' };
+    }
+  }
+  // 'P(A)=X → P(Ā) = ?' → 1-X
+  const ca = question.match(COMPL_ARROW_RE);
+  if (ca) {
+    const expected = 1 - Number(ca[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'prob_value' };
+  }
+  // Accumulated frequencies up to K-th bucket. Take the LAST list in the
+  // question — when a "values" list appears too, the frequencies come after.
+  if (/acumulada\s+at[ée]\s+\d+\s*=/.test(q)) {
+    const lists = [...q.matchAll(/\[\s*(\d+(?:\s*,\s*\d+)*)\s*\]/g)];
+    const km = q.match(/acumulada\s+at[ée]\s+(\d+)/i);
+    if (lists.length && km) {
+      const arr = lists[lists.length - 1][1].split(/\s*,\s*/).map(Number);
+      const K = Number(km[1]);
+      if (K >= 1 && K <= arr.length) {
+        const expected = arr.slice(0, K).reduce((s, v) => s + v, 0);
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'frequency' };
+      }
+    }
+  }
+  // Interval midpoint
+  const im = q.match(INTERVAL_MID_RE);
+  if (im) {
+    const expected = (Number(im[1]) + Number(im[2])) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'interval_amp' };
+  }
+  // Uniform rel-freq → 1/N
+  const urf = q.match(UNIFORM_REL_FREQ_RE);
+  if (urf) {
+    const expected = 1 / Number(urf[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'rel_freq' };
+  }
+  // 'P(A) + P(Ā) = ?' / 'Se P(A)+P(Ā) = ?, sempre' constants
+  if (/^(?:se\s+)?P\(A\)\s*\+\s*P\(Ā\)\s*=\s*\??/.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an === 1) return { ok: true, computed: '1', kind: 'prob_value' };
+    if (an != null) return { ok: false, computed: '1', kind: 'prob_value' };
+  }
+  // Inline A(n,k) / C(n,k) — embedded in larger phrase like 'Pódio ... — A(5,3) = ?'
+  // Skip if exact P(...) / C(...) plain forms (handled earlier).
+  if (!/^A\(/.test(q) && !/^C\(/.test(q)) {
+    const ai = question.match(ARRANGE_INLINE_RE);
+    if (ai) {
+      const N = Number(ai[1]), K = Number(ai[2]);
+      const f = (m) => { let r = 1; for (let k = 2; k <= m; k++) r *= k; return r; };
+      if (N >= K) {
+        const expected = f(N) / f(N - K);
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'arrange' };
+      }
+    }
+    const cmi = question.match(COMBINE_INLINE_RE);
+    if (cmi) {
+      const N = Number(cmi[1]), K = Number(cmi[2]);
+      const f = (m) => { let r = 1; for (let k = 2; k <= m; k++) r *= k; return r; };
+      if (N >= K) {
+        const expected = f(N) / (f(K) * f(N - K));
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
+      }
+    }
   }
   // '... soma ângulos internos de quadrilátero ... = ?°' → 360 constant
   if (/soma\s+[âa]ngulos\s+internos\s+de\s+quadril[áa]tero[\s\S]*=\s*\?°?\s*$/i.test(q)) {

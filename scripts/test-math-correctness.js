@@ -145,6 +145,20 @@ const CASES = [
   { q: '(x+2)²+(y-3)²=25 — raio = ?', a: '5', type: 'geometry', want: true },
   { q: 'Polígono regular de 10 lados, lado=5: perímetro = ?', a: '50', type: 'geometry', want: true },
   { q: 'Hexágono lado=3: perímetro = ?', a: '18', type: 'geometry', want: true },
+  // Binomial / Pascal / urns / Bayes
+  { q: 'Coeficiente de a²b² em (a+b)^4 = ?', a: '6', type: 'mental_math', want: true },
+  { q: 'Coeficiente de x² em (1+x)^5 = ?', a: '10', type: 'mental_math', want: true },
+  { q: 'Linha 3 do triângulo de Pascal (soma) = ?', a: '8', type: 'mental_math', want: true },
+  { q: 'Urna com 3 vermelhas e 2 azuis. P(1ª vermelha) = ?', a: '0.6', type: 'mental_math', want: true },
+  { q: 'Urna 3V 2A. Dada 1ª vermelha, P(2ª vermelha) = ?', a: '0.5', type: 'mental_math', want: true },
+  { q: 'Urna 2V 2A. P(ambas vermelhas sem reposição) = ?', a: '0.167', type: 'mental_math', want: true },
+  { q: 'P(A|B)=0.7, P(B)=0.4 → P(A∩B) = ?', a: '0.28', type: 'mental_math', want: true },
+  { q: 'P(A|B)=0.8, P(B)=0.5, P(A)=0.5 → P(B|A) = ?', a: '0.8', type: 'mental_math', want: true },
+  { q: 'P(A)=0.3 → P(Ā) = ?', a: '0.7', type: 'mental_math', want: true },
+  { q: 'Pódio (1º, 2º, 3º) de 5 atletas — arranjo A(5,3) = ?', a: '60', type: 'mental_math', want: true },
+  { q: 'Dupla de parceiros de 4 alunos — C(4,2) = ?', a: '6', type: 'mental_math', want: true },
+  { q: 'Ponto médio de [20,30) = ?', a: '25', type: 'mental_math', want: true },
+  { q: 'Para [1,2,3,4] com frequências [2,3,4,1], acumulada até 3 = ?', a: '9', type: 'mental_math', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
