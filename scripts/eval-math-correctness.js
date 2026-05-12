@@ -2040,8 +2040,8 @@ function verify(question, answer, type) {
   if (/^[A-Za-z]$/.test(a.trim())) return null;
   const trailingEqQ = /=\s*\?\s*$/.test(q);
   let lhs = q.replace(/\s*\?\s*$/, '').replace(/\s*=\s*$/, '').trim();
-  // Strip 'via <hint>' phrases — they describe how, not what.
-  lhs = lhs.replace(/\s+via\s+.+$/i, '').trim();
+  // Strip 'via <hint>' / 'pela série' phrases — they describe how, not what.
+  lhs = lhs.replace(/\s+via\s+.+$/i, '').replace(/\s+pela\s+s[ée]rie\s*$/i, '').trim();
   // Chained '<a> = <b> = ?': take the last segment only when the question
   // starts with a math symbol/digit (so 'cos(60°) = cos²(30°) - sen²(30°)
   // = ?' chains but 'Se 2R=10, a com sen(A)=1 = ?' word problems don't).
