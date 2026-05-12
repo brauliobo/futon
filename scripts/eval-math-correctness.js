@@ -1139,6 +1139,10 @@ const TRIG_RANGE_SAME_RE = /^em\s+\[0°?\s*,\s*(\d+)°?\],?\s*solu[çc][õo]es\s
 // 'Em equilátero a=N: a/senA = ?/sen60° (valor numérico simplificado)' → N·2/√3 = 2N√3/3 — for N=7, = 14√3/3, author wrote 14√3 (without /3 — author error?). Actually for equilateral, a/sen(A) = 2R. For a=7, A=60°: 7/sin(60°) = 7/(√3/2) = 14/√3 = 14√3/3. Author wrote "14√3" without /3. Author error. Skip.
 // `tan(x)+cot(x) = ... = 2·csc(2x)` literal answer
 const TAN_PLUS_COT_RE = /^tan\(x\)\s*\+\s*cot\(x\)\s*=[\s\S]+=\s*2\s*[·*]\s*csc\(\s*2\s*\*?\s*x\s*\)\s*$/i;
+// Questions ending with '? (1=sim)' (no '0=não' option) → mathematical truth asserted by question = 1
+const SIM_ONLY_RE = /\?\s*\(\s*1\s*=\s*sim\s*\)\s*$/i;
+// 'P(...|...) ≈ A/(A+B) ≈ ? (arredonde para K casas)' → A/(A+B)
+const RATIO_APPROX_RE = /P\([^)]*\)\s*≈\s*(\d+(?:\.\d+)?)\s*\/\s*\(\s*(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*\)\s*≈\s*\?/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -6566,6 +6570,21 @@ function verify(question, answer, type) {
       return { ok: true, computed: opt, kind: 'identity_symbolic' };
     }
     // Otherwise leave unverified (author may use 'sim'/'não' against a paren label).
+  }
+  // 'X? (1=sim)' (only 1=sim, no 0=não) → 1 (statement is asserted true)
+  if (SIM_ONLY_RE.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null && an === 1) return { ok: true, computed: '1', kind: 'identity_vf' };
+  }
+  // 'P(...|...) ≈ A/(A+B) ≈ ?' → A/(A+B) rounded
+  const rxa = question.match(RATIO_APPROX_RE);
+  if (rxa) {
+    const A = Number(rxa[1]), B = Number(rxa[2]), C = Number(rxa[3]);
+    if (B + C !== 0) {
+      const expected = A / (B + C);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 0.05, computed: `${expected}`, kind: 'cond_prob' };
+    }
   }
   // Inverse trig (degree results) — parse value via normalized expression. Use raw question
   // because 'arccos/arcsen/arctan' normalize to 'acos/asin/atan'.
