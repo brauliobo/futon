@@ -186,6 +186,22 @@ const CASES = [
   { q: 'ln(1+x): R = ?', a: '1', type: 'calculus', want: true },
   { q: 'Para p-série convergir, p > ?', a: '1', type: 'calculus', want: true },
   { q: 'Soma dos n primeiros ímpares = n². Para n=20: ?', a: '400', type: 'sequence', want: true },
+  // Right triangle / law-of-cosines/sines / 30-60-90 / 45-45-90 / rotations
+  { q: 'Em triângulo retângulo CO=4, CA=3, H = ?', a: '5', type: 'geometry', want: true },
+  { q: 'Triângulo retângulo: H=10, θ=30° — cateto oposto = ?', a: '5', type: 'geometry', want: true },
+  { q: 'Triângulo retângulo: CO=5, H=10 — ângulo θ = ?°', a: '30', type: 'geometry', want: true },
+  { q: 'a=3, b=4, C=90° — c = ?', a: '5', type: 'geometry', want: true },
+  { q: 'a=3, b=4, c=5 — cosC = ?', a: '0', type: 'geometry', want: true },
+  { q: 'a=1, b=1, c=√2 — C = ?°', a: '90', type: 'geometry', want: true },
+  { q: 'a=b=c=5 — C = ?°', a: '60', type: 'geometry', want: true },
+  { q: 'Triângulo 30-60-90 com x=5 — hipotenusa = ?', a: '10', type: 'geometry', want: true },
+  { q: 'Triângulo 30-60-90 com H=20: cateto maior = ?√3', a: '10', type: 'geometry', want: true },
+  { q: 'Triângulo 45-45-90 com cateto=8: hipotenusa = ?√2', a: '8', type: 'geometry', want: true },
+  { q: 'Rotação 90° anti-horário de (4,2): x\' = ?', a: '-2', type: 'geometry', want: true },
+  { q: 'Rotação 180° de (3,-5): y\' = ?', a: '5', type: 'geometry', want: true },
+  { q: 'Retas perpendiculares têm produto dos coef. angulares = ?', a: '-1', type: 'geometry', want: true },
+  { q: 'Triângulo com A=45°, B=60°, C=? °', a: '75', type: 'geometry', want: true },
+  { q: 'a=10, A=30°, B=90° — b = ?', a: '20', type: 'geometry', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

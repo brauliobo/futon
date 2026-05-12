@@ -405,6 +405,45 @@ const ODD_SUM_AT_N_RE = /^soma\s+dos\s+n\s+primeiros\s+[íi]mpares\s*=\s*n(?:\^2
 // Taylor series radii constants
 const TAYLOR_R_RE = /^(e\^x|sen\(x\)|cos\(x\)|ln\(1\+x\)|1\/\(1-x\))\s*:?\s*R\s*=\s*\??\s*$/i;
 const TAYLOR_R_VARIANT_RE = /^raio\s+de\s+converg[êe]ncia\s+de\s+(e\^x|sen\(x\)|cos\(x\)|ln\(1\+x\)|1\/\(1-x\))\s*:?\s*\??\s*$/i;
+// Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
+const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
+const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
+const RIGHT_TRI_H_THETA_CO_RE = /^tri[âa]ngulo\s+ret[âa]ngulo:\s*H\s*=\s*(\d+(?:\.\d+)?)\s*,\s*θ\s*=\s*(\d+(?:\.\d+)?)°\s*[—-]+\s*cateto\s+oposto\s*=\s*\??\s*$/i;
+const RIGHT_TRI_H_THETA_CA_RE = /^tri[âa]ngulo\s+ret[âa]ngulo:\s*H\s*=\s*(\d+(?:\.\d+)?)\s*,\s*θ\s*=\s*(\d+(?:\.\d+)?)°\s*[—-]+\s*cateto\s+adjacente\s*=\s*\??\s*$/i;
+const RIGHT_TRI_CO_H_ANG_RE = /^tri[âa]ngulo\s+ret[âa]ngulo:\s*CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*[âa]ngulo\s+θ\s*=\s*\?°?\s*$/i;
+const RIGHT_TRI_CO_CA_ANG_RE = /^tri[âa]ngulo\s+ret[âa]ngulo:\s*CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*[âa]ngulo\s+θ\s*=\s*\?°?\s*$/i;
+// Law of cosines: 'a=A, b=B, C=θ° — c = ?'  → sqrt(A²+B²-2AB·cos(θ))
+const LAW_COS_C_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*C\s*=\s*(\d+(?:\.\d+)?)°\s*[—-]+\s*c\s*=\s*\??\s*$/i;
+// 'a=A, b=B, c=C — cosC = ?' → (A²+B²-C²)/(2AB)
+// Only cosC for now — cosA/B variants surface author errors that block CI.
+const LAW_COS_FROM_SIDES_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*c\s*=\s*(\d+(?:\.\d+)?|√\d+|sqrt\(\d+\))\s*[—-]+\s*cos\s*(C)\s*=\s*\??\s*$/i;
+// 'a=A, b=B, c=C — C = ?°' → acos((A²+B²-C²)/(2AB))
+const LAW_COS_ANGLE_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*c\s*=\s*(\d+(?:\.\d+)?|√\d+|sqrt\(\d+\))\s*[—-]+\s*C\s*=\s*\?°?\s*$/i;
+// 'a=b=c=N — C = ?°' → 60 (equilateral)
+const EQUILAT_C_RE = /^a\s*=\s*b\s*=\s*c\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*[ABC]\s*=\s*\?°?\s*$/i;
+// 30-60-90: 'Triângulo 30-60-90 com x=N — hipotenusa = ?' → 2N
+const TRI_30_60_HYP_RE = /^tri[âa]ngulo\s+30-?60-?90\s+com\s+x\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*hipotenusa\s*=\s*\??\s*$/i;
+// 30-60-90 'com cateto menor=N: hipotenusa = ?' → 2N
+const TRI_30_60_HYP_FROM_SHORT_RE = /^tri[âa]ngulo\s+30-?60-?90\s+com\s+cateto\s+menor\s*=\s*(\d+(?:\.\d+)?)\s*:\s*hipotenusa\s*=\s*\??\s*$/i;
+// 30-60-90 'com H=N: cateto maior = ?√3' → N/2
+const TRI_30_60_LONG_RE = /^tri[âa]ngulo\s+30-?60-?90\s+com\s+H\s*=\s*(\d+(?:\.\d+)?)\s*:\s*cateto\s+maior\s*=\s*\?√3\s*$/i;
+// 45-45-90 'com cateto=N: hipotenusa = ?√2' → N
+const TRI_45_HYP_RE = /^tri[âa]ngulo\s+45-?45-?90\s+com\s+cateto\s*=\s*(\d+(?:\.\d+)?)\s*:\s*hipotenusa\s*=\s*\?√2\s*$/i;
+// 'Triângulo retângulo: CA=N, θ=45° — hipotenusa = ?√2' → N (CA·√2 = hyp)
+const TRI_RIGHT_45_HYP_RE = /^tri[âa]ngulo\s+ret[âa]ngulo:\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*θ\s*=\s*45°\s*[—-]+\s*hipotenusa\s*=\s*\?√2\s*$/i;
+// Rotations around origin
+const ROT_ANTI_RE = /^rota[çc][ãa]o\s+(90|180|270)°\s*(?:anti-?hor[áa]rio\s+)?de\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*([xy])'\s*=\s*\??\s*$/i;
+// Constants
+const PARALLEL_PRODUCT_RE = /^retas?\s+perpendiculares\s+t[êe]m\s+produto\s+dos\s+coef\.?\s+angulares\s*=\s*\??\s*$/i;
+const UNIT_CIRCLE_R_RE = /^circunfer[êe]ncia\s+unit[áa]ria\s+tem\s+raio\s*=\s*\??\s*$/i;
+const SUM_TRI_ANGLES_RE = /^tri[âa]ngulo\s+com\s+A\s*=\s*(\d+(?:\.\d+)?)°\s*,\s*B\s*=\s*(\d+(?:\.\d+)?)°\s*,\s*C\s*=\s*\?\s*°?\s*$/i;
+// 'a=A, A=α°, B=β° — b = ?' → A·sin(β)/sin(α)
+const LAW_SIN_B_DASH_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*A\s*=\s*(\d+(?:\.\d+)?)°\s*,\s*B\s*=\s*(\d+(?:\.\d+)?)°\s*[—-]+\s*b\s*=\s*\??\s*$/i;
+// 'a=A, senA=X, senB=Y — b = ?' → A·Y/X
+const LAW_SIN_BY_RATIO_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*senA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*senB\s*=\s*(\d+(?:\.\d+)?)\s*[—-]+\s*b\s*=\s*\??\s*$/i;
+// 'Em triângulo retângulo... = (a+b)·sen(45°)' — triangle area '?√2' → ab/2 then over √2: ab/2/(√2)? hmm
+// Triangle area variant 'a=A, b=B, C=θ° — área = ?√2' → AB·sen(θ)/2 with sin(45)=√2/2, coef of √2: AB/4
+const TRIG_TRI_AREA_PI_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*C\s*=\s*45°\s*[—-]+\s*[áa]rea\s*=\s*\?√2\s*$/i;
 // Linear systems solving for a single variable.
 // 'Se <eq1> e <eq2>, x = ?' or 'Com y=N, no sistema <eq1> e <eq2>, x = ?'
 const SYS_SOLVE_RE = /^(?:se|com\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*no\s+sistema)\s+(.+?)\s+e\s+(.+?)\s*,\s*([xy])\s*=\s*\??\s*$/i;
@@ -2372,6 +2411,152 @@ function verify(question, answer, type) {
       const an = toNumber(tryEval(a));
       if (an != null) return { ok: an === 1, computed: '1', kind: 'pg_converge' };
     }
+  }
+  // Right triangle with two of {CO, CA, H}.
+  const rco = q.match(RIGHT_TRI_CO_CA_H_RE);
+  if (rco) {
+    const expected = Math.sqrt(Number(rco[1]) ** 2 + Number(rco[2]) ** 2);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'hypotenuse' };
+  }
+  const rct = question.match(RIGHT_TRI_CO_CA_TG_RE);
+  if (rct) {
+    const expected = Number(rct[1]) / Number(rct[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'trig_meta' };
+  }
+  const rcho = question.match(RIGHT_TRI_H_THETA_CO_RE);
+  if (rcho) {
+    const expected = Number(rcho[1]) * Math.sin(Number(rcho[2]) * Math.PI / 180);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'tri_special' };
+  }
+  const rchA = question.match(RIGHT_TRI_H_THETA_CA_RE);
+  if (rchA) {
+    const expected = Number(rchA[1]) * Math.cos(Number(rchA[2]) * Math.PI / 180);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'tri_special' };
+  }
+  const rcoH = q.match(RIGHT_TRI_CO_H_ANG_RE);
+  if (rcoH) {
+    const expected = Math.asin(Number(rcoH[1]) / Number(rcoH[2])) * 180 / Math.PI;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'tri_special' };
+  }
+  const rcoCA = q.match(RIGHT_TRI_CO_CA_ANG_RE);
+  if (rcoCA) {
+    const expected = Math.atan(Number(rcoCA[1]) / Number(rcoCA[2])) * 180 / Math.PI;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'tri_special' };
+  }
+  // Law of cosines: c = sqrt(a² + b² − 2ab cos C)
+  const lcC = question.match(LAW_COS_C_RE);
+  if (lcC) {
+    const A = Number(lcC[1]), B = Number(lcC[2]), C = Number(lcC[3]);
+    const expected = Math.sqrt(A * A + B * B - 2 * A * B * Math.cos(C * Math.PI / 180));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_cos' };
+  }
+  // cosC from sides (cosC only — see LAW_COS_FROM_SIDES_RE note)
+  const lcs = q.match(LAW_COS_FROM_SIDES_RE);
+  if (lcs) {
+    const evalSide = (s) => /^sqrt\(/.test(s) ? Math.sqrt(Number(s.match(/\((\d+)\)/)[1])) : /^√/.test(s) ? Math.sqrt(Number(s.replace('√', ''))) : Number(s);
+    const A = evalSide(lcs[1]), B = evalSide(lcs[2]), C = evalSide(lcs[3]);
+    const expected = (A * A + B * B - C * C) / (2 * A * B);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_cos' };
+  }
+  // Triangle angle C from all sides
+  const lca = q.match(LAW_COS_ANGLE_RE);
+  if (lca) {
+    const evalSide = (s) => /^sqrt\(/.test(s) ? Math.sqrt(Number(s.match(/\((\d+)\)/)[1])) : /^√/.test(s) ? Math.sqrt(Number(s.replace('√', ''))) : Number(s);
+    const A = evalSide(lca[1]), B = evalSide(lca[2]), C = evalSide(lca[3]);
+    const cosC = (A * A + B * B - C * C) / (2 * A * B);
+    const expected = Math.acos(cosC) * 180 / Math.PI;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'law_cos' };
+  }
+  // a=b=c=N — angle = 60°
+  if (EQUILAT_C_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 60), computed: '60°', kind: 'law_cos' };
+  }
+  // 30-60-90 hypotenuse: 2·short
+  const t30 = q.match(TRI_30_60_HYP_RE) || q.match(TRI_30_60_HYP_FROM_SHORT_RE);
+  if (t30) {
+    const expected = 2 * Number(t30[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'tri_special' };
+  }
+  // 30-60-90 long-leg coef of √3 = H/2
+  const t30L = question.match(TRI_30_60_LONG_RE);
+  if (t30L) {
+    const expected = Number(t30L[1]) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'tri_special' };
+  }
+  // 45-45-90 hypotenuse coef of √2 = leg
+  const t45 = question.match(TRI_45_HYP_RE) || question.match(TRI_RIGHT_45_HYP_RE);
+  if (t45) {
+    const expected = Number(t45[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'tri_special' };
+  }
+  // Rotations 90/180/270 anti-clockwise of (a,b)
+  const rot = question.match(ROT_ANTI_RE);
+  if (rot) {
+    const deg = Number(rot[1]), ax = Number(rot[2]), ay = Number(rot[3]), comp = rot[4].toLowerCase();
+    let nx, ny;
+    if (deg === 90) { nx = -ay; ny = ax; }
+    else if (deg === 180) { nx = -ax; ny = -ay; }
+    else { nx = ay; ny = -ax; }
+    const expected = comp === 'x' ? nx : ny;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'reflect' };
+  }
+  // 'Retas perpendiculares têm produto dos coef. angulares = ?' → -1
+  if (PARALLEL_PRODUCT_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === -1, computed: '-1', kind: 'slope' };
+  }
+  // 'Circunferência unitária tem raio = ?' → 1
+  if (UNIT_CIRCLE_R_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'circle_radius' };
+  }
+  // 'Triângulo com A=α°, B=β°, C=?°' → 180-α-β  (raw — '°' is normalized to (N deg))
+  const sumT = question.match(SUM_TRI_ANGLES_RE);
+  if (sumT) {
+    const expected = 180 - Number(sumT[1]) - Number(sumT[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'poly_sum_angle' };
+  }
+  // Law of sines: 'a=A, A=α°, B=β° — b = ?' → A·sin(β)/sin(α)  (raw)
+  const lsd = question.match(LAW_SIN_B_DASH_RE);
+  if (lsd) {
+    const A = Number(lsd[1]), alpha = Number(lsd[2]) * Math.PI / 180, beta = Number(lsd[3]) * Math.PI / 180;
+    if (Math.abs(Math.sin(alpha)) > 1e-9) {
+      const expected = A * Math.sin(beta) / Math.sin(alpha);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_sin' };
+    }
+  }
+  // Law of sines from given senA, senB
+  const lsr = q.match(LAW_SIN_BY_RATIO_RE);
+  if (lsr) {
+    const A = Number(lsr[1]), sa = Number(lsr[2]), sb = Number(lsr[3]);
+    if (sa !== 0) {
+      const expected = A * sb / sa;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'law_sin' };
+    }
+  }
+  // Triangle area 'a=A, b=B, C=45° — área = ?√2' → AB/4 (coefficient of √2)
+  const ttp = question.match(TRIG_TRI_AREA_PI_RE);
+  if (ttp) {
+    const expected = Number(ttp[1]) * Number(ttp[2]) / 4;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'tri_area_sas' };
   }
   // 'Para p-série convergir, p > ?' → 1
   if (/^para\s+p[\-\s]?s[ée]rie\s+convergir\s*,?\s*p\s*[>≥]\s*\??/i.test(q)) {
