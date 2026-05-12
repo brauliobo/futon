@@ -272,6 +272,20 @@ const CASES = [
   { q: 'B (agudo) quando sen(B)=0.5 = ?', a: '30°', type: 'trigonometry', want: true },
   { q: '2cos²(x) + cos(x) - 1 = 0 → cos(x) = 1/2 ou cos(x) = ?', a: '-1', type: 'trigonometry', want: true },
   { q: '2sen²(x) - 1 = 0 → sen²(x) = ?', a: '1/2', type: 'trigonometry', want: true },
+  // Expected value from distributions + games + variance scaling + CV
+  { q: 'X={0,1,2}, P={0.1,0.6,0.3} → E[X] = ?', a: '1.2', type: 'mental_math', want: true },
+  { q: 'X={2,4,6,8}, uniforme → E[X] = ?', a: '5', type: 'mental_math', want: true },
+  { q: 'Jogo — ganho $3 com P=1/2, perde $1 com P=1/2 → E = ?', a: '1', type: 'mental_math', want: true },
+  { q: 'Loteria — prêmio $1000 com P=0.001, custa $1 → E[lucro] = ?', a: '0', type: 'mental_math', want: true },
+  { q: 'Var(X)=4 → Var(2X) = ?', a: '16', type: 'mental_math', want: true },
+  { q: 'Var(X)=4 → σ(2X) = ?', a: '4', type: 'mental_math', want: true },
+  { q: 'X e Y independentes, Var(X)=3, Var(Y)=5 → Var(X+Y) = ?', a: '8', type: 'mental_math', want: true },
+  { q: 's=1, x̄=4 → CV (%) = ?', a: '25', type: 'mental_math', want: true },
+  { q: '{1,1,1} — σ² = ?', a: '0', type: 'mental_math', want: true },
+  { q: 'P(A)=0.2, P(B)=0.5, eventos independentes → P(A∩B) = ?', a: '0.1', type: 'mental_math', want: true },
+  { q: 'P(A)=0.3, P(B)=0.5, P(A∩B)=0.1 → P(A∪B) = ?', a: '0.7', type: 'mental_math', want: true },
+  { q: 'E[X]=5 → E[-X] = ?', a: '-5', type: 'mental_math', want: true },
+  { q: 'P(par ou maior que 4) em dado = ?', a: '4/6', type: 'mental_math', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

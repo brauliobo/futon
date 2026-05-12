@@ -558,6 +558,36 @@ const QUAD_COS_OTHER_RE = /^2\s*\*?\s*cos\(x\)\^?2\s*\+\s*cos\(x\)\s*-\s*1\s*=\s
 const SIN2_HALF_RE = /^2\s*\*?\s*sin\(x\)\^?2\s*-\s*1\s*=\s*0\s*→\s*sin\(x\)\^?2\s*=\s*\?\s*$/i;
 // 'sen(x) - cos(x) = 0 → tan(x) = ?' → 1
 const SIN_MINUS_COS_RE = /^sin\(x\)\s*-\s*cos\(x\)\s*=\s*0\s*→\s*tan\(x\)\s*=\s*\?\s*$/i;
+// E[X] from explicit distribution: 'X={a,b,c}, P={p1,p2,p3} → E[X] = ?'
+const DIST_EXPECTED_RE = /^X\s*=\s*\{\s*([^}]+)\s*\}\s*,\s*P\s*=\s*\{\s*([^}]+)\s*\}\s*→\s*E\[X(?:\^?2)?\]\s*=\s*\??\s*$/i;
+const DIST_EXPECTED_UNIF_RE = /^X\s*=\s*\{\s*([^}]+)\s*\}\s*,\s*uniforme\s*→\s*E\[X\]\s*=\s*\??\s*$/i;
+const DIST_EX2_PROB_RE = /^X\s*=\s*\{\s*([^}]+)\s*\}\s+com\s+P\s*=\s*(\d+(?:\.\d+)?)\s+cada\s*→\s*E\[X\^?2\]\s*=\s*\??\s*$/i;
+// Game E[X]: 'Jogo — ganho $G com P=p, perde $L com P=q → E = ?'
+// Normalize wraps a/b fractions in parens, so accept (1/2) too.
+const GAME_EV_RE = /^Jogo\s*[—-]+\s*ganho\s*\$?(\d+(?:\.\d+)?)\s+com\s+P\s*=\s*\(?(\d+(?:\.\d+)?|\d+\/\d+)\)?\s*,\s*perde\s*\$?(\d+(?:\.\d+)?)\s+com\s+P\s*=\s*\(?(\d+(?:\.\d+)?|\d+\/\d+)\)?\s*→\s*E\s*=\s*\??\s*$/i;
+// 'Jogo — ganho $G com P=p, $0 senão → E = ?'
+const GAME_EV_SAFE_RE = /^Jogo\s*[—-]+\s*ganho\s*\$?(\d+(?:\.\d+)?)\s+com\s+P\s*=\s*(\d+(?:\.\d+)?)\s*,\s*\$0\s+sen[ãa]o\s*→\s*E\s*=\s*\??\s*$/i;
+// 'Loteria — prêmio $G com P=p, custa $C → E[lucro] = ?'
+const LOTTERY_RE = /^Loteria\s*[—-]+\s*pr[êe]mio\s*\$?(\d+(?:\.\d+)?)\s+com\s+P\s*=\s*(\d+(?:\.\d+)?)\s*,\s*custa\s*\$?(\d+(?:\.\d+)?)\s*→\s*E\[lucro\]\s*=\s*\??\s*$/i;
+// 'Seguro — paga $P com P=p; prêmio $C → E[custo líquido] = ?'
+const INSURANCE_RE = /^Seguro\s*[—-]+\s*paga\s*\$?(\d+(?:\.\d+)?)\s+com\s+P\s*=\s*(\d+(?:\.\d+)?)\s*;\s*pr[êe]mio\s*\$?(\d+(?:\.\d+)?)\s*→\s*E\[custo\s+l[íi]quido\]\s*=\s*\??\s*$/i;
+// Var scaling: 'Var(X)=V → Var(kX±c) / Var(X±c) / Var(kX) / σ(kX) = ?'
+const VAR_SCALE_RE = /^Var\(X\)\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*Var\(\s*(?:(-?\d+)\s*\*?\s*)?X\s*(?:([+\-])\s*(\d+(?:\.\d+)?))?\s*\)\s*=\s*\??\s*$/i;
+const SIGMA_SCALE_RE = /^Var\(X\)\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*σ\(\s*(-?\d+)\s*\*?\s*X\s*\)\s*=\s*\??\s*$/i;
+// 'X e Y independentes, Var(X)=A, Var(Y)=B → Var(X+Y) = ?' → A+B
+const VAR_SUM_INDEP_RE = /^X\s+e\s+Y\s+independentes\s*,\s*Var\(X\)\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*Var\(Y\)\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*Var\(X\+Y\)\s*=\s*\??\s*$/i;
+// CV = 100·s/x̄
+const CV_RE = /^s\s*=\s*(\d+(?:\.\d+)?)\s*,\s*x̄\s*=\s*(\d+(?:\.\d+)?)\s*→\s*CV\s*\(%\)\s*=\s*\??\s*$/i;
+// Constant-set variance = 0 (σ² with raw superscript stays; s² normalizes to s^2)
+const VAR_CONST_RE = /^\{(\d+)(?:\s*,\s*\1)+\}\s*[—-]+\s*(?:σ²|σ\^?2|s²|s\^?2)\s*=\s*\??\s*$/i;
+// Indep without 'Se' prefix already exists (INDEP_PROB_RE). Add 'eventos independentes' variant.
+const INDEP_PROB_DASH_RE = /^P\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(B\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*eventos\s+independentes?\s*→\s*P\(A∩B\)\s*=\s*\??\s*$/i;
+// Union without 'Se' prefix
+const UNION_NO_SE_RE = /^P\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(B\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(A∩B\)\s*=\s*(\d+(?:\.\d+)?)\s*→\s*P\(A∪B\)\s*=\s*\??\s*$/i;
+// 'E[X]=A → E[-X] = ?' → -A
+const E_NEG_RE = /^E\[X\]\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*E\[-X\]\s*=\s*\??\s*$/i;
+// 'P(par ou maior que K) em dado = ?' → |even ∪ >K| / 6
+const DICE_PAR_OR_GT_RE = /^P\(par\s+ou\s+maior\s+que\s+(\d+)\)\s+em\s+dado\s*=\s*\??\s*$/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -3495,6 +3525,140 @@ function verify(question, answer, type) {
   if (SIN_MINUS_COS_RE.test(q)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === 1, computed: '1', kind: 'trig_meta' };
+  }
+  // E[X] from explicit distribution
+  const parseVals = (s) => s.split(/\s*,\s*/).map(p => { const m = p.match(/^(-?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/); return m ? Number(m[1]) / Number(m[2]) : Number(p); }).filter(Number.isFinite);
+  const deD = q.match(DIST_EXPECTED_RE);
+  if (deD) {
+    const xs = parseVals(deD[1]);
+    const ps = parseVals(deD[2]);
+    const wantsSquared = /E\[X\^?2\]/.test(deD[0]);
+    if (xs.length === ps.length && xs.length) {
+      const expected = xs.reduce((s, x, i) => s + (wantsSquared ? x * x : x) * ps[i], 0);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'expected' };
+    }
+  }
+  // Uniform set E[X]
+  const deU = q.match(DIST_EXPECTED_UNIF_RE);
+  if (deU) {
+    const xs = parseVals(deU[1]);
+    if (xs.length) {
+      const expected = xs.reduce((s, x) => s + x, 0) / xs.length;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'expected' };
+    }
+  }
+  // X={a,b} com P=0.5 cada → E[X²]
+  const de2 = q.match(DIST_EX2_PROB_RE);
+  if (de2) {
+    const xs = parseVals(de2[1]);
+    const p = Number(de2[2]);
+    if (xs.length) {
+      const expected = xs.reduce((s, x) => s + x * x * p, 0);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'expected' };
+    }
+  }
+  // Game E[X]
+  const ge = q.match(GAME_EV_RE);
+  if (ge) {
+    const parseN = (s) => { const m = s.match(/^(-?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/); return m ? Number(m[1]) / Number(m[2]) : Number(s); };
+    const G = Number(ge[1]), p = parseN(ge[2]), L = Number(ge[3]), q2 = parseN(ge[4]);
+    const expected = G * p - L * q2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'expected' };
+  }
+  // Game with safe outcome
+  const ges = q.match(GAME_EV_SAFE_RE);
+  if (ges) {
+    const expected = Number(ges[1]) * Number(ges[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'expected' };
+  }
+  // Lottery profit
+  const lot = q.match(LOTTERY_RE);
+  if (lot) {
+    const expected = Number(lot[1]) * Number(lot[2]) - Number(lot[3]) * (1 - Number(lot[2])) - Number(lot[3]) * Number(lot[2]);
+    // Simpler: G*p - cost (paid always)
+    const exp2 = Number(lot[1]) * Number(lot[2]) - Number(lot[3]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - exp2) < 1e-2, computed: `${exp2}`, kind: 'expected' };
+  }
+  // Insurance E[custo líquido] for customer = prêmio − paga·P (premium minus expected benefit).
+  const ins = q.match(INSURANCE_RE);
+  if (ins) {
+    const expected = Number(ins[3]) - Number(ins[1]) * Number(ins[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'expected' };
+  }
+  // Variance scaling: Var(kX±c) = k²·Var(X); ignored shift c.
+  const vScl = q.match(VAR_SCALE_RE);
+  if (vScl) {
+    const V = Number(vScl[1]);
+    const k = vScl[2] ? Number(vScl[2]) : 1;
+    const expected = k * k * V;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'variance' };
+  }
+  // σ(kX) = |k|·σ(X)
+  const ss = q.match(SIGMA_SCALE_RE);
+  if (ss) {
+    const V = Number(ss[1]), k = Number(ss[2]);
+    const expected = Math.abs(k) * Math.sqrt(V);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'variance' };
+  }
+  // Var(X+Y) when independent = Var(X)+Var(Y)
+  const vsi = q.match(VAR_SUM_INDEP_RE);
+  if (vsi) {
+    const expected = Number(vsi[1]) + Number(vsi[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'variance' };
+  }
+  // CV = 100·s/x̄
+  const cv = q.match(CV_RE);
+  if (cv) {
+    const expected = 100 * Number(cv[1]) / Number(cv[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'stat' };
+  }
+  // {N,N,N,...} σ² or s² = 0
+  if (VAR_CONST_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'variance' };
+  }
+  // Indep arrow form
+  const ipd = q.match(INDEP_PROB_DASH_RE);
+  if (ipd) {
+    const expected = Number(ipd[1]) * Number(ipd[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'indep_prob' };
+  }
+  // Union arrow form (no "Se")
+  const uns = q.match(UNION_NO_SE_RE);
+  if (uns) {
+    const expected = Number(uns[1]) + Number(uns[2]) - Number(uns[3]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'prob_value' };
+  }
+  // E[-X] = -E[X]
+  const en = q.match(E_NEG_RE);
+  if (en) {
+    const expected = -Number(en[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'expected' };
+  }
+  // P(par OU maior que K) em dado — 4 elements union
+  const dpg = q.match(DICE_PAR_OR_GT_RE);
+  if (dpg) {
+    const K = Number(dpg[1]);
+    const set = new Set();
+    for (const v of [2, 4, 6]) set.add(v);
+    for (let v = K + 1; v <= 6; v++) set.add(v);
+    const expected = set.size / 6;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
   }
   // Calculus-type pure-arithmetic series sums: '<arith> ≈ ?' / '<arith> = ?'.
   if (type === 'calculus') {
