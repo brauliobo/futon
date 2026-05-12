@@ -223,6 +223,22 @@ const CASES = [
   { q: 'Somando x+y=5 e x-y=3 → 2x = ?', a: '8', type: 'algebra', want: true },
   { q: 'De 2x=8, então x = ?', a: '4', type: 'algebra', want: true },
   { q: 'No sistema x+y=7 e x-y=1, y = ?', a: '3', type: 'algebra', want: true },
+  // E[X] linearity + Var + Bernoulli + uniform + sum-to-1
+  { q: 'E[X]=2 → E[3X-1] = ?', a: '5', type: 'mental_math', want: true },
+  { q: 'E[X]=3, E[Y]=4 → E[X+Y] = ?', a: '7', type: 'mental_math', want: true },
+  { q: 'E[X]=2, E[X²]=8 → Var(X) = ?', a: '4', type: 'mental_math', want: true },
+  { q: 'E[X]=4, Var(X)=2 → E[X²] = ?', a: '18', type: 'mental_math', want: true },
+  { q: 'Bernoulli(0.6) → E[X²] = ?', a: '0.6', type: 'mental_math', want: true },
+  { q: 'P(X=0)=0.4, P(X=1)=0.4, P(X=2)=? para Σ=1 = ?', a: '0.2', type: 'mental_math', want: true },
+  { q: 'P(X=1)=0.5, P(X=2)=0.3, P(X=3)=0.2 → P(X≥2) = ?', a: '0.5', type: 'mental_math', want: true },
+  { q: 'X com P(X=1)=0.2, P(X=2)=0.5, P(X=3)=0.3 → F(2) = ?', a: '0.7', type: 'mental_math', want: true },
+  { q: 'Uniforme {1..4} — E[X] = ?', a: '2.5', type: 'mental_math', want: true },
+  { q: 'Uniforme {1..6} — P(X>4) = ?', a: '0.333', type: 'mental_math', want: true },
+  { q: 'X~Uniforme{2,4,6,8} — P(X=6) = ?', a: '0.25', type: 'mental_math', want: true },
+  { q: 'Soma de todos os coeficientes de (a+b)^6 = ?', a: '64', type: 'mental_math', want: true },
+  { q: 'Número de termos na expansão de (a+b)^6 = ?', a: '7', type: 'mental_math', want: true },
+  { q: 'Termo k=2 de (x+1)^5 — coeficiente = ?', a: '10', type: 'mental_math', want: true },
+  { q: 'Linha 4 — coeficiente do meio = ?', a: '6', type: 'mental_math', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

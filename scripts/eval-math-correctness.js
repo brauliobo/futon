@@ -442,6 +442,44 @@ const T_K_BINOM_RE = /^Em\s+\(\s*[a-z]\s*\+\s*[a-z]\s*\)\s*\^\s*(\d+)\s*,\s*T(\d
 const X_COEFF_K_RE = /^Em\s+\(\s*x\s*\+\s*1\s*\)\s*\^\s*(\d+)\s*,\s*coeficiente\s+de\s+x\^?(\d+)\s*=\s*C\(\s*\1\s*,\s*\?\s*\)\s*=/i;
 // 'r=√3+i' polar r — single √3 form
 const POLAR_R_SQRT_RE = /^polar\s+de\s+z\s*=\s*√3\s*\+\s*i\s*:?\s*r\s*=\s*\??\s*$/i;
+// E[X] linearity
+const E_LINEAR_RE = /^E\[X\]\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*E\[\s*(?:(-?\d+)\s*\*?\s*)?X\s*(?:([+\-])\s*(\d+(?:\.\d+)?))?\s*\]\s*=\s*\??\s*$/i;
+const E_X_PLUS_Y_RE = /^E\[X\]\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*E\[Y\]\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*E\[X\+Y\]\s*=\s*\??\s*$/i;
+// Var(X) from E[X] and E[X²] — '²' lowers to '^2' after normalize
+const VAR_FROM_EX2_RE = /^E\[X\]\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*E\[X(?:[²2]|\^2)\]\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*Var\(X\)(?:\s*=\s*E\[X(?:[²2]|\^2)\]\s*-\s*\(E\[X\]\)(?:[²2]|\^2))?\s*=\s*\??\s*$/i;
+// E[X²] from E[X] and Var
+const EX2_FROM_VAR_RE = /^E\[X\]\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*Var\(X\)\s*=\s*(-?\d+(?:\.\d+)?)\s*→\s*E\[X(?:[²2]|\^2)\]\s*=\s*\??\s*$/i;
+// Bernoulli E[X] = p
+const BERNOULLI_E_RE = /^Bernoulli\((\d*(?:\.\d+)?|p)\)\s*(?:→|—)\s*E\[X(?:[²2]|\^2)?\]\s*=\s*\??\s*$/i;
+// Σ=1 completion: 'P(X=a)=A, P(X=b)=B, P(X=c)=? para Σ=1'
+const PROB_SUM_1_RE = /P\(X\s*=\s*\S+\)\s*=\s*(\d+(?:\.\d+)?|\d+\/\d+)\s*,\s*P\(X\s*=\s*\S+\)\s*=\s*(\d+(?:\.\d+)?|\d+\/\d+)\s*,\s*P\(X\s*=\s*\S+\)\s*=\s*\?\s*(?:para\s+Σ\s*=\s*1)?\s*=?\s*\??\s*$/i;
+// 'P(X=a)=A, P(X=b)=B, P(X=c)=C → P(X≥k) = ?' / 'P(X≠k)' / 'F(k)'
+const PROB_EXT_RE = /^P\(X\s*=\s*(\d+)\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(X\s*=\s*(\d+)\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(X\s*=\s*(\d+)\)\s*=\s*(\d+(?:\.\d+)?)\s*→\s*(P\(X[≥≠><=]+\s*\d+\)|F\(\d+\))\s*=\s*\??\s*$/i;
+const PROB_F_RE = /^X\s+com\s+P\(X\s*=\s*(\d+)\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(X\s*=\s*(\d+)\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(X\s*=\s*(\d+)\)\s*=\s*(\d+(?:\.\d+)?)\s*→\s*F\((\d+)\)\s*=\s*\??\s*$/i;
+// Pascal sum / count
+const POLY_SUM_GENERIC_RE = /^soma\s+(?:de\s+todos\s+)?(?:os\s+)?coeficientes\s+de\s+\(\s*[a-z]\s*\+\s*[a-z]\s*\)\s*\^?\s*(\d+)\s*=\s*\??\s*$/i;
+const POLY_NUM_TERMS_RE = /^n[úu]mero\s+de\s+termos\s+na\s+expans[ãa]o\s+de\s+\(\s*[a-z]\s*\+\s*[a-z]\s*\)\s*\^?\s*(\d+)\s*=\s*\??\s*$/i;
+// 'Termo k=K de (x+1)^N — coeficiente = ?' → C(N,K)
+const POLY_TERM_K_RE = /^Termo\s+k\s*=\s*(\d+)\s+de\s+\(\s*(?:x\s*\+\s*1|1\s*\+\s*x)\s*\)\s*\^?\s*(\d+)\s*[—-]+\s*coeficiente\s*=\s*\??\s*$/i;
+// 'Linha N — segundo coeficiente = ?' → N
+const PASCAL_2ND_RE = /^linha\s+(\d+)(?:\s+do\s+tri[âa]ngulo)?(?:\s+de\s+pascal)?\s*[—-]+\s*segundo\s+coeficiente\s*=\s*\??\s*$/i;
+// 'Linha N — coeficiente do meio = ?' → C(N, N/2)
+const PASCAL_MID_RE = /^linha\s+(\d+)(?:\s+do\s+tri[âa]ngulo)?(?:\s+de\s+pascal)?\s*[—-]+\s*coeficiente\s+do\s+meio\s*=\s*\??\s*$/i;
+// Uniform {a..b} E[X]
+const UNIFORM_E_RE = /^Uniforme\s+\{(\d+)\.\.(\d+)\}\s*[—-]+\s*E\[X\]\s*=\s*\??\s*$/i;
+const UNIFORM_PGT_RE = /^Uniforme\s+\{(\d+)\.\.(\d+)\}\s*[—-]+\s*P\(X\s*([><=≥≤])\s*(\d+)\)\s*=\s*\??\s*$/i;
+const UNIFORM_SET_PEQ_RE = /^X~Uniforme\{([0-9,\s]+)\}\s*[—-]+\s*P\(X\s*=\s*(\d+)\)\s*=\s*\??\s*$/i;
+// 'Moeda justa — P(X=1) = ?' → 0.5
+const COIN_PX_RE = /^moeda\s+justa\s*[—-]+\s*P\(X\s*=\s*\d+\)\s*=\s*\??\s*$/i;
+// Constants
+const FREQ_REL_SUM_RE = /^a?\s*soma\s+das\s+frequ[êe]ncias\s+relativas\s+(?:[ée]\s+sempre\s+)?=\s*\??\s*$/i;
+const ACCUM_REL_TO_RE = /^ganhos\s+relativos\s+acumulados\s+v[ãa]o\s+de\s+0\s+a\s*\??\s*$/i;
+const DICE_PAR_OR_IMPAR_RE = /^P\(par\s+ou\s+[íi]mpar\)\s+em\s+dado\s*=\s*\??\s*$/i;
+const DECK_SPACE_RE = /^tirando\s+uma\s+carta\s+de\s+baralho\s*\(\s*\d+\s*\)\s*,\s*espa[çc]o\s+amostral\s*=\s*\??\s*$/i;
+// Dice/card specific probabilities
+const DICE_EVEN_RE = /^Dado\s*[—-]+\s*P\(face\s+par\)\s*=\s*\??\s*$/i;
+const DICE_GT_RE = /^Dado\s*[—-]+\s*P\(maior\s+que\s+(\d+)\)\s*=\s*\??\s*$/i;
+const DECK_RED_RE = /^Baralho\s*\(\s*52\s*\)\s*[—-]+\s*P\(carta\s+vermelha\)\s*=\s*\??\s*$/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -2806,6 +2844,201 @@ function verify(question, answer, type) {
   if (/^e\^\(i\s*pi\)\s*=\s*\??\s*$/i.test(q)) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === -1, computed: '-1', kind: 'complex_part' };
+  }
+  // E[X] linearity: 'E[X]=A → E[kX±c] = ?' → kA±c.
+  const eL = q.match(E_LINEAR_RE);
+  if (eL) {
+    const EX = Number(eL[1]);
+    const k = eL[2] ? Number(eL[2]) : 1;
+    const c = eL[4] ? (eL[3] === '-' ? -1 : 1) * Number(eL[4]) : 0;
+    const expected = k * EX + c;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'expected' };
+  }
+  // E[X+Y] = E[X] + E[Y]
+  const eXY = q.match(E_X_PLUS_Y_RE);
+  if (eXY) {
+    const expected = Number(eXY[1]) + Number(eXY[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'expected' };
+  }
+  // Var(X) = E[X²] − (E[X])²
+  const vfe = q.match(VAR_FROM_EX2_RE);
+  if (vfe) {
+    const EX = Number(vfe[1]), EX2 = Number(vfe[2]);
+    const expected = EX2 - EX * EX;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'variance' };
+  }
+  // E[X²] = Var + (E[X])²
+  const ex2v = q.match(EX2_FROM_VAR_RE);
+  if (ex2v) {
+    const EX = Number(ex2v[1]), V = Number(ex2v[2]);
+    const expected = V + EX * EX;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'variance' };
+  }
+  // Bernoulli(p) → E[X] = p, E[X²] = p
+  const bern = q.match(BERNOULLI_E_RE);
+  if (bern) {
+    const p = /^[\d.]+$/.test(bern[1]) ? Number(bern[1]) : null;
+    if (p != null) {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - p) < 1e-6, computed: `${p}`, kind: 'bernoulli' };
+    } else {
+      // 'Bernoulli(p) → E[X] = ?' literal-symbol 'p' answer
+      const ok = String(a).trim().toLowerCase() === 'p';
+      return { ok, computed: 'p', kind: 'bernoulli' };
+    }
+  }
+  // Σ=1 completion: '..., P(X=c)=? para Σ=1' → 1 − A − B  (parse fractions too)
+  const psum1 = q.match(PROB_SUM_1_RE);
+  if (psum1) {
+    const parseN = (s) => { const m = s.match(/^(\d+)\/(\d+)$/); return m ? Number(m[1]) / Number(m[2]) : Number(s); };
+    const expected = 1 - parseN(psum1[1]) - parseN(psum1[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+  }
+  // 'X com P(X=a)=A, P(X=b)=B, P(X=c)=C → F(k) = ?' — special F-only form
+  const probF = q.match(PROB_F_RE);
+  if (probF) {
+    const probs = {};
+    probs[Number(probF[1])] = Number(probF[2]);
+    probs[Number(probF[3])] = Number(probF[4]);
+    probs[Number(probF[5])] = Number(probF[6]);
+    const kVal = Number(probF[7]);
+    let expected = 0;
+    for (const v in probs) if (Number(v) <= kVal) expected += probs[v];
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+  }
+  // General-purpose form: '..., P(X=c)=C → P(X≥k|≠k|>k|<k|≤k) or F(k) = ?'
+  const probEX = q.match(PROB_EXT_RE);
+  if (probEX) {
+    const probs = {};
+    probs[Number(probEX[1])] = Number(probEX[2]);
+    probs[Number(probEX[3])] = Number(probEX[4]);
+    probs[Number(probEX[5])] = Number(probEX[6]);
+    const op = probEX[7];
+    const ke = op.match(/(\d+)/), kVal = Number(ke[1]);
+    let expected = 0;
+    if (op.startsWith('F')) {
+      for (const v in probs) if (Number(v) <= kVal) expected += probs[v];
+    } else if (op.startsWith('P(X≥')) {
+      for (const v in probs) if (Number(v) >= kVal) expected += probs[v];
+    } else if (op.startsWith('P(X≠')) {
+      expected = 1 - (probs[kVal] || 0);
+    } else if (op.startsWith('P(X>')) {
+      for (const v in probs) if (Number(v) > kVal) expected += probs[v];
+    } else if (op.startsWith('P(X<')) {
+      for (const v in probs) if (Number(v) < kVal) expected += probs[v];
+    } else if (op.startsWith('P(X≤')) {
+      for (const v in probs) if (Number(v) <= kVal) expected += probs[v];
+    }
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+  }
+  // Pascal sum: Soma dos coeficientes de (a+b)^N = 2^N
+  const psg = q.match(POLY_SUM_GENERIC_RE);
+  if (psg) {
+    const expected = 2 ** Number(psg[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
+  }
+  // # of terms in (a+b)^N = N+1
+  const pnt = q.match(POLY_NUM_TERMS_RE);
+  if (pnt) {
+    const expected = Number(pnt[1]) + 1;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
+  }
+  // Termo k=K de (x+1)^N — coeficiente = ? → C(N, K)
+  const ptk = q.match(POLY_TERM_K_RE);
+  if (ptk) {
+    const K = Number(ptk[1]), N = Number(ptk[2]);
+    if (K <= N) {
+      const f = (m) => { let r = 1; for (let i = 2; i <= m; i++) r *= i; return r; };
+      const expected = f(N) / (f(K) * f(N - K));
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'binomial_coef' };
+    }
+  }
+  // Linha N - segundo coeficiente = N
+  const ps2 = q.match(PASCAL_2ND_RE);
+  if (ps2) {
+    const expected = Number(ps2[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
+  }
+  // Linha N - coeficiente do meio = C(N, floor(N/2))
+  const psm = q.match(PASCAL_MID_RE);
+  if (psm) {
+    const N = Number(psm[1]), K = Math.floor(N / 2);
+    const f = (m) => { let r = 1; for (let i = 2; i <= m; i++) r *= i; return r; };
+    const expected = f(N) / (f(K) * f(N - K));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'combine' };
+  }
+  // Uniform {a..b} E[X] = (a+b)/2
+  const ueU = q.match(UNIFORM_E_RE);
+  if (ueU) {
+    const expected = (Number(ueU[1]) + Number(ueU[2])) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'die_uniform' };
+  }
+  // Uniform {a..b} P(X op v)
+  const upg = q.match(UNIFORM_PGT_RE);
+  if (upg) {
+    const a1 = Number(upg[1]), b1 = Number(upg[2]), op = upg[3], v = Number(upg[4]);
+    const total = b1 - a1 + 1;
+    let count = 0;
+    for (let i = a1; i <= b1; i++) {
+      if (op === '>' && i > v) count++;
+      else if (op === '<' && i < v) count++;
+      else if (op === '=' && i === v) count++;
+      else if (op === '≥' && i >= v) count++;
+      else if (op === '≤' && i <= v) count++;
+    }
+    const expected = count / total;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'die_uniform' };
+  }
+  // X ~ Uniforme{set} — P(X=v)
+  const uset = q.match(UNIFORM_SET_PEQ_RE);
+  if (uset) {
+    const set = uset[1].split(/\s*,\s*/).map(Number);
+    const v = Number(uset[2]);
+    const expected = set.includes(v) ? 1 / set.length : 0;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'die_uniform' };
+  }
+  // Constants
+  if (COIN_PX_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - 0.5) < 1e-9, computed: '0.5', kind: 'prob_value' };
+  }
+  if (FREQ_REL_SUM_RE.test(q) || ACCUM_REL_TO_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'rel_freq' };
+  }
+  if (DICE_PAR_OR_IMPAR_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'prob_value' };
+  }
+  if (DECK_SPACE_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 52, computed: '52', kind: 'prob_value' };
+  }
+  if (DICE_EVEN_RE.test(q) || DECK_RED_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - 0.5) < 1e-9, computed: '1/2', kind: 'prob_value' };
+  }
+  const dgt = q.match(DICE_GT_RE);
+  if (dgt) {
+    const v = Number(dgt[1]);
+    const expected = (6 - v) / 6;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
   }
   // Calculus-type pure-arithmetic series sums: '<arith> ≈ ?' / '<arith> = ?'.
   if (type === 'calculus') {
