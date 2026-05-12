@@ -516,6 +516,48 @@ const HOMOTHETY_LEN_RE = /^Quadrado\s+lado\s*=\s*(\d+(?:\.\d+)?)\s+com\s+homotet
 const HOMOTHETY_AREA_RE = /^Quadrado\s+lado\s*=\s*(\d+(?:\.\d+)?)\s+com\s+homotetia\s+k\s*=\s*(\d+(?:\.\d+)?)\s*:\s*nova\s+[áa]rea\s*=\s*\??\s*$/i;
 // Translation total: T(a,b) leva (0,0) para: x' = ?
 const T_FROM_ORIGIN_RE = /^T\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s+leva\s+\(\s*0\s*,\s*0\s*\)\s+para\s*:\s*([xy])'\s*=\s*\??\s*$/i;
+// Undefined-trig values (q normalized: sen→sin, tg→tan, N° → (N deg))
+const TRIG_UNDEF_RE = /^(tan|cot|sec|csc)\(\s*(?:\(?(\d+)\s*deg\)?|(\d+)°)\s*\)\s*=\s*(?:\?|\?\s*\(indefinida?\))\s*$/i;
+// Parity & period & range constants
+const TRIG_PARITY_RE = /^(sin|cos|tan)\(x\)\s+[ée]:?\s*\([^)]*\)\s*$/i;
+const TRIG_MAX_RE = /^M[áa]ximo\s+de\s+(sin|cos|tan)\(x\)\s+ocorre\s+em:?/i;
+const TRIG_PERIOD_GENERIC_RE = /^Per[íi]odo\s+de\s+(sin|cos|tan|cot|sec|csc)\(x\)(?:\s+em\s+graus)?\s*=\s*\??\s*$/i;
+const TRIG_RANGE_GENERIC_RE = /^Imagem\s+de\s+(sin|cos|tan|cot|sec|csc)\(x\)\s*=\s*\??\s*$/i;
+const TRIG_NEXT_ASYMP_RE = /^Pr[óo]xima\s+ass[íi]ntota\s+ap[óo]s\s+(?:\(?(\d+)\s*deg\)?|(\d+)°)\s*=\s*\?°?\s*$/i;
+// 'Domínio de tan(x) exclui x = 90° + ?·k'
+const TAN_DOMAIN_K_RE = /^Dom[íi]nio\s+de\s+tan\(x\)\s+exclui\s+x\s*=\s*(?:\(?90\s*deg\)?|90°)\s*\+\s*\?\s*[·*]\s*k\s*$/i;
+// Half-angle: 'Se cos(x) = N/D (1º quadrante), (sen|cos)(x/2) = ?'  (normalize wraps N/D in parens)
+const HALF_ANGLE_Q1_RE = /^Se\s+cos\(x\)\s*=\s*\(?(\d+)\/(\d+)\)?\s+\(1[ºo]\s+quadrante\),\s+(sin|cos)\(x\s*\/\s*2\)\s*=\s*\??\s*$/i;
+// 'Se tan(x)=N, tan(2x) numerador = ?' → 2N (normalize: 2x → 2*x)
+const TAN2_NUM_RE = /^Se\s+tan\(x\)\s*=\s*(-?\d+(?:\.\d+)?|sqrt\(\d+\))\s*,\s*tan\(\s*2\s*\*?\s*x\s*\)\s+numerador\s*=\s*\??\s*$/i;
+const TAN2_DEN_RE = /^Se\s+tan\(x\)\s*=\s*(-?\d+(?:\.\d+)?|sqrt\(\d+\))\s*,\s*tan\(\s*2\s*\*?\s*x\s*\)\s+denominador\s*=\s*\??\s*$/i;
+// 'Solução geral' k-multiplier constants (·k normalizes to *k)
+const GENERAL_K_TAN_RE = /^Solu[çc][ãa]o\s+geral\s+de\s+tan\(x\)\s*=\s*[^:]+:\s*(?:\(?-?\d+\s*deg\)?|-?\d+°)\s*\+\s*\?\s*[·*]\s*k\s*$/i;
+const GENERAL_K_SC_RE = /^Solu[çc][ãa]o\s+geral\s+de\s+(?:sin|cos)\(x\)\s*=\s*0:\s*\?\s*[·*]\s*k\s*$/i;
+const GENERAL_K_COS0_RE = /^Solu[çc][ãa]o\s+geral\s+de\s+cos\(x\)\s*=\s*0:\s*(?:\(?-?\d+\s*deg\)?|-?\d+°)\s*\+\s*\?\s*[·*]\s*k\s*$/i;
+// 'Solução geral de cos(x) = V: ±? + 360°k' → principal
+const GENERAL_PM_RE = /^Solu[çc][ãa]o\s+geral\s+de\s+cos\(x\)\s*=\s*([^:]+):\s*±\?\s*\+\s*(?:\(?360\s*deg\)?|360°)k\s*$/i;
+// 'Solução geral de sen(x) = V em ℝ: A + 360°k e ? + 360°k' → 180-A
+const GENERAL_PAIR_RE = /^Solu[çc][ãa]o\s+geral\s+de\s+sin\(x\)\s*=\s*([^:]+)\s+em\s+ℝ:\s*(?:\(?(\d+)\s*deg\)?|(\d+)°)\s*\+\s*(?:\(?360\s*deg\)?|360°)k\s+e\s+\?\s*\+\s*(?:\(?360\s*deg\)?|360°)k\s*$/i;
+// 'a/sen(A) = b/sen(B) = c/sen(?)' → 'C'  (symbolic)
+const LAW_SIN_THIRD_RE = /^a\/sin\(A\)\s*=\s*b\/sin\(B\)\s*=\s*c\/sin\(\?\)\s*$/i;
+// 'a/sen(A) = 2R' literal answer
+const LAW_SIN_2R_RE = /^a\/sin\(A\)\s+[ée]\s+igual\s+a:\s*\(/i;
+// 'a/sen(A) = 2R, onde R é o raio da circunferência: (inscrita/circunscrita)' → 'circunscrita'
+const LAW_SIN_CIRC_RE = /^a\/sin\(A\)\s*=\s*2R,\s+onde\s+R\s+[ée]\s+o\s+raio\s+da\s+circunfer[êe]ncia:\s*\(/i;
+// 'a=A, A=α°, C=β°, c = ?' law of sines for c
+const LAW_SIN_C_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*A\s*=\s*(?:\(?(\d+(?:\.\d+)?)\s*deg\)?|(\d+(?:\.\d+)?)°)\s*,\s*C\s*=\s*(?:\(?(\d+(?:\.\d+)?)\s*deg\)?|(\d+(?:\.\d+)?)°)\s*,\s*c\s*=\s*\??\s*$/i;
+// 'B (agudo) quando sen(B)=V = ?' → asin(V) in degrees (acute)
+const ACUTE_ANGLE_FROM_SIN_RE = /^B\s*\(agudo\)\s+quando\s+sin\(B\)\s*=\s*(\d+(?:\.\d+)?)\s*=\s*\??\s*$/i;
+// 'sen²(x) + sen(x) = 0 → ... sen(x)=0 ou sen(x)=?' → -1 (quadratic factor).
+// Normalize lowers 'sen²(x)' to 'sin(x)^2'.
+const QUAD_SIN_FACTOR_RE = /^sin\(x\)\^?2\s*\+\s*sin\(x\)\s*=\s*0[^?]*sin\(x\)\s*=\s*\?\s*$/i;
+// '2cos²(x) + cos(x) - 1 = 0 → cos(x) = 1/2 ou cos(x) = ?' → other root via Vieta
+const QUAD_COS_OTHER_RE = /^2\s*\*?\s*cos\(x\)\^?2\s*\+\s*cos\(x\)\s*-\s*1\s*=\s*0\s*→\s*cos\(x\)\s*=\s*\(?1\/2\)?\s+ou\s+cos\(x\)\s*=\s*\?\s*$/i;
+// '2sen²(x) - 1 = 0 → sen²(x) = ?' → 1/2
+const SIN2_HALF_RE = /^2\s*\*?\s*sin\(x\)\^?2\s*-\s*1\s*=\s*0\s*→\s*sin\(x\)\^?2\s*=\s*\?\s*$/i;
+// 'sen(x) - cos(x) = 0 → tan(x) = ?' → 1
+const SIN_MINUS_COS_RE = /^sin\(x\)\s*-\s*cos\(x\)\s*=\s*0\s*→\s*tan\(x\)\s*=\s*\?\s*$/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -3284,6 +3326,175 @@ function verify(question, answer, type) {
     const expected = tFO[3].toLowerCase() === 'x' ? Number(tFO[1]) : Number(tFO[2]);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'translate' };
+  }
+  // Undefined trig values
+  const tud = q.match(TRIG_UNDEF_RE);
+  if (tud) {
+    const fn = tud[1].toLowerCase(), deg = Number(tud[2] ?? tud[3]);
+    const rad = deg * Math.PI / 180;
+    const v = fn === 'tan' ? Math.cos(rad) : fn === 'cot' ? Math.sin(rad) : fn === 'sec' ? Math.cos(rad) : Math.sin(rad);
+    if (Math.abs(v) < 1e-9) {
+      const ok = String(a).trim().toLowerCase() === 'indefinido' || String(a).trim().toLowerCase() === 'indefinida';
+      return { ok, computed: 'indefinido', kind: 'trig_meta' };
+    }
+  }
+  // Parity: sin → ímpar, cos → par, tan → ímpar
+  const tpa = q.match(TRIG_PARITY_RE);
+  if (tpa) {
+    const fn = tpa[1].toLowerCase();
+    const expected = fn === 'cos' ? 'par' : 'ímpar';
+    return { ok: String(a).trim().toLowerCase() === expected, computed: expected, kind: 'trig_meta' };
+  }
+  // Max of sin(x): 90°
+  if (TRIG_MAX_RE.test(q)) {
+    const fn = q.match(TRIG_MAX_RE)[1].toLowerCase();
+    if (fn === 'sin') {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, 90), computed: '90°', kind: 'trig_meta' };
+    } else if (fn === 'cos') {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, 0), computed: '0°', kind: 'trig_meta' };
+    }
+  }
+  // Period: sin/cos/sec/csc → 360°; tan/cot → 180°
+  const tpd = q.match(TRIG_PERIOD_GENERIC_RE);
+  if (tpd) {
+    const fn = tpd[1].toLowerCase();
+    const expected = (fn === 'tan' || fn === 'cot') ? 180 : 360;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+  }
+  // Range: tan/cot → ℝ ; sec/csc → "(-∞,-1] ∪ [1,∞)"
+  const trg = q.match(TRIG_RANGE_GENERIC_RE);
+  if (trg) {
+    const fn = trg[1].toLowerCase();
+    if (fn === 'tan' || fn === 'cot') {
+      const ok = String(a).trim().replace(/\s+/g, '') === 'ℝ' || String(a).trim().toLowerCase() === 'r';
+      return { ok, computed: 'ℝ', kind: 'trig_meta' };
+    }
+    if (fn === 'sec' || fn === 'csc') {
+      const norm = String(a).replace(/\s+/g, '');
+      const ok = /^\(-∞,-1\]∪\[1,∞\)$/.test(norm) || /^\(-∞,-1\]u\[1,∞\)$/i.test(norm);
+      return { ok, computed: '(-∞,-1] ∪ [1,∞)', kind: 'trig_meta' };
+    }
+  }
+  // Próxima assíntota após 90° → 270° (tan asymptotes every 180°)
+  const tna = q.match(TRIG_NEXT_ASYMP_RE);
+  if (tna) {
+    const expected = Number(tna[1] ?? tna[2]) + 180;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+  }
+  // tan domain excludes 90° + ?·k → 180°
+  if (TAN_DOMAIN_K_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 180), computed: '180°', kind: 'trig_meta' };
+  }
+  // Half-angle: cos(x) = N/D (1st quadrant) → cos(x/2) = √((1+N/D)/2); sen(x/2) = √((1-N/D)/2)
+  const half = q.match(HALF_ANGLE_Q1_RE);
+  if (half) {
+    const N = Number(half[1]), D = Number(half[2]);
+    if (D !== 0) {
+      const c = N / D;
+      const v = half[3].toLowerCase() === 'cos' ? Math.sqrt((1 + c) / 2) : Math.sqrt((1 - c) / 2);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - v) < 1e-2, computed: `${v}`, kind: 'half_angle' };
+    }
+  }
+  // 'Se tan(x)=N, tan(2x) numerador' → 2N; denominador → 1 - N²
+  const parseTanIn = (s) => /^sqrt\(/.test(s) ? Math.sqrt(Number(s.match(/\((\d+)\)/)[1])) : Number(s);
+  const t2n = q.match(TAN2_NUM_RE);
+  if (t2n) {
+    const N = parseTanIn(t2n[1]);
+    const expected = 2 * N;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'tan_sum_part' };
+  }
+  const t2d = q.match(TAN2_DEN_RE);
+  if (t2d) {
+    const N = parseTanIn(t2d[1]);
+    const expected = 1 - N * N;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'tan_sum_part' };
+  }
+  // 'Solução geral' k-multipliers (period of tan is 180°; sin/cos = 0 every 180°)
+  if (GENERAL_K_TAN_RE.test(q) || GENERAL_K_SC_RE.test(q) || GENERAL_K_COS0_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 180), computed: '180°', kind: 'trig_meta' };
+  }
+  // cos(x) = V: principal angle
+  const gpm = q.match(GENERAL_PM_RE);
+  if (gpm) {
+    try {
+      const v = toNumber(math.evaluate(normalize(gpm[1].trim())));
+      if (v != null && Math.abs(v) <= 1) {
+        const expected = Math.acos(v) * 180 / Math.PI;
+        const an = toNumber(tryEval(a));
+        if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+      }
+    } catch {}
+  }
+  // sin(x) = V: other angle = 180 - principal
+  const gpa = q.match(GENERAL_PAIR_RE);
+  if (gpa) {
+    const principal = Number(gpa[2] ?? gpa[3]);
+    const expected = 180 - principal;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+  }
+  // a/sen(A) = b/sen(B) = c/sen(?) → C
+  if (LAW_SIN_THIRD_RE.test(q)) {
+    return { ok: String(a).trim().toUpperCase() === 'C', computed: 'C', kind: 'law_sin' };
+  }
+  // a/sen(A) = 2R → '2R' answer
+  if (LAW_SIN_2R_RE.test(q)) {
+    const an = String(a).trim().replace(/\s+/g, '').toUpperCase();
+    return { ok: an === '2R', computed: '2R', kind: 'law_sin' };
+  }
+  if (LAW_SIN_CIRC_RE.test(q)) {
+    return { ok: String(a).trim().toLowerCase() === 'circunscrita', computed: 'circunscrita', kind: 'law_sin' };
+  }
+  // Law of sines: c from a, A, C
+  const lsCq = question.match(LAW_SIN_C_RE);
+  if (lsCq) {
+    const A = Number(lsCq[1]);
+    const aDeg = Number(lsCq[2] ?? lsCq[3]);
+    const cDeg = Number(lsCq[4] ?? lsCq[5]);
+    if (Math.abs(Math.sin(aDeg * Math.PI / 180)) > 1e-9) {
+      const expected = A * Math.sin(cDeg * Math.PI / 180) / Math.sin(aDeg * Math.PI / 180);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_sin' };
+    }
+  }
+  // Acute angle from sin(B) = V
+  const aaf = q.match(ACUTE_ANGLE_FROM_SIN_RE);
+  if (aaf) {
+    const V = Number(aaf[1]);
+    if (Math.abs(V) <= 1) {
+      const expected = Math.asin(V) * 180 / Math.PI;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'law_sin' };
+    }
+  }
+  // sen²(x) + sen(x) = 0 → other root: -1 (factor sin·(sin+1)=0)
+  if (QUAD_SIN_FACTOR_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === -1, computed: '-1', kind: 'trig_meta' };
+  }
+  // 2cos²(x) + cos(x) - 1 = 0 → cos(x) = 1/2 or -1 (Vieta: sum = -1/2, product = -1/2)
+  if (QUAD_COS_OTHER_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === -1, computed: '-1', kind: 'trig_meta' };
+  }
+  // 2sen²(x) - 1 = 0 → sen²(x) = 1/2
+  if (SIN2_HALF_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - 0.5) < 1e-9, computed: '1/2', kind: 'trig_meta' };
+  }
+  // sin(x) - cos(x) = 0 → tan(x) = 1
+  if (SIN_MINUS_COS_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'trig_meta' };
   }
   // Calculus-type pure-arithmetic series sums: '<arith> ≈ ?' / '<arith> = ?'.
   if (type === 'calculus') {

@@ -255,6 +255,23 @@ const CASES = [
   { q: '1 + tg²θ = sec²θ; se tg θ=1, sec²θ = ?', a: '2', type: 'geometry', want: true },
   { q: 'Quadrado lado=4 com homotetia k=3: novo lado = ?', a: '12', type: 'geometry', want: true },
   { q: 'Quadrado lado=4 com homotetia k=3: nova área = ?', a: '144', type: 'geometry', want: true },
+  // Trig undefined / period / parity / domain / half-angle / Vieta / general-solution
+  { q: 'tan(90°) = ? (indefinida)', a: 'indefinido', type: 'trigonometry', want: true },
+  { q: 'sec(90°) = ?', a: 'indefinido', type: 'trigonometry', want: true },
+  { q: 'sen(x) é: (par/ímpar)', a: 'ímpar', type: 'trigonometry', want: true },
+  { q: 'cos(x) é: (par/ímpar)', a: 'par', type: 'trigonometry', want: true },
+  { q: 'Período de tan(x) em graus = ?', a: '180°', type: 'trigonometry', want: true },
+  { q: 'Período de sec(x) = ?', a: '360°', type: 'trigonometry', want: true },
+  { q: 'Imagem de tan(x) = ?', a: 'ℝ', type: 'trigonometry', want: true },
+  { q: 'Próxima assíntota após 90° = ?', a: '270°', type: 'trigonometry', want: true },
+  { q: 'Se cos(x) = 3/5 (1º quadrante), cos(x/2) = ?', a: '2√5/5', type: 'trigonometry', want: true },
+  { q: 'Se tan(x)=1, tan(2x) denominador = ?', a: '0', type: 'trigonometry', want: true },
+  { q: 'Solução geral de cos(x) = 0: 90° + ?·k', a: '180°', type: 'trigonometry', want: true },
+  { q: 'Solução geral de sen(x) = 1/2 em ℝ: 30° + 360°k e ? + 360°k', a: '150°', type: 'trigonometry', want: true },
+  { q: 'a=8, A=30°, C=90°, c = ?', a: '16', type: 'trigonometry', want: true },
+  { q: 'B (agudo) quando sen(B)=0.5 = ?', a: '30°', type: 'trigonometry', want: true },
+  { q: '2cos²(x) + cos(x) - 1 = 0 → cos(x) = 1/2 ou cos(x) = ?', a: '-1', type: 'trigonometry', want: true },
+  { q: '2sen²(x) - 1 = 0 → sen²(x) = ?', a: '1/2', type: 'trigonometry', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },
