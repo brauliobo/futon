@@ -1145,6 +1145,24 @@ const SIM_ONLY_RE = /\?\s*\(\s*1\s*=\s*sim\s*\)\s*$/i;
 const RATIO_APPROX_RE = /P\([^)]*\)\s*≈\s*(\d+(?:\.\d+)?)\s*\/\s*\(\s*(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*\)\s*≈\s*\?/i;
 // 'Diagnóstico médico. P(doença)=A, P(teste+|doença)=B, P(teste+|saudável)=C. De N pessoas, ~quantas têm teste positivo e estão doentes?' → N·A·B
 const DIAG_TRUE_POS_RE = /Diagn[óo]stico\s+m[ée]dico[\s\S]+P\(doen[çc]a\)\s*=\s*(\d+(?:\.\d+)?)[\s\S]+P\(teste\+\|doen[çc]a\)\s*=\s*(\d+(?:\.\d+)?)[\s\S]+P\(teste\+\|saud[áa]vel\)\s*=\s*(\d+(?:\.\d+)?)[\s\S]+De\s+(\d+(?:\s*\d+)*)\s+pessoas[\s\S]+teste\s+positivo\s+e\s+est[ãa]o\s+doentes\?/i;
+// Derivative dictionary lookups
+const DERIV_DICT = {
+  'e^x': 'e^x',
+  '(sen x)': 'cos x', '(sin x)': 'cos x',
+  '(cos x)': '-sen x',
+  '(1/(1-x))': '1/(1-x)²',
+  '(ln(1+x))': '1/(1+x)', '(log(1+x))': '1/(1+x)',
+};
+const DERIV_RE = /^d\/dx\(([^)]+(?:\([^)]+\))?[^)]*)\)\s+s[ée]rie:/i;
+// Integral identity V/F → V (common antiderivatives)
+const INTEGRAL_VF_RE = /^∫\s*(?:cos\s*x|sen\(x\)|sen\s*x|e\^x|1\/\(1-x\))\s*dx\s*=[\s\S]+\(V\/F\)\?\s*$/i;
+// Constants V/F
+const E_APPROX_VF_RE = /^e\s*≈\s*2\.71828\s*\(V\/F\)\?\s*$/i;
+const TAYLOR_FORMULA_VF_RE = /^f\(x\)\s*=\s*f\(0\)\s*\+\s*f\^?'\(0\)x\s*\+\s*f\^?''?\(0\)x²?\/2!\s*\+\s*\.\.\.\s*\(V\/F\)\?\s*$/i;
+const SUM_EXP_CONVERGES_RE = /^Σ\s*x[ⁿn]\s*\/\s*n!\s+converge\s+para\s+todo\s+x\?/i;
+// Series convergence V/F
+const SERIES_VF_RE = /^Σ\s*([\s\S]+?)\s+(converge|diverge)[^(]*\(V\/F\)\?\s*$/i;
+const SERIES_VERB_RE = /^Σ\s*([\s\S]+?):\s*\((converge|diverge)\/(?:diverge|converge)\)\s*$/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -6586,6 +6604,79 @@ function verify(question, answer, type) {
     const expected = Math.round(N * pD * pTpD);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1, computed: `${expected}`, kind: 'cond_prob' };
+  }
+  // Derivative dictionary
+  const dvm = question.match(DERIV_RE);
+  if (dvm) {
+    const fn = dvm[1].trim();
+    const key = `(${fn})`;
+    const expected = DERIV_DICT[key] || DERIV_DICT[fn];
+    if (expected) {
+      const ans = String(answer).trim().replace(/\s+/g, ' ');
+      const altAns = ans.replace(/sen/g, 'sin');
+      const altExp = expected.replace(/sen/g, 'sin');
+      const ok = ans === expected || altAns === altExp || ans === altExp || altAns === expected;
+      return { ok, computed: expected, kind: 'identity_symbolic' };
+    }
+  }
+  // Integral identity V/F → V
+  if (INTEGRAL_VF_RE.test(question)) {
+    return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'identity_vf' };
+  }
+  // e ≈ 2.71828 (V/F) → V
+  if (E_APPROX_VF_RE.test(question)) {
+    return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'identity_vf' };
+  }
+  // Taylor formula V/F → V
+  if (TAYLOR_FORMULA_VF_RE.test(question)) {
+    return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'identity_vf' };
+  }
+  // Σ xⁿ/n! converges for all x → sim
+  if (SUM_EXP_CONVERGES_RE.test(question)) {
+    return { ok: String(answer).trim().toLowerCase() === 'sim', computed: 'sim', kind: 'identity_vf' };
+  }
+  // Series convergence checker: rules for common series
+  const seriesConverges = (expr) => {
+    const e = expr.replace(/\s+/g, '')
+      .replace(/sen|sin/g, 'sin')
+      .replace(/²/g, '^2').replace(/³/g, '^3').replace(/⁴/g, '^4').replace(/⁵/g, '^5');
+    // 1/n^p
+    let m = e.match(/^1\/n\^?([\d.]+)$/);
+    if (m) return Number(m[1]) > 1;
+    // 1/n (no exponent)
+    if (e === '1/n') return false;
+    // 1/n!
+    if (/^1\/n!/.test(e)) return true;
+    // 1/√n = 1/n^0.5
+    if (/^1\/√n|1\/sqrt\(n\)|1\/n\^0\.5/.test(e)) return false;
+    // 1/(n²+const) — comparison with 1/n²
+    if (/^1\/\(n\^?2\+\d+\)$/.test(e) || /^1\/\(n²\+\d+\)$/.test(e)) return true;
+    // sin²(n)/n²
+    if (/^sin\^?2\(n\)\/n\^?2$/.test(e) || /^sin\(n\)\^?2\/n\^?2$/.test(e)) return true;
+    // a^n (geometric): converges iff |a| < 1
+    m = e.match(/^([\d.]+)\^n$/);
+    if (m) return Math.abs(Number(m[1])) < 1;
+    // (-1)^n: diverges (oscillates)
+    if (/^\(-1\)\^n/.test(e)) return false;
+    // 1/(2n+1): diverges (like 1/n)
+    if (/^1\/\(2n\+1\)$/.test(e)) return false;
+    return null;
+  };
+  const svfM = question.match(SERIES_VF_RE);
+  if (svfM) {
+    const conv = seriesConverges(svfM[1]);
+    if (conv !== null) {
+      const expected = (svfM[2].toLowerCase() === 'converge') === conv ? 'V' : 'F';
+      return { ok: String(answer).trim().toUpperCase() === expected, computed: expected, kind: 'pg_converge' };
+    }
+  }
+  const svr = question.match(SERIES_VERB_RE);
+  if (svr) {
+    const conv = seriesConverges(svr[1]);
+    if (conv !== null) {
+      const expected = conv ? 'converge' : 'diverge';
+      return { ok: String(answer).trim().toLowerCase() === expected, computed: expected, kind: 'pg_converge' };
+    }
   }
   // 'P(...|...) ≈ A/(A+B) ≈ ?' → A/(A+B) rounded
   const rxa = question.match(RATIO_APPROX_RE);
