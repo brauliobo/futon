@@ -810,6 +810,60 @@ const REG_THROUGH_RE = /^Reta\s+de\s+regress[ãa]o\s+sempre\s+passa\s+por\s+\(x�
 const QUARTILE_RE = /^\{\s*([\d,\s.]+)\s*\}\s*[—-]+\s*Q\d+\s*\(posi[çc][ãa]o\s+(\d+)\)\s*=\s*\??\s*$/i;
 // 'ŷ=A + B×N = ? para reta ŷ=A+Bx' → A+B·N
 const REGRESSION_CHAINED_RE = /^ŷ\s*=\s*(-?\d+(?:\.\d+)?)\s*([+\-])\s*(\d+(?:\.\d+)?)\s*[×*]\s*(\d+(?:\.\d+)?)\s*=\s*\?\s+para\s+reta\s+ŷ\s*=/i;
+// Vector patterns: ||v||² and cos θ and ||u||·||v||
+const NORM_SQ_RE = /^u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*,\s*v\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*\|\|v\|\|\^?2\s*=\s*\??\s*$/i;
+const COS_THETA_RE = /^u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*,\s*v\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*cosθ\s*=\s*\??\s*$/i;
+const NORM_PRODUCT_RE = /^u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*,\s*v\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*\|\|u\|\|\s*[·*]\s*\|\|v\|\|\s*=\s*\??\s*$/i;
+// proj_v u components: 'proj_(c,d) (a,b): x-componente = ?' → scalar·c/(c²+d²)·c (or just scalar a if axis-aligned)
+const PROJ_RE = /^proj_\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*([xy])-componente\s*=\s*\??\s*$/i;
+// Scalar projection: 'comp_v u = u·v/||v||; u=(a,b), v=(c,d): comp = ?'
+const SCALAR_PROJ_RE = /comp_v\s+u\s*=[^;]+;\s*u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*,\s*v\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*comp\s*=\s*\??\s*$/i;
+// Cross product magnitude for 3D 'u=(a,0,0), v=(0,b,0): |u×v| = ?' = |a·b|
+const CROSS_AXIS_RE = /^u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*0\s*,\s*0\)\s*,\s*v\s*=\s*\(0\s*,\s*(-?\d+(?:\.\d+)?)\s*,\s*0\)\s*:\s*\|u×v\|\s*=\s*\??\s*$/i;
+// Triangle area via ||u×v||/2 with axis-aligned u,v
+const TRIANGLE_UXV_AREA_RE = /^[áa]rea\s+do\s+tri[âa]ngulo\s*=\s*\|\|u×v\|\|\/2\s*;\s*u\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*0\s*,\s*0\)\s*,\s*v\s*=\s*\(0\s*,\s*(-?\d+(?:\.\d+)?)\s*,\s*0\)\s*:\s*[áa]rea\s*=\s*\??\s*$/i;
+// 'u×v = (0,0,?)' standard basis cross product
+const CROSS_BASIS_Z_RE = /^u\s*=\s*\(1\s*,\s*0\s*,\s*0\)\s*,\s*v\s*=\s*\(0\s*,\s*1\s*,\s*0\)\s*:\s*u×v\s*=\s*\(0\s*,\s*0\s*,\s*\?\)\s*$/i;
+// 'i×j = ?' and 'j×i = ?'
+const I_CROSS_J_RE = /^([ij])\s*×\s*([ij])\s*=\s*\?\s*\(componente\s+z/i;
+// 'u·v = ||u||·||v||·cosθ; se u·v=0, θ = ?°' → 90
+const DOT_ZERO_RE = /se\s+u·v\s*=\s*0\s*,\s*θ\s*=\s*\?°?\s*$/i;
+// 'u∥v → u×v = ?' → 0
+const PARALLEL_CROSS_RE = /^u\s*∥\s*v\s*→\s*u×v\s*=\s*\??\s*$/i;
+// 'det([a b; c d]) for explicit 2x2 with letter labels: det = ad-bc'
+const DET_2X2_NUMERIC_RE = /^A\s*=\s*\[\s*(-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)\s*;\s*(-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)\s*\]\s*:\s*det\s*=\s*\??\s*$/i;
+// det of upper/lower-triangular 3x3 explicitly listed
+const DET_3X3_TRIANG_RE = /^det\(\[\s*(-?\d+)\s+(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s+(-?\d+)\s*\]\)\s*=\s*\??\s*$/i;
+// det(A·B) = det(A)·det(B)
+const DET_PRODUCT_RE = /^det\(A\s*[·*]\s*B\)\s*=\s*det\(A\)\s*[·*]\s*det\(B\)\s*;\s*det\s*A\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*det\s*B\s*=\s*(-?\d+(?:\.\d+)?)\s*:\s*det\(AB\)\s*=\s*\??\s*$/i;
+const DET_COMPOSITION_RE = /^\[S∘T\]\s*=\s*\[S\][·*]\[T\][^;]*;\s*detS\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*detT\s*=\s*(-?\d+(?:\.\d+)?)\s*:\s*det\(S∘T\)\s*=\s*\??\s*$/i;
+// 'Linha/coluna nula → det = 0' constant
+const ZERO_LINE_DET_RE = /^Linha\/coluna\s+nula\s*→\s*det\s*=\s*\??\s*$/i;
+// 'Matriz A·A⁻¹ = ?' → I (literal)
+const A_INV_A_RE = /^Matriz\s+A\s*[·*]\s*A⁻¹\s*=\s*\??\s*$/i;
+// 'Reflexão em eixo x: det = ?' → -1
+const REFLECT_DET_RE = /^Reflex[ãa]o\s+em\s+eixo\s+[xy]\s*:\s*det\s*=\s*\??\s*$/i;
+// 'Rotação ... det = ?' → 1
+const ROTATION_DET_RE = /^Rota[çc][ãa]o[^=]*det\s*=\s*\??\s*$/i;
+// 'Unitário de (a,b): norma do resultado = ?' → 1 (always)
+const UNIT_NORM_RE = /^Unit[áa]rio\s+de\s+\([^)]+\)\s*:\s*norma\s+do\s+resultado\s*=\s*\??\s*$/i;
+// Vector decomposition: '(a,b) = α·(1,0)+β·(0,1): α/β = ?'
+const STD_BASIS_DECOMP_RE = /^\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*=\s*[a-z]\s*[·*]\s*\(1\s*,\s*0\)\s*\+\s*[a-z]\s*[·*]\s*\(0\s*,\s*1\)\s*:\s*([a-z])\s*=\s*\??\s*$/i;
+// 'k·(a,b) = (c,d): k = ?' → c/a or d/b
+const SCALAR_FROM_SCALED_RE = /^([a-z])\s*[·*]\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*=\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*:\s*\1\s*=\s*\??\s*$/i;
+// '2·(1,0) + 3·(0,1) = (?,3)' → first component
+const STD_BASIS_LINCOMB_RE = /^(-?\d+(?:\.\d+)?)\s*[·*]\s*\(1\s*,\s*0\)\s*\+\s*(-?\d+(?:\.\d+)?)\s*[·*]\s*\(0\s*,\s*1\)\s*=\s*\(\s*(\?|-?\d+(?:\.\d+)?)\s*,\s*(\?|-?\d+(?:\.\d+)?)\s*\)\s*$/i;
+// 'a·(c,d) + b·(e,f) = (g,?)' or '(?,h)' — linear combo with given (1,0)/(0,1) basis or general
+const LINCOMB_GEN_RE = /^(-?\d+(?:\.\d+)?)\s*[·*]\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*\+\s*(-?\d+(?:\.\d+)?)\s*[·*]\s*\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*=\s*\(\s*(\?|-?\d+(?:\.\d+)?)\s*,\s*(\?|-?\d+(?:\.\d+)?)\s*\)\s*$/i;
+// 'Posto de matriz [...] = ?' compute rank
+const RANK_RE = /^Posto\s+de\s+matriz\s+\[([^\]]+)\]\s*=\s*\??\s*$/i;
+// 'Base ortonormal' constants
+const BASE_NORM_RE = /^Base\s+ortonormal:\s*\|\|e[ᵢi]\|\|\s*=\s*\??\s*$/i;
+const BASE_DOT_RE = /^Base\s+ortonormal:\s*e[ᵢi]\s*[·*]\s*e[ⱼj]\s*\([^)]+\)\s*=\s*\??\s*$/i;
+// 'dim de núcleo (ker) de matriz n×n injetiva = ?' → 0
+const KER_INJ_RE = /^dim\s+de\s+n[úu]cleo\s+\(ker\)\s+de\s+matriz\s+n[×x]\s*n\s+injetiva\s*=\s*\??\s*$/i;
+// '||( 1/√2, 1/√2 )|| = ?' → 1
+const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -4868,6 +4922,202 @@ function verify(question, answer, type) {
     const expected = A + B * N;
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'r_squared' };
+  }
+  // ||v||² for 2D vector
+  const ns2v = q.match(NORM_SQ_RE);
+  if (ns2v) {
+    const expected = Number(ns2v[3]) ** 2 + Number(ns2v[4]) ** 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'vec_norm' };
+  }
+  // cos θ between two 2D vectors
+  const ct = q.match(COS_THETA_RE);
+  if (ct) {
+    const ax = Number(ct[1]), ay = Number(ct[2]), bx = Number(ct[3]), by = Number(ct[4]);
+    const dot = ax * bx + ay * by;
+    const expected = dot / (Math.sqrt(ax * ax + ay * ay) * Math.sqrt(bx * bx + by * by));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'vec_norm' };
+  }
+  // ||u||·||v|| product of norms
+  const npr = q.match(NORM_PRODUCT_RE);
+  if (npr) {
+    const expected = Math.sqrt(Number(npr[1]) ** 2 + Number(npr[2]) ** 2) * Math.sqrt(Number(npr[3]) ** 2 + Number(npr[4]) ** 2);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'vec_norm' };
+  }
+  // proj_(c,d) (a,b): scalar = (a·c+b·d)/(c²+d²); projection vector = scalar·(c,d)
+  const prj = question.match(PROJ_RE);
+  if (prj) {
+    const c1 = Number(prj[1]), d1 = Number(prj[2]), a1 = Number(prj[3]), b1 = Number(prj[4]);
+    const denom = c1 * c1 + d1 * d1;
+    if (denom !== 0) {
+      const sc = (a1 * c1 + b1 * d1) / denom;
+      const expected = prj[5].toLowerCase() === 'x' ? sc * c1 : sc * d1;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'vec_partial' };
+    }
+  }
+  // Scalar projection comp_v u = u·v / ||v||
+  const sp2 = q.match(SCALAR_PROJ_RE);
+  if (sp2) {
+    const ax = Number(sp2[1]), ay = Number(sp2[2]), bx = Number(sp2[3]), by = Number(sp2[4]);
+    const expected = (ax * bx + ay * by) / Math.sqrt(bx * bx + by * by);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'vec_norm' };
+  }
+  // Cross product magnitude for axis-aligned 3D vectors
+  const cax = q.match(CROSS_AXIS_RE);
+  if (cax) {
+    const expected = Math.abs(Number(cax[1]) * Number(cax[2]));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'cross_z' };
+  }
+  // Triangle area via ||u×v||/2 axis-aligned
+  const txv = q.match(TRIANGLE_UXV_AREA_RE);
+  if (txv) {
+    const expected = Math.abs(Number(txv[1]) * Number(txv[2])) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'parallelogram_area' };
+  }
+  // Cross of standard basis: i×j = k → z component = 1
+  if (CROSS_BASIS_Z_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'cross_z' };
+  }
+  // i×j or j×i — z component (1 or -1)
+  const ixj = q.match(I_CROSS_J_RE);
+  if (ixj) {
+    const a1 = ixj[1].toLowerCase(), b1 = ixj[2].toLowerCase();
+    // i×j = k (z=1); j×i = -k (z=-1); i×i = j×j = 0
+    let expected;
+    if (a1 === b1) expected = 0;
+    else expected = (a1 === 'i' && b1 === 'j') ? 1 : -1;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'cross_z' };
+  }
+  // u·v=0 → θ=90° constant
+  if (DOT_ZERO_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 90), computed: '90°', kind: 'vec_norm' };
+  }
+  // u∥v → u×v = 0 (norm)
+  if (PARALLEL_CROSS_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'cross_z' };
+  }
+  // det of explicit 2x2: ad-bc
+  const d2N = q.match(DET_2X2_NUMERIC_RE);
+  if (d2N) {
+    const expected = Number(d2N[1]) * Number(d2N[4]) - Number(d2N[2]) * Number(d2N[3]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'det_2x2' };
+  }
+  // det of 3x3 — compute determinant
+  const d3 = q.match(DET_3X3_TRIANG_RE);
+  if (d3) {
+    const m = [
+      [Number(d3[1]), Number(d3[2]), Number(d3[3])],
+      [Number(d3[4]), Number(d3[5]), Number(d3[6])],
+      [Number(d3[7]), Number(d3[8]), Number(d3[9])],
+    ];
+    const expected = m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) -
+                     m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0]) +
+                     m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'det_2x2' };
+  }
+  const dpr = q.match(DET_PRODUCT_RE);
+  if (dpr) {
+    const expected = Number(dpr[1]) * Number(dpr[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'det_2x2' };
+  }
+  const dcp = q.match(DET_COMPOSITION_RE);
+  if (dcp) {
+    const expected = Number(dcp[1]) * Number(dcp[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'det_2x2' };
+  }
+  if (ZERO_LINE_DET_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'det_2x2' };
+  }
+  if (A_INV_A_RE.test(q)) {
+    return { ok: String(answer).trim().toUpperCase() === 'I', computed: 'I', kind: 'mat_op' };
+  }
+  if (REFLECT_DET_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === -1, computed: '-1', kind: 'reflect' };
+  }
+  if (ROTATION_DET_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'reflect' };
+  }
+  if (UNIT_NORM_RE.test(q) || NORM_UNIT_RE.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'vec_norm' };
+  }
+  // Standard basis decomposition (a,b) = α·(1,0) + β·(0,1): α=a, β=b
+  const sbd = q.match(STD_BASIS_DECOMP_RE);
+  if (sbd) {
+    const expected = sbd[3].toLowerCase() === 'a' ? Number(sbd[1]) : Number(sbd[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'lin_indep' };
+  }
+  // Scalar from scaled: k·(a,b) = (c,d) → k = c/a (or d/b)
+  const scs = q.match(SCALAR_FROM_SCALED_RE);
+  if (scs) {
+    const a1 = Number(scs[2]), b1 = Number(scs[3]), c1 = Number(scs[4]), d1 = Number(scs[5]);
+    let expected = null;
+    if (a1 !== 0) expected = c1 / a1;
+    else if (b1 !== 0) expected = d1 / b1;
+    if (expected != null) {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'lin_indep' };
+    }
+  }
+  // Standard basis linear combination
+  const slc = q.match(STD_BASIS_LINCOMB_RE);
+  if (slc) {
+    const aa = Number(slc[1]), bb = Number(slc[2]);
+    const expected = slc[3] === '?' ? aa : bb;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'lin_indep' };
+  }
+  // General linear combination of 2 vectors
+  const lcG = q.match(LINCOMB_GEN_RE);
+  if (lcG) {
+    const c1 = Number(lcG[1]), v1x = Number(lcG[2]), v1y = Number(lcG[3]);
+    const c2 = Number(lcG[4]), v2x = Number(lcG[5]), v2y = Number(lcG[6]);
+    const X = c1 * v1x + c2 * v2x;
+    const Y = c1 * v1y + c2 * v2y;
+    const expected = lcG[7] === '?' ? X : Y;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'lin_indep' };
+  }
+  // Rank from matrix description
+  const rkk = q.match(RANK_RE);
+  if (rkk) {
+    // Parse rows separated by ';'
+    const rows = rkk[1].split(/\s*;\s*/).map(r => r.trim().split(/\s+/).map(Number));
+    const rank = rows.reduce((acc, row) => acc + (row.some(v => v !== 0) ? 1 : 0), 0);
+    // Crude rank: count non-zero rows (works for given matrices in row echelon form)
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === rank, computed: `${rank}`, kind: 'dim_r' };
+  }
+  // Base ortonormal constants
+  if (BASE_NORM_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'vec_norm' };
+  }
+  if (BASE_DOT_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'vec_dot' };
+  }
+  if (KER_INJ_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'dim_r' };
   }
   // Heron's evaluation
   const hrn = question.match(HERON_NUM_RE);
