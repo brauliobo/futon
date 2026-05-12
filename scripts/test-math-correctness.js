@@ -301,6 +301,20 @@ const CASES = [
   { q: 'Conjugado de 5 = ?', a: '5', type: 'algebra', want: true },
   { q: '(1+i)² = ?', a: '2i', type: 'algebra', want: true },
   { q: 'Polar de z=i: r=1; θ = ?°', a: '90', type: 'algebra', want: true },
+  // Identity completion, Taylor next-term, PA word, PG formula, Coef extraction
+  { q: '(a+b)² = a² + 2ab + ?', a: 'b²', type: 'algebra', want: true },
+  { q: '(a-b)² = ?', a: 'a²-2ab+b²', type: 'algebra', want: true },
+  { q: 'z · z̄ = ?', a: 'a² + b²', type: 'algebra', want: true },
+  { q: 'e^x = 1 + x + x²/2! + ? + ...', a: 'x³/3!', type: 'calculus', want: true },
+  { q: 'cos(x) = 1 - x²/2! + x⁴/4! - ? + ...', a: 'x⁶/6!', type: 'calculus', want: true },
+  { q: 'sen(x) = x - x³/3! + x⁵/5! - ? + ...', a: 'x⁷/7!', type: 'calculus', want: true },
+  { q: '1/(1-1) é definido? (não/sim)', a: 'não', type: 'calculus', want: true },
+  { q: 'e^0.1 ≈ 1 + 0.1 + 0.01/2 + ... primeiros 3 termos = ?', a: '1.105', type: 'calculus', want: true },
+  { q: 'Duas primeiras parcelas de sen(0.1) = 0.1 - 0.1³/6 ≈ ?', a: '0.0998', type: 'calculus', want: true },
+  { q: 'Degraus cresceram 2 cm cada degrau, iniciou em 15 cm — 10º degrau = ?', a: '33', type: 'sequence', want: true },
+  { q: 'a₁=1, q=0.5, S₁₀ = (0.5^10 - 1)/(0.5-1) ≈ ?', a: '1.998', type: 'sequence', want: true },
+  { q: 'Em (2+x)⁴, T₃ = C(4,2)·2²·x² = ? · x²', a: '24', type: 'algebra', want: true },
+  { q: 'Em (a+b)⁶, T₄ = C(6,3)·a³·b³ = 20·a³·b³. Coeficiente = ?', a: '20', type: 'algebra', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

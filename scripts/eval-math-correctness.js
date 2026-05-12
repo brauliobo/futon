@@ -612,6 +612,46 @@ const CIS_MUL_MAG_RE = /^\(\s*(\d+(?:\.\d+)?)\s*[·*]\s*cis\s*\(?\s*(-?\d+(?:\.\
 const CIS_DIV_MAG_RE = /^\(\s*(\d+(?:\.\d+)?)\s*[·*]\s*cis\s*\(?\s*(-?\d+(?:\.\d+)?)°?\s*\)?\s*\)\s*\/\s*\(\s*(\d+(?:\.\d+)?)\s*[·*]\s*cis\s*\(?\s*(-?\d+(?:\.\d+)?)°?\s*\)?\s*\)\s*=\s*\?\s*[·*]\s*cis\s*-?\d+(?:\.\d+)?°?/i;
 // 'Polar de z=N+i: θ = ?°' or 'Polar de z=N+i: r=√2; θ = ?°'
 const POLAR_THETA_NUM_RE = /^Polar\s+de\s+z\s*=\s*(-?\d+|√\d+)\s*([+\-])\s*(\d+|√\d+)?i\s*:\s*(?:r\s*=\s*[√\d]+\s*;\s*)?θ\s*=\s*\?°?\s*$/i;
+// Identity-completion (last term of binomial expansion): '(a+b)^N = ... + ?' → b^N
+const BINOM_LAST_TERM_RE = /^\(\s*a\s*([+\-])\s*b\s*\)\s*\^?(\d+)\s*=\s*[^?]*\+\s*\?\s*$/i;
+// '(a-b)² = ?' → a²-2ab+b² (full expansion as string)
+const SQUARE_BINOM_FULL_RE = /^\(\s*a\s*-\s*b\s*\)\s*\^?2\s*=\s*\?\s*$/i;
+// 'z · z̄ = ?' → a² + b² (string)
+const Z_CONJ_PROD_RE = /^z\s*[·*]\s*z̄\s*=\s*\??\s*$/i;
+// Series next term: 'F(x) = ... ± ? ± ...'
+// Specific known series patterns
+const SERIES_EX_RE = /^e\^x\s*=\s*1\s*\+\s*x\s*\+\s*x[²2^]+\/2!\s*\+\s*\?\s*\+\s*\.\.\.\s*$/i;
+const SERIES_SIN_RE = /^sin\(x\)\s*=\s*x\s*-\s*\?\s*\+\s*x[⁵5^]+\/5!\s*-\s*\.\.\.\s*$/i;
+const SERIES_SIN_NEXT_RE = /^sin\(x\)\s*=\s*x\s*-\s*x[³3^]+\/3!\s*\+\s*x[⁵5^]+\/5!\s*-\s*\?\s*\+\s*\.\.\.\s*$/i;
+const SERIES_COS_NEXT_RE = /^cos\(x\)\s*=\s*1\s*-\s*x[²2^]+\/2!\s*\+\s*x[⁴4^]+\/4!\s*-\s*\?\s*\+\s*\.\.\.\s*$/i;
+const SERIES_LN_NEXT_RE = /^log\(1\+x\)\s*=\s*x\s*-\s*x[²2^]+\/2\s*\+\s*x[³3^]+\/3\s*-\s*\?\s*\+\s*\.\.\.\s*$/i;
+const SERIES_GEO_NEXT_RE = /^1\/\(1-x\)\s*=\s*1\s*\+\s*x\s*\+\s*x[²2^]+\s*\+\s*\?\s*\+\s*\.\.\.\s*$/i;
+// '1/(1-1) é definido?' → não
+const ONE_OVER_ZERO_RE = /^1\/\(1-1\)\s+[ée]\s+definido\?/i;
+// 'Aproximação linear (1º grau) de f em 0: f(0) + f'(0)·?' → x
+const LINEAR_APPROX_RE = /^Aproxima[çc][ãa]o\s+linear[^:]+:\s*f\(0\)\s*\+\s*f\^?'\(0\)\s*[·*]\s*\?\s*$/i;
+// 'Coeficiente do termo xⁿ na Taylor: f^(n)(0)/?' → n!
+const TAYLOR_COEF_DENOM_RE = /^Coeficiente\s+do\s+termo\s+x(?:\^?n|ⁿ)\s+na\s+Taylor:\s*f\^?\(n\)\(0\)\/\?\s*$/i;
+// 'Duas primeiras parcelas de sen(0.1) = 0.1 - 0.1³/6 ≈ ?' — compute arithmetic
+const SEN_2PARCELS_RE = /Duas\s+primeiras\s+parcelas\s+de\s+sin\(([\d.]+)\)\s*=\s*([\d.]+)\s*-\s*([\d.]+)\^?(\d+)\/(\d+)\s*≈\s*\?/i;
+// 'e^N ≈ 1 + N + N²/2 + ... primeiros K termos = ?' — compute partial sum of e^x Taylor
+const E_X_PARTIAL_RE = /^e\^([\d.]+)\s*≈\s*[^=]+\s+primeiros\s+(\d+)\s+termos\s*=\s*\?\s*$/i;
+// 'cos(N) ≈ 1 - N²/2 + ... primeiros K termos = ?'
+const COS_X_PARTIAL_RE = /^cos\(([\d.]+)\)\s*≈\s*[^=]+\s+primeiros\s+(\d+)\s+termos\s*=\s*\?\s*$/i;
+// 'e^x em x=N (primeiros K termos) ≈ ?'
+const EX_AT_X_PARTIAL_RE = /^e\^x\s+em\s+x\s*=\s*([\d.]+)\s*\(primeiros\s+(\d+)\s+termos\)\s*≈\s*\?\s*$/i;
+// PG sum formula: 'a₁=A, q=Q, S_N = ... ≈ ?'
+const PG_S_FORMULA_RE = /^a1\s*=\s*(-?[\d.]+)\s*,\s*q\s*=\s*(-?[\d.]+)\s*,\s*S(\d+)\s*=\s*[^?]+[≈=]\s*\?\s*$/i;
+// 'Em (a+b)^n, Tk = ... = M·...^p·...^q. Coeficiente = ?' → M
+const TK_COEF_RE = /^Em\s+\([a-z]\s*\+\s*[a-z]\)\^?\d+\s*,\s*T\d+\s*=\s*[^=]+=\s*(\d+)/i;
+// 'Em (2+x)⁴, T₃ = C(4,2)·2²·x² = ? · x²' → C(4,2)·2² = 24
+const TK_FACTOR_RE = /^Em\s+\(\s*(\d+)\s*\+\s*x\s*\)\^?(\d+)\s*,\s*T(\d+)\s*=\s*C\(\s*\2\s*,\s*(\d+)\s*\)\s*[·*]\s*\1\^?(\d+)\s*[·*]\s*x\^?\d+\s*=\s*\?\s*[·*]\s*x\^?\d+/i;
+// PA word problems: 'Degraus cresceram R cm cada degrau, iniciou em A cm — Nº degrau = ?' → A + R·(N-1)
+const PA_STEPS_RE = /cresceram?\s+(\d+(?:\.\d+)?)\s+cm\s+cada\s+degrau\s*,\s*iniciou\s+em\s+(\d+(?:\.\d+)?)\s+cm\s*[—-]+\s*(\d+)[ºo]\s+degrau\s*=\s*\?/i;
+// 'Poupança — R$A, aumenta R$R/mês. No Nº mês = ?' → A + R·(N-1)
+const PA_SAVINGS_RE = /Poupan[çc]a[^—-]*[—-]+\s*R\$\s*(\d+(?:\.\d+)?)\s*,\s*aumenta\s+R\$\s*(\d+(?:\.\d+)?)\/m[êe]s\.\s+No\s+(\d+)[ºo]\s+m[êe]s\s*=\s*\?/i;
+// 'Linha 0 do Triângulo: (1 1/1)' → 1 (constant)
+const PASCAL_LINE_0_RE = /^Linha\s+0\s+do\s+Tri[âa]ngulo:\s*\(/i;
 // Right triangle with two of {CO=opposite, CA=adjacent, H=hypotenuse}
 const RIGHT_TRI_CO_CA_H_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*H\s*=\s*\??\s*$/i;
 const RIGHT_TRI_CO_CA_TG_RE = /^em\s+tri[âa]ngulo\s+ret[âa]ngulo\s+CO\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CA\s*=\s*(\d+(?:\.\d+)?)\s*,\s*tg\s+θ.*?=\s*\??\s*$/i;
@@ -3843,6 +3883,159 @@ function verify(question, answer, type) {
     const expected = -Number(cinvEmb[1]);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: matchDeg(an, ((expected % 360) + 360) % 360) || Math.abs(an - expected) < 1e-2, computed: `${expected}°`, kind: 'complex_arg' };
+  }
+  // (a+b)^N = ... + ? → b^N (string)
+  const blt = q.match(BINOM_LAST_TERM_RE);
+  if (blt) {
+    const N = Number(blt[2]);
+    const expected = N === 1 ? 'b' : `b^${N}`;
+    const ansClean = String(a).trim().replace(/\s+/g, '').replace(/²/g, '^2').replace(/³/g, '^3').replace(/⁴/g, '^4').replace(/⁵/g, '^5').replace(/⁶/g, '^6');
+    return { ok: ansClean === expected, computed: expected, kind: 'identity_symbolic' };
+  }
+  // (a-b)² = a²-2ab+b² (string, hyphen variants)
+  if (SQUARE_BINOM_FULL_RE.test(q)) {
+    const ans = String(a).trim().replace(/\s+/g, '').replace(/²/g, '^2');
+    const ok = ans === 'a^2-2ab+b^2';
+    return { ok, computed: 'a²-2ab+b²', kind: 'identity_symbolic' };
+  }
+  // z · z̄ = a² + b²
+  if (Z_CONJ_PROD_RE.test(q)) {
+    const ans = String(a).trim().replace(/\s+/g, '').replace(/²/g, '^2');
+    const ok = ans === 'a^2+b^2';
+    return { ok, computed: 'a²+b²', kind: 'identity_symbolic' };
+  }
+  // Taylor series next-term completion
+  if (SERIES_EX_RE.test(q)) {
+    const ans = String(a).trim().replace(/\s+/g, '').replace(/³/g, '^3');
+    return { ok: ans === 'x^3/3!', computed: 'x³/3!', kind: 'identity_symbolic' };
+  }
+  if (SERIES_SIN_RE.test(q)) {
+    const ans = String(a).trim().replace(/\s+/g, '').replace(/³/g, '^3');
+    return { ok: ans === 'x^3/3!', computed: 'x³/3!', kind: 'identity_symbolic' };
+  }
+  if (SERIES_SIN_NEXT_RE.test(q)) {
+    const ans = String(a).trim().replace(/\s+/g, '').replace(/⁷/g, '^7');
+    return { ok: ans === 'x^7/7!', computed: 'x⁷/7!', kind: 'identity_symbolic' };
+  }
+  if (SERIES_COS_NEXT_RE.test(q)) {
+    const ans = String(a).trim().replace(/\s+/g, '').replace(/⁶/g, '^6');
+    return { ok: ans === 'x^6/6!', computed: 'x⁶/6!', kind: 'identity_symbolic' };
+  }
+  if (SERIES_LN_NEXT_RE.test(q)) {
+    const ans = String(a).trim().replace(/\s+/g, '').replace(/⁴/g, '^4');
+    return { ok: ans === 'x^4/4', computed: 'x⁴/4', kind: 'identity_symbolic' };
+  }
+  if (SERIES_GEO_NEXT_RE.test(q)) {
+    const ans = String(a).trim().replace(/\s+/g, '').replace(/³/g, '^3');
+    return { ok: ans === 'x^3' || ans === 'x³', computed: 'x³', kind: 'identity_symbolic' };
+  }
+  // 1/(1-1) é definido? → não
+  if (ONE_OVER_ZERO_RE.test(q)) {
+    return { ok: String(a).trim().toLowerCase() === 'não' || String(a).trim().toLowerCase() === 'nao', computed: 'não', kind: 'identity_symbolic' };
+  }
+  // Aproximação linear: f(0) + f'(0)·? → x
+  if (LINEAR_APPROX_RE.test(q)) {
+    return { ok: String(a).trim().toLowerCase() === 'x', computed: 'x', kind: 'identity_symbolic' };
+  }
+  // Taylor coef denominator → n!
+  if (TAYLOR_COEF_DENOM_RE.test(q)) {
+    const ans = String(a).trim().replace(/\s+/g, '');
+    return { ok: ans === 'n!', computed: 'n!', kind: 'identity_symbolic' };
+  }
+  // Duas primeiras parcelas de sen(N) = N - N³/6 → N - N³/6
+  const s2p = q.match(SEN_2PARCELS_RE);
+  if (s2p) {
+    const N1 = Number(s2p[2]), N2 = Number(s2p[3]), p = Number(s2p[4]), d = Number(s2p[5]);
+    const expected = N1 - Math.pow(N2, p) / d;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-3, computed: `${expected}`, kind: 'expression' };
+  }
+  // e^N partial Taylor sum (first K terms)
+  const exP = q.match(E_X_PARTIAL_RE);
+  if (exP) {
+    const N = Number(exP[1]), K = Number(exP[2]);
+    let expected = 0, fact = 1;
+    for (let i = 0; i < K; i++) {
+      if (i > 0) fact *= i;
+      expected += Math.pow(N, i) / fact;
+    }
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'expression' };
+  }
+  // cos(N) partial Taylor (first K terms)
+  const cosP = q.match(COS_X_PARTIAL_RE);
+  if (cosP) {
+    const N = Number(cosP[1]), K = Number(cosP[2]);
+    let expected = 0, fact = 1, sign = 1;
+    for (let i = 0; i < K; i++) {
+      const exp2 = 2 * i;
+      if (exp2 > 0) for (let j = 1; j <= exp2; j++) fact = (i === 0 || j > 2 * (i - 1)) ? fact * j : fact;
+      // Simpler: recompute fact each time
+    }
+    fact = 1;
+    expected = 0;
+    for (let i = 0; i < K; i++) {
+      let f = 1; for (let j = 2; j <= 2 * i; j++) f *= j;
+      expected += ((i % 2 === 0) ? 1 : -1) * Math.pow(N, 2 * i) / f;
+    }
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'expression' };
+  }
+  // e^x at x=N partial sum
+  const exAt = q.match(EX_AT_X_PARTIAL_RE);
+  if (exAt) {
+    const N = Number(exAt[1]), K = Number(exAt[2]);
+    let expected = 0, fact = 1;
+    for (let i = 0; i < K; i++) {
+      if (i > 0) fact *= i;
+      expected += Math.pow(N, i) / fact;
+    }
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'expression' };
+  }
+  // PG sum formula
+  const pgs = q.match(PG_S_FORMULA_RE);
+  if (pgs) {
+    const a1 = Number(pgs[1]), qv = Number(pgs[2]), N = Number(pgs[3]);
+    if (N > 0) {
+      const expected = Math.abs(qv - 1) < 1e-9 ? N * a1 : a1 * (Math.pow(qv, N) - 1) / (qv - 1);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'gp_term' };
+    }
+  }
+  // PA word problems: step/savings growing arithmetic
+  const pas = question.match(PA_STEPS_RE);
+  if (pas) {
+    const expected = Number(pas[2]) + Number(pas[1]) * (Number(pas[3]) - 1);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'ap_term' };
+  }
+  const pav = question.match(PA_SAVINGS_RE);
+  if (pav) {
+    const expected = Number(pav[1]) + Number(pav[2]) * (Number(pav[3]) - 1);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'ap_term' };
+  }
+  // 'Em (a+b)^n, T_k = ... = M·...^p·...^q. Coeficiente = ?' → M (extract the number after '=')
+  const tkc = q.match(TK_COEF_RE);
+  if (tkc) {
+    const expected = Number(tkc[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'binomial_coef' };
+  }
+  // 'Em (c+x)^n, T_k = C(n,k)·c^p·x^q = ? · x^q' → C(n,k)·c^p
+  const tkf = q.match(TK_FACTOR_RE);
+  if (tkf) {
+    const c = Number(tkf[1]), N = Number(tkf[2]), K = Number(tkf[4]), p = Number(tkf[5]);
+    const f = (m) => { let r = 1; for (let i = 2; i <= m; i++) r *= i; return r; };
+    const expected = f(N) / (f(K) * f(N - K)) * Math.pow(c, p);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'binomial_coef' };
+  }
+  // Linha 0 do Triângulo: (1 1/1) → 1
+  if (PASCAL_LINE_0_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'combine' };
   }
   // Calculus-type pure-arithmetic series sums: '<arith> ≈ ?' / '<arith> = ?'.
   if (type === 'calculus') {
