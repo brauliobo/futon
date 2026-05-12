@@ -1161,7 +1161,25 @@ const E_APPROX_VF_RE = /^e\s*≈\s*2\.71828\s*\(V\/F\)\?\s*$/i;
 const TAYLOR_FORMULA_VF_RE = /^f\(x\)\s*=\s*f\(0\)\s*\+\s*f\^?'\(0\)x\s*\+\s*f\^?''?\(0\)x²?\/2!\s*\+\s*\.\.\.\s*\(V\/F\)\?\s*$/i;
 const SUM_EXP_CONVERGES_RE = /^Σ\s*x[ⁿn]\s*\/\s*n!\s+converge\s+para\s+todo\s+x\?/i;
 // Series convergence V/F
-const SERIES_VF_RE = /^Σ\s*([\s\S]+?)\s+(converge|diverge)[^(]*\(V\/F\)\?\s*$/i;
+const SERIES_VF_RE = /^Σ\s*([\s\S]+?)\s+(converge|diverge)[\s\S]*?\(V\/F\)\?\s*$/i;
+// Σ <expr> converge? (sim/não) or (não/sim) — answer is sim if converges
+const SERIES_SIM_RE = /^Σ\s*([\s\S]+?)\s+converge\?\s*\((?:sim\/n[ãa]o|n[ãa]o\/sim)\)\s*$/i;
+// 'Se aₙ → V, Σaₙ: (diverge/converge)' — if V ≠ 0, diverges
+const NTH_TEST_RE = /^Se\s+a[ₙn]\s*→\s*(-?\d+(?:\.\d+)?)\s*,\s*Σa[ₙn]:\s*\(diverge\/converge\)\s*$/i;
+// 'Se aₙ → 0, série SEMPRE converge (V/F)?' → F (necessary but not sufficient)
+const NTH_TEST_FALSE_RE = /^Se\s+a[ₙn]\s*→\s*0\s*,\s*s[ée]rie\s+SEMPRE\s+converge\s*\(V\/F\)\?\s*$/i;
+// 'Ex.: Σ 1/n diverge apesar de 1/n→0 (V/F)?' → V (counterexample to nth-term)
+const HARMONIC_COUNTER_RE = /^Ex\.:\s*Σ\s*1\/n\s+diverge\s+apesar\s+de[\s\S]+\(V\/F\)\?\s*$/i;
+// 'Σ 1/n! converge — fatorial cresce (mais rápido/mais devagar)?' → mais rápido
+const FACTORIAL_GROWS_RE = /^Σ\s*1\/n!\s+converge\s+[—-]+\s+fatorial\s+cresce\s+\(/i;
+// 'Se C=90°, a lei vira: (lei dos senos/Pitágoras)' → Pitágoras
+const C90_LAW_RE = /^Se\s+C\s*=\s*90°\s*,\s*a\s+lei[\s\S]*vira:\s*\(/i;
+// 'Vale em qualquer triângulo (V/F)?' → V (laws of sines/cosines apply universally)
+const VALID_ANY_TRI_RE = /^Vale\s+em\s+qualquer\s+tri[âa]ngulo\s*\(V\/F\)\?\s*$/i;
+// 'Se sen(B)<1 e A<B, há 2 triângulos (V/F)?' / 'Se o ângulo é obtuso, só há caso único (V/F)?' → V
+const SSA_FACTS_RE = /^Se\s+(?:sen\(B\)\s*<\s*1\s+e\s+A\s*<\s*B\s*,\s*h[áa]\s+2\s+tri[âa]ngulos|o\s+[âa]ngulo\s+[ée]\s+obtuso\s*,\s*s[óo]\s+h[áa]\s+caso\s+[úu]nico)\s*\(V\/F\)\?\s*$/i;
+// More SIM facts
+const SIM_FACT2_RE = /^Vale\s+em\s+qualquer\s+tri[âa]ngulo\?\s*\((?:sim\/n[ãa]o|n[ãa]o\/sim)\)\s*$/i;
 const SERIES_VERB_RE = /^Σ\s*([\s\S]+?):\s*\((converge|diverge)\/(?:diverge|converge)\)\s*$/i;
 // Trig identity V/F: '(sen|cos|tan)(N°) = <expr> (V/F)?'
 const TRIG_IDENT_VF_RE = /^(sen|sin|cos|tan)\(?\s*(\d+(?:\.\d+)?)°\)?\s*=\s*(.+?)\s*\(V\/F\)\?\s*$/i;
@@ -6791,8 +6809,48 @@ function verify(question, answer, type) {
     return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'identity_vf' };
   }
   // Known yes/no truth → sim
-  if (SIM_FACT_RE.test(question)) {
+  if (SIM_FACT_RE.test(question) || SIM_FACT2_RE.test(question)) {
     return { ok: String(answer).trim().toLowerCase() === 'sim', computed: 'sim', kind: 'identity_vf' };
+  }
+  // Σ <expr> converge? (sim/não) — sim if converges
+  const ssM = question.match(SERIES_SIM_RE);
+  if (ssM) {
+    const conv = seriesConverges(ssM[1]);
+    if (conv !== null) {
+      const expected = conv ? 'sim' : 'não';
+      return { ok: String(answer).trim().toLowerCase() === expected, computed: expected, kind: 'pg_converge' };
+    }
+  }
+  // nth-term test: aₙ → c ≠ 0 → Σ diverges
+  const ntt = q.match(NTH_TEST_RE);
+  if (ntt) {
+    const limit = Number(ntt[1]);
+    const expected = limit === 0 ? 'converge' : 'diverge';
+    return { ok: String(answer).trim().toLowerCase() === expected, computed: expected, kind: 'pg_converge' };
+  }
+  // 'Se aₙ → 0, série SEMPRE converge (V/F)?' → F
+  if (NTH_TEST_FALSE_RE.test(q)) {
+    return { ok: String(answer).trim().toUpperCase() === 'F', computed: 'F', kind: 'identity_vf' };
+  }
+  // 'Ex.: Σ 1/n diverge apesar de 1/n→0 (V/F)?' → V
+  if (HARMONIC_COUNTER_RE.test(question)) {
+    return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'identity_vf' };
+  }
+  // 'Σ 1/n! converge — fatorial cresce (mais rápido/mais devagar)?' → mais rápido
+  if (FACTORIAL_GROWS_RE.test(question)) {
+    return { ok: String(answer).trim().toLowerCase() === 'mais rápido', computed: 'mais rápido', kind: 'identity_vf' };
+  }
+  // 'Se C=90°, a lei vira: (lei dos senos/Pitágoras)' → Pitágoras
+  if (C90_LAW_RE.test(question)) {
+    return { ok: String(answer).trim().toLowerCase() === 'pitágoras', computed: 'Pitágoras', kind: 'identity_vf' };
+  }
+  // 'Vale em qualquer triângulo (V/F)?' → V
+  if (VALID_ANY_TRI_RE.test(question)) {
+    return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'identity_vf' };
+  }
+  // SSA edge cases → V
+  if (SSA_FACTS_RE.test(question)) {
+    return { ok: String(answer).trim().toUpperCase() === 'V', computed: 'V', kind: 'identity_vf' };
   }
   // cos(x/2) acute from cos(x) — literal: √((1+V)/2)
   const cha = question.match(COS_HALF_AGUDO_RE);
