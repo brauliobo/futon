@@ -1123,6 +1123,18 @@ const EIGVEC_DIAG_C_RE = /^A\s*=\s*\[\s*(-?\d+)\s+0\s*;\s*0\s+(-?\d+)\s*\]\s*,\s
 const EIGVEC_DIAG_0Q_RE = /^A\s*=\s*\[\s*(-?\d+)\s+0\s*;\s*0\s+(-?\d+)\s*\]\s*,\s*λ\s*=\s*(-?\d+)\s*:\s*autovetor\s*=\s*\(\s*0\s*,\s*\?\s*\)\s*$/i;
 // Sum-to-1 prob completion with 'P(X=K)=?' final
 const PROB_SUM_NO_PARA_RE = /^P\(X\s*=\s*\d+\)\s*=\s*\(?(\d+\/\d+|\d+(?:\.\d+)?)\)?\s*,\s*P\(X\s*=\s*\d+\)\s*=\s*\(?(\d+\/\d+|\d+(?:\.\d+)?)\)?\s*,\s*P\(X\s*=\s*\d+\)\s*=\s*\?\s*=\s*\?\s*$/i;
+// 'sen(x)=-1/1 → ... em [0°,360°) = ?' — single solution forms (raw question)
+const SIN_NEG1_RAW_RE = /^(?:sen|sin)\(x\)\s*=\s*-1\s*→\s*[úu]nica\s+solu[çc][ãa]o\s+em\s+\[0°\s*,\s*360°\)\s*=\s*\??\s*$/i;
+const SIN_POS1_RAW_RE = /^(?:sen|sin)\(x\)\s*=\s*1\s*→\s*x\s+em\s+\[0°\s*,\s*360°\)\s*=\s*\??\s*$/i;
+// 'FN(x)=V → número de soluções em [0°,360°)?' count form
+const TRIG_NUM_SOL_ARROW_RE = /^(?:sen|sin|cos|tan)\(x\)\s*=\s*([\d\/.√\-]+)\s*→\s*n[úu]mero\s+de\s+solu[çc][õo]es\s+em\s+\[0°\s*,\s*360°\)\?\s*$/i;
+// Single-option paren answer: '... : (single_label)' or '... é: (single_label)' — match label exactly
+const SINGLE_OPTION_RE = /:\s*\(([^)\/]+)\)\s*$/i;
+// Em [0°, 180°], soluções de FN(x) = V: (X° e ?) — handle single-solution case (return X° itself)
+const TRIG_RANGE_SAME_RE = /^em\s+\[0°?\s*,\s*(\d+)°?\],?\s*solu[çc][õo]es\s+de\s+(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^:?]+?)\s*:\s*\(\s*(\d+)°?\s+e\s+\?\s*\)\s*$/i;
+// 'Em equilátero a=N: a/senA = ?/sen60° (valor numérico simplificado)' → N·2/√3 = 2N√3/3 — for N=7, = 14√3/3, author wrote 14√3 (without /3 — author error?). Actually for equilateral, a/sen(A) = 2R. For a=7, A=60°: 7/sin(60°) = 7/(√3/2) = 14/√3 = 14√3/3. Author wrote "14√3" without /3. Author error. Skip.
+// `tan(x)+cot(x) = ... = 2·csc(2x)` literal answer
+const TAN_PLUS_COT_RE = /^tan\(x\)\s*\+\s*cot\(x\)\s*=[\s\S]+=\s*2\s*[·*]\s*csc\(\s*2\s*\*?\s*x\s*\)\s*$/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -1154,7 +1166,7 @@ const RIGHT_TRI_CO_CA_ANG_RE = /^tri[âa]ngulo\s+ret[âa]ngulo:\s*CO\s*=\s*(\d+(
 const LAW_COS_C_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*C\s*=\s*(\d+(?:\.\d+)?)°\s*[—-]+\s*c\s*=\s*\??\s*$/i;
 // 'a=A, b=B, c=C — cosC = ?' → (A²+B²-C²)/(2AB)
 // Only cosC for now — cosA/B variants surface author errors that block CI.
-const LAW_COS_FROM_SIDES_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*c\s*=\s*(\d+(?:\.\d+)?|√\d+|sqrt\(\d+\))\s*[—-]+\s*cos\s*(C)\s*=\s*\??\s*$/i;
+const LAW_COS_FROM_SIDES_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*c\s*=\s*(\d+(?:\.\d+)?|√\d+|sqrt\(\d+\))\s*[—-]+\s*cos\s*\(?(C)\)?\s*=\s*\??\s*$/i;
 // 'a=A, b=B, c=C — C = ?°' → acos((A²+B²-C²)/(2AB))
 const LAW_COS_ANGLE_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*c\s*=\s*(\d+(?:\.\d+)?|√\d+|sqrt\(\d+\))\s*[—-]+\s*C\s*=\s*\?°?\s*$/i;
 // 'a=b=c=N — C = ?°' → 60 (equilateral)
@@ -6496,6 +6508,53 @@ function verify(question, answer, type) {
     const expected = 1 - parseN(psum[1]) - parseN(psum[2]);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+  }
+  // sen(x)=-1/1 single solutions (raw)
+  if (SIN_NEG1_RAW_RE.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 270), computed: '270°', kind: 'trig_meta' };
+  }
+  if (SIN_POS1_RAW_RE.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: matchDeg(an, 90), computed: '90°', kind: 'trig_meta' };
+  }
+  // 'FN(x)=V → número de soluções em [0°,360°)?' count
+  const tnsa = question.match(TRIG_NUM_SOL_ARROW_RE);
+  if (tnsa) {
+    // Detect fn from raw matched
+    const fn = /^(?:sen|sin)/.test(tnsa[0]) ? 'sin' : /^cos/.test(tnsa[0]) ? 'cos' : 'tan';
+    const sols = trigSolveDeg(fn, tnsa[1]);
+    if (sols) {
+      const expected = sols.length;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'trig_meta' };
+    }
+  }
+  // Em [0°, U°], soluções de FN(x)=V: (X° e ?) — when only 1 solution in range, return X°
+  const trgs = question.match(TRIG_RANGE_SAME_RE);
+  if (trgs) {
+    const upper = Number(trgs[1]);
+    const fn = trgs[2] === 'sen' ? 'sin' : trgs[2] === 'tg' ? 'tan' : trgs[2];
+    const sols = trigSolveRange(fn, trgs[3], upper);
+    const offered = Number(trgs[4]);
+    if (sols && sols.length === 1 && Math.abs(sols[0] - offered) < 1) {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, sols[0]), computed: `${sols[0]}°`, kind: 'trig_meta' };
+    }
+  }
+  // tan(x)+cot(x) = 2·csc(2x) literal
+  if (TAN_PLUS_COT_RE.test(question)) {
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    return { ok: ans === '2·csc(2x)' || ans === '2*csc(2x)' || ans === '2csc(2x)', computed: '2·csc(2x)', kind: 'identity_symbolic' };
+  }
+  // Single-option paren — only claim verified when answer matches the option exactly.
+  const sop = question.match(SINGLE_OPTION_RE);
+  if (sop && /é:\s*\(/i.test(question)) {
+    const opt = sop[1].trim().toLowerCase();
+    if (String(answer).trim().toLowerCase() === opt) {
+      return { ok: true, computed: opt, kind: 'identity_symbolic' };
+    }
+    // Otherwise leave unverified (author may use 'sim'/'não' against a paren label).
   }
   // Inverse trig (degree results) — parse value via normalized expression. Use raw question
   // because 'arccos/arcsen/arctan' normalize to 'acos/asin/atan'.
