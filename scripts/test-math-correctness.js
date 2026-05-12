@@ -494,6 +494,23 @@ const CASES = [
   { q: 'T(1,0) seguida de reflexão eixo y de (2,3): x\' = ?', a: '-3', type: 'geometry', want: true },
   { q: '(7+2i) - (3+5i) = ? + ?i', a: '4 - 3i', type: 'algebra', want: true },
   { q: '[1 2]·[3 4]ᵀ (1×2 vezes 2×1) = ?', a: '11', type: 'algebra', want: true },
+  // ⊥ dot product, other_leg, plain law cos, line y-at-x, tri area SAS, transformations, KER, set LD, cos shift, half-val, sen numerator, complement, Bayes long, indep com, sum-to-product
+  { q: '(2,3)⊥(-3,2)? u·v = ?', a: '0', type: 'geometry', want: true },
+  { q: 'Triângulo retângulo H=13, CO=5: CA = ?', a: '12', type: 'geometry', want: true },
+  { q: 'a=6, b=8, C=90°: c = ?', a: '10', type: 'geometry', want: true },
+  { q: 'Reta por (0,3) com m=-2: y em x=2 = ?', a: '-1', type: 'geometry', want: true },
+  { q: 'Área do triângulo a=5, b=6, C=30° = ?', a: '7.5', type: 'geometry', want: true },
+  { q: 'Rotação 180° = R90°∘R90°: T(1,0) = (-1, ?)', a: '0', type: 'geometry', want: true },
+  { q: 'T de homotetia k=4: T(2,3) — x-comp = ?', a: '8', type: 'geometry', want: true },
+  { q: 'T de reflexão em eixo x: T(0,1) = (0,?)', a: '-1', type: 'geometry', want: true },
+  { q: '{(1,0),(0,1),(1,1)}: conjunto de 3 vetores em R² é L.D.? (1=sim)', a: '1', type: 'geometry', want: true },
+  { q: 'cos(90°+x) = ?', a: '-sen(x)', type: 'trigonometry', want: true },
+  { q: 'cos(a+b)·cos(a-b) = cos²(a) - ?', a: 'sen²(b)', type: 'trigonometry', want: true },
+  { q: 'Se x=60°, x/2=30°. sen(30°) = ?', a: '1/2', type: 'trigonometry', want: true },
+  { q: 'sen 45° = ?√2 (numerador)', a: '1', type: 'trigonometry', want: true },
+  { q: 'P(A) = 0.4, P(Ā) = ?', a: '0.6', type: 'mental_math', want: true },
+  { q: 'Ao integrar cos(5x)cos(x), converta em soma: (cos 6x + cos ?)/2', a: '4x', type: 'trigonometry', want: true },
+  { q: 'Ao integrar sen(3x)cos(2x), converta em soma: (sen 5x + sen ?)/2', a: 'x', type: 'trigonometry', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

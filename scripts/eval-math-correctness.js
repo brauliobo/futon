@@ -1005,6 +1005,50 @@ const T_THEN_REFY_RE = /^T\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s+
 const COMPLEX_SUB_FULL_RE = /^\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*-\s*\(\s*(-?\d+)\s*([+\-])\s*(\d*)i\s*\)\s*=\s*\?\s*\+\s*\?i\s*$/i;
 // '[1 2]·[3 4]ᵀ (1×2 vezes 2×1) = ?' → dot product of row vectors
 const ROW_VEC_DOT_RE = /^\[\s*(-?\d+)\s+(-?\d+)\s*\]\s*[·*]\s*\[\s*(-?\d+)\s+(-?\d+)\s*\]ᵀ/i;
+// '(a,b)⊥(c,d)? u·v = ?' → 0 always when perpendicular (the question asserts perpendicularity)
+const PERP_DOT_RE = /^\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*⊥\s*\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\?\s+u\s*[·*]\s*v\s*=\s*\??\s*$/i;
+// Right triangle other leg: 'Triângulo retângulo H=N, CO=M: CA = ?' → √(N²-M²)
+const RT_OTHER_LEG_RE = /^Tri[âa]ngulo\s+ret[âa]ngulo\s+H\s*=\s*(\d+(?:\.\d+)?)\s*,\s*CO\s*=\s*(\d+(?:\.\d+)?)\s*:\s*CA\s*=\s*\??\s*$/i;
+// 'a=A, b=B, C=θ°: c = ?' (no 'Com' prefix)
+const LAW_COS_PLAIN_C_RE = /^a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*C\s*=\s*(\d+(?:\.\d+)?)°\s*:\s*c\s*=\s*\??\s*$/i;
+// 'Reta por (x0,y0) com m=M: y em x=N = ?' → y0 + m·(N-x0)
+const LINE_Y_AT_X_RE = /^Reta\s+por\s+\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s+com\s+m\s*=\s*(-?\d+(?:\.\d+)?)\s*:\s*y\s+em\s+x\s*=\s*(-?\d+(?:\.\d+)?)\s*=\s*\??\s*$/i;
+// Triangle area: a=A, b=B, C=θ° = ?
+const TRI_AREA_SAS_PLAIN_RE = /^[áa]rea\s+do\s+tri[âa]ngulo\s+a\s*=\s*(\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(\d+(?:\.\d+)?)\s*,\s*C\s*=\s*(\d+(?:\.\d+)?)°\s*=\s*\??\s*$/i;
+// Aⁿ for diagonal: A=[a 0; 0 b], n=K: Aⁿ[i,i] = (a or b)^K
+const A_POW_DIAG_RE = /^A\^?n\s*=\s*P\s*[·*]\s*D\^?n\s*[·*]\s*P⁻¹\s*;\s*A\s*=\s*\[\s*(-?\d+)\s+0\s*;\s*0\s+(-?\d+)\s*\]\s*,\s*n\s*=\s*(\d+)\s*:\s*A\^?\3?\^?(?:²|2|\d)?\s*\[\s*(\d)\s*,\s*(\d)\s*\]\s*=\s*\??\s*$/i;
+// 'Rotação 180° = R90°∘R90°: T(a,b) = (c, ?)' — partial
+const ROT_180_PARTIAL_RE = /^Rota[çc][ãa]o\s+180°\s*=\s*R90°∘R90°\s*:\s*T\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s*=\s*\(\s*(-?\d+(?:\.\d+)?)\s*,\s*\?\s*\)\s*$/i;
+// 'T de homotetia k=K: T(a,b) — x/y-comp = ?'
+const T_HOM_RE = /^T\s+de\s+homotetia\s+k\s*=\s*(-?\d+(?:\.\d+)?)\s*:\s*T\((-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*[—-]+\s*([xy])-comp\s*=\s*\??\s*$/i;
+// 'T de reflexão em eixo X: T(0,1) = (0,?)' / similar
+const T_REFL_AXIS_RE = /^T\s+de\s+reflex[ãa]o\s+em\s+eixo\s+([xy])\s*:\s*T\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*=\s*\(\s*(-?\d+(?:\.\d+)?)\s*,\s*\?\s*\)\s*$/i;
+// 'T de rotação 90°: [T] = [...]. T(a,b) = (c, ?)' — assume rotation rules: T(1,0) → (0, 1), T(0,1) → (-1, 0)
+const T_ROT90_PARTIAL_RE = /^T\s+de\s+rota[çc][ãa]o\s+90°\s*:\s*\[T\]\s*=\s*\[[^\]]+\]\s*\.\s*T\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\)\s*=\s*\(\s*(-?\d+(?:\.\d+)?)\s*,\s*\?\s*\)\s*$/i;
+// 'T(x,y)=(x,0): ker contém (0,c)?' → 1 (yes, ker = (0,y))
+const KER_CONTAINS_RE = /^T\(x\s*,\s*y\)\s*=\s*\(x\s*,\s*0\)\s*:\s*ker\s+cont[ée]m\s+\(0\s*,\s*c\)\?/i;
+// '{(...),(...),...}: conjunto de N vetores em R² é L.D.?' → 1 if N > 2
+const SET_LD_RE = /^\{[^}]+\}:\s+conjunto\s+de\s+(\d+)\s+vetores\s+em\s+R\^?[²2]\s+[ée]\s+L\.?D\.?/i;
+// 'cos(N°+x) = ?' / 'cos(N°-x) = ?' literal answers
+const COS_SHIFT_RE = /^cos\(\s*(\d+)°\s*([+\-])\s*x\s*\)\s*=\s*\??\s*$/i;
+// 'cos(a+b)·cos(a-b) = cos²(a) - ?' → 'sen²(b)' (literal)
+const COS_PRODUCT_DIFF_RE = /^cos\(a\s*\+\s*b\)\s*[·*]\s*cos\(a\s*-\s*b\)\s*=\s*cos\(a\)\^?2\s*-\s*\?\s*$/i;
+// 'Se x=N°, x/2=M°. sen(M°) = ?' / cos(M°) = ?
+const HALF_VAL_RE = /^Se\s+x\s*=\s*(\d+)°\s*,\s*x\/2\s*=\s*(\d+)°\s*\.\s*(sen|sin|cos|tan)\((\d+)°\)\s*=\s*\??\s*$/i;
+// 'sen N° = ?√M (numerador)' — numerator of √M coefficient. For sen 45° = √2/2, the coefficient over √2 is 1/2, numerator = 1.
+const SEN_NUMERATOR_RE = /^(sen|sin|cos)\s+(\d+)°\s*=\s*\?√(\d+)\s*\(numerador(?:\s+inteiro)?\)\s*$/i;
+// 'P(A) = N, P(Ā) = ?' alternate form
+const COMPLEMENT_ALT_RE = /^P\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(Ā\)\s*=\s*\??\s*$/i;
+// 'P(A|B) = P(A∩B)/P(B); P(A∩B)=X, P(B)=Y → P(A|B) = ?' (already partially covered)
+const COND_PROB_LONG_RE = /^P\(A\|B\)\s*=\s*P\(A∩B\)\/P\(B\)\s*;\s*P\(A∩B\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(B\)\s*=\s*(\d+(?:\.\d+)?)\s*→\s*P\(A\|B\)\s*=\s*\??\s*$/i;
+// 'A e B independentes com P(A)=X, P(B)=Y → P(A∩B) = ?' → X·Y
+const INDEP_PROB_COM_RE = /^A\s+e\s+B\s+independentes\s+com\s+P\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*,\s*P\(B\)\s*=\s*(\d+(?:\.\d+)?)\s*→\s*P\(A∩B\)\s*=\s*\??\s*$/i;
+// Bin(n, p) with → arrow form
+const BIN_ARROW_RE = /^Bin\(\s*(\d+)\s*,\s*(\d+(?:\.\d+)?)\s*\)\s*→\s*([^?]+?)\s*=\s*(?:[^?]+?\s*=\s*)?\??\s*$/i;
+// 'Trig integration sum-to-product helpers'
+const TRIG_INT_CC_RE = /^Ao\s+integrar\s+cos\(\s*(\d+)\s*\*?\s*x\)\s*cos\(\s*(\d+)?\s*\*?\s*x\)\s*,\s*converta\s+em\s+soma:\s*\(cos\s+(\d+)\s*\*?\s*x\s*\+\s*cos\s+\?\s*\)\/2\s*$/i;
+const TRIG_INT_SC_RE = /^Ao\s+integrar\s+sen\(\s*(\d+)\s*\*?\s*x\)\s*cos\(\s*(\d+)\s*\*?\s*x\)\s*,\s*converta\s+em\s+soma:\s*\(sen\s+(\d+)\s*\*?\s*x\s*\+\s*sen\s+\?\s*\)\/2\s*$/i;
+const TRIG_INT_SS_RE = /^Ao\s+integrar\s+sen\(\s*(\d+)\s*\*?\s*x\)\s*sen\(\s*(\d+)?\s*\*?\s*x\)\s*:\s*\(cos\s+\?\s*-\s*cos\s+(\d+)\s*\*?\s*x\)\/2\s*$/i;
 // '[T][i,j] for general transformation' — already partial; add T-from-coords pattern when matrix is implicit
 // '||( 1/√2, 1/√2 )|| = ?' → 1
 const NORM_UNIT_RE = /^\|\|\(\s*1\/√2\s*,\s*1\/√2\s*\)\|\|\s*=\s*\??\s*$/i;
@@ -5865,6 +5909,222 @@ function verify(question, answer, type) {
     const expected = Number(rvd[1]) * Number(rvd[3]) + Number(rvd[2]) * Number(rvd[4]);
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'mat_op' };
+  }
+  // ⊥ dot product = 0
+  if (PERP_DOT_RE.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 0, computed: '0', kind: 'vec_dot' };
+  }
+  // Right triangle other leg
+  const rtol = q.match(RT_OTHER_LEG_RE);
+  if (rtol) {
+    const H = Number(rtol[1]), CO = Number(rtol[2]);
+    if (H >= CO) {
+      const expected = Math.sqrt(H * H - CO * CO);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'other_leg' };
+    }
+  }
+  // Law of cosines (plain colon form, no Com prefix)
+  const lcP = question.match(LAW_COS_PLAIN_C_RE);
+  if (lcP) {
+    const A = Number(lcP[1]), B = Number(lcP[2]), C = Number(lcP[3]);
+    const expected = Math.sqrt(A * A + B * B - 2 * A * B * Math.cos(C * Math.PI / 180));
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'law_cos' };
+  }
+  // 'Reta por (x0,y0) com m=M: y em x=N = ?'
+  const lyx = q.match(LINE_Y_AT_X_RE);
+  if (lyx) {
+    const x0 = Number(lyx[1]), y0 = Number(lyx[2]), m = Number(lyx[3]), x = Number(lyx[4]);
+    const expected = y0 + m * (x - x0);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'y_at_x' };
+  }
+  // Triangle area a=A, b=B, C=θ° = AB·sin(C)/2
+  const tasP = question.match(TRI_AREA_SAS_PLAIN_RE);
+  if (tasP) {
+    const A = Number(tasP[1]), B = Number(tasP[2]), C = Number(tasP[3]);
+    const expected = A * B * Math.sin(C * Math.PI / 180) / 2;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'tri_area_sas' };
+  }
+  // Aⁿ diagonal: A^K[i,i] = entry^K
+  const apd = q.match(A_POW_DIAG_RE);
+  if (apd) {
+    const a1 = Number(apd[1]), d1 = Number(apd[2]), n = Number(apd[3]);
+    const i = Number(apd[4]), j = Number(apd[5]);
+    let expected;
+    if (i === 1 && j === 1) expected = Math.pow(a1, n);
+    else if (i === 2 && j === 2) expected = Math.pow(d1, n);
+    else expected = 0;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'eigenvalue' };
+  }
+  // Rotation 180° partial: T(a,b) = (-a, -b), so the missing component is -b (or -a if asked for x)
+  const r180p = question.match(ROT_180_PARTIAL_RE);
+  if (r180p) {
+    const expected = -Number(r180p[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'reflect' };
+  }
+  // Homothety T(p,q) — k·p or k·q
+  const thp = question.match(T_HOM_RE);
+  if (thp) {
+    const k = Number(thp[1]), p = Number(thp[2]), qv = Number(thp[3]);
+    const expected = thp[4].toLowerCase() === 'x' ? k * p : k * qv;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'homothety' };
+  }
+  // Reflection axis partial: refl-x of (p,q) = (p, -q); refl-y of (p,q) = (-p, q); missing is the second component
+  const trax = question.match(T_REFL_AXIS_RE);
+  if (trax) {
+    const axis = trax[1].toLowerCase(), p = Number(trax[2]), qv = Number(trax[3]);
+    // axis x: (p, -q) — missing y = -q
+    // axis y: (-p, q) — missing y = q
+    const expected = axis === 'x' ? -qv : qv;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'reflect' };
+  }
+  // Rotation 90° partial: T(p,q) = (-q, p) — missing y = p
+  const trot = question.match(T_ROT90_PARTIAL_RE);
+  if (trot) {
+    const p = Number(trot[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === p, computed: `${p}`, kind: 'reflect' };
+  }
+  if (KER_CONTAINS_RE.test(q)) {
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === 1, computed: '1', kind: 'linear_T' };
+  }
+  // Set of N vectors in R^2 LD iff N > 2
+  const sldR = q.match(SET_LD_RE);
+  if (sldR) {
+    const N = Number(sldR[1]);
+    const expected = N > 2 ? 1 : 0;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'lin_indep' };
+  }
+  // cos(90°+x) = -sen(x); cos(90°-x) = sen(x); etc. (literal answers)
+  const cshl = question.match(COS_SHIFT_RE);
+  if (cshl) {
+    const N = Number(cshl[1]), op = cshl[2];
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    if (N === 90) {
+      const expected = op === '+' ? '-sen(x)' : 'sen(x)';
+      const expAlt = expected.replace('sen', 'sin');
+      return { ok: ans === expected || ans === expAlt, computed: expected, kind: 'identity_symbolic' };
+    }
+    if (N === 180) {
+      const expected = op === '+' ? '-cos(x)' : '-cos(x)';
+      return { ok: ans === expected, computed: expected, kind: 'identity_symbolic' };
+    }
+  }
+  // cos(a+b)·cos(a-b) = cos²(a) - sen²(b)
+  if (COS_PRODUCT_DIFF_RE.test(q)) {
+    const ans = String(answer).trim().replace(/\s+/g, '').replace(/²/g, '^2');
+    return { ok: ans === 'sen^2(b)' || ans === 'sin^2(b)' || ans === 'sen²(b)' || ans === 'sin(b)^2', computed: 'sen²(b)', kind: 'identity_symbolic' };
+  }
+  // 'Se x=A°, x/2=B°. FN(B°) = ?' — evaluate trig function at B°
+  const hvr = question.match(HALF_VAL_RE);
+  if (hvr) {
+    const M = Number(hvr[2]);
+    const fn = hvr[3].toLowerCase();
+    const ang = M * Math.PI / 180;
+    const val = fn === 'sen' || fn === 'sin' ? Math.sin(ang) : fn === 'cos' ? Math.cos(ang) : Math.tan(ang);
+    // Common exact values:
+    const exact = { 30: { sin: '1/2', cos: '√3/2', tan: '√3/3' }, 45: { sin: '√2/2', cos: '√2/2', tan: '1' }, 60: { sin: '√3/2', cos: '1/2', tan: '√3' }, 90: { sin: '1', cos: '0', tan: 'indefinido' }, 0: { sin: '0', cos: '1', tan: '0' } };
+    const lookup = fn === 'sen' ? 'sin' : fn;
+    const ans = String(answer).trim().replace(/\s+/g, '');
+    const sym = exact[M]?.[lookup];
+    if (sym && ans === sym) return { ok: true, computed: sym, kind: 'trig_meta' };
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - val) < 1e-2, computed: `${val}`, kind: 'trig_meta' };
+  }
+  // sen/cos N° = ?√M (numerador) — coefficient before √M
+  const snr = question.match(SEN_NUMERATOR_RE);
+  if (snr) {
+    const fn = snr[1].toLowerCase(), N = Number(snr[2]), M = Number(snr[3]);
+    const ang = N * Math.PI / 180;
+    const v = (fn === 'sen' || fn === 'sin') ? Math.sin(ang) : Math.cos(ang);
+    // v = num·√M / denom where denom is 2 usually. For sen 45° = √2/2 → coef of √2 = 1/2 → numerator 1.
+    // We compute coef of √M: v / √M = num/denom. Author wants numerator (integer) of the simplified fraction.
+    const coef = v / Math.sqrt(M);
+    // Common denominators 2: numerator = 2·coef = 2·(v/√M)
+    const numerator = Math.round(2 * coef);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: an === numerator, computed: `${numerator}`, kind: 'trig_meta' };
+  }
+  // P(Ā) from P(A) alt
+  const cAlt = q.match(COMPLEMENT_ALT_RE);
+  if (cAlt) {
+    const expected = 1 - Number(cAlt[1]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-9, computed: `${expected}`, kind: 'prob_value' };
+  }
+  // Conditional probability long form
+  const cpL = q.match(COND_PROB_LONG_RE);
+  if (cpL) {
+    const expected = Number(cpL[1]) / Number(cpL[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'cond_prob' };
+  }
+  // Independent (A e B independentes com ...)
+  const ipc = q.match(INDEP_PROB_COM_RE);
+  if (ipc) {
+    const expected = Number(ipc[1]) * Number(ipc[2]);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'indep_prob' };
+  }
+  // Bin(n,p) → arrow form
+  const ba = q.match(BIN_ARROW_RE);
+  if (ba) {
+    const n = Number(ba[1]), p = Number(ba[2]);
+    const op = ba[3].toLowerCase();
+    const f = (x) => { let r = 1; for (let i = 2; i <= x; i++) r *= i; return r; };
+    let expected = null;
+    if (/^e\[x\]/.test(op)) expected = n * p;
+    else if (/^var\(x\)/.test(op)) expected = n * p * (1 - p);
+    else if (/^σ/.test(op)) expected = Math.sqrt(n * p * (1 - p));
+    else if (/^p\(x\s*=\s*(\d+)\)/.test(op)) {
+      const k = Number(op.match(/p\(x\s*=\s*(\d+)\)/)[1]);
+      if (k <= n) expected = f(n) / (f(k) * f(n - k)) * Math.pow(p, k) * Math.pow(1 - p, n - k);
+    }
+    if (expected != null) {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'bernoulli' };
+    }
+  }
+  // Trig integration helpers — extract A,B → answer = A-B
+  const ticc = q.match(TRIG_INT_CC_RE);
+  if (ticc) {
+    const A = Number(ticc[1]), B = ticc[2] ? Number(ticc[2]) : 1, sum = Number(ticc[3]);
+    if (sum === A + B) {
+      const diff = Math.abs(A - B);
+      const expected = diff === 1 ? 'x' : `${diff}x`;
+      const ans = String(answer).trim().replace(/\s+/g, '');
+      return { ok: ans === expected, computed: expected, kind: 'identity_symbolic' };
+    }
+  }
+  const tisc = q.match(TRIG_INT_SC_RE);
+  if (tisc) {
+    const A = Number(tisc[1]), B = Number(tisc[2]), sum = Number(tisc[3]);
+    if (sum === A + B) {
+      const diff = Math.abs(A - B);
+      const expected = diff === 1 ? 'x' : `${diff}x`;
+      const ans = String(answer).trim().replace(/\s+/g, '');
+      return { ok: ans === expected, computed: expected, kind: 'identity_symbolic' };
+    }
+  }
+  const tiss = q.match(TRIG_INT_SS_RE);
+  if (tiss) {
+    const A = Number(tiss[1]), B = tiss[2] ? Number(tiss[2]) : 1, sum = Number(tiss[3]);
+    if (sum === A + B) {
+      const diff = Math.abs(A - B);
+      const expected = diff === 1 ? 'x' : `${diff}x`;
+      const ans = String(answer).trim().replace(/\s+/g, '');
+      return { ok: ans === expected, computed: expected, kind: 'identity_symbolic' };
+    }
   }
   // Inverse trig (degree results) — parse value via normalized expression. Use raw question
   // because 'arccos/arcsen/arctan' normalize to 'acos/asin/atan'.
