@@ -1852,10 +1852,8 @@ async function main() {
         const t = e.type || 'unknown';
         byType.total[t] = (byType.total[t] || 0) + 1;
         byLevel.total[level] = (byLevel.total[level] || 0) + 1;
-        // Known-bad authoring (see project_inequality_bugs.md):
-        // math/H/set_02.yaml's linear_equation answers divide by the wrong
-        // factor; the rationales' own arithmetic doesn't match the answers.
-        if (e.type === 'linear_equation' && f.endsWith('math/H/set_02.yaml')) continue;
+        // (No per-file skips currently — see CORRECTNESS.md / memory for
+        // skipped types like inequality.)
         const r = verify(e.question, e.correctAnswer, e.type);
         if (!r) {
           if (process.argv.includes('--debug-unverified') && process.argv.includes(e.type)) {
