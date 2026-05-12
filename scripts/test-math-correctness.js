@@ -159,6 +159,13 @@ const CASES = [
   { q: 'Dupla de parceiros de 4 alunos — C(4,2) = ?', a: '6', type: 'mental_math', want: true },
   { q: 'Ponto médio de [20,30) = ?', a: '25', type: 'mental_math', want: true },
   { q: 'Para [1,2,3,4] com frequências [2,3,4,1], acumulada até 3 = ?', a: '9', type: 'mental_math', want: true },
+  // Trig equation solving in degrees
+  { q: 'Primeira solução de cos(x) = 1/2 em [0°, 360°)?', a: '60°', type: 'trigonometry', want: true },
+  { q: 'Segunda solução: sen(x) = 1/2 em [0°, 360°)', a: '150°', type: 'trigonometry', want: true },
+  { q: 'Número de soluções de cos(x) = 0 em [0°, 360°)?', a: '2', type: 'trigonometry', want: true },
+  { q: 'Menor solução de sen(x)=-1?', a: '270°', type: 'trigonometry', want: true },
+  { q: 'Menor positiva de 2sen(x) = √3?', a: '60°', type: 'trigonometry', want: true },
+  { q: '2sen(x) = √3 → sen(x) = ?', a: '√3/2', type: 'trigonometry', want: true },
 
   // Negative cases — these should NOT pass
   { q: '5 + 3 =', a: '7', type: 'addition', want: false },

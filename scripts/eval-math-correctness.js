@@ -371,6 +371,14 @@ const ARRANGE_INLINE_RE = /A\(\s*(\d+)\s*,\s*(\d+)\s*\)\s*=\s*\??\s*$/i;
 const COMBINE_INLINE_RE = /C\(\s*(\d+)\s*,\s*(\d+)\s*\)\s*=\s*\??\s*$/i;
 // 'P(A∩B) = 0 → mutuamente exclusivos' constant (V/F + label)
 // '<list> (V/F)?' — answers V/F are not computable; skip.
+// Trig equation solving in degrees: 'Primeira/Segunda/Menor solução de FN(x) = V em [0°, 360°)?'.
+const TRIG_SOL_FIRST_RE = /^primeira\s+solu[çc][ãa]o(?:\s+positiva)?\s+de\s+(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^?]+?)(?:\s+em\s+\[0°?\s*,\s*360°?\))?\s*\??\s*$/i;
+const TRIG_SOL_SECOND_RE = /^segunda\s+solu[çc][ãa]o:?\s*(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^?]+?)(?:\s+em\s+\[0°?\s*,\s*360°?\))?\s*\??\s*$/i;
+const TRIG_SOL_NUM_RE = /^n[úu]mero\s+de\s+solu[çc][õo]es\s+de\s+(?:(\d+)\s*\*?\s*)?(sen|sin|cos|tan|tg)(?:\^?2|²)?\(x\)\s*=\s*([^?]+?)\s+em\s+\[0°?\s*,\s*360°?\)\s*\??\s*$/i;
+const TRIG_SOL_MENOR_RE = /^menor(?:\s+solu[çc][ãa]o)?(?:\s+positiva)?\s+(?:de\s+)?(?:(\d+)\s*\*?\s*)?(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^?]+?)\??\s*$/i;
+const TRIG_SOL_PLAIN_RE = /^solu[çc][ãa]o\s+de\s+(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^?]+?)\s+em\s+\[0°?\s*,\s*360°?\)\s*\??\s*$/i;
+// 'kFN(x) = E → FN(x) = ?' → E/k
+const TRIG_DIVIDE_RE = /^(\d+)\s*(sen|sin|cos|tan|tg)\(x\)\s*=\s*([^→]+?)\s*→\s*\2\(x\)\s*=\s*\??\s*$/i;
 // Linear systems solving for a single variable.
 // 'Se <eq1> e <eq2>, x = ?' or 'Com y=N, no sistema <eq1> e <eq2>, x = ?'
 const SYS_SOLVE_RE = /^(?:se|com\s+y\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*no\s+sistema)\s+(.+?)\s+e\s+(.+?)\s*,\s*([xy])\s*=\s*\??\s*$/i;
@@ -2112,6 +2120,100 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an === 1) return { ok: true, computed: '1', kind: 'prob_value' };
     if (an != null) return { ok: false, computed: '1', kind: 'prob_value' };
+  }
+  // Trig equation FN(x) = V — return all solutions in [0°, 360°) (sorted).
+  const trigSolveDeg = (fnRaw, rhsExpr) => {
+    const fn = (fnRaw === 'sen' || fnRaw === 'sin') ? 'sin' : fnRaw === 'tg' ? 'tan' : fnRaw;
+    let val;
+    try { val = toNumber(math.evaluate(normalize(String(rhsExpr).trim()))); } catch { return null; }
+    if (val == null) return null;
+    const wrap = x => ((x % 360) + 360) % 360;
+    let sols;
+    if (fn === 'sin') {
+      if (Math.abs(val) > 1) return null;
+      const p = Math.asin(val) * 180 / Math.PI;
+      sols = [wrap(p), wrap(180 - p)];
+    } else if (fn === 'cos') {
+      if (Math.abs(val) > 1) return null;
+      const p = Math.acos(val) * 180 / Math.PI;
+      sols = [wrap(p), wrap(-p)];
+    } else if (fn === 'tan') {
+      const p = Math.atan(val) * 180 / Math.PI;
+      sols = [wrap(p), wrap(p + 180)];
+    } else return null;
+    // Round to 6 dp and dedupe.
+    const seen = new Set();
+    return sols.map(s => Math.round(s * 1e6) / 1e6).filter(s => !seen.has(s) && (seen.add(s), true)).sort((a, b) => a - b);
+  };
+  // Compare a numeric answer that might be in either deg (raw) or rad (SI-normalized) form.
+  const matchDeg = (an, expectedDeg) => {
+    if (an == null) return false;
+    if (Math.abs(an - expectedDeg) < 1e-2) return true;
+    return Math.abs(an - expectedDeg * Math.PI / 180) < 1e-3;
+  };
+  const trigSolFirst = question.match(TRIG_SOL_FIRST_RE);
+  if (trigSolFirst) {
+    const sols = trigSolveDeg(trigSolFirst[1], trigSolFirst[2]);
+    if (sols && sols.length) {
+      const expected = sols[0];
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+    }
+  }
+  const trigSolSecond = question.match(TRIG_SOL_SECOND_RE);
+  if (trigSolSecond) {
+    const sols = trigSolveDeg(trigSolSecond[1], trigSolSecond[2]);
+    if (sols && sols.length >= 2) {
+      const expected = sols[1];
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+    }
+  }
+  const trigSolPlain = question.match(TRIG_SOL_PLAIN_RE);
+  if (trigSolPlain) {
+    const sols = trigSolveDeg(trigSolPlain[1], trigSolPlain[2]);
+    if (sols && sols.length) {
+      const expected = sols[0];
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+    }
+  }
+  const trigSolNum = question.match(TRIG_SOL_NUM_RE);
+  if (trigSolNum && !/²|\^2/.test(trigSolNum[0])) {
+    const coef = trigSolNum[1] ? Number(trigSolNum[1]) : 1;
+    const rhs = `(${trigSolNum[3]})/${coef}`;
+    const sols = trigSolveDeg(trigSolNum[2], rhs);
+    if (sols) {
+      const expected = sols.length;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'trig_meta' };
+    }
+  }
+  const trigSolMenor = question.match(TRIG_SOL_MENOR_RE);
+  if (trigSolMenor) {
+    const coef = trigSolMenor[1] ? Number(trigSolMenor[1]) : 1;
+    const rhs = `(${trigSolMenor[3]})/${coef}`;
+    const sols = trigSolveDeg(trigSolMenor[2], rhs);
+    if (sols && sols.length) {
+      const expected = sols[0];
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: matchDeg(an, expected), computed: `${expected}°`, kind: 'trig_meta' };
+    }
+  }
+  // 'kFN(x) = E → FN(x) = ?' → E/k (simple algebra divide)
+  const tdv = question.match(TRIG_DIVIDE_RE);
+  if (tdv) {
+    const k = Number(tdv[1]);
+    if (k !== 0) {
+      try {
+        const rhs = toNumber(math.evaluate(normalize(tdv[3].trim())));
+        if (rhs != null) {
+          const expected = rhs / k;
+          const an = toNumber(tryEval(a));
+          if (an != null) return { ok: Math.abs(an - expected) < 1e-6, computed: `${expected}`, kind: 'trig_meta' };
+        }
+      } catch {}
+    }
   }
   // Inline A(n,k) / C(n,k) — embedded in larger phrase like 'Pódio ... — A(5,3) = ?'
   // Skip if exact P(...) / C(...) plain forms (handled earlier).
