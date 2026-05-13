@@ -367,6 +367,79 @@ pages:
 }
 
 // ─────────────────────────────────────────────────────────────────────
+// eval:bilingual gate — ≥50% bilingual with stragglers = fail (half-translated bug);
+// <50% bilingual = advisory only (partial-upgrade in progress).
+// ─────────────────────────────────────────────────────────────────────
+{
+  // Mostly-bilingual set with a single monolingual straggler → hard fail.
+  setupFixture({
+    'src/levels/portuguese/X/set_01.yaml': `
+title: {pt: T, en: T}
+level: X
+subject: portuguese
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: {pt: P, en: P}
+    description: {pt: D, en: D}
+    exercises:
+      - type: choice
+        question: {pt: q, en: q}
+        choices:
+          - {pt: a, en: a}
+          - {pt: b, en: b}
+          - "monolingual straggler"
+          - {pt: d, en: d}
+        correctAnswer: {pt: a, en: a}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-bilingual.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('bilingual: mostly-bilingual with straggler fails', r.status === 1 && r.stdout.includes('half-translated'));
+}
+
+{
+  // Mostly-monolingual set with a few bilingual fields → advisory, exit 0.
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title:
+  pt: T
+  en: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question: q1
+        choices: ['a', 'b', 'c', 'd']
+        correctAnswer: 'a'
+        rationale: r
+        objectives: [t]
+        difficulty: 3
+      - type: choice
+        question: q2
+        choices: ['a', 'b', 'c', 'd']
+        correctAnswer: 'a'
+        rationale: r
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-bilingual.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('bilingual: <50% bilingual emits advisory + exit 0', r.status === 0 && r.stdout.includes('partially bilingual'));
+}
+
+// ─────────────────────────────────────────────────────────────────────
 // example-spoiler: bilingual {pt,en} example field.
 // ─────────────────────────────────────────────────────────────────────
 {
