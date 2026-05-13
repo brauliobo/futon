@@ -23,6 +23,10 @@ async function main() {
   const orphans = [];
   const rogue = [];
   for (const f of files) {
+    const subject = f.match(/src\/levels\/([^/]+)\//)?.[1];
+    // Biology sets author objectives as prose, not codes — set-level
+    // sentences won't match exercise-level topic labels by string equality.
+    if (subject === 'biology') continue;
     const s = YAML.parse(readFileSync(f, 'utf8'));
     const setObjs = new Set(s.objectives || []);
     const usedObjs = new Set();

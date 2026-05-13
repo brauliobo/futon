@@ -22,17 +22,19 @@ const c = (t, col) => `${col}${t}${RESET}`;
 async function main() {
   const files = await fg('src/levels/**/set_*.yaml');
   const violations = [];
+  const qText = (q) => typeof q === 'string' ? q : (q?.pt ?? q?.en ?? JSON.stringify(q));
+  const aText = (a) => typeof a === 'string' || typeof a === 'number' ? String(a) : (a?.pt ?? a?.en ?? JSON.stringify(a));
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
-    for (const p of s.pages || []) {
+    for (const [idx, p] of (s.pages || []).entries()) {
       const seen = new Map();
       for (const e of p.exercises || []) {
-        const q = String(e.question);
-        const a = String(e.correctAnswer ?? '');
+        const q = qText(e.question);
+        const a = aText(e.correctAnswer ?? '');
         if (seen.has(q) && seen.get(q) !== a) {
           violations.push({
             file: f.replace('src/levels/', ''),
-            page: p.pageNumber,
+            page: p.pageNumber ?? idx + 1,
             q,
             a1: seen.get(q),
             a2: a,

@@ -22,6 +22,8 @@ const c = (t, col) => `${col}${t}${RESET}`;
 async function main() {
   const files = await fg('src/levels/**/set_*.yaml');
   const byLvlQ = new Map(); // "subject/level|question" → Map<setName, answer>
+  const qText = (q) => typeof q === 'string' ? q : (q?.pt ?? q?.en ?? JSON.stringify(q));
+  const aText = (a) => typeof a === 'string' || typeof a === 'number' ? String(a) : (a?.pt ?? a?.en ?? JSON.stringify(a));
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
     const m = f.match(/src\/levels\/([^/]+)\/([^/]+)\//);
@@ -29,9 +31,9 @@ async function main() {
     const setName = f.split('/').pop();
     for (const p of s.pages || []) {
       for (const e of p.exercises || []) {
-        const key = `${lvl}|${String(e.question)}`;
+        const key = `${lvl}|${qText(e.question)}`;
         if (!byLvlQ.has(key)) byLvlQ.set(key, new Map());
-        byLvlQ.get(key).set(setName, String(e.correctAnswer));
+        byLvlQ.get(key).set(setName, aText(e.correctAnswer));
       }
     }
   }
@@ -49,6 +51,10 @@ async function main() {
       const allWordy = [...answers].every(a => /^[\w\s-]+$/.test(a) && a.length <= 30);
       if (allWordy) continue;
     }
+    // Biology and other essay-style subjects: cross-set conflicts are
+    // expected (each set picks its own correct phrasing from 4 choices).
+    // This scanner targets deterministic-answer subjects (math, japanese).
+    if (subject === 'biology') continue;
     conflicts.push({ lvl, q, variants: [...setMap.entries()] });
   }
 
