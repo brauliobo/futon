@@ -60,7 +60,9 @@ function metrics(setsInLevel) {
     const mid = Math.floor(setDifficulties.length / 2);
     const firstAvg = setDifficulties.slice(0, mid).reduce((a, b) => a + b, 0) / mid;
     const secondAvg = setDifficulties.slice(mid).reduce((a, b) => a + b, 0) / (setDifficulties.length - mid);
-    monotonic = secondAvg - firstAvg >= -0.1;
+    // Round to 2 decimal places to avoid FP errors like -0.10000000000000009
+    // (e.g., japanese/B has interleaved 3↔4 with exact -0.1 trend).
+    monotonic = Math.round((secondAvg - firstAvg) * 100) / 100 >= -0.1;
   }
   return {
     exercises: total,
