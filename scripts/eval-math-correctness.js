@@ -1487,8 +1487,161 @@ function verify(question, answer, type, context) {
       const an = toNumber(tryEval(a));
       if (an != null) return { ok: Math.abs(an - expected) < 0.5, computed: `${expected}`, kind: 'variance' };
     }
+    if (/^Mesma\s+lista\s*[—-]+\s*moda\?/i.test(question)) {
+      const freq = new Map();
+      for (const v of list) freq.set(v, (freq.get(v) || 0) + 1);
+      const maxF = Math.max(...freq.values());
+      const modes = [...freq].filter(([, f]) => f === maxF).map(([v]) => v);
+      const expected = maxF === 1 ? 'amodal' : modes.length > 1 ? 'bimodal' : `${modes[0]}`;
+      return { ok: String(answer).trim().toLowerCase() === expected, computed: expected, kind: 'moda' };
+    }
+  }
+  // PMF-weighted sequels: prior question set `pmf` map {value: prob}.
+  if (context && context.lastPMF) {
+    const pmf = context.lastPMF;
+    const sumIf = (test) => [...pmf].filter(([x]) => test(x)).reduce((s, [, p]) => s + p, 0);
+    let m = question.match(/^Mesmo\s+X\s*(?:→|—)\s*F\((-?\d+(?:\.\d+)?)\)\s*=\s*\??\s*$/i);
+    if (m) {
+      const K = Number(m[1]);
+      const expected = sumIf(x => x <= K);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+    }
+    m = question.match(/^Mesmo\s+X\s*(?:→|—)\s*P\(X\s*([≥≤><=]+)\s*(-?\d+(?:\.\d+)?)\)\s*=\s*\??\s*$/i);
+    if (m) {
+      const op = m[1], K = Number(m[2]);
+      const test = (x) => op === '≥' ? x >= K : op === '≤' ? x <= K : op === '>' ? x > K : op === '<' ? x < K : x === K;
+      const expected = sumIf(test);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+    }
+    m = question.match(/^Mesmo\s+X\s*(?:→|—)\s*P\((-?\d+(?:\.\d+)?)\s*<\s*X\s*≤\s*(-?\d+(?:\.\d+)?)\)\s*=\s*\??\s*$/i);
+    if (m) {
+      const A = Number(m[1]), B = Number(m[2]);
+      const expected = sumIf(x => x > A && x <= B);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+    }
+  }
+  // Law-of-cosines/Pythag sequel: prior captured c² = N → `Portanto c ≈/=`
+  if (context && context.lastCSquared != null) {
+    if (/^(?:Portanto\s+c|c²\s+acima\s+implica\s+c)\s*[≈=]\s*\??\s*$/i.test(question)) {
+      const expected = Math.sqrt(context.lastCSquared);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 0.05, computed: expected.toFixed(2), kind: 'sqrt_sequel' };
+    }
+  }
+  // Vector-difference sequel: prior `Vetor de (a,b) a (c,d) = (?, K)` → componente y = K
+  if (context && context.lastVecY != null) {
+    if (/^Mesma\s+quest[ãa]o\s+anterior\s*[—-]+\s*componente\s+y\s*=\s*\??\s*$/i.test(question)) {
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === context.lastVecY, computed: `${context.lastVecY}`, kind: 'vec_comp' };
+    }
+  }
+  // Matrix-sum sequel: prior `[a b; c d] + [e f; g h] — elemento (i,j) = ?`
+  if (context && context.lastMatSum) {
+    const m = question.match(/^Mesma\s+opera[çc][ãa]o\s*[—-]+\s*elemento\s*\((\d+)\s*,\s*(\d+)\)\s*=\s*\??\s*$/i);
+    if (m) {
+      const i = Number(m[1]) - 1, j = Number(m[2]) - 1;
+      const expected = context.lastMatSum[i]?.[j];
+      const an = toNumber(tryEval(a));
+      if (an != null && expected != null) return { ok: an === expected, computed: `${expected}`, kind: 'matrix_elem' };
+    }
+  }
+  // Complex-z sequels: prior `Polar de z=A+Bi: r = ?` set z=(A,B)
+  if (context && context.lastZ) {
+    const [A, B] = context.lastZ;
+    if (/^Mesma\s+z:\s*θ\s*=\s*\??\s*°?\s*$/i.test(question)) {
+      const expected = Math.atan2(B, A) * 180 / Math.PI;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 0.5, computed: expected.toFixed(1), kind: 'arg_z' };
+    }
+  }
+  // Polar→Cartesian sequels: prior `r=R, θ=T°: a = ?` set (R, T)
+  if (context && context.lastRT) {
+    const [R, T] = context.lastRT;
+    if (/^Mesma:\s*b\s*=\s*\??\s*$/i.test(question)) {
+      const expected = R * Math.sin(T * Math.PI / 180);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-3, computed: expected.toFixed(3), kind: 'cart_b' };
+    }
+    if (/^Mesma:\s*imagin[áa]ria\s*=\s*\??\s*$/i.test(question)) {
+      const expected = R * Math.sin(T * Math.PI / 180);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-3, computed: expected.toFixed(3), kind: 'cart_imag' };
+    }
+  }
+  // Trig-square sequel: prior captured sen²/cos²/sen(x/2)² = V; sequel returns +√V
+  if (context && context.lastSq != null) {
+    if (/^Ent[ãa]o\s+(?:sen|sin|cos|tan)\([^)]*\)\s*(?:agudo\s*)?=\s*\??\s*(?:\(positivo\))?\s*$/i.test(question)) {
+      const expected = Math.sqrt(context.lastSq);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-3, computed: expected.toFixed(4), kind: 'sqrt_trig' };
+    }
+  }
+  // Linear-system sequel: prior captured a `x+y=S` equation and an x value, sequel `y = ?`
+  if (context && context.lastSum != null && context.lastSysX != null) {
+    if (/^y\s*=\s*\??\s*$/i.test(question)) {
+      const expected = context.lastSum - context.lastSysX;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'sys_y' };
+    }
+  }
+  // Line through two points sequel: prior `Para (x1,y1) e (x2,y2), m = M` → y-intercept
+  if (context && context.lastLine) {
+    const [x1, y1, M] = context.lastLine;
+    const lm = question.match(/^Mesma\s+reta\s*[—-]+\s*passa\s+por\s*\(\s*(-?\d+(?:\.\d+)?)\s*,\s*\?\s*\)\s*$/i);
+    if (lm) {
+      const xq = Number(lm[1]);
+      const expected = y1 + M * (xq - x1);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-3, computed: `${expected}`, kind: 'line_eval' };
+    }
   }
 
+  // 'Coeficiente de x^k em (a+x)^n = ?' → C(n,k) · a^(n-k)
+  const coefM = question.match(/^Coeficiente\s+de\s+x\s*([²³⁴⁵⁶⁷⁸⁹]|\^\d+)?\s+em\s*\(\s*(-?\d+)\s*\+\s*x\s*\)\s*\^\s*(\d+)\s*=\s*\??\s*$/i);
+  if (coefM) {
+    const supDigits = { '²': 2, '³': 3, '⁴': 4, '⁵': 5, '⁶': 6, '⁷': 7, '⁸': 8, '⁹': 9 };
+    const k = !coefM[1] ? 1 : coefM[1].startsWith('^') ? Number(coefM[1].slice(1)) : supDigits[coefM[1]];
+    const A = Number(coefM[2]), n = Number(coefM[3]);
+    const choose = (n, r) => { let c = 1; for (let i = 0; i < r; i++) c = c * (n - i) / (i + 1); return c; };
+    const expected = choose(n, k) * Math.pow(A, n - k);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-3, computed: `${expected}`, kind: 'binomial_x_coef' };
+  }
+  // Law of cosines cosA: 'a=N1, b=N2, c=N3 — cosA = ?' → (b²+c²-a²)/(2bc)
+  const cosAm = question.match(/^a\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*b\s*=\s*(-?\d+(?:\.\d+)?)\s*,\s*c\s*=\s*(-?\d+(?:\.\d+)?)\s*[—-]+\s*cos\s*A\s*=\s*\??\s*$/i);
+  if (cosAm) {
+    const [A, B, C] = [Number(cosAm[1]), Number(cosAm[2]), Number(cosAm[3])];
+    const expected = (B * B + C * C - A * A) / (2 * B * C);
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'cos_A' };
+  }
+  // Law of sines for equilateral: 'Em triângulo equilátero a=N: a/senA = ?/sen60°' → N·√3/3·sen60° = a·sen60°/sen60° ... actually expected = a/sen60° = 2a/√3 = 2a√3/3
+  const eqTri = question.match(/^Em\s+tri[âa]ngulo\s+equil[áa]tero\s+a\s*=\s*(\d+(?:\.\d+)?)\s*:\s*a\/sen\s*A\s*=\s*\?\/sen\s*60/i);
+  if (eqTri) {
+    const A = Number(eqTri[1]);
+    const expected = 2 * A * Math.sqrt(3) / 3;
+    const an = toNumber(tryEval(a));
+    if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `2·${A}·√3/3 = ${expected.toFixed(3)}`, kind: 'law_sines_equi' };
+  }
+  // 'EXPR1 = EXPR2, valor = ?' — both sides identical; answer should equal eval(EXPR1).
+  const valorM = question.match(/^([^=]+?)\s*=\s*([^=]+?)\s*,\s*valor\s*=\s*\??\s*$/i);
+  if (valorM) {
+    const lhs = normalize(valorM[1].trim());
+    const v1 = toNumber(tryEval(lhs));
+    const v2 = toNumber(tryEval(a));
+    if (v1 != null && v2 != null) return { ok: Math.abs(v1 - v2) < 1e-3, computed: v1.toFixed(4), kind: 'valor_eq' };
+  }
+  // Sum-to-product identity: '... = 2·cos(?)·sen(x/2)' — substitute answer for ?, probe-equate
+  const stpM = question.match(/^(.+?)\s+em\s+termos\s+de\s+(?:cos|sen|sin)\s+e\s+(?:cos|sen|sin)\s*=\s*(.+\?.+)$/i);
+  if (stpM && stpM[2].includes('?')) {
+    const lhs = normalize(stpM[1].trim());
+    const rhsTpl = normalize(stpM[2].replace('?', `(${String(answer).trim()})`));
+    const probed = probeEquivalent(lhs, rhsTpl, ['x']);
+    if (probed != null) return { ok: probed, computed: rhsTpl, kind: 'sum_to_prod' };
+  }
   // Polynomial-factoring / 'combine like terms' form: question is an
   // expression, answer is an equivalent form. Both depend on x (or x and y);
   // probe at several values.
@@ -7911,6 +8064,69 @@ async function main() {
         if (lm && !/^Mesma\s+lista/i.test(e.question)) {
           const list = lm[1].split(/\s*,\s*/).map(Number).filter(Number.isFinite);
           if (list.length) ctx.lastList = list;
+        }
+        // PMF capture: 'P(X=k1)=p1, P(X=k2)=p2, ...' anywhere in the question.
+        const pmfEntries = [...e.question.matchAll(/P\(X\s*=\s*(-?\d+(?:\.\d+)?)\)\s*=\s*([0-9./]+)/g)];
+        if (pmfEntries.length >= 2) {
+          const pmf = new Map();
+          for (const [, k, pStr] of pmfEntries) {
+            const p = pStr.includes('/') ? Number(pStr.split('/')[0]) / Number(pStr.split('/')[1]) : Number(pStr);
+            if (Number.isFinite(p)) pmf.set(Number(k), p);
+          }
+          if (pmf.size >= 2) ctx.lastPMF = pmf;
+        }
+        // Law-of-cosines c² capture: 'c² = ... = N' (last '= N').
+        const csm = e.question.match(/c²\s*=\s*[^=]+=\s*\??$/i);
+        if (csm && Number.isFinite(Number(e.correctAnswer))) ctx.lastCSquared = Number(e.correctAnswer);
+        else if (/Com\s+a=\d+,\s*b=\d+,\s*C=/i.test(e.question) && /c²\s*=.*=\s*\??$/i.test(e.question)) {
+          ctx.lastCSquared = Number(e.correctAnswer);
+        }
+        // Vector-from-points capture: 'Vetor de (a,b) a (c,d) = (?, K)' → y = K
+        const vm = e.question.match(/Vetor\s+de\s*\(\s*(-?\d+)\s*,\s*(-?\d+)\s*\)\s*a\s*\(\s*(-?\d+)\s*,\s*(-?\d+)\s*\)\s*=\s*\(\?\s*,\s*(-?\d+)\s*\)/i);
+        if (vm) ctx.lastVecY = Number(vm[4]) - Number(vm[2]);
+        // Matrix-sum capture: '[a b; c d] + [e f; g h]' → element-wise sum
+        const mm = e.question.match(/\[\s*(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s*\]\s*\+\s*\[\s*(-?\d+)\s+(-?\d+)\s*;\s*(-?\d+)\s+(-?\d+)\s*\]/);
+        if (mm) {
+          const [, a11, a12, a21, a22, b11, b12, b21, b22] = mm.map(x => x === mm[0] ? x : Number(x));
+          ctx.lastMatSum = [[a11 + b11, a12 + b12], [a21 + b21, a22 + b22]];
+        }
+        // Complex-z capture: 'Polar de z=A+Bi' or 'Polar de z=A-Bi' → (A, ±B)
+        const zm = e.question.match(/Polar\s+de\s+z\s*=\s*(-?\d*(?:√\d+)?)\s*([+-])\s*(\d*(?:√\d+)?)i\b/i)
+                || e.question.match(/Polar\s+de\s+z\s*=\s*(-?\d+(?:\.\d+)?)\s*([+-])\s*(\d+(?:\.\d+)?)i\b/i);
+        if (zm) {
+          const parse = (s) => { if (!s || s === '-') return s === '-' ? -1 : NaN; const m = s.match(/^(-?\d*)√(\d+)$/); if (m) return (m[1] === '' || m[1] === '-' ? (m[1] === '-' ? -1 : 1) : Number(m[1])) * Math.sqrt(Number(m[2])); return Number(s); };
+          const A = parse(zm[1]) || 0;
+          const B = (zm[2] === '-' ? -1 : 1) * (parse(zm[3] || '1') || 1);
+          if (Number.isFinite(A) && Number.isFinite(B)) ctx.lastZ = [A, B];
+        }
+        // Polar→Cartesian capture: 'r=R, θ=T°: a = ?' or 'r=R, θ=T° → real = ?'
+        const rtm = e.question.match(/r\s*=\s*(\d+(?:\.\d+)?|√\d+)\s*,\s*θ\s*=\s*(-?\d+(?:\.\d+)?)°/i);
+        if (rtm) {
+          const Rraw = rtm[1];
+          const R = Rraw.startsWith('√') ? Math.sqrt(Number(Rraw.slice(1))) : Number(Rraw);
+          ctx.lastRT = [R, Number(rtm[2])];
+        }
+        // Trig-square capture: prior answer is V for `sen²(x) = ?` / `sen(x/2)² = ?`
+        if (/(?:sen|sin|cos|tan)\s*²\s*\([^)]*\)\s*=\s*\??\s*$/i.test(e.question) || /(?:sen|sin|cos|tan)\([^)]*\)\s*²\s*=\s*\??\s*$/i.test(e.question)) {
+          const aStr = String(e.correctAnswer);
+          const v = aStr.includes('/')
+            ? Number(aStr.split('/')[0]) / Number(aStr.split('/')[1])
+            : Number(aStr);
+          if (Number.isFinite(v) && v >= 0) ctx.lastSq = v;
+        }
+        // Linear-system capture for `y = ?` sequel.
+        const sumM = e.question.match(/Somando\s+x\s*\+\s*y\s*=\s*(-?\d+)\s+e\s+x\s*-\s*y\s*=\s*(-?\d+)/i);
+        if (sumM) ctx.lastSum = Number(sumM[1]);
+        if (/^De\s+2x\s*=\s*\d+\s*,?\s*ent[ãa]o\s+x\s*=\s*\?/i.test(e.question)) {
+          const xv = Number(e.correctAnswer);
+          if (Number.isFinite(xv)) ctx.lastSysX = xv;
+        }
+        // Line-through-two-points capture: 'Para (x1,y1) e (x2,y2), m = ?'
+        const linm = e.question.match(/Para\s*\(\s*(-?\d+)\s*,\s*(-?\d+)\s*\)\s+e\s*\(\s*(-?\d+)\s*,\s*(-?\d+)\s*\)\s*,\s*m\s*=\s*\?/i);
+        if (linm) {
+          const x1 = Number(linm[1]), y1 = Number(linm[2]);
+          const M = Number(e.correctAnswer);
+          if (Number.isFinite(M)) ctx.lastLine = [x1, y1, M];
         }
         if (!r) {
           if (process.argv.includes('--debug-unverified') && process.argv.includes(e.type)) {
