@@ -20,6 +20,14 @@ import { readFileSync } from 'fs';
 import YAML from 'yaml';
 import fg from 'fast-glob';
 
+// Pull out the PT-side of a bilingual {pt,en} object (or pass-through string).
+const ptText = v => {
+  if (v == null) return '';
+  if (typeof v === 'string') return v;
+  if (typeof v === 'object') return v.pt ?? '';
+  return String(v);
+};
+
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', GRAY = '\x1b[90m';
 const c = (t, col) => `${col}${t}${RESET}`;
@@ -42,18 +50,21 @@ export function detectBadPlurals(text) {
 }
 
 async function main() {
+  // Restricted to portuguese subject: biology PT-side carries English loanwords
+  // (pixels, TILs, biofuels) that legitimately end in -als/-els/-ils. Without
+  // a real PT-noun dictionary, broadening to biology produces too much noise.
   const files = await fg('src/levels/portuguese/**/set_*.yaml');
   const hits = [];
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
-    const setText = [s.authorNotes, s.example].filter(Boolean).join(' ');
+    const setText = [ptText(s.authorNotes), ptText(s.example)].filter(Boolean).join(' ');
     for (const m of detectBadPlurals(setText)) {
       hits.push({ f: f.replace('src/levels/', ''), where: 'set-level', match: m, sample: setText.slice(0, 80) });
     }
     for (const p of s.pages || []) {
       for (const ex of p.exercises || []) {
         for (const field of ['rationale']) {
-          const txt = String(ex[field] || '');
+          const txt = ptText(ex[field]);
           for (const m of detectBadPlurals(txt)) {
             hits.push({ f: f.replace('src/levels/', ''), where: field, match: m, sample: txt.slice(0, 80) });
           }
