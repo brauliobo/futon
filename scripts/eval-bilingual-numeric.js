@@ -66,7 +66,7 @@ function numbers(s) {
   // Both forms appear in scientific PT writing: '2a geração', '2ª geração'.
   // Constrain to be followed by the noun to avoid false matches like '2 a 3'.
   const PT_ORD = String.raw`\d+\s*[ºª°ao]`;
-  text = text.replace(new RegExp(`${PT_ORD}(?:\\s*[+e/]\\s*${PT_ORD})*\\s*gera[çc][ãa]o\\b`, 'gi'), ' ');
+  text = text.replace(new RegExp(`${PT_ORD}(?:\\s*[+e/]\\s*${PT_ORD})*\\s*(?:gera[çc][ãa]o|gen)\\b`, 'gi'), ' ');
   text = text.replace(new RegExp(`${PT_ORD}\\s*grau\\b`, 'gi'), ' ');
   const EN_ORD = String.raw`\d+(?:st|nd|rd|th)?`;
   text = text.replace(new RegExp(`\\b${EN_ORD}(?:\\s*[+&/-]\\s*${EN_ORD})*[-\\s](?:gen(?:eration)?|degree)\\b`, 'gi'), ' ');
