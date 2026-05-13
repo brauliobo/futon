@@ -1441,9 +1441,53 @@ function probeEquivalent(expr1, expr2, vars = ['x']) {
 }
 
 export { verify, normalize, probeEquivalent };
-function verify(question, answer, type) {
+function verify(question, answer, type, context) {
   const q = normalize(question);
   const a = normalize(answer);
+
+  // Sequential page-context resolution: 'Mesmo X → ...' / 'Mesma lista — ...'
+  // references prior exercise's setup. main() passes context.lastX (a uniform
+  // distribution's value set) or context.lastList when the previous question
+  // matched 'X={...}' / 'X~Uniforme{...}' / 'Valores ... = {...}' etc.
+  if (context && context.lastX) {
+    const xs = context.lastX;
+    let m = question.match(/^Mesmo\s+X\s*(?:→|—)\s*F\((\d+)\)\s*=\s*\??\s*$/i);
+    if (m) {
+      const K = Number(m[1]);
+      const expected = xs.filter(x => x <= K).length / xs.length;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+    }
+    m = question.match(/^Mesmo\s+X\s*(?:→|—)\s*P\(X\s*([≥≤><=]+)\s*(\d+)\)\s*=\s*\??\s*$/i);
+    if (m) {
+      const op = m[1], K = Number(m[2]);
+      const test = (x) => op === '≥' ? x >= K : op === '≤' ? x <= K : op === '>' ? x > K : op === '<' ? x < K : x === K;
+      const expected = xs.filter(test).length / xs.length;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+    }
+    m = question.match(/^Mesmo\s+X\s*(?:→|—)\s*P\((\d+)\s*<\s*X\s*≤\s*(\d+)\)\s*=\s*\??\s*$/i);
+    if (m) {
+      const A = Number(m[1]), B = Number(m[2]);
+      const expected = xs.filter(x => x > A && x <= B).length / xs.length;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 1e-2, computed: `${expected}`, kind: 'prob_value' };
+    }
+  }
+  if (context && context.lastList) {
+    const list = context.lastList;
+    if (/^Mesma\s+lista\s*[—-]+\s*amplitude\s*=\s*\??\s*$/i.test(question)) {
+      const expected = Math.max(...list) - Math.min(...list);
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: an === expected, computed: `${expected}`, kind: 'stat' };
+    }
+    if (/^Mesma\s+lista\s*[—-]+\s*vari[âa]ncia\s+populacional/i.test(question)) {
+      const mean = list.reduce((s, v) => s + v, 0) / list.length;
+      const expected = list.reduce((s, v) => s + (v - mean) ** 2, 0) / list.length;
+      const an = toNumber(tryEval(a));
+      if (an != null) return { ok: Math.abs(an - expected) < 0.5, computed: `${expected}`, kind: 'variance' };
+    }
+  }
 
   // Polynomial-factoring / 'combine like terms' form: question is an
   // expression, answer is an equivalent form. Both depend on x (or x and y);
@@ -7842,11 +7886,32 @@ async function main() {
     const level = f.match(/math\/([^/]+)\//)?.[1] ?? '?';
     const s = YAML.parse(readFileSync(f, 'utf8'));
     for (const p of s.pages || []) {
+      // Per-page sequential context: capture X-distribution / list setups so
+      // 'Mesmo X' / 'Mesma lista' sequels can resolve against prior data.
+      const ctx = {};
       for (const e of p.exercises || []) {
         const t = e.type || 'unknown';
         byType.total[t] = (byType.total[t] || 0) + 1;
         byLevel.total[level] = (byLevel.total[level] || 0) + 1;
-        const r = verify(e.question, e.correctAnswer, e.type);
+        const r = verify(e.question, e.correctAnswer, e.type, ctx);
+        // Update context from this question (for next exercise).
+        let cm = e.question.match(/X\s*=\s*\{\s*([^}]+)\s*\}\s*(?:,\s*uniforme|com\s+P)/i)
+              || e.question.match(/X\s*~\s*Uniforme\s*\{\s*([^}]+)\s*\}/i)
+              || e.question.match(/Uniforme\s+\{(\d+)\.\.(\d+)\}/i);
+        if (cm) {
+          if (cm.length === 3 && /^\d+$/.test(cm[1]) && /^\d+$/.test(cm[2])) {
+            const a1 = Number(cm[1]), b1 = Number(cm[2]);
+            ctx.lastX = Array.from({ length: b1 - a1 + 1 }, (_, i) => a1 + i);
+          } else {
+            ctx.lastX = cm[1].split(/\s*,\s*/).map(Number).filter(Number.isFinite);
+          }
+        }
+        // Capture lists for 'Mesma lista' sequels.
+        const lm = e.question.match(/\{([\d,\s.-]+)\}/);
+        if (lm && !/^Mesma\s+lista/i.test(e.question)) {
+          const list = lm[1].split(/\s*,\s*/).map(Number).filter(Number.isFinite);
+          if (list.length) ctx.lastList = list;
+        }
         if (!r) {
           if (process.argv.includes('--debug-unverified') && process.argv.includes(e.type)) {
             console.log(`SKIP ${e.type}: ${f}  q="${e.question}" a="${e.correctAnswer}"`);
