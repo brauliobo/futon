@@ -376,7 +376,7 @@ const JP_PATTERN_DESC_RE = /[一-鿿぀-ヿ][^\s]*\s+(?:é|são|pode|poder|serve
 // complex Unicode lookarounds in every lexicon entry.
 const stripAccents = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-export function categorize(rationale) {
+export function categorize(rationale, { maxLen = 300 } = {}) {
   if (rationale == null) return 'missing';
   // Bilingual rationales are stored as {pt, en}; categorize on the pt
   // surface (lexicon is PT-tuned) and fall back to en.
@@ -384,7 +384,7 @@ export function categorize(rationale) {
   if (typeof raw === 'object') raw = raw.pt ?? raw.en ?? '';
   if (typeof raw !== 'string' || !raw) return 'missing';
   const s = raw.trim();
-  if (s.length > 300) return 'long';
+  if (s.length > maxLen) return 'long';
   // Short rationales with an equation/computation (e.g. "5-5 = 0.") teach
   // via arithmetic demonstration — don't penalize for brevity.
   const hasEquation = /=/.test(s);

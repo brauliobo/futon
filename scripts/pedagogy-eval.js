@@ -82,9 +82,20 @@ const choicesOf = ex => {
 // 1. Worked example presence & quality (10)
 function scoreExample(set) {
   const ex = set.example;
-  if (!ex || typeof ex !== 'string') return { score: 0, max: 10, issue: 'no example field' };
-  if (ex.length < 12) return { score: 3, max: 10, issue: 'example too short' };
-  const hasModel = /ex\.?:|e\.g\.:|→|=/i.test(ex);
+  if (ex == null) return { score: 0, max: 10, issue: 'no example field' };
+  // Object form (biology/Q/R): full worked exercise with question + choices +
+  // correctAnswer + rationale. That's a richer pedagogical example than a
+  // 'Ex.: X → Y' string; credit it fully when both Q and A are present.
+  if (typeof ex === 'object' && !Array.isArray(ex)) {
+    const hasQ = ex.question != null;
+    const hasA = ex.correctAnswer != null || (Array.isArray(ex.choices) && ex.choices.length > 0);
+    if (hasQ && hasA) return { score: 10, max: 10, issue: null };
+    return { score: 4, max: 10, issue: 'object example missing question or answer/choices' };
+  }
+  // String form (math/portuguese/etc.) — original heuristic.
+  const str = typeof ex === 'string' ? ex : (ex.pt ?? ex.en ?? '');
+  if (str.length < 12) return { score: 3, max: 10, issue: 'example too short' };
+  const hasModel = /ex\.?:|e\.g\.:|→|=/i.test(str);
   return hasModel ? { score: 10, max: 10, issue: null }
     : { score: 6, max: 10, issue: 'example lacks worked model (Ex.: / → / =)' };
 }
@@ -220,9 +231,15 @@ function echoesQuestionAndAnswer(ex) {
 function scoreRationales(set) {
   const exs = allExercises(set);
   if (!exs.length) return { score: 0, max: 25, issue: 'no exercises' };
+  // Biology research-level sets (difficulty 5, levels Q-S) author citation-
+  // heavy rationales (often 900–1200 chars) — Kumon's brevity doctrine
+  // doesn't apply to graduate content. Scale threshold accordingly.
+  const maxLen = set.subject === 'biology'
+    ? (set.difficulty >= 5 ? 1500 : set.difficulty >= 4 ? 700 : 400)
+    : 300;
   const counts = { method: 0, generic: 0, missing: 0, short: 0, long: 0, restatement: 0 };
   for (const e of exs) {
-    let cat = rationaleCategory(e.rationale);
+    let cat = rationaleCategory(e.rationale, { maxLen });
     if (cat === 'generic' && echoesQuestionAndAnswer(e)) cat = 'method';
     counts[cat]++;
   }
