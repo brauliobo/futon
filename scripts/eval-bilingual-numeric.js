@@ -54,7 +54,7 @@ function numbers(s) {
   // Embryo/biopsy day-range notation: PT 'D5-6' vs EN 'Day 5-6' / 'day 5-6'.
   // Strip both forms — the day range is a unit, not arithmetic content.
   text = text.replace(/\bD\d+-\d+\b/g, ' ');
-  text = text.replace(/\bDay\s+\d+-\d+\b/gi, ' ');
+  text = text.replace(/\b(?:Day|dia)\s+\d+-\d+\b/gi, ' ');
   // PT medical dosing shorthand 'N/N semanas' = 'every N weeks'. Collapse
   // the duplicated digit so the EN 'every 2 weeks' translation matches.
   text = text.replace(/(\d+)\/\1(?=\s*(?:semanas?|weeks?|días?|horas?|hours?))/g, '$1');
