@@ -52,6 +52,7 @@ const CHECKS = [
   ['eval:runs', 'Consecutive-answer runs (advisory)', [['scripts/eval-consecutive-runs.js']]],
   ['eval:rationale-arithmetic', 'Rationale arithmetic claims', [['scripts/eval-rationale-arithmetic.js']]],
   ['eval:rationale-conclusion', 'Rationale conclusion ↔ answer (advisory)', [['scripts/eval-rationale-conclusion.js']]],
+  ['eval:bilingual-numeric', 'Bilingual pt/en numeric consistency (advisory)', [['scripts/eval-bilingual-numeric.js']]],
 ];
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';

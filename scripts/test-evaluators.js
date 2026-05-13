@@ -366,6 +366,99 @@ pages:
   assert('rationale-conclusion: parens hint skipped', r.status === 0);
 }
 
+// ─────────────────────────────────────────────────────────────────────
+// Bilingual numeric consistency.
+// ─────────────────────────────────────────────────────────────────────
+{
+  // pt has '8 horas' but en has '6 hours' — should fail.
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question:
+          pt: 'Dose de 25 mg cada 8 horas'
+          en: '25 mg dose every 6 hours'
+        choices: [a, b, c, d]
+        correctAnswer: {pt: a, en: a}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-bilingual-numeric.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('bilingual-numeric: 8h vs 6h fails', r.status === 1 && r.stdout.includes('number mismatch'));
+}
+
+{
+  // 'século XX' vs '20th century' should compare equal via Roman conversion.
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question:
+          pt: 'Descoberto no século XX'
+          en: 'Discovered in the 20th century'
+        choices: [a, b, c, d]
+        correctAnswer: {pt: a, en: a}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-bilingual-numeric.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('bilingual-numeric: século XX ↔ 20th century equal', r.status === 0);
+}
+
+{
+  // Medical acronyms (CML, MI, DII) must NOT be Roman-converted.
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question:
+          pt: 'Imatinibe em CML, DII e MI'
+          en: 'Imatinib in CML, IBD and MI'
+        choices: [a, b, c, d]
+        correctAnswer: {pt: a, en: a}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-bilingual-numeric.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('bilingual-numeric: medical acronyms not Roman-converted', r.status === 0);
+}
+
 // Rationale-conclusion: sign-flip magnitude pattern tolerated.
 {
   setupFixture({
