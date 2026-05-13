@@ -28,8 +28,12 @@ async function main() {
   const objCount = new Map(); // obj → total exercises across all sets
   const objLevels = new Map(); // obj → Set<level>
   for (const f of files) {
-    const s = YAML.parse(readFileSync(f, 'utf8'));
     const m = f.match(/src\/levels\/([^/]+)\/([^/]+)\//);
+    const subject = m?.[1];
+    // Biology authors objectives as prose, unique per question — coverage
+    // threshold doesn't fit. Same exemption as eval:orphan-objectives.
+    if (subject === 'biology') continue;
+    const s = YAML.parse(readFileSync(f, 'utf8'));
     const level = m ? `${m[1]}/${m[2]}` : 'unknown';
     for (const p of s.pages || []) {
       for (const e of p.exercises || []) {
