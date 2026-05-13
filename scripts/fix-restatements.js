@@ -98,7 +98,7 @@ function processFile(fp) {
 
 function walk() {
   const files = [];
-  for (const subject of ['math', 'portuguese', 'english', 'japanese']) {
+  for (const subject of ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology']) {
     const dir = path.join(process.cwd(), 'src', 'levels', subject);
     if (!fs.existsSync(dir)) continue;
     for (const level of fs.readdirSync(dir).sort()) {

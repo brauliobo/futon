@@ -30,7 +30,7 @@ const SUBJECT = argVal('--subject');
 const LEVEL = argVal('--level');
 const MIN_CHOICES = parseInt(argVal('--min-choices') || '5', 10);
 const JSON_OUT = args.includes('--json');
-const SUBJECTS = SUBJECT ? [SUBJECT] : ['math', 'portuguese', 'english', 'japanese'];
+const SUBJECTS = SUBJECT ? [SUBJECT] : ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'];
 
 // Reject parens containing "?" (fill-in-the-blank math like "(3/?)") since
 // those aren't real multi-choice lists — same guard as pedagogy-eval.
