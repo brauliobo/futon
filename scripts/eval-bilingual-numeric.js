@@ -55,6 +55,9 @@ function numbers(s) {
   // Strip both forms — the day range is a unit, not arithmetic content.
   text = text.replace(/\bD\d+-\d+\b/g, ' ');
   text = text.replace(/\bDay\s+\d+-\d+\b/gi, ' ');
+  // PT medical dosing shorthand 'N/N semanas' = 'every N weeks'. Collapse
+  // the duplicated digit so the EN 'every 2 weeks' translation matches.
+  text = text.replace(/(\d+)\/\1(?=\s*(?:semanas?|weeks?|días?|horas?|hours?))/g, '$1');
   // Thousand separator: '1,000' / '10,000' / '1.000' (European). A separator
   // followed by exactly 3 digits (no more) → strip the separator so '1,000'
   // and '1000' compare equal.
