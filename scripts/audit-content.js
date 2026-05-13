@@ -20,8 +20,17 @@ const SUBJECTS = SUBJECT_FILTER
 
 // ── Shared helpers ──────────────────────────────────────────────────────────
 
+// Render a bilingual {pt,en} object or scalar as a comparable string.
+function asTextStr(v) {
+  if (v == null) return '';
+  if (typeof v === 'string') return v;
+  if (typeof v === 'number') return String(v);
+  if (typeof v === 'object' && (v.pt != null || v.en != null)) return v.pt ?? v.en ?? '';
+  return String(v);
+}
+
 function normalizeAnswer(str) {
-  return String(str || '')
+  return asTextStr(str)
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     .replace(/^[\u2018\u2019\u201c\u201d'"`*]+|[\u2018\u2019\u201c\u201d'"`*.]+$/g, '')
     .replace(/\s+/g, '').replace(/,/, '.').toLowerCase();
@@ -34,8 +43,9 @@ const CHOICE_RE = /\(([^)]+\/[^)]+)\)\s*$/;
 const REAL_CHOICE_RE = /[:—]\s*\([^)]+\/[^)]+\)\s*$/;
 
 function parseChoices(question) {
-  if (!REAL_CHOICE_RE.test(question)) return null;
-  const m = question.match(CHOICE_RE);
+  const q = asTextStr(question);
+  if (!REAL_CHOICE_RE.test(q)) return null;
+  const m = q.match(CHOICE_RE);
   if (!m) return null;
   return m[1].split('/').map(s => s.trim());
 }
@@ -99,8 +109,8 @@ function checkChoices(sets) {
       issues.push({
         file: relPath(set._path),
         page: page.pageNumber,
-        question: ex.question.slice(0, 60),
-        answer: String(ex.correctAnswer),
+        question: asTextStr(ex.question).slice(0, 60),
+        answer: asTextStr(ex.correctAnswer),
         choices: choices.join(' | '),
         severity: 'error',
       });
@@ -119,8 +129,8 @@ function checkChoices(sets) {
       issues.push({
         file: relPath(set._path),
         page: page.pageNumber,
-        question: ex.question.slice(0, 60),
-        answer: String(ex.correctAnswer),
+        question: asTextStr(ex.question).slice(0, 60),
+        answer: asTextStr(ex.correctAnswer),
         choices: choices.join(' | '),
         severity: 'warn',
         note: 'all choices identical',
@@ -150,14 +160,15 @@ function checkRationales(sets) {
   const issues = [];
   forEachExercise(sets, (ex, page, set) => {
     if (!ex.rationale) return;
-    const r = ex.rationale;
+    const r = asTextStr(ex.rationale);
+    const qText = asTextStr(ex.question);
 
     // Placeholder rationale
     if (PLACEHOLDER_RE.test(r)) {
       issues.push({
         file: relPath(set._path),
         page: page.pageNumber,
-        question: ex.question.slice(0, 50),
+        question: qText.slice(0, 50),
         rationale: r.slice(0, 60),
         severity: 'warn',
         note: 'placeholder rationale',
@@ -170,13 +181,13 @@ function checkRationales(sets) {
     // Only flag if question has a clear single topic AND rationale has a
     // DIFFERENT single topic with NO overlap. Many rationales validly mention
     // related topics (e.g., explaining concordância by referencing the verb).
-    const qTopics = Object.entries(TOPIC_KEYWORDS).filter(([, re]) => re.test(ex.question)).map(([t]) => t);
+    const qTopics = Object.entries(TOPIC_KEYWORDS).filter(([, re]) => re.test(qText)).map(([t]) => t);
     const rTopics = Object.entries(TOPIC_KEYWORDS).filter(([, re]) => re.test(r)).map(([t]) => t);
     if (qTopics.length === 1 && rTopics.length === 1 && qTopics[0] !== rTopics[0]) {
       issues.push({
         file: relPath(set._path),
         page: page.pageNumber,
-        question: ex.question.slice(0, 50),
+        question: qText.slice(0, 50),
         rationale: r.slice(0, 60),
         severity: 'error',
         note: `question=${qTopics[0]} rationale=${rTopics[0]}`,
@@ -205,7 +216,7 @@ function checkSpelling(sets) {
   const issues = [];
   const ptSets = sets.filter(s => s.subject === 'portuguese');
   forEachExercise(ptSets, (ex, page, set) => {
-    const texts = [ex.question, String(ex.correctAnswer), ex.rationale].filter(Boolean);
+    const texts = [asTextStr(ex.question), asTextStr(ex.correctAnswer), asTextStr(ex.rationale)].filter(Boolean);
     for (const text of texts) {
       // Double parentheses
       if (/\)\)/.test(text)) {
@@ -222,7 +233,7 @@ function checkSpelling(sets) {
         });
       }
       // Missing accents (skip if inside choice options — the wrong form may be a distractor)
-      const isQuestion = text === ex.question;
+      const isQuestion = text === asTextStr(ex.question);
       const choicePart = isQuestion && CHOICE_RE.test(text) ? text.match(CHOICE_RE)[1] : '';
       const textToCheck = isQuestion ? text.replace(CHOICE_RE, '') : text;
       for (const [re, fix] of PT_ACCENT_FIXES) {
@@ -256,7 +267,7 @@ function checkEnglishCaps(sets) {
   const issues = [];
   const enSets = sets.filter(s => s.subject === 'english');
   forEachExercise(enSets, (ex, page, set) => {
-    const ans = String(ex.correctAnswer);
+    const ans = asTextStr(ex.correctAnswer);
     if (!ans.includes(' ')) return; // single word, skip
 
     // Sentence starting lowercase. Only flag when the answer is a
