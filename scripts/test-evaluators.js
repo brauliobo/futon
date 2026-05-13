@@ -367,6 +367,19 @@ pages:
 }
 
 // ─────────────────────────────────────────────────────────────────────
+// scripts/lib/subjects.js must mirror src/domain/disciplines.js Discipline.ALL.
+// ─────────────────────────────────────────────────────────────────────
+{
+  // Use absolute paths since fixtures redirect cwd in other test blocks.
+  const repo = process.cwd();
+  const { SUBJECTS } = await import(`file://${repo}/scripts/lib/subjects.js`);
+  const { Discipline } = await import(`file://${repo}/src/domain/disciplines.js`);
+  const match = JSON.stringify([...SUBJECTS]) === JSON.stringify([...Discipline.ALL]);
+  assert('subjects: scripts/lib/subjects mirrors Discipline.ALL', match,
+    `scripts=${JSON.stringify([...SUBJECTS])} vs Discipline.ALL=${JSON.stringify([...Discipline.ALL])}`);
+}
+
+// ─────────────────────────────────────────────────────────────────────
 // eval:bilingual gate — ≥50% bilingual with stragglers = fail (half-translated bug);
 // <50% bilingual = advisory only (partial-upgrade in progress).
 // ─────────────────────────────────────────────────────────────────────
