@@ -367,6 +367,42 @@ pages:
 }
 
 // ─────────────────────────────────────────────────────────────────────
+// audit-content: bilingual question/correctAnswer handled without [object Object].
+// ─────────────────────────────────────────────────────────────────────
+{
+  // Bilingual choice question — inline (a/b/c/d) parsing should NOT trigger
+  // false positives. audit-content should pass clean.
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question: {pt: 'Qual organela faz ATP?', en: 'Which organelle makes ATP?'}
+        choices:
+          - {pt: 'Mitocôndria', en: 'Mitochondrion'}
+          - {pt: 'Núcleo', en: 'Nucleus'}
+          - {pt: 'Lisossomo', en: 'Lysosome'}
+          - {pt: 'Cloroplasto', en: 'Chloroplast'}
+        correctAnswer: {pt: 'Mitocôndria', en: 'Mitochondrion'}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/audit-content.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('audit-content: bilingual choice no false positive', r.status === 0);
+}
+
+// ─────────────────────────────────────────────────────────────────────
 // Topic-consistency biology exemption.
 // ─────────────────────────────────────────────────────────────────────
 {
