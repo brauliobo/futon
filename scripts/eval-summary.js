@@ -50,6 +50,8 @@ const CHECKS = [
   ['eval:progression', 'Per-page difficulty progression (advisory)', [['scripts/eval-difficulty-progression.js']]],
   ['eval:keyword-leak', 'Answer keyword leak in prompt (advisory)', [['scripts/eval-keyword-leak.js']]],
   ['eval:runs', 'Consecutive-answer runs (advisory)', [['scripts/eval-consecutive-runs.js']]],
+  ['eval:rationale-arithmetic', 'Rationale arithmetic claims', [['scripts/eval-rationale-arithmetic.js']]],
+  ['eval:rationale-conclusion', 'Rationale conclusion ↔ answer (advisory)', [['scripts/eval-rationale-conclusion.js']]],
 ];
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
