@@ -8,7 +8,7 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 
 | Command | Purpose |
 |---|---|
-| `pnpm test:eval` | 165 regression tests (categorize, rubric scorers, fixers, shuffle) — gates future edits |
+| `pnpm test:eval` | 500+ regression tests (categorize, rubric scorers, fixers, shuffle, math correctness, rationale-arithmetic, evaluator fixtures) — gates future edits |
 | `pnpm hooks:install` | Installs a pre-commit hook that runs `test:eval` + `eval:snapshot` + `eval:topic` whenever pedagogy files are staged |
 | `pnpm eval:dashboard` | One-screen health summary (global score, distribution, top weakest levels, snapshot delta) |
 | `pnpm eval:pedagogy` | Per-set rubric scoring across 7 dimensions + level progression |
@@ -96,7 +96,7 @@ If any of these regress, the pre-commit hook blocks with a pointer to this guide
 
 **Watch:** changing a choice's surface form changes `correctAnswer` too — both must stay in sync or `eval:answers` hard-fails.
 
-Dashboard (`pnpm eval:dashboard`) shows global pedagogy score **100%** across 1021 sets (math/portuguese/english/japanese/spanish). All 32 evaluators (5 zero-state hard-fail gates + 27 advisory) pass; every set at 100% method rationales.
+Dashboard (`pnpm eval:dashboard`) shows global pedagogy score **100%** across 2460 sets (math/portuguese/english/japanese/spanish/biology). All 36+ evaluators (5 zero-state hard-fail gates + 30+ advisory) pass; every set at 100% method rationales.
 
 ## Kumon principles Futon inherits
 
