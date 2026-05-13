@@ -67,6 +67,13 @@ export class Levels {
   ];
 
   static ENGLISH = [
+    { id: '7A', topic: 'english_pre_listening', name: 'Pre-listening — Sounds & Rhythm' },
+    { id: '6A', topic: 'english_pre_listening', name: 'Pre-listening — Sounds & Rhythm' },
+    { id: '5A', topic: 'english_pre_listening', name: 'Pre-listening — Sounds & Rhythm' },
+    { id: '4A', topic: 'english_first_words', name: 'First Words' },
+    { id: '3A', topic: 'english_first_words', name: 'First Words' },
+    { id: '2A', topic: 'english_simple_phrases', name: 'Simple Phrases' },
+    { id: '1A', topic: 'english_simple_phrases', name: 'Simple Phrases' },
     { id: 'A', topic: 'english_vocab', name: 'A1 — Basic Vocabulary' },
     { id: 'B', topic: 'english_present_simple', name: 'A1 — Present Simple' },
     { id: 'C', topic: 'english_past_simple', name: 'A2 — Past Simple' },
@@ -85,9 +92,19 @@ export class Levels {
     { id: '4A', topic: 'japanese_hiragana_basic', name: 'Hiragana — Unvoiced' },
     { id: '3A', topic: 'japanese_hiragana_advanced', name: 'Hiragana — Voiced & Combined' },
     { id: '2A', topic: 'japanese_katakana', name: 'Katakana & Loan Words' },
+    { id: '1A', topic: 'japanese_kana_review', name: 'Kana Review & Mixed Drills' },
     { id: 'A',  topic: 'japanese_kanji_intro', name: 'N5 — First Kanji & Sentence Patterns' },
     { id: 'B',  topic: 'japanese_particles_verbs', name: 'N5 — Particles & Verbs' },
     { id: 'C',  topic: 'japanese_adjectives_past', name: 'N5 — Adjectives & Past Tense' },
+    { id: 'D',  topic: 'japanese_connectors', name: 'N4 — Connectors & Reasons' },
+    { id: 'E',  topic: 'japanese_plain_form', name: 'N4 — Plain Form & Quotes' },
+    { id: 'F',  topic: 'japanese_modifiers', name: 'N4 — Modifiers & Conditions' },
+    { id: 'G',  topic: 'japanese_discourse', name: 'N4 — Discourse & Function' },
+    { id: 'H',  topic: 'japanese_advanced_grammar', name: 'N3 — Advanced Grammar' },
+    { id: 'I',  topic: 'japanese_jlpt_n3', name: 'JLPT N3' },
+    { id: 'J',  topic: 'japanese_jlpt_n2', name: 'JLPT N2' },
+    { id: 'K',  topic: 'japanese_jlpt_n1', name: 'JLPT N1' },
+    { id: 'L',  topic: 'japanese_native_polish', name: 'Native Polish' },
   ];
 
   static SPANISH = [
