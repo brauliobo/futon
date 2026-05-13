@@ -58,6 +58,14 @@ function numbers(s) {
   // PT medical dosing shorthand 'N/N semanas' = 'every N weeks'. Collapse
   // the duplicated digit so the EN 'every 2 weeks' translation matches.
   text = text.replace(/(\d+)\/\1(?=\s*(?:semanas?|weeks?|días?|horas?|hours?))/g, '$1');
+  // Strip ordinal-labeled noun phrases on BOTH sides:
+  //   PT '1ª geração' / 'Nº geração' / 'Nº grau' / 'Nª+Mª geração'
+  //   EN 'first-gen' / 'first generation' / 'first-degree' (only with gen/deg suffix)
+  // The ordinal here labels a category, not arithmetic content.
+  text = text.replace(/\d+\s*[ºª°]\s*[+e]?\s*\d*\s*[ºª°]?\s*gera[çc][ãa]o\b/gi, ' ');
+  text = text.replace(/\d+\s*[ºª°]\s*grau\b/gi, ' ');
+  text = text.replace(/\b\d+(?:st|nd|rd|th)?\s*[+&-]?\s*\d*(?:st|nd|rd|th)?[-\s](?:gen(?:eration)?|degree)\b/gi, ' ');
+  text = text.replace(/\b(?:first|second|third|fourth|fifth)[-\s](?:gen(?:eration)?|degree)\b/gi, ' ');
   // Thousand separator: '1,000' / '10,000' / '1.000' (European). A separator
   // followed by exactly 3 digits (no more) → strip the separator so '1,000'
   // and '1000' compare equal.
