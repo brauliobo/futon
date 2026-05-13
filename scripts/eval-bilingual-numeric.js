@@ -98,15 +98,19 @@ function numbers(s) {
   // 'Ga'/'Gya'/'Bya'/'by'/'Gb' = giga (billion);
   // 'ka'/'kya'/'kb' = kilo (thousand).
   text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s+(?:milh[ãa]o|milh[õo]es|million)\\b`, 'gi'), mul(1_000_000));
-  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s+(?:mya|ma|myr|mb)\\b`, 'gi'), mul(1_000_000));
+  // Genomic units 'Mb' often written joined ('3.7kb' / '3.7 kb' both valid).
+  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s+(?:mya|ma|myr)\\b`, 'gi'), mul(1_000_000));
+  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s*mb\\b`, 'gi'), mul(1_000_000));
   text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s+(?:bilh[ãa]o|bilh[õo]es|billion|bi)\\b`, 'gi'), mul(1_000_000_000));
-  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s+(?:gya|bya|ga|gb)\\b`, 'gi'), mul(1_000_000_000));
+  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s+(?:gya|bya|ga)\\b`, 'gi'), mul(1_000_000_000));
+  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s*gb\\b`, 'gi'), mul(1_000_000_000));
   // 'by'/'ka' are too short — require leading word boundary and following
   // 'ago' / time-noun ('history', 'history') / end / punctuation.
   // (em-dash and en-dash also count as separators in scientific writing.)
   const BOUND = String.raw`(?=\s+(?:ago|history|years?|of)|\s*[,;:.)–—]|$)`;
   text = text.replace(new RegExp(`(?<![a-zA-Z])(\\d+(?:[,.]\\d+)?)\\s+by${BOUND}`, 'gi'), mul(1_000_000_000));
-  text = text.replace(/(?<![a-zA-Z])(\d+(?:[,.]\d+)?)\s+(?:kya|kb)\b/gi, mul(1000));
+  text = text.replace(/(?<![a-zA-Z])(\d+(?:[,.]\d+)?)\s+kya\b/gi, mul(1000));
+  text = text.replace(/(?<![a-zA-Z])(\d+(?:[,.]\d+)?)\s*kb\b/gi, mul(1000));
   text = text.replace(new RegExp(`(?<![a-zA-Z])(\\d+(?:[,.]\\d+)?)\\s+ka${BOUND}`, 'gi'), mul(1000));
   // PT ordinals '1º grau' / '2ª' / '3°' → strip the marker so it matches
   // English ordinals (which often spell out 'first/second/third').
