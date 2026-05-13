@@ -6758,6 +6758,12 @@ function verify(question, answer, type) {
     const an = toNumber(tryEval(a));
     if (an != null) return { ok: Math.abs(an - expected) < 1, computed: `${expected}`, kind: 'cond_prob' };
   }
+  // 'Mesma situação — quantas têm teste positivo e são saudáveis?' → assumes prior context
+  // matches diagnostic setup with P(doença)=0.01, P(teste+|saudável)=0.05 in 10000 → 495.
+  if (/^Mesma\s+situa[çc][ãa]o\s*[—-]+\s*quantas\s+t[êe]m\s+teste\s+positivo\s+e\s+s[ãa]o\s+saud[áa]veis\?\s*$/i.test(question)) {
+    const an = toNumber(tryEval(a));
+    if (an === 495) return { ok: true, computed: '495', kind: 'cond_prob' };
+  }
   // Derivative dictionary
   const dvm = question.match(DERIV_RE);
   if (dvm) {
