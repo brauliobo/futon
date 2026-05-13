@@ -33,6 +33,17 @@ export class Scoring {
     'spanish-2A': 20, 'spanish-A': 22,  'spanish-B': 22,
     'spanish-C': 24,  'spanish-F': 25,  'spanish-H': 25,
     'spanish-L': 25,
+
+    // Biology is multiple-choice with rich citation-heavy rationales — slower
+    // pace than language drills. Difficulty ramps from intro (25s) to graduate-
+    // research-level passages (35s+).
+    'biology-7A': 25, 'biology-6A': 25, 'biology-5A': 28,
+    'biology-4A': 28, 'biology-3A': 28, 'biology-2A': 30, 'biology-1A': 30,
+    'biology-A': 30,  'biology-B': 30,  'biology-C': 30,  'biology-D': 32,
+    'biology-E': 35,  'biology-F': 35,  'biology-G': 35,  'biology-H': 35,
+    'biology-I': 35,  'biology-J': 35,  'biology-K': 35,  'biology-L': 35,
+    'biology-M': 38,  'biology-N': 38,  'biology-O': 38,  'biology-P': 38,
+    'biology-Q': 40,  'biology-R': 40,  'biology-S': 40,
   };
 
   static DEFAULT_SPEED_BY_SUBJECT = {
@@ -41,6 +52,7 @@ export class Scoring {
     english: 25,
     japanese: 8,
     spanish: 22,
+    biology: 30,
   };
 
   static normalizedLevel(level) {
