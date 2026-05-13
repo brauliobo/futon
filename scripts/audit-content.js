@@ -6,6 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { parse } from 'yaml';
+import { asText } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m';
@@ -20,17 +21,8 @@ const SUBJECTS = SUBJECT_FILTER
 
 // ── Shared helpers ──────────────────────────────────────────────────────────
 
-// Render a bilingual {pt,en} object or scalar as a comparable string.
-function asTextStr(v) {
-  if (v == null) return '';
-  if (typeof v === 'string') return v;
-  if (typeof v === 'number') return String(v);
-  if (typeof v === 'object' && (v.pt != null || v.en != null)) return v.pt ?? v.en ?? '';
-  return String(v);
-}
-
 function normalizeAnswer(str) {
-  return asTextStr(str)
+  return asText(str)
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     .replace(/^[\u2018\u2019\u201c\u201d'"`*]+|[\u2018\u2019\u201c\u201d'"`*.]+$/g, '')
     .replace(/\s+/g, '').replace(/,/, '.').toLowerCase();
@@ -43,7 +35,7 @@ const CHOICE_RE = /\(([^)]+\/[^)]+)\)\s*$/;
 const REAL_CHOICE_RE = /[:—]\s*\([^)]+\/[^)]+\)\s*$/;
 
 function parseChoices(question) {
-  const q = asTextStr(question);
+  const q = asText(question);
   if (!REAL_CHOICE_RE.test(q)) return null;
   const m = q.match(CHOICE_RE);
   if (!m) return null;
@@ -109,8 +101,8 @@ function checkChoices(sets) {
       issues.push({
         file: relPath(set._path),
         page: page.pageNumber,
-        question: asTextStr(ex.question).slice(0, 60),
-        answer: asTextStr(ex.correctAnswer),
+        question: asText(ex.question).slice(0, 60),
+        answer: asText(ex.correctAnswer),
         choices: choices.join(' | '),
         severity: 'error',
       });
@@ -129,8 +121,8 @@ function checkChoices(sets) {
       issues.push({
         file: relPath(set._path),
         page: page.pageNumber,
-        question: asTextStr(ex.question).slice(0, 60),
-        answer: asTextStr(ex.correctAnswer),
+        question: asText(ex.question).slice(0, 60),
+        answer: asText(ex.correctAnswer),
         choices: choices.join(' | '),
         severity: 'warn',
         note: 'all choices identical',
@@ -160,8 +152,8 @@ function checkRationales(sets) {
   const issues = [];
   forEachExercise(sets, (ex, page, set) => {
     if (!ex.rationale) return;
-    const r = asTextStr(ex.rationale);
-    const qText = asTextStr(ex.question);
+    const r = asText(ex.rationale);
+    const qText = asText(ex.question);
 
     // Placeholder rationale
     if (PLACEHOLDER_RE.test(r)) {
@@ -216,7 +208,7 @@ function checkSpelling(sets) {
   const issues = [];
   const ptSets = sets.filter(s => s.subject === 'portuguese');
   forEachExercise(ptSets, (ex, page, set) => {
-    const texts = [asTextStr(ex.question), asTextStr(ex.correctAnswer), asTextStr(ex.rationale)].filter(Boolean);
+    const texts = [asText(ex.question), asText(ex.correctAnswer), asText(ex.rationale)].filter(Boolean);
     for (const text of texts) {
       // Double parentheses
       if (/\)\)/.test(text)) {
@@ -233,7 +225,7 @@ function checkSpelling(sets) {
         });
       }
       // Missing accents (skip if inside choice options — the wrong form may be a distractor)
-      const isQuestion = text === asTextStr(ex.question);
+      const isQuestion = text === asText(ex.question);
       const choicePart = isQuestion && CHOICE_RE.test(text) ? text.match(CHOICE_RE)[1] : '';
       const textToCheck = isQuestion ? text.replace(CHOICE_RE, '') : text;
       for (const [re, fix] of PT_ACCENT_FIXES) {
@@ -267,7 +259,7 @@ function checkEnglishCaps(sets) {
   const issues = [];
   const enSets = sets.filter(s => s.subject === 'english');
   forEachExercise(enSets, (ex, page, set) => {
-    const ans = asTextStr(ex.correctAnswer);
+    const ans = asText(ex.correctAnswer);
     if (!ans.includes(' ')) return; // single word, skip
 
     // Sentence starting lowercase. Only flag when the answer is a
