@@ -20,10 +20,17 @@ export async function waitForAppReady(page) {
 }
 
 /**
- * Clicks a subject tab by name.
+ * Clicks a subject tab by name. Icons come from src/utils/SubjectBranding.js.
  */
 export async function selectSubject(page, label) {
-  const icons = { 'Matemática': '🔢', 'Português': '📖', 'Inglês': '🌍' };
+  const icons = {
+    'Matemática': '🔢', 'Math': '🔢',
+    'Português': '📖', 'Portuguese': '📖',
+    'Inglês': '🌍', 'English': '🌍',
+    'Japonês': '🗾', 'Japanese': '🗾',
+    'Espanhol': '🌶️', 'Spanish': '🌶️',
+    'Biologia': '🧬', 'Biology': '🧬',
+  };
   const icon = icons[label] || '';
   await page.getByRole('button', { name: `${icon} ${label}` }).click();
   await waitForLoading(page);
