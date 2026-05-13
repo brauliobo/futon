@@ -438,16 +438,27 @@ function scoreSet(set) {
   return { score, max, pct: Math.round(100 * score / max), parts };
 }
 
-// 8. Cross-set progression within a level (10, level-scoped)
+// 8. Cross-set progression within a level (10, level-scoped). Many language
+// levels intentionally interleave difficulty 3↔4 sets (Kumon spaced-repetition
+// mixes review with new material), so the metric grades on first-half vs
+// second-half average rather than penalizing every per-set 1-step regression.
 function scoreLevelProgression(sets) {
   const diffs = sets.map(s => s.difficulty).filter(Number.isFinite);
   if (diffs.length < 2) return { score: 5, max: 10, issue: 'too few sets' };
+  const mid = Math.floor(diffs.length / 2);
+  const firstAvg = diffs.slice(0, mid).reduce((a, b) => a + b, 0) / mid;
+  const secondAvg = diffs.slice(mid).reduce((a, b) => a + b, 0) / (diffs.length - mid);
+  const trend = secondAvg - firstAvg;
   let score = 10;
   const issues = [];
+  if (trend < -0.5) { score -= 5; issues.push(`second half (${secondAvg.toFixed(1)}) easier than first (${firstAvg.toFixed(1)})`); }
+  else if (trend < -0.1) { score -= 2; issues.push(`mild reverse trend (${trend.toFixed(2)})`); }
+  // Per-set big jumps still penalized (≥3 step gap is a sudden cliff that
+  // breaks scaffolding; ≤2 is a normal acceleration).
   for (let i = 1; i < diffs.length; i++) {
     const gap = diffs[i] - diffs[i - 1];
-    if (gap < 0) { score -= 3; issues.push(`set ${i + 1}: regresses`); }
-    else if (gap > 1) { score -= 2; issues.push(`set ${i + 1}: jump ${gap}`); }
+    if (gap >= 3) { score -= 2; issues.push(`set ${i + 1}: jump ${gap}`); }
+    else if (gap <= -3) { score -= 2; issues.push(`set ${i + 1}: cliff ${gap}`); }
   }
   return { score: Math.max(0, score), max: 10, issue: issues.slice(0, 3).join('; ') || null };
 }
