@@ -30,6 +30,16 @@ const cases = [
   // not upstream-wrong-but-arithmetically-consistent ones.
   { text: '72/96 = 0.75', expectOk: [true] },
 
+  // Genetics ratios with ':' are skipped (Mendel notation, not arithmetic).
+  { text: '(3:1) × (3:1) = 9:3:3:1', expectOk: [] },
+  { text: 'Como (3:1) × (3:1) = 9:3:3:1, segregação independente.', expectOk: [] },
+
+  // Mixed '=' / '≈' chain — each pair uses its own tolerance.
+  // '5·sqrt(2) ≈ 7.07' is the rightmost pair (LHS has '·' so qualifies as numeric).
+  { text: '√50 = 5·√2 ≈ 7.07', expectOk: [true] },
+  // Pi-bearing segments are dropped (variables), so only the '3.14·4 ≈ 12.6' pair remains.
+  { text: 'V = π·r² = 3.14·4 ≈ 12.6.', expectOk: [true] },
+
   // Skip cases (no claims).
   { text: 'Aritmética: subtraia 3 de 10 para obter 7.', expectOk: [] },
   { text: 'Use a propriedade distributiva.', expectOk: [] },
