@@ -622,6 +622,37 @@ pages:
 }
 
 {
+  // Hyphenated identifier suffixes ('mRNA-1273 bilhões' / 'COVID-19 milhões')
+  // must NOT be magnified — the digit is a vaccine/disease version, not a count.
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question:
+          pt: 'mRNA-1273 bilhões de doses'
+          en: 'mRNA-1273 billions of doses'
+        choices: [a, b, c, d]
+        correctAnswer: {pt: a, en: a}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-bilingual-numeric.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('bilingual-numeric: identifier-suffix digit (mRNA-1273) not magnified', r.status === 0);
+}
+
+{
   // Medical acronyms (CML, MI, DII) must NOT be Roman-converted.
   setupFixture({
     'src/levels/biology/X/set_01.yaml': `

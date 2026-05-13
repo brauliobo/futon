@@ -53,20 +53,26 @@ function numbers(s) {
   text = text.replace(/(\d{1,3})[,.](\d{3})(?!\d)/g, '$1$2');
   // 'N mil' (PT) / 'N thousand' (EN) — N may have a decimal comma/dot ('3,7 mil').
   const mul = (factor) => (_, n) => ` ${Number(n.replace(',', '.')) * factor} `;
-  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:mil|thousand)\b/gi, mul(1000));
+  // Negative lookbehind: skip when the digit is the trailing part of an
+  // identifier like 'mRNA-1273' / 'COVID-19'. Pattern: letter immediately
+  // before a hyphen (then the digit). Digit-hyphen-digit ranges like '2-3'
+  // are preserved.
+  // (?<![\d.]) prevents starting in the middle of a longer digit run;
+  // (?<![A-Za-z]-) prevents matching when the digit is the version suffix of
+  // a 'WORD-NUMBER' identifier like 'mRNA-1273' / 'COVID-19'.
+  const NLI = '(?<![\\d.])(?<![A-Za-z]-)';
+  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s+(?:mil|thousand)\\b`, 'gi'), mul(1000));
   // English shorthand '200k'/'200 k', '1.5M'/'1.5 M', '2B'/'2 B'.
-  text = text.replace(/(\d+(?:[,.]\d+)?)\s*k\b/g, mul(1000));
-  text = text.replace(/(\d+(?:[,.]\d+)?)\s*M\b/g, mul(1_000_000));
-  text = text.replace(/(\d+(?:[,.]\d+)?)\s*B\b/g, mul(1_000_000_000));
+  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s*k\\b`, 'g'), mul(1000));
+  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s*M\\b`, 'g'), mul(1_000_000));
+  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s*B\\b`, 'g'), mul(1_000_000_000));
   // 'Ma'/'Mya'/'Myr'/'Mb' = mega-annum or mega-bases (million);
   // 'Ga'/'Gya'/'Bya'/'by'/'Gb' = giga (billion);
   // 'ka'/'kya'/'kb' = kilo (thousand).
-  // Matched after digit+space, which makes false positives rare even with
-  // ambiguous tokens like 'by' or 'ma'.
-  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:milh[ãa]o|milh[õo]es|million)\b/gi, mul(1_000_000));
-  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:mya|ma|myr|mb)\b/gi, mul(1_000_000));
-  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:bilh[ãa]o|bilh[õo]es|billion|bi)\b/gi, mul(1_000_000_000));
-  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:gya|bya|ga|gb)\b/gi, mul(1_000_000_000));
+  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s+(?:milh[ãa]o|milh[õo]es|million)\\b`, 'gi'), mul(1_000_000));
+  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s+(?:mya|ma|myr|mb)\\b`, 'gi'), mul(1_000_000));
+  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s+(?:bilh[ãa]o|bilh[õo]es|billion|bi)\\b`, 'gi'), mul(1_000_000_000));
+  text = text.replace(new RegExp(`${NLI}(\\d+(?:[,.]\\d+)?)\\s+(?:gya|bya|ga|gb)\\b`, 'gi'), mul(1_000_000_000));
   // 'by'/'ka' are too short — require leading word boundary and following 'ago' or end.
   text = text.replace(/(?<![a-zA-Z])(\d+(?:[,.]\d+)?)\s+by(?=\s+ago|\s*[,;:.)]|$)/gi, mul(1_000_000_000));
   text = text.replace(/(?<![a-zA-Z])(\d+(?:[,.]\d+)?)\s+(?:kya|kb)\b/gi, mul(1000));
