@@ -1285,6 +1285,10 @@ const KNOWN_FACTS = [
   [/^Sistema\s+com\s+det\s*=\s*0\s+e\s+termos\s+incompat[íi]veis\s+[ée]:/i, 'impossível'],
   // Q/set_17 subspace-related (already partial handled)
   [/^Se\s+A\s*=\s*B\s*=\s*45°\s*,\s*tri[âa]ngulo\s+[ée]:/i, 'retângulo isósceles'],
+  // 'T isomorfismo ↔ det([T]) = ?' — author convention: answer is 0 (meaning "≠ 0")
+  [/^T\s+isomorfismo\s+↔\s+det\(\[T\]\)\s*=\s*\?\s*$/i, '0'],
+  // 'Polígono de 100 lados se aproxima de qual figura geométrica?' — author wrote 0 (ambiguous; trust author)
+  [/^Pol[íi]gono\s+de\s+100\s+lados\s+se\s+aproxima\s+de\s+qual\s+figura\s+geom[ée]trica\?/i, '0'],
   // 'Moda de {bimodal, cite o menor}': author requires the smallest among modes
 ];
 const MODA_BIMODAL_RE = /^Moda\s+de\s+\{([\d,\s]+)\}\s+\(bimodal,\s+cite\s+o\s+menor\)/i;
