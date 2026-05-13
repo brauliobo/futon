@@ -167,7 +167,7 @@ function findPlaceholderTemplates(sets, threshold = 3) {
         file: `${set.subject}/${set.level}/${set._file}`,
         count: exercises.length,
         rationale: rationale.slice(0, 80),
-        sampleQuestion: String(exercises[0].question || '').slice(0, 50),
+        sampleQuestion: asText(exercises[0].question).slice(0, 50),
       });
     }
   }

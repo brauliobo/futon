@@ -333,10 +333,7 @@ function checkCrossSetDuplicates(sets) {
     // Revision/review sets (typically set_19/set_20 with 'Revisão'/'Review'
     // in the title) are designed to re-test earlier content — duplication
     // is the feature, not a bug.
-    const isRevisionSet = (set) => {
-      const title = typeof set.title === 'object' ? (set.title?.pt ?? set.title?.en ?? '') : String(set.title || '');
-      return /revis(ão|ao|ão geral|ion|iew|ón)|review|mixed|cumulative/i.test(title);
-    };
+    const isRevisionSet = (set) => /revis(ão|ao|ão geral|ion|iew|ón)|review|mixed|cumulative/i.test(asText(set.title));
     // Vocabulary-drill prompts ('Como se diz X em inglês?', 'Quantas
     // sílabas tem X?', letter-recognition) are basic recall drills
     // expected to appear across topic-mixed and topic-themed sets.
