@@ -58,16 +58,24 @@ function numbers(s) {
   text = text.replace(/(\d+(?:[,.]\d+)?)\s*k\b/g, mul(1000));
   text = text.replace(/(\d+(?:[,.]\d+)?)\s*M\b/g, mul(1_000_000));
   text = text.replace(/(\d+(?:[,.]\d+)?)\s*B\b/g, mul(1_000_000_000));
-  // 'Ma'/'Mya' = mega-annum (million years ago); 'Ga'/'Gya'/'Bya' = giga-annum.
-  // Match case-sensitively to avoid English 'ma' / German 'ma' false positives.
+  // 'Ma'/'Mya'/'Myr'/'Mb' = mega-annum or mega-bases (million);
+  // 'Ga'/'Gya'/'Bya'/'by'/'Gb' = giga (billion);
+  // 'ka'/'kya'/'kb' = kilo (thousand).
+  // Matched after digit+space, which makes false positives rare even with
+  // ambiguous tokens like 'by' or 'ma'.
   text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:milh[ãa]o|milh[õo]es|million)\b/gi, mul(1_000_000));
-  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:Mya|Ma)\b/g, mul(1_000_000));
+  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:mya|ma|myr|mb)\b/gi, mul(1_000_000));
   text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:bilh[ãa]o|bilh[õo]es|billion|bi)\b/gi, mul(1_000_000_000));
-  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:Gya|Bya|Ga)\b/g, mul(1_000_000_000));
+  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:gya|bya|ga|gb)\b/gi, mul(1_000_000_000));
+  // 'by'/'ka' are too short — require leading word boundary and following 'ago' or end.
+  text = text.replace(/(?<![a-zA-Z])(\d+(?:[,.]\d+)?)\s+by(?=\s+ago|\s*[,;:.)]|$)/gi, mul(1_000_000_000));
+  text = text.replace(/(?<![a-zA-Z])(\d+(?:[,.]\d+)?)\s+(?:kya|kb)\b/gi, mul(1000));
+  text = text.replace(/(?<![a-zA-Z])(\d+(?:[,.]\d+)?)\s+ka(?=\s+ago|\s*[,;:.)]|$)/gi, mul(1000));
   // PT ordinals '1º grau' / '2ª' / '3°' → strip the marker so it matches
   // English ordinals (which often spell out 'first/second/third').
   text = text.replace(/(\d+)[ºª°]/g, '$1');
-  return [...text.matchAll(/(?<![.\d])\d+(?:[.,]\d+)?/g)]
+  // Exclude digits directly embedded in identifiers (G3P, Cas9, H2O, PM2.5).
+  return [...text.matchAll(/(?<![.,\dA-Za-z])\d+(?:[.,]\d+)?/g)]
     .map(m => Number(m[0].replace(',', '.')))
     .filter(Number.isFinite);
 }

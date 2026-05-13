@@ -460,6 +460,36 @@ pages:
 }
 
 {
+  // Digits embedded in identifiers ('Cas9', 'G3P', 'PM2.5', 'H2O') are not numeric content.
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question:
+          pt: 'Cas12 (Cpf1) difere de Cas9, considerando H2O e PM2,5'
+          en: 'Cas12 (Cpf1) differs from Cas9, considering H2O and PM2.5'
+        choices: [a, b, c, d]
+        correctAnswer: {pt: a, en: a}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-bilingual-numeric.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('bilingual-numeric: identifier-embedded digits (Cas9/G3P/PM2.5) excluded', r.status === 0);
+}
+
+{
   // PT ordinals ('1º grau') normalize to bare digit so '1º' ↔ '1' equal.
   setupFixture({
     'src/levels/biology/X/set_01.yaml': `
