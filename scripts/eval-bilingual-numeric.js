@@ -58,6 +58,10 @@ function numbers(s) {
   // PT medical dosing shorthand 'N/N semanas' = 'every N weeks'. Collapse
   // the duplicated digit so the EN 'every 2 weeks' translation matches.
   text = text.replace(/(\d+)\/\1(?=\s*(?:semanas?|weeks?|días?|horas?|hours?))/g, '$1');
+  // PT '1× semanal' / '2× ao dia' / '3× daily' (dosing frequency) — EN
+  // typically uses the adverb alone ('weekly', 'daily', 'BID', 'TID'). Strip
+  // the digit so it doesn't create asymmetric numeric content.
+  text = text.replace(/\d+\s*[×x]\s*(?:semanal|diário|diária|daily|weekly|monthly)/gi, ' ');
   // Strip ordinal-labeled noun phrases on BOTH sides:
   //   PT '1ª geração' / 'Nº geração' / 'Nº grau' / 'Nª+Mª geração'
   //   EN 'first-gen' / 'first generation' / 'first-degree' (only with gen/deg suffix)
