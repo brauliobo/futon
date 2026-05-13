@@ -45,6 +45,30 @@ const cases = [
   { text: 'Use a propriedade distributiva.', expectOk: [] },
   { text: 'f(x) = x + 1.', expectOk: [] },
   { text: '', expectOk: [] },
+
+  // Long decimal chains.
+  { text: '0.1 + 0.2 = 0.3', expectOk: [true] },
+  { text: '0.1 + 0.2 + 0.3 = 0.6', expectOk: [true] },
+
+  // Negative numbers.
+  { text: '-3 + -4 = -7', expectOk: [true] },
+  { text: '5 - -3 = 8', expectOk: [true] },
+
+  // Exponents.
+  { text: '2^10 = 1024', expectOk: [true] },
+  { text: '(-2)^3 = -8', expectOk: [true] },
+
+  // Division/multiplication chained.
+  { text: '12·3 / 4 = 9', expectOk: [true] },
+
+  // Trailing punctuation variants.
+  { text: 'soma: 7+3 = 10!', expectOk: [true] },
+  { text: 'Cálculo: 2+2 = 4;', expectOk: [true] },
+
+  // Wrong arithmetic — caught.
+  { text: '7 + 5 = 13', expectOk: [false] },
+  { text: '10 / 2 = 6', expectOk: [false] },
+  { text: '3^3 = 9', expectOk: [false] },
 ];
 
 let pass = 0, fail = 0;
