@@ -22,6 +22,7 @@
 import { readFileSync } from 'fs';
 import YAML from 'yaml';
 import fg from 'fast-glob';
+import { asText } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const GREEN = '\x1b[32m', YELLOW = '\x1b[33m', GRAY = '\x1b[90m', RED = '\x1b[31m';
@@ -39,7 +40,7 @@ export const SKIP = [
 
 // Extract the Q→A portion of an `example:` string. Returns {exQ, exA} or null.
 export function parseExample(ex) {
-  const m = String(ex || '').match(/Ex\.:\s*(.+?)\s*→\s*(.+?)\.?$/);
+  const m = asText(ex).match(/Ex\.:\s*(.+?)\s*→\s*(.+?)\.?$/);
   if (!m) return null;
   return { exQ: normalize(m[1]), exA: normalize(m[2]).replace(/\.$/, '') };
 }
@@ -57,7 +58,7 @@ export function isSpoiler(example, firstQ, firstA) {
 // "sen²(x) + cos²(x)" are kept so distinct exercises normalize to
 // distinct strings (iter 150 TODO carried over to iter 196).
 export function normalize(s) {
-  return String(s || '')
+  return asText(s)
     .toLowerCase()
     .replace(/\(([^()]*\/[^()]*)\)\s*$/, '')
     .replace(/\s+/g, ' ')
@@ -74,7 +75,7 @@ async function main() {
   for (const f of files) {
     if (SKIP.some(rx => rx.test(f))) continue;
     const s = YAML.parse(readFileSync(f, 'utf8'));
-    const ex = String(s.example || '');
+    const ex = asText(s.example);
     const parsed = parseExample(ex);
     if (!parsed) continue;
     checked++;

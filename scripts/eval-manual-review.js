@@ -18,6 +18,7 @@ import { readFileSync } from 'fs';
 import YAML from 'yaml';
 import fg from 'fast-glob';
 import { categorize } from './lib/rationale.js';
+import { asText } from './lib/i18n.js';
 
 const args = process.argv.slice(2);
 const argVal = flag => {
@@ -86,7 +87,7 @@ async function main() {
     // Rationale diversity: low unique-rationale count hints at bucket-misroute
     // bugs (iter 82-92 found 594+ across math/J, 5A, I, O, M).
     const totalUniqueRats = new Set(
-      sets.flatMap(x => x.all.map(e => String(e.rationale || '').trim()).filter(Boolean))
+      sets.flatMap(x => x.all.map(e => asText(e.rationale).trim()).filter(Boolean))
     );
     const diversityRatio = totalExs ? totalUniqueRats.size / totalExs : 0;
     out.push(`**Level stats:** ${sets.length} sets · ${totalExs} exercises · ${uniqueObjectives.size} objectives · ${totalGeneric} generic rationales · ${totalUniqueRats.size} unique rationales (${Math.round(diversityRatio * 100)}%)`);
@@ -107,7 +108,7 @@ async function main() {
     for (const x of sets) {
       const firstEx = x.all[0];
       const lastEx = x.all[x.all.length - 1];
-      const genericCount = x.all.filter(e => categorize(e.rationale) === 'generic').length;
+      const genericCount = x.all.filter(e => categorize(asText(e.rationale)) === 'generic').length;
       // Tautological rationales: patterns that echo the answer without teaching
       const tautPats = [
         /^Observe as opções e escolha/,
@@ -115,21 +116,21 @@ async function main() {
         /pertence à categoria:/,
       ];
       const tautCount = x.all.filter(e => {
-        const r = String(e.rationale || '');
+        const r = asText(e.rationale);
         if (!r) return false;
         if (tautPats.some(p => p.test(r))) return true;
-        const a = String(e.correctAnswer || '').trim();
+        const a = asText(e.correctAnswer).trim();
         const m = /:\s*['"“”‘’]([^'"“”‘’]+)['"“”‘’]\.?$/.exec(r);
         return m && a && m[1].trim().toLowerCase() === a.toLowerCase();
       }).length;
       // Inline (a/b/c/d) choice questions where correct is THE longest option
       let choiceQs = 0, correctLongest = 0;
       for (const e of x.all) {
-        const m = /\(([^()]*\/[^()]*)\)\s*$/.exec(String(e.question || ''));
+        const m = /\(([^()]*\/[^()]*)\)\s*$/.exec(asText(e.question));
         if (!m) continue;
         const parts = m[1].split('/').map(z => z.trim()).filter(Boolean);
         if (parts.length < 3) continue;
-        const ans = String(e.correctAnswer || '').trim();
+        const ans = asText(e.correctAnswer).trim();
         if (!parts.includes(ans)) continue;
         choiceQs++;
         const lens = parts.map(z => z.length);
@@ -157,14 +158,14 @@ async function main() {
         pageMedians[pageMedians.length - 1] - pageMedians[0] <= -1.0;
       const pmNoisy = pageMedians.length >= 5 && pmRange > 0 && pmRegCount >= 3 && !pmInterleaved;
       out.push(`### ${x.name}`);
-      out.push(`**Title:** ${x.s.title || '(untitled)'}`);
-      out.push(`**Example:** ${(x.s.example || '').slice(0, 100)}`);
-      out.push(`**First exercise:** ${String(firstEx?.question || '').slice(0, 80)} → \`${firstEx?.correctAnswer}\``);
-      out.push(`**Last exercise:** ${String(lastEx?.question || '').slice(0, 80)} → \`${lastEx?.correctAnswer}\``);
+      out.push(`**Title:** ${asText(x.s.title) || '(untitled)'}`);
+      out.push(`**Example:** ${asText(x.s.example).slice(0, 100)}`);
+      out.push(`**First exercise:** ${asText(firstEx?.question).slice(0, 80)} → \`${asText(firstEx?.correctAnswer)}\``);
+      out.push(`**Last exercise:** ${asText(lastEx?.question).slice(0, 80)} → \`${asText(lastEx?.correctAnswer)}\``);
       out.push('');
       // Per-set rationale diversity to surface bucket-misroutings
-      const setRats = new Set(x.all.map(e => String(e.rationale || '').trim()).filter(Boolean));
-      const setAns = new Set(x.all.map(e => String(e.correctAnswer ?? '').trim()).filter(Boolean));
+      const setRats = new Set(x.all.map(e => asText(e.rationale).trim()).filter(Boolean));
+      const setAns = new Set(x.all.map(e => asText(e.correctAnswer).trim()).filter(Boolean));
       const setDiversity = setAns.size ? setRats.size / Math.min(setAns.size, x.all.length) : 1;
       out.push(`**Unique rationales / answers:** ${setRats.size} / ${setAns.size}`);
       out.push('');

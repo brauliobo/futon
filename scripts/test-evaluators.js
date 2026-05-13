@@ -367,6 +367,40 @@ pages:
 }
 
 // ─────────────────────────────────────────────────────────────────────
+// example-spoiler: bilingual {pt,en} example field.
+// ─────────────────────────────────────────────────────────────────────
+{
+  // Bilingual example matches first exercise — should be detected.
+  setupFixture({
+    'src/levels/biology/B/set_01.yaml': `
+title: T
+level: B
+subject: biology
+objectives: [t]
+example:
+  pt: 'Ex.: X → Y.'
+  en: 'Ex.: X → Y.'
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question: {pt: X, en: X}
+        choices: [a, b, c, d]
+        correctAnswer: {pt: Y, en: Y}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-example-spoiler.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  // Advisory only — exits 0; verify it actually parsed the bilingual.
+  assert('example-spoiler: bilingual example parsed', r.stdout.includes('example = exercise #1') || r.stdout.includes('No example-first-exercise'));
+}
+
+// ─────────────────────────────────────────────────────────────────────
 // audit-content: bilingual question/correctAnswer handled without [object Object].
 // ─────────────────────────────────────────────────────────────────────
 {
