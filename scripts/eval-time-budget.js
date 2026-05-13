@@ -24,7 +24,8 @@ const argVal = f => { const i = args.indexOf(f); return i >= 0 ? args[i + 1] : n
 const SUBJECT = argVal('--subject');
 const CLI_MIN = argVal('--min'), CLI_MAX = argVal('--max');
 const JSON_OUT = args.includes('--json');
-const SUBJECTS = SUBJECT ? [SUBJECT] : ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'];
+import { SUBJECTS as ALL_SUBJECTS } from './lib/subjects.js';
+const SUBJECTS = SUBJECT ? [SUBJECT] : ALL_SUBJECTS;
 
 // Kumon session-length guideline scales with level. Beginner drills are
 // short (5-15 min); advanced reasoning sessions run longer. --min/--max

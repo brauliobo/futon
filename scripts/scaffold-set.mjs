@@ -12,7 +12,8 @@ if (!subject || !level || !setNumber) {
   console.error('Usage: scaffold-set.mjs <subject> <level> <setNumber> [--pages N]');
   process.exit(1);
 }
-if (!['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'].includes(subject)) {
+const { SUBJECTS } = await import('./lib/subjects.js');
+if (!SUBJECTS.includes(subject)) {
   console.error(`Unknown subject: ${subject}`);
   process.exit(1);
 }

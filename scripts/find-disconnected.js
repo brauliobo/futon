@@ -28,7 +28,8 @@ const SUBJECT = argVal('--subject');
 const LEVEL = argVal('--level');
 const MIN_OVERLAP = parseInt(argVal('--min-overlap') || '1', 10);
 const JSON_OUT = args.includes('--json');
-const SUBJECTS = SUBJECT ? [SUBJECT] : ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'];
+import { SUBJECTS as ALL_SUBJECTS } from './lib/subjects.js';
+const SUBJECTS = SUBJECT ? [SUBJECT] : ALL_SUBJECTS;
 
 // Stopwords stored in normalized (NFD-stripped) form to match contentWords output.
 const STOPWORDS = new Set([

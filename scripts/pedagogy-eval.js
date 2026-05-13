@@ -23,7 +23,8 @@ const LEVEL = argVal('--level');
 const SET_FILE = argVal('--set');
 const WORST_N = parseInt(argVal('--worst') || '10', 10);
 const JSON_OUT = args.includes('--json');
-const SUBJECTS = SUBJECT ? [SUBJECT] : ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'];
+import { SUBJECTS as ALL_SUBJECTS } from './lib/subjects.js';
+const SUBJECTS = SUBJECT ? [SUBJECT] : ALL_SUBJECTS;
 
 const THRESHOLDS = { excellent: 85, acceptable: 70 };
 

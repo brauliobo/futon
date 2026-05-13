@@ -15,9 +15,8 @@ const c = (t, col) => `${col}${t}${RESET}`;
 const args = process.argv.slice(2);
 const FIX = args.includes('--fix');
 const SUBJECT_FILTER = args.find((_, i, a) => a[i - 1] === '--subject') || null;
-const SUBJECTS = SUBJECT_FILTER
-  ? [SUBJECT_FILTER]
-  : ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'];
+import { SUBJECTS as ALL_SUBJECTS } from './lib/subjects.js';
+const SUBJECTS = SUBJECT_FILTER ? [SUBJECT_FILTER] : ALL_SUBJECTS;
 
 // ── Shared helpers ──────────────────────────────────────────────────────────
 

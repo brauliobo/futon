@@ -6,8 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { parse } from 'yaml';
-
-const SUBJECTS = ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'];
+import { SUBJECTS } from './lib/subjects.js';
 const root = path.resolve(process.cwd(), 'src/levels');
 
 const failures = [];

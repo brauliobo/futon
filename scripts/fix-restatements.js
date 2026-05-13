@@ -16,6 +16,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import { SUBJECTS } from './lib/subjects.js';
 
 const APPLY = process.argv.includes('--apply');
 
@@ -98,7 +99,7 @@ function processFile(fp) {
 
 function walk() {
   const files = [];
-  for (const subject of ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology']) {
+  for (const subject of SUBJECTS) {
     const dir = path.join(process.cwd(), 'src', 'levels', subject);
     if (!fs.existsSync(dir)) continue;
     for (const level of fs.readdirSync(dir).sort()) {
