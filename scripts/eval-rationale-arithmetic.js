@@ -69,6 +69,8 @@ export function checkClaims(text) {
     if (!parts.some(p => /[+\-*/^]/.test(p.replace(/^-/, '')))) continue;
     // Skip if any segment has variables (outside sqrt) — keep pure-numeric.
     if (parts.some(hasVarsOutsideSqrt)) continue;
+    // Skip genetics ratios like '(3:1) × (3:1) = 9:3:3:1' — colon notation.
+    if (parts.some(p => /:/.test(p))) continue;
     const vals = parts.map(p => toNumber(tryEval(normalizePrecedence(p))));
     if (vals.some(v => v == null)) continue;
     // Verify each adjacent pair. Skip "definitional" pairs where LHS is a
@@ -103,8 +105,23 @@ function tryEval(expr) {
   try { return math.evaluate(expr); } catch { return null; }
 }
 
+// Reduce any rationale/example/question value to its arithmetic-relevant text.
+// Bilingual objects {pt, en} → join both; numbers → string; arrays → join.
+function flatten(v) {
+  if (v == null) return '';
+  if (typeof v === 'string' || typeof v === 'number') return String(v);
+  if (Array.isArray(v)) return v.map(flatten).join(' ');
+  if (typeof v === 'object') {
+    if ('pt' in v || 'en' in v) return [v.pt, v.en].filter(Boolean).map(flatten).join(' ');
+    return Object.values(v).map(flatten).join(' ');
+  }
+  return String(v);
+}
+
 async function main() {
-  const files = await fg('src/levels/math/**/set_*.yaml');
+  // All subjects, not just math — biology/physics/etc. rationales may have
+  // arithmetic too, and bilingual {pt,en} rationales need flattening.
+  const files = await fg('src/levels/**/set_*.yaml');
   let checked = 0;
   const mismatches = [];
   const accept = (file, page, q, source, text) => {
@@ -116,10 +133,11 @@ async function main() {
   };
   for (const f of files) {
     const s = YAML.parse(readFileSync(f, 'utf8'));
-    if (typeof s.example === 'string') accept(f, '-', '(example)', 'example', s.example);
+    const exampleText = flatten(s.example);
+    if (exampleText) accept(f, '-', '(example)', 'example', exampleText);
     for (const p of s.pages || []) {
       for (const e of p.exercises || []) {
-        accept(f, p.pageNumber, e.question, 'rationale', e.rationale ? String(e.rationale) : '');
+        accept(f, p.pageNumber, flatten(e.question), 'rationale', flatten(e.rationale));
       }
     }
   }
