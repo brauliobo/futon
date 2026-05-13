@@ -33,33 +33,61 @@ function normalize(s) {
     .replace(/÷/g, '/');
 }
 
-// LHS: at least one binary op. Digits, ., parens, ops, ^ allowed.
-// RHS: a single number (possibly fractional, possibly negative).
-// Both LHS and RHS can be arithmetic expressions. Compare evaluated values.
 // TOKEN allows a leading sign and supports nested sqrt(...) / parenthesized exprs.
 const TOKEN = '(?:-?sqrt\\([^()]*\\)|-?\\d+(?:\\.\\d+)?|-?\\([^()]*\\))';
-const EXPR = `${TOKEN}(?:\\s*[+\\-*/^]\\s*${TOKEN})*`;
-const LHS_RE = new RegExp(
-  `(?<![\\w.+\\-*/^])(${TOKEN}(?:\\s*[+\\-*/^]\\s*${TOKEN})+)\\s*=\\s*(${EXPR})(?![\\w+\\-*/^])`,
+const EXPR_BODY = `${TOKEN}(?:\\s*[+\\-*/^]\\s*${TOKEN})*`;
+// Match a chain: EXPR (= EXPR){1+}, where '=' may be '=' or '≈'.
+const CHAIN_RE = new RegExp(
+  `(?<![\\w.+\\-*/^])(${EXPR_BODY}(?:\\s*[=≈]\\s*${EXPR_BODY})+)(?![\\w+\\-*/^])`,
   'g'
 );
+
+function hasVarsOutsideSqrt(s) {
+  return /[a-zA-Zα-ωΑ-Ωçãéõá-úÀ-ÿ_₀-₉]/.test(s.replace(/sqrt/gi, ''));
+}
+
+function normalizePrecedence(expr) {
+  return expr.replace(/(^|[^.\d)])-(\d+)\^(\d+)/g, '$1(-$2)^$3');
+}
 
 export function checkClaims(text) {
   const out = [];
   const norm = normalize(text);
-  for (const m of norm.matchAll(LHS_RE)) {
-    const lhs = m[1].trim();
-    const rhsStr = m[2].replace(/\s+/g, '');
-    if (!/[+\-*/^]/.test(lhs.replace(/^-/, ''))) continue;
-    // Skip if either side contains variables (allow 'sqrt' as a known function).
-    const stripSqrt = (s) => s.replace(/sqrt/gi, '');
-    if (/[a-zA-Zα-ωΑ-Ωçãéõá-úÀ-ÿ_₀-₉]/.test(stripSqrt(lhs))) continue;
-    if (/[a-zA-Zα-ωΑ-Ωçãéõá-úÀ-ÿ_₀-₉]/.test(stripSqrt(rhsStr))) continue;
-    const lhsN = lhs.replace(/(^|[^.\d)])-(\d+)\^(\d+)/g, '$1(-$2)^$3');
-    const lv = toNumber(tryEval(lhsN));
-    const rv = toNumber(tryEval(rhsStr));
-    if (lv == null || rv == null) continue;
-    out.push({ lhs, rhs: rhsStr, lv, rv, ok: Math.abs(lv - rv) < 1e-3 });
+  for (const m of norm.matchAll(CHAIN_RE)) {
+    // Skip when the chain start is actually a continuation of an outer
+    // expression: e.g., in '4! / (2!*2!) = 24/4', the match starts at
+    // '(2!*2!)' even though there's an operator earlier through whitespace.
+    const before = norm.slice(0, m.index).match(/[+\-*/^]\s*$/);
+    if (before) continue;
+    const chain = m[1];
+    // Split on '=' and '≈', keeping track of which operator separates each pair.
+    const parts = chain.split(/\s*[=≈]\s*/);
+    const seps = [...chain.matchAll(/[=≈]/g)].map(x => x[0]);
+    if (parts.length < 2) continue;
+    // Require at least one segment to contain an op (otherwise it's an
+    // identity like "5 = 5" — uninteresting).
+    if (!parts.some(p => /[+\-*/^]/.test(p.replace(/^-/, '')))) continue;
+    // Skip if any segment has variables (outside sqrt) — keep pure-numeric.
+    if (parts.some(hasVarsOutsideSqrt)) continue;
+    const vals = parts.map(p => toNumber(tryEval(normalizePrecedence(p))));
+    if (vals.some(v => v == null)) continue;
+    // Verify each adjacent pair. Skip "definitional" pairs where LHS is a
+    // bare number — these are typically prose framing ("Sucessor de 5 = 5+1 = 6").
+    for (let i = 0; i < vals.length - 1; i++) {
+      const lhs = parts[i].trim();
+      const lhsHasOp = /[+\-*/^]/.test(lhs.replace(/^-/, ''));
+      if (!lhsHasOp) continue;
+      const tol = seps[i] === '≈' ? 0.05 : 1e-3;
+      const ok = Math.abs(vals[i] - vals[i + 1]) < tol;
+      out.push({
+        lhs,
+        rhs: parts[i + 1].trim(),
+        sep: seps[i],
+        lv: vals[i],
+        rv: vals[i + 1],
+        ok,
+      });
+    }
   }
   return out;
 }
@@ -83,7 +111,7 @@ async function main() {
     if (!text) return;
     for (const cl of checkClaims(text)) {
       checked++;
-      if (!cl.ok) mismatches.push({ file: file.replace('src/levels/', ''), page, q, source, expr: `${cl.lhs} = ${cl.rhs}`, computed: cl.lv });
+      if (!cl.ok) mismatches.push({ file: file.replace('src/levels/', ''), page, q, source, expr: `${cl.lhs} ${cl.sep} ${cl.rhs}`, computed: cl.lv });
     }
   };
   for (const f of files) {

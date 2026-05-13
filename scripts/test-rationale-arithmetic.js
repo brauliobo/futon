@@ -7,21 +7,25 @@ import { checkClaims } from './eval-rationale-arithmetic.js';
 
 const cases = [
   // Clean — common rationale shapes.
-  // Chained '= = =' splits into non-overlapping pairs: first then continues after.
-  { text: '9×6 = (10×6)−6 = 60−6 = 54.', expectOk: [true, true] },
+  // Chained '= = =' verifies every adjacent pair.
+  { text: '9×6 = (10×6)−6 = 60−6 = 54.', expectOk: [true, true, true] },
   { text: '5 − 8 = 5 + (−8). Opostos: 8 − 5 = 3; sinal (-).', expectOk: [true, true] },
   { text: 'Sistema: 2x = 8 → x = 4.', expectOk: [] },
-  { text: 'Bhaskara: Δ = 9² - 4·1·14 = 81 - 56 = 25.', expectOk: [true] },
+  { text: 'Bhaskara: Δ = 9² - 4·1·14 = 81 - 56 = 25.', expectOk: [true, true] },
   { text: 'C(5,3)·2²·1³ = 10·4·1 = 40.', expectOk: [true] },
   { text: '(1/2) ÷ (1/3) = 3/2.', expectOk: [true] },
   { text: '1/2 ÷ 1/3 = 3/2.', expectOk: [true] },
   { text: 'sqrt(52) = 2·sqrt(13).', expectOk: [] }, // pure-symbolic, no eval
   { text: 'Discriminante: -9^2 - 4·3·6 = 9.', expectOk: [true] }, // (-9)^2 normalization
   { text: '0.5·0.5·0.5 = 0.125.', expectOk: [true] },
+  // Approximate equality (≈) has looser tolerance.
+  { text: '1/3 ≈ 0.333.', expectOk: [true] },
+  { text: '√2 ≈ 1.414.', expectOk: [] }, // LHS lacks operator
+  { text: '√2/2 ≈ 0.707.', expectOk: [true] },
 
-  // Real bugs caught (chained '=' splits non-overlapping):
-  // LHS=9*6=54, RHS=(9*10)-9=81 → MISMATCH; then 90-9=81 vs RHS=54 → MISMATCH.
-  { text: '9*6 = (9*10)-9 = 90-9 = 54.', expectOk: [false, false] },
+  // Real bugs caught (chained '=' verifies every adjacent pair):
+  // 9*6=54 vs (9*10)-9=81 mismatches; (9*10)-9=81 vs 90-9=81 ok; 90-9=81 vs 54 mismatches.
+  { text: '9*6 = (9*10)-9 = 90-9 = 54.', expectOk: [false, true, false] },
   // 72/96 IS arithmetically 0.75 — checker only catches self-inconsistent claims,
   // not upstream-wrong-but-arithmetically-consistent ones.
   { text: '72/96 = 0.75', expectOk: [true] },
