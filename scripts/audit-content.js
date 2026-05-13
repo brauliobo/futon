@@ -17,7 +17,7 @@ const FIX = args.includes('--fix');
 const SUBJECT_FILTER = args.find((_, i, a) => a[i - 1] === '--subject') || null;
 const SUBJECTS = SUBJECT_FILTER
   ? [SUBJECT_FILTER]
-  : ['math', 'portuguese', 'english'];
+  : ['math', 'portuguese', 'english', 'japanese', 'spanish', 'biology'];
 
 // ── Shared helpers ──────────────────────────────────────────────────────────
 
