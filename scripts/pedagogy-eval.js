@@ -448,7 +448,9 @@ function scoreLevelProgression(sets) {
   const mid = Math.floor(diffs.length / 2);
   const firstAvg = diffs.slice(0, mid).reduce((a, b) => a + b, 0) / mid;
   const secondAvg = diffs.slice(mid).reduce((a, b) => a + b, 0) / (diffs.length - mid);
-  const trend = secondAvg - firstAvg;
+  // Round to 2 decimals to avoid FP artifacts like -0.10000000000000009
+  // (matching lint-content.js iter 166 fix).
+  const trend = Math.round((secondAvg - firstAvg) * 100) / 100;
   let score = 10;
   const issues = [];
   if (trend < -0.5) { score -= 5; issues.push(`second half (${secondAvg.toFixed(1)}) easier than first (${firstAvg.toFixed(1)})`); }
