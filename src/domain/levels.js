@@ -112,9 +112,42 @@ export class Levels {
     { id: 'L',  topic: 'spanish_writing', name: 'Redacción y Composición' },
   ];
 
+  // Biology is a frontier-research corpus structured progressively over 19
+  // levels (7A→S). Topics are themed per-level rather than a fixed sequence
+  // of skills, so the names are descriptive rather than skill-coded.
+  static BIOLOGY = [
+    { id: '7A', topic: 'biology_intro',          name: 'Vida e Células — Introdução' },
+    { id: '6A', topic: 'biology_systems',        name: 'Sistemas do Corpo' },
+    { id: '5A', topic: 'biology_chemistry',      name: 'Bioquímica & Macromoléculas' },
+    { id: '4A', topic: 'biology_genetics_intro', name: 'Genética & DNA — Introdução' },
+    { id: '3A', topic: 'biology_evolution',      name: 'Evolução & Diversidade' },
+    { id: '2A', topic: 'biology_ecology',        name: 'Ecologia & Ambiente' },
+    { id: '1A', topic: 'biology_life_origins',   name: 'Origens da Vida' },
+    { id: 'A',  topic: 'biology_advanced_1',     name: 'Biologia Avançada I' },
+    { id: 'B',  topic: 'biology_advanced_2',     name: 'Biologia Avançada II' },
+    { id: 'C',  topic: 'biology_advanced_3',     name: 'Biologia Avançada III' },
+    { id: 'D',  topic: 'biology_advanced_4',     name: 'Biologia Avançada IV' },
+    { id: 'E',  topic: 'biology_research_1',     name: 'Biologia de Fronteira I' },
+    { id: 'F',  topic: 'biology_research_2',     name: 'Biologia de Fronteira II' },
+    { id: 'G',  topic: 'biology_research_3',     name: 'Biologia de Fronteira III' },
+    { id: 'H',  topic: 'biology_research_4',     name: 'Biologia de Fronteira IV' },
+    { id: 'I',  topic: 'biology_research_5',     name: 'Biologia de Fronteira V' },
+    { id: 'J',  topic: 'biology_research_6',     name: 'Biologia de Fronteira VI' },
+    { id: 'K',  topic: 'biology_research_7',     name: 'Biologia de Fronteira VII' },
+    { id: 'L',  topic: 'biology_research_8',     name: 'Biologia de Fronteira VIII' },
+    { id: 'M',  topic: 'biology_research_9',     name: 'Biologia de Fronteira IX' },
+    { id: 'N',  topic: 'biology_research_10',    name: 'Biologia de Fronteira X' },
+    { id: 'O',  topic: 'biology_research_11',    name: 'Biologia de Fronteira XI' },
+    { id: 'P',  topic: 'biology_research_12',    name: 'Biologia de Fronteira XII' },
+    { id: 'Q',  topic: 'biology_research_13',    name: 'Biologia de Fronteira XIII' },
+    { id: 'R',  topic: 'biology_research_14',    name: 'Biologia de Fronteira XIV' },
+    { id: 'S',  topic: 'biology_research_15',    name: 'Biologia de Fronteira XV' },
+  ];
+
   static math = new LevelRegistry(Levels.MATH);
   static portuguese = new LevelRegistry(Levels.PORTUGUESE);
   static english = new LevelRegistry(Levels.ENGLISH);
   static japanese = new LevelRegistry(Levels.JAPANESE);
   static spanish = new LevelRegistry(Levels.SPANISH);
+  static biology = new LevelRegistry(Levels.BIOLOGY);
 }

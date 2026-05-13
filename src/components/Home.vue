@@ -325,11 +325,8 @@ export default {
       return groups;
     },
     levelSequenceBySubject() { return (subject) => {
-      if (subject === 'math') return Levels.math.order();
-      if (subject === 'portuguese') return Levels.portuguese.order();
-      if (subject === 'english') return Levels.english.order();
-      if (subject === 'japanese') return Levels.japanese.order();
-      return [];
+      const registry = Levels[subject];
+      return registry?.order ? registry.order() : [];
     }; },
     levelNameBySubject() {
       return (subject, id) => {
