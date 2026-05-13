@@ -13,6 +13,7 @@
 import { readFileSync } from 'fs';
 import YAML from 'yaml';
 import fg from 'fast-glob';
+import { asText } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m';
@@ -20,7 +21,7 @@ const c = (t, col) => `${col}${t}${RESET}`;
 
 // Normalize a question for dedup: strip choices parenthetical, whitespace,
 // punctuation, and case. Keep the core prompt.
-const normalize = s => String(s || '')
+const normalize = s => asText(s)
   .replace(/\([^)]*\/[^)]*\)\s*$/, '') // strip (a/b/c/d) trailing choices
   .toLowerCase()
   .replace(/\s+/g, ' ')
