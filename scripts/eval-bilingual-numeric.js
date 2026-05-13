@@ -62,6 +62,9 @@ function numbers(s) {
   // typically uses the adverb alone ('weekly', 'daily', 'BID', 'TID'). Strip
   // the digit so it doesn't create asymmetric numeric content.
   text = text.replace(/\d+\s*[×x]\s*(?:semanal|diário|diária|daily|weekly|monthly)/gi, ' ');
+  // EN idiom '24/7' = 'always' (PT translates as '24h' or '24 horas'). Strip
+  // the /7 component so it doesn't surface as an extra '7'.
+  text = text.replace(/\b24\/7\b/g, '24');
   // Strip ordinal-labeled noun phrases on BOTH sides:
   //   PT '1ª geração' / 'Nº geração' / 'Nº grau' / 'Nª+Mª geração'
   //   EN 'first-gen' / 'first generation' / 'first-degree' (only with gen/deg suffix)
