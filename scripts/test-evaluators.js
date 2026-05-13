@@ -726,6 +726,37 @@ pages:
 }
 
 {
+  // EN shorthand '3D'/'2D' is stripped to avoid asymmetric numeric content
+  // (PT typically spells out 'tridimensional').
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question:
+          pt: 'Estruturas tridimensionais ficam claras'
+          en: '3D structures become clear'
+        choices: [a, b, c, d]
+        correctAnswer: {pt: a, en: a}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-bilingual-numeric.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('bilingual-numeric: EN 2D/3D shorthand stripped', r.status === 0);
+}
+
+{
   // Medical acronyms (CML, MI, DII) must NOT be Roman-converted.
   setupFixture({
     'src/levels/biology/X/set_01.yaml': `

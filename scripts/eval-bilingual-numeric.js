@@ -47,6 +47,10 @@ function numbers(s) {
       return v > 0 && v < 4000 ? m.replace(tok, ` ${v} `) : m;
     },
   );
+  // English 'ND-dimensional' shorthand: '2D'/'3D' (rarely 4D) where PT typically
+  // spells out 'bidimensional'/'tridimensional'. Strip the digit so it doesn't
+  // create asymmetric numeric content.
+  text = text.replace(/(?<![\d.])([234])D\b/g, ' ');
   // Thousand separator: '1,000' / '10,000' / '1.000' (European). A separator
   // followed by exactly 3 digits (no more) → strip the separator so '1,000'
   // and '1000' compare equal.
