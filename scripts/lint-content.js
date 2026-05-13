@@ -51,9 +51,17 @@ function metrics(setsInLevel) {
       }
     }
   }
-  const monotonic = setDifficulties.length < 2
-    ? null
-    : setDifficulties.every((d, i) => i === 0 || d >= setDifficulties[i - 1]);
+  // Trend-based: pass if the second-half average is not significantly easier
+  // than the first half (Kumon spaced-repetition mixes review with new
+  // material, so per-set 1-step regressions are legitimate design — see
+  // pedagogy-eval scoreLevelProgression for the matching heuristic).
+  let monotonic = null;
+  if (setDifficulties.length >= 2) {
+    const mid = Math.floor(setDifficulties.length / 2);
+    const firstAvg = setDifficulties.slice(0, mid).reduce((a, b) => a + b, 0) / mid;
+    const secondAvg = setDifficulties.slice(mid).reduce((a, b) => a + b, 0) / (setDifficulties.length - mid);
+    monotonic = secondAvg - firstAvg >= -0.1;
+  }
   return {
     exercises: total,
     rationalePct: total ? Math.round((rationale / total) * 100) : 0,
