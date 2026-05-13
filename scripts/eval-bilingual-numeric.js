@@ -51,6 +51,10 @@ function numbers(s) {
   // spells out 'bidimensional'/'tridimensional'. Strip the digit so it doesn't
   // create asymmetric numeric content.
   text = text.replace(/(?<![\d.])([234])D\b/g, ' ');
+  // Embryo/biopsy day-range notation: PT 'D5-6' vs EN 'Day 5-6' / 'day 5-6'.
+  // Strip both forms — the day range is a unit, not arithmetic content.
+  text = text.replace(/\bD\d+-\d+\b/g, ' ');
+  text = text.replace(/\bDay\s+\d+-\d+\b/gi, ' ');
   // Thousand separator: '1,000' / '10,000' / '1.000' (European). A separator
   // followed by exactly 3 digits (no more) → strip the separator so '1,000'
   // and '1000' compare equal.
