@@ -367,6 +367,38 @@ pages:
 }
 
 // ─────────────────────────────────────────────────────────────────────
+// Topic-consistency biology exemption.
+// ─────────────────────────────────────────────────────────────────────
+{
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question: {pt: 'A Helsinki Declaration é base ética porque', en: 'Helsinki Declaration is ethical because'}
+        choices: [a, b, c, d]
+        correctAnswer: {pt: a, en: a}
+        rationale:
+          pt: 'Helsinki: Sucessor de Nuremberg Code para pesquisa em humanos.'
+          en: 'Helsinki: successor of Nuremberg Code for human research.'
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-topic-consistency.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('topic-consistency: biology exempt from math markers', r.status === 0);
+}
+
+// ─────────────────────────────────────────────────────────────────────
 // Bilingual numeric consistency.
 // ─────────────────────────────────────────────────────────────────────
 {

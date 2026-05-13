@@ -15,6 +15,7 @@ import { readFileSync } from 'fs';
 import YAML from 'yaml';
 import fg from 'fast-glob';
 import { categorize } from './lib/rationale.js';
+import { asText } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m';
@@ -49,9 +50,9 @@ function numsFrom(text) {
 const PURE_ARITH = /^\s*-?\d+\s*[+\-×÷*\/]\s*-?\d+\s*=?\s*$/;
 
 function isDisconnected(ex) {
-  const q = String(ex.question || '').trim();
-  const r = String(ex.rationale || '');
-  const a = String(ex.correctAnswer ?? '');
+  const q = asText(ex.question).trim();
+  const r = asText(ex.rationale);
+  const a = asText(ex.correctAnswer);
   if (!r.trim() || !q) return false;
   if (!PURE_ARITH.test(q)) return false;
   const qNums = q.match(NUM) || [];
@@ -77,14 +78,14 @@ async function main() {
     const s = YAML.parse(readFileSync(f, 'utf8'));
     for (const p of s.pages || []) {
       for (const e of p.exercises || []) {
-        if (categorize(e.rationale) !== 'method') continue;
+        if (categorize(asText(e.rationale)) !== 'method') continue;
         checked++;
         if (isDisconnected(e)) {
           disconnected.push({
             file: f.replace('src/levels/', ''),
-            q: String(e.question || '').slice(0, 60),
+            q: asText(e.question).slice(0, 60),
             a: e.correctAnswer,
-            r: String(e.rationale || '').slice(0, 80),
+            r: asText(e.rationale).slice(0, 80),
           });
         }
       }

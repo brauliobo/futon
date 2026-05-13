@@ -17,6 +17,7 @@
 import { readFileSync } from 'fs';
 import YAML from 'yaml';
 import fg from 'fast-glob';
+import { asText } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', GRAY = '\x1b[90m';
@@ -39,7 +40,7 @@ async function main() {
     const pageIdx = [];
     (s.pages || []).forEach((p, pi) => {
       (p.exercises || []).forEach(e => {
-        const a = String(e.correctAnswer ?? '').trim();
+        const a = asText(e.correctAnswer).trim();
         if (a) { answers.push(a); pageIdx.push(pi); }
       });
     });

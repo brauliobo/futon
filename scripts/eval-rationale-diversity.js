@@ -18,6 +18,7 @@
 import { readFileSync } from 'fs';
 import YAML from 'yaml';
 import fg from 'fast-glob';
+import { asText } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', YELLOW = '\x1b[33m', GRAY = '\x1b[90m', GREEN = '\x1b[32m';
@@ -47,9 +48,9 @@ async function main() {
     const questionShapes = new Set();
     const answers = new Set();
     for (const e of all) {
-      if (e.rationale) rationales.add(String(e.rationale).trim());
-      questionShapes.add(structural(e.question));
-      if (e.correctAnswer != null) answers.add(String(e.correctAnswer).trim());
+      if (e.rationale != null) rationales.add(asText(e.rationale).trim());
+      questionShapes.add(structural(asText(e.question)));
+      if (e.correctAnswer != null) answers.add(asText(e.correctAnswer).trim());
     }
     if (questionShapes.size < 5) continue; // single-concept drill — skip
     // Expected rationale diversity should track whichever is SMALLER:
