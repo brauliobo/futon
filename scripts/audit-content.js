@@ -363,7 +363,7 @@ function checkCrossSetDuplicates(sets) {
               file: `${relPath(set._path)} ↔ ${prev.file}`,
               severity: 'warn',
               note: `duplicate across sets in ${level}`,
-              question: (ex.question || '').slice(0, 55),
+              question: asText(ex.question).slice(0, 55),
             });
           } else if (!prev) {
             seen.set(q, { file: set._file, question: ex.question });
