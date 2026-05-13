@@ -9,7 +9,7 @@ import path from 'path';
 import Table from 'cli-table3';
 import { parse } from 'yaml';
 import { categorize as rationaleCategory } from './lib/rationale.js';
-import { localize } from './lib/i18n.js';
+import { localize, asText } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m';
@@ -66,13 +66,13 @@ const pageDiffAvgs = set => (set.pages || []).map(p => {
 const CHOICE_RE = /\(([^)?]+\/[^)?]+)\)\s*$/;
 const choicesOf = ex => {
   if (ex.choices?.length) return ex.choices;
-  const q = String(ex.question || '');
+  const q = asText(ex.question);
   if (!CHOICE_RE.test(q)) return null;
   const parts = q.match(CHOICE_RE)[1].split('/').map(s => s.trim());
   // Math-fraction false-positive guard: if the correctAnswer isn't in the
   // parsed choices (case-insensitive), this isn't a real multi-choice —
   // it's a fraction like "(x/2)" or "(4/52)·(3/?)" being misread.
-  const ans = String(ex.correctAnswer ?? '').trim().toLowerCase();
+  const ans = asText(ex.correctAnswer).trim().toLowerCase();
   if (ans && !parts.some(p => p.toLowerCase() === ans)) return null;
   return parts;
 };
@@ -212,13 +212,13 @@ function scoreGradient(set) {
 // (e.g. question "A cor do sol é?" + answer "amarelo" + rationale "O sol tem
 // cor amarelo.") qualifies as method-teaching via factual reinforcement.
 function echoesQuestionAndAnswer(ex) {
-  const r = String(ex.rationale || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  const a = String(ex.correctAnswer ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+  const r = asText(ex.rationale).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const a = asText(ex.correctAnswer).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
   // Also match via stem: "blanca"/"blanco"/"blancas"/"blancos" all share "blanc".
   // Handles gender/number inflection in Spanish/Portuguese vocabulary sets.
   const stem = a.length >= 5 ? a.slice(0, -1) : a;
   if (a.length < 3 || (!r.includes(a) && (stem.length < 3 || !r.includes(stem)))) return false;
-  const q = String(ex.question || '').replace(/\([^)]+\)\s*$/, '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const q = asText(ex.question).replace(/\([^)]+\)\s*$/, '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const qWords = (q.match(/[a-z]{3,}/g) || []).filter(w =>
     !['como', 'onde', 'quem', 'qual', 'para', 'que', 'uma', 'com', 'dos', 'das', 'por', 'são', 'seu', 'sua', 'nem', 'foi', 'era', 'tem', 'mas', 'mais'].includes(w));
   if (qWords.some(w => r.includes(w))) return true;
@@ -274,7 +274,7 @@ function scoreAnswerDistribution(set) {
   const setAns = [];
   for (const p of set.pages || []) {
     for (const e of p.exercises || []) {
-      const a = String(e.correctAnswer ?? '').trim().toLowerCase();
+      const a = asText(e.correctAnswer).trim().toLowerCase();
       if (a) setAns.push(a);
     }
   }
@@ -292,7 +292,7 @@ function scoreAnswerDistribution(set) {
   const hasBinarySkew = (set.pages || []).some(p => {
     const exs = p.exercises || [];
     if (exs.length < 4) return false;
-    const uniqueAns = new Set(exs.map(e => String(e.correctAnswer ?? '').trim().toLowerCase()));
+    const uniqueAns = new Set(exs.map(e => asText(e.correctAnswer).trim().toLowerCase()));
     return uniqueAns.size <= 2 && uniqueAns.size > 0;
   });
   if (hasBinarySkew) return { score: 10, max: 10, issue: null };
@@ -301,7 +301,7 @@ function scoreAnswerDistribution(set) {
   // answer differs from the next page's. If ≥3 consecutive pages skew
   // and their dominant answers are all distinct, treat as intentional.
   const pageDominants = (set.pages || []).map(p => {
-    const ans = (p.exercises || []).map(e => String(e.correctAnswer ?? '').trim().toLowerCase()).filter(Boolean);
+    const ans = (p.exercises || []).map(e => asText(e.correctAnswer).trim().toLowerCase()).filter(Boolean);
     if (ans.length < 4) return null;
     const f = {};
     for (const a of ans) f[a] = (f[a] || 0) + 1;
@@ -319,7 +319,7 @@ function scoreAnswerDistribution(set) {
   // (e.g. one page teaching n-n=0 within a diverse subtraction set).
   const pageSkews = [];
   for (const p of set.pages || []) {
-    const ans = (p.exercises || []).map(e => String(e.correctAnswer ?? '').trim().toLowerCase()).filter(Boolean);
+    const ans = (p.exercises || []).map(e => asText(e.correctAnswer).trim().toLowerCase()).filter(Boolean);
     if (ans.length < 4) continue;
     const freq = {};
     for (const a of ans) freq[a] = (freq[a] || 0) + 1;
@@ -357,7 +357,7 @@ function scoreDistractors(set) {
     // Also exempt when ANY choice is a multi-word phrase (phrase-vs-atom
     // contrast is Kumon-valid vocabulary teaching) or when the longest
     // choice is a compound with structural markers (hyphen, apostrophe).
-    const ans = String(e.correctAnswer ?? '').trim();
+    const ans = asText(e.correctAnswer).trim();
     if (trimmed.some(c => /\s/.test(c))) continue;
     const hasCompound = trimmed.some(c => /[-']/.test(c));
     if (hasCompound) continue;
@@ -402,7 +402,7 @@ function scoreQuestionLength(set) {
   let bad = 0;
   for (const e of exs) {
     if (e.type === 'cloze') continue;
-    const q = String(e.question || '').replace(INLINE_OPTIONS_RE, '');
+    const q = asText(e.question).replace(INLINE_OPTIONS_RE, '');
     const maxLen = (e.difficulty >= 5) ? 900 : (EMBEDDED_PASSAGE_RE.test(q) ? 400 : 250);
     if (q.length > maxLen) { bad++; continue; }
     if (q.length < 3 && !SHORT_VOCAB_RE.test(q)) bad++;

@@ -18,6 +18,7 @@ import fs from 'fs';
 import path from 'path';
 import Table from 'cli-table3';
 import { parse } from 'yaml';
+import { asText } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m', GRAY = '\x1b[90m';
@@ -38,11 +39,11 @@ const CHOICE_RE = /\(([^)?]+\/[^)?]+)\)\s*$/;
 // portuguese/1A teaches uppercase-vs-lowercase letter recognition
 // ('C' vs 'c'), and accents ('a' vs 'à'). Normalizing either collapses
 // distinct choices and produces false 100%-bias reports.
-const norm = s => String(s || '').trim();
+const norm = s => asText(s).trim();
 
 function choicesOf(ex) {
   if (Array.isArray(ex.choices)) return ex.choices;
-  const m = CHOICE_RE.exec(String(ex.question || ''));
+  const m = CHOICE_RE.exec(asText(ex.question));
   return m ? m[1].split('/').map(s => s.trim()) : null;
 }
 

@@ -16,6 +16,7 @@ import path from 'path';
 import Table from 'cli-table3';
 import { parse } from 'yaml';
 import { categorize } from './lib/rationale.js';
+import { asText } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m', GRAY = '\x1b[90m';
@@ -51,7 +52,7 @@ const STOPWORDS = new Set([
 const CHOICE_RE = /\(([^)]+\/[^)]+)\)\s*$/;
 
 function contentWords(text) {
-  const s = String(text || '').toLowerCase()
+  const s = asText(text).toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const words = s.match(/[a-z]{4,}/g) || [];
   return new Set(words.filter(w => !STOPWORDS.has(w)));
@@ -88,26 +89,27 @@ function findDisconnected(sets) {
   for (const set of sets) {
     for (const p of set.pages || []) {
       for (const ex of p.exercises || []) {
-        if (!ex.rationale || typeof ex.rationale !== 'string') continue;
+        const rText = asText(ex.rationale);
+        if (!rText) continue;
 
-        const qClean = String(ex.question || '').replace(CHOICE_RE, '');
+        const qClean = asText(ex.question).replace(CHOICE_RE, '');
         const qWords = contentWords(qClean);
-        const aWords = contentWords(ex.correctAnswer);
+        const aWords = contentWords(asText(ex.correctAnswer));
         const ref = new Set([...qWords, ...aWords]);
         if (qWords.size + aWords.size < 2) continue;
 
-        const rLower = ex.rationale.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        const ansNorm = String(ex.correctAnswer ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const rLower = rText.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const ansNorm = asText(ex.correctAnswer).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         if (ansNorm && rLower.includes(ansNorm)) continue; // answer appears verbatim
-        const rWords = contentWords(ex.rationale);
+        const rWords = contentWords(rText);
         const shared = overlap(ref, rWords);
         if (shared < MIN_OVERLAP) {
           rows.push({
             file: `${set.subject}/${set.level}/${set._file}`,
             page: p.pageNumber,
-            question: String(ex.question || '').slice(0, 50),
-            answer: String(ex.correctAnswer ?? '').slice(0, 20),
-            rationale: ex.rationale.slice(0, 80),
+            question: asText(ex.question).slice(0, 50),
+            answer: asText(ex.correctAnswer).slice(0, 20),
+            rationale: rText.slice(0, 80),
             shared,
           });
         }
@@ -150,10 +152,10 @@ function findPlaceholderTemplates(sets, threshold = 3) {
       //      (covers short-answer drills like "par"/"ímpar"/single digits).
       const withWords = exercises
         .map(ex => {
-          const qClean = String(ex.question || '').replace(CHOICE_RE, '');
-          const ans = String(ex.correctAnswer ?? '').trim();
+          const qClean = asText(ex.question).replace(CHOICE_RE, '');
+          const ans = asText(ex.correctAnswer).trim();
           const ansNorm = ans.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-          const ref = new Set([...contentWords(qClean), ...contentWords(ex.correctAnswer)]);
+          const ref = new Set([...contentWords(qClean), ...contentWords(ans)]);
           const hasSubstring = ansNorm.length >= 1 && rLower.includes(ansNorm);
           return { ex, ref, hasSubstring };
         })

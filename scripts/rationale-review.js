@@ -11,7 +11,7 @@ import path from 'path';
 import Table from 'cli-table3';
 import { parse } from 'yaml';
 import { categorize } from './lib/rationale.js';
-import { localize } from './lib/i18n.js';
+import { localize, asText } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', CYAN = '\x1b[36m', GRAY = '\x1b[90m';
@@ -64,9 +64,9 @@ function auditSet(set) {
       if (ONLY.length && !ONLY.includes(cat)) continue;
       rows.push({
         page: page.pageNumber,
-        question: String(ex.question || '').slice(0, 60),
-        answer: String(ex.correctAnswer ?? '').slice(0, 20),
-        rationale: String(ex.rationale || '').slice(0, 80),
+        question: asText(ex.question).slice(0, 60),
+        answer: asText(ex.correctAnswer).slice(0, 20),
+        rationale: asText(ex.rationale).slice(0, 80),
         cat,
       });
     }
