@@ -23,7 +23,15 @@ const CHOICE_RE = /\(([^)?]+\/[^)?]+)\)\s*$/;
 // punctuation lead, the inline parens are usually L1 translation hints,
 // pronunciation marks (/æ/), or sequence/ordering glosses — not real choices.
 const REAL_CHOICE_RE = /[:—]\s*\([^)?]+\/[^)?]+\)\s*$/;
-const norm = s => String(s).trim().replace(/^[‘’“”'"`*]+|[‘’“”'"`*.]+$/g, '').trim().toLowerCase();
+// Extract a comparable string from a string OR a bilingual {pt,en} object.
+// For bilingual nodes, normalize both halves so comparison is locale-aware.
+const norm = s => {
+  if (s == null) return '';
+  if (typeof s === 'object' && (s.pt != null || s.en != null)) {
+    return [s.pt, s.en].filter(Boolean).map(norm).join('|');
+  }
+  return String(s).trim().replace(/^[‘’“”'"`*]+|[‘’“”'"`*.]+$/g, '').trim().toLowerCase();
+};
 
 async function main() {
   const files = await fg('src/levels/**/set_*.yaml');
@@ -36,10 +44,10 @@ async function main() {
         const explicit = Array.isArray(e.choices) && e.choices.length;
         let choices = explicit ? e.choices : null;
         if (!choices) {
-          const q = String(e.question || '');
-          if (!CHOICE_RE.test(q)) continue;
-          if (!REAL_CHOICE_RE.test(q)) continue;
-          choices = q.match(CHOICE_RE)[1].split('/').map(s => s.trim());
+          const qStr = typeof e.question === 'string' ? e.question : (e.question?.pt ?? e.question?.en ?? '');
+          if (!CHOICE_RE.test(qStr)) continue;
+          if (!REAL_CHOICE_RE.test(qStr)) continue;
+          choices = qStr.match(CHOICE_RE)[1].split('/').map(s => s.trim());
         }
         const ans = norm(e.correctAnswer ?? '');
         if (!ans) continue;
@@ -48,9 +56,12 @@ async function main() {
         if (!pool.includes(ans) && !explicit && !isProse) continue;
         checked++;
         if (!pool.includes(ans)) {
+          const qStr = typeof e.question === 'string'
+            ? e.question
+            : (e.question?.pt ?? e.question?.en ?? JSON.stringify(e.question));
           mismatches.push({
             file: f.replace('src/levels/', ''),
-            q: String(e.question || '').slice(0, 70),
+            q: qStr.slice(0, 70),
             a: e.correctAnswer,
             choices,
           });

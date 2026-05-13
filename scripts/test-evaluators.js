@@ -549,6 +549,75 @@ pages:
   assert('bilingual-numeric: medical acronyms not Roman-converted', r.status === 0);
 }
 
+// ─────────────────────────────────────────────────────────────────────
+// Answer-in-choices with bilingual {pt,en} objects.
+// ─────────────────────────────────────────────────────────────────────
+{
+  // correctAnswer.en has a Portuguese typo while choice.en is correct → flag.
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question:
+          pt: 'q?'
+          en: 'q?'
+        choices:
+          - {pt: 'Pancreas', en: 'Pancreas'}
+          - {pt: 'Tireoide', en: 'Thyroid'}
+          - {pt: 'Hipófise', en: 'Pituitary'}
+          - {pt: 'Suprarrenal', en: 'Adrenal'}
+        correctAnswer: {pt: 'Pancreas', en: 'Pâncreas'}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-answer-in-choices.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('answer-in-choices: bilingual typo flagged', r.status === 1 && r.stdout.includes('mismatch'));
+}
+
+{
+  // Bilingual correctAnswer that exactly matches a choice passes.
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question: {pt: q, en: q}
+        choices:
+          - {pt: 'Coração', en: 'Heart'}
+          - {pt: 'Pulmão', en: 'Lung'}
+          - {pt: 'Fígado', en: 'Liver'}
+          - {pt: 'Estômago', en: 'Stomach'}
+        correctAnswer: {pt: 'Coração', en: 'Heart'}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-answer-in-choices.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('answer-in-choices: bilingual exact match passes', r.status === 0);
+}
+
 // Rationale-conclusion: sign-flip magnitude pattern tolerated.
 {
   setupFixture({

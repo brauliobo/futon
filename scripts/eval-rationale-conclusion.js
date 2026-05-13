@@ -43,7 +43,8 @@ function parseFraction(s) {
 const TAIL_RE = /[=≈]\s*(-?\d+(?:\.\d+)?(?:\s*\/\s*\d+)?)(?:[.)\s"'’”»]+)?$/;
 
 async function main() {
-  const files = await fg('src/levels/math/**/set_*.yaml');
+  // All subjects with potentially numeric answers — math, biology, physics, etc.
+  const files = await fg('src/levels/**/set_*.yaml');
   let checked = 0;
   const mismatches = [];
   for (const f of files) {
