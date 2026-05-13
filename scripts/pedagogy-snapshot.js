@@ -24,8 +24,11 @@ const DROP_THRESHOLD = parseInt(argVal('--threshold') || '-3', 10); // drop in p
 
 const SNAPSHOT = path.join(process.cwd(), 'PEDAGOGY_SNAPSHOT.json');
 
+// Default execSync buffer (1MB) is too small for the full JSON snapshot of
+// 2460 sets — bump to 32MB so the snapshot script doesn't ENOBUFS.
+const EXEC_OPTS = { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 };
 function currentScores() {
-  const out = execSync('node scripts/pedagogy-eval.js --json', { encoding: 'utf8' });
+  const out = execSync('node scripts/pedagogy-eval.js --json', EXEC_OPTS);
   const data = JSON.parse(out);
   const perLevel = {};
   for (const [key, v] of Object.entries(data.levels)) perLevel[key] = v.avgPct;
@@ -38,7 +41,7 @@ function currentScores() {
 }
 
 function currentPlaceholders() {
-  const out = execSync('node scripts/find-disconnected.js --json', { encoding: 'utf8' });
+  const out = execSync('node scripts/find-disconnected.js --json', EXEC_OPTS);
   const data = JSON.parse(out);
   return {
     templates: data.templates.length,
