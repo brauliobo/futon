@@ -28,11 +28,17 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
-  /* Configure project to use system Google Chrome only */
+  /* Default project is desktop Chrome; 'mobile-chrome' is opt-in via
+   * --project=mobile-chrome so developers can verify the mobile-first UX
+   * on a phone-sized viewport without doubling CI cost. */
   projects: [
     {
       name: 'google-chrome',
       use: { ...devices['Desktop Chrome'], channel: 'chrome', headless: true },
+    },
+    {
+      name: 'mobile-chrome',
+      use: { ...devices['Pixel 7'], headless: true },
     },
   ],
 

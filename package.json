@@ -83,6 +83,7 @@
     "targets:set": "node ./scripts/set-targets.mjs",
     "targets:refresh": "pnpm run targets:set && pnpm run validate:sets",
     "test": "playwright test",
+    "test:mobile": "playwright test --project=mobile-chrome",
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug",
     "test:report": "playwright show-report"
