@@ -24,6 +24,7 @@
 import { readFileSync } from 'fs';
 import YAML from 'yaml';
 import fg from 'fast-glob';
+import { asText } from './lib/i18n.js';
 
 const RESET = '\x1b[0m', BOLD = '\x1b[1m';
 const RED = '\x1b[31m', GREEN = '\x1b[32m', YELLOW = '\x1b[33m', GRAY = '\x1b[90m';
@@ -47,8 +48,8 @@ export const PATTERNS = [
 // "Adjetivos longos usam 'more', não -er: 'more beautiful'.") are NOT
 // tautologies — they teach the rule and cite the answer as the example.
 export function isEcho(rationale, answer) {
-  const r = String(rationale || '').trim();
-  const a = String(answer || '').trim();
+  const r = asText(rationale).trim();
+  const a = asText(answer).trim();
   if (!r || !a) return false;
   const m = /:\s*['"“”‘’]([^'"“”‘’]+)['"“”‘’]\.?$/.exec(r);
   if (!m || m[1].trim().toLowerCase() !== a.toLowerCase()) return false;
@@ -77,7 +78,7 @@ async function main() {
     for (const p of s.pages || []) {
       for (const ex of p.exercises || []) {
         checked++;
-        const r = String(ex.rationale || '');
+        const r = asText(ex.rationale);
         if (!r) continue;
         let matchedPattern = null;
         for (const pat of PATTERNS) {
@@ -87,7 +88,7 @@ async function main() {
         if (matchedPattern) {
           hits.push({
             f: f.replace('src/levels/', ''),
-            q: String(ex.question || '').slice(0, 55),
+            q: asText(ex.question).slice(0, 55),
             a: ex.correctAnswer,
             pattern: matchedPattern,
           });
