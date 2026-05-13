@@ -430,6 +430,66 @@ pages:
 }
 
 {
+  // Magnitude suffixes: '40 mil' ↔ '40,000' equal; '3,7 milhões' ↔ '3.7 Mya' equal.
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question:
+          pt: 'Há ~40 mil anos e ~3,7 milhões de anos'
+          en: 'About 40,000 years and ~3.7 Mya'
+        choices: [a, b, c, d]
+        correctAnswer: {pt: a, en: a}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-bilingual-numeric.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('bilingual-numeric: magnitude suffixes (mil/Mya/k) normalize', r.status === 0);
+}
+
+{
+  // PT ordinals ('1º grau') normalize to bare digit so '1º' ↔ '1' equal.
+  setupFixture({
+    'src/levels/biology/X/set_01.yaml': `
+title: T
+level: X
+subject: biology
+objectives: [t]
+example: ""
+pages:
+  - pageNumber: 1
+    title: P
+    description: D
+    exercises:
+      - type: choice
+        question:
+          pt: 'Queimadura de 1º grau atinge:'
+          en: 'A 1-degree burn reaches:'
+        choices: [a, b, c, d]
+        correctAnswer: {pt: a, en: a}
+        rationale: {pt: r, en: r}
+        objectives: [t]
+        difficulty: 3
+`,
+  });
+  const script = join(process.cwd(), 'scripts/eval-bilingual-numeric.js');
+  const r = spawnSync(process.execPath, [script], { cwd: TMP, encoding: 'utf8' });
+  assert('bilingual-numeric: PT ordinal marker stripped', r.status === 0);
+}
+
+{
   // Medical acronyms (CML, MI, DII) must NOT be Roman-converted.
   setupFixture({
     'src/levels/biology/X/set_01.yaml': `

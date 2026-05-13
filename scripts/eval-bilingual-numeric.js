@@ -39,7 +39,7 @@ function numbers(s) {
   // Only convert Roman numerals in century context, to avoid false matches
   // on medical acronyms (CML, DII, MI all look Roman). Common pt/en pattern:
   //   'século XX' / 'XX century' / 'XIXth century' / 'do século XIX'
-  const text = String(s).replace(
+  let text = String(s).replace(
     /(?:s[eé]culo\s+)([IVXLCDM]{1,4})\b|\b([IVXLCDM]{1,4})(?:th)?\s+(?:century|séc)/gi,
     (m, p1, p2) => {
       const tok = (p1 || p2 || '').toUpperCase();
@@ -47,6 +47,26 @@ function numbers(s) {
       return v > 0 && v < 4000 ? m.replace(tok, ` ${v} `) : m;
     },
   );
+  // Thousand separator: '1,000' / '10,000' / '1.000' (European). A separator
+  // followed by exactly 3 digits (no more) → strip the separator so '1,000'
+  // and '1000' compare equal.
+  text = text.replace(/(\d{1,3})[,.](\d{3})(?!\d)/g, '$1$2');
+  // 'N mil' (PT) / 'N thousand' (EN) — N may have a decimal comma/dot ('3,7 mil').
+  const mul = (factor) => (_, n) => ` ${Number(n.replace(',', '.')) * factor} `;
+  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:mil|thousand)\b/gi, mul(1000));
+  // English shorthand '200k'/'200 k', '1.5M'/'1.5 M', '2B'/'2 B'.
+  text = text.replace(/(\d+(?:[,.]\d+)?)\s*k\b/g, mul(1000));
+  text = text.replace(/(\d+(?:[,.]\d+)?)\s*M\b/g, mul(1_000_000));
+  text = text.replace(/(\d+(?:[,.]\d+)?)\s*B\b/g, mul(1_000_000_000));
+  // 'Ma'/'Mya' = mega-annum (million years ago); 'Ga'/'Gya'/'Bya' = giga-annum.
+  // Match case-sensitively to avoid English 'ma' / German 'ma' false positives.
+  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:milh[ãa]o|milh[õo]es|million)\b/gi, mul(1_000_000));
+  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:Mya|Ma)\b/g, mul(1_000_000));
+  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:bilh[ãa]o|bilh[õo]es|billion|bi)\b/gi, mul(1_000_000_000));
+  text = text.replace(/(\d+(?:[,.]\d+)?)\s+(?:Gya|Bya|Ga)\b/g, mul(1_000_000_000));
+  // PT ordinals '1º grau' / '2ª' / '3°' → strip the marker so it matches
+  // English ordinals (which often spell out 'first/second/third').
+  text = text.replace(/(\d+)[ºª°]/g, '$1');
   return [...text.matchAll(/(?<![.\d])\d+(?:[.,]\d+)?/g)]
     .map(m => Number(m[0].replace(',', '.')))
     .filter(Number.isFinite);
