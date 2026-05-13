@@ -159,6 +159,52 @@ const CASES = [
   { q: 'Dupla de parceiros de 4 alunos — C(4,2) = ?', a: '6', type: 'mental_math', want: true },
   { q: 'Ponto médio de [20,30) = ?', a: '25', type: 'mental_math', want: true },
   { q: 'Para [1,2,3,4] com frequências [2,3,4,1], acumulada até 3 = ?', a: '9', type: 'mental_math', want: true },
+  // KNOWN_FACTS dictionary cases (regression coverage for ~50 categorical entries)
+  { q: 'Em paralelogramo, lados opostos são: (perpendiculares/paralelos)', a: 'paralelos', type: 'geometry', want: true },
+  { q: 'Matriz quadrada tem: (mesmo número de linhas e colunas/diferentes)', a: 'mesmo número de linhas e colunas', type: 'algebra', want: true },
+  { q: 'A · B = B · A em geral? (não/sim)', a: 'não', type: 'algebra', want: true },
+  { q: 'Sistema sem solução: (impossível/indeterminado/determinado)', a: 'impossível', type: 'algebra', want: true },
+  { q: 'Sistema com infinitas soluções: (indeterminado/impossível)', a: 'indeterminado', type: 'algebra', want: true },
+  { q: 'Escalonamento transforma sistema em: (nula/triangular/identidade)', a: 'triangular', type: 'algebra', want: true },
+  { q: 'Gauss-Jordan produz: (diagonal/triangular/identidade)', a: 'identidade', type: 'algebra', want: true },
+  { q: 'Formato da curva normal: (uniforme/triangular/sino)', a: 'sino', type: 'mental_math', want: true },
+  { q: 'Curva normal é simétrica? (sim/não)', a: 'sim', type: 'mental_math', want: true },
+  { q: 'A normal padrão tem média = ? e σ = ?', a: '0 e 1', type: 'mental_math', want: true },
+  { q: 'Soma das frequências = total de dados: V/F?', a: 'V', type: 'mental_math', want: true },
+  { q: 'Intervalo [10,20) inclui 10? (não/sim)', a: 'sim', type: 'mental_math', want: true },
+  { q: 'Intervalo [10,20) inclui 20? (não/sim)', a: 'não', type: 'mental_math', want: true },
+  { q: 'H₀ representa a hipótese (nula/alternativa)?', a: 'nula', type: 'mental_math', want: true },
+  { q: 'r=0.95 indica correlação (fraca/forte)?', a: 'forte', type: 'mental_math', want: true },
+  // Series convergence rule engine
+  { q: 'Σ 1/n converge (V/F)?', a: 'F', type: 'sequence', want: true },
+  { q: 'Σ 1/n² converge (V/F)?', a: 'V', type: 'sequence', want: true },
+  { q: 'Σ 1/n^1.5 converge (V/F)?', a: 'V', type: 'sequence', want: true },
+  { q: 'Σ 2^n diverge (V/F)?', a: 'V', type: 'sequence', want: true },
+  { q: 'Σ(-1)^n diverge porque aₙ oscila (V/F)?', a: 'V', type: 'sequence', want: true },
+  { q: 'Σ 1/(n²+1) converge (como 1/n²) (V/F)?', a: 'V', type: 'sequence', want: true },
+  { q: 'Σ 1/n^0.5 (ou 1/√n) converge? (sim/não)', a: 'não', type: 'sequence', want: true },
+  { q: 'Se aₙ → 5, Σaₙ: (diverge/converge)', a: 'diverge', type: 'sequence', want: true },
+  // Trig identity V/F (numeric verification)
+  { q: 'sen(15°) = (√6-√2)/4 (V/F)?', a: 'V', type: 'trigonometry', want: true },
+  { q: 'cos(75°) = (√6+√2)/4 (V/F)?', a: 'F', type: 'trigonometry', want: true },
+  { q: 'tan(15°) = 2 + √3 (V/F)?', a: 'F', type: 'trigonometry', want: true },
+  // Derivative dictionary
+  { q: 'd/dx(e^x) série: (e^x/sen(x))', a: 'e^x', type: 'calculus', want: true },
+  { q: 'd/dx(cos x) série: (-sen x/sen x)', a: '-sen x', type: 'calculus', want: true },
+  // Integral identity V/F
+  { q: '∫ cos x dx = sen x + C (V/F)?', a: 'V', type: 'calculus', want: true },
+  { q: '∫ e^x dx = e^x + C (V/F)?', a: 'V', type: 'calculus', want: true },
+  // Half-angle / law-of-sines numerics
+  { q: 'sen(x/2) = ±√((1-cos x)/2). Se cos(x)=0, sen(x/2)² = ?', a: '1/2', type: 'trigonometry', want: true },
+  { q: 'tan(x/2) com sen(x)=4/5, cos(x)=3/5 = (1-cos x)/sen x = ?', a: '1/2', type: 'trigonometry', want: true },
+  { q: 'cos(x/2) com cos(x)=1/2 (agudo) = ?', a: '√3/2', type: 'trigonometry', want: true },
+  // Moda bimodal smallest
+  { q: 'Moda de {1,1,2,2} (bimodal, cite o menor) = ?', a: '1', type: 'mental_math', want: true },
+  // Diagnostic Bayes
+  { q: 'P(doença|teste+) ≈ 99/(99+495) ≈ ? (arredonde para 2 casas)', a: '0.17', type: 'mental_math', want: true },
+  // Hypothesis testing
+  { q: 'β=0.15 → poder do teste = ?', a: '0.85', type: 'mental_math', want: true },
+  { q: 'p=0.001, α=0.01 → decisão?', a: 'rejeitar', type: 'mental_math', want: true },
   // Trig equation solving in degrees
   { q: 'Primeira solução de cos(x) = 1/2 em [0°, 360°)?', a: '60°', type: 'trigonometry', want: true },
   { q: 'Segunda solução: sen(x) = 1/2 em [0°, 360°)', a: '150°', type: 'trigonometry', want: true },
