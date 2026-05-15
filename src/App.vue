@@ -26,7 +26,7 @@
             Spinner(size="lg" class="text-kid-blue")
             p(class="text-base font-semibold text-kid-muted") {{ $t('loading') || 'Loading...' }}
           transition(v-else :name="selectedSet ? 'nav-forward' : 'nav-back'" mode="out-in")
-            Home(v-if="!selectedSet" key="home" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" :isLoadingLevel="isLoadingLevel" :streak="streak" :today-sets="todaySets" @select-set="selectSet" @level-selected="onLevelSelected" class="space-y-4 sm:space-y-6")
+            Home(v-if="!selectedSet" key="home" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" :isLoadingLevel="isLoadingLevel" :streak="streak" :today-sets="todaySets" :today-duration="todayDuration" @select-set="selectSet" @level-selected="onLevelSelected" class="space-y-4 sm:space-y-6")
             div(v-else key="set")
               Set(:set="selectedSet" :initialPageIndex="initialPageIndex" :has-next-set="!!nextSet" :profile-id="activeProfile && activeProfile.id || 'default'" @update-set="updateSet" @page-changed="handlePageChange" @next-set="goToNextSet" @go-home="goHome")
       LevelCertificate(v-if="certificateLevel" :subject="certificateLevel.subject" :level="certificateLevel.level" :profile-name="activeProfile && activeProfile.name" @close="certificateLevel = null")
@@ -73,6 +73,7 @@ export default {
       isLoadingLevel: false,
       streak: 0,
       todaySets: 0,
+      todayDuration: 0,
       certificateLevel: null,
       newAchievements: [],
     };
@@ -90,6 +91,7 @@ export default {
       this.restoreFromRoute();
       this.streak = Streak.calculate(this.storage);
       this.todaySets = Streak.todayCount(this.storage);
+      this.todayDuration = Streak.todayDuration(this.storage);
     } catch (error) {
       console.error('Failed to initialize disciplines:', error);
       this.isLoading = false;
@@ -197,10 +199,11 @@ export default {
         }
         // Track activity and streak when a submission is recorded (attempts increased)
         if (updatedSet.attempts > prev.attempts) {
-          Streak.recordActivity(this.storage);
+          Streak.recordActivity(this.storage, 1, updatedSet.durationSeconds || 0);
           if (updatedSet.status === 'mastery') Streak.recordMastery(this.storage);
           this.streak = Streak.calculate(this.storage);
           this.todaySets = Streak.todayCount(this.storage);
+          this.todayDuration = Streak.todayDuration(this.storage);
           this.checkLevelCertificate(updatedSet);
           this.checkAchievements(updatedSet);
         }
@@ -328,6 +331,7 @@ export default {
         this.restoreFromRoute();
         this.streak = Streak.calculate(this.storage);
         this.todaySets = Streak.todayCount(this.storage);
+        this.todayDuration = Streak.todayDuration(this.storage);
       } catch (e) {
         console.error('Failed to initialize disciplines:', e);
         this.isLoading = false;

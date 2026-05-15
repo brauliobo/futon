@@ -527,6 +527,9 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 /* Daily-goal widget — Home.vue top banner */
 .daily-goal { @apply flex flex-wrap items-center gap-3 rounded-3xl border-2 shadow-sm px-5 py-4 animate-slide-up transition-colors duration-500 goal-bg; }
 .daily-goal--complete { background: var(--kid-green-tint-10); box-shadow: 0 0 18px var(--glow-green); }
+.goal-progress-bar { height: 4px; background: var(--goal-border); border-radius: 2px; overflow: hidden; }
+.goal-progress-fill { height: 100%; background: var(--kid-gold); border-radius: 2px; transition: width 0.4s ease; }
+.goal-progress-fill--done { background: var(--kid-green); }
 
 /* Avatar button — ProfileSelector.vue avatar picker grid */
 .avatar-btn { @apply aspect-square rounded-2xl text-3xl flex items-center justify-center transition-all active:scale-90 bg-kid-surface border-2; border-color: var(--kid-border); }

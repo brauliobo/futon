@@ -18,12 +18,12 @@ test.describe('Streak Gamification', () => {
     expect(hasFire).toBe(false);
   });
 
-  test('daily goal reflects activity count', async ({ page }) => {
+  test('daily goal reflects time practiced', async ({ page }) => {
     await gotoHomeWithProfile(page);
     await page.evaluate(() => {
-      document.querySelector('#app').__vue_app__._instance.data.todaySets = 2;
+      document.querySelector('#app').__vue_app__._instance.data.todayDuration = 15 * 60;
     });
     await page.waitForTimeout(100);
-    await expect(page.locator('[data-testid="daily-goal"]').getByText('2/3')).toBeVisible();
+    await expect(page.locator('[data-testid="daily-goal"]').getByText('15min / 30min')).toBeVisible();
   });
 });

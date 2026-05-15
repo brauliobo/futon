@@ -33,11 +33,13 @@
         span(
           v-for="i in 3"
           :key="i"
-          :class="i <= todaySets ? 'text-kid-gold star-glow animate-star-pop' : 'theme-star-empty'"
-          :style="i <= todaySets ? { animationDelay: `${(i - 1) * 0.15}s` } : {}"
+          :class="i <= starsEarned ? 'text-kid-gold star-glow animate-star-pop' : 'theme-star-empty'"
+          :style="i <= starsEarned ? { animationDelay: `${(i - 1) * 0.15}s` } : {}"
           class="text-2xl leading-none transition-all duration-300"
         ) ★
-      span(:class="goalAchieved ? 'text-base font-black text-kid-green ml-1' : 'text-base font-bold text-kid-muted ml-1'") {{ todaySets }}/3
+      span(:class="goalAchieved ? 'text-base font-black text-kid-green ml-1' : 'text-base font-bold text-kid-muted ml-1'") {{ todayMinutes }}min / 30min
+      div.goal-progress-bar.basis-full
+        div.goal-progress-fill(:class="goalAchieved ? 'goal-progress-fill--done' : ''" :style="{ width: `${Math.min(100, todayDuration / 18)}%` }")
       div(v-if="streak > 1" class="ml-auto flex items-center gap-1.5 rounded-2xl streak-bg border px-3 py-1.5 text-base font-bold shadow-sm" :style="{ borderColor: 'var(--streak-border)', color: 'var(--streak-text)' }")
         span(class="animate-wiggle") 🔥
         span {{ streak }} {{ $t('dayStreak') || 'day streak' }}
@@ -165,6 +167,10 @@ export default {
       default: 0
     },
     todaySets: {
+      type: Number,
+      default: 0
+    },
+    todayDuration: {
       type: Number,
       default: 0
     }
@@ -308,7 +314,9 @@ export default {
     mode(val) { localStorage.setItem('futon_active_mode', val); },
   },
   computed: {
-    goalAchieved() { return this.todaySets >= 3; },
+    goalAchieved() { return this.todayDuration >= 30 * 60; },
+    todayMinutes() { return Math.floor(this.todayDuration / 60); },
+    starsEarned() { return Math.min(3, Math.floor(this.todayDuration / 600)); },
     availableSubjects() {
       if (this.disciplineManager) {
         return Object.keys(this.disciplineManager.disciplines);
@@ -430,8 +438,8 @@ export default {
         },
         {
           label: this.$t('dashboardToday') || 'Today',
-          value: `${this.todaySets}/3`,
-          detail: this.streak > 1 ? `${this.streak} ${this.$t('dayStreak') || 'day streak'}` : (this.$t('dashboardDailyGoal') || 'daily goal'),
+          value: `${this.todayMinutes}min`,
+          detail: this.streak > 1 ? `${this.streak} ${this.$t('dayStreak') || 'day streak'}` : (this.$t('dashboardDailyGoal') || 'daily goal / 30min'),
           color: this.goalAchieved ? 'text-kid-green' : 'text-kid-text',
         },
       ];
