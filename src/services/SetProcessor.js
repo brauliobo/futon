@@ -101,7 +101,10 @@ export class SetProcessor {
     const before = previous.split(/\s+/).pop() || '';
     const after = (next.match(/^[^/\s)\]]+/) || [''])[0];
 
-    return before.length <= 2 || after.length <= 2 || /^[)\]:]/.test(next);
+    const opensShortMarker = after.length <= 2 && next[after.length] === '/';
+    const closesShortMarker = before.startsWith('/') && before.length <= 2;
+
+    return opensShortMarker || closesShortMarker || /^[)\]:]/.test(next);
   }
 
   static isShortChoiceSegment(segment) {

@@ -54,6 +54,18 @@ const cases = [
     },
   },
   {
+    name: 'extracts article-led choices with phoneme markers',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/spanish/I/set_12.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[1].exercises[9];
+      return ex.type === 'choice'
+        && ex.question === '¿Cuál es la diferencia entre un alófono y un fonema?'
+        && ex.choices.length === 3
+        && ex.choices[1].includes('/p/ vs. /b/')
+        && ex.choices[2] === 'el alófono es un error';
+    },
+  },
+  {
     name: 'removes repeated generated boilerplate from dense choices',
     run:  () => {
       const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));
