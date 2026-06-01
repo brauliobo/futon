@@ -22,6 +22,39 @@ const cases = [
         && parts.some(part => part.type === 'fraction' && part.value === '4/3');
     },
   },
+  {
+    name: 'parts formats radical fractions for display',
+    run:  () => {
+      const fractions = Fraction.parts('sen(60°) = √3/2 e cos(225°) = -√2/2')
+        .filter(part => part.type === 'fraction');
+
+      return fractions.length === 2
+        && fractions[0].numerator === '√3'
+        && fractions[0].denominator === '2'
+        && fractions[1].numerator === '-√2'
+        && fractions[1].denominator === '2';
+    },
+  },
+  {
+    name: 'parts formats trig function denominators for display',
+    run:  () => {
+      const fractions = Fraction.parts('1/sen(300°) = ? e 1/cos(210°) = ?')
+        .filter(part => part.type === 'fraction');
+
+      return fractions.length === 2
+        && fractions[0].numerator === '1'
+        && fractions[0].denominator === 'sen(300°)'
+        && fractions[1].denominator === 'cos(210°)';
+    },
+  },
+  {
+    name: 'hasFraction stays numeric-only for fraction keypad',
+    run:  () => {
+      return Fraction.hasFraction('3/5')
+        && !Fraction.hasFraction('√3/2')
+        && !Fraction.hasFraction('1/sen(300°)');
+    },
+  },
 ];
 
 let passed = 0;

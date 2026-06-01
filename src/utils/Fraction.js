@@ -1,13 +1,19 @@
 export class Fraction {
-  static FRACTION_PATTERN_SOURCE = String.raw`(-?\d+)\s+(\d+)\/(\d+)|(-?\d+)\/(\d+)`;
+  static ANSWER_FRACTION_PATTERN_SOURCE = String.raw`(?<![\p{L}√\d])(-?\d+)\s+(\d+)\/(\d+)|(?<![\p{L}√\d])(-?\d+)\/(\d+)(?![\p{L}\d])`;
+  static DISPLAY_TERM_PATTERN_SOURCE = String.raw`-?(?:\d+|√\d+|(?:sen|cos|tan|tg)\([^()/]+\)|\[[^\]/]+\])`;
+  static DISPLAY_FRACTION_PATTERN_SOURCE = String.raw`(-?\d+)\s+(\d+)\/(\d+)|(${Fraction.DISPLAY_TERM_PATTERN_SOURCE})\/(${Fraction.DISPLAY_TERM_PATTERN_SOURCE})`;
 
-  static fractionPattern() {
-    return new RegExp(this.FRACTION_PATTERN_SOURCE, 'g');
+  static answerFractionPattern() {
+    return new RegExp(this.ANSWER_FRACTION_PATTERN_SOURCE, 'gu');
+  }
+
+  static displayFractionPattern() {
+    return new RegExp(this.DISPLAY_FRACTION_PATTERN_SOURCE, 'gi');
   }
 
   static parts(value) {
     const text    = String(value ?? '');
-    const pattern = this.fractionPattern();
+    const pattern = this.displayFractionPattern();
     const parts   = [];
     let last      = 0;
 
@@ -39,7 +45,7 @@ export class Fraction {
   }
 
   static hasFraction(value) {
-    return this.fractionPattern().test(String(value ?? ''));
+    return this.answerFractionPattern().test(String(value ?? ''));
   }
 
   static parseAnswer(value) {
