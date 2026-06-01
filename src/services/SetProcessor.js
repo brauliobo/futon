@@ -314,6 +314,8 @@ export class SetProcessor {
   static normalizeAlgebraPrompt(question) {
     return String(question || '')
       .replace(/\+\s*-/g, '- ')
+      .replace(/x\s-\s-(\d+)/g, 'x + $1')
+      .replace(/\(x\s-\s0\)/g, 'x')
       .replace(/\b1x\b/g, 'x')
       .replace(/-1x\b/g, '-x')
       .replace(/\b1\(/g, '(')

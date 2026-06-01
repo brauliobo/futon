@@ -237,6 +237,24 @@ const cases = [
     },
   },
   {
+    name: 'simplifies double-negative quadratic factors',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/I/set_03.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[0].exercises[0];
+      return ex.type === 'quadratic'
+        && ex.question === '(x + 9)(x - 1) = 0';
+    },
+  },
+  {
+    name: 'simplifies zero-root quadratic factors',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/I/set_03.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[0].exercises[7];
+      return ex.type === 'quadratic'
+        && ex.question === 'x(x + 5) = 0';
+    },
+  },
+  {
     name: 'removes repeated generated boilerplate from dense choices',
     run:  () => {
       const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));
