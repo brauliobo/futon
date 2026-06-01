@@ -93,6 +93,26 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(passage).toContainText('A violência escolar tem aumentado');
   });
 
+  test('portuguese story descriptions render for paragraph questions', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].description = 'História: A família de Ana viajou de avião para a praia. Passaram uma semana lá. O tempo estava ensolarado. Nadaram no mar e comeram frutos do mar. Voltaram de avião. A viagem foi divertida e todos querem voltar.';
+      vm.set.pages[0].exercises = [{
+        type:          'paragraph',
+        question:      'Para onde a família viajou? (praia/parque/escola)',
+        correctAnswer: 'praia',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const passage = page.locator('[data-testid="reading-passage"]');
+    await expect(passage).toBeVisible();
+    await expect(passage).toContainText('A família de Ana viajou');
+  });
+
   test('digit key 1 selects first choice when group is focused', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (!answers.length || !answers[0].hasChoices) return;

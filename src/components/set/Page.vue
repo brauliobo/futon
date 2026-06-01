@@ -50,7 +50,7 @@ export default {
     isPassageDescription(description) {
       const text = String(description || '').trim();
       if (text.length < 80) return false;
-      return /^(Texto:|Leia e responda:|Redação modelo)/i.test(text);
+      return /^(Texto:|Leia e responda:|Redação modelo|História:)/i.test(text);
     },
     initAnswers() {
       this.answers = PageStatus.initAnswers(this.page.exercises);
