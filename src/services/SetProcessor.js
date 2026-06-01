@@ -101,8 +101,8 @@ export class SetProcessor {
     const before = previous.split(/\s+/).pop() || '';
     const after = (next.match(/^[^/\s)\]]+/) || [''])[0];
 
-    const opensShortMarker = after.length <= 2 && next[after.length] === '/';
-    const closesShortMarker = before.startsWith('/') && before.length <= 2;
+    const opensShortMarker = after.length <= 3 && next[after.length] === '/';
+    const closesShortMarker = /^\/[\p{L}]-?$/u.test(before) || /^\/[\p{L}]{2}-?$/u.test(before);
 
     return opensShortMarker || closesShortMarker || /^[)\]:]/.test(next);
   }

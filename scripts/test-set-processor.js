@@ -66,6 +66,18 @@ const cases = [
     },
   },
   {
+    name: 'keeps short morpheme markers inside long choices',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/spanish/L/set_09.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[1].exercises[9];
+      return ex.type === 'choice'
+        && ex.choices.length === 3
+        && ex.choices[1].includes('/fu-/')
+        && ex.choices[1].includes('/v-/ en el presente indicativo')
+        && ex.choices[1].includes('/i-/ como raíz por defecto');
+    },
+  },
+  {
     name: 'removes repeated generated boilerplate from dense choices',
     run:  () => {
       const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));
