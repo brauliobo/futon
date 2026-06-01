@@ -110,14 +110,14 @@ const cases = [
     },
   },
   {
-    name: 'extracts keyed inline choices and keeps numeric answers scorable',
+    name: 'extracts keyed inline choices as learner-facing labels',
     run:  () => {
       const set = YAML.parse(fs.readFileSync('src/levels/math/Q/set_17.yaml', 'utf8'));
       const ex  = SetProcessor.processSet(set).pages[2].exercises[0];
       return ex.type === 'choice'
         && ex.question === '(1,2) e (2,4): são L.D.?'
-        && ex.choices.join('|') === '1=sim|0=não'
-        && ex.correctAnswer === '1=sim';
+        && ex.choices.join('|') === 'sim|não'
+        && ex.correctAnswer === 'sim';
     },
   },
   {

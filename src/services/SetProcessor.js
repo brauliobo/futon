@@ -261,21 +261,22 @@ export class SetProcessor {
         ex.choices  = choices;
         ex.question = `${ex.question.slice(0, choiceInfo.start)}${ex.question.slice(choiceInfo.end)}`.trim();
         ex.type = 'choice';
-        this.normalizeKeyedChoiceAnswer(ex);
+        this.normalizeKeyedChoices(ex);
       });
     });
     return wb;
   }
 
-  static normalizeKeyedChoiceAnswer(ex) {
+  static normalizeKeyedChoices(ex) {
     const answer = String(ex.correctAnswer ?? '').trim();
     if (!answer || !Array.isArray(ex.choices)) return;
 
-    const keyedChoice = ex.choices.find(choice => {
-      const [key] = String(choice).split('=');
-      return key?.trim() === answer;
-    });
-    if (keyedChoice) ex.correctAnswer = keyedChoice;
+    const keyedChoices = ex.choices.map(choice => String(choice).match(/^([^=]+)=\s*(.+)$/));
+    if (keyedChoices.some(choice => !choice)) return;
+
+    const mappedAnswer = keyedChoices.find(([, key]) => key.trim() === answer)?.[2]?.trim();
+    ex.choices = keyedChoices.map(([, , value]) => value.trim());
+    if (mappedAnswer) ex.correctAnswer = mappedAnswer;
   }
 
   static processSet(wb) {
