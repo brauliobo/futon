@@ -41,6 +41,16 @@ const cases = [
         && ex.choices.join('|') === '2|3|4';
     },
   },
+  {
+    name: 'removes repeated generated boilerplate from dense choices',
+    run:  () => {
+      const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));
+      const choice = SetProcessor.processSet(set).pages[1].exercises[5].choices[0].pt;
+      return choice.length < 430
+        && !choice.includes('frontier translational scale-up commercial')
+        && !choice.includes('emerging next-bio-recycling');
+    },
+  },
 ];
 
 let passed = 0;

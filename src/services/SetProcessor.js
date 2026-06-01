@@ -101,6 +101,63 @@ export class SetProcessor {
     return { ...wb, totalExercises };
   }
 
+  static simplifyChoiceBoilerplate(wb) {
+    wb.pages.forEach(page => {
+      page.exercises.forEach(ex => {
+        if (ex.choices) ex.choices = ex.choices.map(choice => this.simplifyValue(choice));
+        if (ex.correctAnswer !== undefined) ex.correctAnswer = this.simplifyValue(ex.correctAnswer);
+      });
+    });
+    return wb;
+  }
+
+  static simplifyValue(value) {
+    if (typeof value === 'string') return this.simplifyText(value);
+    if (Array.isArray(value)) return value.map(item => this.simplifyValue(item));
+    if (value && typeof value === 'object') {
+      return Object.fromEntries(Object.entries(value).map(([key, val]) => [key, this.simplifyValue(val)]));
+    }
+    return value;
+  }
+
+  static simplifyText(text) {
+    const source = String(text);
+    const withSimplifiedParens = source.replace(/\(([^()]*)\)/g, (match, body) => {
+      const cleaned = this.simplifyPlusList(body);
+      return cleaned === body ? match : `(${cleaned})`;
+    });
+
+    return this.simplifyPredicateTail(withSimplifiedParens).replace(/\s+/g, ' ').trim();
+  }
+
+  static simplifyPlusList(text, minParts = 4, minKept = 2) {
+    const parts = String(text).split(/\s+\+\s+/);
+    if (parts.length < minParts) return text;
+
+    const kept = parts.filter(part => !this.isBoilerplateSegment(part));
+    if (kept.length === parts.length || kept.length < minKept) return text;
+    return kept.join(' + ');
+  }
+
+  static simplifyPredicateTail(text) {
+    const match = String(text).match(/^(.*?\s(?:é|is)\s)(.*)$/);
+    if (!match) return text;
+
+    const cleaned = this.simplifyPlusList(match[2], 2, 1);
+    return `${match[1]}${cleaned}`;
+  }
+
+  static isBoilerplateSegment(segment) {
+    const text = String(segment).toLowerCase();
+    const terms = ['emerging', 'frontier', 'translational', 'scale-up', 'commercial', 'industrial', 'bio-manufacturing', 'milestone', 'paradigm', 'era', 'pipeline'];
+    const matches = terms.filter(term => text.includes(term)).length;
+
+    return text.includes('emerging next-')
+      || text.includes('frontier translational')
+      || /\bera\s+2024\s+frontier\b/.test(text)
+      || (text.includes('emerging') && matches >= 3);
+  }
+
   static parseChoices(wb) {
     wb.pages.forEach(page => {
       page.exercises.forEach(ex => {
@@ -121,6 +178,7 @@ export class SetProcessor {
     let processed = this.expandPortuguesePages(wb);
     processed = this.expandRepetitions(processed);
     processed = this.parseChoices(processed);
+    processed = this.simplifyChoiceBoilerplate(processed);
     processed = this.numberPages(processed);
     processed = this.calculateTotalExercises(processed);
     return processed;
