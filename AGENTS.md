@@ -65,7 +65,7 @@ Full documentation in [PEDAGOGY.md](PEDAGOGY.md) at repo root. Key entry points:
 - **Manual review**: `eval:review:sample` generates a deterministic cross-corpus checklist for human spot checks that automation cannot judge reliably (age fit, cultural tone, subject nuance).
 - **Zero-state hard-fail gates** (block commit on regression): `eval:tautological`, `eval:pt-category`, `eval:example-spoiler`, `eval:pt-pluralization`, `eval:meta-question` — see PEDAGOGY.md "Quality status". Run with `pnpm eval:gates` (~7s).
 - **Fixers** (dry-run by default, `--apply` to write): `fix:placeholders`, `fix:examples`, `fix:restatements`, `fix:example-spoiler`, `fix:japanese`, `fix:japanese:metadata`, `fix:japanese:objectives`.
-- **Regression tests**: `test:eval` runs `scripts/test-rationale.js` + `scripts/test-eval.js` + `scripts/test-fixers.js` + `scripts/test-shuffle.js` + `scripts/test-fraction.js` + `scripts/test-zero-state-detectors.js` (47 detector unit tests).
+- **Regression tests**: `test:eval` runs `scripts/test-rationale.js` + `scripts/test-eval.js` + `scripts/test-fixers.js` + `scripts/test-shuffle.js` + `scripts/test-fraction.js` + `scripts/test-set-processor.js` + `scripts/test-zero-state-detectors.js` plus evaluator regression checks.
 - **Runtime**: `src/utils/Shuffle.js` seeds per-question choice order so authored YAML order can't bias answers.
 - **Snapshot**: `PEDAGOGY_SNAPSHOT.json` tracks per-set + per-level scores for CI regression checks. `eval:snapshot --save` updates it.
 

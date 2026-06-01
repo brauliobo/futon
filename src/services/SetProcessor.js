@@ -37,7 +37,59 @@ export class SetProcessor {
     return { ...wb, pages };
   }
 
-  // All YAML files now have correct structure - no processing needed
+  static trailingChoiceBody(question) {
+    const text = String(question || '').trim();
+    if (!text.endsWith(')')) return '';
+
+    let depth = 0;
+    for (let idx = text.length - 1; idx >= 0; idx -= 1) {
+      const char = text[idx];
+      if (char === ')') depth += 1;
+      if (char === '(') depth -= 1;
+      if (depth === 0 && char === '(') return text.slice(idx + 1, -1);
+    }
+
+    return '';
+  }
+
+  static splitChoiceBody(body) {
+    const text = String(body || '').trim();
+    if (!text.includes('/')) return [];
+
+    if (text.length <= 160) return this.cleanChoices(text.split('/'));
+
+    const choices = [];
+    let depth     = 0;
+    let last      = 0;
+
+    for (let idx = 0; idx < text.length; idx += 1) {
+      const char = text[idx];
+      if (char === '(') depth += 1;
+      if (char === ')') depth = Math.max(0, depth - 1);
+      if (char !== '/' || depth > 0 || !this.isLongChoiceBoundary(text, idx)) continue;
+
+      choices.push(text.slice(last, idx));
+      last = idx + 1;
+    }
+
+    choices.push(text.slice(last));
+    return this.cleanChoices(choices);
+  }
+
+  static cleanChoices(choices) {
+    const cleaned = choices.map(choice => String(choice).trim());
+    if (cleaned.some(choice => !choice)) return [];
+    if (cleaned.length < 2 || cleaned.length > 6) return [];
+    return cleaned;
+  }
+
+  static isLongChoiceBoundary(text, slashIndex) {
+    const next = text.slice(slashIndex + 1).trimStart();
+    if (!next) return false;
+
+    return /^(que|ambos?|la|el|las|los|un|una|unos|unas|en|no|sí|si|solo|son|es|porque|por|como|cuando)\b/i.test(next)
+      || /^[A-ZÁÉÍÓÚÑ][^/\s:]{1,30}:\s/.test(next);
+  }
 
   static numberPages(wb) {
     wb.pages.forEach((p, i) => { p.pageNumber = i + 1; });
@@ -50,14 +102,15 @@ export class SetProcessor {
   }
 
   static parseChoices(wb) {
-    const choicePattern = /\(([^)]+\/[^)]+)\)\s*$/;
     wb.pages.forEach(page => {
       page.exercises.forEach(ex => {
         if (ex.choices || ex.type === 'choice') return;
-        const match = ex.question.match(choicePattern);
-        if (!match) return;
-        ex.choices = match[1].split('/').map(s => s.trim());
-        ex.question = ex.question.replace(choicePattern, '').trim();
+        const body    = this.trailingChoiceBody(ex.question);
+        const choices = this.splitChoiceBody(body);
+        if (!choices.length) return;
+
+        ex.choices  = choices;
+        ex.question = ex.question.slice(0, ex.question.length - body.length - 2).trim();
         ex.type = 'choice';
       });
     });
