@@ -42,6 +42,18 @@ const cases = [
     },
   },
   {
+    name: 'extracts inline choices around phoneme slash notation',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/spanish/I/set_12.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[1].exercises[2];
+      return ex.type === 'choice'
+        && ex.question === "¿Qué proceso fonológico ocurre en 'desde' → [dezðe] en habla rápida?"
+        && ex.choices.length === 3
+        && ex.choices[1].includes('sonorización de /s/ ante /d/')
+        && ex.choices[2] === 'metátesis';
+    },
+  },
+  {
     name: 'removes repeated generated boilerplate from dense choices',
     run:  () => {
       const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));

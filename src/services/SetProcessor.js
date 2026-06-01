@@ -56,7 +56,8 @@ export class SetProcessor {
     const text = String(body || '').trim();
     if (!text.includes('/')) return [];
 
-    if (text.length <= 160) return this.cleanChoices(text.split('/'));
+    const slashCount = (text.match(/\//g) || []).length;
+    if (text.length <= 160 && slashCount <= 5) return this.cleanChoices(text.split('/'));
 
     const choices = [];
     let depth     = 0;
@@ -66,7 +67,7 @@ export class SetProcessor {
       const char = text[idx];
       if (char === '(') depth += 1;
       if (char === ')') depth = Math.max(0, depth - 1);
-      if (char !== '/' || depth > 0 || !this.isLongChoiceBoundary(text, idx)) continue;
+      if (char !== '/' || depth > 0 || !this.isLongChoiceBoundary(text, idx, last)) continue;
 
       choices.push(text.slice(last, idx));
       last = idx + 1;
@@ -83,12 +84,41 @@ export class SetProcessor {
     return cleaned;
   }
 
-  static isLongChoiceBoundary(text, slashIndex) {
+  static isLongChoiceBoundary(text, slashIndex, segmentStart = 0) {
+    const previous = text.slice(segmentStart, slashIndex).trim();
     const next = text.slice(slashIndex + 1).trimStart();
     if (!next) return false;
 
+    if (this.isPhonemeSlash(previous, next)) return false;
+    if (this.isShortChoiceSegment(previous) && this.startsShortChoice(next)) return true;
+    if (this.startsTerminalShortChoice(next)) return true;
+
     return /^(que|ambos?|la|el|las|los|un|una|unos|unas|en|no|sí|si|solo|son|es|porque|por|como|cuando)\b/i.test(next)
       || /^[A-ZÁÉÍÓÚÑ][^/\s:]{1,30}:\s/.test(next);
+  }
+
+  static isPhonemeSlash(previous, next) {
+    const before = previous.split(/\s+/).pop() || '';
+    const after = (next.match(/^[^/\s)\]]+/) || [''])[0];
+
+    return before.length <= 2 || after.length <= 2 || /^[)\]:]/.test(next);
+  }
+
+  static isShortChoiceSegment(segment) {
+    const text = String(segment || '').trim();
+    if (text.length < 2 || text.length > 90) return false;
+    if (/[→:;]/.test(text)) return false;
+    return text.split(/\s+/).length <= 8;
+  }
+
+  static startsShortChoice(text) {
+    const first = String(text || '').split('/')[0].trim();
+    if (!this.isShortChoiceSegment(first)) return false;
+    return /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ¿¡'"]/.test(first);
+  }
+
+  static startsTerminalShortChoice(text) {
+    return this.startsShortChoice(text) && !String(text || '').slice(0, 120).includes('/');
   }
 
   static numberPages(wb) {
