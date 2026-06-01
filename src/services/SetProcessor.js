@@ -58,6 +58,7 @@ export class SetProcessor {
 
     const slashCount = (text.match(/\//g) || []).length;
     if (text.length <= 160 && slashCount <= 5) return this.cleanChoices(text.split('/'));
+    if (slashCount <= 5 && !this.hasShortSlashMarker(text)) return this.cleanChoices(text.split('/'));
 
     const choices = [];
     let depth     = 0;
@@ -105,6 +106,11 @@ export class SetProcessor {
     const closesShortMarker = /^\/[\p{L}]-?$/u.test(before) || /^\/[\p{L}]{2}-?$/u.test(before);
 
     return opensShortMarker || closesShortMarker || /^[)\]:]/.test(next);
+  }
+
+  static hasShortSlashMarker(text) {
+    return /\/[\p{L}]{1,3}-?\//u.test(String(text || ''))
+      || /\/[\p{L}]{1,3}-?(?=[)\]:,\s])/u.test(String(text || ''));
   }
 
   static isShortChoiceSegment(segment) {

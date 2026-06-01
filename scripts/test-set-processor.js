@@ -78,6 +78,17 @@ const cases = [
     },
   },
   {
+    name: 'extracts long portuguese inline choices with arrows',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/portuguese/G/set_15.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[9].exercises[0];
+      return ex.type === 'choice'
+        && ex.question === 'Qual é a ordem cronológica das gerações românticas brasileiras?'
+        && ex.choices.length === 4
+        && ex.choices[1] === 'Indianismo → Ultrarromantismo → Condoreirismo';
+    },
+  },
+  {
     name: 'removes repeated generated boilerplate from dense choices',
     run:  () => {
       const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));
