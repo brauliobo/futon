@@ -70,4 +70,28 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(first).toHaveAttribute('aria-checked', 'false');
     await expect(first).toHaveAttribute('tabindex', '0');
   });
+
+  test('long choices use compact single-column cards', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      const longChoice = 'This advanced review answer combines clinical evidence, named studies, mechanism, population, caveat, and deployment context into one dense option that must remain readable without creating a two-column squeeze or horizontal overflow.';
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      'Dense review prompt',
+        choices:       [longChoice, `${longChoice} Distractor.`, `${longChoice} Alternate.`],
+        correctAnswer: longChoice,
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const group = page.locator('[role="radiogroup"]').first();
+    await expect(group).toHaveClass(/grid-cols-1/);
+    await expect(page.locator('.choice-btn--long')).toHaveCount(3);
+
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
+    expect(overflow).toBeFalsy();
+  });
 });
