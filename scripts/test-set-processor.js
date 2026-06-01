@@ -99,6 +99,17 @@ const cases = [
     },
   },
   {
+    name: 'extracts long portuguese sentence choices after slash-leading capitals',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/portuguese/D/set_08.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[8].exercises[0];
+      return ex.type === 'choice'
+        && ex.question === 'Qual frase encadeia causa e efeito corretamente?'
+        && ex.choices.length === 4
+        && ex.choices[0] === 'A chuva forte alagou ruas; portanto, o trânsito parou';
+    },
+  },
+  {
     name: 'removes repeated generated boilerplate from dense choices',
     run:  () => {
       const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));

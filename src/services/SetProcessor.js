@@ -59,13 +59,18 @@ export class SetProcessor {
     return { body: '', start: -1, end: -1 };
   }
 
-  static splitChoiceBody(body) {
+  static splitChoiceBody(body, options = {}) {
     const text = String(body || '').trim();
     if (!text.includes('/')) return [];
 
     const slashCount = (text.match(/\//g) || []).length;
     if (text.length <= 160 && slashCount <= 5) return this.cleanChoices(text.split('/'));
-    if (slashCount <= 5 && !this.hasShortSlashMarker(text)) return this.cleanChoices(text.split('/'));
+    if (
+      slashCount <= 5
+      && !this.hasShortSlashMarker(text)
+      && !this.hasNestedSlash(text)
+      && (options.allowProperNameSlashes || !this.hasProperNameSlash(text))
+    ) return this.cleanChoices(text.split('/'));
 
     const choices = [];
     let depth     = 0;
@@ -116,8 +121,21 @@ export class SetProcessor {
   }
 
   static hasShortSlashMarker(text) {
-    return /\/[\p{L}]{1,3}-?\//u.test(String(text || ''))
-      || /\/[\p{L}]{1,3}-?(?=[)\]:,\s])/u.test(String(text || ''));
+    return /\/[\p{L}]{1,3}-?\//u.test(String(text || ''));
+  }
+
+  static hasNestedSlash(text) {
+    let depth = 0;
+    for (const char of String(text || '')) {
+      if (char === '(') depth += 1;
+      if (char === ')') depth = Math.max(0, depth - 1);
+      if (char === '/' && depth > 0) return true;
+    }
+    return false;
+  }
+
+  static hasProperNameSlash(text) {
+    return /\b[A-ZÁÉÍÓÚÑ][\p{L}]+\/[A-ZÁÉÍÓÚÑ][\p{L}]+\b/u.test(String(text || ''));
   }
 
   static isShortChoiceSegment(segment) {
@@ -209,7 +227,7 @@ export class SetProcessor {
       page.exercises.forEach(ex => {
         if (ex.choices || ex.type === 'choice') return;
         const choiceInfo = this.trailingChoiceInfo(ex.question);
-        const choices = this.splitChoiceBody(choiceInfo.body);
+        const choices = this.splitChoiceBody(choiceInfo.body, { allowProperNameSlashes: wb.subject === 'portuguese' });
         if (!choices.length) return;
 
         ex.choices  = choices;
