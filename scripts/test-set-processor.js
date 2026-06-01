@@ -219,6 +219,15 @@ const cases = [
     },
   },
   {
+    name: 'adds readable comma spacing to half-open intervals',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/P/set_05.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[6].exercises[0];
+      return ex.type === 'choice'
+        && ex.question === 'Intervalo [10, 20) inclui 20?';
+    },
+  },
+  {
     name: 'simplifies generated linear equation signs',
     run:  () => {
       const set = YAML.parse(fs.readFileSync('src/levels/math/H/set_03.yaml', 'utf8'));

@@ -303,7 +303,7 @@ export class SetProcessor {
   static normalizeMathOperatorSpacing(question) {
     return String(question || '')
       .trim()
-      .replace(/([\[{(])([^\]})]*,[^\]})]*)([\]})])/g, (_match, open, body, close) => `${open}${this.normalizeMathDelimitedCommas(body)}${close}`)
+      .replace(/([\[{(])([^\]})]*,[^\]})]*)([\]})])/g, (_match, open, body, close) => `${open}${this.normalizeMathDelimitedCommas(body, open, close)}${close}`)
       .replace(/\s*(?<![<>=!])=(?![=>])\s*/g, ' = ')
       .replace(/\s*×\s*/g, ' × ')
       .replace(/\s*\+\s*/g, ' + ')
@@ -326,9 +326,9 @@ export class SetProcessor {
       .trim();
   }
 
-  static normalizeMathDelimitedCommas(body) {
+  static normalizeMathDelimitedCommas(body, open = '', close = '') {
     const text = String(body || '').trim();
-    if (/^-?\d+,\d+$/.test(text)) return text;
+    if (open === '(' && close === ')' && /^-?\d+,\d+$/.test(text)) return text;
     return text.replace(/,\s*/g, ', ');
   }
 
