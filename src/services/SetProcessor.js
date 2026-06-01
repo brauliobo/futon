@@ -279,10 +279,30 @@ export class SetProcessor {
     if (mappedAnswer) ex.correctAnswer = mappedAnswer;
   }
 
+  static normalizeMathPrompts(wb) {
+    if (wb.subject !== 'math') return wb;
+
+    wb.pages.forEach(page => {
+      page.exercises.forEach(ex => {
+        if (!this.isBareMathExpressionPrompt(ex.question)) return;
+        ex.question = `${String(ex.question).trim()} =`;
+      });
+    });
+    return wb;
+  }
+
+  static isBareMathExpressionPrompt(question) {
+    const text = String(question || '').trim();
+    if (!text || /[=?]/.test(text)) return false;
+    if (!/[+×*·÷]|(?<=\d)\s-\s(?=\d)/.test(text)) return false;
+    return /^[-\d\s/×*·÷()+.,]+$/.test(text);
+  }
+
   static processSet(wb) {
     let processed = this.expandPortuguesePages(wb);
     processed = this.expandRepetitions(processed);
     processed = this.parseChoices(processed);
+    processed = this.normalizeMathPrompts(processed);
     processed = this.simplifyChoiceBoilerplate(processed);
     processed = this.numberPages(processed);
     processed = this.calculateTotalExercises(processed);

@@ -132,6 +132,27 @@ const cases = [
     },
   },
   {
+    name: 'adds equals sign to bare math expression prompts',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/F/set_02.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[0].exercises[0];
+      return ex.type === 'fraction_multiply'
+        && ex.question === '3/5 × 2/3 =';
+    },
+  },
+  {
+    name: 'keeps single fraction prompts unchanged',
+    run:  () => {
+      const set = {
+        subject: 'math',
+        level:   'F',
+        pages:   [{ exercises: [{ type: 'math', question: '3/5', correctAnswer: 0.6 }] }],
+      };
+      const ex = SetProcessor.processSet(set).pages[0].exercises[0];
+      return ex.question === '3/5';
+    },
+  },
+  {
     name: 'removes repeated generated boilerplate from dense choices',
     run:  () => {
       const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));
