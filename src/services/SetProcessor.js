@@ -286,6 +286,7 @@ export class SetProcessor {
       page.exercises.forEach(ex => {
         if (ex.type === 'sequence') ex.question = this.normalizeSequencePrompt(ex.question);
         ex.question = this.normalizeMathOperatorSpacing(ex.question);
+        ex.question = this.normalizeAlgebraPrompt(ex.question);
         if (this.isBareMathExpressionPrompt(ex.question)) ex.question = `${String(ex.question).trim()} =`;
       });
     });
@@ -306,6 +307,17 @@ export class SetProcessor {
       .replace(/\s*(?<![<>=!])=(?![=>])\s*/g, ' = ')
       .replace(/\s*×\s*/g, ' × ')
       .replace(/\s*\+\s*/g, ' + ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  static normalizeAlgebraPrompt(question) {
+    return String(question || '')
+      .replace(/\+\s*-/g, '- ')
+      .replace(/\b1x\b/g, 'x')
+      .replace(/-1x\b/g, '-x')
+      .replace(/\b1\(/g, '(')
+      .replace(/-1\(/g, '-(')
       .replace(/\s+/g, ' ')
       .trim();
   }

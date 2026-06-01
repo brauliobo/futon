@@ -219,6 +219,24 @@ const cases = [
     },
   },
   {
+    name: 'simplifies generated linear equation signs',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/H/set_03.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[0].exercises[0];
+      return ex.type === 'linear_equation'
+        && ex.question === '-(x - 9) = -10';
+    },
+  },
+  {
+    name: 'simplifies generated algebraic expression signs',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/G/set_06.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[0].exercises[9];
+      return ex.type === 'algebraic_expression'
+        && ex.question === 'Se x = 2, então -x - 6 =';
+    },
+  },
+  {
     name: 'removes repeated generated boilerplate from dense choices',
     run:  () => {
       const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));
