@@ -1,7 +1,7 @@
 <!-- src/components/Page.vue -->
 <template lang="pug">
   Card(class="space-y-4")
-    ReadingPassage(v-if="page.passage" :passage="page.passage")
+    ReadingPassage(v-if="readingPassage" :passage="readingPassage")
     ExerciseList(
       :exercises="page.exercises"
       :answers="answers"
@@ -40,6 +40,16 @@ export default {
       default: 'auto',
     },
   },
+  computed: {
+    readingPassage() {
+      if (this.page.passage) return this.page.passage;
+      if (!this.hasReadingExercises) return '';
+      return String(this.page.description || '').startsWith('Texto:') ? this.page.description : '';
+    },
+    hasReadingExercises() {
+      return (this.page.exercises || []).some(ex => ex.type === 'reading');
+    },
+  },
   methods: {
     initAnswers() {
       this.answers = PageStatus.initAnswers(this.page.exercises);
@@ -75,5 +85,4 @@ export default {
   },
 };
 </script>
-
 

@@ -41,6 +41,35 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(passage).toBeInViewport();
   });
 
+  test('reading descriptions render as collapsible passages', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      const sentence = 'Texto: La justicia requiere razones públicas, instituciones compartidas, deliberación democrática y atención a las capacidades concretas de cada persona. ';
+      vm.set.pages[0].description = sentence.repeat(12);
+      vm.set.pages[0].exercises = [{
+        type:          'reading',
+        question:      '¿Qué requiere la justicia?',
+        correctAnswer: 'razones públicas',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const passage = page.locator('[data-testid="reading-passage"]');
+    await expect(passage).toBeVisible();
+    await expect(passage.getByText('Texto: La justicia')).toBeVisible();
+
+    const textBoxBefore = await passage.locator('.passage-text').boundingBox();
+    await expect(passage.getByRole('button', { name: /Mostrar texto|Show text/ })).toBeVisible();
+    await passage.getByRole('button', { name: /Mostrar texto|Show text/ }).click();
+    await expect(passage.getByRole('button', { name: /Ocultar texto|Hide text/ })).toBeVisible();
+    const textBoxAfter = await passage.locator('.passage-text').boundingBox();
+
+    expect(textBoxAfter.height).toBeGreaterThan(textBoxBefore.height);
+  });
+
   test('digit key 1 selects first choice when group is focused', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (!answers.length || !answers[0].hasChoices) return;
