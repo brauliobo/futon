@@ -155,4 +155,29 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
     expect(overflow).toBeFalsy();
   });
+
+  test('long contrast answers are split into structured rows', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      const contrastChoice = 'español peninsular septentrional: distinción /θ/ vs. /s/, /d/ intervocálica preservada, /x/ velar; español atlántico: seseo (/s/ única), aspiración/elisión de /s/ coda, debilitamiento de /d/ final; los dos polos del continuo dialectal';
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      'Contraste dialectal',
+        choices:       [contrastChoice, 'no hay diferencias', 'solo cambia el vocabulario'],
+        correctAnswer: contrastChoice,
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const structuredChoice = page.locator('[role="radio"] .structured-text--dense').first();
+    await expect(structuredChoice).toBeVisible();
+    await expect(structuredChoice.locator('.structured-text__part')).toHaveCount(3);
+    await expect(structuredChoice.locator('.structured-text__separator')).toContainText([';', ';']);
+
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
+    expect(overflow).toBeFalsy();
+  });
 });

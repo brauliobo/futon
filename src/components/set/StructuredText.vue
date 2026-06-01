@@ -2,7 +2,7 @@
   span(:class="textClass" :aria-label="label")
     template(v-if="isDense")
       span(v-for="(part, idx) in denseParts" :key="idx" class="structured-text__part")
-        span(v-if="idx > 0" class="structured-text__separator" aria-hidden="true") +
+        span(v-if="idx > 0" class="structured-text__separator" aria-hidden="true") {{ denseSeparator }}
         MathText(:value="part")
     MathText(v-else :value="value")
 </template>
@@ -18,8 +18,10 @@ export default {
   },
   computed: {
     label() { return String(this.value ?? ''); },
-    denseParts() { return this.splitDenseList(this.label); },
-    isDense() { return this.denseParts.length >= 5 && this.label.length > 180; },
+    denseLayout() { return this.splitDenseLayout(this.label); },
+    denseParts() { return this.denseLayout.parts; },
+    denseSeparator() { return this.denseLayout.separator; },
+    isDense() { return this.denseLayout.dense; },
     textClass() {
       return {
         'structured-text':        true,
@@ -28,13 +30,25 @@ export default {
     },
   },
   methods: {
-    splitDenseList(value) {
-      const parts = String(value)
-        .split(/\s+\+\s+/)
+    splitDenseLayout(value) {
+      const text = String(value ?? '');
+      const plusParts = this.splitParts(text, /\s+\+\s+/);
+      if (plusParts.length >= 5 && text.length > 180) {
+        return { dense: true, separator: '+', parts: plusParts };
+      }
+
+      const contrastParts = this.splitParts(text, /\s*;\s*/);
+      if (contrastParts.length >= 3 && text.length > 170) {
+        return { dense: true, separator: ';', parts: contrastParts };
+      }
+
+      return { dense: false, separator: '', parts: [text] };
+    },
+    splitParts(value, pattern) {
+      return String(value)
+        .split(pattern)
         .map(part => part.trim())
         .filter(Boolean);
-
-      return parts.length ? parts : [String(value ?? '')];
     },
   },
 };
