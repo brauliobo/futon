@@ -284,11 +284,18 @@ export class SetProcessor {
 
     wb.pages.forEach(page => {
       page.exercises.forEach(ex => {
-        if (!this.isBareMathExpressionPrompt(ex.question)) return;
-        ex.question = `${String(ex.question).trim()} =`;
+        if (ex.type === 'sequence') ex.question = this.normalizeSequencePrompt(ex.question);
+        if (this.isBareMathExpressionPrompt(ex.question)) ex.question = `${String(ex.question).trim()} =`;
       });
     });
     return wb;
+  }
+
+  static normalizeSequencePrompt(question) {
+    return String(question || '')
+      .trim()
+      .replace(/,\s*/g, ', ')
+      .replace(/,\s*\.\.\./g, ', ...');
   }
 
   static isBareMathExpressionPrompt(question) {

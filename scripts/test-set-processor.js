@@ -153,6 +153,24 @@ const cases = [
     },
   },
   {
+    name: 'adds readable spacing to brace sequence prompts',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/M/set_12.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[2].exercises[0];
+      return ex.type === 'sequence'
+        && ex.question === 'PA {2, 5, 8, 11, ...} — razão = ?';
+    },
+  },
+  {
+    name: 'adds readable spacing to inline sequence prompts',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/M/set_13.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[4].exercises[0];
+      return ex.type === 'sequence'
+        && ex.question === 'PG 2, 4, 8, 16 — S₄ = ?';
+    },
+  },
+  {
     name: 'removes repeated generated boilerplate from dense choices',
     run:  () => {
       const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));
