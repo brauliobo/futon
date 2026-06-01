@@ -94,7 +94,7 @@ const cases = [
       const set = YAML.parse(fs.readFileSync('src/levels/math/P/set_17.yaml', 'utf8'));
       const ex  = SetProcessor.processSet(set).pages[0].exercises[0];
       return ex.type === 'choice'
-        && ex.question === 'r=1 indica correlação'
+        && ex.question === 'r = 1 indica correlação'
         && ex.choices.join('|') === 'perfeita positiva|nenhuma';
     },
   },
@@ -168,6 +168,24 @@ const cases = [
       const ex  = SetProcessor.processSet(set).pages[4].exercises[0];
       return ex.type === 'sequence'
         && ex.question === 'PG 2, 4, 8, 16 — S₄ = ?';
+    },
+  },
+  {
+    name: 'adds readable spacing to trig equation prompts',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/M/set_19.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[4].exercises[0];
+      return ex.type === 'trigonometry'
+        && ex.question === 'sen(x) = 1 → x em [0°,360°) = ?';
+    },
+  },
+  {
+    name: 'adds readable spacing to probability multiplication prompts',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/P/set_15.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[2].exercises[1];
+      return ex.type === 'mental_math'
+        && ex.question === 'Bin(3,0.5) — P(X = 1) = 3 × 0.5 × 0.25 = ?';
     },
   },
   {

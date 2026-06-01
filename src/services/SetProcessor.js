@@ -285,6 +285,7 @@ export class SetProcessor {
     wb.pages.forEach(page => {
       page.exercises.forEach(ex => {
         if (ex.type === 'sequence') ex.question = this.normalizeSequencePrompt(ex.question);
+        ex.question = this.normalizeMathOperatorSpacing(ex.question);
         if (this.isBareMathExpressionPrompt(ex.question)) ex.question = `${String(ex.question).trim()} =`;
       });
     });
@@ -296,6 +297,16 @@ export class SetProcessor {
       .trim()
       .replace(/,\s*/g, ', ')
       .replace(/,\s*\.\.\./g, ', ...');
+  }
+
+  static normalizeMathOperatorSpacing(question) {
+    return String(question || '')
+      .trim()
+      .replace(/\s*(?<![<>=!])=(?![=>])\s*/g, ' = ')
+      .replace(/\s*×\s*/g, ' × ')
+      .replace(/\s*\+\s*/g, ' + ')
+      .replace(/\s+/g, ' ')
+      .trim();
   }
 
   static isBareMathExpressionPrompt(question) {
