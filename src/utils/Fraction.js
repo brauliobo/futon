@@ -1,12 +1,17 @@
 export class Fraction {
-  static FRACTION_PATTERN = /(-?\d+)\s+(\d+)\/(\d+)|(-?\d+)\/(\d+)/g;
+  static FRACTION_PATTERN_SOURCE = String.raw`(-?\d+)\s+(\d+)\/(\d+)|(-?\d+)\/(\d+)`;
+
+  static fractionPattern() {
+    return new RegExp(this.FRACTION_PATTERN_SOURCE, 'g');
+  }
 
   static parts(value) {
-    const text  = String(value ?? '');
-    const parts = [];
-    let last    = 0;
+    const text    = String(value ?? '');
+    const pattern = this.fractionPattern();
+    const parts   = [];
+    let last      = 0;
 
-    for (const match of text.matchAll(this.FRACTION_PATTERN)) {
+    for (const match of text.matchAll(pattern)) {
       if (match.index > last) parts.push({ type: 'text', value: text.slice(last, match.index) });
 
       if (match[1] !== undefined) {
@@ -34,8 +39,7 @@ export class Fraction {
   }
 
   static hasFraction(value) {
-    this.FRACTION_PATTERN.lastIndex = 0;
-    return this.FRACTION_PATTERN.test(String(value ?? ''));
+    return this.fractionPattern().test(String(value ?? ''));
   }
 
   static parseAnswer(value) {
