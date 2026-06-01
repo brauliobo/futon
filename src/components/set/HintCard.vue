@@ -6,17 +6,17 @@
       p(v-if="hasUserAnswer" class="hint-card__user-answer")
         span.hint-card__user-label {{ $t('yourAnswer') || 'Sua resposta' }}:&nbsp;
         span.hint-card__user-value
-          FractionText(:value="userAnswer")
+          StructuredText(:value="userAnswer")
       p(v-if="answer !== undefined && answer !== ''" class="hint-card__answer")
-        FractionText(:value="answer")
+        StructuredText(:value="answer")
 </template>
 
 <script>
-import FractionText from './FractionText.vue';
+import StructuredText from './StructuredText.vue';
 
 export default {
   name: 'HintCard',
-  components: { FractionText },
+  components: { StructuredText },
   props: {
     message: { type: String, required: true },
     answer: { type: [String, Number], default: '' },

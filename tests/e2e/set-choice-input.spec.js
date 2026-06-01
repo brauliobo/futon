@@ -123,4 +123,36 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
     expect(overflow).toBeFalsy();
   });
+
+  test('dense plus lists are split into structured lesson text', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      const denseChoice = [
+        'Level N advanced biotech 2024 integrates reproductive frontier',
+        'biostasis',
+        'exposome',
+        'wastewater surveillance',
+        'plant synthetic biology',
+        'marine therapeutics',
+        'AI drug discovery',
+        'climate synthetic biology',
+      ].join(' + ');
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      `Dense synthesis prompt: ${denseChoice}`,
+        choices:       [denseChoice, 'single idea', 'short distractor'],
+        correctAnswer: denseChoice,
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    await expect(page.locator('.structured-text--dense').first()).toBeVisible();
+    await expect(page.locator('[role="radio"] .structured-text__part')).toHaveCount(8);
+
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
+    expect(overflow).toBeFalsy();
+  });
 });
