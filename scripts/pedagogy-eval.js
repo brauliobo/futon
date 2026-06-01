@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Kumon-grade pedagogy evaluator. Scores each set (0-100) on 7 dimensions
+// Mastery-grade pedagogy evaluator. Scores each set (0-100) on 7 dimensions
 // plus a per-level progression score. Complements audit-content.js (mechanical)
 // and lint-content.js (coverage). See docs/PEDAGOGY.md for the rubric.
 // Usage: node scripts/pedagogy-eval.js [--subject S] [--level L] [--worst N] [--json]
@@ -151,7 +151,7 @@ function scoreGradient(set) {
   const maxJump = Math.max(...jumps);
   const bigJumps = jumps.filter(j => j > 1.0).length;
   // "Consolidation-review last page": the only big jump is a downward step
-  // INTO the final page — a legitimate Kumon cool-down / integration pattern
+  // INTO the final page — a legitimate practice cool-down / integration pattern
   // rather than an erratic gradient.
   const lastJumpIsOnly = bigJumps === 1 && jumps[jumps.length - 1] > 1.0;
   const lastJumpDown = signedJumps[signedJumps.length - 1] < -0.5;
@@ -233,7 +233,7 @@ function scoreRationales(set) {
   const exs = allExercises(set);
   if (!exs.length) return { score: 0, max: 25, issue: 'no exercises' };
   // Biology research-level sets (difficulty 5, levels Q-S) author citation-
-  // heavy rationales (often 900–1200 chars) — Kumon's brevity doctrine
+  // heavy rationales (often 900–1200 chars) — the mastery rubric's brevity target
   // doesn't apply to graduate content. Scale threshold accordingly.
   const maxLen = set.subject === 'biology'
     ? (set.difficulty >= 5 ? 1500 : set.difficulty >= 4 ? 700 : 400)
@@ -316,7 +316,7 @@ function scoreAnswerDistribution(set) {
   }
 
   // Gather per-page skew info before scoring — a single concentrated page
-  // inside an otherwise-diverse set is intentional Kumon "focused-practice"
+  // inside an otherwise-diverse set is intentional practice "focused-practice"
   // (e.g. one page teaching n-n=0 within a diverse subtraction set).
   const pageSkews = [];
   for (const p of set.pages || []) {
@@ -356,7 +356,7 @@ function scoreDistractors(set) {
     // strict length outlier. If the correct answer sits in the middle of
     // the length distribution (or ties), students can't pick by length.
     // Also exempt when ANY choice is a multi-word phrase (phrase-vs-atom
-    // contrast is Kumon-valid vocabulary teaching) or when the longest
+    // contrast is mastery-valid vocabulary teaching) or when the longest
     // choice is a compound with structural markers (hyphen, apostrophe).
     const ans = asText(e.correctAnswer).trim();
     if (trimmed.some(c => /\s/.test(c))) continue;
@@ -440,7 +440,7 @@ function scoreSet(set) {
 }
 
 // 8. Cross-set progression within a level (10, level-scoped). Many language
-// levels intentionally interleave difficulty 3↔4 sets (Kumon spaced-repetition
+// levels intentionally interleave difficulty 3↔4 sets (spaced-repetition
 // mixes review with new material), so the metric grades on first-half vs
 // second-half average rather than penalizing every per-set 1-step regression.
 function scoreLevelProgression(sets) {
@@ -515,7 +515,7 @@ function main() {
     return;
   }
 
-  console.log(c('\n📏 KUMON-GRADE PEDAGOGY EVALUATOR', BOLD + CYAN));
+  console.log(c('\n📏 MASTERY-GRADE PEDAGOGY EVALUATOR', BOLD + CYAN));
   console.log(c(`Evaluated ${sets.length} sets · ${Object.keys(byLevel).length} levels\n`, CYAN));
 
   const dimPct = (rs, name) => {

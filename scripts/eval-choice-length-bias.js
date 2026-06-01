@@ -9,7 +9,7 @@
 //    single longest option.
 //  - Fraction where it's ≥1.5× the average distractor length.
 //
-// Kumon-grade threshold: correct-is-longest ≤ 40% of a set's choice questions.
+// Mastery-grade threshold: correct-is-longest ≤ 40% of a set's choice questions.
 // (Random baseline for a 4-choice quiz is ~25%; 40% is a gentle ceiling.)
 //
 // Advisory only — exit 0 always — to avoid blocking CI on subjective prose

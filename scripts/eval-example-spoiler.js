@@ -5,7 +5,7 @@
 // than by applying the method — the example spoils its own first check.
 //
 // A GOOD example demonstrates the METHOD on a representative instance
-// that is NOT one of the exercises (or at least not the first). Kumon
+// that is NOT one of the exercises (or at least not the first). practice
 // pre-reader drills are excluded (intentional concrete demonstration).
 //
 // Scope skips:

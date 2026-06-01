@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // One-shot: ensure every math set has exactly 20 pages by cyclically tiling existing pages.
-// Preserves Kumon massed-practice rotation (A,B,A,B,...) already baked into each set.
+// Preserves practice massed-practice rotation (A,B,A,B,...) already baked into each set.
 import { readFile, writeFile } from 'fs/promises';
 import path from 'path';
 import fg from 'fast-glob';

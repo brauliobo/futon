@@ -289,7 +289,7 @@ const SUBSTITUTION_RE = /[a-z]\([-+]?\d/i;
 // clearly teaching by demonstration.
 const ARITHMETIC_RE = /-?\d+\s*[+\-−×÷*\/]\s*-?\d+\s*=\s*-?\d/;
 // Transformation arrow: "'study' → 'studied'" / "X → Y" / "2 → 4" —
-// demonstrates before-and-after mapping, a core Kumon teaching pattern.
+// demonstrates before-and-after mapping, a core mastery teaching pattern.
 const TRANSFORMATION_RE = /\S\s*[→>]\s*\S/;
 // Definition: "'Could' = habilidade geral passada." — quoted word followed
 // by an equals glossing it. Also matches unquoted capitalized concept

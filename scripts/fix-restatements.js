@@ -34,7 +34,7 @@ const RESTATE_LINE_RE = new RegExp(
   ')["\']\\s*$', 'i'
 );
 
-// Tiny domain lexicon for common Kumon Portuguese categories.
+// Tiny domain lexicon for common mastery Portuguese categories.
 const CATEGORY_HINT = {
   vogal: 'A, E, I, O, U são as vogais',
   consoante: 'B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Y, Z são consoantes',

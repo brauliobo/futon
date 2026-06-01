@@ -16,7 +16,7 @@ import fg from 'fast-glob';
 const APPLY = process.argv.includes('--apply');
 
 // Level → {minAccuracyPercent, maxAvgSecondsPerExercise}
-// Tuned to land inside the eval:time Kumon bands (1A-D: 3-18 min,
+// Tuned to land inside the eval:time practice bands (1A-D: 3-18 min,
 // E-J: 5-25 min, K-Q: 8-45 min) for sets of ~20 exercises.
 const DEFAULTS = {
   // Portuguese: avg ~12 ex, beginner band [3,12], middle [4-5,15-18]

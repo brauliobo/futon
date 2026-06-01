@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Nudges passCriteria.maxAvgSecondsPerExercise down for sets that
-// currently overshoot their Kumon level band. Does NOT touch sets under
+// currently overshoot their practice level band. Does NOT touch sets under
 // the band (those need more exercises, not shorter time).
 //
 // Uses the same band table as eval-time-budget.js.

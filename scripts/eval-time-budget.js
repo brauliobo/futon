@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Estimates total time per set from exerciseCount × passCriteria.
-// maxAvgSecondsPerExercise. Kumon guideline: a single worksheet ~15 min,
+// maxAvgSecondsPerExercise. mastery guideline: a single worksheet ~15 min,
 // hard limit 20 min for regular drill. Flags sets outside [3, 20] min
 // so authors can revisit exercise count or per-exercise target.
 //
@@ -27,11 +27,11 @@ const JSON_OUT = args.includes('--json');
 import { SUBJECTS as ALL_SUBJECTS } from './lib/subjects.js';
 const SUBJECTS = SUBJECT ? [SUBJECT] : ALL_SUBJECTS;
 
-// Kumon session-length guideline scales with level. Beginner drills are
+// mastery session-length guideline scales with level. Beginner drills are
 // short (5-15 min); advanced reasoning sessions run longer. --min/--max
 // overrides apply the same flat band across every level.
 const LEVEL_BAND = {
-  // Beginner: Kumon 5A-A — short drills for age 4-6
+  // Beginner: beginner 5A-A — short drills for age 4-6
   '1A': [3, 12], '2A': [3, 12], '3A': [3, 12], '4A': [3, 12], '5A': [3, 12],
   '6A': [3, 12], '7A': [3, 12], A: [4, 15], B: [5, 18], C: [5, 18], D: [5, 18],
   // Intermediate: tweens
@@ -88,7 +88,7 @@ function main() {
 
   const bandNote = CLI_MIN && CLI_MAX
     ? `flat band ${CLI_MIN}-${CLI_MAX} min`
-    : 'level-aware Kumon bands (1A-D: 3-18 min · E-J: 5-25 min · K-Q: 8-45 min)';
+    : 'level-aware practice bands (1A-D: 3-18 min · E-J: 5-25 min · K-Q: 8-45 min)';
   console.log(c('\n⏱️  TIME-BUDGET SCANNER', BOLD + CYAN));
   console.log(c(`Scanned ${sets.length} sets · ${bandNote}\n`, CYAN));
 

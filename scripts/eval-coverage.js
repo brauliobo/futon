@@ -2,7 +2,7 @@
 // Objective coverage scanner. Counts how many exercises target each learning
 // objective (BNCC codes like EF07LP09, CEFR-style english.A1.greetings, etc).
 //
-// Kumon doctrine: every objective needs enough mass-practice for mastery.
+// mastery doctrine: every objective needs enough mass-practice for mastery.
 // An objective with only 1-5 exercises globally is a red flag — either it
 // should be removed (if not a real focus) or expanded (if it IS).
 //
@@ -20,7 +20,7 @@ const c = (t, col) => `${col}${t}${RESET}`;
 // page tagged with a specific objective" (10 pages × 1 ex = 10 ex total,
 // but distributed across 4 objectives = 4 ex each), which is deliberate
 // thematic coverage not a drill gap. Anything below 4 is a real gap.
-// Pass --min=10 for the stricter Kumon mastery threshold.
+// Pass --min=10 for the stricter practice mastery threshold.
 const THRESHOLD = Number(process.argv.find(a => a.startsWith('--min='))?.slice(6)) || 4;
 
 async function main() {

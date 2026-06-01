@@ -1,5 +1,7 @@
 # Futon
 
+@/home/braulio/Projects/futon/AGENTS.local.md
+
 Mastery-based learning app for kids (ages 5-12). Math, Portuguese, English.
 
 > **Self-update rule:** After any session that changes architecture, patterns, file structure, or conventions — update this file to reflect the current state before finishing.
@@ -67,4 +69,4 @@ Full documentation in [PEDAGOGY.md](PEDAGOGY.md) at repo root. Key entry points:
 - **Runtime**: `src/utils/Shuffle.js` seeds per-question choice order so authored YAML order can't bias answers.
 - **Snapshot**: `PEDAGOGY_SNAPSHOT.json` tracks per-set + per-level scores for CI regression checks. `eval:snapshot --save` updates it.
 
-The rubric is calibrated to recognize 6 Kumon design patterns (progressive, constant-drill, theme-answer, progressive-theme, binary-option, sparse-page) rather than reflexively penalizing deviations from a textbook linear progression.
+The rubric is calibrated to recognize 6 mastery design patterns (progressive, constant-drill, theme-answer, progressive-theme, binary-option, sparse-page) rather than reflexively penalizing deviations from a textbook linear progression.

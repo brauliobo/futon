@@ -138,12 +138,12 @@ function validateSet(raw) {
 
   if (raw.subject === 'math' && !raw.comingSoon) {
     const pages = (raw.pages || []).length;
-    // 20-page sets are intentionally tile-doubled for Kumon massed practice;
+    // 20-page sets are intentionally tile-doubled for mastery massed practice;
     // 10-page is the pre-expansion baseline. Anything else is suspicious.
     if (pages !== 10 && pages !== 20) warnings.push(`Expected 10 or 20 pages, found ${pages}`);
     if (total < 90) warnings.push(`Expected ≥90 exercises, found ${total}`);
     // Tiled 20-page sets have ~50% randomness by construction; drill-level
-    // Kumon math (1A-7A) repeats facts by design, so allow even lower.
+    // mastery math (1A-7A) repeats facts by design, so allow even lower.
     // Math drill levels (1A-7A pre-reading; A-D arithmetic facts) are pure
     // massed practice — 10 unique exercises repeated many times per set IS
     // the pedagogy. For post-drill levels (E+), expect more variety.

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Rationale diversity check. Surfaces a class of content bug the lexical
 // categorizer misses: a set where many exercises share the exact same
-// rationale. In Kumon single-concept drills (e.g. "somar 0 não muda o
+// rationale. In practice single-concept drills (e.g. "somar 0 não muda o
 // número" applied to 100 exercises) this is LEGITIMATE — all exercises
 // teach the same rule. But when a diverse set (10+ distinct question
 // types) has only 1-3 unique rationales, it usually means rationales

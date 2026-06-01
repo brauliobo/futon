@@ -11,9 +11,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Futon — Learn with Kumon',
+        name: 'Futon — Mastery Learning',
         short_name: 'Futon',
-        description: 'Kumon-style mastery learning for kids',
+        description: 'Mastery-based learning for kids',
         theme_color: '#4A9EF5',
         background_color: '#FFFBF0',
         display: 'standalone',

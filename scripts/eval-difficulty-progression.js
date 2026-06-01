@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Difficulty progression evaluator. Kumon small-steps doctrine expects per-page
+// Difficulty progression evaluator. small-step doctrine expects per-page
 // difficulty to trend upward across a set (with exceptions for constant-drill
 // and consolidation-review patterns the rubric already recognizes). This
 // script flags:
@@ -10,9 +10,9 @@
 //     ends easier than it began — a structural authoring error).
 //
 // Constant-drill sets (all pages same difficulty) are ignored — that's a
-// legitimate Kumon pattern for automaticity practice.
+// legitimate practice pattern for automaticity practice.
 //
-// Advisory only — exit 0 always. Kumon pedagogy tolerates some variance so
+// Advisory only — exit 0 always. mastery pedagogy tolerates some variance so
 // this is surfaced for manual review, not blocked at the gate.
 
 import { readFileSync } from 'fs';
@@ -32,7 +32,7 @@ const median = arr => {
 
 // Automaticity-drill levels: exercises within a set are intentionally
 // interchangeable and per-exercise `difficulty` is noise, so page-level
-// progression analysis produces false positives. Kumon doctrine says these
+// progression analysis produces false positives. mastery doctrine says these
 // levels test speed+accuracy, not climbing difficulty.
 const DRILL_LEVELS = new Set([
   'math/1A', 'math/2A', 'math/3A', 'math/4A',
@@ -62,7 +62,7 @@ async function main() {
       else if (difficulties[i] > difficulties[i - 1]) advCount++;
     }
     // Interleaved-drill pattern: small overall range (≤1.0) with roughly
-    // balanced ups and downs — Kumon alternates drill/intro deliberately.
+    // balanced ups and downs — practice alternates drill/intro deliberately.
     // Don't flag it.
     const interleaved = range <= 1.0 && Math.abs(regCount - advCount) <= 1;
     const first = difficulties[0], last = difficulties[difficulties.length - 1];

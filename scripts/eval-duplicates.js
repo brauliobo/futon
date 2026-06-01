@@ -65,7 +65,7 @@ async function main() {
     process.exit(0);
   }
 
-  // Kumon arithmetic drill levels (1A-D math, 1A-2A basic portuguese, all
+  // practice arithmetic drill levels (1A-D math, 1A-2A basic portuguese, all
   // japanese kana) intentionally repeat questions for automaticity — a
   // 20% recurrence rate is THE METHOD. Language/reading subjects should
   // have less repetition (varied practice).

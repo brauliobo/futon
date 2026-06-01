@@ -2,7 +2,7 @@
 // Adds missing `difficulty:` metadata to japanese/ sets so the pedagogy
 // evaluator's level-progression dim (which needs ≥2 non-decreasing
 // difficulty values per level) scores honestly instead of capping at 50%
-// from "too few sets". Assigns difficulty by Kumon-like level position
+// from "too few sets". Assigns difficulty by small-step level position
 // (2A=1, 3A=1, 4A=1, A=2, B=3, C=4) with a small within-level gradient.
 //
 // Usage: node scripts/fix-japanese-metadata.js [--apply]

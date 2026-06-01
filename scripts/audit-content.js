@@ -326,7 +326,7 @@ function checkCrossSetDuplicates(sets) {
   }
 
   for (const [level, levelSets] of Object.entries(byLevel)) {
-    // Skip math — Kumon drills are intentionally repeated across sets
+    // Skip math — mastery drills are intentionally repeated across sets
     if (level.startsWith('math/')) continue;
 
     // Revision/review sets (typically set_19/set_20 with 'Revisão'/'Review'

@@ -52,7 +52,7 @@ function metrics(setsInLevel) {
     }
   }
   // Trend-based: pass if the second-half average is not significantly easier
-  // than the first half (Kumon spaced-repetition mixes review with new
+  // than the first half (spaced-repetition mixes review with new
   // material, so per-set 1-step regressions are legitimate design — see
   // pedagogy-eval scoreLevelProgression for the matching heuristic).
   let monotonic = null;

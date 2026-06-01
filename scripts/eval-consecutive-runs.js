@@ -3,7 +3,7 @@
 // share the same correctAnswer, which lets a student pattern-spot rather
 // than evaluate each exercise on its own merits.
 //
-// Filters (all legitimate Kumon patterns — skipped, not flagged):
+// Filters (all legitimate practice patterns — skipped, not flagged):
 //   - Constant-drill sets (≥70% of answers are the same).
 //   - Japanese kana drills — repetition is the pedagogy.
 //   - Sets with <4 distinct answer values (constant-drill variants).

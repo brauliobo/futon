@@ -189,7 +189,7 @@ async function main() {
         out.push(`- [ ] ⚠️ **Noisy progression** (${pmRegCount} page-to-page regressions) — sequence [${pageMedians.join(',')}]. Smooth so each page ≥ previous.`);
       }
       out.push('- [ ] Subject-matter accuracy — a domain expert would sign off.');
-      out.push('- [ ] `passCriteria.maxAvgSecondsPerExercise` × exerciseCount lands inside the level\'s Kumon time band (see `pnpm eval:time`).');
+      out.push('- [ ] `passCriteria.maxAvgSecondsPerExercise` × exerciseCount lands inside the level\'s practice time band (see `pnpm eval:time`).');
       out.push('');
     }
     out.push('---');

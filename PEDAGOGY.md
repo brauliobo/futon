@@ -1,4 +1,4 @@
-# Pedagogy Quality — Kumon-grade Rubric
+# Pedagogy Quality — Mastery-grade Rubric
 
 This guide defines how we judge whether a Futon set is good *as a learning artifact*, and how to improve it.
 
@@ -59,7 +59,7 @@ This guide defines how we judge whether a Futon set is good *as a learning artif
 | `pnpm fix:examples [--apply]` | Appends `Ex.: Q → A.` to example fields lacking a worked pair |
 | `pnpm fix:restatements [--apply]` | Rewrites "A resposta correta é X" into category-aware method form |
 | `pnpm fix:japanese [--apply]` | Script-classifier rationale generator for Japanese inline-YAML sets |
-| `pnpm fix:japanese:metadata [--apply]` | Adds Kumon-mapped `difficulty:` metadata to Japanese sets |
+| `pnpm fix:japanese:metadata [--apply]` | Adds mastery-mapped `difficulty:` metadata to Japanese sets |
 
 All fixers are dry-run by default; pass `--apply` to write. All evaluators support `--json` for CI consumption.
 
@@ -98,7 +98,7 @@ If any of these regress, the pre-commit hook blocks with a pointer to this guide
 
 Dashboard (`pnpm eval:dashboard`) shows global pedagogy score **100%** across 2460 sets (math/portuguese/english/japanese/spanish/biology). All 36+ evaluators (5 zero-state hard-fail gates + 30+ advisory) pass; every set at 100% method rationales.
 
-## Kumon principles Futon inherits
+## Mastery principles Futon uses
 
 1. **Small steps.** Each exercise should be solvable from the pattern established by earlier exercises — *no explanation required*.
 2. **Worked example first.** Every set has a tiny model in `example:` showing the method (`Vermelho → red`, `9+4 = 10+3 = 13`).
@@ -109,7 +109,7 @@ Dashboard (`pnpm eval:dashboard`) shows global pedagogy score **100%** across 24
 
 ## Standard set structure
 
-All disciplines use **10 pages × 10 exercises = 100 exercises per set** (`target: 100`). This is the Kumon-grade unit of daily practice.
+All disciplines use **10 pages × 10 exercises = 100 exercises per set** (`target: 100`). This is the Mastery-grade unit of daily practice.
 
 | Discipline | Pages/set | Exercises/page | Target | Notes |
 |---|---|---|---|---|
@@ -286,7 +286,7 @@ Avoid: simply echoing the answer, pointing at "as opções", or restating the qu
 
 ## Time-budget scanner
 
-`pnpm eval:time` estimates each set's total session time as `exerciseCount × passCriteria.maxAvgSecondsPerExercise` and flags those outside the Kumon 3–20 minute guideline.
+`pnpm eval:time` estimates each set's total session time as `exerciseCount × passCriteria.maxAvgSecondsPerExercise` and flags those outside the mastery 3–20 minute guideline.
 
 ```bash
 pnpm eval:time                                # repo scan
@@ -351,7 +351,7 @@ Verified 50,186 method-rationales; zero disconnected. Wired into `eval:all`.
 
 ## Objective coverage
 
-`pnpm eval:coverage` counts how many exercises target each learning objective across the whole curriculum. Kumon doctrine: every objective needs mass-practice for mastery, so anything with fewer than ~10 exercises globally is a red flag — either expand it (add exercises), retire it (drop the tag), or merge it with a related objective.
+`pnpm eval:coverage` counts how many exercises target each learning objective across the whole curriculum. mastery doctrine: every objective needs mass-practice for mastery, so anything with fewer than ~10 exercises globally is a red flag — either expand it (add exercises), retire it (drop the tag), or merge it with a related objective.
 
 Not wired into `eval:all` because this surfaces curriculum-design decisions rather than regressions; running it blocks CI until authors triage. Treat output as a backlog for content work. First run flagged 20 under-drilled Portuguese BNCC codes (1–9 exercises each) across levels D, E, J, K, and G.
 

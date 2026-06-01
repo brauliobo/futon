@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Answer-position bias scanner. Choices in Futon render in YAML order (no
 // runtime shuffle), so if one position consistently holds the correct answer
-// students learn to pick it without reading — a classic Kumon-breaking bug.
+// students learn to pick it without reading — a classic mastery-breaking bug.
 //
 // For each set, computes the % of choice exercises whose correct answer sits
 // at each position (0=first, 1=second, ...). Flags sets where:
