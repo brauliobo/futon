@@ -38,18 +38,25 @@ export class SetProcessor {
   }
 
   static trailingChoiceBody(question) {
+    return this.trailingChoiceInfo(question).body;
+  }
+
+  static trailingChoiceInfo(question) {
     const text = String(question || '').trim();
-    if (!text.endsWith(')')) return '';
+    const hasQuestionMark = text.endsWith('?');
+    const bodyEnd = hasQuestionMark ? text.length - 1 : text.length;
+    const removeEnd = hasQuestionMark ? text.length : bodyEnd;
+    if (text[bodyEnd - 1] !== ')') return { body: '', start: -1, end: -1 };
 
     let depth = 0;
-    for (let idx = text.length - 1; idx >= 0; idx -= 1) {
+    for (let idx = bodyEnd - 1; idx >= 0; idx -= 1) {
       const char = text[idx];
       if (char === ')') depth += 1;
       if (char === '(') depth -= 1;
-      if (depth === 0 && char === '(') return text.slice(idx + 1, -1);
+      if (depth === 0 && char === '(') return { body: text.slice(idx + 1, bodyEnd - 1), start: idx, end: removeEnd };
     }
 
-    return '';
+    return { body: '', start: -1, end: -1 };
   }
 
   static splitChoiceBody(body) {
@@ -201,12 +208,12 @@ export class SetProcessor {
     wb.pages.forEach(page => {
       page.exercises.forEach(ex => {
         if (ex.choices || ex.type === 'choice') return;
-        const body    = this.trailingChoiceBody(ex.question);
-        const choices = this.splitChoiceBody(body);
+        const choiceInfo = this.trailingChoiceInfo(ex.question);
+        const choices = this.splitChoiceBody(choiceInfo.body);
         if (!choices.length) return;
 
         ex.choices  = choices;
-        ex.question = ex.question.slice(0, ex.question.length - body.length - 2).trim();
+        ex.question = `${ex.question.slice(0, choiceInfo.start)}${ex.question.slice(choiceInfo.end)}`.trim();
         ex.type = 'choice';
       });
     });

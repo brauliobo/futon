@@ -89,6 +89,16 @@ const cases = [
     },
   },
   {
+    name: 'extracts final question-mark inline choices',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/P/set_17.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[0].exercises[0];
+      return ex.type === 'choice'
+        && ex.question === 'r=1 indica correlação'
+        && ex.choices.join('|') === 'perfeita positiva|nenhuma';
+    },
+  },
+  {
     name: 'removes repeated generated boilerplate from dense choices',
     run:  () => {
       const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));
