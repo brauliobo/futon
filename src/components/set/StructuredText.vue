@@ -38,13 +38,18 @@ export default {
       }
 
       const contrastParts = this.splitParts(text, /\s*;\s*/);
-      if (contrastParts.length >= 3 && text.length > 170) {
+      if (contrastParts.length >= 2 && text.length > 110) {
         return { dense: true, separator: ';', parts: contrastParts };
       }
 
       const arrowParts = this.splitParts(text, /\s*→\s*/);
       if (arrowParts.length >= 2 && text.length > 220) {
         return { dense: true, separator: '→', parts: arrowParts };
+      }
+
+      const commaParts = this.splitParts(text, /,\s+(?![^()]*\))/);
+      if (commaParts.length >= 4 && text.length > 120) {
+        return { dense: true, separator: ',', parts: commaParts };
       }
 
       return { dense: false, separator: '', parts: [text] };

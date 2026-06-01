@@ -181,6 +181,50 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     expect(overflow).toBeFalsy();
   });
 
+  test('medium portuguese contrast answers are split into structured rows', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      const contrastChoice = 'é gênero jornalístico com maior liberdade de estilo; a dissertação ENEM segue formato e competências rígidas da avaliação';
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      'Diferença entre gêneros argumentativos',
+        choices:       [contrastChoice, 'não tem tese', 'tem rima obrigatória'],
+        correctAnswer: contrastChoice,
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const structuredChoice = page.locator('[role="radio"] .structured-text--dense').first();
+    await expect(structuredChoice).toBeVisible();
+    await expect(structuredChoice.locator('.structured-text__part')).toHaveCount(2);
+    await expect(structuredChoice.locator('.structured-text__separator')).toHaveText(';');
+  });
+
+  test('portuguese comma enumerations are split into structured rows', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      const listChoice = 'figuras de linguagem, variação linguística (coloquial), 2ª geração modernista, intertextualidade e função crítica do discurso';
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      'Análise integrada',
+        choices:       [listChoice, 'apenas literatura modernista', 'apenas análise do discurso'],
+        correctAnswer: listChoice,
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const structuredChoice = page.locator('[role="radio"] .structured-text--dense').first();
+    await expect(structuredChoice).toBeVisible();
+    await expect(structuredChoice.locator('.structured-text__part')).toHaveCount(4);
+    await expect(structuredChoice.locator('.structured-text__separator')).toContainText([',', ',', ',']);
+  });
+
   test('long arrow explanations are split into structured rows', async ({ page }) => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {
