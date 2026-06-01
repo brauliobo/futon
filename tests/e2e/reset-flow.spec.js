@@ -26,4 +26,18 @@ test.describe('Reset Flow', () => {
     await page.waitForTimeout(100);
     await expect(page.getByText('0:0')).toBeVisible();
   });
+
+  test('timer resets when resuming on a later day', async ({ page }) => {
+    await gotoHomeWithProfile(page);
+    await page.evaluate(() => {
+      const app = document.querySelector('#app').__vue_app__._instance.proxy;
+      const set = app.sets[0];
+      const key = `futon_state_${localStorage.getItem('futon_active_profile')}`;
+      const data = JSON.parse(localStorage.getItem(key) || '{}');
+      data.timers = { ...(data.timers || {}), [set.title]: Date.now() - 36 * 60 * 60 * 1000 };
+      localStorage.setItem(key, JSON.stringify(data));
+    });
+    await startFirstSet(page);
+    await expect(page.getByText('0:0')).toBeVisible();
+  });
 });

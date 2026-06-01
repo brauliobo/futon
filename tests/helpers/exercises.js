@@ -37,6 +37,19 @@ export async function completeEntireSetCorrectly(page) {
   await page.waitForTimeout(500);
 }
 
+export async function completeEntireSetCorrectlyWithDuration(page, durationSeconds) {
+  await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+  await page.evaluate((seconds) => {
+    const vm = window.__futonSet;
+    vm.set.pages.forEach(p => p.exercises.forEach(ex => { ex.answer = String(ex.correctAnswer); }));
+    vm.completedPages = vm.pages.map((_, i) => i + 1);
+    vm.currentPageIndex = vm.totalPages - 1;
+    vm.startedAt = Date.now() - Math.max(0, Number(seconds) || 0) * 1000;
+    vm.submitAnswers();
+  }, durationSeconds);
+  await page.waitForTimeout(500);
+}
+
 /**
  * Completes a set with some wrong answers.
  */

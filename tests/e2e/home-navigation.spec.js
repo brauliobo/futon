@@ -28,16 +28,17 @@ test.describe('Home Navigation', () => {
   test('daily goal widget visible with counter', async ({ page }) => {
     const goal = page.locator('[data-testid="daily-goal"]');
     await expect(goal).toBeVisible();
-    await expect(goal.getByText('0/3')).toBeVisible();
+    await expect(goal.getByText('0min / 30min')).toBeVisible();
   });
 
   test('daily goal reflects injected activity', async ({ page }) => {
     await page.evaluate(() => {
-      document.querySelector('#app').__vue_app__._instance.data.todaySets = 2;
+      document.querySelector('#app').__vue_app__._instance.data.todayDuration = 20 * 60;
     });
     await page.waitForTimeout(100);
     const goal = page.locator('[data-testid="daily-goal"]');
-    await expect(goal.getByText('2/3')).toBeVisible();
+    await expect(goal.getByText('20min / 30min')).toBeVisible();
+    await expect(goal.locator('.text-kid-gold')).toHaveCount(2);
   });
 
   test('set cards show star ratings from status', async ({ page }) => {

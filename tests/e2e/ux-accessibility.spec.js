@@ -40,7 +40,7 @@ test.describe('UX and accessibility smoke', () => {
       await gotoHomeWithProfile(page, {
         id: `ux_${viewport.name}`,
         name: `UX ${viewport.name}`,
-        avatar: '🐶',
+        avatar: 'UX',
         createdAt: 1713000000000,
       });
 
@@ -99,7 +99,7 @@ test.describe('UX and accessibility smoke', () => {
     await gotoHomeWithProfile(page, {
       id: 'ux_reduce',
       name: 'UX Reduce',
-      avatar: '🐶',
+      avatar: 'UX',
       createdAt: 1713000000000,
     });
 

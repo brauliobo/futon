@@ -84,11 +84,16 @@ test.describe('LocalStorage persistence', () => {
     expect(after).toBe(before);
   });
 
-  test('futon seed key is stable within a session', async ({ page }) => {
+  test('choice order is stable within a session', async ({ page }) => {
     await gotoHomeWithProfile(page);
-    const seed1 = await page.evaluate(() => localStorage.getItem('futon_seed_addition'));
-    expect(seed1).not.toBeNull();
-    const seed2 = await page.evaluate(() => localStorage.getItem('futon_seed_addition'));
-    expect(seed1).toBe(seed2);
+    const orders = await page.evaluate(async () => {
+      const { Shuffle } = await import('/src/utils/Shuffle.js');
+      const choices = ['a', 'b', 'c', 'd'];
+      return [
+        Shuffle.withSeed(choices, 'same question').join('|'),
+        Shuffle.withSeed(choices, 'same question').join('|'),
+      ];
+    });
+    expect(orders[0]).toBe(orders[1]);
   });
 });

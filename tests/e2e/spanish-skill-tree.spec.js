@@ -40,7 +40,7 @@ test.describe('Spanish Skill Tree', () => {
     await page.waitForTimeout(300);
     await page.getByRole('button', { name: /Temas|Themes/ }).click();
     await page.waitForTimeout(300);
-    await expect(page.locator('section')).toBeVisible();
+    await expect(page.locator('.skill-node').first()).toBeVisible();
   });
 
   test('no JS error thrown when switching to Spanish', async ({ page }) => {

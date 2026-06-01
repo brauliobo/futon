@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { gotoHomeWithProfile, startFirstSet } from '../helpers/navigation.js';
-import { completeEntireSetCorrectly, completeEntireSetWithErrors } from '../helpers/exercises.js';
+import { completeEntireSetCorrectly, completeEntireSetCorrectlyWithDuration, completeEntireSetWithErrors } from '../helpers/exercises.js';
 
-test.describe('Kumon Gate UX', () => {
+test.describe('Mastery Gate UX', () => {
   test.setTimeout(120000);
 
   test('mastery: shows gate with both ✅ rows and Próximo Bloco', async ({ page }) => {
@@ -24,7 +24,13 @@ test.describe('Kumon Gate UX', () => {
   test('pass: accuracy is accepted but next block stays locked until mastery', async ({ page }) => {
     await gotoHomeWithProfile(page);
     await startFirstSet(page);
-    await completeEntireSetWithErrors(page, 1);
+    const slowDuration = await page.evaluate(() => {
+      const vm = window.__futonSet;
+      const pc = vm.passCriteria;
+      const total = vm.set.totalExercises || vm.pages.reduce((sum, p) => sum + p.exercises.length, 0);
+      return Math.ceil((pc.masteryMaxAvgSecondsPerExercise + 2) * total);
+    });
+    await completeEntireSetCorrectlyWithDuration(page, slowDuration);
 
     const results = page.locator('[data-testid="results"]');
     await expect(results).toBeVisible({ timeout: 15000 });

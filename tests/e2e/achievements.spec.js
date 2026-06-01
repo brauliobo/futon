@@ -71,12 +71,14 @@ test.describe('Achievements', () => {
     await expect(page.locator('header').getByText('3')).toBeVisible();
   });
 
-  test('goal stars light up based on todaySets count', async ({ page }) => {
+  test('goal stars light up based on practice time', async ({ page }) => {
     await page.evaluate(() => {
-      document.querySelector('#app').__vue_app__._instance.data.todaySets = 2;
+      document.querySelector('#app').__vue_app__._instance.data.todayDuration = 20 * 60;
     });
     await page.waitForTimeout(100);
-    await expect(page.locator('[data-testid="daily-goal"]').getByText('2/3')).toBeVisible();
+    const goal = page.locator('[data-testid="daily-goal"]');
+    await expect(goal.getByText('20min / 30min')).toBeVisible();
+    await expect(goal.locator('.text-kid-gold')).toHaveCount(2);
   });
 
   test('mastery loaded from stored state on app init', async ({ page }) => {
