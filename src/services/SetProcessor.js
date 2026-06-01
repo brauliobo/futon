@@ -302,11 +302,18 @@ export class SetProcessor {
   static normalizeMathOperatorSpacing(question) {
     return String(question || '')
       .trim()
+      .replace(/([\[{(])([^\]})]*,[^\]})]*)([\]})])/g, (_match, open, body, close) => `${open}${this.normalizeMathDelimitedCommas(body)}${close}`)
       .replace(/\s*(?<![<>=!])=(?![=>])\s*/g, ' = ')
       .replace(/\s*×\s*/g, ' × ')
       .replace(/\s*\+\s*/g, ' + ')
       .replace(/\s+/g, ' ')
       .trim();
+  }
+
+  static normalizeMathDelimitedCommas(body) {
+    const text = String(body || '').trim();
+    if (/^-?\d+,\d+$/.test(text)) return text;
+    return text.replace(/,\s*/g, ', ');
   }
 
   static isBareMathExpressionPrompt(question) {

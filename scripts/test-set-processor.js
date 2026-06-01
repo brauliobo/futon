@@ -176,7 +176,7 @@ const cases = [
       const set = YAML.parse(fs.readFileSync('src/levels/math/M/set_19.yaml', 'utf8'));
       const ex  = SetProcessor.processSet(set).pages[4].exercises[0];
       return ex.type === 'trigonometry'
-        && ex.question === 'sen(x) = 1 → x em [0°,360°) = ?';
+        && ex.question === 'sen(x) = 1 → x em [0°, 360°) = ?';
     },
   },
   {
@@ -185,7 +185,37 @@ const cases = [
       const set = YAML.parse(fs.readFileSync('src/levels/math/P/set_15.yaml', 'utf8'));
       const ex  = SetProcessor.processSet(set).pages[2].exercises[1];
       return ex.type === 'mental_math'
-        && ex.question === 'Bin(3,0.5) — P(X = 1) = 3 × 0.5 × 0.25 = ?';
+        && ex.question === 'Bin(3, 0.5) — P(X = 1) = 3 × 0.5 × 0.25 = ?';
+    },
+  },
+  {
+    name: 'adds readable comma spacing to interval prompts',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/M/set_19.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[4].exercises[0];
+      return ex.type === 'trigonometry'
+        && ex.question === 'sen(x) = 1 → x em [0°, 360°) = ?';
+    },
+  },
+  {
+    name: 'adds readable comma spacing to frequency-list prompts',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/P/set_05.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[4].exercises[0];
+      return ex.type === 'mental_math'
+        && ex.question === 'Para [1, 2, 3, 4] com frequências [2, 3, 4, 1], acumulada até 3 = ?';
+    },
+  },
+  {
+    name: 'keeps decimal-comma values intact in math delimiters',
+    run:  () => {
+      const set = {
+        subject: 'math',
+        level:   'M',
+        pages:   [{ exercises: [{ type: 'math', question: 'valor (0,5) = ?', correctAnswer: 0.5 }] }],
+      };
+      const ex = SetProcessor.processSet(set).pages[0].exercises[0];
+      return ex.question === 'valor (0,5) = ?';
     },
   },
   {
