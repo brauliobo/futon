@@ -43,14 +43,15 @@ export default {
   computed: {
     readingPassage() {
       if (this.page.passage) return this.page.passage;
-      if (!this.hasReadingExercises) return '';
-      return String(this.page.description || '').startsWith('Texto:') ? this.page.description : '';
-    },
-    hasReadingExercises() {
-      return (this.page.exercises || []).some(ex => ex.type === 'reading');
+      return this.isPassageDescription(this.page.description) ? this.page.description : '';
     },
   },
   methods: {
+    isPassageDescription(description) {
+      const text = String(description || '').trim();
+      if (text.length < 80) return false;
+      return /^(Texto:|Leia e responda:|Redação modelo)/i.test(text);
+    },
     initAnswers() {
       this.answers = PageStatus.initAnswers(this.page.exercises);
     },
@@ -85,4 +86,3 @@ export default {
   },
 };
 </script>
-

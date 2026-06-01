@@ -70,6 +70,29 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     expect(textBoxAfter.height).toBeGreaterThan(textBoxBefore.height);
   });
 
+  test('portuguese model-text descriptions render for paragraph questions', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].description = [
+        'Leia e responda:',
+        '"A violência escolar tem aumentado nos últimos anos. Isso ocorre porque as escolas carecem de infraestrutura adequada e os estudantes enfrentam pressão social intensa. Portanto, investir em educação integral é fundamental."',
+      ].join('\n');
+      vm.set.pages[0].exercises = [{
+        type:          'paragraph',
+        question:      'Qual é a tese desta redação? (violência escolar aumentou/investir em educação integral reduz a violência escolar)',
+        correctAnswer: 'investir em educação integral reduz a violência escolar',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const passage = page.locator('[data-testid="reading-passage"]');
+    await expect(passage).toBeVisible();
+    await expect(passage).toContainText('A violência escolar tem aumentado');
+  });
+
   test('digit key 1 selects first choice when group is focused', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (!answers.length || !answers[0].hasChoices) return;
