@@ -273,6 +273,15 @@ const cases = [
     },
   },
   {
+    name: 'removes neutral zero terms after coefficient cleanup',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/K/set_11.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[4].exercises[3];
+      return ex.type === 'linear_equation'
+        && ex.question === 'f(x) = x/(x + 4), f(-1) = ?';
+    },
+  },
+  {
     name: 'removes repeated generated boilerplate from dense choices',
     run:  () => {
       const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));
