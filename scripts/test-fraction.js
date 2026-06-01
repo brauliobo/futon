@@ -55,6 +55,20 @@ const cases = [
         && !Fraction.hasFraction('1/sen(300°)');
     },
   },
+  {
+    name: 'parts formats parenthesized trig expressions for display',
+    run:  () => {
+      const fractions = Fraction.parts('tan(x/2) = (1-cos x)/sen x')
+        .filter(part => part.type === 'fraction');
+
+      return fractions.length === 2
+        && fractions[0].numerator === 'x'
+        && fractions[0].denominator === '2'
+        && fractions[1].numerator === '(1-cos x)'
+        && fractions[1].denominator === 'sen x'
+        && !Fraction.hasFraction('(1-cos x)/sen x');
+    },
+  },
 ];
 
 let passed = 0;

@@ -1,6 +1,6 @@
 export class Fraction {
   static ANSWER_FRACTION_PATTERN_SOURCE = String.raw`(?<![\p{L}√\d])(-?\d+)\s+(\d+)\/(\d+)|(?<![\p{L}√\d])(-?\d+)\/(\d+)(?![\p{L}\d])`;
-  static DISPLAY_TERM_PATTERN_SOURCE = String.raw`-?(?:\d+|√\d+|(?:sen|cos|tan|tg)\([^()/]+\)|\[[^\]/]+\])`;
+  static DISPLAY_TERM_PATTERN_SOURCE = String.raw`-?(?:\d+|√\d+|(?:sen|cos|tan|tg)(?:\([^()/]+\)|\s*[a-zA-Z])|[a-zA-Z]|\([^()/]+\)|\[[^\]/]+\])`;
   static DISPLAY_FRACTION_PATTERN_SOURCE = String.raw`(-?\d+)\s+(\d+)\/(\d+)|(${Fraction.DISPLAY_TERM_PATTERN_SOURCE})\/(${Fraction.DISPLAY_TERM_PATTERN_SOURCE})`;
 
   static answerFractionPattern() {
