@@ -180,4 +180,29 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
     expect(overflow).toBeFalsy();
   });
+
+  test('long arrow explanations are split into structured rows', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      const arrowChoice = "en MD, la supletividad de 'ir' se analiza como ítems de vocabulario contextualmente condicionados: /fu-/ gana en pasado, /v-/ en presente indicativo, /i-/ como raíz por defecto → la supletividad emerge de la competencia entre ítems con especificaciones contextuales distintas";
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      'Supletividad verbal',
+        choices:       [arrowChoice, 'accidente histórico sin análisis', 'no tiene análisis formal'],
+        correctAnswer: arrowChoice,
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const structuredChoice = page.locator('[role="radio"] .structured-text--dense').first();
+    await expect(structuredChoice).toBeVisible();
+    await expect(structuredChoice.locator('.structured-text__part')).toHaveCount(2);
+    await expect(structuredChoice.locator('.structured-text__separator')).toHaveText('→');
+
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
+    expect(overflow).toBeFalsy();
+  });
 });

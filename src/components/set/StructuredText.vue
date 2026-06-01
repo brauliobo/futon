@@ -42,6 +42,11 @@ export default {
         return { dense: true, separator: ';', parts: contrastParts };
       }
 
+      const arrowParts = this.splitParts(text, /\s*→\s*/);
+      if (arrowParts.length >= 2 && text.length > 220) {
+        return { dense: true, separator: '→', parts: arrowParts };
+      }
+
       return { dense: false, separator: '', parts: [text] };
     },
     splitParts(value, pattern) {
