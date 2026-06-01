@@ -1,0 +1,60 @@
+export class Fraction {
+  static FRACTION_PATTERN = /(-?\d+)\s+(\d+)\/(\d+)|(-?\d+)\/(\d+)/g;
+
+  static parts(value) {
+    const text  = String(value ?? '');
+    const parts = [];
+    let last    = 0;
+
+    for (const match of text.matchAll(this.FRACTION_PATTERN)) {
+      if (match.index > last) parts.push({ type: 'text', value: text.slice(last, match.index) });
+
+      if (match[1] !== undefined) {
+        parts.push({
+          type:        'mixed',
+          value:       match[0],
+          whole:       match[1],
+          numerator:   match[2],
+          denominator: match[3],
+        });
+      } else {
+        parts.push({
+          type:        'fraction',
+          value:       match[0],
+          numerator:   match[4],
+          denominator: match[5],
+        });
+      }
+
+      last = match.index + match[0].length;
+    }
+
+    if (last < text.length) parts.push({ type: 'text', value: text.slice(last) });
+    return parts;
+  }
+
+  static hasFraction(value) {
+    this.FRACTION_PATTERN.lastIndex = 0;
+    return this.FRACTION_PATTERN.test(String(value ?? ''));
+  }
+
+  static parseAnswer(value) {
+    const text  = String(value ?? '').trim();
+    const mixed = text.match(/^(-?\d+)\s+(\d+)\/(\d+)$/);
+    if (mixed) return { whole: mixed[1], numerator: mixed[2], denominator: mixed[3], mixed: true };
+
+    const fraction = text.match(/^(-?\d+)\/(\d+)$/);
+    if (fraction) return { whole: '', numerator: fraction[1], denominator: fraction[2], mixed: false };
+
+    return { whole: '', numerator: '', denominator: '', mixed: false };
+  }
+
+  static answerFromParts({ whole = '', numerator = '', denominator = '' } = {}) {
+    const w = String(whole).trim();
+    const n = String(numerator).trim();
+    const d = String(denominator).trim();
+    if (!n && !d) return w;
+    if (w) return `${w} ${n}/${d}`.trim();
+    return `${n}/${d}`;
+  }
+}

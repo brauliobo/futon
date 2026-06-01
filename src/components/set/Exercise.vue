@@ -11,7 +11,22 @@
     ref="choiceRef"
   )
   div(v-else :class="['question-card animate-slide-up', `question-card--${cardVariant}`, { 'card-pulse': pulsing }]" role="group" :aria-labelledby="`q-${exerciseNumber}`")
-    div(v-if="isNumeric && !isReadOnly" class="flex items-center gap-3")
+    div(v-if="usesFractionInput && !isReadOnly" class="flex items-center gap-3")
+      QuestionHeader(:number="exerciseNumber" :question="exercise.question" compact :answered="hasAnswer")
+      div(class="relative ml-auto")
+        FractionAnswerInput(
+          v-model="userAnswer"
+          :disabled="isSubmitted"
+          :allow-mixed="allowsMixedFraction"
+          :aria-label="`q-${exerciseNumber}`"
+          :clear-label="$t('clear') || 'Clear'"
+          @submit="handleSubmit"
+          @editing="handleFractionEditing"
+          ref="fractionInputRef"
+        )
+        span(v-if="hasAnswer && !isEditing" class="absolute -right-1.5 -top-1.5 w-6 h-6 rounded-full bg-kid-blue text-white text-sm font-black flex items-center justify-center shadow-md ring-2 ring-kid-surface animate-stamp" aria-hidden="true") ✓
+        span(v-if="hasAnswer && !isEditing" class="absolute inset-0 rounded-xl pointer-events-none animate-stamp-ring" aria-hidden="true")
+    div(v-else-if="isNumeric && !isReadOnly" class="flex items-center gap-3")
       QuestionHeader(:number="exerciseNumber" :question="exercise.question" compact :answered="hasAnswer")
       div(class="relative ml-auto")
         input(
@@ -85,11 +100,13 @@
 import ChoiceExercise from './ChoiceExercise.vue';
 import QuestionHeader from './QuestionHeader.vue';
 import HintCard from './HintCard.vue';
+import FractionAnswerInput from './FractionAnswerInput.vue';
 import { Formatter } from '../../utils/Formatter.js';
 import { Encourage } from '../../utils/Encourage.js';
+import { Fraction } from '../../utils/Fraction.js';
 export default {
   name: "Exercise",
-  components: { ChoiceExercise, QuestionHeader, HintCard },
+  components: { ChoiceExercise, QuestionHeader, HintCard, FractionAnswerInput },
   props: {
     exercise: { type: Object, required: true },
     exerciseNumber: { type: Number, required: true },
@@ -118,6 +135,17 @@ export default {
     inputWrapClass() {
       return this.isNumeric ? 'mt-1 flex justify-center' : 'mt-1';
     },
+    usesFractionInput() {
+      return Fraction.hasFraction(this.exercise.correctAnswer);
+    },
+    allowsMixedFraction() {
+      return this.exercise.type === 'fraction_mixed' || Fraction.parseAnswer(this.exercise.correctAnswer).mixed;
+    },
+    canSubmitAnswer() {
+      if (!this.usesFractionInput) return String(this.userAnswer).trim() !== '';
+      const parsed = Fraction.parseAnswer(this.userAnswer);
+      return String(parsed.numerator || '').trim() !== '' && String(parsed.denominator || '').trim() !== '';
+    },
     encouragement() { return Encourage.message(this.$t.bind(this), this.exerciseNumber); },
     cardVariant() {
       if (this.isReadOnly) return this.isCorrect ? 'correct' : 'incorrect';
@@ -126,7 +154,7 @@ export default {
   },
   methods: {
     handleSubmit() {
-      if (this.isSubmitting || String(this.userAnswer).trim() === '') return;
+      if (this.isSubmitting || !this.canSubmitAnswer) return;
       this.isSubmitting = true;
       navigator.vibrate?.(12);
       this.$emit("update-answer", { answer: this.userAnswer });
@@ -145,6 +173,10 @@ export default {
       if (trimmed === String(this.exercise.answer || '').trim()) return;
       this.$emit("update-answer", { answer: this.userAnswer });
     },
+    handleFractionEditing(value) {
+      this.isEditing = value;
+      if (!value) this.handleBlur();
+    },
     clearAnswer() {
       this.userAnswer = '';
       this.isEditing = true;
@@ -152,6 +184,7 @@ export default {
     },
     focus() {
       if (this.$refs.choiceRef?.focus) { this.$refs.choiceRef.focus(); return; }
+      if (this.$refs.fractionInputRef?.focus) { this.$refs.fractionInputRef.focus(); return; }
       this.$nextTick(() => {
         const input = this.$refs.inputRef;
         if (!input) return;

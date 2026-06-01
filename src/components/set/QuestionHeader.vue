@@ -1,12 +1,16 @@
 <template lang="pug">
   div(class="flex items-center gap-2" :class="spacing")
     span(:class="['q-badge', { 'q-badge--compact': compact, 'q-badge--answered': answered }]" aria-hidden="true") {{ number }}
-    p(:id="`q-${number}`" :class="textClass") {{ question }}
+    p(:id="`q-${number}`" :class="textClass")
+      FractionText(:value="question")
 </template>
 
 <script>
+import FractionText from './FractionText.vue';
+
 export default {
   name: 'QuestionHeader',
+  components: { FractionText },
   props: {
     number: { type: Number, required: true },
     question: { type: String, required: true },
