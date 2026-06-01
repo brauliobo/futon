@@ -1,5 +1,13 @@
 export class Streak {
-  static todayKey() { return new Date().toISOString().slice(0, 10); }
+  static dateKeyFor(date) {
+    const d = date instanceof Date ? date : new Date(date);
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
+
+  static todayKey() { return this.dateKeyFor(new Date()); }
 
   static recordActivity(storage, setsCompleted = 1, durationSeconds = 0) {
     const data = storage.load() || {};
@@ -27,7 +35,7 @@ export class Streak {
     for (let i = 0; i < 365; i++) {
       const d = new Date(today);
       d.setDate(d.getDate() - i);
-      const key = d.toISOString().slice(0, 10);
+      const key = this.dateKeyFor(d);
       if (log[key]?.setsCompleted > 0) streak++;
       else if (i > 0) break;
     }

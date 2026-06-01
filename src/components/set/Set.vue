@@ -96,6 +96,7 @@ import { Formatter } from "../../utils/Formatter.js";
 import { Scoring } from "../../utils/Scoring.js";
 import { SpeedGauge as SpeedCalc } from "../../utils/SpeedGauge.js";
 import { SetStorage } from "../../services/SetStorage.js";
+import { Streak } from "../../utils/Streak.js";
 
 export default {
   name: "Set",
@@ -208,10 +209,26 @@ export default {
     restoreSetTimer() {
       const setTitle = this.set.title || 'default';
       const stored = this.storage.getTimer(setTitle);
-      this.startedAt = stored ? parseInt(stored, 10) : Date.now();
-      if (!stored) {
-        this.storage.setTimer(setTitle, this.startedAt);
+      const today = Streak.todayKey();
+      let startedAt = 0;
+      let dayKey = '';
+
+      if (stored && typeof stored === 'object') {
+        startedAt = Number(stored.startedAt || 0);
+        dayKey    = stored.dayKey || '';
+      } else if (stored) {
+        startedAt = Number(stored);
+        dayKey    = Number.isFinite(startedAt) ? Streak.dateKeyFor(new Date(startedAt)) : '';
       }
+
+      if (!Number.isFinite(startedAt) || startedAt <= 0 || dayKey !== today) {
+        startedAt = Date.now();
+        dayKey    = today;
+        this.storage.setTimer(setTitle, { startedAt, dayKey });
+      }
+
+      this.startedAt   = startedAt;
+      this.pageSeconds = Math.max(0, Math.floor((Date.now() - startedAt) / 1000));
     },
     clearTimerStorage() {
       const setTitle = this.set.title || 'default';
@@ -391,6 +408,8 @@ export default {
       this.clearTimerStorage();
       this.startedAt = Date.now();
       this.pageSeconds = 0;
+      this.storage.setTimer(this.set.title || 'default', { startedAt: this.startedAt, dayKey: Streak.todayKey() });
+      this.startTimer();
       
       this.resetKey += 1;
       this.$emit("update-set", {
@@ -438,4 +457,3 @@ export default {
   }
 };
 </script>
-
