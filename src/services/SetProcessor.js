@@ -61,6 +61,9 @@ export class SetProcessor {
 
   static splitChoiceBody(body, options = {}) {
     const text = String(body || '').trim();
+    const delimiterChoices = this.splitDelimitedChoiceBody(text);
+    if (delimiterChoices.length) return delimiterChoices;
+
     if (!text.includes('/')) return [];
 
     const slashCount = (text.match(/\//g) || []).length;
@@ -88,6 +91,31 @@ export class SetProcessor {
 
     choices.push(text.slice(last));
     return this.cleanChoices(choices);
+  }
+
+  static splitDelimitedChoiceBody(text) {
+    return this.splitKeyedChoiceBody(text)
+      || this.splitChoiceBodyOnDelimiter(text, '›')
+      || this.splitChoiceBodyOnDelimiter(text, '|')
+      || [];
+  }
+
+  static splitKeyedChoiceBody(text) {
+    const choices = this.cleanChoices(String(text || '').split(/\s*,\s*/));
+    if (!choices.length) return null;
+    if (!choices.every(choice => /^[^=,\s]{1,12}\s*=\s*\S.+$/.test(choice))) return null;
+
+    return choices;
+  }
+
+  static splitChoiceBodyOnDelimiter(text, delimiter) {
+    if (!String(text || '').includes(delimiter)) return null;
+
+    const escaped = delimiter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const choices = this.cleanChoices(String(text || '').split(new RegExp(`\\s*${escaped}\\s*`)));
+    if (!choices.length) return null;
+
+    return choices;
   }
 
   static cleanChoices(choices) {
@@ -233,9 +261,21 @@ export class SetProcessor {
         ex.choices  = choices;
         ex.question = `${ex.question.slice(0, choiceInfo.start)}${ex.question.slice(choiceInfo.end)}`.trim();
         ex.type = 'choice';
+        this.normalizeKeyedChoiceAnswer(ex);
       });
     });
     return wb;
+  }
+
+  static normalizeKeyedChoiceAnswer(ex) {
+    const answer = String(ex.correctAnswer ?? '').trim();
+    if (!answer || !Array.isArray(ex.choices)) return;
+
+    const keyedChoice = ex.choices.find(choice => {
+      const [key] = String(choice).split('=');
+      return key?.trim() === answer;
+    });
+    if (keyedChoice) ex.correctAnswer = keyedChoice;
   }
 
   static processSet(wb) {
