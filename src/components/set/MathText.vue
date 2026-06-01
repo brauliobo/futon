@@ -1,5 +1,5 @@
 <template lang="pug">
-  span(class="math-text" :aria-label="label")
+  span(:class="textClass" :aria-label="label")
     template(v-for="(part, idx) in parts" :key="idx")
       span(v-if="part.type === 'text'") {{ part.value }}
       span(v-else-if="part.type === 'mixed'" class="math-mixed-fraction" aria-hidden="true")
@@ -25,6 +25,13 @@ export default {
   computed: {
     label() { return String(this.value ?? ''); },
     parts() { return Fraction.parts(this.value); },
+    hasFractionParts() { return this.parts.some(part => part.type === 'fraction' || part.type === 'mixed'); },
+    textClass() {
+      return {
+        'math-text':             true,
+        'math-text--fractional': this.hasFractionParts,
+      };
+    },
   },
 };
 </script>

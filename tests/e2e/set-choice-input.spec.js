@@ -124,6 +124,27 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     expect(overflow).toBeFalsy();
   });
 
+  test('fraction sums render each term as stacked math text', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'fraction_add',
+        question:      '1/4 + 2/4 =',
+        correctAnswer: '3/4',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const question = page.locator('[id^="q-"]').first();
+    await expect(question.locator('.math-text--fractional')).toBeVisible();
+    await expect(question.locator('.math-fraction')).toHaveCount(2);
+    await expect(question.locator('.math-fraction__numerator')).toContainText(['1', '2']);
+    await expect(question.locator('.math-fraction__denominator')).toContainText(['4', '4']);
+  });
+
   test('dense plus lists are split into structured lesson text', async ({ page }) => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {
