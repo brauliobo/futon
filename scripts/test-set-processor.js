@@ -255,6 +255,24 @@ const cases = [
     },
   },
   {
+    name: 'removes neutral zero terms from algebraic expressions',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/G/set_06.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[6].exercises[3];
+      return ex.type === 'algebraic_expression'
+        && ex.question === 'Se x = 8, então -5x =';
+    },
+  },
+  {
+    name: 'removes neutral zero terms from parenthesized equations',
+    run:  () => {
+      const set = YAML.parse(fs.readFileSync('src/levels/math/H/set_03.yaml', 'utf8'));
+      const ex  = SetProcessor.processSet(set).pages[2].exercises[1];
+      return ex.type === 'linear_equation'
+        && ex.question === '5x = 5';
+    },
+  },
+  {
     name: 'removes repeated generated boilerplate from dense choices',
     run:  () => {
       const set    = YAML.parse(fs.readFileSync('src/levels/biology/N/set_19.yaml', 'utf8'));
