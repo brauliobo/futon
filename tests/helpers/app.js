@@ -1,5 +1,7 @@
 // tests/helpers/app.js — Direct Vue app state manipulation for fast tests
 
+import { PAGE_ACTION_SELECTOR } from './navigation.js';
+
 /**
  * Returns the App component proxy from the live Vue instance.
  */
@@ -109,5 +111,5 @@ export async function selectSetByIndex(page, index) {
     const set = proxy.sets[idx];
     if (set) proxy.selectSet(set);
   }, index);
-  await page.waitForSelector('[aria-label="Next page"]', { timeout: 5000 }).catch(() => {});
+  await page.waitForSelector(PAGE_ACTION_SELECTOR, { timeout: 5000 }).catch(() => {});
 }
