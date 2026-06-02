@@ -23,13 +23,15 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {
       const vm = window.__futonSet;
-      vm.set.example = 'Resolva a conta. Ex.: 9 × 4 = → 36.';
+      vm.set.example = 'Resolva a conta. Ex.: 9 × 4 = → 36. Pontue: João estudou muito___ → ..';
       vm.resetKey += 1;
     });
 
     const example = page.getByTestId('example-alert').first();
     await expect(example).toContainText('9 × 4 = 36');
+    await expect(example).toContainText('João estudou muito___ → .');
     await expect(example).not.toContainText('= →');
+    await expect(example).not.toContainText('→ ..');
   });
 
   test('choice buttons rendered', async ({ page }) => {
