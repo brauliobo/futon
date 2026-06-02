@@ -51,6 +51,15 @@ const cases = [
     },
   },
   {
+    name: 'removes dangling colon from longer extracted choice prompts',
+    run:  () => {
+      const set       = YAML.parse(fs.readFileSync('src/levels/portuguese/2A/set_12.yaml', 'utf8'));
+      const processed = SetProcessor.processSet(set);
+      const prompt    = processed.pages[3].exercises[0].question;
+      return prompt === 'CASA começa com';
+    },
+  },
+  {
     name: 'extracts inline choices around phoneme slash notation',
     run:  () => {
       const set = YAML.parse(fs.readFileSync('src/levels/spanish/I/set_12.yaml', 'utf8'));
@@ -135,7 +144,7 @@ const cases = [
       const set = YAML.parse(fs.readFileSync('src/levels/portuguese/I/set_19.yaml', 'utf8'));
       const ex  = SetProcessor.processSet(set).pages[2].exercises[0];
       return ex.type === 'choice'
-        && ex.question === 'Um parágrafo de desenvolvimento bem construído contém:'
+        && ex.question === 'Um parágrafo de desenvolvimento bem construído contém'
         && ex.choices.length === 3
         && ex.choices[1] === 'tópico frasal + argumento + evidência + análise + comentário + fechamento';
     },

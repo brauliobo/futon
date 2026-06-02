@@ -271,9 +271,7 @@ export class SetProcessor {
     const text = String(question || '').trim();
     if (!text.endsWith(':')) return text;
 
-    const stem = text.slice(0, -1).trim();
-    if (stem.split(/\s+/).length <= 4) return stem;
-    return text;
+    return text.slice(0, -1).trim();
   }
 
   static normalizeKeyedChoices(ex) {
