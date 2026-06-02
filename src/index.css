@@ -446,9 +446,9 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .fraction-answer:focus-within { border-color: var(--kid-blue); box-shadow: 0 0 18px var(--glow-blue); }
 .fraction-answer--answered { background: var(--kid-blue-tint-5); border-color: var(--kid-blue); box-shadow: 0 0 18px var(--glow-blue); }
 .fraction-answer__whole,
-.fraction-answer__number { @apply rounded-lg bg-transparent text-center text-2xl font-black text-kid-text outline-none tabular-nums; }
+.fraction-answer__number { @apply h-12 rounded-lg bg-transparent text-center text-2xl font-black text-kid-text outline-none tabular-nums; }
 .fraction-answer__whole { @apply w-12; }
-.fraction-answer__number { @apply h-9 w-16; }
+.fraction-answer__number { @apply w-16; }
 .fraction-answer__number::placeholder,
 .fraction-answer__whole::placeholder { font-size: 1.25rem; font-weight: var(--fw-semibold); color: var(--kid-muted-60); }
 .fraction-answer__stack { @apply flex flex-col items-center; }

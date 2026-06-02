@@ -301,6 +301,9 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     });
 
     await page.locator('.fraction-answer__number').first().fill('3');
+    const numberBox = await page.locator('.fraction-answer__number').first().boundingBox();
+    expect(numberBox?.height).toBeGreaterThanOrEqual(44);
+
     const clearButton = page.getByRole('button', { name: /Limpar|Clear/ });
     await expect(clearButton).toBeVisible();
 
