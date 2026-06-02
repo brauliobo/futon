@@ -1,27 +1,32 @@
 <template lang="pug">
-  div(class="fraction-answer" :class="{ 'fraction-answer--answered': hasAnswer && !isEditing }")
-    input(
-      v-if="allowMixed"
-      v-model="whole"
-      type="text"
-      inputmode="numeric"
-      pattern="-?[0-9]*"
-      enterkeyhint="next"
-      :disabled="disabled"
-      placeholder="?"
-      class="fraction-answer__whole"
-      :aria-label="wholeAriaLabel"
-      :title="wholeAriaLabel"
-      autocomplete="off"
-      autocorrect="off"
-      spellcheck="false"
-      @input="emitAnswer"
-      @keydown.enter.prevent="focusNumerator"
-      @focus="setEditing(true)"
-      @blur="handleBlur"
-      ref="wholeRef"
-    )
+  div(
+    class="fraction-answer"
+    :class="{ 'fraction-answer--mixed': allowMixed, 'fraction-answer--answered': hasAnswer && !isEditing }"
+  )
+    div(v-if="allowMixed" class="fraction-answer__whole-wrap")
+      span(class="fraction-answer__part-label") {{ wholeLabel }}
+      input(
+        v-model="whole"
+        type="text"
+        inputmode="numeric"
+        pattern="-?[0-9]*"
+        enterkeyhint="next"
+        :disabled="disabled"
+        placeholder="?"
+        class="fraction-answer__whole"
+        :aria-label="wholeAriaLabel"
+        :title="wholeAriaLabel"
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+        @input="emitAnswer"
+        @keydown.enter.prevent="focusNumerator"
+        @focus="setEditing(true)"
+        @blur="handleBlur"
+        ref="wholeRef"
+      )
     div(class="fraction-answer__stack")
+      span(v-if="allowMixed" class="fraction-answer__part-label") {{ numeratorLabel }}
       input(
         v-model="numerator"
         type="text"
@@ -63,6 +68,7 @@
         @blur="handleBlur"
         ref="denominatorRef"
       )
+      span(v-if="allowMixed" class="fraction-answer__part-label") {{ denominatorLabel }}
     button(
       v-if="hasAnswer && isEditing && !disabled"
       @mousedown.prevent="clear"

@@ -6,7 +6,7 @@ export const FAMILIES = {
   // Short numeric or string answer, rendered with text input.
   drill: [
     'addition', 'subtraction', 'multiplication', 'division',
-    'fraction', 'fraction_add', 'fraction_sub', 'fraction_subtract',
+    'fraction', 'fraction_mixed', 'fraction_add', 'fraction_sub', 'fraction_subtract',
     'fraction_multiply', 'fraction_divide',
     'decimal', 'decimal_add', 'decimal_subtract', 'decimal_multiply', 'decimal_divide',
     'integer', 'integer_add', 'integer_subtract', 'integer_multiply', 'integer_divide',

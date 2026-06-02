@@ -4,11 +4,11 @@
       span(v-for="(part, idx) in denseParts" :key="idx" class="structured-text__part")
         span(v-if="idx > 0" class="structured-text__separator" aria-hidden="true") {{ denseSeparator }}
         template(v-for="(inlinePart, inlineIdx) in inlineParts(part)" :key="inlineIdx")
-          span(v-if="inlinePart.type === 'blank'" :class="blankClass(inlinePart)" aria-hidden="true")
+          span(v-if="inlinePart.type === 'blank'" :class="blankClass(inlinePart)") {{ inlinePart.value }}
           MathText(v-else :value="inlinePart.value")
     template(v-else)
       template(v-for="(inlinePart, idx) in inlineParts(value)" :key="idx")
-        span(v-if="inlinePart.type === 'blank'" :class="blankClass(inlinePart)" aria-hidden="true")
+        span(v-if="inlinePart.type === 'blank'" :class="blankClass(inlinePart)") {{ inlinePart.value }}
         MathText(v-else :value="inlinePart.value")
 </template>
 

@@ -42,6 +42,10 @@ const GROUPS_RE = /^(\d+)\s+grupos?\s+de\s+(\d+)\s+[a-záâãéêíóôõúç]+\
 
 const normalize = (s) =>
   String(s)
+    // Mixed numbers: "1 2/5" means 1 + 2/5, not multiplication.
+    .replace(/(?<![a-zA-Z\d\)])(-?\d+)\s+(\d+)\/(\d+)(?![a-zA-Z\d])/g, (_, whole, num, den) => {
+      return Number(whole) < 0 ? `(${whole}-${num}/${den})` : `(${whole}+${num}/${den})`;
+    })
     // Group bare "a/b" fractions before reducing ÷ to / so that
     // "2/6 ÷ 3/4" parses as (2/6) ÷ (3/4), not ((2/6)/3)/4.
     // Don't grab the digits inside "√N/M" — that's a separate sqrt.

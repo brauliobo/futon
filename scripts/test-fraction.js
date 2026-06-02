@@ -23,6 +23,13 @@ const cases = [
     },
   },
   {
+    name: 'answerFromParts emits whole-only mixed answers',
+    run:  () => {
+      return Fraction.answerFromParts({ whole: '2', numerator: '', denominator: '' }) === '2'
+        && Fraction.answerFromParts({ whole: '2', numerator: '1', denominator: '3' }) === '2 1/3';
+    },
+  },
+  {
     name: 'parts formats parenthesized numeric coefficients as stacked fractions',
     run:  () => {
       const parts     = Fraction.parts('(1/2)x^2 + C');

@@ -497,6 +497,31 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     expect(box?.height).toBeGreaterThanOrEqual(24);
   });
 
+  test('mixed fraction answers expose whole numerator and denominator inputs', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'fraction_mixed',
+        question:      '5/4 em número misto =',
+        correctAnswer: '1 1/4',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    await expect(page.locator('.fraction-answer--mixed')).toBeVisible();
+    await expect(page.locator('.fraction-answer__whole')).toHaveAttribute('aria-label', /Inteiro|Whole/);
+    await expect(page.locator('.fraction-answer__number').first()).toHaveAttribute('aria-label', /Numerador|Numerator/);
+    await expect(page.locator('.fraction-answer__number').nth(1)).toHaveAttribute('aria-label', /Denominador|Denominator/);
+
+    await page.locator('.fraction-answer__whole').fill('1');
+    await page.locator('.fraction-answer__number').first().fill('1');
+    await page.locator('.fraction-answer__number').nth(1).fill('4');
+    await expect(page.locator('.fraction-answer__part-label')).toContainText([/Inteiro|Whole/, /Numerador|Numerator/, /Denominador|Denominator/]);
+  });
+
   test('dense plus lists are split into structured lesson text', async ({ page }) => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {

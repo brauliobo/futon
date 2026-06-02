@@ -447,7 +447,7 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .structured-text--dense { @apply flex flex-col items-stretch gap-1 text-left; width: 100%; }
 .structured-text__part { @apply flex items-start gap-1 rounded-lg px-2 py-1; background: var(--kid-surface); border: 1px solid var(--kid-border); }
 .structured-text__separator { @apply flex-none font-black text-kid-blue; line-height: 1.25; }
-.structured-text__blank { @apply inline-block align-baseline rounded-sm; width: 2.75em; height: 0.9em; border-bottom: 3px solid currentColor; opacity: 0.75; }
+.structured-text__blank { @apply inline-block align-baseline rounded-sm text-transparent; width: 2.75em; height: 0.9em; border-bottom: 3px solid currentColor; opacity: 0.75; font-size: 0; }
 .structured-text__blank--letter { width: 0.9em; }
 .math-fraction { @apply inline-flex flex-col items-center justify-center align-middle font-black leading-none; min-width: 1.4em; }
 .math-fraction__numerator,
@@ -458,7 +458,10 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 
 .fraction-answer { @apply relative inline-flex items-center gap-2 rounded-xl border-2 bg-kid-surface px-3 py-2 shadow-sm transition-all duration-300; border-color: var(--kid-border-strong); }
 .fraction-answer:focus-within { border-color: var(--kid-blue); box-shadow: 0 0 18px var(--glow-blue); }
+.fraction-answer--mixed { @apply items-end px-2 py-1.5; }
 .fraction-answer--answered { background: var(--kid-blue-tint-5); border-color: var(--kid-blue); box-shadow: 0 0 18px var(--glow-blue); }
+.fraction-answer__whole-wrap { @apply flex flex-col items-center gap-0.5; }
+.fraction-answer__part-label { @apply block h-4 text-[0.62rem] font-black uppercase tracking-normal text-kid-muted leading-none; }
 .fraction-answer__whole,
 .fraction-answer__number { @apply h-12 rounded-lg bg-transparent text-center text-2xl font-black text-kid-text outline-none tabular-nums; }
 .fraction-answer__whole { @apply w-12; }

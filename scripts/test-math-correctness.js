@@ -12,6 +12,11 @@ const CASES = [
   // Plain arithmetic / fractions / decimals
   { q: '5 + 3 =', a: '8', type: 'addition', want: true },
   { q: '2/6 ÷ 3/4', a: '4/9', type: 'fraction_divide', want: true },
+  { q: '3/4 + 2/4 =', a: '1 1/4', type: 'fraction_mixed', want: true },
+  { q: '1 2/5 + 3/5 =', a: '2', type: 'fraction_mixed', want: true },
+  { q: '2 1/4 - 3/4 =', a: '1 1/2', type: 'fraction_mixed', want: true },
+  { q: '1 1/2 × 2/3 =', a: '1', type: 'fraction_mixed', want: true },
+  { q: '1 1/2 ÷ 1/2 =', a: '3', type: 'fraction_mixed', want: true },
   { q: '7 × 9 =', a: '63', type: 'multiplication', want: true },
   // Equation forms
   { q: 'x + 1 = 5, x =', a: '4', type: 'equation', want: true },

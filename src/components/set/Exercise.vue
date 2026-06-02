@@ -141,7 +141,7 @@ export default {
       return this.isNumeric ? 'mt-1 flex justify-center' : 'mt-1';
     },
     usesFractionInput() {
-      return Fraction.hasFraction(this.exercise.correctAnswer);
+      return this.exercise.type === 'fraction_mixed' || Fraction.hasFraction(this.exercise.correctAnswer);
     },
     allowsMixedFraction() {
       return this.exercise.type === 'fraction_mixed' || Fraction.parseAnswer(this.exercise.correctAnswer).mixed;
@@ -149,6 +149,7 @@ export default {
     canSubmitAnswer() {
       if (!this.usesFractionInput) return String(this.userAnswer).trim() !== '';
       const parsed = Fraction.parseAnswer(this.userAnswer);
+      if (this.allowsMixedFraction && String(parsed.whole || '').trim() !== '') return true;
       return String(parsed.numerator || '').trim() !== '' && String(parsed.denominator || '').trim() !== '';
     },
     encouragement() { return Encourage.message(this.$t.bind(this), this.exerciseNumber); },
