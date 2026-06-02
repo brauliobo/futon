@@ -49,6 +49,7 @@ test.describe('UX and accessibility smoke', () => {
 
       await expect(page.locator('[role="group"]').first()).toBeInViewport();
       await expect(page.locator(PAGE_ACTION_SELECTOR)).toBeInViewport();
+      await expect(page.locator(PAGE_ACTION_SELECTOR)).toContainText('10 pendentes');
       await expectNoPageOverflow(page, viewport);
     }
   });

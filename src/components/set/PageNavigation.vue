@@ -26,8 +26,12 @@ export default {
       return this.canGoNext ? `${c} animate-ready-pulse` : c;
     },
     nextLabel() {
-      if (this.isRemaining) return `✏️ ${this.$t('remaining') || 'Falta'} ${this.remaining} →`;
+      if (this.isRemaining) return `✏️ ${this.remainingLabel} →`;
       return this.isLastPage ? `✨ ${this.$t('finish')}` : `${this.$t('next')} →`;
+    },
+    remainingLabel() {
+      const key = this.remaining === 1 ? 'remainingOne' : 'remainingMany';
+      return this.$t(key, { count: this.remaining });
     },
     nextAriaLabel() {
       if (this.isRemaining) return this.$t('jumpToRemaining') || 'Jump to next unanswered question';
