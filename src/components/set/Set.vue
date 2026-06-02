@@ -58,7 +58,7 @@
           HistorySparkline(v-if="set.history?.length" :history="set.history")
           div(class="border-t theme-border pt-4 space-y-3")
             div(class="flex items-center justify-between gap-3 flex-wrap")
-              h4(class="text-sm font-bold text-kid-muted uppercase tracking-wide") {{ $t('reviewAnswers') || 'Review Answers' }}
+              h4(class="text-sm font-bold text-kid-muted uppercase") {{ $t('reviewAnswers') || 'Review Answers' }}
               div(v-if="pageReviewStats.total" class="flex items-center gap-2 text-sm font-bold")
                 span(:class="reviewBadgeClass") ✓ {{ pageReviewStats.correct }} / {{ pageReviewStats.total }}
                 span(v-if="pageReviewStats.bestStreak >= 3" class="rounded-full px-3 py-1 bg-amber-400/15 text-amber-600 dark:text-amber-300 animate-pop-in") 🔥 {{ pageReviewStats.bestStreak }}

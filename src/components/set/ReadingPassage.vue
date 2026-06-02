@@ -3,7 +3,7 @@
     div(class="flex items-center justify-between gap-2")
       div(class="flex items-center gap-2")
         span(class="text-xl" aria-hidden="true") 📖
-        span(class="text-base font-black text-kid-blue uppercase tracking-wide") {{ $t('readCarefully') || 'Read carefully' }}
+        span(class="text-base font-black text-kid-blue uppercase") {{ $t('readCarefully') || 'Read carefully' }}
       button(
         v-if="isLong"
         type="button"
@@ -66,6 +66,6 @@ export default {
   font-size: 0.6em;
   color: var(--kid-muted);
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
 }
 </style>

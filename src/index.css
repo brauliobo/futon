@@ -270,7 +270,7 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .gate-panel-ok    { border-color: color-mix(in srgb, var(--kid-green) 45%, transparent); background: color-mix(in srgb, var(--kid-green) 6%, var(--kid-surface)); }
 .gate-panel-pass  { border-color: var(--amber-border-strong); background: color-mix(in srgb, var(--kid-amber) 7%, var(--kid-surface)); }
 .gate-panel-retry { border-color: color-mix(in srgb, var(--kid-red) 45%, transparent);   background: color-mix(in srgb, var(--kid-red) 6%, var(--kid-surface)); }
-.gate-panel-title { font-size: 0.875rem; font-weight: 800; color: var(--kid-text); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.gate-panel-title { font-size: 0.875rem; font-weight: 800; color: var(--kid-text); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0; }
 .gate-row { display: flex; align-items: baseline; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.95rem; }
 .gate-row-icon  { font-size: 1.1rem; line-height: 1; flex: 0 0 auto; }
 .gate-row-label { flex: 1 1 auto; font-weight: 700; color: var(--kid-text); }
@@ -474,7 +474,7 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .level-card--active { @apply shadow-md; border-color: var(--kid-blue); background: var(--kid-blue-tint-5); box-shadow: 0 0 18px var(--glow-blue); }
 .level-card--locked { @apply cursor-not-allowed shadow-sm; border-color: var(--kid-border); }
 
-.level-card__number { @apply rounded-full px-3 py-1 text-sm font-bold uppercase tracking-wide surface-2 text-kid-muted; }
+.level-card__number { @apply rounded-full px-3 py-1 text-sm font-bold uppercase surface-2 text-kid-muted; }
 .level-card__number--active { @apply bg-kid-blue text-white; background: var(--kid-blue); color: #fff; }
 .level-card__tag { @apply rounded-lg px-2 py-1 text-sm font-black uppercase surface-2 text-kid-muted; }
 .level-card__tag--active { color: var(--kid-blue); background: var(--kid-blue-tint-10); }
@@ -547,7 +547,7 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 
 /* Skill tree node — SkillTreeNode.vue */
 .skill-node { @apply w-full rounded-2xl border-2 p-3 sm:p-4 transition-all duration-200 text-kid-text cursor-pointer; }
-.skill-node__chip { @apply rounded-md px-1.5 py-0.5 text-xs font-black uppercase tracking-wide; background: var(--kid-blue-10); color: var(--kid-blue); }
+.skill-node__chip { @apply rounded-md px-1.5 py-0.5 text-xs font-black uppercase; background: var(--kid-blue-10); color: var(--kid-blue); }
 .skill-node--complete .skill-node__chip { background: var(--kid-green-10); color: var(--kid-green); }
 .skill-node--idle { @apply bg-kid-surface shadow-sm; border-color: var(--kid-border); }
 .skill-node--idle:hover { border-color: var(--kid-blue-40); transform: translateY(-2px); box-shadow: var(--shadow-md-soft); }

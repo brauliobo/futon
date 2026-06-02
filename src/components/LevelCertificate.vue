@@ -13,7 +13,7 @@
         div(class="text-7xl animate-wiggle") 🏆
         h1(class="text-3xl font-black text-kid-text mt-2") {{ $t('levelComplete') }}
         div(class="rounded-2xl bg-gradient-to-b from-kid-gold/15 to-kid-gold/5 border-2 border-kid-gold/40 p-5 space-y-1.5 mt-3 gold-glow")
-          p(class="text-base font-semibold text-kid-muted uppercase tracking-wide") {{ $t('certificateOfMastery') }}
+          p(class="text-base font-semibold text-kid-muted uppercase") {{ $t('certificateOfMastery') }}
           p(class="text-2xl font-black text-kid-text") {{ profileName || $t('learner') }}
           p(class="text-base font-semibold text-kid-muted") {{ $t('hasMastered') }}
           p(class="text-3xl font-black" :style="{ color: subjectColor }") {{ subjectLabel }} — {{ $t('level') }} {{ level }}

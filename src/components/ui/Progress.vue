@@ -61,9 +61,8 @@ export default {
         dark: 'bg-kid-text'
       };
       const heightClass = this.height ? '' : 'h-full';
-      return ['flex items-center justify-center rounded-full text-[10px] font-semibold tracking-wide text-white transition-all duration-500 shadow-sm', palette[this.variant] || palette.primary, heightClass].filter(Boolean).join(' ');
+      return ['flex items-center justify-center rounded-full text-[10px] font-semibold text-white transition-all duration-500 shadow-sm', palette[this.variant] || palette.primary, heightClass].filter(Boolean).join(' ');
     }
   }
 };
 </script>
-

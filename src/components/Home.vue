@@ -28,7 +28,7 @@
     div(data-testid="daily-goal" :class="['daily-goal', { 'daily-goal--complete': goalAchieved }]" :style="{ borderColor: goalAchieved ? 'var(--kid-green)' : 'var(--goal-border)' }")
       div(class="flex items-center gap-2")
         span(class="text-xl") {{ goalAchieved ? '🎉' : '🎯' }}
-        span(class="text-base font-black text-kid-text uppercase tracking-wide") {{ goalAchieved ? ($t('goalComplete') || 'Goal smashed!') : ($t('todayGoal') || 'Today\'s Goal') }}
+        span(class="text-base font-black text-kid-text uppercase") {{ goalAchieved ? ($t('goalComplete') || 'Goal smashed!') : ($t('todayGoal') || 'Today\'s Goal') }}
       div(class="flex items-center gap-1 ml-2")
         span(
           v-for="i in 3"
