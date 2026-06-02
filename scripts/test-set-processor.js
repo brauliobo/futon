@@ -331,6 +331,18 @@ const cases = [
     },
   },
   {
+    name: 'formats meaningful zero-slope terms with a multiplication dot',
+    run:  () => {
+      const set = {
+        subject: 'math',
+        level:   'P',
+        pages:   [{ exercises: [{ type: 'statistics', question: 'ŷ = 5 + 0x; x=100 → ŷ = ?', correctAnswer: '5' }] }],
+      };
+      const ex = SetProcessor.processSet(set).pages[0].exercises[0];
+      return ex.question === 'ŷ = 5 + 0·x; x = 100 → ŷ = ?';
+    },
+  },
+  {
     name: 'simplifies integral coefficient prompts without changing exponent drills',
     run:  () => {
       const set = {
