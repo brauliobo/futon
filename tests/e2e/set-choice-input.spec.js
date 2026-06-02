@@ -260,6 +260,29 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(question.locator('.math-fraction__denominator')).toContainText(['4', '4']);
   });
 
+  test('fraction clear control uses a touch-sized target', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'fraction_add',
+        question:      '1/4 + 2/4 =',
+        correctAnswer: '3/4',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    await page.locator('.fraction-answer__number').first().fill('3');
+    const clearButton = page.getByRole('button', { name: /Limpar|Clear/ });
+    await expect(clearButton).toBeVisible();
+
+    const box = await clearButton.boundingBox();
+    expect(box?.width).toBeGreaterThanOrEqual(24);
+    expect(box?.height).toBeGreaterThanOrEqual(24);
+  });
+
   test('dense plus lists are split into structured lesson text', async ({ page }) => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {
