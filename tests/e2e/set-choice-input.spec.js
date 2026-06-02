@@ -243,6 +243,7 @@ test.describe('Set Exercise Flow - Choice Input', () => {
   test('digit key 1 selects first choice when group is focused', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (!answers.length || !answers[0].hasChoices) return;
+    await expect(page.getByText(/tecle 1|press 1/i)).toHaveCount(0);
     const firstChoice = await page.locator('[role="radio"]').first().textContent();
     await page.locator('[role="radio"]').first().focus();
     await page.keyboard.press('1');

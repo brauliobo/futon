@@ -17,7 +17,6 @@
         )
           span(:class="['choice-badge', { 'choice-badge--pill': isPillMode }]" aria-hidden="true") {{ idx + 1 }}
           StructuredText(:value="choice")
-      p(v-if="showShortcutHint" class="mt-2 text-sm font-bold text-kid-muted text-center animate-slide-up") ⌨ {{ $t('hintShortcut') || 'Tip: press 1–9 to pick fast' }}
 
     div(v-if="isReadOnly")
       div(:class="reviewListClass" role="list")
@@ -53,17 +52,7 @@ export default {
     isSubmitted: { type: Boolean, required: true },
     isReadOnly: { type: Boolean, default: false },
   },
-  data() { return { showShortcutHint: false }; },
-  mounted() {
-    window.addEventListener('keydown', this.onKeydown);
-    if (this.exerciseNumber === 1 && !this.isReadOnly && !('ontouchstart' in window)) {
-      const seen = Number(localStorage.getItem('futon-hint-shortcut-seen') || 0);
-      if (seen < 5) {
-        this.showShortcutHint = true;
-        localStorage.setItem('futon-hint-shortcut-seen', String(seen + 1));
-      }
-    }
-  },
+  mounted() { window.addEventListener('keydown', this.onKeydown); },
   beforeUnmount() { window.removeEventListener('keydown', this.onKeydown); },
   computed: {
     // Deterministic per-question shuffle: same question → same layout on
