@@ -1,7 +1,7 @@
 export class Fraction {
   static ANSWER_FRACTION_PATTERN_SOURCE = String.raw`(?<![\p{L}√\d])(-?\d+)\s+(\d+)\/(\d+)|(?<![\p{L}√\d])(-?\d+)\/(\d+)(?![\p{L}\d])`;
   static DISPLAY_TERM_PATTERN_SOURCE = String.raw`-?(?:\d+|√\d+|(?:sen|cos|tan|tg)(?:\([^()/]+\)|\s*(?!e\b)[a-zA-Z])?|[a-zA-Z]{1,4}|\([^()/]+\)|\[[^\]/]+\])`;
-  static DISPLAY_FRACTION_PATTERN_SOURCE = String.raw`(-?\d+)\s+(\d+)\/(\d+)|(${Fraction.DISPLAY_TERM_PATTERN_SOURCE})\/(${Fraction.DISPLAY_TERM_PATTERN_SOURCE})`;
+  static DISPLAY_FRACTION_PATTERN_SOURCE = String.raw`\((-?\d+)\/(\d+)\)|(-?\d+)\s+(\d+)\/(\d+)|(${Fraction.DISPLAY_TERM_PATTERN_SOURCE})\/(${Fraction.DISPLAY_TERM_PATTERN_SOURCE})`;
 
   static answerFractionPattern() {
     return new RegExp(this.ANSWER_FRACTION_PATTERN_SOURCE, 'gu');
@@ -22,18 +22,25 @@ export class Fraction {
 
       if (match[1] !== undefined) {
         parts.push({
+          type:        'fraction',
+          value:       match[0],
+          numerator:   match[1],
+          denominator: match[2],
+        });
+      } else if (match[3] !== undefined) {
+        parts.push({
           type:        'mixed',
           value:       match[0],
-          whole:       match[1],
-          numerator:   match[2],
-          denominator: match[3],
+          whole:       match[3],
+          numerator:   match[4],
+          denominator: match[5],
         });
       } else {
         parts.push({
           type:        'fraction',
           value:       match[0],
-          numerator:   match[4],
-          denominator: match[5],
+          numerator:   match[6],
+          denominator: match[7],
         });
       }
 

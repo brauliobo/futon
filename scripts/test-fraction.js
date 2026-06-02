@@ -23,6 +23,20 @@ const cases = [
     },
   },
   {
+    name: 'parts formats parenthesized numeric coefficients as stacked fractions',
+    run:  () => {
+      const parts     = Fraction.parts('(1/2)x^2 + C');
+      const fractions = parts.filter(part => part.type === 'fraction');
+      const text      = parts.filter(part => part.type === 'text').map(part => part.value).join('');
+
+      return fractions.length === 1
+        && fractions[0].value === '(1/2)'
+        && fractions[0].numerator === '1'
+        && fractions[0].denominator === '2'
+        && text === 'x^2 + C';
+    },
+  },
+  {
     name: 'parts formats variable denominator proportions for display',
     run:  () => {
       const fractions = Fraction.parts('5/10 = 2/x')
