@@ -9,7 +9,8 @@
       :disabled="disabled"
       placeholder="?"
       class="fraction-answer__whole"
-      :aria-label="`${ariaLabel} inteiro`"
+      :aria-label="wholeAriaLabel"
+      :title="wholeAriaLabel"
       autocomplete="off"
       autocorrect="off"
       spellcheck="false"
@@ -28,7 +29,8 @@
         :disabled="disabled"
         placeholder="?"
         class="fraction-answer__number"
-        :aria-label="`${ariaLabel} numerador`"
+        :aria-label="numeratorAriaLabel"
+        :title="numeratorAriaLabel"
         autocomplete="off"
         autocorrect="off"
         spellcheck="false"
@@ -47,7 +49,8 @@
         :disabled="disabled"
         placeholder="?"
         class="fraction-answer__number"
-        :aria-label="`${ariaLabel} denominador`"
+        :aria-label="denominatorAriaLabel"
+        :title="denominatorAriaLabel"
         autocomplete="off"
         autocorrect="off"
         spellcheck="false"
@@ -79,6 +82,9 @@ export default {
     allowMixed: { type: Boolean, default: false },
     ariaLabel:  { type: String, default: 'Resposta' },
     clearLabel: { type: String, default: 'Clear' },
+    wholeLabel:       { type: String, default: 'Whole' },
+    numeratorLabel:   { type: String, default: 'Numerator' },
+    denominatorLabel: { type: String, default: 'Denominator' },
   },
   data() {
     const parsed = Fraction.parseAnswer(this.modelValue);
@@ -93,6 +99,9 @@ export default {
     hasAnswer() {
       return [this.whole, this.numerator, this.denominator].some(v => String(v || '').trim() !== '');
     },
+    wholeAriaLabel() { return this.partAriaLabel(this.wholeLabel); },
+    numeratorAriaLabel() { return this.partAriaLabel(this.numeratorLabel); },
+    denominatorAriaLabel() { return this.partAriaLabel(this.denominatorLabel); },
   },
   watch: {
     modelValue(newValue) {
@@ -105,6 +114,9 @@ export default {
     },
   },
   methods: {
+    partAriaLabel(label) {
+      return `${this.ariaLabel}: ${label}`;
+    },
     emitAnswer() {
       this.$emit('update:modelValue', Fraction.answerFromParts({
         whole:       this.allowMixed ? this.whole : '',
