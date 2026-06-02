@@ -312,6 +312,11 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .page-back-enter-from { transform: rotateY(-65deg) translateX(-4%); opacity: 0; transform-origin: right center; }
 
 /* Screen-level nav transitions (Home ↔ Set) — slide + fade */
+.screen-stage { overflow-x: clip; }
+@supports not (overflow-x: clip) {
+  .screen-stage { overflow-x: hidden; }
+}
+
 .nav-forward-enter-active, .nav-forward-leave-active,
 .nav-back-enter-active, .nav-back-leave-active {
   transition: transform 260ms cubic-bezier(.4,.0,.2,1), opacity 180ms ease-out;

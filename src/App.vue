@@ -21,11 +21,11 @@
               span(class="text-lg") {{ activeProfile.avatar }}
               span(class="hidden sm:inline") {{ activeProfile.name }}
       main.flex-1.w-full
-        div(class="mx-auto w-full max-w-[1920px] px-3 pt-4 pb-6 sm:px-4 sm:pt-8")
+        div(class="screen-stage mx-auto w-full max-w-[1920px] px-3 pt-4 pb-6 sm:px-4 sm:pt-8")
           div(v-if="isLoading" class="flex flex-col items-center justify-center gap-4 py-20")
             Spinner(size="lg" class="text-kid-blue")
             p(class="text-base font-semibold text-kid-muted") {{ $t('loading') || 'Loading...' }}
-          transition(v-else :name="selectedSet ? 'nav-forward' : 'nav-back'" mode="out-in")
+          transition(v-else :name="selectedSet ? 'nav-forward' : 'nav-back'" mode="out-in" :duration="{ enter: 300, leave: 300 }")
             Home(v-if="!selectedSet" key="home" :sets="sets" :lastSelected="lastSelected" :selectedLevelBySubject="selectedLevelBySubject" :disciplineManager="disciplineManager" :isLoadingLevel="isLoadingLevel" :streak="streak" :today-sets="todaySets" :today-duration="todayDuration" @select-set="selectSet" @level-selected="onLevelSelected" class="space-y-4 sm:space-y-6")
             div(v-else key="set")
               Set(:set="selectedSet" :initialPageIndex="initialPageIndex" :has-next-set="!!nextSet" :profile-id="activeProfile && activeProfile.id || 'default'" @update-set="updateSet" @page-changed="handlePageChange" @next-set="goToNextSet" @go-home="goHome")
@@ -384,4 +384,3 @@ export default {
   }
 };
 </script>
-

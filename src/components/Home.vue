@@ -21,9 +21,9 @@
               span {{ primarySetProgress.percent }}%
             div(class="h-3 overflow-hidden rounded-full theme-track")
               div(class="h-full rounded-full bg-kid-blue transition-all duration-500" :style="{ width: primarySetProgress.percent + '%' }")
-          button(@click="startPrimarySet" class="flex min-h-[64px] w-full items-center justify-center gap-3 rounded-3xl bg-kid-blue px-5 py-4 text-xl font-black text-white shadow-lg transition-all hover:bg-kid-blue/90 hover:shadow-xl active:scale-95")
-            span {{ primarySetButtonIcon }}
-            span {{ primarySetButtonText }}
+          button(@click="startPrimarySet" class="flex min-h-[64px] w-full flex-wrap items-center justify-center gap-2 rounded-3xl bg-kid-blue px-4 py-4 text-base font-black text-white shadow-lg transition-all hover:bg-kid-blue/90 hover:shadow-xl active:scale-95 sm:gap-3 sm:px-5 sm:text-xl")
+            span(class="shrink-0") {{ primarySetButtonIcon }}
+            span(class="min-w-0 text-center leading-tight") {{ primarySetButtonText }}
 
     div(data-testid="daily-goal" :class="['daily-goal', { 'daily-goal--complete': goalAchieved }]" :style="{ borderColor: goalAchieved ? 'var(--kid-green)' : 'var(--goal-border)' }")
       div(class="flex items-center gap-2")

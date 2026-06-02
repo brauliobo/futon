@@ -8,7 +8,7 @@
         p(class="page-complete-label") {{ $t('pageComplete') || 'Page complete!' }}
     div(class="rounded-3xl border theme-border bg-kid-surface shadow-sm")
       div(class="px-3 py-4 sm:px-5 sm:py-5")
-        div(v-if="currentPage && !isSubmitted" class="space-y-3 sm:space-y-4")
+        div(v-if="currentPage && !isSubmitted" class="space-y-3 pb-20 sm:space-y-4 sm:pb-0")
           PageHeader(
             :page-number="currentPage.pageNumber || (currentPageIndex + 1)"
             :total-pages="totalPages || 1"
@@ -18,7 +18,7 @@
             :exercises-on-page="currentPage.exercises?.length || 0"
             :pace="livePace"
           )
-          div(class="space-y-3 page-turn-stage")
+          div(class="space-y-3 page-turn-stage overflow-x-hidden")
             ExampleAlert(v-if="set.example && currentPageIndex === 0" :example="set.example")
             transition(:name="pageDir" mode="out-in")
               PageComponent(
@@ -28,16 +28,16 @@
                 @update-page-status="handlePageStatus"
                 ref="pageRef"
               )
-            div(class="sticky bottom-0 z-10 -mx-3 px-3 py-3 sm:static sm:mx-0 sm:px-0 sm:py-0 nav-sticky")
-              PageNavigation(
-                :can-go-prev="currentPageIndex > 0"
-                :can-go-next="canGoNextPage"
-                :is-last-page="isLastPage"
-                :remaining="Math.max(0, (currentPage.exercises?.length || 0) - answeredCount)"
-                @prev="prevPage"
-                @next="nextPage"
-                @focus-remaining="focusRemaining"
-              )
+          div(class="fixed bottom-0 left-0 right-0 z-30 px-3 py-3 sm:static sm:px-0 sm:py-0 nav-sticky")
+            PageNavigation(
+              :can-go-prev="currentPageIndex > 0"
+              :can-go-next="canGoNextPage"
+              :is-last-page="isLastPage"
+              :remaining="Math.max(0, (currentPage.exercises?.length || 0) - answeredCount)"
+              @prev="prevPage"
+              @next="nextPage"
+              @focus-remaining="focusRemaining"
+            )
 
         div(v-if="isSubmitted" class="space-y-5")
           ResultsCelebration(
