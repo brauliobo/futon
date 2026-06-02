@@ -294,6 +294,7 @@ export class SetProcessor {
         if (ex.type === 'sequence') ex.question = this.normalizeSequencePrompt(ex.question);
         ex.question = this.normalizeMathOperatorSpacing(ex.question);
         ex.question = this.normalizeAlgebraPrompt(ex.question);
+        ex.question = this.normalizeIntegralPrompt(ex.question);
         if (this.isBareMathExpressionPrompt(ex.question)) ex.question = `${String(ex.question).trim()} =`;
       });
     });
@@ -329,6 +330,21 @@ export class SetProcessor {
       .replace(/\(x\s-\s0\)/g, 'x')
       .replace(/\(x\s\+\s0\)/g, 'x')
       .replace(/\s[+-]\s0(?=\s*(=|<|>|$))/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  static normalizeIntegralPrompt(question) {
+    const text = String(question || '').trim();
+    if (!text.startsWith('∫')) return text;
+
+    return text
+      .replace(/\bx\^1\b/g, 'x')
+      .replace(/\b1x\^1\b/g, 'x')
+      .replace(/\b(\d+)x\^1\b/g, '$1x')
+      .replace(/\bx\^0\b/g, '1')
+      .replace(/\b1x\^0\b/g, '1')
+      .replace(/\b(\d+)x\^0\b/g, '$1')
       .replace(/\s+/g, ' ')
       .trim();
   }

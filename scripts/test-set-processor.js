@@ -318,6 +318,26 @@ const cases = [
         && !choice.includes('emerging next-bio-recycling');
     },
   },
+  {
+    name: 'simplifies integral coefficient prompts without changing exponent drills',
+    run:  () => {
+      const set = {
+        subject: 'math',
+        level:   'O',
+        pages:   [{
+          exercises: [
+            { type: 'calculus', question: '∫ 1x^1 dx = ?', correctAnswer: '(1/2)x^2 + C' },
+            { type: 'calculus', question: '∫ 2x^0 dx = ?', correctAnswer: '2x + C' },
+            { type: 'power', question: 'x^1 = 4', correctAnswer: '4' },
+          ],
+        }],
+      };
+      const questions = SetProcessor.processSet(set).pages[0].exercises.map(ex => ex.question);
+      return questions[0] === '∫ x dx = ?'
+        && questions[1] === '∫ 2 dx = ?'
+        && questions[2] === 'x^1 = 4';
+    },
+  },
 ];
 
 let passed = 0;
