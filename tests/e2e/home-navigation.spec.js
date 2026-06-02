@@ -25,6 +25,11 @@ test.describe('Home Navigation', () => {
     await expect(page.getByRole('button', { name: /▶|Começar|↺|Reiniciar/ }).first()).toBeVisible();
   });
 
+  test('carousel arrows expose localized labels', async ({ page }) => {
+    await expect(page.locator('.carousel-arrow--left').first()).toHaveAttribute('aria-label', /Itens anteriores|Previous items/);
+    await expect(page.locator('.carousel-arrow--right').first()).toHaveAttribute('aria-label', /Próximos itens|Next items/);
+  });
+
   test('daily goal widget visible with counter', async ({ page }) => {
     const goal = page.locator('[data-testid="daily-goal"]');
     await expect(goal).toBeVisible();

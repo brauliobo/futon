@@ -2,7 +2,7 @@
   div(class="carousel carousel--flex")
     div(v-show="showLeftArrow" class="carousel-fade carousel-fade--left")
     div(v-show="showRightArrow" class="carousel-fade carousel-fade--right")
-    button(class="carousel-arrow carousel-arrow--left" @click="scrollLeft" :disabled="!canScrollLeft" v-show="showLeftArrow") ‹
+    button(class="carousel-arrow carousel-arrow--left" @click="scrollLeft" :disabled="!canScrollLeft" v-show="showLeftArrow" :aria-label="$t('previousCarousel') || 'Previous items'") ‹
     div(ref="scroller" class="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 sm:px-12 py-1 scrollbar-hide")
       div(
         v-for="(lvl, idx) in sequence"
@@ -20,7 +20,7 @@
           Progress(:value="progressPercent(lvl)" height="6px" variant="success")
         div(v-if="!availableSet.has(lvl)" class="absolute inset-0 flex items-center justify-center rounded-2xl overlay-bg backdrop-blur-[1px]")
           span(class="text-2xl") 🔒
-    button(class="carousel-arrow carousel-arrow--right" @click="scrollRight" :disabled="!canScrollRight" v-show="showRightArrow") ›
+    button(class="carousel-arrow carousel-arrow--right" @click="scrollRight" :disabled="!canScrollRight" v-show="showRightArrow" :aria-label="$t('nextCarousel') || 'Next items'") ›
 </template>
 
 <script>

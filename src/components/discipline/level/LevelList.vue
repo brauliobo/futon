@@ -2,7 +2,7 @@
   div(class="carousel")
     div(v-show="showLeftArrow" class="carousel-fade carousel-fade--left")
     div(v-show="showRightArrow" class="carousel-fade carousel-fade--right")
-    button(class="carousel-arrow carousel-arrow--left" @click="scrollBy(-1)" :disabled="!canScrollLeft" v-show="showLeftArrow") ‹
+    button(class="carousel-arrow carousel-arrow--left" @click="scrollBy(-1)" :disabled="!canScrollLeft" v-show="showLeftArrow" :aria-label="$t('previousCarousel') || 'Previous items'") ‹
     div(ref="scroller" class="carousel-scroller" @scroll.passive="onScroll")
       div(
         v-for="(set, index) in sets"
@@ -17,7 +17,7 @@
               span(class="text-3xl animate-bounce-in") 🔒
             span(class="set-lock-hint") {{ $t('unlockHint') || 'Keep going to unlock!' }}
         SetCard(v-else :set="set" :is-active="slugOf(set) === activeSlug" @start="$emit('start', $event)")
-    button(class="carousel-arrow carousel-arrow--right" @click="scrollBy(1)" :disabled="!canScrollRight" v-show="showRightArrow") ›
+    button(class="carousel-arrow carousel-arrow--right" @click="scrollBy(1)" :disabled="!canScrollRight" v-show="showRightArrow" :aria-label="$t('nextCarousel') || 'Next items'") ›
 </template>
 
 <script>
