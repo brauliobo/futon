@@ -79,7 +79,7 @@ export default {
     encouragement() { return Encourage.message(this.$t.bind(this), this.exerciseNumber); },
     isPillMode() { return this.shuffledChoices.every(c => String(c).length <= 3); },
     isReadingChoiceMode() {
-      return this.shuffledChoices.every(c => /^[A-ZÁÉÍÓÚÂÊÔÃÕÇ]{1,10}$/u.test(String(c).trim()));
+      return this.shuffledChoices.every(c => /^\p{L}{1,10}$/u.test(String(c).trim()));
     },
     isLongChoiceMode() { return this.shuffledChoices.some(c => String(c).length > 160); },
     gridClass() {

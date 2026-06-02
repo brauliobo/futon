@@ -69,6 +69,19 @@ test.describe('Set Exercise Flow - Choice Input', () => {
 
     expect(style.fontSize).toBeGreaterThanOrEqual(18);
     expect(style.minWidth).toBeGreaterThanOrEqual(72);
+
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      'FOGO começa com F? (sim/não)',
+        choices:       ['sim', 'não'],
+        correctAnswer: 'sim',
+      }];
+      vm.resetKey += 1;
+    });
+
+    await expect(page.getByRole('radio').first()).toHaveClass(/choice-btn--reading/);
   });
 
   test('clicking choice advances', async ({ page }) => {
