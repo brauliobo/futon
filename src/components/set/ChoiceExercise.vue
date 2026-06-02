@@ -78,6 +78,9 @@ export default {
     },
     encouragement() { return Encourage.message(this.$t.bind(this), this.exerciseNumber); },
     isPillMode() { return this.shuffledChoices.every(c => String(c).length <= 3); },
+    isReadingChoiceMode() {
+      return this.shuffledChoices.every(c => /^[A-ZÁÉÍÓÚÂÊÔÃÕÇ]{1,10}$/u.test(String(c).trim()));
+    },
     isLongChoiceMode() { return this.shuffledChoices.some(c => String(c).length > 160); },
     gridClass() {
       if (this.isPillMode) return 'flex flex-wrap gap-2';
@@ -124,8 +127,9 @@ export default {
     choiceClass(choice) {
       const variant = this.selected === choice ? 'choice-btn--selected' : 'choice-btn--idle';
       const shape   = this.isPillMode ? 'choice-btn--pill' : '';
+      const reading = this.isReadingChoiceMode ? 'choice-btn--reading' : '';
       const density = this.isLongChoiceMode ? 'choice-btn--long' : '';
-      return `choice-btn ${variant} ${shape} ${density}`.trim();
+      return `choice-btn ${variant} ${shape} ${reading} ${density}`.trim();
     },
     choiceStatus(choice) {
       const norm = Formatter.normalizeAnswer;
@@ -136,8 +140,9 @@ export default {
     },
     reviewClass(status) {
       const shape   = this.isPillMode ? 'review-choice--pill' : '';
+      const reading = this.isReadingChoiceMode ? 'review-choice--reading' : '';
       const density = this.isLongChoiceMode ? 'review-choice--long' : '';
-      return `review-choice review-choice--${status} ${shape} ${density}`.trim();
+      return `review-choice review-choice--${status} ${shape} ${reading} ${density}`.trim();
     },
     reviewIcon(status) { return REVIEW_ICONS[status] || ''; },
   },

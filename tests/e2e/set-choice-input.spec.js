@@ -26,6 +26,36 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(page.getByRole('radio', { name: answers[0].answer, exact: true })).toBeVisible();
   });
 
+  test('early-reading choices use larger pill buttons', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      'CASA começa com: (CA/CO/CU)',
+        choices:       ['CA', 'CO', 'CU'],
+        correctAnswer: 'CA',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const firstChoice = page.getByRole('radio').first();
+    await expect(firstChoice).toHaveClass(/choice-btn--reading/);
+
+    const style = await firstChoice.evaluate(el => {
+      const computed = getComputedStyle(el);
+      return {
+        fontSize: parseFloat(computed.fontSize),
+        minWidth: parseFloat(computed.minWidth),
+      };
+    });
+
+    expect(style.fontSize).toBeGreaterThanOrEqual(18);
+    expect(style.minWidth).toBeGreaterThanOrEqual(72);
+  });
+
   test('clicking choice advances', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (!answers.length || !answers[0].hasChoices) return;
