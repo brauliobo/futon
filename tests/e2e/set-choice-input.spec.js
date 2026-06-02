@@ -60,6 +60,7 @@ test.describe('Set Exercise Flow - Choice Input', () => {
 
     const firstChoice = page.getByRole('radio').first();
     await expect(firstChoice).toHaveClass(/choice-btn--reading/);
+    await expect(page.locator('[role="radiogroup"]').first()).toHaveClass(/justify-center/);
 
     const style = await firstChoice.evaluate(el => {
       const computed = getComputedStyle(el);

@@ -72,7 +72,7 @@ export default {
     },
     isLongChoiceMode() { return this.shuffledChoices.some(c => String(c).length > 160); },
     gridClass() {
-      if (this.isPillMode) return 'flex flex-wrap gap-2';
+      if (this.isPillMode) return 'flex flex-wrap justify-center gap-2';
       if (this.isLongChoiceMode) return 'grid gap-2 grid-cols-1';
       return this.shuffledChoices.length > 3 ? 'grid gap-3 grid-cols-2' : 'grid gap-3 grid-cols-1';
     },
