@@ -19,6 +19,19 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     }
   });
 
+  test('examples normalize solved math prompts', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.example = 'Resolva a conta. Ex.: 9 × 4 = → 36.';
+      vm.resetKey += 1;
+    });
+
+    const example = page.getByTestId('example-alert').first();
+    await expect(example).toContainText('9 × 4 = 36');
+    await expect(example).not.toContainText('= →');
+  });
+
   test('choice buttons rendered', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (!answers.length || !answers[0].hasChoices) return;
