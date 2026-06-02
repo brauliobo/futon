@@ -312,12 +312,17 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     const clearButton = page.getByRole('button', { name: /Limpar|Clear/ });
     await expect(clearButton).toBeVisible();
     await expect(clearButton).toHaveAttribute('title', /Limpar|Clear/);
+    await expect(clearButton).toHaveClass(/w-7/);
 
     const clearButtonIsAnchored = await clearButton.evaluate((button) => {
       const parent = button.parentElement;
       return parent?.classList.contains('relative') && parent.querySelector('input');
     });
     expect(clearButtonIsAnchored).toBeTruthy();
+
+    const box = await clearButton.boundingBox();
+    expect(box?.width).toBeGreaterThanOrEqual(27.5);
+    expect(box?.height).toBeGreaterThanOrEqual(27.5);
   });
 
   test('numeric clear control uses a touch-sized target', async ({ page }) => {
