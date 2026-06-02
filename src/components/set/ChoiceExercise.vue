@@ -42,7 +42,7 @@ import QuestionHeader from './QuestionHeader.vue';
 import HintCard from './HintCard.vue';
 import StructuredText from './StructuredText.vue';
 
-const REVIEW_ICONS = { win: '✓', answer: '✓', miss: '✗' };
+const REVIEW_ICONS = { win: '✓', answer: '✓', miss: '!' };
 export default {
   name: 'ChoiceExercise',
   components: { QuestionHeader, HintCard, StructuredText },

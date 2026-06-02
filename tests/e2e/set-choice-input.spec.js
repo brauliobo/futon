@@ -343,6 +343,10 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(hint).toContainText(/Sua resposta|Your answer/);
     await expect(hint).toContainText('errada');
     await expect(hint).toContainText(/Correta|Correct/);
+
+    const missedChoice = page.locator('.review-choice--miss').first();
+    await expect(missedChoice).toBeVisible();
+    await expect(missedChoice).toHaveCSS('text-decoration-line', 'none');
   });
 
   test('long choices use compact single-column cards', async ({ page }) => {
