@@ -107,6 +107,23 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     const box = await blank.boundingBox();
     expect(box?.width).toBeGreaterThanOrEqual(40);
     expect(box?.height).toBeGreaterThanOrEqual(10);
+
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      '_OCA é',
+        choices:       ['BOCA', 'DADO'],
+        correctAnswer: 'BOCA',
+      }];
+      vm.resetKey += 1;
+    });
+
+    const letterBlank = page.locator('.structured-text__blank--letter').first();
+    await expect(letterBlank).toBeVisible();
+
+    const letterBox = await letterBlank.boundingBox();
+    expect(letterBox?.width).toBeLessThan(30);
   });
 
   test('clicking choice advances', async ({ page }) => {
