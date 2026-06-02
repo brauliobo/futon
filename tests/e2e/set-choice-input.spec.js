@@ -343,6 +343,7 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(hint).toContainText(/Sua resposta|Your answer/);
     await expect(hint).toContainText('errada');
     await expect(hint).toContainText(/Correta|Correct/);
+    await expect(hint.locator('.hint-card__user-value')).toHaveCSS('text-decoration-line', 'none');
 
     const missedChoice = page.locator('.review-choice--miss').first();
     await expect(missedChoice).toBeVisible();
