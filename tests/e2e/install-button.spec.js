@@ -16,4 +16,16 @@ test.describe('Install Button', () => {
     await expect(page.getByText('Baixando lições…')).toBeHidden({ timeout: 120000 });
     await expect(page.getByRole('button', { name: /Instalar/i })).toBeVisible();
   });
+
+  test('iOS install hint has localized close control', async ({ page }) => {
+    await gotoHomeWithProfile(page);
+    const btn = page.getByRole('button', { name: /Instalar/i });
+    await btn.evaluate((button) => {
+      let component = button.__vueParentComponent;
+      while (component && component.type?.name !== 'InstallButton') component = component.parent;
+      component.proxy.showIOSHint = true;
+    });
+
+    await expect(page.getByRole('button', { name: /Fechar|Close/ })).toBeVisible();
+  });
 });

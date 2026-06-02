@@ -12,7 +12,7 @@
       span(class="hidden sm:inline whitespace-nowrap") {{ $t('downloadingLessons') }}
     div(v-if="showIOSHint" @click.self="showIOSHint = false" class="fixed inset-0 z-40 flex items-end sm:items-center justify-center bg-black/40 p-4")
       div(class="relative w-full max-w-sm rounded-3xl border-2 theme-border bg-kid-surface p-5 shadow-xl")
-        button(@click="showIOSHint = false" class="absolute right-3 top-2 text-2xl text-kid-muted hover:text-kid-text" aria-label="close") ×
+        button(@click="showIOSHint = false" class="absolute right-3 top-2 text-2xl text-kid-muted hover:text-kid-text" :aria-label="$t('close') || 'Close'") ×
         h3(class="mb-2 text-lg font-black text-kid-text") {{ $t('iosInstallTitle') }}
         ol(class="space-y-2 text-sm text-kid-text")
           li
