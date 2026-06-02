@@ -93,6 +93,29 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(passage).toContainText('A violência escolar tem aumentado');
   });
 
+  test('medium portuguese model-text passages can collapse', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].description = [
+        'Redação modelo — leia e responda:',
+        '"A violência escolar tem aumentado nos últimos anos. Isso ocorre, em parte, porque as escolas carecem de infraestrutura adequada e os estudantes enfrentam pressão social intensa. Além disso, a falta de atividades extracurriculares deixa os jovens sem alternativas. Portanto, investir em educação integral é fundamental para reduzir esse fenômeno."',
+      ].join('\n');
+      vm.set.pages[0].exercises = [{
+        type:          'paragraph',
+        question:      'Qual é a tese desta redação? (violência escolar aumentou/investir em educação integral reduz a violência escolar)',
+        correctAnswer: 'investir em educação integral reduz a violência escolar',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const passage = page.locator('[data-testid="reading-passage"]');
+    await expect(passage.getByRole('button', { name: /Mostrar texto|Show text/ })).toBeVisible();
+    await expect(passage.locator('.passage-text--collapsed')).toBeVisible();
+  });
+
   test('portuguese story descriptions render for paragraph questions', async ({ page }) => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {

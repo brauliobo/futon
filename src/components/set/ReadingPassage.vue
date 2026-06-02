@@ -18,6 +18,8 @@
 </template>
 
 <script>
+const COLLAPSIBLE_PASSAGE_LENGTH = 360;
+
 export default {
   name: 'ReadingPassage',
   props: { passage: { type: String, required: true } },
@@ -25,7 +27,7 @@ export default {
     return { expanded: false };
   },
   computed: {
-    isLong() { return String(this.passage || '').length > 900; },
+    isLong() { return String(this.passage || '').length > COLLAPSIBLE_PASSAGE_LENGTH; },
     rendered() {
       const escape = (s) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
       return escape(this.passage).replace(/\{([^|{}]+)\|([^{}]+)\}/g, '<ruby>$1<rt>$2</rt></ruby>');
