@@ -25,6 +25,14 @@ test.describe('Home Navigation', () => {
     await expect(page.getByRole('button', { name: /▶|Começar|↺|Reiniciar/ }).first()).toBeVisible();
   });
 
+  test('set cards expose action labels', async ({ page }) => {
+    const firstLevel = page.locator('[data-level-card]').first();
+    await firstLevel.click();
+    await waitForLoading(page);
+    await expect(page.locator('.set-card').first()).toHaveAttribute('aria-label', /Começar|Start|Continuar|Continue|Reiniciar|Restart/);
+    await expect(page.locator('.set-card-btn').first()).toHaveAttribute('aria-label', /Começar|Start|Continuar|Continue|Reiniciar|Restart/);
+  });
+
   test('carousel arrows expose localized labels', async ({ page }) => {
     await expect(page.locator('.carousel-arrow--left').first()).toHaveAttribute('aria-label', /Itens anteriores|Previous items/);
     await expect(page.locator('.carousel-arrow--right').first()).toHaveAttribute('aria-label', /Próximos itens|Next items/);

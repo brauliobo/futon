@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(:class="['set-card', `set-card--${cardVariant}`, { 'set-card--active': isActive }]" role="button" tabindex="0" @click="onStart" @keydown.enter.prevent="onStart" @keydown.space.prevent="onStart")
+  div(:class="['set-card', `set-card--${cardVariant}`, { 'set-card--active': isActive }]" role="button" tabindex="0" :aria-label="actionLabel" @click="onStart" @keydown.enter.prevent="onStart" @keydown.space.prevent="onStart")
     div(class="flex items-start justify-between gap-3")
       div(class="flex items-center gap-2")
         span(v-if="statusBadge" :class="statusBadge.class" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-sm font-black shadow-sm") {{ statusBadge.icon }}
@@ -28,7 +28,7 @@
         span {{ totalPages }} {{ $t('pages') || 'pages' }}
 
     div(class="mt-auto pt-4")
-      button(@click.stop.prevent="onStart" :class="['set-card-btn', set.status === 'mastery' ? 'set-card-btn--mastery' : 'set-card-btn--primary']")
+      button(@click.stop.prevent="onStart" :class="['set-card-btn', set.status === 'mastery' ? 'set-card-btn--mastery' : 'set-card-btn--primary']" :aria-label="actionLabel")
         span {{ buttonIcon }}
         span {{ buttonText }}
 </template>
@@ -78,6 +78,7 @@ export default {
       return this.$t('start') || 'Start';
     },
     buttonIcon() { return this.set.attempts > 0 && !this.hasProgress ? '↺' : '▶'; },
+    actionLabel() { return `${this.buttonText}: ${this.set.title}`; },
   },
   methods: {
     onStart() { this.$emit('start', this.set); },
