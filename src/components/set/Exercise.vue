@@ -56,6 +56,7 @@
           type="button"
           class="absolute -right-2 -top-2 w-7 h-7 rounded-full bg-kid-muted/40 hover:bg-kid-red text-white text-xs font-black flex items-center justify-center transition-colors shadow-md"
           :aria-label="$t('clear') || 'Clear'"
+          :title="$t('clear') || 'Clear'"
         ) ×
     template(v-else)
       QuestionHeader(:number="exerciseNumber" :question="exercise.question" :answered="hasAnswer && !isReadOnly")
@@ -87,6 +88,7 @@
             type="button"
             class="absolute -right-2 -top-2 w-6 h-6 rounded-full bg-kid-muted/30 hover:bg-kid-red text-white text-xs font-black flex items-center justify-center transition-colors shadow-md"
             :aria-label="$t('clear') || 'Clear'"
+            :title="$t('clear') || 'Clear'"
           ) ×
 
     div(v-if="isReadOnly" class="mt-3 review-stagger")

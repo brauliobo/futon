@@ -63,6 +63,7 @@
       type="button"
       class="fraction-answer__clear"
       :aria-label="clearLabel"
+      :title="clearLabel"
     ) ×
 </template>
 

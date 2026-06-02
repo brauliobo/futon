@@ -182,9 +182,11 @@ test.describe('Set Exercise Flow - Choice Input', () => {
 
     const input = page.getByRole('textbox', { name: 'Complete a resposta' });
     await input.fill('aposto');
-    await expect(page.getByRole('button', { name: /Limpar|Clear/ })).toBeVisible();
+    const clearButton = page.getByRole('button', { name: /Limpar|Clear/ });
+    await expect(clearButton).toBeVisible();
+    await expect(clearButton).toHaveAttribute('title', /Limpar|Clear/);
 
-    const clearButtonIsAnchored = await page.getByRole('button', { name: /Limpar|Clear/ }).evaluate((button) => {
+    const clearButtonIsAnchored = await clearButton.evaluate((button) => {
       const parent = button.parentElement;
       return parent?.classList.contains('relative') && parent.querySelector('input');
     });
