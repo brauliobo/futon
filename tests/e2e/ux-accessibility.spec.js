@@ -47,6 +47,7 @@ test.describe('UX and accessibility smoke', () => {
       await page.getByRole('button', { name: /▶|Começar/ }).first().click();
       await page.waitForSelector(PAGE_ACTION_SELECTOR, { timeout: 10000 });
 
+      await expect(page.locator('[aria-label="Página anterior"], [aria-label="Previous page"]')).toBeHidden();
       await expect(page.locator('[role="group"]').first()).toBeInViewport();
       await expect(page.locator(PAGE_ACTION_SELECTOR)).toBeInViewport();
       await expect(page.locator(PAGE_ACTION_SELECTOR)).toContainText('10 pendentes');

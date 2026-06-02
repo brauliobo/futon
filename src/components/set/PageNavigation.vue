@@ -1,7 +1,7 @@
 <!-- src/components/set/PageNavigation.vue -->
 <template lang="pug">
   div(class="flex flex-wrap items-center justify-between gap-3 pt-2")
-    button(@click="$emit('prev')" :disabled="!canGoPrev" class="btn-ghost shrink-0" :aria-label="$t('previousPage') || 'Previous page'")
+    button(v-if="canGoPrev" @click="$emit('prev')" class="btn-ghost shrink-0" :aria-label="$t('previousPage') || 'Previous page'")
       | ← {{ $t('previous') }}
     button(@click="handleNext" :disabled="isDisabled" :class="[nextClass, 'min-w-0 flex-1 sm:flex-none']" :aria-label="nextAriaLabel")
       | {{ nextLabel }}
