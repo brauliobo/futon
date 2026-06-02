@@ -1,7 +1,10 @@
 <template lang="pug">
   span(:class="textClass" :aria-label="label")
     template(v-for="(part, idx) in parts" :key="idx")
-      span(v-if="part.type === 'text'") {{ part.value }}
+      span(v-if="part.type === 'text'")
+        template(v-for="(textPart, textIdx) in textParts(part.value)" :key="textIdx")
+          span(v-if="textPart.type === 'text'") {{ textPart.value }}
+          sup(v-else class="math-text__sup") {{ textPart.value }}
       span(v-else-if="part.type === 'mixed'" class="math-mixed-fraction" aria-hidden="true")
         span(class="math-mixed-fraction__whole") {{ part.whole }}
         span(class="math-fraction")
@@ -31,6 +34,22 @@ export default {
         'math-text':             true,
         'math-text--fractional': this.hasFractionParts,
       };
+    },
+  },
+  methods: {
+    textParts(value) {
+      const text  = String(value ?? '');
+      const parts = [];
+      let last    = 0;
+
+      for (const match of text.matchAll(/\^(-?\d+|[A-Za-z])/g)) {
+        if (match.index > last) parts.push({ type: 'text', value: text.slice(last, match.index) });
+        parts.push({ type: 'sup', value: match[1] });
+        last = match.index + match[0].length;
+      }
+
+      if (last < text.length) parts.push({ type: 'text', value: text.slice(last) });
+      return parts.length ? parts : [{ type: 'text', value: text }];
     },
   },
 };

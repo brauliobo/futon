@@ -390,6 +390,26 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(question.locator('.math-fraction__denominator')).toContainText(['4', '4']);
   });
 
+  test('math exponents render as superscript text', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      'x^2 + x^10 =',
+        choices:       ['x^12', '2x^10', 'x^20'],
+        correctAnswer: 'x^12',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const question = page.locator('[id^="q-"]').first();
+    await expect(question.locator('.math-text__sup')).toContainText(['2', '10']);
+    await expect(page.getByRole('radio', { name: 'x^12' }).locator('.math-text__sup')).toContainText('12');
+  });
+
   test('fraction clear control uses a touch-sized target', async ({ page }) => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {
