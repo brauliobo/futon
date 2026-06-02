@@ -217,6 +217,21 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     expect(box?.height).toBeGreaterThanOrEqual(24);
   });
 
+  test('wrong-answer hint labels the correct answer', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises[0].answer = 'errada';
+      vm.currentPageIndex = 0;
+      vm.isSubmitted = true;
+      vm.resetKey += 1;
+    });
+
+    const hint = page.locator('.hint-card').first();
+    await expect(hint).toBeVisible();
+    await expect(hint).toContainText(/Correta|Correct/);
+  });
+
   test('long choices use compact single-column cards', async ({ page }) => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {

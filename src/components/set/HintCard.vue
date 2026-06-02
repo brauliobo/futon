@@ -8,6 +8,7 @@
         span.hint-card__user-value
           StructuredText(:value="userAnswer")
       p(v-if="answer !== undefined && answer !== ''" class="hint-card__answer")
+        span.hint-card__answer-label {{ $t('correctAnswer') || 'Correct' }}:&nbsp;
         StructuredText(:value="answer")
 </template>
 
