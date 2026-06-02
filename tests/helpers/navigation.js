@@ -2,6 +2,15 @@
 
 import { setupTestProfile } from './storage.js';
 
+export const PAGE_ACTION_SELECTOR = [
+  '[aria-label="Próxima página"]',
+  '[aria-label="Next page"]',
+  '[aria-label="Ir para a próxima questão"]',
+  '[aria-label="Jump to next unanswered question"]',
+  '[aria-label="Finalizar"]',
+  '[aria-label="Finish"]',
+].join(', ');
+
 /**
  * Sets up a test profile and navigates to home. Waits for the app to load.
  */
@@ -49,7 +58,7 @@ export async function selectLevel(page, level) {
  */
 export async function startFirstSet(page) {
   await page.getByRole('button', { name: /▶|Começar/ }).first().click();
-  await page.waitForSelector('[aria-label="Next page"]', { timeout: 10000 });
+  await page.waitForSelector(PAGE_ACTION_SELECTOR, { timeout: 10000 });
 }
 
 /**

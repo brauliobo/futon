@@ -1,9 +1,9 @@
 <!-- src/components/set/PageNavigation.vue -->
 <template lang="pug">
-  div(class="flex items-center justify-between gap-3 pt-2")
-    button(@click="$emit('prev')" :disabled="!canGoPrev" class="btn-ghost" aria-label="Previous page")
+  div(class="flex flex-wrap items-center justify-between gap-3 pt-2")
+    button(@click="$emit('prev')" :disabled="!canGoPrev" class="btn-ghost shrink-0" :aria-label="$t('previousPage') || 'Previous page'")
       | ← {{ $t('previous') }}
-    button(@click="handleNext" :disabled="isDisabled" :class="nextClass" aria-label="Next page")
+    button(@click="handleNext" :disabled="isDisabled" :class="[nextClass, 'min-w-0 flex-1 sm:flex-none']" :aria-label="nextAriaLabel")
       | {{ nextLabel }}
 </template>
 
@@ -28,6 +28,10 @@ export default {
     nextLabel() {
       if (this.isRemaining) return `✏️ ${this.$t('remaining') || 'Falta'} ${this.remaining} →`;
       return this.isLastPage ? `✨ ${this.$t('finish')}` : `${this.$t('next')} →`;
+    },
+    nextAriaLabel() {
+      if (this.isRemaining) return this.$t('jumpToRemaining') || 'Jump to next unanswered question';
+      return this.isLastPage ? (this.$t('finish') || 'Finish') : (this.$t('nextPage') || 'Next page');
     },
   },
   methods: {

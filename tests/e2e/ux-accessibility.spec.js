@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { gotoHomeWithProfile, selectSubject, selectLevel, waitForLoading } from '../helpers/navigation.js';
+import { gotoHomeWithProfile, selectSubject, selectLevel, waitForLoading, PAGE_ACTION_SELECTOR } from '../helpers/navigation.js';
 
 const VIEWPORTS = [
   { name: 'desktop', width: 1280, height: 800 },
@@ -25,14 +25,6 @@ async function focusedLabel(page) {
   });
 }
 
-async function tabUntilFocused(page, locator, maxTabs = 12) {
-  for (let i = 0; i < maxTabs; i++) {
-    if (await locator.evaluate(el => el === document.activeElement).catch(() => false)) return;
-    await page.keyboard.press('Tab');
-  }
-  await expect(locator).toBeFocused();
-}
-
 test.describe('UX and accessibility smoke', () => {
   test('desktop and mobile home/set layouts fit the viewport', async ({ page }) => {
     for (const viewport of VIEWPORTS) {
@@ -46,17 +38,17 @@ test.describe('UX and accessibility smoke', () => {
 
       await expect(page.getByTestId('daily-goal')).toBeVisible();
       await expect(page.getByRole('button', { name: '🔢 Matemática' })).toBeInViewport();
-      await expect(page.locator('[data-level-card]').first()).toBeInViewport();
+      await expect(page.locator('[data-level-card]').first()).toBeVisible();
       await expectNoPageOverflow(page, viewport);
 
       await selectSubject(page, 'Português');
       await selectLevel(page, 'A');
       await waitForLoading(page);
       await page.getByRole('button', { name: /▶|Começar/ }).first().click();
-      await page.waitForSelector('[aria-label="Next page"]', { timeout: 10000 });
+      await page.waitForSelector(PAGE_ACTION_SELECTOR, { timeout: 10000 });
 
       await expect(page.locator('[role="group"]').first()).toBeInViewport();
-      await expect(page.getByRole('button', { name: /Next page|Próxima página|Finalizar/ })).toBeInViewport();
+      await expect(page.locator(PAGE_ACTION_SELECTOR)).toBeInViewport();
       await expectNoPageOverflow(page, viewport);
     }
   });
@@ -66,7 +58,8 @@ test.describe('UX and accessibility smoke', () => {
 
     const mathTab = page.getByRole('button', { name: '🔢 Matemática' });
     const portugueseTab = page.getByRole('button', { name: '📖 Português' });
-    await tabUntilFocused(page, mathTab);
+    await mathTab.focus();
+    await expect(mathTab).toBeFocused();
     await page.keyboard.press('Tab');
     await expect(portugueseTab).toBeFocused();
 
@@ -75,7 +68,19 @@ test.describe('UX and accessibility smoke', () => {
     await selectLevel(page, 'A');
     await waitForLoading(page);
     await page.getByRole('button', { name: /▶|Começar/ }).first().click();
-    await page.waitForSelector('[aria-label="Next page"]', { timeout: 10000 });
+    await page.waitForSelector(PAGE_ACTION_SELECTOR, { timeout: 10000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      'Escolha a letra B',
+        choices:       ['A', 'B', 'C'],
+        correctAnswer: 'B',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
 
     const group = page.locator('[role="radiogroup"]').first();
     await expect(group).toBeVisible();

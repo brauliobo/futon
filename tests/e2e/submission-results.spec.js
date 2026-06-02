@@ -32,7 +32,7 @@ test.describe('Submission and Results', () => {
     await expect(results.getByText('/')).toBeVisible({ timeout: 5000 });
     await expect(page.getByText('Revisar Respostas')).toBeVisible();
     // Navigate to page 1 where the wrong answers are
-    const prevBtn = page.locator('[aria-label="Previous page"]');
+    const prevBtn = page.locator('[aria-label="Página anterior"], [aria-label="Previous page"]');
     while (await prevBtn.isEnabled().catch(() => false)) {
       await prevBtn.click();
       await page.waitForTimeout(100);
