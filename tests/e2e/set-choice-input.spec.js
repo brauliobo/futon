@@ -191,6 +191,30 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     expect(clearButtonIsAnchored).toBeTruthy();
   });
 
+  test('numeric clear control uses a touch-sized target', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'math',
+        question:      '2 + 2 =',
+        correctAnswer: 4,
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const input = page.getByRole('textbox', { name: '2 + 2 =' });
+    await input.fill('4');
+    const clearButton = page.getByRole('button', { name: /Limpar|Clear/ });
+    await expect(clearButton).toBeVisible();
+
+    const box = await clearButton.boundingBox();
+    expect(box?.width).toBeGreaterThanOrEqual(24);
+    expect(box?.height).toBeGreaterThanOrEqual(24);
+  });
+
   test('long choices use compact single-column cards', async ({ page }) => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {

@@ -54,7 +54,7 @@
           v-if="hasAnswer && isEditing && !isSubmitted"
           @mousedown.prevent="clearAnswer"
           type="button"
-          class="absolute -right-2 -top-2 w-5 h-5 rounded-full bg-kid-muted/40 hover:bg-kid-red text-white text-[10px] font-black flex items-center justify-center transition-colors shadow"
+          class="absolute -right-2 -top-2 w-7 h-7 rounded-full bg-kid-muted/40 hover:bg-kid-red text-white text-xs font-black flex items-center justify-center transition-colors shadow-md"
           :aria-label="$t('clear') || 'Clear'"
         ) ×
     template(v-else)
