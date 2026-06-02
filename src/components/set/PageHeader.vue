@@ -2,21 +2,21 @@
 <template lang="pug">
   div(class="space-y-2")
     div(class="flex items-center justify-between gap-3")
-      div(v-if="totalPages <= 6" class="flex items-center gap-1.5" :aria-label="`Page ${pageNumber} of ${totalPages}`")
+      div(v-if="totalPages <= 6" class="flex items-center gap-1.5" :aria-label="pageAriaLabel")
         span(
           v-for="n in totalPages"
           :key="n"
           :class="dotClass(n)"
           aria-hidden="true"
         )
-      div(v-else class="inline-flex items-center gap-1.5 rounded-full border theme-border surface-2 px-3 py-1 text-sm font-bold" :aria-label="`Page ${pageNumber} of ${totalPages}`")
+      div(v-else class="inline-flex items-center gap-1.5 rounded-full border theme-border surface-2 px-3 py-1 text-sm font-bold" :aria-label="pageAriaLabel")
         span(aria-hidden="true") 📖
         span(class="text-kid-blue tabular-nums") {{ pageNumber }}
         span(class="text-kid-muted") /
         span(class="text-kid-muted tabular-nums") {{ totalPages }}
       div(:class="['set-timer', pace && `set-timer--${pace}`]")
         span(class="text-base" aria-hidden="true") ⏱
-        span(class="text-lg font-black tabular-nums" :aria-label="`Time elapsed ${timer}`") {{ timer }}
+        span(class="text-lg font-black tabular-nums" :aria-label="timerAriaLabel") {{ timer }}
     div(v-if="exercisesOnPage > 0" class="space-y-1.5")
       div(class="flex items-center justify-between text-base font-bold")
         span
@@ -24,7 +24,7 @@
           span(class="text-kid-muted")  / {{ exercisesOnPage }}
         span(v-if="isComplete" class="text-kid-green animate-pop-in") ✓ {{ $t('done') || 'Done' }}
         span(v-else-if="answeredOnPage > 0" class="text-kid-blue tabular-nums") {{ percentLabel }}
-      div(class="h-3 rounded-full theme-track overflow-hidden relative" role="progressbar" :aria-valuenow="answeredOnPage" :aria-valuemax="exercisesOnPage")
+      div(class="h-3 rounded-full theme-track overflow-hidden relative" role="progressbar" :aria-label="progressAriaLabel" :aria-valuenow="answeredOnPage" :aria-valuemax="exercisesOnPage")
         div(:class="['progress-fill', isComplete ? 'progress-fill--complete' : 'progress-fill--active']" :style="{ width: barWidth }")
           div(v-if="answeredOnPage > 0 && !isComplete" class="absolute inset-0 progress-shimmer" aria-hidden="true")
     span.sr-only(aria-live="assertive") {{ liveAnnouncement }}
@@ -51,6 +51,11 @@ export default {
     },
     barWidth() { return `${this.percent}%`; },
     percentLabel() { return `${this.percent}%`; },
+    pageAriaLabel() {
+      return `${this.$t('pageInfo_before') || 'Page '}${this.pageNumber}${this.$t('pageInfo_after') || ' of '}${this.totalPages}`;
+    },
+    timerAriaLabel() { return `${this.$t('elapsedTime') || 'Time elapsed'} ${this.timer}`; },
+    progressAriaLabel() { return this.$t('pageProgress') || 'Page progress'; },
   },
   watch: {
     isComplete(v) {

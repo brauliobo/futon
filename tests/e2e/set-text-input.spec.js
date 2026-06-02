@@ -10,7 +10,10 @@ test.describe('Set Exercise Flow - Text Input', () => {
 
   test('page header shows dots and timer', async ({ page }) => {
     await expect(page.getByText('⏱')).toBeVisible();
+    await expect(page.locator('[aria-label^="Página"], [aria-label^="Page"]').first()).toBeVisible();
+    await expect(page.locator('[aria-label^="Tempo decorrido"], [aria-label^="Time elapsed"]').first()).toBeVisible();
     await expect(page.locator('[role="progressbar"]').first()).toBeVisible();
+    await expect(page.locator('[role="progressbar"]').first()).toHaveAttribute('aria-label', /Progresso da página|Page progress/);
   });
 
   test('example alert shown', async ({ page }) => {
