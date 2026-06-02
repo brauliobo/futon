@@ -14,7 +14,8 @@ test.describe('Mastery Gating', () => {
   test('second set locked when first not mastered', async ({ page }) => {
     await expect(page.getByText('🔒').first()).toBeVisible();
     await expect(page.locator('.set-card--locked').first()).toHaveAttribute('aria-disabled', 'true');
-    await expect(page.locator('.set-card--locked').first()).toHaveAttribute('aria-label', /Continue para desbloquear|Keep going to unlock/);
+    await expect(page.locator('.set-card--locked .set-card-btn').first()).toBeDisabled();
+    await expect(page.locator('.set-card--locked .set-card-btn').first()).toHaveAttribute('aria-label', /Continue para desbloquear|Keep going to unlock/);
   });
 
   test('mastery unlocks next set', async ({ page }) => {

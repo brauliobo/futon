@@ -29,7 +29,6 @@ test.describe('Home Navigation', () => {
     const firstLevel = page.locator('[data-level-card]').first();
     await firstLevel.click();
     await waitForLoading(page);
-    await expect(page.locator('.set-card').first()).toHaveAttribute('aria-label', /Começar|Start|Continuar|Continue|Reiniciar|Restart/);
     await expect(page.locator('.set-card-btn').first()).toHaveAttribute('aria-label', /Começar|Start|Continuar|Continue|Reiniciar|Restart/);
   });
 

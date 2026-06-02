@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(:class="['set-card', `set-card--${cardVariant}`, { 'set-card--active': isActive }]" role="button" :tabindex="disabled ? -1 : 0" :aria-disabled="disabled" :aria-label="actionLabel" @click="onStart" @keydown.enter.prevent="onStart" @keydown.space.prevent="onStart")
+  div(:class="['set-card', `set-card--${cardVariant}`, { 'set-card--active': isActive }]" :aria-disabled="disabled" @click="onStart")
     div(class="flex items-start justify-between gap-3")
       div(class="flex items-center gap-2")
         span(v-if="statusBadge" :class="statusBadge.class" class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-sm font-black shadow-sm") {{ statusBadge.icon }}
