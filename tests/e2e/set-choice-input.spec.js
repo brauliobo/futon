@@ -217,11 +217,18 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     expect(box?.height).toBeGreaterThanOrEqual(24);
   });
 
-  test('wrong-answer hint labels the correct answer', async ({ page }) => {
+  test('wrong-answer hint labels review answers', async ({ page }) => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {
       const vm = window.__futonSet;
-      vm.set.pages[0].exercises[0].answer = 'errada';
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      'Qual alternativa está correta?',
+        choices:       ['certa', 'errada', 'quase'],
+        correctAnswer: 'certa',
+        answer:        'errada',
+      }];
+      vm.completedPages = [];
       vm.currentPageIndex = 0;
       vm.isSubmitted = true;
       vm.resetKey += 1;
@@ -229,6 +236,8 @@ test.describe('Set Exercise Flow - Choice Input', () => {
 
     const hint = page.locator('.hint-card').first();
     await expect(hint).toBeVisible();
+    await expect(hint).toContainText(/Sua resposta|Your answer/);
+    await expect(hint).toContainText('errada');
     await expect(hint).toContainText(/Correta|Correct/);
   });
 

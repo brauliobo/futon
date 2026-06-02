@@ -31,7 +31,7 @@
         )
           span(v-if="reviewIcon(choiceStatus(choice))" class="mr-2 font-black" aria-hidden="true") {{ reviewIcon(choiceStatus(choice)) }}
           StructuredText(:value="choice")
-      HintCard(v-if="!isCorrect" class="mt-2" :message="encouragement" :answer="exercise.correctAnswer")
+      HintCard(v-if="!isCorrect" class="mt-2" :message="encouragement" :answer="exercise.correctAnswer" :user-answer="exercise.answer")
 </template>
 
 <script>
