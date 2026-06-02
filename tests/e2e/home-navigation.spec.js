@@ -41,6 +41,37 @@ test.describe('Home Navigation', () => {
     await expect(goal.locator('.text-kid-gold')).toHaveCount(2);
   });
 
+  test('daily goal refresh resets stale next-day counter', async ({ page }) => {
+    await page.evaluate(() => {
+      const proxy = document.querySelector('#app').__vue_app__._instance.proxy;
+      const stale = new Date();
+      stale.setDate(stale.getDate() - 1);
+
+      const y = stale.getFullYear();
+      const m = String(stale.getMonth() + 1).padStart(2, '0');
+      const d = String(stale.getDate()).padStart(2, '0');
+      const staleKey = `${y}-${m}-${d}`;
+
+      const data = proxy.storage.load() || {};
+      data.dailyLog = {
+        [staleKey]: { setsCompleted: 1, masteryAchieved: 0, totalDurationSeconds: 20 * 60 },
+      };
+      proxy.storage.save(data);
+      proxy.todaySets = 1;
+      proxy.todayDuration = 20 * 60;
+      proxy.refreshDailyProgress();
+    });
+
+    const goal = page.locator('[data-testid="daily-goal"]');
+    await expect(goal.getByText('0min / 30min')).toBeVisible();
+
+    const todayProgress = await page.evaluate(() => {
+      const proxy = document.querySelector('#app').__vue_app__._instance.proxy;
+      return { sets: proxy.todaySets, duration: proxy.todayDuration };
+    });
+    expect(todayProgress).toEqual({ sets: 0, duration: 0 });
+  });
+
   test('set cards show star ratings from status', async ({ page }) => {
     const sets = await getVisibleSets(page);
     if (sets.length > 0) {

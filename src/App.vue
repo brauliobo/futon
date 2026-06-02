@@ -74,6 +74,8 @@ export default {
       streak: 0,
       todaySets: 0,
       todayDuration: 0,
+      currentDayKey: Streak.todayKey(),
+      dailyProgressTimer: null,
       certificateLevel: null,
       newAchievements: [],
     };
@@ -89,13 +91,14 @@ export default {
       this.isLoading = false;
       this.loadSets();
       this.restoreFromRoute();
-      this.streak = Streak.calculate(this.storage);
-      this.todaySets = Streak.todayCount(this.storage);
-      this.todayDuration = Streak.todayDuration(this.storage);
+      this.startDailyProgressRefresh();
     } catch (error) {
       console.error('Failed to initialize disciplines:', error);
       this.isLoading = false;
     }
+  },
+  beforeUnmount() {
+    this.stopDailyProgressRefresh();
   },
   computed: {
     sets() {
@@ -201,9 +204,7 @@ export default {
         if (updatedSet.attempts > prev.attempts) {
           Streak.recordActivity(this.storage, 1, updatedSet.durationSeconds || 0);
           if (updatedSet.status === 'mastery') Streak.recordMastery(this.storage);
-          this.streak = Streak.calculate(this.storage);
-          this.todaySets = Streak.todayCount(this.storage);
-          this.todayDuration = Streak.todayDuration(this.storage);
+          this.refreshDailyProgress();
           this.checkLevelCertificate(updatedSet);
           this.checkAchievements(updatedSet);
         }
@@ -329,9 +330,7 @@ export default {
         this.isLoading = false;
         this.loadSets();
         this.restoreFromRoute();
-        this.streak = Streak.calculate(this.storage);
-        this.todaySets = Streak.todayCount(this.storage);
-        this.todayDuration = Streak.todayDuration(this.storage);
+        this.startDailyProgressRefresh();
       } catch (e) {
         console.error('Failed to initialize disciplines:', e);
         this.isLoading = false;
@@ -348,6 +347,28 @@ export default {
       this.isLoadingLevel = false;
       this.saveSets();
     },
+    refreshDailyProgress() {
+      this.currentDayKey  = Streak.todayKey();
+      this.streak         = Streak.calculate(this.storage);
+      this.todaySets      = Streak.todayCount(this.storage);
+      this.todayDuration  = Streak.todayDuration(this.storage);
+    },
+    startDailyProgressRefresh() {
+      this.stopDailyProgressRefresh();
+      this.refreshDailyProgress();
+      this.dailyProgressTimer = window.setInterval(() => this.refreshDailyProgress(), 60000);
+      window.addEventListener('focus', this.refreshDailyProgress);
+      document.addEventListener('visibilitychange', this.refreshDailyProgressWhenVisible);
+    },
+    stopDailyProgressRefresh() {
+      if (this.dailyProgressTimer) window.clearInterval(this.dailyProgressTimer);
+      this.dailyProgressTimer = null;
+      window.removeEventListener('focus', this.refreshDailyProgress);
+      document.removeEventListener('visibilitychange', this.refreshDailyProgressWhenVisible);
+    },
+    refreshDailyProgressWhenVisible() {
+      if (document.visibilityState === 'visible') this.refreshDailyProgress();
+    },
   },
   created() {
     // Route handling moved to restoreFromRoute() in mounted() after disciplineManager is ready
@@ -363,6 +384,4 @@ export default {
   }
 };
 </script>
-
-
 
