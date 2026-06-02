@@ -439,6 +439,9 @@ input.bg-kid-green\/5 { caret-color: var(--kid-green); }
 .math-text { @apply inline-flex flex-wrap items-center gap-x-1 gap-y-0 align-middle; }
 .math-text__sup { @apply text-[0.65em] font-black leading-none; vertical-align: super; }
 .math-text--fractional { @apply gap-x-2 gap-y-1; line-height: 1.45; }
+.math-radical { @apply inline-flex items-start font-black leading-none align-middle; }
+.math-radical__symbol { @apply pr-0.5; line-height: 1.1; }
+.math-radical__body { @apply px-0.5; border-top: 2px solid currentColor; line-height: 1.1; }
 .fraction-text { @apply inline-flex flex-wrap items-center gap-x-1 gap-y-0 align-middle; }
 .structured-text { @apply inline-flex flex-wrap items-center gap-x-1 gap-y-0 align-middle; }
 .structured-text--dense { @apply flex flex-col items-stretch gap-1 text-left; width: 100%; }

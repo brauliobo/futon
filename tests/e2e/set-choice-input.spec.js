@@ -416,6 +416,27 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(page.getByRole('radio', { name: 'x^12' }).locator('.math-text__sup')).toContainText('12');
   });
 
+  test('math radicals render with a visual root bar', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      'Diagonal do quadrado: L√2 =',
+        choices:       ['L√2', '2L', '√(L^2+L^2)'],
+        correctAnswer: 'L√2',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const question = page.locator('[id^="q-"]').first();
+    await expect(question.locator('.math-radical')).toBeVisible();
+    await expect(question.locator('.math-radical__body')).toContainText('2');
+    await expect(page.getByRole('radio', { name: '√(L^2+L^2)' }).locator('.math-radical__body')).toContainText('L^2+L^2');
+  });
+
   test('fraction clear control uses a touch-sized target', async ({ page }) => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {
