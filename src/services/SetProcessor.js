@@ -327,6 +327,8 @@ export class SetProcessor {
       .replace(/-1x\b/g, '-x')
       .replace(/\b1\(/g, '(')
       .replace(/-1\(/g, '-(')
+      .replace(/\s\+\s0x(?=\s|$)/g, '')
+      .replace(/\s-\s0x(?=\s|$)/g, '')
       .replace(/\(x\s-\s0\)/g, 'x')
       .replace(/\(x\s\+\s0\)/g, 'x')
       .replace(/\s[+-]\s0(?=\s*(=|<|>|$))/g, '')

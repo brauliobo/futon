@@ -319,6 +319,18 @@ const cases = [
     },
   },
   {
+    name: 'removes generated zero-x terms from quadratic prompts',
+    run:  () => {
+      const set = {
+        subject: 'math',
+        level:   'I',
+        pages:   [{ exercises: [{ type: 'quadratic', question: '4x² + 0x + 0 = 0', correctAnswer: '0' }] }],
+      };
+      const ex = SetProcessor.processSet(set).pages[0].exercises[0];
+      return ex.question === '4x² = 0';
+    },
+  },
+  {
     name: 'simplifies integral coefficient prompts without changing exponent drills',
     run:  () => {
       const set = {
