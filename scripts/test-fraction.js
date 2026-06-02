@@ -23,6 +23,19 @@ const cases = [
     },
   },
   {
+    name: 'parts formats variable denominator proportions for display',
+    run:  () => {
+      const fractions = Fraction.parts('5/10 = 2/x')
+        .filter(part => part.type === 'fraction');
+
+      return fractions.length === 2
+        && fractions[0].numerator === '5'
+        && fractions[0].denominator === '10'
+        && fractions[1].numerator === '2'
+        && fractions[1].denominator === 'x';
+    },
+  },
+  {
     name: 'parts formats radical fractions for display',
     run:  () => {
       const fractions = Fraction.parts('sen(60°) = √3/2 e cos(225°) = -√2/2')
