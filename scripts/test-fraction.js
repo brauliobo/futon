@@ -82,6 +82,32 @@ const cases = [
         && !Fraction.hasFraction('(1-cos x)/sen x');
     },
   },
+  {
+    name: 'parts formats bare trig denominators for display',
+    run:  () => {
+      const fractions = Fraction.parts('csc = 1/sen e sec = 1/cos')
+        .filter(part => part.type === 'fraction');
+
+      return fractions.length === 2
+        && fractions[0].numerator === '1'
+        && fractions[0].denominator === 'sen'
+        && fractions[1].denominator === 'cos'
+        && !Fraction.hasFraction('1/sen');
+    },
+  },
+  {
+    name: 'parts formats triangle ratio labels for display',
+    run:  () => {
+      const fractions = Fraction.parts('sen θ = CO/H; cos θ = CA/H')
+        .filter(part => part.type === 'fraction');
+
+      return fractions.length === 2
+        && fractions[0].numerator === 'CO'
+        && fractions[0].denominator === 'H'
+        && fractions[1].numerator === 'CA'
+        && fractions[1].denominator === 'H';
+    },
+  },
 ];
 
 let passed = 0;
