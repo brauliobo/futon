@@ -76,7 +76,7 @@ export default {
       if (this.isLongChoiceMode) return 'grid gap-2 grid-cols-1';
       return this.shuffledChoices.length > 3 ? 'grid gap-3 grid-cols-2' : 'grid gap-3 grid-cols-1';
     },
-    reviewListClass() { return this.isPillMode ? 'mt-1 flex flex-wrap gap-1.5' : 'mt-1 space-y-2'; },
+    reviewListClass() { return this.isPillMode ? 'mt-1 flex flex-wrap justify-center gap-1.5' : 'mt-1 space-y-2'; },
   },
   methods: {
     selectChoice(choice) {

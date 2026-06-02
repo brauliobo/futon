@@ -91,6 +91,27 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(page.getByRole('radio').first()).toHaveClass(/choice-btn--reading/);
   });
 
+  test('early-reading review choices stay centered', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      'CA',
+        choices:       ['CA', 'CO', 'CU'],
+        correctAnswer: 'CA',
+        answer:        'CO',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.isSubmitted = true;
+      vm.resetKey += 1;
+    });
+
+    await expect(page.locator('[role="list"]').first()).toHaveClass(/justify-center/);
+    await expect(page.locator('.review-choice--pill')).toHaveCount(3);
+  });
+
   test('question blanks render as stable underline markers', async ({ page }) => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {
