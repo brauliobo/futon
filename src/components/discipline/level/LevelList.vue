@@ -11,7 +11,7 @@
         :class="['set-card-slot', { 'set-card-slot--inactive': slugOf(set) !== activeSlug }]"
       )
         div(v-if="!isSetAvailable(index)" class="relative")
-          SetCard(:set="set" :is-active="false" class="set-card--locked")
+          SetCard(:set="set" :is-active="false" :disabled="true" class="set-card--locked")
           div(class="set-lock-overlay")
             div(class="set-lock-icon")
               span(class="text-3xl animate-bounce-in") 🔒
