@@ -86,6 +86,29 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(page.getByRole('radio').first()).toHaveClass(/choice-btn--reading/);
   });
 
+  test('question blanks render as stable underline markers', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'choice',
+        question:      "'Hoje é segunda-feira___'",
+        choices:       ['.', '?', '!'],
+        correctAnswer: '.',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const blank = page.locator('.structured-text__blank').first();
+    await expect(blank).toBeVisible();
+
+    const box = await blank.boundingBox();
+    expect(box?.width).toBeGreaterThanOrEqual(40);
+    expect(box?.height).toBeGreaterThanOrEqual(10);
+  });
+
   test('clicking choice advances', async ({ page }) => {
     const answers = await getCurrentPageAnswers(page);
     if (!answers.length || !answers[0].hasChoices) return;

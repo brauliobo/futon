@@ -3,8 +3,13 @@
     template(v-if="isDense")
       span(v-for="(part, idx) in denseParts" :key="idx" class="structured-text__part")
         span(v-if="idx > 0" class="structured-text__separator" aria-hidden="true") {{ denseSeparator }}
-        MathText(:value="part")
-    MathText(v-else :value="value")
+        template(v-for="(inlinePart, inlineIdx) in inlineParts(part)" :key="inlineIdx")
+          span(v-if="inlinePart.type === 'blank'" class="structured-text__blank" aria-hidden="true")
+          MathText(v-else :value="inlinePart.value")
+    template(v-else)
+      template(v-for="(inlinePart, idx) in inlineParts(value)" :key="idx")
+        span(v-if="inlinePart.type === 'blank'" class="structured-text__blank" aria-hidden="true")
+        MathText(v-else :value="inlinePart.value")
 </template>
 
 <script>
@@ -59,6 +64,20 @@ export default {
         .split(pattern)
         .map(part => part.trim())
         .filter(Boolean);
+    },
+    inlineParts(value) {
+      const text  = String(value ?? '');
+      const parts = [];
+      let last    = 0;
+
+      for (const match of text.matchAll(/_+/g)) {
+        if (match.index > last) parts.push({ type: 'text', value: text.slice(last, match.index) });
+        parts.push({ type: 'blank', value: match[0] });
+        last = match.index + match[0].length;
+      }
+
+      if (last < text.length) parts.push({ type: 'text', value: text.slice(last) });
+      return parts.length ? parts : [{ type: 'text', value: text }];
     },
   },
 };
