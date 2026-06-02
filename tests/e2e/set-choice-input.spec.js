@@ -49,7 +49,7 @@ test.describe('Set Exercise Flow - Choice Input', () => {
       const vm = window.__futonSet;
       vm.set.pages[0].exercises = [{
         type:          'choice',
-        question:      'CASA começa com: (CA/CO/CU)',
+        question:      'CA',
         choices:       ['CA', 'CO', 'CU'],
         correctAnswer: 'CA',
       }];
@@ -71,6 +71,10 @@ test.describe('Set Exercise Flow - Choice Input', () => {
 
     expect(style.fontSize).toBeGreaterThanOrEqual(18);
     expect(style.minWidth).toBeGreaterThanOrEqual(72);
+
+    const shortQuestionSpacing = await page.locator('[id^="q-"]').first()
+      .evaluate(el => getComputedStyle(el).letterSpacing);
+    expect(['normal', '0px']).toContain(shortQuestionSpacing);
 
     await page.evaluate(() => {
       const vm = window.__futonSet;
