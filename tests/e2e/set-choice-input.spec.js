@@ -348,6 +348,10 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await page.locator('.fraction-answer__number').first().fill('3');
     await expect(page.locator('.fraction-answer__number').first()).toHaveAttribute('aria-label', /Numerador|Numerator/);
     await expect(page.locator('.fraction-answer__number').nth(1)).toHaveAttribute('aria-label', /Denominador|Denominator/);
+    await expect(page.locator('.fraction-answer__number').first()).toHaveAttribute('inputmode', 'numeric');
+    await expect(page.locator('.fraction-answer__number').first()).toHaveAttribute('pattern', '-?[0-9]*');
+    await expect(page.locator('.fraction-answer__number').nth(1)).toHaveAttribute('inputmode', 'numeric');
+    await expect(page.locator('.fraction-answer__number').nth(1)).toHaveAttribute('pattern', '[0-9]*');
 
     const numberBox = await page.locator('.fraction-answer__number').first().boundingBox();
     expect(numberBox?.height).toBeGreaterThanOrEqual(44);
