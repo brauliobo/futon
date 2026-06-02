@@ -166,6 +166,31 @@ test.describe('Set Exercise Flow - Choice Input', () => {
     await expect(first).toHaveAttribute('tabindex', '0');
   });
 
+  test('free-text clear control is anchored to its input', async ({ page }) => {
+    await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
+    await page.evaluate(() => {
+      const vm = window.__futonSet;
+      vm.set.pages[0].exercises = [{
+        type:          'paragraph',
+        question:      'Complete a resposta',
+        correctAnswer: 'aposto',
+      }];
+      vm.completedPages = [];
+      vm.currentPageIndex = 0;
+      vm.resetKey += 1;
+    });
+
+    const input = page.getByRole('textbox', { name: 'Complete a resposta' });
+    await input.fill('aposto');
+    await expect(page.getByRole('button', { name: /Limpar|Clear/ })).toBeVisible();
+
+    const clearButtonIsAnchored = await page.getByRole('button', { name: /Limpar|Clear/ }).evaluate((button) => {
+      const parent = button.parentElement;
+      return parent?.classList.contains('relative') && parent.querySelector('input');
+    });
+    expect(clearButtonIsAnchored).toBeTruthy();
+  });
+
   test('long choices use compact single-column cards', async ({ page }) => {
     await page.waitForFunction(() => !!window.__futonSet, { timeout: 5000 });
     await page.evaluate(() => {

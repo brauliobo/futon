@@ -61,33 +61,33 @@
       QuestionHeader(:number="exerciseNumber" :question="exercise.question" :answered="hasAnswer && !isReadOnly")
       div(v-if="!isReadOnly" :class="inputWrapClass")
         div(class="relative inline-block")
-        input(
-          v-model="userAnswer"
-          :type="inputType"
-          :inputmode="inputMode"
-          enterkeyhint="next"
-          :disabled="isSubmitted"
-          :placeholder="placeholder"
-          :class="['input-answer', `input-answer--${isNumeric ? 'numeric' : 'text'}`, (hasAnswer && !isEditing) ? 'input-answer--answered' : 'input-answer--idle']"
-          :aria-labelledby="`q-${exerciseNumber}`"
-          autocomplete="off"
-          autocorrect="off"
-          spellcheck="false"
-          @keydown.enter.prevent="handleSubmit"
-          @keydown.tab="handleTab"
-          @focus="isEditing = true"
-          @blur="handleBlur"
-          @click="isEditing = true"
-          ref="inputRef"
-        )
-        span(v-if="hasAnswer && !isEditing" class="absolute -right-1 -top-1 w-6 h-6 rounded-full bg-kid-blue text-white text-sm font-black flex items-center justify-center shadow-md animate-pop-in" aria-hidden="true") ✓
-        button(
-          v-if="hasAnswer && isEditing && !isSubmitted"
-          @mousedown.prevent="clearAnswer"
-          type="button"
-          class="absolute -right-2 -top-2 w-6 h-6 rounded-full bg-kid-muted/30 hover:bg-kid-red text-white text-xs font-black flex items-center justify-center transition-colors shadow-md"
-          :aria-label="$t('clear') || 'Clear'"
-        ) ×
+          input(
+            v-model="userAnswer"
+            :type="inputType"
+            :inputmode="inputMode"
+            enterkeyhint="next"
+            :disabled="isSubmitted"
+            :placeholder="placeholder"
+            :class="['input-answer', `input-answer--${isNumeric ? 'numeric' : 'text'}`, (hasAnswer && !isEditing) ? 'input-answer--answered' : 'input-answer--idle']"
+            :aria-labelledby="`q-${exerciseNumber}`"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+            @keydown.enter.prevent="handleSubmit"
+            @keydown.tab="handleTab"
+            @focus="isEditing = true"
+            @blur="handleBlur"
+            @click="isEditing = true"
+            ref="inputRef"
+          )
+          span(v-if="hasAnswer && !isEditing" class="absolute -right-1 -top-1 w-6 h-6 rounded-full bg-kid-blue text-white text-sm font-black flex items-center justify-center shadow-md animate-pop-in" aria-hidden="true") ✓
+          button(
+            v-if="hasAnswer && isEditing && !isSubmitted"
+            @mousedown.prevent="clearAnswer"
+            type="button"
+            class="absolute -right-2 -top-2 w-6 h-6 rounded-full bg-kid-muted/30 hover:bg-kid-red text-white text-xs font-black flex items-center justify-center transition-colors shadow-md"
+            :aria-label="$t('clear') || 'Clear'"
+          ) ×
 
     div(v-if="isReadOnly" class="mt-3 review-stagger")
       div(v-if="isCorrect" class="flex items-center gap-2 rounded-2xl bg-kid-green/10 border border-kid-green/20 px-4 py-3 shadow-sm")
