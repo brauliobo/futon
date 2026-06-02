@@ -24,7 +24,7 @@ export default {
     displayExample() {
       return String(this.example || '')
         .replace(/\s*=\s*→\s*/g, ' = ')
-        .replace(/:\s*→\s*/g, ': ')
+        .replace(/:\s*→\s*/g, ' → ')
         .replace(/→\s*\.\.(?=\s|$)/g, '→ .');
     },
   },
