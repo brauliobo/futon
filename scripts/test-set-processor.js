@@ -42,6 +42,15 @@ const cases = [
     },
   },
   {
+    name: 'removes dangling colon from short extracted choice prompts',
+    run:  () => {
+      const set       = YAML.parse(fs.readFileSync('src/levels/portuguese/2A/set_02.yaml', 'utf8'));
+      const processed = SetProcessor.processSet(set);
+      const prompts   = processed.pages.slice(0, 6).map(page => page.exercises[0].question);
+      return prompts.join('|') === 'Escolha a letra B|Escolha a letra C|Escolha a letra D|B de|C de|D de';
+    },
+  },
+  {
     name: 'extracts inline choices around phoneme slash notation',
     run:  () => {
       const set = YAML.parse(fs.readFileSync('src/levels/spanish/I/set_12.yaml', 'utf8'));

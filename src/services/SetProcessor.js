@@ -259,12 +259,21 @@ export class SetProcessor {
         if (!choices.length) return;
 
         ex.choices  = choices;
-        ex.question = `${ex.question.slice(0, choiceInfo.start)}${ex.question.slice(choiceInfo.end)}`.trim();
+        ex.question = this.normalizeChoiceQuestionStem(`${ex.question.slice(0, choiceInfo.start)}${ex.question.slice(choiceInfo.end)}`);
         ex.type = 'choice';
         this.normalizeKeyedChoices(ex);
       });
     });
     return wb;
+  }
+
+  static normalizeChoiceQuestionStem(question) {
+    const text = String(question || '').trim();
+    if (!text.endsWith(':')) return text;
+
+    const stem = text.slice(0, -1).trim();
+    if (stem.split(/\s+/).length <= 4) return stem;
+    return text;
   }
 
   static normalizeKeyedChoices(ex) {
